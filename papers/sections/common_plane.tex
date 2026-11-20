@@ -1,0 +1,248 @@
+% !TeX root = ../nc-quadric-classification.tex
+\section{階数三支持超平面の共通二変数環}
+\label{sec:common-plane}
+
+基礎体 $k$ は標数零の代数閉体とする。
+次数一で生成された連結二次次数付き domain $B=T(V)/(K)$ について
+\[
+ \dim V=4,\qquad K\subset V\otimes V,\qquad \dim K=7
+\]
+を仮定する。従って $\dim B_2=9$ である。
+線形行列 $M\in\operatorname{Mat}_2(V)$ の成分が張る部分空間を $U(M)$ と書く。
+
+\begin{lemma}[行列積の四成分の独立性]
+\label{lem:w-matrix-products}
+$L_1,L_2\subset\operatorname{Mat}_2(k)$ を三次元部分空間とする。
+trace pairing に関する $L_2^\perp$ が可逆行列で生成されるなら、
+行列の乗法
+\[
+ L_1\otimes L_2\longrightarrow\operatorname{Mat}_2(k)
+\]
+は全射である。
+従って $P\in\operatorname{Mat}_2(U_1)$ と $Q\in\operatorname{Mat}_2(U_2)$ の係数行列が
+それぞれ $L_1,L_2$ の基底をなすとき、$PQ$ の四成分は
+形式的テンソル空間 $U_1\otimes U_2$ で一次独立である。
+\end{lemma}
+\begin{proof}
+全射でないなら、非零行列 $D$ があって
+$\operatorname{tr}(DXY)=0$ が全ての $X\in L_1,Y\in L_2$ に対して成立する。
+従って $DL_1\subset L_2^\perp=kC$ であり、$C$ は可逆である。
+$D$ が可逆なら $\dim DL_1=3$ なので矛盾する。
+$\operatorname{rank} D=1$ なら $DX$ は全て特異行列であるため $DL_1=0$ となるが、
+左乗法 $X\mapsto DX$ の核は二次元であり、三次元の $L_1$ を含めない。
+後半はこの全射の双対を取ったものである。
+\end{proof}
+
+\begin{lemma}[平方零行列の成分の関係]
+\label{lem:w-invertible-annihilator}
+$M\in\operatorname{Mat}_2(V)$ が $B$ 上で $M^2=0$ を満たし、$\dim U(M)=3$ とする。
+四成分の唯一の一次関係を表す二次正方係数行列は可逆である。
+従って $M^2$ の四成分を $V\otimes V$ の元として解釈すると、
+それらは四次元部分空間 $R(M)\subset K\cap U(M)^{\otimes2}$ を張る。
+\end{lemma}
+\begin{proof}
+関係の係数行列の階数が一なら、非零の定数行ベクトル $a$ と
+列ベクトル $b$ によって $aMb=0$ と書ける。
+$ab\ne0$ なら同時基底変換、すなわち $M$ の共役変換によって
+この式を $M_{11}=0$ にできる。
+このとき $M=\left(\begin{smallmatrix}0&x\\y&z\end{smallmatrix}\right)$
+と書け、$M^2=0$ の第一対角成分から $xy=0$ となる。
+domain 性により $x=0$ または $y=0$ で、成分空間の次元三に反する。
+$ab=0$ なら同時基底変換で $M_{12}=0$ にできる。
+このとき $M=\left(\begin{smallmatrix}x&0\\y&z\end{smallmatrix}\right)$
+であり、二つの対角成分から $x^2=z^2=0$ となって同様に矛盾する。
+関係の係数行列の転置は係数行列空間の trace-annihilator を生成するので、
+補題~\ref{lem:w-matrix-products} を適用できる。
+\end{proof}
+
+\begin{lemma}[二次元部分空間にある関係]
+\label{lem:w-binary-relations}
+二次元部分空間 $W\subset V$ に対し、$\dim(K\cap W^{\otimes2})\le1$ である。
+等号が成り立つ場合、非零の関係は二因子テンソルとして階数二である。
+\end{lemma}
+\begin{proof}
+階数一の非零テンソル $w\otimes w'$ が $K$ にあれば、
+$B$ で $ww'=0$ となって domain 性に反する。
+もし $K\cap W^{\otimes2}$ に独立な二つの元 $r_0,r_1$ があれば、
+$\det(sr_0+tr_1)$ は $(s,t)$ の斉次二次式である。
+代数閉性により、この式が恒等的に零の場合も含めて、
+非零の $(s,t)$ で行列式が零になる。
+$sr_0+tr_1$ は非零なので階数一となり、矛盾する。
+\end{proof}
+
+\begin{theorem}[non-standard 二型の共通二変数環]
+\label{thm:w-common-plane}
+$M_1,M_2\in\operatorname{Mat}_2(V)$ が $B$ 上で $M_i^2=0$ を満たすとする。
+$U_i=U(M_i)$ は三次元で、$U_1\ne U_2$ と仮定する。
+$W=U_1\cap U_2$ および $R_i=R(M_i)$ と置けば、
+\[
+ \dim W=2,\qquad
+ R_1\cap R_2=K\cap W^{\otimes2}=kr,\qquad
+ \operatorname{rank} r=2,\qquad K=R_1+R_2.
+\]
+特に二つの平方零行列は $B$ の全ての二次関係を与える。
+\end{theorem}
+\begin{proof}
+補題~\ref{lem:w-invertible-annihilator} により $\dim R_i=4$ である。
+$R_i\subset K$ と $\dim K=7$ から $\dim(R_1\cap R_2)\ge1$ となる。
+$U_1,U_2$ に適合する $V$ の基底を取れば
+\[
+ (U_1\otimes U_1)\cap(U_2\otimes U_2)
+   =(U_1\cap U_2)\otimes(U_1\cap U_2)=W^{\otimes2}
+\]
+である。従って $R_1\cap R_2\subset K\cap W^{\otimes2}$ であり、
+補題~\ref{lem:w-binary-relations} によって両辺は一次元に等しい。
+さらに $\dim(R_1+R_2)=4+4-1=7=\dim K$ となる。
+\end{proof}
+
+\paragraph{正規切断への適用.}
+系~\ref{cor:nonstandard-square-matrix} により、
+正規切断 $B=A/(g)$ で $p(X)=X,p(Y)=Y$ のとき、評価行列は
+$M_X^2=gC_X$, $M_Y^2=gC_Y$ ($C_X,C_Y\in\operatorname{GL}_2(k)$) と取れる。
+$B$ に移せば平方零なので、双方が階数三かつ支持が異なる場合には
+定理~\ref{thm:w-common-plane} が適用される。
+$g$ が中央であることも $C_X,C_Y$ がスカラーであることも使用していない。
+
+\begin{remark}[交差積の場合にも使える部分]
+\label{rem:w-crossed-products}
+二つの行列 $P,Q$ の支持が異なる三次元空間 $U_1,U_2$ で、
+それぞれの係数行列空間の trace-annihilator が可逆行列で生成され、
+$PQ=QP=0$ が $B$ で成立する場合も同じ結論が成り立つ。
+この場合、四次元の関係空間は
+$R_{12}\subset U_1\otimes U_2$ と $R_{21}\subset U_2\otimes U_1$ にあり、
+それらの交わりが $W^{\otimes2}$ に含まれることを使う。
+中央切断の通常の行列分解 $PQ=QP=gI$ はこの状況の候補となるが、
+一般の正規切断では一方の積に正規化自己同型が入る。
+後者への適用には、twist された支持の一致を別に確定する必要がある。
+\end{remark}
+
+\subsection{全次数での量子平面・Jordan 平面の埋込み}
+
+\begin{proposition}
+\label{prop:w-embedded-plane}
+$W\subset B_1$ が二次元で $K\cap W^{\otimes2}=kr\ne0$ とする。
+このとき $W$ の基底 $u,v$ を適切に選ぶと、$W$ が生成する $B$ の部分環は
+次のいずれかと同型である。
+\[
+ Q_q=k\langle u,v\rangle/(vu-quv),\quad q\in k^\times,
+ \qquad
+ Q_J=k\langle u,v\rangle/(vu-uv-u^2).
+\]
+これは二次関係だけの同定でなく、自然な写像 $Q_q\to B$ または $Q_J\to B$
+の全次数での単射を主張する。
+\end{proposition}
+\begin{proof}
+補題~\ref{lem:w-binary-relations} により $r$ の係数行列は可逆である。
+$r$ を対称部分と反対称部分に分ける。
+対称部分の階数が二なら、代数閉体上の二変数非退化対称形式を
+$uv+vu$ に正規化できる。従って $r=\alpha uv+\beta vu$ と書け、
+係数行列の可逆性から $\alpha\beta\ne0$ である。これは $Q_q$ の関係である。
+対称部分が零なら $r$ は $vu-uv$ の定数倍である。
+対称部分の階数が一なら、$r=\alpha u^2+\beta(vu-uv)$ と書ける。
+可逆性から $\beta\ne0$ なので、基底を定数倍して Jordan 平面の関係となる。
+
+次に単射性を証明する。いずれの環 $Q$ も $k[u]$ の Ore 拡大で、
+単項式 $u^iv^j$ ($i,j\ge0$) が基底をなし、domain である。
+$u$ は正規なので可逆化できる。
+$z=u^{-1}v\in Q[u^{-1}]$ と置けば、
+\[
+ zu=u\tau(z),\qquad
+ \tau(z)=qz\ \ (Q=Q_q),\qquad
+ \tau(z)=z+1\ \ (Q=Q_J)
+\]
+となる。従って次数 $n$ の任意の非零斉次元 $f$ は一意に
+\[
+ f=u^n p(z),\qquad 0\ne p\in k[z],\qquad \deg p\le n
+\]
+と書ける。実際、$u^{n-j}v^j$ をこの形に直すと、
+$p$ は次数 $j$ の非零先頭係数を持つ多項式になり、三角的に基底を与える。
+代数閉性から $p(z)=a\prod_{i=1}^d(z-\lambda_i)$ と書く。
+恒等式
+\[
+ \prod_{i=1}^{d}\bigl(u f_i(z)\bigr)
+ =u^d\prod_{i=1}^{d}\tau^{d-i}\bigl(f_i(z)\bigr)
+\]
+に $f_i(z)=\tau^{-(d-i)}(z-\lambda_i)$ を入れれば、
+$u^dp(z)$ は $Q_1$ の非零元 $d$ 個の積の定数倍となる。
+各 $f_i$ が一次式なので $u f_i(z)\in ku+kv$ である。
+残る $u^{n-d}$ も合わせると、$f$ は非零一次元 $n$ 個の積である。
+
+自然な全射 $Q\to k\langle W\rangle\subset B$ は次数一で単射である。
+その核が非零なら非零斉次元 $f$ を取り、上の一次因子分解を写すと、
+$B$ で非零一次元の積が零になる。これは domain 性に反する。
+\end{proof}
+
+\begin{remark}[ここからはまだ正規化できない]
+$Q_q$ の $u,v$ は $Q_q$ の中で正規であり、$Q_J$ の $u$ は $Q_J$ の中で正規である。
+しかし $B$ 内での正規性は、この埋込みの命題からは従わない。
+また $q\ne1$ の量子平面や Jordan 平面の場合、$W$ の線形基底変更だけで
+二つの生成元を $B$ の中心に入れることはできない。
+そのような基底があれば $W$ の全ての元が互いに交換するが、
+命題の全次数単射に反するからである。
+Zhang twist や pointed 同値によって別の表示へ移る可能性は残る。
+\end{remark}
+
+\subsection{同一支持と中央化についての障害}
+
+\begin{lemma}[同一支持の場合に確定すること]
+\label{lem:w-equal-support}
+三次元部分空間 $U\subset B_1$ について
+$\dim(K\cap U^{\otimes2})\le4$ である。
+従って定理~\ref{thm:w-common-plane} の平方零行列で $U_1=U_2=U$ なら、
+\[
+ R_1=R_2=K\cap U^{\otimes2}.
+\]
+\end{lemma}
+\begin{proof}
+$\mathbb P(U)\times\mathbb P(U)$ の Segre 像は
+$\mathbb P(U^{\otimes2})=\mathbb P^8$ 内の四次元射影多様体である。
+$K\cap U^{\otimes2}$ が五次元以上なら、その射影化の次元は四以上であり、
+射影次元定理によりこの Segre 像と交わる。
+この交点は非零の階数一テンソルを与え、domain 性に反する。
+後半は各 $R_i$ が四次元であることから従う。
+\end{proof}
+
+\paragraph{残る点.}
+$R_1=R_2$ から二つの余核が同型になるかは、この次元論だけでは分からない。
+従って二つの異なる MCM 型で支持が異なるという仮定を外してはいけない。
+次の具体的課題は、三次元の同じ成分空間と同じ四次元の平方関係空間を持つ
+二つの行列について、定数行列による左右同値を証明するか、反例を得ることである。
+
+\paragraph{中央化は適合表示の中ですら自動でない.}
+命題~\ref{prop:nonstandard-rank-three-example} で使う
+\[
+ B_0=k[u,v]\langle c,d\rangle/(c^2-uv,d^2-uv)
+\]
+を考える。この表示では $u,v$ は中央である。
+$t\in k^\times$ に対して
+\[
+ \sigma_t(u)=t^2u,\quad \sigma_t(v)=v,\quad
+ \sigma_t(c)=tc,\quad\sigma_t(d)=td
+\]
+は次数付き自己同型である。
+$a\star b=a\sigma_t^{\deg a}(b)$ の規約の Zhang twist を $B_t$ と書くと、
+関係は
+\[
+\begin{gathered}
+ vu=t^2uv,\qquad cu=tuc,\qquad cv=t^{-1}vc,\\
+ du=tud,\qquad dv=t^{-1}vd,\qquad
+ c^2=tuv,\qquad d^2=tuv.
+\end{gathered}
+\]
+ここでは積記号を再び通常の並置で書いた。
+行列
+\[
+ M_r=\begin{pmatrix}r&u\\-tv&-tr\end{pmatrix},\qquad r=c,d,
+\]
+はそれぞれ $M_r^2=0$ を満たす。
+この二つの支持は $\langle u,v,c\rangle$, $\langle u,v,d\rangle$ であり、
+交わりはパラメータ $q=t^2$ の量子平面を生成する。
+$t^2\ne1$ なら、同じ $B_t$ の中で $W$ の基底を変えて中央化することは不可能である。
+
+特に $t=\mathrm i$ は命題~\ref{prop:nonstandard-rank-three-example} の反 Serre 平方根に適合した表示そのものであり、
+このとき $vu=-uv$ である。
+従って「$H_2$ の適合表示なら $W$ を線形基底変更だけで中央化できる」
+という主張は、既存例によって既に否定される。
+一方 $u,v$ はこの例では $B_t$ 全体でも正規なので、
+一般の $W$ の正規化という課題の反例にはなっていない。
+任意の $t$ について次数シフト自体が反 Serre の平方根になるとは主張していない。

@@ -51,15 +51,44 @@ $\lambda$ で $Z$ を評価して $U$ への写像を得る。
 基底変更と $\partial$ の範囲で作用する。
 \end{proof}
 
+\begin{lemma}[持上げ変更の単射性]
+\label{lem:pencil-lift-injective}
+命題~\ref{prop:sklyanin-antiserre-center} の無限位数の範囲では、
+$\partial:U^*\to\operatorname{Hom}_k(K,U)$ は常に単射である。
+\end{lemma}
+\begin{proof}
+$D$ は二次環である。実際、二次環 $A$ の二次 Veronese $P$ の二次性は
+命題~\ref{prop:antiserre-quadratic} と同じ関係の挿入による議論から従い、
+一次空間 $Z$ で割っても二次性は保たれる。
+$\partial f=0$ となる非零 $f\in U^*$ が存在すると仮定する。
+各 $r\in K$ に対して
+\[
+ 0=f((\partial f)(r))=2(f\otimes f)(r)
+\]
+である。標数零と二次性から、$u\mapsto f(u)z$ は次数付き全射
+$D\twoheadrightarrow k[z]$ を定める。
+
+この全射による右 $D$-加群を $M=k[z]$ と書く。
+非零次数付き部分加群は $z^n k[z]$ なので、$\pi M$ は $\qgr D$ の単純対象である。
+また $z$ 倍写像 $M\to M(1)$ の余核は有限次元であり、
+$\pi M\simeq(\pi M)(1)$ となる。
+命題~\ref{prop:sklyanin-antiserre-center} の楕円商の同定
+$\qgr D\simeq\coh E$ の下で、単純対象は閉点 $p\in E$ の skyscraper 層である。
+次数シフトは台を $2\tau$ または $-2\tau$ だけ平行移動する。
+従って上の同型は $p$ がこの平行移動の固定点であることを意味するが、
+$2\tau\ne0$ なので矛盾する。
+\end{proof}
+
 \begin{proposition}[固定 pencil の比較を有限化する条件]
 \label{prop:pencil-finite-candidates}
-$\Delta$ と $\partial$ が単射であるとする。
+$\Delta$ が単射であるとする。
 固定 $P$ の滑らかな二切断の pointed exact 同値を判定するには、
 有限個の一次線形写像だけを二次関係に照合すればよい。
 さらに、各切断と同値な固定 pencil 内の切断は有限個である。
 \end{proposition}
 
 \begin{proof}
+補題~\ref{lem:pencil-lift-injective} により $\partial$ も単射である。
 まず $D$ の次数付き自己同型群を次数スカラーで割ると有限になる。
 $D$ は次数八の可逆層を持つ楕円曲線の twisted homogeneous
 coordinate ring（またはその反対環）である。
@@ -102,8 +131,9 @@ $\Delta$ の単射性により各 $\varphi$ につき一致する切断は高々
 \label{prop:pencil-tangent-generic}
 通常の Sklyanin のパラメータ平面のチャート
 $\gamma=-(\alpha+\beta)/(1+\alpha\beta)$ において、
-命題~\ref{prop:pencil-finite-candidates} の二つの単射性は
-非空 Zariski 開条件を与える。
+$\partial$ と $\Delta$ がともに単射となる条件は非空 Zariski 開条件を与える。
+無限位数の範囲では $\partial$ の単射性は補題~\ref{lem:pencil-lift-injective}
+により自動的であり、有限比較に残る仮定は $\Delta$ の単射性だけである。
 従ってこの開条件を満たし、かつ命題~\ref{prop:sklyanin-antiserre-center} の仮定を
 満たす固定 pencil について、滑らかな切断の同値判定は同命題の有限手順で行える。
 \end{proposition}

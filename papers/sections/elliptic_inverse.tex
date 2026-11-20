@@ -1,6 +1,6 @@
 % !TeX root = ../nc-quadric-classification.tex
 
-\section{整な楕円四つ組からの構成}
+\section{楕円四つ組からの構成}
 \label{sec:elliptic-inverse}
 
 $D$ を Van den Bergh の三次三次元正則 $\mathbb Z$-algebra とする。
@@ -81,6 +81,26 @@ $L\simeq D(0,-4)_{\theta^{-1}}$ となる。
 Nakayama 同型と Serre 関手の式が得られる。
 $D_{ij}$ に $c_i/c_j$ を掛ける対角型自己同型による引き戻しは、
 第 $j$ 成分を $c_j$ 倍して恒等と自然同型になる。
+\end{proof}
+
+\begin{proposition}[周期付き even part の domain 性]
+\label{prop:all-quadric-even-domain}
+$\beta:D\xrightarrow\sim D(2)$ を任意の二周期同型とし、
+$B_n=D_{0,2n}$ に
+\[
+ a*b=a\,\beta^m(b)\qquad(a\in B_m,\ b\in B_n)
+\]
+で次数付き環構造を入れる。このとき $B$ は domain である。
+この主張には $C$ の被約性も整性も不要である。
+\end{proposition}
+
+\begin{proof}
+Presotto の定理は一般の cubic AS 正則 $\mathbb Z$-algebra を扱い、
+幾何データの滑らかさ・整性・被約性を要求しない。
+非零斉次元 $a,b$ について $\beta^m(b)\in D_{2m,2m+2n}$ は非零なので、
+Presotto の $\mathbb Z$-domain 定理\cite[Theorem 2.8; Appendix A]{Presotto2018}
+から $a*b\ne0$ である。
+一般の非零元の積については最高次数の斉次成分の積を取ればよい。
 \end{proof}
 
 \begin{lemma}[整な楕円四つ組の二周期の平方]
@@ -213,8 +233,8 @@ $\beta$ は幾何データ上の平行移動から来るためこの核を保つ
 正則正規元 $h\in B_2$ に降りる。
 $B/(h)$ は $E$ の次数四の直線束 $L_0\otimes L_1$ と
 平行移動による捩れ斉次座標環である。
-従ってこれは domain であり、
-$h$ による分離フィルトレーションの初期項から $B$ も domain である。
+命題~\ref{prop:all-quadric-even-domain} により $B$ は domain である。
+この結論には幾何商の domain 性を必要としない。
 また $\qgr(B/(h))\simeq\coh E$ であり、
 その構造対象のシフトは可逆層に対応する
 \cite[arXiv v3, Corollary 5.5.9 and Lemma 3.5]{VdB2011}。
@@ -225,4 +245,236 @@ $\pi B$ は Gabriel--Krull の $\cC_1$ に属さず、
 ここで使うのは $B$ の Hilbert 級数、domain 性と、
 有限生成 $B$ 加群が $A$ 上で有限自由分解を持つことである。
 よって $\pi B$ は rank one torsion-free であり、全ての条件が成立する。
+\end{proof}
+
+\subsection{二つの横断的な (1,1) 成分}
+
+$C=C_+\cup C_-$ が二つの $(1,1)$ 曲線の和で、
+相異なる二点で横断的に交わるとする。
+各成分の座標を $z,w$ とし、交点をそれぞれ $0,\infty$ とする。
+許容性より全ての $L_i$ の多重次数は $(1,1)$ である。
+この多重次数の直線束を $L(t)$, $t\in k^\times$ と書く。
+具体的には正規化上の $\mathcal O_{\PP^1}(1)\sqcup\mathcal O_{\PP^1}(1)$ を
+\[
+ f_+(0)=f_-(0),\qquad
+ \text{$f_+$ の最高次係数}=t\,\text{$f_-$ の最高次係数}
+\]
+で貼り合わせる。切断空間の基底は
+\[
+ x=(1,1),\qquad y=(z,t^{-1}w)
+\]
+である。全ての多重次数 $(1,1)$ の直線束が一意的な $t$ を持ち、
+テンソル積の貼り合わせ係数は積で与えられる。
+
+\begin{lemma}[許容四つ組のパラメータ]
+\label{lem:i2-parameters}
+$L_i=L(t_i)$ と書けば、ある $a,b,r\in k^\times$ により
+\[
+ t_{2n}=ar^n,\qquad t_{2n+1}=br^n
+\]
+と書ける。許容条件は
+\[
+ a\ne b,\qquad b\ne ar,\qquad r\ne1
+\]
+である。逆にこの条件を満たす任意の $a,b,r$ は許容四つ組を与える。
+\end{lemma}
+
+\begin{proof}
+helix の関係 $L_iL_{i+1}^{-1}L_{i+2}^{-1}L_{i+3}\simeq\mathcal O_C$
+から $t_{i+2}/t_i$ は $i$ に依存しない。
+$(L(t),L(t'))$ による像は、一方の成分が対角線、他方の成分が
+\[
+ ([1:t^{-1}w],[1:(t')^{-1}w])
+\]
+という二つの $(1,1)$ 曲線である。
+$t\ne t'$ なら両成分は相異なり、二つの交点で横断的に交わる。
+各成分上の写像は同型であり、交点の二つの接方向も異なるため、
+写像は $C$ とこの $(2,2)$ 因子との同型である。
+$t=t'$ なら二つの成分が重なるので閉埋め込みでない。
+これを $(L_0,L_1)$ と $(L_1,L_2)$ に適用し、$L_0\not\simeq L_2$ を加える。
+\end{proof}
+
+\begin{proposition}[二周期の平方の直接計算]
+\label{prop:i2-period-square}
+補題~\ref{lem:i2-parameters} の許容四つ組に対し $u^2=r$ を選び、
+\[
+ \sigma|_{C_+}(z)=uz,\qquad
+ \sigma|_{C_-}(w)=u^{-1}w
+\]
+とする。$\sigma^*L_i\simeq L_{i+2}$ が与える二周期同型 $\beta$ は、
+本節冒頭の四次テンソルの回転から得られる周期 $\theta$ に対し、
+対角型自己同型を除いて $\beta^2=\theta$ を満たす。
+\end{proposition}
+
+\begin{proof}
+各 $V_i=H^0(C,L_i)$ に上の基底 $x_i,y_i$ を取る。
+$\sigma$ の引き戻しにより
+\[
+ \beta_i(x_i)=x_{i+2},\qquad
+ \beta_i(y_i)=u y_{i+2}
+\]
+となる。実際、$\sigma^*y_i=(uz,t_i^{-1}u^{-1}w)
+=u(z,t_{i+2}^{-1}w)$ である。
+
+次に三次関係と四次テンソルから $\theta$ を直接求める。
+固定した $i$ について $a=t_i$, $b=t_{i+1}$, $c=t_{i+2}=ar$,
+$d=t_{i+3}=br$ と略記し、テンソル積記号と添字を省く。
+三次関係空間 $R_i$ の基底は
+\begin{align*}
+ F_i&=a(b-c)yxx+b(c-a)xyx+c(a-b)xxy,\\
+ G_i&=(a-b)yyx+(c-a)yxy+(b-c)xyy.
+\end{align*}
+実際、$C_+$ 上では $x=1,y=z$、$C_-$ 上では
+$x=1,y_j=t_j^{-1}w$ として評価すると、両式は零になる。
+$y$ の数が一つおよび二つの各三次元部分から、
+二成分上での独立な二つの係数条件を課すので、それぞれ核は一次元である。
+$y$ の数が零または三つの場合には核がない。
+従って上の二式が三次関係の全てである。
+
+四次関係の共通部分に属する非零テンソルとして
+\[
+ w_i=ad\,x_iG_{i+1}+a\,y_iF_{i+1}
+     =d\,F_i y_{i+3}+ad\,G_i x_{i+3}
+\]
+を取れる。この等式は六つの $y$-次数二の語の係数比較で成り立つ。
+例えば $yxyx$ の係数は左辺で $ac(d-b)$、右辺で $ad(c-a)$ であり、
+$c=ar,d=br$ により一致する。他の五つも同じ二つの等式で一致する。
+この共通部分は一次元なので、これは VdB の $W_i$ の生成元である。
+$e=t_{i+4}=ar^2$ と置くと
+\[
+ w_{i+1}=e\,F_{i+1}y_{i+4}+be\,G_{i+1}x_{i+4}.
+\]
+したがって $w_i=\sum v_j\otimes r_j$,
+$w_{i+1}=\sum r_j\otimes\theta_i(v_j)$ という定義から
+\[
+ \theta_i(x_i)=\frac{be}{ad}x_{i+4}=r x_{i+4},\qquad
+ \theta_i(y_i)=\frac ea y_{i+4}=r^2 y_{i+4}.
+\]
+一方 $\beta^2_i$ は $x_i\mapsto x_{i+4}$,
+$y_i\mapsto r y_{i+4}$ である。
+従って全ての隣接生成空間 $V_i$ 上で $\theta_i=r\beta_i^2$ であり、
+差は $D_{ij}$ に $r^{j-i}$ を掛ける対角型自己同型である。
+これは $c_i=r^{-i}$ による $c_i/c_j$ と書ける。
+三次関係の評価と四次テンソルの恒等式は
+\texttt{computations/verify\_reducible\_quadruples.py} により
+$a,b,r$ の有理関数体上で再現できる。
+\end{proof}
+
+\begin{theorem}[横断的二成分境界での逆構成]
+\label{thm:i2-inverse}
+$C$ が二つの $(1,1)$ 成分からなり、相異なる二点で横断的に交わるとする。
+任意の Van den Bergh 許容四つ組 $U=(C,L_0,L_1,L_2)$ に対し、
+\[
+  (\qgr D(U),\pi e_0D(U))\in\HH
+\]
+である。平方根は命題~\ref{prop:i2-period-square} の $\beta$ が与える
+偶数添字の移動であり、被覆は VdB の標準 hull をこの周期で次数付けして得る。
+\end{theorem}
+
+\begin{proof}
+補題~\ref{lem:cubic-serre-period} の証明は
+$D$ の最小分解と AS 正則性のみを使い、曲線の整性を使わない。
+よって $\theta$ による四周期は $S^{-1}[2]$ であり、
+命題~\ref{prop:i2-period-square} から偶数添字の移動の平方はこれに等しい。
+VdB の hull とその周期の持ち上げ
+\cite[arXiv v3, Theorem 6.1, Lemmas 6.4--6.5, Proposition 6.6]{VdB2011}
+は非整な許容四つ組にも適用できる。
+従って対応する full orbit algebra は型 $(1,4,6,4,1)$ の
+二次 AS 正則環の正則正規二次元による商である。
+noetherian 性、exceptionality、Serre 関手、ampleness、full section algebra の
+同定は定理~\ref{thm:integral-elliptic-inverse} の証明の同じ各段落を使える。
+
+残る rank 条件について、命題~\ref{prop:all-quadric-even-domain} により
+even part $B$ は domain である。$\beta$ は幾何商への写像を保つため、
+その核の次数四の正則正規元の列は $h\in B_2$ に降りる。
+$\qgr(B/(h))\simeq\coh C$ であり、各次数移動は可逆層に対応する。
+被約な曲線 $C$ 上の可逆層は有限長でない。
+よって $h$ の冪による $\pi B$ の下降列の隣接商は有限長でなく、
+$\pi B$ は Gabriel--Krull の第一段階に属さない。
+他方、任意の非零斉次右イデアルはある $fB\simeq B(-\deg f)$ を含む。
+命題~\ref{prop:sklyanin-h2} と同じ Hilbert 多項式の議論により、
+余商は第一段階に属する。
+従って $\pi B$ は rank one torsion-free である。
+\end{proof}
+
+\subsection{一箇所で接する二つの (1,1) 成分}
+
+今度は二つの $(1,1)$ 成分が一箇所で交わり、その交点長が二とする。
+各成分の座標を $z,w$ とし、交点を $\infty$ とする。
+$u=1/z$, $v=1/w$ により交点での長さ二の部分スキームを
+$k[u]/(u^2)=k[v]/(v^2)$ と同一視できる。
+多重次数 $(1,1)$ の直線束は一意的な $t\in k$ により、
+正規化上の二つの $\mathcal O(1)$ を交点の長さ二の近傍で
+$1+t u$ を掛けて貼り合わせた $L(t)$ と書ける。
+その切断基底は
+\[
+ x=(1,1),\qquad y=(z,w-t)
+\]
+である。実際、$u y_+=1$, $v y_-=1-tv$ なので
+$u y_+=(1+t u)v y_-$ が $u^2$ を法として成り立つ。
+テンソル積のパラメータは加法に従う。
+
+従って $L_i=L(t_i)$ と書くと helix は
+\[
+ t_{2n}=a+nd,\qquad t_{2n+1}=a+q+nd
+\]
+となる。許容条件は $q\ne0$, $d\ne0$, $q\ne d$ である。
+二つの線型系の像は対角線と相異なる平行移動のグラフであり、
+それらは $\infty$ で交点長二を持つ。
+従ってパラメータの異なる隣接二束は $C$ を $(2,2)$ 因子として埋め込む。
+
+\begin{proposition}[接する二成分での二周期の平方]
+\label{prop:tacnode-period-square}
+上の全許容四つ組に対し
+\[
+ \sigma(z)=z+\frac d2,\qquad \sigma(w)=w-\frac d2
+\]
+で定めた $\sigma$ は $\sigma^*L_i\simeq L_{i+2}$ を満たす。
+それによる二周期同型 $\beta$ は、四次テンソルの代表を適切に選ぶと
+$\beta^2=\theta$ を厳密に満たす。
+\end{proposition}
+
+\begin{proof}
+両成分の平行移動は $u^2,v^2$ を法として $u,v$ を固定するため、
+$C$ の自己同型へ降りる。切断空間上では
+\[
+ \beta_i(x_i)=x_{i+2},\qquad
+ \beta_i(y_i)=y_{i+2}+\frac d2x_{i+2}.
+\]
+固定した $i$ について $q=t_{i+1}-t_i$, $d=t_{i+2}-t_i$ と書く。
+次の添字では $q$ は $d-q$ となり、$d$ は変わらない。
+三次関係は
+\begin{align*}
+ F_i&=(q-d)yxx+dxyx-qxxy,\\
+ G_i&=-qyyx+dyxy+(q-d)xyy
+       +d(d-q)(yxx-xyx).
+\end{align*}
+各成分上で $y_j=z$ および $y_j=w-t_j$ と置くと両式は恒等的に零である。
+これらは独立で、許容四つ組の三次関係空間は二次元だから、$R_i$ の基底となる。
+直接係数を比較すると
+\[
+ w_i=x_iG_{i+1}+y_iF_{i+1}
+    =F_i(y_{i+3}+dx_{i+3})+G_ix_{i+3}
+\]
+となる。これは共通部分 $W_i$ の非零元である。
+同じ表示を $i+1$ に用いると、周期回転は
+\[
+ \theta_i(x_i)=x_{i+4},\qquad
+ \theta_i(y_i)=y_{i+4}+d x_{i+4}
+\]
+を与える。これは $\beta_i^2$ と一致する。
+\end{proof}
+
+\begin{theorem}[被約な $(1,1)+(1,1)$ 境界の全逆構成]
+\label{thm:reduced-11-11-inverse}
+$C$ が相異なる二つの $(1,1)$ 成分の被約な和である場合、
+交点が二点であっても一つの接点であっても、全許容四つ組について
+$(\qgr D(U),\pi e_0D(U))\in\HH$ が成り立つ。
+\end{theorem}
+
+\begin{proof}
+横断的な場合は定理~\ref{thm:i2-inverse}、接する場合は
+命題~\ref{prop:tacnode-period-square} と
+命題~\ref{prop:all-quadric-even-domain} を用いてその証明を適用する。
+二つの $(1,1)$ 成分の交点長は二なので、この二場合で全てである。
 \end{proof}

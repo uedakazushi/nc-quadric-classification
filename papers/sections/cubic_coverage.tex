@@ -2,6 +2,63 @@
 \section{cubic 型による被覆の限界}
 \label{sec:cubic-coverage}
 
+\begin{lemma}[AS 正則表示の対象上の反 Serre 移動]
+\label{lem:cubic-serre-objects}
+$D$ を右 noetherian な三次三次元 AS 正則 $\mathbb Z$-algebra とし、
+$\qgr D$ が $\HH$ 対象の圏 $\cC$ と exact 同値であるとする。
+$Q_i\in\cC$ を $\pi e_iD$ の像、$t=S^{-1}[2]$ と書くと、
+\[
+ tQ_i\simeq Q_{i-4},\qquad
+ \Hom(Q_j,Q_i)\simeq D_{ij}
+\]
+が成り立つ。後者は合成と両立する標準同型である。
+ここでは $D$ の ASF$^+$ 正則性を仮定しない。
+\end{lemma}
+\begin{proof}
+cubic 型の極小分解により $D$ は右 Ext-finite である。
+\cite[Theorem 4.8]{MN2025} により $D$ は ASF 正則であり、
+\cite[Proposition 4.11(2)]{MN2025} の (ASF2) に関する主張から
+\begin{equation}
+ \Ext^r_{\cC}(Q_j,Q_i)\simeq
+ \begin{cases}
+ D_{ij}&r=0,\\
+ D_{j,i-4}^{*}&r=2,\\
+ 0&r\ne0,2
+ \end{cases}
+ \label{eq:cubic-tail-ext}
+\end{equation}
+を得る。次数零の同型は標準写像により誘導されるので合成を保つ。
+三次正則性の文献上の定義と、この AS 正則性の対応は
+\cite[arXiv v3, Definition 4.1.1, Corollary 5.5.9]{VdB2011}
+および \cite[Section 6.2]{MN2025} の冒頭による。
+
+固定した $i$ に対し
+\[
+ (Q_{i-1},Q_{i-2},Q_{i-3},Q_{i-4})
+\]
+は full strong exceptional collection である。
+実際、strong 性と半直交性は \eqref{eq:cubic-tail-ext} から従い、
+完全性は AS 正則性だけを仮定する \cite[Lemma 6.10]{MN2025} による。
+従って $\mathcal A_i=\langle Q_{i-1},Q_{i-2},Q_{i-3}\rangle$ と置くと、
+\[
+ {}^{\perp}\mathcal A_i=\langle Q_{i-4}\rangle\simeq D^b(\mathrm{mod}\,k).
+\]
+これは full exceptional collection の半直交分解であり、
+左辺では全 cohomological shift に対する直交を取る。
+
+$X=tQ_i$ と置く。$SX=Q_i[2]$ なので既存の Serre 双対性から
+\[
+ \Ext^r(X,Q_j)\simeq\Ext^{2-r}(Q_j,Q_i)^*
+ \quad(r\in\mathbb Z).
+\]
+$i-4\le j\le i-1$ について \eqref{eq:cubic-tail-ext} を使うと、
+右辺は $j=i-4$, $r=0$ の場合にだけ $k$、その他では零である。
+従って $X\in{}^{\perp}\mathcal A_i$ であり、
+$\Ext^r(X,Q_{i-4})=\delta_{r0}k$ となる。
+$\langle Q_{i-4}\rangle\simeq D^b(\mathrm{mod}\,k)$ ではこの条件が
+$X\simeq Q_{i-4}$ を特徴付ける。
+\end{proof}
+
 \begin{theorem}[cubic 表示の判定]
 \label{thm:cubic-coverage}
 $\HH$ 対象 $(\cC,\OO)$ の任意の適合表示から
@@ -20,12 +77,10 @@ $\mathbb Z$-algebra $D$ に対する $(\qgr D,\pi e_0D)$ と pointed exact 同�
 十分性は定理~\ref{thm:normal-helix} と系~\ref{cor:normal-cubic-defect}
 から従う。必要性のため、cubic 表示があると仮定し、
 $\pi e_iD$ の像を $Q_i\in\cC$ と書く。
-cubic 正則性と \cite[Proposition 4.11, Theorem 6.8]{MN2025} により、
-$tQ_i\simeq Q_{i-4}$、および
-$\Hom(Q_j,Q_i)=D_{ij}$ である。
-この適用に必要な正則性と周期性は \cite[arXiv v3, Definition 4.1.1,
-Proposition 5.6.1]{VdB2011} と
-\cite[Theorem 4.19]{MN2025} から従う。
+補題~\ref{lem:cubic-serre-objects} により
+$tQ_i\simeq Q_{i-4}$ および $\Hom(Q_j,Q_i)=D_{ij}$ である。
+また \cite[arXiv v3, Proposition 5.6.1]{VdB2011} により
+$D$ は二周期である。
 
 $M=Q_{-2}$ と置く。二添字移動は $D$ の自己同型として実現されるので
 $Q_{-2}$ は $\OO=Q_0$ の exact 自己同値による像である。
