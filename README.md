@@ -2,13 +2,13 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.3、数学原稿v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.3、数学原稿v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
 [CLOUD_CODEX.md](CLOUD_CODEX.md) に、環境の準備・起動用の依頼文・検証・保存手順を置く。最終目標は研究方針F1–F6を満たす**全H2のpointed exact同値分類**。一補題やcommitで止めず、現行資料を更新しながら次の未解決課題へ進む。
 
-現在の第一着手はT1：`t=S⁻¹[2]` の反Serre切断環による同値判定の還元である。根を忘れた内在的不変量を作る候補で、まだ主原稿の定理ではない。その後、既存分類との標識を追跡した比較、全対象の被覆、具体的データ上の同値判定へ進む。**完全分類は未完成。**
+反Serre切断環により全H2のpointed exact同値判定を確立した。中心 standard 表示では既存の比較で構造対象と平方根の像を明示した。次は正規切断の全被覆とSklyanin pencil内の同値判定を詰める。**完全分類は未完成。**
 
 ## 対象
 
@@ -29,7 +29,9 @@ $$
 - 同じ可換quadricに対する非可換Ore ambientの族を構成。quotient mapを固定した被覆は非一意。
 - 滑らかな射影整曲面として実現される可換対象は`P1×P1`に限られ、rank-one torsion-free exceptional標識は線束。条件に適合する平方根関手はpointed exact共役を除いて4種類であるが、O-marked対象は一つ。
 - 複素数体上、無限位数の平行移動を持つ通常の楕円型Sklyanin pencilの滑らかな成員がH2に入ることを確認。`z=τ`の成員は、単純対象の自己Euler特性2により`coh(P1×P1)`とexact同値でない。
-- 全非可換H2の分類、既存elliptic quadruple/tensor分類からの全被覆、平方根・ambientの忘却、相対モジュライは未完成。
+- 反Serre切断環は9生成・56次元の二次関係を持ち、その関係空間の線形同値がpointed exact同値の必要十分条件となる。
+- 滑らかな無限位数Sklyanin型では、rulingを適切に選ぶとcubic Z-algebraへの比較が得られる。反Serre環の中心から楕円商を回復でき、全て可換quadricとpointed exact非同値である。
+- 固定ambientのZhang twistによる中心化は、適合根を保てない場合がある。全領域の許容条件・全被覆と相対モジュライは未完成。
 
 既知結果、初期原稿内の証明、計算、外部監査・形式証明・新規性確認を区別する。正確な範囲は [研究ノート](notes/research_notes.md) と [文献比較](notes/literature.md) を参照。
 

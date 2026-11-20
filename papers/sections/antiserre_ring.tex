@@ -1,0 +1,125 @@
+% !TEX root = ../nc-quadric-classification.tex
+\section{反 Serre 環による同値判定}
+\label{sec:antiserre-ring}
+
+\begin{theorem}[反 Serre 環と pointed exact 同値]
+\label{thm:antiserre-invariant}
+$(\cC,\OO)\in\HH$ に対し、$t=S^{-1}[2]$ の heart 上の代表を用い、
+\[
+ R(\cC,\OO)=\bigoplus_{n\ge0}\Hom(\OO,t^n\OO)
+\]
+に定義~\ref{def:ample} の右規約で積を入れる。
+その次数付き同型類は代表、Serre 関手および平方根の選択に依存しない。
+任意の適合根の切断環 $B$ に対し $R\simeq B^{(2)}$ であり、
+$(\cC,\OO,t)\simeq(\qgr R,\pi R,(1))$ となる。
+二つの $\HH$ 対象が pointed exact 同値であるための必要十分条件は
+反 Serre 環が次数付き $k$-代数として同型となることである。
+\end{theorem}
+
+\begin{proof}
+$t$ は導来圏上で $s^2$ と自然同型なので heart を保ち、制限は exact 自己同値である。
+heart から導来圏への埋込みの充満忠実性により自然同型を制限できる。
+一般に $F:\cC\to\cC'$ が $k$-線形同値で、
+$u:F\OO\xrightarrow{\sim}\OO'$ および $\eta:Ft\xrightarrow{\sim}t'F$
+があるとする。反復同型 $\eta_n:Ft^n\to t'^nF$ を
+$\eta_0=1$、$\eta_{n+1,X}=t'(\eta_{n,X})\circ\eta_{t^nX}$ で定める。
+この定義から
+$\eta_{m+n,X}=t'^n(\eta_{m,X})\circ\eta_{n,t^mX}$ となる。
+次数 $m$ で
+\[
+ a\longmapsto t'^m(u)\circ\eta_{m,\OO}\circ F(a)\circ u^{-1}
+\]
+と置くと、$\eta_n$ の自然性を $a:\OO\to t^m\OO$ に適用して
+積 $t^n(a)\circ b$ と整合することが分かる。
+$F$ の充満忠実性により各次数で線形同型である。
+
+この構成を恒等関手と自然同型 $s^2\simeq t$ に適用すると
+$R\simeq B^{(2)}$ を得る。Serre 関手の一意性から代表の変更にも同じ構成を使える。
+pointed exact 同値 $F$ の導来同値は Serre 関手を自然同型まで移すので、
+heart 上で $Ft\simeq t'F$ となり、必要性が従う。
+
+$B^{(2)}$ は左右 noetherian である。実際、右イデアル $I$ を $B$ へ拡張すると
+$IB\cap B^{(2)}=I$ である。積の偶数成分への射影は $I$ の元との左乗法と可換であり、
+$IB$ の任意の元の偶数成分は $I$ に入る。左イデアルにも同様に適用できる。
+補題~\ref{lem:ample-square-from-generation} により $(\OO,t)$ は ample なので、
+\cite[Theorem 2.6(2)]{MU2021} が主張した triple の再構成を与える。
+逆に次数付き環同型は右加群の移送を通じて $\pi R$ を保つ $\qgr$ の exact 同値を与える。
+\end{proof}
+
+\begin{proposition}[反 Serre 環の二次関係]
+\label{prop:antiserre-quadratic}
+$B=T(V)/(K)$ を適合根に対応する切断環とし、
+$U=B_2=(V\otimes V)/K$ と書く。このとき
+\[
+ R\simeq T(U)/(J),\qquad
+ J=\ker(U\otimes U\to B_4)
+   =\operatorname{im}(V\otimes K\otimes V\to U\otimes U).
+\]
+$\dim U=9$、$\dim J=56$ であり、
+$\dim R_n=(2n+1)^2$、$H_R(z)=(1+6z+z^2)/(1-z)^3$ となる。
+\end{proposition}
+\begin{proof}
+$T(V)^{(2)}=T(V\otimes V)$ と同一視する。
+次数 $2n$ での関係イデアルは $2n$ 文字の中に $K$ を一箇所挿入した部分空間の和である。
+$K$ の前の文字数が偶数なら $K$ は二文字一組の内部にあり、一次関係 $K$ が生成する。
+奇数なら挿入箇所の前後に各一文字を加えて二組を取り出せるため、
+$V\otimes K\otimes V$ が生成する。最初の関係で割った後は $T(U)$ となり、
+残る生成関係は次数二の上記の像である。
+命題~\ref{prop:reconstruction} より $\dim B_2=9$、$\dim B_4=25$ だから
+$\dim J=81-25=56$。同じ Hilbert 関数の偶数項を足せば級数を得る。
+\end{proof}
+
+従って二つの適合表示から計算した関係空間 $J,J'$ について、
+$(h\otimes h)J=J'$ を満たす線形同型 $h:U\to U'$ の存在が
+pointed exact 同値の必要十分条件である。
+この判定では $B$ の基底や被覆を保持する必要はない。
+全同値類を列挙するためには、どの関係空間の軌道が実現されるかをさらに決定する必要がある。
+
+\subsection{可換 quadric と楕円型 Sklyanin pencil の判別}
+
+可換 quadric の四つの根が与える反 Serre 環はいずれも
+$\bigoplus_{n\ge0} H^0(Q,\OO_Q(2n,2n))$ である。
+これは $t=-\otimes\OO_Q(2,2)$ から直接従い、
+命題~\ref{prop:ore-ambient-family} の被覆の選択にも依存しない。
+
+\begin{proposition}[滑らかな Sklyanin 例の内在的な楕円商]
+\label{prop:sklyanin-antiserre-center}
+命題~\ref{prop:sklyanin-h2} の範囲で $R=B_z^{(2)}$ とする。
+pencil の残りの中心二次元 $h$ の像を $R_1$ で考えると
+$Z(R)=k[h]$ であり、$R/(h)=(B_z/(h))^{(2)}$ となる。
+特にこの範囲の全対象は可換 quadric と pointed exact 同値でなく、
+商に現れる楕円曲線は pointed exact 同値類から回復できる。
+\end{proposition}
+\begin{proof}
+$h$ は中心正則である。偶数成分を取ると主張した商が得られる。
+既知の楕円商表示（命題~\ref{prop:sklyanin-h2} の証明）により
+この商は楕円曲線の twisted homogeneous coordinate ring の反対環である。
+偶数次だけを取ると、平行移動 $\sigma$ は $\sigma^2$ に、
+次数一の線束 $L$ は $L\otimes\sigma^*L$ に替わる。
+$\sigma^2$ は無限位数で、この線束の次数は八である。
+
+このような楕円環の中心は $k$ である。実際、線束を関数体 $k(E)$ 上で
+自明化すると、環は skew polynomial ring $k(E)[u;\sigma^2]$ に入る
+（反対環を取っても中心は同じである）。
+中心に非零斉次元 $f u^m$（$m>0$）があれば、
+次数一の任意の二つの非零切断 $a u,b u$ との可換性を割り算して
+$(\sigma^2)^m(a/b)=a/b$ を得る。
+次数八の線束は very ample なので、その比で関数体が生成される。
+これは $\sigma^2$ の無限位数性に反する。
+従って $R/(h)$ の中心は $k$ であり、$R$ の中心にある任意の正次数斉次元は
+$h$ の倍数となる。$h$ が中心正則なので割った元も中心にあり、次数による帰納法で
+$Z(R)=k[h]$ が従う。
+
+従って $R$ は非可換であり、定理~\ref{thm:antiserre-invariant} と
+可換 quadric の $R$ の表示から、pointed exact 非同値である。
+さらに $Z(R)_1$ の生成するイデアルで割る操作は内在的であり、
+商の非零斉次元を逆にした次数付き商環の零次体は $k(E)$ となる。
+実際、商は skew Laurent 環（またはその反対環）に埋め込まれ、
+次数一切断の比が $k(E)$ を生成する。
+斉次 Ore 局所化は noetherian domain 性から存在する。
+斉次元同士の共通倍数は非零な斉次成分を取って選べる。
+従って $k(E)$ は同型不変であり、その滑らかな射影模型 $E$ も同型まで定まる。
+さらに商環の次数一の可逆元による零次体上の共役作用は、
+零次体が可換なので元の選択に依存しない。この作用は上の表示で
+$\sigma^2$（反対環の規約ではその逆）に対応する。
+\end{proof}

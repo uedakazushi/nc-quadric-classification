@@ -1,0 +1,167 @@
+% !TEX root = ../nc-quadric-classification.tex
+\section{中心 standard 表示との比較}
+\label{sec:standard-comparison}
+
+\begin{proposition}[標識とシフトの移送]
+\label{prop:standard-pointed}
+$B=A/(g)$ を $\HH$ 対象の適合表示とし、$g$ は中心元、
+$B$ は \cite{MN2025} の意味で standard とする。
+$X$ を二つの ruling に対応する極大 Cohen--Macaulay 加群の一つとする。
+すると \cite[Theorem 6.13]{MN2025} の三次元 AS 正則
+$\mathbb Z$-algebra $D$（Gorenstein parameter 四）への同値 $F$ は
+\[
+ F(\pi B(i))\simeq\pi e_{-2i}D,\qquad
+ F(\pi X(i))\simeq\pi e_{-2i-1}D
+\]
+を満たす。特に構造対象は $\pi e_0D$ に移る。
+$D$ の二添字の周期移動から得る自己同値 $T$ に対して
+$F(1)\simeq TF$ であり、$T^2\simeq S_D^{-1}[2]$ となる。
+\end{proposition}
+
+\begin{proof}
+命題~\ref{prop:reconstruction} により $B$ は domain であり、
+命題~\ref{prop:gldim-two} により $\qgr B$ の大域次元は有限である。
+よって中心性と standard 性を加えれば
+\cite[arXiv v1, Theorem 6.13]{MN2025} の仮定を満たす。
+その構成は \cite[Theorem 5.16]{MU2021} の列
+$E_{2i}=\pi B(i)$、$E_{2i+1}=\pi X(i)$ を用いる。
+$D_{ij}=\Hom(E_{-j},E_{-i})$ の積は合成であり、
+$j$ 成分が $\Hom(E_{-j},M)$ の右 $D$-加群を tails に送ると $F$ になる
+\cite[arXiv v1, Definition 5.1, Theorems 5.8 and 6.4]{MN2025}。
+従って $F(E_{-i})\simeq\pi e_iD$ である。
+
+シフト $s=(1)$ は $s E_i\simeq E_{i+2}$ を与える。
+これらの同型を使い、射に $s$ を作用させることで
+$\alpha:D_{ij}\xrightarrow{\sim}D_{i-2,j-2}$ を得る。
+右加群上で $(TN)_j=N_{j+2}$ とし、作用を $\alpha^{-1}$ で引き戻す。
+写像
+\[
+ \Hom(E_{-j-2},M)\longrightarrow\Hom(E_{-j},sM),
+ \qquad f\longmapsto s(f)
+\]
+（始域には上記の同一視を用いる）は合成と可換であり、
+$TF\simeq Fs$ を与える。導来同値による Serre 関手の移送から
+$T^2\simeq S_D^{-1}[2]$ が従う。
+
+具体的に $p\le q$ に対して $B_{q-p}\to D_{2p,2q}$ は
+$a\mapsto s^{-q}(a)$ であり、$p\le q\le r$ での合成は
+$s^{-q}(a)\circ s^{-r}(b)=s^{-r}(s^{r-q}(a)\circ b)$ となる。
+従って偶数添字部分は右規約の $\check B$ であり、
+$R_n$ は $D_{0,4n}$ に対応する。積は周期移動と合成で与えられる。
+\end{proof}
+
+命題~\ref{prop:sklyanin-h2} の滑らかな Sklyanin 例では
+\cite[Theorem 5.5]{MUW2026} が standard 性を保証するので、
+命題~\ref{prop:standard-pointed} を適用できる。
+両方の ruling を別々に用いて得た比較は、どちらも同じ $(\qgr B,\pi B)$ を回復する。
+逆向きに任意の cubic $\mathbb Z$-algebra から出発した場合、
+二添字の周期移動だけから $T^2\simeq S_D^{-1}[2]$ を結論することはできない。
+
+\input{sections/cubic_ruling}
+
+\subsection{制約を保つ Zhang twist}
+
+\begin{lemma}[次数付き自己同型が tails 上で自明となる条件]
+\label{lem:scalar-tails}
+適合切断環 $B$ の次数付き自己同型 $\sigma$ に対し、
+右作用の引き戻し $(-)_\sigma$ が $\qgr B$ 上で恒等と自然同型となるための
+必要十分条件は、ある $\lambda\in k^\times$ に対して
+$\sigma(b)=\lambda^d b$ ($b\in B_d$) となることである。
+この次数スカラーを $\xi_\lambda$ と書く。
+\end{lemma}
+\begin{proof}
+$\pi B(i)_\sigma\to\pi B(i)$ の基準同型は $b\mapsto\sigma^{-1}(b)$ である。
+$\End(\pi B(i))=k$ より、恒等への任意の自然同型の $\pi B(i)$ 成分は
+この基準同型の非零定数 $c_i$ 倍である。
+$a\in B_1$ の左乗法 $\pi B(i)\to\pi B(i+1)$ に対する自然性から
+$c_{i+1}\sigma^{-1}(a)=c_i a$ を得る。ここで左乗法は
+$B_1\to\Hom(\pi B(i),\pi B(i+1))$ で単射である。
+実際、非零 $a$ の左乗法は domain 性により非零の十分高い次数においても単射であり、
+tails で零射にならない。一次生成により $\sigma$ は次数スカラーとなる。
+逆に $\sigma=\xi_\lambda$ なら次数 $j$ の成分に $\lambda^{-j}$ を掛けることで
+$M_\sigma\to M$ の自然同型が得られる。
+\end{proof}
+
+\begin{proposition}[固定表示での中心化と平方根性]
+\label{prop:central-twist-obstruction}
+適合表示 $B=A/(g)$ に対し、$ag=g\nu(a)$ で正規化自己同型 $\nu$ を定める。
+$\sigma\in\Aut_{mathrm{gr}}(A)$ が $\sigma(g)=c g$ を満たすとし、
+積 $a\star b=a\sigma^{\deg a}(b)$ の Zhang twist を取る。
+twist 後に $g$ が中心元となる条件は $\sigma^2=\xi_c\nu$ である。
+一方 twist 後の商の次数シフトが反 Serre の平方根となる条件は
+$\bar\sigma^2$ が $B$ の次数スカラーとなることである。
+従って両条件が成り立つなら $\nu=\xi_1$ または $\nu=\xi_{-1}$ である。
+\end{proposition}
+\begin{proof}
+$g$ の正則正規性が $\nu$ の存在と一意性を与える。
+$a\in A_d$ に対し $a\star g=c^d g\nu(a)$、$g\star a=g\sigma^2(a)$
+なので、中心性の判定は左から $g$ を消去すればよい。
+これは $g$ の直線を保つ場合の
+\cite[Remark 4.4]{MUW2026} の正規化公式である。
+
+右加群の twist 同値 $F$ は作用を、次数 $j$ の $m$ に対して
+$m\star b=m\bar\sigma^j(b)$ と変える。これは regular module を保つ。
+$F(M)(1)$ の作用では $M(1)$ における次数 $j$ の元に元の次数 $j+1$ を使うので、
+$F(M)(1)\simeq F((M(1))_{\bar\sigma})$ となる。
+従って新しいシフトを $\qgr B$ に戻すと $s(-)_{\bar\sigma}$ であり、
+その二乗は $s^2(-)_{\bar\sigma^2}$ となる。
+$s^2\simeq S^{-1}[2]$ と Serre 関手の移送、および
+補題~\ref{lem:scalar-tails} により平方根性の条件を得る。
+両条件下で $\nu$ は $B$ 上で次数スカラー、従って
+$A_1=B_1$ と一次生成性から $A$ 上でも次数スカラーである。
+正規化の定義から $\nu(g)=g$ なので、その一次のスカラーは $\pm1$ である。
+\end{proof}
+
+\begin{example}
+\label{ex:ore-central-twist}
+命題~\ref{prop:ore-ambient-family} の $A_a$ では
+$\nu(x)=a^{-1}x$、$\nu(y)=ay$、$\nu(u)=u$、$\nu(v)=v$ である。
+$b^2=a$ を満たす $b$ を選べば
+$(x,y,u,v)\mapsto (b^{-1}x,by,u,v)$ は関係と $g$ を保ち、
+二乗が $\nu$ なので中心化できる。しかし $a\ne1$ なら $\nu$ は次数スカラーでなく、
+この表示からはどの次数付き自己同型 twist でも
+中心性とシフトの平方根性を同時には得られない。
+同じ標識対象には $a=1$ の中心表示が存在するため、
+中心表示の存在一般に対する反例は与えない。
+\end{example}
+
+\subsection{二添字周期が平方根となる条件}
+
+\begin{proposition}
+\label{prop:periodicity-gauge}
+$D$ を命題~\ref{prop:standard-pointed} で構成した $\mathbb Z$-algebra とする。
+より一般に \cite[Theorem 6.8]{MN2025} の coherent $\mathrm{ASF}^{++}$ 正則性の仮定を満たす
+次元三・Gorenstein parameter 四の連結な $D$ で、
+$D_{ij}\to\Hom(\pi e_jD,\pi e_iD)$ が同型である場合にも以下は成立する。
+Nakayama 同型を $\nu:D_{ij}\to D_{i-4,j-4}$ とする。
+二添字移動 $\alpha:D_{ij}\to D_{i-2,j-2}$ から得る自己同値 $T_\alpha$ が
+$T_\alpha^2\simeq S_D^{-1}[2]$ を満たす必要十分条件は、
+ある $c_i\in k^\times$ に対し
+\[
+ (\nu^{-1}\alpha^2)(a)=c_i c_j^{-1}a\qquad (a\in D_{ij})
+\]
+となることである。
+また $\pi e_0D$ の反 Serre 環は次数 $n$ で $D_{-4n,0}$、
+積は $a*b=\nu^n(a)b$ ($a\in D_{-4m,0}$、$b\in D_{-4n,0}$) となる。
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:standard-pointed} の $D$ に対する仮定は
+\cite[Theorems 6.4, 6.13 and Proposition 4.11]{MN2025} による。
+\cite[Theorem 6.8]{MN2025} の右規約では
+$S_D^{-1}[2](N)=N(4)_{\nu^{-1}}$ であり、
+$\pi e_iD$ を $\pi e_{i-4}D$ に移し、左乗法の射には $\nu$ を作用させる。
+$T_\alpha^2$ は同じ添字移動を行い、射には $\alpha^2$ を作用させる。
+二つの関手の比は添字を固定する自己同型 $\delta=\nu^{-1}\alpha^2$ による
+作用の引き戻しである。
+$\End(\pi e_iD)=k$ と標準 Hom 同型の下で
+各左乗法に自然性を適用すると、$\delta$ が成分ごとに $c_i c_j^{-1}$ 倍となる。
+逆にこの形なら、作用を $\delta^{-1}$ で引き戻した右加群から元の加群への同型は
+次数 $j$ の成分で $c_j^{-1}$ を掛けて与えられる。従って tails 上でも自然同型を得る。
+
+積は $S_D^{-1}[2]$ を $n$ 回左乗法に作用させてから合成するので、
+表示された公式となる。次数 $n$ ごとに $\nu^{-n}$ で移すと
+$D_{0,4n}$ 上で積は $a*b=a\nu^{-m}(b)$ となる。
+特に適合表示が存在する場合、二次関係空間は
+$D_{0,4}\otimes D_{0,4}\to D_{0,8}$、$a\otimes b\mapsto a\nu^{-1}(b)$
+の核である。
+\end{proof}

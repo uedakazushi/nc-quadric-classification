@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.3（数学原稿v0.2）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.3（数学原稿v0.3）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -74,7 +74,7 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 
 `z=τ`では既知の単純対象Fの自己Euler特性は2。coh(Q)の全単純対象は閉点の層で自己Euler特性0なのでexact非同値性を得る。この証明は全てのsmooth pencil成員の非同値性や一般体への拡張を含めない。Sklyanin環とfat pointの構成自体を本研究の新成果とはしない。
 
-`MUW2026` Theorem5.5で滑らかな中心Sklyanin quadricはstandardと判明しており、ここではSVdBの一般standard性の誤りに依存しない。`MN2025` Theorem6.13のcubic AS正則Z-algebraへの比較は適用可能。次の未完了点は、その比較における指定OとSerre根の追跡である。
+`MUW2026` Theorem5.5で滑らかな中心Sklyanin quadricはstandardと判明しており、ここではSVdBの一般standard性の誤りに依存しない。`MN2025` Theorem6.13の三次元AS正則Z-algebraへの比較は適用可能。指定OとSerre根は prop:standard-pointed で追跡した。Sklyanin型の二つのrulingのうち、cubicとなる条件は prop:sklyanin-cubic-ruling を参照。
 
 ## Serre・standard性・既存分類の残る障害
 
@@ -84,10 +84,10 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 - `MUW2026`のambient仮定(*)はAuslander正則性とCohen–Macaulay性。本定義のAS14641に自動的に含まれるとは確認していない。Sklyanin型・ここで使うskew polynomial型では適用できる。
 - `MU2021`のnon-standard例は可換quadricのZhang twistでもある。一つの表示に対するspinorのsyzygy挙動を、そのままO-markedカテゴリーの不変量としない。
 - graded同型、root付き同値、O-marked exact同値、derived同値は異なる。同じderived categoryというだけで本研究の対象を同一視しない。
-- 内在的な反Serre環によるpointed exact同値判定は研究方針T1の証明候補である。選択独立性・AZ再構成・両方向を証明するまで既成の定理として使わない。同値類の判別から自己同値群・相対moduliの同定までは自動的に進めない。
+- 全H2のpointed exact同値を反Serre環の二次関係空間で判定できる。主原稿 thm:antiserre-invariant、prop:antiserre-quadratic。実現軌道の全被覆は未解決。Sklyanin型では中心が一次元で生成され、その商から楕円曲線を回復する。
 - GIT商のorbit closure・S-equivalenceとpointed exact同値は同じとは限らない。既存moduliの点をそのままH2の同値類と読む前に、実際の同値作用と許容領域を確認する。
 
-central化の具体的な着手点は`MUW2026` Remark4.4。同文献の規約 `af=fν(a)` と `σ(f)=f` では、Zhang twist後の正規化自己同型は `ρ=σ⁻²ν` となる。この固定ambientでcentral化するには `σ²=ν` のliftを探す。ここでνは正規元のnormalizerであり、前述のNakayama自己同型とは別の記号として扱う。解の存在、本研究のSerre平方根との両立は未証明。Zhang同値はOを保つが一般にはshiftを保たないため、graded Morita同値だけで指定された根の比較を済ませない。
+固定ambientでの自己同型Zhang twistによる中心化条件と、誘導シフトの平方根性の条件は異なる。両立にはnormalizerが次数スカラーであることが必要で、Ore族では失敗する。主原稿 prop:central-twist-obstruction、ex:ore-central-twist。別ambientによる中心表示の存在は未解決である。
 
 ## 検証範囲と再現手順
 
@@ -112,5 +112,7 @@ python3 scripts/check.py build
 repoルートの`latexmk`と、VS Codeレシピ相当の`latexmk -norc -r <repo>/.latexmkrc <repo>/papers/nc-quadric-classification.tex`を実行した。最終出力は18頁のPDFとSyncTeX。全18頁を画像表示し、可換認識・楕円型の核心頁は拡大表示でも確認した。最終LaTeXログに警告・未解決参照・未解決引用・欠字・はみ出しはない。TeXラベルと引用キー、input/root、ローカルMarkdown参照、VS Code設定JSONも確認した。VS Code UIの操作確認、外部査読、形式証明、包括的な新規性確認は未実施。
 
 運用v0.3の検証では、Python 3.12.14／SymPy 1.14.0で`check.py all`のsources・math・buildが全てPASS。buildは最新の既存出力の再利用を含み、運用整備に伴うPDFの再目視は行っていない。bootstrapの通常・`--with-tex`経路は既存依存を再利用した。隔離コピーでPython・TeX不足、壊れた既存venvの保持、未定義TeXラベルを検査し、PARTIAL・SKIP終了2・FAIL終了1と、独立した段階の継続を確認した。pip・aptによる新規導入の成否、Cloud環境の作成・Publish・新規task起動はこの確認に含まれない。運用整備を新しい数学的証明として数えない。
+
+数学原稿v0.3では sources・math・build がPASS。LuaLaTeXでは既設の日本語TeXパッケージと書込可能な一時キャッシュを指定して、23頁のPDFとSyncTeXを再生成し、最終ログを確認した。新しい頁の表示点検、VS Code UI、形式証明は未実施。T1、標識の比較、rulingの階数と固定ambientの中心化条件は証明を別担当と点検した。Sklyanin型の楕円商と二添字周期の判定は原稿内の証明を推論と規約について点検した。
 
 GitHubのgit読取が利用できても書込認証は別に必要である。GitHub connectorによる通常コミットも許可された保存手段として使用できる。research-hubの更新は対象repo保存後に最新READMEを読み、並行更新を保持して行う。

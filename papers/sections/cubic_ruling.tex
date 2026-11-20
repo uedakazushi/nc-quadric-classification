@@ -1,0 +1,104 @@
+% !TeX root = ../nc-quadric-classification.tex
+
+\subsection{三次正則表示を与える ruling}
+\label{subsec:cubic-ruling}
+
+\begin{proposition}[三次型の判定]
+\label{prop:cubic-ruling}
+命題~\ref{prop:standard-pointed} の中央標準表示 $B$ に対し、
+二つの次数零生成 MCM 加群の一方 $X$ を選び、他方を $Y$ とする。
+$E_{2n}=\pi B(n)$、$E_{2n+1}=\pi X(n)$ から作る
+$D_{ij}=\Hom(E_{-j},E_{-i})$ は、次の積が同型である場合にちょうど
+Van den Bergh の三次三次元 AS 正則 $\mathbb Z$-algebra となる。
+\[
+ \mu_X:\Hom(\pi X,\pi B(1))\otimes_k\Hom(\pi B,\pi X)
+       \longrightarrow \Hom(\pi B,\pi B(1)),\qquad h\otimes x\longmapsto h\circ x .
+\]
+\end{proposition}
+
+\begin{proof}
+必要性は \cite[arXiv v3, \S 5.1, (Q2)--(Q3)]{VdB2011} の
+距離二の積に関する記述から従う。三つの Hom はそれぞれ次元 $2,2,4$ である
+\cite[Lemmas 5.6, 5.9]{MU2021}。
+
+十分性を示す。$X(n)$ を標的とする射について、
+\[
+ 0\longrightarrow Y(n-1)\longrightarrow B(n)^2\longrightarrow X(n)
+   \longrightarrow0
+\]
+を使う \cite[Proposition 5.5(1)]{MU2021}。
+tails で $E_j$（$j<2n+1$）から $\Hom$ を取ると、
+$\Ext^1(E_j,\pi Y(n-1))=0$ なので、各射は
+直前の $\pi B(n)$ を経由する射の和となる。消滅は
+\cite[Lemmas 5.6(8), 5.9(2), 5.11]{MU2021} による。
+$B$ の一次生成性と $\mu_X$ の全射性から、$\pi B(a)$ から $\pi B(b)$
+（$b>a$）への射は、隣接する helix 対象を介した合成で張られる。
+残る $\pi X(a)$ から $\pi B(b)$（$b>a$）への射に対しては、もう一方の列
+$0\to X(-1)\to B^2\to Y\to0$ を $\Hom_B(-,B)$ で双対化する。
+$Y$ は MCM なので $B^2\to\Hom_B(X,B)(1)$ は全射となる。
+ここで次数付き内部 Hom を用いる。従って $X$ から $B$ への内部 Hom は、
+次数一の二つの射で左 $B$-加群として生成され、その左作用は
+$B$ のシフト間の射との合成である。tails との Hom の比較
+\cite[Lemma 5.9(1)]{MU2021} を使えば、全ての射が隣接する helix 対象を
+介した合成で張られる。
+
+よって $D$ は隣接成分で生成され、各隣接成分は二次元である。
+右単純加群の極小分解の初めは $P_{i+1}^2\to P_i$ であり、
+左単純加群でも同じ隣接生成性を使える。
+Mori--Nyman の AS 条件で大域次元 $3$、Gorenstein parameter $4$ なので、
+$P_i=e_iD$ とすると右単純加群の最後の項は $P_{i+4}$ である。
+双対複体が添字 $i+4$ の左単純加群の極小分解になることから、
+残る項は $P_{i+3}^2$ である
+\cite[arXiv v1, Theorem 4.5 and Remark 4.6]{MN2025}。
+$D$ の成分次元は \cite[Lemmas 5.6, 5.9]{MU2021} の
+Hilbert 級数から添字の差に関して二次で抑えられる。
+これは \cite[arXiv v3, Definitions 4.1.1--4.1.2]{VdB2011} の三次正則型を与える。
+\end{proof}
+
+\begin{proposition}[Sklyanin pencil での判定]
+\label{prop:sklyanin-cubic-ruling}
+命題~\ref{prop:sklyanin-h2} の滑らかな対象に対し、
+ruling のラベルを $w\in\{z,-z-2\tau\}$ と書く。
+この ruling に属する線加群を $\operatorname{coker}(X(-1)\to B_z)$
+と表示して得られる $X$ に対し、
+\[
+ \rank\mu_X=
+ \begin{cases}
+  4 & w\notin E[2],\\
+  3 & w\in E[2].
+ \end{cases}
+\]
+従って少なくとも一方の選択で、標識と平方根を保持した三次正則表示が得られる。
+\end{proposition}
+
+\begin{proof}
+命題~\ref{prop:standard-pointed} の仮定は
+\cite[Lemma 5.1 and Theorem 5.5]{MUW2026} と命題~\ref{prop:sklyanin-h2} により満たされる。
+右加群での ruling と secant の対応には
+\cite[Lemma 3.20, Proposition 3.21 and Lemmas 5.3--5.4]{MUW2026} を用いる。
+ここでは補題~\ref{lem:sklyanin-opposite} の次数付き同型で
+$B_z$ を通常の右加群表示 $T/(g_z)$ に移してから $w$ を読む。
+固定した ruling は、$p+q=w$ を満たす secant $pq$ の線加群の族である。
+実際、同じラベルの二つの線加群は Lemma 5.4 の列で共通の補線を取り、
+異なるラベルの二つには同じ補題の列を直接適用できる。
+標準性と Proposition 3.21 により、同じラベルと同じ ruling が対応する。
+
+異なる一般の二つの secant $pq,p'q'$ を取り、四点は相異なるとする。
+対応する線加群を定める $X(-1)\to B_z$ の二射は
+二次元の Hom 空間の異なる一次元部分空間を与えるので、基底をなす。
+それぞれの次数一像 $W,W'\subset (B_z)_1$ は secant 上で消える
+線型形式の二次元空間であり、$\operatorname{im}\mu_X=W+W'$ である。
+$W\cap W'\ne0$ は四点が同一平面上にあることと同値である。
+楕円曲線の次数四の埋込みでは、四点が同一平面上にあることと
+$p+q+p'+q'=0$ が同値である \cite[\S 10.1]{SVdB2013}。
+従って共通部分が非零となるのは $2w=0$ の場合であり、
+二つの secant は相異なるため、その場合の共通部分は一次元となる。
+両ラベルが $E[2]$ に属すると $4\tau=0$ となり、
+$\tau$ の無限位数に反する。
+命題~\ref{prop:cubic-ruling} と命題~\ref{prop:standard-pointed} から結論を得る。
+\end{proof}
+
+$z=0$ は $\tau$ が無限位数のとき滑らかな例であり、
+$w=0$ の選択では距離二の積が階数三、$w=-2\tau$ の選択では階数四である。
+同じ構造対象と平方根から出発しても、どちらの ruling を取るかで
+三次正則型の判定結果が変わる。
