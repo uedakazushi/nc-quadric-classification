@@ -1,0 +1,369 @@
+% !TeX root = ../nc-quadric-classification.tex
+\section{standard 型の帰着と非 cubic 部分の完全分類}
+\label{sec:standard-rank-three}
+
+\begin{proposition}[standard 二型の両側零積]
+\label{prop:standard-mutual-zero-matrices}
+$B=A/(g)$ を $\HH$ の適合表示とし、二つの非自由 MCM 型を $X,Y$ とする。
+$\Omega X(1)\simeq Y$, $\Omega Y(1)\simeq X$ の場合、
+両者の極小線形表示行列 $M,N\in M_2(B_1)$ は
+\[
+ MN=NM=0
+\]
+を同時に満たすように取れる。
+両合成階数が三なら、両行列の成分間の唯一の一次関係の係数行列は可逆である。
+\end{proposition}
+\begin{proof}
+評価列を
+\[
+ 0\longrightarrow Y(-1)\xrightarrow{i_Y}F_X
+ \xrightarrow{q_X}X\longrightarrow0,
+ \qquad
+ 0\longrightarrow X(-1)\xrightarrow{i_X}F_Y
+ \xrightarrow{q_Y}Y\longrightarrow0
+\]
+と取る。ここで $F_X,F_Y$ はそれぞれ二元の次数零自由加群である。
+$M=i_Yq_Y(-1):F_Y(-1)\to F_X$、
+$N=i_Xq_X(-1):F_X(-1)\to F_Y$ と定めれば、
+$q_Xi_Y=q_Yi_X=0$ より、適切なシフトを付した二つの積は零である。
+また $q_X,q_Y$ は全射なので、これらの余核はそれぞれ $X,Y$ である。
+従ってこれは極小線形表示を与える。
+
+仮に $M$ の唯一の一次関係の係数行列の階数が一なら、
+$M'=PMQ$、$N'=Q^{-1}NP^{-1}$ と同時に基底変更し、
+$M'_{11}=0$ とできる。この変更後も $M'N'=N'M'=0$ である。
+$M'=\left(\begin{smallmatrix}0&a\\b&c\end{smallmatrix}\right)$
+と書くと、三次元の成分空間より $a\ne0$ である。
+$M'N'=0$ の第一行と domain 性から $N'$ の第二行が零となり、
+$N'$ の成分空間が三次元であることに反する。
+$N$ の関係も同様である。
+\end{proof}
+
+\begin{remark}[正規切断での持上げの範囲]
+$A_1=B_1$ による一意な持上げを同じ $M,N$ で表す。
+各行列は線形行列分解の最初の行列であるから $A$ 上で単射であり、
+\[
+ MN=gC_X,\qquad NM=gC_Y,\qquad C_X,C_Y\in\mathrm{GL}_2(k)
+\]
+となる。定数行列が特異なら積が非零の定数列を殺すので単射性に反する。
+$ag=g\nu(a)$ の規約で結合則を使うと
+\[
+ \nu(M)=C_XMC_Y^{-1},\qquad
+ \nu(N)=C_YNC_X^{-1}
+\]
+を得る。一般の正規切断で二つの定数行列を同時に恒等へ直したとは主張しない。
+以下の二次関係の議論は $B$ 上の両側零積のみを使うため、この障害を受けない。
+\end{remark}
+
+\begin{proposition}[standard 型の支持が異なる場合]
+\label{prop:standard-crossed-common-plane}
+命題~\ref{prop:standard-mutual-zero-matrices} の両階数三の場合で、
+$U=U(M)$、$U'=U(N)$ が異なるとする。
+$R_{12}$ を形式的な $MN$ の四成分の張る二次関係空間、
+$R_{21}$ を $NM$ の同様の空間と置く。
+このとき $W=U\cap U'$ は二次元であり、
+\[
+ \dim R_{12}=\dim R_{21}=4,\qquad
+ R_{12}\cap R_{21}=K\cap W^{\otimes2}=kr,\qquad
+ \operatorname{rank}r=2,\qquad K=R_{12}+R_{21}
+\]
+が成り立つ。$W$ が生成する部分環は全次数で量子平面または Jordan 平面である。
+\end{proposition}
+\begin{proof}
+前命題の非退化な一次関係と行列乗法の全射性
+（補題~\ref{lem:w-matrix-products}）により、各 $R$ は四次元である。
+また $R_{12}\subset U\otimes U'$、$R_{21}\subset U'\otimes U$ であり、
+両テンソル空間の交わりは $W^{\otimes2}$ である。
+$\dim K=7$ と、domain の二次元部分空間には高々一つの非退化二次関係しか
+存在しないことから、主張する次元と等式が従う。
+全次数の単射は命題~\ref{prop:w-embedded-plane} による。
+\end{proof}
+
+\begin{lemma}[一つの支持を持つ零積行列は conic の twist を与える]
+\label{lem:standard-one-support-conic}
+$B$ を連結次数付き domain とし、$M,N\in M_2(B_1)$ が $MN=0$ を満たすとする。
+$U(M)=U(N)=U$ が三次元であると仮定する。
+このとき $U$ が生成する部分環は可換滑らか conic の
+次数付き自己同型による Zhang twist である。
+また $M,N$ は定数行列による左右変換で互いに移り、
+$B$ 上の次数付き余核は同型である。
+この命題には $NM=0$ も $\dim B_1=4$ も必要ない。
+\end{lemma}
+\begin{proof}
+まず、各行列の四成分の唯一の一次関係は可逆な係数行列を持つ。
+実際、$M$ の関係の係数行列の階数が一なら、
+$M\mapsto PMQ$, $N\mapsto Q^{-1}NP^{-1}$ の同時基底変更で
+$M_{11}=0$ にできる。
+$M=\left(\begin{smallmatrix}0&a\\b&c\end{smallmatrix}\right)$ と書くと
+$a\ne0$ であり、$MN=0$ の第一行と domain 性から $N$ の第二行が零となる。
+これは $N$ の成分空間が三次元であることに反する。
+$N$ の関係の場合は $N_{11}=0$ とし、積の第一列を使えば同様である。
+
+それぞれの係数行列空間の trace-annihilator を用いて
+\[
+ M=M_0G,\qquad N=N_0H,\qquad G,H\in\mathrm{GL}_2(k),
+ \qquad \operatorname{tr}M_0=\operatorname{tr}N_0=0
+\]
+と書く。
+$M_0=\left(\begin{smallmatrix}a&b\\c&-a\end{smallmatrix}\right)$ とすると
+$a,b,c$ は $U$ の基底である。
+$\psi:U\to U$ を
+\[
+ \psi(M_0)=G N_0G^{-1}
+\]
+で定める。右辺も三次元の traceless 成分空間を持つので、$\psi$ は可逆である。
+形式的テンソル積として
+\[
+ MN=M_0\psi(M_0)GH
+\]
+であるから、$MN$ の四成分の張る関係空間は
+\[
+ R=(1\otimes\psi)K_0,\qquad
+ K_0=\bigwedge^2U+kq,\qquad q=a^2+bc
+\]
+である。ここでは $q$ を対称テンソルとして代表させている。
+$K_0$ は可換 conic $C_0=k[a,b,c]/(a^2+bc)$ の四次元二次関係空間である。
+
+$\sigma=\psi^{-1}\in\mathrm{GL}(U)$ を三変数可換多項式環
+$P=\operatorname{Sym}(U)$ の次数付き自己同型へ延長する。
+この段階では $\sigma$ が $q$ を保つとは仮定しない。
+$A=P^\sigma$ と置けば、$A$ の三つの二次交換関係は
+$(1\otimes\psi)\bigwedge^2U$ であるから、$A\to B$ の準同型がある。
+underlying vector space $A_2=P_2$ の中で、残る関係はちょうど元 $q$ である。
+domain の三次元部分空間の二次関係は高々四次元である
+（補題~\ref{lem:w-equal-support} の Segre 次元論）。
+従ってこの準同型の次数二の核はちょうど $kq$ である。
+
+$\sigma$ が conic を保つことを、domain 性から導く。
+任意の非零 $u\in U$ に対し、$A=P^\sigma$ の積の規約から
+\[
+ u\star q=u\,\sigma(q)
+ =\sigma(q)\,u
+ =\sigma(q)\star\sigma^{-2}(u).
+\]
+中央の積は underlying 可換多項式環 $P$ の積である。
+$B$ では $q=0$ であり、$\sigma^{-2}(u)$ の像は非零の次数一元である。
+従って domain 性により $\sigma(q)$ も零に写る。
+次数二の核が $kq$ なので
+\[
+ \sigma(q)\in k^\times q
+\]
+となる。よって $\sigma$ は $C_0$ の自己同型に降り、
+$A/(q)=C_0^\sigma$ から $B$ への写像を得る。
+
+この写像は次数一で単射であり、全次数でも単射である。
+実際、$C_0=k[s,t]^{(2)}$ の全斉次元は代数閉性により次数一元の積に分解でき、
+$C_0^\sigma$ でも因子に $\sigma$ の逆冪を掛ければ同様である。
+核の非零斉次元は $B$ における非零一次元の零積を与えてしまう。
+従って $k\langle U\rangle=C_0^\sigma$ である。
+
+最後に余核を比較する。
+$MN=0$ を可換環 $C_0$ の積へ戻すと $M\sigma(N)=0$ である。
+$M$ も $\sigma(N)$ も非零なので、商体上では両方の階数が一であり、
+従って $\det M=\det N=0$ となる。
+$a=st,b=s^2,c=-t^2$ と書くと、両行列は二変数二次式からなる階数一行列であり、
+成分は全ての二次式の三次元空間を張る。
+一意分解性により各行列は一次式の二成分列と一次式の二成分行の積に分解する。
+それぞれの成分は独立である。
+具体的には、成分の共通因子は $s^2,t^2$ を張ることから定数であり、
+列または行の次数が零なら成分空間が高々二次元になるので、両方の次数は一である。
+従って各行列は
+\[
+ \begin{pmatrix}st&s^2\\-t^2&-st\end{pmatrix}
+ =\begin{pmatrix}s\\-t\end{pmatrix}\begin{pmatrix}t&s\end{pmatrix}
+\]
+と定数行列による左右変換で同値である。
+この一次元の等式は $B$ 上でも成立し、余核の同型を与える。
+\end{proof}
+
+\begin{corollary}[standard 二型の支持も異なる]
+\label{cor:standard-supports-distinct}
+$\HH$ の standard 適合表示で、二つの MCM 型の合成階数がともに三なら、
+それらの支持超平面は異なる。
+\end{corollary}
+\begin{proof}
+評価列から得た行列 $M,N$ は $MN=NM=0$ を満たし、
+余核は異なる二つの MCM 型である。
+同じ支持を持てば補題~\ref{lem:standard-one-support-conic} が余核の同型を与えて矛盾する。
+\end{proof}
+
+\begin{theorem}[standard 型の異なる支持の同時 untwist]
+\label{thm:standard-distinct-untwist}
+$B=T(V)/(K)$ を noetherian 連結二次次数付き domain とし、
+$\dim_kB_n=(n+1)^2$ とする。
+三次元の異なる成分空間 $U,U'\subset V$ を持つ行列
+$M,N\in M_2(B_1)$ が $MN=NM=0$ を満たすと仮定する。
+このとき $B$ の次数付き自己同型 $\tau$ が存在して、
+$B^\tau$ は中央二重平方環
+\[
+ k[u,v]\langle z_1,z_2\rangle/
+ (z_1^2-f_1(u,v),\ z_2^2-f_2(u,v))
+\]
+と同型になる。ここで $u,v$ は中央、$f_1,f_2$ は非退化二次形式である。
+従って standard な両階数三表示で支持が異なる場合も、
+pointed exact 同値の意味で定理~\ref{thm:ore-anticommuting-central} の族に帰着する。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:standard-mutual-zero-matrices} と同じ議論で、
+両係数行列空間の trace-annihilator は可逆である。
+それらを $kD_M,kD_N$ と書く。
+$H^2=D_MD_N$ となる可逆行列 $H$ を取り、$Q=HD_N^{-1}$ と置けば
+$QD_NQ=D_M$ である。
+$M\mapsto MQ$, $N\mapsto Q^{-1}N$ により、二つの trace-annihilator を一致させる。
+この同時変更は両側零積も各支持も保つ。
+
+共通の一次関係から、成分の対応が線形同型
+$\varphi:U\to U'$、$\varphi(M)=N$ を定める。
+共通の係数 hyperplane の trace-annihilator を $kD$ とし、
+$G=D^{-1}$ と置くと
+\[
+ M=M_0G,\qquad
+ M_0=\begin{pmatrix}a&b\\c&-a\end{pmatrix},\qquad
+ C_0=k[a,b,c]/(a^2+bc)
+\]
+と書ける。
+$\sigma_0(M_0)=G^{-1}M_0G$ は $C_0$ の次数付き自己同型を定める。
+$K_0\subset U^{\otimes2}$ を $C_0$ の二次関係空間とする。
+形式的な $M^2$ の四成分は
+$R_0=(1\otimes\sigma_0^{-1})K_0$ を張る。
+これは $C_0^{\sigma_0}$ における
+$M\star M=M\sigma_0(M)=M_0^2G^2=0$ と、
+四成分の独立性から従う。
+ここで $M^2=0$ を $B$ で仮定しているわけではない。
+
+従って両側零積の二次関係は
+\begin{equation}
+ R_{12}=(1\otimes\varphi\sigma_0^{-1})K_0,
+ \qquad
+ R_{21}=(\varphi\otimes\sigma_0^{-1})K_0.
+ \label{eq:standard-cross-conic-kernels}
+\end{equation}
+$W=U\cap U'$ と置くと、命題~\ref{prop:standard-crossed-common-plane} の次元論より
+$K=R_{12}+R_{21}$ および
+$R_{12}\cap R_{21}=K\cap W^{\otimes2}=kr$ であり、$r$ は階数二である。
+$Q_W=k\langle W\rangle$ は全次数で量子平面または Jordan 平面である。
+
+可換 conic を $C_0=k[s,t]^{(2)}$ と書く。
+まず $W\subset U=k[s,t]_2$ が基点を持たないことを示す。
+仮に $W=h\,k[s,t]_1$ とする。
+$r$ を \eqref{eq:standard-cross-conic-kernels} の第一の kernel で解釈すると、
+\[
+ \ker\left(W\otimes\sigma_0\varphi^{-1}(W)
+       \longrightarrow k[s,t]_4\right)\ne0
+\]
+である。$r$ の階数二より第二因子の空間も
+$\sigma_0\varphi^{-1}(W)=h'k[s,t]_1$ と書ける。
+実際、$hs\,A+ht\,B=0$ は $A=t\ell$, $B=-s\ell$ を与え、
+$A,B$ は独立なので第二空間全体が $\ell k[s,t]_1$ となる。
+
+$\sigma_0\varphi^{-1}(q)=hh'$ となる非零元 $q\in W$ を取る。
+任意の $z\in U=k[s,t]_2$ について
+\[
+ z\cdot\sigma_0\varphi^{-1}(q)=hh'z
+ \in W\cdot\sigma_0\varphi^{-1}(W)
+\]
+である。
+第一の $R_{12}$ は写像
+$U\otimes U'\to k[s,t]_4$, $z\otimes z'\mapsto z\sigma_0\varphi^{-1}(z')$
+の全 kernel なので、$B$ において $zq\in(Q_W)_2$ となる。
+従って $U\subset\operatorname{Frac}Q_W$ である。
+
+第二の $R_{21}$ において、$W$ の二つの像は
+$\varphi^{-1}(W)$ と $\sigma_0(W)$ であり、両方とも共通一次因子を持つ pencil である。
+同じ議論を、写像
+$U'\otimes U\to k[s,t]_4$, $z'\otimes z\mapsto\varphi^{-1}(z')\sigma_0(z)$
+へ適用すると、適切な非零 $q'\in W$ に対し
+$z'q'\in(Q_W)_2$ ($z'\in U'$) を得る。
+よって $U'\subset\operatorname{Frac}Q_W$ でもある。
+これらの分数は全て次数一である。
+
+以上の分数を $B$ の商斜体の中で取ると、$B$ は $Q_W$ の斉次商環の
+次数付き部分環になる。
+量子平面および Jordan 平面の斉次商環は
+$k(\mathbb P^1)[T,T^{-1};\psi]$、$\psi\in\operatorname{Aut}\mathbb P^1$
+の形である。
+補題~\ref{lem:w-rational-growth} より $\dim_kB_n=O(n)$ となり、
+仮定した $(n+1)^2$ と矛盾する。
+従って $W$ は基点を持たない。
+
+$W$ の互いに素な二元を $w_1,w_2$ とする。
+$r$ が与える $w_1A+w_2B=0$ に一意分解性を使うと、
+$A=\lambda w_2$, $B=-\lambda w_1$ となる。
+従って
+\[
+ \sigma_0\varphi^{-1}(W)=W.
+\]
+特に $\varphi^{-1}(W)$ も基点を持たず、
+第二の $R_{21}$ に同じ議論を適用して
+$\sigma_0(W)=\varphi^{-1}(W)$ を得る。
+そこで
+\[
+ T_1=\varphi\sigma_0^{-1}:U\longrightarrow U',\qquad
+ T_2=\sigma_0^{-1}\varphi^{-1}:U'\longrightarrow U
+\]
+はいずれも $W$ を保つ。
+$K_1=(\varphi\otimes\varphi)K_0$ と書けば
+$R_{12}=(1\otimes T_1)K_0$、$R_{21}=(1\otimes T_2)K_1$ である。
+共通の関係は
+\[
+ kr=(1\otimes T_1)(\bigwedge^2W)
+    =(1\otimes T_2)(\bigwedge^2W)
+\]
+なので $T_1|_W$ と $T_2|_W$ は比例する。
+$N$ を定数倍すると $\varphi$ が同じ倍率で変わり、
+$T_1,T_2$ は互いに逆の倍率で変わる。
+基礎体上で平方根を取ることにより、両制限を一致させられる。
+
+$\tau|_U=T_1$, $\tau|_{U'}=T_2$ として $V$ 上へ貼り合わせる。
+これは $U/W$ と $U'/W$ を交換する可逆線形写像である。
+$\sigma_0$ が $C_0$ の自己同型であることを使うと
+\begin{align*}
+ (\tau\otimes\tau)R_{12}
+  &=(\varphi\sigma_0^{-1}\otimes\sigma_0^{-2})K_0
+    =(\varphi\otimes\sigma_0^{-1})K_0=R_{21},\\
+ (\tau\otimes\tau)R_{21}
+  &=(\sigma_0^{-1}\otimes\varphi\sigma_0^{-2})K_0
+    =(1\otimes\varphi\sigma_0^{-1})K_0=R_{12}.
+\end{align*}
+従って $\tau$ は $B$ の次数付き自己同型である。
+
+$B^\tau$ の二次関係は $(1\otimes\tau^{-1})K$ なので、
+\[
+ (1\otimes\tau^{-1})R_{12}=K_0,\qquad
+ (1\otimes\tau^{-1})R_{21}=K_1
+\]
+となる。よって二つの支持の部分環は同時に可換 conic になり、$W$ は全環で中央となる。
+定理~\ref{thm:w-simultaneous-untwist} の証明末尾の平方完成の議論により、
+非退化な $f_1,f_2$ を持つ中央二重平方表示を得る。
+Zhang 同値は構造対象を保つ。
+\end{proof}
+
+\begin{theorem}[非 cubic 部分の完全分類]
+\label{thm:noncubic-classification}
+$\HH$ のうち pointed cubic 表示を持たない対象の pointed exact 同値類は、
+$\PP^1$ 上の二つの被約な二点集合の非順序対を、
+$\PGL_2$ の同時作用で割った集合と一対一に対応する。
+具体的には、二対が一致する一点、一点を共有する一点、
+および四点が異なる場合の
+\[
+ \lambda\in k\setminus\{0,1\},\qquad \lambda\sim\lambda^{-1}
+\]
+からなる。各対象は、二点集合を零点とする非退化二次形式 $f_1,f_2$ を用いた
+中央二重平方環の pointed 圏として実現される。
+non-standard な適合表示を持つものは、二対が一致する一点だけである。
+\end{theorem}
+\begin{proof}
+定理~\ref{thm:cubic-coverage} により、cubic 表示を持たないことは
+二つの MCM 型の合成階数がともに三であることと同値である。
+その二型に対する $p=\Omega(1)$ は恒等か交換かのいずれかである。
+恒等の場合は定理~\ref{thm:w-simultaneous-untwist}、交換の場合は
+命題~\ref{prop:standard-mutual-zero-matrices}、
+系~\ref{cor:standard-supports-distinct}、
+定理~\ref{thm:standard-distinct-untwist} により、中央二重平方環へ帰着する。
+これらの Zhang 同値は構造対象を保つ。
+逆の構成、全ての $\HH$ 条件と cubic 被覆不能性、
+二つの根対による必要十分な同値判定は
+定理~\ref{thm:ore-anticommuting-central} とその直後の系による。
+non-standard な適合表示についての最後の主張は
+定理~\ref{thm:w-compatible-singleton} である。
+\end{proof}

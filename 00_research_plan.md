@@ -1,8 +1,8 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv0.7で、完全分類は未完成である。
+2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv0.8で、完全分類は未完成である。
 
-**現在の実行単位はT3（第6節）である。** 真にcubic型で覆えない階数3領域の四周期表示のパラメータ化を優先する。整でない四つ組、Sklyanin pencilの開条件の補集合も調べる。実行環境と起動用の依頼文は [CLOUD_CODEX.md](CLOUD_CODEX.md)、継続・保存・停止の規則は [AGENTS.md](AGENTS.md) を参照する。
+**現在の実行単位はT2（第6節）である。** 非cubic部分の分類はstandard・non-standardを含めて完了した。cubic側の残る三成分以上の被約曲線と、二重(1,1)以外の非被約曲線の周期平方を比較し、全領域の構成と同値判定を統合する。実行・保存の規則は [AGENTS.md](AGENTS.md)、環境は [CLOUD_CODEX.md](CLOUD_CODEX.md) を参照する。
 
 ## 1. 恒常的な研究原則と保存許可
 
@@ -59,13 +59,14 @@ $$
 | 全H2の四周期AS正則Z-algebraによる表現 | 正規切断から標識と反Serre関手を移送。中心性、standard性、(*)は不要 | thm:normal-helix |
 | cubic型の判定と残る場合 | 隣接合成が階数4ならcubic。階数3の場合は偶数添字から距離二の生成元と関係が一つずつ加わる | cor:normal-cubic-defect |
 | 最初の軌道対象とcubic被覆 | 最初のシフト先は内在的。二型とも階数3のH2例はどのcubic表示でも被覆不能 | prop:first-orbit-object、thm:cubic-coverage |
-| 楕円四つ組の逆構成 | 整な場合（節点・尖点を含む）と、二つの(1,1)成分の被約な和（横断二点・一接点）の場合。周期の平方を比較 | thm:integral-elliptic-inverse、thm:reduced-11-11-inverse |
+| 楕円四つ組の逆構成 | 整な場合、全ての被約二成分、および二重既約(1,1)。周期の平方を比較 | thm:integral-elliptic-inverse、thm:all-reduced-two-component-inverse、prop:ribbon-period-square |
 | 全cubic表示のeven partのdomain性 | PresottoのZ-domain定理を適用。曲線の整性・被約性は不要 | prop:all-quadric-even-domain |
 | 固定BのAS被覆の有限判定 | Bが左右noetherianな二次Koszul。四次以下の積と二次双対の次元・Frobenius性を判定 | thm:finite-ambient-test |
 | 固定Sklyanin pencilの有限比較 | Δの単射性の開領域。∂の単射性は無限位数で自動的。厳密有理数一点で非空性を検証 | prop:pencil-finite-candidates、prop:pencil-tangent-generic |
 | 重み付き四周期環からの逆向き還元 | 仮定した単純分解から偶数環のKoszul性を証明。root・domain・非有限長の切断・有限被覆判定に還元 | prop:weighted-even-koszul、prop:weighted-inverse-reduction |
 | 四変数多パラメータskew polynomialの正規二次切断 | 退化込み。非cubic一点と、パラメータ r² を逆元で割ったcubic族 | thm:multiparameter-quadric-classification |
-| non-standardな階数3支持の共通平面 | 支持が異なるとき、共通部分は埋込量子/Jordan平面。二つの平方零行列が全7二次関係を与える。中央性は不要 | thm:w-common-plane、prop:w-embedded-plane |
+| 全非cubic対象の分類 | standard・non-standardとも同時Zhang twistで中央二重平方環へ帰着。二点集合の非順序対で同値判定 | thm:noncubic-classification |
+| non-standard適合表示の制約 | 両階数3の場合、二つの根対が一致する一点だけ | thm:w-compatible-singleton |
 | 交差項を持つOre環の正規切断 | 退化込み。可換類と、二つの二点集合で判定される非cubic族 | prop:ore-normal-quadrics、thm:ore-anticommuting-central |
 
 原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全H2の完全分類や全成分の記述は未完成である。
@@ -83,9 +84,9 @@ $$
 
 | 必須の証明 | 完了とする条件 | 現在の状態 |
 | --- | --- | --- |
-| F1 データと許容条件 | 全パラメータ領域とadmissibilityを具体化し、未知のAS条件や「H2を与える」という循環的条件を残さない | 未完成。quadruple/tensor比較と固定Bの超平面還元が入口 |
-| F2 構成の正しさ | 各許容データからO付き圏を構成し、GK rank・exceptionality・Serre根・AZ・全次数AS表示を確認する | 可換型、整な楕円四つ組、被約な(1,1)二成分、二型階数3の具体例を構成。一般は未完成 |
-| F3 全被覆 | 任意のH2対象から許容データを回復する。追加仮定を使う場合はH2からの導出か、補集合を覆う別の証明を付す | 四周期AS正則Z-algebraへの移送で全H2を覆う。許容幾何データへの全被覆は未完成 |
+| F1 データと許容条件 | 全パラメータ領域とadmissibilityを具体化し、未知のAS条件や「H2を与える」という循環的条件を残さない | 非cubicは二点集合の対。cubicはVdBの許容四つ組を候補とし、残る境界の逆構成を確認中 |
+| F2 構成の正しさ | 各許容データからO付き圏を構成し、GK rank・exceptionality・Serre根・AZ・全次数AS表示を確認する | 可換型、整な四つ組、全被約二成分、二重(1,1)、全非cubicを構成。cubicの残る境界は未完成 |
+| F3 全被覆 | 任意のH2対象から許容データを回復する。追加仮定を使う場合はH2からの導出か、補集合を覆う別の証明を付す | 全H2はcubic型と二点集合の対による非cubic型に分かれる。cubic側の分類は既知の許容四つ組で被覆 |
 | F4 同値判定 | 二つのデータが同じO-marked対象を与える必要十分条件をデータ上で証明する | 適合表示が与えられればGL9軌道で判定可能。幾何データ上での簡約とF1–F3は未完成 |
 | F5 全領域と基礎体 | 一般点だけでなく、退化・特殊自己同型・例外領域を含め、各領域を構成、既収録領域へのpointed exact同値による帰着、またはH2不適合の証明で処理する。k=Cだけの議論には適切な体の拡張・降下を補う | 未完成。smoothは圏の大域次元の条件であり、幾何データの退化を一律には排除しない |
 | F6 証明と再現 | 主定理から入力補題まで依存を閉じ、一次文献の仮定・規約を確認し、必要な厳密計算・組版・独立点検を終えて現行一式とhubを保存する | 初期結果は確認済み。全分類の証明はまだ存在しない |
@@ -120,13 +121,13 @@ VdBのcubic AS-regular Z-algebraのeven partとcanonical quadratic hullに対し
 
 以下は進行順と切替先を兼ねる現行の課題表であり、作業履歴ではない。原稿に統合して閉じた課題は主要到達点へ移し、この節には未解決部分だけを残す。数学的内容が変わらない限り、毎回新しい計画・台帳・日誌を作らない。
 
-### T2：非整の幾何データからの逆向き構成
+### T2：残るcubic幾何データからの逆構成
 
-全許容四つ組のeven partのdomain性はPresottoの一般定理で解決した。逆構成は整な曲線に加え、被約な(1,1)二成分でも、三次関係と四次テンソルから周期の平方を直接比較して完了した。残る核心はその他の被約分解型と非被約曲線の β²=θ（対角型自己同型を除く）である。次は二重の既約(1,1)曲線で、平方零の法線座標を使って切断・三次関係・四次テンソルを比較する。
+全許容四つ組のeven partのdomain性はPresottoの一般定理で解決した。逆構成は整な曲線、全ての被約二成分(2,2)因子、および二重既約(1,1)で完了した。残る核心は三成分・四成分の被約曲線と、gridの片方または両方が重複した非被約因子の β²=θ である。各成分の切断とconductor上の貼合せを明示し、三次関係と四次テンソルの回転を比較する。
 
-### T3：cubicで覆えない四周期表示の許容条件
+### T3：完了した非cubic領域を全分類へ接続
 
-二型とも階数3の具体例はあらゆる標識付きcubic表示を排除する。距離二の階数2テンソル関係と距離三の二関係を明示し、四周期単純分解が完全なら偶数環のKoszul性が従うことを証明した。次の実行単位は、各頂点jの四周期分解に現れる行列の積が零となる方程式を距離二・三の関係で書き、完全性とnoetherian性を保証する条件を得ることである。多パラメータskew polynomial環は全ての正規二次元を分類済み。交差項付きOre環 yx=qxy+h も分類済みで、反交換の中央切断から新しい非cubic族を得た。non-standardで二つの支持超平面が異なれば、その交わりWは量子平面またはJordan平面を全次数で埋め込み、二つの平方零行列が全二次関係を与えると証明した。固定表示内の線形基底変更だけでWを中央化する方針は既存の適合例でも失敗する。次は支持が同一の場合を排除できるか、続いてWのB全体での正規性と二つの三生成部分環の貼り合わせ条件を調べる。standardの場合のtwistされた支持との比較は別途必要である。
+二型とも階数3なら、standardでは両側零積行列、non-standardでは二つの平方零行列を取る。同一支持はdomain性とtwisted conicへの埋込みから排除できる。異なる支持の交わりWを量子/Jordan平面として回復し、基点を持つpencilを成長率の矛盾で排除する。二つのconicを同時にuntwistすると中央二重平方族へ移り、その二つの根対が全同値類を与える。non-standardな適合表示を持つのは根対が一致する一点だけである。証明の正本は `common_plane.tex` と `standard_rank_three.tex`。この領域の追加admissibility探索は不要であり、T2完了後にcubic側との非交差を含む主定理へ統合する。
 
 ### T4：同値判定の開条件の補集合
 

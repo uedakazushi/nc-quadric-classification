@@ -356,7 +356,7 @@ $y_i\mapsto r y_{i+4}$ である。
 差は $D_{ij}$ に $r^{j-i}$ を掛ける対角型自己同型である。
 これは $c_i=r^{-i}$ による $c_i/c_j$ と書ける。
 三次関係の評価と四次テンソルの恒等式は
-\texttt{computations/verify\_reducible\_quadruples.py} により
+\path{computations/verify_reducible_quadruples.py} により
 $a,b,r$ の有理関数体上で再現できる。
 \end{proof}
 
@@ -478,3 +478,247 @@ $(\qgr D(U),\pi e_0D(U))\in\HH$ が成り立つ。
 命題~\ref{prop:all-quadric-even-domain} を用いてその証明を適用する。
 二つの $(1,1)$ 成分の交点長は二なので、この二場合で全てである。
 \end{proof}
+
+\subsection{二重 (1,1) 曲線の逆構成}
+
+\begin{proposition}[二重対角線の直線束と許容四つ組]
+\label{prop:ribbon-quadruples}
+$C=2\Delta\subset\PP^1\times\PP^1$ とし、$\Delta$ を対角線とする。
+$\Delta$ 上で次数一の可逆層に制限される $C$ 上の直線束は
+\[
+ L_t=f_t^*\mathcal O_{\PP^1}(1),\qquad
+ f_t(z,\varepsilon)=z+t\varepsilon,\quad t\in k,
+\]
+と一意的に書ける。ここで $\varepsilon=y-z$, $\varepsilon^2=0$ とする。
+許容四つ組の helix は
+\[
+ t_{2n}=a+nd,\qquad t_{2n+1}=a+q+nd,
+ \qquad qd(q-d)\ne0
+\]
+で尽くされる。
+\end{proposition}
+
+\begin{proof}
+第一射影による分裂を使うと
+$\mathcal O_C=\mathcal O_{\PP^1}\oplus\Omega^1_{\PP^1}$ であり、
+第二項は平方零イデアルである。
+実際、座標変換 $z\mapsto h(z)$ に対して
+$\varepsilon\mapsto h'(z)\varepsilon$ となる。
+従って $f_t$ は大域的に定まる。
+単元の完全列と $H^2(\Omega^1)=0$ より
+\[
+ 0\longrightarrow H^1(\PP^1,\Omega^1)\simeq k
+ \longrightarrow\Pic C\longrightarrow\Pic\PP^1\longrightarrow0.
+\]
+標準二開被覆上で $L_tL_0^{-1}$ の貼り合わせ関数は
+$1+t\varepsilon/z$ であり、$\varepsilon/z$ は
+$H^1(\Omega^1)$ の非零の生成元 $dz/z$ を表す。
+したがって $t\mapsto L_t$ は制限次数一の直線束の全てを一意的に与える。
+
+$f_t,f_{t'}$ の組は、$t\ne t'$ のとき
+\[
+ (z,\varepsilon)\longmapsto
+ (z+t\varepsilon,z+t'\varepsilon)
+\]
+により $C$ と二重対角線との同型を与える。
+差 $(t'-t)\varepsilon$ から冪零方向を回復できるからである。
+$t=t'$ なら冪零方向を失うので閉埋め込みでない。
+helix の束の関係は $t_{i+3}=t_{i+1}+t_{i+2}-t_i$ であり、
+許容条件と合わせると表示が従う。
+\end{proof}
+
+\begin{proposition}[二重対角線での平方根]
+\label{prop:ribbon-period-square}
+命題~\ref{prop:ribbon-quadruples} の全許容四つ組について、
+\[
+ \sigma_d(z,\varepsilon)=(z+d\varepsilon,\varepsilon)
+\]
+による二周期同型 $\beta$ は、四次テンソルの代表を適切に取れば
+$\beta^2=\theta$ を満たす。特に
+$(\qgr D(U),\pi e_0D(U))\in\HH$ である。
+\end{proposition}
+
+\begin{proof}
+$\sigma_c$ は大域的には
+$(f,\alpha)\mapsto(f,\alpha+c\,df)$ と書ける。
+Leibniz 則によりこれは平方零拡大の環自己同型で、逆は $\sigma_{-c}$ である。
+$f_t\circ\sigma_c=f_{t+c}$ より
+$\sigma_d^*L_i\simeq L_{i+2}$ が成り立つ。
+$V_i$ の基底を
+\[
+ x_i=1,\qquad y_i=z+t_i\varepsilon
+\]
+と取ると $\beta_i(x_i)=x_{i+2}$, $\beta_i(y_i)=y_{i+2}$ となる。
+
+固定した $i$ について $q=t_{i+1}-t_i$, $d=t_{i+2}-t_i$ と書けば、
+三次関係空間は
+\[
+ F_i=(q-d)yxx+dxyx-qxxy,\qquad
+ G_i=-qyyx+dyxy+(q-d)xyy
+\]
+で生成される。実際、積を $\varepsilon^2=0$ で展開すると
+$\prod_{j\in I}(z+t_j\varepsilon)
+=z^{|I|}+(\sum_{j\in I}t_j)z^{|I|-1}\varepsilon$ であり、
+$y$ が一個または二個の部分で各一次元の核を生じる。
+$y$ が零個または三個の部分には核がない。
+次の添字では $q$ が $d-q$ へ変わることを使えば
+\[
+ w_i=x_iG_{i+1}+y_iF_{i+1}
+    =G_ix_{i+3}+F_iy_{i+3}
+\]
+が全ての語の係数比較で成り立つ。
+従って $\theta_i(x_i)=x_{i+4}$, $\theta_i(y_i)=y_{i+4}$ であり、
+$\beta_i^2=\theta_i$ である。
+
+残りは定理~\ref{thm:i2-inverse} の証明と同じである。
+domain 性は非被約曲線にも適用できる
+命題~\ref{prop:all-quadric-even-domain} による。
+rank の議論でも $C$ 上の可逆層はその台が一次元なので有限長でなく、
+被約性を必要としない。
+\end{proof}
+
+\begin{remark}
+任意の既約 $(1,1)$ 曲線は二つの因子の自己同型により対角線へ移る。
+したがって上の命題は単に選んだ $2\Delta$ の例に留まらず、
+既約 $(1,1)$ 曲線の二重構造からなる全 $(2,2)$ 因子の許容四つ組を扱う。
+\end{remark}
+
+\subsection{(2,1)+(0,1) と因子交換型}
+
+二つの既約成分の一方が $(2,1)$、他方が $(0,1)$ の場合、
+前者を $C_+$、後者を $C_-$ と書く。
+$L_{2n}$ の多重次数は $(1,1)$、$L_{2n+1}$ の多重次数は $(2,0)$ である。
+各成分は $\PP^1$ で、交点長は二である。
+$(1,2)+(1,0)$ の場合には二つの因子を交換し、添字の偶奇を交換すればよい。
+以下の計算は全ての $i$ で成立するので、始点を変えても指定対象 $\pi P_i$ を保って
+同じ逆構成が得られる。
+
+\subsubsection{二つの横断的な交点}
+
+交点を $0,\infty$ とし、多重次数 $(1,1)$ の束には従前の基底
+$x=(1,1)$, $y=(z,t^{-1}w)$ を用いる。
+多重次数 $(2,0)$ の束には
+\[
+ x=(1+t z^2,1),\qquad y=(z,0)
+\]
+を用いる。これは定数係数を同一視し、最高次係数を $t$ 倍で貼ることで得られる。
+helix のパラメータは
+$t_{2n}=ar^n$, $t_{2n+1}=br^n$ と書け、
+$a,b,r\in k^\times$ と $r\ne1$ が許容条件である。
+隣接二束の多重次数が異なるため、従前の $a\ne b$, $b\ne ar$ は不要である。
+実際、両線型系による像は二次射のグラフとその水平線であり、
+$0,\infty$ で横断的に交わる。
+
+偶数添字で $b=t_{i+1}$ とすると三次関係は
+\[
+ F_i=r xxy-yxx+(1-r)xyx+b(1-r)yyy,
+ \qquad G_i=xyy-yyx.
+\]
+奇数添字で $b=t_i$ とすると
+\[
+ F_i=xxy-yxx+b(r-1)yyy,
+ \qquad G_i=rxyy-yyx+(1-r)yxy.
+\]
+これらは両成分での評価が零であり、各場合で独立な二式なので関係空間を尽くす。
+四次テンソルは、偶数添字では
+\[
+ w_i=x_iG_{i+1}-y_iF_{i+1}
+     =F_i y_{i+3}-G_i x_{i+3},
+\]
+奇数添字では
+\[
+ w_i=x_iG_{i+1}-r^{-1}y_iF_{i+1}
+     =F_i y_{i+3}-r^{-1}G_i x_{i+3}
+\]
+と書ける。従って
+\[
+ \theta_i=
+ \begin{cases}
+ -r^{-1}\operatorname{diag}(1,r),&i\text{ が偶数},\\
+ -\operatorname{diag}(1,r),&i\text{ が奇数}.
+ \end{cases}
+\]
+$u^2=r$ とし $\sigma(z,w)=(uz,u^{-1}w)$ とすれば、両多重次数の束について
+$\beta_i(x_i)=x_{i+2}$, $\beta_i(y_i)=u y_{i+2}$ となる。
+よって $\theta$ と $\beta^2$ の差は、偶奇に応じたスカラーを各隣接空間に掛ける
+対角型自己同型である。
+
+\subsubsection{一つの接点}
+
+接点を $\infty$ とし、長さ二の近傍を $u=v$, $u^2=v^2=0$ で貼る。
+多重次数 $(1,1)$ の束の基底は $x=(1,1)$, $y=(z,w-t)$、
+多重次数 $(2,0)$ の束の基底は
+\[
+ x=(z^2+t z,1),\qquad y=(1,0)
+\]
+である。後者は正規化上の $\mathcal O(2)\sqcup\mathcal O$ を
+$1+t u$ で貼ったものなので、表示は全ての多重次数 $(2,0)$ の直線束を尽くす。
+helix は
+$t_{2n}=a+nd$, $t_{2n+1}=b+nd$ と書け、許容条件は $d\ne0$ のみである。
+隣接二束の像は二次多項式のグラフと無限遠の水平線で、接点の交点長は二である。
+
+偶数添字で $b=t_{i+1}$ とすると
+\[
+ F_i=xxy-yxx+dxxx-bd\,xyy-dyyy,
+ \qquad G_i=xyy-yyx.
+\]
+奇数添字で $b=t_i$ とすると
+\[
+ F_i=xxy-yxx+dyyy,
+ \qquad G_i=xyy-yyx+dyxx-d(b+d)yyy.
+\]
+両成分での評価と独立性により、これらも関係空間の基底である。
+四次テンソルは偶数添字で
+\[
+ w_i=x_iG_{i+1}+(dx_i-y_i)F_{i+1}
+     =F_i y_{i+3}-G_i x_{i+3},
+\]
+奇数添字で
+\[
+ w_i=(x_i-d(b+d)y_i)G_{i+1}-y_iF_{i+1}
+     =F_i y_{i+3}-G_i x_{i+3}.
+\]
+よって、偶数添字では
+\[
+ \theta_i(x_i)=-x_{i+4},\qquad
+ \theta_i(y_i)=-y_{i+4}-dx_{i+4},
+\]
+奇数添字では
+\[
+ \theta_i(x_i)=-x_{i+4}-d(b+d)y_{i+4},\qquad
+ \theta_i(y_i)=-y_{i+4}
+\]
+となる。
+$v=d/2$ とし $\sigma(z,w)=(z+v,w-v)$ とすれば、
+偶数添字における $\beta$ は $x_i\mapsto x_{i+2}$,
+$y_i\mapsto y_{i+2}+v x_{i+2}$ である。
+奇数添字では
+\[
+ \beta_i(x_i)=x_{i+2}+v(b+v)y_{i+2},\qquad
+ \beta_i(y_i)=y_{i+2}.
+\]
+二回作用させる際には $b$ を $b+d$ に更新するので、
+$\beta_i^2(x_i)=x_{i+4}+d(b+d)y_{i+4}$ となる。
+従って全ての $i$ で $\theta_i=-\beta_i^2$ であり、差は対角型自己同型である。
+
+\begin{theorem}[被約な二成分 $(2,2)$ 因子の全逆構成]
+\label{thm:all-reduced-two-component-inverse}
+$C$ がちょうど二つの既約成分を持つ被約な $(2,2)$ 因子なら、
+全ての許容四つ組 $U$ について
+$(\qgr D(U),\pi e_0D(U))\in\HH$ である。
+\end{theorem}
+
+\begin{proof}
+代数閉体上の既約な水平・垂直因子はそれぞれ $(1,0)$ または $(0,1)$ なので、
+可能な二成分の型は
+$(1,1)+(1,1)$、$(2,1)+(0,1)$、$(1,2)+(1,0)$ のみである。
+いずれの成分も滑らかな $\PP^1$ で、その相互交点長は二である。
+従って本節の横断・接点の計算が全ての場合を尽くす。
+それぞれ $\beta^2=\theta$ を対角型まで示したので、
+命題~\ref{prop:all-quadric-even-domain} と標準 hull を用いて
+定理~\ref{thm:i2-inverse} の証明を適用する。
+\end{proof}
+
+以上の三次関係の評価、四次テンソルの両表示、巡回回転と周期の平方は
+\path{computations/verify_reducible_quadruples.py} により
+横断・接点の別と添字の偶奇ごとに記号恒等式として再現できる。

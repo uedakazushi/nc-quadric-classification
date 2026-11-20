@@ -182,7 +182,119 @@ $Q_q$ の $u,v$ は $Q_q$ の中で正規であり、$Q_J$ の $u$ は $Q_J$ の
 Zhang twist や pointed 同値によって別の表示へ移る可能性は残る。
 \end{remark}
 
-\subsection{同一支持と中央化についての障害}
+\subsection{同一支持の排除}
+\label{sec:w-distinct}
+
+\begin{proposition}[一つの支持は可換 conic の twist]
+\label{prop:w-conic-support}
+$B$ は連結次数付き domain とし、$M\in\operatorname{Mat}_2(B_1)$ が
+$M^2=0$ および $\dim U(M)=3$ を満たすとする。
+このとき $U(M)$ が生成する部分環は、可換 conic
+\[
+ C_0=k[a,b,c]/(a^2+bc)
+\]
+の次数付き自己同型による Zhang twist と同型である。
+より詳しく、成分空間の基底と $G\in\operatorname{GL}_2(k)$ を選んで
+\[
+ M=M_0G,\qquad M_0=\begin{pmatrix}a&b\\c&-a\end{pmatrix},\qquad
+ \sigma(M_0)=G^{-1}M_0G
+\]
+と書ける。このとき自然な写像
+\[
+ C_0^\sigma\longrightarrow B
+\]
+は全次数で単射で、その二次関係空間は $M^2$ の四成分に一致する。
+\end{proposition}
+\begin{proof}
+$M$ の係数行列が張る hyperplane の trace-annihilator を $kD$ とする。
+補題~\ref{lem:w-invertible-annihilator} により $D$ は可逆である。
+$\operatorname{tr}(MD)=0$ であるから、$M_0=MD$ および $G=D^{-1}$ とすれば表示を得る。
+$a,b,c$ は独立である。
+$\sigma(M_0)=G^{-1}M_0G$ は traceless 行列の空間の自己同型であり、
+可換な成分について行列式 $-a^2-bc$ を保つ。
+従って $C_0$ の次数付き自己同型を定める。
+$a\star b=a\sigma^{\deg a}(b)$ の積で
+\[
+ M\star M=M\sigma(M)
+   =(M_0G)(G^{-1}M_0G^2)=M_0^2G^2=0
+\]
+となる。
+$C_0^\sigma$ は二次環で、次数一は三次元、次数二は五次元である。
+その二次関係は四次元であり、補題~\ref{lem:w-matrix-products} により
+$M\star M$ の四成分が独立なので、全二次関係を与える。
+従ってこれらを課した普遍二次環は $C_0^\sigma$ に一致し、$B$ への写像を得る。
+
+その単射性を確認する。$a=st$, $b=s^2$, $c=-t^2$ により
+$C_0$ は $k[s,t]$ の偶数 Veronese 環である。
+$C_0$ の次数 $n$ の任意の非零元は二変数の次数 $2n$ の斉次多項式なので、
+代数閉性により一次式 $2n$ 個の積に分解できる。
+二個ずつまとめれば、$C_0$ の次数一元 $n$ 個の積である。
+$f=f_1\cdots f_n$ という分解は $C_0^\sigma$ では
+\[
+ f=f_1\star\sigma^{-1}(f_2)\star\cdots
+        \star\sigma^{-(n-1)}(f_n)
+\]
+を与える。従って twist 後も全斉次元が一次元の積に分解する。
+$C_0^\sigma\to B$ は次数一で単射なので、その核の非零斉次元は
+$B$ に非零一次元の零となる積を与え、domain 性に反する。
+\end{proof}
+
+\begin{proposition}[同じ支持を持つ平方零行列の一意性]
+\label{prop:w-unique-spinor-matrix}
+$B$ を連結次数付き domain とし、$M,N\in\operatorname{Mat}_2(B_1)$ は
+$M^2=N^2=0$ を満たすとする。
+$U(M)=U(N)$ が三次元なら、$N=PMQ$ を満たす $P,Q\in\operatorname{GL}_2(k)$ が存在する。
+特に両行列の $B$ 上の余核は次数付き加群として同型である。
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:w-conic-support} により共通の支持が生成する部分環を
+$C_0^\sigma$ と同定し、$M=M_0G$ と書く。
+単射性により $N^2=0$ はこの部分環でも成立する。
+可換環 $C_0$ の積で書けば $N\sigma(N)=0$ である。
+$N$ および $\sigma(N)$ は非零なので、$C_0$ の商体上で $N$ の階数は一である。
+
+$C_0\subset k[s,t]$ で $a=st,b=s^2,c=-t^2$ と置く。
+$N$ は二変数二次形式を成分とする階数一の行列であり、
+その成分は $k[s,t]_2$ 全体を張る。
+多項式環 $k[s,t]$ の一意分解性により
+\[
+ N=h\,p\,q
+\]
+と書ける。ここで $p$ は二成分の斉次列、$q$ は二成分の斉次行で、
+それぞれの成分の最大公約元は一である。
+具体的には一つの非零列の最大公約元を取り除いて $p$ とし、
+階数一と $p$ の原始性により残る列も $p$ の多項式倍になる。
+その二つの倍数の最大公約元を $h$ として取り除けば、この形を得る。
+成分は $s^2,t^2$ を張るので共通因子を持たず、$h$ は定数である。
+$\deg p+\deg q=2$ であり、一方の次数が零なら行列の成分空間は
+高々二次元になる。従って両方の次数は一である。
+さらに $p$ の二成分も $q$ の二成分も独立でなければ同じ矛盾を生じる。
+よって $p=P_1(s,t)^{\mathsf T}$、$q=(s,t)Q_1$ と書け、
+$P_1,Q_1$ は可逆である。
+一方
+\[
+ M_0=\begin{pmatrix}st&s^2\\-t^2&-st\end{pmatrix}
+     =\begin{pmatrix}s\\-t\end{pmatrix}\begin{pmatrix}t&s\end{pmatrix}
+\]
+なので $N$ は定数行列による左右変換で $M_0$ に、従って $M=M_0G$ に移る。
+この等式は次数一のベクトル空間内の等式であるため、$B$ 上でも成立する。
+\end{proof}
+
+\begin{corollary}[二つの non-standard 型の支持は異なる]
+\label{cor:w-distinct-supports}
+正規二次切断の異なる二つの非自由 MCM 型 $X,Y$ が
+$p(X)=X,p(Y)=Y$ を満たし、双方の合成階数が三なら、
+$U_X\ne U_Y$ である。
+従って定理~\ref{thm:w-common-plane} と命題~\ref{prop:w-embedded-plane} は、
+この場合に支持が異なるという追加仮定なしに適用される。
+\end{corollary}
+\begin{proof}
+既存の評価列から得る $M_X,M_Y$ は $B$ 上で平方零であり、
+それぞれ $X,Y$ の極小線形表示である。
+支持が同じなら命題~\ref{prop:w-unique-spinor-matrix} により余核が同型となる。
+\end{proof}
+
+以下の次元論も独立に使える。
 
 \begin{lemma}[同一支持の場合に確定すること]
 \label{lem:w-equal-support}
@@ -202,11 +314,262 @@ $K\cap U^{\otimes2}$ が五次元以上なら、その射影化の次元は四�
 後半は各 $R_i$ が四次元であることから従う。
 \end{proof}
 
-\paragraph{残る点.}
-$R_1=R_2$ から二つの余核が同型になるかは、この次元論だけでは分からない。
-従って二つの異なる MCM 型で支持が異なるという仮定を外してはいけない。
-次の具体的課題は、三次元の同じ成分空間と同じ四次元の平方関係空間を持つ
-二つの行列について、定数行列による左右同値を証明するか、反例を得ることである。
+\paragraph{次元論だけで足りない点.}
+$R_1=R_2$ という次元論だけでは余核の同型は従わない。
+上では三生成部分環の全次数の同定と二変数二次形式の因子分解を加えて、
+この不足を補っている。
+
+\subsection{共通 pencil の非退化性と同時 untwist}
+\label{sec:w-simultaneous-untwist}
+
+\begin{lemma}[有理曲線の斉次商環における成長]
+\label{lem:w-rational-growth}
+$\varphi\in\operatorname{Aut}\mathbb P^1_k$ とし、
+$D=k(\mathbb P^1)[T,T^{-1};\varphi]$ を $Tf=\varphi(f)T$ の規約で書く。
+$\deg T=1$、$\deg f=0$ とする。
+$D$ の次数一の有限次元部分空間で生成される連結次数付き部分環 $E$ は
+$\dim_k E_n=O(n)$ を満たす。
+\end{lemma}
+\begin{proof}
+$E_1=FT$ と書き、有限次元の有理関数空間 $F$ の全ての元の極を上から抑える
+有効因子 $D_0$ を $\mathbb P^1$ 上で選ぶ。
+$E_n$ の係数は $f_1\varphi(f_2)\cdots\varphi^{n-1}(f_n)$ の線形結合である。
+従ってその極は $D_0$ の $\varphi$ による $n$ 個の移送の和 $D_n$ 以下である。
+各移送は次数を保つので $\deg D_n=n\deg D_0$ であり、
+\[
+ \dim_k E_n\le \dim_k H^0(\mathbb P^1,\mathcal O(D_n))
+ =n\deg D_0+1.
+\]
+最後の等式は有理曲線上の有効因子に対する二変数斉次式の次元計算である。
+\end{proof}
+
+\begin{lemma}[共通 pencil は基点を持たない]
+\label{lem:w-basepoint-free}
+定理~\ref{thm:w-common-plane} の仮定に加えて、$B$ は noetherian domain で
+$\dim_k B_n=(n+1)^2$ とする。
+各 $U_i$ が生成する部分環を命題~\ref{prop:w-conic-support} により
+\[
+ C_i=(k[s_i,t_i]^{(2)})^{\sigma_i}
+\]
+と書く。この可換 conic の次数一を二変数二次形式と同定したとき、
+$W\subset (C_i)_1$ は両方の $i$ で基点を持たない pencil である。
+\end{lemma}
+\begin{proof}
+ここで使う $\sigma_i$ は $k[s_i,t_i]$ の線形自己同型に持ち上がる。
+実際、命題~\ref{prop:w-conic-support} の
+$\sigma(M_0)=G^{-1}M_0G$ において
+$p=(s,-t)^{\mathsf T}$、$J=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$
+と置けば $M_0=pp^{\mathsf T}J$ である。
+$G^{\mathsf T}JG=(\det G)J$ と $\delta^2=\det G$ を用いると、
+$p\mapsto\delta G^{-1}p$ が必要な持上げを与える。
+
+ある $i$ について基点があると仮定し、添字を省略して $R=k[s,t]$ とする。
+二次元の二次形式の空間 $W$ の共通因子は一次式 $h$ であり、
+$W=hR_1$ となる。
+共通部分環 $Q=k\langle W\rangle\subset B$ において
+\[
+ Q_2=W\star W=h\sigma(h)R_2
+\]
+である。ここで左辺の下添字は $B$ の次数を表す。
+$q=h\sigma^{-1}(h)\in W\setminus\{0\}$ を取ると、任意の $z\in(C_i)_1=R_2$ に対し
+\[
+ z\star q=z\sigma(q)=h\sigma(h)z\in Q_2.
+\]
+よって $B$ の商斜体の中で $z=(z\star q)q^{-1}\in\operatorname{Frac}Q$ である。
+ここで $B$ の noetherian domain 性により商斜体が存在する。
+従って $C_i\subset\operatorname{Frac}Q$ となる。
+
+もう一方の部分環を $C_j$ とする。
+$Q\subset C_j$ であるから、上の表示における分子と分母はいずれも $C_j$ に属する。
+従って $B$ の全ての次数一生成元は $C_j$ の斉次商環に属し、
+$B$ はその斉次商環の次数付き部分環になる。
+$C_j$ は可換滑らか conic の自己同型 twist なので、その斉次商環は
+\[
+ k(\mathbb P^1)[T,T^{-1};\varphi],\qquad \varphi\in\operatorname{Aut}\mathbb P^1
+\]
+である。これは可換 conic の次数零の有理関数体が $k(\mathbb P^1)$ であることと、
+twist の作用が conic 上の自己同型であることから従う。
+補題~\ref{lem:w-rational-growth} により $\dim_k B_n=O(n)$ となるが、
+仮定した $(n+1)^2$ と矛盾する。
+\end{proof}
+
+\begin{theorem}[non-standard 型の同時 untwist]
+\label{thm:w-simultaneous-untwist}
+$B=T(V)/(K)$ は noetherian 連結二次次数付き domain で
+\[
+ \dim_k B_n=(n+1)^2\quad(n\ge0)
+\]
+を満たすとする。
+$M_1,M_2\in\operatorname{Mat}_2(B_1)$ が平方零で、成分空間は三次元、
+二つの余核は次数付き加群として同型でないと仮定する。
+このとき $B$ の次数付き自己同型 $\tau$ が存在して、$B^{\tau^{-1}}$ は
+\[
+ k[u,v]\langle z_1,z_2\rangle/
+ (z_1^2-f_1(u,v),\ z_2^2-f_2(u,v))
+\]
+と同型になる。ここで $u,v$ は中央であり、$f_1,f_2$ は非退化二変数二次形式である。
+従って正規二次切断の non-standard 型で二型の合成階数が三の場合は、
+pointed exact 同値の意味で既存の中央二重平方族に含まれる。
+通常の次数シフトを保つ同型や、そのシフトが適合根であることは主張しない。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:w-unique-spinor-matrix} から支持は異なる。
+定理~\ref{thm:w-common-plane} により
+$W=U_1\cap U_2$ は二次元で、$K=R_1+R_2$、
+$K\cap W^{\otimes2}$ は非退化な一次元関係空間である。
+命題~\ref{prop:w-conic-support} によって
+$C_i=k\langle U_i\rangle=C_{0,i}^{\sigma_i}$ と書く。
+補題~\ref{lem:w-basepoint-free} により、$W$ は各 $C_{0,i}$ の二変数二次形式として
+互いに素な二つの元 $w_1,w_2$ で張られる。
+
+まず $\sigma_i(W)=W$ を示す。
+$K\cap W^{\otimes2}$ の非零元を $C_{0,i}$ の可換な積で解釈すると
+\[
+ w_1a+w_2b=0,\qquad a,b\in\sigma_i(W)
+\]
+を得る。$w_1,w_2$ は互いに素な次数二の多項式なので、
+$a=\lambda w_2$, $b=-\lambda w_1$ を満たす $\lambda\in k$ が存在する。
+関係が非零なので $\lambda\ne0$ であり、$\sigma_i(W)=W$ となる。
+
+$T_i=\sigma_i|_W\in\operatorname{GL}(W)$ と書く。
+$W$ が生成する可換部分環は二変数多項式環なので、
+twist 後の唯一の二次関係は
+\[
+ (1\otimes T_i^{-1})(w_1\otimes w_2-w_2\otimes w_1)
+\]
+で生成される。
+この関係の直線は両方の $i$ で同じであり、交代二形式は非退化なので、
+$T_1,T_2$ は非零スカラー倍の違いしかない。
+従って一方の $\sigma_i$ を次数スカラー自己同型との合成で置き換えて、
+$\sigma_1|_W=\sigma_2|_W$ とできる。
+この置換は twist された二次関係空間を変えず、生成元上恒等の二次環同型で
+$C_i$ の表示を保つ。
+
+二つの $\sigma_i$ は共通の $W$ 上で一致するので、$V=U_1+U_2$ の可逆線形写像
+$\tau$ に貼り合わさる。
+各 $\sigma_i$ は $R_i$ を保ち、$K=R_1+R_2$ なので、$\tau$ は $B$ の次数付き自己同型である。
+その逆で twist すると、両方の三生成部分環が同時に可換 conic になる。
+従って $B'=B^{\tau^{-1}}$ では $W$ は全環の中心に入り、
+各 $U_i$ の三元は非退化二次形式 $q_i$ を唯一の可換二次関係として持つ。
+
+最後の中央二重平方表示への帰着を記す。
+$W$ の基底 $u,v$ と $U_i/W$ の持上げ $x_i$ を選び、
+\[
+ q_i=\alpha_i x_i^2+x_i\ell_i(u,v)+h_i(u,v)
+\]
+と書く。$\alpha_i=0$ なら非退化性により $\ell_i\ne0$ である。
+もう一方の $x_j$ との交換子を取ると
+$\ell_i[x_i,x_j]=0$ となり、domain 性により $[x_i,x_j]=0$ を得る。
+しかしこの関係は $(U_1\otimes U_1)+(U_2\otimes U_2)$ に含まれず、
+$B'$ の全二次関係が二つの conic の関係で生成されることに反する。
+従って $\alpha_i\ne0$ であり、平方完成により
+$z_i^2=f_i(u,v)$ を得る。
+$q_i$ が非退化なので $f_i$ も非退化である。
+Zhang 同値は構造対象を保つため、pointed 圏についての結論が従う。
+\end{proof}
+
+\subsection{適合する non-standard 型は一つの pointed 類に限られる}
+\label{sec:w-compatible-singleton}
+
+\begin{theorem}[non-standard な非 cubic 適合表示の分類]
+\label{thm:w-compatible-singleton}
+ $\HH$ の適合表示 $B$ において、二つの MCM 型 $X,Y$ が
+$p(X)=X,p(Y)=Y$ を満たし、両方の合成階数が三であるとする。
+このとき pointed 圏 $(\operatorname{qgr}B,\pi B)$ は
+\[
+ C_{\mathrm{eq}}
+ =k[u,v]\langle z_1,z_2\rangle/
+ (z_1^2-uv,\ z_2^2-uv),\qquad u,v\ \text{は中央}
+\]
+の pointed 圏と同値である。
+この類は命題~\ref{prop:nonstandard-rank-three-example} で実現される。
+従って non-standard な非 cubic 適合表示を持つ  $\HH$ の pointed 類は、ちょうど一つである。
+ここでは適合根や graded presentation 自体の一意性を主張しない。
+\end{theorem}
+\begin{proof}
+定理~\ref{thm:w-simultaneous-untwist} により $B=C^\tau$ と書ける。ここで
+\[
+ C=k[u,v]\langle z_1,z_2\rangle/
+ (z_1^2-f_1(u,v),\ z_2^2-f_2(u,v))
+\]
+であり、$f_i$ は非退化である。
+構成した $\tau$ は $W=\langle u,v\rangle$ と各
+$U_i=W\oplus kz_i$ を個別に保つ。
+$h=\tau|_W$ とし、$\tau(z_i)=\alpha_i z_i+w_i$
+($\alpha_i\ne0$, $w_i\in W$) と書く。
+$\tau(z_i^2)=\tau(f_i)$ を比較すると
+\[
+ \alpha_i^2 f_i+2\alpha_i z_iw_i+w_i^2=f_i(h(u),h(v)).
+\]
+三生成可換 conic の次数二には
+$\operatorname{Sym}^2W\oplus z_iW$ という直和分解があるので、$w_i=0$ となる。
+従って
+\begin{equation}
+ \tau(z_i)=\alpha_i z_i,\qquad
+ f_i(h(u),h(v))=\alpha_i^2f_i(u,v).
+ \label{eq:w-eigenforms}
+\end{equation}
+
+適合根の条件を $C$ に移す。
+右加群の Zhang 同値を
+\[
+ T:\operatorname{gr}C\longrightarrow\operatorname{gr}(C^\tau),\qquad
+ m\star b=m\tau^{\deg m}(b)
+\]
+とする。$M(1)$ で次数 $n$ の元は $M$ では次数 $n+1$ なので、
+右作用を直接比較して
+\[
+ T(M_\tau(1))=T(M)(1)
+\]
+を得る。従って $B$ の通常のシフトは $C$ 側で $(-)_\tau(1)$ となり、
+その二乗は $(-)_{\tau^2}(2)$ である。
+
+一方、中央二重平方族について既に求めた canonical bimodule の計算
+（定理~\ref{thm:ore-anticommuting-central} の証明）から
+\[
+ S^{-1}_{\operatorname{qgr}C}[2]\simeq(-)_\delta(2),\qquad
+ \delta|_W=1,\quad\delta(z_1)=-z_1,\quad\delta(z_2)=-z_2.
+\]
+$B$ のシフトは適合根であるから、Serre 関手を同値で移して
+$(-)_{\tau^2\delta}\simeq\operatorname{Id}$ を得る。
+$\tau$ と $\delta$ は式~\eqref{eq:w-eigenforms} から可換であり、$\delta^2=1$ である。
+
+この自己同型は次数スカラーでなければならない。
+この結論には、$C$ の通常シフトが適合根であるという仮定は不要である。
+実際、$\operatorname{End}(\pi C(i))=k$ は $\pi C$ が $\pi B$ に移ることと
+シフトの自己同値性から従う。
+恒等関手への自然同型の $\pi C(i)$ 成分は、
+$c\mapsto(\tau^2\delta)^{-1}(c)$ の非零定数倍である。
+次数一元による左乗法に対する自然性と、domain 性によるその tails 上の単射性から、
+$\tau^2\delta$ は $C_1$ 上でスカラーとなる。
+一次生成性により、ある $\lambda\in k^\times$ に対して
+\[
+ \tau^2\delta=\xi_\lambda,
+ \qquad h^2=\lambda I_W,
+ \qquad \alpha_1^2=\alpha_2^2=-\lambda
+\]
+である。これは補題~\ref{lem:scalar-tails} の証明そのものである。
+
+$h$ がスカラーなら $\operatorname{Sym}^2h=\lambda I$ であり、
+式~\eqref{eq:w-eigenforms} と $\alpha_i^2=-\lambda$ は非零の $f_i$ と両立しない。
+従って $h$ は非スカラーである。
+$h^2=\lambda I$ と標数零により、$h$ の固有値は $\eta,-\eta$
+($\eta^2=\lambda$) であり、互いに異なる。
+対応する基底を再び $u,v$ と書けば
+\[
+ h(u)=\eta u,\qquad h(v)=-\eta v.
+\]
+$\operatorname{Sym}^2h$ の固有値 $-\lambda$ の空間は $k\,uv$ だけである。
+式~\eqref{eq:w-eigenforms} により $f_1,f_2$ はともにこの一次元空間に入り、
+それぞれ非零なので比例する。
+基礎体は代数閉であるから $z_1,z_2$ を個別に定数倍して
+$f_1=f_2=uv$ とできる。
+Zhang 同値とこの次数付き同型はいずれも構造対象を保つ。
+逆の存在は既存例で、$\tau(u)=-u$, $\tau(v)=v$,
+$\tau(z_1)=\mathrm i z_1$, $\tau(z_2)=\mathrm i z_2$ を取ればよい。
+\end{proof}
+
+\subsection{中央化についての障害}
 
 \paragraph{中央化は適合表示の中ですら自動でない.}
 命題~\ref{prop:nonstandard-rank-three-example} で使う

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v0.7
+% 日本語 LuaLaTeX。2026-11-21 / v0.8
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,7 +43,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v0.7（非整境界への逆構成と内在的比較）}
+\date{2026年11月21日\quad v0.8（非 cubic 部分の完全分類と退化境界）}
 
 \begin{document}
 \maketitle
@@ -64,13 +64,14 @@ $\PP^1\times\PP^1$ に限られることを証明し、
 任意の適合する正規切断から三次元 AS 正則 $\mathbb Z$-algebra への比較を構成し、構造対象と反 Serre 関手の像を求める。
 構造対象の最初の軌道対象を内在的に認識し、
 Van den Bergh の三次正則型で覆えない例を構成する。
-整な種数一曲線と、二つの既約 $(1,1)$ 成分の被約な和である曲線上の
+整な種数一曲線、被約な二成分の曲線と二重 $(1,1)$ 曲線上の
 許容四つ組からは逆に対象を構成する。
 一般の cubic 表示の偶数部分の domain 性には Presotto の既知定理を用いる。
 多パラメータ skew polynomial 環と、中央二変数を持つ Ore 環の正規二次切断を分類する。
-non-standard な階数三の二つの行列分解の支持が異なるとき、
-その交わりは量子平面または Jordan 平面を生成し、両行列が全二次関係を与える。
-幾何データによる全被覆、逆向きの許容条件と相対モジュライは未解決である。
+階数三の二つの行列分解から共通二変数環を回復し、
+standard・non-standard の両方で中央二重平方環へ帰着する。
+これにより cubic 表示を持たない全対象を二つの二点集合で完全に分類する。
+cubic 側の残る退化型の逆構成と、相対モジュライは未解決である。
 本稿の初期結果の組合せに関する新規性は未確定である。
 \end{abstract}
 \tableofcontents
@@ -374,6 +375,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/cubic_coverage}
 \input{sections/rank_three_relations}
 \input{sections/common_plane}
+\input{sections/standard_rank_three}
 \input{sections/weighted_inverse}
 \input{sections/elliptic_inverse}
 \input{sections/pencil_deformation}
