@@ -95,6 +95,8 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 
 整な種数一曲線では、五つ組の巡回写像をNakayama同型と比較し、平方根つきの逆構成を閉じた。非整曲線の幾何商ではdomain性の証明が使えない。被覆については、Bが左右noetherianな二次Koszul環と分かっていれば、未知のAS正則性を要求せず有限階数条件で判定できる。残る階数3領域の課題は、そのBを構成する具体的なパラメータと許容条件である。
 
+距離二・三の関係の形は prop:rank-three-relations。四周期単純分解を偶数成分へ制限すると、奇数表現可能加群が線形分解を持つ。これと偶数頂点の分解を合わせるとBのKoszul性が従う。GK条件は、domainならある正次数fの切断がtailsで非有限長であることに還元される。fの正規性は不要。逆構成の残る仮定は prop:weighted-inverse-reduction を参照。固定skew ambientの中央切断は cor:skew-rank-three-central-locus で退化も含めて判定した。全四変数符号型の対角切断も三つ組の符号積と退化を調べ、thm:sign-quadric-diagonal の二標識類に分類した。
+
 ## 検証範囲と再現手順
 
 実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。

@@ -63,6 +63,9 @@ $$
 | 固定BのAS被覆の有限判定 | Bが左右noetherianな二次Koszul。四次以下の積と二次双対の次元・Frobenius性を判定 | thm:finite-ambient-test |
 | 固定Sklyanin pencilの有限比較 | 中心一次近傍の単射性の開領域。厳密有理数一点で非空性を検証 | prop:pencil-finite-candidates、prop:pencil-tangent-generic |
 
+| 重み付き四周期環からの逆向き還元 | 仮定した単純分解から偶数環のKoszul性を証明。root・domain・非有限長の切断・有限被覆判定に還元 | prop:weighted-even-koszul、prop:weighted-inverse-reduction |
+| 四変数符号型の対角切断 | 退化を含めて判定し、可換と真に非cubicの二標識類へ分類 | thm:sign-quadric-diagonal |
+
 
 原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全H2の完全分類や全成分の記述は未完成である。
 
@@ -122,7 +125,7 @@ VdBのcubic AS-regular Z-algebraのeven partとcanonical quadratic hullに対し
 
 ### T3：cubicで覆えない四周期表示の許容条件
 
-二型とも階数3の具体例はあらゆる標識付きcubic表示を排除する。この領域を直接分類する。四周期の表示の距離一の各2本の矢と、偶数頂点の距離二の追加矢を用いる。最初の実行単位は、偶数側の階数2テンソル関係と距離三の二関係を行列分解から書き、候補の周期偶数環を作ることである。Bが左右noetherianな二次Koszul環となる条件を別に示し、thm:finite-ambient-test で被覆の存在を有限判定する。二型階数3の既知例を基準に、変形での被覆と退化を検査する。
+二型とも階数3の具体例はあらゆる標識付きcubic表示を排除する。距離二の階数2テンソル関係と距離三の二関係を明示し、四周期単純分解が完全なら偶数環のKoszul性が従うことを証明した。次の実行単位は、各頂点jの四周期分解に現れる行列の積が零となる方程式を距離二・三の関係で書き、完全性とnoetherian性を保証する条件を得ることである。rank3具体例の非退化中央切断を基準に、変形した関係のdomain性と非有限長の斉次切断の存在を調べる。
 
 ### T4：同値判定の開条件の補集合
 
