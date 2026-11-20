@@ -112,6 +112,55 @@ $\mathfrak F$ は foundation の線形化を除いた有限代数のパラメー
 系~\ref{cor:pointed-derived-exact} で証明しているが、族での底変更には別途確認を要する。
 \end{remark}
 
+\begin{lemma}[有限 foundation 代数の全 Artin 変形]
+\label{lem:foundation-artin-deformation}
+$R$ を剰余体 $k$ の可換局所 Artin $k$-代数とする。
+$\Lambda_M$ の有限平坦な結合代数変形 $\Lambda_R$ は、
+四つの頂点冪等元の持ち上げと各頂点成分の基底を選べば、
+$\mathcal R_{\mathrm{fnd}}(R)$ の点から得られる。
+固定した頂点冪等元系の下での基底選択の変更と代数同型は
+$\mathcal G(R)$ の作用で与えられる。
+従ってこの有限表示は、通常の有限代数としての全ての Artin 局所変形を捉える。
+\end{lemma}
+\begin{proof}
+$\mathfrak m_R\Lambda_R$ は冪零イデアルなので、剰余代数の完全直交冪等元系
+$(e_0,e_1,e_2,e_3)$ を $\Lambda_R$ へ持ち上げられる。
+頂点成分 $(\Lambda_R)_{ij}$ は $\Lambda_R$ の $R$-加群としての直和因子であり、
+有限平坦である。局所性から自由で、その階数は剰余体上の Hom 次元に等しい。
+従って逆向き成分は零、対角成分は単位 $e_i$ によって $R$ と同型である。
+
+積
+\[
+ (\Lambda_R)_{12}\otimes_R(\Lambda_R)_{23}
+ \longrightarrow (\Lambda_R)_{13}
+\]
+は階数四の自由加群間の射で、剰余体上では同型である。
+Nakayama の補題、または行列式の可逆性によりこれは同型となる。
+よって頂点 $1,2,3$ の部分代数は、隣接矢空間の基底を選べば
+$H\otimes_kR$ である。
+残る積は
+\[
+ F_R:P_R\otimes_R(W_1)_R\longrightarrow(W_2)_R,
+ \qquad
+ G_R:Q_R\otimes_R(W_2)_R\longrightarrow(W_3)_R
+\]
+で決まる。$(0,1,3)$ の積は結合律によりこの二写像の合成に強制される。
+各五空間の基底変更は定義された $\mathcal G(R)$ の作用に一致する。
+なお冪等元系の別の持ち上げは、剰余体上で恒等となる内部共役により結ばれる。
+\end{proof}
+
+\begin{remark}[Abel 圏の変形との比較に必要な範囲]
+この補題は有限代数の変形についての主張である。
+geometric ample helix に対する De Deken--Lowen
+\cite[\S4.1, Theorems 4.5 and 5.15]{DeDekenLowen2011} の変形比較を用いる場合には、
+その定理が要求する線形性・平坦性・helix の geometric 性と ampleness、
+および対象とする冪零底拡大の仮定を確認した上で、
+foundation 代数の変形と対応する Abel 圏の変形を比較する。
+この比較によっても、指定された反 Serre 平方根が変形先へ延長することや、
+何らかの相対平方根が存在することは自動的には従わない。
+従ってこの補題から相対 $\HH$ locus の開性は結論しない。
+\end{remark}
+
 \subsection{Hochschild 障害の消滅}
 
 \begin{proposition}
@@ -169,6 +218,64 @@ Euler 標数を取ると
 \end{proof}
 
 
+
+\subsection{cubic 表示を与える明示的な開部分}
+
+\begin{proposition}
+\label{prop:cubic-foundation-open}
+$F$ が同型、$G$ が全射となる開部分で $W_2\simeq P\otimes W_1$ と同定し、
+$R=\ker G\subset Q\otimes P\otimes W_1$ と置く。
+この階数二の部分束の包含を、因子を並べ替えたテンソル
+\[
+ w_R\in W_1\otimes P\otimes Q\otimes R^*
+\]
+とみなす。四因子を順に $V_0,V_1,V_2,V_3$ と書き、添字を四を法として取る。
+全ての隣接対 $i,i+1$ と非零 $\phi_i\in V_i^*$、
+$\phi_{i+1}\in V_{i+1}^*$ に対し
+\[
+ (\phi_i\otimes\phi_{i+1})\mathbin{\lrcorner}w_R\ne0
+ \quad\text{in }V_{i+2}\otimes V_{i+3}
+\]
+という geometric 条件を課すと、$\operatorname{Gr}(2,Q\otimes P\otimes W_1)$ の
+不変開部分 $\operatorname{Gr}(2,8)_{\mathrm{geo}}$ を得る。
+対応する foundation の剛体化した表示スタックは
+\[
+ \mathfrak F_{\mathrm{cub}}
+ \simeq[\operatorname{Gr}(2,8)_{\mathrm{geo}}/
+         (\operatorname{PGL}_2)^3]
+\]
+であり、滑らかな有限型 Artin スタック、次元三である。
+その幾何点は geometric quintuple を与え、本稿の cubic 逆構成の範囲に入る。
+\end{proposition}
+\begin{proof}
+条件は geometric quintuple の定義そのものである
+\cite[Equation (2.19)]{OU2014}。
+一つの隣接対について縮約が零となる locus を、
+二つの双対射影束の積と Grassmannian の上で考える。
+これは閉部分で、その Grassmannian への射影は proper である。
+従って像は閉であり、四つの像の合併を除けば所要の開部分となる。
+この構成は任意の底変更と整合する開条件である。
+
+$F$ の同型を使って $W_2$ の基底を除き、$G$ の商表示を使って
+$W_3\simeq(Q\otimes P\otimes W_1)/R$ とすれば、残るデータは
+$R\in\operatorname{Gr}(2,8)$ だけである。
+作用群は $\operatorname{GL}(W_1)\times\operatorname{GL}(P)\times\operatorname{GL}(Q)$。
+三つの中心スカラーは Grassmannian 上で自明であり、
+もとの $K$ の剛体化はこの三中心を除くことに一致する。
+従って表示した商を得る。次元は $2(8-2)-3\cdot3=3$ である。
+幾何点の AS 正則環への対応は \cite[\S2]{OU2014} と
+定理~\ref{thm:all-admissible-inverse} による。
+\end{proof}
+
+\begin{example}[階数条件だけでは geometric 性を保証しない]
+基底を $e_0,e_1$ として
+$R=\langle e_0\otimes e_0\otimes e_0,
+          e_1\otimes e_1\otimes e_1\rangle$ を取る。
+$R$ は二次元だが、対応する四重テンソルは
+$e_{0000}+e_{1111}$ となり、最初の二因子への
+$e_0^*\otimes e_1^*$ の縮約が零である。
+従って $F$ の可逆性と $G$ の全射性だけを cubic の許容条件にはできない。
+\end{example}
 
 \subsection{二つの ruling と foundation の内在性}
 
@@ -259,24 +366,250 @@ pointed 自己同値群はこの二元集合に作用する。
 従って第四項も一意である。
 \end{proof}
 
-\begin{remark}[相対的な二重被覆へ残る点]
-上の二択は代数閉体上の対象についての結論である。
-相対的な有限 étale 二重被覆、あるいは単一の $S_2$ 商による
-$\HH$ スタックの構成には、次を別途示す必要がある。
-\begin{enumerate}
-\item 相対 Serre と Euler 多項式によって定義した $M,X,Y$ の
-      fppf 局所的存在、底変更、線束 twist を除く降下。
-\item $\HH$ に対応する $\mathcal R_{\mathrm{fnd}}$ の部分関手が
-      有限表示の開または局所閉条件となること。
-\item ruling の交換で得る新しい foundation が族で代数的に構成され、
-      二回の交換と恒等の整合性を持つこと。
-\item 相対 AZ 再構成と heart の内在的認識により、
-      このgroupoidの全矢が元の $\mathcal O$-marked exact 同値を与えること。
-\end{enumerate}
-exceptional 対象の $\Ext^1$ と $\Ext^2$ の消滅は、微小拡大上の一意延長の
-根拠になるが、上記の有限表示・開性・代数化を単独で証明するものではない。
-$\mathfrak F$ の滑らかさや $\operatorname{HH}^3$ の消滅だけから、
-$\HH$ の相対条件が全ての変形で保たれるとは結論しない。
+\subsection{二つの短完全列による ruling の相対交換}
+\label{subsec:foundation-ruling-involution}
+
+二写像表示において、$F:P\otimes W_1\to W_2$ の随伴を
+$\alpha_F:W_1\to P^*\otimes W_2$ と書く。
+開部分
+\[
+ U_0=\{(F,G)\in\mathcal R_{\mathrm{fnd}}\mid
+           G:Q\otimes W_2\twoheadrightarrow W_3,
+           \ \alpha_F:W_1\hookrightarrow P^*\otimes W_2
+           \text{ は部分束の包含}\}
+\]
+を取る。具体的には $G$ の階数六、$\alpha_F$ の階数二という開条件である。
+$U_0$ 上では
+\[
+ R=\ker G,\qquad C=\operatorname{coker}\alpha_F
+\]
+は階数二、六のベクトル束であり、任意の底変更と両立する。
+新しい二写像データを
+\begin{align*}
+ W'_1&=R,& W'_2&=W_2,& W'_3&=C,&
+ P'&=Q^*,& Q'&=P^*,\\
+ F'&:Q^*\otimes R\longrightarrow W_2,&&&&&
+ G'&:P^*\otimes W_2\twoheadrightarrow C
+\end{align*}
+で定める。$F'$ は $R\hookrightarrow Q\otimes W_2$ の縮約であり、
+$G'$ は商写像である。
+
+\begin{proposition}[相対 ruling 交換の代数性と整合性]
+\label{prop:relative-ruling-involution}
+上の構成は $[U_0/\mathcal G]$ 上の代数的対合 $\tau$ を与える。
+中心 $K\simeq\mathbb G_m^3$ への作用は
+\[
+ (\lambda_1,\lambda_2,\lambda_3)
+ \longmapsto (\lambda_3,\lambda_2,\lambda_1)
+\]
+であり、従って $\tau$ は rigidification
+\[
+ \mathfrak F_0=[U_0/(\mathcal G/K)]
+\]
+へ降下する。二回適用と恒等の自然同型は $S_2$-作用の整合条件を満たす。
+従って
+\[
+ \mathfrak Q_{\mathrm{fnd}}=[\mathfrak F_0/S_2]
+\]
+は有限型・滑らか・次元三の Artin スタックであり、
+$\mathfrak F_0\to\mathfrak Q_{\mathrm{fnd}}$ は representable な有限 étale
+二重被覆である。
+\end{proposition}
+
+\begin{proof}
+商スタック $[U_0/\mathcal G]$ は、底上の五つの所定階数のベクトル束と
+二写像 $(F,G)$ の群oidを記述する。
+核・余核は $U_0$ 上でベクトル束であり、構成は底変更と同型に関して自然である。
+新しい $G'$ は全射であり、$\alpha_{F'}$ は元の包含
+$R\hookrightarrow Q\otimes W_2$ と一致する。
+従って新しいデータも $U_0$ に属する。
+
+二回適用すると
+\[
+ W''_1=\ker G'=\operatorname{im}\alpha_F\simeq W_1,
+ \qquad
+ W''_3=\operatorname{coker}\alpha_{F'}
+      =(Q\otimes W_2)/R\simeq W_3,
+\]
+かつ $P''\simeq P^{**}\simeq P$、$Q''\simeq Q^{**}\simeq Q$ である。
+これらの標準同型の下で、$F''$ は $\alpha_F$ の縮約なので $F$ に等しく、
+$G''$ は $R$ による商なので $G$ に等しい。
+
+対合の整合性も単なる点ごとの同型に留まらない。
+同じデータを、共通の階数四の束 $W_2$ を用いる二つの短完全列
+\[
+ \begin{split}
+ 0&\longrightarrow W_1\xrightarrow{\alpha_F}
+       P^*\otimes W_2\longrightarrow C\longrightarrow0,\\
+ 0&\longrightarrow R\longrightarrow
+       Q\otimes W_2\xrightarrow G W_3\longrightarrow0
+ \end{split}
+\]
+で記述する。この表示において $\tau$ は二つの列の交換である。
+より形式的には、二つの階数二の束 $V_1=P^*$、$V_2=Q$ を導入すれば、
+両列はともに $0\to A_i\to V_i\otimes W_2\to B_i\to0$
+という同じ型であり、$\tau$ は添字 $1,2$ の交換に一致する。
+従って二回の交換は恒等で、標準双対同型を通じた元の表示でも
+$\tau(\tau^2\Rightarrow\operatorname{Id})
+ = (\tau^2\Rightarrow\operatorname{Id})\tau$
+という必要な整合性が成り立つ。
+
+同型 $g=(g_1,g_2,g_3,a,b)$ に対して、$R$ 上の誘導射は
+$(b\otimes g_2)|_R$、$C$ 上の誘導射は
+$a^{-\mathsf T}\otimes g_2$ からの商写像である。
+$P'$ と $Q'$ 上の射はそれぞれ $b^{-\mathsf T}$ と $a^{-\mathsf T}$ である。
+これを $K$ の元へ適用すると、$R,W_2,C$ 上のスカラーは順に
+$\lambda_3,\lambda_2,\lambda_1$ となる。
+よって $\tau$ は $K$ を保ち、rigidification の普遍性によって
+$\mathfrak F_0$ に降下し、整合性も降下する。
+
+$\mathfrak F_0$ は既存の滑らかな商スタックの開部分なので滑らかで次元三である。
+有限 étale 定群 $S_2$ による商は Artin スタックであり、
+商への射は $S_2$-torsor である。
+従って主張した有限型性・滑らかさ・被覆の性質が従う。
+ここでは $S_2$ は商スタック自体に作用する。
+固定した基底空間 $U_0$ 上の線形作用を選んだとは限らないので、
+この商を無条件に一つの半直積群による線形商と書き換える必要はない。
+\end{proof}
+
+\begin{proposition}[mutation と $\HH$ の二つの ruling との一致]
+\label{prop:ruling-involution-mutation}
+$U_0$ 上の普遍有限代数の perfect 圏において、
+標準 foundation を $(\mathcal O,X,M,Z)$ と書く。
+相対 cone を用いて
+\[
+ Y=\operatorname{Cone}(Q\otimes M\longrightarrow Z)[-1],
+ \qquad
+ Z'=\operatorname{Cone}(X\longrightarrow P^*\otimes M)
+\]
+と定めると、$(\mathcal O,Y,M,Z')$ は full strong exceptional foundation である。
+その End 代数の二写像データは $\tau(F,G)$ と一致する。
+$\HH$ の全ての normal foundation は $U_0$ に属し、
+この変換は二つの normalized ruling の交換と一致する。
+\end{proposition}
+
+\begin{proof}
+cone は $\operatorname{Perf}(\Lambda)$ の標準 dg 増強で取る。
+初めの foundation の相対 derived Hom は、前向きには指定されたベクトル束の次数零成分、
+逆向きには零であり、各対角は構造層である。
+$X,M,Z$ の間の合成
+\[
+ \operatorname{RHom}(X,M)\otimes\operatorname{RHom}(M,Z)
+ \xrightarrow\sim\operatorname{RHom}(X,Z)
+\]
+が同型なので、第一の三角から
+$\operatorname{RHom}(X,Y)=\operatorname{RHom}(Y,X)=0$ を得る。
+二つの cone は exceptional pair の mutation であるため、$Y$ と $Z'$ は相対 exceptional である。
+同じ二つの三角に Hom を適用すると
+\[
+ \operatorname{RHom}(Y,M)=Q^*[0],\qquad
+ \operatorname{RHom}(M,Z')=P^*[0],\qquad
+ \operatorname{RHom}(Y,Z')=(Q^*\otimes P^*)[0]
+\]
+を得て、最後の同型は $M$ を経由する合成そのものである。
+逆向きの三つの derived Hom は零である。
+
+$\mathcal O$ からの derived Hom は
+\[
+ \operatorname{RHom}(\mathcal O,Y)
+      =\operatorname{Cone}(G)[-1]=R[0],\qquad
+ \operatorname{RHom}(\mathcal O,Z')
+      =\operatorname{Cone}(\alpha_F)=C[0]
+\]
+である。ここで全射性と部分束条件を使った。
+新三項から $\mathcal O$ への derived Hom は、元の逆向き消滅から零である。
+従って新 foundation は strong exceptional であり、
+二つの三角から $X,Z$ を復元できるので full でもある。
+上の Hom 同型の下で合成は縮約 $F'$ と商写像 $G'$ になり、
+End 代数は定義した二写像データと一致する。
+
+次に $\HH$ の normal foundation を取る。
+記法を $X=\pi X_0$、$M=\pi B(1)$、$Z=\pi X_1(1)$ とする。
+$G$ は次数零生成 MCM 加群 $X_1$ の自由被覆を次数一で取った写像なので全射である。
+$P=\Hom(X,M)$ は二次元であり、その非零元は rank one torsion-free 対象間の
+非零射であるため単射である。
+従って coevaluation $X\to P^*\otimes M$ は単射であり、
+$\Hom(\mathcal O,-)$ によって $\alpha_F$ の単射性を得る。
+よって全ての normal foundation は $U_0$ に入る。
+
+最後に $X_1=pc(X_0)$ なので $p(X_1)=c(X_0)$ である。
+評価列を次数一へ移した
+\[
+ 0\longrightarrow\pi c(X_0)
+  \longrightarrow \pi B(1)^2
+  \longrightarrow\pi X_1(1)\longrightarrow0
+\]
+により $Y\simeq\pi c(X_0)$ を得る。
+また $p(X_0)$ の評価列を同様に移すと
+\[
+ 0\longrightarrow\pi X_0
+  \longrightarrow\pi B(1)^2
+  \longrightarrow\pi p(X_0)(1)\longrightarrow0
+\]
+となる。この中射は、$\Hom(\pi X_0,\pi B(1))$ の基底を選べば
+上記 coevaluation と一致する。
+従って $Z'\simeq\pi p(X_0)(1)$ であり、これは初めの ruling を
+$c(X_0)$ に替えて normal-helix の構成を行った第四項そのものである。
+\end{proof}
+
+\begin{corollary}[$\HH$ の幾何点群oidの全充満な実現]
+\label{cor:h2-point-groupoid-foundation}
+$k$ を代数閉体とする。
+対象を $\HH$ の $(\mathcal C,\mathcal O)$、射を標識同型付き exact 同値の
+自然同型類とする群oidを $\mathcal H_2(k)$ と書く。
+二つの normal foundation から得る非順序データは、全充満な関手
+\[
+ \mathcal H_2(k)\longrightarrow\mathfrak Q_{\mathrm{fnd}}(k)
+\]
+を与える。従って対象の同値類だけでなく、全ての慣性群も一致する。
+これは $\mathfrak Q_{\mathrm{fnd}}(k)$ の full subgroupoid としての実現である。
+\end{corollary}
+
+\begin{proof}
+命題~\ref{prop:first-orbit-object} と
+命題~\ref{prop:intrinsic-ruling-pair} により、pointed exact 同値は
+$M=s\mathcal O$ と二つの ruling の非順序対を保つ。
+第四項も最初の三項から一意に定まるので、
+pointed exact 同値は二つの normal foundation を置換する。
+必要なら一方に $\tau$ を作用させれば、各項を保つ同値となる。
+比較同型を各項で選ぶと、これは頂点を保つ End 代数の同型を与える。
+比較同型の変更は各項のスカラーによる内部自己同型であり、
+全体の自然スカラーを除けばちょうど $K$ である。
+従って $\mathfrak F_0$ と $S_2$ 商への射を得る。
+
+逆に、像の二点の間の $\mathfrak Q_{\mathrm{fnd}}$ の射は、
+必要に応じた ruling 交換の後の頂点保存 End 代数同型として表せる。
+tilting による標準導来 Morita 同値と上の mutation は、
+$\mathcal O$ を標識同型付きで保存する導来同値を与える。
+系~\ref{cor:pointed-derived-exact} によりこれは元の heart の間で exact である。
+
+全充満性の一意性については、exact 同値の標準 dg 延長を用いる。
+tilting 対象の像とその End 代数への作用は、この延長を標準導来 Morita 同値の
+自然同型まで決定する。各項の比較同型を変えることはちょうど前述の $K$ であり、
+$\mathcal O$ 上の比較同型を保つ自然二自己同型は自明である。
+従って射の間の対応は単射でもある。
+
+慣性を明記すると、$x\in\mathfrak F_0(k)$ の像の自己同型群は
+\[
+ \coprod_{\epsilon\in S_2}
+       \operatorname{Isom}_{\mathfrak F_0}(x,\tau^\epsilon x)
+\]
+に $S_2$-作用から来る合成を入れた群である。
+恒等置換の成分は
+$\operatorname{Aut}_{\{e_i\}}(\Lambda_x)/K$ であり、
+交換成分は二つの ruling を実際に交換する pointed 自己同値がある場合にだけ非空となる。
+従って各点に余分な $S_2$ 慣性を一律に付加しているわけではない。
+これは全ての pointed 自己同値と正確に対応する。
+\end{proof}
+
+\begin{remark}[この相対構成の射程]
+この対合は任意の底変更と両立し、二重被覆は有限代数の表示スタック上で定義される。
+ただし $\mathfrak Q_{\mathrm{fnd}}$ の全点が $\HH$ であるとは主張していない。
+内在的な族からの $M,X,Y$ の局所的存在・底変更・線束 twist を除く降下、
+相対 heart、反 Serre 平方根、AZ 豊富性、二次 AS 正則被覆の条件による
+$\HH$ 部分関手の有限表示、および相対再構成の証明は別に必要である。
+例外対象の $\Ext^1$ と $\Ext^2$ の消滅や有限代数の
+$\operatorname{HH}^3$ の消滅だけから、これらの相対条件は結論しない。
 \end{remark}
 
 \subsection{反 Serre 環の商と標識に由来する慣性}
@@ -322,6 +655,7 @@ pointed 二射は標識上で恒等であるため、このスカラーは一に
 $(\operatorname{Id},\operatorname{id}_{\mathcal O})$ は互いに二同型である。
 
 graded 自己同型は AZ 再構成を通じて pointed exact 自己同値を与える。
+群準同型の規約として、$\phi$ には右加群の作用を $\phi^{-1}$ で twist する関手を対応させる。
 逆に pointed exact 自己同値は Serre 関手と可換するので、
 その可換同型を選ぶことで $R$ の graded 自己同型を与える。
 可換同型の異なる選択は、前段の自然自己同型の計算により一つのスカラーだけ異なり、
@@ -329,11 +663,11 @@ $R_n$ 上ではその $n$ 乗だけ異なる。これで全射性を得る。
 
 核を計算する。graded 自己同型 $\phi$ の誘導する pointed 関手が恒等と二同型なら、
 各自由シフト $\pi R(i)$ 上のその二同型は、
-基準同型 $b\mapsto\phi^{-1}(b)$ のスカラー $c_i$ 倍である。
+基準同型 $b\mapsto\phi(b)$ のスカラー $c_i$ 倍である。
 隣接シフト間の Hom に対する自然性は
 $c_{i+1}\phi_1=c_i\operatorname{id}_{R_1}$ を与える。
 従って $\phi_1$ はスカラーで、$R$ の一次生成性により $\phi=\xi_\lambda$ である。
-逆に次数スカラーでの加群 twist は、次数 $n$ 上で $\lambda^{-n}$ を掛ける写像により
+逆に $\xi_\lambda^{-1}$ による加群 twist は、次数 $n$ 上で $\lambda^n$ を掛ける写像により
 恒等関手と自然同型であり、次数零の標識も保つ。
 \end{proof}
 
@@ -433,7 +767,122 @@ Isom 関手や降下の表現可能性をそのまま与えるものではない
 その $\Hom(\mathcal O,t^n\mathcal O)$ の底変更を確認する仕事はなお残る。
 gerbe の中立性は、この相対再構成を代用する主張ではない。
 
-従って現段階で証明した内容は、有限 foundation の明示商スタック、
-その Hochschild 計算、幾何点上の内在的二択、および反 Serre 表示で除くべき慣性の同定である。
+従って有限 foundation の明示商スタックと相対 $S_2$ 商、
+全 $\HH$ の幾何点群oidの全充満な実現、その Hochschild 計算、
+および反 Serre 表示で除くべき慣性の同定が得られる。
 これらを全 $\HH$ の有限型 Artin スタックと同一視する相対定理は残る。
+\end{remark}
+
+\subsection{選んだ Serre 根の一次変形障害}
+\label{subsec:chosen-root-deformation-obstruction}
+
+例外対象の持上げと、自己同値の持上げは異なる問題である。
+後者には、自己同値が変形の Hochschild 類を保つという必要条件がある。
+以下では $k=\mathbb C$、$R=k[\varepsilon]/(\varepsilon^2)$ とする。
+この例は標数零の例であり、Toda の定理の基礎体の仮定に合わせている。
+
+\begin{lemma}[自己同値を持ち上げるための必要条件]
+\label{lem:autoequivalence-deformation-obstruction}
+$X$ を滑らかな射影多様体、$u\in\operatorname{HH}^2(X)$ を一次変形の類とし、
+$\Phi$ を Fourier--Mukai 核 $P$ を持つ自己同値とする。
+$P$ が同一の変形 $X_u$ の左右の作用を持つ perfect kernel に持ち上がるなら、
+\[
+ \Phi_*u=u
+\]
+が必要である。従って、同じ変形への $R$-線形 dg/Morita 自己同値としての
+持上げにもこの等式が必要である。
+\end{lemma}
+
+\begin{proof}
+核 $P$ の持上げ障害は、左右から作用する変形類の差
+\[
+ \operatorname{ob}(P;u,u)
+ =u\circ P-P\circ u\in\operatorname{Ext}^2(P,P)
+\]
+である。ここで左・右作用の規約は、以下の $u-\Phi_*u$ との同定に合わせる。
+この障害の解釈には Lowen~\cite[Theorems 1.1 and 4.8, Corollary 4.9]{Lowen2008}
+の characteristic morphism の定理を用いる。
+$P$ は同値の核なので、左右の Hochschild 作用はいずれも同型であり、
+その比較が $\Phi_*$ である
+\cite[Proposition 5.6 and Lemma 5.8, arXiv v3]{Toda2009}。
+従って一方の同型 $\operatorname{Ext}^2(P,P)\simeq\operatorname{HH}^2(X)$ の下で
+障害は $u-\Phi_*u$ に対応する。持上げがあれば障害は零なので主張を得る。
+
+Toda~\cite[Theorems 1.1 and 4.7, arXiv v3]{Toda2009} は
+$v=\Phi_*u$ のとき $X_u$ と $X_v$ の間へ同値を持ち上げる十分条件を述べる。
+本補題では上の障害計算によって必要性を示した。
+\end{proof}
+
+\begin{proposition}[可換 quadric 上の根でも持上げ障害が生じる]
+\label{prop:chosen-root-does-not-lift}
+$Q=\mathbb P^1\times\mathbb P^1$、$L=\mathcal O_Q(1,1)$ とし、
+標準アフィン座標を $(z,w)$ とする。対合と自己同値
+\[
+ f(z,w)=(-z,w),\qquad s=(-\otimes L)\circ f^*
+\]
+を取る。この $s$ は $\operatorname{coh}Q$ の exact 自己同値であり、
+\[
+ s^2\simeq-\otimes\mathcal O_Q(2,2)=S^{-1}[2]
+\]
+を満たす。しかし $u$ を大域 bivector
+$\pi=\partial_z\wedge\partial_w$ の Hochschild 類とすると、
+類 $u$ の一次変形へ、この選んだ $s$ は $R$-線形 dg/Morita 自己同値として
+持ち上がらない。
+\end{proposition}
+
+\begin{proof}
+$f^*L\simeq L$ と $f^2=\operatorname{id}$ から平方の式を得る。
+また $s^{2n}\mathcal O_Q=\mathcal O_Q(2n,2n)$ なので、
+閉ファイバーの $(\mathcal O_Q,s)$ は Artin--Zhang ample である。
+Segre 埋込みにより $f$ は $\mathbb P^3$ の線形対合へ延びる。
+切断環は可換 quadric の切断環の Zhang twist であり、
+多項式環の同じ twist を型 $(1,4,6,4,1)$ の AS 正則被覆に取れる。
+従ってこれは元の $\mathcal H_2$ 対象の適合根である。
+$\partial_z$ は $\mathbb P^1$ 上の大域ベクトル場であり、
+無限遠の座標 $\zeta=z^{-1}$ では $-\zeta^2\partial_\zeta$ となる。
+従って $\pi$ は $Q$ 全体の非零大域切断である。
+
+$T_Q\simeq\mathcal O_Q(2,0)\oplus\mathcal O_Q(0,2)$ なので
+$H^1(Q,T_Q)=H^2(Q,\mathcal O_Q)=0$ である。HKR 同型から
+\[
+ \operatorname{HH}^2(Q)
+ \simeq H^0(Q,\textstyle\bigwedge^2 T_Q)
+ \simeq H^0(Q,\mathcal O_Q(2,2))
+\]
+を得る。線束による tensor は、その線束が自明な各開集合では恒等関手と
+同型であるため、局所の bivector 成分には恒等に作用する。
+上の HKR 分解には他の成分がなく、局所制限への写像が単射なので、
+$-\otimes L$ は $\operatorname{HH}^2(Q)$ 全体にも恒等に作用する。
+一方 $f^*\pi=-\pi$ であり、従って
+\[
+ s_*u=-u\ne u.
+\]
+補題~\ref{lem:autoequivalence-deformation-obstruction} より持上げは存在しない。
+
+対象となる一次変形は具体的にも構成できる。
+$\mathcal A_\pi=\mathcal O_Q\oplus\varepsilon\mathcal O_Q$ に
+\[
+ a\star b=ab+\frac{\varepsilon}{2}\pi(da,db)
+\]
+を入れると、$\pi$ の二重導分性と $\varepsilon^2=0$ により積は結合的である。
+これは Toda~\cite[\S\S3--4, arXiv v3]{Toda2009} の
+$(\alpha,\beta,\gamma)=(0,0,\pi)$ に対する $R$-flat な代数層であり、
+同所の Ore 局所化と coherent 加群の構成によって、
+その加群圏は $\operatorname{coh}Q$ の類 $u$ の一次変形を与える。
+\end{proof}
+
+\begin{remark}[結論の範囲]
+障害を持つのは、ここで自己同値として\emph{選んだ}根 $s$ である。
+根同型 $s^2\simeq S^{-1}[2]$ を選ぶかどうかに先立ち、自己同値そのものが
+持ち上がらない。この例は、変形後に\emph{別の} Serre 根が存在する可能性を
+排除しない。また全 $\mathcal H_2$ の相対モジュライの非存在や、
+その許容部分の非開性を主張していない。
+ここで構成した abelian 一次変形が、相対的な根・豊富性・AS 正則被覆まで備える
+$\mathcal H_2$ の族であることも、この命題の結論には含めていない。
+
+従って、幾何学的点で平方根が存在することと例外対象の無障害性だけから、
+選んだ根の忘却射が形式的に滑らか、あるいは \emph{\'etale} であるとは結論できない。
+局所 Artin 環 $R$ は代数閉剰余体を持つ strictly henselian 環なので、
+点を持つ \emph{\'etale} 近傍には $R$ 上の切断がある。
+従ってこの障害を単なる \emph{\'etale} 基底変更で消すこともできない。
 \end{remark}

@@ -2,7 +2,7 @@
 
 2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.1。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
 
-**現在の優先課題は、全H2の内在的なモジュライをArtinスタックとして構成することである。** 体上の同値類分類は完成。noncubicでは次元1の滑らかな表示商、幾何点の慣性、μ2² gerbe、good moduli A1とcoarse space不存在を証明した。全H2のfoundationを含む滑らかな次元3の有限代数商、HH≥3の消滅、ruling二択の内在性、反Serre表示のdegree gerbe中立化も得た。任意基底上のpointed圏の族との同定と相対実現locusの有限表示は未証明。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
+**現在の優先課題は、全H2の内在的なモジュライをArtinスタックとして構成することである。** 体上の同値類分類は完成。noncubicでは次元1の滑らかな表示商、幾何点の慣性、μ2² gerbe、good moduli A1とcoarse space不存在を証明した。全H2のfoundationを含む有限代数商の開部分F0にcoherentな相対ruling交換を構成し、滑らか・有限型・次元3の `Q_fnd=[F0/S2]` と有限étale二重被覆 `F0→Q_fnd` を得た。全H2(k)のpointed groupoidはQ_fnd(k)に全充満に入る。cubicのgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]`。HH≥3の消滅と反Serre表示のdegree gerbe中立化も証明した。残る核心は、任意基底上の内在的H2実現locusの有限表示と相対Serre/AZ再構成である。現行v1.1は構成確認・厳密計算・94頁LuaLaTeX組版がPASS。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
 
 ## 1. 恒常的な研究原則と保存許可
 
@@ -70,9 +70,22 @@ $$
 | non-standard適合表示の制約 | 両階数3の場合、二つの根対が一致する一点だけ | thm:w-compatible-singleton |
 | 交差項を持つOre環の正規切断 | 退化込み。可換類と、二つの二点集合で判定される非cubic族 | prop:ore-normal-quadrics、thm:ore-anticommuting-central |
 
-スタックに関する追加結果は `prop:noncubic-presentation-stack`、`prop:noncubic-sign-gerbe`、`prop:noncubic-good-moduli`、`prop:noncubic-relative-regular-cut`、`prop:foundation-stack`、`prop:foundation-hochschild`、`prop:intrinsic-ruling-pair`、`lem:pointed-degree-scalar`、`prop:antiserre-gerbe-neutral` を参照する。全H2の相対moduliを証明済みとは扱わない。
+スタックに関する結果は、次の範囲で証明済みである。
 
-原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類と、相対モジュライの成分・慣性の記述は区別する。後者は未完成である。
+| 結果 | 仮定・範囲 | 主原稿の所在 |
+| --- | --- | --- |
+| noncubic表示商、慣性、μ2² gerbe、good moduli | smooth finite type、dim1。coarse algebraic space不存在。任意内在族の相対正規形は未証明 | `prop:noncubic-presentation-stack`, `prop:noncubic-sign-gerbe`, `prop:noncubic-good-moduli` |
+| noncubic表示族の局所正則切断 | étale局所に適合根の代数表示を構成。全次数有限自由・底変更整合 | `prop:noncubic-relative-regular-cut` |
+| finite foundationとHochschild計算 | F=[A64/(G/K)]はsmooth finite type、dim3。HH≥3=0、dimHH²−dimHH¹=3 | `prop:foundation-stack`, `prop:foundation-hochschild` |
+| cubic geometric開部分 | `[Gr(2,8)_geo/(PGL2)^3]`、smooth finite type、dim3。隣接二因子の縮約条件が必要 | `prop:cubic-foundation-open` |
+| 内在的二rulingと相対交換 | 全H2の二foundationを認識。F0上で二短完全列の交換がcoherentなS2作用を与える | `prop:intrinsic-ruling-pair`, `prop:relative-ruling-involution`, `prop:ruling-involution-mutation` |
+| Q_fndと全幾何点groupoid | Q_fnd=[F0/S2]はsmooth finite type、dim3。F0→Q_fndは有限étale二重被覆。H2(k)→Q_fnd(k)は全充満 | `cor:h2-point-groupoid-foundation` |
+| pointed慣性とdegree gerbe | Aut_gr(R)/Gm_degree≅Aut_pt。rank9・rank25の行列式線束でgerbe中立化 | `lem:pointed-degree-scalar`, `prop:antiserre-gerbe-neutral` |
+| 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
+
+最後の障害例は、選んだ根の持上げを否定するものであり、相対H2 locusの非開性、別の根の非存在、全H2の相対moduliの非存在を主張しない。全H2の相対moduliを証明済みとは扱わない。
+
+原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類および全幾何点groupoidの実現と、内在的な相対モジュライの構成・成分の記述は区別する。後者は未完成である。
 
 ## 4. 完全分類の達成条件
 
@@ -92,7 +105,7 @@ $$
 | F3 全被覆 | 任意のH2対象から許容データを回復する。追加仮定を使う場合はH2からの導出か、補集合を覆う別の証明を付す | 完了。内在的階数判定でcubic/noncubicに分け、VdB分類と同時untwistで全被覆。`thm:cubic-coverage`、`thm:noncubic-classification` |
 | F4 同値判定 | 二つのデータが同じO-marked対象を与える必要十分条件をデータ上で証明する | 完了。cubicの明示7関係とGL4有限反復、非cubicのPGL2同時作用。根・基底・束表示の選択独立も証明。`thm:complete-h2-classification` |
 | F5 全領域と基礎体 | 一般点だけでなく、退化・特殊自己同型・例外領域を含め、各領域を構成、既収録領域へのpointed exact同値による帰着、またはH2不適合の証明で処理する。k=Cだけの議論には適切な体の拡張・降下を補う | 完了。被約・非被約を含む全(2,2)型、全noncubic配置を扱い、標数零の任意の代数閉体で成立。Sklyanin開条件を主定理に使わない |
-| F6 証明と再現 | 主定理から入力補題まで依存を閉じ、一次文献の仮定・規約を確認し、必要な厳密計算・組版・独立点検を終えて現行一式とhubを保存する | 数学的確認を完了。主定理・全構成を独立点検し、構成・厳密検算・76頁LuaLaTeX組版はPASS。全頁一覧と主要新規頁を表示確認。現行一式をmainに保存し、その内容をhubへ反映する運用は継続。保存成功はそれぞれの操作結果で別に確認する |
+| F6 証明と再現 | 主定理から入力補題まで依存を閉じ、一次文献の仮定・規約を確認し、必要な厳密計算・組版・独立点検を終えて現行一式とhubを保存する | 体上の分類定理とスタック拡張の主要証明を独立点検。現行v1.1の構成確認・厳密検算・94頁LuaLaTeX組版はPASS。追加節全頁の一覧と主要頁を個別表示で確認。内在的な相対H2モジュライとの同定は未証明。現行一式をmainへ保存し、その内容をhubへ反映する運用は継続。保存成功はそれぞれの操作結果で別に確認する |
 
 F1–F6が揃うまでは「完全分類」と報告しない。条件付きの還元、一般点の分類、例の族、有限次数のincidence、既存の非標識分類だけでは完了しない。原稿に未証明の核心命題が残っていないことを、異なる観点または独立担当で確認する。checkスクリプトはこの数学的達成を判定しない。
 
@@ -104,7 +117,7 @@ F1–F6が揃うまでは「完全分類」と報告しない。条件付きの�
 
 cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れたpointed同値を数え切れないため、最初の軌道対象の内在性に基づく有限判定を最終仕様に採用した。これは具体的な必要十分条件で、未知の圏同値や未知のAS条件を言い換えただけではない。抽象的な基礎体上では有限代数的判定であり、機械実行には係数体の有効な表示を要する。
 
-現在はこの同値類分類を、非被約底も含む族と自己同値を保持するスタックへ拡張する。非cubicでは表示商と全幾何点慣性を構成した。finite foundationのA64商は全H2の幾何点を含み、rulingの二択は内在的である。これによりruling付きの相対locusと交換groupoidを構成する経路が具体化した。全foundation変形に相対平方根・AS被覆が存在することはまだ示していない。
+現在はこの同値類分類を、非被約底も含む族と自己同値を保持するスタックへ拡張する。noncubicでは表示商と全幾何点慣性を構成した。finite foundationの開部分F0上ではruling交換を相対的に構成し、coherentなS2商Q_fndを得た。全H2(k)はそのfull subgroupoidとして実現され、全pointed自己同値も捉える。F0→Q_fndは実際に有限étale二重被覆であるが、これを任意の内在的H2族のruling被覆と同定する相対認識は残る。全foundation変形に相対平方根・AS被覆が存在するとは主張しない。
 
 公表前の包括的な先行研究比較と第三者による証明レビューも必要である。既知のVdB分類、PresottoのZ-domain、MCM・helix・AS双対性、関係式stackと変形比較を本研究の新しい成果とはしない。一般の自己同値・根・ambient忘却ファイバーやcubic同値の幾何的簡約も、必要な範囲で扱う。
 
@@ -112,17 +125,19 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**相対H2 locusの構成を第一課題とする。** `papers/sections/foundation_stack.tex` のA64において、H2のheart・Serre根・AS被覆を持つ部分が有限表示の開または局所閉部分関手かを調べる。まずF:P⊗W1→W2が可逆となる領域でcubicのgeometric関係条件を明示し、Fの階数3境界を他rulingへの交換とnoncubic表示に接続する。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
+**内在的な相対H2実現locusの有限表示と相対Serre/AZ再構成を第一課題とする。** 出発点は `papers/sections/foundation_stack.tex` のQ_fndである。ruling交換とS2の整合性、有限étale二重被覆、cubicのgeometric開部分 `[Gr(2,8)_geo/(PGL2)^3]` は構成済みなので再び未解決課題に戻さない。次にH2のheart・Serre根・AS被覆を持つ部分関手を非被約底上でも定義し、有限表示の開または局所閉部分になるかを調べる。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
 
 到達基準は次の三点である。
 
 1. **族の対象を明示する。** Oを指定した相対圏の族に対して、適合するsとAS4被覆はfppf局所に存在する性質とし、選択を標識へ加えない。全幾何ファイバーがH2という条件との一致は別に検証する。
-2. **局所表示と同値を族で認識する。** 内在的M=sOとruling対X,Yの存在・底変更・降下、foundationの交換、相対AZ/Serre再構成、pointed exact同値の全忠実性を証明する。体上の二択から有限étale二重被覆を即断しない。
-3. **全領域を貼り合わせる。** 明示されたnoncubic表示族とcubic表示族を、相対同値groupoidで接続する。点集合のcubic/noncubic非交和を、stackの非交和や開閉分解と読み替えない。
+2. **局所表示と同値を族で認識する。** 内在的M=sOとruling対X,Yの存在・底変更・降下、相対Serre/AZ再構成、pointed exact同値の相対全忠実性と本質的全射性を証明する。F0上の交換と有限étale二重被覆は入力として使い、任意の内在的族からこの表示へ移れることを別に確認する。
+3. **全領域を比較する。** 構成済みのcubic geometric開部分とnoncubic表示族をQ_fndへ対応させ、階数3境界を含む相対認識を閉じる。点集合のcubic/noncubic非交和を、内在的stackの非交和や開閉分解と読み替えない。
 
 代替の統一表示は `[X_as/PGL9]`。X_as⊂Gr(56,81)の相対実現条件が核心である。degree-scalar gerbeのBrauer障害は `det(R1)^−11 det(R2)^2` で解消済みなので、同じ障害を再調査しない。下降した次数別線束twistとcanonical相対反Serre環の同定は再構成に含める。
 
-De Deken–Lowenのhelix変形比較は冪零拡大におけるabelian変形とfoundation代数変形を結ぶが、H2の根・AS被覆条件の相対開性は含まない。Toën–Vaquiéの対象stackも固定dg圏に対する結果である。適用範囲を `notes/literature.md` で確認する。
+De Deken–Lowenのhelix変形比較は冪零拡大におけるabelian変形とfoundation代数変形を結ぶが、H2の根・AS被覆条件の相対開性は含まない。可換Q上でも、選んだ根sのHH²作用がuを−uへ送れば、その固定一次変形へsはR線形dg/Morita自己同値として持ち上がらない。これは別の根の存在を排除せず、構成した変形がH2族であるとも主張しないため、H2 locusの非開性を意味しない。Toën–Vaquiéの対象stackも固定dg圏に対する結果である。適用範囲を `notes/literature.md` で確認する。
+
+相対条件の具体的検証には [Ore変形ノート](notes/ore_quadric_deformations.md) の中央正則切断を使える。まず基底変更と両立するbimodule Koszul複体のexactnessと自己双対性を確認し、相対Serre公式へ進む。現状はこの相対結論を定理に用いない。
 
 先行研究上の新規性比較、一般GL4判定solverの実装、外部査読・形式証明は未完了。主定理に誤りが見つかれば、本文・概要・方針・hubを訂正する。
 

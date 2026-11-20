@@ -59,7 +59,7 @@
 - 分類の最終目標は全H2対象のpointed exact同値分類。graded環の同型、Zhang twist、root付き同値、derived同値を混同しない。既存のcubic Z-algebra/elliptic quadrupleの分類だけで全H2分類済みとしない。
 - 候補データからの構成、全H2からの回復、データ上の同値判定、全領域の被覆を別の命題として証明する。「H2を与える表示全体を取る」や未知のAS/admissibilityを条件に残したincidence記述は、全分類の完成ではない。
 - GIT商のorbit closure・S-equivalenceをpointed exact同値と同一視しない。反Serre環で同値類を判定できても、graded自己同型群とpointed自己同値群の一致や相対moduliまで自動的に従うとはしない。
-- 主原稿の全同値類分類と、全自己同値・全平方根・ambient忘却ファイバー・相対moduliの未完成を区別する。原稿のラベルとnotesの状態表を維持する。
+- 主原稿の全同値類分類と、自己同値群の全型別記述・全平方根・ambient忘却ファイバー・内在的な相対moduliの未完成を区別する。原稿のラベルとnotesの状態表を維持する。
 - 他repoは必要な一次資料として参照する。`nc-cubic-classification` の完全分類定理を本repoの既知入力にしない。Serre根についての一般研究は `categorical-fano-index`、tensor/quadruple分類は確認済み文献と役割を区別する。
 - 次の着手先は研究方針の優先課題。有限次数の計算だけでAS正則性・smoothness・全次数正則性・全対象の被覆を証明したと報告しない。
 

@@ -16,10 +16,13 @@
 
 - [noncubic表示スタック](papers/sections/noncubic_stack.tex)は `[P/G]`、滑らかな有限型Artinスタックで次元1。幾何点の同値類だけでなくpointed慣性も一致する。根配置stackへのμ2² gerbe、一般慣性D8×C2、共有根でD8、根対一致で正次元慣性を記述した。
 - 同stackのgood moduli spaceは `A1_χ`。共有根と根対一致はともにχ=1へ写り、全体のcoarse moduli algebraic spaceは存在しない。底変更と整合する正則切断の族もétale局所に構成した。
-- [有限foundationの商](papers/sections/foundation_stack.tex)は `[A64/(G/Gm³)]`、滑らか・有限型・次元3。全H2のfoundationが入り、各有限代数についてHH^n=0（n≥3）、dim HH²−dim HH¹=3を直接証明した。二つのruling対象と、それに対応する二つのfoundationを体上で内在的に認識した。
+- [有限foundationの商](papers/sections/foundation_stack.tex) `F=[A64/(G/K)]`（`K≅Gm³`）は滑らか・有限型・次元3。全H2のfoundationが入り、各有限代数についてHH^n=0（n≥3）、dim HH²−dim HH¹=3を直接証明した。二つのruling対象と、それに対応する二つのfoundationは体上で内在的に定まる。
+- 開部分 `F0=[U0/(G/K)]` 上で、二つの短完全列の交換によりcoherentな相対ruling対合を構成した。`Q_fnd=[F0/S2]` は滑らかな有限型Artinスタック、次元3であり、`F0→Q_fnd` はrepresentableな有限étale二重被覆である。全H2(k)のpointed exact同値のgroupoidは `Q_fnd(k)` に全充満に入り、全ての幾何点の慣性を保つ。任意の `Q_fnd` の点がH2であるとは主張しない。
+- cubicを与えるgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]` と表示でき、滑らか・有限型・次元3である。許容条件は四重テンソルの隣接二因子への非零縮約条件であり、写像の階数条件だけでは代用できない。
 - 反Serre環の候補 `[X_as/PGL9]` では、rank9・rank25の行列式線束によりdegree-scalar gerbeを中立化できる。ただし相対実現locus X_as の有限表示、Serre/AZ再構成と全H2の族との同定は未証明。
+- 可換quadric上でも、選んだSerre根が固定したabelian一次変形へ持ち上がらない例を構成した。自己同値がHochschild変形類を保つことが必要である。この例は相対H2の非開性や別の根の非存在を意味せず、構成した変形がH2の族であるとも主張しない。
 
-**全H2の内在的なArtinスタックの完成は、これらの表示スタックの構成と区別する。** 現在の核心は、非被約基底を含む相対H2条件と表示の認識・降下である。
+**全H2の内在的なArtinスタックの完成は、これらの表示スタックと体上の全充満なgroupoidの構成と区別する。** 相対ruling交換とS2の整合性は証明済み。現在の核心は、非被約基底を含む内在的H2実現locusの有限表示、相対Serre/AZ再構成と表示の認識・降下である。
 
 ## 対象
 
@@ -68,12 +71,15 @@ $$
 | [papers/sections](papers/sections) | 主分類定理、全被覆、逆構成、同値判定、基準例の証明を収めた分割節 |
 | [papers/references.bib](papers/references.bib) | 確認した一次文献の書誌 |
 | [notes/research_notes.md](notes/research_notes.md) | 証明状態、障害、再開に必要な知識、検証範囲 |
+| [notes/ore_quadric_deformations.md](notes/ore_quadric_deformations.md) | 相対変形を試すOre族の証明稿。相対CY・Serre・H2認識は未証明 |
 | [notes/literature.md](notes/literature.md) | 文献の版・仮定・適用範囲・リンク |
 | [computations/verify_reducible_quadruples.py](computations/verify_reducible_quadruples.py) | 全非整曲線型の三次関係・四次テンソル・周期平方・必要な貼合せの記号恒等式 |
 | [computations/verify_stack_symmetries.py](computations/verify_stack_symmetries.py) | noncubic慣性の射影群関係、χの共変性、局所対合・正則切断の記号恒等式 |
 | [computations/verify_quadric.py](computations/verify_quadric.py) | Segre積・Ore正規性・低次数階数の厳密演算による再現 |
 
 ## 再生成
+
+現行v1.1原稿は**94頁のLuaLaTeX組版、構成確認、厳密計算がPASS**。証明の独立点検と画像表示の確認範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) で分けて記す。
 
 repoルートで実行する。
 
