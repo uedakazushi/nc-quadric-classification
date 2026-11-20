@@ -75,6 +75,35 @@ pointed exact 同値の必要十分条件である。
 この判定では $B$ の基底や被覆を保持する必要はない。
 全同値類を列挙するためには、どの関係空間の軌道が実現されるかをさらに決定する必要がある。
 
+\begin{corollary}[導来圏と構造対象からの heart の認識]
+\label{cor:pointed-derived-exact}
+二つの $\HH$ 対象の有界導来圏の $k$-線形三角同値が
+$\OO$ を $\OO'$ に送るなら、その同値は標準の heart に関して $t$-exact である。
+\end{corollary}
+\begin{proof}
+$t=S^{-1}[2]$ とする。任意の $M\in\cC$ に対し、
+$t^{-n}\OO$ から $M$ への正次数 Ext は $n\gg0$ で消える。
+実際、豊富性により $M$ への全射の始域を有限個の $t^j\OO$ の直和に取れる。
+従って $\Hom(M,t^{-n-1}\OO)=0$ は負切断の消滅から従い、
+Serre 双対性で $\Ext^2(t^{-n}\OO,M)=0$ を得る。
+$\Ext^1$ の消滅は二次の正則正規商 $B$ の AS Gorenstein 性を用いる
+\cite[Lemma 2.4]{MU2022}。
+深さ三により $\Ext^1_{\qgr B}(\pi B(i),\pi B(j))=0$ である
+（\cite[Lemma 5.9(2)]{MU2021} と同じ打切りの議論）。
+上の全射の核を $K$ とすると、$\Ext^1(t^{-n}\OO,M)$ は
+$\Ext^2(t^{-n}\OO,K)$ に埋まり、後者は既に十分大きい $n$ で消える。
+
+従って $L\in D^b(\cC)$ に対し、十分大きい $n$ では
+$\Hom(t^{-n}\OO,L[i])\simeq\Hom(t^{-n}\OO,H^i(L))$ である。
+これは標準打切りに伴う Ext のスペクトル系列から従う。
+豊富性の生成条件により、非零な $H^i(L)$ への非零射は
+任意に大きい $n$ のある $t^{-n}\OO$ から存在する。
+従って $L$ が heart に属する条件は、全ての $i\ne0$ について
+$\Hom(t^{-n}\OO,L[i])$ が $n\gg0$ で消えることである。
+三角同値は Serre 関手とシフトを保つので、$\OO$ を保てば
+この条件を双方向に保つ。
+\end{proof}
+
 \subsection{可換 quadric と楕円型 Sklyanin pencil の判別}
 
 可換 quadric の四つの根が与える反 Serre 環はいずれも

@@ -1,8 +1,8 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv0.3で、完全分類は未完成である。
+2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv0.4で、完全分類は未完成である。
 
-**現在の実行単位はT3・T4（第6節）である。** 正規切断の被覆とSklyanin pencil内の同値判定を進める。実行環境と起動用の依頼文は [CLOUD_CODEX.md](CLOUD_CODEX.md)、継続・保存・停止の規則は [AGENTS.md](AGENTS.md) を参照する。
+**現在の実行単位はT3・T4（第6節）である。** 全H2を覆う四周期のAS正則Z-algebraから、階数3の領域・cubic表示の可否・逆向きの許容条件を調べる。Sklyanin pencil内の同値判定も進める。実行環境と起動用の依頼文は [CLOUD_CODEX.md](CLOUD_CODEX.md)、継続・保存・停止の規則は [AGENTS.md](AGENTS.md) を参照する。
 
 ## 1. 恒常的な研究原則と保存許可
 
@@ -55,6 +55,9 @@ $$
 | 中心standard表示の比較 | 構造対象は添字0、平方根は二添字移動。Sklyanin型は適切なrulingでcubic | prop:standard-pointed、prop:sklyanin-cubic-ruling |
 | 固定ambientの中心化の障害 | 適合根を保つ自己同型Zhang twistでの中心化にはnormalizerが次数スカラーであることが必要。Ore族で失敗 | prop:central-twist-obstruction、ex:ore-central-twist |
 | Sklyanin型の内在的な楕円商 | 反Serre環の中心一次部分から楕円商を回復 | prop:sklyanin-antiserre-center |
+| 構造対象を保存する導来同値はexact | 反Serreの負シフトからの導来Homで標準heartを認識 | cor:pointed-derived-exact |
+| 全H2の四周期AS正則Z-algebraによる表現 | 正規切断から標識と反Serre関手を移送。中心性、standard性、(*)は不要 | thm:normal-helix |
+| cubic型の判定と残る場合 | 隣接合成が階数4ならcubic。階数3の場合は偶数添字から距離二の生成元と関係が一つずつ加わる | cor:normal-cubic-defect |
 
 原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全H2の完全分類や全成分の記述は未完成である。
 
@@ -73,7 +76,7 @@ $$
 | --- | --- | --- |
 | F1 データと許容条件 | 全パラメータ領域とadmissibilityを具体化し、未知のAS条件や「H2を与える」という循環的条件を残さない | 未完成。quadruple/tensor比較と固定Bの超平面還元が入口 |
 | F2 構成の正しさ | 各許容データからO付き圏を構成し、GK rank・exceptionality・Serre根・AZ・全次数AS表示を確認する | 可換型と限定したSklyanin型に証明あり。一般は未完成 |
-| F3 全被覆 | 任意のH2対象から許容データを回復する。追加仮定を使う場合はH2からの導出か、補集合を覆う別の証明を付す | 未完成。central化、standard表示、ambientの(*)が残る |
+| F3 全被覆 | 任意のH2対象から許容データを回復する。追加仮定を使う場合はH2からの導出か、補集合を覆う別の証明を付す | 四周期AS正則Z-algebraへの移送で全H2を覆う。許容幾何データへの全被覆は未完成 |
 | F4 同値判定 | 二つのデータが同じO-marked対象を与える必要十分条件をデータ上で証明する | 適合表示が与えられればGL9軌道で判定可能。幾何データ上での簡約とF1–F3は未完成 |
 | F5 全領域と基礎体 | 一般点だけでなく、退化・特殊自己同型・例外領域を含め、各領域を構成、既収録領域へのpointed exact同値による帰着、またはH2不適合の証明で処理する。k=Cだけの議論には適切な体の拡張・降下を補う | 未完成。smoothは圏の大域次元の条件であり、幾何データの退化を一律には排除しない |
 | F6 証明と再現 | 主定理から入力補題まで依存を閉じ、一次文献の仮定・規約を確認し、必要な厳密計算・組版・独立点検を終えて現行一式とhubを保存する | 初期結果は確認済み。全分類の証明はまだ存在しない |
@@ -92,9 +95,9 @@ F1–F6が揃うまでは「完全分類」と報告しない。条件付きの�
 
 VdBのcubic AS-regular Z-algebraのeven partとcanonical quadratic hullに対し、構造対象、次数シフト、Serre関手を同じ規約で書く。可換型と通常の滑らかなSklyanin型で確立した例を基準に、一般の楕円型・退化型へ広げる。最初の具体的課題は、Sklyanin pencilの標識Oと二つのrulingをgeometric quintupleへ移し、選んだshiftに対応する自然同型 `s²=S⁻¹[2]` を比較すること。`MU2021`の`M_ν(-2)`公式は中心切断の仮定の下で用い、対象ごとの不変性を関手の自明性へ読み替えない。次に、非自明Nakayama twistがある場合に根を存在させる自己同型のnorm方程式を得る。
 
-### 優先2：standard locusの認識と非standard表示
+### 優先2：四周期表示とcubic型の不足領域
 
-`MUW2026` Theorem 5.5により滑らかな中心Sklyanin型はstandardであり、`MN2025` Theorem 6.13の仮定を満たす。この既知結果を入口にOと根を追跡する。一般H2ではdomain・heartの大域次元2は初期補題から得られるが、中心表示の存在・standard表示・指定Oの対応は別の課題である。`MUW2026`の一般理論はambientのAuslander正則性・Cohen–Macaulay性(*)を別仮定とするため、H2のAS条件から無断で導かない。(*)を確認できる範囲では同論文Proposition3.5・Lemma3.20の二つのMCM型とrulingを使い、`Ω(1)`の作用を比較する。同論文Introductionでもnormal→centralのgraded Morita還元は不明とされる。可換四根のうち保存型3つはstandard、交換型はnon-standard（同論文Theorem4.12）なので、non-standardな一表示を見ただけでO-marked対象を除外しない。
+MU2022のhigh-rank正規切断の定理からMCM型を得て、non-standardの場合は交互に選ぶことで全H2の四周期表示を構成した。中心化およびambientの条件(*)を仮定する必要はなくなった。固定ambientの中心化と適合根の両立が失敗するOre例は、別ルートを選ぶ理由として残す。階数3の表示に対する別のruling・別の根・別のfoundationを探す。cubic表示へ移らない領域があれば、その四周期表示を直接分類する。
 
 ### 優先3：二段階の忘却と具体的なパラメータ
 
@@ -112,11 +115,11 @@ VdBのcubic AS-regular Z-algebraのeven partとcanonical quadratic hullに対し
 
 中心 standard 表示からは、構造対象を添字0へ、平方根を二添字の移動へ送る比較を得た。無限位数の滑らかなSklyanin型ではrank 4のrulingを選べる。逆向きには cubic データのeven partとhullを取り、二添字の周期移動の二乗が実際の反Serre関手になる自然同型を構成する。Nakayama同型との比較は prop:periodicity-gauge の添字スカラー条件で判定できる。次はVdBのhullでこの条件と指定した添字0の全切断環の回復を同時に検査する。
 
-### T3：全被覆の不足仮定を埋める
+### T3：階数3の四周期表示とcubic型の全被覆
 
-H2で未確認の条件を、ambientのAuslander正則・Cohen–Macaulay性(*)、compatibleなcentral表示、standard表示の存在に分ける。各条件につき、H2からの証明、条件を使わない代替定理、H2内の反例のどれを目指すか決める。反例が出てもH2の定義からその対象を削除しない。
-
-固定ambientでの自己同型による中心化は、誘導シフトが適合根であることまで求めるとOre族で失敗する。正規切断のままMUW2026 Proposition 3.5とLemma 3.20の二つの極大Cohen–Macaulay型を調べる。まず (*) が成立する範囲で、偶数項をB、奇数項をruling Xとした列について、Ext¹の消滅と積 Hom(X,B(1))⊗X₀→B₁ の階数を検査する。
+四周期への移送を完了した。最初の具体的な課題は、階数3のときの偶数頂点の極小分解
+P_{j+4} → P_{j+3}² ⊕ P_{j+2} → P_{j+1}² ⊕ P_{j+2} → P_j
+で、距離二の追加生成元と二次関係を明示することである。階数3の行列は rem:rank-three-matrix により成分 a,b,c,−a の形にできる。積 ΦΨ=gI と正規性の式をこの形に代入し、もう一方のrulingが階数4になる条件を求める。non-standardでは二型の階数が等しいので、双方が3となる可能性を調べる。cor:nonstandard-square-matrix の M²=gC と正規化自己同型の共役条件を、係数空間が3次元の場合に適用する。該当する表示があれば別の適合根でcubicへ移れるかを調べる。移せない場合は追加生成元を備えた表示を分類データに残す。
 
 ### T4：構成データの許容域と忘却後の同値判定
 

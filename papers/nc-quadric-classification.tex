@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v0.3
+% 日本語 LuaLaTeX。2026-11-21 / v0.4
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,7 +43,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v0.3（反 Serre 環による同値判定）}
+\date{2026年11月21日\quad v0.4（正規切断と標識付き比較）}
 
 \begin{document}
 \maketitle
@@ -61,8 +61,9 @@ $\PP^1\times\PP^1$ に限られることを証明し、
 また、複素数体上の滑らかな楕円型 Sklyanin quadric が定義を満たすことを確認し、
 可換二次曲面の Abel 圏と同値でない対象が実際に含まれることを示す。
 全対象について、反 Serre 切断環の二次関係空間を用いる pointed exact 同値判定を与える。
-中心 standard 表示がある場合には、三次元 AS 正則 $\mathbb Z$-algebra への既知の比較で構造対象と平方根の像を求める。
-一般の非可換対象の全被覆と相対モジュライは未解決である。
+任意の適合する正規切断から三次元 AS 正則 $\mathbb Z$-algebra への比較を構成し、構造対象と反 Serre 関手の像を求める。
+比較先のうち Van den Bergh の三次正則型となる条件を求める。
+幾何データによる全被覆、逆向きの許容条件と相対モジュライは未解決である。
 本稿の初期結果の組合せに関する新規性は未確定である。
 \end{abstract}
 \tableofcontents
@@ -117,7 +118,7 @@ Mori--Nyman \cite[Theorem 6.13, arXiv v1]{MN2025} は、中心切断、domain、
 graded isolated singularity、standard という仮定の下で
 Gorenstein parameter 四の三次元 AS 正則 $\mathbb Z$-algebra への比較を与える。
 本稿の命題~\ref{prop:standard-pointed} はこの条件下で構造対象と平方根の像を記述する。
-この比較の適用条件が全 $\HH$ 対象で成立するかは未解決である。
+定理~\ref{thm:normal-helix} は、二つの MCM 型を使い分けることで、中心性・standard 性・ambient の条件 $(*)$ を要しない比較を与える。
 
 Okawa--Ueda \cite[Theorem 1.1]{OU2014} の geometric quintuple の GIT 商
 $\PP(2,4,4,6)$ と conifold potential の GIT 商 $\PP(1,2,3,4)$、
@@ -356,6 +357,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/elliptic_examples}
 \input{sections/antiserre_ring}
 \input{sections/standard_comparison}
+\input{sections/normal_comparison}
 
 \section{完全分類へ向けた問題}
 \label{sec:open-problems}

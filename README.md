@@ -2,13 +2,13 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.3、数学原稿v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.3、数学原稿v0.4。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
 [CLOUD_CODEX.md](CLOUD_CODEX.md) に、環境の準備・起動用の依頼文・検証・保存手順を置く。最終目標は研究方針F1–F6を満たす**全H2のpointed exact同値分類**。一補題やcommitで止めず、現行資料を更新しながら次の未解決課題へ進む。
 
-反Serre切断環により全H2のpointed exact同値判定を確立した。中心 standard 表示では既存の比較で構造対象と平方根の像を明示した。次は正規切断の全被覆とSklyanin pencil内の同値判定を詰める。**完全分類は未完成。**
+反Serre切断環により全H2のpointed exact同値判定を確立した。全H2対象を構造対象を保つ周期四のAS正則Z-algebraへ移送した。次は階数3で生じる追加生成元を含め、逆向きの許容条件とSklyanin pencil内の同値判定を詰める。**完全分類は未完成。**
 
 ## 対象
 
@@ -31,7 +31,8 @@ $$
 - 複素数体上、無限位数の平行移動を持つ通常の楕円型Sklyanin pencilの滑らかな成員がH2に入ることを確認。`z=τ`の成員は、単純対象の自己Euler特性2により`coh(P1×P1)`とexact同値でない。
 - 反Serre切断環は9生成・56次元の二次関係を持ち、その関係空間の線形同値がpointed exact同値の必要十分条件となる。
 - 滑らかな無限位数Sklyanin型では、rulingを適切に選ぶとcubic Z-algebraへの比較が得られる。反Serre環の中心から楕円商を回復でき、全て可換quadricとpointed exact非同値である。
-- 固定ambientのZhang twistによる中心化は、適合根を保てない場合がある。全領域の許容条件・全被覆と相対モジュライは未完成。
+- 正規切断の中心性、standard性、ambientの追加条件(*)を要せず、全H2対象は四周期の三次元AS正則Z-algebraとして表せる。non-standardでは二つのrulingを交互に置く。
+- 比較先がVan den Berghのcubic型となる条件は、偶数項間の隣接合成の階数が4となること。階数3では距離二の生成元と関係が各一つ加わる。全H2をcubic型の幾何データで覆えるか、全領域の許容条件と相対モジュライは未完成。
 
 既知結果、初期原稿内の証明、計算、外部監査・形式証明・新規性確認を区別する。正確な範囲は [研究ノート](notes/research_notes.md) と [文献比較](notes/literature.md) を参照。
 

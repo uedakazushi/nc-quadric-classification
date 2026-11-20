@@ -1,0 +1,233 @@
+% !TEX root = ../nc-quadric-classification.tex
+\section{正規切断の標識付き比較}
+\label{sec:normal-comparison}
+
+\begin{theorem}[正規切断からの四周期 helix]
+\label{thm:normal-helix}
+$\HH$ の任意の適合表示を $B=A/(g)$ とする。
+二つの次数零生成非自由極大 Cohen--Macaulay 型を $X,Y$ とし、
+ラベル集合 $\{X,Y\}$ の交換を $c$、$Z\mapsto\Omega Z(1)$ の置換を $p$ と書く。
+任意の $X_0\in\{X,Y\}$ から $X_{i-1}=pc(X_i)$ ($i\in\mathbb Z$) と定めると、
+\begin{equation}
+ E_{2i}=\pi B(i),\qquad E_{2i+1}=\pi X_i(i)
+\end{equation}
+は ample な四周期の full geometric helix をなす。
+従って $D_{ij}=\Hom(E_{-j},E_{-i})$ ($i\le j$) から
+右 noetherian な次元三・Gorenstein parameter 四の AS 正則
+$\mathbb Z$-algebra を得る。標識は $\pi e_0D$ に移り、
+反 Serre 関手は $s^2$ から誘導される四添字の移動に移る。
+standard の場合は $X_i$ が一定であり、non-standard の場合は二型が交互に現れる。
+\end{theorem}
+
+\begin{proof}
+正則正規切断に対する Rees の補題により $B$ は次元三・parameter 二の
+AS Gorenstein 環である
+\cite[Lemma 2.4]{MU2022}。parameter の変化は切断次数二による。
+$B$ は domain なので $g$ は二つの次数一元の積に分解できず、
+\cite[Definitions 4.10 and 5.9]{MU2022} の $n=4$ の high rank 条件を満たす。
+$A$ は同論文の quantum polynomial algebra であり、$\qgr B$ の大域次元は二である。
+従って \cite[Theorem 5.5, Lemma 5.13(4)]{MU2022} により
+$C(B)\simeq M_2(k)\times M_2(k)$ となる。
+ここで用いる定義は AS 正則性と Hilbert 級数を要求し、
+Auslander 正則性と Cohen--Macaulay 性の追加条件を課さない。
+同論文の Lemma 4.13(5) により、
+安定圏の次数零生成部分の二つの非零単純型に対応する非自由加群を $X,Y$ と取れる。
+Lemma 5.11 の証明で、対応する単純加群の次元二は
+線形行列分解の階数二に等しい。この分解から極小自由分解の
+各項が $B(-j)^2$ となり、$\Omega Z(1)$ も次数零生成の非自由 MCM 型である。
+$\Omega(1)$ は安定圏の自己同値なので二型を置換する。
+自由直和因子を除いた極小代表を取っているため、これは加群の同型型の置換 $p$ を与える。
+$p^2=1$ から $X_{i+2}=X_i$ である。
+$Z\in\{X,Y\}$ の極小自由被覆は
+\begin{equation}
+ 0\longrightarrow p(Z)(-1)\longrightarrow B^2\longrightarrow Z
+ \longrightarrow0
+ \label{eq:normal-ruling-evaluation}
+\end{equation}
+を与える。
+$Z$ と $p(Z)$ を交換した同様の列を双対化すると、
+内部 $\Hom_B(Z,B)$ は次数一に二元で生成され、特に次数零以下は零である。
+ここでは $\Ext_B^1(p(Z),B)=0$ を使った。
+
+\cite[Lemma 4.13(3)--(5)]{MU2022} の安定圏の導来同値は、
+二型を半単純環の二つの単純加群に送る。
+安定圏で $\Omega$ は懸垂の逆であり、内部シフト $(1)$ は
+$p$ と懸垂 $[1]$ の合成となる。従って二型の安定 Hom は
+内部シフト零でのみ非零になり、同じ型の場合に $k$ である。
+次数零以下での $Z$ から自由加群を経由する射は、
+$\Hom_B(Z,B(j))=0$ ($j\le0$) と $Z'$ の負次数の消滅から零となる。
+従って未シフトの二型の次数零 Hom も $\delta_{ZZ'}k$ である。
+また $\Ext_B^1(Z,Z'(d))$ は安定 Hom
+$\underline{\Hom}_B(p(Z),Z'(d+1))$ であり、
+$d=-1$ かつ $Z'=p(Z)$ の場合にのみ非零となる。
+
+自由加群と二型はいずれも深さ三である。実際、
+\eqref{eq:normal-ruling-evaluation} を $p(Z)$ にも適用して
+$Z$ を自由加群へ埋め込む列を得る。その余核も二型のシフトである。
+この操作を繰り返すと、自由加群の深さ三と長完全列から
+$\Ext^j_B(k,Z)=0$ ($0\le j<3$) が従う。
+従って $\Hom$ と $\Ext^1$ は、\cite[Lemma 5.9(1)--(2)]{MU2021}
+の打切りの議論により graded 加群から tails に移しても変わらない。
+$\Ext^1$ はどちらかが自由加群なら零である。
+奇数項同士では前向きの射の $\Ext^1$ は零であり、
+四連続項の中の逆向きでは、$X_{i-1}=pc(X_i)\ne p(X_i)$
+により零である。$\Hom$ の逆向き消滅は次数と
+$\Hom_B(Z,B)$ の次数一以上への集中から従う。
+$\Ext^2(E_i,E_j)$ は Serre 双対性により $\Hom(E_j,E_{i-4})$ の双対であり、
+$i\le j$ または $0<i-j<4$ のとき逆向きの Hom なので零となる。
+高次は大域次元から零である。
+この結果と $E_{i+4}\simeq s^2E_i$ が geometric helix の条件を与える。
+ここで $s^{-2}$ は導来圏上で $S[-2]$ となる exact 自己同値なので、
+この圏の canonical bimodule を与える。
+
+完全性を示す。Orlov の分解と MCM 安定圏の記述により、
+$D^b(\qgr B)$ は $\pi B(-1),\pi B,\pi X,\pi Y$ で生成される
+\cite[Theorem 2.5(i)]{Orlov2009}。
+実際、$\Hom_B(Z,B(j))=0$ ($j\le0$) なので、
+Orlov の埋込みは二型の特異圏での像を $\pi X,\pi Y$ に送る
+\cite[Lemma 4.1]{MU2016Stable}。二型は半単純な安定圏の導来表示を生成する。
+これを任意に次数シフトする。$Y_i=c(X_i)$ と書くと、
+\eqref{eq:normal-ruling-evaluation} の $Y_i(i)$ の核が $X_{i-1}(i-1)$ なので、
+生成列 $(\pi B(i-1),\pi B(i),\pi Y_i(i),\pi X_i(i))$
+の中の隣接二項を対応する三角で入れ替えて、偶数添字で始まる四項の完全性を得る。
+奇数添字で始まる場合は、補型 $c(X_i)$ を同じ方法で選んだ
+偶数添字から始まる四項
+$(\pi B(i+1),\pi Y_{i+1}(i+1),\pi B(i+2),\pi Y_{i+2}(i+2))$
+で、二つの隣接対をそれぞれ同じ三角で置き換える。
+
+豊富性の生成条件は偶数項から従う。
+残る条件に必要な $\Ext^1(\pi Z(-n),K)=0$ ($n\gg0$) を示す。
+任意の $K\in\qgr B$ について、
+$0\to L\to P\to K\to0$ を短完全列とし $P$ を有限個の $\pi B$ のシフトの直和とする。
+$\Ext^1(\pi Z(-n),P)=0$ なので $\Ext^1(\pi Z(-n),K)$ は
+$\Ext^2(\pi Z(-n),L)$ に埋まる。
+同様の自由被覆 $P'\twoheadrightarrow L$ と大域次元二を用いると、
+$\Ext^2(\pi Z(-n),L)$ は $\Ext^2(\pi Z(-n),P')$ の商となる。
+Serre 双対性と負次数の消滅から
+$\Ext^2(\pi Z(-n),P')=\Hom(P',\pi Z(-n-2))^*=0$ ($n\gg0$) となる。
+よって十分負の奇数項からの $\Hom$ は全射を保つ。
+以上で \cite[Definition 5.6]{MN2025} の豊富性が従う。
+
+\cite[Theorems 5.8, 6.4 and 6.5]{MN2025} を適用する。
+構造対象と反 Serre 関手の移送は命題~\ref{prop:standard-pointed}
+と同じ Hom の構成で得られる。non-standard の場合、
+ここで使う表示に二添字の移動があることは要求していない。
+\end{proof}
+
+\begin{corollary}[三次正則型からのずれ]
+\label{cor:normal-cubic-defect}
+定理~\ref{thm:normal-helix} の $D$ は隣接成分と、距離二の偶数添字間の成分で生成される。
+選んだ列について
+\[
+ r_i=\rank\bigl(
+ \Hom(\pi X_i,\pi B(1))\otimes\Hom(\pi B,\pi X_i)
+ \longrightarrow\Hom(\pi B,\pi B(1))
+ \bigr)
+\]
+と置くと、$r_i\in\{3,4\}$ であり、距離二の偶数添字間で
+追加の生成元を $4-r_i$ 個要する。$D$ が Van den Bergh の
+三次正則型となる条件は全ての $r_i$ が四となることである。
+また $r_i$ は $i$ に依存しない。
+\end{corollary}
+\begin{proof}
+$\pi B(i)$ を始域かつ $\pi B(j)$ を終域とする射は、$B$ の一次生成性から
+距離二の積で生成される。
+奇数項を終域とする射で始域がそれより前にある場合は、
+\eqref{eq:normal-ruling-evaluation} のシフトに $\Hom$ を適用して
+直前の偶数項を経由する射で張られる。
+実際、核のシフトは始域のシフトより小さくない
+（始域が同じシフトなら自由加群である）ので、核への $\Ext^1$ は零である。
+奇数項を始域とし偶数項を終域とする射については、内部 $\Hom_B(X_i,B)$ の
+次数一生成性を使う。よって主張した距離で生成される。
+各隣接空間は二次元である。
+
+下限 $r_i\ge3$ を示す。$Z=X_i$ とする。$Z$ と $p(Z)$ は
+\eqref{eq:normal-ruling-evaluation} からともに自由加群へ埋め込める。
+noetherian domain $B$ の商斜体上で正の rank を持ち、
+同じ完全列から両者の rank の和は二なので、各 rank は一である。
+従って任意の非零斉次射 $Z(-1)\to B$ は単射で、
+その像は次数一の二次元部分空間で生成される。
+一次独立な二射の像の次数一成分が一致したとすると、
+次数一生成性から像全体が一致する。このとき二射は
+同じ像への同型であり、$\End_{\mathrm{gr}}(Z)=k$ に反する。
+従って二つの二次元部分空間の和の次元は三以上となる。
+この和が上の積の像である。
+残る距離二の偶数添字間の生成元の個数は、その積の余次元 $4-r_i$ となる。
+
+距離二の奇数項間の Hom は四次元である。
+実際、$X_{i+1}(i+1)$ の被覆列の核 $p(X_{i+1})(i)$ に対し、
+$\Hom(\pi X_i(i),-)$ を適用する。$X_i\ne p(X_{i+1})$ による
+次数零 Hom の消滅と $\Ext^1$ の消滅から、
+直前の偶数項を経由する積が同型であることが分かる。
+
+$D$ の添字 $j$ から始まる距離二の生成元の個数を $d_j$ とする
+（奇数 $j$ では零）。右単純加群の極小分解は
+\[
+ 0\longrightarrow P_{j+4}\longrightarrow
+ P_{j+3}^{2}\oplus P_{j+2}^{d_{j+2}}\longrightarrow
+ P_{j+1}^{2}\oplus P_{j+2}^{d_j}\longrightarrow P_j\longrightarrow S_j
+ \longrightarrow0
+\]
+となる。右側の第一項は生成元から分かり、双対極小分解では同じ議論が
+左単純加群に使える。左側から見た距離二の生成元の個数も、
+同じ隣接積の余次元なので $d_{j+2}$ である。
+分解の次数 $j+2$ 成分の Euler 標数を取ると、
+$4-2\cdot2-d_j+d_{j+2}=0$、すなわち $d_j=d_{j+2}$ を得る。
+従って $r_i$ は $i$ に依存しない。特に non-standard では
+二つの MCM 型の階数が等しい。
+
+全ての $r_i$ が四なら分解は三次型の形になる。
+成分次元の多項式上界は、
+$B(i)^2\twoheadrightarrow X_i(i)$ と各 $X_j(j)$ の線形自由分解による
+Hilbert 級数 $2(1-t)^{-3}$ から従う。
+逆に三次正則型なら距離二の積は全射である。
+\end{proof}
+
+\begin{remark}[階数三の行列表示]
+\label{rem:rank-three-matrix}
+階数三の場合、$\Hom_B(X_i,B(1))$ の基底と $(X_i)_0$ の基底を選ぶと、
+合成の四成分は $A_1=B_1$ の元を成分とする行列 $\Phi$ になる。
+双対評価列と線形行列分解において、これは残りの行列 $\Psi$ と
+$\Phi\Psi=gI$ を満たす側の行列として取れる。
+四成分の間の唯一の線形関係を表す $2\times2$ 係数行列は階数二である。
+実際、もし階数一なら基底変換で $\Phi$ の一成分を零にできる。
+この場合、零成分を含む行と積 $\Phi\Psi$ の対角成分を見ると
+$g$ が二つの次数一元の積となり、$B$ の domain 性に反する。
+従って行と列の基底変換でこの関係を trace が零という形にできる。
+そのように取ると
+\[
+ \Phi=\begin{pmatrix} a&b\\ c&-a\end{pmatrix},
+ \qquad a,b,c\in A_1\ \text{は線形独立}
+\]
+となる。階数三の領域では、この形と対応する $\Psi$ の積の式が
+残りの階数および別表示との比較の出発点となる。
+\end{remark}
+
+\begin{corollary}[non-standard 型の正規化条件]
+\label{cor:nonstandard-square-matrix}
+$p(Z)=Z$ のとき、対応する評価行列を $M\in M_2(A_1)$ として
+\[
+ M^2=gC,\qquad \nu(M)=CMC^{-1},\qquad C\in\GL_2(k)
+\]
+を満たす形に取れる。ここで $\nu$ は $ag=g\nu(a)$ の規約の正規化自己同型である。
+特に $g$ が中心なら $C$ はスカラーであり、$M$ を定数倍して $M^2=gI$ とできる。
+\end{corollary}
+\begin{proof}
+\eqref{eq:normal-ruling-evaluation} の射を
+$\iota:Z(-1)\to B^2$ と $q:B^2\to Z$ とする。
+積 $\iota q(-1):B(-1)^2\to B^2$ を $\bar M$ と書くと、
+$q\iota=0$ により $\bar M^2=0$ となる。
+これは $Z$ の極小線形表示であり、
+それを与える行列分解の第一行列は、自由加群の基底変換の後、
+$\bar M$ の $A_1$ への一意な持上げ $M$ と一致する。
+従って $M$ は $A$ 上で単射である。
+$\bar M^2=0$ と $\ker(A_2\to B_2)=kg$ から $M^2=gC$ となる。
+$C$ が非可逆なら非零の定数列 $v$ で $Cv=0$ があり、
+$M$ の単射性に反して $M^2v=0$ となる。
+最後に $M(gC)=(gC)M$ に $Mg=g\nu(M)$ を代入し、
+正則元 $g$ を左から消去して共役の式を得る。
+中心切断では $C$ は $M$ の各係数行列と可換である。
+系~\ref{cor:normal-cubic-defect} により係数行列の張る空間は三次元以上だが、
+非スカラーな二次正方行列の中心化環は二次元なので、$C$ はスカラーである。
+基礎体は代数閉なので必要な平方根を取り、$M$ を定数倍できる。
+\end{proof}

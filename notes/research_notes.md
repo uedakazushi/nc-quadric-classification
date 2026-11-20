@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.3（数学原稿v0.3）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.3（数学原稿v0.4）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -80,8 +80,8 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 
 - 根条件は関手の自然同型。`MU2021`の中心切断の仮定では `S⁻¹[2]=(−)_{ν⁻¹}(2)`。次数シフト(1)の平方根性には誘導されたNakayama twistの自明性が必要であり、元の環自己同型`ν=id`までは主張しない。
 - VdBのeven partがgraded化できること、canonical hullがあることと、指定shiftがinverse Serreの平方根であることは別の命題。periodicityだけから根条件を結論しない。
-- `MN2025`の比較定理はcentral・domain・smooth・standardを仮定。H2ではdomainとgldim2は既に得られるが、central/standard表示が全対象にあるか、指定Oを保てるかは残る。`MUW2026`でもnormal→central還元は未解決として扱われる。
-- `MUW2026`のambient仮定(*)はAuslander正則性とCohen–Macaulay性。本定義のAS14641に自動的に含まれるとは確認していない。Sklyanin型・ここで使うskew polynomial型では適用できる。
+- MN2025 Theorem6.13はcentral・domain・smooth・standardを仮定する。主原稿 thm:normal-helix はMU2022の正規切断の安定圏を使い、non-standardでは奇数項を交互に選ぶことで、中心性・standard性・ambientの(*)なしに全H2の標識付き四周期AS正則Z-algebraを構成する。
+- 比較先は次元3・parameter4で、cubicとなるには偶数項間への隣接合成の階数4が必要。cor:normal-cubic-defect により可能な階数は3と4。階数3の追加生成元が別の適合根または別foundationで消えるかは未解決。
 - `MU2021`のnon-standard例は可換quadricのZhang twistでもある。一つの表示に対するspinorのsyzygy挙動を、そのままO-markedカテゴリーの不変量としない。
 - graded同型、root付き同値、O-marked exact同値、derived同値は異なる。同じderived categoryというだけで本研究の対象を同一視しない。
 - 全H2のpointed exact同値を反Serre環の二次関係空間で判定できる。主原稿 thm:antiserre-invariant、prop:antiserre-quadratic。実現軌道の全被覆は未解決。Sklyanin型では中心が一次元で生成され、その商から楕円曲線を回復する。
@@ -114,5 +114,7 @@ repoルートの`latexmk`と、VS Codeレシピ相当の`latexmk -norc -r <repo>
 運用v0.3の検証では、Python 3.12.14／SymPy 1.14.0で`check.py all`のsources・math・buildが全てPASS。buildは最新の既存出力の再利用を含み、運用整備に伴うPDFの再目視は行っていない。bootstrapの通常・`--with-tex`経路は既存依存を再利用した。隔離コピーでPython・TeX不足、壊れた既存venvの保持、未定義TeXラベルを検査し、PARTIAL・SKIP終了2・FAIL終了1と、独立した段階の継続を確認した。pip・aptによる新規導入の成否、Cloud環境の作成・Publish・新規task起動はこの確認に含まれない。運用整備を新しい数学的証明として数えない。
 
 数学原稿v0.3では sources・math・build がPASS。LuaLaTeXでは既設の日本語TeXパッケージと書込可能な一時キャッシュを指定して、23頁のPDFとSyncTeXを再生成し、最終ログを確認した。新しい頁の表示点検、VS Code UI、形式証明は未実施。T1、標識の比較、rulingの階数と固定ambientの中心化条件は証明を別担当と点検した。Sklyanin型の楕円商と二添字周期の判定は原稿内の証明を推論と規約について点検した。
+
+数学原稿v0.4では正規切断の四周期比較のExt消滅、二型の生成性、mutationによる完全性、豊富性を独立担当と点検し、使った一次資料の仮定を照合した。階数3の極小分解と行列表示、標識を保つ導来同値からのheart認識も本文に証明を置いた。sources・math・build はPASS。新規部分の外部査読、形式証明、PDFの目視は未実施。
 
 GitHubのgit読取が利用できても書込認証は別に必要である。GitHub connectorによる通常コミットも許可された保存手段として使用できる。research-hubの更新は対象repo保存後に最新READMEを読み、並行更新を保持して行う。
