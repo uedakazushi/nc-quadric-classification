@@ -1,0 +1,168 @@
+% !TEX root = ../nc-quadric-classification.tex
+\section{全対象の分類定理}
+\label{sec:classification}
+
+この節では分類のデータ、許容条件、同値関係を先に述べる。
+構成と被覆の証明は後続の各節に置く。
+平方根と ambient は構成に使うが、最終的な同値関係では保持しない。
+
+\subsection{cubic 側の幾何データと四生成環}
+
+\begin{definition}[許容四つ組]
+\label{def:classification-admissible}
+$P_{\mathrm{cub}}$ は一つの記号 $\mathrm{lin}$ と、次の四つ組
+$U=(C,L_0,L_1,L_2)$ 全体との直和とする。
+$C$ は射影曲線、$L_i$ は直線束であり、次を満たす。
+\begin{enumerate}[label=(D\arabic*)]
+\item $h^0(C,L_i)=2$ で、$L_i$ は大域切断で生成される。
+      隣接する組 $(L_0,L_1)$ と $(L_1,L_2)$ による射はそれぞれ
+      $C$ を $\PP^1\times\PP^1$ の二次数 $(2,2)$ の Cartier 因子として閉埋め込む。
+\item 各既約成分 $C_j\subset C_{\mathrm{red}}$ 上で
+      $\deg(L_0|_{C_j})=\deg(L_2|_{C_j})$ である。
+\item $L_0\not\simeq L_2$ である。
+\end{enumerate}
+これは \cite[arXiv v3, Proposition 5.1.2]{VdB2011} の許容四つ組の条件である。
+$C$ の整性、被約性、滑らかさは要求しない。
+記号 $\mathrm{lin}$ は $(\coh(\PP^1\times\PP^1),\OO)$ を表す。
+\end{definition}
+
+四つ組から $L_{i+3}=L_i^{-1}\otimes L_{i+1}\otimes L_{i+2}$ により
+両側の helix を作り、
+\[
+ V_i=H^0(C,L_i),\qquad
+ R_i=\ker\bigl(V_i\otimes V_{i+1}\otimes V_{i+2}
+       \longrightarrow H^0(C,L_i\otimes L_{i+1}\otimes L_{i+2})\bigr)
+\]
+と置く。$\dim V_i=\dim R_i=2$ である。
+これらを隣接空間と三次関係とする $\mathbb Z$-algebra を $D(U)$ とする。
+定理~\ref{thm:all-admissible-inverse} の構成に従い、
+反 Serre の四周期 $\theta$ と $\beta^2=\theta$ を対角型まで満たす
+二周期 $\beta:D(U)\to D(U)(2)$ を一つ選ぶ。
+この選択の存在は全ての許容データで証明されている。
+具体的には曲線の自己同型 $\sigma$ と束の同型
+$\rho_i:\sigma^*L_i\xrightarrow\sim L_{i+2}$ を取り、
+$\beta_i=H^0(\rho_i)\circ\sigma^*$ とする。
+
+$V=V_0\otimes V_1$ とし、$\beta_{01}=\beta_0\otimes\beta_1:
+V\to V_2\otimes V_3$ と書く。有限次元の空間
+\begin{equation}
+ K_U=(1_V\otimes\beta_{01}^{-1})
+       (R_0\otimes V_3+V_0\otimes R_1)\subset V\otimes V,
+ \qquad B_U=T(V)/(K_U)
+ \label{eq:classification-cubic-kernel}
+\end{equation}
+を作る。$\dim V=4$、$\dim K_U=7$ である。
+ここで $R_0\otimes V_3$ と $V_0\otimes R_1$ の交わりは
+四次テンソルの張る一次元空間 $W_0$ である。
+三次関係を偶数頂点間でまとめれば、二次環 $B_U$ は
+\[
+ (B_U)_n=D(U)_{0,2n},\qquad a*b=a\beta^m(b)
+ \quad(a\in(B_U)_m)
+\]
+と一致する。これは曲線 $C$ の切断環ではない。
+全次数での二次表示は、偶数長の道に現れる $R_j$ の開始添字が偶数なら
+右に一文字、奇数なら左に一文字を加え、上の二種類の四文字関係にまとめることで従う。
+特に次数四の全切断乗法の核を課すと曲線への追加商となるので、
+式~\eqref{eq:classification-cubic-kernel} の七次元空間を用いる。
+linear データでは、$B_{\mathrm{lin}}$ を通常の Segre 環
+$k[x_{00},x_{01},x_{10},x_{11}]/(x_{00}x_{11}-x_{01}x_{10})$ とする。
+
+\subsection{cubic データ上の有限同値判定}
+
+各 $V$ の基底を取り、上で得た二次関係を
+$K,K'\subset k^4\otimes k^4$ とする。
+$G=\GL_4(k)$ と、方程式で与えられる閉部分集合
+\[
+ E(K,K')=\{(g,h)\in G\times G\mid(g\otimes h)K=K'\}
+\]
+を使い、次の反復を定める。
+\begin{equation}
+ \begin{split}
+ C_0&=G,\\
+ C_{n+1}&=\operatorname{pr}_1(E\cap(G\times C_n))
+       \cap\operatorname{pr}_2(E\cap(C_n\times G)).
+ \end{split}
+ \label{eq:classification-finite-relation}
+\end{equation}
+命題~\ref{prop:first-orbit-finite-equivalence} により、この下降列は有限段で安定する。
+安定集合が非空のとき $U\sim_{\mathrm{cub}}U'$ と定める。
+行列式を可逆とした座標環で、射影の消去と根基イデアルの比較だけを用いる判定である。
+標数零の抽象的な代数閉体上では有限の代数的判定を意味し、
+機械上で実行するには係数体が有効に与えられていることを前提とする。
+基底、束の表示、二周期 $\beta$ の選び方によらないことは、次の定理で示す。
+
+\subsection{noncubic データと主定理}
+
+$P_{\mathrm{nc}}$ を、$\PP^1$ 上の被約な二点集合 $Z_1,Z_2$ の非順序対の全体とする。
+同値関係 $\sim_{\mathrm{nc}}$ は $\PGL_2$ の同時作用である。
+それぞれの零点が $Z_i$ となる非退化二次形式 $f_i(u,v)$ を選び、
+\[
+ C_{Z_1,Z_2}=k[u,v]\langle c,d\rangle/
+       (c^2-f_1(u,v),\ d^2-f_2(u,v))
+\]
+と置く。全ての生成元の次数は一で、$u,v$ は中央とする。
+この表示自体の次数シフトが適合根であるとは要求しない。
+適合根と AS 正則被覆は定理~\ref{thm:ore-anticommuting-central} で構成する。
+
+\begin{theorem}[全 $\HH$ の pointed exact 分類]
+\label{thm:complete-h2-classification}
+標数零の代数閉体 $k$ 上で、次の対応は全単射である。
+\[
+ (P_{\mathrm{cub}}/{\sim_{\mathrm{cub}}})
+ \ \sqcup\ (P_{\mathrm{nc}}/{\sim_{\mathrm{nc}}})
+ \ \xrightarrow{\ \sim\ }\ 
+ \HH/{\text{pointed exact equivalence}}.
+\]
+cubic 側では $U$ を $(\qgr B_U,\pi B_U)$ へ、
+noncubic 側では $\{Z_1,Z_2\}$ を
+$(\qgr C_{Z_1,Z_2},\pi C_{Z_1,Z_2})$ へ送る。
+両領域の像は交わらず、前者は pointed cubic 表示を持つ対象の全体、
+後者はそのような表示を持たない対象の全体である。
+
+noncubic 側の商は、二対が一致する一類、一点を共有する一類と、
+四点が異なる場合の $\lambda\in k\setminus\{0,1\}$ を
+$\lambda\sim\lambda^{-1}$ で割った一パラメータ族からなる。
+この領域で non-standard な適合表示を持つのは、二対が一致する一類だけである。
+\end{theorem}
+
+\begin{proof}
+まず全許容四つ組の $D(U)$ は cubic AS 正則 $\mathbb Z$-algebra である
+\cite[arXiv v3, Theorems 5.5.7--5.5.10]{VdB2011}。
+定理~\ref{thm:all-admissible-inverse} は、全曲線型で適合二周期を構成し、
+even part の全切断環としての表示、型 $(1,4,6,4,1)$ の被覆、
+正則正規元、Gabriel--Krull 条件、exceptionality、AZ ampleness を確認する。
+従って cubic 側の写像は定義される。
+linear データは通常の二次曲面であり、$-\otimes\OO(1,1)$ を使えばよい。
+noncubic 側の構成と同値判定は定理~\ref{thm:noncubic-classification} による。
+
+任意の $(\cC,\OO)\in\HH$ を取る。
+定理~\ref{thm:cubic-coverage} の階数判定により、pointed cubic 表示を持つか、
+二つの MCM 型の階数がともに三であるかに分かれる。
+前者では \cite[arXiv v3, Theorem 5.5.10]{VdB2011} の分類により、
+linear データまたは定義~\ref{def:classification-admissible} の四つ組から得られる。
+後者では定理~\ref{thm:noncubic-classification} により中央二重平方環へ帰着する。
+これで全被覆と二領域の非交差を得た。
+
+cubic 側の各 $B_U$ は、構成した同じ pointed 圏の適合切断環である。
+命題~\ref{prop:first-orbit-finite-equivalence} は二つの適合切断環について、
+反復~\eqref{eq:classification-finite-relation} の非空性が
+pointed exact 同値と必要十分であることを示す。
+従って $\sim_{\mathrm{cub}}$ は同値関係であり、写像は単射である。
+一つの四つ組から異なる基底・束同型・適合二周期を選んでも、
+いずれも $(\qgr D(U),\pi e_0D(U))$ と pointed 同値なので、同じ判定で同一視される。
+具体的には $\check B_{ij}=B_{j-i}$ から $D(U)_{2i,2j}$ への写像
+$a\mapsto\beta^i(a)$ が積と整合するので、偶数頂点の圏と添字零の対象を保つ。
+未知の自己同値群や全ての平方根の列挙を、判定の前提として残してはいない。
+noncubic 側の最後の具体的記述も定理~\ref{thm:noncubic-classification} による。
+\end{proof}
+
+\begin{remark}[分類の範囲]
+主定理は全対象の同値類の分類である。
+cubic 側の同値を幾何的な少数の正規形へさらに簡約すること、
+全自己同値、平方根と ambient の各忘却ファイバー、
+族の代数性と相対モジュライは別の問題である。
+Sklyanin pencil の局所的な候補数の評価に現れる追加の単射性条件は、
+式~\eqref{eq:classification-finite-relation} では使わず、
+主定理の許容領域を狭めない。
+既知入力と本稿の直接証明は区別しており、後者の包括的な新規性は未確認である。
+\end{remark}

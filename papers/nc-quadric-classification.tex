@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v0.8
+% 日本語 LuaLaTeX。2026-11-21 / v1.0
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,36 +43,29 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v0.8（非 cubic 部分の完全分類と退化境界）}
+\date{2026年11月21日\quad v1.0（全対象の同値類分類・公表前草稿）}
 
 \begin{document}
 \maketitle
 \begin{abstract}
-構造対象 $\OO$ のみを指定した非可換二次曲面の分類問題を定式化する。
+構造対象 $\OO$ のみを指定した非可換二次曲面を pointed exact 同値で分類する。
 $\OO$ は Gabriel--Krull 商で rank one torsion-free かつ exceptional とし、
-反 Serre 関手の平方根 $s$ が存在し、$(\OO,s)$ は Artin--Zhang ample、
-その切断環は型 $(1,4,6,4,1)$ の二次 AS 正則環の二次の正則正規元による商とする。
+反 Serre 関手の exact な平方根 $s$ の存在、$(\OO,s)$ の Artin--Zhang ampleness、
+全切断環の型 $(1,4,6,4,1)$ の二次 AS 正則環による正則正規二次被覆を要求する。
 平方根、ambient 環、商表示は指定構造に含めない。
-通常の quadratic envelope の AS 正則性を要求すると可換二次曲面も除外されることを示し、
-固定切断環の ambient 表示を二次関係空間内の超平面と三次の階数条件へ帰着する。
-さらに、滑らかな射影整曲面として実現される可換対象は
-$\PP^1\times\PP^1$ に限られることを証明し、
-同じ可換 quadric を与える非可換 ambient の族と、適合する平方根関手の四つの同値類を記述する。
-また、複素数体上の滑らかな楕円型 Sklyanin quadric が定義を満たすことを確認し、
-可換二次曲面の Abel 圏と同値でない対象が実際に含まれることを示す。
-全対象について、反 Serre 切断環の二次関係空間を用いる pointed exact 同値判定を与える。
-任意の適合する正規切断から三次元 AS 正則 $\mathbb Z$-algebra への比較を構成し、構造対象と反 Serre 関手の像を求める。
-構造対象の最初の軌道対象を内在的に認識し、
-Van den Bergh の三次正則型で覆えない例を構成する。
-整な種数一曲線、被約な二成分の曲線と二重 $(1,1)$ 曲線上の
-許容四つ組からは逆に対象を構成する。
-一般の cubic 表示の偶数部分の domain 性には Presotto の既知定理を用いる。
-多パラメータ skew polynomial 環と、中央二変数を持つ Ore 環の正規二次切断を分類する。
-階数三の二つの行列分解から共通二変数環を回復し、
-standard・non-standard の両方で中央二重平方環へ帰着する。
-これにより cubic 表示を持たない全対象を二つの二点集合で完全に分類する。
-cubic 側の残る退化型の逆構成と、相対モジュライは未解決である。
-本稿の初期結果の組合せに関する新規性は未確定である。
+全対象は pointed cubic 表示を持つ領域と持たない領域に分かれる。
+前者は linear データと全ての Van den Bergh 許容四つ組で構成され、
+四生成・七二次関係からなる有限の代数的判定により重複を除く。
+被約性・整性を仮定せず、全ての曲線型で二周期の平方を反 Serre 移動と比較する。
+後者は二つの非退化二次形式を持つ中央二重平方環に帰着し、
+$\PP^1$ 上の二つの被約二点集合の非順序対を同時射影変換で割った集合で分類される。
+証明では最初の軌道対象を内在的に認識し、二つの MCM 型の階数によって
+両領域を検出する。階数三の場合には共通の二変数環を回復し、
+二つの conic を同時に untwist する。
+通常の quadratic envelope による定義の障害、可換対象の四つの適合根、
+ambient の非一意性も記述する。
+本稿は同値類の分類を扱い、全自己同値・忘却ファイバー・相対モジュライは別問題とする。
+既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
 \tableofcontents
 
@@ -134,18 +127,29 @@ $\PP(2,4,4,6)$ と conifold potential の GIT 商 $\PP(1,2,3,4)$、
 しかしその tensor や helix の標識を忘れた同値関係まで自動的に与えるわけではない。
 本稿の可換点における四つの平方根と、その次数四の射を同一視する主張も行わない。
 
-本稿で証明するのは、定義の基本的帰結、固定切断環の表示の還元、
-滑らかな可換対象の認識とその平方根の分類、ambient 非一意性の明示例、
-および既知の滑らかな楕円型 Sklyanin quadric の定義への適合である。
-可換認識には一次生成性と $\dim B_1=4,\dim B_2=9$ だけで十分であり、
-ambient の全 AS 条件を使う必要はない。
-楕円型の例では \cite[arXiv v3, Proposition 7.1]{BSW2010} と
-\cite[arXiv v2, Lemma 1.5]{RRZ2014} により canonical twist の自明性を確認し、
-Gabriel--Krull rank を Hilbert 多項式と楕円曲線上の下降列から検証する。
-さらに \cite[\S 10.5]{SVdB2013} の既知の単純対象の自己 Euler 形式を使い、
-一部の対象は $\coh Q$ と exact 同値でないと判別する。
-一般の非可換 quadric の完全分類を主張するものではなく、
-既存の embedding 定理や tensor 分類を新しい成果とするものでもない。
+Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} は、一般の cubic quadric が
+$\mathbb Z$-domain であることを証明した。この定理に整性・被約性の仮定はなく、
+本稿では退化曲線から作る even part の domain 性に適用する。
+一方、二周期の存在だけからその平方が反 Serre 関手であるとは結論できない。
+本稿は四次テンソルの巡回写像を双対化双加群の作用と直接比較し、
+全ての被約・非被約 $(2,2)$ 曲線について、束の貼合せと切断上の二周期を記述する。
+
+主結果は定理~\ref{thm:complete-h2-classification} である。
+既知の cubic データの分類を入力としつつ、全 $\HH$ のうち cubic 表示を
+持たない領域も回復し、その領域を二点集合の対で分類する。
+さらに、最初の軌道対象の内在的認識により、選んだ根を保持しない pointed exact 同値を
+有限の代数的条件へ帰着する。この判定は未知の AS 正則性や
+未知の自己同値群の計算を入力とせず、特殊な退化点も含む。
+既存の cubic 分類、$\mathbb Z$-domain 定理、embedding 定理を本稿の新しい成果とはしない。
+本稿の直接証明に関する包括的な先行研究調査と新規性の確定は、なお公表前の課題である。
+
+可換対象の認識、四つの適合根、具体的な Sklyanin・Ore・多パラメータ族は、
+定義と忘却を確認する独立した基準例として保持する。
+可換認識には一次生成性と $\dim B_1=4,\dim B_2=9$ が主要な入力であり、
+楕円型の具体例には \cite[arXiv v3, Proposition 7.1]{BSW2010}、
+\cite[arXiv v2, Lemma 1.5]{RRZ2014}、\cite[\S 10.5]{SVdB2013} を用いる。
+これらの例に複素数体や無限位数を仮定する箇所があっても、主定理は
+標数零の任意の代数閉体上で成り立つ。
 
 \section{構造対象と存在条件}
 \label{sec:definition}
@@ -238,6 +242,8 @@ $F(\OO)\simeq\OO'$ によるものとする。
 平方根付きの同値では $Fs\simeq s'F$ も要求する。
 根同型を固定した場合の整合性や慣性は、本稿では分類しない。
 この区別により、表示の重複を異なる二次曲面として数えることを避ける。
+
+\input{sections/classification}
 
 \section{内在的条件からの基本的帰結}
 \label{sec:categorical-consequences}
@@ -380,20 +386,18 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/elliptic_inverse}
 \input{sections/pencil_deformation}
 
-\section{完全分類へ向けた問題}
+\section{同値類の分類後に残る問題}
 \label{sec:open-problems}
 
-固定された切断環については命題~\ref{prop:ambient-hyperplane} が
-ambient 表示の具体的な入口を与える。
-しかし最終目標は切断環や ambient の分類ではなく、
-構造対象のみを保持する exact 同値類の分類である。
-特に、以下の問いを未解決として区別する。
+定理~\ref{thm:complete-h2-classification} は、体上の全対象を分類し、
+構成するデータと必要十分な同値判定を与える。
+以下では、この結論に含めない構造を区別する。
 
-\begin{problem}[既知の quadric 分類との比較]
-全ての $\HH$ 対象を cubic AS 正則 $\mathbb Z$-algebra または
-admissible elliptic quadruple の適切な領域から得られるか。
-逆に、既知の quadric から指定 $\OO$ を保った平方根と
-全切断環の AS 正則表示を同時に構成できる範囲はどこまでか。
+\begin{problem}[幾何データ上での同値判定の簡約]
+全許容四つ組について成立する有限判定を、曲線・直線束の変換による
+より小さい正規形や幾何的な対応で記述せよ。
+特殊な自己同型を持つ点と全ての退化型を含め、既存の tensor の GIT 商と比較せよ。
+この簡約を待たずに、主定理の有限判定は全同値類を区別する。
 \end{problem}
 
 \begin{problem}[平方根と表示の忘却]

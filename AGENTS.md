@@ -1,10 +1,10 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-21 / v0.3。数学原稿の現行版はv0.8。
+2026-11-21 / v0.3。数学原稿の現行版はv1.0。
 
 ## Cloud Codexへの継続指示
 
-このrepoの研究継続を依頼された場合の目標は、`00_research_plan.md`の「完全分類の達成条件」をすべて満たすことである。計画の作成、一補題、一例、一節、検算成功、commit、pushを終了条件にしない。推進できる未解決課題がある限り、保存後も次の実行単位へ進む。「続けますか」と毎回確認しない。環境の開始方法は `CLOUD_CODEX.md` に置く。
+このrepoの研究継続を依頼された場合の目標は、`00_research_plan.md`の現行の実行単位を完了することである。全H2の分類は「完全分類の達成条件」F1–F6を基準とし、達成済みの場合は方針に記した公表前監査・次の研究課題から進める。計画の作成、一補題、一例、一節、検算成功、commit、pushを終了条件にしない。推進できる未解決課題がある限り、保存後も次の実行単位へ進む。「続けますか」と毎回確認しない。環境の開始方法は `CLOUD_CODEX.md` に置く。
 
 1. 最新のhub該当項目、研究方針、本指示、必要なノート・原稿を読む。既存の未commit変更を調べ、他の作業者の変更を保持する。実際のcheckoutと`origin/main`の差を確認し、研究方針の「次の実行単位」から始める。
 2. `python3 scripts/check.py doctor`で道具を診断し、`python3 scripts/check.py sources`で構成を点検する。必要な依存のみ`bash scripts/bootstrap.sh`で整える。依存不足はその検証を未実施とする理由であり、証明検討・原稿編集・利用可能な資料の比較まで止める理由ではない。
@@ -59,7 +59,7 @@
 - 分類の最終目標は全H2対象のpointed exact同値分類。graded環の同型、Zhang twist、root付き同値、derived同値を混同しない。既存のcubic Z-algebra/elliptic quadrupleの分類だけで全H2分類済みとしない。
 - 候補データからの構成、全H2からの回復、データ上の同値判定、全領域の被覆を別の命題として証明する。「H2を与える表示全体を取る」や未知のAS/admissibilityを条件に残したincidence記述は、全分類の完成ではない。
 - GIT商のorbit closure・S-equivalenceをpointed exact同値と同一視しない。反Serre環で同値類を判定できても、graded自己同型群とpointed自己同値群の一致や相対moduliまで自動的に従うとはしない。
-- 主原稿の初期補題・可換平方根分類・ambient非一意性と、全非可換分類・相対moduliの未完成を区別する。原稿のラベルとnotesの状態表を維持する。
+- 主原稿の全同値類分類と、全自己同値・全平方根・ambient忘却ファイバー・相対moduliの未完成を区別する。原稿のラベルとnotesの状態表を維持する。
 - 他repoは必要な一次資料として参照する。`nc-cubic-classification` の完全分類定理を本repoの既知入力にしない。Serre根についての一般研究は `categorical-fano-index`、tensor/quadruple分類は確認済み文献と役割を区別する。
 - 次の着手先は研究方針の優先課題。有限次数の計算だけでAS正則性・smoothness・全次数正則性・全対象の被覆を証明したと報告しない。
 

@@ -177,6 +177,108 @@ $V_i$ の生成性と添字直線上でのスカラーの逐次選択により
 その差は対角型自己同型である。
 \end{proof}
 
+\begin{proposition}[周期の平方から全公理への共通還元]
+\label{prop:admissible-period-h2}
+$U=(C,L_0,L_1,L_2)$ を Van den Bergh の許容四つ組、
+$D=D(U)$ とし、$\theta:D\to D(4)$ を四次テンソルの回転から得る周期とする。
+$C$ の自己同型と $\sigma^*L_i\simeq L_{i+2}$ から得られる
+二周期 $\beta:D\to D(2)$ が、対角型自己同型を除いて
+$\beta^2=\theta$ を満たすと仮定する。
+このとき $(\qgr D,\pi e_0D)\in\HH$ である。
+曲線 $C$ の整性も被約性も要求しない。
+\end{proposition}
+
+\begin{proof}
+$B_n=D_{0,2n}$ に $a*b=a\beta^m(b)$
+（$a\in B_m$）で積を入れる。
+VdB の標準 hull 定理\cite[arXiv v3, Theorem 6.1]{VdB2011} の hull は、定義上、単純加群の分解が
+型 $(1,4,6,4,1)$ の四次元 AS 正則 $2\mathbb Z$-algebra であり、
+商写像の核は正則正規元の列で生成される。
+\cite[arXiv v3, Lemmas 6.4--6.5]{VdB2011} により、\emph{ここで選んだ} $\beta$ がこの hull に持ち上がる。
+従ってこの周期を用いて次数付けすると、同じ $B$ に対する全射
+$A\twoheadrightarrow B$ を得る。
+その核の次数二成分は一次元であり、非零元 $g$ を取れば
+核全体が左右とも $g$ で生成され、$g$ は左右正則である。
+よって $B=A/(g)$ である。
+standard 分解は線型なので $A$ は二次 Koszul である。
+\cite[arXiv v1, Proposition 4.4 and Theorem 4.5]{MN2025} により、次数付けした $A$ は
+左右の AS 条件を満たし、global dimension と Gorenstein parameter はともに $4$ である。
+
+$D$ は右 noetherian である\cite[arXiv v3, Corollary 5.5.9]{VdB2011}。
+添字を反転した反対 $\mathbb Z$-algebra に \cite[arXiv v1, Theorem 4.5]{MN2025} を適用すると、
+それも三次三次元 AS 正則型である。
+同じ VdB の結果から $D$ は左 noetherian でもある。
+\cite[arXiv v3, Lemma 3.5]{VdB2011} により偶数部分も左右 noetherian であり、$B$ も同様である。
+\cite[arXiv v3, Remark 6.2]{VdB2011} は hull の右 noetherian 性を与える。
+左側についても、$g$ によるフィルトレーションの次数環が
+$B$ 上の自己同型型 skew polynomial 環になることから従う。
+実際、斉次左イデアルの初期イデアルの有限生成元を持ち上げて減算すると、
+内部次数を保って $g$-進位数が増える。
+各内部次数におけるフィルトレーションは有限なので、この操作は停止する。
+一般の左イデアルには最高内部次数の初期イデアルを使えばよい。
+以上より $A$ は定義~\ref{def:as14641} の全条件を満たす。
+
+\cite[arXiv v3, Lemmas 3.4--3.5]{VdB2011} の偶数部分への制限は
+$(\qgr D,\pi e_0D)\simeq(\qgr B,\pi B)$ を与える。
+前者は noetherian Abel 圏で、\cite[arXiv v3, Corollary 5.5.9]{VdB2011} により Ext 有限である。
+補題~\ref{lem:cubic-serre-period} の双加群計算は
+$D$ が ASF++ で、その反 Serre 関手が $(4)_\theta$ であることを与える。
+従って \cite[arXiv v1, Theorem 6.8]{MN2025} により $D^b(\qgr D)$ は Serre 関手を持つ。
+
+ここで対角型の差が関手の自然同型に十分であることを明記する。
+$\delta(a)=c_i/c_j\,a$（$a\in D_{ij}$）とすると、
+任意の右 $D$-加群 $M$ に対する $M_\delta\to M$ は
+第 $j$ 成分を $c_j$ 倍して与えられる自然な加群同型である。
+各隣接生成空間での任意の非零スカラー列は、添字集合が $\mathbb Z$ であるため、
+$c_{i+1}$ を逐次選んでこの形に書ける。
+この自然同型は torsion 商と導来圏へ降りる。
+よって $s=(2)_\beta$ は exact で
+$s^2\simeq(4)_\theta\simeq S^{-1}[2]$ を満たす。
+特に命題~\ref{prop:gldim-two} から $\gldim\qgr D=2$ である。
+
+\cite[arXiv v1, Theorem 4.8 and Lemma 5.12]{MN2025} により $\{\pi P_{-i}\}_{i\in\mathbb Z}$ は ample である。
+奇数添字の $\pi P_j$ は、次数一生成性により次の偶数添字の
+$\pi P_{j+1}$ の二つの直和の商になる。
+従って偶数部分列も ample であり、$(\pi P_0,s)$ は Artin--Zhang ample である。
+\cite[arXiv v1, Proposition 4.11(2)]{MN2025} より
+\[
+ \Ext^r(\pi P_j,\pi P_i)=
+ \begin{cases}
+ D_{ij}&r=0,\\
+ D_{j,i-4}^*&r=2,\\
+ 0&\text{その他}
+ \end{cases}
+\]
+なので、$\pi P_0$ は exceptional である。
+次数 $n$ の切断空間 $D_{-2n,0}$ を $\beta^n$ で $B_n$ に移すと、
+切断環の積 $s^n(a)\circ b$ は $a\beta^m(b)$ に移る。
+従って全非負次数での切断環は、上で得た\emph{同じ} $B=A/(g)$ である。
+
+最後に命題~\ref{prop:all-quadric-even-domain} により $B$ は domain である。
+\cite[arXiv v3, Theorem 5.5.6]{VdB2011} の幾何商 $D\twoheadrightarrow D_{\mathrm{geom}}$ の核を
+$\beta$ は保つので、その正則元列は正則正規元 $h\in B_2$ に降りる。
+$\qgr(B/(h))\simeq\coh C$ であり、その構造対象の各 shift は可逆層に対応する。
+任意の $(2,2)$ Cartier 因子 $C\subset\PP^1\times\PP^1$ は純一次元なので、
+被約でなくてもその上の可逆層は有限長ではない。
+例えばいずれの既約成分も含まない一般の hyperplane section を取り、
+その Cartier 因子による可逆層の真の下降列を用いればよい。
+$\qgr(B/(h))\to\qgr B$ は exact かつ fully faithful なので、
+これらの対象は $\qgr B$ においても有限長ではない。
+よって $\pi B\supset\pi hB\supset\pi h^2B\supset\cdots$ は
+$\qgr B/\cC_0$ においても真の下降列となり、$\pi B\notin\cC_1$ である。
+
+任意の有限生成 $B$-加群は $A$ 上で有限自由分解を持つため、
+Hilbert 関数は最終的に次数高々二の整数値多項式になる。
+定数の場合はその値、一次の場合は一次係数で部分商列の長さを抑えると、
+Hilbert 多項式の次数が高々一の対象は $\cC_1$ に属する。
+非零な部分対象 $N=\pi I\subset\pi B$ は、非零斉次元 $f\in I_d$ により
+$\pi B(-d)$ を含む。従って $N\notin\cC_1$ であり、
+$\pi(B/I)$ は $\pi(B/fB)$ の商なので Hilbert 多項式の次数が高々一である。
+従って $\pi B/N\in\cC_1$ となる。
+これは $q(\pi B)$ の非零単純性と $\cC_1$ に対する torsion-free 性を与える。
+\end{proof}
+
+
 \begin{theorem}[整な楕円四つ組からの対象]
 \label{thm:integral-elliptic-inverse}
 標数零の代数閉体上で、$U=(E,L_0,L_1,L_2)$ を整な算術種数一の曲線上の
@@ -187,64 +289,8 @@ Van den Bergh の許容四つ組、$D=D(U)$ とする。
 \end{theorem}
 
 \begin{proof}
-$\beta$ を補題~\ref{lem:elliptic-period-square} の周期移動とする。
-\cite[arXiv v3, Theorem 6.1, Lemmas 6.4--6.5 and Proposition 6.6]{VdB2011} の
-標準 hull はこの周期移動を持ち上げる。
-偶数部分を $\beta$ で次数付けした環 $B$ は、
-型 $(1,4,6,4,1)$ の四次元二次 AS 正則環 $A$ の
-正則正規二次元 $g$ による商である。ここで被覆の標準分解は線型なので
-$A$ は Koszul である。左右の AS 条件については
-\cite[arXiv v1, Proposition 4.4 and Theorem 4.5]{MN2025} を参照できる。
-右 noetherian 性は同じ hull 定理による。
-$D$ の反対環は添字を反転すると三次正則型であるため
-\cite[arXiv v1, Theorem 4.5]{MN2025}、同じ VdB の分類と
-\cite[arXiv v3, Corollary 5.5.9 and Lemma 3.5]{VdB2011} から
-$D$ と $B$ は左 noetherian でもある。
-$g$ によるフィルトレーションの次数環は $B$ 上の skew polynomial 環なので
-$A$ にも左 noetherian 性が昇る。実際、斉次左イデアルについては固定した
-内部次数でこのフィルトレーションは有限であり、
-初期項の生成元から元のイデアルの生成元を持ち上げられる。
-一般の左イデアルについては内部次数による最高次成分を使う。
-
-偶数部分への制限は、指定対象を保つ $\qgr D\simeq\qgr B$ を与える
-\cite[arXiv v3, Lemmas 3.4--3.5]{VdB2011}。
-$\pi P_{-j}$ の列は ample であり
-\cite[arXiv v1, Theorem 6.11]{MN2025}、奇数添字の $\pi P_i$ は
-次の偶数添字の $\pi P_{i+1}$ の有限直和の商になる。
-これは $D$ の隣接成分による生成性から従う。
-従って偶数部分列も ample である。シフト $(1)$ は
-$\qgr D$ 側の $(2)_\beta$ であり、
-補題~\ref{lem:cubic-serre-period} と補題~\ref{lem:elliptic-period-square}
-からその平方は $S^{-1}[2]$ である。
-\cite[arXiv v1, Proposition 4.11]{MN2025} により
-$\Hom(\pi P_j,\pi P_i)=D_{ij}$ であり、
-$\pi P_0$ は exceptional である。この Hom の同一視は合成を保つため、
-$\pi P_0$ の切断環は全非負次数で $B$ と同型となる。
-実際、次数 $n$ の切断の空間 $D_{-2n,0}$ を $\beta^n$ で $D_{0,2n}$ に移すと、
-次数 $m,n$ の積は $a\beta^m(b)$ となり、周期による $B$ の積に一致する。
-$\qgr D$ の Ext 有限性は \cite[arXiv v3, Corollary 5.5.9]{VdB2011} による。
-
-最後に rank 条件を確認する。
-楕円 helix の切断 $\mathbb Z$-algebra $D_{\mathrm{geom}}$ への商の核は、
-次数四の正則な一元列 $(h_i)$ で左右から生成される
-\cite[arXiv v3, Theorem 5.5.6]{VdB2011}。
-$\beta$ は幾何データ上の平行移動から来るためこの核を保つ。
-従って偶数部分の次数付き商では、列 $(h_{2i})$ が一つの
-正則正規元 $h\in B_2$ に降りる。
-$B/(h)$ は $E$ の次数四の直線束 $L_0\otimes L_1$ と
-平行移動による捩れ斉次座標環である。
-命題~\ref{prop:all-quadric-even-domain} により $B$ は domain である。
-この結論には幾何商の domain 性を必要としない。
-また $\qgr(B/(h))\simeq\coh E$ であり、
-その構造対象のシフトは可逆層に対応する
-\cite[arXiv v3, Corollary 5.5.9 and Lemma 3.5]{VdB2011}。
-$h$ の冪が与える $\pi B$ の下降列の隣接商は、従って有限長でない。
-命題~\ref{prop:sklyanin-h2} の証明と同じ Hilbert 多項式の議論を適用すると、
-$\pi B$ は Gabriel--Krull の $\cC_1$ に属さず、
-任意の非零部分対象は $\pi B$ のシフトを含み、その余商は $\cC_1$ に属する。
-ここで使うのは $B$ の Hilbert 級数、domain 性と、
-有限生成 $B$ 加群が $A$ 上で有限自由分解を持つことである。
-よって $\pi B$ は rank one torsion-free であり、全ての条件が成立する。
+補題~\ref{lem:elliptic-period-square} の幾何的二周期に
+命題~\ref{prop:admissible-period-h2} を適用する。
 \end{proof}
 
 \subsection{二つの横断的な (1,1) 成分}
@@ -372,29 +418,8 @@ $C$ が二つの $(1,1)$ 成分からなり、相異なる二点で横断的に�
 \end{theorem}
 
 \begin{proof}
-補題~\ref{lem:cubic-serre-period} の証明は
-$D$ の最小分解と AS 正則性のみを使い、曲線の整性を使わない。
-よって $\theta$ による四周期は $S^{-1}[2]$ であり、
-命題~\ref{prop:i2-period-square} から偶数添字の移動の平方はこれに等しい。
-VdB の hull とその周期の持ち上げ
-\cite[arXiv v3, Theorem 6.1, Lemmas 6.4--6.5, Proposition 6.6]{VdB2011}
-は非整な許容四つ組にも適用できる。
-従って対応する full orbit algebra は型 $(1,4,6,4,1)$ の
-二次 AS 正則環の正則正規二次元による商である。
-noetherian 性、exceptionality、Serre 関手、ampleness、full section algebra の
-同定は定理~\ref{thm:integral-elliptic-inverse} の証明の同じ各段落を使える。
-
-残る rank 条件について、命題~\ref{prop:all-quadric-even-domain} により
-even part $B$ は domain である。$\beta$ は幾何商への写像を保つため、
-その核の次数四の正則正規元の列は $h\in B_2$ に降りる。
-$\qgr(B/(h))\simeq\coh C$ であり、各次数移動は可逆層に対応する。
-被約な曲線 $C$ 上の可逆層は有限長でない。
-よって $h$ の冪による $\pi B$ の下降列の隣接商は有限長でなく、
-$\pi B$ は Gabriel--Krull の第一段階に属さない。
-他方、任意の非零斉次右イデアルはある $fB\simeq B(-\deg f)$ を含む。
-命題~\ref{prop:sklyanin-h2} と同じ Hilbert 多項式の議論により、
-余商は第一段階に属する。
-従って $\pi B$ は rank one torsion-free である。
+命題~\ref{prop:i2-period-square} で構成した幾何的二周期に
+命題~\ref{prop:admissible-period-h2} を適用する。
 \end{proof}
 
 \subsection{一箇所で接する二つの (1,1) 成分}
@@ -716,9 +741,366 @@ $(1,1)+(1,1)$、$(2,1)+(0,1)$、$(1,2)+(1,0)$ のみである。
 従って本節の横断・接点の計算が全ての場合を尽くす。
 それぞれ $\beta^2=\theta$ を対角型まで示したので、
 命題~\ref{prop:all-quadric-even-domain} と標準 hull を用いて
-定理~\ref{thm:i2-inverse} の証明を適用する。
+命題~\ref{prop:admissible-period-h2} を適用する。
 \end{proof}
+
+\subsection{三成分と四成分の被約境界}
+
+\subsubsection{三つの成分が cycle をなす場合}
+
+因子の自己同型を用いて
+\[
+ C_0=\{y=x\},\qquad C_1=\{x=\infty\},\qquad C_2=\{y=0\}
+\]
+と置く。座標をそれぞれ $z=x=y$, $w=y$, $v=x$ とする。
+偶数添字の束の多重次数は $(1,0,1)$、奇数添字では $(1,1,0)$ である。
+それぞれの切断基底を、成分順に
+\[
+ E(t):\quad x=(1,0,1),\ y=(z,1,tv),
+ \qquad
+ O(t):\quad x=(1,1,1),\ y=(z,tw,0)
+\]
+と取る。ここで $t\in k^\times$ である。
+これは指定された多重次数の直線束の全てを尽くす。
+実際、cycle に沿う正規化の座標を $z,1/w,1/v$ と取ると、
+各節点の貼り合わせ係数は成分上のスカラー変更により一つを除いて一にでき、
+残る積が $\Pic^0(C)\simeq k^\times$ の座標となる。
+上の両表示でこの積はともに $t^{-1}$ である。
+従って helix は
+\[
+ L_{2n}=E(ar^n),\qquad L_{2n+1}=O(br^n),
+ \qquad a,b,r\in k^\times,\quad r\ne1
+\]
+となる。隣接する束の組は、それぞれの成分で $z,tv,tw$ による同型、
+または指定された一定射を与え、上の三成分曲線へ閉埋め込みを与える。
+
+三次関係は、偶数添字では
+\[
+ F_i=ryxx-xxy-(r-1)xyx,\qquad G_i=yyx-xyy,
+\]
+奇数添字では
+\[
+ F_i=yxx-xxy,\qquad G_i=ryyx-xyy-(r-1)yxy.
+\]
+三成分上の評価で零になることと独立性により、これらが関係空間の基底である。
+四次テンソルは
+\[
+ \begin{array}{ll}
+ i\text{ 偶数}:&w_i=x_iG_{i+1}-r y_iF_{i+1}
+                     =F_i y_{i+3}-rG_i x_{i+3},\\
+ i\text{ 奇数}:&w_i=x_iG_{i+1}-y_iF_{i+1}
+                     =F_i y_{i+3}-G_i x_{i+3}.
+ \end{array}
+\]
+したがって $\theta_i$ は偶数添字で $-\operatorname{diag}(1,r^{-1})$、
+奇数添字で $-r\operatorname{diag}(1,r^{-1})$ である。
+$u^2=r^{-1}$ とし
+\[
+ \sigma(z,w,v)=(uz,u^{-1}w,u^{-1}v)
+\]
+と置くと、これは節点を保つ $C$ の自己同型で、
+$\sigma^*E(t)=E(rt)$, $\sigma^*O(t)=O(rt)$ を満たす。
+両 parity で $\beta_i=\operatorname{diag}(1,u)$ となる。
+この同定は $C_0$ 上の二つの切断で決まる。
+$E(t)$ の次数零成分 $C_1$ では自明化を $u$ 倍して、
+生の引き戻しの切断 $y=1$ を行列の与える $u$ へ移す。
+この同型は節点のファイバーの貼り合わせも保つ。
+従って $\theta$ と $\beta^2$ の差は対角型自己同型である。
+
+\subsubsection{三成分が一つの通常三重点で交わる場合}
+
+今度は $C_0=\{y=x\}$, $C_1=\{x=\infty\}$, $C_2=\{y=\infty\}$ とする。
+各成分の座標を従前どおり $z,w,v$ とする。
+正規化の三つの分枝の局所座標を $u_0=1/z$, $u_1=1/w$, $u_2=1/v$ と取ると、
+局所環は三つの関数の定数項が一致し、一次係数が
+\[
+ f_0'(0)=f_1'(0)+f_2'(0)
+\]
+を満たす部分環である。これは局所方程式 $ab(a-b)=0$ の正規化表示であり、
+各分枝の二次以上の項は独立に動かせる。
+多重次数を指定した直線束は、共通定数項を $h$ とするときの条件を
+\[
+ h_0'(0)-h_1'(0)-h_2'(0)=\tau h
+\]
+へ変えることで一意的な $\tau\in k$ により記述できる。
+テンソル積では $\tau$ を加える。
+偶数・奇数添字で次の基底を取ると、どちらも $\tau=-t$ となる：
+\[
+ E(t):\quad x=(1,0,1),\ y=(z,1,v+t),
+ \qquad
+ O(t):\quad x=(1,1,0),\ y=(z,w+t,1).
+\]
+従って全許容 helix は
+\[
+ L_{2n}=E(a+nd),\qquad L_{2n+1}=O(b+nd),\qquad d\ne0
+\]
+で尽くされる。隣接二束の組は正規化の各成分上で同型を与え、
+上の共通定数項と一次係数の条件も保つため、通常三重点を含めて閉埋め込みである。
+
+両 parity で三次関係の基底は同じ二式
+\[
+ F_i=yxx-xxy,\qquad
+ G_i=yyx-xyy+d(xyx-xxy)
+\]
+となる。四次テンソルは
+\[
+ w_i=x_iG_{i+1}-(y_i+dx_i)F_{i+1}
+     =F_i y_{i+3}-G_i x_{i+3}
+\]
+なので、$\theta_i(x_i)=-x_{i+4}$,
+$\theta_i(y_i)=-y_{i+4}+dx_{i+4}$ である。
+自己同型
+\[
+ \sigma(z,w,v)=(z-d/2,w+d/2,v+d/2)
+\]
+は各分枝の局所座標を一次まで固定するため、上の局所環へ降りる。
+また $\sigma^*E(t)=E(t+d)$, $\sigma^*O(t)=O(t+d)$ であり、
+切断上で $\beta_i(x_i)=x_{i+2}$,
+$\beta_i(y_i)=y_{i+2}-(d/2)x_{i+2}$ となる。
+従って $\theta_i=-\beta_i^2$ である。
+
+\subsubsection{四つの成分からなる grid}
+
+四つの成分を順に $y=0$, $x=\infty$, $y=\infty$, $x=0$ とし、
+その座標を $z=x,w=y,v=x,t=y$ とする。
+直線束の基底はパラメータを $\lambda$ として
+\[
+ E(\lambda):\quad x=(1,0,1,1),\ y=(z,1,\lambda v,0),
+ \qquad
+ O(\lambda):\quad x=(1,1,0,1),\ y=(0,w,1,\lambda t)
+\]
+と書ける。四節点の貼り合わせ係数の積は両方で $\lambda^{-1}$ であり、
+指定された多重次数の全ての直線束を与える。
+全許容 helix は $L_{2n}=E(ar^n)$,
+$L_{2n+1}=O(br^n)$ ($a,b,r\in k^\times$, $r\ne1$) である。
+隣接二束は四つの成分上の次数一写像により、元の grid への閉埋め込みを与える。
+
+三次関係は
+\[
+ \begin{array}{ll}
+ i\text{ 偶数}:&F_i=yxx-xxy,\quad G_i=ryyx-xyy,\\
+ i\text{ 奇数}:&F_i=ryxx-xxy,\quad G_i=yyx-xyy.
+ \end{array}
+\]
+四次テンソルは
+\[
+ \begin{array}{ll}
+ i\text{ 偶数}:&w_i=x_iG_{i+1}-y_iF_{i+1}
+                     =F_i y_{i+3}-G_i x_{i+3},\\
+ i\text{ 奇数}:&w_i=x_iG_{i+1}-r y_iF_{i+1}
+                     =F_i y_{i+3}-rG_i x_{i+3}.
+ \end{array}
+\]
+したがって $\theta_i$ は偶数添字で $-r\operatorname{diag}(1,r^{-1})$、
+奇数添字で $-\operatorname{diag}(1,r^{-1})$ である。
+$u^2=r^{-1}$ を選び
+$\sigma(z,w,v,t)=(uz,uw,u^{-1}v,u^{-1}t)$ とすれば、
+$\sigma^*E(\lambda)=E(r\lambda)$, $\sigma^*O(\lambda)=O(r\lambda)$ であり、
+両 parity で $\beta_i=\operatorname{diag}(1,u)$ となる。
+ここで $E$ では $C_1$、$O$ では $C_2$ の次数零成分の自明化を $u$ 倍する。
+各節点で両切断の値が一致するので、これらは大域的な束の同型である。
+従って再び $\beta^2=\theta$ が対角型を除いて成り立つ。
+
+\begin{theorem}[全被約 $(2,2)$ 因子からの逆構成]
+\label{thm:all-reduced-inverse}
+標数零の代数閉体上、$C$ が被約な $(2,2)$ 因子である全ての許容四つ組
+$U=(C,L_0,L_1,L_2)$ について
+$(\qgr D(U),\pi e_0D(U))\in\HH$ が成り立つ。
+\end{theorem}
+
+\begin{proof}
+整な場合は定理~\ref{thm:integral-elliptic-inverse} による。
+二つの既約成分の場合は定理~\ref{thm:all-reduced-two-component-inverse} による。
+三つの成分の場合、各成分の二次数を足して $(2,2)$ となることから
+型は $(1,1)+(1,0)+(0,1)$ のみである。
+$(1,1)$ 成分を対角線へ移すと、水平線と垂直線が対角線上の同じ点を通るか、
+異なる点を通るかの二場合であり、上の通常三重点と cycle が全てを尽くす。
+四つの成分なら二本ずつの水平線と垂直線しかなく、grid 型である。
+五つ以上の成分は二次数の和から不可能である。
+上の各場合で $\beta^2=\theta$ を対角型まで確認したので、
+全てに命題~\ref{prop:admissible-period-h2} を適用できる。
+\end{proof}
+
+\subsection{重複した水平・垂直成分}
+
+\subsubsection{一方だけが二重の場合}
+
+$V=\{x=\infty\}$, $H_0=\{y=0\}$, $H_\infty=\{y=\infty\}$ とし、
+$C=2V+H_0+H_\infty$ とする。
+$2V$ は $y$ を座標とする $\PP^1$ 上の自明な平方零拡大であり、
+その冪零座標を $\varepsilon=1/x$ と書く。
+$C$ は $2V$, $H_0$, $H_\infty$ を二つの
+$\operatorname{Spec}k[\varepsilon]/(\varepsilon^2)$ に沿って貼り合わせたものである。
+
+各部分曲線上で次数を指定した直線束は一意であり、
+貼り合わせの零次係数は各成分のスカラーで一にできる。
+二つの一次係数は $2V$ 上の大域単元 $1+c\varepsilon$ で同時に動かせるので、
+差だけが残る。従って $\Pic^0(C)\simeq k$ であり、
+$H_0$ で恒等、$H_\infty$ で $1+t\varepsilon$ を掛ける貼り合わせにより
+指定された多重次数の全ての束を一意的に記述できる。
+ここでは $\Pic(2V)=\mathbb Z$ も使った。
+これは平方零イデアル $\mathcal O_{\PP^1}$ の $H^1$ が零であることから従う。
+
+部分曲線の順を $(2V,H_0,H_\infty)$ とすると、偶数添字の束 $E(t)$ と
+奇数添字の束 $O(t)$ はそれぞれ次の切断基底を持つ：
+\[
+ E(t):\quad x=(\varepsilon,1,1),\quad y=(1,x,x+t),
+ \qquad
+ O(t):\quad x=(1,1,0),\quad y=(y(1-t\varepsilon),0,1).
+\]
+実際、$E(t)$ では $2V$ 上の $A+B\varepsilon$ が
+$H_0$ 上の $Ax+B$ および $H_\infty$ 上の $Ax+B+tA$ と貼り合わさる。
+$O(t)$ では $2V$ 上の
+$A+B y-t B y\varepsilon$ が $H_0$ の定数 $A$ と
+$H_\infty$ の定数 $B$ に貼り合わさる。
+これで表示の完全性も分かる。
+
+全許容 helix は
+\[
+ L_{2n}=E(a+nd),\qquad L_{2n+1}=O(b+nd),\qquad d\ne0
+\]
+である。隣接二束による射は、$2V$ 上で
+$(\varepsilon,y)\mapsto(\varepsilon,y(1-b\varepsilon))$、
+水平成分上で $x$ の平行移動となる。
+二つの長さ二の交点上でこれらは一致するので、元の $C$ への同型を与える。
+従って他の許容性の除外条件はない。
+
+三次関係の基底は両 parity で $F_i=yxx-xxy$、および
+\[
+ G_i=
+ \begin{cases}
+ yyx-xyy+dxyx,&i\text{ 偶数},\\
+ yyx-xyy-dxxy,&i\text{ 奇数}
+ \end{cases}
+\]
+である。三つの部分曲線上で、$2V$ については $\varepsilon^2=0$ を用いて
+評価すれば零になる。四次テンソルは
+\[
+ \begin{array}{ll}
+ i\text{ 偶数}:&w_i=x_iG_{i+1}-(y_i+dx_i)F_{i+1}
+                      =F_i y_{i+3}-G_i x_{i+3},\\
+ i\text{ 奇数}:&w_i=x_iG_{i+1}-y_iF_{i+1}
+                      =F_i y_{i+3}-G_i x_{i+3}.
+ \end{array}
+\]
+したがって偶数添字では $\theta_i(x_i)=-x_{i+4}$,
+$\theta_i(y_i)=-y_{i+4}+dx_{i+4}$、奇数添字では $\theta_i=-1$ である。
+
+$v=d/2$ とし、$\sigma$ を部分曲線ごとに
+\[
+ 2V:\quad \varepsilon\mapsto\varepsilon,\ y\mapsto y(1-d\varepsilon),
+ \qquad
+ H_0:\ x\mapsto x-v,
+ \qquad
+ H_\infty:\ x\mapsto x+v
+\]
+で定める。$2V$ 上の式は $k[\varepsilon]/(\varepsilon^2)$ 上の射影線の
+自己同型であり、交点 $0,\infty$ を保つ。
+水平成分の平行移動はその無限遠点の長さ二の近傍を固定するので、
+これらは $C$ の自己同型へ貼り合わさる。
+束を与える射を $f_{E(a)},f_{O(b)}$ と書けば
+\[
+ f_{E(a)}\circ\sigma=T_{-v}\circ f_{E(a+d)},
+ \qquad
+ f_{O(b)}\circ\sigma=f_{O(b+d)},
+\]
+ただし $T_{-v}(z)=z-v$ である。
+最初の式の $2V$ 上での確認には
+$\varepsilon/(1-v\varepsilon)=\varepsilon$ を使う。
+切断の表示でいえば、$\sigma^*E(a)\simeq E(a+d)$ の同型は
+$2V$ 側の自明化を $1-v\varepsilon$ 倍し、
+両水平成分側では恒等とするものを取る。
+従って生の引き戻しの $2V$ 成分 $1$ は $1-v\varepsilon$ へ移り、
+下の $y-vx$ の表示と一致する。
+従って $\beta_i$ は偶数添字で
+$x_i\mapsto x_{i+2}$, $y_i\mapsto y_{i+2}-v x_{i+2}$、
+奇数添字で恒等である。以上より全ての添字で $\theta_i=-\beta_i^2$ となる。
+水平・垂直を交換した場合も同様である。
+
+\subsubsection{両方が二重の場合}
+
+$V=\{x=\infty\}$, $H=\{y=\infty\}$ とし $C=2V+2H$ とする。
+$C$ は二つの自明な ribbon を
+\[
+ T=\operatorname{Spec} k[\varepsilon,\eta]/(\varepsilon^2,\eta^2),
+ \qquad\varepsilon=1/x,\quad\eta=1/y
+\]
+で貼り合わせた曲線である。
+貼り合わせ単元 $1+a\varepsilon+b\eta+c\varepsilon\eta$ を、
+両 ribbon の大域単元 $1+a\varepsilon$ と $1+b\eta$ で調整すると
+$1+(c-ab)\varepsilon\eta$ だけが残る。
+従って $\Pic^0(C)=k$ であり、$1+t\varepsilon\eta$ を掛ける貼り合わせが
+各多重次数の全ての直線束を一意的に表す。
+
+部分曲線の順を $(2V,2H)$ とすると、切断基底は
+\[
+ E(t):\quad x=(\varepsilon,1),\quad y=(1,x+t\eta),
+ \qquad
+ O(t):\quad x=(1,\eta),\quad y=(y-t\varepsilon,1).
+\]
+これは $2H$ の切断を $2V$ の切断に $1+t\varepsilon\eta$ を掛けて貼る表示である。
+例えば $E(t)$ の $2V$ 上の $A+B\varepsilon$ は、
+$2H$ 上の $Ax+B+tA\eta$ に対応し、
+$O(t)$ の $2V$ 上の $Ay+B-tA\varepsilon$ は
+$2H$ 上の $A+B\eta$ に対応する。
+
+全許容 helix は $L_{2n}=E(a+nd)$,
+$L_{2n+1}=O(b+nd)$ ($d\ne0$) である。
+隣接二束による射は二つの ribbon 上でそれぞれ
+$y\mapsto y-b\varepsilon$ と $x\mapsto x+a\eta$ となり、
+$T$ 上では恒等なので、$C$ の閉埋め込みを与える。
+三次関係は両 parity で $F_i=yxx-xxy$、および
+\[
+ G_i=yyx-xyy+(-1)^i dxxx
+\]
+である。四次テンソルは全ての添字で
+\[
+ w_i=x_iG_{i+1}-y_iF_{i+1}
+     =F_i y_{i+3}-G_i x_{i+3},
+\]
+従って $\theta_i=-1$ である。
+$\sigma$ を $2V$ 上で $y\mapsto y-d\varepsilon$、
+$2H$ 上で $x\mapsto x+d\eta$ とし、各冪零座標を固定する。
+これらは $T$ 上で恒等なので、$C$ の自己同型へ降りる。
+明示した基底で $\sigma^*E(a)=E(a+d)$,
+$\sigma^*O(b)=O(b+d)$ の切断作用は恒等である。
+従って $\beta^2=1$、$\theta=-1$ であり、差は対角型自己同型である。
+
+\begin{theorem}[全許容四つ組からの逆構成]
+\label{thm:all-admissible-inverse}
+標数零の代数閉体上の任意の Van den Bergh 許容四つ組 $U$ について
+\[
+ (\qgr D(U),\pi e_0D(U))\in\HH
+\]
+が成り立つ。従って全ての三次三次元 AS 正則 $\mathbb Z$-algebra $D$ の
+指定対象付き圏 $(\qgr D,\pi e_0D)$ は $\HH$ に属する。
+\end{theorem}
+
+\begin{proof}
+被約な曲線は定理~\ref{thm:all-reduced-inverse} で処理した。
+非被約な $(2,2)$ 因子に重複する既約成分の二次数を $(a,b)$ とすると
+$2a\le2$, $2b\le2$ である。
+従って $(a,b)$ は $(1,1)$, $(1,0)$, $(0,1)$ のいずれかである。
+$(1,1)$ の場合は二重既約 $(1,1)$ 曲線のみで、
+命題~\ref{prop:ribbon-period-square} による。
+$(1,0)$ の場合は二重垂直成分に残る $(0,2)$ 因子を加えたものであり、
+後者は二本の相異なる水平線または二重水平線である。
+$(0,1)$ はその因子交換型である。
+従って上記の二つの計算で非被約の場合が全て尽くされる。
+全てにおいて $\beta^2=\theta$ を対角型まで確認したので、
+命題~\ref{prop:all-quadric-even-domain} と標準 hull を用いて
+命題~\ref{prop:admissible-period-h2} を適用できる。
+
+最後の主張については、VdB の分類
+\cite[arXiv v3, Theorem 5.5.10]{VdB2011} により
+三次正則 $\mathbb Z$-algebra は許容四つ組の場合と linear の場合に分かれる。
+linear の場合は $(\coh(\PP^1\times\PP^1),\mathcal O)$ であり、
+$\mathcal O(1,1)$ による tensor が平方根を与える。
+いずれの場合も、exact な平方根から大域次元が二であることは
+命題~\ref{prop:gldim-two} による。
+\end{proof}
+
 
 以上の三次関係の評価、四次テンソルの両表示、巡回回転と周期の平方は
 \path{computations/verify_reducible_quadruples.py} により
-横断・接点の別と添字の偶奇ごとに記号恒等式として再現できる。
+全ての非整型と添字の偶奇ごとに記号恒等式として再現できる。

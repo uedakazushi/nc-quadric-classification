@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact checks for all reduced two-component boundaries and the double diagonal.
+"""Exact symbolic certificates for every nonintegral admissible (2,2) boundary.
 
 Run with Python 3 and SymPy. Every assertion is a polynomial/rational-function
 identity in algebraically independent a, b, r; no numerical sampling is used.
@@ -9,7 +9,8 @@ The nonzero conditions are the gluing parameters of line bundles. Equality
 a=b or b=a*r makes one adjacent pair of degree-two maps identify the two
 components, so it is not a closed embedding as a (2,2) divisor. Equality r=1
 means L_0=L_2, excluded by the admissible-quadruple definition. For (2,1)+(0,1), the adjacent multidegrees differ, so only r!=1 or d!=0
-is required. The double diagonal uses q*d*(q-d)!=0. The identities
+is required. The double diagonal uses q*d*(q-d)!=0. Three/four-component and nonreduced grid types require only r!=1
+or d!=0 (and nonzero multiplicative gluing parameters). The identities
 below remain polynomially valid on some excluded points; that does not extend
 the geometric theorem to them.
 """
@@ -331,8 +332,181 @@ def mixed_verify():
                   "rotation, and beta squared")
 
 
+
+def multicomponent_relations(kind, parity, p):
+    f = {"yxx": 1, "xxy": -1}
+    g = {"yyx": 1, "xyy": -1}
+    if kind == "cycle3":
+        return (({"yxx": p, "xxy": -1, "xyx": 1-p}, g) if parity == 0
+                else (f, {"yyx": p, "xyy": -1, "yxy": 1-p}))
+    if kind == "grid4":
+        return ((f, {"yyx": p, "xyy": -1}) if parity == 0
+                else ({"yxx": p, "xxy": -1}, g))
+    return f, {"yyx": 1, "xyy": -1, "xyx": p, "xxy": -p}
+
+
+
+def multicomponent_quartics(kind, parity, p):
+    f, g = multicomponent_relations(kind, parity, p)
+    nf, ng = multicomponent_relations(kind, 1-parity, p)
+    left = defaultdict(lambda: sp.Integer(0))
+    right = defaultdict(lambda: sp.Integer(0))
+    scalar = p if ((kind == "cycle3" and parity == 0)
+                   or (kind == "grid4" and parity == 1)) else 1
+    add_word_sum(left, ng, prefix="x")
+    add_word_sum(left, nf, -scalar, prefix="y")
+    add_word_sum(right, f, suffix="y")
+    add_word_sum(right, g, -scalar, suffix="x")
+    if kind == "triple3":
+        add_word_sum(left, nf, -p, prefix="x")
+    return dict(left), dict(right)
+
+
+def multicomponent_theta(kind, parity, p):
+    if kind == "triple3":
+        return sp.Matrix([[-1, p], [0, -1]])
+    scalar = -1 if ((kind == "cycle3" and parity == 0)
+                    or (kind == "grid4" and parity == 1)) else -p
+    return scalar*sp.diag(1, 1/p)
+
+
+
+def multicomponent_verify():
+    a, b, r, d, z, w, v, t = sp.symbols("a b r d z w v t", nonzero=True)
+    for kind, p in (("cycle3", r), ("triple3", d), ("grid4", r)):
+        def even(c):
+            if kind == "cycle3":
+                return [(1,z),(0,1),(1,c*v)]
+            if kind == "triple3":
+                return [(1,z),(0,1),(1,v+c)]
+            return [(1,z),(0,1),(1,c*v),(1,0)]
+
+        def odd(c):
+            if kind == "cycle3":
+                return [(1,z),(1,c*w),(1,0)]
+            if kind == "triple3":
+                return [(1,z),(1,w+c),(0,1)]
+            return [(1,0),(1,w),(0,1),(1,c*t)]
+
+        na, nb = ((a+p, b+p) if kind == "triple3" else (a*p, b*p))
+        for parity in (0, 1):
+            bundles = [even(a), odd(b), even(na)] if parity == 0 else [odd(b), even(na), odd(nb)]
+            for relation in multicomponent_relations(kind, parity, p):
+                for component in range(len(bundles[0])):
+                    value = sum(coefficient*sp.prod(bundles[j][component]["xy".index(letter)]
+                                                   for j,letter in enumerate(word))
+                                for word,coefficient in relation.items())
+                    assert sp.cancel(value) == 0
+            left, right = multicomponent_quartics(kind, parity, p)
+            assert_equal_word_sums(left, right)
+            matrix = multicomponent_theta(kind, parity, p)
+            rotated = defaultdict(lambda: sp.Integer(0))
+            for word,coefficient in left.items():
+                column = "xy".index(word[0])
+                for row,letter in enumerate("xy"):
+                    rotated[word[1:]+letter] += coefficient*matrix[row,column]
+            assert_equal_word_sums(rotated, multicomponent_quartics(kind, 1-parity, p)[0])
+            if kind == "triple3":
+                beta = sp.Matrix([[1,-p/2],[0,1]])
+                assert matrix == -beta**2
+            else:
+                assert matrix in [-sp.diag(1,1/p),-p*sp.diag(1,1/p)]
+            print(f"PASS: {kind}, parity {parity}: all components, quartic, rotation, beta squared")
+
+
+
+def grid_relations(kind, parity, d):
+    f = {"yxx": 1, "xxy": -1}
+    g = {"yyx": 1, "xyy": -1}
+    if kind == "one_double":
+        g["xyx" if parity == 0 else "xxy"] = d if parity == 0 else -d
+    else:
+        g["xxx"] = d if parity == 0 else -d
+    return f, g
+
+
+
+def grid_quartics(kind, parity, d):
+    f,g = grid_relations(kind, parity, d)
+    nf,ng = grid_relations(kind, 1-parity, d)
+    left = defaultdict(lambda: sp.Integer(0))
+    right = defaultdict(lambda: sp.Integer(0))
+    add_word_sum(left, ng, prefix="x")
+    add_word_sum(left, nf, -1, prefix="y")
+    if kind == "one_double" and parity == 0:
+        add_word_sum(left, nf, -d, prefix="x")
+    add_word_sum(right, f, suffix="y")
+    add_word_sum(right, g, -1, suffix="x")
+    return dict(left),dict(right)
+
+
+
+def grid_verify():
+    a,b,d,x,y,z,epsilon,eta = sp.symbols("a b d x y z epsilon eta")
+    for kind in ("one_double","both_double"):
+        def even(t):
+            if kind == "one_double":
+                return [(epsilon,1),(1,x),(1,z+t)]
+            return [(epsilon,1),(1,x+t*eta)]
+
+        def odd(t):
+            if kind == "one_double":
+                return [(1,y*(1-t*epsilon)),(1,0),(0,1)]
+            return [(1,y-t*epsilon),(eta,1)]
+
+        nilpotents = [epsilon,None,None] if kind == "one_double" else [epsilon,eta]
+        for parity in (0,1):
+            bundles = ([even(a),odd(b),even(a+d)] if parity == 0
+                       else [odd(b),even(a+d),odd(b+d)])
+            for relation in grid_relations(kind,parity,d):
+                for component,nilpotent in enumerate(nilpotents):
+                    value = sp.expand(sum(coefficient*sp.prod(bundles[j][component]["xy".index(letter)]
+                                                              for j,letter in enumerate(word))
+                                          for word,coefficient in relation.items()))
+                    if nilpotent is not None:
+                        value = sp.rem(value,nilpotent**2,nilpotent)
+                    assert sp.expand(value) == 0
+
+            left,right = grid_quartics(kind,parity,d)
+            assert_equal_word_sums(left,right)
+            beta = (sp.Matrix([[1,-d/2],[0,1]]) if kind == "one_double" and parity == 0
+                    else sp.eye(2))
+            theta = -beta**2
+            rotated = defaultdict(lambda: sp.Integer(0))
+            for word,coefficient in left.items():
+                column = "xy".index(word[0])
+                for row,letter in enumerate("xy"):
+                    rotated[word[1:]+letter] += coefficient*theta[row,column]
+            assert_equal_word_sums(rotated,grid_quartics(kind,1-parity,d)[0])
+            print(f"PASS: {kind}, parity {parity}: all thickened components, quartic, rotation, beta squared")
+
+    # The gluing units on the length-four intersection multiply additively.
+    u = (1+a*epsilon*eta)*(1+b*epsilon*eta)-(1+(a+b)*epsilon*eta)
+    assert sp.rem(sp.rem(sp.expand(u),epsilon**2,epsilon),eta**2,eta) == 0
+    # Compare the corrected pullback of both E(a) sections on every component.
+    v = d/2
+    correction = 1-v*epsilon
+    pulled_x = [correction*epsilon,1,1]
+    pulled_y = [correction,x-v,z+a+v]
+    target_x = [epsilon,1,1]
+    target_y = [1,x,z+a+d]
+    for j in range(3):
+        rx = sp.expand(pulled_x[j]-target_x[j])
+        ry = sp.expand(pulled_y[j]-(target_y[j]-v*target_x[j]))
+        if j == 0:
+            rx = sp.rem(rx,epsilon**2,epsilon)
+            ry = sp.rem(ry,epsilon**2,epsilon)
+        assert sp.expand(rx) == 0 and sp.expand(ry) == 0
+    odd_pullback = y*(1-d*epsilon)*(1-b*epsilon)
+    assert sp.rem(sp.expand(odd_pullback-y*(1-(b+d)*epsilon)),epsilon**2,epsilon) == 0
+    print("PASS: additive gluing parameter and both corrected geometric pullbacks")
+
+
+
 if __name__ == "__main__":
     verify_transverse()
     verify_tangent()
     ribbon_verify()
     mixed_verify()
+    multicomponent_verify()
+    grid_verify()

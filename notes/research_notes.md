@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.3（数学原稿v0.8）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.3（数学原稿v1.0）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -28,7 +28,7 @@
 | 滑らかな楕円型Sklyanin対象はH2に属する | k=C、τ無限位数、z+τ∉E[2]。`BSW2010`, `RRZ2014`, `SVdB2013`, `MU2021` | 全切断環・Serre根・exceptionality・AZ・Gabriel–Krull条件の証明。`prop:sklyanin-h2` |
 | z=τの対象はcoh(Q)とexact同値でない | `SVdB2013` §10.5の単純対象Fとχ(F,F)=2 | 既知の構成を適用。`prop:sklyanin-genuinely-noncommutative` |
 
-これらの主張は研究開始時の基礎結果であり、独立した新規性を確定したものではない。形式証明器は使用していない。全H2対象の被覆、一般点の次元、成分、全自己同値、族の降下・代数性は未証明。
+これらの主張は研究開始時の基礎結果であり、独立した新規性を確定したものではない。形式証明器は使用していない。全H2対象の被覆と同値類分類は主定理に統合した。一般点のモジュライ次元、成分、全自己同値、族の降下・代数性は別途未証明。
 
 ## Quadratic envelope の障害
 
@@ -81,10 +81,10 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 - 根条件は関手の自然同型。`MU2021`の中心切断の仮定では `S⁻¹[2]=(−)_{ν⁻¹}(2)`。次数シフト(1)の平方根性には誘導されたNakayama twistの自明性が必要であり、元の環自己同型`ν=id`までは主張しない。
 - VdBのeven partがgraded化できること、canonical hullがあることと、指定shiftがinverse Serreの平方根であることは別の命題。periodicityだけから根条件を結論しない。
 - MN2025 Theorem6.13はcentral・domain・smooth・standardを仮定する。主原稿 thm:normal-helix はMU2022の正規切断の安定圏を使い、non-standardでは奇数項を交互に選ぶことで、中心性・standard性・ambientの(*)なしに全H2の標識付き四周期AS正則Z-algebraを構成する。
-- 比較先は次元3・parameter4で、cubicとなるには偶数項間への隣接合成の階数4が必要。cor:normal-cubic-defect により可能な階数は3と4。階数3の追加生成元が別の適合根または別foundationで消えるかは未解決。
+- 比較先は次元3・parameter4で、cubicとなるには偶数項間への隣接合成の階数4が必要。cor:normal-cubic-defect により可能な階数は3と4。二型とも階数3の場合は、どの適合根・pointed cubic表示によってもこの欠損を除けない（`thm:cubic-coverage`）。
 - `MU2021`のnon-standard例は可換quadricのZhang twistでもある。一つの表示に対するspinorのsyzygy挙動を、そのままO-markedカテゴリーの不変量としない。
 - graded同型、root付き同値、O-marked exact同値、derived同値は異なる。同じderived categoryというだけで本研究の対象を同一視しない。
-- 全H2のpointed exact同値を反Serre環の二次関係空間で判定できる。主原稿 thm:antiserre-invariant、prop:antiserre-quadratic。実現軌道の全被覆は未解決。Sklyanin型では中心が一次元で生成され、その商から楕円曲線を回復する。
+- 全H2のpointed exact同値を反Serre環の二次関係空間で判定できる。主原稿 thm:antiserre-invariant、prop:antiserre-quadratic。実現軌道は主定理のcubicデータと中央二重平方族で全て覆った。Sklyanin型では中心が一次元で生成され、その商から楕円曲線を回復する。
 - GIT商のorbit closure・S-equivalenceとpointed exact同値は同じとは限らない。既存moduliの点をそのままH2の同値類と読む前に、実際の同値作用と許容領域を確認する。
 
 固定ambientでの自己同型Zhang twistによる中心化条件と、誘導シフトの平方根性の条件は異なる。両立にはnormalizerが次数スカラーであることが必要で、Ore族では失敗する。主原稿 prop:central-twist-obstruction、ex:ore-central-twist。別ambientによる中心表示の存在は未解決である。
@@ -93,7 +93,10 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 
 最初の軌道対象は全適合根で同型となる。これを用いてcubicからの偶数成分の制限を識別し、二型の階数がともに3ならどの標識付きcubic表示も排除した。具体例は中心商のKoszul双対が M₂×M₂ となる skew polynomial 切断をZhang twistして得る。主原稿 thm:cubic-coverage と prop:nonstandard-rank-three-example。
 
-整な種数一曲線と、二つの(1,1)成分の被約な和（横断二点・一接点）である曲線では、五つ組の巡回写像をNakayama同型と比較し、平方根つきの逆構成を閉じた。全許容四つ組のeven partのdomain性はPresotto2018 Theorem 2.8から従う。幾何商の零因子は元のcubic環の零因子を意味しない。未解決は三成分以上の被約曲線と、重複gridの周期の平方の比較である。被覆については、Bが左右noetherianな二次Koszul環と分かっていれば、未知のAS正則性を要求せず有限階数条件で判定できる。残る階数3領域の課題は、そのBを構成する具体的なパラメータと許容条件である。
+全許容四つ組で、五つ組の巡回写像を双対化双加群と比較し、平方根つきの逆構成を閉じた（`thm:all-admissible-inverse`）。整な曲線、被約な二・三・四成分、二重(1,1)、片方または両方が重複したgridが全(2,2)型を尽くす。全even partのdomain性はPresotto2018 Theorem 2.8から従う。幾何商の零因子は元のcubic環の零因子を意味しない。非被約の場合も純一次元Cartier因子の可逆層は有限長でなく、Gabriel–Krull条件の証明が通る。
+
+主分類のcubic入力はD1–D3の具体的幾何条件であり、未知のAS条件は残さない。K=(1⊗β01⁻¹)(R0⊗V3+V0⊗R1)は七次元で、四次全切断乗法の核（八次元）とは異なる。後者を使うと曲線への追加商を誤って課す。二次関係のGL4 transporterに対する有限反復は剰余類の閉性とNoetherian性で停止し、両側indexed同型とpointed exact同値を必要十分に判定する。係数体が有効に与えられた場合には消去計算として実行できる。有限停止の証明は与えたが、任意入力を処理する一般solverは実装・実行していない。βの違いは同じ偶数Z-algebraと指定対象を与えるので、この同値判定に吸収される。
+
 
 距離二・三の関係の形は prop:rank-three-relations。四周期単純分解を偶数成分へ制限すると、奇数表現可能加群が線形分解を持つ。これと偶数頂点の分解を合わせるとBのKoszul性が従う。GK条件は、domainならある正次数fの切断がtailsで非有限長であることに還元される。fの正規性は不要。逆構成の残る仮定は prop:weighted-inverse-reduction を参照。固定skew ambientの中央切断は cor:skew-rank-three-central-locus で退化も含めて判定した。全四変数符号型の正規切断では、中央の場合に符号変更と対角化を行い、非中央の場合にnormalizerを対角化して双線形ブロックに分けた。thm:sign-quadric-normal の三標識類へ分類した。混合符号の非中央代表は二つのrank4行列分解を持ち、偶数切断環は非可換なので、他の二標識類と異なる。 交換係数が任意の非零元でも、正規二次式は指標のブロックごとに標準化できる。使われない変数は双対の次数零局所化に平方零イデアルを与える。残る切断を非cubic一点とcubic族に分類し、後者で同値になる条件は定理 thm:multiparameter-quadric-classification に示した。
 
@@ -108,11 +111,11 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 
 ## 逆構成と比較に使う補題
 
-被約な二つの(1,1)成分では、直線束の貼り合わせ係数を t₂ₙ=a rⁿ、t₂ₙ₊₁=b rⁿ と書く。許容条件は a,b,r≠0、a≠b、b≠ar、r≠1。二周期の切断上の作用は diag(1,√r)、四次テンソルの回転は diag(r,r²) となり、その差は対角型自己同型である。証明は `lem:i2-parameters`、`prop:i2-period-square`、`thm:i2-inverse`。接する二成分では t₂ₙ=a+nd、t₂ₙ₊₁=a+q+nd、q d(q−d)≠0 と書け、βは y↦y+(d/2)x、θは y↦y+dx となる。被約な(2,1)+(0,1)と因子交換型でも偶奇別に計算して全被約二成分を扱った。二重(1,1)ではO⊕Ω¹の分裂と微分による自己同型を使い、moving basisでβ²=θ=idとなる。一般の非整曲線でも二周期の存在はVdBの既知定理だが、その平方とSerreの一致には切断上の作用の比較が必要である。
+被約な二つの(1,1)成分では、直線束の貼り合わせ係数を t₂ₙ=a rⁿ、t₂ₙ₊₁=b rⁿ と書く。許容条件は a,b,r≠0、a≠b、b≠ar、r≠1。二周期の切断上の作用は diag(1,√r)、四次テンソルの回転は diag(r,r²) となり、その差は対角型自己同型である。証明は `lem:i2-parameters`、`prop:i2-period-square`、`thm:i2-inverse`。接する二成分では t₂ₙ=a+nd、t₂ₙ₊₁=a+q+nd、q d(q−d)≠0 と書け、βは y↦y+(d/2)x、θは y↦y+dx となる。被約な(2,1)+(0,1)と因子交換型でも偶奇別に計算して全被約二成分を扱った。二重(1,1)ではO⊕Ω¹の分裂と微分による自己同型を使い、moving basisでβ²=θ=idとなる。三成分cycle・通常三重点・四成分gridでも全切断を記述し、周期平方を確認した。非被約gridでは長さ二／四の交点の貼合せを使う。片重複型のEの引戻しには2V側の自明化補正1−dε/2が必要で、cycle/gridでも次数零成分の倍率を明記した。これらは記号恒等式と独立の大域幾何点検を組み合わせて確認した。
 
 cubic表示の構造対象上の反Serre移動は `lem:cubic-serre-objects` を使う。MNのTheorem 4.19はASF+の周期化についての定理であり、ASだけからの引用に代えない。既存H2圏のSerre双対性と四項のfull exceptional collectionにより、対象の像を左直交から特徴付けられる。
 
-Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective` で証明した。非零 f∈ker∂ は二次性から D→k[z] を与える。その単純tails対象はshiftで不変な閉点となり、非零平行移動に固定点がないことに矛盾する。有限比較で未解決の開条件は中心変形写像 Δ の単射性だけである。
+Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective` で証明した。非零 f∈ker∂ は二次性から D→k[z] を与える。その単純tails対象はshiftで不変な閉点となり、非零平行移動に固定点がないことに矛盾する。高々64候補への簡約で未解決の開条件は中心変形写像 Δ の単射性だけである。主分類はこの条件を使わない四生成の判定を全領域で用いる。
 
 ## 検証範囲と再現手順
 
@@ -132,7 +135,8 @@ python3 scripts/check.py build
 
 有限次数計算はAS正則性・全次数Hilbert級数・smoothness・全分類の証明を代替しない。これらのうちAS正則性等は原稿中の理論と確認した文献を入力とする。
 
-2026-11-21の現行確認：v0.8の参照・構成はPASS。cubic表示のSerre移動の引用を一次資料で点検し、対象上の直接証明へ置き換えた。standard・non-standardの帰着と同一支持排除、非cubic分類を独立担当と点検した。持上げ変更の単射性は独立担当が論理を確認した。二成分逆構成の三次関係・四次テンソル・周期の比較は有理関数の記号恒等式として再現して成功した。共通二変数環の補題は独立担当が全文を点検した。現行v0.8のLuaLaTeX組版はPASSで、68頁のPDFとSyncTeXを生成した。最終ログに警告・未解決参照・欠字・はみ出しはない。PDF表示点検は未実施。
+2026-11-21の現行確認：全分類定理のD1–D3、有限K、同値判定、根選択独立、全被覆・非交差を独立担当が点検した。standard・non-standardの全帰着、同一支持排除、全退化型のPic・大域自己同型・貼合せ、Serre比較の双加群計算、逆構成から全H2公理までの依存も独立に点検した。重大な残存ギャップは見つからず、必要な自明化補正等を本文へ反映した。全非整型の三次関係・四次テンソル・周期平方・非被約gridの補正引戻しは記号恒等式として再現してPASS。v1.0の構成・参照確認（22原稿、138ラベル、119引用出現）と厳密計算はPASS。LuaLaTeXで76頁のPDFとSyncTeXを生成し、最終ログに警告・未定義参照・欠字・はみ出しはない。全76頁を画像化して一覧で配置を確認し、分類データ・主定理・standard帰着・共通逆構成・非被約grid・全逆構成の頁（6、7、55、60、71、72）を個別表示でも確認した。全頁の本文を画像で再校読したという意味ではない。
+
 
 既存の計算・証明の確認範囲には、四周期比較、最初の軌道対象、非cubic例、有限被覆判定、多パラメータskew polynomial分類、Ore切断の正規形・四元数斜体・根の対合・同値判定が含まれる。これらの証明は現行原稿に保持する。外部査読、形式証明、包括的な新規性の確定は行っていない。以前のPDFの表示確認を現在の全頁の確認とは扱わない。
 
