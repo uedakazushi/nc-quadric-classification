@@ -2,7 +2,7 @@
 
 2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.2。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
 
-**現在の優先課題は、全H2の内在的なモジュライをArtinスタックとして構成することである。** 体上の同値類分類は完成。noncubicでは次元1の滑らかな表示商、幾何点の慣性、μ2² gerbe、good moduli A1とcoarse space不存在を証明した。全H2のfoundationを含む有限代数商の開部分F0にcoherentな相対ruling交換を構成し、滑らか・有限型・次元3の `Q_fnd=[F0/S2]` と有限étale二重被覆 `F0→Q_fnd` を得た。全H2(k)のpointed groupoidはQ_fnd(k)に全充満に入る。cubicのgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]`。HH≥3の消滅と反Serre表示のdegree gerbe中立化も証明した。H2実現集合Yはcubicの非空開Cを含むため、Q_fndからの誘導位相で既約かつ連結、各成分数1である。各noncubic点は、全ての0以外の幾何ファイバーがcubicとなる有限自由foundation代数族、さらにpointed smooth proper dg族の特殊ファイバーとして得られる。残る核心は、任意基底上の内在的H2実現locusの有限表示、相対Serre/AZ再構成と内在的位相比較である。現行v1.2の構成確認・97頁LuaLaTeX組版はPASS。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
+**現在の優先課題は、全 `\mathcal H_2` の内在的な相対モジュライ `\mathfrak H_2` をArtinスタックとして構成することである。** `\mathfrak H_2` はまだ構成完了した対象ではなく、既存の foundation 表示スタック `\mathfrak Q_{\mathrm{fnd}}` と区別する。cubic の記法は `\mathcal H_3`（体上の強いクラス）・`\mathfrak H_3=[X^{\mathrm{H3}}/\mathrm{PGL}_4]`（条件付き相対族）と統一する。 体上の同値類分類は完成。noncubicでは次元1の滑らかな表示商、幾何点の慣性、μ2² gerbe、good moduli A1とcoarse space不存在を証明した。全H2のfoundationを含む有限代数商の開部分F0にcoherentな相対ruling交換を構成し、滑らか・有限型・次元3の `Q_fnd=[F0/S2]` と有限étale二重被覆 `F0→Q_fnd` を得た。全H2(k)のpointed groupoidはQ_fnd(k)に全充満に入る。cubicのgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]`。HH≥3の消滅と反Serre表示のdegree gerbe中立化も証明した。H2実現集合Yはcubicの非空開Cを含むため、Q_fndからの誘導位相で既約かつ連結、各成分数1である。各noncubic点は、全ての0以外の幾何ファイバーがcubicとなる有限自由foundation代数族、さらにpointed smooth proper dg族の特殊ファイバーとして得られる。残る核心は、任意基底上の内在的H2実現locusの有限表示、相対Serre/AZ再構成と内在的位相比較である。現行v1.2の構成確認・97頁LuaLaTeX組版はPASS。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
 
 ## 1. 恒常的な研究原則と保存許可
 
