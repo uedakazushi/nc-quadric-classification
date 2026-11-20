@@ -1,0 +1,158 @@
+% !TEX root = ../nc-quadric-classification.tex
+\subsection{反 Serre Hilbert 多項式による最初の軌道対象の認識}
+\label{sec:first-orbit-object}
+
+\begin{proposition}
+\label{prop:first-orbit-object}
+$(\cC,\OO)\in\HH$ とし、$t=S^{-1}[2]$、適合根を $s$ とする。
+Gabriel--Krull rank one torsion-free な exceptional 対象 $M$ が
+\[
+ \chi(\OO,t^n M)=(2n+2)^2\qquad(n\gg0)
+\]
+を満たせば、$M\simeq s\OO$ である。
+従って、どの適合根 $s'$ を用いても $s'\OO\simeq s\OO$ である。
+\end{proposition}
+
+\begin{proof}
+定理~\ref{thm:normal-helix} の四連続項
+$(E_0,E_1,E_2,E_3)=(\OO,\pi X_0,s\OO,\pi X_1(1))$
+の類は $K_0(\cC)$ の基底である。Euler 形式の行列は
+\[
+ G=\begin{pmatrix}
+ 1&2&4&6\\
+ 0&1&2&4\\
+ 0&0&1&2\\
+ 0&0&0&1
+ \end{pmatrix}.
+\]
+実際、$\Hom(\OO,\pi X_i)$ の次元は二元生成から $2$ であり、
+$\Hom(\pi X_0,s\OO)$ の次元も双対評価列から $2$ である。
+同じ評価列を次数一で取ると $\dim (X_1)_1=2\dim B_1-\dim(p(X_1))_0=6$ であり、
+$\dim B_1=4$ である。
+残る $\Hom(\pi X_0,\pi X_1(1))$ は
+系~\ref{cor:normal-cubic-defect} の奇数項間の積の同型から四次元である。
+他の成分は full geometric helix の Ext 消滅と例外性から従う。
+
+$G$ は $Q=\PP^1\times\PP^1$ 上の
+$\OO_Q,\OO_Q(1,0),\OO_Q(1,1),\OO_Q(2,1)$ の Euler 行列と一致する。
+これらは $K_0(Q)$ の整数基底である。例えば積の標準基底
+$\OO_Q,\OO_Q(1,0),\OO_Q(0,1),\OO_Q(1,1)$ から、
+$[\OO_Q(2,1)]=2[\OO_Q(1,1)]-[\OO_Q(0,1)]$ によって移る。
+従って上記の順序で $K_0(\cC)$ を $K_0(Q)$ と Euler 形式を保って同定できる。
+Serre 関手の $K_0$ 上の作用は
+$\chi(F,G)=\chi(G,SF)$ と Euler 形式の非退化性で一意に定まる。
+従ってこの同定で $t$ の作用は $\OO_Q(2,2)$ をテンソルする作用である。
+
+$H_1,H_2$ を $Q$ の二つの因子から来る超平面類とし、
+$[M]$ に対応する類の Chern 指標を
+$r+aH_1+bH_2+cH_1H_2$ と書く。
+$Q$ 上の Riemann--Roch により
+\[
+ \chi(\OO,t^n M)=r(2n+1)^2+(a+b)(2n+1)+c,qquad
+ \chi(M,M)=r^2+2rc-2ab.
+\]
+第一式の係数比較から $r=1$、$a+b=2$、$c=1$ を得る。
+例外性から第二式は $1$ なので $ab=1$、従って $a=b=1$ である。
+Chern 指標の有理同型と $K_0(Q)$ の無捩れ性から $[M]=[s\OO]$ が従う。
+
+$L=s\OO$ と置く。$\chi(L,M)=1$ より $\Hom(L,M)$ と
+$\Ext^2(L,M)$ の少なくとも一方は非零である。
+後者が非零なら Serre 双対性により $M\to t^{-1}L$ に非零射がある。
+両対象は rank one torsion-free なので、この射は単射である。
+実際、\ref{lem:sections-monic} の証明と同じく、商圏で非零となるため
+商圏で同型となり、核は torsion-free 性によって零である。
+従って $\Hom(\OO,t^n M)\hookrightarrow\Hom(\OO,t^{n-1}L)$ を得る。
+ここで $\dim\Hom(\OO,t^n M)=\chi(\OO,t^n M)$ は $n\gg0$ で成り立つ。
+定理~\ref{thm:normal-helix} の証明末尾の自由被覆の議論を偶数項に適用すれば
+$\Ext^1(t^{-n}\OO,M)=0$ を得る。
+また $\Ext^2(t^{-n}\OO,M)=\Hom(M,t^{-n-1}\OO)^*=0$ は、
+$M$ の自由被覆と負次数切断の消滅から従う。
+よって上の単射は $(2n+2)^2\le (2n)^2$ を与え、矛盾する。
+従って $\Hom(L,M)$ に非零射があり、同じ理由でこれは単射である。
+余核の $K_0$ 類は零である。
+$B=A/(g)$ 上の有限生成加群の Hilbert 多項式は、
+$A$ 上の有限自由分解により存在し、tails 上で加法的である。
+非零の tails の対象は零 Hilbert 多項式を持たないので、余核は零となる。
+
+適合根 $s'$ に対しては
+$\dim\Hom(\OO,t^n s'\OO)=(2n+2)^2$ が切断環の Hilbert 関数から従い、
+前段の Ext 消滅により漸近的に Euler 特性と一致する。
+$s'\OO$ は $\OO$ と同じ rank one torsion-free 性と例外性を持つため、
+第一の主張を適用できる。
+\end{proof}
+
+\begin{corollary}[異なる適合根における階数の保存]
+\label{cor:first-orbit-rank-invariance}
+同じ標識対象の二つの適合切断環について、二つの次数零生成 MCM 型の
+最小線形表示行列の成分空間の次元は、二つの値の多重集合として一致する。
+特に命題~\ref{prop:nonstandard-rank-three-example} の例では、
+どの適合根から定理~\ref{thm:normal-helix} の方法を用いても
+二つの階数はともに三である。
+\end{corollary}
+\begin{proof}
+$s^2\simeq (s')^2\simeq t$ と命題~\ref{prop:first-orbit-object} から
+$s^j\OO\simeq(s')^j\OO$ が全整数 $j$ について従う。
+これらの対象の添字を保つ同型を選ぶと、合成を積とする
+$\Hom(s^{-j}\OO,s^{-i}\OO)$ の $\mathbb Z$-algebra が同型になる。
+各切断環 $B$ とその $\mathbb Z$-algebra の間では、
+添字 $(i,j)$ 成分を $B_{j-i}$ と同定する
+$a\mapsto s^{-j}(a)$ が合成を保つ。
+従って得られる次数付き右加群圏の同値は
+全添字の自由加群 $B(i)$ を対応する自由加群に移し、
+最小自由被覆、Ext、次数零生成性を保存する。
+特に自由加群の全シフトを係数に取った Ext 消滅で定まる MCM 型を移送する。
+最小線形表示に現れる $B(-1)\to B$ の Hom 空間が線形同型で移るので、
+その中で行列成分が張る空間の次元は保たれる。
+\end{proof}
+
+\begin{proposition}[四生成元による有限同値判定]
+\label{prop:first-orbit-finite-equivalence}
+二つの $\HH$ 対象の適合切断環を、
+次数一の基底を選んでそれぞれ $B=T(k^4)/(K)$、$B'=T(k^4)/(K')$
+とする。$G=\GL_4(k)$ とし、
+\[
+ E=\{(g,h)\in G\times G\mid (g\otimes h)K=K'\}
+\]
+を作る。$C_0=G$ から始め、射影 $\operatorname{pr}_i$ を用いて
+\[
+ C_{n+1}=\operatorname{pr}_1\bigl(E\cap(G\times C_n)\bigr)
+         \cap\operatorname{pr}_2\bigl(E\cap(C_n\times G)\bigr)
+\]
+と定める。この下降列は有限段で安定し、安定集合が非空であることと
+二つの対象の pointed exact 同値性は同値である。
+各段の計算は $\GL_4$ の座標環での代数的消去によって行える。
+\end{proposition}
+
+\begin{proof}
+命題~\ref{prop:first-orbit-object} から、pointed exact 同値は
+各添字の軌道対象を保ち、系~\ref{cor:first-orbit-rank-invariance} の証明と同じ
+indexed Hom の構成により $\check B\simeq\check B'$ を与える。
+逆にこのような添字を保つ $\mathbb Z$-algebra 同型は、
+各次数成分を各添字の加群成分と同定することにより、
+次数付き右加群の圏の間の同値を誘導する。全ての自由シフトと
+次数ごとのベクトル空間を保つため、有限生成性と有限次元性を保つ。
+$B,B'$ は右 noetherian なので有限生成次数付き加群の圏は Abel 圏であり、
+その torsion 対象は有限次元である。この部分圏を割ると exact 同値を得て、
+自由加群の添字零は $\OO$ に対応する。
+
+$B,B'$ は二次環なので、$\check B$ と $\check B'$ はそれぞれ
+各隣接成分を $k^4$ とするテンソル経路環から、各二段の関係 $K$、$K'$ を課して得られる。
+従って添字を保つ同型は、各隣接成分上の $g_i\in G$ により、
+$(g_i,g_{i+1})\in E$ ($i\in\mathbb Z$) として必要十分に記述される。
+
+$E$ は空集合か、$K$ の $G\times G$ における安定化部分群の剰余類である。
+代数群の準同型の像は閉部分群であり、閉部分群の剰余類の共通部分は
+非空ならそれらの部分群の共通部分の剰余類である。
+これらの事実を帰納的に用いると、$C_n$ は空集合か閉代数部分群の剰余類である。
+また $g\in C_n$ となることは、$g$ を中央とする長さ $2n$ の有限列を
+作れることと同値である。両側への延長可能性が再帰式を与える。
+従って $C_n$ は閉集合の下降列であり、$G$ の座標環の noetherian 性から有限段で安定する。
+一度 $C_{n+1}=C_n$ となれば再帰式により以後は同じである。
+安定集合が非空なら、その中の任意の元から左右に安定集合内の隣を選び続けられるので、
+両側無限列を構成できる。逆向きには両側無限列の中央項がすべての $C_n$ に入る。
+
+定義式の射影は閉集合を像とするので、
+行列式の逆元も変数として含めた座標環で消去を行い、
+各像と共通部分の根基イデアルを求めればよい。
+根基の一致および全環になるかどうかを比較すると停止と非空性を判定できる。
+\end{proof}

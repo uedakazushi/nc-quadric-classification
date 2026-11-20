@@ -1,0 +1,132 @@
+% !TEX root = ../nc-quadric-classification.tex
+\subsection{二型がともに階数三となる非標準表示}
+\label{sec:rank-three-example}
+
+\begin{proposition}
+\label{prop:nonstandard-rank-three-example}
+標数零の代数閉体上に、二つの MCM 型の行列成分がともに三次元を張る
+non-standard な $\HH$ の適合表示が存在する。
+この表示と定理~\ref{thm:normal-helix} のいずれの初期型を用いても、
+得られる四周期表示は Van den Bergh の cubic 型にならない。
+\end{proposition}
+
+\begin{proof}
+$k$ の元 $\mathrm i$ を $\mathrm i^2=-1$ となるように選び、
+\[
+ A=k[u,v]\otimes_k k\langle x,y\rangle/(yx+xy),\qquad
+ g=\tfrac14(x^2+y^2)-uv,\qquad B=A/(g)
+\]
+とする。$A$ は四変数の skew polynomial ring であり、
+命題~\ref{prop:commutative-twist-covers} で用いた skew Koszul 複体と同様に
+型 $(1,4,6,4,1)$ である。$g$ は中央正則である。
+$B$ は $k[u,v,x]$ 上で $y$ に関する Ore 拡大を取り、
+モニックな関係 $y^2=4uv-x^2$ を課した環なので、
+左 $k[u,v,x]$ 加群として基底 $1,y$ を持つ。
+特に $u$ は正則である。$u$ を可逆にすると $v$ を消去でき、
+\[
+ B[u^{-1}]\simeq k[u,u^{-1}]\otimes_k k\langle x,y\rangle/(yx+xy)
+\]
+となるため、$B$ は domain である。
+
+滑らかさは $B$ の Koszul 双対から判定できる。
+$U,V,X,Y$ を $u,v,x,y$ の双対基底とすると、二次関係の直交補空間は
+\[
+\begin{gathered}
+ U^2=V^2=0,\quad X^2=Y^2=w,\quad UV+VU=-4w,\quad XY=YX,\\
+ UX=-XU,\quad UY=-YU,\quad VX=-XV,\quad VY=-YV
+\end{gathered}
+\]
+を与える。ここで $w=X^2$ は中央であり、$B^!/(w)=A^!$ となる
+正則元の代表である \cite[Lemma 4.11(2)]{MU2022}。$P=(U+V)/(2\mathrm i)$、$Q=(U-V)/2$ と置けば
+$P^2=Q^2=w$、$PQ=-QP$ である。
+$C(B)=B^![w^{-1}]_0$ は $P X^{-1},Q X^{-1},Y X^{-1}$ によって生成される。
+最初の二つはそれぞれ平方が $-1$ で互いに反交換し、最後は中央で平方が $1$ である。
+従って $M_2(k)\times M_2(k)$ から $C(B)$ への全射を得る。
+\cite[Lemma 4.13(1)]{MU2022} により $C(B)$ は八次元なのでこの全射は同型であり、
+同論文 Theorem 5.5 によって $\qgr B$ は滑らかである。
+
+$B$ は正則二次切断なので次元三・parameter 二の AS Gorenstein 環である
+\cite[Lemma 2.4]{MU2022}。canonical bimodule を与える右作用の twist を計算する。
+\cite[arXiv v2, Example 5.5]{RRZ2014} により、$A$ の Nakayama 自己同型は
+$u,v$ を固定し $x,y$ に符号 $-1$ を掛ける。
+これは $g$ を固定するため同論文 Lemma 1.5 を適用でき、
+$B$ の Nakayama 自己同型もその誘導 $\mu$ となる。
+$\mu^{-1}=\mu$ なので、\cite[Example 3.6(2)]{MU2021} の
+右 canonical bimodule の規約では
+$S_{\qgr B}^{-1}[2]\simeq(-)_\mu(2)$ となる。
+
+ここで graded 自己同型
+\[
+ \sigma(u)=-u,\qquad \sigma(v)=v,\qquad
+ \sigma(x)=\mathrm i x,\qquad \sigma(y)=\mathrm i y
+\]
+を取る。$\sigma(g)=-g$ なので $B$ に誘導され、
+その二乗は $\mu$ である。命題~\ref{prop:central-twist-obstruction} の証明中の
+作用比較を用いると、Zhang 同値 $F:\qgr B\to\qgr B^\sigma$ は $\pi B$ を
+$\pi B^\sigma$ に送り、新しい次数シフトを旧圏では $(-)_\sigma(1)$ として実現する。
+その二乗は $(-)_\mu(2)$ なので、新しい次数シフトは反 Serre の平方根である。
+$A^\sigma$ は型 $(1,4,6,4,1)$ を保ち \cite[Lemma 4.1]{MUW2026}、
+$g$ はその中で左右正則正規であり、$B^\sigma=A^\sigma/(g)$ である。
+
+$\pi B^\sigma$ に対する切断と豊富性を確認する。
+正規正則切断の AS Gorenstein 性と深さ三から、
+全次数での飽和性、$\operatorname{Ext}^1(\pi B^\sigma,\pi B^\sigma)=0$ が従う。
+すなわち次数付き有限長加群 $L$ について $\operatorname{Ext}^j(L,B^\sigma)=0$
+($j<3$) を用い、自由加群の打切りと Hom の極限を取る
+\cite[Lemma 5.9(1)--(2)]{MU2021}。
+$\operatorname{Ext}^2$ は Serre 双対性により負次数の切断の双対なので零である。
+高次も大域次元二により零であり、$\End(\pi B^\sigma)=k$ と合わせて exceptionality を得る。
+任意の対象は有限個の $\pi B^\sigma(-n)$ の直和の商であり、
+その指数は打切りにより任意に大きく取れる。
+全射の核 $K$ について $\operatorname{Ext}^1(\pi B^\sigma(-n),K)=0$
+($n\gg0$) を得るには、$K$ の自由被覆を取って、
+その核への $\operatorname{Ext}^2$ に埋め込む。
+その核の自由被覆と大域次元二から、最後の群は
+自由加群の像への $\operatorname{Ext}^2$ の商となり、Serre 双対性と
+負次数の切断の消滅により零である。
+従って $(\pi B^\sigma,(1))$ は ample であり、その切断環は $B^\sigma$ である。
+
+Gabriel--Krull 条件は同値で不変なので $\qgr B$ で確認する。
+命題~\ref{prop:sklyanin-h2} と同じく $A$ 上の有限自由分解により
+Hilbert 関数は最終的に多項式となる。定数なら有限長、次数が高々一なら
+$\cC_1$ に入ることは \eqref{eq:sklyanin-polynomial-filtration} と同じ議論で従う。
+一方 $B/uB$ 上で $v$ は正則であり、$B/(u,v)$ は無限次元である。
+従って $v$ の冪による列は $\pi(B/uB)$ の真の下降列となり、
+この対象は有限長でない。さらに $u$ の冪による列の各相続商は
+$\pi(B/uB)$ のシフトであるから、$\pi B\notin\cC_1$ である。
+$\pi B$ の任意の非零部分対象は、非零斉次元 $f\in B$ に対する
+$\pi(fB)\simeq\pi B(-\deg f)$ を含む。
+$B/fB$ の Hilbert 多項式は次数が高々一なので、非零部分対象による商は
+$\cC_1$ に入る。よって $\pi B$ は rank one torsion-free である。
+
+最後に $c=(x+y)/2$、$d=(x-y)/2$ とし、$r=c,d$ に対し
+\[
+ M_r=\begin{pmatrix}r&u\\ -v&-r\end{pmatrix}
+\]
+と置く。$c^2=d^2=(x^2+y^2)/4$ により $M_r^2=gI$ であり、
+これらは reduced な線形行列分解である。
+成分の張る空間はそれぞれ $\langle u,v,c\rangle$ と
+$\langle u,v,d\rangle$ である。これらは異なり、
+行と列の定数基底変換で保たれるので、二つの余核は同型でない。
+各分解では二つの連続行列が同じなので、$\Omega(1)$ は対応する余核を固定する。
+この二つが全 MCM 型であることは $C(B)\simeq M_2(k)\times M_2(k)$ と
+\cite[Lemma 4.13(4)--(5)]{MU2022} による。
+実際、余核は二元生成で、表示行列は非零の最小関係を与えるため自由ではない。
+非自由直和因子は少なくとも二元で生成されるので、各余核は直既約である。
+
+$D=\operatorname{diag}(\mathrm i,1)$ とすると
+$\sigma(M_r)=\mathrm i D M_r D^{-1}$ なので、右作用の $\sigma$ による引戻しは
+両方の型を固定する。
+Zhang 同値は極小自由被覆とその核を移送し、
+$F(M)(1)\simeq F(M(1)_\sigma)$ であるから、
+$B^\sigma$ でも $\Omega(1)$ は両方の型を固定する。
+最小表示行列の成分は twist 後も同じ次元の空間を張る。
+実際、$F(B(-1))\simeq B^\sigma(-1)$ を $m\mapsto\sigma^{-1}(m)$ で同定すると、
+次数一成分が $a$ の左乗法は $a\star(-)$ となる。
+従って $B^\sigma$ は non-standard であり、双方の成分空間が三次元である。
+系~\ref{cor:normal-cubic-defect} により、どちらの初期型を選んでも
+cubic 型は得られない。
+\end{proof}
+
+この例は、一つの標識対象に対する別の平方根や別の foundation が
+cubic 型を与えるかどうかまでは決定しない。

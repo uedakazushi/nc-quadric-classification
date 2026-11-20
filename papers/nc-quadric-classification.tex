@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v0.4
+% 日本語 LuaLaTeX。2026-11-21 / v0.5
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,7 +43,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v0.4（正規切断と標識付き比較）}
+\date{2026年11月21日\quad v0.5（cubic 被覆の限界と逆向き構成）}
 
 \begin{document}
 \maketitle
@@ -62,7 +62,9 @@ $\PP^1\times\PP^1$ に限られることを証明し、
 可換二次曲面の Abel 圏と同値でない対象が実際に含まれることを示す。
 全対象について、反 Serre 切断環の二次関係空間を用いる pointed exact 同値判定を与える。
 任意の適合する正規切断から三次元 AS 正則 $\mathbb Z$-algebra への比較を構成し、構造対象と反 Serre 関手の像を求める。
-比較先のうち Van den Bergh の三次正則型となる条件を求める。
+構造対象の最初の軌道対象を内在的に認識し、
+Van den Bergh の三次正則型で覆えない例を構成する。
+整な種数一曲線上の許容四つ組からは逆に対象を構成する。
 幾何データによる全被覆、逆向きの許容条件と相対モジュライは未解決である。
 本稿の初期結果の組合せに関する新規性は未確定である。
 \end{abstract}
@@ -353,11 +355,18 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \end{remark}
 
 \input{sections/quadratic_lifts}
+\input{sections/finite_ambient_test}
 \input{sections/commutative_roots}
 \input{sections/elliptic_examples}
 \input{sections/antiserre_ring}
 \input{sections/standard_comparison}
 \input{sections/normal_comparison}
+\input{sections/rank_three_example}
+\input{sections/first_orbit_object}
+\input{sections/cubic_coverage}
+\input{sections/rank_three_relations}
+\input{sections/elliptic_inverse}
+\input{sections/pencil_deformation}
 
 \section{完全分類へ向けた問題}
 \label{sec:open-problems}

@@ -1,0 +1,228 @@
+% !TeX root = ../nc-quadric-classification.tex
+
+\section{整な楕円四つ組からの構成}
+\label{sec:elliptic-inverse}
+
+$D$ を Van den Bergh の三次三次元正則 $\mathbb Z$-algebra とする。
+$P_i=e_iD$ を右加群、$S_i$ をその単純商と書き、
+$V_i=D_{i,i+1}$、$R_i$ を三次関係空間、
+$W_i=k w_i=(V_i\otimes R_{i+1})\cap(R_i\otimes V_{i+3})$ とする。
+\cite[arXiv v3, \S 5.2]{VdB2011} に従い、$w_i$ の非零の代表を選び、
+\[
+ w_i=\sum_j v_j\otimes r_j,\qquad
+ w_{i+1}=\sum_j r_j\otimes\theta_i(v_j)
+\]
+で次数 $+4$ の周期移動 $\theta$ を定める。各 $w_i$ のスカラー変更により、
+$\theta$ は $D_{ij}$ に $c_i/c_j$ を掛ける対角型の自己同型まで定まる。
+
+\begin{lemma}[四つの添字の移動と Serre 関手]
+\label{lem:cubic-serre-period}
+$\theta$ は、Mori--Nyman の Nakayama 同型
+$\nu:D\to D(-4)$ の逆と上記の対角型自己同型を除いて一致する。
+従って $\qgr D$ 上で $(4)_\theta\simeq S^{-1}[2]$ である。
+\end{lemma}
+
+\begin{proof}
+右単純加群の極小分解を $F^i$ と書く。その項は
+\[
+ F^i_0=P_i,\quad F^i_1=V_i\otimes P_{i+1},\quad
+ F^i_2=R_i\otimes P_{i+3},\quad F^i_3=W_i\otimes P_{i+4}
+\]
+であり、微分はテンソルの包含と積で与えられる
+\cite[arXiv v3, Theorem 5.5.7]{VdB2011}。
+特に $\Ext_D^q(S_i,P_j)$ は $(q,j)=(3,i+4)$ 以外で零である。
+局所コホモロジー $R^3\tau(D)_{j,i}$ は
+$\Ext^3_D(P_i/(P_i)_{\ge N},P_j)$ の直極限である。
+これは torsion 部分の第 $i$ 成分を計算する
+$\varinjlim_N\Hom_D(P_i/(P_i)_{\ge N},-)$ を導来すればよい。
+右からの作用は始域における射での引き戻し、左からの作用は終域における射との合成である。
+
+$M_i=P_i/(P_i)_{\ge i+2}$ とする。
+$j=i+4,i+5$ について $\Ext^3_D(M_i,P_j)\to R^3\tau(D)_{j,i}$ は同型である。
+さらに切り詰め次数を上げたときの核の単純因子は $S_l$ ($l\ge i+2$) なので、
+上記の消滅と長完全列を用いて確かめられる。
+短完全列 $0\to V_i\otimes S_{i+1}\to M_i\to S_i\to0$ に対し、
+その拡大類を表す $F^i_1\to V_i\otimes S_{i+1}$ は自然な商写像である。
+この写像を $V_i\otimes F^{i+1}$ に持ち上げると、
+第一段階は $V_i\otimes P_{i+1}$ の恒等写像、第二段階は
+$R_i\subset V_i\otimes V_{i+1}\otimes V_{i+2}$ の最後の因子を
+$P_{i+3}$ への左乗法に用いる写像、第三段階は
+$W_i\subset V_i\otimes R_{i+1}$ である。
+これらが微分と可換であることは、それぞれテンソルの最後の因子を
+二通りに取り出して同じ積になることで従う。
+
+従って $F^i$ と $V_i\otimes F^{i+1}$ を項ごとに直和した
+$M_i$ の分解では、第三微分の交差項は符号を除いて
+$W_i\subset V_i\otimes R_{i+1}$ である。
+$\Hom_D(-,P_{i+5})$ を取ると、
+第三項は $V_i^*\otimes W_{i+1}^*$ のみで、第二項は零である。
+一方、$\Hom_D(-,P_{i+4})$ を取った第三項は
+\[
+ W_i^*\oplus(V_i^*\otimes W_{i+1}^*\otimes V_{i+4})
+\]
+であり、第二項 $V_i^*\otimes R_{i+1}^*$ の像で割る。
+その第二成分への写像は $w_{i+1}\in R_{i+1}\otimes V_{i+4}$ の縮約なので
+同型である。第一成分への写像は $w_i\in V_i\otimes R_{i+1}$ の縮約である。
+よって、$a\in V_i$ を用いる $S_{i+1}\to M_i$ での引き戻しと
+$\theta_i(a)$ を用いる $P_{i+5}\to P_{i+4}$ との合成は、
+双対基底 $w_i^*,w_{i+1}^*$ を使えば、いずれも
+$V_i^*$ 成分を $a$ で評価する写像である。交差項の符号は基底変更で吸収できる。
+
+より具体的には $R^3\tau(D)$ の成分ごとの $k$-双対を $L$ とすると、
+適切に基底を取り直した $m_i\in L_{i,i+4}$ について
+\[
+ a m_{i+1}=m_i\theta_i(a)\qquad(a\in V_i)
+\]
+が成り立つ。右 AS 正則性より $L$ の第 $j$ 列は左加群 $D e_{j-4}$ である
+\cite[arXiv v1, Theorem 4.8 and Remark 4.10]{MN2025}。
+$D$ は $V_i$ で生成されるため、上の関係が双加群構造を決め、
+$L\simeq D(0,-4)_{\theta^{-1}}$ となる。
+従って \cite[arXiv v1, Definition 4.15 and Theorem 6.8]{MN2025} の
+Nakayama 同型と Serre 関手の式が得られる。
+$D_{ij}$ に $c_i/c_j$ を掛ける対角型自己同型による引き戻しは、
+第 $j$ 成分を $c_j$ 倍して恒等と自然同型になる。
+\end{proof}
+
+\begin{lemma}[整な楕円四つ組の二周期の平方]
+\label{lem:elliptic-period-square}
+幾何的データが整な算術種数一の曲線 $E$ 上の許容四つ組の場合、
+\cite[arXiv v3, Proposition 5.6.1]{VdB2011} の平行移動から生じる
+次数 $+2$ の周期移動 $\beta$ は、対角型自己同型を除いて
+$\beta^2=\theta$ を満たす。
+\end{lemma}
+
+\begin{proof}
+滑らかな場合は $E$ に原点を選び、因子和を楕円曲線の群法則で取る。
+特異な場合、正規化は種数零で、全 $\delta$ 不変量が一である。
+従って正規化は $\PP^1$ で、特異点は一つである。
+二枝なら完備局所環は正規化環のうち二つの剰余値が等しい部分環である。
+実際、剰余値の一致だけで余次元一となる。
+一枝なら一様化変数を $u$ として完備局所環は $k+u^2 k[[u]]$ である。
+一次の項が非零の元を含めば、形式的逆写像により正規化環全体を含むことになり、
+そのような元を含まない部分環は余次元一である。
+
+二枝の場合は正規化上の二点を $0,\infty$、一枝の場合はその点を $\infty$ とする。
+滑らかな部分にそれぞれ乗法群 $k^\times$ と加法群 $k$ の群構造を入れ、
+以下では両方を加法記号で書く。この群の平行移動は正規化上の
+拡大写像または平行移動で実現され、上記の剰余値または一次項の条件を保つので
+$E$ の自己同型となる。滑らかな部分に台を持つ次数零の因子
+$\sum_j m_j (p_j)$ が主因子となる条件は、群での和 $\sum_j m_j p_j=0$ である。
+実際、正規化での有理関数 $\prod_j(t-p_j)^{m_j}$ は $\infty$ で $1$ となる。
+二枝の場合は $0$ での値も $1$ であること、一枝の場合は $1/t$ の一次項が
+零であることが特異点で可逆となる条件であり、いずれも上記の群の等式である。
+従って滑らかな部分の因子和によって、これらの因子から得た同次数の
+直線束の同型を判定できる。
+
+各 $L_i$ を与える線型系の一般のファイバーは、
+特異点を避ける相異なる二点からなる。実際、$L_i$ は二重被覆を与え、
+標数零なので生成する関数体の拡大は分離的である。
+この二点の和を $a_i$ とすると、同じファイバーの相手は
+$\iota_i(p)=a_i-p$ と書ける。楕円 helix の関係から
+$a_{i+2}-a_i$ は全ての $i$ で一定である。
+$2v=a_0-a_2$ を満たす点 $v$ を選べる。群が楕円曲線、
+$k^\times$ または $k$ のいずれでも、二倍写像は全射だからである。
+この $v$ による平行移動で $L_i$ を引き戻すと $L_{i+2}$ となり、
+切断への作用が $\beta$ を与える。
+
+$\theta_i:V_i\to V_{i+4}$ の作用を評価写像で比較する。
+一般の $p\in E$ に対し $p'=\iota_{i+2}(p)$ と置き、
+$V_j=H^0(E,L_j)$ における $q$ での評価の核を
+$k\ell_j(q)$ と書く。
+$w_i$ を $L_{i+2}$ の $p$ における評価で縮約する。
+$p$ と $p'$ は同じ射影評価を与える。
+さらに $L_{i+1}$ の $p$ における評価で縮約すると、
+$w_i$ が二つの関係空間に属することから
+$\ell_i(p)\otimes\ell_{i+3}(p)$ の非零スカラー倍を得る。
+$p'$ でも同様である。非零性は、隣接する二因子の縮約が非零という
+幾何的五つ組の条件による \cite[arXiv v3, Definition 5.3.1]{VdB2011}。
+$L_{i+1}$ の $p,p'$ での評価は独立なので、
+$L_{i+2}$ のみを評価したテンソルは、適当な $\lambda,\gamma\ne0$ に対し
+\[
+ \lambda\ell_i(p)\otimes\ell_{i+1}(p')\otimes\ell_{i+3}(p)
+ +\gamma\ell_i(p')\otimes\ell_{i+1}(p)\otimes\ell_{i+3}(p')
+\]
+と書ける。$L_{i+3}$ の $p$ における評価で縮約すると、
+$L_{i+3}\not\simeq L_{i+2}$ より第二項だけが残る。
+$w_{i+2}$ は $w_i$ の二回の回転により与えられ、
+回転で末尾へ移る二因子は $\theta_i,\theta_{i+1}$ で移す。
+従って $w_{i+2}$ を各 $L_{i+2},L_{i+3},L_{i+4}$ の $p$ における評価で
+縮約して零になることから、
+$\theta_i(\ell_i(p'))$ は $p$ で消える。ゆえに $\theta_i$ による
+$L_{i+4}$ の $p$ での射影評価の引き戻しは $L_i$ の $p'$ での評価である。
+$L_i$ に関して $p'$ は
+$\iota_i(p')=p+a_i-a_{i+2}=p+2v$ と同じ射影評価を与える。
+これは $\beta^2$ の作用である。
+全ての $V_i$ で二つの写像はスカラー倍で一致し、
+$V_i$ の生成性と添字直線上でのスカラーの逐次選択により
+その差は対角型自己同型である。
+\end{proof}
+
+\begin{theorem}[整な楕円四つ組からの対象]
+\label{thm:integral-elliptic-inverse}
+標数零の代数閉体上で、$U=(E,L_0,L_1,L_2)$ を整な算術種数一の曲線上の
+Van den Bergh の許容四つ組、$D=D(U)$ とする。
+このとき $(\qgr D,\pi P_0)\in\HH$ である。
+平方根は VdB の平行移動に由来する偶数添字の周期で与えられ、
+二次 AS 正則被覆はその周期で次数付けした標準 hull から得られる。
+\end{theorem}
+
+\begin{proof}
+$\beta$ を補題~\ref{lem:elliptic-period-square} の周期移動とする。
+\cite[arXiv v3, Theorem 6.1, Lemmas 6.4--6.5 and Proposition 6.6]{VdB2011} の
+標準 hull はこの周期移動を持ち上げる。
+偶数部分を $\beta$ で次数付けした環 $B$ は、
+型 $(1,4,6,4,1)$ の四次元二次 AS 正則環 $A$ の
+正則正規二次元 $g$ による商である。ここで被覆の標準分解は線型なので
+$A$ は Koszul である。左右の AS 条件については
+\cite[arXiv v1, Proposition 4.4 and Theorem 4.5]{MN2025} を参照できる。
+右 noetherian 性は同じ hull 定理による。
+$D$ の反対環は添字を反転すると三次正則型であるため
+\cite[arXiv v1, Theorem 4.5]{MN2025}、同じ VdB の分類と
+\cite[arXiv v3, Corollary 5.5.9 and Lemma 3.5]{VdB2011} から
+$D$ と $B$ は左 noetherian でもある。
+$g$ によるフィルトレーションの次数環は $B$ 上の skew polynomial 環なので
+$A$ にも左 noetherian 性が昇る。実際、斉次左イデアルについては固定した
+内部次数でこのフィルトレーションは有限であり、
+初期項の生成元から元のイデアルの生成元を持ち上げられる。
+一般の左イデアルについては内部次数による最高次成分を使う。
+
+偶数部分への制限は、指定対象を保つ $\qgr D\simeq\qgr B$ を与える
+\cite[arXiv v3, Lemmas 3.4--3.5]{VdB2011}。
+$\pi P_{-j}$ の列は ample であり
+\cite[arXiv v1, Theorem 6.11]{MN2025}、奇数添字の $\pi P_i$ は
+次の偶数添字の $\pi P_{i+1}$ の有限直和の商になる。
+これは $D$ の隣接成分による生成性から従う。
+従って偶数部分列も ample である。シフト $(1)$ は
+$\qgr D$ 側の $(2)_\beta$ であり、
+補題~\ref{lem:cubic-serre-period} と補題~\ref{lem:elliptic-period-square}
+からその平方は $S^{-1}[2]$ である。
+\cite[arXiv v1, Proposition 4.11]{MN2025} により
+$\Hom(\pi P_j,\pi P_i)=D_{ij}$ であり、
+$\pi P_0$ は exceptional である。この Hom の同一視は合成を保つため、
+$\pi P_0$ の切断環は全非負次数で $B$ と同型となる。
+実際、次数 $n$ の切断の空間 $D_{-2n,0}$ を $\beta^n$ で $D_{0,2n}$ に移すと、
+次数 $m,n$ の積は $a\beta^m(b)$ となり、周期による $B$ の積に一致する。
+$\qgr D$ の Ext 有限性は \cite[arXiv v3, Corollary 5.5.9]{VdB2011} による。
+
+最後に rank 条件を確認する。
+楕円 helix の切断 $\mathbb Z$-algebra $D_{\mathrm{geom}}$ への商の核は、
+次数四の正則な一元列 $(h_i)$ で左右から生成される
+\cite[arXiv v3, Theorem 5.5.6]{VdB2011}。
+$\beta$ は幾何データ上の平行移動から来るためこの核を保つ。
+従って偶数部分の次数付き商では、列 $(h_{2i})$ が一つの
+正則正規元 $h\in B_2$ に降りる。
+$B/(h)$ は $E$ の次数四の直線束 $L_0\otimes L_1$ と
+平行移動による捩れ斉次座標環である。
+従ってこれは domain であり、
+$h$ による分離フィルトレーションの初期項から $B$ も domain である。
+また $\qgr(B/(h))\simeq\coh E$ であり、
+その構造対象のシフトは可逆層に対応する
+\cite[arXiv v3, Corollary 5.5.9 and Lemma 3.5]{VdB2011}。
+$h$ の冪が与える $\pi B$ の下降列の隣接商は、従って有限長でない。
+命題~\ref{prop:sklyanin-h2} の証明と同じ Hilbert 多項式の議論を適用すると、
+$\pi B$ は Gabriel--Krull の $\cC_1$ に属さず、
+任意の非零部分対象は $\pi B$ のシフトを含み、その余商は $\cC_1$ に属する。
+ここで使うのは $B$ の Hilbert 級数、domain 性と、
+有限生成 $B$ 加群が $A$ 上で有限自由分解を持つことである。
+よって $\pi B$ は rank one torsion-free であり、全ての条件が成立する。
+\end{proof}

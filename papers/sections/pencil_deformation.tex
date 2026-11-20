@@ -1,0 +1,133 @@
+% !TEX root = ../nc-quadric-classification.tex
+\section{Sklyanin pencil の一次近傍と同値判定}
+\label{sec:pencil-deformation}
+
+命題~\ref{prop:sklyanin-antiserre-center} の無限位数の範囲で、
+同一の四次元 Sklyanin 環 $A$ の pencil を比較する。
+$P=A^{(2)}$、$Z\subset P_1$ を元の中心二次 pencil、
+$D=P/(Z)$ を楕円商と置く。直線 $\ell\subset Z$ に対して $R_\ell=P/(\ell)$ であり、
+滑らかな対象に対応する場合にはこれが反 Serre 環である。
+$H_\ell=Z/\ell$ の像は $R_\ell$ の中心一次部分である。
+
+\begin{proposition}[中心方向の一次変形]
+\label{prop:pencil-tangent}
+$U=D_1$、$K=\ker(U\otimes_k U\to D_2)$ とする。
+一次補空間を選ぶと、次数二の積により線形写像
+\[
+ \Delta:Z^*\longrightarrow
+ \operatorname{Hom}_k(K,U)/\operatorname{im}\partial,\qquad
+ (\partial f)(r)=(f\otimes1+1\otimes f)(r),\quad f\in U^*
+\]
+が得られ、右辺の商において補空間の選択に依存しない。
+$\ell$ を消す非零汎関数 $\lambda$ に対して
+$\Delta(\lambda)$ は $R_\ell/(H_\ell^2)$ の変形を与える。
+この商の同型は $D$ の次数付き自己同型と $H_\ell$ の基底の変更の下で
+$\Delta$ の値を保つ。
+\end{proposition}
+
+\begin{proof}
+$g,h$ を $Z$ の任意の基底とする。$g$ は $P$ 上で正則であり、
+$h$ は $P/(g)$ 上で正則である。これは Sklyanin の中心正則列から従う。
+実際、適合する滑らかな一切断 $g$ については domain 性が保証し、
+任意の基底については、中心正則列の Koszul 複体が基底変更で同型であることを使える。
+後者から任意の非零 $g$ に対する商上の正則性が従う
+（$P$ 上の $g$ 自身の正則性は domain 性による）。
+この正則列により
+\[
+ (Z)/(Z)^2 \simeq Z\otimes_k D
+\]
+となる。例えば $g x+h y\in (Z)^2$ なら右辺の二次式を
+$g,h$ の係数に吸収でき、残る関係は $g x'+h y'=0$ となる。
+これを $(g)$ で割れば $y'\in(g)$ なので $x'\in(h)$ となる。
+
+$U$ の線形持上げ $U\to P_1$ を選ぶ。
+$r\in K$ の積を $P/(Z)^2$ で取ると $Z\otimes U$ に入る。
+$\lambda$ で $Z$ を評価して $U$ への写像を得る。
+持上げの差 $U\to Z$ は積に $\partial f$ を加え、二つの差の積は零となる。
+従って商での類は内在的である。
+さらに $(Z)^2+(\ell)$ で割ると $R_\ell/(H_\ell^2)$ となり、
+その一次変形が評価した写像で与えられる。
+商の同型は $H_\ell$ の同定と $U$ の持上げを移すので、
+基底変更と $\partial$ の範囲で作用する。
+\end{proof}
+
+\begin{proposition}[固定 pencil の比較を有限化する条件]
+\label{prop:pencil-finite-candidates}
+$\Delta$ と $\partial$ が単射であるとする。
+固定 $P$ の滑らかな二切断の pointed exact 同値を判定するには、
+有限個の一次線形写像だけを二次関係に照合すればよい。
+さらに、各切断と同値な固定 pencil 内の切断は有限個である。
+\end{proposition}
+
+\begin{proof}
+まず $D$ の次数付き自己同型群を次数スカラーで割ると有限になる。
+$D$ は次数八の可逆層を持つ楕円曲線の twisted homogeneous
+coordinate ring（またはその反対環）である。
+次数付き自己同型は次数零の分数体 $k(E)$ に作用する。
+次数一切断の比で与えられる完全線形系の埋込みにより、
+この作用は次数八の偏極を保存する $E$ の自己同型である。
+詳しくは、基底切断 $u_0$ で割った切断 $u_i/u_0$ を座標比とすると、
+代数自己同型が送る比は新基底の座標比であり、埋込みは射影線形変換を介して保たれる。
+同じ分数体作用を持つ二自己同型の差は、比を固定するので
+$U$ に共通の有理関数を掛ける。
+この有理関数は非零有限次元空間を保つため、固有ベクトルに作用させれば
+スカラーと分かる。$D$ は一次生成なので、差は次数スカラーである。
+次数一の斉次可逆元による分数体上の作用は二倍平行移動であるため、
+分数体上の自己同型はこれと可換である。
+平行移動を除いた楕円群の自己同型が無限位数の移動点を固定すれば恒等になる。
+実際、その自己同型から恒等を引いた非零準同型の核は有限である。
+従って残る作用は次数八の偏極を保つ平行移動であり、$E[8]$ に属する。
+特に候補は高々64個である。
+
+比較する二切断の $H_\ell$ に基底を選ぶ。
+$D$ 上の自己同型の代表 $\varphi$ ごとに
+命題~\ref{prop:pencil-tangent} の必要条件を調べる。
+二つの変形類は非零なので、それらの比較に必要な
+$H_\ell$ 上の倍率は存在するなら一意である。
+代表写像の差が $\partial f$ であることを確認すれば、
+$\partial$ の単射性により $f$ も一意に定まる。
+この $f$ は次数一における持上げのずれである。
+従って商 $R_\ell/(H_\ell^2)$ 上の候補から、
+$R_\ell$ の次数一の線形写像が一意に決まる。
+次数スカラーは常に全環の自己同型なので、$\varphi$ は各剰余類で一つ取ればよい。
+最後にその線形写像が全二次関係を保つか検査する。
+命題~\ref{prop:antiserre-quadratic} と定理~\ref{thm:antiserre-invariant}
+により、この最後の条件は十分でもある。
+
+固定した切断の非零変形類の射影化に $\varphi$ を作用させると、
+$\Delta$ の単射性により各 $\varphi$ につき一致する切断は高々一つである。
+\end{proof}
+
+\begin{proposition}[通常の Sklyanin パラメータでの開条件]
+\label{prop:pencil-tangent-generic}
+通常の Sklyanin のパラメータ平面のチャート
+$\gamma=-(\alpha+\beta)/(1+\alpha\beta)$ において、
+命題~\ref{prop:pencil-finite-candidates} の二つの単射性は
+非空 Zariski 開条件を与える。
+従ってこの開条件を満たし、かつ命題~\ref{prop:sklyanin-antiserre-center} の仮定を
+満たす固定 pencil について、滑らかな切断の同値判定は同命題の有限手順で行える。
+\end{proposition}
+
+\begin{proof}
+$\dim U=8$、$\dim D_2=16$ なので $K$ は48次元である。
+一次持上げと関係空間の基底を替えても、
+$\partial$ の階数と、$\partial$ の像に中心二方向の列を加えた行列の階数は不変である。
+二つの単射性はこれらがそれぞれ $8,10$ であることと同値であり、
+定ランクの座標チャートでは極大小行列式の非消滅で書ける。
+
+非空性を有理数上で確認した。
+$(\alpha,\beta,\gamma)=(2,3,-5/7)$ において、
+$\sum a_i x_i^2$ の四生成元との交換子を次数三の関係空間で割って
+二次元の中心 pencil の基底を求める。
+次数四では、二次関係を四文字の三箇所へ挿入した空間で割る。
+得られる35次元空間に、中心の三つの二乗積と
+二つの中心元と八つの $U$ の持上げとの積を並べると、階数は19となる。
+さらにその像で割ると16次元になり、
+$U\otimes U$ からの積の核が48次元と求まる。
+この核に対し、中心方向の積の係数と $\partial$ の列を並べると
+有理数上の階数がそれぞれ $8,10$ となる。
+計算の入力と行操作は
+\texttt{computations/verify\_pencil\_tangent.py} に収めた。
+この計算は開条件の非空性の証明に用い、当該有理パラメータの
+平行移動の無限位数性は用いていない。
+\end{proof}

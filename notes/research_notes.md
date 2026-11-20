@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.3（数学原稿v0.4）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.3（数学原稿v0.5）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -89,6 +89,12 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 
 固定ambientでの自己同型Zhang twistによる中心化条件と、誘導シフトの平方根性の条件は異なる。両立にはnormalizerが次数スカラーであることが必要で、Ore族では失敗する。主原稿 prop:central-twist-obstruction、ex:ore-central-twist。別ambientによる中心表示の存在は未解決である。
 
+## cubic 被覆と逆向き構成
+
+最初の軌道対象は全適合根で同型となる。これを用いてcubicからの偶数成分の制限を識別し、二型の階数がともに3ならどの標識付きcubic表示も排除した。具体例は中心商のKoszul双対が M₂×M₂ となる skew polynomial 切断をZhang twistして得る。主原稿 thm:cubic-coverage と prop:nonstandard-rank-three-example。
+
+整な種数一曲線では、五つ組の巡回写像をNakayama同型と比較し、平方根つきの逆構成を閉じた。非整曲線の幾何商ではdomain性の証明が使えない。被覆については、Bが左右noetherianな二次Koszul環と分かっていれば、未知のAS正則性を要求せず有限階数条件で判定できる。残る階数3領域の課題は、そのBを構成する具体的なパラメータと許容条件である。
+
 ## 検証範囲と再現手順
 
 実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。
@@ -116,5 +122,7 @@ repoルートの`latexmk`と、VS Codeレシピ相当の`latexmk -norc -r <repo>
 数学原稿v0.3では sources・math・build がPASS。LuaLaTeXでは既設の日本語TeXパッケージと書込可能な一時キャッシュを指定して、23頁のPDFとSyncTeXを再生成し、最終ログを確認した。新しい頁の表示点検、VS Code UI、形式証明は未実施。T1、標識の比較、rulingの階数と固定ambientの中心化条件は証明を別担当と点検した。Sklyanin型の楕円商と二添字周期の判定は原稿内の証明を推論と規約について点検した。
 
 数学原稿v0.4では正規切断の四周期比較のExt消滅、二型の生成性、mutationによる完全性、豊富性を独立担当と点検し、使った一次資料の仮定を照合した。階数3の極小分解と行列表示、標識を保つ導来同値からのheart認識も本文に証明を置いた。sources・math・build はPASS。新規部分の外部査読、形式証明、PDFの目視は未実施。
+
+数学原稿v0.5のソース、厳密検算とLuaLaTeXを実行した。cubic被覆の必要性、最初の軌道対象、非cubic例、環変換スペクトル系列の論証を独立担当と点検した。Sklyanin一次近傍の計算は正確な有理数行列で、他のパラメータでの主張は開条件に限る。外部査読・形式証明・PDFの目視は未実施。
 
 GitHubのgit読取が利用できても書込認証は別に必要である。GitHub connectorによる通常コミットも許可された保存手段として使用できる。research-hubの更新は対象repo保存後に最新READMEを読み、並行更新を保持して行う。

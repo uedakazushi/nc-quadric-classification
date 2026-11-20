@@ -1,0 +1,68 @@
+% !TEX root = ../nc-quadric-classification.tex
+\section{cubic 型による被覆の限界}
+\label{sec:cubic-coverage}
+
+\begin{theorem}[cubic 表示の判定]
+\label{thm:cubic-coverage}
+$\HH$ 対象 $(\cC,\OO)$ の任意の適合表示から
+定理~\ref{thm:normal-helix} の二つの初期 MCM 型を取る。
+次の条件は同値である。
+\begin{enumerate}
+\item $(\cC,\OO)$ はある Van den Bergh の三次三次元 AS 正則
+$\mathbb Z$-algebra $D$ に対する $(\qgr D,\pi e_0D)$ と pointed exact 同値である。
+\item 二つの初期型の少なくとも一方で、偶数添字間の隣接合成が階数四になる。
+\end{enumerate}
+特に命題~\ref{prop:nonstandard-rank-three-example} の対象は
+いかなる cubic 表示でも添字零の構造対象を保って実現できない。
+\end{theorem}
+
+\begin{proof}
+十分性は定理~\ref{thm:normal-helix} と系~\ref{cor:normal-cubic-defect}
+から従う。必要性のため、cubic 表示があると仮定し、
+$\pi e_iD$ の像を $Q_i\in\cC$ と書く。
+cubic 正則性と \cite[Proposition 4.11, Theorem 6.8]{MN2025} により、
+$tQ_i\simeq Q_{i-4}$、および
+$\Hom(Q_j,Q_i)=D_{ij}$ である。
+この適用に必要な正則性と周期性は \cite[arXiv v3, Definition 4.1.1,
+Proposition 5.6.1]{VdB2011} と
+\cite[Theorem 4.19]{MN2025} から従う。
+
+$M=Q_{-2}$ と置く。二添字移動は $D$ の自己同型として実現されるので
+$Q_{-2}$ は $\OO=Q_0$ の exact 自己同値による像である。
+従って $M$ は rank one torsion-free exceptional である。
+さらに cubic 型の成分次元から
+$\Hom(\OO,t^nM)=D_{-4n-2,0}$ は $(2n+2)^2$ 次元である。命題~\ref{prop:first-orbit-object} の証明の Ext 消滅により、
+$n\gg0$ では Euler 特性も同じ値を取る。
+命題~\ref{prop:first-orbit-object} により $M\simeq s\OO$ となる。
+従ってすべての整数 $j$ で $Q_{-2j}\simeq s^j\OO$ であり、
+これらの同型は Hom と合成で定めた二つの添字付き環の同型
+$D_{\mathrm{even}}\simeq\check B$ を与える（偶数添字は二で割る）。
+ここでは cubic 側の二添字移動そのものが反 Serre の平方根であることは使わない。
+
+$P_i=e_iD$ の偶数成分への制限を $P_i^{\mathrm{ev}}$ と書く。
+上の同型により次数付き右 $B$-加群とみなせる。
+奇数 $i$ に対する右単純加群の極小分解を偶数成分に制限すると
+\[
+ 0\longrightarrow P_{i+4}^{\mathrm{ev}}
+ \longrightarrow (P_{i+3}^{\mathrm{ev}})^2
+ \longrightarrow (P_{i+1}^{\mathrm{ev}})^2
+ \longrightarrow P_i^{\mathrm{ev}}\longrightarrow0
+\]
+となる。偶数の添字の制限は $B$ の自由シフトである。
+$i$ を前後に四ずつ変えると、$P_i^{\mathrm{ev}}$ は自由加群への埋込みを
+繰り返し持ち、その余核は次の自由加群へ埋め込める。
+従ってこの列の二回の次元移動を反復し、
+$B$ の有限単射次元を使えば $\Ext_B^j(P_i^{\mathrm{ev}},B)=0$ ($j>0$) となる。
+
+$X=P_{-1}^{\mathrm{ev}}$ は次数零に二元生成され、
+$H_X(z)=2/(1-z)^3$ であり、自由加群ではない。
+定理~\ref{thm:normal-helix} の二型の記述により、非自由 MCM の
+直和因子は少なくとも二元を必要とする。従って $X$ は
+定理~\ref{thm:normal-helix} の二型の一方である。
+$D_{-2,-1}$ は左乗法と制限により $X\to B(1)$ の射を与え、
+$D_{-1,0}$ は $B\to X$ の射を与える。
+それらの積は $D_{-2,0}\simeq B_1$ を張る。
+実際、cubic 型では距離二に関係がなく、この隣接積は同型である。
+これらは tails への移行後も同じ Hom と合成になるので、
+$X$ の偶数項間の合成は階数四である。
+\end{proof}

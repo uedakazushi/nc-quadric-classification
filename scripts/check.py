@@ -141,7 +141,7 @@ def sources() -> int:
     required = (
         "README.md", "AGENTS.md", "00_research_plan.md", "CLOUD_CODEX.md", "notes/research_notes.md",
         "notes/literature.md", "papers/nc-quadric-classification.tex", "papers/references.bib",
-        "computations/verify_quadric.py", "requirements.txt", ".latexmkrc",
+        "computations/verify_quadric.py", "computations/verify_pencil_tangent.py", "requirements.txt", ".latexmkrc",
         ".vscode/settings.json", ".vscode/extensions.json", "scripts/bootstrap.sh", "scripts/check.py",
     )
     for name in required:
@@ -253,12 +253,18 @@ def math_checks() -> int:
     ok, detail = python_dependencies()
     if not ok:
         return summary("math", [], [detail])
-    script = ROOT / "computations/verify_quadric.py"
-    if not script.is_file():
-        return summary("math", ["computations/verify_quadric.py is missing"], [])
+    scripts = ("verify_quadric.py", "verify_pencil_tangent.py")
+    failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
-    result = subprocess.run([str(selected_python()), str(script)], cwd=ROOT, check=False)
-    return summary("math", [] if result.returncode == 0 else [f"verifier exited {result.returncode}"], [])
+    for name in scripts:
+        script = ROOT / "computations" / name
+        if not script.is_file():
+            failures.append(f"computations/{name} is missing")
+            continue
+        result = subprocess.run([str(selected_python()), str(script)], cwd=ROOT, check=False)
+        if result.returncode:
+            failures.append(f"{name} exited {result.returncode}")
+    return summary("math", failures, [])
 
 
 def build() -> int:
