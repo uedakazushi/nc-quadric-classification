@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v0.5
+% 日本語 LuaLaTeX。2026-11-21 / v0.6
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,7 +43,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v0.5（cubic 被覆の限界と逆向き構成）}
+\date{2026年11月21日\quad v0.6（cubic 被覆の限界と二つの完全分類領域）}
 
 \begin{document}
 \maketitle
@@ -65,7 +65,7 @@ $\PP^1\times\PP^1$ に限られることを証明し、
 構造対象の最初の軌道対象を内在的に認識し、
 Van den Bergh の三次正則型で覆えない例を構成する。
 整な種数一曲線上の許容四つ組からは逆に対象を構成する。
-多パラメータ skew polynomial 環の正規二次切断は、退化を含めて分類する。
+多パラメータ skew polynomial 環と、中央二変数を持つ Ore 環の正規二次切断を分類する。
 幾何データによる全被覆、逆向きの許容条件と相対モジュライは未解決である。
 本稿の初期結果の組合せに関する新規性は未確定である。
 \end{abstract}
@@ -365,6 +365,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/rank_three_example}
 \input{sections/sign_normal_quadrics}
 \input{sections/multiparameter_quadrics}
+\input{sections/ore_normal_quadrics}
 \input{sections/first_orbit_object}
 \input{sections/cubic_coverage}
 \input{sections/rank_three_relations}
