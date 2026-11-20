@@ -1,0 +1,15 @@
+build/
+__pycache__/
+*.pyc
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.zip
+.DS_Store

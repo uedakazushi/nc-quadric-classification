@@ -1,0 +1,217 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v0.1
+\section{可換二次曲面と平方根の非一意性}
+\label{sec:commutative-roots}
+
+この節では $k$ を標数 $0$ の代数閉体，
+$Q=\mathbb P^1_k\times\mathbb P^1_k$ とする．
+$\mathcal O_Q(a,b)$ を通常の線束とし，
+$S_Q=(-)\otimes\mathcal O_Q(-2,-2)[2]$ と書く．
+ここで分類する平方根は，$k$ 線型完全自己同値 $s$ であって
+$s^2\cong S_Q^{-1}[2]$ を満たすものの同型類である．
+この同型そのものは指定せず，Serre 双対性の trace と両立する
+追加の巡回的 coherence 条件も課さない．
+根の同値は，$F(\mathcal O_Q)\cong\mathcal O_Q$ を満たす
+完全自己同値 $F$ と $Fs\cong s'F$ の存在を意味する．
+この節は族や慣性の分類を主張しない．
+
+\begin{lemma}[可換標識対象]
+\label{lem:commutative-marking-line}
+$Q$ 上の rank-one torsion-free exceptional coherent sheaf $E$ は線束である．
+したがって $(\operatorname{coh}Q,E)$ は
+$(\operatorname{coh}Q,\mathcal O_Q)$ と pointed exact 同値である．
+\end{lemma}
+\begin{proof}
+$Q$ は滑らかな曲面なので $L=E^{\vee\vee}$ は線束であり，
+$T=L/E$ は有限長である．$n=\operatorname{length}T$ と置く．
+$E$ は完全複体として扱え，Riemann--Roch により
+\[
+ \chi(E,E)
+ =\int_Q\operatorname{ch}(E^{\vee}_{\mathrm{der}})
+             \operatorname{ch}(E)\operatorname{td}(Q)
+ =\chi(\mathcal O_Q)-2n=1-2n.
+\]
+実際，$D=c_1(L)$ とすれば
+$\operatorname{ch}(E)=e^D(1-n[\mathrm{pt}])$ であり，
+導来双対の Chern character は $e^{-D}(1-n[\mathrm{pt}])$ である．
+exceptionality から $\chi(E,E)=1$ なので $n=0$，従って $E=L$ である．
+$(-)\otimes L^{-1}$ が求める pointed exact 同値を与える．
+\end{proof}
+
+\begin{theorem}[四つの平方根]
+\label{thm:commutative-four-roots}
+$\operatorname{coh}Q$ の $k$ 線型完全自己同値 $s$ が
+\[
+ s^2\cong(-)\otimes\mathcal O_Q(2,2),
+ \qquad \dim_k\operatorname{Hom}(\mathcal O_Q,s\mathcal O_Q)=4
+ \tag{$*$}\label{eq:commutative-root-conditions}
+\]
+を満たすとする．このような $s$ は pointed exact 同値を除いてちょうど四種類であり，
+\[
+ s_\varphi(F)=\varphi^*F\otimes\mathcal O_Q(1,1)
+\]
+において $\varphi$ を次のいずれかに取ったものである．
+\begin{enumerate}
+ \item 恒等写像．
+ \item 一方の因子の非自明な対合 $\iota\times\mathrm{id}$．
+ \item 両因子の非自明な対合 $\iota\times\iota$．
+ \item 二因子の交換 $\epsilon$．
+\end{enumerate}
+ここで $\iota([u_0:u_1])=[u_0:-u_1]$ と取れる．
+四者はいずれも $(\mathcal O_Q,s_\varphi)$ が Artin--Zhang ample であり，
+対応する右規約の orbit algebra は $(14641)$ 型 quadratic AS-regular domain の
+正則正規な二次斉次元による商である．
+\end{theorem}
+
+\begin{proof}
+まず完全自己同値の形を決める．
+Bondal--Orlov の定理 \cite[Theorem~3.1]{BondalOrlov2001} は，
+反標準束が ample な滑らかな射影多様体の導来自己同値を
+自己同型，線束による tensor，shift で記述する．
+Abel 圏の完全自己同値から得られる導来自己同値は標準 heart を保つため shift は零である．
+従って $s=\varphi^*(-)\otimes L$ と書ける．
+平方根の条件から
+\[
+ \varphi^2=\mathrm{id},\qquad
+ L\otimes\varphi^*L\cong\mathcal O_Q(2,2).
+ \label{eq:commutative-root-norm}
+\]
+$\varphi$ が二つの ruling をそれぞれ保つ場合，Picard 群への作用は恒等なので
+$L=\mathcal O_Q(1,1)$ である．
+$\varphi$ が ruling を交換する場合は
+$L=\mathcal O_Q(a,2-a)$ である．
+このとき $h^0(L)=4$ はまず $0\le a\le2$ を強制し，さらに
+\[
+ (a+1)(3-a)=4
+\]
+から $a=1$ を強制する．従って，いずれの場合も $L=\mathcal O_Q(1,1)$ である．
+
+$F(\mathcal O_Q)\cong\mathcal O_Q$ を保つ完全自己同値 $F$ は，
+同じ定理により $\psi^*$ の形に限られる．
+すべての $\psi\in\operatorname{Aut}(Q)$ は
+$\mathcal O_Q(1,1)$ の同型類を保つので，求める同値類は
+$\operatorname{Aut}(Q)$ における対合（恒等元を含む）の共役類である．
+\[
+ \operatorname{Aut}(Q)
+ =\bigl(\operatorname{PGL}_2(k)\times\operatorname{PGL}_2(k)\bigr)
+       \rtimes\langle\epsilon\rangle.
+\]
+$\operatorname{PGL}_2(k)$ の非自明な対合は，標数が $2$ でなく $k$ が代数閉体なので
+すべて $\iota$ に共役である．
+恒等成分に属する対合は二因子の対合の組であり，
+因子交換も許すと，非自明な因子の数 $0,1,2$ の三種類になる．
+他方，恒等成分の外にある対合は $(g,g^{-1})\epsilon$ と書け，
+$(g,\mathrm{id})\epsilon(g,\mathrm{id})^{-1}=(g,g^{-1})\epsilon$
+よりすべて $\epsilon$ に共役である．
+前の三種類は ruling の作用と各因子の作用で区別でき，
+最後の種類は ruling を交換するのでこれらと共役ではない．
+
+残りの条件を確認する．各 $\varphi$ は $\mathcal O_Q(1,1)$ を保ち，
+\[
+ s_\varphi^{-n}\mathcal O_Q\cong\mathcal O_Q(-n,-n)
+ \qquad(n\in\mathbb Z)
+\]
+である．$\mathcal O_Q(1,1)$ の ampleness による大域生成と Serre 消滅から，
+この列は Artin--Zhang の生成条件と全射に対する Hom の最終的全射性を満たす．
+以下の命題が orbit algebra の AS-regular cover を与える．
+\end{proof}
+
+\begin{proposition}[四平方根の明示的な cover]
+\label{prop:commutative-twist-covers}
+$V=H^0(Q,\mathcal O_Q(1,1))$，$P=\operatorname{Sym}(V)$ とし，
+Segre 方程式を
+$q=x_{00}x_{11}-x_{01}x_{10}\in P_2$ と書く．
+定理\ref{thm:commutative-four-roots}の各 $\varphi$ について，
+その $V$ 上の持上げ $\sigma$ を $\sigma^2=1$ となるように選ぶ．
+$P$ と同じ次数付きベクトル空間に積
+\[
+ f\star g=\sigma^{\deg g}(f)g
+ \qquad(f,g\text{ homogeneous})
+\]
+を入れた代数を $A_\sigma$ とする．
+すると $A_\sigma$ は左右 noetherian な quadratic Koszul AS-regular domain であり，
+解消型は $(14641)$ である．
+$P_2=(A_\sigma)_2$ というベクトル空間の同一視で得られる元 $q$ は正則正規で，
+右規約
+$a*b=s_\varphi^{\deg b}(a)\circ b$
+による orbit algebra は $A_\sigma/(q)$ に同型である．
+\end{proposition}
+
+\begin{proof}
+上記の積は，$\sigma$ が次数付き自己同型であることから結合的である．
+$\sigma$ の固有基底 $z_1,\ldots,z_4$ を取り，固有値を $e_i\in\{1,-1\}$ とすると，
+\[
+ z_i\star z_j=(e_i/e_j)z_j\star z_i.
+\]
+従って $A_\sigma$ は四変数の skew polynomial ring である．
+順序付き単項式は PBW 基底をなし，自己同型による反復 Ore 拡大として
+左右 noetherian かつ domain である．
+通常の Koszul 複体の交換係数を上記の符号へ変更すると，
+正規正則列 $z_1,\ldots,z_4$ に沿う標準的な skew Koszul 複体が得られ，
+\[
+ 0\longrightarrow A_\sigma(-4)
+ \longrightarrow A_\sigma(-3)^4
+ \longrightarrow A_\sigma(-2)^6
+ \longrightarrow A_\sigma(-1)^4
+ \longrightarrow A_\sigma\longrightarrow k\longrightarrow0
+\]
+は完全である．双対複体のコホモロジーは最高次数の $k(4)$ だけであり，
+反復 Ore 拡大の大域次元は $4$，Hilbert 級数は $(1-t)^{-4}$ である．
+これが主張した AS-regularity と解消型を与える．
+
+$\varphi$ は $Q$ を保つので $\sigma(q)=c q$ であり，$c\in\{1,-1\}$ である．
+$x\in V$ に対して
+\[
+ q\star x=\sigma(q)x=c qx,
+ \qquad x\star q=\sigma^2(x)q=xq
+\]
+だから $q\star x=c(x\star q)$ となる．
+従って $q$ は正規であり，domain 性から正則でもある．
+二側イデアル $(q)$ は通常の $qP$ と同じ次数付きベクトル空間なので，
+$A_\sigma/(q)$ は Segre 切断環 $P/(q)$ の同じ積による twist である．
+$\varphi^*\mathcal O_Q(1,1)\cong\mathcal O_Q(1,1)$ の同型を
+$\sigma$ と整合的に選ぶと，orbit algebra の積はまさに
+$a*b=\sigma^{\deg b}(a)b$ になる．
+\end{proof}
+
+\begin{remark}
+上の四代表で，$\sigma$ はそれぞれ恒等作用，
+$x_{10},x_{11}$ の符号変更，$x_{01},x_{10}$ の符号変更，
+$x_{01}$ と $x_{10}$ の交換として取れる．
+$q$ の固有値 $c$ は順に $1,-1,1,1$ である．
+従って一因子対合のこの cover では $q$ は各一次元と反可換になり，中心元ではない．
+これは正則正規な二次斉次元を許す定義を点検する具体例になる．
+ここで $q$ は $P_2=(A_\sigma)_2$ の同一視で指定した元であり，
+$\star$ 積で表した式の係数は通常の可換積の表示と異なり得る．
+\end{remark}
+
+\begin{example}[平方根と ampleness だけでは一次元数は決まらない]
+\label{ex:commutative-unbalanced-root}
+二因子の交換 $\epsilon$ を用いて
+\[
+ t(F)=\epsilon^*F\otimes\mathcal O_Q(2,0)
+\]
+と置くと $t^2\cong(-)\otimes\mathcal O_Q(2,2)$ であり，
+$(\mathcal O_Q,t)$ は Artin--Zhang ample である．
+実際，$t^{-2m}\mathcal O_Q\cong\mathcal O_Q(-2m,-2m)$，
+$t^{-(2m+1)}\mathcal O_Q\cong\mathcal O_Q(-2m,-2m-2)$ である．
+偶数部分列による生成と，両部分列に対する Serre 消滅から ampleness が従う．
+しかし
+\[
+ \dim_k\operatorname{Hom}(\mathcal O_Q,t\mathcal O_Q)
+ =h^0(\mathcal O_Q(2,0))=3.
+\]
+従って，その orbit algebra は四つの一次生成元を持つ AS-regular 環の
+二次斉次元による商ではない．
+平方根の存在と ampleness だけから $(14641)$ 型 cover の数値条件を結論することはできない．
+\end{example}
+
+\begin{remark}[対象と根の区別]
+補題\ref{lem:commutative-marking-line}により，heart を
+$\operatorname{coh}(\mathbb P^1\times\mathbb P^1)$ に固定した可換対象には，
+pointed exact 同値を除いて一つの rank-one torsion-free exceptional 標識がある．
+一方，定理\ref{thm:commutative-four-roots}はその同じ対象上で許容平方根が四つの同値類を持つことを示す．
+この四種類を四つの $\mathcal O$-marked 曲面として数えてはならない．
+この節の結果は既知の自己同値記述と明示的計算による基礎例であり，
+独立した新規性は主張しない．
+\end{remark}

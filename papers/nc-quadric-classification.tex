@@ -1,0 +1,328 @@
+% 日本語 LuaLaTeX。2026-11-21 / v0.1
+% エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
+\RequirePackage{fix-cm}
+\documentclass[a4paper,11pt]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,enumitem}
+\usepackage[unicode,pdfusetitle,colorlinks=true,
+ linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{example}[theorem]{例}
+\newtheorem{problem}[theorem]{問題}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\kk}{k}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\HH}{\mathcal H_2}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\coh}{coh}
+\DeclareMathOperator{\qgr}{qgr}
+\DeclareMathOperator{\gldim}{gldim}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\td}{td}
+\DeclareMathOperator{\length}{length}
+\title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
+\author{}
+\date{2026年11月21日\quad v0.1（分類研究の初期原稿）}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+構造対象 $\OO$ のみを指定した非可換二次曲面の分類問題を定式化する。
+$\OO$ は Gabriel--Krull 商で rank one torsion-free かつ exceptional とし、
+反 Serre 関手の平方根 $s$ が存在し、$(\OO,s)$ は Artin--Zhang ample、
+その切断環は型 $(1,4,6,4,1)$ の二次 AS 正則環の二次の正則正規元による商とする。
+平方根、ambient 環、商表示は指定構造に含めない。
+通常の quadratic envelope の AS 正則性を要求すると可換二次曲面も除外されることを示し、
+固定切断環の ambient 表示を二次関係空間内の超平面と三次の階数条件へ帰着する。
+さらに、同一の可換 quadric を与える非可換 ambient の族と、
+$\PP^1\times\PP^1$ 上の適合する平方根関手の四つの同値類を記述する。
+一般の非可換対象の完全分類、既存の楕円四つ組の分類との同定、相対モジュライは未解決である。
+本稿の初期結果の組合せに関する新規性は未確定である。
+\end{abstract}
+\tableofcontents
+
+\section{Introduction}
+\label{sec:introduction}
+
+滑らかな二次曲面 $Q=\PP^1\times\PP^1$ の偏極
+$H=\OO_Q(1,1)$ は $H^{\otimes2}=\omega_Q^{-1}$ を満たす。
+従って $\coh Q$ の Serre 関手 $S$ に対し
+$s=-\otimes H$ は $s^2\simeq S^{-1}[2]$ という平方根である。
+本稿ではこの性質と、非可換射影三次元空間内の二次超曲面としての表示を用い、
+構造対象付き圏 $(\cC,\OO)$ の分類を目標とする。
+以下の $\HH$ の添字 $2$ は超曲面の次数を表す。
+可換例の反標準次数は $(-K_Q)^2=8$ であり、次数二の del Pezzo 曲面とは異なる。
+
+三次超曲面の切断環では、二次関係だけから ambient を回復できる場合がある。
+しかし二次超曲面では曲面を切り出す式自体が二次関係に含まれる。
+切断環 $B$ の二次関係は七次元、ambient の二次関係は六次元となるため、
+通常の quadratic envelope をそのまま用いることはできない。
+適切な強い条件は、正則正規元 $g\in A_2$ による表示 $B\simeq A/(g)$ の存在である。
+この修正は ambient の選択を新たな marking として加えるものではない。
+
+\subsection{先行研究と本稿の範囲}
+
+Artin--Zhang の再構成理論 \cite{AZ1994} は ample pair から切断環と圏を対応させる。
+本稿では ampleness と再構成の正確な形として
+Mori--Ueyama \cite[Definition 2.5, Theorem 2.6]{MU2021} を用いる。
+Van den Bergh \cite[Theorem 5.5.10]{VdB2011} は cubic 三次元
+AS 正則 $\mathbb Z$-algebra を geometric quintuple 等で分類し、
+同論文の Theorem 6.1、Proposition 6.6、Corollary 6.7 は
+二次の正則正規元を用いた四次元二次 AS 正則環による表示を与える。
+ここで番号は arXiv v3 の番号である。
+その quadratic hull の一意性には次数 $-4$ の自己同型の固定が含まれる。
+単に切断環だけを固定した ambient 一意性とは異なる。
+
+Smith--Van den Bergh \cite{SVdB2013} は quantum $\PP^3$ 内の
+中心二次切断に対し、Clifford 型代数、smoothness、ruling の関係を研究した。
+その standard 性に関する記述には
+Mori--Ueyama \cite[Section 5, Appendix]{MU2021} による訂正がある。
+同じ tails 圏でも Zhang twist により standard でない表示が生じるため、
+表示の性質を無条件に $(\cC,\OO)$ の不変量とはしない。
+Mori--Nyman \cite[Theorem 6.13, arXiv v1]{MN2025} は、中心切断、domain、
+graded isolated singularity、standard という仮定の下で
+cubic AS 正則 $\mathbb Z$-algebra への比較を与える。
+これらの仮定を本稿の全対象から導くことは残る問題である。
+
+Okawa--Ueda \cite[Theorem 1.1]{OU2014} の geometric quintuple の GIT 商
+$\PP(2,4,4,6)$ と conifold potential の GIT 商 $\PP(1,2,3,4)$、
+および後者から前者への次数四の射は、既存の重要なモジュライ記述である。
+しかしその tensor や helix の標識を忘れた同値関係まで自動的に与えるわけではない。
+本稿の可換点における四つの平方根と、その次数四の射を同一視する主張も行わない。
+
+本稿で証明するのは、定義の基本的帰結、固定切断環の表示の還元、
+可換例の平方根の分類、および ambient 非一意性の明示例である。
+一般の非可換 quadric の完全分類を主張するものではなく、
+既存の embedding 定理や tensor 分類を新しい成果とするものでもない。
+
+\section{構造対象と存在条件}
+\label{sec:definition}
+
+以下、$k$ は標数零の代数閉体とする。
+圏は本質的に小さい $k$-線形圏とし、Abel 圏が noetherian であるとは
+その全対象が noetherian であることをいう。
+次数付き環については右加群を用いる。
+
+\begin{definition}[Gabriel--Krull rank one torsion-free]
+\label{def:gk-rank}
+noetherian Abel 圏 $\cC$ の有限長対象からなる Serre 部分圏を $\cC_0$、
+$\cC/\cC_0$ で有限長となる対象の逆像を $\cC_1$ とし、
+$q:\cC\to\cC/\cC_1$ を商関手とする。
+$\OO\in\cC$ が Gabriel--Krull rank one torsion-free であるとは、
+\[
+ q\OO\text{ が非零単純であり、}\qquad
+ \Hom(T,\OO)=0\quad(T\in\cC_1)
+\]
+であることをいう。これは ``GK dimension が $1$'' という条件ではない。
+さらに $\OO$ が exceptional であるとは
+$\End(\OO)=k$ および $\Ext^i(\OO,\OO)=0$（$i>0$）をいう。
+\end{definition}
+
+exact 自己同値は有限長性と Serre 商の有限長性を保つので、
+$\cC_0,\cC_1$ を保つ。従ってこの rank と torsion-free 条件は exact 同値で不変である。
+
+\begin{definition}[Artin--Zhang ample pair]
+\label{def:ample}
+$s$ を $\cC$ の exact 自己同値とする。$(\OO,s)$ が ample であるとは、
+次の二条件を満たすことをいう。
+\begin{enumerate}[label=(A\arabic*)]
+\item 任意の $M\in\cC$ に対し、ある $n_1,\ldots,n_r\ge0$ と全射
+      $\bigoplus_{j=1}^r s^{-n_j}\OO\twoheadrightarrow M$ が存在する。
+\item 任意の全射 $M\twoheadrightarrow N$ に対し、十分大きい全ての $n$ で
+      $\Hom(s^{-n}\OO,M)\to\Hom(s^{-n}\OO,N)$ が全射である。
+\end{enumerate}
+切断環を
+\[
+ B(\cC,\OO,s)=\bigoplus_{n\ge0}\Hom(\OO,s^n\OO),
+ \qquad a*b=s^n(a)\circ b\quad(a\in B_m,\ b\in B_n)
+\]
+と定める。この積は右加群の再構成と整合する規約である。
+\end{definition}
+
+\begin{definition}[型 $(1,4,6,4,1)$]
+\label{def:as14641}
+$A$ は局所有限、連結、次数一生成、二次関係を持ち、左右 noetherian とする。
+$A$ がここでいう型 $(1,4,6,4,1)$ とは、Koszul であり、
+global dimension と Gorenstein parameter がともに $4$ の AS 正則環で、
+自明加群の極小分解が
+\[
+ 0\to A(-4)\to A(-3)^4\to A(-2)^6\to A(-1)^4\to A\to k\to0
+\]
+となることをいう。AS 条件は左右で要求する。
+特に $\Ext_A^i(k,A)$ は $i=4$ 以外で零、$i=4$ で $k(4)$ であり、
+$H_A(t)=(1-t)^{-4}$ である。
+元 $g$ が正則正規であるとは、左右の零因子でなく、$gA=Ag$ となることをいう。
+\end{definition}
+
+\begin{definition}[$\OO$-marked 非可換二次曲面の強いクラス]
+\label{def:h2}
+$\HH$ の対象は対 $(\cC,\OO)$ であり、次を要求する。
+\begin{enumerate}[label=(Q\arabic*)]
+\item $\cC$ は $k$-線形 noetherian Abel 圏で、$D^b(\cC)$ は Hom 有限かつ
+      Serre 関手 $S$ を持つ。
+\item $\OO$ は定義~\ref{def:gk-rank} の rank one torsion-free exceptional 対象である。
+\item exact 自己同値 $s$ が存在し、その導来自己同値について
+      $s^2\simeq S^{-1}[2]$ かつ $(\OO,s)$ が Artin--Zhang ample である。
+\item \emph{同じ $s$} に対し、型 $(1,4,6,4,1)$ の環 $A$ と
+      正則正規元 $g\in A_2$ が存在し、全次数で
+      $B(\cC,\OO,s)\simeq A/(g)$ という次数付き環同型がある。
+\end{enumerate}
+$s$、根の同型 $s^2\simeq S^{-1}[2]$、$A$、$g$ および商表示は指定構造ではない。
+対象間の同値は $k$-線形 exact 同値 $F:\cC\xrightarrow{\sim}\cC'$ と
+$F(\OO)\simeq\OO'$ によるものとする。
+\end{definition}
+
+\begin{remark}
+条件 (Q4) は一次生成性と Hilbert 関数を含意する。
+これらを平方根と豊富性のみの帰結とはしない。
+また $g$ の中心性は定義に含めない。中心性を課した表示だけを先に調べる場合も、
+それが全対象を覆うかは別途証明する必要がある。
+単なる $\qgr A/(g)\simeq\cC$ だけでなく、指定 $\OO$ と選んだ $s$ に対する
+\emph{全切断環} の表示を要求していることにも注意する。
+\end{remark}
+
+平方根を保持した補助対象 $(\cC,\OO,s)$、さらに ambient 表示を保持した補助対象から、
+最終対象 $(\cC,\OO)$ への忘却を考える。
+平方根付きの同値では $Fs\simeq s'F$ も要求する。
+根同型を固定した場合の整合性や慣性は、本稿では分類しない。
+この区別により、表示の重複を異なる二次曲面として数えることを避ける。
+
+\section{内在的条件からの基本的帰結}
+\label{sec:categorical-consequences}
+
+\begin{proposition}[大域次元]
+\label{prop:gldim-two}
+条件 (Q1), (Q3) の平方根が存在し、$\cC\ne0$ ならば $\gldim\cC=2$ である。
+\end{proposition}
+\begin{proof}
+$S\simeq s^{-2}[2]$ なので、Serre 双対性から
+\[
+ \Ext^i(M,N)\simeq\Hom_{D^b(\cC)}(s^2N,M[2-i])^* .
+\]
+$i>2$ では heart の対象間の負次数 Hom であるため零である。
+非零 $N$ に対し $\Ext^2(s^2N,N)\simeq\End(s^2N)^*\ne0$ なので
+大域次元は正確に $2$ である。
+\end{proof}
+
+\begin{lemma}[非零切断は単射]
+\label{lem:sections-monic}
+$\OO$ が rank one torsion-free で $s$ が exact 自己同値ならば、
+任意の整数 $n$ と非零射 $f:\OO\to s^n\OO$ に対し $f$ は単射である。
+従って非負次数の切断環 $B(\cC,\OO,s)$ は domain である。
+\end{lemma}
+\begin{proof}
+$s$ は $\cC_1$ を保つため $q\OO$ と $q(s^n\OO)$ は非零単純であり、
+$s^n\OO$ も torsion-free である。
+$qf=0$ ならば $\operatorname{im}f\in\cC_1$ となり、
+$\operatorname{im}f\hookrightarrow s^n\OO$ は零となるので $f=0$ に矛盾する。
+よって $qf$ は単純対象間の非零射、従って同型であり、$\ker f\in\cC_1$ となる。
+$\ker f\hookrightarrow\OO$ と torsion-free 性から $\ker f=0$ を得る。
+切断環の非零斉次元の積は単射の合成であり零にならない。
+一般の非零元については最高次数の斉次成分を取れば domain 性が従う。
+\end{proof}
+
+\begin{proposition}[切断環と再構成]
+\label{prop:reconstruction}
+$\HH$ の対象と条件を満たす平方根 $s$ に対して、切断環 $B$ は二次 domain であり、
+\[
+ H_B(t)=\frac{1-t^2}{(1-t)^4},\qquad \dim B_n=(n+1)^2\quad(n\ge0).
+\]
+負次数では $\Hom(\OO,s^{-m}\OO)=0$（$m>0$）であり、
+\[
+ (\cC,\OO,s)\simeq(\qgr B,\pi B,(1))
+\]
+という algebraic triple の同値がある。
+\end{proposition}
+\begin{proof}
+Hilbert 級数と二次性は二次の正則元による商の完全列から従う
+（命題~\ref{prop:quadric-hilbert}）。domain 性は補題~\ref{lem:sections-monic} による。
+もし非零射 $\OO\to s^{-m}\OO$ があればそれは単射であり、
+$s^{n+m}$ を作用させてから $\Hom(\OO,-)$ を取ると
+$B_{n+m}\hookrightarrow B_n$ を得る。$n\ge0$ では
+$(n+m+1)^2>(n+1)^2$ となり矛盾する。
+最後は Hom 有限性と Artin--Zhang ampleness に対する再構成
+\cite[Theorem 2.6(2)]{MU2021} の適用である。
+ここでは $B$ が noetherian なので coherent module と finitely generated module の
+区別は生じず、tails は通常の $\qgr$ となる。
+\end{proof}
+
+\begin{remark}[Gabriel--Krull 次元]
+条件 (Q2) と (A1) により、$\cC/\cC_1$ の全対象は有限長である。
+実際、任意の対象は有限個の $s^{-n}\OO$ の直和の商であり、その像は単純対象の
+有限直和の商となる。$q\OO\ne0$ なので Gabriel--Krull のこの規約で
+$\cC$ は次元二である。さらに $B_1\ne0$ から $q\OO\simeq q(s\OO)$ となり、
+商圏の単純対象は $q\OO$ の一種類に限られる。
+従って rank-one 条件を次数付き環の GK dimension と取り違える必要はない。
+\end{remark}
+
+\begin{remark}[Nakayama twist の点検]
+\label{rem:nakayama}
+例えば \cite[Section 5]{MU2021} の中心二次切断の仮定の下では、
+右加群規約で canonical bimodule は $M\mapsto M_\nu(-2)$ と書ける。
+従って $S^{-1}[2]$ は $M\mapsto M_{\nu^{-1}}(2)$ である。
+通常の次数シフト $s=(1)$ が平方根になるには、誘導される
+$M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要である。
+この性質を環自己同型 $\nu=\mathrm{id}$ と同一視しない。
+また単に一部の対象が $\nu$ で不変であるだけでは、関手の自然同型は得られない。
+一般の正規切断へ公式を使う場合は双対化加群の仮定と規約を個別に照合する。
+\end{remark}
+
+\input{sections/quadratic_lifts}
+\input{sections/commutative_roots}
+
+\section{完全分類へ向けた問題}
+\label{sec:open-problems}
+
+固定された切断環については命題~\ref{prop:ambient-hyperplane} が
+ambient 表示の具体的な入口を与える。
+しかし最終目標は切断環や ambient の分類ではなく、
+構造対象のみを保持する exact 同値類の分類である。
+特に、以下の問いを未解決として区別する。
+
+\begin{problem}[既知の quadric 分類との比較]
+全ての $\HH$ 対象を cubic AS 正則 $\mathbb Z$-algebra または
+admissible elliptic quadruple の適切な領域から得られるか。
+逆に、既知の quadric から指定 $\OO$ を保った平方根と
+全切断環の AS 正則表示を同時に構成できる範囲はどこまでか。
+\end{problem}
+
+\begin{problem}[平方根と表示の忘却]
+固定 $(\cC,\OO)$ 上の適合する平方根を分類し、その自己同値群の作用を求めよ。
+さらに固定平方根に対する ambient 表示を分類し、
+これらの二段階の忘却が既存 tensor モジュライとどう関係するかを記述せよ。
+可換点の四つの平方根や固定切断環の非一意な ambient を、
+全非可換点での有限性・一般次数の結論に外挿してはならない。
+\end{problem}
+
+\begin{problem}[相対版]
+相対 Serre 関手、Gabriel--Krull rank、平方根の降下、
+orbit 環の底変更と次数別平坦性を備えた族を定義し、
+pointed exact 同値に関するモジュライの代数性、成分、慣性、境界を記述せよ。
+体上の表示パラメータや有限次数の階数条件だけで、
+これらの族としての性質を証明したとはしない。
+\end{problem}
+
+\bibliographystyle{alpha}
+\bibliography{references}
+\end{document}

@@ -1,0 +1,265 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v0.1
+\section{二次包絡の障害と二次超曲面表示}
+\label{sec:quadric-envelope-obstruction}
+
+以下、$k$ は代数閉体とし、代数は $k$ 上の局所有限な連結次数付き代数とする。
+次数一で生成される代数 $B$ に対し、$V=B_1$ と置き、通常の二次包絡を
+\[
+ \operatorname{QEnv}(B)
+ :=T(V)/\bigl(\ker(V\otimes V\longrightarrow B_2)\bigr)
+\]
+と定める。括弧は両側イデアルの生成を表す。
+これは $B$ の二次関係をすべて課し、三次以上の独立な関係を忘れる構成である。
+したがって $B$ 自身が二次代数ならば
+$\operatorname{QEnv}(B)=B$ である。
+
+型 $(1,4,6,4,1)$ は定義~\ref{def:as14641}の意味で用いる。
+
+\begin{proposition}[次数二の正則元による商の数値]
+\label{prop:quadric-hilbert}
+$A$ を上記の型の代数、$g\in A_2$ を非零の両側正則正規元とし、
+$B=A/(g)$ と置く。このとき $B$ は二次代数であり、
+\[
+ H_B(t)=\frac{1-t^2}{(1-t)^4}
+       =\frac{1+t}{(1-t)^3},\qquad
+ \dim_k B_n=(n+1)^2\quad(n\geq0).
+\]
+特に $\dim B_1=4$、$\dim B_2=9$ であり、
+$\dim\ker(B_1\otimes B_1\to B_2)=7$ である。
+\end{proposition}
+
+\begin{proof}
+正規性から $(g)=gA=Ag$ であり、左から $g$ を掛ける写像によって
+右加群の完全列
+\[
+ 0\longrightarrow A(-2)\xrightarrow{\,g\cdot\,}A
+ \longrightarrow B\longrightarrow0
+\]
+を得る。したがって Hilbert 級数は主張の通りである。
+係数は $\binom{n+3}{3}-\binom{n+1}{3}=(n+1)^2$ である
+（第二項は $n<2$ なら零とする）。
+$A$ が二次代数で $g$ が次数二なので、$B$ も二次代数である。
+最後の次元は $4^2-9=7$ から従う。
+\end{proof}
+
+\begin{corollary}[通常の二次包絡を用いる定義の障害]
+\label{cor:quadric-envelope-fails}
+命題~\ref{prop:quadric-hilbert} の商 $B$ について
+$\operatorname{QEnv}(B)=B$ であり、これは型 $(1,4,6,4,1)$ の
+AS 正則代数ではない。
+\end{corollary}
+
+\begin{proof}
+$B$ は二次代数なので二次包絡と一致する。
+その次数二成分の次元は $9$ であるが、指定された型の AS 正則代数では
+$10$ である。
+\end{proof}
+
+とくに $Q=\mathbb P^1\times\mathbb P^1$、
+$\mathcal O=\mathcal O_Q$、$s=-\otimes\mathcal O_Q(1,1)$ に対しては、
+$s^2\simeq S^{-1}[2]$ であり、$(\mathcal O,s)$ は Artin--Zhang ample である。
+しかしその切断代数は
+\[
+ B=\bigoplus_{n\geq0}H^0(Q,\mathcal O_Q(n,n))
+   \simeq k[x,y,u,v]/(xy-uv)
+\]
+なので、通常の二次包絡の AS 正則性を要求するとこの基本例を除外してしまう。
+従って quadric における ambient 条件は、二次包絡の正則性から、
+\emph{次数二の正則正規元を核に持つ AS 正則な二次被覆の存在}へ置き換える。
+$s$ も被覆も、$\mathcal O$-marked object の指定データには含めず、
+存在条件の証人として扱う。
+
+\section{固定された切断代数の ambient 被覆}
+\label{sec:ambient-incidence}
+
+ここでは $B$ を二次代数とし、$V=B_1$、
+$K=\ker(V\otimes V\to B_2)$ と置く。
+さらに $\dim V=4$ および
+$H_B(t)=(1-t^2)/(1-t)^4$ を仮定するので、$\dim K=7$ である。
+
+\begin{lemma}[正規性と Hilbert 級数による正則性の判定]
+\label{lem:normal-hilbert-regular}
+$A$ は局所有限な連結次数付き代数、$0\ne g\in A_d$ は正規元とし、
+$B=A/(g)$ とする。もし
+$H_B(t)=(1-t^d)H_A(t)$ ならば、$g$ は左右の零因子でない。
+\end{lemma}
+
+\begin{proof}
+右加群の完全列
+\[
+ 0\longrightarrow\ker(g\cdot:A(-d)\to A)
+ \longrightarrow A(-d)\xrightarrow{\,g\cdot\,}A
+ \longrightarrow B\longrightarrow0
+\]
+を考える。正規性により像は商の核 $(g)$ に等しい。
+Hilbert 級数を取ると、仮定は左端の核の Hilbert 級数が零であることを意味する。
+局所有限性により核は零である。右から掛ける写像についても、
+$Ag=(g)$ を用いて同じ議論を適用できる。
+\end{proof}
+
+\begin{proposition}[被覆の超平面表示]
+\label{prop:ambient-hyperplane}
+固定された $B$ に対する、次数一の同型 $A_1\to B_1=V$ を持つ
+型 $(1,4,6,4,1)$ の AS 正則二次被覆
+$A\twoheadrightarrow B$ で、その核が次数二の正則正規元で生成されるものは、
+\[
+ R\in\operatorname{Gr}(6,K)\simeq\mathbb P(K^*)
+\]
+のうち、次の二条件を満たすものによって分類される。
+\begin{enumerate}
+ \item $A_R:=T(V)/(R)$ は型 $(1,4,6,4,1)$ の AS 正則代数である。
+ \item $(K/R)\subset(A_R)_2$ を張る任意の非零元 $g_R$ は正規元である。
+\end{enumerate}
+ここで被覆の同型は $B$ への写像と可換な次数付き代数同型とし、
+核の生成元自体のスカラー倍は区別しない。
+第二条件の下では $g_R$ の両側正則性は自動的に従う。
+第一条件の下で、第二条件は二つの線形写像
+\[
+ V\longrightarrow(A_R)_3,\quad v\longmapsto g_Rv,
+ \qquad
+ V\longrightarrow(A_R)_3,\quad v\longmapsto vg_R
+\]
+がともに階数 $4$ を持つことと同値である。
+\end{proposition}
+
+\begin{proof}
+与えられた被覆から
+$R=\ker(V\otimes V\to A_2)$ を取ると、$\dim A_2=10$ より
+$\dim R=6$ であり、合成写像から $R\subset K$ である。
+二次性により $A=T(V)/(R)$ である。
+核の次数二成分は $K/R$ であり、仮定された正則正規元の張る直線に等しい。
+
+逆に $R$ が二条件を満たすとする。
+$B=T(V)/(K)$ なので、$A_R/(g_R)=B$ である。
+Hilbert 級数の仮定と第一条件から
+$H_B(t)=(1-t^2)H_{A_R}(t)$ であり、
+補題~\ref{lem:normal-hilbert-regular} によって $g_R$ は両側正則である。
+この二構成は互いに逆である。実際、$B$ への写像と可換な被覆の同型は
+次数一の同一視 $A_1=V$ を保存しなければならず、$A$ は次数一で生成されるので
+同じ $R$ を与える。
+
+階数による判定について、$J=\ker(A_R\to B)$ と置くと
+$\dim J_3=\dim(A_R)_3-\dim B_3=20-16=4$ である。
+二つの写像の像はともに $J_3$ に含まれるので、ともに階数 $4$ ならば
+$g_RV=J_3=Vg_R$ である。次数一生成性を用いて生成元を一つずつ動かすと
+$g_RA_R=A_Rg_R$ が従う。
+逆に正規性が成り立てば、既に示した両側正則性から両写像は単射であり、
+その階数は $4$ である。
+\end{proof}
+
+\begin{remark}[有限次数の判定と未解決部分]
+$A_R$ は次数一で生成されるため、
+$g_RV=Vg_R$ が $(A_R)_3$ の部分空間として成立することと
+$g_R$ の正規性は同値である。
+一方の包含から生成元を一つずつ動かして $g_RA_R\subset A_Rg_R$ を得て、
+逆の包含も同様に示せるからである。
+これは正規性の有限次元線形代数による判定であるが、
+有限次数での Hilbert 関数の一致だけで AS 正則性まで証明できるとは主張しない。
+また、この許容集合が開集合である、滑らかである、あるいは一点であるという
+主張はここには含まれない。
+\end{remark}
+
+\section{同じ可換 quadric を持つ非同一の ambient 被覆}
+\label{sec:ore-ambient-family}
+
+\begin{proposition}[正規被覆を忘れる写像の非自明なファイバー]
+\label{prop:ore-ambient-family}
+$a\in k^{\times}$ に対し
+\[
+ A_a=k\langle x,y,u,v\rangle/
+ \bigl([u,v],[u,x],[u,y],[v,x],[v,y],
+       yx-a\,xy-(1-a)uv\bigr),\qquad g=xy-uv
+\]
+と定める。このとき次が成り立つ。
+\begin{enumerate}
+ \item $A_a$ は noetherian な二次 AS 正則 domain であり、型は
+       $(1,4,6,4,1)$ である。
+ \item $g$ は次数二の正則正規元であり、
+       $gx=a xg$、$gy=a^{-1}yg$、$gu=ug$、$gv=vg$ を満たす。
+ \item 生成元を同一視する標準同型
+       \[
+        A_a/(g)\simeq k[x,y,u,v]/(xy-uv)=:B
+       \]
+       がある。
+ \item $B_1$ の同一視を固定した被覆としては、$a\ne b$ ならば
+       $A_a\twoheadrightarrow B$ と $A_b\twoheadrightarrow B$ は同型でない。
+       $A_1$ は可換であり、$a\ne1$ ならば $A_a$ は非可換で $g$ は非中心である。
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+$R_0=k[u,v,x]$ とし、
+\[
+ \sigma(u)=u,\quad\sigma(v)=v,\quad\sigma(x)=ax,
+ \qquad
+ \delta(u)=\delta(v)=0,\quad\delta(x)=(1-a)uv
+\]
+と置く。$a\ne0$ なので $\sigma$ は次数を保つ自己同型である。
+$\delta$ は次数一の $\sigma$-derivation に延びる。
+たとえば可換関係 $xu-ux$ に対して
+\[
+ \delta(xu-ux)=(1-a)uvu-u(1-a)uv=0
+\]
+であり、$xv-vx$、$uv-vu$ についても同様である。
+従って表示から
+$A_a=R_0[y;\sigma,\delta]$ である。
+
+この Ore 拡大は、多項式環の自明な Zhang twist を基礎環とする
+次数一の Ore 拡大であるため、
+\cite[Proposition~2.2]{LV2026}（$n=3$、twist は恒等写像）の仮定を満たす。
+同命題により $A_a$ は noetherian AS 正則 domain、global dimension $4$、
+Koszul である。この適用に必要な条件は直前で確認した。
+Ore 拡大の基底
+\[
+ \{u^i v^j x^r y^s\mid i,j,r,s\geq0\}
+\]
+から $H_{A_a}(t)=(1-t)^{-4}$ を得る。
+Koszul 性により極小自由分解の第 $i$ 項は次数 $i$ で生成されるので、
+Hilbert 級数の逆数
+\[
+ (1-t)^4=1-4t+6t^2-4t^3+t^4
+\]
+から分解の型が $(1,4,6,4,1)$ であると分かる。
+
+基底より $g=xy-uv\ne0$ である。$A_a$ は domain なので $g$ は両側正則である。
+$u,v$ の中心性と表示関係から
+\[
+ \begin{split}
+ gx&=xyx-uvx
+     =x\bigl(a\,xy+(1-a)uv\bigr)-xuv
+     =a x(xy-uv)=a xg,\\
+ yg&=yxy-yuv
+     =\bigl(a\,xy+(1-a)uv\bigr)y-uvy
+     =a(xy-uv)y=a gy
+ \end{split}
+\]
+を得る。これは主張された正規性の関係を与える。
+
+商で $g=0$ を課すと $xy=uv$ であり、表示関係は
+$yx=a uv+(1-a)uv=uv=xy$ となる。
+残る関係はすべて可換関係なので、商はちょうど上記の $B$ である。
+
+最後に、$W\subset V\otimes V$ を表示中の最初の五つの可換関係の張る部分空間、
+$r_a=y\otimes x-a x\otimes y-(1-a)u\otimes v$ と置く。
+$R_a=W+kr_a$ が被覆の二次関係空間である。
+もし $R_a=R_b$ なら、$y\otimes x$ の係数を比較して
+$r_a-r_b=(b-a)(x\otimes y-u\otimes v)\in W$ となる。
+右辺の括弧内の元は $W$ に含まれないので $a=b$ である。
+命題~\ref{prop:ambient-hyperplane} の同型に関する議論により、
+これは固定された $B$ 上の被覆の非同型性を意味する。
+$a\ne1$ なら $[y,x]=(a-1)g\ne0$ であり、
+$gx-xg=(a-1)xg\ne0$ なので、非可換性と非中心性も従う。
+\end{proof}
+
+\begin{remark}[この命題が分類について述べる範囲]
+上の族は、固定された切断代数 $B$ から ambient 正規被覆が一意に復元される
+という主張への反例である。同じ
+$(\operatorname{coh}(\mathbb P^1\times\mathbb P^1),\mathcal O,s)$ を与えるので、
+異なる $a$ を異なる $\mathcal O$-marked quadric と数えてはならない。
+ただし、基底の代数 $B$ の自己同型まで許す場合の $a$ の同値関係を
+この命題は分類していない。次数二の中心元だけを許す被覆という別の問題も、
+上記の正規被覆の問題と区別する必要がある。
+この具体例の文献上の新規性は未確認であり、新分類定理として扱わない。
+\end{remark}
+
