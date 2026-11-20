@@ -12,11 +12,24 @@
 
 ## スタック構成の現状
 
-`papers/sections/noncubic_stack.tex` に、非退化二次形式対Pと五次元群Gによる `[P/G]` を構成した。滑らかな有限型Artinスタック、次元1、根配置スタックへの局所μ2² gerbe、全次数平坦な普遍表示を証明する。`f1=uv, f2=u(v−tu)` は一根共有軌道が根対一致軌道へ特殊化する族であり、通常のGIT商はこの二つのpointed類を区別しない。
+証明の所在は `papers/sections/noncubic_stack.tex` と `papers/sections/foundation_stack.tex`。表示と相対内在的moduliの区別を維持する。
 
-現在の構成は表示スタックである。非被約基底上の相対正規形、相対Serre/AZ再構成、慣性の全忠実な比較、全H2への貼合せは別の証明を要する。特にP上の普遍graded環はdegree scalarを剛体化したstackへ通常の環束として直ちに降下しない。
+| 結果 | 確立した範囲 | 残る比較 |
+| --- | --- | --- |
+| noncubic `[P/G]` | smooth finite type Artin、dim1、全幾何点のpointed同値類と慣性。一般D8×C2、共有根D8、一致根対はGmを含む | 任意の内在的族の相対正規形 |
+| 根配置への射 | 順序付き局所表示上μ2² gerbe。S2は二因子を交換 | μ2²は真の自己同値であり除かない |
+| χによるgood moduli | 不変式環k[χ]。共有根と一致根対はχ=1。全表示stackのcoarse moduli algebraic spaceは存在しない | 全H2の相対stackのcoarse理論へは未外挿 |
+| 表示族の局所AS被覆 | étale局所の交換対合、全次数有限自由、中央正則切断とZhang twist。任意底変更と整合 | 相対Serre双対性と任意内在族の認識 |
+| foundation `[A64/(G/Gm³)]` | smooth finite type、dim3。全H2のfoundationが入る。HH≥3=0、dimHH²−dimHH¹=3 | H2部分の有限表示、root/AZ条件の開性 |
+| rulingとfoundationの二択 | rank-one TF exceptionalと反Serre Hilbert多項式で二rulingを内在認識。normal helixで作るfoundationが二つ | 相対存在・降下・有限étale性は未証明 |
+| 反Serre慣性 | Aut_gr(R)/Gm_degree≅Aut_pt、pointed二自己同型は自明 | 族の全忠実性 |
+| degree gerbeの中立化 | R1 rank9,R2 rank25、detR1^−11 detR2²の重み1。Gr(56,81)全体で中立 | 相対実現locus X_as、下降環とcanonical Serre環の同定 |
 
-今回追加したv1.1の組版・独立監査は進行中であり、以下に記すv1.0の検証結果から自動的に検証済みとは扱わない。
+**点集合から族へ移す際の障害。** Spec(k)→Spec(k[ε]/ε²)は全幾何点を覆うが、底の恒等射はfppf局所にもここへ因子化しない。忠実平坦な拡大では非零εを零にできないためである。したがって全field pointの表示・被約像の構成だけでは相対essential surjectivityは証明できない。同様に、幾何fiberでrank3という条件は4次minorがnilpotentであることしか保証しない。rank3 locusはminorのscheme-theoreticな消滅で定める必要がある。
+
+**変形理論。** foundationのHH³消滅と、De Deken–Lowenのabelian/thread変形比較は有力な局所入力である。ただし選んだSerre平方根が変形へ持ち上がるには追加の条件があり、H2そのもののformal smoothnessや相対open性とは区別する。cubic/noncubicの点集合分割がstackの開閉分割であることも未証明。
+
+新しい群関係・χ・相対対合の記号検算は `python3 computations/verify_stack_symmetries.py`。v1.1のfoundation・HH計算、ruling二択、pointed慣性とgerbe中立化は独立読取り点検を行い、既存入力を前提として実質的な欠落は見つからなかった。新規記号検算はPASS。最終組版・表示確認は進行中。
 
 ## 証明状態と依存関係
 
@@ -36,7 +49,7 @@
 | 滑らかな楕円型Sklyanin対象はH2に属する | k=C、τ無限位数、z+τ∉E[2]。`BSW2010`, `RRZ2014`, `SVdB2013`, `MU2021` | 全切断環・Serre根・exceptionality・AZ・Gabriel–Krull条件の証明。`prop:sklyanin-h2` |
 | z=τの対象はcoh(Q)とexact同値でない | `SVdB2013` §10.5の単純対象Fとχ(F,F)=2 | 既知の構成を適用。`prop:sklyanin-genuinely-noncommutative` |
 
-これらの主張は研究開始時の基礎結果であり、独立した新規性を確定したものではない。形式証明器は使用していない。全H2対象の被覆と同値類分類は主定理に統合した。一般点のモジュライ次元、成分、全自己同値、族の降下・代数性は別途未証明。
+これらの主張は研究開始時の基礎結果であり、独立した新規性を確定したものではない。形式証明器は使用していない。全H2対象の被覆と同値類分類は主定理に統合した。全体のモジュライ次元・成分・全自己同値・族の降下・代数性は別途未証明。上記表示stackの次元やnoncubicの慣性はその確立した部分結果である。
 
 ## Quadratic envelope の障害
 

@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v0.6。現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v0.7。現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -63,6 +63,20 @@ VdBの許容四つ組の必要十分条件（arXiv v3 Proposition5.1.2）とcubi
 全許容四つ組のeven partのdomain性はPresottoのTheorem2.8を直接適用する。二周期の存在はVdB Proposition5.6.1によるが、その平方が反Serreとなることは別に必要である。本稿は四次テンソルの回転と双対化双加群を直接比較し、全退化型のPic・貼合せ・切断基底から適合周期を構成する。AS→ASFだけをASF+へ読み替える引用を避け、局所コホモロジーの双加群構造を示す。MNのTheorem4.8、Proposition4.11(2)、Lemma5.12、Theorem6.8をそれぞれAS双対性、Ext、ampleness、Serreに使う。共通の全公理への還元は `prop:admissible-period-h2` に置く。
 
 cubicから全H2への比較、最初の軌道対象の認識、階数三支持の同時untwist、全noncubic分類、全境界での適合周期、根を忘れる有限同値判定には本文に直接証明がある。これらの組合せが既存のどの主張と重なるかは包括的調査未了であり、新規性確定・公表済み成果とは呼ばない。今回の独立点検は引用の仮定・版・左右規約と本文の推論を対象とし、外部論文全体の証明を再証明したものではない。
+
+## スタックと変形の一次資料
+
+| 文献 | 確認箇所 | 利用範囲と未適用部分 |
+| --- | --- | --- |
+| `AOU2014` | [arXiv:1411.7770v1](https://arxiv.org/abs/1411.7770v1), Definition 3.5, Proposition 3.6 | 非巡回箙の固定次元関係式はGrassmannian内のideal条件と道代数自己同型群による有限型代数スタック。群は一般に矢への高次path追加も含む。全H2のheart・根忘却を自動的には扱わない。 |
+| `OU2014` | Equation (1.7)、geometric quintupleの定義、Theorem 1.1 | projective四重2次元tensorの表示stackとそのGIT商を区別する。連続scalar慣性を除いても有限慣性は残り、coarse GIT商との同一視ではない。 |
+| `MOU2019` | [arXiv:1903.06457v1](https://arxiv.org/abs/1903.06457v1), §6.1–6.2、Theorem 6.3 | 曲線と3束の相対stack、束のscalar rigidification、smooth-support bimoduleとの比較。主たる関係式stackとの比較はbirationalであり、全非被約境界を含む内在的H2との同値ではない。 |
+| `TV2007` | [arXiv:math/0503269v5](https://arxiv.org/abs/math/0503269v5), Theorem 3.6、Corollaries 3.15, 3.17, 3.22, 3.24 | 固定したsmooth proper dg categoryのperfect-object moduli、接複体RHom(E,E)[1]、自己同値群の代数性。変動する全圏の有限型moduliをこの定理だけで結論しない。 |
+| `DeDekenLowen2011` | [出版版](https://ems.press/content/serial-article-files/30497), §4.1、Theorems 4.5, 5.13, 5.15 | Z-generating geometric helixのGrothendieck categoryのabelian変形とthread algebraの線形変形の比較。coherent ringの冪零拡大に対する定理で、H2の平方根・AS被覆条件の相対開性は含まない。 |
+| `Alper2009` | [arXiv:0804.2242v3](https://arxiv.org/abs/0804.2242v3), Example 8.3、Theorems 13.2, 6.6 | affine/linearly reductive商のgood moduli spaceと、locally noetherianの場合の代数空間への普遍性。noncubic表示のχ商とcoarse space不存在に適用。 |
+| `StacksModuli` | [0DLS](https://stacks.math.columbia.edu/tag/0DLS)、[06PD](https://stacks.math.columbia.edu/tag/06PD)、[04V2](https://stacks.math.columbia.edu/tag/04V2) | 商の代数性・滑らかさ、商stack間のgerbe判定、慣性のrigidification。平方根やambientという対象の選択を忘れる操作は、単に慣性の部分群を除く操作とは限らない。 |
+
+本文のA64 foundation chart、HH消滅、ruling二択、noncubic慣性とχ商、九生成のdegree gerbeの中立化は、これらを踏まえた明示計算である。既知文献との包括的な新規性比較は未完了。
 
 ## 公表前と後続の比較課題
 

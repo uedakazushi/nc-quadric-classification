@@ -65,7 +65,10 @@ $\PP^1$ 上の二つの被約二点集合の非順序対を同時射影変換で
 通常の quadratic envelope による定義の障害、可換対象の四つの適合根、
 ambient の非一意性も記述する。
 noncubic 領域については次数スカラーを除いた一次元の滑らかな表示商スタックを構成し、
-根配置スタックへの符号 gerbe と軌道閉包の非分離を記述する。
+根配置スタックへの符号 gerbe、幾何点の慣性、good moduli space $\mathbb A^1$ と
+粗モジュライ代数空間の不存在を記述する。
+全対象の foundation を含む滑らかな三次元の有限代数商スタックを構成し、
+三次以上の Hochschild コホモロジーの消滅も直接示す。
 全対象の内在的な相対モジュライとの同定は未完成である。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
@@ -128,6 +131,16 @@ $\PP(2,4,4,6)$ と conifold potential の GIT 商 $\PP(1,2,3,4)$、
 および後者から前者への次数四の射は、既存の重要なモジュライ記述である。
 しかしその tensor や helix の標識を忘れた同値関係まで自動的に与えるわけではない。
 本稿の可換点における四つの平方根と、その次数四の射を同一視する主張も行わない。
+Abdelgadir--Okawa--Ueda \cite[Definition 3.5, Proposition 3.6]{AOU2014} は、
+有限非巡回箙の関係式を固定次元の Grassmannian と道代数の自己同型群からなる
+有限型スタックとして構成する。Mori--Okawa--Ueda \cite[\S6]{MOU2019} は、
+sheaf bimodule、関係式、曲線と束のスタックを比較する。
+本稿の有限 foundation の構成はこの有限代数による方法に対応するが、
+標識の忘却と全 $\HH$ の相対再構成を別の問題として扱う。
+固定した dg 圏の対象についての To\"en--Vaqui\'e の代数性定理
+\cite[Theorem 3.6, Corollaries 3.15, 3.24]{TV2007} も、
+全ての変動する $\HH$ 圏のモジュライの代数性を直ちには与えない。
+
 
 Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} は、一般の cubic quadric が
 $\mathbb Z$-domain であることを証明した。この定理に整性・被約性の仮定はなく、
@@ -388,6 +401,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/elliptic_inverse}
 \input{sections/pencil_deformation}
 
+\input{sections/foundation_stack}
 \input{sections/noncubic_stack}
 
 \section{同値類の分類後に残る問題}
@@ -412,12 +426,28 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 全非可換点での有限性・一般次数の結論に外挿してはならない。
 \end{problem}
 
+\begin{remark}[全体の Deligne--Mumford 性]
+可換対象 $(\coh Q,\mathcal O_Q)$ における pointed 自己同値群は
+\[
+ \operatorname{Aut}(Q)=(\operatorname{PGL}_2\times\operatorname{PGL}_2)\rtimes S_2
+\]
+である。実際、\cite[Theorem 3.1]{BondalOrlov2001} による幾何自己同型、
+線束、cohomological shift の記述で、exact 性と $\mathcal O_Q$ の保存により
+最後の二つの因子が消える。幾何自己同型は族でも作用するので、
+この自己同値を通常の慣性として保持する全体のモジュライは、
+可換点で六次元の慣性を持つ。従って目標とする代数スタックは全体では
+Deligne--Mumford スタックにはならない。
+\end{remark}
+
 \begin{problem}[相対版]
 相対 Serre 関手、Gabriel--Krull rank、平方根の降下、
 orbit 環の底変更と次数別平坦性を備えた族を定義し、
 pointed exact 同値に関するモジュライの代数性、成分、慣性、境界を記述せよ。
-体上の表示パラメータや有限次数の階数条件だけで、
-これらの族としての性質を証明したとはしない。
+第\ref{sec:foundation-stack}節と第\ref{sec:noncubic-stack}節の表示スタックを、
+この内在的な相対問題と比較せよ。二つの ruling の体上での内在性、
+Hochschild 障害の消滅、次数スカラー gerbe の中立化は得られたが、
+相対実現 locus の有限表示と再構成の証明は残る。
+体上の分類による cubic/noncubic の非交和も、スタックの非交和を意味しない。
 \end{problem}
 
 \bibliographystyle{alpha}

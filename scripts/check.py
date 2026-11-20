@@ -254,7 +254,7 @@ def math_checks() -> int:
     ok, detail = python_dependencies()
     if not ok:
         return summary("math", [], [detail])
-    scripts = ("verify_quadric.py", "verify_pencil_tangent.py", "verify_reducible_quadruples.py")
+    scripts = ("verify_quadric.py", "verify_pencil_tangent.py", "verify_reducible_quadruples.py", "verify_stack_symmetries.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
     for name in scripts:

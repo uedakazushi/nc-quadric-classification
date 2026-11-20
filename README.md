@@ -12,9 +12,14 @@
 
 ## モジュライのスタック構成
 
-noncubic部分の表示商 `[P/G]` を [原稿の該当節](papers/sections/noncubic_stack.tex) に構成した。滑らかな有限型Artinスタックで次元1。根配置のスタックへは符号変更μ2²を相対慣性とするgerbeを持つ。共有根から根対一致への明示族により、通常のGIT商は異なるpointed類を同一視することも分かる。
+体上の分類に続き、族と慣性を保つ構成を進めている。
 
-全H2の内在的な族のスタックとの同定は未完成であり、相対再構成・底変更・降下を現在の優先課題とする。体上の分類完了と相対モジュライの完成は区別する。
+- [noncubic表示スタック](papers/sections/noncubic_stack.tex)は `[P/G]`、滑らかな有限型Artinスタックで次元1。幾何点の同値類だけでなくpointed慣性も一致する。根配置stackへのμ2² gerbe、一般慣性D8×C2、共有根でD8、根対一致で正次元慣性を記述した。
+- 同stackのgood moduli spaceは `A1_χ`。共有根と根対一致はともにχ=1へ写り、全体のcoarse moduli algebraic spaceは存在しない。底変更と整合する正則切断の族もétale局所に構成した。
+- [有限foundationの商](papers/sections/foundation_stack.tex)は `[A64/(G/Gm³)]`、滑らか・有限型・次元3。全H2のfoundationが入り、各有限代数についてHH^n=0（n≥3）、dim HH²−dim HH¹=3を直接証明した。二つのruling対象と、それに対応する二つのfoundationを体上で内在的に認識した。
+- 反Serre環の候補 `[X_as/PGL9]` では、rank9・rank25の行列式線束によりdegree-scalar gerbeを中立化できる。ただし相対実現locus X_as の有限表示、Serre/AZ再構成と全H2の族との同定は未証明。
+
+**全H2の内在的なArtinスタックの完成は、これらの表示スタックの構成と区別する。** 現在の核心は、非被約基底を含む相対H2条件と表示の認識・降下である。
 
 ## 対象
 
@@ -38,7 +43,7 @@ $$
 - 反Serre切断環は9生成・56次元の二次関係を持ち、その関係空間の線形同値がpointed exact同値の必要十分条件となる。
 - 滑らかな無限位数Sklyanin型では、rulingを適切に選ぶとcubic Z-algebraへの比較が得られる。反Serre環の中心から楕円商を回復でき、全て可換quadricとpointed exact非同値である。
 - 正規切断の中心性、standard性、ambientの追加条件(*)を要せず、全H2対象は四周期の三次元AS正則Z-algebraとして表せる。non-standardでは二つのrulingを交互に置く。
-- 比較先がVan den Berghのcubic型となる条件は、偶数項間の隣接合成の階数が4となること。階数3では距離二の生成元と関係が各一つ加わる。二型とも階数3の対象は別表示も含めてcubic型で覆えない。両領域の構成・全被覆・同値判定を主定理にまとめた。相対モジュライは別の未解決問題である。
+- 比較先がVan den Berghのcubic型となる条件は、偶数項間の隣接合成の階数が4となること。階数3では距離二の生成元と関係が各一つ加わる。二型とも階数3の対象は別表示も含めてcubic型で覆えない。両領域の構成・全被覆・同値判定を主定理にまとめた。相対モジュライの完成は別問題であり、上記の表示スタックと比較している。
 
 既知結果、初期原稿内の証明、計算、外部監査・形式証明・新規性確認を区別する。正確な範囲は [研究ノート](notes/research_notes.md) と [文献比較](notes/literature.md) を参照。
 
@@ -65,6 +70,7 @@ $$
 | [notes/research_notes.md](notes/research_notes.md) | 証明状態、障害、再開に必要な知識、検証範囲 |
 | [notes/literature.md](notes/literature.md) | 文献の版・仮定・適用範囲・リンク |
 | [computations/verify_reducible_quadruples.py](computations/verify_reducible_quadruples.py) | 全非整曲線型の三次関係・四次テンソル・周期平方・必要な貼合せの記号恒等式 |
+| [computations/verify_stack_symmetries.py](computations/verify_stack_symmetries.py) | noncubic慣性の射影群関係、χの共変性、局所対合・正則切断の記号恒等式 |
 | [computations/verify_quadric.py](computations/verify_quadric.py) | Segre積・Ore正規性・低次数階数の厳密演算による再現 |
 
 ## 再生成

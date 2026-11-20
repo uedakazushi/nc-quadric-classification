@@ -2,7 +2,7 @@
 
 2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.1。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
 
-**現在の優先課題は、全H2の内在的なモジュライをArtinスタックとして構成することである。** 体上の全同値類の分類は `thm:complete-h2-classification` に統合済み。noncubic領域では非退化二次形式対の商 `[P/G]` を構成した。これは滑らかな有限型の一次元表示スタックであり、全noncubic対象との幾何点同値類の対応を持つ。任意基底上のpointed圏の族との同定、全H2への貼合せは未証明。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
+**現在の優先課題は、全H2の内在的なモジュライをArtinスタックとして構成することである。** 体上の同値類分類は完成。noncubicでは次元1の滑らかな表示商、幾何点の慣性、μ2² gerbe、good moduli A1とcoarse space不存在を証明した。全H2のfoundationを含む滑らかな次元3の有限代数商、HH≥3の消滅、ruling二択の内在性、反Serre表示のdegree gerbe中立化も得た。任意基底上のpointed圏の族との同定と相対実現locusの有限表示は未証明。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
 
 ## 1. 恒常的な研究原則と保存許可
 
@@ -70,6 +70,8 @@ $$
 | non-standard適合表示の制約 | 両階数3の場合、二つの根対が一致する一点だけ | thm:w-compatible-singleton |
 | 交差項を持つOre環の正規切断 | 退化込み。可換類と、二つの二点集合で判定される非cubic族 | prop:ore-normal-quadrics、thm:ore-anticommuting-central |
 
+スタックに関する追加結果は `prop:noncubic-presentation-stack`、`prop:noncubic-sign-gerbe`、`prop:noncubic-good-moduli`、`prop:noncubic-relative-regular-cut`、`prop:foundation-stack`、`prop:foundation-hochschild`、`prop:intrinsic-ruling-pair`、`lem:pointed-degree-scalar`、`prop:antiserre-gerbe-neutral` を参照する。全H2の相対moduliを証明済みとは扱わない。
+
 原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類と、相対モジュライの成分・慣性の記述は区別する。後者は未完成である。
 
 ## 4. 完全分類の達成条件
@@ -102,21 +104,27 @@ F1–F6が揃うまでは「完全分類」と報告しない。条件付きの�
 
 cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れたpointed同値を数え切れないため、最初の軌道対象の内在性に基づく有限判定を最終仕様に採用した。これは具体的な必要十分条件で、未知の圏同値や未知のAS条件を言い換えただけではない。抽象的な基礎体上では有限代数的判定であり、機械実行には係数体の有効な表示を要する。
 
-公表前の優先課題は、新しい直接証明の包括的な先行研究比較と、第三者による証明レビューである。既知のVdB分類、PresottoのZ-domain、MCM・helix・AS双対性を本研究の新しい成果とはしない。論理的独立点検と外部査読・形式証明は異なる。
+現在はこの同値類分類を、非被約底も含む族と自己同値を保持するスタックへ拡張する。非cubicでは表示商と全幾何点慣性を構成した。finite foundationのA64商は全H2の幾何点を含み、rulingの二択は内在的である。これによりruling付きの相対locusと交換groupoidを構成する経路が具体化した。全foundation変形に相対平方根・AS被覆が存在することはまだ示していない。
 
-後続の数学的課題は、(i) cubic側の有限判定を幾何的変換・正規形へ簡約すること、(ii) 固定対象上の全自己同値・平方根とambientの忘却ファイバー、(iii) 相対Serre・根の降下・底変更を含むモジュライの代数性、慣性、成分、境界である。これらを体上の対象同値類の分類に必要な未完部分とは扱わない。
+公表前の包括的な先行研究比較と第三者による証明レビューも必要である。既知のVdB分類、PresottoのZ-domain、MCM・helix・AS双対性、関係式stackと変形比較を本研究の新しい成果とはしない。一般の自己同値・根・ambient忘却ファイバーやcubic同値の幾何的簡約も、必要な範囲で扱う。
 
 固定Sklyanin pencilの高々64候補への簡約にはΔの単射性が残るが、その補集合は主定理の四生成判定で既に扱う。Δの全域解析は判定の簡約という別の課題である。可換点の四根とOkawa–Uedaの次数四射の一致も先取りしない。
 
 ## 6. 次の実行単位
 
-**スタックの構成：** `papers/sections/noncubic_stack.tex` の表示商を出発点に、(i) pointed自己同値と次数付き自己同型の商との慣性比較、(ii) 全H2のfoundation合成則の有限次元パラメータ空間、(iii) 相対Serre・AZ再構成・底変更・降下を点検する。全幾何ファイバーがH2であることと、fppf局所的な適合根・ambientの存在は同一視しない。cubic/noncubicという点集合の非交和をスタックの非交和と結論しない。
+**相対H2 locusの構成を第一課題とする。** `papers/sections/foundation_stack.tex` のA64において、H2のheart・Serre根・AS被覆を持つ部分が有限表示の開または局所閉部分関手かを調べる。まずF:P⊗W1→W2が可逆となる領域でcubicのgeometric関係条件を明示し、Fの階数3境界を他rulingへの交換とnoncubic表示に接続する。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
 
-noncubicでは `P=(Sym²(k²)の非退化形式)^2`、`G=((GL2×Gm²)⋊S2)/Gm_degree` とし、根配置スタックへの射は局所的にμ2² gerbeである。普遍環はP上で全次数有限自由。内在的な相対スタックとの比較を完了する前に、これを全H2のモジュライと呼ばない。
+到達基準は次の三点である。
 
-先行研究比較も継続する。Okawa–Uedaのtensor商、Abdelgadir–Okawa–Uedaの関係式スタック、Mori–Okawa–Uedaの相対幾何データとの比較で、追加構造・scalar慣性・適用範囲を明示する。体上の完全分類の新規性に関する包括的監査は未完了。
+1. **族の対象を明示する。** Oを指定した相対圏の族に対して、適合するsとAS4被覆はfppf局所に存在する性質とし、選択を標識へ加えない。全幾何ファイバーがH2という条件との一致は別に検証する。
+2. **局所表示と同値を族で認識する。** 内在的M=sOとruling対X,Yの存在・底変更・降下、foundationの交換、相対AZ/Serre再構成、pointed exact同値の全忠実性を証明する。体上の二択から有限étale二重被覆を即断しない。
+3. **全領域を貼り合わせる。** 明示されたnoncubic表示族とcubic表示族を、相対同値groupoidで接続する。点集合のcubic/noncubic非交和を、stackの非交和や開閉分解と読み替えない。
 
-主定理に誤りが見つかれば、依存する本文・概要・方針・hubを訂正する。一般のGL4同値判定solverは未実装であり、有限停止の理論的証明を一般solverの実行成功と混同しない。
+代替の統一表示は `[X_as/PGL9]`。X_as⊂Gr(56,81)の相対実現条件が核心である。degree-scalar gerbeのBrauer障害は `det(R1)^−11 det(R2)^2` で解消済みなので、同じ障害を再調査しない。下降した次数別線束twistとcanonical相対反Serre環の同定は再構成に含める。
+
+De Deken–Lowenのhelix変形比較は冪零拡大におけるabelian変形とfoundation代数変形を結ぶが、H2の根・AS被覆条件の相対開性は含まない。Toën–Vaquiéの対象stackも固定dg圏に対する結果である。適用範囲を `notes/literature.md` で確認する。
+
+先行研究上の新規性比較、一般GL4判定solverの実装、外部査読・形式証明は未完了。主定理に誤りが見つかれば、本文・概要・方針・hubを訂正する。
 
 ## 7. 正本・依存関係・再開
 

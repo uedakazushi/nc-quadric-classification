@@ -1,6 +1,6 @@
-% !TeX root = ../nc-quadric-classification.tex
+% !TEX root = ../nc-quadric-classification.tex
 % 2026-11-21 / v1.1
-\section{中央二重平方族の表示スタック}
+\section{中央二重平方族の商スタックと慣性}
 \label{sec:noncubic-stack}
 
 $W=k u\oplus k v$ とし、非退化二次形式の開集合を
@@ -27,6 +27,9 @@ $Q^{\mathrm{nd}}=\operatorname{Sym}^2W\setminus V(\operatorname{disc})$ と書�
 は $P$ に自明に作用する。$G=\widetilde G/D$ とする。
 $G$ は $W\oplus kc\oplus kd$ の分解を保ち、後二因子を交換してよい
 $\operatorname{PGL}_4$ の閉部分群であり、滑らかな五次元アフィン代数群である。
+$G$ にも $c,d$ の符号変更から来る $\mu_2^2$ が全点の慣性として残る。
+これは真の pointed 自己同値なので除去しない。
+$D$ を除く根拠は、作用の非効果性だけでなく、以下で確認する tails 上の自然同型である。
 
 \begin{proposition}[表示から構成するスタック]
 \label{prop:noncubic-presentation-stack}
@@ -36,6 +39,9 @@ $\operatorname{PGL}_4$ の閉部分群であり、滑らかな五次元アフィ
 は滑らかな有限型 Artin スタックであり、次元は一である。
 $P$ 上の普遍次数付き環は全ての次数で有限自由である。
 その幾何点の同型類は全 noncubic $\mathcal H_2$ 対象の pointed exact 同値類と一致する。
+さらに幾何点での慣性は、pointed exact 自己同値の自然同型類の群と一致する。
+ここで pointed 射は $(F,\phi:F\mathcal O\simeq\mathcal O')$、
+二射は $\phi'\eta_{\mathcal O}=\phi$ を満たす自然同型とする。
 \end{proposition}
 
 \begin{proof}
@@ -49,10 +55,83 @@ $c^2\mapsto f_1$, $d^2\mapsto f_2$ の書換えは長さを下げ、
 $c^3,d^3$ の重なりは係数の中心性によって解消する。
 従って基底は任意の底変更と整合し、各次数は有限自由である。
 
-幾何点の同型類については定理~\ref{thm:noncubic-classification} と
-定理~\ref{thm:ore-anticommuting-central} を使う。非退化二次形式は
-被約二点集合をスカラーを除いて一意に定め、代数閉体上ではそのスカラーを
-$c,d$ の平方によって吸収できる。$D$ は軌道を変えない。
+幾何点の同型類の対応には定理~\ref{thm:noncubic-classification} を用いる。
+以下では既存の命題~\ref{prop:first-orbit-object}、
+系~\ref{cor:first-orbit-rank-invariance} と
+定理~\ref{thm:ore-anticommuting-central} を使って慣性を確認する。
+最初の命題の内在的認識によって、任意の pointed exact 自己同値は
+適合軌道対象の全列を同型を除いて保つ。
+中央二重平方環 $B_f$ の通常のシフトを適合根であると主張する必要はない。
+実際、定理~\ref{thm:ore-anticommuting-central} で構成した適合 Zhang twist は、
+その添字付き環を $B_f$ の添字付き環と同定し、全自由シフトを対応させる。
+
+\paragraph{曲線を点ごとに固定する変換.}
+二つの根対が異なる場合には、一根共有の場合を含め、
+$f_1,f_2,f_1f_2$ のいずれも $k(u,v)$ の平方ではない。
+これは各根に対応する一次素因子の付値の偶奇を比較すれば従う。
+従って $k(u,v)(\sqrt{f_1},\sqrt{f_2})$ は四次の体拡大である。
+可換環
+\[
+ k[u,v,c,d]/(c^2-f_1,d^2-f_2)
+\]
+は $k[u,v]$ 上の基底 $1,c,d,cd$ を持つので、この体に単射し、整域である。
+その斉次イデアルに一次式はないため、対応する整曲線 $E_f$ は $\mathbb P^3$ を張る。
+射影変換を表す可逆行列の固定点集合は、その固有空間の射影化の有限和である。
+$E_f$ が点ごとに固定されれば、その整性により一つの固有空間に全体が含まれる。
+従って行列はスカラーであり、射影変換は恒等である。
+
+根対が一致する場合には、座標と定数倍を選んで $f_1=f_2=uv$ とできる。
+$E_f$ は平面 $d=c$ と $d=-c$ にある二つの滑らかな円錐曲線
+\[
+ C_+=\{d=c,\ c^2=uv\},\qquad
+ C_-=\{d=-c,\ c^2=uv\}
+\]
+の和である。それぞれがその平面を張るため、点ごとに固定する行列の
+二つの三次元線型部分空間への制限はスカラーとなる。
+二つの部分空間は二次元空間 $\langle u,v\rangle$ で交わるので、
+これらのスカラーは等しい。両部分空間の和は四次元全体であり、
+この場合にも行列はスカラーである。
+
+\paragraph{自己同値群への帰着.}
+軌道対象を $L_i$ と書き、$F(L_i)\simeq L_i$ を選ぶ。
+$i=0$ では与えられた標識同型を使う。
+これらは添字付き Hom 環の自己同型を与える。
+定理~\ref{thm:ore-anticommuting-central} の双線形化計算によると、
+point correspondence の一次元部分は $E_f$ 上の対角であり、
+残りは互いに移る二つの孤立点である。
+従って隣接する二つの線型写像 $g_i,g_{i+1}$ は、射影化すると $E_f$ 上で一致する。
+前段より $g_i=b_i g$ と書ける。
+$L_i$ の同型を $t_i$ 倍すると隣接成分の作用は $t_{i+1}/t_i$ 倍されるため、
+$t_0=1$ として $t_{i+1}/t_i=b_i^{-1}$ を全整数について逐次選べば、
+全ての隣接成分の作用を同じ $g$ にできる。
+一次生成性より全成分の作用が $g$ の誘導する作用と一致する。
+Artin--Zhang 再構成をこの豊富な列に適用すると、これは $F$ と次数付き自己同型から
+誘導される関手の pointed 自然同型を与える。
+すなわち同型類の存在だけでなく、各自己同値そのものをこの方法で表せる。
+
+次数付き自己同型の核については補題~\ref{lem:scalar-tails} の証明をそのまま使える。
+その証明が使うのは $\operatorname{End}(L_i)=k$、一次生成性、
+および非零の次数一元の左乗法が tails で零射でないことだけである。
+これらは $B_f$ でも例外性、上の Zhang 同値と domain 性から成立する。
+具体的には $(-)_\sigma\simeq\mathrm{Id}$ の $L_i$ 成分を、
+基準同型 $b\mapsto\sigma^{-1}(b)$ の $c_i$ 倍と書くと、
+$a\in B_1$ に対する自然性が
+\[
+ c_{i+1}\sigma^{-1}(a)=c_i a
+\]
+を与える。よって $\sigma$ は次数スカラーである。
+逆向きは第 $n$ 次成分を $\lambda^{-n}$ 倍する自然同型で与えられ、
+$i=0$ の基準同型と整合する。
+異なる標識同型はスカラー自然同型で互いに同型となるため、余分な
+$\mathbb G_m$ は残らない。
+また恒等関手の自然自己同型は豊富な列上の定数スカラーで決まり、
+$\mathcal O$ 上で恒等という条件はその値を一にする。
+従って、標識と整合する二射を取った pointed groupoid の自己同型群は
+\[
+ \operatorname{Aut}_{\mathrm{gr}}(B_f)/D,
+\]
+二自己同型群は自明である。
+
 \end{proof}
 
 \begin{proposition}[根配置スタックへの射]
@@ -80,21 +159,270 @@ $P\to\mathcal D^2$ は二つの形式の代表を選ぶトーラス torsor で�
 \cite[Tag 06PD]{StacksModuli}。
 \end{proof}
 
-\begin{remark}[GIT の同一視]
-$u,v$ の基底を固定し、$f_1=uv$, $f_2=u(v-t u)$ とする。
-$t\ne0$ では根対が一根共有、$t=0$ では二対が一致する。
-$t\ne0$ の全点は一つの軌道に属するが、その閉包は $t=0$ の軌道を含む。
-従って通常の GIT 商は、これら二つの異なる pointed 類を分離しない。
-同型類集合の二つの特別点を、一つの既存 GIT 商から読み取ることはできない。
-また $\operatorname{Sym}^2\mathcal D$ を単なるスキームとして先に作ると、
-一致した二対の $S_2$ 慣性も失うため、上の $S_2$ 商はスタックとして取る必要がある。
+\begin{example}[一般慣性と Deligne--Mumford 性の限界]
+四点が相異なる一般の場合、二点集合の非順序対を保つ射影変換群は
+Klein 四群である。従って pointed 慣性の位数は十六である。
+この一般性は、四点の交比の六つの値が相異なることから得られ、
+二対を保つ順列は Klein 四群となる。
+より具体的に $f_1=uv$, $f_2=(u-v)(u-\lambda v)$ とし、$r^2=\lambda$ を選ぶ。
+行列は列 $(u,v,c,d)^{\mathsf t}$ への置換を表し、
+例えば以下では $R(u)=\lambda v$, $R(v)=u$ である。
+二つの自己同型 $R,T$ を
+\[
+ R|_W=\begin{pmatrix}0&\lambda\\1&0\end{pmatrix},\quad
+ R(c)=rc,\quad R(d)=rd,
+\]
+\[
+ T|_W=\begin{pmatrix}\lambda&-\lambda\\1&-\lambda\end{pmatrix},\quad
+ T(c)=rd,\quad T(d)=r(\lambda-1)c
+\]
+で定める。置換行列の二乗はそれぞれ $\lambda I_4$ と $\lambda(\lambda-1)I_4$ であり、
+次数スカラーを除くと $R^2=T^2=1$ である。
+$c,d$ の符号変更を $e_1,e_2$ とすれば、
+$R$ は両方と可換、$T$ は両者を交換し、$[R,T]=e_1e_2$ となる。
+$\langle e_1,T\rangle$ は位数八の二面体群 $D_8$ で、$Re_1$ は独立の中央対合なので、
+一般慣性は $D_8\times C_2$ である。
+ここで $D_8$ は位数八の二面体群を表す。
+係数恒等式とこれらの射影群関係は
+\texttt{computations/verify\_stack\_symmetries.py} で厳密に検算できる。
+
+一根共有の代表 $f_1=uv$, $f_2=u(u-v)$ では、
+$u\mapsto u$, $v\mapsto u-v$, $c\leftrightarrow d$ と独立の符号変更により
+慣性は $D_8$ となる。
+一方、$f_1=f_2=uv$ では
+\[
+ u\mapsto t u,\quad v\mapsto t^{-1}v,\quad c\mapsto c,\quad d\mapsto d
+ \qquad(t\in\mathbb G_m)
+\]
+が非自明な一次元部分群を与える。
+従って $\mathfrak N^{\mathrm{pres}}$ 全体は Deligne--Mumford ではない。
+二つの根対が異なる開部分では慣性は有限なので Deligne--Mumford となる。
+\end{example}
+
+\subsection{良モジュライ空間と粗モジュライ空間の障害}
+\label{subsec:noncubic-good-moduli}
+
+$f=a u^2+buv+c v^2$ と $g=a'u^2+b'uv+c'v^2$ に対し
+\[
+ \Delta(f)=b^2-4ac,\qquad
+ D(f,g)=bb'-2ac'-2a'c,
+\]
+\[
+ \chi(f,g)=\frac{D(f,g)^2}{\Delta(f)\Delta(g)}
+\]
+と置く。$D$ は判別式の極化であり、線型変換 $A$ の下で
+$\Delta$ とともに $\det(A)^2$ 倍される。
+$\chi$ は両形式の定数倍と交換の下でも不変なので、$P$ 上の正則な $G$-不変関数である。
+
+\begin{proposition}
+\label{prop:noncubic-good-moduli}
+$k$ を標数零の代数閉体とする。このとき
+\[
+ k[P]^G=k[\chi].
+\]
+従って $\chi:\mathfrak N^{\mathrm{pres}}\to\mathbb A^1_\chi$ は
+Alper の意味の good moduli space である。
+一方、$\mathfrak N^{\mathrm{pres}}$ 全体は、幾何点の同型類を一対一に分類する
+粗モジュライ代数空間を持たない。
+\end{proposition}
+
+\begin{proof}
+まず核の二次元トーラスの不変式を取ると、形式の代表の定数倍が除かれ、
+\[
+ k[P]^G
+ =k[\mathcal D^2]^{\operatorname{PGL}_2\times S_2}
+\]
+となる。トーラスの作用が逆二乗であることは、標数零では不変式環を変えない。
+$\operatorname{PGL}_2$ は $\mathcal D$ に推移的に作用するため、
+第一形式を $uv$ と固定すれば、順序付き二形式の不変式環は
+$uv$ の射影安定化群 $H=\mathbb G_m\rtimes C_2$ による
+$\mathcal D$ の不変式環に同定される。
+これは斉次空間 $\mathcal D=\operatorname{PGL}_2/H$ の faithfully flat な局所自明化で
+不変関数を降下させることによる。
+
+第二形式を $[a:b:c]$ と書く。
+$\mathcal D$ は $\mathbb P^2$ の判別式非消滅開集合であり、アフィンで
+\[
+ k[\mathcal D]=\bigl(k[a,b,c,\Delta^{-1}]\bigr)_0,
+ \qquad \Delta=b^2-4ac.
+\]
+残るトーラスの作用は射影座標で
+$(a,b,c)\mapsto(t a,b,t^{-1}c)$ と書ける。
+次数零のトーラス不変単項式は
+$a^i b^j c^i\Delta^{-m}$、$2i+j=2m$ の形なので、$j$ は偶数である。
+従って不変式環は
+\[
+ x=\frac{b^2}{\Delta},\qquad y=\frac{ac}{\Delta}
+\]
+で生成され、$x-4y=1$ により $k[x]$ である。
+残る $C_2$ は $a,c$ を交換して $x$ を保つ。
+第一形式が $uv$ なら $D(uv,f)=b$、$\Delta(uv)=1$ なので $x=\chi$ である。
+二形式を交換する $S_2$ も対称な $\chi$ を保つため、全不変式環は $k[\chi]$ となる。
+
+$P$ はアフィン、$G$ は標数零で線型簡約なので、商スタックから不変式環の
+スペクトルへの射は good moduli space である
+\cite[Example 8.3, Theorem 13.2]{Alper2009}。
+四根が相異なる通常形において
+\[
+ \chi\bigl(uv,(u-v)(u-\lambda v)\bigr)
+ =\frac{(1+\lambda)^2}{(1-\lambda)^2}.
+\]
+一根共有の類と二根対が一致する類ではいずれも $\chi=1$ である。
+これらは異なる幾何点であるが good moduli space 上では同じ点になる。
+局所 noetherian な Artin スタックの good moduli space は、
+任意の代数空間への射に対して普遍である
+\cite[Theorem 6.6]{Alper2009}。
+従ってどの代数空間への射もこの二点を分離できず、
+幾何点の同型類に対して全単射となる粗モジュライ空間は存在しない。
+\end{proof}
+
+両者とその間の特殊化を保つ対象が $\mathfrak N^{\mathrm{pres}}$ であり、
+$\mathbb A^1_\chi$ はその good moduli space である。
+本節の不変式計算は表示スタックについての結果であり、
+任意の基底上の内在的 $\mathcal H_2$ 族との同定は前節と同じく別問題である。
+
+\begin{example}[共有根から根対一致への特殊化]
+\label{ex:noncubic-specialization}
+$\mathbb A^1_t$ 上で $f_1=uv$, $f_2=u(v-tu)$ とする。
+両形式の判別式は常に一である。$t\ne0$ の全ての点は一根共有の軌道に属し、
+$t=0$ では二つの根対が一致する。命題~\ref{prop:noncubic-presentation-stack} の基底により
+対応する次数付き環は各次数で自由であり、これは $P$ 上の実際の平坦族である。
+従って一根共有の軌道の閉包は、根対一致の軌道を含む。
+また $\operatorname{Sym}^2\mathcal D$ を粗なスキームとして先に取ると、
+一致した二対の $S_2$ 慣性も失うため、二対の交換もスタックとして割る必要がある。
+\end{example}
+
+\subsection{表示族における対合と正則切断の局所構成}
+\label{subsec:noncubic-relative-root}
+
+\begin{lemma}
+\label{lem:noncubic-local-exchange}
+標数零の体 $k$ 上のスキーム $S$ において、非退化な二元二次形式
+$f_1,f_2$ の族が与えられたとする。
+$S$ の \'etale 局所化の後、二形式を交換する線型対合 $L$ と単元 $\eta$ を選び、
+\[
+ L^2=1,\qquad Lf_1=\eta f_2,\qquad Lf_2=\eta^{-1}f_1
+\]
+とできる。さらに単元 $\gamma$、$\gamma^2=\eta$ を選べば
+\[
+ \sigma|_W=L,\qquad \sigma(c)=\gamma d,\qquad
+ \sigma(d)=-\gamma^{-1}c
+\]
+は中央二重平方環の族の次数付き自己同型であり、
+$\sigma^2$ は $W$ 上で恒等、$c,d$ 上で符号反転となる。
+この構成は二つの根対が一致するファイバーの近傍でも有効である。
+\end{lemma}
+
+\begin{proof}
+判別式が可逆なので、各形式の二つの根は \'etale 局所に順序付けられる。
+第一根対を $\{0,\infty\}$ とする座標を選ぶ。
+第二根対の一方を有限座標 $a$、他方を逆座標 $b$ で表示するように
+根の順序と開集合を選べば、第二根対は $\{a,1/b\}$ と書ける。
+ここで $b=0$ は第二根が無限遠にあることを表す。
+二根が相異なる条件は
+\[
+ \theta=1-ab\in\mathcal O_S^\times
+\]
+である。従って、適当な単元 $\rho_1,\rho_2$ により
+\[
+ f_1=\rho_1uv,\qquad
+ f_2=\rho_2 q,\qquad q=(u-av)(bu-v)
+\]
+と表示できる。この段階では形式の代表を平方根で正規化していない。
+置換行列
+\[
+ A=\begin{pmatrix}1&-a\\ b&-1\end{pmatrix}
+\]
+について直接計算すると
+\[
+ A^2=\theta I_2,\qquad A(uv)=q,\qquad A(q)=\theta^2uv.
+\]
+$\delta^2=\theta$ を満たす単元 $\delta$ を \'etale 局所に選び、
+\[
+ L=\delta^{-1}A,\qquad \eta=\frac{\rho_1}{\rho_2\theta}
+\]
+と置けば所要の三つの恒等式を得る。
+さらに $\gamma^2=\eta$ を選ぶ。
+$\theta,\eta$ は単元であり、標数零なので、これらの平方根を付加する射は
+有限 \'etale である。
+
+$r_c=c^2-f_1$, $r_d=d^2-f_2$ と書くと、定義した $\sigma$ は
+\[
+ \sigma(r_c)=\eta r_d,\qquad
+ \sigma(r_d)=\eta^{-1}r_c
+\]
+を満たすため商環へ降りる。$\sigma^2$ の式は定義から従う。
+根対が一致する点では $a=b=0$ と選べ、このとき $\theta=1$、
+$A=\operatorname{diag}(1,-1)$ である。従って一致境界で分母は消えない。
+\end{proof}
+
+\begin{proposition}[局所的な正則切断の族]
+\label{prop:noncubic-relative-regular-cut}
+前補題の選択を行ったアフィン底 $\operatorname{Spec}R$ 上で、
+$u,v$ を中央とし、一つの関係 $r_c-\eta r_d=0$ だけを課した環を $A'$ と置く。
+\[
+ g'=r_c+\eta r_d
+\]
+は中央正則元であり、$A'/(g')\simeq B_f$ である。
+$A'$、$B_f$ の各次数は有限自由 $R$-加群で、これらの記述と正則切断の完全列は
+任意の底変更と整合する。
+$\sigma$ は $A'$ に延びて $g'$ を固定するので、
+Zhang twist 後にも
+\[
+ B_f^\sigma\simeq (A')^\sigma/(g')
+\]
+という平坦な正則正規切断の族を得る。
+その各幾何ファイバーは定理~\ref{thm:ore-anticommuting-central} の適合表示となる。
+\end{proposition}
+
+\begin{proof}
+$x=c+\gamma d$, $y=c-\gamma d$ と置く。$2\gamma$ は単元なので可逆な基底変更であり、
+\[
+ xy+yx=2H(u,v),\qquad H=f_1-\eta f_2
+\]
+を得る。従って $A'$ は $R[u,v,x]$ の Ore 拡大であり、
+$\tau(u)=u$, $\tau(v)=v$, $\tau(x)=-x$、
+$\partial(u)=\partial(v)=0$, $\partial(x)=2H$ を用いて
+\[
+ A'=R[u,v,x][y;\tau,\partial]
+\]
+と表示される。この定義から $u^a v^b x^i y^j$ が $R$ 上の基底となる。
+また
+\[
+ g'=\frac{x^2+y^2}{2}-(f_1+\eta f_2)
+\]
+である。$x^2,y^2$ は中央であるから $g'$ は中央であり、
+$y$ に関する最高次数の係数が可逆元 $1/2$ であるため、
+$g'$ の乗法は $R$ に零因子がある場合にも単射である。
+$r_c-\eta r_d$ と $r_c+\eta r_d$ を同時に課すと、
+$2\eta$ の可逆性によって $r_c=r_d=0$ に等しくなる。
+商 $B_f$ の $R$-基底は $u^a v^b$ と $c,d$ の交互語との積である。
+従って各次数の有限自由性と任意の底変更に対する正則性が従う。
+
+前補題の関係から
+$\sigma(r_c-\eta r_d)=-(r_c-\eta r_d)$、$\sigma(g')=g'$ であり、
+$\sigma$ は $A'$ 上でも定義される。
+Zhang twist は底上の次数付き加群を変えない。
+$g'$ は twist 後には正規元で、掛け算は元の $g'$ の乗法と
+自己同型 $\sigma^2$ との合成であるため正則性も保つ。
+各幾何ファイバーでの AS 正則性、型 $(1,4,6,4,1)$ と適合根の性質は
+定理~\ref{thm:ore-anticommuting-central} の Ore 表示と Nakayama 計算に帰着する。
+\end{proof}
+
+\begin{remark}[相対主張の範囲]
+前二結果は、明示された二形式の族から、底変更と整合する次数付き環、
+正則切断、およびその幾何ファイバー上の適合根を局所的に構成する。
+任意の底環について両側 noetherian 性、相対双対化複体や相対 Serre 関手の存在を
+主張するものではない。また、任意の内在的 $\mathcal H_2$ 族がこの正規形へ
+\'etale 局所に還元できるという認識定理も含めていない。
+局所的な平方根の存在と、内在的な族の相対分類を区別する必要がある。
 \end{remark}
 
 \begin{remark}[相対版として未証明の部分]
 上で無条件に構成したのは、普遍中央二重平方環とその射影化した座標変換からなる
-表示スタックである。普遍環は $P$ 上に存在し、$D$ は次数 $n$ に重み $n$ で
-作用するため、剛体化後のスタック上への通常の環束としての降下はここでは主張しない。
-幾何点の同型類は一致するが、任意の基底上の
+表示スタックである。普遍環は $P$ 上、あるいは $[P/\widetilde G]$ 上にある。
+$D$ は次数 $n$ に重み $n$ で作用するため、同じ環束が剛体化後へ
+そのまま降下するとは主張しない。幾何点の同型類と慣性は正しいが、任意の基底上の
 $\mathcal O$-marked 圏の族との同値を主張するには、相対再構成と相対正規形が必要である。
 特に「全ての幾何ファイバーが noncubic」という条件だけでは、
 階数四を検出する小行列式の冪零成分が消えるとは限らない。
