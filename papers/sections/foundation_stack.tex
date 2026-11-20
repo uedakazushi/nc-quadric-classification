@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.1
+% 2026-11-21 / v1.2
 \section{有限 foundation と反 Serre 表示のスタック}
 \label{sec:foundation-stack}
 
@@ -610,6 +610,171 @@ $\operatorname{Aut}_{\{e_i\}}(\Lambda_x)/K$ であり、
 $\HH$ 部分関手の有限表示、および相対再構成の証明は別に必要である。
 例外対象の $\Ext^1$ と $\Ext^2$ の消滅や有限代数の
 $\operatorname{HH}^3$ の消滅だけから、これらの相対条件は結論しない。
+\end{remark}
+
+\subsection{cubic 開部分の稠密性と noncubic への特殊化}
+\label{subsec:cubic-noncubic-components}
+
+以下では $k$ を標数零の代数閉体とする。
+$\mathfrak Q=\mathfrak Q_{\mathrm{fnd}}$ と略記し、
+$q:\mathfrak F_0\to\mathfrak Q$ を相対 ruling 交換による商とする。
+$\mathfrak F_{\mathrm{cub}}\subset\mathfrak F_0$ は
+命題~\ref{prop:cubic-foundation-open} の geometric 開部分である。
+$|\mathfrak Q|$ の点は任意の代数閉拡大体上の幾何点を同値で割ったものとし、
+全ての代数閉拡大体上の $\mathcal H_2$ 対象の像の合併を $Y$ と書く。
+これは像の合併としての定義であり、$\mathcal H_2$ 公理一般の任意底変更に関する
+安定性を別の入力として仮定していない。
+$Y$ には $|\mathfrak Q|$ からの部分空間位相を入れる。
+これは内在的な相対 $\mathcal H_2$ スタックの構成を先取りする定義ではない。
+
+\begin{proposition}[実現点集合の既約性]
+\label{prop:h2-component-density}
+$\mathfrak Q$ は既約である。
+$\mathfrak C=q(\mathfrak F_{\mathrm{cub}})$ は非空開部分スタックであり、
+全ての幾何点が cubic な $\mathcal H_2$ 対象を表す。
+特に
+\[
+ |\mathfrak C|\subset Y\subset|\mathfrak Q|,
+ \qquad
+ \overline{|\mathfrak C|}^{\,Y}=Y.
+\]
+従って $Y$ は既約かつ連結であり、その既約成分と連結成分はともに一つである。
+全 noncubic 実現点は、この同じ既約空間における cubic 開部分の閉包に属する。
+\end{proposition}
+
+\begin{proof}
+$U_0$ は $\mathbb A^{64}$ の非空開部分なので既約である。
+商への連続全射\cite[Tags 04XL, 0DR5]{StacksModuli}
+\[
+ |U_0|\longrightarrow|\mathfrak F_0|
+       \longrightarrow|\mathfrak Q|
+\]
+により、$\mathfrak F_0$ と $\mathfrak Q$ も既約となる。
+
+$\mathfrak F_{\mathrm{cub}}$ は非空である。例えば可換二次曲面の foundation
+\[
+ (\mathcal O,\mathcal O(1,0),\mathcal O(1,1),\mathcal O(2,1))
+\]
+はこの部分に入る。実際、$A=H^0(\mathcal O(1,0))$、$B=H^0(\mathcal O(0,1))$ と置けば、
+$W_1=A$、$P=B$、$W_2=A\otimes B$、$Q=A$、
+$W_3=\operatorname{Sym}^2A\otimes B$ である。
+$F$ は因子交換の同型、$G$ は対称積の写像で、
+$R=\ker G=\bigwedge^2A\otimes B$ となる。
+対応する四重テンソルは、因子 $0,2$ の非退化交代テンソルと
+因子 $1,3$ の非退化 pairing の積である。
+従って任意の隣接二因子の非零縮約は消えない。
+
+$q$ は有限 \'etale、従って開写像であるから、その像 $\mathfrak C$ は非空開部分となる。
+幾何点の cubic 逆構成と、ruling 交換の mutation による記述によって
+$|\mathfrak C|\subset Y$ である。
+既約空間 $|\mathfrak Q|$ の非空開部分 $|\mathfrak C|$ は既約かつ稠密なので、
+\[
+ \overline{|\mathfrak C|}^{\,Y}
+ =Y\cap\overline{|\mathfrak C|}^{\,|\mathfrak Q|}=Y.
+\]
+既約部分空間の閉包は既約であり、主張が従う。
+ここでは単に $Y$ が既約空間の部分集合であることを使うのではなく、
+$Y$ がその非空開部分を含むことを使っている。
+\end{proof}
+
+\begin{proposition}[各 noncubic 点への一次元の特殊化]
+\label{prop:h2-line-degeneration}
+$k$ 上の任意の $\mathcal H_2$ 対象と、その normal foundation の
+基底を選んだ表示 $x=(F_0,G_0)\in U_0(k)$ を取る。
+$0,1\in T\subset\mathbb A^1_k$ という非空開部分と、
+階数二十四の有限自由 $\mathcal O_T$-代数 $\Lambda_T$ を取り、次を満たせる。
+\begin{enumerate}
+\item $t=0$ の代数は指定された foundation の End 代数 $\Lambda_x$ である。
+\item $t\ne0$ の全幾何ファイバーは geometric cubic foundation の代数である。
+\item 頂点零を標識とした $\operatorname{Perf}(\Lambda_T)$ は、
+      底変更と両立する smooth proper な相対 dg 圏の族である。
+      全幾何ファイバーは $\mathcal H_2$ 対象の標識付き導来圏と同値である。
+\end{enumerate}
+特に $x$ が noncubic なら、これは任意に指定した noncubic 対象を
+特殊ファイバーに持ち、他の全ファイバーが cubic となる foundation の族である。
+\end{proposition}
+
+\begin{proof}
+$U_{\mathrm{cub}}\subset U_0$ を $\mathfrak F_{\mathrm{cub}}$ の逆像とし、
+$y=(F_1,G_1)\in U_{\mathrm{cub}}(k)$ を一つ選ぶ。
+これは前命題の可換二次曲面の foundation の表示に固定してよく、
+$x$ ごとに別の cubic 対象を探索する必要はない。
+アフィン空間内の直線
+\[
+ \ell(t)=(1-t)x+ty,
+ \quad
+ F_t=(1-t)F_0+tF_1,
+ \quad
+ G_t=(1-t)G_0+tG_1
+\]
+を取る。$\ell^{-1}(U_{\mathrm{cub}})$ は $1$ を含む非空開部分なので、
+その補集合 $Z$ は有限である。
+\[
+ T=\mathbb A^1_k\setminus(Z\setminus\{0\})
+\]
+と置けば、$0,1\in T$ であり、$T\setminus\{0\}$ は $U_{\mathrm{cub}}$ に写る。
+$t=0$ の像も $U_0$ に属するので $\ell(T)\subset U_0$ である。
+この直線に普遍二写像表示の代数を引き戻して $\Lambda_T$ を得る。
+その加群は四つの対角成分、三つの $W_i$、二つの矢空間 $P,Q$ と
+$P\otimes Q$ の直和であり、全体で階数二十四の自由加群である。
+積は $F_t,G_t$ とその合成からなり、任意の底変更と両立する。
+最初の二つの主張と、全幾何ファイバーの $\mathcal H_2$ 実現はこれで従う。
+
+相対 proper 性は $\Lambda_T$ の有限自由性による。
+相対 smooth 性には、次の補題を用いる。
+頂点零の標準 projective を標識対象とすれば、その自己 Hom は $\mathcal O_T$ であり、
+幾何ファイバー上の tilting 同値は指定された $\mathcal O$ をこの対象へ移す。
+従ってこれは標識付き相対 dg 圏の族である。
+必要なら $\operatorname{Spec}k[t]_{(t)}$ や
+$\operatorname{Spec}k[[t]]$ へ底変更して、一般ファイバーが cubic、
+特殊ファイバーが指定対象という一径数退化にできる。
+\end{proof}
+
+\begin{lemma}[有向有限代数の相対 smooth proper 性]
+\label{lem:foundation-relative-smooth-proper}
+任意の底スキーム上の二写像表示から得られる普遍 foundation 代数 $\Lambda$ は、
+底上で perfect であり、相対対角双加群も perfect である。
+この記述は任意の底変更と両立する。
+\end{lemma}
+\begin{proof}
+$E=\bigoplus_{i=0}^3\mathcal O e_i$ とし、$J$ を非対角成分の直和とする。
+有向性により $\Lambda=E\oplus J$ は増大された $E$-代数である。
+$E$ に相対的な正規化 bar 分解は、次数 $n$ に
+\[
+ \Lambda\otimes_E J^{\otimes_E n}\otimes_E\Lambda
+\]
+を持つ。増大 bar 分解の単位挿入による収縮と正規化により、
+この複体は対角双加群 $\Lambda$ を解消する。
+非零なテンソルは頂点の狭義単調列に対応するため、$n>3$ の項は零である。
+各成分 $J_{ij}$ は有限局所自由であり、上の項は
+\[
+ \Lambda e_i\otimes_{\mathcal O} V\otimes_{\mathcal O}e_j\Lambda
+\]
+という形の有限直和である。ここで $V$ は有限局所自由である。
+従って各項は局所的に有限生成 projective な
+$\Lambda\otimes_{\mathcal O}\Lambda^{\mathrm{op}}$-加群であり、
+対角は perfect となる。
+底上の perfect 性は $\Lambda$ の有限局所自由性による。
+全ての項と微分は局所自由な成分と積から作られるため、底変更と両立する。
+\end{proof}
+
+\begin{remark}[内在的な相対モジュライへの移行条件]
+命題~\ref{prop:h2-component-density} は、実現点集合の部分空間位相についての
+無条件の結論である。
+命題~\ref{prop:h2-line-degeneration} は、全幾何ファイバーが所要の
+標識付き導来圏である実際の smooth proper dg 圏の族を与える。
+これらに非被約基底上の $\mathcal H_2$ locus の構成は必要ない。
+一方、この族に相対 heart、相対 Serre 平方根、AZ 豊富性、
+二次 AS 正則被覆が局所的に存在するという追加主張は、ここでは証明していない。
+
+内在的なモジュライスタック $\mathfrak H_2$ に対して、
+$|\mathfrak H_2|\to Y$ が同相であると示せれば、同じ成分数が直ちに従う。
+また、全ての代数閉拡大体に対して、本節の普遍 cubic 族と各対象への直線族が
+$\mathfrak H_2$ の族として認められることを示しても十分である。
+実際、普遍 cubic 族の像は既約であり、各直線族の一般点がその像に入るため、
+その閉包は全ての対象を含む。従って $\mathfrak H_2$ は既約かつ連結となる。
+この移行条件を確認せずに、相対的な根の存在まで要求するモジュライの
+成分数を確定したとは主張しない。
 \end{remark}
 
 \subsection{反 Serre 環の商と標識に由来する慣性}

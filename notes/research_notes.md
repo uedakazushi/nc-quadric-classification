@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.3（数学原稿v1.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.3（数学原稿v1.2）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -25,6 +25,9 @@
 | 相対ruling交換とQ_fnd | F0上の二短完全列交換がcoherentなS2作用。Q_fnd=[F0/S2]はsmooth finite type、dim3。F0→Q_fndはrepresentableな有限étale二重被覆 | 内在的H2族のruling被覆との相対同定 |
 | 全H2(k)のgroupoid | H2(k)→Q_fnd(k)は全充満。全幾何点のpointed慣性も一致 | 任意基底上の相対全忠実性・本質的全射性 |
 | cubic geometric開部分 | `[Gr(2,8)_geo/(PGL2)^3]`、smooth finite type、dim3。幾何点はcubic逆構成に入る | 任意の内在的cubic族の相対認識 |
+| 実現集合Yの成分 | cubic非空開C⊂Y⊂underlying(Q_fnd)。誘導位相でYは既約かつ連結、各成分数1 | 内在的相対moduliの位相との一致 |
+| 全noncubic点へのcubic特殊化 | xと可換Qのcubic foundation点yを結ぶ線の開部分。0以外の全幾何fiberはcubic、0はx | 相対heart・根・AZ・AS被覆を備える強いH2族への昇格 |
+| 相対smooth proper dg族 | rank24有限自由代数Λ。正規化relativebar分解が次数3で止まり、対角とe0Λがperfect | 相対的なexact heartの認識 |
 | 反Serre慣性 | Aut_gr(R)/Gm_degree≅Aut_pt、pointed二自己同型は自明 | 族の全忠実性 |
 | degree gerbeの中立化 | R1 rank9,R2 rank25、detR1^−11 detR2²の重み1。Gr(56,81)全体で中立 | 相対実現locus X_as、下降環とcanonical Serre環の同定 |
 | 選んだSerre根の一次変形障害 | 持上げにはHH²類の保存が必要。Q上でs_*u=−uとなる適合根と非零変形を構成 | 別の根の存在や相対H2条件の開性は判定しない |
@@ -35,13 +38,19 @@
 
 **cubicのgeometric開条件。** Fが可逆なら `W2=P⊗W1`、`R=ker G⊂Q⊗P⊗W1` は二次元である。包含から得る四重テンソルについて、隣接する二因子の任意の非零線型形式による縮約が非零となる条件が `Gr(2,8)_geo` を定める。悪い縮約のincidenceは射影束からのproper像なので、その補集合は底変更と整合する開部分である。Fの可逆性とGの全射性だけでは不十分であり、`e0000+e1111` が反例となる。表示と証明は `prop:cubic-foundation-open` を参照する。
 
+**cubicの稠密性と成分。** `U_cub⊂U0⊂A64` はgeometric cubic条件を満たす非空開である。商Q_fndにおける像Cも非空開で、既約なQ_fndの稠密開となる。H2実現集合YはCを含むため、誘導位相で `closure_Y(C)=Y`。Cが既約なのでYも既約であり、既約成分・連結成分は各1である。既約なambientの任意の部分集合についての主張ではなく、既約稠密開を含むという具体的な包含を使う。証明は `prop:h2-component-density`。
+
+**各noncubic点への特殊化。** noncubic点を表すx∈U0(k)と、可換Qのfoundationを表すy∈U_cub(k)を選ぶ。`ℓ(t)=(1−t)x+ty` に対してℓ⁻¹(U_cub)は1を含む開なので、補集合は有限である。そのうち0以外を除いたT⊂A1上で、0は指定noncubic点、0以外の全幾何点はcubicとなる。普遍foundation代数の引戻しΛ_Tはrank24有限自由である。さらにE=O_T⁴、Jを厳密上三角成分とした正規化relativebar分解 `Λ⊗_E J^{⊗_E n}⊗_EΛ` はn>3で零となり、各項は相対包絡代数上で有限射影である。従ってPerf(Λ_T)は構造対象e0Λ_Tを持つ相対smooth proper dg族である。証明は `prop:h2-line-degeneration` と `lem:foundation-relative-smooth-proper`。相対heartと適合根・AZ・AS被覆の存在はこの主張に加えていない。
+
+**単純なOreパラメータ変形の限界。** 固定した中央二変数の表示 `yx=qxy+h(u,v)` でqだけを動かす方法では、q=−1のnoncubic切断 `a x²+b y²+H` を一般点へ延長できない。`prop:ore-normal-quadrics` により一般のq≠±1では許される正規二次式にx²,y²項がなく、整な底上で一般点で消えるその係数は特殊点でも消える。今回の特殊化は、この固定Ore表示へ制限せず、foundationの二写像を動かす。
+
 **点集合から族へ移す際の障害。** Spec(k)→Spec(k[ε]/ε²)は全幾何点を覆うが、底の恒等射はfppf局所にもここへ因子化しない。忠実平坦な拡大では非零εを零にできないためである。したがって全field pointの表示・被約像の構成だけでは相対essential surjectivityは証明できない。同様に、幾何fiberでrank3という条件は4次minorがnilpotentであることしか保証しない。rank3 locusはminorのscheme-theoreticな消滅で定める必要がある。
 
 **変形理論と選んだ根の障害。** foundationのHH³消滅とDe Deken–Lowenのabelian/thread変形比較は、相対H2条件を追加する前の局所入力である。固定した変形類uへの自己同値Φの持上げ障害は、核の左右のHochschild作用を同定すると `u−Φ_*u` となる（Lowen2008 Theorems 1.1, 4.8, Corollary 4.9、Toda2009 arXiv v3 Proposition 5.6, Lemma 5.8）。可換Q上で `f(z,w)=(-z,w)`、`s=(−⊗O(1,1))∘f*`、`π=∂z∧∂w` とすれば、sは適合根だが `s_*[π]=−[π]`。`a⋆b=ab+(ε/2)π(da,db)` が与える固定abelian一次変形へ、このsはR線形dg/Morita自己同値として持ち上がらない。線束tensorのHH²作用が恒等なのは、このQではH¹(T)=H²(O)=0で局所bivector成分だけが残るためである。
 
-この例は**選んだ根**の障害であり、別の根の存在を排除しない。構成したabelian変形が相対的な根・AZ豊富性・AS被覆を備えたH2族であるとも主張しない。従って相対H2 locusの非開性やformal smoothnessの否定は結論しない。cubic/noncubicの点集合分割が内在的stackの開閉分割であることも未証明。核心は、Q_fnd内での内在的H2実現部分関手の有限表示と、相対Serre/AZ再構成・降下である。
+この例は**選んだ根**の障害であり、別の根の存在を排除しない。構成したabelian変形が相対的な根・AZ豊富性・AS被覆を備えたH2族であるとも主張しない。従って相対H2 locusの非開性やformal smoothnessの否定は結論しない。実現集合の誘導位相ではcubicからnoncubicへの特殊化があり、両者は別の連結成分ではない。残る核心は、Q_fnd内での内在的H2実現部分関手の有限表示、相対Serre/AZ再構成・降下、および内在的位相との比較である。
 
-群関係・χ・noncubic局所対合の記号検算は `python3 computations/verify_stack_symmetries.py`。v1.1のfoundation・HH計算、ruling二択、相対交換のcoherenceと幾何点groupoid、pointed慣性、gerbe中立化、および選んだ根の変形障害は独立読取り点検を行い、既存入力を前提として実質的な欠落は見つからなかった。記号検算はPASS。現行v1.1の構成確認・厳密計算・94頁LuaLaTeX組版もPASS。追加節の全頁一覧と主要頁の個別表示を確認した。詳細な実施範囲は末尾の検証節に記す。
+群関係・χ・noncubic局所対合の記号検算は `python3 computations/verify_stack_symmetries.py`。foundation・HH計算、ruling二択、相対交換のcoherenceと幾何点groupoid、pointed慣性、gerbe中立化、および選んだ根の変形障害は独立読取り点検を行った。さらにcubic開部分の稠密性、各noncubic点への特殊化とrelative bar分解も独立に点検し、既存入力を前提として実質的な欠落は見つからなかった。現行v1.2の構成確認・97頁LuaLaTeX組版はPASS。変更のない記号計算資産の同日PASSを保持する。詳細な実施範囲は末尾の検証節に記す。
 
 相対条件を試す具体的入力として、[定数bivector方向のOre変形](ore_quadric_deformations.md)を置く。中央元g=xw−zyの正則切断、全次数自由な商、quadratic dualのFrobenius pairingまでの証明稿を記し、相対CY・Serre・H2条件は未証明とする。主原稿の非持上げ例を相対H2の内部へ強める際の候補であり、現行定理の入力には用いない。
 
@@ -63,7 +72,7 @@
 | 滑らかな楕円型Sklyanin対象はH2に属する | k=C、τ無限位数、z+τ∉E[2]。`BSW2010`, `RRZ2014`, `SVdB2013`, `MU2021` | 全切断環・Serre根・exceptionality・AZ・Gabriel–Krull条件の証明。`prop:sklyanin-h2` |
 | z=τの対象はcoh(Q)とexact同値でない | `SVdB2013` §10.5の単純対象Fとχ(F,F)=2 | 既知の構成を適用。`prop:sklyanin-genuinely-noncommutative` |
 
-これらの基礎結果の独立した新規性を確定したものではなく、形式証明器も使用していない。全H2対象の被覆と同値類分類は主定理に統合した。全幾何点groupoidと全pointed慣性はQ_fndへの全充満な実現で捉えた。一方、内在的な相対モジュライの次元・成分、族の降下・代数性は別途未証明であり、表示stackの次元三をそのまま全H2の相対次元とはしない。
+これらの基礎結果の独立した新規性を確定したものではなく、形式証明器も使用していない。全H2対象の被覆と同値類分類は主定理に統合した。全幾何点groupoidと全pointed慣性はQ_fndへの全充満な実現で捉えた。実現集合Yの誘導位相での既約成分・連結成分は各1と証明した。一方、内在的な相対モジュライの位相との一致、族の降下・代数性は別途未証明であり、表示stackの次元三をそのまま全H2の相対次元とはしない。
 
 ## Quadratic envelope の障害
 
@@ -154,7 +163,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-**現行v1.1（2026-11-21）：構成確認・厳密計算・94頁LuaLaTeX組版はPASS。** 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
+**現行v1.2（2026-11-21）：構成確認・97頁LuaLaTeX組版はPASS。** 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
 
 実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。
 
@@ -174,7 +183,9 @@ python3 scripts/check.py build
 
 2026-11-21の現行確認：全分類定理のD1–D3、有限K、同値判定、根選択独立、全被覆・非交差を独立担当が点検した。standard・non-standardの全帰着、同一支持排除、全退化型のPic・大域自己同型・貼合せ、Serre比較の双加群計算、逆構成から全H2公理までの依存も独立に点検した。追加したfoundation表示・HH消滅、内在的ruling対、相対交換のcoherence、幾何点groupoid、noncubic慣性・good moduli、degree gerbe中立化と選んだ根の持上げ障害も独立読取りで点検した。いずれも既存入力を前提とし、外部査読や形式証明ではない。
 
-現行ソース確認は24原稿・164ラベル・136引用出現と主要Markdownを対象としてPASS。全非整型の三次関係・四次テンソル・周期平方・非被約gridの補正引戻し、およびnoncubicの射影群関係・χ・局所対合と正則切断の記号恒等式を再実行してPASS。LuaLaTeXで94頁のPDFとSyncTeXを生成し、最終ログに警告・未定義参照・欠字・はみ出しはない。現行PDFの1–4頁と追加節を含む74–94頁を画像化して一覧で配置を確認し、80頁の相対対合、82頁の全充満性、85頁の根の変形障害、89頁のgood moduli命題を個別表示でも確認した。既存分類本文の証明確認は保持するが、今回全94頁を画像で再校読したという意味ではない。
+現行v1.2のソース確認は24原稿・168ラベル・137引用出現・主要Markdown7点を対象としてPASS。cubic開部分が実現集合に含まれること、直線上の有限個の除外点、正規化relative bar分解の有限性・射影性・底変更、および内在的相対モジュライへの移行条件を独立に読取り点検した。全代数閉拡大体上の像を合併する定義とし、H2公理一般の底変更安定性を暗黙に仮定していない。LuaLaTeXで97頁のPDFとSyncTeXを生成し、最終ログに警告・未定義参照・欠字・はみ出しはない。現行PDFの1–3頁と82–86頁を画像化して一覧で配置を確認し、新しい命題と移行条件を含む83–85頁は個別表示でも確認した。今回全97頁を画像で再校読したという意味ではない。
+
+計算資産は今回変更していない。同日に実行済みの全非整型の三次関係・四次テンソル・周期平方・非被約gridの補正引戻し、およびnoncubicの射影群関係・χ・局所対合と正則切断の記号恒等式はPASSである。この検算は、今回加えた成分・特殊化命題の計算機による証明ではなく、それらは前段の理論的な読取り点検による。
 
 既存の計算・証明の確認範囲には、四周期比較、最初の軌道対象、非cubic例、有限被覆判定、多パラメータskew polynomial分類、Ore切断の正規形・四元数斜体・根の対合・同値判定が含まれる。これらの証明は現行原稿に保持する。外部査読、形式証明、包括的な新規性の確定は行っていない。以前のPDFの表示確認を現在の全頁の確認とは扱わない。
 

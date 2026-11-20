@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.1
+% 日本語 LuaLaTeX。2026-11-21 / v1.2
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,7 +43,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.1（全対象の同値類分類・公表前草稿）}
+\date{2026年11月21日\quad v1.2（全対象の同値類分類・公表前草稿）}
 
 \begin{document}
 \maketitle
@@ -71,7 +71,10 @@ noncubic 領域については次数スカラーを除いた一次元の滑ら�
 これにより滑らかな三次元の Artin スタックを得て、全対象の幾何点群oidを
 自己同値群も含めて全充満に実現する。有限 foundation の
 三次以上の Hochschild コホモロジーの消滅も直接示す。
-全対象の内在的な相対モジュライとの同定は未完成である。
+cubic の非空開部分を含む全実現点集合は、表示スタックからの誘導位相で既約である。
+各 noncubic 点は、他の全幾何ファイバーが cubic となる有限自由 foundation 代数族、
+従って構造対象付き smooth proper dg 圏の族の特殊ファイバーとして実現される。
+相対 heart・平方根・豊富性まで要求する内在的モジュライとの比較は未完成である。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
 \tableofcontents
@@ -450,7 +453,11 @@ pointed exact 同値に関するモジュライの代数性、成分、慣性、
 全幾何点群oidの全充満な実現、Hochschild 障害の消滅、
 次数スカラー gerbe の中立化は得られたが、
 相対実現 locus の有限表示と再構成の証明は残る。
-体上の分類による cubic/noncubic の非交和も、スタックの非交和を意味しない。
+命題~\ref{prop:h2-component-density} と命題~\ref{prop:h2-line-degeneration} により、
+表示からの誘導位相では全実現点集合は既約であり、cubic から全 noncubic 点への
+smooth proper dg 圏の特殊化も得られている。
+相対条件を満たす内在的モジュライへこの結論を移すには、
+位相の一致、またはこれらの族の相対 $\HH$ 認識を示せば十分である。
 \end{problem}
 
 \bibliographystyle{alpha}
