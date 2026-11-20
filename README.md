@@ -2,7 +2,13 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.3、数学原稿v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+
+## Cloud Codexで続ける
+
+[CLOUD_CODEX.md](CLOUD_CODEX.md) に、環境の準備・起動用の依頼文・検証・保存手順を置く。最終目標は研究方針F1–F6を満たす**全H2のpointed exact同値分類**。一補題やcommitで止めず、現行資料を更新しながら次の未解決課題へ進む。
+
+現在の第一着手はT1：`t=S⁻¹[2]` の反Serre切断環による同値判定の還元である。根を忘れた内在的不変量を作る候補で、まだ主原稿の定理ではない。その後、既存分類との標識を追跡した比較、全対象の被覆、具体的データ上の同値判定へ進む。**完全分類は未完成。**
 
 ## 対象
 
@@ -32,6 +38,8 @@ $$
 | ファイル | 役割 |
 | --- | --- |
 | [00_research_plan.md](00_research_plan.md) | 研究一般の原則・保存許可、目標、到達点、次の具体的な着手 |
+| [CLOUD_CODEX.md](CLOUD_CODEX.md) | Cloud環境の準備、起動用の依頼文、検証・保存・再開の手順 |
+| [scripts](scripts) | 依存の準備と、構成・検算・組版の独立した確認 |
 | [papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | 本文のある主論文。日本語LuaLaTeX、著者欄空欄 |
 | [papers/sections](papers/sections) | 二次被覆、可換認識と平方根、楕円型非可換例の証明を収めた分割節 |
 | [papers/references.bib](papers/references.bib) | 確認した一次文献の書誌 |
@@ -44,12 +52,14 @@ $$
 repoルートで実行する。
 
 ```sh
-python3 -m pip install -r requirements.txt
-python3 computations/verify_quadric.py
-latexmk
+bash scripts/bootstrap.sh
+python3 scripts/check.py doctor
+python3 scripts/check.py all
 ```
 
 Python 3.9以上とSymPy、およびLuaTeX-jaを含むTeX Live/MacTeX、latexmk、BibTeXを用いる。出力は `build/nc-quadric-classification.pdf` と同名の `.synctex.gz`。PDF・組版中間物はGitで追跡しない。
+
+`sources`・`math`・`build`を個別に実行できる。検証の終了コードはPASS=0、FAIL=1、SKIP=2で、未導入の依存による未実施を成功と区別する。`doctor`は診断のみ。bootstrapは不足依存を`PARTIAL`と表示して処理を終え、数学的研究を止めない。TeX導入を試すオプションは`bash scripts/bootstrap.sh --with-tex`。従来どおり`python3 computations/verify_quadric.py`と`latexmk`も使える。
 
 VS Codeではrepo全体を開き、LaTeX Workshopの推奨拡張と既定の `latexmk (LuaLaTeX, project settings)` レシピを使う。設定はresearch-hubの雛形に準拠し、`.latexmkrc`がエンジン・作業ディレクトリ・出力先を統一する。VS Code UIの操作確認とコマンドによる組版確認は区別する。
 

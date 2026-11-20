@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.2。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.3（数学原稿v0.2）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -84,6 +84,8 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 - `MUW2026`のambient仮定(*)はAuslander正則性とCohen–Macaulay性。本定義のAS14641に自動的に含まれるとは確認していない。Sklyanin型・ここで使うskew polynomial型では適用できる。
 - `MU2021`のnon-standard例は可換quadricのZhang twistでもある。一つの表示に対するspinorのsyzygy挙動を、そのままO-markedカテゴリーの不変量としない。
 - graded同型、root付き同値、O-marked exact同値、derived同値は異なる。同じderived categoryというだけで本研究の対象を同一視しない。
+- 内在的な反Serre環によるpointed exact同値判定は研究方針T1の証明候補である。選択独立性・AZ再構成・両方向を証明するまで既成の定理として使わない。同値類の判別から自己同値群・相対moduliの同定までは自動的に進めない。
+- GIT商のorbit closure・S-equivalenceとpointed exact同値は同じとは限らない。既存moduliの点をそのままH2の同値類と読む前に、実際の同値作用と許容領域を確認する。
 
 central化の具体的な着手点は`MUW2026` Remark4.4。同文献の規約 `af=fν(a)` と `σ(f)=f` では、Zhang twist後の正規化自己同型は `ρ=σ⁻²ν` となる。この固定ambientでcentral化するには `σ²=ν` のliftを探す。ここでνは正規元のnormalizerであり、前述のNakayama自己同型とは別の記号として扱う。解の存在、本研究のSerre平方根との両立は未証明。Zhang同値はOを保つが一般にはshiftを保たないため、graded Morita同値だけで指定された根の比較を済ませない。
 
@@ -92,9 +94,14 @@ central化の具体的な着手点は`MUW2026` Remark4.4。同文献の規約 `a
 実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。
 
 ```sh
-python3 computations/verify_quadric.py
-latexmk
+bash scripts/bootstrap.sh
+python3 scripts/check.py doctor
+python3 scripts/check.py sources
+python3 scripts/check.py math
+python3 scripts/check.py build
 ```
+
+導入・再開の手順は [CLOUD_CODEX.md](../CLOUD_CODEX.md)。checkerのPASS/FAIL/SKIPはそれぞれ実施成功・失敗・未実施を表し、証明や分類の完了を判定しない。doctorとbootstrapの終了コード0は診断・準備処理の終了である。TeXや文献取得に制約があればその検証を未実施とし、独立な証明課題へ進む。
 
 計算器が検証する範囲：Segreの二次積9×16行列のrank9・核7、三次積16×64行列のrank16、二次核の明示生成元、Ore関係の記号的正規性恒等式、a=1での可換性、a=2と−1における二次関係rank6/7・三次dim20/16・左右の乗法と像の和のrank4。
 
@@ -103,5 +110,7 @@ latexmk
 2026-11-21に、統合した計算器を実行し全項目の成功を確認した。本文の主要証明を内部で独立に点検し、可換認識・楕円例の仮定と引用箇所を一次資料で照合した。外部論文の全証明を再検証したという意味ではない。
 
 repoルートの`latexmk`と、VS Codeレシピ相当の`latexmk -norc -r <repo>/.latexmkrc <repo>/papers/nc-quadric-classification.tex`を実行した。最終出力は18頁のPDFとSyncTeX。全18頁を画像表示し、可換認識・楕円型の核心頁は拡大表示でも確認した。最終LaTeXログに警告・未解決参照・未解決引用・欠字・はみ出しはない。TeXラベルと引用キー、input/root、ローカルMarkdown参照、VS Code設定JSONも確認した。VS Code UIの操作確認、外部査読、形式証明、包括的な新規性確認は未実施。
+
+運用v0.3の検証では、Python 3.12.14／SymPy 1.14.0で`check.py all`のsources・math・buildが全てPASS。buildは最新の既存出力の再利用を含み、運用整備に伴うPDFの再目視は行っていない。bootstrapの通常・`--with-tex`経路は既存依存を再利用した。隔離コピーでPython・TeX不足、壊れた既存venvの保持、未定義TeXラベルを検査し、PARTIAL・SKIP終了2・FAIL終了1と、独立した段階の継続を確認した。pip・aptによる新規導入の成否、Cloud環境の作成・Publish・新規task起動はこの確認に含まれない。運用整備を新しい数学的証明として数えない。
 
 GitHubのgit読取が利用できても書込認証は別に必要である。GitHub connectorによる通常コミットも許可された保存手段として使用できる。research-hubの更新は対象repo保存後に最新READMEを読み、並行更新を保持して行う。
