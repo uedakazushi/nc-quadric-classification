@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v0.1
+% 日本語 LuaLaTeX。2026-11-21 / v0.2
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,7 +43,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v0.1（分類研究の初期原稿）}
+\date{2026年11月21日\quad v0.2（分類研究の初期原稿）}
 
 \begin{document}
 \maketitle
@@ -55,8 +55,11 @@ $\OO$ は Gabriel--Krull 商で rank one torsion-free かつ exceptional とし�
 平方根、ambient 環、商表示は指定構造に含めない。
 通常の quadratic envelope の AS 正則性を要求すると可換二次曲面も除外されることを示し、
 固定切断環の ambient 表示を二次関係空間内の超平面と三次の階数条件へ帰着する。
-さらに、同一の可換 quadric を与える非可換 ambient の族と、
-$\PP^1\times\PP^1$ 上の適合する平方根関手の四つの同値類を記述する。
+さらに、滑らかな射影整曲面として実現される可換対象は
+$\PP^1\times\PP^1$ に限られることを証明し、
+同じ可換 quadric を与える非可換 ambient の族と、適合する平方根関手の四つの同値類を記述する。
+また、複素数体上の滑らかな楕円型 Sklyanin quadric が定義を満たすことを確認し、
+可換二次曲面の Abel 圏と同値でない対象が実際に含まれることを示す。
 一般の非可換対象の完全分類、既存の楕円四つ組の分類との同定、相対モジュライは未解決である。
 本稿の初期結果の組合せに関する新規性は未確定である。
 \end{abstract}
@@ -100,10 +103,20 @@ Smith--Van den Bergh \cite{SVdB2013} は quantum $\PP^3$ 内の
 Mori--Ueyama \cite[Section 5, Appendix]{MU2021} による訂正がある。
 同じ tails 圏でも Zhang twist により standard でない表示が生じるため、
 表示の性質を無条件に $(\cC,\OO)$ の不変量とはしない。
+Mori--Ueyama--Wu \cite[Theorems 4.10, 4.12, 5.5]{MUW2026} は、
+二つの ruling の作用による Zhang twist の standard 性判定と、
+滑らかな中心 Sklyanin quadric の standard 性を証明した。
+同論文の一般的な定義には ambient の Auslander 正則性と
+Cohen--Macaulay 性という追加仮定があるため、型 $(1,4,6,4,1)$ だけから
+その全結果を本稿の全対象へ適用しない。
+また同論文の Introduction は、正規切断を graded Morita 同値で
+常に中心切断へ置き換えられるかを未解決としている。
 Mori--Nyman \cite[Theorem 6.13, arXiv v1]{MN2025} は、中心切断、domain、
 graded isolated singularity、standard という仮定の下で
 cubic AS 正則 $\mathbb Z$-algebra への比較を与える。
 これらの仮定を本稿の全対象から導くことは残る問題である。
+以下の楕円型 Sklyanin 例には smoothness と standard 性が確立しているが、
+この比較で指定された $\OO$ と平方根をどう追跡するかはなお確認を要する。
 
 Okawa--Ueda \cite[Theorem 1.1]{OU2014} の geometric quintuple の GIT 商
 $\PP(2,4,4,6)$ と conifold potential の GIT 商 $\PP(1,2,3,4)$、
@@ -112,7 +125,15 @@ $\PP(2,4,4,6)$ と conifold potential の GIT 商 $\PP(1,2,3,4)$、
 本稿の可換点における四つの平方根と、その次数四の射を同一視する主張も行わない。
 
 本稿で証明するのは、定義の基本的帰結、固定切断環の表示の還元、
-可換例の平方根の分類、および ambient 非一意性の明示例である。
+滑らかな可換対象の認識とその平方根の分類、ambient 非一意性の明示例、
+および既知の滑らかな楕円型 Sklyanin quadric の定義への適合である。
+可換認識には一次生成性と $\dim B_1=4,\dim B_2=9$ だけで十分であり、
+ambient の全 AS 条件を使う必要はない。
+楕円型の例では \cite[arXiv v3, Proposition 7.1]{BSW2010} と
+\cite[arXiv v2, Lemma 1.5]{RRZ2014} により canonical twist の自明性を確認し、
+Gabriel--Krull rank を Hilbert 多項式と楕円曲線上の下降列から検証する。
+さらに \cite[\S 10.5]{SVdB2013} の既知の単純対象の自己 Euler 形式を使い、
+一部の対象は $\coh Q$ と exact 同値でないと判別する。
 一般の非可換 quadric の完全分類を主張するものではなく、
 既存の embedding 定理や tensor 分類を新しい成果とするものでもない。
 
@@ -162,7 +183,7 @@ $s$ を $\cC$ の exact 自己同値とする。$(\OO,s)$ が ample であると
 
 \begin{definition}[型 $(1,4,6,4,1)$]
 \label{def:as14641}
-$A$ は局所有限、連結、次数一生成、二次関係を持ち、左右 noetherian とする。
+$A$ は局所有限、連結、次数一生成、関係イデアルが二次で生成され、左右 noetherian とする。
 $A$ がここでいう型 $(1,4,6,4,1)$ とは、Koszul であり、
 global dimension と Gorenstein parameter がともに $4$ の AS 正則環で、
 自明加群の極小分解が
@@ -267,6 +288,47 @@ $(n+m+1)^2>(n+1)^2$ となり矛盾する。
 区別は生じず、tails は通常の $\qgr$ となる。
 \end{proof}
 
+\begin{lemma}[一次生成と偶数部分列の ampleness]
+\label{lem:ample-square-from-generation}
+$\mathcal C$ を Hom 有限な $k$ 線型 Abel 圏，$E\in\mathcal C$，
+$s$ を完全自己同値とする．$(E,s)$ が Artin--Zhang ample であり，
+右規約の orbit algebra
+$B=\bigoplus_{n\ge0}\operatorname{Hom}(E,s^nE)$ が一次生成であるとする．
+このとき評価射
+\[
+ \operatorname{Hom}(s^{-1}E,E)\otimes_k s^{-1}E\longrightarrow E
+ \tag{E}\label{eq:degree-one-evaluation}
+\]
+は全射であり，$(E,s^2)$ も Artin--Zhang ample である．
+\end{lemma}
+\begin{proof}
+AZ の生成条件を $sE$ に適用してから $s^{-1}$ を作用させると，
+$E$ は $s^{-m_i}E$ の有限直和の商になり，すべての $m_i$ を正に取れる．
+これは生成条件の記述で指数 $0$ を許していても成り立つ．
+一次生成より，$m>0$ に対する任意の射 $s^{-m}E\to E$ は
+\eqref{eq:degree-one-evaluation}を経由する．
+実際，対応する $B_m$ の元を次数一の元の積の線型結合として書き，
+積 $a*b=s^{\deg b}(a)\circ b$ を $s^{-m}$ で移すと，
+最後の射は常に $s^{-1}E\to E$ となる．
+従って上記の全射は評価射を経由し，評価射自身も全射である．
+
+任意の対象を生成する負の $s$-shift の直和のうち，
+奇数指数の項 $s^{-m}E$ は，評価射を $s^{-m}$ で移すことにより
+$s^{-(m+1)}E$ の有限直和で置き換えられる．
+このため偶数指数だけで生成条件を満たす．
+必要なら生成条件を先に $s^N F$ に適用してから $s^{-N}$ を作用させ，
+すべての指数を任意の下限より大きくできる．
+全射に対する Hom の最終的全射性は，元の AZ 条件を偶数部分列へ制限すればよい．
+\end{proof}
+
+\begin{corollary}
+$\HH$ の全対象に対し、$(\OO,s^2)=(\OO,S^{-1}[2])$ も
+Artin--Zhang ample である。
+\end{corollary}
+\begin{proof}
+条件 (Q4) により切断環が一次生成なので、直前の補題を適用できる。
+\end{proof}
+
 \begin{remark}[Gabriel--Krull 次元]
 条件 (Q2) と (A1) により、$\cC/\cC_1$ の全対象は有限長である。
 実際、任意の対象は有限個の $s^{-n}\OO$ の直和の商であり、その像は単純対象の
@@ -290,6 +352,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 
 \input{sections/quadratic_lifts}
 \input{sections/commutative_roots}
+\input{sections/elliptic_examples}
 
 \section{完全分類へ向けた問題}
 \label{sec:open-problems}

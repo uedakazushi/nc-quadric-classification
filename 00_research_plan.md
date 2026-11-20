@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.1。**再開時は本書を最初に読む。GitHub `main` が正本。**
+2026-11-21 / v0.2。**再開時は本書を最初に読む。GitHub `main` が正本。**
 
 ## 1. 恒常的な研究原則と保存許可
 
@@ -21,10 +21,10 @@
 
 **最終目標：強いクラス H2 の全対象を、構造対象を保つ exact 同値で分類する。** 対象は `(C,O)` のみ。`O` はGabriel–Krull商でrank one torsion-freeかつexceptional。`Db(C)`はHom有限でSerre関手`S`を持つ。次を同時に満たすexact自己同値`s`とambientが**存在**することを要求する。
 
-\[
+$$
 s^2\simeq S^{-1}[2],\qquad (O,s)\text{ is Artin--Zhang ample},
 \qquad B(C,O,s)\simeq A/(g).
-\]
+$$
 
 `A`は左右noetherian quadratic Koszul AS-regular、global dimension・Gorenstein parameterともに4、解消型`(1,4,6,4,1)`。`g∈A₂`は左右正則正規。`s`、根同型、`A`、`g`、商表示は追加標識としない。H2の添字は超曲面次数2を表し、可換quadricの反標準次数は8である。
 
@@ -38,13 +38,17 @@ s^2\simeq S^{-1}[2],\qquad (O,s)\text{ is Artin--Zhang ample},
 
 | 結果 | 仮定・範囲 | 主原稿の所在 |
 | --- | --- | --- |
+| 反SerreのAZ豊富性 | 一次生成と元のAZ豊富性から偶数部分列へ | `lem:ample-square-from-generation` |
 | 大域次元2 | heart上exactなSerre平方根が存在 | `prop:gldim-two` |
 | 切断環はdomain、負切断は零、Hilbert関数 `(n+1)^2` | H2公理。domainはrank-one purityから、Hilbertは被覆から | `lem:sections-monic`, `prop:reconstruction` |
 | 通常の二次包絡はambientにならない | 任意の型14641環の正則正規二次商 | `cor:quadric-envelope-fails` |
 | 固定Bの被覆を `Gr(6,K)=P(K*)` に還元 | B二次、quadric Hilbert級数。AS条件の下で三次の左右乗法rank4が正規性と同値 | `prop:ambient-hyperplane` |
 | 固定可換B上に非一意なambient | `a∈k×` のOre族。quotient mapを固定した被覆が異なる | `prop:ore-ambient-family` |
-| 可換Q上のOは線束、適合する平方根は4種類 | heart=`coh(P1×P1)`、代数閉体・標数0、根同型は固定しない | `lem:commutative-marking-line`, `thm:commutative-four-roots` |
+| 滑らかな可換対象はQに限られ、Oは線束 | 滑らかな射影整曲面。一次生成とB1=4,B2=9だけで認識 | `lem:commutative-marking-line`, `thm:commutative-recognition` |
+| 可換Q上の適合する平方根は4種類 | 代数閉体・標数0、根同型は固定しない | `thm:commutative-four-roots` |
 | 平方根+ampleだけでは四生成性が出ない | 因子交換と `O(2,0)` の例では一次切断数3 | `ex:commutative-unbalanced-root` |
+| 滑らかな楕円型Sklyanin quadricはH2に属する | k=C、通常の4次元Sklyanin、τ無限位数、z+τが非2捩れ。全切断環・Gabriel–Krull条件まで確認 | `prop:sklyanin-h2` |
+| 可換Qの圏と同値でないH2対象が存在する | 上記pencilのz=τ。既知の単純対象の自己Euler特性2を使用 | `prop:sklyanin-genuinely-noncommutative` |
 
 原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全H2の完全分類や全成分の記述は未完成である。
 
@@ -52,11 +56,11 @@ s^2\simeq S^{-1}[2],\qquad (O,s)\text{ is Artin--Zhang ample},
 
 ### 優先1：既知のquadric分類との、Oと平方根を保つ比較
 
-VdBのcubic AS-regular Z-algebraのeven partとcanonical quadratic hullに対し、構造対象、次数シフト、Serre関手を同じ規約で書く。まず線形型と滑らかな楕円型を分け、`s²=S⁻¹[2]` の自然同型を構成できる条件を得る。`MU2021`の`M_ν(-2)`公式は中心切断の仮定の下で用い、対象ごとの不変性を関手の自明性へ読み替えない。根を存在させる自己同型のnorm方程式を明示することを最初の達成基準とする。
+VdBのcubic AS-regular Z-algebraのeven partとcanonical quadratic hullに対し、構造対象、次数シフト、Serre関手を同じ規約で書く。可換型と通常の滑らかなSklyanin型で確立した例を基準に、一般の楕円型・退化型へ広げる。最初の具体的課題は、Sklyanin pencilの標識Oと二つのrulingをgeometric quintupleへ移し、選んだshiftに対応する自然同型 `s²=S⁻¹[2]` を比較すること。`MU2021`の`M_ν(-2)`公式は中心切断の仮定の下で用い、対象ごとの不変性を関手の自明性へ読み替えない。次に、非自明Nakayama twistがある場合に根を存在させる自己同型のnorm方程式を得る。
 
 ### 優先2：standard locusの認識と非standard表示
 
-`MN2025` Theorem 6.13の仮定をH2と比較する。H2ではdomain・heartの大域次元2は初期補題から得られるが、中心表示の存在・standard表示・指定Oの対応は別の課題である。spinor/MCM対象を構成し、`Ω(1)`の作用とpointed exact同値を追跡する。非standardな一表示を見ただけで対象を除外しない。
+`MUW2026` Theorem 5.5により滑らかな中心Sklyanin型はstandardであり、`MN2025` Theorem 6.13の仮定を満たす。この既知結果を入口にOと根を追跡する。一般H2ではdomain・heartの大域次元2は初期補題から得られるが、中心表示の存在・standard表示・指定Oの対応は別の課題である。`MUW2026`の一般理論はambientのAuslander正則性・Cohen–Macaulay性(*)を別仮定とするため、H2のAS条件から無断で導かない。(*)を確認できる範囲では同論文Proposition3.5・Lemma3.20の二つのMCM型とrulingを使い、`Ω(1)`の作用を比較する。同論文Introductionでもnormal→centralのgraded Morita還元は不明とされる。可換四根のうち保存型3つはstandard、交換型はnon-standard（同論文Theorem4.12）なので、non-standardな一表示を見ただけでO-marked対象を除外しない。
 
 ### 優先3：二段階の忘却と具体的なパラメータ
 

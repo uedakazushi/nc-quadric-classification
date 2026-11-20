@@ -1,0 +1,230 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v0.2。引用番号の版は本文で指定する。
+\section{楕円型 Sklyanin 二次曲面の例}
+\label{sec:sklyanin-examples}
+
+この節では $k=\mathbb C$ とする。
+$T$ を \cite[\S 7, (7.1), (7.2)]{BSW2010} の通常の四次元 Sklyanin 環とし、
+\cite[\S 10.1]{SVdB2013} の楕円型データ $(E,L,\tau)$ に対応すると仮定する。
+ここで $E$ は滑らかな楕円曲線、$\deg L=4$、$\tau$ は無限位数の平行移動である。
+原点は同文献の規約に合わせ、$L$ による埋込みで四点が同一平面上にあることと
+その和が零であることが同値になるように選ぶ。
+したがって平行移動 $\tau$ は $E$ の点ともみなす。
+この仮定は modified Sklyanin 環や退化した点スキームを含めない。
+
+次数二の中央元からなる二次元空間 $\mathbb C\Omega_1+\mathbb C\Omega_2\subset T_2$ の
+非零元による商は、$z\in E$ を用いて
+\[
+ R_z=T/(g_z),\qquad Q_z=\operatorname{Proj}R_z,
+ \qquad Q_z=Q_{-z-2\tau}
+\]
+と表示される \cite[\S\S 10.2--10.4]{SVdB2013}。
+同文献の \S 2 は右加群で定義される一方、\S 10 の幾何的記述には
+$T/TW$ という左加群の表示が使われる。
+この幾何的表示を本稿の右加群規約に合わせるため、
+\[
+ A=T^{\mathrm{op}},\qquad B_z=R_z^{\mathrm{op}}
+       =A/(g_z),\qquad
+ \cC_z=\qgr B_z,\qquad \OO_z=\pi B_z
+\]
+と置く。以下の反自己同型により、左右いずれの規約による結果も
+構造対象と次数シフトを保って移送できる。
+反対環への移行は以下で用いる左右 AS 正則性、Koszul 性、domain 性、
+中央正則元、Calabi--Yau 性を保つ。
+
+\begin{lemma}[左右規約の比較]
+\label{lem:sklyanin-opposite}
+通常の Sklyanin 座標において、
+$\theta(x_0)=-x_0$、$\theta(x_i)=x_i$（$1\le i\le3$）は
+$T$ の次数付き反自己同型を定め、中央二次 pencil を各点で固定する。
+従って $R_z\simeq R_z^{\mathrm{op}}$ であり、左右の coherent module 圏の間には
+構造対象と次数シフトを保つ $\mathbb C$-線形 exact 同値がある。
+\end{lemma}
+\begin{proof}
+\cite[\S 7]{BSW2010} の関係式を $r_i,s_i$ と書くと、
+積の順序を逆転して上記の符号を代入する写像は $r_i$ を $r_i$、$s_i$ を $-s_i$ に送る。
+その二乗は恒等なので反自己同型である。
+\cite[\S 1.1, pp.~38--39]{LS1993} の中央二次元空間は
+$x_0^2,x_1^2,x_2^2,x_3^2$ の線型結合で張られ、各元は $\theta$ で固定される。
+同文献の仮定 $\tau\notin E[4]$ は無限位数の仮定から従う。
+よって $\theta$ は $g_z$ を固定して商へ降りる。
+左加群 $M$ に右作用 $m\cdot r=\theta(r)m$ を入れることが所要の同値を与える。
+\end{proof}
+
+\begin{proposition}[滑らかな楕円型の対象]
+\label{prop:sklyanin-h2}
+上の仮定の下で、$z+\tau\notin E[2]$ ならば
+$(\cC_z,\OO_z)\in\HH$ である。
+存在条件の証人として $s=(1)$ と次数二の中央正則元による表示 $B_z=A/(g_z)$ を取れる。
+特に切断環は高次数で一致するだけでなく、全非負次数で
+\[
+ B(\cC_z,\OO_z,(1))\cong B_z
+\]
+である。ここで $E[2]$ は $E$ の二捩れ部分群を表す。
+\end{proposition}
+
+\begin{proof}
+以下 $B=B_z$、$\cC=\cC_z$、$\OO=\OO_z$ と略記する。
+\cite[\S\S 10.1--10.2]{SVdB2013} により、$A$ は左右 noetherian な
+四次元二次 AS 正則 Koszul domain で、$H_A(t)=(1-t)^{-4}$ である。
+従って極小分解は型 $(1,4,6,4,1)$ となる。
+$g_z$ は中央正則であり、$B$ も noetherian domain である。
+商は AS Gorenstein 次元 $3$、Gorenstein parameter $2$ を持ち、
+\[
+ H_B(t)=\frac{1-t^2}{(1-t)^4}=\frac{1+t}{(1-t)^3}.
+\]
+この商の AS Gorenstein 性と次数については
+\cite[\S 5, Definition 5.1 直後]{MU2021} も参照できる。
+\cite[Theorem 10.2]{SVdB2013} により、仮定 $z+\tau\notin E[2]$ の下で
+$\cC$ は滑らかであり、$\gldim\cC=2$ である。
+また $B$ は深さ $3$ の Cohen--Macaulay 環であり、両側の条件 $\chi$ を満たす
+\cite[\S\S 2.5--2.8]{SVdB2013}。
+$\chi$ による coherent cohomology の有限性、構造対象の shift による生成、
+および $\gldim\cC=2$ から $D^b(\cC)$ は Hom 有限である。
+
+まず Serre 関手の自己同型による捩れを確認する。
+\cite[arXiv v3, Proposition 7.1]{BSW2010} は $T$ が非捩れの
+Calabi--Yau 環であることを示す。従って $A$ の Nakayama 自己同型は恒等である。
+\cite[arXiv v2, Lemma 1.5]{RRZ2014} を中央正則元 $g_z$ に適用できる。
+同補題の $\mu_A$-normal 条件は $\mu_A(g_z)=g_z$ により満たされ、
+正規化自己同型も恒等なので、$\mu_B=\mathrm{id}$ となる。
+従って $B$ の canonical bimodule は両側加群として $B(-2)$ である。
+\cite[Example 3.6(2) および \S 5 の Proposition 5.2 直後]{MU2021} により
+\[
+ \mathbb S_{\cC}\simeq(-2)[2],\qquad
+ s^2=(2)\simeq\mathbb S_{\cC}^{-1}[2].
+\]
+ここでは hypersurface 環 $B$ 自体が有限 global dimension を持つとは主張していない。
+
+$\mathfrak m=B_{\ge1}$ とする。
+\cite[(2.2)]{SVdB2013} と $H^0_{\mathfrak m}(B)=H^1_{\mathfrak m}(B)=0$ により
+\[
+ B\xrightarrow{\sim}
+ \bigoplus_{n\in\mathbb Z}\Hom_{\cC}(\OO,\OO(n))
+\]
+である。この写像は本稿の切断環の積と整合する。
+従って全次数での飽和性が成り立ち、$\End(\OO)=\mathbb C$ を得る。
+同文献 (2.3) と深さの条件から
+\[
+ \Ext^1_{\cC}(\OO,\OO)=H^2_{\mathfrak m}(B)_0=0.
+\]
+さらに Serre 双対性と飽和性により
+\[
+ \Ext^2_{\cC}(\OO,\OO)
+ \cong\Hom_{\cC}(\OO,\OO(-2))^*
+ \cong B_{-2}^*=0.
+\]
+次数 $i>2$ の Ext も消えるので $\OO$ は exceptional である。
+有限生成加群の十分高い切断に生成元を取ると、任意の対象は有限個の
+$\OO(-n)$、$n\ge0$、の直和の商になる。
+また $\chi$ と (2.3) は任意の $K\in\cC$ に対し
+$\Ext^1(\OO(-n),K)=0$ を $n\gg0$ で与える。
+全射の核にこれを適用すれば Artin--Zhang ample の第二条件も従う。
+
+最後に定義~\ref{def:gk-rank} の Gabriel--Krull rank 条件を確認する。
+これは $B$ の Gelfand--Kirillov dimension や商体上の rank の計算だけでは済まない。
+有限生成次数付き $B$-加群 $M$ は有限生成 $A$-加群でもあり、
+$A$ 上の有限次数付き自由分解を持つので、Hilbert 関数は最終的に多項式 $P_M(n)$ となる。
+$M$ は有限個の $B$ の shift の商なので $\deg P_M\le2$ である。
+$P_M$ は $\pi M$ のみで決まり、短完全列に対して加法的である。
+零多項式となることと $\pi M=0$ は同値である。
+
+$\mathcal D_0\subset\cC$ を Hilbert 多項式が定数である対象、
+$\mathcal D_1\subset\cC$ を次数が高々 $1$ である対象の部分圏とする
+（いずれも零対象を含める）。両者は Serre 部分圏である。
+非零な定数 Hilbert 多項式の値は正整数なので、
+$\mathcal D_0$ の対象の任意の真の部分商列の長さはその定数で抑えられる。
+従って $\mathcal D_0\subset\cC_0$ である。
+同様に、次数 $1$ の Hilbert 多項式の一次係数は正整数であり、
+$\cC/\mathcal D_0$ において $\mathcal D_1$ の対象の長さを抑える。
+exact な商関手 $\cC/\mathcal D_0\to\cC/\cC_0$ は有限長性を保つから
+\[
+ \mathcal D_1\subset\cC_1.
+ \tag{\dagger}\label{eq:sklyanin-polynomial-filtration}
+\]
+ここではこれらの包含を等号とする必要はない。
+
+$g_z$ と線形独立な次数二の中央元 $h$ を同じ pencil から取る。
+$B$ におけるその像も $h$ と書く。
+$h$ は非零で正則であり、$B/(h)$ は楕円曲線 $E$ の twisted homogeneous
+coordinate ring の反対環である \cite[\S 10.2]{SVdB2013}。
+従って $\qgr B/(h)\simeq\coh E$ は $\cC$ に exact かつ fully faithful に埋め込まれ、
+$\pi(B/(h))$ とその次数 shift は $E$ 上の可逆層に対応する。
+可逆層は、点 $p\in E$ における零点の位数を増やす部分可逆層の下降列を持つので、
+この埋込み後も有限長ではない。
+そこで $\OO$ の下降列
+\[
+ \OO\supset\pi(hB)\supset\pi(h^2B)\supset\cdots
+\]
+を考える。隣接する商は $\pi(B/(h))(-2j)$ なので $\cC_0$ に属さない。
+この列は $\cC/\cC_0$ でも真の下降列であり、その中の $\OO$ の像は有限長でない。
+従って $\OO\notin\cC_1$ である。
+
+$0\ne N\subset\OO$ を任意の部分対象とする。
+Serre 商における部分対象の持ち上げにより $N=\pi I$ と書ける。
+ここで $I\subset B$ は非零な次数付き右イデアルである。
+次数 $d$ の非零元 $f\in I$ を取ると、domain 性により
+$B(-d)\xrightarrow{f\cdot}I$ は単射なので、$\OO(-d)\subset N$ である。
+shift は $\cC_1$ を保つから $N\notin\cC_1$ となる。
+一方、$B/I$ は $B/fB$ の商であり、
+\[
+ H_{B/fB}(t)=(1-t^d)H_B(t)
+\]
+の Hilbert 多項式は次数高々 $1$ である。
+従って \eqref{eq:sklyanin-polynomial-filtration} により
+$\OO/N\in\cC_1$ となる。
+$q:\cC\to\cC/\cC_1$ とすると、$q\OO$ は非零であり、
+その部分対象は $\OO$ の部分対象から持ち上がるので、以上から $q\OO$ は単純である。
+また $\cC_1$ に属する非零部分対象を $\OO$ は持たないので
+$\Hom(T,\OO)=0$（$T\in\cC_1$）である。
+これで定義~\ref{def:gk-rank} と $\HH$ の全条件が従う。
+\end{proof}
+
+\begin{remark}[standard 性と既存分類への入口]
+\label{rem:sklyanin-standard}
+上の滑らかな Sklyanin 商は \cite[Theorem 5.5]{MUW2026} により standard である。
+反対環の規約は補題~\ref{lem:sklyanin-opposite} で処理できる。
+従って \cite[Theorem 6.13, arXiv v1]{MN2025} の cubic AS 正則
+$\mathbb Z$-algebra への比較の仮定がこの範囲では満たされる。
+本稿で未確認なのは、この比較のもとで本稿の指定 $\OO$ と平方根を
+どの対象・自己同値へ送るか、およびその標識の忘却である。
+Sklyanin 型における standard 性自体を新たな未解決課題としない。
+\end{remark}
+
+\begin{proposition}[可換二次曲面と同値でない対象]
+\label{prop:sklyanin-genuinely-noncommutative}
+上と同じ $T$ に対して $z=\tau$ と取ると、
+$(\cC_\tau,\OO_\tau)\in\HH$ であり、
+$\cC_\tau$ は $\coh(\PP^1\times\PP^1)$ と $\mathbb C$-線形 exact 同値でない。
+\end{proposition}
+
+\begin{proof}
+$\tau$ が無限位数なので $2\tau\notin E[2]$ であり、
+命題~\ref{prop:sklyanin-h2} が適用できる。
+注意~\ref{rem:sklyanin-standard} の standard 性により、以下では
+一般の中心二次商についての誤った standard 性の主張を用いない。
+\cite[\S 10.5, p.~854]{SVdB2013} では、
+$\omega\in E[2]$、$i\in\mathbb N$ に対して、$Q_{\omega+i\tau}$ 上の
+単純対象 $F_{\omega+i\tau}$ を構成し、
+同文献 Proposition 9.3 の Euler 形式を用いて
+$\chi(F_{\omega+i\tau},F_{\omega+i\tau})=2$ を計算している。
+同文献の (10.1) でこの単純対象は coherent な line object の商として与えられるので、
+$\coh Q_{\omega+i\tau}$ に属する。
+ここで $\omega=0$、$i=1$ とすれば $\cC_\tau$ に単純対象 $F$ が存在して
+\[
+ \chi(F,F):=\sum_{j=0}^2(-1)^j\dim_{\mathbb C}\Ext^j(F,F)=2
+\]
+となる。
+一方、$\coh(\PP^1\times\PP^1)$ の単純対象は閉点の skyscraper 層 $k(p)$ であり、
+滑らかな二次元局所環の Koszul 分解からその自己 Ext の次元は $(1,2,1)$ である。
+従って $\chi(k(p),k(p))=0$ となる。
+exact 同値は単純性と全 Ext を保つので、両圏は同値でない。
+\end{proof}
+
+この例は可換二次曲面の同じ Abel 圏に異なる平方根や twisted coordinate ring を
+選ぶことでは説明されない。
+一方、この命題は全ての滑らかな Sklyanin pencil の成員について非同値性を主張するものでも、
+楕円型の全対象を分類するものでもない。
+引用した Sklyanin 環・pencil・単純対象の構成は既知の結果であり、
+本節はそれらが本稿の標識付き定義、とくに全次数の切断環と
+Gabriel--Krull rank 条件を満たすことを確認したものである。

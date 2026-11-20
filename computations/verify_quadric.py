@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Exact finite checks for the nc-quadric-classification starting examples.
 
-Run with Python 3 and SymPy (checked with SymPy 1.14.0):
-    python verify_quadric_draft.py
+Run from the repository root with Python 3.9+ and SymPy (checked with SymPy 1.14.0):
+    python3 computations/verify_quadric.py
 
 No floating-point arithmetic or external inputs are used. The symbolic
 reductions below prove the displayed identities because every rewrite is a

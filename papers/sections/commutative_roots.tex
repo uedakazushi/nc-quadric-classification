@@ -1,12 +1,152 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v0.1
-\section{可換二次曲面と平方根の非一意性}
+% 2026-11-21 / v0.2
+\section{可換部分の認識と平方根の非一意性}
 \label{sec:commutative-roots}
 
-この節では $k$ を標数 $0$ の代数閉体，
-$Q=\mathbb P^1_k\times\mathbb P^1_k$ とする．
-$\mathcal O_Q(a,b)$ を通常の線束とし，
-$S_Q=(-)\otimes\mathcal O_Q(-2,-2)[2]$ と書く．
+この節では $k$ を標数 $0$ の代数閉体とする．
+最初に滑らかな射影整曲面として実現される可換対象を認識し，
+次に $Q=\mathbb P^1_k\times\mathbb P^1_k$ 上の平方根を分類する．
+coherent sheaf 圏では Gabriel--Krull の $\mathcal C_i$ は
+台の次元が $i$ 以下の層に一致する。従って本稿の内在的 rank-one torsion-free 条件は、
+通常の generic rank-one torsion-free 条件と一致する。
+用いる既知の入力は coherent sheaf 圏の自己同値の幾何学的記述，
+Serre 双対性，Riemann--Roch，Kodaira 消滅，Hodge 指数定理，
+Nakai--Moishezon 判定である．以下の結果の独立した新規性は主張しない．
+
+\begin{lemma}[滑らかな可換曲面の標識対象]
+\label{lem:commutative-marking-line}
+$X$ を滑らかな射影整曲面とし，$E$ を $X$ 上の rank-one torsion-free
+exceptional coherent sheaf とする．
+このとき $E$ は線束であり，$H^1(X,\mathcal O_X)=H^2(X,\mathcal O_X)=0$ である．
+従って $(\operatorname{coh}X,E)$ は
+$(\operatorname{coh}X,\mathcal O_X)$ と pointed exact 同値である．
+\end{lemma}
+\begin{proof}
+$L_0=E^{\vee\vee}$ は線束であり，$T=L_0/E$ は有限長である．
+$n=\operatorname{length}T$ と置く．
+正規性と rank-one torsion-free 性により
+$\mathcal{E}nd(E)=\mathcal O_X$ である．
+実際，自己準同型を関数体の元とみなすと，余次元 $1$ で正則であり，
+$X$ の正規性から全体で正則である．
+従って Serre 双対性は
+\[
+ \operatorname{Ext}^2(E,E)
+ \cong\operatorname{Hom}(E,E\otimes\omega_X)^*
+ \cong H^0(X,\omega_X)^*
+\]
+を与える．exceptionality より $p_g=h^0(X,\omega_X)=0$ である．
+$E$ は完全複体として扱え，Riemann--Roch により
+\[
+ \chi(E,E)
+ =\int_X\operatorname{ch}(E^{\vee}_{\mathrm{der}})
+             \operatorname{ch}(E)\operatorname{td}(X)
+ =\chi(\mathcal O_X)-2n=1-h^1(X,\mathcal O_X)-2n.
+\]
+ここで $D=c_1(L_0)$ とすれば
+$\operatorname{ch}(E)=e^D(1-n[\mathrm{pt}])$，
+$\operatorname{ch}(E^{\vee}_{\mathrm{der}})=e^{-D}(1-n[\mathrm{pt}])$ である．
+exceptionality は $\chi(E,E)=1$ も与えるので，
+$h^1(X,\mathcal O_X)+2n=0$ となる．
+従って $n=0$，$E=L_0$，$h^1(\mathcal O_X)=h^2(\mathcal O_X)=0$ である．
+$(-)\otimes E^{-1}$ が求める pointed exact 同値を与える．
+\end{proof}
+
+\begin{theorem}[滑らかな可換対象の認識]
+\label{thm:commutative-recognition}
+$X$ を滑らかな射影整曲面，$E$ を rank-one torsion-free exceptional
+coherent sheaf とする．
+$\operatorname{coh}X$ の $k$ 線型完全自己同値 $s$ で
+\[
+ s^2\cong(-)\otimes\omega_X^{-1}
+\]
+を満たし，$(E,s)$ が Artin--Zhang ample になるものが存在するとする．
+さらに $B=\bigoplus_{n\ge0}\operatorname{Hom}(E,s^nE)$ は一次生成で
+\[
+ \dim_k B_1=4,\qquad \dim_k B_2=9
+\]
+を満たすとする．このとき $X\cong\mathbb P^1\times\mathbb P^1$ であり，
+$(\operatorname{coh}X,E)$ は
+$(\operatorname{coh}(\mathbb P^1\times\mathbb P^1),\mathcal O)$ と pointed exact 同値である．
+特に $(14641)$ 型 quadratic AS-regular 環の次数二の正則元による商という条件を持つ
+本論文の対象のうち，滑らかな射影整曲面の coherent sheaf 圏として実現されるものは，
+pointed exact 同値を除いて一つである．
+\end{theorem}
+\begin{proof}
+補題\ref{lem:commutative-marking-line}により $E$ は線束であり，
+$\chi(\mathcal O_X)=1$ である．
+$(-)\otimes E^{-1}$ による共役で $E=\mathcal O_X$ としてよい．
+この共役は $s^2=(-)\otimes\omega_X^{-1}$ という条件を保つ．
+$M=\omega_X^{-1}$ と置く．
+
+coherent sheaf 圏の完全自己同値は
+$\varphi^*(-)\otimes L$ の形である
+\cite[Tag~0FZR]{Stacks0FZR}．
+この結果は separated かつ reduced な有限型スキームの $k$ 線型 coherent 圏同値へ適用でき，
+ここではそのすべての仮定を満たす．
+従って $s=\varphi^*(-)\otimes L$ と書け，平方根条件から
+\[
+ \varphi^2=\mathrm{id},\qquad L\otimes\varphi^*L\cong M
+ \tag{N}\label{eq:commutative-general-norm}
+\]
+を得る．
+補題\ref{lem:ample-square-from-generation}の評価全射に $s$ を作用させると，
+$L=s\mathcal O_X$ は四つの大域切断で生成される．
+
+同補題により $(\mathcal O_X,(-)\otimes M)$ は AZ ample なので，
+$M$ は通常の意味で ample である．
+この最後の含意を直接確認しておく．
+very ample な線束 $H$ を固定すると，AZ の生成条件から
+$\bigoplus_i M^{-n_i}\twoheadrightarrow H^{-1}$，$n_i>0$ を得る．
+対応する切断 $t_i\in H^0(H^{-1}\otimes M^{n_i})$ は共通零点を持たない．
+$N$ を $n_i$ の公倍数，$r_i=N/n_i$ とすると，
+$t_i^{r_i}$ と $H^{r_i-1}$ の生成切断との積は
+$H^{-1}\otimes M^N$ を大域生成する．
+従って $M^N$ は very ample な $H$ と大域生成線束の tensor 積として very ample であり，
+$M$ は ample である．
+
+Kodaira 消滅 \cite[Theorem~1.2 and the subsequent characteristic-zero extension]{EsnaultViehweg1992}
+を $M=\omega_X\otimes M^2$ に適用すると $H^i(M)=0$，$i>0$ である．
+$h^0(M)=\dim B_2=9$ と Riemann--Roch より
+\[
+ 9=\chi(M)=1+M^2,\qquad M^2=8.
+\]
+以下，線束とその第一 Chern class を同じ記号で書く．
+$\varphi$ は標準束を保つので，\eqref{eq:commutative-general-norm}から
+\[
+ 8=M^2=M\cdot L+M\cdot\varphi^*L=2M\cdot L,
+ \qquad M\cdot L=4.
+\]
+$L$ は大域生成されるため nef であり，$L\otimes M$ は ample である．
+Kodaira 消滅を $L=\omega_X\otimes(L\otimes M)$ に適用すると
+$H^i(L)=0$，$i>0$ となる．
+従って $h^0(L)=\dim B_1=4$ と Riemann--Roch より
+\[
+ 4=\chi(L)=1+\frac{L^2+L\cdot M}{2},\qquad L^2=2.
+\]
+$D=2L-M$ は $D\cdot M=0$，$D^2=0$ を満たす．
+$M$ は ample なので Hodge 指数定理から $D\equiv0$ である．
+すなわち $L\equiv M/2$ であり，
+$L^2=2>0$ とすべての整曲線 $C$ に対する
+$L\cdot C=(M\cdot C)/2>0$ から，Nakai--Moishezon 判定により $L$ は ample である．
+
+完全線型系 $|L|$ は射 $f\colon X\to\mathbb P^3$ を与える．
+$L$ の ampleness から正の次元の fiber は存在せず，$f$ は像への有限射である．
+像 $Y$ は整な非退化曲面であり，次数公式から
+\[
+ \deg(f)\deg(Y)=L^2=2.
+\]
+非退化性より $Y$ は平面でないので $\deg(Y)\ge2$，
+従って $Y$ は整二次曲面で $\deg(f)=1$ である．
+標数が $2$ でない体上の整二次曲面は rank が少なくとも $3$ であり，
+特異集合は高々一点である．超曲面の $S_2$ 性と余次元 $1$ での正則性により $Y$ は正規である．
+有限双有理射 $f$ は従って同型である．
+$X$ の滑らかさから $Y$ も滑らかであり，代数閉体上の滑らかな二次曲面なので
+$X\cong\mathbb P^1\times\mathbb P^1$ を得る．
+\end{proof}
+
+以後 $Q=\mathbb P^1_k\times\mathbb P^1_k$ とし，
+$\mathcal O_Q(a,b)$ を通常の線束，
+$S_Q=(-)\otimes\mathcal O_Q(-2,-2)[2]$ とする．
 ここで分類する平方根は，$k$ 線型完全自己同値 $s$ であって
 $s^2\cong S_Q^{-1}[2]$ を満たすものの同型類である．
 この同型そのものは指定せず，Serre 双対性の trace と両立する
@@ -14,29 +154,6 @@ $s^2\cong S_Q^{-1}[2]$ を満たすものの同型類である．
 根の同値は，$F(\mathcal O_Q)\cong\mathcal O_Q$ を満たす
 完全自己同値 $F$ と $Fs\cong s'F$ の存在を意味する．
 この節は族や慣性の分類を主張しない．
-
-\begin{lemma}[可換標識対象]
-\label{lem:commutative-marking-line}
-$Q$ 上の rank-one torsion-free exceptional coherent sheaf $E$ は線束である．
-したがって $(\operatorname{coh}Q,E)$ は
-$(\operatorname{coh}Q,\mathcal O_Q)$ と pointed exact 同値である．
-\end{lemma}
-\begin{proof}
-$Q$ は滑らかな曲面なので $L=E^{\vee\vee}$ は線束であり，
-$T=L/E$ は有限長である．$n=\operatorname{length}T$ と置く．
-$E$ は完全複体として扱え，Riemann--Roch により
-\[
- \chi(E,E)
- =\int_Q\operatorname{ch}(E^{\vee}_{\mathrm{der}})
-             \operatorname{ch}(E)\operatorname{td}(Q)
- =\chi(\mathcal O_Q)-2n=1-2n.
-\]
-実際，$D=c_1(L)$ とすれば
-$\operatorname{ch}(E)=e^D(1-n[\mathrm{pt}])$ であり，
-導来双対の Chern character は $e^{-D}(1-n[\mathrm{pt}])$ である．
-exceptionality から $\chi(E,E)=1$ なので $n=0$，従って $E=L$ である．
-$(-)\otimes L^{-1}$ が求める pointed exact 同値を与える．
-\end{proof}
 
 \begin{theorem}[四つの平方根]
 \label{thm:commutative-four-roots}
@@ -74,7 +191,6 @@ Abel 圏の完全自己同値から得られる導来自己同値は標準 heart
 \[
  \varphi^2=\mathrm{id},\qquad
  L\otimes\varphi^*L\cong\mathcal O_Q(2,2).
- \label{eq:commutative-root-norm}
 \]
 $\varphi$ が二つの ruling をそれぞれ保つ場合，Picard 群への作用は恒等なので
 $L=\mathcal O_Q(1,1)$ である．
@@ -179,13 +295,27 @@ $a*b=\sigma^{\deg b}(a)b$ になる．
 $x_{10},x_{11}$ の符号変更，$x_{01},x_{10}$ の符号変更，
 $x_{01}$ と $x_{10}$ の交換として取れる．
 $q$ の固有値 $c$ は順に $1,-1,1,1$ である．
-従って一因子対合のこの cover では $q$ は各一次元と反可換になり，中心元ではない．
+従って一因子対合のこの cover では $q$ は各次数一の元と反可換になり，中心元ではない．
 これは正則正規な二次斉次元を許す定義を点検する具体例になる．
 ここで $q$ は $P_2=(A_\sigma)_2$ の同一視で指定した元であり，
 $\star$ 積で表した式の係数は通常の可換積の表示と異なり得る．
 \end{remark}
 
-\begin{example}[平方根と ampleness だけでは一次元数は決まらない]
+\begin{remark}[既知の standard 性判定との比較]
+\label{rem:commutative-standard}
+滑らかな既約 quadric における standard 性は、正規化された二つの
+indecomposable MCM 加群 $X,Y$ を syzygy と次数シフト $\Omega(1)$ が交換する性質である。
+\cite[Theorem 4.12]{MUW2026} により、上の四平方根の切断環は
+最初の三型が standard、因子交換型が non-standard となる。
+実際、同文献の積は $a\cdot b=a\sigma^{\deg a}(b)$ であり、
+本稿の右 twist から同文献の $\sigma^{-1}$-twist への同型は
+次数 $n$ で $a\mapsto\sigma^{-n}(a)$ と与えられる。
+ここでは $\sigma^{-1}=\sigma$ なので、ruling の保存と交換の判定がそのまま適用できる。
+この分類は既知の定理の適用であり、standard 性が $(\cC,\OO)$ だけでは決まらない
+ことを四平方根の例の中で具体化している。
+\end{remark}
+
+\begin{example}[平方根と ampleness だけでは次数一の次元は決まらない]
 \label{ex:commutative-unbalanced-root}
 二因子の交換 $\epsilon$ を用いて
 \[
@@ -207,9 +337,8 @@ $t^{-(2m+1)}\mathcal O_Q\cong\mathcal O_Q(-2m,-2m-2)$ である．
 \end{example}
 
 \begin{remark}[対象と根の区別]
-補題\ref{lem:commutative-marking-line}により，heart を
-$\operatorname{coh}(\mathbb P^1\times\mathbb P^1)$ に固定した可換対象には，
-pointed exact 同値を除いて一つの rank-one torsion-free exceptional 標識がある．
+定理\ref{thm:commutative-recognition}により，滑らかな射影整曲面として
+実現される本論文の可換対象は，pointed exact 同値を除いて一つである．
 一方，定理\ref{thm:commutative-four-roots}はその同じ対象上で許容平方根が四つの同値類を持つことを示す．
 この四種類を四つの $\mathcal O$-marked 曲面として数えてはならない．
 この節の結果は既知の自己同値記述と明示的計算による基礎例であり，
