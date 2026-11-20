@@ -64,7 +64,7 @@ $$
 | 固定Sklyanin pencilの有限比較 | 中心一次近傍の単射性の開領域。厳密有理数一点で非空性を検証 | prop:pencil-finite-candidates、prop:pencil-tangent-generic |
 
 | 重み付き四周期環からの逆向き還元 | 仮定した単純分解から偶数環のKoszul性を証明。root・domain・非有限長の切断・有限被覆判定に還元 | prop:weighted-even-koszul、prop:weighted-inverse-reduction |
-| 四変数符号型の対角切断 | 退化を含めて判定し、可換と真に非cubicの二標識類へ分類 | thm:sign-quadric-diagonal |
+| 四変数多パラメータskew polynomialの正規二次切断 | 退化込み。非cubic一点と、パラメータ r² を逆元で割ったcubic族 | thm:multiparameter-quadric-classification |
 
 
 原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全H2の完全分類や全成分の記述は未完成である。
@@ -125,7 +125,7 @@ VdBのcubic AS-regular Z-algebraのeven partとcanonical quadratic hullに対し
 
 ### T3：cubicで覆えない四周期表示の許容条件
 
-二型とも階数3の具体例はあらゆる標識付きcubic表示を排除する。距離二の階数2テンソル関係と距離三の二関係を明示し、四周期単純分解が完全なら偶数環のKoszul性が従うことを証明した。次の実行単位は、各頂点jの四周期分解に現れる行列の積が零となる方程式を距離二・三の関係で書き、完全性とnoetherian性を保証する条件を得ることである。rank3具体例の非退化中央切断を基準に、変形した関係のdomain性と非有限長の斉次切断の存在を調べる。
+二型とも階数3の具体例はあらゆる標識付きcubic表示を排除する。距離二の階数2テンソル関係と距離三の二関係を明示し、四周期単純分解が完全なら偶数環のKoszul性が従うことを証明した。次の実行単位は、各頂点jの四周期分解に現れる行列の積が零となる方程式を距離二・三の関係で書き、完全性とnoetherian性を保証する条件を得ることである。多パラメータskew polynomial環は全ての正規二次元を分類済み。次の具体的な問題は、この領域で使った支持ブロックと正規化自己同型を、交差項付きのOre表示へ延ばせるかである。まず階数3の行列式 M²=gC を、二生成の可換基底を持つOre拡大に代入する。
 
 ### T4：同値判定の開条件の補集合
 

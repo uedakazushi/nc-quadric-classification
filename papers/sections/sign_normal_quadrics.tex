@@ -1,0 +1,129 @@
+% !TEX root = ../nc-quadric-classification.tex
+\subsection{符号型 skew polynomial 環の全正規切断}
+\label{subsec:sign-normal-quadrics}
+
+\begin{theorem}
+\label{thm:sign-quadric-normal}
+四変数符号型 skew polynomial 環 $A_\epsilon$ の非零正規二次元 $g$ を考える。
+$B=A_\epsilon/(g)$ と置く。$(\qgr B,\pi B)$ が $\HH$ に属する場合の
+pointed exact 同値類は、次の三つである。
+\begin{enumerate}
+\item 滑らかな可換二次曲面。
+\item 命題~\ref{prop:nonstandard-rank-three-example} の非 cubic 型。
+\item $g=x_1x_2+x_3x_4$、
+$(\epsilon_{12},\epsilon_{34})=(-1,1)$、
+$(\epsilon_{13},\epsilon_{14},\epsilon_{23},\epsilon_{24})=(1,-1,1,-1)$ の切断。
+この類は cubic 型であり、反 Serre 環は非可換である。
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+まず中央切断は定理~\ref{thm:sign-quadric-diagonal} に帰着する。
+実際、$\epsilon_{ii}=1$ として符号行列を対称に書くと、
+二次単項式 $x_i x_j$ ($i\ne j$) は第 $i,j$ 行が一致する場合に限り中央である。
+各変数との交換は標準単項式ごとに検査できる。
+同じ行を持つ変数は相互に可換であり、他の変数との交換符号も一様である。
+従って同じ行の変数内での任意の線形基底変更は自己同型を与える。
+中央二次形式はこれらの可換ブロック上の二次形式の和なので、
+ブロックごとに対角化すればよい。
+
+次に非中央の正規 $g$ を扱う。$x_i g=g\nu(x_i)$ と書く。
+符号型の標準単項式の任意の辞書式順序で最高次項を比較すると、
+積の最高指数は二因子の最高指数の和である。
+従って $\nu(x_i)$ の最高単項式はどの順序でも $x_i$ であり、
+$\nu(x_i)=\chi_i x_i$ となる。ここで $\chi_i=\pm1$ である。
+$g$ の各単項式は同じ交換指標 $\chi=(\chi_i)_i$ を持つ。
+$\chi\ne1$ なので平方は現れず、$x_i x_j$ が現れる条件は
+第 $i,j$ 行の成分ごとの積が $\chi$ となることである。
+同じ行のブロックとそれに $\chi$ を掛けたブロックは相異なる。
+従って $g$ は互いに素なブロック対に属する双線形形式の和である。
+それぞれを左右の基底変更で階数標準形にすると、四変数では
+一つの積または二つの互いに素な積の和となる。
+一つの積の商は domain でないので、
+$g=x_1x_2+x_3x_4$ と取る。
+
+$p=\epsilon_{12}$、$q=\epsilon_{34}$、$r=\epsilon_{13}$ とすると
+両単項式の指標が一致するため
+\[
+ (\epsilon_{13},\epsilon_{14},\epsilon_{23},\epsilon_{24})
+       =(r,pr,qr,pqr),\qquad
+ \chi=(p,p,q,q).
+\]
+$p=q$ なら全ての三つ組の符号積は正である。
+全ての交換符号を正にする対角符号 twist は、
+両方の積を同じ符号 $p$ 倍するので $g$ の直線を保つ。
+その可換商は滑らかな Segre 二次曲面を与える。
+$p\ne q$ なら二組の交換と、必要なら第二組内の交換で
+$(p,q,r)=(-1,1,1)$ を選べる。項の係数は変数のスカラー変更で戻せる。
+これが (3) に掲げた切断である。
+
+以下 (3) の $B=A_\epsilon/(g)$ を確認する。
+$x_1$ は正規であり、$A_\epsilon/(x_1)$ は domain で $g$ の像も非零である。
+$x_1 b=ga$ とすれば $a\in (x_1)$ となり、
+$A_\epsilon$ 上で $x_1$ を消去して $b\in(g)$ を得る。
+従って $x_1$ は $B$ 上で正則である。
+$x_1$ を可逆にすると $x_2=-x_1^{-1}x_3x_4$ を代入でき、
+残る三変数の skew Laurent 拡大に埋まるので $B$ は domain である。
+
+二つの線形行列
+\[
+ \Phi=\begin{pmatrix}x_1&x_3\\x_4&x_2\end{pmatrix},\qquad
+ \Psi=\begin{pmatrix}x_2&x_3\\x_4&-x_1\end{pmatrix}
+\]
+は $\Phi\Psi=gI$、$\Psi\nu(\Phi)=gI$ を満たす。
+従ってどちらから始めても reduced な正規行列分解を得る。
+可換多項式と見なした二つの行列式は
+$x_1x_2-x_3x_4$ と $-x_1x_2-x_3x_4$ であり、比例しない。
+従って定数の行・列変換で互いに移らず、
+極小表示が異なる二つの二元生成 MCM 型を得る。
+$g$ は一次元の積に分解しないので
+\cite[Lemma 5.11]{MU2022} により、
+対応する二次元の $C(B)$-加群は単純である。
+ここで使う階数と次元の対応は同補題の証明および
+同論文 Lemma 4.13 による。
+$\dim C(B)=8$ なので半単純商の二つの四次元成分で全次元を使い、
+$C(B)=M_2(k)\times M_2(k)$ となる。
+従って $\qgr B$ は滑らかである。
+両行列の成分空間は四次元である。
+
+この符号行列では各行の符号積が正なので
+$A_\epsilon$ の Nakayama 自己同型は恒等である
+\cite[Example 5.5]{RRZ2014}。
+$B$ の canonical twist は $\nu=\nu^{-1}$ である
+\cite[Lemma 1.5]{RRZ2014}。
+canonical bimodule と Serre 関手との対応には \cite[Example 3.6(2)]{MU2021} を用いる。
+$\sigma$ を各変数に順に $\mathrm i,-\mathrm i,1,1$ を掛ける対角自己同型とすると、
+$\sigma(g)=g$、$\sigma^2=\nu$ である。
+従って $B^\sigma$ のシフトは旧圏では $(1)(-)_{\sigma}$ であり、
+その平方が反 Serre となる。$A_\epsilon^\sigma$ は型 $(1,4,6,4,1)$ を保ち、
+$B^\sigma$ はその正則正規二次商である。
+飽和性、例外性、豊富性は命題~\ref{prop:nonstandard-rank-three-example} と同じ
+正則切断および Serre 双対性の議論で従う。
+
+Gabriel--Krull 条件については $B/(x_1)$ が
+$B/(x_1,x_3)\simeq k_{-1}[x_2,x_4]$ に全射を持つ。
+後者の正則元 $x_2$ の冪による下降列は、
+隣接商が $k[x_4]$ のシフトなので tails で真に下降する。
+従って $\pi(B/x_1B)$ は有限長でなく、
+$x_1$ の冪による列により $\pi B\notin\cC_1$ となる。
+domain 性と Hilbert 多項式から、命題~\ref{prop:nonstandard-rank-three-example}
+と同様に rank one torsion-free 性を得る。
+従って (3) は $\HH$ に属する。
+twist 後も極小表示の成分空間の次元は保たれるので、
+定理~\ref{thm:cubic-coverage} により (3) は cubic 型である。
+
+最後に $B^\sigma$ の偶数 Veronese において、
+$x_1x_3$ と $x_2x_3$ は反交換する。
+旧積で既に反交換し、偶数の新しい積では
+両方に同じ $\sigma^2$ の符号 $-1$ が働くからである。
+domain 性から積は非零なので反 Serre 環は非可換である。
+従って (3) は可換類とも非 cubic 類とも異なる。
+
+逆に、どの切断の標識対も、$\HH$ に入るなら滑らかである。
+また正則正規二次切断の AS Gorenstein 性により
+元の切断環は飽和している。
+元の次数シフトの $\pi B$ の軌道も rank one torsion-free なので、
+切断の非零積は単射の合成となり、元の $B$ は domain である。
+このため上で排除した非 domain または非滑らかな切断は、
+別の平方根を選んでも新たな $\HH$ 類を与えない。
+\end{proof}

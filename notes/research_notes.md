@@ -95,7 +95,7 @@ Gabriel–Krull条件は商体rankだけで代用しない。Hilbert多項式が
 
 整な種数一曲線では、五つ組の巡回写像をNakayama同型と比較し、平方根つきの逆構成を閉じた。非整曲線の幾何商ではdomain性の証明が使えない。被覆については、Bが左右noetherianな二次Koszul環と分かっていれば、未知のAS正則性を要求せず有限階数条件で判定できる。残る階数3領域の課題は、そのBを構成する具体的なパラメータと許容条件である。
 
-距離二・三の関係の形は prop:rank-three-relations。四周期単純分解を偶数成分へ制限すると、奇数表現可能加群が線形分解を持つ。これと偶数頂点の分解を合わせるとBのKoszul性が従う。GK条件は、domainならある正次数fの切断がtailsで非有限長であることに還元される。fの正規性は不要。逆構成の残る仮定は prop:weighted-inverse-reduction を参照。固定skew ambientの中央切断は cor:skew-rank-three-central-locus で退化も含めて判定した。全四変数符号型の対角切断も三つ組の符号積と退化を調べ、thm:sign-quadric-diagonal の二標識類に分類した。
+距離二・三の関係の形は prop:rank-three-relations。四周期単純分解を偶数成分へ制限すると、奇数表現可能加群が線形分解を持つ。これと偶数頂点の分解を合わせるとBのKoszul性が従う。GK条件は、domainならある正次数fの切断がtailsで非有限長であることに還元される。fの正規性は不要。逆構成の残る仮定は prop:weighted-inverse-reduction を参照。固定skew ambientの中央切断は cor:skew-rank-three-central-locus で退化も含めて判定した。全四変数符号型の正規切断では、中央の場合に符号変更と対角化を行い、非中央の場合にnormalizerを対角化して双線形ブロックに分けた。thm:sign-quadric-normal の三標識類へ分類した。混合符号の非中央代表は二つのrank4行列分解を持ち、偶数切断環は非可換なので、他の二標識類と異なる。 交換係数が任意の非零元でも、正規二次式は指標のブロックごとに標準化できる。使われない変数は双対の次数零局所化に平方零イデアルを与える。残る切断を非cubic一点とcubic族に分類し、後者で同値になる条件は定理 thm:multiparameter-quadric-classification に示した。
 
 ## 検証範囲と再現手順
 
@@ -126,5 +126,7 @@ repoルートの`latexmk`と、VS Codeレシピ相当の`latexmk -norc -r <repo>
 数学原稿v0.4では正規切断の四周期比較のExt消滅、二型の生成性、mutationによる完全性、豊富性を独立担当と点検し、使った一次資料の仮定を照合した。階数3の極小分解と行列表示、標識を保つ導来同値からのheart認識も本文に証明を置いた。sources・math・build はPASS。新規部分の外部査読、形式証明、PDFの目視は未実施。
 
 数学原稿v0.5のソース、厳密検算とLuaLaTeXを実行した。cubic被覆の必要性、最初の軌道対象、非cubic例、環変換スペクトル系列の論証を独立担当と点検した。Sklyanin一次近傍の計算は正確な有理数行列で、他のパラメータでの主張は開条件に限る。外部査読・形式証明・PDFの目視は未実施。
+
+多パラメータskew polynomialの分類は、標準形、退化排除、線形行列分解、点対の添字別同型の各計算を別担当と点検した。最新原稿に対し sources・math・build がPASS。組版後のPDFの目視は未実施である。
 
 GitHubのgit読取が利用できても書込認証は別に必要である。GitHub connectorによる通常コミットも許可された保存手段として使用できる。research-hubの更新は対象repo保存後に最新READMEを読み、並行更新を保持して行う。

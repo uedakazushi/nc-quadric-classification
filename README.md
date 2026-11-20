@@ -41,7 +41,7 @@ $$
 - 固定Sklyanin pencilの明示的な開領域では、中心の一次近傍により各切断の比較を高々64候補に絞れる。厳密計算は `computations/verify_pencil_tangent.py` に収録した。
 - 重み付き四周期環の単純分解から周期偶数環のKoszul性が従う。逆構成に残る条件を、分解の完全性、周期、domain性、斉次切断の長さ、有限被覆判定に絞った。
 
-- 四変数の符号型skew polynomial環の対角中央切断を判定し、滑らかなdomainの標識類を可換型と非cubic型の二つに分類した。
+- 四変数の多パラメータskew polynomial環の正規二次切断を完全に分類した。非cubic型一点とcubic族があり、後者はパラメータr²を逆元で同一視する。
 
 ## 現行資料
 
