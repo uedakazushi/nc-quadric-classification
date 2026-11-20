@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.0
+% 日本語 LuaLaTeX。2026-11-21 / v1.1
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,7 +43,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.0（全対象の同値類分類・公表前草稿）}
+\date{2026年11月21日\quad v1.1（全対象の同値類分類・公表前草稿）}
 
 \begin{document}
 \maketitle
@@ -64,7 +64,9 @@ $\PP^1$ 上の二つの被約二点集合の非順序対を同時射影変換で
 二つの conic を同時に untwist する。
 通常の quadratic envelope による定義の障害、可換対象の四つの適合根、
 ambient の非一意性も記述する。
-本稿は同値類の分類を扱い、全自己同値・忘却ファイバー・相対モジュライは別問題とする。
+noncubic 領域については次数スカラーを除いた一次元の滑らかな表示商スタックを構成し、
+根配置スタックへの符号 gerbe と軌道閉包の非分離を記述する。
+全対象の内在的な相対モジュライとの同定は未完成である。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
 \tableofcontents
@@ -385,6 +387,8 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/weighted_inverse}
 \input{sections/elliptic_inverse}
 \input{sections/pencil_deformation}
+
+\input{sections/noncubic_stack}
 
 \section{同値類の分類後に残る問題}
 \label{sec:open-problems}

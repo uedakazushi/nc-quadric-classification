@@ -1,0 +1,105 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.1
+\section{中央二重平方族の表示スタック}
+\label{sec:noncubic-stack}
+
+$W=k u\oplus k v$ とし、非退化二次形式の開集合を
+$Q^{\mathrm{nd}}=\operatorname{Sym}^2W\setminus V(\operatorname{disc})$ と書く。
+\[
+ P=Q^{\mathrm{nd}}\times Q^{\mathrm{nd}},\qquad
+ \widetilde G=(\operatorname{GL}(W)\times\mathbb G_m^2)\rtimes S_2
+\]
+と置く。$S_2$ は二つの形式と二つのスカラーを交換し、恒等成分の作用は
+\[
+ (A,a_1,a_2)\cdot(f_1,f_2)
+ =\bigl(a_1^{-2}\operatorname{Sym}^2(A)f_1,
+        a_2^{-2}\operatorname{Sym}^2(A)f_2\bigr)
+\]
+である。これは環
+\[
+ B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)
+\]
+の $W$ の基底変更、$c,d$ のスカラー変更と交換に対応する。
+中央部分群
+\[
+ D=\{(\lambda I_W,\lambda,\lambda)\mid\lambda\in\mathbb G_m\}
+\]
+は $P$ に自明に作用する。$G=\widetilde G/D$ とする。
+$G$ は $W\oplus kc\oplus kd$ の分解を保ち、後二因子を交換してよい
+$\operatorname{PGL}_4$ の閉部分群であり、滑らかな五次元アフィン代数群である。
+
+\begin{proposition}[表示から構成するスタック]
+\label{prop:noncubic-presentation-stack}
+\[
+ \mathfrak N^{\mathrm{pres}}=[P/G]
+\]
+は滑らかな有限型 Artin スタックであり、次元は一である。
+$P$ 上の普遍次数付き環は全ての次数で有限自由である。
+その幾何点の同型類は全 noncubic $\mathcal H_2$ 対象の pointed exact 同値類と一致する。
+\end{proposition}
+
+\begin{proof}
+$P$ は六次元の滑らかな開集合であり、$G$ は五次元の滑らかな代数群なので、
+商スタックの一般論により最初の主張を得る
+\cite[Tag 0DLS]{StacksModuli}。
+
+普遍環は係数環上で $u^a v^b w$ を基底とする。
+ここで $w$ は $c,d$ の交互語であり、空語も許す。
+$c^2\mapsto f_1$, $d^2\mapsto f_2$ の書換えは長さを下げ、
+$c^3,d^3$ の重なりは係数の中心性によって解消する。
+従って基底は任意の底変更と整合し、各次数は有限自由である。
+
+幾何点の同型類については定理~\ref{thm:noncubic-classification} と
+定理~\ref{thm:ore-anticommuting-central} を使う。非退化二次形式は
+被約二点集合をスカラーを除いて一意に定め、代数閉体上ではそのスカラーを
+$c,d$ の平方によって吸収できる。$D$ は軌道を変えない。
+\end{proof}
+
+\begin{proposition}[根配置スタックへの射]
+\label{prop:noncubic-sign-gerbe}
+$\mathcal D=\mathbb P(\operatorname{Sym}^2W)\setminus V(\operatorname{disc})$ とし、
+\[
+ \mathfrak R=[(\mathcal D\times\mathcal D)/
+       (\operatorname{PGL}(W)\times S_2)]
+\]
+と置く。自然な射 $\mathfrak N^{\mathrm{pres}}\to\mathfrak R$ は gerbe であり、
+二つの形式を順序付けた局所表示上では相対慣性が $\mu_2^2$ である。
+$S_2$ はこの二因子を交換する。
+従って根配置の商スタック自体は pointed 慣性を保持しない。
+\end{proposition}
+
+\begin{proof}
+$G\to\operatorname{PGL}(W)\times S_2$ の核は二次元トーラスであり、
+形式の二つのスカラーに対して逆二乗により作用する。
+その作用の核は $\mu_2^2$ で、$c,d$ の独立の符号変更を表す。
+$P\to\mathcal D^2$ は二つの形式の代表を選ぶトーラス torsor である。
+任意の根配置の同型は、射影変換の線型持上げと単元の平方根を選べば
+局所的に $G$ の元へ持ち上がる。
+標数零ではこれらの選択は fppf、実際には適当な\'etale 局所化で可能である。
+従って対象と同型の両方が局所的に持ち上がり、gerbe の条件を満たす
+\cite[Tag 06PD]{StacksModuli}。
+\end{proof}
+
+\begin{remark}[GIT の同一視]
+$u,v$ の基底を固定し、$f_1=uv$, $f_2=u(v-t u)$ とする。
+$t\ne0$ では根対が一根共有、$t=0$ では二対が一致する。
+$t\ne0$ の全点は一つの軌道に属するが、その閉包は $t=0$ の軌道を含む。
+従って通常の GIT 商は、これら二つの異なる pointed 類を分離しない。
+同型類集合の二つの特別点を、一つの既存 GIT 商から読み取ることはできない。
+また $\operatorname{Sym}^2\mathcal D$ を単なるスキームとして先に作ると、
+一致した二対の $S_2$ 慣性も失うため、上の $S_2$ 商はスタックとして取る必要がある。
+\end{remark}
+
+\begin{remark}[相対版として未証明の部分]
+上で無条件に構成したのは、普遍中央二重平方環とその射影化した座標変換からなる
+表示スタックである。普遍環は $P$ 上に存在し、$D$ は次数 $n$ に重み $n$ で
+作用するため、剛体化後のスタック上への通常の環束としての降下はここでは主張しない。
+幾何点の同型類は一致するが、任意の基底上の
+$\mathcal O$-marked 圏の族との同値を主張するには、相対再構成と相対正規形が必要である。
+特に「全ての幾何ファイバーが noncubic」という条件だけでは、
+階数四を検出する小行列式の冪零成分が消えるとは限らない。
+例えば双対数上の行列は全幾何ファイバーで階数三でも、四次小行列式が
+非零の冪零元となり得る。階数三の閉部分スタックを定めるなら、
+その小行列式をスキーム論的に零とする条件が必要である。
+このため、点の分類をそのまま全 family の分類へ読み替えない。
+\end{remark}
