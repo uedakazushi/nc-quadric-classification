@@ -307,7 +307,7 @@ $i=-3,-2,-1,0$ の四項窓が元の foundation を与える。
 その canonical Serre 関手について
 $(1)^2\simeq S^{-1}[2]$ が成立する。
 これは Noetherian 性を仮定しない Grothendieck tails の結論である。
-Noetherian 基底では、後の定理~\cite[\texttt{thm:quadric-finite-type-effectivity}]{QuadricIntrinsic2026} が
+Noetherian 基底では、後の定理~\ref{thm:quadric-finite-type-effectivity} が
 $B_T$ の左右 Noetherian 性を証明するので、
 $\operatorname{QGr}B_T=\operatorname{Ind}(\operatorname{qgr}B_T)$
 も成立する。
@@ -390,12 +390,12 @@ $\pi B_T$ は基底上平坦かつ exceptional、$(\pi B_T,(1))$ は AZ ample �
 これらの主張は左右 Noetherian 性が保たれる全有限型基底変更で成立する。
 特に系~\cite[\texttt{cor:quadric-point-local-noetherian-as4}]{QuadricIntrinsic2026} の
 任意の Noetherian 局所基底 $R$ と、その任意の有限型可換 $R$-代数で
-成立する。後の定理~\cite[\texttt{thm:quadric-finite-type-effectivity}]{QuadricIntrinsic2026} により、
+成立する。後の定理~\ref{thm:quadric-finite-type-effectivity} により、
 単一の有限型開全体と任意の Noetherian 基底変更にも適用できる。
 \end{corollary}
 \begin{proof}
 Noetherian 性による heart と module-object 基底変更は
-補題~\cite[\texttt{lem:qgr-module-object-basechange}]{QuadricIntrinsic2026} を用いる。
+補題~\ref{lem:qgr-module-object-basechange} を用いる。
 偶数 restriction の下で各 $\pi P_i$ は有限生成 $B_T$-加群から得られる。
 従って Noetherian な生成系をなし、
 補題~\ref{lem:relative-cubic-coherent-cohomology} が Hom の有限性、
@@ -405,7 +405,7 @@ Noetherian 性による heart と module-object 基底変更は
 構造対象の全 derived End が $R[0]$ であることは
 式 (\ref{eq:cubic-tails-line-cohomology})、または foundation 比較による。
 有限型可換基底変更での Noetherian 性は
-補題~\cite[\texttt{lem:local-finite-type-strong-noetherian}]{QuadricIntrinsic2026} により保たれる。
+補題~\ref{lem:local-finite-type-strong-noetherian} により保たれる。
 その全てに前命題と cohomology 補題を適用すればよい。
 \end{proof}
 
@@ -506,8 +506,8 @@ $R$ は Noetherian 可換環、$B_R$ は左右 Noetherian 環であると仮定�
  \qquad\mathcal O_{R'}=\pi(B_R\otimes_RR')
 \]
 と置く。この系は、有限型 $R$-基底の site 上で
-定義~\cite[\texttt{def:relative-abelian-system}]{QuadricIntrinsic2026} および
-定義~\cite[\texttt{def:relative-h2}]{QuadricIntrinsic2026} の全ての条件を満たす。
+定義~\ref{def:relative-abelian-system} および
+定義~\ref{def:relative-h2} の全ての条件を満たす。
 その局所的な平方根は次数移動 $(1)$ であり、
 canonical compact 導来圏は
 \[
@@ -528,15 +528,15 @@ $\mathfrak H_2$ の一般基底への極限保存的な延長を定義したと�
 \end{theorem}
 \begin{proof}
 $R'$ を任意の可換有限型 $R$-代数とし、$B'=B_R\otimes_RR'$ と略記する。
-補題~\cite[\texttt{lem:local-finite-type-strong-noetherian}]{QuadricIntrinsic2026} により
+補題~\ref{lem:local-finite-type-strong-noetherian} により
 $B'$ は左右 Noetherian であり、その各次数は有限 projective $R'$-加群である。
 従って $\operatorname{QGr}B'$ は locally Noetherian で、
 その Noetherian 部分圏は $\mathcal C_{R'}$、
 その Ind 圏は $\operatorname{QGr}B'$ である。
-補題~\cite[\texttt{lem:qgr-module-object-basechange}]{QuadricIntrinsic2026} により
+補題~\ref{lem:qgr-module-object-basechange} により
 module-object 基底変更が成立し、tensor の結合則が coherent な比較を与える。
 faithfully flat な有限表示拡大に沿う引戻しは完全かつ保守的であるから、
-系~\cite[\texttt{cor:quadric-local-tails-fppf-descent}]{QuadricIntrinsic2026} の証明により
+系~\ref{cor:quadric-local-tails-fppf-descent} の証明により
 対象・射・完全列が有効に降下する。
 補題~\ref{lem:relative-cubic-coherent-cohomology} により、
 全ての coherent 対象間の Hom は $R'$ 上有限で平坦基底変更と可換する。
@@ -561,7 +561,7 @@ module-object の意味で $R'$ 上平坦である。
 それぞれ変更後の generator と $\Lambda_{R'}\otimes_{R'}R''$ に送られる。
 従って導来 Morita 表示における実際の引戻しは
 $-\otimes_{\Lambda_{R'}}^{\mathbf L}\Lambda_{R''}$ である。
-compact 部分へ制限すれば (\cite[\texttt{eq:relative-perfect-basechange}]{QuadricIntrinsic2026}) となる。
+compact 部分へ制限すれば (\ref{eq:relative-perfect-basechange}) となる。
 heart 上の通常の引戻しが非平坦基底変更でも完全であることは使っていない。
 
 次数移動 $(1)$ は全ての $\operatorname{QGr}B'$ 上の完全自己同値で、
