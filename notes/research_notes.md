@@ -46,7 +46,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **標準Morita根のétale代数化。** `prop:quadric-etale-morita-root` では、有限foundationの滑らかなaffine chart S 上でTV2007 Corollary 3.24の一般基礎環版を適用し、Morita自己同値のétale局所同型類を表す局所有限表示の代数空間群Gを得る。通常の有向代数なのでHH負次数は零、中心は任意底変更後も基底環である。平方写像sqと反Serre節τのfiber積Zを取り、Qの標準根での全Artin存在・一意性から完備局所環をSと同定する。Sの滑らかさと接写像の同型によりZ→Sはその点でétale。TVの単純対象のGm-gerbeをétale局所に中立化し、平方比較の線束をさらに自明化して、実際のperfect根と平方同型を得る。原典のCorollaries 3.22, 3.24、Lemma 3.25と、完備局所環の議論・線束twistの扱いを独立点検した。相対heartを仮定せず、かつその存在を結論しない。
 
-**有限窓について得た代数化。** `prop:quadric-etale-finite-window` により標準根はétale近傍でF0↦F2、F1↦F3と同定できる。二つの比較Homは閉fiberでk[0]なので局所的に線束になり、恒等を持ち上げた射のperfect coneの消滅で同型を得る。偶数窓は元のprojective foundationの像、奇数窓はSerre rotationからfull exceptional、閉fiberのKünneth消滅を開条件で保ってstrongになる。二周期により無限個の四項窓を有限個の条件で制御できる。距離1–4のHomは階数2/4/6/9で、三重積の核R_iは階数2、四次重なりW_iは非退化な階数1の直和因子となり、任意の基底変更と可換する。閉fiberの二つの窓についてラインバンドルのExt次元を直接計算し整合を独立確認した。
+**有限窓について得た代数化。** `prop:quadric-etale-finite-window` により標準根はétale近傍でF0↦F2、F1↦F3と同定できる。二つの比較Homは閉fiberでk[0]なので局所的に線束になり、恒等を持ち上げた射のperfect coneの消滅で同型を得る。偶数窓は元のprojective foundationの像、奇数窓はSerre rotationからfull exceptional、閉fiberのKünneth消滅を開条件で保ってstrongになる。二周期により無限個の四項窓を有限個の条件で制御できる。距離1–4のHomは階数2/4/6/9で、三重積の核R_iは階数2、四次重なりW_iは非退化な階数1の直和因子となり、任意の基底変更と可換する。閉fiberの二つの窓についてKünnethによるExt次元を直接点検した。さらに `computations/verify_quadric_finite_windows.py` をSymPyの厳密有理演算で実行し、両parityの二重・三重・四重積のrank4/6/9、三次核rank2、四次重なりrank1、二つのpairingの行列式がいずれも±1であることをPASSとした。これは特殊fiberの有限線形代数の確認であり、étale近傍の存在や無限次数の構造を計算機で証明したものではない。
 
 **次の効果性補題。** 現在の不足は四項窓ではなく、任意の長さのHomの次数零集中と有限生成・三次提示、および全次数のcubic解消を同じétale近傍で一様に得ることである。これを得た後に相対tailsを構成し、全有限型基底変更でのnoetherian性、canonical compact導来比較、AZと相対H2を示す。Artin基底のDD持上げはこの非冪零基底に直接適用できない。形式的認識だけでは不十分であり、例えばA¹の部分関手F(R)={a∈R : aは冪零}は0で全Artin変形を含むが、0のZariski開近傍を含まない。k[t]/(tⁿ)上の互換な元tはk[[t]]上の冪零元から来ず、効果性が失われる。今回のMorita根で実際のétale近傍を得られるのは、TVによりZの局所有限表示の代数性が先に証明されるためである。
 
@@ -283,6 +283,7 @@ python3 computations/verify_noncubic_second_order.py
 python3 computations/verify_antiserre_polarization.py
 python3 computations/verify_quiver_avatar_charts.py
 python3 computations/verify_quadric_first_order_roots.py
+python3 computations/verify_quadric_finite_windows.py
 # NumPy/Numba を入れた場合の独立な接空間証明書
 python3 computations/verify_commutative_quadric_tangent.py
 python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
