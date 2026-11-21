@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact F_101 tangent-rank certificate for the noncubic H2 antiserre family.
+"""Exact F_101 and rational tangent-rank certificate for noncubic H2.
 
 Optional dependencies: numpy>=1.24 and numba>=0.60 (also the usual SymPy).
 Run: python3 computations/verify_noncubic_degree3_tangent.py
@@ -8,8 +8,8 @@ No floating point, random sampling, or rank estimation is used.
 Computes ranks of the 80 PGL9 tangent directions, six binary-quadratic
 coefficient directions, and the differential of the degree-three Hilbert
 rank condition at three root configurations. This is a finite-field
-certificate; characteristic-zero rank lower bounds require the separate
-integer-spreading argument in the manuscript.
+certificate plus explicit rational nullspace lifts, checked against the
+integer linearized equations. The characteristic-zero dimensions are exact.
 """
 from __future__ import annotations
 import numpy as np
@@ -77,7 +77,7 @@ def rank_rows_mod(a,p):
                     piv[col,j]=v[j]*inv%p
                 occupied[col]=1;rank+=1
                 break
-    return rank
+    return rank,piv,occupied
 
 # The 49 degree-six PBW words: alternating c,d words, central binary
 # monomials of the complementary degree. The twist by iota acts only
@@ -191,9 +191,86 @@ for label,data,orbit_expected,degree3_rank_expected in cases:
                       @ tangent.astype(np.int64)%prime)
 
     # Row-rank without random sampling (all 16072 constraints).
-    rank=rank_rows_mod(constraints.T.copy(),prime)
+    rank,rows,occupied=rank_rows_mod(constraints.T.copy(),prime)
     assert rank==degree3_rank_expected,(label,rank)
+    free_vars=np.flatnonzero(1-occupied)
+    assert len(free_vars)==1400-rank
+
+    # Rational reconstruction from F_101. The tested exact points have
+    # rational nullspace vectors whose coordinates have denominators <= 2
+    # and numerators <= 5, as verified below over the integers.
+    nullspace=np.zeros((1400,len(free_vars)),dtype=np.int64)
+    nullspace[free_vars,np.arange(len(free_vars))]=1
+    for c in range(1399,-1,-1):
+        if occupied[c]:
+            nullspace[c,:]=(
+                -rows[c,c+1:].astype(np.int64)@nullspace[c+1:,:]
+            )%prime
+
+    def rational_reconstruct(z):
+        choices=[]
+        for d in (1,2):
+            n=(int(z)*d)%prime
+            if n>prime//2:n-=prime
+            if abs(n)<=5:
+                choices.append((max(abs(n),d),abs(n)+d,d,n))
+        if not choices:raise AssertionError(('rational-reconstruction',z))
+        _,_,d,n=min(choices)
+        return n,d
+
+    exact_candidates=np.empty_like(nullspace)
+    for j in range(nullspace.shape[1]):
+        pairs_nd=[rational_reconstruct(z) for z in nullspace[:,j]]
+        denominator=np.lcm.reduce([d for _,d in pairs_nd])
+        exact_candidates[:,j]=[
+            n*(denominator//d) for n,d in pairs_nd
+        ]
+
+    # Independent lift of the syzygy basis ker(L) over Z.
+    qZ=np.array(Q.subs(ev).tolist(),dtype=np.int64)
+    d2Z=qZ[:,P].T@qZ
+    relZ=np.zeros((81,56),dtype=np.int64)
+    relZ[N,np.arange(56)]=1
+    relZ[P,:]=-d2Z[:,N]
+    LZ=np.zeros((225,504),dtype=np.int64)
+    for g in range(9):
+        for j in range(56):
+            for index in np.flatnonzero(relZ[:,j]):
+                b,c=divmod(int(index),9)
+                LZ[c::9,9*j+g]+=int(relZ[index,j])*d2Z[:,9*g+b]
+    kerZ=syzygies.copy()
+    kerZ[kerZ>prime//2]-=prime
+    assert not np.any(LZ@kerZ)
+
+    # At these three integral base points, all entries of the PBW
+    # triple-product matrix are small; the centered mod-101 lift is exact.
+    q3Z=q3.copy()
+    q3Z[q3Z>prime//2]-=prime
+    assert not np.any(q3Z@LZ)
+    KTz=kerZ.T.reshape(328,56,9).transpose(0,2,1)
+    interZ=np.einsum('tgj,bcj->tgbc',KTz,relZ.reshape(9,9,56))
+    constraintsZ=np.zeros((1400,49*328),dtype=np.int16)
+    for k,(g,b) in enumerate(notpairs):
+        for h in range(25):
+            constraintsZ[56*h+k,:]=(
+                interZ[:,g,b,:]@q3Z[:,9*h:9*h+9].T
+            ).reshape(-1)
+    for h,(b,c) in enumerate(pairs):
+        H=np.empty((9,49),dtype=np.int64)
+        for g in range(9):
+            H[g,:]=q3Z[:,c::9]@d2Z[:,9*g+b]
+        term=np.einsum('tgj,gz->jtz',KTz,H)
+        for j in range(56):
+            constraintsZ[56*h+j,:]-=term[j].reshape(-1)
+
+    assert not np.any(constraintsZ.astype(np.int64)%prime != constraints)
+    # This is a genuine exact integer check, not a reduction modulo 101.
+    assert not np.any(constraintsZ.T.astype(np.int64)@exact_candidates)
+    # The free rows form a nonsingular diagonal submatrix after scaling.
+    assert np.all(exact_candidates[free_vars,np.arange(len(free_vars))]!=0)
     print(label,': orbit/form/combined',ranks,
-          '; degree-3 constraint rank',rank,
-          '; degree-3 tangent dimension',1400-rank,flush=True)
-print('PASS: complete exact F_101 degree-three tangent computation.')
+          '; rank(F_101)',rank,
+          '; rational tangent dimension',len(free_vars),
+          '; max exact numerator',np.max(np.abs(exact_candidates)),
+          flush=True)
+print('PASS: full F_101 ranks and exact rational bases of dimension 83,83,84.')
