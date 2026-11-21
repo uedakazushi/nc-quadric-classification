@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.41（主論文v1.40、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.42（主論文v1.41、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -32,7 +32,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 ## 内在的相対定義と認識
 
-**cubic領域全体のsmooth Artin開部分。** `thm:cubic-smooth-open` は、全幾何fiberがcubicとなる内在的部分スタックV_cub⊂H2が、有限型で滑らかな純次元3のArtin開部分であると示す。非線形の普遍quintuple上では相対Picard群の[−2]に沿うétale被覆で適合根を構成し、linear点は可換Qのchartで覆う。各chartの全閉点で、指定されたpointed同型を保つArtin持上げを証明する。relation schemeはU×_[X3/PGL9]Uであり、選んだ根やfoundationを保存しない同値も含む。`cor:cubic-formal-h2-abelian` により全cubic点で形式H2変形とpointed Abel変形は同値で、HH≥3=0、dim HH²−dim HH¹=3となる。noncubic境界を含む全H2の代数性と、ambient内での開性は未証明である。
+**cubic領域全体のsmooth Artin開部分。** `thm:cubic-smooth-open` は、全幾何fiberがcubicとなる内在的部分スタックV_cub⊂H2が、有限型で滑らかな純次元3のArtin開部分であると示す。非線形の普遍quintuple上では相対Picard群の[−2]に沿うétale被覆で適合根を構成し、linear点は可換Qのchartで覆う。各chartの全閉点で、指定されたpointed同型を保つArtin持上げを証明する。relation schemeはU×_[X3/PGL9]Uであり、選んだ根やfoundationを保存しない同値も含む。`cor:cubic-formal-h2-abelian` により全cubic点で形式H2変形とpointed Abel変形は同値で、HH≥3=0、dim HH²−dim HH¹=3となる。noncubic境界を含む全H2の代数性は下記の有限型効果性で証明し、ambient内の開性は一致根対で否定する。
 
 **相対Picard根と全cubic族の認識。** `thm:relative-compatible-root` は非線形のsmooth reduced普遍quintuple基底上で、N=L₂L₀⁻¹の二等分とATVの相対作用から実際の二周期βを構成する。β²はcanonical四周期θにvertex scalarを除いて一致する。同じβに対応するperfect双加群のSerre比較を、有限表示局所閉の比較空間と普遍基底の被約性で証明し、その後に任意の非被約底へ引き戻す。任意の根を最初から変形可能とは仮定しない。`thm:geometric-cubic-relative-effectivity` が普遍Noetherian性・canonical tails・同じ根のAS4被覆から全相対公理を供給する。DDLで五つのhelix対象を持ち上げ、四つの矢空間と四次syzygy直線を回復することで、指定同型を保つquintuple chartのArtin持上げが得られる。
 
@@ -44,7 +44,11 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **noncubic局所環上の効果性と全Artin認識。** 五頂点の非極小bar解消により、極小Betti数の変動を許して、同じ局所環上の全前向きHom・全軌道・canonical tails・Noetherian heartを構成した。二次双対の反中心消滅はgeneric cubic canonical線のnormalizerが−1となる可能性を排除し、中心直線を直和因子として延長する。閉fiberの正則性と単元minorから全次数の中央AS4被覆が延びる。指定還元同型付きArtin変形をétale foundation chartへ持ち上げると、全noncubic点で形式H2変形＝pointed Abel変形となる。非一致根対では接3・慣性0、一致では接4・慣性1、いずれも無障害。既存cubic結果と合わせ、全H2幾何点でArtin形式認識が成立した。証明は `thm:noncubic-local-tails-effectivity`、`thm:noncubic-local-central-hull`、`cor:noncubic-all-artin-h2`。
 
-**残る核心は有限型近傍上への一様化である。** 全H2点のArtin形式認識と、noncubic点の局所環上の全軌道・中央AS4被覆・Noetherian heartは成立した。中央線φの全次数正則性と双対Eの全次数平坦性は、Eが中央R[φ]上有限となることから一つの開へ広がる（`lem:spread-central-regular-line`）。未解決なのは、有限Frobenius商P=E/(φ)のKoszul性、提示環と実際の全軌道の比較を同じ開で伝播し、全幾何fiberのrank-one torsion-free条件と内在的H2認識を証明する段階である。無限個の開条件の共通部分を開と扱わない。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
+**noncubic境界を横断する有限型効果性。** `thm:noncubic-finite-type-effectivity` は、全noncubic点に実際のH2族を持つ有限型étale近傍を構成する。Lagrangian四平面の二射影M,Nに対し、Segreとの交点を除き、Cr(N adj M)とCr(M adj N)の行列式を可逆化する。全幾何fiberをcubicまたは二形式normal foundationへ認識し、同じ四項とSerre四周期から全Homを有限projectiveにする。非被約閉部分V(det M,det N)のétale相対正規形と二つのcubic開から普遍Noetherian性を貼り合わせる。全fiber Koszulを先に確認し、局所中央線をspreadして同じ根の中央AS4被覆を得る。一般のKoszul開性や無限個の開の交叉は使わない。証明は `papers/sections/noncubic_finite_type.tex`。
+
+**内在的な全モジュライの有限型代数性。** `thm:global-h2-smooth-finite-type` により、局所有限型k-schemeのsite上のH2は、有限型・滑らか・純次元3のArtinスタックにより表され、対角はaffine有限表示である。指定されたpointed同型を保つArtin持上げで各効果的近傍をsmooth chartとし、実際のnoncubic表示族の準コンパクト性から有限個を選ぶ。relationはU×_[X3/PGL9]Uで、根・被覆・foundationを保存しない全pointed同値を含む。X_asは有限型・滑らか・純次元83のスキームとなる。一致根対では接次元が内在側4・ambient側5（framedでは83・84）なので、X_as→X3は開immersionではない。証明は `papers/sections/h2_smooth_atlas.tex`。
+
+**残る比較と次の課題。** 全H2の代数性とX_asの表現可能性は証明した。有限foundationのruling商Q_fndとの相対同値・位相比較、境界の幾何と成分の記述、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致は別の課題である。公表前の先行研究比較と広い証明監査も続ける。新規性の包括的確定・外部査読・形式証明は未実施である。
 
 **Artinのfoundationと偏極忘却。** `artin_foundation.tex` で、全H2のnormal geometric helixにDe Deken–Lowenを適用し、全flat pointed Abel変形にrank24のcompact tilting foundationを持ち上げた。閉fiberでheart-exactなMorita同値は、m-adic有限フィルターの各商が閉fiber圏に属することから全変形heartでexactとなる。canonical反SerreはAZ ampleで全軌道環を再構成し、Artin X3からAbel圏への忘却に右逆を与える。一般の提示環から全軌道環への自然射も、各次数が自由で特殊化が同型なので同型である。
 
@@ -98,7 +102,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 `papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
-相対AZ再構成、自然自己同型Aut(Id)=A×、pointed二自己同型の消滅から、反Serre関係の射 Φ:H2→[X3/PGL9] は全忠実となる。対角はaffine有限表示であり、framed部分層X_asを用いたH2≃[X_as/PGL9]はfppf stackとして成立する。**未証明なのはX_asの有限型代数空間による表現可能性**である。有限型siteだけで定義した関手を、極限保存を示さずに任意scheme上の関手として扱わない。
+相対AZ再構成、自然自己同型Aut(Id)=A×、pointed二自己同型の消滅から、反Serre関係の射 Φ:H2→[X3/PGL9] は全忠実となる。対角はaffine有限表示であり、framed部分層X_asを用いたH2≃[X_as/PGL9]はfppf stackとして成立する。**X_asは有限型・滑らかな83次元スキームとして表される**。有限型siteだけで定義した関手を、極限保存を示さずに任意scheme上の関手として扱わない。
 
 正規化に用いるL=(det R1)^−11(det R2)^2について、Rnorm_n=R_n⊗L^−nのshiftは元のt⊗L^−1に対応する。従って普遍正規化環へ大域的に(1)=S^−1[2]を課すのは誤りであり、基底線束twistを許すかfppf局所で比較する。
 
@@ -136,7 +140,7 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 
 `prop:antiserre-polarization-family` の明示族は、B=k[u,v]〈c,d〉/(c²−uv,d²−uv)、R=(B^(2))^ιから作る。σ_q:u↦qu,v↦q⁻¹v,c,d固定による右Zhang twistは全次数平坦で、pointed qgrはGm基底全体で一定。しかしZ(R)_1にcd−dcがあり、q=2では中心一次部分が零になるため、このfiberはどのH2のcanonical反Serre環でもない。q=1+εの一次類は、中心元U=u⁴,V=v⁴の交換子16εUV≠0で非自明性を検出できる。**u²,v²はι-twist後のRでは中心ではない**ので、この証明で用いない。既存orbit79方向へこの方向を加えると80、六係数も含む81方向へ加えると法101で82になる。
 
-全Artin基底でcanonical反Serre偏極・良い平方根・AS4被覆の存在は証明した。一般の偏極付き表示からcanonical偏極を認識する問題と、有限型近傍上の一様化は残る。全次数Hilbert条件を重ねてこの偏極方向を切ろうとしても、族自体が全次数平坦なので解決しない。
+全Artin基底でcanonical反Serre偏極・良い平方根・AS4被覆の存在は証明した。有限型近傍上の一様化は `thm:noncubic-finite-type-effectivity` で成立した。一般の偏極付き表示からcanonical偏極を具体的な方程式で認識する問題は残る。全次数Hilbert条件を重ねてこの偏極方向を切ろうとしても、族自体が全次数平坦なので解決しない。
 
 ## スタック構成の現状
 
@@ -339,12 +343,14 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 証明は `papers/sections/noncubic_hh_roots.tex`。四項foundationをGr(4,8)の開部分へ移すと、二項移動はL↦{(−Y,X):(X,Y)∈L⊥}となる。trace零対合から選ぶ右根による四つの比較行列は(D₀,−I,D₀,−I)、D₀=diag(1,−1)。従って実際の根の作用はJ=[[0,D_L],[−D_L,0]]、D_L=diag(1,1,−1,−1)による交代annihilator involutionである。直交形式のinvolutionとして扱うと接の正負を誤る。基底変更のLie作用は(a,b,c,k)↦(D₀cD₀,−kᵗ,D₀aD₀,−bᵗ)。自明な三次元中心の正負は(1,2)、有効Lieの正負は(7,6)である。一致根対の一次元慣性は正部分なので、全配置でHH¹/HH²の負部分が消える。本文の一般証明は三有理例からの外挿を使わない。
 
-再現は `python3 computations/verify_noncubic_gale_root.py`。SymPyの厳密有理演算でLagrangian条件、接involution、全基底変更軌道、HH²の正負次元(3,0)/(3,0)/(4,0)を確認する。原稿のbar微分・右Zhang規約とこの計算は独立に読取り確認した。良い根の一つを特定した結果であり、他の全根の作用も自明であるとは主張しない。
+再現は `python3 computations/verify_noncubic_gale_root.py
+python3 computations/verify_lagrangian_recognition.py`。SymPyの厳密有理演算でLagrangian条件、接involution、全基底変更軌道、HH²の正負次元(3,0)/(3,0)/(4,0)を確認する。原稿のbar微分・右Zhang規約とこの計算は独立に読取り確認した。良い根の一つを特定した結果であり、他の全根の作用も自明であるとは主張しない。
 
 
-**noncubic変形の具体的なétale表示。** `prop:noncubic-lagrangian-etale-slice` により、Lagrangian Grassmannian LG(4,8)の開部分を7次元群で割った商から、全noncubic点を含むfoundation変形の開部分への表現可能なétale射を得る。法軌道写像の行列式はPlücker O(3)の切断で、正規形では−32α。根対一致では対角L₀を選ぶ必要があり、別のtrace零交換根にはHH²の負方向が1次元残る。有限代数の局所表示であって、内在H2のatlasとはまだ主張しない。
+**noncubic変形の具体的なétale表示。** `prop:noncubic-lagrangian-etale-slice` により、Lagrangian Grassmannian LG(4,8)の開部分を7次元群で割った商から、全noncubic点を含むfoundation変形の開部分への表現可能なétale射を得る。法軌道写像の行列式はPlücker O(3)の切断で、正規形では−32α。根対一致では対角L₀を選ぶ必要があり、別のtrace零交換根にはHH²の負方向が1次元残る。この有限代数の表示を、全fiber認識と全軌道比較を経て、下記の内在H2のatlasへ接続する。
 
-正規化L₀=[[α,β],[γ,−α]]、α²+βγ=1で法軌道写像qのdetは−32α。α=0の場合は根対が一致し、off-diagonal選択ではHH¹の負部分1、HH²の正負次元(3,1)となる。これが全一次持上げを妨げる具体例。証明と6×6行列は主原稿、再現は `python3 computations/verify_noncubic_gale_root.py`。
+正規化L₀=[[α,β],[γ,−α]]、α²+βγ=1で法軌道写像qのdetは−32α。α=0の場合は根対が一致し、off-diagonal選択ではHH¹の負部分1、HH²の正負次元(3,1)となる。これが全一次持上げを妨げる具体例。証明と6×6行列は主原稿、再現は `python3 computations/verify_noncubic_gale_root.py
+python3 computations/verify_lagrangian_recognition.py`。
 
 ## noncubic中央被覆と全Artin認識の要点
 
@@ -378,6 +384,10 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
+**現行版の追加検証（2026-11-22）。** 主論文v1.41の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlasとambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
+
+**現行版の組版制約。** 今回の環境にはLuaTeX-jaの必要ファイルがなく、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。v1.41の組版と画像確認は未実施であり、下記v1.40の組版記録を新原稿の確認と読み替えない。ソース参照確認は現行版でPASS（49 manuscript files / 583 labels / 271 citation uses / 7 Markdown files）。新しいClifford作用行列の多項式恒等式もPASS。
+
 **現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 
 **既存入力の検証範囲。** 2026-11-21にローカルcheckoutでdoctorを実行した。中心変数のχ保存、一般coherent Hom、任意係数H¹消滅に加え、cubic tailsのunbounded導来局所化・全helix/矢/shiftの比較・一様cohomology・全χ・相対条件への昇格を独立読取りした。旧計算suiteは再実行していない。数学的読取り、厳密計算、組版、保存は別の状態であり、外部査読・形式証明・包括的な新規性判定は未実施である。
@@ -405,6 +415,7 @@ python3 computations/verify_quiver_avatar_charts.py
 python3 computations/verify_quadric_first_order_roots.py
 python3 computations/verify_quadric_finite_windows.py  # 両parityの長さ3〜7も検算
 python3 computations/verify_noncubic_gale_root.py
+python3 computations/verify_lagrangian_recognition.py
 python3 computations/verify_noncubic_central_hull.py
 # NumPy/Numba を入れた場合の独立な接空間証明書
 python3 computations/verify_commutative_quadric_tangent.py
@@ -417,7 +428,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 2026-11-21に主論文v1.40のLuaLaTeX・latexmk組版を実行し、273頁のPDFと同じ出力先のSyncTeXを確認した。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。Lagrangian表示、中央被覆、五頂点窓、局所AS4、全Artin認識、楕円忘却の選択21頁（234–250、266–269）を画像確認し、そのうち239・243・247・248・249・250・268頁を個別表示で詳細確認した。sourcesはPASS（47 manuscript files / 567 labels / 262 citation uses / 7 Markdown files）。既存全頁の個別目視とVS Code UI操作は今回行っていない。別稿v0.1は変更せず、既存の組版・画像確認の範囲を維持し、今回の再組版は行っていない。
+**組版・参照確認。** 2026-11-21に主論文v1.41のLuaLaTeX・latexmk組版を実行し、273頁のPDFと同じ出力先のSyncTeXを確認した。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。Lagrangian表示、中央被覆、五頂点窓、局所AS4、全Artin認識、楕円忘却の選択21頁（234–250、266–269）を画像確認し、そのうち239・243・247・248・249・250・268頁を個別表示で詳細確認した。sourcesはPASS（47 manuscript files / 567 labels / 262 citation uses / 7 Markdown files）。既存全頁の個別目視とVS Code UI操作は今回行っていない。別稿v0.1は変更せず、既存の組版・画像確認の範囲を維持し、今回の再組版は行っていない。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

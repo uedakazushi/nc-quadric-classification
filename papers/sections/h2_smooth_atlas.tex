@@ -1,0 +1,227 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-22 / v1.41
+\section{内在的な全モジュライの有限型代数性}
+\label{sec:global-h2-smooth-atlas}
+
+本節では、全ての noncubic 点で得た有限型の効果的近傍を用いる。
+入力は実際の相対 $\mathfrak H_2$ 族であり、全幾何 fiber の分類だけではない。
+これらの近傍から指定された pointed 同型を保つ smooth atlas を作り、
+既存の noncubic 表示族の準コンパクト性を使って有限個の chart に縮約する。
+有限 foundation スタックと内在的モジュライの位相を先に同一視する必要はない。
+
+\subsection{noncubic 点を含む実際の smooth chart}
+
+\begin{corollary}[効果的 noncubic 近傍の smooth atlas]
+\label{cor:noncubic-effective-smooth-neighborhood}
+$x\in\mathfrak H_2(k)$ を noncubic 点とする。
+有限 foundation の標準表示空間 $S_0=\mathbb A^{64}$ の開部分 $S$ と、
+$x$ の normal foundation を表す点 $s_x\in S(k)$ を取る。
+定理~\ref{thm:noncubic-finite-type-effectivity} で構成した有限型 affine étale 近傍
+\[
+ a_x:(U_x,u_x)\longrightarrow(S,s_x)
+\]
+および実際の族 $q_x:U_x\to\mathfrak H_2$ を取る。
+全軌道と canonical tails の比較により、この族には次の性質を持つ列 $(E_i)$ がある。
+各 $E_i$ は平坦な noetherian compact 対象で、$E_0=\OO$ であり、
+各四項窓は full strong exceptional collection、
+全前向き derived Hom は次数零の有限 projective 加群である。
+さらに $E_{i+4}=S^{-1}E_i[2]$ であり、最初の四項窓の End 代数は
+頂点・積・任意基底変更を保って $a_x^*\Lambda$ と同定される。
+
+このとき $q_x$ はスキームで表現可能な smooth 射である。
+その fppf 像 $\mathfrak V_x\subset\mathfrak H_2$ は $x$ を含む開部分スタックであり、
+有限型で滑らかな Artin スタックである。
+\end{corollary}
+
+\begin{proof}
+定理~\ref{thm:atlas-from-effective-foundation} の仮定を確認する。
+tails の row は次数成分ごとに基底上平坦であり、商関手は tensor と整合するので、
+各 $E_i$ は平坦である。Noetherian 性と compact 性は実際の相対族の構成による。
+四項の完全性・strong 性と前向き Hom の消滅は、五頂点 bar 比較により任意基底変更上で成立する。
+full exceptional collection の Serre rotation は mutation による helix の延長と一致するため、
+$E_{i+4}=S^{-1}E_i[2]$ は De Deken--Lowen の geometric $(4,3)$-helix 条件を与える。
+最後の End 代数の同定も全軌道比較の一部である。
+従って同定理を適用できる。
+
+指定された同型に関する点を明記する。
+small extension $A'\twoheadrightarrow A$ と
+\[
+ u_A\in U_x(A),\qquad c_{A'}\in\mathfrak H_2(A'),\qquad
+ \alpha_A:q_x(u_A)\xrightarrow{\sim}c_{A'}|_A
+\]
+を取ると、$\alpha_A$ により四項窓とその全 Hom の基底を還元先へ移す。
+De Deken--Lowen の持上げを基底 $A$ に直接適用し、
+例外対象の $\Ext^1,\Ext^2$ の消滅と $A'^\times\to A^\times$ の全射性により、
+$E'_0=\OO_{c_{A'}}$ とその指定された pointing を保つ。
+五つの Hom 空間の基底も指定還元を延長して選ぶと、実際の合成から $S(A')$ の点が得られる。
+$a_x$ の全点での étale 性により、これは $u_A$ を保つ $u_{A'}\in U_x(A')$ へ持ち上がる。
+
+両方の四項 tilting 窓の End 代数をこの基底で同定する。
+得られる標準 dg Morita 同値の還元は、対象だけでなく全ての射上で $D(\alpha_A)$ と一致する。
+補題~\ref{lem:artin-two-heart-comparison}、または反 Serre 再構成の全忠実性を使えば、
+これは $\alpha_A$ 自体を延長する pointed exact 同型となる。
+module-object 基底変更により、その同型は全有限型 test 上の相対系にも延長する。
+この議論は根や被覆を同型の標識へ加えず、指定した pointed 同型をそのまま保つ。
+
+任意の有限型 affine $T\to\mathfrak H_2$ に対して
+\[
+ U_x\times_{\mathfrak H_2}T\simeq U_x\times_{\mathfrak P}T,
+ \qquad\mathfrak P=[X_3/\operatorname{PGL}_9]
+\]
+は affine 有限表示対角の基底変更なので有限型スキームである。
+上の指定 Artin 持上げと \cite[Tag 02HY]{StacksSmoothAtlas} により、その $T$ への射は smooth である。
+同 tag の有限型 Artin test は、$k$ が代数閉なので剰余体 $k$ の test に含まれる。
+開像と smooth groupoid の商の構成は定理~\ref{thm:atlas-from-effective-foundation} の通りである。
+\end{proof}
+
+\subsection{有限個の chart による全体の表示}
+
+\begin{theorem}[全 $\mathfrak H_2$ の有限型代数性と滑らかさ]
+\label{thm:global-h2-smooth-finite-type}
+局所有限型 $k$-スキームの site 上の内在的スタック $\mathfrak H_2$ は、
+$k$ 上有限型で滑らかな純次元三の Artin スタックの制限により表される。
+その対角は affine かつ有限表示である。
+有限型の滑らかなスキーム $U$ と representable smooth 全射
+\[
+ q:U\longrightarrow\mathfrak H_2
+\]
+を取れ、全ての pointed exact 同値を用いる relation scheme
+\[
+ R=U\times_{\mathfrak H_2}U
+   \simeq U\times_{\mathfrak P}U
+\]
+に対して $\mathfrak H_2\simeq[U/R]$ である。
+ここで選ばれた foundation、Serre 根、平方同型、AS4 被覆を保存することは、射の条件に加えない。
+\end{theorem}
+
+\begin{proof}
+まず有限個の noncubic 近傍で足りることを示す。
+定理~\ref{thm:noncubic-relative-effectivity} による実際の射を、
+表示スタックの atlas へ引き戻すと
+\[
+ p:P=Q^{\mathrm{nd}}\times Q^{\mathrm{nd}}
+   \longrightarrow\mathfrak N^{\mathrm{pres}}
+   \longrightarrow\mathfrak H_2
+\]
+を得る。$P$ は有限型の準コンパクトな $k$-スキームである。
+命題~\ref{prop:noncubic-presentation-stack} により、全 noncubic $k$-対象はその像に入る。
+各 noncubic 点 $x$ に前系の開部分 $\mathfrak V_x$ を取る。
+引戻し $p^{-1}(\mathfrak V_x)$ は $P$ の開部分スキームであり、これらは $P$ の全閉点を覆う。
+有限型 $k$-スキームは Jacobson なので、全体も覆う。
+従って準コンパクト性により有限個
+\[
+ p^{-1}(\mathfrak V_{x_1}),\ldots,p^{-1}(\mathfrak V_{x_m})
+\]
+で $P$ を覆える。この段階で使ったのは $P\to\mathfrak H_2$ の存在と
+各 $\mathfrak V_x$ の内在的な開性だけであり、$\mathfrak N^{\mathrm{pres}}\to\mathfrak H_2$
+の full faithfulness や、任意の相対 noncubic 族の正規形は使わない。
+
+定理~\ref{thm:cubic-smooth-open} の有限型 smooth atlas $U_{\mathrm{cub}}$ と合わせ、
+\[
+ U=U_{\mathrm{cub}}\amalg U_{x_1}\amalg\cdots\amalg U_{x_m}
+\]
+と置く。有限和なので $U$ は有限型で滑らかである。
+各成分の射は representable smooth なので $q:U\to\mathfrak H_2$ も同様であり、
+その開像は全ての $k$-対象を含む。
+
+全ての相対族を覆うことも確認する。
+有限型 affine $T\to\mathfrak H_2$ に対して、$U\times_{\mathfrak H_2}T\to T$ の像は開である。
+$T$ の各閉点の剰余体は $k$ であり、その fiber は上の分類と有限被覆によって像に入る。
+従ってこの開像は全閉点を含み、Jacobson 性により $T$ 全体である。
+ゆえにこの射は smooth 全射であり、fppf 局所に section を持つ。
+任意の局所有限型 $T$ については有限型 affine 開被覆へ制限すればよい。
+これで $q$ が元の site 上の全対象を fppf に覆うことが示された。
+
+相対反 Serre 認識の全忠実性から、relation は表示した $U\times_{\mathfrak P}U$ と等しい。
+$\mathfrak P$ の対角が affine 有限表示なので、$R$ は有限型スキームである。
+両射影 $R\rightrightarrows U$ は $q$ の基底変更として smooth であり、
+\cite[Tags 04X0, 04TK]{StacksSmoothAtlas} により $[U/R]$ は通常の全スキーム上の Artin スタックとなる。
+その元の site への制限は $\mathfrak H_2$ と同値である。
+有限型 atlas $U$ によって有限型性が従い、$U$ の滑らかさによって $k$ 上の滑らかさが従う。
+対角の性質は命題~\ref{prop:relative-h2-algebraicity-reduction} による。
+
+最後に、系~\ref{cor:cubic-formal-h2-abelian} と系~\ref{cor:noncubic-all-artin-h2} により、
+各 $k$-点の形式変形 groupoid は pointed Abel 変形と同値である。
+その接空間は $\operatorname{HH}^2(\Lambda)$、無限小自己同型空間は
+$\operatorname{HH}^1(\Lambda)$ であり、
+命題~\ref{prop:foundation-hochschild} によって両次元の差は三である。
+滑らかな Artin スタックの局所次元はこの差に等しいから、全閉点で三となる。
+有限型 smooth atlas の各成分は閉点を持ち、次元は局所一定なので、全体は純次元三である。
+\end{proof}
+
+\subsection{framed 実現空間と ambient 内の非開性}
+
+\begin{corollary}[framed 実現空間のスキーム性]
+\label{cor:global-xas-smooth-scheme}
+\[
+ X_{\mathrm{as}}=X_3\times_{\mathfrak P}\mathfrak H_2
+\]
+は有限型で滑らかな純次元八十三のスキームにより表される。
+$X_{\mathrm{as}}\to X_3$ は有限型の monomorphism で、separated かつ unramified、quasi-finite である。
+\end{corollary}
+
+\begin{proof}
+全スキーム上では前定理の $[U/R]$ を用いる。
+$R=U\times_{\mathfrak P}U$ は全ての同型を記録するため、
+$[U/R]\to\mathfrak P$ は全スキーム上でも全忠実である。
+実際、対象を $U$ へ fppf 局所に持ち上げると Isom はまさに $R$ であり、
+この一致は降下する。従って $X_{\mathrm{as}}\to X_3$ は monomorphism である。
+
+命題~\ref{prop:relative-h2-algebraicity-reduction} により、$X_{\mathrm{as}}$ は有限型代数空間である。
+また $X_{\mathrm{as}}\to\mathfrak H_2$ は $\operatorname{PGL}_9$-torsor なので smooth で相対次元八十である。
+従って $X_{\mathrm{as}}$ は $k$ 上 smooth で純次元 $3+80=83$ である。
+
+$X_{\mathrm{as}}$ と $X_3$ はともに有限型 $k$-空間なので、両者の間の射は有限型である。
+局所有限型 monomorphism は separated、unramified、locally quasi-finite かつスキームで表現可能である
+\cite[Tag 05W6, Lemma 76.14.8]{StacksRepresentableMonomorphism}。
+特に $X_3$ がスキームであるため $X_{\mathrm{as}}$ 自身もスキームである。
+同じ結論は separated locally quasi-finite な代数空間からスキームへの射に関する
+\cite[Tag 03XX, Proposition 67.50.2]{StacksRepresentableMonomorphism} からも従う。
+有限型性は準コンパクト性を含むので、射は quasi-finite である。
+\end{proof}
+
+\begin{proposition}[canonical 実現像は ambient 全体で開ではない]
+\label{prop:global-h2-not-ambient-open}
+$\Phi:\mathfrak H_2\to\mathfrak P=[X_3/\operatorname{PGL}_9]$ は、
+noncubic の二つの根対が一致する点で open immersion ではない。
+従って $X_{\mathrm{as}}\to X_3$ も、その点の任意の frame の近傍で open immersion ではない。
+\end{proposition}
+
+\begin{proof}
+一致点 $x$ において、系~\ref{cor:noncubic-all-artin-h2} は
+\[
+ \dim T_x\mathfrak H_2=4,\qquad
+ \dim\operatorname{HH}^1(\Lambda)=1
+\]
+を与える。ここで $T_x$ は閉 fiber の同定を保つ一次変形の同型類の空間である。
+一方、系~\ref{cor:artin-polarization-retraction} の分裂完全列は
+\[
+ 0\longrightarrow\operatorname{HH}^1(\Lambda)
+ \longrightarrow T_x\mathfrak P
+ \longrightarrow\operatorname{HH}^2(\Lambda)\longrightarrow0
+\]
+を与え、$\dim T_x\mathfrak P=5$ である。
+$\Phi$ は canonical 反 Serre 環を取る射なので、その微分の像は
+この分裂における $\operatorname{HH}^2$ の四次元の像である。
+従って一次変形の射は全射ではなく、$\Phi$ はこの点で open immersion にならない。
+開 immersion なら形式変形 groupoid を同一にすることに反するからである。
+
+framed 空間については、その任意の frame $J$ で
+\[
+ \dim T_JX_{\mathrm{as}}=83,\qquad
+ \dim T_JX_3=5+(80-1)=84
+\]
+となる。後者の $80-1$ は $\operatorname{PGL}_9$ の軌道接空間の次元である。
+open immersion ならこの二つの接空間は同型になるので、framed 射についても結論を得る。
+\end{proof}
+
+\begin{remark}[表現可能性から自動的には出ない比較]
+上で構成したのは内在的な族のスタックそのものの有限型 smooth atlas と、
+framed 部分層のスキームによる表現である。
+これによって $X_{\mathrm{as}}$ を $X_3$ の開部分と同一視することはできず、
+実際に前命題が一致根対でその同一視を否定する。
+また有限 foundation の ruling 商 $\mathfrak Q_{\mathrm{fnd}}$ との相対同値や、
+その表示からの内在位相の比較は、この atlas の構成だけでは結論しない。
+全スキーム上の $[U/R]$ は元の有限型 site 上の $\mathfrak H_2$ を延長するが、
+任意の Noetherian 基底上で素朴に同じ Abel 公理を課した関手との一致は別の連続性の問題である。
+\end{remark}

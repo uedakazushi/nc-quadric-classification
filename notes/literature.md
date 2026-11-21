@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.40。主論文v1.40に対応する現行の一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.40。主論文v1.40に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -232,3 +232,11 @@ Shinnosuke Okawa (joint work with Takuya Kitamura), “The reconstruction theore
 ## 楕円型の全標識と忘却ファイバー
 
 Okawa–KitamuraのOWR2022, pp.1271–1273（doi:10.4171/OWR/2022/23）を一次PDFで再確認。Theorem 1はD∞軌道による全cubicのqgr同値判定、Theorem 3は全line bundleのZ²表示を明記し、二つのmutationによるzigzag構成も記す。詳細稿は同報告当時in preparation。従って格子分類・二面体作用自体を本研究の新成果としない。現行 `thm:elliptic-marking-lattice-fiber` はη∉Zδの範囲で数値一意性と評価列から独立に証明し、楕円自己同型を含むO-marked忘却の必要十分条件と捩れ時の有限濃度を明記する。この精密化の包括的新規性は未確認。
+
+## 有限型効果性と全モジュライの入力
+
+2026-11-22にVdB2011のarXiv:0807.3753v3を再確認した。Definition 5.3.1は四つの隣接縮約の非消滅、Lemma 5.4.12とTheorem 5.5.10はgeometric quintupleから許容四つ組・cubic AS正則Z代数への対応を与える。候補foundationのH2所属・domain性を先に仮定しない。本稿では有限LG条件からこの入力を確認し、既存の逆構成でH2を得る。
+
+Polishchuk–Positselski, *Quadratic Algebras*, Chapter 6, Theorem 2.1 / Corollary 2.2と§6は、有限段階のKoszul条件の開性と、Koszul locus全体の可算交叉・非constructible例を区別する。本稿は一般開性を用いず、同じ基底の全幾何fiberを認識してからChapter 6, Theorem 7.3を局所的に用いる。参照本文は [書籍テキスト](https://djvu.online/file/T1DOlccPNeqX0)、正確な書誌は既存項目PolishchukPositselski2005。
+
+framed実現空間のスキーム性には [Stacks Tag 05W6](https://stacks.math.columbia.edu/tag/05W6), Lemma 76.14.8 と [Tag 03XX](https://stacks.math.columbia.edu/tag/03XX), Proposition 67.50.2の本文と証明を確認した。有限型monomorphismはrepresentable・separated・unramified・quasi-finiteであり、スキームをtargetとするためsourceもスキームとなる。開immersionとは結論しない。

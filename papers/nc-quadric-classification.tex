@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.40
+% 日本語 LuaLaTeX。2026-11-22 / v1.41
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,83 +47,43 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.40（全点でのArtin認識・中央AS4被覆）}
+\date{2026年11月22日\quad v1.41（全モジュライの有限型代数性）}
 
 \begin{document}
 \maketitle
 \begin{abstract}
-構造対象 $\OO$ のみを指定した非可換二次曲面を pointed exact 同値で分類する。
+構造対象 $\OO$ のみを指定した非可換二次曲面を pointed exact 同値で分類し、
+その内在的な相対モジュライを構成する。
 $\OO$ は Gabriel--Krull 商で rank one torsion-free かつ exceptional とし、
 反 Serre 関手の exact ample な平方根と、その全軌道環の
 型 $(1,4,6,4,1)$ の AS 正則環による正則正規二次被覆の存在を要求する。
-根・被覆・商表示は標識に含めない。
-全対象は pointed cubic 表示を持つ領域と持たない領域に分かれる。
-前者は linear データと、被約性・整性を仮定しない全ての Van den Bergh
-許容四つ組から構成され、四生成・七二次関係による有限判定で重複を除く。
-後者は中央二重平方環に帰着し、$\PP^1$ 上の二つの被約二点集合の
-非順序対を同時射影変換で割った集合で分類される。
+根・根同型・被覆は標識に含めない。
 
-族については局所有限型基底の fppf site 上に内在的な
-$\mathfrak H_2$ を定義する。反 Serre 再構成による射
-$\mathfrak H_2\hookrightarrow[X_3/\operatorname{PGL}_9]$ は全忠実で、
-対角は affine かつ有限表示である。
-代数性は framed 実現部分層の表現可能性へ帰着するが、これは未証明である。
-有限 foundation の表示商、全幾何点 groupoid、cubic から全 noncubic 点への
-smooth proper dg 特殊化と全次数平坦な反 Serre 環族も構成する。
-表示族の位相と内在的モジュライの位相の一致は別に必要である。
+体上の全対象は、linear データと全 Van den Bergh 許容四つ組から来る cubic 領域と、
+中央二重平方表示に帰着する noncubic 領域に分かれる。
+前者では四生成・七二次関係の有限判定で重複を除き、後者では
+$\PP^1$ 上の二つの被約二点集合の非順序対の同時射影同値で分類する。
 
-全対象の適合切断環は Koszul であり、相対 Koszul 原理と geometric helix の
-変形理論から Artin 基底上の Abel 変形を再構成する。
-偏極忘却の一次の核は foundation の $\operatorname{HH}^1$ である。
-可換 $Q=\PP^1\times\PP^1$ の標準 Serre 平方根は全 Artin 変形に一意に
-持ち上がり、canonical hull による同じ根の相対 AS4 被覆を持つ。
-従って $Q$ での形式変形問題は pointed Abel 変形に一致し、無障害で接次元九となる。
-根は有限型 \'etale 近傍の perfect Morita 双加群へ代数化できる。
+局所有限型基底の fppf site 上の内在的スタック $\mathfrak H_2$ は、
+有限型で滑らかな純次元三の Artin スタックにより表され、対角は affine 有限表示である。
+反 Serre 再構成による全忠実射
+$\mathfrak H_2\hookrightarrow[X_3/\operatorname{PGL}_9]$ の framed 実現空間
+$X_{\mathrm{as}}$ は、有限型で滑らかな純次元八十三のスキームである。
+ただし一致根対では $X_3$ の接次元が八十四となり、実現像はそこで開ではない。
 
-この近傍の一つの幾何的 cubic 開上で、普遍 cubic 解消、
-全次数平坦な軌道環と homological AS4 被覆を構成する。
-有限 projective 係数の cubic 解消から torsion 局所化の導来次元を制御し、
-任意の affine 基底変更で
-$D(\operatorname{QGr}B)\simeq D(\operatorname{Mod}\Lambda)$ を得る。
-全 helix と射を比較することで、次数移動を既存の Morita 根へ対応させ、
-canonical compact 圏の相対 Serre 関係と導来基底変更を確認する。
-さらに相対 point curve の座標代数を Keeler の消滅で制御し、
-正規拡大、linear 閉部分の Segre 表示、次数別完備化による貼合せを用いて、
-周期を選ばずに全 row・column の普遍 Noetherian 性を証明する。
-実際の二周期があれば、逆 coevaluation の核から相対 canonical AS4 hullを
-構成でき、被覆も任意の Noetherian 基底変更後に左右 Noetherian となる。
-これにより coherent Hom、AZ、全相対 $\chi_q$ を備えた実際の族
-$U^\circ\to\mathfrak H_2$ が得られる。
-全閉点で指定同型を保つ Artin 持上げを示すと、この射は表現可能で滑らかとなる。
-非線形の普遍五つ組上では相対 Picard 群の二除算と ATV の作用から
-Serre に適合する二周期を構成し、被約な普遍基底上の比較同型を
-任意の非被約底へ引き戻す。
-五つの helix 対象から四つの矢空間と四次 syzygy 直線を回復することで、
-全 cubic 点を覆う chart の指定同型付き Artin 持上げが得られる。
-従って全 cubic 領域は有限型で滑らかな純三次元 Artin 開部分をなし、
-各 cubic 点の形式変形は pointed Abel 変形と一致する。
-noncubic の明示二形式族についても、中央 Clifford 表示と重み付き射影スタック上の
-対角加群の perfect 性を用い、表示スタックから $\mathfrak H_2$ への実際の射を構成する。
-さらに全 noncubic 点で、trace 零の交換対合から選んだ根が
-Hochschild 一次・二次に恒等に作用することを証明する。
-この根は全 Artin Abel 変形へ一意に延び、有限型 étale 近傍上でも
-実際の Morita 根として代数化できる。
-さらに、全 noncubic 点を含む foundation 変形の開部分へ、
-Lagrangian Grassmannian の開部分の群商から表現可能な étale 射を与える。
-法方向の六次行列式により良い根の選択を具体化し、根対一致時の
-別の trace 零根には負の Hochschild 二次方向が残ることも示す。
-五頂点の非極小 bar 解消から、その局所環上の全軌道と canonical tails を認識する。
-さらに良い noncubic 根の軌道環に中央 AS4 被覆を明示し、
-二次双対の反中心の消滅を使って、同じ被覆を全 Artin 横断変形へ延長する。
-従って全 $\HH$ 幾何点で形式変形 groupoid は pointed Abel 変形と一致する。
-有限型の一つの近傍上への全次数一様化はなお残る。
-また構造対象 $\OO$ を忘れる際の幾何点ファイバーについて、
-滑らかな楕円型で $\eta\notin\mathbb Z\delta$ なら、二反射と
-対角移動で全ての $\mathbb Z^2$ 標識を構成し、数値類ごとの一意性から全被覆を得る。
-楕円曲線の有限自己同型群を含む必要十分条件で重複を判定し、
-$\delta$ が非捩れなら可算無限、捩れなら有限のファイバーとなる。
-\emph{モジュライ全体の代数性は未証明である。}
-既知結果の相対適用と直接証明を区別し、後者の包括的な新規性は未確認である。
+証明では、cubic 族の普遍 Noetherian 性・相対 Picard 根・canonical AS4 hull と、
+noncubic 境界の Lagrangian 表示を結ぶ。
+二つの adjugate の cross flattening による有限開条件で全幾何 fiber の foundation を認識し、
+実際の Serre 根と五頂点 bar 解消から、同じ有限型近傍上で全軌道と canonical tails を比較する。
+非被約 noncubic 閉部分の相対正規形と二つの cubic 開部分から Noetherian 性を貼り合わせ、
+局所中央 AS4 被覆を全次数について延長する。
+一般の Koszul 性の開性は用いない。
+全幾何点で Artin 形式変形は pointed Abel 変形と一致し、無障害である。
+指定された pointed 同型を保つ持上げと、実際の表示族の準コンパクト性から有限個の smooth chart を得る。
+
+さらに滑らかな楕円型の指定範囲では全 $\mathbb Z^2$ 構造対象を認識し、
+楕円自己同型を含む明示判定によって、$\OO$ を忘れるファイバーの有限・可算無限を決定する。
+既知の分類・変形理論と本稿の相対構成を区別し、包括的な新規性の確定は主張しない。
 \end{abstract}
 \tableofcontents
 
@@ -149,14 +109,20 @@ $s=-\otimes H$ は $s^2\simeq S^{-1}[2]$ という平方根である。
 \subsection{相対モジュライの中心結果}
 \label{sec:intro-cubic-algebraicity}
 
-\begin{theorem}[cubic 開部分の代数性]
-全幾何ファイバーが cubic である $\HHstack$ の full 部分スタック
-$\mathfrak V_{\mathrm{cub}}$ は、有限型で滑らかな純次元三の Artin 開部分である。
-各 cubic 点では、$\HHstack$ から pointed Abel 圏への忘却は
-Artin 形式変形 groupoid の同値を与える。
+\begin{theorem}[全モジュライの有限型代数性]
+局所有限型 $k$-スキーム上の $\HHstack$ は、有限型で滑らかな純次元三の
+Artin スタックにより表され、対角は affine かつ有限表示である。
+framed 実現空間 $X_{\mathrm{as}}$ は有限型で滑らかな純次元八十三のスキームであり、
+\[
+ \HHstack\simeq[X_{\mathrm{as}}/\operatorname{PGL}_9].
+\]
+全幾何 fiber が cubic となる部分は Artin 開部分をなす。
+noncubic の一致根対では $X_{\mathrm{as}}\to X_3$ は open immersion ではない。
 \end{theorem}
 
-証明は定理~\ref{thm:cubic-smooth-open}と系~\ref{cor:cubic-formal-h2-abelian}に置く。
+全体の証明は定理~\ref{thm:global-h2-smooth-finite-type}、
+系~\ref{cor:global-xas-smooth-scheme}、命題~\ref{prop:global-h2-not-ambient-open} に置く。
+cubic 開部分には定理~\ref{thm:cubic-smooth-open} を用いる。
 周期を選ばない普遍 Noetherian 性、同じ二周期の canonical AS4 hull、
 相対 Picard 根、quintuple の Artin 持上げを順に用いる。
 Artin--Tate--Van den Bergh \cite[Proposition 5.5, Corollary 5.7]{ArtinTateVanDenBergh1991}
@@ -182,8 +148,21 @@ noncubic 点では、二根対が異なると両次元は $(3,0)$、一致する
 noncubic 部分の証明は系~\ref{cor:noncubic-all-artin-h2} に置く。
 同じ根の中央被覆は定理~\ref{thm:noncubic-central-hull}、
 局所環上の延長は定理~\ref{thm:noncubic-local-central-hull} による。
-この形式認識から、有限型の一つの開近傍で全軌道と全幾何 fiber が一様に認識できることは
-直ちには従わない。$\HHstack$ 全体の代数性は引き続き未証明である。
+形式認識と有限型効果性の間は、第\ref{sec:noncubic-finite-type}節で埋める。
+Lagrangian 四平面の両射影の kernel から Segre 点を除き、
+$\operatorname{Cr}(B\operatorname{adj}A)$ と
+$\operatorname{Cr}(A\operatorname{adj}B)$ の可逆性を課す。
+これらは noncubic 点を含む有限個の開条件であり、全幾何 fiber の foundation を既知模型へ認識する。
+同じ四項と Serre 四周期によって全軌道を比較し、perfect fiber 判定から同じ基底上で全 Hom を平坦化する。
+非被約閉部分と cubic 二開部分の Noetherian 貼合せ、および中央被覆の延長により
+定理~\ref{thm:noncubic-finite-type-effectivity} の実際の相対族を得る。
+指定 Artin 同型を保つ smoothness と有限部分被覆から、全体の代数性が従う。
+
+この手順では一般の Koszul 性を開条件として用いない。
+Polishchuk--Positselski \cite[Chapter 6, Theorem 2.1, Corollary 2.2 and \S6]{PolishchukPositselski2005}
+の有限段階の開性と、Koszul locus 全体の条件を区別する。
+本稿では全 fiber の geometric helix の認識から Koszul 性を供給し、
+その後に同書 Chapter 6, Theorem 7.3 の局所変形原理を使う。
 
 \subsection{先行研究と本稿の範囲}
 
@@ -592,6 +571,8 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/noncubic_hh_roots}
 \input{sections/noncubic_central_hull}
 \input{sections/noncubic_local_tails}
+\input{sections/noncubic_finite_type}
+\input{sections/h2_smooth_atlas}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
@@ -632,44 +613,20 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 Deligne--Mumford スタックにはならない。
 \end{remark}
 
-\begin{problem}[相対モジュライの代数性と境界]
-第\ref{sec:relative-h2-definition}節で定義した $\HHstack$ について、
-命題~\ref{prop:relative-h2-algebraicity-reduction} の
-framed 実現部分層 $X_{\mathrm{as}}$ の有限型代数空間による表現可能性を示せ。
-相対 AZ 再構成、全忠実性、対角の有限表示性は既に得られている。
-Artin 基底では有限 foundation と canonical 反 Serre 偏極を回復し、
-偏極忘却の核を同定した。有限 foundation と自己同値双加群の表示が得られれば、
-定理~\ref{thm:bimodule-line-comparison} が偏極の一致を有限表示局所閉条件にする。
-一般有限型基底でこの表示を構成し、適合平方根と AS 被覆の fppf 局所存在を認識せよ。
-可換点では定理~\ref{thm:quadric-all-artin-h2} が全 Artin 段階の根と AS4 被覆を構成し、
-系~\ref{cor:quadric-formal-deformation-equivalence} が形式変形問題を認識する。
-命題~\ref{prop:quadric-etale-morita-root} により標準根は foundation 表示の
-\'etale 近傍へ Morita 双加群として代数化できる。
-定理~\ref{thm:quadric-finite-type-effectivity} は、この近傍に
-Noetherian な相対 tails heart と全ての内在的相対条件を構成する。
-系~\ref{cor:quadric-effective-smooth-neighborhood} により、
-その像は $Q$ を含む有限型 smooth Artin 開部分である。
-さらに定理~\ref{thm:cubic-smooth-open}と
-系~\ref{cor:cubic-formal-h2-abelian}により、全 cubic 領域は
-有限型 smooth Artin 開部分となり、その全 Artin 変形を認識できる。
-全 noncubic 点でも、定理~\ref{thm:noncubic-hh-trivial-root} と
-系~\ref{cor:noncubic-etale-morita-root} により、
-良い適合根は全 Artin 変形と有限型 étale 近傍上に存在する。
-残るのは、この同じ根の AS4 被覆と実際の相対 heart を
-境界の横断変形に沿って構成することである。
-一般の $X_3$ 族については、命題~\ref{prop:antiserre-polarization-family} の
-偏極変形を除外する必要がある。
-また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、
-例~\ref{ex:fppf-image-nonalgebraic} が示す fppf 像の問題が残る。
+\begin{problem}[相対表示と境界の幾何]
+定理~\ref{thm:global-h2-smooth-finite-type} により $\HHstack$ の有限型代数性は成立し、
+系~\ref{cor:global-xas-smooth-scheme} により framed 実現空間は smooth スキームとなる。
+有限 foundation の ruling 商 $\mathfrak Q_{\mathrm{fnd}}$ との相対比較を具体化し、
+内在的な位相での成分と noncubic 境界の局所幾何を記述せよ。
+既存の smooth proper dg 特殊化族そのものの相対 $\HHstack$ 認識は、各族について別に確認する。
+命題~\ref{prop:h2-component-density} の誘導位相での既約性を、比較なしに内在的な成分数と同一視しない。
 
-命題~\ref{prop:h2-line-degeneration} と
-命題~\ref{prop:line-degeneration-antiserre-algebras} により、
-全 noncubic 点への cubic からの特殊化は、構造対象付き smooth proper dg 族と
-全次数平坦な反 Serre 環族として存在する。
-これらが相対 $\HHstack$ の族となること、または実現点集合の誘導位相が
-内在的な位相に一致することを示し、成分と境界を決定せよ。
-命題~\ref{prop:h2-component-density} の既約性を
-この比較なしに内在的モジュライの成分数と同一視しない。
+また $X_{\mathrm{as}}\to X_3$ の局所閉性と具体的な認識方程式を調べよ。
+一致根対では命題~\ref{prop:global-h2-not-ambient-open} が開性を否定する。
+余分な一次方向は系~\ref{cor:artin-polarization-retraction} の
+$\operatorname{HH}^1$ に対応する偏極変形である。
+全スキーム上の商による延長と、任意 Noetherian 基底上で同じ Abel 公理を課す関手との一致も、
+極限保存と canonical 導来圏の比較を伴う別の課題である。
 \end{problem}
 
 \bibliographystyle{alpha}

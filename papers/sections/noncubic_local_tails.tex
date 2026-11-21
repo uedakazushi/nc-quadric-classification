@@ -355,13 +355,15 @@ Morita 表示の $-\otimes_{\Lambda_{R'}}^{\mathbf L}\Lambda_{R''}$ と一致す
 これで (4) を得る。
 \end{proof}
 
-\begin{remark}[残る一様化の正確な位置]
+\begin{remark}[局所定理と有限型一様化の役割]
 有限型近傍上の各軌道 Hom は perfect であり、固定した有限個については開性を使える。
 本定理は、その無限個の開条件の共通部分が開であるとは述べない。
 AS4 被覆の延長が得られても、有限型近傍で使う全軌道の一様平坦性・表示比較と
 全幾何 fiber の rank-one torsion-free 条件は別途確認する。
 一方、同じ局所環上では全次数の bar 解消と Noetherian heart を既に得たので、
 以後の局所 AS4 構成で canonical compact 圏を独立の未証明入力に戻す必要はない。
+有限型一様化は定理~\ref{thm:noncubic-finite-type-effectivity} で、
+全幾何 fiber の有限 foundation 認識を新しい入力として証明する。
 \end{remark}
 
 
@@ -623,7 +625,7 @@ $E_{<0}=0$ から二つの parity で帰納すれば、全 $E_n$ は有限 proje
 から得られる。
 \end{proof}
 
-\begin{remark}[一様化で閉じる部分と残る部分]
+\begin{remark}[中央正則性と Koszul 性の入力]
 この補題の有限性は、中央二次元による商が有限個の次数にしか台を持たないことから来る。
 したがって $E_n$ ごとに別々の開近傍を選ぶ必要がない。
 有限型近傍上で $P_0,\ldots,P_5$ の指定階数と中央性を確立できれば、
@@ -631,4 +633,6 @@ $E_{<0}=0$ から二つの parity で帰納すれば、全 $E_n$ は有限 proje
 一方、指定点での $P$ の Koszul 性をその開全体へ延ばすことは別である。
 既存の局所 Koszul 変形原理を用いるには、適用先の各局所環の剰余体上の
 Koszul 性、またはそれを与える一様な伝播補題がさらに必要である。
+第\ref{sec:noncubic-finite-type}節では、全 fiber の有限認識からこの入力を供給し、
+補題~\ref{lem:spread-local-central-hull} で同じ根の AS4 被覆まで延長する。
 \end{remark}
