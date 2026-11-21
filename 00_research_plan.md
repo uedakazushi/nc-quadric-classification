@@ -32,7 +32,7 @@
 
 **noncubic局所環上の効果性と全Artin認識。** 五頂点の非極小bar解消により、極小Betti数の変動を許して、同じ局所環上の全前向きHom・全軌道・canonical tails・Noetherian heartを構成した。二次双対の反中心消滅はgeneric cubic canonical線のnormalizerが−1となる可能性を排除し、中心直線を直和因子として延長する。閉fiberの正則性と単元minorから全次数の中央AS4被覆が延びる。指定還元同型付きArtin変形をétale foundation chartへ持ち上げると、全noncubic点で形式H2変形＝pointed Abel変形となる。非一致根対では接3・慣性0、一致では接4・慣性1、いずれも無障害。既存cubic結果と合わせ、全H2幾何点でArtin形式認識が成立した。証明は `thm:noncubic-local-tails-effectivity`、`thm:noncubic-local-central-hull`、`cor:noncubic-all-artin-h2`。
 
-**残る核心は有限型近傍上への一様化である。** 全H2点のArtin形式認識と、noncubic点の局所環上の全軌道・中央AS4被覆・Noetherian heartは成立した。未解決なのは、これらを単一の有限型étale近傍上へ同時に広げ、全幾何fiberのrank-one torsion-free条件と内在的H2認識を証明する段階である。無限個の開条件の共通部分を開と扱わない。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
+**残る核心は有限型近傍上への一様化である。** 全H2点のArtin形式認識と、noncubic点の局所環上の全軌道・中央AS4被覆・Noetherian heartは成立した。中央線φの全次数正則性と双対Eの全次数平坦性は、Eが中央R[φ]上有限となることから一つの開へ広がる（`lem:spread-central-regular-line`）。未解決なのは、有限Frobenius商P=E/(φ)のKoszul性、提示環と実際の全軌道の比較を同じ開で伝播し、全幾何fiberのrank-one torsion-free条件と内在的H2認識を証明する段階である。無限個の開条件の共通部分を開と扱わない。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
 
 **別稿と研究間の関係。** `papers/quiver-avatar-moduli.tex`（v0.1）は有限foundationの8/10/12矢chart、重み四QP、反標準avatarを扱う独立論文である。体上の表示と相対H2の実現条件を区別する。cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は構成済みだが、一般族の内在H2条件は未完成。詳細な主張状態は下の表と研究ノートを正本とする。
 
@@ -148,6 +148,7 @@ $$
 | 良いnoncubic根の中央AS4被覆 | θ≠0の全配置。六関係の新しいambient、twist後に中央、二次中心1・反中心0 | `thm:noncubic-central-hull`, `lem:noncubic-no-quadratic-anticenter` |
 | 五頂点窓と局所canonical tails | 同じNoetherian局所基底上で全軌道自由・Noetherian heart・任意導来基底変更。極小Betti数の固定を不要にする | `lem:five-window-bar-lifting`, `prop:five-window-canonical-tails`, `thm:noncubic-local-tails-effectivity` |
 | 局所中央被覆と全noncubic Artin認識 | regular local foundation chartのgeneric cubicを使って中心線を延長。全Artinで形式H2＝Abel、無障害。全有限型開一様化は未証明 | `thm:noncubic-local-central-hull`, `cor:noncubic-all-artin-h2` |
+| 中央二次元の全次数正則性の有限型一様化 | P=E/(φ)の次数0–4が有限projective、P₅=0、指定局所環でφ正則。EはR[φ]上有限で、一つの開で全次数正則・projective。Koszul性は未主張 | `lem:spread-central-regular-line` |
 | 可換Qの全一次変形の相対H2実現 | Jacobian AS4被覆とZhang補正。任意有限次元二乗零理想へ拡張。内在接dim9、偏極付き接dim15、核dim6 | `thm:quadric-all-first-order-h2`, `cor:quadric-intrinsic-tangent` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
 
@@ -207,7 +208,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **局所環上の構成を一つの有限型étale近傍へ広げる。** まず良いMorita根の有限軌道窓からB₁・七次関係J・中心線Nを同じ開上にspreadし、有限AS4判定の非退化minorを可逆化する。PPの三次平坦性から得る提示環と実際の全軌道環の比較を、五頂点bar複体と四周期で全次数へ伝播する補題を証明する。各次数別の開性だけでは不十分である。`thm:relative-finite-as-cover` は全軌道平坦・全fiber Koszul・Noetherianを入力とし、PPもspecial fiber Koszulを要するため、これらだけで一様化が従うと循環させない。
+1. **局所環上の構成を一つの有限型étale近傍へ広げる。** 良いMorita根の有限軌道窓からB₁・七次関係J・中心線N・双対商Pの次数≤5を同じ開上にspreadする。`lem:spread-central-regular-line` により中心正則性とE=B_fin!の全次数平坦性は一様化できるので、次はこの特別な有限Frobenius族PのKoszul性の開性・有限伝播を証明する。その後、提示環と実際の全軌道環の比較を五頂点bar複体と四周期で全次数へ伝播する。各次数別の開性だけでは不十分である。`thm:relative-finite-as-cover` は全軌道平坦・全fiber Koszul・Noetherianを入力とし、PPもspecial fiber Koszulを要するため、これらだけで一様化が従うと循環させない。
 2. **全fiberの内在認識とNoetherian一様性を閉じる。** 上の開上でgeometric cubic部分とnoncubic部分の実際のheart・軌道表示を比較し、rank-one torsion-freeを確認する。必要なら `thm:patch-noetherian` を使う。局所環上のNoetherian性・全Artin認識を未解決へ戻さず、有限型開上で不足する入力を特定する。
 3. **効果的近傍から全H2の代数性へ進む。** 指定同型付きArtin持上げとaffine有限表示対角を用い、cubic側と同じsmooth atlasの議論を適用する。その前提である実際の有限型H2族を先に完成する。
 

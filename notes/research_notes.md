@@ -44,7 +44,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **noncubic局所環上の効果性と全Artin認識。** 五頂点の非極小bar解消により、極小Betti数の変動を許して、同じ局所環上の全前向きHom・全軌道・canonical tails・Noetherian heartを構成した。二次双対の反中心消滅はgeneric cubic canonical線のnormalizerが−1となる可能性を排除し、中心直線を直和因子として延長する。閉fiberの正則性と単元minorから全次数の中央AS4被覆が延びる。指定還元同型付きArtin変形をétale foundation chartへ持ち上げると、全noncubic点で形式H2変形＝pointed Abel変形となる。非一致根対では接3・慣性0、一致では接4・慣性1、いずれも無障害。既存cubic結果と合わせ、全H2幾何点でArtin形式認識が成立した。証明は `thm:noncubic-local-tails-effectivity`、`thm:noncubic-local-central-hull`、`cor:noncubic-all-artin-h2`。
 
-**残る核心は有限型近傍上への一様化である。** 全H2点のArtin形式認識と、noncubic点の局所環上の全軌道・中央AS4被覆・Noetherian heartは成立した。未解決なのは、これらを単一の有限型étale近傍上へ同時に広げ、全幾何fiberのrank-one torsion-free条件と内在的H2認識を証明する段階である。無限個の開条件の共通部分を開と扱わない。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
+**残る核心は有限型近傍上への一様化である。** 全H2点のArtin形式認識と、noncubic点の局所環上の全軌道・中央AS4被覆・Noetherian heartは成立した。中央線φの全次数正則性と双対Eの全次数平坦性は、Eが中央R[φ]上有限となることから一つの開へ広がる（`lem:spread-central-regular-line`）。未解決なのは、有限Frobenius商P=E/(φ)のKoszul性、提示環と実際の全軌道の比較を同じ開で伝播し、全幾何fiberのrank-one torsion-free条件と内在的H2認識を証明する段階である。無限個の開条件の共通部分を開と扱わない。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
 
 **Artinのfoundationと偏極忘却。** `artin_foundation.tex` で、全H2のnormal geometric helixにDe Deken–Lowenを適用し、全flat pointed Abel変形にrank24のcompact tilting foundationを持ち上げた。閉fiberでheart-exactなMorita同値は、m-adic有限フィルターの各商が閉fiber圏に属することから全変形heartでexactとなる。canonical反SerreはAZ ampleで全軌道環を再構成し、Artin X3からAbel圏への忘却に右逆を与える。一般の提示環から全軌道環への自然射も、各次数が自由で特殊化が同型なので同型である。
 
@@ -354,7 +354,9 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 **五頂点の非極小化が必要な理由。** noncubicの最小解消に現れる距離二の追加項はcubic generic fiberでは消える。barの固定複体なら、この追加二項が可縮になることを許す。末頂点係数の階数は次数1–4で9,40,48,16、Tor₄=0から最後の項をsplit消去する。導来torsion kernel=loc{Sᵢ}を確認して、Pᵢ↦E₋ᵢが全軌道・shift・実際のMorita根を保つ比較へ降りる。
 
-**有限型一様化で循環しないこと。** V,J、中心線、被覆関係H、双対の次数≤5とFrobenius pairing、次数三の中央性は有限データなので単一開へspreadできる。しかし `thm:relative-finite-as-cover` 自体が全Bₙ平坦・全fiber Koszul・Noetherianを仮定するため、その定理で全軌道の一様化を証明することはできない。PPも各局所環でspecial fiberのKoszul性を要する。残る具体的補題は、距離≤4の二周期五頂点データから、有限提示候補C_finと実際のRHom(E₋ⱼ,E₋ᵢ)との比較および誘導bar完全性を同じ開の全内部次数へ伝播することである。有限窓内の完全性だけを、その全次数完全性と同一視しない。
+**中心正則性は一つの開に広がる。** `lem:spread-central-regular-line` は、P=E/(φ)の次数0–4がfinite projective、P₅=0なら、一次生成性からEが中央R[t]（deg t=2、t=φ）上有限となることを使う。乗法核は有限R[t]加群なので、指定局所環での消滅を一つの分母で全次数同時に消せる。得た開上で次数付きR[t]-加群としてEはP₀,…,P₄の持上げから作る直和（非標準的）となり、全Eₙのprojectivityと任意底変更後の正則性が成立する。この有限化補題は独立読取り済み。
+
+**残る伝播と循環の回避。** 有限Frobenius商PのKoszul性、従ってA=P!とB_finの全次数flatはまだ別である。`thm:relative-finite-as-cover` は既に全Bₙ平坦・全fiber Koszul・Noetherianを仮定し、PPも各局所環のspecial fiber Koszulを要する。指定点一つのKoszul性を開全体へ供給する定理として使わない。これを解いた後にも、距離≤4の二周期五頂点データから、有限提示候補C_finと実際のRHom(E₋ⱼ,E₋ᵢ)との比較および誘導bar完全性を同じ開の全内部次数へ伝播する必要がある。
 
 **Artin認識の依存。** DDLで指定還元同型に沿うfoundationを持ち上げ、基底を選んでsmooth chartへ写す。étale近傍の指定点を保つliftは局所環を経由する。局所中央被覆をpullbackし、heart-exactness・AZと `prop:artin-witness-relative-promotion` を使う。根や被覆を追加標識にはしない。全H2点の形式認識は完了したが、一般有限型基底上の代数性は未完成。
 
@@ -415,7 +417,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 2026-11-21に主論文v1.40のLuaLaTeX・latexmk組版を実行し、272頁のPDFと同じ出力先のSyncTeXを確認した。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。Lagrangian表示、中央被覆、五頂点窓、局所AS4、全Artin認識、楕円忘却の選択20頁（234–249、265–268）を画像確認し、そのうち239・243・247・248・267頁を個別表示で詳細確認した。sourcesはPASS（47 manuscript files / 564 labels / 262 citation uses / 7 Markdown files）。既存全頁の個別目視とVS Code UI操作は今回行っていない。別稿v0.1は変更せず、既存の組版・画像確認の範囲を維持し、今回の再組版は行っていない。
+**組版・参照確認。** 2026-11-21に主論文v1.40のLuaLaTeX・latexmk組版を実行し、273頁のPDFと同じ出力先のSyncTeXを確認した。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。Lagrangian表示、中央被覆、五頂点窓、局所AS4、全Artin認識、楕円忘却の選択21頁（234–250、266–269）を画像確認し、そのうち239・243・247・248・249・250・268頁を個別表示で詳細確認した。sourcesはPASS（47 manuscript files / 567 labels / 262 citation uses / 7 Markdown files）。既存全頁の個別目視とVS Code UI操作は今回行っていない。別稿v0.1は変更せず、既存の組版・画像確認の範囲を維持し、今回の再組版は行っていない。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

@@ -542,3 +542,93 @@ Abel heart 上の exactness と AZ 豊富性は
 局所環上で同時に成り立つ全軌道・Noetherian 条件を、単一の有限型 étale 近傍へ
 一様に広げる段階と、その相対認識を別に閉じる必要がある。
 \end{remark}
+
+\subsection{中央二次元の全次数正則性の有限型一様化}
+
+\begin{lemma}[有限な二次商から中央正則線を一様化する]
+\label{lem:spread-central-regular-line}
+$R$ を可換 Noetherian 環、$V$ を有限 $R$-加群とし、
+$J\subset V^{\otimes2}$ とし、$E=T_R(V)/(J)$ を次数一生成の二次 $R$-代数とする。
+特に $E_{<0}=0$、$E_0=R$、$E_1=V$ は有限生成である。
+$\phi\in E_2$ は中央であると仮定し、$P=E/(\phi)$ と置く。
+$P_0,\ldots,P_4$ は有限 projective $R$-加群、$P_5=0$ とする。
+さらに、ある $\mathfrak p\in\operatorname{Spec}R$ において
+$\phi$ の $E\otimes_RR_{\mathfrak p}$ 上の乗法が単射であると仮定する。
+これは剰余体上だけの正則性ではなく、局所環上の正則性の仮定である。
+
+このとき $f\in R\setminus\mathfrak p$ が存在し、単一の開 $D(f)$ 上で
+\begin{enumerate}
+\item $\phi$ は全次数で左右正則である。
+\item 全ての $(E_f)_n$ は有限 projective $R_f$-加群であり、
+  \[
+  0\longrightarrow(E_f)_{n-2}\xrightarrow{\phi\cdot}(E_f)_n
+       \longrightarrow(P_f)_n\longrightarrow0
+  \tag{SC-exact}\label{eq:spread-central-regular-sequence}
+  \]
+  は $R_f$ 上分裂完全である。負次数は零とする。
+\item 任意の可換 $R_f$-代数への変更後にも、中央正則性、
+  上の全次数の完全列、商 $E_f/(\phi)=P_f$ が保たれる。
+\end{enumerate}
+さらに $\deg t=2$、$t$ の作用を $\phi$ とすれば、非標準的な次数付き同型
+\[
+ E_f\simeq\bigoplus_{i=0}^4(P_i)_f\otimes_{R_f}R_f[t](-i)
+ \tag{SC-module}\label{eq:spread-central-projective-module}
+\]
+がある。従って $E_f$ は $R_f[t]$ 上有限 projective でもある。
+各 $P_i$ が階数 $1,4,6,4,1$ を持つ場合、$E_n$ の階数は
+$1,4,7,8,8,\ldots$ となる。
+この補題は $P$ または $E$ の Koszul 性を結論しない。
+したがって二次双対 $P^!$ の AS 正則性や全次数平坦性も、この補題だけからは従わない。
+\end{lemma}
+
+\begin{proof}
+$P$ は次数一生成なので、$P_5=0$ から $P_n=0$（$n\ge5$）である。
+各 $P_i$（$0\le i\le4$）の有限生成元を $E_i$ へ持ち上げる。
+$t$ を次数二の中央変数とし、$t$ の作用を $\phi$ の乗法で定めると、
+これらの有限個の持上げは $E$ を $R[t]$-加群として生成する。
+実際、任意の斉次元をまず $P_n$ への像で消し、残りを
+$\phi E_{n-2}$ と書く。この操作を内部次数について繰り返せば有限回で止まる。
+この段階では $\phi$ の正則性を使っていない。
+
+$R[t]$ は Noetherian で $E$ はその有限加群だから、
+\[
+ K=\ker\bigl(\phi\cdot:E(-2)\longrightarrow E\bigr)
+\]
+も有限 $R[t]$-加群である。
+局所化は完全なので、仮定により $K\otimes_RR_{\mathfrak p}=0$ である。
+$K$ の有限個の $R[t]$-生成元を $z_1,\ldots,z_m$ とする。
+各 $z_a$ は $\mathfrak p$ の外のある $f_a\in R$ によって消えるため、
+$f=\prod_af_a$ とすれば $K_f=0$ である。
+$K=0$ の場合は $f=1$ とする。
+この一つの分母が全内部次数の kernel を同時に消す。
+中央性により左右の正則性は同じである。
+
+中央性と $P=E/(\phi)$ から
+\eqref{eq:spread-central-regular-sequence} が完全となる。
+全 $P_n$ は projective で、$n\ge5$ では零だから、これらの列は
+$R_f$-加群として分裂する。
+$E_{<0}=0$ から二つの parity で帰納すれば、全 $E_n$ は有限 projective となる。
+各 $i=0,\ldots,4$ で $E_i\to P_i$ の $R_f$-線形切断を選び、
+これを $R_f[t]$-線形に延ばすと \eqref{eq:spread-central-projective-module} の右辺から左辺への射を得る。
+両辺の次数 $n$ の成分は、次数 $n-2$ の成分と $P_n$ による
+\eqref{eq:spread-central-regular-sequence} 型の短完全列を持つ。
+従って次数に関する帰納法でこの射は同型となる。
+切断の選択によるため同型は非標準的である。
+分裂完全列は任意の tensor 後も完全なので、非平坦な基底変更についても (3) が従う。
+階数の主張は
+\[
+ \sum_{n\ge0}\operatorname{rank}(E_f)_n\,z^n
+ =\frac{1+4z+6z^2+4z^3+z^4}{1-z^2}
+\]
+から得られる。
+\end{proof}
+
+\begin{remark}[一様化で閉じる部分と残る部分]
+この補題の有限性は、中央二次元による商が有限個の次数にしか台を持たないことから来る。
+したがって $E_n$ ごとに別々の開近傍を選ぶ必要がない。
+有限型近傍上で $P_0,\ldots,P_5$ の指定階数と中央性を確立できれば、
+局所環で得た $\phi$ の正則性を、全次数について同じ開へ延ばせる。
+一方、指定点での $P$ の Koszul 性をその開全体へ延ばすことは別である。
+既存の局所 Koszul 変形原理を用いるには、適用先の各局所環の剰余体上の
+Koszul 性、またはそれを与える一様な伝播補題がさらに必要である。
+\end{remark}
