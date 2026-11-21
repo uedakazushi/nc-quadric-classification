@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.30。主論文v1.30に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.31。主論文v1.31に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -76,6 +76,12 @@ Zhang, *Twisted Graded Algebras and Equivalences of Graded Categories*, Proc.Lon
 Bondal–Van den Bergh, *Generators and representability of functors in commutative and noncommutative geometry*, Moscow Mathematical Journal **3** (2003), 1–36, DOI [10.17323/1609-4514-2003-3-1-1-36](https://doi.org/10.17323/1609-4514-2003-3-1-1-36), [arXiv math/0204218v2](https://arxiv.org/abs/math/0204218v2) の§4.1、Lemmas 4.1.3–4.1.7と直後のunbounded導来関手、Lemma 4.2.2を一次PDFで確認した。原典の体上の仮定を一般基底へ無条件に適用せず、現行 `relative_cubic_tails.tex` では、有限projective係数のcubic解消を用いてtorsionのacyclicity・cdτ≤3・cdω≤2・直和整合性を再証明する。局所化の向きはπ⊣Rω、三角はRτX→X→RωπXである。
 
 四項tiltingからのMorita同値はKeller1994 §§4.3,8.2を用いる。体上分類・Noetherian性はVdB2011の別の入力である。相対定理はNoetherian性なしのGrothendieck導来比較と、Noetherian性を仮定したcoherent heartの全相対認識を区別する。全χの証明では、有限presentationとcohomological dimension二から同じ基底全体のSerre消滅を得る。新規性の包括的な文献比較は完了していない。
+
+## Noetherian 性の貼合せと非可換P¹束の障害
+
+Stacks Project §10.97（Tags 00MA, 00MB, 031C, 05GH）と§10.39（Tag 00HQ）の一次本文で、有限加群の完備化、完備化の平坦性・商・Noetherian性、忠実平坦性の判定を確認した。次数別完備化を用いる非可換環・Z代数の貼合せは本稿で直接証明し、新規性は未確認である。
+
+Van den Bergh, *Non-commutative P¹-bundles over commutative schemes*, Trans. AMS 364 (2012), 6279–6313、arXiv:math/0102005v3 のTheorem 1.2（Noetherian性）、Lemma 4.1.7（双対）、§5（twist）、Theorem 7.1.2（二次解消）、Lemma 8.1.1（ample sequenceの仮定）を一次本文で確認した。Nyman, *Serre finiteness and Serre vanishing for non-commutative P¹-bundles*, J. Algebra 278 (2004), 32–42 の著者公開本文Theorem 2.5/Corollary 3.3も確認した。Nymanの式は局所自由係数GについてR⁰τ=R¹τ=0、R²τ(G e_a A)_j=0 for j>a−2であり、左右のP¹を固定P¹へ同定しtwistして適用できる。本稿の反例では一般のeventual saturationに頼らず、二次解消から全整数の飽和を直接証明する。
 
 ## 確認した一次資料
 

@@ -1,0 +1,323 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.31
+\section{次数別完備化による Noetherian 性の貼合せ}
+\label{sec:formal-noetherian-patching}
+
+\paragraph{主張の範囲.}
+以下は可換 Noetherian 基底上の非可換次数付き代数と
+正の向きの $\mathbb Z$ 代数に対する、証明済みの環論的補題である。
+閉部分上とその開補集合上で実際の代数族が Noetherian であることを仮定する。
+幾何学的ファイバーの Noetherian 性だけを仮定する主張ではない。
+各次数成分の基底上の有限性を用いるが、平坦性、射影性、二次表示、
+成長次数、導来同値は仮定しない。新規性は未確認である。
+
+\subsection{中央変数と次数付き有限生成}
+
+\begin{lemma}[中央変数に対する Hilbert 基底論法]
+\label{lem:patch-central-variable}
+$A$ を環、$M$ を右 Noetherian $A$ 加群とする。
+$t$ を中央変数とすれば $M[t]$ は右 Noetherian $A[t]$ 加群である。
+内部次数を持つ $A,M$ について、Noetherian 性を次数付き部分加群だけに対して
+仮定・結論する形も成立する。この場合 $t$ の内部次数を $0$ とする。
+同じ結論は、冪等元 $e_i$ を持つ $\mathbb Z$ 代数 $C$ と
+右 $C$ 加群の圏にも成立する。この場合、$t$ は頂点を変えず、
+$C[t]_{ij}=C_{ij}[t]$ と定める。
+\end{lemma}
+
+\begin{proof}
+$N\subset M[t]$ を部分加群とする。$n\geq0$ に対して
+$L_n\subset M$ を、$N$ に属し $t$ 次数が $n$ 以下である多項式の
+$t^n$ の係数全体とする。これは $A$ 部分加群であり、
+$t$ 倍により $L_n\subset L_{n+1}$ である。
+$M$ が Noetherian なので、この列はある $n_0$ から安定する。
+$0\leq n\leq n_0$ に対して $L_n$ の有限生成元を取り、
+それぞれを $N$ の $t$ 次数 $n$ 以下の多項式へ持ち上げる。
+この有限個の多項式は $N$ を生成する。
+実際、$v\in N$ の最高次係数を消すため、$\deg_t v\leq n_0$ のときは
+その次数の持上げを用い、$\deg_t v>n_0$ のときは $n_0$ 次の持上げの
+適当な $t$ 冪倍を用いる。差の次数が下がるので、次数に関する帰納法が使える。
+
+内部次数を持つ場合、次数付き $N$ から作る $L_n$ は次数付き部分加群なので、
+同じ証明が使える。
+$\mathbb Z$ 代数の場合も $L_n$ は $M$ の右部分加群である。
+有限生成元を各頂点に同次に取り、多項式の持上げも同じ頂点内で選べば、
+まったく同じ帰納法が成り立つ。変数を一つずつ付加することで、
+有限個の中央変数についても結論を得る。
+\end{proof}
+
+\begin{lemma}[次数付き Noetherian 性から通常の Noetherian 性へ]
+\label{lem:patch-graded-to-ungraded}
+$A=\bigoplus_{d\geq0}A_d$ を非負次数付き代数とし、
+$M$ を下に有界な次数付き右 $A$ 加群とする。
+$M$ の次数付き部分加群がすべて有限生成なら、$M$ は
+次数を忘れても Noetherian である。
+\end{lemma}
+
+\begin{proof}
+$N\subset M$ を次数付きとは限らない部分加群とする。
+内部次数による増大フィルトレーションを入れると、
+$\operatorname{gr} N\subset\operatorname{gr} M=M$ は次数付き部分加群である。
+その有限個の同次生成元を $u_1,\ldots,u_s\in N$ に持ち上げる。
+任意の $x\in N$ の最高内部次数項を $u_\ell$ の右倍で消せる。
+差の最高内部次数は真に下がる。$M$ が下に有界であるから
+この操作は有限回で終了し、$u_1,\ldots,u_s$ が $N$ を生成する。
+\end{proof}
+
+\subsection{次数ごとの完備性による持上げ}
+
+\begin{lemma}[完備基底上の持上げ]
+\label{lem:patch-complete-lifting}
+$R$ を可換 Noetherian 環、$I=(f_1,\ldots,f_r)\subset R$ をイデアルとし、
+$R$ は $I$ 進完備かつ分離的であると仮定する。
+$A=\bigoplus_{d\geq0}A_d$ を中央 $R$ 代数とし、各 $A_d$ は有限 $R$ 加群とする。
+このとき $A/IA$ が右 Noetherian なら $A$ も右 Noetherian である。
+
+より一般に、$M$ を各成分が有限 $R$ 加群である次数付き右 $A$ 加群とする。
+$M/IM$ が次数付き右 $A/IA$ 加群として Noetherian なら、
+$M$ も次数付き右 $A$ 加群として Noetherian である。
+$M$ が下に有界なら、次数を忘れても Noetherian である。
+\end{lemma}
+
+\begin{proof}
+各有限 $R$ 加群 $A_d,M_d$ は $I$ 進完備かつ分離的である。
+これは有限加群の完備化が $-\otimes_R\widehat R_I$ と一致することと
+$R=\widehat R_I$ から従う
+\cite[Tag 00MA]{StacksCompletionPatching}。
+
+$\overline A=A/IA$、$\overline M=M/IM$ と置く。
+内部次数と $I$ 進次数を持つ対象に対し、自然な全射
+\begin{equation}\label{eq:patch-gr-surjections}
+ \overline A[t_1,\ldots,t_r]\twoheadrightarrow\operatorname{gr}_I A,
+ \qquad
+ \overline M[t_1,\ldots,t_r]\twoheadrightarrow\operatorname{gr}_I M
+\end{equation}
+がある。$t_\alpha$ は内部次数 $0$、$I$ 進次数 $1$ であり、
+$f_\alpha$ の初項へ写す。これらが全射である理由は、
+$I^p A_d$ と $I^p M_d$ が、次数 $p$ の $f_\alpha$ の単項式を
+係数とする和で生成されることである。
+ここでは全射だけを用い、平坦性を仮定しないので同型とは主張しない。
+補題~\ref{lem:patch-central-variable} より、
+$\operatorname{gr}_I M$ は右 $\operatorname{gr}_I A$ 加群として Noetherian である。
+
+$N\subset M$ を次数付き部分加群とする。
+$F^pN=N\cap I^pM$ による誘導フィルトレーションを入れれば
+$\operatorname{gr}_F N\subset\operatorname{gr}_I M$ は二重次数付き部分加群である。
+有限個の二重同次生成元を取り、それぞれを
+\[
+ u_\ell\in N_{d_\ell}\cap I^{a_\ell}M_{d_\ell}
+ \qquad (1\leq\ell\leq s)
+\]
+に持ち上げる。これらが $N$ を生成することを示す。
+
+$x\in N_d$ を固定する。$I$ 進次数 $p=0,1,\ldots$ ごとに初項を消せるので、
+$a_\ell\leq p$ のとき
+\[
+ c_{\ell,p}\in I^{p-a_\ell}A_{d-d_\ell},
+\]
+$a_\ell>p$ のとき $c_{\ell,p}=0$ を選んで、
+\begin{equation}\label{eq:patch-approximation}
+ x-\sum_{p=0}^{q}\sum_{\ell=1}^s u_\ell c_{\ell,p}
+ \in N_d\cap I^{q+1}M_d
+ \qquad(q\geq0)
+\end{equation}
+とできる。存在しない負次数成分は $0$ とする。
+固定した $\ell$ について $p-a_\ell\to\infty$ であるから、
+$c_\ell=\sum_{p\geq0}c_{\ell,p}$ は有限 $R$ 加群
+$A_{d-d_\ell}$ 内で収束する。$M_d$ の分離性と
+積の $I$ 進連続性から、\eqref{eq:patch-approximation} の極限は
+\[
+ x=\sum_{\ell=1}^s u_\ell c_\ell
+\]
+である。したがって $N$ は有限生成である。
+この証明は $N$ 全体の完備性を仮定せず、
+固定した内部次数の係数加群の完備性だけを使っている。
+
+$M=A$ とすれば、$A$ のすべての次数付き右イデアルが有限生成である。
+補題~\ref{lem:patch-graded-to-ungraded} により通常の右 Noetherian 性を得る。
+一般の下に有界な $M$ も同様である。
+\end{proof}
+
+\begin{remark}[全体の完備化との区別]
+一般の $R$ に対して以下で使う代数は
+\[
+ A^{\mathrm{deg}\wedge}
+ :=A\otimes_R\widehat R_I
+ =\bigoplus_{d\geq0}(A_d\otimes_R\widehat R_I)
+\]
+である。これは各内部次数を個別に完備化した次数付き代数であり、
+無限個の内部次数にまたがる元を含み得る環
+$\varprojlim_n A/I^nA$ と同一視しない。
+補題~\ref{lem:patch-complete-lifting} の収束は一つの内部次数内で行われるため、
+$A^{\mathrm{deg}\wedge}$ 全体が $I$ 進完備である必要はない。
+\end{remark}
+
+\subsection{閉部分と開補集合からの貼合せ}
+
+\begin{theorem}[Noetherian 性の形式的貼合せ]
+\label{thm:patch-noetherian}
+$R$ を可換 Noetherian 環、$I=(f_1,\ldots,f_r)\subset R$ とする。
+$A=\bigoplus_{d\geq0}A_d$ を各 $A_d$ が有限 $R$ 加群である中央 $R$ 代数とする。
+次を仮定する。
+\begin{enumerate}
+ \item $A/IA$ は右 Noetherian である。
+ \item 各 $\alpha$ について $A\otimes_R R_{f_\alpha}$ は右 Noetherian である。
+\end{enumerate}
+このとき $A$ は右 Noetherian である。左についても同じ結論が成り立つ。
+
+より一般に、各成分が有限 $R$ 加群である次数付き右 $A$ 加群 $M$ について、
+$M/IM$ とすべての $M_{f_\alpha}$ がそれぞれ次数付き Noetherian なら、
+$M$ も次数付き Noetherian である。
+$M$ が下に有界なら通常の右加群としても Noetherian である。
+\end{theorem}
+
+\begin{proof}
+$\widehat R=\widehat R_I$ と置く。
+$\widehat R$ は Noetherian かつ $I\widehat R$ 進完備であり、
+$\widehat R/I\widehat R=R/I$ である
+\cite[Tags 031C, 05GH]{StacksCompletionPatching}。
+$A^{\mathrm{deg}\wedge}/IA^{\mathrm{deg}\wedge}=A/IA$ なので、
+補題~\ref{lem:patch-complete-lifting} により
+$A^{\mathrm{deg}\wedge}$ は右 Noetherian である。
+
+有限直積
+\begin{equation}\label{eq:patch-faithful-cover}
+ R^{\ast}=\widehat R_I\times\prod_{\alpha=1}^r R_{f_\alpha}
+\end{equation}
+を取る。完備化の平坦性 \cite[Tag 00MB]{StacksCompletionPatching} と局所化の平坦性により
+$R\to R^{\ast}$ は平坦である。
+$\Spec\widehat R_I\to\Spec R$ の像は、
+$\widehat R_I/I\widehat R_I=R/I$ より $V(I)$ を含む。
+残りは $D(f_\alpha)$ で覆われるから、スペクトル上で全射である。
+したがって $R\to R^{\ast}$ は忠実平坦である
+\cite[Tag 00HQ]{StacksCompletionPatching}。
+なお $I=R$ の場合は開被覆だけを用い、$I=0$ の場合は仮定 (1) で結論が出る。
+
+$A\otimes_R R^{\ast}$ は右 Noetherian 環の有限直積である。
+$J\subset A$ を任意の右イデアルとすると、平坦性により
+$J\otimes_R R^{\ast}$ は $A\otimes_R R^{\ast}$ の右イデアルであり、有限生成である。
+その有限個の生成元をテンソルの有限和として書き、
+現れる有限個の $J$ の元で生成される右イデアルを $J_0$ とする。
+すると
+\[
+ (J/J_0)\otimes_R R^{\ast}=0.
+\]
+忠実平坦性より $J=J_0$ である。したがって $A$ は右 Noetherian である。
+左の場合は反対代数に適用する。
+
+一般の $M$ については、補題~\ref{lem:patch-complete-lifting} の加群版で
+$M^{\mathrm{deg}\wedge}$ の次数付き Noetherian 性を得て、
+任意の次数付き部分加群 $N\subset M$ に上と同じ有限生成の降下を適用する。
+最後の主張は補題~\ref{lem:patch-graded-to-ungraded} による。
+\end{proof}
+
+\begin{corollary}[閉集合だけを指定した形]
+$Z\subset\Spec R$ を閉集合とし、$I$ をその被約閉部分の定義イデアルとする。
+$A/IA$ が右 Noetherian であり、$\Spec R\setminus Z$ を覆う有限個の
+主開集合上で $A$ が右 Noetherian なら、$A$ は右 Noetherian である。
+\end{corollary}
+
+\begin{proof}
+有限個の主開集合を $D(g_1),\ldots,D(g_s)$ と書く。
+$J=(g_1,\ldots,g_s)$ とすれば $\sqrt J=I$ である。
+$R$ が Noetherian なので、ある $m$ について $I^m\subset J$ である。
+$A/JA$ は中央の冪零イデアル $IA/JA$ を持ち、その商は $A/IA$ である。
+各 $(I^pA+JA)/(I^{p+1}A+JA)$ は有限個の中央係数を用いて
+$A/IA$ の有限直和の商となるので、右 Noetherian である。
+この有限フィルトレーションにより $A/JA$ は右 Noetherian である。
+定理~\ref{thm:patch-noetherian} を $J$ に適用する。
+\end{proof}
+
+\subsection{$\mathbb Z$ 代数の各 row への適用}
+
+\begin{definition}
+$C$ を、$C_{ij}=0$ for $j<i$、恒等元 $e_i\in C_{ii}$、
+積 $C_{ij}\otimes_R C_{jk}\to C_{ik}$ を持つ中央 $R$ 線形 $\mathbb Z$ 代数とする。
+右加群は $M=\bigoplus_jM_j$ と作用 $M_j\otimes_R C_{jk}\to M_k$ からなり、
+部分加群はこの頂点分解を保つものとする。
+$P_i=e_iC$、すなわち $(P_i)_j=C_{ij}$ と置く。
+$C$ が右 Noetherian であるとは、すべての $P_i$ が
+この右加群圏で Noetherian であることをいう。
+これは有限生成右 $C$ 加群がすべて Noetherian であることと同値である。
+\end{definition}
+
+\begin{theorem}[$\mathbb Z$ 代数の形式的貼合せ]
+\label{thm:patch-z-algebra}
+$R$ と $I=(f_1,\ldots,f_r)$ は定理~\ref{thm:patch-noetherian} の通りとし、
+$C$ を各 $C_{ij}$ が有限 $R$ 加群である中央 $R$ 線形 $\mathbb Z$ 代数とする。
+$C/IC$ と各 $C_{f_\alpha}$ が右 Noetherian なら、$C$ は右 Noetherian である。
+左 Noetherian 性、すなわち各 column $Ce_j$ の Noetherian 性についても同様である。
+
+各 $M_j$ が有限 $R$ 加群である右 $C$ 加群 $M$ に対しても、
+$M/IM$ と各 $M_{f_\alpha}$ の Noetherian 性から $M$ の Noetherian 性が従う。
+\end{theorem}
+
+\begin{proof}
+まず $R$ が $I$ 進完備な場合を考える。
+補題~\ref{lem:patch-central-variable} の $\mathbb Z$ 代数版により、各 row
+\[
+ \overline P_i[t_1,\ldots,t_r]
+ \quad\text{は}\quad
+ \overline C[t_1,\ldots,t_r]
+ \text{ 上 Noetherian である},
+\]
+ただし $\overline C=C/IC$、$\overline P_i=e_i\overline C$ である。
+全射
+\[
+ \overline C[t_1,\ldots,t_r]\twoheadrightarrow\operatorname{gr}_I C,
+ \qquad
+ \overline P_i[t_1,\ldots,t_r]\twoheadrightarrow\operatorname{gr}_I P_i
+\]
+より、$\operatorname{gr}_I P_i$ は右 Noetherian 加群である。
+
+$N\subset P_i$ を右部分加群とし、
+$\operatorname{gr}_F N$ の有限生成元を $I$ 進次数と頂点について同次に選ぶ。
+それらを
+\[
+ u_\ell\in N_{j_\ell}\cap I^{a_\ell}C_{i,j_\ell}
+\]
+に持ち上げる。固定した $x\in N_j$ の $I$ 進初項を逐次消す係数は
+\[
+ c_{\ell,p}\in I^{p-a_\ell}C_{j_\ell,j}
+ \quad(p\geq a_\ell)
+\]
+に取れる。各 $C_{j_\ell,j}$ は有限 $R$ 加群なので完備であり、
+係数の級数が収束する。$C_{ij}$ の分離性から
+$x=\sum_\ell u_\ell c_\ell$ を得る。
+よって $P_i$ のすべての右部分加群が有限生成である。
+ここで $i$ ごとに有限生成元を取っており、$i$ に関する一様な生成次数の上界は不要である。
+
+一般の $R$ では、各 $C_{ij}$ を $\widehat R_I$ に基底変換して
+上の完備基底上の結論を得る。
+次に \eqref{eq:patch-faithful-cover} を使い、各 $N\subset P_i$ の有限生成を
+忠実平坦降下する。テンソルの生成元を展開する際に各元を頂点ごとに分ければ、
+有限個の頂点同次生成元を降下できる。
+したがってすべての row は Noetherian である。
+
+一般の $M$ も、$\overline M[t_1,\ldots,t_r]\twoheadrightarrow\operatorname{gr}_I M$ を用いて同様に証明できる。
+左の場合は各 column に同じ議論を適用すればよい。
+\end{proof}
+
+\begin{remark}[普通の環の Noetherian 性との区別]
+無限個の直交冪等元を持つ $\bigoplus_{i,j}C_{ij}$ 全体を
+単位的な Noetherian 環と呼ぶ主張ではない。
+必要なのは各 row、各 column、およびその有限直和の商の Noetherian 性である。
+正規族による商 $C/(g)$ を用いる場合も、閉部分上・各主開集合上で得る入力は
+この row ごとの Noetherian 性でよい。
+ただし $C/(g)$ から $C$ への持上げには、別途、正規族の交換関係と正則性に基づく補題が必要である。
+\end{remark}
+
+\subsection{適用時に確認すべき入力}
+
+閉部分 $Z\subset U=\Spec R$ と開補集合 $U\setminus Z$ に分ける適用では、
+必要な入力は次の有限個の主張である。
+\begin{enumerate}
+ \item $R$ は Noetherian であり、すべての構造成分 $A_d$ または $C_{ij}$ は有限 $R$ 加群である。
+ \item 閉部分を定義する実際の商環 $R/I$ 上で、$A/IA$ または $C/IC$ が Noetherian である。
+ \item 開補集合を覆う有限個の主開集合 $D(f_\alpha)$ 上で、代数全体または各 row が Noetherian である。
+\end{enumerate}
+この三条件から結論は上の定理で従う。
+Noetherian 性を各点の局所環で証明した後、任意のイデアルの生成元が
+自動的に一点の近傍で生成を続ける、と推論する必要はない。
+形式的貼合せは、閉部分に沿う完備化という一つの環上で全ての次数を扱い、
+有限個の開局所化と合わせた忠実平坦被覆で有限生成を降下する。
+

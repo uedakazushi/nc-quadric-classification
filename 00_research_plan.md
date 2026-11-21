@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.30。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.30、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.31。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.31、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -41,6 +41,10 @@
 **χとAZの二つの証明。** `cor:quadric-local-chi` はSmith–Van den Bergh §2.8と有限Krull次元のパラメータ帰納による局所証明であり、`lem:chi-finite-type-basechange` は中心変数の補助filtrationによる独立な有限型変更補題である。これらを一般補題として保持する。現行のquadric認識では、cubic tailsのcohomological dimension二と有限presentationから一つの基底全体でSerre消滅を得て、Noetherian性だけを仮定してAZと全χ_qを導ける。stalkの消滅限界を貼り合わせる推論は用いない。
 
 **任意基底でのcanonical導来比較。** `papers/sections/relative_cubic_tails.tex` で、有限projective係数のcubic解消からcd(τ)≤3、cd(ω)≤2を直接証明した。unbounded Rωは直和と可換し、四項窓がQGrのcompact tilting generatorとなる。右規約に合わせC_ij=D_{−j,−i}を用い、全helixと矢をπP_i↦L_{−i}で比較して、任意affine T→U°でD(QGr B_T)≃D(Mod Λ_T)、compact≃Perf Λ_T、(1)↔s、(1)²≃S⁻¹[2]を得る。実際のmodule-object引戻しの導来関手と非平坦基底変更を含めて整合する。RやBのNoetherian性はこの導来比較には不要である。
+
+**Noetherian 性の形式的貼合せ。** 可換Noetherian基底R、各次数成分が有限な中央次数環A、I=(f₁,…,fᵣ)に対し、A/IAと全A[fᵢ⁻¹]が左右NoetherianならAも左右Noetherianとなる。次数ごとのI進完備化で有限生成元の係数を収束させ、R̂_I×∏R[fᵢ⁻¹]の忠実平坦性で降下する。成分の平坦性・有限Krull次元は不要で、一般次数付き加群とZ代数のrow/columnにも成立する。証明 `thm:patch-noetherian`、`thm:patch-z-algebra`。閉部分と開補集合で実際の代数族のNoetherian性を得る必要は残る。
+
+**非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。`sec:ruled-diagonal-obstruction`。次は曲線商と正規拡大をlinear閉部分・elliptic開部分に分け、形式的貼合せを適用する。
 
 **任意基底変更・任意係数での切断と一次コホモロジー。** 全幾何fiberの深さ3と相対Koszul cochainの内部次数ごとの局所分裂完全性から、任意のaffine底変更T=Spec R′と任意のR′-加群Nに対しExt^j_{B_T}(R′,N⊗B_T)=0（j≤2）。F_n=B/B_{≥n}の有限filtrationを使うとHom_{QGr}(O_T,N⊗O_T(n))≃N⊗(B_T)_nが全nで成立する。さらにQGrの拡大を右随伴でGrへ戻し、十分深いtailからのExt¹=0で分裂させることでExt¹_{QGr}(O_T,N⊗O_T(n))=0を得る。Nの平坦性・有限生成性やB_TのNoetherian性は不要。`lem:relative-depth-three-saturation`、`cor:relative-depth-three-coefficients`、`cor:quadric-all-basechange-saturated-sections`。
 
@@ -215,7 +219,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **単一有限型開の左右Noetherian性を閉じる。** 可換点近傍U°では、根・全次数cubic Hom・普遍標準解消・相対Koszul・homological AS4被覆と、任意affine基底でのcanonical導来比較・全helixのshift/Serre同定を構成済み。Bの左右Noetherian性があれば、一般Hom・AZ・全χ・内在的相対条件は一括して従う。従って次の実行単位は、局所環ではなく可換点を含む一つの有限型開でBを左右Noetherianと証明することである。候補は幾何的cubicの曲線商と正規拡大の相対化、または相対幾何模型で必要な軌道列そのものの豊富性を確認する方法。有限tiltingだけからheartのNoetherian性を推論せず、非可換P¹束の別の豊富列と必要な平方根の軌道を同一視しない。この認識が閉じても、一般点への拡張・X_asの表現可能性は別に扱う。
+1. **単一有限型開の左右Noetherian性を閉じる。** 可換点近傍U°では、根・全次数cubic Hom・普遍標準解消・相対Koszul・homological AS4被覆と、任意affine基底でのcanonical導来比較・全helixのshift/Serre同定を構成済み。Bの左右Noetherian性があれば、一般Hom・AZ・全χ・内在的相対条件は一括して従う。従って次の実行単位は、局所環ではなく可換点を含む一つの有限型開でBを左右Noetherianと証明することである。linear閉部分での相対Segre表示、elliptic開部分での相対曲線商と正規拡大を構成し、証明済みの形式的貼合せを適用する。各片の大域Noetherian性の証明は現在点検中である。有限tiltingだけからheartのNoetherian性を推論せず、非可換P¹束の別の豊富列と必要な平方根の軌道を同一視しない。この認識が閉じても、一般点への拡張・X_asの表現可能性は別に扱う。
 
 有限型基底上での代数的表現の目標は、$X_{\mathrm{as}}$ を有限型代数空間として表すことである。局所閉部分スキームとしての構成は十分条件だが必要条件とは主張しない。一般Noetherian基底への連続拡張・極限保存性と、貼り合わせた局所compact圏が大域のcanonical $D(\operatorname{Ind}\mathcal C)^c$ に一致することは別に確認する。
 

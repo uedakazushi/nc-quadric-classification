@@ -1,0 +1,374 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.31
+\section{非可換射影直線束の対角列に関する障害}
+\label{sec:ruled-diagonal-obstruction}
+
+以下は、幾何的 quintuple の行列から層双加群 $\mathcal E$ を作り、
+$\operatorname{QGr}\Sym(\mathcal E)$ の素朴な対角列を cubic 偏極と同定する方針に対する反例である。
+幾何的 quintuple 条件、加群の関係式、全次数の直接飽和をそれぞれ証明する。
+既知の入力は非可換対称代数の Noetherian 性と標準二次解消であり、
+出典を明記した。本例自体の新規性は未確認である。
+この反例は cubic AS 正則代数自身の Noetherian 性を否定せず、
+可換点の十分小さい開近傍に制限する別の議論も否定しない。
+
+\subsection{楕円曲線上のデータと幾何的 quintuple}
+
+$k$ を標数零の代数閉体とする。
+滑らかな $(2,2)$ 曲線
+\[
+ i:C\hookrightarrow X\times Y,\qquad X=Y=\PP^1_k
+\]
+を取り、その二つの射影を $p:C\to X$, $q:C\to Y$ とする。
+\[
+ L_X=p^*\OO_X(1),\qquad L_Y=q^*\OO_Y(1),\qquad N=L_XL_Y^{-1}
+\]
+と置き、$N\not\simeq\OO_C$, $N^2\not\simeq\OO_C$ を仮定する。
+このような曲線は存在する。例えば楕円曲線上の次数二線束 $L_X,L_Y$ を
+$L_XL_Y^{-1}$ が二捩れでないように選べば、二つの二重被覆の積は
+$\PP^1\times\PP^1$ への閉埋め込みを与える。
+実際、異なる二点が両射影で同一視されるなら
+その二点の和が $L_X,L_Y$ の双方に線形同値となる。
+また両射影の微分が同じ点で消えるなら $L_X\simeq L_Y\simeq\OO_C(2z)$ となる。
+従って積の射は単射かつ非分岐であり、閉埋め込みとなる。
+
+\begin{lemma}\label{ruled-lem:resolution}
+\[
+ L=L_X^2L_Y^{-1},\qquad \mathcal E=i_*L
+\]
+と置くと、$p_*L\simeq\OO_X^2$, $q_*L\simeq\OO_Y^2$ であり、
+ある二次元空間 $V_1,V_3$ に対して完全列
+\begin{equation}\label{ruled-eq:matrix-resolution}
+ 0\longrightarrow\OO_{X\times Y}(-1,-1)\otimes V_3^\vee
+ \xrightarrow{M}\OO_{X\times Y}\otimes V_1
+ \longrightarrow\mathcal E\longrightarrow0
+\end{equation}
+が存在する。$\det M$ の零因子は $C$ である。
+\end{lemma}
+
+\begin{proof}
+$L$ の次数は二であり、楕円曲線上で $h^0(L)=2$, $h^1(L)=0$ である。
+$p_*L$ と $q_*L$ は階数二・次数零のベクトル束である。
+さらに
+\[
+ H^0(X,p_*L(-1))=H^0(C,N)=0,
+ \qquad H^0(Y,q_*L(-1))=H^0(C,N^2)=0.
+\]
+$\PP^1$ 上の分裂定理から両者は自明束となる。
+
+次数二線束 $L$ は大域生成されるので、評価射
+$V_1\otimes\OO_{X\times Y}\to i_*L$ は全射である。
+ここで $V_1=H^0(C,L)$ とする。その核 $K$ は階数二の局所自由層である。
+各 $p$-fiber または $q$-fiber への制限に Tor の項は生じない。
+これは $i_*L$ がそれぞれの射影に関して平坦であるためである。
+制限した評価射は大域切断上で同型であり、核は次数 $-2$、
+$H^0=H^1=0$ の階数二束であるから、各 fiber 上で $\OO(-1)^2$ となる。
+従って $K(1,0)$ は $Y$ からの引戻しであり、他方の fiber への制限から
+$K\simeq\OO(-1,-1)^2$ を得る。
+その係数空間を $V_3^\vee$ と取れば \eqref{ruled-eq:matrix-resolution} が得られる。
+$L$ は滑らかな Cartier 因子 $C$ 上の線束なので、
+この正方行列の行列式の因子は重複度一の $C$ である。
+\end{proof}
+
+$V_0=H^0(X,\OO_X(1))$, $V_2=H^0(Y,\OO_Y(1))$ と置く。
+行列 \eqref{ruled-eq:matrix-resolution} は非零テンソル
+\[
+ w\in V_0\otimes V_1\otimes V_2\otimes V_3
+\]
+を定める。全ての $V_j$ は二次元である。
+この記法では $x\in V_0^\vee$, $y\in V_2^\vee$ による評価は
+\[
+ M(x,y):V_3^\vee\longrightarrow V_1
+\]
+である。
+
+\begin{proposition}\label{ruled-prop:geometric}
+$(V_0,V_1,V_2,V_3,kw)$ は幾何的 quintuple である。
+すなわち添字を $4$ を法として取り、任意の非零
+$\lambda_j\in V_j^\vee$, $\lambda_{j+1}\in V_{j+1}^\vee$ に対して
+$w$ の当該二因子による縮約は非零である。
+\end{proposition}
+
+\begin{proof}
+$C$ は滑らかな既約 $(2,2)$ 曲線なので、両射影は有限である。
+従って任意の $[x]\in X$ に対して $\det M(x,-)$ は恒等的には零でなく、
+任意の $[y]\in Y$ に対しても $\det M(-,y)$ は恒等的には零でない。
+隣接する四通りの縮約が零だと仮定したときの矛盾を記す。
+\begin{itemize}
+\item $(V_0,V_1)$：非零 $x,\beta$ による零縮約は
+  $\beta M(x,y)=0$ を全ての $y$ について与える。
+  よって $\det M(x,-)\equiv0$ となる。
+\item $(V_1,V_2)$：非零 $\beta,y$ による零縮約は
+  $\beta M(x,y)=0$ を全ての $x$ について与える。
+  よって $\det M(-,y)\equiv0$ となる。
+\item $(V_2,V_3)$：非零 $y,z$ による零縮約は
+  $M(x,y)z=0$ を全ての $x$ について与える。
+  よって $\det M(-,y)\equiv0$ となる。
+\item $(V_3,V_0)$：非零 $z,x$ による零縮約は
+  $M(x,y)z=0$ を全ての $y$ について与える。
+  よって $\det M(x,-)\equiv0$ となる。
+\end{itemize}
+いずれも有限性に反する。
+従って両 pushforward の自明性だけでなく、テンソル自体の全隣接縮約条件が成立する。
+\end{proof}
+
+\subsection{双対、正規化、および関係線束}
+
+$X_{2r}=X$, $X_{2r+1}=Y$ とし、
+\[
+ \mathcal A=\Sym(\mathcal E)
+\]
+を標準的な非可換対称層 $\mathbb Z$-代数とする。
+$\mathcal A_{i,i+1}=\mathcal E^{i*}$ は反復右双対であり、
+二次関係は $X_i=X_{i+2}$ の対角上の $\OO_{X_i}$ である。
+非可換対称代数の定義と twist については
+\cite[\S5]{VanDenBergh2012P1} に従う。
+
+$\mathcal E$ の右随伴双加群は、有限射の双対性から、$Y\times X$ 上で
+\begin{equation}\label{ruled-eq:right-dual}
+ \mathcal E^*=i^{\mathrm{op}}_*(L^{-1}L_Y^2)
+\end{equation}
+となる。実際、$q^!\OO_Y=\omega_C\otimes q^*\omega_Y^{-1}=L_Y^2$ である。
+また
+$\mathcal E^{**}=\OO_X(2)\otimes\mathcal E\otimes\OO_Y(-2)$
+である \cite[Lemma 4.1.7]{VanDenBergh2012P1}。
+従って $C$ 上の線束で表すと
+\begin{equation}\label{ruled-eq:iterated-duals}
+ \mathcal E^{2r*}=L N^{2r},\qquad
+ \mathcal E^{(2r+1)*}=L^{-1}L_Y^2N^{-2r}.
+\end{equation}
+後者では support の二射影を逆順に読む。
+
+各 $X_i$ 上の線束 $T_i=\OO_{X_i}(i)$ を用い、
+\begin{equation}\label{ruled-eq:normalization}
+ \mathcal A'_{ij}=T_i^{-1}\otimes\mathcal A_{ij}\otimes T_j
+\end{equation}
+と正規化する。ここで左・右の tensor は対応する射影からの引戻しを表す。
+この twist は完全同値
+\begin{equation}\label{ruled-eq:twist-equivalence}
+ F:\Gr\mathcal A\xrightarrow{\sim}\Gr\mathcal A',\qquad
+ F(P)_j=P_j\otimes T_j
+\end{equation}
+を与え、torsion 部分圏を保つ。
+
+\begin{lemma}\label{ruled-lem:normalized}
+正規化した隣接双加群は
+\[
+ \mathcal A'_{2r,2r+1}=i_*L_X^2,\qquad
+ \mathcal A'_{2r+1,2r+2}=i^{\mathrm{op}}_*L_Y^2
+\]
+である。またその二次関係線束は
+\[
+ Q'_i=\OO_{X_i}(2)
+\]
+である。
+\end{lemma}
+
+\begin{proof}
+偶数の場合、\eqref{ruled-eq:iterated-duals} と \eqref{ruled-eq:normalization} から
+\[
+ L_X^{-2r}(L N^{2r})L_Y^{2r+1}=L L_Y=L_X^2.
+\]
+奇数の場合も
+\[
+ L_Y^{-(2r+1)}(L^{-1}L_Y^2N^{-2r})L_X^{2r+2}
+ =L^{-1}L_YL_X^2=L_Y^2.
+\]
+特に $i=1$ の twist は $\OO_Y(-1)\otimes\mathcal E^*\otimes\OO_X(2)$ であり、
+単なる $\mathcal E^*\otimes\OO_X(1)$ ではない。
+関係線束は元の $Q_i=\OO_{X_i}$ を twist した
+$T_i^{-1}Q_iT_{i+2}=\OO_{X_i}(2)$ である。
+\end{proof}
+
+\subsection{対角列から見えない非零 coherent 対象}
+
+有限二重被覆について
+\begin{equation}\label{ruled-eq:double-cover-push}
+ p_*\OO_C\simeq\OO_X\oplus\OO_X(-2),\qquad
+ q_*\OO_C\simeq\OO_Y\oplus\OO_Y(-2)
+\end{equation}
+である。例えば $\OO(-2,-2)\to\OO\to i_*\OO_C$ を一方の射影で押し出すと
+$0\to\OO\to p_*\OO_C\to\OO(-2)\to0$ を得る。
+この拡大は $H^1(\PP^1,\OO(2))=0$ により分裂する。
+
+\begin{proposition}\label{ruled-prop:invisible-module}
+$\Gr\mathcal A'$ において
+\[
+ M_i=\begin{cases}
+ \OO_{X_i}(-2)&i\ge0,\\
+ 0&i<0
+ \end{cases}
+\]
+という次数成分を持つ noetherian 加群 $M$ が存在する。
+その tails 対象 $\pi M$ は非零であり、全ての整数 $i$ に対して
+\[
+ (\omega\pi M)_i\simeq\OO_{X_i}(-2),\qquad
+ \Hom_{\operatorname{QGr}\mathcal A'}(\pi e_i\mathcal A',\pi M)=0
+\]
+が成り立つ。
+\end{proposition}
+
+\begin{proof}
+補題 \ref{ruled-lem:normalized} と \eqref{ruled-eq:double-cover-push} から、全ての $i\ge0$ で
+\[
+ M_i\otimes\mathcal A'_{i,i+1}
+ \simeq\OO_{X_{i+1}}\oplus\OO_{X_{i+1}}(-2)
+\]
+となる。この直和の第二成分への全射を作用射
+$\alpha_i:M_i\otimes\mathcal A'_{i,i+1}\to M_{i+1}$ とする。
+各作用射は零でない定数倍を除いて一意である。
+
+これらの射はまず tensor 層代数上の加群構造を定める。
+二次関係の作用は、補題 \ref{ruled-lem:normalized} により
+\[
+ M_i\otimes Q'_i=\OO_{X_i}
+ \longrightarrow M_{i+2}=\OO_{X_i}(-2)
+\]
+という層の射であるから零である。
+$\mathcal A'$ の定義関係はこの二次関係により生成されるので、作用は
+$\mathcal A'$ 上に降りる。
+各 $\alpha_i$ は全射であり、双加群との tensor は右完全なので、
+$M$ は次数零の $\OO(-2)$ により生成される。
+
+$\mathcal E$ は左右局所自由・階数二である。
+従って \cite[Theorem 1.2]{VanDenBergh2012P1} により $\mathcal A$ は noetherian であり、
+twist 同値により $\mathcal A'$ も noetherian である。
+$M$ は coherent 生成対象 $\OO(-2)\otimes e_0\mathcal A'$ の商なので noetherian である。
+noetherian torsion 加群は上に有界であるが、$M_i\ne0$ は全ての $i\ge0$ で成立する。
+従って $\pi M\ne0$ である。
+
+隣接双加群を $E_i^\prime=\mathcal A'_{i,i+1}$ と略記する。
+全ての $i\in\mathbb Z$ で $\widetilde M_i=\OO_{X_i}(-2)$ と置き、
+\[
+ \alpha_i:\widetilde M_i\otimes E_i^\prime
+ \simeq\OO_{X_{i+1}}\oplus\OO_{X_{i+1}}(-2)
+ \longrightarrow\OO_{X_{i+1}}(-2)
+\]
+を第二成分への非零定数倍射影とする。
+関係の作用 $\widetilde M_i\otimes Q'_i=\OO\to\OO(-2)$ は零なので、
+これは $\mathcal A'$ 加群である。$M=\widetilde M_{\ge0}$ であり、
+$\widetilde M/M$ は上に有界だから torsion である。
+
+次数 $i$ だけに $G$ を持つ加群を $S_i(G)$ と記す。
+標準二次解消 \cite[Theorem 7.1.2]{VanDenBergh2012P1} を twist して、局所自由 $G$ に対し
+\[
+ 0\to(G\otimes Q'_i)\otimes e_{i+2}\mathcal A'
+ \to(G\otimes E_i^\prime)\otimes e_{i+1}\mathcal A'
+ \to G\otimes e_i\mathcal A'\to S_i(G)\to0
+\]
+を得る。
+各誘導関手は完全であり、次数評価との随伴および双加群の右随伴により、
+$\mathbf R\Hom_{\Gr\mathcal A'}(S_i(G),\widetilde M)$ は
+次の $X_i$ 上の複体 $\mathcal K_i^\bullet$ を $G^\vee$ と tensor したものの
+導来大域切断で計算できる：
+\[
+ \mathcal K_i^\bullet=
+ \left[
+ \widetilde M_i\xrightarrow{\alpha_i^\flat}
+ \widetilde M_{i+1}\otimes(E_i^\prime)^*
+ \longrightarrow\widetilde M_{i+2}\otimes(Q'_i)^{-1}
+ \right].
+\]
+ここでは誘導対象を射影対象と見なしていない。
+誘導・次数評価・双加群随伴による導来 Hom と、上の有限解消の totalization を使っている。
+
+関係の非退化性は
+$E'_{i+1}\simeq(E_i^\prime)^*\otimes Q'_i$ を与える。
+従ってこの複体の第二微分は
+$\alpha_{i+1}\otimes(Q'_i)^{-1}$ であり、
+\[
+ \mathcal K_i^\bullet\simeq
+ \left[
+ \OO(-2)\longrightarrow\OO(-2)\oplus\OO(-4)
+ \xrightarrow{(0,c_i)}\OO(-4)
+ \right],\qquad c_i\in k^\times.
+\]
+第一微分は非零射 $\alpha_i$ の随伴であるから非零である。
+$\Hom(\OO(-2),\OO(-4))=0$ なので、それは第一成分への非零定数倍包含である。
+よって $\mathcal K_i^\bullet$ は分裂完全であり、
+\[
+ \mathbf R\Hom_{\Gr\mathcal A'}(S_i(G),\widetilde M)=0
+\]
+となる。
+
+$\PP^1$ 上の任意の coherent $G$ は長さ一の有限局所自由解消を持つので、
+この消滅は全ての coherent $G$ に成立する。
+任意の noetherian torsion 加群は上と下に有界で、有限個の
+$S_i(G)$ を successive quotient とする filtration を持つ。
+従ってそのような $T$ に対して
+\[
+ \Hom(T,\widetilde M)=\Ext^1(T,\widetilde M)=0.
+\]
+$\Gr\mathcal A'$ は局所 Noetherian なので \cite[Theorem 1.2]{VanDenBergh2012P1}、
+任意の torsion $T$ は noetherian 部分対象 $T_\lambda$ の filtered union である。
+上の Hom 消滅から $\Hom(T,\widetilde M)=0$ である。
+また $T$ の $\widetilde M$ による任意の拡大を各 $T_\lambda$ へ引き戻すと、
+それぞれは一意に分裂する。これらの分裂は一意性によって整合するので、
+filtered colimit を取れば元の拡大も分裂する。
+従って $\Ext^1(T,\widetilde M)=0$ である。
+
+これから $\widetilde M$ は飽和である。
+実際、単位射 $\widetilde M\to\omega\pi\widetilde M$ の核と余核は torsion である。
+Hom 消滅から核は零であり、Ext 一次消滅から余核による拡大は分裂する。
+$\omega\pi\widetilde M$ は torsion-free なので、この余核も零である。
+$\pi M=\pi\widetilde M$ により $\omega\pi M=\widetilde M$ を得る。
+最後に随伴から
+\[
+ \Hom_{\operatorname{QGr}\mathcal A'}(\pi e_i\mathcal A',\pi M)
+ \simeq H^0(X_i,(\omega\pi M)_i)
+ =H^0(\PP^1,\OO(-2))=0
+\]
+となる。
+\end{proof}
+
+Nyman \cite[Theorem 2.5, Corollary 3.3]{Nyman2004} の一般理論からも、
+Noetherian な層加群の高次数飽和が得られる。
+ここではこの特定の加群について二次解消から直接計算し、
+全整数での飽和と不可視性を示した。
+
+\subsection{豊富性への帰結と適用範囲}
+
+\begin{theorem}\label{ruled-thm:nonample}
+$\qgr\mathcal A$ における列
+\[
+ K_n=\pi\bigl(\OO_{X_{-n}}(n)\otimes e_{-n}\mathcal A\bigr),\qquad n\in\mathbb Z,
+\]
+は ample sequence の生成条件、すなわち任意に大きい負添字からの生成条件を満たさず、
+従って ample でない。偶数部分列も同じ生成条件を満たさない。
+これは幾何的 quintuple を満たすテンソルから得られた反例である。
+\end{theorem}
+
+\begin{proof}
+\eqref{ruled-eq:twist-equivalence} は $K_n$ を $\pi e_{-n}\mathcal A'$ に送る。
+命題 \ref{ruled-prop:invisible-module} の非零対象 $\pi M$ に対し、
+全ての $i$ で $\Hom(\pi e_i\mathcal A',\pi M)=0$ である。
+従って全ての $i_j$ が十分大きいとき
+$\bigoplus_j\pi e_{i_j}\mathcal A'\to\pi M$ という全射は存在しない。
+これは \cite[\S8.1 の (A1)]{VanDenBergh2012P1} における ample sequence の生成条件を否定する。
+偶数添字だけに制限しても同じである。
+\end{proof}
+
+\begin{remark}[正規化後の強豊富性との両立]
+\cite[Lemma 8.1.1]{VanDenBergh2012P1} の仮定を正規化後の $\mathcal A'$ に対して確認できたとしても、得られる列は
+\[
+ \pi\bigl(\OO_{X_{-n}}(n)\otimes e_{-n}\mathcal A'\bigr)
+\]
+である。これを \eqref{ruled-eq:twist-equivalence} で戻すと
+\[
+ \pi\bigl(\OO_{X_{-n}}(2n)\otimes e_{-n}\mathcal A\bigr)
+\]
+となり、定理の $K_n$ とは異なる。
+可換標準点 $\mathcal E=\OO_\Delta^2$ では、前者は
+$\OO_{\PP^1\times\PP^1}(2n,n)$、$K_n$ は $\OO(n,n)$ に対応する。
+従って正規化後に右大域生成性と高次コホモロジー消滅を証明しても、
+元の対角偏極の豊富性は従わない。
+\end{remark}
+
+\paragraph{適用範囲.}
+有限 foundation の Hom 代数が一致すること、あるいはその compact 導来圏が
+Morita 同値であることから、指定された cubic 軌道列まで保つ
+Noetherian heart の比較を結論してはならない。
+本例はこの特定の対角列による全 geometric 領域での比較を妨げる。
+別の列、別の heart、あるいは可換点の開近傍に限定した比較の可能性は残る。
+また幾何的 quintuple に付随する cubic AS 正則 $\mathbb Z$-代数の
+Noetherian 性そのものは既知の別の主張であり、ここでは否定していない。
+
