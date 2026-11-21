@@ -1,0 +1,1127 @@
+% !TEX root = ../nc-quadric-moduli.tex
+% 2026-11-22 / v1.30（全17証明を相対モジュライ論文Bへ移管）
+\section{三次平坦性から全次数平坦性への相対的な認識}
+\label{sec:relative-koszul}
+
+ここでは三次までの関係式の平坦性と、全次数の平坦性との間を閉じる。
+用いるのは Polishchuk--Positselski の局所環上の Koszul 変形原理
+\cite[Chapter 6, Theorem 7.3]{PolishchukPositselski2005} である。
+この定理は被約基底や一径数の形式基底に限らず、
+任意の Noetherian 局所環に適用できる。
+従って本節の結論は双対数上の一次変形だけでなく、
+任意の Artin 基底と非被約 Noetherian 基底を含む。
+一方、得られるのは次数付き代数とその線型解消の相対的な結論であり、
+相対 Abel heart、Serre 関手、平方根、AS 被覆の認識は別に必要である。
+
+\begin{proposition}[全 $\HH$ の切断環と反 Serre 環の Koszul 性]
+\label{prop:all-h2-antiserre-koszul}
+$k$ を本稿の基礎体とし、$(\mathcal C,\mathcal O)\in\HH$ とする。
+任意の適合平方根 $s$ に対して
+\[
+ B=B(\mathcal C,\mathcal O,s),\qquad
+ R=R^{\mathrm{as}}(\mathcal C,\mathcal O)
+\]
+はともに Koszul である。
+従ってこの性質に cubic/noncubic の型別仮定は不要である。
+\end{proposition}
+\begin{proof}
+定義より $B\simeq A/(g)$ であり、$A$ は連結 Koszul 環、
+$g\in A_2$ は左右正則正規元である。
+正則正規二次商が Koszul 性を保つことは
+\cite[Chapter 2, Corollary 6.3]{PolishchukPositselski2005}
+に含まれる。中心性を必要としないことを明確にするため、
+この場合の環変換スペクトル系列による証明を記す。
+
+右 $A$-加群としての分解
+\[
+ 0\longrightarrow A(-2)\xrightarrow{\,g\cdot\,}A
+ \longrightarrow B\longrightarrow0
+\]
+から、$\operatorname{Tor}^A_q(B,k)$ は
+$q=0$ で $k$、$q=1$ で $k(-2)$、それ以外で零である。
+それぞれ一つの内部次数に集中するので、
+正次数の $B$ の作用は零である。
+環変換スペクトル系列は
+\[
+ E^2_{p,q}
+ =\operatorname{Tor}^B_p
+       \bigl(k,\operatorname{Tor}^A_q(B,k)\bigr)
+ \ \Longrightarrow\ \operatorname{Tor}^A_{p+q}(k,k)
+\]
+となり、$q=0,1$ の二行だけを持つ。
+$B$ が Koszul でないと仮定し、
+$\operatorname{Tor}^B_p(k,k)$ が内部次数 $p$ に集中しない
+最小の $p$ を取る。
+連結次数付き環の極小解消では内部次数はホモロジー次数以上なので、
+内部次数 $j>p$ の非零元が存在する。
+この $E^2_{p,0}$ の元に入る微分はなく、
+出る可能性のある微分は
+\[
+ d_2:E^2_{p,0}\longrightarrow E^2_{p-2,1}
+\]
+だけである。
+しかし最小性により右辺は内部次数 $(p-2)+2=p$ に集中する。
+従って内部次数 $j$ の元は終端まで残り、
+$A$ の Koszul 性に反する。これで $B$ は Koszul となる。
+反対環にも同じ議論が適用できる。
+
+$s^2\simeq S^{-1}[2]$ により $R\simeq B^{(2)}$ である。
+Koszul 環の Veronese 部分環は再び Koszul である
+\cite[Chapter 3, Proposition 2.2(i)]{PolishchukPositselski2005}。
+別の具体表示で Zhang twist を用いる場合にも、
+次数付き加群圏の同値が線型自由解消を移すので結論は変わらない。
+\end{proof}
+
+\begin{lemma}[Noetherian 基底上の三次平坦性判定]
+\label{lem:relative-koszul-degree-three}
+$S$ を Noetherian スキーム、$\mathcal V$ を有限階数の局所自由層、
+$\mathcal J\subset\mathcal V^{\otimes2}$ を局所直和因子とし、
+\[
+ \mathcal R=T_{\mathcal O_S}(\mathcal V)/(\mathcal J)
+\]
+と置く。次を仮定する。
+\begin{enumerate}
+\item $\mathcal R_3$ は有限局所自由である。
+\item 全ての幾何ファイバー $\mathcal R_{\bar s}$ は Koszul である。
+\end{enumerate}
+このとき全ての $\mathcal R_n$ は有限局所自由である。
+さらに、$n\ge2$ に対して
+\[
+ \mathcal K_n=
+ \bigcap_{i=1}^{n-1}
+ \mathcal V^{\otimes(i-1)}\otimes\mathcal J
+       \otimes\mathcal V^{\otimes(n-i-1)}
+ \ \subset\mathcal V^{\otimes n},
+ \qquad
+ \mathcal K_1=\mathcal V,\quad \mathcal K_0=\mathcal O_S
+\]
+は局所直和因子であり、任意の底変更と両立する。
+左右の Koszul 複体は $\mathcal O_S$ の線型解消となり、
+各内部次数で局所分裂完全である。
+従ってこれらの解消は任意の底変更後にも完全である。
+\end{lemma}
+\begin{proof}
+まず任意の点 $s\in S$ の局所環 $D=\mathcal O_{S,s}$ で考える。
+$V=\mathcal V_s$、$J=\mathcal J_s$ とする。
+各次数の $R=T_D(V)/(J)$ は有限生成 $D$-加群であり、
+$R_1,R_2,R_3$ は自由である。
+Koszul 性は体の拡大に関して忠実平坦に検出されるため、
+幾何ファイバーの仮定から $R\otimes_D\kappa(s)$ も Koszul である。
+従って
+\cite[Chapter 6, Theorem 7.3]{PolishchukPositselski2005}
+を適用して全ての $R_n$ が自由となる。
+各 $\mathcal R_n$ は有限表示なので、全ての茎での自由性から
+有限局所自由性が従う。
+
+解消と底変更についても同定理の証明を用いる。
+$W=V^{\otimes n}$ の部分加群
+\[
+ J_i=V^{\otimes(i-1)}\otimes J
+       \otimes V^{\otimes(n-i-1)}\quad(1\le i<n)
+\]
+を考える。
+$W/J_i$ は $R_2$ と $V$ のテンソル積である。
+$|i-j|=1$ ならば $W/(J_i+J_j)$ は $R_3$ と $V$ の
+テンソル積であり、$|i-j|>1$ ならば二つの $R_2$ と $V$ の
+テンソル積である。従ってこれらは全て自由である。
+剰余体上では Koszul 性によって関係部分空間の格子が分配的である。
+\cite[Chapter 6, Proposition 7.2]{PolishchukPositselski2005}
+より、$J_i$ が生成する格子は $D$ 上でも分配的であり、
+その全ての商は自由である。
+同章 Proposition 7.1 により $W$ は有限個の自由直和因子へ分解でき、
+各 $J_i$ はそのうちのいくつかの和となる。
+この分解において和と交叉は任意のテンソル積で保存される。
+これにより $K_n=\bigcap_iJ_i$ は直和因子となり、
+任意の底変更と両立する。
+構成は有限表示の層の間のものなので、
+各茎の分解を近傍へ延長して同じ結論を $S$ 上で得る。
+
+例えば左 Koszul 複体は
+\[
+ \cdots\longrightarrow
+ \mathcal R\otimes\mathcal K_2
+ \longrightarrow \mathcal R\otimes\mathcal K_1
+ \longrightarrow\mathcal R\longrightarrow\mathcal O_S
+ \longrightarrow0
+\]
+であり、$\mathcal K_i$ の生成次数を $i$ とする。
+各内部次数 $m$ では項
+$\mathcal R_{m-i}\otimes\mathcal K_i$ からなる有限な局所自由複体である。
+その幾何ファイバーは Koszul 環の解消の対応する次数成分なので完全である。
+有限な局所自由複体の完全性は幾何ファイバーで検出されるから、
+この複体は完全である。
+アフィン開上の有界な完全射影複体は分裂するため、
+これは局所分裂完全であり、任意の底変更後も完全である。
+右 Koszul 複体についても同じ証明を適用する。
+\end{proof}
+
+
+\begin{lemma}[Noetherian 特殊ファイバーを持つ局所変形]
+\label{lem:local-commutative-fibre-noetherian}
+$(R,\mathfrak m,\kappa)$ を Noetherian 局所環とし、
+$C=\bigoplus_{d\ge0}C_d$ を $C_0=R$ の
+非負次数付き結合的 $R$-代数とする。
+$R$ は中心に入り、全ての $C_d$ は有限自由 $R$-加群とする。
+特殊ファイバー $C_\kappa=C\otimes_R\kappa$ が
+左右 Noetherian なら、$C$ も左右 Noetherian である。
+$C_\kappa$ の可換性は仮定しない。
+\end{lemma}
+\begin{proof}
+まず $R$ が完備な場合を示す。
+各斉次次数に $\mathfrak m$-進フィルトレーションを入れる。
+有限自由性から、環として
+\[
+ \operatorname{gr}_{\mathfrak m} C
+ \simeq \operatorname{gr}_{\mathfrak m}R
+               \otimes_\kappa C_\kappa
+ \tag{Complete-gr}\label{eq:complete-local-gr}
+\]
+となる。右辺は一般には非可換だが、
+$\operatorname{gr}_{\mathfrak m}R$ は有限生成の可換
+$\kappa$-代数であり、$C_\kappa$ に対して中心に入る。
+従って中心変数の Hilbert 基底定理と商への移行により、
+右辺は左右 Noetherian である。
+
+任意の斉次右イデアル $I$ に
+$I\cap\mathfrak m^pC$ による誘導フィルトレーションを入れる。
+$\operatorname{gr}_{\mathfrak m}I$ は上の右 Noetherian 環の
+二重斉次右イデアルだから、有限個の二重斉次初期記号で生成される。
+それらを $I$ の斉次元 $x_1,\ldots,x_r$ に持ち上げる。
+内部次数 $d$ の $x\in I$ について、
+初期記号を $x_i$ の初期記号の右線形結合で表し、
+係数を $C_{d-\deg x_i}$ に持ち上げて差を取ると
+$\mathfrak m$-位数が厳密に増える。
+繰り返すことで係数の $\mathfrak m$-位数が無限に増す級数を得る。
+各固定次数 $C_{d-\deg x_i}$ は有限自由、
+$R$ は完備だから係数級数が収束し、
+$\bigcap_p\mathfrak m^pC_d=0$ より
+$x=\sum_i x_i b_i$ を得る。
+したがって全ての斉次右イデアルは有限生成である。
+この議論は各\emph{固定次数}で完備性を使うのであり、
+無限直和 $C$ 自体が $\mathfrak m$-進完備であると
+仮定していない。
+
+任意の右イデアル $J$ について、
+内部次数の増加フィルトレーション
+$F_nC=\bigoplus_{d\le n}C_d$ を使う。
+$\operatorname{gr}_FJ$ は $C$ の斉次右イデアルで
+有限生成だから、その初期記号を $J$ に持ち上げ、
+最高内部次数を減らす有限帰納法により $J$ も有限生成となる。
+これで右 Noetherian 性を得る。
+左イデアルについて全く同じ議論を行えばよい。
+
+一般の Noetherian 局所 $R$ では完備化 $\widehat R$ を取る。
+$C_{\widehat R}=C\otimes_R\widehat R$ は全次数有限自由で、
+特殊ファイバーも $C_\kappa$ だから、完備の場合より
+左右 Noetherian である。
+$R\to\widehat R$ は忠実平坦であり、
+$C\to C_{\widehat R}$ は中心的な忠実平坦環拡大である。
+任意の右イデアルの昇鎖を $C_{\widehat R}$ へ延長すると停止する。
+忠実平坦性により元の昇鎖も停止する。
+左イデアルについても同じ議論が成り立つ。
+\end{proof}
+
+
+
+
+\begin{lemma}[Noetherian 局所基底での相対 \texorpdfstring{$\chi_q$}{chi-q} 持上げ]
+\label{lem:local-chi-specialization}
+$(R,\mathfrak m,\kappa)$ を有限 Krull 次元の
+Noetherian 局所環、$B$ を $B_0=R$ の非負次数付き
+右 Noetherian $R$-代数とする。
+$R$ は中心に入り、各 $B_n$ は有限自由と仮定する。
+自明右加群 $R=B/B_{\ge1}$ は
+$P_\bullet\to R$ という斉次射影解消を持ち、
+各 $P_j$ は有限個の有限階数斉次自由 $B$-加群の直和であり、
+任意の $R$-代数への基底変更後にもこの解消は完全と仮定する。
+特殊ファイバー $B_\kappa$ が右 $\chi_q$、
+すなわち全ての有限生成次数付き右 $B_\kappa$-加群 $N$ に対し
+\[
+ \underline{\operatorname{Ext}}_{B_\kappa}^{j}(\kappa,N)
+ \quad(0\le j\le q)
+\]
+が全内部次数を合わせて有限次元であると仮定する。
+このとき全ての有限生成次数付き右 $B$-加群 $M$ に対して
+\[
+ \underline{\operatorname{Ext}}_B^j(R,M)
+ \quad(0\le j\le q)
+\]
+は全内部次数を合わせて有限生成 $R$-加群となる。
+左側には反対環の仮定の下で同じ結論が成立する。
+\end{lemma}
+\begin{proof}
+$\dim R$ に関する帰納法で証明する。
+最初に、各固定 $j,d$ について
+$\underline{\operatorname{Ext}}_B^j(R,M)_d$ は
+有限 $R$-加群であることに注意する。
+実際、有限生成次数付き $M$ は下に有界で各 $M_n$ は
+有限 $R$-加群であり、
+$\underline{\operatorname{Hom}}_B(P_j,M)_d$ と
+$\underline{\operatorname{Hom}}_B(P_{j+1},M)_d$ は
+有限 $R$-加群なので、その部分商も有限である。
+同じ理由で固定した $j$ の Ext は内部次数が十分負なら零である。
+従って、全内部次数を合わせた有限生成性を示すには
+内部次数が十分正で Ext が零であることを示せばよい。
+
+$\dim R=0$ のとき $R$ は Artin 局所環で、
+$\mathfrak m^a=0$ となる。
+$M$ の有限フィルトレーション
+$\mathfrak m^iM/\mathfrak m^{i+1}M$ の各商は
+有限生成 $B_\kappa$-加群である。
+$\mathfrak m$ が零に作用する任意の $N$ に対して、
+$P_\bullet$ の各項が有限斉次自由で、剰余体への
+基底変更後にも完全だから、
+\[
+ \underline{\operatorname{Hom}}_B(P_\bullet,N)
+ \cong
+ \underline{\operatorname{Hom}}_{B_\kappa}
+       (P_\bullet\otimes_R\kappa,N)
+\]
+が成立する。
+特殊ファイバーの $\chi_q$ と長完全 Ext 列によって
+$M$ も相対 $\chi_q$ を満たす。
+
+$\dim R>0$ とし、局所パラメータ
+$t\in\mathfrak m$ を選んで
+$\dim R/(t)<\dim R$ とする。
+$t$ は $R$ 上の非零因子である必要はない。
+$B$ が右 Noetherian なので、
+$t$-power torsion 部分
+\[
+ T=\{m\in M:\ t^a m=0\text{ for some }a\}
+\]
+は有限生成であり、ある $b$ について $t^bT=0$。
+$T$ の $t$-進有限フィルトレーションの各商は
+有限生成次数付き $B/tB$-加群である。
+$B/tB$ の全次数は $R/(t)$ 上有限自由、
+$P_\bullet/tP_\bullet\to R/(t)$ は
+任意の基底変更に完全な相対射影解消であり、
+特殊ファイバーは元と同じ $B_\kappa$ である。
+また $B/tB$ は右 Noetherian。
+従って帰納法により、$T$ に対する
+$\underline{\operatorname{Ext}}_B^j(R,T)$
+は $0\le j\le q$ で有限生成である。
+ここでも $tN=0$ なら
+$\underline{\operatorname{Ext}}_B^j(R,N)
+\simeq\underline{\operatorname{Ext}}_{B/tB}^j(R/(t),N)$
+を相対射影解消によって用いている。
+
+次に $M'=M/T$ と置くと、$t:M'\to M'$ は単射である。
+よって
+\[
+ 0\longrightarrow M'\xrightarrow{\,t\,}M'
+  \longrightarrow M'/tM'\longrightarrow0
+\]
+は次数付き短完全列である。
+帰納法により、$M'/tM'$ に対する
+$\underline{\operatorname{Ext}}_{B/tB}^j(R/(t),M'/tM')$
+は全次数を合わせて有限生成となる。
+Ext の長完全列により
+\[
+ \frac{\underline{\operatorname{Ext}}_B^j(R,M')}
+      {t\,\underline{\operatorname{Ext}}_B^j(R,M')}
+ \ \hookrightarrow\
+ \underline{\operatorname{Ext}}_B^j(R,M'/tM')
+ \qquad(0\le j\le q)
+\]
+がある。
+右辺は十分大きい内部次数で零である。
+左辺の各内部次数成分は前述の有限 $R$-加群なので、
+Nakayama の補題から
+$\underline{\operatorname{Ext}}_B^j(R,M')_d=0$
+が全ての十分大きい $d$ で成立する。
+従って $M'$ も相対 $\chi_q$ を満たす。
+最後に $0\to T\to M\to M'\to0$ の長完全 Ext 列から
+$M$ に対する結論を得る。
+左側についても反対環に同じ帰納法を適用する。
+\end{proof}
+
+
+
+\begin{lemma}[有限型の中心基底変更に対する相対 \texorpdfstring{$\chi_q$}{chi-q}]
+\label{lem:chi-finite-type-basechange}
+$R$ を Noetherian 可換環、$B_0=R$ を満たす
+右 Noetherian な非負次数付き $R$-代数を $B$ とする。
+$R$ は中心に入り、各 $B_n$ は有限 projective とする。
+自明右加群 $R$ は、各項が有限個の
+$E\otimes_R B(-a)$（$E$ は有限 projective $R$-加群）
+の直和である射影解消 $P_\bullet$ を持ち、
+この解消は任意の可換基底変更後も完全と仮定する。
+$B$ が相対 $\chi_q$ を満たすなら、任意の可換有限型
+$R$-代数 $R'$ について $B'=B\otimes_RR'$ も
+相対 $\chi_q$ を満たす。
+従って、任意の有限生成次数付き右 $B'$-加群 $M$ に対し
+\[
+ \underline{\operatorname{Ext}}_{B'}^j(R',M)
+ \quad(0\le j\le q)
+\]
+は全内部次数を合わせて有限生成 $R'$-加群である。
+$R'$ の局所性・被約性・$R$ 上の平坦性は要求しない。
+左側にも反対環について同じ結論が成立する。
+\end{lemma}
+\begin{proof}
+まず内部次数零の中心変数 $t$ 一つを加える。
+$B[t]$ は右 Noetherian であり、$P_\bullet[t]$ は
+$R[t]$ の射影解消である。
+有限生成次数付き $B[t]$-加群 $M$ の斉次生成元
+$m_1,\ldots,m_r$ を取り、内部次数とは別に
+\[
+ F_pM=\sum_{a=1}^r\sum_{0\le b\le p}m_a t^bB
+ \quad(p\ge0),\qquad F_pM=0\quad(p<0)
+\]
+という補助フィルトレーションを入れる。
+$N=\operatorname{gr}_F M$ は、$B$ の補助次数を零、
+$t$ の補助次数を一とした $B[t]$ 上の有限生成二重次数付き加群である。
+各補助次数成分 $N_p$ は有限生成次数付き $B$-加群である。
+
+$N$ の $t$-power torsion は Noetherian 性から有限生成であり、
+ある $e$ について $t^e$ で殺される。
+その斉次生成元の補助次数は有限個なので、この torsion は
+十分大きい補助次数で零である。
+また $N$ の有限生成性により
+$t:N_p\to N_{p+1}$ は十分大きい $p$ で全射である。
+従って、ある $p_0$ 以後この射は同型となる。
+$N_0,\ldots,N_{p_0}$ に対する $\chi_q$ から、
+全ての $p\ge0$ に共通する整数 $d_0$ を選んで
+\[
+ \underline{\operatorname{Ext}}_B^j(R,N_p)_d=0
+ \quad(0\le j\le q,\ d\ge d_0)
+ \tag{Chi-aux}\label{eq:chi-auxiliary-uniform}
+\]
+とできる。ここで $t$ による同型は内部次数を保つ。
+
+固定内部次数 $d$ の複体
+\[
+ C_d^\bullet=
+ \underline{\operatorname{Hom}}_{B[t]}(P_\bullet[t],M)_d
+\]
+に $F_\bullet M$ からの補助フィルトレーションを入れる。
+各 $P_j$ の係数は有限 projective なので
+\[
+ \operatorname{gr}_{F,p} C_d^\bullet
+ \simeq\underline{\operatorname{Hom}}_B(P_\bullet,N_p)_d.
+\]
+このフィルトレーションは下に有界で、各元は有限の補助次数に属する。
+$d\ge d_0$ の $j$-cocycle の最高補助次数の記号は、
+(\ref{eq:chi-auxiliary-uniform}) により境界である。
+その原像を持ち上げて境界を引くと補助次数が下がる。
+これを有限回繰り返せば cocycle は境界となる。
+$j=0$ では同じ議論により cocycle 自体が零となる。
+従って $\underline{\operatorname{Ext}}_{B[t]}^j(R[t],M)_d=0$
+が $0\le j\le q$ と $d\ge d_0$ で成立する。
+
+一方、$M$ は内部次数について下に有界であり、
+各固定 $j$ の $P_j$ は有限個の内部次数 shift しか持たない。
+従って上の Ext は内部次数について下にも有界である。
+各内部次数成分は、$R[t]$ 上有限な Hom 複体の部分商なので有限である。
+これで全内部次数を合わせた $R[t]$-有限性が従う。
+
+変数の数による帰納法で $R[\mathbf t]$ への変更を処理する。
+最後に $R'=R[\mathbf t]/I$ と表示する。
+有限生成 $B'$-加群 $M$ は $B[\mathbf t]$ 上でも有限生成であり、
+解消の普遍的完全性から
+\[
+ \underline{\operatorname{Hom}}_{B'}
+       (P_\bullet\otimes_RR',M)
+ \simeq
+ \underline{\operatorname{Hom}}_{B[\mathbf t]}
+       (P_\bullet[\mathbf t],M)
+\]
+となる。右辺のコホモロジーは $R[\mathbf t]$ 上有限で、
+$I$ が零に作用するので $R'$ 上有限である。
+\end{proof}
+
+\begin{lemma}[相対 \texorpdfstring{$\chi_1$}{chi1} から AZ (A2) へ]
+\label{lem:relative-chi1-implies-AZ-A2}
+$R$ を Noetherian 可換環、
+$B=\bigoplus_{n\ge0}B_n$ を $B_0=R$ の
+右 Noetherian な非負次数付き環とする。
+$R$ は中心に入り、各 $B_n$ は有限 projective $R$-加群とする。
+全ての有限生成次数付き右 $B$-加群 $M$ について
+\[
+ \underline{\operatorname{Ext}}_B^j(R,M)
+ \quad(j=0,1)
+\]
+が全内部次数を合わせて有限生成 $R$-加群
+であると仮定する（相対 $\chi_1$）。
+このとき $\operatorname{qgr}B$ 上で
+$(\pi B,(1))$ は Artin--Zhang の
+Hom 全射条件 (A2) を満たす。
+すなわち任意の全射
+$f:\mathcal M\twoheadrightarrow\mathcal N$ について、
+十分大きい全ての $d$ で
+\[
+ \operatorname{Hom}_{\operatorname{qgr}B}
+       (\pi B(-d),\mathcal M)
+ \longrightarrow
+ \operatorname{Hom}_{\operatorname{qgr}B}
+       (\pi B(-d),\mathcal N)
+\]
+は全射となる。
+$\operatorname{Hom}$ の $R$-有限性や
+任意基底変更への $\chi_1$ の安定性は結論しない。
+\end{lemma}
+\begin{proof}
+有限生成次数付き加群 $M$ の torsion 部分を $\tau M$ と書く。
+$B$ は右 Noetherian なので $\tau M$ は有限生成であり、
+各斉次生成元は十分大きい正次数部分に殺される。
+ゆえに $\tau M$ は高内部次数で零である。
+$\pi M\simeq\pi(M/\tau M)$ なので、
+以下 $M$ は torsion-free と仮定してよい。
+
+$F_n=B/B_{\ge n}$ と置く。
+$F_n$ は右自明加群 $B_i(-i)$
+（$0\le i<n$）を商とする有限フィルトレーションを持つ。
+$B_i$ は有限 projective $R$-加群なので
+\[
+ \underline{\operatorname{Ext}}_B^1
+       (B_i(-i),M)_d
+ \simeq B_i^\vee\otimes_R
+      \underline{\operatorname{Ext}}_B^1(R,M)_{d+i}.
+\]
+相対 $\chi_1$ より右辺は $d\gg0$ で消え、
+その消滅下限は $i\ge0$ に依存しない。
+フィルトレーションの長完全 Ext 列から、
+ある $d_0(M)$ について
+\[
+ \underline{\operatorname{Ext}}_B^1(F_n,M)_d=0
+ \qquad(n\ge1,\ d\ge d_0(M))
+ \tag{AZ-trunc}\label{eq:relative-AZ-truncation}
+\]
+が成り立つ。下限の $n$ に関する一様性が重要である。
+
+$0\to B_{\ge n}\to B\to F_n\to0$ に
+$\underline{\operatorname{Hom}}_B(-,M)$ を適用する。
+$M$ は torsion-free だから
+$\underline{\operatorname{Hom}}_B(F_n,M)=0$ であり、
+(\ref{eq:relative-AZ-truncation}) より
+\[
+ M_d\xrightarrow{\sim}
+  \underline{\operatorname{Hom}}_B(B_{\ge n},M)_d
+ \qquad(d\ge d_0(M))
+\]
+を得る。
+Gabriel 商の標準的な Hom の有向極限表示から
+\[
+ \operatorname{Hom}_{\operatorname{QGr}B}
+      (\pi B(-d),\pi M)
+ \simeq
+ \varinjlim_n
+     \underline{\operatorname{Hom}}_B(B_{\ge n},M)_d
+ \simeq M_d
+ \quad(d\gg0).
+ \tag{AZ-sat}\label{eq:relative-AZ-saturation}
+\]
+もとの $M$ に対しては
+$(M/\tau M)_d=M_d$（$d\gg0$）と解釈する。
+
+任意の全射 $f:\pi M\twoheadrightarrow\pi N$ を取る。
+Gabriel 商の射の表示により、
+十分大きい $n$ では $f$ は次数付き射
+$M_{\ge n}\to N/\tau N$ によって表される。
+その余核は有限生成 torsion 加群なので
+高内部次数で零になり、
+$M_d\to(N/\tau N)_d$ は $d\gg0$ で全射となる。
+(\ref{eq:relative-AZ-saturation}) を両辺に適用すると、
+求める Hom の全射性が従う。
+\end{proof}
+
+\begin{lemma}[相対 tails の Hom 有限性と平坦基底変更]
+\label{lem:chi1-qgr-hom-finite-flat}
+補題~\ref{lem:relative-chi1-implies-AZ-A2} の仮定を満たし、
+さらに $B$ は次数一で生成されるとする。
+このとき任意の $\mathcal M,\mathcal N\in\operatorname{qgr}B$ に対して
+$\operatorname{Hom}(\mathcal M,\mathcal N)$ は有限 $R$-加群である。
+任意の平坦な有限型可換 $R$-代数 $R'$ に対して自然な射
+\[
+ R'\otimes_R\operatorname{Hom}_{\operatorname{qgr}B}
+      (\mathcal M,\mathcal N)
+ \xrightarrow{\ \sim\ }
+ \operatorname{Hom}_{\operatorname{qgr}(B\otimes_RR')}
+      (\mathcal M_{R'},\mathcal N_{R'})
+ \tag{Hom-flat-BC}\label{eq:qgr-hom-flat-basechange}
+\]
+は同型である。対象自身の $R$-平坦性は仮定しない。
+\end{lemma}
+\begin{proof}
+有限生成次数付き加群 $M$ に対して
+$\overline M=M/\tau M$ と置く。
+$B$ は右 Noetherian なので $\overline M$ も有限生成である。
+固定した内部次数 $d$ に対し、完全列
+\[
+ 0\longrightarrow B_{\ge n+1}\longrightarrow B_{\ge n}
+   \longrightarrow B_n(-n)\longrightarrow0
+\]
+を用いる。$B_n$ は有限 projective なので、$j=0,1$ において
+\[
+ \underline{\operatorname{Ext}}_B^j(B_n(-n),\overline M)_d
+ \simeq B_n^\vee\otimes_R
+       \underline{\operatorname{Ext}}_B^j(R,\overline M)_{n+d}.
+\]
+相対 $\chi_1$ により、右辺は $n+d$ が十分大きければ零である。
+よって
+\[
+ \underline{\operatorname{Hom}}_B(B_{\ge n},\overline M)_d
+ \longrightarrow
+ \underline{\operatorname{Hom}}_B(B_{\ge n+1},\overline M)_d
+\]
+は $n\gg0$ で同型となる。
+Gabriel 商の Hom 表示より、この安定値は
+$\operatorname{Hom}_{\operatorname{QGr}B}(\pi B,\pi M(d))$ である。
+$B_{\ge n}$ は有限表示であり、各 $M_a$ は有限 $R$-加群なので、
+固定内部次数の上の Hom は有限 $R$-加群となる。
+従って構造対象の任意の捻りからの Hom は有限である。
+
+次に $R\to R'$ を平坦な有限型変更とする。
+各 $F_n=B/B_{\ge n}$ は有限表示だから、
+\[
+ \tau M=\varinjlim_n
+        \underline{\operatorname{Hom}}_B(F_n,M)
+ \ \subset M
+\]
+という評価による同定は平坦基底変更と可換する。
+従って $R'\otimes_R\overline M\simeq
+M_{R'}/\tau(M_{R'})$。
+同様に $B_{\ge n}$ の有限表示性によって
+各内部次数の tail Hom は平坦基底変更と可換する。
+フィルター付き極限と tensor を交換すると、
+構造対象の捻りからの Hom について
+(\ref{eq:qgr-hom-flat-basechange}) が従う。
+この基底変更の部分は、$R'$ 上で新たな安定次数を選ぶ必要がない。
+
+最後に有限生成次数付き加群 $N$ の有限斉次自由表示
+$F_1\to F_0\to N\to0$ を取る。
+$\pi$ の完全性から
+\[
+ 0\longrightarrow\operatorname{Hom}(\pi N,\pi M)
+ \longrightarrow\operatorname{Hom}(\pi F_0,\pi M)
+ \longrightarrow\operatorname{Hom}(\pi F_1,\pi M)
+\]
+は完全である。右二項は構造対象の捻りからの Hom の有限直和であり、
+$R$-有限かつ平坦基底変更と可換する。
+$R$ の Noetherian 性と tensor の完全性から、左項も同じ性質を持つ。
+全ての qgr 対象はこのような $M,N$ で表示できる。
+\end{proof}
+
+\subsection{局所基底からの有限型基底変更と tails}
+
+可換点の局所環における Noetherian 性は、その局所環自身に限らず、
+有限型基底変更後の代数にも保たれる。ここではこの事実と、
+$\operatorname{QGr}$ の module-object 基底変更を分離して証明する。
+内在的 $\mathfrak H_2$ の相対 heart の認識には、
+さらに $\chi_1$、Serre、AZ の比較が必要である。
+
+\begin{lemma}[局所 Noetherian 環の有限型基底変更]
+\label{lem:local-finite-type-strong-noetherian}
+$R$ を Noetherian 可換環、$B$ を $R$ が中心に入る
+左右 Noetherian $R$-代数とする。
+任意の可換有限型 $R$-代数 $R'$ について
+$B_{R'}=B\otimes_RR'$ は左右 Noetherian である。
+$R'$ の冪零元、非既約性、非平坦性に制限を課さない。
+また $R'$ の局所化へさらに基底変更しても結論は保たれる。
+\end{lemma}
+\begin{proof}
+$R'=R[t_1,\ldots,t_s]/I$ と表示する。
+$B[t_1,\ldots,t_s]$ は、$t_i$ が中心と可換する
+通常の多項式環である。
+非可換係数環に対しても中心変数の
+Hilbert 基底定理は左右それぞれに成立するので、
+$B[t_1,\ldots,t_s]$ は左右 Noetherian である。
+$B_{R'}$ はこの環の中心イデアル $IB[t_1,\ldots,t_s]$
+による商だから左右 Noetherian。
+中心元での局所化についても同じ有限生成性の議論が使える。
+\end{proof}
+
+\begin{lemma}[Gabriel 局所化と module-object 基底変更]
+\label{lem:qgr-module-object-basechange}
+$R$ を可換環、$B$ を $B_0=R$ の
+非負次数付き $R$-代数で、$R$ は中心に入るものとする。
+さらに $B$ は次数一で生成され、$B_1$ は有限 $R$-加群と仮定する。
+$R\to R'$ を任意の可換 $R$-代数とし、
+$B'=B\otimes_RR'$ と書く。
+次数付き右加群全体の Grothendieck 圏を
+$\operatorname{Gr}B$、次数 torsion 加群での
+Gabriel 商を $\operatorname{QGr}B$ とする。
+このとき基底変更に自然で、次数移動を保つ同値
+\[
+ \operatorname{QGr}(B')
+   \simeq \bigl(\operatorname{QGr}B\bigr)_{R'}
+ \tag{QGr-BC}\label{eq:qgr-module-objects-basechange}
+\]
+が存在する。右辺は $\operatorname{QGr}B$ 内の
+$R'$-加群対象を表す。
+この同値は構造対象 $\pi B'$ を
+$R'\otimes_R\pi B$ に対応させる。
+両辺の torsion は、それぞれの正次数部分による
+通常の torsion として定義する。
+
+さらに $R$ が Noetherian、$B$ が右 Noetherian、
+各 $B_n$ が有限 $R$-加群で、
+$R'$ が有限型 $R$-代数なら、
+両辺は locally Noetherian となり、
+その Noetherian 対象を取ることで
+\[
+ \operatorname{qgr}(B')
+   \simeq
+    \bigl(\operatorname{QGr}B\bigr)_{R'}^{\mathrm{noeth}}
+ \tag{qgr-BC}\label{eq:qgr-noetherian-basechange}
+\]
+を得る。右辺の Noetherian は加群対象としての意味である。
+\end{lemma}
+\begin{proof}
+$B_{\ge n}$ は $B_n$ から生成される有限生成右イデアルである。
+従って次数 torsion は部分対象・商・直和だけでなく拡大にも閉じている。
+実際、拡大の商で $x$ の像が $B_{\ge n}$ に殺されるなら、
+$xB_{\ge n}$ は有限生成で torsion な部分加群に含まれる。
+その有限生成元を同時に殺す $B_{\ge m}$ を取れば
+$xB_{\ge n+m}=0$ となる。
+よってここで使う torsion は localizing 部分圏をなし、
+Gabriel 商とその右随伴が存在する。
+同じ生成条件は全ての基底変更後も保たれる。
+
+$B'$ 上の次数付き右加群は、
+次数付き右 $B$-加群と、その $B$-作用と可換する
+$R'$-作用の組と同じである。したがって
+$\operatorname{Gr}(B')\simeq(\operatorname{Gr}B)_{R'}$。
+次数 torsion の定義
+\[
+ \forall m\ \exists n,\quad m B_{\ge n}=0
+\]
+は、この $R'$-作用を加えても変わらない。
+よって torsion 部分圏も対応する。
+
+$Q:\operatorname{Gr}B\to\operatorname{QGr}B$ を
+Gabriel 商とし、完全忠実な右随伴を $\omega$ とする。
+両関手は $R$-線形だから、
+$R'$-加群対象上にも $Q_{R'}$ と
+$\omega_{R'}$ を誘導し、同じ随伴を与える。
+その counit は元の counit と同じく同型であり、
+unit の核と余核は torsion 加群対象である。
+従って $Q_{R'}$ は torsion 加群対象を核とする
+Gabriel 局所化であり、(\ref{eq:qgr-module-objects-basechange})
+が従う。構造対象・次数移動との整合性は構成から明らかである。
+
+有限型 $R'$ については
+補題~\ref{lem:local-finite-type-strong-noetherian}
+から $B'$ は右 Noetherian であり、各次数は有限 $R'$-加群である。
+したがって $\operatorname{Gr}(B')$ は
+有限生成次数付き加群を Noetherian 対象とする locally
+Noetherian Grothendieck 圏である。
+その torsion 商の Noetherian 対象は
+$\operatorname{qgr}(B')$ に一致し、
+(\ref{eq:qgr-noetherian-basechange}) を得る。
+\end{proof}
+
+\begin{corollary}[可換点での相対 tails の基底変更と AZ 生成条件]
+\label{cor:quadric-local-tails-basechange-generation}
+分類論文で証明された可換点の局所 Noetherian AS4 被覆~\cite[可換点での局所 AS4 被覆]{QuadricIntrinsic2026} の
+可換点 $u$ と局所環 $R=\mathcal O_{U^\circ,u}$ を取る。
+任意の可換有限型 $R$-代数 $R'$ に対して
+$B_{R'}$ は左右 Noetherian であり、
+\[
+ \operatorname{QGr}(B_{R'})
+  \simeq\bigl(\operatorname{QGr}B_R\bigr)_{R'}
+\]
+は module-object 基底変更を与える。
+さらに $\mathcal O_{R'}=\pi B_{R'}$ と次数移動 $(1)$ について
+Artin--Zhang の豊富性の生成条件 (A1)、
+すなわち任意の $\mathcal M\in\operatorname{qgr}B_{R'}$ と
+任意の整数 $N$ に対して、ある $d_i\ge N$ で
+\[
+ \bigoplus_{i=1}^r\mathcal O_{R'}(-d_i)
+     \twoheadrightarrow\mathcal M
+\]
+となることが成立する。
+この系は AZ の Hom 全射条件 (A2)、$\chi_1$、
+canonical compact 圏との同値、相対 Serre 条件を
+結論しない。
+\end{corollary}
+\begin{proof}
+Noetherian 性と module-object 基底変更は前二補題による。
+$\mathcal M$ を有限生成次数付き $B_{R'}$-加群 $M$ の
+torsion 商で表示する。
+$B_{R'}$ が右 Noetherian なので、
+任意の $N$ に対して truncation $M_{\ge N}$ は有限生成である。
+$M/M_{\ge N}$ は内部次数が上に有界なので torsion であり、
+$\pi M_{\ge N}\simeq\pi M$。
+$M_{\ge N}$ の有限個の斉次生成元の次数を $d_i\ge N$
+とすると、次数付き全射
+$\bigoplus_i B_{R'}(-d_i)\twoheadrightarrow M_{\ge N}$
+から所要の全射を得る。
+(A2) はこの生成操作だけでは従わない。
+既知の Artin--Zhang 理論
+\cite[Theorem 4.5]{AZ1994} では適切な
+$\chi_1$ が (A2) を得るための十分条件となるが、
+今回の相対系の全基底変更で $\chi_1$ を確認したわけではない。
+\end{proof}
+
+
+\begin{corollary}[局所相対 tails の fppf 降下と構造対象の平坦性]
+\label{cor:quadric-local-tails-fppf-descent}
+系~\ref{cor:quadric-local-tails-basechange-generation} の
+局所環 $R$ と切断環 $B_R$ を取る。
+$R$ 上有限型の affine scheme に対する
+$T=\operatorname{Spec}R'$ への割当て
+\[
+   T\longmapsto\operatorname{QGr}(B_R\otimes_RR')
+\]
+は、基底変更を module-object で定義した
+fppf 降下を満たす。Noetherian 対象だけの
+$\operatorname{qgr}(B_R\otimes_RR')$ についても
+対象と射の有効な fppf 降下が成立する。
+構造対象 $\mathcal O_{R'}=\pi B_{R'}$ は
+$R'$ 上平坦であり、任意の有限型基底変更で
+この平坦性が保たれる。
+
+この結果は Grothendieck 圏とその Noetherian heart の
+基底変更・降下・構造対象の平坦性についての主張であり、
+Hom の有限性、$\operatorname{Ext}$ の消滅、
+$\chi_1$/AZ (A2)、canonical compact 導来圏との比較、
+相対 Serre 条件や強い $\mathfrak H_2$ の認識を含まない。
+\end{corollary}
+\begin{proof}
+$R'\to R''$ を faithfully flat かつ有限表示とする。
+補題~\ref{lem:qgr-module-object-basechange} より
+\[
+ \operatorname{QGr}(B_{R''})
+ \simeq\bigl(\operatorname{QGr}(B_{R'})\bigr)_{R''}.
+\]
+$R'$-線形 Grothendieck 圏 $\mathcal G=
+\operatorname{QGr}(B_{R'})$ における
+$R''$-加群対象への自由化
+$F=R''\otimes_{R'}-:\mathcal G\to\mathcal G_{R''}$
+は、$R''/R'$ の忠実平坦性により完全かつ保守的である。
+$F$ は忘却関手を右随伴に持ち、
+完全な左随伴に対する Barr--Beck の降下判定から、
+$\mathcal G$ は $\mathcal G_{R''}$ 上の
+通常の Čech cocycle を備える対象の圏に同値である。
+これは上記の相対 $\operatorname{QGr}$ の fppf 降下である。
+複数の affine 被覆は有限個をまとめた
+faithfully flat な積代数で扱える。
+
+$R''$ は $R'$ 上有限型なので、
+前補題により $B_{R''}$ は Noetherian。
+Noetherian 対象の基底変更は、有限生成次数付き加群の
+tensor により Noetherian のままである。
+逆に、降下した対象 $\mathcal M$ の引戻しが Noetherian なら、
+$\mathcal M$ の任意の部分対象の昇鎖を引き戻すと停止する。
+$F$ は完全かつ保守的なので元の昇鎖も停止する。
+よって Noetherian 対象の降下も有効である。
+
+$B_{R',n}$ は全て有限局所自由 $R'$-加群であるから、
+$R'$-加群 $N$ に対する
+$N\mapsto N\otimes_{R'}B_{R'}$
+は次数ごとに完全である。
+Gabriel 商 $\pi$ も完全なので
+$N\mapsto N\otimes_{R'}\pi B_{R'}$
+は完全である。これが構造対象の相対平坦性であり、
+同じ議論が全ての基底変更後にも成立する。
+\end{proof}
+
+
+\begin{lemma}[相対深さ三と構造環の全次数 saturation]
+\label{lem:relative-depth-three-saturation}
+$S$ を Noetherian スキームとし、
+$B=\bigoplus_{n\ge0}B_n$ を $B_0=\mathcal O_S$ の
+次数一生成の次数付き $\mathcal O_S$-代数とする。
+$B_n$ は全て有限局所自由で、
+自明右加群 $\mathcal O_S=B/B_{\ge1}$ が、
+各項が有限局所自由係数をもつ有限斉次自由加群である
+相対射影解消 $P_\bullet$ を持つとする。
+この解消は内部次数ごとに局所分裂完全で、
+任意の底変更後も完全であると仮定する。
+全ての幾何ファイバーで
+\[
+  \underline{\operatorname{Ext}}_{B_{\bar s}}^j
+        (k(\bar s),B_{\bar s})=0\qquad(j=0,1,2)
+  \tag{Depth-3}\label{eq:relative-fibre-depth-three}
+\]
+であるとする。このとき任意の affine $S$-基底変更
+$T=\operatorname{Spec}R'$ について、全内部次数で
+\[
+ \underline{\operatorname{Ext}}_{B_T}^j(R',B_T)=0
+ \quad(j=0,1,2).
+ \tag{Rel-depth}\label{eq:relative-depth-three}
+\]
+さらに自然な次数付き射
+\[
+B_T\ \xrightarrow{\ \sim\ }
+ \bigoplus_{d\in\mathbb Z}
+ \operatorname{Hom}_{\operatorname{QGr}B_T}
+      (\pi B_T,\pi B_T(d))
+ \tag{Saturation}\label{eq:relative-full-saturation}
+\]
+は全次数で同型で、任意の基底変更後にも成立する。
+$B_T$ の Noetherian 性は仮定しない。
+\end{lemma}
+\begin{proof}
+固定内部次数 $d$ の cochain 複体
+$C_d^\bullet=\underline{\operatorname{Hom}}_B(P_\bullet,B)_d$
+の各項は有限局所自由であり、全幾何ファイバーへの
+基底変更と可換する。幾何ファイバーでは次数 $0,1,2$
+で完全なので、先頭の微分から順に最大階数の単元 minor を消去すると
+$C_d^\bullet$ は同じ三次数で局所分裂完全となる。
+これは $d$ ごとに示せばよく、
+無限個の $d$ に共通する自明化は不要である。
+その局所分裂完全性は任意の底変更で保たれ、
+(\ref{eq:relative-depth-three}) を得る。
+
+以下 $T$ 上で考え、$F_n=B_T/(B_T)_{\ge n}$ と置く。
+$F_n$ は $0\le i<n$ において
+$(B_T)_i(-i)$ を商に持つ有限フィルトレーションを持つ。
+各係数 $(B_T)_i$ は有限 projective なので、
+(\ref{eq:relative-depth-three}) の $j=0,1$
+と長完全 Ext 列から
+\[
+ \underline{\operatorname{Hom}}_{B_T}(F_n,B_T)
+ =\underline{\operatorname{Ext}}_{B_T}^1(F_n,B_T)=0
+\]
+となる。
+$0\to(B_T)_{\ge n}\to B_T\to F_n\to0$ によって
+\[
+ B_T\simeq
+ \underline{\operatorname{Hom}}_{B_T}((B_T)_{\ge n},B_T)
+ \quad(n\ge1)
+\]
+は全次数で同型となる。
+とくに $\underline{\operatorname{Hom}}_{B_T}(R',B_T)=0$ と
+次数一生成性から、$x(B_T)_{\ge n}=0$ なら
+$x(B_T)_{\ge n-1}=0$ を帰納し、$B_T$ の
+次数 torsion は零である。
+したがって Gabriel 商の標準 Hom 極限表示から
+\[
+ \bigoplus_d\operatorname{Hom}_{\operatorname{QGr}B_T}
+          (\pi B_T,\pi B_T(d))
+ \simeq\varinjlim_n
+ \underline{\operatorname{Hom}}_{B_T}((B_T)_{\ge n},B_T)
+ \simeq B_T.
+\]
+これは次数付き積と可換し、自然な射の逆を与える。
+全て次数別の分裂完全性から得たので任意の底変更とも可換する。
+\end{proof}
+
+\begin{corollary}[任意の係数加群に対する切断と一次コホモロジー]
+\label{cor:relative-depth-three-coefficients}
+補題~\ref{lem:relative-depth-three-saturation} の仮定の下で、
+任意の affine 底変更 $T=\operatorname{Spec}R'\to S$ と
+任意の $R'$-加群 $N$ を取る。
+$D=N\otimes_{R'}B_T$、$\mathcal O_T=\pi B_T$ と書くと、
+全内部次数で
+\[
+ \underline{\operatorname{Ext}}_{B_T}^{j}(R',D)=0
+ \qquad(0\le j\le2)
+\]
+であり、全ての $d\in\mathbb Z$ に対して
+\begin{align*}
+ \operatorname{Hom}_{\operatorname{QGr}B_T}
+    (\mathcal O_T,\pi D(d))
+       &\simeq N\otimes_{R'}(B_T)_d,\\
+ \operatorname{Ext}^{1}_{\operatorname{QGr}B_T}
+    (\mathcal O_T,\pi D(d))&=0.
+\end{align*}
+最初の同型は自然な射が与え、任意の基底変更に整合する。
+$R'$、$B_T$ の Noetherian 性や $N$ の有限生成性・平坦性を仮定しない。
+\end{corollary}
+\begin{proof}
+$B=B_T$、$R=R'$ と略記する。
+補題の証明で得た複体
+$\underline{\operatorname{Hom}}_B(P_\bullet,B)_d$
+は次数 $0,1,2$ で局所分裂完全であり、
+各 $P_i$ の係数は有限 projective である。従って
+\[
+ \underline{\operatorname{Hom}}_B(P_\bullet,D)_d
+ \simeq N\otimes_R
+       \underline{\operatorname{Hom}}_B(P_\bullet,B)_d
+\]
+も同じ三次数で完全となる。
+$F_n=B/B_{\ge n}$ の有限 projective 係数を持つ
+自明加群によるフィルトレーションから、
+$\underline{\operatorname{Ext}}_B^j(F_n,D)=0$（$0\le j\le2$）である。
+補題と同じ Hom 極限表示によって $D$ は saturated となり、
+主張の Hom 同型を得る。
+また $0\to B_{\ge n}\to B\to F_n\to0$ から
+\[
+ \underline{\operatorname{Ext}}_B^1(B_{\ge n},D)=0
+ \qquad(n\ge1)
+\]
+も従う。
+
+任意の拡大
+$0\to\pi D(d)\to\mathcal E\to\pi B\to0$ を取る。
+商の右随伴 $\omega$ の左完全性と saturation により、
+$0\to D(d)\to\omega\mathcal E\to B$ は左完全である。
+最後の射の像を $J\subset B$ とすると、
+$\pi\omega\simeq\mathrm{id}$ と $\pi$ の完全性から $B/J$ は torsion。
+従って $1+J$ を殺す tail を取れば、ある $n$ で $B_{\ge n}\subset J$ となる。
+$\omega\mathcal E\twoheadrightarrow J$ をこの包含に沿って引き戻した列
+\[
+ 0\longrightarrow D(d)\longrightarrow E_n
+       \longrightarrow B_{\ge n}\longrightarrow0
+\]
+は上の Ext 消滅により分裂する。
+完全関手 $\pi$ はこの pullback を保ち、
+$\pi B_{\ge n}\simeq\pi B$ であるから、元の拡大も分裂する。
+以上は Noetherian 性を用いない直接の Yoneda 拡大の議論である。
+Hom 同型の自然性と基底変更との整合性は、
+自然な unit と変更後も完全な複体による構成から従う。
+\end{proof}
+
+\begin{corollary}[全幾何ファイバーが $\HH$ 型である関係式族]
+\label{cor:h2-geometric-family-koszul}
+$S$ を Noetherian $k$-スキームとし、
+$S\to X_3$ を分類論文にある有限次数反Serre関係式空間の命題~\cite[有限次数の関係式空間]{QuadricIntrinsic2026}
+の関係式空間への射とする。
+その二次環 $\mathcal R$ の全幾何ファイバーが
+$\HH$ 対象の反 Serre 環に次数付き同型であると仮定する。
+このとき全ての次数で
+\[
+ \operatorname{rank}\mathcal R_n=(2n+1)^2
+\]
+であり、$\mathcal R$ は全次数平坦で相対的に Koszul である。
+同じ結論は商スタック $[X_3/\operatorname{PGL}_9]$ への射と、
+同命題の正規化された普遍次数付き環にも成り立つ。
+
+特に $\HH$ 点を閉ファイバーとする任意の局所 Artin 基底上の
+$X_3$ の変形は、全次数平坦な二次代数の変形を与える。
+この結論は Artin 基底の冪零次数を制限しない。
+\end{corollary}
+\begin{proof}
+$X_3$ の定義によって次数一、二、三の成分はそれぞれ階数
+$9,25,49$ の局所自由層である。
+命題~\ref{prop:all-h2-antiserre-koszul} と
+補題~\ref{lem:relative-koszul-degree-three} を適用すると、
+全次数の局所自由性と相対 Koszul 性を得る。
+階数は幾何ファイバー上の Hilbert 関数から決まる。
+商スタックの場合は fppf 局所に基底を選び、
+同じ議論を適用すればよい。
+次数 $n$ の成分への線束の $n$ 乗による twist は
+局所自由性と Koszul 複体の完全性を保つ。
+これらの性質は忠実平坦に降下するので結論が従う。
+局所 Artin 基底には一つの位相的点しかなく、
+その幾何ファイバーに命題を適用すれば最後の主張を得る。
+\end{proof}
+
+\begin{corollary}[既存の二次 jet の全次数平坦性]
+\label{cor:noncubic-second-order-all-degrees}
+分類論文のnoncubic二次 jet の命題~\cite[noncubic二次 jet の持上げ]{QuadricIntrinsic2026} で得られた
+$k[t]/(t^3)$ 上の各関係式族 $R_t$ は、
+三次成分だけでなく全ての次数で自由であり、
+\[
+ \operatorname{rank}_{k[t]/(t^3)}(R_t)_n=(2n+1)^2
+\]
+を満たす。左右の相対 Koszul 解消も存在する。
+\end{corollary}
+\begin{proof}
+同命題の関係部分束は二次成分の自由性を保ち、
+Schur complement の等式により三次成分は自由階数 $49$ である。
+閉ファイバーは既存の noncubic 反 Serre 環であるから、
+直前の系を $S=\operatorname{Spec}k[t]/(t^3)$ に適用する。
+\end{proof}
+
+\begin{remark}[全次数平坦性と内在的相対モジュライの区別]
+本節により、既存の二次 jet に対して
+「四次以上の平坦性も別に検証する」という課題は不要になる。
+また、任意の固定次数の Artin 持上げが $X_3$ 内で得られれば、
+その持上げの全次数平坦性は自動的である。
+一方、$X_3$ 内で次の Artin 段階へ持ち上がること自体は証明していない。
+Artin 基底上の noetherian Abel heart は次の小節で構成する。
+その次数移動を canonical 反 Serre 関手と同定し、適合平方根、
+Artin--Zhang 豊富性、AS 正則被覆を得ることは、この平坦性の結論に含めない。
+各幾何ファイバーが $\HH$ 型である条件の有限表示性も、
+局所環ごとの Koszul 変形原理からは従わない。
+\end{remark}
+
+\subsection{Artin 基底上の Abel 圏への実現}
+
+\begin{lemma}[Artin 基底上での noetherian 性]
+\label{lem:artin-noetherian-lift}
+$(A,\mathfrak m,k)$ を可換局所 Artin 環とし、
+$R$ を $A$ が中心に作用する平坦な $A$-代数とする。
+$\bar R=R/\mathfrak mR$ が左右 noetherian ならば、$R$ も左右 noetherian である。
+\end{lemma}
+\begin{proof}
+$\mathfrak m^N=0$ となる $N$ を選ぶ。
+平坦性により有限フィルターの随伴次数付き環は
+\[
+ \operatorname{gr}_{\mathfrak mR}R
+ \simeq\operatorname{gr}_{\mathfrak m}A\otimes_k\bar R
+\]
+である。これは $\bar R$ 上で左右とも有限生成なので左右 noetherian である。
+$R$ の右イデアルの昇鎖にこのフィルターを誘導すると、
+随伴次数付き右イデアルの昇鎖は停止する。
+同じ随伴次数付きイデアルを持つ包含は、有限フィルターの各次数を
+順に持ち上げることで等号となる。従って元の昇鎖も停止する。
+左イデアルについても同じである。
+\end{proof}
+
+\begin{proposition}[Artin 関係式族からの flat Abel 変形]
+\label{prop:artin-relations-flat-abelian}
+$(A,\mathfrak m,k)$ を可換局所 Artin $k$-代数とし、
+$\operatorname{Spec}A\to X_3$ の閉点が $\mathcal H_2$ の反 Serre 環
+$\bar R$ を表すとする。対応する二次環を $R$ とする。
+このとき $R$ は全次数平坦で左右 noetherian であり、
+$\operatorname{qgr}R$ は Lowen--Van den Bergh の意味で
+$\operatorname{qgr}\bar R$ の flat Abel 変形である。
+構造対象 $\pi R$ は $A$ 上平坦で、閉ファイバーは $\pi\bar R$ である。
+従って既存の全次数平坦な二次 jet は、標識対象を持つ flat Abel 変形を与える。
+ただし $\pi R(1)$ が相対逆 Serre 移動であること、
+適合平方根・相対 AS 被覆の存在はこの命題に含めない。
+\end{proposition}
+\begin{proof}
+全次数平坦性は系~\ref{cor:h2-geometric-family-koszul} による。
+$\bar R$ は既存の反 Serre 再構成により左右 noetherian なので、
+補題~\ref{lem:artin-noetherian-lift} を適用できる。
+
+次数付き右加群の Grothendieck 圏を $\operatorname{Gr}R$、
+次数 torsion 加群の局所化部分圏を $\operatorname{Tors}R$ と書く。
+ここで torsion とは各斉次元が十分高次数の元で消されることである。
+$R$ は右 noetherian で次数一生成なので、この部分圏は
+部分対象・商・拡大・任意直和に閉じる。
+従って Gabriel 商
+\[
+ \pi:\operatorname{Gr}R\longrightarrow\operatorname{QGr}R
+ :=\operatorname{Gr}R/\operatorname{Tors}R
+\]
+は $A$-線形完全関手で、完全充満な右随伴 $\omega$ を持つ。
+有限生成加群の像は noetherian であり、$\pi R(i)$ が生成系となるので、
+$\operatorname{QGr}R$ は局所 noetherian で、その noetherian 部分が
+$\operatorname{qgr}R$ である。
+
+$\pi$ は完全で有限直和を保つため、有限提示 $A$-加群との tensor と可換する。
+$R(i)$ は $A$ 上平坦なので、$\pi R(i)$ も $A$ 上平坦である。
+$\operatorname{qgr}R$ の各対象はこれらの有限直和の商である。
+従って任意の有限提示 $A$-加群 $M$ に対して
+$\operatorname{Tor}^A_1(M,-)$ は co-effaceable であり、
+\cite[Proposition 3.1, Definition 3.2]{LowenVanDenBergh2006}
+により $\operatorname{qgr}R$ は flat Abel 圏である。
+特に $\pi R$ は底上平坦である。
+
+閉ファイバーを確認する。
+$(\operatorname{QGr}R)_k$ は $\mathfrak m$ の作用が零である対象の full subcategory とする。
+$\bar R$-加群を $R$-加群とみなす完全関手は torsion を保ち、
+\[
+ i:\operatorname{QGr}\bar R\longrightarrow\operatorname{QGr}R
+\]
+を誘導する。$\bar R$-加群の部分加群と商は依然 $\bar R$-加群であり、
+torsion の条件も変わらない。
+Serre 商の Hom を、始域の torsion 余核を持つ部分対象と
+終域の torsion 部分対象による商の Hom の余極限で計算すると、
+両圏の Hom は一致する。従って $i$ は完全充満である。
+またその像では $\mathfrak m$ の作用が零である。
+
+逆に $X\in(\operatorname{QGr}R)_k$ を取る。
+$\omega$ は $A$-線形なので、$\omega X$ も $\mathfrak m$ で消され、
+$\bar R$-加群である。$\pi\omega X\simeq X$ から $X$ は $i$ の像に入る。
+よって $i$ は
+\[
+ \operatorname{QGr}\bar R\simeq(\operatorname{QGr}R)_k
+\]
+を与える。noetherian 対象へ制限すると
+$\operatorname{qgr}\bar R\simeq(\operatorname{qgr}R)_k$ となる。
+この制限を明示的に見るには、$X$ を $\pi R(i)$ の有限直和で覆い、
+$\omega X$ の有限生成部分加群を選べばよい。
+それは $\mathfrak m$ で消され、さらに商を取ることで $X$ の有限生成
+$\bar R$-加群による表示を得る。
+$k\otimes_A\pi R\simeq\pi\bar R$ も $\pi$ の完全性から従う。
+これで flat Abel 変形の定義を満たす。
+\end{proof}
