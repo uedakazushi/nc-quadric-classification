@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.3、数学原稿v1.5。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.7、数学原稿v1.6。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
@@ -30,6 +30,9 @@
 - **二次関係は全反Serre環を決定する。** 一般の二次環の偶数Veroneseに対する相対的な直接証明を用いて、cubic・noncubic・全特殊化族で $\mathcal R=T(\mathcal R_1)/(\mathcal J)$、rank($\mathcal R_1$)=9、rank($\mathcal J$)=56を証明。元の一般定理はPolishchuk–Positselski既知であり、今回の貢献は相対族・明示構成への適用（[foundation証明](papers/sections/foundation_stack.tex)）。
 - **noncubic 六係数の固定 Grassmann affine cell：** $\mathcal R_1$ の標準九基底の積から25個のunit pivotを選び、残り56列の関係係数が多項式であることを示した。二つの平方積から二形式の六係数が回復できるため、フレーム付き六次元表示 $\mathbb A^6$ は固定Grassmann cellへ閉埋込み、非退化パラメータ開 $P$ は局所閉埋込み（[命題](papers/sections/noncubic_stack.tex)、[厳密計算](computations/verify_noncubic_antiserre_pivots.py)）。群商が内在的モジュライと同値であるとはまだ言わない。
 - **noncubicの三次Hilbert接空間：** noncubicの基準点三型（非交差・一根共有・二根対一致）でPGL9の接軌道と六係数の接像の和は標数零で正確に81次元。$\dim R_3=49$ に対応するrank176の行列 $L_J:V\otimes J\to(V^{\otimes2}/J)\otimes V$ の一次階数条件について、法101で16072×1400行列を厳密に全行処理し、階数1317・1317・1316。さらに法101の核83・83・84本を有理数へ復元し、整数行列との積が全て零となることを検証したため、標数零での三次Hilbert determinantal locusの接次元は**正確に83・83・84**となる。これらは内在的 $\mathfrak H_2$ の接空間次元ではない（[証明](papers/sections/noncubic_stack.tex)、[計算証明書](computations/verify_noncubic_degree3_tangent.py)）。
+- **Koszul 性と一次全次数平坦性：** noncubicの二次PBW環BはKoszulであり、反Serre環Rは偶数VeroneseとZhang twistを経てKoszul。双対数上の二次関係変形で三次Hilbert条件（rank176）を満たすものはKoszul双加群解消を用いて全次数平坦な一次次数付き代数変形となる。これを内在的H2のAbel圏変形と同一視しない。
+- **内部次数0 Hochschild 変形：** 非交差・一根共有・二根対一致の三基準点でHH¹_0の次元は(1,1,2)、HH²_0の次元は(3,3,5)。これは有限foundation代数のHH³以降消滅とは異なる。三次Hilbert条件の横断接空間(2,2,3)は全次数平坦な**一次**代数変形に対応する。
+- **横断方向の2-jet：** 三基準点の2/2/3横断方向すべてに、三次Hilbert条件をk[t]/(t³)上で保つ二次補正を構成した。基底ベクトルと二つずつの和の全組について有理数の補正を求め、整数係数行列との積が厳密に零になることを検証した（[証明](papers/sections/noncubic_stack.tex)、[検算資産](computations/verify_noncubic_second_order.py)）。全次数の二次平坦性・高次持上げ・相対H2族の存在は未確定。
 - **有限型既約な代数的包絡：** cubic の関係式像の被約閉包 $Z_2\subset\operatorname{Gr}(56,81)$ はPGL9不変・既約。商 $[Z_2/\operatorname{PGL}_9]$ は有限型Artinスタックで、全H2幾何点を含み、cubic像が稠密。全幾何点の関係像は有限型2 chartの像の構成可能な和。しかし $Z_2$ にH2でない点が含まれる可能性があるため、まだ $\mathfrak H_2$ ではない。
 - 可換quadric上でも、選んだSerre根が固定したabelian一次変形へ持ち上がらない例を構成した。自己同値がHochschild変形類を保つことが必要である。この例は相対H2の非開性や別の根の非存在を意味せず、構成した変形がH2の族であるとも主張しない。
 
@@ -85,6 +88,7 @@ $$
 | [notes/ore_quadric_deformations.md](notes/ore_quadric_deformations.md) | 相対変形を試すOre族の証明稿。相対CY・Serre・H2認識は未証明 |
 | [notes/literature.md](notes/literature.md) | 文献の版・仮定・適用範囲・リンク |
 | [computations/verify_reducible_quadruples.py](computations/verify_reducible_quadruples.py) | 全非整曲線型の三次関係・四次テンソル・周期平方・必要な貼合せの記号恒等式 |
+| [computations/verify_noncubic_second_order.py](computations/verify_noncubic_second_order.py) | 三基準点の横断接方向の二次Schur障害を、全有理補正の整数恒等式として検証（NumPy・Numbaはオプション） |
 | [computations/verify_noncubic_degree3_tangent.py](computations/verify_noncubic_degree3_tangent.py) | 法101でPGL9/係数接方向と、三次Hilbert階数条件の全16072線形条件を厳密検算（NumPy・Numbaはオプション） |
 | [computations/verify_noncubic_antiserre_pivots.py](computations/verify_noncubic_antiserre_pivots.py) | noncubic反Serre環の9生成元・25 unit pivotと六係数の多項式回収を正確に検算 |
 | [computations/verify_stack_symmetries.py](computations/verify_stack_symmetries.py) | noncubic慣性の射影群関係、χの共変性、局所対合・正則切断の記号恒等式 |
@@ -92,7 +96,7 @@ $$
 
 ## 再生成
 
-現行v1.5原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数と、新たな25 pivot・六係数回収を代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
+現行v1.6原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数と、新たな25 pivot・六係数回収を代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
 
 repoルートで実行する。
 
