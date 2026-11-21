@@ -312,3 +312,117 @@ HKR と $Q$ 上のコホモロジーから $\operatorname{HH}^3(Q)=0$ である�
 この定理は可換点における全 Artin 基底の認識を与える。
 一般有限型基底への代数化、一般の非可換点での同様の認識、
 内在的 $\mathfrak H_2$ 全体の代数性は別に証明する必要がある。
+
+\subsection{cubic 点での条件付き Artin 認識}
+
+\begin{proposition}[適合 cubic helix と Hochschild 自明作用からの全 Artin 認識]
+\label{prop:cubic-artin-hhtrivial-conditional}
+標数零の代数閉体 $k$ 上の $(\mathcal C,\mathcal O)\in\mathcal H_2$ について、
+次のデータと条件を仮定する。
+\begin{enumerate}
+\item $E_0=\mathcal O$ を含む ample geometric four-helix $(E_i)_{i\in\mathbb Z}$ があり、
+  $D_{ij}=\operatorname{Hom}(E_{-j},E_{-i})$ は標準的な三次三次元 AS 正則
+  $\mathbb Z$-代数である。
+\item exact な Serre 平方根 $s_0^2\simeq S^{-1}[2]$ があり、
+  $(\mathcal O,s_0)$ は Artin--Zhang ample で、
+  全ての $i$ について $s_0E_i\simeq E_{i+2}$ である。
+  ここでは対象ごとの同型で十分であり、別途 coherent な周期の標識は要求しない。
+\item $(s_0)_*$ は $\operatorname{HH}^2(\mathcal C)$ 上恒等に作用する。
+\end{enumerate}
+このとき、任意の局所 Artin $k$-代数 $A$ 上の flat pointed Abel 変形
+$(\mathcal C_A,\mathcal O_A)$ は、$s_0$ の持上げを用いる全軌道環の
+相対 quadratic AS4 被覆を持つ。
+従って全有限型基底変更を含む相対 $\mathfrak H_2$ 族へ昇格する。
+この点での相対 $\mathfrak H_2$ 変形と flat pointed Abel 変形の groupoid は、
+局所 Artin 基底上で同値となる。
+
+さらに $(s_0)_*$ が $\operatorname{HH}^1(\mathcal C)$ 上も恒等なら、
+この還元を持つ Serre 平方根の持上げは Morita 自己同値の同型類として一意である。
+\end{proposition}
+\begin{proof}
+有限 foundation の持上げと相対 smooth proper 性は
+定理~\ref{thm:artin-foundation-lift} による。
+小拡大における根の障害 $b$ は $b+(s_0)_*b=0$ を満たすので、
+Hochschild 二次の仮定により零となる。
+近恒等核の一意な二可除性で平方関係を補正し、全 Artin 基底上の $s_A$ を得る。
+補題~\ref{lem:artin-morita-heart-exact} と
+補題~\ref{lem:artin-ample-lift} によってこれは exact ample である。
+
+$M_A$ を $E_1$ の flat な持上げとし、
+$L_{2n,A}=s_A^n\mathcal O_A$、$L_{2n+1,A}=s_A^nM_A$ と置く。
+条件 (2) と例外対象の持上げの一意性により、$L_{i,A}$ は
+$E_i$ の geometric helix としての持上げと同型である。
+従って $D_{ij,A}=\operatorname{Hom}(L_{-j,A},L_{-i,A})$ の前向き成分は有限自由で、
+閉ファイバーは元の cubic $\mathbb Z$-代数となる。
+$s_A^{-1}$ が実際の次数二の周期を与える。
+
+補題~\ref{lem:relative-cubic-tensors-artin} の証明は、閉ファイバーが可換であることを使わない。
+必要なのは cubic AS 解消と成分の階数 $1,2,4,6,9,\ldots$ である。
+同じ Nakayama の議論から、三次提示、階数二の $R_i$、階数一の $W_i$、
+非退化な coevaluation、四周期 $\theta$、全内部次数で相対完全な cubic 解消を得る。
+偶数部分の graded 化 $B_A$ は $s_A$ の全軌道環であり、
+全次数自由、相対二次 Koszul、その双対 $E_A=B_A^!$ の階数列は
+$1,4,7,8,8,\ldots$ となる。
+
+正規 functional $\phi_i$ の構成と tensor 恒等式も、そのまま成立する。
+とくに次数三の直和分解
+\[
+ (E_3^*)_i=(R_i\otimes R_{i+3})
+       \oplus(V_i\otimes W_{i+1}\otimes V_{i+5})
+\]
+は可換点専用の恒等式ではない。
+体上では右 cubic 解消の次数六の部分が
+\[
+ W_i\otimes V_{i+4}\otimes V_{i+5}
+ \hookrightarrow R_i\otimes D_{i+3,i+6}
+\]
+を与える。
+$D_{i+3,i+6}$ は三重 tensor を $R_{i+3}$ で割ったものなので、
+これは $R_iR_{i+3}\cap W_iV_{i+4}V_{i+5}=0$ を意味する。
+一方、$W_{i+1}\subset R_{i+1}V_{i+4}$ を用いると、
+$R_iR_{i+3}$ と $V_iW_{i+1}V_{i+5}$ の交わりは
+$W_iV_{i+4}V_{i+5}$ に入る。従って交わりは零である。
+これは \cite[Lemmas 2.3--2.4]{BauwensVanDenBergh1998} と同じ
+解消による議論を、右加群の規約で添字付きにしたものである。
+二つの四次元部分空間と $\dim E_3=8$ から体上の分解を得て、
+自由加群間の Nakayama により $A$ 上へ持ち上げる。
+この分解上の二つの縮約は既存の係数計算で一致し、
+$\beta$ と整合する正規元 $\phi\in(E_A)_2$ が得られる。
+
+可換点の証明で変更する箇所は、特殊ファイバーの最後の同定だけである。
+一般の cubic 点では $E_k/(\phi_0)$ は外積代数とは限らない。
+その代わり、\cite[Theorem 6.1, Lemmas 6.4--6.5]{VdB2011} の
+canonical hull の二次双対であり、Koszul Frobenius、階数列 $(1,4,6,4,1)$ である。
+$\phi_0$ は左右正則正規である。
+評価 functional との一致は
+\cite[(2.11), Proposition 3.2, Remark 3.3]{BauwensVanDenBergh1998} の
+canonical choice を、上の添字付き評価で表したものである。
+この体上の入力だけを使い、$\phi$ の乗法を各次数の有限自由加群間で持ち上げる。
+従って $P_A=E_A/(\phi)$ は全次数自由となる。
+相対 Koszul 補題と Frobenius pairing の持上げから
+$\widetilde B_A=P_A^!$ は相対 AS4 となる。
+
+$\widetilde B_A\twoheadrightarrow B_A$ の次数別核は自由であり、
+二次生成元 $g$ の左右乗法は、閉ファイバーの正則正規切断の同型を持ち上げる。
+よって全次数で同型となり、$g$ は左右正則正規である。
+閉ファイバーの canonical hull は noetherian なので、
+$\mathfrak m$-進有限フィルターにより $\widetilde B_A$ も左右 noetherian である。
+命題~\ref{prop:artin-witness-relative-promotion} を適用すれば相対 $\mathfrak H_2$ 族となる。
+忘却の全忠実性は module-object 系の定義、
+平方根の追加の一意性は命題~\ref{prop:artin-serre-root-uniqueness} による。
+\end{proof}
+
+\begin{remark}[Hochschild 作用条件は対象ごとの周期性から従わない]
+\label{rem:cubic-helix-root-action}
+この命題は、全ての cubic 点または全ての平方根について
+$(s_0)_*=1$ on $\operatorname{HH}^2$ と主張していない。
+$s_0^2=S^{-1}[2]$ から得られるのは作用が対合であることまでである。
+実際、可換 $Q$ 上で $\varphi(z,w)=(-z,w)$ とすると
+$s_0=(-\otimes\mathcal O_Q(1,1))\circ\varphi^*$ は Serre 平方根であり、
+標準 helix の各線束を対象ごとに二項先へ送る。
+しかし $\partial_z\wedge\partial_w$ を負に送るので、
+$\operatorname{HH}^2$ 上恒等ではない。
+従って cubic helix との対象ごとの適合性から作用条件を除くことはできない。
+一般 cubic 点に前命題を適用するには、適合する根で Hochschild 二次に
+恒等に作用するものが存在する範囲を別に確定する必要がある。
+\end{remark}

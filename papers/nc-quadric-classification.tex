@@ -102,7 +102,8 @@ foundation 代数の $\operatorname{HH}^1$ である。
 全 Artin 変形への根の存在が従う。
 特に可換 quadric の $(-)\otimes\mathcal O(1,1)$ は、
 任意の flat Abel 変形へ exact ample な Serre 平方根として延長する。
-この根は Morita 同型類として一意である。二周期 cubic 列の相対 canonical hull を
+この根は Morita 同型類として一意であり、有限 foundation 表示の
+\'etale 近傍上の perfect Morita 双加群へ代数化できる。二周期 cubic 列の相対 canonical hull を
 構成し、全 Artin 変形に同じ根の相対 AS4 被覆を与える。
 適合表示を全有限型基底変更上の系へ昇格させることで、可換点での
 $\mathfrak H_2$ の形式変形問題を pointed Abel 変形と同定する。
@@ -209,6 +210,10 @@ Van den Bergh \cite[\S6]{VdB2011} の canonical hull を参照するが、
 一次 Jacobian 被覆は全九次元の具体式を与える。
 Toda \cite[Theorem 4.7, arXiv v3]{Toda2009} の一次 Fourier--Mukai 持上げ定理は
 選択済みの四根の一次条件に用いるが、全 Artin 段階の結論は別途証明する。
+To\"en--Vaqui\'e \cite[Corollaries 3.22, 3.24]{TV2007} の一般基礎環上の
+自己同値モジュライに、標準根の全 Artin 存在・一意性を適用すると、
+可換点の foundation 表示の \'etale 近傍に実際の Morita 根を構成できる。
+この代数化は有限型基底上の Abel heart と AZ 豊富性の相対実現を含まない。
 これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
 
 Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} は、一般の cubic quadric が
@@ -535,7 +540,10 @@ Artin 基底では有限 foundation と canonical 反 Serre 偏極を回復し�
 一般有限型基底でこの表示を構成し、適合平方根と AS 被覆の fppf 局所存在を認識せよ。
 可換点では定理~\ref{thm:quadric-all-artin-h2} が全 Artin 段階の根と AS4 被覆を構成し、
 系~\ref{cor:quadric-formal-deformation-equivalence} が形式変形問題を認識する。
-この形式的認識を一般有限型基底での実現部分層の表現可能性へ結び付けることが残る。
+命題~\ref{prop:quadric-etale-morita-root} により標準根は foundation 表示の
+\'etale 近傍へ Morita 双加群として代数化できる。
+この近傍の cubic helix から noetherian な相対 tails heart を構成し、
+canonical compact 圏・AZ・任意基底変更を確認することが次の実現問題である。
 一般の $X_3$ 族については、命題~\ref{prop:antiserre-polarization-family} の
 偏極変形を除外する必要がある。
 また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、

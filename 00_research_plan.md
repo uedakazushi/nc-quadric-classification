@@ -18,6 +18,8 @@
 
 **可換点の全Artin相対H2実現。** 全flat pointed Abel Artin変形に標準根を持ち上げ、二周期cubic列のcanonical hullからその全軌道環の相対AS4被覆と正則正規二次切断を構成した。Artin witnessの昇格により、全有限型基底変更を備えた実際の相対H2対象を得る。忘却はQを中心とする形式変形groupoidの同値で、HH³=0から無障害、接次元9・無限小自己同型次元6となる。大域的な形式商表示や代数性はこの定理から結論しない。`sec:quadric-artin-hull`、`thm:quadric-all-artin-h2`、`cor:quadric-formal-deformation-equivalence`。
 
+**標準Morita根の有限型代数化。** TV2007の一般基礎環上の自己同値モジュライを用い、有限foundation表示上の根空間Zを局所有限表示の代数空間として構成した。可換Qの標準根の全Artin存在・一意性によりZ→Sはその点でétaleであり、gerbeと比較線束の自明化後に実際のperfect根と平方同型を得る。Abel heart・AZはこの命題の結論に含まれない。`prop:quadric-etale-morita-root`。
+
 **Artin表示から相対族への昇格。** exactなSerre根と全軌道環の相対AS4被覆がArtin基底上に与えられれば、全有限型A-代数へのmodule-object基底変更でrelative_h2の全条件を満たす。nilpotent base上のhelix持上げとEndの基底変更からcanonical compact圏を比較する。根・被覆の存在そのものはこの命題の仮定である。`prop:artin-witness-relative-promotion`。
 
 **残る条件を分離する明示例。** 二根対一致点の反Serre環Rを、u↦qu, v↦q⁻¹v, c,d固定でZhang twistすると、pointed qgrが一定のGm族を得る。しかしq=2はどのH2のcanonical反Serre環でもなく、一次方向も非零HH²類となる。従って全次数平坦性・Abel heartだけでは反Serre認識はできない。`papers/sections/antiserre_polarization.tex`。
@@ -126,6 +128,7 @@ $$
 | Artin witnessの相対H2族への昇格 | 根と全軌道AS4被覆が入力。全有限型基底変更のcompact/Serre/AZ/被覆を確認 | `prop:artin-witness-relative-promotion` |
 | 可換Qの標準Serre根の全Artin存在・一意性 | HH²・HH¹への作用が恒等。exact ampleな根のMorita同型類が一意 | `cor:quadric-exact-root-all-artin`, `cor:quadric-root-unique-all-artin` |
 | 可換Qの全Artin変形の相対H2実現と形式変形同値 | 二周期canonical hullによる相対AS4切断と昇格。無障害、接9・無限小自己同型6 | `thm:quadric-all-artin-h2`, `cor:quadric-formal-deformation-equivalence` |
+| cubic点の条件付き全Artin認識 | ample cubic helixと適合根のHH²自明作用を仮定。一般点でこの根が存在する範囲は未確定 | `prop:cubic-artin-hhtrivial-conditional` |
 | 可換Qの全一次変形の相対H2実現 | Jacobian AS4被覆とZhang補正。任意有限次元二乗零理想へ拡張。内在接dim9、偏極付き接dim15、核dim6 | `thm:quadric-all-first-order-h2`, `cor:quadric-intrinsic-tangent` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
 
@@ -183,8 +186,8 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **Artinで得た有限foundationを一般の相対族へ広げる。** `artin_foundation.tex` により全flat Abel Artin変形のfoundation・完全なcanonical反Serre・AZ・全軌道と偏極忘却の分裂は成立した。`polarization_recognition.tex` の有限表示局所閉条件を適用するため、任意有限型基底の族にfoundationとshift双加群を与える。実際のArtin root/AS witnessを全有限型A-代数上のrelative_h2系へ延長する命題は成立した。次は有限型基底の近傍へfoundationと双加群を代数化し、相対豊富性を確認する。非平坦底変更では、単にheartが同じという理由でcanonical導来基底変更を仮定しない。
-2. **全Artin hullを一般点と有限型近傍へ拡張する。** 可換Qでは全Artin段階の標準根とAS4被覆、形式変形groupoidの同値は解決した。次は `quadric_artin_hull.tex` の二周期tensor構成について、一般cubic点で必要な非退化性と相対periodを検証し、noncubicの階数3境界で失われる入力を特定する。有限型近傍への代数化・効果性と `relative_as_cover.tex` のincidenceの局所存在を比較する。根は標識でなく、選んだ根の非持上げと全ての根の非存在を区別する。形式的な無障害性や有限型射のfppf像だけで大域代数性を結論しない。
+1. **Artinで得た有限foundationを一般の相対族へ広げる。** `artin_foundation.tex` により全flat Abel Artin変形のfoundation・完全なcanonical反Serre・AZ・全軌道と偏極忘却の分裂は成立した。`polarization_recognition.tex` の有限表示局所閉条件を適用するため、任意有限型基底の族にfoundationとshift双加群を与える。実際のArtin root/AS witnessを全有限型A-代数上のrelative_h2系へ延長する命題は成立した。可換点では `prop:quadric-etale-morita-root` がfoundation表示のétale近傍へMorita根を代数化した。次はその近傍の相対cubic helixからtails heartを実現し、全有限型基底変更後のnoetherian性、四対象のflat compact tilting性とEnd=Λ、canonical導来比較、AZを証明する。非平坦底変更では、単にheartが同じという理由でcanonical導来基底変更を仮定しない。
+2. **全Artin hullを一般点と有限型近傍へ拡張する。** 可換Qでは全Artin段階の標準根とAS4被覆、形式変形groupoidの同値は解決した。`prop:cubic-artin-hhtrivial-conditional` により、適合するample cubic helixとHH²に恒等に作用する根があれば一般cubic点でも全Artin認識が成立する。次はその根のHochschild作用を計算し、存在範囲を確定する。helix対象ごとの二周期性から作用の恒等性は従わない（Q上の一因子対合の根が反例）。noncubicの階数3境界で失われるcubic入力も特定する。有限型近傍への代数化・効果性と `relative_as_cover.tex` のincidenceの局所存在を比較する。根は標識でなく、選んだ根の非持上げと全ての根の非存在を区別する。形式的な無障害性や有限型射のfppf像だけで大域代数性を結論しない。
 3. **階数3境界の相対正規形を閉じる。** 全H2の二ruling、有限foundation、相対S2交換を入力に、noncubic境界の内在族から局所モデルへ移ることを証明する。既存のcubic→全noncubic特殊化を相対H2族として認識できれば、成分問題の位相比較にも進める。
 4. **avatarと相対AS代数の比較を閉じる。** 別稿の $H\mapsto HP^n$ は幾何的stackの自己同値として証明済み。次はavatarからの有限foundationと全周期AS代数を相対的に構成し、底変更と同型層を比較する。元のproduct QP、weighted12本矢、固定構造対象の移動を区別する。$P=\mathcal O_D$ の古典点への収縮は同型類の説明だけでは足りない。内在的忘却に進むときは重み付き古典点の反例を基準にする。
 5. **必要な変形計算を選ぶ。** 三次平坦性から全次数平坦性は解決済みなので、次数4のHilbert条件を独立の追加制約として再計算しない。既存の横断二次jetはflat Abel変形になる。高次障害計算をする場合は、canonical偏極・根・被覆のどの残存条件を検証するかを先に明示する。

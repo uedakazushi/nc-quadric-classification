@@ -42,7 +42,11 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **可換点の全一次方向。** `quadric_first_order.tex` では、P=k[x₀,…,x₃]、q=x₀x₃−x₁x₂、f∈P₂/kqに対しγ_f(x_i,x_j)=Σε_ijkl q_k f_lと置き、a⋆b=ab+εγ_f(a,b)/2を使う。PBWと相対Koszul双対性によりAS4被覆、γ_f(q,−)=0により中心正則二次切断を得る。x₀≠0上でz=x₂/x₀,w=x₁/x₀とすると{z,w}=2f(1,w,z,zw)。斉次Ore局所化がAbel変形の局所制限を与えるので、全HH²(Q)を実現する。補正に必要なHH¹(Q)=sl₂⊕sl₂はα=1+εδによる次数付き自己同型で実現でき、右軌道積α^{deg b}(a)bのZhang twistでAS被覆を保持する。上の昇格命題からT_QH2≅HH²(Q)は九次元。平方根・被覆を追加標識にしていない。高次の存在は次のcanonical hullで証明する。
 
-**可換点の全Artin hullと形式変形。** `sec:quadric-artin-hull` では、標準根で二周期化したcubic列の有限自由tensorデータからcanonical hullを構成する。三次関係R_iと一次元の重なりW_iの二つの非退化coevaluationを逆にした評価は、七次元の関係空間S_i上で一致し、W_iの生成元を2に送る。その核が階数6の相対AS4関係を与える。二周期との整合、正規元、相対Koszul/Frobenius双対と正則二次商を確認し、体上のhull定理を非被約底へ無条件に流用しない。標準根の全軌道環への適用と昇格命題により、可換Qの全flat pointed Abel Artin変形は相対H2になる（`thm:quadric-all-artin-h2`）。忘却は閉fiberの同定を固定した形式変形groupoidの同値（`cor:quadric-formal-deformation-equivalence`）。HH³=0から無障害、接HH²は次元9、無限小自己同型HH¹は次元6である。これはQでのArtin局所の結論であり、大域的な形式商表示、一般点の根・AS被覆、有限型基底上の代数性を主張しない。次はこのhullの一般cubic点への適用条件と、有限型近傍への代数化・効果性を検証する。
+**可換点の全Artin hullと形式変形。** `sec:quadric-artin-hull` では、標準根で二周期化したcubic列の有限自由tensorデータからcanonical hullを構成する。三次関係R_iと一次元の重なりW_iの二つの非退化coevaluationを逆にした評価は、交わりW_i上で一致するため七次元の関係空間S_iへ貼り合わさり、W_iの生成元を2に送る。その核が階数6の相対AS4関係を与える。二周期との整合、正規元、相対Koszul/Frobenius双対と正則二次商を確認し、体上のhull定理を非被約底へ無条件に流用しない。標準根の全軌道環への適用と昇格命題により、可換Qの全flat pointed Abel Artin変形は相対H2になる（`thm:quadric-all-artin-h2`）。忘却は閉fiberの同定を固定した形式変形groupoidの同値（`cor:quadric-formal-deformation-equivalence`）。HH³=0から無障害、接HH²は次元9、無限小自己同型HH¹は次元6である。これはQでのArtin局所の結論であり、大域的な形式商表示、一般点の根・AS被覆、有限型基底上の代数性を主張しない。一般cubic点についても、ample geometric cubic helixとそれを二項移すexact ample根s₀があり、s₀がHH²へ恒等に作用するなら全Artin認識が成立する（`prop:cubic-artin-hhtrivial-conditional`）。cubic解消の次数六の単射で双対の三次直和分解を証明し、特殊fiberの外積代数をVdB canonical hullのFrobenius双対で置き換える。追加のHH¹自明作用は根一意性を与える。ただしQ上の根tensor O(1,1)∘(z,w↦−z,w)*は同じhelixの対象を二項移してもHH²に非自明に作用する。従って対象ごとの周期性だけで作用条件を省けない。この一因子対合は連結群Aut⁰(Q)=PGL₂×PGL₂にも属するため、自己同型群の連結性だけでHochschild作用を自明とする方法も使えない。次は一般cubic点の適合根のHH²作用と、有限型近傍への代数化・効果性を調べる。
+
+**標準Morita根のétale代数化。** `prop:quadric-etale-morita-root` では、有限foundationの滑らかなaffine chart S 上でTV2007 Corollary 3.24の一般基礎環版を適用し、Morita自己同値のétale局所同型類を表す局所有限表示の代数空間群Gを得る。通常の有向代数なのでHH負次数は零、中心は任意底変更後も基底環である。平方写像sqと反Serre節τのfiber積Zを取り、Qの標準根での全Artin存在・一意性から完備局所環をSと同定する。Sの滑らかさと接写像の同型によりZ→Sはその点でétale。TVの単純対象のGm-gerbeをétale局所に中立化し、平方比較の線束をさらに自明化して、実際のperfect根と平方同型を得る。原典のCorollaries 3.22, 3.24、Lemma 3.25と、完備局所環の議論・線束twistの扱いを独立点検した。相対heartを仮定せず、かつその存在を結論しない。
+
+**次の効果性補題。** 上の有限型étale近傍のperfect helixから、幾何的cubic Z-代数の相対tailsを構成し、全有限型基底変更後のnoetherian性、四つの標準対象の平坦なcompact tilting性、End=Λ、canonicalな導来基底変更同値を示す。これがheart・AZ・相対H2認識へ進むための不足入力である。Artin基底のDD持上げはこの非冪零基底に直接適用できない。形式的認識だけでは不十分であり、例えばA¹の部分関手F(R)={a∈R : aは冪零}は0で全Artin変形を含むが、0のZariski開近傍を含まない。k[t]/(tⁿ)上の互換な元tはk[[t]]上の冪零元から来ず、効果性が失われる。今回のMorita根で実際のétale近傍を得られるのは、TVによりZの局所有限表示の代数性が先に証明されるためである。
 
 `papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
@@ -260,7 +264,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 **Artin再構成と一次構成の証明の点検。** 有限foundation上の局所閉比較、DDのArtin適用条件、Morita持上げのheart exactnessとAZ、偏極忘却のHH¹核、HH¹=0点の関係式空間の滑らかさ、近恒等DPicの平方根補正と曲率障害を独立読取りした。Artin witnessの全有限型基底変更への昇格はEnd・可逆双加群・軌道Homの基底変更を個別に確認した。可換点の一次AS構成はPBW、Koszul/Frobenius、斉次Ore恒等式とHKR係数、flat qgrと全軌道の飽和、右Zhang twistの符号、相対族への昇格まで点検した。二乗零理想I全体への拡張とmodule-object系の一意性により、内在的な一次接空間の同定も確認した。これらは人間による査読や形式証明器での検証ではない。
 
-**全Artin hullと根一意性の点検。** 二周期cubic列の相対hullについて、逆coevaluationの貼合せ・二周期との整合、正規性のtensor縮約、相対双対性と正則商、全有限型基底変更への昇格を独立読取りした。近恒等DPicの次数商と中心の帰納法、根の先頭差の消去による一意性も独立点検した。これに基づく全Artin相対H2実現と形式変形groupoidの比較を原稿へ統合した。これは数学的な読取りであり、形式証明器の認証ではない。
+**全Artin hullと根一意性の点検。** 二周期cubic列の相対hullについて、逆coevaluationの貼合せ・二周期との整合、正規性のtensor縮約、相対双対性と正則商、全有限型基底変更への昇格を独立読取りした。近恒等DPicの次数商と中心の帰納法、根の先頭差の消去による一意性も独立点検した。一般cubicへの条件付き拡張では、添字付きcubic解消の次数六と特殊fiberのcanonical hullを原典に照合した。これに基づく全Artin相対H2実現と形式変形groupoidの比較を原稿へ統合した。これは数学的な読取りであり、形式証明器の認証ではない。
 
 **一次構成の有限記号計算。** `computations/verify_quadric_first_order_roots.py` を実行し、一般の十係数二次式に対するγ_f(q,x_i)=0、{x₂/x₀,x₁/x₀}=2f/x₀²、Segre制限のrank9と核kq、四根の固定次元9/3/5/3をSymPyの厳密演算で確認した。相対AS性・圏の平坦性・相対H2所属は、この有限計算の認証範囲には含めない。軽量な通常math suiteに登録したが、今回全旧suiteを再実行していない。
 
@@ -288,7 +292,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 主論文v1.12の新しい全Artin hull・根一意性を含む組版、最終頁数、参照checkerと画像確認は実施待ちである。直前の組版済み主論文はv1.11・153頁で、LuaLaTeX・latexmkによるPDF/SyncTeX生成、最終logのWarning・Overfull/Underfull・文字欠落・未定義参照なしを確認済み。その版の新しい第25・26・29・30節、表紙・概要と書誌の一覧画像および主要証明を拡大確認したが、全153頁を目視したわけではない。その版の静的checkerは32 manuscript files/292 labels/178 citation uses、7 Markdown filesでPASS。これをv1.12の確認結果とは扱わない。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**組版・参照確認。** 主論文v1.12・162頁についてLuaLaTeX・latexmkによるPDF/SyncTeX生成がPASS。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。第29・30節の根一意性・étale Morita根・全Artin hull・一般cubicへの条件付き拡張、表紙・概要・書誌を一覧画像で確認し、根一意性、étale代数化の定理と証明、正規性のtensor計算、全Artin実現定理と形式変形の系、条件付き定理を拡大確認した。全162頁を目視したわけではない。静的checkerは33 manuscript files/307 labels/192 citation uses、7 Markdown filesでPASS。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

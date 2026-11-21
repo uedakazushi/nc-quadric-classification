@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.11
+% 2026-11-21 / v1.12
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -337,3 +337,137 @@ $\operatorname{HH}^2(Q)=V\otimes V$ である。
 Morita 変形の全段階へ持ち上がる。
 この根に適合する二次 AS 正則被覆は次節で構成する。
 
+
+\subsection{可換点の近傍における Morita 平方根の代数化}
+\label{subsec:quadric-etale-morita-root}
+
+本項では Abel heart の代数化に先立ち、有限 foundation の
+\emph{Morita 自己同値としての}平方根を代数化する。
+根を持つ有限代数の族から相対 $\mathfrak H_2$ 族が得られるとは、ここでは主張しない。
+
+\begin{proposition}[標準根を持つ \'etale な foundation 近傍]
+\label{prop:quadric-etale-morita-root}
+$k$ を標数零の代数閉体とし、$S$ を有限 foundation スタックの
+滑らかな有限型 affine chart とする。
+$\Lambda$ を $S$ 上の普遍有限自由有向代数、$x\in S(k)$ を可換 quadric
+$Q=\mathbf P^1_k\times\mathbf P^1_k$ の foundation に対応する点とする。
+次の性質を用いる。
+\begin{enumerate}
+\item $\operatorname{Perf}(\Lambda)$ は相対 smooth proper であり、
+  任意の基底変更後も $\operatorname{HH}^{<0}(\Lambda)=0$、
+  $\operatorname{HH}^{0}(\Lambda)=\mathcal O_S$ である。
+\item 相対 inverse Serre $t=S_{\Lambda}^{-1}[2]$ は可逆 perfect 双加群で表され、
+  任意の基底変更と可換する。
+\end{enumerate}
+これらは補題~\ref{lem:foundation-relative-smooth-proper}、
+補題~\ref{lem:foundation-relative-antiserre-perfect} と以下の普遍中心の計算により成立する。
+
+$\mathcal G\to S$ を $\operatorname{Perf}(\Lambda)$ の Morita 自己同値の
+\'etale 局所同型類の層とする。これは $S$ 上局所有限表示の代数空間群である。
+$\tau\in\mathcal G(S)$ を $t$ の類とし、平方写像を
+$\mathrm{sq}:\mathcal G\to\mathcal G$, $p\mapsto p^2$ と置く。
+この写像は一般には群準同型ではないが、代数空間の射である。
+平方根空間
+\[
+ \mathcal Z=\mathcal G\mathbin{\times}_{\mathrm{sq},\mathcal G,\tau}S
+\]
+は $S$ 上局所有限表示の代数空間となる。
+
+$p_0$ を $s_0=(-)\otimes\mathcal O_Q(1,1)$ の Morita 類とする。
+$\mathcal Z\to S$ は $p_0$ において \'etale である。
+さらに $x$ を含む開近傍を必要に応じて縮めると、その \'etale 被覆
+$U\to S$ 上に可逆 perfect $\Lambda_U$-双加群 $P$ と実際の同型
+\[
+ P\otimes^{\mathbf L}_{\Lambda_U}P\simeq t_U
+\]
+が存在し、選んだ $u\in U(k)$ における $P$ の類は $p_0$ である。
+\end{proposition}
+
+\begin{proof}
+任意の基底変更後も有向代数の対角成分は基底環である。
+中心元は頂点の冪等元と可換するので対角であり、隣接頂点間の正階数の自由加群と
+可換する条件から各対角スカラーは等しい。従って中心は基底環そのものである。
+負の Hochschild 次数の消滅は通常の代数の自己 Ext の消滅による。
+
+$S=\operatorname{Spec}R$ として
+$T=\operatorname{Perf}(\Lambda)$ を $R$-線形 saturated dg 圏とみなす。
+\cite[著者公開版 April 2007, Corollary 3.24]{TV2007} は、
+基礎環が体でなくても、$\operatorname{HH}^{<0}(T)=0$ と
+$R\simeq\operatorname{HH}^{0}(T)$ の下で
+$\operatorname{aut}(T)$ が局所有限表示の代数空間で表されることを述べる。
+これを $R$ 上で適用すれば $\mathcal G$ が得られる。
+ここで層化は essential であり、基底上の線束による tensor twist は
+局所的には同じ類になる。任意の基底上の実際の双加群の同型類を、
+層化せずそのままこの代数空間と同一視しない。
+
+同論文 Lemma 3.25 は、perfect 双加群が Morita 同値を与える条件を
+二つの評価射の quasi-isomorphism として表し、その条件が開であることを示す。
+可逆双加群の自己 Ext は Hochschild cohomology と同一視されるので、
+仮定 (1) より全て単純であり、負次数自己 Ext は零である。
+従って Corollary 3.22 により、実際の可逆双加群のスタックから
+$\mathcal G$ への射は \'etale 局所に自明な $\mathbf G_m$-gerbe である。
+$S$ は Noetherian で、$\mathcal G$ はその上局所有限表示だから、
+$S$ 上の射 $\mathrm{sq}$ も局所有限表示である。
+従って $\mathcal Z$ の代数性と局所有限表示性は上のファイバー積から従う。
+
+\'Etale 性を $p_0$ で調べる。
+剰余体 $k$ の局所 Artin $k$-代数 $A$ と、閉点を $x$ に送る
+$a:\operatorname{Spec}A\to S$ を任意に取る。
+$\Lambda_A$ は $\Lambda_x$ の有限平坦な代数変形である。
+命題~\ref{prop:quadric-root-all-artin} と
+系~\ref{cor:quadric-root-unique-all-artin} により、
+$p_0$ を還元に持つ $p_A\in\operatorname{DPic}_A(\Lambda_A)$ で
+$p_A^2=t_A$ を満たすものが存在し、その同型類は一意である。
+これらの命題は有限代数の Morita 変形についての結果であり、
+$\Lambda_A$ に相対 $\mathfrak H_2$ heart が先に与えられていることを要求しない。
+存在には $(s_0)_*=1$ on $\operatorname{HH}^2(Q)$、
+一意性には $(s_0)_*=1$ on $\operatorname{HH}^1(Q)$ を用いる。
+
+局所 Artin $A$ 上では線束は自明であり、$A$ は strictly henselian なので
+上の \'etale gerbe は中立である。
+従ってこの存在・一意性は、閉点を固定した変形関手の同型
+\[
+ \operatorname{Def}_{\mathcal Z,p_0}(A)
+ \xrightarrow{\ \sim\ }
+ \operatorname{Def}_{S,x}(A)
+\]
+を意味する。特に平方との比較同型そのものを標識として数えてはいない。
+
+$p_0$ を持ち上げる \'etale なスキーム chart $V\to\mathcal Z$ と
+$v\in V(k)$ を取る。\'Etale な chart は閉点を固定した Artin 変形関手を変えないから、
+自然な準同型
+\[
+ \widehat{\mathcal O}_{S,x}\longrightarrow
+ \widehat{\mathcal O}_{V,v}
+\]
+は同型である。
+$S$ は滑らかなので右辺は $k$ 上の形式冪級数環である。
+従って $V$ は $v$ で正則、したがって完全体 $k$ 上滑らかであり、
+$V\to S$ の接写像は同型である。
+滑らかな $k$-スキーム間の Jacobian 判定により $V\to S$ は $v$ で \'etale となる。
+\'Etale 局所性から $\mathcal Z\to S$ も $p_0$ で \'etale である。
+その \'etale locus の像は $x$ を含む開部分である。
+
+この locus 上で前記の $\mathbf G_m$-gerbe を \'etale 局所に中立化し、
+実際の可逆 perfect 双加群 $P$ を取る。
+$[P]^2=\tau$ は、まだ大域的な平方比較の選択ではない。
+定理~\ref{thm:bimodule-line-comparison} により比較線束
+\[
+ L=H^0\mathbf R\mathcal Hom_{\Lambda_U^e}
+       (P\otimes^{\mathbf L}_{\Lambda_U}P,t_U)
+\]
+と評価同型
+$(P\otimes^{\mathbf L}_{\Lambda_U}P)\otimes L\simeq t_U$ を得る。
+さらに Zariski 被覆で $L$ を自明化すると、主張した実際の平方同型が得られる。
+これらの細分はいずれも \'etale であり、必要なら有限個の affine chart に制限できる。
+\end{proof}
+
+\begin{remark}[この代数化で残る条件]
+得られたのは有限 foundation の perfect 圏上の平方根である。
+一般有限型基底で、その根と helix が noetherian な相対 tails heart を与え、
+canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
+AZ 豊富性と全有限型基底変更を満たすことは別の相対実現命題を要する。
+Artin 基底上の heart exactness や witness 昇格を、冪零でない
+この \'etale 近傍へそのまま適用しない。
+従って本命題だけから $\mathfrak H_2$ の開近傍の代数性は結論しない。
+\end{remark}
