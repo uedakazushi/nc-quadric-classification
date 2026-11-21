@@ -431,3 +431,210 @@ $\mathcal O$-marked 圏の族との同値を主張するには、相対再構成
 その小行列式をスキーム論的に零とする条件が必要である。
 このため、点の分類をそのまま全 family の分類へ読み替えない。
 \end{remark}
+
+
+
+\subsection{平方根の選択に依存しない反 Serre 環の相対表示}
+\label{subsec:noncubic-antiserre-descent}
+
+ここでは表示スタックの上に、適合平方根を族として選ばずに
+反 Serre 切断環を復元する。これは単なる幾何点での同値類の記述より強いが、
+内在的な相対 Abel 圏の再構成とは区別する。
+$\widetilde G$、$D$、$G$、$P$ は本節の冒頭の記号とする。
+$P$ 上の普遍二重平方環を $\mathcal B$ とし、
+\[
+ \iota(u)=u,\quad \iota(v)=v,\quad
+ \iota(c)=-c,\quad\iota(d)=-d
+\]
+と置く。これは全ての基底変更および二形式の交換と可換する
+次数付き代数自己同型である。
+$W$ は $\widetilde G$ の標準二次元表現であり、
+$\mathcal D=\det W$ を $P$ 上の同変線束とする。
+
+\begin{proposition}[noncubic 反 Serre 環の相対降下]
+\label{prop:noncubic-antiserre-descent}
+$P$ 上で
+\[
+ \mathcal R_n=\mathcal B_{2n}\otimes\mathcal D^{-n}
+ \quad(n\ge0),\qquad
+ (a\otimes\ell^{-n})\star(b\otimes\ell^{-m})
+ =a\,\iota^n(b)\otimes\ell^{-(n+m)}
+ \tag{NC-AS}\label{eq:noncubic-antiserre-product}
+\]
+と定める。線束因子の積は自然なテンソル積と解釈する。
+すると以下が成立する。
+\begin{enumerate}
+\item $\mathcal R=\bigoplus_{n\ge0}\mathcal R_n$ は結合的な連結
+  次数付き代数であり、任意の底変更と両立する。
+  全次数で有限局所自由で
+  \[
+    \operatorname{rank}\mathcal R_n=(2n+1)^2.
+  \]
+\item $\mathcal R$ の $\widetilde G$-線型化では $D$ が自明に作用する。
+  従って $\mathcal R$ は rigidification
+  $\mathfrak N^{\mathrm{pres}}=[P/G]$ 上の
+  通常の準連接次数付き代数として降下する。
+\item 任意の幾何点において、$\mathcal D$ の線維を自明化した
+  $\mathcal R$ は、対応する $\HH$ 対象の内在的反 Serre 環
+  \[
+    \bigoplus_{n\ge0}
+       \operatorname{Hom}(\mathcal O,(S^{-1}[2])^n\mathcal O)
+  \]
+  と次数付き代数として同型である。
+  この主張では適合平方根そのものを追加標識として選ばない。
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+$\mathcal B$ の基底は $u^av^bw$（$w$ は $c,d$ の交互語）であり、
+その Hilbert 級数は
+\[
+ H_{\mathcal B}(z)
+ =\frac1{(1-z)^2}\left(1+\frac{2z}{1-z}\right)
+ =\frac{1+z}{(1-z)^3}.
+\]
+従って第 $j$ 次成分の階数は $(j+1)^2$ である。
+$\iota$ は代数自己同型なので $(\mathrm{NC\text{-}AS})$ の
+積の結合律は
+\[
+ (a\iota^n(b))\iota^{n+m}(c)
+ =a\iota^n(b\iota^m(c))
+\]
+から従う。すべては普遍的な基底と積により定義され、
+非被約基底を含む任意の底変更と両立する。
+
+$\widetilde G$ は $\mathcal B_j$ に次数付きに作用し、$\iota$ と可換する。
+$D$ の元 $(\lambda I_W,\lambda,\lambda)$ は
+$\mathcal B_{2n}$ に重み $2n$、$\det W$ に重み $2$ で作用する。
+従って $\mathcal B_{2n}\otimes(\det W)^{-n}$ 上の
+$D$-作用は自明であり、積も $\widetilde G$-同変である。
+$D$ が $P$ 上でも自明に作用するので、
+$\widetilde G$-同変準連接層のうち $D$ が自明に作用するものは
+$G=\widetilde G/D$-同変層へ降下する。
+
+最後に、補題~\ref{lem:noncubic-local-exchange} により
+$\acute{e}$tale 局所では適合する次数付き自己同型
+$\sigma$ を選べて、$\sigma^2=\iota$ である。
+通常の Zhang twist の積を
+$a*_\sigma b=a\sigma^{\deg a}(b)$ と書くと、
+偶数次数成分上で
+\[
+ a*_\sigma b=a\,\sigma^{2n}(b)
+              =a\,\iota^n(b)
+       \qquad(a\in\mathcal B_{2n})
+\]
+となる。従って
+\[
+ (\mathcal B^\sigma)^{(2)}
+ \simeq\bigl(\mathcal B^{(2)},\star\bigr)
+\]
+は $\sigma$ の選択によらない。
+幾何点では $\mathcal B^\sigma$ が適合する
+$(\mathcal O,s)$ の全切断環であり、
+$s^2\simeq S^{-1}[2]$ なのでその偶数部分は
+内在的反 Serre 環そのものである。
+$\mathcal D$ の線維の自明化は各次数の共通次数スカラーを変えるだけで、
+幾何点の代数同型類には影響しない。
+\end{proof}
+
+\begin{proposition}[九生成元の相対二次関係と商スタックへの射]
+\label{prop:noncubic-antiserre-grassmann}
+上の $\mathfrak N^{\mathrm{pres}}$ 上の代数 $\mathcal R$ は
+次数一で生成される。乗法
+\[
+ \mathcal R_1\otimes\mathcal R_1
+    \longrightarrow\mathcal R_2
+\]
+は任意の底変更後も全射であり、その核 $\mathcal J$ は
+階数 $56$ の部分束である。
+従って標準九次元空間 $U$ を固定すれば、自然な射
+\[
+ \Psi_{\mathrm{nc}}:
+ \mathfrak N^{\mathrm{pres}}
+ \longrightarrow
+ \left[\operatorname{Gr}(56,U\otimes U)/\operatorname{PGL}(U)\right]
+ \tag{NC-Gr}\label{eq:noncubic-antiserre-grassmann}
+\]
+を得る。幾何点上ではこの射は反 Serre 環の
+二次関係空間を与えるので、全体の
+反 Serre 商スタック候補の noncubic chart を具体化する。
+\end{proposition}
+\begin{proof}
+$\mathcal B$ は次数一生成である。
+任意の長さ $2n$ の積を隣接する二文字ずつに括り、
+偶数部分の $n$ 個の元 $a_1,\ldots,a_n$ と書く。
+$\iota$ は可逆なので
+\[
+ a_1\star\iota^{-1}(a_2)\star
+       \iota^{-2}(a_3)\star\cdots\star
+       \iota^{-(n-1)}(a_n)
+ =a_1a_2\cdots a_n .
+\]
+よって $\mathcal R$ は次数一生成である。
+特に $\mathcal R_1^{\otimes2}\twoheadrightarrow\mathcal R_2$ は
+全射であり、両辺の階数は $81,25$ だから
+$\mathcal J$ は階数 $56$ の局所直和因子である。
+この結論は各次数の局所自由性と積の任意底変更との整合性から、
+全ての基底上で成立する。
+
+$\mathcal R_1$ の射影枠束は $\operatorname{PGL}(U)$-torsor である。
+$\mathcal J\subset\mathcal R_1^{\otimes2}$ はその枠に関して
+同変な Grassmannian の点を与えるので
+(\ref{eq:noncubic-antiserre-grassmann}) を得る。
+各幾何点での識別は直前の命題による。
+この射の存在は、その像が内在的な相対 $\HH$ locus
+として開・閉・有限表示であることまでは主張しない。
+\end{proof}
+
+\begin{proposition}[noetherian 基底上の noncubic 表示の有限性]
+\label{prop:noncubic-relative-noetherian}
+任意の可換 noetherian 基底に引き戻した普遍環 $\mathcal B$、
+および上記の反 Serre 環 $\mathcal R$ は左右 noetherian である。
+この主張は相対 Serre 双対性や相対 heart の認識を仮定しない。
+\end{proposition}
+\begin{proof}
+noetherian なアフィン基底 $\operatorname{Spec}A$ 上で調べる。
+補題~\ref{lem:noncubic-local-exchange} の
+有限 \'etale 被覆の後、命題~\ref{prop:noncubic-relative-regular-cut}
+の Ore 環
+\[
+ A'=A[u,v,x][y;\tau,\partial]
+\]
+があり、$\mathcal B=A'/(g')$ である。
+$A[u,v,x]$ は左右 noetherian、$\tau$ は自己同型なので
+Ore 拡大の noetherian 性から $A'$、従って $\mathcal B$ も
+左右 noetherian である。
+有限忠実平坦な拡大で右・左イデアルの昇鎖が停止すれば
+元の環の昇鎖も停止するため、元のアフィン基底へ降下する。
+
+次数一生成の $\mathcal B$ の偶数 Veronese
+$\mathcal B^{(2)}$ は左右 noetherian である。
+実際、その右イデアルの昇鎖 $I_j$ について
+$I_j\mathcal B$ は $\mathcal B$ の右イデアルの昇鎖であり、
+偶数次数の直和因子への射影から
+$(I_j\mathcal B)\cap\mathcal B^{(2)}=I_j$ となる。
+左も同様である。
+$\mathcal R$ はこの偶数 Veronese の $\iota$ による
+Zhang twist と線束 twist である。
+局所的に線束を自明化すれば、Zhang twist は
+次数付き加群圏の同値を与えるので、左右の
+次数付き noetherian 性を保つ。
+非負次数付けに対する最高次数項の標準的議論によって
+通常の左右 noetherian 性も従う。
+以上の証明はどの幾何点が noncubic であるかを調べるものではなく、
+非被約基底を含む表示族に対して成立する。
+\end{proof}
+
+\begin{remark}[内在的モジュライに残る差]
+上の降下は次数偶数の環とその二次関係を
+$\mathfrak N^{\mathrm{pres}}$ 上に実際に構成する。
+全次数の局所自由性・左右 noetherian 性・
+反 Serre 幾何点との照合は成立する。
+しかし、その普遍環の $\qgr$ が任意の noetherian 基底上で
+相対 $\HH$ の heart、相対 Serre 双対、
+適合平方根の局所存在と AZ 豊富性を全て満たすという
+族としての認識、および全内在的 noncubic 族の
+$\mathfrak N^{\mathrm{pres}}$ への局所還元は未証明である。
+また (\ref{eq:noncubic-antiserre-grassmann}) は
+二次関係の射であって、非被約底上の全二次表示条件まで
+自動的に保証するものではない。
+\end{remark}
