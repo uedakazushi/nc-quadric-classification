@@ -354,6 +354,8 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 **五頂点の非極小化が必要な理由。** noncubicの最小解消に現れる距離二の追加項はcubic generic fiberでは消える。barの固定複体なら、この追加二項が可縮になることを許す。末頂点係数の階数は次数1–4で9,40,48,16、Tor₄=0から最後の項をsplit消去する。導来torsion kernel=loc{Sᵢ}を確認して、Pᵢ↦E₋ᵢが全軌道・shift・実際のMorita根を保つ比較へ降りる。
 
+**有限型一様化で循環しないこと。** V,J、中心線、被覆関係H、双対の次数≤5とFrobenius pairing、次数三の中央性は有限データなので単一開へspreadできる。しかし `thm:relative-finite-as-cover` 自体が全Bₙ平坦・全fiber Koszul・Noetherianを仮定するため、その定理で全軌道の一様化を証明することはできない。PPも各局所環でspecial fiberのKoszul性を要する。残る具体的補題は、距離≤4の二周期五頂点データから、有限提示候補C_finと実際のRHom(E₋ⱼ,E₋ᵢ)との比較および誘導bar完全性を同じ開の全内部次数へ伝播することである。有限窓内の完全性だけを、その全次数完全性と同一視しない。
+
 **Artin認識の依存。** DDLで指定還元同型に沿うfoundationを持ち上げ、基底を選んでsmooth chartへ写す。étale近傍の指定点を保つliftは局所環を経由する。局所中央被覆をpullbackし、heart-exactness・AZと `prop:artin-witness-relative-promotion` を使う。根や被覆を追加標識にはしない。全H2点の形式認識は完了したが、一般有限型基底上の代数性は未完成。
 
 再現：`python3 computations/verify_noncubic_central_hull.py`。QQ(a,b)と非交差・一根共有・一致の三特殊化で、次数2–5の双対商次元6,4,1,0、Frobenius pairing、χの恒等式、二次中心1・反中心0を厳密演算する。形式証明器は用いない。
@@ -374,7 +376,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-**現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernelも本文の仮定と照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。v1.39の全文組版はPASS（261頁）。v1.40のsourcesはPASS（47 manuscript files / 564 labels / 262 citation uses / 7 Markdown files）。新中央被覆のQQ(a,b)と三特殊化の厳密検算もPASS。現行追加後の全文組版・選択頁の画像確認は進行中。形式証明・外部査読・包括的新規性確認は未実施。
+**現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 
 **既存入力の検証範囲。** 2026-11-21にローカルcheckoutでdoctorを実行した。中心変数のχ保存、一般coherent Hom、任意係数H¹消滅に加え、cubic tailsのunbounded導来局所化・全helix/矢/shiftの比較・一様cohomology・全χ・相対条件への昇格を独立読取りした。旧計算suiteは再実行していない。数学的読取り、厳密計算、組版、保存は別の状態であり、外部査読・形式証明・包括的な新規性判定は未実施である。
 
@@ -400,6 +402,8 @@ python3 computations/verify_antiserre_polarization.py
 python3 computations/verify_quiver_avatar_charts.py
 python3 computations/verify_quadric_first_order_roots.py
 python3 computations/verify_quadric_finite_windows.py  # 両parityの長さ3〜7も検算
+python3 computations/verify_noncubic_gale_root.py
+python3 computations/verify_noncubic_central_hull.py
 # NumPy/Numba を入れた場合の独立な接空間証明書
 python3 computations/verify_commutative_quadric_tangent.py
 python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
@@ -411,7 +415,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 主論文v1.37のnoncubic根節は、二項移動のbar複体、実際の右根との四つの比較行列、交代Gale双対、慣性Lieと全HH接空間、指定Artin持上げ、一般étale代数化を独立に読取り点検した。Gale計算の非交差・一根共有・一致の三有理例と、AS4正規線の一次持上げ三例を実行PASS。LuaLaTeX・latexmkで255頁のPDF/SyncTeXを生成した。最終logのWarning・Overfull/Underfull・文字欠落・未定義参照は零、新節を含む選択12頁と主要2頁を画像確認した。sources PASS（44 manuscript files / 532 labels / 256 citation uses / 7 Markdown files）。明示noncubic効果性の選択9頁と主要2頁、cubic認識・相対Picard・smooth atlasの選択21頁と主要2頁の既存確認も保持する。別稿v0.1は変更せず、既存25頁の組版・画像確認を保持する。全頁の個別目視、外部査読、形式証明、新規性の包括的確認は未実施。
+**組版・参照確認。** 2026-11-21に主論文v1.40のLuaLaTeX・latexmk組版を実行し、272頁のPDFと同じ出力先のSyncTeXを確認した。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。Lagrangian表示、中央被覆、五頂点窓、局所AS4、全Artin認識、楕円忘却の選択20頁（234–249、265–268）を画像確認し、そのうち239・243・247・248・267頁を個別表示で詳細確認した。sourcesはPASS（47 manuscript files / 564 labels / 262 citation uses / 7 Markdown files）。既存全頁の個別目視とVS Code UI操作は今回行っていない。別稿v0.1は変更せず、既存の組版・画像確認の範囲を維持し、今回の再組版は行っていない。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

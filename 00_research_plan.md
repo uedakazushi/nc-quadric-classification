@@ -207,7 +207,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **局所環上の構成を一つの有限型étale近傍へ広げる。** まず良いMorita根の有限軌道窓からB₁・七次関係J・中心線Nを同じ開上にspreadし、有限AS4判定の非退化minorを可逆化する。PPの三次平坦性から得る提示環と実際の全軌道環の比較を、五頂点bar複体と四周期で全次数へ伝播する補題を証明する。各次数別の開性だけでは不十分である。
+1. **局所環上の構成を一つの有限型étale近傍へ広げる。** まず良いMorita根の有限軌道窓からB₁・七次関係J・中心線Nを同じ開上にspreadし、有限AS4判定の非退化minorを可逆化する。PPの三次平坦性から得る提示環と実際の全軌道環の比較を、五頂点bar複体と四周期で全次数へ伝播する補題を証明する。各次数別の開性だけでは不十分である。`thm:relative-finite-as-cover` は全軌道平坦・全fiber Koszul・Noetherianを入力とし、PPもspecial fiber Koszulを要するため、これらだけで一様化が従うと循環させない。
 2. **全fiberの内在認識とNoetherian一様性を閉じる。** 上の開上でgeometric cubic部分とnoncubic部分の実際のheart・軌道表示を比較し、rank-one torsion-freeを確認する。必要なら `thm:patch-noetherian` を使う。局所環上のNoetherian性・全Artin認識を未解決へ戻さず、有限型開上で不足する入力を特定する。
 3. **効果的近傍から全H2の代数性へ進む。** 指定同型付きArtin持上げとaffine有限表示対角を用い、cubic側と同じsmooth atlasの議論を適用する。その前提である実際の有限型H2族を先に完成する。
 
