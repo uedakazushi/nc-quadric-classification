@@ -1,6 +1,40 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.63（A v1.66・20節、B v0.22・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.64（A v1.67・20節、B v0.24・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 有限 foundation の Hochschild 数値と GIT 比較の入口
+
+normal foundation の有向四頂点代数 $\Lambda$ では、
+相対正規化 bar コチェインの次元は次数 $0,1,2,3$ で
+$(4,80,128,48)$ となる。$A_{12}\otimes A_{23}\to A_{13}$
+が同型なので、二次コチェインの $(0,1,3)$ 成分
+$\operatorname{Hom}(A_{01}\otimes A_{13},A_{03})$
+から三次コチェイン
+$\operatorname{Hom}(A_{01}\otimes A_{12}\otimes A_{23},A_{03})$
+への微分が全射する。これにより $HH^{\ge3}(\Lambda)=0$。
+また $HH^0=k$ と Euler 数
+$4-80+128-48=4$ から
+$\dim HH^2-\dim HH^1=3$ となる。
+今回この有限次元数と全射の理由を独立に読み直した。
+証明本体は論文Bの prop:foundation-hochschild に保持する。
+cubic AS 正則 $\mathbb Z$-algebra 側の同じ結論は
+Belmans2019 に既知であり、一般の noncubic normal foundation
+への上記直接証明の適用と区別する。
+この検算は全モジュライの代数性や全相対 heart の独立監査ではない。
+
+**次の比較の最小問題。** geometric quintuple の
+パラメータ空間は四つの二次元空間のテンソル線の射影空間
+$\mathbb P^{15}$ の開部分であり、四つの $GL_2$ による
+有効作用の一般的な商次元は3となる。一方で
+内在的 $\mathfrak H_2$ も純次元3である。
+この一致は同値や有限性を含意しない。
+一般 cubic 点で quintuple の基底・ruling・二周期・
+構造対象を保持する違いを追跡し、
+実際の pointed exact 自己同値との比較射と幾何ファイバーを記述する。
+Okawa--Ueda の GIT 次数四射と Serre 根の忘却が同一かどうかは、
+全慣性と特殊化を比較するまでは未解決とする。
+全 H2 に粗モジュライ代数空間が存在しないことも、
+既存の GIT 商との区別に不可欠である。
 
 ## 定義と規約
 
