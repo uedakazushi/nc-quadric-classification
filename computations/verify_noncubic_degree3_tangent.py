@@ -105,6 +105,7 @@ cases=[
   ('one-root-shared',(0,1,0,-1,1,0),80,1317),
   ('coincident',(0,1,0,0,1,0),79,1316)
 ]
+SECOND_ORDER_CASE_DATA = {}
 for label,data,orbit_expected,degree3_rank_expected in cases:
     ev=dict(zip(parameters,data))
     q=np.array(Q.subs(ev).tolist(),dtype=np.int64)%prime
@@ -273,4 +274,12 @@ for label,data,orbit_expected,degree3_rank_expected in cases:
           '; rational tangent dimension',len(free_vars),
           '; max exact numerator',np.max(np.abs(exact_candidates)),
           flush=True)
+    # Reusable exact matrices for the independent order-two obstruction certificate.
+    SECOND_ORDER_CASE_DATA[label] = {
+        "rank": rank, "relZ": relZ, "d2Z": d2Z,
+        "LZ": LZ, "kerZ": kerZ, "q3Z": q3Z,
+        "constraintsZ": constraintsZ, "constraints": constraints,
+        "tangent": tangent, "exact_candidates": exact_candidates,
+        "pivots_L": pivots,
+    }
 print('PASS: full F_101 ranks and exact rational bases of dimension 83,83,84.')
