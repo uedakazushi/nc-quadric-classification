@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-21
+% 2026-11-21（証明をBへ移管）
 \section{一般 cubic helix の持上げと cubic locus の滑らかな開性}
 \label{sec:cubic-smooth-atlas}
 
@@ -115,52 +115,7 @@ $E_0,\ldots,E_4$ は compact な $B$-flat 対象であり、
 \end{lemma}
 
 \begin{proof}
-特殊ファイバーの標準 cubic 代数には二次関係がなく、三次関係は階数二であり、
-最初の五つの Hilbert 数は $1,2,4,6,9$ である。
-標準 cubic 解消から、四次の関係は二つの三次関係の積の和で、
-その交わりは一次元である。
-これが本補題で用いる体上の入力であり、
-補題~\ref{lem:relative-geometric-cubic-flatness} で用いた標準 cubic 解消の最初の四次に当たる
-\cite[arXiv v3, Theorems 5.5.7--5.5.10]{VdB2011}。
-
-二重積は同階数の有限自由加群間の射で、特殊ファイバーで同型なので同型である。
-三重積と四重積の cokernel は有限加群であり、特殊ファイバーで零である。
-Nakayama の補題により各積は全射である。
-その標的は自由なので全射は分裂し、三次の核 $R_i$ は階数二の自由直和因子となる。
-四次積の核を
-\[
- K_0=\ker(T_4\longrightarrow D_{04})
-\]
-とすると、これも階数七の自由直和因子である。
-ここまでの核の形成は分裂完全性により任意の基底変更と可換する。
-
-合成の結合律により、二つの部分束 $R_0\otimes V_3$ と $V_0\otimes R_1$ は
-$K_0$ に入る。従って自然な射
-\[
- q:(R_0\otimes V_3)\oplus(V_0\otimes R_1)\longrightarrow K_0
-\]
-がある。特殊ファイバーの三次提示により $q\otimes_Bk$ は全射である。
-再び Nakayama により $q$ は全射となり、標的の自由性により分裂する。
-従って $\ker q$ は階数一の自由加群である。
-
-二つの部分束の $T_4$ への包含は単射なので、
-$\ker q$ を第一成分へ射影する射は単射で、その像は二つの部分束の交わりにちょうど等しい。
-これにより $\ker q\simeq W_0$ を得る。
-この射は剰余体上で非零の直線を与えるので、局所基底で少なくとも一つの係数は単元である。
-従って $W_0\subset T_4$ 自体も直和因子である。
-列~\eqref{eq:artin-overlap-complex} は、いま得た二つの分裂短完全列をつないだものとなる。
-
-$W_0\subset R_0\otimes V_3$ と $W_0\subset V_0\otimes R_1$ を縮約すると
-\eqref{eq:artin-contraction-isos} を得る。
-両辺は階数二の自由加群であり、特殊ファイバーで標準 cubic 解消の非退化 pairing になる。
-従って行列式は単元で、どちらも同型である。
-基底を選んだ四つの $V_i$ の下で $W_0$ は射影空間の $B$ 点を定める。
-その閉点は geometric open に属し、$\operatorname{Spec} B$ の位相空間は一点なので、$B$ 点全体が同じ開に入る。
-これにより geometric 条件が成り立つ。
-
-最後に、全ての核を分裂短完全列によって構成したので、任意の基底変更後も同じ核となる。
-特に基底変更後の $\ker q$ も二つの部分束の交わりに同定される。
-縮約同型と三次提示の同定も tensor により保たれる。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[四項 foundation の完全な同定]
@@ -176,12 +131,7 @@ $W_0\subset R_0\otimes V_3$ と $W_0\subset V_0\otimes R_1$ を縮約すると
 \end{corollary}
 
 \begin{proof}
-長さ一の成分は選んだ基底同型である。
-長さ二の成分は補題の二重積の同型であり、長さ三の成分は三重積の全射の核が
-$R_0=W_0\otimes V_3^\vee$ であることから得られる。
-従って全ての頂点成分で同型であり、積は実際の合成から定めたため整合する。
-四項 foundation の比較には、五つ組から再構成した無限 $\mathbb Z$ 代数と
-全ての $\Hom(E_i,E_j)$ を先に同定する必要はない。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{指定された還元同型と基底を持つ持上げ}
@@ -225,50 +175,7 @@ $W_{0,A}$ の生成元も指定されていれば、その生成元を $W_{0,A'}
 \end{proposition}
 
 \begin{proof}
-De Deken--Lowen の基底記法で $(R,k)=(A',A)$ と置く。
-両環は coherent で、$A$ は $A'$ 上有限表示、核は冪零だから、
-\cite[\S4.1]{DeDekenLowen2011} の仮定を満たす。
-各 $E_{i,A}$ は flat な heart の対象なので有限 flat 次元を持つ。
-従って \cite[Theorem 5.13(1)--(4)]{DeDekenLowen2011} を\emph{基底 $A$ に直接}適用できる。
-この定理は flat 対象としての持上げ、compact generation、strong 性、
-geometric 性、および前向き Hom の平坦性と還元同型を与える。
-
-平坦な $A'$ 加群で剰余体上の次元が有限なら、加群は有限自由である。
-実際、剰余体上の有限基底を持ち上げると、余核は $M=\mathfrak mM$ を満たし、
-$\mathfrak m$ の冪零性から零となる。有限平坦加群は局所環上自由である。
-よって全ての前向き Hom は元と同じ階数の有限自由加群であり、
-$E'_0,\ldots,E'_4$ は補題~\ref{lem:cubic-artin-overlap-recovery} の仮定を満たす。
-
-対象の持上げと指定還元を区別する。
-平方零の一段では、各 $E_{i,A}$ について、核 $J=\ker(A'\to A)$ を用いた障害複体は
-\[
- \mathbf R\Hom(E_{i,A},J\otimes_A^{\mathbf L}E_{i,A})
- \simeq J\otimes_A^{\mathbf L}\mathbf R\Hom(E_{i,A},E_{i,A})
- \simeq J[0]
-\]
-である（一般の冪零拡大では平方零段階へ分ける）。
-従って対象の障害と持上げ差に当たる $\Ext^2,\Ext^1$ は零である。
-持上げの\emph{同型類}は一意だが、同型そのものの一意性は用いない。
-$\OO_{A'}$ は同じ例外対象の flat な持上げだから、$E'_0$ と同型である。
-$\Aut(E'_0)=A'^\times\to A^\times=\Aut(E_{0,A})$ は全射なので、
-比較同型を単元倍で調整し、所要の還元同型を持つ $E'_0=\OO_{A'}$ を選べる。
-
-基底付き自由加群の持上げでは
-$\mathrm{GL}_2(A')\to\mathrm{GL}_2(A)$ が全射である。
-従って四つの $\varphi_{i,A}$ をそれぞれ $\varphi_{i,A'}$ へ延長できる。
-補題~\ref{lem:cubic-artin-overlap-recovery} によって得た直線 $W'_{0}$ を
-これらの基底で固定された $U_0\otimes\cdots\otimes U_3$ の部分束へ戻す。
-その還元が $W_{0,A}$ となることは、核と交わりの基底変更の整合性による。
-従って $w_{A'}$ は $w_A$ の実際の持上げである。
-$S$ は開部分で、$\operatorname{Spec} A'$ と $\operatorname{Spec} A$ の位相空間は同じなので、
-$w_{A'}$ は $S(A')$ に入る。
-直線の生成元の持上げも単元の持上げにより可能である。
-最後の End 代数の同定は系~\ref{cor:quintuple-four-window} による。
-
-なお $E'_i$ の noetherian 性が必要な場合は、
-$A'$ の極大イデアルによる有限フィルトレーションを用いる。
-flat 性により各商は閉ファイバーの $E_i$ の有限直和であるから、
-閉ファイバーの $E_i$ が noetherian なら $E'_i$ も noetherian である。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{pointed exact 同型の還元を保つ比較}
@@ -292,32 +199,7 @@ $F$ の heart への制限は $\alpha_A$ を延長する。
 \end{lemma}
 
 \begin{proof}
-$\Lambda_r=\End(T_r)$ とし、両代数を指定同型で $\Lambda_B$ と同定する。
-閉ファイバーの包含 $i_r:\mathcal G_{r,k}\to\mathcal G_r$ は
-$\Lambda_B\to\Lambda_k$ に沿う restriction of scalars に対応する。
-実際、$T_r$ の flat 性と導来随伴により
-\[
- \mathbf R\Hom_{\mathcal G_r}(T_r,i_rM)
- \simeq\mathbf R\Hom_{\mathcal G_{r,k}}(T_{r,k},M)
-\]
-であり、作用は $\Lambda_k$ を通る。
-標準 dg Morita の $F$ はこの同定を通じて恒等関手であるから、
-$Fi_1\simeq i_2F_k$ となる。
-同じ議論は $B\to A$ にも成立する。
-
-$B$ の極大イデアルを $\mathfrak m$ とする。
-任意の heart の対象 $M$ は有限フィルトレーション
-\[
- M\supset\mathfrak mM\supset\cdots\supset\mathfrak m^NM=0
-\]
-を持ち、その商は閉ファイバーの heart の対象である。
-$F_k$ の exact 性と上の可換同型により、各商の $F$ による像は heart に入る。
-heart は拡大に閉じるから $F(M)$ も heart に入り、逆関手にも同じ議論が使える。
-従って $F$ は完全同値を誘導する。
-$A$ への還元の一致は、上の restriction of scalars との整合性と
-$F_A\simeq D(\alpha_A)$ から従う。
-これは一般の導来同値を無条件に heart-exact とする主張ではなく、
-Artin の有限冪零フィルトレーションと指定された exact な還元を用いた結論である。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{theorem}[五つ組への étale chart の指定 Artin 持上げ]
@@ -343,45 +225,7 @@ $u_A\in U(A)$、$c_{A'}\in\mathfrak H_2(A')$、および\emph{指定された} p
 \end{theorem}
 
 \begin{proof}
-$\alpha_A$ により普遍 helix とその Hom の基底を $c_{A'}|_A$ へ移す。
-相対族の module-object 基底変更の公理から
-$\operatorname{Ind}(c_{A'})$ は $\operatorname{Ind}(c_{A'}|_A)$ の flat Grothendieck 変形である。
-従って命題~\ref{prop:framed-cubic-artin-lift} を適用でき、
-$a(u_A)$ を延長する framed 五つ組 $w_{A'}\in S(A')$ を得る。
-同時に、持ち上げた対象 $E'_0=\OO_{c_{A'}}$, $E'_1,E'_2,E'_3$ の End 代数は
-$\Lambda(w_{A'})$ と同定される。
-
-$a$ の formal étale 性を用いると、可換図式
-\[
- \begin{matrix}
- \operatorname{Spec} A&\xrightarrow{u_A}&U\\
- \big\downarrow&&\big\downarrow a\\
- \operatorname{Spec} A'&\xrightarrow{w_{A'}}&S
- \end{matrix}
-\]
-の持上げ $u_{A'}$ が存在する。
-この段階では新たな根や二周期を変形圏の内部で解く必要はない。
-それらは、既に構成された $U$ 上の相対族を引き戻すことで供給される。
-
-$q(u_{A'})$ の普遍四項窓と $(E'_0,E'_1,E'_2,E'_3)$ は、
-同じ $\Lambda(w_{A'})$ を End 代数に持つ。
-標準 dg Morita により、構造対象を保つ導来同値 $F_{A'}$ を得る。
-その還元が\emph{指定された} $D(\alpha_A)$ と同型になることを確認する。
-隣接 Hom に対する作用は、$\varphi_{i,A'}$ の還元を指定された $\varphi_{i,A}$ に取ったため一致する。
-四項窓内の他の全 Hom は二重積の同型または三重積の全射により生成される。
-従って対角、全ての頂点成分、および積の作用まで一致する。
-標準 dg Morita 表示では、compact generator とその End 代数への作用が一致する二つの関手は
-同じ双加群によって表され、自然同型である。
-これにより $F_A\simeq D(\alpha_A)$ を得る。
-構造対象上の比較は最初に指定した pointing へ合わせてある。
-
-補題~\ref{lem:artin-two-heart-comparison} によって $F_{A'}$ は heart-exact である。
-その制限が必要な $\alpha_{A'}$ となる。
-Grothendieck 圏の $A'$ 線形完全同値は任意の代数の加群対象の圏にも完全同値を誘導する。
-相対 $\mathfrak H_2$ 系はこの module-object 基底変更を満たすから、これは一つの heart だけでなく
-全ての基底変更を含む相対系の同型である。
-完全同値は noetherian 対象を保ち、標識も保つ。
-従って相対 $\mathfrak H_2$ における指定された同型の持上げを得る。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{smoothness の帰結と限界}
@@ -398,24 +242,7 @@ Grothendieck 圏の $A'$ 線形完全同値は任意の代数の加群対象の�
 \end{corollary}
 
 \begin{proof}
-任意の有限型 affine $T\to\mathfrak H_2$ に対し
-\[
- Z=U\times_{\mathfrak H_2}T\simeq U\times_{\mathfrak P}T
-\]
-は $U\times T$ 上 affine かつ有限表示である。従って $Z$ は有限型 $k$ スキームであり、
-$Z\to T$ は局所有限表示である。
-前定理は $Z\to T$ の指定点・指定還元を持つ small Artin 持上げを与える。
-Stacks Project の smoothness 判定 \cite[Tag 02HY]{StacksSmoothAtlas} に現れる
-$\operatorname{Spec} A'\to T$ が finite type であるテストでは、$A'$ は有限型 Artin $k$ 代数である。
-$k$ は代数閉なのでその剰余体は $k$ となり、前定理が全てのテストを含む。
-冪零拡大は small extension に分解できるので同判定を適用でき、$Z\to T$ は smooth である。
-
-従って $q$ は representable smooth であり、その像は開である。
-$R=U\times_{\mathfrak H_2}U$ は有限型スキームで、両射影が smooth な groupoid となる。
-その quotient は開像を表し、smooth groupoid の商定理により Artin スタックである
-\cite[Tags 04X0, 04TK]{StacksSmoothAtlas}。
-$S$ は射影空間の開部分で smooth、$U\to S$ は étale なので、$U$ も smooth である。
-従ってこの開像は $k$ 上 smooth である。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{全 cubic locus の有限型 smooth 開部分}
@@ -445,68 +272,7 @@ $\mathfrak V_{\mathrm{cub}}(T)$ に属するための必要十分条件は、
 \end{theorem}
 
 \begin{proof}
-\emph{非線型 cubic 点を覆う実際の族.}
-$S_{\mathrm e}=\mathscr G\setminus\mathscr G_{\mathrm{lin}}$ とする。
-系~\ref{cor:finite-type-root-chart} により、$S_{\mathrm e}$ を覆う有限個の
-有限型 affine étale chart $T_\alpha\to S_{\mathrm e}$ を選べる。
-各 chart には補題~\ref{lem:relative-beta} の実際の二周期と、
-定理~\ref{thm:relative-compatible-root} の相対 Serre 平方同型がある。
-式~\eqref{eq:quintuple-right-tails-convention} により反転した反対代数 $C$ と
-$\beta_C=\beta_D^{-1}$ を使い、
-定理~\ref{thm:geometric-cubic-relative-effectivity} を適用する。
-これで実際の射
-\[
- q_\alpha:T_\alpha\longrightarrow\mathfrak H_2
-\]
-が得られる。
-普遍 cubic 解消、全 Hom の計算、canonical compact 比較により、
-全ての四連続窓は flat compact 対象による full strong collection である。
-二周期は $s(E_i)=E_{i+2}$ を与え、Serre 平方同型から $E_{i+4}\simeq S^{-1}E_i[2]$ を得る。
-従って Serre と mutation の標準公式により geometric $(4,3)$-helix となる。
-前向き Hom は全て有限 locally free で任意の基底変更と整合するから、
-この族は定理~\ref{thm:quintuple-chart-artin-lifting} の全仮定を満たす。
-従って各 $q_\alpha$ は系~\ref{cor:quintuple-effective-smooth-chart} により
-representable smooth である。
-
-\emph{線型点と全 cubic 幾何点の被覆.}
-線型 geometric cubic 代数の pointed 圏は
-$(\operatorname{coh}(\mathbb P^1\times\mathbb P^1),\OO)$ である。
-この点には系~\ref{cor:quadric-effective-smooth-neighborhood} の有限型 smooth chart
-$q_Q:U_Q\to\mathfrak H_2$ があり、$U_Q$ は滑らかである。
-その構成では命題~\ref{prop:quadric-geometric-quintuple-open} の開部分へ制限しているので、
-$U_Q$ の全ての幾何ファイバーも cubic である。
-
-任意の非線型 pointed cubic 表示 $C_0$ に対し、
-$D_0=C_0^{\mathrm{op,ref}}$ は geometric 五つ組から得られる cubic 代数である。
-その五つ組の基底を選べば $S_{\mathrm e}$ の幾何点を得る。
-$T_\alpha$ の被覆からその上の幾何点を取ると、構成された右 tails の代数は
-$D_0^{\mathrm{op,ref}}=C_0$ に戻る。
-従って構造対象も保った元の pointed 圏が $q_\alpha$ の像に入る。
-これは定理~\ref{thm:complete-h2-classification} の cubic 側の回復を使うが、
-noncubic 側も cubic 表示を持つとは仮定しない。
-
-有限和
-\[
- U_{\mathrm{cub}}=U_Q\amalg\coprod_\alpha T_\alpha
-\]
-とその射 $q_{\mathrm{cub}}$ を取る。
-これは有限型で滑らかなスキームからの representable smooth 射であり、
-その像の幾何点はちょうど cubic 対象である。
-その fppf 像を $\mathfrak V_{\mathrm{cub}}$ と定める。
-系~\ref{cor:quintuple-effective-smooth-chart} の像と groupoid の議論により、
-これは有限型で滑らかな Artin 開部分であり、表示された quotient と一致する。
-
-\emph{任意の基底上での内在的な記述.}
-$T\to\mathfrak H_2$ を局所有限型の test とする。
-その $\mathfrak V_{\mathrm{cub}}$ への逆像は、smooth 射
-\[
- U_{\mathrm{cub}}\times_{\mathfrak H_2}T\longrightarrow T
-\]
-の開像である。
-全ての幾何ファイバーが cubic なら、この射は幾何点上で全射である。
-従って smooth 全射であり、fppf 局所に section を持つ。
-これにより $T$ 上の相対対象は $\mathfrak V_{\mathrm{cub}}$ に属する。
-逆向きは $U_{\mathrm{cub}}$ の全幾何ファイバーが cubic であることから従う。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[全 cubic 点の形式変形と次元]
@@ -524,49 +290,7 @@ flat pointed Abel 変形への忘却は groupoid の同値である。
 \end{corollary}
 
 \begin{proof}
-まず忘却の全忠実性を確認する。
-相対系の affine test $\operatorname{Spec} B\to\operatorname{Spec} A$ での Grothendieck 圏は、
-加群対象による基底変更の公理により、$A$ 上の圏における $B$ 加群対象の圏と同定される。
-従って $A$ 線形の pointed 完全同値 $F_A$ は、任意の有限型 $A$ 代数 $B$ に対し、
-$B$ の作用を $F_A$ で移すことで完全同値 $F_B$ に自然に延長する。
-これらは代数準同型に沿う基底変更と可換し、自然同型についても同じ構成が働く。
-完全同値は noetherian 対象を保ち、$B\otimes_A\OO_A$ を対応する構造対象へ送る。
-非 affine test では相対系の fppf 降下により貼り合わさる。
-よって一つの Artin heart における同値は全有限型 test 上の相対系の同値を定め、
-相対系の射も $A$ 上の射から決まる。これが必要な全忠実性である。
-
-非線型 cubic 点で本質的全射性を示す。
-前定理で $x$ を表す点 $u\in T_\alpha(k)$ と、その pointed 比較を一つ選ぶ。
-任意の flat pointed Abel 変形 $(\mathcal G_A,\OO_A)$ に、
-命題~\ref{prop:framed-cubic-artin-lift} を $A\twoheadrightarrow k$ として適用する。
-この命題の証明は、変形先が既に相対 $\mathfrak H_2$ 対象であることを必要としない。
-従って閉ファイバーの指定基底と pointing を延長する $w_A\in S_{\mathrm e}(A)$ を得る。
-$T_\alpha\to S_{\mathrm e}$ の étale 性により、$u$ を延長する $u_A\in T_\alpha(A)$ が存在する。
-$q_\alpha(u_A)$ と $\mathcal G_A$ の四項窓は同じ End 代数を持つので、
-補題~\ref{lem:artin-two-heart-comparison} による pointed 完全同値を得る。
-従ってこの Abel 変形は実際の相対 $\mathfrak H_2$ 族 $q_\alpha(u_A)$ の忘却像に入る。
-上の加群対象による自然延長により、比較は全有限型 test を含む相対系の比較となる。
-線型点は可換二次曲面であり、既存の
-定理~\ref{thm:quadric-all-artin-h2} と
-系~\ref{cor:quadric-formal-deformation-equivalence} を用いる。
-
-De Deken--Lowen の変形比較
-\cite[Theorem 5.15]{DeDekenLowen2011} と
-補題~\ref{lem:foundation-artin-deformation} により、pointed Abel 変形の接・無限小自己同型・障害は
-それぞれ foundation の Hochschild 次数二・一・三で与えられる。
-構造対象は例外的なので、その flat な持上げの同型類に追加の変形方向や障害はない。
-また $\operatorname{HH}^0(\Lambda)=k\to\End(\OO)=k$ は恒等を送る同型であり、
-pointing の scalar 選択は関手の scalar 自然同型で吸収される。
-従って pointing による無限小自己同型空間の追加もない。
-命題~\ref{prop:foundation-hochschild} の相対正規化 bar 複体の計算は、全ての cubic foundation について
-\[
- \operatorname{HH}^n(\Lambda)=0\quad(n\ge3),\qquad
- \dim\operatorname{HH}^2(\Lambda)-\dim\operatorname{HH}^1(\Lambda)=3
-\]
-を与える。従って形式変形問題は無障害である。
-$\mathfrak V_{\mathrm{cub}}$ は既に smooth Artin スタックなので、各幾何点での次元は
-接空間の次元から無限小自己同型空間の次元を引いたものに等しく、三となる。
-以上から純次元三を得る。
+全証明は相対モジュライ論文 \cite[\texttt{cubic_smooth_atlas}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[noncubic 境界との区別]
