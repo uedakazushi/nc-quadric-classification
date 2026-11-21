@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.20、主論文v1.20、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.21、主論文v1.21、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -39,7 +39,7 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **Zariski 局所 homological AS4 被覆。** 相対cubicの四次重なりから七本二次関係K上のcanonical functionalを構成し、六次元のH=kerφを選ぶ。全Artin厚みにおけるcanonical hullの有限判定とKrull交叉定理により、可換点を含む一つのZariski開で、A=T(B1)/Hは全次数局所自由・Koszul/Frobenius、g∈A2は左右正則正規、A/(g)=Bとなる。**左右Noetherian性が未証明のため、これはまだ定義にいう相対AS4被覆ではない。** Noetherianな底変更では真の被覆になる。[証明](papers/sections/artin_roots.tex) `prop:quadric-zariski-homological-as-cover`。次はBのnoetherian性・tails・AZとcanonical compact圏を比較する。
 
-**形式完備近傍の真正なNoetherian被覆。** 可換Segre環を特殊fiberとし各次数が有限自由な完備局所変形Bでは、gr_mBが可換Noetherianとなる。初期記号を固定内部次数の完備性で持ち上げてBの左右Noetherian性を示す（`lem:complete-local-commutative-fibre-noetherian`）。正規元による拡張AS4もNoetherianとなるので、可換点の形式完備近傍および可換閉点を保つ完備Noetherian局所基底変更で真の相対Noetherian AS4被覆を得る（`cor:quadric-completed-noetherian-as4`）。非完備な有限型開全体・任意有限型底変更・tails heart・AZの効果性は依然未証明。[証明](papers/sections/relative_koszul.tex)・[被覆への適用](papers/sections/artin_roots.tex)。
+**可換点を閉点に持つNoetherian局所基底の真正な被覆。** 完備Noetherian局所環ではgr_m Bが可換Noetherianとなることと固定内部次数の完備性からBの左右Noetherian性が従い、中心忠実平坦な完備化から非完備局所環へ降下できる（`lem:local-commutative-fibre-noetherian`）。可換Qを閉fiberに持つ任意Noetherian局所底変更でBと正規元AS4拡張はNoetherianとなる。qgr BもNoetherian Abel圏として存在する（`cor:quadric-point-local-noetherian-as4`）。**単一の有限型開全体・任意の底変更のNoetherian性、canonical compact圏とheartの同定、AZ・内在H2の効果性は未証明。** [証明](papers/sections/relative_koszul.tex)・[被覆への適用](papers/sections/artin_roots.tex)。
 
 ## モジュライのスタック構成
 
