@@ -9,6 +9,10 @@
 
 既知の cubic AS-regular $\mathbb Z$-algebra、geometric quintuple、admissible quadruple の分類や hypersurface embedding を新成果として扱わない。特に、quadratic hull の存在と quadratic envelope による canonical recovery は別の主張である。
 
+### Veronese 同値の参照状況（2026-11-21）
+
+A. B. Verevkin, *On a noncommutative analogue of the category of coherent sheaves on a projective scheme*, *American Mathematical Society Translations*, Series 2, **151** (1992), 41–53, DOI [10.1090/trans2/151/02](https://doi.org/10.1090/trans2/151/02)。書誌は Math-Net.Ru の著者書誌と後続論文の参考文献で照合した。**原著 Theorem 4.4 の全文は今回直接閲覧できていない。** 次数一生成された次数環の Veronese が QGr を保つとの定理内容は S. Paul Smith, *Advances in Mathematics* 230 (2012), p.1784（[著者公開PDF](https://sites.math.washington.edu/~smith/Research/QGr-kQ.pdf)）に明示される定理4.4の引用で確認した。現行 noncubic 族で必要な一般 noetherian 底への拡張は、原著の適用範囲に無条件に含めず、次数一生成性からの偶奇成分比較と torsion 商の議論を主原稿 `prop:noncubic-relative-heart-veronese` に書いた。
+
 ## 確認した一次資料
 
 | 文献キー | 確認箇所・版 | 本研究での使い方と制限 |
