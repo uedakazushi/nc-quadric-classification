@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.61（A v1.64・20節、B v0.21・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.62（A v1.65・20節、B v0.22・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -404,7 +404,7 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構成・完全分類・pointed exact同値判定を中心とし、20の分類分割節を読み込む。Bの `papers/nc-quadric-moduli.tex` は相対定義・変形・有限型効果性・Noetherian性・Serre根・境界の群商と慣性・good/coarse moduli・楕円型忘却の証明本文を31分割節に保持する。Cはquiver/QP/avatarの表示と相対適合性の未解決範囲を扱う。
 
-**依存の核心。** BがAの体上分類・normal helix・有限同値判定を使うのはよい。一方、Bが引用するAの相対foundationや局所Artin補題は、Bの主定理に依存していないかを区別して検査し、B固有の結果ならBに移す。Aから外した相対節はBの同名節（相対定義は分割された二節）に定理ラベルと証明数を照合し、未使用の重複sourceを現行一式から外してある。数値・例・計算的証拠と全体の相対認識・代数性の証明を混同しない。
+**依存の核心。** BがAの体上分類・normal helix・有限同値判定を使うのはよい。BからAへの残余ラベル参照17種類はAの現行20節に実在することを確認した。Aから外した相対節はBの同名節（相対定義は分割された二節）に定理ラベルと証明数を照合し、未使用の重複sourceを現行一式から外してある。数値・例・計算的証拠と全体の相対認識・代数性の証明を混同しない。
 
 ## 検証範囲と再現手順
 
