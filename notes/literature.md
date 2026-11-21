@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.43。主論文v1.43に対応する現行の一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.44。主論文v1.44に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -176,10 +176,10 @@ cubicから全H2への比較、最初の軌道対象の認識、階数三支持�
 | `StacksSmoothAtlas` | [02HX](https://stacks.math.columbia.edu/tag/02HX), Lemma37.12.1；[057G](https://stacks.math.columbia.edu/tag/057G), Lemma37.38.5；02HY, 04X0, 04TK。2026-11-21に該当本文を確認 | 局所Noetherian基底上で有限型射の小拡大持上げ判定と、smooth射の指定された分離的閉fiber点を通るétale切片。HH²恒等から根空間のsmoothnessを示し、HH¹作用を仮定せず一つの根をétale代数化するために用いる。HH¹恒等は根空間自体のétale性・一意性に使う。 |
 | `DeDekenLowen2011` | [出版版](https://ems.press/content/serial-article-files/30497), §4.1、Theorems 4.5, 5.13, 5.15 | Z-generating geometric helixのGrothendieck categoryのabelian変形とthread algebraの線形変形の比較。coherent ringの冪零拡大に対する定理で、H2の平方根・AS被覆条件の相対開性は含まない。 |
 | `Toda2009`、`Lowen2008` | [Toda arXiv v3](https://arxiv.org/abs/math/0502571v3), Proposition 5.6、Lemma 5.8、Theorem 4.7；[Lowen arXiv v1](https://arxiv.org/abs/0707.2602v1), Theorems 1.1, 4.8、Corollary 4.9；Toda §§3–4 の変形圏の構成 | FM核の左右HH作用と持上げ障害を比較し、同一変形への持上げにΦ_*(u)=uが必要。Todaの定理自体は変形間のliftの十分条件であり、必要条件にはLowenの障害同定を使う。可換quadricの特定Serre根の非持上げ例に適用。 |
-| `Alper2009` | [arXiv:0804.2242v3](https://arxiv.org/abs/0804.2242v3), Example 8.3、Theorems 13.2, 6.6 | affine/linearly reductive商のgood moduli spaceと、locally noetherianの場合の代数空間への普遍性。noncubic表示のχ商とcoarse space不存在に適用。 |
+| `Alper2009` | [arXiv:0804.2242v3](https://arxiv.org/abs/0804.2242v3), Example 8.3、Theorems 13.2, 6.6 | affine/linearly reductive商のgood moduli spaceと、locally noetherianの場合の代数空間への普遍性。noncubic表示のχ商に適用。§2のquasi-separated規約を超える任意の代数空間へのcoarse space不存在は本文の直接証明による。 |
 | `StacksModuli` | [0DLS](https://stacks.math.columbia.edu/tag/0DLS)、[06PD](https://stacks.math.columbia.edu/tag/06PD)、[04V2](https://stacks.math.columbia.edu/tag/04V2)、[04XL](https://stacks.math.columbia.edu/tag/04XL)、[0DR5](https://stacks.math.columbia.edu/tag/0DR5) | 商の代数性・滑らかさ、商stack間のgerbe判定、慣性のrigidification、stackの位相とsmooth表示からの成分認識。平方根やambientという対象の選択を忘れる操作は、単に慣性の部分群を除く操作とは限らない。 |
 
-本文のA64 foundation chart、全Artin局所変形の表示、HH消滅、geometric cubic開部分、ruling二択と二短完全列による相対S2交換、全H2の幾何点群oidの全充満な実現、noncubic慣性とχ商、九生成のdegree gerbeの中立化は、これらを踏まえた明示構成である。cubic非空開の稠密性から実現点集合の誘導位相での既約性が従い、任意noncubic点への一次元特殊化は二写像の線形補間で構成する。相対smoothproper性は有向代数の有限長相対bar分解で直接示す。内在的相対fppf stackの再構成・全忠実性・対角の有限表示性はrelative_moduli節で証明した。実現部分層の代数性と位相比較は未証明である。既知文献との包括的な新規性比較は未完了。
+本文のA64 foundation chart、全Artin局所変形の表示、HH消滅、geometric cubic開部分、ruling二択と二短完全列による相対S2交換、全H2の幾何点群oidの全充満な実現、noncubic慣性とχ商、九生成のdegree gerbeの中立化は、これらを踏まえた明示構成である。cubic非空開の稠密性から実現点集合の誘導位相での既約性が従い、任意noncubic点への一次元特殊化は二写像の線形補間で構成する。相対smoothproper性は有向代数の有限長相対bar分解で直接示す。内在的相対fppf stackの再構成・全忠実性・対角の有限表示性はrelative_moduli節で証明した。実現部分層の有限型代数性と内在的位相は `h2_smooth_atlas.tex` で証明した。全foundation商との相対groupoid比較は別の課題である。既知文献との包括的な新規性比較は未完了。
 
 ## 八・十・十二本矢と avatar の資料
 
@@ -248,3 +248,9 @@ framed実現空間のスキーム性には [Stacks Tag 05W6](https://stacks.math
 Stacksの一次本文で[0BF6](https://stacks.math.columbia.edu/tag/0BF6) Lemma39.8.2（Cartier）、[02G3](https://stacks.math.columbia.edu/tag/02G3) Lemma29.36.2（微分零によるunramified）、[024T](https://stacks.math.columbia.edu/tag/024T) Proposition41.6.1（unramified射の切断）、[04YY](https://stacks.math.columbia.edu/tag/04YY) Lemma101.6.2（相対慣性によるrepresentability）、[025G](https://stacks.math.columbia.edu/tag/025G)、[0DUD](https://stacks.math.columbia.edu/tag/0DUD) Lemma101.45.7（étale・慣性・幾何groupoidによる同型判定）を2026-11-22に確認した。一般判定は既知入力であり、実際の境界chartの族を二形式模型へ比較する相対tilting・反Serre再構成が本文の追加部分である。
 
 Alper [arXiv:0804.2242v3](https://arxiv.org/pdf/0804.2242v3) のTheorem13.2（affine reductive quotientのgood moduli）、Theorem6.6（代数空間への普遍性）を再確認した。§2の規約はquasi-separatedである。任意の代数空間に対する全H2の粗モジュライ不存在は、この規約を広げず、穿孔直線上でfppf局所定値な族とétale scheme chartを使う本文の直接証明による。χの特殊fiber・全慣性・連結慣性表現の包括的新規性は未確認である。
+
+## DM粗空間と一致点の形式局所商
+
+Stacks [Tag 0DUP](https://stacks.math.columbia.edu/tag/0DUP), Lemma 106.13.4 と [Tag 0DUR](https://stacks.math.columbia.edu/tag/0DUR), Lemma 106.13.6 の本文・証明を2026-11-22に確認した。有限 affine atlas を持つ商の不変式環が、任意の代数空間に対して categorical となることを使う。DM開の証明では [A¹/μ2] のchartを反射とgerbeに沿って貼り合わせ、任意の基底変更後も A[x]/(x²-s) の不変式環がAとなることを確認する。各点の有限慣性だけからKeel–Moriの仮定を結論せず、実際の慣性射がproperでないことを別に証明した。非affine開P°のHartogsによる判定と、Alper `Alper2009` Propositions 3.3, 3.9のcohomological affinenessの合成・Serre判定を用い、χ_DMがgood moduliでないことを示す。
+
+Jarod Alper–Jack Hall–David Rydh, *A Luna étale slice theorem for algebraic stacks*, *Annals of Mathematics* **191** (2020), 675–738, [DOI](https://doi.org/10.4007/annals.2020.191.3.1), [出版社PDF](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p01-s.pdf), Theorems 1.1, 1.2（特にp.676）を2026-11-22に一次確認した。有限型smoothスタックの閉点、affine対角、線型簡約な安定化群という仮定を本稿の一致点で確認する。Theorem 1.2は接表現商との共通étale近傍を与え、affine対角の下で元のスタックへの射をaffineに取れる。原稿では全HH作用を実際のruling mutationと全Grassmann接空間から計算し、smooth境界のイデアルから同変正則パラメータを選んで対の形式線型化を得る。不変式環k[ac,(x+y)²,(x-y)²]は直接計算する。共通étale近傍のgood moduli spaceがsmooth三次元であることと、H2のZariski開や全体へのgood moduli spaceの降下を区別し、後者は未解決とする。これらの具体的な表現・境界への適用について包括的新規性は未確認である。

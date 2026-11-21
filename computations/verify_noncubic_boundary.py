@@ -1,7 +1,7 @@
-"""Exact checks for noncubic moduli fibers and special stabilizers.
+"""Exact checks for noncubic fibers, DM charts, and full special inertia actions.
 Run: python3 computations/verify_noncubic_boundary.py (SymPy).
 This proves polynomial identities and the displayed finite matrix group order;
-it does not certify relative moduli equivalence or the abstract smoothness proof.
+it does not certify relative moduli equivalence, coarse universality, or the formal slice theorem.
 """
 import sympy as s
 from collections import deque
@@ -165,3 +165,148 @@ print("PASS: symplectic stabilizer torus and tautological weights (1,-1,0,0)")
 print("PASS: LG tangent weights", expected_tangent)
 print("PASS: orbit weights", expected_orbit)
 print("PASS: HH2 weights -2,0,0,2; boundary weights -2,2; normal weights 0,0")
+
+
+def check_dm_coarse_identities():
+    """Exact chart and degenerating-stabilizer identities; no stack-theoretic claims."""
+    import sympy as s
+    u,v,t,x,d,b,c=s.symbols('u v t x delta b c')
+
+    def eq(label,e): assert s.cancel(s.expand(e)) == 0,(label,s.factor(e))
+
+    def sub(f,A):
+        U,V=A*s.Matrix([u,v])
+        return s.expand(f.subs({u:U,v:V}, simultaneous=True))
+
+    f1=u*v
+    f2=(u-v)*(u-t*t*v)
+    A=s.diag(s.Matrix([[0,t*t],[1,0]]),t,t)
+    eq('first form stabilizer',sub(f1,A[:2,:2])-t*t*f1)
+    eq('second form stabilizer',sub(f2,A[:2,:2])-t*t*f2)
+    eq('determinant valuation',A.det()+t**4)
+    assert A.subs(t,0).rank()==1
+    newb=d*x
+    newc=d*d*(x*x-1)/4
+    eq('square-root chart discriminant',newb*newb-4*newc-d*d)
+    eq('square-root chart quotient',newb*newb/(newb*newb-4*newc)-x*x)
+    eq('deck fixes b',newb.subs({x:-x,d:-d},simultaneous=True)-newb)
+    eq('deck fixes c',newc.subs({x:-x,d:-d},simultaneous=True)-newc)
+    print('PASS: DM chart square-root identities, chi=x^2, nonextendable generic stabilizer identities, determinant=-t^4 and special rank1')
+
+check_dm_coarse_identities()
+
+
+def check_full_finite_normal_action():
+    """Exact full-Grassmann tangent checks for the coincident stabilizer.
+
+    Convention: f1=f2=uv, coefficient columns ordered u,v,c,d.
+    This checks the finite matrices and HH quotient; it is not a formal
+    linearization theorem. The latter requires the manuscript AHR argument.
+    """
+    import sympy as s
+
+    D = s.diag(1, -1)
+    S = s.Matrix([[0, 1], [1, 0]])
+    transpose = s.Matrix([[1, 0, 0, 0], [0, 0, 1, 0],
+                          [0, 1, 0, 0], [0, 0, 0, 1]])
+    L = s.Matrix([
+        [0, 0, -1, 0], [0, 1, 0, 0], [-1, 0, 0, 0], [0, 0, 1, 0],
+        [0, 0, 0, 1], [1, 0, 0, 0], [0, -1, 0, 0], [0, 0, 0, -1],
+    ])
+    M, N = L[:4, :], L[4:, :]
+    assert M.rank() == N.rank() == 3
+
+    full = L
+    complement = []
+    for col in s.eye(8).columnspace():
+        if full.row_join(col).rank() > full.rank():
+            full = full.row_join(col)
+            complement.append(col)
+        if full.cols == 8:
+            break
+    K = s.Matrix.hstack(*complement)
+    PN = full.inv()[4:, :]
+
+    def flat(X):
+        return s.Matrix(list(X))
+
+    def unflat(v):
+        return s.Matrix(4, 4, list(v))
+
+    def normal(dL):
+        return s.Matrix([s.trace(M.adjugate()*dL[:4, :]),
+                         s.trace(N.adjugate()*dL[4:, :])])
+
+    tangent_basis = []
+    for i in range(4):
+        for j in range(4):
+            X = s.zeros(4)
+            X[i, j] = 1
+            tangent_basis.append(X)
+
+    infinitesimal = []
+    for factor in range(4):
+        for i in range(2):
+            for j in range(2):
+                a, b, c, k = (s.zeros(2) for _ in range(4))
+                [a, b, c, k][factor][i, j] = 1
+                rho_E = -s.kronecker_product(a.T, s.eye(2))-s.kronecker_product(s.eye(2), b.T)
+                rho_F = s.kronecker_product(c, s.eye(2))-s.kronecker_product(s.eye(2), k.T)
+                infinitesimal.append(flat(PN*s.diag(rho_E, rho_F)*L))
+    O = s.Matrix.hstack(*infinitesimal)
+    assert O.rank() == 12
+
+    # f2=(u+c_parameter*v)(v+a_parameter*u), to first order.
+    da, dc = s.zeros(8, 4), s.zeros(8, 4)
+    da[6, 0] = -1
+    dc[5, 1] = 1
+    ba, bc = flat(PN*da), flat(PN*dc)
+    orbit_basis = O[:, list(O.rref()[1])]
+    quotient_basis = orbit_basis.row_join(ba).row_join(bc)
+    assert quotient_basis.rank() == 14
+    for unit in s.eye(16).columnspace():
+        if quotient_basis.row_join(unit).rank() > quotient_basis.rank():
+            quotient_basis = quotient_basis.row_join(unit)
+        if quotient_basis.cols == 16:
+            break
+    quotient = quotient_basis.inv()[12:, :]
+    assert quotient * O == s.zeros(4, 16)
+    assert quotient * ba == s.Matrix([1, 0, 0, 0])
+    assert quotient * bc == s.Matrix([0, 1, 0, 0])
+
+    Rr = s.eye(4)
+    Rr[:, 0], Rr[:, 1] = s.eye(4)[:, 1], s.eye(4)[:, 0]
+    Rs = s.eye(4)
+    Rs[:, 2], Rs[:, 3] = s.eye(4)[:, 3], s.eye(4)[:, 2]
+    actions = {
+        "e_c": (s.diag(-s.kronecker_product(D, D), s.eye(4)),
+                  s.diag(1, 1, -1, 1), s.eye(2), -s.eye(2)),
+        "e_d": (s.diag(s.eye(4), -s.kronecker_product(D, D)),
+                  s.diag(1, 1, 1, -1), s.eye(2), -s.eye(2)),
+        "r": (s.diag(-s.kronecker_product(S, S), -s.kronecker_product(S, S)),
+                Rr, S, -s.eye(2)),
+        "s": (s.BlockMatrix([[s.zeros(4), transpose], [transpose, s.zeros(4)]]).as_explicit(),
+                -Rs, -s.eye(2), S),
+    }
+    for label, (rho, RL, boundary_action, normal_action) in actions.items():
+        assert rho*L == L*RL, label
+        action = s.Matrix.hstack(*(flat(PN*rho*K*X*RL.inv()) for X in tangent_basis))
+        assert O.row_join(action*O).rank() == 12, label
+        assert quotient*action*ba == boundary_action[0, 0]*quotient*ba + boundary_action[1, 0]*quotient*bc, label
+        assert quotient*action*bc == boundary_action[0, 1]*quotient*ba + boundary_action[1, 1]*quotient*bc, label
+        for X in tangent_basis:
+            assert normal(rho*K*X*RL.inv()) == normal_action*normal(K*X), label
+        print("PASS", label, "boundary=", list(boundary_action), "normal=", list(normal_action))
+
+    z = s.Symbol("z", nonzero=True)
+    rho = s.diag(1, 1/z, z, 1, 1, z, 1/z, 1)
+    RL = s.diag(z, 1/z, 1, 1)
+    assert rho*L == L*RL
+    assert quotient*flat(PN*rho*da*RL.inv()) == z**-2*quotient*ba
+    assert quotient*flat(PN*rho*dc*RL.inv()) == z**2*quotient*bc
+    for X in tangent_basis:
+        assert s.simplify(normal(rho*K*X*RL.inv())-normal(K*X)) == s.zeros(2, 1)
+    print("PASS T_z: boundary weights -2,+2 and trivial normal")
+    print("PASS full rank-12 orbit, four-dimensional HH quotient and every finite action")
+
+check_full_finite_normal_action()

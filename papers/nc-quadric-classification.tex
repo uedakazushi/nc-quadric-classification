@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.43
+% 日本語 LuaLaTeX。2026-11-22 / v1.44
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v1.43（noncubic境界の相対商表示と良モジュライ）}
+\date{2026年11月22日\quad v1.44（noncubic境界の粗空間と形式局所商）}
 
 \begin{document}
 \maketitle
@@ -76,6 +76,10 @@ $X_{\mathrm{as}}$ は、有限型で滑らかな既約・純次元八十三の�
 その特殊 fiber は $\chi=0$ で二重因子、$\chi=1$ で smooth 局所に $ac=0$ となる。
 一根共有と根対一致は異なる pointed 圏であるが、任意の代数空間への射で同一視される。
 従って全 $\mathfrak H_2$ にも幾何同型類を分類する粗モジュライ代数空間は存在しない。
+一致類を除いた Deligne--Mumford 開部分では、$\mathbb A^1$ が任意の基底変更と整合する粗空間となるが、
+この制限射は good moduli space ではなく、慣性射は proper ではない。
+一致類に沿う形式的な対を全安定化群の線型表現で記述し、
+その不変式環が三変数の形式冪級数環となることを示す。
 ただし一致根対では $X_3$ の接次元が八十四となり、実現像はそこで開ではない。
 
 証明では、cubic 族の普遍 Noetherian 性・相対 Picard 根・canonical AS4 hull と、
@@ -170,6 +174,44 @@ $\chi=0$ の fiber は smooth 被約因子の二重構造、$\chi=1$ は reduced
 一致点の連結慣性の全一次変形への重みは $2,-2,0,0$ であり、
 二つの境界横断方向への作用は自明である
 （命題~\ref{prop:noncubic-coincident-torus-weights}）。
+
+\begin{theorem}[DM 開部分の粗空間と一致類の形式局所商]
+一致類の閉 gerbe $BH_{\mathrm{eq}}$ を除いた $\mathfrak N^{\mathrm{DM}}$ 上では、
+$\chi_{\mathrm{DM}}:\mathfrak N^{\mathrm{DM}}\to\mathbb A^1$ は
+任意の基底変更と整合する粗モジュライ空間である。
+この射は good moduli space ではなく、慣性射は proper ではない。
+一致類の全慣性を
+\[
+ H_{\mathrm{eq}}=\bigl((\mathbb G_m\rtimes C_2)\times D_8\bigr)/\mu_2
+\]
+と書くと、境界を含む形式的な対は
+\[
+ \begin{aligned}
+ &(\widehat{\mathfrak H}_{2,BH_{\mathrm{eq}}},\widehat{\mathfrak N}_{BH_{\mathrm{eq}}})\\
+ &\qquad\simeq
+ \left([\operatorname{Spf}k[[a,c,x,y]]/H_{\mathrm{eq}}],
+       [\operatorname{Spf}k[[a,c]]/H_{\mathrm{eq}}]\right).
+ \end{aligned}
+\]
+と非標準的に同定できる。群作用は
+命題~\ref{prop:noncubic-coincident-full-normal-representation} の表による。
+その多項式不変式環は
+\[
+ k[a,c,x,y]^{H_{\mathrm{eq}}}=k[ac,(x+y)^2,(x-y)^2]
+\]
+である。
+\end{theorem}
+
+粗空間の証明は定理~\ref{thm:noncubic-dm-coarse} に置く。
+有限 affine cover の商の普遍性 \cite[Tags 0DUP, 0DUR]{StacksDMCoarse} を
+二つの chart と gerbe に沿って降下し、非被約基底変更も含める。
+有限な各点の安定化群から、慣性射の finite 性を推測しない。
+形式局所表示と不変式環は定理~\ref{thm:noncubic-coincident-formal-pair} と
+系~\ref{cor:noncubic-coincident-polynomial-invariants} に置く。
+既知入力は Alper--Hall--Rydh \cite[Theorems 1.1, 1.2]{AlperHallRydh2020} の
+smooth 閉点における \'etale slice であり、本稿では実際の ruling 自己同値の法表現を計算し、
+境界イデアルを同変に線型化する。
+この共通 \'etale 近傍は smooth 三次元の good moduli space を持つが、
 全体の good moduli space の存在は、粗モジュライ不存在とは別の未解決問題である。
 
 \begin{theorem}[全点での Artin 形式認識]

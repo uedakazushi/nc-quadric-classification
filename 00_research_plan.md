@@ -1,8 +1,8 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.44。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.43、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.45。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.44、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
-**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。現在の優先事項は、公表前監査と、DM開・偏極の局所構造の具体化である。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
+**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、局所good moduliの降下、偏極認識と公表前監査である。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
 ## 現在の到達点と未解決の核心
 
@@ -40,7 +40,11 @@
 
 **被約境界の相対商表示と良モジュライ。** `thm:noncubic-intrinsic-presentation-equivalence` により、局所有限型site上で Npres=[P/G]≃N が対象・pointed exact同型を含めて成立する。境界chartの相対normal tiltingと反Serre再構成から実際の族を比較し、慣性核の消滅・接全射・同次元性から表現可能étale性を証明する。非被約testも含むが、全fiber noncubicだけでNへの因数分解を主張しない。χ:N→A¹はflat有限表示のgood moduliで、χ=0はsmooth被約因子の二重構造、χ=1はsmooth chart上ac=0。全慣性は四根相異χ≠0でD8×C2、χ=0で位数32非分裂拡大、一根共有でD8、一致で((Gm⋊C2)×D8)/μ2（8成分）。一致類はBGの正則閉埋込みcodim2をなし、境界接の重みは±2、全HH²は±2,0,0、横断法二方向には連結慣性が自明に作用する。任意の代数空間へのH2の射は一根共有と一致類を同一視するため、全H2にも幾何同型類を分類する粗モジュライ代数空間は存在しない。証明は `papers/sections/noncubic_boundary_comparison.tex`。
 
-**残る比較と次の課題。** Npres≃Nと境界のgood moduli・全慣性は証明した。Q_fndとの全体の相対groupoid比較、X_asの局所閉性と偏極認識方程式、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致は別の課題である。一致類以外のDM開の粗モジュライと慣性のproperness、有限慣性成分の法表現を調べる。全H2のgood moduli spaceの存在は未確定。公表前の一次文献比較・証明監査・組版を続け、包括的新規性・外部査読・形式証明とは区別する。
+**DM開の粗モジュライ。** 一致類を除いた N^DM→A¹_χ は任意の代数空間に対する粗モジュライ射であり、任意の底変更後も粗モジュライである。この制限射χ_DMはgood moduliではなく、慣性射はproperでもfiniteでもない。二つの根対を順序付けたchartを [A¹/μ2] に帰着し、有限被覆を持つ商の普遍性で粗モジュライを証明する。非good性はcodim2補集合のHartogs、慣性の非proper性はDVR上で延長しない具体的自己同型による。`thm:noncubic-dm-coarse`。
+
+**一致類に沿う形式対と局所良モジュライ。** 全慣性 H=((Gm⋊C2)×D8)/μ2 の有限成分も含むHH²作用を決定した。トーラスの非零重み部分と零重み部分による標準的分裂を用い、境界接を(a,c)、法方向を(x,y)とすると、トーラスの重みは(2,−2,0,0)、二つの符号は法方向に−Id、u,v交換は(a,c)を交換して法方向に−Id、ruling交換は境界接に−Id・法方向の交換として作用する。ruling交換は相対mutationで全Artin変形上に同定する。非標準的な形式対は ([Spf k[[a,c,x,y]]/H], [Spf k[[a,c]]/H]) で、境界はx=y=0、不変式環は k[[ac,(x+y)²,(x−y)²]]。AHRの共通étale商近傍はsmoothな3次元good moduliを持つ。これはH2のZariski開や全体のgood moduliの存在をまだ意味しない。`prop:noncubic-coincident-full-normal-representation`, `thm:noncubic-coincident-formal-pair`, `cor:noncubic-coincident-polynomial-invariants`。
+
+**残る比較と次の課題。** 境界の相対商表示・DM開の普遍的粗モジュライ・全有限成分の法表現・一致類に沿う形式対は証明した。次は、共通étale近傍のgood moduliをH2の開部分または全体へ降下できるかを調べる。全H2のgood moduli spaceの存在は未確定であり、全H2の粗モジュライ不存在とは別の問題である。X_asの局所閉性と偏極認識方程式、Q_fndとの全体の相対groupoid比較、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致も残る。公表前の一次文献比較・証明監査・組版を続け、包括的新規性・外部査読・形式証明とは区別する。
 
 **別稿と研究間の関係。** `papers/quiver-avatar-moduli.tex`（v0.1）は有限foundationの8/10/12矢chart、重み四QP、反標準avatarを扱う独立論文である。体上の表示と相対H2の実現条件を区別する。cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は構成済みだが、個々の既存dg特殊化の内在H2認識は、その族ごとに確認する。詳細な主張状態は下の表と研究ノートを正本とする。
 
@@ -116,7 +120,7 @@ $$
 
 | 結果 | 仮定・範囲 | 主原稿の所在 |
 | --- | --- | --- |
-| noncubic表示商、慣性、μ2² gerbe、good moduli | smooth finite type、dim1。coarse algebraic space不存在。任意内在族の相対正規形は未証明 | `prop:noncubic-presentation-stack`, `prop:noncubic-sign-gerbe`, `prop:noncubic-good-moduli` |
+| noncubic表示商、慣性、μ2² gerbe、good moduli | Npres≃被約境界N、smooth finite type、dim1。Nのcoarse algebraic spaceは存在しない。非被約testで全fiber noncubicというだけではNに因数分解しない | `prop:noncubic-presentation-stack`, `prop:noncubic-sign-gerbe`, `prop:noncubic-good-moduli`, `thm:noncubic-intrinsic-presentation-equivalence` |
 | noncubic表示族の局所正則切断 | étale局所に適合根の代数表示を構成。全次数有限自由・底変更整合 | `prop:noncubic-relative-regular-cut` |
 | finite foundationとHochschild計算 | F=[A64/(G/K)]はsmooth finite type、dim3。HH≥3=0、dimHH²−dimHH¹=3 | `prop:foundation-stack`, `prop:foundation-hochschild` |
 | cubic geometric開部分 | `[Gr(2,8)_geo/(PGL2)^3]`、smooth finite type、dim3。隣接二因子の縮約条件が必要 | `prop:cubic-foundation-open` |
@@ -163,6 +167,9 @@ $$
 | 被約境界の相対商表示 | Npres=[P/G]≃N。非被約testの対象とpointed exact同型を含む | `thm:noncubic-intrinsic-presentation-equivalence` |
 | 境界の良モジュライと全慣性 | χはflat有限表示。0は二重因子、1はnode。一致を除きDM。全慣性と一致点HH²重み±2,0,0 | `prop:noncubic-good-moduli-fibers`, `prop:noncubic-all-stabilizers`, `prop:noncubic-coincident-torus-weights` |
 | 全H2の粗モジュライ不存在 | 任意の代数空間への射は一根共有と一致類を同一視する | `cor:global-h2-no-coarse-space` |
+| 境界DM開の普遍的粗モジュライ | χ:N^DM→A¹は任意底変更後も粗モジュライ。goodではなく、慣性は非proper・非finite | `thm:noncubic-dm-coarse` |
+| 一致類の全慣性表現と形式対 | HH²=V_boundary⊕V_normal、全有限成分の作用を決定。形式対は四変数商とx=y=0 | `prop:noncubic-coincident-full-normal-representation`, `thm:noncubic-coincident-formal-pair` |
+| 一致類の局所良モジュライ | 不変式はac,(x+y)²,(x−y)²。共通étale商近傍のgood moduliはsmooth3次元。H2全体への降下は未証明 | `cor:noncubic-coincident-polynomial-invariants` |
 | framed実現スキームと非開性 | X_asはsmooth純次元83。一致根対でambient接次元84のため開immersionでない | `cor:global-xas-smooth-scheme`, `prop:global-h2-not-ambient-open` |
 | 可換Qの全一次変形の相対H2実現 | Jacobian AS4被覆とZhang補正。任意有限次元二乗零理想へ拡張。内在接dim9、偏極付き接dim15、核dim6 | `thm:quadric-all-first-order-h2`, `cor:quadric-intrinsic-tangent` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
@@ -223,9 +230,10 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **有限型atlasの公表前監査を仕上げる。** `noncubic_finite_type.tex` の有限LG条件→全fiber認識→全軌道→Noetherian貼合せ→中央AS4被覆の依存を点検する。特に閉基底上のnormal foundationの相対tilting、右軌道積、同じ根との比較を保つ。`h2_smooth_atlas.tex` の指定Artin同型と有限部分被覆を点検する。新規性は既知のVdB・DDL・PP・Stacksの入力と分けて調査する。
-2. **境界のDM開と一致類の局所幾何を具体化する。** Npres≃Nとflatなχ:N→A¹、全慣性・特殊fiberを確立した。点ごとの有限慣性から慣性射のfinite/proper性を推論せず、一致類を除いたDM開の粗モジュライを調べる。局所式χ−1=4ac/(1−4ac)と、連結慣性のHH²重み±2,0,0を入力とし、有限成分の法二方向への作用を求める。
-3. **framed実現像の局所幾何を調べる。** X_asはsmooth83次元スキームで、一致根対ではX3の接次元84との相違がある。`cor:artin-polarization-retraction` の余分なHH¹方向を用い、局所閉性や具体的な偏極認識方程式を調べる。開性を目標にしない。
+1. **局所good moduliの降下を調べる。** 一致類の共通étale商近傍と不変式環 k[ac,(x+y)²,(x−y)²] を入力とする。stabilizer-preserving条件、飽和開、重なり上の比較を確認し、H2のZariski開または全体へ降下できる範囲と障害を切り分ける。N^DMの粗モジュライ射χ_DMは任意底変更と両立するが、この制限射はgoodではなく、慣性も非properである。これを全体のgood moduliの存在・不存在に直結させない。
+2. **framed実現像と偏極認識を具体化する。** X_asはsmooth83次元スキームで、一致根対ではX3の接次元84との相違がある。`cor:artin-polarization-retraction` の余分なHH¹方向と、今回決定した全慣性表現・形式対を用い、局所閉性や具体的な偏極認識方程式を調べる。開性を目標にしない。
+3. **Q_fndとの相対groupoid比較を進める。** 全幾何点での全充満性と全Artin認識に加え、実際の族のruling被覆・相対heart・降下を比較する。境界上で既証明のNpres≃Nを利用し、全体の相対同値を幾何点比較だけから結論しない。
+4. **公表前監査を仕上げる。** 有限LG条件→全fiber認識→全軌道→Noetherian貼合せ→中央AS4被覆と、指定Artin同型を保つatlasを点検する。境界の粗・良モジュライ、相対ruling mutation、AHRの適用範囲も監査する。既知のVdB・DDL・PP・Stacks・Alper・AHRの入力と本研究の成果を分け、新規性比較と不足TeX依存を解消した環境での組版を行う。
 
 全スキーム上の商[U/R]は元の有限型site上のH2を延長する。任意Noetherian基底で同じAbel公理を課した関手との一致、および一般のcanonical非有界導来圏の大域descentは別に確認する。
 

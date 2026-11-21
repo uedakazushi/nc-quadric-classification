@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.44。主論文はv1.43、別稿はv0.1。
+2026-11-22 / v0.45。主論文はv1.44、別稿はv0.1。
 
 ## Cloud Codexへの継続指示
 
@@ -60,7 +60,8 @@
 - 分類の最終目標は全H2対象のpointed exact同値分類。graded環の同型、Zhang twist、root付き同値、derived同値を混同しない。既存のcubic Z-algebra/elliptic quadrupleの分類だけで全H2分類済みとしない。
 - 候補データからの構成、全H2からの回復、データ上の同値判定、全領域の被覆を別の命題として証明する。「H2を与える表示全体を取る」や未知のAS/admissibilityを条件に残したincidence記述は、全分類の完成ではない。
 - GIT商のorbit closure・S-equivalenceをpointed exact同値と同一視しない。反Serre環で同値類を判定できても、graded自己同型群とpointed自己同値群の一致や相対moduliまで自動的に従うとはしない。
-- 主原稿の全同値類分類と、自己同値群の全型別記述・全平方根・ambient忘却ファイバー・内在的な相対moduliの未完成を区別する。原稿のラベルとnotesの状態表を維持する。
+- 主原稿の全同値類分類、全H2の有限型代数性、被約境界の相対商表示・全慣性・DM粗モジュライ・一致類の形式対は確立済み。全平方根・ambient忘却ファイバー、Q_fndとの全体の相対比較、偏極認識は別の課題とし、原稿のラベルとnotesの状態表を維持する。
+- N^DM→A¹は任意底変更と両立する粗モジュライだがgoodではなく、慣性は非proper。全H2には粗モジュライ代数空間がない。一致類の共通étale商近傍がsmooth3次元good moduliを持つことから、H2のZariski開または全体のgood moduliの存在を無条件に推論しない。
 - 他repoは必要な一次資料として参照する。`nc-cubic-classification` の完全分類定理を本repoの既知入力にしない。Serre根についての一般研究は `categorical-fano-index`、tensor/quadruple分類は確認済み文献と役割を区別する。
 - 次の着手先は研究方針の優先課題。有限次数の計算だけでAS正則性・smoothness・全次数正則性・全対象の被覆を証明したと報告しない。
 
