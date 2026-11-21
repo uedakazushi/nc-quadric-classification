@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.26
+% 日本語 LuaLaTeX。2026-11-21 / v1.27
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.26（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.27（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -134,14 +134,16 @@ fppf による対象・射の降下、構造対象の平坦性も確認する。
 特殊ファイバーの Noetherian 性だけで局所 Noetherian
 持上げが働くので、幾何的 cubic 開の各点の局所環に
 同じ結論を拡張できる。
-可換点を閉点に持つ有限次元 Noetherian 局所基底では、
-局所パラメータによる次元帰納、有限自由 Koszul 解消と
-係数 torsion の有限フィルトレーションを用い、
-左右の相対 $\chi_q$ を全ての $q$ で証明する。
-さらに $\chi_1$ の高内部次数 Ext 消滅を
-全 truncation 長に一様化する直接証明により、
-この局所基底そのものでは AZ (A2) も得る。
-ただし非局所有限型基底変更後の $\chi_1$/AZ (A2)、
+幾何的 cubic 開の各点を閉点に持つ
+有限次元 Noetherian 局所基底では、
+AS4 正規二次切断からの体上 $\chi$
+（Smith--Van den Bergh \cite[\S2.8]{SVdB2013}）
+と局所パラメータによる次元帰納を用いて、
+左右の相対 $\chi_q$ を全 $q$ で証明する。
+さらに $\chi_1$ の truncation 長に一様な
+高内部次数 Ext 消滅から AZ (A2) も得る。
+従って局所有限型族の全 stalk で AZ ample が成立する。
+ただし非局所有限型基底変更後の一様な $\chi_1$/AZ (A2)、
 単一の有限型開全体での Noetherian 性、
 canonical compact heart との比較は残る。
 二周期 cubic 列の相対 canonical hull を
