@@ -141,7 +141,8 @@ def sources() -> int:
     skipped: list[str] = []
     required = (
         "README.md", "AGENTS.md", "00_research_plan.md", "CLOUD_CODEX.md", "notes/research_notes.md",
-        "notes/literature.md", "papers/nc-quadric-classification.tex", "papers/references.bib",
+        "notes/literature.md", "papers/nc-quadric-classification.tex",
+        "papers/nc-quadric-moduli.tex", "papers/quiver-avatar-moduli.tex", "papers/references.bib",
         "computations/verify_quadric.py", "computations/verify_pencil_tangent.py",
         "computations/verify_reducible_quadruples.py", "computations/verify_noncubic_antiserre_pivots.py",
         "requirements.txt", ".latexmkrc",
@@ -312,10 +313,30 @@ def build() -> int:
     return summary("build", failures, [])
 
 
+
+def papers() -> int:
+    """Check the source graph of A, B and C separately, without compiling them."""
+    global MAIN
+    original = MAIN
+    results: list[int] = []
+    try:
+        for manuscript in (
+            "nc-quadric-classification.tex",
+            "nc-quadric-moduli.tex",
+            "quiver-avatar-moduli.tex",
+        ):
+            MAIN = ROOT / "papers" / manuscript
+            print(f"\nSOURCE AUDIT: {MAIN.relative_to(ROOT)}", flush=True)
+            results.append(sources())
+    finally:
+        MAIN = original
+    return 1 if 1 in results else 2 if 2 in results else 0
+
+
 def main() -> int:
     global MAIN
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("doctor", "sources", "math", "build", "all"))
+    parser.add_argument("command", choices=("doctor", "sources", "papers", "math", "build", "all"))
     parser.add_argument("--manuscript", default="papers/nc-quadric-classification.tex",
                         help="main TeX file directly under papers/ (default: primary manuscript)")
     args = parser.parse_args()
@@ -323,7 +344,7 @@ def main() -> int:
     if selected.parent != (ROOT / "papers").resolve() or selected.suffix != ".tex" or not selected.is_file():
         parser.error("--manuscript must name an existing main .tex file directly under papers/")
     MAIN = selected
-    commands = {"doctor": doctor, "sources": sources, "math": math_checks, "build": build}
+    commands = {"doctor": doctor, "sources": sources, "papers": papers, "math": math_checks, "build": build}
     results = []
     names = ("sources", "math", "build") if args.command == "all" else (args.command,)
     for name in names:
