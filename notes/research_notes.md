@@ -406,6 +406,10 @@ Aの分類はcubic/noncubic全構成とpointed exact同値判定を含む。Bの
 
 ## 検証範囲と再現手順
 
+**三論文再編後の現行検査（2026-11-22）。** 論文B v0.6の主TeXと五つの分割節を展開して静的に点検し、34ラベルに重複なし、内部 `\\ref`/`\\eqref` の未解決0、引用キー欠落0、主要TeX環境のbegin/end不一致0を確認した（PASS）。この点検は `scripts/check.py sources` の完全実行ではなく、組版確認でもない。非cubic特殊fiberの補助恒等式はSymPyの厳密多項式演算で独立に確認した（`D(f,g)^2-Δ(f)Δ(g)-4Res(f,g)=0` と `b^2-ξ(b^2-4ac)=(1-ξ)b^2+4ξac`、PASS）。全次数の相対代数性やstack同値の証明を計算で認証したわけではない。新たなLuaLaTeXのビルド・PDF画像検査および外部査読・形式証明は未実施。次の移管対象は `papers/sections/relative_moduli.tex` の反Serre再構成・fppf stackの認識・体上回復の証明であり、相対公理と補題の現在の正本はBの `papers/moduli/relative_definitions.tex` にある。
+
+
+
 **現行版の追加検証（2026-11-22）。** 境界の相対表示・特殊fiber・全慣性・任意代数空間への非分離に加え、DM開の粗モジュライの任意底変更、Hartogsによる非good性、DVRによる慣性の非proper性、全有限成分の法表現、相対ruling mutation、AHRを用いる形式対と局所不変式環を独立読取りした。`verify_noncubic_boundary.py` の既存検算に、DVR自己同型、fiberの微分、全16次元Grassmann接空間・rank12の軌道・4次元HH²と有限成分の作用の厳密検算を統合してPASS。`verify_stack_symmetries.py` も再実行してPASS。全旧suiteは再実行せず、形式証明器も用いていない。
 
 **既存の有限型代数性の検証範囲。** 主論文v1.44の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlas、普遍cubic族の降下と既約性、被約境界の余次元2とsmooth降下、ambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
