@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.33。主論文v1.33に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.34。主論文v1.34に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -27,15 +27,17 @@ A. Polishchuk, L. Positselski, *Quadratic Algebras*, AMS University Lecture Seri
 
 有限型スキームの射の構成可能像にはStacks Project [Tag 054K](https://stacks.math.columbia.edu/tag/054K)（Chevalleyの定理）を使用する。全H2反Serre関係像はcubic・noncubicの二つの有限型表示からの構成可能集合である。関係式の被約閉包Z₂は有限型既約の代数的包絡だが、相対H2の実現部分関手のscheme structureを表すものではない。
 
-## Canonical hull と可換点の全Artin変形
+## 相対canonical hullと可換点の全Artin変形
 
 K. Bauwens, M. Van den Bergh, *Normalizing Extensions of the Two-Veronese of a Three-Dimensional Artin–Schelter Regular Algebra on Two Generators*, *Journal of Algebra* **205** (2) (1998), 368–390、[DOI:10.1006/jabr.1997.7210](https://doi.org/10.1006/jabr.1997.7210)、[著者公開本文](https://cantate.be/site/kristien.ps)を確認した。文献キーは `BauwensVanDenBergh1998`。Proposition 2.2・式(2.7)・Lemma 2.4は二次VeroneseのKoszul双対とその次数三の直和分解を記述する。Proposition 2.7・式(2.11)は正規化functional、Proposition 3.2は正規拡大との双対的対応、Remark 3.3・式(3.1)はcanonicalな選択と被覆の関係式を与える。**これらは体上の通常の次数付きcubic環についての既知結果である。** そのまま任意のArtin係数環上の存在定理として引用しない。
 
 `VdB2011` の arXiv v3 §5.2は非退化四次tensorと四周期、§6（Theorem 6.1、Lemmas 6.4–6.5）はcanonical hull、§8.3は可換quadricの変形とcubic列との関係を扱う。体上のhullの存在、変形されたcubic列の構成、および指定された二周期から通常の次数付きAS4被覆を相対的に作ることは区別する。特に、二周期cubic $\mathbb Z$-algebraの持上げから通常のcubic graded algebraの一周期性を推測しない。
 
-主原稿 `sec:quadric-artin-hull` は、可換 $Q=\mathbf P^1\times\mathbf P^1$ の標数零・有限次元局所Artin基底上のflat pointed Abel変形を対象として、この相対化を直接証明する。持ち上げたhelixの自由Homからcubic関係とsyzygy直線を回復し、逆coevaluationによるfunctionalの正規性を次数三のtensor恒等式で示す。四周期 $\theta$ と指定された二周期 $\beta$ は区別し、functionalの直線の $\beta$-同変性によってgraded化する。正規元の正則性と商の平坦性は単元minorで持ち上げ、相対Koszul双対とFrobenius pairingからAS4被覆を得る。全Artin Serre根の持上げおよび `prop:artin-witness-relative-promotion` と合わせ、可換点の全Artin変形が全有限型基底変更を含む相対H2族になることを示す。
+主原稿 `sec:universal-cubic-hull` は、任意Noetherian基底のgeometric二周期cubic族に対し、この構成を相対化する。式(2.11)はψ(fᵢxⱼ)=η(Λ⁻¹)ⱼᵢ、ψ(xᵢfⱼ)=η(ΛQ⁻ᵗ)ᵢⱼであり、canonical choice Λ=Qᵗは二つの逆coevaluationと一致する。一般Z代数ではVdB Theorem6.1のhullのnormalizerを次数三の第二直和成分へ制限し、F⊗id=id⊗Gからscalar性を得て、φ(w)=2で二側を一致させる。これにより既知hullの関係が実際にker Φであることを同定する。
 
-この証明はBV1998とVdB2011の構成を用いた相対的な検証であり、canonical hull自体の発見や、先行研究に対する新規性を主張しない。原稿の証明を独立に読み合わせたが、形式証明器による検証はしていない。一般のH2点の全Artin被覆存在、非Artin基底上の開性・代数化、内在的モジュライ全体の代数性はこの結論に含まれない。
+相対化ではE=B!の次数別projectivityから正規線Nの乗法を局所分裂単射にし、P=E/(N)のflatnessを先に得る。その後PP Chapter6 Theorem7.3をPへ適用してA=P!を全次数projectiveにする。有限projective間のfiber同型判定により、Frobenius pairingと正則正規二次商を基底上で確認する。βとcanonical四周期θを区別し、T=β⁻²θに対してφξ=(ξ∘T)φ、gu=T⁻¹(u)gという向きもtensor式で確かめた。Serre平方条件はこのAS4被覆の構成に含めず、別の双加群比較条件とする。
+
+`sec:quadric-artin-hull` は一般定理を可換Qの全Artin変形へ適用する節である。標準Serre根の持上げと `prop:artin-witness-relative-promotion` によって全相対条件を得る。BV1998・VdB2011の体上の結果は既知入力であり、相対化の包括的な新規性は未確認。証明を独立読取りしたが、形式証明器・外部査読による検証は未実施である。一般の内在H2点の全Abel変形に適合根を供給すること、および全H2の代数性は残る。
 
 ## Koszul 性・Hochschild 変形・三次平坦性
 
@@ -53,7 +55,7 @@ De Deken–Lowen, *Abelian and derived deformations in the presence of Z-generat
 
 Serre根のArtin補正は、近恒等自己同型の有限log/expとperfect双加群複体の曲率を用いて直接証明する。可換Qの四根の一次持上げには、既存の必要条件に加えてToda arXiv:math/0502571v3 Theorem4.7の十分性を用いる。全Artinへの延長はこの一次の定理をそのまま外挿せず、small extensionの合成障害b+s_*bと平方関係の補正を各段で証明する。
 
-Stacks Project [Tag 00IP](https://stacks.math.columbia.edu/tag/00IP) の Krull 交叉定理（Noetherian局所環と有限加群における ∩m^n M=0）を、有限表示AS判定方程式が全Artin厚みで零なら局所環で厳密に零であることに使う。Artin近似 [Tag 0CAT](https://stacks.math.columbia.edu/tag/0CAT) は代替だが、今回のcanonical hyperplaneは既に代数的に定義できるため不要である。
+Stacks Project [Tag 00IP](https://stacks.math.columbia.edu/tag/00IP) の Krull 交叉定理（Noetherian局所環と有限加群における ∩m^n M=0）は、代数的候補の有限個の閉条件を全Artin厚みから局所環へ確認する一般的な補助手段である。本研究のcanonical hullは普遍的なtensor構成で直接証明し、この手段やArtin近似 [Tag 0CAT](https://stacks.math.columbia.edu/tag/0CAT) は必要としない。
 
 Stacks Project [Tag 0BDH](https://stacks.math.columbia.edu/tag/0BDH), Lemma 36.31.1のperfect複体のBetti数の上半連続性と、Lemma 36.31.4の最低次cohomologyを普遍的に一定階数へする有限表示局所閉部分を本文確認した。`lem:lowest-hom-line-locus` は階数1の場合を実際のminor消去で直接証明する。`thm:bimodule-line-comparison` は普遍的に中心が基底環である可逆双加群にこれを適用し、比較線束の評価coneの消滅により、fppf局所同型の存在部分を有限表示局所閉として構成する。一般のperfect複体の半連続性・rank層別を新成果とはしない。比較定理の包括的な先行研究上の新規性は未確認である。
 

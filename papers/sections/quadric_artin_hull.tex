@@ -1,16 +1,14 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.12
+% 2026-11-21 / v1.34
 \section{可換 quadric の全 Artin 変形と相対 AS4 被覆}
 \label{sec:quadric-artin-hull}
 
 以下では $(A,\mathfrak m,k)$ を標数零の体上の有限次元可換局所 Artin 環とする。
-本節は \cite[arXiv v3, \S5.2, Theorem 6.1, Lemmas 6.4--6.5]{VdB2011}
-の canonical hull を、この基底へ拡張する。
-体上の存在定理をそのまま Artin 基底へ適用することはしない。
+本節は一般の相対 canonical hull 定理~\ref{thm:universal-cubic-hull} を
+可換 quadric の Artin 変形へ適用する。
+主眼は、任意の pointed Abel 変形から、同じ構造対象を持つ exact ample な
+Serre 平方根と相対 AS4 被覆を回復することである。
 二周期の $\mathbb Z$-代数を用い、cubic 代数の一周期性は仮定しない。
-Bauwens--Van den Bergh の正規拡大と二次双対の構成
-\cite[Propositions 2.7, 3.2, Remark 3.3]{BauwensVanDenBergh1998} を参照しつつ、
-相対的な正規性と平坦性は以下で有限自由 tensor データから直接証明する。
 
 \paragraph{入力を有限自由な tensor データとして固定する。}
 $D$ を可換 quadric の cubic $\mathbb Z$-代数の $A$-平坦変形とし、
@@ -105,83 +103,12 @@ $\phi_i$ の張る直線は $w_i$ の単元倍によらず、$\beta$ と整合�
 $\phi$ が得られる。
 \end{lemma}
 \begin{proof}
-例えば $w_i=\sum_{a=1}^2r_a\otimes v_a$ と書けば
-$\phi_i(r_a\otimes v_b)=\delta_{ab}$ と定める。
-これは非退化 tensor の逆を用いた評価であり、基底には依存しない。
-もう一方の分解でも同様に定める。
-両者は $w_i$ を $2$ に送るから、交わり $W_i=Aw_i$ 上で一致する。
-$2\in A^\times$ なので全射であり、$S_i$ は自由だから核は階数六の直和因子になる。
-$w_i$ を単元倍すると評価はその逆数倍になるため、その直線と核は変わらない。
-構成は $\mathbb Z$-代数の同型に自然なので、$\beta(H_i)=H_{i+2}$ である。
-さらに $w_0,w_1$ を選んだ後、$w_{i+2}=\beta(w_i)$ と選んでよい。
-この選択では $\phi_{i+2}\circ\beta=\phi_i$ となる。
-前補題の $\theta$ の構成も自然なので
-$\theta_{i+2}\circ\beta_i=\beta_{i+4}\circ\theta_i$ であり、
-後の正規化写像はこの周期に沿って降りる。
-
-正規性は次数三の tensor 恒等式で確認する。
-前補題により、\cite[\S5.2, (5.2)]{VdB2011} の構成と同じ
-$\theta_i:V_i\simeq V_{i+4}$ が $A$ 上で得られる。
-この同一視を行うと $w_{i+1}$ は $w_i$ の一回巡回となる。
-以下の計算はこの四周期の同一視の下で行う。
-\emph{これは $V_i\simeq V_{i+1}$ という一周期の同一視ではない。}
-
-$E_3$ の双対の対応する成分は
-\[
- K_{3,i}=(S_i\otimes V_{i+4}\otimes V_{i+5})
-       \cap(V_i\otimes V_{i+1}\otimes S_{i+2})
-\]
-である。そして
-\[
- K_{3,i}=(R_i\otimes R_{i+3})
-       \oplus(V_i\otimes W_{i+1}\otimes V_{i+5}).
- \tag{Hull-3}\label{eq:relative-hull-third-dual}
-\]
-実際、右辺の二つの加群はいずれも左辺に含まれる。
-左辺は仮定により階数八の自由加群であり、右辺は階数四の自由加群二つである。
-閉ファイバーでは通常の cubic 解消からこの直和分解が成立する
-\cite[Proposition 2.2, (2.7), Lemma 2.4]{BauwensVanDenBergh1998}。
-従って右辺から左辺への射は同階数自由加群間で還元が同型となり、同型である。
-
-この加群上で次の二つの縮約を比較する。値域も明記すると
-\[
- c_L=\phi_i\otimes1:K_{3,i}\longrightarrow V_{i+4}\otimes V_{i+5},
- \qquad
- c_R=1\otimes\phi_{i+2}:K_{3,i}\longrightarrow V_i\otimes V_{i+1},
-\]
-であり、証明する恒等式は
-\[
- c_L=(\theta_i\otimes\theta_{i+1})\circ c_R.
- \tag{Hull-N}\label{eq:relative-hull-normality}
-\]
-従って四周期の同一視の下では $c_L=c_R$ と書ける。
-第二直和成分について、$w_{i+1}=\sum_a r_{i+1,a}\otimes v_{i,a}$
-と書いて左から縮約すれば恒等射になり、
-$w_{i+1}=\sum_b v_{i+1,b}\otimes r_{i+2,b}$
-と書いて右から縮約しても恒等射になる。
-
-第一直和成分も係数で直接確認できる。
-四つの空間にそれぞれ基底 $u_a,v_b,x_c,y_d$ を選び、
-$w_i=\sum t_{abcd}u_a\otimes v_b\otimes x_c\otimes y_d$ と書く。
-\[
- r_d=\sum_{a,b,c}t_{abcd}u_a\otimes v_b\otimes x_c\in R_i,
- \qquad
- t_c=\sum_{d,a,b}t_{abcd}y_d\otimes u_a\otimes v_b\in R_{i+3}
-\]
-はそれぞれ基底である。
-両縮約は $r_d\otimes t_c$ を同じ元
-$\sum_{a,b}t_{abcd}u_a\otimes v_b$ へ送る。
-よって (\ref{eq:relative-hull-normality}) が成立する。
-
-双対化すると、一次元 $\xi$ に対して
-$\phi_i\xi=\xi'\phi_{i+2}$ となり、$\xi\mapsto\xi'$ は
-$\theta$ から来る可逆な線形写像である。
-元の $\phi_i$ の単元倍の選択に戻してもこの交換式は単元係数を変えるだけである。
-一次生成元との交換式から、左右に生成するイデアルが一致する。
-先に選んだ $\beta$ と整合する生成元により、
-これらは一つの graded 元 $\phi\in E_2$ となる。
-上の交換式は $\phi E_1=E_1\phi$ を与える。
-従って $\phi$ は正規元である。
+定理~\ref{thm:universal-cubic-hull} の線束値写像
+$\Phi_i:S_i\to W_i$ を $W_i=Aw_i$ で自明化したものが $\phi_i$ である。
+二つの逆 coevaluation は $W_i$ 上でともに $2\,\mathrm{id}$ となるので貼り合う。
+正規性は同定理の証明にある、次数三の二つの縮約の tensor 恒等式による。
+そこでは四周期 $\theta$ と二周期 $\beta$ を区別しており、
+$\theta=\beta^2$ を仮定していない。
 \end{proof}
 
 \begin{proposition}[正規 functional からの相対 AS4 被覆]
@@ -190,44 +117,24 @@ $\theta$ から来る可逆な線形写像である。
 $\widetilde B\twoheadrightarrow B$ を持ち、その核は二次の左右正則正規元で生成される。
 \end{proposition}
 \begin{proof}
-閉ファイバーの Segre 環では、$\phi_0$ は六つの交換関係を零に送り、
+補題~\ref{lem:relative-cubic-tensors-artin} により、
+定理~\ref{thm:universal-cubic-hull} の全入力が成立する。
+同定理を適用し、可逆加群 $G$ を局所 Artin 基底上で自明化すればよい。
+全次数の平坦性、左右正則正規性、相対 Koszul Frobenius 性、
+任意の底変更との整合、および Noetherian 性も同時に従う。
+\end{proof}
+
+\begin{remark}[可換ファイバーでの正規化]
+標準二周期を持つ Segre 環では、$\phi_0$ は六つの交換関係を零に送り、
 $q=x_{00}x_{11}-x_{01}x_{10}$ を $1$ に送る。
 これは \cite[(5.3)]{VdB2011} の
-$w=u_0v_0u_1v_1-u_1v_0u_0v_1-u_0v_1u_1v_0+u_1v_1u_0v_0$
-を評価の定義へ代入して確認できる。
-従って $E_k/(\phi_0)$ は四変数の外積代数である。
-前補題の正規性と $E_k$ の Hilbert 級数から、$\phi_0$ の左右乗法は全次数で単射となる。
-
-$E_n$ と $E_{n+2}$ は自由なので、$\phi$ の乗法は閉ファイバーで単射であることから
-全次数で直和因子への単射となる。実際、閉ファイバーで最大階数となる minor は $A$ 上単元である。
-よって $P=E/(\phi)$ は全次数自由で、階数列は $(1,4,6,4,1)$、五次以降は零である。
-$P$ は二次環で、閉ファイバーは Koszul な外積代数である。
-補題~\ref{lem:relative-koszul-degree-three} を適用すると $P$ は相対 Koszul となり、
-その二次双対 $\widetilde B=P^!$ は全次数自由となる。
-$P_i\otimes P_{4-i}\to P_4\simeq A$ は閉ファイバーで完全 pairing なので完全である。
-従って $\widetilde B$ は型 $(1,4,6,4,1)$ の相対 AS4 環である。
-
-二次関係を双対化すると $\widetilde B=T(B_1)/(\ker\phi)$ であり、
-$B=T(B_1)/(S)$ への全射がある。
-その核は二次の階数一加群 $S/\ker\phi$ の生成元 $g$ で生成される。
-各次数の核 $J_n$ は、$B_n$ が自由であるため $\widetilde B_n$ の直和因子であり、
-階数は $\binom{n+3}{3}-(n+1)^2=\binom{n+1}{3}$ である。
-左右の $g$ 乗法
 \[
- \widetilde B_{n-2}\longrightarrow J_n
+ w=u_0v_0u_1v_1-u_1v_0u_0v_1-u_0v_1u_1v_0+u_1v_1u_0v_0
 \]
-は閉ファイバーで可換多項式環の $q$ 乗法という同型になる。
-同階数の自由加群間の射なので元から同型である。
-従って $g$ は左右正則で、左右主イデアルはともに $J$ である。
-特に $g$ は正規元である。
-この議論は normalizing extension と Koszul dual の関係を
-基底上へ無検証に引用する必要も避ける。
-
-全次数平坦性から $\mathfrak m$-進 associated graded は
-$\operatorname{gr}_{\mathfrak m}A\otimes_k k[x_0,x_1,x_2,x_3]$ となり、
-有限フィルターにより $\widetilde B$ は左右 noetherian である。
-相対 Koszul 完全性と切断の完全列は各次数で分裂し、任意の底変更で保たれる。
-\end{proof}
+を逆 coevaluation の定義へ代入して確かめられる。
+従って $E_k/(\phi_0)$ は四変数の外積代数であり、
+その双対 hull は四変数多項式環となる。
+\end{remark}
 
 \begin{theorem}[可換 quadric の全 Artin 変形の相対実現]
 \label{thm:quadric-all-artin-h2}

@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.33、主論文v1.33、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.34、主論文v1.34、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -35,7 +35,7 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 ## 相対構成の現在地
 
-**有限型開上の全次数表示とhomological AS4被覆。** 可換Qの標準Morita根をétale近傍へ代数化し、連続四項のfoundationと三次tensorを構成した。幾何的cubic条件のproper-imageによる開性、標準三次解消の相対完全性、Euler複体によるHom比較から、一つの有限型開U°上で全次数のcubic提示・内在Hom・局所自由性・偶数Bの相対Koszul性が成立する。canonical hullの有限判定とKrull交叉により、正則正規二次元gを持つ全次数平坦なhomological AS4被覆A/(g)=Bも存在する。[主原稿](papers/sections/artin_roots.tex) の `prop:quadric-uniform-cubic-hom-open`、`prop:quadric-zariski-homological-as-cover`。
+**有限型開上の全次数表示と相対AS4被覆。** 可換Qの標準Morita根をétale近傍へ代数化し、四項foundationと三次tensorを構成した。幾何的cubic条件の開性、標準三次解消の相対完全性、Euler複体によるHom比較から、一つの有限型開U°上で全次数のcubic提示・内在Hom・局所自由性・偶数Bの相対Koszul性が成立する。一般のcanonical hull定理から、同じ開上で全次数平坦な相対AS4被覆A/(G)=Bも存在する。`prop:quadric-uniform-cubic-hom-open`、`prop:quadric-zariski-homological-as-cover`、`thm:universal-cubic-hull`。
 
 **任意affine基底でcanonical導来比較が成立。** 幾何的cubic開U°上で、cubic標準解消からtorsion局所化の導来次元と四項tiltingを求め、D(QGr B_T)≃D(Mod Λ_T)、compact≃Perf Λ_Tを証明した。全helixを右規約C_ij=D_{−j,−i}で比較し、次数移動(1)を既存のMorita根sへ対応させる。相対Serre関係と非平坦を含む導来基底変更も整合する。Noetherian性はこの比較の仮定ではない。[相対cubic tails](papers/sections/relative_cubic_tails.tex)。
 
@@ -45,11 +45,13 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **任意基底変更・任意係数で構造対象のH⁰とH¹を計算。** 任意affine T=Spec R′→U°と任意R′-加群Nに対して、Hom_QGr(O_T,N⊗O_T(n))≃N⊗(B_T)_n、Ext¹_QGr(O_T,N⊗O_T(n))=0が全nで成立する。各fiberの深さ3、相対Koszul cochainの分裂完全性、Gabriel商の拡大列を使い、B_TのNoetherian性やNの平坦性を必要としない（`cor:relative-depth-three-coefficients`、`cor:quadric-all-basechange-saturated-sections`）。N=R′の場合、元の全切断環を回復する。
 
-**有限型開での普遍Noetherian性とH2効果性。** `thm:relative-geometric-cubic-noetherian` は、全成分が有限projectiveでgeometric cubic表示と実際の二周期を持つ族の偶数環が、任意の可換Noetherian基底変更後に左右Noetherianであると示す。非線形開では隣接行列のkernelから相対point curveをscheme-theoreticに作り、Keelerの相対Fujita消滅で座標Z代数のrow/columnを有限生成にする。全次数projective核からregular normalな四次族を得て、偶数環へ戻す。linear閉部分はrank-one flatteningの厳密な因数分解と標準単項式で相対Segreへ帰着し、形式的貼合せで全基底を扱う。右積の規約にはC_ij=D_{−j,−i}を使う。`thm:quadric-finite-type-effectivity` により、可換Qを含む一つの有限型開U°でBとAが真に左右Noetherianとなり、U°→H2という全相対公理を満たす族を得る。一般H2全体の代数性は別の未解決問題である。
+**周期を仮定しない普遍Noetherian性とH2効果性。** `thm:relative-geometric-cubic-noetherian` は、全成分が有限projectiveでgeometric cubic表示を持つ族の全row・columnが、任意の可換Noetherian基底変更後にNoetherianであると示す。非線形開では相対point curveとKeelerの消滅、regular normalな四次線族を用いる。線族は頂点ごとの可逆加群twistで自明化でき、無限個の線束の同時開自明化を要しない。linear閉部分でも非退化線を全整数へ伝播し、頂点線twistで標準対称積へ移す。各parityはSegre環と有限生成Segre加群となる。Z代数の次数別形式的貼合せで全基底を扱う。実際の二周期があれば、その偶数graded環Bも左右普遍Noetherianとなる。可換Q近傍では `thm:quadric-finite-type-effectivity` により全相対公理を満たすU°→H2を得る。
+
+**一般二周期族のcanonical AS4被覆。** `thm:universal-cubic-hull` は、geometric cubic族と実際の二周期βから、逆coevaluationの線束値写像Φ_i:S_i→W_i、Φ_i|W_i=2idと階数6の核H_iを構成する。A=T(B₁)/(H₀)は全次数projective、rank Aₙ=C(n+3,3)、双対は階数列(1,4,6,4,1)のKoszul Frobeniusであり、正則正規二次線GによるA/(G)=Bを持つ。任意Noetherian基底変更後も左右Noetherianである。まずE=B!の正規線Nを割ったP=E/(N)をprojectiveにし、PPをPへ適用してA=P!を平坦にするため、非被約基底でfiber次元一定だけに頼らない。AS4被覆は任意のβに成立するが、同じ根のSerre平方条件は独立に確認する。
 
 **Qを含むsmooth Artin開部分。** `cor:quadric-effective-smooth-neighborhood` は、上の効果的族q:U°→H2がスキームで表現可能かつsmoothであり、fppf像V_QがH2の開部分であると示す。V_Q≃[U°/(U°×_[X3/PGL9]U°)]は有限型smooth Artinで、Qにおける次元は9−6=3である。任意の有限型T→H2への基底変更をambientの対角で有限表示schemeとして表し、その全closed pointで指定同型を保つArtin持上げを証明する。DDLの四項窓・全HomのliftとU°→Sのétale性を使い、pointed dg Morita比較からcanonical反Serre環を経て元のH2同型へ戻す。relation schemeは選んだfoundationを保たない同値も含む。Q一点の形式的比較や、任意の導来同値のheart exactnessを外挿していない。V_Qの外側の代数性と、ambient内での開性は結論しない。
 
-**次の核心。** 一般cubic点の普遍canonical hullとroot-adapted窓、変形に安定な適合Serre根を検証する。V_Qの外側とnoncubic境界を覆う表示、H2全体の代数性とX_asの表現可能性は未証明。[検証範囲](notes/research_notes.md#検証範囲と再現手順)。
+**次の核心。** 周期なしNoetherian性と一般canonical hullは証明済み。非線形の普遍geometric quintuple上で、相対Picard群の二除算からSerreに適合する二周期を構成し、全Abel Artin変形の四項窓をその表示へ持ち上げる。V_Qの外側とnoncubic境界を覆う表示、全H2の代数性とX_asの表現可能性は未証明。[検証範囲](notes/research_notes.md#検証範囲と再現手順)。
 
 ## モジュライのスタック構成
 

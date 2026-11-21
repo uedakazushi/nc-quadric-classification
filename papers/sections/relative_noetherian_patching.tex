@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.32
+% 2026-11-21 / v1.34
 \section{次数別完備化による Noetherian 性の貼合せ}
 \label{sec:formal-noetherian-patching}
 
@@ -303,7 +303,169 @@ $x=\sum_\ell u_\ell c_\ell$ を得る。
 必要なのは各 row、各 column、およびその有限直和の商の Noetherian 性である。
 正規族による商 $C/(g)$ を用いる場合も、閉部分上・各主開集合上で得る入力は
 この row ごとの Noetherian 性でよい。
-ただし $C/(g)$ から $C$ への持上げには、別途、正規族の交換関係と正則性に基づく補題が必要である。
+正規族の交換関係と正則性から $C/(g)$ の結果を $C$ へ持ち上げるための補題を、
+次の定理~\ref{thm:patch-normal-family} で与える。
+\end{remark}
+
+\subsection{正則正規線族からの row Noetherian 性の持上げ}
+
+\begin{theorem}[正則正規族による $\mathbb Z$ 代数の拡大]
+\label{thm:patch-normal-family}
+$R$ を可換環とし、$C$ を正の向きの中央 $R$ 線形 $\mathbb Z$ 代数とし、$C_{ii}=R$ とする。
+整数 $\delta>0$ と可逆 $R$ 加群
+$G_i\subset C_{i,i+\delta}$ $(i\in\mathbb Z)$ が与えられ、ある両側イデアル $K\subset C$ に対して
+乗法が全ての $i,j$ で同型
+\begin{equation}\label{eq:patch-normal-family-input}
+ G_i\otimes_R C_{i+\delta,j}
+       \xrightarrow{\sim}K_{ij}
+       \xleftarrow{\sim}C_{i,j-\delta}\otimes_R G_{j-\delta}
+\end{equation}
+を与えると仮定する。
+$\overline C=C/K$ が右 Noetherian なら $C$ も右 Noetherian である。
+左についても同様である。
+特に有限生成右加群、有限生成左加群はそれぞれ Noetherian になる。
+
+この定理では $G_i$ の周期性、無限個の $G_i$ を同時に自明化する基底の開被覆、
+各 $C_{ij}$ の $R$ 上の有限性を仮定しない。
+\end{theorem}
+
+\begin{proof}
+\emph{(a) 頂点の線束 twist による正規族の自明化.}
+各 $\delta$ を法とする剰余類で一つの $L_i$ を $R$ と定め、
+全ての整数 $i$ について再帰的に
+\begin{equation}\label{eq:patch-vertex-lines}
+ L_{i+\delta}=G_i^{-1}\otimes_R L_i
+\end{equation}
+と定める。各固定した $i$ の $L_i$ は有限個の可逆加群の tensor 積なので、
+可逆 $R$ 加群として定義される。
+次の $\mathbb Z$ 代数を取る：
+\[
+ C'_{ij}=L_i^{-1}\otimes_R C_{ij}\otimes_R L_j.
+\]
+右加群の圏の完全同値は、各頂点で
+$M_j\mapsto M_j\otimes_R L_j$ とすることで得られる。
+この同値は $P_i$ を $L_i\otimes_R P'_i$ へ送るため、
+各 row の Noetherian 性を保つ。
+また
+\[
+ G'_i=L_i^{-1}\otimes_R G_i\otimes_R L_{i+\delta}\simeq R.
+\]
+これは基底環を変更する操作ではなく、頂点ごとの線束 twist である。
+無限個の線束の同時 Zariski 自明化を仮定していない。
+
+従って $C'$ を $C$ と書き直し、全ての $G_i$ に生成元
+$g_i\in C_{i,i+\delta}$ がある場合を証明すればよい。
+\eqref{eq:patch-normal-family-input} により、左からの $g_i$ 倍と
+右からの $g_j$ 倍はそれぞれ単射で、同じ正規イデアルを与える。
+
+\emph{(b) 添字を $\delta$ 移す自己同型.}
+$a\in C_{ij}$ に対して、正規性と左からの正則性により一意な
+$\sigma(a)\in C_{i+\delta,j+\delta}$ があり、
+\begin{equation}\label{eq:patch-normal-shift}
+ g_i\sigma(a)=a g_j
+\end{equation}
+を満たす。
+左右の同型 \eqref{eq:patch-normal-family-input} から各 $\sigma:C_{ij}\to C_{i+\delta,j+\delta}$ は同型である。
+左から $g_i$ を消去すると
+$\sigma(ab)=\sigma(a)\sigma(b)$ が従い、$\sigma(e_i)=e_{i+\delta}$ である。
+従って $\sigma$ は頂点を $\delta$ だけ移す $R$ 線形自己同型である。
+さらに $a=g_i$ を \eqref{eq:patch-normal-shift} に代入して左から消去すれば
+$\sigma(g_i)=g_{i+\delta}$ となる。
+従って $\sigma$ は $K$ を保ち、$\overline C$ の自己同型も誘導する。
+
+\emph{(c) 正の skew polynomial $\mathbb Z$ 代数の row Hilbert 基底論法.}
+$D=\overline C[t;\sigma]$ を
+\[
+ D_{ij}=\bigoplus_{p\geq0}\overline C_{i,j-p\delta}\,t^p
+\]
+と定める。ここで $a t^p$ は、係数 $a\in\overline C_{i,j-p\delta}$ に
+頂点 $j-p\delta$ から $j$ への形式的な $p$ 個の $t$ を付した記号である。
+積は
+\[
+ (a t^p)(b t^q)=a\sigma^{-p}(b)t^{p+q}
+\]
+で定める。$\overline C$ が正の向きなので、固定した $i,j$ について
+和に現れる $p$ は有限個である。
+
+$N\subset e_iD$ を右部分加群とする。
+各 $n\geq0$ に対して $L_n\subset e_i\overline C$ を、
+頂点 $\ell$ の成分が
+\[
+ (L_n)_\ell=
+ \left\{a\in\overline C_{i\ell}:
+ \begin{array}{l}
+ N_{\ell+n\delta}\text{ のある元が }t\text{ 次数 }n\text{ 以下であり、}\\
+ \text{その }t^n\text{ の係数が }a\text{ である}
+ \end{array}\right\}
+\]
+となる部分加群として定める。
+これは実際に $\overline C$ 部分加群である。
+$a\in(L_n)_\ell$ と $c\in\overline C_{\ell m}$ に対し、
+$a$ の持上げに右から $\sigma^n(c)$ を掛ければ、最高係数は $ac$ となるためである。
+また右から $t$ を掛けることで $L_n\subset L_{n+1}$ を得る。
+$e_i\overline C$ は Noetherian なので、この昇鎖はある $n_0$ から安定する。
+
+$0\leq n\leq n_0$ の各 $L_n$ の有限個の頂点同次生成元を取り、
+$N$ の $t$ 次数 $n$ 以下の元へ持ち上げる。
+これら有限個の元が $N$ を生成する。
+実際、$x\in N_j$ の最高 $t$ 次数を $d$ とする。
+$d\leq n_0$ なら $L_d$ の生成元を用い、
+$d>n_0$ なら $L_{n_0}$ の持上げを右から $t^{d-n_0}$ 倍して用いる。
+最高係数の表示に現れる $c\in\overline C_{\ell,j-d\delta}$ に対し
+右から掛ける係数を $\sigma^d(c)$ とすれば、最高係数が正しく消える。
+差の $t$ 次数が下がるので、有限回の次数帰納法が完了する。
+よって $D$ は各 row について右 Noetherian である。
+
+\emph{(d) $K$ 進次数付き代数.}
+$g_i^{(p)}=g_i g_{i+\delta}\cdots g_{i+(p-1)\delta}$ と置く。
+正規性から
+\[
+ K^p_{ij}=g_i^{(p)}C_{i+p\delta,j}
+          =C_{i,j-p\delta}g_{j-p\delta}^{(p)}.
+\]
+両側の正則性により、固定した $p$ の右辺を $K^{p+1}_{ij}$ で割ることは
+係数を $K_{i,j-p\delta}$ で割ることと一致する。
+従って
+\[
+ \overline C_{i,j-p\delta}\xrightarrow{\sim}
+ K^p_{ij}/K^{p+1}_{ij},
+ \qquad
+ \overline a\longmapsto
+ \overline{a g_{j-p\delta}^{(p)}}
+\]
+を得る。式 \eqref{eq:patch-normal-shift} が積の整合性を与えるので、
+\[
+ \operatorname{gr}_K C\simeq\overline C[t;\sigma]=D
+\]
+である。
+
+\emph{(e) 元の row への有限回の持上げ.}
+$N\subset P_i$ に $F^pN=N\cap e_iK^p$ を入れる。
+$\operatorname{gr}_F N\subset e_i\operatorname{gr}_K C$ は右有限生成である。
+その有限個の $K$ 進次数と頂点についての同次生成元を
+$u_1,\ldots,u_s\in N$ に持ち上げる。
+固定した $x\in N_j$ の初項をこれらの右倍で逐次消去する。
+正の向きと $\delta>0$ から
+\[
+ K^p_{ij}=0\qquad(p\delta>j-i)
+\]
+なので、この操作は有限回で終了し、$x\in\sum_\ell u_\ell C$ となる。
+従って $P_i$ の全ての部分加群が有限生成であり、$C$ は右 Noetherian である。
+
+左の主張は、添字を反転した反対 $\mathbb Z$ 代数
+$C^{\mathrm{op,ref}}_{ij}=C_{-j,-i}$ に右の結果を適用して得る。
+この変換は正の向きと、左右両方の
+\eqref{eq:patch-normal-family-input} を保つ。
+\end{proof}
+
+\begin{remark}[偶数環による証明との関係]
+二周期の族では、偶数部分から得る通常の次数付き環で
+正則正規な次数二の線束を扱う証明も可能である。
+定理~\ref{thm:patch-normal-family} はその周期性を仮定しないので、
+根を選んでいない geometric cubic foundation の族にも適用できる。
+必要な幾何的入力は、相対曲線商 $\overline C$ の row Noetherian 性と、
+正則正規族の普遍的同型 \eqref{eq:patch-normal-family-input} である。
+この二つをファイバーだけでなく実際の族として証明する必要は残る。
 \end{remark}
 
 \subsection{適用時に確認すべき入力}

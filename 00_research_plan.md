@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.33。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.33、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.34。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.34、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -18,7 +18,9 @@
 
 **方法上の障害と補助定理。** 非可換P¹束の候補対角列には、全行からHomが消える非零coherent対象を持つgeometric quintupleの反例がある。これはその模型と軌道列の比較を妨げるが、BのNoetherian性を否定しない。`ruled_diagonal_obstruction.tex`。有限foundationやgraded coherenceだけではNoetherian heartは従わないことも研究ノートに具体例で記した。偏極認識の有限表示局所閉条件、固定BのAS4被覆incidence、χの有限型基底変更、任意係数の構造H⁰/H¹は独立の一般補題として保持する。
 
-**一般点へ進むための核心。** Qにおける根のétale代数化は標準根のHH¹・HH²作用が恒等であることを使う。全cubic点でも適合する根を同様に選べるかは未証明。root-adaptedな四項窓とEuler複体は一般化の見通しがあり、全geometric二周期族の普遍canonical hullを原典と相対双対計算から検証する。選んだ根の存在部分層や有限表示incidenceのfppf像を、自動的に代数空間とは扱わない。noncubic境界と内在位相・成分数は別に認識する。
+**一般二周期族のcanonical AS4被覆。** `thm:universal-cubic-hull` は、geometric cubic族と実際の二周期βから、逆coevaluationの線束値写像Φ_i:S_i→W_i、Φ_i|W_i=2idと階数6の核H_iを構成する。A=T(B₁)/(H₀)は全次数projective、rank Aₙ=C(n+3,3)、双対は階数列(1,4,6,4,1)のKoszul Frobeniusであり、正則正規二次線GによるA/(G)=Bを持つ。任意Noetherian基底変更後も左右Noetherianである。まずE=B!の正規線Nを割ったP=E/(N)をprojectiveにし、PPをPへ適用してA=P!を平坦にするため、非被約基底でfiber次元一定だけに頼らない。AS4被覆は任意のβに成立するが、同じ根のSerre平方条件は独立に確認する。
+
+**一般点へ進むための核心。** 周期を選ばないrow/column Noetherian性と、実際の二周期族に対する普遍canonical hullは成立した。残るのは、Serreに適合する二周期の相対存在と、一般のAbel変形からその幾何表示への持上げである。非線形の普遍geometric quintuple上で相対Picard群の二除算とATVの相対作用を使う。β²がcanonical四周期θにvertex scalarを除いて一致することを基底上で確認し、canonical tailsのSerre双加群と比較する。任意の根の忘却をsmoothと仮定しない。noncubic境界と内在位相・成分数は別に認識する。
 
 **別稿と研究間の関係。** `papers/quiver-avatar-moduli.tex`（v0.1）は有限foundationの8/10/12矢chart、重み四QP、反標準avatarを扱う独立論文である。体上の表示と相対H2の実現条件を区別する。cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は構成済みだが、一般族の内在H2条件は未完成。詳細な主張状態は下の表と研究ノートを正本とする。
 
@@ -120,6 +122,8 @@ $$
 | 局所基底上の全有限型tailsとHom | 全有限型変更で左右Noetherian・全χ・AZ・fppf降下・全coherent Hom有限とflat basechange | `thm:quadric-local-finite-type-abelian-system` |
 | 任意affine基底のcanonical導来比較 | Noetherian性不要。四項tilting、全helix・矢・shift・Serre・導来基底変更 | `prop:quadric-canonical-cubic-tails` |
 | Noetherian基底上の全相対認識 | Bが左右Noetherianなら全有限型変更で相対H2の全公理。全局所Rにも適用、siteの範囲を区別 | `thm:quadric-noetherian-relative-promotion` |
+| 一般cubic族の普遍row/column Noetherian性 | 二周期不要。任意可換Noetherian基底変更、正規線族の頂点twist、linear/nonlinearの形式的貼合せ | `thm:relative-geometric-cubic-noetherian`, `thm:patch-normal-family` |
+| 一般二周期cubic族の相対canonical AS4被覆 | 任意の実際の二周期β。逆coevaluationの核、全次数projective・左右普遍Noetherian。Serre平方条件は別 | `thm:universal-cubic-hull` |
 | 一様cohomologyと全χ | 同じNoetherian affine基底でHom有限・Serre消滅・AZ・全χ_q | `lem:relative-cubic-coherent-cohomology`, `lem:relative-cubic-global-chi` |
 | 任意係数の構造対象コホモロジー | 任意affine底変更・任意NでH⁰=N⊗B_n、H¹=0（全n） | `cor:relative-depth-three-coefficients` |
 | Artin witnessの相対H2族への昇格 | 根と全軌道AS4被覆が入力。全有限型基底変更のcompact/Serre/AZ/被覆を確認 | `prop:artin-witness-relative-promotion` |
@@ -183,7 +187,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **一般cubic点へ局所代数性を広げる。** Qを含む有限型smooth Artin開部分は構成済み。次は、(a) geometric cubicの任意二周期族に対する普遍canonical hull、(b) Q固有のKünneth計算を標準cubic解消に置き換えたroot-adapted窓とEuler複体、(c) 各cubic点で全Abel Artin変形に延びるSerre根、またはその根空間の相対認識を証明する。canonical hullの有限双対functionalがVdBの構成と一致すること、相対period2がcanonical degree4 transportの平方根になることを一次資料・tensor式で確認する。任意の根の忘却をsmoothと仮定しない。
+1. **一般cubic点へ局所代数性を広げる。** Qを含むsmooth Artin開部分、周期なし普遍Noetherian性、一般二周期canonical hullは構成済み。次は、非線形quintupleのsmooth reduced普遍基底S上でC/SとN=L₂L₀⁻¹を取り、Pic⁰(C/S)の[−2]に沿うétale被覆Tで並進βを構成する。β²=θのprojective比較を普遍基底上で証明して任意非被約底へ引き戻す。DDLで全helixをArtin厚みへ持ち上げ、四つの矢空間とsyzygy直線からSの点を回復する。canonical tailsでSerre比較を閉じれば、Q近傍と同じArtin判定から一般cubicのsmooth chartを得る。この段階の相対根・chartはまだ未証明として扱う。
 
 有限型基底上での代数的表現の目標は、$X_{\mathrm{as}}$ を有限型代数空間として表すことである。局所閉部分スキームとしての構成は十分条件だが必要条件とは主張しない。一般Noetherian基底への連続拡張・極限保存性と、貼り合わせた局所compact圏が大域のcanonical $D(\operatorname{Ind}\mathcal C)^c$ に一致することは別に確認する。
 

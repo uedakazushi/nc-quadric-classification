@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.33
+% 日本語 LuaLaTeX。2026-11-21 / v1.34
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.33（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.34（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -89,7 +89,9 @@ $D(\operatorname{QGr}B)\simeq D(\operatorname{Mod}\Lambda)$ を得る。
 canonical compact 圏の相対 Serre 関係と導来基底変更を確認する。
 さらに相対 point curve の座標代数を Keeler の消滅で制御し、
 正規拡大、linear 閉部分の Segre 表示、次数別完備化による貼合せを用いて、
-任意の Noetherian 基底変更後の左右 Noetherian 性を証明する。
+周期を選ばずに全 row・column の普遍 Noetherian 性を証明する。
+実際の二周期があれば、逆 coevaluation の核から相対 canonical AS4 hullを
+構成でき、被覆も任意の Noetherian 基底変更後に左右 Noetherian となる。
 これにより coherent Hom、AZ、全相対 $\chi_q$ を備えた実際の族
 $U^\circ\to\mathfrak H_2$ が得られる。
 全閉点で指定同型を保つ Artin 持上げを示すと、この射は表現可能で滑らかとなる。
@@ -201,6 +203,11 @@ $\operatorname{HH}^1$ と同定する。
 被覆の構成には Bauwens--Van den Bergh \cite{BauwensVanDenBergh1998} と
 Van den Bergh \cite[\S6]{VdB2011} の canonical hull を参照するが、
 二周期の相対 tensor 恒等式、正則性、Koszul 双対の平坦性は別途証明する。
+定理~\ref{thm:universal-cubic-hull} はこれを任意の geometric 二周期族へ拡張し、
+逆 coevaluation の核から全次数 projective な AS4 被覆を構成する。
+全 row・column の普遍 Noetherian 性には二周期自体も不要である
+（定理~\ref{thm:relative-geometric-cubic-noetherian}）。
+被覆の存在と、同じ二周期が Serre 平方根になることは区別する。
 一次 Jacobian 被覆は全九次元の具体式を与える。
 Toda \cite[Theorem 4.7, arXiv v3]{Toda2009} の一次 Fourier--Mukai 持上げ定理は
 選択済みの四根の一次条件に用いるが、全 Artin 段階の結論は別途証明する。
@@ -217,9 +224,9 @@ To\"en--Vaqui\'e \cite[Corollaries 3.22, 3.24]{TV2007} の一般基礎環上の
 （命題~\ref{prop:quadric-geometric-quintuple-open}）。
 全次数の一様な平坦性と内在 Hom の同定は
 命題~\ref{prop:quadric-uniform-cubic-hom-open} で得られる。
-さらに homological AS4 被覆は Zariski 局所に構成できる
+さらに一般 canonical hull により相対 AS4 被覆を同じ開上に構成できる
 （命題~\ref{prop:quadric-zariski-homological-as-cover}）。
-この homological 構成に普遍 Noetherian 性と canonical tails 比較を合わせ、
+この構成に canonical tails 比較を合わせ、
 定理~\ref{thm:quadric-finite-type-effectivity} で
 有限型開上の内在的相対実現を得る。
 この族の全閉点で De Deken--Lowen の helix 持上げを適用し、
@@ -507,6 +514,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/relative_cubic_tails}
 \input{sections/relative_noetherian_patching}
 \input{sections/relative_cubic_noetherian}
+\input{sections/universal_cubic_hull}
 \input{sections/quadric_smooth_atlas}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}

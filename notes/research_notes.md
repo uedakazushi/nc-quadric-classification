@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.33（主論文v1.33、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.34（主論文v1.34、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -56,7 +56,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **相対Koszul性の範囲。** `cor:quadric-uniform-even-koszul` では奇数頂点のcubic標準解消を偶数へ制限して線形分解を継ぎ、全幾何fiberの偶数環がKoszulであることを得る。既存のPPの局所Koszul変形原理により左右の相対Koszul解消は全内部次数で分裂完全。全次数flatnessだけからKoszulを結論したのではない。Noetherian性はこの議論の結論に含まれない。
 
-**Zariski 局所の homological AS4 被覆。** `prop:quadric-zariski-homological-as-cover` ではW0⊂R0⊗V3 ∩V0⊗R1の二つのcoevaluationを反転してφ:S0=K→Oを定め、その核Hの階数6を候補とする。Artin厚みR/m^{n+1}でのcanonical hullの関係空間は同じφの核なので、相対AS有限判定の三・四・五次rank、三次の正規性の層等式、左右低次数正則性、Frobenius pairingは全厚みでscheme-theoreticに成立。有限個の式の係数は∩m^n=0（Stacks Tag 00IP）で局所環上零となり、可換点を含むZariski開へ同時に広がる。これで全次数平坦・相対Koszul/Frobenius・正則正規二次切断を備えるhomological AS4 coverを得る。左右Noetherian性は別に必要であり、普遍Noetherian定理によってこの条件も満たされる。Artin approximation Tag 0CATも候補だが、ここではcandidate Hが既に有限型開で定義できるため使う必要はない。
+**可換近傍の相対AS4被覆。** `prop:quadric-zariski-homological-as-cover` は一般定理 `thm:universal-cubic-hull` の適用である。W₀値の逆coevaluationの核は基底上で定義され、全次数平坦性・正規性・正則性・Noetherian性まで同じ有限型開上で成立する。別の有限判定問題に使える原理として、候補が既に代数的に定義され、有限個の閉条件が全Artin厚みR/mⁿで成立するなら、∩mⁿ=0によりNoetherian局所環R上でも成立する（Stacks Tag 00IP）。本研究のcanonical hullには、このArtin/Krull手順を使う必要がない。
 
 **左右Noetherianな非可換特殊fiberの局所持上げ。** `lem:local-commutative-fibre-noetherian` は標題・主張を強化し、可換性を削除した。gr_m C≃gr_mR⊗κ Cκ において gr_mR は有限生成中心κ代数だから、Cκの左右Noetherian性だけで付随次数環が左右Noetherian。完備局所環での各内部次数内のm進級数による生成元持上げ、一般局所環への忠実平坦降下は同じ。幾何的cubic開U°の各点vではBκ(v)が体上cubic AS正則Z代数の偶数Veroneseで左右Noetherianとなるため、閉点がvへ写る任意Noetherian局所基底のBと正規AS4拡張Aは左右Noetherian。qgr BもNoetherian heartとして存在する。この点ごとの主張から単一有限型開のグローバルNoetherian性を推論しない。体上cubicのNoetherian性はVdB arXiv v3 Corollary 5.5.9(1)からの入力であり、一次資料で番号と仮定を確認した。
 
@@ -92,7 +92,9 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。`sec:ruled-diagonal-obstruction`。本来のBのNoetherian性は、曲線商・正規拡大とlinear部分の形式的貼合せによって解決した。
 
-**有限型開での普遍Noetherian性とH2効果性。** `thm:relative-geometric-cubic-noetherian` は、全成分が有限projectiveでgeometric cubic表示と実際の二周期を持つ族の偶数環が、任意の可換Noetherian基底変更後に左右Noetherianであると示す。非線形開では隣接行列のkernelから相対point curveをscheme-theoreticに作り、Keelerの相対Fujita消滅で座標Z代数のrow/columnを有限生成にする。全次数projective核からregular normalな四次族を得て、偶数環へ戻す。linear閉部分はrank-one flatteningの厳密な因数分解と標準単項式で相対Segreへ帰着し、形式的貼合せで全基底を扱う。右積の規約にはC_ij=D_{−j,−i}を使う。`thm:quadric-finite-type-effectivity` により、可換Qを含む一つの有限型開U°でBとAが真に左右Noetherianとなり、U°→H2という全相対公理を満たす族を得る。一般H2全体の代数性は別の未解決問題である。
+**周期を仮定しない普遍Noetherian性とH2効果性。** `thm:relative-geometric-cubic-noetherian` は、全成分が有限projectiveでgeometric cubic表示を持つ族の全row・columnが、任意の可換Noetherian基底変更後にNoetherianであると示す。非線形開では相対point curveとKeelerの消滅、regular normalな四次線族を用いる。線族は頂点ごとの可逆加群twistで自明化でき、無限個の線束の同時開自明化を要しない。linear閉部分でも非退化線を全整数へ伝播し、頂点線twistで標準対称積へ移す。各parityはSegre環と有限生成Segre加群となる。Z代数の次数別形式的貼合せで全基底を扱う。実際の二周期があれば、その偶数graded環Bも左右普遍Noetherianとなる。可換Q近傍では `thm:quadric-finite-type-effectivity` により全相対公理を満たすU°→H2を得る。
+
+**一般二周期族のcanonical AS4被覆。** `thm:universal-cubic-hull` は、geometric cubic族と実際の二周期βから、逆coevaluationの線束値写像Φ_i:S_i→W_i、Φ_i|W_i=2idと階数6の核H_iを構成する。A=T(B₁)/(H₀)は全次数projective、rank Aₙ=C(n+3,3)、双対は階数列(1,4,6,4,1)のKoszul Frobeniusであり、正則正規二次線GによるA/(G)=Bを持つ。任意Noetherian基底変更後も左右Noetherianである。まずE=B!の正規線Nを割ったP=E/(N)をprojectiveにし、PPをPへ適用してA=P!を平坦にするため、非被約基底でfiber次元一定だけに頼らない。AS4被覆は任意のβに成立するが、同じ根のSerre平方条件は独立に確認する。
 
 **Qを含むsmooth Artin開部分。** `cor:quadric-effective-smooth-neighborhood` は、上の効果的族q:U°→H2がスキームで表現可能かつsmoothであり、fppf像V_QがH2の開部分であると示す。V_Q≃[U°/(U°×_[X3/PGL9]U°)]は有限型smooth Artinで、Qにおける次元は9−6=3である。任意の有限型T→H2への基底変更をambientの対角で有限表示schemeとして表し、その全closed pointで指定同型を保つArtin持上げを証明する。DDLの四項窓・全HomのliftとU°→Sのétale性を使い、pointed dg Morita比較からcanonical反Serre環を経て元のH2同型へ戻す。relation schemeは選んだfoundationを保たない同値も含む。Q一点の形式的比較や、任意の導来同値のheart exactnessを外挿していない。V_Qの外側の代数性と、ambient内での開性は結論しない。
 
@@ -310,7 +312,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-2026-11-21 / 主論文v1.33、別稿v0.1。ローカルcheckoutでdoctorとsourcesを実行した。中心変数のχ保存、一般coherent Hom、任意係数H¹消滅に加え、cubic tailsのunbounded導来局所化・全helix/矢/shiftの比較・一様cohomology・全χ・相対条件への昇格を独立読取りした。旧計算suiteは再実行していない。数学的読取り、厳密計算、組版、保存は別の状態であり、外部査読・形式証明・包括的な新規性判定は未実施である。
+2026-11-21 / 主論文v1.34、別稿v0.1。ローカルcheckoutでdoctorとsourcesを実行した。中心変数のχ保存、一般coherent Hom、任意係数H¹消滅に加え、cubic tailsのunbounded導来局所化・全helix/矢/shiftの比較・一様cohomology・全χ・相対条件への昇格を独立読取りした。旧計算suiteは再実行していない。数学的読取り、厳密計算、組版、保存は別の状態であり、外部査読・形式証明・包括的な新規性判定は未実施である。
 
 **主論文の既存入力の点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
 
@@ -345,7 +347,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 主論文v1.33はLuaLaTeX・latexmkで212頁のPDF/SyncTeXを生成し、最終logのWarning・Overfull/Underfull・文字欠落・未定義参照は零であった。smooth atlas・開像・局所次元を含む選択9頁の一覧と証明の主要2頁の拡大表示を確認した。形式的貼合せ・相対Noetherian性・有限型効果性・対角列の反例についても、本文が同じ節の選択22頁の一覧と主要4頁の拡大表示を確認済みである。sources PASS（38 manuscript files / 410 labels / 235 citation uses / 7 Markdown files）。数学的独立読取りでは、scheme-theoretic point curve、KeelerとErratumの適用、非被約linear部分の標準単項式、正規線の二周期性、全整数の直接飽和、および指定Artin同型のliftから全基底変更のsmooth性まで点検した。全212頁の画像を個別には点検していない。別稿v0.1の本文は変更せず、既存25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**組版・参照確認。** 主論文v1.34はLuaLaTeX・latexmkで221頁のPDF/SyncTeXを生成し、最終logのWarning・Overfull/Underfull・文字欠落・未定義参照は零であった。一般正規線族・周期なしlinear表示・普遍canonical hull・Artin特殊化を含む選択15頁の一覧と主要2頁の拡大表示を確認した。smooth atlasと既存の相対Noetherian性・反例節の表示も本文が同じ範囲を確認済みである。sources PASS（39 manuscript files / 449 labels / 239 citation uses / 7 Markdown files）。数学的独立読取りでは、正規線族のskew Z代数の添字・有限初項還元、linear関係の全整数への伝播と頂点線twist、canonical hullのfiber同定、非被約基底でP=E/(N)を先に平坦にする順序、および正規化自己同型の左右規約を点検した。全221頁の画像を個別には点検していない。別稿v0.1の本文は変更せず、既存25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 
