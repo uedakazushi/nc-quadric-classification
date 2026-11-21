@@ -33,7 +33,7 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 証明は [有限QP](papers/quiver-avatar/qp_presentations.tex)、[有限foundation](papers/quiver-avatar/foundation_charts.tex)、[avatar](papers/quiver-avatar/avatar_charts.tex)、[内在的忘却](papers/quiver-avatar/intrinsic_forgetting.tex) に置く。独立読取り・計算・組版の実施範囲は研究ノートを参照。
 
-**可換点の局所環で全次数の三次提示を得た。** étale Morita根の存在する可換点uの局所環Aでは、全i≤jでRHom(L_i,L_j)が次数零に集中し階数h_{2m}=(m+1)², h_{2m+1}=(m+1)(m+2)の自由加群となる。全三次Z代数はrank2のR_iで提示でき、偶数環Bもrank7の二次関係で全次数表示され、局所Koszul変形原理により相対Koszulになる。[証明](papers/sections/artin_roots.tex) `thm:quadric-local-all-degree-cubic`。任意の固定次数Nについては開近傍U_Nまで延長できるが、全Nで共通する一つの有限型開近傍への延長・noetherian tails・AZ・AS4被覆の存在はまだ証明していない。
+**可換点の局所環で全次数の三次提示を得た。** étale Morita根の存在する可換点uの局所環Aでは、全i≤jでRHom(L_i,L_j)が次数零に集中し階数h_{2m}=(m+1)², h_{2m+1}=(m+1)(m+2)の自由加群となる。全三次Z代数はrank2のR_iで提示でき、偶数環Bもrank7の二次関係で全次数表示され、局所Koszul変形原理により相対Koszulになる。[証明](papers/sections/artin_roots.tex) `thm:quadric-local-all-degree-cubic`。特殊fiberについて両parity・長さ3〜7の三次核を [厳密検算](computations/verify_quadric_finite_windows.py) で比較した（全次数の証明そのものは計算ではない）。任意の固定次数Nについては開近傍U_Nまで延長できるが、全Nで共通する一つの有限型開近傍への延長・noetherian tails・AZ・AS4被覆の存在はまだ証明していない。
 
 ## モジュライのスタック構成
 

@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
-"""Exact Segre cubic-window tensor check at the two parities of Q=P1 x P1.
+"""Exact Segre cubic tensor checks at the two parities of Q=P1 x P1.
 
 No random choices or floating point.  Run at the repository root:
     python3 computations/verify_quadric_finite_windows.py
 
 This is a finite special-fibre consistency check, not a proof of the
 relative etale-neighbourhood theorem or of infinite-degree exactness.
+The all-degree presentation itself is proved algebraically using adjacent swaps.
 """
 from itertools import product
 
 import sympy as sp
 
 
-# Consecutive line bundles in the standard two-step helix on P1 x P1.
-LINE_BUNDLES = [(0, 0), (0, 1), (1, 1), (1, 2), (2, 2), (2, 3)]
+# Consecutive line bundles O(floor(i/2), ceil(i/2)) on P1 x P1.
+def line_bundle(i):
+    return (i // 2, (i + 1) // 2)
 
 
 def monomials(bidegree):
@@ -22,8 +24,8 @@ def monomials(bidegree):
 
 
 def step_bidegree(i):
-    a, b = LINE_BUNDLES[i]
-    c, d = LINE_BUNDLES[i + 1]
+    a, b = line_bundle(i)
+    c, d = line_bundle(i + 1)
     return (c - a, d - b)
 
 
@@ -65,6 +67,35 @@ def check_parity(start):
     )
 
 
+def relation_span(start, number_of_steps):
+    """Span of all cubic relations inserted at consecutive positions."""
+    blocks = []
+    for offset in range(number_of_steps - 2):
+        triple = multiplication_matrix(start + offset, 3)
+        relation = sp.Matrix.hstack(*triple.nullspace())
+        insertion = sp.kronecker_product(
+            sp.kronecker_product(sp.eye(2**offset), relation),
+            sp.eye(2**(number_of_steps - offset - 3)),
+        )
+        blocks.append(insertion)
+    return sp.Matrix.hstack(*blocks)
+
+
+def check_cubic_relations(start, max_length=7):
+    """Finite-dimensional check of the cubic presentation at the special fibre."""
+    for length in range(3, max_length + 1):
+        product_map = multiplication_matrix(start, length)
+        span = relation_span(start, length)
+        relation_rank = span.rank()
+        predicted = product_map.cols - product_map.rank()
+        assert relation_rank == predicted, (start, length, relation_rank, predicted)
+        print(
+            f"parity {start}, length {length}: "
+            f"relation rank {relation_rank} = kernel rank {predicted} — PASS"
+        )
+
+
 if __name__ == "__main__":
     for parity in (0, 1):
         check_parity(parity)
+        check_cubic_relations(parity)

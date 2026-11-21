@@ -48,7 +48,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **有限窓について得た代数化。** `prop:quadric-etale-finite-window` により標準根はétale近傍でF0↦F2、F1↦F3と同定できる。二つの比較Homは閉fiberでk[0]なので局所的に線束になり、恒等を持ち上げた射のperfect coneの消滅で同型を得る。偶数窓は元のprojective foundationの像、奇数窓はSerre rotationからfull exceptional、閉fiberのKünneth消滅を開条件で保ってstrongになる。二周期により無限個の四項窓を有限個の条件で制御できる。距離1–4のHomは階数2/4/6/9で、三重積の核R_iは階数2、四次重なりW_iは非退化な階数1の直和因子となり、任意の基底変更と可換する。閉fiberの二つの窓についてKünnethによるExt次元を直接点検した。さらに `computations/verify_quadric_finite_windows.py` をSymPyの厳密有理演算で実行し、両parityの二重・三重・四重積のrank4/6/9、三次核rank2、四次重なりrank1、二つのpairingの行列式がいずれも±1であることをPASSとした。これは特殊fiberの有限線形代数の確認であり、étale近傍の存在や無限次数の構造を計算機で証明したものではない。
 
-**局所環での全次数提示（定理の証明は主論文）。** `thm:quadric-local-all-degree-cubic` は可換点uの局所環A=O_{U,u}上で全i≤jのRHom(L_i,L_j)がA^{h_{j-i}}[0]であることを、相対smooth properからのperfect性と閉fiberのKünneth消滅による最小自由複体の消去で証明する。各長さのtensor積は閉fiberで全射なのでNakayamaで全射。三次のR_iで割ったZ代数の各成分は有限生成で、剰余体では同色隣接交換からSym^pU⊗Sym^qVに一致し、自由なHomへの全射の核は局所Nakayamaで零。全次数の三次提示は同じ局所環上で成立し、任意底変更と整合する。偶数BはSegreを特殊fiberとし、全次数自由・rank7二次関係・局所PP Koszul変形原理による相対Koszul解消を持つ。これは有限型開U_Nを次数ごとに取れることを意味するが、単一U_∞の存在を意味しない。
+**局所環での全次数提示（定理の証明は主論文）。** `thm:quadric-local-all-degree-cubic` は可換点uの局所環A=O_{U,u}上で全i≤jのRHom(L_i,L_j)がA^{h_{j-i}}[0]であることを、相対smooth properからのperfect性と閉fiberのKünneth消滅による最小自由複体の消去で証明する。各長さのtensor積は閉fiberで全射なのでNakayamaで全射。三次のR_iで割ったZ代数の各成分は有限生成で、剰余体では同色隣接交換からSym^pU⊗Sym^qVに一致し、自由なHomへの全射の核は局所Nakayamaで零。全次数の三次提示は同じ局所環上で成立し、任意底変更と整合する。偶数BはSegreを特殊fiberとし、全次数自由・rank7二次関係・局所PP Koszul変形原理による相対Koszul解消を持つ。これは有限型開U_Nを次数ごとに取れることを意味するが、単一U_∞の存在を意味しない。特殊fiberの別個の有限計算として `computations/verify_quadric_finite_windows.py` に両parityで長さ3〜7の全三次関係の挿入行列を追加した。全ての長さで交換関係が核を生成する数学的証明は原稿の直接議論にあり、この有限検算から無限次数を推論しない。
 
 **次の効果性補題。** 不足は有限型**一つの開近傍**への全距離のHom・三次提示・無限次数の相対解消の一様な延長と、そこからnoetherian tails・canonical compact導来比較・AZ・AS4被覆を得ることである。局所環上の全次数同定を有限型開にそのまま降ろしてはいけない。Artin基底のDD持上げはこの非冪零基底に直接適用できない。形式的認識だけでは不十分であり、例えばA¹の部分関手F(R)={a∈R : aは冪零}は0で全Artin変形を含むが、0のZariski開近傍を含まない。k[t]/(tⁿ)上の互換な元tはk[[t]]上の冪零元から来ず、効果性が失われる。今回のMorita根で実際のétale近傍を得られるのは、TVによりZの局所有限表示の代数性が先に証明されるためである。
 
@@ -285,7 +285,7 @@ python3 computations/verify_noncubic_second_order.py
 python3 computations/verify_antiserre_polarization.py
 python3 computations/verify_quiver_avatar_charts.py
 python3 computations/verify_quadric_first_order_roots.py
-python3 computations/verify_quadric_finite_windows.py
+python3 computations/verify_quadric_finite_windows.py  # 両parityの長さ3〜7も検算
 # NumPy/Numba を入れた場合の独立な接空間証明書
 python3 computations/verify_commutative_quadric_tangent.py
 python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
