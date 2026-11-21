@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.25。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.25、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.26。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.26、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -39,6 +39,8 @@
 **局所相対tailsのfppf降下。** 有限型R-代数R′上のQGr(B_R′)のmodule-object比較と、faithfully flat R′→R″についての拡大関手の完全・保守性からBarr–Beck降下を適用し、Grothendieck QGrの対象・射の有効なfppf降下を証明。有限型底変更でNoetherian性が保たれることと、昇鎖のfaithfully flat検出からqgrのNoetherian対象も降下する。全次数のB_n局所自由性から構造対象πBの基底上平坦性も得る。**χ₁/AZ(A2)、Hom有限・flat basechange、canonical compact・Serreは未証明**。`cor:quadric-local-tails-fppf-descent`。
 
 **有限次元Noetherian局所基底での全相対χ。** `lem:local-chi-specialization` では、Bが右Noetherian・全次数R有限自由・自明加群の斉次自由解消が任意基底変更で完全なら、特殊fiberのχ_qを全有限生成B加群へ持ち上げる。dim R=0ではm冪零フィルトレーション、正の次元ではdim R/(t)<dim Rとなるtを選び、t冪torsion部分をB/(t)加群として帰納する。M/Tではtが単射なので、Ext長完全列からExt^j_B(R,M/T)/tをB/(t)上の有限χ Extに埋め込む。各内部次数のExtはR有限だからNakayamaで高内部次数消滅を得る。tのR上の非零因子性もMのR-flat性も不要。可換Segre特殊fiberを持つ全有限次元Noetherian局所基底で左右相対χ_iが全iで成立。**非局所有限型基底へのχの一様化、AZ(A2)は未証明**。`cor:quadric-local-chi`。
+
+**局所χ₁からのAZ(A2)直接証明。** 全B_nがR有限projectiveな右Noetherian次数環に相対χ₁があれば、F_n=B/B_{≥n}の有限フィルトレーションの商B_i(-i)についてExt¹_B(B_i(-i),M)_d=B_i^∨⊗Ext¹_B(R,M)_{d+i}が成り立ち、全nに共通の高内部次数消滅を得る。0→B_{≥n}→B→F_n→0からωπMの高次数はM/τMと同定できる。qgr全射をtruncation間の射で表すとそのcokerは有限生成torsionだから、高次数でHom(πB(-d),-)が全射。よって可換Qを閉点に持つ全有限次元Noetherian局所RではAZ(A1)+(A2)が成立する。**非局所有限型底変更後のχ/AZ(A2)、Hom有限・flat basechange、canonical compact/Serreの同定は未証明**。`lem:relative-chi1-implies-AZ-A2`、`cor:quadric-local-AZ-ampleness`。
 
 **Artin表示から相対族への昇格。** exactなSerre根と全軌道環の相対AS4被覆がArtin基底上に与えられれば、全有限型A-代数へのmodule-object基底変更でrelative_h2の全条件を満たす。nilpotent base上のhelix持上げとEndの基底変更からcanonical compact圏を比較する。根・被覆の存在そのものはこの命題の仮定である。`prop:artin-witness-relative-promotion`。
 
@@ -206,7 +208,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **Artinで得た有限foundationを一般の相対族へ広げる。** `artin_foundation.tex` により全flat Abel Artin変形のfoundation・完全なcanonical反Serre・AZ・全軌道と偏極忘却の分裂は成立した。`polarization_recognition.tex` の有限表示局所閉条件を適用するため、任意有限型基底の族にfoundationとshift双加群を与える。実際のArtin root/AS witnessを全有限型A-代数上のrelative_h2系へ延長する命題は成立した。可換点では `prop:quadric-etale-morita-root` がfoundation表示のétale近傍へMorita根を代数化した。局所環での全次数提示に加え、有限型開上で全次数の局所自由性・相対標準解消・内在Homとの一致・相対Koszul解消に加えて、Noetherian条件を除いたAS4被覆のZariski存在まで解決した。可換閉点を保つ任意のNoetherian局所底変更の左右Noetherian性は解決した。幾何的cubic開の全点vで局所Noetherian性は解決し、それらの局所環からの有限型変更でmodule-object基底変更・fppf降下・構造対象平坦性・AZ(A1)を得る。可換点を閉点に持つ全有限次元Noetherian局所基底で左右相対χ_iが全iで成立した。次は単一の有限型開全体でのNoetherian性と、非局所有限型基底でのχの一様化・AZ(A2)、Hom有限・flat basechange、canonical compact導来比較・Serreを確立する。相対被覆の残るNoetherian条件もここに帰着する。表示の平坦性だけからこれらは従わない。四項窓のfull strong tilting性とEnd=Λは既に得たが、tailsのcanonical heartが一致することは未証明である。非平坦底変更では、単にheartが同じという理由でcanonical導来基底変更を仮定しない。
+1. **Artinで得た有限foundationを一般の相対族へ広げる。** `artin_foundation.tex` により全flat Abel Artin変形のfoundation・完全なcanonical反Serre・AZ・全軌道と偏極忘却の分裂は成立した。`polarization_recognition.tex` の有限表示局所閉条件を適用するため、任意有限型基底の族にfoundationとshift双加群を与える。実際のArtin root/AS witnessを全有限型A-代数上のrelative_h2系へ延長する命題は成立した。可換点では `prop:quadric-etale-morita-root` がfoundation表示のétale近傍へMorita根を代数化した。局所環での全次数提示に加え、有限型開上で全次数の局所自由性・相対標準解消・内在Homとの一致・相対Koszul解消に加えて、Noetherian条件を除いたAS4被覆のZariski存在まで解決した。可換閉点を保つ任意のNoetherian局所底変更の左右Noetherian性は解決した。幾何的cubic開の全点vで局所Noetherian性は解決し、それらの局所環からの有限型変更でmodule-object基底変更・fppf降下・構造対象平坦性・AZ(A1)を得る。可換点を閉点に持つ全有限次元Noetherian局所基底で左右相対χ_iが全i成立し、AZ(A1)+(A2)も証明した。次は単一の有限型開全体のNoetherian性・非局所有限型底変更後のχ/AZ(A2)を確立し、Hom有限・flat basechange、canonical compact導来比較・Serreを完成させる。相対被覆の残るNoetherian条件もここに帰着する。表示の平坦性だけからこれらは従わない。四項窓のfull strong tilting性とEnd=Λは既に得たが、tailsのcanonical heartが一致することは未証明である。非平坦底変更では、単にheartが同じという理由でcanonical導来基底変更を仮定しない。
 2. **全Artin hullを一般点と有限型近傍へ拡張する。** 可換Qでは全Artin段階の標準根とAS4被覆、形式変形groupoidの同値は解決した。`prop:cubic-artin-hhtrivial-conditional` により、適合するample cubic helixとHH²に恒等に作用する根があれば一般cubic点でも全Artin認識が成立する。次はその根のHochschild作用を計算し、存在範囲を確定する。helix対象ごとの二周期性から作用の恒等性は従わない（Q上の一因子対合の根が反例）。noncubicの階数3境界で失われるcubic入力も特定する。有限型近傍への代数化・効果性と `relative_as_cover.tex` のincidenceの局所存在を比較する。根は標識でなく、選んだ根の非持上げと全ての根の非存在を区別する。形式的な無障害性や有限型射のfppf像だけで大域代数性を結論しない。
 3. **階数3境界の相対正規形を閉じる。** 全H2の二ruling、有限foundation、相対S2交換を入力に、noncubic境界の内在族から局所モデルへ移ることを証明する。既存のcubic→全noncubic特殊化を相対H2族として認識できれば、成分問題の位相比較にも進める。
 4. **avatarと相対AS代数の比較を閉じる。** 別稿の $H\mapsto HP^n$ は幾何的stackの自己同値として証明済み。次はavatarからの有限foundationと全周期AS代数を相対的に構成し、底変更と同型層を比較する。元のproduct QP、weighted12本矢、固定構造対象の移動を区別する。$P=\mathcal O_D$ の古典点への収縮は同型類の説明だけでは足りない。内在的忘却に進むときは重み付き古典点の反例を基準にする。
