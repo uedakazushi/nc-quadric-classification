@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-22 / v1.44
+% 2026-11-22 / v1.45（特殊fiberの全証明を論文Bへ移管）
 \section{noncubic 境界の内在的商表示とモジュライ写像}
 \label{sec:noncubic-boundary-comparison}
 
@@ -373,69 +373,13 @@ $\mathfrak N_\xi=\chi^{-1}(\xi)$ を scheme-theoretic fiber とすると、次�
 \end{enumerate}
 従って $\chi$ が smooth でない点は、$\xi=0$ の全点と $\xi=1$ の一致類に限られる。
 \end{proposition}
-
 \begin{proof}
-まず固定した第一形式への帰着を smooth な被覆として実現する。
-$\operatorname{GL}(W)$ は $Q^{\mathrm{nd}}$ に推移的に作用し、
-$uv$ の安定化群は $O(uv)\simeq\mathbb G_m\rtimes C_2$ で smooth である。
-従って軌道射 $\operatorname{GL}(W)\to Q^{\mathrm{nd}}$ は smooth 全射である。
-例えば単位元における微分は、二つの非対角成分から $u^2,v^2$ を、
-対角成分の和から $uv$ を得るため全射であり、群作用により全点で同様である。
-その基底変更に同型な射
-\[
- \operatorname{GL}(W)\times Q^{\mathrm{nd}}\longrightarrow P,
- \qquad (A,g)\longmapsto
- \bigl(\operatorname{Sym}^2(A)(uv),\operatorname{Sym}^2(A)g\bigr)
-\]
-も smooth 全射である。
-さらに $P\to[P/G]$ は smooth 全射なので、これらの合成上で fiber の性質を調べられる。
-
-$g=au^2+buv+cv^2$、$\Delta=b^2-4ac$ と書けば、この被覆上で
-\[
- \chi=\frac{b^2}{\Delta},\qquad \Delta\in\OO^\times.
-\]
-従って fiber の方程式は
-\begin{equation}\label{eq:noncubic-fiber-quadric}
- (1-\xi)b^2+4\xi ac=0,\qquad \Delta\ne0
-\end{equation}
-である。$\xi\ne0,1$ なら、この二次形式は三変数の非退化二次形式であり、
-その唯一の affine 特異点である原点は $\Delta\ne0$ により除かれる。
-従って fiber は smooth である。
-
-$\xi=0$ では式は $b^2=0$ となる。
-被約部分 $b=0$ 上では $ac$ が可逆なので、これは smooth な Cartier divisor の二重構造である。
-この divisor は $P$ 上では判別式の極化 $D(f_1,f_2)=0$ で与えられる。
-$D$ は $G$ の半不変式であり、分母 $\Delta(f_1)\Delta(f_2)$ は可逆であるため、
-商スタック上でも $\operatorname{div}(\chi)=2\mathfrak E_0$ と書ける。
-ここで $\mathfrak E_0$ は smooth な被約 Cartier divisor である。
-
-$\xi=1$ では $ac=0$ となり、$\Delta\ne0$ は $b$ が可逆であることと同値である。
-これは二つの座標軸の通常交差と可逆な $b$ の積なので reduced である。
-$(a,c)\ne(0,0)$ なら二形式は一根だけを共有し、fiber は smooth である。
-$a=c=0$ は二形式が比例する場合であり、fiber はそこで交差特異点を持つ。
-$b$ を一に正規化した横断座標では
-\begin{equation}\label{eq:noncubic-chi-coincident-node}
- \chi-1=\frac{4ac}{1-4ac}.
-\end{equation}
-$a$ 軸または $c$ 軸の原点への特殊化が、一根共有の類から一致類への特殊化である。
-二つの軸は $u,v$ の交換で同じ軌道へ移るので、幾何点の類は記述した二つで尽くされる。
-
-平坦性は $P$ 上で確認できる。
-$P$ は整 affine スキームであり、$\chi$ は非定数なので $k[\chi]\to k[P]$ は単射である。
-従って $k[P]$ は PID $k[\chi]$ 上 torsion-free、従って flat である。
-有限表示性は有限型 $k$-スキーム・スタックの間の射であることから従う。
-平坦性は smooth 全射 $P\to\mathfrak N$ から降下する。
-最後の smooth locus の記述は、平坦有限表示性と上で判定した幾何 fiber の smooth locus から従う。
+二形式表示商の良モジュライ射の平坦性、各ファイバーの既約・被約性と局所方程式については
+別稿 \cite[良モジュライ射の特殊ファイバーの節]{QuadricModuli2026} に
+全証明を移した。定理~\ref{thm:noncubic-intrinsic-presentation-equivalence} の
+相対スタック同値により、表示商上の命題が内在的境界に移る。
 \end{proof}
 
-\begin{remark}[resultant による共有根の方程式]
-二つの二元二次形式に対し、標準的な Sylvester resultant を用いると
-\[
- D(f_1,f_2)^2-\Delta(f_1)\Delta(f_2)=4\operatorname{Res}(f_1,f_2).
-\]
-従って $\chi=1$ は共有根の resultant divisor である。
-二つの形式自身は非退化であるが、共有根が二つになる一致類では、この divisor の局所方程式が $ac=0$ となる。
-\end{remark}
 
 \subsection{全配置の慣性と一致類の接表現}
 

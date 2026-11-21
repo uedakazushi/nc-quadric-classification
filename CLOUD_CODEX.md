@@ -4,7 +4,7 @@
 
 ## 三論文再編の次の実行単位（2026-11-22）
 
-A＝`papers/nc-quadric-classification.tex`（主原稿・分類）、B＝`papers/nc-quadric-moduli.tex`（相対モジュライ）、C＝`papers/quiver-avatar-moduli.tex`（表示・avatar）。Bはまだ主結果の証明移管中の未完成稿。対角列の反例の独立した全証明はBへ移管済みであり、Aからの入力と節参照を除いた。加えてnoncubic表示商の不変式環とgood moduli性の証明はBへ移し、Aの旧表示節ではBを引用する。有限foundation上の反Serre偏極の局所閉認識は3証明をBへ移し、Aに定理のstatementを残してBを引用する。次に対象の全相対比較をBへ移して、A側のB依存を解消する。次に `relative_moduli.tex`、`relative_koszul.tex`、`artin_foundation.tex` などのA/B間の依存と定理参照を抽出し、Bへ相対公理・Artin認識、cubic/noncubic有限型効果性、全体atlas、境界の商の証明を逐次移管する。Aに必要な分類の基礎補題は残し、循環依存と二重収録を作らない。Cとの相対認識の比較を更新する。A/B/Cを個別にsourcesとbuild確認し、一次文献比較と新規性は別に監査する。研究repoを先にmainへ保存し、その後hubを更新する。
+A＝`papers/nc-quadric-classification.tex`（主原稿・分類）、B＝`papers/nc-quadric-moduli.tex`（相対モジュライ）、C＝`papers/quiver-avatar-moduli.tex`（表示・avatar）。Bはまだ主結果の証明移管中の未完成稿。対角列の反例の独立した全証明はBへ移管済みであり、Aからの入力と節参照を除いた。加えてnoncubic表示商の不変式環とgood moduli性の証明はBへ移し、Aの旧表示節ではBを引用する。有限foundation上の反Serre偏極の局所閉認識は3証明をBへ移し、Aに定理のstatementを残してBを引用する。平坦なnoncubic good moduli射の特殊fiberもBへ全証明を移し、Aには内在的境界との相対同値を用いた主張だけを残した。次に対象の全相対比較をBへ移して、A側のB依存を解消する。次に `relative_moduli.tex`、`relative_koszul.tex`、`artin_foundation.tex` などのA/B間の依存と定理参照を抽出し、Bへ相対公理・Artin認識、cubic/noncubic有限型効果性、全体atlas、境界の商の証明を逐次移管する。Aに必要な分類の基礎補題は残し、循環依存と二重収録を作らない。Cとの相対認識の比較を更新する。A/B/Cを個別にsourcesとbuild確認し、一次文献比較と新規性は別に監査する。研究repoを先にmainへ保存し、その後hubを更新する。
 
 ## 起動時の依頼文
 
