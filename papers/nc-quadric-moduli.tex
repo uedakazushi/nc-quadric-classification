@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.14（効果的foundationの局所atlasを移管）
+% 日本語 LuaLaTeX。2026-11-22 / v0.15（効果的foundationの局所atlasを移管）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v0.14（cubic/noncubic有限型効果性を移管中）}
+\date{2026年11月22日\quad v0.15（cubic/noncubic有限型効果性を移管中）}
 
 \begin{document}
 \maketitle
@@ -87,6 +87,8 @@ Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
 
 \input{moduli/relative_definitions}
 \input{moduli/relative_koszul}
+\input{moduli/relative_noetherian_patching}
+\input{moduli/relative_cubic_tails}
 \input{moduli/relative_recognition}
 \input{moduli/relative_as_cover}
 
@@ -94,6 +96,7 @@ Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
 \input{moduli/ruled_diagonal_obstruction}
 \input{moduli/quadric_smooth_atlas}
 \input{moduli/relative_cubic_noetherian}
+\input{moduli/universal_cubic_hull}
 \input{moduli/cubic_smooth_atlas}
 \input{moduli/noncubic_finite_type}
 \input{moduli/h2_smooth_atlas}

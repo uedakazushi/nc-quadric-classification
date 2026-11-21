@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.34
+% 2026-11-21 / v1.34（証明本文をBへ移管）
 \section{幾何的二周期 cubic 族の普遍 canonical hull}
 \label{sec:universal-cubic-hull}
 \paragraph{主張の範囲.}
@@ -166,21 +166,7 @@ $B$ は相対 Koszul であり、$E=B^!$ の全次数は有限 projective で、
 \]
 \end{lemma}
 \begin{proof}
-体上で、標準 cubic 解消を偶数頂点と奇数頂点に分ける。
-奇数頂点の加群には、$V$ と $R$ を交互に用いる偶数環上の線型解消が得られる。
-偶数部分の二つの短完全列に Tor を適用すると、偶数環の単純加群の
-Tor は対角次数に集中する。これは \cite[Proposition 2.1]{BauwensVanDenBergh1998}
-の証明に各 $V_i,R_i,W_i$ の添字を付けたものであり、実際の一周期を必要としない。
-従って全幾何ファイバーの $B$ は Koszul である。
-
-$B_1,B_2,B_3$ は仮定により有限 projective である。
-\cite[Chapter 6, Theorem 7.3, Propositions 7.1--7.2]{PolishchukPositselski2005}
-を各局所環で適用すれば、関係部分加群の全交わりと商が直和因子となる
-（補題~\ref{lem:relative-koszul-degree-three}）。
-これにより $E$ の次数別 projectivity、任意の基底変更との整合、
-左右の普遍 Koszul 解消が得られる。
-各ファイバーでは $\dim B_n=(n+1)^2$ だから
-$h_E(t)=h_B(-t)^{-1}=(1+t)^3/(1-t)$ となり、\eqref{hull-eq:E-ranks} が従う。
+証明は相対モジュライ論文 \cite[\texttt{universal_cubic_hull}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{lemma}[普遍的な次数三分解]
@@ -197,25 +183,7 @@ $E_3^{\vee}$ の対応する添字付き成分は
 この同定は任意の基底変更と両立する。
 \end{lemma}
 \begin{proof}
-右辺の二つの部分加群は $W_{i+1}$ の二つの包含により左辺に入る。
-左辺は補題~\ref{hull-lem:even-koszul} により階数八の projective 加群であり、
-右辺は階数四の projective 加群二つの直和からの射である。
-従って各幾何ファイバーで直和であることを示せば十分である。
-
-体上で二つの像の交わりを取ると、
-$R_iV_{i+3}\cap V_iR_{i+1}=W_i$ により、それは
-$W_iV_{i+4}V_{i+5}$ に入る。
-一方、右 cubic 解消の次数六の部分は
-\[
- W_i\otimes V_{i+4}\otimes V_{i+5}
- \hookrightarrow R_i\otimes D_{i+3,i+6}
-\]
-を単射にする。
-右辺は $R_iV_{i+3}V_{i+4}V_{i+5}$ を $R_iR_{i+3}$ で割ったものだから、
-$W_iV_{i+4}V_{i+5}\cap R_iR_{i+3}=0$ である。
-従って交わりは零となる。次元八より同型である。
-この議論は \cite[(2.7), Lemmas 2.3--2.4]{BauwensVanDenBergh1998} の添字付きの証明でもある。
-有限 projective の間の同型判定を各ファイバーで行えば主張を得る。
+証明は相対モジュライ論文 \cite[\texttt{universal_cubic_hull}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{lemma}[functional 線の普遍正規性]
@@ -224,41 +192,7 @@ $W_iV_{i+4}V_{i+5}\cap R_iR_{i+3}=0$ である。
 $NE=EN$ が任意の基底変更後に成立する。
 \end{lemma}
 \begin{proof}
-局所的な $w_i$ の選択の下で
-\[
- c_L=\phi_i\otimes1:K_{3,i}\longrightarrow U_{i+4},\qquad
- c_R=1\otimes\phi_{i+2}:K_{3,i}\longrightarrow U_i
-\]
-と置く。$\Theta_i=\theta_i\otimes\theta_{i+1}$ とすると
-\[
- c_L=\Theta_i c_R
- \tag{UH-11}\label{hull-eq:normal-contraction}
-\]
-である。これはファイバーでのみ成立する式ではなく、次の tensor 計算による恒等式である。
-
-$\theta$ により四つ先の空間を同一視する。
-$V_iW_{i+1}V_{i+5}$ 上では二つの縮約はいずれも
-coevaluation と evaluation の合成なので同じ恒等射になる。
-第一成分では、四つの空間の基底を $u_a,v_b,x_c,y_d$ とし、
-$w_i=\sum t_{abcd}u_a v_b x_c y_d$ と書く。
-\[
- r_d=\sum_{a,b,c}t_{abcd}u_av_bx_c\in R_i,\qquad
- t_c=\sum_{d,a,b}t_{abcd}y_du_av_b\in R_{i+3}
-\]
-はそれぞれ基底である。両縮約は $r_d\otimes t_c$ を
-$\sum_{a,b}t_{abcd}u_av_b$ へ送るため、\eqref{hull-eq:normal-contraction} が成立する。
-
-\eqref{hull-eq:product} に沿って graded 化する。
-$T=\beta^{-2}\theta$ が $U$ に誘導する可逆写像を同じ記号で表すと、
-\eqref{hull-eq:normal-contraction} の双対は
-\[
- \phi\xi=(\xi\circ T)\phi\qquad(\xi\in E_1)
- \tag{UH-12}\label{hull-eq:graded-normality}
-\]
-となる。$T$ は代数自己同型から来るので、その双対は $E$ の自己同型を定める。
-一次生成性から $\phi E=E\phi$ を得る。
-生成元を替えると $\phi$ が単元倍されるだけなので、これは大域的な線 $N$ の正規性を意味する。
-計算は基底上の恒等式であり、任意の基底変更後も同じである。
+証明は相対モジュライ論文 \cite[\texttt{universal_cubic_hull}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{全幾何ファイバーでの canonical hull との同定}
@@ -275,48 +209,7 @@ canonical hull の六次元関係空間を $H'_i\subset S_i$ とする。
 このとき $H'_i=H_i$ である。
 \end{lemma}
 \begin{proof}
-$H'_i=\ker\psi_i$ となる非零写像 $\psi_i:S_i\to K$ を選ぶ。
-$g_i\in S_i/H'_i$ を $\psi_i(g_i)=1$ で正規化する。
-この記法では、$S_i$ の元の hull における像は $\psi_i$ 倍の $g_i$ である。
-canonical normalizer の意味から、ある $\lambda_i\in K^\times$ に対し
-\[
- g_i u=\lambda_i\Theta_i^{-1}(u)g_{i+2}
- \qquad(u\in U_{i+4})
- \tag{UH-13}\label{hull-eq:hull-normalizer}
-\]
-である。scalar 自己同型の不定性は $\lambda_i$ に吸収した。
-
-$z\in K_{3,i}$ を二通りに hull の次数三へ送れば
-\[
- g_i(\psi_i\otimes1)(z)
-   =(1\otimes\psi_{i+2})(z)g_{i+2}
-\]
-となる。$g_{i+2}$ の右正則性と \eqref{hull-eq:hull-normalizer} より
-\[
- (\psi_i\otimes1)(z)
-   =\lambda_i^{-1}\Theta_i(1\otimes\psi_{i+2})(z).
- \tag{UH-14}\label{hull-eq:psi-normalizer}
-\]
-
-これを第二直和成分 $V_iW_{i+1}V_{i+5}$ に制限する。
-coevaluation によって、左辺は $F_i\otimes\mathrm{id}$、右辺は
-$\lambda_i^{-1}\mathrm{id}\otimes G_i$ という形に書ける。
-ここでは $\theta_i,\theta_{i+1}$ により始点と終点を同一視した。
-二つの非零有限次元空間の endomorphism が
-$F\otimes\mathrm{id}=\mathrm{id}\otimes G$ を満たせば、
-行列単位との比較により $F,G$ は同じ scalar の恒等写像である。
-従って
-\[
- \psi_i|_{V_iR_{i+1}}=a_i\phi_i|_{V_iR_{i+1}},\qquad
- \psi_{i+2}|_{R_{i+2}V_{i+5}}
-       =b_i\phi_{i+2}|_{R_{i+2}V_{i+5}}
-\]
-となる。$i$ を二つ戻した式も用いれば、$\psi_i$ の二つの制限は
-それぞれ逆 coevaluation の scalar 倍である。
-交わり $W_i$ 上で両者は同じ $\psi_i(w_i)$ を与え、
-$\phi_i(w_i)=2\ne0$ なので二つの scalar は一致する。
-よって $\psi_i=a_i\phi_i$ である。
-$\psi_i\ne0$ から $a_i\ne0$、従って $H'_i=H_i$ を得る。
+証明は相対モジュライ論文 \cite[\texttt{universal_cubic_hull}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[Bauwens--Van den Bergh の式との直接照合]
@@ -345,20 +238,7 @@ graded 化である。$\phi\in E_2$ は左右正則正規で、
 $E/(\phi)$ は階数列 $(1,4,6,4,1)$ の Koszul Frobenius 代数である。
 \end{corollary}
 \begin{proof}
-$H_i$ の構成の自然性により $\beta(H_i)=H_{i+2}$ であるから、
-二周期は hull の提示そのものに持ち上がる。
-これは \cite[Lemmas 6.4--6.5, Proposition 6.6]{VdB2011} の構成と一致する。
-canonical hull は標準四次元 AS 正則なので Koszul であり、
-その二次双対 $P$ は Frobenius、Hilbert 級数 $(1+t)^4$ を持つ。
-二次提示から $P=E/(\phi)$ である。
-補題~\ref{hull-lem:normal} より $\phi$ は正規である。
-\[
- h_E(t)=\frac{(1+t)^4}{1-t^2},\qquad h_P(t)=(1+t)^4
-\]
-なので、各次数の商と積の次元を比べると
-$E_{n-2}\xrightarrow{\phi\cdot}E_n$ および
-$E_{n-2}\xrightarrow{\cdot\phi}E_n$ は単射となる。
-これで正則性が従う。原典でも \cite[Propositions 2.7, 3.2]{BauwensVanDenBergh1998} が同じ双対関係を示す。
+証明は相対モジュライ論文 \cite[\texttt{universal_cubic_hull}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{非被約基底上での相対化}
