@@ -2,7 +2,7 @@
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk-project",
-      "command": "latexmk",
+      "command": "/Library/TeX/texbin/latexmk",
       "cwd": "%WORKSPACE_FOLDER%",
       "args": [
         "-norc",
@@ -15,19 +15,23 @@
   "latex-workshop.latex.recipes": [
     {
       "name": "latexmk (LuaLaTeX, project settings)",
-      "tools": ["latexmk-project"]
+      "tools": [
+        "latexmk-project"
+      ]
     }
   ],
   "latex-workshop.latex.recipe.default": "first",
   "latex-workshop.latex.build.enableMagicComments": true,
   "latex-workshop.latex.outDir": "%WORKSPACE_FOLDER%/build",
   "latex-workshop.latex.autoBuild.run": "onSave",
-  "latex-workshop.latex.search.rootFiles.include": ["papers/**/*.tex"],
+  "latex-workshop.latex.search.rootFiles.include": [
+    "papers/**/*.tex"
+  ],
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.synctex.afterBuild.enabled": true,
   "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
   "latex-workshop.latex.clean.method": "command",
-  "latex-workshop.latex.clean.command": "latexmk",
+  "latex-workshop.latex.clean.command": "/Library/TeX/texbin/latexmk",
   "latex-workshop.latex.clean.args": [
     "-norc",
     "-r",
@@ -37,4 +41,3 @@
   ],
   "latex-workshop.latex.autoClean.run": "never"
 }
-
