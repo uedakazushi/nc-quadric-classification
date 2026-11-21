@@ -264,26 +264,77 @@ torsion 核全体の記述と compact 性は
 補題~\ref{lem:five-window-compact-localization} で独立に証明した。
 ここでは無界複体を有界切断の無条件な逆極限で置き換えていない。
 
-四項による生成性のため、bar 複体を最終添字で filter する。
-最終添字が $i+4$ の係数複体を $V_i^\bullet$ とする。
-これは $W_i$ の bar 解消に $-\otimes_{W_i}S_{i+4}^{\ell}$ を適用した複体である。
-前補題の証明で確認した極小解消の終頂点条件から、
-指定 fiber は階数一の $\operatorname{Tor}_3$ だけを持つ。
-相対的にも、支持が $i,\ldots,i+4$ に限られることから
+四項による生成性を、終頂点の係数複体を明示して証明する。
+$\mathcal B_{i,\bullet}$ のうち、道の終頂点が $i+3$ 以下の項を
+$F_{i,\bullet}$ と書く。bar 微分は最後の道の作用項について
+終頂点を小さくするだけなので、$F_{i,\bullet}$ は部分複体である。
+商複体 $Q_{i,\bullet}=\mathcal B_{i,\bullet}/F_{i,\bullet}$ では、
+終頂点 $i+4$ の係数だけが残り、
+最後の $P_{i+4}$ への作用を含む微分は商で零となる。
+従って、合成を行う内部 bar 微分だけを持つ有限 projective な
+$R$-複体 $V_i^\bullet$ により
+\[
+ Q_{i,\bullet}\simeq V_i^\bullet\otimes_R P_{i+4},
+ \qquad
+ V_i^{-p}=
+ \!\!\!\!\bigoplus_{\substack{i=i_0<\cdots<i_p=i+4}}\!\!\!
+ C_{i_0i_1}\otimes_R\cdots\otimes_R C_{i_{p-1}i_p}.
+ \tag{BW-terminal}\label{eq:five-window-terminal-complex}
+\]
+ここでは $p=1,\ldots,4$ とし、$V_i^\bullet$ の微分は
+隣接した二つの係数を積でまとめる交代和である。
+上の表示に現れる各射は、任意の $R$-基底変更と両立する。
+
+正の向きの $\mathbb Z$-代数なので
+$\operatorname{Hom}_C(P_j,P_{i+4})=0$（$j\le i+3$）、
+$\operatorname{End}_C(P_{i+4})=R$ である。
+従って $P_{i+4}$ への $\operatorname{Hom}_C$ を
+増大 bar 解消に作用させると、終頂点 $i+4$ の係数の
+$R$-双対複体をちょうど得る：
 \[
  \operatorname{Hom}_R(V_i^\bullet,R)
-   =\operatorname{Hom}_C(\mathcal B_{i,\bullet},P_{i+4})
-   \simeq\mathcal L_i[-3].
+ \cong \operatorname{Hom}_C(\mathcal B_{i,\bullet},P_{i+4})
+ \simeq\mathcal L_i[-3].
 \]
-有限 projective 複体の双対を再び取れば
-$V_i^\bullet\simeq\mathcal L_i^{\vee}[3]$ となる。
-ここでは bar 第 $p$ 項を cohomological degree $-p$ に置く。
-最終添字 $\le i+3$ の部分複体は $P_i,\ldots,P_{i+3}$ の thick 閉包に属する。
-bar 複体全体の tails 像は零だから、上の filtration の三角により
-$\mathcal O_{i+4}$ も $\mathcal O_i,\ldots,\mathcal O_{i+3}$ の thick 閉包に属する。
-逆方向には $P_i$ を bar 複体から分離すれば
-$\mathcal O_i$ が次の四項で生成される。
-従って任意の四項窓は全 $\mathcal O_i$ を生成する。
+各 $V_i^{-p}$ は有限 projective なので、
+相対双対を二回取ることで
+\[
+ V_i^\bullet\simeq\mathcal L_i^\vee[3].
+ \tag{BW-Tor}\label{eq:five-window-terminal-tor}
+\]
+特に $\operatorname{Tor}_p^{W_i}(S_i,S_{i+4}^{\ell})$ は、
+$p=3$ で $\mathcal L_i^\vee$、他の次数で零である。
+これは有限窓の係数複体についての結論であり、
+一般の非平坦基底上の無限 bar 複体を無断で双対化していない。
+
+短完全列 $0\to F_{i,\bullet}\to\mathcal B_{i,\bullet}
+\to Q_{i,\bullet}\to0$ を tails へ移す。
+$\mathcal B_{i,\bullet}\simeq S_i$ かつ $\pi S_i=0$ なので、
+その三角から
+\[
+ \pi F_{i,\bullet}
+ \simeq \pi Q_{i,\bullet}[-1]
+ \simeq \mathcal L_i^\vee\otimes_R\mathcal O_{i+4}[2].
+\]
+左辺の項は $\mathcal O_i,\ldots,\mathcal O_{i+3}$ の
+有限直和・有限回のconeから作られるため、
+$\mathcal O_{i+4}$ はこの四項の thick 閉包に属する。
+逆方向には、増大 bar 解消の次数零項 $P_i$ を分離すれば、
+$\mathcal O_i$ は
+$\mathcal O_{i+1},\ldots,\mathcal O_{i+4}$ の thick 閉包に属する。
+この二つの置換を繰り返し、任意の連続四項から
+すべての $\mathcal O_j$ が得られる。
+補題~\ref{lem:five-window-compact-localization} により、
+全 $\mathcal O_j$ は compact generators なので、
+任意の四項 $T_a$ は compact generator となる。
+
+可換quadricの標準四項窓では、上の係数複体の
+階数 $(9,40,48,16)$ と微分の階数 $(9,31,16)$、
+および $\operatorname{Tor}_3$ の階数一を、
+両parityで厳密計算
+\path{computations/verify_five_window_terminal.py} により確認できる。
+ただしこの単一の可換fiberの計算は、
+本命題の全fiber仮定の代用ではない。
 四項間の higher Ext は \eqref{eq:five-window-tails-cohomology} で零なので
 導来 Morita 定理~\cite[\S\S4.3, 8.2]{Keller1994} が適用できる。
 
@@ -414,6 +465,34 @@ tilting summand は基底上平坦なので、非平坦変更にも実際の導�
 Morita 表示の $-\otimes_{\Lambda_{R'}}^{\mathbf L}\Lambda_{R''}$ と一致する。
 これで (4) を得る。
 \end{proof}
+
+\begin{remark}[導来 Morita 同値と相対 heart の区別]
+\label{rem:noncubic-relative-heart-transport}
+定理~\ref{thm:noncubic-local-tails-effectivity}(3) の同値
+$\Phi_{R'}:D(\operatorname{QGr}B_{R'})
+ \xrightarrow{\sim}D(\operatorname{Mod}\Lambda_{R'})$
+は、右辺に $\operatorname{QGr}B_{R'}$ の標準
+$t$-構造を\emph{移送}する。
+その heart は $\Phi_{R'}(\operatorname{QGr}B_{R'})$ であって、
+一般に $\operatorname{Mod}\Lambda_{R'}$ の標準 heart ではない。
+四項tilting対象の導来同値から、二つの標準 heart が一致すると
+結論してはならない。
+
+本稿の相対 Abel heart は、独立に構成した
+Gabriel 商 $\operatorname{QGr}B_{R'}$ と、その Noetherian
+対象 $\operatorname{qgr}B_{R'}$ である。
+$R'$ が有限型のときの後者の Noetherian 性は
+定理の左右 Noetherian 性と有限次数成分から得る。
+基底変更の Abel 圏としての意味は
+補題~\ref{lem:qgr-module-object-basechange} による
+$\operatorname{QGr}(B\otimes_RR')
+ \simeq(\operatorname{QGr}B)_{R'}$ であり、
+非平坦基底変更に対する\emph{任意の対象}の
+導来 tensor が標準 $t$-exact であるとは主張しない。
+canonical compact 圏と Serre 平方根の比較は導来同値側、
+Noetherian heart・AZ・$\chi_q$・fppf descent は
+この Abel 商側でそれぞれ検証する必要がある。
+\end{remark}
 
 \begin{remark}[局所定理と有限型一様化の役割]
 有限型近傍上の各軌道 Hom は perfect であり、固定した有限個については開性を使える。
