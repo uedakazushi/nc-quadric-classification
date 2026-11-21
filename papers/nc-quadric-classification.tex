@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.42
+% 日本語 LuaLaTeX。2026-11-22 / v1.43
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v1.42（内在的モジュライと滑らかなnoncubic境界）}
+\date{2026年11月22日\quad v1.43（noncubic境界の相対商表示と良モジュライ）}
 
 \begin{document}
 \maketitle
@@ -71,6 +71,11 @@ $\mathfrak H_2\hookrightarrow[X_3/\operatorname{PGL}_9]$ の framed 実現空間
 $X_{\mathrm{as}}$ は、有限型で滑らかな既約・純次元八十三のスキームである。
 被約 noncubic 境界は滑らかで既約な純次元一の閉部分スタックであり、
 その閉埋込みは余次元二の正則閉埋込みである。
+この境界は二形式表示商 $[P/G]$ と相対的に同値であり、
+平坦な良モジュライ射 $\chi:\mathfrak N\to\mathbb A^1$ を持つ。
+その特殊 fiber は $\chi=0$ で二重因子、$\chi=1$ で smooth 局所に $ac=0$ となる。
+一根共有と根対一致は異なる pointed 圏であるが、任意の代数空間への射で同一視される。
+従って全 $\mathfrak H_2$ にも幾何同型類を分類する粗モジュライ代数空間は存在しない。
 ただし一致根対では $X_3$ の接次元が八十四となり、実現像はそこで開ではない。
 
 証明では、cubic 族の普遍 Noetherian 性・相対 Picard 根・canonical AS4 hull と、
@@ -142,6 +147,30 @@ canonical tails の Serre 双加群との比較は第\ref{sec:relative-picard-ro
 全 Artin Abel 変形への一意な根の延長と、有限型 étale 近傍への代数化を得る。
 局所環上では五頂点 bar 解消を使って全軌道・canonical tails と Noetherian heart を認識し、
 二次双対の中心線と反中心の消滅により同じ根の中央 AS4 被覆を延ばす。
+
+\begin{theorem}[noncubic 境界の内在的商表示]
+第~\ref{sec:noncubic-stack}節の非退化二形式空間 $P$ と群 $G$ に対して
+\[
+ \mathfrak N\simeq[P/G]
+\]
+が相対的な対象と pointed exact 同型を含めて成立する。
+不変式 $\chi=D(f_1,f_2)^2/(\Delta(f_1)\Delta(f_2))$ は
+平坦有限表示の good moduli space $\mathfrak N\to\mathbb A^1$ を与える。
+$\chi=0$ の fiber は smooth 被約因子の二重構造、$\chi=1$ は reduced で、
+一致根対では smooth 局所に $ac=0$、他の fiber は smooth である。
+全 $\mathfrak H_2$ は幾何同型類を一対一に分類する粗モジュライ代数空間を持たない。
+\end{theorem}
+
+証明は定理~\ref{thm:noncubic-intrinsic-presentation-equivalence}、
+命題~\ref{prop:noncubic-good-moduli-fibers}、系~\ref{cor:global-h2-no-coarse-space} に置く。
+幾何点の一致に加え、境界 chart 上の相対 normal tilting と反 Serre 再構成で
+実際の族を比較し、慣性と接空間から étale 性を得る。
+良モジュライの一般論は \cite[Theorem 13.2]{Alper2009} の既知入力である。
+全慣性は命題~\ref{prop:noncubic-all-stabilizers} に記述する。
+一致点の連結慣性の全一次変形への重みは $2,-2,0,0$ であり、
+二つの境界横断方向への作用は自明である
+（命題~\ref{prop:noncubic-coincident-torus-weights}）。
+全体の good moduli space の存在は、粗モジュライ不存在とは別の未解決問題である。
 
 \begin{theorem}[全点での Artin 形式認識]
 標数零の代数閉体上の全ての $\HH$ 対象で、
@@ -578,6 +607,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/noncubic_local_tails}
 \input{sections/noncubic_finite_type}
 \input{sections/h2_smooth_atlas}
+\input{sections/noncubic_boundary_comparison}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
@@ -622,7 +652,8 @@ Deligne--Mumford スタックにはならない。
 定理~\ref{thm:global-h2-smooth-finite-type} により $\HHstack$ の有限型代数性は成立し、
 系~\ref{cor:global-xas-smooth-scheme} により framed 実現空間は smooth スキームとなる。
 有限 foundation の ruling 商 $\mathfrak Q_{\mathrm{fnd}}$ との相対比較を具体化し、
-被約 noncubic 境界と二形式表示商の相対 groupoid を比較せよ。
+境界で確立した相対商表示（定理~\ref{thm:noncubic-intrinsic-presentation-equivalence}）を踏まえて、
+全体の相対 groupoid を比較せよ。
 全体の既約性と被約境界の滑らかさ・余次元二は、
 命題~\ref{prop:global-h2-irreducible} と定理~\ref{thm:noncubic-boundary-smooth-codim-two} で成立した。
 既存の smooth proper dg 特殊化族そのものの相対 $\HHstack$ 認識は、各族について別に確認する。

@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.42。主論文v1.42に対応する現行の一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.43。主論文v1.43に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -242,3 +242,9 @@ Polishchuk–Positselski, *Quadratic Algebras*, Chapter 6, Theorem 2.1 / Corolla
 framed実現空間のスキーム性には [Stacks Tag 05W6](https://stacks.math.columbia.edu/tag/05W6), Lemma 76.14.8 と [Tag 03XX](https://stacks.math.columbia.edu/tag/03XX), Proposition 67.50.2の本文と証明を確認した。有限型monomorphismはrepresentable・separated・unramified・quasi-finiteであり、スキームをtargetとするためsourceもスキームとなる。開immersionとは結論しない。
 
 被約noncubic境界については、Stacks Tags [0509](https://stacks.math.columbia.edu/tag/0509)、[050B](https://stacks.math.columbia.edu/tag/050B)、[034E](https://stacks.math.columbia.edu/tag/034E)、[0694](https://stacks.math.columbia.edu/tag/0694)、[063L](https://stacks.math.columbia.edu/tag/063L) の本文を2026-11-22に確認した。被約閉部分の存在と因数分解、smooth topologyでのreducedness、Koszul-regular immersionのfpqc降下、Noetherian表示上の通常のregular immersionとの一致を使う。これらの一般定理と、本稿の二射影行列式の横断性・normal formの証明を区別する。
+
+## 内在的境界の相対比較と粗モジュライ障害
+
+Stacksの一次本文で[0BF6](https://stacks.math.columbia.edu/tag/0BF6) Lemma39.8.2（Cartier）、[02G3](https://stacks.math.columbia.edu/tag/02G3) Lemma29.36.2（微分零によるunramified）、[024T](https://stacks.math.columbia.edu/tag/024T) Proposition41.6.1（unramified射の切断）、[04YY](https://stacks.math.columbia.edu/tag/04YY) Lemma101.6.2（相対慣性によるrepresentability）、[025G](https://stacks.math.columbia.edu/tag/025G)、[0DUD](https://stacks.math.columbia.edu/tag/0DUD) Lemma101.45.7（étale・慣性・幾何groupoidによる同型判定）を2026-11-22に確認した。一般判定は既知入力であり、実際の境界chartの族を二形式模型へ比較する相対tilting・反Serre再構成が本文の追加部分である。
+
+Alper [arXiv:0804.2242v3](https://arxiv.org/pdf/0804.2242v3) のTheorem13.2（affine reductive quotientのgood moduli）、Theorem6.6（代数空間への普遍性）を再確認した。§2の規約はquasi-separatedである。任意の代数空間に対する全H2の粗モジュライ不存在は、この規約を広げず、穿孔直線上でfppf局所定値な族とétale scheme chartを使う本文の直接証明による。χの特殊fiber・全慣性・連結慣性表現の包括的新規性は未確認である。
