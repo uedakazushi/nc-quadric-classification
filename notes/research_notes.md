@@ -402,6 +402,10 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文間の数学的依存と移管の検証単位
 
+**現在の主張の所在：** 相対反Serre再構成 `prop:relative-h2-antiserre-reconstruction`、fppf stack認識 `prop:relative-h2-stack-recognition`、体上回復 `prop:relative-h2-field-recovery`、代数性判定 `prop:relative-h2-algebraicity-reduction` の四つの証明は `papers/moduli/relative_recognition.tex` に統合した。Aは各命題の主張を保持してBを引用し、Bは分類論文の normal helix・相対Veronese・foundationを論文間引用する。今回の移管は数学的新規性や全証明の独立再検証ではなく、参照の整理である。全体の有限型効果性・境界同定の証明は引き続きAにある。
+
+
+
 Aの分類はcubic/noncubic全構成とpointed exact同値判定を含む。Bの有限型smooth Artin性は体上の分類に加え、全Artin形式認識、指定同型付き効果性、全次数HomとKoszul/Noetherian性、同じ根のAS4被覆と降下を必要とする。境界の幾何点の全単射から相対群商の同値は従わない。Cの有限表示空間からの忘却では相対heart・Serre根・AS4被覆と慣性の核を別に確認する。Bには相対H2の正確な定義とAbel flatness・pointed二射剛性、対角列の反例、noncubic表示商の不変式とgood moduli特殊fiber、有限foundation上の反Serre偏極認識の各完全な証明が移管されたが、相対主定理の全証明の正本はAの元の分割節にあり、独立原稿の完成も新しい形式検証も意味しない。
 
 ## 検証範囲と再現手順

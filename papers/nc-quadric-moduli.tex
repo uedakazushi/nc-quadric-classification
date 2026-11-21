@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.6（対角列の反例証明を移管）
+% 日本語 LuaLaTeX。2026-11-22 / v0.7（対角列の反例証明を移管）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v0.6（証明移管中の草稿）}
+\date{2026年11月22日\quad v0.7（証明移管中の草稿）}
 
 \begin{document}
 \maketitle
@@ -60,10 +60,13 @@ framed 実現空間、被約 noncubic 境界の余次元二の正則閉埋込み
 慣性・good/coarse moduli・一致根対に沿う形式局所構造を中心に据える。
 
 \textbf{編集状況：} 本稿は分類主論文からの再編を開始した未完成原稿である。
-主要な相対主結果の完全な証明は現在も分類主論文の相対モジュライ関連の分割節にある。
+相対反 Serre 再構成、fppf stack の認識と全忠実性、体上回復、
+対角と代数性判定への還元の四命題について完全な証明を本稿に移管した。
+全体の有限型効果性・滑らかさと境界の相対同値の主定理の全証明は、
+現在も分類主論文の後続の相対分割節にある。
 相対 $\mathfrak H_2$ の精密な公理とAbel flatness・pointed二射剛性、非可換射影直線束の対角列の反例、二形式表示商の good moduli を与える不変式環と特殊ファイバーの平坦性・局所構造、
 有限 foundation 上の反 Serre 偏極の局所閉認識の各完全な証明を本稿へ移したが、
-モジュライ主定理の証明移管は未完了である。この稿単独で証明が完結したとは主張しない。
+全体の有限型 Artin 性と境界の主定理の証明移管は未完了である。この稿単独で証明が完結したとは主張しない。
 \end{abstract}
 \tableofcontents
 
@@ -78,6 +81,7 @@ Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
 相対的な有限型効果性・stack比較についての新しい証明を区別する。
 
 \input{moduli/relative_definitions}
+\input{moduli/relative_recognition}
 
 \section{内在的モジュライの有限型 Artin 性}\label{sec:moduli-algebraicity}
 主論文では、全 cubic 点の smooth Artin 開と
