@@ -1,0 +1,236 @@
+% 2026-11-21 / v1.40
+% !TEX root = ../nc-quadric-classification.tex
+\section{noncubic の良い根に対する中央 AS4 被覆}
+\label{sec:noncubic-central-hull}
+
+\paragraph{範囲.}
+以下の構成は、中央二重平方環を与える従来の Ore 被覆とは異なる被覆である。
+同じ trace 零交換対合で選んだ Serre 根の軌道環について、切断元自体が中央となる
+AS4 被覆を与える。既存の Ore ambient の中で切断元を中央化する主張ではない。
+新規性は未確認である。
+
+基礎体を標数零の代数閉体とし、\(a,b\in k\)、
+\(\theta=1-ab\ne0\)、\(\delta^2=\theta\) と置く。
+二つの非退化二元二次形式は座標・定数倍を選べば
+\[
+ f_1=uv,\qquad f_2=(u-av)(bu-v)
+       =bu^2-(1+ab)uv+av^2
+\]
+と書ける。二根対の一致も \(a=b=0\) に含まれる。
+\[
+ B_0=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)
+\]
+で \(u,v\) は中央とする。良い交換自己同型は
+\[
+ \sigma(u)=(u-av)/\delta,\quad
+ \sigma(v)=(bu-v)/\delta,\quad
+ \sigma(c)=d/\delta,\quad \sigma(d)=-\delta c
+\]
+であり、\(\sigma^2=\iota\)、\(\iota(u,v,c,d)=(u,v,-c,-d)\) である。
+以下では \(x*y=x\sigma^{\deg x}(y)\) の Zhang 規約を使う。
+
+\begin{theorem}\label{thm:noncubic-central-hull}
+次の六関係環を定める。
+\[
+ A_0=T(u,v,c,d)\Big/
+ \left(
+ [u,c],[u,d],[v,c],[v,d],\;
+ c^2-\frac{uv+vu}{2},\;
+ d^2-bu^2+\frac{1+ab}{2}(uv+vu)-av^2
+ \right).
+\]
+\(A_0\) は左右 Noetherian な quadratic Koszul AS 正則環で、型は
+\((1,4,6,4,1)\) である。
+\(g_0=uv-vu\) は左右正則正規で、
+\[
+ A_0/(g_0)=B_0,\qquad
+ g_0u=-ug_0,\quad g_0v=-vg_0,\quad
+ g_0c=cg_0,\quad g_0d=dg_0.
+\]
+\(\sigma\) は \(A_0\) に延長し、\(\sigma(g_0)=-g_0\) となる。
+従って \(A=A_0^\sigma\) における \(g=g_0\) は中央正則二次元であり、
+\[
+ B_0^\sigma=A/(g).
+\]
+特に、指定した良い Serre 根の全軌道環に対する中央 AS4 被覆が存在する。
+さらに \(E=(B_0^\sigma)^!\) の二次中心は一次元であり、
+この被覆の双対線がその全体である。
+\end{theorem}
+
+\begin{proof}
+まず untwisted な双対 \(E_0=B_0^!\) を計算する。
+\(U,V,C,D\) を \(u,v,c,d\) の双対とし、\(p=C^2,q=D^2\) と置く。
+二次関係の直交補空間から
+\begin{gather*}
+ CD=DC=0,\qquad
+ UC=-CU,\ VC=-CV,\ UD=-DU,\ VD=-DV,\\
+ U^2=-bq,\qquad V^2=-aq,\qquad
+ UV+VU=-p+(1+ab)q
+\end{gather*}
+を得る。\(p,q\) は中央、\(pq=0\) である。
+\(E_0\) は Koszul で、Hilbert 級数は
+\(h_{E_0}(t)=(1+t)^4/(1-t^2)\) である。
+既存の Ore 被覆の双対により \(\zeta=p+q\) は正則である
+（定理~\ref{thm:ore-anticommuting-central} の双対表示）。
+具体的には $E_0/(p+q)$ は同定理の Ore ambient の二次双対で、
+Hilbert 級数は $(1+t)^4$ である。$p+q$ は中央だから、その乗法の完全列と
+$h_{E_0}(t)=(1+t)^4/(1-t^2)$ の係数比較でも左右の核が零と分かる。
+
+\(\chi=UV-VU\) と置くと、Clifford の二生成元計算から
+\[
+ \chi U=-U\chi,\quad \chi V=-V\chi,\quad
+ \chi C=C\chi,\quad \chi D=D\chi,\qquad
+ \chi^2=p^2+\theta^2q^2.
+\]
+\(\chi^2(p^2+\theta^{-2}q^2)=(p+q)^4=\zeta^4\) だから、
+\(\zeta\) の左右正則性により \(\chi\) も左右正則である。
+従って \(P_0=E_0/(\chi)\) は正則正規二次商であり、Koszul である
+（命題~\ref{prop:all-h2-antiserre-koszul} の環変換による証明を適用する）。
+その Hilbert 級数は \((1+t)^4\) である。
+
+\(P_0\) の Frobenius 性を明示的に確認する。
+以下、\(P_0\) 内の同じ文字を用い、最高次数の \(q^2\) の係数を trace とする。
+\(P_0\) では \(UV=VU\)、\(p^2=-\theta^2q^2\) である。
+関係から次数四の全ての語は \(q^2\) の倍数へ還元される。
+交差項の消滅を明記すると、
+\[
+ pU=(1+ab)qU+2bqV,\qquad pV=2aqU+(1+ab)qV
+\]
+を $D$ 倍した二式の係数行列は行列式 $\theta^2$ を持つ。
+$pD=0$ なので $qUD=qVD=0$ となる。$qC=0$ と同じ二式から
+$pUC=pVC=0$ も従い、残る語は $p^2,q^2$ の倍数に還元される。
+Hilbert 級数によって \(\dim(P_0)_4=1\) なので \(q^2\ne0\) である。
+次数三の基底を
+\[
+ Uq,\ Vq,\ C^3,\ D^3
+\]
+と取れる。実際、これらが全てを張ることは上の関係から従い、次元は四である。
+次数一の基底 \((U,V,C,D)\) との積の行列は
+\[
+ \begin{pmatrix}
+ -b&(1+ab)/2&0&0\\
+ (1+ab)/2&-a&0&0\\
+ 0&0&-\theta^2&0\\
+ 0&0&0&1
+ \end{pmatrix}.
+\]
+左上 block の行列式は \(-\theta^2/4\) なので非退化である。
+逆順の積も、交差反交換の符号を除いて同じ非退化行列を与える。
+次数二には基底 \((p,q,UC,VC,UD,VD)\) を取り、その積の行列は次の
+三 block の直和である。
+\[
+ \operatorname{diag}(-\theta^2,1),\qquad
+ \begin{pmatrix}0&-\theta^2/2\\-\theta^2/2&0\end{pmatrix},\qquad
+ \begin{pmatrix}b&-(1+ab)/2\\-(1+ab)/2&a\end{pmatrix}.
+\]
+いずれも非退化である。これで \(P_0\) は Koszul Frobenius、最高次数四となる。
+
+直交補空間を再び取ると \(P_0^!\) は定理の六関係環 \(A_0\) である。
+Koszul 双対性と Frobenius pairing により \(A_0\) は型
+\((1,4,6,4,1)\) の AS 正則環で、\(h_{A_0}(t)=(1-t)^{-4}\) となる。
+\(g_0\) の正規性は表示からも直接見える。
+\(c^2=(uv+vu)/2\) は \(u,v\) と可換であるから、
+\([u,uv+vu]=ug_0+g_0u=0\)、
+\([v,uv+vu]=-vg_0-g_0v=0\) である。
+交差交換関係から \(g_0\) は \(c,d\) と可換である。
+商は明らかに \(B_0\) であり、
+\(h_{B_0}(t)=(1-t^2)h_{A_0}(t)\) を各次数の正規元商の完全列へ適用すれば、
+\(g_0\) の左右乗法の核は零である。
+\(B_0\) の左右 Noetherian 性と正則正規元による標準的な有限次数フィルターの
+持上げから、\(A_0\) も左右 Noetherian となる。
+
+最後に twist を確認する。
+対称二次形式 \((uv+vu)/2\) と
+\(bu^2-(1+ab)(uv+vu)/2+av^2\) は、\(\sigma\) により係数
+\(\theta^{-1},\theta\) を伴って交換される。
+従って六関係は保存され、\(\sigma\) は \(A_0\) の自己同型である。
+\(\det(\sigma|_{\langle u,v\rangle})=-1\) なので \(\sigma(g_0)=-g_0\) である。
+\(g_0\) の normalizer は \(-\iota\) だから、一次元 \(x\) について
+\[
+ g_0*x=g_0\sigma^2(x)=g_0\iota(x)=-xg_0
+             =x\sigma(g_0)=x*g_0.
+\]
+これで \(g\) は中央である。twist は Koszul 性、AS 型、Noetherian 性、正則性を保つ。
+
+中心の一意性を示す。
+\(\alpha=\sigma^{-t}\) を双対空間上の自己同型とすると、二次関係の直交補空間より
+\[
+ (B_0^\sigma)^!\cong E_0^\alpha,\qquad
+ \alpha^2=\iota,\quad\alpha(\chi)=-\chi.
+\]
+従って \(\chi\) の twisted な像は中央であり、この線の商は \(P_0^\alpha\) である。
+\((E_0)_2\) の基底は
+\(p,q,\chi,UC,VC,UD,VD\) である。
+\(\alpha^4=1\) なので、twisted center の元を \(\alpha\)-固有元
+\(\alpha(z)=\lambda z\) に分解できる。
+中心条件は
+\[
+ zx=\lambda xz\quad(x=U,V),\qquad
+ zx=-\lambda xz\quad(x=C,D)
+\]
+となる。
+\(\lambda=\pm i\) なら \(z\) は四つの交差項の線形結合である。
+\(C,D\) との式と \(CD=0\) より各係数は零となる。
+この線形独立性は \(\zeta\) で局所化し、直交する \(p/\zeta,q/\zeta\) の二成分で
+\(C,D\) をそれぞれ可逆にして確認できる。
+各成分の二元 Clifford 表示では \(U,V\) は独立であり、
+非退化二次形式により \(\chi/p\)、\(\chi/q\) は scalar ではない。
+\(\lambda=1\) なら \(z\in\langle p,q,\chi\rangle\) で、\(C,D\) との反交換条件は
+上の二成分で \(z=0\) を与える。
+\(\lambda=-1\) なら \(U,V\) との反交換条件で \(p,q\) の係数が零となり、
+\(z\in k\chi\) となる。
+\(\zeta\) の正則性により局所化前にも同じ結論となる。
+よって二次中心はちょうどこの一本の線である。
+\end{proof}
+
+\begin{lemma}[良い noncubic 根では二次反中心が消える]
+\label{lem:noncubic-no-quadratic-anticenter}
+定理~\ref{thm:noncubic-central-hull} の \(E=(B_0^\sigma)^!\) について
+\[
+ Z(E)_2=k\chi,\qquad
+ Z^-(E)_2:=\{z\in E_2\mid zx=-xz\ (x\in E_1)\}=0
+\]
+である。最初の式の \(\chi\) は同定 \(E=E_0^\alpha\) による像を表す。
+\end{lemma}
+\begin{proof}
+中心の式は前定理による。反中心も \(\alpha\) により保たれる。
+\(\alpha(z)=\lambda z\) とすれば、反中心の条件は untwisted な積で
+\[
+ zx=-\lambda xz\quad(x=U,V),\qquad
+ zx=\lambda xz\quad(x=C,D)
+\]
+となる。\(\alpha^4=1\) だから \(\lambda\in\{1,-1,i,-i\}\) ごとに調べればよい。
+\(\lambda=\pm i\) の場合は \(z\) が交差四項の線形結合となり、
+\(C,D\) との式、\(CD=0\)、\(\lambda\ne-1\) により全ての係数が零になる。
+\(\lambda=1\) の場合は \(z\in\langle p,q,\chi\rangle\) であり、
+\(U,V\) との反交換条件が \(p,q\) の係数を消す。
+残る \(\chi\) は \(\alpha\)-固有値 \(-1\) を持つため、この場合にも \(z=0\) である。
+\(\lambda=-1\) では \(U,V\) との可換条件が \(\chi\) の係数を消し、
+\(C,D\) との反交換条件が \(p,q\) の係数を消す。
+これらの係数比較は \(\zeta=p+q\) で局所化した二つの Clifford 成分で行える。
+\(\chi\) は正則であり、各成分の \(U,V\) は非零であることに注意する。
+\(\zeta\) も正則なので局所化前の反中心は零である。
+\end{proof}
+
+
+\begin{remark}[相対化と横断族への適用で分ける入力]
+明示 noncubic 表示族上では、\(2\theta\) が単元となる任意の可換 Noetherian 基底に
+上の構成を相対化できる。双対の各次数の projectivity は既存の相対 Koszul 補題による。
+\(\chi\) 乗法は各幾何 fiber で単射であるから局所直和因子への単射となり、商も
+任意の基底変更と両立する有限 projective 加群となる。
+上の pairing の行列式は単元なので、相対 Frobenius 条件も成立する。
+商に PP の相対 Koszul 定理を適用することで双対 ambient の全次数平坦性を得る。
+正規元商からの Noetherian 持上げは任意の Noetherian 基底変更後にも適用できる。
+
+横断族では、この計算だけから全軌道の平坦性や canonical heart は従わない。
+ただし、被約有限型基底 \(S\) 上にその良い根の平坦な Koszul 軌道環 \(B\) があり、
+\(E=B^!\) の二次・三次が階数七・八の束であると仮定する。
+稠密な cubic 開部分上で同じ根の canonical hull が中央であるなら、
+commutator 写像 \(E_2\to\mathcal Hom(E_1,E_3)\) の階数は稠密開で高々六である。
+被約性により七次 minors は全体で零であり、上の定理は noncubic 点で階数六を与える。
+従ってその点の近傍で核は任意の基底変更と両立する可逆部分束となる。
+これが延ばすべき中央線であり、従来の Ore 被覆の正規線ではない。
+局所環上では、次節の定理~\ref{thm:noncubic-local-central-hull} がこの入力を確認する。
+全軌道平坦性、同じ根と cubic canonical 周期との比較、有限 AS4 条件を満たす
+単一近傍の構成、Noetherian heart の認識は、この線の延長と別に記載する必要がある。
+\end{remark}

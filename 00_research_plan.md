@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.40。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.39、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.41。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.40、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -14,7 +14,7 @@
 
 **局所代数性を支える有限型効果性。** 標準Morita根を有限型étale近傍へ代数化し、二周期cubic列の全Hom・普遍解消・相対Koszul性・homological AS4被覆を同じ開U°上に構成した。任意affine基底でD(QGr B)≃D(Mod Λ)、compact≃Perf Λ、shift≃Serre根となる。相対point curveとKeelerの消滅、regular normal族、linear閉部分の厳密なSegre表示、次数別完備化による貼合せから、任意Noetherian基底変更後のBとAの左右Noetherian性を証明した。一般Hom有限・flat basechange・fppf・AZ・全χ・全軌道と同じ根のAS4被覆が揃う。証明は `relative_cubic_tails.tex`、`relative_noetherian_patching.tex`、`relative_cubic_noetherian.tex`。元のsite外の局所環については有限型R-test上の同じ公理という範囲を守る。
 
-**Artin変形の確立した入力。** 全H2の切断環・反Serre環はKoszul。三次まで平坦でfiberがKoszulなら全次数平坦・相対Koszulとなる。全flat Abel Artin変形にはrank24のfinite foundationとcanonical反Serre軌道環があり、偏極忘却の接核はHH¹、Abel変形はHH³=0により無障害。可換Qの標準根は全Artin変形に存在しMorita類が一意、canonical hullのAS4被覆を持つ。形式H2＝Abel、接次元9・慣性次元6。異なる根対のnoncubic点でX3はsmooth・次元83、商は次元3となるが、その内在H2認識は別。`relative_koszul.tex`、`artin_foundation.tex`、`artin_roots.tex`、`quadric_artin_hull.tex`。Jacobianによる全一次方向の明示構成も保持する。
+**Artin変形の確立した入力。** 全H2の切断環・反Serre環はKoszul。三次まで平坦でfiberがKoszulなら全次数平坦・相対Koszulとなる。全flat Abel Artin変形にはrank24のfinite foundationとcanonical反Serre軌道環があり、偏極忘却の接核はHH¹、Abel変形はHH³=0により無障害。可換Qの標準根は全Artin変形に存在しMorita類が一意、canonical hullのAS4被覆を持つ。形式H2＝Abel、接次元9・慣性次元6。異なる根対のnoncubic点でX3はsmooth・次元83、商は次元3となる。内在H2との全Artin比較は下記の中央被覆と局所tailsによる。`relative_koszul.tex`、`artin_foundation.tex`、`artin_roots.tex`、`quadric_artin_hull.tex`。Jacobianによる全一次方向の明示構成も保持する。
 
 **noncubic変形の具体的なétale表示。** `prop:noncubic-lagrangian-etale-slice` により、Lagrangian Grassmannian LG(4,8)の開部分を7次元群で割った商から、全noncubic点を含むfoundation変形の開部分への表現可能なétale射を得る。法軌道写像の行列式はPlücker O(3)の切断で、正規形では−32α。根対一致では対角L₀を選ぶ必要があり、別のtrace零交換根にはHH²の負方向が1次元残る。有限代数の局所表示であって、内在H2のatlasとはまだ主張しない。
 
@@ -26,9 +26,13 @@
 
 **明示noncubic表示族の全相対認識。** `thm:noncubic-relative-effectivity` は二つの非退化二元二次形式の表示スタックNpres=[P/G]から、実際のH2族を構成する。中央Clifford表示を重み付き射影スタックX=P_R(1,1,2)上の有限局所自由代数へ移す。G=⊕_{i=0}³B~(i)はtiltingではなくcompact generatorであり、そのdg Endとweighted Čechからproper性・任意導来基底変更を得る。中心有限代数上のR-flat加群のfiber-perfect持上げを用いて対角のperfect性を証明し、canonical compactのsmoothnessを確認する。traceによる同じ根のSerre平方、AZ・全軌道、Ore/PBWによる普遍Noetherianな相対AS4被覆を合わせ、全相対公理を満たす。Npresは次元1であり、noncubic点の全横断変形を覆うatlasや相対全忠実性は結論しない。
 
-**全noncubic点の良い根と有限型代数化。** `thm:noncubic-hh-trivial-root` は、根対を交換するtrace零対合から選ぶ適合Serre根が、全foundation変形のHH¹・HH²へ恒等に作用することを証明する。四平面Gr(4,8)の交代Gale双対として根の作用を計算し、接の正負次元(10,6)と有効基底変更Lieの(7,6)を比較する。根対非一致ではHH¹=0・HH²=3、一致ではHH¹=1・HH²=4で、いずれも負のHH部分は零となる。従って全Artin Abel変形へ根が延び、そのMorita類は一意である。`prop:hh2-etale-morita-root` と `cor:noncubic-etale-morita-root` により、全noncubic点の有限型étale近傍上で実際の可逆双加群・Serre平方同型・二項窓の比較を構成できる。これは同じ根のAS4被覆や相対heartの横断認識とは別の結果である。
+**全noncubic点の良い根と有限型代数化。** `thm:noncubic-hh-trivial-root` は、根対を交換するtrace零対合から選ぶ適合Serre根が、全foundation変形のHH¹・HH²へ恒等に作用することを証明する。四平面Gr(4,8)の交代Gale双対として根の作用を計算し、接の正負次元(10,6)と有効基底変更Lieの(7,6)を比較する。根対非一致ではHH¹=0・HH²=3、一致ではHH¹=1・HH²=4で、いずれも負のHH部分は零となる。従って全Artin Abel変形へ根が延び、そのMorita類は一意である。`prop:hh2-etale-morita-root` と `cor:noncubic-etale-morita-root` により、全noncubic点の有限型étale近傍上で実際の可逆双加群・Serre平方同型・二項窓の比較を構成できる。このMorita根を、下記の局所環上の全軌道・中央被覆の構成へ使う。
 
-**残る核心はnoncubic境界の横断効果性である。** 全cubic領域と明示noncubic表示族は相対H2として認識でき、全noncubic点の良い根も全Artin・有限型étale近傍へ延長できた。次は同じ根の全軌道に対するAS4被覆の高次持上げと、有限型近傍上の一様なcanonical tails・Noetherian性・AZを証明する。三有理配置での正規線の一次持上げは、高次の存在証明へ外挿しない。閉noncubic部分と開cubic部分で実際の代数族が得られれば、形式的Noetherian貼合せを適用する。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
+**良いnoncubic根の中央AS4被覆。** `thm:noncubic-central-hull` は、二形式f₁=uv、f₂=(u−av)(bu−v)、θ=1−ab≠0の全配置で、従来のOre被覆とは別の六関係環A₀を構成する。g₀=uv−vuはuntwisted環で正則正規、良い根によるtwist後に中央となる。二次双対のχ=UV−VUを割ったKoszul Frobenius環のpairing行列式はθ⁴/4と−θ⁸/16。twist後の二次中心は一次元、二次反中心は零である。一般係数の厳密検算と全次数の構造証明を区別する。
+
+**noncubic局所環上の効果性と全Artin認識。** 五頂点の非極小bar解消により、極小Betti数の変動を許して、同じ局所環上の全前向きHom・全軌道・canonical tails・Noetherian heartを構成した。二次双対の反中心消滅はgeneric cubic canonical線のnormalizerが−1となる可能性を排除し、中心直線を直和因子として延長する。閉fiberの正則性と単元minorから全次数の中央AS4被覆が延びる。指定還元同型付きArtin変形をétale foundation chartへ持ち上げると、全noncubic点で形式H2変形＝pointed Abel変形となる。非一致根対では接3・慣性0、一致では接4・慣性1、いずれも無障害。既存cubic結果と合わせ、全H2幾何点でArtin形式認識が成立した。証明は `thm:noncubic-local-tails-effectivity`、`thm:noncubic-local-central-hull`、`cor:noncubic-all-artin-h2`。
+
+**残る核心は有限型近傍上への一様化である。** 全H2点のArtin形式認識と、noncubic点の局所環上の全軌道・中央AS4被覆・Noetherian heartは成立した。未解決なのは、これらを単一の有限型étale近傍上へ同時に広げ、全幾何fiberのrank-one torsion-free条件と内在的H2認識を証明する段階である。無限個の開条件の共通部分を開と扱わない。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
 
 **別稿と研究間の関係。** `papers/quiver-avatar-moduli.tex`（v0.1）は有限foundationの8/10/12矢chart、重み四QP、反標準avatarを扱う独立論文である。体上の表示と相対H2の実現条件を区別する。cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は構成済みだが、一般族の内在H2条件は未完成。詳細な主張状態は下の表と研究ノートを正本とする。
 
@@ -140,7 +144,10 @@ $$
 | 全cubic点の形式H2＝Abelとsmooth開部分 | 相対Picard根とquintuple Artin持上げ。有限型・smooth・純次元3。noncubicは含めない | `thm:cubic-smooth-open`, `cor:cubic-formal-h2-abelian` |
 | noncubic全変形のLagrangian étale表示 | LG(4,8)の開と7次元群の商。全noncubic点を含むfoundation開への表現可能étale射。根対一致での良い選択と反例を分離 | `prop:noncubic-lagrangian-etale-slice`, `rem:noncubic-offdiagonal-root` |
 | 楕円型の全O標識と忘却判定 | δ≠0、η∉Zδ。全Z²標識、有限自己同型群を含む同値式。非捩れで可算無限、捩れで有限 | `thm:elliptic-marking-lattice-fiber` |
-| 全noncubic点の良い根とétale代数化 | trace零交換根のHH¹・HH²恒等作用、全Artin Abel変形への一意延長、有限型étale近傍上の実際のMorita根。AS4横断認識は別 | `thm:noncubic-hh-trivial-root`, `cor:noncubic-root-all-artin`, `cor:noncubic-etale-morita-root` |
+| 全noncubic点の良い根とétale代数化 | trace零交換根のHH¹・HH²恒等作用、全Artin Abel変形への一意延長、有限型étale近傍上の実際のMorita根。被覆の全Artin認識は下記の別定理 | `thm:noncubic-hh-trivial-root`, `cor:noncubic-root-all-artin`, `cor:noncubic-etale-morita-root` |
+| 良いnoncubic根の中央AS4被覆 | θ≠0の全配置。六関係の新しいambient、twist後に中央、二次中心1・反中心0 | `thm:noncubic-central-hull`, `lem:noncubic-no-quadratic-anticenter` |
+| 五頂点窓と局所canonical tails | 同じNoetherian局所基底上で全軌道自由・Noetherian heart・任意導来基底変更。極小Betti数の固定を不要にする | `lem:five-window-bar-lifting`, `prop:five-window-canonical-tails`, `thm:noncubic-local-tails-effectivity` |
+| 局所中央被覆と全noncubic Artin認識 | regular local foundation chartのgeneric cubicを使って中心線を延長。全Artinで形式H2＝Abel、無障害。全有限型開一様化は未証明 | `thm:noncubic-local-central-hull`, `cor:noncubic-all-artin-h2` |
 | 可換Qの全一次変形の相対H2実現 | Jacobian AS4被覆とZhang補正。任意有限次元二乗零理想へ拡張。内在接dim9、偏極付き接dim15、核dim6 | `thm:quadric-all-first-order-h2`, `cor:quadric-intrinsic-tangent` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
 
@@ -200,7 +207,9 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **noncubic境界の横断効果性を完成する。** 良い根のHH¹/HH²恒等作用、全Artin延長と有限型étale代数化は成立した。同じ根のAS4被覆について、二次双対の正規二次線を高次まで延長する方法、またはcubic canonical hullの境界での代数的延長を調べる。有限五頂点窓のbar解消とfiber-perfect判定から、cubic/noncubicのBetti数の変動を許すcanonical tails比較を構成する。Noetherian性は閉noncubic表示と開cubic表示の実際の相対比較を確立してから `thm:patch-noetherian` で扱う。dim1の表示商だけで横断Abel方向を覆ったとせず、根・全軌道・被覆・heartの残る入力を個別に閉じる。
+1. **局所環上の構成を一つの有限型étale近傍へ広げる。** まず良いMorita根の有限軌道窓からB₁・七次関係J・中心線Nを同じ開上にspreadし、有限AS4判定の非退化minorを可逆化する。PPの三次平坦性から得る提示環と実際の全軌道環の比較を、五頂点bar複体と四周期で全次数へ伝播する補題を証明する。各次数別の開性だけでは不十分である。
+2. **全fiberの内在認識とNoetherian一様性を閉じる。** 上の開上でgeometric cubic部分とnoncubic部分の実際のheart・軌道表示を比較し、rank-one torsion-freeを確認する。必要なら `thm:patch-noetherian` を使う。局所環上のNoetherian性・全Artin認識を未解決へ戻さず、有限型開上で不足する入力を特定する。
+3. **効果的近傍から全H2の代数性へ進む。** 指定同型付きArtin持上げとaffine有限表示対角を用い、cubic側と同じsmooth atlasの議論を適用する。その前提である実際の有限型H2族を先に完成する。
 
 有限型基底上での代数的表現の目標は、$X_{\mathrm{as}}$ を有限型代数空間として表すことである。局所閉部分スキームとしての構成は十分条件だが必要条件とは主張しない。一般Noetherian基底への連続拡張・極限保存性と、貼り合わせた局所compact圏が大域のcanonical $D(\operatorname{Ind}\mathcal C)^c$ に一致することは別に確認する。
 

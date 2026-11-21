@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.39。主論文v1.39に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.40。主論文v1.40に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -43,7 +43,7 @@ K. Bauwens, M. Van den Bergh, *Normalizing Extensions of the Two-Veronese of a T
 
 相対化ではE=B!の次数別projectivityから正規線Nの乗法を局所分裂単射にし、P=E/(N)のflatnessを先に得る。その後PP Chapter6 Theorem7.3をPへ適用してA=P!を全次数projectiveにする。有限projective間のfiber同型判定により、Frobenius pairingと正則正規二次商を基底上で確認する。βとcanonical四周期θを区別し、T=β⁻²θに対してφξ=(ξ∘T)φ、gu=T⁻¹(u)gという向きもtensor式で確かめた。Serre平方条件はこのAS4被覆の構成に含めず、別の双加群比較条件とする。
 
-`sec:quadric-artin-hull` は一般定理を可換Qの全Artin変形へ適用する節である。標準Serre根の持上げと `prop:artin-witness-relative-promotion` によって全相対条件を得る。BV1998・VdB2011の体上の結果は既知入力であり、相対化の包括的な新規性は未確認。証明を独立読取りしたが、形式証明器・外部査読による検証は未実施である。一般の内在H2点の全Abel変形に適合根を供給すること、および全H2の代数性は残る。
+`sec:quadric-artin-hull` は一般定理を可換Qの全Artin変形へ適用する節である。標準Serre根の持上げと `prop:artin-witness-relative-promotion` によって全相対条件を得る。BV1998・VdB2011の体上の結果は既知入力であり、相対化の包括的な新規性は未確認。証明を独立読取りしたが、形式証明器・外部査読による検証は未実施である。全H2点の全Abel Artin変形への適合根とAS4被覆は、cubic側の相対Picard構成とnoncubic側の中央被覆延長により供給した。全H2の有限型代数性は残る。
 
 ## Koszul 性・Hochschild 変形・三次平坦性
 
@@ -84,6 +84,12 @@ Zhang, *Twisted Graded Algebras and Equivalences of Graded Categories*, Proc.Lon
 Bondal–Van den Bergh, *Generators and representability of functors in commutative and noncommutative geometry*, Moscow Mathematical Journal **3** (2003), 1–36, DOI [10.17323/1609-4514-2003-3-1-1-36](https://doi.org/10.17323/1609-4514-2003-3-1-1-36), [arXiv math/0204218v2](https://arxiv.org/abs/math/0204218v2) の§4.1、Lemmas 4.1.3–4.1.7と直後のunbounded導来関手、Lemma 4.2.2を一次PDFで確認した。原典の体上の仮定を一般基底へ無条件に適用せず、現行 `relative_cubic_tails.tex` では、有限projective係数のcubic解消を用いてtorsionのacyclicity・cdτ≤3・cdω≤2・直和整合性を再証明する。局所化の向きはπ⊣Rω、三角はRτX→X→RωπXである。
 
 四項tiltingからのMorita同値はKeller1994 §§4.3,8.2を用いる。体上分類・Noetherian性はVdB2011の別の入力である。相対定理はNoetherian性なしのGrothendieck導来比較と、Noetherian性を仮定したcoherent heartの全相対認識を区別する。全χの証明では、有限presentationとcohomological dimension二から同じ基底全体のSerre消滅を得る。新規性の包括的な文献比較は完了していない。
+
+## 五頂点窓・局所中央被覆・全Artin認識
+
+Stacks Project [Tag 0BDK, Lemma 36.31.3](https://stacks.math.columbia.edu/tag/0BDK) は、perfect複体が所定次数・所定階数の局所自由加群になる開部分を、任意の導来引戻しと両立する普遍性で特徴づける。2026-11-21に原文を確認した。局所環の閉点でこの条件が成立すれば同じ局所環全体で成立する。本稿はこれを全前向きHomごと、および有限bar複体の各成分へ適用する。無限個の開集合の交叉を開とする定理ではない。
+
+noncubicの五頂点非極小bar、中心線と反中心消滅による中央AS4横断延長は本文の直接証明であり、既知文献の定理として引用しない。canonical周期のSerre同定は `lem:cubic-serre-period` に依存する。Mori–Nyman [著者PDF](https://faculty.nymana.wwu.edu/regV8.pdf) Theorem 6.8のASF++仮定を保ち、本文で必要な双加群構造を確認する。De Deken–Lowen [EMS原典](https://ems.press/content/serial-article-files/30497) Theorems 5.13, 5.15によるhelix/thread変形比較は既知入力であり、指定閉fiberの同型を保つ基底選択とétale lift、相対H2への昇格は本文で行う。中央AS4被覆・局所横断構成の包括的な先行研究比較と新規性確定は未完了。
 
 ## Noetherian 性の貼合せと非可換P¹束の障害
 

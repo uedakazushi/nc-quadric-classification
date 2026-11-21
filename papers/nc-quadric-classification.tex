@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.39
+% 日本語 LuaLaTeX。2026-11-21 / v1.40
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.39（Lagrangian局所表示・楕円型の有限忘却）}
+\date{2026年11月21日\quad v1.40（全点でのArtin認識・中央AS4被覆）}
 
 \begin{document}
 \maketitle
@@ -112,7 +112,11 @@ Hochschild 一次・二次に恒等に作用することを証明する。
 Lagrangian Grassmannian の開部分の群商から表現可能な étale 射を与える。
 法方向の六次行列式により良い根の選択を具体化し、根対一致時の
 別の trace 零根には負の Hochschild 二次方向が残ることも示す。
-同じ根の AS4 被覆と相対 heart の横断認識は残る。
+五頂点の非極小 bar 解消から、その局所環上の全軌道と canonical tails を認識する。
+さらに良い noncubic 根の軌道環に中央 AS4 被覆を明示し、
+二次双対の反中心の消滅を使って、同じ被覆を全 Artin 横断変形へ延長する。
+従って全 $\HH$ 幾何点で形式変形 groupoid は pointed Abel 変形と一致する。
+有限型の一つの近傍上への全次数一様化はなお残る。
 また構造対象 $\OO$ を忘れる際の幾何点ファイバーについて、
 滑らかな楕円型で $\eta\notin\mathbb Z\delta$ なら、二反射と
 対角移動で全ての $\mathbb Z^2$ 標識を構成し、数値類ごとの一意性から全被覆を得る。
@@ -165,8 +169,21 @@ canonical tails の Serre 双加群との比較は第\ref{sec:relative-picard-ro
 適切に選んだ根の Hochschild 一次・二次への作用が恒等であると示す。
 系~\ref{cor:noncubic-root-all-artin} と系~\ref{cor:noncubic-etale-morita-root} により、
 全 Artin Abel 変形への一意な根の延長と、有限型 étale 近傍への代数化を得る。
-同じ根の被覆・相対 heart の横断認識は別途必要であり、
-これらの定理から $\HHstack$ 全体の代数性は結論しない。
+局所環上では五頂点 bar 解消を使って全軌道・canonical tails と Noetherian heart を認識し、
+二次双対の中心線と反中心の消滅により同じ根の中央 AS4 被覆を延ばす。
+
+\begin{theorem}[全点での Artin 形式認識]
+標数零の代数閉体上の全ての $\HH$ 対象で、
+$\HHstack$ から pointed Abel 圏への忘却は Artin 形式変形 groupoid の同値を与える。
+この変形問題は無障害であり、接次元から無限小慣性次元を引くと三となる。
+noncubic 点では、二根対が異なると両次元は $(3,0)$、一致すると $(4,1)$ である。
+\end{theorem}
+
+noncubic 部分の証明は系~\ref{cor:noncubic-all-artin-h2} に置く。
+同じ根の中央被覆は定理~\ref{thm:noncubic-central-hull}、
+局所環上の延長は定理~\ref{thm:noncubic-local-central-hull} による。
+この形式認識から、有限型の一つの開近傍で全軌道と全幾何 fiber が一様に認識できることは
+直ちには従わない。$\HHstack$ 全体の代数性は引き続き未証明である。
 
 \subsection{先行研究と本稿の範囲}
 
@@ -175,6 +192,10 @@ canonical tails の Serre 双加群との比較は第\ref{sec:relative-picard-ro
 その体上の定理を一般基底へそのまま適用せず、
 有限 projective 係数の cubic 解消から acyclicity と有限 cohomological dimension を
 証明し直す（第\ref{sec:relative-cubic-tails}節）。
+noncubic 境界では極小 Betti 数が跳ぶため、五頂点の非極小 bar 解消へ置き換える
+（第\ref{sec:noncubic-local-tails}節）。
+有限 perfect 複体の特殊 fiber の集中から同じ局所環上の全前向き Hom を制御する。
+この段階には perfect 複体の標準的な fiber 判定\cite[Tag 0BDK]{StacksPerfectFibers} を用いる。
 これにより任意基底での canonical な非有界導来比較を得る。
 Noetherian 性は別に証明する必要があり、第\ref{sec:relative-cubic-noetherian}節で
 相対 point curve と正規族を scheme-theoretic に構成して解決する。
@@ -569,6 +590,8 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/cubic_smooth_atlas}
 \input{sections/relative_noncubic_families}
 \input{sections/noncubic_hh_roots}
+\input{sections/noncubic_central_hull}
+\input{sections/noncubic_local_tails}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
