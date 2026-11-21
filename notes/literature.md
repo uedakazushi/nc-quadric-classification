@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.44。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.45。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -8,6 +8,26 @@
 本研究の対象は、構造として指定された $(\mathcal C,\mathcal O)$ であり、exact autoequivalence $s$、同型 $s^2\simeq\mathbb S^{-1}[2]$、および orbit algebra の quadratic AS-regular ambient 表示は存在条件として扱う。この区別を保った分類と marking 忘却が課題である。
 
 既知の cubic AS-regular $\mathbb Z$-algebra、geometric quintuple、admissible quadruple の分類や hypersurface embedding を新成果として扱わない。特に、quadratic hull の存在と quadratic envelope による canonical recovery は別の主張である。
+
+## AS正則 Z-algebra の単純加群双対条件と引用先
+
+Mori–Nyman, A categorical characterization of quantum projective Z-spaces（書誌はMN2025）。
+著者公開原稿 [regV8.pdf](https://faculty.nymana.wwu.edu/regV8.pdf) の印刷p.23, Definition 4.2 (ASR1)--(ASR2) を2026-11-22に一次資料として直接確認した。
+ASR1は各右単純加群 $S_i$ のprojective dimensionが $d$ であること、
+ASR2は
+\[
+ \operatorname{Ext}_C^q(S_i,P_j)=
+ \begin{cases}k&q=d,\ j=i+\ell,\\0&\text{それ以外}\end{cases}
+\]
+を要求する。五頂点barの(BW-fiber)は、分類論文Aのnormal helixから得る
+$d=3,\ell=4$ のAS正則Z-algebraにこれを適用する。
+同論文Theorem 4.8はAS正則からASF正則への含意であり、
+Proposition 4.11はASF局所コホモロジーとExtの比較である。
+この二箇所を単純加群Ext消滅の直接根拠とはしない。
+各最小projective解消に現れる $P_{i+4}$ 一個という事実は
+論文Aの cor:normal-cubic-defect を別に用いる。
+今回は著者稿regV8の該当箇所を確認したもので、arXiv v1や出版版の
+定理番号の完全一致まで確認したものではない。
 
 ## compact 局所化の一次資料
 

@@ -1,6 +1,40 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.68（A v1.69・20節、B v0.28・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.69（A v1.69・20節、B v0.30・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 全noncubic幾何fiberのBW条件と平坦coherent Hom
+
+論文Bの lem:normal-foundation-BW-fiber では、
+各幾何fiberが論文Aのnormal foundationと同定できれば、
+Aの cor:normal-cubic-defect により右単純加群の長さ三・五頂点支持の
+projective解消と終項 $P_{i+4}$ 一個を得る。
+さらにMori–Nyman Definition 4.2 (ASR2)の双対条件により
+$\operatorname{Ext}^q(S_i,P_j)=0$ unless $(q,j)=(3,i+4)$ であり、
+その例外は $k$ となる。Theorem 4.8はAS⇒ASFであり、
+単純Extの直接根拠ではない。
+各幾何fiberのnormal foundation認識は
+prop:lagrangian-geometric-recognition-open の三分岐
+（det M≠0、det N≠0、両rank3）に依存する。
+原稿にはその全幾何点認識の証明があるが、今回各分岐の
+全推論を独立再検証したとは言わない。
+
+Rを可換Noetherian、Γを中央R上有限な代数とする。
+有界な有限Γ加群複体M,Nは有限自由Γ加群の上有界な解消を持ち、
+平坦R→R'へのtensorはHom複体とそのcohomologyに可換する。
+全qで
+\[
+ \operatorname{Ext}_{\Gamma}^q(M,N)\otimes_RR'
+ \simeq\operatorname{Ext}_{\Gamma\otimes_RR'}^q
+ (M\otimes_RR',N\otimes_RR')
+\]
+が成立し、各Extは有限R加群となる。
+論文Bの lem:finite-algebra-flat-hom-basechange に証明がある。
+相対四項tiltingのMorita比較によりcoherent対象を
+有界有限Γ加群複体に移して適用する。
+非平坦な通常Homの基底変更は成立しない。
+R=k[t], M=R/(t), N=RではHom_R(M,N)=0であるが
+R'=R/(t)への変更後はHom_k(k,k)=kである。
+非平坦基底変更はcanonical compactの導来基底変更と区別する。
 
 ## 五頂点 bar の終頂点 Tor、四項生成と相対 heart
 
