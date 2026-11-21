@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.12
+% 日本語 LuaLaTeX。2026-11-21 / v1.13
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.12（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.13（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -103,7 +103,11 @@ foundation 代数の $\operatorname{HH}^1$ である。
 特に可換 quadric の $(-)\otimes\mathcal O(1,1)$ は、
 任意の flat Abel 変形へ exact ample な Serre 平方根として延長する。
 この根は Morita 同型類として一意であり、有限 foundation 表示の
-\'etale 近傍上の perfect Morita 双加群へ代数化できる。二周期 cubic 列の相対 canonical hull を
+\'etale 近傍上の perfect Morita 双加群へ代数化できる。
+同じ近傍では標準 foundation への根の作用を同定し、
+全ての連続四項の full strong 例外性と四次までの非退化 cubic tensor を
+任意の基底変更と整合的に得る。ただし無限列の相対豊富性は別に残る。
+二周期 cubic 列の相対 canonical hull を
 構成し、全 Artin 変形に同じ根の相対 AS4 被覆を与える。
 適合表示を全有限型基底変更上の系へ昇格させることで、可換点での
 $\mathfrak H_2$ の形式変形問題を pointed Abel 変形と同定する。
@@ -213,7 +217,10 @@ Toda \cite[Theorem 4.7, arXiv v3]{Toda2009} の一次 Fourier--Mukai 持上げ�
 To\"en--Vaqui\'e \cite[Corollaries 3.22, 3.24]{TV2007} の一般基礎環上の
 自己同値モジュライに、標準根の全 Artin 存在・一意性を適用すると、
 可換点の foundation 表示の \'etale 近傍に実際の Morita 根を構成できる。
-この代数化は有限型基底上の Abel heart と AZ 豊富性の相対実現を含まない。
+さらに標準 foundation の二項移動と四項窓を代数化し、三次関係と
+四次重なりを有限局所自由な tensor として認識する
+（命題~\ref{prop:quadric-etale-finite-window}）。
+全次数の三次提示、Abel heart と AZ 豊富性の相対実現は含まない。
 これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
 
 Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} は、一般の cubic quadric が

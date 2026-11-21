@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.12
+% 2026-11-21 / v1.13
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -462,9 +462,134 @@ $(P\otimes^{\mathbf L}_{\Lambda_U}P)\otimes L\simeq t_U$ を得る。
 これらの細分はいずれも \'etale であり、必要なら有限個の affine chart に制限できる。
 \end{proof}
 
+\begin{proposition}[標準根の有限窓と相対 cubic tensor]
+\label{prop:quadric-etale-finite-window}
+命題~\ref{prop:quadric-etale-morita-root} の可換点 $u$ を含む
+$U$ をさらに Zariski 開に縮める。
+普遍 foundation の四つの projective 対象を $F_0,\ldots,F_3$ とし、
+閉ファイバーで順に
+\[
+ \mathcal O_Q,\quad \mathcal O_Q(0,1),\quad
+ \mathcal O_Q(1,1),\quad \mathcal O_Q(1,2)
+\]
+に対応させる。perfect Morita 根 $P$ が与える自己同値を
+$\mathsf s$ と書く。このとき次が成立する。
+\begin{enumerate}
+\item $U$ 上で
+  \[
+     \mathsf sF_0\simeq F_2,\qquad
+     \mathsf sF_1\simeq F_3
+  \]
+  となる同型を取れる。各同型の選択は単元倍を除いて一意であり、
+  一度選べば任意の $U$-基底変更に対して同型のままである。
+\item 全整数 $m$ に対して
+  \[
+    L_{2m}=\mathsf s^m F_0,\qquad
+    L_{2m+1}=\mathsf s^m F_1
+  \]
+  と置くと、任意の連続四項 $(L_i,L_{i+1},L_{i+2},L_{i+3})$
+  は相対的な full strong exceptional collection である。
+  その derived Hom は任意の基底変更と可換し、
+  次数零の有限局所自由加群となる。
+\item $D_{ij}=\operatorname{Hom}(L_i,L_j)$ と置く。
+  $1\leq j-i\leq4$ に対して higher Ext は消え、
+  \[
+    \operatorname{rk}D_{i,i+r}=2,4,6,9
+       \quad(r=1,2,3,4).
+  \]
+  特に $V_i=D_{i,i+1}$ は階数二であり、
+  $V_i\otimes V_{i+1}\xrightarrow{\sim}D_{i,i+2}$、
+  $V_i\otimes V_{i+1}\otimes V_{i+2}\twoheadrightarrow
+     D_{i,i+3}$ が成り立つ。
+  後者の核 $R_i$ は階数二の直和因子である。
+  さらに四重積は $D_{i,i+4}$ に全射で、
+  \[
+    W_i=(R_i\otimes V_{i+3})\cap
+              (V_i\otimes R_{i+1})
+       \subset V_i\otimes V_{i+1}\otimes V_{i+2}\otimes V_{i+3}
+  \]
+  は階数一の直和因子である。
+  $W_i$ が誘導する $R_i$ と $V_{i+3}^{\vee}$、
+  および $V_i^{\vee}$ と $R_{i+1}$ の二つの pairing は非退化である。
+  これらの階数・核・pairing は任意の $U$-基底変更と可換する。
+\end{enumerate}
+これは全ての \emph{有限窓} における主張であり、
+$D_{ij}$ の任意の長さでの次数零集中・三次提示、
+相対 tails heart、AZ 豊富性や相対 $\mathfrak H_2$ 実現は結論しない。
+\end{proposition}
+\begin{proof}
+まず $K_a=\mathbf R\operatorname{Hom}_{\Lambda_U}
+       (\mathsf sF_a,F_{a+2})$（$a=0,1$）を取る。
+$\Lambda_U$ の相対 smooth proper 性と $P$ の perfect 性から、
+これは $U$ 上 perfect で、任意の導来基底変更と可換する。
+$u$ で $\mathsf sF_a$ と $F_{a+2}$ は同じ線束であり、
+$K_a\otimes^{\mathbf L}k(u)\simeq k(u)[0]$ である。
+perfect 複体の局所的な有限自由表示で単元成分を消去すると、
+$u$ の近傍で $K_a$ は次数零の線束になる。
+その線束の閉ファイバーで恒等同型に対応する非零元を
+局所的な切断に持ち上げ、対応する射
+$\mathsf sF_a\to F_{a+2}$ を得る。
+射の cone は基底上 perfect で閉ファイバーでは零だから、
+perfect Nakayama によりさらに縮めれば零となる。
+従って射は同型であり、全ての基底変更でも同型である。
+$\operatorname{End}(F_{a+2})=\mathcal O_U$ なので、
+二つの同型は単元倍だけ異なる。
+
+偶数添字から始まる四項は
+$\mathsf s^m(F_0,F_1,F_2,F_3)$ と同型である。
+元の四項は foundation の projective 対象であり、
+全ての基底変更上で full strong exceptional だから (2) は
+偶数窓では従う。
+奇数窓は $\mathsf s^m(F_1,F_2,F_3,tF_0)$ である
+（$\mathsf s^2=t=S^{-1}[2]$）。
+full exceptional collection の Serre rotation により、
+$(F_1,F_2,F_3,S^{-1}F_0)$ は相対的に full exceptional である。
+最後の項を $[2]$ だけ移しても例外性と生成性は保たれる。
+$u$ 上ではこの奇数窓が
+\[
+  \bigl(\mathcal O_Q(0,1),\mathcal O_Q(1,1),
+        \mathcal O_Q(1,2),\mathcal O_Q(2,2)\bigr)
+\]
+となり、K\"unneth 公式から全ての higher Ext と
+逆向きの全 Ext が消える。
+関係する有限個の相対 Hom 複体が perfect であることから、
+もう一度縮めればそれぞれ次数零の所定の階数の束、
+または零となる。よって奇数窓も full strong で、
+この性質は任意の基底変更で保たれる。
+
+(3) は $\mathsf s$ による二項移動で $i=0,1$ に帰着する。
+閉ファイバーで隣接の bidegree は $(0,1),(1,0)$ が交互に現れ、
+距離四は $(2,2)$ だから、K\"unneth 公式によって
+前記の四つの階数と高次消滅を得る。
+関連する有限個の perfect Hom 複体を同時に縮めれば、
+全ての $D_{i,i+r}$ が次数零の有限局所自由加群となる。
+二重・三重・四重積の全射性は閉ファイバーの
+$\mathbf P^1\times\mathbf P^1$ の斉次座標環の積の全射性から従い、
+有限局所自由加群の射の最大 minor を可逆化すれば
+基底変更後にも成立する。二重積は同階数なので同型である。
+三重積の核 $R_i$ は階数二の直和因子となる。
+
+四重積の核は階数 $16-9=7$ である。
+$R_i\otimes V_{i+3}$ と $V_i\otimes R_{i+1}$
+はいずれもその核に含まれる。閉ファイバーでは
+可換 quadric の cubic 解消により、この二つの和は
+七次元で四重積の核全体と一致する。
+従って七次 minor を可逆化した開近傍では、
+和から核への射は全射であり、その核すなわち $W_i$ は
+階数 $4+4-7=1$ の直和因子となる。
+閉ファイバーの標準 cubic syzygy は二つの pairing について
+非退化なので、その行列式が単元となる開近傍まで縮めれば
+相対的にも非退化である。
+全て有限個の条件を二つの parity について課しただけであるから、
+$\mathsf s$ による移動によって全整数 $i$ に同時に成立する。
+\end{proof}
+
 \begin{remark}[この代数化で残る条件]
-得られたのは有限 foundation の perfect 圏上の平方根である。
-一般有限型基底で、その根と helix が noetherian な相対 tails heart を与え、
+得られたのは有限 foundation の perfect 圏上の平方根と、
+命題~\ref{prop:quadric-etale-finite-window} の相対的な四項窓・
+四次までの cubic tensor である。
+一般有限型基底で、全ての長さの Hom と三次提示を制御し、
+その根と helix が noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
 AZ 豊富性と全有限型基底変更を満たすことは別の相対実現命題を要する。
 Artin 基底上の heart exactness や witness 昇格を、冪零でない
