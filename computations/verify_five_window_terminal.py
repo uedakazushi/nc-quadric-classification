@@ -65,6 +65,22 @@ def verify(objects, parity):
         boundaries = diffs[degree + 1].rank() if degree < 4 else 0
         homology.append(cycles - boundaries)
     assert tuple(homology) == (0, 0, 1, 0), (parity, homology)
+    # The determinant cycle in the path 0 -> 1 -> 3 -> 4.
+    first_axis = (1, 0) if parity == 0 else (0, 1)
+    last_axis = (0, 1) if parity == 0 else (1, 0)
+    path = (0, 1, 3, 4)
+    terms = (
+        ((0, 0), first_axis, last_axis),
+        ((0, 0), (1, 1), (0, 0)),
+        (first_axis, (0, 0), last_axis),
+        (first_axis, last_axis, (0, 0)),
+    )
+    columns = {word: i for i, word in enumerate(basis[3])}
+    witness = SparseMatrix(len(basis[3]), 1, {})
+    for sign, factors in zip((1, -1, -1, 1), terms):
+        witness[columns[(path, factors)], 0] += sign
+    assert diffs[3] * witness == SparseMatrix(len(basis[2]), 1, {})
+    assert diffs[4].row_join(witness).rank() == ranks[2] + 1
     print(f"PASS: parity {parity}: dims={dims}, ranks={ranks}, H_1..H_4={tuple(homology)}")
 
 

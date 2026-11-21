@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.67（A v1.69・20節、B v0.27・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.68（A v1.69・20節、B v0.28・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 五頂点 bar の終頂点 Tor、四項生成と相対 heart
 
@@ -32,6 +32,7 @@ $d_2d_3=d_3d_4=0$、ホモロジーは$(0,0,1,0)$となる。
 再現ソースは computations/verify_five_window_terminal.py。
 実行した容器内コードとGitHubにpushしたファイルのblob SHAは
 36f1016d14e97083a309d8a456cf28e9d8c56724 で一致する。
+さらに標準窓の道(0,1,3,4)上に、二つの因子の外積から得る4項のサイクルを構成し、d3で零かつd4の像に入らないことを厳密行列rankで確認した。可換fiberのTor3の具体的生成線はdet(V)⊗det(W)型である。Bの rem:five-window-commutative-tor-cycle に証明と式を保持し、スクリプトにも非境界性のassertionを追加した。
 これは非可換全体のfiberwise BW-fiber仮定の独立計算ではない。
 
 **導来同値とAbel heartは区別する。**

@@ -344,6 +344,35 @@ $\operatorname{loc}\{S_i\}$ による局所化へ降りる。
 \eqref{eq:five-window-tails-morita} は実際の導来基底変更と整合する。
 \end{proof}
 
+\begin{remark}[可換基準例の終頂点サイクル]
+\label{rem:five-window-commutative-tor-cycle}
+可換quadric上の四項窓
+$\OO,\OO(1,0),\OO(1,1),\OO(2,1)$ の場合、
+$V=H^0(\OO(1,0))=\langle x_0,x_1\rangle$、
+$W=H^0(\OO(0,1))=\langle y_0,y_1\rangle$ とする。
+終頂点を$i+4$とする長さ三の道
+$(i,i+1,i+3,i+4)$ の係数空間は
+$V\otimes(V\otimes W)\otimes W$ である。
+その中の
+\[
+\begin{aligned}
+z={}&x_0\otimes(x_1\otimes y_0)\otimes y_1
+ -x_0\otimes(x_1\otimes y_1)\otimes y_0\\
+ &-x_1\otimes(x_0\otimes y_0)\otimes y_1
+ +x_1\otimes(x_0\otimes y_1)\otimes y_0
+\end{aligned}
+\]
+は、二つの因子それぞれに関する交代化によって内部bar微分が零となり、
+$H^{-3}(V_i^\bullet)$ の非零元を与える。
+実際、厳密計算では
+$d_3z=0$ かつ $\operatorname{rank}[d_4\mid z]
+=\operatorname{rank}d_4+1$ を確認した。
+二因子を交換したもう一方のparityでも同じ結果を得る。
+従ってこの標準fiberの終頂点線は
+$\det(V)\otimes\det(W)$ 型の生成元を持つ。
+この具体式を任意のnoncubic fiberへ無条件に延長する主張ではない。
+\end{remark}
+
 \subsection{良い noncubic 根の局所環上での全軌道と heart}
 
 \begin{theorem}[noncubic 局所環における全次数 tails 認識]

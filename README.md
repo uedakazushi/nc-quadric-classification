@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.69、論文A v1.69、論文B v0.27（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.70、論文A v1.69、論文B v0.28（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、一般cubic領域における既存quintuple/GITモジュライと内在的H2の相対比較、およびその境界への延長。Cは有限表示の確立部分とheart/ASの未完成な比較を区別する。
 
@@ -20,7 +20,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 
 ## 五頂点barと相対heartの検証
 
-[論文Bの非cubic五頂点窓](papers/moduli/noncubic_local_tails.tex) に、終頂点係数複体からrank-one Tor₃、連続四項のcompact生成性へ進む三角の証明を統合した。導来Moritaによるheartの移送と、通常の加群heartの区別も明記した。[厳密検算コード](computations/verify_five_window_terminal.py) は可換quadricの両parityで係数階数(9,40,48,16)、微分階数(9,31,16)、次数3のみ一次元のホモロジーを検証し、ローカル実行と保存ファイルの同一性を確認した。これは**可換標準fiberの検算**であり、全noncubic点でのBW-fiber条件・有限型chartの全効果性を検証したわけではない。
+[論文Bの非cubic五頂点窓](papers/moduli/noncubic_local_tails.tex) に、終頂点係数複体からrank-one Tor₃、連続四項のcompact生成性へ進む三角の証明を統合した。導来Moritaによるheartの移送と、通常の加群heartの区別も明記した。[厳密検算コード](computations/verify_five_window_terminal.py) は可換quadricの両parityで係数階数(9,40,48,16)、微分階数(9,31,16)、次数3のみ一次元のホモロジーを検証し、さらに両parityで明示的な4項サイクルが境界でないことを確認した。ローカル実行と保存ファイルの同一性も確認した。これは**可換標準fiberの検算**であり、全noncubic点でのBW-fiber条件・有限型chartの全効果性を検証したわけではない。
 
 ## VS Code / LuaLaTeX の組版環境
 
