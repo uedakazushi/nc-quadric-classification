@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.19、主論文v1.19、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.20、主論文v1.20、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -38,6 +38,8 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 **有限型開上での全次数の平坦性とHom。** 体上VdB標準解消の完全性を次数帰納によって相対的に持ち上げ、幾何的cubic表示の全次数成分が同じ有限型開上で局所自由・相対分裂完全となることを証明した。さらに二種類の四項Euler複体を可換点の近傍で同時に完全にし、全ての距離で表示DpresとRHom(L_i,L_j)を同定した。偶数切断環も全次数局所自由で四生成・七二次関係による提示を持ち、幾何fiberの線形分解と相対Koszul変形原理によって左右の相対Koszul解消を備える。**一つの有限型開で全次数を一様に扱えないという従来の障害は、この範囲で解消した。** 相対noetherian tails、AZ豊富性、AS4被覆と内在的H2の代数性は未証明。[主原稿の補題・命題](papers/sections/artin_roots.tex) `lem:relative-geometric-cubic-flatness`・`prop:quadric-uniform-cubic-hom-open`。
 
 **Zariski 局所 homological AS4 被覆。** 相対cubicの四次重なりから七本二次関係K上のcanonical functionalを構成し、六次元のH=kerφを選ぶ。全Artin厚みにおけるcanonical hullの有限判定とKrull交叉定理により、可換点を含む一つのZariski開で、A=T(B1)/Hは全次数局所自由・Koszul/Frobenius、g∈A2は左右正則正規、A/(g)=Bとなる。**左右Noetherian性が未証明のため、これはまだ定義にいう相対AS4被覆ではない。** Noetherianな底変更では真の被覆になる。[証明](papers/sections/artin_roots.tex) `prop:quadric-zariski-homological-as-cover`。次はBのnoetherian性・tails・AZとcanonical compact圏を比較する。
+
+**形式完備近傍の真正なNoetherian被覆。** 可換Segre環を特殊fiberとし各次数が有限自由な完備局所変形Bでは、gr_mBが可換Noetherianとなる。初期記号を固定内部次数の完備性で持ち上げてBの左右Noetherian性を示す（`lem:complete-local-commutative-fibre-noetherian`）。正規元による拡張AS4もNoetherianとなるので、可換点の形式完備近傍および可換閉点を保つ完備Noetherian局所基底変更で真の相対Noetherian AS4被覆を得る（`cor:quadric-completed-noetherian-as4`）。非完備な有限型開全体・任意有限型底変更・tails heart・AZの効果性は依然未証明。[証明](papers/sections/relative_koszul.tex)・[被覆への適用](papers/sections/artin_roots.tex)。
 
 ## モジュライのスタック構成
 
