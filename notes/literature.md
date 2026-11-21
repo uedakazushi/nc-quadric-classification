@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v0.9。現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.0。現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -18,6 +18,14 @@ A. B. Verevkin, *On a noncommutative analogue of the category of coherent sheave
 A. Polishchuk, L. Positselski, *Quadratic Algebras*, AMS University Lecture Series **37** (2005), Chapter 3, Proposition 2.2(i) は、一次生成・二次・Koszulである環のVeroneseもそれぞれ一次生成・二次・Koszulであることを述べる。AMSの[書誌](https://doi.org/10.1090/ulect/037)を確認し、[公開テキスト](https://djvu.online/file/T1DOlccPNeqX0)で該当命題文を照合した。**これは既知の一般定理であり、本研究の新成果としない。** 本稿の lem:relative-quadratic-veronese は、任意の可換係数環上のtensor商による直接証明とZhang twistへの明示拡張、lem:relative-quadratic-from-fibers はNoetherian基底上の局所自由性とNakayamaによる全次数の相対降下である。これらをcubic・noncubic・特殊化族の反Serre環へ適用したこと、および25 pivotの具体的な閉埋込みが本研究の追加部分（全体的な先行研究に対する新規性は未確定）。
 
 有限型スキームの射の構成可能像にはStacks Project [Tag 054K](https://stacks.math.columbia.edu/tag/054K)（Chevalleyの定理）を使用する。全H2反Serre関係像はcubic・noncubicの二つの有限型表示からの構成可能集合である。関係式の被約閉包Z₂は有限型既約の代数的包絡だが、相対H2の実現部分関手のscheme structureを表すものではない。
+
+## Koszul 性・Hochschild 変形・三次平坦性
+
+二重平方環の PBW 基底と二次 Gröbner 表示から Koszul 性を導く入力は Priddy の quadratic PBW theorem（Polishchuk--Positselski, *Quadratic Algebras*, Chapter 4, Theorem 3.1 にまとめられた既知結果）である。Koszul 性が Veronese で保存されることは同書 Chapter 3, Proposition 2.2(i)、Zhang twist による次数付き自由解消の移送は同値の形式から従う。これらを本研究独自の一般定理とはしない。
+
+同書 Chapter 6 の Koszul deformation principle は、三次平坦性から高次を制御する結果として参照する。ただし**形式的に完備な族、被約基底上の局所条件、双対数や任意の非被約Artin小拡大では適用範囲を区別する。** 現行原稿 lem:koszul-first-order-degree-three は、双対数 A=k[ε]/(ε²) について Koszul 双加群解消の Hochschild 2-cocycle と結合積の構成から直接証明したものである。2-jet prop:noncubic-transverse-second-order は三次 Hilbert 階数49条件のk[t]/t³上の持上げであり、同章の一般定理を無検査で当てはめて**全次数二次平坦性**を主張していない。
+
+thm:noncubic-hh01-hh2 の低次 HH の次数零成分の計算は、Hochschild-Koszul cochain C¹=Hom(V,R₁)、C²=Hom(J,R₂)、C³=Hom((V⊗J)∩(J⊗V),R₃) における微分の階数と生成元の基底変更軌道を照合したもの。既存の有限 foundation 代数に関する HH≥3 消滅とは異なる。noncubic の横断法方向で二次障害が消えるという局所計算の先行研究上の新規性は未確定。
 
 ## 確認した一次資料
 
