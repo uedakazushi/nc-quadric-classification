@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.70（A v1.69・20節、B v0.31・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.71（A v1.69・20節、B v0.32・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## Lagrangian 正規形の cross reshuffling に関する符号と開条件
 
@@ -19,10 +19,13 @@ $\alpha^2+\beta\gamma=1$ のもとで
 \]
 任意のrank-one外積$Y\otimes\nu$でも
 $\det\operatorname{Cr}(Y\otimes\nu)=-(\det Y\,\det\nu)^2$。
-以前のコードは列添字の$b,c$を逆にしていたため、
-行列式に逆符号を出していたが、可逆性自体の判定は不変である。
-現行の computations/verify_lagrangian_recognition.py は原稿に合わせて訂正し、
-すべての16添字に対する定義式もassertで固定した。
+列添字$(b,c)$を$(c,b)$と交換した別のreshufflingでは、
+四列のうち$01$と$10$が入れ替わって行列式の符号が反転するが、
+可逆性の判定は不変である。
+現行の computations/verify_lagrangian_recognition.py は本文と同じ添字規約を使い、
+16添字の定義式もassertで固定している。
+二次形式$f_2$の線形因子の行列式も$-(\alpha^2+\beta\gamma)=-1$であり、
+rank3正規形の全配置で非退化となる。
 差のある旧規約を履歴として残さず、この正しい規約のみを正本にする。
 これは記号的な行列式・等方性・接空間微分の検算であり、
 全幾何点のheart/AS4の同定と非被約閉基底の相対標準化は
