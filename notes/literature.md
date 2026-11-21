@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.36。主論文v1.36に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.37。主論文v1.37に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -167,6 +167,7 @@ cubicから全H2への比較、最初の軌道対象の認識、階数三支持�
 | `OU2014` | Equations (1.7), (2.19)、geometric quintupleの定義、Theorem 1.1 | projective四重2次元tensorの表示stackとそのGIT商を区別する。連続scalar慣性を除いても有限慣性は残り、coarse GIT商との同一視ではない。 |
 | `MOU2019` | [arXiv:1903.06457v1](https://arxiv.org/abs/1903.06457v1), §6.1–6.2、Theorem 6.3 | 曲線と3束の相対stack、束のscalar rigidification、smooth-support bimoduleとの比較。主たる関係式stackとの比較はbirationalであり、全非被約境界を含む内在的H2との同値ではない。 |
 | `TV2007` | [arXiv:math/0503269v5](https://arxiv.org/abs/math/0503269v5)、[April 2007著者本文](https://www.math.univ-toulouse.fr/~btoen/ttt.pdf)、Theorem 3.6、Corollaries 3.15, 3.17, 3.22, 3.24、Lemma 3.25（著者本文pp.55–57） | perfect-object moduliと自己同値群の代数性。Corollary 3.24の条件(1)は一般基礎環でもHH負次数零・HH⁰=基礎環から局所有限表示の自己同値代数空間を与える。Corollary 3.22は単純対象のétale局所Gm-gerbe、Lemma 3.25は可逆性の開条件。主原稿のétale Morita根代数化に適用した。相対heart・AZや全H2の代数性は別途必要。 |
+| `StacksSmoothAtlas` | [02HX](https://stacks.math.columbia.edu/tag/02HX), Lemma37.12.1；[057G](https://stacks.math.columbia.edu/tag/057G), Lemma37.38.5；02HY, 04X0, 04TK。2026-11-21に該当本文を確認 | 局所Noetherian基底上で有限型射の小拡大持上げ判定と、smooth射の指定された分離的閉fiber点を通るétale切片。HH²恒等から根空間のsmoothnessを示し、HH¹作用を仮定せず一つの根をétale代数化するために用いる。HH¹恒等は根空間自体のétale性・一意性に使う。 |
 | `DeDekenLowen2011` | [出版版](https://ems.press/content/serial-article-files/30497), §4.1、Theorems 4.5, 5.13, 5.15 | Z-generating geometric helixのGrothendieck categoryのabelian変形とthread algebraの線形変形の比較。coherent ringの冪零拡大に対する定理で、H2の平方根・AS被覆条件の相対開性は含まない。 |
 | `Toda2009`、`Lowen2008` | [Toda arXiv v3](https://arxiv.org/abs/math/0502571v3), Proposition 5.6、Lemma 5.8、Theorem 4.7；[Lowen arXiv v1](https://arxiv.org/abs/0707.2602v1), Theorems 1.1, 4.8、Corollary 4.9；Toda §§3–4 の変形圏の構成 | FM核の左右HH作用と持上げ障害を比較し、同一変形への持上げにΦ_*(u)=uが必要。Todaの定理自体は変形間のliftの十分条件であり、必要条件にはLowenの障害同定を使う。可換quadricの特定Serre根の非持上げ例に適用。 |
 | `Alper2009` | [arXiv:0804.2242v3](https://arxiv.org/abs/0804.2242v3), Example 8.3、Theorems 13.2, 6.6 | affine/linearly reductive商のgood moduli spaceと、locally noetherianの場合の代数空間への普遍性。noncubic表示のχ商とcoarse space不存在に適用。 |

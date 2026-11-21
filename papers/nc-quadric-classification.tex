@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.36
+% 日本語 LuaLaTeX。2026-11-21 / v1.37
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.36（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.37（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -104,7 +104,11 @@ Serre に適合する二周期を構成し、被約な普遍基底上の比較�
 各 cubic 点の形式変形は pointed Abel 変形と一致する。
 noncubic の明示二形式族についても、中央 Clifford 表示と重み付き射影スタック上の
 対角加群の perfect 性を用い、表示スタックから $\mathfrak H_2$ への実際の射を構成する。
-これは境界を横断する全変形の認識とは区別する。
+さらに全 noncubic 点で、trace 零の交換対合から選んだ根が
+Hochschild 一次・二次に恒等に作用することを証明する。
+この根は全 Artin Abel 変形へ一意に延び、有限型 étale 近傍上でも
+実際の Morita 根として代数化できる。
+同じ根の AS4 被覆と相対 heart の横断認識は残る。
 \emph{モジュライ全体の代数性は未証明である。}
 既知結果の相対適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
@@ -148,7 +152,12 @@ canonical tails の Serre 双加群との比較は第\ref{sec:relative-picard-ro
 定理~\ref{thm:noncubic-relative-effectivity} により、noncubic 表示商からも
 実際の相対 $\HHstack$ 族が得られる。
 この表示商は次元一であり、境界点の全ての Abel 変形を覆わない。
-従ってこの定理から $\HHstack$ 全体の代数性は結論しない。
+さらに定理~\ref{thm:noncubic-hh-trivial-root} は、全 noncubic 点で
+適切に選んだ根の Hochschild 一次・二次への作用が恒等であると示す。
+系~\ref{cor:noncubic-root-all-artin} と系~\ref{cor:noncubic-etale-morita-root} により、
+全 Artin Abel 変形への一意な根の延長と、有限型 étale 近傍への代数化を得る。
+同じ根の被覆・相対 heart の横断認識は別途必要であり、
+これらの定理から $\HHstack$ 全体の代数性は結論しない。
 
 \subsection{先行研究と本稿の範囲}
 
@@ -550,6 +559,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/quadric_smooth_atlas}
 \input{sections/cubic_smooth_atlas}
 \input{sections/relative_noncubic_families}
+\input{sections/noncubic_hh_roots}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
@@ -609,8 +619,11 @@ Noetherian な相対 tails heart と全ての内在的相対条件を構成す�
 さらに定理~\ref{thm:cubic-smooth-open}と
 系~\ref{cor:cubic-formal-h2-abelian}により、全 cubic 領域は
 有限型 smooth Artin 開部分となり、その全 Artin 変形を認識できる。
-残る対象は noncubic 境界であり、適合根と同じ根の AS4 被覆を持つ
-実際の相対 heart を横断変形に沿って構成する必要がある。
+全 noncubic 点でも、定理~\ref{thm:noncubic-hh-trivial-root} と
+系~\ref{cor:noncubic-etale-morita-root} により、
+良い適合根は全 Artin 変形と有限型 étale 近傍上に存在する。
+残るのは、この同じ根の AS4 被覆と実際の相対 heart を
+境界の横断変形に沿って構成することである。
 一般の $X_3$ 族については、命題~\ref{prop:antiserre-polarization-family} の
 偏極変形を除外する必要がある。
 また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、
