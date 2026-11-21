@@ -613,6 +613,145 @@ $\HH$ 部分関手の有限表示、および相対再構成の証明は別に�
 $\operatorname{HH}^3$ の消滅だけから、これらの相対条件は結論しない。
 \end{remark}
 
+\subsection{cubic 上の相対反 Serre 環と九生成元の表示}
+\label{subsec:cubic-relative-antiserre}
+
+有限 foundation の表示スタックは、単に各体上の点だけでなく
+相対 smooth proper dg 圏を持つ。
+これを利用して、平方根を選ばずに
+cubic 開部分の反 Serre 環を族として定義する。
+以下の構成は noncubic 表示における
+命題~\ref{prop:noncubic-antiserre-descent} と共通の標的を持つ。
+
+\begin{lemma}[相対逆双対化と軌道 Hom]
+\label{lem:foundation-relative-antiserre-perfect}
+$T$ を任意の基底スキームとし、$U_0$ 上の普遍 foundation 代数を
+$T$ に引き戻して $\Lambda_T$ と書く。
+$\operatorname{Perf}(\Lambda_T)$ の相対 Serre 関手を $S_T$ とすれば
+$\mathsf t_T=S_T^{-1}[2]$ は底変更と両立する自己同値である。
+標準の頂点零対象 $\mathcal O_T$ に対して
+\[
+ \mathscr V_n(T)=
+ \mathbf R\operatorname{Hom}_{\Lambda_T}
+   \bigl(\mathcal O_T,\mathsf t_T^n\mathcal O_T\bigr)
+ \qquad(n\ge0)
+ \tag{F-AS}\label{eq:foundation-relative-antiserre}
+\]
+は底上 perfect な複体であり、任意の底変更と両立する。
+それらには合成による斉次積がある。
+\end{lemma}
+\begin{proof}
+補題~\ref{lem:foundation-relative-smooth-proper} によって
+$\Lambda_T$ は底上有限局所自由で、対角双加群は
+有限局所射影項からなる長さ三以下の相対 bar 解消を持つ。
+従って $\operatorname{Perf}(\Lambda_T)$ は相対 smooth proper である。
+相対 Serre 双加群は
+$D_T\Lambda_T=\mathbf R\mathcal Hom_T(\Lambda_T,\mathcal O_T)$、
+その逆は相対逆双対化双加群で表される。
+いずれも対角双加群の perfect 解消から形成でき、
+双加群として perfect であり、任意の底変更と両立する。
+よって $\mathsf t_T$ とその反復は相対 perfect 対象を保つ。
+その間の導来 Hom は底上 perfect であり、
+相対 smooth proper 性によって任意の底変更と可換する。
+積は、次数 $m,n$ の射 $a,b$ に対して
+$\mathsf t_T^n(a)\circ b$ を取るもので、結合律は
+自己同値の合成の結合律から従う。
+\end{proof}
+
+\begin{proposition}[cubic 開部分の反 Serre Grassmann 射]
+\label{prop:cubic-relative-antiserre-grassmann}
+幾何点が cubic な $\HH$ 対象を表す開部分
+$\mathfrak C\subset\mathfrak Q_{\mathrm{fnd}}$ 上で、
+(\ref{eq:foundation-relative-antiserre}) は
+全次数で次数零に集中するベクトル束 $\mathscr R_n$ を与え、
+\[
+ \operatorname{rank}\mathscr R_n=(2n+1)^2 .
+\]
+積は任意の底変更と可換し、$\mathscr R$ は次数一で生成される。
+従って階数 $56$ の関係部分束
+\[
+ \mathscr J=\ker\bigl(
+ \mathscr R_1\otimes\mathscr R_1\longrightarrow\mathscr R_2
+ \bigr)
+\]
+が定まり、標準九次元空間 $U$ に対して
+\[
+ \Psi_{\mathrm{cub}}:
+ \mathfrak C\longrightarrow
+ \left[\operatorname{Gr}(56,U\otimes U)/\operatorname{PGL}(U)\right]
+ \tag{C-Gr}\label{eq:cubic-antiserre-grassmann}
+\]
+という有限型スタック間の射が得られる。
+この射は幾何点で、元の pointed $\HH$ 対象の
+内在的反 Serre 環の二次関係空間を与える。
+\end{proposition}
+\begin{proof}
+まず $\mathfrak F_0$ の線型化した表示
+$[U_0/\mathcal G]$ で作る。
+任意の幾何点で cubic 逆構成から得られる
+$(\mathcal C,\mathcal O)\in\HH$ を用いると、
+tilting 同値は $\mathcal O_T$ と構造対象を同定し、
+Serre 関手を保つ。
+$\mathsf t=S^{-1}[2]$ はこの同値の下で $s^2$ に対応する。
+既存の切断環と Serre 双対の計算から、
+$n\ge0$ について
+\[
+ \operatorname{Ext}^{i}
+  (\mathcal O,\mathsf t^n\mathcal O)=0\quad(i\ne0),
+ \qquad
+ \dim\operatorname{Hom}
+  (\mathcal O,\mathsf t^n\mathcal O)=(2n+1)^2.
+\]
+具体的には切断環 $B(\mathcal C,\mathcal O,s)$ は
+$(1-z^2)/(1-z)^4$ の Hilbert 級数を持ち、
+$\operatorname{Ext}^2$ は Serre 双対と負次数切断の消滅で零、
+$\operatorname{Ext}^1$ は quadratic AS 被覆からの
+次数付き局所双対・飽和 section の消滅によって零である。
+この結果は根の選択に依存しない。
+
+補題~\ref{lem:foundation-relative-antiserre-perfect} の
+perfect 複体は、全幾何点で cohomological amplitude $[0,0]$ である。
+perfect 複体の局所自由分解における単元 minor の消去を行えば、
+各 $\mathscr V_n$ は指定階数のベクトル束に等しく、
+任意の底変更と両立する。
+各幾何点の反 Serre 環は
+一次生成の $B(\mathcal C,\mathcal O,s)$ の偶数 Veronese なので、
+$\mathscr R_1^{\otimes m}\to\mathscr R_m$ は幾何点で全射となる。
+有限局所自由加群への写像の全射性は幾何点で判定できるから
+族でも全射であり、特に二次関係は局所直和因子となる。
+
+構成は標識付き dg 圏、相対 Serre 関手、合成だけで決まる。
+$K$ は各基底変換において
+$\Lambda$ の頂点冪等元に沿う内部自己同型で作用し、
+$\mathcal O_T$ 上では頂点零のスカラーを一に規格化できる。
+従ってその作用は標識付き Morita 自然同型を通じて
+$\mathscr R_n$ 上で自明となる。
+また命題~\ref{prop:ruling-involution-mutation} の
+相対 mutation は $\mathcal O_T$ を保つ Morita 同値であり、
+Serre 関手の自然性により $\mathscr R_n$ と積を保つ。
+相対 ruling 交換の coherent な $S_2$ 作用の下で
+この同定も合成と整合する。
+従って $\mathscr R_n$、$\mathscr J$ とその
+射影枠束は $\mathfrak C$ へ降下する。
+$\operatorname{PGL}(U)$-同変な Grassmannian の射として
+(\ref{eq:cubic-antiserre-grassmann}) を得る。
+\end{proof}
+
+\begin{remark}[二つの chart の射と内在的な相対認識]
+命題~\ref{prop:cubic-relative-antiserre-grassmann} と
+命題~\ref{prop:noncubic-antiserre-grassmann} により、
+cubic と noncubic の双方に、同じ九生成元・
+階数56の二次関係 Grassmann 商への具体的な射がある。
+両者の幾何点像は、内在的な反 Serre 環の関係空間によって
+pointed 同値類を区別する。
+しかし二つの chart で定義された相対 functor の
+重なりと合成を内在的な $\HHstack$ の
+有限型スタックと同一視する定理は未証明である。
+また foundation の arbitrary point について
+(\ref{eq:foundation-relative-antiserre}) が次数零に
+集中するとは主張しない。
+\end{remark}
+
 \subsection{cubic 開部分の稠密性と noncubic への特殊化}
 \label{subsec:cubic-noncubic-components}
 
