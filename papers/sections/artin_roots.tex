@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.28
+% 2026-11-21 / v1.29
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1145,7 +1145,7 @@ $B_R$ は全次数で有限自由である。
 Van den Bergh 型三次元 AS 正則 $\mathbb Z$-代数の
 偶数 Veronese である。
 体上の三次元 cubic AS 正則 $\mathbb Z$-代数の
-左右 Noetherian 性と、偶数頂点への制限で
+左右 Noetherian 性\cite[Corollary 5.5.9(1)]{VdB2011} と、偶数頂点への制限で
 Noetherian 性が保たれる事実
 （命題~\ref{prop:weighted-even-koszul} の証明の
 偶数イデアルの有限生成性の部分）により、
@@ -1246,6 +1246,51 @@ $\mathfrak H_2$ の代数性は結論しない。
 同じ (A1) の直接証明が使える。
 \end{proof}
 
+\begin{theorem}[局所基底上の全有限型 tails と Hom]
+\label{thm:quadric-local-finite-type-abelian-system}
+系~\ref{cor:quadric-local-chi} の有限 Krull 次元 Noetherian 局所環
+$R$ を固定する。任意の可換有限型 $R$-代数 $R'$ に対し、
+$B'=B_R\otimes_RR'$ は左右 Noetherian かつ左右相対 $\chi_q$
+（全ての $q\ge0$）を満たし、
+$(\pi B',(1))$ は $\operatorname{qgr}B'$ 上 AZ ample である。
+さらに
+\[
+ \operatorname{Spec}R'\longmapsto\operatorname{qgr}B'
+ \tag{Local-tails}\label{eq:local-finite-type-tails-system}
+\]
+は Noetherian Abel 圏の系であり、module-object 基底変更、
+対象・射・完全列の fppf 降下、全ての対象間の Hom の $R'$-有限性と
+平坦な有限型基底変更との整合性を持つ。
+構造対象 $\pi B'$ は基底上平坦で、$A_R\otimes_RR'\twoheadrightarrow B'$
+は同じ次数移動に対する相対 Noetherian AS4 被覆である。
+
+$R'$ が局所環であることも $R$ 上平坦であることも要求しない。
+この結論は、$U^\circ$ の一つの有限型開全体での同じ系の存在、
+canonical compact 圏の比較、相対 Serre 平方根の認識を結論しない。
+\end{theorem}
+\begin{proof}
+$B_R$ の Noetherian 性は
+系~\ref{cor:quadric-point-local-noetherian-as4}、
+全相対 $\chi_q$ は系~\ref{cor:quadric-local-chi} による。
+相対 Koszul 解消の各項は有限斉次自由で任意の基底変更後も完全だから、
+補題~\ref{lem:chi-finite-type-basechange} が全ての $q$ に適用できる。
+$B',A_R\otimes_RR'$ の Noetherian 性は
+補題~\ref{lem:local-finite-type-strong-noetherian} による。
+従って高次数 truncation の有限生成性から AZ (A1)、
+補題~\ref{lem:relative-chi1-implies-AZ-A2} から AZ (A2) を得る。
+
+各 $B'_n$ は有限 projective $R'$-加群なので、
+補題~\ref{lem:chi1-qgr-hom-finite-flat} により任意の二対象間の
+Hom は有限で平坦基底変更と可換する。
+module-object 比較は補題~\ref{lem:qgr-module-object-basechange}、
+fppf 降下と構造対象の平坦性は
+系~\ref{cor:quadric-local-tails-fppf-descent} の証明を
+この $R$ に適用して得る。完全列の降下は、
+faithfully flat な拡大が完全かつ保守的であることによる。
+AS4 被覆の残りの条件は既存の homological 被覆の
+普遍的完全性から全ての基底変更後にも成立する。
+\end{proof}
+
 \begin{corollary}[有限型族の全 stalk における局所 AZ 豊富性]
 \label{cor:quadric-local-AZ-on-all-stalks}
 $T$ を $U^\circ$ 上局所有限型な Noetherian スキームとし、
@@ -1296,6 +1341,15 @@ $T=\operatorname{Spec}R'\to U^\circ$ に対して、
 は自然な同型であり、任意の底変更と可換する。
 $n<0$ では $(B_T)_n=0$ とする。
 特に構造対象の軌道切断環が全次数で元の $B_T$ を回復する。
+さらに任意の $R'$-加群 $N$ について
+\begin{align*}
+ \operatorname{Hom}_{\operatorname{QGr}B_T}
+   (\mathcal O_T,N\otimes_{R'}\mathcal O_T(n))
+   &\simeq N\otimes_{R'}(B_T)_n,\\
+ \operatorname{Ext}^1_{\operatorname{QGr}B_T}
+   (\mathcal O_T,N\otimes_{R'}\mathcal O_T(n))&=0
+ \qquad(n\in\mathbb Z).
+\end{align*}
 非被約・非平坦な底変更も含むが、
 任意の $\operatorname{qgr}B_T$ 対象の Hom 有限性や
 canonical compact 導来圏との比較は結論しない。
@@ -1314,6 +1368,7 @@ $j=0,1,2$ で零となる。
 左右相対 Koszul 解消は全内部次数で局所分裂完全で
 任意の底変更と可換する。
 従って補題~\ref{lem:relative-depth-three-saturation}
+と系~\ref{cor:relative-depth-three-coefficients}
 を右・左両側に適用すれば結論を得る。
 \end{proof}
 
@@ -1335,8 +1390,11 @@ Zariski 局所 homological AS4 被覆、
 相対 $\chi$ と AZ 豊富性、
 系~\ref{cor:quadric-local-AZ-on-all-stalks} の
 局所有限型族の全 stalk における結論、
+定理~\ref{thm:quadric-local-finite-type-abelian-system} の
+各局所基底上の全有限型変更における $\chi$・AZ・Hom 有限性と
+平坦基底変更を備えた Noetherian tails の系、
 及び系~\ref{cor:quadric-all-basechange-saturated-sections} の
-任意底変更での構造対象の全切断環回復である。
+任意底変更・任意係数での構造対象の切断と一次コホモロジーの消滅である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その被覆と根が Noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、

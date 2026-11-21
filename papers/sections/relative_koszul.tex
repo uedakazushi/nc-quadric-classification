@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.28
+% 2026-11-21 / v1.29
 \section{三次平坦性から全次数平坦性への相対的な認識}
 \label{sec:relative-koszul}
 
@@ -184,8 +184,8 @@ $\kappa$-代数であり、$C_\kappa$ に対して中心に入る。
 
 任意の斉次右イデアル $I$ に
 $I\cap\mathfrak m^pC$ による誘導フィルトレーションを入れる。
-$\operatorname{gr}_{\mathfrak m}I$ は上の可換 Noetherian 環の
-二重斉次イデアルだから、有限個の二重斉次初期記号で生成される。
+$\operatorname{gr}_{\mathfrak m}I$ は上の右 Noetherian 環の
+二重斉次右イデアルだから、有限個の二重斉次初期記号で生成される。
 それらを $I$ の斉次元 $x_1,\ldots,x_r$ に持ち上げる。
 内部次数 $d$ の $x\in I$ について、
 初期記号を $x_i$ の初期記号の右線形結合で表し、
@@ -338,6 +338,99 @@ $M$ に対する結論を得る。
 
 
 
+\begin{lemma}[有限型の中心基底変更に対する相対 \texorpdfstring{$\chi_q$}{chi-q}]
+\label{lem:chi-finite-type-basechange}
+$R$ を Noetherian 可換環、$B_0=R$ を満たす
+右 Noetherian な非負次数付き $R$-代数を $B$ とする。
+$R$ は中心に入り、各 $B_n$ は有限 projective とする。
+自明右加群 $R$ は、各項が有限個の
+$E\otimes_R B(-a)$（$E$ は有限 projective $R$-加群）
+の直和である射影解消 $P_\bullet$ を持ち、
+この解消は任意の可換基底変更後も完全と仮定する。
+$B$ が相対 $\chi_q$ を満たすなら、任意の可換有限型
+$R$-代数 $R'$ について $B'=B\otimes_RR'$ も
+相対 $\chi_q$ を満たす。
+従って、任意の有限生成次数付き右 $B'$-加群 $M$ に対し
+\[
+ \underline{\operatorname{Ext}}_{B'}^j(R',M)
+ \quad(0\le j\le q)
+\]
+は全内部次数を合わせて有限生成 $R'$-加群である。
+$R'$ の局所性・被約性・$R$ 上の平坦性は要求しない。
+左側にも反対環について同じ結論が成立する。
+\end{lemma}
+\begin{proof}
+まず内部次数零の中心変数 $t$ 一つを加える。
+$B[t]$ は右 Noetherian であり、$P_\bullet[t]$ は
+$R[t]$ の射影解消である。
+有限生成次数付き $B[t]$-加群 $M$ の斉次生成元
+$m_1,\ldots,m_r$ を取り、内部次数とは別に
+\[
+ F_pM=\sum_{a=1}^r\sum_{0\le b\le p}m_a t^bB
+ \quad(p\ge0),\qquad F_pM=0\quad(p<0)
+\]
+という補助フィルトレーションを入れる。
+$N=\operatorname{gr}_F M$ は、$B$ の補助次数を零、
+$t$ の補助次数を一とした $B[t]$ 上の有限生成二重次数付き加群である。
+各補助次数成分 $N_p$ は有限生成次数付き $B$-加群である。
+
+$N$ の $t$-power torsion は Noetherian 性から有限生成であり、
+ある $e$ について $t^e$ で殺される。
+その斉次生成元の補助次数は有限個なので、この torsion は
+十分大きい補助次数で零である。
+また $N$ の有限生成性により
+$t:N_p\to N_{p+1}$ は十分大きい $p$ で全射である。
+従って、ある $p_0$ 以後この射は同型となる。
+$N_0,\ldots,N_{p_0}$ に対する $\chi_q$ から、
+全ての $p\ge0$ に共通する整数 $d_0$ を選んで
+\[
+ \underline{\operatorname{Ext}}_B^j(R,N_p)_d=0
+ \quad(0\le j\le q,\ d\ge d_0)
+ \tag{Chi-aux}\label{eq:chi-auxiliary-uniform}
+\]
+とできる。ここで $t$ による同型は内部次数を保つ。
+
+固定内部次数 $d$ の複体
+\[
+ C_d^\bullet=
+ \underline{\operatorname{Hom}}_{B[t]}(P_\bullet[t],M)_d
+\]
+に $F_\bullet M$ からの補助フィルトレーションを入れる。
+各 $P_j$ の係数は有限 projective なので
+\[
+ \operatorname{gr}_{F,p} C_d^\bullet
+ \simeq\underline{\operatorname{Hom}}_B(P_\bullet,N_p)_d.
+\]
+このフィルトレーションは下に有界で、各元は有限の補助次数に属する。
+$d\ge d_0$ の $j$-cocycle の最高補助次数の記号は、
+(\ref{eq:chi-auxiliary-uniform}) により境界である。
+その原像を持ち上げて境界を引くと補助次数が下がる。
+これを有限回繰り返せば cocycle は境界となる。
+$j=0$ では同じ議論により cocycle 自体が零となる。
+従って $\underline{\operatorname{Ext}}_{B[t]}^j(R[t],M)_d=0$
+が $0\le j\le q$ と $d\ge d_0$ で成立する。
+
+一方、$M$ は内部次数について下に有界であり、
+各固定 $j$ の $P_j$ は有限個の内部次数 shift しか持たない。
+従って上の Ext は内部次数について下にも有界である。
+各内部次数成分は、$R[t]$ 上有限な Hom 複体の部分商なので有限である。
+これで全内部次数を合わせた $R[t]$-有限性が従う。
+
+変数の数による帰納法で $R[\mathbf t]$ への変更を処理する。
+最後に $R'=R[\mathbf t]/I$ と表示する。
+有限生成 $B'$-加群 $M$ は $B[\mathbf t]$ 上でも有限生成であり、
+解消の普遍的完全性から
+\[
+ \underline{\operatorname{Hom}}_{B'}
+       (P_\bullet\otimes_RR',M)
+ \simeq
+ \underline{\operatorname{Hom}}_{B[\mathbf t]}
+       (P_\bullet[\mathbf t],M)
+\]
+となる。右辺のコホモロジーは $R[\mathbf t]$ 上有限で、
+$I$ が零に作用するので $R'$ 上有限である。
+\end{proof}
+
 \begin{lemma}[相対 \texorpdfstring{$\chi_1$}{chi1} から AZ (A2) へ]
 \label{lem:relative-chi1-implies-AZ-A2}
 $R$ を Noetherian 可換環、
@@ -433,7 +526,84 @@ $M_d\to(N/\tau N)_d$ は $d\gg0$ で全射となる。
 求める Hom の全射性が従う。
 \end{proof}
 
-\subsection{可換点の局所基底における有限型基底変更}
+\begin{lemma}[相対 tails の Hom 有限性と平坦基底変更]
+\label{lem:chi1-qgr-hom-finite-flat}
+補題~\ref{lem:relative-chi1-implies-AZ-A2} の仮定を満たし、
+さらに $B$ は次数一で生成されるとする。
+このとき任意の $\mathcal M,\mathcal N\in\operatorname{qgr}B$ に対して
+$\operatorname{Hom}(\mathcal M,\mathcal N)$ は有限 $R$-加群である。
+任意の平坦な有限型可換 $R$-代数 $R'$ に対して自然な射
+\[
+ R'\otimes_R\operatorname{Hom}_{\operatorname{qgr}B}
+      (\mathcal M,\mathcal N)
+ \xrightarrow{\ \sim\ }
+ \operatorname{Hom}_{\operatorname{qgr}(B\otimes_RR')}
+      (\mathcal M_{R'},\mathcal N_{R'})
+ \tag{Hom-flat-BC}\label{eq:qgr-hom-flat-basechange}
+\]
+は同型である。対象自身の $R$-平坦性は仮定しない。
+\end{lemma}
+\begin{proof}
+有限生成次数付き加群 $M$ に対して
+$\overline M=M/\tau M$ と置く。
+$B$ は右 Noetherian なので $\overline M$ も有限生成である。
+固定した内部次数 $d$ に対し、完全列
+\[
+ 0\longrightarrow B_{\ge n+1}\longrightarrow B_{\ge n}
+   \longrightarrow B_n(-n)\longrightarrow0
+\]
+を用いる。$B_n$ は有限 projective なので、$j=0,1$ において
+\[
+ \underline{\operatorname{Ext}}_B^j(B_n(-n),\overline M)_d
+ \simeq B_n^\vee\otimes_R
+       \underline{\operatorname{Ext}}_B^j(R,\overline M)_{n+d}.
+\]
+相対 $\chi_1$ により、右辺は $n+d$ が十分大きければ零である。
+よって
+\[
+ \underline{\operatorname{Hom}}_B(B_{\ge n},\overline M)_d
+ \longrightarrow
+ \underline{\operatorname{Hom}}_B(B_{\ge n+1},\overline M)_d
+\]
+は $n\gg0$ で同型となる。
+Gabriel 商の Hom 表示より、この安定値は
+$\operatorname{Hom}_{\operatorname{QGr}B}(\pi B,\pi M(d))$ である。
+$B_{\ge n}$ は有限表示であり、各 $M_a$ は有限 $R$-加群なので、
+固定内部次数の上の Hom は有限 $R$-加群となる。
+従って構造対象の任意の捻りからの Hom は有限である。
+
+次に $R\to R'$ を平坦な有限型変更とする。
+各 $F_n=B/B_{\ge n}$ は有限表示だから、
+\[
+ \tau M=\varinjlim_n
+        \underline{\operatorname{Hom}}_B(F_n,M)
+ \ \subset M
+\]
+という評価による同定は平坦基底変更と可換する。
+従って $R'\otimes_R\overline M\simeq
+M_{R'}/\tau(M_{R'})$。
+同様に $B_{\ge n}$ の有限表示性によって
+各内部次数の tail Hom は平坦基底変更と可換する。
+フィルター付き極限と tensor を交換すると、
+構造対象の捻りからの Hom について
+(\ref{eq:qgr-hom-flat-basechange}) が従う。
+この基底変更の部分は、$R'$ 上で新たな安定次数を選ぶ必要がない。
+
+最後に有限生成次数付き加群 $N$ の有限斉次自由表示
+$F_1\to F_0\to N\to0$ を取る。
+$\pi$ の完全性から
+\[
+ 0\longrightarrow\operatorname{Hom}(\pi N,\pi M)
+ \longrightarrow\operatorname{Hom}(\pi F_0,\pi M)
+ \longrightarrow\operatorname{Hom}(\pi F_1,\pi M)
+\]
+は完全である。右二項は構造対象の捻りからの Hom の有限直和であり、
+$R$-有限かつ平坦基底変更と可換する。
+$R$ の Noetherian 性と tensor の完全性から、左項も同じ性質を持つ。
+全ての qgr 対象はこのような $M,N$ で表示できる。
+\end{proof}
+
+\subsection{局所基底からの有限型基底変更と tails}
 
 可換点の局所環における Noetherian 性は、その局所環自身に限らず、
 有限型基底変更後の代数にも保たれる。ここではこの事実と、
@@ -466,6 +636,7 @@ $B_{R'}$ はこの環の中心イデアル $IB[t_1,\ldots,t_s]$
 \label{lem:qgr-module-object-basechange}
 $R$ を可換環、$B$ を $B_0=R$ の
 非負次数付き $R$-代数で、$R$ は中心に入るものとする。
+さらに $B$ は次数一で生成され、$B_1$ は有限 $R$-加群と仮定する。
 $R\to R'$ を任意の可換 $R$-代数とし、
 $B'=B\otimes_RR'$ と書く。
 次数付き右加群全体の Grothendieck 圏を
@@ -498,6 +669,16 @@ $R'$ が有限型 $R$-代数なら、
 を得る。右辺の Noetherian は加群対象としての意味である。
 \end{lemma}
 \begin{proof}
+$B_{\ge n}$ は $B_n$ から生成される有限生成右イデアルである。
+従って次数 torsion は部分対象・商・直和だけでなく拡大にも閉じている。
+実際、拡大の商で $x$ の像が $B_{\ge n}$ に殺されるなら、
+$xB_{\ge n}$ は有限生成で torsion な部分加群に含まれる。
+その有限生成元を同時に殺す $B_{\ge m}$ を取れば
+$xB_{\ge n+m}=0$ となる。
+よってここで使う torsion は localizing 部分圏をなし、
+Gabriel 商とその右随伴が存在する。
+同じ生成条件は全ての基底変更後も保たれる。
+
 $B'$ 上の次数付き右加群は、
 次数付き右 $B$-加群と、その $B$-作用と可換する
 $R'$-作用の組と同じである。したがって
@@ -645,7 +826,7 @@ $B=\bigoplus_{n\ge0}B_n$ を $B_0=\mathcal O_S$ の
 次数一生成の次数付き $\mathcal O_S$-代数とする。
 $B_n$ は全て有限局所自由で、
 自明右加群 $\mathcal O_S=B/B_{\ge1}$ が、
-有限局所自由係数をもつ有限斉次自由加群からなる
+各項が有限局所自由係数をもつ有限斉次自由加群である
 相対射影解消 $P_\bullet$ を持つとする。
 この解消は内部次数ごとに局所分裂完全で、
 任意の底変更後も完全であると仮定する。
@@ -664,7 +845,7 @@ $T=\operatorname{Spec}R'$ について、全内部次数で
 \]
 さらに自然な次数付き射
 \[
- B_T\ \xrightarrow{\ \sim\ }\
+B_T\ \xrightarrow{\ \sim\ }
  \bigoplus_{d\in\mathbb Z}
  \operatorname{Hom}_{\operatorname{QGr}B_T}
       (\pi B_T,\pi B_T(d))
@@ -717,6 +898,72 @@ $x(B_T)_{\ge n-1}=0$ を帰納し、$B_T$ の
 \]
 これは次数付き積と可換し、自然な射の逆を与える。
 全て次数別の分裂完全性から得たので任意の底変更とも可換する。
+\end{proof}
+
+\begin{corollary}[任意の係数加群に対する切断と一次コホモロジー]
+\label{cor:relative-depth-three-coefficients}
+補題~\ref{lem:relative-depth-three-saturation} の仮定の下で、
+任意の affine 底変更 $T=\operatorname{Spec}R'\to S$ と
+任意の $R'$-加群 $N$ を取る。
+$D=N\otimes_{R'}B_T$、$\mathcal O_T=\pi B_T$ と書くと、
+全内部次数で
+\[
+ \underline{\operatorname{Ext}}_{B_T}^{j}(R',D)=0
+ \qquad(0\le j\le2)
+\]
+であり、全ての $d\in\mathbb Z$ に対して
+\begin{align*}
+ \operatorname{Hom}_{\operatorname{QGr}B_T}
+    (\mathcal O_T,\pi D(d))
+       &\simeq N\otimes_{R'}(B_T)_d,\\
+ \operatorname{Ext}^{1}_{\operatorname{QGr}B_T}
+    (\mathcal O_T,\pi D(d))&=0.
+\end{align*}
+最初の同型は自然な射が与え、任意の基底変更に整合する。
+$R'$、$B_T$ の Noetherian 性や $N$ の有限生成性・平坦性を仮定しない。
+\end{corollary}
+\begin{proof}
+$B=B_T$、$R=R'$ と略記する。
+補題の証明で得た複体
+$\underline{\operatorname{Hom}}_B(P_\bullet,B)_d$
+は次数 $0,1,2$ で局所分裂完全であり、
+各 $P_i$ の係数は有限 projective である。従って
+\[
+ \underline{\operatorname{Hom}}_B(P_\bullet,D)_d
+ \simeq N\otimes_R
+       \underline{\operatorname{Hom}}_B(P_\bullet,B)_d
+\]
+も同じ三次数で完全となる。
+$F_n=B/B_{\ge n}$ の有限 projective 係数を持つ
+自明加群によるフィルトレーションから、
+$\underline{\operatorname{Ext}}_B^j(F_n,D)=0$（$0\le j\le2$）である。
+補題と同じ Hom 極限表示によって $D$ は saturated となり、
+主張の Hom 同型を得る。
+また $0\to B_{\ge n}\to B\to F_n\to0$ から
+\[
+ \underline{\operatorname{Ext}}_B^1(B_{\ge n},D)=0
+ \qquad(n\ge1)
+\]
+も従う。
+
+任意の拡大
+$0\to\pi D(d)\to\mathcal E\to\pi B\to0$ を取る。
+商の右随伴 $\omega$ の左完全性と saturation により、
+$0\to D(d)\to\omega\mathcal E\to B$ は左完全である。
+最後の射の像を $J\subset B$ とすると、
+$\pi\omega\simeq\mathrm{id}$ と $\pi$ の完全性から $B/J$ は torsion。
+従って $1+J$ を殺す tail を取れば、ある $n$ で $B_{\ge n}\subset J$ となる。
+$\omega\mathcal E\twoheadrightarrow J$ をこの包含に沿って引き戻した列
+\[
+ 0\longrightarrow D(d)\longrightarrow E_n
+       \longrightarrow B_{\ge n}\longrightarrow0
+\]
+は上の Ext 消滅により分裂する。
+完全関手 $\pi$ はこの pullback を保ち、
+$\pi B_{\ge n}\simeq\pi B$ であるから、元の拡大も分裂する。
+以上は Noetherian 性を用いない直接の Yoneda 拡大の議論である。
+Hom 同型の自然性と基底変更との整合性は、
+自然な unit と変更後も完全な複体による構成から従う。
 \end{proof}
 
 \begin{corollary}[全幾何ファイバーが $\HH$ 型である関係式族]

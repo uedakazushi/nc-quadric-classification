@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.28、主論文v1.28、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.29、主論文v1.29、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -33,25 +33,17 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 証明は [有限QP](papers/quiver-avatar/qp_presentations.tex)、[有限foundation](papers/quiver-avatar/foundation_charts.tex)、[avatar](papers/quiver-avatar/avatar_charts.tex)、[内在的忘却](papers/quiver-avatar/intrinsic_forgetting.tex) に置く。独立読取り・計算・組版の実施範囲は研究ノートを参照。
 
-**可換点の局所環で全次数の三次提示を得た。** étale Morita根の存在する可換点uの局所環Aでは、全i≤jでRHom(L_i,L_j)が次数零に集中し階数h_{2m}=(m+1)², h_{2m+1}=(m+1)(m+2)の自由加群となる。全三次Z代数はrank2のR_iで提示でき、偶数環Bもrank7の二次関係で全次数表示され、局所Koszul変形原理により相対Koszulになる。加えて、全次数の相対 cubic 標準解消は各内部次数で分裂完全であり、任意の局所環上の基底変更で完全性を保つ。[証明](papers/sections/artin_roots.tex) `thm:quadric-local-all-degree-cubic`。特殊fiberについて両parity・長さ3〜7の三次核を [厳密検算](computations/verify_quadric_finite_windows.py) で比較した（全次数の証明そのものは計算ではない）。任意の固定次数Nについては開近傍U_Nまで延長できる。さらに四次のW_iの全巡回縮約の零条件のproper imageを除く有限型開U_geoでは、各幾何fiberの三次表示はVdB geometric cubic AS正則となるが、全次数の局所自由性とHom同定は主原稿の相対分裂完全性から成立する。一方、全Nで共通する有限型開への延長は下記の相対解消とHom同定で証明した。noetherian tails・AZ・AS4被覆は未証明。
+## 相対構成の現在地
 
-**有限型開上での全次数の平坦性とHom。** 体上VdB標準解消の完全性を次数帰納によって相対的に持ち上げ、幾何的cubic表示の全次数成分が同じ有限型開上で局所自由・相対分裂完全となることを証明した。さらに二種類の四項Euler複体を可換点の近傍で同時に完全にし、全ての距離で表示DpresとRHom(L_i,L_j)を同定した。偶数切断環も全次数局所自由で四生成・七二次関係による提示を持ち、幾何fiberの線形分解と相対Koszul変形原理によって左右の相対Koszul解消を備える。**一つの有限型開で全次数を一様に扱えないという従来の障害は、この範囲で解消した。** 相対noetherian tails、AZ豊富性、AS4被覆と内在的H2の代数性は未証明。[主原稿の補題・命題](papers/sections/artin_roots.tex) `lem:relative-geometric-cubic-flatness`・`prop:quadric-uniform-cubic-hom-open`。
+**有限型開上の全次数表示とhomological AS4被覆。** 可換Qの標準Morita根をétale近傍へ代数化し、連続四項のfoundationと三次tensorを構成した。幾何的cubic条件のproper-imageによる開性、標準三次解消の相対完全性、Euler複体によるHom比較から、一つの有限型開U°上で全次数のcubic提示・内在Hom・局所自由性・偶数Bの相対Koszul性が成立する。canonical hullの有限判定とKrull交叉により、正則正規二次元gを持つ全次数平坦なhomological AS4被覆A/(g)=Bも存在する。[主原稿](papers/sections/artin_roots.tex) の `prop:quadric-uniform-cubic-hom-open`、`prop:quadric-zariski-homological-as-cover`。
 
-**Zariski 局所 homological AS4 被覆。** 相対cubicの四次重なりから七本二次関係K上のcanonical functionalを構成し、六次元のH=kerφを選ぶ。全Artin厚みにおけるcanonical hullの有限判定とKrull交叉定理により、可換点を含む一つのZariski開で、A=T(B1)/Hは全次数局所自由・Koszul/Frobenius、g∈A2は左右正則正規、A/(g)=Bとなる。**左右Noetherian性が未証明のため、これはまだ定義にいう相対AS4被覆ではない。** Noetherianな底変更では真の被覆になる。[証明](papers/sections/artin_roots.tex) `prop:quadric-zariski-homological-as-cover`。次はBのnoetherian性・tails・AZとcanonical compact圏を比較する。
+**局所基底からの全有限型変更ではNoetherian tails・χ・AZが成立。** U°の任意の点を閉点に持つ有限Krull次元Noetherian局所Rを固定すると、全有限型可換R-代数R′についてB_R′とAS4被覆は左右Noetherianとなる。次数ゼロの中心変数に関する補助filtrationで相対χの一様な消滅を証明し、左右χ_q（全q）とAZ(A1)+(A2)を得た。R′は非局所・非被約・非平坦でもよい（`lem:chi-finite-type-basechange`、`thm:quadric-local-finite-type-abelian-system`）。
 
-**幾何的cubic開の各局所基底の真正な被覆。** 特殊fiberの可換性は不要で、全次数有限自由かつ左右Noetherianな特殊fiberを持つ局所変形も左右Noetherianとなる（付随次数環は中心多項式による拡大）。従って幾何的cubic開U°の任意の点vで、その局所環と閉点がvへ写る全Noetherian局所底変更のBと正規AS4拡張が左右Noetherian、qgr BもNoetherian Abel圏となる。局所環の全有限型変更にも適用できる。一つの有限型開全体のNoetherian性とcanonical heart比較は未証明（`lem:local-commutative-fibre-noetherian`、`cor:quadric-point-local-noetherian-as4`）。
+**一般coherent対象のHomと基底変更。** この全有限型R′の範囲で、qgrはmodule-object基底変更、対象・射・完全列のfppf降下、構造対象の平坦性を備える。全ての二対象間のHomはR′-有限で、平坦な有限型基底変更と可換する。固定内部次数のtail Homの安定と有限表示による直接証明であり、対象自身の平坦性は要求しない（`lem:chi1-qgr-hom-finite-flat`）。[証明](papers/sections/relative_koszul.tex)。
 
-**局所環の全有限型基底変更とAZ (A1)。** 可換点の局所環R上のB_Rが左右Noetherianなら、任意の可換有限型R-代数R′への変更も中心多項式環のNoetherian性により左右Noetherianになる。QGrはGabriel局所化の右随伴を使い、R′-module-object基底変更QGr(B_R′)≃(QGr B_R)_{R′}と一致する。有限型R′ではNoetherian部分をqgrとして取れる。十分高次数のtruncationから全有限型R′でAZの生成条件(A1)を証明した（`lem:local-finite-type-strong-noetherian`、`lem:qgr-module-object-basechange`、`cor:quadric-local-tails-basechange-generation`）。**χ₁/AZ Hom全射(A2)、canonical compact圏とのheart比較、単一の有限型開全体でのNoetherian性は未証明**。[証明](papers/sections/relative_koszul.tex)。
+**任意基底変更・任意係数で構造対象のH⁰とH¹を計算。** 任意affine T=Spec R′→U°と任意R′-加群Nに対して、Hom_QGr(O_T,N⊗O_T(n))≃N⊗(B_T)_n、Ext¹_QGr(O_T,N⊗O_T(n))=0が全nで成立する。各fiberの深さ3、相対Koszul cochainの分裂完全性、Gabriel商の拡大列を使い、B_TのNoetherian性やNの平坦性を必要としない（`cor:relative-depth-three-coefficients`、`cor:quadric-all-basechange-saturated-sections`）。N=R′の場合、元の全切断環を回復する。
 
-**局所相対tailsのfppf降下と構造対象の平坦性。** QGr(B_R′)≃(QGr B_R)_{R′}とfaithfully flat拡大のBarr–Beck降下により、局所環R上の有限型基底変更に関してQGrとそのNoetherian部分qgrの対象・射の有効なfppf降下を示した。全次数有限局所自由性からπBの基底上平坦性も証明した（`cor:quadric-local-tails-fppf-descent`）。相対heartの系に必要なmodule-object基底変更・降下・構造対象平坦性はこの局所基底の範囲で確認できたが、χ₁/AZ(A2)、Hom有限性、canonical compact・Serre認識と単一有限型開上の効果性は未証明。[証明](papers/sections/relative_koszul.tex)。
-
-**可換点の全有限次元Noetherian局所基底で相対χ。** DVRに限らず、任意の有限次元Noetherian局所基底について局所パラメータによる次元帰納法で特殊fiberのχを持ち上げた。局所パラメータtの冪torsionとt単射な商を分け、Ext長完全列と次数別Nakayamaを使う。可換Qを閉点とする基底ではSegre特殊fiberから左右相対χ_iが全iで成立（`lem:local-chi-specialization`、`cor:quadric-local-chi`）。**非局所有限型基底へのχの一様化・AZ(A2)とcanonical compact比較は未証明**。[補題](papers/sections/relative_koszul.tex)・[適用](papers/sections/artin_roots.tex)。
-
-**可換点の全Noetherian局所基底でAZ豊富性。** 相対χ₁から全truncationのExt¹が共通の高内部次数で消滅し、Gabriel右随伴によるHom(πB(-d),πM)を高次数でM_dに同定できる。qgrの全射のcokerは高次数では零となるため、AZ(A2)が従う（`lem:relative-chi1-implies-AZ-A2`）。可換点を閉点に持つ全有限次元Noetherian局所基底では既に(A1)があるので、(πB,(1))はAZ ample（`cor:quadric-local-AZ-ampleness`）。**非局所有限型底変更後のAZ(A2)、Hom有限性、canonical compact/Serre認識、内在H2代数性は未証明**。[証明](papers/sections/relative_koszul.tex)・[quadricへの適用](papers/sections/artin_roots.tex)。
-
-**幾何的cubic開の各stalkで相対χとAZ豊富性。** Smith–Van den Bergh §2.8の体上χを各幾何fiberのNoetherian AS4正規二次商へ適用し、局所χ持上げとAZ(A2)の直接補題から、任意の点vを閉点に持つ有限次元Noetherian局所基底で左右χ_i（全i）とAZ(A1)+(A2)を得る。局所有限型な任意の族T→U°の全stalk O_{T,t}で同じ結論が成立する（`cor:quadric-local-chi`、`cor:quadric-local-AZ-ampleness`、`cor:quadric-local-AZ-on-all-stalks`）。**各stalkの結果は基底全体の一様なχ消滅下限・AZ(A2)の効果性を意味しない。** 単一有限型開のNoetherian性、Hom有限・flat basechange、canonical compact/Serre比較とH2代数性は未証明。[証明](papers/sections/artin_roots.tex)。
-
-**任意基底変更で構造対象の全切断環を再構成。** 各幾何fiberのAS4正規二次商の深さ3と相対Koszul解消の分裂完全性から、全affine底変更でExt^j_{B_T}(R′,B_T)=0（j=0,1,2）。Gabriel局所化のHom極限によりHom_{QGr B_T}(πB_T,πB_T(n))≃(B_T)_n（全n∈Z）を自然に同定できる（`lem:relative-depth-three-saturation`、`cor:quadric-all-basechange-saturated-sections`）。非被約・非平坦な基底変更も含む。任意qgr対象のHom有限・flat basechange、canonical compact/Serreとの比較は未証明。[証明](papers/sections/relative_koszul.tex)・[適用](papers/sections/artin_roots.tex)。
+**残る核心。** 単一の有限型開U°全体のNoetherian性とχ/AZ、tailsのcanonical compact圏と有限foundationの比較、相対Serre根の認識は未証明。局所環R上の全有限型変更を扱った結果から、U°自体を扱ったとは推論しない。次はcubic標準解消を用いた導来局所化と、Noetherian性を与える幾何模型を進める。静的点検・組版・独立読取りの範囲は[研究ノート](notes/research_notes.md#検証範囲と再現手順)に集約する。
 
 ## モジュライのスタック構成
 
@@ -63,7 +55,7 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **可換点の全Artin変形は相対H2に属する。** 二周期cubic列のcanonical hullをArtin基底上で構成し、標準根の全軌道環に相対AS4被覆と正則正規二次切断を与えた。全有限型基底変更を含む昇格命題と合わせ、可換Qの全flat pointed Abel Artin変形が実際の相対H2対象になる。H2からAbel圏への忘却は、この点を中心とする形式変形groupoidの同値であり、変形は無障害、接次元9・無限小自己同型次元6である。[全Artinのhullと形式変形](papers/sections/quadric_artin_hull.tex)。一次方向については、Jacobian二重導分と右Zhang twistによる[明示構成と検算](papers/sections/quadric_first_order.tex)も保持する。一般cubic点でも、適合するample helixとHH²に恒等に作用する根があれば全Artin認識が成立する。この作用条件を満たす根の一般点での存在、一般有限型基底上の代数性は未解決である。
 
-**標準平方根はétale近傍へ代数化できる。** 有限foundation表示上のMorita自己同値の代数空間と平方写像を使い、可換点の標準根を実際のperfect双加群と平方同型としてétale近傍へ延長した。[根の代数化](papers/sections/artin_roots.tex)、`prop:quadric-etale-morita-root`。その近傍では、標準foundationに対して根がF0→F2、F1→F3と作用する同型を構成し、全四項窓のfull strong exceptional性、Hom階数2/4/6/9、三次関係rank2・四次重なりrank1の非退化性を任意底変更について証明した（`prop:quadric-etale-finite-window`）。未解決なのは任意の距離のHomと三次提示・相対tails heart・noetherian性・canonical compact導来比較・AZであり、四項窓の生成性だけでは相対H2の代数性を結論しない。特殊fiberのrankと非退化性の独立な厳密検算は [`verify_quadric_finite_windows.py`](computations/verify_quadric_finite_windows.py) に収録した。
+**標準平方根はétale近傍へ代数化できる。** 有限foundation表示上のMorita自己同値の代数空間と平方写像を使い、可換点の標準根を実際のperfect双加群と平方同型としてétale近傍へ延長した。[根の代数化](papers/sections/artin_roots.tex)、`prop:quadric-etale-morita-root`。その近傍では、標準foundationに対して根がF0→F2、F1→F3と作用する同型を構成し、全四項窓のfull strong exceptional性、Hom階数2/4/6/9、三次関係rank2・四次重なりrank1の非退化性を任意底変更について証明した（`prop:quadric-etale-finite-window`）。全距離のHomと三次提示は上記の相対解消で解決した。残るのは単一有限型開上のNoetherian tailsとcanonical compact/Serre認識であり、四項窓の生成性だけでは相対H2の代数性を結論しない。特殊fiberのrankと非退化性の独立な厳密検算は [`verify_quadric_finite_windows.py`](computations/verify_quadric_finite_windows.py) に収録した。
 
 族は基底変更と descent を備えた noetherian Abel 圏と構造対象 O の対である。導来条件には局所的な canonical compact 部分 $D(\operatorname{Ind}\mathcal C)^c$ を用い、特異基底上でそれを全 $D^b(\mathcal C)$ と同一視しない。平方根・根同型・AS被覆は fppf 局所の存在条件であり、標識に加えない。標数零の代数閉体上では元の $\mathcal H_2$ の pointed groupoid を回復する。
 

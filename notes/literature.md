@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.2。主論文v1.12に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.29。主論文v1.29に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -13,13 +13,13 @@
 
 A. B. Verevkin, *On a noncommutative analogue of the category of coherent sheaves on a projective scheme*, *American Mathematical Society Translations*, Series 2, **151** (1992), 41–53, DOI [10.1090/trans2/151/02](https://doi.org/10.1090/trans2/151/02)。書誌は Math-Net.Ru の著者書誌と後続論文の参考文献で照合した。**原著 Theorem 4.4 の全文は今回直接閲覧できていない。** 次数一生成された次数環の Veronese が QGr を保つとの定理内容は S. Paul Smith, *Advances in Mathematics* 230 (2012), p.1784（[著者公開PDF](https://sites.math.washington.edu/~smith/Research/QGr-kQ.pdf)）に明示される定理4.4の引用で確認した。現行 noncubic 族で必要な一般 noetherian 底への拡張は、原著の適用範囲に無条件に含めず、次数一生成性からの偶奇成分比較と torsion 商の議論を主原稿 `prop:noncubic-relative-heart-veronese` に書いた。
 
-**局所 Noetherian 性と相対χの参照範囲。** 3次元cubic AS正則環・幾何的quintupleの体上分類は `VdB2011` の既知結果として使う。体上Noetherian性を偶数Veroneseへ移す際のイデアルの有限生成性は主原稿 `prop:weighted-even-koszul` の証明に明記。一般Noetherian特殊fiberへの局所持上げは `lem:local-commutative-fibre-noetherian`（標題・証明は非可換fiberにも拡張）で証明し、有限次元Noetherian局所基底への相対χの持上げは `lem:local-chi-specialization` で証明した。可換Segre環のχは可換Noetherian次数環の標準Ext有限性から従う。AZ(A2)の非局所有限型基底への適用と、VdBの体上Noetherian性の正確な定理番号の再照合は残る。
+**局所 Noetherian 性と相対χの参照範囲。** 3次元cubic AS正則環・幾何的quintupleの体上分類は `VdB2011` の既知結果として使う。体上Noetherian性を偶数Veroneseへ移す際のイデアルの有限生成性は主原稿 `prop:weighted-even-koszul` の証明に明記。一般Noetherian特殊fiberへの局所持上げは `lem:local-commutative-fibre-noetherian`（標題・証明は非可換fiberにも拡張）で証明し、有限次元Noetherian局所基底への相対χの持上げは `lem:local-chi-specialization` で証明した。可換Segre環のχは可換Noetherian次数環の標準Ext有限性から従う。体上Noetherian性の正確な参照は `VdB2011` arXiv:0807.3753v3, Corollary 5.5.9(1)（p.20）であり、原文を確認した。同(3)は体上qgrのExt-finiteを述べる。Definition 8.1では相対familyのNoetherian性を仮定しており、この引用から有限型開全体のNoetherian性は導かない。局所基底上の全有限型変更でのχ・AZは、本文の中心変数補題によって別に証明した。
 
 **非可換quadricの体上χの一次資料。** S. Paul Smith–Michel Van den Bergh, *Noncommutative quadric surfaces*, *J. Noncommut. Geom.* **7** (2013), 817–856, [DOI](https://doi.org/10.4171/JNCG/136)。[著者版PDF](https://sites.math.washington.edu/~smith/Research/pencil-nc-quadrics.pdf) の §2.8（著者版p.7）をテキストとページ画像で確認した。Noetherianなquadratic AS正則4次元環の正則正規二次元商には左右χが成立する。体上の既知結果であり、相対基底への拡張は本研究の局所持上げ補題を別に使う。書誌キー `SVdB2013` は既に存在する。
 
-**構造対象の相対depth3と完全saturation。** Smith–Van den Bergh `SVdB2013` §2.8 の体上AS4正規二次商はGorenstein深さ3でExt^j_B(k,B)=0（j<3）。`lem:relative-depth-three-saturation` は相対Koszul cochainの内部次数ごとの分裂完全性から任意基底変更の低次Ext消滅と構造対象の全切断環を回復する。体上結果は既知、相対基底への証明は本研究で行った。
+**構造対象の相対depth3と完全saturation。** Smith–Van den Bergh `SVdB2013` §2.8 の体上AS4正規二次商はGorenstein深さ3でExt^j_B(k,B)=0（j<3）。`lem:relative-depth-three-saturation` は相対Koszul cochainの内部次数ごとの分裂完全性から任意基底変更の低次Ext消滅と構造対象の全切断環を回復する。`cor:relative-depth-three-coefficients` では任意係数Nへ拡張し、QGrのYoneda拡大を十分深いtailに沿って引き戻してH¹=0も証明した。体上結果は既知、相対基底での証明は本文に置く。一般論としての新規性は未確認。
 
-**AZ豊富性の証明範囲。** Artin–Zhang [AZ1994, Proposition 4.4] の体上のχ₁⇒ample方向は、複数の後続文献で確認できるが、任意Noetherian係数環への適用範囲を原典から完全には照合していない。本原稿の `lem:relative-chi1-implies-AZ-A2` はそれに依存せず、有限projectiveな各B_nと相対χ₁から、B/B_{≥n}のExt¹がnに依存しない高次数で消えることを直接証明してAZ(A2)を得る。局所相対χ₁によって可換点を閉点とする全Noetherian局所基底でこの条件が適用できる。非局所有限型底変更後のχ₁はまだ検証していない。
+**AZ豊富性の証明範囲。** Artin–Zhang [AZ1994, Proposition 4.4] の体上のχ₁⇒ample方向は、複数の後続文献で確認できるが、任意Noetherian係数環への適用範囲を原典から完全には照合していない。本原稿の `lem:relative-chi1-implies-AZ-A2` はそれに依存せず、有限projectiveな各B_nと相対χ₁から、B/B_{≥n}のExt¹がnに依存しない高次数で消えることを直接証明してAZ(A2)を得る。局所相対χ₁によって可換点を閉点とする全Noetherian局所基底でこの条件が適用できる。有限型中心基底変更後のχ₁は `lem:chi-finite-type-basechange` で証明し、一般coherent Hom有限・flat basechangeを `lem:chi1-qgr-hom-finite-flat` で直接導いた。これらの一般補題の独立な新規性は主張しない。
 
 ## 二次Veroneseの既知結果と今回の相対適用
 
