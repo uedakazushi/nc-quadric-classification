@@ -1137,6 +1137,136 @@ $k[[t]]$ へ持ち上がるとは限らない。
 の smoothness や成分数を証明するものではない。
 \end{remark}
 
+\begin{proposition}[noncubic 横断方向の三次平坦性の二次持上げ]
+\label{prop:noncubic-transverse-second-order}
+式~(\ref{eq:noncubic-tangent-examples}) の三つの点を取る。
+各点において
+\[
+ T_x\mathcal D_{3,\ge49}
+ \big/
+ \bigl(T_x(\operatorname{PGL}_9\cdot x)
+     +d\Phi(T_xP)\bigr)
+\]
+の次元は $r_x=2,2,3$ である。
+それぞれで、この商へ同型に写る
+$\mathbb Q$-上定義された $r_x$ 次元部分空間 $N_x$
+を選べて、任意の $\phi\in N_x$ に対し
+$k[t]/(t^3)$ 上の関係部分束
+\[
+ J_t=J+t\phi+t^2\psi
+ \quad(\bmod\,t^3)
+\]
+で $R_t=T_{k[t]/t^3}(V\otimes k[t]/t^3)/(J_t)$
+の\emph{三次成分}が自由階数 $49$ となるものが存在する。
+言い換えれば、三次 Hilbert determinantal locus の
+二次障害写像は選んだ $N_x$ 上で恒等的に零である。
+
+ここでいう持上げは三次成分に関する二次 jet の存在である。
+任意の内在的 $\HHstack$ 族への持上げ、
+および無限次の形式変形の存在は主張しない。
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:noncubic-third-degree-tangent} の
+整数行列で、$\ker d^2$ と
+群作用・六係数方向の和を計算する。
+法 $101$ の行簡約で商の基底候補を選び、
+分母を払って整数係数の
+$\phi_1,\ldots,\phi_{r_x}\in\ker d^2$
+を得る。実際に整数行列との積が零であることを
+直接検証し、商での独立性は法 $101$ の
+線型独立性で確認できる。
+
+$L_J$ の階数 $176$ を与える小行列を固定し、
+その行集合を $I$、列集合を $C$ と書く。
+$A=L_0|_{I,C}$ は整数係数行列であり、
+今回の三点では $\det A=\pm1$ と
+整数係数逆行列の等式を確認した。
+$K_0$ を $\ker L_0$ の列基底、
+$Q_3$ を $\operatorname{coker}L_0$ への
+PBW 基底による射影とする。
+一次変形 $\phi$ に対して
+\[
+ L_t=L_0+tL_1(\phi)
+      +t^2\bigl(L_1(\psi)+L_2(\phi)\bigr)
+      \pmod{t^3}
+\]
+と書く。$L_2(\phi)$ は二次関係の
+Grassmann affine 座標の積から来る
+$\phi$ に関して二次の項である。
+
+一次整合 $Q_3L_1(\phi)K_0=0$ が成り立つので、
+kernel 基底の一次補正を
+\[
+ K_1=-i_C\,A^{-1}(L_1(\phi)K_0)|_I
+\]
+と選べる。従って二次持上げ条件は
+\[
+ d^2\psi+
+ \mathcal Q_x(\phi)=0,\qquad
+ \mathcal Q_x(\phi)
+  =Q_3\left(
+      L_2(\phi)K_0
+      -L_1(\phi)i_CA^{-1}(L_1(\phi)K_0)|_I
+      \right)
+ \tag{NC-Ob2}\label{eq:noncubic-degree-three-second-obstruction}
+\]
+という $\operatorname{Hom}(\ker L_0,\operatorname{coker}L_0)$
+の線形方程式に帰着する。
+ここで $d^2$ は式~(\ref{eq:noncubic-koszul-hoch-cochain})
+の微分である。
+この表示は小行列 $A$ に関する Schur complement の
+二次 Taylor 係数に等しい。
+
+各基底ベクトル $\phi_i$ と、
+異なる二基底ベクトルの和 $\phi_i+\phi_j$ に対し、
+法 $101$ の線形方程式を解いて
+$\psi_i,\psi_{ij}$ の候補を求めた。
+さらに、$\phi$・$L_0$・$K_0$・$Q_3$・
+$d^2$ を整数係数で再構成し、
+必要に応じて $101^2$ を法とする有理数復元を行い、
+\[
+ d^2\psi_i=-\mathcal Q_x(\phi_i),\qquad
+ d^2\psi_{ij}=-\mathcal Q_x(\phi_i+\phi_j)
+\]
+が\emph{厳密な有理数の等式}となることを検証した。
+この計算は
+\texttt{computations/verify\_noncubic\_second\_order.py}
+で再現できるようにした。
+非交差・一根共有点では三組ずつ、
+二根対一致点では六組の補正を検証し、
+一致点では一部に分母 $2$ の係数を用いた。
+有限体で障害が零というだけで
+標数零の零性を主張しているのではない。
+
+$\mathcal Q_x(\phi)$ は $\phi$ に関して二次式なので、
+各基底方向とその二つずつの和で
+障害の類が零であることは、
+すべての
+$\phi=\sum_i a_i\phi_i\in N_x$
+に対して障害の類が零であることと同値である。
+例えば二次補正として
+\[
+ \psi(\phi)=
+ \sum_i a_i^2\psi_i
+ +\sum_{i<j}a_ia_j(\psi_{ij}-\psi_i-\psi_j)
+\]
+を選べば式~(\ref{eq:noncubic-degree-three-second-obstruction})
+が成立する。従って任意の横断方向で
+三次 Hilbert 条件を二次まで保つ族を得る。
+\end{proof}
+
+\begin{remark}[二次持上げと実際のモジュライとの距離]
+命題~\ref{prop:noncubic-transverse-second-order} は、
+三次条件の一次法方向が二次障害によって
+直ちに消えるわけではないことを示す。
+今回の証明から $\operatorname{HH}^3(R)_0$ 全体の
+消滅や、相対 Abel 圏としての変形の unobstructedness
+は従わない。
+次の課題は三次・それ以上の障害、および
+foundation から得られる実際の相対反 Serre
+族の横断接像との比較である。
+\end{remark}
+
 \begin{lemma}[二重平方環の中心 Clifford 表示]
 \label{lem:noncubic-relative-clifford-center}
 任意の可換環 $A$ 上の二元二次形式 $f_1,f_2$ に対し、
