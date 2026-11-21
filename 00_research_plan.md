@@ -1,8 +1,8 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.3。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.2。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
+2026-11-21 / v0.4。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.3。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
 
-**現在の優先課題は、全 `\mathcal H_2` の内在的な相対モジュライ `\mathfrak H_2` をArtinスタックとして構成することである。** `\mathfrak H_2` はまだ構成完了した対象ではなく、既存の foundation 表示スタック `\mathfrak Q_{\mathrm{fnd}}` と区別する。cubic の記法は `\mathcal H_3`（体上の強いクラス）・`\mathfrak H_3=[X^{\mathrm{H3}}/\mathrm{PGL}_4]`（条件付き相対族）と統一する。 体上の同値類分類は完成。noncubicでは次元1の滑らかな表示商、幾何点の慣性、μ2² gerbe、good moduli A1とcoarse space不存在を証明した。全H2のfoundationを含む有限代数商の開部分F0にcoherentな相対ruling交換を構成し、滑らか・有限型・次元3の `Q_fnd=[F0/S2]` と有限étale二重被覆 `F0→Q_fnd` を得た。全H2(k)のpointed groupoidはQ_fnd(k)に全充満に入る。cubicのgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]`。HH≥3の消滅と反Serre表示のdegree gerbe中立化も証明した。H2実現集合Yはcubicの非空開Cを含むため、Q_fndからの誘導位相で既約かつ連結、各成分数1である。各noncubic点は、全ての0以外の幾何ファイバーがcubicとなる有限自由foundation代数族、さらにpointed smooth proper dg族の特殊ファイバーとして得られる。残る核心は、任意基底上の内在的H2実現locusの有限表示、相対Serre/AZ再構成と内在的位相比較である。現行v1.2の構成確認・97頁LuaLaTeX組版はPASS。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
+**現在の優先課題は、全 `\mathcal H_2` の内在的な相対モジュライ `\mathfrak H_2` をArtinスタックとして構成することである。** 現行の具体的進展として、cubic 開部分には相対逆 Serre 双加群の導来 Hom から、noncubic 表示には局所平方根の二乗と行列式 twist の降下から、共通の `[Gr(56,81)/PGL9]` への射を構成した。noncubic 二重平方環は中心 `k[u,v,h]`（`h=cd+dc`、重み1,1,2）上階数4の Clifford 代数であり、任意の noetherian 基底上で左右 noetherian、perfect 圏には相対 Serre `(-)_ι(-2)[2]` がある。各 noncubic 点への既存の foundation 退化は全次数有限局所自由な反 Serre 代数族にもなる。**依然未解決なのは全相対 H2 の heart・AZ・AS 被覆の認識と、これらの二射を統一する有限表示の実現 locus である。** `\mathfrak H_2` はまだ構成完了した対象ではなく、既存の foundation 表示スタック `\mathfrak Q_{\mathrm{fnd}}` と区別する。cubic の記法は `\mathcal H_3`（体上の強いクラス）・`\mathfrak H_3=[X^{\mathrm{H3}}/\mathrm{PGL}_4]`（条件付き相対族）と統一する。 体上の同値類分類は完成。noncubicでは次元1の滑らかな表示商、幾何点の慣性、μ2² gerbe、good moduli A1とcoarse space不存在を証明した。全H2のfoundationを含む有限代数商の開部分F0にcoherentな相対ruling交換を構成し、滑らか・有限型・次元3の `Q_fnd=[F0/S2]` と有限étale二重被覆 `F0→Q_fnd` を得た。全H2(k)のpointed groupoidはQ_fnd(k)に全充満に入る。cubicのgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]`。HH≥3の消滅と反Serre表示のdegree gerbe中立化も証明した。H2実現集合Yはcubicの非空開Cを含むため、Q_fndからの誘導位相で既約かつ連結、各成分数1である。各noncubic点は、全ての0以外の幾何ファイバーがcubicとなる有限自由foundation代数族、さらにpointed smooth proper dg族の特殊ファイバーとして得られる。残る核心は、任意基底上の内在的H2実現locusの有限表示、相対Serre/AZ再構成と内在的位相比較である。現行v1.2の構成確認・97頁LuaLaTeX組版はPASS。実行・保存は [AGENTS.md](AGENTS.md)、実際の検証範囲は研究ノートを参照。
 
 ## 1. 恒常的な研究原則と保存許可
 
@@ -120,7 +120,7 @@ F1–F6が揃うまでは「完全分類」と報告しない。条件付きの�
 
 cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れたpointed同値を数え切れないため、最初の軌道対象の内在性に基づく有限判定を最終仕様に採用した。これは具体的な必要十分条件で、未知の圏同値や未知のAS条件を言い換えただけではない。抽象的な基礎体上では有限代数的判定であり、機械実行には係数体の有効な表示を要する。
 
-現在はこの同値類分類を、非被約底も含む族と自己同値を保持するスタックへ拡張する。noncubicでは表示商と全幾何点慣性を構成した。finite foundationの開部分F0上ではruling交換を相対的に構成し、coherentなS2商Q_fndを得た。全H2(k)はそのfull subgroupoidとして実現され、全pointed自己同値も捉える。F0→Q_fndは実際に有限étale二重被覆であるが、これを任意の内在的H2族のruling被覆と同定する相対認識は残る。H2実現集合はcubic非空開を含むため誘導位相で既約であり、各noncubic点へのcubicからのpointed smooth proper dg特殊化も構成できる。全foundation変形に相対平方根・AS被覆が存在するとは主張しない。
+現在はこの同値類分類を、非被約底も含む族と自己同値を保持するスタックへ拡張する。noncubicでは表示商と全幾何点慣性を構成した。finite foundationの開部分F0上ではruling交換を相対的に構成し、coherentなS2商Q_fndを得た。全H2(k)はそのfull subgroupoidとして実現され、全pointed自己同値も捉える。F0→Q_fndは実際に有限étale二重被覆であるが、これを任意の内在的H2族のruling被覆と同定する相対認識は残る。H2実現集合はcubic非空開を含むため誘導位相で既約であり、各noncubic点へのcubicからのpointed smooth proper dg特殊化を構成した。さらに各特殊化について反Serre軌道のperfect複体が次数零の局所自由環に集中し、`[Gr(56,81)/PGL9]` への実際の曲線が得られる。全foundation変形に相対平方根・AS被覆が存在するとは主張しない。
 
 公表前の包括的な先行研究比較と第三者による証明レビューも必要である。既知のVdB分類、PresottoのZ-domain、MCM・helix・AS双対性、関係式stackと変形比較を本研究の新しい成果とはしない。一般の自己同値・根・ambient忘却ファイバーやcubic同値の幾何的簡約も、必要な範囲で扱う。
 
@@ -128,19 +128,19 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**内在的な相対H2実現locusの有限表示と相対Serre/AZ再構成を第一課題とする。** 出発点は `papers/sections/foundation_stack.tex` のQ_fndである。ruling交換とS2の整合性、有限étale二重被覆、cubicのgeometric開部分 `[Gr(2,8)_geo/(PGL2)^3]`、実現集合の誘導位相での既約性と全noncubic点へのdg特殊化は構成済みなので再び未解決課題に戻さない。次にH2のheart・Serre根・AS被覆を持つ部分関手を非被約底上でも定義し、有限表示の開または局所閉部分になるかを調べる。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
+**内在的な相対H2実現locusの有限表示と相対heart/AZ再構成を第一課題とする。** 出発点は `papers/sections/foundation_stack.tex` のQ_fndである。ruling交換とS2の整合性、有限étale二重被覆、cubicのgeometric開部分 `[Gr(2,8)_geo/(PGL2)^3]`、実現集合の誘導位相での既約性と全noncubic点へのdg特殊化は構成済みなので再び未解決課題に戻さない。cubic・noncubic の双方で相対反Serre環のGrassmann射を構成済みなので、次に両射とfoundation特殊化に一致する有限表示の反Serre実現locusを同定する。特にH2のheart・Serre根・AS被覆を持つ部分関手を非被約底上でも定義し、有限表示の開または局所閉部分になるかを調べる。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
 
 到達基準は次の三点である。
 
 1. **族の対象を明示する。** Oを指定した相対圏の族に対して、適合するsとAS4被覆はfppf局所に存在する性質とし、選択を標識へ加えない。全幾何ファイバーがH2という条件との一致は別に検証する。
 2. **局所表示と同値を族で認識する。** 内在的M=sOとruling対X,Yの存在・底変更・降下、相対Serre/AZ再構成、pointed exact同値の相対全忠実性と本質的全射性を証明する。F0上の交換と有限étale二重被覆は入力として使い、任意の内在的族からこの表示へ移れることを別に確認する。
-3. **族と位相を比較する。** 構成済みのcubicから全noncubic点への有限自由foundation族を入力として、階数3境界を含む相対heart・根・AZ・AS被覆の認識を閉じる。実現集合の誘導位相ではcubicが稠密で既約成分は一つである。内在的stackの位相との一致を別に示し、点集合のcubic/noncubic非交和を開閉分解と読み替えない。
+3. **反Serre環を通じて族と位相を比較する。** 構成済みのcubicから全noncubic点への有限自由foundation族と全次数平坦な反Serre環の特殊化を入力として、階数3境界を含む相対heart・根・AZ・AS被覆の認識を閉じる。実現集合の誘導位相ではcubicが稠密で既約成分は一つである。内在的stackの位相との一致を別に示し、点集合のcubic/noncubic非交和を開閉分解と読み替えない。
 
-代替の統一表示は `[X_as/PGL9]`。X_as⊂Gr(56,81)の相対実現条件が核心である。degree-scalar gerbeのBrauer障害は `det(R1)^−11 det(R2)^2` で解消済みなので、同じ障害を再調査しない。下降した次数別線束twistとcanonical相対反Serre環の同定は再構成に含める。
+代替の統一表示は `[X_as/PGL9]`。X_as⊂Gr(56,81)の相対実現条件が核心である。degree-scalar gerbeのBrauer障害は `det(R1)^−11 det(R2)^2` で解消済みなので、同じ障害を再調査しない。noncubicでは `B_{2n}⊗(det W)^{-n}` と積 `a⋆b=aι^n(b)` により全次数の降下が完成し、cubicでも相対Serreから同じGrassmann商への射が完成した。残るのは両chartの相対的な貼合せとcanonical内在族との比較であり、既に証明した降下を再度未解決としない。
 
 De Deken–Lowenのhelix変形比較は冪零拡大におけるabelian変形とfoundation代数変形を結ぶが、H2の根・AS被覆条件の相対開性は含まない。可換Q上でも、選んだ根sのHH²作用がuを−uへ送れば、その固定一次変形へsはR線形dg/Morita自己同値として持ち上がらない。これは別の根の存在を排除せず、構成した変形がH2族であるとも主張しないため、H2 locusの非開性を意味しない。Toën–Vaquiéの対象stackも固定dg圏に対する結果である。適用範囲を `notes/literature.md` で確認する。
 
-相対条件の具体的検証には [Ore変形ノート](notes/ore_quadric_deformations.md) の中央正則切断を使える。まず基底変更と両立するbimodule Koszul複体のexactnessと自己双対性を確認し、相対Serre公式へ進む。現状はこの相対結論を定理に用いない。
+相対条件の具体的検証には [Ore変形ノート](notes/ore_quadric_deformations.md) の中央正則切断を使える。noncubic表示の中心 Clifford trace により perfect 圏での相対Serre公式は確立したので、次はそれを全coherent heartの相対Serre・AZ・相対AS被覆に拡張する。Ore変形ノートの別族についてはbimodule Koszul複体のexactnessと自己双対性をなお検証する。
 
 先行研究上の新規性比較、一般GL4判定solverの実装、外部査読・形式証明は未完了。主定理に誤りが見つかれば、本文・概要・方針・hubを訂正する。
 
