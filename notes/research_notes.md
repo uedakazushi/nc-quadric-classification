@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.59（A v1.62、B v0.19・相対依存の監査中、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.60（A v1.64・20節、B v0.21・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -402,20 +402,13 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文の責任範囲と検証を要する依存
 
-- Aの正本は体上の強い \(\mathcal O\)-marked \(\mathcal H_2\) の分類（cubic/noncubic の全構成・同値判定）であり、主原稿は `papers/nc-quadric-classification.tex` である。
-- Bの正本は局所有限型site上の相対 \(\mathfrak H_2\) とその変形・代数性・境界幾何である。完全な証明本文は `papers/moduli/` の現行節に置く。相対Koszul、Noetherian貼合せ、相対cubic tails、AS4被覆、Artin foundation/根、cubic/noncubic効果性、全体のsmooth有限型Artin性、境界の相対商・全慣性・DM粗モジュライ・一致類の形式局所商を含む。
-- BからAへの引用のうち、Aの完成した体上分類やnormal helixを入力とするものは維持できる。一方、Aに残る相対foundationや局所Artin補題への引用は、証明の所在を監査して論文Bへ集約する。Aの証明をBの未完成な主定理で循環的に証明することは避ける。
-- Cでは有限foundation・QP・avatarの表示と内在的H2適合性を区別し、相対スタック同値の証明がないところは未解決とする。
+Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構成・完全分類・pointed exact同値判定を中心とし、20の分類分割節を読み込む。Bの `papers/nc-quadric-moduli.tex` は相対定義・変形・有限型効果性・Noetherian性・Serre根・境界の群商と慣性・good/coarse moduli・楕円型忘却の証明本文を31分割節に保持する。Cはquiver/QP/avatarの表示と相対適合性の未解決範囲を扱う。
+
+**依存の核心。** BがAの体上分類・normal helix・有限同値判定を使うのはよい。一方、Bが引用するAの相対foundationや局所Artin補題は、Bの主定理に依存していないかを区別して検査し、B固有の結果ならBに移す。Aから外した相対節は移管済みの証明を失わないか確かめてから整理する。数値・例・計算的証拠と全体の相対認識・代数性の証明を混同しない。
 
 ## 検証範囲と再現手順
 
-**再編後の現行ソース検査（2026-11-22）。** 論文B v0.12の主TeXと11分割節を展開し、104ラベルについて重複0、内部 `\\ref`/`\\eqref` の未定義0、文献キー欠落0、主要TeX環境のbegin/end不一致0をGitHub mainのソースから静的に確認した（PASS）。証明の移管とその前提の数学的独立監査は別である。Bの有限型・smooth Artin性の定理の証明は移管したが、Aに残るcubic/noncubicの有限型効果性がまだ入力となる。非退化二形式の判別式・resultantについて、SymPy1.14.0による厳密多項式演算で $D(f,g)^2-\Delta(f)\Delta(g)=4\operatorname{Res}(f,g)$ と、表示商のfiber方程式 $(1-\xi)b^2+4\xi ac$ を検算した（PASS）。この計算は有限型Artin性・相対同値・慣性等の証明ではない。実際のLuaLaTeX組版・PDF画像確認・GitHub Actions・形式証明器は今回未実行である。
-
-
-
-**三論文再編後の現行検査（2026-11-22）。** 論文B v0.6の主TeXと五つの分割節を展開して静的に点検し、34ラベルに重複なし、内部 `\\ref`/`\\eqref` の未解決0、引用キー欠落0、主要TeX環境のbegin/end不一致0を確認した（PASS）。この点検は `scripts/check.py sources` の完全実行ではなく、組版確認でもない。非cubic特殊fiberの補助恒等式はSymPyの厳密多項式演算で独立に確認した（`D(f,g)^2-Δ(f)Δ(g)-4Res(f,g)=0` と `b^2-ξ(b^2-4ac)=(1-ξ)b^2+4ξac`、PASS）。全次数の相対代数性やstack同値の証明を計算で認証したわけではない。新たなLuaLaTeXのビルド・PDF画像検査および外部査読・形式証明は未実施。次の移管対象は `papers/sections/relative_moduli.tex` の反Serre再構成・fppf stackの認識・体上回復の証明であり、相対公理と補題の現在の正本はBの `papers/moduli/relative_definitions.tex` にある。
-
-
+**現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現在の3原稿で `scripts/check.py papers` の全体実行およびLuaLaTeXの実組版は未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
 
 **現行版の追加検証（2026-11-22）。** 境界の相対表示・特殊fiber・全慣性・任意代数空間への非分離に加え、DM開の粗モジュライの任意底変更、Hartogsによる非good性、DVRによる慣性の非proper性、全有限成分の法表現、相対ruling mutation、AHRを用いる形式対と局所不変式環を独立読取りした。`verify_noncubic_boundary.py` の既存検算に、DVR自己同型、fiberの微分、全16次元Grassmann接空間・rank12の軌道・4次元HH²と有限成分の作用の厳密検算を統合してPASS。`verify_stack_symmetries.py` も再実行してPASS。全旧suiteは再実行せず、形式証明器も用いていない。
 

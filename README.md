@@ -2,19 +2,19 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.59、論文A v1.62、論文B v0.19（論理依存の監査中）、論文C v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.60、論文A v1.64、論文B v0.21（依存・組版の監査中）、論文C v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## 公表用原稿：三論文へ再編
 
 | 原稿 | 中心課題 | 状態 |
 | --- | --- | --- |
-| **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上分類の全証明を保持。相対節はBへの引用に整理中 |
-| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic有限型効果性・全体Artin性・境界の相対幾何の証明を保持。Aに残る補助定理への依存を監査中** |
+| **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
+| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
 | **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 八・十・十二本矢、QP、反標準avatarと忘却 | v0.2。内在的比較の未解決条件を保持 |
 
-論文AのAbstractとIntroductionは分類に焦点を当てて整理した。後半に残る相対結果のstatementを削る前に、依存する分類の補題・引用を確認する。
+論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
-Aをまず独立した分類論文として完成させ、BはAの体上分類だけを主な入力とする相対モジュライ論文、Cは有限表示とavatarの独立論文として整える。B固有の証明はBの `papers/moduli/` に置き、Aに残る相対補助定理との依存と引用の循環を監査する。有用な証明を削除せず、重複する証明本文を現行の正本へ統合する。Bの組版コマンドは `python3 scripts/check.py build --manuscript papers/nc-quadric-moduli.tex`。
+Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。現時点ではA/B間の相対補助定理の依存監査が残る。3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
 ## VS Code / LuaLaTeX の組版環境
 
