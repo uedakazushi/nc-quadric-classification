@@ -34,44 +34,7 @@ De Deken--Lowen の変形比較により対応する。
 この対応は適合平方根または AS4 被覆の持上げを主張しない。
 \end{theorem}
 \begin{proof}
-既存の helix が \cite{DeDekenLowen2011} の定理の仮定を満たすことを確認する。
-$\mathcal G$ は局所 noetherian であり、$\mathcal C$ の対象は finitely presented である。
-\cite[Proposition 6.34]{LowenVanDenBergh2006} と大域次元二により、
-各 $E_i$ からの導来 Hom は直和と可換し、有限 cohomological amplitude を持つ。
-従って $E_i$ は $D(\mathcal G)$ で compact である。
-四連続項が $D^b(\mathcal C)$ を生成し、$\mathcal C$ が $D(\mathcal G)$ を
-localizing に生成するため、四連続項は compact generators になる。
-helix の mutation 公式は完全例外列と Serre 双対の通常の公式であり、
-周期移動 $E_{i+4}=S^{-1}E_i[2]$ と一致する。
-従ってこれは \cite[Definition 5.12]{DeDekenLowen2011} の geometric $(4,3)$-helix である。
-基礎体上で全対象と全 Hom 空間は平坦である。
-
-また定理~\ref{thm:normal-helix} の豊富性と正次数 Ext の最終的消滅は、
-同論文 Corollary 3.16 の生成条件および tails-projectivity を与える。
-付随する $\mathbb Z$-代数は右 noetherian なので、同論文 \S3.3 の
-$L_{\mathrm{tails}}=T_{\mathrm{tails}}$ が成立する。
-従って helix は $\mathbb Z$-generating である。
-さらに geometric 性は、同論文 Theorem 4.5 の
-$\operatorname{Ext}^{1,2}(E_i,X\otimes_k E_j)=0$（$i\le j$、$X$ 有限次元）を与える。
-
-ここで $A\twoheadrightarrow k$ は coherent な可換環の冪零拡大であり、
-$k$ は $A$ 上有限表示だから、同論文 \S4.1 の基底条件も満たす。
-Theorem 5.13(1)--(4) により、flat 対象としての helix の一意な持上げ、
-compact generation、strong 性、前向き Hom の平坦性と特殊ファイバーとの一致を得る。
-有限次元の特殊ファイバーを持つ平坦 $A$-加群は有限自由である。
-よって $\Lambda_A$ の頂点成分は元と同じ階数を持ち、全階数は二十四となる。
-
-各 $E_{i,A}$ は有限な $\mathfrak m$-進フィルターを持つ。
-その次数付き部分は平坦性により
-$(\mathfrak m^r/\mathfrak m^{r+1})\otimes_k E_i$ であり、
-いずれも noetherian なので $E_{i,A}$ も noetherian である。
-全変形圏の局所 noetherian 性は、Theorem 4.5 と Proposition 4.6(5) による
-noetherian $\mathbb Z$-代数の変形表示からも従う。
-導来 Morita により表示された導来同値を得る。
-有限 foundation の相対 bar 解消
-（補題~\ref{lem:foundation-relative-smooth-proper}）が相対 smooth proper 性を与える。
-最後の変形比較は、いま確認した仮定の下での
-\cite[Theorem 5.15]{DeDekenLowen2011} である。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{lemma}[Artin 基底での exactness の認識]
@@ -84,37 +47,7 @@ $F_A$ は $\mathcal G_A$ の完全自己同値から誘導される。
 この自己同値は noetherian 対象および $A$ 上平坦な対象を保つ。
 \end{lemma}
 \begin{proof}
-$i:\mathcal G\to\mathcal G_A$ を $\mathfrak m$ で消される対象の完全な包含とする。
-導来 Morita 表示で $D(i)$ は $\Lambda_A\to\Lambda$ に沿う restriction of scalars になる。
-実際、flat な $T_A$ に対する導来随伴により
-\[
- \mathbf R\operatorname{Hom}_{\mathcal G_A}(T_A,iX)
- \simeq \mathbf R\operatorname{Hom}_{\mathcal G}(T,X)
-\]
-であり、$\Lambda_A$ の作用はその還元を通る。
-非有界の場合も、\cite[\S5.2]{DeDekenLowen2011} の導来随伴、または
-compact generator 上の比較を直和を保つ exact functor へ延長することにより成立する。
-
-$P_0=k\otimes_A^{\mathbf L}P$ と置く。
-$\Lambda_A$ は $A$ 上平坦で、双加群の左右の $A$-作用は一致するので、
-任意の $M\in D(\operatorname{Mod}\Lambda)$ に対し
-\[
- (\operatorname{Res}M)\otimes_{\Lambda_A}^{\mathbf L}P
- \simeq
- \operatorname{Res}\bigl(M\otimes_\Lambda^{\mathbf L}P_0\bigr).
-\]
-これは $\Lambda\otimes_{\Lambda_A}^{\mathbf L}P
-\simeq k\otimes_A^{\mathbf L}P$ と結合則から従う。
-従って $F_A i\simeq iF_0$ であり、逆関手についても同じである。
-
-任意の $M\in\mathcal G_A$ のフィルター
-$M\supset\mathfrak mM\supset\cdots\supset\mathfrak m^NM=0$
-の各商は $i\mathcal G$ に属する。
-$F_0$ は heart-exact なので各商の $F_A$ による像は heart に入る。
-heart は拡大に閉じるから $F_A M$ も heart に入り、逆関手にも同じ議論が適用できる。
-従って制限は Abel 圏の完全自己同値である。
-Abel 同値は noetherian 性を保ち、$A$-線形完全関手は有限表示 $A$-加群との
-tensor と可換するので、基底上の平坦性も保つ。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{lemma}[Artin 基底での豊富性の持上げ]
@@ -129,22 +62,7 @@ $(\mathcal O,F_0)$ が AZ ample であり、全ての $N\in\mathcal C$ につい
 $\mathcal C_A=(\mathcal G_A)^{\mathrm{noeth}}$ 上 AZ ample である。
 \end{lemma}
 \begin{proof}
-$L_{n,A}=F_A^{-n}\mathcal O_A$ は flat である。
-$N\in\mathcal C$ に対する導来随伴は
-\[
- \mathbf R\operatorname{Hom}_{\mathcal G_A}(L_{n,A},iN)
- \simeq\mathbf R\operatorname{Hom}_{\mathcal G}(F_0^{-n}\mathcal O,N)
-\]
-を与える。任意の noetherian $M\in\mathcal C_A$ をその有限な
-$\mathfrak m$-進フィルターで分け、長完全列を使うと、
-$\operatorname{Ext}^{j}(L_{n,A},M)=0$（$j>0,n\gg0$）を得る。
-この消滅が AZ の Hom 全射条件を与える。
-
-生成条件では $\bar M=M/\mathfrak mM$ に対して十分負のシフトからの有限全射を取り、
-$\operatorname{Ext}^{1}(L_{n,A},\mathfrak mM)=0$ によって各射を $M$ へ持ち上げる。
-持上げた写像の余核 $Q$ は $Q/\mathfrak mQ=0$ なので、
-$Q=\mathfrak mQ=\cdots=\mathfrak m^NQ=0$ である。
-従って持上げも全射となる。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{proposition}[全 Abel 変形の canonical 反 Serre 環]
@@ -167,38 +85,7 @@ Artin 変形を与え、
 この構成は Artin 基底変更と両立する。
 \end{proposition}
 \begin{proof}
-有限 foundation 表示の相対 Serre 双加群とその逆は perfect で、
-有限な相対 bar 解消によって基底変更と可換する。
-特殊ファイバーの $t_0=S^{-1}[2]$ は完全自己同値なので、
-補題~\ref{lem:artin-morita-heart-exact} が $t_A$ の heart-exactness を与える。
-系~\ref{cor:pointed-derived-exact} の証明の Ext 消滅と
-補題~\ref{lem:artin-ample-lift} により AZ ample となる。
-
-$t_A^n\mathcal O_A$ は $E_{4n}=t_0^n\mathcal O$ の flat な持上げである。
-従って持上げの一意性により $E_{4n,A}$ と同型であり、
-\cite[Theorem 5.13(4)]{DeDekenLowen2011} は
-$\mathbf R\operatorname{Hom}(\mathcal O_A,t_A^n\mathcal O_A)$ が
-次数零に集中する階数 $(2n+1)^2$ の自由加群であることを与える。
-これらは compact 対象間の Hom だから、有限 foundation の perfect 複体として
-計算でき、任意の Artin 基底変更に対し導来基底変更する。
-次数零の自由性から通常の Hom の基底変更も従う。
-
-特殊ファイバーは元の二次反 Serre 環である。
-全次数平坦性と二次性から、補題~\ref{lem:relative-quadratic-from-fibers} により
-$R_A^{\mathrm{can}}$ 自身が二次である。
-次数一、二、三の階数は $9,25,49$ なので $X_3$ の条件を満たす。
-noetherian 性は補題~\ref{lem:artin-noetherian-lift} による。
-一般の noetherian $M,N$ に対する Hom 有限性には、$M$ の平坦性を必要としない。
-$N$ を $\mathfrak m$-進フィルターで分け、その商を $iN_0$ と書けば、通常の随伴
-\[
- \operatorname{Hom}_{\mathcal G_A}(M,iN_0)
- \simeq\operatorname{Hom}_{\mathcal G}(M/\mathfrak mM,N_0)
-\]
-の右辺は有限次元である。Hom の左完全性と有限フィルターから
-$\operatorname{Hom}(M,N)$ の $A$ 上有限性が従う。
-相対 AZ 再構成を適用して pointed 同値を得る。
-Artin 局所基底上の線束は自由なので、次数スカラーの rigidification によって
-基底の選択に依存しない商スタックの点を得る。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{proposition}[Artin 関係式族は表示された全軌道環である]
@@ -213,17 +100,7 @@ $(\mathcal O_A,F_A)$ は AZ ample であり、自然な次数付き射
 は全次数で同型である。
 \end{proposition}
 \begin{proof}
-$F_A$ は次数付き加群圏とその商の完全自己同値であり、
-特殊ファイバーは $t_0$ である。
-補題~\ref{lem:artin-ample-lift} により AZ ample となる。
-$\mathcal O_A$ は flat な $E_0$ の持上げなので compact であり、
-$F_A$ は直和を保つ導来自己同値を与えるから、全ての $F_A^n\mathcal O_A$ も compact である。
-従って両者の導来 Hom は finite foundation の表示で perfect $A$-複体となる。
-その特殊ファイバーは $\operatorname{Hom}(\mathcal O,t_0^n\mathcal O)[0]$ なので、
-導来 Nakayama により自身も階数 $(2n+1)^2$ の自由加群の次数零への集中となる。
-上の自然射の次数 $n$ 成分は同階数の自由加群間の射であり、
-特殊ファイバーで元の反 Serre 全軌道環の同型になる。
-従って Nakayama により同型である。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[形式的な偏極忘却の分裂]
@@ -249,53 +126,7 @@ Artin 基底上で、関係式から pointed Abel 圏へ移る変形写像
 命題~\ref{prop:antiserre-polarization-tangent} の Zhang 方向が生成する。
 \end{corollary}
 \begin{proof}
-左から右の写像は命題~\ref{prop:artin-relations-flat-abelian} により定義される。
-命題~\ref{prop:artin-canonical-antiserre} が右逆を与え、合成が恒等になることは
-AZ 再構成による。
-ここで変形は閉ファイバーの同定を持つものとし、一次変形空間はその同型類を取る。
-構造対象の持上げの同型類は例外性から一意なので、pointed 条件による
-追加の一次変形方向はない。
-De Deken--Lowen の変形比較と既存の有限 foundation 表示によって、
-右辺の一次変形空間は $\operatorname{HH}^{2}(\Lambda)$ である。
-
-核を計算するため $A=k[\varepsilon]/(\varepsilon^2)$ とし、
-Abel 変形の自明化を選ぶ。
-命題~\ref{prop:artin-presentation-full-orbit} により、関係式はこの一定圏上の
-$t_0$ の完全自己同値としての持上げ $F_A$ の全軌道環である。
-canonical な持上げ $t_A$ と比較すると、
-$U_A=F_A t_A^{-1}$ は特殊ファイバーで恒等となる完全自己同値である。
-$U_A\mathcal O_A$ は例外対象 $\mathcal O$ の flat な持上げなので
-$\mathcal O_A$ と同型であり、pointed 同値として扱える。
-逆にそのような $U_A$ から $F_A=U_A t_A$ の全軌道環を作れる。
-これは前命題と同じ compact Hom・豊富性・二次性の議論で $X_3$ の点を与える。
-
-この $U_A$ の Morita 双加群 $P$ を考える。
-右加群として $P\otimes_A^{\mathbf L}k\simeq\Lambda$ なので、
-underlying perfect $A$-複体は次数零の自由加群に集中する。
-特殊ファイバーの単位元を持ち上げて作る右加群射
-$\Lambda_A\to P$ は同階数自由 $A$-加群間の射で、還元が同型なので同型である。
-従って左作用は $\alpha=1+\varepsilon\delta$ という代数自己同型で与えられ、
-積との整合は $\delta\in\operatorname{Der}_k(\Lambda)$ と同値である。
-右加群同型を $1+\varepsilon a$ だけ変えると $\delta$ は内部導分だけ変わる。
-よって同値類は $\operatorname{HH}^{1}(\Lambda)$ となる。
-頂点代数 $k^4$ が分離であるため、内部導分を調整して
-$\delta(e_i)=0$ とでき、構造対象 $e_0\Lambda_A$ の標識を保てる。
-また $Z(\Lambda)=k$ から $Z(\Lambda_A)=A$ なので、標識の scalar の選択は
-自然自己同型で除かれ、新たな一次方向を加えない。
-
-Abel 変形の自明化の変更は、特殊ファイバーで恒等となる自己同値による
-$F_A$ の共役である。
-canonical $t_A$ は相対 Serre 双対の一意性によって全ての $A$-線形自己同値と可換する。
-従ってこれは $U_A$ の共役であり、一次の near-identity 群の共役は自明なので、
-$\operatorname{HH}^{1}(\Lambda)$ の元を変えない。
-逆に全軌道環の同型は AZ 再構成によって、この共役に対応する。
-次数比較同型の scalar は $\operatorname{PGL}_9$ において既に除いている。
-これで核の同定と完全性が従う。
-
-二根対一致点では命題~\ref{prop:truncated-versus-foundation-tangent} の計算より、
-中央項は五次元、右辺は四次元であり、核は一次元である。
-既存の Zhang 方向は次数付き環として非自明で、pointed Abel 圏として一定だから、
-この核の非零元を与える。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[Abel 変形の無障害性と三基準点の接次元]
@@ -310,13 +141,7 @@ $\HH$ の任意の対象の pointed Abel 変形は、Artin 基底の小拡大に
 偏極を保持した関係式変形の接次元は $3,3,5$ となる。
 \end{corollary}
 \begin{proof}
-De Deken--Lowen の比較と命題~\ref{prop:foundation-hochschild} の
-$\operatorname{HH}^{3}(\Lambda)=0$ により、小拡大に対する有限代数の結合律障害は消える。
-例外対象 $\mathcal O$ の持上げも無障害かつ同型類一意である。
-同命題の $\dim\operatorname{HH}^{2}(\Lambda)-\dim\operatorname{HH}^{1}(\Lambda)=3$ と
-(\ref{eq:artin-polarization-tangent-split}) が次元公式を与える。
-三点では、既存の pointed 自己同値群と有限 foundation の慣性の比較から、
-$\dim\operatorname{HH}^{1}(\Lambda)=0,0,1$ である。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[$\operatorname{HH}^{1}=0$ の点での全 Artin 偏極認識]
@@ -330,32 +155,7 @@ $t_A=S_A^{-1}[2]$ と自然同型である。
 根を一つ共有する場合も含む。
 \end{corollary}
 \begin{proof}
-前系と同様に $U_A=F_A t_A^{-1}$ を考える。
-その Morita 双加群は右 $\Lambda_A$-加群として $\Lambda_A$ と同型であり、
-左作用は $\mathfrak m$ を法として恒等な代数自己同型 $\alpha$ で与えられる。
-この議論は任意の冪零次数について成立する。
-
-$\alpha\equiv1\pmod{\mathfrak m^r}$ と仮定すると、先頭項
-\[
- \alpha-1:\Lambda\longrightarrow
- (\mathfrak m^r/\mathfrak m^{r+1})\otimes_k\Lambda
-\]
-は $k$-導分である。
-$\operatorname{HH}^{1}(\Lambda)=0$ により各係数の導分は内部導分なので、
-ある $x_r\in\mathfrak m^r\Lambda_A$ に対して
-$\operatorname{Ad}(1+x_r)^{-1}\alpha\equiv1\pmod{\mathfrak m^{r+1}}$
-とできる。有限回繰り返せば $\alpha$ は内部自己同型となる。
-従って $U_A$ は恒等 functor と自然同型である。
-標識上の scalar の差は $Z(\Lambda_A)=A$ によって調整できる。
-ここで中心の等式も、$Z(\Lambda)=k$ を使って各 $\mathfrak m$-次数を
-順に scalar として取り除くことで得られる。
-よって $F_A\simeq t_A$ となる。
-
-noncubic で二つの根対が異なれば、
-命題~\ref{prop:noncubic-presentation-stack} の pointed 慣性群は有限である。
-標数零ではその Lie 代数は零であり、有限 foundation の慣性との比較により
-$\operatorname{HH}^{1}(\Lambda)=0$ となる。
-これは一般配置だけでなく、一根共有および有限な追加対称性を持つ配置にも当てはまる。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[非一致根対での関係式空間の滑らかさ]
@@ -366,26 +166,7 @@ $x\in[X_3/\operatorname{PGL}_9](k)$ が、二つの根対の異なる noncubic �
 生成元の枠を選んだ対応点 $J\in X_3(k)$ では、$X_3$ は滑らかで局所次元は八十三である。
 \end{corollary}
 \begin{proof}
-この場合の pointed 慣性群は有限なので、
-$\operatorname{HH}^{1}(\Lambda)=0$ である。
-系~\ref{cor:artin-rigid-polarization} と
-系~\ref{cor:artin-abelian-unobstructed} により、
-任意の Artin 関係式変形は canonical に偏極され、その underlying Abel 変形は
-任意の小拡大に沿って持ち上がる。
-
-枠を付けた $J$ の任意の変形 $J_{A_0}$ と小拡大 $A\twoheadrightarrow A_0$ を取る。
-その Abel 変形を $A$ へ持ち上げ、canonical 反 Serre 環を作る。
-$A_0$ への制限は元の環と次数スカラーを除いて同型である。
-次数一の自由加群の基底を、その同型に合わせて $A$ へ持ち上げれば、
-$J_{A_0}$ 自身を制限に持つ $X_3(A)$ の点を得る。
-基底の持上げに障害がないことは $\operatorname{GL}_9$ の滑らかさ、
-または可逆行列を局所 Artin 環の小拡大へ持ち上げることから従う。
-従って $X_3$ は $J$ で形式的に滑らかであり、有限型なので滑らかである。
-
-系~\ref{cor:artin-abelian-unobstructed} により商スタックの $H^0$ 接空間は三次元である。
-慣性群が有限で標数零であることから軌道接空間は八十次元であり、
-$\dim T_JX_3=3+80=83$ を得る。
-滑らかな $\operatorname{PGL}_9$ による商の局所次元は $83-80=3$ である。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 この滑らかさは $X_3$ とその商についての結論である。
@@ -441,140 +222,7 @@ flat pointed Abel 変形とし、次のデータが与えられたと仮定す�
 平方根と被覆はこの相対族の存在を証明するための補助データであり、標識に加えない。
 \end{proposition}
 \begin{proof}
-補題~\ref{lem:artin-morita-heart-exact} により $s_A$ は heart-exact である。
-$s_0^2=t_0$ と反 Serre の Ext 消滅により、偶数・奇数の部分列を分ければ
-$\operatorname{Ext}^{>0}(s_0^{-n}\mathcal O,N)=0$（$n\gg0$）となる。
-補題~\ref{lem:artin-ample-lift} が AZ ample 性を与え、
-AZ 再構成により $\mathcal C_A\simeq\operatorname{qgr}B_A$ としてよい。
-
-\emph{Abel 圏の基底変更。}
-$A'$ は有限型なので、$B_{A'}=B_A\otimes_A A'$ は
-$B_A$ に有限個の中心変数を加えた環の商である。
-$B_A$ は Artin 持上げにより左右 noetherian だから、$B_{A'}$ も左右 noetherian である。
-同じことは被覆 $\widetilde B_A$ にも成り立つ。
-$B_{A'}$ の各次数は $A'$ 上有限自由である。
-従って $\operatorname{QGr}B_{A'}$ は局所 noetherian で、
-$\pi B_{A'}(i)$ を平坦な生成系として持ち、flat Abel 圏になる。
-
-$\operatorname{Gr}B_A$ における $A'$-module object は
-$\operatorname{Gr}B_{A'}$ の対象と同じである。
-torsion 局所化とその完全充満な右随伴に作用準同型を移すことにより、
-\[
- (\operatorname{QGr}B_A)_{A'}
- \simeq \operatorname{QGr}B_{A'}
-\]
-を得る。noetherian 部分へ制限して所要の基底変更になる。
-この構成は tensor の結合則により合成と整合する。
-
-\emph{有限 foundation と canonical compact 圏。}
-$I=\mathfrak mA'$、$K=A'/I$ と置く。$I$ は冪零であり、$K$ は有限型 $k$-代数である。
-閉じた圏の族は定数族 $\operatorname{QGr}(B_0\otimes_k K)$ である。
-命題~\ref{prop:relative-h2-field-recovery} の定数族の構成により、
-これは $K$ 上の geometric helix と compact tilting foundation $T_K$ を持つ。
-その各前向き Hom は $K$ 上有限自由である。
-\cite[Theorem 5.13]{DeDekenLowen2011} を coherent な環の冪零拡大
-$A'\twoheadrightarrow K$ に適用できる。
-
-Artin 基底上で構成した $T_A$ を通常の module-object tensor で移した
-$T_{A'}=A'\otimes_A T_A$ は $A'$ 上平坦である。
-各 summand は $\pi B_A(i)$ の有限直和による有限表示を持つので、
-その基底変更は noetherian である。
-その $K$ への還元は $T_K$ であり、De Deken--Lowen の持上げの一意性により、
-$T_{A'}$ は同定理の compact tilting foundation と一致する。
-
-その End 加群は $A'$ 上平坦で、$K$ への還元は
-$\Lambda\otimes_k K$ である。
-冪零イデアルを法として有限自由となる平坦加群は有限自由である。
-実際、基底を持ち上げた有限自由加群からの射は冪零 Nakayama により全射で、
-平坦性によりその核の還元も零なので核自身が零となる。
-従って $\operatorname{End}(T_{A'})$ は階数二十四の自由 $A'$-加群である。
-自然な代数準同型
-\[
- \Lambda_A\otimes_A A'\longrightarrow\operatorname{End}(T_{A'})
- \tag{Artin-BC}\label{eq:artin-promotion-end-basechange}
-\]
-は $I$ を法として同型であり、両辺が同階数自由だから同型である。
-高次自己 Ext は持上げた foundation の strong 性により零である。
-よって canonical な導来圏について
-\[
- D(\operatorname{QGr}B_{A'})^c
- \simeq\operatorname{Perf}(\Lambda_A\otimes_A A')
-\]
-を得る。有限な相対 bar 解消から smooth proper 性と相対 Serre 双対を得る。
-この表示と (\ref{eq:artin-promotion-end-basechange}) は自然なので、
-さらに任意の有限型基底変更を取っても Perf の基底変更と一致する。
-これが (RP-BC) を与える。
-
-\emph{平方根の双加群と任意基底変更。}
-$s_A$ は Ind 圏に colimit を保つ完全自己同値として延長し、
-$A'$-作用にも適用することにより $s_{A'}$ を与える。
-その Morita 双加群は $P_A=\mathbf R\operatorname{Hom}(T_A,s_AT_A)$ である。
-$s_AT_A$ は compact なので、$\operatorname{add}(T_A)$ の有界複体で代表できる。
-この複体の各項と唯一の cohomology $s_AT_A$ は $A$ 上平坦である。
-従って任意の $A'$ への通常の tensor は、その導来基底変更を計算し、
-唯一の cohomology $A'\otimes_A s_AT_A$ を持つ。
-実際、複体の最上次数から下に向かって cycle と boundary の平坦性を示し、
-次数零では $0\to B^0\to Z^0\to s_AT_A\to0$ を用いれば、
-全ての該当完全列が任意の tensor で保たれる。
-特定の strict augmentation の選択を必要としない。
-基底変更後の複体は $\operatorname{add}(T_{A'})$ に属する。
-End の基底変更と strong 性を使って Hom を計算すると、自然な双加群の射
-\[
- P_A\otimes_A^{\mathbf L}A'
- \longrightarrow
- \mathbf R\operatorname{Hom}(T_{A'},s_{A'}T_{A'})
-\]
-は quasi-isomorphism である。
-左作用との整合は、$T_A$ の各自己準同型と $s_A$ によるその像に対する自然性による。
-相対 Serre 双加群も有限 foundation の双対と bar 解消から基底変更する。
-従って $s_A^2\simeq S_A^{-1}[2]$ は
-$s_{A'}^2\simeq S_{A'}^{-1}[2]$ を与える。
-
-\emph{豊富性、軌道 Hom と例外性。}
-定数族 $(\mathcal C_K,\mathcal O_K,s_K)$ では、
-全ての noetherian $N$ に対して
-$\operatorname{Ext}^{>0}(s_K^{-n}\mathcal O_K,N)=0$（$n\gg0$）となる。
-これは体上の Ext 消滅と、定数族における有限段の被覆を使う
-命題~\ref{prop:relative-h2-field-recovery} の証明による。
-$I$-進有限フィルターを使い、補題~\ref{lem:artin-ample-lift} と同じ議論を
-$A'\twoheadrightarrow K$ に適用すれば $(\mathcal O_{A'},s_{A'})$ は AZ ample である。
-ここでは剰余環が体である必要はなく、剰余圏の Ext 消滅と生成条件を使っている。
-
-構造対象は foundation の一つなので、その相対例外性は
-(\ref{eq:artin-promotion-end-basechange}) から従う。
-$s_A^n\mathcal O_A$ は、体上の normal helix の $E_{2n}$ の flat lift である。
-定理~\ref{thm:artin-foundation-lift} の geometric Hom の平坦性により、
-$\mathbf R\operatorname{Hom}(\mathcal O_A,s_A^n\mathcal O_A)$ は
-次数零の自由加群 $B_{A,n}$ に集中する。
-同じ有界 $\operatorname{add}(T_A)$ 複体による議論を
-$s_A^n\mathcal O_A$ に適用すると、全 $n\ge0$ で
-\[
- \operatorname{Hom}(\mathcal O_{A'},s_{A'}^n\mathcal O_{A'})
- \simeq B_{A,n}\otimes_A A'
-\]
-を得る。各項は自由であり、積と任意の有限型基底変更に整合する。
-被覆の各次数と切断の商は平坦なので、正則正規切断の完全列は基底変更で保たれる。
-左右の相対 Koszul 解消も各内部次数で分裂完全だから、任意基底変更で保たれる。
-従って $\widetilde B_A\otimes_A A'$ と $g_A\otimes1$ が (RQ4) の被覆を与える。
-全幾何ファイバーは元の体上の対象の体拡大なので (RQ2) も満たす。
-
-\emph{有限性と fppf descent。}
-一般の noetherian $M,N$ について、$N$ を $I$-進フィルターで分けると、
-その商への Hom は通常の随伴によって
-$\operatorname{Hom}_{\mathcal C_K}(M/IM,N_0)$ となる。
-定数族の Hom 有限性から $\operatorname{Hom}_{\mathcal C_{A'}}(M,N)$ は有限 $A'$-加群である。
-flat な基底変更については、noetherian 対象が finitely presented であることと
-Lazard の定理を使う既存の module-object の議論により Hom が基底変更する。
-
-最後に、faithfully flat な有限表示の基底変更に沿う tensor は完全で保守的である。
-保守性は有限提示生成対象からの Hom と flat tensor の交換によって検出できる。
-従って通常の module-object の随伴と Beck の降下により、対象と射は fppf 降下する。
-完全性も忠実平坦に検出される。
-noetherian 性の降下は部分対象の昇鎖を完全かつ保守的な tensor 後に調べればよい。
-上昇方向では、有限型中心拡大上の有限生成加群表示が noetherian 性を保つ。
-これにより affine 上の系は fppf 局所に貼り合い、
-定義~\ref{def:relative-abelian-system} の系を与える。
-全条件を確認したので定義~\ref{def:relative-h2} に属する。
+完全な証明は相対モジュライ論文 \cite[\texttt{artin_foundation}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}
