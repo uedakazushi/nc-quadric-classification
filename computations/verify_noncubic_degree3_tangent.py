@@ -186,11 +186,9 @@ for label,data,orbit_expected,degree3_rank_expected in cases:
                 -term[j].reshape(-1)
             )%prime
 
-    # Check all 86 known tangent directions on every equation.
-    # Splitting to avoid a giant integer matrix product.
-    for j in range(86):
-        v=tangent[:,j].astype(np.int64)
-        assert not np.any(constraints.T.astype(np.int64)@v%prime)
+    # Check all 86 known orbit/form directions in every linear condition.
+    assert not np.any(constraints.T.astype(np.int64)
+                      @ tangent.astype(np.int64)%prime)
 
     # Row-rank without random sampling (all 16072 constraints).
     rank=rank_rows_mod(constraints.T.copy(),prime)
