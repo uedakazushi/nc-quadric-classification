@@ -11,8 +11,8 @@ Abel 圏は、保持する構造も同型の意味も異なる。
 \subsection{標的となる強い内在的クラス}
 
 本稿の \(\HH\)、\(\HHstack\) は
-\cite{QuadricIntrinsic2026} の \texttt{def:h2}、
-\texttt{def:relative-h2} の意味で用いる。
+\cite[\texttt{def:h2}]{QuadricIntrinsic2026} と
+\cite[\texttt{def:relative-h2}]{QuadricModuli2026} の意味で用いる。
 特に、任意の三次元 AS 正則 \(\mathbb Z\)-代数の tails 圏を
 無条件に \(\HH\) と呼ぶわけではない。
 
@@ -70,8 +70,7 @@ Hom を tensor するだけの基底変更ではない。
 相対平方根、AZ ampleness、相対 AS4 被覆が存在することは別問題である。
 例外対象の無障害性や有限代数の \(\operatorname{HH}^3\) の消滅だけでは、
 これらの条件は得られない。
-\cite{QuadricIntrinsic2026} の
-\texttt{prop:chosen-root-does-not-lift} は、可換 quadric 上の
+\cite[\texttt{prop:chosen-root-does-not-lift}]{QuadricModuli2026} は、可換 quadric 上の
 ある適合根が、特定の一次 Abel 変形へ持ち上がらない例を与える。
 これは別の根の存在まで否定する例ではなく、
 \(\HHstack\) の非代数性や許容部分の非開性を証明するものでもない。
@@ -131,7 +130,7 @@ pointed exact 同値と基底変更に安定である。
 不変開部分で表されることを証明し、表示変更の全ての射を降下させる。
 \end{enumerate}
 根と全軌道環が既に与えられた場合、固定軌道環への AS4 被覆を選ぶ空間は
-\cite{QuadricIntrinsic2026} の \texttt{thm:relative-finite-as-cover} により、
+\cite[\texttt{thm:relative-finite-as-cover}]{QuadricModuli2026} により、
 \(\operatorname{Gr}(6,K)\) 内の有限表示局所閉 incidence として記述できる。
 しかし、その被覆を忘れた fppf 像の開性・代数性や、根そのものの存在は
 この有限判定の結論ではない。
@@ -154,8 +153,7 @@ AZ 再構成と偶数 Veronese により
  \simeq(\qgr B^{(2)},\pi B^{(2)},(1)).
 \]
 右辺の構造対象とシフトは ample であり、\(s^2\simeq t\) である。
-これは \cite{QuadricIntrinsic2026} の
-\texttt{lem:ample-square-from-generation} と同じ議論である。
+これは \cite[\texttt{lem:ample-square-from-generation}]{QuadricIntrinsic2026} と同じ議論である。
 最後の主張は AZ の生成条件から従う。
 \end{proof}
 
@@ -245,8 +243,7 @@ full strong foundation の存在だけで忘却の標的が \(\HHstack\) にな�
 そのまま同じ pointed 対象の表示変更と扱えない。
 QP の mutation が dg 導来同値を与えても、
 指定した heart の完全同値と \(\OO\) の同型は別途必要である。
-\cite{QuadricIntrinsic2026} の
-\texttt{cor:pointed-derived-exact} は体上の \(\HH\) 対象の間の判定であり、
+\cite[\texttt{cor:pointed-derived-exact}]{QuadricIntrinsic2026} は体上の \(\HH\) 対象の間の判定であり、
 任意の相対 periodic family について同じ結論を自動的に与えるものではない。
 
 同様に、消去可能な二本の矢 \(x,y\) と項 \(yx\) を付加した生の QP には、
@@ -259,7 +256,7 @@ QP の mutation が dg 導来同値を与えても、
 構造対象を保つ自己同値全体での同一視は、それぞれ異なる操作である。
 
 現在の内在的研究との関係をまとめると、
-\cite{QuadricIntrinsic2026} の有限二写像表示 \(\mathfrak F_0\) は、
+\cite[\texttt{prop:foundation-stack}]{QuadricModuli2026} の有限二写像表示 \(\mathfrak F_0\) は、
 一方の長さ二の積を可逆にした foundation chart である。
 
 \begin{proposition}[幾何点における十本矢 chart の被覆]
@@ -270,8 +267,8 @@ QP の mutation が dg 導来同値を与えても、
 foundation の相対的な存在・降下を結論するものではない。
 \end{proposition}
 \begin{proof}
-\cite{QuadricIntrinsic2026} の \texttt{thm:normal-helix} と
-\texttt{prop:ruling-involution-mutation} により、
+\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026} と
+\cite[\texttt{prop:ruling-involution-mutation}]{QuadricModuli2026} により、
 \((E_0,E_1,E_2,E_3)=(\OO,X,s\OO,Z)\) という foundation があり、
 本節の \(b\) は同型、\(c\) は全射である。
 \(E_0,E_1,E_2\) は rank-one torsion-free 対象である。
@@ -291,7 +288,7 @@ foundation の相対的な存在・降下を結論するものではない。
 \]
 は有限型 Artin スタックであり、体上では
 \(\HH(\kk)\) をその full subgroupoid として実現する
-（同論文 \texttt{cor:h2-point-groupoid-foundation}）。
+（\cite[\texttt{cor:h2-point-groupoid-foundation}]{QuadricModuli2026}）。
 この幾何点の結果だけから、\(\mathfrak Q_{\mathrm{fnd}}\) 全体または
 その未特定の開部分が \(\HHstack\) と同値であるとはいえない。
 
@@ -310,8 +307,8 @@ scheme-theoretic な局所閉 locus である。
 は不変 fppf 部分層として定義され、
 \(\HHstack\simeq[X_{\mathrm{as}}/\PGL_9]\) が成立する。
 \(X_{\mathrm{as}}\) の有限型・滑らか・既約な純次元83のスキームとしての表現可能性は
-分類主論文の定理~\texttt{thm:global-h2-smooth-finite-type} と
-系~\texttt{cor:global-xas-smooth-scheme} で証明されている。
+相対モジュライ論文の定理~\cite[\texttt{thm:global-h2-smooth-finite-type}]{QuadricModuli2026} と
+系~\cite[\texttt{cor:global-xas-smooth-scheme}]{QuadricModuli2026} で証明されている。
 ただし $X_{\mathrm{as}}\to X_3$ は一致根対で開ではなく、
 局所閉性と明示的な偏極認識方程式は未解決である。
 従って本稿の八・十・十二本矢の明示的な開部分は、

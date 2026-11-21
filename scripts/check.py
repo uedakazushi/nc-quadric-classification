@@ -315,11 +315,12 @@ def build() -> int:
 
 
 def cross_paper_labels() -> int:
-    """Audit named A/B cross-paper citations without needing .aux files."""
+    """Audit named A/B/C cross-paper citations without needing .aux files."""
     failures: list[str] = []
     roots = {
         "QuadricIntrinsic2026": ROOT / "papers/nc-quadric-classification.tex",
         "QuadricModuli2026": ROOT / "papers/nc-quadric-moduli.tex",
+        "QuiverAvatarModuli2026": ROOT / "papers/quiver-avatar-moduli.tex",
     }
     sources_by_key: dict[str, dict[Path, str]] = {}
     labels_by_key: dict[str, set[str]] = {}
@@ -357,7 +358,7 @@ def cross_paper_labels() -> int:
     for origin, sources in sources_by_key.items():
         for path, text in sources.items():
             for label, target in re.findall(
-                r"\\cite\[\s*\\texttt\{([^}]+)\}\s*\]\{(QuadricIntrinsic2026|QuadricModuli2026)\}",
+                r"\\cite\[\s*\\texttt\{([^}]+)\}\s*\]\{(QuadricIntrinsic2026|QuadricModuli2026|QuiverAvatarModuli2026)\}",
                 text,
             ):
                 if target == origin:
@@ -370,6 +371,7 @@ def cross_paper_labels() -> int:
         "Cross-paper scope: "
         f"A={len(sources_by_key['QuadricIntrinsic2026'])} TeX files, "
         f"B={len(sources_by_key['QuadricModuli2026'])} TeX files, "
+        f"C={len(sources_by_key['QuiverAvatarModuli2026'])} TeX files, "
         f"{count} explicit named cross-paper citation uses."
     )
     return summary("cross-paper labels", failures, [])
