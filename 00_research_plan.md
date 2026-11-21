@@ -1,8 +1,16 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.45。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.44、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.46。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.44、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、局所good moduliの降下、偏極認識と公表前監査である。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
+
+## 公表用原稿の三論文体制（2026-11-22に確定）
+
+- **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
+- **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
+- **C・箙表示とavatar：** `papers/quiver-avatar-moduli.tex` に八・十・十二本矢、QP消去、反標準avatar、表示からの忘却を置く。有限表示の代数性と相対AS/H2の同値が未証明である範囲を保ち、A/Bの証明は複製しない。
+
+**移管状況：** Bの独立主原稿・基礎命題を作成したが、主要な相対定理の全証明はまだAの分割節にある。B単独の完成とは扱わない。節ごとの証明・相互参照・基底変更の監査までAの有効な本文を削除しない。次はA/Bの定理依存を分類する → Bへ相対公理・Artin認識・有限型atlas・境界群商の順に証明移管 → Aから移管済みの重複を除去 → AとBの論文間引用を整理 → Cとの比較・三稿のビルド・一次資料照合。AがBへ循環依存しないようにする。再編作業と新しい数学的検証は区別し、有用な結果・再現資産を削らない。
 
 ## 現在の到達点と未解決の核心
 
@@ -241,7 +249,8 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 7. 正本・依存関係・再開
 
-- 主論文：[papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex)。全H2のpointed分類と相対認識。
+- 論文A・主原稿：[papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex)。全H2のpointed分類。相対節の証明は移管完了まで保持する。
+- 論文B：[papers/nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex)。内在的相対モジュライ・境界幾何。移管途中の未完成稿。
 - 別稿：[papers/quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex)。八・十・十二本矢の表示モジュライ、反標準avatar、内在的忘却。主論文の分類証明を重複させない。
 - 別稿の組版：`python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex`。同じ指定で `sources` も実行できる。
 - 現行知識・障害・再現：[notes/research_notes.md](notes/research_notes.md)。文献仮定・版・リンク：[notes/literature.md](notes/literature.md)、書誌：[papers/references.bib](papers/references.bib)。

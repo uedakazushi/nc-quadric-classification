@@ -2,6 +2,10 @@
 
 2026-11-21 / v0.6。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。主論文はv1.40、八・十・十二本矢とavatarの別稿はv0.1。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
 
+## 三論文再編の次の実行単位（2026-11-22）
+
+A＝`papers/nc-quadric-classification.tex`（主原稿・分類）、B＝`papers/nc-quadric-moduli.tex`（相対モジュライ）、C＝`papers/quiver-avatar-moduli.tex`（表示・avatar）。Bはまだ主結果の証明移管中の未完成稿。次に `relative_moduli.tex`、`relative_koszul.tex`、`artin_foundation.tex` などのA/B間の依存と定理参照を抽出し、Bへ相対公理・Artin認識、cubic/noncubic有限型効果性、全体atlas、境界の商の証明を逐次移管する。Aに必要な分類の基礎補題は残し、循環依存と二重収録を作らない。Cとの相対認識の比較を更新する。A/B/Cを個別にsourcesとbuild確認し、一次文献比較と新規性は別に監査する。研究repoを先にmainへ保存し、その後hubを更新する。
+
 ## 起動時の依頼文
 
 このrepoを選んだCloud taskに、次の依頼を渡す。以後の実行単位は研究方針を更新して引き継ぐので、過去の会話は必要ない。

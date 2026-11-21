@@ -400,6 +400,10 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 再現：`python3 computations/verify_noncubic_cover_tangent.py --case generic`、同じコマンドのcaseを`shared`、`coincident`に変更する。各実行は入力と階数を出力しassertで検査する。SymPy以外の追加依存、乱数、外部入力は不要。untwisted B_f!のnormal pencilを、そのまま適合rootでtwistした双対に残るpencilと解釈しない。
 
+## 論文間の数学的依存と移管の検証単位
+
+Aの分類はcubic/noncubic全構成とpointed exact同値判定を含む。Bの有限型smooth Artin性は体上の分類に加え、全Artin形式認識、指定同型付き効果性、全次数HomとKoszul/Noetherian性、同じ根のAS4被覆と降下を必要とする。境界の幾何点の全単射から相対群商の同値は従わない。Cの有限表示空間からの忘却では相対heart・Serre根・AS4被覆と慣性の核を別に確認する。Bの証明移管は始まったが、現在の全証明の正本はAの元の分割節にあり、独立原稿の完成も新しい形式検証も意味しない。
+
 ## 検証範囲と再現手順
 
 **現行版の追加検証（2026-11-22）。** 境界の相対表示・特殊fiber・全慣性・任意代数空間への非分離に加え、DM開の粗モジュライの任意底変更、Hartogsによる非good性、DVRによる慣性の非proper性、全有限成分の法表現、相対ruling mutation、AHRを用いる形式対と局所不変式環を独立読取りした。`verify_noncubic_boundary.py` の既存検算に、DVR自己同型、fiberの微分、全16次元Grassmann接空間・rank12の軌道・4次元HH²と有限成分の作用の厳密検算を統合してPASS。`verify_stack_symmetries.py` も再実行してPASS。全旧suiteは再実行せず、形式証明器も用いていない。

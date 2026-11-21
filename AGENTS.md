@@ -1,6 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.45。主論文はv1.44、別稿はv0.1。
+2026-11-22 / v0.46。主論文はv1.44、別稿はv0.1。
+
+## 公表用三論文への再編（確定方針）
+
+A＝`papers/nc-quadric-classification.tex`（分類、必須の主原稿）、B＝`papers/nc-quadric-moduli.tex`（内在的相対モジュライ）、C＝`papers/quiver-avatar-moduli.tex`（箙表示・avatar）とする。Aは体上の分類の構成・同値判定と必要な基礎結果を自己完結にし、BはAを引用して相対モジュライを独立に証明する。Cは有限表示と内在的H2の認識を混同しない。
+
+Bは現時点では**証明の移管中の未完成稿**である。Aから相対節の全証明を、依存・label/ref/eqref/cite・非被約底・ビルドを確認しながら移し、移管完了までAの証明を削除しない。移管後は証明の二重収録を避ける。AがBに依存する循環を生じさせない。Aの公表準備を優先し、B/Cも別個に完成度と新規性を監査する。再編を数学的独立検証と同一視しない。
 
 ## Cloud Codexへの継続指示
 
@@ -21,7 +27,8 @@
 
 - 全体の入口：[research-hub](https://github.com/uedakazushi/research-hub)。再開時に該当研究の概要、他研究との関係、再開先を確認する。
 - 最初に読む研究方針：`00_research_plan.md`。続いて本AGENTS.mdの適用される指示と `notes/research_notes.md`、必要な原稿・検証記録を確認する。
-- 別稿：`papers/quiver-avatar-moduli.tex`。八・十・十二本矢の表示モジュライ・avatar・内在的忘却を扱う。分割節は `papers/quiver-avatar/`。個別の `sources`・`build` には `--manuscript papers/quiver-avatar-moduli.tex` を付ける。
+- 別稿B：`papers/nc-quadric-moduli.tex`。相対モジュライ・境界、証明移管途中。
+- 別稿C：`papers/quiver-avatar-moduli.tex`。八・十・十二本矢の表示モジュライ・avatar・内在的忘却を扱う。分割節は `papers/quiver-avatar/`。個別の `sources`・`build` には `--manuscript papers/quiver-avatar-moduli.tex` を付ける。
 - 主たる公表用原稿：`papers/nc-quadric-classification.tex`。リポジトリ直下からの相対パスであり、本文のある主原稿とする。節のソースを別ファイルから読み込んでもよい。独立した別論文には内容を表す名前を付け、役割をREADMEと研究方針に記す。
 - 本研究の現行ソース・入力・再現資産の正本はGitHubの `main`。研究以外の日常todoは別に管理する。
 
