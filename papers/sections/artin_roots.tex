@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.29
+% 2026-11-21 / v1.30
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1135,9 +1135,9 @@ $\mathcal O_{U^\circ,v}$-代数 $R$ を取る。
 有限型の可換 $R$-代数への変更後も左右 Noetherian である。
 従って $\operatorname{qgr}B_R$ は Noetherian Abel 圏であり、
 $\pi B_R$ は構造対象、次数移動は exact 自己同値である。
-ただし単一の有限型開全体・その任意の底変更での
-Noetherian 性、canonical compact 圏とこの heart の一致、
-AZ・$\mathfrak H_2$ の代数性は結論しない。
+単一の有限型開全体の Noetherian 性は、この局所判定からは従わない。
+canonical compact 比較と Noetherian な基底上の全相対条件は、
+第\ref{sec:relative-cubic-tails}節で別に証明する。
 \end{corollary}
 \begin{proof}
 $B_R$ は全次数で有限自由である。
@@ -1229,10 +1229,10 @@ $R$ 上で任意の $q$ に適用すればよい。
 \]
 は $\operatorname{qgr}B_R$ 上で
 Artin--Zhang ample、すなわち (A1), (A2) を満たす。
-ただし非局所の有限型基底変更後にも (A2) が
-一様に成り立つこと、canonical compact
-導来圏との比較、相対 Serre 条件及び
-$\mathfrak H_2$ の代数性は結論しない。
+有限型基底変更と canonical compact・Serre の比較については、
+定理~\ref{thm:quadric-local-finite-type-abelian-system} と
+第\ref{sec:relative-cubic-tails}節で確認する。
+$\mathfrak H_2$ 全体の代数性は未証明である。
 \end{corollary}
 \begin{proof}
 系~\ref{cor:quadric-local-chi} から右相対 $\chi_1$ があり、
@@ -1265,8 +1265,9 @@ $(\pi B',(1))$ は $\operatorname{qgr}B'$ 上 AZ ample である。
 は同じ次数移動に対する相対 Noetherian AS4 被覆である。
 
 $R'$ が局所環であることも $R$ 上平坦であることも要求しない。
-この結論は、$U^\circ$ の一つの有限型開全体での同じ系の存在、
-canonical compact 圏の比較、相対 Serre 平方根の認識を結論しない。
+canonical compact 圏と Serre 平方根の比較、ならびに有限 Krull 次元の
+仮定を除いた昇格は、定理~\ref{thm:quadric-noetherian-relative-promotion}
+で証明する。単一の有限型開全体の Noetherian 性は未証明である。
 \end{theorem}
 \begin{proof}
 $B_R$ の Noetherian 性は
@@ -1351,8 +1352,9 @@ $n<0$ では $(B_T)_n=0$ とする。
  \qquad(n\in\mathbb Z).
 \end{align*}
 非被約・非平坦な底変更も含むが、
-任意の $\operatorname{qgr}B_T$ 対象の Hom 有限性や
-canonical compact 導来圏との比較は結論しない。
+一般 coherent 対象の Hom 有限性には Noetherian 性を別に用いる。
+Noetherian 性なしの canonical compact 比較は
+命題~\ref{prop:quadric-canonical-cubic-tails} で証明する。
 \end{corollary}
 \begin{proof}
 各幾何ファイバーでは
@@ -1395,10 +1397,11 @@ Zariski 局所 homological AS4 被覆、
 平坦基底変更を備えた Noetherian tails の系、
 及び系~\ref{cor:quadric-all-basechange-saturated-sections} の
 任意底変更・任意係数での構造対象の切断と一次コホモロジーの消滅である。
-一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
-その被覆と根が Noetherian な相対 tails heart を与え、
-canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
-AZ 豊富性と全有限型基底変更を満たすことは別の相対実現命題を要する。
+第\ref{sec:relative-cubic-tails}節では、これらの普遍 cubic 解消から
+canonical な Grothendieck 導来比較と全 helix の根の認識を証明する。
+同節の定理~\ref{thm:quadric-noetherian-relative-promotion} により、
+左右 Noetherian 性が成立する基底では、全有限型基底変更にわたる
+内在的相対条件が揃う。残る核心は一つの有限型開全体の左右 Noetherian 性である。
 Artin 基底上の heart exactness や witness 昇格を、冪零でない
 この \'etale 近傍へそのまま適用しない。
 従って本命題だけから $\mathfrak H_2$ の開近傍の代数性は結論しない。

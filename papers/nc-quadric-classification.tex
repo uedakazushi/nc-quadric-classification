@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.29
+% 日本語 LuaLaTeX。2026-11-21 / v1.30
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,138 +47,53 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.29（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.30（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
 \begin{abstract}
 構造対象 $\OO$ のみを指定した非可換二次曲面を pointed exact 同値で分類する。
 $\OO$ は Gabriel--Krull 商で rank one torsion-free かつ exceptional とし、
-反 Serre 関手の exact な平方根 $s$ の存在、$(\OO,s)$ の Artin--Zhang ampleness、
-全切断環の型 $(1,4,6,4,1)$ の AS 正則環による正則正規二次被覆を要求する。
-平方根、ambient 環、商表示は指定構造に含めない。
+反 Serre 関手の exact ample な平方根と、その全軌道環の
+型 $(1,4,6,4,1)$ の AS 正則環による正則正規二次被覆の存在を要求する。
+根・被覆・商表示は標識に含めない。
 全対象は pointed cubic 表示を持つ領域と持たない領域に分かれる。
 前者は linear データと、被約性・整性を仮定しない全ての Van den Bergh
 許容四つ組から構成され、四生成・七二次関係による有限判定で重複を除く。
 後者は中央二重平方環に帰着し、$\PP^1$ 上の二つの被約二点集合の
 非順序対を同時射影変換で割った集合で分類される。
-通常の quadratic envelope による定義の障害、可換対象の四つの適合根、
-ambient の非一意性も記述する。
 
-族については、局所有限型基底の fppf site 上で内在的な
-$\HHstack$ を定義し、体上の pointed groupoid の回復と stack 性を証明する。
-導来条件は局所の canonical compact 圏に課し、平方根と AS 被覆は
-fppf 局所存在する性質として扱う。
-相対 AZ 再構成により、反 Serre 関係式の射
-$\HHstack\hookrightarrow[X_3/\operatorname{PGL}_9]$ は全忠実となり、
+族については局所有限型基底の fppf site 上に内在的な
+$\mathfrak H_2$ を定義する。反 Serre 再構成による射
+$\mathfrak H_2\hookrightarrow[X_3/\operatorname{PGL}_9]$ は全忠実で、
 対角は affine かつ有限表示である。
-ここで $X_3\subset\operatorname{Gr}(56,81)$ は、九生成元の二次環に
-三次 Hilbert 階数四十九を課した局所閉スキームである。
-代数性は、framed 実現部分層 $X_{\mathrm{as}}\subset X_3$ の
-有限型代数空間による表現可能性へ帰着するが、この表現可能性は未証明である。
+代数性は framed 実現部分層の表現可能性へ帰着するが、これは未証明である。
+有限 foundation の表示商、全幾何点 groupoid、cubic から全 noncubic 点への
+smooth proper dg 特殊化と全次数平坦な反 Serre 環族も構成する。
+表示族の位相と内在的モジュライの位相の一致は別に必要である。
 
-全 $\HH$ の切断環と反 Serre 環は Koszul である。
-Polishchuk--Positselski の変形原理により、三次まで平坦で
-全幾何ファイバーが Koszul である二次環族は、非被約 Noetherian 基底でも
-全次数平坦となる。特に $\HH$ 点の Artin 基底上の $X_3$ 変形は
-noetherian な平坦 Abel 変形を与える。
-De Deken--Lowen の geometric helix 変形定理を適用して、全 Artin Abel 変形に
-有限 foundation、完全な反 Serre 関手、豊富な canonical 軌道環を構成する。
-偏極忘却は canonical 軌道環による右逆を持ち、一次の核は
-foundation 代数の $\operatorname{HH}^1$ である。
-従って二根対一致点の接次元五対四の差は偏極だけの一次方向として説明される。
-固定した相対切断環への AS4 被覆は、四次までの積と
-五次までの二次双対による有限表示の条件で認識できる。
-一方、pointed Abel 圏が一定であっても、次数付き環が非自明に動き、
-反 Serre 環の表示から外れる Zhang 族を構成する。
-従って全次数平坦性と $\qgr$ の構成だけでは反 Serre 偏極の認識は完了しない。
-有限 foundation と次数移動の可逆 perfect 双加群表示が得られた基底では、
-その偏極認識を有限表示局所閉部分スキームとして構成する。
-比較の最低次 Hom を普遍的な線束にする実際の方程式と、
-評価射が同型となる開条件を用いるため、非被約基底も扱える。
-任意の族にこの有限表示を与えることは別に必要である。
-また恒等に還元される Morita 群の一意な二可除性を用いて平方関係を補正する。
-根の $\operatorname{HH}^2$ への作用が恒等なら、合成の曲率障害から
-全 Artin 変形への根の存在が従う。
-特に可換 quadric の $(-)\otimes\mathcal O(1,1)$ は、
-任意の flat Abel 変形へ exact ample な Serre 平方根として延長する。
-この根は Morita 同型類として一意であり、有限 foundation 表示の
-\'etale 近傍上の perfect Morita 双加群へ代数化できる。
-同じ近傍では標準 foundation への根の作用を同定し、
-全ての連続四項の full strong 例外性と四次までの非退化 cubic tensor を
-任意の基底変更と整合的に得る。
-さらに可換点の局所環では、全次数の相対 Hom の次数零集中、
-全 cubic $\mathbb Z$-代数の三次提示と標準 cubic 解消、
-偶数環の二次提示と相対 Koszul 解消を証明する。各有限次数は個別の開近傍でも成立する。
-さらに幾何的 quintuple の縮約非零条件が proper image の補集合
-であることから、有限型開近傍の全幾何ファイバーが
-cubic AS 正則となる。さらに標準 cubic 解消を相対的に帰納して、
-同じ有限型開で全次数の局所自由性・分裂完全性を証明する。
-相対 Euler 四項複体から内在的 Hom と表示環を同定し、
-偶数環の全次数平坦性・二次提示と相対 Koszul 解消も得る。
-その四次重なりから canonical な六次元関係束を構成し、
-Artin 段階での有限判定と Krull 交叉定理により
-可換点の Zariski 近傍で全次数平坦・正則正規二次切断を備えた
-homological AS4 被覆を得る。
-さらに可換 Segre 環を特殊ファイバーとする局所変形では、
-完備化後の $\mathfrak m$-進付随次数環と
-固定内部次数の完備性を使い、忠実平坦降下によって
-非完備局所環でも左右 Noetherian となる。
-従って可換点を閉点に持つ Noetherian 局所基底では
-真正の相対 Noetherian AS4 被覆も得られる。
-局所環からの任意の有限型基底変更では
-中心変数の Hilbert 基底定理により左右 Noetherian 性が保たれ、
-Gabriel 局所化と module-object 基底変更が可換する。
-この相対 tails 系について AZ の生成条件 (A1) と
-fppf による対象・射の降下、構造対象の平坦性も確認する。
-特殊ファイバーの Noetherian 性だけで局所 Noetherian
-持上げが働くので、幾何的 cubic 開の各点の局所環に
-同じ結論を拡張できる。
-幾何的 cubic 開の各点を閉点に持つ
-有限次元 Noetherian 局所基底では、
-AS4 正規二次切断からの体上 $\chi$
-（Smith--Van den Bergh \cite[\S2.8]{SVdB2013}）
-と局所パラメータによる次元帰納を用いて、
-左右の相対 $\chi_q$ を全 $q$ で証明する。
-さらに $\chi_1$ の truncation 長に一様な
-高内部次数 Ext 消滅から AZ (A2) も得る。
-従って局所有限型族の全 stalk で AZ ample が成立する。
-さらに中心変数に関する補助フィルトレーションから、相対 $\chi_q$ は
-局所基底からの任意の有限型基底変更に保たれることを証明する。
-この範囲では、非局所・非平坦な基底上でも AZ 豊富性、
-全 coherent 対象間の Hom 有限性と平坦基底変更を得る
-（定理~\ref{thm:quadric-local-finite-type-abelian-system}）。
-さらに各幾何ファイバーの深さ三 Gorenstein 性と
-相対 Koszul 解消から構造環自身の
-$\underline{\operatorname{Ext}}^j(R',B_T)$ は
-$j\le2$ で任意の底変更後も零となり、
-$\operatorname{QGr}B_T$ の構造対象から全切断環 $B_T$ を
-全次数で再構成できる
-（系~\ref{cor:quadric-all-basechange-saturated-sections}）。
-任意の係数加群 $N$ に対しても構造対象の切断は $N\otimes B_T$ となり、
-一次コホモロジーは全ての捻りで零である。
-単一の有限型開全体での Noetherian 性・$\chi$/AZ と
-canonical compact 圏の比較・相対 Serre 認識は残る。
-二周期 cubic 列の相対 canonical hull を
-構成し、全 Artin 変形に同じ根の相対 AS4 被覆を与える。
-適合表示を全有限型基底変更上の系へ昇格させることで、可換点での
-$\mathfrak H_2$ の形式変形問題を pointed Abel 変形と同定する。
-これは障害を持たず、接空間は九次元の $\operatorname{HH}^2(Q)$ である。
-一次では Jacobian 二重導分と右 Zhang twist による具体式も与える。
-一般有限型族の代数化と、モジュライ全体の代数性は残る問題である。
+全対象の適合切断環は Koszul であり、相対 Koszul 原理と geometric helix の
+変形理論から Artin 基底上の Abel 変形を再構成する。
+偏極忘却の一次の核は foundation の $\operatorname{HH}^1$ である。
+可換 $Q=\PP^1\times\PP^1$ の標準 Serre 平方根は全 Artin 変形に一意に
+持ち上がり、canonical hull による同じ根の相対 AS4 被覆を持つ。
+従って $Q$ での形式変形問題は pointed Abel 変形に一致し、無障害で接次元九となる。
+根は有限型 \'etale 近傍の perfect Morita 双加群へ代数化できる。
 
-既存の foundation 表示は滑らかな三次元 Artin スタックであり、
-全幾何点 groupoid を自己同値群ごと全充満に実現する。
-cubic 非空開を含む実現点集合は誘導位相で既約・連結であり、
-各 noncubic 点への特殊化を smooth proper dg 族と
-全次数平坦な反 Serre 環族として構成する。
-noncubic 表示商の慣性、符号 gerbe、good moduli $\mathbb A^1$、
-中心 Clifford 表示と相対 perfect Serre 双対も記述する。
-三基準点の内部次数零 Hochschild 次元は
-$HH^1$ で $1,1,2$、$HH^2$ で $3,3,5$ となり、
-横断二次障害の消滅を厳密な整数計算で検証する。
-表示族の相対 $\HH$ 認識と内在的な成分の位相比較は残る。
-既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
+この近傍の一つの幾何的 cubic 開上で、普遍 cubic 解消、
+全次数平坦な軌道環と homological AS4 被覆を構成する。
+有限 projective 係数の cubic 解消から torsion 局所化の導来次元を制御し、
+任意の affine 基底変更で
+$D(\operatorname{QGr}B)\simeq D(\operatorname{Mod}\Lambda)$ を得る。
+全 helix と射を比較することで、次数移動を既存の Morita 根へ対応させ、
+canonical compact 圏の相対 Serre 関係と導来基底変更を確認する。
+Noetherian 基底上で $B$ が左右 Noetherian なら、coherent cohomology の
+一様な消滅から Hom 有限性・平坦基底変更・AZ 豊富性・全ての相対 $\chi_q$ が従い、
+全有限型基底変更を備えた内在的相対条件を満たす。
+特に全ての Noetherian 局所基底には適用できる。
+\emph{一つの有限型開全体の左右 Noetherian 性と、
+モジュライ全体の代数性は未証明である。}
+既知結果の相対適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
 \tableofcontents
 
@@ -202,6 +117,17 @@ $s=-\otimes H$ は $s^2\simeq S^{-1}[2]$ という平方根である。
 この修正は ambient の選択を新たな marking として加えるものではない。
 
 \subsection{先行研究と本稿の範囲}
+
+相対 tails の導来認識では、Bondal--Van den Bergh
+\cite[\S4.1, Lemma 4.2.2]{BondalVanDenBergh2003} の torsion 局所化の方法を用いる。
+その体上の定理を一般基底へそのまま適用せず、
+有限 projective 係数の cubic 解消から acyclicity と有限 cohomological dimension を
+証明し直す（第\ref{sec:relative-cubic-tails}節）。
+これにより任意基底での canonical な非有界導来比較が得られる一方、
+Noetherian heart の存在は別の条件として残る。
+左右 Noetherian 性がある基底では、同じ有限解消と有限 presentation から
+一様 Serre 消滅と全相対条件を導く。
+
 
 Artin--Zhang の再構成理論 \cite{AZ1994} は ample pair から切断環と圏を対応させる。
 本稿では ampleness と再構成の正確な形として
@@ -560,6 +486,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/relative_as_cover}
 \input{sections/antiserre_polarization}
 \input{sections/artin_roots}
+\input{sections/relative_cubic_tails}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
 

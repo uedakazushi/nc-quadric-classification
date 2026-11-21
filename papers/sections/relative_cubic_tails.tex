@@ -1,0 +1,603 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.30
+\section{相対 cubic tails の導来認識と効果性}
+\label{sec:relative-cubic-tails}
+
+\subsection{三次解消による相対 tails の compact 認識}
+
+以下では $R$ を任意の可換環とする。$R$ の正則性も
+Noetherian 性も、まず仮定しない。
+$C$ は正の向きの $R$-線形 $\mathbb Z$-代数、すなわち
+$C_{ij}=0$（$j<i$）、$C_{ii}=R$ であり、積を
+$C_{ij}\otimes_R C_{jk}\to C_{ik}$ と書くものとする。
+右加群 $P_i=e_iC$ の成分は $(P_i)_j=C_{ij}$ である。
+$S_i$ は頂点 $i$ にだけ $R$ を置く右加群とする。
+次数 torsion は、各元が十分遠い頂点への全ての射で
+消されるという意味で用いる。
+
+\begin{theorem}[相対 cubic tails の四項 tilting]
+\label{thm:relative-cubic-tails-tilting}
+$C$ は隣接成分で生成され、全ての $C_{ij}$ は
+有限 projective $R$-加群であるとする。
+有限 projective $R$-加群 $V_i,R_i$ と可逆 $R$-加群 $W_i$ により
+\[
+ 0\longrightarrow W_i\otimes_RP_{i+4}
+ \longrightarrow R_i\otimes_RP_{i+3}
+ \longrightarrow V_i\otimes_RP_{i+1}
+ \longrightarrow P_i\longrightarrow S_i\longrightarrow0
+ \tag{CT-res}\label{eq:cubic-tails-simple-resolution}
+\]
+が全ての $i$ で完全であると仮定する。さらに
+\[
+ \operatorname{Ext}^q_{\operatorname{Gr}C}(S_l,P_j)=0
+ \quad\text{unless }q=3\text{ and }j=l+4
+ \tag{CT-dual}\label{eq:cubic-tails-relative-dual}
+\]
+とし、$\mathcal L_l=\operatorname{Ext}^3(S_l,P_{l+4})$ は
+可逆 $R$-加群であるとする。
+$\mathcal O_i=\pi P_i\in\operatorname{QGr}C$ と置く。
+このとき次が成立する。
+\begin{enumerate}
+\item $\mathbf R\omega$ の cohomological dimension は高々二であり、
+  $D(\operatorname{QGr}C)$ は $\mathcal O_i$（$i\in\mathbb Z$）で
+  compactly generated される。
+\item 任意の $i,j$ について
+  \[
+  \operatorname{Ext}^q_{\operatorname{QGr}C}
+       (\mathcal O_i,\mathcal O_j)
+   \simeq
+   \begin{cases}
+     C_{ji},&q=0,\\
+     \operatorname{Hom}_R(C_{i,j-4},\mathcal L_{j-4}),&q=2,\ j\ge i+4,\\
+     0,&\text{otherwise}.
+   \end{cases}
+  \tag{CT-coh}\label{eq:cubic-tails-line-cohomology}
+  \]
+  とくに任意の連続四項の直和
+  $T_a=\bigoplus_{i=a}^{a+3}\mathcal O_i$ は compact tilting generator
+  である。その通常の自己準同型環を $\Gamma_a$ とすると
+  \[
+    D(\operatorname{QGr}C)\simeq D(\operatorname{Mod}\Gamma_a),\qquad
+    D(\operatorname{QGr}C)^c\simeq\operatorname{Perf}\Gamma_a.
+    \tag{CT-Morita}\label{eq:cubic-tails-canonical-morita}
+  \]
+\end{enumerate}
+全ての仮定と有限 projective 係数の解消が任意の $R$-基底変更で
+保たれる場合、これらの compact 比較もその基底変更と整合する。
+本定理は $C$ の Noetherian 性や coherent heart の存在を結論しない。
+\end{theorem}
+\begin{proof}
+証明は Bondal--Van den Bergh
+\cite[\S4.1, Lemma 4.2.2]{BondalVanDenBergh2003}
+の torsion 局所化の方法を、有限 projective 係数と
+頂点付き加群に対して記述したものである。
+同文献の体上の定理を、そのまま任意の $R$ へ適用するのではない。
+
+\emph{有限 truncation と torsion の導来関手。}
+$n>i$ に対し
+\[
+ F_{i,n}=P_i/(P_i)_{\ge n},\qquad J_{i,n}=(P_i)_{\ge n}
+\]
+と置く。$F_{i,n}$ は $C_{il}\otimes_RS_l$（$i\le l<n$）を
+逐次商に持つ有限フィルトレーションを持つ。
+係数 $C_{il}$ は有限 projective なので、
+(\ref{eq:cubic-tails-simple-resolution}) と horseshoe 構成から
+$F_{i,n}$ は有限生成 projective による長さ三の解消を持つ。
+従って $F_{i,n}$ は perfect で projective dimension は高々三、
+$J_{i,n}$ も perfect で projective dimension は高々二である。
+これらからの全ての Ext は filtered colimit と可換する。
+
+隣接成分の有限生成性により次数 torsion 加群は localizing subcategory
+$\operatorname{Tors}C$ をなす。
+torsion radical $\tau$ は各頂点で
+\[
+  (\tau M)_i=\varinjlim_{n>i}\operatorname{Hom}_C(F_{i,n},M),\qquad
+  (R^q\tau M)_i=\varinjlim_{n>i}\operatorname{Ext}^q_C(F_{i,n},M)
+  \tag{CT-tors}\label{eq:cubic-tails-torsion-colimit}
+\]
+により与えられる。後の等式は injective 解消に前の等式を適用し、
+filtered colimit の完全性を使えば従う。
+従って $\operatorname{cd}\tau\le3$ であり、$R^q\tau$ は
+filtered colimit と可換する。
+
+ここで torsion 加群 $N$ に対し $R^q\tau N=0$（$q>0$）を確認する。
+$N$ は有限個の斉次元が生成する torsion 部分加群の filtered colimit
+であり、それぞれは頂点添字について上に有界である。
+ゆえに $N_j=0$（$j\ge b$）の場合を示せばよい。
+$n\ge b$ なら $J_{i,n}$ は頂点 $j\ge n$ にのみ台を持ち、
+その自由解消は全項を $P_j$（$j\ge n$）の直和として選べる。
+従って $\operatorname{Ext}^p_C(J_{i,n},N)=0$ は全ての $p\ge0$
+で成立する。完全列
+$0\to J_{i,n}\to P_i\to F_{i,n}\to0$ を用いると
+$\operatorname{Ext}^{q}_C(F_{i,n},N)=0$（$q>0$）となり、
+(\ref{eq:cubic-tails-torsion-colimit}) により主張が従う。
+この議論は $N$ の $R$ 上平坦性を必要としない。
+
+\emph{section functor と unbounded 導来圏。}
+$\pi:\operatorname{Gr}C\to\operatorname{QGr}C$ の完全な商関手と
+その完全忠実な右随伴 $\omega$ を取り、$Q=\omega\pi$ と置く。
+Gabriel 商の Hom 表示に、直前の torsion 加群上の消滅を使うと
+\[
+ (QM)_i=\varinjlim_n\operatorname{Hom}_C(J_{i,n},M),\qquad
+ (R^qQM)_i=\varinjlim_n\operatorname{Ext}^q_C(J_{i,n},M)
+ \tag{CT-sec}\label{eq:cubic-tails-section-colimit}
+\]
+となる。右辺は $q>2$ で零で、filtered colimit と可換する。
+この同じ消滅により、$\pi$ は injective 加群を
+$\omega$-acyclic な対象へ送る。具体的には $I$ injective に対し
+$\pi I$ の injective 解消へ $\omega$ を施すと、得られる複体の
+homology は torsion である。この複体へ $RQ$ を適用し、
+$RQ$ の torsion 上の消滅と $Q\omega=\omega$ を使えば
+元の複体が完全であることを得る。
+従って
+\[
+  R^qQ=R^q\omega\circ\pi,\qquad \operatorname{cd}\omega\le2.
+\]
+これが \cite[Lemmas 4.1.4--4.1.7]{BondalVanDenBergh2003}
+の相対版である。
+
+Grothendieck 圏の K-injective 解消で unbounded $\mathbf R\omega$
+を取る。$\pi$ が完全なので $\omega$ は K-injective 複体を
+K-injective 複体へ送り、
+$\pi\mathbf R\omega\simeq\operatorname{Id}$ となる。
+さらに $\omega$ の cohomological dimension が高々二であり、
+各 $R^q\omega$ が直和と可換するため、unbounded
+$\mathbf R\omega$ も直和と可換する。
+ここでは有限 cohomological dimension を使う acyclic-resolution の
+構成、または有限幅 $0\le p\le2$ の hypercohomology spectral sequence
+を使える。この段階で無限個の cohomological degree の非一様な
+極限交換を仮定していない。
+同様に $\mathbf R\tau$ も直和と可換し、自然な三角
+\[
+  \mathbf R\tau X\longrightarrow X\longrightarrow
+        \mathbf R\omega\pi X\longrightarrow
+ \tag{CT-loc}\label{eq:cubic-tails-derived-localization}
+\]
+を得る。
+
+$P_i$ は $D(\operatorname{Gr}C)$ の compact projective generator の
+一つである。随伴と $\mathbf R\omega$ の直和整合性から
+$\mathcal O_i=\pi P_i$ は $D(\operatorname{QGr}C)$ で compact。
+全ての $\mathcal O_i$ に右直交する $X$ は、随伴により
+$\mathbf R\omega X$ が全ての $P_i$ に右直交するので零である。
+$\pi\mathbf R\omega X=X$ より $X=0$ となり、生成性が従う。
+
+\emph{四項窓の Hom と生成性。}
+(\ref{eq:cubic-tails-relative-dual}) と $F_{i,n}$ の有限フィルトレーション
+から、$\operatorname{Ext}^q_C(F_{i,n},P_j)=0$ は $q=0,1,2$ で成立する。
+$q=3$ では $l=j-4$ の逐次商だけが寄与する。従って $n>j-4$ で
+\[
+ \operatorname{Ext}^3_C(F_{i,n},P_j)\simeq
+ \begin{cases}
+  \operatorname{Hom}_R(C_{i,j-4},\mathcal L_{j-4}),&j-4\ge i,\\
+  0,&j-4<i.
+ \end{cases}
+\]
+これは truncation の遷移写像に関して安定し、自然な同型である。
+$0\to J_{i,n}\to P_i\to F_{i,n}\to0$ と
+(\ref{eq:cubic-tails-section-colimit}) を合わせると
+(\ref{eq:cubic-tails-line-cohomology}) を得る。
+とくに四項窓の higher Ext は全て零である。
+
+(\ref{eq:cubic-tails-simple-resolution}) の $S_i$ は torsion なので、
+商圏では
+\[
+ 0\to W_i\otimes_R\mathcal O_{i+4}
+ \to R_i\otimes_R\mathcal O_{i+3}
+ \to V_i\otimes_R\mathcal O_{i+1}
+ \to\mathcal O_i\to0
+\]
+となる。$W_i$ が可逆で、他の係数も有限 projective であることから、
+四項窓が生成する thick subcategory は両方向への帰納法で
+全ての $\mathcal O_i$ を含む。
+従って $T_a$ は compact tilting generator であり、
+導来 Morita 定理 \cite[\S\S4.3, 8.2]{Keller1994}
+により (\ref{eq:cubic-tails-canonical-morita}) を得る。
+
+最後に導来 torsion kernel が $\operatorname{loc}\{S_i\}$ に一致することを確認する。
+任意の $R$-加群を頂点 $i$ に置いた加群は、$R$-自由解消を用いると
+$S_i$ の直和と cones から得られる。
+各 torsion 加群は、有限個の斉次元が生成する有界な部分加群の
+filtered colimit なので、有限の頂点フィルトレーションを経て
+$\operatorname{loc}\{S_i\}$ に属する。
+また $\mathbf R\tau P_j$ は上の計算から、次数三にある torsion 加群である。
+$\mathbf R\tau$ は直和と可換し、$P_j$ が $D(\operatorname{Gr}C)$ を生成するため、
+その像全体は $\operatorname{loc}\{S_i\}$ に含まれる。
+$\pi X=0$ なら局所化三角から $X\simeq\mathbf R\tau X$ であり、
+逆の包含も従う。ここでは無界複体を単に bounded truncation の極限と
+同一視する議論を用いていない。
+
+基底変更で解消と dual 条件が保たれる場合、
+$-\otimes_R^{\mathbf L}R'$ による graded 加群の導来拡大は
+$P_i$ と $S_i$ をそれぞれ変更後の $P_i'$ と $S_i'$ へ送る。
+これは係数の projective 性と解消の普遍完全性による。
+従って同関手は、直前に同定した kernel による局所化へ降りる。
+$T_a$ とその自己準同型環の全ての成分は通常の tensor で引き戻されるので、
+この導来左随伴は Morita 表示で
+$-\otimes_{\Gamma_a}^{\mathbf L}(\Gamma_a\otimes_RR')$ となる。
+心上の零次は graded tensor と商関手から得る通常の module-object 引戻しである。
+これが compact 比較と実際の導来基底変更の整合性である。
+\end{proof}
+
+\begin{lemma}[有限型 heart の一様な cohomology]
+\label{lem:relative-cubic-coherent-cohomology}
+前定理で $R$ を Noetherian とする。
+さらに $\operatorname{QGr}C$ が locally Noetherian であり、
+$\mathcal O_i$ が Noetherian な生成系をなすと仮定する。
+任意の Noetherian 対象 $M$ について
+\[
+ \operatorname{Ext}^q(\mathcal O_i,M)
+ \text{ は有限 }R\text{-加群},\qquad
+ \operatorname{Ext}^{q}(\mathcal O_i,M)=0
+ \quad(q>0,\ i\gg0).
+ \tag{CT-finite}\label{eq:cubic-tails-coherent-finiteness}
+\]
+任意の Noetherian 対象 $M,N$ の Hom も有限 $R$-加群である。
+同じ仮定を満たす平坦基底変更の下では、これらの Hom は基底変更と可換する。
+cofinal な偶数添字部分列による生成条件も成立するなら、
+その二項移動は Artin--Zhang ample である。
+\end{lemma}
+\begin{proof}
+$M$ へ有限直和の $\mathcal O_j$ から全射を取り、
+その核へも同様の全射を取る。核が Noetherian なので繰り返せる。
+\[
+ 0\to K_{r+1}\to E_r\to K_r\to0
+ \quad(r=0,1,2),\qquad K_0=M
+\]
+とし、各 $E_r$ は有限個の $\mathcal O_j$ の直和とする。
+前定理から $\operatorname{Ext}^{>2}(\mathcal O_i,-)=0$ であり、
+各 $\operatorname{Ext}^q(\mathcal O_i,E_r)$ は有限 projective である。
+長完全列を $q=2,1,0$ の順に用いれば、
+$\operatorname{Ext}^q(\mathcal O_i,M)$ は有限 $R$-加群の
+有限回の部分加群・商・拡大として得られる。
+ここで部分加群の有限性に $R$ の Noetherian 性を使う。
+また式 (\ref{eq:cubic-tails-line-cohomology}) により、
+有限個の $E_0,E_1$ に現れる全ての添字より $i$ を大きく選べば、
+$\operatorname{Ext}^2(\mathcal O_i,E_0)$ と
+$\operatorname{Ext}^2(\mathcal O_i,E_1)$ は同時に零となる。
+同じ長完全列から $M$ に対する全ての正次数の Ext が消える。
+これは有限個の presentation の添字から得た一つの消滅下限であり、
+stalk ごとの下限を貼り合わせているのではない。
+
+$\operatorname{Hom}(M,N)$ は、有限直和 $E_0\twoheadrightarrow M$
+により $\operatorname{Hom}(E_0,N)$ の部分加群になるので有限である。
+さらに Morita 同値の像
+$\mathbf R\operatorname{Hom}(T_a,M)$ は cohomology が
+次数 $0,1,2$ にある $D^b(\operatorname{mod}\Gamma_a)$ の対象となる。
+$\Gamma_a$ は有限 $R$-加群なので左右 Noetherian。
+平坦 $R\to R'$ に対して、第一変数の上に有界な有限生成 projective
+$\Gamma_a$-解消と、第二変数の有界な有限加群複体を選ぶ。
+各 total degree に有限個しか項が現れない Hom 複体は
+$R'$ への平坦 tensor と可換し、cohomology も可換する。
+前定理の基底変更整合性により、これが元の Hom の平坦基底変更である。
+
+最後に任意の全射の核に (\ref{eq:cubic-tails-coherent-finiteness}) の
+$q=1$ を適用すれば、十分大きな $i$ に対する Hom の全射性、
+すなわち AZ (A2) を得る。仮定した cofinal な生成性が (A1) である。
+\end{proof}
+
+\subsection{右軌道規約と既存 foundation への適用}
+
+ここで既存の $D_{ij}=\operatorname{Hom}(L_i,L_j)$ と右軌道環
+$B$ の規約を明示的に合わせる。正の向きの右加群に使う
+$\mathbb Z$-代数は
+\[
+ C_{ij}=D_{-j,-i}=\operatorname{Hom}(L_{-j},L_{-i})\quad(i\le j)
+ \tag{CT-right}\label{eq:cubic-tails-right-convention}
+\]
+であり、積は射の合成 $f\otimes g\mapsto f\circ g$ である。
+これは $D$ の反対代数を添字反転したもの。
+もとの $D$ の右 tails と、添字を変えず同一視してはならない。
+この規約では $\pi P_i$ が $L_{-i}$ に対応し、
+$i=-3,-2,-1,0$ の四項窓が元の foundation を与える。
+
+\begin{proposition}[幾何的 cubic 開の canonical Grothendieck 導来比較]
+\label{prop:quadric-canonical-cubic-tails}
+命題~\ref{prop:quadric-uniform-cubic-hom-open} の有限型開を用いる。
+任意の affine 基底変更 $T=\operatorname{Spec}R\to U^\circ$ について
+自然な導来 Morita 比較
+\[
+ D(\operatorname{QGr}B_T)\simeq D(\operatorname{Mod}\Lambda_T),\qquad
+ D(\operatorname{QGr}B_T)^c\simeq\operatorname{Perf}\Lambda_T
+ \tag{QT-compact}\label{eq:quadric-tails-compact-comparison}
+\]
+を得る。この比較は構造対象を $F_0$ に、次数移動 $(1)$ を
+既存の $\mathsf s$ に対応させ、任意の導来基底変更と整合する。
+特に compact 部分は相対 smooth proper であり、
+その canonical Serre 関手について
+$(1)^2\simeq S^{-1}[2]$ が成立する。
+これは Grothendieck tails の結論であって、
+$B_T$ の Noetherian 性を未証明のまま
+$\operatorname{QGr}B_T=\operatorname{Ind}(\operatorname{qgr}B_T)$
+と主張するものではない。
+\end{proposition}
+\begin{proof}
+式 (\ref{eq:cubic-tails-right-convention}) の $C$ を取る。
+$D$ の左右の cubic 標準解消は、全幾何 fiber の AS 正則性と
+全成分の局所自由性により、内部次数ごとに局所分裂完全である。
+左側についても、補題~\ref{lem:relative-geometric-cubic-flatness} と
+同じ単元 minor の消去を用いればよい。
+従って $C$ は前定理の右標準解消を任意基底変更で持つ。
+その解消に $\operatorname{Hom}(-,P_j)$ を適用した四項の複体も
+各項が有限局所自由である。
+全幾何 fiber の AS 双対条件から、局所分裂完全性と
+唯一の rank-one cohomology を得る。
+よって式 (\ref{eq:cubic-tails-relative-dual}) も任意基底変更で成立し、
+前定理が適用できる。
+
+$C$ の偶数頂点部分への制限は
+$\operatorname{QGr}C\simeq\operatorname{QGr}B$ を与える。
+実際、
+\[
+ C_{2a,2b}=\operatorname{Hom}(\mathsf s^{-b}F_0,\mathsf s^{-a}F_0)
+ \xrightarrow{\ \mathsf s^b\ } B_{b-a}
+\]
+の下で合成は右軌道積
+$x*y=\mathsf s^{\deg y}(x)\circ y$ に一致する。
+偶数頂点への restriction は完全で、左随伴 induction の unit は同型。
+counit の核と余核は偶数成分が零であるため torsion である。
+induction も torsion を torsion へ送る。これは十分長い path が
+必ず偶数頂点を通ることから従う。従って Gabriel 商で両者は互いに逆となる。
+
+四項窓 $i=-3,\ldots,0$ の Hom 公式は
+\[
+ \operatorname{Hom}(\pi P_i,\pi P_j)
+     =C_{ji}=\operatorname{Hom}(L_{-i},L_{-j})
+\]
+であり、積も合成そのものなので、その自己準同型環は
+$\Lambda_T=\operatorname{End}(F_0\oplus\cdots\oplus F_3)$ となる。
+これで (\ref{eq:quadric-tails-compact-comparison}) を得る。
+
+比較が全ての $\pi P_i$ を $L_{-i}$ へ送ることも確認できる。
+向きが許す全 Hom が次数零に集中しているため、
+対応する有向 dg 部分圏の非正次数 truncation と $H^0$ への
+準同型の zigzag を通して、$P_i\mapsto L_{-i}$ を
+直和を保つ導来 Morita functor として実現する。
+$C$ の標準解消の像は、非退化な二つの pairing を用いて
+命題~\ref{prop:quadric-uniform-cubic-hom-open} の
+相対 Euler 複体へ可逆線束を tensor したものになるので零である。
+具体的には $a=-i-4$ と置くと、その像は
+\[
+ W_a\otimes L_a\longrightarrow R_{a+1}\otimes L_{a+1}
+ \longrightarrow V_{a+3}\otimes L_{a+3}\longrightarrow L_{a+4}
+\]
+である。重なりの二つの pairing
+$W_a\otimes V_a^\vee\simeq R_{a+1}$、
+$W_a\otimes R_a^\vee\simeq V_{a+3}$ により、
+これは $a$ から始まる Euler 複体に $W_a$ を tensor したものと一致する。
+前定理の証明で導来 torsion kernel を $\operatorname{loc}\{S_i\}$ と
+同定したので、この functor は kernel 全体を殺して tails へ降りる。
+四項 tilting generator 上で恒等な比較を与えるため、
+得た functor は前記の Morita 同値そのものである。
+
+偶数頂点の二項移動は $L_{-i}$ の $\mathsf s$ による移動に一致する。
+従って $B$ の $(1)$ は $\mathsf s$ に対応する。
+全構成は有限 projective 係数と既存の相対 Morita 根からなり、
+任意の導来基底変更と整合する。
+元の $\Lambda$ の相対 smooth proper 性と
+$\mathsf s^2\simeq S^{-1}[2]$ を移せば、残りの主張を得る。
+\end{proof}
+
+\begin{corollary}[Noetherian な心上の Hom と豊富性]
+\label{cor:quadric-noetherian-base-recognition}
+上の affine 基底 $R$ を Noetherian とし、$B_T$ を左右 Noetherian
+と仮定する。このとき
+$\operatorname{QGr}B_T=\operatorname{Ind}(\operatorname{qgr}B_T)$ であり、
+前命題はこの heart に固有の canonical compact 導来圏の比較となる。
+一般の coherent 対象間の Hom は有限で、平坦基底変更と可換する。
+$\pi B_T$ は基底上平坦かつ exceptional、$(\pi B_T,(1))$ は AZ ample である。
+これらの主張は左右 Noetherian 性が保たれる全有限型基底変更で成立する。
+特に系~\ref{cor:quadric-point-local-noetherian-as4} の
+任意の Noetherian 局所基底 $R$ と、その任意の有限型可換 $R$-代数で
+成立する。単一の有限型開全体の左右 Noetherian 性は依然として別問題である。
+\end{corollary}
+\begin{proof}
+Noetherian 性による heart と module-object 基底変更は
+補題~\ref{lem:qgr-module-object-basechange} を用いる。
+偶数 restriction の下で各 $\pi P_i$ は有限生成 $B_T$-加群から得られる。
+従って Noetherian な生成系をなし、
+補題~\ref{lem:relative-cubic-coherent-cohomology} が Hom の有限性、
+平坦基底変更、一様な AZ (A2) を与える。
+十分大きな偶数 truncation の有限生成性が AZ (A1) を与える。
+構造対象の平坦性は $B_n$ の局所自由性による。
+構造対象の全 derived End が $R[0]$ であることは
+式 (\ref{eq:cubic-tails-line-cohomology})、または foundation 比較による。
+有限型可換基底変更での Noetherian 性は
+補題~\ref{lem:local-finite-type-strong-noetherian} により保たれる。
+その全てに前命題と cohomology 補題を適用すればよい。
+\end{proof}
+
+\begin{lemma}[相対 tails の一様 cohomology から全ての $\chi_q$ へ]
+\label{lem:relative-cubic-global-chi}
+系~\ref{cor:quadric-noetherian-base-recognition} の Noetherian 基底と
+右 Noetherian 環 $B=B_T$ において、任意の有限生成次数付き右加群 $M$ と
+任意の $q\ge0$ に対して
+\[
+   \underline{\operatorname{Ext}}^q_B(R,M)
+   \quad\text{は有限 }R\text{-加群である}.
+\]
+従って右相対 $\chi_q$ が全ての $q$ で成立する。
+反対環にも同じ cubic 議論を適用すれば左側も成立する。
+この結論は、左右 Noetherian 性がある同じ affine 基底全体での主張である。
+\end{lemma}
+\begin{proof}
+$\tau_B$ を次数 torsion radical、$Q_B=\omega_B\pi_B$ を section functor
+とする。$B$ が右 Noetherian なので、有限 truncation
+$B/B_{\ge n}$ とその kernel $B_{\ge n}$ は有限生成 graded projective
+からなる解消を持つ。解消の長さの有限性は不要で、各項の有限生成性を使う。
+従って各 $q$ の Ext は filtered colimit と可換する。
+高い tail $B_{\ge n}$ から上に有界な target への Ext が消えることから、
+前定理と同じ torsion 加群上の acyclicity と section の極限公式を得る。
+偶数 restriction と前定理により
+$\operatorname{Ext}^{>2}_{\operatorname{QGr}B}
+(\pi B(d),-)=0$ は全ての $d$ で成立するので、
+$\operatorname{cd}\omega_B\le2$、$\operatorname{cd}\tau_B\le3$ となる。
+従って unbounded 導来局所化三角も成立する。
+
+$H^b_{\mathrm{tor}}(M)=R^b\tau_B M$ と置く。
+まず $H^0_{\mathrm{tor}}(M)$ は有限生成 torsion 加群なので、
+上に有界であり、全体として有限 $R$-加群である。
+$b\ge2$ については
+\[
+ H^b_{\mathrm{tor}}(M)_d
+ \simeq\operatorname{Ext}^{b-1}_{\operatorname{QGr}B}
+                 (\pi B,\pi M(d))
+\]
+である。よって前補題から各成分は有限 $R$-加群であり、
+$b>3$ では零、$b=2,3$ でも $d\gg0$ では零となる。
+
+$b=1$ には自然な完全列
+\[
+ 0\to\tau_B M\to M\to Q_BM\to H^1_{\mathrm{tor}}(M)\to0
+\]
+を用いる。各 $(Q_BM)_d$ は Hom の有限性から有限 $R$-加群である。
+さらに有限 free presentation $F_1\to F_0\to M\to0$ を取り、
+$K=\ker(F_0\to M)$ と $K_1=\ker(F_1\to K)$ と置く。
+両者は有限生成なので、既に得た一様 Serre 消滅から、十分大きな $d$ で
+\[
+ (Q_BF_1)_d\longrightarrow(Q_BF_0)_d\longrightarrow(Q_BM)_d
+ \longrightarrow0
+\]
+が完全である。構造環の saturation により $Q_BF_r=F_r$ であるから、
+$M_d\xrightarrow{\sim}(Q_BM)_d$ が $d\gg0$ で従う。
+したがって $H^1_{\mathrm{tor}}(M)$ も内部次数について上に有界である。
+以上により、有限個の $b=0,1,2,3$ 全てに共通する上界 $N$ を取れる。
+
+$\pi_BR=0$ と導来随伴から
+\[
+ \mathbf R\underline{\operatorname{Hom}}_B(R,\mathbf R\omega_B\pi_BM)=0.
+\]
+導来局所化三角を使うと
+\[
+ \mathbf R\underline{\operatorname{Hom}}_B(R,M)
+ \simeq
+ \mathbf R\underline{\operatorname{Hom}}_B(R,\mathbf R\tau_BM)
+\]
+となる。その有限幅 hypercohomology spectral sequence
+\[
+ E_2^{a,b}=
+ \underline{\operatorname{Ext}}^a_B(R,H^b_{\mathrm{tor}}(M))
+ \ \Longrightarrow\ 
+ \underline{\operatorname{Ext}}^{a+b}_B(R,M)
+\]
+を固定 $q=a+b$ で考える。
+$R$ の graded free 解消の最初の $q+1$ 項は有限個の shift からなる。
+$H^b_{\mathrm{tor}}(M)$ の上界とこれら有限個の shift から、
+この対角線の $E_2^{a,b}$ は全て内部次数 $d\gg0$ で零である。
+従って目的の Ext も上に有界となる。
+一方、$M$ が下に有界であり、同じ有限個の解消項を用いることから
+$\underline{\operatorname{Ext}}^q_B(R,M)$ は下にも有界である。
+各成分は有限 $R$-加群の複体の cohomology なので有限である。
+内部次数の有限区間にしか成分がないことと合わせ、全体の有限性を得る。
+\end{proof}
+
+\subsection{相対内在的条件への昇格}
+
+\begin{theorem}[Noetherian な基底上での相対条件の全確認]
+\label{thm:quadric-noetherian-relative-promotion}
+命題~\ref{prop:quadric-canonical-cubic-tails} の幾何的 cubic 開
+$U^\circ$ への affine 射 $\operatorname{Spec}R\to U^\circ$ を取り、
+$R$ は Noetherian 可換環、$B_R$ は左右 Noetherian 環であると仮定する。
+任意の可換有限型 $R$-代数 $R'$ に対して
+\[
+ \mathcal C_{R'}=\operatorname{qgr}(B_R\otimes_RR'),
+ \qquad\mathcal O_{R'}=\pi(B_R\otimes_RR')
+\]
+と置く。この系は、有限型 $R$-基底の site 上で
+定義~\ref{def:relative-abelian-system} および
+定義~\ref{def:relative-h2} の全ての条件を満たす。
+その局所的な平方根は次数移動 $(1)$ であり、
+canonical compact 導来圏は
+\[
+ D(\operatorname{Ind}\mathcal C_{R'})^c
+     \simeq\operatorname{Perf}(\Lambda_R\otimes_RR')
+\]
+である。この比較は module-object 引戻しの導来関手による
+任意の有限型基底変更と整合する。
+
+従って $\operatorname{Spec}R$ 自身が元の局所有限型 $k$-site に属する場合、
+$(\mathcal C_R,\mathcal O_R)$ は実際に
+$\mathfrak H_2(R)$ の対象を与える。
+また系~\ref{cor:quadric-point-local-noetherian-as4} の任意の
+Noetherian 局所基底 $R$ は本定理の仮定を満たす。
+その $R$ が元の site に属さない場合にも、有限型 $R$-基底の系に関する
+上の全条件は成立する。ただしこの記述だけで
+$\mathfrak H_2$ の一般基底への極限保存的な延長を定義したとはしない。
+\end{theorem}
+\begin{proof}
+$R'$ を任意の可換有限型 $R$-代数とし、$B'=B_R\otimes_RR'$ と略記する。
+補題~\ref{lem:local-finite-type-strong-noetherian} により
+$B'$ は左右 Noetherian であり、その各次数は有限 projective $R'$-加群である。
+従って $\operatorname{QGr}B'$ は locally Noetherian で、
+その Noetherian 部分圏は $\mathcal C_{R'}$、
+その Ind 圏は $\operatorname{QGr}B'$ である。
+補題~\ref{lem:qgr-module-object-basechange} により
+module-object 基底変更が成立し、tensor の結合則が coherent な比較を与える。
+faithfully flat な有限表示拡大に沿う引戻しは完全かつ保守的であるから、
+系~\ref{cor:quadric-local-tails-fppf-descent} の証明により
+対象・射・完全列が有効に降下する。
+補題~\ref{lem:relative-cubic-coherent-cohomology} により、
+全ての coherent 対象間の Hom は $R'$ 上有限で平坦基底変更と可換する。
+これで Abel 圏の系の全条件を得る。
+
+構造対象の $R'$-平坦性は $B'_n$ の平坦性と $\pi$ の完全性による。
+命題~\ref{prop:quadric-canonical-cubic-tails} の四項 tilting generator は
+有限生成 $B'$-加群の像からなるため、その各項は $\mathcal C_{R'}$ に属する。
+従ってその有限 cones と直和因子である compact 対象は
+$D^b(\mathcal C_{R'})$ に含まれる。
+同命題が compact generation と canonical compact 圏の比較を与える。
+有限 foundation の相対 smooth proper 性と canonical Serre 双対を
+この同値によって移すと、相対 Serre 条件が得られる。
+構造対象は foundation の一項なので
+$\mathbf R\operatorname{Hom}(\mathcal O_{R'},\mathcal O_{R'})\simeq R'[0]$。
+
+ここで非平坦基底変更に対する導来整合性も確認する。
+各 tilting summand は、全成分が $R'$-平坦な $C$ の表現可能加群の像なので
+module-object の意味で $R'$ 上平坦である。
+よって通常の引戻しは、その summand 上で導来引戻しを計算する。
+任意の $R'\to R''$ について、tilting generator とその自己準同型環は
+それぞれ変更後の generator と $\Lambda_{R'}\otimes_{R'}R''$ に送られる。
+従って導来 Morita 表示における実際の引戻しは
+$-\otimes_{\Lambda_{R'}}^{\mathbf L}\Lambda_{R''}$ である。
+compact 部分へ制限すれば (\ref{eq:relative-perfect-basechange}) となる。
+heart 上の通常の引戻しが非平坦基底変更でも完全であることは使っていない。
+
+次数移動 $(1)$ は全ての $\operatorname{QGr}B'$ 上の完全自己同値で、
+Noetherian 部分と全ての module-object 基底変更を保つ。
+命題~\ref{prop:quadric-canonical-cubic-tails} の比較は
+$\pi P_i$ を $L_{-i}$ へ送り、二項移動 $i\mapsto i-2$ の
+対象と全ての矢を既存の $\mathsf s$ に対応させる。
+従って既存の双加群同型
+$\mathsf s^2\simeq S_\Lambda^{-1}[2]$ は、
+この heart の canonical compact 圏上で
+$(1)^2\simeq S^{-1}[2]$ を与える。
+十分大きい偶数 truncation の有限生成性が AZ (A1)、
+補題~\ref{lem:relative-cubic-coherent-cohomology} が AZ (A2) を与える。
+
+構造対象の全軌道環は
+系~\ref{cor:quadric-all-basechange-saturated-sections} により、
+全次数・積・任意基底変更に関して $B'$ そのものである。
+既存の homological AS4 被覆を $R'$ へ引き戻したものは、
+$B'$ の Noetherian 性と正則正規元による議論により左右 Noetherian となる。
+各次数の局所自由性、左右 Koszul 解消の完全性、
+正則正規二次切断と商の平坦性は任意基底変更で保たれる。
+従って同じ次数移動に対して (RQ4) が成立する。
+
+最後に (RQ2) を確認する。幾何点 $\bar t$ で
+右規約に合わせた $C_{\bar t}$ は三次三次元 AS 正則
+$\mathbb Z$-代数である。
+定理~\ref{thm:all-admissible-inverse} をこの $C_{\bar t}$ に適用すると
+$(\operatorname{qgr}C_{\bar t},\pi e_0C_{\bar t})\in\HH$ である。
+偶数頂点への restriction は構造対象を保つ exact 同値
+\[
+ (\operatorname{qgr}C_{\bar t},\pi e_0C_{\bar t})
+   \simeq(\operatorname{qgr}B_{\bar t},\pi B_{\bar t})
+\]
+を与える。従って Gabriel--Krull rank one torsion-free 条件と、
+fiber の全 $D^b$ における Hom 有限性・Serre 条件も満たされる。
+この fiber は module-object 基底変更から得るものと、
+全軌道環の qgr から得るものが一致する。
+ここでは compact 部分の相対 Serre 条件のみから
+fiber の全 $D^b$ の条件を推論していない。
+以上で全ての条件を確認した。
+\end{proof}

@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.29。主論文v1.29に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.30。主論文v1.30に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -70,6 +70,12 @@ AZ1994 Theorem4.5(1)の一般End-ring版は、Okawa–Abdelgadir–Chan–Ueda, 
 Keller, *Deriving DG categories*, Ann.Sci.ENS(4)27 (1994),63–102の[著者本文](https://webusers.imj-prg.fr/~bernhard.keller/publ/ddc.pdf) §§4.3,8.2をcompact generatorによるMoritaに用いる。Toën2012の導来圏のdescentを、heartの一致だけでcanonical D(Ind C)のdescentと同一視しない。現行定義では導来条件をfppf局所に課し、この大域同定に依存しない。
 
 Zhang, *Twisted Graded Algebras and Equivalences of Graded Categories*, Proc.London Math.Soc.(3)72(2) (1996),281–311、[DOI](https://doi.org/10.1112/plms/s3-72.2.281)の書誌とTheorem3.1の公開原文索引を確認した。本文PDFの直接openは取得制限があった。本稿の係数環上・右規約で必要な同値は `prop:antiserre-polarization-family` にmodule actionと逆構成を明示して直接証明している。一定qgr・非一定表示の具体族と中心交換子による検出を記すが、包括的新規性は未確定である。
+
+## 相対cubic tailsとcanonical導来比較
+
+Bondal–Van den Bergh, *Generators and representability of functors in commutative and noncommutative geometry*, Moscow Mathematical Journal **3** (2003), 1–36, DOI [10.17323/1609-4514-2003-3-1-1-36](https://doi.org/10.17323/1609-4514-2003-3-1-1-36), [arXiv math/0204218v2](https://arxiv.org/abs/math/0204218v2) の§4.1、Lemmas 4.1.3–4.1.7と直後のunbounded導来関手、Lemma 4.2.2を一次PDFで確認した。原典の体上の仮定を一般基底へ無条件に適用せず、現行 `relative_cubic_tails.tex` では、有限projective係数のcubic解消を用いてtorsionのacyclicity・cdτ≤3・cdω≤2・直和整合性を再証明する。局所化の向きはπ⊣Rω、三角はRτX→X→RωπXである。
+
+四項tiltingからのMorita同値はKeller1994 §§4.3,8.2を用いる。体上分類・Noetherian性はVdB2011の別の入力である。相対定理はNoetherian性なしのGrothendieck導来比較と、Noetherian性を仮定したcoherent heartの全相対認識を区別する。全χの証明では、有限presentationとcohomological dimension二から同じ基底全体のSerre消滅を得る。新規性の包括的な文献比較は完了していない。
 
 ## 確認した一次資料
 
