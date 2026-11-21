@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.17（主論文v1.17、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.18（主論文v1.18、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -48,11 +48,13 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **有限窓について得た代数化。** `prop:quadric-etale-finite-window` により標準根はétale近傍でF0↦F2、F1↦F3と同定できる。二つの比較Homは閉fiberでk[0]なので局所的に線束になり、恒等を持ち上げた射のperfect coneの消滅で同型を得る。偶数窓は元のprojective foundationの像、奇数窓はSerre rotationからfull exceptional、閉fiberのKünneth消滅を開条件で保ってstrongになる。二周期により無限個の四項窓を有限個の条件で制御できる。距離1–4のHomは階数2/4/6/9で、三重積の核R_iは階数2、四次重なりW_iは非退化な階数1の直和因子となり、任意の基底変更と可換する。閉fiberの二つの窓についてKünnethによるExt次元を直接点検した。さらに `computations/verify_quadric_finite_windows.py` をSymPyの厳密有理演算で実行し、両parityの二重・三重・四重積のrank4/6/9、三次核rank2、四次重なりrank1、二つのpairingの行列式がいずれも±1であることをPASSとした。これは特殊fiberの有限線形代数の確認であり、étale近傍の存在や無限次数の構造を計算機で証明したものではない。
 
-**局所環での全次数提示（定理の証明は主論文）。** `thm:quadric-local-all-degree-cubic` は可換点uの局所環A=O_{U,u}上で全i≤jのRHom(L_i,L_j)がA^{h_{j-i}}[0]であることを、相対smooth properからのperfect性と閉fiberのKünneth消滅による最小自由複体の消去で証明する。各長さのtensor積は閉fiberで全射なのでNakayamaで全射。三次のR_iで割ったZ代数の各成分は有限生成で、剰余体では同色隣接交換からSym^pU⊗Sym^qVに一致し、自由なHomへの全射の核は局所Nakayamaで零。全次数の三次提示は同じ局所環上で成立し、任意底変更と整合する。偶数BはSegreを特殊fiberとし、全次数自由・rank7二次関係・局所PP Koszul変形原理による相対Koszul解消を持つ。さらに全内部次数の標準cubic解消は、W_iの重なりで複体を構成し、特殊fiberでのexactnessと有限自由Nakayamaを各次数で適用して分裂完全となる。ここでも全次数を同時に一つの有限型開に拡張したわけではない。これは有限型開U_Nを次数ごとに取れることを意味するが、単一U_∞の存在を意味しない。特殊fiberの別個の有限計算として `computations/verify_quadric_finite_windows.py` に両parityで長さ3〜7の全三次関係の挿入行列を追加した。全ての長さで交換関係が核を生成する数学的証明は原稿の直接議論にあり、この有限検算から無限次数を推論しない。
+**局所環での全次数提示（定理の証明は主論文）。** `thm:quadric-local-all-degree-cubic` は可換点uの局所環A=O_{U,u}上で全i≤jのRHom(L_i,L_j)がA^{h_{j-i}}[0]であることを、相対smooth properからのperfect性と閉fiberのKünneth消滅による最小自由複体の消去で証明する。各長さのtensor積は閉fiberで全射なのでNakayamaで全射。三次のR_iで割ったZ代数の各成分は有限生成で、剰余体では同色隣接交換からSym^pU⊗Sym^qVに一致し、自由なHomへの全射の核は局所Nakayamaで零。全次数の三次提示は同じ局所環上で成立し、任意底変更と整合する。偶数BはSegreを特殊fiberとし、全次数自由・rank7二次関係・局所PP Koszul変形原理による相対Koszul解消を持つ。さらに全内部次数の標準cubic解消は、W_iの重なりで複体を構成し、特殊fiberでのexactnessと有限自由Nakayamaを各次数で適用して分裂完全となる。ここでも全次数を同時に一つの有限型開に拡張したわけではない。これは局所環の証明だけでは一つの有限型開を保証しないことを示すが、その一様な開は後述の幾何的cubic標準解消とHomの帰納的同定から得る。特殊fiberの別個の有限計算として `computations/verify_quadric_finite_windows.py` に両parityで長さ3〜7の全三次関係の挿入行列を追加した。全ての長さで交換関係が核を生成する数学的証明は原稿の直接議論にあり、この有限検算から無限次数を推論しない。
 
 **幾何的cubic fiberの開条件。** `prop:quadric-geometric-quintuple-open` ではW0,W1の全巡回二covector縮約の零集合を相対P¹×P¹上に置き、そのproper imageを有限個除いた開で全幾何fiberがVdB geometric cubicとなる。W_iとW_{i+1}の二つの非退化coevaluationからV_i≃V_{i+4}を作り、関係式の巡回を確認して体上分類を適用する。これは幾何fiberのAS正則性であり、全次数の相対平坦性を保証しない。
 
 **全次数の相対cubic平坦性と内在Hom。** `lem:relative-geometric-cubic-flatness` は、体上VdB標準解消の次数nについて左三項が距離の短い局所自由成分からなることを利用し、幾何fiber完全性と単元minorを使って局所分裂完全性とn次の自由性を帰納する。これは同じ有限型開上で全次数に働き任意底変更と可換。`prop:quadric-uniform-cubic-hom-open` は可換Qで二つのEuler列のspliceに一致する相対四項Euler複体を、可換点の開近傍で完全にして全iに二項周期で移す。Hom(-,L_j)の帰納によりDpresからRHomへの比較が全次数で同型となる。偶数Bは全次数局所自由、四生成七二次関係の提示を持つ。VdBの一次資料 arXiv:0807.3753v3 Theorem 5.5.7/5.5.10 を確認し、旧引用のTheorem 4.31という異版の番号を訂正した。今回の導出を外部査読または形式証明で検証したわけではない。
+
+**相対Koszul性の範囲。** `cor:quadric-uniform-even-koszul` では奇数頂点のcubic標準解消を偶数へ制限して線形分解を継ぎ、全幾何fiberの偶数環がKoszulであることを得る。既存のPPの局所Koszul変形原理により左右の相対Koszul解消は全内部次数で分裂完全。全次数flatnessだけからKoszulを結論したのではない。Noetherian性はこの議論の結論に含まれない。
 
 **次の効果性補題。** 不足は相対noetherian tails、canonical compact圏とnoetherian heartの同定、AZ・AS4被覆の相対存在である。全次数の局所自由性だけで内在H2の代数性を結論しない。
 
@@ -266,7 +268,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-2026-11-21 / 主論文v1.17、別稿v0.1。現行v1.17のLuaLaTeX組版・静的checker・旧計算suiteはこの更新では未実施。前版v1.12の組版確認と既存の計算証明書を、新しい局所環全次数命題の証明点検と区別する。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
+2026-11-21 / 主論文v1.18、別稿v0.1。現行v1.18のLuaLaTeX組版・静的checker・旧計算suiteはこの更新では未実施。前版v1.12の組版確認と既存の計算証明書を、新しい局所環全次数命題の証明点検と区別する。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
 
 **主論文の既存入力の点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
 
@@ -301,7 +303,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 前版の主論文v1.12・162頁についてLuaLaTeX・latexmkによるPDF/SyncTeX生成がPASSだった。現行v1.17はこの実行環境にGitHubリポジトリのローカルcheckoutがなく、組版・全静的checkerを未実施とする。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。第29・30節の根一意性・étale Morita根・全Artin hull・一般cubicへの条件付き拡張、表紙・概要・書誌を一覧画像で確認し、根一意性、étale代数化の定理と証明、正規性のtensor計算、全Artin実現定理と形式変形の系、条件付き定理を拡大確認した。全162頁を目視したわけではない。静的checkerは33 manuscript files/307 labels/192 citation uses、7 Markdown filesでPASS。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**組版・参照確認。** 前版の主論文v1.12・162頁についてLuaLaTeX・latexmkによるPDF/SyncTeX生成がPASSだった。現行v1.18はこの実行環境にGitHubリポジトリのローカルcheckoutがなく、組版・全静的checkerを未実施とする。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。第29・30節の根一意性・étale Morita根・全Artin hull・一般cubicへの条件付き拡張、表紙・概要・書誌を一覧画像で確認し、根一意性、étale代数化の定理と証明、正規性のtensor計算、全Artin実現定理と形式変形の系、条件付き定理を拡大確認した。全162頁を目視したわけではない。静的checkerは33 manuscript files/307 labels/192 citation uses、7 Markdown filesでPASS。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.17
+% 2026-11-21 / v1.18
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -739,8 +739,10 @@ $U_N\subset U$ が存在し、上の導来 Hom の次数零集中と
 階数、cubic 提示の次数 $N$ までの同定、及び
 $B$ の二次提示の次数 $N$ までの同定が成立し、
 任意の $U_N$-基底変更と可換する。
-$U_N$ を $N$ に依存せずに選べること、あるいは
-$\bigcap_NU_N$ が有限型の開部分を含むことはここでは証明しない。
+この系の有限次数の議論だけからは、
+$U_N$ を $N$ に依存せずに選べるとは結論しない。
+同一開上の全次数の主張は後の
+命題~\ref{prop:quadric-uniform-cubic-hom-open} で別に証明する。
 \end{corollary}
 \begin{proof}
 $\mathsf s$ による二項移動により、必要な derived Hom と積・関係の
@@ -961,13 +963,48 @@ $4^2-9=7$ であり、局所直和因子である。
 任意底変更と整合する。
 \end{proof}
 
+
+\begin{corollary}[有限型開近傍の偶数環の相対 Koszul 性]
+\label{cor:quadric-uniform-even-koszul}
+命題~\ref{prop:quadric-uniform-cubic-hom-open} の開近傍上で、
+偶数環 $B$ は相対的に二次 Koszul である。
+その左右の Koszul 複体は各内部次数で局所分裂完全で、
+任意の基底変更後も完全である。
+本系だけで $B$ の Noetherian 性は結論しない。
+\end{corollary}
+\begin{proof}
+幾何点 $\bar v$ を取る。
+その cubic $\mathbb Z$-代数は相対的標準解消
+(\ref{eq:relative-geometric-cubic-resolution}) の
+体上への制限を持ち、二項周期がある。
+奇数頂点の標準解消を偶数頂点へ制限すると、
+単純頂点加群が消え、奇数頂点の制限加群の
+線形自由分解を繰り返し継いで得られる。
+偶数頂点の標準解消を同様に制限し、
+得られた奇数制限加群の線形分解を代入すると、
+$B_{\bar v}$ の次数零剰余体の線形分解ができる。
+これは命題~\ref{prop:weighted-even-koszul} の証明の
+$d_i=0$ の場合と同じ構成であり、
+そこで Noetherian 性を使うのは Noetherian 性の結論の
+証明だけである。
+従って全ての幾何ファイバーの $B_{\bar v}$ は Koszul である。
+
+命題~\ref{prop:quadric-uniform-cubic-hom-open} により
+$B$ は二次表示を持ち、$B_3$ は局所自由である。
+Noetherian な有限型開上で
+補題~\ref{lem:relative-koszul-degree-three} を適用する。
+全次数の局所自由性、左右 Koszul 複体の
+局所分裂完全性と任意底変更への整合性が従う。
+\end{proof}
+
 \begin{remark}[この代数化で残る条件]
 得られたのは有限 foundation の perfect 圏上の平方根、
 命題~\ref{prop:quadric-etale-finite-window} の四項窓、
 定理~\ref{thm:quadric-local-all-degree-cubic} の
 可換点の局所環における全次数の cubic・二次提示、
 及び命題~\ref{prop:quadric-uniform-cubic-hom-open} の
-有限型開上での全次数 Hom と相対 cubic 解消である。
+有限型開上での全次数 Hom・相対 cubic 解消、
+系~\ref{cor:quadric-uniform-even-koszul} の相対 Koszul 性である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その根と helix が noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、

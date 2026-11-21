@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.17、主論文v1.17、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.18、主論文v1.18、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -33,9 +33,9 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 証明は [有限QP](papers/quiver-avatar/qp_presentations.tex)、[有限foundation](papers/quiver-avatar/foundation_charts.tex)、[avatar](papers/quiver-avatar/avatar_charts.tex)、[内在的忘却](papers/quiver-avatar/intrinsic_forgetting.tex) に置く。独立読取り・計算・組版の実施範囲は研究ノートを参照。
 
-**可換点の局所環で全次数の三次提示を得た。** étale Morita根の存在する可換点uの局所環Aでは、全i≤jでRHom(L_i,L_j)が次数零に集中し階数h_{2m}=(m+1)², h_{2m+1}=(m+1)(m+2)の自由加群となる。全三次Z代数はrank2のR_iで提示でき、偶数環Bもrank7の二次関係で全次数表示され、局所Koszul変形原理により相対Koszulになる。加えて、全次数の相対 cubic 標準解消は各内部次数で分裂完全であり、任意の局所環上の基底変更で完全性を保つ。[証明](papers/sections/artin_roots.tex) `thm:quadric-local-all-degree-cubic`。特殊fiberについて両parity・長さ3〜7の三次核を [厳密検算](computations/verify_quadric_finite_windows.py) で比較した（全次数の証明そのものは計算ではない）。任意の固定次数Nについては開近傍U_Nまで延長できる。さらに四次のW_iの全巡回縮約の零条件のproper imageを除く有限型開U_geoでは、各幾何fiberの三次表示はVdB geometric cubic AS正則となるが、全次数の局所自由性とHom同定は主原稿の相対分裂完全性から成立する。一方、全Nで共通する一つの有限型開近傍への延長・noetherian tails・AZ・AS4被覆の存在はまだ証明していない。
+**可換点の局所環で全次数の三次提示を得た。** étale Morita根の存在する可換点uの局所環Aでは、全i≤jでRHom(L_i,L_j)が次数零に集中し階数h_{2m}=(m+1)², h_{2m+1}=(m+1)(m+2)の自由加群となる。全三次Z代数はrank2のR_iで提示でき、偶数環Bもrank7の二次関係で全次数表示され、局所Koszul変形原理により相対Koszulになる。加えて、全次数の相対 cubic 標準解消は各内部次数で分裂完全であり、任意の局所環上の基底変更で完全性を保つ。[証明](papers/sections/artin_roots.tex) `thm:quadric-local-all-degree-cubic`。特殊fiberについて両parity・長さ3〜7の三次核を [厳密検算](computations/verify_quadric_finite_windows.py) で比較した（全次数の証明そのものは計算ではない）。任意の固定次数Nについては開近傍U_Nまで延長できる。さらに四次のW_iの全巡回縮約の零条件のproper imageを除く有限型開U_geoでは、各幾何fiberの三次表示はVdB geometric cubic AS正則となるが、全次数の局所自由性とHom同定は主原稿の相対分裂完全性から成立する。一方、全Nで共通する有限型開への延長は下記の相対解消とHom同定で証明した。noetherian tails・AZ・AS4被覆は未証明。
 
-**有限型開上での全次数の平坦性とHom。** 体上VdB標準解消の完全性を次数帰納によって相対的に持ち上げ、幾何的cubic表示の全次数成分が同じ有限型開上で局所自由・相対分裂完全となることを証明した。さらに二種類の四項Euler複体を可換点の近傍で同時に完全にし、全ての距離で表示DpresとRHom(L_i,L_j)を同定した。偶数切断環も全次数局所自由で四生成・七二次関係による提示を持つ。**一つの有限型開で全次数を一様に扱えないという従来の障害は、この範囲で解消した。** 相対noetherian tails、AZ豊富性、AS4被覆と内在的H2の代数性は未証明。[主原稿の補題・命題](papers/sections/artin_roots.tex) `lem:relative-geometric-cubic-flatness`・`prop:quadric-uniform-cubic-hom-open`。
+**有限型開上での全次数の平坦性とHom。** 体上VdB標準解消の完全性を次数帰納によって相対的に持ち上げ、幾何的cubic表示の全次数成分が同じ有限型開上で局所自由・相対分裂完全となることを証明した。さらに二種類の四項Euler複体を可換点の近傍で同時に完全にし、全ての距離で表示DpresとRHom(L_i,L_j)を同定した。偶数切断環も全次数局所自由で四生成・七二次関係による提示を持ち、幾何fiberの線形分解と相対Koszul変形原理によって左右の相対Koszul解消を備える。**一つの有限型開で全次数を一様に扱えないという従来の障害は、この範囲で解消した。** 相対noetherian tails、AZ豊富性、AS4被覆と内在的H2の代数性は未証明。[主原稿の補題・命題](papers/sections/artin_roots.tex) `lem:relative-geometric-cubic-flatness`・`prop:quadric-uniform-cubic-hom-open`。
 
 ## モジュライのスタック構成
 
