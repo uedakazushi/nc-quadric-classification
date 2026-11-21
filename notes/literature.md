@@ -15,6 +15,8 @@ A. B. Verevkin, *On a noncommutative analogue of the category of coherent sheave
 
 **局所 Noetherian 性と相対χの参照範囲。** 3次元cubic AS正則環・幾何的quintupleの体上分類は `VdB2011` の既知結果として使う。体上Noetherian性を偶数Veroneseへ移す際のイデアルの有限生成性は主原稿 `prop:weighted-even-koszul` の証明に明記。一般Noetherian特殊fiberへの局所持上げは `lem:local-commutative-fibre-noetherian`（標題・証明は非可換fiberにも拡張）で証明し、有限次元Noetherian局所基底への相対χの持上げは `lem:local-chi-specialization` で証明した。可換Segre環のχは可換Noetherian次数環の標準Ext有限性から従う。AZ(A2)の非局所有限型基底への適用と、VdBの体上Noetherian性の正確な定理番号の再照合は残る。
 
+**非可換quadricの体上χの一次資料。** S. Paul Smith–Michel Van den Bergh, *Noncommutative quadric surfaces*, *J. Noncommut. Geom.* **7** (2013), 817–856, [DOI](https://doi.org/10.4171/JNCG/136)。[著者版PDF](https://sites.math.washington.edu/~smith/Research/pencil-nc-quadrics.pdf) の §2.8（著者版p.7）をテキストとページ画像で確認した。Noetherianなquadratic AS正則4次元環の正則正規二次元商には左右χが成立する。体上の既知結果であり、相対基底への拡張は本研究の局所持上げ補題を別に使う。書誌キー `SVdB2013` は既に存在する。
+
 **AZ豊富性の証明範囲。** Artin–Zhang [AZ1994, Proposition 4.4] の体上のχ₁⇒ample方向は、複数の後続文献で確認できるが、任意Noetherian係数環への適用範囲を原典から完全には照合していない。本原稿の `lem:relative-chi1-implies-AZ-A2` はそれに依存せず、有限projectiveな各B_nと相対χ₁から、B/B_{≥n}のExt¹がnに依存しない高次数で消えることを直接証明してAZ(A2)を得る。局所相対χ₁によって可換点を閉点とする全Noetherian局所基底でこの条件が適用できる。非局所有限型底変更後のχ₁はまだ検証していない。
 
 ## 二次Veroneseの既知結果と今回の相対適用

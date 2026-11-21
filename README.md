@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.26、主論文v1.26、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.27、主論文v1.27、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -48,6 +48,8 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 **可換点の全有限次元Noetherian局所基底で相対χ。** DVRに限らず、任意の有限次元Noetherian局所基底について局所パラメータによる次元帰納法で特殊fiberのχを持ち上げた。局所パラメータtの冪torsionとt単射な商を分け、Ext長完全列と次数別Nakayamaを使う。可換Qを閉点とする基底ではSegre特殊fiberから左右相対χ_iが全iで成立（`lem:local-chi-specialization`、`cor:quadric-local-chi`）。**非局所有限型基底へのχの一様化・AZ(A2)とcanonical compact比較は未証明**。[補題](papers/sections/relative_koszul.tex)・[適用](papers/sections/artin_roots.tex)。
 
 **可換点の全Noetherian局所基底でAZ豊富性。** 相対χ₁から全truncationのExt¹が共通の高内部次数で消滅し、Gabriel右随伴によるHom(πB(-d),πM)を高次数でM_dに同定できる。qgrの全射のcokerは高次数では零となるため、AZ(A2)が従う（`lem:relative-chi1-implies-AZ-A2`）。可換点を閉点に持つ全有限次元Noetherian局所基底では既に(A1)があるので、(πB,(1))はAZ ample（`cor:quadric-local-AZ-ampleness`）。**非局所有限型底変更後のAZ(A2)、Hom有限性、canonical compact/Serre認識、内在H2代数性は未証明**。[証明](papers/sections/relative_koszul.tex)・[quadricへの適用](papers/sections/artin_roots.tex)。
+
+**幾何的cubic開の各stalkで相対χとAZ豊富性。** Smith–Van den Bergh §2.8の体上χを各幾何fiberのNoetherian AS4正規二次商へ適用し、局所χ持上げとAZ(A2)の直接補題から、任意の点vを閉点に持つ有限次元Noetherian局所基底で左右χ_i（全i）とAZ(A1)+(A2)を得る。局所有限型な任意の族T→U°の全stalk O_{T,t}で同じ結論が成立する（`cor:quadric-local-chi`、`cor:quadric-local-AZ-ampleness`、`cor:quadric-local-AZ-on-all-stalks`）。**各stalkの結果は基底全体の一様なχ消滅下限・AZ(A2)の効果性を意味しない。** 単一有限型開のNoetherian性、Hom有限・flat basechange、canonical compact/Serre比較とH2代数性は未証明。[証明](papers/sections/artin_roots.tex)。
 
 ## モジュライのスタック構成
 
