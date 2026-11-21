@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.7（数学原稿v1.6）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.8（数学原稿v1.7）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -36,6 +36,9 @@
 | 二次Veroneseと相対平坦族 | 任意の二次環BのB^(2)はT(B₂)/(ker(B₂²→B₄))、自己同型twist後も二次。Noetherian底でR_n局所自由かつ全幾何fiberが二次なら族も二次 | 一般事実はPolishchuk–Positselski既知。本研究の相対直接証明はlem:relative-quadratic-veroneseとlem:relative-quadratic-from-fibers |
 | 全H2の内在的反Serre環 | R=⊕Hom(O,tⁿO)は全て九生成元・rank56の二次関係だけで表示。cubic/noncubic chart、cubic→noncubic特殊化も全次数で二次提示が基底変更する | cor:h2-intrinsic-antiserre-quadratic, cor:cubic-relative-full-quadratic-presentation, cor:noncubic-relative-full-quadratic-presentation, cor:line-full-quadratic-degeneration |
 | noncubic の固定Grassmannセル | u²,uv,v²,uc,vc,ud,vd,cd,dcの9基底。積25列がB₄の交互語PBW基底に符号付き一対一。minor±1。p₀⋆p₀=−u²f₁とq₀⋆q₀=−u²f₂から6係数を回収。A6→固定Gr cellは閉埋込み、非退化Pは局所閉 | prop:noncubic-grassmann-explicit-cell。フレーム付き表示空間の命題でありPGL9群商の閉埋込みではない |
+| 型を局所定数にした表示モジュライ | C⊔Npres は有限型Artin、全H2幾何点・慣性を再現するが、cubic→noncubic退化を人工的に除外し、既約・連結成分は2 | prop:split-h2-presentation-moduli |
+| 三次までの二次関係モジュライ | X3={rank L3=176}⊂Gr(56,81)は有限型局所閉rank-stratum。 [X3/PGL9] はrankR2=25,R3=49の二次提示のrigidified Artin moduli。detR1^-11 detR2²で普遍全次数環を降下。既知のcubic/noncubic/退化族は入るがその他も入る | prop:truncated-antiserre-moduli-stack |
+| 一致根対点での違い | X3商のH0接次元は84−79=5、Q_fndは滑らか次元3+慣性Lie次元1=4。形式近傍は同値でない | prop:truncated-versus-foundation-tangent |
 | noncubicの Koszul 性と一次全次数平坦性 | 二重平方環の二次 Gröbner（PBW）表示からBはKoszul、偶数VeroneseとZhang twistのRもKoszul。三次の重なりの一次整合はKoszulの次数0 Hochschild 2-cocycle条件に一致し、双対数上の二次関係変形が三次平坦なら全次数平坦 | prop:noncubic-antiserre-koszul, lem:koszul-first-order-degree-three。二次以降の一般Artin族には未拡張 |
 | noncubicの内部次数0 Hochschild 次元 | 非交差、一根共有、一致根対でHH¹_0=1,1,2、HH²_0=3,3,5。C¹=81、C²=1400、C³=16072、rank(d¹)=80,80,79、rank(d²)=1317,1317,1316 | thm:noncubic-hh01-hh2。foundation代数のHH≥3消滅とは異なる |
 | 横断2/2/3方向の二次持上げ | 三次Hilbert locusの横断部分の各基底ベクトルと二基底の全ての和について、Schur補行列の二次障害を打ち消す有理数補正を計算し整数行列で正確に検査。全横断方向がk[t]/(t³)上で三次成分平坦な2-jetを持つ | prop:noncubic-transverse-second-order。全次数の二次flatness・3次以上の形式積分・相対H2実現は未証明 |
@@ -45,6 +48,10 @@
 | cubicの相対反Serre環 | smooth proper foundationの逆Serre双加群から`RHom(e₀Λ,tⁿe₀Λ)`。cubic開では全nでrank(2n+1)²局所自由 | 任意のH2族からの相対foundation抽出 |
 | 共通Grassmann射と実際の特殊化 | cubic開Cとnoncubic表示[P/G]の双方から`[Gr(56,81)/PGL9]`へ射。各noncubic点へのfoundation直線族も全次数平坦な反Serre環の族を与える | 両chartの相対的な貼合せとfull内在H2との同値 |
 | 選んだSerre根の一次変形障害 | 持上げにはHH²類の保存が必要。Q上でs_*u=−uとなる適合根と非零変形を構成 | 別の根の存在や相対H2条件の開性は判定しない |
+
+**修正定義で厳密に得られる stack。** 反Serre関係のG=Gr(56,81)から次数3を作る自然写像 L3:U⊗J→((U⊗U)/J)⊗U は504→225であり、rank176ならR3は49次元局所自由。この正確rankの局所閉部分X3は非被約基底まで含む真正な有限型スキームで、PGL9商はArtin。GL9版が生成元と関係の相対モジュライ、PGL9版が共通次数スカラーのrigidification。普遍Rを無理にPGL torsorから取り出すBrauer障害はdet(R1)^-11 det(R2)^2の重み一の線で消え、R_nをその-n乗で捩って降下する。これらは全次数のflatness、Serre平方根・AZ・AS被覆を**課していない**。対照的に既存のcubic chart Cとnoncubic chart Npresの非交和は全幾何点慣性を再現するが、型を局所定数にしており、見かけの成分数が二になる。これは自然なH2相対スタックの既約性の反例ではない。
+
+**接複体による非同値の検出。** coincidence f1=f2=uv ではX3の普通の一次接次元84・PGL9接軌道79なので、[X3/PGL9]の接複体のH0は5次元。一方Q_fndは滑らか次元3・慣性Lie1なのでH0=4。よって少なくともこの点の形式近傍は同値でない。したがって X3 の余分な方向を排除する、または内在的H2として理解する条件が必要。これが現在の最も短い差分証明である。
 
 **Koszul の低次変形と二次障害。** Rのquadratic Koszul bimodule complexで内部次数0のHochschild cochainはC¹=Hom(V,R₁)、C²=Hom(J,R₂)、C³=Hom(K₃,R₃)、K₃=(V⊗J)∩(J⊗V)である。三次Hilbert条件の線形化がd²であり、degree-3 flatな双対数上の二次関係は全次数flatなgraded algebra first-order deformationを与える。三基準点のd²核83,83,84とd¹像80,80,79からHH²_0=(3,3,5)を得る。HH¹_0はEuler導分を含み=(1,1,2)。これは有限foundation代数の高次HH消滅を言い換えたものではない。
 
@@ -205,9 +212,15 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 - 同等のローカル探索コードでは、三基準点の横断2/2/3方向の全基底と全二項和について、法101での可解性、法101²と有理数の再構成、**整数係数での残差恒等零**を確認した。二根対一致点の補正で分母2を要する組合せもある。最初に一度ベクトル化の転置規約が不一致になった候補は廃棄し、正しい線型化との一致を確認して検証し直した。
 - GitHub上の再現コードはmainへ保存したが、**保存したコードそのものを独立環境へcloneして再実行したことは確認していない。** v1.6全ソースchecker・全文LuaLaTeX組版・PDF表示、既存全math suiteの再実行は未実施。v1.2の97頁PDF組版は旧版の実施記録であり現行版への保証ではない。外部査読・形式証明・包括的新規性判定も未実施。
 
+### v1.7 の構成済み表示と検証境界
+
+- 本文の prop:split-h2-presentation-moduli, prop:truncated-antiserre-moduli-stack, prop:truncated-versus-foundation-tangent に、非交和表示、三次rank176の局所閉表示、重み一線束による普遍環の降下、二根対一致点のH0接次元5対4の違いを直接証明した。
+- これは既存のnoncubic接空間計算を入力にする数学的帰結であり、今回新たな巨大な数値計算を実行したことを意味しない。改訂後のTeX新規参照・環境の静的検査は個別に確認する。全文LuaLaTeX組版およびv1.7用PDFは未実施。
+- 再開時は三次Hilbert X3 が与える自由な余分の一次方向と相対foundationの接方向の差を認識し、元のH2と構成済み修正stackを混同しない。
+
 ## 検証範囲と再現手順
 
-**現行v1.6（2026-11-21）：相対反Serre・Clifford追補の全体組版および既存計算の再実行は未実施。** v1.2の構成確認・97頁LuaLaTeX組版はPASSだったが、現行v1.3のPASSとは扱わない。 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
+**現行v1.7（2026-11-21）：相対反Serre・Clifford追補の全体組版および既存計算の再実行は未実施。** v1.2の構成確認・97頁LuaLaTeX組版はPASSだったが、現行v1.3のPASSとは扱わない。 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
 
 実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。
 
