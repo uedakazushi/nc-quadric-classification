@@ -33,9 +33,12 @@
 | noncubicの選択不要な相対反Serre環 | `B_{2n}⊗(det W)^−n`、`a⋆b=aιⁿ(b)`。σ²=ιなので任意の非被約底変更と両立して剛体化商[P/G]へ降下。各次数rank(2n+1)² | この降下を任意の内在的H2族の再構成と混同しない |
 | noncubicの中心Clifford表示 | `h=cd+dc` 中央、`C=A[u,v,h]`（重み1,1,2）、`B=C⊕Cc⊕Cd⊕Ccd`。任意noetherian底でB,R左右noetherian | 相対heartの全対象の完全性は別 |
 | noncubicの相対Serre | Clifford trace（cd係数）で`Hom_C(B,C(-4))=B_ι(-2)`。weighted P(1,1,2)上のperfect B対象には`S=(-)_ι(-2)[2]`、局所平方根`(-)_σ(1)` | 全coherent heart上の双対性・相対AZ・AS被覆の認識 |
+| noncubicの相対heart・相対orbit | `R`の`qgr R`を構造対象付きnoetherian Abel heartとして任意のNoetherian基底上に定義。étale局所に`qgr B^σ≃qgr R`。weighted P(1,1,2)上`RHom(B,tⁿB)=B₂ₙ[0]`が全n・底変更に整合（`cor:noncubic-relative-orbit-hom`, `prop:noncubic-relative-heart-veronese`） | 任意の内在的noncubic族のこの相対heartへの帰着、全flat coherent対象の相対双対・AZ/AS等 |
 | cubicの相対反Serre環 | smooth proper foundationの逆Serre双加群から`RHom(e₀Λ,tⁿe₀Λ)`。cubic開では全nでrank(2n+1)²局所自由 | 任意のH2族からの相対foundation抽出 |
 | 共通Grassmann射と実際の特殊化 | cubic開Cとnoncubic表示[P/G]の双方から`[Gr(56,81)/PGL9]`へ射。各noncubic点へのfoundation直線族も全次数平坦な反Serre環の族を与える | 両chartの相対的な貼合せとfull内在H2との同値 |
 | 選んだSerre根の一次変形障害 | 持上げにはHH²類の保存が必要。Q上でs_*u=−uとなる適合根と非零変形を構成 | 別の根の存在や相対H2条件の開性は判定しない |
+
+**非cubicの相対heartまで得られた範囲。** 普遍`R`から`(qgr R,πR)`を任意の可換noetherian底の表示に定義でき、`σ`のétale局所選択の下で`(qgr B^σ,πB^σ)`に対応する。weighted projective stack上の中心Clifford orderからperfect Serre公式を得て、相対orbit Hom`RHom(\widetilde B,tⁿ\widetilde B)=B₂ₙ[0]`をweighted Čech計算で確定した。これは表示族の相対heart・Serre orbitの具体構成であって、任意の相対内在的`H2`族をこのchartへ導く`ess. surjectivity`、全flat coherent対象の相対Serre双対やLowen–Van den Bergh平坦性と相対AZ/AS被覆まではまだ含めない。
 
 **具体的な反Serre族の構成。** noncubic普遍表示では`ι(c)=−c,ι(d)=−d,ι|W=id`、`σ²=ι`であるため、選んだZhang twist`B^σ`の偶数部分は選択に依存せず`(B^(2))^ι`となる。次数ごとのD-gerbe重量`2n`を`(det W)^−n`で相殺すると、全次数の普遍環が[P/G]へ降下する（`prop:noncubic-antiserre-descent`）。次数1・2がrank9・rank25で積が全射だから、二次関係はrank56の部分束となる（`prop:noncubic-antiserre-grassmann`）。中心Clifford表示`B=C⊕Cc⊕Cd⊕Ccd`の完全性はHilbert級数と主項で検証し、`C^(4)`が反Serre環の中心に入るのでNoetherian性も従う（`lem:noncubic-relative-clifford-center`、`prop:noncubic-relative-noetherian`）。Clifford trace`tr(cd)=1,tr(dc)=−1`の積行列式は−1で、`tr(ab)=tr(bι(a))`から相対Serre双加群と局所平方根の公式を得る（`prop:noncubic-relative-serre-on-perfect`）。
 
