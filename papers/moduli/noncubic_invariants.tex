@@ -1,0 +1,68 @@
+% !TeX root = ../nc-quadric-moduli.tex
+% 2026-11-22 / v0.1（非可換二次曲面の相対モジュライ原稿へ証明移管）
+\subsection{二つの二元二次形式の不変式と good moduli}
+\label{subsec:moduli-noncubic-invariants}
+
+本節の $P$、$G$ は第~\ref{sec:moduli-boundary}節の二形式表示であり、
+$\mathcal D=\mathbb P(\operatorname{Sym}^2V)\setminus V(\Delta)$ を
+非退化二元二次形式の射影パラメータ空間とする。
+二形式 $f=a u^2+buv+c v^2$、$g=a'u^2+b'uv+c'v^2$ に対し
+\[
+ \Delta(f)=b^2-4ac,\qquad D(f,g)=bb'-2ac'-2a'c,\qquad
+ \chi(f,g)=\frac{D(f,g)^2}{\Delta(f)\Delta(g)}
+\]
+と置く。$\chi$ は二形式の基底変換・スカラー変換・交換に不変であり、
+$P$ 上の正則関数である。
+$\mathfrak N^{\mathrm{pres}}=[P/G]$ と書く。
+
+\begin{proposition}[表示スタックの良モジュライ]
+\label{prop:moduli-noncubic-good-moduli}
+標数零の代数閉体 $k$ 上で
+\[
+ k[P]^G=k[\chi].
+\]
+従って $\chi:\mathfrak N^{\mathrm{pres}}\to\mathbb A^1_\chi$ は
+Alper の意味の good moduli space である。
+\end{proposition}
+\begin{proof}
+まず核の二次元トーラスの不変式を取ると、形式の代表の定数倍が除かれ、
+\[
+ k[P]^G
+ =k[\mathcal D^2]^{\operatorname{PGL}_2\times S_2}
+\]
+となる。トーラスの作用が逆二乗であることは、標数零では不変式環を変えない。
+$\operatorname{PGL}_2$ は $\mathcal D$ に推移的に作用するため、
+第一形式を $uv$ と固定すれば、順序付き二形式の不変式環は
+$uv$ の射影安定化群 $H=\mathbb G_m\rtimes C_2$ による
+$\mathcal D$ の不変式環に同定される。
+これは斉次空間 $\mathcal D=\operatorname{PGL}_2/H$ の faithfully flat な局所自明化で
+不変関数を降下させることによる。
+
+第二形式を $[a:b:c]$ と書く。
+$\mathcal D$ は $\mathbb P^2$ の判別式非消滅開集合であり、アフィンで
+\[
+ k[\mathcal D]=\bigl(k[a,b,c,\Delta^{-1}]\bigr)_0,
+ \qquad \Delta=b^2-4ac.
+\]
+残るトーラスの作用は射影座標で
+$(a,b,c)\mapsto(t a,b,t^{-1}c)$ と書ける。
+次数零のトーラス不変単項式は
+$a^i b^j c^i\Delta^{-m}$、$2i+j=2m$ の形なので、$j$ は偶数である。
+従って不変式環は
+\[
+ x=\frac{b^2}{\Delta},\qquad y=\frac{ac}{\Delta}
+\]
+で生成され、$x-4y=1$ により $k[x]$ である。
+残る $C_2$ は $a,c$ を交換して $x$ を保つ。
+第一形式が $uv$ なら $D(uv,f)=b$、$\Delta(uv)=1$ なので $x=\chi$ である。
+二形式を交換する $S_2$ も対称な $\chi$ を保つため、全不変式環は $k[\chi]$ となる。
+
+$P$ はアフィン、$G$ は標数零で線型簡約なので、商スタックから不変式環の
+スペクトルへの射は good moduli space である
+\cite[Example 8.3, Theorem 13.2]{Alper2009}。
+\end{proof}
+
+この計算は二形式の\emph{表示商}についての主張である。
+表示商と内在的被約 noncubic 境界との相対同値、および
+全内在的 $\mathfrak H_2$ における粗モジュライ不存在の証明は、
+相対認識・自己同型の比較が必要なので別に扱う。

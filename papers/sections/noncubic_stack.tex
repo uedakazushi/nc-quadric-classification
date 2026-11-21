@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.3
+% 2026-11-22 / v1.4（不変式の全証明は相対モジュライ別稿へ移管）
 \section{中央二重平方族の商スタックと慣性}
 \label{sec:noncubic-stack}
 
@@ -227,41 +227,10 @@ Alper の意味の good moduli space である。
 \end{proposition}
 
 \begin{proof}
-まず核の二次元トーラスの不変式を取ると、形式の代表の定数倍が除かれ、
-\[
- k[P]^G
- =k[\mathcal D^2]^{\operatorname{PGL}_2\times S_2}
-\]
-となる。トーラスの作用が逆二乗であることは、標数零では不変式環を変えない。
-$\operatorname{PGL}_2$ は $\mathcal D$ に推移的に作用するため、
-第一形式を $uv$ と固定すれば、順序付き二形式の不変式環は
-$uv$ の射影安定化群 $H=\mathbb G_m\rtimes C_2$ による
-$\mathcal D$ の不変式環に同定される。
-これは斉次空間 $\mathcal D=\operatorname{PGL}_2/H$ の faithfully flat な局所自明化で
-不変関数を降下させることによる。
-
-第二形式を $[a:b:c]$ と書く。
-$\mathcal D$ は $\mathbb P^2$ の判別式非消滅開集合であり、アフィンで
-\[
- k[\mathcal D]=\bigl(k[a,b,c,\Delta^{-1}]\bigr)_0,
- \qquad \Delta=b^2-4ac.
-\]
-残るトーラスの作用は射影座標で
-$(a,b,c)\mapsto(t a,b,t^{-1}c)$ と書ける。
-次数零のトーラス不変単項式は
-$a^i b^j c^i\Delta^{-m}$、$2i+j=2m$ の形なので、$j$ は偶数である。
-従って不変式環は
-\[
- x=\frac{b^2}{\Delta},\qquad y=\frac{ac}{\Delta}
-\]
-で生成され、$x-4y=1$ により $k[x]$ である。
-残る $C_2$ は $a,c$ を交換して $x$ を保つ。
-第一形式が $uv$ なら $D(uv,f)=b$、$\Delta(uv)=1$ なので $x=\chi$ である。
-二形式を交換する $S_2$ も対称な $\chi$ を保つため、全不変式環は $k[\chi]$ となる。
-
-$P$ はアフィン、$G$ は標数零で線型簡約なので、商スタックから不変式環の
-スペクトルへの射は good moduli space である
-\cite[Example 8.3, Theorem 13.2]{Alper2009}。
+不変式環 $k[P]^G=k[\chi]$ の完全な計算と
+$\chi:\mathfrak N^{\mathrm{pres}}\to\mathbb A^1$ の
+good moduli 性の証明は相対モジュライ別稿
+\cite[表示スタックの不変式の節]{QuadricModuli2026} に移した。
 四根が相異なる通常形において
 \[
  \chi\bigl(uv,(u-v)(u-\lambda v)\bigr)

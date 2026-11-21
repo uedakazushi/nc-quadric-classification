@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.2（対角列の反例証明を移管）
+% 日本語 LuaLaTeX。2026-11-22 / v0.3（対角列の反例証明を移管）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v0.2（証明移管中の草稿）}
+\date{2026年11月22日\quad v0.3（証明移管中の草稿）}
 
 \begin{document}
 \maketitle
@@ -61,7 +61,8 @@ framed 実現空間、被約 noncubic 境界の余次元二の正則閉埋込み
 
 \textbf{編集状況：} 本稿は分類主論文からの再編を開始した未完成原稿である。
 主要な相対主結果の完全な証明は現在も分類主論文の相対モジュライ関連の分割節にある。
-非可換射影直線束の素朴な対角列が豊富とならない反例の完全な証明を本稿へ移したが、
+非可換射影直線束の素朴な対角列が豊富とならない反例と、
+二形式表示商の good moduli を与える不変式環の完全な証明を本稿へ移したが、
 モジュライ主定理の証明移管は未完了である。この稿単独で証明が完結したとは主張しない。
 \end{abstract}
 \tableofcontents
@@ -127,6 +128,8 @@ $\mathfrak N=(\mathfrak H_2\setminus\mathfrak H_2^{\mathrm{cub}})_{\mathrm{red}}
 $\mathfrak N\hookrightarrow\mathfrak H_2$ が余次元二の正則閉埋込みであると証明する。
 幾何点の全単射と相対 groupoid の同値を区別した証明は、
 元の \texttt{noncubic\_boundary\_comparison.tex} と前提の諸節から移管する。
+
+\input{moduli/noncubic_invariants}
 
 \section{Good/coarse moduli と形式局所商}\label{sec:moduli-quotient}
 境界の $\chi:\mathfrak N\to\mathbb A^1$ は good moduli 射である。
