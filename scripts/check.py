@@ -314,6 +314,67 @@ def build() -> int:
 
 
 
+def cross_paper_labels() -> int:
+    """Audit named A/B cross-paper citations without needing .aux files."""
+    failures: list[str] = []
+    roots = {
+        "QuadricIntrinsic2026": ROOT / "papers/nc-quadric-classification.tex",
+        "QuadricModuli2026": ROOT / "papers/nc-quadric-moduli.tex",
+    }
+    sources_by_key: dict[str, dict[Path, str]] = {}
+    labels_by_key: dict[str, set[str]] = {}
+
+    for key, main in roots.items():
+        sources: dict[Path, str] = {}
+
+        def visit(path: Path) -> None:
+            path = path.resolve()
+            if path in sources:
+                return
+            if not path.is_file():
+                failures.append(f"{key}: missing input {path}")
+                return
+            text = tex_without_comments(path.read_text(encoding="utf-8"))
+            sources[path] = text
+            for target in re.findall(r"\\(?:input|include)\{([^}]+)\}", text):
+                if "\\" in target or "#" in target:
+                    failures.append(f"{key}: dynamic input cannot be audited: {target}")
+                    continue
+                child = main.parent / target
+                if not child.suffix:
+                    child = child.with_suffix(".tex")
+                visit(child)
+
+        visit(main)
+        sources_by_key[key] = sources
+        labels_by_key[key] = {
+            label
+            for text in sources.values()
+            for label in re.findall(r"\\label\{([^}]+)\}", text)
+        }
+
+    count = 0
+    for origin, sources in sources_by_key.items():
+        for path, text in sources.items():
+            for label, target in re.findall(
+                r"\\cite\[\s*\\texttt\{([^}]+)\}\s*\]\{(QuadricIntrinsic2026|QuadricModuli2026)\}",
+                text,
+            ):
+                if target == origin:
+                    failures.append(f"{path.relative_to(ROOT)}: self-citation for {label}")
+                elif label not in labels_by_key[target]:
+                    failures.append(f"{path.relative_to(ROOT)}: cited label {label} absent in {target}")
+                count += 1
+
+    print(
+        "Cross-paper scope: "
+        f"A={len(sources_by_key['QuadricIntrinsic2026'])} TeX files, "
+        f"B={len(sources_by_key['QuadricModuli2026'])} TeX files, "
+        f"{count} explicit named cross-paper citation uses."
+    )
+    return summary("cross-paper labels", failures, [])
+
+
 def papers() -> int:
     """Check the source graph of A, B and C separately, without compiling them."""
     global MAIN
@@ -330,6 +391,7 @@ def papers() -> int:
             results.append(sources())
     finally:
         MAIN = original
+    results.append(cross_paper_labels())
     return 1 if 1 in results else 2 if 2 in results else 0
 
 
