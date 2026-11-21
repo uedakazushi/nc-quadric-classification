@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.4（数学原稿v1.3）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.5（数学原稿v1.4）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -33,10 +33,18 @@
 | noncubicの選択不要な相対反Serre環 | `B_{2n}⊗(det W)^−n`、`a⋆b=aιⁿ(b)`。σ²=ιなので任意の非被約底変更と両立して剛体化商[P/G]へ降下。各次数rank(2n+1)² | この降下を任意の内在的H2族の再構成と混同しない |
 | noncubicの中心Clifford表示 | `h=cd+dc` 中央、`C=A[u,v,h]`（重み1,1,2）、`B=C⊕Cc⊕Cd⊕Ccd`。任意noetherian底でB,R左右noetherian | 相対heartの全対象の完全性は別 |
 | noncubicの相対Serre | Clifford trace（cd係数）で`Hom_C(B,C(-4))=B_ι(-2)`。weighted P(1,1,2)上のperfect B対象には`S=(-)_ι(-2)[2]`、局所平方根`(-)_σ(1)` | 全coherent heart上の双対性・相対AZ・AS被覆の認識 |
+| 二次Veroneseと相対平坦族 | 任意の二次環BのB^(2)はT(B₂)/(ker(B₂²→B₄))、自己同型twist後も二次。Noetherian底でR_n局所自由かつ全幾何fiberが二次なら族も二次 | 一般事実はPolishchuk–Positselski既知。本研究の相対直接証明はlem:relative-quadratic-veroneseとlem:relative-quadratic-from-fibers |
+| 全H2の内在的反Serre環 | R=⊕Hom(O,tⁿO)は全て九生成元・rank56の二次関係だけで表示。cubic/noncubic chart、cubic→noncubic特殊化も全次数で二次提示が基底変更する | cor:h2-intrinsic-antiserre-quadratic, cor:cubic-relative-full-quadratic-presentation, cor:noncubic-relative-full-quadratic-presentation, cor:line-full-quadratic-degeneration |
+| noncubic の固定Grassmannセル | u²,uv,v²,uc,vc,ud,vd,cd,dcの9基底。積25列がB₄の交互語PBW基底に符号付き一対一。minor±1。p₀⋆p₀=−u²f₁とq₀⋆q₀=−u²f₂から6係数を回収。A6→固定Gr cellは閉埋込み、非退化Pは局所閉 | prop:noncubic-grassmann-explicit-cell。フレーム付き表示空間の命題でありPGL9群商の閉埋込みではない |
+| 関係式像の構成可能性と既約閉包 | 2つの有限型chartの像の和はH2の全幾何関係像。Chevalleyで構成可能。cubic枠束像の被約閉包Z₂はPGL9不変既約有限型、全noncubicは反Serre二次族による特殊化で[Z₂/PGL9]に入る | prop:h2-constructible-relations-and-irreducible-closure。Z₂の全点がH2とは未証明。有限表示の内在的X_asとは別 |
 | noncubicの相対heart・相対orbit | `R`の`qgr R`を構造対象付きnoetherian Abel heartとして任意のNoetherian基底上に定義。étale局所に`qgr B^σ≃qgr R`。weighted P(1,1,2)上`RHom(B,tⁿB)=B₂ₙ[0]`が全n・底変更に整合（`cor:noncubic-relative-orbit-hom`, `prop:noncubic-relative-heart-veronese`） | 任意の内在的noncubic族のこの相対heartへの帰着、全flat coherent対象の相対双対・AZ/AS等 |
 | cubicの相対反Serre環 | smooth proper foundationの逆Serre双加群から`RHom(e₀Λ,tⁿe₀Λ)`。cubic開では全nでrank(2n+1)²局所自由 | 任意のH2族からの相対foundation抽出 |
 | 共通Grassmann射と実際の特殊化 | cubic開Cとnoncubic表示[P/G]の双方から`[Gr(56,81)/PGL9]`へ射。各noncubic点へのfoundation直線族も全次数平坦な反Serre環の族を与える | 両chartの相対的な貼合せとfull内在H2との同値 |
 | 選んだSerre根の一次変形障害 | 持上げにはHH²類の保存が必要。Q上でs_*u=−uとなる適合根と非零変形を構成 | 別の根の存在や相対H2条件の開性は判定しない |
+
+**具体的な25 pivot と完全二次提示。** 二重平方環の交互語PBW基底から $\mathcal R_1$ の九基底 $x_0=u^2,x_1=uv,x_2=v^2,p_0=uc,p_1=vc,q_0=ud,q_1=vd,z=cd,z'=dc$ を取る。$\mathcal R_2=B_4$ の交互語長0,1,2,3,4の基底数は順に5,8,6,4,2。主原稿式(NC-25)の積25個はそれらと符号付きで一致するためminorは±1であり、六係数は$p_0\star p_0=-u^2f_1,q_0\star q_0=-u^2f_2$から復元できる。これは全パラメータの多項式恒等式であり、判別式の非消滅はH2実現部分を選ぶためだけに必要。二次Veronese一般定理の既知性はPolishchuk–Positselski, Chapter 3 Prop.2.2に帰属する（原著の定理文は公開閲覧資料で照合し、相対版は本文で直接証明）。この結果によりGrassmann射がRの**全次数**を規定することは確立したが、Grassmannian上の任意の点に対応するRがH2を実現するとは限らない。
+
+**Z₂ の構成。** cubicの既約開$U_{\mathrm{cub}}\subset\mathbb A^{64}$のrank9反Serre一次束のframe bundleをGr(56,81)へ写し、その像の被約閉包をZ₂とする。frame bundleはGL9が幾何学的既約なので既約で、Z₂も既約。PGL9不変で、[Z₂/PGL9]は有限型Artin。全noncubic点は既存の直線退化をrank9 frameが自明なtrait上でGrassmannianへ持上げることで閉包に入る。ChevalleyによりH2全幾何点の関係像は2 chartの構成可能な和になる。Z₂は**代数的包絡**であり、内在的\mathfrak H₂ではない。次に必要なのは非被約底上での相対実現locusの構成である。
 
 **非cubicの相対heartまで得られた範囲。** 普遍`R`から`(qgr R,πR)`を任意の可換noetherian底の表示に定義でき、`σ`のétale局所選択の下で`(qgr B^σ,πB^σ)`に対応する。weighted projective stack上の中心Clifford orderからperfect Serre公式を得て、相対orbit Hom`RHom(\widetilde B,tⁿ\widetilde B)=B₂ₙ[0]`をweighted Čech計算で確定した。これは表示族の相対heart・Serre orbitの具体構成であって、任意の相対内在的`H2`族をこのchartへ導く`ess. surjectivity`、全flat coherent対象の相対Serre双対やLowen–Van den Bergh平坦性と相対AZ/AS被覆まではまだ含めない。
 
@@ -62,7 +70,7 @@
 
 この例は**選んだ根**の障害であり、別の根の存在を排除しない。構成したabelian変形が相対的な根・AZ豊富性・AS被覆を備えたH2族であるとも主張しない。従って相対H2 locusの非開性やformal smoothnessの否定は結論しない。実現集合の誘導位相ではcubicからnoncubicへの特殊化があり、両者は別の連結成分ではない。残る核心は、Q_fnd内での内在的H2実現部分関手の有限表示、相対Serre/AZ再構成・降下、および内在的位相との比較である。
 
-群関係・χ・noncubic局所対合の記号検算は `python3 computations/verify_stack_symmetries.py`。foundation・HH計算、ruling二択、相対交換のcoherenceと幾何点groupoid、pointed慣性、gerbe中立化、および選んだ根の変形障害は独立読取り点検を行った。さらにcubic開部分の稠密性、各noncubic点への特殊化とrelative bar分解も独立に点検し、既存入力を前提として実質的な欠落は見つからなかった。現行v1.3の変更後LuaLaTeX組版は未実施。v1.2の97頁組版は成功しているが、v1.3の確認と混同しない。変更のない記号計算資産の同日PASSを保持する。詳細な実施範囲は末尾の検証節に記す。
+群関係・χ・noncubic局所対合の記号検算は `python3 computations/verify_stack_symmetries.py`。foundation・HH計算、ruling二択、相対交換のcoherenceと幾何点groupoid、pointed慣性、gerbe中立化、および選んだ根の変形障害は独立読取り点検を行った。さらにcubic開部分の稠密性、各noncubic点への特殊化とrelative bar分解も独立に点検し、既存入力を前提として実質的な欠落は見つからなかった。現行v1.4の変更後LuaLaTeX組版は未実施。v1.2の97頁組版は成功しているが、v1.4の確認と混同しない。変更のない記号計算資産の同日PASSを保持する。詳細な実施範囲は末尾の検証節に記す。
 
 相対条件を試す具体的入力として、[定数bivector方向のOre変形](ore_quadric_deformations.md)を置く。中央元g=xw−zyの正則切断、全次数自由な商、quadratic dualのFrobenius pairingまでの証明稿を記し、相対CY・Serre・H2条件は未証明とする。主原稿の非持上げ例を相対H2の内部へ強める際の候補であり、現行定理の入力には用いない。
 
@@ -175,7 +183,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-**現行v1.3（2026-11-21）：相対反Serre・Clifford追補の全体組版および既存計算の再実行は未実施。** v1.2の構成確認・97頁LuaLaTeX組版はPASSだったが、現行v1.3のPASSとは扱わない。 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
+**現行v1.4（2026-11-21）：相対反Serre・Clifford追補の全体組版および既存計算の再実行は未実施。** v1.2の構成確認・97頁LuaLaTeX組版はPASSだったが、現行v1.3のPASSとは扱わない。 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
 
 実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。
 
@@ -197,9 +205,9 @@ python3 scripts/check.py build
 
 v1.2のソース確認は24原稿・168ラベル・137引用出現・主要Markdown7点を対象としてPASS。cubic開部分が実現集合に含まれること、直線上の有限個の除外点、正規化relative bar分解の有限性・射影性・底変更、および内在的相対モジュライへの移行条件を独立に読取り点検した。全代数閉拡大体上の像を合併する定義とし、H2公理一般の底変更安定性を暗黙に仮定していない。v1.2についてLuaLaTeXで97頁のPDFとSyncTeXを生成し、最終ログに警告・未定義参照・欠字・はみ出しはない。v1.2のPDFの1–3頁と82–86頁を画像化して一覧で配置を確認し、新しい命題と移行条件を含む83–85頁は個別表示でも確認した。今回全97頁を画像で再校読したという意味ではない。
 
-今回のv1.3では、中心Clifford直和のHilbert級数`(1+2z+z²)/((1-z)²(1-z²))=(1+z)/(1-z)³`、`B₂=9,B₄=25,81−25=56`をSymPyで有理式として照合し、Clifford traceの四元基底積行列式が`−1`であることを記号計算で確認した。相対Serreのweighted stack双対・rigidification・全次数の底変更は本文に証明を追加したが、外部査読・形式証明とは区別する。TeX全文の改訂後組版とソース全体の静的チェックは未実施。
+v1.3の既存補題については、中心Clifford直和のHilbert級数`(1+2z+z²)/((1-z)²(1-z²))=(1+z)/(1-z)³`、`B₂=9,B₄=25,81−25=56`をSymPyで有理式として照合し、Clifford traceの四元基底積行列式が`−1`であることを記号計算で確認した。相対Serreのweighted stack双対・rigidification・全次数の底変更は本文に証明を追加したが、外部査読・形式証明とは区別する。TeX全文の改訂後組版とソース全体の静的チェックは未実施。
 
-計算資産は今回変更していない。同日に実行済みの全非整型の三次関係・四次テンソル・周期平方・非被約gridの補正引戻し、およびnoncubicの射影群関係・χ・局所対合と正則切断の記号恒等式はPASSである。この検算は、今回加えた成分・特殊化命題の計算機による証明ではなく、それらは前段の理論的な読取り点検による。
+今回のv1.4では新規に computations/verify_noncubic_antiserre_pivots.py を追加した。対象は六係数を独立不定元とした二重平方環のPBW簡約、25 pivotの単位行列式、二つの二乗積からの六係数回収である。同内容のローカルSymPy試作を実行しPASS（25列、行列式±1、六係数回収）と確認した。GitHub上の正式スクリプトをcheckoutして行う全math suite実行、v1.4の全ソースcheckerとLuaLaTeX組版は**未実施**。一般二次Veroneseの相対同型とChevalley・閉包の証明は本文の論理的議論であり、有限検算はそれを認証しない。旧計算資産は変更せず保持した。同日に実行済みの全非整型の三次関係・四次テンソル・周期平方・非被約gridの補正引戻し、およびnoncubicの射影群関係・χ・局所対合と正則切断の記号恒等式はPASSである。この検算は、今回加えた成分・特殊化命題の計算機による証明ではなく、それらは前段の理論的な読取り点検による。
 
 既存の計算・証明の確認範囲には、四周期比較、最初の軌道対象、非cubic例、有限被覆判定、多パラメータskew polynomial分類、Ore切断の正規形・四元数斜体・根の対合・同値判定が含まれる。これらの証明は現行原稿に保持する。外部査読、形式証明、包括的な新規性の確定は行っていない。以前のPDFの表示確認を現在の全頁の確認とは扱わない。
 
