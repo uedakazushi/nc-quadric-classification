@@ -1,0 +1,148 @@
+% 日本語 LuaLaTeX。2026-11-22 / v1.44
+% エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
+\RequirePackage{fix-cm}
+\documentclass[a4paper,11pt]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+% rsfs の小さな添字も、代替サイズではなく設計フォントの拡縮で組む。
+\DeclareFontFamily{U}{rsfs}{\skewchar\font127}
+\DeclareFontShape{U}{rsfs}{m}{n}{<-6> rsfs5 <6-8> rsfs7 <8-> rsfs10}{}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,enumitem}
+\usepackage[unicode,pdfusetitle,colorlinks=true,
+ linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{example}[theorem]{例}
+\newtheorem{problem}[theorem]{問題}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\kk}{k}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\HH}{\mathcal H_2}
+\newcommand{\HHstack}{\mathfrak H_2}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\coh}{coh}
+\DeclareMathOperator{\qgr}{qgr}
+\DeclareMathOperator{\gldim}{gldim}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\ch}{ch}
+\DeclareMathOperator{\td}{td}
+\DeclareMathOperator{\length}{length}
+\title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
+\author{}
+\date{2026年11月22日\quad v0.1（証明移管中の草稿）}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+構造対象のみを指定した非可換二次曲面の内在的相対モジュライを扱う。
+平方根・根同型・ambient AS 正則表示は標識ではなく局所存在条件とし、
+体上の全対象の分類は別稿の結果として用いる。
+局所有限型基底の fppf site 上での有限型で滑らか・既約な純次元三の Artin stack、
+framed 実現空間、被約 noncubic 境界の余次元二の正則閉埋込みと相対群商、
+慣性・good/coarse moduli・一致根対に沿う形式局所構造を中心に据える。
+
+\textbf{編集状況：} 本稿は分類主論文からの再編を開始した未完成原稿である。
+主結果の完全な証明は現在、分類主論文の相対モジュライ関連の分割節にあり、
+本稿への移管は未完了である。この稿単独で証明が完結したとは主張しない。
+\end{abstract}
+\tableofcontents
+
+\section{Introduction}\label{sec:moduli-intro}
+体上の pointed exact 同値類の分類と、非被約底を含む相対族・自己同値・降下の分類は異なる。
+本稿は、構造対象の exact 同値を保ちつつ、選んだ Serre 平方根や ambient を忘れるモジュライを扱う。
+体上の分類を \cite{QuadricIntrinsic2026} から用いる。
+Artin--Zhang \cite{AZ1994}、Van den Bergh \cite{VdB2011}、
+Lowen--Van den Bergh \cite{LowenVanDenBergh2005,LowenVanDenBergh2006}、
+De Deken--Lowen \cite{DeDekenLowen2011}、
+Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
+相対的な有限型効果性・stack比較についての新しい証明を区別する。
+
+\section{相対的な対象と基底変更}\label{sec:moduli-relative}
+$k$ を標数零の代数閉体とする。
+対象 $(\mathcal C,\mathcal O)$ は noetherian Abel 圏と、
+Gabriel--Krull rank-one torsion-free exceptional 対象からなり、
+反 Serre 関手の exact ample な平方根 $s^2\simeq S^{-1}[2]$ と、
+同じ $s$ の全軌道環について型 $(1,4,6,4,1)$ の左右 noetherian quadratic
+Koszul AS 正則環による正則正規二次商の存在を要求する。
+$s$、同型、被覆は追加標識ではない。
+相対スタック $\mathfrak H_2$ の定義には、局所有限型 $k$-scheme の
+big fppf site 上の Abel 圏の module-object 基底変更・降下、
+相対 Serre 双対、相対 AZ・AS4 条件の fppf 局所存在を含める。
+各幾何 fiber が定義を満たすという条件だけでは不足する。
+詳細な公理と反 Serre 再構成は現在
+分類主論文の \texttt{relative\_moduli.tex} にある。
+
+\section{内在的モジュライの有限型 Artin 性}\label{sec:moduli-algebraicity}
+主論文では、全 cubic 点の smooth Artin 開と
+全 noncubic 点の有限型効果的近傍を合わせることにより、
+$\mathfrak H_2$ が有限型・滑らか・既約な純次元三の Artin stack で、
+対角が affine 有限表示であることを示した。
+反 Serre 再構成による framed 実現 $X_{\mathrm{as}}$ は
+滑らかな既約83次元スキームである。
+形式的な Artin 認識だけから有限型代数性を結論せず、
+全次数の軌道 Hom、相対 Koszul と Noetherian 性、
+同じ根の AS4 被覆、指定 pointing を保つ smooth atlas の
+証明を依存順に本稿へ移管する。
+
+\section{Noncubic 境界の二形式表示}\label{sec:moduli-boundary}
+$V$ を二次元ベクトル空間とし、
+\[
+ P=(\operatorname{Sym}^2V\setminus V(\operatorname{disc}))^2,\quad
+ \widetilde G=(\operatorname{GL}(V)\times\mathbb G_m^2)\rtimes S_2,\quad
+ D=\{(\lambda I_V,\lambda,\lambda)\},\quad G=\widetilde G/D.
+\]
+作用は二形式の変数変換、各平方根のスカラーと交換に対応する。
+\begin{proposition}[表示商の滑らかさ]\label{prop:moduli-presentation-stack}
+$[P/G]$ は有限型で滑らかな純次元一の Artin stack である。
+\end{proposition}
+\begin{proof}
+$P$ は滑らかな六次元 quasi-affine scheme であり、
+$G$ は滑らかな五次元 affine algebraic group である。
+商は smooth atlas $P$ を持ち、その次元は $6-5=1$ である。
+\end{proof}
+現在の主論文は、被約 noncubic 境界
+$\mathfrak N=(\mathfrak H_2\setminus\mathfrak H_2^{\mathrm{cub}})_{\mathrm{red}}$
+をこの表示商と相対的に同定し、
+$\mathfrak N\hookrightarrow\mathfrak H_2$ が余次元二の正則閉埋込みであると証明する。
+幾何点の全単射と相対 groupoid の同値を区別した証明は、
+元の \texttt{noncubic\_boundary\_comparison.tex} と前提の諸節から移管する。
+
+\section{Good/coarse moduli と形式局所商}\label{sec:moduli-quotient}
+境界の $\chi:\mathfrak N\to\mathbb A^1$ は good moduli 射である。
+一致根対を除いた Deligne--Mumford 開では任意底変更と可換な粗モジュライになるが、
+その制限射は good moduli ではなく慣性も proper ではない。
+一致根対の境界方向 $(a,c)$、法方向 $(x,y)$ と全慣性 $H$ について
+\[
+ k[[a,c,x,y]]^H\simeq k[[ac,(x+y)^2,(x-y)^2]]
+\]
+が主論文で得られている。これらの定理、全体の粗モジュライ代数空間の不存在、
+相対 mutation、AHR の適用の完全な証明は移管課題である。
+局所 good moduli の全体への降下は未解決である。
+
+\section{残る比較問題}\label{sec:moduli-remaining}
+$X_{\mathrm{as}}\to X_3$ の局所閉性・偏極認識方程式、
+foundation stack との全相対 groupoid 同値、
+任意 Noetherian 基底上での素朴な Abel 公理の延長は、
+既証明の有限型代数性と区別する。
+
+\bibliographystyle{alpha}
+\bibliography{references}
+\end{document}
