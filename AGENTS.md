@@ -1,12 +1,14 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.57。論文Aはv1.55、論文Bはv0.12（cubic/noncubic有限型効果性を移管中）、論文Cはv0.2。
+2026-11-22 / v0.58。論文Aはv1.61、論文Bはv0.19（論理的依存の監査中）、論文Cはv0.2。
 
 ## 公表用三論文への再編（確定方針）
 
-A＝`papers/nc-quadric-classification.tex`（分類、必須の主原稿）、B＝`papers/nc-quadric-moduli.tex`（内在的相対モジュライ）、C＝`papers/quiver-avatar-moduli.tex`（箙表示・avatar）とする。Aは体上の分類の構成・同値判定と必要な基礎結果を自己完結にし、BはAを引用して相対モジュライを独立に証明する。Cは有限表示と内在的H2の認識を混同しない。
+- A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
+- B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
+- C：`papers/quiver-avatar-moduli.tex` は有限quiver表示とavatarの独立稿とし、相対内在的認識の未解決条件を明示する。
 
-Bは現時点では**証明の移管中の未完成稿**である。相対H2の定義とflatness剛性・対角列の反例・二形式不変式と特殊fiber・有限foundationでの反Serre偏極認識の証明はBへ移管済みだが、全体の有限型smooth・既約Artin性と境界smooth性の8証明はBへ移した。効果的foundationからsmooth局所atlasを得る4証明はBへ移管したが、cubic/noncubic族の有限型効果性の証明はまだAにある。境界の相対同定・全慣性・good/coarse moduli・一致根対の形式商の16証明はBへ移管済み。相対反Serre再構成・fppf stack認識・体上回復・代数性判定の四証明、および相対AS4被覆の有限判定とfppf像の反例に加えて、相対Koszul性・Noetherian基底変更・tailsの17証明はBに移管済みである。Aから相対節の全証明を、依存・label/ref/eqref/cite・非被約底・ビルドを確認しながら移し、移管完了までAの証明を削除しない。移管後は証明の二重収録を避ける。AがBに依存する循環を生じさせない。Aの公表準備を優先し、B/Cも別個に完成度と新規性を監査する。再編を数学的独立検証と同一視しない。
+Bには多数の相対結果の完全な証明が移管済みだが、まだAの相対補助結果への引用が残る。どの定理が分類に必要かを確認してAで証明するものだけを残し、B固有の結果はBへ整理する。Aの主原稿中の相対結果の宣言・証明参照を消す前には、その利用側の全参照を確認する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 
 ## Cloud Codexへの継続指示
 

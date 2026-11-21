@@ -1,10 +1,10 @@
 # Cloud Codexで研究を継続する
 
-2026-11-22 / v0.7。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.55、論文Bはv0.12（有限型効果性の移管中）、論文Cはv0.2。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
+2026-11-22 / v0.8。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.61、論文Bはv0.19（依存と監査を継続）、論文Cはv0.2。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
 
 ## 三論文再編の次の実行単位（2026-11-22）
 
-A=`papers/nc-quadric-classification.tex`（体上分類）、B=`papers/nc-quadric-moduli.tex`（相対モジュライ）、C=`papers/quiver-avatar-moduli.tex`（表示・avatar）。Bには相対H2公理・反Serre再構成・相対Koszul/tails・AS4被覆有限判定・smooth局所atlas・全体の有限型smooth既約Artin性・framed実現・noncubic境界の相対商と慣性・good/coarse moduli・形式対の本文証明を移管済み。**ただしBの中核に必要なcubic/noncubicの相対有限型効果性はまだAにあり、両論文の依存は最終的に閉じていない。** 次は`papers/sections/noncubic_finite_type.tex`、`papers/sections/cubic_smooth_atlas.tex`、`papers/sections/relative_cubic_noetherian.tex`の前提と証明を順に点検し、Bへ移す。Aの体上分類の証明を失わないようにする。移管後にAから重複証明を外し、両稿の論文間引用とBibTeX・LaTeX rootを照合する。静的な参照検査だけでなく、依存の閉鎖、数学的監査、実際のLuaLaTeX組版を別々に確認して保存する。
+相対モジュライの構成・変形・有限型効果性・Noetherian性・Serre根・境界の相対同値と慣性・粗／良モジュライ・形式商の証明本文は論文Bの `papers/moduli/` に統合した。Aは体上の全分類の正本。BからAへの残余引用を、Aに固有な分類結果とB固有の未移管補助定理に分ける。後者は証明と必要な記法をBへ移し、Bで既に証明した定理への参照は内部ラベルへ直す。次にAの `\\input` のうちB固有の相対節を使用箇所とラベルの依存を確認して除き、Introduction・Abstractを分類に焦点化する。現行版の `scripts/check.py sources`、LuaLaTeX・latexmk、主要計算を実行し、PASS/FAIL/SKIPと対象版を区別する。組版済みPDFは原則Git追跡せず、mainを正本にし、研究の区切りでhubを更新する。
 
 ## 起動時の依頼文
 

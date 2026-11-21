@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.57（A v1.55、B v0.12・有限型効果性の移管中、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.58（A v1.61、B v0.19・相対依存の監査中、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -400,23 +400,12 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 再現：`python3 computations/verify_noncubic_cover_tangent.py --case generic`、同じコマンドのcaseを`shared`、`coincident`に変更する。各実行は入力と階数を出力しassertで検査する。SymPy以外の追加依存、乱数、外部入力は不要。untwisted B_f!のnormal pencilを、そのまま適合rootでtwistした双対に残るpencilと解釈しない。
 
-## 論文間の数学的依存と移管の検証単位
+## 論文の責任範囲と検証を要する依存
 
-**滑らかな局所atlasの正本：** `thm:atlas-from-effective-foundation` など4証明はBの `papers/moduli/quadric_smooth_atlas.tex` に移管した。Aは主張とB引用だけを保持する。
-
-**被約noncubic境界の全幾何：** `thm:noncubic-intrinsic-presentation-equivalence`、`prop:noncubic-all-stabilizers`、`thm:noncubic-dm-coarse`、`thm:noncubic-coincident-formal-pair` を含む16証明はBの `papers/moduli/noncubic_boundary_comparison.tex` に移管した。Aには主張とB引用だけを残す。二形式相対効果性と局所atlasの入力はAに残る。
-
-**全体Artin性と境界smooth性の所在：** `thm:global-h2-smooth-finite-type`、`prop:global-h2-irreducible`、`thm:noncubic-boundary-smooth-codim-two`、`cor:global-xas-smooth-scheme` を含む8証明はBの `papers/moduli/h2_smooth_atlas.tex` に移管した。Aは主張とB引用を残す。局所atlasとcubic/noncubic相対効果性の入力証明はAに残るため、B単独の依存閉鎖は未完了。
-
-**相対Koszulの所在：** 全幾何fiberのKoszul性、三次平坦性から全次数平坦性への昇格、有限型基底変更、相対tailsとAZの17証明はBの `papers/moduli/relative_koszul.tex` に移管した。B内の相対AS4有限判定はそのKoszul三次補題を内部参照し、Aには定理・補題の主張とB引用を残す。
-
-**相対AS4被覆の所在：** 有限型被覆の全次数平坦性・Koszul Frobenius性・正則正規切断の有限判定、および有限型射のfppf像が代数的でないことの明示的反例はBの `papers/moduli/relative_as_cover.tex` に完全な証明を保持する。Aの同節は主張とBへの引用を保持し、証明本文は重複させない。
-
-**現在の主張の所在：** 相対反Serre再構成 `prop:relative-h2-antiserre-reconstruction`、fppf stack認識 `prop:relative-h2-stack-recognition`、体上回復 `prop:relative-h2-field-recovery`、代数性判定 `prop:relative-h2-algebraicity-reduction` の四つの証明は `papers/moduli/relative_recognition.tex` に統合した。Aは各命題の主張を保持してBを引用し、Bは分類論文の normal helix・相対Veronese・foundationを論文間引用する。今回の移管は数学的新規性や全証明の独立再検証ではなく、参照の整理である。全体の有限型効果性・境界同定の証明は引き続きAにある。
-
-
-
-Aの分類はcubic/noncubic全構成とpointed exact同値判定を含む。Bの有限型smooth Artin性は体上の分類に加え、全Artin形式認識、指定同型付き効果性、全次数HomとKoszul/Noetherian性、同じ根のAS4被覆と降下を必要とする。境界の幾何点の全単射から相対群商の同値は従わない。Cの有限表示空間からの忘却では相対heart・Serre根・AS4被覆と慣性の核を別に確認する。Bには相対H2の正確な定義とAbel flatness・pointed二射剛性、対角列の反例、noncubic表示商の不変式とgood moduli特殊fiber、有限foundation上の反Serre偏極認識の各完全な証明が移管されたが、相対主定理の全証明の正本はAの元の分割節にあり、独立原稿の完成も新しい形式検証も意味しない。
+- Aの正本は体上の強い \(\mathcal O\)-marked \(\mathcal H_2\) の分類（cubic/noncubic の全構成・同値判定）であり、主原稿は `papers/nc-quadric-classification.tex` である。
+- Bの正本は局所有限型site上の相対 \(\mathfrak H_2\) とその変形・代数性・境界幾何である。完全な証明本文は `papers/moduli/` の現行節に置く。相対Koszul、Noetherian貼合せ、相対cubic tails、AS4被覆、Artin foundation/根、cubic/noncubic効果性、全体のsmooth有限型Artin性、境界の相対商・全慣性・DM粗モジュライ・一致類の形式局所商を含む。
+- BからAへの引用のうち、Aの完成した体上分類やnormal helixを入力とするものは維持できる。一方、Aに残る相対foundationや局所Artin補題への引用は、証明の所在を監査して論文Bへ集約する。Aの証明をBの未完成な主定理で循環的に証明することは避ける。
+- Cでは有限foundation・QP・avatarの表示と内在的H2適合性を区別し、相対スタック同値の証明がないところは未解決とする。
 
 ## 検証範囲と再現手順
 
