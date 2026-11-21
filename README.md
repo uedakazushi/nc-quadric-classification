@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.3、数学原稿v1.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.3、数学原稿v1.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
@@ -23,6 +23,8 @@
 - cubicを与えるgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]` と表示でき、滑らか・有限型・次元3である。許容条件は四重テンソルの隣接二因子への非零縮約条件であり、写像の階数条件だけでは代用できない。
 - H2の実現集合 `Y⊂|Q_fnd|` は、cubicを与える非空開部分Cを含む。Q_fndの既約性からCは稠密であり、Yも**誘導位相で既約かつ連結、成分数はいずれも1**となる。既約なambientに含まれるという事実だけでなく、Yが稠密な既約開部分を含むことを使う。
 - 各noncubic点xと可換quadricのcubic点yを結ぶ線 `ℓ(t)=(1−t)x+ty` から、有限個の不要なパラメータを除く。これにより特殊ファイバーがx、0以外の全幾何ファイバーがcubicとなる階数24の有限自由foundation代数族を得る。そのPerf圏は構造対象付き相対smooth proper dg族である。全ファイバーがH2に由来することと、相対heart・平方根・AZ・AS被覆が一斉に存在することは区別する。
+- **新しい相対反Serre環の具体表示：** [noncubic表示](papers/sections/noncubic_stack.tex)では `B=A[u,v]⟨c,d⟩/(c²−f₁,d²−f₂)` が中央 `A[u,v,h], h=cd+dc` 上階数4のClifford代数となる。全Noetherian基底で`B`と反Serre環は左右noetherian。Clifford traceから、重み付き射影スタック上のperfect対象に相対Serre `S=(-)_ι(-2)[2]` とétale局所平方根を得た。
+- noncubic上の選択不要な反Serre環 `R_n=B_{2n}⊗(det W)^−n`、積 `a⋆b=aιⁿ(b)` は`[P/G]`へ降下する。cubic開でもfoundationの相対逆Serre双加群から同じ階数の環を構成し、**双方で `[Gr(56,81)/PGL9]` への射**を与える。各noncubic点への既存のdg退化は、全次数平坦な反Serre環の実際の一径数族にもなる（[証明節](papers/sections/foundation_stack.tex)）。
 - 反Serre環の候補 `[X_as/PGL9]` では、rank9・rank25の行列式線束によりdegree-scalar gerbeを中立化できる。ただし相対実現locus X_as の有限表示、Serre/AZ再構成と全H2の族との同定は未証明。
 - 可換quadric上でも、選んだSerre根が固定したabelian一次変形へ持ち上がらない例を構成した。自己同値がHochschild変形類を保つことが必要である。この例は相対H2の非開性や別の根の非存在を意味せず、構成した変形がH2の族であるとも主張しない。
 
@@ -83,7 +85,7 @@ $$
 
 ## 再生成
 
-現行v1.2原稿の構成確認と**97頁のLuaLaTeX組版・SyncTeX生成はPASS**。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明も独立に点検した。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
+現行v1.3原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数は別途代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
 
 repoルートで実行する。
 
