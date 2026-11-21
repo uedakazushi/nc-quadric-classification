@@ -887,6 +887,32 @@ $\operatorname{PGL}(U)$-同変な Grassmannian の射として
 (\ref{eq:cubic-antiserre-grassmann}) を得る。
 \end{proof}
 
+\begin{corollary}[cubic chart の全次数二次再構成]
+\label{cor:cubic-relative-full-quadratic-presentation}
+命題~\ref{prop:cubic-relative-antiserre-grassmann} の
+相対反 Serre 環について
+\[
+ \mathscr R\simeq
+ T_{\mathcal O_{\mathfrak C}}(\mathscr R_1)/(\mathscr J),
+ \qquad
+ \mathscr J=\ker(\mathscr R_1^{\otimes2}\to\mathscr R_2)
+ \tag{C-quad}\label{eq:cubic-relative-full-quadratic}
+\]
+が全次数で成立し、任意の底変更に両立する。
+従って $\Psi_{\mathrm{cub}}$ の二次関係は
+cubic 族の反 Serre 環の全積を復元する。
+\end{corollary}
+\begin{proof}
+全幾何ファイバーの反 Serre 環は
+系~\ref{cor:h2-intrinsic-antiserre-quadratic} により二次である。
+$\mathscr R_n$ は命題~\ref{prop:cubic-relative-antiserre-grassmann} により
+全次数で有限局所自由なので、
+補題~\ref{lem:relative-quadratic-from-fibers} を
+cubic の滑らかな有限型表示上に適用できる。
+構成は基底変更と ruling 交換に整合するので
+$\mathfrak C$ へ降下する。
+\end{proof}
+
 \begin{remark}[二つの chart の射と内在的な相対認識]
 命題~\ref{prop:cubic-relative-antiserre-grassmann} と
 命題~\ref{prop:noncubic-antiserre-grassmann} により、
@@ -1091,6 +1117,27 @@ $\mathscr R_{T,1}$、$\mathscr R_{T,2}$ の階数がそれぞれ九、二十五�
 射影枠束から (\ref{eq:line-antiserre-grassmann}) を得る。
 各ファイバーでの内在的反 Serre 環との一致は
 Serre 関手の標準 Morita 自然性による。
+\end{proof}
+
+\begin{corollary}[特殊化族の全反 Serre 環の二次提示]
+\label{cor:line-full-quadratic-degeneration}
+命題~\ref{prop:line-degeneration-antiserre-algebras} の
+$T$ 上で、自然な射は全次数の同型
+\[
+ T_{\mathcal O_T}(\mathscr R_{T,1})/
+ \ker(\mathscr R_{T,1}^{\otimes2}\to\mathscr R_{T,2})
+   \xrightarrow{\ \sim\ }\mathscr R_T
+ \tag{D-quad}\label{eq:line-full-quadratic}
+\]
+を与える。従って cubic から任意の noncubic 点への
+反 Serre 環の退化は、二次関係だけの
+\emph{完全な}相対提示によって記述される。
+\end{corollary}
+\begin{proof}
+$\mathscr R_{T,n}$ は各次数で有限局所自由で、
+全幾何ファイバーは $\HH$ の反 Serre 環である。
+系~\ref{cor:h2-intrinsic-antiserre-quadratic} と
+補題~\ref{lem:relative-quadratic-from-fibers} の適用により従う。
 \end{proof}
 
 \begin{remark}[内在的な相対モジュライへの移行条件]
