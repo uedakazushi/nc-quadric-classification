@@ -13,7 +13,7 @@
 
 A. B. Verevkin, *On a noncommutative analogue of the category of coherent sheaves on a projective scheme*, *American Mathematical Society Translations*, Series 2, **151** (1992), 41–53, DOI [10.1090/trans2/151/02](https://doi.org/10.1090/trans2/151/02)。書誌は Math-Net.Ru の著者書誌と後続論文の参考文献で照合した。**原著 Theorem 4.4 の全文は今回直接閲覧できていない。** 次数一生成された次数環の Veronese が QGr を保つとの定理内容は S. Paul Smith, *Advances in Mathematics* 230 (2012), p.1784（[著者公開PDF](https://sites.math.washington.edu/~smith/Research/QGr-kQ.pdf)）に明示される定理4.4の引用で確認した。現行 noncubic 族で必要な一般 noetherian 底への拡張は、原著の適用範囲に無条件に含めず、次数一生成性からの偶奇成分比較と torsion 商の議論を主原稿 `prop:noncubic-relative-heart-veronese` に書いた。
 
-**局所 Noetherian 性とDVR $χ$ の参照範囲。** 3次元 cubic AS正則環と幾何的quintupleの体上分類は `VdB2011` の既知結果として使う。体上のNoetherian性を同族の偶数Veroneseへ渡す際の次数付きイデアルの有限生成性は主原稿 `prop:weighted-even-koszul` の証明に明記した。`lem:local-commutative-fibre-noetherian` の一般Noetherian特殊fiberへの拡張と `lem:dvr-chi-specialization` は本原稿で証明した係数環上の結果である。DVR $χ$ の入力として使う可換Segre環の$χ$ は可換Noetherian環の標準的Ext有限性から従い、AZ(A2)の任意基底への適用はなお確認していない。Van den Bergh本文のNoetherian性の正確な定理番号は公表前に再照合する。
+**局所 Noetherian 性と相対χの参照範囲。** 3次元cubic AS正則環・幾何的quintupleの体上分類は `VdB2011` の既知結果として使う。体上Noetherian性を偶数Veroneseへ移す際のイデアルの有限生成性は主原稿 `prop:weighted-even-koszul` の証明に明記。一般Noetherian特殊fiberへの局所持上げは `lem:local-commutative-fibre-noetherian`（標題・証明は非可換fiberにも拡張）で証明し、有限次元Noetherian局所基底への相対χの持上げは `lem:local-chi-specialization` で証明した。可換Segre環のχは可換Noetherian次数環の標準Ext有限性から従う。AZ(A2)の非局所有限型基底への適用と、VdBの体上Noetherian性の正確な定理番号の再照合は残る。
 
 ## 二次Veroneseの既知結果と今回の相対適用
 
