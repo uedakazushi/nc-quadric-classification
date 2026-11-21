@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.46。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.44、論文Bはv0.1（証明移管中）、論文Cはv0.2。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.47。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.45、論文Bはv0.2（証明移管中）、論文Cはv0.2。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、局所good moduliの降下、偏極認識と公表前監査である。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,7 +10,7 @@
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
 - **C・箙表示とavatar：** `papers/quiver-avatar-moduli.tex` に八・十・十二本矢、QP消去、反標準avatar、表示からの忘却を置く。有限表示の代数性と相対AS/H2の同値が未証明である範囲を保ち、A/Bの証明は複製しない。
 
-**移管状況：** Bの独立主原稿・基礎命題を作成したが、主要な相対定理の全証明はまだAの分割節にある。B単独の完成とは扱わない。節ごとの証明・相互参照・基底変更の監査までAの有効な本文を削除しない。次はA/Bの定理依存を分類する → Bへ相対公理・Artin認識・有限型atlas・境界群商の順に証明移管 → Aから移管済みの重複を除去 → AとBの論文間引用を整理 → Cとの比較・三稿のビルド・一次資料照合。AがBへ循環依存しないようにする。再編作業と新しい数学的検証は区別し、有用な結果・再現資産を削らない。
+**移管状況：** Bの独立主原稿・基礎命題に加え、対角列の反例の完全な証明（旧 `sections/ruled_diagonal_obstruction.tex`）をBの `moduli/ruled_diagonal_obstruction.tex` へ移管し、Aからの重複入力を除いた。主要な相対定理の全証明はまだAの分割節にある。B単独の完成とは扱わない。節ごとの証明・相互参照・基底変更の監査までAの有効な本文を削除しない。次はA/Bの定理依存を分類する → Bへ相対公理・Artin認識・有限型atlas・境界群商の順に証明移管 → Aから移管済みの重複を除去 → AとBの論文間引用を整理 → Cとの比較・三稿のビルド・一次資料照合。AがBへ循環依存しないようにする。再編作業と新しい数学的検証は区別し、有用な結果・再現資産を削らない。
 
 ## 現在の到達点と未解決の核心
 
@@ -26,7 +26,7 @@
 
 **noncubic変形の具体的なétale表示。** `prop:noncubic-lagrangian-etale-slice` により、Lagrangian Grassmannian LG(4,8)の開部分を7次元群で割った商から、全noncubic点を含むfoundation変形の開部分への表現可能なétale射を得る。法軌道写像の行列式はPlücker O(3)の切断で、正規形では−32α。根対一致では対角L₀を選ぶ必要があり、別のtrace零交換根にはHH²の負方向が1次元残る。この有限代数の表示を、全fiber認識と全軌道比較を経て、下記の内在H2のatlasへ接続する。
 
-**方法上の障害と補助定理。** 非可換P¹束の候補対角列には、全行からHomが消える非零coherent対象を持つgeometric quintupleの反例がある。これはその模型と軌道列の比較を妨げるが、BのNoetherian性を否定しない。`ruled_diagonal_obstruction.tex`。有限foundationやgraded coherenceだけではNoetherian heartは従わないことも研究ノートに具体例で記した。偏極認識の有限表示局所閉条件、固定BのAS4被覆incidence、χの有限型基底変更、任意係数の構造H⁰/H¹は独立の一般補題として保持する。
+**方法上の障害と補助定理。** 非可換P¹束の候補対角列には、全行からHomが消える非零coherent対象を持つgeometric quintupleの反例がある。これはその模型と軌道列の比較を妨げるが、BのNoetherian性を否定しない。`papers/moduli/ruled_diagonal_obstruction.tex`（論文Bへ移管済み）。有限foundationやgraded coherenceだけではNoetherian heartは従わないことも研究ノートに具体例で記した。偏極認識の有限表示局所閉条件、固定BのAS4被覆incidence、χの有限型基底変更、任意係数の構造H⁰/H¹は独立の一般補題として保持する。
 
 **一般二周期族のcanonical AS4被覆。** `thm:universal-cubic-hull` は、geometric cubic族と実際の二周期βから、逆coevaluationの線束値写像Φ_i:S_i→W_i、Φ_i|W_i=2idと階数6の核H_iを構成する。A=T(B₁)/(H₀)は全次数projective、rank Aₙ=C(n+3,3)、双対は階数列(1,4,6,4,1)のKoszul Frobeniusであり、正則正規二次線GによるA/(G)=Bを持つ。任意Noetherian基底変更後も左右Noetherianである。まずE=B!の正規線Nを割ったP=E/(N)をprojectiveにし、PPをPへ適用してA=P!を平坦にするため、非被約基底でfiber次元一定だけに頼らない。AS4被覆は任意のβに成立するが、同じ根のSerre平方条件は独立に確認する。
 

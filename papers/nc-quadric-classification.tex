@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.44
+% 日本語 LuaLaTeX。2026-11-22 / v1.45
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v1.44（noncubic境界の粗空間と形式局所商）}
+\date{2026年11月22日\quad v1.45（分類とモジュライの証明分担を整理）}
 
 \begin{document}
 \maketitle
@@ -262,7 +262,7 @@ linear 部分の非被約な Segre 表示と、
 Noetherian 性の下では、有限解消と有限 presentation から
 一様 Serre 消滅と全相対条件を導ける。
 一方、非可換射影直線束の候補対角列を使う比較には具体的な反例がある
-（第\ref{sec:ruled-diagonal-obstruction}節）。
+（相対モジュライ別稿~\cite{QuadricModuli2026}）。
 既知の束の Noetherian 性 \cite[Theorem 1.2]{VanDenBergh2012P1} は保たれるが、
 その候補列は非零 coherent 対象を生成しない。
 
@@ -650,7 +650,6 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/noncubic_finite_type}
 \input{sections/h2_smooth_atlas}
 \input{sections/noncubic_boundary_comparison}
-\input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
 \input{sections/marking_forgetting}

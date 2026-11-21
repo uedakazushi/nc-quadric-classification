@@ -2,14 +2,14 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.46、論文A v1.44、論文B v0.1（証明移管中）、論文C v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.46、論文A v1.45、論文B v0.2（証明移管中）、論文C v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## 公表用原稿：三論文へ再編
 
 | 原稿 | 中心課題 | 状態 |
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 既存全証明を保持。相対節の移管後に整理 |
-| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **独立原稿に着手、主結果の証明移管は未完了** |
+| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **対角列の反例証明を移管済み、相対主定理の証明移管は未完了** |
 | **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 八・十・十二本矢、QP、反標準avatarと忘却 | v0.2。内在的比較の未解決条件を保持 |
 
 Aを最初に公表できる分類論文とし、BはAに依存する別の相対モジュライ論文、Cは表示論文として整理する。Aの相対節にある有用な証明は、Bでの移管・参照照合前に削除しない。完了後は重複を除く。Bの組版コマンドは `python3 scripts/check.py build --manuscript papers/nc-quadric-moduli.tex`。
@@ -97,7 +97,7 @@ noncubicの三代表点では $\dim HH^1(R)_0=(1,1,2)$、$\dim HH^2(R)_0=(3,3,5)
 
 **Noetherian 性の形式的貼合せ。** 可換Noetherian基底R、各次数成分が有限な中央次数環A、I=(f₁,…,fᵣ)に対し、A/IAと全A[fᵢ⁻¹]が左右NoetherianならAも左右Noetherianとなる。次数ごとのI進完備化で有限生成元の係数を収束させ、R̂_I×∏R[fᵢ⁻¹]の忠実平坦性で降下する。成分の平坦性・有限Krull次元は不要で、一般次数付き加群とZ代数のrow/columnにも成立する。証明 `thm:patch-noetherian`、`thm:patch-z-algebra`。幾何的cubic族では、閉部分と開補集合で実際のNoetherian性を確認して適用する。
 
-**非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。`sec:ruled-diagonal-obstruction`。本来のBのNoetherian性は、曲線商・正規拡大とlinear部分の形式的貼合せによって解決した。
+**非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。[対角列の反例の完全な証明](papers/moduli/ruled_diagonal_obstruction.tex)（論文B）。本来のBのNoetherian性は、曲線商・正規拡大とlinear部分の形式的貼合せによって解決した。
 
 ## 対象
 

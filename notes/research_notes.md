@@ -118,7 +118,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **Noetherian 性の形式的貼合せ。** 可換Noetherian基底R、各次数成分が有限な中央次数環A、I=(f₁,…,fᵣ)に対し、A/IAと全A[fᵢ⁻¹]が左右NoetherianならAも左右Noetherianとなる。次数ごとのI進完備化で有限生成元の係数を収束させ、R̂_I×∏R[fᵢ⁻¹]の忠実平坦性で降下する。成分の平坦性・有限Krull次元は不要で、一般次数付き加群とZ代数のrow/columnにも成立する。証明 `thm:patch-noetherian`、`thm:patch-z-algebra`。幾何的cubic族では両部分の実際のNoetherian性を別に証明して適用する。
 
-**非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。`sec:ruled-diagonal-obstruction`。本来のBのNoetherian性は、曲線商・正規拡大とlinear部分の形式的貼合せによって解決した。
+**非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。`papers/moduli/ruled_diagonal_obstruction.tex`（論文Bの独立節）に完全な証明を保持する。本来のBのNoetherian性は、曲線商・正規拡大とlinear部分の形式的貼合せによって解決した。
 
 **周期を仮定しない普遍Noetherian性とH2効果性。** `thm:relative-geometric-cubic-noetherian` は、全成分が有限projectiveでgeometric cubic表示を持つ族の全row・columnが、任意の可換Noetherian基底変更後にNoetherianであると示す。非線形開では相対point curveとKeelerの消滅、regular normalな四次線族を用いる。線族は頂点ごとの可逆加群twistで自明化でき、無限個の線束の同時開自明化を要しない。linear閉部分でも非退化線を全整数へ伝播し、頂点線twistで標準対称積へ移す。各parityはSegre環と有限生成Segre加群となる。Z代数の次数別形式的貼合せで全基底を扱う。実際の二周期があれば、その偶数graded環Bも左右普遍Noetherianとなる。可換Q近傍では `thm:quadric-finite-type-effectivity` により全相対公理を満たすU°→H2を得る。
 
@@ -402,7 +402,7 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文間の数学的依存と移管の検証単位
 
-Aの分類はcubic/noncubic全構成とpointed exact同値判定を含む。Bの有限型smooth Artin性は体上の分類に加え、全Artin形式認識、指定同型付き効果性、全次数HomとKoszul/Noetherian性、同じ根のAS4被覆と降下を必要とする。境界の幾何点の全単射から相対群商の同値は従わない。Cの有限表示空間からの忘却では相対heart・Serre根・AS4被覆と慣性の核を別に確認する。Bの証明移管は始まったが、現在の全証明の正本はAの元の分割節にあり、独立原稿の完成も新しい形式検証も意味しない。
+Aの分類はcubic/noncubic全構成とpointed exact同値判定を含む。Bの有限型smooth Artin性は体上の分類に加え、全Artin形式認識、指定同型付き効果性、全次数HomとKoszul/Noetherian性、同じ根のAS4被覆と降下を必要とする。境界の幾何点の全単射から相対群商の同値は従わない。Cの有限表示空間からの忘却では相対heart・Serre根・AS4被覆と慣性の核を別に確認する。Bの証明移管は始まったが、相対主定理の全証明の正本はAの元の分割節にあり、独立原稿の完成も新しい形式検証も意味しない。
 
 ## 検証範囲と再現手順
 
