@@ -402,6 +402,8 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文間の数学的依存と移管の検証単位
 
+**相対AS4被覆の所在：** 有限型被覆の全次数平坦性・Koszul Frobenius性・正則正規切断の有限判定、および有限型射のfppf像が代数的でないことの明示的反例はBの `papers/moduli/relative_as_cover.tex` に完全な証明を保持する。Aの同節は主張とBへの引用を保持し、証明本文は重複させない。
+
 **現在の主張の所在：** 相対反Serre再構成 `prop:relative-h2-antiserre-reconstruction`、fppf stack認識 `prop:relative-h2-stack-recognition`、体上回復 `prop:relative-h2-field-recovery`、代数性判定 `prop:relative-h2-algebraicity-reduction` の四つの証明は `papers/moduli/relative_recognition.tex` に統合した。Aは各命題の主張を保持してBを引用し、Bは分類論文の normal helix・相対Veronese・foundationを論文間引用する。今回の移管は数学的新規性や全証明の独立再検証ではなく、参照の整理である。全体の有限型効果性・境界同定の証明は引き続きAにある。
 
 
