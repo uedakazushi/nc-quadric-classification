@@ -1,3 +1,9 @@
+# On macOS, VS Code launched from Finder may omit MacTeX from PATH.
+# Ensure latexmk can find lualatex, bibtex, kpsewhich and related tools.
+if (-d '/Library/TeX/texbin') {
+  $ENV{'PATH'} = '/Library/TeX/texbin:' . ($ENV{'PATH'} // '');
+}
+
 # Run latexmk from the repository root.  Main documents live directly in papers/;
 # put fragments in papers/sections/.  No filename edit is needed after renaming
 # paper-template.tex to <repository-name>.tex.
