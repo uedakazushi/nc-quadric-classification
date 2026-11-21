@@ -629,6 +629,99 @@ Hilbert 級数は $(1+z)/(1-z)^3$ である。
 全表示は任意の底変更に両立する。
 \end{proof}
 
+\begin{proposition}[Clifford trace と相対 Serre 双加群]
+\label{prop:noncubic-relative-serre-on-perfect}
+$A$ を標数零の体上の可換 noetherian 環とし、
+$\mathcal B=B$ を補題~\ref{lem:noncubic-relative-clifford-center}
+の環とする。$C=A[u,v,h]$ に
+$\deg(u,v,h)=(1,1,2)$ を入れる。
+次数付き $C$-線型写像
+\[
+ \operatorname{tr}:B\longrightarrow C(-2)
+\]
+を、基底 $(1,c,d,cd)$ における $cd$ の係数を取る写像とする。
+すると積による pairing は完全で、
+\[
+ \operatorname{tr}(ab)=\operatorname{tr}(b\iota(a)),
+ \qquad
+ \operatorname{Hom}_C(B,C(-4))
+       \simeq B_{\iota}(-2)
+ \tag{NC-Serre}\label{eq:noncubic-relative-serre-bimodule}
+\]
+という次数付き $B$-双加群の同型を与える。
+ここで $B_\iota$ は右作用を $\iota$ で twist した双加群である。
+
+重み付き射影スタック
+$\mathcal X=\mathbb P_A(1,1,2)$ 上で、
+$B$ から作る局所自由な階数四の代数層を $\widetilde B$ とする。
+$\operatorname{Perf}(\mathcal X,\widetilde B)$ は相対 Serre 双対を持ち、
+その関手は
+\[
+ S_A\simeq(-)_\iota(-2)[2],
+ \qquad S_A^{-1}[2]\simeq(-)_\iota(2)
+ \tag{NC-S}\label{eq:noncubic-relative-serre-functor}
+\]
+である。これらの pairing と双加群の構成は任意の
+noetherian 底変更に両立する。
+さらに補題~\ref{lem:noncubic-local-exchange} で得た
+$\sigma^2=\iota$ により、適合平方根の候補は
+\'etale 局所に exact 関手 $(-)_\sigma(1)$ として得られる。
+\end{proposition}
+\begin{proof}
+$\operatorname{tr}$ の積 pairing は、$C$-基底
+$1,c,d,cd$ 上で行列式が単元となる。
+実際、$c^2=f_1,d^2=f_2,dc=h-cd$ により
+$1$ は $cd$ と、$c$ は $d$ と、$d$ は $c$ と、
+$cd$ は $1$ とそれぞれ係数が $\pm1$ の主項で対になる。
+この pairing は $\iota$-cyclic である。
+生成元 $u,v,h$ は中央で $\iota$ に固定され、
+$c,d$ については
+$\operatorname{tr}(cd)=1$、
+$\operatorname{tr}(dc)=-1$ から
+$\operatorname{tr}(ab)=\operatorname{tr}(b\iota(a))$
+を確認できる。生成元での確認から全元に拡張する。
+従って写像 $a\mapsto[b\mapsto\operatorname{tr}(ba)]$ は
+$C$ 上の Frobenius 双対を与え、
+右作用は $\iota$ で twist される。
+重み $2$ の trace から
+$\operatorname{Hom}_C(B,C)\simeq B_\iota(2)$、
+$C$ の canonical shift $-4$ を加えると
+(\ref{eq:noncubic-relative-serre-bimodule}) を得る。
+
+$\mathcal X$ は基底上滑らかな相対次元二の
+proper な重み付き射影 Deligne--Mumford スタックで、
+$\omega_{\mathcal X/A}\simeq\mathcal O_{\mathcal X}(-4)$ である。
+上の Clifford 表示により $\widetilde B$ は
+$\mathcal O_{\mathcal X}$ 上有限局所自由である。
+従って $\widetilde B$ 上 perfect な二対象 $P,Q$ に対し、
+$\mathcal X/A$ の相対 Grothendieck--Serre 双対性と
+有限局所自由代数の tensor--Hom 随伴から
+\[
+ \mathbf R\operatorname{Hom}_A
+ \bigl(\mathbf R\operatorname{Hom}_{\widetilde B}(P,Q),A\bigr)
+ \simeq
+ \mathbf R\operatorname{Hom}_{\widetilde B}
+ \bigl(Q,P\otimes_{\widetilde B}^{\mathbf L}
+       \operatorname{Hom}_{\mathcal O_{\mathcal X}}
+         (\widetilde B,\omega_{\mathcal X/A})[2]\bigr).
+\]
+ここで左辺・右辺の $\mathbf R\operatorname{Hom}$ は
+$\mathcal X$ 上の大域導来 Hom を含む。
+双加群の同型により右辺は
+$\mathbf R\operatorname{Hom}_{\widetilde B}
+ (Q,P_\iota(-2)[2])$ となる。
+$\iota$ は次数付き自己同型なので twist と次数移動は
+perfect 対象の自己同値であり、これが相対 Serre 関手である。
+相対 dualizing 線束、Clifford trace、局所自由双加群は
+底変更するので、双対性も noetherian 底変更と可換する。
+最後に $\sigma^2=\iota$ と shift との可換性から
+$(-)_\sigma(1)$ の二乗が
+$(-)_\iota(2)=S_A^{-1}[2]$ となる。
+この結論は perfect 圏の Serre 作用を計算するものであり、
+全ての coherent $\widetilde B$-加群が perfect であることを
+別の証明なしに主張するものではない。
+\end{proof}
+
 \begin{proposition}[noetherian 基底上の noncubic 表示の有限性]
 \label{prop:noncubic-relative-noetherian}
 任意の可換 noetherian 基底に引き戻した普遍環 $\mathcal B$、
