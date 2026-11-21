@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.5
+% 日本語 LuaLaTeX。2026-11-21 / v1.6
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -44,7 +44,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.5（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.6（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -91,6 +91,16 @@ noncubic の二形式の六係数は二次関係 Grassmannian の
 noncubicの基準三型では、基底変更と六係数が張る接空間は次元81であり、
 三次Hilbert階数を保つ関係式の一次変形の接空間次元は、
 三基準点で標数零において正確に83、83、84である。
+noncubic の反 Serre 環が Koszul であることを証明し、
+三次Hilbert条件の一次整合が全次数平坦な二次代数の
+一次変形を与えることを示す。
+この結果と Koszul 双加群解消から
+内部次数零の Hochschild コホモロジーの次元は
+$HH^1$ で $1,1,2$、$HH^2$ で $3,3,5$ と決まる。
+三次条件の横断接空間 $2,2,3$ 次元については、
+基底と基底の各二項和の二次補正を厳密な整数演算で構成し、
+三次Hilbert階数条件の二次障害が消えることも証明する。
+ただし高次形式変形や相対 Abel 圏への実現は未証明である。
 相対 heart・平方根・豊富性まで要求する内在的モジュライスタックを
 $\HHstack$ と書くが、その構成と表示スタックとの比較は未完成である。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
@@ -497,6 +507,18 @@ noncubic の六係数を固定 Grassmann affine cell に明示的に埋込み、
 命題~\ref{prop:noncubic-third-degree-tangent} は
 noncubic の三種類の根配置で群軌道・係数方向の和の接次元81を証明し、
 三次Hilbert階数条件の接次元を、有理核の整数検証により標数零で正確に83,83,84と決定する。
+命題~\ref{prop:noncubic-antiserre-koszul} と
+補題~\ref{lem:koszul-first-order-degree-three} により
+noncubic 反Serre環は Koszul であり、
+三次平坦な一次二次関係変形は全次数平坦となる。
+定理~\ref{thm:noncubic-hh01-hh2} は
+内部次数零の $HH^1$ および $HH^2$ を
+三基準点で $(1,1,2)$、$(3,3,5)$ と計算する。
+命題~\ref{prop:noncubic-transverse-second-order} は、
+横断方向の二次障害が三次Hilbert条件に関して
+全て消えることを厳密な有理数の補正で示す。
+これらは高次形式変形の存在や
+相対 Abel 圏としての $\HHstack$ の接空間を直接決めない。
 命題~\ref{prop:h2-constructible-relations-and-irreducible-closure} は
 全実現像の構成可能性と有限型既約な代数的包絡を与える。
 これらは内在的な相対 $\HHstack$ との同値の証明ではない。
