@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.24
+% 2026-11-21 / v1.25
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1167,35 +1167,37 @@ $A_R$ も左右 Noetherian となる。
 \end{proof}
 
 
-\begin{corollary}[可換点を通る DVR 上の相対 \texorpdfstring{$\chi$}{chi}]
-\label{cor:quadric-dvr-chi}
-可換点 $u\in U^\circ(k)$ と DVR
-$(R,(\varpi),\kappa)$ を取り、
-$\operatorname{Spec}R\to U^\circ$ が閉点を $u$ に送るとする。
+
+\begin{corollary}[可換点の全 Noetherian 局所基底での相対 \texorpdfstring{$\chi$}{chi}]
+\label{cor:quadric-local-chi}
+可換点 $u\in U^\circ(k)$ を取り、
+$\operatorname{Spec}R\to U^\circ$ を閉点を $u$ へ送る
+有限次元 Noetherian 局所基底とする。
 その切断環 $B_R$ は左右の相対 $\chi_q$ を
-全ての $q\ge0$ について満たす。
-すなわち、任意の有限生成次数付き右または左
-$B_R$-加群 $M$ に対し、全ての $j\ge0$ で
+全ての $q\ge0$ で満たす。
+すなわち、任意の有限生成次数付き右・左 $B_R$-加群 $M$ に対し
 $\underline{\operatorname{Ext}}_{B_R}^j(R,M)$ は
-全内部次数を合わせて有限生成 $R$-加群である。
-一般の高次元 Noetherian 基底の $\chi$、
-任意の有限型底変更の AZ (A2)、
-canonical compact 圏との比較は結論しない。
+全内部次数を合わせて有限生成 $R$-加群となる
+（全ての $j\ge0$）。
+この結論を任意の有限型非局所底変更での
+$\chi$ や AZ (A2) の証明と同一視しない。
+また canonical compact 圏との比較は別に残る。
 \end{corollary}
 \begin{proof}
-前系~\ref{cor:quadric-point-local-noetherian-as4} から
+系~\ref{cor:quadric-point-local-noetherian-as4} により
 $B_R$ は左右 Noetherian。
-系~\ref{cor:quadric-uniform-even-koszul} から
-左右の相対 Koszul 解消は
-DVR への任意底変更後も完全で、各項は有限斉次自由である。
+系~\ref{cor:quadric-uniform-even-koszul} により
+左右の相対 Koszul 解消は全内部次数で分裂完全であり、
+任意の底変更後も完全で、各項は有限個の
+有限階数斉次自由加群の直和である。
 閉ファイバーは可換 Segre 環
-$\bigoplus_{n\ge0}H^0(Q,\mathcal O_Q(n,n))\otimes_k\kappa$
-であり、有限生成可換 Noetherian 次数環の
-通常の有限生成 Ext の議論から左右 $\chi_q$ を
-全ての $q$ で満たす。
-補題~\ref{lem:dvr-chi-specialization} を
-それぞれの $q$ に適用すればよい。
+$\bigoplus_{n\ge0}H^0(Q,\mathcal O_Q(n,n))\otimes_k\kappa(R)$
+であるから、通常の可換 Noetherian 環の
+有限生成 Ext の議論により左右 $\chi_q$ を全 $q$ で満たす。
+補題~\ref{lem:local-chi-specialization} を
+それぞれの $q$ に適用する。
 \end{proof}
+
 
 \begin{remark}[この代数化で残る条件]
 得られたのは有限 foundation の perfect 圏上の平方根、
@@ -1209,8 +1211,8 @@ $\bigoplus_{n\ge0}H^0(Q,\mathcal O_Q(n,n))\otimes_k\kappa$
 Zariski 局所 homological AS4 被覆、
 系~\ref{cor:quadric-point-local-noetherian-as4} の
 幾何的 cubic 開の各点の局所環上の Noetherian AS4 被覆、
-系~\ref{cor:quadric-dvr-chi} の可換点を通る DVR 上の
-相対 $\chi$ 性である。
+系~\ref{cor:quadric-local-chi} の可換点を閉点に持つ
+全 Noetherian 局所基底での相対 $\chi$ 性である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その被覆と根が Noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、

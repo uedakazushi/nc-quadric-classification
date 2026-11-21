@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.24
+% 2026-11-21 / v1.25
 \section{三次平坦性から全次数平坦性への相対的な認識}
 \label{sec:relative-koszul}
 
@@ -223,74 +223,119 @@ $C\to C_{\widehat R}$ は中心的な忠実平坦環拡大である。
 
 
 
-\begin{lemma}[DVR 上の相対 \texorpdfstring{$\chi_i$}{chi-i} の持上げ]
-\label{lem:dvr-chi-specialization}
-$(R,(\varpi),\kappa)$ を DVR、$B$ を
-$B_0=R$ の非負次数付き右 Noetherian $R$-代数とする。
-$R$ は中心に入り、全ての $B_n$ は有限自由であるとする。
-右自明加群 $R=B/B_{\ge1}$ は、
-各項が有限個の斉次有限階数自由 $B$-加群の直和であり、
-$\kappa$ への基底変更でも完全な次数付き射影解消
-$P_\bullet\to R$ を持つと仮定する。
-特殊ファイバー $B_\kappa$ が右 $\chi_q$ を満たすならば、
-任意の有限生成次数付き右 $B$-加群 $M$ に対して
+
+\begin{lemma}[Noetherian 局所基底での相対 \texorpdfstring{$\chi_q$}{chi-q} 持上げ]
+\label{lem:local-chi-specialization}
+$(R,\mathfrak m,\kappa)$ を有限 Krull 次元の
+Noetherian 局所環、$B$ を $B_0=R$ の非負次数付き
+右 Noetherian $R$-代数とする。
+$R$ は中心に入り、各 $B_n$ は有限自由と仮定する。
+自明右加群 $R=B/B_{\ge1}$ は
+$P_\bullet\to R$ という斉次射影解消を持ち、
+各 $P_j$ は有限個の有限階数斉次自由 $B$-加群の直和であり、
+任意の $R$-代数への基底変更後にもこの解消は完全と仮定する。
+特殊ファイバー $B_\kappa$ が右 $\chi_q$、
+すなわち全ての有限生成次数付き右 $B_\kappa$-加群 $N$ に対し
+\[
+ \underline{\operatorname{Ext}}_{B_\kappa}^{j}(\kappa,N)
+ \quad(0\le j\le q)
+\]
+が全内部次数を合わせて有限次元であると仮定する。
+このとき全ての有限生成次数付き右 $B$-加群 $M$ に対して
 \[
  \underline{\operatorname{Ext}}_B^j(R,M)
  \quad(0\le j\le q)
 \]
 は全内部次数を合わせて有限生成 $R$-加群となる。
-従って $B$ は右相対 $\chi_q$ を満たす。
-左側にも同じ仮定を課せば左相対 $\chi_q$ が成立する。
+左側には反対環の仮定の下で同じ結論が成立する。
 \end{lemma}
 \begin{proof}
-まず $M$ が $R$-torsion-free とする。
-有限個の斉次生成元を選び、$B_n$ が有限自由であることから
-各 $M_n$ は有限 $R$-加群と分かる。
-DVR 上の有限 torsion-free 加群は自由だから、
-各 $M_n$ は有限自由である。
-固定した内部次数 $d$ において
-\[
- C_d^\bullet=
- \underline{\operatorname{Hom}}_B(P_\bullet,M)_d
-\]
-の各項は有限自由 $R$-加群であり、その
-$\kappa$-還元は
-$\underline{\operatorname{Hom}}_{B_\kappa}
-(P_\bullet\otimes_R\kappa,M\otimes_R\kappa)_d$
-に一致する。
-特殊ファイバーの $\chi_q$ により、ある $N$ について
-$d\ge N$ ならばこの剰余体上の複体は
-次数 $0,\ldots,q$ で完全である。
-有限自由複体の先頭から単元 minor を消去する帰納法により、
-$C_d^\bullet$ も同じ次数で完全となる。
-従って $\underline{\operatorname{Ext}}_B^j(R,M)_d=0$
-（$0\le j\le q$、$d\ge N$）である。
-$M$ は次数が下に有界で、各 $P_j$ は有限個の斉次生成元を
-持つので、低い内部次数にも同様の消滅範囲がある。
-残る有限個の内部次数では
-$\underline{\operatorname{Ext}}$ は有限 $R$-加群の
-部分商であり、全内部次数の直和も有限生成になる。
+$\dim R$ に関する帰納法で証明する。
+最初に、各固定 $j,d$ について
+$\underline{\operatorname{Ext}}_B^j(R,M)_d$ は
+有限 $R$-加群であることに注意する。
+実際、有限生成次数付き $M$ は下に有界で各 $M_n$ は
+有限 $R$-加群であり、
+$\underline{\operatorname{Hom}}_B(P_j,M)_d$ と
+$\underline{\operatorname{Hom}}_B(P_{j+1},M)_d$ は
+有限 $R$-加群なので、その部分商も有限である。
+同じ理由で固定した $j$ の Ext は内部次数が十分負なら零である。
+従って、全内部次数を合わせた有限生成性を示すには
+内部次数が十分正で Ext が零であることを示せばよい。
 
-一般の有限生成 $M$ では $\varpi$-power torsion
-部分加群 $T$ を取る。
-$B$ が右 Noetherian なので $T$ は有限生成で、
-ある $a$ で $\varpi^a T=0$。
-その $\varpi$-進有限フィルトレーションの商は
+$\dim R=0$ のとき $R$ は Artin 局所環で、
+$\mathfrak m^a=0$ となる。
+$M$ の有限フィルトレーション
+$\mathfrak m^iM/\mathfrak m^{i+1}M$ の各商は
 有限生成 $B_\kappa$-加群である。
-$\varpi$ が零に作用する $N$ には
+$\mathfrak m$ が零に作用する任意の $N$ に対して、
+$P_\bullet$ の各項が有限斉次自由で、剰余体への
+基底変更後にも完全だから、
 \[
  \underline{\operatorname{Hom}}_B(P_\bullet,N)
  \cong
  \underline{\operatorname{Hom}}_{B_\kappa}
        (P_\bullet\otimes_R\kappa,N)
 \]
-が成り立つので、特殊ファイバーの $\chi_q$ と
-長完全 Ext 列から $T$ は相対 $\chi_q$ を満たす。
-$M/T$ は $R$-torsion-free だから最初の段落を適用できる。
-$0\to T\to M\to M/T\to0$ の長完全 Ext 列と
-$R$ の Noetherian 性から結論する。
-反対環に同じ議論を適用すれば左側も従う。
+が成立する。
+特殊ファイバーの $\chi_q$ と長完全 Ext 列によって
+$M$ も相対 $\chi_q$ を満たす。
+
+$\dim R>0$ とし、局所パラメータ
+$t\in\mathfrak m$ を選んで
+$\dim R/(t)<\dim R$ とする。
+$t$ は $R$ 上の非零因子である必要はない。
+$B$ が右 Noetherian なので、
+$t$-power torsion 部分
+\[
+ T=\{m\in M:\ t^a m=0\text{ for some }a\}
+\]
+は有限生成であり、ある $b$ について $t^bT=0$。
+$T$ の $t$-進有限フィルトレーションの各商は
+有限生成次数付き $B/tB$-加群である。
+$B/tB$ の全次数は $R/(t)$ 上有限自由、
+$P_\bullet/tP_\bullet\to R/(t)$ は
+任意の基底変更に完全な相対射影解消であり、
+特殊ファイバーは元と同じ $B_\kappa$ である。
+また $B/tB$ は右 Noetherian。
+従って帰納法により、$T$ に対する
+$\underline{\operatorname{Ext}}_B^j(R,T)$
+は $0\le j\le q$ で有限生成である。
+ここでも $tN=0$ なら
+$\underline{\operatorname{Ext}}_B^j(R,N)
+\simeq\underline{\operatorname{Ext}}_{B/tB}^j(R/(t),N)$
+を相対射影解消によって用いている。
+
+次に $M'=M/T$ と置くと、$t:M'\to M'$ は単射である。
+よって
+\[
+ 0\longrightarrow M'\xrightarrow{\,t\,}M'
+  \longrightarrow M'/tM'\longrightarrow0
+\]
+は次数付き短完全列である。
+帰納法により、$M'/tM'$ に対する
+$\underline{\operatorname{Ext}}_{B/tB}^j(R/(t),M'/tM')$
+は全次数を合わせて有限生成となる。
+Ext の長完全列により
+\[
+ \frac{\underline{\operatorname{Ext}}_B^j(R,M')}
+      {t\,\underline{\operatorname{Ext}}_B^j(R,M')}
+ \ \hookrightarrow\
+ \underline{\operatorname{Ext}}_B^j(R,M'/tM')
+ \qquad(0\le j\le q)
+\]
+がある。
+右辺は十分大きい内部次数で零である。
+左辺の各内部次数成分は前述の有限 $R$-加群なので、
+Nakayama の補題から
+$\underline{\operatorname{Ext}}_B^j(R,M')_d=0$
+が全ての十分大きい $d$ で成立する。
+従って $M'$ も相対 $\chi_q$ を満たす。
+最後に $0\to T\to M\to M'\to0$ の長完全 Ext 列から
+$M$ に対する結論を得る。
+左側についても反対環に同じ帰納法を適用する。
 \end{proof}
+
 
 \subsection{可換点の局所基底における有限型基底変更}
 
