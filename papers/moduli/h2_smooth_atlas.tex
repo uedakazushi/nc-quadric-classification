@@ -18,7 +18,7 @@
 $x\in\mathfrak H_2(k)$ を noncubic 点とする。
 有限 foundation の標準表示空間 $S_0=\mathbb A^{64}$ の開部分 $S$ と、
 $x$ の normal foundation を表す点 $s_x\in S(k)$ を取る。
-定理~\cite[\texttt{thm:noncubic-finite-type-effectivity}]{QuadricIntrinsic2026} で構成した有限型 affine étale 近傍
+定理~\ref{thm:noncubic-finite-type-effectivity} で構成した有限型 affine étale 近傍
 \[
  a_x:(U_x,u_x)\longrightarrow(S,s_x)
 \]
@@ -60,7 +60,7 @@ $a_x$ の全点での étale 性により、これは $u_A$ を保つ $u_{A'}\in
 
 両方の四項 tilting 窓の End 代数をこの基底で同定する。
 得られる標準 dg Morita 同値の還元は、対象だけでなく全ての射上で $D(\alpha_A)$ と一致する。
-補題~\cite[\texttt{lem:artin-two-heart-comparison}]{QuadricIntrinsic2026}、または反 Serre 再構成の全忠実性を使えば、
+補題~\ref{lem:artin-two-heart-comparison}、または反 Serre 再構成の全忠実性を使えば、
 これは $\alpha_A$ 自体を延長する pointed exact 同型となる。
 module-object 基底変更により、その同型は全有限型 test 上の相対系にも延長する。
 この議論は根や被覆を同型の標識へ加えず、指定した pointed 同型をそのまま保つ。
@@ -118,7 +118,7 @@ $k$ 上有限型で滑らかな純次元三の Artin スタックの制限によ
 各 $\mathfrak V_x$ の内在的な開性だけであり、$\mathfrak N^{\mathrm{pres}}\to\mathfrak H_2$
 の full faithfulness や、任意の相対 noncubic 族の正規形は使わない。
 
-定理~\cite[\texttt{thm:cubic-smooth-open}]{QuadricIntrinsic2026} の有限型 smooth atlas $U_{\mathrm{cub}}$ と合わせ、
+定理~\ref{thm:cubic-smooth-open} の有限型 smooth atlas $U_{\mathrm{cub}}$ と合わせ、
 \[
  U=U_{\mathrm{cub}}\amalg U_{x_1}\amalg\cdots\amalg U_{x_m}
 \]
@@ -142,7 +142,7 @@ $\mathfrak P$ の対角が affine 有限表示なので、$R$ は有限型スキ
 有限型 atlas $U$ によって有限型性が従い、$U$ の滑らかさによって $k$ 上の滑らかさが従う。
 対角の性質は命題~\ref{prop:relative-h2-algebraicity-reduction} による。
 
-最後に、系~\cite[\texttt{cor:cubic-formal-h2-abelian}]{QuadricIntrinsic2026} と系~\cite[\texttt{cor:noncubic-all-artin-h2}]{QuadricIntrinsic2026} により、
+最後に、系~\ref{cor:cubic-formal-h2-abelian} と系~\cite[\texttt{cor:noncubic-all-artin-h2}]{QuadricIntrinsic2026} により、
 各 $k$-点の形式変形 groupoid は pointed Abel 変形と同値である。
 その接空間は $\operatorname{HH}^2(\Lambda)$、無限小自己同型空間は
 $\operatorname{HH}^1(\Lambda)$ であり、
@@ -183,11 +183,11 @@ coherent 対象と全有限型 module-object 基底変更にも整合するの�
 $\mathfrak H_2$ の fppf descent により $q_{\mathrm e}$ が得られる。
 根と AS4 被覆は局所的 witness であり、それら自体を重なりで同定する必要はない。
 
-各 $q_\alpha$ は系~\cite[\texttt{cor:quintuple-effective-smooth-chart}]{QuadricIntrinsic2026} により smooth である。
+各 $q_\alpha$ は系~\ref{cor:quintuple-effective-smooth-chart} により smooth である。
 smoothness は始域の étale 被覆で判定できるから $q_{\mathrm e}$ も smooth である。
 $S_{\mathrm e}$ は射影空間の非空開部分で既約なので、その連続像は既約であり、
 smooth 性によって像は開である。
-全非線型 cubic 表示が像に入ることは、定理~\cite[\texttt{thm:cubic-smooth-open}]{QuadricIntrinsic2026} の逆構成による。
+全非線型 cubic 表示が像に入ることは、定理~\ref{thm:cubic-smooth-open} の逆構成による。
 線型 geometric cubic 表示は全て同じ pointed $Q$ を与えるので、最後の主張が従う。
 \end{proof}
 
@@ -220,7 +220,7 @@ $\dim(\mathcal G/K)=61<64$ なので、この有限和の閉包は $S_0$ の真�
 従って $\mathfrak V_{\mathrm{cub}}$ は、この一つの既約な開部分の閉包であり、既約である。
 
 任意の noncubic $k$-点 $x$ に対し、
-定理~\cite[\texttt{thm:noncubic-finite-type-effectivity}]{QuadricIntrinsic2026} の $U_x$ のうち指定点を含む既約成分を取る。
+定理~\ref{thm:noncubic-finite-type-effectivity} の $U_x$ のうち指定点を含む既約成分を取る。
 これも $S_0$ の非空開部分への étale 射を持つ。
 命題~\cite[\texttt{prop:cubic-foundation-open}]{QuadricIntrinsic2026} の geometric cubic foundation は
 $S_0$ の非空開部分なので、$U_x$ の稠密開部分は cubic である。
@@ -242,7 +242,7 @@ finite foundation の幾何点像の位相を内在位相と同一視する操�
 \begin{lemma}[二つの射影行列式の横断性]
 \label{lem:lagrangian-boundary-transverse}
 $W\subset\operatorname{LG}(4,U\oplus U^*)$ を
-命題~\cite[\texttt{prop:lagrangian-geometric-recognition-open}]{QuadricIntrinsic2026} の認識開部分とし、
+命題~\ref{prop:lagrangian-geometric-recognition-open} の認識開部分とし、
 tautological 四平面束の二射影を
 \[
  M:\mathscr L\longrightarrow U\otimes\OO_W,
@@ -360,7 +360,7 @@ $G^+$ は二つの summand を保つ tensor 作用と反傾作用で作用する
 \cite[Tags 0694, 063L]{StacksReducedBoundary}。
 
 \emph{両方の smooth 性を保つ共通 chart。}
-定理~\cite[\texttt{thm:noncubic-finite-type-effectivity}]{QuadricIntrinsic2026} と
+定理~\ref{thm:noncubic-finite-type-effectivity} と
 系~\ref{cor:noncubic-effective-smooth-neighborhood} の
 $q_0:U_0\to\mathfrak H_2$ を取る。
 $U_0\to S$ は étale、$S\to\mathfrak F$ は foundation の smooth atlas なので、
@@ -399,7 +399,7 @@ $\mathfrak N$ は reduced なので $\mathfrak N_U$ も reduced である。
 認識開条件の下では、両射影が階数三の幾何点は noncubic normal foundation を与え、
 一方が階数四なら一方の ruling foundation が geometric cubic となる。
 実際の相対族はその fiber heart と構造対象を保つため、
-系~\cite[\texttt{cor:lagrangian-open-closed-recognition}]{QuadricIntrinsic2026} と体上の分類により
+系~\ref{cor:lagrangian-open-closed-recognition} と体上の分類により
 \[
  |\mathfrak N_U|=|D_U|
 \]
