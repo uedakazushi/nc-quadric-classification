@@ -1,0 +1,221 @@
+% !TEX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.8
+\section{三次平坦性から全次数平坦性への相対的な認識}
+\label{sec:relative-koszul}
+
+ここでは三次までの関係式の平坦性と、全次数の平坦性との間を閉じる。
+用いるのは Polishchuk--Positselski の局所環上の Koszul 変形原理
+\cite[Chapter 6, Theorem 7.3]{PolishchukPositselski2005} である。
+この定理は被約基底や一径数の形式基底に限らず、
+任意の Noetherian 局所環に適用できる。
+従って本節の結論は双対数上の一次変形だけでなく、
+任意の Artin 基底と非被約 Noetherian 基底を含む。
+一方、得られるのは次数付き代数とその線型解消の相対的な結論であり、
+相対 Abel heart、Serre 関手、平方根、AS 被覆の認識は別に必要である。
+
+\begin{proposition}[全 $\HH$ の切断環と反 Serre 環の Koszul 性]
+\label{prop:all-h2-antiserre-koszul}
+$k$ を本稿の基礎体とし、$(\mathcal C,\mathcal O)\in\HH$ とする。
+任意の適合平方根 $s$ に対して
+\[
+ B=B(\mathcal C,\mathcal O,s),\qquad
+ R=R^{\mathrm{as}}(\mathcal C,\mathcal O)
+\]
+はともに Koszul である。
+従ってこの性質に cubic/noncubic の型別仮定は不要である。
+\end{proposition}
+\begin{proof}
+定義より $B\simeq A/(g)$ であり、$A$ は連結 Koszul 環、
+$g\in A_2$ は左右正則正規元である。
+正則正規二次商が Koszul 性を保つことは
+\cite[Chapter 2, Corollary 6.3]{PolishchukPositselski2005}
+に含まれる。中心性を必要としないことを明確にするため、
+この場合の環変換スペクトル系列による証明を記す。
+
+右 $A$-加群としての分解
+\[
+ 0\longrightarrow A(-2)\xrightarrow{\,g\cdot\,}A
+ \longrightarrow B\longrightarrow0
+\]
+から、$\operatorname{Tor}^A_q(B,k)$ は
+$q=0$ で $k$、$q=1$ で $k(-2)$、それ以外で零である。
+それぞれ一つの内部次数に集中するので、
+正次数の $B$ の作用は零である。
+環変換スペクトル系列は
+\[
+ E^2_{p,q}
+ =\operatorname{Tor}^B_p
+       \bigl(k,\operatorname{Tor}^A_q(B,k)\bigr)
+ \ \Longrightarrow\ \operatorname{Tor}^A_{p+q}(k,k)
+\]
+となり、$q=0,1$ の二行だけを持つ。
+$B$ が Koszul でないと仮定し、
+$\operatorname{Tor}^B_p(k,k)$ が内部次数 $p$ に集中しない
+最小の $p$ を取る。
+連結次数付き環の極小解消では内部次数はホモロジー次数以上なので、
+内部次数 $j>p$ の非零元が存在する。
+この $E^2_{p,0}$ の元に入る微分はなく、
+出る可能性のある微分は
+\[
+ d_2:E^2_{p,0}\longrightarrow E^2_{p-2,1}
+\]
+だけである。
+しかし最小性により右辺は内部次数 $(p-2)+2=p$ に集中する。
+従って内部次数 $j$ の元は終端まで残り、
+$A$ の Koszul 性に反する。これで $B$ は Koszul となる。
+反対環にも同じ議論が適用できる。
+
+$s^2\simeq S^{-1}[2]$ により $R\simeq B^{(2)}$ である。
+Koszul 環の Veronese 部分環は再び Koszul である
+\cite[Chapter 3, Proposition 2.2(i)]{PolishchukPositselski2005}。
+別の具体表示で Zhang twist を用いる場合にも、
+次数付き加群圏の同値が線型自由解消を移すので結論は変わらない。
+\end{proof}
+
+\begin{lemma}[Noetherian 基底上の三次平坦性判定]
+\label{lem:relative-koszul-degree-three}
+$S$ を Noetherian スキーム、$\mathcal V$ を有限階数の局所自由層、
+$\mathcal J\subset\mathcal V^{\otimes2}$ を局所直和因子とし、
+\[
+ \mathcal R=T_{\mathcal O_S}(\mathcal V)/(\mathcal J)
+\]
+と置く。次を仮定する。
+\begin{enumerate}
+\item $\mathcal R_3$ は有限局所自由である。
+\item 全ての幾何ファイバー $\mathcal R_{\bar s}$ は Koszul である。
+\end{enumerate}
+このとき全ての $\mathcal R_n$ は有限局所自由である。
+さらに、$n\ge2$ に対して
+\[
+ \mathcal K_n=
+ \bigcap_{i=1}^{n-1}
+ \mathcal V^{\otimes(i-1)}\otimes\mathcal J
+       \otimes\mathcal V^{\otimes(n-i-1)}
+ \ \subset\mathcal V^{\otimes n},
+ \qquad
+ \mathcal K_1=\mathcal V,\quad \mathcal K_0=\mathcal O_S
+\]
+は局所直和因子であり、任意の底変更と両立する。
+左右の Koszul 複体は $\mathcal O_S$ の線型解消となり、
+各内部次数で局所分裂完全である。
+従ってこれらの解消は任意の底変更後にも完全である。
+\end{lemma}
+\begin{proof}
+まず任意の点 $s\in S$ の局所環 $D=\mathcal O_{S,s}$ で考える。
+$V=\mathcal V_s$、$J=\mathcal J_s$ とする。
+各次数の $R=T_D(V)/(J)$ は有限生成 $D$-加群であり、
+$R_1,R_2,R_3$ は自由である。
+Koszul 性は体の拡大に関して忠実平坦に検出されるため、
+幾何ファイバーの仮定から $R\otimes_D\kappa(s)$ も Koszul である。
+従って
+\cite[Chapter 6, Theorem 7.3]{PolishchukPositselski2005}
+を適用して全ての $R_n$ が自由となる。
+各 $\mathcal R_n$ は有限表示なので、全ての茎での自由性から
+有限局所自由性が従う。
+
+解消と底変更についても同定理の証明を用いる。
+$W=V^{\otimes n}$ の部分加群
+\[
+ J_i=V^{\otimes(i-1)}\otimes J
+       \otimes V^{\otimes(n-i-1)}\quad(1\le i<n)
+\]
+を考える。
+$W/J_i$ は $R_2$ と $V$ のテンソル積である。
+$|i-j|=1$ ならば $W/(J_i+J_j)$ は $R_3$ と $V$ の
+テンソル積であり、$|i-j|>1$ ならば二つの $R_2$ と $V$ の
+テンソル積である。従ってこれらは全て自由である。
+剰余体上では Koszul 性によって関係部分空間の格子が分配的である。
+\cite[Chapter 6, Proposition 7.2]{PolishchukPositselski2005}
+より、$J_i$ が生成する格子は $D$ 上でも分配的であり、
+その全ての商は自由である。
+同章 Proposition 7.1 により $W$ は有限個の自由直和因子へ分解でき、
+各 $J_i$ はそのうちのいくつかの和となる。
+この分解において和と交叉は任意のテンソル積で保存される。
+これにより $K_n=\bigcap_iJ_i$ は直和因子となり、
+任意の底変更と両立する。
+構成は有限表示の層の間のものなので、
+各茎の分解を近傍へ延長して同じ結論を $S$ 上で得る。
+
+例えば左 Koszul 複体は
+\[
+ \cdots\longrightarrow
+ \mathcal R\otimes\mathcal K_2
+ \longrightarrow \mathcal R\otimes\mathcal K_1
+ \longrightarrow\mathcal R\longrightarrow\mathcal O_S
+ \longrightarrow0
+\]
+であり、$\mathcal K_i$ の生成次数を $i$ とする。
+各内部次数 $m$ では項
+$\mathcal R_{m-i}\otimes\mathcal K_i$ からなる有限な局所自由複体である。
+その幾何ファイバーは Koszul 環の解消の対応する次数成分なので完全である。
+有限な局所自由複体の完全性は幾何ファイバーで検出されるから、
+この複体は完全である。
+アフィン開上の有界な完全射影複体は分裂するため、
+これは局所分裂完全であり、任意の底変更後も完全である。
+右 Koszul 複体についても同じ証明を適用する。
+\end{proof}
+
+\begin{corollary}[全幾何ファイバーが $\HH$ 型である関係式族]
+\label{cor:h2-geometric-family-koszul}
+$S$ を Noetherian $k$-スキームとし、
+$S\to X_3$ を命題~\ref{prop:truncated-antiserre-moduli-stack}
+の関係式空間への射とする。
+その二次環 $\mathcal R$ の全幾何ファイバーが
+$\HH$ 対象の反 Serre 環に次数付き同型であると仮定する。
+このとき全ての次数で
+\[
+ \operatorname{rank}\mathcal R_n=(2n+1)^2
+\]
+であり、$\mathcal R$ は全次数平坦で相対的に Koszul である。
+同じ結論は商スタック $[X_3/\operatorname{PGL}_9]$ への射と、
+同命題の正規化された普遍次数付き環にも成り立つ。
+
+特に $\HH$ 点を閉ファイバーとする任意の局所 Artin 基底上の
+$X_3$ の変形は、全次数平坦な二次代数の変形を与える。
+この結論は Artin 基底の冪零次数を制限しない。
+\end{corollary}
+\begin{proof}
+$X_3$ の定義によって次数一、二、三の成分はそれぞれ階数
+$9,25,49$ の局所自由層である。
+命題~\ref{prop:all-h2-antiserre-koszul} と
+補題~\ref{lem:relative-koszul-degree-three} を適用すると、
+全次数の局所自由性と相対 Koszul 性を得る。
+階数は幾何ファイバー上の Hilbert 関数から決まる。
+商スタックの場合は fppf 局所に基底を選び、
+同じ議論を適用すればよい。
+次数 $n$ の成分への線束の $n$ 乗による twist は
+局所自由性と Koszul 複体の完全性を保つ。
+これらの性質は忠実平坦に降下するので結論が従う。
+局所 Artin 基底には一つの位相的点しかなく、
+その幾何ファイバーに命題を適用すれば最後の主張を得る。
+\end{proof}
+
+\begin{corollary}[既存の二次 jet の全次数平坦性]
+\label{cor:noncubic-second-order-all-degrees}
+命題~\ref{prop:noncubic-transverse-second-order} で得られた
+$k[t]/(t^3)$ 上の各関係式族 $R_t$ は、
+三次成分だけでなく全ての次数で自由であり、
+\[
+ \operatorname{rank}_{k[t]/(t^3)}(R_t)_n=(2n+1)^2
+\]
+を満たす。左右の相対 Koszul 解消も存在する。
+\end{corollary}
+\begin{proof}
+同命題の関係部分束は二次成分の自由性を保ち、
+Schur complement の等式により三次成分は自由階数 $49$ である。
+閉ファイバーは既存の noncubic 反 Serre 環であるから、
+直前の系を $S=\operatorname{Spec}k[t]/(t^3)$ に適用する。
+\end{proof}
+
+\begin{remark}[全次数平坦性と内在的相対モジュライの区別]
+本節により、既存の二次 jet に対して
+「四次以上の平坦性も別に検証する」という課題は不要になる。
+また、任意の固定次数の Artin 持上げが $X_3$ 内で得られれば、
+その持上げの全次数平坦性は自動的である。
+一方、$X_3$ 内で次の Artin 段階へ持ち上がること自体は証明していない。
+まして、得た環から相対 noetherian Abel heart と相対 Serre 関手を作り、
+適合平方根、Artin--Zhang 豊富性、AS 正則被覆を得ることは
+本節の結論に含めない。
+各幾何ファイバーが $\HH$ 型である条件の有限表示性も、
+局所環ごとの Koszul 変形原理からは従わない。
+\end{remark}

@@ -23,7 +23,9 @@ A. Polishchuk, L. Positselski, *Quadratic Algebras*, AMS University Lecture Seri
 
 二重平方環の PBW 基底と二次 Gröbner 表示から Koszul 性を導く入力は Priddy の quadratic PBW theorem（Polishchuk--Positselski, *Quadratic Algebras*, Chapter 4, Theorem 3.1 にまとめられた既知結果）である。Koszul 性が Veronese で保存されることは同書 Chapter 3, Proposition 2.2(i)、Zhang twist による次数付き自由解消の移送は同値の形式から従う。これらを本研究独自の一般定理とはしない。
 
-同書 Chapter 6 の Koszul deformation principle は、三次平坦性から高次を制御する結果として参照する。ただし**形式的に完備な族、被約基底上の局所条件、双対数や任意の非被約Artin小拡大では適用範囲を区別する。** 現行原稿 lem:koszul-first-order-degree-three は、双対数 A=k[ε]/(ε²) について Koszul 双加群解消の Hochschild 2-cocycle と結合積の構成から直接証明したものである。2-jet prop:noncubic-transverse-second-order は三次 Hilbert 階数49条件のk[t]/t³上の持上げであり、同章の一般定理を無検査で当てはめて**全次数二次平坦性**を主張していない。
+同書 **Chapter 6, Proposition 7.1, Proposition 7.2, Theorem 7.3（pp.128–130）** の本文・証明を公開テキストで照合した。係数環は任意のNoetherian局所環であり、被約性・整性・完備性を要求しない。二次環の各次数が有限生成で、一次・二次・三次が自由、剰余体の環がKoszulなら、全次数が自由で、関係部分加群の格子は分配的かつ全商が自由となる。本稿 `lem:relative-koszul-degree-three` はこの既知定理を適用し、交叉の任意底変更と相対Koszul解消を明示する。既存一次補題の直接Hochschild証明は保持するが、二次jetの全次数平坦性も `cor:noncubic-second-order-all-degrees` により確立した。高次Artin持上げ自体・相対H2認識の証明とは区別する。
+
+同書 Chapter 2, Corollary 6.3はKoszul環の正則正規二次商がKoszulであることを含む。本稿 `prop:all-h2-antiserre-koszul` では中心性が不要であることを明記し、二行の環変換Torスペクトル系列による直接証明を併記した。
 
 thm:noncubic-hh01-hh2 の低次 HH の次数零成分の計算は、Hochschild-Koszul cochain C¹=Hom(V,R₁)、C²=Hom(J,R₂)、C³=Hom((V⊗J)∩(J⊗V),R₃) における微分の階数と生成元の基底変更軌道を照合したもの。既存の有限 foundation 代数に関する HH≥3 消滅とは異なる。noncubic の横断法方向で二次障害が消えるという局所計算の先行研究上の新規性は未確定。
 

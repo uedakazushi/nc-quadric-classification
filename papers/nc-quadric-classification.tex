@@ -1,8 +1,8 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.7
+% 日本語 LuaLaTeX。2026-11-21 / v1.8
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
-\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
 \usepackage[margin=25mm]{geometry}
 \usepackage{booktabs,enumitem}
 \usepackage[unicode,pdfusetitle,colorlinks=true,
@@ -44,7 +44,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.7（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.8（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -100,7 +100,11 @@ $HH^1$ で $1,1,2$、$HH^2$ で $3,3,5$ と決まる。
 三次条件の横断接空間 $2,2,3$ 次元については、
 基底と基底の各二項和の二次補正を厳密な整数演算で構成し、
 三次Hilbert階数条件の二次障害が消えることも証明する。
-ただし高次形式変形や相対 Abel 圏への実現は未証明である。
+全 $\HH$ の反 Serre 環が Koszul であることと、
+Noetherian 局所環上の Koszul 変形原理を用いると、
+全幾何ファイバーが $\HH$ 型である $X_3$ の族は全次数で平坦となる。
+従って既存の二次 jet も全次数平坦な代数の変形を与える。
+ただし次の Artin 段階への持上げや相対 Abel 圏への実現は未証明である。
 修正した定義では、cubic/noncubic の型を局所定数とした
 表示スタックの非交和は、全幾何点と慣性を保つ有限型 Artin スタックとなるが、
 両型間の特殊化を除外する。
@@ -448,6 +452,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 
 \input{sections/foundation_stack}
 \input{sections/noncubic_stack}
+\input{sections/relative_koszul}
 
 \section{同値類の分類後に残る問題}
 \label{sec:open-problems}

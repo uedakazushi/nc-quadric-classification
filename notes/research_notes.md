@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.8（数学原稿v1.7）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.9（数学原稿v1.8）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -9,6 +9,10 @@
 右加群を採用し、`B_n=Hom(O,sⁿO)`、`a*b=s^{deg b}(a)∘b`。`Γ_*(M)`の右作用も同じ順序。cubic repoの表示された積と反対なので、外部のNakayama・正規化自己同型の公式を直接コピーしない。
 
 強いH2条件は `B ≅ A/(g)`、`A`は型14641、`g∈A₂`は正則正規。`g`の代表のスカラーは区別せず、最終対象ではambient自体を忘れる。`s²≅S⁻¹[2]`の同型は指定しない。根同型をrigidifyしたmoduliやtrace coherenceは別問題である。
+
+## 相対平坦性の確立した認識
+
+`papers/sections/relative_koszul.tex` に証明を置く。全H2の適合切断環BはKoszul AS4環の正則正規二次商なのでKoszul、反Serre環R=B^(2)もKoszulである。PP2005 Chapter 6 Theorem 7.3は任意のNoetherian局所環に適用できる。三次まで平坦で全幾何fiberがKoszulなら、全次数局所自由性と任意底変更に整合する左右Koszul解消を得る。このため、H2点を中心とする任意のArtin基底上のX3変形と、既存の横断二次jetは全次数平坦である。次のArtin段階の存在、相対noetherian heart、Serre・平方根・AS被覆の認識はこの定理には含まれない。
 
 ## スタック構成の現状
 

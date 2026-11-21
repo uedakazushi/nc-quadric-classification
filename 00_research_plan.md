@@ -1,20 +1,16 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.8。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.7。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
+2026-11-21 / v0.9。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.8。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
-**最優先目標は内在的相対モジュライ $\mathfrak H_2$ の具体的な有限型商表示と、全pointed exact同値・降下・相対再構成を証明することである。** 現行の $\mathcal H_2$ の体上分類は完成済みだが、$\mathfrak H_2$ は未構成であり、foundation表示 $\mathfrak Q_{\mathrm{fnd}}$ や関係式の閉包 $\mathfrak Z_2$ と同一視しない。cubic の比較例は、指定された相対条件付きの $\mathfrak H_3=[X^{\mathrm{H3}}/\mathrm{PGL}_4]$ である。
+**最優先目標は、Oのみを構造として指定する相対族の定義を明確にし、内在的モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所に存在する性質とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
-**今回の到達点：** 反Serre環の偶数Veroneseに対して任意の基底上の二次提示を直接証明し、全 $\mathcal H_2$ 対象・cubic/noncubic両chart・各noncubic点への平坦な特殊化族で、九生成元・五十六二次関係から**全次数**を復元できるようにした。noncubicの二形式六係数は、九生成元の積から常に単位となる25個のminorを使い、Grassmannianの固定affine cellへ多項式的に**局所閉埋込み**となる。六係数の回収式を直接示し、厳密検算を追加。cubicの関係式像の被約既約閉包 $Z_2$ を取り、有限型Artin商 $[Z_2/\mathrm{PGL}_9]$ を構成した。幾何点の全H2実現集合はこの中で構成可能であり、cubicが稠密、noncubic全点はその閉包に入る。以前のnoncubic中心Clifford・相対Serre・相対qgr heartの結果を保持する。
+**確立した入力。** 体上の全 $\mathcal H_2$ のpointed exact同値類分類を保持する。foundation商 $\mathfrak Q_{\mathrm{fnd}}$、cubic開部分、noncubic表示商、および三次Hilbert条件の $[X_3/\mathrm{PGL}_9]$ は構成済み。全実現幾何点は表示からの誘導位相で既約で、全noncubic点へのcubic特殊化がpointed smooth proper dg族と全次数平坦な反Serre環族として存在する。これらの族に相対根・AZ・AS被覆があるという比較は未完成である。
 
-**今回の接空間検算と証明：** noncubicの二形式六係数が固定Grassmann cellに閉埋込みとなることを使い、PGL9の80次元Lie作用と六係数の接像を比較した。非交差基準点・一根共有点・二根対一致点で、両者の和は標数零で正確に81次元（軌道次元は80,80,79、交わりは5,5,4）。三次Hilbert階数49の条件は $L_J:V\otimes J\to(V^{\otimes2}/J)\otimes V$ のrank176であり、kernel328/cokernel49の線形化を1400変数・16072行として法101で全行検証した。その条件の接次元は法101で83,83,84。さらに法101の核83,83,84本を分母2以下の有理数へ復元し、整数係数の全線形化行列に対する零性と独立性を確認した。従って標数零でも接次元は**正確に**83,83,84である。三次Hilbert条件の接空間を既知の81方向で割った商は正確に2,2,3次元。ただしこれらは相対H2の実変形と同一視していない。これは内在的H2の接空間ではなく、三次Hilbert条件のdeterminantal locusについての結果である。証明・計算は prop:noncubic-third-degree-tangent と computations/verify_noncubic_degree3_tangent.py（numpy・numbaを用いるオプション検証）を参照する。
+**新たに閉じた平坦性の問題。** 全H2の適合切断環と反Serre環はKoszulである。Polishchuk–Positselski, Chapter 6, Theorem 7.3を一次資料で確認した結果、三次までの平坦性と全幾何fiberのKoszul性から、任意の非被約Noetherian基底上で全次数の平坦性・左右の相対Koszul解消が従う。従って全幾何fiberがH2反Serre環である $X_3$ 族、およびH2点の任意のArtin基底上の $X_3$ 変形は全次数平坦である。既存の横断2/2/3方向の二次jetにも適用できる。証明は `papers/sections/relative_koszul.tex`。次のArtin段階の存在やH2 heartへの実現を結論するものではない。
 
-**Koszul 理論と二次持上げの進展：** noncubic の二重平方環は中央二変数と二乗関係の二次 Gröbner 基底を持つため Koszul であり、偶数 Veronese と Zhang twist による反Serre環も Koszul。Koszul 双加群解消から、三次Hilbert条件を満たす一次二次関係変形は、双対数上で**全次数平坦**な次数付き代数変形となる。これにより三基準点の内部次数零 Hochschild コホモロジーを $HH^1=(1,1,2)$、$HH^2=(3,3,5)$ と決定した。さらに三次条件の横断接空間 $2,2,3$ の基底および各基底二項和について、二次Schur complement障害に対する厳密な有理数補正を構成。したがって各横断方向は $k[t]/(t^3)$ 上で三次Hilbert階数49を保って持ち上がる。今回の厳密な同等ローカル計算は、法101の候補を有理数・整数へ復元し、整数係数の線形化行列で零性を全検査した。GitHub の再現スクリプト computations/verify_noncubic_second_order.py は追加したが、その公開版を別環境で実行したとは報告しない。**内在的H2の平坦Abel変形とこれらの次数付き代数変形の同一視、三次以上の障害、全相対moduliの構成は未完成。**
+**現在の未解決点と着手。** 相対Abel圏・relative-perfect部分・Serre・AZを明記し、相対AZ再構成による $[X_3/\mathrm{PGL}_9]$ への全忠実性を証明する。その後、真の実現部分層の有限表示性を、平方根とAS被覆の有限表示incidenceおよびその局所持上げで調べる。degree-line twistとcanonical反Serre環の区別、fppf局所存在とscheme-theoretic imageの区別を守る。
 
-**定義を弱めて証明済みのモジュライ表示（v1.7）：** (1) 型を基底上で局所定数とした表示族の非交和
-$\mathfrak H_2^{\mathrm{split,pres}}=\mathfrak C\amalg\mathfrak N^{\mathrm{pres}}$
-は有限型 Artin スタックで、全 $\mathcal H_2$ の幾何点・pointed 慣性と一致する。ただし二既約・連結成分となりcubic→noncubic退化を除外する。(2) 普遍関係 $J\subset U^{\otimes2}$（rank56、$\dim U=9$）の三次関係行列 $L_3:U\otimes J\to (U^{\otimes2}/J)\otimes U$ の正確なrank176を課す局所閉スキーム $X_3\subset\operatorname{Gr}(56,81)$ とその商 $\mathfrak H_2^{(3),\mathrm{pres}}=[X_3/\operatorname{PGL}_9]$ は、rank R2=25、rank R3=49の二次提示族の真正な有限型 Artin モジュライである。度数スカラーgerbeは重み一の $\det(R_1)^{-11}\det(R_2)^2$ で中立化され、普遍次数付き環も存在。cubic/noncubicの両相対反Serrechartと既知の退化族がそこへ入るが、高次 Hilbert・相対H2の条件を課さず余分な点・変形を持つ。**二根対一致点では** $T_x\mathfrak H_2^{(3),\mathrm{pres}}$ の同型類の次元は5、滑らかな $\mathfrak Q_{\mathrm{fnd}}$ では4なので形式近傍も非同値。証明は prop:split-h2-presentation-moduli, prop:truncated-antiserre-moduli-stack, prop:truncated-versus-foundation-tangent。これらを無条件の内在的 $\mathfrak H_2$ の構成と記載しない。
-
-**未解決の核心：** $Z_2$ にはH2でない点が混入し得る。相対H2のheart・全flat coherent対象のSerre双対・AZ豊富性・AS正則被覆の存在、任意の内在的族の局所正規形、およびcubic/noncubic chartの相対全忠実性・貼合せ・有限表示を証明する。これらを閉包の構成や体上の関係式判定で代用しない。相対moduli自身の既約成分数も未確定である。詳細は第3・5・6節、証明は主原稿、検算は研究ノートを正本とする。
+**検証。** 現行入力のsource checkerはPASS。接次元5対4の証明では、接複体の切断と慣性Lie代数の代数群比較を補強した。LuaLaTeXの不足パッケージを補い、既存全稿の117頁組版が成功した。新節統合後の再組版・独立監査と公開二次障害スクリプトの再実行を進めている。最終的な実施範囲は研究ノートの検証節へ集約する。
 
 ## 1. 恒常的な研究原則と保存許可
 

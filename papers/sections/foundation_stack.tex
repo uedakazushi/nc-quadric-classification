@@ -1574,7 +1574,7 @@ $X_3$ はこの閉 determinantal locus の
 $\operatorname{rank}\mathcal L_3\ge176$ という開部分であり、
 両者の接空間は一致する。
 $\operatorname{PGL}_9$ 軌道の接次元は $79$ である。
-従って商スタックの接複体は
+従って商スタックの接複体の $[-1,0]$ 切断は
 \[
  [\mathfrak{pgl}_9\longrightarrow T_xX_3]
 \]
@@ -1585,11 +1585,25 @@ $\operatorname{PGL}_9$ 軌道の接次元は $79$ である。
 有限 \'etale 商の構成と
 命題~\ref{prop:foundation-stack} から、
 滑らかで相対次元三である。
-系~\ref{cor:h2-point-groupoid-foundation} の
-幾何点群oidの全充満性と
-命題~\ref{prop:noncubic-presentation-stack} の
-一致根対での慣性の計算により、
-その点の慣性 Lie 代数は一次元である。
+ここで慣性の Lie 次元を幾何点の集合だけから結論してはならない。
+foundation を一つ選び、その表示の安定化群を $H$ とする。
+$H$ は滑らかな線形群 $\mathcal G/K$ の閉部分群なので有限型である。
+固定有限代数の相対逆双対化双加群と構造対象 $e_0\Lambda$ から
+反 Serre 環の次数一・二の積を作る操作は有限完全複体の操作であり、
+任意の係数環への底変更と整合する。
+従ってこの操作は代数群の射
+\[
+ H\longrightarrow\operatorname{Stab}_{\operatorname{PGL}_9}(J)
+\]
+を与える。系~\ref{cor:h2-point-groupoid-foundation} と
+補題~\ref{lem:pointed-degree-scalar} により、$k$ 点では単射であり、
+その像は二つの内在的 ruling のうち選んだ一つを保つ部分群である。
+従って像の指数は高々二である。
+標数零の有限型群スキームは滑らかであり、代数群の射の像は閉部分群である。
+よって核は自明で、像と標的は同じ Lie 次元を持つ。
+後者は軌道の接次元の計算から $80-79=1$ である。
+さらに $\mathfrak F_0\to\mathfrak Q_{\mathrm{fnd}}$ は有限 \'etale なので、
+両者の慣性 Lie 次元は等しい。
 滑らかな Artin スタックでは
 \[
  \dim H^0(T_x\mathfrak Q_{\mathrm{fnd}})

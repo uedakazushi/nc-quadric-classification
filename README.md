@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.8、数学原稿v1.7。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.9、数学原稿v1.8。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
@@ -16,7 +16,9 @@
 
 体上の分類に続き、族と慣性を保つ構成を進めている。
 
-**定義を修正した場合に現在証明できる有限型モジュライ：** [新しい証明節](papers/sections/foundation_stack.tex) で二つの厳密な商スタックを構成した。第一は $\mathfrak H_2^{\mathrm{split,pres}}=\mathfrak C\amalg\mathfrak N^{\mathrm{pres}}$。全H2幾何点とpointed慣性を分類するが、型を局所定数にするためcubic→noncubicの退化が消え、既約・連結成分が人工的に2個になる。第二は $\mathfrak H_2^{(3),\mathrm{pres}}=[X_3/\mathrm{PGL}_9]$ で、$X_3\subset\mathrm{Gr}(56,81)$ は九生成元・56二次関係から作る三次関係行列のrankが**ちょうど176**（従って$\mathrm{rank}R_3=49$）という具体的な局所閉条件。実際の非被約族と普遍二次代数を持ち、全H2既知chart・特殊化族が入る。しかし高次平坦性と内在的H2条件は課さないので余分な対象がある。
+**全次数平坦性の認識を強めた。** [相対Koszul節](papers/sections/relative_koszul.tex)により、全H2の切断環・反Serre環はKoszulであり、全幾何fiberがH2反Serre環である $X_3$ の任意の非被約Noetherian族は全次数平坦となる。H2点における任意のArtin基底上の $X_3$ 変形にも適用でき、既存の二次jetの四次以上の平坦性はこの定理で解決した。平方根・Serre・heart・AS被覆の認識と次のArtin段階への持上げは別に必要である。
+
+**定義を修正した場合に現在証明できる有限型モジュライ：** [新しい証明節](papers/sections/foundation_stack.tex) で二つの厳密な商スタックを構成した。第一は $\mathfrak H_2^{\mathrm{split,pres}}=\mathfrak C\amalg\mathfrak N^{\mathrm{pres}}$。全H2幾何点とpointed慣性を分類するが、型を局所定数にするためcubic→noncubicの退化が消え、既約・連結成分が人工的に2個になる。第二は $\mathfrak H_2^{(3),\mathrm{pres}}=[X_3/\mathrm{PGL}_9]$ で、$X_3\subset\mathrm{Gr}(56,81)$ は九生成元・56二次関係から作る三次関係行列のrankが**ちょうど176**（従って$\mathrm{rank}R_3=49$）という具体的な局所閉条件。実際の非被約族と普遍二次代数を持ち、全H2既知chart・特殊化族が入る。しかし高次平坦性と内在的H2条件は課さないのでH2条件は保証されない。
 
 二根対一致のnoncubic点では、$[X_3/\mathrm{PGL}_9]$ の接複体の$H^0$の次元は **5**、滑らかなfoundation表示 $\mathfrak Q_{\mathrm{fnd}}$ は **4** であり、形式近傍は同値にならない。いずれの修正定義でも元の $\mathfrak H_2$ 全体を既に構成したとは主張しない。
 
