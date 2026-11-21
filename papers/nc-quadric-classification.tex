@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.66
+% 日本語 LuaLaTeX。2026-11-22 / v1.67
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v1.65（完全分類を中心とする原稿の再編）}
+\date{2026年11月22日\quad v1.67（先行研究と分類の境界を整理）}
 
 \begin{document}
 \maketitle
@@ -126,154 +126,58 @@ cubic/noncubic 族の相対効果性、framed 実現、
 
 \subsection{先行研究と本稿の範囲}
 
-相対 tails の導来認識では、Bondal--Van den Bergh
-\cite[\S4.1, Lemma 4.2.2]{BondalVanDenBergh2003} の torsion 局所化の方法を用いる。
-その体上の定理を一般基底へそのまま適用せず、
-有限 projective 係数の cubic 解消から acyclicity と有限 cohomological dimension を
-証明し直す（別稿~\cite[\texttt{sec:relative-cubic-tails}]{QuadricModuli2026}）。
-noncubic 境界では極小 Betti 数が跳ぶため、五頂点の非極小 bar 解消へ置き換える
-（別稿~\cite[\texttt{sec:noncubic-local-tails}]{QuadricModuli2026}）。
-有限 perfect 複体の特殊 fiber の集中から同じ局所環上の全前向き Hom を制御する。
-この段階には perfect 複体の標準的な fiber 判定\cite[Tag 0BDK]{StacksPerfectFibers} を用いる。
-これにより任意基底での canonical な非有界導来比較を得る。
-Noetherian 性は別に証明する必要があり、別稿~\cite[\texttt{sec:relative-cubic-noetherian}]{QuadricModuli2026}で
-相対 point curve と正規族を scheme-theoretic に構成して解決する。
-曲線商の Noetherian 性には Keeler \cite[Theorem 1.5, 付属 Erratum \S2]{Keeler2003}
-の一般 Noetherian 基底上の消滅を用いる。
-linear 部分の非被約な Segre 表示と、
-別稿~\cite[\texttt{sec:formal-noetherian-patching}]{QuadricModuli2026}の次数別形式的貼合せによって、
-単一の基底全体へ結論を移す。
-Noetherian 性の下では、有限解消と有限 presentation から
-一様 Serre 消滅と全相対条件を導ける。
-一方、非可換射影直線束の候補対角列を使う比較には具体的な反例がある
-（相対モジュライ別稿~\cite{QuadricModuli2026}）。
-既知の束の Noetherian 性 \cite[Theorem 1.2]{VanDenBergh2012P1} は保たれるが、
-その候補列は非零 coherent 対象を生成しない。
+Artin--Zhangのample pairと再構成 \cite{AZ1994} および
+Mori--Ueyamaの再構成定理 \cite[Definition 2.5, Theorem 2.6]{MU2021} を用いる。
+Van den Bergh \cite[arXiv v3, Theorem 5.5.10]{VdB2011} は
+三次三次元AS正則$\mathbb Z$-algebraをlinear/geometric quintupleと
+許容四つ組で分類した。本稿はその分類を既知入力とし、
+構造対象だけを指定した強い$\HH$の逆構成・全被覆・
+pointed exact同値判定を別に証明する。
+二次AS正則hullの既知構成
+\cite[arXiv v3, Theorem 6.1]{VdB2011} は、
+切断環だけを固定した全ambient被覆の一意性を意味しない。
 
+Smith--Van den Bergh \cite{SVdB2013} の中心二次切断のrulingと
+Mori--Ueyama \cite{MU2021} によるstandard性の修正、
+Mori--Nyman \cite[Theorem 6.13]{MN2025} のstandard中心切断からの
+cubic比較、Mori--Ueyama--Wu \cite{MUW2026} の
+Zhang twist判定を区別する。本稿のnormal helixは
+中心性・standard性・ambientの追加条件を全対象に仮定しない。
+退化曲線を含む一般のcubic偶数環のdomain性には
+Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} を用いるが、
+二周期の平方と反Serreの比較は本稿で個別に証明する。
 
-Artin--Zhang の再構成理論 \cite{AZ1994} は ample pair から切断環と圏を対応させる。
-本稿では ampleness と再構成の正確な形として
-Mori--Ueyama \cite[Definition 2.5, Theorem 2.6]{MU2021} を用いる。
-Van den Bergh \cite[Theorem 5.5.10]{VdB2011} は cubic 三次元
-AS 正則 $\mathbb Z$-algebra を geometric quintuple 等で分類し、
-同論文の Theorem 6.1、Proposition 6.6、Corollary 6.7 は
-二次の正則正規元を用いた四次元二次 AS 正則環による表示を与える。
-ここで番号は arXiv v3 の番号である。
-その quadratic hull の一意性には次数 $-4$ の自己同型の固定が含まれる。
-単に切断環だけを固定した ambient 一意性とは異なる。
+Okawa--Ueda \cite[Theorem 1.1]{OU2014} の
+geometric quintupleのGIT商$\PP(2,4,4,6)$、
+conifold potentialのGIT商$\PP(1,2,3,4)$ と
+次数四の射は既知の重要なモジュライ記述である。
+GITの軌道閉包・S-equivalenceを本稿のpointed exact同値と
+同一視しない。可換quadricの四つの適合根と既存の次数四射の関係も
+未解決である。
+Kitamura--Okawa \cite{OkawaKitamura2022OWR} に報告された
+cubic $\mathbb Z$-algebraの$D_\infty$軌道とline bundleの
+$\mathbb Z^2$分類は既知とする。詳細稿の刊行状態と
+本研究の精密な追加部分の新規性は引き続き照合を要する。
 
-Smith--Van den Bergh \cite{SVdB2013} は quantum $\PP^3$ 内の
-中心二次切断に対し、Clifford 型代数、smoothness、ruling の関係を研究した。
-その standard 性に関する記述には
-Mori--Ueyama \cite[Section 5, Appendix]{MU2021} による訂正がある。
-同じ tails 圏でも Zhang twist により standard でない表示が生じるため、
-表示の性質を無条件に $(\cC,\OO)$ の不変量とはしない。
-Mori--Ueyama--Wu \cite[Theorems 4.10, 4.12, 5.5]{MUW2026} は、
-二つの ruling の作用による Zhang twist の standard 性判定と、
-滑らかな中心 Sklyanin quadric の standard 性を証明した。
-同論文の一般的な定義には ambient の Auslander 正則性と
-Cohen--Macaulay 性という追加仮定があるため、型 $(1,4,6,4,1)$ だけから
-その全結果を本稿の全対象へ適用しない。
-また同論文の Introduction は、正規切断を graded Morita 同値で
-常に中心切断へ置き換えられるかを未解決としている。
-Mori--Nyman \cite[Theorem 6.13, arXiv v1]{MN2025} は、中心切断、domain、
-graded isolated singularity、standard という仮定の下で
-Gorenstein parameter 四の三次元 AS 正則 $\mathbb Z$-algebra への比較を与える。
-本稿の命題~\ref{prop:standard-pointed} はこの条件下で構造対象と平方根の像を記述する。
-定理~\ref{thm:normal-helix} は、二つの MCM 型を使い分けることで、中心性・standard 性・ambient の条件 $(*)$ を要しない比較を与える。
+Belmans \cite[Proposition 31, Corollary 32, Table 2]{Belmans2019} は
+既存のcubic AS正則$\mathbb Z$-algebraに由来する
+非可換二次曲面のHochschild高次消滅と退化型の数値を計算した。
+これは本稿のcubic領域の重要な先行研究である一方、
+cubic表示を持たない本稿のnoncubic対象の
+全分類・pointed同値判定を与えるものではない。
 
-Okawa--Ueda \cite[Theorem 1.1]{OU2014} の geometric quintuple の GIT 商
-$\PP(2,4,4,6)$ と conifold potential の GIT 商 $\PP(1,2,3,4)$、
-および後者から前者への次数四の射は、既存の重要なモジュライ記述である。
-しかしその tensor や helix の標識を忘れた同値関係まで自動的に与えるわけではない。
-本稿の可換点における四つの平方根と、その次数四の射を同一視する主張も行わない。
-Abdelgadir--Okawa--Ueda \cite[Definition 3.5, Proposition 3.6]{AOU2014} は、
-有限非巡回箙の関係式を固定次元の Grassmannian と道代数の自己同型群からなる
-有限型スタックとして構成する。Mori--Okawa--Ueda \cite[\S6]{MOU2019} は、
-sheaf bimodule、関係式、曲線と束のスタックを比較する。
-本稿の有限 foundation の構成はこの有限代数による方法に対応するが、
-標識の忘却と全 $\HH$ の相対再構成を別の問題として扱う。
-固定した dg 圏の対象についての To\"en--Vaqui\'e の代数性定理
-\cite[Theorem 3.6, Corollaries 3.15, 3.24]{TV2007} も、
-全ての変動する $\HH$ 圏のモジュライの代数性を直ちには与えない。
-
-
-変形論の入力は Lowen--Van den Bergh
-\cite[Theorem 3.1; §§7.7--7.9, author preprint]{LowenVanDenBergh2005} と
-\cite{LowenVanDenBergh2006}、および De Deken--Lowen
-\cite[Theorems 5.13, 5.15]{DeDekenLowen2011} の既知定理である。
-本稿では normal helix の compact 生成性と geometric Hom の条件を確認した上で適用する。
-これにより全 Artin Abel 変形の canonical 反 Serre 偏極を再構成し、
-関係式変形から Abel 変形への忘却の接核を
-$\operatorname{HH}^1$ と同定する。
-また、可逆双加群の曲率障害と近恒等群の平方根補正を使って Serre 根を持ち上げ、
-可換点では全 Artin 変形を相対 $\mathfrak H_2$ に実現する。
-被覆の構成には Bauwens--Van den Bergh \cite{BauwensVanDenBergh1998} と
-Van den Bergh \cite[\S6]{VdB2011} の canonical hull を参照するが、
-二周期の相対 tensor 恒等式、正則性、Koszul 双対の平坦性は別途証明する。
-定理~\cite[\texttt{thm:universal-cubic-hull}]{QuadricModuli2026} はこれを任意の geometric 二周期族へ拡張し、
-逆 coevaluation の核から全次数 projective な AS4 被覆を構成する。
-全 row・column の普遍 Noetherian 性には二周期自体も不要である
-（定理~\cite[\texttt{thm:relative-geometric-cubic-noetherian}]{QuadricModuli2026}）。
-被覆の存在と、同じ二周期が Serre 平方根になることは区別する。
-一次 Jacobian 被覆は全九次元の具体式を与える。
-Toda \cite[Theorem 4.7, arXiv v3]{Toda2009} の一次 Fourier--Mukai 持上げ定理は
-選択済みの四根の一次条件に用いるが、全 Artin 段階の結論は別途証明する。
-To\"en--Vaqui\'e \cite[Corollaries 3.22, 3.24]{TV2007} の一般基礎環上の
-自己同値モジュライに、標準根の全 Artin 存在・一意性を適用すると、
-可換点の foundation 表示の \'etale 近傍に実際の Morita 根を構成できる。
-さらに標準 foundation の二項移動と四項窓を代数化し、三次関係と
-四次重なりを有限局所自由な tensor として認識する
-（命題~\cite[\texttt{prop:quadric-etale-finite-window}]{QuadricModuli2026}）。
-可換点の局所環では全次数の三次提示・標準 cubic 解消と
-偶数環の相対 Koszul 性まで得る
-（定理~\cite[\texttt{thm:quadric-local-all-degree-cubic}]{QuadricModuli2026}）。
-幾何点の cubic AS 正則性は開近傍上で確認できる
-（命題~\cite[\texttt{prop:quadric-geometric-quintuple-open}]{QuadricModuli2026}）。
-全次数の一様な平坦性と内在 Hom の同定は
-命題~\cite[\texttt{prop:quadric-uniform-cubic-hom-open}]{QuadricModuli2026} で得られる。
-さらに一般 canonical hull により相対 AS4 被覆を同じ開上に構成できる
-（命題~\cite[\texttt{prop:quadric-zariski-homological-as-cover}]{QuadricModuli2026}）。
-この構成に canonical tails 比較を合わせ、
-定理~\cite[\texttt{thm:quadric-finite-type-effectivity}]{QuadricModuli2026} で
-有限型開上の内在的相対実現を得る。
-この族の全閉点で De Deken--Lowen の helix 持上げを適用し、
-指定された pointed 同型まで延長することで、
-系~\cite[\texttt{cor:quadric-effective-smooth-neighborhood}]{QuadricModuli2026} の滑らかな Artin 開近傍を構成する。
-有限表示な各基底変更への Artin 判定と smooth groupoid の商には
-\cite[Tags 02HY, 04X0, 04TK]{StacksSmoothAtlas} を用いる。
-これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
-
-Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} は、一般の cubic quadric が
-$\mathbb Z$-domain であることを証明した。この定理に整性・被約性の仮定はなく、
-本稿では退化曲線から作る even part の domain 性に適用する。
-一方、二周期の存在だけからその平方が反 Serre 関手であるとは結論できない。
-本稿は四次テンソルの巡回写像を双対化双加群の作用と直接比較し、
-全ての被約・非被約 $(2,2)$ 曲線について、束の貼合せと切断上の二周期を記述する。
-
-主結果は定理~\ref{thm:complete-h2-classification} である。
-既知の cubic データの分類を入力としつつ、全 $\HH$ のうち cubic 表示を
-持たない領域も回復し、その領域を二点集合の対で分類する。
-さらに、最初の軌道対象の内在的認識により、選んだ根を保持しない pointed exact 同値を
-有限の代数的条件へ帰着する。この判定は未知の AS 正則性や
-未知の自己同値群の計算を入力とせず、特殊な退化点も含む。
-既存の cubic 分類、$\mathbb Z$-domain 定理、embedding 定理を本稿の新しい成果とはしない。
-本稿の直接証明に関する包括的な先行研究調査と新規性の確定は、なお公表前の課題である。
-
-可換対象の認識、四つの適合根、具体的な Sklyanin・Ore・多パラメータ族は、
-定義と忘却を確認する独立した基準例として保持する。
-可換認識には一次生成性と $\dim B_1=4,\dim B_2=9$ が主要な入力であり、
-楕円型の具体例には \cite[arXiv v3, Proposition 7.1]{BSW2010}、
-\cite[arXiv v2, Lemma 1.5]{RRZ2014}、\cite[\S 10.5]{SVdB2013} を用いる。
-これらの例に複素数体や無限位数を仮定する箇所があっても、主定理は
-標数零の任意の代数閉体上で成り立つ。
-
-八本・十本・十二本矢の表示モジュライと反標準 avatar の関係は、別稿
-\cite{QuiverAvatarModuli2026} で扱う。同稿では二つの隣接乗法を保持する
-有限型 foundation スタックを構成し、二種類の十本矢開部分の交わりを
-八本矢部分として記述する。また、直積型 collection の mutation、
-$\Sigma_2$ を含む avatar の族、内在的忘却に必要な相対条件を比較する。
-この有限表示の開性は、本稿の $\mathfrak H_2$ 実現部分の開性とは別である。
+局所有限型基底上の相対Koszul・Noetherian貼合せ、
+Artin変形・Serre根、canonical tailsと
+noncubic境界の相対groupoidは別稿
+\cite{QuadricModuli2026} にまとめる。
+そこではLowen--Van den Bergh \cite{LowenVanDenBergh2006}、
+De Deken--Lowen \cite{DeDekenLowen2011}、
+Polishchuk--Positselski \cite{PolishchukPositselski2005}の
+既知定理と相対効果性を区別する。
+八・十・十二本矢の表示とavatarは別稿
+\cite{QuiverAvatarModuli2026} の対象とする。
+本稿は体上の分類に必要な証明を保持し、
+B固有の相対主定理を分類の証明に循環して用いない。
 
 \section{構造対象と存在条件}
 \label{sec:definition}

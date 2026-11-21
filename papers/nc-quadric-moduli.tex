@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.22（相対モジュライ原稿の現行構成）
+% 日本語 LuaLaTeX。2026-11-22 / v0.23（相対モジュライ原稿の現行構成）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象付き非可換二次曲面の内在的モジュライ：\\代数性と noncubic 境界}
 \author{}
-\date{2026年11月22日\quad v0.22（依存関係と公表前監査を継続）}
+\date{2026年11月22日\quad v0.23（依存関係と公表前監査を継続）}
 
 \begin{document}
 \maketitle
@@ -74,14 +74,66 @@ Aの体上の完全分類、normal helixなどの分類用定理を入力とす�
 \tableofcontents
 
 \section{Introduction}\label{sec:moduli-intro}
-体上の pointed exact 同値類の分類と、非被約底を含む相対族・自己同値・降下の分類は異なる。
-本稿は、構造対象の exact 同値を保ちつつ、選んだ Serre 平方根や ambient を忘れるモジュライを扱う。
-体上の分類を \cite{QuadricIntrinsic2026} から用いる。
-Artin--Zhang \cite{AZ1994}、Van den Bergh \cite{VdB2011}、
+
+\subsection{対象と主結果}
+体上のpointed exact同値類の分類と、非被約基底を含む相対族・
+自己同値・降下の分類は異なる。本稿は
+\cite{QuadricIntrinsic2026} の体上の強い非可換二次曲面
+$(\mathcal C,\OO)$の分類を入力に、構造対象$\OO$だけを保持する
+内在的な相対$\HHstack$を扱う。適合するexactな反Serre平方根、
+同じ根のAS4被覆と根の同型はfppf局所での存在条件であり、
+標識には加えない。一般のNoetherian基底上で同じ素朴なAbel公理を
+課した関手との一致は、局所有限型site上の主結果とは別問題である。
+
+第一の主結果は定理~\ref{thm:global-h2-smooth-finite-type} と
+系~\ref{cor:global-xas-smooth-scheme} である。
+$\HHstack$は有限型・smooth・既約・純次元三のArtinスタックであり、
+対角はaffine有限表示、そのframed実現$X_{\mathrm{as}}$は
+smooth既約八十三次元スキームとなる。これは幾何点の分類だけでなく、
+有限型atlas上の実際の相対Abel族と指定pointed同型の持上げから得る。
+
+第二に、定理~\ref{thm:noncubic-boundary-smooth-codim-two} と
+定理~\ref{thm:noncubic-intrinsic-presentation-equivalence} は、
+cubic開の補集合の被約構造$\mathfrak N$がsmooth純次元一で
+余次元二の正則閉埋込みをなし、二つの非退化二元二次形式の
+表示商$[P/G]$と、非被約test上の相対groupoidとして同値であることを示す。
+さらに境界のgood moduli $\mathbb A^1_\chi$、
+DM開の粗モジュライと全$\HHstack$の粗モジュライ代数空間の不存在を
+区別する（第~\ref{sec:noncubic-boundary-comparison}節）。
+一致根対では有限成分を含む全慣性作用を計算し、
+定理~\ref{thm:noncubic-coincident-formal-pair} で
+境界を含む形式局所商を記述する。この共通étale近傍上の
+good moduliが三次元でsmoothであることは、
+$\HHstack$のZariski開全体へのgood moduliの降下を意味しない。
+
+\subsection{既知入力と本稿の追加部分}
+Artin--Zhang \cite{AZ1994} の再構成、
+Van den Bergh \cite{VdB2011} のcubic分類、
 Lowen--Van den Bergh \cite{LowenVanDenBergh2005,LowenVanDenBergh2006}、
-De Deken--Lowen \cite{DeDekenLowen2011}、
-Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
-相対的な有限型効果性・stack比較についての新しい証明を区別する。
+De Deken--Lowen \cite{DeDekenLowen2011} の変形・helix持上げ、
+Polishchuk--Positselski \cite{PolishchukPositselski2005} の
+Koszul変形を既知入力として用いる。
+
+特にBelmans \cite[Proposition 31, Corollary 32, Table 2]{Belmans2019} は
+cubic AS正則$\mathbb Z$-algebraに対応する
+非可換二次曲面のHochschild cohomologyを扱い、
+$HH^{\ge3}=0$ と $\dim HH^2-\dim HH^1=3$、
+および退化型の$HH^1,HH^2$を求めた。
+本稿のcubic側の数値・障害消滅はこの既知結果と比較する。
+一方、本稿のcubic表示を持たないnoncubic対象、
+その横断変形・相対境界の慣性や形式局所構造は
+同論文から無条件には従わない。
+これらの組合せの包括的新規性はまだ未確認である。
+
+証明は相対Koszul・Noetherian性と有限foundationの変形、
+適合Serre根と同じ根のAS4被覆を準備し、
+cubic/noncubicの有限型効果性を別々に確立してから
+smooth atlasを得る。境界では非被約正規形、相対tilting、
+反Serre再構成によって二形式表示との同値を示し、
+慣性・good/coarse moduli・形式局所構造を求める。
+楕円型の構造対象忘却も扱う。
+本文に証明があることと、全証明の独立再検証、
+新規性調査、組版・PDF表示確認は区別する。
 
 \input{moduli/relative_definitions}
 \input{moduli/relative_koszul}

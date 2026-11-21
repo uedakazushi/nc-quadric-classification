@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.44。主論文v1.44に対応する現行の一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.44。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -8,6 +8,12 @@
 本研究の対象は、構造として指定された $(\mathcal C,\mathcal O)$ であり、exact autoequivalence $s$、同型 $s^2\simeq\mathbb S^{-1}[2]$、および orbit algebra の quadratic AS-regular ambient 表示は存在条件として扱う。この区別を保った分類と marking 忘却が課題である。
 
 既知の cubic AS-regular $\mathbb Z$-algebra、geometric quintuple、admissible quadruple の分類や hypersurface embedding を新成果として扱わない。特に、quadratic hull の存在と quadratic envelope による canonical recovery は別の主張である。
+
+## Belmansの既知Hochschild計算との対照
+
+Pieter Belmans, *Hochschild cohomology of noncommutative planes and quadrics*, **J. Noncommut. Geom.** 13 (2019), no. 2, 769–795, DOI [10.4171/JNCG/338](https://doi.org/10.4171/JNCG/338), [arXiv:1705.06098v2](https://arxiv.org/abs/1705.06098v2)。2026-11-22に原文のProposition 31、Corollary 32、Table 2と出版社書誌を確認。cubic AS正則Z-algebraからの四項tilting代数は大域次元2であり、高次HHの消滅とdim HH²−dim HH¹=3、および幾何的四つ組の退化型別の表が得られる。これは強いH2のcubic領域に対する既知入力であり、cubic表示を持たないnoncubic領域には無条件に適用しない。
+
+現行Bのcubic foundationの高次HH消滅・数値差はBelmansとの既知の重なりを明記する。全H2の相対効果性、noncubic横断変形、境界の相対groupoid・慣性と形式対は別の主張であり、包括的新規性は未確認。原文の定理の確認と、原稿の全証明の独立検証は別の状態とする。
 
 ### Veronese 同値の参照状況（2026-11-21）
 
