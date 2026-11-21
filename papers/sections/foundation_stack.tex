@@ -1391,6 +1391,187 @@ $\mathcal R_n\otimes\mathcal L^{-n}$ の重みは零である。
 別に定める相対 Hilbert 条件の locus で課す。
 \end{proof}
 
+
+\subsection{定義を弱めて得られる二つの厳密な相対モジュライ}
+\label{subsec:weak-moduli-stack-choices}
+
+$\mathfrak H_2$ の内在的相対定義と、既に得た
+有限型表示を混同しないために、
+\emph{実際にモジュライスタックとして証明できる弱い定義}
+を明記する。第一の定義は、体上での $\HH$ の
+群oidと慣性を保つ代わりに型の間の特殊化を捨てる。
+第二の定義は、特殊化を保持するために
+許容対象の条件を三次 Hilbert 関数まで弱める。
+
+\begin{proposition}[型を固定した表示族のモジュライ]
+\label{prop:split-h2-presentation-moduli}
+$\mathfrak C=q(\mathfrak F_{\mathrm{cub}})$ を
+命題~\ref{prop:h2-component-density} の cubic 開部分、
+$\mathfrak N^{\mathrm{pres}}$ を
+命題~\ref{prop:noncubic-presentation-stack} の
+noncubic 表示スタックとする。
+\[
+ \mathfrak H_2^{\mathrm{split,pres}}
+ :=\mathfrak C\ \amalg\ \mathfrak N^{\mathrm{pres}}
+ \tag{split-H2}\label{eq:split-h2-presentation-stack}
+\]
+は有限型 Artin スタックであり、
+各成分は既約かつ連結で、
+その既約成分数と連結成分数はいずれも二である。
+任意の代数閉拡大体 $K/k$ について、
+その幾何点群oidは元の $\HH(K)$ の
+pointed exact 同値類と全ての慣性を再現する。
+ここでこのスタックが分類するものは、
+\emph{cubic または noncubic のどちらかの表示を
+族全体で選び、型を局所定数とする表示族}である。
+\end{proposition}
+\begin{proof}
+$\mathfrak C$ は $\mathfrak Q_{\mathrm{fnd}}$ の
+非空開部分スタックであり、滑らか・有限型で既約である。
+$\mathfrak N^{\mathrm{pres}}=[P/G]$ は
+非空な既約開 $P\subset\mathbb A^6$ と
+滑らかな有限型群 $G$ の商なので、
+同じく滑らか・有限型・既約である。
+非交和は二つの開閉な既約・連結成分を持つ。
+幾何点群oidについては、
+系~\ref{cor:h2-point-groupoid-foundation} の全充満性、
+命題~\ref{prop:cubic-foundation-open} の cubic 逆構成、
+命題~\ref{prop:noncubic-presentation-stack} の
+同値類と慣性の計算、そして
+定理~\ref{thm:complete-h2-classification} の全被覆・非交差性を
+合わせればよい。
+
+この表示族の定義では、連結な基底上で
+cubic と noncubic を別々の開閉な場合に分けている。
+従って命題~\ref{prop:h2-line-degeneration} で構成した
+cubic 一般点・noncubic 特殊点の族を、
+元の自然な意味での相対 $\HH$ 族として許容するかどうかに
+関係なく、このスタックには入れられない。
+\end{proof}
+
+\begin{proposition}[三次Hilbert値までの相対二次提示のスタック]
+\label{prop:truncated-antiserre-moduli-stack}
+$U$ を九次元の $k$-線型空間、
+$Y=\operatorname{Gr}(56,U\otimes U)$ とする。
+$Y$ 上の普遍関係部分束を $\mathcal J$、
+$\mathcal E=(U\otimes U)/\mathcal J$ とし、
+\[
+ \mathcal L_3:
+ U\otimes\mathcal J\longrightarrow
+ \mathcal E\otimes U
+\]
+を $(1\otimes r)$ に関係商を作用させる自然な射とする。
+この階数が正確に $176$ である
+スキーム論的な locally closed rank stratum を
+\[
+ X_3=\{J\in Y:\operatorname{rank}(\mathcal L_3)=176\}
+ \tag{H2-X3}\label{eq:truncated-antiserre-locus}
+\]
+と置く。
+すると
+\[
+ \boxed{\quad
+ \mathfrak H_2^{(3),\mathrm{pres}}
+ = [X_3/\operatorname{PGL}(U)]
+ \quad}
+ \tag{H2-trunc}\label{eq:truncated-antiserre-stack}
+\]
+は有限型 Artin スタックであり、
+次の意味で\emph{三次までの二次環の相対提示}
+のモジュライスタックである：
+$\operatorname{GL}(U)$ 版は、
+階数九の生成ベクトル束 $\mathcal V$ と
+階数五十六の局所直和因子
+$\mathcal J_T\subset\mathcal V^{\otimes2}$ で
+二次環 $R=T(\mathcal V)/(\mathcal J_T)$ の
+$\operatorname{rank}R_2=25$、
+$R_3$ が階数四十九の有限局所自由加群となる
+族を分類する。
+$\operatorname{PGL}(U)$ 版では
+次数一の共通スカラーを rigidify する。
+
+$\mathfrak H_2^{(3),\mathrm{pres}}$ 上には、
+各次数での共通線束 twist を規格化した
+\emph{通常の普遍次数付き代数}
+$\mathcal R^{\mathrm{norm}}$ が存在し、
+その第零・一・二・三次数は
+階数 $1,9,25,49$ の局所自由加群となる。
+$\mathfrak C$ と $\mathfrak N^{\mathrm{pres}}$
+からの既存の反 Serre 関係射は
+$[X_3/\operatorname{PGL}(U)]$ を経由し、
+命題~\ref{prop:line-degeneration-antiserre-algebras} の
+全ての特殊化族もここを経由する。
+しかし $n\ge4$ の平坦性、相対 Serre・AZ・AS 被覆、
+内在的 $\HH$ の条件は $X_3$ の定義には含めない。
+\end{proposition}
+\begin{proof}
+$\mathcal E$ は階数 $81-56=25$ である。
+二次環の三次成分は
+\[
+ R_3\simeq
+ \operatorname{coker}\bigl(
+ U\otimes\mathcal J\to\mathcal E\otimes U\bigr)
+\]
+であるから、$\operatorname{rank}\mathcal L_3=176$
+という条件は、三次成分が階数
+$25\cdot9-176=49$ の局所自由加群であることと同値である。
+行列の階数が所定値である条件は
+大きい小行列式の消滅と少なくとも一つの
+所定次数小行列式の可逆性で定める
+局所閉 stratum であり、その上で像・余核は部分束になる。
+この構成は基底変更と両立し、
+$\operatorname{PGL}(U)$-不変な有限型スキーム $X_3$ を与える。
+$\operatorname{PGL}(U)$ は滑らかな有限型群なので、
+商は有限型 Artin スタックとなる
+\cite[Tag 0DLS]{StacksModuli}。
+
+$\operatorname{GL}(U)$ 版の群oid解釈は
+生成元の枠束と関係部分束の降下そのものである。
+中心 $\mathbb G_m$ は $X_3$ に自明に作用するが、
+全次数 $R_n$ には重み $n$ で作用する。
+命題~\ref{prop:antiserre-gerbe-neutral} の
+線束
+\[
+ \mathcal L=
+ (\det\mathcal R_1)^{-11}
+       \otimes(\det\mathcal R_2)^2
+\]
+は中心重み $-11\cdot9+2\cdot(2\cdot25)=1$ を持つ。
+従って全次数で
+$\mathcal R_n^{\mathrm{norm}}=
+ \mathcal R_n\otimes\mathcal L^{-n}$
+は中心重み零になり、
+環構造ごと $\operatorname{PGL}(U)$ 商へ降下する。
+これは任意底変更と整合する
+普遍二次環である。
+高次成分が局所自由であるとはここでは主張しない。
+
+cubic・noncubic の既存の相対反 Serre 環と
+それらを結ぶ特殊化族では、
+全次数で階数 $(2n+1)^2$ の局所自由性が
+既に証明されている。従って三次階数は四十九であり、
+その関係射は $X_3$ を経由する。
+\end{proof}
+
+\begin{remark}[三つのスタックの役割と内在的 $\HHstack$]
+$\mathfrak H_2^{\mathrm{split,pres}}$ は
+全幾何点・慣性を正しく含むが
+cubic から noncubic への特殊化を許さず、
+見かけ上二つの連結成分を持つ。
+一方 $\mathfrak H_2^{(3),\mathrm{pres}}$ は
+両型を結ぶ既知の相対反 Serre 環の族を含むが、
+三次以外の全 Hilbert 条件を課さないため
+余分な対象と非被約変形を含む可能性がある。
+$\mathfrak Q_{\mathrm{fnd}}$ も
+実際の有限代数のモジュライであるが、
+全点が内在的 $\HH$ 対象となるわけではない。
+これらのいずれも内在的 $\HHstack$ の
+有限型 Artin 表示を証明するものではない。
+ただし三次 locus $X_3$ は、
+未構成の許容関係式 locus $X_{\mathrm{as}}$
+を含む明示的有限型の代数的環境を与える。
+\end{remark}
+
 \begin{remark}[有限型 locus と相対再構成の不足]
 まず、幾何点の実現集合やその被約スキーム像を取るだけでは、
 非被約底上の変形を指定したことにならない。
