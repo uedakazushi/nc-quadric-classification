@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.20
+% 2026-11-21 / v1.21
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1120,34 +1120,36 @@ Noetherian 性の議論により $A_T$ も左右 Noetherian。
 \end{proof}
 
 
-\begin{corollary}[可換点の形式完備近傍の Noetherian AS4 被覆]
-\label{cor:quadric-completed-noetherian-as4}
+\begin{corollary}[可換点の局所基底での Noetherian AS4 被覆]
+\label{cor:quadric-point-local-noetherian-as4}
 命題~\ref{prop:quadric-zariski-homological-as-cover} の
-可換点 $u$ について $R=\widehat{\mathcal O}_{U^\circ,u}$ とする。
+可換点 $u$ と、閉点を $u$ へ送る任意の Noetherian 局所
+$\mathcal O_{U^\circ,u}$-代数 $R$ を取る。
 このとき $B_R$ と homological 被覆 $A_R$ は左右 Noetherian である。
 従って $A_R\twoheadrightarrow B_R$ は
 型 $(1,4,6,4,1)$ の相対 Noetherian quadratic AS4 被覆であり、
 正則正規二次切断と相対 Koszul/AS 双対性は
 全ての基底変更と整合する。
-同じ結論は可換閉点を保つ任意の完備 Noetherian 局所
-$R$-代数への局所基底変更にも成立する。
-ただし有限型開全体・非完備基底変更での Noetherian 性、
-相対 heart・AZ・$\mathfrak H_2$ の代数性は結論しない。
+特に $R=\mathcal O_{U^\circ,u}$ 自体とその完備化に適用できる。
+ただし単一の有限型開全体・その任意の底変更での
+Noetherian 性、相対 heart・AZ・$\mathfrak H_2$ の代数性は
+結論しない。
 \end{corollary}
 \begin{proof}
 $B_R$ は全次数で有限自由であり、その特殊ファイバーは
 $Q=\mathbb P^1\times\mathbb P^1$ の可換 Segre 環である。
-補題~\ref{lem:complete-local-commutative-fibre-noetherian} より
+補題~\ref{lem:local-commutative-fibre-noetherian} より
 $B_R$ は左右 Noetherian。
 $A_R$ は正則正規二次元 $g$ で $A_R/(g)=B_R$
 となるから、定理~\ref{thm:relative-finite-as-cover} の
 正規元による Noetherian 性の議論を適用して
 $A_R$ も左右 Noetherian となる。
 他の相対 AS4 条件は既に homological 被覆から従う。
-完備 Noetherian 局所 $R$-代数 $R'$ への局所射では、
-各 $(B_{R'})_n$ は有限自由であり、特殊ファイバーは
-可換 Segre 環の剰余体拡大なので、
-同じ補題と正規元の議論を $R'$ へ適用できる。
+一般の Noetherian 局所 $R$ への射でも、
+閉点が $u$ に写るので特殊ファイバーは
+可換 Segre 環の剰余体拡大である。
+全次数有限自由性は任意底変更で保たれるから、
+同じ補題と正規元の議論が使える。
 \end{proof}
 
 \begin{remark}[この代数化で残る条件]
@@ -1160,8 +1162,8 @@ $A_R$ も左右 Noetherian となる。
 系~\ref{cor:quadric-uniform-even-koszul} の相対 Koszul 性、
 および命題~\ref{prop:quadric-zariski-homological-as-cover} の
 Zariski 局所 homological AS4 被覆、
-系~\ref{cor:quadric-completed-noetherian-as4} の
-完備局所環上の真の Noetherian AS4 被覆である。
+系~\ref{cor:quadric-point-local-noetherian-as4} の
+非完備基底も含む局所環上の真の Noetherian AS4 被覆である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その被覆と根が Noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
