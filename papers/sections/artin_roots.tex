@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.18
+% 2026-11-21 / v1.19
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -997,6 +997,128 @@ Noetherian な有限型開上で
 局所分裂完全性と任意底変更への整合性が従う。
 \end{proof}
 
+
+\begin{proposition}[可換点の Zariski 近傍での homological AS4 被覆]
+\label{prop:quadric-zariski-homological-as-cover}
+命題~\ref{prop:quadric-uniform-cubic-hom-open} の
+可換点 $u\in U(k)$ を含む有限型 Zariski 開部分
+$U^\circ\subset U$ が存在し、同じ開の軌道環
+\[
+ B=\bigoplus_{n\ge0}\operatorname{Hom}
+       (L_0,\mathsf s^nL_0)
+       =T_{\mathcal O_{U^\circ}}(B_1)/(K),
+ \qquad \operatorname{rk}K=7
+\]
+に対し、階数六の直和因子 $H\subset K$ を選べる。
+$A=T(B_1)/(H)$、$G=K/H$ とすると、次が成立する。
+\begin{enumerate}
+\item $A_n$ は全次数で有限局所自由で
+  $\operatorname{rk}A_n=\binom{n+3}{3}$。
+  各幾何ファイバーは型 $(1,4,6,4,1)$ の quadratic
+  Koszul AS 正則環である。左右 Koszul 解消および
+  相対双加群 Koszul 解消は各内部次数で局所分裂完全で、
+  任意の底変更後も完全である。
+\item $G$ の局所生成元 $g$ は $A$ の次数二の正則正規元であり、
+  $A/(g)\simeq B$ は全次数の基底変更と整合する。
+  $g$ の左右乗法は全次数で直和因子への単射である。
+\item $A^!$ は最高次数四の相対 Frobenius 二次環であり、
+  その階数列は $(1,4,6,4,1)$。
+  相対 AS Gorenstein の左右双対性を持つ。
+\end{enumerate}
+以上を \emph{homological AS4 被覆} と呼ぶ。
+本稿の定義~\ref{def:relative-h2} の相対 AS4 被覆には
+左右 Noetherian 性も必要であり、これは本命題の結論に含まない。
+任意の Noetherian 底変更 $T\to U^\circ$ で $B_T$ が
+左右 Noetherian ならば、$A_T$ もそうなり、
+その $T$ 上では本来の相対 AS4 被覆となる。
+本命題だけでは相対 tails heart、AZ 豊富性、
+canonical compact 圏との比較および $\mathfrak H_2$
+の代数性も結論しない。
+\end{proposition}
+\begin{proof}
+関係の生成を選択から作る。
+命題~\ref{prop:quadric-etale-finite-window} の
+$V_i,R_i,W_i$ を用いて
+\[
+ K\simeq
+ S_0=R_0\otimes V_3+V_0\otimes R_1
+ \subset V_0\otimes V_1\otimes V_2\otimes V_3
+\]
+と同定する。
+これは偶数 orbit 環の二次関係についての同型であり、
+全次数の比較は命題~\ref{prop:quadric-uniform-cubic-hom-open}
+によって保証される。
+$W_0$ を局所自明化して非零生成元 $w$ を取り、
+$w\in R_0\otimes V_3$ と
+$w\in V_0\otimes R_1$ の二つの階数二
+coevaluation を逆にする。
+それぞれから得られる $S_0$ 上の functional は
+$W_0$ をともに $2$ に送るので一致して貼り合い、
+全射 $\phi:S_0\to\mathcal O_U$ を与える
+（補題~\ref{lem:relative-canonical-hull-functional}
+の有限自由 tensor 構成と同じである）。
+$H=\ker\phi$ は階数六の直和因子となり、
+$w$ を単元倍しても $H$ は変わらない。
+この構成は任意の基底変更と可換する。
+
+次に $R=\mathcal O_{U,u}$、極大イデアル $\mathfrak m$ とし、
+$R_n=R/\mathfrak m^{n+1}$ と置く。
+有限 foundation、根 $\mathsf s$、$L_i$ は
+$R_n$ に制限すると可換 $Q$ の flat Artin 変形に対応する。
+根は標準根を還元とするため、根の Artin 一意性
+（系~\ref{cor:quadric-root-unique-all-artin}）の下で
+定理~\ref{thm:quadric-all-artin-h2} の根と一致する。
+同定した二周期 cubic 列から canonical hull を作る操作は
+$V_i,R_i,W_i$ の非退化な coevaluation とその核のみで
+記述されるため、全ての $n$ と底変更 $R_{n+1}\to R_n$
+で上記 $H\otimes R_n$ に一致する。
+従って Artin hull の命題
+~\ref{prop:relative-artin-hull-from-functional} によって、
+$H\otimes R_n$ は各 $n$ で実際の AS4 被覆を与える。
+
+ここで定理~\ref{thm:relative-finite-as-cover} の証明にある
+五つの\emph{有限} rank・normality・Frobenius 条件を使う。
+次数三・四の $A$、次数三・四・五の $A^!$、
+二次元 $G$ の三次正規性、低次数正則性、完全 pairing の
+全ては有限個の有限表示層の射と minor による
+局所閉条件である。
+この有限条件を定義する部分層は、
+$B$ が基底上 Noetherian でなくても構成できる。
+今得た全 $R_n$ 上の AS4 被覆により、
+その閉条件を与える有限個の式は
+$R/\mathfrak m^{n+1}$ で全て零である。
+Krull の交叉定理
+\cite[Tag 00IP, Lemma 10.51.4]{StacksKrullIntersection}
+により $\bigcap_n\mathfrak m^nR=0$ だから、
+各式は局所環 $R$ 自身で零である。
+必要な最大 minor と Frobenius pairing の行列式は
+可換点で単元なので、これらの非消滅条件と
+有限個の等式を同時に満たす $u$ の
+Zariski 開近傍 $U^\circ$ を取れる。
+これは幾何点集合上の零条件だけではなく、
+非被約基底を含む scheme-theoretic な零条件である。
+
+同じ定理~\ref{thm:relative-finite-as-cover} の証明で、
+この五条件から全次数の相対 Koszul 性、
+左右の正規二次元の正則性、
+Frobenius 双対と相対 AS Gorenstein 性を導く部分は、
+$B$ の Noetherian 性を使わない。
+実際、各幾何ファイバーの有限判定と
+補題~\ref{lem:relative-koszul-degree-three} から
+$A_n$ の局所自由性と相対 Koszul 解消を得る。
+三次の左右像の層としての一致が正規性を与え、
+各幾何ファイバーでの乗法単射を全次数の
+局所直和因子への単射へ持ち上げる。
+二次双対の完全 pairing から相対双対性も従う。
+ここでは Noetherian 性を含めない結論のみ用いる。
+
+最後に $B_T$ が左右 Noetherian なら、
+正規正則元 $g$ による有限次数の内部フィルトレーションを用いた
+定理~\ref{thm:relative-finite-as-cover} の
+Noetherian 性の議論により $A_T$ も左右 Noetherian。
+したがって追加仮定の下で本来の相対被覆となる。
+\end{proof}
+
 \begin{remark}[この代数化で残る条件]
 得られたのは有限 foundation の perfect 圏上の平方根、
 命題~\ref{prop:quadric-etale-finite-window} の四項窓、
@@ -1004,9 +1126,11 @@ Noetherian な有限型開上で
 可換点の局所環における全次数の cubic・二次提示、
 及び命題~\ref{prop:quadric-uniform-cubic-hom-open} の
 有限型開上での全次数 Hom・相対 cubic 解消、
-系~\ref{cor:quadric-uniform-even-koszul} の相対 Koszul 性である。
+系~\ref{cor:quadric-uniform-even-koszul} の相対 Koszul 性、
+および命題~\ref{prop:quadric-zariski-homological-as-cover} の
+Zariski 局所 homological AS4 被覆である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
-その根と helix が noetherian な相対 tails heart を与え、
+その被覆と根が Noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
 AZ 豊富性と全有限型基底変更を満たすことは別の相対実現命題を要する。
 Artin 基底上の heart exactness や witness 昇格を、冪零でない
