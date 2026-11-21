@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.32。主論文v1.32に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.33。主論文v1.33に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -88,6 +88,12 @@ Van den Bergh, *Non-commutative P¹-bundles over commutative schemes*, Trans. AM
 Van den Bergh arXiv:0807.3753v3 のLemma 5.2.4のlinear tensor標準形、Lemma 5.4.10–5.4.12のlinear/elliptic分離とadmissibility、Proposition 5.4.2とLemma 5.5.3のtame・切断次元、Theorem 5.5.6(1),(3)の核の正規族生成・regular性を一次本文で確認した。本稿では相対隣接行列のkernel線によりpoint-curveのshiftをscheme-theoreticに構成し、有限projective成分間の射のfiber判定で正規族を相対化する。fiberwise同型から非被約基底上の線束同型を推論しない。
 
 Keeler, *Ample filters of invertible sheaves*, J. Algebra 259 (2003), 243–283、[arXiv:math/0108068v5](https://arxiv.org/abs/math/0108068)、Theorem 1.5と付属Erratum §2（Theorem E2.5）を一次本文で確認した。射影スキームが任意の可換Noetherian基底上にあり、Hがampleなら、固定coherent Fに対してH^q(F⊗H^m⊗N)=0が全nef線束Nに一様なmで成立する。誤りの訂正前のLemma 3.3を使うのではなく、Erratumによる同定理の再検証を含めた形を使う。本稿ではhelixのparity別成分次数からprefix/H^mがrelative nefとなることを確認し、row/column idealの像層安定とこの消滅を組み合わせる。一般のrelative linear/elliptic貼合せの包括的な新規性は未確認である。
+
+## 効果的族からのsmooth atlas
+
+DDLの刊行版§4.1では基底は体に限定されず、coherent可換環の冪零全射R→AとAの有限表示性を仮定している。従ってTheorem 5.13(1)–(4)は任意の局所Artin small extension A′→Aへ直接適用できる。持上げた例外対象のHomはflatで還元と可換し、指定した全Hom framesを延長することができる。指定されたpointed同型はdg Moritaとcanonical反Serre環を経て、既存の全忠実性で戻す。
+
+Stacks [Tag 02HY](https://stacks.math.columbia.edu/tag/02HY), Lemma 37.12.2を一次本文で確認した。判定に使うSpec A′→Tのfinite type条件は、Tがfinite type kでA′がlocal Artinなら剰余体kのtestに帰着する理由を明記した。任意のH2族Tへの基底変更はambientのaffine有限表示対角により実際のschemeになる。[Tag 04X0](https://stacks.math.columbia.edu/tag/04X0), Lemma 94.17.2と[Tag 04TK](https://stacks.math.columbia.edu/tag/04TK), Theorem 94.17.3のsmooth groupoidの商定理も本文確認した。得られるのはQを含むH2内部の開部分の代数性であり、ambientの開部分との同一視や全H2代数性ではない。
 
 ## 確認した一次資料
 

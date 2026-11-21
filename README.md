@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.32、主論文v1.32、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.33、主論文v1.33、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -47,7 +47,9 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **有限型開での普遍Noetherian性とH2効果性。** `thm:relative-geometric-cubic-noetherian` は、全成分が有限projectiveでgeometric cubic表示と実際の二周期を持つ族の偶数環が、任意の可換Noetherian基底変更後に左右Noetherianであると示す。非線形開では隣接行列のkernelから相対point curveをscheme-theoreticに作り、Keelerの相対Fujita消滅で座標Z代数のrow/columnを有限生成にする。全次数projective核からregular normalな四次族を得て、偶数環へ戻す。linear閉部分はrank-one flatteningの厳密な因数分解と標準単項式で相対Segreへ帰着し、形式的貼合せで全基底を扱う。右積の規約にはC_ij=D_{−j,−i}を使う。`thm:quadric-finite-type-effectivity` により、可換Qを含む一つの有限型開U°でBとAが真に左右Noetherianとなり、U°→H2という全相対公理を満たす族を得る。一般H2全体の代数性は別の未解決問題である。
 
-**次の核心。** U°→H2のrepresentable smooth性とそのopen imageを認識し、その後に一般点・noncubic境界へ広げる。H2全体の代数性とX_asの表現可能性は未証明。[検証範囲](notes/research_notes.md#検証範囲と再現手順)。
+**Qを含むsmooth Artin開部分。** `cor:quadric-effective-smooth-neighborhood` は、上の効果的族q:U°→H2がスキームで表現可能かつsmoothであり、fppf像V_QがH2の開部分であると示す。V_Q≃[U°/(U°×_[X3/PGL9]U°)]は有限型smooth Artinで、Qにおける次元は9−6=3である。任意の有限型T→H2への基底変更をambientの対角で有限表示schemeとして表し、その全closed pointで指定同型を保つArtin持上げを証明する。DDLの四項窓・全HomのliftとU°→Sのétale性を使い、pointed dg Morita比較からcanonical反Serre環を経て元のH2同型へ戻す。relation schemeは選んだfoundationを保たない同値も含む。Q一点の形式的比較や、任意の導来同値のheart exactnessを外挿していない。V_Qの外側の代数性と、ambient内での開性は結論しない。
+
+**次の核心。** 一般cubic点の普遍canonical hullとroot-adapted窓、変形に安定な適合Serre根を検証する。V_Qの外側とnoncubic境界を覆う表示、H2全体の代数性とX_asの表現可能性は未証明。[検証範囲](notes/research_notes.md#検証範囲と再現手順)。
 
 ## モジュライのスタック構成
 
