@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.60（A v1.64・20節、B v0.21・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.61（A v1.64・20節、B v0.21・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -28,7 +28,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 ## 相対平坦性の確立した認識
 
-`papers/sections/relative_koszul.tex` に証明を置く。全H2の適合切断環BはKoszul AS4環の正則正規二次商なのでKoszul、反Serre環R=B^(2)もKoszulである。PP2005 Chapter 6 Theorem 7.3は任意のNoetherian局所環に適用できる。三次まで平坦で全幾何fiberがKoszulなら、全次数局所自由性と任意底変更に整合する左右Koszul解消を得る。このため、H2点を中心とする任意のArtin基底上のX3変形と、既存の横断二次jetは全次数平坦である。同節ではさらにArtin基底でnoetherian性を持ち上げ、qgrがflatなpointed Abel変形になることを証明した。canonical反SerreのArtin再構成とAbel変形の無障害性は次節で扱う。適合平方根・AS被覆の存在は別条件である。
+`papers/moduli/relative_koszul.tex` に証明を置く。全H2の適合切断環BはKoszul AS4環の正則正規二次商なのでKoszul、反Serre環R=B^(2)もKoszulである。PP2005 Chapter 6 Theorem 7.3は任意のNoetherian局所環に適用できる。三次まで平坦で全幾何fiberがKoszulなら、全次数局所自由性と任意底変更に整合する左右Koszul解消を得る。このため、H2点を中心とする任意のArtin基底上のX3変形と、既存の横断二次jetは全次数平坦である。同節ではさらにArtin基底でnoetherian性を持ち上げ、qgrがflatなpointed Abel変形になることを証明した。canonical反SerreのArtin再構成とAbel変形の無障害性は次節で扱う。適合平方根・AS被覆の存在は別条件である。
 
 ## 内在的相対定義と認識
 
@@ -44,13 +44,13 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **noncubic局所環上の効果性と全Artin認識。** 五頂点の非極小bar解消により、極小Betti数の変動を許して、同じ局所環上の全前向きHom・全軌道・canonical tails・Noetherian heartを構成した。二次双対の反中心消滅はgeneric cubic canonical線のnormalizerが−1となる可能性を排除し、中心直線を直和因子として延長する。閉fiberの正則性と単元minorから全次数の中央AS4被覆が延びる。指定還元同型付きArtin変形をétale foundation chartへ持ち上げると、全noncubic点で形式H2変形＝pointed Abel変形となる。非一致根対では接3・慣性0、一致では接4・慣性1、いずれも無障害。既存cubic結果と合わせ、全H2幾何点でArtin形式認識が成立した。証明は `thm:noncubic-local-tails-effectivity`、`thm:noncubic-local-central-hull`、`cor:noncubic-all-artin-h2`。
 
-**noncubic境界を横断する有限型効果性。** `thm:noncubic-finite-type-effectivity` は、全noncubic点に実際のH2族を持つ有限型étale近傍を構成する。Lagrangian四平面の二射影M,Nに対し、Segreとの交点を除き、Cr(N adj M)とCr(M adj N)の行列式を可逆化する。全幾何fiberをcubicまたは二形式normal foundationへ認識し、同じ四項とSerre四周期から全Homを有限projectiveにする。非被約閉部分V(det M,det N)のétale相対正規形と二つのcubic開から普遍Noetherian性を貼り合わせる。全fiber Koszulを先に確認し、局所中央線をspreadして同じ根の中央AS4被覆を得る。一般のKoszul開性や無限個の開の交叉は使わない。証明は `papers/sections/noncubic_finite_type.tex`。
+**noncubic境界を横断する有限型効果性。** `thm:noncubic-finite-type-effectivity` は、全noncubic点に実際のH2族を持つ有限型étale近傍を構成する。Lagrangian四平面の二射影M,Nに対し、Segreとの交点を除き、Cr(N adj M)とCr(M adj N)の行列式を可逆化する。全幾何fiberをcubicまたは二形式normal foundationへ認識し、同じ四項とSerre四周期から全Homを有限projectiveにする。非被約閉部分V(det M,det N)のétale相対正規形と二つのcubic開から普遍Noetherian性を貼り合わせる。全fiber Koszulを先に確認し、局所中央線をspreadして同じ根の中央AS4被覆を得る。一般のKoszul開性や無限個の開の交叉は使わない。証明は `papers/moduli/noncubic_finite_type.tex`。
 
-**内在的な全モジュライの有限型代数性。** `thm:global-h2-smooth-finite-type` により、局所有限型k-schemeのsite上のH2は、有限型・滑らか・純次元3のArtinスタックにより表され、対角はaffine有限表示である。指定されたpointed同型を保つArtin持上げで各効果的近傍をsmooth chartとし、実際のnoncubic表示族の準コンパクト性から有限個を選ぶ。relationはU×_[X3/PGL9]Uで、根・被覆・foundationを保存しない全pointed同値を含む。X_asは有限型・滑らか・既約・純次元83のスキームとなる。一致根対では接次元が内在側4・ambient側5（framedでは83・84）なので、X_as→X3は開immersionではない。証明は `papers/sections/h2_smooth_atlas.tex`。
+**内在的な全モジュライの有限型代数性。** `thm:global-h2-smooth-finite-type` により、局所有限型k-schemeのsite上のH2は、有限型・滑らか・純次元3のArtinスタックにより表され、対角はaffine有限表示である。指定されたpointed同型を保つArtin持上げで各効果的近傍をsmooth chartとし、実際のnoncubic表示族の準コンパクト性から有限個を選ぶ。relationはU×_[X3/PGL9]Uで、根・被覆・foundationを保存しない全pointed同値を含む。X_asは有限型・滑らか・既約・純次元83のスキームとなる。一致根対では接次元が内在側4・ambient側5（framedでは83・84）なので、X_as→X3は開immersionではない。証明は `papers/moduli/h2_smooth_atlas.tex`。
 
 **内在的な既約性とnoncubic境界。** `prop:global-h2-irreducible` は、根を選ぶ前の普遍cubic Z代数のtailsを使って実際の族を降下し、cubic開の既約性と全H2内での稠密性を証明する。したがって全H2は既約・連結である。`thm:noncubic-boundary-smooth-codim-two` により、被約noncubic境界N=(H2\V_cub)_redは有限型・smooth・既約・純次元1で、H2への正則閉埋込みの余次元は2。LGの接空間Sym²L*上で二行列式の微分は交点二線ℓ,mへのq(ℓ,ℓ),q(m,m)であり独立となる。smooth共通chartでこのscheme-theoreticな閉部分をNの引戻しと同定する。非被約testでは全fiberがnoncubicというだけではNへの因数分解は従わない。
 
-**被約境界の相対商表示と良モジュライ。** `thm:noncubic-intrinsic-presentation-equivalence` により、局所有限型site上で Npres=[P/G]≃N が対象・pointed exact同型を含めて成立する。境界chartの相対normal tiltingと反Serre再構成から実際の族を比較し、慣性核の消滅・接全射・同次元性から表現可能étale性を証明する。非被約testも含むが、全fiber noncubicだけでNへの因数分解を主張しない。χ:N→A¹はflat有限表示のgood moduliで、χ=0はsmooth被約因子の二重構造、χ=1はsmooth chart上ac=0。全慣性は四根相異χ≠0でD8×C2、χ=0で位数32非分裂拡大、一根共有でD8、一致で((Gm⋊C2)×D8)/μ2（8成分）。一致類はBGの正則閉埋込みcodim2をなし、境界接の重みは±2、全HH²は±2,0,0、横断法二方向には連結慣性が自明に作用する。任意の代数空間へのH2の射は一根共有と一致類を同一視するため、全H2にも幾何同型類を分類する粗モジュライ代数空間は存在しない。証明は `papers/sections/noncubic_boundary_comparison.tex`。
+**被約境界の相対商表示と良モジュライ。** `thm:noncubic-intrinsic-presentation-equivalence` により、局所有限型site上で Npres=[P/G]≃N が対象・pointed exact同型を含めて成立する。境界chartの相対normal tiltingと反Serre再構成から実際の族を比較し、慣性核の消滅・接全射・同次元性から表現可能étale性を証明する。非被約testも含むが、全fiber noncubicだけでNへの因数分解を主張しない。χ:N→A¹はflat有限表示のgood moduliで、χ=0はsmooth被約因子の二重構造、χ=1はsmooth chart上ac=0。全慣性は四根相異χ≠0でD8×C2、χ=0で位数32非分裂拡大、一根共有でD8、一致で((Gm⋊C2)×D8)/μ2（8成分）。一致類はBGの正則閉埋込みcodim2をなし、境界接の重みは±2、全HH²は±2,0,0、横断法二方向には連結慣性が自明に作用する。任意の代数空間へのH2の射は一根共有と一致類を同一視するため、全H2にも幾何同型類を分類する粗モジュライ代数空間は存在しない。証明は `papers/moduli/noncubic_boundary_comparison.tex`。
 
 **DM開の粗モジュライ。** 一致類を除いた N^DM→A¹_χ は任意の代数空間に対する粗モジュライ射であり、任意の底変更後も粗モジュライである。この制限射χ_DMはgood moduliではなく、慣性射はproperでもfiniteでもない。二つの根対を順序付けたchartを [A¹/μ2] に帰着し、有限被覆を持つ商の普遍性で粗モジュライを証明する。非good性はcodim2補集合のHartogs、慣性の非proper性はDVR上で延長しない具体的自己同型による。`thm:noncubic-dm-coarse`。
 
@@ -108,7 +108,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **Gabriel商の生成条件。** `lem:qgr-module-object-basechange` ではBが次数一生成かつB₁有限であることを要求する。この条件なしでは次数torsionは拡大に閉じない。例えばB=k[x₁,x₂,…]、全deg xᵢ=1、I=(xᵢxⱼ:i≠j)+(xᵢ^{i+1})としE=B/I、T=B₊Eと置く。TとE/T=kはtorsionだが、1∈Eは任意に高いxᵢ冪で殺されずEはtorsionでない。現行quadricのBは有限rankのB₁で生成されるため、全ての基底変更後にも必要条件を満たす。
 
-`papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
+`papers/nc-quadric-moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
 相対AZ再構成、自然自己同型Aut(Id)=A×、pointed二自己同型の消滅から、反Serre関係の射 Φ:H2→[X3/PGL9] は全忠実となる。対角はaffine有限表示であり、framed部分層X_asを用いたH2≃[X_as/PGL9]はfppf stackとして成立する。**X_asは有限型・滑らかな83次元スキームとして表される**。有限型siteだけで定義した関手を、極限保存を示さずに任意scheme上の関手として扱わない。
 
@@ -152,7 +152,7 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 
 ## スタック構成の現状
 
-証明の所在は `papers/sections/noncubic_stack.tex` と `papers/sections/foundation_stack.tex`。表示と相対内在的moduliの区別を維持する。
+証明の所在は `papers/moduli/noncubic_stack.tex` と `papers/moduli/foundation_stack.tex`。表示と相対内在的moduliの区別を維持する。
 
 | 結果 | 確立した範囲 | 残る比較 |
 | --- | --- | --- |
@@ -349,7 +349,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## noncubic根の交代Gale模型
 
-証明は `papers/sections/noncubic_hh_roots.tex`。四項foundationをGr(4,8)の開部分へ移すと、二項移動はL↦{(−Y,X):(X,Y)∈L⊥}となる。trace零対合から選ぶ右根による四つの比較行列は(D₀,−I,D₀,−I)、D₀=diag(1,−1)。従って実際の根の作用はJ=[[0,D_L],[−D_L,0]]、D_L=diag(1,1,−1,−1)による交代annihilator involutionである。直交形式のinvolutionとして扱うと接の正負を誤る。基底変更のLie作用は(a,b,c,k)↦(D₀cD₀,−kᵗ,D₀aD₀,−bᵗ)。自明な三次元中心の正負は(1,2)、有効Lieの正負は(7,6)である。一致根対の一次元慣性は正部分なので、全配置でHH¹/HH²の負部分が消える。本文の一般証明は三有理例からの外挿を使わない。
+証明は `papers/moduli/noncubic_hh_roots.tex`。四項foundationをGr(4,8)の開部分へ移すと、二項移動はL↦{(−Y,X):(X,Y)∈L⊥}となる。trace零対合から選ぶ右根による四つの比較行列は(D₀,−I,D₀,−I)、D₀=diag(1,−1)。従って実際の根の作用はJ=[[0,D_L],[−D_L,0]]、D_L=diag(1,1,−1,−1)による交代annihilator involutionである。直交形式のinvolutionとして扱うと接の正負を誤る。基底変更のLie作用は(a,b,c,k)↦(D₀cD₀,−kᵗ,D₀aD₀,−bᵗ)。自明な三次元中心の正負は(1,2)、有効Lieの正負は(7,6)である。一致根対の一次元慣性は正部分なので、全配置でHH¹/HH²の負部分が消える。本文の一般証明は三有理例からの外挿を使わない。
 
 再現は `python3 computations/verify_noncubic_gale_root.py`。SymPyの厳密有理演算でLagrangian条件、接involution、全基底変更軌道、HH²の正負次元(3,0)/(3,0)/(4,0)を確認する。原稿のbar微分・右Zhang規約とこの計算は独立に読取り確認した。良い根の一つを特定した結果であり、他の全根の作用も自明であるとは主張しない。
 
@@ -404,7 +404,7 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構成・完全分類・pointed exact同値判定を中心とし、20の分類分割節を読み込む。Bの `papers/nc-quadric-moduli.tex` は相対定義・変形・有限型効果性・Noetherian性・Serre根・境界の群商と慣性・good/coarse moduli・楕円型忘却の証明本文を31分割節に保持する。Cはquiver/QP/avatarの表示と相対適合性の未解決範囲を扱う。
 
-**依存の核心。** BがAの体上分類・normal helix・有限同値判定を使うのはよい。一方、Bが引用するAの相対foundationや局所Artin補題は、Bの主定理に依存していないかを区別して検査し、B固有の結果ならBに移す。Aから外した相対節は移管済みの証明を失わないか確かめてから整理する。数値・例・計算的証拠と全体の相対認識・代数性の証明を混同しない。
+**依存の核心。** BがAの体上分類・normal helix・有限同値判定を使うのはよい。一方、Bが引用するAの相対foundationや局所Artin補題は、Bの主定理に依存していないかを区別して検査し、B固有の結果ならBに移す。Aから外した相対節はBの同名節（相対定義は分割された二節）に定理ラベルと証明数を照合し、未使用の重複sourceを現行一式から外してある。数値・例・計算的証拠と全体の相対認識・代数性の証明を混同しない。
 
 ## 検証範囲と再現手順
 
