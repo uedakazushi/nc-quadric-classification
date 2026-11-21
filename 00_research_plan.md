@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.13。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.13、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.14。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.14、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -21,6 +21,8 @@
 **標準Morita根の有限型代数化。** TV2007の一般基礎環上の自己同値モジュライを用い、有限foundation表示上の根空間Zを局所有限表示の代数空間として構成した。可換Qの標準根の全Artin存在・一意性によりZ→Sはその点でétaleであり、gerbeと比較線束の自明化後に実際のperfect根と平方同型を得る。Abel heart・AZはこの命題の結論に含まれない。`prop:quadric-etale-morita-root`。
 
 **有限型étale近傍の四項窓。** 可換Qの標準Morita根を代数化した近傍では、相対perfect Homの最低次数の消去とperfect Nakayamaにより、根がfoundationの最初の二対象を次の二対象へ送ることを局所的に同定した。Serre rotationを併用し、全ての連続四項は任意基底変更でfull strong exceptional。距離1–4のHomは階数2/4/6/9、三次関係は階数2、四次重なりは非退化な階数1の線束となる。全整数の有限窓を二つのparityの有限条件で制御する。**全距離のHom・無限三次提示・相対tails・AZは未証明**。`prop:quadric-etale-finite-window`。
+
+**局所環で全次数の相対cubic環を再構成。** 可換Qの標準根が代数化されたétale chartの可換点uで、局所環A=O_{U,u}を取る。全i≤jのperfect Homは特殊fiberのKünneth消滅とlocal perfect NakayamaからA上階数h_{2m}=(m+1)²、h_{2m+1}=(m+1)(m+2)の自由加群で、任意A-基底変更と整合する。閉fiberで交互の二色の隣接交換関係だけが全三次核を生成するため、全内部次数のcubic Z代数をR_i(rank2)で提示できる。偶数B=⊕Hom(L0,sⁿL0)も全次数自由で七本二次関係による提示を持ち、PPの局所Koszul変形原理で相対Koszul解消を得る。各有限次数Nについては有限型Zariski開U_Nにも延長できる。**全Nに共通する開近傍、noetherian tails、AZ、AS4被覆、内在H2族の効果性はなお未証明**。`thm:quadric-local-all-degree-cubic`、`cor:quadric-each-finite-degree-open`。
 
 **Artin表示から相対族への昇格。** exactなSerre根と全軌道環の相対AS4被覆がArtin基底上に与えられれば、全有限型A-代数へのmodule-object基底変更でrelative_h2の全条件を満たす。nilpotent base上のhelix持上げとEndの基底変更からcanonical compact圏を比較する。根・被覆の存在そのものはこの命題の仮定である。`prop:artin-witness-relative-promotion`。
 
@@ -188,7 +190,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **Artinで得た有限foundationを一般の相対族へ広げる。** `artin_foundation.tex` により全flat Abel Artin変形のfoundation・完全なcanonical反Serre・AZ・全軌道と偏極忘却の分裂は成立した。`polarization_recognition.tex` の有限表示局所閉条件を適用するため、任意有限型基底の族にfoundationとshift双加群を与える。実際のArtin root/AS witnessを全有限型A-代数上のrelative_h2系へ延長する命題は成立した。可換点では `prop:quadric-etale-morita-root` がfoundation表示のétale近傍へMorita根を代数化した。次はこの有限窓tensorを全距離に延ばし、相対cubic Z-代数の三次提示と無限次数の分裂完全な標準解消を証明する。その後tails heartを実現し、全有限型基底変更後のnoetherian性、canonical導来比較、AZを示す。四項窓のfull strong tilting性とEnd=Λはétale近傍で既に得たが、tailsのcanonical heartが一致することは依然として未証明である。非平坦底変更では、単にheartが同じという理由でcanonical導来基底変更を仮定しない。
+1. **Artinで得た有限foundationを一般の相対族へ広げる。** `artin_foundation.tex` により全flat Abel Artin変形のfoundation・完全なcanonical反Serre・AZ・全軌道と偏極忘却の分裂は成立した。`polarization_recognition.tex` の有限表示局所閉条件を適用するため、任意有限型基底の族にfoundationとshift双加群を与える。実際のArtin root/AS witnessを全有限型A-代数上のrelative_h2系へ延長する命題は成立した。可換点では `prop:quadric-etale-morita-root` がfoundation表示のétale近傍へMorita根を代数化した。局所環上の全次数cubic提示・偶数環Koszulは解決した。次は幾何的四重tensorの非退化開条件と、全次数の三次解消・有限型族のflatnessを使い、これを**同一の有限型開近傍**へ一様に広げる。さらに同じ近傍のnoetherian tails heart、canonical compact導来比較とAZ、AS4被覆の相対存在を証明する。四項窓のfull strong tilting性とEnd=Λは既に得たが、tailsのcanonical heartが一致することは未証明である。非平坦底変更では、単にheartが同じという理由でcanonical導来基底変更を仮定しない。
 2. **全Artin hullを一般点と有限型近傍へ拡張する。** 可換Qでは全Artin段階の標準根とAS4被覆、形式変形groupoidの同値は解決した。`prop:cubic-artin-hhtrivial-conditional` により、適合するample cubic helixとHH²に恒等に作用する根があれば一般cubic点でも全Artin認識が成立する。次はその根のHochschild作用を計算し、存在範囲を確定する。helix対象ごとの二周期性から作用の恒等性は従わない（Q上の一因子対合の根が反例）。noncubicの階数3境界で失われるcubic入力も特定する。有限型近傍への代数化・効果性と `relative_as_cover.tex` のincidenceの局所存在を比較する。根は標識でなく、選んだ根の非持上げと全ての根の非存在を区別する。形式的な無障害性や有限型射のfppf像だけで大域代数性を結論しない。
 3. **階数3境界の相対正規形を閉じる。** 全H2の二ruling、有限foundation、相対S2交換を入力に、noncubic境界の内在族から局所モデルへ移ることを証明する。既存のcubic→全noncubic特殊化を相対H2族として認識できれば、成分問題の位相比較にも進める。
 4. **avatarと相対AS代数の比較を閉じる。** 別稿の $H\mapsto HP^n$ は幾何的stackの自己同値として証明済み。次はavatarからの有限foundationと全周期AS代数を相対的に構成し、底変更と同型層を比較する。元のproduct QP、weighted12本矢、固定構造対象の移動を区別する。$P=\mathcal O_D$ の古典点への収縮は同型類の説明だけでは足りない。内在的忘却に進むときは重み付き古典点の反例を基準にする。

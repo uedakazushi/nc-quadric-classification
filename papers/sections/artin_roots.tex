@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.13
+% 2026-11-21 / v1.14
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -584,11 +584,149 @@ $R_i\otimes V_{i+3}$ と $V_i\otimes R_{i+1}$
 $\mathsf s$ による移動によって全整数 $i$ に同時に成立する。
 \end{proof}
 
+
+\begin{theorem}[可換点の局所環上の全次数 cubic 提示]
+\label{thm:quadric-local-all-degree-cubic}
+命題~\ref{prop:quadric-etale-finite-window} の $u\in U(k)$ において
+$A=\mathcal O_{U,u}$ と置き、根 $\mathsf s$ と全列 $L_i$ を
+$\operatorname{Spec}A$ に引き戻す。以下は体 $k$ 上の可換点を
+閉点とする局所環 $A$ 上で成立する。
+\begin{enumerate}
+\item 全ての整数 $i\le j$ について、canonical な導来 Hom は
+  任意の $A$-代数への導来基底変更と可換し、
+  \[
+    \mathbf R\operatorname{Hom}(L_i,L_j)
+       \simeq A^{\,h_{j-i}}[0],\qquad
+    h_{2m}=(m+1)^2,\quad
+    h_{2m+1}=(m+1)(m+2)\quad(m\ge0)
+  \]
+  となる。等号は局所自由加群としての存在であり、
+  基底の標準的な選択を意味しない。
+\item $D_{ij}=\operatorname{Hom}(L_i,L_j)$（$i\le j$）とし、
+  $V_i=D_{i,i+1}$、
+  \[
+    R_i=\ker\bigl(
+      V_i\otimes_A V_{i+1}\otimes_A V_{i+2}
+             \longrightarrow D_{i,i+3}\bigr)
+  \]
+  と置くと、$V_i$ は階数二、$R_i$ は階数二の直和因子であり、
+  $D=\bigoplus_{i\le j}D_{ij}$ は全内部次数で
+  \[
+     D \simeq T_{\mathbb Z,A}(V_i)/(R_i)
+     \tag{Loc-cub}\label{eq:quadric-local-cubic-presentation}
+  \]
+  と表示される。左辺の積は射の合成である。
+  この表示、次数別の有限自由性、及び相対 Hom との同定は
+  任意の $A$-代数への基底変更と整合する。
+\item 右軌道積を用いた偶数環
+  \[
+    B_A=\bigoplus_{n\ge0}\operatorname{Hom}
+                (L_0,\mathsf s^nL_0)
+  \]
+  は全次数で階数 $(n+1)^2$ の自由 $A$-加群であり、
+  \[
+      B_A\simeq T_A(B_{A,1})/(J_A),\qquad
+      \operatorname{rk}B_{A,1}=4,\quad
+      \operatorname{rk}J_A=7.
+  \]
+  この二次環は相対 Koszul である。
+  その左右 Koszul 複体は各内部次数で分裂完全であり、
+  任意の $A$-代数への基底変更後も完全である。
+\end{enumerate}
+ここで $\operatorname{Spec}A$ は一般に $k$ 上有限型ではない。
+本定理は $B_A$ の左右 noetherian 性、相対 tails heart、
+Serre・AZ 条件、相対 AS4 被覆の存在、
+あるいは $\mathfrak H_2$ の代数性を主張しない。
+\end{theorem}
+\begin{proof}
+$\Lambda_U$ の相対 smooth proper 性と $\mathsf s$ の perfect
+Morita 表示から、任意の $i,j$ について
+$\mathbf R\operatorname{Hom}(L_i,L_j)$ は基底上 perfect であり、
+導来基底変更と可換する。
+閉点で $L_{2a}=\mathcal O_Q(a,a)$、
+$L_{2a+1}=\mathcal O_Q(a,a+1)$ である。
+$i\le j$ のとき、その差は非負の bidegree だから、
+K\"unneth 公式より導来 Hom は次数零に集中し、
+次元は表示した $h_{j-i}$ となる。
+局所環上の perfect 複体の有限自由表示から
+単元係数を消去すると、剰余体への導来 tensor が
+次数零だけにある場合、元の複体はその階数の自由加群を
+次数零に置いたものに同型である。
+これは各 $(i,j)$ に個別に適用でき、同じ局所環 $A$ を
+さらに縮める必要はない。従って (1) が従う。
+
+任意の $i<j$ について、隣接 $V_a$ の tensor 積から
+$D_{ij}$ への合成射は有限自由加群の射である。
+閉点では $\mathbb P^1\times\mathbb P^1$ の線束切断の積であり、
+全射であるから Nakayama により $A$ 上でも全射である。
+三重積の核 $R_i$ は階数二の直和因子になる。
+三次関係による tensor $\mathbb Z$-代数の商を $D'$ とすると、
+合成により全内部次数で $D'_{ij}\twoheadrightarrow D_{ij}$
+を得る。各 $D'_{ij}$ は有限生成 $A$-加群である。
+
+閉点における $D'$ の同定は直接確認できる。
+偶数・奇数の隣接矢空間は交互に二次元空間 $V,U$ であり、
+三次関係はそれぞれ
+$\bigwedge^2V\otimes U$ と
+$\bigwedge^2U\otimes V$（因子の並べ方は隣接順）
+に対応する。
+従って三次関係は同じ parity の隣り合う出現を
+交換する関係であり、これらの交換が全ての置換を生成する。
+ゆえに長さ $n$ の商は二色それぞれの対称冪の tensor 積で、
+$D_{ij}\otimes_Ak$ に一致する。
+各 $D'_{ij}\to D_{ij}$ は剰余体上同型であり、
+終域が自由なので核との短完全列は $A$-加群として分裂する。
+核は有限生成かつ剰余体上零だから Nakayama により零となる。
+これで (2) の全次数と任意基底変更での主張を得る。
+
+(1) により $B_{A,n}$ は全て自由で階数 $(n+1)^2$、
+特殊ファイバーは
+$\bigoplus_{n\ge0}H^0(Q,\mathcal O_Q(n,n))$
+という Segre 環である。
+$B_{A,1}^{\otimes n}\to B_{A,n}$ は特殊ファイバーで全射だから
+$A$ 上も全射であり、$J_A$ は階数 $16-9=7$ の直和因子となる。
+二次関係による商から $B_A$ への全射は
+剰余体上、Segre 環の既知の二次提示と一致する。
+(2) と同様、各次数で自由な終域へ分裂する全射の核に
+Nakayama を適用して二次提示を得る。
+Segre 環は二次 Koszul 環であり、$B_{A,3}$ は自由なので、
+補題~\ref{lem:relative-koszul-degree-three} の証明にある
+Polishchuk--Positselski の局所 Koszul 変形原理
+\cite[Chapter 6, Theorem 7.3 and Propositions 7.1--7.2]
+{PolishchukPositselski2005}
+を局所環 $A$ とその閉ファイバーに適用する。
+関係空間の格子は自由な直和因子に分解され、
+左右の各内部次数の Koszul 複体は有限自由で分裂完全となる。
+この性質は任意の $A$-代数への tensor で保たれる。
+\end{proof}
+
+\begin{corollary}[各有限次数の開近傍への拡張]
+\label{cor:quadric-each-finite-degree-open}
+任意の整数 $N\ge0$ について、$u$ を含む Zariski 開部分
+$U_N\subset U$ が存在し、上の導来 Hom の次数零集中と
+階数、cubic 提示の次数 $N$ までの同定、及び
+$B$ の二次提示の次数 $N$ までの同定が成立し、
+任意の $U_N$-基底変更と可換する。
+$U_N$ を $N$ に依存せずに選べること、あるいは
+$\bigcap_NU_N$ が有限型の開部分を含むことはここでは証明しない。
+\end{corollary}
+\begin{proof}
+$\mathsf s$ による二項移動により、必要な derived Hom と積・関係の
+条件は始点の二つの parity 及び $0\le j-i\le N$
+の有限個の次数へ帰着する。
+定理~\ref{thm:quadric-local-all-degree-cubic} の局所環上の同型は、
+有限表示加群の射の核・余核の消滅と perfect 複体の自由表示で
+記述できるので、有限個の分母を可逆にすることで
+同時に $u$ の開近傍へ延長できる。
+この開近傍で局所自由性・分裂性を保てば任意基底変更にも保たれる。
+\end{proof}
+
 \begin{remark}[この代数化で残る条件]
-得られたのは有限 foundation の perfect 圏上の平方根と、
-命題~\ref{prop:quadric-etale-finite-window} の相対的な四項窓・
-四次までの cubic tensor である。
-一般有限型基底で、全ての長さの Hom と三次提示を制御し、
+得られたのは有限 foundation の perfect 圏上の平方根、
+命題~\ref{prop:quadric-etale-finite-window} の四項窓、
+および定理~\ref{thm:quadric-local-all-degree-cubic} の
+可換点の局所環における全次数の cubic・二次提示である。
+一般有限型の開近傍で、全ての長さの Hom と三次提示を一様に制御し、
 その根と helix が noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
 AZ 豊富性と全有限型基底変更を満たすことは別の相対実現命題を要する。

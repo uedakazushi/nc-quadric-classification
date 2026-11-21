@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.13、主論文v1.13、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.14、主論文v1.14、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -32,6 +32,8 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 | 内在的忘却 | 相対heart・適合平方根・AZ豊富性・同じ根のAS4被覆を満たす部分から $\mathfrak H_2$ への射。全H2幾何点は10本矢normal foundationを持つ | その適合部分の開性は未証明。$\operatorname{coh}\mathbb P(1,1,2)$ と $\operatorname{coh}\Sigma_2$ の構造対象は強いH2条件を満たさない |
 
 証明は [有限QP](papers/quiver-avatar/qp_presentations.tex)、[有限foundation](papers/quiver-avatar/foundation_charts.tex)、[avatar](papers/quiver-avatar/avatar_charts.tex)、[内在的忘却](papers/quiver-avatar/intrinsic_forgetting.tex) に置く。独立読取り・計算・組版の実施範囲は研究ノートを参照。
+
+**可換点の局所環で全次数の三次提示を得た。** étale Morita根の存在する可換点uの局所環Aでは、全i≤jでRHom(L_i,L_j)が次数零に集中し階数h_{2m}=(m+1)², h_{2m+1}=(m+1)(m+2)の自由加群となる。全三次Z代数はrank2のR_iで提示でき、偶数環Bもrank7の二次関係で全次数表示され、局所Koszul変形原理により相対Koszulになる。[証明](papers/sections/artin_roots.tex) `thm:quadric-local-all-degree-cubic`。任意の固定次数Nについては開近傍U_Nまで延長できるが、全Nで共通する一つの有限型開近傍への延長・noetherian tails・AZ・AS4被覆の存在はまだ証明していない。
 
 ## モジュライのスタック構成
 
