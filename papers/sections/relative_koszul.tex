@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.22
+% 2026-11-21 / v1.23
 \section{三次平坦性から全次数平坦性への相対的な認識}
 \label{sec:relative-koszul}
 
@@ -360,6 +360,69 @@ $\bigoplus_i B_{R'}(-d_i)\twoheadrightarrow M_{\ge N}$
 \cite[Theorem 4.5]{AZ1994} では適切な
 $\chi_1$ が (A2) を得るための十分条件となるが、
 今回の相対系の全基底変更で $\chi_1$ を確認したわけではない。
+\end{proof}
+
+
+\begin{corollary}[局所相対 tails の fppf 降下と構造対象の平坦性]
+\label{cor:quadric-local-tails-fppf-descent}
+系~\ref{cor:quadric-local-tails-basechange-generation} の
+局所環 $R$ と切断環 $B_R$ を取る。
+$R$ 上有限型の affine scheme に対する
+$T=\operatorname{Spec}R'$ への割当て
+\[
+   T\longmapsto\operatorname{QGr}(B_R\otimes_RR')
+\]
+は、基底変更を module-object で定義した
+fppf 降下を満たす。Noetherian 対象だけの
+$\operatorname{qgr}(B_R\otimes_RR')$ についても
+対象と射の有効な fppf 降下が成立する。
+構造対象 $\mathcal O_{R'}=\pi B_{R'}$ は
+$R'$ 上平坦であり、任意の有限型基底変更で
+この平坦性が保たれる。
+
+この結果は Grothendieck 圏とその Noetherian heart の
+基底変更・降下・構造対象の平坦性についての主張であり、
+Hom の有限性、$\operatorname{Ext}$ の消滅、
+$\chi_1$/AZ (A2)、canonical compact 導来圏との比較、
+相対 Serre 条件や強い $\mathfrak H_2$ の認識を含まない。
+\end{corollary}
+\begin{proof}
+$R'\to R''$ を faithfully flat かつ有限表示とする。
+補題~\ref{lem:qgr-module-object-basechange} より
+\[
+ \operatorname{QGr}(B_{R''})
+ \simeq\bigl(\operatorname{QGr}(B_{R'})\bigr)_{R''}.
+\]
+$R'$-線形 Grothendieck 圏 $\mathcal G=
+\operatorname{QGr}(B_{R'})$ における
+$R''$-加群対象への自由化
+$F=R''\otimes_{R'}-:\mathcal G\to\mathcal G_{R''}$
+は、$R''/R'$ の忠実平坦性により完全かつ保守的である。
+$F$ は忘却関手を右随伴に持ち、
+完全な左随伴に対する Barr--Beck の降下判定から、
+$\mathcal G$ は $\mathcal G_{R''}$ 上の
+通常の Čech cocycle を備える対象の圏に同値である。
+これは上記の相対 $\operatorname{QGr}$ の fppf 降下である。
+複数の affine 被覆は有限個をまとめた
+faithfully flat な積代数で扱える。
+
+$R''$ は $R'$ 上有限型なので、
+前補題により $B_{R''}$ は Noetherian。
+Noetherian 対象の基底変更は、有限生成次数付き加群の
+tensor により Noetherian のままである。
+逆に、降下した対象 $\mathcal M$ の引戻しが Noetherian なら、
+$\mathcal M$ の任意の部分対象の昇鎖を引き戻すと停止する。
+$F$ は完全かつ保守的なので元の昇鎖も停止する。
+よって Noetherian 対象の降下も有効である。
+
+$B_{R',n}$ は全て有限局所自由 $R'$-加群であるから、
+$R'$-加群 $N$ に対する
+$N\mapsto N\otimes_{R'}B_{R'}$
+は次数ごとに完全である。
+Gabriel 商 $\pi$ も完全なので
+$N\mapsto N\otimes_{R'}\pi B_{R'}$
+は完全である。これが構造対象の相対平坦性であり、
+同じ議論が全ての基底変更後にも成立する。
 \end{proof}
 
 \begin{corollary}[全幾何ファイバーが $\HH$ 型である関係式族]

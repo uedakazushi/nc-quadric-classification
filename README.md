@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.22、主論文v1.22、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.23、主論文v1.23、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -42,6 +42,8 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 **可換点を閉点に持つNoetherian局所基底の真正な被覆。** 完備Noetherian局所環ではgr_m Bが可換Noetherianとなることと固定内部次数の完備性からBの左右Noetherian性が従い、中心忠実平坦な完備化から非完備局所環へ降下できる（`lem:local-commutative-fibre-noetherian`）。可換Qを閉fiberに持つ任意Noetherian局所底変更でBと正規元AS4拡張はNoetherianとなる。qgr BもNoetherian Abel圏として存在する（`cor:quadric-point-local-noetherian-as4`）。**単一の有限型開全体・任意の底変更のNoetherian性、canonical compact圏とheartの同定、AZ・内在H2の効果性は未証明。** [証明](papers/sections/relative_koszul.tex)・[被覆への適用](papers/sections/artin_roots.tex)。
 
 **局所環の全有限型基底変更とAZ (A1)。** 可換点の局所環R上のB_Rが左右Noetherianなら、任意の可換有限型R-代数R′への変更も中心多項式環のNoetherian性により左右Noetherianになる。QGrはGabriel局所化の右随伴を使い、R′-module-object基底変更QGr(B_R′)≃(QGr B_R)_{R′}と一致する。有限型R′ではNoetherian部分をqgrとして取れる。十分高次数のtruncationから全有限型R′でAZの生成条件(A1)を証明した（`lem:local-finite-type-strong-noetherian`、`lem:qgr-module-object-basechange`、`cor:quadric-local-tails-basechange-generation`）。**χ₁/AZ Hom全射(A2)、canonical compact圏とのheart比較、単一の有限型開全体でのNoetherian性は未証明**。[証明](papers/sections/relative_koszul.tex)。
+
+**局所相対tailsのfppf降下と構造対象の平坦性。** QGr(B_R′)≃(QGr B_R)_{R′}とfaithfully flat拡大のBarr–Beck降下により、局所環R上の有限型基底変更に関してQGrとそのNoetherian部分qgrの対象・射の有効なfppf降下を示した。全次数有限局所自由性からπBの基底上平坦性も証明した（`cor:quadric-local-tails-fppf-descent`）。相対heartの系に必要なmodule-object基底変更・降下・構造対象平坦性はこの局所基底の範囲で確認できたが、χ₁/AZ(A2)、Hom有限性、canonical compact・Serre認識と単一有限型開上の効果性は未証明。[証明](papers/sections/relative_koszul.tex)。
 
 ## モジュライのスタック構成
 
