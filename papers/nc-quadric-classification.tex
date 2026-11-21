@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.2
+% 日本語 LuaLaTeX。2026-11-21 / v1.3
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -44,7 +44,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.2（全対象の同値類分類・公表前草稿）}
+\date{2026年11月21日\quad v1.3（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -75,6 +75,11 @@ noncubic 領域については次数スカラーを除いた一次元の滑ら�
 cubic の非空開部分を含む全実現点集合は、表示スタックからの誘導位相で既約である。
 各 noncubic 点は、他の全幾何ファイバーが cubic となる有限自由 foundation 代数族、
 従って構造対象付き smooth proper dg 圏の族の特殊ファイバーとして実現される。
+この族上で反 Serre 導来 Hom は全次数有限自由な次数付き環に集中し、
+cubic と noncubic の双方から同じ九生成元・五十六次元二次関係の
+Grassmann 商への射を得る。
+noncubic 表示では階数四の中心 Clifford 表示を用いて相対 Noetherian 性と
+perfect 圏上の相対 Serre 双加群を計算し、平方根を選ばずに偶数反 Serre 環を降下する。
 相対 heart・平方根・豊富性まで要求する内在的モジュライスタックを
 $\HHstack$ と書くが、その構成と表示スタックとの比較は未完成である。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
@@ -458,6 +463,13 @@ pointed exact 同値に関するモジュライの代数性、成分、慣性、
 命題~\ref{prop:h2-component-density} と命題~\ref{prop:h2-line-degeneration} により、
 表示からの誘導位相では全実現点集合は既約であり、cubic から全 noncubic 点への
 smooth proper dg 圏の特殊化も得られている。
+さらに命題~\ref{prop:line-degeneration-antiserre-algebras} は、
+これを全次数平坦な反 Serre 環の特殊化に強める。
+命題~\ref{prop:cubic-relative-antiserre-grassmann} と
+命題~\ref{prop:noncubic-antiserre-grassmann} は
+同じ九生成元の二次関係 Grassmann 商への射を与え、
+命題~\ref{prop:noncubic-relative-serre-on-perfect} は
+noncubic 表示の perfect 圏上の相対 Serre 双加群を計算する。
 相対条件を満たす内在的モジュライへこの結論を移すには、
 位相の一致、またはこれらの族の相対 $\HH$ 認識を示せば十分である。
 \end{problem}
