@@ -514,7 +514,7 @@ $\widetilde G$-同変準連接層のうち $D$ が自明に作用するものは
 $G=\widetilde G/D$-同変層へ降下する。
 
 最後に、補題~\ref{lem:noncubic-local-exchange} により
-$\acute{e}$tale 局所では適合する次数付き自己同型
+\'etale 局所では適合する次数付き自己同型
 $\sigma$ を選べて、$\sigma^2=\iota$ である。
 通常の Zhang twist の積を
 $a*_\sigma b=a\sigma^{\deg a}(b)$ と書くと、
@@ -803,6 +803,65 @@ $C^{(4)}$ 上有限生成加群となる。
 線束 $\mathcal D$ の twist はアフィン基底上で局所的に
 自明化できるため、結論は表示スタックの任意の
 noetherian 基底への引戻しでも成立する。
+\end{proof}
+
+\begin{proposition}[平方根を大域選択しない noncubic 相対 heart]
+\label{prop:noncubic-relative-heart-veronese}
+$\mathfrak N^{\mathrm{pres}}=[P/G]$ 上の
+命題~\ref{prop:noncubic-antiserre-descent} の
+次数付き環 $\mathcal R$ は、任意の可換 noetherian 基底に引き戻すと
+左右 noetherian、次数一生成であり、各次数は有限局所自由となる。
+従って
+\[
+  (\mathcal A_T,\mathcal O_T)
+  =\bigl(\operatorname{qgr}\mathcal R_T,\,
+          \pi\mathcal R_T\bigr)
+  \tag{NC-heart}\label{eq:noncubic-relative-heart}
+\]
+という構造対象付き noetherian Abel 圏を、基底上の
+表示データから直接構成できる。
+これは $\sigma$ や ambient の大域的な選択を必要としない。
+
+$T$ の \'etale 局所化後、
+命題~\ref{prop:noncubic-relative-regular-cut} の
+適合 Zhang twist $\mathcal B^\sigma$ を取ると、
+構造対象を保つ exact 同値
+\[
+ \operatorname{qgr}\mathcal B^\sigma
+       \simeq\operatorname{qgr}\mathcal R_T
+\]
+があり、左辺の二次数 shift と右辺の一次数 shift は対応する。
+全幾何ファイバーは当初の noncubic $\HH$ 対象である。
+さらに perfect 対象の相対反 Serre 関手は右辺の
+次数 shift $(1)$ に対応する。
+\end{proposition}
+\begin{proof}
+次数別局所自由性、次数一生成、noetherian 性はそれぞれ
+命題~\ref{prop:noncubic-antiserre-descent}、
+命題~\ref{prop:noncubic-antiserre-grassmann}、
+命題~\ref{prop:noncubic-relative-noetherian} による。
+従って $\operatorname{qgr}\mathcal R_T$ は
+有限生成次数付き右加群を有限次数の torsion 加群で割った
+noetherian Abel 圏であり、構造対象 $\pi\mathcal R_T$ を持つ。
+
+\'etale 局所に $\det W$ を自明化し、
+補題~\ref{lem:noncubic-local-exchange} の $\sigma$ を取れば
+$\mathcal R_T=(\mathcal B^\sigma)^{(2)}$ である。
+$\mathcal B^\sigma$ は noetherian で次数一生成なので、
+次数二 Veronese の quotient-category 同値
+（Verevkin の Veronese 不変性）を適用できる。
+具体的には次数付き加群 $M$ を
+$\bigoplus_{n}M_{2n}$ に移す functor が torsion を保ち、
+$qgr$ の同値となり、正則右加群と
+二次数 shift をそれぞれ正則 Veronese 加群と
+一次数 shift に送る。
+ここで $\mathcal R_T$ は偶数部分そのものなので、
+全ての比較はもとの環と底変更の形成に両立する。
+perfect 圏の Serre の表示は
+命題~\ref{prop:noncubic-relative-serre-on-perfect} により
+$S^{-1}[2]\simeq(-)_\iota(2)$ であり、
+Zhang twist および Veronese の同値によって $(1)$ に移る。
+各幾何ファイバーの適合性は既存の逆構成定理による。
 \end{proof}
 
 \begin{remark}[内在的モジュライに残る差]
