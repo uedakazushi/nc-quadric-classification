@@ -1144,6 +1144,95 @@ $\mathscr R_{T,n}$ は各次数で有限局所自由で、
 補題~\ref{lem:relative-quadratic-from-fibers} の適用により従う。
 \end{proof}
 
+\begin{proposition}[反 Serre 関係の構成可能な実現集合と既約な代数的包絡]
+\label{prop:h2-constructible-relations-and-irreducible-closure}
+$\Bbbk$ を標数零の代数閉体とし、九次元空間 $U$ を固定する。
+\[
+ \mathfrak G_9=
+ \bigl[\operatorname{Gr}(56,U\otimes U)/\operatorname{PGL}(U)\bigr]
+\]
+と書く。すべての代数閉拡大体の $\HH$ 対象から得られる
+反 Serre 二次関係の幾何点像を
+$\mathcal Y_{\mathrm{as}}\subset|\mathfrak G_9|$ とする。
+このとき以下が成立する。
+\begin{enumerate}
+\item $\mathcal Y_{\mathrm{as}}$ は
+  $\Psi_{\mathrm{cub}}(\mathfrak C)$ と
+  $\Psi_{\mathrm{nc}}(\mathfrak N^{\mathrm{pres}})$
+  の幾何点像の和に等しく、有限型の構成可能集合である。
+\item その部分空間位相は既約であり、
+  \[
+   \overline{\Psi_{\mathrm{cub}}(|\mathfrak C|)}
+           ^{\,\mathcal Y_{\mathrm{as}}}
+     =\mathcal Y_{\mathrm{as}} .
+  \]
+\item cubic の相対反 Serre 環の一次数束を
+  $U_{\mathrm{cub}}$ 上で枠付けた
+  $\operatorname{GL}(U)$-torsor から
+  $\operatorname{Gr}(56,U\otimes U)$ への射の
+  幾何点像の Zariski 閉包に、被約構造を入れたものを
+  $Z_2$ と置く。
+  $Z_2$ は有限型の既約な
+  $\operatorname{PGL}(U)$-不変閉部分スキームであり、
+  \[
+    \mathfrak Z_2=[Z_2/\operatorname{PGL}(U)]
+       \hookrightarrow\mathfrak G_9
+       \tag{H2-envelope}\label{eq:h2-irreducible-envelope}
+  \]
+  は有限型既約 Artin スタックである。
+  $\mathcal Y_{\mathrm{as}}\subset|\mathfrak Z_2|$ であり、
+  cubic の実現像は $|\mathfrak Z_2|$ において稠密である。
+\end{enumerate}
+ただし $\mathfrak Z_2$ はあくまで
+\emph{関係式の既約な代数的包絡}であり、
+余分な幾何点や冪零方向を持つ可能性がある。
+これを内在的な $\HHstack$ と同一視したとは主張しない。
+\end{proposition}
+\begin{proof}
+全 $\HH$ 幾何点の分類によれば、対象は
+cubic の逆構成か noncubic の二形式表示のいずれかから得られる。
+双方の反 Serre 環は
+系~\ref{cor:h2-intrinsic-antiserre-quadratic} により二次である。
+従って二次関係は対象を完全に決め、
+二つの表示射の幾何点像の和が
+$\mathcal Y_{\mathrm{as}}$ となる。
+$\mathfrak C$ と $\mathfrak N^{\mathrm{pres}}$ は有限型である。
+$\mathfrak G_9$ の Grassmannian 平滑表示で
+これらの射を引き戻し、有限型スキームの atlas を選ぶと、
+その Grassmannian への像は有限型スキームの射の像である。
+Chevalley の定理
+\cite[Tag 054K]{StacksModuli} によりこれらの像は構成可能であり、
+商の位相でも構成可能である。
+
+$U_{\mathrm{cub}}$ は既約な $\mathbb A^{64}$ の非空開であり、
+その階数九ベクトル束の枠束も、幾何学的既約な
+$\operatorname{GL}_9$ をファイバーとするため既約である。
+その Grassmannian への像は既約なので、
+被約閉包 $Z_2$ も既約である。
+枠の変更による $\operatorname{PGL}(U)$ 作用は
+像を保つため、その閉包も不変である。
+よって (\ref{eq:h2-irreducible-envelope}) は
+有限型既約 Artin スタックを与える。
+
+任意の noncubic 幾何点 $x$ に対し、
+命題~\ref{prop:line-degeneration-antiserre-algebras} と
+系~\ref{cor:line-full-quadratic-degeneration} により、
+$\operatorname{Spec}k[[t]]$ から $\mathfrak G_9$ への射が存在し、
+一般点が cubic、特殊点が $x$ の反 Serre 関係である。
+階数九ベクトル束をこの DVR 上で自明化すれば、
+Grassmannian への射に持ち上がる。
+その一般点は $Z_2$ に入るので、閉性から特殊点も
+$Z_2$ に入る。従って
+$\mathcal Y_{\mathrm{as}}\subset|\mathfrak Z_2|$ である。
+
+cubic の幾何点像は既約であり、
+任意の noncubic 幾何点はその閉包に入る。
+そのため $\mathcal Y_{\mathrm{as}}$ は
+既約集合の閉包として既約である。
+$Z_2$ の定義から cubic の像は
+$|\mathfrak Z_2|$ に稠密である。
+\end{proof}
+
 \begin{remark}[内在的な相対モジュライへの移行条件]
 命題~\ref{prop:h2-component-density} は、実現点集合の部分空間位相についての
 無条件の結論である。
