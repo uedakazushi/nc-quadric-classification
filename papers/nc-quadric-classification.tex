@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.34
+% 日本語 LuaLaTeX。2026-11-21 / v1.35
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.34（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.35（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -95,7 +95,13 @@ canonical compact 圏の相対 Serre 関係と導来基底変更を確認する�
 これにより coherent Hom、AZ、全相対 $\chi_q$ を備えた実際の族
 $U^\circ\to\mathfrak H_2$ が得られる。
 全閉点で指定同型を保つ Artin 持上げを示すと、この射は表現可能で滑らかとなる。
-その像は $Q$ を含む有限型で滑らかな三次元 Artin 開部分である。
+非線形の普遍五つ組上では相対 Picard 群の二除算と ATV の作用から
+Serre に適合する二周期を構成し、被約な普遍基底上の比較同型を
+任意の非被約底へ引き戻す。
+五つの helix 対象から四つの矢空間と四次 syzygy 直線を回復することで、
+全 cubic 点を覆う chart の指定同型付き Artin 持上げが得られる。
+従って全 cubic 領域は有限型で滑らかな純三次元 Artin 開部分をなし、
+各 cubic 点の形式変形は pointed Abel 変形と一致する。
 \emph{モジュライ全体の代数性は未証明である。}
 既知結果の相対適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
@@ -119,6 +125,25 @@ $s=-\otimes H$ は $s^2\simeq S^{-1}[2]$ という平方根である。
 通常の quadratic envelope をそのまま用いることはできない。
 適切な強い条件は、正則正規元 $g\in A_2$ による表示 $B\simeq A/(g)$ の存在である。
 この修正は ambient の選択を新たな marking として加えるものではない。
+
+\subsection{相対モジュライの中心結果}
+\label{sec:intro-cubic-algebraicity}
+
+\begin{theorem}[cubic 開部分の代数性]
+全幾何ファイバーが cubic である $\HHstack$ の full 部分スタック
+$\mathfrak V_{\mathrm{cub}}$ は、有限型で滑らかな純次元三の Artin 開部分である。
+各 cubic 点では、$\HHstack$ から pointed Abel 圏への忘却は
+Artin 形式変形 groupoid の同値を与える。
+\end{theorem}
+
+証明は定理~\ref{thm:cubic-smooth-open}と系~\ref{cor:cubic-formal-h2-abelian}に置く。
+周期を選ばない普遍 Noetherian 性、同じ二周期の canonical AS4 hull、
+相対 Picard 根、quintuple の Artin 持上げを順に用いる。
+Artin--Tate--Van den Bergh \cite[Proposition 5.5, Corollary 5.7]{ArtinTateVanDenBergh1991}
+の相対作用は既知入力である。その線束への作用式の相対化と、
+canonical tails の Serre 双加群との比較は第\ref{sec:relative-picard-roots}節で行う。
+noncubic 表示商は次元一であり、境界点の全ての Abel 変形を覆わない。
+従ってこの定理から $\HHstack$ 全体の代数性は結論しない。
 
 \subsection{先行研究と本稿の範囲}
 
@@ -515,7 +540,10 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/relative_noetherian_patching}
 \input{sections/relative_cubic_noetherian}
 \input{sections/universal_cubic_hull}
+\input{sections/relative_cubic_families}
+\input{sections/relative_picard_roots}
 \input{sections/quadric_smooth_atlas}
+\input{sections/cubic_smooth_atlas}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
@@ -572,7 +600,11 @@ Artin 基底では有限 foundation と canonical 反 Serre 偏極を回復し�
 Noetherian な相対 tails heart と全ての内在的相対条件を構成する。
 系~\ref{cor:quadric-effective-smooth-neighborhood} により、
 その像は $Q$ を含む有限型 smooth Artin 開部分である。
-次はこの開部分の外にある一般点・境界を覆う表示を構成する。
+さらに定理~\ref{thm:cubic-smooth-open}と
+系~\ref{cor:cubic-formal-h2-abelian}により、全 cubic 領域は
+有限型 smooth Artin 開部分となり、その全 Artin 変形を認識できる。
+残る対象は noncubic 境界であり、適合根と同じ根の AS4 被覆を持つ
+実際の相対 heart を横断変形に沿って構成する必要がある。
 一般の $X_3$ 族については、命題~\ref{prop:antiserre-polarization-family} の
 偏極変形を除外する必要がある。
 また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、

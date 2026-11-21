@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.34。主論文v1.34に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.35。主論文v1.35に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -26,6 +26,12 @@ A. B. Verevkin, *On a noncommutative analogue of the category of coherent sheave
 A. Polishchuk, L. Positselski, *Quadratic Algebras*, AMS University Lecture Series **37** (2005), Chapter 3, Proposition 2.2(i) は、一次生成・二次・Koszulである環のVeroneseもそれぞれ一次生成・二次・Koszulであることを述べる。AMSの[書誌](https://doi.org/10.1090/ulect/037)を確認し、[公開テキスト](https://djvu.online/file/T1DOlccPNeqX0)で該当命題文を照合した。**これは既知の一般定理であり、本研究の新成果としない。** 本稿の lem:relative-quadratic-veronese は、任意の可換係数環上のtensor商による直接証明とZhang twistへの明示拡張、lem:relative-quadratic-from-fibers はNoetherian基底上の局所自由性とNakayamaによる全次数の相対降下である。これらをcubic・noncubic・特殊化族の反Serre環へ適用したこと、および25 pivotの具体的な閉埋込みが本研究の追加部分（全体的な先行研究に対する新規性は未確定）。
 
 有限型スキームの射の構成可能像にはStacks Project [Tag 054K](https://stacks.math.columbia.edu/tag/054K)（Chevalleyの定理）を使用する。全H2反Serre関係像はcubic・noncubicの二つの有限型表示からの構成可能集合である。関係式の被約閉包Z₂は有限型既約の代数的包絡だが、相対H2の実現部分関手のscheme structureを表すものではない。
+
+## 相対Picard作用と全cubic atlas
+
+M. Artin, J. Tate, M. Van den Bergh, *Modules over regular algebras of dimension 3*, Inventiones Mathematicae **106** (1991), 335–388, [DOI:10.1007/BF01243916](https://doi.org/10.1007/BF01243916)。Göttingen公開原典pp.355–358の本文を確認した。Proposition5.5とCorollary5.7は任意基底上の相対Picard作用を与える。`5.8の符号に従うηについて、Lemma5.10(iii)のη(a)*L=L⊗a^(−deg L)は体上の主張である。相対等式はこの式を無条件に一般化せず、普遍基底の被約性とPicardのdiagonal immersionで証明する。非被約曲線も扱う原典の範囲を保つ。
+
+Stacks Project [Tag 0DMD](https://stacks.math.columbia.edu/tag/0DMD), Lemmas108.9.2/108.9.5と[Tag 0DM9](https://stacks.math.columbia.edu/tag/0DM9), Lemma108.8.5を確認した。proper flat fp、π_*O=Oの普遍性の下でPicardは代数空間となり、diagonalはquasi-compact immersion、相対曲線ではsmoothである。本稿は多重次数零のfiberの連結性から[−2]のétale全射性を得る。 fiberwise identity componentの開性には、Holmes–Molcho–Orecchia–Poiret, *Models of Jacobians of curves*, J. reine angew. Math.801(2023),115–159, [DOI:10.1515/crelle-2023-0031](https://doi.org/10.1515/crelle-2023-0031), Appendix A Lemma A.1（[arXiv v2](https://arxiv.org/abs/2007.10792)）を用いる。quasi-separated・flat・locally finite presentation・幾何fiber被約という仮定と、準コンパクト性を要求しない本文・証明を確認した。Serre比較は既存のperfect双加群比較の局所閉性とsmooth reduced普遍根基底で証明し、任意の非被約底へは実際の同型を引き戻す。quintupleからの全Artin持上げはDDLの既知入力と、本稿のrank7関係核・rank1重なりの有限自由線形代数を組み合わせる。相対化全体の包括的な新規性は未確認である。
 
 ## 相対canonical hullと可換点の全Artin変形
 
@@ -95,7 +101,7 @@ Keeler, *Ample filters of invertible sheaves*, J. Algebra 259 (2003), 243–283�
 
 DDLの刊行版§4.1では基底は体に限定されず、coherent可換環の冪零全射R→AとAの有限表示性を仮定している。従ってTheorem 5.13(1)–(4)は任意の局所Artin small extension A′→Aへ直接適用できる。持上げた例外対象のHomはflatで還元と可換し、指定した全Hom framesを延長することができる。指定されたpointed同型はdg Moritaとcanonical反Serre環を経て、既存の全忠実性で戻す。
 
-Stacks [Tag 02HY](https://stacks.math.columbia.edu/tag/02HY), Lemma 37.12.2を一次本文で確認した。判定に使うSpec A′→Tのfinite type条件は、Tがfinite type kでA′がlocal Artinなら剰余体kのtestに帰着する理由を明記した。任意のH2族Tへの基底変更はambientのaffine有限表示対角により実際のschemeになる。[Tag 04X0](https://stacks.math.columbia.edu/tag/04X0), Lemma 94.17.2と[Tag 04TK](https://stacks.math.columbia.edu/tag/04TK), Theorem 94.17.3のsmooth groupoidの商定理も本文確認した。得られるのはQを含むH2内部の開部分の代数性であり、ambientの開部分との同一視や全H2代数性ではない。
+Stacks [Tag 02HY](https://stacks.math.columbia.edu/tag/02HY), Lemma 37.12.2を一次本文で確認した。判定に使うSpec A′→Tのfinite type条件は、Tがfinite type kでA′がlocal Artinなら剰余体kのtestに帰着する理由を明記した。任意のH2族Tへの基底変更はambientのaffine有限表示対角により実際のschemeになる。[Tag 04X0](https://stacks.math.columbia.edu/tag/04X0), Lemma 94.17.2と[Tag 04TK](https://stacks.math.columbia.edu/tag/04TK), Theorem 94.17.3のsmooth groupoidの商定理も本文確認した。この判定はQのchartと一般quintupleのchartに適用され、全cubicのH2内部の開部分の代数性を与える。ambientの開部分との同一視や全H2代数性ではない。
 
 ## 確認した一次資料
 

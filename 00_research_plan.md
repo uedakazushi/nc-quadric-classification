@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.34。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.34、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.35。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.35、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,7 +10,7 @@
 
 **内在的fppf stackと代数性の還元。** 局所有限型k-scheme上のmodule-object基底変更・descent、canonical compact圏・Serre・AZ・相対AS4被覆を定義に含める。反Serre再構成はH2↪[X3/PGL9]を全忠実にし、対角はaffineかつ有限表示。framed部分層X_asを用いてH2≃[X_as/PGL9]だが、X_as全体の有限型代数空間による表現可能性は未証明。`relative_moduli.tex`。
 
-**Qを含むsmooth Artin開部分。** `cor:quadric-effective-smooth-neighborhood` は、上の効果的族q:U°→H2がスキームで表現可能かつsmoothであり、fppf像V_QがH2の開部分であると示す。V_Q≃[U°/(U°×_[X3/PGL9]U°)]は有限型smooth Artinで、Qにおける次元は9−6=3である。任意の有限型T→H2への基底変更をambientの対角で有限表示schemeとして表し、その全closed pointで指定同型を保つArtin持上げを証明する。DDLの四項窓・全HomのliftとU°→Sのétale性を使い、pointed dg Morita比較からcanonical反Serre環を経て元のH2同型へ戻す。relation schemeは選んだfoundationを保たない同値も含む。Q一点の形式的比較や、任意の導来同値のheart exactnessを外挿していない。V_Qの外側の代数性と、ambient内での開性は結論しない。
+**cubic領域全体のsmooth Artin開部分。** `thm:cubic-smooth-open` は、全幾何fiberがcubicとなる内在的部分スタックV_cub⊂H2が、有限型で滑らかな純次元3のArtin開部分であると示す。非線形の普遍quintuple上では相対Picard群の[−2]に沿うétale被覆で適合根を構成し、linear点は可換Qのchartで覆う。各chartの全閉点で、指定されたpointed同型を保つArtin持上げを証明する。relation schemeはU×_[X3/PGL9]Uであり、選んだ根やfoundationを保存しない同値も含む。`cor:cubic-formal-h2-abelian` により全cubic点で形式H2変形とpointed Abel変形は同値で、HH≥3=0、dim HH²−dim HH¹=3となる。noncubic境界を含む全H2の代数性と、ambient内での開性は未証明である。
 
 **局所代数性を支える有限型効果性。** 標準Morita根を有限型étale近傍へ代数化し、二周期cubic列の全Hom・普遍解消・相対Koszul性・homological AS4被覆を同じ開U°上に構成した。任意affine基底でD(QGr B)≃D(Mod Λ)、compact≃Perf Λ、shift≃Serre根となる。相対point curveとKeelerの消滅、regular normal族、linear閉部分の厳密なSegre表示、次数別完備化による貼合せから、任意Noetherian基底変更後のBとAの左右Noetherian性を証明した。一般Hom有限・flat basechange・fppf・AZ・全χ・全軌道と同じ根のAS4被覆が揃う。証明は `relative_cubic_tails.tex`、`relative_noetherian_patching.tex`、`relative_cubic_noetherian.tex`。元のsite外の局所環については有限型R-test上の同じ公理という範囲を守る。
 
@@ -20,7 +20,9 @@
 
 **一般二周期族のcanonical AS4被覆。** `thm:universal-cubic-hull` は、geometric cubic族と実際の二周期βから、逆coevaluationの線束値写像Φ_i:S_i→W_i、Φ_i|W_i=2idと階数6の核H_iを構成する。A=T(B₁)/(H₀)は全次数projective、rank Aₙ=C(n+3,3)、双対は階数列(1,4,6,4,1)のKoszul Frobeniusであり、正則正規二次線GによるA/(G)=Bを持つ。任意Noetherian基底変更後も左右Noetherianである。まずE=B!の正規線Nを割ったP=E/(N)をprojectiveにし、PPをPへ適用してA=P!を平坦にするため、非被約基底でfiber次元一定だけに頼らない。AS4被覆は任意のβに成立するが、同じ根のSerre平方条件は独立に確認する。
 
-**一般点へ進むための核心。** 周期を選ばないrow/column Noetherian性と、実際の二周期族に対する普遍canonical hullは成立した。残るのは、Serreに適合する二周期の相対存在と、一般のAbel変形からその幾何表示への持上げである。非線形の普遍geometric quintuple上で相対Picard群の二除算とATVの相対作用を使う。β²がcanonical四周期θにvertex scalarを除いて一致することを基底上で確認し、canonical tailsのSerre双加群と比較する。任意の根の忘却をsmoothと仮定しない。noncubic境界と内在位相・成分数は別に認識する。
+**相対Picard根と全cubic族の認識。** `thm:relative-compatible-root` は非線形のsmooth reduced普遍quintuple基底上で、N=L₂L₀⁻¹の二等分とATVの相対作用から実際の二周期βを構成する。β²はcanonical四周期θにvertex scalarを除いて一致する。同じβに対応するperfect双加群のSerre比較を、有限表示局所閉の比較空間と普遍基底の被約性で証明し、その後に任意の非被約底へ引き戻す。任意の根を最初から変形可能とは仮定しない。`thm:geometric-cubic-relative-effectivity` が普遍Noetherian性・canonical tails・同じ根のAS4被覆から全相対公理を供給する。DDLで五つのhelix対象を持ち上げ、四つの矢空間と四次syzygy直線を回復することで、指定同型を保つquintuple chartのArtin持上げが得られる。
+
+**残る核心はnoncubic境界である。** 全cubic領域は上の開部分で認識できた。次はnoncubic点の適合根のHH²作用と全Abel変形への持上げを調べ、有限型近傍で実際のNoetherian heart・同じ根のAS4被覆を構成する。既存のnoncubic表示商は次元1であり、次元3のAbel変形の横断方向を覆うものではない。閉noncubic部分と開cubic部分で実際の代数族が得られれば、形式的Noetherian貼合せを適用する。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
 
 **別稿と研究間の関係。** `papers/quiver-avatar-moduli.tex`（v0.1）は有限foundationの8/10/12矢chart、重み四QP、反標準avatarを扱う独立論文である。体上の表示と相対H2の実現条件を区別する。cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は構成済みだが、一般族の内在H2条件は未完成。詳細な主張状態は下の表と研究ノートを正本とする。
 
@@ -129,7 +131,7 @@ $$
 | Artin witnessの相対H2族への昇格 | 根と全軌道AS4被覆が入力。全有限型基底変更のcompact/Serre/AZ/被覆を確認 | `prop:artin-witness-relative-promotion` |
 | 可換Qの標準Serre根の全Artin存在・一意性 | HH²・HH¹への作用が恒等。exact ampleな根のMorita同型類が一意 | `cor:quadric-exact-root-all-artin`, `cor:quadric-root-unique-all-artin` |
 | 可換Qの全Artin変形の相対H2実現と形式変形同値 | 二周期canonical hullによる相対AS4切断と昇格。無障害、接9・無限小自己同型6 | `thm:quadric-all-artin-h2`, `cor:quadric-formal-deformation-equivalence` |
-| cubic点の条件付き全Artin認識 | ample cubic helixと適合根のHH²自明作用を仮定。一般点でこの根が存在する範囲は未確定 | `prop:cubic-artin-hhtrivial-conditional` |
+| 全cubic点の形式H2＝Abelとsmooth開部分 | 相対Picard根とquintuple Artin持上げ。有限型・smooth・純次元3。noncubicは含めない | `thm:cubic-smooth-open`, `cor:cubic-formal-h2-abelian` |
 | 可換Qの全一次変形の相対H2実現 | Jacobian AS4被覆とZhang補正。任意有限次元二乗零理想へ拡張。内在接dim9、偏極付き接dim15、核dim6 | `thm:quadric-all-first-order-h2`, `cor:quadric-intrinsic-tangent` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
 
@@ -187,7 +189,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **一般cubic点へ局所代数性を広げる。** Qを含むsmooth Artin開部分、周期なし普遍Noetherian性、一般二周期canonical hullは構成済み。次は、非線形quintupleのsmooth reduced普遍基底S上でC/SとN=L₂L₀⁻¹を取り、Pic⁰(C/S)の[−2]に沿うétale被覆Tで並進βを構成する。β²=θのprojective比較を普遍基底上で証明して任意非被約底へ引き戻す。DDLで全helixをArtin厚みへ持ち上げ、四つの矢空間とsyzygy直線からSの点を回復する。canonical tailsでSerre比較を閉じれば、Q近傍と同じArtin判定から一般cubicのsmooth chartを得る。この段階の相対根・chartはまだ未証明として扱う。
+1. **noncubic境界の実際の近傍を構成する。** 全cubic開部分の代数性と全Artin認識は成立した。まず中央二重平方表示の適合Serre根について、foundationのHH²/HH¹への作用を計算し、全Abel Artin変形への根の存在・一意性の仮定を確認する。次にMorita根の有限型代数化と全軌道の平坦性を調べ、noncubic閉部分のClifford/PBW表示とcubic開部分を`thm:patch-noetherian`で貼り合わせられるかを判定する。dim1のnoncubic表示商だけで横断Abel方向を扱ったことにしない。根・heart・AS4被覆の各未証明入力を分ける。
 
 有限型基底上での代数的表現の目標は、$X_{\mathrm{as}}$ を有限型代数空間として表すことである。局所閉部分スキームとしての構成は十分条件だが必要条件とは主張しない。一般Noetherian基底への連続拡張・極限保存性と、貼り合わせた局所compact圏が大域のcanonical $D(\operatorname{Ind}\mathcal C)^c$ に一致することは別に確認する。
 

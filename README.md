@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.34、主論文v1.34、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.35、主論文v1.35、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -49,19 +49,21 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **一般二周期族のcanonical AS4被覆。** `thm:universal-cubic-hull` は、geometric cubic族と実際の二周期βから、逆coevaluationの線束値写像Φ_i:S_i→W_i、Φ_i|W_i=2idと階数6の核H_iを構成する。A=T(B₁)/(H₀)は全次数projective、rank Aₙ=C(n+3,3)、双対は階数列(1,4,6,4,1)のKoszul Frobeniusであり、正則正規二次線GによるA/(G)=Bを持つ。任意Noetherian基底変更後も左右Noetherianである。まずE=B!の正規線Nを割ったP=E/(N)をprojectiveにし、PPをPへ適用してA=P!を平坦にするため、非被約基底でfiber次元一定だけに頼らない。AS4被覆は任意のβに成立するが、同じ根のSerre平方条件は独立に確認する。
 
-**Qを含むsmooth Artin開部分。** `cor:quadric-effective-smooth-neighborhood` は、上の効果的族q:U°→H2がスキームで表現可能かつsmoothであり、fppf像V_QがH2の開部分であると示す。V_Q≃[U°/(U°×_[X3/PGL9]U°)]は有限型smooth Artinで、Qにおける次元は9−6=3である。任意の有限型T→H2への基底変更をambientの対角で有限表示schemeとして表し、その全closed pointで指定同型を保つArtin持上げを証明する。DDLの四項窓・全HomのliftとU°→Sのétale性を使い、pointed dg Morita比較からcanonical反Serre環を経て元のH2同型へ戻す。relation schemeは選んだfoundationを保たない同値も含む。Q一点の形式的比較や、任意の導来同値のheart exactnessを外挿していない。V_Qの外側の代数性と、ambient内での開性は結論しない。
+**cubic領域全体のsmooth Artin開部分。** `thm:cubic-smooth-open` は、全幾何fiberがcubicとなる内在的部分スタックV_cub⊂H2が、有限型で滑らかな純次元3のArtin開部分であると示す。非線形の普遍quintuple上では相対Picard群の[−2]に沿うétale被覆で適合根を構成し、linear点は可換Qのchartで覆う。各chartの全閉点で、指定されたpointed同型を保つArtin持上げを証明する。relation schemeはU×_[X3/PGL9]Uであり、選んだ根やfoundationを保存しない同値も含む。`cor:cubic-formal-h2-abelian` により全cubic点で形式H2変形とpointed Abel変形は同値で、HH≥3=0、dim HH²−dim HH¹=3となる。noncubic境界を含む全H2の代数性と、ambient内での開性は未証明である。
 
-**次の核心。** 周期なしNoetherian性と一般canonical hullは証明済み。非線形の普遍geometric quintuple上で、相対Picard群の二除算からSerreに適合する二周期を構成し、全Abel Artin変形の四項窓をその表示へ持ち上げる。V_Qの外側とnoncubic境界を覆う表示、全H2の代数性とX_asの表現可能性は未証明。[検証範囲](notes/research_notes.md#検証範囲と再現手順)。
+**相対Picard根と全cubic族の認識。** `thm:relative-compatible-root` は非線形のsmooth reduced普遍quintuple基底上で、N=L₂L₀⁻¹の二等分とATVの相対作用から実際の二周期βを構成する。β²はcanonical四周期θにvertex scalarを除いて一致する。同じβに対応するperfect双加群のSerre比較を、有限表示局所閉の比較空間と普遍基底の被約性で証明し、その後に任意の非被約底へ引き戻す。任意の根を最初から変形可能とは仮定しない。`thm:geometric-cubic-relative-effectivity` が普遍Noetherian性・canonical tails・同じ根のAS4被覆から全相対公理を供給する。DDLで五つのhelix対象を持ち上げ、四つの矢空間と四次syzygy直線を回復することで、指定同型を保つquintuple chartのArtin持上げが得られる。
+
+**残る核心はnoncubic境界である。** 全cubic領域は上の開部分で認識できた。次はnoncubic点の適合根のHH²作用と全Abel変形への持上げを調べ、有限型近傍で実際のNoetherian heart・同じ根のAS4被覆を構成する。既存のnoncubic表示商は次元1であり、次元3のAbel変形の横断方向を覆うものではない。閉noncubic部分と開cubic部分で実際の代数族が得られれば、形式的Noetherian貼合せを適用する。全H2の代数性、X_as全体の表現可能性、内在位相とfoundation表示の位相比較は未解決である。
 
 ## モジュライのスタック構成
 
-体上の対象クラスを $\mathcal H_2$、有限型基底上の内在的な相対族の fppf スタックを $\mathfrak H_2$ と書く。**相対族の定義、stack 性、反 Serre 関係式への全忠実性を構成した。代数性は未証明である。** 主な証明は [相対定義と認識](papers/sections/relative_moduli.tex) に置く。
+体上の対象クラスを $\mathcal H_2$、有限型基底上の内在的な相対族の fppf スタックを $\mathfrak H_2$ と書く。**相対族の定義、stack 性、反 Serre 関係式への全忠実性を構成した。全cubic開部分は代数的だが、全体の代数性は未証明である。** 主な証明は [相対定義と認識](papers/sections/relative_moduli.tex) に置く。
 
 有限foundationと次数移動の可逆perfect双加群表示が得られた基底では、次数移動が反Serre関手と線束twistを除いて一致する条件を、**有限表示局所閉部分スキーム**として構成した。非被約底のminor方程式と評価同型を用い、比較のfppf局所存在そのものを表す。[偏極認識の証明](papers/sections/polarization_recognition.tex)。任意のX3族にこの有限表示を与えること、平方根・AS被覆の局所存在は引き続き別の課題である。
 
 **Artin基底ではさらに進んだ。** 全flat Abel変形に有限foundationとcanonical反Serre軌道環を構成でき、偏極忘却は右逆を持つ。一次の核はHH¹(Λ)であり、二根対一致点の接次元5対4の差をZhang方向として説明する。HH¹(Λ)=0なら全Artin X3変形はcanonical偏極を持つ。異なる根対の全noncubic点ではX3は滑らかで次元83、商は滑らかで次元3となる。[Artin再構成](papers/sections/artin_foundation.tex)。可換Qのtensor O(1,1)は全Artin Abel変形へexact ampleなSerre根として持ち上がり、そのMorita同型類は一意である。[根の存在と一意性](papers/sections/artin_roots.tex)。
 
-**可換点の全Artin変形は相対H2に属する。** 二周期cubic列のcanonical hullをArtin基底上で構成し、標準根の全軌道環に相対AS4被覆と正則正規二次切断を与えた。全有限型基底変更を含む昇格命題と合わせ、可換Qの全flat pointed Abel Artin変形が実際の相対H2対象になる。H2からAbel圏への忘却は、この点を中心とする形式変形groupoidの同値であり、変形は無障害、接次元9・無限小自己同型次元6である。[全Artinのhullと形式変形](papers/sections/quadric_artin_hull.tex)。一次方向については、Jacobian二重導分と右Zhang twistによる[明示構成と検算](papers/sections/quadric_first_order.tex)も保持する。一般cubic点でも、適合するample helixとHH²に恒等に作用する根があれば全Artin認識が成立する。この作用条件を満たす根の一般点での存在、一般有限型基底上の代数性は未解決である。
+**可換点の全Artin変形は相対H2に属する。** 二周期cubic列のcanonical hullをArtin基底上で構成し、標準根の全軌道環に相対AS4被覆と正則正規二次切断を与えた。全有限型基底変更を含む昇格命題と合わせ、可換Qの全flat pointed Abel Artin変形が実際の相対H2対象になる。H2からAbel圏への忘却は、この点を中心とする形式変形groupoidの同値であり、変形は無障害、接次元9・無限小自己同型次元6である。[全Artinのhullと形式変形](papers/sections/quadric_artin_hull.tex)。一次方向については、Jacobian二重導分と右Zhang twistによる[明示構成と検算](papers/sections/quadric_first_order.tex)も保持する。全cubic点では相対Picard根とquintuple持上げを用いることで、根のHH²自明作用を追加仮定せず全Artin認識が成立する。noncubic点の全Artin認識と全H2の代数性は未解決である。
 
 **標準平方根はétale近傍へ代数化できる。** 有限foundation表示上のMorita自己同値の代数空間と平方写像を使い、可換点の標準根を実際のperfect双加群と平方同型としてétale近傍へ延長した。[根の代数化](papers/sections/artin_roots.tex)、`prop:quadric-etale-morita-root`。その近傍では、標準foundationに対して根がF0→F2、F1→F3と作用する同型を構成し、全四項窓のfull strong exceptional性、Hom階数2/4/6/9、三次関係rank2・四次重なりrank1の非退化性を任意底変更について証明した（`prop:quadric-etale-finite-window`）。全距離のHomと三次提示は上記の相対解消で解決した。canonical compact/Serre認識は相対cubic tailsの証明で成立した。単一有限型開上の左右Noetherian性と相対H2実現は上記の定理で成立した。相対H2全体の代数性は未証明。特殊fiberのrankと非退化性の独立な厳密検算は [`verify_quadric_finite_windows.py`](computations/verify_quadric_finite_windows.py) に収録した。
 
