@@ -11,7 +11,7 @@
 相対 point curve と正規族の構成を明記し、楕円部分の Noetherian 性には
 Keeler の相対 Fujita 消滅を用いる。
 linear 閉部分はテンソルの rank-one flattening により別に扱う。
-最後に第\cite[\texttt{sec:formal-noetherian-patching}]{QuadricIntrinsic2026}節の形式的貼合せを適用する。
+最後に第\ref{sec:formal-noetherian-patching}節の形式的貼合せを適用する。
 本稿の相対化および貼合せとの組合せの新規性は未確認である。
 
 \subsection{仮定と結論}
@@ -61,7 +61,7 @@ $B\otimes_RR'$ も左右 Noetherian である。
 \begin{proof}
 二周期同型は $\check B\simeq D^{\mathrm{ev}}$ を与える。
 従って定理により $B$ の全ての斉次右イデアルと斉次左イデアルは有限生成である。
-補題~\cite[\texttt{lem:patch-graded-to-ungraded}]{QuadricIntrinsic2026} により、次数を忘れても左右 Noetherian である。
+補題~\ref{lem:patch-graded-to-ungraded} により、次数を忘れても左右 Noetherian である。
 任意の可換 Noetherian 基底変更後にも同じ議論が使える。
 \end{proof}
 
@@ -403,7 +403,7 @@ $\operatorname{gr}_{(g)}A\simeq(A/gA)[z;\alpha]$ であり、これは左右 Noe
 
 命題~\ref{noeth-prop:normal-family} の正則正規族と
 補題~\ref{noeth-lem:row-noetherian} に、周期性を仮定しない
-定理~\cite[\texttt{thm:patch-normal-family}]{QuadricIntrinsic2026} を $\delta=4$ として適用する。
+定理~\ref{thm:patch-normal-family} を $\delta=4$ として適用する。
 これにより $S_{\mathrm e}$ 上の $D$ の全ての row と column は Noetherian である。
 無限個の正規線 $G_i$ は同定や自明化を仮定せず、同定理の頂点線束 twist で扱う。
 同じ構成と Keeler の定理は任意の可換 Noetherian 基底変更後に適用できるので、
@@ -618,14 +618,14 @@ $a*b=a\tau^{\deg a}(b)$ という Zhang twist として具体的に書ける。
 \subsection{形式貼合せと普遍性}
 
 ここから再び元の基底環 $R$ とそのイデアル $I$ を用いる。
-第\cite[\texttt{sec:formal-noetherian-patching}]{QuadricIntrinsic2026}節の $\mathbb Z$ 代数に対する定理~\cite[\texttt{thm:patch-z-algebra}]{QuadricIntrinsic2026}を用いる。
+第\ref{sec:formal-noetherian-patching}節の $\mathbb Z$ 代数に対する定理~\ref{thm:patch-z-algebra}を用いる。
 
 \begin{proof}[定理 \ref{thm:relative-geometric-cubic-noetherian} の証明]
 $I=(f_1,\ldots,f_r)$ と有限個の実際の生成元を取る。
 各 $D(f_a)$ は $S_{\mathrm e}$ に含まれるので、相対曲線商と正規族による結果から
 $D[f_a^{-1}]$ の全ての row と column は Noetherian である。
 系~\ref{cor:linear-universal-row-noetherian} により $D/ID$ も同じ性質を持つ。
-全 $D_{ij}$ は有限 projective なので、定理~\cite[\texttt{thm:patch-z-algebra}]{QuadricIntrinsic2026} を適用して
+全 $D_{ij}$ は有限 projective なので、定理~\ref{thm:patch-z-algebra} を適用して
 $D$ の全 row と column の Noetherian 性を得る。
 
 偶数添字への制限もこの性質を保つ。
@@ -663,7 +663,7 @@ AS4 被覆の全次数平坦性、正則正規元、相対 Gorenstein 解消は�
 \begin{theorem}[可換二次曲面の有限型相対実現]
 \label{thm:quadric-finite-type-effectivity}
 命題~\cite[\texttt{prop:quadric-zariski-homological-as-cover}]{QuadricIntrinsic2026} と
-命題~\cite[\texttt{prop:quadric-canonical-cubic-tails}]{QuadricIntrinsic2026} の共通の有限型 affine 開
+命題~\ref{prop:quadric-canonical-cubic-tails} の共通の有限型 affine 開
 $U^\circ$ を取る。この開は可換二次曲面 $Q$ の点 $u$ を含む。
 このとき以下が成立する。
 \begin{enumerate}
@@ -689,7 +689,7 @@ $(\qgr B_T,\pi B_T)$ とその全有限型基底変更は
 
 \begin{proof}
 右加群の積の規約を先に固定する。
-命題~\cite[\texttt{prop:quadric-canonical-cubic-tails}]{QuadricIntrinsic2026} のように
+命題~\ref{prop:quadric-canonical-cubic-tails} のように
 \[
  C_{ij}=D_{-j,-i}
        =\Hom(L_{-j},L_{-i})
@@ -715,12 +715,12 @@ $A_T$ は普遍的に regular normal な二次線を持ち、その商が $B_T$ 
 相対 Koszul・Frobenius 解消は既存の homological 被覆構成から得られるので、
 これで定義上の相対 AS4 被覆となる。
 
-定理~\cite[\texttt{thm:quadric-noetherian-relative-promotion}]{QuadricIntrinsic2026} を適用すると、
+定理~\ref{thm:quadric-noetherian-relative-promotion} を適用すると、
 coherent Hom の有限性と flat base change、module-object 基底変更、fppf 降下、
 構造対象の平坦性、canonical compact 圏、Serre 関係、AZ 豊富性、
 全軌道環と同じ根の被覆が、同一の有限型開全体とその有限型基底変更で成立する。
 全ての構成は重なりで canonical に整合するので、相対対象と上の射 $f$ が得られる。
 体上の構造対象の rank one torsion-free 性と full bounded Serre 双対は、
 同じ昇格定理における体上分類の適用により確認されている。
-最後の主張は命題~\cite[\texttt{prop:quadric-canonical-cubic-tails}]{QuadricIntrinsic2026} による。
+最後の主張は命題~\ref{prop:quadric-canonical-cubic-tails} による。
 \end{proof}
