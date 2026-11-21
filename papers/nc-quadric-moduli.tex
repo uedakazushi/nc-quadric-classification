@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.20（相対モジュライ原稿の現行構成）
+% 日本語 LuaLaTeX。2026-11-22 / v0.21（相対モジュライ原稿の現行構成）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象付き非可換二次曲面の内在的モジュライ：\\代数性と noncubic 境界}
 \author{}
-\date{2026年11月22日\quad v0.20（依存関係と公表前監査を継続）}
+\date{2026年11月22日\quad v0.21（依存関係と公表前監査を継続）}
 
 \begin{document}
 \maketitle
@@ -60,6 +60,7 @@
 局所有限型基底の fppf site 上で $\mathfrak H_2$ の
 有限型・滑らか・既約な純次元三の Artin stack 表示と、
 滑らかな八十三次元の framed 実現を扱う。
+楕円型の構造対象忘却のファイバー、および
 被約 noncubic 境界の滑らかな余次元二の閉埋込み、
 二形式表示商との相対同値、慣性、
 good/coarse moduli と一致根対の形式局所構造を記述する。
@@ -94,6 +95,7 @@ Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
 \input{moduli/relative_recognition}
 \input{moduli/relative_as_cover}
 
+\input{moduli/antiserre_polarization}
 \input{moduli/polarization_recognition}
 \input{moduli/ruled_diagonal_obstruction}
 \input{moduli/quadric_smooth_atlas}
@@ -129,6 +131,7 @@ $\mathfrak N^{\mathrm{pres}}=[P/G]$ を与える。
 \input{moduli/noncubic_fibers}
 
 \input{moduli/noncubic_boundary_comparison}
+\input{moduli/marking_forgetting}
 
 \section{残る比較問題}\label{sec:moduli-remaining}
 $X_{\mathrm{as}}\to X_3$ の局所閉性・偏極認識方程式、

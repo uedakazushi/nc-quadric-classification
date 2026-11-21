@@ -1,0 +1,220 @@
+% !TeX root = ../nc-quadric-moduli.tex
+% 2026-11-21 / v1.8
+\section{反 Serre 偏極の認識と次数付き表示の変形}
+\label{sec:antiserre-polarization}
+
+全次数平坦な二次環から相対 Abel 圏を作れることと、
+その環の次数移動が圏の内在的反 Serre 関手であることは異なる。
+この相違は noncubic の二根対一致点で実際に現れる。
+以下では全次数平坦な代数的な族を用い、
+pointed Abel 圏を固定しても関係式空間の像が動くことを示す。
+
+\begin{proposition}[pointed Abel 圏が一定となる非自明な二次環の族]
+\label{prop:antiserre-polarization-family}
+$k$ を標数零の代数閉体とし、
+\[
+ B=k[u,v]\langle c,d\rangle/(c^2-uv,d^2-uv),\qquad
+ \iota(u)=u,\quad\iota(v)=v,\quad\iota(c)=-c,\quad\iota(d)=-d
+\]
+と置く。
+$R=(B^{(2)})^{\iota}$ を
+命題~\ref{prop:noncubic-antiserre-descent} の noncubic 反 Serre 環とする。
+この表示では、$a\in B_{2m}$、$b\in B_{2n}$ の積は
+\[
+ a\mathbin{\circ} b=a\,\iota^m(b)
+\]
+である。
+基底 $S=\operatorname{Spec}k[q,q^{-1}]$ 上で
+\[
+ \sigma_q(u)=qu,\qquad \sigma_q(v)=q^{-1}v,\qquad
+ \sigma_q(c)=c,\qquad \sigma_q(d)=d
+\]
+と定める。
+$\sigma_q$ は $\iota$ と可換な次数付き自己同型であり、
+$R\otimes k[q,q^{-1}]$ の自己同型でもある。
+その\emph{右} Zhang twist を $\mathcal R^{(q)}$ と書き、積を
+\[
+ a*_q b=\sigma_q^{\deg_R b}(a)\mathbin{\circ}b
+ \tag{ZT}\label{eq:polarization-right-zhang}
+\]
+と定める。
+この族は次を満たす。
+\begin{enumerate}
+\item 全次数有限自由で
+$\operatorname{rank}\mathcal R^{(q)}_n=(2n+1)^2$ となり、
+左右 noetherian な二次環の族である。
+従って $S\to X_3$ および
+$S\to[X_3/\operatorname{PGL}_9]$ を与える。
+\item Zhang twist の同値により
+\[
+ (\operatorname{qgr}\mathcal R^{(q)},\pi\mathcal R^{(q)})
+ \simeq
+ (\operatorname{qgr}(R\otimes k[q,q^{-1}]),\pi(R\otimes k[q,q^{-1}]))
+\]
+である。この同値は基底上線型、pointed exact であり、
+任意の底変更と両立する。
+\item $q=1$ のファイバーは $R$ であるが、$q=2$ のファイバーは
+$R$ に次数付き同型ではない。
+しかも $q=2$ のファイバーは、いかなる $\HH$ 対象の
+内在的反 Serre 環にも次数付き同型ではない。
+\end{enumerate}
+従って $X_3$ には、$\operatorname{qgr}$ と構造対象からは
+$\HH$ 対象を与えながら、内在的反 Serre 環の表示ではない幾何点が存在する。
+\end{proposition}
+\begin{proof}
+$uv$ は $\sigma_q$ で固定されるので、二つの二乗関係は保存される。
+$\sigma_q$ と $\iota$ の可換性も表示から直接従う。
+Zhang twist は次数別の加群を変えないため、平坦性と Hilbert 関数は
+一定の族 $R\otimes k[q,q^{-1}]$ から従う。
+$R=T(R_1)/(J)$ とすれば、二次関係は
+\[
+ J_q=(\sigma_q^{-1}\otimes\operatorname{id})(J)
+\]
+である。全次数の Zhang 同値から、この二次関係が全関係を生成する。
+元の $B$ は中心 $k[u,v,h]$（$h=cd+dc$）上で有限である。
+従って基底拡大後も左右 noetherian であり、
+Veronese および Zhang twist の同値により $\mathcal R^{(q)}$ もそうである。
+この議論は Noetherian 基底への底変更後にも適用できる。
+
+次数付き加群の同値は Zhang の構成である
+\cite[Theorem 3.1]{Zhang1996}。
+係数環と左右の規約を明確にするため、ここでは具体式も記す。
+次数 $n$ で $\phi_n=\sigma_q^{-n}$ とすると、
+式~(\ref{eq:polarization-right-zhang}) の環は
+\[
+ a\diamond b=a\mathbin{\circ}\sigma_q^{-\deg_R a}(b)
+\]
+という通常の左次数による twist に $\phi$ で次数付き同型となる。
+この後者の環に対して、次数付き右加群 $M$ の作用を
+\[
+ m\diamond a=m\,\sigma_q^{-\deg m}(a)
+\]
+と置けば、同じ次数付き加群上に新しい右作用を得る。
+逆自己同型による同じ構成が逆関手となる。
+従ってこれは係数環上で exact な同値であり、
+自由加群を自由加群へ、torsion 加群を torsion 加群へ送る。
+従って表示した pointed exact な $\operatorname{qgr}$ の同値を得る。
+全構成は $\sigma_q$ と次数による有限の積から定義されるので、
+底変更と両立する。
+
+次数一の中心を比較して最後の主張を示す。
+$R_1$ の基底を
+\[
+ (u^2,uv,v^2,uc,vc,ud,vd,cd,dc)
+ \tag{P-basis}\label{eq:polarization-generator-basis}
+\]
+とする。
+元の $R$ では $e=cd-dc$ が非零の中心一次元である。
+実際、$e$ は $u,v$ と可換、$c,d$ と反可換であり、
+$\iota(e)=e$ である。
+従って上の基底の各元に対して、積 $\circ$ に入る $\iota$ の符号が
+反可換性の符号を打ち消す。
+$cd$ と $dc$ の線型独立性は PBW 基底から従う。
+
+一方、上の九基底の $\sigma_q$-weight は
+\[
+ (2,0,-2,1,-1,1,-1,0,0)
+\]
+である。
+基底元 $x$ の $\iota$-符号を $\eta_x\in\{1,-1\}$ とすると、
+\[
+ x*_q(uv)-(uv)*_q x
+ =(q^{\operatorname{wt}(x)}-\eta_x)\,uvx.
+\]
+$q=2$ ではこの係数が零となる基底元は $uv,cd,dc$ だけである。
+$B$ の PBW 基底から $uv$ の乗法は単射なので、
+中心一次元があれば $z\in\langle uv,cd,dc\rangle$ である。
+これらは $\sigma_q$ と $\iota$ で固定され、元の $B$ で $u^2$ と可換だから、
+\[
+ z*_q u^2-u^2*_q z=(1-q^2)u^2z.
+\]
+$u^2$ の乗法も単射なので、$q=2$ では $z=0$ となる。
+従って
+\[
+ Z(R)_1\ne0,\qquad Z(\mathcal R^{(2)})_1=0
+\]
+であり、二つの環は次数付き同型ではない。
+
+もし $\mathcal R^{(2)}$ が別の $\HH$ 対象
+$(\mathcal C',\mathcal O')$ の反 Serre 環なら、
+反 Serre 豊富性と再構成により
+$(\mathcal C',\mathcal O')\simeq
+(\operatorname{qgr}\mathcal R^{(2)},\pi\mathcal R^{(2)})$ である。
+これは既に示した Zhang 同値によって元の pointed 圏と同値である。
+内在的反 Serre 環は pointed exact 同値で不変なので
+（定理~\cite[\texttt{thm:antiserre-invariant}]{QuadricIntrinsic2026}）、
+$\mathcal R^{(2)}\simeq R$ となって矛盾する。
+\end{proof}
+
+\begin{proposition}[一定の Abel 変形へ移る非零接方向]
+\label{prop:antiserre-polarization-tangent}
+前命題の族を $q=1+\varepsilon$、$\varepsilon^2=0$ に制限する。
+次数零の導分
+\[
+ \delta(u)=u,\quad\delta(v)=-v,\quad\delta(c)=\delta(d)=0
+\]
+を用いると、積の一次項は
+\[
+ \mu_1(a,b)=\deg_R(b)\,\delta(a)\mathbin{\circ}b.
+\]
+これは $\operatorname{HH}^2(R)_0$ の非零類を与える。
+従って対応する $X_3$ の接方向は $\operatorname{PGL}_9$ 軌道の接方向ではない。
+一方、対応する pointed Abel 圏の一次変形は自明である。
+\end{proposition}
+\begin{proof}
+族全体が結合的なので $\mu_1$ は Hochschild $2$-cocycle である。
+その非自明性は中心元上の交換子で検出できる。
+\[
+ U=u^4,\qquad V=v^4
+\]
+はともに $R$-次数二であり、元の $R$ の中心に属する。
+実際、元の $B$ で中心、$\iota$ で固定され、
+次数二の左因子に現れる $\iota^2$ も恒等写像である。
+$\delta(U)=4U$、$\delta(V)=-4V$ なので、
+変形した積で
+\[
+ U*V-V*U
+ =\varepsilon\bigl(\mu_1(U,V)-\mu_1(V,U)\bigr)
+ =16\varepsilon u^4v^4\ne0.
+ \tag{P-comm}\label{eq:polarization-central-commutator}
+\]
+最後の非零性は中央の $u,v$ と交互語からなる PBW 基底による。
+
+もし $\mu_1$ が Hochschild 境界なら、
+$\operatorname{id}+\varepsilon h$ による一次の基底変更で
+一定の積へ移せる。
+しかし元の中心元 $U,V$ について、任意の一次基底変更が交換子へ与える補正は
+\[
+ [h(U),V]+[U,h(V)]=0
+\]
+である。
+これは式~(\ref{eq:polarization-central-commutator}) に反する。
+従って非零の Hochschild 類であり、特に次数一生成元の基底変更に由来する
+$\operatorname{PGL}_9$ 軌道方向でもない。
+pointed Abel 変形の自明性は前命題の Zhang 同値を双対数へ制限すれば従う。
+\end{proof}
+
+\begin{remark}[反 Serre 認識に対する意味]
+上の一次変形では、構造対象付き Abel 圏が一定なので、
+その内在的反 Serre 関手と反 Serre 軌道環も一定のものに同定される。
+従って $\mathcal R^{(q)}$ の次数一移動を、
+この内在的反 Serre 関手と同定することはできない。
+全次数平坦性と $\operatorname{qgr}$ の再構成だけでは、
+関係式空間から内在的 $\HHstack$ への全忠実性は得られない。
+必要なのは、表示された次数移動が相対 Serre 双対から得られる
+$S^{-1}[2]$ と一致するという追加の認識である。
+
+中心元の交換子による上の証明は標数零で直接成立し、
+接空間の数値比較を仮定しない。
+独立な有限線型代数の確認では、既存の Grassmann 座標で
+$\operatorname{PGL}_9$ 軌道行列の階数は $79$、
+この方向を加えた階数は $80$ となる。
+さらに六係数方向も加えた行列の階数は $81$、
+そこへこの方向を加えると $82$ となる。
+これらは
+\texttt{computations/verify\_antiserre\_polarization.py}
+による法 $101$ の厳密計算で確認した。
+軌道行列の次数零導分 $\delta$ による非零核ベクトルを
+整数上でも確認するので、最初の二つの階数 $79,80$ は
+標数零でも正確な値である。
+\end{remark}

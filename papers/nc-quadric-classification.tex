@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.63
+% 日本語 LuaLaTeX。2026-11-22 / v1.64
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v1.63（完全分類を中心とする原稿の再編）}
+\date{2026年11月22日\quad v1.64（完全分類を中心とする原稿の再編）}
 
 \begin{document}
 \maketitle
@@ -68,8 +68,9 @@ Van den Bergh 許容四つ組から構成される cubic 領域、
 同時射影同値で分類できる。全退化型を含み、
 未知の AS 条件や圏同値の解決を分類条件には残さない。
 
-さらに楕円四つ組の指定範囲では、構造対象の
-$\mathbb Z^2$ 格子と $\OO$-標識忘却の有限／可算無限ファイバーを記述する。
+楕円四つ組における構造対象の $\mathbb Z^2$ 格子と
+$\OO$-標識忘却のファイバーは、相対モジュライ別稿
+\cite{QuadricModuli2026} で扱う。
 相対モジュライの有限型Artin性・noncubic 境界の幾何は
 別稿 \cite{QuadricModuli2026} の対象とする。
 既知の cubic 分類と本稿の pointed 同値分類を区別し、
@@ -130,18 +131,18 @@ cubic/noncubic 族の相対効果性、framed 実現、
 \cite[\S4.1, Lemma 4.2.2]{BondalVanDenBergh2003} の torsion 局所化の方法を用いる。
 その体上の定理を一般基底へそのまま適用せず、
 有限 projective 係数の cubic 解消から acyclicity と有限 cohomological dimension を
-証明し直す（第\ref{sec:relative-cubic-tails}節）。
+証明し直す（別稿~\cite[\texttt{sec:relative-cubic-tails}]{QuadricModuli2026}）。
 noncubic 境界では極小 Betti 数が跳ぶため、五頂点の非極小 bar 解消へ置き換える
-（第\ref{sec:noncubic-local-tails}節）。
+（別稿~\cite[\texttt{sec:noncubic-local-tails}]{QuadricModuli2026}）。
 有限 perfect 複体の特殊 fiber の集中から同じ局所環上の全前向き Hom を制御する。
 この段階には perfect 複体の標準的な fiber 判定\cite[Tag 0BDK]{StacksPerfectFibers} を用いる。
 これにより任意基底での canonical な非有界導来比較を得る。
-Noetherian 性は別に証明する必要があり、第\ref{sec:relative-cubic-noetherian}節で
+Noetherian 性は別に証明する必要があり、別稿~\cite[\texttt{sec:relative-cubic-noetherian}]{QuadricModuli2026}で
 相対 point curve と正規族を scheme-theoretic に構成して解決する。
 曲線商の Noetherian 性には Keeler \cite[Theorem 1.5, 付属 Erratum \S2]{Keeler2003}
 の一般 Noetherian 基底上の消滅を用いる。
 linear 部分の非被約な Segre 表示と、
-第\ref{sec:formal-noetherian-patching}節の次数別形式的貼合せによって、
+別稿~\cite[\texttt{sec:formal-noetherian-patching}]{QuadricModuli2026}の次数別形式的貼合せによって、
 単一の基底全体へ結論を移す。
 Noetherian 性の下では、有限解消と有限 presentation から
 一様 Serre 消滅と全相対条件を導ける。
@@ -211,10 +212,10 @@ $\operatorname{HH}^1$ と同定する。
 被覆の構成には Bauwens--Van den Bergh \cite{BauwensVanDenBergh1998} と
 Van den Bergh \cite[\S6]{VdB2011} の canonical hull を参照するが、
 二周期の相対 tensor 恒等式、正則性、Koszul 双対の平坦性は別途証明する。
-定理~\ref{thm:universal-cubic-hull} はこれを任意の geometric 二周期族へ拡張し、
+定理~\cite[\texttt{thm:universal-cubic-hull}]{QuadricModuli2026} はこれを任意の geometric 二周期族へ拡張し、
 逆 coevaluation の核から全次数 projective な AS4 被覆を構成する。
 全 row・column の普遍 Noetherian 性には二周期自体も不要である
-（定理~\ref{thm:relative-geometric-cubic-noetherian}）。
+（定理~\cite[\texttt{thm:relative-geometric-cubic-noetherian}]{QuadricModuli2026}）。
 被覆の存在と、同じ二周期が Serre 平方根になることは区別する。
 一次 Jacobian 被覆は全九次元の具体式を与える。
 Toda \cite[Theorem 4.7, arXiv v3]{Toda2009} の一次 Fourier--Mukai 持上げ定理は
@@ -224,22 +225,22 @@ To\"en--Vaqui\'e \cite[Corollaries 3.22, 3.24]{TV2007} の一般基礎環上の
 可換点の foundation 表示の \'etale 近傍に実際の Morita 根を構成できる。
 さらに標準 foundation の二項移動と四項窓を代数化し、三次関係と
 四次重なりを有限局所自由な tensor として認識する
-（命題~\ref{prop:quadric-etale-finite-window}）。
+（命題~\cite[\texttt{prop:quadric-etale-finite-window}]{QuadricModuli2026}）。
 可換点の局所環では全次数の三次提示・標準 cubic 解消と
 偶数環の相対 Koszul 性まで得る
-（定理~\ref{thm:quadric-local-all-degree-cubic}）。
+（定理~\cite[\texttt{thm:quadric-local-all-degree-cubic}]{QuadricModuli2026}）。
 幾何点の cubic AS 正則性は開近傍上で確認できる
-（命題~\ref{prop:quadric-geometric-quintuple-open}）。
+（命題~\cite[\texttt{prop:quadric-geometric-quintuple-open}]{QuadricModuli2026}）。
 全次数の一様な平坦性と内在 Hom の同定は
-命題~\ref{prop:quadric-uniform-cubic-hom-open} で得られる。
+命題~\cite[\texttt{prop:quadric-uniform-cubic-hom-open}]{QuadricModuli2026} で得られる。
 さらに一般 canonical hull により相対 AS4 被覆を同じ開上に構成できる
-（命題~\ref{prop:quadric-zariski-homological-as-cover}）。
+（命題~\cite[\texttt{prop:quadric-zariski-homological-as-cover}]{QuadricModuli2026}）。
 この構成に canonical tails 比較を合わせ、
-定理~\ref{thm:quadric-finite-type-effectivity} で
+定理~\cite[\texttt{thm:quadric-finite-type-effectivity}]{QuadricModuli2026} で
 有限型開上の内在的相対実現を得る。
 この族の全閉点で De Deken--Lowen の helix 持上げを適用し、
 指定された pointed 同型まで延長することで、
-系~\ref{cor:quadric-effective-smooth-neighborhood} の滑らかな Artin 開近傍を構成する。
+系~\cite[\texttt{cor:quadric-effective-smooth-neighborhood}]{QuadricModuli2026} の滑らかな Artin 開近傍を構成する。
 有限表示な各基底変更への Artin 判定と smooth groupoid の商には
 \cite[Tags 02HY, 04X0, 04TK]{StacksSmoothAtlas} を用いる。
 これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
@@ -510,33 +511,6 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/elliptic_inverse}
 \input{sections/pencil_deformation}
 
-\input{sections/foundation_stack}
-\input{sections/noncubic_stack}
-\input{sections/relative_koszul}
-\input{sections/relative_moduli}
-\input{sections/artin_foundation}
-\input{sections/polarization_recognition}
-\input{sections/relative_as_cover}
-\input{sections/antiserre_polarization}
-\input{sections/artin_roots}
-\input{sections/relative_cubic_tails}
-\input{sections/relative_noetherian_patching}
-\input{sections/relative_cubic_noetherian}
-\input{sections/universal_cubic_hull}
-\input{sections/relative_cubic_families}
-\input{sections/relative_picard_roots}
-\input{sections/quadric_smooth_atlas}
-\input{sections/cubic_smooth_atlas}
-\input{sections/relative_noncubic_families}
-\input{sections/noncubic_hh_roots}
-\input{sections/noncubic_central_hull}
-\input{sections/noncubic_local_tails}
-\input{sections/noncubic_finite_type}
-\input{sections/h2_smooth_atlas}
-\input{sections/noncubic_boundary_comparison}
-\input{sections/quadric_artin_hull}
-\input{sections/quadric_first_order}
-\input{sections/marking_forgetting}
 
 \section{同値類の分類後に残る問題}
 \label{sec:open-problems}
@@ -574,20 +548,20 @@ Deligne--Mumford スタックにはならない。
 \end{remark}
 
 \begin{problem}[境界の相対表示と framed 局所構造]
-定理~\ref{thm:global-h2-smooth-finite-type} により $\HHstack$ の有限型代数性は成立し、
-系~\ref{cor:global-xas-smooth-scheme} により framed 実現空間は smooth スキームとなる。
+定理~\cite[\texttt{thm:global-h2-smooth-finite-type}]{QuadricModuli2026} により $\HHstack$ の有限型代数性は成立し、
+系~\cite[\texttt{cor:global-xas-smooth-scheme}]{QuadricModuli2026} により framed 実現空間は smooth スキームとなる。
 有限 foundation の ruling 商 $\mathfrak Q_{\mathrm{fnd}}$ との相対比較を具体化し、
-境界で確立した相対商表示（定理~\ref{thm:noncubic-intrinsic-presentation-equivalence}）を踏まえて、
+境界で確立した相対商表示（定理~\cite[\texttt{thm:noncubic-intrinsic-presentation-equivalence}]{QuadricModuli2026}）を踏まえて、
 全体の相対 groupoid を比較せよ。
 全体の既約性と被約境界の滑らかさ・余次元二は、
-命題~\ref{prop:global-h2-irreducible} と定理~\ref{thm:noncubic-boundary-smooth-codim-two} で成立した。
+命題~\cite[\texttt{prop:global-h2-irreducible}]{QuadricModuli2026} と定理~\cite[\texttt{thm:noncubic-boundary-smooth-codim-two}]{QuadricModuli2026} で成立した。
 既存の smooth proper dg 特殊化族そのものの相対 $\HHstack$ 認識は、各族について別に確認する。
 この内在的な既約性の証明は、実際の相対族の連続性を使い、
-命題~\ref{prop:h2-component-density} の誘導位相との同一視を必要としない。
+命題~\cite[\texttt{prop:h2-component-density}]{QuadricModuli2026} の誘導位相との同一視を必要としない。
 
 また $X_{\mathrm{as}}\to X_3$ の局所閉性と具体的な認識方程式を調べよ。
-一致根対では命題~\ref{prop:global-h2-not-ambient-open} が開性を否定する。
-余分な一次方向は系~\ref{cor:artin-polarization-retraction} の
+一致根対では命題~\cite[\texttt{prop:global-h2-not-ambient-open}]{QuadricModuli2026} が開性を否定する。
+余分な一次方向は系~\cite[\texttt{cor:artin-polarization-retraction}]{QuadricModuli2026} の
 $\operatorname{HH}^1$ に対応する偏極変形である。
 全スキーム上の商による延長と、任意 Noetherian 基底上で同じ Abel 公理を課す関手との一致も、
 極限保存と canonical 導来圏の比較を伴う別の課題である。
