@@ -718,6 +718,162 @@ $\mathbb A^{25\cdot56}\to\mathbb A^6$
 その制限は局所閉埋込みである。
 \end{proof}
 
+\subsection{三次 Hilbert 条件の接空間と非cubic表示の法方向}
+\label{subsec:noncubic-tangent-degree-three}
+
+前節の固定 Grassmann cell の局所座標を用いて、
+相対反 Serre 環の三次成分が所望階数
+$49=(2\cdot3+1)^2$ を保つ一次変形を調べる。
+これだけで相対 $\HHstack$ を構成できるとは主張しない。
+
+$V=k^9$、$J\subset V^{\otimes2}$ を階数 $56$ の関係部分空間、
+$E=V^{\otimes2}/J$ とし、自然な写像
+\[
+ L_J:V\otimes J\longrightarrow E\otimes V,\qquad
+ v\otimes r\longmapsto(\pi\otimes1)(v\otimes r)
+ \tag{H3-L}\label{eq:noncubic-degree-three-relation-map}
+\]
+を考える。$R=T(V)/(J)$ とすると
+$R_3=\operatorname{coker}L_J$ である。
+$E\otimes V$ は次元 $25\cdot9=225$、
+$V\otimes J$ は次元 $9\cdot56=504$ なので、
+$\dim R_3=49$ は $\operatorname{rank}L_J=176$ と同値になる。
+したがって Grassmannian 上に
+$\operatorname{rank}L_J\le176$ で定まる
+閉 determinantal locus $\mathcal D_{3,\ge49}$ がある。
+階数がちょうど $176$ の点で
+その接空間は、一般の determinantal 接空間の公式から
+\[
+ T_J\mathcal D_{3,\ge49}
+ =\left\{
+ \phi\in\operatorname{Hom}(J,E):
+ \overline{\delta L_\phi}:
+   \ker L_J\to\operatorname{coker}L_J
+ \text{ が零}
+ \right\}.
+ \tag{H3-T}\label{eq:noncubic-third-degree-tangent}
+\]
+
+\begin{proposition}[noncubic の接方向の分離と三次条件の上界]
+\label{prop:noncubic-third-degree-tangent}
+$k$ を標数零の代数閉体とし、
+命題~\ref{prop:noncubic-grassmann-explicit-cell} の
+六係数から得られる関係空間を $J(f_1,f_2)$ とする。
+次の三つの点を考える：
+\[
+\begin{array}{c|c|c}
+ &f_1&f_2\\ \hline
+ x_{\mathrm{dis}}&uv&u^2+v^2\\
+ x_{\mathrm{shr}}&uv&u(v-u)\\
+ x_{\mathrm{eq}}&uv&uv .
+\end{array}
+\tag{H3-types}\label{eq:noncubic-tangent-examples}
+\]
+それぞれで、$\mathrm{PGL}_9$ 軌道の接空間と
+六係数の像の接空間の和は、正確に次元 $81$ である。
+個々の軌道の接次元は順に $80,80,79$、
+六係数の接像はそれぞれ六次元であり、
+交わりの次元は順に $5,5,4$ である。
+
+また上の三点で
+$\mathcal D_{3,\ge49}$ の接空間はそれぞれ
+\[
+ \dim T_{x_{\mathrm{dis}}}\mathcal D_{3,\ge49}\le83,
+ \quad
+ \dim T_{x_{\mathrm{shr}}}\mathcal D_{3,\ge49}\le83,
+ \quad
+ \dim T_{x_{\mathrm{eq}}}\mathcal D_{3,\ge49}\le84
+ \tag{H3-bound}\label{eq:noncubic-tangent-bounds}
+\]
+を満たす。
+従って、三次 Hilbert 条件を保つ一次方向で
+noncubic 表示と基底変更から来ないものの次元は、
+この三点でそれぞれ高々 $2,2,3$ である。
+二形式の非交差な根対を持つ一般点についても
+上界 $83$ は成立する。
+
+最後の接次元は等号であるとは主張しない。
+三次 Hilbert 条件は $\HH$ 公理の一部分にすぎず、
+四次以上の平坦性・相対 heart・Serre・
+AZ/AS 条件を含めない。
+\end{proposition}
+\begin{proof}
+六係数の接像が六次元であることは、
+命題~\ref{prop:noncubic-grassmann-explicit-cell} の
+閉埋込み性による。
+$\mathrm{PGL}_9$ 軌道の次元は pointed 自己同値群の
+幾何点慣性の計算で求められる。
+異なる根対（交わりが空または一根）の安定化群は有限、
+一致した根対では一次元である。
+従って軌道次元は $80,80,79$ となる。
+
+相対二形式表示の群 $G$ は次元五で、
+$\Phi:P\to\operatorname{Gr}(56,81)$ は $G$-同変である。
+$G$ の根配置点の軌道次元は、
+異なる根対の場合は五、一致する場合は四である。
+これらの軌道の接方向は、$\mathrm{PGL}_9$ 軌道と
+六係数像の接空間の交わりに入る。
+したがって両者の和の次元は
+それぞれ高々 $80+6-5=81$ と
+$79+6-4=81$ である。
+
+一方、固定25個の単位 pivot を用い、
+$T_J\operatorname{Gr}(56,81)\simeq\operatorname{Hom}(J,E)$
+の1400個の座標で、$\mathfrak{pgl}_9$ の
+80個の行列単位と六係数の微分を計算すると、
+係数を法 $101$ に還元した正確な行列の階数は、
+三点とも $81$ である。
+この検算は
+\texttt{computations/verify\_noncubic\_degree3\_tangent.py}
+に保存した。
+整数係数行列の標数零における階数は
+法 $101$ の階数以上なので、前段の上界と併せて
+標数零の和の接空間は正確に次元 $81$ と分かる。
+
+次に式~(\ref{eq:noncubic-third-degree-tangent}) の線形化を行う。
+三点とも $L_J$ は階数 $176$ であり、
+$\dim\ker L_J=328$、
+$\dim\operatorname{coker}L_J=49$ である。
+二次関係 $J$ を $25\times56$ の Grassmann affine 座標で動かしたとき、
+$\overline{\delta L_\phi}$ は、
+$328\cdot49$ 個の線形方程式として表示できる。
+これらを1400変数上の行列として法 $101$ で
+\emph{全行を}正確な行基本変形で処理すると、
+三点での階数はそれぞれ
+\[
+ 1317,\qquad 1317,\qquad 1316 .
+\]
+この計算ではランダムなサンプリングを行わず、
+$\ker L_J$ の328列と余核の49座標から
+全 $16072$ 行を構成し、
+既知の86個の群・係数方向が全て線形条件を
+満たすことも確認している。
+同じスクリプトに全有限体計算を収めた。
+整数係数の行列で行っているため、
+標数零での線形条件の階数はそれぞれ
+この値以上である。
+従って $\dim T\le1400-1317=83$、
+または $\le1400-1316=84$ を得る。
+
+非交差根対の一般点では、上記の基準点で
+階数 $1317$ の minor が非零であることから、
+階数の下半連続性により同じ上界が
+非空 Zariski 開上で成立する。
+\end{proof}
+
+\begin{remark}[接空間の正確な解釈]
+この命題が正確に決めたのは
+$\mathrm{PGL}_9$ 軌道と noncubic 六係数族の
+\emph{和の接空間}である。
+三次 Hilbert rank locus 自身については
+\emph{上界}だけを証明した。
+特に標数 $101$ の計算で接次元が $83$ となっても、
+標数零における接次元が正確に $83$ であるとは
+結論できない。
+また $\mathcal D_{3,\ge49}$ の接空間を
+内在的 $\HHstack$ の接空間と同一視しない。
+\end{remark}
+
 \begin{lemma}[二重平方環の中心 Clifford 表示]
 \label{lem:noncubic-relative-clifford-center}
 任意の可換環 $A$ 上の二元二次形式 $f_1,f_2$ に対し、
