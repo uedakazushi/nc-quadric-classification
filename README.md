@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.7、数学原稿v1.6。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.8、数学原稿v1.7。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
@@ -15,6 +15,10 @@
 記号を cubic と揃え、体上で分類する強い対象のクラスを `\mathcal H_2`、その内在的な相対モジュライスタック（構成目標）を `\mathfrak H_2` と書く。`\mathfrak H_2` は現時点で代数性・相対認識が未完成であり、以下の構成済み表示スタックとは区別する。
 
 体上の分類に続き、族と慣性を保つ構成を進めている。
+
+**定義を修正した場合に現在証明できる有限型モジュライ：** [新しい証明節](papers/sections/foundation_stack.tex) で二つの厳密な商スタックを構成した。第一は $\mathfrak H_2^{\mathrm{split,pres}}=\mathfrak C\amalg\mathfrak N^{\mathrm{pres}}$。全H2幾何点とpointed慣性を分類するが、型を局所定数にするためcubic→noncubicの退化が消え、既約・連結成分が人工的に2個になる。第二は $\mathfrak H_2^{(3),\mathrm{pres}}=[X_3/\mathrm{PGL}_9]$ で、$X_3\subset\mathrm{Gr}(56,81)$ は九生成元・56二次関係から作る三次関係行列のrankが**ちょうど176**（従って$\mathrm{rank}R_3=49$）という具体的な局所閉条件。実際の非被約族と普遍二次代数を持ち、全H2既知chart・特殊化族が入る。しかし高次平坦性と内在的H2条件は課さないので余分な対象がある。
+
+二根対一致のnoncubic点では、$[X_3/\mathrm{PGL}_9]$ の接複体の$H^0$の次元は **5**、滑らかなfoundation表示 $\mathfrak Q_{\mathrm{fnd}}$ は **4** であり、形式近傍は同値にならない。いずれの修正定義でも元の $\mathfrak H_2$ 全体を既に構成したとは主張しない。
 
 - [noncubic表示スタック](papers/sections/noncubic_stack.tex)は `[P/G]`、滑らかな有限型Artinスタックで次元1。幾何点の同値類だけでなくpointed慣性も一致する。根配置stackへのμ2² gerbe、一般慣性D8×C2、共有根でD8、根対一致で正次元慣性を記述した。
 - 同stackのgood moduli spaceは `A1_χ`。共有根と根対一致はともにχ=1へ写り、全体のcoarse moduli algebraic spaceは存在しない。底変更と整合する正則切断の族もétale局所に構成した。
@@ -96,7 +100,7 @@ $$
 
 ## 再生成
 
-現行v1.6原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数と、新たな25 pivot・六係数回収を代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
+現行v1.7原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数と、新たな25 pivot・六係数回収を代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
 
 repoルートで実行する。
 
