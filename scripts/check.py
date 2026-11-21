@@ -25,6 +25,7 @@ MAIN = ROOT / "papers/nc-quadric-classification.tex"
 TEX_PACKAGES = (
     "ltjsarticle.cls", "luatexja.sty", "amsmath.sty", "amssymb.sty", "amsthm.sty",
     "mathtools.sty", "geometry.sty", "booktabs.sty", "enumitem.sty", "hyperref.sty", "fix-cm.sty",
+    "mathrsfs.sty", "tabularx.sty", "array.sty",
 )
 DISCLAIMER = "PASS covers only the stated checks; it does not certify proofs, novelty or complete H2 classification."
 
@@ -255,7 +256,8 @@ def math_checks() -> int:
     ok, detail = python_dependencies()
     if not ok:
         return summary("math", [], [detail])
-    scripts = ("verify_quadric.py", "verify_pencil_tangent.py", "verify_reducible_quadruples.py", "verify_stack_symmetries.py", "verify_noncubic_antiserre_pivots.py")
+    scripts = ("verify_quadric.py", "verify_pencil_tangent.py", "verify_reducible_quadruples.py", "verify_stack_symmetries.py", "verify_noncubic_antiserre_pivots.py",
+               "verify_quiver_avatar_charts.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
     for name in scripts:

@@ -14,6 +14,8 @@
 
 証明の正本は別稿 `papers/quiver-avatar-moduli.tex`。有限foundationの生成矢、relation completion、potentialの非最小表示を区別する。有限foundationではHom次元を $(2,2,2,4,4,6)$ に固定し、積 $a,b,c,d$ の唯一の結合律 $c(1\otimes a)=d(b\otimes1)$ を課す。二つの核に分解可能テンソルを許さず、$(c,d)$ の**合併した写像**の全射性を要求する。個々の $c,d$ の全射を要求する必要はない。$\delta_a,\delta_b\in\{0,1\}$ により生成矢 $6+\delta_a+\delta_b$、関係 $2+\delta_a+\delta_b$、完成矢 $8+2(\delta_a+\delta_b)$ を得る。$b$ 可逆と $a$ 可逆が二つの10本矢open、交わりが8本矢open。最小10本・12本の層をこれらのopenと同一視しない。
 
+product relation QPの一頂点premutationでは4本を追加して16本となり、4×4 mass行列の階数r組を消去して16−2r本を得る。三次minor上ではSchur補元 λ=d−eD⁻¹b が残る係数。別稿 `prop:qa-square-mutation-count` と `prop:qa-square-relative-schur` に有限三角変換の直接証明がある。
+
 weighted QPの二つのmass係数 $\lambda,\mu$ が可逆なら対角pairを消去できる。非被約基底では非零というだけでは不足する。生のright-equivalence商では各pairの $\mathbb G_m$ 自己同型が残るため、代数の同型とQPスタック同値を分ける。有限foundationの頂点scalar剛体化とも別操作である。
 
 曲線型avatarは $D\in|2h|$、fiberwise非自明な $P\in\operatorname{Pic}^0(D)$。直像 $p_*(HP^n)$ と評価で再埋め込みし、幾何的並進 $\mathsf T$ を得る。$\Sigma_0$ 部分 $\mathcal U$ と $\mathsf T^{-1}\mathcal U$ が二つの10本矢open、交わりが8本矢open。最深閉locusは $\Sigma_2$ の負断面 $S$ を含む因子。$S$ を避ける $\Sigma_2$ は10本矢境界である。全square曲線型から奇数側10本矢chartへの辞書は $F=F_s, H=F_sG_sP^{-1}$。rotated squareの $H_r=F_sG_sP$ とは逆の壁を持つ。
@@ -251,12 +253,17 @@ python3 scripts/check.py doctor
 python3 scripts/check.py sources
 python3 computations/verify_noncubic_second_order.py
 python3 computations/verify_antiserre_polarization.py
+python3 computations/verify_quiver_avatar_charts.py
+python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
+python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex
 latexmk
 ```
 
 **別稿の論理点検。** QPの消去と慣性、有限foundationの開条件・関係数・重なり、avatarの支持補題・消滅・垂直fiberのTor・非被約基底への直像と降下、weighted stackとSigma2の反Serre障害は独立読取りを行った。全AS同型類分類の再監査、相対AS/avatar同値、適合H2部分の開性の証明は含めない。
 
-**組版・参照確認。** 現行二論文の最終組版・画像確認と、別稿の有限例の計算は実行中。主論文の既存版では134頁、選択22頁および相対定義の117–131頁の画像確認を実施済みであり、全頁目視確認を意味しない。現行版の確認完了時に結果を置き換える。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
+
+**組版・参照確認。** 現行主論文v1.10（134頁）と別稿v0.1（25頁）をLuaLaTeX・latexmkで組版し、両PDFとSyncTeXを生成した。両方の最終logにWarning、Overfull/Underfull、文字欠落、未定義参照の報告はない。別稿は全25頁の一覧画像を確認し、mutation/Schur補元、AS入力の定義、avatarの開部分とsquare辞書、参考文献を拡大確認した。主論文は表紙、別稿への参照を置いた5頁、書誌の133頁を確認した。主論文全134頁を今回目視したわけではない。静的checkerは主論文28 manuscript files/256 labels、別稿5 manuscript files/60 labelsと7 Markdown filesでPASS。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

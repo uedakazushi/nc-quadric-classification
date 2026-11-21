@@ -11,6 +11,38 @@
 統合ノート\cite[第7.11--7.12項・第9節・第13.3項]{Synthesis2026}は
 これらの出典と主張の水準を整理した資料であり、独立の検証の代用とはしない。
 
+\paragraph{AS 側の辞書の対象.}
+入力する体上分類の対象は
+\cite[第15.1項・定理15.3]{Q12Avatar2026} の $A_Q^{\mathrm{pres}}$ である。
+すなわち、局所有限な連結 positively directed $\mathbb Z$-代数で、
+大域次元三、Gorenstein parameter 四の AS 正則性を満たし、
+\eqref{eq:qa-universal-potential} の十二本矢 potential
+（可縮な二次 pair を許す）の展開として表示できるものを、
+全整数頂点を固定する代数同型で分類する。
+最小化した四型では、右射影 $\mathsf P_i=e_iA$ と右単純 $\mathsf S_i$ に対して
+\[
+\begin{aligned}
+0\longrightarrow\mathsf P_{i-4}
+ &\longrightarrow\mathsf P_{i-3}^{\oplus2}\oplus\mathsf P_{i-2}^{\oplus\epsilon_i}\\
+ &\longrightarrow\mathsf P_{i-1}^{\oplus2}\oplus\mathsf P_{i-2}^{\oplus\epsilon_i}
+ \longrightarrow\mathsf P_i\longrightarrow\mathsf S_i\longrightarrow0
+\end{aligned}
+\]
+という実際に完全な最小分解がある。
+$\epsilon_i=0$、奇数 $i$ のみで $\epsilon_i=1$、
+偶数 $i$ のみで $\epsilon_i=1$、全 $i$ で $\epsilon_i=1$ が、
+順に八本、奇数対角十本、偶数対角十本、十二本に対応する。
+右側の AS--Gorenstein 条件は
+$\Ext_A^q(\mathsf S_i,\mathsf P_j)=0$ for $(q,j)\ne(3,i-4)$、
+$\Ext_A^3(\mathsf S_i,\mathsf P_{i-4})\simeq\kk$ である。
+分解の Euler 特性だけを課す条件ではない。
+Noether 性はこの定義の追加仮定ではなく、引用する分類の結論である。
+potential 表示、trivial pair の係数、周期同型、分解の基底は選択データにしない
+\cite[定義2.1・第15.1項]{Q12Avatar2026}\cite[定義48.1]{AvatarVSeven2026}。
+この整数頂点固定の同型は、四頂点 graded 代数の同型を射とした
+$\mathfrak M_r^{\mathrm{alg}}$ と同じ相対同型層であるとは仮定しない。
+本節の幾何的 stack の同型との比較も、体上の同型類辞書と区別する。
+
 \subsection{分類する幾何データ}
 
 基礎体 $\kk$ は標数零の代数閉体とする。
