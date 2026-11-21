@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.10（相対AS被覆の有限判定を移管）
+% 日本語 LuaLaTeX。2026-11-22 / v0.11（相対AS被覆の有限判定を移管）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v0.10（相対効果性などの証明を移管中）}
+\date{2026年11月22日\quad v0.11（有限型効果性と局所atlasを移管中）}
 
 \begin{document}
 \maketitle
@@ -68,7 +68,8 @@ framed 実現空間、被約 noncubic 境界の余次元二の正則閉埋込み
 有限 foundation 上の反 Serre 偏極の局所閉認識の各完全な証明を本稿へ移したが、
 相対 AS4 被覆の有限判定と fppf 像の非代数性を示す反例に加えて、
 相対Koszul性・Noetherian基底変更・tailsの平坦性に関する17証明を収録した。
-全体の有限型 Artin 性・滑らかさ・既約性、被約 noncubic 境界の smooth 正則閉埋込み、framed 実現の主定理の証明は本稿へ移管した。
+全体の有限型 Artin 性・滑らかさ・既約性、被約 noncubic 境界の smooth 正則閉埋込み、framed 実現の主定理に加え、
+二形式商との相対同値・全慣性・good/coarse moduli・形式局所商の証明も本稿へ移管した。
 ただし、これらの入力となる cubic/noncubic 族の相対効果性・局所 atlas 等の全証明は
 現在も分類主論文にあり、B単独での証明依存の完結は未達成である。この稿単独で証明が完結したとは主張しない。
 \end{abstract}
@@ -119,17 +120,7 @@ $\mathfrak N\hookrightarrow\mathfrak H_2$ が余次元二の正則閉埋込み�
 \input{moduli/noncubic_invariants}
 \input{moduli/noncubic_fibers}
 
-\section{Good/coarse moduli と形式局所商}\label{sec:moduli-quotient}
-境界の $\chi:\mathfrak N\to\mathbb A^1$ は good moduli 射である。
-一致根対を除いた Deligne--Mumford 開では任意底変更と可換な粗モジュライになるが、
-その制限射は good moduli ではなく慣性も proper ではない。
-一致根対の境界方向 $(a,c)$、法方向 $(x,y)$ と全慣性 $H$ について
-\[
- k[[a,c,x,y]]^H\simeq k[[ac,(x+y)^2,(x-y)^2]]
-\]
-が主論文で得られている。これらの定理、全体の粗モジュライ代数空間の不存在、
-相対 mutation、AHR の適用の完全な証明は移管課題である。
-局所 good moduli の全体への降下は未解決である。
+\input{moduli/noncubic_boundary_comparison}
 
 \section{残る比較問題}\label{sec:moduli-remaining}
 $X_{\mathrm{as}}\to X_3$ の局所閉性・偏極認識方程式、

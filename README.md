@@ -2,14 +2,14 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.46、論文A v1.53、論文B v0.10（相対効果性・境界同定の証明移管中）、論文C v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.46、論文A v1.54、論文B v0.11（有限型効果性・局所atlasを移管中）、論文C v0.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## 公表用原稿：三論文へ再編
 
 | 原稿 | 中心課題 | 状態 |
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 既存全証明を保持。相対節の移管後に整理 |
-| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・認識・AS4・Koszul・全体の有限型Artin性・既約性・境界smooth正則性の証明をBへ移管。cubic/noncubic効果性と境界の相対商同定は未移管** |
+| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・認識・AS4・Koszul・全体の有限型Artin性・境界の相対同定・全慣性の証明をBへ移管。cubic/noncubic有限型効果性・局所atlasは未移管** |
 | **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 八・十・十二本矢、QP、反標準avatarと忘却 | v0.2。内在的比較の未解決条件を保持 |
 
 Aを最初に公表できる分類論文とし、BはAに依存する別の相対モジュライ論文、Cは表示論文として整理する。Aの相対節にある有用な証明は、Bでの移管・参照照合前に削除しない。完了後は重複を除く。Bの組版コマンドは `python3 scripts/check.py build --manuscript papers/nc-quadric-moduli.tex`。

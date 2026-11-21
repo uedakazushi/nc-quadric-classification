@@ -1,12 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.55。論文Aはv1.53、論文Bはv0.10（相対効果性・境界同定の証明移管中）、論文Cはv0.2。
+2026-11-22 / v0.56。論文Aはv1.54、論文Bはv0.11（有限型効果性・局所atlasを移管中）、論文Cはv0.2。
 
 ## 公表用三論文への再編（確定方針）
 
 A＝`papers/nc-quadric-classification.tex`（分類、必須の主原稿）、B＝`papers/nc-quadric-moduli.tex`（内在的相対モジュライ）、C＝`papers/quiver-avatar-moduli.tex`（箙表示・avatar）とする。Aは体上の分類の構成・同値判定と必要な基礎結果を自己完結にし、BはAを引用して相対モジュライを独立に証明する。Cは有限表示と内在的H2の認識を混同しない。
 
-Bは現時点では**証明の移管中の未完成稿**である。相対H2の定義とflatness剛性・対角列の反例・二形式不変式と特殊fiber・有限foundationでの反Serre偏極認識の証明はBへ移管済みだが、全体の有限型smooth・既約Artin性と境界smooth性の8証明はBへ移した。cubic/noncubic族の有限型効果性・局所atlasと境界の相対商同定・慣性の証明はまだAにある。相対反Serre再構成・fppf stack認識・体上回復・代数性判定の四証明、および相対AS4被覆の有限判定とfppf像の反例に加えて、相対Koszul性・Noetherian基底変更・tailsの17証明はBに移管済みである。Aから相対節の全証明を、依存・label/ref/eqref/cite・非被約底・ビルドを確認しながら移し、移管完了までAの証明を削除しない。移管後は証明の二重収録を避ける。AがBに依存する循環を生じさせない。Aの公表準備を優先し、B/Cも別個に完成度と新規性を監査する。再編を数学的独立検証と同一視しない。
+Bは現時点では**証明の移管中の未完成稿**である。相対H2の定義とflatness剛性・対角列の反例・二形式不変式と特殊fiber・有限foundationでの反Serre偏極認識の証明はBへ移管済みだが、全体の有限型smooth・既約Artin性と境界smooth性の8証明はBへ移した。cubic/noncubic族の有限型効果性・局所atlasの証明はまだAにある。境界の相対同定・全慣性・good/coarse moduli・一致根対の形式商の16証明はBへ移管済み。相対反Serre再構成・fppf stack認識・体上回復・代数性判定の四証明、および相対AS4被覆の有限判定とfppf像の反例に加えて、相対Koszul性・Noetherian基底変更・tailsの17証明はBに移管済みである。Aから相対節の全証明を、依存・label/ref/eqref/cite・非被約底・ビルドを確認しながら移し、移管完了までAの証明を削除しない。移管後は証明の二重収録を避ける。AがBに依存する循環を生じさせない。Aの公表準備を優先し、B/Cも別個に完成度と新規性を監査する。再編を数学的独立検証と同一視しない。
 
 ## Cloud Codexへの継続指示
 

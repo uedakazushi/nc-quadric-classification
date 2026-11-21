@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-22 / v1.45（特殊fiberの全証明を論文Bへ移管）
+% 2026-11-22 / v1.46（相対境界比較の全16証明をBへ移管）
 \section{noncubic 境界の内在的商表示とモジュライ写像}
 \label{sec:noncubic-boundary-comparison}
 
@@ -32,36 +32,10 @@ $k$ を標数零の体、$f:\mathcal X\to\mathcal Y$ を
 \end{lemma}
 
 \begin{proof}
-有限型 smooth atlas $V\to\mathcal X$ を取り、対応する対象を $x_V$ と書く。
-二つの自己同型群スキームの射の核を
-\[
- K_V=\ker\bigl(
- \underline{\operatorname{Aut}}_{\mathcal X}(x_V)
- \longrightarrow
- \underline{\operatorname{Aut}}_{\mathcal Y}(f(x_V))\bigr)
-\]
-とする。対角の仮定と $V$ の Noetherian 性から、$K_V\to V$ は
-affine かつ有限表示の群スキームである。
-各幾何点 $\bar v\to V$ の上で、その fiber はただ一つの
-幾何点を持つ有限型群スキームである。
-Cartier の定理により標数零の有限型群スキームは smooth なので、
-この fiber は $\operatorname{Spec}\kappa(\bar v)$ に等しい
-\cite[Tag 0BF6, Lemma 39.8.2]{StacksBoundaryComparison}。
-
-相対微分は fiber への基底変更と整合する。
-従って有限型加群 $\Omega_{K_V/V}$ は全ての幾何点で零となり、
-Nakayama の補題により零である。
-ゆえに $K_V\to V$ は unramified である
-\cite[Tag 02G3, Lemma 29.36.2]{StacksBoundaryComparison}。
-その単位切断 $e:V\to K_V$ は unramified 射の切断だから開埋込みである
-\cite[Tag 024T, Proposition 41.6.1]{StacksBoundaryComparison}。
-全ての幾何 fiber が単位点だけからなるので、$e$ は全射でもある。
-従って $e$ は同型であり、$K_V$ は自明である。
-
-これは相対慣性 $\mathcal I_{\mathcal X/\mathcal Y}$ が atlas $V$ 上で自明であることを意味する。
-fppf 降下により相対慣性は $\mathcal X$ 上で自明となり、
-相対慣性による表現可能性判定を適用できる
-\cite[Tag 04YY, Lemma 101.6.2]{StacksBoundaryComparison}。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{lemma}[幾何点の自己同型群のスキームとしての比較]
@@ -74,30 +48,10 @@ fppf 降下により相対慣性は $\mathcal X$ 上で自明となり、
 \end{lemma}
 
 \begin{proof}
-まず $\mathfrak N^{\mathrm{pres}}=[P/G]$ は smooth、従って reduced である。
-定理~\ref{thm:noncubic-relative-effectivity} の射は全幾何点を
-noncubic 部分へ送るので、定理~\ref{thm:noncubic-boundary-smooth-codim-two}
-の reduced closed substack $\mathfrak N$ を経由する。
-この因数分解は reduced atlas $P$ 上で確認して降下させればよい。
-
-命題~\ref{prop:noncubic-presentation-stack} の慣性計算は、
-この射が誘導する幾何点の自己同型群の写像を同型と同定している。
-実際、$G$ の元は $B_f$ の次数付き同型を与え、その tails 関手が
-相対族の構成で用いる射である。次数スカラーは、$\mathcal O$ 上で恒等となる
-自然同型によって消え、他の核はない。
-したがって前補題より $f$ は表現可能である。
-
-幾何点 $p$ の自己同型群スキーム間の射を $a:G_p\to H_{f(p)}$ と書く。
-両群は affine 有限型であり、Cartier の定理によって smooth である。
-そのスキームとしての核は前補題の議論により自明なので、
-$a$ は群スキームの monomorphism であり、その接写像は単射である。
-一方、$a$ は幾何点で全射である。
-各 fiber は核の移送で零次元だから両群の次元は等しい。
-従って単位元における接写像は同型であり、
-smooth な $k$-スキームの間の Jacobian 判定により $a$ は単位元で étale である。
-群の平行移動により全ての点で étale となる。
-étale な monomorphism は開埋込みであり、幾何点で全射なので同型である
-\cite[Tag 025G, Theorem 41.14.1]{StacksBoundaryComparison}。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \subsection{二形式表示と内在的境界の相対比較}
@@ -119,40 +73,10 @@ $h:D'_U\to P$ を取れて、実際の相対族の同型
 根・根同型・AS4 被覆を保存する条件は加えない。
 \end{lemma}
 \begin{proof}
-共通 chart 上で二つの行列式は実際に零である。
-命題~\ref{prop:lagrangian-relative-double-rank-three} を適用し、
-必要な \texorpdfstring{\'etale}{etale} 被覆上で有限 foundation を
-\[
- f_1=uv,\qquad f_2=(\alpha u+\beta v)(\gamma u-\alpha v),
- \qquad\alpha^2+\beta\gamma=1
-\]
-の標準 foundation と同定する。両形式の判別式は単元なので、これは
-$h:D'_U\to P$ を定める。
-
-この段階で得たものは有限代数の同型であり、次に相対 Abel 圏を比較する。
-補題~\ref{lem:nc-relative-normal-tilting} により、二形式族の標準四項は
-相対 tilting foundation であり、その End 代数は上の有限 foundation に一致する。
-一方、$q_D$ の canonical compact 圏も同じ有限代数の perfect 圏に同値である。
-従って両側の間には、構造対象 $\mathcal O$ と四項を保つ相対 Morita 同値 $F$ がある。
-この同値は perfect 双加群により与えられ、任意の基底変更に整合する。
-
-相対 Serre 双対の Yoneda 一意性により、反 Serre 関手
-$t=S^{-1}[2]$ と $t_f=S_f^{-1}[2]$ に対して自然同型
-$Ft\simeq t_fF$ を得る。その反復と構造対象の同型を用いると
-\[
- \bigoplus_{n\ge0}\operatorname{Hom}(\mathcal O,t^n\mathcal O)
- \simeq
- \bigoplus_{n\ge0}\operatorname{Hom}(\mathcal O_f,t_f^n\mathcal O_f)
-\]
-が積を保つ graded 環の同型となる。積との整合性は、同じ自然同型の反復を
-用いて各次数を比較することから従う。各 Hom は次数零の有限 projective 加群であり、
-比較は全有限型基底変更に整合する。
-
-相対反 Serre 再構成（命題~\ref{prop:relative-h2-antiserre-reconstruction}）と
-その全忠実性（命題~\ref{prop:relative-h2-stack-recognition}）によって、
-この graded 同型は両相対 Abel 系の pointed exact 同値を与える。
-特に canonical compact 圏だけでなく、coherent heart と module-object 基底変更の
-系が一致する。これが~\eqref{eq:noncubic-boundary-chart-factorization} である。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{lemma}[smooth 同次元スタックの接判定]
@@ -170,35 +94,10 @@ $x\in\mathcal X(K)$ について、次を仮定する。
 このとき $f$ は algebraic space で表現可能な \texorpdfstring{\'etale}{etale} 射である。
 \end{lemma}
 \begin{proof}
-補題~\ref{lem:charzero-geometric-inertia-faithful} により $f$ は表現可能である。
-各幾何点の慣性群スキームの同型は、補題~\ref{lem:nc-geometric-inertia-scheme-iso}
-の群スキームの議論と同じく、Cartier の定理、核の消滅、同次元性から従う。
-
-smooth なスタックでは
-\[
- \dim T^0_x\mathcal X
-  =\dim_x\mathcal X+\dim\operatorname{Lie}\operatorname{Aut}(x)
-\]
-である。前段の慣性群の同型と同次元性から、仮定の全射は同型となる。
-相対一次変形の完全列
-\[
- \operatorname{Lie}\operatorname{Aut}(x)
- \longrightarrow\operatorname{Lie}\operatorname{Aut}(f(x))
- \longrightarrow T_x(\mathcal X/\mathcal Y)
- \longrightarrow T^0_x\mathcal X
- \longrightarrow T^0_{f(x)}\mathcal Y
-\]
-によって $T_x(\mathcal X/\mathcal Y)=0$ である。
-この列は、$f(x)$ の自明な一次変形との同型を付けた $x$ の一次変形を考えれば得られる。
-その同型の変更が二つの無限小自己同型空間の余核を与える。
-
-最後に smooth scheme atlas $V\to\mathcal Y$ を取り、
-$Z=\mathcal X\times_{\mathcal Y}V$ とする。表現可能性により $Z$ は代数空間で、
-$Z\to\mathcal X$ は smooth なので $Z$ 自身も $k$ 上 smooth である。
-各点で $Z$ と $V$ の次元は等しく、相対接空間は零である。
-両者の \texorpdfstring{\'etale}{etale} scheme chart 上の Jacobian 判定により
-$Z\to V$ は \texorpdfstring{\'etale}{etale} となる。
-従って $f$ も \texorpdfstring{\'etale}{etale} である。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{theorem}[二形式表示は内在的被約境界を表す]
@@ -214,35 +113,10 @@ $\mathfrak N=(\mathfrak H_2\setminus\mathfrak V_{\mathrm{cub}})_{\mathrm{red}}$
 pointed exact 同型の両方がこの表示商で記述される。
 \end{theorem}
 \begin{proof}
-表示スタックは smooth、従って reduced であり、その全幾何点は noncubic である。
-従って既存の実際の射 $q_{\mathrm{nc}}$ は一意に $\mathfrak N$ を経由する。
-この因数分解は atlas $P$ 上で reduced source の性質を使って確認し、降下させる。
-両スタックは有限型、smooth、純次元一で、対角は affine 有限表示である。
-
-幾何点の同型類と自己同型群の対応は
-命題~\ref{prop:noncubic-presentation-stack} による。
-接空間の全射性を確認する。
-任意の幾何点 $p\in P(K)$ とその像 $x$ に、
-補題~\ref{lem:noncubic-boundary-chart-factorization} の
-$q_D:D'_U\to\mathfrak N$ と $h:D'_U\to P$ を取る。
-$x$ の上の点 $u$ における $h(u)$ は $p$ と同じ pointed 圏を与えるので、
-命題~\ref{prop:noncubic-presentation-stack} により $G(K)$ の同じ軌道に入る。
-$h$ を定数の $G(K)$ 元で移せば、$h(u)=p$ としてよい。
-\eqref{eq:noncubic-boundary-chart-factorization} と $q_D$ の smooth 性から
-\[
- T_uD'_U\longrightarrow T^0_p\mathfrak N^{\mathrm{pres}}
- \longrightarrow T^0_x\mathfrak N
-\]
-の合成は全射であり、第二の射も全射である。
-比較同型の $u$ 上の値を替えると接空間上で可逆な自己同型を合成するだけなので、
-この結論は比較の選択に依存しない。
-前補題により $q_{\mathrm{nc}}$ は表現可能な \texorpdfstring{\'etale}{etale} 射である。
-
-最後に、全代数閉体上で幾何点 groupoid が同値である。
-従って表現可能な $q_{\mathrm{nc}}$ の各幾何 fiber は一点であり、
-\texorpdfstring{\'etale}{etale} 性と合わせて全射な開埋込み、すなわち同型となる。
-これは \cite[Tag 0DUD, Lemma 101.45.7]{StacksBoundaryComparison} の判定とも一致する。
-代数スタックとしての同型から元の site 上での同値が従い、非被約基底も含まれる。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{remark}[一致根対における二つの接方向]
@@ -273,27 +147,10 @@ $a|_{\mathbb G_m}$ が $z:\operatorname{Spec}k\to Z$ を経由する定値射な
 $a(0)=z$ である。$Z$ に準分離性や有限型性は仮定しない。
 \end{lemma}
 \begin{proof}
-スキームからの \texorpdfstring{\'etale}{etale} chart $U\to Z$ と
-$a(0)$ 上の $k$-点 $u_0\in U(k)$ を選び、$u_0$ の affine 近傍に制限する。
-代数空間の対角はスキームで表現可能なので
-\[
- W=\mathbb A^1_k\times_Z U
-\]
-はスキームであり、$\mathbb A^1_k$ 上 \texorpdfstring{\'etale}{etale} である。
-$(0,u_0)$ を含む既約な affine 開近傍 $W_0\subset W$ を取る。
-これは滑らかな曲線であり、$W_0^\times=W_0\times_{\mathbb A^1}\mathbb G_m$
-は非空な稠密既約開部分である。
-
-仮定により、$W_0^\times\to U$ は
-$U_z=U\times_Z\operatorname{Spec}k$ を経由する。
-$U_z$ は $k$ 上 \texorpdfstring{\'etale}{etale} なスキームなので
-$k$-点の離散和である。従って既約性により $W_0^\times$ の像は
-ただ一つの $k$-点 $u_1\in U(k)$ に含まれる。
-この点は affine スキーム $U$ の閉点である。
-連続性と $W_0^\times$ の稠密性から、$W_0$ 全体の像も $\{u_1\}$ に含まれ、
-$u_0=u_1$ となる。これを $Z$ へ送れば $a(0)=z$ を得る。
-ここで使った閉点性はスキーム $U$ 上のものだけであり、
-任意の代数空間 $Z$ の $k$-点が閉であるとは仮定していない。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{corollary}[全 $\mathfrak H_2$ の粗モジュライ代数空間の不存在]
@@ -309,29 +166,10 @@ $u_0=u_1$ となる。これを $Z$ へ送れば $a(0)=z$ を得る。
 同じ結論は $\mathfrak N^{\mathrm{pres}}$ および $\mathfrak N$ にも成り立つ。
 \end{corollary}
 \begin{proof}
-$\mathbb A^1_t$ 上の実際の表示族
-\[
- f_1=uv,\qquad f_2=u(v-tu)
-\]
-を使う。両判別式は一であり、これは $P$ への射を定める。
-$t=0$ の fiber は $x_{\mathrm{eq}}$、$t\ne0$ の fiber は $x_{\mathrm{sh}}$ である。
-穿孔直線上で同型類が一定であるだけでなく、族自身が fppf 局所的に定値となることを確認する。
-$t=r^2$ の有限 \texorpdfstring{\'etale}{etale} 被覆を取り、
-\[
- A_r=\operatorname{diag}(r^2,1),\qquad a_1=a_2=r
-\]
-と置く。$G$ の作用式を使うと、$(A_r,r,r)$ は
-$(uv,u(v-u))$ を $(uv,u(v-r^2u))$ へ送る。
-よってこの族は穿孔直線の被覆上で一定の対象と同型である。
-
-任意の $\psi$ と合成して得る $a:\mathbb A^1\to Z$ は、
-穿孔直線上では fppf 局所的に値 $\psi(x_{\mathrm{sh}})$ の定値射である。
-代数空間は fppf sheaf なので、これは穿孔直線上の定値射そのものである。
-前補題から $\psi(x_{\mathrm{eq}})=\psi(x_{\mathrm{sh}})$ が従う。
-体上の分類により二点は異なる pointed exact 同値類であるから、
-幾何点の同型類に対して単射となる射は存在しない。
-表示スタックについても同じ族と議論を使える。
-境界については同値定理、または実際の表示族の $\mathfrak N$ への因数分解を使う。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{corollary}[内在的境界の良モジュライ空間]
@@ -347,9 +185,10 @@ $(uv,u(v-u))$ を $(uv,u(v-r^2u))$ へ送る。
 $\mathfrak H_2$ 全体の good moduli space の存在については主張しない。
 \end{corollary}
 \begin{proof}
-命題~\ref{prop:noncubic-good-moduli} の
-$k[P]^G=k[\chi]$ と linearly reductive 群による affine 商の結果を、
-表示スタックと内在的境界の同値に沿って移せばよい。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 
@@ -374,10 +213,10 @@ $\mathfrak N_\xi=\chi^{-1}(\xi)$ を scheme-theoretic fiber とすると、次�
 従って $\chi$ が smooth でない点は、$\xi=0$ の全点と $\xi=1$ の一致類に限られる。
 \end{proposition}
 \begin{proof}
-二形式表示商の良モジュライ射の平坦性、各ファイバーの既約・被約性と局所方程式については
-別稿 \cite[良モジュライ射の特殊ファイバーの節]{QuadricModuli2026} に
-全証明を移した。定理~\ref{thm:noncubic-intrinsic-presentation-equivalence} の
-相対スタック同値により、表示商上の命題が内在的境界に移る。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 
@@ -410,55 +249,10 @@ $(-1,e_1e_2)$ で生成される。この群の単位成分は $\mathbb G_m$ で
 \end{proposition}
 
 \begin{proof}
-四根が相異なる場合には、根対を $\{0,\infty\}$ と $\{1,\lambda\}$ と書ける。
-順序付き四点の交比に対する $S_4$ の作用の核は Klein 四群 $V_4$ である。
-二対への分割を保つ順列群は位数八の $D_8$ であり、$V_4$ を含む。
-その商の非自明元は $\lambda\mapsto\lambda^{-1}$ と作用するため、
-根配置の自己同型群が $V_4$ より大きくなるのは $\lambda=-1$ の場合に限られる。
-$\lambda=1$ は四根相異の条件で除かれている。
-$\chi=(1+\lambda)^2/(1-\lambda)^2$ なので、この例外はちょうど $\chi=0$ である。
-一般慣性の既存の生成元と関係は $\lambda\ne0,1$ の全範囲で定義されるので、
-$\lambda\ne-1$ では慣性は $D_8\times C_2$ となる。
-特に別の pairing に関する harmonic 値や equianharmonic 値からは、追加の慣性は生じない。
-
-$\lambda=-1$ とし、$\iota^2=-1$ を選ぶ。$f_1=uv$, $f_2=u^2-v^2$ に対して、
-列 $(u,v,c,d)^{\mathsf t}$ への置換行列
-\[
- R=\operatorname{diag}\!\left(\begin{pmatrix}0&-1\\1&0\end{pmatrix},\iota,\iota\right),
- \quad
- T=\operatorname{diag}\!\left(\begin{pmatrix}-1&1\\1&1\end{pmatrix},
-              \begin{pmatrix}0&\iota\\-2\iota&0\end{pmatrix}\right),
- \quad S=\operatorname{diag}(1,-1,\iota,1)
-\]
-を取る。$R,T$ は既存の一般慣性を生成する変換であり、$S$ はその外の根配置の対称性を持ち上げる。
-これらと $e_1,e_2$ は $H_0$ を生成する。
-根配置の群が位数八、核が $\mu_2^2$ なので位数は三十二である。
-さらに $S^2=e_1$ であり、$S$ は $e_1,e_2$ と可換である。
-従って $S$ の根配置への像の任意の持上げは二乗が $e_1$ となり、位数二ではない。
-根配置のこの元は位数二なので、群拡大に section は存在しない。
-一根共有の場合の $D_8$ は既存の生成元の計算による。
-
-一致類では $f_1=f_2=uv$ と選ぶ。
-$O(uv)\simeq\mathbb G_m\rtimes C_2$ は $W=ku\oplus kv$ に作用し、
-$D_8$ は $kc\oplus kd$ に符号付き置換行列として作用する。
-二作用を block diagonal に並べて射影化する写像
-\[
- O(uv)\times D_8\longrightarrow\operatorname{Aut}_{\mathrm{gr}}(B_{uv,uv})/D
-\]
-を考える。
-右辺の任意の元は、$uv$ を定数倍する $A\in\operatorname{GL}(W)$ と、
-同じ定数の平方根を係数に持つ $c,d$ の monomial 変換で表される。
-その係数の一つを用いて全体を次数スカラーで割ると、$A$ は $O(uv)$ に入り、
-$c,d$ の係数は $\pm1$ となる。従ってこの写像は fppf 全射である。
-核は block diagonal 行列がスカラーになる条件で決まり、
-$(I_2,I_2)$ と $(-I_2,-I_2)$ の二元だけである。
-これで式~\eqref{eq:noncubic-coincident-full-stabilizer} を得る。
-$O(uv)\times D_8$ は十六個の連結成分を持ち、核の非自明元はその単位成分に入らないので、
-商の連結成分数は八である。単位成分にはこの核との交わりがなく、$\mathbb G_m$ そのものである。
-
-標数零の有限型群スキームは smooth である。
-従って一致類以外で慣性の Lie 代数は零、そこでスタックは Deligne--Mumford である。
-一致類では一次元の Lie 代数があるので Deligne--Mumford ではない。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{proposition}[一致類の閉 gerbe と接表現]
@@ -472,26 +266,10 @@ $e_1,e_2$ は恒等に作用する。
 \end{proposition}
 
 \begin{proof}
-$P$ 上で二形式が比例する locus は
-\[
- \{(f,\rho f): f\in Q^{\mathrm{nd}},\ \rho\in\mathbb G_m\}
- \simeq Q^{\mathrm{nd}}\times\mathbb G_m
-\]
-であり、smooth な四次元閉部分である。
-閉性は二つの係数ベクトルを並べた $2\times3$ 行列の二次小行列式で与えられる。
-$P$ は smooth な六次元スキームなので、この包含は余次元二の正則閉埋込みである。
-$G$ はこの locus に推移的に作用し、その安定化群が $H_{\mathrm{eq}}$ であるため、
-商は $BH_{\mathrm{eq}}$ となる。正則埋込みは商へ降下する。
-
-$(uv,uv)$ において、二形式の個別のスカラー変化と共通の
-$\operatorname{GL}(W)$ による変化を除くと、接空間は
-第二形式と第一形式の差の $u^2,v^2$ 係数で表される。
-これを $(a,c)$ と書く。
-$T(t)$ は $(a,c)\mapsto(t^2a,t^{-2}c)$ と作用し、
-$u,v$ の交換は $(a,c)\mapsto(c,a)$ と作用する。
-二形式の交換は差を反転するので $\tau$ は $-1$ となる。
-符号変更 $e_1,e_2$ は形式自体に作用しないので接空間でも恒等である。
-これは商に用いた中央 $\mu_2$ とも整合する。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 
@@ -519,55 +297,10 @@ $T=\operatorname{Aut}(x)^\circ\simeq\mathbb G_m$ とする。
 非連結成分を含む全作用は命題~\ref{prop:noncubic-coincident-full-normal-representation} で計算する。
 \end{proposition}
 \begin{proof}
-$f_1=uv$, $f_2=-uv$ の良い対角根を使う。
-第~\ref{sec:noncubic-hh-roots}節の Grassmann 模型において
-\[
- (g_A,g_B,g_C,g_K)=(T_z,T_z^{-1},T_z,T_z),
- \qquad T_z=\operatorname{diag}(z,1)
-\]
-が安定化トーラスである。その $H$ 上の行列は
-\[
- \rho_z=\operatorname{diag}
- (1,z^{-1},z,1,\ 1,z,z^{-1},1).
-\]
-式~\eqref{eq:nchh-plane} の係数行列を $L$ とすれば
-\[
- \rho_zL=L\operatorname{diag}(z,z^{-1},1,1),
- \qquad\rho_z^tJ^{-1}\rho_z=J^{-1}.
-\]
-従って交代形式は正確に保たれ、conformal 係数による指標の補正はない。
-tautological 四平面の指標は $(\varepsilon,-\varepsilon,0,0)$ である。
-このトーラスは有効群への写像の核を持たず、$D=\operatorname{Hom}(E_0,E_2)$
-の projective 表現で原始指標が現れるため、上の $z$ は本文の内在的トーラスの
-パラメータ、またはその逆に一致する。非自明な冪による isogeny ではない。
-
-Lagrangian 接空間 $\operatorname{Sym}^2L^*$ の指標分解は
-\[
- k_{2\varepsilon}\oplus k_{-2\varepsilon}
- \oplus k_\varepsilon^{\oplus2}\oplus k_{-\varepsilon}^{\oplus2}
- \oplus k^{\oplus4}.
-\]
-$\mathfrak g^+$ は二つの $\mathfrak{gl}_2$ から自明な一次元中心を除いたものであり、
-その分解は
-\[
- \mathfrak g^+
- \simeq k_\varepsilon^{\oplus2}\oplus k_{-\varepsilon}^{\oplus2}\oplus k^{\oplus3}.
-\]
-軌道写像の核 $\operatorname{HH}^1(\Lambda_x)$ は安定化トーラスの Lie 代数であり、
-トーラスの共役作用は自明である。従って軌道接空間は
-\[
- k_\varepsilon^{\oplus2}\oplus k_{-\varepsilon}^{\oplus2}\oplus k^{\oplus2}
-\]
-となる。Lagrangian chart の \texorpdfstring{\'etale}{etale} 性から、
-この余核は内在的な全 $\operatorname{HH}^2$ に一致し、表示した分解を得る。
-
-交点二線 $\ell=L\cap U$, $m=L\cap U^*$ は上の四基底の最後の二つで生成され、
-両者に対するトーラス作用は自明である。
-二つの行列式の微分はそれぞれ $q|_{m\times m}$ と $q|_{\ell\times\ell}$ であり、
-上で確認した交代形式の不変性により、この同定はトーラス同変である。
-従って境界の法表現は自明な二次元表現となる。
-接空間の完全列とトーラスの線型簡約性から、境界の接表現は
-$k_{2\varepsilon}\oplus k_{-2\varepsilon}$ となる。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \subsection{Deligne--Mumford 開部分の粗モジュライ空間}
@@ -592,136 +325,10 @@ $\chi_{\mathrm{DM}}$ 自身も separated ではない。
 \end{theorem}
 
 \begin{proof}
-\emph{順序付き根配置への帰着。}
-$\mathcal D=\mathbb P(\operatorname{Sym}^2W)\setminus V(\operatorname{disc})$ とし、
-$Y=(\mathcal D\times\mathcal D)\setminus\operatorname{Diag}(\mathcal D)$ と置く。
-命題~\ref{prop:noncubic-sign-gerbe} の gerbe を制限して
-\[
- \mathfrak N^{\mathrm{DM}}\longrightarrow
- \mathfrak R^{\mathrm{DM}}=[Y/(\operatorname{PGL}_2\times S_2)]
-\]
-を得る。gerbe から代数空間への射は、その基底からの射と同じである。
-実際、fppf 局所に gerbe の対象を選ぶと、異なる選択はさらに局所的に同型なので、
-代数空間への像は一致し、一意に降下する。
-従ってまず根配置の商を扱えばよい。
-
-順序付き二対の商を $\mathfrak R_{\mathrm{ord}}^{\mathrm{DM}}=[Y/\operatorname{PGL}_2]$ とする。
-$\operatorname{PGL}_2$ の $\mathcal D$ 上の推移性を使うと
-\[
- \mathfrak R_{\mathrm{ord}}^{\mathrm{DM}}
- \simeq[Z/H],\qquad
- Z=\mathcal D\setminus\{[uv]\},\quad
- H=\operatorname{Stab}_{\operatorname{PGL}_2}([uv])
-   \simeq\mathbb G_m\rtimes C_2.
-\]
-この同値は、第一根対を $[uv]$ とすることを構造群の $H$ への reduction と読むことによる。
-第一根対の二根は étale 局所に分離できるため、この reduction は相対的にも fppf 局所に取れる。
-
-\emph{一つの affine chart の有限商。}
-$Z$ の座標を $[a:b:c]$、判別式を $\Delta=b^2-4ac$ とする。
-$Z$ は二つの開部分 $Z_a=\{a\ne0\}$ と $Z_c=\{c\ne0\}$ で覆われ、
-$H$ の反射 $J:u\leftrightarrow v$ はこれらを交換する。
-$Z_a$ 上で $a=1$ と正規化すると
-\[
- Z_a=\operatorname{Spec}k[b,c,(b^2-4c)^{-1}].
-\]
-$H$ のトーラス $T$ は、パラメータを必要なら逆に取ることで
-$(b,c)\mapsto(tb,t^2c)$ と作用する。
-$\delta^2=b^2-4c$ を満たす可逆元を加えた有限 étale $\mu_2$-torsor は
-\[
- \widetilde Z_a\simeq\mathbb A^1_x\times\mathbb G_{m,\delta},
- \qquad b=\delta x,\quad c=\frac{\delta^2(x^2-1)}4
-\]
-である。$T$ は $\delta$ のみに通常の乗法で作用する。
-被覆の deck involution は $(x,\delta)\mapsto(-x,-\delta)$ であるから、
-\begin{equation}\label{eq:noncubic-dm-affine-slice}
- [Z_a/T]\simeq[\mathbb A^1_x/\mu_2],\qquad \chi=x^2.
-\end{equation}
-右辺の商スタックは有限 étale affine atlas を持つ。
-従って不変式環 $k[x]^{\mu_2}=k[x^2]$ による射は、\emph{任意の}代数空間への射に対する
-categorical moduli space である
-\cite[Tags 0DUP, 0DUR; Lemmas 106.13.4 and 106.13.6]{StacksDMCoarse}。
-ここでは対象の代数空間に quasi-separatedness を課していない。
-
-\emph{二つの chart の降下。}
-任意の代数空間 $M$ と $H$-不変な射 $f:Z\to M$ を取る。
-$Z_a$ への制限は $T$-不変なので、前段により一意な
-$h:\mathbb A^1_\chi\to M$ が存在し、$f|_{Z_a}=h\chi$ となる。
-$J$ は $Z_a,Z_c$ を交換し、$\chi$ を保つ。
-従って $J$-不変性から $f|_{Z_c}=h\chi$ でもあり、$f=h\chi$ が $Z$ 全体で成立する。
-一意性も $Z_a$ への制限から従う。
-よって $\mathfrak R_{\mathrm{ord}}^{\mathrm{DM}}\to\mathbb A^1_\chi$ は categorical である。
-二対の交換も $\chi$ を保つため、この普遍性は
-$\mathfrak R^{\mathrm{DM}}$ へ降下し、最初の gerbe の議論で
-$\mathfrak N^{\mathrm{DM}}$ へも降下する。
-
-任意の幾何点の $H$-軌道は、$J$ を使えば $Z_a$ と交わる。
-式~\eqref{eq:noncubic-dm-affine-slice} の幾何点では、$x^2$ の値ごとに一つの $\mu_2$-軌道がある。
-従って $\chi$ の各値に、ちょうど一つの幾何点の同型類が対応する。
-$\chi=1$ に対応するのは一根共有の類であり、一致類はこの開部分から除かれている。
-gerbe と二対交換も既知の分類によりこの同型類集合を変えない。
-これで粗モジュライ空間の二条件が示された。
-
-\emph{任意の基底変更。}
-$T=\operatorname{Spec}A\to\mathbb A^1_\chi$ が $\chi\mapsto s\in A$ に対応するとする。
-式~\eqref{eq:noncubic-dm-affine-slice} の基底変更は
-\[
- [\operatorname{Spec}A[x]/(x^2-s)\,/\mu_2]
-\]
-であり、その不変式環は $A$ である。
-実際、$A[x]/(x^2-s)=A\oplus Ax$ で、$\mu_2$ は第二項に $-1$ で作用し、$2$ は可逆である。
-再び同じ有限 affine atlas に対する categorical quotient の定理を適用できる。
-前段の二 chart と反射による降下もそのまま基底変更されるので、
-$\mathfrak N^{\mathrm{DM}}\times_{\mathbb A^1}T\to T$ は categorical である。
-一般のスキーム・代数空間 $T$ については affine étale 被覆上で構成し、一意性により降下すればよい。
-幾何点については代数閉体上の先の議論がそのまま使える。
-
-\emph{good moduli space ではないこと。}
-$P\setminus P^\circ$ は、比例する二形式の非空な smooth 閉部分で、$P$ 内の余次元は二である。
-$P$ は normal affine スキームなので
-\[
- \Gamma(P^\circ,\OO)=\Gamma(P,\OO)
-\]
-となる。これは normal domain がその高さ一の局所環の共通部分に等しいことから従う。
-もし $P^\circ$ が affine なら、開埋込み $P^\circ\hookrightarrow P$ がこの同じ環の恒等写像から
-誘導される同型となるため矛盾する。従って $P^\circ$ は affine ではない。
-$G$ は affine なので atlas $P^\circ\to[P^\circ/G]$ は affine である。
-仮に $\chi_{\mathrm{DM}}$ が cohomologically affine なら、その合成
-\[
- P^\circ\longrightarrow\mathfrak N^{\mathrm{DM}}
- \longrightarrow\mathbb A^1\longrightarrow\operatorname{Spec}k
-\]
-も cohomologically affine となる。
-Serre の affineness criterion により $P^\circ$ は affine となって矛盾する
-\cite[Propositions 3.3 and 3.9]{Alper2009}。
-
-\emph{inertia の非 proper 性。}
-$R=k[[t]]$、$K=k((t))$ とし、$P^\circ(R)$ の族
-\[
- f_1=uv,\qquad f_2=(u-v)(u-t^2v)
-\]
-を取る。判別式は $1$ と $(1-t^2)^2$ で可逆であり、
-特殊 fiber も一根共有の類なので全体が $P^\circ$ に属する。
-一般 fiber には次数付き自己同型を表す射影行列
-\[
- A_t=\operatorname{diag}\!\left(
- \begin{pmatrix}0&t^2\\1&0\end{pmatrix},t,t\right)
- \in G(K)\subset\operatorname{PGL}_4(K)
-\]
-がある。実際、$A_t(f_i)=t^2f_i$、$c,d\mapsto tc,td$ である。
-しかし $A_t$ の射影類は $\operatorname{PGL}_4(R)$ に延長できない。
-$R$ 上の線束は自明なので、延長できるならある $\lambda\in K^\times$ に対し
-$\lambda A_t\in\operatorname{GL}_4(R)$ となる。
-$A_t$ には成分 $1$ があるので、全成分が $R$ に属するためには $v(\lambda)\ge0$ を要求するが、
-$\det A_t=-t^4$ より $v(\det(\lambda A_t))=4v(\lambda)+4>0$ となり可逆性に矛盾する。
-この議論は任意の DVR 拡大後にも同じである。
-
-$G\subset\operatorname{PGL}_4$ は既知の閉埋込みであり、
-$P^\circ\to[P^\circ/G]$ への inertia の引戻しは実際の stabilizer 群スキームである。
-従ってこの一般点の inertia section は $R$ 上へ延長しない。
-proper 射の付値判定に反するので inertia 射は proper ではない。
-もし $\chi_{\mathrm{DM}}$ が separated ならその対角は proper であり、
-その基底変更である inertia も proper となるため、最後の主張も従う。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{remark}
@@ -760,109 +367,10 @@ $\tau:(c,d)\mapsto(d,c)$ を生成元として取る。
 が存在する。
 \end{proposition}
 \begin{proof}
-境界の接作用は命題~\ref{prop:noncubic-coincident-gerbe-tangent} で計算済みである。
-$\operatorname{HH}^1$ は $H$ の Lie 代数なので、共役作用から表の最後の列を得る。
-法表現を、有限成分で保存されるとは限らない Lagrangian slice 上だけでなく、
-全 Grassmann 模型上で計算する。
-
-行列分解を
-\[
- \Phi_c=\begin{pmatrix}c&u\\-v&-c\end{pmatrix},\qquad
- \Phi_d=\begin{pmatrix}d&u\\-v&-d\end{pmatrix}
-\]
-とし、$L=\operatorname{im}(-\Phi_c^t,\Phi_d)\subset H_0$
-をこの正規形の四平面とする。連結トーラスの計算で用いた $f_2=-uv$ の表示とは、
-$d$ の非零スカラー変更で対応する。ここで $H_0$ は八次元の線型空間を表し、安定化群 $H$ と区別する。
-$D=\operatorname{diag}(1,-1)$、$S=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$ と置く。
-係数列の順序を $(u,v,c,d)$ とすれば、四列は
-\[
- (-E_{21},E_{12}),\quad(E_{12},-E_{21}),\quad(-D,0),\quad(0,D)
-\]
-である。
-
-二つの符号変更と根交換は、二 summand の行列 $(X,Y)$ にそれぞれ
-\[
- \rho_{e_1}(X,Y)=(-DXD,Y),\qquad
- \rho_{e_2}(X,Y)=(X,-DYD),\qquad
- \rho_r(X,Y)=(-SXS,-SYS)
-\]
-と作用する。
-これは例えば $\Phi_c(-c)=-D\Phi_cD$ と
-$\Phi_c(v,u)=-S\Phi_c(u,v)S$、および $d$ 側の同じ恒等式から得られる。
-四平面の基底への誘導作用はそれぞれ
-\[
- R_{e_1}=\operatorname{diag}(1,1,-1,1),\quad
- R_{e_2}=\operatorname{diag}(1,1,1,-1),\quad
- R_r=P_{uv},
- \qquad\rho_gL=LR_g
-\]
-である。$P_{uv}$ は最初の二列を交換する行列である。
-
-ruling 交換が実際の自己同値の変形作用であることを確認する。
-$c\leftrightarrow d$ は標準 foundation
-$(\mathcal O,M_c,\mathcal O(1),M_d(1))$ を
-$(\mathcal O,M_d,\mathcal O(1),M_c(1))$ へ送る。
-ここで行列分解の周期列から
-\[
- 0\longrightarrow M_d\longrightarrow B(1)^{\oplus2}
-   \longrightarrow M_d(1)\longrightarrow0
-\]
-および $c$ 側の同じ列が得られる。
-この列は、まず $k[u,v,d]/(d^2-uv)$ 上の行列分解で得られ、
-$B$ が交代語の PBW 基底によりこの部分環上で左自由であることを使って移せる。
-従って $M_d$ は実際の mutation
-$\operatorname{Cone}(\operatorname{Hom}(E_2,E_3)\otimes E_2\to E_3)[-1]$
-であり、第四項も同様に $M_c(1)$ である。
-命題~\ref{prop:ruling-involution-mutation} の相対構成は任意の Artin foundation 変形にも適用できる。
-そのため閉点の行列を固定するというだけでなく、当該 pointed 自己同値による
-全変形 groupoid の作用を、この mutation と閉点での指定同型で計算できる。
-
-その作用を命題~\ref{prop:relative-ruling-involution} の二つの短完全列から読む。
-新しい $F'$ は $K\hookrightarrow C\otimes D$ の縮約なので、
-$(F')^*$ は $j$ の二因子を交換した $j^t$ である。
-また新しい $G'$ の核は $\operatorname{im}\alpha_F\simeq A$ なので、
-その curry 写像 $j'$ は $F^*$ の二因子を交換した $(F^*)^t$ となる。
-従って旧四平面を $(-F^*,j)$ と書くと、新しい第一成分は $-j^t$、
-第二成分は $(F^*)^t$ である。
-従って全体の共通符号を除いて、交換は
-\[
- \rho_\tau(X,Y)=(Y^t,X^t)
-\]
-となる。一致点では $\Phi_c,\Phi_d$ の交換が実際の graded 自己同型 $c\leftrightarrow d$
-に対応し、$P_{cd}$ を最後の二列の交換行列として
-\[
- \rho_\tau L=-LP_{cd}
-\]
-である。この計算は実際の mutation の二写像表示に従うものであり、
-foundation 商全体と内在的 $\mathfrak H_2$ の相対同値を仮定していない。
-
-二つの射影行列を $M,N$ とし、四平面の一次変分 $\dot L$ に対して
-\[
- \nu(\dot L)=
- \bigl(\operatorname{tr}(\operatorname{adj}M\,\dot M),
-       \operatorname{tr}(\operatorname{adj}N\,\dot N)\bigr)
-\]
-と置く。これは orbit 接空間を消し、Lagrangian slice 上では前節の独立な
-二つの行列式微分に一致する。従って $\operatorname{HH}^2$ から法空間への
-全射を与える。その kernel は二次元であり、境界の接空間に一致する。
-ここでは全 Grassmann 接空間の次元十六、orbit 次元十二、境界の接次元二を使う。
-
-各 block の行列式は一、$\det R_{e_1}=\det R_{e_2}=\det R_r=-1$ なので、
-基底を戻す $\dot L\mapsto\rho_g\dot L R_g^{-1}$ の下で、
-二つの射影行列式の微分はともに $-1$ 倍される。
-$\tau$ では二 summand を交換し、二次正方行列の転置が四次元空間上で
-行列式 $-1$ を持つ。他方、$\det(-P_{cd})=-1$ である。
-この二つの符号が打ち消し合い、法方向への作用は $(x,y)\mapsto(y,x)$ となる。
-連結トーラスの法作用は命題~\ref{prop:noncubic-coincident-torus-weights} で自明と示した。
-これで法表現の表が得られる。
-
-$H$ はトーラスと有限群の積の有限中心商なので、標数零では線型簡約である。
-ここではさらに、連結トーラスの非零重み部分が境界の接空間に一致し、
-零重み部分から法空間への写像が同型である。
-$H$ はその単位成分を正規化するので、この二つの部分はともに $H$-不変である。
-従ってこの重み分解は $H$-同変な直和分解を与え、表により全 $\operatorname{HH}^2$ の表現が決まる。
-中央の $(-1,e_1e_2)$ は表の全ての表現で自明に作用するため、
-表は式~\eqref{eq:noncubic-coincident-full-stabilizer} の商群上に正しく降下する。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{theorem}[一致類に沿う形式的な対の線型化]
@@ -885,47 +393,10 @@ $\mathcal G$ に沿う形式完備化の対は、非標準的に
 指定した gerbe の近傍に共通の表現可能な \texorpdfstring{\'etale}{etale} 近傍を持つ。
 \end{theorem}
 \begin{proof}
-命題~\ref{prop:noncubic-coincident-gerbe-tangent} より、$\mathcal G$ は
-$\mathfrak N$ の閉 substack である。$\mathfrak N$ 自身が $\mathfrak H_2$ の閉 substack
-なので、一致類は $\mathfrak H_2$ の閉点である。
-$\mathfrak H_2$ は有限型 smooth Artin スタックで、対角は affine 有限表示である。
-前命題の $H_{\mathrm{eq}}$ は線型簡約である。
-従って Alper--Hall--Rydh の定理
-\cite[Theorems 1.1, 1.2]{AlperHallRydh2020} の全仮定が成立する。
-同論文の閉点の normal representation は、smooth な安定化群の場合、
-ここでの一次変形空間 $V=\operatorname{HH}^2$ に一致する。
-Theorem 1.2 によって、$[V/H_{\mathrm{eq}}]$ と $\mathfrak H_2$ の共通
-\texorpdfstring{\'etale}{etale} 近傍を得る。
-affine diagonal の仮定によって、$\mathfrak H_2$ への射は affine、特に表現可能に取れる。
-
-境界も同時に線型化できることを別に示す。
-同定理の affine slice $W$ の固定点を $w$ とする。
-$W$ は $w$ の近傍で smooth であり、境界の引戻し $D\subset W$ も smooth で、
-$H_{\mathrm{eq}}$-不変な余次元二の正則閉部分である。
-$w$ の極大イデアルを $\mathfrak m$、$D$ のイデアルを $I$ とする。
-接空間の双対の完全列
-\[
- 0\longrightarrow (I+\mathfrak m^2)/\mathfrak m^2
- \longrightarrow\mathfrak m/\mathfrak m^2
- \longrightarrow\mathfrak m/(I+\mathfrak m^2)\longrightarrow0
-\]
-は $H_{\mathrm{eq}}$-同変に分裂する。
-線型簡約性により、法方向の余接表現を $I$ の元へ、
-境界方向の余接表現を $\mathfrak m$ の元へ、それぞれ同変に持ち上げられる。
-選んだ四元は regular system of parameters をなし、
-完備局所環の同変同型
-\[
- \widehat{\mathcal O}_{W,w}\simeq k[[a,c,x,y]]
-\]
-を与える。最初に $I$ から選んだ二元を $x,y$ とすれば、
-正則埋込みと Nakayama の補題から $I\widehat{\mathcal O}_{W,w}=(x,y)$ である。
-従って形式的な対が同時に線型化される。
-
-slice から $\mathfrak H_2$ への射は表現可能な \texorpdfstring{\'etale}{etale} 射であり、
-指定 gerbe 上では同型である。従って全ての無限小近傍を同型に写し、
-上の形式局所環の対を群で割ることで主張を得る。
-ここでは接表現の計算だけから形式模型を推測せず、
-\texorpdfstring{\'etale}{etale} slice と線型簡約性による同変座標の構成を使っている。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
 
 \begin{corollary}[形式不変式環と smooth な局所商]
@@ -947,32 +418,8 @@ Alper--Hall--Rydh の共通 \texorpdfstring{\'etale}{etale} 近傍は、
 これは $\mathfrak H_2$ の Zariski 開部分や全体に good moduli space が存在するという主張ではない。
 \end{corollary}
 \begin{proof}
-まずトーラスの不変式を取ると
-\[
- k[V]^{\mathbb G_m}=k[w,x,y],\qquad w=ac.
-\]
-$e_1$ は $(x,y)$ を同時に反転し、$r$ はこの環上では $e_1$ と同じ作用を持つ。
-$\tau$ は $w$ を保ち、$x,y$ を交換する。
-$\xi=x+y$, $\eta=x-y$ と置くと、残る有限群の像は
-$\xi,\eta$ の独立の符号変更群である。
-従って不変式環は $k[w,\xi^2,\eta^2]$ であり、三つの生成元は代数的に独立である。
-形式冪級数については、トーラス不変な単項式の $a,c$ の指数が等しいことから、
-まず不変式環は $k[[w,x,y]]$ となる。
-ここで $w$ の重み付き次数を二とする filtration と通常の極大イデアル進 filtration は cofinal である。
-次に $\xi,\eta$ の独立の符号変更による不変性は両指数が偶数であることと同値なので、
-$k[[w,\xi^2,\eta^2]]$ を得る。
-境界は $x=y=0$ なので制限の主張も従う。
-
-\cite[Theorem 1.2]{AlperHallRydh2020} の共通近傍は
-\[
- [W/H_{\mathrm{eq}}]
-   =[V/H_{\mathrm{eq}}]\times_{V/\!/H_{\mathrm{eq}}}U
-\]
-と取れ、$U\to V/\!/H_{\mathrm{eq}}=\mathbb A^3$ は affine
-\texorpdfstring{\'etale}{etale} である。
-線型簡約群の affine 商の good moduli morphism をこの
-\texorpdfstring{\'etale}{etale} 射で引き戻すと、$[W/H_{\mathrm{eq}}]\to U$ が得られる。
-従ってこの共通近傍の good moduli space は原点近傍で smooth である。
-$[W/H_{\mathrm{eq}}]\to\mathfrak H_2$ が近傍全体で慣性を同型に写すとは仮定せず、
-good moduli space をそのまま $\mathfrak H_2$ の開部分へ降下させていない。
+完全な証明は相対モジュライ別稿
+\cite[noncubic 境界の相対表示とモジュライ写像]{QuadricModuli2026}
+に置く。非被約基底の正規形、相対同値、慣性・変形作用の
+必要な入力は同稿で区別して扱う。
 \end{proof}
