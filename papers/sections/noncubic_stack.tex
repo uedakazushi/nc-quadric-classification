@@ -718,6 +718,149 @@ $\mathbb A^{25\cdot56}\to\mathbb A^6$
 その制限は局所閉埋込みである。
 \end{proof}
 
+\subsection{noncubic の Koszul 性と一次変形の全次数平坦性}
+\label{subsec:noncubic-koszul-infinitesimal}
+
+ここでは三次 Hilbert 条件に対する接計算を、
+全次数の一次変形と Hochschild コホモロジーへ結び付ける。
+この結び付きは Koszul 変形原理の一次版であり、
+高次の変形を自動的に積分するという意味ではない。
+
+\begin{proposition}[noncubic 反 Serre 環の Koszul 性]
+\label{prop:noncubic-antiserre-koszul}
+標数零の代数閉体 $k$ 上で、任意の二元二次形式
+$f_1,f_2\in k[u,v]_2$ に対し
+\[
+ B=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2),
+ \qquad
+ R=\bigl(B^{(2)}\bigr)^\iota,\quad
+ \iota|_{k[u,v]}=1,\quad \iota(c)=-c,\ \iota(d)=-d
+\]
+と置く。ここで $\iota$ は偶数 Veronese に作用する
+次数を保つ自己同型とし、最後の上添字は Zhang twist を表す。
+このとき $B$ および $R$ は Koszul 代数である。
+特に本稿の全 noncubic $\HH$ 対象の反 Serre 環は Koszul である。
+\end{proposition}
+\begin{proof}
+$u,v,c,d$ の自由結合代数において
+\[
+ vu\mapsto uv,\quad
+ cu\mapsto uc,\quad cv\mapsto vc,\quad
+ du\mapsto ud,\quad dv\mapsto vd,\quad
+ c^2\mapsto f_1,\quad d^2\mapsto f_2
+\]
+という二次書換え系を取る。
+次数辞書式順序 $d>c>v>u$ で左辺は先頭項となる。
+重複のうち $c^3,d^3$ については、
+$f_1,f_2$ が中央の $u,v$ の多項式なので
+左右の簡約は同じ結果になる。
+その他の長さ三の重複は $u,v$ を左へ移す規則と
+二乗規則の交換、または $u,v$ の可換性の整合であり、
+いずれも同じ正規形へ簡約される。
+従って Diamond Lemma により
+$u^av^bw$（$w$ は $c,d$ の交互語）が基底となり、
+表示は二次 Gröbner (PBW) 基底を持つ。
+二次 PBW 代数の Koszul 性は
+Priddy の定理
+\cite[Chapter 4, Theorem 3.1]{PolishchukPositselski2005}
+によるから $B$ は Koszul である。
+
+Koszul 代数の Veronese 部分環も Koszul であることは
+\cite[Chapter 3, Proposition 2.2(i)]{PolishchukPositselski2005}
+により、$B^{(2)}$ は Koszul となる。
+Zhang twist は次数付き加群圏と線型自由解消を移すので
+Koszul 性を保ち、$R$ も Koszul である。
+noncubic の反 Serre 環との同一視は
+命題~\ref{prop:noncubic-antiserre-descent} による。
+\end{proof}
+
+\begin{lemma}[Koszul 二次環の一次変形における三次判定]
+\label{lem:koszul-first-order-degree-three}
+$R_0=T_k(V)/(J)$ を局所有限な連結 Koszul 二次代数、
+$A=k[\varepsilon]/(\varepsilon^2)$ とする。
+$J_A\subset V_A^{\otimes2}$ を $J$ に特殊化する
+階数 $\dim J$ の直和因子とし、
+$R_A=T_A(V_A)/(J_A)$ とする。
+このとき以下は同値である：
+\begin{enumerate}
+\item $(R_A)_3$ が $A$ 上平坦である。
+\item 全ての $n\ge0$ で $(R_A)_n$ が $A$ 上平坦である。
+\end{enumerate}
+従って三次 Hilbert 関数の determinantal locus の
+$R_0$ における接空間は、
+\emph{全次数平坦な一次の次数付き二次代数変形}を
+正確に記述する。
+これは双対数上の結論であり、二次・三次以降の
+Artin 小拡大への持上げは主張しない。
+\end{lemma}
+\begin{proof}
+$E=V^{\otimes2}/J$ とし、$J_A$ を
+$j-\varepsilon\widetilde\phi(j)$ の張るグラフとして表す。
+ここで $\phi\in\operatorname{Hom}_k(J,E)$ である。
+二次関係の三次における重なりは
+\[
+ K_3=(V\otimes J)\cap(J\otimes V)\subset V^{\otimes3}
+\]
+で測られる。
+$R_0$ の Koszul 双加群複体の内部次数零の
+Hochschild コチェイン複体の最初の項は
+\[
+ C^1=\operatorname{Hom}(V,R_{0,1}),\quad
+ C^2=\operatorname{Hom}(J,R_{0,2}),\quad
+ C^3=\operatorname{Hom}(K_3,R_{0,3}).
+ \tag{Kos-C}\label{eq:noncubic-koszul-hoch-cochain}
+\]
+三次関係を $A$ 上で持ち上げたときの整合性は、
+$\phi$ の微分
+$d^2\phi\in\operatorname{Hom}(K_3,R_{0,3})$
+が零になる条件である。
+実際、一つの三次重なりを
+$V\otimes J$ と $J\otimes V$ の二通りに書き、
+関係式 $j-\varepsilon\widetilde\phi(j)$ を代入すると、
+両者の差の $\varepsilon$ 次係数が
+$d^2\phi$ となる。
+よって $(R_A)_3$ の平坦性は $d^2\phi=0$ と同値である。
+
+Koszul 性から上の双加群複体は対角双加群の
+projective resolution であり、bar 解消への比較は
+Hochschild コチェイン複体の準同型を与える。
+従って $d^2\phi=0$ なら、
+$\phi$ は通常の次数零 Hochschild $2$-cocycle
+$\mu_1:R_0\otimes R_0\to R_0$ の制限として表せる。
+比較の変更によって生じる $d^1$-境界は
+次数一生成元の $1+\varepsilon\theta$ という
+基底変更で補正できる。
+ゆえに $\phi$ に対応する二次関係を持つよう
+$\mu_1$ と生成元の lift を選べる。
+
+このとき $R_0\otimes_k A$ 上の積
+\[
+ a*b=ab+\varepsilon\mu_1(a,b)
+\]
+は $\varepsilon^2=0$ と cocycle 条件により結合的で、
+全次数自由な次数付き $A$-代数 $R_{\mu_1}$ を与える。
+上述の生成元の選択から、
+$R_A\twoheadrightarrow R_{\mu_1}$ という
+次数付き $A$-代数の全射が存在する。
+各次数で両者の剰余体への制限は同じ $R_{0,n}$ であり、
+$R_{\mu_1,n}$ は自由なので、
+局所 Artin 環上の Nakayama 補題によって
+この全射は各次数で同型である。
+従って $(R_A)_n$ は全次数で自由となる。
+逆向きは自明である。
+\end{proof}
+
+\begin{remark}[既知の Koszul 変形原理との関係]
+形式的な Koszul 変形について、三次までの平坦性が
+全次数の平坦性を含意することは Drinfeld の
+Koszul deformation principle として既知である
+\cite[Chapter 6, Theorem 2.1 と同章導入]{PolishchukPositselski2005}。
+同定理にある reduced な族での局所定式化と、
+形式的一径数族、今回の双対数上の一次定式化は
+区別する。本補題では Koszul 双加群解消を用いて
+一次定式化を直接証明した。
+\end{remark}
+
 \subsection{三次 Hilbert 条件の接空間と非cubic表示の法方向}
 \label{subsec:noncubic-tangent-degree-three}
 
