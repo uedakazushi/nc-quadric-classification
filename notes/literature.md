@@ -9,6 +9,14 @@
 
 既知の cubic AS-regular $\mathbb Z$-algebra、geometric quintuple、admissible quadruple の分類や hypersurface embedding を新成果として扱わない。特に、quadratic hull の存在と quadratic envelope による canonical recovery は別の主張である。
 
+## compact 局所化の一次資料
+
+Amnon Neeman, *The connection between the K-theory localization theorem of Thomason, Trobaugh and Yao and the smashing subcategories of Bousfield and Ravenel*, **Ann. Sci. Éc. Norm. Supér.** (4) **25** (1992), no.5, 547–566, DOI [10.24033/asens.1659](https://doi.org/10.24033/asens.1659), [一次PDF](https://www.numdam.org/article/ASENS_1992_4_25_5_547_0.pdf)。
+2026-11-22にTheorem 2.1（印刷p.550）の原文・仮定を確認した。
+compactly generated三角圏をcompact対象集合で生成されるlocalizing部分圏で割った商はcompactly generatedとなり、商関手はcompact対象をcompact対象へ送る。
+本稿Bではまずtorsion核をcompactな頂点単純対象で生成することを独立に証明してから適用する。
+この定理だけでは四項のtilting性や相対AS/heartを保証しない。
+
 ## Belmansの既知Hochschild計算との対照
 
 Pieter Belmans, *Hochschild cohomology of noncommutative planes and quadrics*, **J. Noncommut. Geom.** 13 (2019), no. 2, 769–795, DOI [10.4171/JNCG/338](https://doi.org/10.4171/JNCG/338), [arXiv:1705.06098v2](https://arxiv.org/abs/1705.06098v2)。2026-11-22に原文のProposition 31、Corollary 32、Table 2と出版社書誌を確認。cubic AS正則Z-algebraからの四項tilting代数は大域次元2であり、高次HHの消滅とdim HH²−dim HH¹=3、および幾何的四つ組の退化型別の表が得られる。これは強いH2のcubic領域に対する既知入力であり、cubic表示を持たないnoncubic領域には無条件に適用しない。

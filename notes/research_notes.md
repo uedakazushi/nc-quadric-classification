@@ -1,6 +1,29 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.65（A v1.68・20節、B v0.25・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.66（A v1.69・20節、B v0.26・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 被約境界七型の周期と五頂点の compact 局所化
+
+全七局所型について、原稿の三次関係を用いて四次 overlap の左右表示を独立に正確な多項式係数で比較した。両 parity で等式が成り立つ。
+overlap の $w_i$ と $w_{i+1}$ から抽出した四周期 $\theta_i$ と幾何的二周期の平方の比は、偶・奇順に
+横断 $(1,1)+(1,1)$ が $(r,r)$、接する同型が $(1,1)$、
+混合 $(2,1)+(0,1)$ 横断型が $(-r^{-1},-1)$、接点型が $(-1,-1)$、
+三成分cycleが $(-1,-r)$、三重点が $(-1,-1)$、
+四成分gridが $(-r,-1)$。
+各非零scalarは頂点スカラー比なので対角同値で消える。
+型別表は論文Aの全被約逆構成直前に保持した。
+これは有限次数の厳密検算であり、Serre双加群・AS4被覆の全次数や全分類の独立再証明ではない。
+既存の再現コードは computations/verify_reducible_quadruples.py。
+
+Bの五頂点barから各単純 $S_i$ がperfectである。
+torsion加群は有限頂点支持部分加群のfiltered colimitであり、
+有限頂点支持加群は $S_i$ に任意の基底加群をtensorした対象の拡大からなる。
+従って derived torsion kernel は $\operatorname{Loc}\{S_i\}$。
+Gabriel商の完全性から導来商を得て、Neeman1992 Theorem 2.1を適用すると
+各 $\pi P_i$ はcompactで全体を生成する。
+これは $\mathbf R\omega$ の直和可換性からの議論と独立する。
+四項がtiltingであることには引き続き最終頂点Tor3の一次元性と高次Ext消滅が必要。
+この追加補題はBの lem:five-window-compact-localization に証明を置く。
 
 ## 退化四つ組と非可換五頂点窓の監査対象
 

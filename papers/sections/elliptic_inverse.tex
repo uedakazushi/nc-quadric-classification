@@ -901,6 +901,34 @@ $\sigma^*E(\lambda)=E(r\lambda)$, $\sigma^*O(\lambda)=O(r\lambda)$ であり、
 各節点で両切断の値が一致するので、これらは大域的な束の同型である。
 従って再び $\beta^2=\theta$ が対角型を除いて成り立つ。
 
+\begin{remark}[被約境界の二周期と四周期の比較表]
+各局所型で上述の切断基底を用いると
+$\theta_i=\lambda_i\beta_i^2$ となり、そのスカラーは次の通りである。
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+被約曲線の型 & $\lambda_i$（偶数） & $\lambda_i$（奇数）\\
+\midrule
+$(1,1)+(1,1)$、横断二交点 & $r$ & $r$\\
+$(1,1)+(1,1)$、接点 & $1$ & $1$\\
+$(2,1)+(0,1)$、横断二交点 & $-r^{-1}$ & $-1$\\
+$(2,1)+(0,1)$、接点 & $-1$ & $-1$\\
+三成分 cycle & $-1$ & $-r$\\
+三成分通常三重点 & $-1$ & $-1$\\
+四成分 grid & $-r$ & $-1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+因子交換型は偶奇と座標を交換した同じ計算で扱える。
+任意の非零スカラー列 $(\lambda_i)$ は
+頂点スカラー $c_i/c_{i+1}=\lambda_i$ を順に選んで吸収できるため、
+$\theta$ と $\beta^2$ の差は対角型自己同型である。
+有限次数の恒等式は
+\path{computations/verify_reducible_quadruples.py} の厳密計算と整合し、
+全次数の AS4 被覆については
+命題~\ref{prop:admissible-period-h2} の独立の入力を用いる。
+\end{remark}
+
 \begin{theorem}[全被約 $(2,2)$ 因子からの逆構成]
 \label{thm:all-reduced-inverse}
 標数零の代数閉体上、$C$ が被約な $(2,2)$ 因子である全ての許容四つ組

@@ -155,6 +155,50 @@ $1,2,3,4$ の順に $9,40,48,16$ である。
 本節の方法が要求するのはこの固定階数の複体の完全性である。
 \end{remark}
 
+\begin{lemma}[五頂点窓の torsion 核と compact 性]
+\label{lem:five-window-compact-localization}
+補題~\ref{lem:five-window-bar-lifting} の仮定の下で、
+$\operatorname{Gr}C$ の次数 torsion 加群の Serre 部分圏を
+$\operatorname{Tors}C$ とすると、
+\[
+ D(\operatorname{QGr}C)\simeq
+ D(\operatorname{Gr}C)/\operatorname{Loc}\{S_i\mid i\in\mathbb Z\}.
+ \tag{BW-loc}\label{eq:five-window-compact-localization}
+\]
+各 $\mathcal O_i=\pi P_i$ は $D(\operatorname{QGr}C)$ の compact 対象であり、
+それら全体は同圏を localizing subcategory として生成する。
+この結論に $C$ の Noetherian 性は不要である。
+\end{lemma}
+\begin{proof}
+正の向きの $\mathbb Z$-代数の次数 torsion 加群は、
+斉次元が生成する有限頂点支持部分加群の filtered colimit である。
+有限頂点支持加群は最大の頂点から順に濾過でき、
+逐次商は $S_i\otimes_R M_i$ と書ける。
+任意の $R$-加群 $M_i$ の自由解消を使うと、
+$S_i\otimes_RM_i$ は $\operatorname{Loc}\{S_i\}$ に属する。
+$S_i$ は頂点 $i$ に $R$ を置く $R$-平坦加群なので、
+ここで通常 tensor と導来 tensor は一致する。
+filtered colimit の完全性から全 torsion 加群もこの localizing subcategory に属する。
+cohomology が torsion である任意の導来複体は、
+有限範囲の標準切断と、それらの homotopy colimit により回復できるため、
+同じ localizing subcategory に属する。
+
+Gabriel 商 $\pi:\operatorname{Gr}C\to\operatorname{QGr}C$ は完全で、
+その右随伴 $\omega$ は fully faithful である。
+$\omega$ は単射対象を単射対象へ送るため、
+導来 counit $\pi\mathbf R\omega\to\mathrm{id}$ は同型となる。
+従って導来局所化の核は torsion cohomology を持つ複体全体であり、
+上記の Verdier 商を得る。
+
+$D(\operatorname{Gr}C)$ は projective representables $P_i$ を
+compact generators とする。
+前補題により $S_i$ は有限 projective 解消を持ち compact である。
+Neeman \cite[Theorem 2.1]{Neeman1992} の compact localization 定理により
+商でも $\pi P_i$ は compact となる。
+$\pi$ は直和を保ち、$P_i$ が元の導来圏を生成するので、
+これらの像は商も生成する。
+\end{proof}
+
 \begin{proposition}[五頂点解消による canonical tails]
 \label{prop:five-window-canonical-tails}
 前補題の仮定に加え、$C$ が距離高々二の成分で生成されるとする。
@@ -204,7 +248,8 @@ unbounded $\mathbf R\omega$ も直和と可換し、
 \[
  \mathbf R\tau X\longrightarrow X\longrightarrow\mathbf R\omega\pi X\longrightarrow
 \]
-が成立する。これにより全 $\mathcal O_i$ は compact で、導来圏を生成する。
+が成立する。全 $\mathcal O_i$ の compact 性と生成性は、
+この直和保存と独立に補題~\ref{lem:five-window-compact-localization} からも従う。
 \eqref{eq:five-window-relative-dual} と有限 truncation の filtration を使うと
 \eqref{eq:five-window-tails-cohomology} を得る。
 また同じ AS 双対計算により $\mathbf R\tau P_j=N_j[-3]$ であり、
@@ -214,19 +259,10 @@ unbounded $\mathbf R\omega$ も直和と可換し、
  0,&i>j-4.
  \end{cases}
 \]
-したがって $N_j$ は上に有界である。
-その部分加群 $(N_j)_{\ge a}$ は有限個の頂点に支持され、
-各頂点への filtration の逐次商は $S_i$ に $R$-加群を係数として付けたものである。
-この逐次商は係数加群の $R$-自由解消により $\operatorname{loc}\{S_i\}$ に属する。
-$a\to-\infty$ の telescope を取り、filtered colimit の完全性を使えば
-$N_j\in\operatorname{loc}\{S_i\}$ を得る。
-$\mathbf R\tau$ は三角関手として直和と可換し、$P_j$ が
-$D(\operatorname{Gr}C)$ を生成するので、その像全体が
-$\operatorname{loc}\{S_i\}$ に含まれる。
-$\pi X=0$ なら局所化三角から $X\simeq\mathbf R\tau X$ である。
-逆に $\pi S_i=0$ であり $\pi$ は直和と可換するため、
-導来 torsion kernel はちょうど $\operatorname{loc}\{S_i\}$ となる。
-無界複体を bounded truncation の無条件な極限と同一視する操作は不要である。
+したがって $N_j$ は上に有界な次数 torsion 加群である。
+torsion 核全体の記述と compact 性は
+補題~\ref{lem:five-window-compact-localization} で独立に証明した。
+ここでは無界複体を有界切断の無条件な逆極限で置き換えていない。
 
 四項による生成性のため、bar 複体を最終添字で filter する。
 最終添字が $i+4$ の係数複体を $V_i^\bullet$ とする。
