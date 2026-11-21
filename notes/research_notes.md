@@ -1,6 +1,32 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.69（A v1.69・20節、B v0.30・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.70（A v1.69・20節、B v0.31・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## Lagrangian 正規形の cross reshuffling に関する符号と開条件
+
+有限型chartの全幾何点認識に用いる
+$\operatorname{Cr}(M)_{ka,bc}=M_{ck,ab}$ という縮約では、
+行を$(k,a)$、列を$(b,c)$の辞書式で並べる。
+両射影rank3の標準Lagrangian四平面を
+$(-E_{21},\alpha E_{12}+\gamma E_{21})$、
+$(E_{12},\beta E_{12}-\alpha E_{21})$、
+$(-D_0,0)$、$(0,I_2)$で生成させると、
+$\alpha^2+\beta\gamma=1$ のもとで
+\[
+ \det\operatorname{Cr}(N\operatorname{adj}M)=-1,\quad
+ \det\operatorname{Cr}(M\operatorname{adj}N)
+      =-(\alpha^2+\beta\gamma)^4=-1.
+\]
+任意のrank-one外積$Y\otimes\nu$でも
+$\det\operatorname{Cr}(Y\otimes\nu)=-(\det Y\,\det\nu)^2$。
+以前のコードは列添字の$b,c$を逆にしていたため、
+行列式に逆符号を出していたが、可逆性自体の判定は不変である。
+現行の computations/verify_lagrangian_recognition.py は原稿に合わせて訂正し、
+すべての16添字に対する定義式もassertで固定した。
+差のある旧規約を履歴として残さず、この正しい規約のみを正本にする。
+これは記号的な行列式・等方性・接空間微分の検算であり、
+全幾何点のheart/AS4の同定と非被約閉基底の相対標準化は
+別途原稿の論理的証明を必要とする。
 
 ## 全noncubic幾何fiberのBW条件と平坦coherent Hom
 

@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.44（BW-fiberの引用をASR2へ明確化）
+% 2026-11-22 / v1.45（LGのcross reshuffling添字規約を整合）
 \section{noncubic 境界を横断する有限型効果性}
 \label{sec:noncubic-finite-type}
 
@@ -246,6 +246,30 @@ $D$ 上では各三次小行列式が単位イデアルを生成し、
 geometric locus は射影 incidence の像の補集合として定義された開部分なので、
 その判定は任意の基底変更と両立する。
 \end{proof}
+
+\begin{remark}[cross reshuffling の添字規約と行列式]
+\label{rem:lg-cross-reshuffling-sign}
+式 $\operatorname{Cr}(M)_{ka,bc}=M_{ck,ab}$ では
+行添字を $(k,a)$、列添字を $(b,c)$ とし、
+それぞれ辞書式に $(00,01,10,11)$ と並べる。
+前の二射影とも階数三となる正規形
+\eqref{eq:lagrangian-rank-three-normal-form} を
+この規約で四行四列に書くと、係数の厳密な多項式計算により
+\[
+ \det\operatorname{Cr}(N\operatorname{adj}M)=-1,\qquad
+ \det\operatorname{Cr}(M\operatorname{adj}N)
+       =-(\alpha^2+\beta\gamma)^4=-1
+\]
+となる。
+一般の rank-one テンソル $Y\otimes\nu$ では
+$\det\operatorname{Cr}(Y\otimes\nu)=-(\det Y\,\det\nu)^2$ である。
+列添字の $(b,c)$ と $(c,b)$ を交換した別の reshuffling を用いると
+四列のうち $01$ と $10$ が入れ替わり、行列式の符号が反転する。
+両方の規約で可逆性の条件は同じだが、
+本文の添字規約と検算コードは上記の符号で一致させる。
+これは有限型認識命題の開条件の非消滅を補強するものであり、
+同命題の全相対認識をこの行列式計算だけで証明するものではない。
+\end{remark}
 
 \subsection{全幾何 fiber の有限 foundation 認識からの一様化}
 
