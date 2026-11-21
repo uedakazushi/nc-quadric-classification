@@ -1,12 +1,14 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.6。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.5。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
+2026-11-21 / v0.7。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.6。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
 
 **最優先目標は内在的相対モジュライ $\mathfrak H_2$ の具体的な有限型商表示と、全pointed exact同値・降下・相対再構成を証明することである。** 現行の $\mathcal H_2$ の体上分類は完成済みだが、$\mathfrak H_2$ は未構成であり、foundation表示 $\mathfrak Q_{\mathrm{fnd}}$ や関係式の閉包 $\mathfrak Z_2$ と同一視しない。cubic の比較例は、指定された相対条件付きの $\mathfrak H_3=[X^{\mathrm{H3}}/\mathrm{PGL}_4]$ である。
 
 **今回の到達点：** 反Serre環の偶数Veroneseに対して任意の基底上の二次提示を直接証明し、全 $\mathcal H_2$ 対象・cubic/noncubic両chart・各noncubic点への平坦な特殊化族で、九生成元・五十六二次関係から**全次数**を復元できるようにした。noncubicの二形式六係数は、九生成元の積から常に単位となる25個のminorを使い、Grassmannianの固定affine cellへ多項式的に**局所閉埋込み**となる。六係数の回収式を直接示し、厳密検算を追加。cubicの関係式像の被約既約閉包 $Z_2$ を取り、有限型Artin商 $[Z_2/\mathrm{PGL}_9]$ を構成した。幾何点の全H2実現集合はこの中で構成可能であり、cubicが稠密、noncubic全点はその閉包に入る。以前のnoncubic中心Clifford・相対Serre・相対qgr heartの結果を保持する。
 
 **今回の接空間検算と証明：** noncubicの二形式六係数が固定Grassmann cellに閉埋込みとなることを使い、PGL9の80次元Lie作用と六係数の接像を比較した。非交差基準点・一根共有点・二根対一致点で、両者の和は標数零で正確に81次元（軌道次元は80,80,79、交わりは5,5,4）。三次Hilbert階数49の条件は $L_J:V\otimes J\to(V^{\otimes2}/J)\otimes V$ のrank176であり、kernel328/cokernel49の線形化を1400変数・16072行として法101で全行検証した。その条件の接次元は法101で83,83,84。さらに法101の核83,83,84本を分母2以下の有理数へ復元し、整数係数の全線形化行列に対する零性と独立性を確認した。従って標数零でも接次元は**正確に**83,83,84である。三次Hilbert条件の接空間を既知の81方向で割った商は正確に2,2,3次元。ただしこれらは相対H2の実変形と同一視していない。これは内在的H2の接空間ではなく、三次Hilbert条件のdeterminantal locusについての結果である。証明・計算は prop:noncubic-third-degree-tangent と computations/verify_noncubic_degree3_tangent.py（numpy・numbaを用いるオプション検証）を参照する。
+
+**Koszul 理論と二次持上げの進展：** noncubic の二重平方環は中央二変数と二乗関係の二次 Gröbner 基底を持つため Koszul であり、偶数 Veronese と Zhang twist による反Serre環も Koszul。Koszul 双加群解消から、三次Hilbert条件を満たす一次二次関係変形は、双対数上で**全次数平坦**な次数付き代数変形となる。これにより三基準点の内部次数零 Hochschild コホモロジーを $HH^1=(1,1,2)$、$HH^2=(3,3,5)$ と決定した。さらに三次条件の横断接空間 $2,2,3$ の基底および各基底二項和について、二次Schur complement障害に対する厳密な有理数補正を構成。したがって各横断方向は $k[t]/(t^3)$ 上で三次Hilbert階数49を保って持ち上がる。今回の厳密な同等ローカル計算は、法101の候補を有理数・整数へ復元し、整数係数の線形化行列で零性を全検査した。GitHub の再現スクリプト computations/verify_noncubic_second_order.py は追加したが、その公開版を別環境で実行したとは報告しない。**内在的H2の平坦Abel変形とこれらの次数付き代数変形の同一視、三次以上の障害、全相対moduliの構成は未完成。**
 
 **未解決の核心：** $Z_2$ にはH2でない点が混入し得る。相対H2のheart・全flat coherent対象のSerre双対・AZ豊富性・AS正則被覆の存在、任意の内在的族の局所正規形、およびcubic/noncubic chartの相対全忠実性・貼合せ・有限表示を証明する。これらを閉包の構成や体上の関係式判定で代用しない。相対moduli自身の既約成分数も未確定である。詳細は第3・5・6節、証明は主原稿、検算は研究ノートを正本とする。
 
@@ -92,6 +94,9 @@ $$
 | 二次Veroneseの相対提示 | 一般の二次環の偶数Veroneseは全次数で二次。相対平坦で全幾何fiberが二次なら族も二次。H2の反Serre環は九生成元・五十六二次関係 | lem:relative-quadratic-veronese, cor:h2-intrinsic-antiserre-quadratic, lem:relative-quadratic-from-fibers |
 | cubic・noncubic・退化の完全二次提示 | 両表示chartとcubic→全noncubic退化のR全次数が二次関係から復元、任意底変更に整合 | cor:cubic-relative-full-quadratic-presentation, cor:noncubic-relative-full-quadratic-presentation, cor:line-full-quadratic-degeneration |
 | noncubicの固定Grassmann affine cell | 二形式の6係数をGr(56,81)の1つのcellへ局所閉埋込み。固定25列のminorは±1、残り56列から係数を多項式で回収 | prop:noncubic-grassmann-explicit-cell; computations/verify_noncubic_antiserre_pivots.py |
+| noncubic 反Serre環のKoszul性と一次変形 | 二重平方環は二次 Gröbner (PBW) ⇒ Koszul。偶数Veronese・Zhang twistもKoszul。Koszul Hochschild双加群解消から三次平坦な一次二次関係変形は全次数平坦 | prop:noncubic-antiserre-koszul, lem:koszul-first-order-degree-three |
+| HH¹/HH²の厳密な計算 | 内部次数0で三基準点のHH¹=1,1,2、HH²=3,3,5。一般Euler次数導分はHH¹に残るがPGL9で除く | thm:noncubic-hh01-hh2 |
+| 三次Hilbert条件の2-jet | 横断部分2,2,3次元の二次障害が恒等零。基底・基底二項和への有理補正を全整数検証。任意横断方向がk[t]/t³へ三次Hilbert flatに持上がる | prop:noncubic-transverse-second-order; computations/verify_noncubic_second_order.py |
 | noncubicの接空間と三次Hilbert条件 | 三代表点でPGL9軌道＋六係数接像は標数零でrank81。三次Hilbert階数rank176の線形化は法101でrank1317,1317,1316。有理核の整数検証により標数零で接次元=83,83,84 | prop:noncubic-third-degree-tangent; computations/verify_noncubic_degree3_tangent.py |
 | H2関係像の構成可能性・既約包絡 | cubicのframed関係像の被約閉包Z2は既約PGL9不変有限型。H2全幾何点は[Z2/PGL9]に含まれ、cubic像が稠密。Z2の全点がH2とは未主張 | prop:h2-constructible-relations-and-irreducible-closure |
 | pointed慣性とdegree gerbe | Aut_gr(R)/Gm_degree≅Aut_pt。rank9・rank25の行列式線束でgerbe中立化 | `lem:pointed-degree-scalar`, `prop:antiserre-gerbe-neutral` |
@@ -139,7 +144,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**直近の具体的P0：** 三代表点の三次Hilbert接空間の標数零次元83,83,84は確定したので、次はこの83/84次元のうち非cubic表示と基底変更から来ない2/2/3方向を調べる。次に（a）次数4のHilbert階数81を保つ線形化が、三次で残る最大2,2,3の横断候補を切るか、（b）それらをfoundationの実際の相対Serre環変形から実現できるかを調べる。既に確定したのは三次Hilbert階数条件の接空間だけであり、相対AS被覆・Serre平方根・Abel heartを持つ方向と区別する。第一点は非交差根対の例 $f_1=uv,f_2=u^2+v^2$、次に一根共有、一致根対の順とする。次数3のkernel328/cokernel49の行列を再利用して次数4のsyzygyの線形化へ進む。
+**直近の具体的P0：** 三次の接空間計算（標数零で83,83,84）、Koszul 性と一次全次数平坦性、さらに横断2,2,3方向の三次Hilbert条件の二次持上げは完成。**次数4の一次平坦性を別途独立の必要条件として再計算しない。** 次に（a）横断2,2,3方向の三次以上の持上げ障害を Schur complement で求め、特に二根対一致点の余分な法方向が実際の基底上の代数変形へ積分するか判定し、（b）foundation の実際のsmooth proper/反Serre環変形から得られる接像と照合し、（c）相対 qgr heart・Serre平方根・AZ豊富性・AS被覆の存在および非被約底での局所正規形の認識を証明する。完全な局所構成が困難なら、既存の Koszul deformation principle の Artin 小拡大版を一次資料に即して検証し、今回の2-jetが全次数平坦となる適用範囲を明確にする。
 
 **内在的な相対H2実現locusの有限表示と相対heart/AZ再構成を第一課題とする。** 共通反Serre環の全次数は既に二次提示で決まるので、今後は二次関係だけで表現できない条件（flat coherent heart・Serre・AZ・AS被覆・降下）に証明資源を集中する。 noncubic 表示上の `qgr R` heart の構成と `Perf` 上の相対Serreは既に得たので、これらを再び無条件の未解決問題に戻さない。次は全flat coherent対象の相対双対・AZ/AS条件および任意の内在的族の相対正規形を明示する。 出発点は `papers/sections/foundation_stack.tex` のQ_fndである。ruling交換とS2の整合性、有限étale二重被覆、cubicのgeometric開部分 `[Gr(2,8)_geo/(PGL2)^3]`、実現集合の誘導位相での既約性と全noncubic点へのdg特殊化は構成済みなので再び未解決課題に戻さない。cubic・noncubic の双方で相対反Serre環のGrassmann射を構成済みなので、次に両射とfoundation特殊化に一致する有限表示の反Serre実現locusを同定する。特にH2のheart・Serre根・AS被覆を持つ部分関手を非被約底上でも定義し、有限表示の開または局所閉部分になるかを調べる。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
 
