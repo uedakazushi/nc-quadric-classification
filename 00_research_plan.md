@@ -136,6 +136,12 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
+**直近の具体的P0：** noncubicの標準例 $f_1=uv,\ f_2=u^2+v^2$ から始め、命題 prop:noncubic-grassmann-explicit-cell の25単位pivotを用いて、九生成元・56関係の次数3乗法行列
+\[
+ \mathcal J\otimes U+U\otimes\mathcal J\longrightarrow U^{\otimes3}
+\]
+を作る。商次数3の階数49を保つ条件を一次線形化し、$T_{\operatorname{Gr}}=\operatorname{Hom}(\mathcal J,(U\otimes U)/\mathcal J)$ 内の接空間を求め、$\mathfrak{pgl}_9$ の接軌道と noncubic 六係数の接像を除く。次数4の階数81との整合を点検し、root-sharing・root-coincident の境界点でも比較する。残った横断方向を既存のfoundation直線族から得る反Serre二次関係の微分と照合する。これにより $Z_2$ 上の真の相対H2実現部分関手を切り出すための有限次数条件候補を構成する。低次数接計算だけで相対Serre/AZ/ASや全次数のflatnessを宣言しない。
+
 **内在的な相対H2実現locusの有限表示と相対heart/AZ再構成を第一課題とする。** 共通反Serre環の全次数は既に二次提示で決まるので、今後は二次関係だけで表現できない条件（flat coherent heart・Serre・AZ・AS被覆・降下）に証明資源を集中する。 noncubic 表示上の `qgr R` heart の構成と `Perf` 上の相対Serreは既に得たので、これらを再び無条件の未解決問題に戻さない。次は全flat coherent対象の相対双対・AZ/AS条件および任意の内在的族の相対正規形を明示する。 出発点は `papers/sections/foundation_stack.tex` のQ_fndである。ruling交換とS2の整合性、有限étale二重被覆、cubicのgeometric開部分 `[Gr(2,8)_geo/(PGL2)^3]`、実現集合の誘導位相での既約性と全noncubic点へのdg特殊化は構成済みなので再び未解決課題に戻さない。cubic・noncubic の双方で相対反Serre環のGrassmann射を構成済みなので、次に両射とfoundation特殊化に一致する有限表示の反Serre実現locusを同定する。特にH2のheart・Serre根・AS被覆を持つ部分関手を非被約底上でも定義し、有限表示の開または局所閉部分になるかを調べる。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
 
 到達基準は次の三点である。
