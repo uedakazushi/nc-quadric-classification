@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.62（A v1.65・20節、B v0.22・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.63（A v1.66・20節、B v0.22・31節、C v0.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -241,6 +241,10 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 相対stack射の離散性、étaleなZ被覆、全自己同値群の記述をこの集合論的結果から結論しない。全cubicのZ²分類とD∞作用はOWR2022報告に既に記載され、本稿の証明はその未照合の詳細稿を入力としない。
 
 ## 証明状態と依存関係
+
+**分類の有限同値判定に必要な幾何。** `prop:first-orbit-finite-equivalence` の再帰集合 $C_n\subset GL_4$ が有限段で安定する理由は、単なる構成可能集合の下降列の停止ではない。二次関係の transporter $E\subset G\times G$ は閉代数部分群の剰余類であり、剰余類との共通部分・代数群準同型の射影でこの構造が保たれる。従って $C_n$ は空または閉剰余類、かつ下降するので Noetherian 性により停止する。Aの `papers/sections/first_orbit_object.tex` にこの閉性の依存を明記した。今回の点検はこの論点の論理的読取りであり、分類定理全体の独立監査ではない。
+
+
 
 | 主張 | 依存する事実・仮定 | 状態・所在 |
 | --- | --- | --- |
