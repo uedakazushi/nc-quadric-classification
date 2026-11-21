@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.23
+% 日本語 LuaLaTeX。2026-11-21 / v1.24
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.23（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.24（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -131,7 +131,13 @@ homological AS4 被覆を得る。
 Gabriel 局所化と module-object 基底変更が可換する。
 この相対 tails 系について AZ の生成条件 (A1) と
 fppf による対象・射の降下、構造対象の平坦性も確認する。
-しかし Hom 全射条件 (A2)／$\chi_1$、
+特殊ファイバーの Noetherian 性だけで局所 Noetherian
+持上げが働くので、幾何的 cubic 開の各点の局所環に
+同じ結論を拡張できる。
+可換点を通る DVR slice では、有限自由 Koszul 解消と
+係数 torsion の有限フィルトレーションを用い、左右の
+相対 $\chi_q$ を全ての $q$ で証明する。
+しかし一般基底での Hom 全射条件 (A2)／$\chi_1$、
 単一の有限型開全体での Noetherian 性、
 canonical compact heart との比較は残る。
 二周期 cubic 列の相対 canonical hull を

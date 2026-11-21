@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.21
+% 2026-11-21 / v1.24
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1120,17 +1120,19 @@ Noetherian 性の議論により $A_T$ も左右 Noetherian。
 \end{proof}
 
 
-\begin{corollary}[可換点の局所基底での Noetherian AS4 被覆]
+\begin{corollary}[幾何的 cubic 点の局所基底での Noetherian AS4 被覆]
 \label{cor:quadric-point-local-noetherian-as4}
 命題~\ref{prop:quadric-zariski-homological-as-cover} の
-可換点 $u$ と、閉点を $u$ へ送る任意の Noetherian 局所
-$\mathcal O_{U^\circ,u}$-代数 $R$ を取る。
+幾何的 cubic 開 $U^\circ$ の任意の点 $v$ と、
+閉点を $v$ へ送る任意の Noetherian 局所
+$\mathcal O_{U^\circ,v}$-代数 $R$ を取る。
 このとき $B_R$ と homological 被覆 $A_R$ は左右 Noetherian である。
 従って $A_R\twoheadrightarrow B_R$ は
 型 $(1,4,6,4,1)$ の相対 Noetherian quadratic AS4 被覆であり、
 正則正規二次切断と相対 Koszul/AS 双対性は
 全ての基底変更と整合する。
-特に $R=\mathcal O_{U^\circ,u}$ 自体とその完備化に適用できる。
+特に $R=\mathcal O_{U^\circ,v}$ 自体とその完備化に適用できる。
+有限型の可換 $R$-代数への変更後も左右 Noetherian である。
 従って $\operatorname{qgr}B_R$ は Noetherian Abel 圏であり、
 $\pi B_R$ は構造対象、次数移動は exact 自己同値である。
 ただし単一の有限型開全体・その任意の底変更での
@@ -1138,20 +1140,61 @@ Noetherian 性、canonical compact 圏とこの heart の一致、
 AZ・$\mathfrak H_2$ の代数性は結論しない。
 \end{corollary}
 \begin{proof}
-$B_R$ は全次数で有限自由であり、その特殊ファイバーは
-$Q=\mathbb P^1\times\mathbb P^1$ の可換 Segre 環である。
-補題~\ref{lem:local-commutative-fibre-noetherian} より
-$B_R$ は左右 Noetherian。
+$B_R$ は全次数で有限自由である。
+任意の幾何的 cubic ファイバーは
+Van den Bergh 型三次元 AS 正則 $\mathbb Z$-代数の
+偶数 Veronese である。
+体上の三次元 cubic AS 正則 $\mathbb Z$-代数の
+左右 Noetherian 性と、偶数頂点への制限で
+Noetherian 性が保たれる事実
+（命題~\ref{prop:weighted-even-koszul} の証明の
+偶数イデアルの有限生成性の部分）により、
+幾何的特殊ファイバー $B_{\bar v}$ は左右 Noetherian。
+体拡大の忠実平坦性により $B_R$ の特殊ファイバーも
+左右 Noetherian である。
+そこで補題~\ref{lem:local-commutative-fibre-noetherian}
+の強化した結論を適用する。
 $A_R$ は正則正規二次元 $g$ で $A_R/(g)=B_R$
 となるから、定理~\ref{thm:relative-finite-as-cover} の
 正規元による Noetherian 性の議論を適用して
 $A_R$ も左右 Noetherian となる。
 他の相対 AS4 条件は既に homological 被覆から従う。
-一般の Noetherian 局所 $R$ への射でも、
-閉点が $u$ に写るので特殊ファイバーは
-可換 Segre 環の剰余体拡大である。
-全次数有限自由性は任意底変更で保たれるから、
-同じ補題と正規元の議論が使える。
+全次数の局所自由性・幾何的 cubic 条件は
+任意の局所基底変更で保たれる。
+有限型の可換 $R$-代数への変更後の Noetherian 性は
+補題~\ref{lem:local-finite-type-strong-noetherian}
+を $B_R,A_R$ へ適用して得る。
+\end{proof}
+
+
+\begin{corollary}[可換点を通る DVR 上の相対 \texorpdfstring{$\chi$}{chi}]
+\label{cor:quadric-dvr-chi}
+可換点 $u\in U^\circ(k)$ と DVR
+$(R,(\varpi),\kappa)$ を取り、
+$\operatorname{Spec}R\to U^\circ$ が閉点を $u$ に送るとする。
+その切断環 $B_R$ は左右の相対 $\chi_q$ を
+全ての $q\ge0$ について満たす。
+すなわち、任意の有限生成次数付き右または左
+$B_R$-加群 $M$ に対し、全ての $j\ge0$ で
+$\underline{\operatorname{Ext}}_{B_R}^j(R,M)$ は
+全内部次数を合わせて有限生成 $R$-加群である。
+一般の高次元 Noetherian 基底の $\chi$、
+任意の有限型底変更の AZ (A2)、
+canonical compact 圏との比較は結論しない。
+\end{corollary}
+\begin{proof}
+前系~\ref{cor:quadric-point-local-noetherian-as4} から
+$B_R$ は左右 Noetherian。
+系~\ref{cor:quadric-uniform-even-koszul} から
+左右の相対 Koszul 解消は
+DVR への任意底変更後も完全で、各項は有限斉次自由である。
+閉ファイバーは可換 Segre 環
+$\bigoplus_{n\ge0}H^0(Q,\mathcal O_Q(n,n))\otimes_k\kappa$
+であり、有限生成可換 Noetherian 次数環の
+通常の有限生成 Ext の議論から左右 $\chi_q$ を
+全ての $q$ で満たす。
+補題~\ref{lem:dvr-chi-specialization} を
+それぞれの $q$ に適用すればよい。
 \end{proof}
 
 \begin{remark}[この代数化で残る条件]
@@ -1165,7 +1208,9 @@ $A_R$ も左右 Noetherian となる。
 および命題~\ref{prop:quadric-zariski-homological-as-cover} の
 Zariski 局所 homological AS4 被覆、
 系~\ref{cor:quadric-point-local-noetherian-as4} の
-非完備基底も含む局所環上の真の Noetherian AS4 被覆である。
+幾何的 cubic 開の各点の局所環上の Noetherian AS4 被覆、
+系~\ref{cor:quadric-dvr-chi} の可換点を通る DVR 上の
+相対 $\chi$ 性である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その被覆と根が Noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
