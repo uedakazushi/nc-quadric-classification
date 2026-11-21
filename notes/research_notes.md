@@ -402,6 +402,8 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文間の数学的依存と移管の検証単位
 
+**全体Artin性と境界smooth性の所在：** `thm:global-h2-smooth-finite-type`、`prop:global-h2-irreducible`、`thm:noncubic-boundary-smooth-codim-two`、`cor:global-xas-smooth-scheme` を含む8証明はBの `papers/moduli/h2_smooth_atlas.tex` に移管した。Aは主張とB引用を残す。局所atlasとcubic/noncubic相対効果性の入力証明はAに残るため、B単独の依存閉鎖は未完了。
+
 **相対Koszulの所在：** 全幾何fiberのKoszul性、三次平坦性から全次数平坦性への昇格、有限型基底変更、相対tailsとAZの17証明はBの `papers/moduli/relative_koszul.tex` に移管した。B内の相対AS4有限判定はそのKoszul三次補題を内部参照し、Aには定理・補題の主張とB引用を残す。
 
 **相対AS4被覆の所在：** 有限型被覆の全次数平坦性・Koszul Frobenius性・正則正規切断の有限判定、および有限型射のfppf像が代数的でないことの明示的反例はBの `papers/moduli/relative_as_cover.tex` に完全な証明を保持する。Aの同節は主張とBへの引用を保持し、証明本文は重複させない。

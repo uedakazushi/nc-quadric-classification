@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-22 / v1.42
+% 2026-11-22 / v1.43（全8証明をBへ移管）
 \section{内在的な全モジュライの有限型代数性}
 \label{sec:global-h2-smooth-atlas}
 
@@ -34,44 +34,10 @@ $x$ の normal foundation を表す点 $s_x\in S(k)$ を取る。
 \end{corollary}
 
 \begin{proof}
-定理~\ref{thm:atlas-from-effective-foundation} の仮定を確認する。
-tails の row は次数成分ごとに基底上平坦であり、商関手は tensor と整合するので、
-各 $E_i$ は平坦である。Noetherian 性と compact 性は実際の相対族の構成による。
-四項の完全性・strong 性と前向き Hom の消滅は、五頂点 bar 比較により任意基底変更上で成立する。
-full exceptional collection の Serre rotation は mutation による helix の延長と一致するため、
-$E_{i+4}=S^{-1}E_i[2]$ は De Deken--Lowen の geometric $(4,3)$-helix 条件を与える。
-最後の End 代数の同定も全軌道比較の一部である。
-従って同定理を適用できる。
-
-指定された同型に関する点を明記する。
-small extension $A'\twoheadrightarrow A$ と
-\[
- u_A\in U_x(A),\qquad c_{A'}\in\mathfrak H_2(A'),\qquad
- \alpha_A:q_x(u_A)\xrightarrow{\sim}c_{A'}|_A
-\]
-を取ると、$\alpha_A$ により四項窓とその全 Hom の基底を還元先へ移す。
-De Deken--Lowen の持上げを基底 $A$ に直接適用し、
-例外対象の $\Ext^1,\Ext^2$ の消滅と $A'^\times\to A^\times$ の全射性により、
-$E'_0=\OO_{c_{A'}}$ とその指定された pointing を保つ。
-五つの Hom 空間の基底も指定還元を延長して選ぶと、実際の合成から $S(A')$ の点が得られる。
-$a_x$ の全点での étale 性により、これは $u_A$ を保つ $u_{A'}\in U_x(A')$ へ持ち上がる。
-
-両方の四項 tilting 窓の End 代数をこの基底で同定する。
-得られる標準 dg Morita 同値の還元は、対象だけでなく全ての射上で $D(\alpha_A)$ と一致する。
-補題~\ref{lem:artin-two-heart-comparison}、または反 Serre 再構成の全忠実性を使えば、
-これは $\alpha_A$ 自体を延長する pointed exact 同型となる。
-module-object 基底変更により、その同型は全有限型 test 上の相対系にも延長する。
-この議論は根や被覆を同型の標識へ加えず、指定した pointed 同型をそのまま保つ。
-
-任意の有限型 affine $T\to\mathfrak H_2$ に対して
-\[
- U_x\times_{\mathfrak H_2}T\simeq U_x\times_{\mathfrak P}T,
- \qquad\mathfrak P=[X_3/\operatorname{PGL}_9]
-\]
-は affine 有限表示対角の基底変更なので有限型スキームである。
-上の指定 Artin 持上げと \cite[Tag 02HY]{StacksSmoothAtlas} により、その $T$ への射は smooth である。
-同 tag の有限型 Artin test は、$k$ が代数閉なので剰余体 $k$ の test に含まれる。
-開像と smooth groupoid の商の構成は定理~\ref{thm:atlas-from-effective-foundation} の通りである。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \subsection{有限個の chart による全体の表示}
@@ -95,58 +61,10 @@ $k$ 上有限型で滑らかな純次元三の Artin スタックの制限によ
 \end{theorem}
 
 \begin{proof}
-まず有限個の noncubic 近傍で足りることを示す。
-定理~\ref{thm:noncubic-relative-effectivity} による実際の射を、
-表示スタックの atlas へ引き戻すと
-\[
- p:P=Q^{\mathrm{nd}}\times Q^{\mathrm{nd}}
-   \longrightarrow\mathfrak N^{\mathrm{pres}}
-   \longrightarrow\mathfrak H_2
-\]
-を得る。$P$ は有限型の準コンパクトな $k$-スキームである。
-命題~\ref{prop:noncubic-presentation-stack} により、全 noncubic $k$-対象はその像に入る。
-各 noncubic 点 $x$ に前系の開部分 $\mathfrak V_x$ を取る。
-引戻し $p^{-1}(\mathfrak V_x)$ は $P$ の開部分スキームであり、これらは $P$ の全閉点を覆う。
-有限型 $k$-スキームは Jacobson なので、全体も覆う。
-従って準コンパクト性により有限個
-\[
- p^{-1}(\mathfrak V_{x_1}),\ldots,p^{-1}(\mathfrak V_{x_m})
-\]
-で $P$ を覆える。この段階で使ったのは $P\to\mathfrak H_2$ の存在と
-各 $\mathfrak V_x$ の内在的な開性だけであり、$\mathfrak N^{\mathrm{pres}}\to\mathfrak H_2$
-の full faithfulness や、任意の相対 noncubic 族の正規形は使わない。
-
-定理~\ref{thm:cubic-smooth-open} の有限型 smooth atlas $U_{\mathrm{cub}}$ と合わせ、
-\[
- U=U_{\mathrm{cub}}\amalg U_{x_1}\amalg\cdots\amalg U_{x_m}
-\]
-と置く。有限和なので $U$ は有限型で滑らかである。
-各成分の射は representable smooth なので $q:U\to\mathfrak H_2$ も同様であり、
-その開像は全ての $k$-対象を含む。
-
-全ての相対族を覆うことも確認する。
-有限型 affine $T\to\mathfrak H_2$ に対して、$U\times_{\mathfrak H_2}T\to T$ の像は開である。
-$T$ の各閉点の剰余体は $k$ であり、その fiber は上の分類と有限被覆によって像に入る。
-従ってこの開像は全閉点を含み、Jacobson 性により $T$ 全体である。
-ゆえにこの射は smooth 全射であり、fppf 局所に section を持つ。
-任意の局所有限型 $T$ については有限型 affine 開被覆へ制限すればよい。
-これで $q$ が元の site 上の全対象を fppf に覆うことが示された。
-
-相対反 Serre 認識の全忠実性から、relation は表示した $U\times_{\mathfrak P}U$ と等しい。
-$\mathfrak P$ の対角が affine 有限表示なので、$R$ は有限型スキームである。
-両射影 $R\rightrightarrows U$ は $q$ の基底変更として smooth であり、
-\cite[Tags 04X0, 04TK]{StacksSmoothAtlas} により $[U/R]$ は通常の全スキーム上の Artin スタックとなる。
-その元の site への制限は $\mathfrak H_2$ と同値である。
-有限型 atlas $U$ によって有限型性が従い、$U$ の滑らかさによって $k$ 上の滑らかさが従う。
-対角の性質は命題~\ref{prop:relative-h2-algebraicity-reduction} による。
-
-最後に、系~\ref{cor:cubic-formal-h2-abelian} と系~\ref{cor:noncubic-all-artin-h2} により、
-各 $k$-点の形式変形 groupoid は pointed Abel 変形と同値である。
-その接空間は $\operatorname{HH}^2(\Lambda)$、無限小自己同型空間は
-$\operatorname{HH}^1(\Lambda)$ であり、
-命題~\ref{prop:foundation-hochschild} によって両次元の差は三である。
-滑らかな Artin スタックの局所次元はこの差に等しいから、全閉点で三となる。
-有限型 smooth atlas の各成分は閉点を持ち、次元は局所一定なので、全体は純次元三である。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \subsection{普遍 cubic 族の降下と内在的な既約性}
@@ -164,29 +82,10 @@ $S_{\mathrm e}=\mathscr G\setminus\mathscr G_{\mathrm{lin}}$ を、
 \end{lemma}
 
 \begin{proof}
-系~\ref{cor:finite-type-root-chart} の étale 被覆
-$\coprod_\alpha T_\alpha\to S_{\mathrm e}$ を取る。
-各 $T_\alpha$ には実際の二周期があり、定理~\ref{thm:geometric-cubic-relative-effectivity} により
-$q_\alpha:T_\alpha\to\mathfrak H_2$ が構成されている。
-その構成における偶数 restriction は、任意の基底変更上で
-\[
- \operatorname{QGr}B_\alpha\simeq\operatorname{QGr}C_{T_\alpha}
-\]
-という構造対象を保つ exact 同値を与える。
-右辺の $C$ は根を選ぶ前の普遍代数であり、二周期の選択に依存しない。
-従って $T_\alpha\times_{S_{\mathrm e}}T_\beta$ 上では、両族は同じ
-$\operatorname{QGr}C$ を通じて pointed exact 同値となる。
-三重の重なりの cocycle は、この同じ圏を通る比較の結合性による。
-coherent 対象と全有限型 module-object 基底変更にも整合するので、
-$\mathfrak H_2$ の fppf descent により $q_{\mathrm e}$ が得られる。
-根と AS4 被覆は局所的 witness であり、それら自体を重なりで同定する必要はない。
-
-各 $q_\alpha$ は系~\ref{cor:quintuple-effective-smooth-chart} により smooth である。
-smoothness は始域の étale 被覆で判定できるから $q_{\mathrm e}$ も smooth である。
-$S_{\mathrm e}$ は射影空間の非空開部分で既約なので、その連続像は既約であり、
-smooth 性によって像は開である。
-全非線型 cubic 表示が像に入ることは、定理~\ref{thm:cubic-smooth-open} の逆構成による。
-線型 geometric cubic 表示は全て同じ pointed $Q$ を与えるので、最後の主張が従う。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \begin{proposition}[全内在的モジュライの既約性]
@@ -196,43 +95,10 @@ $\mathfrak V_{\mathrm{cub}}$ は既約であり、$\mathfrak H_2$ において�
 \end{proposition}
 
 \begin{proof}
-前補題の既約な開像を $\mathfrak V_{\mathrm e}$ と書く。
-残り得る点 $Q$ をその閉包に入れる。
-系~\ref{cor:quadric-effective-smooth-neighborhood} の $U_Q$ で、指定点 $u_Q$ を含む
-既約成分 $U_Q^0$ に制限する。
-$U_Q$ は smooth なので、その既約成分は開である。
-$U_Q^0\to S\subset S_0=\mathbb A^{64}$ は étale であり、像は非空開部分である。
-
-線型 geometric cubic 表示の四項 foundation は、可換二次曲面の
-\[
- (\OO,\OO(1,0),\OO(1,1),\OO(2,1))
-\]
-および ruling を交換した列から得られる。
-従ってその $S_0$ 上の基底付き表示は、有限個の $\mathcal G/K$ 軌道に含まれる。
-$\dim(\mathcal G/K)=61<64$ なので、この有限和の閉包は $S_0$ の真の閉部分である。
-さらに命題~\ref{prop:cubic-foundation-open} の非空な geometric cubic 開部分と交差する。
-この二つの稠密開条件を同時に課すと、$U_Q^0$ の稠密開部分の foundation は非線型 cubic であり、
-その $q_Q$ による像は $\mathfrak V_{\mathrm e}$ に入る。
-実際の射 $q_Q$ の連続性から、$Q$ は $\mathfrak V_{\mathrm e}$ の閉包に入る。
-前補題の像が最初から $Q$ を含む場合にも同じ結論である。
-従って $\mathfrak V_{\mathrm{cub}}$ は、この一つの既約な開部分の閉包であり、既約である。
-
-任意の noncubic $k$-点 $x$ に対し、
-定理~\ref{thm:noncubic-finite-type-effectivity} の $U_x$ のうち指定点を含む既約成分を取る。
-これも $S_0$ の非空開部分への étale 射を持つ。
-命題~\ref{prop:cubic-foundation-open} の geometric cubic foundation は
-$S_0$ の非空開部分なので、$U_x$ の稠密開部分は cubic である。
-その実際の族 $q_x$ は全幾何 fiber の foundation と heart を保つため、
-この稠密開部分は $\mathfrak V_{\mathrm{cub}}$ へ送られる。
-従って $x$ は $\mathfrak V_{\mathrm{cub}}$ の閉包に入る。
-
-以上で全 $k$-点がこの閉包に入った。
-もし補集合が非空なら、有限型 smooth atlas への逆像は非空開部分であり、
-$k$-点を持つ。この像も $k$-点なので矛盾する。
-従って $\mathfrak V_{\mathrm{cub}}$ は $\mathfrak H_2$ において稠密である。
-既約部分空間の閉包は既約なので結論を得る。
-この証明で用いた連続写像は全て実際の相対 $\mathfrak H_2$ 族の射であり、
-finite foundation の幾何点像の位相を内在位相と同一視する操作はない。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \subsection{noncubic 境界の滑らかさと余次元}
@@ -266,52 +132,10 @@ $D$ 上の交点線束を
 \end{lemma}
 
 \begin{proof}
-認識開条件により、$D$ の全幾何点で $M,N$ はともに階数三である。
-三次小行列式を可逆化して行列を掃き出すと、射影は $\operatorname{diag}(I_3,a)$ と書ける。
-$D$ 上ではその四次行列式が実際に零なので $a=0$ である。
-従って非被約構造を先に除かなくても kernel と cokernel は線束であり、
-$\ell,m$ は $\mathscr L$ の線部分束となる。
-二 summand の交わりが零なので $\ell\oplus m\subset\mathscr L$ は階数二の部分束である。
-
-幾何点 $L\in D$ において、標準交代形式から
-\[
- T_L\operatorname{LG}\simeq\operatorname{Sym}^2L^*
-\]
-を得る。
-具体的には一次変形 $\varphi:L\to(U\oplus U^*)/L$ に対し、
-持上げ $\widetilde\varphi$ を用いた
-$q(v,w)=\omega(v,\widetilde\varphi(w))$ が対称形式となる。
-$q$ は持上げの選択に依存しない。
-
-$\operatorname{im}M=m^\perp\subset U$ なので、
-$\operatorname{coker}M\simeq m^*$ である。
-行列式を微分すると、階数三の射 $M$ に対するその一次変分は
-$\ker M=m$ から $\operatorname{coker}M=m^*$ への誘導射で計算される。
-局所的には、これは $\operatorname{diag}(I_3,0)$ の右下成分の微分にほかならない。
-従って $\det M$ の微分は、符号を含む単元倍を除いて
-\[
- \operatorname{Sym}^2L^*\longrightarrow(m^*)^{\otimes2},
- \qquad q\longmapsto q|_{m\times m}
-\]
-である。同様に $\det N$ の微分は $q|_{\ell\times\ell}$ である。
-二線は独立なので、この二つの restriction を合わせた射は全射である。
-例えば $\ell,m$ の生成元を $L$ の基底の最初の二元とすれば、
-二つの写像は対称行列の二つの独立な対角係数を取る。
-
-行列式線束を局所自明化すれば、$D$ は滑らかな十次元スキーム $W$ 上の
-二つの関数で定義され、その微分は全幾何点で独立である。
-Jacobian 判定により $D$ は smooth で余次元二、両関数は正則列となる。
-特にこの証明は $D$ の reducedness も同時に与える。
-
-最後に行列式線束を intrinsic に読むと、kernel と cokernel の完全列から
-\[
- (\det U\otimes\det\mathscr L^*)|_D
- \simeq\det(\operatorname{coker}M)\otimes\det(\ker M)^*
- \simeq(m^*)^{\otimes2}
-\]
-であり、$N$ 側は $(\ell^*)^{\otimes2}$ である。
-上の微分の全射とその kernel の接束への同定から
-\eqref{eq:noncubic-boundary-normal} を得る。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \begin{theorem}[内在的 noncubic 境界は滑らかな余次元二の閉部分]
@@ -329,106 +153,10 @@ Jacobian 判定により $D$ は smooth で余次元二、両関数は正則列�
 \end{theorem}
 
 \begin{proof}
-\emph{境界の定義。}
-$\mathfrak V_{\mathrm{cub}}$ は内在的な開部分であり、$\mathfrak H_2$ は有限型なので、
-その閉補集合には一意な reduced induced closed substack がある
-\cite[Tag 0509, Lemma 100.10.1]{StacksReducedBoundary}。
-これを $\mathfrak N$ とする。
-
-\emph{quotient chart での余次元二。}
-指定した noncubic 点に対し、良い根に対応する Lagrangian 表示を取る。
-命題~\ref{prop:noncubic-lagrangian-etale-slice} の étale locus と認識開条件に制限し、
-$G^+$-不変開 $W$ と
-\[
- \mathfrak L=[W/G^+]\longrightarrow\mathfrak F
-\]
-を得る。ここで $\mathfrak F$ は該当する finite foundation スタックの開部分であり、
-この射は representable étale である。
-$G^+$ は二つの summand を保つ tensor 作用と反傾作用で作用するので、
-射影の行列式は局所的に単元倍される。
-従ってイデアル $(\det M,\det N)$ と $D$ は $G^+$-不変である。
-前補題と smooth atlas $W\to[W/G^+]$ により
-\[
- \mathfrak D=[D/G^+]\hookrightarrow\mathfrak L
-\]
-は余次元二の正則閉埋込みであり、$\mathfrak D$ は smooth である。
-その次元は $8-\dim G^+=8-7=1$ である。
-ここで正則性の降下は Koszul-regular immersion の fpqc locality を用い、
-局所 Noetherian な表示上で通常の regular immersion と同値であることを使う
-\cite[Tags 0694, 063L]{StacksReducedBoundary}。
-
-\emph{両方の smooth 性を保つ共通 chart。}
-定理~\ref{thm:noncubic-finite-type-effectivity} と
-系~\ref{cor:noncubic-effective-smooth-neighborhood} の
-$q_0:U_0\to\mathfrak H_2$ を取る。
-$U_0\to S$ は étale、$S\to\mathfrak F$ は foundation の smooth atlas なので、
-$U_0\to\mathfrak F$ は smooth である。
-そこで
-\[
- V=U_0\times_{\mathfrak F}\mathfrak L
-\]
-を取り、指定点を含む étale scheme chart $U\to V$ に移る。
-このとき $V\to U_0$ は étale、$V\to\mathfrak L$ は smooth であるから、
-\[
- q:U\longrightarrow\mathfrak H_2,
- \qquad a:U\longrightarrow\mathfrak L
-\]
-はともに smooth である。
-必要ならさらに étale に細分して $G^+$-torsor を自明化し、
-tautological 束の基底を選べば、実際の行列 $M,N$ を $U$ 上で取れる。
-この細分後も二つの smooth 性は保たれる。
-
-\[
- D_U=U\times_{\mathfrak L}\mathfrak D
-\]
-と置く。これは $U$ 上で $V(\det M,\det N)$ と書ける閉部分スキームである。
-$a$ は smooth なので、前段の正則閉埋込みを flat に引き戻している。
-従って $D_U\hookrightarrow U$ は余次元二の正則閉埋込みとなり、
-$D_U\to\mathfrak D$ が smooth であることから $D_U$ 自身も $k$ 上 smooth である。
-この議論は、torsor の切断から得る lift $U\to W$ の smooth 性や flat 性を仮定しない。
-
-\emph{内在的境界との scheme-theoretic な同定。}
-一方、$\mathfrak N_U=U\times_{\mathfrak H_2}\mathfrak N$ は $U$ の閉部分スキームである。
-射 $\mathfrak N_U\to\mathfrak N$ は $q$ の基底変更として smooth であり、
-$\mathfrak N$ は reduced なので $\mathfrak N_U$ も reduced である。
-ここでは reducedness が smooth topology に局所的であることを使う
-\cite[Tag 034E]{StacksReducedBoundary}。
-
-認識開条件の下では、両射影が階数三の幾何点は noncubic normal foundation を与え、
-一方が階数四なら一方の ruling foundation が geometric cubic となる。
-実際の相対族はその fiber heart と構造対象を保つため、
-系~\ref{cor:lagrangian-open-closed-recognition} と体上の分類により
-\[
- |\mathfrak N_U|=|D_U|
-\]
-である。
-両者は同じスキーム $U$ の reduced closed subscheme なので、
-reduced induced 構造の一意性から
-\[
- \mathfrak N_U=D_U
-\]
-が closed subscheme として成立する。
-幾何点の一致から非被約な二つの部分スキームを無条件に同一視しているのではなく、
-前補題と smooth pullback によって双方の reducedness を確認した後の同定である。
-
-全 noncubic 点でこの共通 chart を取れるので、これらの $D_U$ は $\mathfrak N$ を smooth に覆う。
-従って $\mathfrak N$ は $k$ 上 smooth であり、
-$\mathfrak N\hookrightarrow\mathfrak H_2$ は smooth 局所で余次元二の正則閉埋込みである。
-$\mathfrak H_2$ は純次元三なので $\mathfrak N$ は純次元一となる。
-
-\emph{既約性。}
-定理~\ref{thm:noncubic-relative-effectivity} の実際の族を
-\[
- P=Q^{\mathrm{nd}}\times Q^{\mathrm{nd}}\longrightarrow\mathfrak H_2
-\]
-へ引き戻す。$P$ は $\mathbb A^6$ の非空開部分であり、reduced かつ既約である。
-その全幾何 fiber は noncubic なので、この射は $\mathfrak N$ を経由する。
-この因数分解には、reduced な始域から閉部分への set-theoretic な包含が
-scheme-theoretic な因数分解を与えることを使う
-\cite[Tag 050B, Lemma 100.10.3]{StacksReducedBoundary}。
-体上の noncubic 分類を各代数閉拡大体上で適用すると、$P\to\mathfrak N$ は全幾何点を覆う。
-従って $|\mathfrak N|$ は既約空間 $|P|$ の連続像であり、既約である。
-この結論に、$\mathfrak N^{\mathrm{pres}}\to\mathfrak N$ の相対全忠実性や同値は用いない。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \begin{remark}[非被約 test 上で境界に属する条件]
@@ -454,28 +182,10 @@ $X_{\mathrm{as}}\to X_3$ は有限型の monomorphism で、separated かつ unr
 \end{corollary}
 
 \begin{proof}
-全スキーム上では前定理の $[U/R]$ を用いる。
-$R=U\times_{\mathfrak P}U$ は全ての同型を記録するため、
-$[U/R]\to\mathfrak P$ は全スキーム上でも全忠実である。
-実際、対象を $U$ へ fppf 局所に持ち上げると Isom はまさに $R$ であり、
-この一致は降下する。従って $X_{\mathrm{as}}\to X_3$ は monomorphism である。
-
-命題~\ref{prop:relative-h2-algebraicity-reduction} により、$X_{\mathrm{as}}$ は有限型代数空間である。
-また $X_{\mathrm{as}}\to\mathfrak H_2$ は $\operatorname{PGL}_9$-torsor なので smooth で相対次元八十である。
-従って $X_{\mathrm{as}}$ は $k$ 上 smooth で純次元 $3+80=83$ である。
-命題~\ref{prop:global-h2-irreducible} により $\mathfrak H_2$ は既約で、
-この torsor は開全射かつ幾何 fiber が既約な $\operatorname{PGL}_9$ である。
-従って $X_{\mathrm{as}}$ も既約である。
-実際、二つの非空開部分の像は底の既約性により交わり、
-その fiber 内の二つの非空開部分は fiber の既約性により交わる。
-
-$X_{\mathrm{as}}$ と $X_3$ はともに有限型 $k$-空間なので、両者の間の射は有限型である。
-局所有限型 monomorphism は separated、unramified、locally quasi-finite かつスキームで表現可能である
-\cite[Tag 05W6, Lemma 76.14.8]{StacksRepresentableMonomorphism}。
-特に $X_3$ がスキームであるため $X_{\mathrm{as}}$ 自身もスキームである。
-同じ結論は separated locally quasi-finite な代数空間からスキームへの射に関する
-\cite[Tag 03XX, Proposition 67.50.2]{StacksRepresentableMonomorphism} からも従う。
-有限型性は準コンパクト性を含むので、射は quasi-finite である。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \begin{proposition}[canonical 実現像は ambient 全体で開ではない]
@@ -486,31 +196,10 @@ noncubic の二つの根対が一致する点で open immersion ではない。
 \end{proposition}
 
 \begin{proof}
-一致点 $x$ において、系~\ref{cor:noncubic-all-artin-h2} は
-\[
- \dim T_x\mathfrak H_2=4,\qquad
- \dim\operatorname{HH}^1(\Lambda)=1
-\]
-を与える。ここで $T_x$ は閉 fiber の同定を保つ一次変形の同型類の空間である。
-一方、系~\ref{cor:artin-polarization-retraction} の分裂完全列は
-\[
- 0\longrightarrow\operatorname{HH}^1(\Lambda)
- \longrightarrow T_x\mathfrak P
- \longrightarrow\operatorname{HH}^2(\Lambda)\longrightarrow0
-\]
-を与え、$\dim T_x\mathfrak P=5$ である。
-$\Phi$ は canonical 反 Serre 環を取る射なので、その微分の像は
-この分裂における $\operatorname{HH}^2$ の四次元の像である。
-従って一次変形の射は全射ではなく、$\Phi$ はこの点で open immersion にならない。
-開 immersion なら形式変形 groupoid を同一にすることに反するからである。
-
-framed 空間については、その任意の frame $J$ で
-\[
- \dim T_JX_{\mathrm{as}}=83,\qquad
- \dim T_JX_3=5+(80-1)=84
-\]
-となる。後者の $80-1$ は $\operatorname{PGL}_9$ の軌道接空間の次元である。
-open immersion ならこの二つの接空間は同型になるので、framed 射についても結論を得る。
+完全な証明は相対モジュライ別稿
+\cite[内在的モジュライの有限型代数性・滑らかさ・境界]{QuadricModuli2026}
+に置く。cubic/noncubicの相対効果性、局所 atlas と全次数 Noetherian 性の
+必要な仮定・出典は同稿で参照する。
 \end{proof}
 
 \begin{remark}[表現可能性から自動的には出ない比較]

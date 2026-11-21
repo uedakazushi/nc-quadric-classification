@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.9（相対AS被覆の有限判定を移管）
+% 日本語 LuaLaTeX。2026-11-22 / v0.10（相対AS被覆の有限判定を移管）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v0.9（証明移管中の草稿）}
+\date{2026年11月22日\quad v0.10（相対効果性などの証明を移管中）}
 
 \begin{document}
 \maketitle
@@ -68,7 +68,9 @@ framed 実現空間、被約 noncubic 境界の余次元二の正則閉埋込み
 有限 foundation 上の反 Serre 偏極の局所閉認識の各完全な証明を本稿へ移したが、
 相対 AS4 被覆の有限判定と fppf 像の非代数性を示す反例に加えて、
 相対Koszul性・Noetherian基底変更・tailsの平坦性に関する17証明を収録した。
-全体の有限型 Artin 性と境界の主定理の証明移管は未完了である。この稿単独で証明が完結したとは主張しない。
+全体の有限型 Artin 性・滑らかさ・既約性、被約 noncubic 境界の smooth 正則閉埋込み、framed 実現の主定理の証明は本稿へ移管した。
+ただし、これらの入力となる cubic/noncubic 族の相対効果性・局所 atlas 等の全証明は
+現在も分類主論文にあり、B単独での証明依存の完結は未達成である。この稿単独で証明が完結したとは主張しない。
 \end{abstract}
 \tableofcontents
 
@@ -87,20 +89,9 @@ Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
 \input{moduli/relative_recognition}
 \input{moduli/relative_as_cover}
 
-\section{内在的モジュライの有限型 Artin 性}\label{sec:moduli-algebraicity}
-主論文では、全 cubic 点の smooth Artin 開と
-全 noncubic 点の有限型効果的近傍を合わせることにより、
-$\mathfrak H_2$ が有限型・滑らか・既約な純次元三の Artin stack で、
-対角が affine 有限表示であることを示した。
-反 Serre 再構成による framed 実現 $X_{\mathrm{as}}$ は
-滑らかな既約83次元スキームである。
-形式的な Artin 認識だけから有限型代数性を結論せず、
-全次数の軌道 Hom、相対 Koszul と Noetherian 性、
-同じ根の AS4 被覆、指定 pointing を保つ smooth atlas の
-証明を依存順に本稿へ移管する。
-
 \input{moduli/polarization_recognition}
 \input{moduli/ruled_diagonal_obstruction}
+\input{moduli/h2_smooth_atlas}
 
 \section{Noncubic 境界の二形式表示}\label{sec:moduli-boundary}
 $V$ を二次元ベクトル空間とし、
