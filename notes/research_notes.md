@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.39（主論文v1.38、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.40（主論文v1.39、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -216,17 +216,13 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 相対条件を試す具体的入力として、[定数bivector方向のOre変形](ore_quadric_deformations.md)を置く。中央元g=xw−zyの正則切断、全次数自由な商、quadratic dualのFrobenius pairingまでの証明稿を記し、相対CY・Serre・H2条件は未証明とする。主原稿の非持上げ例を相対H2の内部へ強める際の候補であり、現行定理の入力には用いない。
 
 
-## O-marking から Abel 圏への忘却：幾何点ファイバーの還元（条件付き）
+## O-marking から Abel 圏への忘却：楕円型の全標識と同値判定
 
-**二種類のファイバー。** 相対 \(\mathfrak H_2\) の標識を忘れた prestack を、局所H2構造対象を持つ相対 Abel 圏と全 exact 同値から定め、必要なら fppf stack 化して \(\mathfrak{Ab}_{H_2}\) と書く。全Abel圏の標準的代数スタックを構成済みとは主張しない。固定 \(\mathcal C\) 上の **2-fiber** は許容構造対象の同型 groupoid \(\mathcal M(\mathcal C)\) であり、自己同値では割らない。幾何点の同型類写像のファイバーは \(\operatorname{Aut}^{\mathrm{ex}}(\mathcal C)\backslash\pi_0\mathcal M(\mathcal C)\)。可換 \(Q=\mathbb P^1\times\mathbb P^1\) では2-fiberは \(\coprod_{\mathbb Z^2}B\mathbb G_m\)、後者は一点となる。
+**楕円型の全O標識と有限・無限の忘却。** 滑らかな楕円四つ組でδ≠0、η∉Zδなら、RTと対角根から全Z²のrank-one torsion-free exceptional対象を構成し、数値類ごとの一意性で全てを尽くす。全てがH2の構造対象となる。Uₙ=(E,L₀,L₁⊗(L₂L₀⁻¹)ⁿ,L₂)を代表とし、εδ=δかつε(η+nδ)∈{η+mδ,2δ−η−mδ}という有限楕円自己同型群を含む必要十分条件でpointed重複を判定する。δ非捩れなら可算無限、位数rならZ/rZの有限商となる。余分な自己同型がなく2η∉⟨δ⟩なら正確にr個。証明は `thm:elliptic-marking-lattice-fiber`、`cor:elliptic-torsion-fiber-cardinality`。Z²と二面体作用はKitamura–Okawaの既存announcementと重なるため新規性を主張せず、ここでは指定範囲の独立証明と明示的な忘却判定を与える。η∈Zδ、退化曲線、noncubicの忘却と相対stack射は未解決。
 
-**主原稿の数値剛性補題。** [構造対象忘却節](../papers/sections/marking_forgetting.tex) の lem:forgetting-numerical-rigidity は、任意のH2圏のGK rank-one torsion-free exceptional \(L\) が \(\operatorname{ch}[L]=1+aH_1+bH_2+abH_1H_2\)（整数 \(a,b\)）を持ち、**同一 \(K_0\) 類には高々一つ**しか存在しないことを示す。前者はEuler形式、後者はSerre双対性・AZ豊富性・rank-one単射性・非零tailsのHilbert多項式による。この上界により許容Oの同型類は高々可算である。Kitamura–Okawaの未監査の全line-bundle分類には依存しない。
+数値作用はTが構造対象を(1,0)へ移して軸交換、Rが構造対象を固定して軸交換なので、RTは軸を保つ(1,0)移動。適合二周期根は(1,1)移動である。従ってL(a,b)=sᵇL(a−b,0)。差パラメータの一致から三線束の同型を得る際には、[2]:E→Eの全射性でL₀を合わせるtranslationを選ぶ。非捩れでも2η=qδの場合はn↔2−q−nだけが重複し、可算無限性は変わらない。
 
-**二反射の直接計算。** 滑らかな楕円VdB四つ組の \(\eta=[L_1L_0^{-1}],\delta=[L_2L_0^{-1}]\in\operatorname{Pic}^0(E)\) について、helix添字一移動は \(T:(\eta,\delta)\mapsto(\delta-\eta,\delta)\)。主原稿のruling交換を評価列で読むと、もう一つのrulingの四つ組は \(R:(L_0,L_1,L_2)\mapsto(L_0L_1L_2^{-1},L_2,L_1)\)、作用は \(R:(\eta,\delta)\mapsto(2\delta-\eta,\delta)\)。したがって \(RT:(\eta,\delta)\mapsto(\eta+\delta,\delta)\)。後者のrulingがcubic表示となる条件には **\(\eta\ne2\delta\)** が必要で、壁では新しい隣接次数2線束が一致する。主原稿 lem:elliptic-two-reflections に証明を置く。
-
-**楕円一般点の可算無限定理。** 主原稿 thm:generic-elliptic-unpointed-fiber は \(\delta\) 非捩れ、\(2\eta\notin\mathbb Z\delta\) のとき、全 \((RT)^n\) の四つ組が許容で同じ underlying Abel 圏を与え、互いに pointed 同値でないことを示す。区別には二つの内在 foundation の非順序対（cor:two-intrinsic-foundations）、VdBによる四つ組復元、楕円自己同型による差の作用を用いる。非捩れ \(\delta\) を固定する楕円の原点付き自己同型は恒等なので、同値なら \(\eta+n\delta=\eta+m\delta\) または \(2\eta=(2-m-n)\delta\) となり、前者は \(n=m\)、後者は矛盾。数値剛性の上界を合わせ、**同型類のファイバーの濃度は \(\aleph_0\)**。これは幾何学的一般点の結論であり、相対stack射の \(\mathbb Z\)-torsor 構造、étale性、任意のcubic/noncubic型への一般化は未証明。今回新たに原稿へ証明を書いたが、外部独立監査・LuaLaTeX組版・全検算の再実行は未実施。
-
-**先行研究と全cubicへの条件付き還元。** Okawa（Kitamuraとの共同研究）, *The reconstruction theorem for AS-regular 3-dimensional cubic Z-algebras*, Oberwolfach Reports 23/2022, pp.1271--1273, [DOI](https://doi.org/10.4171/OWR/2022/23) は、cubicのrank-one torsion-freeで \(\chi=1\) のline bundlesを \(\mathbb Z^2\) に分類し、無標識比較に \(D_\infty\) が現れると報告するが、詳細原稿は当時 *in preparation* であり、完全証明は未照合。この報告を新定理の証明入力には用いない。**全cubic型で**許容標識の全てが積順序つき \(\mathbb Z^2\) と一致し、適合根が対角 \((1,1)\) 移動なら、幾何点ファイバーは自己同値群の像 \(H\le\mathbb Z^2\rtimes C_2\) に対する \(H\backslash\mathbb Z^2\simeq\bar H\backslash\mathbb Z\) に還元する。この一般形は条件付きであり、特異cubicとnoncubicの全自己同値像・同型型別ファイバー、および相対忘却スタックの代数性は未解決。次は一般cubic／noncubicの個別標識許容性と幾何的安定化群を調べる。
+相対stack射の離散性、étaleなZ被覆、全自己同値群の記述をこの集合論的結果から結論しない。全cubicのZ²分類とD∞作用はOWR2022報告に既に記載され、本稿の証明はその未照合の詳細稿を入力としない。
 
 ## 証明状態と依存関係
 
@@ -341,6 +337,11 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 再現は `python3 computations/verify_noncubic_gale_root.py`。SymPyの厳密有理演算でLagrangian条件、接involution、全基底変更軌道、HH²の正負次元(3,0)/(3,0)/(4,0)を確認する。原稿のbar微分・右Zhang規約とこの計算は独立に読取り確認した。良い根の一つを特定した結果であり、他の全根の作用も自明であるとは主張しない。
 
+
+**noncubic変形の具体的なétale表示。** `prop:noncubic-lagrangian-etale-slice` により、Lagrangian Grassmannian LG(4,8)の開部分を7次元群で割った商から、全noncubic点を含むfoundation変形の開部分への表現可能なétale射を得る。法軌道写像の行列式はPlücker O(3)の切断で、正規形では−32α。根対一致では対角L₀を選ぶ必要があり、別のtrace零交換根にはHH²の負方向が1次元残る。有限代数の局所表示であって、内在H2のatlasとはまだ主張しない。
+
+正規化L₀=[[α,β],[γ,−α]]、α²+βγ=1で法軌道写像qのdetは−32α。α=0の場合は根対が一致し、off-diagonal選択ではHH¹の負部分1、HH²の正負次元(3,1)となる。これが全一次持上げを妨げる具体例。証明と6×6行列は主原稿、再現は `python3 computations/verify_noncubic_gale_root.py`。
+
 ## noncubic AS4被覆の一次持上げ計算
 
 `computations/verify_noncubic_cover_tangent.py` は、R=Q上でf₁=uv、f₂=(u−av)(bu−v)、δ²=1−abとし、σ(u)=(u−av)/δ、σ(v)=(bu−v)/δ、σ(c)=d/δ、σ(d)=−δcを用いる。対象は適合根に対応するB_f^σであり、untwisted環と区別する。被覆の関係はcentralityの5本とr_c−r_d/(1−ab)の合計6本である。
@@ -356,6 +357,8 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 再現：`python3 computations/verify_noncubic_cover_tangent.py --case generic`、同じコマンドのcaseを`shared`、`coincident`に変更する。各実行は入力と階数を出力しassertで検査する。SymPy以外の追加依存、乱数、外部入力は不要。untwisted B_f!のnormal pencilを、そのまま適合rootでtwistした双対に残るpencilと解釈しない。
 
 ## 検証範囲と再現手順
+
+**現行追加部分の確認。** Lagrangian sliceの群対合・法軌道写像・étale性と、楕円全標識の数値作用・全被覆・同値式を別担当で独立読取りした。Gale計算は既存三例、off-diagonal反例、一般係数6×6行列を実際の群作用から構成して厳密SymPy検算PASS。v1.38の全文組版を再実行PASS。v1.39追加後のsourcesはPASS（45 manuscript files / 548 labels / 258 citation uses）。追加後の組版・画像確認は保存時点では未実施で、完了後に本欄を更新する。形式証明・外部査読・包括的新規性確認は未実施。
 
 2026-11-21 / 主論文v1.37、別稿v0.1。ローカルcheckoutでdoctorとsourcesを実行した。中心変数のχ保存、一般coherent Hom、任意係数H¹消滅に加え、cubic tailsのunbounded導来局所化・全helix/矢/shiftの比較・一様cohomology・全χ・相対条件への昇格を独立読取りした。旧計算suiteは再実行していない。数学的読取り、厳密計算、組版、保存は別の状態であり、外部査読・形式証明・包括的な新規性判定は未実施である。
 

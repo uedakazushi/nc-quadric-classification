@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.37
+% 2026-11-21 / v1.39
 \section{noncubic 境界の適合根と Hochschild 作用}
 \label{sec:noncubic-hh-roots}
 
@@ -7,6 +7,8 @@
 \paragraph{結論と範囲.}
 中央二重平方表示の二つの根対を交換する\emph{trace 零の}線型対合を選ぶと、
 対応する適合 Serre 根は有限 foundation の $\operatorname{HH}^1,\operatorname{HH}^2$ に恒等に作用する。
+ただし根対が一致するときは対角の交換対合を選ぶ。
+trace 零だけでは十分でないことと、選択条件の具体的な行列式を後で示す。
 この計算は noncubic 表示の一次元の変形だけを扱うものではない。
 foundation の全変形接空間、すなわち根対が異なる場合の三次元、
 一致する場合の四次元を扱う。
@@ -271,7 +273,9 @@ Hochschild 作用そのものである。
 
 \begin{theorem}\label{thm:noncubic-hh-trivial-root}
 任意の noncubic $\mathcal H_2$ 対象の有限 foundation を $\Gamma$ とする。
-補題~\ref{lem:nchh-exchange} の trace 零の交換対合で選んだ適合根 $s$ は
+補題~\ref{lem:nchh-exchange} の trace 零の交換対合を用い、
+根対が一致する場合には $L_0=D_0$ と選ぶ。
+この選択による適合根 $s$ は
 \[
 s_*|_{\operatorname{HH}^1(\Gamma)}=1,\qquad s_*|_{\operatorname{HH}^2(\Gamma)}=1
 \]
@@ -361,6 +365,194 @@ foundation 変形で計算できる。
 元の Abel 変形の heart 上で完全である。
 本証明は AS4 被覆の横断変形への持上げを与えていない。
 \end{proof}
+
+\subsection{全 foundation 変形の Lagrangian 正規形}
+\label{subsec:noncubic-lagrangian-slice}
+
+前の接計算は、有限型の具体的な局所表示に強められる。
+この表示は foundation の全横断方向を含むが、
+それだけで相対 $\mathcal H_2$ の認識を与えるものではない。
+
+四つの二次元空間をそれぞれ $k^2$ と同定し、
+第\ref{sec:noncubic-hh-roots}節の $H$ と $J$ を使う。
+$\omega$ を行列 $J^{-1}$ の非退化交代形式とする。
+$X=\Gr(4,H)$、$L=\operatorname{LG}(4,H,\omega)$ と置けば、
+$L$ は $\tau(\mathscr L)=J\mathscr L^\perp$ の固定部分スキームである。
+基底変更群の作用は
+\[
+ \rho(g_A,g_B,g_C,g_K)
+ =\operatorname{diag}(g_A^{-t}\otimes g_B^{-t},
+                      g_C\otimes g_K^{-t})
+\]
+である。$X$ 上で自明に作用する中心を
+\[
+ C_0=\{(aI,bI,cI,dI):a^{-1}b^{-1}=cd^{-1}\}
+       \simeq\mathbf G_m^3,
+ \qquad G=\widetilde G/C_0
+\]
+と書く。
+
+\begin{proposition}[Lagrangian な有限型 \texorpdfstring{\'etale}{etale} 表示]
+\label{prop:noncubic-lagrangian-etale-slice}
+群対合
+\begin{equation}\label{eq:noncubic-group-involution}
+ \widetilde\theta(g_A,g_B,g_C,g_K)
+ =(D_0g_CD_0,g_K^{-t},D_0g_AD_0,g_B^{-t})
+\end{equation}
+は $G$ の対合 $\theta$ を誘導し、
+$\tau(g\mathscr L)=\theta(g)\tau(\mathscr L)$ を満たす。
+その固定群の単位成分を $G^+=(G^\theta)^\circ$ と書くと、
+\[
+ G^+\simeq
+ (\GL_2\times\GL_2)/(\mathbf G_m\times\mu_2),
+ \qquad \dim G^+=7.
+\]
+ここで中央部分群の埋込みは
+$(z,\epsilon)\mapsto(zI,\epsilon z^{-1}I)$ である。
+
+$G$ の Lie 代数の負固有空間を $\mathfrak g^-$ とする。
+自然な軌道微分から得る束写像
+\begin{equation}\label{eq:noncubic-normal-orbit-map}
+ q:\mathfrak g^-\otimes\mathcal O_L
+   \longrightarrow N_{L/X}
+   \simeq\bigwedge^2\mathscr U^\vee
+\end{equation}
+を考える。$\mathscr U$ は $L$ 上の tautological 四平面束である。
+その行列式の非消滅開を $L^{\mathrm{tr}}$ とすると、
+\[
+ [L^{\mathrm{tr}}/G^+]\longrightarrow[X/G]
+ \tag{LG-slice}\label{eq:noncubic-lagrangian-stack-map}
+\]
+は表現可能な \texorpdfstring{\'etale}{etale} 射である。
+双方のスタックの次元は三である。
+$\det q$ は、定数一次元因子を除けば
+Pl\"ucker 線束の三乗 $\mathcal O_L(3)$ の切断である。
+
+中央二重平方の trace 零正規形
+\eqref{eq:nchh-plane} が $L^{\mathrm{tr}}$ に属する必要十分条件は
+$\alpha\ne0$ である。
+根対が異なればこの条件は自動的に成立し、
+根対が一致するときは補題~\ref{lem:nchh-exchange} の通り
+$L_0=D_0$ と選べば成立する。
+従ってその近傍の全 foundation 変形は、
+\texorpdfstring{\'etale}{etale} 局所に Lagrangian 四平面で表示できる。
+同じ結論は、補題~\ref{lem:nchh-gale} の階数条件を課した
+foundation の開部分へ制限したときにも成立する。
+\end{proposition}
+
+\begin{proof}
+行列を掛けると
+\[
+ \rho(\widetilde\theta(g))
+       =J\rho(g)^{-t}J^{-1}
+\]
+を得る。この式は $\widetilde\theta^2=1$、
+$\widetilde\theta(C_0)=C_0$ と上の同変性を示す。
+
+$\widetilde G$ の固定群は
+\[
+ (a,b)\longmapsto(a,b,D_0aD_0,b^{-t})
+ \qquad(a,b\in\GL_2)
+\]
+の像である。その $C_0$ との共通部分は
+$a=zI$、$b=\epsilon z^{-1}I$、$\epsilon^2=1$ で尽くされる。
+従って $G$ 内の像は上で表示した滑らかな連結七次元群である。
+標数零の群の固定部分スキームは滑らかであり、その Lie 代数は
+$\mathfrak g^+$ である。
+\eqref{eq:nchh-lie-dim} によりこの次元は七なので、
+上の像は $(G^\theta)^\circ$ と一致する。
+
+$\tau$ の $L$ に沿う微分には、
+接束 $T_L\simeq\operatorname{Sym}^2\mathscr U^\vee$ と
+法束 $N_{L/X}\simeq\bigwedge^2\mathscr U^\vee$ がそれぞれ
+正・負固有束として現れる。
+同変性により軌道微分は正負分解を保つため、
+\eqref{eq:noncubic-normal-orbit-map} が得られる。
+両辺の階数は六であり、その可逆性は $G^+$-不変な開条件である。
+$\det(\bigwedge^2\mathscr U^\vee)
+=(\det\mathscr U^\vee)^3$ だから、行列式の線束も主張の通りである。
+
+閉部分群 $G^+\subset G$ による associated bundle
+$G\times^{G^+}L^{\mathrm{tr}}$ と軌道写像
+\[
+ m:G\times^{G^+}L^{\mathrm{tr}}\longrightarrow X,
+ \qquad[g,\mathscr L]\longmapsto g\mathscr L
+\]
+を考える。これは滑らかな十六次元空間の間の射である。
+$[1,\mathscr L]$ における接写像は
+\[
+ (\mathfrak g\oplus T_{\mathscr L}L)\big/
+ \{(a,-a\mathscr L):a\in\mathfrak g^+\}
+ \longrightarrow T_{\mathscr L}X,
+ \qquad[(a,v)]\longmapsto a\mathscr L+v.
+\]
+正部分では恒等、負部分では $q_{\mathscr L}$ となる。
+従って $L^{\mathrm{tr}}$ 上では同型である。
+$G$-同変性により全ての点で同型なので、$m$ は \texorpdfstring{\'etale}{etale} である。
+この射は \eqref{eq:noncubic-lagrangian-stack-map} を atlas $X\to[X/G]$
+で基底変更したものだから、同スタック射も表現可能かつ
+\texorpdfstring{\'etale}{etale} である。
+次元は $10-7=16-13=3$ である。
+
+最後の主張は一般係数で直接確認できる。
+$\mathfrak g^-$ の元を
+$(a,b,-D_0aD_0,b^t)$、$a,b\in\mathfrak{sl}_2$ で代表し、
+各 $\mathfrak{sl}_2$ の基底を
+$\operatorname{diag}(1,-1),E_{12},E_{21}$ の順に取る。
+\eqref{eq:nchh-plane} の係数行列を $M$ とすると、
+法方向の交代形式は $M^tJ^{-1}\rho_*(a,b,-D_0aD_0,b^t)M$ である。
+$u^\vee,v^\vee,c^\vee,d^\vee$ の順に対する六つの上三角成分を並べれば、
+$q_{\mathscr L}$ の行列は
+\[
+ Q_{\alpha,\beta,\gamma}=
+ \begin{pmatrix}
+ -2\alpha&0&0&2\alpha&0&0\\
+ 0&\gamma&-\alpha&0&\alpha&-\gamma\\
+ 0&0&-1&0&-1&0\\
+ 0&-\alpha&-\beta&0&\beta&\alpha\\
+ 0&1&0&0&0&1\\
+ -2&0&0&-2&0&0
+ \end{pmatrix},
+ \qquad
+ \det Q_{\alpha,\beta,\gamma}
+       =-32\alpha(\alpha^2+\beta\gamma)=-32\alpha.
+\]
+一方 $\alpha=0$ なら $\beta\gamma=1$ なので
+$f_2=(\beta v)(\gamma u)=uv=f_1$ である。
+従って根対非一致の全場合には $\alpha\ne0$ であり、
+一致の場合にも対角選択 $\alpha=1,\beta=\gamma=0$ が使える。
+foundation を再構成するための追加条件は有限写像の階数条件で開であり、
+それらを満たす点の近傍に上の射を制限すればよい。
+\end{proof}
+
+\begin{remark}[この表示が与えるもの]
+\label{rem:noncubic-lagrangian-scope}
+上の射の像は foundation スタックの開部分であり、
+全 noncubic 点を含む。その smooth 性は有限代数表示についての主張である。
+実際の Morita 平方根との比較には
+系~\ref{cor:noncubic-etale-morita-root} を使い、
+必要に応じて二つの \texorpdfstring{\'etale}{etale} 近傍の積を取る。
+全正軌道 Hom、相対 heart、同じ根の AS4 被覆の存在を、
+この Lagrangian 正規形だけから結論してはならない。
+特に \eqref{eq:noncubic-lagrangian-stack-map} の標的を
+内在的 $\mathfrak H_2$ に置き換えたとは主張していない。
+\end{remark}
+
+\begin{remark}[trace 零だけでは良い根を特徴付けない]
+\label{rem:noncubic-offdiagonal-root}
+根対一致の場合、$L_0=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$
+も trace 零の交換対合であるが、上の \texorpdfstring{\'etale}{etale} 開には属さない。
+対応する根は連結慣性
+$u\mapsto zu,v\mapsto z^{-1}v$ を逆元へ移すため、
+$\operatorname{HH}^1$ に $-1$ で作用する。
+\eqref{eq:nchh-tangent-sequence} の正負分解より、この場合
+\[
+ (\dim\operatorname{HH}^2_+,\dim\operatorname{HH}^2_-)=(3,1).
+\]
+従ってこの根は全ての一次 Abel 変形に延長するわけではない。
+本稿で全 Artin 延長に使う良い根は、根対一致時には
+$L_0=D_0$ を選ぶという条件を含む。
+\end{remark}
 
 \subsection{Hochschild 二次に自明な根の étale 代数化}
 \label{subsec:hh2-etale-morita-root}

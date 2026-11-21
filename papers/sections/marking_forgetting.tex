@@ -1,6 +1,6 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.38
-\section{構造対象の忘却と楕円型の無限ファイバー}
+% 2026-11-21 / v1.39
+\section{構造対象の忘却と楕円型の有限・無限ファイバー}
 \label{sec:unpointed-elliptic-fiber}
 
 全ての Abel 圏を一つの代数スタックに集めることは仮定しない。
@@ -144,75 +144,165 @@ $\eta\ne2\delta$ および $\eta\ne\delta$ であり、
 $\eta'=2\delta-\eta,\ \delta'=\delta$ を与える。
 \end{proof}
 
-\begin{theorem}[一般楕円型における忘却の可算無限ファイバー]
-\label{thm:generic-elliptic-unpointed-fiber}
-標数零の代数閉体上で、滑らかな楕円許容四つ組
-$U=(E,L_0,L_1,L_2)$ に対し、上記の $\eta,\delta$ が
-\[
- \delta\text{ は非捩れ},\qquad
- 2\eta\notin\mathbb Z\delta
- \tag{G}\label{eq:elliptic-unpointed-generic}
-\]
-を満たすとする。
-$\cC=\qgr D(U)$ に対して、
-\[
- \operatorname{Aut}^{\mathrm{ex}}(\cC)\backslash
- \bigl\{[L]:(\cC,L)\in\HH\bigr\}
-\]
-は可算無限集合である。
-特に滑らかな楕円型 cubic locus の幾何学的一般点では、
-構造対象を忘れる写像は同型類の意味で可算無限ファイバーを持つ。
-これはスタック射が étale な $\mathbb Z$-被覆であるという主張ではない。
+\begin{theorem}[楕円型の全標識と忘却ファイバー]
+\label{thm:elliptic-marking-lattice-fiber}
+標数零の代数閉体上の滑らかな楕円許容四つ組
+$U=(E,L_0,L_1,L_2)$ に対し、
+\begin{equation}\label{eq:elliptic-nonresonance}
+ \delta\ne0,\qquad \eta\notin\mathbb Z\delta
+\end{equation}
+を仮定する。$\cC=\qgr D(U)$ と置き、元の normalized foundation により
+$K_0(\cC)$ を $K_0(Q)$ と同定する。
+\begin{enumerate}
+\item 各 $(a,b)\in\mathbb Z^2$ に対し、
+$\operatorname{ch}L(a,b)=\operatorname{ch}\OO_Q(a,b)$ を持つ
+rank-one torsion-free exceptional 対象 $L(a,b)$ が一意に存在する。
+これらがそのような対象を尽くし、全ての $(\cC,L(a,b))$ が $\HH$ に属する。
+\item 許容構造対象の同型類を $\operatorname{Aut}^{\mathrm{ex}}(\cC)$ で割った
+忘却ファイバーは $\mathbb Z/{\sim}$ と同定される。
+整数 $n$ は $L(n,0)$ に対応し、同値関係は次の有限な幾何学的判定で与えられる：
+\begin{equation}\label{eq:elliptic-exact-fiber-relation}
+ n\sim m
+ \quad\Longleftrightarrow\quad
+ \exists\epsilon\in\Aut(E,0),\quad
+ \epsilon(\delta)=\delta,\quad
+ \epsilon(\eta+n\delta)\in
+ \{\eta+m\delta,\ 2\delta-\eta-m\delta\}.
+\end{equation}
+原点の選択はこの条件を変えない。
+\item $\delta$ が非捩れなら、このファイバーは可算無限である。
+$\delta$ が位数 $r$ の捩れ元なら、ファイバーは有限であり、
+\eqref{eq:elliptic-exact-fiber-relation} を $\mathbb Z/r\mathbb Z$ に課した商である。
+特にその濃度は $r$ 以下である。
+\end{enumerate}
+本定理は幾何点上の対象と同値類についての主張であり、
+相対スタック射の離散性や étale 被覆性を結論しない。
 \end{theorem}
 \begin{proof}
-補題~\ref{lem:elliptic-two-reflections} の $R,T$ を交互に適用する。
-$U_n$ を $(RT)^n U$ と書けば、その差のパラメータは
+まず対象を全て構成する。補題~\ref{lem:elliptic-two-reflections} の操作により
+$U_n=(RT)^nU$ は具体的に
 \[
- (\eta_n,\delta_n)=(\eta+n\delta,\delta),
- \qquad n\in\mathbb Z.
+ U_n=(E,L_0,L_1\otimes(L_2L_0^{-1})^{\otimes n},L_2)
 \]
-仮定~\eqref{eq:elliptic-unpointed-generic} により
-全ての途中段階でも隣接線束の一致と
-$\eta_n=2\delta$ が起こらない。
-従って全 $U_n$ は VdB 許容四つ組であり、
-定理~\ref{thm:all-admissible-inverse} により
-$(\qgr D(U_n),\pi e_0D(U_n))\in\HH$ である。
-また補題~\ref{lem:elliptic-two-reflections} により
-これらの underlying Abel 圏は全て $\cC$ と exact 同値である。
+と書け、その差は $(\eta+n\delta,\delta)$ である。
+仮定~\eqref{eq:elliptic-nonresonance} は、正負いずれの反復でも
+$\eta+n\delta$ が $0,\delta,2\delta$ になることを排除する。
+途中の $T$ による差 $\delta-\eta-n\delta$ に対しても同じである。
+従って全ての四つ組が許容であり、各 $U_n$ から得る pointed 対象を
+同じ underlying Abel 圏 $\cC$ へ移せる。
 
-これらの pointed 同値類が異なることを示す。
+この構成の $K_0$ 上の効果を確認する。
+元の foundation の数値類は
+\[
+ (\OO_Q,\OO_Q(1,0),\OO_Q(1,1),\OO_Q(2,1))
+\]
+であり、四つ先の項は $\OO_Q(2,2)$ に対応する。
+$T$ は構造対象を第一 ruling へ移し、二つの座標軸を交換する。
+$R$ の二つの評価列は、foundation を $(O,X,M,Z)$ と書くと
+\[
+ [Y]=2[M]-[Z],\qquad [Z']=2[M]-[X]
+\]
+を与える。従って $R$ は構造対象を固定し、二つの軸を交換する。
+特に $RT$ による foundation の数値類は
+\[
+ (\OO_Q(1,0),\OO_Q(2,0),\OO_Q(2,1),\OO_Q(3,1))
+\]
+である。帰納的に、$U_n$ の構造対象は
+$\operatorname{ch}\OO_Q(n,0)$ の対象 $L(n,0)$ となる。
+逆操作でも同じ計算が成り立つ。
+これらは定理~\ref{thm:all-admissible-inverse} により許容構造対象である。
+
+元の cubic helix の適合二周期から来る根 $s$ を選ぶ。
+この根は全 helix 項を二つずつ移す。
+四項の基底と $s^2=t$ によれば、その $K_0$ 作用は
+$\OO_Q(1,1)$ の tensor 作用に一致する。
+ゆえに
+\[
+ L(a,b)=s^b L(a-b,0)
+\]
+は指定数値類を持つ許容構造対象である。
+補題~\ref{lem:forgetting-numerical-rigidity} により、
+全ての rank-one torsion-free exceptional 対象の数値類はこの形であり、
+同じ類の対象は一意なので (1) が従う。
+また自己同値 $s$ による対角移動を除くと、
+全ての忘却ファイバーの元を $L(n,0)$ で代表できる。
+
+次にその重複を決める。
 系~\ref{cor:two-intrinsic-foundations} により、pointed exact 同値は
 二つの内在的 foundation の非順序対を保つ。
-$U_n$ のその二つは $U_n$ と $RU_n$ の geometric cubic foundation である。
-従って二つの pointed 対象が同値なら、
+$U_n$ の二つの foundation は $U_n,RU_n$ であり、
+仮定により両者は geometric cubic 型である。
 Van den Bergh の四つ組の復元
-\cite[arXiv v3, Theorem 5.5.10]{VdB2011} により、
-$U_n$ または $RU_n$ が $U_m$ または $RU_m$ と、
-曲線の自己同型を介して同型になる。
-楕円曲線の自己同型は平行移動と原点を保つ有限群の積であり、
-前者は線束の差 $\eta,\delta$ に作用しない。
-後者の $\sigma$ が $\delta$ を固定し、$\delta$ が非捩れなら、
-$\sigma=1$ である。
-従って
-\[
- \eta+n\delta=\eta+m\delta
- \quad\text{または}\quad
- \eta+n\delta=2\delta-\eta-m\delta
-\]
-が必要となる。
-第一式は $n=m$ を、第二式は
-$2\eta=(2-n-m)\delta$ という仮定への矛盾を与える。
-よって異なる $n$ は異なる pointed 同値類を与える。
+\cite[arXiv v3, Theorem 5.5.10]{VdB2011} を用いると、
+$L(n,0)$ と $L(m,0)$ が pointed 同値となる必要十分条件は、
+$U_n$ が $U_m$ または $RU_m$ と曲線同型を介して同型になることである。
+ここでは ordered foundation から full helix を反 Serre 移動で復元する。
+逆に四つ組の同型は添字零を保つ tails 同値を与える。
 
-一方、補題~\ref{lem:forgetting-numerical-rigidity} により
-固定 $\cC$ 上の許容構造対象は高々可算個である。
-その自己同値による商も高々可算なので、結論を得る。
-幾何学的一般点では $\eta,\delta$ が独立な Picard パラメータであり、
-全ての等式 $m\delta=0$ と $2\eta=n\delta$ を避ける。
+楕円曲線の自己同型を translation と $\epsilon\in\Aut(E,0)$ に分ける。
+translation は $\operatorname{Pic}^0(E)$ 上の差には作用しないので、
+必要条件はちょうど \eqref{eq:elliptic-exact-fiber-relation} である。
+十分性も成り立つ。差が一致した後は、次数二線束 $L_0$ の差を
+translation で合わせれば三つの線束が全て一致する。
+この translation の存在は、代数閉体上の
+$[2]:E\to E$ の全射性による。従って (2) が従う。
+
+$\delta$ が非捩れなら、$\epsilon(\delta)=\delta$ となる
+原点を保つ自己同型は恒等に限る。
+非自明な $\epsilon$ に対して $\epsilon-1$ は非零 isogeny であり、
+その核の元は捩れだからである。
+従って同値関係は $n=m$、または
+\[
+ 2\eta=(2-n-m)\delta
+\]
+だけである。第二式が可能でも、ある整数 $q$ による反射
+$n\mapsto 2-q-n$ の二元以下の軌道を同一視するだけなので、商は可算無限である。
+$\delta$ の位数が $r$ なら、まず $n\equiv m\pmod r$ が同値を与え、
+残る条件はこの有限巡回群上の \eqref{eq:elliptic-exact-fiber-relation} となる。
+これで (3) を得る。
+\end{proof}
+
+\begin{corollary}[一般楕円型における忘却の可算無限ファイバー]
+\label{thm:generic-elliptic-unpointed-fiber}
+滑らかな楕円許容四つ組で $\delta$ が非捩れ、
+$\eta\notin\mathbb Z\delta$ なら、忘却の同型類ファイバーは可算無限である。
+さらに $2\eta\notin\mathbb Z\delta$ なら、整数 $n$ による上記の代表に重複はない。
+特に幾何学的一般点ではこの最後の条件を満たす。
+\end{corollary}
+\begin{proof}
+前定理と、\eqref{eq:elliptic-exact-fiber-relation} の非捩れの場合の記述による。
+幾何学的一般点では独立な Picard パラメータに対し
+全ての等式 $r\delta=0$ と $2\eta=q\delta$ を避ける。
+\end{proof}
+
+\begin{corollary}[余分な楕円自己同型がない捩れの場合の濃度]
+\label{cor:elliptic-torsion-fiber-cardinality}
+前定理の仮定に加え $\Aut(E,0)=\{1,-1\}$ とし、
+$\delta$ の位数を $r\ge2$ とする。
+$2\eta\notin\langle\delta\rangle$ なら忘却ファイバーは正確に $r$ 個である。
+$2\eta=q\delta$ なら、その個数は
+\[
+ \frac{r+\#\{n\in\mathbb Z/r\mathbb Z:2n=2-q\}}2
+ =\begin{cases}
+   (r+1)/2,&r\text{ が奇数},\\
+   r/2+1,&r\text{ が偶数で }q\text{ が偶数},\\
+   r/2,&r\text{ が偶数で }q\text{ が奇数}.
+  \end{cases}
+\]
+余分な自己同型を持つ楕円曲線には、前定理の有限群を含む判定式を使う。
+\end{corollary}
+\begin{proof}
+$r>2$ なら $\delta$ を固定する $\epsilon$ は恒等だけなので、
+重複がある場合は反射 $n\mapsto2-q-n$ による商である。
+$r=2$ には $\epsilon=-1$ も許されるが、
+$2\delta=0$ を \eqref{eq:elliptic-exact-fiber-relation} に代入すると
+恒等と同じ二つの条件しか生じない。
+反射の軌道数は固定点数を用いる表示式となり、合同式 $2n=2-q$ を解けばよい。
 \end{proof}
 
 \begin{remark}[既存研究と残る問題]
-上の定理は幾何点でのファイバーの濃度を決めるが、
+上の定理は条件~\eqref{eq:elliptic-nonresonance} の下で全標識と
+幾何点ファイバーの同値判定を与えるが、
 自然な $\mathbb Z$-torsor 構造や相対ファイバーの代数性は与えない。
 Kitamura--Okawa の2022年 Oberwolfach 報告\cite{OkawaKitamura2022OWR}は
 cubic $\mathbb Z$-代数の無標識同値に $D_\infty$ が現れることと

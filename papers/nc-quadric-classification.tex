@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.37
+% 日本語 LuaLaTeX。2026-11-21 / v1.39
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.38（全対象の分類・相対表示・楕円型の忘却）}
+\date{2026年11月21日\quad v1.39（Lagrangian局所表示・楕円型の有限忘却）}
 
 \begin{document}
 \maketitle
@@ -108,11 +108,16 @@ noncubic の明示二形式族についても、中央 Clifford 表示と重み�
 Hochschild 一次・二次に恒等に作用することを証明する。
 この根は全 Artin Abel 変形へ一意に延び、有限型 étale 近傍上でも
 実際の Morita 根として代数化できる。
+さらに、全 noncubic 点を含む foundation 変形の開部分へ、
+Lagrangian Grassmannian の開部分の群商から表現可能な étale 射を与える。
+法方向の六次行列式により良い根の選択を具体化し、根対一致時の
+別の trace 零根には負の Hochschild 二次方向が残ることも示す。
 同じ根の AS4 被覆と相対 heart の横断認識は残る。
 また構造対象 $\OO$ を忘れる際の幾何点ファイバーについて、
-滑らかな楕円型の一般点では、helix の添字移動と ruling 交換による
-二反射が無限軌道を作ることを示す。数値類ごとの許容標識の一意性を併用し、
-このファイバーの同型類は可算無限個となる。
+滑らかな楕円型で $\eta\notin\mathbb Z\delta$ なら、二反射と
+対角移動で全ての $\mathbb Z^2$ 標識を構成し、数値類ごとの一意性から全被覆を得る。
+楕円曲線の有限自己同型群を含む必要十分条件で重複を判定し、
+$\delta$ が非捩れなら可算無限、捩れなら有限のファイバーとなる。
 \emph{モジュライ全体の代数性は未証明である。}
 既知結果の相対適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}

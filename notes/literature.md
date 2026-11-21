@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.37。主論文v1.37に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.39。主論文v1.39に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -221,3 +221,8 @@ Shinnosuke Okawa (joint work with Takuya Kitamura), “The reconstruction theore
 - `RRZ2014`: <https://arxiv.org/abs/1302.0437v2>, <https://doi.org/10.1016/j.aim.2014.07.010>
 - `LS1993`: <https://www.numdam.org/article/BSMF_1993__121_1_35_0.pdf>, <https://doi.org/10.24033/bsmf.2200>
 - `MUW2026`: <https://arxiv.org/abs/2606.24606v1>, <https://arxiv.org/html/2606.24606v1>
+
+
+## 楕円型の全標識と忘却ファイバー
+
+Okawa–KitamuraのOWR2022, pp.1271–1273（doi:10.4171/OWR/2022/23）を一次PDFで再確認。Theorem 1はD∞軌道による全cubicのqgr同値判定、Theorem 3は全line bundleのZ²表示を明記し、二つのmutationによるzigzag構成も記す。詳細稿は同報告当時in preparation。従って格子分類・二面体作用自体を本研究の新成果としない。現行 `thm:elliptic-marking-lattice-fiber` はη∉Zδの範囲で数値一意性と評価列から独立に証明し、楕円自己同型を含むO-marked忘却の必要十分条件と捩れ時の有限濃度を明記する。この精密化の包括的新規性は未確認。
