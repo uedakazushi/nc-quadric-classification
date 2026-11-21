@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.12（主論文v1.11、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.12（主論文v1.12、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -36,11 +36,13 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 接空間は標準的な分裂完全列0→HH¹(Λ)→T[X3/PGL9]→HH²(Λ)→0を持つ。HH³(Λ)=0からpointed Abel変形は無障害。noncubic三基準点でAbel接は3/3/4、偏極付き接は3/3/5であり、一致根対の核は既存の非零Zhang方向。HH¹(Λ)=0ならm^r/m^(r+1)ごとの先頭導分を内部導分で消せるので、任意Artin X3変形のshiftはcanonical反Serreと同型である。これは異なる二根対の全noncubic点（一根共有を含む）に適用できる。小拡大でAbel変形と次数一の枠を持ち上げることで、X3はこれらの点で滑らか、次元83となり、そのPGL9商は滑らかで次元3である。内在的H2の滑らかさ・開性は未結論。四つのfoundation対象の像は例外性により一意に持ち上がるため、それだけでは偏極を区別できず、射への作用のintertwiningが必要である。
 
-**根の平方関係と存在。** `artin_roots.tex` では、近恒等DPic核をDer¹/ad(mΛ)のBCH群と同定し、一意な平方根によってp²t⁻¹を補正する。small extensionの曲率の合成から根の障害bはb+s_*b=0を満たす。s_*がHH²上恒等なら全Artin段階の障害が消える。可換Qのtensor O(1,1)はこの条件を満たし、全Abel Artin変形にexact ampleな根を与える。四つの固定根の一次条件の次元は9/3/5/3で、因子交換はV⊗Vに負の転置として作用する。選んだ根の非持上げは全ての根の非存在ではない。AS4被覆と一般H2点での根の存在はこの結論に含めない。
+**根の平方関係と存在・一意性。** `artin_roots.tex` では、近恒等DPic核をDer¹/ad(mΛ)のBCH群と同定し、一意な平方根によってp²t⁻¹を補正する。small extensionの曲率の合成から根の障害bはb+s_*b=0を満たす。s_*がHH²上恒等なら全Artin段階の障害が消える。さらにK_A^r/K_A^{r+1}はHH¹(Λ)⊗m^r/m^{r+1}へ単射であり、共役は閉fiberのHochschild作用になる。HH¹作用が恒等なら二つの根の差uの先頭項は2ℓ_r(u)=0を満たし、根のMorita同型類は一意となる。中心Z(Λ_A/m^r)=A/m^rによりinner代表の曖昧さを正規化できる。可換Qのtensor O(1,1)は両条件を満たす。根同型そのものの一意性は主張しない。四つの固定根の一次条件は9/3/5/3次元で、因子交換はV⊗Vに負の転置として作用する。一般H2点での根存在とは区別する。`cor:quadric-root-unique-all-artin`。
 
 **Artin witnessの相対昇格。** `prop:artin-witness-relative-promotion` は、Artin上の根と全軌道AS4被覆を、全有限型A-代数上の相対H2系へ延長する。A′→K=A′/mA′で閉じた定数族へ戻し、DDのgeometric helix持上げとnilpotent NakayamaによりEnd(T_A′)=Λ_A⊗A′を示す。bounded add(T_A)複体の各項とcohomologyが平坦であることから、通常tensorが導来基底変更を計算する。これを自己同値双加群と軌道Homに適用し、square関係、全次数軌道、AZ、相対AS被覆とfppf descentを確認する。任意のAbel変形に被覆を新たに作る命題ではない。
 
-**可換点の全一次方向。** `quadric_first_order.tex` では、P=k[x₀,…,x₃]、q=x₀x₃−x₁x₂、f∈P₂/kqに対しγ_f(x_i,x_j)=Σε_ijkl q_k f_lと置き、a⋆b=ab+εγ_f(a,b)/2を使う。PBWと相対Koszul双対性によりAS4被覆、γ_f(q,−)=0により中心正則二次切断を得る。x₀≠0上でz=x₂/x₀,w=x₁/x₀とすると{z,w}=2f(1,w,z,zw)。斉次Ore局所化がAbel変形の局所制限を与えるので、全HH²(Q)を実現する。補正に必要なHH¹(Q)=sl₂⊕sl₂はα=1+εδによる次数付き自己同型で実現でき、右軌道積α^{deg b}(a)bのZhang twistでAS被覆を保持する。上の昇格命題からT_QH2≅HH²(Q)は九次元。平方根・被覆を追加標識にしていない。高次AS被覆の存在は未証明である。
+**可換点の全一次方向。** `quadric_first_order.tex` では、P=k[x₀,…,x₃]、q=x₀x₃−x₁x₂、f∈P₂/kqに対しγ_f(x_i,x_j)=Σε_ijkl q_k f_lと置き、a⋆b=ab+εγ_f(a,b)/2を使う。PBWと相対Koszul双対性によりAS4被覆、γ_f(q,−)=0により中心正則二次切断を得る。x₀≠0上でz=x₂/x₀,w=x₁/x₀とすると{z,w}=2f(1,w,z,zw)。斉次Ore局所化がAbel変形の局所制限を与えるので、全HH²(Q)を実現する。補正に必要なHH¹(Q)=sl₂⊕sl₂はα=1+εδによる次数付き自己同型で実現でき、右軌道積α^{deg b}(a)bのZhang twistでAS被覆を保持する。上の昇格命題からT_QH2≅HH²(Q)は九次元。平方根・被覆を追加標識にしていない。高次の存在は次のcanonical hullで証明する。
+
+**可換点の全Artin hullと形式変形。** `sec:quadric-artin-hull` では、標準根で二周期化したcubic列の有限自由tensorデータからcanonical hullを構成する。三次関係R_iと一次元の重なりW_iの二つの非退化coevaluationを逆にした評価は、七次元の関係空間S_i上で一致し、W_iの生成元を2に送る。その核が階数6の相対AS4関係を与える。二周期との整合、正規元、相対Koszul/Frobenius双対と正則二次商を確認し、体上のhull定理を非被約底へ無条件に流用しない。標準根の全軌道環への適用と昇格命題により、可換Qの全flat pointed Abel Artin変形は相対H2になる（`thm:quadric-all-artin-h2`）。忘却は閉fiberの同定を固定した形式変形groupoidの同値（`cor:quadric-formal-deformation-equivalence`）。HH³=0から無障害、接HH²は次元9、無限小自己同型HH¹は次元6である。これはQでのArtin局所の結論であり、大域的な形式商表示、一般点の根・AS被覆、有限型基底上の代数性を主張しない。次はこのhullの一般cubic点への適用条件と、有限型近傍への代数化・効果性を検証する。
 
 `papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
@@ -252,13 +254,15 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-2026-11-21 / 主論文v1.11、別稿v0.1。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
+2026-11-21 / 主論文v1.12、別稿v0.1。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
 
 **主論文の既存入力の点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
 
-**v1.11の証明の点検。** 有限foundation上の局所閉比較、DDのArtin適用条件、Morita持上げのheart exactnessとAZ、偏極忘却のHH¹核、HH¹=0点の関係式空間の滑らかさ、近恒等DPicの平方根補正と曲率障害を独立読取りした。Artin witnessの全有限型基底変更への昇格はEnd・可逆双加群・軌道Homの基底変更を個別に確認した。可換点の一次AS構成はPBW、Koszul/Frobenius、斉次Ore恒等式とHKR係数、flat qgrと全軌道の飽和、右Zhang twistの符号、相対族への昇格まで点検した。二乗零理想I全体への拡張とmodule-object系の一意性により、内在的な一次接空間の同定も確認した。これらは人間による査読や形式証明器での検証ではない。
+**Artin再構成と一次構成の証明の点検。** 有限foundation上の局所閉比較、DDのArtin適用条件、Morita持上げのheart exactnessとAZ、偏極忘却のHH¹核、HH¹=0点の関係式空間の滑らかさ、近恒等DPicの平方根補正と曲率障害を独立読取りした。Artin witnessの全有限型基底変更への昇格はEnd・可逆双加群・軌道Homの基底変更を個別に確認した。可換点の一次AS構成はPBW、Koszul/Frobenius、斉次Ore恒等式とHKR係数、flat qgrと全軌道の飽和、右Zhang twistの符号、相対族への昇格まで点検した。二乗零理想I全体への拡張とmodule-object系の一意性により、内在的な一次接空間の同定も確認した。これらは人間による査読や形式証明器での検証ではない。
 
-**v1.11の有限記号計算。** `computations/verify_quadric_first_order_roots.py` を実行し、一般の十係数二次式に対するγ_f(q,x_i)=0、{x₂/x₀,x₁/x₀}=2f/x₀²、Segre制限のrank9と核kq、四根の固定次元9/3/5/3をSymPyの厳密演算で確認した。相対AS性・圏の平坦性・相対H2所属は、この有限計算の認証範囲には含めない。軽量な通常math suiteに登録したが、今回全旧suiteを再実行していない。
+**全Artin hullと根一意性の点検。** 二周期cubic列の相対hullについて、逆coevaluationの貼合せ・二周期との整合、正規性のtensor縮約、相対双対性と正則商、全有限型基底変更への昇格を独立読取りした。近恒等DPicの次数商と中心の帰納法、根の先頭差の消去による一意性も独立点検した。これに基づく全Artin相対H2実現と形式変形groupoidの比較を原稿へ統合した。これは数学的な読取りであり、形式証明器の認証ではない。
+
+**一次構成の有限記号計算。** `computations/verify_quadric_first_order_roots.py` を実行し、一般の十係数二次式に対するγ_f(q,x_i)=0、{x₂/x₀,x₁/x₀}=2f/x₀²、Segre制限のrank9と核kq、四根の固定次元9/3/5/3をSymPyの厳密演算で確認した。相対AS性・圏の平坦性・相対H2所属は、この有限計算の認証範囲には含めない。軽量な通常math suiteに登録したが、今回全旧suiteを再実行していない。
 
 **可換点の独立な接空間証明書。** オプションの `computations/verify_commutative_quadric_tangent.py` を実行PASS。O(2,2)のtoric単項式から三次制約の16072×1400整数行列を直接構成した。法101で制約rank1311、PGL9軌道と九つのJacobian・六つのZhang方向を順に加えたrankは74/83/89。全95列が整数のまま全制約を解くことを確認したため、標数零でも制約rank1311、接次元89となる。さらに軌道の六つの独立な整数依存関係により軌道rank74の上界も確認したので、商の接次元15は厳密である。固定長整数の積には桁あふれの上界検査があり、残差の絶対和上界は44800<2³¹。これは内在接dim9・偏極核dim6の証明とは独立な有限線形代数による照合である。NumPy/Numbaを要するため通常suiteへは追加しない。
 
@@ -284,7 +288,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 主論文v1.11をLuaLaTeX・latexmkで組版し、153頁のPDFとSyncTeXを生成した。最終logにWarning、Overfull/Underfull、文字欠落、未定義参照の報告はない。新しい第25・26・29・30節、表紙・概要と書誌を一覧画像で確認し、基底変更の証明、平方根補正、一次AS被覆、全一次H2実現と接空間を拡大確認した。全153頁を今回目視したわけではない。静的checkerは主論文32 manuscript files/292 labels/178 citation uses、7 Markdown filesでPASS。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**組版・参照確認。** 主論文v1.12の新しい全Artin hull・根一意性を含む組版、最終頁数、参照checkerと画像確認は実施待ちである。直前の組版済み主論文はv1.11・153頁で、LuaLaTeX・latexmkによるPDF/SyncTeX生成、最終logのWarning・Overfull/Underfull・文字欠落・未定義参照なしを確認済み。その版の新しい第25・26・29・30節、表紙・概要と書誌の一覧画像および主要証明を拡大確認したが、全153頁を目視したわけではない。その版の静的checkerは32 manuscript files/292 labels/178 citation uses、7 Markdown filesでPASS。これをv1.12の確認結果とは扱わない。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

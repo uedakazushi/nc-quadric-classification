@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.11
+% 日本語 LuaLaTeX。2026-11-21 / v1.12
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.11（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.12（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -102,11 +102,13 @@ foundation 代数の $\operatorname{HH}^1$ である。
 全 Artin 変形への根の存在が従う。
 特に可換 quadric の $(-)\otimes\mathcal O(1,1)$ は、
 任意の flat Abel 変形へ exact ample な Serre 平方根として延長する。
-さらに Jacobian 二重導分と右 Zhang twist により、可換点の全一次変形に
-同じ根の相対 AS4 被覆を構成する。
-Artin 上の適合表示を全有限型基底変更上の系へ昇格させることで、
-可換点の内在的接空間を九次元の $\operatorname{HH}^2(Q)$ と同定する。
-高次 Artin 基底での AS4 被覆と、一般有限型族の代数性は残る問題である。
+この根は Morita 同型類として一意である。二周期 cubic 列の相対 canonical hull を
+構成し、全 Artin 変形に同じ根の相対 AS4 被覆を与える。
+適合表示を全有限型基底変更上の系へ昇格させることで、可換点での
+$\mathfrak H_2$ の形式変形問題を pointed Abel 変形と同定する。
+これは障害を持たず、接空間は九次元の $\operatorname{HH}^2(Q)$ である。
+一次では Jacobian 二重導分と右 Zhang twist による具体式も与える。
+一般有限型族の代数化と、モジュライ全体の代数性は残る問題である。
 
 既存の foundation 表示は滑らかな三次元 Artin スタックであり、
 全幾何点 groupoid を自己同値群ごと全充満に実現する。
@@ -200,7 +202,11 @@ sheaf bimodule、関係式、曲線と束のスタックを比較する。
 関係式変形から Abel 変形への忘却の接核を
 $\operatorname{HH}^1$ と同定する。
 また、可逆双加群の曲率障害と近恒等群の平方根補正を使って Serre 根を持ち上げ、
-可換点では一次 Jacobian 被覆を構成して全九次元を相対 $\mathfrak H_2$ に実現する。
+可換点では全 Artin 変形を相対 $\mathfrak H_2$ に実現する。
+被覆の構成には Bauwens--Van den Bergh \cite{BauwensVanDenBergh1998} と
+Van den Bergh \cite[\S6]{VdB2011} の canonical hull を参照するが、
+二周期の相対 tensor 恒等式、正則性、Koszul 双対の平坦性は別途証明する。
+一次 Jacobian 被覆は全九次元の具体式を与える。
 Toda \cite[Theorem 4.7, arXiv v3]{Toda2009} の一次 Fourier--Mukai 持上げ定理は
 選択済みの四根の一次条件に用いるが、全 Artin 段階の結論は別途証明する。
 これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
@@ -480,6 +486,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/relative_as_cover}
 \input{sections/antiserre_polarization}
 \input{sections/artin_roots}
+\input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
 
 \section{同値類の分類後に残る問題}
@@ -526,10 +533,9 @@ Artin 基底では有限 foundation と canonical 反 Serre 偏極を回復し�
 偏極忘却の核を同定した。有限 foundation と自己同値双加群の表示が得られれば、
 定理~\ref{thm:bimodule-line-comparison} が偏極の一致を有限表示局所閉条件にする。
 一般有限型基底でこの表示を構成し、適合平方根と AS 被覆の fppf 局所存在を認識せよ。
-可換点の根は全 Artin 段階へ持ち上がり、
-定理~\ref{thm:quadric-all-first-order-h2} と
-系~\ref{cor:quadric-intrinsic-tangent} は全一次方向を相対 $\mathfrak H_2$ に実現する。
-高次 Artin 基底で同じ根に適合する AS4 被覆が存在するかは残っている。
+可換点では定理~\ref{thm:quadric-all-artin-h2} が全 Artin 段階の根と AS4 被覆を構成し、
+系~\ref{cor:quadric-formal-deformation-equivalence} が形式変形問題を認識する。
+この形式的認識を一般有限型基底での実現部分層の表現可能性へ結び付けることが残る。
 一般の $X_3$ 族については、命題~\ref{prop:antiserre-polarization-family} の
 偏極変形を除外する必要がある。
 また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、

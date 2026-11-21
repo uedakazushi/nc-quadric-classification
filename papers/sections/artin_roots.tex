@@ -183,7 +183,7 @@ $(\mathcal C_A,\mathcal O_A)$ には、$s_0=(-)\otimes\mathcal O_Q(1,1)$ を還�
 $s_A^2\simeq S_A^{-1}[2]$ を満たす完全自己同値 $s_A$ が存在する。
 $(\mathcal O_A,s_A)$ は AZ ample で、その全軌道環は
 各次数の階数 $(n+1)^2$ の自由 $A$-加群からなる二次 noetherian 環である。
-この主張だけでは AS4 被覆の存在を結論しない。
+適合する AS4 被覆は定理~\ref{thm:quadric-all-artin-h2} で構成する。
 \end{corollary}
 \begin{proof}
 定理~\ref{thm:artin-foundation-lift} により有限 foundation の変形に移し、
@@ -195,6 +195,110 @@ $s_A^n\mathcal O_A$ は normal helix の $E_{2n}$ の一意な flat lift であ�
 De Deken--Lowen の geometric Hom の平坦性から全軌道の階数と基底変更を得る。
 二次性は補題~\ref{lem:relative-quadratic-from-fibers}、
 noetherian 性は補題~\ref{lem:artin-noetherian-lift} による。
+\end{proof}
+
+\begin{lemma}[近恒等 Morita 群の次数商]
+\label{lem:artin-dpic-associated-graded}
+補題~\ref{lem:artin-infinitesimal-dpic} の設定で、$r\geq1$ に対し
+\[
+ K_A^r=\ker\bigl(\operatorname{DPic}_A(\Lambda_A)
+       \longrightarrow
+       \operatorname{DPic}_{A/\mathfrak m^r}
+                    (\Lambda_A/\mathfrak m^r\Lambda_A)\bigr)
+\]
+と置く。$K_A^1=K_A$ であり、$\mathfrak m^N=0$ なら $K_A^N=1$ である。
+先頭の導分類は加法群の単射
+\[
+ \ell_r:K_A^r/K_A^{r+1}\hookrightarrow
+ \operatorname{HH}^1(\Lambda)\otimes_k
+                  (\mathfrak m^r/\mathfrak m^{r+1})
+\]
+を与える。任意の $p\in\operatorname{DPic}_A(\Lambda_A)$ による共役は
+この filtration を保ち、$\ell_r$ の像上では閉 fiber $p_0$ の
+Hochschild 一次への作用と一致する。
+\end{lemma}
+\begin{proof}
+まず任意の商 $B=A/\mathfrak m^r$ に対して
+$Z(\Lambda_A\otimes_AB)=B$ である。
+実際、中心元の閉 fiber は $Z(\Lambda)=k$ に属する。
+そのスカラーを引き、$\mathfrak m$-進次数ごとに同じ議論を繰り返す。
+各次数の中心条件は
+$\Lambda\otimes_k\operatorname{gr}_{\mathfrak m}^jB$ 上の条件であり、
+その各係数は $Z(\Lambda)=k$ に属するので、その次数のスカラーを引ける。
+有限回で終わるため中心元は $B$ の元である。
+
+$u\in K_A^r$ を取る。補題~\ref{lem:artin-infinitesimal-dpic} により
+$u$ は環の自己同型 $\alpha$ による twist で表せる。
+$A/\mathfrak m^r$ 上で $u$ は恒等なので、そこでの $\alpha$ は inner である。
+その共役単元を $\Lambda_A$ へ持ち上げて補正すれば
+$\alpha\equiv1\pmod{\mathfrak m^r}$ とできる。
+従って $\alpha-1$ の先頭部分は
+\[
+ \delta_\alpha:\Lambda\longrightarrow
+       \Lambda\otimes_k(\mathfrak m^r/\mathfrak m^{r+1})
+\]
+という $k$-導分を与える。
+同じ類を表す別の自己同型との差が $\operatorname{Ad}(v)$ なら、
+$v$ の $A/\mathfrak m^r$ 上の像は中心単元である。
+上で証明した中心の等式により、スカラー単元で割って
+$v\in1+\mathfrak m^r\Lambda_A$ とできる。
+従って $\delta_\alpha$ の変化は inner 導分であり、$\ell_r$ は定義される。
+逆に先頭導分が inner なら、その係数を $\mathfrak m^r\Lambda_A$ に持ち上げ、
+対応する $1+x$ による共役で補正すると
+$\alpha\equiv1\pmod{\mathfrak m^{r+1}}$ となる。
+従って核はちょうど $K_A^{r+1}$ である。
+積の先頭部分は導分の和なので、これは加法群の単射である。
+
+最後に、この先頭導分類は恒等双加群の一次変形類である。
+可逆双加群で左右から tensor して共役する操作は、その一次類を
+Hochschild 一次上の Morita 作用で移す。
+係数 $\mathfrak m^r/\mathfrak m^{r+1}$ は $\mathfrak m$ で零になるので、
+この作用には $p$ の閉 fiber $p_0$ だけが現れる。
+これが必要な同変性である。
+\end{proof}
+
+\begin{proposition}[Hochschild 一次に自明に作用する Serre 根の一意性]
+\label{prop:artin-serre-root-uniqueness}
+$s_0^2=t_k$ とし、$(s_0)_*$ が
+$\operatorname{HH}^1(\Lambda)$ 上恒等であるとする。
+$s_0$ を還元とし $s_A^2=t_A$ を満たす
+$\operatorname{DPic}_A(\Lambda_A)$ の元は、存在すれば一意である。
+また、そのような $s_A$ は $K_A$ の全ての元と可換である。
+ここでの一意性は Morita 自己同値の同型類についての主張であり、
+平方との同型そのものを一意に選ぶという意味ではない。
+\end{proposition}
+\begin{proof}
+$s=s_A$ を一つ固定し、$\sigma=\operatorname{Ad}(s)|_{K_A}$ と置く。
+前補題により $\sigma$ は各次数商に恒等に作用する。
+$u\in K_A$ が $u\sigma(u)=1$ を満たすなら、
+$u\in K_A^r$ から
+\[
+ 0=\ell_r(u)+\ell_r(\sigma(u))=2\ell_r(u)
+\]
+を得る。標数零なので $u\in K_A^{r+1}$ であり、帰納的に $u=1$ となる。
+別の根を $s'=us$ と書くと、$s'^2=s^2$ はちょうど
+$u\sigma(u)=1$ を意味するから $s'=s$ である。
+
+さらに $s^2=t_A$ は中心元なので $\sigma^2=1$ である。
+任意の $g\in K_A$ に対し $v=\sigma(g)g^{-1}$ と置くと
+$\sigma(v)v=1$、従って $v\sigma(v)=1$ である。
+同じ帰納法により $v=1$、すなわち $\sigma(g)=g$ となる。
+\end{proof}
+
+\begin{corollary}[可換 quadric の恒等幾何型の根の一意性]
+\label{cor:quadric-root-unique-all-artin}
+$Q=\mathbb P^1\times\mathbb P^1$ に対し、
+$s_0=(-)\otimes\mathcal O_Q(1,1)$ の相対 Serre 平方根としての持上げは、
+命題~\ref{prop:quadric-root-all-artin} の任意の Artin Morita 変形上で
+Morita 自己同値の同型類として一意である。
+\end{corollary}
+\begin{proof}
+存在は命題~\ref{prop:quadric-root-all-artin} による。
+$H^1(Q,\mathcal O_Q)=0$ なので
+$\operatorname{HH}^1(Q)=H^0(Q,T_Q)$ である。
+線束 tensor は局所的に恒等関手であり、稠密開集合へのベクトル場の制限は
+単射なので、$s_0$ はこの Hochschild 一次に恒等に作用する。
+前命題を適用する。
 \end{proof}
 
 \begin{proposition}[四つの根の一次持上げ条件]
@@ -231,6 +335,5 @@ $\operatorname{HH}^2(Q)=V\otimes V$ である。
 「いずれの根も存在しない」一次方向を得ることはできない。
 恒等幾何型の根は全九次元の一次方向を覆い、さらに上述の有限 Artin
 Morita 変形の全段階へ持ち上がる。
-この結論自体は二次 AS 正則被覆の存在を含まず、
-相対 $\mathcal H_2$ 条件をすべて確認したという主張ではない。
+この根に適合する二次 AS 正則被覆は次節で構成する。
 

@@ -1,0 +1,314 @@
+% !TEX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.12
+\section{可換 quadric の全 Artin 変形と相対 AS4 被覆}
+\label{sec:quadric-artin-hull}
+
+以下では $(A,\mathfrak m,k)$ を標数零の体上の有限次元可換局所 Artin 環とする。
+本節は \cite[arXiv v3, \S5.2, Theorem 6.1, Lemmas 6.4--6.5]{VdB2011}
+の canonical hull を、この基底へ拡張する。
+体上の存在定理をそのまま Artin 基底へ適用することはしない。
+二周期の $\mathbb Z$-代数を用い、cubic 代数の一周期性は仮定しない。
+Bauwens--Van den Bergh の正規拡大と二次双対の構成
+\cite[Propositions 2.7, 3.2, Remark 3.3]{BauwensVanDenBergh1998} を参照しつつ、
+相対的な正規性と平坦性は以下で有限自由 tensor データから直接証明する。
+
+\paragraph{入力を有限自由な tensor データとして固定する。}
+$D$ を可換 quadric の cubic $\mathbb Z$-代数の $A$-平坦変形とし、
+$V_i=D_{i,i+1}$、$R_i\subset V_i\otimes V_{i+1}\otimes V_{i+2}$ を
+それぞれ階数二の一次生成元・三次関係の自由加群とする。
+三次の標準解消は相対完全であり、
+\[
+ W_i=(R_i\otimes V_{i+3})\cap(V_i\otimes R_{i+1})
+\]
+は階数一で、任意の生成元 $w_i$ は両方の表示で非退化とする。
+この非退化性は閉ファイバーでの非退化性と Nakayama から従う。
+次数二の周期 $\beta:D\to D(2)$ が与えられたとし、
+その偶数部分の graded 化を $B$ とする。
+特に $B_1$ は階数四、$B_n$ は階数 $(n+1)^2$ である。
+
+$B$ は二次環で相対 Koszul、二次双対 $E=B^!$ の各次数は有限自由で、
+その階数は $1,4,7,8,8,\ldots$ と仮定する。
+これらは後述の helix からの入力では既存の相対 Koszul 補題により成立する。
+双対の積は tensor 部分加群の包含を双対化する規約で書く。
+全ての $i$ に対して
+\[
+ S_i=R_i\otimes V_{i+3}+V_i\otimes R_{i+1}
+ \subset V_i\otimes V_{i+1}\otimes V_{i+2}\otimes V_{i+3}
+\]
+と置く。これは階数七であり、偶数 $i$ では $\check B$ の二次関係加群である。
+
+\begin{lemma}[平坦な cubic 変形の syzygy と四周期]
+\label{lem:relative-cubic-tensors-artin}
+$D$ の各成分が有限自由で、閉ファイバーが可換 quadric の cubic
+$\mathbb Z$-代数であるとする。
+このとき上記の三次提示、$R_i,W_i$ の自由性と底変更、非退化性、
+三次の標準解消の相対完全性が成立する。
+また生成元 $w_i\in W_i$ を選ぶと、$w_i$ の巡回から
+$\theta_i:V_i\simeq V_{i+4}$ が定まり、$D\simeq D(4)$ を誘導する。
+\end{lemma}
+\begin{proof}
+閉ファイバーで次数一生成なので、各次数の乗法の全射性は Nakayama で持ち上がる。
+次数二の乗法は階数四の自由加群間で還元が同型だから同型である。
+次数三では、階数八の自由加群から階数六の自由加群への全射の核が
+$R_i$ であり、これは階数二で還元と可換する。
+三次関係で割った tensor $\mathbb Z$-代数を $C$ とすると $C\twoheadrightarrow D$ がある。
+各成分の終域 $D_{ij}$ は自由なので、核の還元は還元した射の核と一致する。
+$C\otimes_Ak\to D\otimes_Ak$ は同型であるから、有限な核は Nakayama により零となる。
+従って $D$ はこの三次提示そのものである。
+
+次数四の関係加群は、階数十六から階数九への自由加群間の全射の核であり、階数七である。
+三次提示から
+\[
+ (R_i\otimes V_{i+3})\oplus(V_i\otimes R_{i+1})
+ \longrightarrow\ker(T_{i,i+4}\to D_{i,i+4})
+\]
+は全射なので、その核は階数一で還元と可換する。
+二つの包含の差をこの射とすれば、核は交わり $W_i$ と同定される。
+閉ファイバーで $w_i$ の二つの $2\times2$ pairing 行列は可逆なので、
+$A$ 上でも行列式は単元であり、非退化である。
+
+これらの包含から得る標準 cubic 複体
+\[
+ 0\to W_i\otimes P_{i+4}\to R_i\otimes P_{i+3}
+ \to V_i\otimes P_{i+1}\to P_i\to S_i^{\mathrm{simple}}\to0
+\]
+は複体になる。各内部次数で有限自由 $A$-加群の有界複体であり、
+閉ファイバーで完全である。
+単元 minor による消去、または局所環上の最小複体を使えば、
+元の複体は $A$-加群として分裂完全である。従って任意の底変更後にも完全である。
+
+四周期は非退化 tensor から直接得られる。
+$w_i=\sum_a u_a\otimes r_a$ を $V_i\otimes R_{i+1}$ 内で書き、
+同じ $R_{i+1}$ の基底を使って $w_{i+1}=\sum_a r_a\otimes u'_a$ と書く。
+$\theta_i(u_a)=u'_a$ と定めれば、これは基底によらない同型である。
+従って $w_{i+1}$ は $w_i$ の最初の因子を最後へ巡回し、
+その因子に $\theta_i$ を作用させた tensor である。
+四回反復すると $\bigotimes_{a=0}^3\theta_{i+a}$ は $W_i$ を $W_{i+4}$ へ移す。
+最後の因子による縮約は $R_i$ を回復するから、
+$\theta_i\otimes\theta_{i+1}\otimes\theta_{i+2}$ は $R_i$ を $R_{i+4}$ へ移す。
+従って $\theta$ は三次提示を保ち、$D\simeq D(4)$ を与える。
+ここでは $\theta=\beta^2$ は仮定も結論もしていない。
+\end{proof}
+
+\begin{lemma}[canonical functional の相対的な正規性]
+\label{lem:relative-canonical-hull-functional}
+$w_i$ が定める二つの coevaluation に対する評価写像を
+$R_i\otimes V_{i+3}$ と $V_i\otimes R_{i+1}$ 上に取る。
+両者は $W_i$ 上で一致し、全射
+\[
+ \phi_i:S_i\longrightarrow A,\qquad \phi_i(w_i)=2
+\]
+を定める。その核 $H_i$ は階数六の直和因子である。
+$\phi_i$ の張る直線は $w_i$ の単元倍によらず、$\beta$ と整合する。
+さらに $E$ の二次元に対応するこれらの元は、正規化列をなす。
+従って $\beta$ に沿って graded 化すれば、$E_2$ に正規元
+$\phi$ が得られる。
+\end{lemma}
+\begin{proof}
+例えば $w_i=\sum_{a=1}^2r_a\otimes v_a$ と書けば
+$\phi_i(r_a\otimes v_b)=\delta_{ab}$ と定める。
+これは非退化 tensor の逆を用いた評価であり、基底には依存しない。
+もう一方の分解でも同様に定める。
+両者は $w_i$ を $2$ に送るから、交わり $W_i=Aw_i$ 上で一致する。
+$2\in A^\times$ なので全射であり、$S_i$ は自由だから核は階数六の直和因子になる。
+$w_i$ を単元倍すると評価はその逆数倍になるため、その直線と核は変わらない。
+構成は $\mathbb Z$-代数の同型に自然なので、$\beta(H_i)=H_{i+2}$ である。
+さらに $w_0,w_1$ を選んだ後、$w_{i+2}=\beta(w_i)$ と選んでよい。
+この選択では $\phi_{i+2}\circ\beta=\phi_i$ となる。
+前補題の $\theta$ の構成も自然なので
+$\theta_{i+2}\circ\beta_i=\beta_{i+4}\circ\theta_i$ であり、
+後の正規化写像はこの周期に沿って降りる。
+
+正規性は次数三の tensor 恒等式で確認する。
+前補題により、\cite[\S5.2, (5.2)]{VdB2011} の構成と同じ
+$\theta_i:V_i\simeq V_{i+4}$ が $A$ 上で得られる。
+この同一視を行うと $w_{i+1}$ は $w_i$ の一回巡回となる。
+以下の計算はこの四周期の同一視の下で行う。
+\emph{これは $V_i\simeq V_{i+1}$ という一周期の同一視ではない。}
+
+$E_3$ の双対の対応する成分は
+\[
+ K_{3,i}=(S_i\otimes V_{i+4}\otimes V_{i+5})
+       \cap(V_i\otimes V_{i+1}\otimes S_{i+2})
+\]
+である。そして
+\[
+ K_{3,i}=(R_i\otimes R_{i+3})
+       \oplus(V_i\otimes W_{i+1}\otimes V_{i+5}).
+ \tag{Hull-3}\label{eq:relative-hull-third-dual}
+\]
+実際、右辺の二つの加群はいずれも左辺に含まれる。
+左辺は仮定により階数八の自由加群であり、右辺は階数四の自由加群二つである。
+閉ファイバーでは通常の cubic 解消からこの直和分解が成立する
+\cite[Proposition 2.2, (2.7), Lemma 2.4]{BauwensVanDenBergh1998}。
+従って右辺から左辺への射は同階数自由加群間で還元が同型となり、同型である。
+
+この加群上で次の二つの縮約を比較する。値域も明記すると
+\[
+ c_L=\phi_i\otimes1:K_{3,i}\longrightarrow V_{i+4}\otimes V_{i+5},
+ \qquad
+ c_R=1\otimes\phi_{i+2}:K_{3,i}\longrightarrow V_i\otimes V_{i+1},
+\]
+であり、証明する恒等式は
+\[
+ c_L=(\theta_i\otimes\theta_{i+1})\circ c_R.
+ \tag{Hull-N}\label{eq:relative-hull-normality}
+\]
+従って四周期の同一視の下では $c_L=c_R$ と書ける。
+第二直和成分について、$w_{i+1}=\sum_a r_{i+1,a}\otimes v_{i,a}$
+と書いて左から縮約すれば恒等射になり、
+$w_{i+1}=\sum_b v_{i+1,b}\otimes r_{i+2,b}$
+と書いて右から縮約しても恒等射になる。
+
+第一直和成分も係数で直接確認できる。
+四つの空間にそれぞれ基底 $u_a,v_b,x_c,y_d$ を選び、
+$w_i=\sum t_{abcd}u_a\otimes v_b\otimes x_c\otimes y_d$ と書く。
+\[
+ r_d=\sum_{a,b,c}t_{abcd}u_a\otimes v_b\otimes x_c\in R_i,
+ \qquad
+ t_c=\sum_{d,a,b}t_{abcd}y_d\otimes u_a\otimes v_b\in R_{i+3}
+\]
+はそれぞれ基底である。
+両縮約は $r_d\otimes t_c$ を同じ元
+$\sum_{a,b}t_{abcd}u_a\otimes v_b$ へ送る。
+よって (\ref{eq:relative-hull-normality}) が成立する。
+
+双対化すると、一次元 $\xi$ に対して
+$\phi_i\xi=\xi'\phi_{i+2}$ となり、$\xi\mapsto\xi'$ は
+$\theta$ から来る可逆な線形写像である。
+元の $\phi_i$ の単元倍の選択に戻してもこの交換式は単元係数を変えるだけである。
+一次生成元との交換式から、左右に生成するイデアルが一致する。
+先に選んだ $\beta$ と整合する生成元により、
+これらは一つの graded 元 $\phi\in E_2$ となる。
+上の交換式は $\phi E_1=E_1\phi$ を与える。
+従って $\phi$ は正規元である。
+\end{proof}
+
+\begin{proposition}[正規 functional からの相対 AS4 被覆]
+\label{prop:relative-artin-hull-from-functional}
+前補題の入力を満たすとき、$B$ は全次数平坦な二次 AS4 被覆
+$\widetilde B\twoheadrightarrow B$ を持ち、その核は二次の左右正則正規元で生成される。
+\end{proposition}
+\begin{proof}
+閉ファイバーの Segre 環では、$\phi_0$ は六つの交換関係を零に送り、
+$q=x_{00}x_{11}-x_{01}x_{10}$ を $1$ に送る。
+これは \cite[(5.3)]{VdB2011} の
+$w=u_0v_0u_1v_1-u_1v_0u_0v_1-u_0v_1u_1v_0+u_1v_1u_0v_0$
+を評価の定義へ代入して確認できる。
+従って $E_k/(\phi_0)$ は四変数の外積代数である。
+前補題の正規性と $E_k$ の Hilbert 級数から、$\phi_0$ の左右乗法は全次数で単射となる。
+
+$E_n$ と $E_{n+2}$ は自由なので、$\phi$ の乗法は閉ファイバーで単射であることから
+全次数で直和因子への単射となる。実際、閉ファイバーで最大階数となる minor は $A$ 上単元である。
+よって $P=E/(\phi)$ は全次数自由で、階数列は $(1,4,6,4,1)$、五次以降は零である。
+$P$ は二次環で、閉ファイバーは Koszul な外積代数である。
+補題~\ref{lem:relative-koszul-degree-three} を適用すると $P$ は相対 Koszul となり、
+その二次双対 $\widetilde B=P^!$ は全次数自由となる。
+$P_i\otimes P_{4-i}\to P_4\simeq A$ は閉ファイバーで完全 pairing なので完全である。
+従って $\widetilde B$ は型 $(1,4,6,4,1)$ の相対 AS4 環である。
+
+二次関係を双対化すると $\widetilde B=T(B_1)/(\ker\phi)$ であり、
+$B=T(B_1)/(S)$ への全射がある。
+その核は二次の階数一加群 $S/\ker\phi$ の生成元 $g$ で生成される。
+各次数の核 $J_n$ は、$B_n$ が自由であるため $\widetilde B_n$ の直和因子であり、
+階数は $\binom{n+3}{3}-(n+1)^2=\binom{n+1}{3}$ である。
+左右の $g$ 乗法
+\[
+ \widetilde B_{n-2}\longrightarrow J_n
+\]
+は閉ファイバーで可換多項式環の $q$ 乗法という同型になる。
+同階数の自由加群間の射なので元から同型である。
+従って $g$ は左右正則で、左右主イデアルはともに $J$ である。
+特に $g$ は正規元である。
+この議論は normalizing extension と Koszul dual の関係を
+基底上へ無検証に引用する必要も避ける。
+
+全次数平坦性から $\mathfrak m$-進 associated graded は
+$\operatorname{gr}_{\mathfrak m}A\otimes_k k[x_0,x_1,x_2,x_3]$ となり、
+有限フィルターにより $\widetilde B$ は左右 noetherian である。
+相対 Koszul 完全性と切断の完全列は各次数で分裂し、任意の底変更で保たれる。
+\end{proof}
+
+\begin{theorem}[可換 quadric の全 Artin 変形の相対実現]
+\label{thm:quadric-all-artin-h2}
+$Q=\mathbb P^1_k\times\mathbb P^1_k$ とし、
+$(\mathcal C_A,\mathcal O_A)$ を $(\operatorname{coh}Q,\mathcal O_Q)$ の
+任意の flat pointed Abel 変形とする。
+この変形には $s_0=(-)\otimes\mathcal O_Q(1,1)$ を還元とする
+exact ample な相対 Serre 平方根 $s_A$ が存在し、その全軌道環 $B_A$ は
+\[
+ B_A\simeq\widetilde B_A/(g),\qquad
+ \operatorname{rank}_A(B_A)_n=(n+1)^2
+\]
+と表示できる。ここで $\widetilde B_A$ は型 $(1,4,6,4,1)$ の相対 quadratic
+AS 正則環であり、$g$ は二次の左右正則正規元である。
+従って $(\mathcal C_A,\mathcal O_A)$ は、任意の有限型 $A$-代数への基底変更を
+備えた定義~\ref{def:relative-h2} の相対 $\mathfrak H_2$ 族へ昇格する。
+根と被覆は存在条件であり、新しい標識として加えない。
+\end{theorem}
+\begin{proof}
+系~\ref{cor:quadric-exact-root-all-artin} による $s_A$ と、
+$\mathcal O_Q(0,1)$ の flat な持上げ $M_A$ を取る。
+構造対象と $M_A$ の存在・同型類の一意性は
+定理~\ref{thm:artin-foundation-lift} の geometric helix の持上げによる。
+\[
+ L_{2n,A}=s_A^n\mathcal O_A,\qquad L_{2n+1,A}=s_A^nM_A
+\]
+と置く。各 $L_{i,A}$ は対応する可換線束の一意な flat 持上げであり、
+全列は De Deken--Lowen による持ち上げた geometric helix と一致する。
+従って $D_{ij}=\operatorname{Hom}(L_{-j,A},L_{-i,A})$ の各成分は有限自由であり、
+補題~\ref{lem:relative-cubic-tensors-artin} により相対 cubic 提示と解消、
+$V_i,R_i,W_i$ の自由性・非退化性を得る。
+この cubic 変形との比較は \cite[Theorem 8.1.2, \S8.3]{VdB2011} とも整合する。
+
+負添字の Hom 規約により $s_A^{-1}$ が
+$D_{ij}\to D_{i+2,j+2}$ を与え、これを $\beta$ とする。
+偶数部分の graded 化の $n$ 次成分
+$D_{0,2n}=\operatorname{Hom}(s_A^{-n}\mathcal O_A,\mathcal O_A)$ に
+$s_A^n$ を作用させると、$s_A$ の全軌道環 $(B_A)_n$ と同定される。
+その積は $a*b=s_A^{\deg b}(a)\circ b$ という本稿の右規約になる。
+
+この全軌道環は全次数自由であり、閉ファイバーでの次数一生成と二次提示は
+次数ごとの Nakayama で持ち上がる。
+三次も自由なので、補題~\ref{lem:relative-koszul-degree-three} により
+$B_A$ は相対 Koszul、$E=B_A^!$ の全次数は自由である。
+閉ファイバーの Hilbert 級数から階数は $1,4,7,8,8,\ldots$ となる。
+従って補題~\ref{lem:relative-canonical-hull-functional} と
+命題~\ref{prop:relative-artin-hull-from-functional} の全入力が成立する。
+これらによって相対 AS4 被覆と正則正規な切断を得る。
+最後に命題~\ref{prop:artin-witness-relative-promotion} を適用し、
+全有限型基底変更上の相対 $\mathfrak H_2$ 族を得る。
+\end{proof}
+
+\begin{corollary}[可換点での形式変形問題]
+\label{cor:quadric-formal-deformation-equivalence}
+$Q$ の相対 $\mathfrak H_2$ 変形から flat pointed Abel 変形への忘却は、
+局所 Artin $k$-代数上の変形 groupoid の同値を与える。
+この変形問題は障害を持たず、その接空間は
+\[
+ \operatorname{HH}^2(Q)=H^0(Q,\mathcal O_Q(2,2)),\qquad \dim=9
+\]
+である。無限小自己同型の空間は $\operatorname{HH}^1(Q)=H^0(Q,T_Q)$、次元六である。
+\end{corollary}
+\begin{proof}
+本質的全射性は前定理による。
+基底 $A$ 上の pointed exact 同値は Ind 圏へ延長し、有限型 $A$-代数 $A'$ の
+作用を移すことにより module-object 圏上の同値を与える。
+相対族の基底変更同値により、その延長は自然同型を除いて一意である。
+根と被覆は標識ではないので追加の射の条件を生まない。
+従って忘却は全忠実であり、底変更に自然な同値である。
+
+Abel 変形の接空間・無限小自己同型・障害空間はそれぞれ
+Hochschild 次数二・一・三である
+\cite[Theorem 3.1, Remark 3.5]{LowenVanDenBergh2005}。
+構造対象の持上げには $\operatorname{Ext}^{1,2}(\mathcal O_Q,\mathcal O_Q)=0$ を用いる。
+HKR と $Q$ 上のコホモロジーから $\operatorname{HH}^3(Q)=0$ である。
+具体的には $H^1(\bigwedge^2T_Q)=H^2(T_Q)=0$ であり、
+残る全次数三の成分も零である。
+これにより任意の小拡大に対して変形を持ち上げられる。
+表示した接空間と無限小自己同型も HKR による。
+\end{proof}
+
+この定理は可換点における全 Artin 基底の認識を与える。
+一般有限型基底への代数化、一般の非可換点での同様の認識、
+内在的 $\mathfrak H_2$ 全体の代数性は別に証明する必要がある。

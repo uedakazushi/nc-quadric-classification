@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.1。現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.2。主論文v1.12に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -18,6 +18,16 @@ A. B. Verevkin, *On a noncommutative analogue of the category of coherent sheave
 A. Polishchuk, L. Positselski, *Quadratic Algebras*, AMS University Lecture Series **37** (2005), Chapter 3, Proposition 2.2(i) は、一次生成・二次・Koszulである環のVeroneseもそれぞれ一次生成・二次・Koszulであることを述べる。AMSの[書誌](https://doi.org/10.1090/ulect/037)を確認し、[公開テキスト](https://djvu.online/file/T1DOlccPNeqX0)で該当命題文を照合した。**これは既知の一般定理であり、本研究の新成果としない。** 本稿の lem:relative-quadratic-veronese は、任意の可換係数環上のtensor商による直接証明とZhang twistへの明示拡張、lem:relative-quadratic-from-fibers はNoetherian基底上の局所自由性とNakayamaによる全次数の相対降下である。これらをcubic・noncubic・特殊化族の反Serre環へ適用したこと、および25 pivotの具体的な閉埋込みが本研究の追加部分（全体的な先行研究に対する新規性は未確定）。
 
 有限型スキームの射の構成可能像にはStacks Project [Tag 054K](https://stacks.math.columbia.edu/tag/054K)（Chevalleyの定理）を使用する。全H2反Serre関係像はcubic・noncubicの二つの有限型表示からの構成可能集合である。関係式の被約閉包Z₂は有限型既約の代数的包絡だが、相対H2の実現部分関手のscheme structureを表すものではない。
+
+## Canonical hull と可換点の全Artin変形
+
+K. Bauwens, M. Van den Bergh, *Normalizing Extensions of the Two-Veronese of a Three-Dimensional Artin–Schelter Regular Algebra on Two Generators*, *Journal of Algebra* **205** (2) (1998), 368–390、[DOI:10.1006/jabr.1997.7210](https://doi.org/10.1006/jabr.1997.7210)、[著者公開本文](https://cantate.be/site/kristien.ps)を確認した。文献キーは `BauwensVanDenBergh1998`。Proposition 2.2・式(2.7)・Lemma 2.4は二次VeroneseのKoszul双対とその次数三の直和分解を記述する。Proposition 2.7・式(2.11)は正規化functional、Proposition 3.2は正規拡大との双対的対応、Remark 3.3・式(3.1)はcanonicalな選択と被覆の関係式を与える。**これらは体上の通常の次数付きcubic環についての既知結果である。** そのまま任意のArtin係数環上の存在定理として引用しない。
+
+`VdB2011` の arXiv v3 §5.2は非退化四次tensorと四周期、§6（Theorem 6.1、Lemmas 6.4–6.5）はcanonical hull、§8.3は可換quadricの変形とcubic列との関係を扱う。体上のhullの存在、変形されたcubic列の構成、および指定された二周期から通常の次数付きAS4被覆を相対的に作ることは区別する。特に、二周期cubic $\mathbb Z$-algebraの持上げから通常のcubic graded algebraの一周期性を推測しない。
+
+主原稿 `sec:quadric-artin-hull` は、可換 $Q=\mathbf P^1\times\mathbf P^1$ の標数零・有限次元局所Artin基底上のflat pointed Abel変形を対象として、この相対化を直接証明する。持ち上げたhelixの自由Homからcubic関係とsyzygy直線を回復し、逆coevaluationによるfunctionalの正規性を次数三のtensor恒等式で示す。四周期 $\theta$ と指定された二周期 $\beta$ は区別し、functionalの直線の $\beta$-同変性によってgraded化する。正規元の正則性と商の平坦性は単元minorで持ち上げ、相対Koszul双対とFrobenius pairingからAS4被覆を得る。全Artin Serre根の持上げおよび `prop:artin-witness-relative-promotion` と合わせ、可換点の全Artin変形が全有限型基底変更を含む相対H2族になることを示す。
+
+この証明はBV1998とVdB2011の構成を用いた相対的な検証であり、canonical hull自体の発見や、先行研究に対する新規性を主張しない。原稿の証明を独立に読み合わせたが、形式証明器による検証はしていない。一般のH2点の全Artin被覆存在、非Artin基底上の開性・代数化、内在的モジュライ全体の代数性はこの結論に含まれない。
 
 ## Koszul 性・Hochschild 変形・三次平坦性
 
@@ -56,6 +66,7 @@ Zhang, *Twisted Graded Algebras and Equivalences of Graded Categories*, Proc.Lon
 | 文献キー | 確認箇所・版 | 本研究での使い方と制限 |
 |---|---|---|
 | `AZ1994` | 出版社書誌・abstract。原論文 Theorem 4.5 の全文は今回未取得 | AZ ampleness と再構成の原典。体上版は `MU2021` Definition 2.5 / Theorem 2.6、一般End-ring版は `OACU2026` Theorem 7.3の再録で照合する。 |
+| `BauwensVanDenBergh1998` | 著者公開本文、Proposition 2.2・式(2.7)、Lemma 2.4、Proposition 2.7・式(2.11)、Proposition 3.2、Remark 3.3・式(3.1) | 体上の二次VeroneseのKoszul双対、正規functional、canonical normalizing extension。Artin係数・二周期Z-algebraへの相対化は主原稿 `sec:quadric-artin-hull` で直接証明する。 |
 | `VdB2011` | arXiv:0807.3753v3, Proposition 5.1.2, Theorem 5.5.10, Corollary 5.6.2, Theorem 6.1, Proposition 6.6, Corollary 6.7, Theorem 7.1 | cubic regular $\mathbb Z$-algebra の分類、even part の graded 化、quadratic hull、translation principle。標数 $\ne2$ の代数閉体で ambient $D/(g)$ 表示が存在する。選んだ shift の平方が inverse Serre になること、および指定された $\mathcal O$ の保存は別途確認する。 |
 | `Presotto2018` | [出版版](https://ems.press/content/serial-article-files/30740), §2.1 pp.737–738, Theorem 2.8 p.738, Appendix A pp.763–769; arXiv:1607.08383v1 | 全cubic AS正則Z-algebraはZ-domain。Sklyanin、整な曲線、被約曲線に限定されない。任意の二周期で次数付けしたeven partのdomain性に適用する。 |
 | `SVdB2013` | 出版版 §§2.5–2.8, 5、式(2.2)–(2.3)、Theorem 5.6、Corollary 5.8、§§10.1–10.5、Theorem 10.2、p.854 | central quadricのsmoothness、Sklyanin pencilのdomain性、楕円base locus、fat pointの自己Euler特性2。一般Corollary 5.8のstandard性には次行の訂正を反映する。§10の幾何的左加群を反対環で右規約へ移す。 |
@@ -146,6 +157,7 @@ square辞書 $H=F_sG_sP^{-1}$ とrotated square $H_r=F_sG_sP$ を区別する。
 ## 一次資料へのリンク
 
 - `AZ1994`: <https://doi.org/10.1006/aima.1994.1087>
+- `BauwensVanDenBergh1998`: <https://doi.org/10.1006/jabr.1997.7210>, <https://cantate.be/site/kristien.ps>
 - `VdB2011`: <https://arxiv.org/abs/0807.3753v3>, <https://doi.org/10.1093/imrn/rnq234>
 - `SVdB2013`: <https://ems.press/journals/jncg/articles/4781>, <https://arxiv.org/abs/1108.1552>
 - `MU2021`: <https://arxiv.org/abs/1708.00167v4>, <https://doi.org/10.4171/JNCG/403>
