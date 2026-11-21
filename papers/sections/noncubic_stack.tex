@@ -722,6 +722,52 @@ $(-)_\iota(2)=S_A^{-1}[2]$ となる。
 別の証明なしに主張するものではない。
 \end{proof}
 
+\begin{corollary}[noncubic 族の相対反 Serre 軌道の完全な計算]
+\label{cor:noncubic-relative-orbit-hom}
+前命題と同じ仮定の下、$\mathcal X=\mathbb P_A(1,1,2)$、
+$\mathcal O_B=\widetilde B$ と置く。
+perfect 圏上の相対反 Serre 作用
+$\mathsf t=S_A^{-1}[2]$ に対し、全ての $n\ge0$ で
+\[
+ \mathbf R\operatorname{Hom}_{\mathcal X,\widetilde B}
+    (\mathcal O_B,\mathsf t^n\mathcal O_B)
+       \simeq B_{2n}[0]
+ \tag{NC-orbit}\label{eq:noncubic-relative-orbit-hom}
+\]
+が成立し、任意の noetherian 底変更と可換する。
+積は (\ref{eq:noncubic-antiserre-product}) の
+$\iota$-twist された積（行列式線束の twist を除く）である。
+従って命題~\ref{prop:noncubic-antiserre-descent}
+の相対環は、幾何点で一致するだけでなく、
+明示された noncubic 表示族の perfect 圏の
+\emph{実際の相対反 Serre 軌道環} を降下したものである。
+\end{corollary}
+\begin{proof}
+式~(\ref{eq:noncubic-relative-serre-functor}) より
+$\mathsf t^n\mathcal O_B$ の下にある
+$\mathcal O_{\mathcal X}$-加群は
+$\widetilde B(2n)$ である。
+$B$ の中心 Clifford 表示により
+\[
+ \widetilde B(2n)\simeq
+ \mathcal O_{\mathcal X}(2n)
+ \oplus\mathcal O_{\mathcal X}(2n-1)^{\oplus2}
+ \oplus\mathcal O_{\mathcal X}(2n-2).
+\]
+重み付き多項式環 $C=A[u,v,h]$ の相対 \'Cech 複体は、
+$\mathcal O_{\mathcal X}(j)$ の $H^1$ が任意の $j$ で零、
+$H^2$ が $j\ge-3$ で零であることを示す。
+$n\ge0$ なら上の最小の twist は $-2$ である。
+従って高次大域コホモロジーは全て零であり、
+$H^0$ はそれぞれ $C_{2n}$、$C_{2n-1}$、$C_{2n-2}$
+（負の次数は零）である。
+それらの直和は Clifford 表示の $B_{2n}$ となる。
+この計算は有限自由な weighted \'Cech 項によるので
+任意の noetherian 底変更と整合する。
+積は $\mathsf t=(-)_\iota(2)$ の functorial な合成から
+$a\star b=a\iota^{\deg_{\mathcal R}a}(b)$ と計算できる。
+\end{proof}
+
 \begin{proposition}[noetherian 基底上の noncubic 表示の有限性]
 \label{prop:noncubic-relative-noetherian}
 任意の可換 noetherian 基底に引き戻した普遍環 $\mathcal B$、
