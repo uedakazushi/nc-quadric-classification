@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.33
+% 2026-11-22 / v1.34（4証明を論文Bへ移管）
 \section{可換二次曲面を含む滑らかな Artin 開部分}
 \label{sec:quadric-smooth-atlas}
 
@@ -107,167 +107,13 @@ $\alpha_A$ を延長する pointed exact 同型
 \end{lemma}
 
 \begin{proof}
-\emph{(a) Abel 変形としての入力.}
-$\mathcal G_{A'}=\operatorname{Ind}\mathcal C_{A'}$ と置く。
-相対 $\mathfrak H_2$ 条件からこれは $A'$ 上 flat な Grothendieck 圏であり、
-加群対象による基底変更により、その $A$ 上の還元は
-$\mathcal G_A=\operatorname{Ind}\mathcal C_A$ である。
-これは既存の \ref{lem:relative-h2-flat-center} と
-相対 Abel 系の定義に含まれる。
-したがって $\mathcal G_{A'}$ は $\mathcal G_A$ の flat Abel 変形である。
-$A'\to A$ は coherent な可換環の冪零拡大であり、$A$ は $A'$ 上有限表示なので、
-\cite[\S4.1]{DeDekenLowen2011} の基底条件を満たす。
-
-\emph{(b) 対象と compact tilting 窓の持上げ.}
-$\alpha_A$ により $E_{i,A}$ を $\mathcal C_A$ に移す。
-これらは flat な対象であり、compact geometric helix を成す。
-\cite[Theorem 5.13(1)--(4)]{DeDekenLowen2011} を基底環 $A$ と拡大 $A'\to A$ に適用する。
-すると各 $E_{i,A}$ は、同型類一意に flat な対象 $E'_{i}$ へ持ち上がり、
-指定した還元同型を選べる。持上げた四項窓は再び compact tilting generator であり、
-前向き Hom は平坦で還元と可換する。
-有限次元の剰余体上の Hom を持つ平坦 $A'$ 加群は有限自由なので、
-\[
- \Lambda' =\End_{\mathcal G_{A'}}
-       \left(\bigoplus_{i=0}^3 E'_i\right)
-\]
-は階数 $24$ の自由 $A'$ 代数となる。
-
-この段階の対象の障害と選択を明記すると、$J=\ker(A'\to A)$ に対し
-\[
- \mathbf R\Hom(E_{i,A},J\otimes_A^{\mathbf L}E_{i,A})
- \simeq J\otimes_A^{\mathbf L}\mathbf R\Hom(E_{i,A},E_{i,A})
- \simeq J[0]
-\]
-である。従って二次の障害も一次の持上げ差も消える。
-同型そのものは一意ではない。
-$E'_0$ は既存の標識 $\OO_{A'}$ と同型であり、
-還元上の指定を延長する同型を選ぶ。
-実際、自己同型群はそれぞれ $A'^\times$ と $A^\times$ であり、
-冪零拡大に対して単元は持ち上がるので、任意の比較同型を所要の還元に補正できる。
-この選択により以下の Morita 同値は pointed となる。
-
-各 $E'_i$ が noetherian であることも確認できる。
-$A'$ の極大イデアルによる有限フィルトレーションの商は、平坦性により
-剰余体上の $E_i$ の有限直和である。
-これらが noetherian なので $E'_i$ も noetherian である。
-
-\emph{(c) foundation の座標の持上げ.}
-頂点の恒等射で対角成分を $A'$ と同定する。
-逆向き Hom は零であり、頂点 $1,2,3$ の積
-\[
- \Hom(E'_1,E'_2)\otimes_{A'}\Hom(E'_2,E'_3)
-       \longrightarrow\Hom(E'_1,E'_3)
-\]
-は還元上で同型なので Nakayama の補題により同型である。
-五つの有限自由加群
-\[
- \Hom(E'_0,E'_1),\quad\Hom(E'_0,E'_2),\quad\Hom(E'_0,E'_3),
- \quad\Hom(E'_1,E'_2),\quad\Hom(E'_2,E'_3)
-\]
-の基底を、$a\circ u_A$ の指定する基底を延長して選ぶ。
-自由加群の基底は冪零拡大に対して持ち上がるので、ここに追加の障害はない。
-残る二つの積の行列 $F',G'$ は $S_0(A')$ の点を与え、
-$a\circ u_A$ を還元に持つ。
-$S\subset S_0$ は開であり $\operatorname{Spec} A'$ の位相空間は一点なので、この点は $S(A')$ に入る。
-得られた点を $s_{A'}$ と書く。
-この構成は、代数の積を別途持ち上げる問題を解いているのではなく、
-既に持ち上げた対象の実際の合成から積を取っている。
-$\operatorname{HH}^3$ の消滅を新たな仮定に加える必要はない。
-
-\emph{(d) \'Etale な根の chart への持上げ.}
-$a:U\to S$ は \'etale なので
-\[
- \begin{matrix}
- \operatorname{Spec} A&\longrightarrow&U\\
- \big\downarrow&&\big\downarrow a\\
- \operatorname{Spec} A'&\xrightarrow{s_{A'}}&S
- \end{matrix}
-\]
-には $u_A$ を延長する持上げ $u_{A'}$ が存在する。
-これは全ての $U$ 上での \'etale 性を使う。
-新しい閉点ごとに Serre 根の Hochschild 作用を再計算する必要はない。
-
-\emph{(e) 指定された pointed exact 同型の持上げ.}
-$q(u_{A'})$ と $c_{A'}$ の二つの compact tilting 窓の End 代数は、
-上で選んだ基底により同じ $\Lambda'$ である。
-標準 dg enhancement 上の導来 Morita によって、標識と四項窓を保つ同値
-\[
- \beta_{A'}:
- D(\operatorname{Ind}\mathcal C_{q(u_{A'})})
- \xrightarrow{\sim}D(\operatorname{Ind}\mathcal C_{c_{A'}})
-\]
-を得る。その compact 部分の還元は、窓上の全ての射を含めて
-$D(\alpha_A)$ と同型である。
-実際、両者は同じ四つの projective 生成対象とその間の積に対応し、
-選んだ基底の還元は $\alpha_A$ が誘導する比較と一致する。
-
-この compact 同値は相対 Serre 双対を保つため、
-$t=S^{-1}[2]$ と $\OO$ の全軌道 Hom、およびその積を保つ。
-従って二つの相対反 Serre 環の同型、すなわち
-\[
- \Phi(q(u_{A'}))\xrightarrow{\sim}\Phi(c_{A'})
- \quad\text{in }\mathfrak P(A')
-\]
-を与える。必要な次数線束の比較は既存の $\operatorname{PGL}_9$ による
-正規化で吸収される。
-$\Phi$ の全忠実性から、これは pointed exact 同型 $\alpha_{A'}$ に一意に持ち上がる。
-還元が $\alpha_A$ になることも同じ全忠実性から従う。
-ここでは単なる導来同値から heart の完全性を仮定していない。
-二つの族が既に $\mathfrak H_2$ に属することと、相対反 Serre 再構成を用いている。
+完全な証明は相対モジュライ別稿 \cite[効果的foundationの滑らかな局所atlas]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{任意の有限型基底上の smoothness}
 
-\begin{proof}[定理~\ref{thm:atlas-from-effective-foundation} の証明]
-$T\to\mathfrak H_2$ を任意の局所有限型スキームからの射とする。
-$\Phi$ の全忠実性により二ファイバー積の自然射は同値であり、
-\[
- Z_T:=U\times_{\mathfrak H_2}T\simeq U\times_{\mathfrak P}T.
-\]
-右辺から $U\times_kT$ への射は $\mathfrak P$ の対角の基底変更であるから、
-affine かつ有限表示である。従って $Z_T$ はスキームであり、
-$Z_T\to T$ は局所有限表示である。
-これで $q$ の表現可能性と有限表示性を、$\mathfrak H_2$ 自身の代数性を使わずに得る。
-
-$T$ の有限型 affine 開部分ごとに議論すればよい。
-このとき $Z_T$ も有限型 $k$ スキームなので、全ての閉点の剰余体は $k$ である。
-$z\in Z_T(k)$ において small Artin extension $A'\twoheadrightarrow A$ と
-可換図式
-\[
- \begin{matrix}
- \operatorname{Spec} A&\longrightarrow&Z_T\\
- \big\downarrow&&\big\downarrow\\
- \operatorname{Spec} A'&\longrightarrow&T
- \end{matrix}
-\]
-を取る。上の点は、$u_A$、$T$ 側の族の還元、両者の指定された
-pointed exact 同型を与える。
-補題~\ref{lem:atlas-artin-lift} がこの図式の持上げを与える。
-よって $Z_T\to T$ は各閉点で smooth である。
-ここで用いているのは有限型 Noetherian 基底上の Artin 持上げ判定
-\cite[Tag 02HY, Lemma 37.12.2]{StacksSmoothAtlas} である。
-同補題が要求する $\beta:\operatorname{Spec} A'\to T$ の有限型性を仮定すると、
-$A'$ は有限型 Artin $k$ 代数であり、その剰余体は $k$ である。
-従って上の持上げは同補題の全ての試験図式を覆う。
-非 smooth locus は閉であり、非空なら閉点を持つので、$Z_T\to T$ 全体が smooth となる。
-
-以上が任意の $T$ に成り立つから、$q:U\to\mathfrak H_2$ は
-表現可能な smooth 射である。
-その fppf 像を $\mathfrak V$ とする。
-各 $T\to\mathfrak H_2$ に対する $\mathfrak V\times_{\mathfrak H_2}T$ は、
-smooth 射 $Z_T\to T$ の像に対応する開部分スキームである。
-実際、この射はその開像上で smooth 全射であり、fppf 局所に section を持つ。
-したがって $\mathfrak V\subset\mathfrak H_2$ は開部分スタックである。
-
-$R=U\times_{\mathfrak H_2}U$ は上と同じ理由で有限型スキームであり、
-二つの射 $R\rightrightarrows U$ は $q$ の基底変更なので smooth である。
-よって $(U,R)$ は smooth groupoid であり、
-\cite[Tags 04X0, 04TK]{StacksSmoothAtlas} により $[U/R]$ は Artin スタックとなる。
-$q$ が $\mathfrak V$ を fppf に覆うことと Isom 層の一致から
-$[U/R]\simeq\mathfrak V$ を得る。
-$U$ は有限型であり、この smooth atlas により $\mathfrak V$ は有限型である。
-さらに $U\to S$ は \'etale、$S$ は滑らかなので $U$ は $k$ 上 smooth であり、
-従って $\mathfrak V$ も $k$ 上 smooth である。
+\begin{proof}
+完全な証明は相対モジュライ別稿 \cite[効果的foundationの滑らかな局所atlas]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[全 site への拡張の範囲]
@@ -352,9 +198,7 @@ $\mathfrak V_Q$ に属し、
 は smooth atlas とその groupoid 表示である。
 \end{corollary}
 \begin{proof}
-定理~\ref{thm:quadric-finite-type-effectivity} が効果性を与え、
-直前の各段落が定理~\ref{thm:atlas-from-effective-foundation} の仮定を確認する。
-従って同定理を適用すればよい。
+完全な証明は相対モジュライ別稿 \cite[効果的foundationの滑らかな局所atlas]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[代数性について残る範囲]
@@ -376,12 +220,5 @@ $\mathfrak V_Q$ の外側を覆う同様の効果的 chart が得られるまで
 必要なら $Q$ の連結開近傍に制限して、$\mathfrak V_Q$ を純次元三に取れる。
 \end{corollary}
 \begin{proof}
-$\mathfrak V_Q\subset\mathfrak H_2$ が開であるため、
-$Q$ を中心とする Artin 変形は両者で同じである。
-系~\ref{cor:quadric-formal-deformation-equivalence} によれば、
-これは pointed Abel 変形と同値であり、
-接空間は $\operatorname{HH}^2(Q)$、無限小自己同型は
-$\operatorname{HH}^1(Q)$ に対応する。その次元はそれぞれ $9,6$ である。
-$\mathfrak V_Q$ は滑らかな Artin スタックなので、局所次元は $9-6=3$ となる。
-滑らかなスタックの次元は局所定数なので、連結開近傍への制限で最後の主張を得る。
+完全な証明は相対モジュライ別稿 \cite[効果的foundationの滑らかな局所atlas]{QuadricModuli2026} に置く。
 \end{proof}

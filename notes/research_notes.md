@@ -402,6 +402,8 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文間の数学的依存と移管の検証単位
 
+**滑らかな局所atlasの正本：** `thm:atlas-from-effective-foundation` など4証明はBの `papers/moduli/quadric_smooth_atlas.tex` に移管した。Aは主張とB引用だけを保持する。
+
 **被約noncubic境界の全幾何：** `thm:noncubic-intrinsic-presentation-equivalence`、`prop:noncubic-all-stabilizers`、`thm:noncubic-dm-coarse`、`thm:noncubic-coincident-formal-pair` を含む16証明はBの `papers/moduli/noncubic_boundary_comparison.tex` に移管した。Aには主張とB引用だけを残す。二形式相対効果性と局所atlasの入力はAに残る。
 
 **全体Artin性と境界smooth性の所在：** `thm:global-h2-smooth-finite-type`、`prop:global-h2-irreducible`、`thm:noncubic-boundary-smooth-codim-two`、`cor:global-xas-smooth-scheme` を含む8証明はBの `papers/moduli/h2_smooth_atlas.tex` に移管した。Aは主張とB引用を残す。局所atlasとcubic/noncubic相対効果性の入力証明はAに残るため、B単独の依存閉鎖は未完了。
