@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.3
+% 日本語 LuaLaTeX。2026-11-21 / v1.4
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -44,7 +44,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.3（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.4（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -78,10 +78,16 @@ cubic の非空開部分を含む全実現点集合は、表示スタックか�
 この族上で反 Serre 導来 Hom は全次数有限自由な次数付き環に集中し、
 cubic と noncubic の双方から同じ九生成元・五十六次元二次関係の
 Grassmann 商への射を得る。
+さらに反 Serre 環は全次数でこの二次関係のみから再構成でき、
+全ての既存の平坦な特殊化族でも同じ二次提示が成り立つ。
 noncubic 表示では階数四の中心 Clifford 表示を用いて相対 Noetherian 性と
 perfect 圏上の相対 Serre 双加群・軌道 Hom を計算する。
 さらに平方根を選ばずに偶数反 Serre 環を降下し、
 その $\qgr$ により基底上の noetherian Abel heart を構成する。
+noncubic の二形式の六係数は二次関係 Grassmannian の
+固定 affine cell に局所閉埋込みとして記述でき、
+全 $\HH$ の関係像は構成可能で、その cubic 像の既約閉包は
+全 noncubic 点を含む有限型既約な代数的包絡を与える。
 相対 heart・平方根・豊富性まで要求する内在的モジュライスタックを
 $\HHstack$ と書くが、その構成と表示スタックとの比較は未完成である。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
@@ -477,6 +483,17 @@ noncubic 表示の perfect 圏上の相対 Serre 双加群と
 さらに命題~\ref{prop:noncubic-relative-heart-veronese} は
 同じ相対環から構造対象付きの noetherian Abel heart
 $\qgr\mathcal R$ を直接構成する。
+系~\ref{cor:h2-intrinsic-antiserre-quadratic} と
+補題~\ref{lem:relative-quadratic-from-fibers} は
+これらの反 Serre 族を二次関係から全次数復元し、
+系~\ref{cor:cubic-relative-full-quadratic-presentation}、
+系~\ref{cor:noncubic-relative-full-quadratic-presentation}、
+系~\ref{cor:line-full-quadratic-degeneration} に適用できる。
+命題~\ref{prop:noncubic-grassmann-explicit-cell} は
+noncubic の六係数を固定 Grassmann affine cell に明示的に埋込み、
+命題~\ref{prop:h2-constructible-relations-and-irreducible-closure} は
+全実現像の構成可能性と有限型既約な代数的包絡を与える。
+これらは内在的な相対 $\HHstack$ との同値の証明ではない。
 相対条件を満たす内在的モジュライへこの結論を移すには、
 位相の一致、またはこれらの族の相対 $\HH$ 認識を示せば十分である。
 \end{problem}
