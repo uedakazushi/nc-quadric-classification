@@ -1,0 +1,226 @@
+% !TEX root = ../nc-quadric-moduli.tex
+% 2026-11-22 / v1.9（相対AS被覆の有限判定とfppf像の反例をBへ移管）
+\section{固定した相対切断環の二次 AS 被覆}
+\label{sec:relative-as-cover}
+
+平方根を固定した相対軌道環が既に得られている場合には、
+その AS 被覆の存在を有限表示の問題へ帰着できる。
+以下では被覆を選ぶ空間と、被覆の存在だけを要求する部分関手を区別する。
+特に前者の代数性だけから後者の代数性を結論しない。
+
+\begin{theorem}[二次被覆の相対有限判定]
+\label{thm:relative-finite-as-cover}
+$S$ を Noetherian スキーム、$\mathcal V$ を階数四の局所自由層、
+$\mathcal K\subset\mathcal V^{\otimes2}$ を階数七の局所直和因子とする。
+二次環
+\[
+ \mathcal B=T_{\mathcal O_S}(\mathcal V)/(\mathcal K)
+\]
+について、各 $\mathcal B_n$ が有限局所自由で階数 $(n+1)^2$ を持ち、
+全ての代数閉体からの射 $\bar s\to S$ に対して
+$\mathcal B_{\bar s}$ が左右 noetherian な Koszul 環であると仮定する。
+さらに $S$ の各アフィン開上で $\mathcal B$ は左右 noetherian とする。
+この条件の任意の底変更への保存は仮定しない。
+
+$G=\operatorname{Gr}_S(6,\mathcal K)$ とし、
+普遍部分束を $\mathcal J$、商直線束を
+$\mathcal L=\mathcal K/\mathcal J$ とする。
+$G$ 上の二次環を
+\[
+ \mathcal A=T(\mathcal V)/\mathcal J,\qquad
+ \mathcal D=\mathcal A^!=T(\mathcal V^*)/(\mathcal J^\perp)
+\]
+と書く。
+次の条件を満たす局所閉部分スキーム $E_{\mathcal B}\subset G$ が存在し、
+$S$ 上有限表示である。
+\begin{enumerate}
+\item $\mathcal A_3,\mathcal A_4$ が階数 $20,35$ の局所自由層である。
+\item $\mathcal D_3,\mathcal D_4,\mathcal D_5$ がそれぞれ
+階数 $4,1,0$ の局所自由層である。
+次数零、一、二の階数は既に $1,4,6$ である。
+\item 次数三の左右の積の像が、層として
+\[
+ \operatorname{im}(\mathcal L\otimes\mathcal V\to\mathcal A_3)
+ =\operatorname{im}(\mathcal V\otimes\mathcal L\to\mathcal A_3)
+\]
+である。
+\item $i=1,2$ に対する左右の積
+\[
+ \mathcal L\otimes\mathcal A_i\longrightarrow\mathcal A_{i+2},
+ \qquad
+ \mathcal A_i\otimes\mathcal L\longrightarrow\mathcal A_{i+2}
+\]
+が局所直和因子への単射である。
+\item $i=1,2,3$ に対する積
+$\mathcal D_i\otimes\mathcal D_{4-i}\to\mathcal D_4$
+が完全な双線型組合せである。
+\end{enumerate}
+
+任意の Noetherian $S$-スキーム $T$ と
+$\mathcal J_T\subset\mathcal K_T$ について、
+$T\to G$ が $E_{\mathcal B}$ を経由することは、次と同値である。
+\begin{enumerate}[label=(\alph*)]
+\item $\mathcal A_T=T(\mathcal V_T)/(\mathcal J_T)$ の全次数が
+有限局所自由であり、全ての幾何ファイバーが型 $(1,4,6,4,1)$ の
+AS 正則環である。
+\item $\mathcal L_T\subset(\mathcal A_T)_2$ は、局所生成元を選ぶと
+左右正則正規元で生成される。
+その正則性は任意の底変更後にも保たれ、
+$\mathcal A_T/(\mathcal L_T)\simeq\mathcal B_T$ である。
+\end{enumerate}
+このとき $\operatorname{rank}(\mathcal A_T)_n=\binom{n+3}{3}$ であり、
+左右の相対 Koszul 解消および双加群 Koszul 解消は長さ四で、
+任意の底変更と両立する。
+また、左右それぞれの相対 AS Gorenstein 条件は
+\[
+ \underline{\operatorname{Ext}}_{\mathcal A_T}^i
+       (\mathcal O_T,\mathcal A_T)
+ \simeq
+ \begin{cases}
+  (\mathcal D_T)_4\otimes\mathcal O_T(4),&i=4,\\
+  0,&i\ne4
+ \end{cases}
+\]
+となる。最高次数の直線束は局所的に自明化できる。
+ここでの長さ四は相対解消の長さであり、
+特異な基底上の環全体の大域次元を四と主張するものではない。
+
+各アフィン開上で $\mathcal A_T$ が左右 noetherian であることは、
+$\mathcal B_T$ が左右 noetherian であることと同値である。
+従って $\mathcal B$ が全ての Noetherian 底変更の後にも左右 noetherian
+であるという追加仮定の下では、$E_{\mathcal B}$ は
+固定された $\mathcal B$ への全ての相対 noetherian AS 被覆を表現する。
+この追加仮定を置かない場合は、$\mathcal B_T$ が左右 noetherian となる
+テスト基底に限って同じ結論を用いる。
+\end{theorem}
+\begin{proof}
+まず有限表示の部分スキームを構成する。
+任意の固定次数 $n$ で、$\mathcal A_n$ と $\mathcal D_n$ は
+有限階数の局所自由層の間の射の余核として表示される。
+有限行列の余核が指定階数の局所自由層となる条件は、
+より大きな minor の消滅と所定の minor が局所的に単位である条件で
+表される。これは余核の局所自由性を普遍的に表す
+\emph{scheme-theoretic な}局所閉階数条件である。
+従って (1), (2) を課した部分スキームは局所閉である。
+
+その上で (4) は最大階数 minor による開条件であり、
+左右の次数三の像は階数四の部分束になる。
+二つの部分束の一致は、一方から他方の商への射が零となる
+閉条件で表される。同じ階数の部分束間の包含は一致を意味するので、
+これが (3) を正確に表す。
+(5) は局所自由層間の同型を要求する開条件である。
+従って全条件の交叉は所要の $E_{\mathcal B}$ を与える。
+特に、幾何点で minor が零というだけで被約構造を取っているのではなく、
+これらの射と minor 自体の消滅を課している。
+この構成は非被約なテスト基底も含めて普遍的である。
+
+条件 (1)--(5) を満たす $T$ を取る。
+各幾何ファイバーに分類論文の有限 ambient 判定~\cite[二次 AS 被覆の有限判定]{QuadricIntrinsic2026} を適用すると、
+$(\mathcal A_T)_{\bar t}$ は AS 正則で、
+$\mathcal L_{\bar t}$ の生成元は正則正規となる。
+特に全てのファイバーは Koszul である。
+$\mathcal A_T$ の次数一、二、三は階数 $4,10,20$ の局所自由層なので、
+分類論文の相対 Koszul 三次判定~\cite[相対 Koszul 三次判定]{QuadricIntrinsic2026} により
+全次数が局所自由であり、相対 Koszul 複体も得られる。
+階数はファイバー上の AS Hilbert 級数から決まる。
+
+局所的に $\mathcal L_T$ を $g$ で生成する。
+(3) は $g\mathcal V_T=\mathcal V_Tg$ を意味するため、
+次数一生成性を使って生成元を一つずつ移すことにより
+$g\mathcal A_T=\mathcal A_Tg$ を得る。
+ここでは全ての等式が基底上で成立し、底変更後も同じである。
+各次数の左右の $g$ 乗法は、既に局所自由と分かった層の間の射であり、
+全ての幾何ファイバーで単射である。
+従って局所直和因子への単射となり、任意の底変更後も単射である。
+これで全次数の左右正則性を得る。
+商の同一視は $\mathcal J_T\subset\mathcal K_T$ の表示から直接従う。
+
+$\mathcal D_5=0$ と一次生成性から $\mathcal D_i=0$ ($i>4$) である。
+相対 Koszul 解消の係数は $(\mathcal D_i)^*$ なので長さ四となる。
+完全な組合せ (5) によって、この解消の $\mathcal A_T$-双対は、
+最高次数の直線束、次数四の移動、および Frobenius 自己同型による
+捻りを除いて反対側の Koszul 解消に同定される。
+従って表示した左右の Ext の式を得る。
+双加群 Koszul 複体も各内部次数で有限な局所自由複体であり、
+そのファイバーは Koszul 環の対角双加群の解消である。
+分類論文の相対 Koszul 三次判定~\cite[相対 Koszul 三次判定]{QuadricIntrinsic2026} と同じ
+ファイバーによる完全性の判定から、
+各次数で局所分裂完全となり、任意の底変更と両立する。
+各項は $\mathcal A_T^e$ 上の有限局所射影加群なので、
+これは相対対角双加群の長さ四の射影解消である。
+
+逆に (a), (b) を仮定する。
+次数三、四の階数はファイバー上の Hilbert 級数から (1) となる。
+全ファイバーが Koszul で次数三までが局所自由であるため、
+分類論文の相対 Koszul 三次判定~\cite[相対 Koszul 三次判定]{QuadricIntrinsic2026} により
+関係の交叉と二次双対の各次数は底変更と両立して局所自由となる。
+ファイバー上の型と Frobenius 性から (2), (5) が従う。
+正規性から (3)、正則性と商 $\mathcal B_T$ の局所自由性から
+(4) が従う。従って有限条件が必要でもある。
+
+最後に noetherian 性を示す。
+$\mathcal A_T$ が左右 noetherian ならその商もそうである。
+逆向きはアフィン局所に $g$ と最高次数直線束を自明化して考える。
+正則正規性から $g$ による正規化自己同型が存在し、
+$(g)$ 進付随次数環は $\mathcal B_T$ 上の skew polynomial 環である。
+$\mathcal B_T$ が左右 noetherian ならこの付随次数環もそうである。
+内部次数を固定すると $(g)$ 進フィルトレーションは有限だから、
+斉次イデアルの初期生成元を有限個持ち上げることで
+元の斉次イデアルも有限生成となる。
+一般のイデアルには内部次数による最高次成分のイデアルを用いて
+同じ持上げを適用できる。よって $\mathcal A_T$ も左右 noetherian である。
+この議論は $\mathcal B_T$ の noetherian 性を用いており、
+$\mathcal B$ 自身またはその幾何ファイバーだけの noetherian 性から
+任意の $\mathcal B_T$ の noetherian 性を導いているのではない。
+\end{proof}
+
+\begin{remark}[相対被覆の存在として残る問題]
+固定された平方根の相対軌道環 $\mathcal B$ に上の定理を適用できるとき、
+被覆が fppf 局所に存在することは、有限表示の射
+$E_{\mathcal B}\to S$ が fppf 局所に切断を持つことに等しい。
+しかし、その射が滑らか・平坦・全射であるとは証明していない。
+平方根そのものの相対存在と、得た被覆が相対 Serre 公式に適合することも
+この定理の入力の外にある。
+従ってこの有限表示への帰着だけを $\HHstack$ の代数性の証明としてはならない。
+\end{remark}
+
+\begin{example}[有限型射の fppf 像は代数的とは限らない]
+\label{ex:fppf-image-nonalgebraic}
+体 $k$ 上の有限型射
+\[
+ f:\mathbb A^2_{a,c}\longrightarrow\mathbb A^2_{a,b},
+ \qquad (a,c)\longmapsto(a,ac)
+\]
+を考え、その fppf 層としての像を $I$ とする。
+$I$ は $\mathbb A^2_{a,b}$ の部分層であるが、
+代数空間では表現できない。
+\end{example}
+\begin{proof}
+アフィン基底 $T=\operatorname{Spec}D$ 上で、
+$(a,b)\in D^2$ が $I(T)$ に属することは $b\in aD$ と同値である。
+実際、fppf 局所で $b=ac$ と書ければ、
+$D/(a)$ における $b$ の像が忠実平坦な被覆上で零となる。
+準連接層の切断の降下により既に零であり、$b\in aD$ となる。
+逆向きは明らかである。
+
+原点の双対数上の接ベクトルを
+$a=u\varepsilon,b=v\varepsilon$ と書くと、
+\[
+ T_0 I\ \longrightarrow\ T_0\mathbb A^2=k^2
+\]
+の像は集合として
+\[
+ \{(u,v)\in k^2\mid u\ne0\}\ \cup\ \{(0,0)\}
+\]
+となる。これは線型部分空間ではない。
+例えば $(1,0)$ と $(-1,1)$ は属するが、その和 $(0,1)$ は属さない。
+もし $I$ が代数空間なら、単射 $I\to\mathbb A^2$ が誘導する接写像は
+接ベクトル空間間の線型単射であり、その像は線型部分空間になる。
+これは矛盾である。
+\end{proof}
+
+この例は、幾何点の構成可能な像や scheme-theoretic image を求めることと、
+非被約基底上の fppf 局所存在条件を表すこととの相違を示す。
+\emph{この例から $\HHstack$ 自身の非代数性は結論しない。}
+本研究では、平方根と被覆を忘れた部分関手の代数性を得るために、
+さらに局所切断、相対認識、または同値関係の表示を証明する必要がある。
