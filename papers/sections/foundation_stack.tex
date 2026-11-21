@@ -613,6 +613,156 @@ $\HH$ 部分関手の有限表示、および相対再構成の証明は別に�
 $\operatorname{HH}^3$ の消滅だけから、これらの相対条件は結論しない。
 \end{remark}
 
+\subsection{反 Serre 環の全次数を二次関係から回復する補題}
+\label{subsec:relative-quadratic-veronese}
+
+これまでの九生成元の関係 Grassmann 射は、
+二次成分だけを記録するものとして構成した。
+以下では、$\HH$ の反 Serre 環がその二次関係で
+\emph{全次数にわたり}復元できることを、
+非被約基底にも有効な初等的議論で示す。
+
+\begin{lemma}[二次環の偶数 Veronese は相対的に二次]
+\label{lem:relative-quadratic-veronese}
+$A$ を可換環、$V$ を有限生成射影 $A$-加群、
+$I\subset V^{\otimes2}$ を部分加群とし、
+$B=T_A(V)/(I)$ とする。
+$E=B_2$、$J=\ker(E\otimes_AE\to B_4)$ と置くと、
+自然な射は次数付き環の同型
+\[
+ \frac{T_A(E)}{(J)}
+    \xrightarrow{\ \sim\ } B^{(2)}
+    :=\bigoplus_{n\ge0}B_{2n}
+ \tag{QV}\label{eq:relative-quadratic-veronese}
+\]
+を与える。さらに次数を保つ $B$ の自己同型 $\alpha$ によって
+$a\star b=a\,\alpha^n(b)$（$a\in B_{2n}$）と定義した
+twist は、同じ $E$ からの二次環
+\[
+ T_A(E)/(J_\alpha),\qquad
+ J_\alpha=(\operatorname{id}_E\otimes\alpha^{-1})(J)
+\]
+に同型である。この二次表示は任意の底変更に両立する
+（ただし $J$ そのものの底変更には $B_4$ の平坦性を要する）。
+\end{lemma}
+\begin{proof}
+$n\ge2$ に対し、$V^{\otimes2n}$ で隣接二文字ずつを
+$n$ 個の block に分ける。
+各 block の内部にある $I$ を零にした商は、
+tensor 積の右完全性により
+\[
+ (V^{\otimes2}/I)^{\otimes n}=E^{\otimes n}
+\]
+である。$B_{2n}$ を得るために追加で零にすべき二次関係は
+block の境界を跨ぐ位置の $I$ だけである。
+一つの境界を跨ぐ関係の像は、隣接する二つの
+$E$-block の間の
+\[
+ J=\ker(E^{\otimes2}\longrightarrow B_4)
+\]
+そのものである。実際、$B_4$ は四文字における
+左・右の block 内部の $I$ と、
+中央二文字にかかる $I$ を全て零にした商である。
+従って
+\[
+ \ker(E^{\otimes n}\to B_{2n})
+ =\sum_{j=0}^{n-2}
+ E^{\otimes j}\otimes J\otimes
+ E^{\otimes(n-j-2)}
+\]
+となり、式~(\ref{eq:relative-quadratic-veronese}) が従う。
+この議論は純粋に tensor 積の商であり、体上の次元計算や
+平坦性を使わない。
+
+twist の次数 $n$ における積写像は、
+$E^{\otimes n}$ に
+\[
+ a_1\otimes\cdots\otimes a_n
+ \longmapsto
+ a_1\otimes\alpha(a_2)\otimes\cdots
+      \otimes\alpha^{n-1}(a_n)
+\]
+を作用させた後の通常の乗法である。
+$\alpha\otimes\alpha$ は $J$ を保つので、
+上の核の各隣接成分は
+$(\operatorname{id}\otimes\alpha^{-1})(J)$ に移る。
+よって twist の関係も二次で尽くされる。
+底変更する場合には $B$、その Veronese と twist の定義は
+tensor 積から直接底変更する。$J$ をその核と同一視して
+基底変更するためには、$B_4$ が平坦であることを確認すればよい。
+\end{proof}
+
+\begin{corollary}[$\HH$ の反 Serre 環は二次]
+\label{cor:h2-intrinsic-antiserre-quadratic}
+代数閉体上の任意の $(\mathcal C,\mathcal O)\in\HH$ に対し、
+$t=S^{-1}[2]$ の反 Serre 軌道環
+\[
+ R^{\mathrm{as}}(\mathcal C,\mathcal O)
+ =\bigoplus_{n\ge0}\Hom(\mathcal O,t^n\mathcal O)
+\]
+は、次数一生成であり、二次関係だけで表示される。
+生成元は九次元、二次関係は五十六次元で、
+\[
+ \dim R^{\mathrm{as}}_n=(2n+1)^2.
+\]
+これは適合平方根の選択に依存しない。
+\end{corollary}
+\begin{proof}
+$\HH$ の定義により、選べる平方根 $s$ の
+全切断環 $B(\mathcal C,\mathcal O,s)$ は二次生成の
+正則正規二次商であり、Hilbert 関数は $(n+1)^2$ である。
+$s^2\simeq t$ を通じてその偶数 Veronese は
+内在的反 Serre 軌道環に同型となる。
+直前の補題を適用すれば二次表示となる。
+第一・第二次数の次元は $3^2=9$、$5^2=25$ なので、
+二次関係の次元は $9^2-25=56$ である。
+\end{proof}
+
+\begin{lemma}[体上で二次なら全平坦族でも二次]
+\label{lem:relative-quadratic-from-fibers}
+$T$ を局所 noetherian スキームとし、
+$\mathcal R=\bigoplus_{n\ge0}\mathcal R_n$ を
+$\mathcal R_0=\mathcal O_T$、
+各 $\mathcal R_n$ が有限局所自由である
+次数付き代数とする。
+全ての幾何ファイバーが次数一生成かつ二次関係で
+表示されると仮定する。
+このとき $\mathcal R$ 自身も、任意の底変更と両立する
+次数一生成・二次関係の相対表示を持つ。
+特に $\operatorname{rank}\mathcal R_1=9$、
+$\operatorname{rank}\mathcal R_2=25$ の場合は
+\[
+ \mathcal R\simeq
+ T_{\mathcal O_T}(\mathcal R_1)/(\mathcal J),
+ \qquad
+ \mathcal J=\ker(\mathcal R_1^{\otimes2}\to\mathcal R_2),
+ \quad\operatorname{rank}\mathcal J=56.
+ \tag{flat-Q}\label{eq:relative-quadratic-from-fibers}
+\]
+\end{lemma}
+\begin{proof}
+各幾何点で積
+$\mathcal R_1^{\otimes n}\to\mathcal R_n$ が全射なので、
+有限局所自由な標的に対する余核の Nakayama 補題により
+すべての $n$ で全射である。
+特に二次積は全射であり、$\mathcal J$ は有限局所自由な
+局所直和因子で、任意の底変更と整合する。
+$\mathcal Q=T(\mathcal R_1)/(\mathcal J)$ から
+$\mathcal R$ への次数別全射を取る。
+幾何点上では双方の次数 $n$ が
+仮定により同型である。局所 noetherian 性により、
+核 $\mathcal K_n$ は有限生成であり、
+$\mathcal R_n$ が平坦なため
+\[
+ \mathcal K_n\otimes k(x)
+ =\ker(\mathcal Q_n\otimes k(x)\to
+                 \mathcal R_n\otimes k(x))=0.
+\]
+Nakayama 補題から $\mathcal K_n=0$ となる。
+この同型と $\mathcal R_n$ の局所自由性により
+全次数で任意の底変更と可換する。
+\end{proof}
+
 \subsection{cubic 上の相対反 Serre 環と九生成元の表示}
 \label{subsec:cubic-relative-antiserre}
 
