@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.6（数学原稿v1.5）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.7（数学原稿v1.6）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -36,6 +36,9 @@
 | 二次Veroneseと相対平坦族 | 任意の二次環BのB^(2)はT(B₂)/(ker(B₂²→B₄))、自己同型twist後も二次。Noetherian底でR_n局所自由かつ全幾何fiberが二次なら族も二次 | 一般事実はPolishchuk–Positselski既知。本研究の相対直接証明はlem:relative-quadratic-veroneseとlem:relative-quadratic-from-fibers |
 | 全H2の内在的反Serre環 | R=⊕Hom(O,tⁿO)は全て九生成元・rank56の二次関係だけで表示。cubic/noncubic chart、cubic→noncubic特殊化も全次数で二次提示が基底変更する | cor:h2-intrinsic-antiserre-quadratic, cor:cubic-relative-full-quadratic-presentation, cor:noncubic-relative-full-quadratic-presentation, cor:line-full-quadratic-degeneration |
 | noncubic の固定Grassmannセル | u²,uv,v²,uc,vc,ud,vd,cd,dcの9基底。積25列がB₄の交互語PBW基底に符号付き一対一。minor±1。p₀⋆p₀=−u²f₁とq₀⋆q₀=−u²f₂から6係数を回収。A6→固定Gr cellは閉埋込み、非退化Pは局所閉 | prop:noncubic-grassmann-explicit-cell。フレーム付き表示空間の命題でありPGL9群商の閉埋込みではない |
+| noncubicの Koszul 性と一次全次数平坦性 | 二重平方環の二次 Gröbner（PBW）表示からBはKoszul、偶数VeroneseとZhang twistのRもKoszul。三次の重なりの一次整合はKoszulの次数0 Hochschild 2-cocycle条件に一致し、双対数上の二次関係変形が三次平坦なら全次数平坦 | prop:noncubic-antiserre-koszul, lem:koszul-first-order-degree-three。二次以降の一般Artin族には未拡張 |
+| noncubicの内部次数0 Hochschild 次元 | 非交差、一根共有、一致根対でHH¹_0=1,1,2、HH²_0=3,3,5。C¹=81、C²=1400、C³=16072、rank(d¹)=80,80,79、rank(d²)=1317,1317,1316 | thm:noncubic-hh01-hh2。foundation代数のHH≥3消滅とは異なる |
+| 横断2/2/3方向の二次持上げ | 三次Hilbert locusの横断部分の各基底ベクトルと二基底の全ての和について、Schur補行列の二次障害を打ち消す有理数補正を計算し整数行列で正確に検査。全横断方向がk[t]/(t³)上で三次成分平坦な2-jetを持つ | prop:noncubic-transverse-second-order。全次数の二次flatness・3次以上の形式積分・相対H2実現は未証明 |
 | noncubicのLie接方向と三次Hilbert条件 | disjoint, shared, equalの三点でPGL9軌道+六係数のrank81（軌道80/80/79、交点5/5/4）。三次関係L:V⊗J→(V²/J)⊗Vはrank176、kernel328/cokernel49。法101の全16072線形条件rank1317/1317/1316。標数零で接次元=83/83/84（有理核の全整数検証）、三次条件の接空間を群+係数81方向で割った次元は正確に2/2/3（実際の相対H2変形かは未証明） | prop:noncubic-third-degree-tangent。局所SymPy/NumPy/Numba exact演算を実行。次数4のHilbert条件・実際の内在H2とは未同定 |
 | 関係式像の構成可能性と既約閉包 | 2つの有限型chartの像の和はH2の全幾何関係像。Chevalleyで構成可能。cubic枠束像の被約閉包Z₂はPGL9不変既約有限型、全noncubicは反Serre二次族による特殊化で[Z₂/PGL9]に入る | prop:h2-constructible-relations-and-irreducible-closure。Z₂の全点がH2とは未証明。有限表示の内在的X_asとは別 |
 | noncubicの相対heart・相対orbit | `R`の`qgr R`を構造対象付きnoetherian Abel heartとして任意のNoetherian基底上に定義。étale局所に`qgr B^σ≃qgr R`。weighted P(1,1,2)上`RHom(B,tⁿB)=B₂ₙ[0]`が全n・底変更に整合（`cor:noncubic-relative-orbit-hom`, `prop:noncubic-relative-heart-veronese`） | 任意の内在的noncubic族のこの相対heartへの帰着、全flat coherent対象の相対双対・AZ/AS等 |
@@ -43,7 +46,11 @@
 | 共通Grassmann射と実際の特殊化 | cubic開Cとnoncubic表示[P/G]の双方から`[Gr(56,81)/PGL9]`へ射。各noncubic点へのfoundation直線族も全次数平坦な反Serre環の族を与える | 両chartの相対的な貼合せとfull内在H2との同値 |
 | 選んだSerre根の一次変形障害 | 持上げにはHH²類の保存が必要。Q上でs_*u=−uとなる適合根と非零変形を構成 | 別の根の存在や相対H2条件の開性は判定しない |
 
-**三次関係階数の接空間。** 基準 $\dim V=9,\dim J=56,\dim R_2=25,\dim R_3=49$ に対して $L_J:V\otimes J\to (V^{\otimes2}/J)\otimes V$ のrankが176となる。このrank≤176のdeterminantal locusの接ベクトルは $\phi\in\operatorname{Hom}(J,R_2)$ で $\ker L_J\to\operatorname{coker}L_J$ の線形化が零となるもの。56×9=504、25×9=225、kernel328、cokernel49で、条件行列は16072×1400である。固定pivotで $J$ の affine 座標を取り、法101で三根配置ごとに全行を簡約した階数は1317,1317,1316。整数係数のminorは標数零でも非零なので、まず標数零の接次元は≤83,83,84。さらに法101核基底から83,83,84本の有理ベクトルを復元し、整数係数の線形化行列で全ベクトルの零性を厳密に確認したため、標数零でも接次元は**正確に**83,83,84である。ただし、この2/2/3方向が次数4以降のHilbert条件や内在的H2を満たすかは未確定。PGL9と六係数の接像は、群Gの軌道による上界と法101でのrank81の下界から標数零で正確に81。群商スタックの次元1と、Grassmann内にあるframed接像81を混同しない。次は次数4のrank条件を併せて横断方向を検査する。
+**Koszul の低次変形と二次障害。** Rのquadratic Koszul bimodule complexで内部次数0のHochschild cochainはC¹=Hom(V,R₁)、C²=Hom(J,R₂)、C³=Hom(K₃,R₃)、K₃=(V⊗J)∩(J⊗V)である。三次Hilbert条件の線形化がd²であり、degree-3 flatな双対数上の二次関係は全次数flatなgraded algebra first-order deformationを与える。三基準点のd²核83,83,84とd¹像80,80,79からHH²_0=(3,3,5)を得る。HH¹_0はEuler導分を含み=(1,1,2)。これは有限foundation代数の高次HH消滅を言い換えたものではない。
+
+**横断方向の二次持上げ。** L₀の176×176単位行列式小行列Aを取り、L(t)=L₀+tL₁(φ)+t²(L₁(ψ)+L₂(φ))をSchur補行列で展開する。K₀をkernel、Q₃をcokernel基底射影として、Q(φ)=Q₃(L₂(φ)K₀−L₁(φ)i_CA^{-1}(L₁(φ)K₀)|_I)を計算する。全三点で横断基底(2,2,3本)と相異なる二基底の和(1,1,3本)に対しd²ψ=−Q(φ)の有理補正を構成し、整数行列積で厳密に確認した。一致根対では分母2の補正も現れる。Qが二次式であるため、これらの零性から全横断線形結合への補正が構成できる。ただし結論はあくまで **R₃のrank49条件のk[t]/(t³)-平坦性**であり、全次数の二次平坦性、HH³の消滅、正式な相対H2族と混同しない。
+
+**三次関係階数の接空間。** 基準 $\dim V=9,\dim J=56,\dim R_2=25,\dim R_3=49$ に対して $L_J:V\otimes J\to (V^{\otimes2}/J)\otimes V$ のrankが176となる。このrank≤176のdeterminantal locusの接ベクトルは $\phi\in\operatorname{Hom}(J,R_2)$ で $\ker L_J\to\operatorname{coker}L_J$ の線形化が零となるもの。56×9=504、25×9=225、kernel328、cokernel49で、条件行列は16072×1400である。固定pivotで $J$ の affine 座標を取り、法101で三根配置ごとに全行を簡約した階数は1317,1317,1316。整数係数のminorは標数零でも非零なので、まず標数零の接次元は≤83,83,84。さらに法101核基底から83,83,84本の有理ベクトルを復元し、整数係数の線形化行列で全ベクトルの零性を厳密に確認したため、標数零でも接次元は**正確に**83,83,84である。ただし、この2/2/3方向が次数4以降のHilbert条件や内在的H2を満たすかは未確定。PGL9と六係数の接像は、群Gの軌道による上界と法101でのrank81の下界から標数零で正確に81。群商スタックの次元1と、Grassmann内にあるframed接像81を混同しない。次数4の一次平坦性は今回のKoszul一次変形原理から従うので別計算不要。次は次数三以上のobstructionとfoundation横断射、相対heartの認識を検査する。
 
 **具体的な25 pivot と完全二次提示。** 二重平方環の交互語PBW基底から $\mathcal R_1$ の九基底 $x_0=u^2,x_1=uv,x_2=v^2,p_0=uc,p_1=vc,q_0=ud,q_1=vd,z=cd,z'=dc$ を取る。$\mathcal R_2=B_4$ の交互語長0,1,2,3,4の基底数は順に5,8,6,4,2。主原稿式(NC-25)の積25個はそれらと符号付きで一致するためminorは±1であり、六係数は$p_0\star p_0=-u^2f_1,q_0\star q_0=-u^2f_2$から復元できる。これは全パラメータの多項式恒等式であり、判別式の非消滅はH2実現部分を選ぶためだけに必要。二次Veronese一般定理の既知性はPolishchuk–Positselski, Chapter 3 Prop.2.2に帰属する（原著の定理文は公開閲覧資料で照合し、相対版は本文で直接証明）。この結果によりGrassmann射がRの**全次数**を規定することは確立したが、Grassmannian上の任意の点に対応するRがH2を実現するとは限らない。
 
@@ -189,11 +196,18 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 - `computations/verify_noncubic_degree3_tangent.py` をmainに追加。NumPy・Numbaは**オプション依存**（標準math suiteには追加しない）。法101、有限体の整数行基本変形で3つの代表根配置を全て検証する。既存の25 pivotスクリプトを再利用する。実行コマンドは `python3 computations/verify_noncubic_degree3_tangent.py`（必要なら `python3 -m pip install numpy numba`）。
 - 今回の作業環境で独立した同等のローカル計算コードを実行し、3点のPGL9 orbit／六係数／合成の階数を(80,6,81)、(80,6,81)、(79,6,81)、三次Hilbert条件の行列を16072×1400として全行rank1317、1317、1316でPASSと確認した。法103で一般点rank1317も照合した。加えて、法101核83,83,84本の分母2以下・分子絶対値5以下の有理数再構成から整数ベクトルを作り、整数係数の全16072×1400行列で積が厳密に零になることを確認した。自由変数の対角成分からそれらは有理数上独立であり、法101の階数下界と併せて標数零の正確な接次元を証明する。これは**厳密な整数計算**であり、数値的近似ではない。
 - 公表用命題の標数零での結論は、群作用によるrank81の上界と法101rankの下界、および三次Hilbert条件に対する整数核ベクトルの構成・検証を組み合わせたもの。実際の `\mathfrak H_2` の接空間を証明したわけではない。今回GitHubに保存したスクリプトそのものを独立にcheckoutして再実行したことや、新版全文のLuaLaTeX組版を主張しない。
-- v1.4のソース部分に行った静的検査と、v1.2で実施した97頁のPDF組版は、それぞれの当時の確認範囲である。v1.5の全ソースchecker・全math suite・LuaLaTeX組版は未実施。
+- v1.4のソース部分に行った静的検査と、v1.2で実施した97頁のPDF組版は、それぞれの当時の確認範囲である。v1.6の全ソースchecker・全math suite・LuaLaTeX組版は未実施。
+
+### v1.6 で加えた数学・検証の射程
+
+- 数学的結果：noncubic R の Koszul 性（PBW、Veronese、Zhang）、三次平坦な一次二次関係変形の全次数平坦性（Koszul双加群解消の次数0 cocycle）、三基準点でのHH¹_0=(1,1,2)およびHH²_0=(3,3,5)、横断方向の三次Hilbert条件の二次持上げ。証明の正本は noncubic_stack.tex の対応ラベルを参照する。
+- 新しい再現資産は computations/verify_noncubic_second_order.py。NumPy>=1.24、Numba>=0.60、既存SymPyが必要。順番に python3 computations/verify_noncubic_degree3_tangent.py と python3 computations/verify_noncubic_second_order.py を実行する。両ファイルは重い有限体・整数検算なので標準math suiteの必須依存にしない。
+- 同等のローカル探索コードでは、三基準点の横断2/2/3方向の全基底と全二項和について、法101での可解性、法101²と有理数の再構成、**整数係数での残差恒等零**を確認した。二根対一致点の補正で分母2を要する組合せもある。最初に一度ベクトル化の転置規約が不一致になった候補は廃棄し、正しい線型化との一致を確認して検証し直した。
+- GitHub上の再現コードはmainへ保存したが、**保存したコードそのものを独立環境へcloneして再実行したことは確認していない。** v1.6全ソースchecker・全文LuaLaTeX組版・PDF表示、既存全math suiteの再実行は未実施。v1.2の97頁PDF組版は旧版の実施記録であり現行版への保証ではない。外部査読・形式証明・包括的新規性判定も未実施。
 
 ## 検証範囲と再現手順
 
-**現行v1.5（2026-11-21）：相対反Serre・Clifford追補の全体組版および既存計算の再実行は未実施。** v1.2の構成確認・97頁LuaLaTeX組版はPASSだったが、現行v1.3のPASSとは扱わない。 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
+**現行v1.6（2026-11-21）：相対反Serre・Clifford追補の全体組版および既存計算の再実行は未実施。** v1.2の構成確認・97頁LuaLaTeX組版はPASSだったが、現行v1.3のPASSとは扱わない。 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
 
 実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。
 
