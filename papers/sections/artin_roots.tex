@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.25
+% 2026-11-21 / v1.26
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1199,6 +1199,31 @@ $\bigoplus_{n\ge0}H^0(Q,\mathcal O_Q(n,n))\otimes_k\kappa(R)$
 \end{proof}
 
 
+
+\begin{corollary}[可換点の Noetherian 局所基底での AZ 豊富性]
+\label{cor:quadric-local-AZ-ampleness}
+系~\ref{cor:quadric-local-chi} の
+可換点を閉点に持つ任意の有限次元 Noetherian 局所基底 $R$ では
+\[
+ (\pi B_R,(1))
+\]
+は $\operatorname{qgr}B_R$ 上で
+Artin--Zhang ample、すなわち (A1), (A2) の
+両条件を満たす。
+ただし非局所・非平坦な有限型 $R$-代数への
+任意基底変更後の (A2)、canonical compact
+導来圏との比較、相対 Serre 条件、
+内在的 $\mathfrak H_2$ の代数性は結論しない。
+\end{corollary}
+\begin{proof}
+系~\ref{cor:quadric-local-chi} により
+$B_R$ は右 Noetherian で相対 $\chi_1$ を満たし、
+全 $B_{R,n}$ は有限自由である。
+補題~\ref{lem:relative-chi1-implies-AZ-A2} により (A2) が従う。
+(A1) は系~\ref{cor:quadric-local-tails-basechange-generation}
+を $R'=R$ として適用すればよい。
+\end{proof}
+
 \begin{remark}[この代数化で残る条件]
 得られたのは有限 foundation の perfect 圏上の平方根、
 命題~\ref{prop:quadric-etale-finite-window} の四項窓、
@@ -1212,7 +1237,9 @@ Zariski 局所 homological AS4 被覆、
 系~\ref{cor:quadric-point-local-noetherian-as4} の
 幾何的 cubic 開の各点の局所環上の Noetherian AS4 被覆、
 系~\ref{cor:quadric-local-chi} の可換点を閉点に持つ
-全 Noetherian 局所基底での相対 $\chi$ 性である。
+全 Noetherian 局所基底での相対 $\chi$ 性、
+及び系~\ref{cor:quadric-local-AZ-ampleness} の
+同じ局所基底における AZ 豊富性である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その被覆と根が Noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、

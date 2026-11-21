@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.25
+% 2026-11-21 / v1.26
 \section{三次平坦性から全次数平坦性への相対的な認識}
 \label{sec:relative-koszul}
 
@@ -336,6 +336,102 @@ $M$ に対する結論を得る。
 左側についても反対環に同じ帰納法を適用する。
 \end{proof}
 
+
+
+\begin{lemma}[相対 \texorpdfstring{$\chi_1$}{chi1} から AZ (A2) へ]
+\label{lem:relative-chi1-implies-AZ-A2}
+$R$ を Noetherian 可換環、
+$B=\bigoplus_{n\ge0}B_n$ を $B_0=R$ の
+右 Noetherian な非負次数付き環とする。
+$R$ は中心に入り、各 $B_n$ は有限 projective $R$-加群とする。
+全ての有限生成次数付き右 $B$-加群 $M$ について
+\[
+ \underline{\operatorname{Ext}}_B^j(R,M)
+ \quad(j=0,1)
+\]
+が全内部次数を合わせて有限生成 $R$-加群
+であると仮定する（相対 $\chi_1$）。
+このとき $\operatorname{qgr}B$ 上で
+$(\pi B,(1))$ は Artin--Zhang の
+Hom 全射条件 (A2) を満たす。
+すなわち任意の全射
+$f:\mathcal M\twoheadrightarrow\mathcal N$ について、
+十分大きい全ての $d$ で
+\[
+ \operatorname{Hom}_{\operatorname{qgr}B}
+       (\pi B(-d),\mathcal M)
+ \longrightarrow
+ \operatorname{Hom}_{\operatorname{qgr}B}
+       (\pi B(-d),\mathcal N)
+\]
+は全射となる。
+$\operatorname{Hom}$ の $R$-有限性や
+任意基底変更への $\chi_1$ の安定性は結論しない。
+\end{lemma}
+\begin{proof}
+有限生成次数付き加群 $M$ の torsion 部分を $\tau M$ と書く。
+$B$ は右 Noetherian なので $\tau M$ は有限生成であり、
+各斉次生成元は十分大きい正次数部分に殺される。
+ゆえに $\tau M$ は高内部次数で零である。
+$\pi M\simeq\pi(M/\tau M)$ なので、
+以下 $M$ は torsion-free と仮定してよい。
+
+$F_n=B/B_{\ge n}$ と置く。
+$F_n$ は右自明加群 $B_i(-i)$
+（$0\le i<n$）を商とする有限フィルトレーションを持つ。
+$B_i$ は有限 projective $R$-加群なので
+\[
+ \underline{\operatorname{Ext}}_B^1
+       (B_i(-i),M)_d
+ \simeq B_i^\vee\otimes_R
+      \underline{\operatorname{Ext}}_B^1(R,M)_{d+i}.
+\]
+相対 $\chi_1$ より右辺は $d\gg0$ で消え、
+その消滅下限は $i\ge0$ に依存しない。
+フィルトレーションの長完全 Ext 列から、
+ある $d_0(M)$ について
+\[
+ \underline{\operatorname{Ext}}_B^1(F_n,M)_d=0
+ \qquad(n\ge1,\ d\ge d_0(M))
+ \tag{AZ-trunc}\label{eq:relative-AZ-truncation}
+\]
+が成り立つ。下限の $n$ に関する一様性が重要である。
+
+$0\to B_{\ge n}\to B\to F_n\to0$ に
+$\underline{\operatorname{Hom}}_B(-,M)$ を適用する。
+$M$ は torsion-free だから
+$\underline{\operatorname{Hom}}_B(F_n,M)=0$ であり、
+(\ref{eq:relative-AZ-truncation}) より
+\[
+ M_d\xrightarrow{\sim}
+  \underline{\operatorname{Hom}}_B(B_{\ge n},M)_d
+ \qquad(d\ge d_0(M))
+\]
+を得る。
+Gabriel 商の標準的な Hom の有向極限表示から
+\[
+ \operatorname{Hom}_{\operatorname{QGr}B}
+      (\pi B(-d),\pi M)
+ \simeq
+ \varinjlim_n
+     \underline{\operatorname{Hom}}_B(B_{\ge n},M)_d
+ \simeq M_d
+ \quad(d\gg0).
+ \tag{AZ-sat}\label{eq:relative-AZ-saturation}
+\]
+もとの $M$ に対しては
+$(M/\tau M)_d=M_d$（$d\gg0$）と解釈する。
+
+任意の全射 $f:\pi M\twoheadrightarrow\pi N$ を取る。
+Gabriel 商の射の表示により、
+十分大きい $n$ では $f$ は次数付き射
+$M_{\ge n}\to N/\tau N$ によって表される。
+その余核は有限生成 torsion 加群なので
+高内部次数で零になり、
+$M_d\to(N/\tau N)_d$ は $d\gg0$ で全射となる。
+(\ref{eq:relative-AZ-saturation}) を両辺に適用すると、
+求める Hom の全射性が従う。
+\end{proof}
 
 \subsection{可換点の局所基底における有限型基底変更}
 
