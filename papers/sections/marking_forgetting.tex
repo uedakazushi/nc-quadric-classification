@@ -1,0 +1,223 @@
+% !TEX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.38
+\section{構造対象の忘却と楕円型の無限ファイバー}
+\label{sec:unpointed-elliptic-fiber}
+
+全ての Abel 圏を一つの代数スタックに集めることは仮定しない。
+ここでは、$\HH$ の同型類から、その基礎 Abel 圏の exact 同値類への
+集合論的な忘却写像を考える。固定 $\cC$ でのこの写像のファイバーは、
+許容される $\OO$ の同型類を
+$\operatorname{Aut}^{\mathrm{ex}}(\cC)$ で割った集合である。
+固定 $\cC$ の上のスタックの \emph{2-fiber} はこの商ではなく、
+許容 $\OO$ の同型群oidであることに注意する。
+
+\begin{lemma}[許容構造対象の数値類と一意性]
+\label{lem:forgetting-numerical-rigidity}
+$(\cC,\OO)\in\HH$ を固定し、
+定理~\ref{thm:normal-helix} の foundation によって
+$K_0(\cC)\simeq K_0(Q)$、$Q=\PP^1\times\PP^1$ と同定する。
+$\cC$ 内の Gabriel--Krull rank-one torsion-free exceptional 対象 $L$ は
+ある $a,b\in\mathbb Z$ に対して
+\[
+ \operatorname{ch}[L]
+ =1+aH_1+bH_2+abH_1H_2
+ =\operatorname{ch}[\OO_Q(a,b)]
+\]
+を満たす。この数値類を指定したとき、該当する $L$ の同型類は
+高々一つである。特に、固定 $\cC$ 上の許容構造対象の
+同型類の集合は高々可算である。
+\end{lemma}
+\begin{proof}
+命題~\ref{prop:first-orbit-object} の Euler 形式の計算と
+$r=1$ という rank 条件を使う。
+$\operatorname{ch}[L]=r+aH_1+bH_2+cH_1H_2$ と書くと
+\[
+ 1=\chi(L,L)=r^2+2rc-2ab=1+2c-2ab.
+\]
+従って $c=ab$。上の $K_0$ は捩れを持たず、
+この Chern 指標で整数類が一意に定まる。
+
+同じ類を持つ二つの対象 $L,L'$ を取る。
+$t=S^{-1}[2]$ と置く。もし $\Ext^2(L,L')\ne0$ なら
+Serre 双対性により $\Hom(L',t^{-1}L)\ne0$ であり、
+rank-one torsion-free 性から $L'\hookrightarrow t^{-1}L$ が得られる。
+命題~\ref{prop:first-orbit-object} の証明で用いた AZ 豊富性と
+自由被覆・負切断消滅を任意の coherent 対象に適用すると、
+$n\gg0$ で
+$\dim\Hom(\OO,t^n M)=\chi(\OO,t^nM)$ が成り立つ。
+両辺に $\Hom(\OO,t^n-)$ を施すと、Riemann--Roch により
+\[
+ (2n+a+1)(2n+b+1)
+ \le(2n+a-1)(2n+b-1)
+\]
+となり、矛盾する。従って $\Ext^2(L,L')=0$。
+$\chi(L,L')=1$ から $\Hom(L,L')\ne0$ であり、同様に単射
+$L\hookrightarrow L'$ を得る。余核は $K_0$ 類が零なので
+Hilbert 多項式も零である。
+$t$ の AZ 豊富性により非零 coherent tails 対象には
+十分高い次数に非零切断が存在するから、余核は零である。
+\end{proof}
+
+滑らかな楕円曲線 $E$ と次数二の線束 $L_0,L_1,L_2$ に対し、
+線束の類を加法的に $\ell_i=[L_i]\in\operatorname{Pic}^2(E)$ と書く。
+差を
+\[
+ \eta=\ell_1-\ell_0,\qquad \delta=\ell_2-\ell_0
+ \quad\in\operatorname{Pic}^0(E)
+\]
+とする。$(E,L_0,L_1,L_2)$ が VdB 許容であることは、
+この滑らかな場合には $\eta\ne0,\eta\ne\delta,\delta\ne0$
+と同値である。実際、相異なる次数二の線束による二つの
+二重被覆 $E\to\PP^1$ は異なる被覆対合を持つので、
+積写像は閉埋込みとなる。
+
+\begin{lemma}[楕円四つ組の二つの反射]
+\label{lem:elliptic-two-reflections}
+許容楕円四つ組の helix の添字を一つ進める操作 $T$ は
+\[
+ T:(\eta,\delta)\longmapsto(\delta-\eta,\delta)
+\]
+を誘導する。また、
+\[
+ \eta\ne2\delta
+ \tag{R-open}\label{eq:elliptic-ruling-open}
+\]
+の下で、命題~\ref{prop:ruling-involution-mutation} による
+もう一方の ruling の foundation も cubic 型であり、
+対応する四つ組は
+\[
+ R:(L_0,L_1,L_2)\longmapsto
+ (L_0L_1L_2^{-1},L_2,L_1).
+\]
+従って
+\[
+ R:(\eta,\delta)\longmapsto(2\delta-\eta,\delta),
+ \qquad RT:(\eta,\delta)\longmapsto(\eta+\delta,\delta).
+\]
+二つの操作は、それぞれ underlying Abel 圏の exact 同値類を保つ。
+$R$ は $\OO$ を保ち、$T$ は一般に $\OO$ を変更する。
+\end{lemma}
+\begin{proof}
+helix の関係
+$L_{i+3}=L_i^{-1}L_{i+1}L_{i+2}$ により、
+$\ell_{i+2}-\ell_i=\delta$ は $i$ に依存しない。
+従って $(L_1,L_2,L_3)$ の差は
+$(\delta-\eta,\delta)$ である。
+添字の変更は同じ $\mathbb Z$-代数の reindexing なので、
+基礎 tails Abel 圏を変えない。
+
+後半は ruling 交換の二写像を楕円曲線の切断で計算する。
+$V_i=H^0(E,L_i)$、$W_2=H^0(E,L_0L_1)$、
+$W_3=H^0(E,L_0L_1L_2)$ とすると、
+元の foundation の二写像は
+\[
+ V_1\otimes V_0\longrightarrow W_2,\qquad
+ V_2\otimes W_2\longrightarrow W_3
+\]
+という切断の積である。
+次数二の線束の評価列を $L_0L_1$ で捩ると、
+\[
+ \ker(V_2\otimes W_2\longrightarrow W_3)
+ \simeq H^0(E,L_0L_1L_2^{-1})
+\]
+を得る。ここでは $\deg(L_0L_1L_2^{-1})=2$ による
+$H^1$ 消滅を用いた。
+一方、$L_1$ の評価列を $L_0L_1$ で捩ると、
+$V_0\to V_1^\vee\otimes W_2$ の余核は
+$H^0(E,L_0L_1^2)$ に同定される。
+この同定では二次元空間の
+$V_1^\vee\simeq V_1\otimes(\det V_1)^{-1}$ に由来する
+一次元のスカラー因子を許す。
+従って交換後の二写像は、
+$(L_0L_1L_2^{-1},L_2,L_1)$ から得る
+隣接二つの切断乗法と一致する。
+
+新しい隣接次数二線束が相異なる条件は
+$\eta\ne2\delta$ および $\eta\ne\delta$ であり、
+残る非周期性条件は $\delta\ne0$ である。
+ゆえに式~\eqref{eq:elliptic-ruling-open} の下で
+新しい四つ組も VdB 許容である。
+命題~\ref{prop:ruling-involution-mutation} と
+定理~\ref{thm:normal-helix} による qgr の再構成により、
+これは元の $(\cC,\OO)$ のもう一方の normalized foundation である。
+差の計算は直接に
+$\eta'=2\delta-\eta,\ \delta'=\delta$ を与える。
+\end{proof}
+
+\begin{theorem}[一般楕円型における忘却の可算無限ファイバー]
+\label{thm:generic-elliptic-unpointed-fiber}
+標数零の代数閉体上で、滑らかな楕円許容四つ組
+$U=(E,L_0,L_1,L_2)$ に対し、上記の $\eta,\delta$ が
+\[
+ \delta\text{ は非捩れ},\qquad
+ 2\eta\notin\mathbb Z\delta
+ \tag{G}\label{eq:elliptic-unpointed-generic}
+\]
+を満たすとする。
+$\cC=\qgr D(U)$ に対して、
+\[
+ \operatorname{Aut}^{\mathrm{ex}}(\cC)\backslash
+ \bigl\{[L]:(\cC,L)\in\HH\bigr\}
+\]
+は可算無限集合である。
+特に滑らかな楕円型 cubic locus の幾何学的一般点では、
+構造対象を忘れる写像は同型類の意味で可算無限ファイバーを持つ。
+これはスタック射が étale な $\mathbb Z$-被覆であるという主張ではない。
+\end{theorem}
+\begin{proof}
+補題~\ref{lem:elliptic-two-reflections} の $R,T$ を交互に適用する。
+$U_n$ を $(RT)^n U$ と書けば、その差のパラメータは
+\[
+ (\eta_n,\delta_n)=(\eta+n\delta,\delta),
+ \qquad n\in\mathbb Z.
+\]
+仮定~\eqref{eq:elliptic-unpointed-generic} により
+全ての途中段階でも隣接線束の一致と
+$\eta_n=2\delta$ が起こらない。
+従って全 $U_n$ は VdB 許容四つ組であり、
+定理~\ref{thm:all-admissible-inverse} により
+$(\qgr D(U_n),\pi e_0D(U_n))\in\HH$ である。
+また補題~\ref{lem:elliptic-two-reflections} により
+これらの underlying Abel 圏は全て $\cC$ と exact 同値である。
+
+これらの pointed 同値類が異なることを示す。
+系~\ref{cor:two-intrinsic-foundations} により、pointed exact 同値は
+二つの内在的 foundation の非順序対を保つ。
+$U_n$ のその二つは $U_n$ と $RU_n$ の geometric cubic foundation である。
+従って二つの pointed 対象が同値なら、
+Van den Bergh の四つ組の復元
+\cite[arXiv v3, Theorem 5.5.10]{VdB2011} により、
+$U_n$ または $RU_n$ が $U_m$ または $RU_m$ と、
+曲線の自己同型を介して同型になる。
+楕円曲線の自己同型は平行移動と原点を保つ有限群の積であり、
+前者は線束の差 $\eta,\delta$ に作用しない。
+後者の $\sigma$ が $\delta$ を固定し、$\delta$ が非捩れなら、
+$\sigma=1$ である。
+従って
+\[
+ \eta+n\delta=\eta+m\delta
+ \quad\text{または}\quad
+ \eta+n\delta=2\delta-\eta-m\delta
+\]
+が必要となる。
+第一式は $n=m$ を、第二式は
+$2\eta=(2-n-m)\delta$ という仮定への矛盾を与える。
+よって異なる $n$ は異なる pointed 同値類を与える。
+
+一方、補題~\ref{lem:forgetting-numerical-rigidity} により
+固定 $\cC$ 上の許容構造対象は高々可算個である。
+その自己同値による商も高々可算なので、結論を得る。
+幾何学的一般点では $\eta,\delta$ が独立な Picard パラメータであり、
+全ての等式 $m\delta=0$ と $2\eta=n\delta$ を避ける。
+\end{proof}
+
+\begin{remark}[既存研究と残る問題]
+上の定理は幾何点でのファイバーの濃度を決めるが、
+自然な $\mathbb Z$-torsor 構造や相対ファイバーの代数性は与えない。
+Kitamura--Okawa の2022年 Oberwolfach 報告は
+cubic $\mathbb Z$-代数の無標識同値に $D_\infty$ が現れることと
+rank-one torsion-free line bundle の $\mathbb Z^2$ 分類を述べる。
+同報告で詳細論文は当時準備中とされているので、
+本節の証明はその未照合の全分類定理に依存させず、
+本稿の二つの foundation と楕円評価列から構成した。
+\end{remark}

@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.38（主論文v1.37、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.39（主論文v1.38、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -214,6 +214,10 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 群関係・χ・noncubic局所対合の再現資産は `computations/verify_stack_symmetries.py`。現在の独立読取り・計算・組版の実施範囲は末尾の検証節に集約する。
 
 相対条件を試す具体的入力として、[定数bivector方向のOre変形](ore_quadric_deformations.md)を置く。中央元g=xw−zyの正則切断、全次数自由な商、quadratic dualのFrobenius pairingまでの証明稿を記し、相対CY・Serre・H2条件は未証明とする。主原稿の非持上げ例を相対H2の内部へ強める際の候補であり、現行定理の入力には用いない。
+
+
+**楕円一般点の忘却ファイバー：主原稿に証明を統合。**
+[主原稿の新節](../papers/sections/marking_forgetting.tex) に、(a) すべてのGK rank-one torsion-free exceptional対象の数値類\(\operatorname{ch}=\operatorname{ch}\mathcal O_Q(a,b)\)と同じK0類での一意性、(b)楕円quadrupleでの二反射\(T:(\eta,\delta)\mapsto(\delta-\eta,\delta)\)、\(R:(\eta,\delta)\mapsto(2\delta-\eta,\delta)\)、(c)非捩れ\(\delta\)かつ\(2\eta\notin\mathbb Z\delta\)のとき、同じunpointed qgrに属するpointed H2類はちょうど可算無限個、という証明を置いた。\(R\)の具体式は評価列\(0\to L_2^{-1}\to H^0(L_2)\otimes\mathcal O_E\to L_2\to0\)から\(\ker G=H^0(L_0L_1L_2^{-1})\)を取り、\(\operatorname{coker}\alpha_F=H^0(L_0L_1^2)\)を得る。\(\eta=2\delta\)では新しい隣接次数2線束が一致しcubic型でなくなるので、無条件の全領域ruling cubic化は主張しない。各反射が許容な一般軌道では\(RT\)が\(\eta\mapsto\eta+\delta\)を与え、pointed同値が二foundationの非順序対を保存することから軌道を区別する。新定理は本研究のVdB復元入力に依存する原稿上の証明であり、**今回の独立査読・LaTeX組版・厳密計算の再実行は行っていない**。前段のKitamura–Okawaを入力とする条件付き還元も、一般cubic全域および相対stackの問題として保持する。
 
 ## O-marking から Abel 圏への忘却：幾何点ファイバーの還元（条件付き）
 

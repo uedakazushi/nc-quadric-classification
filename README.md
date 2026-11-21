@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.38、主論文v1.37、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.39、主論文v1.38、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -195,7 +195,7 @@ VS Codeではrepo全体を開き、LaTeX Workshopの推奨拡張と既定の `la
 
 ## 構造対象の忘却（調査段階）
 
-\(\mathfrak H_2\) から圏の標識を忘れる場合、固定された圏上の**2-fiber**（許容構造対象のgroupoid）と、圏の同型類への写像のファイバー（自己同値で割る）を区別する。前者は可換quadricでも\(\mathbb Z^2\)個の成分を持つが、後者は一点。cubic型については数値候補\(\mathbb Z^2\)とKitamura–Okawaの2022年の未公刊定理報告を手掛かりに、条件付きで後者を\(\bar H\backslash\mathbb Z\)へ還元した。genericな可算無限ファイバーは未証明であり、もう一方のruling変換と自己同値安定化群を調べる。[研究ノート](notes/research_notes.md#o-marking-から-abel-圏への忘却幾何点ファイバーの還元条件付き)に仮定と計算を記す。
+\(\mathfrak H_2\) から圏の標識を忘れる場合、固定された圏上の**2-fiber**（許容構造対象のgroupoid）と、圏の同型類への写像のファイバー（自己同値で割る）を区別する。前者は可換quadricでも\(\mathbb Z^2\)個の成分を持つが、後者は一点。cubic型については数値候補\(\mathbb Z^2\)とKitamura–Okawaの2022年の未公刊定理報告を手掛かりに、条件付きで後者を\(\bar H\backslash\mathbb Z\)へ還元した。滑らかな楕円型で二つのruling反射を計算し、非捩れ\(\delta\)、\(2\eta\notin\mathbb Z\delta\)の幾何学的一般点では同型類忘却ファイバーが可算無限となる証明を[主原稿新節](papers/sections/marking_forgetting.tex)に収めた。スタックとしての相対被覆性や全cubic型の一般化は未解決で、新証明は独立監査・組版未実施。[研究ノート](notes/research_notes.md#o-marking-から-abel-圏への忘却幾何点ファイバーの還元条件付き)に仮定と計算を記す。
 
 ## 関連研究
 

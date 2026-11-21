@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.38。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.37、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.39。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.38、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -192,7 +192,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 固定Sklyanin pencilの高々64候補への簡約にはΔの単射性が残るが、その補集合は主定理の四生成判定で既に扱う。Δの全域解析は判定の簡約という別の課題である。可換点の四根とOkawa–Uedaの次数四射の一致も先取りしない。
 
-**O-marking の忘却（独立した次段階の課題）。** 相対H2から、局所的にH2構造対象を持つ相対Abel圏のfppf stackへの忘却を区別する。固定Cにおける2-fiberは許容O対象のgroupoid、同型類ファイバーはAut^ex(C)で割った軌道集合である。\(K_0\)・Euler形式から許容Oの数値類は\(\operatorname{ch}=\operatorname{ch}\mathcal O_Q(a,b)\), \((a,b)\in\mathbb Z^2\) に限る。Kitamura–Okawaの2022年Oberwolfach報告では全cubic line bundlesの\(\mathbb Z^2\)表示と\(D_\infty\)を予告するが、その当時の主要証明はin preparation。全\(\mathbb Z^2\)標識がH2で、適合根が対角移動を誘導すると仮定すれば、幾何点の忘却ファイバーは\(\bar H\backslash\mathbb Z\)（\(\bar H\)は自己同値の差\(b-a\)への作用）に還元する。genericな\(\mathbb Z:1\)はこの\(\bar H\)の横断平行移動部分が零かどうかの未解決問題。helix添字一移動は楕円パラメータ\((\eta,\delta)\mapsto(\delta-\eta,\delta)\) と直接計算でき、もう一方のruling反射・安定化群が次の調査対象。証明状態と引用は [研究ノート](notes/research_notes.md#o-marking-から-abel-圏への忘却幾何点ファイバーの還元条件付き)、[文献比較](notes/literature.md) に置く。
+**O-marking の忘却（楕円一般点の新定理と残る相対問題）。** 相対H2から、局所的にH2構造対象を持つ相対Abel圏のfppf stackへの忘却を区別する。固定Cにおける2-fiberは許容O対象のgroupoid、同型類ファイバーはAut^ex(C)で割った軌道集合である。\(K_0\)・Euler形式から許容Oの数値類は\(\operatorname{ch}=\operatorname{ch}\mathcal O_Q(a,b)\), \((a,b)\in\mathbb Z^2\) に限る。Kitamura–Okawaの2022年Oberwolfach報告では全cubic line bundlesの\(\mathbb Z^2\)表示と\(D_\infty\)を予告するが、その当時の主要証明はin preparation。全\(\mathbb Z^2\)標識がH2で、適合根が対角移動を誘導すると仮定すれば、幾何点の忘却ファイバーは\(\bar H\backslash\mathbb Z\)（\(\bar H\)は自己同値の差\(b-a\)への作用）に還元する。楕円滑らかな四つ組でruling反射も\((\eta,\delta)\mapsto(2\delta-\eta,\delta)\) と評価列から計算し、合成が\(\eta\mapsto\eta+\delta\) となる。非捩れ\(\delta\)、\(2\eta\notin\mathbb Z\delta\) の場合、二foundationの内在性とVdB四つ組の復元で同一Abel圏上に相異なる可算無限個のO-markingを作り、K0類ごとの一意性で上界も得た（新定理\(\texttt{thm:generic-elliptic-unpointed-fiber}\)）。ただしスタック射の相対的な\(\mathbb Z\)-被覆性、全cubic型・noncubic型の忘却は未解決であり、新証明の外部独立監査も未実施。証明状態と引用は [研究ノート](notes/research_notes.md#o-marking-から-abel-圏への忘却幾何点ファイバーの還元条件付き)、[文献比較](notes/literature.md) に置く。
 
 ## 6. 次の実行単位
 
