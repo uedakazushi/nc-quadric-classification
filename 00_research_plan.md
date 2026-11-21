@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.50。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.48、論文Bはv0.5（証明移管中）、論文Cはv0.2。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.51。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.49、論文Bはv0.6（証明移管中）、論文Cはv0.2。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、局所good moduliの降下、偏極認識と公表前監査である。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,7 +10,7 @@
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
 - **C・箙表示とavatar：** `papers/quiver-avatar-moduli.tex` に八・十・十二本矢、QP消去、反標準avatar、表示からの忘却を置く。有限表示の代数性と相対AS/H2の同値が未証明である範囲を保ち、A/Bの証明は複製しない。
 
-**移管状況：** Bの独立主原稿・基礎命題に加え、対角列の反例の完全な証明（旧 `sections/ruled_diagonal_obstruction.tex`）をBの `moduli/ruled_diagonal_obstruction.tex` へ移管し、Aからの重複入力を除いた。さらにnoncubic表示商の不変式環 `k[P]^G=k[χ]` とgood moduli性の計算をBの `moduli/noncubic_invariants.tex` に移し、Aの `noncubic_stack.tex` はその結果をBから引用する（粗モジュライ不存在と相対比較の証明はAに保持）。さらに有限foundation上の反Serre偏極の有限表示局所閉認識（旧 `sections/polarization_recognition.tex` の三証明）をBの `moduli/polarization_recognition.tex` へ移し、Aには結果・仮定の記述とBへの引用だけを残した。さらに `prop:noncubic-good-moduli-fibers` の平坦性・特殊ファイバーの全証明とresultantの補足計算を `papers/moduli/noncubic_fibers.tex` に移し、Aには表示商と内在的境界の相対同値を使う主張・引用だけを保持した。主要な相対定理の全証明はまだAの分割節にある。B単独の完成とは扱わない。節ごとの証明・相互参照・基底変更の監査までAの有効な本文を削除しない。次はA/Bの定理依存を分類する → Bへ相対公理・Artin認識・有限型atlas・境界群商の順に証明移管 → Aから移管済みの重複を除去 → AとBの論文間引用を整理 → Cとの比較・三稿のビルド・一次資料照合。AがBへ循環依存しないようにする。再編作業と新しい数学的検証は区別し、有用な結果・再現資産を削らない。
+**移管状況：** Bの独立主原稿・基礎命題に加え、対角列の反例の完全な証明（旧 `sections/ruled_diagonal_obstruction.tex`）をBの `moduli/ruled_diagonal_obstruction.tex` へ移管し、Aからの重複入力を除いた。さらにnoncubic表示商の不変式環 `k[P]^G=k[χ]` とgood moduli性の計算をBの `moduli/noncubic_invariants.tex` に移し、Aの `noncubic_stack.tex` はその結果をBから引用する（粗モジュライ不存在と相対比較の証明はAに保持）。さらに有限foundation上の反Serre偏極の有限表示局所閉認識（旧 `sections/polarization_recognition.tex` の三証明）をBの `moduli/polarization_recognition.tex` へ移し、Aには結果・仮定の記述とBへの引用だけを残した。さらに `prop:noncubic-good-moduli-fibers` の平坦性・特殊ファイバーの全証明とresultantの補足計算を `papers/moduli/noncubic_fibers.tex` に移し、Aには表示商と内在的境界の相対同値を使う主張・引用だけを保持した。相対H2の定義（module-object基底変更・相対Serre・fppf局所AS4条件）をBに明記し、`lem:relative-h2-flat-center` の全証明もBの `moduli/relative_definitions.tex` へ移した。Aでは同補題の主張とB引用を残し、相対反Serre再構成の証明はなおAにある。主要な相対定理の全証明はまだAの分割節にある。B単独の完成とは扱わない。節ごとの証明・相互参照・基底変更の監査までAの有効な本文を削除しない。次はA/Bの定理依存を分類する → Bへ相対公理・Artin認識・有限型atlas・境界群商の順に証明移管 → Aから移管済みの重複を除去 → AとBの論文間引用を整理 → Cとの比較・三稿のビルド・一次資料照合。AがBへ循環依存しないようにする。再編作業と新しい数学的検証は区別し、有用な結果・再現資産を削らない。
 
 ## 現在の到達点と未解決の核心
 

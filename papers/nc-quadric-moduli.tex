@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.5（対角列の反例証明を移管）
+% 日本語 LuaLaTeX。2026-11-22 / v0.6（対角列の反例証明を移管）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v0.5（証明移管中の草稿）}
+\date{2026年11月22日\quad v0.6（証明移管中の草稿）}
 
 \begin{document}
 \maketitle
@@ -61,7 +61,7 @@ framed 実現空間、被約 noncubic 境界の余次元二の正則閉埋込み
 
 \textbf{編集状況：} 本稿は分類主論文からの再編を開始した未完成原稿である。
 主要な相対主結果の完全な証明は現在も分類主論文の相対モジュライ関連の分割節にある。
-非可換射影直線束の対角列の反例、二形式表示商の good moduli を与える不変式環と特殊ファイバーの平坦性・局所構造、
+相対 $\mathfrak H_2$ の精密な公理とAbel flatness・pointed二射剛性、非可換射影直線束の対角列の反例、二形式表示商の good moduli を与える不変式環と特殊ファイバーの平坦性・局所構造、
 有限 foundation 上の反 Serre 偏極の局所閉認識の各完全な証明を本稿へ移したが、
 モジュライ主定理の証明移管は未完了である。この稿単独で証明が完結したとは主張しない。
 \end{abstract}
@@ -77,20 +77,7 @@ De Deken--Lowen \cite{DeDekenLowen2011}、
 Polishchuk--Positselski \cite{PolishchukPositselski2005} の既知入力と、
 相対的な有限型効果性・stack比較についての新しい証明を区別する。
 
-\section{相対的な対象と基底変更}\label{sec:moduli-relative}
-$k$ を標数零の代数閉体とする。
-対象 $(\mathcal C,\mathcal O)$ は noetherian Abel 圏と、
-Gabriel--Krull rank-one torsion-free exceptional 対象からなり、
-反 Serre 関手の exact ample な平方根 $s^2\simeq S^{-1}[2]$ と、
-同じ $s$ の全軌道環について型 $(1,4,6,4,1)$ の左右 noetherian quadratic
-Koszul AS 正則環による正則正規二次商の存在を要求する。
-$s$、同型、被覆は追加標識ではない。
-相対スタック $\mathfrak H_2$ の定義には、局所有限型 $k$-scheme の
-big fppf site 上の Abel 圏の module-object 基底変更・降下、
-相対 Serre 双対、相対 AZ・AS4 条件の fppf 局所存在を含める。
-各幾何 fiber が定義を満たすという条件だけでは不足する。
-詳細な公理と反 Serre 再構成は現在
-分類主論文の \texttt{relative\_moduli.tex} にある。
+\input{moduli/relative_definitions}
 
 \section{内在的モジュライの有限型 Artin 性}\label{sec:moduli-algebraicity}
 主論文では、全 cubic 点の smooth Artin 開と

@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.9
+% 2026-11-22 / v1.10（相対flatness剛性補題をBに移管）
 \section{相対的な対象の定義と反 Serre による認識}
 \label{sec:relative-h2-definition}
 
@@ -176,26 +176,9 @@ fppf 局所に存在すべき平方根と AS 被覆は、非被約底の変形�
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-$A$-線形完全自己同値は tensor と可換するから、
-$s^{-n}\mathcal O$ は $A$ 上平坦である。
-AZ の生成条件により任意の coherent 対象はこれらの有限直和の商である。
-従って任意の有限提示 $A$-加群 $M$ について
-$\operatorname{Tor}^A_1(M,-)$ は co-effaceable となる。
-これが \cite[Proposition 3.1, Definition 3.2]{LowenVanDenBergh2006}
-の flatness 条件である。Ind 圏についても同論文 Proposition 3.6 を適用できる。
-
-自然自己同型 $\eta$ の $s^{-n}\mathcal O$ 上の成分は、相対例外性により
-単元 $a_n\in A^\times$ の scalar である。
-正則二次切断の完全列により
-\[
- \operatorname{Hom}(s^{-n}\mathcal O,\mathcal O)
-       \simeq (\mathcal B/(g))_n
-\]
-は階数 $(n+1)^2$ の有限局所自由 $A$-加群、従って忠実である。
-自然性は $(a_n-a_0)(\mathcal B/(g))_n=0$ を与えるので $a_n=a_0$。
-AZ の全射と自然性から全ての対象上で $\eta=a_0\operatorname{id}$ となる。
-pointed 二射では $a_0=1$ である。
-この結論は fppf 局所で確認できるため、根を大域に選んでいない族にも成り立つ。
+相対 Abel flatness と pointed 2-自己同型の剛性の完全な証明は、
+相対モジュライ別稿 \cite[相対的な対象と基底変更]{QuadricModuli2026} に置く。
+本稿では後続の相対比較のために主張と仮定を保持する。
 \end{proof}
 
 \begin{proposition}[相対的な反 Serre 再構成]
