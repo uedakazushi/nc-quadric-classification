@@ -587,6 +587,34 @@ $\mathcal J\subset\mathcal R_1^{\otimes2}$ はその枠に関して
 として開・閉・有限表示であることまでは主張しない。
 \end{proof}
 
+\begin{corollary}[noncubic の全反 Serre 環の相対二次提示]
+\label{cor:noncubic-relative-full-quadratic-presentation}
+命題~\ref{prop:noncubic-antiserre-grassmann} の
+九生成元からの自然な射は、全次数で同型
+\[
+ T_{\mathcal O}(\mathcal R_1)/(\mathcal J)
+       \xrightarrow{\ \sim\ }\mathcal R,
+ \qquad
+ \mathcal J=\ker(\mathcal R_1^{\otimes2}\to\mathcal R_2)
+ \tag{NC-quad}\label{eq:noncubic-relative-quadratic-presentation}
+\]
+である。この同型は任意の基底変更と両立する。
+従って射 $\Psi_{\mathrm{nc}}$ は、
+二次関係だけで表される反 Serre 環の
+\emph{全次数}の平坦な族を与えている。
+\end{corollary}
+\begin{proof}
+$\mathcal B$ は次数一生成かつ二次関係で定義されている。
+$\mathcal R$ はその偶数 Veronese を
+次数自己同型 $\iota$ で twist し、
+線束 $\det W$ の次数付き冪で捩ったものなので、
+補題~\ref{lem:relative-quadratic-veronese} が適用できる。
+線束は局所的に自明化でき、二次表示の同型は
+自明化の変更と整合するため、表示スタック全体へ降下する。
+$\mathcal B_4$ は任意基底上で自由であり、
+$\mathcal J$ の底変更も成立する。
+\end{proof}
+
 \begin{lemma}[二重平方環の中心 Clifford 表示]
 \label{lem:noncubic-relative-clifford-center}
 任意の可換環 $A$ 上の二元二次形式 $f_1,f_2$ に対し、
