@@ -1036,6 +1036,107 @@ $\HHstack$ の接空間次元と同一視しない。
 全非交差点で同じ次元だとはここでは主張しない。
 \end{remark}
 
+\begin{theorem}[noncubic 反 Serre 環の低次 Hochschild コホモロジー]
+\label{thm:noncubic-hh01-hh2}
+標数零の代数閉体上、式~(\ref{eq:noncubic-tangent-examples})
+の三つの noncubic 反 Serre 環を
+$R_{\mathrm{dis}},R_{\mathrm{shr}},R_{\mathrm{eq}}$
+とする。$HH^i(R)_0$ は内部次数零の
+Hochschild コホモロジーを表す。
+このとき
+\[
+\begin{array}{c|ccc}
+ &R_{\mathrm{dis}}&R_{\mathrm{shr}}&R_{\mathrm{eq}}\\ \hline
+ \dim HH^1(R)_0 &1&1&2\\
+ \dim HH^2(R)_0 &3&3&5
+\end{array}
+\tag{NC-HH}\label{eq:noncubic-hh-table}
+\]
+である。
+
+前二点の $HH^1_0$ の一次元は
+次数スカラーに対応する Euler 導分である。
+二根対一致点では、これに加えて
+連続自己同型の一次元が現れる。
+$HH^2_0$ は全次数で平坦な
+\emph{次数付き結合代数の一次変形}を
+基底変更で割った接空間を記述する。
+これを、そのまま内在的な
+$\HHstack$ の相対 Abel 変形の接空間と
+同一視してはならない。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:noncubic-antiserre-koszul} により
+三つの $R$ は Koszul である。
+従って式~(\ref{eq:noncubic-koszul-hoch-cochain}) の
+Koszul 双加群解消が内部次数零の
+Hochschild コホモロジーを計算する。
+
+ここで $\dim V=9$、
+$\dim J=56$、$\dim R_2=25$、$\dim R_3=49$ である。
+三次関係の自然な写像
+$V\otimes J\to (V^{\otimes2}/J)\otimes V$
+の階数は $176$ なので
+\[
+ \dim K_3
+  =2(9\cdot56)-(9^3-49)=328.
+\]
+ゆえに
+\[
+ \dim C^1=81,\quad
+ \dim C^2=56\cdot25=1400,\quad
+ \dim C^3=328\cdot49=16072.
+\]
+前述の三次 Hilbert 条件の微分
+$d^2:C^2\to C^3$ の階数は
+命題~\ref{prop:noncubic-third-degree-tangent}
+の整数核検証によって
+\[
+ 1317,\quad1317,\quad1316
+\]
+と標数零で正確に決まっている。
+一方 $d^1:C^1\to C^2$ は生成元の
+基底変更による微分であり、
+その階数は同じ命題の $\mathrm{PGL}_9$ 軌道次元
+$80,80,79$ と一致する。
+従って
+\[
+ \dim HH^2(R)_0
+  =\dim\ker d^2-\operatorname{rank}d^1
+  =(83-80,\ 83-80,\ 84-79)=(3,3,5).
+\]
+
+また $C^0=R_0=k$ から $C^1$ への
+微分は内微分、すなわちスカラーとの交換なので零である。
+よって
+\[
+ \dim HH^1(R)_0
+ =\dim\ker d^1=(81-80,\ 81-80,\ 81-79)=(1,1,2).
+\]
+生成元 $V$ に恒等写像を作用させる
+Euler 導分は、その次数 $n$ 成分で $n$ 倍として作用する。
+従って $HH^1_0$ の一般点の一次元を張る。
+二根対一致点の追加方向は
+命題~\ref{prop:noncubic-presentation-stack} に記述した
+正次元の pointed 慣性に対応する。
+最後の一次変形の解釈は
+補題~\ref{lem:koszul-first-order-degree-three} による。
+\end{proof}
+
+\begin{remark}[形式的な持上げと次数付き代数の局所模型]
+今回得た $HH^2_0$ の $3,3,5$ 次元は
+真の\emph{一次}平坦次数付き代数変形である。
+それらが $k[\varepsilon]/(\varepsilon^3)$ や
+$k[[t]]$ へ持ち上がるとは限らない。
+後続の障害は $HH^3(R)_0$ 中にあり、
+一次 cocycle の Gerstenhaber 平方の類を調べる必要がある。
+また、次数付き環の変形が
+相対 $\HH$ の heart・平方根・AS 正則被覆を持つかは
+なお独立の認識問題である。
+したがって今回の定理は内在的 $\HHstack$
+の smoothness や成分数を証明するものではない。
+\end{remark}
+
 \begin{lemma}[二重平方環の中心 Clifford 表示]
 \label{lem:noncubic-relative-clifford-center}
 任意の可換環 $A$ 上の二元二次形式 $f_1,f_2$ に対し、
