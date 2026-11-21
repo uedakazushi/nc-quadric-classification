@@ -1,10 +1,10 @@
 # Cloud Codexで研究を継続する
 
-2026-11-21 / v0.6。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。主論文はv1.40、八・十・十二本矢とavatarの別稿はv0.1。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
+2026-11-22 / v0.7。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.55、論文Bはv0.12（有限型効果性の移管中）、論文Cはv0.2。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
 
 ## 三論文再編の次の実行単位（2026-11-22）
 
-A＝`papers/nc-quadric-classification.tex`（主原稿・分類）、B＝`papers/nc-quadric-moduli.tex`（相対モジュライ）、C＝`papers/quiver-avatar-moduli.tex`（表示・avatar）。Bはまだ主結果の証明移管中の未完成稿。対角列の反例の独立した全証明はBへ移管済みであり、Aからの入力と節参照を除いた。加えてnoncubic表示商の不変式環とgood moduli性の証明はBへ移し、Aの旧表示節ではBを引用する。有限foundation上の反Serre偏極の局所閉認識は3証明をBへ移し、Aに定理のstatementを残してBを引用する。平坦なnoncubic good moduli射の特殊fiberもBへ全証明を移し、Aには内在的境界との相対同値を用いた主張だけを残した。相対定義とAbel flatness・pointed二射剛性の全証明はBの `moduli/relative_definitions.tex` に移し、Aの同補題はBを引用する。相対反Serre再構成・fppf stack性と全忠実性・体上回復・代数性判定の四証明はBの `moduli/relative_recognition.tex` に移管した。相対AS被覆の有限判定とfppf像の非代数性の反例はBの `moduli/relative_as_cover.tex` に移管した。`relative_koszul.tex` の相対Koszul・Noetherian基底変更・tailsの全17証明はBの `moduli/relative_koszul.tex` へ移管した。BのAS4被覆定理はKoszul三次補題をB内参照に変更済み。`h2_smooth_atlas.tex` の全体の有限型smooth Artin性・既約性・境界smooth性の8証明はBの `moduli/h2_smooth_atlas.tex` へ移した。`noncubic_boundary_comparison.tex` の相対商比較・全慣性・DM粗・形式局所商の16証明はBの `moduli/noncubic_boundary_comparison.tex` に移した。`quadric_smooth_atlas.tex` の4証明はBの `moduli/quadric_smooth_atlas.tex` に移管した。次は `noncubic_finite_type.tex`、`cubic_smooth_atlas.tex` の有限型効果性の証明を移す。次に `relative_moduli.tex`、`relative_koszul.tex`、`artin_foundation.tex` などのA/B間の依存と定理参照を抽出し、Bへ相対公理・Artin認識、cubic/noncubic有限型効果性、全体atlas、境界の商の証明を逐次移管する。Aに必要な分類の基礎補題は残し、循環依存と二重収録を作らない。Cとの相対認識の比較を更新する。A/B/Cを個別にsourcesとbuild確認し、一次文献比較と新規性は別に監査する。研究repoを先にmainへ保存し、その後hubを更新する。
+A=`papers/nc-quadric-classification.tex`（体上分類）、B=`papers/nc-quadric-moduli.tex`（相対モジュライ）、C=`papers/quiver-avatar-moduli.tex`（表示・avatar）。Bには相対H2公理・反Serre再構成・相対Koszul/tails・AS4被覆有限判定・smooth局所atlas・全体の有限型smooth既約Artin性・framed実現・noncubic境界の相対商と慣性・good/coarse moduli・形式対の本文証明を移管済み。**ただしBの中核に必要なcubic/noncubicの相対有限型効果性はまだAにあり、両論文の依存は最終的に閉じていない。** 次は`papers/sections/noncubic_finite_type.tex`、`papers/sections/cubic_smooth_atlas.tex`、`papers/sections/relative_cubic_noetherian.tex`の前提と証明を順に点検し、Bへ移す。Aの体上分類の証明を失わないようにする。移管後にAから重複証明を外し、両稿の論文間引用とBibTeX・LaTeX rootを照合する。静的な参照検査だけでなく、依存の閉鎖、数学的監査、実際のLuaLaTeX組版を別々に確認して保存する。
 
 ## 起動時の依頼文
 
