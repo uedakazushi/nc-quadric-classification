@@ -1,10 +1,12 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.5。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.4。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
+2026-11-21 / v0.6。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.5。全同値類の分類定理の証明を統合し、独立数学点検を完了した。
 
 **最優先目標は内在的相対モジュライ $\mathfrak H_2$ の具体的な有限型商表示と、全pointed exact同値・降下・相対再構成を証明することである。** 現行の $\mathcal H_2$ の体上分類は完成済みだが、$\mathfrak H_2$ は未構成であり、foundation表示 $\mathfrak Q_{\mathrm{fnd}}$ や関係式の閉包 $\mathfrak Z_2$ と同一視しない。cubic の比較例は、指定された相対条件付きの $\mathfrak H_3=[X^{\mathrm{H3}}/\mathrm{PGL}_4]$ である。
 
 **今回の到達点：** 反Serre環の偶数Veroneseに対して任意の基底上の二次提示を直接証明し、全 $\mathcal H_2$ 対象・cubic/noncubic両chart・各noncubic点への平坦な特殊化族で、九生成元・五十六二次関係から**全次数**を復元できるようにした。noncubicの二形式六係数は、九生成元の積から常に単位となる25個のminorを使い、Grassmannianの固定affine cellへ多項式的に**局所閉埋込み**となる。六係数の回収式を直接示し、厳密検算を追加。cubicの関係式像の被約既約閉包 $Z_2$ を取り、有限型Artin商 $[Z_2/\mathrm{PGL}_9]$ を構成した。幾何点の全H2実現集合はこの中で構成可能であり、cubicが稠密、noncubic全点はその閉包に入る。以前のnoncubic中心Clifford・相対Serre・相対qgr heartの結果を保持する。
+
+**今回の接空間検算と証明：** noncubicの二形式六係数が固定Grassmann cellに閉埋込みとなることを使い、PGL9の80次元Lie作用と六係数の接像を比較した。非交差基準点・一根共有点・二根対一致点で、両者の和は標数零で正確に81次元（軌道次元は80,80,79、交わりは5,5,4）。三次Hilbert階数49の条件は $L_J:V\otimes J\to(V^{\otimes2}/J)\otimes V$ のrank176であり、kernel328/cokernel49の線形化を1400変数・16072行として法101で全行検証した。その条件の接次元は法101で83,83,84。整数行列の法101階数下界から、標数零ではそれぞれ**上界**83,83,84となる。既知の81方向以外に残る候補は高々2,2,3方向。これは内在的H2の接空間ではなく、三次Hilbert条件のdeterminantal locusについての結果である。証明・計算は prop:noncubic-third-degree-tangent と computations/verify_noncubic_degree3_tangent.py（numpy・numbaを用いるオプション検証）を参照する。
 
 **未解決の核心：** $Z_2$ にはH2でない点が混入し得る。相対H2のheart・全flat coherent対象のSerre双対・AZ豊富性・AS正則被覆の存在、任意の内在的族の局所正規形、およびcubic/noncubic chartの相対全忠実性・貼合せ・有限表示を証明する。これらを閉包の構成や体上の関係式判定で代用しない。相対moduli自身の既約成分数も未確定である。詳細は第3・5・6節、証明は主原稿、検算は研究ノートを正本とする。
 
@@ -90,6 +92,7 @@ $$
 | 二次Veroneseの相対提示 | 一般の二次環の偶数Veroneseは全次数で二次。相対平坦で全幾何fiberが二次なら族も二次。H2の反Serre環は九生成元・五十六二次関係 | lem:relative-quadratic-veronese, cor:h2-intrinsic-antiserre-quadratic, lem:relative-quadratic-from-fibers |
 | cubic・noncubic・退化の完全二次提示 | 両表示chartとcubic→全noncubic退化のR全次数が二次関係から復元、任意底変更に整合 | cor:cubic-relative-full-quadratic-presentation, cor:noncubic-relative-full-quadratic-presentation, cor:line-full-quadratic-degeneration |
 | noncubicの固定Grassmann affine cell | 二形式の6係数をGr(56,81)の1つのcellへ局所閉埋込み。固定25列のminorは±1、残り56列から係数を多項式で回収 | prop:noncubic-grassmann-explicit-cell; computations/verify_noncubic_antiserre_pivots.py |
+| noncubicの接空間と三次Hilbert条件 | 三代表点でPGL9軌道＋六係数接像は標数零でrank81。三次Hilbert階数rank176の線形化は法101でrank1317,1317,1316、標数零で接次元≤83,83,84 | prop:noncubic-third-degree-tangent; computations/verify_noncubic_degree3_tangent.py |
 | H2関係像の構成可能性・既約包絡 | cubicのframed関係像の被約閉包Z2は既約PGL9不変有限型。H2全幾何点は[Z2/PGL9]に含まれ、cubic像が稠密。Z2の全点がH2とは未主張 | prop:h2-constructible-relations-and-irreducible-closure |
 | pointed慣性とdegree gerbe | Aut_gr(R)/Gm_degree≅Aut_pt。rank9・rank25の行列式線束でgerbe中立化 | `lem:pointed-degree-scalar`, `prop:antiserre-gerbe-neutral` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
@@ -136,11 +139,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**直近の具体的P0：** noncubicの標準例 $f_1=uv,\ f_2=u^2+v^2$ から始め、命題 prop:noncubic-grassmann-explicit-cell の25単位pivotを用いて、九生成元・56関係の次数3乗法行列
-\[
- \mathcal J\otimes U+U\otimes\mathcal J\longrightarrow U^{\otimes3}
-\]
-を作る。商次数3の階数49を保つ条件を一次線形化し、$T_{\operatorname{Gr}}=\operatorname{Hom}(\mathcal J,(U\otimes U)/\mathcal J)$ 内の接空間を求め、$\mathfrak{pgl}_9$ の接軌道と noncubic 六係数の接像を除く。次数4の階数81との整合を点検し、root-sharing・root-coincident の境界点でも比較する。残った横断方向を既存のfoundation直線族から得る反Serre二次関係の微分と照合する。これにより $Z_2$ 上の真の相対H2実現部分関手を切り出すための有限次数条件候補を構成する。低次数接計算だけで相対Serre/AZ/ASや全次数のflatnessを宣言しない。
+**直近の具体的P0：** 今回求めた三次Hilbert接空間の上界83,83,84を精密化する。次に（a）次数4のHilbert階数81を保つ線形化が、三次で残る最大2,2,3の横断候補を切るか、（b）それらをfoundationの実際の相対Serre環変形から実現できるかを調べる。特に接空間次元の標数零での等号を先取りせず、相対AS被覆・Serre平方根・Abel heartを持つ方向と区別する。第一点は非交差根対の例 $f_1=uv,f_2=u^2+v^2$、次に一根共有、一致根対の順とする。次数3のkernel328/cokernel49の行列を再利用して次数4のsyzygyの線形化へ進む。
 
 **内在的な相対H2実現locusの有限表示と相対heart/AZ再構成を第一課題とする。** 共通反Serre環の全次数は既に二次提示で決まるので、今後は二次関係だけで表現できない条件（flat coherent heart・Serre・AZ・AS被覆・降下）に証明資源を集中する。 noncubic 表示上の `qgr R` heart の構成と `Perf` 上の相対Serreは既に得たので、これらを再び無条件の未解決問題に戻さない。次は全flat coherent対象の相対双対・AZ/AS条件および任意の内在的族の相対正規形を明示する。 出発点は `papers/sections/foundation_stack.tex` のQ_fndである。ruling交換とS2の整合性、有限étale二重被覆、cubicのgeometric開部分 `[Gr(2,8)_geo/(PGL2)^3]`、実現集合の誘導位相での既約性と全noncubic点へのdg特殊化は構成済みなので再び未解決課題に戻さない。cubic・noncubic の双方で相対反Serre環のGrassmann射を構成済みなので、次に両射とfoundation特殊化に一致する有限表示の反Serre実現locusを同定する。特にH2のheart・Serre根・AS被覆を持つ部分関手を非被約底上でも定義し、有限表示の開または局所閉部分になるかを調べる。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
 
