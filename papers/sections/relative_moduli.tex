@@ -1,0 +1,509 @@
+% !TEX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.9
+\section{相対的な対象の定義と反 Serre による認識}
+\label{sec:relative-h2-definition}
+
+本節では $k$ を標数零の代数閉体とし、まず $k$ 上局所有限型の
+スキームの big fppf site を用いる。この範囲は非被約スキームと
+有限型の局所 Artin 環を含む。任意の noetherian $k$-代数に対する
+連続拡張や極限保存性を、本節の構成だけから結論しない。
+とくに finite type の基底での局所 noetherian 性と、任意の
+noetherian 基底変更での strong noetherian 性を区別する。
+
+\subsection{Abel 圏の基底変更を指定する}
+
+局所有限型の affine スキーム $U=\operatorname{Spec}A$ 上で、
+$A$-線形 noetherian Abel 圏を $\mathcal C_U$ とし、
+$\mathcal A_U=\operatorname{Ind}\mathcal C_U$ と置く。
+$A\to A'$ に対し $(\mathcal A_U)_{A'}$ は
+$\mathcal A_U$ 内の $A'$-加群対象の圏、すなわち
+$A'$ の作用を備えた対象とその作用を保つ射の圏である。
+この構成において引戻しは
+$A'\otimes_A-$ であり、一般には右完全、$A'$ が $A$ 上平坦なら完全である。
+本稿でいう圏の基底変更は、Hom 加群を単に tensor して対象集合を固定する
+線形圏の基底変更ではない。
+この区別と基本的な随伴は
+\cite[\S4]{LowenVanDenBergh2006}、任意の有限型 affine 基底に必要な
+加群対象の定式化と flat descent は
+\cite[\S7.1, Definition 7.3, Remarks 7.4--7.5]{AHLHExistence}
+を参照する。後者は Artin--Zhang の abstract Hilbert schemes の
+B2.2, B3.16, B6.3, C8.6 を明記して用いている。
+
+\begin{definition}[基底変更を備える Abel 圏の族]
+\label{def:relative-abelian-system}
+$T$ 上の Abel 圏の族とは、$T$ 上の locally finite type affine
+$U$ に $\mathcal C_U$ を割り当てる pseudofunctor であって、次を満たすものとする。
+\begin{enumerate}
+\item 各 $\mathcal C_U$ は $A$-線形で本質的に小さい noetherian Abel 圏であり、
+  その Ind 圏は局所 noetherian Grothendieck 圏である。
+\item affine の間の射 $U'=\operatorname{Spec}A'\to U$ について
+  \[
+    \mathcal A_{U'}\simeq(\mathcal A_U)_{A'}
+  \]
+  という基底変更同値があり、引戻しは $A'\otimes_A-$ に対応する。
+  これらの比較同値は合成と恒等射に対して coherent である。
+\item 対象、射、完全列について fppf descent が成立する。
+  とくに $\mathcal C$ は対象と全ての射を保持する stack である。
+\item $\operatorname{Hom}_{\mathcal C_U}(E,F)$ は有限 $A$-加群であり、
+  affine flat base change と可換する。
+\end{enumerate}
+射はこの系の間の、基底変更と可換する線形完全同値とする。
+\end{definition}
+
+この定義は圏の局所表示を指定するものではない。
+基底変更同値は、族という語の意味を固定するためのデータであり、
+射はその coherent な同型を許す。
+有限型 affine 基底変更での局所 noetherian 性は
+Artin--Zhang B6.3 の範囲内である。
+任意の noetherian 基底変更へ、この結論を無条件に拡張しない。
+
+$\mathcal C_U$ の対象 $E$ が $A$ 上平坦とは、
+$-\otimes_AE:\operatorname{Mod}A\to\mathcal A_U$ が完全であることをいう。
+本稿では
+\[
+ \mathcal D_U=D(\mathcal A_U)^c
+\]
+を標準の導来 enhancement における compact 対象の圏とする。
+この圏は $\mathcal C$ から決まり、別の dg enhancement を標識に加えない。
+以下の導来条件は $T$ の fppf 局所で課す。
+すなわち fppf 被覆 $T_i\to T$ が存在して、その各 $T_i$ への
+全ての本節の affine 基底変更 $U$ 上で、$D(\mathcal A_U)$ は
+compactly generated であり、$\mathcal D_U$ は $D^b(\mathcal C_U)$ に含まれ、
+相対 smooth proper な $\operatorname{Perf}A$-線形圏となり、導来基底変更
+\[
+ \mathcal D_U\otimes_{\operatorname{Perf}A}\operatorname{Perf}A'
+       \simeq\mathcal D_{U'}
+ \tag{RP-BC}\label{eq:relative-perfect-basechange}
+\]
+と整合することを要求する。
+$\mathcal O$ はこれらの局所 chart 上でこの compact 部分に属するものとする。
+chart の選択は標識に含めない。
+本節の stack 性の証明には、貼合せ後の大域的な
+$D(\operatorname{Ind}\mathcal C_U)$ が局所導来圏の descent と一致するという
+追加主張を用いない。定義そのものが fppf 局所条件であることを用いる。
+特異な基底上で $\mathcal D_U=D^b(\mathcal C_U)$ としたり、
+compact 部分だけに bounded heart を課したりしない。
+また全ての底上平坦 coherent 対象が compact であることを
+今回の定義には追加しない。この一致は別の相対認識問題である。
+体上では、以下の foundation による議論で
+$\mathcal D_k=D^b(\mathcal C_k)$ が従う。
+
+以下の Hom、双対、導来 tensor はこの標準 enhancement で解釈する。
+(\ref{eq:relative-perfect-basechange}) は導来圏の基底変更であり、
+heart の通常の引戻しが全ての基底変更で完全であるという主張ではない。
+
+\begin{definition}[相対 Serre 条件]
+\label{def:relative-serre-condition}
+上の族が相対 Serre 条件を満たすとは、前記の局所 chart の各 affine $U$ 上で
+次が成立し、任意の本節の基底変更と整合することをいう。
+\begin{enumerate}
+\item compact 対象 $E,F$ の間の $\mathbf R\operatorname{Hom}(E,F)$
+  は $A$ 上 perfect で、導来基底変更と可換する。
+\item $\mathcal D_U$ に自己同値 $S_U$ が存在し、
+  functorial な同型
+  \[
+   \mathbf R\operatorname{Hom}(E,F)^\vee_A
+       \simeq\mathbf R\operatorname{Hom}(F,S_UE)
+  \]
+  を与える。
+\end{enumerate}
+Serre 関手および duality の選択自体は標識に含めない。
+二つの選択の比較は、表現する双対 functor の Yoneda 一意性による。
+\end{definition}
+
+\subsection{相対的な強い $\mathcal H_2$ 条件}
+
+相対 quadratic AS4 被覆とは、局所 affine 基底 $A$ 上の次数付き環
+$\mathcal B=T_A(V)/(I)$ であって、$\operatorname{rk}V=4$、
+$I\subset V^{\otimes2}$ が階数六の部分束、
+各次数が有限局所自由、左右 noetherian、
+全幾何 fiber が型 $(1,4,6,4,1)$ の AS 正則環となるものをいう。
+加えて、標準の左右 Koszul 複体は全次数で完全であり、
+基底変更後にも同じ完全列を与えるものとする。
+ここで幾何 fiber の定義には、記述された有限個の係数を含む体からの
+体拡大で作る次数付き環を用いる。
+被覆の二次の正則正規元 $g$ は、左右乗法の単射性と正規性に加え、
+$\mathcal B/(g)$ の次数別局所自由性を要求する。
+従って切断の完全列は任意の本節の基底変更と両立する。
+固定した相対切断環への被覆の有限判定は定理~\ref{thm:relative-finite-as-cover} に与える。
+平方根を選ばず、その存在だけを要求する部分関手の代数性は別問題である。
+
+\begin{definition}[有限型基底上の内在的 $\mathfrak H_2$]
+\label{def:relative-h2}
+$\mathfrak H_2(T)$ の対象は、定義~\ref{def:relative-abelian-system} の族
+$\mathcal C$ と対象 $\mathcal O\in\mathcal C_T$ の対で、以下を満たすものとする。
+\begin{enumerate}[label=(RQ\arabic*)]
+\item $\mathcal O$ は基底上平坦で、fppf 局所 chart の compact 導来部分は
+  (\ref{eq:relative-perfect-basechange}) と相対 Serre 条件を満たす。
+  これらの chart の全ての affine 基底変更上で
+  $\mathbf R\operatorname{Hom}(\mathcal O,\mathcal O)\simeq A[0]$。
+\item 各幾何 fiber の標識は、定義~\ref{def:gk-rank} の意味で
+  rank one torsion-free である。fiber 圏は module-object 基底変更、
+  または下記の全軌道環の $\qgr$ によって計算し、その一致を要求する。
+\item $T$ の fppf 局所で、系全体の線形完全自己同値 $s$ が存在する。
+  前記の chart と共通細分を取った局所 compact 導来部分で
+  $s^2\simeq S^{-1}[2]$ であり、全ての affine 基底変更上で
+  $(\mathcal O,s)$ は Artin--Zhang ample である。
+  ここで生成条件は有限直和からの全射、Hom の条件は各全射に対する
+  十分大きなシフトでの全射性として課す。
+\item 同じ局所的な $s$ について、前記の相対 AS4 環 $\mathcal B$ と
+  二次の正則正規元 $g$ が存在し、全次数で
+  \[
+   \bigoplus_{n\ge0}\operatorname{Hom}(\mathcal O,s^n\mathcal O)
+     \simeq\mathcal B/(g)
+  \]
+  となる。この同型は任意の本節の基底変更と可換する。
+\end{enumerate}
+射は pointed exact 同値 $(F,u)$、二射は
+$u'\eta_{\mathcal O}=u$ を満たす自然同型とする。
+$s$、根同型、被覆、切断元、軌道環の表示のいずれも対象の標識ではない。
+\end{definition}
+
+この定義は「全幾何 fiber が $\mathcal H_2$ に属する」ことだけを課す定義より強い。
+fppf 局所に存在すべき平方根と AS 被覆は、非被約底の変形方向を含めて要求される。
+体上の分類と fiberwise な判定だけで、この相対条件を確認したとは扱わない。
+
+\begin{lemma}[Abel flatness と標識付き二射の剛性]
+\label{lem:relative-h2-flat-center}
+定義~\ref{def:relative-h2} の局所族について、次が成り立つ。
+\begin{enumerate}
+\item $\mathcal C_U$ は Lowen--Van den Bergh の意味で $A$ 上 flat な Abel 圏である。
+\item $\operatorname{Aut}(\operatorname{Id}_{\mathcal C_U})=A^\times$。
+  特に pointed 一射の二自己同型は自明である。
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+$A$-線形完全自己同値は tensor と可換するから、
+$s^{-n}\mathcal O$ は $A$ 上平坦である。
+AZ の生成条件により任意の coherent 対象はこれらの有限直和の商である。
+従って任意の有限提示 $A$-加群 $M$ について
+$\operatorname{Tor}^A_1(M,-)$ は co-effaceable となる。
+これが \cite[Proposition 3.1, Definition 3.2]{LowenVanDenBergh2006}
+の flatness 条件である。Ind 圏についても同論文 Proposition 3.6 を適用できる。
+
+自然自己同型 $\eta$ の $s^{-n}\mathcal O$ 上の成分は、相対例外性により
+単元 $a_n\in A^\times$ の scalar である。
+正則二次切断の完全列により
+\[
+ \operatorname{Hom}(s^{-n}\mathcal O,\mathcal O)
+       \simeq (\mathcal B/(g))_n
+\]
+は階数 $(n+1)^2$ の有限局所自由 $A$-加群、従って忠実である。
+自然性は $(a_n-a_0)(\mathcal B/(g))_n=0$ を与えるので $a_n=a_0$。
+AZ の全射と自然性から全ての対象上で $\eta=a_0\operatorname{id}$ となる。
+pointed 二射では $a_0=1$ である。
+この結論は fppf 局所で確認できるため、根を大域に選んでいない族にも成り立つ。
+\end{proof}
+
+\begin{proposition}[相対的な反 Serre 再構成]
+\label{prop:relative-h2-antiserre-reconstruction}
+定義~\ref{def:relative-h2} の族について、相対反 Serre 関手の heart 上の代表
+$t=S^{-1}[2]$ は局所的な $s^2$ と一致し、選択を除いて降下する。
+局所的な軌道環
+\[
+ R=\bigoplus_{n\ge0}\operatorname{Hom}(\mathcal O,t^n\mathcal O)
+\]
+は、次数スカラーの比較を許して、基底変更と整合する。
+各 $R_n$ は階数 $(2n+1)^2$ の有限局所自由加群であり、
+\[
+ R\simeq T(R_1)/(J),\qquad
+ J=\ker(R_1^{\otimes2}\to R_2),\qquad\operatorname{rk}J=56.
+\]
+さらに局所 affine 基底で
+\[
+ (\mathcal C_U,\mathcal O,t)\simeq(\qgr R,\pi R,(1))
+\]
+が成立する。
+\end{proposition}
+\begin{proof}
+根を選んだ fppf chart では $t=s^2$ と置ける。
+compact 導来部分の二つの代表の比較は Serre 双対の一意性により決まる。
+この比較は AZ 生成対象上で定義され、その全ての射と可換するため、
+二段の AZ 表示を用いて全 coherent heart へ一意に延長される。
+具体的には対象を十分負の軌道対象の有限直和の余核として表す。
+二つの表示はさらに十分負の表示で比較でき、AZ の Hom 全射条件が
+その比較に必要な lift を与える。余核上の比較はこれにより表示に依存しない。
+
+同じ議論と右規約の軌道積により
+$R\simeq(\mathcal B/(g))^{(2)}$。
+正則切断の完全列と $\mathcal B$ の Koszul 型から階数公式が従う。
+相対二次 Veronese の補題~\ref{lem:relative-quadratic-veronese}
+により二次提示と基底変更整合性が従う。
+
+補題~\ref{lem:ample-square-from-generation} の証明は、
+有限局所自由な $B_1$ に対する評価射を用いれば $A$ 上でもそのまま成立する。
+従って $(\mathcal O,t)$ は AZ ample である。
+有限 Hom 条件と $\operatorname{End}(\mathcal O)=A$ を用いて
+Artin--Zhang の再構成定理
+\cite[Theorem 4.5(1)]{AZ1994}
+（一般の End 環に対する形は \cite[Theorem 7.3]{OACU2026} にも再録）
+を適用すると上の同値を得る。
+基底変更との整合性は、逆向きの関手を自由 graded 加群のシフトから
+$t$ の軌道対象への写像として作り、有限表示の余核へ延長することで確認できる。
+通常の基底変更は右完全なのでこの構成と可換する。
+全ての対象の低次数の $\Gamma_*$ が非平坦底変更と可換すると仮定する必要はない。
+\end{proof}
+
+\begin{proposition}[fppf stack 性と三次表示への全忠実性]
+\label{prop:relative-h2-stack-recognition}
+定義~\ref{def:relative-h2} の二 groupoid は、二射を除くと
+fppf stack in groupoids となる。
+相対反 Serre 関係式は全忠実な射
+\[
+ \Phi:\mathfrak H_2\longrightarrow[X_3/\operatorname{PGL}_9]
+\]
+を与える。
+従ってその像は、同型で飽和した全部分 stack として定義される。
+この主張は像の有限表示性・局所閉性・代数性を含まない。
+\end{proposition}
+\begin{proof}
+圏の系は category-valued stack とその基底変更比較を貼り合わせることで
+有効に降下する。Abel 性と完全性は完全な fppf 引戻しで検出され、
+finite presentation は module-object descent により降下する。
+noetherian 性も、昇鎖を忠実平坦に引き戻して検出できる。
+有限型 affine base change に対する Ind 圏の局所 noetherian 性と
+module-object 比較は、同じ descent と基底変更の随伴から得る。
+Hom の有限性は有限加群の忠実平坦降下で確認できる。
+compact generation、compact 導来部分、相対 Serre、perfect Hom および
+それらの基底変更は、定義上 fppf 局所 chart の存在条件である。
+従って、貼合せた系も同じ局所 chart を使ってこれらを満たす。
+ここで局所導来圏の descent の heart が同じであることだけから
+大域的な unbounded 導来圏の同値を結論していない。
+根と AS 被覆は初めから fppf 局所存在する性質であるので、
+根同士を重なりで同一視したり、被覆に descent datum を追加したりする必要はない。
+pointed 一射の二自己同型は前補題で消える。
+したがって一射の同型類による descent cocycle には一意な二射の lift があり、
+三重の整合性も一意性から従う。これで stack in groupoids を得る。
+
+前命題の $R_1$ の枠を選べば $J$ が $\operatorname{Gr}(56,81)$ の点を与える。
+全次数の Hilbert 階数から三次関係行列の階数は 176 なので、点は $X_3$ に入る。
+比較同型の変更は $R_n$ に単元の $n$ 乗を掛けるだけである。
+従って射影枠と関係式は大域に降下し、上の $\Phi$ が定まる。
+
+pointed exact 同値はcompact 導来部分と Serre duality を保つので、
+局所的に反 Serre 環の graded 同型を誘導する。
+この同型の異なる lift は次数スカラーだけ異なる。
+逆に二つの族の像の間の $\operatorname{PGL}_9$ 同型は fppf 局所で
+$\operatorname{GL}_9$ に持ち上がり、二次提示により全 graded 環の同型となる。
+AZ 再構成はこれを pointed exact 同値へ送る。
+異なる lift の次数スカラーは graded 加群の各次数に scalar を掛ける自然同型で消える。
+標識上恒等のこの二射は前補題により一意なので、局所同値は降下する。
+同じ核計算により射の忠実性も成り立つ。
+\end{proof}
+
+\begin{remark}[普遍環の次数別線束と認識条件]
+\label{rem:relative-h2-line-twist}
+$[X_3/\operatorname{PGL}_9]$ 上の普遍環は
+$L=(\det R_1)^{-11}(\det R_2)^2$ を用いて
+$R_n^{\mathrm{norm}}=R_n\otimes L^{-n}$ と正規化している。
+この正規化は pointed $\qgr$ 圏を変えないが、その次数移動を
+元の移動と同じにするわけではない。
+自然な同値の下で
+\[
+ (1)_{R^{\mathrm{norm}}}\simeq t\otimes L^{-1}.
+\]
+従って普遍環に $(1)=S^{-1}[2]$ を大域に課して像を定義してはならない。
+相対反 Serre 環との次数別線束 twist を許すか、fppf 局所でこの条件を課す。
+平方根の存在条件自体は、常に真の反 Serre 関手 $t$ に対して課す。
+\end{remark}
+
+\begin{proposition}[体上の対象の回復]
+\label{prop:relative-h2-field-recovery}
+$k$ 上の体としての値を取る評価 functor は
+\[
+ \mathfrak H_2(k)\simeq\mathcal H_2(k)
+\]
+という pointed groupoid の同値を与える。
+右辺では一射を標識に適合する自然同型で割る。
+この主張は任意 noetherian 基底への延長を含まない。
+\end{proposition}
+\begin{proof}
+左から右は定義の特殊化である。
+ここで $k$ は代数閉体なので、非空の有限型 fppf chart は $k$-点を持つ。
+従って局所存在として課した平方根、被覆、相対導来条件はその点へ引き戻せる。
+非代数閉体上で fppf 局所に根を持つという条件と、その体上で根を持つという
+条件を同一視する主張ではない。
+逆に $(\mathcal C,\mathcal O)\in\mathcal H_2(k)$ を取り、
+$\mathcal A=\operatorname{Ind}\mathcal C$ とする。
+有限型 affine $U=\operatorname{Spec}A$ 上で
+\[
+ \mathcal C_U=(\mathcal A_A)^{\mathrm{noeth}}
+\]
+と置く。Artin--Zhang の基底変更と flat descent により
+これは定義~\ref{def:relative-abelian-system} の系を与える。
+局所 noetherian 性について使うのは有限型基底変更の B6.3 である。
+$\mathcal O_U=A\otimes_k\mathcal O$ は $A$ 上平坦である。
+
+定理~\ref{thm:normal-helix} の full strong exceptional foundation の和を
+$T_0$、その有限次元 End 環を $\Lambda$ とする。
+locally noetherian Grothendieck 圏は locally coherent であり、
+その noetherian 対象は finitely presented である。
+\cite[Proposition 6.34]{LowenVanDenBergh2006} により、
+これらの対象からの全ての $\operatorname{Ext}^i$ は filtered colimit と可換する。
+noetherian 両端を持つ有限段の Yoneda 拡大は、順に noetherian 部分対象を
+取ることで $\mathcal C$ の中の拡大で代表できるので、
+$\operatorname{Ext}^i_{\mathcal C}$ と $\operatorname{Ext}^i_{\mathcal A}$ は一致する。
+$\mathcal C$ の homological dimension は二であるから、任意の
+$E\in\mathcal C$ について $\operatorname{Ext}^i_{\mathcal A}(E,-)=0$（$i>2$）となる。
+この有限 cohomological amplitude と直和との可換性を導来 Hom に適用すれば、
+$E$、特に $T_0$ は $D(\mathcal A)$ で compact である。
+$\operatorname{thick}(T_0)=D^b(\mathcal C)$ であり、
+$\mathcal C$ の対象は $D(\mathcal A)$ を localizing に生成するので、
+$T_0$ は compact generator となる。
+
+$A$ は $k$ 上平坦であるため、忘却 functor
+$\mathcal A_A\to\mathcal A$ は injective を保ち、
+その左随伴は $A\otimes_k-$ である。
+従って $T_A=A\otimes_kT_0$ に対し
+\[
+ \mathbf R\operatorname{Hom}_{\mathcal A_A}(T_A,M)
+ \simeq\mathbf R\operatorname{Hom}_{\mathcal A}(T_0,\operatorname{forget}M)
+\]
+となる。忘却は直和を保ち保守的なので $T_A$ も compact generator である。
+また $\mathbf R\operatorname{End}(T_A)=\Lambda\otimes_kA$ は次数零に集中する。
+導来 Morita \cite[\S4.3, \S8.2]{Keller1994} により
+\[
+ D(\mathcal A_A)^c\simeq\operatorname{Perf}(\Lambda\otimes_kA).
+\]
+有限自由 foundation の相対 bar 解消
+（補題~\ref{lem:foundation-relative-smooth-proper}）により、
+右辺は相対 smooth proper であり、任意の本節の基底変更と可換する。
+その対象は $T_A$ の有限 cones と直和因子から作られるので、
+左辺は $D^b(\mathcal C_U)$ に含まれる。
+Serre 関手は有限 perfect 双加群 $D\Lambda$ の基底変更で与えられる。
+元の完全自己同値 $s$ は Ind 圏へ colimit を保つ完全自己同値として延長し、
+作用準同型にも $s$ を適用することで加群対象の完全自己同値 $s_A$ を与える。
+Morita 表示で $s$ を表す双加群は
+$\mathbf R\operatorname{Hom}(T_0,sT_0)$ であり、上述の随伴によって
+$s_A$ の双加群はその $A$ への tensor である。
+従って元の自然同型 $s^2\simeq S^{-1}[2]$ もこの双加群同型の tensor として
+延長され、$s_A^2\simeq S_A^{-1}[2]$ を与える。
+
+相対 AZ 条件と Hom 有限性も確認する。
+任意の $M\in\mathcal C_U$ は $A\otimes_kN$、$N\in\mathcal C$、の
+有限直和の商である。
+実際、忘却した $M$ は noetherian 部分対象の filtered colimit であり、
+随伴によるそれらからの像は $M$ を生成する。
+$M$ の有限生成性から有限個で足りる。
+この全射の核も noetherian なので、同じ形の被覆を必要な有限段だけ取れる。
+系~\ref{cor:pointed-derived-exact} の証明は
+$\operatorname{Ext}^{i}(s^{-n}\mathcal O,N)=0$（$i>0,n\gg0$）を与える。
+$E=s^{-n}\mathcal O$ に対し
+\[
+ \operatorname{Ext}^{i}_{\mathcal A_A}(A\otimes E,A\otimes N)
+       =A\otimes_k\operatorname{Ext}^{i}_{\mathcal A}(E,N),
+ \qquad\operatorname{Ext}^{i}_{\mathcal A_A}(A\otimes E,-)=0\ (i>2).
+\]
+二段の被覆に dimension shifting を適用すれば、任意の $M$ について
+正次数 Ext の最終的消滅が従う。
+これが AZ の Hom 全射条件を与える。
+生成条件は $N$ の生成条件を tensor して得られる。
+Hom の $A$ 上有限性は次の三段の被覆で確認する。
+$N\in\mathcal C_U$ について $K_0=N$ とし、
+$F_i=A\otimes N_i$、$N_i\in\mathcal C$、による完全列
+$0\to K_{i+1}\to F_i\to K_i\to0$ を $i=0,1,2$ で取る。
+固定した $E=A\otimes M_0$ に対し、
+$\operatorname{Ext}^3(E,-)=0$ より
+$\operatorname{Ext}^2(E,K_2)$ は $\operatorname{Ext}^2(E,F_2)$ の商であり有限である。
+残る二列の長完全列により、順に
+$\operatorname{Ext}^1(E,K_1)$、$\operatorname{Hom}(E,N)$ も有限となる。
+一般の $M\in\mathcal C_U$ を $A\otimes M_0$ の商として表示すれば
+$\operatorname{Hom}(M,N)\subset\operatorname{Hom}(A\otimes M_0,N)$ なので、
+$A$ の noetherian 性から所要の有限性を得る。
+
+flat base change $A\to A'$ については、$A'$ を有限自由 $A$-加群の
+filtered colimit として表示する（Lazard の定理）。
+$M$ は $\mathcal A_A$ の finitely presented 対象であるため、随伴と
+有限直和との可換性により
+\[
+ \begin{aligned}
+ \operatorname{Hom}_{\mathcal A_{A'}}(A'\otimes M,A'\otimes N)
+  &\simeq\operatorname{Hom}_{\mathcal A_A}(M,A'\otimes N)\\
+  &\simeq A'\otimes_A\operatorname{Hom}_{\mathcal A_A}(M,N).
+ \end{aligned}
+\]
+この議論は一般の定義~\ref{def:relative-abelian-system} においても成立する。
+相対例外性と軌道 Hom の全次数の基底変更は
+$A\otimes_k\operatorname{Hom}(\mathcal O,s^n\mathcal O)$ から直接得る。
+
+被覆を選ぶ際には、体上の全分類の逆構成が与える適合表示を取れる。
+その有限な関係式、Koszul 複体と正則切断を $A$ へ tensor する。
+左右 noetherian 性は、有限型 $A$ を中心多項式環の商として書くことで保たれる。
+幾何体への拡大については、許容四つ組または非退化二形式という
+逆構成データが体拡大に安定であることと、同じ逆構成定理を拡大体上に適用する。
+cubic 側は命題~\ref{prop:admissible-period-h2} の標準 hull と
+選んだ二周期の scalar extension が、拡大体上の同じ構成になることを用いる。
+noncubic 側では明示された Ore 関係式と中心二次切断を tensor すればよい。
+また $\operatorname{Ind}\mathcal C\simeq\operatorname{QGr}B$ の
+module-object 基底変更は $\operatorname{QGr}(B\otimes_k\Omega)$ と一致する。
+これは $\operatorname{Gr}B$ 内の $\Omega$-作用が
+$\operatorname{Gr}(B\otimes_k\Omega)$ の構造と同じであり、
+torsion 局所化とその右随伴に同じ作用を移すことで確認できる。
+上述の逆構成により $B\otimes_k\Omega$ が noetherian であるため、
+noetherian 部分を取れば幾何 fiber の $\qgr$ との一致も従う。
+ここで arbitrary noetherian $A$ に対する strong noetherian 性を用いていない。
+全ての幾何 fiber で元の $\mathcal H_2$ 条件が成立する。
+
+最後に、系は module-object 基底変更で定まるため、$k$ 上の pointed exact
+同値は各有限型 affine へ一意に延長する。
+逆に系の同値は $k$ 上での値で決まり、その自然同型も同様である。
+これで全充満性と本質的全射性を得る。
+\end{proof}
+
+
+\subsection{対角と代数性の残る問題}
+
+\begin{proposition}[相対認識から対角と代数性判定への還元]
+\label{prop:relative-h2-algebraicity-reduction}
+$\Phi:\mathfrak H_2\to\mathfrak P=[X_3/\operatorname{PGL}_9]$
+が全忠実な fppf スタックの射であるとする。
+$X_{\mathrm{as}}=X_3\times_{\mathfrak P}\mathfrak H_2$ と置く。
+\begin{enumerate}
+\item $\mathfrak H_2$ の対角は affine かつ finite presentation である。
+\item $X_{\mathrm{as}}$ は $X_3$ の $\operatorname{PGL}_9$-不変 fppf 部分層であり、
+  fppf スタックとして $\mathfrak H_2\simeq
+  [X_{\mathrm{as}}/\operatorname{PGL}_9]$ である。
+\item 本節の有限型基底の site 上で、$\mathfrak H_2$ が
+  $k$ 上有限型の Artin スタックにより表現されるための必要十分条件は、
+  $X_{\mathrm{as}}$ が $k$ 上有限型の代数空間により表現されることである。
+\end{enumerate}
+ここでは $X_{\mathrm{as}}\to X_3$ が開または局所閉 immersion であるとは結論しない。
+\end{proposition}
+\begin{proof}
+$X_3$ は有限型の分離 $k$-スキームである。
+$\mathfrak P$ の対角は affine かつ finite presentation である。
+実際、その $X_3\times X_3$ 上への引戻しは
+\[
+ \{(g,x,y):gx=y\}\longrightarrow X_3\times X_3
+\]
+であり、$\operatorname{PGL}_9\times X_3\times X_3$ の閉部分スキームからの射である。
+有限型 $k$-スキームは noetherian なので、この閉条件は有限表示である。
+affineness と finite presentation は fppf に降下する。
+全忠実性により、任意の二つの $\mathfrak H_2$ 族の Isom 層は
+それらの $\mathfrak P$ 像の Isom 層と一致する。
+従って $\Delta_{\mathfrak H_2}$ は $\Delta_{\mathfrak P}$ の引戻しであり、(1) を得る。
+
+全忠実性から $X_{\mathrm{as}}$ は部分層である。
+射 $X_{\mathrm{as}}\to\mathfrak H_2$ は
+$X_3\to\mathfrak P$ の引戻しなので、$\operatorname{PGL}_9$-torsor である。
+torsor の有効な降下が (2) を与える。
+
+$X_{\mathrm{as}}$ が有限型代数空間で表されれば、滑らかな有限型群による商は
+有限型 Artin スタックであり、所要の site 上の関手を表す。
+逆に $\mathfrak H_2$ が有限型 Artin スタックで表されれば、
+$\Phi$ はその有限型 smooth chart 上の射と降下から代数スタックの射に延長する。
+この引戻しは Artin スタックとなり、
+かつ部分層なので全ての慣性が自明である。
+慣性自明な Artin スタックは代数空間である。
+さらに $X_{\mathrm{as}}\to\mathfrak H_2$ は滑らかな全射で有限表示、
+実際には有限型の affine 群の torsor なので quasi-compact でもある。
+有限型性はこの射に沿って昇降するため最後の主張が従う。
+\end{proof}
+
+
+以上で得たのは、有限型基底上の内在的な fppf スタックと、
+その対角の有限表示性・表示スタックへの全忠実性である。
+$X_{\mathrm{as}}$ の表現可能性、任意の基底への極限保存を伴う延長、
+既存の表示 chart と型を横断する特殊化族の相対認識は残る。
+既約包絡の幾何点集合や有限型 incidence の scheme-theoretic image を、
+この部分層そのものと同一視しない。

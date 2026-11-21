@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.9、数学原稿v1.8。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.10、数学原稿v1.9。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
@@ -12,37 +12,31 @@
 
 ## モジュライのスタック構成
 
-記号を cubic と揃え、体上で分類する強い対象のクラスを `\mathcal H_2`、その内在的な相対モジュライスタック（構成目標）を `\mathfrak H_2` と書く。`\mathfrak H_2` は現時点で代数性・相対認識が未完成であり、以下の構成済み表示スタックとは区別する。
+体上の対象クラスを $\mathcal H_2$、有限型基底上の内在的な相対族の fppf スタックを $\mathfrak H_2$ と書く。**相対族の定義、stack 性、反 Serre 関係式への全忠実性を構成した。代数性は未証明である。** 主な証明は [相対定義と認識](papers/sections/relative_moduli.tex) に置く。
 
-体上の分類に続き、族と慣性を保つ構成を進めている。
+族は基底変更と descent を備えた noetherian Abel 圏と構造対象 O の対である。導来条件には局所的な canonical compact 部分 $D(\operatorname{Ind}\mathcal C)^c$ を用い、特異基底上でそれを全 $D^b(\mathcal C)$ と同一視しない。平方根・根同型・AS被覆は fppf 局所の存在条件であり、標識に加えない。標数零の代数閉体上では元の $\mathcal H_2$ の pointed groupoid を回復する。
 
-**全次数平坦性の認識を強めた。** [相対Koszul節](papers/sections/relative_koszul.tex)により、全H2の切断環・反Serre環はKoszulであり、全幾何fiberがH2反Serre環である $X_3$ の任意の非被約Noetherian族は全次数平坦となる。H2点における任意のArtin基底上の $X_3$ 変形にも適用でき、既存の二次jetの四次以上の平坦性はこの定理で解決した。平方根・Serre・heart・AS被覆の認識と次のArtin段階への持上げは別に必要である。
+| 相対モジュライに関する結果 | 状態・証明の所在 |
+| --- | --- |
+| $\Phi:\mathfrak H_2\to[X_3/\mathrm{PGL}_9]$ は全忠実 | 相対AZ再構成とpointed二自己同型の自明性。[相対定義節](papers/sections/relative_moduli.tex) |
+| 対角はaffineかつ有限表示 | 表示スタックの対角の引戻し。同節 |
+| $X_{\mathrm{as}}=X_3\times_{[X_3/\mathrm{PGL}_9]}\mathfrak H_2$ は不変fppf部分層、$\mathfrak H_2\simeq[X_{\mathrm{as}}/\mathrm{PGL}_9]$ | 層としての商表示は確立。$X_{\mathrm{as}}$ の有限型代数空間による表現可能性が未解決 |
+| 全H2の切断環・反Serre環はKoszul | 正則正規二次商とVeroneseの既知定理を適用。[相対Koszul節](papers/sections/relative_koszul.tex) |
+| 三次まで平坦＋全幾何fiberがKoszulなら全次数平坦 | PP2005 Chapter 6 Theorem 7.3を任意の非被約Noetherian基底に適用。相対Koszul解消も任意底変更と整合 |
+| H2点の任意のArtin基底上の $X_3$ 変形はflatなpointed Abel変形を与える | noetherian性の持上げと $\operatorname{qgr}$ による構成。同節。表示の次数移動が反Serreになることは別条件 |
+| 固定した相対切断環へのAS4被覆は有限表示のincidenceで判定できる | 四次までの元の積・五次までの二次双対・Frobenius条件。[相対被覆節](papers/sections/relative_as_cover.tex)。任意基底変更のnoetherian性は明示した仮定の範囲で用いる |
+| pointed Abel圏が一定で、反Serre表示からは外れる $\mathbb G_m$ 上の二次環族 | [偏極の変形](papers/sections/antiserre_polarization.tex)。$q=2$ で中心一次部分が消滅し、どのH2のcanonical反Serre環でもない |
+| 同族の非零接方向は一定のpointed Abel変形へ写る | 中心元 $u^4,v^4$ の交換子が $16\varepsilon u^4v^4$。計算機に依存しない証明と[厳密検算](computations/verify_antiserre_polarization.py) |
 
-**定義を修正した場合に現在証明できる有限型モジュライ：** [新しい証明節](papers/sections/foundation_stack.tex) で二つの厳密な商スタックを構成した。第一は $\mathfrak H_2^{\mathrm{split,pres}}=\mathfrak C\amalg\mathfrak N^{\mathrm{pres}}$。全H2幾何点とpointed慣性を分類するが、型を局所定数にするためcubic→noncubicの退化が消え、既約・連結成分が人工的に2個になる。第二は $\mathfrak H_2^{(3),\mathrm{pres}}=[X_3/\mathrm{PGL}_9]$ で、$X_3\subset\mathrm{Gr}(56,81)$ は九生成元・56二次関係から作る三次関係行列のrankが**ちょうど176**（従って$\mathrm{rank}R_3=49$）という具体的な局所閉条件。実際の非被約族と普遍二次代数を持ち、全H2既知chart・特殊化族が入る。しかし高次平坦性と内在的H2条件は課さないのでH2条件は保証されない。
+$X_3\subset\mathrm{Gr}(56,81)$ は三次関係行列の階数がちょうど176となる局所閉スキームであり、商は有限型Artinスタックである。その全体を $\mathfrak H_2$ と同一視できないことは、上記の偏極変形で幾何点についても明示した。有限型incidenceのfppf像は一般には代数空間とは限らないため、AS被覆を選ぶ空間の構成だけで存在条件の代数性を結論しない。
 
-二根対一致のnoncubic点では、$[X_3/\mathrm{PGL}_9]$ の接複体の$H^0$の次元は **5**、滑らかなfoundation表示 $\mathfrak Q_{\mathrm{fnd}}$ は **4** であり、形式近傍は同値にならない。いずれの修正定義でも元の $\mathfrak H_2$ 全体を既に構成したとは主張しない。
+既存の foundation 表示 $\mathfrak Q_{\mathrm{fnd}}$ は滑らかな有限型Artinスタックで次元3、ruling交換を忘れる写像は有限étale二重被覆である。全H2幾何点groupoidが全充満に入り、cubic非空開と全noncubic点へのpointed smooth proper dg特殊化を持つ。反Serre環としても全次数平坦な特殊化となるが、これらの族が相対H2の全条件を満たすことは未証明である。[foundation節](papers/sections/foundation_stack.tex)
 
-- [noncubic表示スタック](papers/sections/noncubic_stack.tex)は `[P/G]`、滑らかな有限型Artinスタックで次元1。幾何点の同値類だけでなくpointed慣性も一致する。根配置stackへのμ2² gerbe、一般慣性D8×C2、共有根でD8、根対一致で正次元慣性を記述した。
-- 同stackのgood moduli spaceは `A1_χ`。共有根と根対一致はともにχ=1へ写り、全体のcoarse moduli algebraic spaceは存在しない。底変更と整合する正則切断の族もétale局所に構成した。
-- [有限foundationの商](papers/sections/foundation_stack.tex) `F=[A64/(G/K)]`（`K≅Gm³`）は滑らか・有限型・次元3。全H2のfoundationが入り、各有限代数についてHH^n=0（n≥3）、dim HH²−dim HH¹=3を直接証明した。二つのruling対象と、それに対応する二つのfoundationは体上で内在的に定まる。
-- 開部分 `F0=[U0/(G/K)]` 上で、二つの短完全列の交換によりcoherentな相対ruling対合を構成した。`Q_fnd=[F0/S2]` は滑らかな有限型Artinスタック、次元3であり、`F0→Q_fnd` はrepresentableな有限étale二重被覆である。全H2(k)のpointed exact同値のgroupoidは `Q_fnd(k)` に全充満に入り、全ての幾何点の慣性を保つ。任意の `Q_fnd` の点がH2であるとは主張しない。
-- cubicを与えるgeometric開部分は `[Gr(2,8)_geo/(PGL2)^3]` と表示でき、滑らか・有限型・次元3である。許容条件は四重テンソルの隣接二因子への非零縮約条件であり、写像の階数条件だけでは代用できない。
-- H2の実現集合 `Y⊂|Q_fnd|` は、cubicを与える非空開部分Cを含む。Q_fndの既約性からCは稠密であり、Yも**誘導位相で既約かつ連結、成分数はいずれも1**となる。既約なambientに含まれるという事実だけでなく、Yが稠密な既約開部分を含むことを使う。
-- 各noncubic点xと可換quadricのcubic点yを結ぶ線 `ℓ(t)=(1−t)x+ty` から、有限個の不要なパラメータを除く。これにより特殊ファイバーがx、0以外の全幾何ファイバーがcubicとなる階数24の有限自由foundation代数族を得る。そのPerf圏は構造対象付き相対smooth proper dg族である。全ファイバーがH2に由来することと、相対heart・平方根・AZ・AS被覆が一斉に存在することは区別する。
-- **新しい相対反Serre環の具体表示：** [noncubic表示](papers/sections/noncubic_stack.tex)では `B=A[u,v]⟨c,d⟩/(c²−f₁,d²−f₂)` が中央 `A[u,v,h], h=cd+dc` 上階数4のClifford代数となる。全Noetherian基底で`B`と反Serre環は左右noetherian。Clifford traceから、重み付き射影スタック上のperfect対象に相対Serre `S=(-)_ι(-2)[2]` とétale局所平方根を得た。
-- **noncubic の相対 Abel heart：** 降下した反Serre環 `R` の `qgr R` から、平方根を大域的に選ばない構造対象付き相対 noetherian Abel 圏を構成した。étale 局所には既存の `qgr B^σ` に Veronese 同値で一致し、中心 Clifford order の perfect Serre 双対を使って `RHom(O,tⁿO)=B₂ₙ[0]` を全次数で計算できる（[noncubic 証明節](papers/sections/noncubic_stack.tex)）。全内在的 `\mathfrak H_2` と同一視するための相対 AZ/AS 条件・任意族の正規形はなお未証明。
-- noncubic上の選択不要な反Serre環 `R_n=B_{2n}⊗(det W)^−n`、積 `a⋆b=aιⁿ(b)` は`[P/G]`へ降下する。cubic開でもfoundationの相対逆Serre双加群から同じ階数の環を構成し、**双方で `[Gr(56,81)/PGL9]` への射**を与える。各noncubic点への既存のdg退化は、全次数平坦な反Serre環の実際の一径数族にもなる（[証明節](papers/sections/foundation_stack.tex)）。
-- 反Serre環の候補 `[X_as/PGL9]` では、rank9・rank25の行列式線束によりdegree-scalar gerbeを中立化できる。ただし相対実現locus X_as の有限表示、Serre/AZ再構成と全H2の族との同定は未証明。
-- **二次関係は全反Serre環を決定する。** 一般の二次環の偶数Veroneseに対する相対的な直接証明を用いて、cubic・noncubic・全特殊化族で $\mathcal R=T(\mathcal R_1)/(\mathcal J)$、rank($\mathcal R_1$)=9、rank($\mathcal J$)=56を証明。元の一般定理はPolishchuk–Positselski既知であり、今回の貢献は相対族・明示構成への適用（[foundation証明](papers/sections/foundation_stack.tex)）。
-- **noncubic 六係数の固定 Grassmann affine cell：** $\mathcal R_1$ の標準九基底の積から25個のunit pivotを選び、残り56列の関係係数が多項式であることを示した。二つの平方積から二形式の六係数が回復できるため、フレーム付き六次元表示 $\mathbb A^6$ は固定Grassmann cellへ閉埋込み、非退化パラメータ開 $P$ は局所閉埋込み（[命題](papers/sections/noncubic_stack.tex)、[厳密計算](computations/verify_noncubic_antiserre_pivots.py)）。群商が内在的モジュライと同値であるとはまだ言わない。
-- **noncubicの三次Hilbert接空間：** noncubicの基準点三型（非交差・一根共有・二根対一致）でPGL9の接軌道と六係数の接像の和は標数零で正確に81次元。$\dim R_3=49$ に対応するrank176の行列 $L_J:V\otimes J\to(V^{\otimes2}/J)\otimes V$ の一次階数条件について、法101で16072×1400行列を厳密に全行処理し、階数1317・1317・1316。さらに法101の核83・83・84本を有理数へ復元し、整数行列との積が全て零となることを検証したため、標数零での三次Hilbert determinantal locusの接次元は**正確に83・83・84**となる。これらは内在的 $\mathfrak H_2$ の接空間次元ではない（[証明](papers/sections/noncubic_stack.tex)、[計算証明書](computations/verify_noncubic_degree3_tangent.py)）。
-- **Koszul 性と一次全次数平坦性：** noncubicの二次PBW環BはKoszulであり、反Serre環Rは偶数VeroneseとZhang twistを経てKoszul。双対数上の二次関係変形で三次Hilbert条件（rank176）を満たすものはKoszul双加群解消を用いて全次数平坦な一次次数付き代数変形となる。これを内在的H2のAbel圏変形と同一視しない。
-- **内部次数0 Hochschild 変形：** 非交差・一根共有・二根対一致の三基準点でHH¹_0の次元は(1,1,2)、HH²_0の次元は(3,3,5)。これは有限foundation代数のHH³以降消滅とは異なる。三次Hilbert条件の横断接空間(2,2,3)は全次数平坦な**一次**代数変形に対応する。
-- **横断方向の2-jet：** 三基準点の2/2/3横断方向すべてに、三次Hilbert条件をk[t]/(t³)上で保つ二次補正を構成した。基底ベクトルと二つずつの和の全組について有理数の補正を求め、整数係数行列との積が厳密に零になることを検証した（[証明](papers/sections/noncubic_stack.tex)、[検算資産](computations/verify_noncubic_second_order.py)）。全次数の二次平坦性・高次持上げ・相対H2族の存在は未確定。
-- **有限型既約な代数的包絡：** cubic の関係式像の被約閉包 $Z_2\subset\operatorname{Gr}(56,81)$ はPGL9不変・既約。商 $[Z_2/\operatorname{PGL}_9]$ は有限型Artinスタックで、全H2幾何点を含み、cubic像が稠密。全幾何点の関係像は有限型2 chartの像の構成可能な和。しかし $Z_2$ にH2でない点が含まれる可能性があるため、まだ $\mathfrak H_2$ ではない。
-- 可換quadric上でも、選んだSerre根が固定したabelian一次変形へ持ち上がらない例を構成した。自己同値がHochschild変形類を保つことが必要である。この例は相対H2の非開性や別の根の非存在を意味せず、構成した変形がH2の族であるとも主張しない。
+noncubic表示商 $\mathfrak N^{\mathrm{pres}}$ は滑らかな有限型Artinスタックで次元1。全幾何点のpointed慣性、符号 $\mu_2^2$ gerbe、good moduli $\mathbb A^1_\chi$、coarse moduli algebraic spaceの不存在を記述した。相対Clifford表示、perfect Serre公式、選択不要な反Serre環とそのnoetherian heartも構成済みである。[noncubic節](papers/sections/noncubic_stack.tex)
 
-**全H2の内在的なArtinスタックの完成は、これらの表示スタックと体上の全充満なgroupoidの構成と区別する。** 相対ruling交換とS2の整合性は証明済み。現在の核心は、非被約基底を含む内在的H2実現locusの有限表示、相対Serre/AZ再構成と表示の認識・降下である。実現集合の誘導位相と、構成すべき内在的相対モジュライの位相との一致も、この比較に含める。
+noncubicの三代表点では $\dim HH^1(R)_0=(1,1,2)$、$\dim HH^2(R)_0=(3,3,5)$。関係式の接次元は正確に83,83,84で、群軌道と六係数の和は81次元である。横断2,2,3方向の全二次障害が消え、既存の二次jetは上記Koszul原理により全次数平坦となる。二根対一致点における $X_3$ 商とfoundation商の接次元5対4は、相対H2の接次元を決めるものではない。
+
+**成分に関する現在の結論：** foundation実現点集合は誘導位相で既約・連結、成分数は各1。cubic/noncubicの表示商の非交和は人工的に2成分になる。内在的 $\mathfrak H_2$ の代数性と位相比較が未完成なので、これをその成分数とはしない。
 
 ## 対象
 
@@ -94,6 +88,7 @@ $$
 | [notes/ore_quadric_deformations.md](notes/ore_quadric_deformations.md) | 相対変形を試すOre族の証明稿。相対CY・Serre・H2認識は未証明 |
 | [notes/literature.md](notes/literature.md) | 文献の版・仮定・適用範囲・リンク |
 | [computations/verify_reducible_quadruples.py](computations/verify_reducible_quadruples.py) | 全非整曲線型の三次関係・四次テンソル・周期平方・必要な貼合せの記号恒等式 |
+| [computations/verify_antiserre_polarization.py](computations/verify_antiserre_polarization.py) | 一定qgr・非一定偏極族の接軌道階数と中心一次部分を厳密に検算 |
 | [computations/verify_noncubic_second_order.py](computations/verify_noncubic_second_order.py) | 三基準点の横断接方向の二次Schur障害を、全有理補正の整数恒等式として検証（NumPy・Numbaはオプション） |
 | [computations/verify_noncubic_degree3_tangent.py](computations/verify_noncubic_degree3_tangent.py) | 法101でPGL9/係数接方向と、三次Hilbert階数条件の全16072線形条件を厳密検算（NumPy・Numbaはオプション） |
 | [computations/verify_noncubic_antiserre_pivots.py](computations/verify_noncubic_antiserre_pivots.py) | noncubic反Serre環の9生成元・25 unit pivotと六係数の多項式回収を正確に検算 |
@@ -102,7 +97,7 @@ $$
 
 ## 再生成
 
-現行v1.7原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数と、新たな25 pivot・六係数回収を代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
+現行ソースの参照確認、今回の公開計算コードの再実行、組版・画像確認の範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) を正本とする。機械チェックは数学的証明や新規性の認証ではない。外部査読、形式証明、包括的な新規性判定は未実施である。
 
 repoルートで実行する。
 

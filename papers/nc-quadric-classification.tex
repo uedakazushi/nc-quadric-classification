@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.8
+% 日本語 LuaLaTeX。2026-11-21 / v1.9
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -44,7 +44,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.8（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.9（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -52,73 +52,50 @@
 構造対象 $\OO$ のみを指定した非可換二次曲面を pointed exact 同値で分類する。
 $\OO$ は Gabriel--Krull 商で rank one torsion-free かつ exceptional とし、
 反 Serre 関手の exact な平方根 $s$ の存在、$(\OO,s)$ の Artin--Zhang ampleness、
-全切断環の型 $(1,4,6,4,1)$ の二次 AS 正則環による正則正規二次被覆を要求する。
+全切断環の型 $(1,4,6,4,1)$ の AS 正則環による正則正規二次被覆を要求する。
 平方根、ambient 環、商表示は指定構造に含めない。
 全対象は pointed cubic 表示を持つ領域と持たない領域に分かれる。
-前者は linear データと全ての Van den Bergh 許容四つ組で構成され、
-四生成・七二次関係からなる有限の代数的判定により重複を除く。
-被約性・整性を仮定せず、全ての曲線型で二周期の平方を反 Serre 移動と比較する。
-後者は二つの非退化二次形式を持つ中央二重平方環に帰着し、
-$\PP^1$ 上の二つの被約二点集合の非順序対を同時射影変換で割った集合で分類される。
-証明では最初の軌道対象を内在的に認識し、二つの MCM 型の階数によって
-両領域を検出する。階数三の場合には共通の二変数環を回復し、
-二つの conic を同時に untwist する。
+前者は linear データと、被約性・整性を仮定しない全ての Van den Bergh
+許容四つ組から構成され、四生成・七二次関係による有限判定で重複を除く。
+後者は中央二重平方環に帰着し、$\PP^1$ 上の二つの被約二点集合の
+非順序対を同時射影変換で割った集合で分類される。
 通常の quadratic envelope による定義の障害、可換対象の四つの適合根、
 ambient の非一意性も記述する。
-noncubic 領域については次数スカラーを除いた一次元の滑らかな表示商スタックを構成し、
-根配置スタックへの符号 gerbe、幾何点の慣性、good moduli space $\mathbb A^1$ と
-粗モジュライ代数空間の不存在を記述する。
-二つの ruling を内在的に認識し、その交換を二つの短完全列の交換として族で構成する。
-これにより滑らかな三次元の Artin スタックを得て、全対象の幾何点群oidを
-自己同値群も含めて全充満に実現する。有限 foundation の
-三次以上の Hochschild コホモロジーの消滅も直接示す。
-cubic の非空開部分を含む全実現点集合は、表示スタックからの誘導位相で既約である。
-各 noncubic 点は、他の全幾何ファイバーが cubic となる有限自由 foundation 代数族、
-従って構造対象付き smooth proper dg 圏の族の特殊ファイバーとして実現される。
-この族上で反 Serre 導来 Hom は全次数有限自由な次数付き環に集中し、
-cubic と noncubic の双方から同じ九生成元・五十六次元二次関係の
-Grassmann 商への射を得る。
-さらに反 Serre 環は全次数でこの二次関係のみから再構成でき、
-全ての既存の平坦な特殊化族でも同じ二次提示が成り立つ。
-noncubic 表示では階数四の中心 Clifford 表示を用いて相対 Noetherian 性と
-perfect 圏上の相対 Serre 双加群・軌道 Hom を計算する。
-さらに平方根を選ばずに偶数反 Serre 環を降下し、
-その $\qgr$ により基底上の noetherian Abel heart を構成する。
-noncubic の二形式の六係数は二次関係 Grassmannian の
-固定 affine cell に局所閉埋込みとして記述でき、
-全 $\HH$ の関係像は構成可能で、その cubic 像の既約閉包は
-全 noncubic 点を含む有限型既約な代数的包絡を与える。
-noncubicの基準三型では、基底変更と六係数が張る接空間は次元81であり、
-三次Hilbert階数を保つ関係式の一次変形の接空間次元は、
-三基準点で標数零において正確に83、83、84である。
-noncubic の反 Serre 環が Koszul であることを証明し、
-三次Hilbert条件の一次整合が全次数平坦な二次代数の
-一次変形を与えることを示す。
-この結果と Koszul 双加群解消から
-内部次数零の Hochschild コホモロジーの次元は
-$HH^1$ で $1,1,2$、$HH^2$ で $3,3,5$ と決まる。
-三次条件の横断接空間 $2,2,3$ 次元については、
-基底と基底の各二項和の二次補正を厳密な整数演算で構成し、
-三次Hilbert階数条件の二次障害が消えることも証明する。
-全 $\HH$ の反 Serre 環が Koszul であることと、
-Noetherian 局所環上の Koszul 変形原理を用いると、
-全幾何ファイバーが $\HH$ 型である $X_3$ の族は全次数で平坦となる。
-従って既存の二次 jet も全次数平坦な代数の変形を与える。
-ただし次の Artin 段階への持上げや相対 Abel 圏への実現は未証明である。
-修正した定義では、cubic/noncubic の型を局所定数とした
-表示スタックの非交和は、全幾何点と慣性を保つ有限型 Artin スタックとなるが、
-両型間の特殊化を除外する。
-一方、九生成元・五十六関係の二次環に三次階数四十九を課す
-局所閉 locus $X_3\subset\operatorname{Gr}(56,81)$ の商
-$[X_3/\operatorname{PGL}_9]$ は、
-特殊化を許す三次 Hilbert 条件付き二次提示の
-真正な有限型モジュライスタックとなる。
-これらと内在的 $\HHstack$ との同値は未証明である。
-とくに二根対一致点では、三次Hilbert表示商の接空間は五次元、
-滑らかなfoundation表示商の接空間は四次元であり、
-形式近傍すら同値にならない。
-相対 heart・平方根・豊富性まで要求する内在的モジュライスタックを
-$\HHstack$ と書くが、その構成と表示スタックとの比較は未完成である。
+
+族については、局所有限型基底の fppf site 上で内在的な
+$\HHstack$ を定義し、体上の pointed groupoid の回復と stack 性を証明する。
+導来条件は局所の canonical compact 圏に課し、平方根と AS 被覆は
+fppf 局所存在する性質として扱う。
+相対 AZ 再構成により、反 Serre 関係式の射
+$\HHstack\hookrightarrow[X_3/\operatorname{PGL}_9]$ は全忠実となり、
+対角は affine かつ有限表示である。
+ここで $X_3\subset\operatorname{Gr}(56,81)$ は、九生成元の二次環に
+三次 Hilbert 階数四十九を課した局所閉スキームである。
+代数性は、framed 実現部分層 $X_{\mathrm{as}}\subset X_3$ の
+有限型代数空間による表現可能性へ帰着するが、この表現可能性は未証明である。
+
+全 $\HH$ の切断環と反 Serre 環は Koszul である。
+Polishchuk--Positselski の変形原理により、三次まで平坦で
+全幾何ファイバーが Koszul である二次環族は、非被約 Noetherian 基底でも
+全次数平坦となる。特に $\HH$ 点の Artin 基底上の $X_3$ 変形は
+noetherian な平坦 Abel 変形を与える。
+固定した相対切断環への AS4 被覆は、四次までの積と
+五次までの二次双対による有限表示の条件で認識できる。
+一方、pointed Abel 圏が一定であっても、次数付き環が非自明に動き、
+反 Serre 環の表示から外れる Zhang 族を構成する。
+従って全次数平坦性と $\qgr$ の構成だけでは反 Serre 偏極の認識は完了しない。
+
+既存の foundation 表示は滑らかな三次元 Artin スタックであり、
+全幾何点 groupoid を自己同値群ごと全充満に実現する。
+cubic 非空開を含む実現点集合は誘導位相で既約・連結であり、
+各 noncubic 点への特殊化を smooth proper dg 族と
+全次数平坦な反 Serre 環族として構成する。
+noncubic 表示商の慣性、符号 gerbe、good moduli $\mathbb A^1$、
+中心 Clifford 表示と相対 perfect Serre 双対も記述する。
+三基準点の内部次数零 Hochschild 次元は
+$HH^1$ で $1,1,2$、$HH^2$ で $3,3,5$ となり、
+横断二次障害の消滅を厳密な整数計算で検証する。
+表示族の相対 $\HH$ 認識と内在的な成分の位相比較は残る。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
 \tableofcontents
@@ -453,6 +430,9 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/foundation_stack}
 \input{sections/noncubic_stack}
 \input{sections/relative_koszul}
+\input{sections/relative_moduli}
+\input{sections/relative_as_cover}
+\input{sections/antiserre_polarization}
 
 \section{同値類の分類後に残る問題}
 \label{sec:open-problems}
@@ -489,70 +469,26 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 Deligne--Mumford スタックにはならない。
 \end{remark}
 
-\begin{problem}[相対版]
-相対 Serre 関手、Gabriel--Krull rank、平方根の降下、
-orbit 環の底変更と次数別平坦性を備えた族を定義し、
-pointed exact 同値に関するモジュライの代数性、成分、慣性、境界を記述せよ。
-第\ref{sec:foundation-stack}節と第\ref{sec:noncubic-stack}節の表示スタックを、
-この内在的な相対問題と比較せよ。二つの ruling の内在性と相対交換、
-全幾何点群oidの全充満な実現、Hochschild 障害の消滅、
-次数スカラー gerbe の中立化は得られたが、
-相対実現 locus の有限表示と再構成の証明は残る。
-命題~\ref{prop:h2-component-density} と命題~\ref{prop:h2-line-degeneration} により、
-表示からの誘導位相では全実現点集合は既約であり、cubic から全 noncubic 点への
-smooth proper dg 圏の特殊化も得られている。
-さらに命題~\ref{prop:line-degeneration-antiserre-algebras} は、
-これを全次数平坦な反 Serre 環の特殊化に強める。
-命題~\ref{prop:cubic-relative-antiserre-grassmann} と
-命題~\ref{prop:noncubic-antiserre-grassmann} は
-同じ九生成元の二次関係 Grassmann 商への射を与え、
-命題~\ref{prop:noncubic-relative-serre-on-perfect} と
-系~\ref{cor:noncubic-relative-orbit-hom} は
-noncubic 表示の perfect 圏上の相対 Serre 双加群と
-反 Serre 軌道 Hom を計算する。
-さらに命題~\ref{prop:noncubic-relative-heart-veronese} は
-同じ相対環から構造対象付きの noetherian Abel heart
-$\qgr\mathcal R$ を直接構成する。
-系~\ref{cor:h2-intrinsic-antiserre-quadratic} と
-補題~\ref{lem:relative-quadratic-from-fibers} は
-これらの反 Serre 族を二次関係から全次数復元し、
-系~\ref{cor:cubic-relative-full-quadratic-presentation}、
-系~\ref{cor:noncubic-relative-full-quadratic-presentation}、
-系~\ref{cor:line-full-quadratic-degeneration} に適用できる。
-命題~\ref{prop:noncubic-grassmann-explicit-cell} は
-noncubic の六係数を固定 Grassmann affine cell に明示的に埋込み、
-命題~\ref{prop:noncubic-third-degree-tangent} は
-noncubic の三種類の根配置で群軌道・係数方向の和の接次元81を証明し、
-三次Hilbert階数条件の接次元を、有理核の整数検証により標数零で正確に83,83,84と決定する。
-命題~\ref{prop:noncubic-antiserre-koszul} と
-補題~\ref{lem:koszul-first-order-degree-three} により
-noncubic 反Serre環は Koszul であり、
-三次平坦な一次二次関係変形は全次数平坦となる。
-定理~\ref{thm:noncubic-hh01-hh2} は
-内部次数零の $HH^1$ および $HH^2$ を
-三基準点で $(1,1,2)$、$(3,3,5)$ と計算する。
-命題~\ref{prop:noncubic-transverse-second-order} は、
-横断方向の二次障害が三次Hilbert条件に関して
-全て消えることを厳密な有理数の補正で示す。
-これらは高次形式変形の存在や
-相対 Abel 圏としての $\HHstack$ の接空間を直接決めない。
-命題~\ref{prop:h2-constructible-relations-and-irreducible-closure} は
-全実現像の構成可能性と有限型既約な代数的包絡を与える。
-さらに命題~\ref{prop:split-h2-presentation-moduli} は
-cubic/noncubicの表示型を基底上で固定した非交和の
-有限型Artinモジュライを与え、
-命題~\ref{prop:truncated-antiserre-moduli-stack} は
-三次Hilbert階数49までの二次提示の
-具体的な有限型商 $[X_3/\operatorname{PGL}_9]$ を構成する。
-前者は全幾何点と慣性を持つが型間の退化を失い、
-後者は既知の退化族を含むが余分な二次環も許す。
-さらに命題~\ref{prop:truncated-versus-foundation-tangent} は、
-二根対一致点で後者とfoundation表示の
-接空間がそれぞれ五・四次元となることを示し、
-この二表示が形式的にも異なることを証明する。
-これらは内在的な相対 $\HHstack$ との同値の証明ではない。
-相対条件を満たす内在的モジュライへこの結論を移すには、
-位相の一致、またはこれらの族の相対 $\HH$ 認識を示せば十分である。
+\begin{problem}[相対モジュライの代数性と境界]
+第\ref{sec:relative-h2-definition}節で定義した $\HHstack$ について、
+命題~\ref{prop:relative-h2-algebraicity-reduction} の
+framed 実現部分層 $X_{\mathrm{as}}$ の有限型代数空間による表現可能性を示せ。
+相対 AZ 再構成、全忠実性、対角の有限表示性は既に得られている。
+残る認識は、提示された次数移動が canonical 反 Serre 関手となることと、
+適合平方根および AS 被覆が fppf 局所に存在することである。
+命題~\ref{prop:artin-relations-flat-abelian} の flat Abel 変形の構成だけでは、
+命題~\ref{prop:antiserre-polarization-family} の偏極変形を除外できない。
+また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、
+例~\ref{ex:fppf-image-nonalgebraic} が示す fppf 像の問題が残る。
+
+命題~\ref{prop:h2-line-degeneration} と
+命題~\ref{prop:line-degeneration-antiserre-algebras} により、
+全 noncubic 点への cubic からの特殊化は、構造対象付き smooth proper dg 族と
+全次数平坦な反 Serre 環族として存在する。
+これらが相対 $\HHstack$ の族となること、または実現点集合の誘導位相が
+内在的な位相に一致することを示し、成分と境界を決定せよ。
+命題~\ref{prop:h2-component-density} の既約性を
+この比較なしに内在的モジュライの成分数と同一視しない。
 \end{problem}
 
 \bibliographystyle{alpha}

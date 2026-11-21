@@ -219,3 +219,98 @@ Schur complement の等式により三次成分は自由階数 $49$ である。
 各幾何ファイバーが $\HH$ 型である条件の有限表示性も、
 局所環ごとの Koszul 変形原理からは従わない。
 \end{remark}
+
+\subsection{Artin 基底上の Abel 圏への実現}
+
+\begin{lemma}[Artin 基底上での noetherian 性]
+\label{lem:artin-noetherian-lift}
+$(A,\mathfrak m,k)$ を可換局所 Artin 環とし、
+$R$ を $A$ が中心に作用する平坦な $A$-代数とする。
+$\bar R=R/\mathfrak mR$ が左右 noetherian ならば、$R$ も左右 noetherian である。
+\end{lemma}
+\begin{proof}
+$\mathfrak m^N=0$ となる $N$ を選ぶ。
+平坦性により有限フィルターの随伴次数付き環は
+\[
+ \operatorname{gr}_{\mathfrak mR}R
+ \simeq\operatorname{gr}_{\mathfrak m}A\otimes_k\bar R
+\]
+である。これは $\bar R$ 上で左右とも有限生成なので左右 noetherian である。
+$R$ の右イデアルの昇鎖にこのフィルターを誘導すると、
+随伴次数付き右イデアルの昇鎖は停止する。
+同じ随伴次数付きイデアルを持つ包含は、有限フィルターの各次数を
+順に持ち上げることで等号となる。従って元の昇鎖も停止する。
+左イデアルについても同じである。
+\end{proof}
+
+\begin{proposition}[Artin 関係式族からの flat Abel 変形]
+\label{prop:artin-relations-flat-abelian}
+$(A,\mathfrak m,k)$ を可換局所 Artin $k$-代数とし、
+$\operatorname{Spec}A\to X_3$ の閉点が $\mathcal H_2$ の反 Serre 環
+$\bar R$ を表すとする。対応する二次環を $R$ とする。
+このとき $R$ は全次数平坦で左右 noetherian であり、
+$\operatorname{qgr}R$ は Lowen--Van den Bergh の意味で
+$\operatorname{qgr}\bar R$ の flat Abel 変形である。
+構造対象 $\pi R$ は $A$ 上平坦で、閉ファイバーは $\pi\bar R$ である。
+従って既存の全次数平坦な二次 jet は、標識対象を持つ flat Abel 変形を与える。
+ただし $\pi R(1)$ が相対逆 Serre 移動であること、
+適合平方根・相対 AS 被覆の存在はこの命題に含めない。
+\end{proposition}
+\begin{proof}
+全次数平坦性は系~\ref{cor:h2-geometric-family-koszul} による。
+$\bar R$ は既存の反 Serre 再構成により左右 noetherian なので、
+補題~\ref{lem:artin-noetherian-lift} を適用できる。
+
+次数付き右加群の Grothendieck 圏を $\operatorname{Gr}R$、
+次数 torsion 加群の局所化部分圏を $\operatorname{Tors}R$ と書く。
+ここで torsion とは各斉次元が十分高次数の元で消されることである。
+$R$ は右 noetherian で次数一生成なので、この部分圏は
+部分対象・商・拡大・任意直和に閉じる。
+従って Gabriel 商
+\[
+ \pi:\operatorname{Gr}R\longrightarrow\operatorname{QGr}R
+ :=\operatorname{Gr}R/\operatorname{Tors}R
+\]
+は $A$-線形完全関手で、完全充満な右随伴 $\omega$ を持つ。
+有限生成加群の像は noetherian であり、$\pi R(i)$ が生成系となるので、
+$\operatorname{QGr}R$ は局所 noetherian で、その noetherian 部分が
+$\operatorname{qgr}R$ である。
+
+$\pi$ は完全で有限直和を保つため、有限提示 $A$-加群との tensor と可換する。
+$R(i)$ は $A$ 上平坦なので、$\pi R(i)$ も $A$ 上平坦である。
+$\operatorname{qgr}R$ の各対象はこれらの有限直和の商である。
+従って任意の有限提示 $A$-加群 $M$ に対して
+$\operatorname{Tor}^A_1(M,-)$ は co-effaceable であり、
+\cite[Proposition 3.1, Definition 3.2]{LowenVanDenBergh2006}
+により $\operatorname{qgr}R$ は flat Abel 圏である。
+特に $\pi R$ は底上平坦である。
+
+閉ファイバーを確認する。
+$(\operatorname{QGr}R)_k$ は $\mathfrak m$ の作用が零である対象の full subcategory とする。
+$\bar R$-加群を $R$-加群とみなす完全関手は torsion を保ち、
+\[
+ i:\operatorname{QGr}\bar R\longrightarrow\operatorname{QGr}R
+\]
+を誘導する。$\bar R$-加群の部分加群と商は依然 $\bar R$-加群であり、
+torsion の条件も変わらない。
+Serre 商の Hom を、始域の torsion 余核を持つ部分対象と
+終域の torsion 部分対象による商の Hom の余極限で計算すると、
+両圏の Hom は一致する。従って $i$ は完全充満である。
+またその像では $\mathfrak m$ の作用が零である。
+
+逆に $X\in(\operatorname{QGr}R)_k$ を取る。
+$\omega$ は $A$-線形なので、$\omega X$ も $\mathfrak m$ で消され、
+$\bar R$-加群である。$\pi\omega X\simeq X$ から $X$ は $i$ の像に入る。
+よって $i$ は
+\[
+ \operatorname{QGr}\bar R\simeq(\operatorname{QGr}R)_k
+\]
+を与える。noetherian 対象へ制限すると
+$\operatorname{qgr}\bar R\simeq(\operatorname{qgr}R)_k$ となる。
+この制限を明示的に見るには、$X$ を $\pi R(i)$ の有限直和で覆い、
+$\omega X$ の有限生成部分加群を選べばよい。
+それは $\mathfrak m$ で消され、さらに商を取ることで $X$ の有限生成
+$\bar R$-加群による表示を得る。
+$k\otimes_A\pi R\simeq\pi\bar R$ も $\pi$ の完全性から従う。
+これで flat Abel 変形の定義を満たす。
+\end{proof}

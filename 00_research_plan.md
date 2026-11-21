@@ -1,16 +1,20 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.9。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.8。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.10。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.9。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
-**最優先目標は、Oのみを構造として指定する相対族の定義を明確にし、内在的モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所に存在する性質とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
+**最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
-**確立した入力。** 体上の全 $\mathcal H_2$ のpointed exact同値類分類を保持する。foundation商 $\mathfrak Q_{\mathrm{fnd}}$、cubic開部分、noncubic表示商、および三次Hilbert条件の $[X_3/\mathrm{PGL}_9]$ は構成済み。全実現幾何点は表示からの誘導位相で既約で、全noncubic点へのcubic特殊化がpointed smooth proper dg族と全次数平坦な反Serre環族として存在する。これらの族に相対根・AZ・AS被覆があるという比較は未完成である。
+**現在の到達点。** 標数零の代数閉体k上、局所有限型k-schemeのfppf siteで、Abel圏のmodule-object基底変更・descent、局所canonical compact導来圏・Serre・AZ・相対AS被覆を明記した定義を与えた。体上では既存の $\mathcal H_2$ のpointed groupoidを回復する。反Serre再構成により $\mathfrak H_2\hookrightarrow[X_3/\mathrm{PGL}_9]$ は全忠実で、対角はaffineかつ有限表示。framed実現部分層 $X_{\mathrm{as}}$ は定義され、層として $\mathfrak H_2\simeq[X_{\mathrm{as}}/\mathrm{PGL}_9]$ である。**$X_{\mathrm{as}}$ の有限型代数空間による表現可能性は未証明。** 定義と証明は `papers/sections/relative_moduli.tex`。
 
-**新たに閉じた平坦性の問題。** 全H2の適合切断環と反Serre環はKoszulである。Polishchuk–Positselski, Chapter 6, Theorem 7.3を一次資料で確認した結果、三次までの平坦性と全幾何fiberのKoszul性から、任意の非被約Noetherian基底上で全次数の平坦性・左右の相対Koszul解消が従う。従って全幾何fiberがH2反Serre環である $X_3$ 族、およびH2点の任意のArtin基底上の $X_3$ 変形は全次数平坦である。既存の横断2/2/3方向の二次jetにも適用できる。証明は `papers/sections/relative_koszul.tex`。次のArtin段階の存在やH2 heartへの実現を結論するものではない。
+**変形に関する確立した入力。** 全H2の切断環と反Serre環はKoszul。PP2005 Chapter 6 Theorem 7.3から、三次まで平坦で全幾何fiberがKoszulなら、非被約Noetherian基底でも全次数平坦・相対Koszul解消を得る。特にH2点の任意のArtin基底上のX3変形は全次数平坦で左右noetherian、qgrはflatなpointed Abel変形となる。既存の横断2/2/3方向の二次jetにも適用できる。`papers/sections/relative_koszul.tex`。
 
-**現在の未解決点と着手。** 相対Abel圏・relative-perfect部分・Serre・AZを明記し、相対AZ再構成による $[X_3/\mathrm{PGL}_9]$ への全忠実性を証明する。その後、真の実現部分層の有限表示性を、平方根とAS被覆の有限表示incidenceおよびその局所持上げで調べる。degree-line twistとcanonical反Serre環の区別、fppf局所存在とscheme-theoretic imageの区別を守る。
+**残る条件を分離する明示例。** 二根対一致点の反Serre環Rを、u↦qu, v↦q⁻¹v, c,d固定でZhang twistすると、pointed qgrが一定のGm族を得る。しかしq=2はどのH2のcanonical反Serre環でもなく、一次方向も非零HH²類となる。従って全次数平坦性・Abel heartだけでは反Serre認識はできない。`papers/sections/antiserre_polarization.tex`。
 
-**検証。** 現行入力のsource checkerはPASS。接次元5対4の証明では、接複体の切断と慣性Lie代数の代数群比較を補強した。LuaLaTeXの不足パッケージを補い、既存全稿の117頁組版が成功した。新節統合後の再組版・独立監査と公開二次障害スクリプトの再実行を進めている。最終的な実施範囲は研究ノートの検証節へ集約する。
+**固定平方根に対する被覆。** 相対軌道環Bが与えられれば、AS4被覆を選ぶ空間はGr(6,K)内の有限表示局所閉incidenceになる。元の環は四次まで、二次双対は五次までで判定できる。任意底変更のnoetherian性はB_Tの仮定と区別する。有限型incidenceのfppf像は一般には代数空間でなく、これだけでH2の代数性は従わない。`papers/sections/relative_as_cover.tex`。
+
+**既存の幾何入力。** 体上の全同値類分類、foundation商、cubic開部分、noncubic表示商を保持する。実現幾何点集合はfoundationからの誘導位相で既約・連結各1。各noncubic点へのcubic特殊化はsmooth proper dg族と全次数平坦な反Serre環族で構成済みだが、相対H2の全条件と位相比較は未完成である。
+
+検証状態は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に集約する。新しい局所定義のdescendableなglobal compact圏との比較を、定義の局所条件やfppf stack性の証明と混同しない。
 
 ## 1. 恒常的な研究原則と保存許可
 
@@ -105,9 +109,9 @@ $$
 | pointed慣性とdegree gerbe | Aut_gr(R)/Gm_degree≅Aut_pt。rank9・rank25の行列式線束でgerbe中立化 | `lem:pointed-degree-scalar`, `prop:antiserre-gerbe-neutral` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
 
-最後の障害例は、選んだ根の持上げを否定するものであり、相対H2 locusの非開性、別の根の非存在、全H2の相対moduliの非存在を主張しない。全H2の相対moduliを証明済みとは扱わない。
+最後の障害例は、選んだ根の持上げを否定するものであり、相対H2 locusの非開性、別の根の非存在、全H2の相対moduliの非存在を主張しない。全H2の相対moduliの代数性を証明済みとは扱わない。
 
-原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類、全幾何点groupoidの実現と実現集合の誘導位相での成分数は確立した。内在的な相対モジュライの構成とその位相がこの誘導位相に一致することは、別の未完成な比較問題である。
+原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類、全幾何点groupoidの実現と実現集合の誘導位相での成分数は確立した。内在的な相対fppf stackは定義・構成した。その代数性と、位相がこの誘導位相に一致することは未完成である。
 
 ## 4. 完全分類の達成条件
 
@@ -127,7 +131,7 @@ $$
 | F3 全被覆 | 任意のH2対象から許容データを回復する。追加仮定を使う場合はH2からの導出か、補集合を覆う別の証明を付す | 完了。内在的階数判定でcubic/noncubicに分け、VdB分類と同時untwistで全被覆。`thm:cubic-coverage`、`thm:noncubic-classification` |
 | F4 同値判定 | 二つのデータが同じO-marked対象を与える必要十分条件をデータ上で証明する | 完了。cubicの明示7関係とGL4有限反復、非cubicのPGL2同時作用。根・基底・束表示の選択独立も証明。`thm:complete-h2-classification` |
 | F5 全領域と基礎体 | 一般点だけでなく、退化・特殊自己同型・例外領域を含め、各領域を構成、既収録領域へのpointed exact同値による帰着、またはH2不適合の証明で処理する。k=Cだけの議論には適切な体の拡張・降下を補う | 完了。被約・非被約を含む全(2,2)型、全noncubic配置を扱い、標数零の任意の代数閉体で成立。Sklyanin開条件を主定理に使わない |
-| F6 証明と再現 | 主定理から入力補題まで依存を閉じ、一次文献の仮定・規約を確認し、必要な厳密計算・組版・独立点検を終えて現行一式とhubを保存する | 体上の分類定理、スタック拡張、cubic開部分の稠密性・特殊化・相対smooth proper性の主要証明を独立点検した。現行v1.2の構成確認・97頁LuaLaTeX組版はPASS。変更のない計算資産の同日厳密検算PASSを保持する。内在的な相対H2モジュライとの同定は未証明。現行一式をmainへ保存し、その内容をhubへ反映する運用は継続。保存成功はそれぞれの操作結果で別に確認する |
+| F6 証明と再現 | 主定理から入力補題まで依存を閉じ、一次文献の仮定・規約を確認し、必要な厳密計算・組版・独立点検を終えて現行一式とhubを保存する | 体上の分類と主要な表示・特殊化の証明は独立読取り済み。現行版の参照確認、公開計算コードの実行、組版・画像確認の実施範囲は研究ノートの現行検証節に集約する。内在的相対H2の代数性と表示族の認識は未証明。repoとhubの保存は個別に確認する |
 
 F1–F6が揃うまでは「完全分類」と報告しない。条件付きの還元、一般点の分類、例の族、有限次数のincidence、既存の非標識分類だけでは完了しない。原稿に未証明の核心命題が残っていないことを、異なる観点または独立担当で確認する。checkスクリプトはこの数学的達成を判定しない。
 
@@ -147,25 +151,16 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**本命の表示を明確化：** $X_3$ は三次までの局所閉rank-stratumであり、既約閉包 $Z_2$ とは異なる代数的環境である。最終的に目指すのは、$\HH$ の相対認識条件を与える有限表示の $X_{\mathrm{as}}\subset X_3$ を構成し、$\mathfrak H_2\simeq[X_{\mathrm{as}}/\operatorname{PGL}_9]$ を証明すること（必要なら代わりに $\mathfrak Q_{\mathrm{fnd}}$ 内の適切な相対部分関手と同定する）。局所定数型の非交和は幾何点と慣性の保全用で、最終の貼合せには用いない。特に二根対一致点でX3にはQ_fndより一つ余計な一次方向があるので、これを切る高次条件か内在的条件を検出することを優先する。
+1. **canonical反Serre偏極を有限表示で認識する。** `relative_moduli.tex` の $X_{\mathrm{as}}\subset X_3$ を出発点に、`antiserre_polarization.tex` の一定qgr・非一定表示の方向を除く条件を作る。foundationの有限な双加群複体から得る反Serre軌道と、表示されたdegree shiftを比較する。degree-line twistを許す必要があるため、正規化した普遍環に大域的な $(1)=S^{-1}[2]$ をそのまま課さない。全忠実性と対角の有限表示性は再び未解決としない。
+2. **平方根と被覆の局所持上げを調べる。** `relative_as_cover.tex` の有限表示incidenceを使い、固定相対軌道環への被覆のfppf局所存在がどの基底上で成立するかを判定する。根は標識ではない。選んだ根の非持上げと、別の根も含む非存在を混同しない。有限型射のfppf像が非代数的となる同節の例を踏まえ、scheme-theoretic imageや幾何点閉包だけで済ませない。
+3. **階数3境界の相対正規形を閉じる。** 全H2の二ruling、有限foundation、相対S2交換を入力に、noncubic境界の内在族から局所モデルへ移ることを証明する。既存のcubic→全noncubic特殊化を相対H2族として認識できれば、成分問題の位相比較にも進める。
+4. **必要な変形計算を選ぶ。** 三次平坦性から全次数平坦性は解決済みなので、次数4のHilbert条件を独立の追加制約として再計算しない。既存の横断二次jetはflat Abel変形になる。高次障害計算をする場合は、canonical偏極・根・被覆のどの残存条件を検証するかを先に明示する。
 
-**直近の具体的P0：** 三次の接空間計算（標数零で83,83,84）、Koszul 性と一次全次数平坦性、さらに横断2,2,3方向の三次Hilbert条件の二次持上げは完成。**次数4の一次平坦性を別途独立の必要条件として再計算しない。** 次に（a）横断2,2,3方向の三次以上の持上げ障害を Schur complement で求め、特に二根対一致点の余分な法方向が実際の基底上の代数変形へ積分するか判定し、（b）foundation の実際のsmooth proper/反Serre環変形から得られる接像と照合し、（c）相対 qgr heart・Serre平方根・AZ豊富性・AS被覆の存在および非被約底での局所正規形の認識を証明する。完全な局所構成が困難なら、既存の Koszul deformation principle の Artin 小拡大版を一次資料に即して検証し、今回の2-jetが全次数平坦となる適用範囲を明確にする。
+有限型基底上での代数的表現の目標は、$X_{\mathrm{as}}$ を有限型代数空間として表すことである。局所閉部分スキームとしての構成は十分条件だが必要条件とは主張しない。一般Noetherian基底への連続拡張・極限保存性と、貼り合わせた局所compact圏が大域のcanonical $D(\operatorname{Ind}\mathcal C)^c$ に一致することは別に確認する。
 
-**内在的な相対H2実現locusの有限表示と相対heart/AZ再構成を第一課題とする。** 共通反Serre環の全次数は既に二次提示で決まるので、今後は二次関係だけで表現できない条件（flat coherent heart・Serre・AZ・AS被覆・降下）に証明資源を集中する。 noncubic 表示上の `qgr R` heart の構成と `Perf` 上の相対Serreは既に得たので、これらを再び無条件の未解決問題に戻さない。次は全flat coherent対象の相対双対・AZ/AS条件および任意の内在的族の相対正規形を明示する。 出発点は `papers/sections/foundation_stack.tex` のQ_fndである。ruling交換とS2の整合性、有限étale二重被覆、cubicのgeometric開部分 `[Gr(2,8)_geo/(PGL2)^3]`、実現集合の誘導位相での既約性と全noncubic点へのdg特殊化は構成済みなので再び未解決課題に戻さない。cubic・noncubic の双方で相対反Serre環のGrassmann射を構成済みなので、次に両射とfoundation特殊化に一致する有限表示の反Serre実現locusを同定する。特にH2のheart・Serre根・AS被覆を持つ部分関手を非被約底上でも定義し、有限表示の開または局所閉部分になるかを調べる。体上の分類が与える集合の被約像だけを相対locusと定義して済ませない。
+既存のC⊔Npresは全幾何点と慣性の表示であって、型間の特殊化を持たない。Z2は既約な被約閉包であって、相対実現部分層とは別物である。det(R1)⁻¹¹det(R2)²によるdegree gerbeの中立化、両chartの反Serre環の降下、Artin基底上のnoetherian heartは解決済みの入力として用いる。
 
-到達基準は次の三点である。
-
-1. **族の対象を明示する。** Oを指定した相対圏の族に対して、適合するsとAS4被覆はfppf局所に存在する性質とし、選択を標識へ加えない。全幾何ファイバーがH2という条件との一致は別に検証する。
-2. **局所表示と同値を族で認識する。** 内在的M=sOとruling対X,Yの存在・底変更・降下、相対Serre/AZ再構成、pointed exact同値の相対全忠実性と本質的全射性を証明する。F0上の交換と有限étale二重被覆は入力として使い、任意の内在的族からこの表示へ移れることを別に確認する。
-3. **反Serre環を通じて族と位相を比較する。** 構成済みのcubicから全noncubic点への有限自由foundation族と全次数平坦な反Serre環の特殊化を入力として、階数3境界を含む相対heart・根・AZ・AS被覆の認識を閉じる。実現集合の誘導位相ではcubicが稠密で既約成分は一つである。内在的stackの位相との一致を別に示し、点集合のcubic/noncubic非交和を開閉分解と読み替えない。
-
-代替の統一表示は `[X_as/PGL9]`。Z2⊂Gr(56,81)は構成済みの既約な被約閉包、X_asはそのうち実際に相対H2を実現する未構成の有限表示locusである。構成可能な幾何点集合と閉包Z2を、非被約底上のX_asと取り違えない。degree-scalar gerbeのBrauer障害は `det(R1)^−11 det(R2)^2` で解消済みなので、同じ障害を再調査しない。noncubicでは `B_{2n}⊗(det W)^{-n}` と積 `a⋆b=aι^n(b)` により全次数の降下が完成し、cubicでも相対Serreから同じGrassmann商への射が完成した。残るのは両chartの相対的な貼合せとcanonical内在族との比較であり、既に証明した降下を再度未解決としない。
-
-De Deken–Lowenのhelix変形比較は冪零拡大におけるabelian変形とfoundation代数変形を結ぶが、H2の根・AS被覆条件の相対開性は含まない。可換Q上でも、選んだ根sのHH²作用がuを−uへ送れば、その固定一次変形へsはR線形dg/Morita自己同値として持ち上がらない。これは別の根の存在を排除せず、構成した変形がH2族であるとも主張しないため、H2 locusの非開性を意味しない。Toën–Vaquiéの対象stackも固定dg圏に対する結果である。適用範囲を `notes/literature.md` で確認する。
-
-相対条件の具体的検証には [Ore変形ノート](notes/ore_quadric_deformations.md) の中央正則切断を使える。noncubic表示の中心 Clifford trace により perfect 圏での相対Serre公式は確立したので、次はそれを全coherent heartの相対Serre・AZ・相対AS被覆に拡張する。Ore変形ノートの別族についてはbimodule Koszul複体のexactnessと自己双対性をなお検証する。
-
-先行研究上の新規性比較、一般GL4判定solverの実装、外部査読・形式証明は未完了。主定理に誤りが見つかれば、本文・概要・方針・hubを訂正する。
+公表前の包括的な先行研究比較、cubicの有限同値判定の幾何的簡約、一般GL4判定solverの実装、外部査読・形式証明は別課題である。De Deken–Lowenのhelix変形比較やToën–Vaquiéの固定圏の対象moduliを、全H2の代数性として流用しない。Ore変形ノートは相対認識を試す追加候補であり、未証明の相対CY・Serre条件を入力には使わない。
 
 ## 7. 正本・依存関係・再開
 

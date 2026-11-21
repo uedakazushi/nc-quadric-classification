@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.9（数学原稿v1.8）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.10（数学原稿v1.9）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -12,7 +12,25 @@
 
 ## 相対平坦性の確立した認識
 
-`papers/sections/relative_koszul.tex` に証明を置く。全H2の適合切断環BはKoszul AS4環の正則正規二次商なのでKoszul、反Serre環R=B^(2)もKoszulである。PP2005 Chapter 6 Theorem 7.3は任意のNoetherian局所環に適用できる。三次まで平坦で全幾何fiberがKoszulなら、全次数局所自由性と任意底変更に整合する左右Koszul解消を得る。このため、H2点を中心とする任意のArtin基底上のX3変形と、既存の横断二次jetは全次数平坦である。次のArtin段階の存在、相対noetherian heart、Serre・平方根・AS被覆の認識はこの定理には含まれない。
+`papers/sections/relative_koszul.tex` に証明を置く。全H2の適合切断環BはKoszul AS4環の正則正規二次商なのでKoszul、反Serre環R=B^(2)もKoszulである。PP2005 Chapter 6 Theorem 7.3は任意のNoetherian局所環に適用できる。三次まで平坦で全幾何fiberがKoszulなら、全次数局所自由性と任意底変更に整合する左右Koszul解消を得る。このため、H2点を中心とする任意のArtin基底上のX3変形と、既存の横断二次jetは全次数平坦である。同節ではさらにArtin基底でnoetherian性を持ち上げ、qgrがflatなpointed Abel変形になることを証明した。次のArtin段階の存在、canonical反Serre偏極・平方根・AS被覆の認識は別問題である。
+
+## 内在的相対定義と認識
+
+`papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
+
+相対AZ再構成、自然自己同型Aut(Id)=A×、pointed二自己同型の消滅から、反Serre関係の射 Φ:H2→[X3/PGL9] は全忠実となる。対角はaffine有限表示であり、framed部分層X_asを用いたH2≃[X_as/PGL9]はfppf stackとして成立する。**未証明なのはX_asの有限型代数空間による表現可能性**である。有限型siteだけで定義した関手を、極限保存を示さずに任意scheme上の関手として扱わない。
+
+正規化に用いるL=(det R1)^−11(det R2)^2について、Rnorm_n=R_n⊗L^−nのshiftは元のt⊗L^−1に対応する。従って普遍正規化環へ大域的に(1)=S^−1[2]を課すのは誤りであり、基底線束twistを許すかfppf局所で比較する。
+
+## 相対被覆と偏極変形の障害
+
+固定した相対切断環B=T(V)/(K)に対し、`thm:relative-finite-as-cover` はGr(6,K)内にAS被覆を選ぶ有限表示局所閉空間E_Bを構成する。A3,A4の階数20,35、双対D3,D4,D5の階数4,1,0、次数3の左右像の層としての一致、次数1,2での乗法単射、双対の完全pairingを課す。非被約基底で必要なのはscheme-theoreticな条件である。A_TがnoetherianであることはB_Tのnoetherian性と同値だが、任意Noetherian底変更でのB_Tのnoetherian性をB自身から推測しない。
+
+有限型射(a,c)↦(a,ac)のfppf像はb∈aDという部分層であり、原点の接集合は{(u,v):u≠0}∪{0}。線型部分空間でないので代数空間とはならない。これは一般的な方法の障害であり、H2自体の非代数性の証明ではない。
+
+`prop:antiserre-polarization-family` の明示族は、B=k[u,v]〈c,d〉/(c²−uv,d²−uv)、R=(B^(2))^ιから作る。σ_q:u↦qu,v↦q⁻¹v,c,d固定による右Zhang twistは全次数平坦で、pointed qgrはGm基底全体で一定。しかしZ(R)_1にcd−dcがあり、q=2では中心一次部分が零になるため、このfiberはどのH2のcanonical反Serre環でもない。q=1+εの一次類は、中心元U=u⁴,V=v⁴の交換子16εUV≠0で非自明性を検出できる。**u²,v²はι-twist後のRでは中心ではない**ので、この証明で用いない。既存orbit79方向へこの方向を加えると80、六係数も含む81方向へ加えると法101で82になる。
+
+全次数平坦性とArtin qgrのflat Abel変形は解決したため、残る研究資源はcanonical反Serre偏極、平方根、被覆の局所存在に集中する。全次数Hilbert条件を重ねてこの偏極方向を切ろうとしても、族自体が全次数平坦なので解決しない。
 
 ## スタック構成の現状
 
@@ -43,10 +61,10 @@
 | 型を局所定数にした表示モジュライ | C⊔Npres は有限型Artin、全H2幾何点・慣性を再現するが、cubic→noncubic退化を人工的に除外し、既約・連結成分は2 | prop:split-h2-presentation-moduli |
 | 三次までの二次関係モジュライ | X3={rank L3=176}⊂Gr(56,81)は有限型局所閉rank-stratum。 [X3/PGL9] はrankR2=25,R3=49の二次提示のrigidified Artin moduli。detR1^-11 detR2²で普遍全次数環を降下。既知のcubic/noncubic/退化族は入るがその他も入る | prop:truncated-antiserre-moduli-stack |
 | 一致根対点での違い | X3商のH0接次元は84−79=5、Q_fndは滑らか次元3+慣性Lie次元1=4。形式近傍は同値でない | prop:truncated-versus-foundation-tangent |
-| noncubicの Koszul 性と一次全次数平坦性 | 二重平方環の二次 Gröbner（PBW）表示からBはKoszul、偶数VeroneseとZhang twistのRもKoszul。三次の重なりの一次整合はKoszulの次数0 Hochschild 2-cocycle条件に一致し、双対数上の二次関係変形が三次平坦なら全次数平坦 | prop:noncubic-antiserre-koszul, lem:koszul-first-order-degree-three。二次以降の一般Artin族には未拡張 |
+| noncubicの Koszul 性と一次全次数平坦性 | 二重平方環の二次 Gröbner（PBW）表示からBはKoszul、偶数VeroneseとZhang twistのRもKoszul。三次の重なりの一次整合はKoszulの次数0 Hochschild 2-cocycle条件に一致し、双対数上の二次関係変形が三次平坦なら全次数平坦 | prop:noncubic-antiserre-koszul, lem:koszul-first-order-degree-three。一般Artin族への拡張は cor:h2-geometric-family-koszul で確立 |
 | noncubicの内部次数0 Hochschild 次元 | 非交差、一根共有、一致根対でHH¹_0=1,1,2、HH²_0=3,3,5。C¹=81、C²=1400、C³=16072、rank(d¹)=80,80,79、rank(d²)=1317,1317,1316 | thm:noncubic-hh01-hh2。foundation代数のHH≥3消滅とは異なる |
-| 横断2/2/3方向の二次持上げ | 三次Hilbert locusの横断部分の各基底ベクトルと二基底の全ての和について、Schur補行列の二次障害を打ち消す有理数補正を計算し整数行列で正確に検査。全横断方向がk[t]/(t³)上で三次成分平坦な2-jetを持つ | prop:noncubic-transverse-second-order。全次数の二次flatness・3次以上の形式積分・相対H2実現は未証明 |
-| noncubicのLie接方向と三次Hilbert条件 | disjoint, shared, equalの三点でPGL9軌道+六係数のrank81（軌道80/80/79、交点5/5/4）。三次関係L:V⊗J→(V²/J)⊗Vはrank176、kernel328/cokernel49。法101の全16072線形条件rank1317/1317/1316。標数零で接次元=83/83/84（有理核の全整数検証）、三次条件の接空間を群+係数81方向で割った次元は正確に2/2/3（実際の相対H2変形かは未証明） | prop:noncubic-third-degree-tangent。局所SymPy/NumPy/Numba exact演算を実行。次数4のHilbert条件・実際の内在H2とは未同定 |
+| 横断2/2/3方向の二次持上げ | 三次Hilbert locusの横断部分の各基底ベクトルと二基底の全ての和について、Schur補行列の二次障害を打ち消す有理数補正を計算し整数行列で正確に検査。全横断方向がk[t]/(t³)上で三次成分平坦な2-jetを持つ | prop:noncubic-transverse-second-order。全次数の二次flatnessとflat Abel実現は確立。3次以上の形式積分と相対H2認識は未証明 |
+| noncubicのLie接方向と三次Hilbert条件 | disjoint, shared, equalの三点でPGL9軌道+六係数のrank81（軌道80/80/79、交点5/5/4）。三次関係L:V⊗J→(V²/J)⊗Vはrank176、kernel328/cokernel49。法101の全16072線形条件rank1317/1317/1316。標数零で接次元=83/83/84（有理核の全整数検証）、三次条件の接空間を群+係数81方向で割った次元は正確に2/2/3（実際の相対H2変形かは未証明） | prop:noncubic-third-degree-tangent。局所SymPy/NumPy/Numba exact演算を実行。全次数平坦性は相対Koszul節により確立。内在H2の接空間とは未同定 |
 | 関係式像の構成可能性と既約閉包 | 2つの有限型chartの像の和はH2の全幾何関係像。Chevalleyで構成可能。cubic枠束像の被約閉包Z₂はPGL9不変既約有限型、全noncubicは反Serre二次族による特殊化で[Z₂/PGL9]に入る | prop:h2-constructible-relations-and-irreducible-closure。Z₂の全点がH2とは未証明。有限表示の内在的X_asとは別 |
 | noncubicの相対heart・相対orbit | `R`の`qgr R`を構造対象付きnoetherian Abel heartとして任意のNoetherian基底上に定義。étale局所に`qgr B^σ≃qgr R`。weighted P(1,1,2)上`RHom(B,tⁿB)=B₂ₙ[0]`が全n・底変更に整合（`cor:noncubic-relative-orbit-hom`, `prop:noncubic-relative-heart-veronese`） | 任意の内在的noncubic族のこの相対heartへの帰着、全flat coherent対象の相対双対・AZ/AS等 |
 | cubicの相対反Serre環 | smooth proper foundationの逆Serre双加群から`RHom(e₀Λ,tⁿe₀Λ)`。cubic開では全nでrank(2n+1)²局所自由 | 任意のH2族からの相対foundation抽出 |
@@ -91,7 +109,7 @@
 
 この例は**選んだ根**の障害であり、別の根の存在を排除しない。構成したabelian変形が相対的な根・AZ豊富性・AS被覆を備えたH2族であるとも主張しない。従って相対H2 locusの非開性やformal smoothnessの否定は結論しない。実現集合の誘導位相ではcubicからnoncubicへの特殊化があり、両者は別の連結成分ではない。残る核心は、Q_fnd内での内在的H2実現部分関手の有限表示、相対Serre/AZ再構成・降下、および内在的位相との比較である。
 
-群関係・χ・noncubic局所対合の記号検算は `python3 computations/verify_stack_symmetries.py`。foundation・HH計算、ruling二択、相対交換のcoherenceと幾何点groupoid、pointed慣性、gerbe中立化、および選んだ根の変形障害は独立読取り点検を行った。さらにcubic開部分の稠密性、各noncubic点への特殊化とrelative bar分解も独立に点検し、既存入力を前提として実質的な欠落は見つからなかった。現行v1.5の変更後LuaLaTeX組版は未実施。v1.2の97頁組版は成功しているが、v1.4の確認と混同しない。変更のない記号計算資産の同日PASSを保持する。詳細な実施範囲は末尾の検証節に記す。
+群関係・χ・noncubic局所対合の再現資産は `computations/verify_stack_symmetries.py`。現在の独立読取り・計算・組版の実施範囲は末尾の検証節に集約する。
 
 相対条件を試す具体的入力として、[定数bivector方向のOre変形](ore_quadric_deformations.md)を置く。中央元g=xw−zyの正則切断、全次数自由な商、quadratic dualのFrobenius pairingまでの証明稿を記し、相対CY・Serre・H2条件は未証明とする。主原稿の非持上げ例を相対H2の内部へ強める際の候補であり、現行定理の入力には用いない。
 
@@ -113,7 +131,7 @@
 | 滑らかな楕円型Sklyanin対象はH2に属する | k=C、τ無限位数、z+τ∉E[2]。`BSW2010`, `RRZ2014`, `SVdB2013`, `MU2021` | 全切断環・Serre根・exceptionality・AZ・Gabriel–Krull条件の証明。`prop:sklyanin-h2` |
 | z=τの対象はcoh(Q)とexact同値でない | `SVdB2013` §10.5の単純対象Fとχ(F,F)=2 | 既知の構成を適用。`prop:sklyanin-genuinely-noncommutative` |
 
-これらの基礎結果の独立した新規性を確定したものではなく、形式証明器も使用していない。全H2対象の被覆と同値類分類は主定理に統合した。全幾何点groupoidと全pointed慣性はQ_fndへの全充満な実現で捉えた。実現集合Yの誘導位相での既約成分・連結成分は各1と証明した。一方、内在的な相対モジュライの位相との一致、族の降下・代数性は別途未証明であり、表示stackの次元三をそのまま全H2の相対次元とはしない。
+これらの基礎結果の独立した新規性を確定したものではなく、形式証明器も使用していない。全H2対象の被覆と同値類分類は主定理に統合した。全幾何点groupoidと全pointed慣性はQ_fndへの全充満な実現で捉えた。実現集合Yの誘導位相での既約成分・連結成分は各1と証明した。一方、内在的fppf stackと全忠実な関係射は構成済み。位相の一致・代数性は未証明であり、表示stackの次元三をそのまま全H2の相対次元とはしない。
 
 ## Quadratic envelope の障害
 
@@ -202,56 +220,26 @@ cubic表示の構造対象上の反Serre移動は `lem:cubic-serre-objects` を�
 
 Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective` で証明した。非零 f∈ker∂ は二次性から D→k[z] を与える。その単純tails対象はshiftで不変な閉点となり、非零平行移動に固定点がないことに矛盾する。高々64候補への簡約で未解決の開条件は中心変形写像 Δ の単射性だけである。主分類はこの条件を使わない四生成の判定を全領域で用いる。
 
-### v1.5 の今回の追加検証
-
-- `computations/verify_noncubic_degree3_tangent.py` をmainに追加。NumPy・Numbaは**オプション依存**（標準math suiteには追加しない）。法101、有限体の整数行基本変形で3つの代表根配置を全て検証する。既存の25 pivotスクリプトを再利用する。実行コマンドは `python3 computations/verify_noncubic_degree3_tangent.py`（必要なら `python3 -m pip install numpy numba`）。
-- 今回の作業環境で独立した同等のローカル計算コードを実行し、3点のPGL9 orbit／六係数／合成の階数を(80,6,81)、(80,6,81)、(79,6,81)、三次Hilbert条件の行列を16072×1400として全行rank1317、1317、1316でPASSと確認した。法103で一般点rank1317も照合した。加えて、法101核83,83,84本の分母2以下・分子絶対値5以下の有理数再構成から整数ベクトルを作り、整数係数の全16072×1400行列で積が厳密に零になることを確認した。自由変数の対角成分からそれらは有理数上独立であり、法101の階数下界と併せて標数零の正確な接次元を証明する。これは**厳密な整数計算**であり、数値的近似ではない。
-- 公表用命題の標数零での結論は、群作用によるrank81の上界と法101rankの下界、および三次Hilbert条件に対する整数核ベクトルの構成・検証を組み合わせたもの。実際の `\mathfrak H_2` の接空間を証明したわけではない。今回GitHubに保存したスクリプトそのものを独立にcheckoutして再実行したことや、新版全文のLuaLaTeX組版を主張しない。
-- v1.4のソース部分に行った静的検査と、v1.2で実施した97頁のPDF組版は、それぞれの当時の確認範囲である。v1.6の全ソースchecker・全math suite・LuaLaTeX組版は未実施。
-
-### v1.6 で加えた数学・検証の射程
-
-- 数学的結果：noncubic R の Koszul 性（PBW、Veronese、Zhang）、三次平坦な一次二次関係変形の全次数平坦性（Koszul双加群解消の次数0 cocycle）、三基準点でのHH¹_0=(1,1,2)およびHH²_0=(3,3,5)、横断方向の三次Hilbert条件の二次持上げ。証明の正本は noncubic_stack.tex の対応ラベルを参照する。
-- 新しい再現資産は computations/verify_noncubic_second_order.py。NumPy>=1.24、Numba>=0.60、既存SymPyが必要。順番に python3 computations/verify_noncubic_degree3_tangent.py と python3 computations/verify_noncubic_second_order.py を実行する。両ファイルは重い有限体・整数検算なので標準math suiteの必須依存にしない。
-- 同等のローカル探索コードでは、三基準点の横断2/2/3方向の全基底と全二項和について、法101での可解性、法101²と有理数の再構成、**整数係数での残差恒等零**を確認した。二根対一致点の補正で分母2を要する組合せもある。最初に一度ベクトル化の転置規約が不一致になった候補は廃棄し、正しい線型化との一致を確認して検証し直した。
-- GitHub上の再現コードはmainへ保存したが、**保存したコードそのものを独立環境へcloneして再実行したことは確認していない。** v1.6全ソースchecker・全文LuaLaTeX組版・PDF表示、既存全math suiteの再実行は未実施。v1.2の97頁PDF組版は旧版の実施記録であり現行版への保証ではない。外部査読・形式証明・包括的新規性判定も未実施。
-
-### v1.7 の構成済み表示と検証境界
-
-- 本文の prop:split-h2-presentation-moduli, prop:truncated-antiserre-moduli-stack, prop:truncated-versus-foundation-tangent に、非交和表示、三次rank176の局所閉表示、重み一線束による普遍環の降下、二根対一致点のH0接次元5対4の違いを直接証明した。
-- これは既存のnoncubic接空間計算を入力にする数学的帰結であり、今回新たな巨大な数値計算を実行したことを意味しない。改訂後のTeX新規参照・環境の静的検査は個別に確認する。全文LuaLaTeX組版およびv1.7用PDFは未実施。
-- 再開時は三次Hilbert X3 が与える自由な余分の一次方向と相対foundationの接方向の差を認識し、元のH2と構成済み修正stackを混同しない。
-
 ## 検証範囲と再現手順
 
-**現行v1.7（2026-11-21）：相対反Serre・Clifford追補の全体組版および既存計算の再実行は未実施。** v1.2の構成確認・97頁LuaLaTeX組版はPASSだったが、現行v1.3のPASSとは扱わない。 証明の読取り点検、記号検算、組版、画像表示、GitHub保存は別々の確認であり、機械チェックを証明認証とは扱わない。
+2026-11-21 / 数学原稿v1.9。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
 
-実行環境：Python 3、SymPy 1.14.0。依存の許容範囲は `requirements.txt`。計算は全て有理数または記号演算で、浮動小数点近似や外部データを使用しない。
+**今回の論理点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
+
+**今回の計算実行。** GitHub mainから取得した `computations/verify_noncubic_second_order.py` をそのまま実行してPASSした。importにより25 unit pivot、六係数回収、全16072×1400線型条件の階数、標数零の有理核83/83/84も再実行される。横断2/2/3方向の基底と全二項和について3/3/6個の二次補正を検証し、二根対一致の場合の分母は2,1,2,2,1,1。残差は整数演算で厳密に零である。全次数の平坦性はこの有限計算ではなく、PPの定理と本文の適用による。新しい `computations/verify_antiserre_polarization.py` も実行PASSで、中心一次部分dim1→0とorbit rank79→80を標数零で確認した。全て有理数・整数・有限体による計算で、浮動小数点近似を用いない。
+
+実行環境はPython3.12.14、SymPy1.14.0、NumPy2.3.5、Numba0.68.1。NumPy/Numbaは重い検算のオプションで、標準math suiteの必須依存にはしない。今回の全旧math suiteの再実行はしていない。
 
 ```sh
-bash scripts/bootstrap.sh
 python3 scripts/check.py doctor
 python3 scripts/check.py sources
-python3 scripts/check.py math
-python3 scripts/check.py build
+python3 computations/verify_noncubic_second_order.py
+python3 computations/verify_antiserre_polarization.py
+latexmk
 ```
 
-導入・再開の手順は [CLOUD_CODEX.md](../CLOUD_CODEX.md)。checkerのPASS/FAIL/SKIPはそれぞれ実施成功・失敗・未実施を表し、証明や分類の完了を判定しない。doctorとbootstrapの終了コード0は診断・準備処理の終了である。TeXや文献取得に制約があればその検証を未実施とし、独立な証明課題へ進む。
+**組版・参照確認。** 統合途中の117頁LuaLaTeX組版とSyncTeX生成は成功した。今回の新節を全て含むv1.9の再組版と画像確認は統合後に実施する。静的checkerの最新結果は確定時に更新する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施である。
 
-計算器が検証する範囲：Segreの二次積9×16行列のrank9・核7、三次積16×64行列のrank16、二次核の明示生成元、Ore関係の記号的正規性恒等式、a=1での可換性、a=2と−1における二次関係rank6/7・三次dim20/16・左右の乗法と像の和のrank4。
+既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 
-有限次数計算はAS正則性・全次数Hilbert級数・smoothness・全分類の証明を代替しない。これらのうちAS正則性等は原稿中の理論と確認した文献を入力とする。
-
-2026-11-21の現行確認：全分類定理のD1–D3、有限K、同値判定、根選択独立、全被覆・非交差を独立担当が点検した。standard・non-standardの全帰着、同一支持排除、全退化型のPic・大域自己同型・貼合せ、Serre比較の双加群計算、逆構成から全H2公理までの依存も独立に点検した。追加したfoundation表示・HH消滅、内在的ruling対、相対交換のcoherence、幾何点groupoid、noncubic慣性・good moduli、degree gerbe中立化と選んだ根の持上げ障害も独立読取りで点検した。いずれも既存入力を前提とし、外部査読や形式証明ではない。
-
-v1.2のソース確認は24原稿・168ラベル・137引用出現・主要Markdown7点を対象としてPASS。cubic開部分が実現集合に含まれること、直線上の有限個の除外点、正規化relative bar分解の有限性・射影性・底変更、および内在的相対モジュライへの移行条件を独立に読取り点検した。全代数閉拡大体上の像を合併する定義とし、H2公理一般の底変更安定性を暗黙に仮定していない。v1.2についてLuaLaTeXで97頁のPDFとSyncTeXを生成し、最終ログに警告・未定義参照・欠字・はみ出しはない。v1.2のPDFの1–3頁と82–86頁を画像化して一覧で配置を確認し、新しい命題と移行条件を含む83–85頁は個別表示でも確認した。今回全97頁を画像で再校読したという意味ではない。
-
-v1.3の既存補題については、中心Clifford直和のHilbert級数`(1+2z+z²)/((1-z)²(1-z²))=(1+z)/(1-z)³`、`B₂=9,B₄=25,81−25=56`をSymPyで有理式として照合し、Clifford traceの四元基底積行列式が`−1`であることを記号計算で確認した。相対Serreのweighted stack双対・rigidification・全次数の底変更は本文に証明を追加したが、外部査読・形式証明とは区別する。TeX全文の改訂後組版とソース全体の静的チェックは未実施。
-
-今回のv1.4では新規に computations/verify_noncubic_antiserre_pivots.py を追加した。対象は六係数を独立不定元とした二重平方環のPBW簡約、25 pivotの単位行列式、二つの二乗積からの六係数回収である。同内容のローカルSymPy試作を実行しPASS（25列、行列式±1、六係数回収）と確認した。GitHub上の正式スクリプトをcheckoutして行う全math suite実行、v1.4の全ソースcheckerとLuaLaTeX組版は**未実施**。一般二次Veroneseの相対同型とChevalley・閉包の証明は本文の論理的議論であり、有限検算はそれを認証しない。旧計算資産は変更せず保持した。同日に実行済みの全非整型の三次関係・四次テンソル・周期平方・非被約gridの補正引戻し、およびnoncubicの射影群関係・χ・局所対合と正則切断の記号恒等式はPASSである。この検算は、今回加えた成分・特殊化命題の計算機による証明ではなく、それらは前段の理論的な読取り点検による。
-
-既存の計算・証明の確認範囲には、四周期比較、最初の軌道対象、非cubic例、有限被覆判定、多パラメータskew polynomial分類、Ore切断の正規形・四元数斜体・根の対合・同値判定が含まれる。これらの証明は現行原稿に保持する。外部査読、形式証明、包括的な新規性の確定は行っていない。以前のPDFの表示確認を現在の全頁の確認とは扱わない。
-
-運用checkerはPython 3.12.14／SymPy 1.14.0と既設TeXで実行できる。Python・TeX不足のSKIP、未定義ラベルのFAIL、壊れた既存venvの保持、各段階の独立した継続は確認済み。pip・aptによる新規導入、Cloud環境の作成・Publish・新規task起動、VS Code UI操作はこの確認に含まれない。
-
-GitHubのgit読取が利用できても書込認証は別に必要である。GitHub connectorによる通常コミットも許可された保存手段として使用できる。research-hubの更新は対象repo保存後に最新READMEを読み、並行更新を保持して行う。
+導入は [CLOUD_CODEX.md](../CLOUD_CODEX.md) と `bash scripts/bootstrap.sh`、依存は `requirements.txt`。checkerのPASS/FAIL/SKIPは実施成功・失敗・未実施であり、数学的完成を自動判定しない。git読取と書込認証は別であり、CLI pushが認証不足ならGitHub connectorの通常コミットも使用できる。研究repoを先に保存し、最新research-hubを読んで該当項目を反映する。
