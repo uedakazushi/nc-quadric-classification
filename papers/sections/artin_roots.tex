@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.30
+% 2026-11-21 / v1.32
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1267,7 +1267,8 @@ $(\pi B',(1))$ は $\operatorname{qgr}B'$ 上 AZ ample である。
 $R'$ が局所環であることも $R$ 上平坦であることも要求しない。
 canonical compact 圏と Serre 平方根の比較、ならびに有限 Krull 次元の
 仮定を除いた昇格は、定理~\ref{thm:quadric-noetherian-relative-promotion}
-で証明する。単一の有限型開全体の Noetherian 性は未証明である。
+で証明する。単一の有限型開全体の Noetherian 性は
+定理~\ref{thm:relative-geometric-cubic-noetherian} によって別に得られる。
 \end{theorem}
 \begin{proof}
 $B_R$ の Noetherian 性は
@@ -1374,35 +1375,18 @@ $j=0,1,2$ で零となる。
 を右・左両側に適用すれば結論を得る。
 \end{proof}
 
-\begin{remark}[この代数化で残る条件]
-得られたのは有限 foundation の perfect 圏上の平方根、
-命題~\ref{prop:quadric-etale-finite-window} の四項窓、
-定理~\ref{thm:quadric-local-all-degree-cubic} の
-可換点の局所環における全次数の cubic・二次提示、
-及び命題~\ref{prop:quadric-uniform-cubic-hom-open} の
-有限型開上での全次数 Hom・相対 cubic 解消、
-系~\ref{cor:quadric-uniform-even-koszul} の相対 Koszul 性、
-および命題~\ref{prop:quadric-zariski-homological-as-cover} の
-Zariski 局所 homological AS4 被覆、
-系~\ref{cor:quadric-point-local-noetherian-as4} の
-幾何的 cubic 開の各点の局所環上の Noetherian AS4 被覆、
-系~\ref{cor:quadric-local-chi} と
-系~\ref{cor:quadric-local-AZ-ampleness} の
-幾何的 cubic 点の全局所基底における
-相対 $\chi$ と AZ 豊富性、
-系~\ref{cor:quadric-local-AZ-on-all-stalks} の
-局所有限型族の全 stalk における結論、
-定理~\ref{thm:quadric-local-finite-type-abelian-system} の
-各局所基底上の全有限型変更における $\chi$・AZ・Hom 有限性と
-平坦基底変更を備えた Noetherian tails の系、
-及び系~\ref{cor:quadric-all-basechange-saturated-sections} の
-任意底変更・任意係数での構造対象の切断と一次コホモロジーの消滅である。
-第\ref{sec:relative-cubic-tails}節では、これらの普遍 cubic 解消から
-canonical な Grothendieck 導来比較と全 helix の根の認識を証明する。
-同節の定理~\ref{thm:quadric-noetherian-relative-promotion} により、
-左右 Noetherian 性が成立する基底では、全有限型基底変更にわたる
-内在的相対条件が揃う。残る核心は一つの有限型開全体の左右 Noetherian 性である。
-Artin 基底上の heart exactness や witness 昇格を、冪零でない
-この \'etale 近傍へそのまま適用しない。
-従って本命題だけから $\mathfrak H_2$ の開近傍の代数性は結論しない。
+\begin{remark}[有限型相対実現への依存関係]
+この節は、標準 Morita 根、四項窓、全次数の相対 cubic 解消と Hom、
+相対 Koszul 性、Zariski 局所 homological AS4 被覆を構成する。
+局所 Noetherian 判定と構造対象の切断計算も得られるが、
+これらを一点ごとの結果だけから有限型開全体へ移してはならない。
+
+第\ref{sec:relative-cubic-tails}節は普遍 cubic 解消から
+canonical な Grothendieck 導来比較と全 helix の根の認識を証明し、
+左右 Noetherian 性から全相対条件を導く。
+第\ref{sec:relative-cubic-noetherian}節は相対曲線商・linear 部分・形式的貼合せを用いて
+任意の Noetherian 基底変更後の左右 Noetherian 性を証明する。
+これらを合わせるのが定理~\ref{thm:quadric-finite-type-effectivity} である。
+Artin 基底上の heart exactness を冪零でない基底へ外挿する必要はない。
+この有限型相対族の存在と $\mathfrak H_2$ 全体の代数性は区別する。
 \end{remark}

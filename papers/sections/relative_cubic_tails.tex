@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.30
+% 2026-11-21 / v1.32
 \section{相対 cubic tails の導来認識と効果性}
 \label{sec:relative-cubic-tails}
 
@@ -306,10 +306,11 @@ $i=-3,-2,-1,0$ の四項窓が元の foundation を与える。
 特に compact 部分は相対 smooth proper であり、
 その canonical Serre 関手について
 $(1)^2\simeq S^{-1}[2]$ が成立する。
-これは Grothendieck tails の結論であって、
-$B_T$ の Noetherian 性を未証明のまま
+これは Noetherian 性を仮定しない Grothendieck tails の結論である。
+Noetherian 基底では、後の定理~\ref{thm:quadric-finite-type-effectivity} が
+$B_T$ の左右 Noetherian 性を証明するので、
 $\operatorname{QGr}B_T=\operatorname{Ind}(\operatorname{qgr}B_T)$
-と主張するものではない。
+も成立する。
 \end{proposition}
 \begin{proof}
 式 (\ref{eq:cubic-tails-right-convention}) の $C$ を取る。
@@ -389,7 +390,8 @@ $\pi B_T$ は基底上平坦かつ exceptional、$(\pi B_T,(1))$ は AZ ample �
 これらの主張は左右 Noetherian 性が保たれる全有限型基底変更で成立する。
 特に系~\ref{cor:quadric-point-local-noetherian-as4} の
 任意の Noetherian 局所基底 $R$ と、その任意の有限型可換 $R$-代数で
-成立する。単一の有限型開全体の左右 Noetherian 性は依然として別問題である。
+成立する。後の定理~\ref{thm:quadric-finite-type-effectivity} により、
+単一の有限型開全体と任意の Noetherian 基底変更にも適用できる。
 \end{corollary}
 \begin{proof}
 Noetherian 性による heart と module-object 基底変更は

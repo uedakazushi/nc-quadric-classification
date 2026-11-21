@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.31
+% 2026-11-21 / v1.32
 \section{次数別完備化による Noetherian 性の貼合せ}
 \label{sec:formal-noetherian-patching}
 
@@ -185,7 +185,7 @@ $A^{\mathrm{deg}\wedge}$ は右 Noetherian である。
 \end{equation}
 を取る。完備化の平坦性 \cite[Tag 00MB]{StacksCompletionPatching} と局所化の平坦性により
 $R\to R^{\ast}$ は平坦である。
-$\Spec\widehat R_I\to\Spec R$ の像は、
+$\operatorname{Spec}\widehat R_I\to\operatorname{Spec} R$ の像は、
 $\widehat R_I/I\widehat R_I=R/I$ より $V(I)$ を含む。
 残りは $D(f_\alpha)$ で覆われるから、スペクトル上で全射である。
 したがって $R\to R^{\ast}$ は忠実平坦である
@@ -211,8 +211,8 @@ $M^{\mathrm{deg}\wedge}$ の次数付き Noetherian 性を得て、
 \end{proof}
 
 \begin{corollary}[閉集合だけを指定した形]
-$Z\subset\Spec R$ を閉集合とし、$I$ をその被約閉部分の定義イデアルとする。
-$A/IA$ が右 Noetherian であり、$\Spec R\setminus Z$ を覆う有限個の
+$Z\subset\operatorname{Spec} R$ を閉集合とし、$I$ をその被約閉部分の定義イデアルとする。
+$A/IA$ が右 Noetherian であり、$\operatorname{Spec} R\setminus Z$ を覆う有限個の
 主開集合上で $A$ が右 Noetherian なら、$A$ は右 Noetherian である。
 \end{corollary}
 
@@ -227,7 +227,7 @@ $A/IA$ の有限直和の商となるので、右 Noetherian である。
 定理~\ref{thm:patch-noetherian} を $J$ に適用する。
 \end{proof}
 
-\subsection{$\mathbb Z$ 代数の各 row への適用}
+\subsection{Z 代数の各 row への適用}
 
 \begin{definition}
 $C$ を、$C_{ij}=0$ for $j<i$、恒等元 $e_i\in C_{ii}$、
@@ -308,7 +308,7 @@ $x=\sum_\ell u_\ell c_\ell$ を得る。
 
 \subsection{適用時に確認すべき入力}
 
-閉部分 $Z\subset U=\Spec R$ と開補集合 $U\setminus Z$ に分ける適用では、
+閉部分 $Z\subset U=\operatorname{Spec} R$ と開補集合 $U\setminus Z$ に分ける適用では、
 必要な入力は次の有限個の主張である。
 \begin{enumerate}
  \item $R$ は Noetherian であり、すべての構造成分 $A_d$ または $C_{ij}$ は有限 $R$ 加群である。

@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-21（日本時間）。v1.31。主論文v1.31に対応する現行の一次資料比較。
+資料確認日：2026-11-21（日本時間）。v1.32。主論文v1.32に対応する現行の一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -82,6 +82,12 @@ Bondal–Van den Bergh, *Generators and representability of functors in commutat
 Stacks Project §10.97（Tags 00MA, 00MB, 031C, 05GH）と§10.39（Tag 00HQ）の一次本文で、有限加群の完備化、完備化の平坦性・商・Noetherian性、忠実平坦性の判定を確認した。次数別完備化を用いる非可換環・Z代数の貼合せは本稿で直接証明し、新規性は未確認である。
 
 Van den Bergh, *Non-commutative P¹-bundles over commutative schemes*, Trans. AMS 364 (2012), 6279–6313、arXiv:math/0102005v3 のTheorem 1.2（Noetherian性）、Lemma 4.1.7（双対）、§5（twist）、Theorem 7.1.2（二次解消）、Lemma 8.1.1（ample sequenceの仮定）を一次本文で確認した。Nyman, *Serre finiteness and Serre vanishing for non-commutative P¹-bundles*, J. Algebra 278 (2004), 32–42 の著者公開本文Theorem 2.5/Corollary 3.3も確認した。Nymanの式は局所自由係数GについてR⁰τ=R¹τ=0、R²τ(G e_a A)_j=0 for j>a−2であり、左右のP¹を固定P¹へ同定しtwistして適用できる。本稿の反例では一般のeventual saturationに頼らず、二次解消から全整数の飽和を直接証明する。
+
+## 相対曲線商と普遍Noetherian性
+
+Van den Bergh arXiv:0807.3753v3 のLemma 5.2.4のlinear tensor標準形、Lemma 5.4.10–5.4.12のlinear/elliptic分離とadmissibility、Proposition 5.4.2とLemma 5.5.3のtame・切断次元、Theorem 5.5.6(1),(3)の核の正規族生成・regular性を一次本文で確認した。本稿では相対隣接行列のkernel線によりpoint-curveのshiftをscheme-theoreticに構成し、有限projective成分間の射のfiber判定で正規族を相対化する。fiberwise同型から非被約基底上の線束同型を推論しない。
+
+Keeler, *Ample filters of invertible sheaves*, J. Algebra 259 (2003), 243–283、[arXiv:math/0108068v5](https://arxiv.org/abs/math/0108068)、Theorem 1.5と付属Erratum §2（Theorem E2.5）を一次本文で確認した。射影スキームが任意の可換Noetherian基底上にあり、Hがampleなら、固定coherent Fに対してH^q(F⊗H^m⊗N)=0が全nef線束Nに一様なmで成立する。誤りの訂正前のLemma 3.3を使うのではなく、Erratumによる同定理の再検証を含めた形を使う。本稿ではhelixのparity別成分次数からprefix/H^mがrelative nefとなることを確認し、row/column idealの像層安定とこの消滅を組み合わせる。一般のrelative linear/elliptic貼合せの包括的な新規性は未確認である。
 
 ## 確認した一次資料
 

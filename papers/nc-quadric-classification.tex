@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.31
+% 日本語 LuaLaTeX。2026-11-21 / v1.32
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.31（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.32（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -87,12 +87,12 @@ smooth proper dg 特殊化と全次数平坦な反 Serre 環族も構成する�
 $D(\operatorname{QGr}B)\simeq D(\operatorname{Mod}\Lambda)$ を得る。
 全 helix と射を比較することで、次数移動を既存の Morita 根へ対応させ、
 canonical compact 圏の相対 Serre 関係と導来基底変更を確認する。
-Noetherian 基底上で $B$ が左右 Noetherian なら、coherent cohomology の
-一様な消滅から Hom 有限性・平坦基底変更・AZ 豊富性・全ての相対 $\chi_q$ が従い、
-全有限型基底変更を備えた内在的相対条件を満たす。
-特に全ての Noetherian 局所基底には適用できる。
-\emph{一つの有限型開全体の左右 Noetherian 性と、
-モジュライ全体の代数性は未証明である。}
+さらに相対 point curve の座標代数を Keeler の消滅で制御し、
+正規拡大、linear 閉部分の Segre 表示、次数別完備化による貼合せを用いて、
+任意の Noetherian 基底変更後の左右 Noetherian 性を証明する。
+これにより coherent Hom、AZ、全相対 $\chi_q$ を備えた実際の族
+$U^\circ\to\mathfrak H_2$ が得られる。
+\emph{モジュライ全体の代数性は未証明である。}
 既知結果の相対適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
 \tableofcontents
@@ -123,10 +123,20 @@ $s=-\otimes H$ は $s^2\simeq S^{-1}[2]$ という平方根である。
 その体上の定理を一般基底へそのまま適用せず、
 有限 projective 係数の cubic 解消から acyclicity と有限 cohomological dimension を
 証明し直す（第\ref{sec:relative-cubic-tails}節）。
-これにより任意基底での canonical な非有界導来比較が得られる一方、
-Noetherian heart の存在は別の条件として残る。
-左右 Noetherian 性がある基底では、同じ有限解消と有限 presentation から
-一様 Serre 消滅と全相対条件を導く。
+これにより任意基底での canonical な非有界導来比較を得る。
+Noetherian 性は別に証明する必要があり、第\ref{sec:relative-cubic-noetherian}節で
+相対 point curve と正規族を scheme-theoretic に構成して解決する。
+曲線商の Noetherian 性には Keeler \cite[Theorem 1.5, 付属 Erratum \S2]{Keeler2003}
+の一般 Noetherian 基底上の消滅を用いる。
+linear 部分の非被約な Segre 表示と、
+第\ref{sec:formal-noetherian-patching}節の次数別形式的貼合せによって、
+単一の基底全体へ結論を移す。
+Noetherian 性の下では、有限解消と有限 presentation から
+一様 Serre 消滅と全相対条件を導ける。
+一方、非可換射影直線束の候補対角列を使う比較には具体的な反例がある
+（第\ref{sec:ruled-diagonal-obstruction}節）。
+既知の束の Noetherian 性 \cite[Theorem 1.2]{VanDenBergh2012P1} は保たれるが、
+その候補列は非零 coherent 対象を生成しない。
 
 
 Artin--Zhang の再構成理論 \cite{AZ1994} は ample pair から切断環と圏を対応させる。
@@ -207,8 +217,9 @@ To\"en--Vaqui\'e \cite[Corollaries 3.22, 3.24]{TV2007} の一般基礎環上の
 命題~\ref{prop:quadric-uniform-cubic-hom-open} で得られる。
 さらに homological AS4 被覆は Zariski 局所に構成できる
 （命題~\ref{prop:quadric-zariski-homological-as-cover}）。
-ただし被覆の左右 Noetherian 性、Abel heart と AZ 豊富性の
-相対実現は含まない。
+この homological 構成に普遍 Noetherian 性と canonical tails 比較を合わせ、
+定理~\ref{thm:quadric-finite-type-effectivity} で
+有限型開上の内在的相対実現を得る。
 これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
 
 Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} は、一般の cubic quadric が
@@ -488,6 +499,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/artin_roots}
 \input{sections/relative_cubic_tails}
 \input{sections/relative_noetherian_patching}
+\input{sections/relative_cubic_noetherian}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
@@ -540,8 +552,9 @@ Artin 基底では有限 foundation と canonical 反 Serre 偏極を回復し�
 系~\ref{cor:quadric-formal-deformation-equivalence} が形式変形問題を認識する。
 命題~\ref{prop:quadric-etale-morita-root} により標準根は foundation 表示の
 \'etale 近傍へ Morita 双加群として代数化できる。
-この近傍の cubic helix から noetherian な相対 tails heart を構成し、
-canonical compact 圏・AZ・任意基底変更を確認することが次の実現問題である。
+定理~\ref{thm:quadric-finite-type-effectivity} は、この近傍に
+Noetherian な相対 tails heart と全ての内在的相対条件を構成する。
+次はこの射の局所的な表示性と、一般点・境界への適用範囲を調べる。
 一般の $X_3$ 族については、命題~\ref{prop:antiserre-polarization-family} の
 偏極変形を除外する必要がある。
 また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、

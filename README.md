@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.31、主論文v1.31、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.32、主論文v1.32、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -45,7 +45,9 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **任意基底変更・任意係数で構造対象のH⁰とH¹を計算。** 任意affine T=Spec R′→U°と任意R′-加群Nに対して、Hom_QGr(O_T,N⊗O_T(n))≃N⊗(B_T)_n、Ext¹_QGr(O_T,N⊗O_T(n))=0が全nで成立する。各fiberの深さ3、相対Koszul cochainの分裂完全性、Gabriel商の拡大列を使い、B_TのNoetherian性やNの平坦性を必要としない（`cor:relative-depth-three-coefficients`、`cor:quadric-all-basechange-saturated-sections`）。N=R′の場合、元の全切断環を回復する。
 
-**残る核心。** この近傍での効果性は、一つの有限型開全体のBの左右Noetherian性に帰着した。局所環Rとその全有限型変更の結果からU°自体のNoetherian性は推論しない。次はcubic曲線商と正規拡大の相対化を調べる。非可換P¹束を使う場合は、模型の別の豊富列を必要な平方根の軌道と取り違えない。一般のH2全体の代数性とX_asの表現可能性も未証明。[検証範囲](notes/research_notes.md#検証範囲と再現手順)。
+**有限型開での普遍Noetherian性とH2効果性。** `thm:relative-geometric-cubic-noetherian` は、全成分が有限projectiveでgeometric cubic表示と実際の二周期を持つ族の偶数環が、任意の可換Noetherian基底変更後に左右Noetherianであると示す。非線形開では隣接行列のkernelから相対point curveをscheme-theoreticに作り、Keelerの相対Fujita消滅で座標Z代数のrow/columnを有限生成にする。全次数projective核からregular normalな四次族を得て、偶数環へ戻す。linear閉部分はrank-one flatteningの厳密な因数分解と標準単項式で相対Segreへ帰着し、形式的貼合せで全基底を扱う。右積の規約にはC_ij=D_{−j,−i}を使う。`thm:quadric-finite-type-effectivity` により、可換Qを含む一つの有限型開U°でBとAが真に左右Noetherianとなり、U°→H2という全相対公理を満たす族を得る。一般H2全体の代数性は別の未解決問題である。
+
+**次の核心。** U°→H2のrepresentable smooth性とそのopen imageを認識し、その後に一般点・noncubic境界へ広げる。H2全体の代数性とX_asの表現可能性は未証明。[検証範囲](notes/research_notes.md#検証範囲と再現手順)。
 
 ## モジュライのスタック構成
 
@@ -57,7 +59,7 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **可換点の全Artin変形は相対H2に属する。** 二周期cubic列のcanonical hullをArtin基底上で構成し、標準根の全軌道環に相対AS4被覆と正則正規二次切断を与えた。全有限型基底変更を含む昇格命題と合わせ、可換Qの全flat pointed Abel Artin変形が実際の相対H2対象になる。H2からAbel圏への忘却は、この点を中心とする形式変形groupoidの同値であり、変形は無障害、接次元9・無限小自己同型次元6である。[全Artinのhullと形式変形](papers/sections/quadric_artin_hull.tex)。一次方向については、Jacobian二重導分と右Zhang twistによる[明示構成と検算](papers/sections/quadric_first_order.tex)も保持する。一般cubic点でも、適合するample helixとHH²に恒等に作用する根があれば全Artin認識が成立する。この作用条件を満たす根の一般点での存在、一般有限型基底上の代数性は未解決である。
 
-**標準平方根はétale近傍へ代数化できる。** 有限foundation表示上のMorita自己同値の代数空間と平方写像を使い、可換点の標準根を実際のperfect双加群と平方同型としてétale近傍へ延長した。[根の代数化](papers/sections/artin_roots.tex)、`prop:quadric-etale-morita-root`。その近傍では、標準foundationに対して根がF0→F2、F1→F3と作用する同型を構成し、全四項窓のfull strong exceptional性、Hom階数2/4/6/9、三次関係rank2・四次重なりrank1の非退化性を任意底変更について証明した（`prop:quadric-etale-finite-window`）。全距離のHomと三次提示は上記の相対解消で解決した。canonical compact/Serre認識は相対cubic tailsの証明で成立した。残るのは単一有限型開上の左右Noetherian性であり、相対H2全体の代数性は未証明。特殊fiberのrankと非退化性の独立な厳密検算は [`verify_quadric_finite_windows.py`](computations/verify_quadric_finite_windows.py) に収録した。
+**標準平方根はétale近傍へ代数化できる。** 有限foundation表示上のMorita自己同値の代数空間と平方写像を使い、可換点の標準根を実際のperfect双加群と平方同型としてétale近傍へ延長した。[根の代数化](papers/sections/artin_roots.tex)、`prop:quadric-etale-morita-root`。その近傍では、標準foundationに対して根がF0→F2、F1→F3と作用する同型を構成し、全四項窓のfull strong exceptional性、Hom階数2/4/6/9、三次関係rank2・四次重なりrank1の非退化性を任意底変更について証明した（`prop:quadric-etale-finite-window`）。全距離のHomと三次提示は上記の相対解消で解決した。canonical compact/Serre認識は相対cubic tailsの証明で成立した。単一有限型開上の左右Noetherian性と相対H2実現は上記の定理で成立した。相対H2全体の代数性は未証明。特殊fiberのrankと非退化性の独立な厳密検算は [`verify_quadric_finite_windows.py`](computations/verify_quadric_finite_windows.py) に収録した。
 
 族は基底変更と descent を備えた noetherian Abel 圏と構造対象 O の対である。導来条件には局所的な canonical compact 部分 $D(\operatorname{Ind}\mathcal C)^c$ を用い、特異基底上でそれを全 $D^b(\mathcal C)$ と同一視しない。平方根・根同型・AS被覆は fppf 局所の存在条件であり、標識に加えない。標数零の代数閉体上では元の $\mathcal H_2$ の pointed groupoid を回復する。
 
@@ -85,9 +87,9 @@ noncubicの三代表点では $\dim HH^1(R)_0=(1,1,2)$、$\dim HH^2(R)_0=(3,3,5)
 
 **成分に関する現在の結論：** foundation実現点集合は誘導位相で既約・連結、成分数は各1。cubic/noncubicの表示商の非交和は人工的に2成分になる。内在的 $\mathfrak H_2$ の代数性と位相比較が未完成なので、これをその成分数とはしない。
 
-**Noetherian 性の形式的貼合せ。** 可換Noetherian基底R、各次数成分が有限な中央次数環A、I=(f₁,…,fᵣ)に対し、A/IAと全A[fᵢ⁻¹]が左右NoetherianならAも左右Noetherianとなる。次数ごとのI進完備化で有限生成元の係数を収束させ、R̂_I×∏R[fᵢ⁻¹]の忠実平坦性で降下する。成分の平坦性・有限Krull次元は不要で、一般次数付き加群とZ代数のrow/columnにも成立する。証明 `thm:patch-noetherian`、`thm:patch-z-algebra`。閉部分と開補集合で実際の代数族のNoetherian性を得る必要は残る。
+**Noetherian 性の形式的貼合せ。** 可換Noetherian基底R、各次数成分が有限な中央次数環A、I=(f₁,…,fᵣ)に対し、A/IAと全A[fᵢ⁻¹]が左右NoetherianならAも左右Noetherianとなる。次数ごとのI進完備化で有限生成元の係数を収束させ、R̂_I×∏R[fᵢ⁻¹]の忠実平坦性で降下する。成分の平坦性・有限Krull次元は不要で、一般次数付き加群とZ代数のrow/columnにも成立する。証明 `thm:patch-noetherian`、`thm:patch-z-algebra`。幾何的cubic族では、閉部分と開補集合で実際のNoetherian性を確認して適用する。
 
-**非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。`sec:ruled-diagonal-obstruction`。次は曲線商と正規拡大をlinear閉部分・elliptic開部分に分け、形式的貼合せを適用する。
+**非可換P¹束の対角列の障害。** 滑らかな(2,2)曲線と次数二線束から全隣接縮約が非零のgeometric quintupleを構成した。しかし対応する層対称代数の候補対角列Kₙ=π(O(n)⊗e₋ₙA)は、全ての行からHomが零になる非零coherent対象を持ち、AZ生成条件を満たさない。二次解消を用いて全整数でωπMの成分がO(−2)となることを直接証明した。これは当該模型・軌道列の比較への障害であり、本来のcubic環BのNoetherian性の反例ではない。`sec:ruled-diagonal-obstruction`。本来のBのNoetherian性は、曲線商・正規拡大とlinear部分の形式的貼合せによって解決した。
 
 ## 対象
 

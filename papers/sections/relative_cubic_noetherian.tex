@@ -1,0 +1,583 @@
+% !TeX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.32
+\section{相対 cubic 環の普遍 Noetherian 性と有限型効果性}
+\label{sec:relative-cubic-noetherian}
+
+\paragraph{本稿の役割.}
+全次数の局所自由性と標準 cubic 解消が既に構成された族に対し、
+体上の Noetherian 性を各局所環へ持ち上げるだけでなく、
+一つの有限型基底上の偶数環そのものの左右 Noetherian 性を導く。
+相対 point curve と正規族の構成を明記し、楕円部分の Noetherian 性には
+Keeler の相対 Fujita 消滅を用いる。
+linear 閉部分はテンソルの rank-one flattening により別に扱う。
+最後に第\ref{sec:formal-noetherian-patching}節の形式的貼合せを適用する。
+本稿の相対化および貼合せとの組合せの新規性は未確認である。
+
+\subsection{仮定と結論}
+
+$k$ を研究で固定した体、$R$ を可換 Noetherian $k$-代数、$S=\operatorname{Spec} R$ とする。
+幾何ファイバーでは常に代数閉包へ移る。
+正の $R$-線形 $\mathbb Z$-代数 $D$ について次を仮定する。
+\begin{enumerate}
+\item $D_{ii}=R$, $D_{ij}=0$ $(j<i)$ であり、全ての $D_{ij}$ は有限 projective $R$-加群である。
+\item $V_i=D_{i,i+1}$ は階数二で、$D$ は $V_i$ により生成される。
+  定義関係は階数二の直和因子
+  $R_i\subset V_i\otimes V_{i+1}\otimes V_{i+2}$ により生成される。
+\item 四次 syzygy は可逆加群 $W_i$ であり、普遍的に
+  \[
+  W_i\subset (R_i\otimes V_{i+3})\cap(V_i\otimes R_{i+1})
+  \subset V_i\otimes\cdots\otimes V_{i+3}
+  \]
+  となる。縮約は同型
+  \[
+  W_i\otimes V_{i+3}^{\vee}\simeq R_i,
+  \qquad W_i\otimes V_i^{\vee}\simeq R_{i+1}
+  \]
+  を与える。
+\item 全幾何ファイバーの cubic 代数は幾何的 quintuple に対応する AS 正則代数である。
+  特に $W_i$ の任意の非零隣接二縮約は零でない。
+\item 積と整合する二周期同型 $\theta:D\xrightarrow{\sim}D(2)$ が指定されている。
+\end{enumerate}
+これらは既に得られた有限型 geometric cubic 開の相対 cubic 解消から供給する入力である。
+二周期同型を用いて
+\begin{equation}\label{noeth-eq:even-ring}
+ B_n=D_{0,2n},\qquad
+ a\star b=a\,\theta^m(b)\quad(a\in B_m, b\in B_n)
+\end{equation}
+と置く。
+
+\begin{theorem}\label{thm:relative-geometric-cubic-noetherian}
+上の仮定の下で、$B$ は左右 Noetherian である。
+さらに任意の可換 Noetherian $R$-代数 $R'$ に対して
+$B\otimes_RR'$ も左右 Noetherian である。
+\end{theorem}
+
+以下ではまず nonlinear 部分で相対曲線と普遍正規族を構成し、
+linear 閉部分と合わせて定理を証明する。
+stalk ごとの Noetherian 性から開近傍上の Noetherian 性を推論する箇所はない。
+
+\subsection{linear 閉部分と相対 point curve}
+
+\subsubsection{閉部分の定義}
+
+局所的に $W_0$ の生成元を $w$ とし、
+\[
+ w\in (V_0\otimes V_2)\otimes(V_1\otimes V_3)
+\]
+を $02\mid13$ flattening の $4\times4$ 行列として読む。
+その $2\times2$ 小行列式が生成するイデアルを $I\subset R$ とする。
+基底と $W_0$ の生成元の変更はこのイデアルを変えない。
+\[
+ Z=V(I),\qquad S_{\mathrm e}=S\setminus Z
+\]
+と置く。Van den Bergh の linear tensor の標準形
+\cite[Lemma 5.2.4, (5.3)]{VdB2011} により、
+$Z$ の幾何点はちょうど linear quintuple の点である。
+実際、その標準形は
+\[
+ (x_0y_2-y_0x_2)(x_1y_3-y_1x_3)
+\]
+である。
+
+これは reduced locus の定義だけではない。
+$02\mid13$ の rank-one determinantal scheme は Segre scheme そのものであり、
+$W_0$ が至る所非零であるため、$Z$ 上では局所的に
+\begin{equation}\label{noeth-eq:linear-factorization}
+ w=a_{02}\otimes b_{13}
+\end{equation}
+と実際に因数分解される。
+両双線形形式は非退化である。
+もし一方がある幾何点で退化すれば、その零方向と隣接因子の任意の非零方向による
+縮約が零となり、geometric 条件に反する。
+従ってそれらの行列式は可逆である。
+この議論は $Z$ が非被約の場合も適用できる。
+
+\subsubsection{楕円部分の行列式}
+
+以下しばらく $S_{\mathrm e}$ の任意の affine open を $S$ と書き直す。
+$P_i=\PP(V_i^{\vee})$ とし、$P_i\times_S P_{i+1}$ 上で $W_i$ を最初の二因子により評価すると
+\begin{equation}\label{noeth-eq:relation-matrix}
+ \mu_i:W_i\otimes V_{i+3}^{\vee}\otimes\OO(-1,-1)
+ \longrightarrow V_{i+2}\otimes\OO
+\end{equation}
+を得る。
+geometric 条件により、これは全ての幾何点で零行列でない。
+また nonlinear 条件と \cite[\S5.4, 特に Lemma 5.4.10]{VdB2011} により、
+その行列式は各基底ファイバー上で恒等的に零ではない。
+従って
+\[
+ C_i=V(\det\mu_i)\subset P_i\times_S P_{i+1}
+\]
+は相対有効 Cartier 因子であり、$S$ 上平坦な $(2,2)$ 曲線族である。
+各幾何ファイバーは算術種数一の Gorenstein 曲線である。
+ここで非被約性や可約性を除外しない。
+
+\begin{lemma}\label{noeth-lem:scheme-shift}
+$R_i$ の二つの multilinear relation により定義される
+\[
+ \Gamma_i\subset P_i\times_S P_{i+1}\times_S P_{i+2}
+\]
+の二つの隣接射影は同型
+\[
+ \Gamma_i\xrightarrow{\sim}C_i,
+ \qquad \Gamma_i\xrightarrow{\sim}C_{i+1}
+\]
+を与える。従って canonical な同型 $\psi_i:C_i\xrightarrow{\sim}C_{i+1}$ がある。
+これらは任意の基底変更と可換する。
+\end{lemma}
+
+\begin{proof}
+最初の二座標を固定すると、$\Gamma_i$ の方程式は
+$\lambda_{i+2}\mu_i=0$ である。
+$\mu_i$ は至る所 rank $\ge1$ で、$C_i$ 上では行列式が零である。
+ある成分が可逆である開集合で行基本変形・列基本変形を行えば、
+$C_i$ 上の行列は $\operatorname{diag}(1,0)$ となる。
+従ってその cokernel は線束であり、$\lambda_{i+2}$ は一意な projective 点を定める。
+これは非被約基底上でも scheme-theoretic な同型 $\Gamma_i\simeq C_i$ を与える。
+
+重なる二座標に対して同じ行列式を用いている点を具体的に確認する。
+$\lambda_{i+1},\lambda_{i+2}$ を固定し、
+\[
+ M=W_i(-,\lambda_{i+1},\lambda_{i+2},-)
+ \in V_i\otimes V_{i+3}
+\]
+を $2\times2$ 行列として読む。
+$W_i\otimes V_{i+3}^{\vee}\simeq R_i$ によれば、$\Gamma_i$ の方程式は
+$\lambda_iM=0$ である。
+$W_i\otimes V_i^{\vee}\simeq R_{i+1}$ によれば、
+$\Gamma_{i+1}$ の方程式は $M\lambda_{i+3}=0$ である。
+従って両 triple のこの隣接 pair への像は、いずれも厳密に $\det M=0$ である。
+別の $W_{i+1}$ による $R_{i+1}$ の表示を用いても、同じ relation 束の基底変更に過ぎず、
+行列式のイデアルは変わらない。
+geometric 条件により $M$ は零行列にならないので、
+左 kernel と右 kernel はそれぞれ線束を与える。
+これで第二の同型も scheme-theoretic に得られる。
+全てが可逆成分による行列消去で記述されるため、任意の基底変更と整合する。
+\end{proof}
+
+\begin{remark}[二種類の $(2,2)$ 行列式を区別する]
+ここで使う $C_i$ は\emph{隣接因子} $(i,i+1)$ 上の point curve である。
+その各 $\PP^1$ への射影が有限であることは仮定せず、一般に成分を縮約し得る。
+必要なのは隣接二射影を合わせた閉埋め込みと、$\OO(1,1)|_{C_i}$ の相対豊富性である。
+これに対し、層双加群を作る際の\emph{反対因子} $(0,2)$ 上の行列式は
+geometric 条件により両射影有限であるが、上の point curve と一様には同じでない。
+特に linear 点では point scheme は曲面 $\PP^1\times\PP^1$ となり、
+隣接行列式は恒等的に零となる。
+従って本節の flat curve を linear 点までそのまま延長してはいけない。
+\end{remark}
+
+\subsection{相対 helix 座標代数と普遍正規族}
+
+補題 \ref{noeth-lem:scheme-shift} により全 $C_i$ を $C=C_0$ と同定する。
+その座標射を $\rho_i:C\to P_i$ とし、
+\[
+ \pi:C\to S,\qquad \mathcal L_i=\rho_i^*\OO_{P_i}(1),\qquad
+ \mathcal L_{ij}=\mathcal L_i\otimes\cdots\otimes\mathcal L_{j-1}\quad(j>i)
+\]
+と置く。
+幾何ファイバーではこれは Van den Bergh の admissible quadruple の elliptic helix そのものである
+\cite[\S5.4, Lemma 5.5.1, Theorem 5.5.10]{VdB2011}。
+従って各ファイバーの各既約成分 $E$ について
+\begin{equation}\label{noeth-eq:parity-degrees}
+ \deg(\mathcal L_{i+2}|_E)=\deg(\mathcal L_i|_E)
+\end{equation}
+である。
+この数値等式は非被約ファイバーでもその reduced 成分上で読む。
+本稿は相対線束としての helix 関係を fiberwise 同型から推論しない。
+必要なのは \eqref{noeth-eq:parity-degrees} のみである。
+
+\begin{lemma}\label{noeth-lem:cohomology-bc}
+$j>i$ に対し
+\[
+ H_{ij}:=\pi_*\mathcal L_{ij}
+\]
+は階数 $2(j-i)$ の有限 locally free 層であり、
+$R^{q}\pi_*\mathcal L_{ij}=0$ $(q>0)$ である。
+この pushforward は任意の基底変更と可換する。
+また $V_i\to\pi_*\mathcal L_i$ は同型で、$\mathcal L_i$ は相対大域生成される。
+\end{lemma}
+
+\begin{proof}
+全幾何ファイバーで $\mathcal L_i$ は大域生成される次数二線束である。
+積 $\mathcal L_{ij}$ も大域生成され、その次数は $2(j-i)>0$ である。
+$(2,2)$ 曲線の tame 性と Riemann--Roch により
+$H^1(\mathcal L_{ij,s})=0$, $h^0(\mathcal L_{ij,s})=2(j-i)$ である
+\cite[Proposition 5.4.2, Lemma 5.5.3]{VdB2011}。
+$C\to S$ は平坦・射影・有限表示で、$\mathcal L_{ij}$ は線束なので、
+cohomology and base change により結論を得る。
+同値に $R\pi_*\mathcal L_{ij}$ は perfect で、その全幾何ファイバーが次数零のみを持つため、
+有限 locally free 層として表される。導来基底変更は通常の基底変更となる。
+$V_i\to\pi_*\mathcal L_i$ は全ファイバーで同型であり、両辺が有限 locally free なので同型である。
+評価射の全射性も幾何ファイバーで確認できる。
+\end{proof}
+
+$H_{ii}=R$, $H_{ij}=0$ $(j<i)$ とし、線束の積により $H$ を $\mathbb Z$-代数とする。
+$\pi_*\OO_C=R$ は $(2,2)$ 因子の標準完全列から直接従う。
+各 $R_i$ は $C$ 上で消えるので、canonical な準同型
+\[
+ D\longrightarrow H
+\]
+が得られる。
+
+\begin{proposition}\label{noeth-prop:normal-family}
+上の準同型は全成分で全射であり、核を $K$ とすると全 $K_{ij}$ は有限 projective である。
+$K_{ij}=0$ $(j-i<4)$、$G_i:=K_{i,i+4}$ は可逆加群である。
+さらに積は普遍同型
+\begin{equation}\label{noeth-eq:normal-family}
+ G_i\otimes_R D_{i+4,j}\xrightarrow{\sim}K_{ij}
+ \xleftarrow{\sim}D_{i,j-4}\otimes_R G_{j-4}
+ \qquad(j\ge i+4)
+\end{equation}
+を与える。従ってこれは左右 regular な正規族である。
+構成、核、同型の全てが任意の基底変更と可換する。
+\end{proposition}
+
+\begin{proof}
+幾何ファイバーでは \cite[Theorem 5.5.6(1)]{VdB2011} により $D\to H$ は全射である。
+各成分の cokernel は有限 $R$-加群なので、全成分で全射である。
+$D_{ij}$ と $H_{ij}$ は有限 projective であり、この全射は $R$-加群として分裂する。
+従って $K_{ij}$ は有限 projective で、核は任意の基底変更と可換する。
+低次数での消滅と $G_i$ の階数一性も同じ定理から従う。
+
+式 \eqref{noeth-eq:normal-family} の射は $K$ が両側イデアルであることから定まる。
+各幾何ファイバーで、左・右の核生成性と regular 性
+\cite[Theorem 5.5.6(1),(3)]{VdB2011} により、両射は同型である。
+両辺は有限 projective なので射自体が同型である。
+この同型の tensor は任意の基底変更後も同型である。
+\end{proof}
+
+特に両側の表示を比較すると canonical な同型
+\begin{equation}\label{noeth-eq:normal-commutation}
+ G_i\otimes D_{i+4,j+4}\simeq D_{ij}\otimes G_j
+\end{equation}
+を得る。これが基底上の線束を保った正規交換式である。
+
+\subsubsection{二周期性と通常の次数付き正規線}
+
+相対 point scheme の構成は $D$ とその添字の同型に関して functorial である。
+従って $\theta$ は $H$, $K$, $G_i$ にも二周期同型を誘導し、
+$D\to H$ および \eqref{noeth-eq:normal-family} と整合する。
+具体的には、$\theta$ が与える $C_2\to C_0$ と
+$\psi_1\psi_0:C_0\to C_2$ の合成を $\sigma:C\to C$ とすれば、
+\[
+ \sigma^*\mathcal L_i\simeq\mathcal L_{i+2}
+\]
+となる。これは座標の tautological line bundle と $\theta$ の可換図式から得られる。
+
+$\overline B_n=H_{0,2n}$ に \eqref{noeth-eq:even-ring} と同じ二周期積を入れると、
+$\overline B$ は $\mathcal L_0\mathcal L_1$ と $\sigma$ による twisted homogeneous coordinate ring である。
+また $G=G_0\subset B_2$ とすると
+\begin{equation}\label{noeth-eq:graded-normal-line}
+ \ker(B\to\overline B)=GB=BG,
+ \qquad G\otimes B(-2)\simeq\ker(B\to\overline B)\simeq B(-2)\otimes G.
+\end{equation}
+これは $G_i$ の二周期同一視を \eqref{noeth-eq:normal-family} に適用したものである。
+$G$ を自明化する開集合では、その生成元 $g\in B_2$ は左右 regular な正規元である。
+全ての主張は任意の基底変更後も成立する。
+
+\subsection{相対豊富性と座標代数の Noetherian 性}
+
+\subsubsection{Keeler の消滅の適用}
+
+用いる一次文献の正確な形は次である。
+Keeler \cite[Theorem 1.5]{Keeler2003} は、可換 Noetherian 環上の射影スキーム、
+豊富な線束 $H$、任意の coherent 層 $F$ に対し、ある $m_0$ が存在して
+\begin{equation}\label{noeth-eq:keeler}
+ H^q(F\otimes H^m\otimes N)=0
+ \quad(q>0, m\ge m_0)
+\end{equation}
+が全ての relatively nef 線束 $N$ について成立することを与える。
+確認した arXiv v5 には erratum が添付され、そこで Lemma 3.3 の修正後にも
+Theorem 1.5 が成立することが再確認されている
+\cite[付属 Erratum, \S2]{Keeler2003}。
+
+固定した $i$ に対し $H_i=\mathcal L_i\mathcal L_{i+1}$ は相対豊富である。
+実際、これは隣接二座標による閉埋め込みの $\OO(1,1)$ である。
+式 \eqref{noeth-eq:parity-degrees} から
+\begin{equation}\label{noeth-eq:nef-prefix}
+ \mathcal L_{i,i+2m}\otimes H_i^{-m}
+\end{equation}
+は各幾何ファイバーの各既約成分上で次数零であり、relatively numerically trivial、
+従って relatively nef である。
+奇数長の積ではさらに大域生成線束一つを tensor するので、残余因子はやはり nef である。
+逆方向の積 $\mathcal L_{i-2m,i}$ についても同じ議論が働く。
+従って \eqref{noeth-eq:keeler} により、前向き・後向き双方の積は ample sequence を成す。
+これは全ての affine Noetherian 基底変更後にも適用できる。
+
+\subsubsection{row ideal の有限生成を直接証明する}
+
+\begin{lemma}\label{noeth-lem:row-noetherian}
+$H$ は左右 Noetherian な $R$-線形 $\mathbb Z$-代数である。
+偶数添字に制限した $H^{\mathrm{ev}}$ も左右 Noetherian であり、
+その二周期環 $\overline B$ は左右 Noetherian である。
+\end{lemma}
+
+\begin{proof}
+$\mathcal P_0=\OO_C$ とし、$\mathcal P_{j+1}=\mathcal P_j\mathcal L_j$ により全整数 $j$ の線束を定める。
+すると $H_{ij}=H^0(C,\mathcal P_i^{-1}\mathcal P_j)$ $(j\ge i)$ である。
+右 projective row $e_iH$ の任意の部分加群 $J$ を取り、
+\[
+ \mathcal I_j=\operatorname{im}\bigl(J_j\otimes_R\mathcal P_j^{-1}\longrightarrow\mathcal P_i^{-1}\bigr)
+ \qquad(j\ge i)
+\]
+と置く。
+$H_{ij}$ は有限 $R$-加群で $R$ は Noetherian なので、$J_j$ も有限である。
+従って $\mathcal I_j$ は coherent である。
+$\mathcal L_j$ は大域生成され、$J_jH_{j,j+1}\subset J_{j+1}$ だから
+$\mathcal I_j\subset\mathcal I_{j+1}$ となる。
+$\mathcal P_i^{-1}$ は Noetherian coherent 層なので、この列は $j\ge N$ で
+一つの $\mathcal I$ に安定する。
+
+$J_N$ の有限個の $R$-生成元を取れば全射
+\[
+ (\mathcal P_N^{-1})^{\oplus r}\twoheadrightarrow\mathcal I
+\]
+が得られる。その核 $F$ は coherent である。
+前向きの ample sequence により $H^1(C,F\mathcal P_j)=0$ $(j\gg0)$ である。
+従って $J_N$ の選んだ生成元による積は
+\[
+ H_{Nj}^{\oplus r}\twoheadrightarrow H^0(C,\mathcal I\mathcal P_j)
+\]
+を与える。
+一方、像層の定義から $J_j\subset H^0(C,\mathcal I\mathcal P_j)$ であり、
+積の像はイデアル性から $J_j$ に含まれる。
+従って十分大きい $j$ では $J_j=J_NH_{Nj}$ である。
+残る有限個の次数の有限 $R$-生成元を加えれば $J$ は有限生成となる。
+
+左側は $He_i$ の部分加群 $J$ に対して
+\[
+ \mathcal I_j=\operatorname{im}(J_j\otimes_R\mathcal P_j\longrightarrow\mathcal P_i),\qquad j\le i
+\]
+を使う。$j\to-\infty$ に向かって像層が増大し、安定後は
+後向きの ample sequence $\mathcal P_j^{-1}$ を用いて同じ議論を適用する。
+従って全 projective row と column が Noetherian である。
+
+偶数添字だけに制限すると、隣接線束は $\mathcal L_{2j}\mathcal L_{2j+1}$ に置き換わる。
+これは大域生成され、前向き・後向きの豊富性も保たれるので、同じ証明がそのまま働く。
+二周期同型により $\Gr\overline B$ と $\Gr H^{\mathrm{ev}}$ は同値であるため、
+$\overline B$ の全ての斉次右・左イデアルが有限生成となる。
+最後に非負内部次数の最高次部分による通常の reduction により、
+斉次イデアルの Noetherian 性から通常の左右 Noetherian 性が従う。
+\end{proof}
+
+\subsubsection{正規線からの持上げ}
+
+\begin{lemma}\label{noeth-lem:normal-lift}
+$A$ を非負次数付き $R$-代数とし、正次数にある可逆 $R$-部分加群 $G\subset A_d$ が
+左右 regular な正規線を成すとする。
+すなわち $GA=AG$ であり、積が
+$G\otimes A(-d)\simeq GA\simeq A(-d)\otimes G$ を与えるとする。
+$A/GA$ が左右 Noetherian なら $A$ も左右 Noetherian である。
+\end{lemma}
+
+\begin{proof}
+$G$ を自明化する有限 affine open cover に制限すれば、
+一つの左右 regular な正規元 $g$ を取れる。
+$gA=Ag$ と両側 regular 性から、$ga=\alpha(a)g$ を満たす $\alpha(a)$ は一意に存在する。
+逆向きの交換式も一意に解けるので $\alpha$ は次数を保つ自己同型である。
+この自己同型を用いて
+$\operatorname{gr}_{(g)}A\simeq(A/gA)[z;\alpha]$ であり、これは左右 Noetherian である。
+任意の斉次イデアルの $(g)$-進初項イデアルから有限個の斉次生成元を lift する。
+固定した内部次数 $n$ では $(g)^rA_n=0$ $(rd>n)$ なので、
+初項を順に消す操作は有限回で止まり、元の斉次イデアルも有限生成となる。
+さらに最高内部次数による reduction により通常のイデアルも有限生成となる。
+有限 affine open cover の積は $R$ 上忠実平坦であるから、Noetherian 性は $A$ へ降下する。
+\end{proof}
+
+命題 \ref{noeth-prop:normal-family}、式 \eqref{noeth-eq:graded-normal-line}、
+補題 \ref{noeth-lem:row-noetherian} と \ref{noeth-lem:normal-lift} により、
+$S_{\mathrm e}$ 上の $B$ は左右 Noetherian である。
+同じ構成と Keeler の定理は任意の可換 Noetherian 基底変更後に適用できる。
+従って楕円 open 上では普遍 Noetherian 性が得られる。
+
+\subsection{linear 閉部分}
+
+ここでは再び元の $S$ に戻り、$Z=V(I)$ 上の代数を考える。
+式 \eqref{noeth-eq:linear-factorization} の縮約を取ると、非退化性により厳密に
+\[
+ R_0=a_{02}\otimes V_1,\qquad R_1=V_2\otimes b_{13}
+\]
+を得る（各式の因子は元の添字順へ並べる）。
+$\theta$ を正負の整数回適用すれば、全整数 $r$ に対して
+\[
+ R_{2r}=a_{2r,2r+2}\otimes V_{2r+1},\qquad
+ R_{2r+1}=V_{2r+2}\otimes b_{2r+1,2r+3}
+\]
+が得られる。ここで $a_{2r,2r+2}=\theta^r(a_{02})$、
+$b_{2r+1,2r+3}=\theta^r(b_{13})$ であり、全て非退化である。
+次の syzygy への伝播も scheme-theoretic に確認できる。
+添字 $1,2,3,4$ を $13\mid24$ の順に並べると
+\[
+ (R_1\otimes V_4)\cap(V_1\otimes R_2)
+ =(R b_{13}\otimes(V_2\otimes V_4))
+ \cap((V_1\otimes V_3)\otimes R a_{24})
+ =R(b_{13}\otimes a_{24}).
+\]
+最後の等式は $Ra_{24}$ と $Rb_{13}$ がそれぞれ直和因子であることから従う。
+$W_1$ の縮約が同型であることにより、$W_1$ はこの線全体に一致する。
+同じ議論と $\theta$ により全 $W_i$ が伝播する。
+
+有限 affine open cover 上で $V_0,V_1$ と二つの係数線束を自明化する。
+その後は $a_{2r,2r+2}$ と $b_{2r+1,2r+3}$ を用いて、
+基底を parity ごとに前後へ再帰的に transport する。
+必要な行列式は既に可逆なので、この無限列の構成に追加の開縮小は要らない。
+この方法で偶数側・奇数側の projective 座標を順次同定できる。
+この座標では cubic relation は
+\[
+ (x_i y_{i+2}-y_i x_{i+2})\otimes V_{i+1}
+\]
+という二つの関係である。
+すなわち交互に並ぶ二種類の二次元空間のうち、同じ parity の二文字を交換する関係である。
+従って $D$ は、$\PP^1\times\PP^1$ 上の交互の線束
+$\OO(1,0),\OO(0,1)$ による標準 linear $\mathbb Z$-代数となる。
+
+この同定は体上の分類だけに依存しない。
+同じ parity の隣接二文字を交換する cubic relation により、
+各 path は二種類の対称積の標準単項式へ移される。
+その自然な評価写像は
+\[
+ D_{i,i+n}\longrightarrow
+ \Sym^{\lceil n/2\rceil}V_i\otimes
+ \Sym^{\lfloor n/2\rfloor}V_{i+1}
+\]
+を与え、逆向きには標準単項式を選ぶ写像がある。
+交換関係により両合成は恒等となる。
+この議論は係数環が非被約でも成立する。
+ここでは座標を parity ごとに順次 transport しており、その座標選択が二周期であるとは要求しない。
+
+この標準形の偶数 $\mathbb Z$-代数は Segre 環
+\[
+ T=\bigoplus_{n\ge0}
+ \Sym^n(R_Z^2)\otimes\Sym^n(R_Z^2)
+\]
+に付随する標準 $\mathbb Z$-代数 $\check T$ と同型である。
+$T$ は有限生成可換 $R_Z$-代数であり Noetherian である。
+一方、定義から $\check B_Z\simeq D_Z^{\mathrm{ev}}$ である。
+従って $\Gr B_Z\simeq\Gr T$ が得られ、この同値は各 standard projective を対応させる。
+よって左右の projective row は Noetherian である。
+二周期同型 $\theta$ は、この座標で標準的な二段 shift に一致するとは限らず、
+通常の次数付き環としては Segre 環の Zhang twist を生じ得る。
+ここでは一つの環自己同型による twist であると余分に仮定せず、
+標準 $\mathbb Z$-代数の同型から直接 Noetherian 性を移している。
+最高内部次数による reduction と有限 affine cover 上の忠実平坦降下により、
+$B/IB$ は左右 Noetherian となる。
+これは任意の可換 Noetherian 基底変更後も同じである。
+
+\begin{remark}[単一自己同型による twist の明示]
+$\theta$ を用いて $V_{2r}=E$, $V_{2r+1}=F$ と同定し、
+$E,F$ と係数線束を自明化する。標準交代テンソルを $\varepsilon_E,\varepsilon_F$ とすると、
+非退化形式は $a=(\mathrm{id}\otimes P)\varepsilon_E$、
+$b=(\mathrm{id}\otimes Q)\varepsilon_F$ と書ける。ここで $P,Q$ は可逆行列である。
+標準 linear 代数から元の $D$ への隣接写像を、添字 $2r$ で $P^r$、
+添字 $2r+1$ で $Q^r$ と取る。
+\[
+ (P^r\otimes P^{r+1})\varepsilon_E=\det(P)^r a
+\]
+および $Q$ に関する同式により、全ての関係線が保たれる。
+従って標準単項式の同定は $\mathbb Z$-代数の同型となる。
+この座標で $\theta$ は全偶数位置で $P^{-1}$、全奇数位置で $Q^{-1}$ となる。
+よって $B_Z$ は、Segre 環に $(P^{-1},Q^{-1})$ が誘導する自己同型 $\tau$ を用いた
+$a*b=a\tau^{\deg a}(b)$ という通常の Zhang twist としても具体的に書ける。
+\end{remark}
+
+\subsection{形式貼合せと普遍性}
+
+第\ref{sec:formal-noetherian-patching}節の定理~\ref{thm:patch-noetherian}を用いる。
+
+\begin{proof}[定理 \ref{thm:relative-geometric-cubic-noetherian} の証明]
+$I$ は有限生成であり、各 $D(f_a)$ は $S_{\mathrm e}$ に含まれる。
+相対曲線商と正規線による結果から全 $B[f_a^{-1}]$ は左右 Noetherian である。
+linear 閉部分の結果から $B/IB$ も左右 Noetherian である。
+全 $B_n$ は有限 projective なので、定理 \ref{thm:patch-noetherian} を適用して
+$B$ の左右 Noetherian 性を得る。
+
+任意の可換 Noetherian $R$-代数 $R'$ に対しても、
+仮定の cubic データ、二周期同型、rank-one ideal の定義は基底変更で保たれる。
+楕円 open の相対曲線・cohomology base change・正規線は任意の基底変更と可換し、
+Keeler の定理は $R'$ 自身に適用できる。
+linear 閉部分の実際の tensor factorization も保たれる。
+従って $I R'$ と $B\otimes_RR'$ に同じ議論を適用できる。
+\end{proof}
+
+\begin{corollary}[AS4 被覆への帰結]
+上の $B$ が、同じ基底上の次数付き代数 $A$ の regular normal な二次線による商であり、
+その regular 性と商の同定が任意の基底変更と可換するとする。
+このとき $A$ も任意の可換 Noetherian 基底変更後に左右 Noetherian である。
+\end{corollary}
+
+\begin{proof}
+各基底変更後に定理 \ref{thm:relative-geometric-cubic-noetherian} と補題 \ref{noeth-lem:normal-lift} を適用する。
+\end{proof}
+
+\paragraph{ここで証明していない事項.}
+この結果は Noetherian 性に関するものであり、任意の導来 Morita 同値が
+指定された相対 heart や偏極を保つことまでは主張しない。
+AS4 被覆の全次数平坦性、正則正規元、相対 Gorenstein 解消は前提となる別の構成結果である。
+
+
+\subsection{可換二次曲面の有限型近傍への適用}
+
+\begin{theorem}[可換二次曲面の有限型相対実現]
+\label{thm:quadric-finite-type-effectivity}
+命題~\ref{prop:quadric-zariski-homological-as-cover} と
+命題~\ref{prop:quadric-canonical-cubic-tails} の共通の有限型 affine 開
+$U^\circ$ を取る。この開は可換二次曲面 $Q$ の点 $u$ を含む。
+このとき以下が成立する。
+\begin{enumerate}
+\item 任意の可換 Noetherian affine 基底変更
+$T=\operatorname{Spec}R\to U^\circ$ に対し、軌道環 $B_T$ と同じ基底上の被覆 $A_T$ は
+左右 Noetherian である。
+\item $T$ が局所有限型 $k$-site に属する場合、
+$(\qgr B_T,\pi B_T)$ とその全有限型基底変更は
+定義~\ref{def:relative-h2} の全公理を満たす。
+これらは基底変更・fppf 降下と整合し、射
+\[
+ f:U^\circ\longrightarrow\mathfrak H_2
+\]
+を定める。$u$ の像は $(\coh Q,\OO_Q)$ である。
+\item この族の canonical compact 圏は $\operatorname{Perf}\Lambda_T$ であり、
+次数移動は既存の Morita 根 $\mathsf s_T$ に対応する。
+その全軌道環は $B_T$、同じ根の AS4 被覆は $A_T$ である。
+\end{enumerate}
+元の site に属さない Noetherian $R$ に対しては、
+有限型 $R$-test 上で同じ全公理を満たす系という意味で (2) を読む。
+本定理だけから $\mathfrak H_2$ 全体の代数性は結論しない。
+\end{theorem}
+
+\begin{proof}
+右加群の積の規約を先に固定する。
+命題~\ref{prop:quadric-canonical-cubic-tails} のように
+\[
+ C_{ij}=D_{-j,-i}
+       =\Hom(L_{-j},L_{-i})
+\]
+を用いる。$C$ の二周期同型は $\mathsf s^{-1}$ によるものである。
+$C$ は普遍的な三次表示・四次重なり・幾何的 quintuple を持ち、
+全成分が有限 locally free である。
+定理~\ref{thm:relative-geometric-cubic-noetherian} を $C_T$ に適用する。
+その偶数環と既存の右軌道環の同型は
+\[
+ C_{0,2n}=\Hom(L_{-2n},L_0)
+ \xrightarrow{\mathsf s^n}
+ \Hom(L_0,\mathsf s^nL_0)=B_n
+\]
+である。$a\in C_{0,2m}$, $b\in C_{0,2n}$ に対する積
+$a\circ\mathsf s^{-m}(b)$ は、この写像により
+$\mathsf s^n(\mathsf s^m a)\circ\mathsf s^n b$ に写る。
+これは本文の右軌道積 $x*y=\mathsf s^{\deg y}(x)\circ y$ そのものである。
+従って $B_T$ は左右 Noetherian である。
+
+$A_T$ は普遍的に regular normal な二次線を持ち、その商が $B_T$ である。
+補題~\ref{noeth-lem:normal-lift} により $A_T$ も左右 Noetherian である。
+相対 Koszul・Frobenius 解消は既存の homological 被覆構成から得られるので、
+これで定義上の相対 AS4 被覆となる。
+
+定理~\ref{thm:quadric-noetherian-relative-promotion} を適用すると、
+coherent Hom の有限性と flat base change、module-object 基底変更、fppf 降下、
+構造対象の平坦性、canonical compact 圏、Serre 関係、AZ 豊富性、
+全軌道環と同じ根の被覆が、同一の有限型開全体とその有限型基底変更で成立する。
+全ての構成は重なりで canonical に整合するので、相対対象と上の射 $f$ が得られる。
+体上の構造対象の rank one torsion-free 性と full bounded Serre 双対は、
+同じ昇格定理における体上分類の適用により確認されている。
+最後の主張は命題~\ref{prop:quadric-canonical-cubic-tails} による。
+\end{proof}
