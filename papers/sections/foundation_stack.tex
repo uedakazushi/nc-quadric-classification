@@ -1553,6 +1553,54 @@ cubic・noncubic の既存の相対反 Serre 環と
 その関係射は $X_3$ を経由する。
 \end{proof}
 
+\begin{proposition}[二根対一致点での一次変形の相違]
+\label{prop:truncated-versus-foundation-tangent}
+$k$ を標数零の代数閉体とし、
+$f_1=f_2=uv$ の noncubic 対象に対応する点を $x$ とする。
+この点で $\mathfrak H_2^{(3),\mathrm{pres}}$
+の接空間の同型類（すなわち接複体の $H^0$）は
+五次元である。一方、同じ点を
+$\mathfrak Q_{\mathrm{fnd}}$ に実現したときの
+接空間の同型類は四次元である。
+従って、両 Artin スタックのこの点における
+形式近傍は同値でない。
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:noncubic-third-degree-tangent} により
+$\mathcal D_{3,\ge49}$ の点 $x$ での
+Grassmannian 内の一次接空間次元は $84$ である。
+$\mathcal L_3$ の階数がここでちょうど $176$ なので、
+$X_3$ はこの閉 determinantal locus の
+$\operatorname{rank}\mathcal L_3\ge176$ という開部分であり、
+両者の接空間は一致する。
+$\operatorname{PGL}_9$ 軌道の接次元は $79$ である。
+従って商スタックの接複体は
+\[
+ [\mathfrak{pgl}_9\longrightarrow T_xX_3]
+\]
+であり、その $H^0$ の次元は $84-79=5$ となる。
+
+一方 $\mathfrak Q_{\mathrm{fnd}}$ は
+命題~\ref{prop:relative-ruling-involution} による
+有限 \'etale 商の構成と
+命題~\ref{prop:foundation-stack} から、
+滑らかで相対次元三である。
+系~\ref{cor:h2-point-groupoid-foundation} の
+幾何点群oidの全充満性と
+命題~\ref{prop:noncubic-presentation-stack} の
+一致根対での慣性の計算により、
+その点の慣性 Lie 代数は一次元である。
+滑らかな Artin スタックでは
+\[
+ \dim H^0(T_x\mathfrak Q_{\mathrm{fnd}})
+ =\dim\mathfrak Q_{\mathrm{fnd}}
+  +\dim H^{-1}(T_x\mathfrak Q_{\mathrm{fnd}})
+ =3+1=4.
+\]
+したがって二つのスタックの接複体は
+$H^0$ の次元が異なり、形式近傍は同値でない。
+\end{proof}
+
 \begin{remark}[三つのスタックの役割と内在的 $\HHstack$]
 $\mathfrak H_2^{\mathrm{split,pres}}$ は
 全幾何点・慣性を正しく含むが
