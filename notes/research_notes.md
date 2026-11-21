@@ -32,6 +32,12 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 ## 内在的相対定義と認識
 
+**Artinのfoundationと偏極忘却。** `artin_foundation.tex` で、全H2のnormal geometric helixにDe Deken–Lowenを適用し、全flat pointed Abel変形にrank24のcompact tilting foundationを持ち上げた。閉fiberでheart-exactなMorita同値は、m-adic有限フィルターの各商が閉fiber圏に属することから全変形heartでexactとなる。canonical反SerreはAZ ampleで全軌道環を再構成し、Artin X3からAbel圏への忘却に右逆を与える。一般の提示環から全軌道環への自然射も、各次数が自由で特殊化が同型なので同型である。
+
+接空間は標準的な分裂完全列0→HH¹(Λ)→T[X3/PGL9]→HH²(Λ)→0を持つ。HH³(Λ)=0からpointed Abel変形は無障害。noncubic三基準点でAbel接は3/3/4、偏極付き接は3/3/5であり、一致根対の核は既存の非零Zhang方向。HH¹(Λ)=0ならm^r/m^(r+1)ごとの先頭導分を内部導分で消せるので、任意Artin X3変形のshiftはcanonical反Serreと同型である。これは異なる二根対の全noncubic点（一根共有を含む）に適用できる。四つのfoundation対象の像は例外性により一意に持ち上がるため、それだけでは偏極を区別できず、射への作用のintertwiningが必要である。
+
+**根の平方関係と存在。** `artin_roots.tex` では、近恒等DPic核をDer¹/ad(mΛ)のBCH群と同定し、一意な平方根によってp²t⁻¹を補正する。small extensionの曲率の合成から根の障害bはb+s_*b=0を満たす。s_*がHH²上恒等なら全Artin段階の障害が消える。可換Qのtensor O(1,1)はこの条件を満たし、全Abel Artin変形にexact ampleな根を与える。四つの固定根の一次条件の次元は9/3/5/3で、因子交換はV⊗Vに負の転置として作用する。選んだ根の非持上げは全ての根の非存在ではない。AS4被覆と一般H2点での根の存在はこの結論に含めない。
+
 `papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
 相対AZ再構成、自然自己同型Aut(Id)=A×、pointed二自己同型の消滅から、反Serre関係の射 Φ:H2→[X3/PGL9] は全忠実となる。対角はaffine有限表示であり、framed部分層X_asを用いたH2≃[X_as/PGL9]はfppf stackとして成立する。**未証明なのはX_asの有限型代数空間による表現可能性**である。有限型siteだけで定義した関手を、極限保存を示さずに任意scheme上の関手として扱わない。

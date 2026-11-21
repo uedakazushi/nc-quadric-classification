@@ -10,6 +10,10 @@
 
 **変形に関する確立した入力。** 全H2の切断環と反Serre環はKoszul。PP2005 Chapter 6 Theorem 7.3から、三次まで平坦で全幾何fiberがKoszulなら、非被約Noetherian基底でも全次数平坦・相対Koszul解消を得る。特にH2点の任意のArtin基底上のX3変形は全次数平坦で左右noetherian、qgrはflatなpointed Abel変形となる。既存の横断2/2/3方向の二次jetにも適用できる。`papers/sections/relative_koszul.tex`。
 
+**Artin変形の内在的再構成。** De Deken–Lowenの仮定を確認し、全flat Abel変形にrank24の有限foundationを持ち上げた。特殊fiberで完全なMorita自己同値は、冪零フィルターにより変形heartでも完全。canonical反Serre関手とAZ軌道環が存在し、偏極忘却は右逆を持つ。接空間の分裂完全列は0→HH¹(Λ)→T[X3/PGL9]→HH²(Λ)→0。Abel変形はHH³(Λ)=0により無障害で、二根対一致点の余分な一次元はZhang方向である。HH¹(Λ)=0なら全Artin X3変形はcanonical偏極を持つ。`papers/sections/artin_foundation.tex`。
+
+**Serre平方根の持上げ。** 近恒等Morita群はnilpotent Lie代数のBCH群なので一意に2可除である。underlying自己同値が持ち上がれば平方関係を補正できる。small extensionで根の障害bはb+s_*b=0を満たすため、s_*がHH²上恒等なら全Artin段階へ持ち上がる。可換Qのtensor O(1,1)がこの条件を満たし、全flat Abel変形にexact ampleな根が存在する。四根の一次固定次元は9,3,5,3。一般のH2点での根存在とAS4被覆は未解決。`papers/sections/artin_roots.tex`。
+
 **残る条件を分離する明示例。** 二根対一致点の反Serre環Rを、u↦qu, v↦q⁻¹v, c,d固定でZhang twistすると、pointed qgrが一定のGm族を得る。しかしq=2はどのH2のcanonical反Serre環でもなく、一次方向も非零HH²類となる。従って全次数平坦性・Abel heartだけでは反Serre認識はできない。`papers/sections/antiserre_polarization.tex`。
 
 **固定平方根に対する被覆。** 相対軌道環Bが与えられれば、AS4被覆を選ぶ空間はGr(6,K)内の有限表示局所閉incidenceになる。元の環は四次まで、二次双対は五次までで判定できる。任意底変更のnoetherian性はB_Tの仮定と区別する。有限型incidenceのfppf像は一般には代数空間でなく、これだけでH2の代数性は従わない。`papers/sections/relative_as_cover.tex`。
@@ -167,7 +171,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **偏極認識定理の入力となる相対foundationを構成する。** `polarization_recognition.tex` により、有限foundationと次数移動の可逆perfect双加群表示があれば、canonical反Serre条件は有限表示局所閉である。まずArtin基底のflat Abel変形にDe Deken–Lowenのgeometric helix変形定理を適用し、有限foundationとcanonical反Serre関手を作る。相対heartへの完全性、豊富性、軌道Homの基底変更を確認して、一定qgrのZhang方向との比較を閉じる。その後、任意有限型基底に同じ入力を作る。degree-line twistを忘れず、全忠実性と対角の有限表示性を再び未解決としない。
+1. **Artinで得た有限foundationを一般の相対族へ広げる。** `artin_foundation.tex` により全flat Abel Artin変形のfoundation・完全なcanonical反Serre・AZ・全軌道と偏極忘却の分裂は成立した。`polarization_recognition.tex` の有限表示局所閉条件を適用するため、任意有限型基底の族にfoundationとshift双加群を与える。まず実際のArtin root/AS witnessを、全ての有限型A-代数への基底変更を持つrelative_h2の系へ延長する補題を閉じる。非平坦底変更では、単にheartが同じという理由でcanonical導来基底変更を仮定しない。
 2. **平方根と被覆の局所持上げを調べる。** `relative_as_cover.tex` の有限表示incidenceを使い、固定相対軌道環への被覆のfppf局所存在がどの基底上で成立するかを判定する。根は標識ではない。選んだ根の非持上げと、別の根も含む非存在を混同しない。有限型射のfppf像が非代数的となる同節の例を踏まえ、scheme-theoretic imageや幾何点閉包だけで済ませない。
 3. **階数3境界の相対正規形を閉じる。** 全H2の二ruling、有限foundation、相対S2交換を入力に、noncubic境界の内在族から局所モデルへ移ることを証明する。既存のcubic→全noncubic特殊化を相対H2族として認識できれば、成分問題の位相比較にも進める。
 4. **avatarと相対AS代数の比較を閉じる。** 別稿の $H\mapsto HP^n$ は幾何的stackの自己同値として証明済み。次はavatarからの有限foundationと全周期AS代数を相対的に構成し、底変更と同型層を比較する。元のproduct QP、weighted12本矢、固定構造対象の移動を区別する。$P=\mathcal O_D$ の古典点への収縮は同型類の説明だけでは足りない。内在的忘却に進むときは重み付き古典点の反例を基準にする。

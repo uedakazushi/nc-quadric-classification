@@ -1,0 +1,236 @@
+% !TEX root = ../nc-quadric-classification.tex
+% 2026-11-21 / v1.11
+\section{Serre 平方根の Artin 持上げ}
+\label{sec:artin-serre-roots}
+\subsection{Artin 基底での Serre 根の平方関係}
+
+以下で $k$ は標数零の体、$(A,\mathfrak m,k)$ は可換局所 Artin
+$k$-代数とする。$\Lambda_A$ は有限自由 $A$-代数で、相対的に smooth、
+$\Lambda=\Lambda_A\otimes_Ak$ の中心は $k$ と仮定する。
+$\operatorname{DPic}_A(\Lambda_A)$ は可逆で、$\Lambda_A^e$ 上 perfect な双加群の同型類の群であり、
+積は導来 tensor とする。相対 Serre 関手の逆に $[2]$ を合成した元を
+$t_A$ と書く。これは任意の $A$-線形 Morita 自己同値と可換である。
+ここでは平方根との同型そのものを標識にしない。
+
+\begin{lemma}[恒等に還元される Morita 自己同値]
+\label{lem:artin-infinitesimal-dpic}
+還元準同型の核
+\[
+ K_A=\ker\bigl(\operatorname{DPic}_A(\Lambda_A)
+           \longrightarrow\operatorname{DPic}_k(\Lambda)\bigr)
+\]
+は、次の nilpotent Lie 代数の Baker--Campbell--Hausdorff 群である：
+\[
+ \frac{\{\delta\in\operatorname{Der}_A(\Lambda_A):
+                    \delta(\Lambda_A)\subset\mathfrak m\Lambda_A\}}
+      {\operatorname{ad}(\mathfrak m\Lambda_A)}.
+\]
+特に $K_A$ の任意の元は一意な平方根を持つ。
+\end{lemma}
+\begin{proof}
+まず $P\in K_A$ を右 $\Lambda_A$-加群として考える。
+$\Lambda_A$ は有限次元 $k$-代数なので、$P$ は有限生成 projective
+右加群の有界 minimal 複体で表せる。
+$\mathfrak m\Lambda_A$ は Jacobson radical に含まれ、
+還元後もこの複体は minimal である。
+還元は次数零の $\Lambda$ と同型なので、minimal 複体の一意性と
+nilpotent Nakayama により、元の複体も次数零の projective 加群となる。
+projective 加群の nilpotent ideal に沿う持上げの一意性から、これは
+右 $\Lambda_A$-加群 $\Lambda_A$ と同型である。
+従って双加群 $P$ は環の自己同型 $\alpha$ による twist である。
+還元 $P_k\simeq\Lambda$ は $\alpha_k$ が inner であることを意味するので、
+単元を持ち上げて共役することで $\alpha\equiv1\pmod{\mathfrak m}$ とできる。
+
+このような自己同型全体を $\operatorname{Aut}_1(\Lambda_A)$ と書く。
+二つの同型が同じ双加群を与える差は inner である。
+その共役単元 $u$ の還元は $Z(\Lambda)^\times=k^\times$ に属するから、
+スカラーで割れば $u\in1+\mathfrak m\Lambda_A$ とできる。従って
+\[
+ K_A=\operatorname{Aut}_1(\Lambda_A)
+           /\operatorname{Ad}(1+\mathfrak m\Lambda_A).
+\]
+
+近恒等自己同型について $\alpha-1$ は nilpotent な $A$-線形作用素である。
+有限和で定義される $\alpha^x=(1+(\alpha-1))^x$ は、$x$ の多項式として
+任意の非負整数 $x$ で積を保つ。標数零なので多項式恒等式により
+任意の $x\in k$ で積を保つ。その $x=0$ での微分
+$\log\alpha$ は $A$-導分となる。
+逆に、像が $\mathfrak m\Lambda_A$ に含まれる導分の有限指数和は
+自己同型である。これらは互いに逆で、積は BCH 積に対応する。
+また
+\[
+ \log(\operatorname{Ad}(u))=\operatorname{ad}(\log u),
+ \qquad u\in1+\mathfrak m\Lambda_A.
+\]
+inner 導分は Lie ideal なので、上の商も nilpotent Lie 代数の
+BCH 群である。$\exp(v)^2=\exp(2v)$ と $2\in k^\times$ より最後の主張を得る。
+\end{proof}
+
+\begin{proposition}[平方関係の補正]
+\label{prop:artin-serre-square-correction}
+$p_0\in\operatorname{DPic}_k(\Lambda)$ が $p_0^2=t_k$ を満たすとする。
+$p_0$ の Morita 自己同値としての持上げ $p\in\operatorname{DPic}_A(\Lambda_A)$
+が存在すれば、同じ還元を持つ $s$ で $s^2=t_A$ となるものが存在する。
+さらに商 $A\twoheadrightarrow A'$ 上で $p_{A'}^2=t_{A'}$ が既に成立する場合、
+$s_{A'}=p_{A'}$ となるように補正できる。
+\end{proposition}
+\begin{proof}
+$d=p^2t_A^{-1}\in K_A$ とする。
+Serre 関手の自然性より $p$ と $t_A$ は可換なので、$d$ も $p$ と可換する。
+補題の一意な平方根を用いて $e=d^{-1/2}\in K_A$ と置く。
+$pep^{-1}$ も $d^{-1}$ の平方根なので、一意性より $pe=ep$ である。
+従って $s=ep$ は
+\[
+ s^2=e^2p^2=d^{-1}p^2=t_A
+\]
+を満たす。追加条件の下では $e_{A'}^2=1$ であり、$e_{A'}$ は
+$K_{A'}$ に属する。同補題の一意性により $e_{A'}=1$ である。
+\end{proof}
+
+この命題は underlying Morita 自己同値の持上げが存在することを仮定する。
+それ自体の障害を消したという主張ではない。また一般の基底上で
+根忘却射が滑らかであるとは主張していない。
+
+\begin{lemma}[合成と持上げ障害]
+\label{lem:root-obstruction-composition}
+$A\twoheadrightarrow A'$ を核 $I$ が $\mathfrak m I=0$ を満たす
+small extension とする。$p'\in\operatorname{DPic}_{A'}(\Lambda_{A'})$
+の閉 fiber を $p_0$ とし、$p'^2=t_{A'}$ と仮定する。
+その持上げ障害を、一方の Morita 同定によって
+\[
+ b\in\operatorname{HH}^2(\Lambda)\otimes_kI
+\]
+と書くと、
+\[
+ b+(p_0)_*b=0.
+\]
+特に $(p_0)_*$ が $\operatorname{HH}^2(\Lambda)$ 上恒等なら、
+$p'$ は $A$ 上の Serre 平方根へ持ち上がる。
+\end{lemma}
+\begin{proof}
+$p'$ を表す有限 projective $\Lambda_{A'}$-双加群の有界複体を選ぶ。
+相対 smoothness により可逆双加群は双加群として perfect である。
+nilpotent ideal に沿う projective 加群の持上げによって、その graded
+複体と微分を $\Lambda_A^e$ 上へ持ち上げる。
+持ち上げた微分 $d$ の $d^2$ は $I$ に値を取り、そのコホモロジー類が
+通常の perfect 複体の持上げ障害である。
+$\mathfrak m I=0$ により、この群は
+$\operatorname{Ext}^2_{\Lambda^e}(p_0,p_0)\otimes_kI$ と同定できる。
+類が零なら次数一の項で $d$ を補正して $d^2=0$ とできる。
+
+合成を表す tensor 複体の微分の平方は
+\[
+ (d\otimes1+1\otimes d)^2=d^2\otimes1+1\otimes d^2
+\]
+である（複体の tensor の符号規約を含む）。
+具体的には、曲率類を $c_{p_0}:p_0\to p_0[2]$ とし、
+$b=c_{p_0}\otimes p_0^{-1}$、
+$(p_0)_*a=p_0\otimes a\otimes p_0^{-1}$ と同定する。
+左右の Morita 同定の比較がこの $(p_0)_*$ なので、
+合成 $p'^2$ の障害は $b+(p_0)_*b$ に対応する。
+ところが $p'^2\simeq t_{A'}$ には canonical な持上げ $t_A$ があるため、
+この障害は零である。
+
+最後の仮定の下では $2b=0$ だから $b=0$ である。
+得られる perfect 双加群の持上げは、閉 fiber で可逆なので可逆である。
+実際、その左右随伴との評価・余評価の cone は閉 fiber で零であり、
+perfect 複体の nilpotent derived Nakayama により零である。
+命題~\ref{prop:artin-serre-square-correction} を適用して平方関係を補正する。
+この補正は $A'$ 上の既存の根を保つ。
+\end{proof}
+
+\begin{corollary}[Hochschild 二次に自明に作用する根]
+\label{cor:hhtrivial-root-artin}
+$p_0^2=t_k$ とし、$(p_0)_*$ が $\operatorname{HH}^2(\Lambda)$ 上恒等とする。
+任意の有限自由かつ相対 smooth な局所 Artin 変形 $\Lambda_A$ 上で、
+$p_0$ は $s_A^2=t_A$ を満たす Morita 自己同値へ持ち上がる。
+\end{corollary}
+\begin{proof}
+$A$ を small extension の有限列に分解し、直前の補題を帰納的に適用する。
+各段の障害に作用するのは閉 fiber の $(p_0)_*$ であり、
+途中の持上げの選択によってこの恒等作用は変わらない。
+\end{proof}
+
+\subsection{可換 quadric における根の存在と四つの一次条件}
+
+以下は $Q=\mathbb P^1\times\mathbb P^1$ の full strong foundation を用いた
+有限自由相対 smooth Artin Morita 変形についての結論である。
+その閉 fiber の中心は $H^0(Q,\mathcal O_Q)=k$ なので、上の議論が適用できる。
+Abel 圏の変形への適用には、その foundation の相対持上げと
+heart との比較を別途用いる。
+
+\begin{proposition}[恒等幾何型の根は全 Artin Morita 変形に延長する]
+\label{prop:quadric-root-all-artin}
+$s_0=(-)\otimes\mathcal O_Q(1,1)$ は、$Q$ の任意の上記 Artin Morita 変形へ
+相対 Serre 平方根として延長する。
+\end{proposition}
+\begin{proof}
+$s_0^2=(-)\otimes\mathcal O_Q(2,2)=S_Q^{-1}[2]$ である。
+また $H^1(T_Q)=H^2(\mathcal O_Q)=0$ なので
+\[
+ \operatorname{HH}^2(Q)=H^0(Q,\textstyle\bigwedge^2T_Q)
+                     =H^0(Q,\mathcal O_Q(2,2)).
+\]
+線束 tensor は局所的に恒等関手であり、この次数では他の HKR 成分がない。
+従って局所 bivector への制限の単射性により、$s_0$ はこの九次元空間に
+恒等に作用する。系~\ref{cor:hhtrivial-root-artin} を適用する。
+\end{proof}
+
+\begin{corollary}[可換点の全 Abel 変形における exact ample な根]
+\label{cor:quadric-exact-root-all-artin}
+$(\operatorname{coh}Q,\mathcal O_Q)$ の任意の flat pointed Abel 変形
+$(\mathcal C_A,\mathcal O_A)$ には、$s_0=(-)\otimes\mathcal O_Q(1,1)$ を還元とし、
+$s_A^2\simeq S_A^{-1}[2]$ を満たす完全自己同値 $s_A$ が存在する。
+$(\mathcal O_A,s_A)$ は AZ ample で、その全軌道環は
+各次数の階数 $(n+1)^2$ の自由 $A$-加群からなる二次 noetherian 環である。
+この主張だけでは AS4 被覆の存在を結論しない。
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:artin-foundation-lift} により有限 foundation の変形に移し、
+前命題で Morita 平方根を持ち上げる。
+補題~\ref{lem:artin-morita-heart-exact} が heart 上の完全性を与える。
+特殊ファイバーの $s_0$ は豊富な線束による tensor なので、
+Serre 消滅と補題~\ref{lem:artin-ample-lift} から相対 AZ 豊富性が従う。
+$s_A^n\mathcal O_A$ は normal helix の $E_{2n}$ の一意な flat lift であり、
+De Deken--Lowen の geometric Hom の平坦性から全軌道の階数と基底変更を得る。
+二次性は補題~\ref{lem:relative-quadratic-from-fibers}、
+noetherian 性は補題~\ref{lem:artin-noetherian-lift} による。
+\end{proof}
+
+\begin{proposition}[四つの根の一次持上げ条件]
+\label{prop:quadric-four-root-tangents}
+$k=\mathbb C$ とし、$Q$ の一次変形類
+$u\in\operatorname{HH}^2(Q)$ を取る。
+定理~\ref{thm:commutative-four-roots} の四代表 $s_\varphi$ の underlying
+Morita 自己同値が同じ一次変形へ延長するための必要十分条件は
+\[
+ (s_\varphi)_*u=u.
+\]
+この条件が成立すれば、平方関係も満たすように持上げを選べる。
+固定部分空間の次元は、同定理の順に $9,3,5,3$ である。
+\end{proposition}
+\begin{proof}
+必要性は補題~\ref{lem:autoequivalence-deformation-obstruction}、十分性は
+Toda~\cite[Theorem 4.7, arXiv v3]{Toda2009} による。
+得られた持上げの平方関係は
+命題~\ref{prop:artin-serre-square-correction} で補正できる。
+
+$V=H^0(\mathbb P^1,T_{\mathbb P^1})$ と置くと
+$\operatorname{HH}^2(Q)=V\otimes V$ である。
+対合 $z\mapsto-z$ は $\partial_z,z\partial_z,z^2\partial_z$ に対し
+固有値 $-1,1,-1$ を持つので、$V$ の正負固有空間の次元は $1,2$ である。
+従って一因子対合の固定空間は次元 $1\cdot3=3$、
+二因子対合では $1\cdot1+2\cdot2=5$ となる。
+因子交換は bivector の wedge の順序を逆転するので、$V\otimes V$ には
+単なる転置ではなく $v\otimes w\mapsto-w\otimes v$ と作用する。
+その固定空間は $\bigwedge^2V$、次元 $3$ である。
+恒等幾何型では全空間が固定され、次元は $9$ である。
+\end{proof}
+
+従って、可換 quadric で選んだ非自明な根の持上げ障害から、
+「いずれの根も存在しない」一次方向を得ることはできない。
+恒等幾何型の根は全九次元の一次方向を覆い、さらに上述の有限 Artin
+Morita 変形の全段階へ持ち上がる。
+この結論自体は二次 AS 正則被覆の存在を含まず、
+相対 $\mathcal H_2$ 条件をすべて確認したという主張ではない。
+
