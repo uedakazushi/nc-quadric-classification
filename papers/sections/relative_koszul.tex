@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.26
+% 2026-11-21 / v1.28
 \section{三次平坦性から全次数平坦性への相対的な認識}
 \label{sec:relative-koszul}
 
@@ -635,6 +635,88 @@ Gabriel 商 $\pi$ も完全なので
 $N\mapsto N\otimes_{R'}\pi B_{R'}$
 は完全である。これが構造対象の相対平坦性であり、
 同じ議論が全ての基底変更後にも成立する。
+\end{proof}
+
+
+\begin{lemma}[相対深さ三と構造環の全次数 saturation]
+\label{lem:relative-depth-three-saturation}
+$S$ を Noetherian スキームとし、
+$B=\bigoplus_{n\ge0}B_n$ を $B_0=\mathcal O_S$ の
+次数一生成の次数付き $\mathcal O_S$-代数とする。
+$B_n$ は全て有限局所自由で、
+自明右加群 $\mathcal O_S=B/B_{\ge1}$ が、
+有限局所自由係数をもつ有限斉次自由加群からなる
+相対射影解消 $P_\bullet$ を持つとする。
+この解消は内部次数ごとに局所分裂完全で、
+任意の底変更後も完全であると仮定する。
+全ての幾何ファイバーで
+\[
+  \underline{\operatorname{Ext}}_{B_{\bar s}}^j
+        (k(\bar s),B_{\bar s})=0\qquad(j=0,1,2)
+  \tag{Depth-3}\label{eq:relative-fibre-depth-three}
+\]
+であるとする。このとき任意の affine $S$-基底変更
+$T=\operatorname{Spec}R'$ について、全内部次数で
+\[
+ \underline{\operatorname{Ext}}_{B_T}^j(R',B_T)=0
+ \quad(j=0,1,2).
+ \tag{Rel-depth}\label{eq:relative-depth-three}
+\]
+さらに自然な次数付き射
+\[
+ B_T\ \xrightarrow{\ \sim\ }\
+ \bigoplus_{d\in\mathbb Z}
+ \operatorname{Hom}_{\operatorname{QGr}B_T}
+      (\pi B_T,\pi B_T(d))
+ \tag{Saturation}\label{eq:relative-full-saturation}
+\]
+は全次数で同型で、任意の基底変更後にも成立する。
+$B_T$ の Noetherian 性は仮定しない。
+\end{lemma}
+\begin{proof}
+固定内部次数 $d$ の cochain 複体
+$C_d^\bullet=\underline{\operatorname{Hom}}_B(P_\bullet,B)_d$
+の各項は有限局所自由であり、全幾何ファイバーへの
+基底変更と可換する。幾何ファイバーでは次数 $0,1,2$
+で完全なので、先頭の微分から順に最大階数の単元 minor を消去すると
+$C_d^\bullet$ は同じ三次数で局所分裂完全となる。
+これは $d$ ごとに示せばよく、
+無限個の $d$ に共通する自明化は不要である。
+その局所分裂完全性は任意の底変更で保たれ、
+(\ref{eq:relative-depth-three}) を得る。
+
+以下 $T$ 上で考え、$F_n=B_T/(B_T)_{\ge n}$ と置く。
+$F_n$ は $0\le i<n$ において
+$(B_T)_i(-i)$ を商に持つ有限フィルトレーションを持つ。
+各係数 $(B_T)_i$ は有限 projective なので、
+(\ref{eq:relative-depth-three}) の $j=0,1$
+と長完全 Ext 列から
+\[
+ \underline{\operatorname{Hom}}_{B_T}(F_n,B_T)
+ =\underline{\operatorname{Ext}}_{B_T}^1(F_n,B_T)=0
+\]
+となる。
+$0\to(B_T)_{\ge n}\to B_T\to F_n\to0$ によって
+\[
+ B_T\simeq
+ \underline{\operatorname{Hom}}_{B_T}((B_T)_{\ge n},B_T)
+ \quad(n\ge1)
+\]
+は全次数で同型となる。
+とくに $\underline{\operatorname{Hom}}_{B_T}(R',B_T)=0$ と
+次数一生成性から、$x(B_T)_{\ge n}=0$ なら
+$x(B_T)_{\ge n-1}=0$ を帰納し、$B_T$ の
+次数 torsion は零である。
+したがって Gabriel 商の標準 Hom 極限表示から
+\[
+ \bigoplus_d\operatorname{Hom}_{\operatorname{QGr}B_T}
+          (\pi B_T,\pi B_T(d))
+ \simeq\varinjlim_n
+ \underline{\operatorname{Hom}}_{B_T}((B_T)_{\ge n},B_T)
+ \simeq B_T.
+\]
+これは次数付き積と可換し、自然な射の逆を与える。
+全て次数別の分裂完全性から得たので任意の底変更とも可換する。
 \end{proof}
 
 \begin{corollary}[全幾何ファイバーが $\HH$ 型である関係式族]

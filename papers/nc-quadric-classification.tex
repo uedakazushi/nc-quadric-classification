@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.27
+% 日本語 LuaLaTeX。2026-11-21 / v1.28
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.27（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.28（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -143,6 +143,13 @@ AS4 正規二次切断からの体上 $\chi$
 さらに $\chi_1$ の truncation 長に一様な
 高内部次数 Ext 消滅から AZ (A2) も得る。
 従って局所有限型族の全 stalk で AZ ample が成立する。
+さらに各幾何ファイバーの深さ三 Gorenstein 性と
+相対 Koszul 解消から構造環自身の
+$\underline{\operatorname{Ext}}^j(R',B_T)$ は
+$j\le2$ で任意の底変更後も零となり、
+$\operatorname{QGr}B_T$ の構造対象から全切断環 $B_T$ を
+全次数で再構成できる
+（系~\ref{cor:quadric-all-basechange-saturated-sections}）。
 ただし非局所有限型基底変更後の一様な $\chi_1$/AZ (A2)、
 単一の有限型開全体での Noetherian 性、
 canonical compact heart との比較は残る。

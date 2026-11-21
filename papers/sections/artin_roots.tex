@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.27
+% 2026-11-21 / v1.28
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -1276,6 +1276,47 @@ $R=\mathcal O_{T,t}$ に適用すればよい。
 \end{proof}
 
 
+
+\begin{corollary}[任意基底変更での相対 quadric の完全切断環]
+\label{cor:quadric-all-basechange-saturated-sections}
+命題~\ref{prop:quadric-zariski-homological-as-cover} の
+幾何的 cubic 開 $U^\circ$ の任意の affine 底変更
+$T=\operatorname{Spec}R'\to U^\circ$ に対して、
+\[
+ \underline{\operatorname{Ext}}_{B_T}^j(R',B_T)=0
+ \qquad(j=0,1,2)
+\]
+が全内部次数で成立する。さらに $\mathcal O_T=\pi B_T$ に対して
+\[
+ \operatorname{Hom}_{\operatorname{QGr}B_T}
+       (\mathcal O_T,\mathcal O_T(n))
+ \simeq (B_T)_n\qquad(n\in\mathbb Z)
+ \tag{Quadric-H0}\label{eq:quadric-relative-full-sections}
+\]
+は自然な同型であり、任意の底変更と可換する。
+$n<0$ では $(B_T)_n=0$ とする。
+特に構造対象の軌道切断環が全次数で元の $B_T$ を回復する。
+非被約・非平坦な底変更も含むが、
+任意の $\operatorname{qgr}B_T$ 対象の Hom 有限性や
+canonical compact 導来圏との比較は結論しない。
+\end{corollary}
+\begin{proof}
+各幾何ファイバーでは
+命題~\ref{prop:quadric-zariski-homological-as-cover}
+によって $B_{\bar t}$ は四次元 quadratic AS 正則環
+$A_{\bar t}$ の正則正規二次切断商である。
+体上の Gorenstein 降下
+\cite[\S2.8]{SVdB2013}
+より $B_{\bar t}$ は深さ三で、
+自明加群からの $\operatorname{Ext}^j$ は
+$j=0,1,2$ で零となる。
+系~\ref{cor:quadric-uniform-even-koszul} による
+左右相対 Koszul 解消は全内部次数で局所分裂完全で
+任意の底変更と可換する。
+従って補題~\ref{lem:relative-depth-three-saturation}
+を右・左両側に適用すれば結論を得る。
+\end{proof}
+
 \begin{remark}[この代数化で残る条件]
 得られたのは有限 foundation の perfect 圏上の平方根、
 命題~\ref{prop:quadric-etale-finite-window} の四項窓、
@@ -1293,7 +1334,9 @@ Zariski 局所 homological AS4 被覆、
 幾何的 cubic 点の全局所基底における
 相対 $\chi$ と AZ 豊富性、
 系~\ref{cor:quadric-local-AZ-on-all-stalks} の
-局所有限型族の全 stalk における結論である。
+局所有限型族の全 stalk における結論、
+及び系~\ref{cor:quadric-all-basechange-saturated-sections} の
+任意底変更での構造対象の全切断環回復である。
 一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その被覆と根が Noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
