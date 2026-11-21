@@ -39,6 +39,10 @@ Stacks Project [Tag 0BDH](https://stacks.math.columbia.edu/tag/0BDH), Lemma 36.3
 
 Lowen–Van den Bergh, *Deformation theory of abelian categories*, Trans. AMS 358 (2006), 5441–5483 の[著者公開本文](https://cantate.be/site/def_submitted.pdf)で、Prop.3.1/Def.3.2のTorのco-effaceabilityによるflatness、Prop.3.6のIndとの両立、§4のmodule-object基底変更、Prop.6.34のExtとfiltered colimitの交換を確認した。これらは既知の一般理論であり、本稿はArtin X3族のqgrと定数族のfield recoveryへ適用する。
 
+同論文のProposition4.7（反対圏でのTor/Ext change-of-ringsも含む）、Theorem7.1（nilpotent Abel変形と局所化の対応）、Proposition8.12（局所化上の変形関手）、Lemma8.13（完全本質的全射によるflatness）も本文確認した。可換quadricの一次Jacobian環について、斉次Ore局所化を明示し、局所環の二コサイクルγ_f/2をAbel変形の局所制限として認識する。
+
+Lowen–Van den Bergh, *Hochschild cohomology of abelian categories and ringed spaces*, Advances in Mathematics **198** (2005),172–221、[DOI](https://doi.org/10.1016/j.aim.2004.11.010)、[著者版](https://cantate.be/site/hochschild_ab.pdf)のTheorem3.1・Remark3.5（体上のAbel変形とHH²/HH³）、Corollaries7.7.2–7.7.3、Theorem7.8.1/Corollary7.8.2、§7.9を確認した。Abel圏のHHとaffine被覆・対角のExtの比較、openへの制限との整合に用いる。これらは既知結果であり、本文 `prop:quadric-jacobian-abelian-class` では局所計算から大域HH²類を認識する。HKRの反対称化に1/2を入れる規約を明示し、指定bivector hにはf=h/2を用いる。一次Jacobian構成と相対H2への適用について、包括的な先行研究上の新規性は未確定である。
+
 Alper–Halpern-Leistner–Heinloth, *Existence of moduli spaces for algebraic stacks*, Invent. Math.234 (2023), 949–1038、[arXiv:1812.01128v5](https://arxiv.org/abs/1812.01128v5) §7.1 Def.7.3/Rem.7.4–7.5を本文確認した。有限型basechangeの局所noetherian性とflat descentについてAZ2001 B6.3/C8.6を明記している。AZ2001原文は未取得であり、再録を確認した状態と区別する。この論文の固定Abel圏内の対象moduliを、変動するH2の代数性に適用したとは主張しない。
 
 AZ1994 Theorem4.5(1)の一般End-ring版は、Okawa–Abdelgadir–Chan–Ueda, *Degenerations of orbifold curves as noncommutative varieties*, Nagoya Math.J.261 (2026), e4、[DOI](https://doi.org/10.1017/nmj.2025.10067)、Theorem7.3の再録本文で確認した。O noetherian、End(O) right-noetherian、全Hom(O,M)有限End(O)、ampleが仮定である。AZ1994原文自体は未取得。fieldのHom有限次元版だけから一般係数版を推測したものではない。

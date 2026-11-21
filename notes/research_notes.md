@@ -28,15 +28,19 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 ## 相対平坦性の確立した認識
 
-`papers/sections/relative_koszul.tex` に証明を置く。全H2の適合切断環BはKoszul AS4環の正則正規二次商なのでKoszul、反Serre環R=B^(2)もKoszulである。PP2005 Chapter 6 Theorem 7.3は任意のNoetherian局所環に適用できる。三次まで平坦で全幾何fiberがKoszulなら、全次数局所自由性と任意底変更に整合する左右Koszul解消を得る。このため、H2点を中心とする任意のArtin基底上のX3変形と、既存の横断二次jetは全次数平坦である。同節ではさらにArtin基底でnoetherian性を持ち上げ、qgrがflatなpointed Abel変形になることを証明した。次のArtin段階の存在、canonical反Serre偏極・平方根・AS被覆の認識は別問題である。
+`papers/sections/relative_koszul.tex` に証明を置く。全H2の適合切断環BはKoszul AS4環の正則正規二次商なのでKoszul、反Serre環R=B^(2)もKoszulである。PP2005 Chapter 6 Theorem 7.3は任意のNoetherian局所環に適用できる。三次まで平坦で全幾何fiberがKoszulなら、全次数局所自由性と任意底変更に整合する左右Koszul解消を得る。このため、H2点を中心とする任意のArtin基底上のX3変形と、既存の横断二次jetは全次数平坦である。同節ではさらにArtin基底でnoetherian性を持ち上げ、qgrがflatなpointed Abel変形になることを証明した。canonical反SerreのArtin再構成とAbel変形の無障害性は次節で扱う。適合平方根・AS被覆の存在は別条件である。
 
 ## 内在的相対定義と認識
 
 **Artinのfoundationと偏極忘却。** `artin_foundation.tex` で、全H2のnormal geometric helixにDe Deken–Lowenを適用し、全flat pointed Abel変形にrank24のcompact tilting foundationを持ち上げた。閉fiberでheart-exactなMorita同値は、m-adic有限フィルターの各商が閉fiber圏に属することから全変形heartでexactとなる。canonical反SerreはAZ ampleで全軌道環を再構成し、Artin X3からAbel圏への忘却に右逆を与える。一般の提示環から全軌道環への自然射も、各次数が自由で特殊化が同型なので同型である。
 
-接空間は標準的な分裂完全列0→HH¹(Λ)→T[X3/PGL9]→HH²(Λ)→0を持つ。HH³(Λ)=0からpointed Abel変形は無障害。noncubic三基準点でAbel接は3/3/4、偏極付き接は3/3/5であり、一致根対の核は既存の非零Zhang方向。HH¹(Λ)=0ならm^r/m^(r+1)ごとの先頭導分を内部導分で消せるので、任意Artin X3変形のshiftはcanonical反Serreと同型である。これは異なる二根対の全noncubic点（一根共有を含む）に適用できる。四つのfoundation対象の像は例外性により一意に持ち上がるため、それだけでは偏極を区別できず、射への作用のintertwiningが必要である。
+接空間は標準的な分裂完全列0→HH¹(Λ)→T[X3/PGL9]→HH²(Λ)→0を持つ。HH³(Λ)=0からpointed Abel変形は無障害。noncubic三基準点でAbel接は3/3/4、偏極付き接は3/3/5であり、一致根対の核は既存の非零Zhang方向。HH¹(Λ)=0ならm^r/m^(r+1)ごとの先頭導分を内部導分で消せるので、任意Artin X3変形のshiftはcanonical反Serreと同型である。これは異なる二根対の全noncubic点（一根共有を含む）に適用できる。小拡大でAbel変形と次数一の枠を持ち上げることで、X3はこれらの点で滑らか、次元83となり、そのPGL9商は滑らかで次元3である。内在的H2の滑らかさ・開性は未結論。四つのfoundation対象の像は例外性により一意に持ち上がるため、それだけでは偏極を区別できず、射への作用のintertwiningが必要である。
 
 **根の平方関係と存在。** `artin_roots.tex` では、近恒等DPic核をDer¹/ad(mΛ)のBCH群と同定し、一意な平方根によってp²t⁻¹を補正する。small extensionの曲率の合成から根の障害bはb+s_*b=0を満たす。s_*がHH²上恒等なら全Artin段階の障害が消える。可換Qのtensor O(1,1)はこの条件を満たし、全Abel Artin変形にexact ampleな根を与える。四つの固定根の一次条件の次元は9/3/5/3で、因子交換はV⊗Vに負の転置として作用する。選んだ根の非持上げは全ての根の非存在ではない。AS4被覆と一般H2点での根の存在はこの結論に含めない。
+
+**Artin witnessの相対昇格。** `prop:artin-witness-relative-promotion` は、Artin上の根と全軌道AS4被覆を、全有限型A-代数上の相対H2系へ延長する。A′→K=A′/mA′で閉じた定数族へ戻し、DDのgeometric helix持上げとnilpotent NakayamaによりEnd(T_A′)=Λ_A⊗A′を示す。bounded add(T_A)複体の各項とcohomologyが平坦であることから、通常tensorが導来基底変更を計算する。これを自己同値双加群と軌道Homに適用し、square関係、全次数軌道、AZ、相対AS被覆とfppf descentを確認する。任意のAbel変形に被覆を新たに作る命題ではない。
+
+**可換点の全一次方向。** `quadric_first_order.tex` では、P=k[x₀,…,x₃]、q=x₀x₃−x₁x₂、f∈P₂/kqに対しγ_f(x_i,x_j)=Σε_ijkl q_k f_lと置き、a⋆b=ab+εγ_f(a,b)/2を使う。PBWと相対Koszul双対性によりAS4被覆、γ_f(q,−)=0により中心正則二次切断を得る。x₀≠0上でz=x₂/x₀,w=x₁/x₀とすると{z,w}=2f(1,w,z,zw)。斉次Ore局所化がAbel変形の局所制限を与えるので、全HH²(Q)を実現する。補正に必要なHH¹(Q)=sl₂⊕sl₂はα=1+εδによる次数付き自己同型で実現でき、右軌道積α^{deg b}(a)bのZhang twistでAS被覆を保持する。上の昇格命題からT_QH2≅HH²(Q)は九次元。平方根・被覆を追加標識にしていない。高次AS被覆の存在は未証明である。
 
 `papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
@@ -105,7 +109,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **横断方向の二次持上げ。** L₀の176×176単位行列式小行列Aを取り、L(t)=L₀+tL₁(φ)+t²(L₁(ψ)+L₂(φ))をSchur補行列で展開する。K₀をkernel、Q₃をcokernel基底射影として、Q(φ)=Q₃(L₂(φ)K₀−L₁(φ)i_CA^{-1}(L₁(φ)K₀)|_I)を計算する。全三点で横断基底(2,2,3本)と相異なる二基底の和(1,1,3本)に対しd²ψ=−Q(φ)の有理補正を構成し、整数行列積で厳密に確認した。一致根対では分母2の補正も現れる。Qが二次式であるため、これらの零性から全横断線形結合への補正が構成できる。ただし結論はあくまで **R₃のrank49条件のk[t]/(t³)-平坦性**であり、全次数の二次平坦性、HH³の消滅、正式な相対H2族と混同しない。
 
-**三次関係階数の接空間。** 基準 $\dim V=9,\dim J=56,\dim R_2=25,\dim R_3=49$ に対して $L_J:V\otimes J\to (V^{\otimes2}/J)\otimes V$ のrankが176となる。このrank≤176のdeterminantal locusの接ベクトルは $\phi\in\operatorname{Hom}(J,R_2)$ で $\ker L_J\to\operatorname{coker}L_J$ の線形化が零となるもの。56×9=504、25×9=225、kernel328、cokernel49で、条件行列は16072×1400である。固定pivotで $J$ の affine 座標を取り、法101で三根配置ごとに全行を簡約した階数は1317,1317,1316。整数係数のminorは標数零でも非零なので、まず標数零の接次元は≤83,83,84。さらに法101核基底から83,83,84本の有理ベクトルを復元し、整数係数の線形化行列で全ベクトルの零性を厳密に確認したため、標数零でも接次元は**正確に**83,83,84である。ただし、この2/2/3方向が次数4以降のHilbert条件や内在的H2を満たすかは未確定。PGL9と六係数の接像は、群Gの軌道による上界と法101でのrank81の下界から標数零で正確に81。群商スタックの次元1と、Grassmann内にあるframed接像81を混同しない。次数4の一次平坦性は今回のKoszul一次変形原理から従うので別計算不要。次は次数三以上のobstructionとfoundation横断射、相対heartの認識を検査する。
+**三次関係階数の接空間。** 基準 $\dim V=9,\dim J=56,\dim R_2=25,\dim R_3=49$ に対して $L_J:V\otimes J\to (V^{\otimes2}/J)\otimes V$ のrankが176となる。このrank≤176のdeterminantal locusの接ベクトルは $\phi\in\operatorname{Hom}(J,R_2)$ で $\ker L_J\to\operatorname{coker}L_J$ の線形化が零となるもの。56×9=504、25×9=225、kernel328、cokernel49で、条件行列は16072×1400である。固定pivotで $J$ の affine 座標を取り、法101で三根配置ごとに全行を簡約した階数は1317,1317,1316。整数係数のminorは標数零でも非零なので、まず標数零の接次元は≤83,83,84。さらに法101核基底から83,83,84本の有理ベクトルを復元し、整数係数の線形化行列で全ベクトルの零性を厳密に確認したため、標数零でも接次元は**正確に**83,83,84である。全次数Hilbert平坦性は相対Koszul原理により成立する。内在的H2を満たすかどうかは、適合平方根・被覆の存在をなお確認する必要がある。PGL9と六係数の接像は、群Gの軌道による上界と法101でのrank81の下界から標数零で正確に81。群商スタックの次元1と、Grassmann内にあるframed接像81を混同しない。次数4の一次平坦性は今回のKoszul一次変形原理から従うので別計算不要。次は根・AS被覆の持上げと一般有限型族への認識を検査する。
 
 **具体的な25 pivot と完全二次提示。** 二重平方環の交互語PBW基底から $\mathcal R_1$ の九基底 $x_0=u^2,x_1=uv,x_2=v^2,p_0=uc,p_1=vc,q_0=ud,q_1=vd,z=cd,z'=dc$ を取る。$\mathcal R_2=B_4$ の交互語長0,1,2,3,4の基底数は順に5,8,6,4,2。主原稿式(NC-25)の積25個はそれらと符号付きで一致するためminorは±1であり、六係数は$p_0\star p_0=-u^2f_1,q_0\star q_0=-u^2f_2$から復元できる。これは全パラメータの多項式恒等式であり、判別式の非消滅はH2実現部分を選ぶためだけに必要。二次Veronese一般定理の既知性はPolishchuk–Positselski, Chapter 3 Prop.2.2に帰属する（原著の定理文は公開閲覧資料で照合し、相対版は本文で直接証明）。この結果によりGrassmann射がRの**全次数**を規定することは確立したが、Grassmannian上の任意の点に対応するRがH2を実現するとは限らない。
 
@@ -252,6 +256,12 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 **主論文の既存入力の点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
 
+**v1.11の証明の点検。** 有限foundation上の局所閉比較、DDのArtin適用条件、Morita持上げのheart exactnessとAZ、偏極忘却のHH¹核、HH¹=0点の関係式空間の滑らかさ、近恒等DPicの平方根補正と曲率障害を独立読取りした。Artin witnessの全有限型基底変更への昇格はEnd・可逆双加群・軌道Homの基底変更を個別に確認した。可換点の一次AS構成はPBW、Koszul/Frobenius、斉次Ore恒等式とHKR係数、flat qgrと全軌道の飽和、右Zhang twistの符号、相対族への昇格まで点検した。二乗零理想I全体への拡張とmodule-object系の一意性により、内在的な一次接空間の同定も確認した。これらは人間による査読や形式証明器での検証ではない。
+
+**v1.11の有限記号計算。** `computations/verify_quadric_first_order_roots.py` を実行し、一般の十係数二次式に対するγ_f(q,x_i)=0、{x₂/x₀,x₁/x₀}=2f/x₀²、Segre制限のrank9と核kq、四根の固定次元9/3/5/3をSymPyの厳密演算で確認した。相対AS性・圏の平坦性・相対H2所属は、この有限計算の認証範囲には含めない。軽量な通常math suiteに登録したが、今回全旧suiteを再実行していない。
+
+**可換点の独立な接空間証明書。** オプションの `computations/verify_commutative_quadric_tangent.py` を実行PASS。O(2,2)のtoric単項式から三次制約の16072×1400整数行列を直接構成した。法101で制約rank1311、PGL9軌道と九つのJacobian・六つのZhang方向を順に加えたrankは74/83/89。全95列が整数のまま全制約を解くことを確認したため、標数零でも制約rank1311、接次元89となる。さらに軌道の六つの独立な整数依存関係により軌道rank74の上界も確認したので、商の接次元15は厳密である。固定長整数の積には桁あふれの上界検査があり、残差の絶対和上界は44800<2³¹。これは内在接dim9・偏極核dim6の証明とは独立な有限線形代数による照合である。NumPy/Numbaを要するため通常suiteへは追加しない。
+
 **主論文の既存計算の確認範囲。** GitHub mainから取得した `computations/verify_noncubic_second_order.py` をそのまま実行してPASSした。importにより25 unit pivot、六係数回収、全16072×1400線型条件の階数、標数零の有理核83/83/84も再実行される。横断2/2/3方向の基底と全二項和について3/3/6個の二次補正を検証し、二根対一致の場合の分母は2,1,2,2,1,1。残差は整数演算で厳密に零である。全次数の平坦性はこの有限計算ではなく、PPの定理と本文の適用による。新しい `computations/verify_antiserre_polarization.py` も実行PASSで、中心一次部分dim1→0とorbit rank79→80を標数零で確認した。全て有理数・整数・有限体による計算で、浮動小数点近似を用いない。
 
 実行環境はPython3.12.14、SymPy1.14.0、NumPy2.3.5、Numba0.68.1。NumPy/Numbaは重い検算のオプションで、標準math suiteの必須依存にはしない。別稿の作成に伴う全旧math suiteの再実行はしていない。
@@ -262,6 +272,9 @@ python3 scripts/check.py sources
 python3 computations/verify_noncubic_second_order.py
 python3 computations/verify_antiserre_polarization.py
 python3 computations/verify_quiver_avatar_charts.py
+python3 computations/verify_quadric_first_order_roots.py
+# NumPy/Numba を入れた場合の独立な接空間証明書
+python3 computations/verify_commutative_quadric_tangent.py
 python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
 python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex
 latexmk
@@ -271,7 +284,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 直前の主論文v1.10（134頁）と別稿v0.1（25頁）をLuaLaTeX・latexmkで組版し、両PDFとSyncTeXを生成した。両方の最終logにWarning、Overfull/Underfull、文字欠落、未定義参照の報告はない。別稿は全25頁の一覧画像を確認し、mutation/Schur補元、AS入力の定義、avatarの開部分とsquare辞書、参考文献を拡大確認した。主論文は表紙、別稿への参照を置いた5頁、書誌の133頁を確認した。主論文全134頁を今回目視したわけではない。静的checkerは主論文28 manuscript files/256 labels、別稿5 manuscript files/60 labelsと7 Markdown filesでPASS。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**組版・参照確認。** 主論文v1.11をLuaLaTeX・latexmkで組版し、153頁のPDFとSyncTeXを生成した。最終logにWarning、Overfull/Underfull、文字欠落、未定義参照の報告はない。新しい第25・26・29・30節、表紙・概要と書誌を一覧画像で確認し、基底変更の証明、平方根補正、一次AS被覆、全一次H2実現と接空間を拡大確認した。全153頁を今回目視したわけではない。静的checkerは主論文32 manuscript files/292 labels/178 citation uses、7 Markdown filesでPASS。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

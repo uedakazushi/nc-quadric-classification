@@ -39,7 +39,9 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 有限foundationと次数移動の可逆perfect双加群表示が得られた基底では、次数移動が反Serre関手と線束twistを除いて一致する条件を、**有限表示局所閉部分スキーム**として構成した。非被約底のminor方程式と評価同型を用い、比較のfppf局所存在そのものを表す。[偏極認識の証明](papers/sections/polarization_recognition.tex)。任意のX3族にこの有限表示を与えること、平方根・AS被覆の局所存在は引き続き別の課題である。
 
-**Artin基底ではさらに進んだ。** 全flat Abel変形に有限foundationとcanonical反Serre軌道環を構成でき、偏極忘却は右逆を持つ。一次の核はHH¹(Λ)であり、二根対一致点の接次元5対4の差をZhang方向として説明する。HH¹(Λ)=0なら全Artin X3変形はcanonical偏極を持つ。[Artin再構成](papers/sections/artin_foundation.tex)。可換Qのtensor O(1,1)は全Artin Abel変形へexact ampleなSerre根として持ち上がる。[根の持上げ](papers/sections/artin_roots.tex)。AS4被覆の存在と一般有限型族の認識は別途必要である。
+**Artin基底ではさらに進んだ。** 全flat Abel変形に有限foundationとcanonical反Serre軌道環を構成でき、偏極忘却は右逆を持つ。一次の核はHH¹(Λ)であり、二根対一致点の接次元5対4の差をZhang方向として説明する。HH¹(Λ)=0なら全Artin X3変形はcanonical偏極を持つ。異なる根対の全noncubic点ではX3は滑らかで次元83、商は滑らかで次元3となる。[Artin再構成](papers/sections/artin_foundation.tex)。可換Qのtensor O(1,1)は全Artin Abel変形へexact ampleなSerre根として持ち上がる。[根の持上げ](papers/sections/artin_roots.tex)。AS4被覆は可換点の一次変形について以下で構成する。高次と一般有限型族の認識は別途必要である。
+
+**可換点の全一次変形は相対H2に属する。** Jacobian二重導分から九次元すべての一次方向に相対AS4環と中心正則二次切断を作り、平方根の補正を右Zhang twistとして被覆へ移す。[一次変形の構成と証明](papers/sections/quadric_first_order.tex)。全有限型基底変更を含む相対族への昇格も証明した。高次Artin基底でのAS被覆と、一般有限型基底上の代数性は未解決である。
 
 族は基底変更と descent を備えた noetherian Abel 圏と構造対象 O の対である。導来条件には局所的な canonical compact 部分 $D(\operatorname{Ind}\mathcal C)^c$ を用い、特異基底上でそれを全 $D^b(\mathcal C)$ と同一視しない。平方根・根同型・AS被覆は fppf 局所の存在条件であり、標識に加えない。標数零の代数閉体上では元の $\mathcal H_2$ の pointed groupoid を回復する。
 
@@ -51,6 +53,8 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 | 全H2の切断環・反Serre環はKoszul | 正則正規二次商とVeroneseの既知定理を適用。[相対Koszul節](papers/sections/relative_koszul.tex) |
 | 三次まで平坦＋全幾何fiberがKoszulなら全次数平坦 | PP2005 Chapter 6 Theorem 7.3を任意の非被約Noetherian基底に適用。相対Koszul解消も任意底変更と整合 |
 | H2点の任意のArtin基底上の $X_3$ 変形はflatなpointed Abel変形を与える | noetherian性の持上げと $\operatorname{qgr}$ による構成。同節。表示の次数移動が反Serreになることは別条件 |
+| Artin上の根・全軌道AS被覆から、全有限型基底変更を備える相対H2族を構成 | [Artin再構成節](papers/sections/artin_foundation.tex)、prop:artin-witness-relative-promotion |
+| 可換Qの内在的な一次接空間はHH²(Q)≅H⁰(O(2,2))、次元9 | 全九方向に適合するAS4被覆を構成。[一次変形節](papers/sections/quadric_first_order.tex)。全Artin被覆や代数性を結論しない |
 | 固定した相対切断環へのAS4被覆は有限表示のincidenceで判定できる | 四次までの元の積・五次までの二次双対・Frobenius条件。[相対被覆節](papers/sections/relative_as_cover.tex)。任意基底変更のnoetherian性は明示した仮定の範囲で用いる |
 | pointed Abel圏が一定で、反Serre表示からは外れる $\mathbb G_m$ 上の二次環族 | [偏極の変形](papers/sections/antiserre_polarization.tex)。$q=2$ で中心一次部分が消滅し、どのH2のcanonical反Serre環でもない |
 | 同族の非零接方向は一定のpointed Abel変形へ写る | 中心元 $u^4,v^4$ の交換子が $16\varepsilon u^4v^4$。計算機に依存しない証明と[厳密検算](computations/verify_antiserre_polarization.py) |
@@ -122,6 +126,8 @@ $$
 | [computations/verify_noncubic_degree3_tangent.py](computations/verify_noncubic_degree3_tangent.py) | 法101でPGL9/係数接方向と、三次Hilbert階数条件の全16072線形条件を厳密検算（NumPy・Numbaはオプション） |
 | [computations/verify_noncubic_antiserre_pivots.py](computations/verify_noncubic_antiserre_pivots.py) | noncubic反Serre環の9生成元・25 unit pivotと六係数の多項式回収を正確に検算 |
 | [computations/verify_stack_symmetries.py](computations/verify_stack_symmetries.py) | noncubic慣性の射影群関係、χの共変性、局所対合・正則切断の記号恒等式 |
+| [computations/verify_commutative_quadric_tangent.py](computations/verify_commutative_quadric_tangent.py) | 可換点の関係式接89・軌道74・商接15を整数核と法101のrankで標数零において認証（NumPy/Numbaはオプション） |
+| [computations/verify_quadric_first_order_roots.py](computations/verify_quadric_first_order_roots.py) | 一次Jacobian被覆の中心性、affine bracket、九次元制限、四根の固定次元9/3/5/3を厳密検算 |
 | [computations/verify_quiver_avatar_charts.py](computations/verify_quiver_avatar_charts.py) | Sigma0・Sigma2・10本矢の有限代数とproduct collectionの矢・関係数を厳密検算 |
 | [computations/verify_quadric.py](computations/verify_quadric.py) | Segre積・Ore正規性・低次数階数の厳密演算による再現 |
 
@@ -143,6 +149,7 @@ python3 scripts/check.py all
 python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
 python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex
 python3 computations/verify_quiver_avatar_charts.py
+python3 computations/verify_quadric_first_order_roots.py
 ```
 
 出力は `build/quiver-avatar-moduli.pdf` と同名の `.synctex.gz`。ルートの `latexmk` は両論文を組版する。

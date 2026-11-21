@@ -102,6 +102,11 @@ foundation 代数の $\operatorname{HH}^1$ である。
 全 Artin 変形への根の存在が従う。
 特に可換 quadric の $(-)\otimes\mathcal O(1,1)$ は、
 任意の flat Abel 変形へ exact ample な Serre 平方根として延長する。
+さらに Jacobian 二重導分と右 Zhang twist により、可換点の全一次変形に
+同じ根の相対 AS4 被覆を構成する。
+Artin 上の適合表示を全有限型基底変更上の系へ昇格させることで、
+可換点の内在的接空間を九次元の $\operatorname{HH}^2(Q)$ と同定する。
+高次 Artin 基底での AS4 被覆と、一般有限型族の代数性は残る問題である。
 
 既存の foundation 表示は滑らかな三次元 Artin スタックであり、
 全幾何点 groupoid を自己同値群ごと全充満に実現する。
@@ -185,6 +190,20 @@ sheaf bimodule、関係式、曲線と束のスタックを比較する。
 \cite[Theorem 3.6, Corollaries 3.15, 3.24]{TV2007} も、
 全ての変動する $\HH$ 圏のモジュライの代数性を直ちには与えない。
 
+
+変形論の入力は Lowen--Van den Bergh
+\cite[Theorem 3.1; §§7.7--7.9, author preprint]{LowenVanDenBergh2005} と
+\cite{LowenVanDenBergh2006}、および De Deken--Lowen
+\cite[Theorems 5.13, 5.15]{DeDekenLowen2011} の既知定理である。
+本稿では normal helix の compact 生成性と geometric Hom の条件を確認した上で適用する。
+これにより全 Artin Abel 変形の canonical 反 Serre 偏極を再構成し、
+関係式変形から Abel 変形への忘却の接核を
+$\operatorname{HH}^1$ と同定する。
+また、可逆双加群の曲率障害と近恒等群の平方根補正を使って Serre 根を持ち上げ、
+可換点では一次 Jacobian 被覆を構成して全九次元を相対 $\mathfrak H_2$ に実現する。
+Toda \cite[Theorem 4.7, arXiv v3]{Toda2009} の一次 Fourier--Mukai 持上げ定理は
+選択済みの四根の一次条件に用いるが、全 Artin 段階の結論は別途証明する。
+これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
 
 Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} は、一般の cubic quadric が
 $\mathbb Z$-domain であることを証明した。この定理に整性・被約性の仮定はなく、
@@ -461,6 +480,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/relative_as_cover}
 \input{sections/antiserre_polarization}
 \input{sections/artin_roots}
+\input{sections/quadric_first_order}
 
 \section{同値類の分類後に残る問題}
 \label{sec:open-problems}
@@ -502,10 +522,16 @@ Deligne--Mumford スタックにはならない。
 命題~\ref{prop:relative-h2-algebraicity-reduction} の
 framed 実現部分層 $X_{\mathrm{as}}$ の有限型代数空間による表現可能性を示せ。
 相対 AZ 再構成、全忠実性、対角の有限表示性は既に得られている。
-残る認識は、提示された次数移動が canonical 反 Serre 関手となることと、
-適合平方根および AS 被覆が fppf 局所に存在することである。
-命題~\ref{prop:artin-relations-flat-abelian} の flat Abel 変形の構成だけでは、
-命題~\ref{prop:antiserre-polarization-family} の偏極変形を除外できない。
+Artin 基底では有限 foundation と canonical 反 Serre 偏極を回復し、
+偏極忘却の核を同定した。有限 foundation と自己同値双加群の表示が得られれば、
+定理~\ref{thm:bimodule-line-comparison} が偏極の一致を有限表示局所閉条件にする。
+一般有限型基底でこの表示を構成し、適合平方根と AS 被覆の fppf 局所存在を認識せよ。
+可換点の根は全 Artin 段階へ持ち上がり、
+定理~\ref{thm:quadric-all-first-order-h2} と
+系~\ref{cor:quadric-intrinsic-tangent} は全一次方向を相対 $\mathfrak H_2$ に実現する。
+高次 Artin 基底で同じ根に適合する AS4 被覆が存在するかは残っている。
+一般の $X_3$ 族については、命題~\ref{prop:antiserre-polarization-family} の
+偏極変形を除外する必要がある。
 また定理~\ref{thm:relative-finite-as-cover} の有限表示 incidence の存在だけでは、
 例~\ref{ex:fppf-image-nonalgebraic} が示す fppf 像の問題が残る。
 
