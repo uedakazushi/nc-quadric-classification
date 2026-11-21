@@ -898,6 +898,51 @@ $\Lambda\otimes_{\mathcal O}\Lambda^{\mathrm{op}}$-加群であり、
 全ての項と微分は局所自由な成分と積から作られるため、底変更と両立する。
 \end{proof}
 
+\begin{proposition}[cubic から noncubic への反 Serre 環の実際の特殊化]
+\label{prop:line-degeneration-antiserre-algebras}
+命題~\ref{prop:h2-line-degeneration} の一次元族
+$\Lambda_T$ に対して、(\ref{eq:foundation-relative-antiserre}) の複体は
+全次数で有限局所自由な次数零の加群 $\mathscr R_{T,n}$ となり、
+\[
+ \operatorname{rank}\mathscr R_{T,n}=(2n+1)^2
+ \qquad(n\ge0).
+\]
+$\mathscr R_T=\bigoplus_{n\ge0}\mathscr R_{T,n}$ は
+次数一生成の、任意底変更と両立する相対次数付き代数であり、
+その二次関係は階数 $56$ の部分束をなす。
+従って曲線からの射
+\[
+ T\longrightarrow
+ \left[\operatorname{Gr}(56,U\otimes U)/\operatorname{PGL}(U)\right]
+ \tag{D-Gr}\label{eq:line-antiserre-grassmann}
+\]
+が存在し、$t=0$ の値は指定した noncubic 対象の
+\emph{内在的反 Serre 環の二次関係}、
+$t\ne0$ の値は cubic 対象のそれである。
+特に noncubic 点への特殊化は foundation の dg 圏に限らず、
+反 Serre の全次数付き環の族としても実現される。
+\end{proposition}
+\begin{proof}
+補題~\ref{lem:foundation-relative-antiserre-perfect} を $T$ に適用する。
+命題~\ref{prop:h2-line-degeneration} によって
+$T$ の全幾何ファイバーは $\HH$ 対象の標識付き導来圏である。
+従って各 $n$ の導来 Hom の幾何ファイバーは、
+命題~\ref{prop:cubic-relative-antiserre-grassmann} の証明で
+用いた $\HH$ の反 Serre 軌道の Ext 消滅から、
+次数零の $(2n+1)^2$ 次元空間に集中する。
+perfect 複体の局所分裂により
+$\mathscr V_n(T)$ は同階数の有限局所自由加群になり、
+任意の底変更と可換する。
+各ファイバーの反 Serre 環は一次生成環の偶数 Veronese なので、
+$\mathscr R_{T,1}^{\otimes m}\to\mathscr R_{T,m}$ は幾何点で全射、
+従って $T$ 上でも全射である。
+$\mathscr R_{T,1}$、$\mathscr R_{T,2}$ の階数がそれぞれ九、二十五であるため
+二次関係は階数五十六の部分束である。
+射影枠束から (\ref{eq:line-antiserre-grassmann}) を得る。
+各ファイバーでの内在的反 Serre 環との一致は
+Serre 関手の標準 Morita 自然性による。
+\end{proof}
+
 \begin{remark}[内在的な相対モジュライへの移行条件]
 命題~\ref{prop:h2-component-density} は、実現点集合の部分空間位相についての
 無条件の結論である。
