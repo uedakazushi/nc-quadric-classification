@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.23（主論文v1.23、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.24（主論文v1.24、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -58,13 +58,15 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **Zariski 局所の homological AS4 被覆。** `prop:quadric-zariski-homological-as-cover` ではW0⊂R0⊗V3 ∩V0⊗R1の二つのcoevaluationを反転してφ:S0=K→Oを定め、その核Hの階数6を候補とする。Artin厚みR/m^{n+1}でのcanonical hullの関係空間は同じφの核なので、相対AS有限判定の三・四・五次rank、三次の正規性の層等式、左右低次数正則性、Frobenius pairingは全厚みでscheme-theoreticに成立。有限個の式の係数は∩m^n=0（Stacks Tag 00IP）で局所環上零となり、可換点を含むZariski開へ同時に広がる。これで全次数平坦・相対Koszul/Frobenius・正則正規二次切断を備えるhomological AS4 coverを得る。ただし左右Noetherian性は別に必要なので強いH2族への昇格には使い切れていない。Artin approximation Tag 0CATも候補だが、ここではcandidate Hが既に有限型開で定義できるため使う必要はない。
 
-**局所Noetherian判定と忠実平坦降下。** `lem:local-commutative-fibre-noetherian` では完備局所R上でgr_m C≃gr_mR⊗_κ C_κが可換Noetherianであることを使う。斉次イデアルの初期記号を固定内部次数の完備性によって持ち上げるため、無限直和Cをm進完備と仮定しない。非斉次イデアルは最高内部次数で帰納する。非完備Noetherian局所Rへは中心忠実平坦な完備化による左右イデアルの昇鎖の降下で拡張する。Qを閉fiberとする任意Noetherian局所底変更ではBと正規元AS4拡張Aは左右Noetherianであり、qgr BがNoetherian Abel圏として構成できる。単一の有限型開全体のNoetherian性、canonical compact圏との比較・AZは未証明。
+**左右Noetherianな非可換特殊fiberの局所持上げ。** `lem:local-commutative-fibre-noetherian` は標題・主張を強化し、可換性を削除した。gr_m C≃gr_mR⊗κ Cκ において gr_mR は有限生成中心κ代数だから、Cκの左右Noetherian性だけで付随次数環が左右Noetherian。完備局所環での各内部次数内のm進級数による生成元持上げ、一般局所環への忠実平坦降下は同じ。幾何的cubic開U°の各点vではBκ(v)が体上cubic AS正則Z代数の偶数Veroneseで左右Noetherianとなるため、閉点がvへ写る任意Noetherian局所基底のBと正規AS4拡張Aは左右Noetherian。qgr BもNoetherian heartとして存在する。この点ごとの主張から単一有限型開のグローバルNoetherian性を推論しない。体上cubicのNoetherian性は既知の幾何分類からの入力であり、一次資料の定理番号の追加確認は残る。
 
 **有限型局所基底変更とGabriel商。** `lem:local-finite-type-strong-noetherian` はB_Rの左右Noetherian性から有限型R′=R[t]/IでB_R′が左右Noetherian（中心多項式のHilbert基底定理）になることを証明し、R′が非被約・非平坦でも成立する。`lem:qgr-module-object-basechange` はGr(B_R′)≃(Gr B_R)_{R′}、torsion部分の一致、Gabriel商の完全忠実な右随伴ωのR′作用の持上げからQGr(B_R′)≃(QGr B_R)_{R′}を導く。R′有限型ならNoetherian部分はqgr(B_R′)。`cor:quadric-local-tails-basechange-generation` は任意のNoetherian qgr対象を十分高次数のtruncationで表示してAZ生成条件(A1)を証明する。ただしχ₁/AZ Hom全射(A2)は未検証。強いNoetherian性（任意Noetherian R-代数への変更）とは区別する。
 
 **局所相対tailsのfppf降下と構造対象の平坦性。** `cor:quadric-local-tails-fppf-descent` では R′→R″ faithfully flat f.p. においてQGr(B_R″)≃(QGr B_R′)_{R″}を用い、自由加群対象化F=R″⊗-が完全・保守的な左随伴であることからBarr–Beck降下を適用する。有限型底変更でNoetherian対象は保存され、昇鎖条件はfaithfully flatに検出できるためqgrでも有効なfppf降下が成立。全B_nが局所自由なのでN⊗πBが完全で構造対象は基底上平坦。導来compact圏の降下や内在的H2全条件まで言っていない。
 
-**次の効果性補題。** 不足は単一の有限型開全体のNoetherian性、χ₁/AZ(A2)、Hom有限・flat basechange、canonical compact圏とheartの同定およびSerre認識である。局所環の有限型変更に限るNoetherian性・module-object基底変更・AZ(A1)は解決した。全次数の局所自由性だけで内在H2の代数性を結論しない。
+**DVR上のχ_i持上げ。** `lem:dvr-chi-specialization` はRをDVR、Bを右Noetherian・各次数有限自由、B/B+の相対斉次自由解消を各項有限自由で剰余体と可換と仮定する。R-torsion-free f.g. Mは各M_nが自由で、Hom(P•,M)の固定内部次数の有限自由cochainの剰余体での低次Ext消滅から元の完全性を単元minorで持ち上げる。π-power torsion Tは右Noetherian性で一様π^aT=0となり、Tのπ-adic filtrationをBκ-加群として処理し、M/TのR-flat性と長完全Ext列で一般Mへ持ち上げる。可換Qを閉fiberに持つDVR sliceのBκはSegre可換環でχ_iが全iで成り立つため左右相対χ_iを証明。一般高次元基底への拡張はしていない。
+
+**次の効果性補題。** 不足は単一の有限型開全体のNoetherian性、一般高次元基底のχ₁/AZ(A2)、Hom有限・flat basechange、canonical compact圏とheartの同定およびSerre認識である。局所環の有限型変更に限るNoetherian性・module-object基底変更・AZ(A1)は解決した。全次数の局所自由性だけで内在H2の代数性を結論しない。
 
 `papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
@@ -276,7 +278,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-2026-11-21 / 主論文v1.23、別稿v0.1。現行v1.23のLuaLaTeX組版・静的checker・旧計算suiteはこの更新では未実施。前版v1.12の組版確認と既存の計算証明書を、新しい局所環全次数命題の証明点検と区別する。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
+2026-11-21 / 主論文v1.24、別稿v0.1。現行v1.24のLuaLaTeX組版・静的checker・旧計算suiteはこの更新では未実施。前版v1.12の組版確認と既存の計算証明書を、新しい局所環全次数命題の証明点検と区別する。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
 
 **主論文の既存入力の点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
 
@@ -311,7 +313,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 前版の主論文v1.12・162頁についてLuaLaTeX・latexmkによるPDF/SyncTeX生成がPASSだった。現行v1.23はこの実行環境にGitHubリポジトリのローカルcheckoutがなく、組版・全静的checkerを未実施とする。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。第29・30節の根一意性・étale Morita根・全Artin hull・一般cubicへの条件付き拡張、表紙・概要・書誌を一覧画像で確認し、根一意性、étale代数化の定理と証明、正規性のtensor計算、全Artin実現定理と形式変形の系、条件付き定理を拡大確認した。全162頁を目視したわけではない。静的checkerは33 manuscript files/307 labels/192 citation uses、7 Markdown filesでPASS。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**組版・参照確認。** 前版の主論文v1.12・162頁についてLuaLaTeX・latexmkによるPDF/SyncTeX生成がPASSだった。現行v1.24はこの実行環境にGitHubリポジトリのローカルcheckoutがなく、組版・全静的checkerを未実施とする。最終logにWarning・Overfull/Underfull・文字欠落・未定義参照はない。第29・30節の根一意性・étale Morita根・全Artin hull・一般cubicへの条件付き拡張、表紙・概要・書誌を一覧画像で確認し、根一意性、étale代数化の定理と証明、正規性のtensor計算、全Artin実現定理と形式変形の系、条件付き定理を拡大確認した。全162頁を目視したわけではない。静的checkerは33 manuscript files/307 labels/192 citation uses、7 Markdown filesでPASS。別稿v0.1は本文を変更しておらず、既存の25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

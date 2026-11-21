@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.23、主論文v1.23、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.24、主論文v1.24、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## VS Code / LuaLaTeX の組版環境
 
@@ -39,11 +39,13 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **Zariski 局所 homological AS4 被覆。** 相対cubicの四次重なりから七本二次関係K上のcanonical functionalを構成し、六次元のH=kerφを選ぶ。全Artin厚みにおけるcanonical hullの有限判定とKrull交叉定理により、可換点を含む一つのZariski開で、A=T(B1)/Hは全次数局所自由・Koszul/Frobenius、g∈A2は左右正則正規、A/(g)=Bとなる。**左右Noetherian性が未証明のため、これはまだ定義にいう相対AS4被覆ではない。** Noetherianな底変更では真の被覆になる。[証明](papers/sections/artin_roots.tex) `prop:quadric-zariski-homological-as-cover`。次はBのnoetherian性・tails・AZとcanonical compact圏を比較する。
 
-**可換点を閉点に持つNoetherian局所基底の真正な被覆。** 完備Noetherian局所環ではgr_m Bが可換Noetherianとなることと固定内部次数の完備性からBの左右Noetherian性が従い、中心忠実平坦な完備化から非完備局所環へ降下できる（`lem:local-commutative-fibre-noetherian`）。可換Qを閉fiberに持つ任意Noetherian局所底変更でBと正規元AS4拡張はNoetherianとなる。qgr BもNoetherian Abel圏として存在する（`cor:quadric-point-local-noetherian-as4`）。**単一の有限型開全体・任意の底変更のNoetherian性、canonical compact圏とheartの同定、AZ・内在H2の効果性は未証明。** [証明](papers/sections/relative_koszul.tex)・[被覆への適用](papers/sections/artin_roots.tex)。
+**幾何的cubic開の各局所基底の真正な被覆。** 特殊fiberの可換性は不要で、全次数有限自由かつ左右Noetherianな特殊fiberを持つ局所変形も左右Noetherianとなる（付随次数環は中心多項式による拡大）。従って幾何的cubic開U°の任意の点vで、その局所環と閉点がvへ写る全Noetherian局所底変更のBと正規AS4拡張が左右Noetherian、qgr BもNoetherian Abel圏となる。局所環の全有限型変更にも適用できる。一つの有限型開全体のNoetherian性とcanonical heart比較は未証明（`lem:local-commutative-fibre-noetherian`、`cor:quadric-point-local-noetherian-as4`）。
 
 **局所環の全有限型基底変更とAZ (A1)。** 可換点の局所環R上のB_Rが左右Noetherianなら、任意の可換有限型R-代数R′への変更も中心多項式環のNoetherian性により左右Noetherianになる。QGrはGabriel局所化の右随伴を使い、R′-module-object基底変更QGr(B_R′)≃(QGr B_R)_{R′}と一致する。有限型R′ではNoetherian部分をqgrとして取れる。十分高次数のtruncationから全有限型R′でAZの生成条件(A1)を証明した（`lem:local-finite-type-strong-noetherian`、`lem:qgr-module-object-basechange`、`cor:quadric-local-tails-basechange-generation`）。**χ₁/AZ Hom全射(A2)、canonical compact圏とのheart比較、単一の有限型開全体でのNoetherian性は未証明**。[証明](papers/sections/relative_koszul.tex)。
 
 **局所相対tailsのfppf降下と構造対象の平坦性。** QGr(B_R′)≃(QGr B_R)_{R′}とfaithfully flat拡大のBarr–Beck降下により、局所環R上の有限型基底変更に関してQGrとそのNoetherian部分qgrの対象・射の有効なfppf降下を示した。全次数有限局所自由性からπBの基底上平坦性も証明した（`cor:quadric-local-tails-fppf-descent`）。相対heartの系に必要なmodule-object基底変更・降下・構造対象平坦性はこの局所基底の範囲で確認できたが、χ₁/AZ(A2)、Hom有限性、canonical compact・Serre認識と単一有限型開上の効果性は未証明。[証明](papers/sections/relative_koszul.tex)。
+
+**可換点を通るDVR上の相対χ。** DVR上の有限自由な相対Koszul解消を用い、特殊fiberのχ_iを有限生成次数付き全加群へ移す補題を証明した。可換Segre特殊fiberのDVR sliceでは左右相対χが全次数で成立する（`lem:dvr-chi-specialization`、`cor:quadric-dvr-chi`）。一般高次元基底のχ₁/AZ(A2)は未証明。[証明](papers/sections/relative_koszul.tex)・[quadricへの適用](papers/sections/artin_roots.tex)。
 
 ## モジュライのスタック構成
 
