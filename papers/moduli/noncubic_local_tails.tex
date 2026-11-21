@@ -20,6 +20,25 @@ Grothendieck 導来圏と Noetherian heart を構成する。
 $P_i=e_iC$、$S_i$ は頂点 $i$ に $R$ を置く加群とする。
 積は $C_{ij}\otimes C_{jk}\to C_{ik}$ と書く。
 
+\begin{lemma}[局所 perfect 複体の次数零集中]
+\label{lem:local-perfect-fibre-concentration}
+$(R,\mathfrak m,k)$ を可換局所環、$P\in\operatorname{Perf}(R)$ とする。
+$P\otimes_R^{\mathbf L}k$ が次数零の $r$ 次元ベクトル空間に
+準同型ならば $P\simeq R^{\oplus r}[0]$ である。
+同型の選択は非標準的でよいが、任意の $R$-代数 $R'$ に対して
+$P\otimes_R^{\mathbf L}R'\simeq (R')^{\oplus r}[0]$ となる。
+\end{lemma}
+\begin{proof}
+有界な有限自由複体で $P$ を表す。
+微分行列に単元成分があるたびに基底変換して
+$R\xrightarrow{\mathrm{id}}R$ の可縮直和因子を取り除く。
+有限回で全微分の成分が $\mathfrak m$ に属する複体が得られる。
+その剰余体への還元の微分はすべて零なので、仮定により
+非零項は次数零の階数 $r$ の自由加群のみである。
+従って元の複体は $R^{\oplus r}[0]$ と準同型である。
+有限自由複体の可縮因子の消去は任意の基底変更後も保たれる。
+\end{proof}
+
 \begin{lemma}[五頂点 bar 解消の持上げ]
 \label{lem:five-window-bar-lifting}
 次のいずれかを仮定する。
@@ -86,8 +105,11 @@ projective 解消である。その bar 解消との homotopy 同値を $C$ へ�
 従って \eqref{eq:five-window-bar} の fiber は全頂点成分で完全である。
 
 有限 projective 複体の fiber 判定により、増大 bar 複体の各頂点成分は
-分裂完全である。局所環の場合には、特殊 fiber の可逆 minor を逐次消去すればよい。
-全幾何 fiber を仮定する場合には同じ操作を各点の近傍で行う。
+分裂完全である。局所環の場合には補題~\ref{lem:local-perfect-fibre-concentration}を
+各頂点の増大複体に適用する。
+任意の可換基底の場合には、全幾何 fiber の完全性を
+各素イデアルにおける剰余体への忠実平坦な拡大から確認して
+局所環で同じ操作を行う。
 これは perfect 複体の所定次数・所定階数への集中の開性
 \cite[Tag 0BDK, Lemma 36.31.3]{StacksPerfectFibers}
 の初等的な場合である。
@@ -282,11 +304,13 @@ $\Lambda$ は相対 smooth proper であり、$E_i$ は perfect なので、
 任意の $i,j$ に対する derived Hom は perfect $R$-複体である。
 閉 fiber の列は定理~\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026} の geometric helix である。
 したがって前向き Hom の閉 fiber は指定階数の次数零自由加群である。
-有限自由複体の特殊 fiber における可逆 minor を消去すると、
-同じ $R$ 上でその複体自体が指定階数の自由加群に準同型となる。
-この操作は各 $i,j$ について同じ局所環の中で行える。
-次数が増すたびに有限型近傍を狭める議論ではない。
-その自由性により全ての基底変更と整合する。
+補題~\ref{lem:local-perfect-fibre-concentration}を
+各組 $(i,j)$ の derived Hom に適用すれば、
+同じ局所環 $R$ 上で全ての前向き Hom は次数零の自由加群となる。
+自由基底の選択は非標準的でも、derived Hom の基底変更写像は canonical であり、
+任意の $R$-代数への変更後も次数零への集中を保つ。
+無限個の $(i,j)$ への個別適用は無限個の有限型開を交叉することではない。
+全有限型開への延長は後の有限型効果性定理の別の内容である。
 
 同じ Nakayama の議論により $C$ は距離高々二の成分で生成され、
 奇数始点では次の偶数頂点を経由する射だけで正距離成分が生成される。

@@ -1066,6 +1066,19 @@ $2H$ 上で $x\mapsto x+d\eta$ とし、各冪零座標を固定する。
 $\sigma^*O(b)=O(b+d)$ の切断作用は恒等である。
 従って $\beta^2=1$、$\theta=-1$ であり、差は対角型自己同型である。
 
+\begin{remark}[非被約 grid における二周期の符号]
+二重垂直成分と二本の水平成分の型、および縦横とも二重の型では、
+上の切断基底で全添字について $\theta_i=-\beta_i^2$ となる。
+この符号は非自明なSerre作用を表すものではない。
+$\delta(a_{ij})=(-1)^{j-i}a_{ij}$ は
+頂点スカラー $c_i=(-1)^i$ により $c_i/c_j$ と書け、
+$\qgr D$ 上で恒等関手と自然同型である。
+両 parity の四次テンソル表示と周期の厳密な係数比較は
+\path{computations/verify_reducible_quadruples.py} の
+\texttt{grid\_verify} で再現できる。
+この計算は全次数の AS4 正則性の証明ではない。
+\end{remark}
+
 \begin{theorem}[全許容四つ組からの逆構成]
 \label{thm:all-admissible-inverse}
 標数零の代数閉体上の任意の Van den Bergh 許容四つ組 $U$ について

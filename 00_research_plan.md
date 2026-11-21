@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.66。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.67（分類の20節）、論文Bはv0.24（相対理論の31節）、論文Cはv0.3。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.67。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.68（分類の20節）、論文Bはv0.25（相対理論の31節）、論文Cはv0.3。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。局所good moduliの降下もこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -20,7 +20,7 @@
 
 **P5：標識忘却・偏極認識・Cの独立性。** noncubic中央二重平方族に対する\(\mathcal O\)の候補と自己同値作用を記述し、楕円型の既存格子結果と接続する。\(X_{\mathrm{as}}\to X_3\) の一致点の横断方程式と局所閉性を調べる。Cでは有限foundation/weighted QP/avatarから、同一基底上でheart、exact Serre根、AZ、全軌道AS4を認識する有限条件を求め、まずcubicの有効開で相対比較定理を証明する。有限代数やderived同値だけでheartまで得たとしない。
 
-**直ちに着手する一手：** Belmansのcubic既知HH式との比較・A/B Introduction・C→B定理の直接引用を整え、Bの有限foundationのHH高次消滅と次元差のbar計算を限定的に再点検した。次はA/B/C相互引用checkerの実行と、Aの退化四つ組逆構成・Bのfive-window canonical tailsの独立監査へ進む。三稿の組版・全証明監査は未完了。
+**直ちに着手する一手：** Aの非被約grid二型の四次テンソル左右恒等式と周期の平方を限定的に再検算し、Bの局所perfect複体のfiber集中補題を証明した。次はAの被約二・三・四成分の周期/Serre整合と、Bのfive-windowからGrothendieck tailsの局所化三角・compactnessへの推論を監査する。全三稿組版・全証明独立監査は未完了。
 
 ## 公表用原稿の三論文体制（2026-11-22に確定）
 
@@ -41,7 +41,7 @@
 
 **体上の分類と、相対モジュライ全体の有限型代数性の証明を原稿に統合した。** cubic側はlinearデータと被約・非被約を含む全Van den Bergh許容四つ組、noncubic側はP¹上の二つの被約二点集合の非順序対で分類する。四生成・七二次関係の有限同値判定を持ち、両領域が全対象を覆う。これらは既知入力を明示した本文の証明であり、包括的な新規性確定・外部査読・形式証明とは区別する。
 
-**内在的fppf stackと代数性の還元。** 局所有限型k-scheme上のmodule-object基底変更・descent、canonical compact圏・Serre・AZ・相対AS4被覆を定義に含める。反Serre再構成はH2↪[X3/PGL9]を全忠実にし、対角はaffineかつ有限表示。framed部分層X_asを用いてH2≃[X_as/PGL9]だが、X_as全体は有限型・滑らかな83次元スキームとして表される。`relative_moduli.tex`。
+**内在的fppf stackと代数性の還元。** 局所有限型k-scheme上のmodule-object基底変更・descent、canonical compact圏・Serre・AZ・相対AS4被覆を定義に含める。反Serre再構成はH2↪[X3/PGL9]を全忠実にし、対角はaffineかつ有限表示。framed部分層X_asを用いてH2≃[X_as/PGL9]だが、X_as全体は有限型・滑らかな83次元スキームとして表される。`papers/moduli/relative_definitions.tex` および `papers/moduli/relative_recognition.tex`（論文B）。
 
 **cubic領域全体のsmooth Artin開部分。** `thm:cubic-smooth-open` は、全幾何fiberがcubicとなる内在的部分スタックV_cub⊂H2が、有限型で滑らかな純次元3のArtin開部分であると示す。非線形の普遍quintuple上では相対Picard群の[−2]に沿うétale被覆で適合根を構成し、linear点は可換Qのchartで覆う。各chartの全閉点で、指定されたpointed同型を保つArtin持上げを証明する。relation schemeはU×_[X3/PGL9]Uであり、選んだ根やfoundationを保存しない同値も含む。`cor:cubic-formal-h2-abelian` により全cubic点で形式H2変形とpointed Abel変形は同値で、HH≥3=0、dim HH²−dim HH¹=3となる。noncubic境界を含む全H2の代数性は下記の有限型効果性で証明し、ambient内の開性は一致根対で否定する。
 

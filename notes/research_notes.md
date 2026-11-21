@@ -1,6 +1,32 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.64（A v1.67・20節、B v0.24・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.65（A v1.68・20節、B v0.25・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 退化四つ組と非可換五頂点窓の監査対象
+
+Van den Bergh の一次本文（arXiv:0807.3753v3）では、Proposition 5.6.1 は二周期の存在、
+Theorem 6.1 は反Serreに対応するcanonical四周期を指定したhullの存在・一意性、
+Lemmas 6.4–6.5 はその周期と移動の可換性・hullへの持上げを述べる。
+これらから任意の二周期の平方が自動的に反Serre移動になるとは推論しない。
+Aの全退化逆構成の四次テンソル回転の照合が必要である。
+
+非被約境界の二型 C=2V+H0+H∞ と C=2V+2H の双方について、
+未定元 d の多項式係数で自由代数の四次テンソルを左右表示し、
+両parityの各語の係数が一致することを今回独立計算で確認した。
+前者は偶数で beta(x)=x, beta(y)=y-(d/2)x、奇数で恒等、
+後者は全添字で恒等であり、theta=-beta²が成り立つ。
+頂点スカラー (-1)^i により符号差は自然同型で消える。
+現行の再現資産は computations/verify_reducible_quadruples.py の grid_verify。
+この確認は二型の低次数の計算であり、全許容四つ組の
+全次数AS4被覆・Gabriel–Krull条件・主分類を今回再証明したものではない。
+
+Bでは、可換局所環上のperfect複体の特殊fiberが次数零に集中する場合、
+単元minor消去により同じ局所環上で自由加群の次数零へ集中する補題
+lem:local-perfect-fibre-concentration を独立に証明した。
+全てのi,jに個別に適用できるが、無限個の開集合の交叉を
+開とする議論はしていない。有限型開での一様なAS4/heartは別の効果性定理が必要。
+次はfive-windowのtorsion局所化とcompactnessの全推論、
+被約境界の各型の周期・Serre比較を点検する。
 
 ## 有限 foundation の Hochschild 数値と GIT 比較の入口
 
