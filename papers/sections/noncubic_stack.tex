@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.1
+% 2026-11-21 / v1.3
 \section{中央二重平方族の商スタックと慣性}
 \label{sec:noncubic-stack}
 
@@ -762,8 +762,10 @@ $n\ge0$ なら上の最小の twist は $-2$ である。
 $H^0$ はそれぞれ $C_{2n}$、$C_{2n-1}$、$C_{2n-2}$
 （負の次数は零）である。
 それらの直和は Clifford 表示の $B_{2n}$ となる。
-この計算は有限自由な weighted \'Cech 項によるので
-任意の noetherian 底変更と整合する。
+各重みについて単項式で記述される weighted \v{C}ech 複体を
+直接計算すると、消滅する項は底環上分裂可能な複体の一部であり、
+残る $H^0$ は上記の有限自由加群となる。
+従って任意の noetherian 底変更と整合する。
 積は $\mathsf t=(-)_\iota(2)$ の functorial な合成から
 $a\star b=a\iota^{\deg_{\mathcal R}a}(b)$ と計算できる。
 \end{proof}
@@ -867,14 +869,18 @@ Zhang twist および Veronese の同値によって $(1)$ に移る。
 \begin{remark}[内在的モジュライに残る差]
 上の降下は次数偶数の環とその二次関係を
 $\mathfrak N^{\mathrm{pres}}$ 上に実際に構成する。
-全次数の局所自由性・左右 noetherian 性・
-反 Serre 幾何点との照合は成立する。
-しかし、その普遍環の $\qgr$ が任意の noetherian 基底上で
-相対 $\HH$ の heart、相対 Serre 双対、
-適合平方根の局所存在と AZ 豊富性を全て満たすという
-族としての認識、および全内在的 noncubic 族の
-$\mathfrak N^{\mathrm{pres}}$ への局所還元は未証明である。
-また (\ref{eq:noncubic-antiserre-grassmann}) は
+全次数の局所自由性・左右 noetherian 性、
+相対 $\qgr\mathcal R$ heart、相対 perfect 圏の
+Serre 双加群と反 Serre 軌道 Hom の計算、
+および適合する局所平方根の候補まで得られた。
+任意の noetherian 基底上のこの明示的な表示族について、
+全ての底上平坦 coherent 対象の相対 Serre 双対、
+Lowen--Van den Bergh の意味での平坦 Abel 変形との比較、
+相対 AZ 豊富性と正則正規 AS 被覆の全条件、
+さらに任意の内在的 noncubic 族の
+$\mathfrak N^{\mathrm{pres}}$ への局所還元は、
+ここでは完全には証明していない。
+特に (\ref{eq:noncubic-antiserre-grassmann}) は
 二次関係の射であって、非被約底上の全二次表示条件まで
 自動的に保証するものではない。
 \end{remark}
