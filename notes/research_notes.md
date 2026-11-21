@@ -355,7 +355,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 主論文v1.35の新しい3節（一般cubic族の認識・相対Picard根・全cubic smooth atlas）は独立に論理を読取り、左右規約・非被約底への引戻し・指定同型付きArtin持上げを点検した。全稿の新しい組版と画像確認は実行中であり、この保存時点では完了としない。直前の本文ではLuaLaTeX・latexmkで221頁のPDF/SyncTeXを生成し、最終logのWarning・Overfull/Underfull・文字欠落・未定義参照は零、選択15頁の一覧と主要2頁の拡大表示を確認した。全頁を個別に目視したとはしない。別稿v0.1は変更せず、既存25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、外部査読、形式証明、新規性の包括的確認は未実施。
+**組版・参照確認。** 主論文v1.35はLuaLaTeX・latexmkで240頁のPDF/SyncTeXを生成し、最終logのWarning・Overfull/Underfull・文字欠落・未定義参照は零であった。新しい一般cubic族の認識・相対Picard根・全cubic smooth atlasを含む選択21頁の一覧と主要2頁の拡大表示を確認した。sources PASS（42 manuscript files / 491 labels / 253 citation uses / 7 Markdown files）。新しい3節は独立に論理を読取り、左右規約・Picard恒等成分と相対作用・被約普遍基底でのSerre双加群比較・非被約底への引戻し・指定同型付きArtin持上げ・全有限型testへのexact同値の延長を点検した。既存の普遍Noetherian性・canonical hull・反例節の確認も保持する。全240頁を個別に目視したとはしない。別稿v0.1は変更せず、既存25頁の組版・全頁一覧と主要箇所の拡大確認を保持する。PDF・ログ・中間生成物は追跡しない。VS Code UI、外部査読、形式証明、新規性の包括的確認は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 
