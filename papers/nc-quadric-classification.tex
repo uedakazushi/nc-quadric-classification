@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.6
+% 日本語 LuaLaTeX。2026-11-21 / v1.7
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -44,7 +44,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.6（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.7（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -101,6 +101,15 @@ $HH^1$ で $1,1,2$、$HH^2$ で $3,3,5$ と決まる。
 基底と基底の各二項和の二次補正を厳密な整数演算で構成し、
 三次Hilbert階数条件の二次障害が消えることも証明する。
 ただし高次形式変形や相対 Abel 圏への実現は未証明である。
+修正した定義では、cubic/noncubic の型を局所定数とした
+表示スタックの非交和は、全幾何点と慣性を保つ有限型 Artin スタックとなるが、
+両型間の特殊化を除外する。
+一方、九生成元・五十六関係の二次環に三次階数四十九を課す
+局所閉 locus $X_3\subset\operatorname{Gr}(56,81)$ の商
+$[X_3/\operatorname{PGL}_9]$ は、
+特殊化を許す三次 Hilbert 条件付き二次提示の
+真正な有限型モジュライスタックとなる。
+これらと内在的 $\HHstack$ との同値は未証明である。
 相対 heart・平方根・豊富性まで要求する内在的モジュライスタックを
 $\HHstack$ と書くが、その構成と表示スタックとの比較は未完成である。
 既知結果の適用と直接証明を区別し、後者の包括的な新規性は未確認である。
@@ -521,6 +530,14 @@ noncubic 反Serre環は Koszul であり、
 相対 Abel 圏としての $\HHstack$ の接空間を直接決めない。
 命題~\ref{prop:h2-constructible-relations-and-irreducible-closure} は
 全実現像の構成可能性と有限型既約な代数的包絡を与える。
+さらに命題~\ref{prop:split-h2-presentation-moduli} は
+cubic/noncubicの表示型を基底上で固定した非交和の
+有限型Artinモジュライを与え、
+命題~\ref{prop:truncated-antiserre-moduli-stack} は
+三次Hilbert階数49までの二次提示の
+具体的な有限型商 $[X_3/\operatorname{PGL}_9]$ を構成する。
+前者は全幾何点と慣性を持つが型間の退化を失い、
+後者は既知の退化族を含むが余分な二次環も許す。
 これらは内在的な相対 $\HHstack$ との同値の証明ではない。
 相対条件を満たす内在的モジュライへこの結論を移すには、
 位相の一致、またはこれらの族の相対 $\HH$ 認識を示せば十分である。
