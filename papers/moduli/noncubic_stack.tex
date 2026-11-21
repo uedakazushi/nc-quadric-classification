@@ -1,0 +1,1544 @@
+% !TEX root = ../nc-quadric-moduli.tex
+% 2026-11-22 / v1.4（不変式の全証明は相対モジュライ別稿へ移管）
+\section{中央二重平方族の商スタックと慣性}
+\label{sec:noncubic-stack}
+
+$W=k u\oplus k v$ とし、非退化二次形式の開集合を
+$Q^{\mathrm{nd}}=\operatorname{Sym}^2W\setminus V(\operatorname{disc})$ と書く。
+\[
+ P=Q^{\mathrm{nd}}\times Q^{\mathrm{nd}},\qquad
+ \widetilde G=(\operatorname{GL}(W)\times\mathbb G_m^2)\rtimes S_2
+\]
+と置く。$S_2$ は二つの形式と二つのスカラーを交換し、恒等成分の作用は
+\[
+ (A,a_1,a_2)\cdot(f_1,f_2)
+ =\bigl(a_1^{-2}\operatorname{Sym}^2(A)f_1,
+        a_2^{-2}\operatorname{Sym}^2(A)f_2\bigr)
+\]
+である。これは環
+\[
+ B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)
+\]
+の $W$ の基底変更、$c,d$ のスカラー変更と交換に対応する。
+中央部分群
+\[
+ D=\{(\lambda I_W,\lambda,\lambda)\mid\lambda\in\mathbb G_m\}
+\]
+は $P$ に自明に作用する。$G=\widetilde G/D$ とする。
+$G$ は $W\oplus kc\oplus kd$ の分解を保ち、後二因子を交換してよい
+$\operatorname{PGL}_4$ の閉部分群であり、滑らかな五次元アフィン代数群である。
+$G$ にも $c,d$ の符号変更から来る $\mu_2^2$ が全点の慣性として残る。
+これは真の pointed 自己同値なので除去しない。
+$D$ を除く根拠は、作用の非効果性だけでなく、以下で確認する tails 上の自然同型である。
+
+\begin{proposition}[表示から構成するスタック]
+\label{prop:noncubic-presentation-stack}
+\[
+ \mathfrak N^{\mathrm{pres}}=[P/G]
+\]
+は滑らかな有限型 Artin スタックであり、次元は一である。
+$P$ 上の普遍次数付き環は全ての次数で有限自由である。
+その幾何点の同型類は全 noncubic $\mathcal H_2$ 対象の pointed exact 同値類と一致する。
+さらに幾何点での慣性は、pointed exact 自己同値の自然同型類の群と一致する。
+ここで pointed 射は $(F,\phi:F\mathcal O\simeq\mathcal O')$、
+二射は $\phi'\eta_{\mathcal O}=\phi$ を満たす自然同型とする。
+\end{proposition}
+
+\begin{proof}
+$P$ は六次元の滑らかな開集合であり、$G$ は五次元の滑らかな代数群なので、
+商スタックの一般論により最初の主張を得る
+\cite[Tag 0DLS]{StacksModuli}。
+
+普遍環は係数環上で $u^a v^b w$ を基底とする。
+ここで $w$ は $c,d$ の交互語であり、空語も許す。
+$c^2\mapsto f_1$, $d^2\mapsto f_2$ の書換えは長さを下げ、
+$c^3,d^3$ の重なりは係数の中心性によって解消する。
+従って基底は任意の底変更と整合し、各次数は有限自由である。
+
+幾何点の同型類の対応には定理~\cite[\texttt{thm:noncubic-classification}]{QuadricIntrinsic2026} を用いる。
+以下では既存の命題~\cite[\texttt{prop:first-orbit-object}]{QuadricIntrinsic2026}、
+系~\cite[\texttt{cor:first-orbit-rank-invariance}]{QuadricIntrinsic2026} と
+定理~\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026} を使って慣性を確認する。
+最初の命題の内在的認識によって、任意の pointed exact 自己同値は
+適合軌道対象の全列を同型を除いて保つ。
+中央二重平方環 $B_f$ の通常のシフトを適合根であると主張する必要はない。
+実際、定理~\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026} で構成した適合 Zhang twist は、
+その添字付き環を $B_f$ の添字付き環と同定し、全自由シフトを対応させる。
+
+\paragraph{曲線を点ごとに固定する変換.}
+二つの根対が異なる場合には、一根共有の場合を含め、
+$f_1,f_2,f_1f_2$ のいずれも $k(u,v)$ の平方ではない。
+これは各根に対応する一次素因子の付値の偶奇を比較すれば従う。
+従って $k(u,v)(\sqrt{f_1},\sqrt{f_2})$ は四次の体拡大である。
+可換環
+\[
+ k[u,v,c,d]/(c^2-f_1,d^2-f_2)
+\]
+は $k[u,v]$ 上の基底 $1,c,d,cd$ を持つので、この体に単射し、整域である。
+その斉次イデアルに一次式はないため、対応する整曲線 $E_f$ は $\mathbb P^3$ を張る。
+射影変換を表す可逆行列の固定点集合は、その固有空間の射影化の有限和である。
+$E_f$ が点ごとに固定されれば、その整性により一つの固有空間に全体が含まれる。
+従って行列はスカラーであり、射影変換は恒等である。
+
+根対が一致する場合には、座標と定数倍を選んで $f_1=f_2=uv$ とできる。
+$E_f$ は平面 $d=c$ と $d=-c$ にある二つの滑らかな円錐曲線
+\[
+ C_+=\{d=c,\ c^2=uv\},\qquad
+ C_-=\{d=-c,\ c^2=uv\}
+\]
+の和である。それぞれがその平面を張るため、点ごとに固定する行列の
+二つの三次元線型部分空間への制限はスカラーとなる。
+二つの部分空間は二次元空間 $\langle u,v\rangle$ で交わるので、
+これらのスカラーは等しい。両部分空間の和は四次元全体であり、
+この場合にも行列はスカラーである。
+
+\paragraph{自己同値群への帰着.}
+軌道対象を $L_i$ と書き、$F(L_i)\simeq L_i$ を選ぶ。
+$i=0$ では与えられた標識同型を使う。
+これらは添字付き Hom 環の自己同型を与える。
+定理~\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026} の双線形化計算によると、
+point correspondence の一次元部分は $E_f$ 上の対角であり、
+残りは互いに移る二つの孤立点である。
+従って隣接する二つの線型写像 $g_i,g_{i+1}$ は、射影化すると $E_f$ 上で一致する。
+前段より $g_i=b_i g$ と書ける。
+$L_i$ の同型を $t_i$ 倍すると隣接成分の作用は $t_{i+1}/t_i$ 倍されるため、
+$t_0=1$ として $t_{i+1}/t_i=b_i^{-1}$ を全整数について逐次選べば、
+全ての隣接成分の作用を同じ $g$ にできる。
+一次生成性より全成分の作用が $g$ の誘導する作用と一致する。
+Artin--Zhang 再構成をこの豊富な列に適用すると、これは $F$ と次数付き自己同型から
+誘導される関手の pointed 自然同型を与える。
+すなわち同型類の存在だけでなく、各自己同値そのものをこの方法で表せる。
+
+次数付き自己同型の核については補題~\cite[\texttt{lem:scalar-tails}]{QuadricIntrinsic2026} の証明をそのまま使える。
+その証明が使うのは $\operatorname{End}(L_i)=k$、一次生成性、
+および非零の次数一元の左乗法が tails で零射でないことだけである。
+これらは $B_f$ でも例外性、上の Zhang 同値と domain 性から成立する。
+具体的には $(-)_\sigma\simeq\mathrm{Id}$ の $L_i$ 成分を、
+基準同型 $b\mapsto\sigma^{-1}(b)$ の $c_i$ 倍と書くと、
+$a\in B_1$ に対する自然性が
+\[
+ c_{i+1}\sigma^{-1}(a)=c_i a
+\]
+を与える。よって $\sigma$ は次数スカラーである。
+逆向きは第 $n$ 次成分を $\lambda^{-n}$ 倍する自然同型で与えられ、
+$i=0$ の基準同型と整合する。
+異なる標識同型はスカラー自然同型で互いに同型となるため、余分な
+$\mathbb G_m$ は残らない。
+また恒等関手の自然自己同型は豊富な列上の定数スカラーで決まり、
+$\mathcal O$ 上で恒等という条件はその値を一にする。
+従って、標識と整合する二射を取った pointed groupoid の自己同型群は
+\[
+ \operatorname{Aut}_{\mathrm{gr}}(B_f)/D,
+\]
+二自己同型群は自明である。
+
+\end{proof}
+
+\begin{proposition}[根配置スタックへの射]
+\label{prop:noncubic-sign-gerbe}
+$\mathcal D=\mathbb P(\operatorname{Sym}^2W)\setminus V(\operatorname{disc})$ とし、
+\[
+ \mathfrak R=[(\mathcal D\times\mathcal D)/
+       (\operatorname{PGL}(W)\times S_2)]
+\]
+と置く。自然な射 $\mathfrak N^{\mathrm{pres}}\to\mathfrak R$ は gerbe であり、
+二つの形式を順序付けた局所表示上では相対慣性が $\mu_2^2$ である。
+$S_2$ はこの二因子を交換する。
+従って根配置の商スタック自体は pointed 慣性を保持しない。
+\end{proposition}
+
+\begin{proof}
+$G\to\operatorname{PGL}(W)\times S_2$ の核は二次元トーラスであり、
+形式の二つのスカラーに対して逆二乗により作用する。
+その作用の核は $\mu_2^2$ で、$c,d$ の独立の符号変更を表す。
+$P\to\mathcal D^2$ は二つの形式の代表を選ぶトーラス torsor である。
+任意の根配置の同型は、射影変換の線型持上げと単元の平方根を選べば
+局所的に $G$ の元へ持ち上がる。
+標数零ではこれらの選択は fppf、実際には適当な\'etale 局所化で可能である。
+従って対象と同型の両方が局所的に持ち上がり、gerbe の条件を満たす
+\cite[Tag 06PD]{StacksModuli}。
+\end{proof}
+
+\begin{example}[一般慣性と Deligne--Mumford 性の限界]
+四点が相異なる一般の場合、二点集合の非順序対を保つ射影変換群は
+Klein 四群である。従って pointed 慣性の位数は十六である。
+この一般性は、四点の交比の六つの値が相異なることから得られ、
+二対を保つ順列は Klein 四群となる。
+より具体的に $f_1=uv$, $f_2=(u-v)(u-\lambda v)$ とし、$r^2=\lambda$ を選ぶ。
+行列は列 $(u,v,c,d)^{\mathsf t}$ への置換を表し、
+例えば以下では $R(u)=\lambda v$, $R(v)=u$ である。
+二つの自己同型 $R,T$ を
+\[
+ R|_W=\begin{pmatrix}0&\lambda\\1&0\end{pmatrix},\quad
+ R(c)=rc,\quad R(d)=rd,
+\]
+\[
+ T|_W=\begin{pmatrix}\lambda&-\lambda\\1&-\lambda\end{pmatrix},\quad
+ T(c)=rd,\quad T(d)=r(\lambda-1)c
+\]
+で定める。置換行列の二乗はそれぞれ $\lambda I_4$ と $\lambda(\lambda-1)I_4$ であり、
+次数スカラーを除くと $R^2=T^2=1$ である。
+$c,d$ の符号変更を $e_1,e_2$ とすれば、
+$R$ は両方と可換、$T$ は両者を交換し、$[R,T]=e_1e_2$ となる。
+$\langle e_1,T\rangle$ は位数八の二面体群 $D_8$ で、$Re_1$ は独立の中央対合なので、
+一般慣性は $D_8\times C_2$ である。
+ここで $D_8$ は位数八の二面体群を表す。
+係数恒等式とこれらの射影群関係は
+\texttt{computations/verify\_stack\_symmetries.py} で厳密に検算できる。
+
+一根共有の代表 $f_1=uv$, $f_2=u(u-v)$ では、
+$u\mapsto u$, $v\mapsto u-v$, $c\leftrightarrow d$ と独立の符号変更により
+慣性は $D_8$ となる。
+一方、$f_1=f_2=uv$ では
+\[
+ u\mapsto t u,\quad v\mapsto t^{-1}v,\quad c\mapsto c,\quad d\mapsto d
+ \qquad(t\in\mathbb G_m)
+\]
+が非自明な一次元部分群を与える。
+従って $\mathfrak N^{\mathrm{pres}}$ 全体は Deligne--Mumford ではない。
+二つの根対が異なる開部分では慣性は有限なので Deligne--Mumford となる。
+\end{example}
+
+\subsection{良モジュライ空間と粗モジュライ空間の障害}
+\label{subsec:noncubic-good-moduli}
+
+$f=a u^2+buv+c v^2$ と $g=a'u^2+b'uv+c'v^2$ に対し
+\[
+ \Delta(f)=b^2-4ac,\qquad
+ D(f,g)=bb'-2ac'-2a'c,
+\]
+\[
+ \chi(f,g)=\frac{D(f,g)^2}{\Delta(f)\Delta(g)}
+\]
+と置く。$D$ は判別式の極化であり、線型変換 $A$ の下で
+$\Delta$ とともに $\det(A)^2$ 倍される。
+$\chi$ は両形式の定数倍と交換の下でも不変なので、$P$ 上の正則な $G$-不変関数である。
+
+\begin{proposition}
+\label{prop:noncubic-good-moduli}
+$k$ を標数零の代数閉体とする。このとき
+\[
+ k[P]^G=k[\chi].
+\]
+従って $\chi:\mathfrak N^{\mathrm{pres}}\to\mathbb A^1_\chi$ は
+Alper の意味の good moduli space である。
+一方、$\mathfrak N^{\mathrm{pres}}$ 全体は、幾何点の同型類を一対一に分類する
+粗モジュライ代数空間を持たない。
+\end{proposition}
+
+\begin{proof}
+不変式環 $k[P]^G=k[\chi]$ の完全な計算と
+$\chi:\mathfrak N^{\mathrm{pres}}\to\mathbb A^1$ の
+good moduli 性は既に本稿の命題~\ref{prop:moduli-noncubic-good-moduli} により証明した。
+四根が相異なる通常形において
+\[
+ \chi\bigl(uv,(u-v)(u-\lambda v)\bigr)
+ =\frac{(1+\lambda)^2}{(1-\lambda)^2}.
+\]
+一根共有の類と二根対が一致する類ではいずれも $\chi=1$ である。
+これらは異なる幾何点であるが good moduli space 上では同じ点になる。
+\cite[Theorem 6.6]{Alper2009} の規約内では、good moduli space の普遍性から、
+代数空間への射はこの二点を分離できない。
+任意の代数空間を許す場合も、例~\ref{ex:noncubic-specialization} の
+穿孔直線上で fppf 局所的に定値な族と補題~\ref{lem:constant-punctured-line-space} により
+同じ非分離が従う。従って幾何点の同型類に対して全単射となる
+粗モジュライ代数空間は存在しない。
+この議論を全内在的モジュライへ適用した形は、系~\ref{cor:global-h2-no-coarse-space} に置く。
+\end{proof}
+
+両者とその間の特殊化を保つ対象が $\mathfrak N^{\mathrm{pres}}$ であり、
+$\mathbb A^1_\chi$ はその good moduli space である。
+本節の不変式計算は表示スタック上で行ったものである。
+定理~\ref{thm:noncubic-intrinsic-presentation-equivalence} により、元の有限型 site 上では
+この表示商は内在的被約 noncubic 境界に同値となる。
+その良モジュライ射の特殊 fiber と全慣性は第~\ref{sec:noncubic-boundary-comparison}節で記述する。
+
+\begin{example}[共有根から根対一致への特殊化]
+\label{ex:noncubic-specialization}
+$\mathbb A^1_t$ 上で $f_1=uv$, $f_2=u(v-tu)$ とする。
+両形式の判別式は常に一である。$t\ne0$ の全ての点は一根共有の軌道に属し、
+$t=0$ では二つの根対が一致する。命題~\ref{prop:noncubic-presentation-stack} の基底により
+対応する次数付き環は各次数で自由であり、これは $P$ 上の実際の平坦族である。
+従って一根共有の軌道の閉包は、根対一致の軌道を含む。
+また $\operatorname{Sym}^2\mathcal D$ を粗なスキームとして先に取ると、
+一致した二対の $S_2$ 慣性も失うため、二対の交換もスタックとして割る必要がある。
+\end{example}
+
+\subsection{表示族における対合と正則切断の局所構成}
+\label{subsec:noncubic-relative-root}
+
+\begin{lemma}
+\label{lem:noncubic-local-exchange}
+標数零の体 $k$ 上のスキーム $S$ において、非退化な二元二次形式
+$f_1,f_2$ の族が与えられたとする。
+$S$ の \'etale 局所化の後、二形式を交換する線型対合 $L$ と単元 $\eta$ を選び、
+\[
+ L^2=1,\qquad Lf_1=\eta f_2,\qquad Lf_2=\eta^{-1}f_1
+\]
+とできる。さらに単元 $\gamma$、$\gamma^2=\eta$ を選べば
+\[
+ \sigma|_W=L,\qquad \sigma(c)=\gamma d,\qquad
+ \sigma(d)=-\gamma^{-1}c
+\]
+は中央二重平方環の族の次数付き自己同型であり、
+$\sigma^2$ は $W$ 上で恒等、$c,d$ 上で符号反転となる。
+この構成は二つの根対が一致するファイバーの近傍でも有効である。
+\end{lemma}
+
+\begin{proof}
+判別式が可逆なので、各形式の二つの根は \'etale 局所に順序付けられる。
+第一根対を $\{0,\infty\}$ とする座標を選ぶ。
+第二根対の一方を有限座標 $a$、他方を逆座標 $b$ で表示するように
+根の順序と開集合を選べば、第二根対は $\{a,1/b\}$ と書ける。
+ここで $b=0$ は第二根が無限遠にあることを表す。
+二根が相異なる条件は
+\[
+ \theta=1-ab\in\mathcal O_S^\times
+\]
+である。従って、適当な単元 $\rho_1,\rho_2$ により
+\[
+ f_1=\rho_1uv,\qquad
+ f_2=\rho_2 q,\qquad q=(u-av)(bu-v)
+\]
+と表示できる。この段階では形式の代表を平方根で正規化していない。
+置換行列
+\[
+ A=\begin{pmatrix}1&-a\\ b&-1\end{pmatrix}
+\]
+について直接計算すると
+\[
+ A^2=\theta I_2,\qquad A(uv)=q,\qquad A(q)=\theta^2uv.
+\]
+$\delta^2=\theta$ を満たす単元 $\delta$ を \'etale 局所に選び、
+\[
+ L=\delta^{-1}A,\qquad \eta=\frac{\rho_1}{\rho_2\theta}
+\]
+と置けば所要の三つの恒等式を得る。
+さらに $\gamma^2=\eta$ を選ぶ。
+$\theta,\eta$ は単元であり、標数零なので、これらの平方根を付加する射は
+有限 \'etale である。
+
+$r_c=c^2-f_1$, $r_d=d^2-f_2$ と書くと、定義した $\sigma$ は
+\[
+ \sigma(r_c)=\eta r_d,\qquad
+ \sigma(r_d)=\eta^{-1}r_c
+\]
+を満たすため商環へ降りる。$\sigma^2$ の式は定義から従う。
+根対が一致する点では $a=b=0$ と選べ、このとき $\theta=1$、
+$A=\operatorname{diag}(1,-1)$ である。従って一致境界で分母は消えない。
+\end{proof}
+
+\begin{proposition}[局所的な正則切断の族]
+\label{prop:noncubic-relative-regular-cut}
+前補題の選択を行ったアフィン底 $\operatorname{Spec}R$ 上で、
+$u,v$ を中央とし、一つの関係 $r_c-\eta r_d=0$ だけを課した環を $A'$ と置く。
+\[
+ g'=r_c+\eta r_d
+\]
+は中央正則元であり、$A'/(g')\simeq B_f$ である。
+$A'$、$B_f$ の各次数は有限自由 $R$-加群で、これらの記述と正則切断の完全列は
+任意の底変更と整合する。
+$\sigma$ は $A'$ に延びて $g'$ を固定するので、
+Zhang twist 後にも
+\[
+ B_f^\sigma\simeq (A')^\sigma/(g')
+\]
+という平坦な正則正規切断の族を得る。
+その各幾何ファイバーは定理~\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026} の適合表示となる。
+\end{proposition}
+
+\begin{proof}
+$x=c+\gamma d$, $y=c-\gamma d$ と置く。$2\gamma$ は単元なので可逆な基底変更であり、
+\[
+ xy+yx=2H(u,v),\qquad H=f_1-\eta f_2
+\]
+を得る。従って $A'$ は $R[u,v,x]$ の Ore 拡大であり、
+$\tau(u)=u$, $\tau(v)=v$, $\tau(x)=-x$、
+$\partial(u)=\partial(v)=0$, $\partial(x)=2H$ を用いて
+\[
+ A'=R[u,v,x][y;\tau,\partial]
+\]
+と表示される。この定義から $u^a v^b x^i y^j$ が $R$ 上の基底となる。
+また
+\[
+ g'=\frac{x^2+y^2}{2}-(f_1+\eta f_2)
+\]
+である。$x^2,y^2$ は中央であるから $g'$ は中央であり、
+$y$ に関する最高次数の係数が可逆元 $1/2$ であるため、
+$g'$ の乗法は $R$ に零因子がある場合にも単射である。
+$r_c-\eta r_d$ と $r_c+\eta r_d$ を同時に課すと、
+$2\eta$ の可逆性によって $r_c=r_d=0$ に等しくなる。
+商 $B_f$ の $R$-基底は $u^a v^b$ と $c,d$ の交互語との積である。
+従って各次数の有限自由性と任意の底変更に対する正則性が従う。
+
+前補題の関係から
+$\sigma(r_c-\eta r_d)=-(r_c-\eta r_d)$、$\sigma(g')=g'$ であり、
+$\sigma$ は $A'$ 上でも定義される。
+Zhang twist は底上の次数付き加群を変えない。
+$g'$ は twist 後には正規元で、掛け算は元の $g'$ の乗法と
+自己同型 $\sigma^2$ との合成であるため正則性も保つ。
+各幾何ファイバーでの AS 正則性、型 $(1,4,6,4,1)$ と適合根の性質は
+定理~\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026} の Ore 表示と Nakayama 計算に帰着する。
+\end{proof}
+
+\begin{remark}[相対主張の範囲]
+前二結果は、明示された二形式の族から、底変更と整合する次数付き環、
+正則切断、およびその幾何ファイバー上の適合根を局所的に構成する。
+左右 noetherian 性は noetherian 基底では後続の
+命題~\ref{prop:noncubic-relative-noetherian} で証明するが、
+相対 Serre 関手は後の Clifford trace により計算し、
+canonical compact 圏を含む全相対条件は
+第\cite[\texttt{sec:relative-noncubic-families}]{QuadricIntrinsic2026}節で証明する。また、任意の内在的 $\mathcal H_2$ 族がこの正規形へ
+\'etale 局所に還元できるという認識定理も含めていない。
+局所的な平方根の存在と、内在的な族の相対分類を区別する必要がある。
+\end{remark}
+
+\begin{remark}[相対版として未証明の部分]
+上で無条件に構成したのは、普遍中央二重平方環とその射影化した座標変換からなる
+表示スタックである。普遍環は $P$ 上、あるいは $[P/\widetilde G]$ 上にある。
+$D$ は次数 $n$ に重み $n$ で作用するため、同じ環束が剛体化後へ
+そのまま降下するとは主張しない。幾何点の同型類と慣性は正しいが、任意の基底上の
+$\mathcal O$-marked 圏の族との同値を主張するには、相対再構成と相対正規形が必要である。
+特に「全ての幾何ファイバーが noncubic」という条件だけでは、
+階数四を検出する小行列式の冪零成分が消えるとは限らない。
+例えば双対数上の行列は全幾何ファイバーで階数三でも、四次小行列式が
+非零の冪零元となり得る。階数三の閉部分スタックを定めるなら、
+その小行列式をスキーム論的に零とする条件が必要である。
+このため、点の分類をそのまま全 family の分類へ読み替えない。
+\end{remark}
+
+
+
+\subsection{平方根の選択に依存しない反 Serre 環の相対表示}
+\label{subsec:noncubic-antiserre-descent}
+
+ここでは表示スタックの上に、適合平方根を族として選ばずに
+反 Serre 切断環を復元する。これは単なる幾何点での同値類の記述より強いが、
+内在的な相対 Abel 圏の再構成とは区別する。
+$\widetilde G$、$D$、$G$、$P$ は本節の冒頭の記号とする。
+$P$ 上の普遍二重平方環を $\mathcal B$ とし、
+\[
+ \iota(u)=u,\quad \iota(v)=v,\quad
+ \iota(c)=-c,\quad\iota(d)=-d
+\]
+と置く。これは全ての基底変更および二形式の交換と可換する
+次数付き代数自己同型である。
+$W$ は $\widetilde G$ の標準二次元表現であり、
+$\mathcal D=\det W$ を $P$ 上の同変線束とする。
+
+\begin{proposition}[noncubic 反 Serre 環の相対降下]
+\label{prop:noncubic-antiserre-descent}
+$P$ 上で
+\[
+ \mathcal R_n=\mathcal B_{2n}\otimes\mathcal D^{-n}
+ \quad(n\ge0),\qquad
+ (a\otimes\ell^{-n})\star(b\otimes\ell^{-m})
+ =a\,\iota^n(b)\otimes\ell^{-(n+m)}
+ \tag{NC-AS}\label{eq:noncubic-antiserre-product}
+\]
+と定める。線束因子の積は自然なテンソル積と解釈する。
+すると以下が成立する。
+\begin{enumerate}
+\item $\mathcal R=\bigoplus_{n\ge0}\mathcal R_n$ は結合的な連結
+  次数付き代数であり、任意の底変更と両立する。
+  全次数で有限局所自由で
+  \[
+    \operatorname{rank}\mathcal R_n=(2n+1)^2.
+  \]
+\item $\mathcal R$ の $\widetilde G$-線型化では $D$ が自明に作用する。
+  従って $\mathcal R$ は rigidification
+  $\mathfrak N^{\mathrm{pres}}=[P/G]$ 上の
+  通常の準連接次数付き代数として降下する。
+\item 任意の幾何点において、$\mathcal D$ の線維を自明化した
+  $\mathcal R$ は、対応する $\HH$ 対象の内在的反 Serre 環
+  \[
+    \bigoplus_{n\ge0}
+       \operatorname{Hom}(\mathcal O,(S^{-1}[2])^n\mathcal O)
+  \]
+  と次数付き代数として同型である。
+  この主張では適合平方根そのものを追加標識として選ばない。
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+$\mathcal B$ の基底は $u^av^bw$（$w$ は $c,d$ の交互語）であり、
+その Hilbert 級数は
+\[
+ H_{\mathcal B}(z)
+ =\frac1{(1-z)^2}\left(1+\frac{2z}{1-z}\right)
+ =\frac{1+z}{(1-z)^3}.
+\]
+従って第 $j$ 次成分の階数は $(j+1)^2$ である。
+$\iota$ は代数自己同型なので $(\mathrm{NC\text{-}AS})$ の
+積の結合律は
+\[
+ (a\iota^n(b))\iota^{n+m}(c)
+ =a\iota^n(b\iota^m(c))
+\]
+から従う。すべては普遍的な基底と積により定義され、
+非被約基底を含む任意の底変更と両立する。
+
+$\widetilde G$ は $\mathcal B_j$ に次数付きに作用し、$\iota$ と可換する。
+$D$ の元 $(\lambda I_W,\lambda,\lambda)$ は
+$\mathcal B_{2n}$ に重み $2n$、$\det W$ に重み $2$ で作用する。
+従って $\mathcal B_{2n}\otimes(\det W)^{-n}$ 上の
+$D$-作用は自明であり、積も $\widetilde G$-同変である。
+$D$ が $P$ 上でも自明に作用するので、
+$\widetilde G$-同変準連接層のうち $D$ が自明に作用するものは
+$G=\widetilde G/D$-同変層へ降下する。
+
+最後に、補題~\ref{lem:noncubic-local-exchange} により
+\'etale 局所では適合する次数付き自己同型
+$\sigma$ を選べて、$\sigma^2=\iota$ である。
+通常の Zhang twist の積を
+$a*_\sigma b=a\sigma^{\deg a}(b)$ と書くと、
+偶数次数成分上で
+\[
+ a*_\sigma b=a\,\sigma^{2n}(b)
+              =a\,\iota^n(b)
+       \qquad(a\in\mathcal B_{2n})
+\]
+となる。従って
+\[
+ (\mathcal B^\sigma)^{(2)}
+ \simeq\bigl(\mathcal B^{(2)},\star\bigr)
+\]
+は $\sigma$ の選択によらない。
+幾何点では $\mathcal B^\sigma$ が適合する
+$(\mathcal O,s)$ の全切断環であり、
+$s^2\simeq S^{-1}[2]$ なのでその偶数部分は
+内在的反 Serre 環そのものである。
+$\mathcal D$ の線維の自明化は各次数の共通次数スカラーを変えるだけで、
+幾何点の代数同型類には影響しない。
+\end{proof}
+
+\begin{proposition}[九生成元の相対二次関係と商スタックへの射]
+\label{prop:noncubic-antiserre-grassmann}
+上の $\mathfrak N^{\mathrm{pres}}$ 上の代数 $\mathcal R$ は
+次数一で生成される。乗法
+\[
+ \mathcal R_1\otimes\mathcal R_1
+    \longrightarrow\mathcal R_2
+\]
+は任意の底変更後も全射であり、その核 $\mathcal J$ は
+階数 $56$ の部分束である。
+従って標準九次元空間 $U$ を固定すれば、自然な射
+\[
+ \Psi_{\mathrm{nc}}:
+ \mathfrak N^{\mathrm{pres}}
+ \longrightarrow
+ \left[\operatorname{Gr}(56,U\otimes U)/\operatorname{PGL}(U)\right]
+ \tag{NC-Gr}\label{eq:noncubic-antiserre-grassmann}
+\]
+を得る。幾何点上ではこの射は反 Serre 環の
+二次関係空間を与えるので、全体の
+反 Serre 商スタック候補の noncubic chart を具体化する。
+\end{proposition}
+\begin{proof}
+$\mathcal B$ は次数一生成である。
+任意の長さ $2n$ の積を隣接する二文字ずつに括り、
+偶数部分の $n$ 個の元 $a_1,\ldots,a_n$ と書く。
+$\iota$ は可逆なので
+\[
+ a_1\star\iota^{-1}(a_2)\star
+       \iota^{-2}(a_3)\star\cdots\star
+       \iota^{-(n-1)}(a_n)
+ =a_1a_2\cdots a_n .
+\]
+よって $\mathcal R$ は次数一生成である。
+特に $\mathcal R_1^{\otimes2}\twoheadrightarrow\mathcal R_2$ は
+全射であり、両辺の階数は $81,25$ だから
+$\mathcal J$ は階数 $56$ の局所直和因子である。
+この結論は各次数の局所自由性と積の任意底変更との整合性から、
+全ての基底上で成立する。
+
+$\mathcal R_1$ の射影枠束は $\operatorname{PGL}(U)$-torsor である。
+$\mathcal J\subset\mathcal R_1^{\otimes2}$ はその枠に関して
+同変な Grassmannian の点を与えるので
+(\ref{eq:noncubic-antiserre-grassmann}) を得る。
+各幾何点での識別は直前の命題による。
+この射の存在は、その像が内在的な相対 $\HH$ locus
+として開・閉・有限表示であることまでは主張しない。
+\end{proof}
+
+\begin{corollary}[noncubic の全反 Serre 環の相対二次提示]
+\label{cor:noncubic-relative-full-quadratic-presentation}
+命題~\ref{prop:noncubic-antiserre-grassmann} の
+九生成元からの自然な射は、全次数で同型
+\[
+ T_{\mathcal O}(\mathcal R_1)/(\mathcal J)
+       \xrightarrow{\ \sim\ }\mathcal R,
+ \qquad
+ \mathcal J=\ker(\mathcal R_1^{\otimes2}\to\mathcal R_2)
+ \tag{NC-quad}\label{eq:noncubic-relative-quadratic-presentation}
+\]
+である。この同型は任意の基底変更と両立する。
+従って射 $\Psi_{\mathrm{nc}}$ は、
+二次関係だけで表される反 Serre 環の
+\emph{全次数}の平坦な族を与えている。
+\end{corollary}
+\begin{proof}
+$\mathcal B$ は次数一生成かつ二次関係で定義されている。
+$\mathcal R$ はその偶数 Veronese を
+次数自己同型 $\iota$ で twist し、
+線束 $\det W$ の次数付き冪で捩ったものなので、
+補題~\cite[\texttt{lem:relative-quadratic-veronese}]{QuadricIntrinsic2026} が適用できる。
+線束は局所的に自明化でき、二次表示の同型は
+自明化の変更と整合するため、表示スタック全体へ降下する。
+$\mathcal B_4$ は任意基底上で自由であり、
+$\mathcal J$ の底変更も成立する。
+\end{proof}
+
+\begin{proposition}[noncubic Grassmann 射の明示的な affine cell]
+\label{prop:noncubic-grassmann-explicit-cell}
+$W=ku\oplus kv$ の基底を固定し、
+$\det W$ を $u\wedge v$ で自明化する。
+二形式 $(f_1,f_2)$ の係数に関する六次元アフィン空間
+\[
+ \mathbb A^6=\operatorname{Sym}^2W\oplus\operatorname{Sym}^2W
+\]
+全体まで $\mathcal R$ とその二次関係を延長する。
+次数一の九生成元を
+\[
+ \begin{gathered}
+ x_0=u^2,\quad x_1=uv,\quad x_2=v^2,\\
+ p_0=uc,\quad p_1=vc,\quad q_0=ud,\quad q_1=vd,\quad z=cd,\quad z'=dc
+ \end{gathered}
+ \tag{NC-9}\label{eq:noncubic-nine-generators}
+\]
+と置く（右辺はすべて $\mathcal B_2$ の元で、
+$\mathcal R$ の積には $\star$ を用いる）。
+以下の二十五個の積
+\[
+\begin{gathered}
+ x_0\star x_0,\ x_0\star x_1,\ x_0\star x_2,\
+ x_1\star x_2,\ x_2\star x_2,\\
+ x_0\star p_0,\ x_0\star p_1,\
+ x_1\star p_1,\ x_2\star p_1,\quad
+ x_0\star q_0,\ x_0\star q_1,\
+ x_1\star q_1,\ x_2\star q_1,\\
+ x_i\star z,\ x_i\star z'\quad(i=0,1,2),\\
+ p_0\star z',\ p_1\star z',\
+ q_0\star z,\ q_1\star z,\quad
+ z\star z,\ z'\star z'
+\end{gathered}
+\tag{NC-25}\label{eq:noncubic-25-pivots}
+\]
+は、どの $(f_1,f_2)$ 上でも $\mathcal R_2$ の基底となる。
+従って積写像 $\mathcal R_1^{\otimes2}\to\mathcal R_2$ の
+固定した $25\times25$ minor は $\pm1$ である。
+
+この minor に対応する
+$\operatorname{Gr}(56,81)$ の affine cell を
+$\mathbb A^{25\cdot56}$ と同定すれば、
+\[
+ \Phi:\mathbb A^6\longrightarrow\mathbb A^{25\cdot56}
+ \tag{NC-cell}\label{eq:noncubic-cell-map}
+\]
+は全係数環にわたり多項式であり、
+実際には\emph{閉埋込み}である。
+従って非退化二形式の開集合 $P\subset\mathbb A^6$ は、
+固定された同じ cell への局所閉埋込みとして実現される。
+ここで述べる埋込みは\emph{基底を固定した表示空間}の埋込みであり、
+その群商が内在的な $\HHstack$ へ閉埋込みとなるとは
+主張しない。
+\end{proposition}
+\begin{proof}
+$\mathcal B$ の $u^av^bw$（$w$ は $c,d$ の交互語）
+という単項式基底は、二形式が退化しても成立する。
+次数四の二十五個の基底を、交互語の長さ
+$0,1,2,3,4$ ごとに並べると、それぞれ
+\[
+ 5,\quad 8,\quad 6,\quad4,\quad2
+\]
+個である。
+式~(\ref{eq:noncubic-25-pivots}) の積は、
+この順にちょうど全基底単項式を列挙する。
+右因子が $p_i,q_i$ の場合だけ
+$\iota$ によって負符号が付き、それ以外は正符号となる。
+どの積にも $c^2$ や $d^2$ の簡約は生じず、
+したがってこの $25$ 列の行列は、
+上記単項式基底で符号付き置換行列である。
+その行列式は $\pm1$ で、二形式の係数に依存しない。
+
+この基底を使えば、残り $56$ 個の二語積を
+$c^2=f_1,d^2=f_2$ によって簡約した係数を
+$\mathbb A^{25\cdot56}$ の座標として取れる。
+簡約はモニックなので、各座標は二形式の六係数の
+多項式である。従って $\Phi$ は多項式射である。
+
+閉埋込み性には、六係数をこの座標から回復すればよい。
+\[
+ f_1=a u^2+buv+c v^2,\qquad
+ f_2=a' u^2+b'uv+c'v^2
+\]
+と置くと
+\[
+ p_0\star p_0=-u^2f_1
+   =-a u^4-bu^3v-cu^2v^2,\qquad
+ q_0\star q_0=-u^2f_2
+   =-a'u^4-b'u^3v-c'u^2v^2.
+\]
+右辺の三基底単項式は
+$x_0\star x_0,x_0\star x_1,x_0\star x_2$
+に対応する固定 pivot である。
+従って $\Phi$ の行列座標のうち六つが
+$-a,-b,-c,-a',-b',-c'$ となる。
+この六座標の射影
+$\mathbb A^{25\cdot56}\to\mathbb A^6$
+と $\Phi$ の合成は、符号反転を除き恒等である。
+従って $\Phi$ はアフィン空間間の多項式写像のグラフとして
+閉埋込みになる。$P$ は判別式の非消滅開であるため、
+その制限は局所閉埋込みである。
+\end{proof}
+
+\subsection{noncubic の Koszul 性と一次変形の全次数平坦性}
+\label{subsec:noncubic-koszul-infinitesimal}
+
+ここでは三次 Hilbert 条件に対する接計算を、
+全次数の一次変形と Hochschild コホモロジーへ結び付ける。
+この結び付きは Koszul 変形原理の一次版であり、
+高次の変形を自動的に積分するという意味ではない。
+
+\begin{proposition}[noncubic 反 Serre 環の Koszul 性]
+\label{prop:noncubic-antiserre-koszul}
+標数零の代数閉体 $k$ 上で、任意の二元二次形式
+$f_1,f_2\in k[u,v]_2$ に対し
+\[
+ B=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2),
+ \qquad
+ R=\bigl(B^{(2)}\bigr)^\iota,\quad
+ \iota|_{k[u,v]}=1,\quad \iota(c)=-c,\ \iota(d)=-d
+\]
+と置く。ここで $\iota$ は偶数 Veronese に作用する
+次数を保つ自己同型とし、最後の上添字は Zhang twist を表す。
+このとき $B$ および $R$ は Koszul 代数である。
+特に本稿の全 noncubic $\HH$ 対象の反 Serre 環は Koszul である。
+\end{proposition}
+\begin{proof}
+$u,v,c,d$ の自由結合代数において
+\[
+ vu\mapsto uv,\quad
+ cu\mapsto uc,\quad cv\mapsto vc,\quad
+ du\mapsto ud,\quad dv\mapsto vd,\quad
+ c^2\mapsto f_1,\quad d^2\mapsto f_2
+\]
+という二次書換え系を取る。
+次数辞書式順序 $d>c>v>u$ で左辺は先頭項となる。
+重複のうち $c^3,d^3$ については、
+$f_1,f_2$ が中央の $u,v$ の多項式なので
+左右の簡約は同じ結果になる。
+その他の長さ三の重複は $u,v$ を左へ移す規則と
+二乗規則の交換、または $u,v$ の可換性の整合であり、
+いずれも同じ正規形へ簡約される。
+従って Diamond Lemma により
+$u^av^bw$（$w$ は $c,d$ の交互語）が基底となり、
+表示は二次 Gröbner (PBW) 基底を持つ。
+二次 PBW 代数の Koszul 性は
+Priddy の定理
+\cite[Chapter 4, Theorem 3.1]{PolishchukPositselski2005}
+によるから $B$ は Koszul である。
+
+Koszul 代数の Veronese 部分環も Koszul であることは
+\cite[Chapter 3, Proposition 2.2(i)]{PolishchukPositselski2005}
+により、$B^{(2)}$ は Koszul となる。
+Zhang twist は次数付き加群圏と線型自由解消を移すので
+Koszul 性を保ち、$R$ も Koszul である。
+noncubic の反 Serre 環との同一視は
+命題~\ref{prop:noncubic-antiserre-descent} による。
+\end{proof}
+
+\begin{lemma}[Koszul 二次環の一次変形における三次判定]
+\label{lem:koszul-first-order-degree-three}
+$R_0=T_k(V)/(J)$ を局所有限な連結 Koszul 二次代数、
+$A=k[\varepsilon]/(\varepsilon^2)$ とする。
+$J_A\subset V_A^{\otimes2}$ を $J$ に特殊化する
+階数 $\dim J$ の直和因子とし、
+$R_A=T_A(V_A)/(J_A)$ とする。
+このとき以下は同値である：
+\begin{enumerate}
+\item $(R_A)_3$ が $A$ 上平坦である。
+\item 全ての $n\ge0$ で $(R_A)_n$ が $A$ 上平坦である。
+\end{enumerate}
+従って三次 Hilbert 関数の determinantal locus の
+$R_0$ における接空間は、
+\emph{全次数平坦な一次の次数付き二次代数変形}を
+正確に記述する。
+これは双対数上の結論であり、二次・三次以降の
+Artin 小拡大への持上げは主張しない。
+\end{lemma}
+\begin{proof}
+$E=V^{\otimes2}/J$ とし、$J_A$ を
+$j-\varepsilon\widetilde\phi(j)$ の張るグラフとして表す。
+ここで $\phi\in\operatorname{Hom}_k(J,E)$ である。
+二次関係の三次における重なりは
+\[
+ K_3=(V\otimes J)\cap(J\otimes V)\subset V^{\otimes3}
+\]
+で測られる。
+$R_0$ の Koszul 双加群複体の内部次数零の
+Hochschild コチェイン複体の最初の項は
+\[
+ C^1=\operatorname{Hom}(V,R_{0,1}),\quad
+ C^2=\operatorname{Hom}(J,R_{0,2}),\quad
+ C^3=\operatorname{Hom}(K_3,R_{0,3}).
+ \tag{Kos-C}\label{eq:noncubic-koszul-hoch-cochain}
+\]
+三次関係を $A$ 上で持ち上げたときの整合性は、
+$\phi$ の微分
+$d^2\phi\in\operatorname{Hom}(K_3,R_{0,3})$
+が零になる条件である。
+実際、一つの三次重なりを
+$V\otimes J$ と $J\otimes V$ の二通りに書き、
+関係式 $j-\varepsilon\widetilde\phi(j)$ を代入すると、
+両者の差の $\varepsilon$ 次係数が
+$d^2\phi$ となる。
+よって $(R_A)_3$ の平坦性は $d^2\phi=0$ と同値である。
+
+Koszul 性から上の双加群複体は対角双加群の
+projective resolution であり、bar 解消への比較は
+Hochschild コチェイン複体の準同型を与える。
+従って $d^2\phi=0$ なら、
+$\phi$ は通常の次数零 Hochschild $2$-cocycle
+$\mu_1:R_0\otimes R_0\to R_0$ の制限として表せる。
+比較の変更によって生じる $d^1$-境界は
+次数一生成元の $1+\varepsilon\theta$ という
+基底変更で補正できる。
+ゆえに $\phi$ に対応する二次関係を持つよう
+$\mu_1$ と生成元の lift を選べる。
+
+このとき $R_0\otimes_k A$ 上の積
+\[
+ a*b=ab+\varepsilon\mu_1(a,b)
+\]
+は $\varepsilon^2=0$ と cocycle 条件により結合的で、
+全次数自由な次数付き $A$-代数 $R_{\mu_1}$ を与える。
+上述の生成元の選択から、
+$R_A\twoheadrightarrow R_{\mu_1}$ という
+次数付き $A$-代数の全射が存在する。
+各次数で両者の剰余体への制限は同じ $R_{0,n}$ であり、
+$R_{\mu_1,n}$ は自由なので、
+局所 Artin 環上の Nakayama 補題によって
+この全射は各次数で同型である。
+従って $(R_A)_n$ は全次数で自由となる。
+逆向きは自明である。
+\end{proof}
+
+\begin{remark}[既知の Koszul 変形原理との関係]
+形式的な Koszul 変形について、三次までの平坦性が
+全次数の平坦性を含意することは Drinfeld の
+Koszul deformation principle として既知である
+\cite[Chapter 6, Theorem 2.1 と同章導入]{PolishchukPositselski2005}。
+本補題は Koszul 双加群解消による一次定式化の直接証明である。
+任意の非被約 Noetherian 基底についての強化は、
+同書 Chapter 6, Theorem 7.3 を用いる
+補題~\ref{lem:relative-koszul-degree-three} で与える。
+\end{remark}
+
+\subsection{三次 Hilbert 条件の接空間と非cubic表示の法方向}
+\label{subsec:noncubic-tangent-degree-three}
+
+前節の固定 Grassmann cell の局所座標を用いて、
+相対反 Serre 環の三次成分が所望階数
+$49=(2\cdot3+1)^2$ を保つ一次変形を調べる。
+これだけで相対 $\HHstack$ を構成できるとは主張しない。
+
+$V=k^9$、$J\subset V^{\otimes2}$ を階数 $56$ の関係部分空間、
+$E=V^{\otimes2}/J$ とし、自然な写像
+\[
+ L_J:V\otimes J\longrightarrow E\otimes V,\qquad
+ v\otimes r\longmapsto(\pi\otimes1)(v\otimes r)
+ \tag{H3-L}\label{eq:noncubic-degree-three-relation-map}
+\]
+を考える。$R=T(V)/(J)$ とすると
+$R_3=\operatorname{coker}L_J$ である。
+$E\otimes V$ は次元 $25\cdot9=225$、
+$V\otimes J$ は次元 $9\cdot56=504$ なので、
+$\dim R_3=49$ は $\operatorname{rank}L_J=176$ と同値になる。
+したがって Grassmannian 上に
+$\operatorname{rank}L_J\le176$ で定まる
+閉 determinantal locus $\mathcal D_{3,\ge49}$ がある。
+階数がちょうど $176$ の点で
+その接空間は、一般の determinantal 接空間の公式から
+\[
+ T_J\mathcal D_{3,\ge49}
+ =\left\{
+ \phi\in\operatorname{Hom}(J,E):
+ \overline{\delta L_\phi}:
+   \ker L_J\to\operatorname{coker}L_J
+ \text{ が零}
+ \right\}.
+ \tag{H3-T}\label{eq:noncubic-third-degree-tangent}
+\]
+
+\begin{proposition}[noncubic の接方向の分離と三次条件の正確な接次元]
+\label{prop:noncubic-third-degree-tangent}
+$k$ を標数零の代数閉体とし、
+命題~\ref{prop:noncubic-grassmann-explicit-cell} の
+六係数から得られる関係空間を $J(f_1,f_2)$ とする。
+次の三つの点を考える：
+\[
+\begin{array}{c|c|c}
+ &f_1&f_2\\ \hline
+ x_{\mathrm{dis}}&uv&u^2+v^2\\
+ x_{\mathrm{shr}}&uv&u(v-u)\\
+ x_{\mathrm{eq}}&uv&uv .
+\end{array}
+\tag{H3-types}\label{eq:noncubic-tangent-examples}
+\]
+それぞれで、$\mathrm{PGL}_9$ 軌道の接空間と
+六係数の像の接空間の和は、正確に次元 $81$ である。
+個々の軌道の接次元は順に $80,80,79$、
+六係数の接像はそれぞれ六次元であり、
+交わりの次元は順に $5,5,4$ である。
+
+また上の三点で
+$\mathcal D_{3,\ge49}$ の接空間はそれぞれ
+\[
+ \dim T_{x_{\mathrm{dis}}}\mathcal D_{3,\ge49}=83,
+ \quad
+ \dim T_{x_{\mathrm{shr}}}\mathcal D_{3,\ge49}=83,
+ \quad
+ \dim T_{x_{\mathrm{eq}}}\mathcal D_{3,\ge49}=84
+ \tag{H3-bound}\label{eq:noncubic-tangent-bounds}
+\]
+と\emph{正確に}決まる。
+従って、三次 Hilbert 条件を保つ一次方向を
+noncubic 表示と基底変更から来る方向で割った空間の次元は、
+この三点でそれぞれ\emph{正確に} $2,2,3$ である。
+二形式の非交差な根対を持つ一般点についても
+上界 $83$ は成立する。
+
+最後の等号は三次 Hilbert determinantal locus に関するものである。
+三次 Hilbert 条件は $\HH$ 公理の一部分にすぎず、
+四次以上の平坦性・相対 heart・Serre・
+AZ/AS 条件を含めない。
+\end{proposition}
+\begin{proof}
+六係数の接像が六次元であることは、
+命題~\ref{prop:noncubic-grassmann-explicit-cell} の
+閉埋込み性による。
+$\mathrm{PGL}_9$ 軌道の次元は pointed 自己同値群の
+幾何点慣性の計算で求められる。
+異なる根対（交わりが空または一根）の安定化群は有限、
+一致した根対では一次元である。
+従って軌道次元は $80,80,79$ となる。
+
+相対二形式表示の群 $G$ は次元五で、
+$\Phi:P\to\operatorname{Gr}(56,81)$ は $G$-同変である。
+$G$ の根配置点の軌道次元は、
+異なる根対の場合は五、一致する場合は四である。
+これらの軌道の接方向は、$\mathrm{PGL}_9$ 軌道と
+六係数像の接空間の交わりに入る。
+したがって両者の和の次元は
+それぞれ高々 $80+6-5=81$ と
+$79+6-4=81$ である。
+
+一方、固定25個の単位 pivot を用い、
+$T_J\operatorname{Gr}(56,81)\simeq\operatorname{Hom}(J,E)$
+の1400個の座標で、$\mathfrak{pgl}_9$ の
+80個の行列単位と六係数の微分を計算すると、
+係数を法 $101$ に還元した正確な行列の階数は、
+三点とも $81$ である。
+この検算は
+\texttt{computations/verify\_noncubic\_degree3\_tangent.py}
+に保存した。
+整数係数行列の標数零における階数は
+法 $101$ の階数以上なので、前段の上界と併せて
+標数零の和の接空間は正確に次元 $81$ と分かる。
+
+次に式~(\ref{eq:noncubic-third-degree-tangent}) の線形化を行う。
+三点とも $L_J$ は階数 $176$ であり、
+$\dim\ker L_J=328$、
+$\dim\operatorname{coker}L_J=49$ である。
+二次関係 $J$ を $25\times56$ の Grassmann affine 座標で動かしたとき、
+$\overline{\delta L_\phi}$ は、
+$328\cdot49$ 個の線形方程式として表示できる。
+これらを1400変数上の行列として法 $101$ で
+\emph{全行を}正確な行基本変形で処理すると、
+三点での階数はそれぞれ
+\[
+ 1317,\qquad 1317,\qquad 1316 .
+\]
+この計算ではランダムなサンプリングを行わず、
+$\ker L_J$ の328列と余核の49座標から
+全 $16072$ 行を構成し、
+既知の86個の群・係数方向が全て線形条件を
+満たすことも確認している。
+同じスクリプトに全有限体計算を収めた。
+整数係数の行列で行っているため、
+標数零での線形条件の階数はそれぞれ
+この値以上である。これが接次元の上界を与える。
+
+さらに、法101の行基本変形から得た
+$1400$ 成分の核ベクトル
+$83,83,84$ 本を有理数へ復元する。
+非零成分は分子の絶対値高々 $5$、
+分母高々 $2$ の有理数で再構成できる。
+各列を分母の最小公倍数で払って
+\emph{整数ベクトル}にした後、
+$\ker L_J$ の基底も整数係数へ持ち上げて
+検算を行う。三次関係の線形化に対応する
+\emph{整数係数}の全 $16072\times1400$ 行列を
+独立に構成し直し、すべての整数核ベクトルについて
+通常の整数行列積が\emph{正確に零}になることを確認した。
+これらの列は元の自由変数位置に非零の
+対角小行列を持つため、有理数上線型独立である。
+この整数検証を上の計算スクリプトに収めた。
+従って標数零での核次元はそれぞれ少なくとも
+$83,83,84$ でもある。
+前段の上界と併せて等号を得る。
+
+非交差根対の一般点では、上記の基準点で
+階数 $1317$ の minor が非零であることから、
+階数の下半連続性により同じ上界が
+非空 Zariski 開上で成立する。
+\end{proof}
+
+\begin{remark}[接空間の正確な解釈]
+この命題は、$\mathrm{PGL}_9$ 軌道と
+noncubic 六係数族の和の接空間だけでなく、
+三次 Hilbert determinantal locus の
+三基準点の接次元も\emph{正確に}決める。
+ただし法101での階数の一致だけでは
+標数零での等号は証明できないため、
+有理核の再構成と整数行列積による零性の検証を必要とした。
+これを、四次以降のHilbert条件や内在的
+$\HHstack$ の接空間次元と同一視しない。
+非交差根対の\emph{一般点}については、
+少なくとも次元83の上界が従うが、
+全非交差点で同じ次元だとはここでは主張しない。
+\end{remark}
+
+\begin{theorem}[noncubic 反 Serre 環の低次 Hochschild コホモロジー]
+\label{thm:noncubic-hh01-hh2}
+標数零の代数閉体上、式~(\ref{eq:noncubic-tangent-examples})
+の三つの noncubic 反 Serre 環を
+$R_{\mathrm{dis}},R_{\mathrm{shr}},R_{\mathrm{eq}}$
+とする。$HH^i(R)_0$ は内部次数零の
+Hochschild コホモロジーを表す。
+このとき
+\[
+\begin{array}{c|ccc}
+ &R_{\mathrm{dis}}&R_{\mathrm{shr}}&R_{\mathrm{eq}}\\ \hline
+ \dim HH^1(R)_0 &1&1&2\\
+ \dim HH^2(R)_0 &3&3&5
+\end{array}
+\tag{NC-HH}\label{eq:noncubic-hh-table}
+\]
+である。
+
+前二点の $HH^1_0$ の一次元は
+次数スカラーに対応する Euler 導分である。
+二根対一致点では、これに加えて
+連続自己同型の一次元が現れる。
+$HH^2_0$ は全次数で平坦な
+\emph{次数付き結合代数の一次変形}を
+基底変更で割った接空間を記述する。
+これを、そのまま内在的な
+$\HHstack$ の相対 Abel 変形の接空間と
+同一視してはならない。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:noncubic-antiserre-koszul} により
+三つの $R$ は Koszul である。
+従って式~(\ref{eq:noncubic-koszul-hoch-cochain}) の
+Koszul 双加群解消が内部次数零の
+Hochschild コホモロジーを計算する。
+
+ここで $\dim V=9$、
+$\dim J=56$、$\dim R_2=25$、$\dim R_3=49$ である。
+三次関係の自然な写像
+$V\otimes J\to (V^{\otimes2}/J)\otimes V$
+の階数は $176$ なので
+\[
+ \dim K_3
+  =2(9\cdot56)-(9^3-49)=328.
+\]
+ゆえに
+\[
+ \dim C^1=81,\quad
+ \dim C^2=56\cdot25=1400,\quad
+ \dim C^3=328\cdot49=16072.
+\]
+前述の三次 Hilbert 条件の微分
+$d^2:C^2\to C^3$ の階数は
+命題~\ref{prop:noncubic-third-degree-tangent}
+の整数核検証によって
+\[
+ 1317,\quad1317,\quad1316
+\]
+と標数零で正確に決まっている。
+一方 $d^1:C^1\to C^2$ は生成元の
+基底変更による微分であり、
+その階数は同じ命題の $\mathrm{PGL}_9$ 軌道次元
+$80,80,79$ と一致する。
+従って
+\[
+ \dim HH^2(R)_0
+  =\dim\ker d^2-\operatorname{rank}d^1
+  =(83-80,\ 83-80,\ 84-79)=(3,3,5).
+\]
+
+また $C^0=R_0=k$ から $C^1$ への
+微分は内微分、すなわちスカラーとの交換なので零である。
+よって
+\[
+ \dim HH^1(R)_0
+ =\dim\ker d^1=(81-80,\ 81-80,\ 81-79)=(1,1,2).
+\]
+生成元 $V$ に恒等写像を作用させる
+Euler 導分は、その次数 $n$ 成分で $n$ 倍として作用する。
+従って $HH^1_0$ の一般点の一次元を張る。
+二根対一致点の追加方向は
+命題~\ref{prop:noncubic-presentation-stack} に記述した
+正次元の pointed 慣性に対応する。
+最後の一次変形の解釈は
+補題~\ref{lem:koszul-first-order-degree-three} による。
+\end{proof}
+
+\begin{remark}[形式的な持上げと次数付き代数の局所模型]
+今回得た $HH^2_0$ の $3,3,5$ 次元は
+真の\emph{一次}平坦次数付き代数変形である。
+それらが $k[\varepsilon]/(\varepsilon^3)$ や
+$k[[t]]$ へ持ち上がるとは限らない。
+後続の障害は $HH^3(R)_0$ 中にあり、
+一次 cocycle の Gerstenhaber 平方の類を調べる必要がある。
+また、次数付き環の変形が
+相対 $\HH$ の heart・平方根・AS 正則被覆を持つかは
+なお独立の認識問題である。
+したがって今回の定理は内在的 $\HHstack$
+の smoothness や成分数を証明するものではない。
+\end{remark}
+
+\begin{proposition}[noncubic 横断方向の三次平坦性の二次持上げ]
+\label{prop:noncubic-transverse-second-order}
+式~(\ref{eq:noncubic-tangent-examples}) の三つの点を取る。
+各点において
+\[
+ T_x\mathcal D_{3,\ge49}
+ \big/
+ \bigl(T_x(\operatorname{PGL}_9\cdot x)
+     +d\Phi(T_xP)\bigr)
+\]
+の次元は $r_x=2,2,3$ である。
+それぞれで、この商へ同型に写る
+$\mathbb Q$-上定義された $r_x$ 次元部分空間 $N_x$
+を選べて、任意の $\phi\in N_x$ に対し
+$k[t]/(t^3)$ 上の関係部分束
+\[
+ J_t=J+t\phi+t^2\psi
+ \quad(\bmod\,t^3)
+\]
+で $R_t=T_{k[t]/t^3}(V\otimes k[t]/t^3)/(J_t)$
+の\emph{三次成分}が自由階数 $49$ となるものが存在する。
+言い換えれば、三次 Hilbert determinantal locus の
+二次障害写像は選んだ $N_x$ 上で恒等的に零である。
+
+ここで直接構成する持上げは三次成分に関する二次 jet である。
+系~\ref{cor:noncubic-second-order-all-degrees} により、
+これらは全次数で平坦な代数の変形となる。
+任意の内在的 $\HHstack$ 族への持上げ、
+および無限次の形式変形の存在は主張しない。
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:noncubic-third-degree-tangent} の
+整数行列で、$\ker d^2$ と
+群作用・六係数方向の和を計算する。
+法 $101$ の行簡約で商の基底候補を選び、
+分母を払って整数係数の
+$\phi_1,\ldots,\phi_{r_x}\in\ker d^2$
+を得る。実際に整数行列との積が零であることを
+直接検証し、商での独立性は法 $101$ の
+線型独立性で確認できる。
+
+$L_J$ の階数 $176$ を与える小行列を固定し、
+その行集合を $I$、列集合を $C$ と書く。
+$A=L_0|_{I,C}$ は整数係数行列であり、
+今回の三点では $\det A=\pm1$ と
+整数係数逆行列の等式を確認した。
+$K_0$ を $\ker L_0$ の列基底、
+$Q_3$ を $\operatorname{coker}L_0$ への
+PBW 基底による射影とする。
+一次変形 $\phi$ に対して
+\[
+ L_t=L_0+tL_1(\phi)
+      +t^2\bigl(L_1(\psi)+L_2(\phi)\bigr)
+      \pmod{t^3}
+\]
+と書く。$L_2(\phi)$ は二次関係の
+Grassmann affine 座標の積から来る
+$\phi$ に関して二次の項である。
+
+一次整合 $Q_3L_1(\phi)K_0=0$ が成り立つので、
+kernel 基底の一次補正を
+\[
+ K_1=-i_C\,A^{-1}(L_1(\phi)K_0)|_I
+\]
+と選べる。従って二次持上げ条件は
+\[
+ d^2\psi+
+ \mathcal Q_x(\phi)=0,\qquad
+ \mathcal Q_x(\phi)
+  =Q_3\left(
+      L_2(\phi)K_0
+      -L_1(\phi)i_CA^{-1}(L_1(\phi)K_0)|_I
+      \right)
+ \tag{NC-Ob2}\label{eq:noncubic-degree-three-second-obstruction}
+\]
+という $\operatorname{Hom}(\ker L_0,\operatorname{coker}L_0)$
+の線形方程式に帰着する。
+ここで $d^2$ は式~(\ref{eq:noncubic-koszul-hoch-cochain})
+の微分である。
+この表示は小行列 $A$ に関する Schur complement の
+二次 Taylor 係数に等しい。
+
+各基底ベクトル $\phi_i$ と、
+異なる二基底ベクトルの和 $\phi_i+\phi_j$ に対し、
+法 $101$ の線形方程式を解いて
+$\psi_i,\psi_{ij}$ の候補を求めた。
+さらに、$\phi$・$L_0$・$K_0$・$Q_3$・
+$d^2$ を整数係数で再構成し、
+必要に応じて $101^2$ を法とする有理数復元を行い、
+\[
+ d^2\psi_i=-\mathcal Q_x(\phi_i),\qquad
+ d^2\psi_{ij}=-\mathcal Q_x(\phi_i+\phi_j)
+\]
+が\emph{厳密な有理数の等式}となることを検証した。
+この計算は
+\path{computations/verify_noncubic_second_order.py}
+で再現できるようにした。
+非交差・一根共有点では三組ずつ、
+二根対一致点では六組の補正を検証し、
+一致点では一部に分母 $2$ の係数を用いた。
+有限体で障害が零というだけで
+標数零の零性を主張しているのではない。
+
+$\mathcal Q_x(\phi)$ は $\phi$ に関して二次式なので、
+各基底方向とその二つずつの和で
+障害の類が零であることは、
+すべての
+$\phi=\sum_i a_i\phi_i\in N_x$
+に対して障害の類が零であることと同値である。
+例えば二次補正として
+\[
+ \psi(\phi)=
+ \sum_i a_i^2\psi_i
+ +\sum_{i<j}a_ia_j(\psi_{ij}-\psi_i-\psi_j)
+\]
+を選べば式~(\ref{eq:noncubic-degree-three-second-obstruction})
+が成立する。従って任意の横断方向で
+三次 Hilbert 条件を二次まで保つ族を得る。
+\end{proof}
+
+\begin{remark}[二次持上げと実際のモジュライとの距離]
+命題~\ref{prop:noncubic-transverse-second-order} は、
+三次条件の一次法方向が二次障害によって
+直ちに消えるわけではないことを示す。
+今回の証明から $\operatorname{HH}^3(R)_0$ 全体の
+消滅や、相対 Abel 圏としての変形の unobstructedness
+は従わない。
+次の課題は三次・それ以上の障害、および
+foundation から得られる実際の相対反 Serre
+族の横断接像との比較である。
+\end{remark}
+
+\begin{lemma}[二重平方環の中心 Clifford 表示]
+\label{lem:noncubic-relative-clifford-center}
+任意の可換環 $A$ 上の二元二次形式 $f_1,f_2$ に対し、
+\[
+ B=A[u,v]\langle c,d\rangle/(c^2-f_1,\ d^2-f_2),
+ \qquad h=cd+dc
+\]
+とする。$h$ は中心元であり、
+\[
+ C=A[u,v,h]\subset B,\qquad
+ B=C\oplus Cc\oplus Cd\oplus C(cd)
+ \tag{NC-Cl}\label{eq:noncubic-relative-clifford}
+\]
+は次数付き $C$-加群として自由な直和である
+（$\deg u=\deg v=\deg c=\deg d=1,\ \deg h=2$）。
+特に $B$ は二元二次形式
+$c^2=f_1,\ d^2=f_2,\ cd+dc=h$
+の Clifford 代数として、中心多項式環上の階数四の代数である。
+この表示は任意の底変更と可換する。
+\end{lemma}
+\begin{proof}
+$u,v$ は中心なので、$c^2=f_1,d^2=f_2$ から
+$[c,h]=[d,h]=0$ が直接従う。
+関係
+\[
+ c^2=f_1,\qquad d^2=f_2,\qquad dc=h-cd
+\]
+を使うと、任意の語は $C$ 上 $1,c,d,cd$ の
+線型結合に整理できる。従って右辺から $B$ への自然射は全射である。
+一方、交互語基底によって $B$ の各次数は $A$-自由であり、
+Hilbert 級数は $(1+z)/(1-z)^3$ である。
+右辺も $A$-自由で、その Hilbert 級数は
+\[
+ \frac{1+2z+z^2}{(1-z)^2(1-z^2)}
+ =\frac{1+z}{(1-z)^3}
+\]
+と一致する。
+各次数では同じ階数の有限自由 $A$-加群の間の全射なので
+同型である。従って $C$ も本当に $B$ の多項式部分環であり、
+全表示は任意の底変更に両立する。
+\end{proof}
+
+\begin{proposition}[Clifford trace と相対 Serre 双加群]
+\label{prop:noncubic-relative-serre-on-perfect}
+$A$ を標数零の体上の可換 noetherian 環とし、
+$\mathcal B=B$ を補題~\ref{lem:noncubic-relative-clifford-center}
+の環とする。$C=A[u,v,h]$ に
+$\deg(u,v,h)=(1,1,2)$ を入れる。
+次数付き $C$-線型写像
+\[
+ \operatorname{tr}:B\longrightarrow C(-2)
+\]
+を、基底 $(1,c,d,cd)$ における $cd$ の係数を取る写像とする。
+すると積による pairing は完全で、
+\[
+ \operatorname{tr}(ab)=\operatorname{tr}(b\iota(a)),
+ \qquad
+ \operatorname{Hom}_C(B,C(-4))
+       \simeq B_{\iota}(-2)
+ \tag{NC-Serre}\label{eq:noncubic-relative-serre-bimodule}
+\]
+という次数付き $B$-双加群の同型を与える。
+ここで $B_\iota$ は右作用を $\iota$ で twist した双加群である。
+
+重み付き射影スタック
+$\mathcal X=\mathbb P_A(1,1,2)$ 上で、
+$B$ から作る局所自由な階数四の代数層を $\widetilde B$ とする。
+$\operatorname{Perf}(\mathcal X,\widetilde B)$ は相対 Serre 双対を持ち、
+その関手は
+\[
+ S_A\simeq(-)_\iota(-2)[2],
+ \qquad S_A^{-1}[2]\simeq(-)_\iota(2)
+ \tag{NC-S}\label{eq:noncubic-relative-serre-functor}
+\]
+である。これらの pairing と双加群の構成は任意の
+noetherian 底変更に両立する。
+さらに補題~\ref{lem:noncubic-local-exchange} で得た
+$\sigma^2=\iota$ により、適合平方根の候補は
+\'etale 局所に exact 関手 $(-)_\sigma(1)$ として得られる。
+\end{proposition}
+\begin{proof}
+$\operatorname{tr}$ の積 pairing は、$C$-基底
+$1,c,d,cd$ 上で行列式が単元となる。
+実際、$c^2=f_1,d^2=f_2,dc=h-cd$ により
+$1$ は $cd$ と、$c$ は $d$ と、$d$ は $c$ と、
+$cd$ は $1$ とそれぞれ係数が $\pm1$ の主項で対になる。
+この pairing は $\iota$-cyclic である。
+生成元 $u,v,h$ は中央で $\iota$ に固定され、
+$c,d$ については
+$\operatorname{tr}(cd)=1$、
+$\operatorname{tr}(dc)=-1$ から
+$\operatorname{tr}(ab)=\operatorname{tr}(b\iota(a))$
+を確認できる。生成元での確認から全元に拡張する。
+従って写像 $a\mapsto[b\mapsto\operatorname{tr}(ba)]$ は
+$C$ 上の Frobenius 双対を与え、
+右作用は $\iota$ で twist される。
+重み $2$ の trace から
+$\operatorname{Hom}_C(B,C)\simeq B_\iota(2)$、
+$C$ の canonical shift $-4$ を加えると
+(\ref{eq:noncubic-relative-serre-bimodule}) を得る。
+
+$\mathcal X$ は基底上滑らかな相対次元二の
+proper な重み付き射影 Deligne--Mumford スタックで、
+$\omega_{\mathcal X/A}\simeq\mathcal O_{\mathcal X}(-4)$ である。
+上の Clifford 表示により $\widetilde B$ は
+$\mathcal O_{\mathcal X}$ 上有限局所自由である。
+従って $\widetilde B$ 上 perfect な二対象 $P,Q$ に対し、
+$\mathcal X/A$ の相対 Grothendieck--Serre 双対性と
+有限局所自由代数の tensor--Hom 随伴から
+\[
+ \mathbf R\operatorname{Hom}_A
+ \bigl(\mathbf R\operatorname{Hom}_{\widetilde B}(P,Q),A\bigr)
+ \simeq
+ \mathbf R\operatorname{Hom}_{\widetilde B}
+ \bigl(Q,P\otimes_{\widetilde B}^{\mathbf L}
+       \operatorname{Hom}_{\mathcal O_{\mathcal X}}
+         (\widetilde B,\omega_{\mathcal X/A})[2]\bigr).
+\]
+ここで左辺・右辺の $\mathbf R\operatorname{Hom}$ は
+$\mathcal X$ 上の大域導来 Hom を含む。
+双加群の同型により右辺は
+$\mathbf R\operatorname{Hom}_{\widetilde B}
+ (Q,P_\iota(-2)[2])$ となる。
+$\iota$ は次数付き自己同型なので twist と次数移動は
+perfect 対象の自己同値であり、これが相対 Serre 関手である。
+相対 dualizing 線束、Clifford trace、局所自由双加群は
+底変更するので、双対性も noetherian 底変更と可換する。
+最後に $\sigma^2=\iota$ と shift との可換性から
+$(-)_\sigma(1)$ の二乗が
+$(-)_\iota(2)=S_A^{-1}[2]$ となる。
+この結論は perfect 圏の Serre 作用を計算するものであり、
+全ての coherent $\widetilde B$-加群が perfect であることを
+別の証明なしに主張するものではない。
+\end{proof}
+
+\begin{corollary}[noncubic 族の相対反 Serre 軌道の完全な計算]
+\label{cor:noncubic-relative-orbit-hom}
+前命題と同じ仮定の下、$\mathcal X=\mathbb P_A(1,1,2)$、
+$\mathcal O_B=\widetilde B$ と置く。
+perfect 圏上の相対反 Serre 作用
+$\mathsf t=S_A^{-1}[2]$ に対し、全ての $n\ge0$ で
+\[
+ \mathbf R\operatorname{Hom}_{\mathcal X,\widetilde B}
+    (\mathcal O_B,\mathsf t^n\mathcal O_B)
+       \simeq B_{2n}[0]
+ \tag{NC-orbit}\label{eq:noncubic-relative-orbit-hom}
+\]
+が成立し、任意の noetherian 底変更と可換する。
+積は (\ref{eq:noncubic-antiserre-product}) の
+$\iota$-twist された積（行列式線束の twist を除く）である。
+従って命題~\ref{prop:noncubic-antiserre-descent}
+の相対環は、幾何点で一致するだけでなく、
+明示された noncubic 表示族の perfect 圏の
+\emph{実際の相対反 Serre 軌道環} を降下したものである。
+\end{corollary}
+\begin{proof}
+式~(\ref{eq:noncubic-relative-serre-functor}) より
+$\mathsf t^n\mathcal O_B$ の下にある
+$\mathcal O_{\mathcal X}$-加群は
+$\widetilde B(2n)$ である。
+$B$ の中心 Clifford 表示により
+\[
+ \widetilde B(2n)\simeq
+ \mathcal O_{\mathcal X}(2n)
+ \oplus\mathcal O_{\mathcal X}(2n-1)^{\oplus2}
+ \oplus\mathcal O_{\mathcal X}(2n-2).
+\]
+重み付き多項式環 $C=A[u,v,h]$ の相対 \'Cech 複体は、
+$\mathcal O_{\mathcal X}(j)$ の $H^1$ が任意の $j$ で零、
+$H^2$ が $j\ge-3$ で零であることを示す。
+$n\ge0$ なら上の最小の twist は $-2$ である。
+従って高次大域コホモロジーは全て零であり、
+$H^0$ はそれぞれ $C_{2n}$、$C_{2n-1}$、$C_{2n-2}$
+（負の次数は零）である。
+それらの直和は Clifford 表示の $B_{2n}$ となる。
+各重みについて単項式で記述される weighted \v{C}ech 複体を
+直接計算すると、消滅する項は底環上分裂可能な複体の一部であり、
+残る $H^0$ は上記の有限自由加群となる。
+従って任意の noetherian 底変更と整合する。
+積は $\mathsf t=(-)_\iota(2)$ の functorial な合成から
+$a\star b=a\iota^{\deg_{\mathcal R}a}(b)$ と計算できる。
+\end{proof}
+
+\begin{proposition}[noetherian 基底上の noncubic 表示の有限性]
+\label{prop:noncubic-relative-noetherian}
+任意の可換 noetherian 基底に引き戻した普遍環 $\mathcal B$、
+および上記の反 Serre 環 $\mathcal R$ は左右 noetherian である。
+より精密には $\mathcal B$ は中央多項式環上階数四の有限自由代数、
+$\mathcal R$ は同じ中央多項式環の四次 Veronese 上
+有限生成加群である。
+これらの主張は相対 Serre 双対性や相対 heart の認識を仮定しない。
+\end{proposition}
+\begin{proof}
+noetherian なアフィン基底 $\operatorname{Spec}A$ 上で調べる。
+前補題により
+$C=A[u,v,h]$ は $\mathcal B$ の中央に入り、
+$\mathcal B$ は $C$ 上階数四の自由加群である。
+$C$ は可換 noetherian なので、$\mathcal B$ は左右 noetherian である。
+
+さらに $\mathcal R$ を、偶数 Veronese
+$\mathcal B^{(2)}$ の $\iota$ による Zhang twist とみなす。
+$C^{(4)}=\bigoplus_{m\ge0}C_{4m}$ は有限生成の
+可換 noetherian 環である。
+$\iota$ は $C$ 上恒等であり、$C_{4m}$ の元は
+$\mathcal R$ の次数 $2m$ に入る。
+この次数では $\iota^{2m}=1$ だから
+(\ref{eq:noncubic-antiserre-product}) の
+左・右の積は通常の積と一致する。
+従って $C^{(4)}$ は $\mathcal R$ の中心に入る。
+$C$ は $C^{(4)}$ 上有限生成加群であり
+（任意の次数四以上の単項式は次数四の単項式で割れる）、
+$\mathcal B$ は $C$ 上階数四の自由加群である。
+従って偶数次数部分 $\mathcal R$ も
+$C^{(4)}$ 上有限生成加群となる。
+この有限性から $\mathcal R$ も左右 noetherian である。
+線束 $\mathcal D$ の twist はアフィン基底上で局所的に
+自明化できるため、結論は表示スタックの任意の
+noetherian 基底への引戻しでも成立する。
+\end{proof}
+
+\begin{proposition}[平方根を大域選択しない noncubic 相対 heart]
+\label{prop:noncubic-relative-heart-veronese}
+$\mathfrak N^{\mathrm{pres}}=[P/G]$ 上の
+命題~\ref{prop:noncubic-antiserre-descent} の
+次数付き環 $\mathcal R$ は、任意の可換 noetherian 基底に引き戻すと
+左右 noetherian、次数一生成であり、各次数は有限局所自由となる。
+従って
+\[
+  (\mathcal A_T,\mathcal O_T)
+  =\bigl(\operatorname{qgr}\mathcal R_T,\,
+          \pi\mathcal R_T\bigr)
+  \tag{NC-heart}\label{eq:noncubic-relative-heart}
+\]
+という構造対象付き noetherian Abel 圏を、基底上の
+表示データから直接構成できる。
+これは $\sigma$ や ambient の大域的な選択を必要としない。
+
+$T$ の \'etale 局所化後、
+命題~\ref{prop:noncubic-relative-regular-cut} の
+適合 Zhang twist $\mathcal B^\sigma$ を取ると、
+構造対象を保つ exact 同値
+\[
+ \operatorname{qgr}\mathcal B^\sigma
+       \simeq\operatorname{qgr}\mathcal R_T
+\]
+があり、左辺の二次数 shift と右辺の一次数 shift は対応する。
+全幾何ファイバーは当初の noncubic $\HH$ 対象である。
+さらに perfect 対象の相対反 Serre 関手は右辺の
+次数 shift $(1)$ に対応する。
+\end{proposition}
+\begin{proof}
+次数別局所自由性、次数一生成、noetherian 性はそれぞれ
+命題~\ref{prop:noncubic-antiserre-descent}、
+命題~\ref{prop:noncubic-antiserre-grassmann}、
+命題~\ref{prop:noncubic-relative-noetherian} による。
+従って $\operatorname{qgr}\mathcal R_T$ は
+有限生成次数付き右加群を有限次数の torsion 加群で割った
+noetherian Abel 圏であり、構造対象 $\pi\mathcal R_T$ を持つ。
+
+\'etale 局所に $\det W$ を自明化し、
+補題~\ref{lem:noncubic-local-exchange} の $\sigma$ を取れば
+$\mathcal R_T=(\mathcal B^\sigma)^{(2)}$ である。
+$\mathcal B^\sigma$ は noetherian で次数一生成なので、
+次数二 Veronese の quotient-category 同値を適用できる。
+体上での通常の主張は Verevkin~\cite[Theorem 4.4]{Verevkin1992}
+（定理の引用は後続文献の照合による）に対応する。
+今回必要な noetherian 底上でも、
+次数一生成性から高次数の奇数成分が直前の偶数成分と次数一の積で
+生成されること、$\mathcal B^\sigma$ が偶数 Veronese 上
+有限生成加群であることを用いれば、有限生成加群の
+Veronese 関手が torsion を保ち、商圏で忠実充満かつ本質的全射となる
+同じ証明が成立する。
+具体的には次数付き加群 $M$ を
+$\bigoplus_{n}M_{2n}$ に移し、逆方向は偶数部分環から元の環への
+誘導加群を取る。両方向の自然比較の核と余核は高次数で零となり、
+$qgr$ の同値を与える。正則右加群と
+二次数 shift をそれぞれ正則 Veronese 加群と
+一次数 shift に送る。
+ここで $\mathcal R_T$ は偶数部分そのものなので、
+全ての比較はもとの環と底変更の形成に両立する。
+perfect 圏の Serre の表示は
+命題~\ref{prop:noncubic-relative-serre-on-perfect} により
+$S^{-1}[2]\simeq(-)_\iota(2)$ であり、
+Zhang twist および Veronese の同値によって $(1)$ に移る。
+各幾何ファイバーの適合性は既存の逆構成定理による。
+\end{proof}
+
+\begin{remark}[明示表示族と横断認識の区別]
+降下した反 Serre 環と $\qgr$ heart は、
+定理~\cite[\texttt{thm:noncubic-relative-effectivity}]{QuadricIntrinsic2026} により、
+全ての相対 $\mathfrak H_2$ 条件を備えた実際の表示族を与える。
+同定には weighted Clifford 表示の canonical compact 圏・相対 smoothness、
+同じ根の Serre 双対・AZ・全軌道、および Ore/PBW 被覆の全相対条件を用いる。
+ただし任意の内在的 noncubic 族のこの表示への局所還元、
+表示射の相対全忠実性、noncubic 特殊点を持つ一般有限型の横断族の認識は未証明である。
+Artin 基底上の横断変形は系~\ref{cor:noncubic-all-artin-h2} により認識できる。
+全幾何ファイバーが noncubic でも、非被約基底上の四次 minor が
+スキーム論的に零であるとは限らない。
+従って次元一の表示族から全境界近傍の代数性を結論しない。
+\end{remark}

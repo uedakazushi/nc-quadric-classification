@@ -51,68 +51,7 @@ fiber 条件は、各 $S_i$ が長さ三の有限生成 projective 解消を持�
 \end{lemma}
 
 \begin{proof}
-まず指定された体上の解消を、頂点を保って極小化する。
-同一頂点間の可逆な次数零成分を消去するだけなので、支持は依然として
-$i,\ldots,i+4$ に含まれる。
-$j\le i+4$ に対して
-$\operatorname{Hom}(P_j,P_{i+4})$ は $j=i+4$ の場合にだけ非零である。
-さらに極小微分の同一頂点成分は零である。
-従って極小解消中の $P_{i+4}$ の次数 $p$ における重複度は
-$\dim\operatorname{Ext}^p(S_i,P_{i+4})$ に等しい。
-\eqref{eq:five-window-fiber-dual} は、この重複度が $p=3$ で一、
-それ以外で零であることを保証する。
-特に低い解消次数にも $P_{i+4}$ が現れ得る、という可能性はここで排除される。
-
-$W_i$ を頂点 $i,\ldots,i+4$ の有限部分代数とし、
-$E_i=\bigoplus_{a=i}^{i+4}Re_a$、$J_i=(W_i)_{>0}$ と置く。
-$S_i$ の $E_i$ に相対的な normalized bar 解消を $C$ へ誘導する。
-得られる増大複体の第 $p$ 項は
-\[
- \mathcal B_{i,p}=
- \bigoplus_{i=i_0<i_1<\cdots<i_p\le i+4}
- C_{i_0i_1}\otimes_R\cdots\otimes_R C_{i_{p-1}i_p}
-       \otimes_RP_{i_p},\qquad 0\le p\le4,
- \tag{BW-bar}\label{eq:five-window-bar}
-\]
-である。$p=0$ は $P_i$ とする。
-微分は隣接因子の積および最後の $P_{i_p}$ への作用による交代和である。
-全ての係数は有限 projective であり、各頂点成分は有界な有限 projective
-$R$-複体となる。
-
-指定された fiber 上で、仮定した長さ三の解消を $W_i$ へ制限する。
-現れる全 projective の添字が窓に含まれるため、これは $W_i$ 上でも
-projective 解消である。その bar 解消との homotopy 同値を $C$ へ誘導すると、
-誘導された bar 複体は元の $C$ 上の解消と homotopy 同値になる。
-従って \eqref{eq:five-window-bar} の fiber は全頂点成分で完全である。
-
-有限 projective 複体の fiber 判定により、増大 bar 複体の各頂点成分は
-分裂完全である。局所環の場合には、特殊 fiber の可逆 minor を逐次消去すればよい。
-全幾何 fiber を仮定する場合には同じ操作を各点の近傍で行う。
-これは perfect 複体の所定次数・所定階数への集中の開性
-\cite[Tag 0BDK, Lemma 36.31.3]{StacksPerfectFibers}
-の初等的な場合である。
-従って bar 複体は全 $C$ 上で完全であり、任意基底変更後にも完全である。
-無限個の頂点に対する開近傍を交叉していない。
-局所環の場合には常に同じ局所環を使い、一般基底の場合には既に全 fiber に
-仮定を置いている。
-
-長さ四を三へ短縮できることを確認する。
-第4項は $P_{i+4}$ の有限 projective 係数倍だけからなる。
-微分の第3項にある $P_{i+4}$ 係数への成分は、fiber 上で
-$\operatorname{Tor}^{W_i}_4(S_i,S_{i+4}^{\ell})=0$ により単射である。
-ここで $S_{i+4}^{\ell}$ は左単純加群である。
-従ってこの係数写像は局所直和因子への単射であり、
-第4項を projective な可縮直和成分として消去できる。
-残る長さ三の複体は有限生成 projective からなる。
-局所的な短縮から大域的にも projective dimension が高々三であることが従う。
-実際、元の長さ四の有限 projective 解消の第3 syzygy は有限表示で、
-中心に沿う局所化で projective となるので projective である。
-
-最後に $\operatorname{Hom}_C(\mathcal B_{i,\bullet},P_j)$ を取る。
-各項は有限 projective $R$-加群であり、その指定 fiber は
-\eqref{eq:five-window-fiber-dual} によって零または階数一の単一 cohomology を持つ。
-同じ有限複体の消去により \eqref{eq:five-window-relative-dual} を得る。
-この複体の準同型と line の同定は任意 tensor に保たれる。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_local_tails}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[二次曲面の固定階数の五頂点複体]
@@ -160,79 +99,7 @@ Noetherian 性はこの命題の仮定にも結論にも含めない。
 \end{proposition}
 
 \begin{proof}
-定理~\ref{thm:relative-cubic-tails-tilting} の局所化の証明が、
-極小解消の形によらず適用できることを確認する。
-有限 truncation $P_i/(P_i)_{\ge n}$ は
-$C_{il}\otimes_RS_l$ を逐次商に持つ有限 filtration により
-projective dimension 高々三の perfect 対象である。
-従って tail $(P_i)_{\ge n}$ は perfect で projective dimension 高々二となる。
-距離二までの有限生成性から全 tail は有限生成で、次数 torsion は localizing
-subcategory をなす。
-
-torsion radical の各頂点での導来関手は、有限 truncation からの Ext の
-filtered colimit として計算される。
-上に有界な対象への十分高い tail からの全 Ext は零であり、
-一般の torsion 対象はこのような有界部分対象の filtered colimit である。
-有限 truncation の perfectness を使えば正次数の導来 torsion は
-torsion 対象上で消える。従って section functor も tail からの Ext の
-filtered colimit で計算でき、$\operatorname{cd}\tau\le3$、
-$\operatorname{cd}\omega\le2$ を得る。
-各導来関手は直和と可換する。有限 cohomological dimension により、
-unbounded $\mathbf R\omega$ も直和と可換し、
-\[
- \mathbf R\tau X\longrightarrow X\longrightarrow\mathbf R\omega\pi X\longrightarrow
-\]
-が成立する。これにより全 $\mathcal O_i$ は compact で、導来圏を生成する。
-\eqref{eq:five-window-relative-dual} と有限 truncation の filtration を使うと
-\eqref{eq:five-window-tails-cohomology} を得る。
-また同じ AS 双対計算により $\mathbf R\tau P_j=N_j[-3]$ であり、
-\[
- (N_j)_i=\begin{cases}
- \operatorname{Hom}_R(C_{i,j-4},\mathcal L_{j-4}),&i\le j-4,\\
- 0,&i>j-4.
- \end{cases}
-\]
-したがって $N_j$ は上に有界である。
-その部分加群 $(N_j)_{\ge a}$ は有限個の頂点に支持され、
-各頂点への filtration の逐次商は $S_i$ に $R$-加群を係数として付けたものである。
-この逐次商は係数加群の $R$-自由解消により $\operatorname{loc}\{S_i\}$ に属する。
-$a\to-\infty$ の telescope を取り、filtered colimit の完全性を使えば
-$N_j\in\operatorname{loc}\{S_i\}$ を得る。
-$\mathbf R\tau$ は三角関手として直和と可換し、$P_j$ が
-$D(\operatorname{Gr}C)$ を生成するので、その像全体が
-$\operatorname{loc}\{S_i\}$ に含まれる。
-$\pi X=0$ なら局所化三角から $X\simeq\mathbf R\tau X$ である。
-逆に $\pi S_i=0$ であり $\pi$ は直和と可換するため、
-導来 torsion kernel はちょうど $\operatorname{loc}\{S_i\}$ となる。
-無界複体を bounded truncation の無条件な極限と同一視する操作は不要である。
-
-四項による生成性のため、bar 複体を最終添字で filter する。
-最終添字が $i+4$ の係数複体を $V_i^\bullet$ とする。
-これは $W_i$ の bar 解消に $-\otimes_{W_i}S_{i+4}^{\ell}$ を適用した複体である。
-前補題の証明で確認した極小解消の終頂点条件から、
-指定 fiber は階数一の $\operatorname{Tor}_3$ だけを持つ。
-相対的にも、支持が $i,\ldots,i+4$ に限られることから
-\[
- \operatorname{Hom}_R(V_i^\bullet,R)
-   =\operatorname{Hom}_C(\mathcal B_{i,\bullet},P_{i+4})
-   \simeq\mathcal L_i[-3].
-\]
-有限 projective 複体の双対を再び取れば
-$V_i^\bullet\simeq\mathcal L_i^{\vee}[3]$ となる。
-ここでは bar 第 $p$ 項を cohomological degree $-p$ に置く。
-最終添字 $\le i+3$ の部分複体は $P_i,\ldots,P_{i+3}$ の thick 閉包に属する。
-bar 複体全体の tails 像は零だから、上の filtration の三角により
-$\mathcal O_{i+4}$ も $\mathcal O_i,\ldots,\mathcal O_{i+3}$ の thick 閉包に属する。
-逆方向には $P_i$ を bar 複体から分離すれば
-$\mathcal O_i$ が次の四項で生成される。
-従って任意の四項窓は全 $\mathcal O_i$ を生成する。
-四項間の higher Ext は \eqref{eq:five-window-tails-cohomology} で零なので
-導来 Morita 定理~\cite[\S\S4.3, 8.2]{Keller1994} が適用できる。
-
-全解消は任意基底変更で完全である。導来拡大は $P_i,S_i$ を変更後の同じ対象へ送り、
-$\operatorname{loc}\{S_i\}$ による局所化へ降りる。
-四項窓の自己準同型環も通常の tensor で引き戻されるため、
-\eqref{eq:five-window-tails-morita} は実際の導来基底変更と整合する。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_local_tails}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{良い noncubic 根の局所環上での全軌道と heart}
@@ -278,81 +145,7 @@ $\Lambda=\Lambda_U\otimes R$ とし、
 \end{theorem}
 
 \begin{proof}
-$\Lambda$ は相対 smooth proper であり、$E_i$ は perfect なので、
-任意の $i,j$ に対する derived Hom は perfect $R$-複体である。
-閉 fiber の列は定理~\ref{thm:normal-helix} の geometric helix である。
-したがって前向き Hom の閉 fiber は指定階数の次数零自由加群である。
-有限自由複体の特殊 fiber における可逆 minor を消去すると、
-同じ $R$ 上でその複体自体が指定階数の自由加群に準同型となる。
-この操作は各 $i,j$ について同じ局所環の中で行える。
-次数が増すたびに有限型近傍を狭める議論ではない。
-その自由性により全ての基底変更と整合する。
-
-同じ Nakayama の議論により $C$ は距離高々二の成分で生成され、
-奇数始点では次の偶数頂点を経由する射だけで正距離成分が生成される。
-これは対応する全射の余核が各終点について有限生成で、閉 fiber で零だからである。
-系~\ref{cor:normal-cubic-defect} の特殊 fiber の解消は
-\[
- 0\to P_{i+4}\to P_{i+3}^{2}\oplus P_{i+2}^{d_i}
- \to P_{i+1}^{2}\oplus P_{i+2}^{d_i}\to P_i\to S_i\to0,
- \quad d_i=\begin{cases}1&i\text{ even},\\0&i\text{ odd}\end{cases}
-\]
-であり、その AS 双対条件も成立する。
-従って補題~\ref{lem:five-window-bar-lifting} と
-命題~\ref{prop:five-window-canonical-tails} が適用できる。
-相対的に $P_{i+2}$ の追加項を極小項として延ばす必要はない。
-その二項が generic fiber で可縮になることも非極小 bar 複体が許している。
-
-$B$ の各次数は (1) により有限自由である。
-積 $B_1\otimes B_n\to B_{n+1}$ は特殊 fiber で全射なので全射となる。
-$K=\ker(B_1^{\otimes2}\to B_2)$ は階数七の直和因子である。
-$T_R(B_1)/(K)\to B$ の各次数は有限生成加群から自由加群への全射で、
-その kernel は特殊 fiber で零である。
-分裂と Nakayama により kernel は零、従って $B$ は二次である。
-特殊 fiber の Koszul 性は命題~\ref{prop:all-h2-antiserre-koszul} による。
-最初の三次数は自由なので、補題~\ref{lem:relative-koszul-degree-three} の証明にある
-局所 Koszul 変形原理を $R$ へ直接適用し、全相対 Koszul 解消と任意底変更整合性を得る。
-特殊 fiber は左右 Noetherian であるから、
-補題~\ref{lem:local-commutative-fibre-noetherian} が $B$ の左右 Noetherian 性を与える。
-有限型基底変更には補題~\ref{lem:local-finite-type-strong-noetherian} を使う。
-
-偶数頂点 restriction は $\operatorname{QGr}C\simeq\operatorname{QGr}B$ を与える。
-実際、十分長い道は必ず偶数頂点を通り、奇数始点の射は直後の偶数頂点を経由する。
-restriction の左随伴 induction の unit は同型、counit の kernel と cokernel は
-偶数成分が零なので torsion である。induction も torsion を torsion へ送る。
-これらの事実は全基底変更後に保たれる。
-四項窓 $i=-3,\ldots,0$ の End 代数は、合成も含めて元の $\Lambda$ である。
-
-全軌道対象と次数移動の比較を明示する。
-$P_i\mapsto E_{-i}$ とする cocontinuous derived functor を取る。
-前向き Hom の次数零集中により、有向 dg 部分圏の truncation と $H^0$ の zigzag を通じて
-この functor を構成できる。
-各 $S_i$ の五頂点 bar 解消の像は有限個の perfect $\Lambda$-対象からなる複体である。
-特殊 fiber 上では normal helix の tails 比較の下で単純 torsion 加群の像なので零となる。
-よって perfect Nakayama により $R$ 上でも零である。
-導来 torsion kernel が $\operatorname{loc}\{S_i\}$ であるため、functor は tails へ降りる。
-四項 generator 上で元の $\Lambda$ の同定を与えるから、これは上の Morita 同値である。
-この議論で同値にした heart を先に仮定していない。
-全 $P_i$ の像と二周期移動が指定された $E_{-i}$ と $\mathsf s$ になるので、
-$(1)\leftrightarrow\mathsf s$ および実際の平方同型も得る。
-有限複体の消滅と全成分の自由性は任意基底変更に保たれるため、(3) が従う。
-
-有限型 $R'$ 上で $B_{R'}$ は左右 Noetherian である。
-各 $\pi P_i$ の偶数 restriction は有限生成 $B_{R'}$-加群の像なので
-Noetherian な生成系をなす。
-式~\eqref{eq:five-window-tails-cohomology} と
-補題~\ref{lem:relative-cubic-coherent-cohomology} の証明は
-Noetherian な生成系とこの cohomology 公式だけを使う。
-従ってそのまま一般 coherent Hom の有限性・平坦基底変更・一様消滅に適用できる。
-偶数 truncation の生成性と合わせて AZ 豊富性を得る。
-また補題~\ref{lem:relative-cubic-global-chi} の証明も同じ torsion 幅と消滅を用いるため適用できる。
-左側には反対代数と添字反転に対する同じ bar 議論を使う。
-module-object 基底変更は補題~\ref{lem:qgr-module-object-basechange}、
-fppf descent は完全かつ保守的な平坦引戻しによる既存の証明を用いる。
-構造対象の平坦性は $B_n$ の自由性、exceptional 性は四項窓の Hom 公式による。
-tilting summand は基底上平坦なので、非平坦変更にも実際の導来引戻しが
-Morita 表示の $-\otimes_{\Lambda_{R'}}^{\mathbf L}\Lambda_{R''}$ と一致する。
-これで (4) を得る。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_local_tails}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[局所定理と有限型一様化の役割]
@@ -381,19 +174,7 @@ AS4 被覆の延長が得られても、有限型近傍で使う全軌道の一�
 を満たす。ここでは最初から \(\lambda=1\) とは主張しない。
 \end{lemma}
 \begin{proof}
-canonical 四周期を \(\theta\) とする。
-補題~\ref{lem:cubic-serre-period} により、これは tails 上で反 Serre 関手を表す。
-定理~\ref{thm:universal-cubic-hull} の正規化式より、
-\(\phi x=(x\circ T)\phi\)、\(T=\beta^{-2}\theta|_{B_1}\) である。
-\(\beta^2\) と \(\theta\) は tails で同じ反 Serre 関手を表す。
-従ってその比は tails に恒等関手を誘導する。
-geometric helix の各対象の自己同型は scalar であり、自然同型をそれらの
-対象と全ての前向き Hom に制限すれば、この比の \(\mathbb Z\)-代数上の作用は
-頂点 scalar によるものとなる。特に \(B_1=D_{0,2}\) 上の \(T\) は
-一つの非零 scalar \(\lambda\) である。
-\(\phi\) は正則であり、次数二の元であるため、同じ交換式を二度使って
-\(\phi^2=\lambda^2\phi^2\) を得る。従って \(\lambda^2=1\) である。
-必要なら代数閉体へ拡大して上の比較を行い、scalar 性と式は忠実平坦に降下する。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_local_tails}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{theorem}[局所基底上の noncubic 横断中央被覆]
@@ -420,64 +201,7 @@ noncubic 軌道環である。
 \end{theorem}
 
 \begin{proof}
-二つの有限自由加群間の射
-\[
- c_\pm:E_2\longrightarrow\operatorname{Hom}_R(E_1,E_3),\qquad
- c_\pm(z)(x)=zx\pm xz
-\]
-を取る。閉 fiber では \(c_+\) が単射であるため、階数七の minor が単元となる。
-よって \(c_+\) は \(R\) 上で split 単射であり、generic fiber にも反中心はない。
-前補題より generic fiber の canonical 正規線の scalar は \(\lambda=1\) となり、
-従って \(c_-\otimes K\) の核は非零である。
-
-閉 fiber では \(\dim\ker(c_-\otimes k)=1\) なので、階数六の minor は単元である。
-generic fiber での核の非零性から七次 minors は \(K\) 上で全て零であり、
-\(R\hookrightarrow K\) より \(R\) 上でも零である。
-単元 minor で掃き出すと \(c_-\) は階数六の直和因子への射となる。
-従って \(N=\ker c_-\) は階数一の直和因子であり、任意の底変更と両立する。
-生成元を \(\phi\) とする。\(\phi_k\) は前定理の \(\chi\) の非零倍、
-\(\phi_K\) は cubic canonical 正規線の非零倍である。
-
-\(P=E/(\phi)\) と置く。
-各 \(E_n\) は有限自由であり、閉 fiber の \(\phi_k=\chi\) は前定理により全次数で正則である。
-従って各乗法
-\[
- E_{n-2}\xrightarrow{\phi\cdot}E_n
-\]
-は閉 fiber で単射であり、最大 minor の一つが \(R\) の単元となる。
-よってこれは split 単射であり、その余核は有限自由となる。
-\(\phi\) の中央性により余核は正確に \(P_n\) である。
-これで \(\phi\) の全次数の左右正則性、\(P_n\) の自由性、任意の基底変更との整合を同時に得る。
-階数の差を取ると \(P\) の階数列は \((1,4,6,4,1,0,\ldots)\) である。
-ここでは未知の商の fiber 次元一定から平坦性を推論していない。
-既に自由と分かっている \(E_{n-2},E_n\) 間の写像の特殊 fiber の単射性を使っている。
-
-閉 fiber \(P_k\) は前定理により Koszul であり、\(P_1,P_2,P_3\) は自由である。
-Polishchuk--Positselski の局所環上の定理
-\cite[Chapter 6, Theorem 7.3]{PolishchukPositselski2005} により、
-\(P\) は相対 Koszul で、双対 \(A=P^!\) の全次数は任意の基底変更と両立する有限自由加群となる。
-Frobenius pairing は閉 fiber で非退化なので、その行列式は \(R\) の単元であり、
-\(P\) は相対 Koszul Frobenius、階数列 \((1,4,6,4,1)\) となる。
-従って \(A\) は所要の相対 AS4 型を持つ。
-
-切断の中央性を tensor として確認する。
-\(H\subset J\) を \(\phi\) の核とすれば \(A=T(V)/(H)\)、\(J/H\) の生成元を \(g\) とできる。
-\(K_3=(J\otimes V)\cap(V\otimes J)=E_3^\vee\) と置く。
-\(\phi\) の中央性は二つの縮約
-\(c_L=\phi\otimes1,c_R=1\otimes\phi:K_3\to V\) の一致を意味する。
-\(\phi E_1\subset E_3\) が直和因子への単射なので、この共通写像は全射である。
-\(\phi(r)=1\) となる \(r\in J\) を選ぶと、任意の \(v\in V\) に対して
-\[
- z=r\otimes v+h_L=v\otimes r+h_R\in K_3,
- \qquad h_L\in H\otimes V,\quad h_R\in V\otimes H
-\]
-を取れる。\(A_3\) 内で \(gv=vg\) となり、一次生成性から \(g\) は中央である。
-商の提示から \(A/(g)=B\) である。
-両者の全次数は自由で、\(h_B=(1-t^2)h_A\) だから、
-各次数の \(g\) 乗法は等階数自由加群間の全射として核零となる。
-その像と商も自由なので任意の底変更後に正則性を保つ。
-最後に \(B\) が Noetherian なら、中央正則元の有限内部次数フィルターを使って
-\(A\) へ左右 Noetherian 性を持ち上げられる。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_local_tails}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[Artin 結論と有限型一様性]
@@ -500,41 +224,7 @@ Frobenius pairing は閉 fiber で非退化なので、その行列式は \(R\) 
 いずれも変形は無障害である。
 \end{corollary}
 \begin{proof}
-有限 foundation の滑らかな既約 chart \(S\) とその noncubic 点 \(x\) を取り、
-系~\ref{cor:noncubic-etale-morita-root} の有限型 étale 近傍 \((U,u)\to(S,x)\) で
-良い根を実際の perfect Morita 双加群として構成する。
-\(u\) を含む既約成分へ制限し、\(R=\mathcal O_{U,u}\) と置く。
-これは正則局所整域である。
-定理~\ref{thm:noncubic-local-tails-effectivity} が全前向き Hom、全軌道環、
-相対 Koszul 性、Noetherian 性、同じ根の canonical tails 比較を与える。
-foundation の cubic 開部分は稠密であるから、この \(R\) の generic fiber は cubic である。
-local tails 比較における \(E_{i+4}=S^{-1}E_i[2]\) と最初の四項窓の一致により、
-generic fiber の列はその標準 cubic helix と同じである。
-定義した列 \(E_{2a}=\mathsf s^aF_0\)、\(E_{2a+1}=\mathsf s^aF_1\) に対し
-同じ根が実際に二項移動を与え、その二乗は反 Serre 関手であるため、
-定理~\ref{thm:noncubic-local-central-hull} の全入力が成立する。
-従って \(R\) 上に中央 AS4 被覆を得る。
-
-任意の局所 Artin \(k\)-代数 \(T\) 上の pointed Abel 変形を取る。
-定理~\ref{thm:artin-foundation-lift} によりその foundation を持ち上げ、
-閉 fiber の指定同型に沿って各有限自由成分の基底を選ぶと、
-閉点を \(x\) へ送る \(\operatorname{Spec}T\to S\) を得る。
-\(U\to S\) の étale 性により、指定された閉点 \(u\) を保つ一意な lift
-\(\operatorname{Spec}T\to U\) が存在し、その射は \(R\) を経由する。
-\(R\) 上の全 orbit と被覆を \(T\) へ引き戻す。
-根の Morita 類の一意性は系~\ref{cor:noncubic-root-all-artin} による。
-Abel heart 上の exactness と AZ 豊富性は
-補題~\ref{lem:artin-morita-heart-exact}、補題~\ref{lem:artin-ample-lift} による。
-従って得た環は、元の Abel 変形における同じ根の全軌道環である。
-命題~\ref{prop:artin-witness-relative-promotion} を適用すれば、
-任意の有限型 \(T\)-代数を含む相対 \(\mathfrak H_2\) 族への昇格を得る。
-
-全忠実性は module-object 基底変更系の一意性から従う。
-根と AS4 被覆は存在条件なので、同値に追加の保存条件を課さない。
-接と無限小慣性はそれぞれ \(\operatorname{HH}^2\)、\(\operatorname{HH}^1\) であり、
-その次元は定理~\ref{thm:noncubic-hh-trivial-root} による。
-\(\operatorname{HH}^{\ge3}=0\) は有限 foundation の計算
-（命題~\ref{prop:foundation-hochschild}）によるため無障害である。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_local_tails}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[形式的完了と代数性の区別]
@@ -584,45 +274,7 @@ $1,4,7,8,8,\ldots$ となる。
 \end{lemma}
 
 \begin{proof}
-$P$ は次数一生成なので、$P_5=0$ から $P_n=0$（$n\ge5$）である。
-各 $P_i$（$0\le i\le4$）の有限生成元を $E_i$ へ持ち上げる。
-$t$ を次数二の中央変数とし、$t$ の作用を $\phi$ の乗法で定めると、
-これらの有限個の持上げは $E$ を $R[t]$-加群として生成する。
-実際、任意の斉次元をまず $P_n$ への像で消し、残りを
-$\phi E_{n-2}$ と書く。この操作を内部次数について繰り返せば有限回で止まる。
-この段階では $\phi$ の正則性を使っていない。
-
-$R[t]$ は Noetherian で $E$ はその有限加群だから、
-\[
- K=\ker\bigl(\phi\cdot:E(-2)\longrightarrow E\bigr)
-\]
-も有限 $R[t]$-加群である。
-局所化は完全なので、仮定により $K\otimes_RR_{\mathfrak p}=0$ である。
-$K$ の有限個の $R[t]$-生成元を $z_1,\ldots,z_m$ とする。
-各 $z_a$ は $\mathfrak p$ の外のある $f_a\in R$ によって消えるため、
-$f=\prod_af_a$ とすれば $K_f=0$ である。
-$K=0$ の場合は $f=1$ とする。
-この一つの分母が全内部次数の kernel を同時に消す。
-中央性により左右の正則性は同じである。
-
-中央性と $P=E/(\phi)$ から
-\eqref{eq:spread-central-regular-sequence} が完全となる。
-全 $P_n$ は projective で、$n\ge5$ では零だから、これらの列は
-$R_f$-加群として分裂する。
-$E_{<0}=0$ から二つの parity で帰納すれば、全 $E_n$ は有限 projective となる。
-各 $i=0,\ldots,4$ で $E_i\to P_i$ の $R_f$-線形切断を選び、
-これを $R_f[t]$-線形に延ばすと \eqref{eq:spread-central-projective-module} の右辺から左辺への射を得る。
-両辺の次数 $n$ の成分は、次数 $n-2$ の成分と $P_n$ による
-\eqref{eq:spread-central-regular-sequence} 型の短完全列を持つ。
-従って次数に関する帰納法でこの射は同型となる。
-切断の選択によるため同型は非標準的である。
-分裂完全列は任意の tensor 後も完全なので、非平坦な基底変更についても (3) が従う。
-階数の主張は
-\[
- \sum_{n\ge0}\operatorname{rank}(E_f)_n\,z^n
- =\frac{1+4z+6z^2+4z^3+z^4}{1-z^2}
-\]
-から得られる。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_local_tails}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[中央正則性と Koszul 性の入力]

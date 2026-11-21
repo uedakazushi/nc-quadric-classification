@@ -70,60 +70,7 @@ $K'\simeq B^{\vee}$ となる開近傍で、この新しい四平面は
 \end{lemma}
 
 \begin{proof}
-符号も含めて相対 bar 複体で確認する。
-積を $\Gamma_{ij}=\Hom(E_i,E_j)$ とする上三角代数として書き、
-左 projective $P_i=\Gamma e_i$ を使えば $E_i$ に対応する。
-$I_i=\Hom_k(e_i\Gamma,k)=S(P_i)$ と置くと
-\[
-\Hom(E_j,E_4)=\Ext^2_{\Gamma}(I_j,P_0).
-\]
-$I_3$ は頂点三の単純加群であり、bar 複体の可消去な成分を除くと
-\[
-\Ext^2(I_3,P_0)=\operatorname{coker}(G^{\vee})=K^{\vee}
-\]
-である。
-
-$I_2$ は頂点二で $k$、頂点三で $C^{\vee}$ を持ち、
-$C$ の作用は評価である。
-bar cochain の次数一は
-$D^{\vee}\oplus\Hom(W,C)$、次数二は
-\[
-(A B)^{\vee}\oplus\Hom(A B C,C)\oplus\Hom(D C,C),
-\]
-次数三は $\Hom(A B C,C)$ である。
-次数二の元を $(r,g,h)$ とすると、次の微分は
-\[
-(r,g,h)\longmapsto g-h(F\otimes1_C)-r\otimes1_C.
-\]
-従って kernel では中央成分 $g$ を消去できる。
-次数一の $(a,b)$ の像は、残る二成分で
-\[
-(-aF,-bG+a\otimes1_C).
-\]
-$bG$ を除くことは $h$ を $K$ へ制限することに等しく、
-残る $a$ の像はちょうど $(-F^{\vee}a,j(a))$ である。
-従って \eqref{eq:nchh-new-D} を得る。
-前合成 $E_2\to E_3$ は第二 summand の包含なので、$F'$ も表示した写像となる。
-
-次に $0\to A\otimes P_0\to P_1\to S_1\to0$ を用いる。
-頂点一、二、三の部分代数は道代数なので
-$\Ext^1(I_2,S_1)=B^{\vee}$、$\Ext^2(I_2,S_1)=0$ である。
-長完全列における境界写像は
-\[
-B^{\vee}\longrightarrow A\otimes\Ext^2(I_2,P_0)=A\otimes D'
-\]
-であり、bar 複体で代表を取れば
-$b^{\vee}\mapsto\sum_a a\otimes[a^{\vee}\otimes b^{\vee}]$ と計算される。
-これが \eqref{eq:nchh-new-K} である。
-$G'$ は $A\otimes D'$ をその像で割った六次元商である。
-また $\Hom(E_4,E_5)=A$ は Serre 移動による同定を使う。
-
-$D'^{\vee}$ は $\mathscr L^{\perp}\subset
-(A\otimes B)\oplus(C^{\vee}\otimes K)$ である。
-$F'^{\vee}$ は第二成分 $Y$ への射影、$j'$ は第一成分 $X$ への射影だから、
-$(-F'^{\vee},j')$ の像は \eqref{eq:nchh-gale} となる。
-全て有限 projective な複体と直和因子の消去であるから、
-閉ファイバーで必要な階数が成立する任意の Artin 変形でも同じ計算が成立する。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[全変形空間を使うこと]
@@ -160,12 +107,7 @@ L_0=\begin{pmatrix}\alpha&\beta\\\gamma&-\alpha\end{pmatrix},\quad
 とできる。二根対が一致する場合にも $L_0=\operatorname{diag}(1,-1)$ と選べる。
 \end{lemma}
 \begin{proof}
-既存の 補題~\ref{lem:noncubic-local-exchange} の行列
-$\left(\begin{smallmatrix}1&-a\\b&-1\end{smallmatrix}\right)$ を使う。
-その平方は単元 $(1-ab)I$ であり、平方根で割れば trace 零の対合となる。
-$L_0f_1=\eta f_2$ の単元 $\eta$ を $d$ の定数倍に吸収する。
-この構成は二根対一致の場合にも $a=b=0$ で成立する。
-$f_1$ の非退化性により $f_1=uv$ と正規化できる。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 以下、
@@ -197,76 +139,7 @@ $\tau$ の固定点、すなわち対応する交代形式の Lagrangian 四平�
 \end{proposition}
 
 \begin{proof}
-行列分解を
-\[
-\Phi_c=\begin{pmatrix}c&u\\-v&-c\end{pmatrix},\qquad
-\Phi_d=\begin{pmatrix}d&\ell_1\\-\ell_2&-d\end{pmatrix}
-\]
-とする。$M_c=\operatorname{coker}\Phi_c$、$M_d=\operatorname{coker}\Phi_d$ とし、
-normal foundation を
-\[
-(\OO,\pi M_c,\OO(1),\pi M_d(1))
-\]
-と取る。
-$A,C$ はそれぞれ $M_c,M_d$ の二つの次数零生成元の空間、
-$B$ は $\Phi_c$ の二つの行、$K$ は $\Phi_d$ の二つの関係列である。
-従って \eqref{eq:nchh-delta} の係数行列は
-\begin{equation}\label{eq:nchh-plane}
-\lambda\longmapsto
-\bigl(-\Phi_c^{t}(\lambda),\Phi_d(\lambda)\bigr)
-\quad\bigl(\lambda\in\langle u,v,c,d\rangle^{\vee}\bigr).
-\end{equation}
-
-二項移動の $D'=H/\mathscr L$ を $\langle u,v,c,d\rangle$ と同定する写像は、
-二つの summand 上で次の係数行列を持つ。
-\begin{equation}\label{eq:nchh-quotient-identification}
-h_0=-D_0\Phi_c=
-\begin{pmatrix}-c&-u\\-v&-c\end{pmatrix},\qquad
-h_1=\Phi_d^tD_0=
-\begin{pmatrix}d&\ell_2\\\ell_1&d\end{pmatrix}.
-\end{equation}
-実際、$h_0F^{\vee}=h_1j$ であり、両辺は
-$u^{\vee}\mapsto-v$, $v^{\vee}\mapsto u$, $c^{\vee},d^{\vee}\mapsto0$
-である。ここで $\alpha^2+\beta\gamma=1$ を使う。
-$h_0,h_1$ の像は $u,v,c,d$ を張るため、商からの写像は同型である。
-$F'$ は $h_1$、$K'$ の二つの関係列は $h_0=-D_0\Phi_c$ に対応する。
-これらは移動した実際の Hom と関係の行列である。
-
-右加群の規約も確認する。
-$(M_c)_\sigma$ の提示は
-$\sigma^{-1}\Phi_c=-D_0\Phi_dD_0$ であり、
-生成元を $D_0$ 倍すると $M_d$ へ移る。
-一方 $\sigma^{-1}\Phi_d=\Phi_c$ なので $(M_d)_\sigma\simeq M_c$ である。
-また canonical 四移動 $t=(-)_\iota(2)$ では
-$(M_c)_\iota\simeq M_c$ の生成元比較が $D_0$ となる。
-\eqref{eq:nchh-quotient-identification} の $h_1$ は
-$K^{\vee}$ を $D_0$ 倍した $\Phi_d$ の行へ対応させ、
-$K'$ は $-D_0\Phi_c$ の関係列である。
-従って $s$ による四つの二次元空間の比較は、順に
-\begin{equation}\label{eq:nchh-four-comparisons}
-(D_0,-I_2,D_0,-I_2)
-\end{equation}
-となる。
-この比較を \eqref{eq:nchh-gale} に入れると、第一 summand は $D_0Y$、
-第二 summand は $-D_0X$ となり、\eqref{eq:nchh-involution} を得る。
-
-直接の固定点確認もできる。
-$\mathscr L^{\perp}$ の元は
-\[
-X=\begin{pmatrix}a&-\beta r-\alpha s\\\alpha r-\gamma s&a\end{pmatrix},\qquad
-Y=\begin{pmatrix}b&r\\s&b\end{pmatrix}
-\]
-の形である。$J(X,Y)$ は \eqref{eq:nchh-plane} における
-$(\lambda_u,\lambda_v,\lambda_c,\lambda_d)=(s,r,-b,-a)$ の像である。
-従って $\tau(\mathscr L)=\mathscr L$。
-行ごとの座標で $D_0$ の左乗法は対称行列
-$D_L=\operatorname{diag}(1,1,-1,-1)$ であり、
-\[
-J=\begin{pmatrix}0&D_L\\-D_L&0\end{pmatrix},\qquad J^t=-J.
-\]
-以上は foundation の全 Artin 変形を移動してから、閉ファイバーを指定した
-$s$ で戻す構成である。従ってその接作用は、Morita 不変な
-Hochschild 作用そのものである。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{全 Hochschild 接空間への作用}
@@ -285,68 +158,7 @@ s_*|_{\operatorname{HH}^1(\Gamma)}=1,\qquad s_*|_{\operatorname{HH}^2(\Gamma)}=1
 \end{theorem}
 
 \begin{proof}
-二つの接複体を同変に比較する。
-Grassmannian の接空間 $T$ は十六次元である。
-\eqref{eq:nchh-involution} は Lagrangian 点における交代 annihilator involution なので
-\[
-T^+\simeq\operatorname{Sym}^2\mathscr L^{\vee},\qquad
-T^-\simeq\bigwedge^2\mathscr L^{\vee},\qquad
-(\dim T^+,\dim T^-)=(10,6).
-\]
-実際、Lagrangian complement を選んで近傍を行列 $Z$ の graph と書けば、
-微分は $Z\mapsto Z^t$ である。
-
-次に基底変更群を調べる。
-$\operatorname{Lie}\widetilde G=\mathfrak{gl}(A)\oplus\mathfrak{gl}(B)
-\oplus\mathfrak{gl}(C)\oplus\mathfrak{gl}(K)$ 上の作用は
-\begin{equation}\label{eq:nchh-lie-action}
-(a,b,c,k)\longmapsto
-(D_0cD_0,-k^t,D_0aD_0,-b^t).
-\end{equation}
-二つの対を交換するので、その正負固有空間の次元はともに八である。
-自明な中心は、scalar 四つ組について
-\[
--a-b=c-k
-\]
-という一つの条件を満たす三次元空間である。
-その正固有空間は $a=c$, $b=-k$, $a+b=0$ により一次元、
-負固有空間は $a=-c$, $b=k$ により二次元である。
-従って有効群の Lie 代数 $\mathfrak g$ について
-\begin{equation}\label{eq:nchh-lie-dim}
-(\dim\mathfrak g^+,\dim\mathfrak g^-)=(7,6).
-\end{equation}
-
-foundation の全変形を表すことから、同変な完全列
-\begin{equation}\label{eq:nchh-tangent-sequence}
-0\longrightarrow\operatorname{HH}^1(\Gamma)\longrightarrow\mathfrak g
- \longrightarrow T\longrightarrow\operatorname{HH}^2(\Gamma)\longrightarrow0
-\end{equation}
-がある。これは有向代数の基底変更を除いた結合代数変形の接複体である。
-前節の Grassmann 模型は $G$ の全射性と $\delta$ の単射性という開条件だけで得られ、
-この完全列に横断方向を除く追加条件は入っていない。
-ここで $\OO$ は exceptional であり、
-$\operatorname{HH}^0(\Gamma)=Z(\Gamma)\to\operatorname{End}(\OO)$ は $k\to k$ の同型である。
-従って pointed 化による追加の一次核はなく、
-定理~\ref{thm:artin-foundation-lift} の同定の下で
-pointed 慣性の Lie 代数は $\operatorname{HH}^1(\Gamma)$ である。
-
-根対が異なる場合、命題~\ref{prop:noncubic-presentation-stack} の慣性計算により
-pointed 慣性は有限である。標数零なので $\operatorname{HH}^1(\Gamma)=0$ である。
-\eqref{eq:nchh-tangent-sequence} の負部分は六次元空間から六次元空間への単射であり同型、
-従って $\operatorname{HH}^2(\Gamma)^-=0$ となる。正部分は $10-7=3$ 次元である。
-
-根対が一致する場合は $f_1=uv$, $f_2=-uv$, $L_0=D_0$ と取る。
-pointed 慣性の連結成分は
-$u\mapsto zu$, $v\mapsto z^{-1}v$, $c,d\mapsto c,d$ のトーラスである。
-これは $\sigma$ と可換であり、次数移動とも可換なので $s$ の共役作用は恒等である。
-従って一次元の $\operatorname{HH}^1(\Gamma)$ は正固有空間に入る。
-線型模型でも、$T_z=\operatorname{diag}(z,1)$ に対する安定化群の表示は
-\[
-(g_A,g_B,g_C,g_K)=(T_z,T_z^{-1},T_z,T_z),
-\]
-であり、\eqref{eq:nchh-lie-action} で固定される。
-負部分は再び同型、正部分の余核は $10-(7-1)=4$ 次元である。
-これで両次数への恒等作用が従う。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[全 Artin 変形への根の持上げ]\label{cor:noncubic-root-all-artin}
@@ -356,14 +168,7 @@ $u\mapsto zu$, $v\mapsto z^{-1}v$, $c,d\mapsto c,d$ のトーラスである。
 この一意性は平方同型自体の一意な選択を意味しない。
 \end{corollary}
 \begin{proof}
-既存の 定理~\ref{thm:artin-foundation-lift} により、全 Abel 変形を有限自由相対 smooth な
-foundation 変形で計算できる。
-系~\ref{cor:hhtrivial-root-artin} と定理~\ref{thm:noncubic-hh-trivial-root} の $\operatorname{HH}^2$ 作用から
-根の存在を得る。
-命題~\ref{prop:artin-serre-root-uniqueness} と $\operatorname{HH}^1$ 作用から同型類の一意性を得る。
-補題~\ref{lem:artin-morita-heart-exact} により、持ち上がった Morita 関手は
-元の Abel 変形の heart 上で完全である。
-本証明は AS4 被覆の横断変形への持上げを与えていない。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{全 foundation 変形の Lagrangian 正規形}
@@ -441,88 +246,7 @@ foundation の開部分へ制限したときにも成立する。
 \end{proposition}
 
 \begin{proof}
-行列を掛けると
-\[
- \rho(\widetilde\theta(g))
-       =J\rho(g)^{-t}J^{-1}
-\]
-を得る。この式は $\widetilde\theta^2=1$、
-$\widetilde\theta(C_0)=C_0$ と上の同変性を示す。
-
-$\widetilde G$ の固定群は
-\[
- (a,b)\longmapsto(a,b,D_0aD_0,b^{-t})
- \qquad(a,b\in\GL_2)
-\]
-の像である。その $C_0$ との共通部分は
-$a=zI$、$b=\epsilon z^{-1}I$、$\epsilon^2=1$ で尽くされる。
-従って $G$ 内の像は上で表示した滑らかな連結七次元群である。
-標数零の群の固定部分スキームは滑らかであり、その Lie 代数は
-$\mathfrak g^+$ である。
-\eqref{eq:nchh-lie-dim} によりこの次元は七なので、
-上の像は $(G^\theta)^\circ$ と一致する。
-
-$\tau$ の $L$ に沿う微分には、
-接束 $T_L\simeq\operatorname{Sym}^2\mathscr U^\vee$ と
-法束 $N_{L/X}\simeq\bigwedge^2\mathscr U^\vee$ がそれぞれ
-正・負固有束として現れる。
-同変性により軌道微分は正負分解を保つため、
-\eqref{eq:noncubic-normal-orbit-map} が得られる。
-両辺の階数は六であり、その可逆性は $G^+$-不変な開条件である。
-$\det(\bigwedge^2\mathscr U^\vee)
-=(\det\mathscr U^\vee)^3$ だから、行列式の線束も主張の通りである。
-
-閉部分群 $G^+\subset G$ による associated bundle
-$G\times^{G^+}L^{\mathrm{tr}}$ と軌道写像
-\[
- m:G\times^{G^+}L^{\mathrm{tr}}\longrightarrow X,
- \qquad[g,\mathscr L]\longmapsto g\mathscr L
-\]
-を考える。これは滑らかな十六次元空間の間の射である。
-$[1,\mathscr L]$ における接写像は
-\[
- (\mathfrak g\oplus T_{\mathscr L}L)\big/
- \{(a,-a\mathscr L):a\in\mathfrak g^+\}
- \longrightarrow T_{\mathscr L}X,
- \qquad[(a,v)]\longmapsto a\mathscr L+v.
-\]
-正部分では恒等、負部分では $q_{\mathscr L}$ となる。
-従って $L^{\mathrm{tr}}$ 上では同型である。
-$G$-同変性により全ての点で同型なので、$m$ は \texorpdfstring{\'etale}{etale} である。
-この射は \eqref{eq:noncubic-lagrangian-stack-map} を atlas $X\to[X/G]$
-で基底変更したものだから、同スタック射も表現可能かつ
-\texorpdfstring{\'etale}{etale} である。
-次元は $10-7=16-13=3$ である。
-
-最後の主張は一般係数で直接確認できる。
-$\mathfrak g^-$ の元を
-$(a,b,-D_0aD_0,b^t)$、$a,b\in\mathfrak{sl}_2$ で代表し、
-各 $\mathfrak{sl}_2$ の基底を
-$\operatorname{diag}(1,-1),E_{12},E_{21}$ の順に取る。
-\eqref{eq:nchh-plane} の係数行列を $M$ とすると、
-法方向の交代形式は $M^tJ^{-1}\rho_*(a,b,-D_0aD_0,b^t)M$ である。
-$u^\vee,v^\vee,c^\vee,d^\vee$ の順に対する六つの上三角成分を並べれば、
-$q_{\mathscr L}$ の行列は
-\[
- Q_{\alpha,\beta,\gamma}=
- \begin{pmatrix}
- -2\alpha&0&0&2\alpha&0&0\\
- 0&\gamma&-\alpha&0&\alpha&-\gamma\\
- 0&0&-1&0&-1&0\\
- 0&-\alpha&-\beta&0&\beta&\alpha\\
- 0&1&0&0&0&1\\
- -2&0&0&-2&0&0
- \end{pmatrix},
- \qquad
- \det Q_{\alpha,\beta,\gamma}
-       =-32\alpha(\alpha^2+\beta\gamma)=-32\alpha.
-\]
-一方 $\alpha=0$ なら $\beta\gamma=1$ なので
-$f_2=(\beta v)(\gamma u)=uv=f_1$ である。
-従って根対非一致の全場合には $\alpha\ne0$ であり、
-一致の場合にも対角選択 $\alpha=1,\beta=\gamma=0$ が使える。
-foundation を再構成するための追加条件は有限写像の階数条件で開であり、
-それらを満たす点の近傍に上の射を制限すればよい。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[この表示が与えるもの]
@@ -599,74 +323,7 @@ $\mathcal Z\to S$ 自体が $p_0$ で étale であり、
 \end{proposition}
 
 \begin{proof}
-命題~\ref{prop:quadric-etale-morita-root} の代数空間の構成は、
-可換 quadric という仮定を使わず、仮定 (1), (2) に適用できる。
-詳しくは \cite[著者公開版 April 2007, Corollary 3.24,
-Lemma 3.25]{TV2007} により $\mathcal G$ は $S$ 上局所有限表示の代数空間である。
-同論文 Corollary 3.22 により、実際の可逆 perfect 双加群のスタックから
-$\mathcal G$ への射は étale 局所に中立な $\mathbf G_m$-gerbe である。
-$S$ は局所 Noetherian なので $\mathrm{sq}$ も局所有限表示であり、
-$\mathcal Z$ は $S$ 上局所有限表示となる。
-ここでは基底の線束による tensor が消える étale 層化を用いる。
-
-$p_0$ を閉点とする任意の局所 Artin 変形
-$\operatorname{Spec} A\to\mathcal Z$ と、これに整合する小拡大
-$A'\twoheadrightarrow A$ 上の $\operatorname{Spec} A'\to S$ を取る。
-剰余体は $k$ とする。
-$A,A'$ は strictly henselian で、上の gerbe は中立であり、
-線束も自明だから、指定された点は実際の
-$p_A\in\operatorname{DPic}_A(\Lambda_A)$、
-$p_A^2=t_A$ で表せる。
-補題~\ref{lem:root-obstruction-composition} により、
-$p_A$ の持上げ障害
-$b\in\operatorname{HH}^2(\Lambda_x)\otimes_k\ker(A'\to A)$ は
-\[
- b+(p_0)_*b=0
-\]
-を満たす。
-仮定 (3) と標数零により $b=0$ である。
-さらに命題~\ref{prop:artin-serre-square-correction} は、
-指定された $p_A$ を保ったまま平方関係を補正する。
-従ってこの小拡大に対し、指定された点を保つ
-$\operatorname{Spec} A'\to\mathcal Z$ が存在する。
-
-$(V,v)\to(\mathcal Z,p_0)$ を étale scheme chart とする。
-形式的 étale 性により上の持上げは、指定された
-$\operatorname{Spec} A\to V$ も保って $V$ へ持ち上がる。
-閉点での小拡大判定
-\cite[Tag 02HX, Lemma 37.12.1]{StacksSmoothAtlas}
-により $V\to S$ は $v$ で smooth であり、
-従って $\mathcal Z\to S$ は $p_0$ で smooth である。
-
-$(V,v)$ を smooth locus に縮める。
-$v$ は fiber の閉点であり、$\kappa(v)=\kappa(x)=k$ だから、
-\cite[Tag 057G, Lemma 37.38.5]{StacksSmoothAtlas}
-により、$v$ を含む immersion $U_0\to V$ で
-$U_0\to S$ が étale となるものが存在する。
-これは指定された根を通る étale な切片であり、
-根の一意性を要求しない。
-$U_0$ を通じて上の gerbe を étale 局所に中立化し、
-実際の可逆双加群 $P$ を取る。
-定理~\ref{thm:bimodule-line-comparison} は比較線束
-\[
- L=H^0\mathbf R\mathcal Hom_{\Lambda_U^e}
-       (P\otimes_{\Lambda_U}^{\mathbf L}P,t_U)
-\]
-と評価同型
-$(P\otimes_{\Lambda_U}^{\mathbf L}P)\otimes L\simeq t_U$
-を与える。
-$u$ の Zariski 近傍で $L$ を自明化すれば
-\eqref{eq:hh2-etale-actual-root} を得る。
-各細分は étale であり、$u$ を含む affine 開へ縮めて
-$U$ を有限型にできる。
-その像は $x$ を含む開部分なので、必要なら $S$ をこの像へ縮める。
-
-追加の Hochschild 一次の仮定の下では、
-命題~\ref{prop:artin-serre-root-uniqueness} により
-指定された閉根を持つ Artin 持上げの同型類は一意である。
-従って smooth な $\mathcal Z\to S$ の $p_0$ での相対接空間は零であり、
-その相対次元は零である。よってこの射自体が $p_0$ で étale となる。
-平方同型そのものを一意に選ぶという意味ではない。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[Hochschild 一次の役割]
@@ -705,24 +362,7 @@ $(\OO,\pi M_c,\OO(1),\pi M_d(1))$ に対応させる。
 \end{corollary}
 
 \begin{proof}
-補題~\ref{lem:foundation-relative-smooth-proper} と
-補題~\ref{lem:foundation-relative-antiserre-perfect} が前命題の
-相対 smooth proper 性と Serre の基底変更を与える。
-任意の基底変更後に中心が基底環であり負の Hochschild 次数が零であることは、
-命題~\ref{prop:quadric-etale-morita-root} の有向代数の中心の計算による。
-定理~\ref{thm:noncubic-hh-trivial-root} は両 Hochschild 次数への恒等作用を与えるので、
-前命題を適用できる。
-
-最後の対象比較は有限個の perfect 複体の開性による。
-$a=0,1$ に対し
-$\mathbf R\Hom(\mathsf sF_a,F_{a+2})$ は底上 perfect で、
-命題~\ref{prop:nchh-root-gale} の実際の根の比較により
-閉 fiber は $k[0]$ である。
-従って近傍で次数零の線束となる。
-閉 fiber の同型に対応する切断を選び、
-その射の cone に perfect Nakayama を適用すると
-\eqref{eq:noncubic-etale-root-window} が得られる。
-この同型は derived tensor 後も同型のままである。
+全証明は相対モジュライ論文 \cite[\texttt{noncubic_hh_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{remark}[有限型近傍でまだ結論していないこと]
