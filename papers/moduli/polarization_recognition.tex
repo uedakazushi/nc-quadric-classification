@@ -1,0 +1,175 @@
+% !TEX root = ../nc-quadric-moduli.tex
+% 2026-11-22 / v1.11（相対モジュライ論文Bへ証明移管）
+\section{有限 foundation 上の反 Serre 偏極の相対認識}
+\label{sec:finite-polarization-recognition}
+
+分類論文 \cite[反 Serre 偏極の節]{QuadricIntrinsic2026} の Zhang 族が示すように、平坦な pointed Abel 圏を構成することと、
+表示された次数移動を内在的反 Serre 関手と同定することは別問題である。
+本節では有限 foundation と次数移動の双加群表示が得られている場合に、
+後者を非被約基底も含む有限個の方程式と開条件で判定する。
+任意の $X_3$ 族からこの有限表示を構成することは、本節の仮定に含めない。
+
+\begin{lemma}[最低次 Hom を線束にする scheme-theoretic 条件]
+\label{lem:lowest-hom-line-locus}
+$S$ を局所 noetherian スキーム、$K$ を $S$ 上 perfect 複体とする。
+各幾何点で $H^i(K_{\bar s})=0$（$i<0$）、
+$\dim H^0(K_{\bar s})\le1$ と仮定する。
+このとき有限表示閉部分スキーム $j:Z\hookrightarrow S$ が存在して、
+次を満たす。
+\begin{enumerate}
+\item $\mathcal L=H^0(\mathbf L j^*K)$ は線束であり、
+その形成は $Z$ 上の任意の基底変更と可換する。
+\item $f:T\to S$ が $Z$ を経由することと、全ての
+$g:T'\to T$ に対し $H^0(\mathbf L(fg)^*K)$ が線束となることは同値である。
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+perfect 複体の局所的な単位成分の消去により、
+$K$ は局所的に有限自由加群の複体
+$[K^0\xrightarrow{d^0}K^1\to\cdots\to K^b]$ で表せる。
+特に負次数の項は不要である。
+$\operatorname{rk}K^0=r$ とする。
+仮定より、各幾何点で $d^0$ の階数は $r-1$ 以上である。
+$r=0$ の領域には求める $Z$ の点がない。
+$r\ge1$ の場合は、$d^0$ のある $(r-1)$ 次 minor が可逆となる
+開集合で覆える（$r=1$ では空の minor を $1$ とする）。
+その開集合上で行列の初等変形を行えば、
+\[
+ d^0=\begin{pmatrix}I_{r-1}&0\\0&v\end{pmatrix}
+\]
+と書ける。$v$ は一本の列であり、行数零の場合も許す。
+この表示で $Z$ を $v$ の全成分が零となる閉部分スキームとする。
+これは幾何点上の階数条件だけでなく、基底環での実際の消滅条件である。
+その上では $\ker d^0$ は最後の一座標が張る直和因子であり、
+任意の基底変更後も同じ線束を与える。
+
+逆に任意の環への基底変更後、$H^0(K)$ が線束であるとする。
+上の表示では、それは $\operatorname{Ann}(v)$ という基底環のイデアルである。
+線束は基底環上忠実であり、$v$ の各成分はこのイデアルを零化するから、
+各成分自体が零でなければならない。
+従ってこの表示では、$H^0$ が線束であるという条件だけでも
+上の閉部分スキームを経由する。普遍的特徴付けによって局所構成は貼り合う。
+これは \cite[Tag 0BDH, Lemma 36.31.4]{StacksModuli} の
+最低次数 $a=0$、階数 $r=1$ の場合の具体的な行列表示でもある。
+\end{proof}
+
+\begin{theorem}[scalar 自己同型を持つ双加群の比較部分スキーム]
+\label{thm:bimodule-line-comparison}
+$S$ を局所 noetherian スキーム、$\Lambda$ を有限局所自由
+$\mathcal O_S$-代数とする。任意の $T\to S$ に対して
+\[
+ Z(\Lambda_T)=\mathcal O_T
+\]
+と仮定する。$P,Q$ を perfect な $\Lambda$-双加群とし、
+それぞれ導来 tensor 積について可逆とする。
+このとき $S$ 上の fppf 部分層
+\[
+ \mathscr E(P,Q)(T)=
+ \begin{cases}
+ \{*\},&P_T\simeq Q_T\text{ が }T\text{ の fppf 局所で成立する},\\
+ \varnothing,&\text{それ以外}
+ \end{cases}
+\]
+は有限表示の局所閉部分スキーム $S_{P\sim Q}\hookrightarrow S$ によって表される。
+その上には標準的な線束
+\[
+ \mathcal L=H^0\mathbf R\mathcal Hom_{\Lambda^e}(P,Q)
+\]
+と評価同型 $P\otimes\mathcal L\simeq Q$ が存在する。
+この線束と同型は、線束の同型を許して一意である。
+全ての構成は任意の基底変更と可換する。
+\end{theorem}
+\begin{proof}
+$\Lambda^e=\Lambda\otimes\Lambda^{\mathrm{op}}$ と置く。
+$\Lambda^e$ は基底上有限局所自由であり、$P,Q$ はその perfect 加群なので、
+\[
+ K=\mathbf R\mathcal Hom_{\Lambda^e}(P,Q)
+\]
+は基底上 perfect で、任意の導来基底変更と可換する。
+$P$ の可逆性により
+\[
+ \mathbf R\mathcal Hom_{\Lambda_T^e}(P_T,P_T)
+ \simeq
+ \mathbf R\mathcal Hom_{\Lambda_T^e}(\Lambda_T,\Lambda_T).
+\]
+右辺は負次数 cohomology を持たず、次数零は仮定より $\mathcal O_T$ である。
+従って $\operatorname{Aut}(P_T)=\mathbb G_m(T)$ であり、
+この scalar 記述は任意の基底変更後にも成立する。
+
+perfect 複体の幾何ファイバーの cohomology 次元の上半連続性により、
+\[
+ U=\{s\in S\mid H^i(K_{\bar s})=0\ (i<0),\ 
+                      \dim H^0(K_{\bar s})\le1\}
+\]
+は開集合である。比較同型が局所的に存在する任意の $T\to S$ は
+$U$ を経由する。実際、その全幾何点で $K$ は $P$ の自己 Hom と同型となる。
+上半連続性と局所的な非負次数表示は、\cite[Tag 0BDH, Lemma 36.31.1]{StacksModuli}
+の有限自由複体の消去による。
+
+補題~\ref{lem:lowest-hom-line-locus} を $K|_U$ に適用し、
+閉部分スキーム $Z\hookrightarrow U$ と線束
+$\mathcal L=H^0(K_Z)$ を得る。
+負次数がないため、標準写像 $\mathcal L[0]\to K_Z$ があり、
+tensor--Hom 随伴により評価射
+\[
+ e:P_Z\otimes\mathcal L\longrightarrow Q_Z
+\]
+を定める。その cone は基底上 perfect なので、それが零となる最大の
+開部分 $W\subset Z$ が存在する。
+この開条件は、有限自由表示の複体が完全になる条件、または幾何ファイバーの
+全 Betti 数が零になる条件である。perfect 複体の Nakayama により、
+任意の $T\to Z$ に対し $e_T$ が同型であることと、$T\to Z$ が $W$ を経由する
+ことが同値となる。従って $W$ は $S$ の有限表示局所閉部分スキームである。
+
+$T\to S$ 上 fppf 局所に $P_T\simeq Q_T$ とする。
+この局所同型の下で $K_T$ の次数零 Hom は $\mathcal O_T$ となり、
+任意の更なる基底変更でもそうである。線束性と評価同型は忠実平坦降下するので、
+$T\to S$ はまず $Z$、次いで $W$ を経由する。
+逆に $T\to W$ なら、線束 $\mathcal L_T$ を局所自明化することで
+$P_T\simeq Q_T$ を得る。これで $W$ が所要の部分層を表すことが分かった。
+
+任意の線束 $L$ と同型 $P_T\otimes L\simeq Q_T$ について、
+相対 Hom を取ると $L\simeq H^0(K_T)$ となり、評価同型へ移る。
+scalar な自己同型の記述から、この比較は一意である。
+構成の特徴付けは任意の $T\to S$ を用いており、基底変更との整合性も従う。
+\end{proof}
+
+\begin{remark}[fppf 像の一般的障害との関係]
+ここでは単に有限表示の比較パラメータ空間の像を取ったのではない。
+自己 Hom の次数零が基底環そのものであるため、比較が存在する場合の
+Hom は線束になり、その普遍性を有限行列の方程式で課すことができた。
+同型の空間はこの部分スキーム上の $\mathbb G_m$-torsor となる。
+有限型射の任意の fppf 像が代数的になるという主張ではない。
+\end{remark}
+
+\begin{corollary}[有限 foundation 上の反 Serre 比較]
+\label{cor:foundation-antiserre-comparison-locus}
+$\Lambda$ を分類論文 \cite{QuadricIntrinsic2026} で構成した相対 foundation 代数とし、
+$P$ を表示された次数移動を表す可逆 perfect 双加群とする。
+相対反 Serre 関手 $S^{-1}[2]$ の双加群を $Q$ とする。
+次数移動が反 Serre 関手と基底線束 twist を除いて一致する条件は、
+基底の有限表示局所閉部分スキームで表される。
+\end{corollary}
+\begin{proof}
+foundation 代数の対角頂点成分は $\mathcal O_S$ である。
+中心元は冪等元と可換なので頂点ごとの scalar であり、
+頂点間の正階数の局所自由成分と可換することから全 scalar は等しい。
+この議論は任意の基底変更後にも成立するので $Z(\Lambda_T)=\mathcal O_T$。
+有限な相対 bar 解消による smooth proper 性と、仮定した双加群表示により
+前定理を適用できる。
+\end{proof}
+
+\begin{remark}[次数の正規化と適用範囲]
+反 Serre 軌道環の正規化で
+$L_{\mathrm{deg}}=(\det R_1)^{-11}(\det R_2)^2$ とすると、
+正規化した次数移動は $t\otimes L_{\mathrm{deg}}^{-1}$ を表す。
+従って前定理で $P$ をこの次数移動、$Q=t$ とすれば、
+比較線束は $L_{\mathrm{deg}}$ である。
+大域的な $P\simeq Q$ だけを課してこの線束を落としてはならない。
+
+本節は有限 foundation と次数移動の可逆 perfect 双加群表示を与えた後の
+偏極認識を解決する。任意の $X_3$ 族に相対 foundation が存在すること、
+heart の次数移動がその表示へ移ること、平方根・AS 被覆の局所存在が
+同じ部分スキーム上で成立することは別に確認しなければならない。
+従って本節だけから $X_{\mathrm{as}}$ 全体の表現可能性は結論しない。
+\end{remark}

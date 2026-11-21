@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.11
+% 2026-11-22 / v1.12（全3証明を相対モジュライ論文Bへ移管、主張は参照維持）
 \section{有限 foundation 上の反 Serre 偏極の相対認識}
 \label{sec:finite-polarization-recognition}
 
@@ -24,33 +24,8 @@ $g:T'\to T$ に対し $H^0(\mathbf L(fg)^*K)$ が線束となることは同値�
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-perfect 複体の局所的な単位成分の消去により、
-$K$ は局所的に有限自由加群の複体
-$[K^0\xrightarrow{d^0}K^1\to\cdots\to K^b]$ で表せる。
-特に負次数の項は不要である。
-$\operatorname{rk}K^0=r$ とする。
-仮定より、各幾何点で $d^0$ の階数は $r-1$ 以上である。
-$r=0$ の領域には求める $Z$ の点がない。
-$r\ge1$ の場合は、$d^0$ のある $(r-1)$ 次 minor が可逆となる
-開集合で覆える（$r=1$ では空の minor を $1$ とする）。
-その開集合上で行列の初等変形を行えば、
-\[
- d^0=\begin{pmatrix}I_{r-1}&0\\0&v\end{pmatrix}
-\]
-と書ける。$v$ は一本の列であり、行数零の場合も許す。
-この表示で $Z$ を $v$ の全成分が零となる閉部分スキームとする。
-これは幾何点上の階数条件だけでなく、基底環での実際の消滅条件である。
-その上では $\ker d^0$ は最後の一座標が張る直和因子であり、
-任意の基底変更後も同じ線束を与える。
-
-逆に任意の環への基底変更後、$H^0(K)$ が線束であるとする。
-上の表示では、それは $\operatorname{Ann}(v)$ という基底環のイデアルである。
-線束は基底環上忠実であり、$v$ の各成分はこのイデアルを零化するから、
-各成分自体が零でなければならない。
-従ってこの表示では、$H^0$ が線束であるという条件だけでも
-上の閉部分スキームを経由する。普遍的特徴付けによって局所構成は貼り合う。
-これは \cite[Tag 0BDH, Lemma 36.31.4]{StacksModuli} の
-最低次数 $a=0$、階数 $r=1$ の場合の具体的な行列表示でもある。
+完全な証明は相対モジュライ別稿 \cite[有限 foundation 上の偏極認識]{QuadricModuli2026} に置く。
+本稿では後続の相対議論に必要な主張と仮定を保持する。
 \end{proof}
 
 \begin{theorem}[scalar 自己同型を持つ双加群の比較部分スキーム]
@@ -80,58 +55,8 @@ $\mathcal O_S$-代数とする。任意の $T\to S$ に対して
 全ての構成は任意の基底変更と可換する。
 \end{theorem}
 \begin{proof}
-$\Lambda^e=\Lambda\otimes\Lambda^{\mathrm{op}}$ と置く。
-$\Lambda^e$ は基底上有限局所自由であり、$P,Q$ はその perfect 加群なので、
-\[
- K=\mathbf R\mathcal Hom_{\Lambda^e}(P,Q)
-\]
-は基底上 perfect で、任意の導来基底変更と可換する。
-$P$ の可逆性により
-\[
- \mathbf R\mathcal Hom_{\Lambda_T^e}(P_T,P_T)
- \simeq
- \mathbf R\mathcal Hom_{\Lambda_T^e}(\Lambda_T,\Lambda_T).
-\]
-右辺は負次数 cohomology を持たず、次数零は仮定より $\mathcal O_T$ である。
-従って $\operatorname{Aut}(P_T)=\mathbb G_m(T)$ であり、
-この scalar 記述は任意の基底変更後にも成立する。
-
-perfect 複体の幾何ファイバーの cohomology 次元の上半連続性により、
-\[
- U=\{s\in S\mid H^i(K_{\bar s})=0\ (i<0),\ 
-                      \dim H^0(K_{\bar s})\le1\}
-\]
-は開集合である。比較同型が局所的に存在する任意の $T\to S$ は
-$U$ を経由する。実際、その全幾何点で $K$ は $P$ の自己 Hom と同型となる。
-上半連続性と局所的な非負次数表示は、\cite[Tag 0BDH, Lemma 36.31.1]{StacksModuli}
-の有限自由複体の消去による。
-
-補題~\ref{lem:lowest-hom-line-locus} を $K|_U$ に適用し、
-閉部分スキーム $Z\hookrightarrow U$ と線束
-$\mathcal L=H^0(K_Z)$ を得る。
-負次数がないため、標準写像 $\mathcal L[0]\to K_Z$ があり、
-tensor--Hom 随伴により評価射
-\[
- e:P_Z\otimes\mathcal L\longrightarrow Q_Z
-\]
-を定める。その cone は基底上 perfect なので、それが零となる最大の
-開部分 $W\subset Z$ が存在する。
-この開条件は、有限自由表示の複体が完全になる条件、または幾何ファイバーの
-全 Betti 数が零になる条件である。perfect 複体の Nakayama により、
-任意の $T\to Z$ に対し $e_T$ が同型であることと、$T\to Z$ が $W$ を経由する
-ことが同値となる。従って $W$ は $S$ の有限表示局所閉部分スキームである。
-
-$T\to S$ 上 fppf 局所に $P_T\simeq Q_T$ とする。
-この局所同型の下で $K_T$ の次数零 Hom は $\mathcal O_T$ となり、
-任意の更なる基底変更でもそうである。線束性と評価同型は忠実平坦降下するので、
-$T\to S$ はまず $Z$、次いで $W$ を経由する。
-逆に $T\to W$ なら、線束 $\mathcal L_T$ を局所自明化することで
-$P_T\simeq Q_T$ を得る。これで $W$ が所要の部分層を表すことが分かった。
-
-任意の線束 $L$ と同型 $P_T\otimes L\simeq Q_T$ について、
-相対 Hom を取ると $L\simeq H^0(K_T)$ となり、評価同型へ移る。
-scalar な自己同型の記述から、この比較は一意である。
-構成の特徴付けは任意の $T\to S$ を用いており、基底変更との整合性も従う。
+完全な証明は相対モジュライ別稿 \cite[有限 foundation 上の偏極認識]{QuadricModuli2026} に置く。
+本稿では後続の相対議論に必要な主張と仮定を保持する。
 \end{proof}
 
 \begin{remark}[fppf 像の一般的障害との関係]
@@ -151,12 +76,8 @@ $P$ を表示された次数移動を表す可逆 perfect 双加群とする。
 基底の有限表示局所閉部分スキームで表される。
 \end{corollary}
 \begin{proof}
-foundation 代数の対角頂点成分は $\mathcal O_S$ である。
-中心元は冪等元と可換なので頂点ごとの scalar であり、
-頂点間の正階数の局所自由成分と可換することから全 scalar は等しい。
-この議論は任意の基底変更後にも成立するので $Z(\Lambda_T)=\mathcal O_T$。
-有限な相対 bar 解消による smooth proper 性と、仮定した双加群表示により
-前定理を適用できる。
+完全な証明は相対モジュライ別稿 \cite[有限 foundation 上の偏極認識]{QuadricModuli2026} に置く。
+本稿では後続の相対議論に必要な主張と仮定を保持する。
 \end{proof}
 
 \begin{remark}[次数の正規化と適用範囲]
