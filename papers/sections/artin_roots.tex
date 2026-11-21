@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.15
+% 2026-11-21 / v1.16
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -753,11 +753,64 @@ $\mathsf s$ による二項移動により、必要な derived Hom と積・関�
 この開近傍で局所自由性・分裂性を保てば任意基底変更にも保たれる。
 \end{proof}
 
+
+\begin{proposition}[幾何的 cubic ファイバーの有限型開近傍]
+\label{prop:quadric-geometric-quintuple-open}
+命題~\ref{prop:quadric-etale-finite-window} の可換点
+$u\in U(k)$ を含む Zariski 開部分
+$U_{\mathrm{geo}}\subset U$ があり、全ての幾何点
+$\bar v\to U_{\mathrm{geo}}$ に対して
+\[
+ D^{\mathrm{pres}}_{\bar v}
+       =T_{\mathbb Z,k(\bar v)}(V_{i,\bar v})/
+                                  (R_{i,\bar v})
+\]
+は幾何的 cubic AS 正則 $\mathbb Z$-代数である。
+同じ性質は任意の非被約な有限型基底変更後も幾何ファイバーごとに成り立つ。
+ただし $D^{\mathrm{pres}}$ の全次数の相対局所自由性、
+noetherian 性、$D^{\mathrm{pres}}_{ij}$ と
+$\operatorname{Hom}(L_i,L_j)$ の全次数の一致、
+相対 tails や $\mathfrak H_2$ の効果性は結論しない。
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:quadric-etale-finite-window} により
+$W_i\subset V_i\otimes V_{i+1}\otimes V_{i+2}\otimes V_{i+3}$
+は線束であり、$R_i$ と $V_{i+3}^{\vee}$、
+$V_i^{\vee}$ と $R_{i+1}$ への pairing は非退化である。
+根 $\mathsf s$ の二項移動により、$i=0,1$ の二つを調べればよい。
+
+$i=0,1$ と巡回する四つの隣接因子対をそれぞれ固定する。
+$W_i$ の元に対する二つの非零 covector の縮約が零になる条件は、
+該当する二つの双対射影束の積
+$\mathbf P(V_{a}^{\vee})\times_U\mathbf P(V_{b}^{\vee})$
+上の vector bundle の切断の零条件として閉である。
+この射影束の積から $U$ への射は proper なので、
+零集合の像も閉である。
+それらの有限個の像を除けば、全幾何ファイバーで
+Van den Bergh の geometric quintuple の縮約非零条件が成り立つ。
+可換 $Q$ の $W_i$ は二つの二次元 symplectic
+coevaluation の tensor であり、該当する全縮約は非零である。
+よって得られる開部分は $u$ を含む。
+
+非退化 pairing から $W_i$ の縮約で $R_i,R_{i+1}$ を回復する。
+$W_i\subset V_i\otimes R_{i+1}$ と
+$W_{i+1}\subset R_{i+1}\otimes V_{i+4}$ の
+coevaluation を合成して $V_i\simeq V_{i+4}$ とすれば、
+二つの $W$ はこの同型による巡回で一致する
+（補題~\ref{lem:relative-cubic-tensors-artin} と同じ線形代数）。
+従って全関係は一つの geometric quintuple の標準再構成であり、
+体上の分類 \cite[Theorem 4.31, arXiv v3]{VdB2011} により
+各幾何ファイバーの cubic AS 正則性が従う。
+体上の定理を相対 flatness の定理に読み替えてはいない。
+\end{proof}
+
 \begin{remark}[この代数化で残る条件]
 得られたのは有限 foundation の perfect 圏上の平方根、
 命題~\ref{prop:quadric-etale-finite-window} の四項窓、
-および定理~\ref{thm:quadric-local-all-degree-cubic} の
-可換点の局所環における全次数の cubic・二次提示である。
+定理~\ref{thm:quadric-local-all-degree-cubic} の
+可換点の局所環における全次数の cubic・二次提示、
+及び命題~\ref{prop:quadric-geometric-quintuple-open} の
+有限型開における幾何的 cubic ファイバーである。
 一般有限型の開近傍で、全ての長さの Hom と三次提示を一様に制御し、
 その根と helix が noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、

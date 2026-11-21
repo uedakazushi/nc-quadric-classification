@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.15
+% 日本語 LuaLaTeX。2026-11-21 / v1.16
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.15（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.16（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -109,8 +109,11 @@ foundation 代数の $\operatorname{HH}^1$ である。
 任意の基底変更と整合的に得る。
 さらに可換点の局所環では、全次数の相対 Hom の次数零集中、
 全 cubic $\mathbb Z$-代数の三次提示と標準 cubic 解消、
-偶数環の二次提示と相対 Koszul 解消を証明する。各有限次数は個別の開近傍でも成立するが、
-全次数を一様に制御する有限型開近傍と相対豊富性は別に残る。
+偶数環の二次提示と相対 Koszul 解消を証明する。各有限次数は個別の開近傍でも成立する。
+さらに幾何的 quintuple の縮約非零条件が proper image の補集合
+であることから、有限型開近傍の全幾何ファイバーが
+cubic AS 正則となる。ただし全次数の一様な相対平坦性と
+相対豊富性は別に残る。
 二周期 cubic 列の相対 canonical hull を
 構成し、全 Artin 変形に同じ根の相対 AS4 被覆を与える。
 適合表示を全有限型基底変更上の系へ昇格させることで、可換点での
@@ -227,7 +230,9 @@ To\"en--Vaqui\'e \cite[Corollaries 3.22, 3.24]{TV2007} の一般基礎環上の
 可換点の局所環では全次数の三次提示・標準 cubic 解消と
 偶数環の相対 Koszul 性まで得る
 （定理~\ref{thm:quadric-local-all-degree-cubic}）。
-単一の有限型開近傍での全次数の一様性、
+幾何点の cubic AS 正則性は開近傍上で確認できる
+（命題~\ref{prop:quadric-geometric-quintuple-open}）。
+しかし単一の有限型開近傍での全次数の一様な平坦性、
 Abel heart と AZ 豊富性の相対実現は含まない。
 これらの適用を含む包括的な先行研究上の新規性は、なお確認を要する。
 
