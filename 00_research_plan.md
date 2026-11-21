@@ -192,6 +192,8 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 固定Sklyanin pencilの高々64候補への簡約にはΔの単射性が残るが、その補集合は主定理の四生成判定で既に扱う。Δの全域解析は判定の簡約という別の課題である。可換点の四根とOkawa–Uedaの次数四射の一致も先取りしない。
 
+**O-marking の忘却（独立した次段階の課題）。** 相対H2から、局所的にH2構造対象を持つ相対Abel圏のfppf stackへの忘却を区別する。固定Cにおける2-fiberは許容O対象のgroupoid、同型類ファイバーはAut^ex(C)で割った軌道集合である。\(K_0\)・Euler形式から許容Oの数値類は\(\operatorname{ch}=\operatorname{ch}\mathcal O_Q(a,b)\), \((a,b)\in\mathbb Z^2\) に限る。Kitamura–Okawaの2022年Oberwolfach報告では全cubic line bundlesの\(\mathbb Z^2\)表示と\(D_\infty\)を予告するが、その当時の主要証明はin preparation。全\(\mathbb Z^2\)標識がH2で、適合根が対角移動を誘導すると仮定すれば、幾何点の忘却ファイバーは\(\bar H\backslash\mathbb Z\)（\(\bar H\)は自己同値の差\(b-a\)への作用）に還元する。genericな\(\mathbb Z:1\)はこの\(\bar H\)の横断平行移動部分が零かどうかの未解決問題。helix添字一移動は楕円パラメータ\((\eta,\delta)\mapsto(\delta-\eta,\delta)\) と直接計算でき、もう一方のruling反射・安定化群が次の調査対象。証明状態と引用は [研究ノート](notes/research_notes.md#o-marking-から-abel-圏への忘却幾何点ファイバーの還元条件付き)、[文献比較](notes/literature.md) に置く。
+
 ## 6. 次の実行単位
 
 1. **noncubic境界の横断効果性を完成する。** 良い根のHH¹/HH²恒等作用、全Artin延長と有限型étale代数化は成立した。同じ根のAS4被覆について、二次双対の正規二次線を高次まで延長する方法、またはcubic canonical hullの境界での代数的延長を調べる。有限五頂点窓のbar解消とfiber-perfect判定から、cubic/noncubicのBetti数の変動を許すcanonical tails比較を構成する。Noetherian性は閉noncubic表示と開cubic表示の実際の相対比較を確立してから `thm:patch-noetherian` で扱う。dim1の表示商だけで横断Abel方向を覆ったとせず、根・全軌道・被覆・heartの残る入力を個別に閉じる。

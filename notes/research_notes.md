@@ -215,6 +215,28 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 
 相対条件を試す具体的入力として、[定数bivector方向のOre変形](ore_quadric_deformations.md)を置く。中央元g=xw−zyの正則切断、全次数自由な商、quadratic dualのFrobenius pairingまでの証明稿を記し、相対CY・Serre・H2条件は未証明とする。主原稿の非持上げ例を相対H2の内部へ強める際の候補であり、現行定理の入力には用いない。
 
+## O-marking から Abel 圏への忘却：幾何点ファイバーの還元（条件付き）
+
+**問いと二種類のファイバー。** 相対 \(\mathcal H_2\) の圏を忘却した prestack を、局所H2標識を持つ相対Abel圏と**全てのexact同値**によって定め、必要ならfppf stack化して \(\mathfrak{Ab}_{H_2}\) と書く。任意のAbel圏全体の標準的な代数的モジュライが構成済みという主張ではない。自然な \(F:\mathfrak H_2\to\mathfrak{Ab}_{H_2}\) の固定圏 \(\mathcal C\) における2-fiberは、\(\mathcal M(\mathcal C)=\{L\in\mathcal C:(\mathcal C,L)\in\mathcal H_2\}\) の同型groupoidであって、\(\operatorname{Aut}^{\mathrm{ex}}(\mathcal C)\) で割らない。一方、**幾何点の同型類の写像**のファイバーは \(\operatorname{Aut}^{\mathrm{ex}}(\mathcal C)\backslash\pi_0\mathcal M(\mathcal C)\)。いずれにもroot/ambientを追加標識しない。可換 \(Q=\mathbb P^1\times\mathbb P^1\) では2-fiberは \(\coprod_{\mathbb Z^2}B\mathbb G_m\) だが、同型類のファイバーはPicardのtensor自己同値により一点である。
+
+**数値類の必要条件（本原稿の既存計算から直接従う）。** pointed \((\mathcal C,\mathcal O)\) を一つ選び、\(\texttt{prop:first-orbit-object}\) のEuler形式・\(K_0(Q)\) 同定を使う。任意の許容 \(L\) はGK rank-one torsion-free exceptionalであり、\(\operatorname{ch}[L]=r+aH_1+bH_2+cH_1H_2\) と書けば \(r=1\)、\(a,b\in\mathbb Z\)。同節のRiemann–Roch式 \(\chi(L,L)=r^2+2rc-2ab\) と例外性 \(\chi(L,L)=1\) により \(c=ab\)。従って数値的候補は必ず \(\operatorname{ch}[L]=1+aH_1+bH_2+abH_1H_2=\operatorname{ch}\mathcal O_Q(a,b)\) に属する。この計算だけでは各類の存在・一意性も、候補の全分類も従わない。
+
+**Kitamura–Okawaの2022年報告（引用するが未公刊の証明は未監査）。** Okawa, joint with Kitamura, *The reconstruction theorem for AS-regular 3-dimensional cubic Z-algebras*, Oberwolfach Reports 23/2022, pp.1271–1273, DOI 10.4171/OWR/2022/23, <https://doi.org/10.4171/OWR/2022/23> は、cubic \(\mathbb Z\)-代数の \(\operatorname{qgr}\) に対するrank-one torsion-free \(\chi=1\) 対象が \(\mathcal O(a,b)\), \((a,b)\in\mathbb Z^2\) で尽きる（Theorem 3）、\(\operatorname{Hom}\ne0\) による半順序が積順序になり、同じ \(\operatorname{qgr}\) のcubic表示は \(D_\infty\) 軌道になる（Theorem 1）と**報告**する。そこでの文献[4]は *in preparation*。現時点では公開済みの完全証明を一次照合したわけではない。この結果の仮定は本repoのH2との一致、\(\chi=1\) とexceptionality、GK-rankと先行文献のrankの一致を確認する必要がある。
+
+**群論的還元（以下の三条件の下で証明）。** (i) 許容標識の同型類が \(\mathbb Z^2\) と一対一対応し積順序のHom構造を持つ、(ii) 全 \(\mathcal O(a,b)\) にH2標識を作れる、(iii) 本研究で得た適合根がこの格子上で \((a,b)\mapsto(a+1,b+1)\) と作用する、と仮定する。(ii) は各zigzagのmutationから再び許容cubic表示を得て \(\texttt{thm:all-admissible-inverse}\) を適用することを個別に照合する必要がある。(iii) は標準foundationの四項に対する二項移動と一致する。すると全exact自己同値の格子作用の像 \(H\) は \(\mathbb Z^2\rtimes C_2\) の部分群で対角移動 \(\Delta=(1,1)\) を含む。従って同型類忘却ファイバーは
+\[
+ H\backslash\mathbb Z^2\cong \bar H\backslash\mathbb Z,\qquad d=b-a,
+\]
+ただし \(\bar H\subset\mathbb Z\rtimes C_2\) は \(d\mapsto d+n\) と \(d\mapsto-d+n\) 型の像。\(\bar H\) の平行移動部分が零ならこのファイバーは**可算無限**（反射がなければ整数でラベル付き、あれば反射で割ったもの）。非零の \(m\mathbb Z\) を含むなら有限個（高々 \(m\) 個）。これは群作用の初等的帰結でありgenericな \(\bar H\) の決定ではない。スタック射の表現可能性・étale性・『degree \(\mathbb Z\)』も主張しない。
+
+**楕円型の実計算と次の障害。** 許容楕円四つ組の線束を加法的に \(\ell_i=[L_i]\in\operatorname{Pic}^2(E)\) と書く。VdB helix \(\ell_{i+3}=-\ell_i+\ell_{i+1}+\ell_{i+2}\) から \(\delta:=\ell_2-\ell_0=\ell_{i+2}-\ell_i\) は全 \(i\) で一定。\(\eta:=\ell_1-\ell_0\) とすれば添字一移動 \((\ell_0,\ell_1,\ell_2)\mapsto(\ell_1,\ell_2,\ell_3)\) は
+\[
+ (\eta,\delta)\longmapsto(\delta-\eta,\delta)
+\]
+となり反射である。これは既存helix漸化式からの直接計算。**もう一方のruling/mutationの反射作用式は未照合**。もしそれが \(\eta\mapsto-\eta\)（適切な規格化）なら合成は \(\eta\mapsto\eta+\delta\) であり、genericなnon-torsion \(\delta\) は無限軌道を生む。しかし作用式の特定、一般点の安定化群、pointed H2とcubic \(\mathbb Z\)-代数の二択との比較を証明するまで、generic \(\mathbb Z\)-to-1は**予想**とする。
+
+**次の具体的一手。** \(\texttt{foundation_stack.tex}\) の二ruling交換を楕円 \(\operatorname{Pic}^2(E)\) 上で計算し、\((\eta,\delta)\) への作用を求める。次に、\(D_\infty\) の一般軌道安定化と、各 \(\mathcal O(a,b)\) のH2適合性を確認する。Kitamura–Okawaの完全原稿が利用可能になればTheorem 1/3の仮定・証明を一次点検する。これは現行の最優先課題であるnoncubic境界の相対効果性とは独立の研究方向である。
+
 ## 証明状態と依存関係
 
 | 主張 | 依存する事実・仮定 | 状態・所在 |

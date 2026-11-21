@@ -193,6 +193,10 @@ Python 3.9以上とSymPy、およびLuaTeX-jaを含むTeX Live/MacTeX、latexmk�
 
 VS Codeではrepo全体を開き、LaTeX Workshopの推奨拡張と既定の `latexmk (LuaLaTeX, project settings)` レシピを使う。設定はresearch-hubの雛形に準拠し、`.latexmkrc`がエンジン・作業ディレクトリ・出力先を統一する。VS Code UIの操作確認とコマンドによる組版確認は区別する。
 
+## 構造対象の忘却（調査段階）
+
+\(\mathfrak H_2\) から圏の標識を忘れる場合、固定された圏上の**2-fiber**（許容構造対象のgroupoid）と、圏の同型類への写像のファイバー（自己同値で割る）を区別する。前者は可換quadricでも\(\mathbb Z^2\)個の成分を持つが、後者は一点。cubic型については数値候補\(\mathbb Z^2\)とKitamura–Okawaの2022年の未公刊定理報告を手掛かりに、条件付きで後者を\(\bar H\backslash\mathbb Z\)へ還元した。genericな可算無限ファイバーは未証明であり、もう一方のruling変換と自己同値安定化群を調べる。[研究ノート](notes/research_notes.md#o-marking-から-abel-圏への忘却幾何点ファイバーの還元条件付き)に仮定と計算を記す。
+
 ## 関連研究
 
 [research-hub](https://github.com/uedakazushi/research-hub) が研究全体の入口。[nc-cubic-classification](https://github.com/uedakazushi/nc-cubic-classification)とはO標識とAS4表示の考え方を比較するが、その未監査の完全分類定理には依存しない。Serre根一般は [categorical-fano-index](https://github.com/uedakazushi/categorical-fano-index) と関係する。既存のquadric分類・Okawa–Uedaのmoduliとの具体的比較は文献ノートを正本とする。

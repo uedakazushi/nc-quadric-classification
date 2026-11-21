@@ -197,6 +197,10 @@ square辞書 $H=F_sG_sP^{-1}$ とrotated square $H_r=F_sG_sP$ を区別する。
 3. `OU2014` の次数4射とroot忘却の関係を検証する。可換点の四根だけから一致・有限性を断定しない。
 4. 自己同値群、全根・全ambient、相対moduliを扱う場合は、同値類分類とは別に自然同型・降下・底変更を検証する。
 
+## Kitamura–Okawa の cubic Z-algebra 復元報告と忘却
+
+Shinnosuke Okawa (joint work with Takuya Kitamura), “The reconstruction theorem for AS-regular 3-dimensional cubic Z-algebras”, *Oberwolfach Reports* 23/2022, pp. 1271–1273（ワークショップ報告）, DOI [10.4171/OWR/2022/23](https://doi.org/10.4171/OWR/2022/23), [公開PDF](https://oa.tib.eu/renate/server/api/core/bitstreams/c28e6d94-6858-4684-b0bf-be60f80b7e20/content)。当該報告のTheorem 1は同じqgrを持つ三次元cubic AS-regular Z-algebraの同型類が\(D_\infty\)軌道となること、Theorem 3はrank-one torsion-freeかつ\(\chi(L,L)=1\) のline bundlesが \(\mathcal O(a,b)\), \(\mathbb Z^2\) に尽きること、Hom非零による積順序を述べる。論文は当時のReferences [4]で *in preparation* と記される。今回報告本文は確認したが、詳細証明・その後の刊行状況の完全な追跡は未確認。従って本repoの定理の証明入力には昇格せず、条件付き還元と独立課題の出典としてのみ使う。\(\mathbb Z^2\) の全元が本研究の強いH2条件を満たすこと、二つのruling反射とSerre根の作用、genericな自己同値像は別に検証する。
+
 ## 一次資料へのリンク
 
 - `AZ1994`: <https://doi.org/10.1006/aima.1994.1087>
