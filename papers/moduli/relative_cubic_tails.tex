@@ -219,6 +219,55 @@ $-\otimes_{\Gamma_a}^{\mathbf L}(\Gamma_a\otimes_RR')$ となる。
 これが compact 比較と実際の導来基底変更の整合性である。
 \end{proof}
 
+\begin{lemma}[有限基底代数における平坦な Hom--Ext 基底変更]
+\label{lem:finite-algebra-flat-hom-basechange}
+$R$ を可換 Noetherian 環、$\Gamma$ を中心 $R$ 上で有限な
+$R$-代数とし、$R\to R'$ を平坦な環準同型とする。
+$M,N\in D^b(\operatorname{mod}\Gamma)$ に対し、全ての $q\in\mathbb Z$ で
+\[
+ \operatorname{Hom}_{D(\Gamma)}(M,N[q])\otimes_RR'
+ \xrightarrow{\ \sim\ }
+ \operatorname{Hom}_{D(\Gamma\otimes_RR')}
+     (M\otimes_RR',N\otimes_RR'[q])
+ \tag{FA-BC}\label{eq:finite-algebra-flat-hom-basechange}
+\]
+が成り立つ。左辺の各 $R$-加群は有限生成である。
+$\Gamma$ 自身の $R$-平坦性は、この平坦\emph{基底変更}の結論には不要である。
+\end{lemma}
+\begin{proof}
+$\Gamma$ は有限な $R$-加群なので左右 Noetherian である。
+$M,N$ は有界な有限生成 $\Gamma$-加群の複体で表せる。
+$M$ の上に有界な有限生成自由右 $\Gamma$-加群の
+projective 解消 $P^\bullet$ を取る。
+各 $P^i$ は有限自由なので、任意の有限生成 $N^j$ に対して
+\[
+ \operatorname{Hom}_{\Gamma}(P^i,N^j)\otimes_RR'
+ \cong
+ \operatorname{Hom}_{\Gamma\otimes_RR'}
+       (P^i\otimes_RR',N^j\otimes_RR')
+\]
+となる。
+$N^\bullet$ は有界なので、固定された全次数の Hom 複体に
+寄与する $(i,j)$ は有限個であり、totalizationに無限直積を要しない。
+$R'$ は $R$ 上平坦なので $P^\bullet\otimes_RR'$ は
+$M\otimes_RR'$ の projective 解消で、
+平坦 tensor は Hom 複体の cohomology と可換する。
+従って \eqref{eq:finite-algebra-flat-hom-basechange} が従う。
+各全次数の Hom 複体は有限 $R$-加群からなり、
+$R$ が Noetherian なのでその cohomology も有限生成である。
+\end{proof}
+
+\begin{remark}[非平坦基底変更には同じ結論を使わない]
+\label{rem:nonflat-hom-basechange-warning}
+$R=k[t]$、$\Gamma=R$、$M=R/(t)$、$N=R$ とすると
+$\operatorname{Hom}_R(M,N)=0$ だが、
+$R'=R/(t)$ への基底変更後は
+$\operatorname{Hom}_{R'}(M\otimes_RR',N\otimes_RR')=k$ である。
+従って非平坦基底変更で通常の Hom が可換するとは主張できない。
+一方、perfect 対象に対する導来 Hom の
+\emph{導来}基底変更は別の議論で扱う。
+\end{remark}
+
 \begin{lemma}[有限型 heart の一様な cohomology]
 \label{lem:relative-cubic-coherent-cohomology}
 前定理で $R$ を Noetherian とする。
@@ -262,14 +311,18 @@ stalk ごとの下限を貼り合わせているのではない。
 $\operatorname{Hom}(M,N)$ は、有限直和 $E_0\twoheadrightarrow M$
 により $\operatorname{Hom}(E_0,N)$ の部分加群になるので有限である。
 さらに Morita 同値の像
-$\mathbf R\operatorname{Hom}(T_a,M)$ は cohomology が
-次数 $0,1,2$ にある $D^b(\operatorname{mod}\Gamma_a)$ の対象となる。
-$\Gamma_a$ は有限 $R$-加群なので左右 Noetherian。
-平坦 $R\to R'$ に対して、第一変数の上に有界な有限生成 projective
-$\Gamma_a$-解消と、第二変数の有界な有限加群複体を選ぶ。
-各 total degree に有限個しか項が現れない Hom 複体は
-$R'$ への平坦 tensor と可換し、cohomology も可換する。
-前定理の基底変更整合性により、これが元の Hom の平坦基底変更である。
+$\mathbf R\operatorname{Hom}(T_a,M)$ および
+$\mathbf R\operatorname{Hom}(T_a,N)$ は、
+有限 Hom と cohomological dimension の境界から
+$D^b(\operatorname{mod}\Gamma_a)$ に属する。
+$\Gamma_a$ は有限 $R$-加群なので、補題~
+\ref{lem:finite-algebra-flat-hom-basechange} により、
+両対象間の全 derived Hom は有限 $R$-加群であり、
+平坦 $R\to R'$ について通常の Hom・Ext の基底変更が成立する。
+前定理の Morita 同値とその導来基底変更整合性を通して
+$\operatorname{QGr}C$ の Noetherian 対象間の Hom に適用する。
+ここで使うのは\emph{平坦}基底変更であり、
+非平坦な基底変更に対する通常の Hom の同型は主張しない。
 
 最後に任意の全射の核に (\ref{eq:cubic-tails-coherent-finiteness}) の
 $q=1$ を適用すれば、十分大きな $i$ に対する Hom の全射性、

@@ -249,6 +249,55 @@ geometric locus は射影 incidence の像の補集合として定義された�
 
 \subsection{全幾何 fiber の有限 foundation 認識からの一様化}
 
+\begin{lemma}[normal helix の幾何 fiber における BW 条件]
+\label{lem:normal-foundation-BW-fiber}
+$K$ を標数零の代数閉体、$(\mathcal C,\mathcal O)\in\HH(K)$
+を強い構造対象付き二次曲面とし、
+論文Aの定理~\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}
+から得られる normal foundation を $E_i$ とする。
+$D_{ij}=\operatorname{Hom}(E_{-j},E_{-i})$、
+$P_i=e_iD$、$S_i$ を頂点単純加群とする。
+このとき各 $S_i$ は頂点 $i,\ldots,i+4$ だけに支持される
+長さ三の有限 projective 解消を持ち、その最終項は
+$P_{i+4}$ 一個である。さらに
+\[
+ \operatorname{Ext}_{D}^{q}(S_i,P_j)=
+ \begin{cases}
+ K,&q=3,\ j=i+4,\\
+ 0,&\text{otherwise}.
+ \end{cases}
+ \tag{BW-normal}\label{eq:normal-foundation-BW-fiber}
+\]
+従って五頂点bar補題の (BW-fiber) は
+normal foundation として認識された各幾何 fiber で成立する。
+\end{lemma}
+\begin{proof}
+論文Aの系~
+\cite[\texttt{cor:normal-cubic-defect}]{QuadricIntrinsic2026}
+は、二つのMCM rulingの距離二の積の余次元 $d_i\in\{0,1\}$ を用いて、
+右単純加群の極小解消を
+\[
+ 0\longrightarrow P_{i+4}
+ \longrightarrow P_{i+3}^{2}\oplus P_{i+2}^{d_{i+2}}
+ \longrightarrow P_{i+1}^{2}\oplus P_{i+2}^{d_i}
+ \longrightarrow P_i\longrightarrow S_i\longrightarrow0
+\]
+と記述する。ここで $d_{i+2}=d_i$ であり、
+cubicの場合には $d_i=0$、noncubicの場合には
+偶数始点で $d_i=1$、奇数始点で $d_i=0$ となる
+（添字の始点の選択を固定した場合）。
+従って支持・解消長・最終項の条件が得られる。
+また論文Aの normal helix定理が与える
+三次元・Gorenstein parameter四の左右 AS 正則
+$\mathbb Z$-代数について、AS双対性
+\cite[Theorem 4.8, Proposition 4.11]{MN2025}
+を単純加群に適用すると、右 projective 列に対する
+Ext は \eqref{eq:normal-foundation-BW-fiber} となる。
+これは単純加群の解消とAS双対性を合わせた主張であり、
+単にprojective resolutionの最終項が一個であることだけから
+全Ext消滅を導いていない。
+\end{proof}
+
 \begin{theorem}[normal foundation の全 fiber 認識による全軌道の一様化]
 \label{thm:uniform-orbit-from-normal-fibers}
 $R$ を本稿の基礎体 $k$ 上の可換 Noetherian 代数、$\Lambda$ を有限 projective $R$-代数とし、
@@ -354,10 +403,14 @@ $\mathbb Z$-代数に属するので、この二つの性質は変わらない�
 全双対成分の projectivity、相対 Koszul 性、任意底変更と両立する解消を得る。
 一つの特殊点の Koszul 性を開全体へ外挿していないことに注意する。
 
-$C$ の全幾何 fiber は既知の normal helix の AS 正則 $\mathbb Z$-代数である。
-各 $S_i$ の解消の支持は $i,\ldots,i+4$、終項は $P_{i+4}$ 一個であり、
-AS 双対条件も成立する。
-従って補題~\ref{lem:five-window-bar-lifting} の全幾何 fiber 版を、そのまま $R$ 上で適用する。
+全ての幾何 fiber を実際の $\HH$ の normal foundation に
+同定するという定理の仮定に、補題~
+\ref{lem:normal-foundation-BW-fiber} を適用すると、
+五頂点barの支持・終項とAS双対の (BW-fiber) が一括して得られる。
+この仮定は、有限foundationが単にstrong exceptionalであるという
+条件だけからは従わない。
+従って補題~\ref{lem:five-window-bar-lifting} の全幾何 fiber 版を
+$R$ 上で適用できる。
 全 $C_{ij}$ の projectivity は既に (1) で得ているため、この適用は循環しない。
 極小 Betti 数が cubic と noncubic の間で変わっても、五頂点の非極小 bar 複体は共通である。
 命題~\ref{prop:five-window-canonical-tails} により、全基底変更後の
@@ -385,6 +438,11 @@ $\operatorname{QGr}C\simeq\operatorname{QGr}B$ を与える。
 補題~\ref{lem:relative-cubic-global-chi} の証明は、Noetherian 生成系と
 式~\ref{eq:five-window-tails-cohomology} の有限幅の cohomology 公式を用いるので、
 この五頂点の場合にも同じ証明が適用できる。
+特に coherent 対象間の平坦基底変更は、
+四項tiltingによる $D^b(\operatorname{mod}\Lambda)$ 表示を経由し、
+補題~\ref{lem:finite-algebra-flat-hom-basechange} から従う。
+ここでは非平坦変更については導来圏の比較を行うのであって、
+一般 coherent 対象間の通常の Hom の基底変更は要求しない。
 module-object 基底変更は補題~\ref{lem:qgr-module-object-basechange} による。
 各 fiber では元の normal helix が豊富であり、その偶数部分も元の $\HH$ の
 切断列であるから、得られた heart と指定した $(\mathcal C_x,\mathcal O_x)$ は
