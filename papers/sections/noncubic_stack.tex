@@ -414,8 +414,9 @@ $g'$ は twist 後には正規元で、掛け算は元の $g'$ の乗法と
 正則切断、およびその幾何ファイバー上の適合根を局所的に構成する。
 左右 noetherian 性は noetherian 基底では後続の
 命題~\ref{prop:noncubic-relative-noetherian} で証明するが、
-相対双対化複体や相対 Serre 関手の存在まで
-この局所表示だけから主張するものではない。また、任意の内在的 $\mathcal H_2$ 族がこの正規形へ
+相対 Serre 関手は後の Clifford trace により計算し、
+canonical compact 圏を含む全相対条件は
+第\ref{sec:relative-noncubic-families}節で証明する。また、任意の内在的 $\mathcal H_2$ 族がこの正規形へ
 \'etale 局所に還元できるという認識定理も含めていない。
 局所的な平方根の存在と、内在的な族の相対分類を区別する必要がある。
 \end{remark}
@@ -1556,21 +1557,15 @@ Zhang twist および Veronese の同値によって $(1)$ に移る。
 各幾何ファイバーの適合性は既存の逆構成定理による。
 \end{proof}
 
-\begin{remark}[内在的モジュライに残る差]
-上の降下は次数偶数の環とその二次関係を
-$\mathfrak N^{\mathrm{pres}}$ 上に実際に構成する。
-全次数の局所自由性・左右 noetherian 性、
-相対 $\qgr\mathcal R$ heart、相対 perfect 圏の
-Serre 双加群と反 Serre 軌道 Hom の計算、
-および適合する局所平方根の候補まで得られた。
-任意の noetherian 基底上のこの明示的な表示族について、
-全ての底上平坦 coherent 対象の相対 Serre 双対、
-Lowen--Van den Bergh の意味での平坦 Abel 変形との比較、
-相対 AZ 豊富性と正則正規 AS 被覆の全条件、
-さらに任意の内在的 noncubic 族の
-$\mathfrak N^{\mathrm{pres}}$ への局所還元は、
-ここでは完全には証明していない。
-特に (\ref{eq:noncubic-antiserre-grassmann}) は
-二次関係の射であって、非被約底上の全二次表示条件まで
-自動的に保証するものではない。
+\begin{remark}[明示表示族と横断認識の区別]
+降下した反 Serre 環と $\qgr$ heart は、
+定理~\ref{thm:noncubic-relative-effectivity} により、
+全ての相対 $\mathfrak H_2$ 条件を備えた実際の表示族を与える。
+同定には weighted Clifford 表示の canonical compact 圏・相対 smoothness、
+同じ根の Serre 双対・AZ・全軌道、および Ore/PBW 被覆の全相対条件を用いる。
+ただし任意の内在的 noncubic 族のこの表示への局所還元、
+表示射の相対全忠実性、noncubic 特殊点を持つ横断変形の認識は未証明である。
+全幾何ファイバーが noncubic でも、非被約基底上の四次 minor が
+スキーム論的に零であるとは限らない。
+従って次元一の表示族から全境界近傍の代数性を結論しない。
 \end{remark}

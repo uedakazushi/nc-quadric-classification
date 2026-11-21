@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.35
+% 日本語 LuaLaTeX。2026-11-21 / v1.36
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.35（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.36（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -102,6 +102,9 @@ Serre に適合する二周期を構成し、被約な普遍基底上の比較�
 全 cubic 点を覆う chart の指定同型付き Artin 持上げが得られる。
 従って全 cubic 領域は有限型で滑らかな純三次元 Artin 開部分をなし、
 各 cubic 点の形式変形は pointed Abel 変形と一致する。
+noncubic の明示二形式族についても、中央 Clifford 表示と重み付き射影スタック上の
+対角加群の perfect 性を用い、表示スタックから $\mathfrak H_2$ への実際の射を構成する。
+これは境界を横断する全変形の認識とは区別する。
 \emph{モジュライ全体の代数性は未証明である。}
 既知結果の相対適用と直接証明を区別し、後者の包括的な新規性は未確認である。
 \end{abstract}
@@ -142,7 +145,9 @@ Artin 形式変形 groupoid の同値を与える。
 Artin--Tate--Van den Bergh \cite[Proposition 5.5, Corollary 5.7]{ArtinTateVanDenBergh1991}
 の相対作用は既知入力である。その線束への作用式の相対化と、
 canonical tails の Serre 双加群との比較は第\ref{sec:relative-picard-roots}節で行う。
-noncubic 表示商は次元一であり、境界点の全ての Abel 変形を覆わない。
+定理~\ref{thm:noncubic-relative-effectivity} により、noncubic 表示商からも
+実際の相対 $\HHstack$ 族が得られる。
+この表示商は次元一であり、境界点の全ての Abel 変形を覆わない。
 従ってこの定理から $\HHstack$ 全体の代数性は結論しない。
 
 \subsection{先行研究と本稿の範囲}
@@ -544,6 +549,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/relative_picard_roots}
 \input{sections/quadric_smooth_atlas}
 \input{sections/cubic_smooth_atlas}
+\input{sections/relative_noncubic_families}
 \input{sections/ruled_diagonal_obstruction}
 \input{sections/quadric_artin_hull}
 \input{sections/quadric_first_order}
