@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.21
+% 日本語 LuaLaTeX。2026-11-21 / v1.22
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.21（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.22（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -126,8 +126,13 @@ homological AS4 被覆を得る。
 非完備局所環でも左右 Noetherian となる。
 従って可換点を閉点に持つ Noetherian 局所基底では
 真正の相対 Noetherian AS4 被覆も得られる。
+局所環からの任意の有限型基底変更では
+中心変数の Hilbert 基底定理により左右 Noetherian 性が保たれ、
+Gabriel 局所化と module-object 基底変更が可換する。
+この相対 tails 系について AZ の生成条件 (A1) を証明する。
+しかし Hom 全射条件 (A2)／$\chi_1$、
 単一の有限型開全体での Noetherian 性、
-相対 tails heart・AZ は残る。
+canonical compact heart との比較は残る。
 二周期 cubic 列の相対 canonical hull を
 構成し、全 Artin 変形に同じ根の相対 AS4 被覆を与える。
 適合表示を全有限型基底変更上の系へ昇格させることで、可換点での

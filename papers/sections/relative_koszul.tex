@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.21
+% 2026-11-21 / v1.22
 \section{三次平坦性から全次数平坦性への相対的な認識}
 \label{sec:relative-koszul}
 
@@ -218,6 +218,148 @@ $C\to C_{\widehat R}$ は中心的な忠実平坦環拡大である。
 任意の右イデアルの昇鎖を $C_{\widehat R}$ へ延長すると停止する。
 忠実平坦性により元の昇鎖も停止する。
 左イデアルについても同じ議論が成り立つ。
+\end{proof}
+
+
+\subsection{可換点の局所基底における有限型基底変更}
+
+可換点の局所環における Noetherian 性は、その局所環自身に限らず、
+有限型基底変更後の代数にも保たれる。ここではこの事実と、
+$\operatorname{QGr}$ の module-object 基底変更を分離して証明する。
+内在的 $\mathfrak H_2$ の相対 heart の認識には、
+さらに $\chi_1$、Serre、AZ の比較が必要である。
+
+\begin{lemma}[局所 Noetherian 環の有限型基底変更]
+\label{lem:local-finite-type-strong-noetherian}
+$R$ を Noetherian 可換環、$B$ を $R$ が中心に入る
+左右 Noetherian $R$-代数とする。
+任意の可換有限型 $R$-代数 $R'$ について
+$B_{R'}=B\otimes_RR'$ は左右 Noetherian である。
+$R'$ の冪零元、非既約性、非平坦性に制限を課さない。
+また $R'$ の局所化へさらに基底変更しても結論は保たれる。
+\end{lemma}
+\begin{proof}
+$R'=R[t_1,\ldots,t_s]/I$ と表示する。
+$B[t_1,\ldots,t_s]$ は、$t_i$ が中心と可換する
+通常の多項式環である。
+非可換係数環に対しても中心変数の
+Hilbert 基底定理は左右それぞれに成立するので、
+$B[t_1,\ldots,t_s]$ は左右 Noetherian である。
+$B_{R'}$ はこの環の中心イデアル $IB[t_1,\ldots,t_s]$
+による商だから左右 Noetherian。
+中心元での局所化についても同じ有限生成性の議論が使える。
+\end{proof}
+
+\begin{lemma}[Gabriel 局所化と module-object 基底変更]
+\label{lem:qgr-module-object-basechange}
+$R$ を可換環、$B$ を $B_0=R$ の
+非負次数付き $R$-代数で、$R$ は中心に入るものとする。
+$R\to R'$ を任意の可換 $R$-代数とし、
+$B'=B\otimes_RR'$ と書く。
+次数付き右加群全体の Grothendieck 圏を
+$\operatorname{Gr}B$、次数 torsion 加群での
+Gabriel 商を $\operatorname{QGr}B$ とする。
+このとき基底変更に自然で、次数移動を保つ同値
+\[
+ \operatorname{QGr}(B')
+   \simeq \bigl(\operatorname{QGr}B\bigr)_{R'}
+ \tag{QGr-BC}\label{eq:qgr-module-objects-basechange}
+\]
+が存在する。右辺は $\operatorname{QGr}B$ 内の
+$R'$-加群対象を表す。
+この同値は構造対象 $\pi B'$ を
+$R'\otimes_R\pi B$ に対応させる。
+両辺の torsion は、それぞれの正次数部分による
+通常の torsion として定義する。
+
+さらに $R$ が Noetherian、$B$ が右 Noetherian、
+各 $B_n$ が有限 $R$-加群で、
+$R'$ が有限型 $R$-代数なら、
+両辺は locally Noetherian となり、
+その Noetherian 対象を取ることで
+\[
+ \operatorname{qgr}(B')
+   \simeq
+    \bigl(\operatorname{QGr}B\bigr)_{R'}^{\mathrm{noeth}}
+ \tag{qgr-BC}\label{eq:qgr-noetherian-basechange}
+\]
+を得る。右辺の Noetherian は加群対象としての意味である。
+\end{lemma}
+\begin{proof}
+$B'$ 上の次数付き右加群は、
+次数付き右 $B$-加群と、その $B$-作用と可換する
+$R'$-作用の組と同じである。したがって
+$\operatorname{Gr}(B')\simeq(\operatorname{Gr}B)_{R'}$。
+次数 torsion の定義
+\[
+ \forall m\ \exists n,\quad m B_{\ge n}=0
+\]
+は、この $R'$-作用を加えても変わらない。
+よって torsion 部分圏も対応する。
+
+$Q:\operatorname{Gr}B\to\operatorname{QGr}B$ を
+Gabriel 商とし、完全忠実な右随伴を $\omega$ とする。
+両関手は $R$-線形だから、
+$R'$-加群対象上にも $Q_{R'}$ と
+$\omega_{R'}$ を誘導し、同じ随伴を与える。
+その counit は元の counit と同じく同型であり、
+unit の核と余核は torsion 加群対象である。
+従って $Q_{R'}$ は torsion 加群対象を核とする
+Gabriel 局所化であり、(\ref{eq:qgr-module-objects-basechange})
+が従う。構造対象・次数移動との整合性は構成から明らかである。
+
+有限型 $R'$ については
+補題~\ref{lem:local-finite-type-strong-noetherian}
+から $B'$ は右 Noetherian であり、各次数は有限 $R'$-加群である。
+したがって $\operatorname{Gr}(B')$ は
+有限生成次数付き加群を Noetherian 対象とする locally
+Noetherian Grothendieck 圏である。
+その torsion 商の Noetherian 対象は
+$\operatorname{qgr}(B')$ に一致し、
+(\ref{eq:qgr-noetherian-basechange}) を得る。
+\end{proof}
+
+\begin{corollary}[可換点での相対 tails の基底変更と AZ 生成条件]
+\label{cor:quadric-local-tails-basechange-generation}
+系~\ref{cor:quadric-point-local-noetherian-as4} の
+可換点 $u$ と局所環 $R=\mathcal O_{U^\circ,u}$ を取る。
+任意の可換有限型 $R$-代数 $R'$ に対して
+$B_{R'}$ は左右 Noetherian であり、
+\[
+ \operatorname{QGr}(B_{R'})
+  \simeq\bigl(\operatorname{QGr}B_R\bigr)_{R'}
+\]
+は module-object 基底変更を与える。
+さらに $\mathcal O_{R'}=\pi B_{R'}$ と次数移動 $(1)$ について
+Artin--Zhang の豊富性の生成条件 (A1)、
+すなわち任意の $\mathcal M\in\operatorname{qgr}B_{R'}$ と
+任意の整数 $N$ に対して、ある $d_i\ge N$ で
+\[
+ \bigoplus_{i=1}^r\mathcal O_{R'}(-d_i)
+     \twoheadrightarrow\mathcal M
+\]
+となることが成立する。
+この系は AZ の Hom 全射条件 (A2)、$\chi_1$、
+canonical compact 圏との同値、相対 Serre 条件を
+結論しない。
+\end{corollary}
+\begin{proof}
+Noetherian 性と module-object 基底変更は前二補題による。
+$\mathcal M$ を有限生成次数付き $B_{R'}$-加群 $M$ の
+torsion 商で表示する。
+$B_{R'}$ が右 Noetherian なので、
+任意の $N$ に対して truncation $M_{\ge N}$ は有限生成である。
+$M/M_{\ge N}$ は内部次数が上に有界なので torsion であり、
+$\pi M_{\ge N}\simeq\pi M$。
+$M_{\ge N}$ の有限個の斉次生成元の次数を $d_i\ge N$
+とすると、次数付き全射
+$\bigoplus_i B_{R'}(-d_i)\twoheadrightarrow M_{\ge N}$
+から所要の全射を得る。
+(A2) はこの生成操作だけでは従わない。
+既知の Artin--Zhang 理論
+\cite[Theorem 4.5]{AZ1994} では適切な
+$\chi_1$ が (A2) を得るための十分条件となるが、
+今回の相対系の全基底変更で $\chi_1$ を確認したわけではない。
 \end{proof}
 
 \begin{corollary}[全幾何ファイバーが $\HH$ 型である関係式族]
