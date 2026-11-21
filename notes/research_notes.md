@@ -1,6 +1,54 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.66（A v1.69・20節、B v0.26・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.67（A v1.69・20節、B v0.27・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 五頂点 bar の終頂点 Tor、四項生成と相対 heart
+
+**相対定理の証明鎖。** 論文Bの lem:five-window-bar-lifting では、全幾何fiber上の五頂点窓で長さ三・終項一個のAS双対解消を仮定し、有限非極小barを任意基底変更で完全な解消へ持ち上げる。
+lem:five-window-compact-localization により、導来torsion核は $\operatorname{Loc}\{S_i\}$ と一致し、$\pi P_i$ 全体がcompact生成系である。
+prop:five-window-canonical-tails の残りは終頂点 $i+4$ の係数複体
+\[
+ V_i^{-p}=\bigoplus_{i=i_0<\cdots<i_p=i+4}
+ C_{i_0i_1}\otimes_R\cdots\otimes_R C_{i_{p-1}i_p},\quad 1\le p\le4
+\]
+の計算である。正の向きの性質から
+$\operatorname{Hom}_C(P_j,P_{i+4})=0$（$j<i+4$）であり、
+$\operatorname{Hom}_R(V_i^\bullet,R)\simeq\mathcal L_i[-3]$。
+有限projective複体の双対から
+$V_i^\bullet\simeq\mathcal L_i^\vee[3]$ となり、
+終頂点の $\operatorname{Tor}_3$ が線束、他のTorが零となる。
+barの終頂点での濾過と $\pi S_i=0$ から
+$\pi F_i\simeq\mathcal L_i^\vee\otimes\mathcal O_{i+4}[2]$。
+$F_i$ の項は前四つのrepresentablesのみなので
+$\mathcal O_{i+4}$ はそのthick閉包に入る。
+増大解消から次数零項を取り出すと逆向きも得られる。
+四項の高次Ext消滅と合わせてcompact tilting generatorの構成となる。
+
+**可換基準例での独立厳密計算。**
+$\mathbb P^1\times\mathbb P^1$上の標準四項窓の両parityについて、
+モノミアル基底上の微分を整数係数行列として厳密に計算した。
+係数複体の階数は$(9,40,48,16)$、微分の階数は$(9,31,16)$、
+$d_2d_3=d_3d_4=0$、ホモロジーは$(0,0,1,0)$となる。
+再現ソースは computations/verify_five_window_terminal.py。
+実行した容器内コードとGitHubにpushしたファイルのblob SHAは
+36f1016d14e97083a309d8a456cf28e9d8c56724 で一致する。
+これは非可換全体のfiberwise BW-fiber仮定の独立計算ではない。
+
+**導来同値とAbel heartは区別する。**
+$D(\operatorname{QGr}B_{R'})\simeq D(\operatorname{Mod}\Lambda_{R'})$
+は左辺の標準$t$-構造を右辺へ移すが、
+通常の $\operatorname{Mod}\Lambda_{R'}$ の標準heartとは一般に一致しない。
+実際の相対heartはNoetherianな $\operatorname{qgr}B_{R'}$ と
+Grothendieck商 $\operatorname{QGr}B_{R'}$ を独立に構成し、
+module-object基底変更で比較する。
+非平坦基底変更について任意の対象の導来pullbackを$t$-exactとはしない。
+canonical compactとSerre根の検査、Noetherian heart・AZ・全$\chi$・descentの検査は別に行う。
+
+**未解決の監査。** 全noncubic点におけるBW-fiber条件とnormal foundationの具体的対応、
+有限型chart上の全次数効果性とNoetherian貼合せ、
+一般coherent Homの平坦基底変更とSerreの相対認識を次に精査する。
+今回の確認は仮定付き四項生成の論理点検と可換標準fiberの有限計算であり、
+論文B全体の証明の独立検証ではない。
 
 ## 被約境界七型の周期と五頂点の compact 局所化
 
@@ -48,8 +96,8 @@ Bでは、可換局所環上のperfect複体の特殊fiberが次数零に集中�
 lem:local-perfect-fibre-concentration を独立に証明した。
 全てのi,jに個別に適用できるが、無限個の開集合の交叉を
 開とする議論はしていない。有限型開での一様なAS4/heartは別の効果性定理が必要。
-次はfive-windowのtorsion局所化とcompactnessの全推論、
-被約境界の各型の周期・Serre比較を点検する。
+四項生成の終頂点Torの詳細は本ノート冒頭とBの prop:five-window-canonical-tails に統合した。
+全noncubic点のBW-fiberと有限型chartへの一様化は引き続き独立監査の対象である。
 
 ## 有限 foundation の Hochschild 数値と GIT 比較の入口
 
