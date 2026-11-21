@@ -45,47 +45,8 @@ $\mathbb Z$-代数であるとする。
 $\theta_i:V_i\simeq V_{i+4}$ が定まり、$D\simeq D(4)$ を誘導する。
 \end{lemma}
 \begin{proof}
-閉ファイバーで次数一生成なので、各次数の乗法の全射性は Nakayama で持ち上がる。
-次数二の乗法は階数四の自由加群間で還元が同型だから同型である。
-次数三では、階数八の自由加群から階数六の自由加群への全射の核が
-$R_i$ であり、これは階数二で還元と可換する。
-三次関係で割った tensor $\mathbb Z$-代数を $C$ とすると $C\twoheadrightarrow D$ がある。
-各成分の終域 $D_{ij}$ は自由なので、核の還元は還元した射の核と一致する。
-$C\otimes_Ak\to D\otimes_Ak$ は同型であるから、有限な核は Nakayama により零となる。
-従って $D$ はこの三次提示そのものである。
-
-次数四の関係加群は、階数十六から階数九への自由加群間の全射の核であり、階数七である。
-三次提示から
-\[
- (R_i\otimes V_{i+3})\oplus(V_i\otimes R_{i+1})
- \longrightarrow\ker(T_{i,i+4}\to D_{i,i+4})
-\]
-は全射なので、その核は階数一で還元と可換する。
-二つの包含の差をこの射とすれば、核は交わり $W_i$ と同定される。
-閉ファイバーで $w_i$ の二つの $2\times2$ pairing 行列は可逆なので、
-$A$ 上でも行列式は単元であり、非退化である。
-
-これらの包含から得る標準 cubic 複体
-\[
- 0\to W_i\otimes P_{i+4}\to R_i\otimes P_{i+3}
- \to V_i\otimes P_{i+1}\to P_i\to S_i^{\mathrm{simple}}\to0
-\]
-は複体になる。各内部次数で有限自由 $A$-加群の有界複体であり、
-閉ファイバーで完全である。
-単元 minor による消去、または局所環上の最小複体を使えば、
-元の複体は $A$-加群として分裂完全である。従って任意の底変更後にも完全である。
-
-四周期は非退化 tensor から直接得られる。
-$w_i=\sum_a u_a\otimes r_a$ を $V_i\otimes R_{i+1}$ 内で書き、
-同じ $R_{i+1}$ の基底を使って $w_{i+1}=\sum_a r_a\otimes u'_a$ と書く。
-$\theta_i(u_a)=u'_a$ と定めれば、これは基底によらない同型である。
-従って $w_{i+1}$ は $w_i$ の最初の因子を最後へ巡回し、
-その因子に $\theta_i$ を作用させた tensor である。
-四回反復すると $\bigotimes_{a=0}^3\theta_{i+a}$ は $W_i$ を $W_{i+4}$ へ移す。
-最後の因子による縮約は $R_i$ を回復するから、
-$\theta_i\otimes\theta_{i+1}\otimes\theta_{i+2}$ は $R_i$ を $R_{i+4}$ へ移す。
-従って $\theta$ は三次提示を保ち、$D\simeq D(4)$ を与える。
-ここでは $\theta=\beta^2$ は仮定も結論もしていない。
+証明は相対モジュライ別稿 \cite[\texttt{quadric_artin_hull} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{lemma}[canonical functional の相対的な正規性]
@@ -103,12 +64,8 @@ $\phi_i$ の張る直線は $w_i$ の単元倍によらず、$\beta$ と整合�
 $\phi$ が得られる。
 \end{lemma}
 \begin{proof}
-定理~\ref{thm:universal-cubic-hull} の線束値写像
-$\Phi_i:S_i\to W_i$ を $W_i=Aw_i$ で自明化したものが $\phi_i$ である。
-二つの逆 coevaluation は $W_i$ 上でともに $2\,\mathrm{id}$ となるので貼り合う。
-正規性は同定理の証明にある、次数三の二つの縮約の tensor 恒等式による。
-そこでは四周期 $\theta$ と二周期 $\beta$ を区別しており、
-$\theta=\beta^2$ を仮定していない。
+証明は相対モジュライ別稿 \cite[\texttt{quadric_artin_hull} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[正規 functional からの相対 AS4 被覆]
@@ -117,11 +74,8 @@ $\theta=\beta^2$ を仮定していない。
 $\widetilde B\twoheadrightarrow B$ を持ち、その核は二次の左右正則正規元で生成される。
 \end{proposition}
 \begin{proof}
-補題~\ref{lem:relative-cubic-tensors-artin} により、
-定理~\ref{thm:universal-cubic-hull} の全入力が成立する。
-同定理を適用し、可逆加群 $G$ を局所 Artin 基底上で自明化すればよい。
-全次数の平坦性、左右正則正規性、相対 Koszul Frobenius 性、
-任意の底変更との整合、および Noetherian 性も同時に従う。
+証明は相対モジュライ別稿 \cite[\texttt{quadric_artin_hull} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[可換ファイバーでの正規化]
@@ -154,37 +108,8 @@ AS 正則環であり、$g$ は二次の左右正則正規元である。
 根と被覆は存在条件であり、新しい標識として加えない。
 \end{theorem}
 \begin{proof}
-系~\ref{cor:quadric-exact-root-all-artin} による $s_A$ と、
-$\mathcal O_Q(0,1)$ の flat な持上げ $M_A$ を取る。
-構造対象と $M_A$ の存在・同型類の一意性は
-定理~\ref{thm:artin-foundation-lift} の geometric helix の持上げによる。
-\[
- L_{2n,A}=s_A^n\mathcal O_A,\qquad L_{2n+1,A}=s_A^nM_A
-\]
-と置く。各 $L_{i,A}$ は対応する可換線束の一意な flat 持上げであり、
-全列は De Deken--Lowen による持ち上げた geometric helix と一致する。
-従って $D_{ij}=\operatorname{Hom}(L_{-j,A},L_{-i,A})$ の各成分は有限自由であり、
-補題~\ref{lem:relative-cubic-tensors-artin} により相対 cubic 提示と解消、
-$V_i,R_i,W_i$ の自由性・非退化性を得る。
-この cubic 変形との比較は \cite[Theorem 8.1.2, \S8.3]{VdB2011} とも整合する。
-
-負添字の Hom 規約により $s_A^{-1}$ が
-$D_{ij}\to D_{i+2,j+2}$ を与え、これを $\beta$ とする。
-偶数部分の graded 化の $n$ 次成分
-$D_{0,2n}=\operatorname{Hom}(s_A^{-n}\mathcal O_A,\mathcal O_A)$ に
-$s_A^n$ を作用させると、$s_A$ の全軌道環 $(B_A)_n$ と同定される。
-その積は $a*b=s_A^{\deg b}(a)\circ b$ という本稿の右規約になる。
-
-この全軌道環は全次数自由であり、閉ファイバーでの次数一生成と二次提示は
-次数ごとの Nakayama で持ち上がる。
-三次も自由なので、補題~\ref{lem:relative-koszul-degree-three} により
-$B_A$ は相対 Koszul、$E=B_A^!$ の全次数は自由である。
-閉ファイバーの Hilbert 級数から階数は $1,4,7,8,8,\ldots$ となる。
-従って補題~\ref{lem:relative-canonical-hull-functional} と
-命題~\ref{prop:relative-artin-hull-from-functional} の全入力が成立する。
-これらによって相対 AS4 被覆と正則正規な切断を得る。
-最後に命題~\ref{prop:artin-witness-relative-promotion} を適用し、
-全有限型基底変更上の相対 $\mathfrak H_2$ 族を得る。
+証明は相対モジュライ別稿 \cite[\texttt{quadric_artin_hull} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{corollary}[可換点での形式変形問題]
@@ -198,22 +123,8 @@ $Q$ の相対 $\mathfrak H_2$ 変形から flat pointed Abel 変形への忘却�
 である。無限小自己同型の空間は $\operatorname{HH}^1(Q)=H^0(Q,T_Q)$、次元六である。
 \end{corollary}
 \begin{proof}
-本質的全射性は前定理による。
-基底 $A$ 上の pointed exact 同値は Ind 圏へ延長し、有限型 $A$-代数 $A'$ の
-作用を移すことにより module-object 圏上の同値を与える。
-相対族の基底変更同値により、その延長は自然同型を除いて一意である。
-根と被覆は標識ではないので追加の射の条件を生まない。
-従って忘却は全忠実であり、底変更に自然な同値である。
-
-Abel 変形の接空間・無限小自己同型・障害空間はそれぞれ
-Hochschild 次数二・一・三である
-\cite[Theorem 3.1, Remark 3.5]{LowenVanDenBergh2005}。
-構造対象の持上げには $\operatorname{Ext}^{1,2}(\mathcal O_Q,\mathcal O_Q)=0$ を用いる。
-HKR と $Q$ 上のコホモロジーから $\operatorname{HH}^3(Q)=0$ である。
-具体的には $H^1(\bigwedge^2T_Q)=H^2(T_Q)=0$ であり、
-残る全次数三の成分も零である。
-これにより任意の小拡大に対して変形を持ち上げられる。
-表示した接空間と無限小自己同型も HKR による。
+証明は相対モジュライ別稿 \cite[\texttt{quadric_artin_hull} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 この定理は可換点における全 Artin 基底の認識を与える。
@@ -247,76 +158,8 @@ $(\mathcal C_A,\mathcal O_A)$ は、$s_0$ の持上げを用いる全軌道環�
 この還元を持つ Serre 平方根の持上げは Morita 自己同値の同型類として一意である。
 \end{proposition}
 \begin{proof}
-有限 foundation の持上げと相対 smooth proper 性は
-定理~\ref{thm:artin-foundation-lift} による。
-小拡大における根の障害 $b$ は $b+(s_0)_*b=0$ を満たすので、
-Hochschild 二次の仮定により零となる。
-近恒等核の一意な二可除性で平方関係を補正し、全 Artin 基底上の $s_A$ を得る。
-補題~\ref{lem:artin-morita-heart-exact} と
-補題~\ref{lem:artin-ample-lift} によってこれは exact ample である。
-
-$M_A$ を $E_1$ の flat な持上げとし、
-$L_{2n,A}=s_A^n\mathcal O_A$、$L_{2n+1,A}=s_A^nM_A$ と置く。
-条件 (2) と例外対象の持上げの一意性により、$L_{i,A}$ は
-$E_i$ の geometric helix としての持上げと同型である。
-従って $D_{ij,A}=\operatorname{Hom}(L_{-j,A},L_{-i,A})$ の前向き成分は有限自由で、
-閉ファイバーは元の cubic $\mathbb Z$-代数となる。
-$s_A^{-1}$ が実際の次数二の周期を与える。
-
-補題~\ref{lem:relative-cubic-tensors-artin} の証明は、閉ファイバーが可換であることを使わない。
-必要なのは cubic AS 解消と成分の階数 $1,2,4,6,9,\ldots$ である。
-同じ Nakayama の議論から、三次提示、階数二の $R_i$、階数一の $W_i$、
-非退化な coevaluation、四周期 $\theta$、全内部次数で相対完全な cubic 解消を得る。
-偶数部分の graded 化 $B_A$ は $s_A$ の全軌道環であり、
-全次数自由、相対二次 Koszul、その双対 $E_A=B_A^!$ の階数列は
-$1,4,7,8,8,\ldots$ となる。
-
-正規 functional $\phi_i$ の構成と tensor 恒等式も、そのまま成立する。
-とくに次数三の直和分解
-\[
- (E_3^*)_i=(R_i\otimes R_{i+3})
-       \oplus(V_i\otimes W_{i+1}\otimes V_{i+5})
-\]
-は可換点専用の恒等式ではない。
-体上では右 cubic 解消の次数六の部分が
-\[
- W_i\otimes V_{i+4}\otimes V_{i+5}
- \hookrightarrow R_i\otimes D_{i+3,i+6}
-\]
-を与える。
-$D_{i+3,i+6}$ は三重 tensor を $R_{i+3}$ で割ったものなので、
-これは $R_iR_{i+3}\cap W_iV_{i+4}V_{i+5}=0$ を意味する。
-一方、$W_{i+1}\subset R_{i+1}V_{i+4}$ を用いると、
-$R_iR_{i+3}$ と $V_iW_{i+1}V_{i+5}$ の交わりは
-$W_iV_{i+4}V_{i+5}$ に入る。従って交わりは零である。
-これは \cite[Lemmas 2.3--2.4]{BauwensVanDenBergh1998} と同じ
-解消による議論を、右加群の規約で添字付きにしたものである。
-二つの四次元部分空間と $\dim E_3=8$ から体上の分解を得て、
-自由加群間の Nakayama により $A$ 上へ持ち上げる。
-この分解上の二つの縮約は既存の係数計算で一致し、
-$\beta$ と整合する正規元 $\phi\in(E_A)_2$ が得られる。
-
-可換点の証明で変更する箇所は、特殊ファイバーの最後の同定だけである。
-一般の cubic 点では $E_k/(\phi_0)$ は外積代数とは限らない。
-その代わり、\cite[Theorem 6.1, Lemmas 6.4--6.5]{VdB2011} の
-canonical hull の二次双対であり、Koszul Frobenius、階数列 $(1,4,6,4,1)$ である。
-$\phi_0$ は左右正則正規である。
-評価 functional との一致は
-\cite[(2.11), Proposition 3.2, Remark 3.3]{BauwensVanDenBergh1998} の
-canonical choice を、上の添字付き評価で表したものである。
-この体上の入力だけを使い、$\phi$ の乗法を各次数の有限自由加群間で持ち上げる。
-従って $P_A=E_A/(\phi)$ は全次数自由となる。
-相対 Koszul 補題と Frobenius pairing の持上げから
-$\widetilde B_A=P_A^!$ は相対 AS4 となる。
-
-$\widetilde B_A\twoheadrightarrow B_A$ の次数別核は自由であり、
-二次生成元 $g$ の左右乗法は、閉ファイバーの正則正規切断の同型を持ち上げる。
-よって全次数で同型となり、$g$ は左右正則正規である。
-閉ファイバーの canonical hull は noetherian なので、
-$\mathfrak m$-進有限フィルターにより $\widetilde B_A$ も左右 noetherian である。
-命題~\ref{prop:artin-witness-relative-promotion} を適用すれば相対 $\mathfrak H_2$ 族となる。
-忘却の全忠実性は module-object 系の定義、
-平方根の追加の一意性は命題~\ref{prop:artin-serre-root-uniqueness} による。
+証明は相対モジュライ別稿 \cite[\texttt{quadric_artin_hull} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[Hochschild 作用条件は対象ごとの周期性から従わない]

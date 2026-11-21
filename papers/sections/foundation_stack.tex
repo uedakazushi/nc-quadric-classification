@@ -73,34 +73,8 @@ $\dim\mathfrak F=3$ である。
 \end{proposition}
 
 \begin{proof}
-$\mathcal R_{\mathrm{fnd}}$ は滑らかな六十四次元アフィン空間であり、
-$\dim\mathcal G=4+16+36+4+4=64$ である。
-$K$ は滑らかな中心トーラスなので $\mathcal G/K$ も滑らかな代数群である。
-従って二つの商は滑らかな Artin スタックであり\cite[Tag 0DLS]{StacksModuli}、
-$\dim\mathfrak F=64-(64-3)=3$ である。
-
-頂点を保つ $H$ の自己同型は $P,Q$ 上の基底変更で尽くされる。
-したがって $\mathcal G$ の作用は、頂点を保つ $\Lambda_M$ の同型を正確に与える。
-対角単元 $\sum_{i=0}^3\lambda_i e_i$ による内部自己同型は、共通倍率で割り
-$\lambda_0=1$ とすれば上の $K$ となる。
-これは各 foundation 対象の比較同型のスカラーによる変更を、全体の自然スカラーで割ったものに対応する。
-従って $K$ の除去は、$E_0$ の標識だけを残して、
-$E_1,E_2,E_3$ を保つ比較同型の選択を忘れる rigidification である。
-幾何点では、foundation の各項を同型類として保つ Morita 同値の自己同型群が
-$\operatorname{Aut}_{\{e_i\}}(\Lambda_M)/K$ となる。
-任意の底上では、これらの対象の存在と線束 twist の降下を区別する必要がある。
-
-$\HH$ から得た四項 $(E_0,E_1,E_2,E_3)$ では
-\[
- \dim\Hom(E_i,E_j)=
- \begin{pmatrix}
- 1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
- \end{pmatrix}_{ij}
-\]
-であり、$\Hom(E_1,E_2)\otimes\Hom(E_2,E_3)\to\Hom(E_1,E_3)$ は同型である。
-後者は系~\ref{cor:normal-cubic-defect} の奇数頂点間の積の計算による。
-よって $E_1,E_2,E_3$ の End 代数が $H$ となり、
-$\Hom(E_0,E_i)$ が上の表現 $M$ を与える。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}
@@ -124,30 +98,8 @@ $\mathcal G(R)$ の作用で与えられる。
 従ってこの有限表示は、通常の有限代数としての全ての Artin 局所変形を捉える。
 \end{lemma}
 \begin{proof}
-$\mathfrak m_R\Lambda_R$ は冪零イデアルなので、剰余代数の完全直交冪等元系
-$(e_0,e_1,e_2,e_3)$ を $\Lambda_R$ へ持ち上げられる。
-頂点成分 $(\Lambda_R)_{ij}$ は $\Lambda_R$ の $R$-加群としての直和因子であり、
-有限平坦である。局所性から自由で、その階数は剰余体上の Hom 次元に等しい。
-従って逆向き成分は零、対角成分は単位 $e_i$ によって $R$ と同型である。
-
-積
-\[
- (\Lambda_R)_{12}\otimes_R(\Lambda_R)_{23}
- \longrightarrow (\Lambda_R)_{13}
-\]
-は階数四の自由加群間の射で、剰余体上では同型である。
-Nakayama の補題、または行列式の可逆性によりこれは同型となる。
-よって頂点 $1,2,3$ の部分代数は、隣接矢空間の基底を選べば
-$H\otimes_kR$ である。
-残る積は
-\[
- F_R:P_R\otimes_R(W_1)_R\longrightarrow(W_2)_R,
- \qquad
- G_R:Q_R\otimes_R(W_2)_R\longrightarrow(W_3)_R
-\]
-で決まる。$(0,1,3)$ の積は結合律によりこの二写像の合成に強制される。
-各五空間の基底変更は定義された $\mathcal G(R)$ の作用に一致する。
-なお冪等元系の別の持ち上げは、剰余体上で恒等となる内部共役により結ばれる。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[Abel 圏の変形との比較に必要な範囲]
@@ -178,45 +130,8 @@ Abel 圏の変形との比較を定理~\ref{thm:artin-foundation-lift} で行う
 \end{proposition}
 
 \begin{proof}
-$A=\Lambda_M$、$E=\bigoplus_{i=0}^3ke_i\simeq k^4$ とする。
-$E$ は分離代数なので、$E$ に相対的な正規化 bar 複体が $\operatorname{HH}^*(A)$ を計算する。
-有向性からそのコチェイン項は
-\[
- C^n=\bigoplus_{i_0<\cdots<i_n}
- \Hom_k\bigl(A_{i_0i_1}\otimes\cdots\otimes A_{i_{n-1}i_n},
-             A_{i_0i_n}\bigr)
-\]
-であり、$C^0=k^4$、$C^n=0$ ($n>3$) である。
-特に
-\[
- C^3=\Hom(A_{01}\otimes A_{12}\otimes A_{23},A_{03}).
-\]
-$C^2$ の $(0,1,3)$ 成分
-$\Hom(A_{01}\otimes A_{13},A_{03})$ から $C^3$ への微分を取る。
-他の成分を零とすれば、bar 微分の四項のうち残るものは
-\[
- (a,b,c)\longmapsto\varphi(a,bc)
-\]
-だけである。$A_{12}\otimes A_{23}\xrightarrow\sim A_{13}$ なので
-この写像は二つの四十八次元空間の同型である。
-従って $C^2\to C^3$ は全射で、$\operatorname{HH}^{\ge3}(A)=0$ となる。
-
-各コチェイン項の次元は
-\[
- (\dim C^0,\dim C^1,\dim C^2,\dim C^3)
- =(4,80,128,48).
-\]
-ここで $\dim C^1=2^2+4^2+6^2+2^2+4^2+2^2=80$、
-$\dim C^2=16+48+48+16=128$ である。
-中心の元は全 $e_i$ と可換なので対角であり、
-各 $A_{0i}=W_i\ne0$ と可換であるため四つの対角係数は全て等しい。
-従って $\operatorname{HH}^0(A)=Z(A)=k$ である。
-Euler 標数を取ると
-\[
- 1-\dim\operatorname{HH}^1(A)+\dim\operatorname{HH}^2(A)
- =4-80+128-48=4
-\]
-となり、第二式が従う。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 
@@ -250,23 +165,8 @@ $\phi_{i+1}\in V_{i+1}^*$ に対し
 その幾何点は geometric quintuple を与え、本稿の cubic 逆構成の範囲に入る。
 \end{proposition}
 \begin{proof}
-条件は geometric quintuple の定義そのものである
-\cite[Definition 5.3.1]{VdB2011}（\cite[Equation (2.19)]{OU2014} も参照）。
-一つの隣接対について縮約が零となる locus を、
-二つの双対射影束の積と Grassmannian の上で考える。
-これは閉部分で、その Grassmannian への射影は proper である。
-従って像は閉であり、四つの像の合併を除けば所要の開部分となる。
-この構成は任意の底変更と整合する開条件である。
-
-$F$ の同型を使って $W_2$ の基底を除き、$G$ の商表示を使って
-$W_3\simeq(Q\otimes P\otimes W_1)/R$ とすれば、残るデータは
-$R\in\operatorname{Gr}(2,8)$ だけである。
-作用群は $\operatorname{GL}(W_1)\times\operatorname{GL}(P)\times\operatorname{GL}(Q)$。
-三つの中心スカラーは Grassmannian 上で自明であり、
-もとの $K$ の剛体化はこの三中心を除くことに一致する。
-従って表示した商を得る。次元は $2(8-2)-3\cdot3=3$ である。
-幾何点の AS 正則環への対応は \cite[Lemma 5.4.12, Theorem 5.5.10]{VdB2011} と
-定理~\ref{thm:all-admissible-inverse} による。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{example}[階数条件だけでは geometric 性を保証しない]
@@ -294,56 +194,8 @@ Gabriel--Krull rank one torsion-free exceptional 対象 $F$ で
 \end{proposition}
 
 \begin{proof}
-適合表示を一つ選び、二つの MCM 型の tails 像を $X,Y$ と書く。
-定理~\ref{thm:normal-helix} の評価列により、次数付き加群 $Z=X,Y$ と
-$p(Z)$ は自由加群に埋め込まれる。
-$B$ の商斜体へ移せば両者の正の rank の和は二なので、各 rank は一である。
-従って $Z(-1)\hookrightarrow B^2$ の非零成分 $Z(-1)\to B$ は単射である。
-実際、商斜体へ移した核は零であり、$Z$ は自由加群の部分加群なので
-この核はもともと零である。
-また $Z$ の非零斉次元は単射 $B(-d)\hookrightarrow Z$ を与える。
-tails と Gabriel--Krull 商 $q:\mathcal C\to\mathcal C/\mathcal C_1$ に移すと
-\[
- q\pi B(-d)\hookrightarrow q\pi Z\hookrightarrow q\pi B(1)
-\]
-となり、外側は非零単純対象なので $q\pi Z$ も非零単純である。
-$\pi Z\hookrightarrow\pi B(1)$ によって torsion-free 性も従う。
-exceptionality は同定理の geometric helix から従い、
-Hilbert 級数 $2/(1-z)^3$ から指定の Euler 多項式を得る。
-
-命題~\ref{prop:first-orbit-object} と同じ順序で
-$K_0(\mathcal C)$ を $K_0(\mathbb P^1\times\mathbb P^1)$ と同定する。
-$[F]$ の Chern 指標を $r+aH_1+bH_2+cH_1H_2$ と書くと
-\[
- \chi(\mathcal O,t^nF)
- =r(2n+1)^2+(a+b)(2n+1)+c,\qquad
- \chi(F,F)=r^2+2rc-2ab.
-\]
-係数比較と例外性から $r=1$、$a+b=1$、$c=0$、$ab=0$ となる。
-従って可能な類は $(a,b)=(1,0),(0,1)$ の二つだけである。
-
-同じ $K_0$ 類を持つ二つの rank one torsion-free exceptional 対象 $L,F$ が
-この多項式を満たすなら $\chi(L,F)=1$ である。
-もし $\Ext^2(L,F)\ne0$ なら Serre 双対性から $F\to t^{-1}L$ が非零であり、
-rank one torsion-free 性により単射となる。
-十分大きい $n$ で Hom 次元は Euler 特性と一致する。
-この点は命題~\ref{prop:first-orbit-object} の証明の自由被覆の議論による。
-具体的には任意の $T$ を $\mathcal O$ のシフトの有限直和 $P$ で覆い、
-核も同様に $P'$ で覆う。自由シフト間の $\Ext^1$ の消滅から
-$\Ext^1(t^{-n}\mathcal O,T)$ は $\Ext^2(t^{-n}\mathcal O,P')$ の部分商であり、
-後者は Serre 双対性と負次数切断の消滅で零となる。
-$\Ext^2(t^{-n}\mathcal O,T)$ についても $P$ で同じ議論が使える。
-従って上の単射は
-\[
- (2n+1)(2n+2)\le(2n-1)(2n)
-\]
-を与えて矛盾する。従って $\Hom(L,F)\ne0$ であり、同じ理由で単射である。
-その余核 $T$ は $K_0$ 類が零なので Hilbert 多項式が零である。
-ここで有限生成 $B$-加群を $A$-加群と見ると有限自由分解を持つため
-Hilbert 関数は最終的に多項式であり、有限次元加群を除いてもその多項式は変わらない。
-従って零 Hilbert 多項式を持つ加群は有限次元であり、$T=0$ となる。
-よって各 $K_0$ 類に高々一つの同型類しかない。
-$X,Y$ は互いに非同型なので二つの類を尽くす。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{corollary}[指定構造対象から始まる二つの foundation]
@@ -357,15 +209,8 @@ pointed 自己同値群はこの二元集合に作用する。
 \end{corollary}
 
 \begin{proof}
-初めの三項の内在性は直前の命題と第一軌道対象の認識による。
-一つの選択 $E_1=X$ または $Y$ を固定する。
-既存の full foundation の完全性から
-\[
- {}^{\perp}\langle\mathcal O,E_1,M\rangle\simeq D^b(\operatorname{mod}k).
-\]
-この左直交の exceptional 生成元は、第四項の cohomological shift に限られる。
-条件 $\operatorname{RHom}(M,E_3)\simeq k^2[0]$ はその shift を一意に固定する。
-従って第四項も一意である。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \subsection{二つの短完全列による ruling の相対交換}
@@ -419,59 +264,8 @@ $\mathfrak F_0\to\mathfrak Q_{\mathrm{fnd}}$ は representable な有限 étale
 \end{proposition}
 
 \begin{proof}
-商スタック $[U_0/\mathcal G]$ は、底上の五つの所定階数のベクトル束と
-二写像 $(F,G)$ の群oidを記述する。
-核・余核は $U_0$ 上でベクトル束であり、構成は底変更と同型に関して自然である。
-新しい $G'$ は全射であり、$\alpha_{F'}$ は元の包含
-$R\hookrightarrow Q\otimes W_2$ と一致する。
-従って新しいデータも $U_0$ に属する。
-
-二回適用すると
-\[
- W''_1=\ker G'=\operatorname{im}\alpha_F\simeq W_1,
- \qquad
- W''_3=\operatorname{coker}\alpha_{F'}
-      =(Q\otimes W_2)/R\simeq W_3,
-\]
-かつ $P''\simeq P^{**}\simeq P$、$Q''\simeq Q^{**}\simeq Q$ である。
-これらの標準同型の下で、$F''$ は $\alpha_F$ の縮約なので $F$ に等しく、
-$G''$ は $R$ による商なので $G$ に等しい。
-
-対合の整合性も単なる点ごとの同型に留まらない。
-同じデータを、共通の階数四の束 $W_2$ を用いる二つの短完全列
-\[
- \begin{split}
- 0&\longrightarrow W_1\xrightarrow{\alpha_F}
-       P^*\otimes W_2\longrightarrow C\longrightarrow0,\\
- 0&\longrightarrow R\longrightarrow
-       Q\otimes W_2\xrightarrow G W_3\longrightarrow0
- \end{split}
-\]
-で記述する。この表示において $\tau$ は二つの列の交換である。
-より形式的には、二つの階数二の束 $V_1=P^*$、$V_2=Q$ を導入すれば、
-両列はともに $0\to A_i\to V_i\otimes W_2\to B_i\to0$
-という同じ型であり、$\tau$ は添字 $1,2$ の交換に一致する。
-従って二回の交換は恒等で、標準双対同型を通じた元の表示でも
-$\tau(\tau^2\Rightarrow\operatorname{Id})
- = (\tau^2\Rightarrow\operatorname{Id})\tau$
-という必要な整合性が成り立つ。
-
-同型 $g=(g_1,g_2,g_3,a,b)$ に対して、$R$ 上の誘導射は
-$(b\otimes g_2)|_R$、$C$ 上の誘導射は
-$a^{-\mathsf T}\otimes g_2$ からの商写像である。
-$P'$ と $Q'$ 上の射はそれぞれ $b^{-\mathsf T}$ と $a^{-\mathsf T}$ である。
-これを $K$ の元へ適用すると、$R,W_2,C$ 上のスカラーは順に
-$\lambda_3,\lambda_2,\lambda_1$ となる。
-よって $\tau$ は $K$ を保ち、rigidification の普遍性によって
-$\mathfrak F_0$ に降下し、整合性も降下する。
-
-$\mathfrak F_0$ は既存の滑らかな商スタックの開部分なので滑らかで次元三である。
-有限 étale 定群 $S_2$ による商は Artin スタックであり、
-商への射は $S_2$-torsor である。
-従って主張した有限型性・滑らかさ・被覆の性質が従う。
-ここでは $S_2$ は商スタック自体に作用する。
-固定した基底空間 $U_0$ 上の線形作用を選んだとは限らないので、
-この商を無条件に一つの半直積群による線形商と書き換える必要はない。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[mutation と $\HH$ の二つの ruling との一致]
@@ -491,67 +285,8 @@ $\HH$ の全ての normal foundation は $U_0$ に属し、
 \end{proposition}
 
 \begin{proof}
-cone は $\operatorname{Perf}(\Lambda)$ の標準 dg 増強で取る。
-初めの foundation の相対 derived Hom は、前向きには指定されたベクトル束の次数零成分、
-逆向きには零であり、各対角は構造層である。
-$X,M,Z$ の間の合成
-\[
- \operatorname{RHom}(X,M)\otimes\operatorname{RHom}(M,Z)
- \xrightarrow\sim\operatorname{RHom}(X,Z)
-\]
-が同型なので、第一の三角から
-$\operatorname{RHom}(X,Y)=\operatorname{RHom}(Y,X)=0$ を得る。
-二つの cone は exceptional pair の mutation であるため、$Y$ と $Z'$ は相対 exceptional である。
-同じ二つの三角に Hom を適用すると
-\[
- \operatorname{RHom}(Y,M)=Q^*[0],\qquad
- \operatorname{RHom}(M,Z')=P^*[0],\qquad
- \operatorname{RHom}(Y,Z')=(Q^*\otimes P^*)[0]
-\]
-を得て、最後の同型は $M$ を経由する合成そのものである。
-逆向きの三つの derived Hom は零である。
-
-$\mathcal O$ からの derived Hom は
-\[
- \operatorname{RHom}(\mathcal O,Y)
-      =\operatorname{Cone}(G)[-1]=R[0],\qquad
- \operatorname{RHom}(\mathcal O,Z')
-      =\operatorname{Cone}(\alpha_F)=C[0]
-\]
-である。ここで全射性と部分束条件を使った。
-新三項から $\mathcal O$ への derived Hom は、元の逆向き消滅から零である。
-従って新 foundation は strong exceptional であり、
-二つの三角から $X,Z$ を復元できるので full でもある。
-上の Hom 同型の下で合成は縮約 $F'$ と商写像 $G'$ になり、
-End 代数は定義した二写像データと一致する。
-
-次に $\HH$ の normal foundation を取る。
-記法を $X=\pi X_0$、$M=\pi B(1)$、$Z=\pi X_1(1)$ とする。
-$G$ は次数零生成 MCM 加群 $X_1$ の自由被覆を次数一で取った写像なので全射である。
-$P=\Hom(X,M)$ は二次元であり、その非零元は rank one torsion-free 対象間の
-非零射であるため単射である。
-従って coevaluation $X\to P^*\otimes M$ は単射であり、
-$\Hom(\mathcal O,-)$ によって $\alpha_F$ の単射性を得る。
-よって全ての normal foundation は $U_0$ に入る。
-
-最後に $X_1=pc(X_0)$ なので $p(X_1)=c(X_0)$ である。
-評価列を次数一へ移した
-\[
- 0\longrightarrow\pi c(X_0)
-  \longrightarrow \pi B(1)^2
-  \longrightarrow\pi X_1(1)\longrightarrow0
-\]
-により $Y\simeq\pi c(X_0)$ を得る。
-また $p(X_0)$ の評価列を同様に移すと
-\[
- 0\longrightarrow\pi X_0
-  \longrightarrow\pi B(1)^2
-  \longrightarrow\pi p(X_0)(1)\longrightarrow0
-\]
-となる。この中射は、$\Hom(\pi X_0,\pi B(1))$ の基底を選べば
-上記 coevaluation と一致する。
-従って $Z'\simeq\pi p(X_0)(1)$ であり、これは初めの ruling を
-$c(X_0)$ に替えて normal-helix の構成を行った第四項そのものである。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{corollary}[$\HH$ の幾何点群oidの全充満な実現]
@@ -568,40 +303,8 @@ $k$ を代数閉体とする。
 \end{corollary}
 
 \begin{proof}
-命題~\ref{prop:first-orbit-object} と
-命題~\ref{prop:intrinsic-ruling-pair} により、pointed exact 同値は
-$M=s\mathcal O$ と二つの ruling の非順序対を保つ。
-第四項も最初の三項から一意に定まるので、
-pointed exact 同値は二つの normal foundation を置換する。
-必要なら一方に $\tau$ を作用させれば、各項を保つ同値となる。
-比較同型を各項で選ぶと、これは頂点を保つ End 代数の同型を与える。
-比較同型の変更は各項のスカラーによる内部自己同型であり、
-全体の自然スカラーを除けばちょうど $K$ である。
-従って $\mathfrak F_0$ と $S_2$ 商への射を得る。
-
-逆に、像の二点の間の $\mathfrak Q_{\mathrm{fnd}}$ の射は、
-必要に応じた ruling 交換の後の頂点保存 End 代数同型として表せる。
-tilting による標準導来 Morita 同値と上の mutation は、
-$\mathcal O$ を標識同型付きで保存する導来同値を与える。
-系~\ref{cor:pointed-derived-exact} によりこれは元の heart の間で exact である。
-
-全充満性の一意性については、exact 同値の標準 dg 延長を用いる。
-tilting 対象の像とその End 代数への作用は、この延長を標準導来 Morita 同値の
-自然同型まで決定する。各項の比較同型を変えることはちょうど前述の $K$ であり、
-$\mathcal O$ 上の比較同型を保つ自然二自己同型は自明である。
-従って射の間の対応は単射でもある。
-
-慣性を明記すると、$x\in\mathfrak F_0(k)$ の像の自己同型群は
-\[
- \coprod_{\epsilon\in S_2}
-       \operatorname{Isom}_{\mathfrak F_0}(x,\tau^\epsilon x)
-\]
-に $S_2$-作用から来る合成を入れた群である。
-恒等置換の成分は
-$\operatorname{Aut}_{\{e_i\}}(\Lambda_x)/K$ であり、
-交換成分は二つの ruling を実際に交換する pointed 自己同値がある場合にだけ非空となる。
-従って各点に余分な $S_2$ 慣性を一律に付加しているわけではない。
-これは全ての pointed 自己同値と正確に対応する。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[この相対構成の射程]
@@ -651,50 +354,8 @@ twist は、同じ $E$ からの二次環
 （ただし $J$ そのものの底変更には $B_4$ の平坦性を要する）。
 \end{lemma}
 \begin{proof}
-$n\ge2$ に対し、$V^{\otimes2n}$ で隣接二文字ずつを
-$n$ 個の block に分ける。
-各 block の内部にある $I$ を零にした商は、
-tensor 積の右完全性により
-\[
- (V^{\otimes2}/I)^{\otimes n}=E^{\otimes n}
-\]
-である。$B_{2n}$ を得るために追加で零にすべき二次関係は
-block の境界を跨ぐ位置の $I$ だけである。
-一つの境界を跨ぐ関係の像は、隣接する二つの
-$E$-block の間の
-\[
- J=\ker(E^{\otimes2}\longrightarrow B_4)
-\]
-そのものである。実際、$B_4$ は四文字における
-左・右の block 内部の $I$ と、
-中央二文字にかかる $I$ を全て零にした商である。
-従って
-\[
- \ker(E^{\otimes n}\to B_{2n})
- =\sum_{j=0}^{n-2}
- E^{\otimes j}\otimes J\otimes
- E^{\otimes(n-j-2)}
-\]
-となり、式~(\ref{eq:relative-quadratic-veronese}) が従う。
-この議論は純粋に tensor 積の商であり、体上の次元計算や
-平坦性を使わない。
-
-twist の次数 $n$ における積写像は、
-$E^{\otimes n}$ に
-\[
- a_1\otimes\cdots\otimes a_n
- \longmapsto
- a_1\otimes\alpha(a_2)\otimes\cdots
-      \otimes\alpha^{n-1}(a_n)
-\]
-を作用させた後の通常の乗法である。
-$\alpha\otimes\alpha$ は $J$ を保つので、
-上の核の各隣接成分は
-$(\operatorname{id}\otimes\alpha^{-1})(J)$ に移る。
-よって twist の関係も二次で尽くされる。
-底変更する場合には $B$、その Veronese と twist の定義は
-tensor 積から直接底変更する。$J$ をその核と同一視して
-基底変更するためには、$B_4$ が平坦であることを確認すればよい。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{corollary}[$\HH$ の反 Serre 環は二次]
@@ -713,14 +374,8 @@ $t=S^{-1}[2]$ の反 Serre 軌道環
 これは適合平方根の選択に依存しない。
 \end{corollary}
 \begin{proof}
-$\HH$ の定義により、選べる平方根 $s$ の
-全切断環 $B(\mathcal C,\mathcal O,s)$ は二次生成の
-正則正規二次商であり、Hilbert 関数は $(n+1)^2$ である。
-$s^2\simeq t$ を通じてその偶数 Veronese は
-内在的反 Serre 軌道環に同型となる。
-直前の補題を適用すれば二次表示となる。
-第一・第二次数の次元は $3^2=9$、$5^2=25$ なので、
-二次関係の次元は $9^2-25=56$ である。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{lemma}[体上で二次なら全平坦族でも二次]
@@ -746,26 +401,8 @@ $\operatorname{rank}\mathcal R_2=25$ の場合は
 \]
 \end{lemma}
 \begin{proof}
-各幾何点で積
-$\mathcal R_1^{\otimes n}\to\mathcal R_n$ が全射なので、
-有限局所自由な標的に対する余核の Nakayama 補題により
-すべての $n$ で全射である。
-特に二次積は全射であり、$\mathcal J$ は有限局所自由な
-局所直和因子で、任意の底変更と整合する。
-$\mathcal Q=T(\mathcal R_1)/(\mathcal J)$ から
-$\mathcal R$ への次数別全射を取る。
-幾何点上では双方の次数 $n$ が
-仮定により同型である。局所 noetherian 性により、
-核 $\mathcal K_n$ は有限生成であり、
-$\mathcal R_n$ が平坦なため
-\[
- \mathcal K_n\otimes k(x)
- =\ker(\mathcal Q_n\otimes k(x)\to
-                 \mathcal R_n\otimes k(x))=0.
-\]
-Nakayama 補題から $\mathcal K_n=0$ となる。
-この同型と $\mathcal R_n$ の局所自由性により
-全次数で任意の底変更と可換する。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \subsection{cubic 上の相対反 Serre 環と九生成元の表示}
@@ -796,21 +433,8 @@ $\mathsf t_T=S_T^{-1}[2]$ は底変更と両立する自己同値である。
 それらには合成による斉次積がある。
 \end{lemma}
 \begin{proof}
-補題~\ref{lem:foundation-relative-smooth-proper} によって
-$\Lambda_T$ は底上有限局所自由で、対角双加群は
-有限局所射影項からなる長さ三以下の相対 bar 解消を持つ。
-従って $\operatorname{Perf}(\Lambda_T)$ は相対 smooth proper である。
-相対 Serre 双加群は
-$D_T\Lambda_T=\mathbf R\mathcal Hom_T(\Lambda_T,\mathcal O_T)$、
-その逆は相対逆双対化双加群で表される。
-いずれも対角双加群の perfect 解消から形成でき、
-双加群として perfect であり、任意の底変更と両立する。
-よって $\mathsf t_T$ とその反復は相対 perfect 対象を保つ。
-その間の導来 Hom は底上 perfect であり、
-相対 smooth proper 性によって任意の底変更と可換する。
-積は、次数 $m,n$ の射 $a,b$ に対して
-$\mathsf t_T^n(a)\circ b$ を取るもので、結合律は
-自己同値の合成の結合律から従う。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[cubic 開部分の反 Serre Grassmann 射]
@@ -841,55 +465,8 @@ $\mathfrak C\subset\mathfrak Q_{\mathrm{fnd}}$ 上で、
 内在的反 Serre 環の二次関係空間を与える。
 \end{proposition}
 \begin{proof}
-まず $\mathfrak F_0$ の線型化した表示
-$[U_0/\mathcal G]$ で作る。
-任意の幾何点で cubic 逆構成から得られる
-$(\mathcal C,\mathcal O)\in\HH$ を用いると、
-tilting 同値は $\mathcal O_T$ と構造対象を同定し、
-Serre 関手を保つ。
-$\mathsf t=S^{-1}[2]$ はこの同値の下で $s^2$ に対応する。
-既存の切断環と Serre 双対の計算から、
-$n\ge0$ について
-\[
- \operatorname{Ext}^{i}
-  (\mathcal O,\mathsf t^n\mathcal O)=0\quad(i\ne0),
- \qquad
- \dim\operatorname{Hom}
-  (\mathcal O,\mathsf t^n\mathcal O)=(2n+1)^2.
-\]
-具体的には切断環 $B(\mathcal C,\mathcal O,s)$ は
-$(1-z^2)/(1-z)^4$ の Hilbert 級数を持ち、
-$\operatorname{Ext}^2$ は Serre 双対と負次数切断の消滅で零、
-$\operatorname{Ext}^1$ は quadratic AS 被覆からの
-次数付き局所双対・飽和 section の消滅によって零である。
-この結果は根の選択に依存しない。
-
-補題~\ref{lem:foundation-relative-antiserre-perfect} の
-perfect 複体は、全幾何点で cohomological amplitude $[0,0]$ である。
-perfect 複体の局所自由分解における単元 minor の消去を行えば、
-各 $\mathscr V_n$ は指定階数のベクトル束に等しく、
-任意の底変更と両立する。
-各幾何点の反 Serre 環は
-一次生成の $B(\mathcal C,\mathcal O,s)$ の偶数 Veronese なので、
-$\mathscr R_1^{\otimes m}\to\mathscr R_m$ は幾何点で全射となる。
-有限局所自由加群への写像の全射性は幾何点で判定できるから
-族でも全射であり、特に二次関係は局所直和因子となる。
-
-構成は標識付き dg 圏、相対 Serre 関手、合成だけで決まる。
-$K$ は各基底変換において
-$\Lambda$ の頂点冪等元に沿う内部自己同型で作用し、
-$\mathcal O_T$ 上では頂点零のスカラーを一に規格化できる。
-従ってその作用は標識付き Morita 自然同型を通じて
-$\mathscr R_n$ 上で自明となる。
-また命題~\ref{prop:ruling-involution-mutation} の
-相対 mutation は $\mathcal O_T$ を保つ Morita 同値であり、
-Serre 関手の自然性により $\mathscr R_n$ と積を保つ。
-相対 ruling 交換の coherent な $S_2$ 作用の下で
-この同定も合成と整合する。
-従って $\mathscr R_n$、$\mathscr J$ とその
-射影枠束は $\mathfrak C$ へ降下する。
-$\operatorname{PGL}(U)$-同変な Grassmannian の射として
-(\ref{eq:cubic-antiserre-grassmann}) を得る。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{corollary}[cubic chart の全次数二次再構成]
@@ -908,14 +485,8 @@ $\operatorname{PGL}(U)$-同変な Grassmannian の射として
 cubic 族の反 Serre 環の全積を復元する。
 \end{corollary}
 \begin{proof}
-全幾何ファイバーの反 Serre 環は
-系~\ref{cor:h2-intrinsic-antiserre-quadratic} により二次である。
-$\mathscr R_n$ は命題~\ref{prop:cubic-relative-antiserre-grassmann} により
-全次数で有限局所自由なので、
-補題~\ref{lem:relative-quadratic-from-fibers} を
-cubic の滑らかな有限型表示上に適用できる。
-構成は基底変更と ruling 交換に整合するので
-$\mathfrak C$ へ降下する。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[二つの chart の射と内在的な相対認識]
@@ -964,38 +535,8 @@ $\mathfrak C=q(\mathfrak F_{\mathrm{cub}})$ は非空開部分スタックであ
 \end{proposition}
 
 \begin{proof}
-$U_0$ は $\mathbb A^{64}$ の非空開部分なので既約である。
-商への連続全射\cite[Tags 04XL, 0DR5]{StacksModuli}
-\[
- |U_0|\longrightarrow|\mathfrak F_0|
-       \longrightarrow|\mathfrak Q|
-\]
-により、$\mathfrak F_0$ と $\mathfrak Q$ も既約となる。
-
-$\mathfrak F_{\mathrm{cub}}$ は非空である。例えば可換二次曲面の foundation
-\[
- (\mathcal O,\mathcal O(1,0),\mathcal O(1,1),\mathcal O(2,1))
-\]
-はこの部分に入る。実際、$A=H^0(\mathcal O(1,0))$、$B=H^0(\mathcal O(0,1))$ と置けば、
-$W_1=A$、$P=B$、$W_2=A\otimes B$、$Q=A$、
-$W_3=\operatorname{Sym}^2A\otimes B$ である。
-$F$ は因子交換の同型、$G$ は対称積の写像で、
-$R=\ker G=\bigwedge^2A\otimes B$ となる。
-対応する四重テンソルは、因子 $0,2$ の非退化交代テンソルと
-因子 $1,3$ の非退化 pairing の積である。
-従って任意の隣接二因子の非零縮約は消えない。
-
-$q$ は有限 \'etale、従って開写像であるから、その像 $\mathfrak C$ は非空開部分となる。
-幾何点の cubic 逆構成と、ruling 交換の mutation による記述によって
-$|\mathfrak C|\subset Y$ である。
-既約空間 $|\mathfrak Q|$ の非空開部分 $|\mathfrak C|$ は既約かつ稠密なので、
-\[
- \overline{|\mathfrak C|}^{\,Y}
- =Y\cap\overline{|\mathfrak C|}^{\,|\mathfrak Q|}=Y.
-\]
-既約部分空間の閉包は既約であり、主張が従う。
-ここでは単に $Y$ が既約空間の部分集合であることを使うのではなく、
-$Y$ がその非空開部分を含むことを使っている。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[各 noncubic 点への一次元の特殊化]
@@ -1016,39 +557,8 @@ $0,1\in T\subset\mathbb A^1_k$ という非空開部分と、
 \end{proposition}
 
 \begin{proof}
-$U_{\mathrm{cub}}\subset U_0$ を $\mathfrak F_{\mathrm{cub}}$ の逆像とし、
-$y=(F_1,G_1)\in U_{\mathrm{cub}}(k)$ を一つ選ぶ。
-これは前命題の可換二次曲面の foundation の表示に固定してよく、
-$x$ ごとに別の cubic 対象を探索する必要はない。
-アフィン空間内の直線
-\[
- \ell(t)=(1-t)x+ty,
- \quad
- F_t=(1-t)F_0+tF_1,
- \quad
- G_t=(1-t)G_0+tG_1
-\]
-を取る。$\ell^{-1}(U_{\mathrm{cub}})$ は $1$ を含む非空開部分なので、
-その補集合 $Z$ は有限である。
-\[
- T=\mathbb A^1_k\setminus(Z\setminus\{0\})
-\]
-と置けば、$0,1\in T$ であり、$T\setminus\{0\}$ は $U_{\mathrm{cub}}$ に写る。
-$t=0$ の像も $U_0$ に属するので $\ell(T)\subset U_0$ である。
-この直線に普遍二写像表示の代数を引き戻して $\Lambda_T$ を得る。
-その加群は四つの対角成分、三つの $W_i$、二つの矢空間 $P,Q$ と
-$P\otimes Q$ の直和であり、全体で階数二十四の自由加群である。
-積は $F_t,G_t$ とその合成からなり、任意の底変更と両立する。
-最初の二つの主張と、全幾何ファイバーの $\mathcal H_2$ 実現はこれで従う。
-
-相対 proper 性は $\Lambda_T$ の有限自由性による。
-相対 smooth 性には、次の補題を用いる。
-頂点零の標準 projective を標識対象とすれば、その自己 Hom は $\mathcal O_T$ であり、
-幾何ファイバー上の tilting 同値は指定された $\mathcal O$ をこの対象へ移す。
-従ってこれは標識付き相対 dg 圏の族である。
-必要なら $\operatorname{Spec}k[t]_{(t)}$ や
-$\operatorname{Spec}k[[t]]$ へ底変更して、一般ファイバーが cubic、
-特殊ファイバーが指定対象という一径数退化にできる。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{lemma}[有向有限代数の相対 smooth proper 性]
@@ -1058,25 +568,8 @@ $\operatorname{Spec}k[[t]]$ へ底変更して、一般ファイバーが cubic�
 この記述は任意の底変更と両立する。
 \end{lemma}
 \begin{proof}
-$E=\bigoplus_{i=0}^3\mathcal O e_i$ とし、$J$ を非対角成分の直和とする。
-有向性により $\Lambda=E\oplus J$ は増大された $E$-代数である。
-$E$ に相対的な正規化 bar 分解は、次数 $n$ に
-\[
- \Lambda\otimes_E J^{\otimes_E n}\otimes_E\Lambda
-\]
-を持つ。増大 bar 分解の単位挿入による収縮と正規化により、
-この複体は対角双加群 $\Lambda$ を解消する。
-非零なテンソルは頂点の狭義単調列に対応するため、$n>3$ の項は零である。
-各成分 $J_{ij}$ は有限局所自由であり、上の項は
-\[
- \Lambda e_i\otimes_{\mathcal O} V\otimes_{\mathcal O}e_j\Lambda
-\]
-という形の有限直和である。ここで $V$ は有限局所自由である。
-従って各項は局所的に有限生成 projective な
-$\Lambda\otimes_{\mathcal O}\Lambda^{\mathrm{op}}$-加群であり、
-対角は perfect となる。
-底上の perfect 性は $\Lambda$ の有限局所自由性による。
-全ての項と微分は局所自由な成分と積から作られるため、底変更と両立する。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[cubic から noncubic への反 Serre 環の実際の特殊化]
@@ -1104,24 +597,8 @@ $t\ne0$ の値は cubic 対象のそれである。
 反 Serre の全次数付き環の族としても実現される。
 \end{proposition}
 \begin{proof}
-補題~\ref{lem:foundation-relative-antiserre-perfect} を $T$ に適用する。
-命題~\ref{prop:h2-line-degeneration} によって
-$T$ の全幾何ファイバーは $\HH$ 対象の標識付き導来圏である。
-従って各 $n$ の導来 Hom の幾何ファイバーは、
-命題~\ref{prop:cubic-relative-antiserre-grassmann} の証明で
-用いた $\HH$ の反 Serre 軌道の Ext 消滅から、
-次数零の $(2n+1)^2$ 次元空間に集中する。
-perfect 複体の局所分裂により
-$\mathscr V_n(T)$ は同階数の有限局所自由加群になり、
-任意の底変更と可換する。
-各ファイバーの反 Serre 環は一次生成環の偶数 Veronese なので、
-$\mathscr R_{T,1}^{\otimes m}\to\mathscr R_{T,m}$ は幾何点で全射、
-従って $T$ 上でも全射である。
-$\mathscr R_{T,1}$、$\mathscr R_{T,2}$ の階数がそれぞれ九、二十五であるため
-二次関係は階数五十六の部分束である。
-射影枠束から (\ref{eq:line-antiserre-grassmann}) を得る。
-各ファイバーでの内在的反 Serre 環との一致は
-Serre 関手の標準 Morita 自然性による。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{corollary}[特殊化族の全反 Serre 環の二次提示]
@@ -1139,10 +616,8 @@ $T$ 上で、自然な射は全次数の同型
 \emph{完全な}相対提示によって記述される。
 \end{corollary}
 \begin{proof}
-$\mathscr R_{T,n}$ は各次数で有限局所自由で、
-全幾何ファイバーは $\HH$ の反 Serre 環である。
-系~\ref{cor:h2-intrinsic-antiserre-quadratic} と
-補題~\ref{lem:relative-quadratic-from-fibers} の適用により従う。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[反 Serre 関係の構成可能な実現集合と既約な代数的包絡]
@@ -1190,48 +665,8 @@ $\mathcal Y_{\mathrm{as}}\subset|\mathfrak G_9|$ とする。
 これを内在的な $\HHstack$ と同一視したとは主張しない。
 \end{proposition}
 \begin{proof}
-全 $\HH$ 幾何点の分類によれば、対象は
-cubic の逆構成か noncubic の二形式表示のいずれかから得られる。
-双方の反 Serre 環は
-系~\ref{cor:h2-intrinsic-antiserre-quadratic} により二次である。
-従って二次関係は対象を完全に決め、
-二つの表示射の幾何点像の和が
-$\mathcal Y_{\mathrm{as}}$ となる。
-$\mathfrak C$ と $\mathfrak N^{\mathrm{pres}}$ は有限型である。
-$\mathfrak G_9$ の Grassmannian 平滑表示で
-これらの射を引き戻し、有限型スキームの atlas を選ぶと、
-その Grassmannian への像は有限型スキームの射の像である。
-Chevalley の定理
-\cite[Tag 054K]{StacksModuli} によりこれらの像は構成可能であり、
-商の位相でも構成可能である。
-
-$U_{\mathrm{cub}}$ は既約な $\mathbb A^{64}$ の非空開であり、
-その階数九ベクトル束の枠束も、幾何学的既約な
-$\operatorname{GL}_9$ をファイバーとするため既約である。
-その Grassmannian への像は既約なので、
-被約閉包 $Z_2$ も既約である。
-枠の変更による $\operatorname{PGL}(U)$ 作用は
-像を保つため、その閉包も不変である。
-よって (\ref{eq:h2-irreducible-envelope}) は
-有限型既約 Artin スタックを与える。
-
-任意の noncubic 幾何点 $x$ に対し、
-命題~\ref{prop:line-degeneration-antiserre-algebras} と
-系~\ref{cor:line-full-quadratic-degeneration} により、
-$\operatorname{Spec}k[[t]]$ から $\mathfrak G_9$ への射が存在し、
-一般点が cubic、特殊点が $x$ の反 Serre 関係である。
-階数九ベクトル束をこの DVR 上で自明化すれば、
-Grassmannian への射に持ち上がる。
-その一般点は $Z_2$ に入るので、閉性から特殊点も
-$Z_2$ に入る。従って
-$\mathcal Y_{\mathrm{as}}\subset|\mathfrak Z_2|$ である。
-
-cubic の幾何点像は既約であり、
-任意の noncubic 幾何点はその閉包に入る。
-そのため $\mathcal Y_{\mathrm{as}}$ は
-既約集合の閉包として既約である。
-$Z_2$ の定義から cubic の像は
-$|\mathfrak Z_2|$ に稠密である。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[内在的な相対モジュライへの移行条件]
@@ -1285,31 +720,8 @@ pointed 圏の自己同型群にない次数スカラーが慣性として一つ
 \end{lemma}
 
 \begin{proof}
-自然自己同型 $\eta$ の各 $t^{-n}\mathcal O$ 上の成分は、例外性により
-スカラー $\lambda_n$ である。
-$\Hom(t^{-n}\mathcal O,\mathcal O)=R_n\ne0$ と自然性から
-$\lambda_n=\lambda_0$ となる。
-反 Serre 軌道の豊富性により全ての対象はこれらの有限直和の商なので、
-$\eta$ は全ての対象で同じスカラーである。
-pointed 二射は標識上で恒等であるため、このスカラーは一に限られる。
-特に $(\operatorname{Id},\lambda\operatorname{id}_{\mathcal O})$ と
-$(\operatorname{Id},\operatorname{id}_{\mathcal O})$ は互いに二同型である。
-
-graded 自己同型は AZ 再構成を通じて pointed exact 自己同値を与える。
-群準同型の規約として、$\phi$ には右加群の作用を $\phi^{-1}$ で twist する関手を対応させる。
-逆に pointed exact 自己同値は Serre 関手と可換するので、
-その可換同型を選ぶことで $R$ の graded 自己同型を与える。
-可換同型の異なる選択は、前段の自然自己同型の計算により一つのスカラーだけ異なり、
-$R_n$ 上ではその $n$ 乗だけ異なる。これで全射性を得る。
-
-核を計算する。graded 自己同型 $\phi$ の誘導する pointed 関手が恒等と二同型なら、
-各自由シフト $\pi R(i)$ 上のその二同型は、
-基準同型 $b\mapsto\phi(b)$ のスカラー $c_i$ 倍である。
-隣接シフト間の Hom に対する自然性は
-$c_{i+1}\phi_1=c_i\operatorname{id}_{R_1}$ を与える。
-従って $\phi_1$ はスカラーで、$R$ の一次生成性により $\phi=\xi_\lambda$ である。
-逆に $\xi_\lambda^{-1}$ による加群 twist は、次数 $n$ 上で $\lambda^n$ を掛ける写像により
-恒等関手と自然同型であり、次数零の標識も保つ。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 九次元空間 $U$ を固定し、
@@ -1358,38 +770,8 @@ $\mathcal R_n\otimes\mathcal L^{-n}$ は $[Y/\PGL_9]$ 上へ降下し、
 \end{proposition}
 
 \begin{proof}
-中心の元 $\lambda I$ は $\mathcal R_1$ に $\lambda$、
-$\mathcal R_2$ に $\lambda^2$ で作用する。
-従って $\det\mathcal R_1$ と $\det\mathcal R_2$ の重みは九と五十であり、
-\[
- -11\cdot9+2\cdot50=1
-\]
-から $\mathcal L$ の重みは一である。
-$\mathcal V=\mathcal R_1\otimes\mathcal L^{-1}$ の中心作用は自明なので、
-$\GL_9$-同変降下により $[Y/\PGL_9]$ 上の階数九のベクトル束となる。
-その射影枠束は普遍 $\PGL_9$-torsor と一致するので、
-通常の枠束はこの torsor の $\GL_9$ への持ち上げを与える。
-これが gerbe の中立化である。
-
-同じ事実を局所的に見ると、$\PGL_9$-遷移関数の持ち上げ
-$g_{ij}$ による三重重なりの障害が $\lambda_{ijk}$ であるとき、
-$\mathcal L$ の遷移係数 $\ell_{ij}$ は重み一のため
-$\ell_{ij}\ell_{jk}\ell_{ki}=\lambda_{ijk}$ を満たす。
-従って $\ell_{ij}^{-1}g_{ij}$ は真の $\GL_9$-cocycle となる。
-一般にこのような重み一の線束を持つ $\mathbb G_m$-gerbe は、
-線束の枠束を取ることにより底の $B\mathbb G_m$ との積に同値となる。
-
-$\mathcal R_n$ に対する中心の重みは $n$ なので
-$\mathcal R_n\otimes\mathcal L^{-n}$ の重みは零である。
-積もこの twist と両立する。
-具体的には $\mathcal J\otimes\mathcal L^{-2}\subset
-\mathcal V\otimes\mathcal V$ が部分束として降下し、
-\[
- T(\mathcal V)/(\mathcal J\otimes\mathcal L^{-2})
-\]
-が求める代数である。
-三次以上の成分の平坦性は Grassmannian 全体では主張せず、
-別に定める相対 Hilbert 条件の locus で課す。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 
@@ -1427,27 +809,8 @@ pointed exact 同値類と全ての慣性を再現する。
 族全体で選び、型を局所定数とする表示族}である。
 \end{proposition}
 \begin{proof}
-$\mathfrak C$ は $\mathfrak Q_{\mathrm{fnd}}$ の
-非空開部分スタックであり、滑らか・有限型で既約である。
-$\mathfrak N^{\mathrm{pres}}=[P/G]$ は
-非空な既約開 $P\subset\mathbb A^6$ と
-滑らかな有限型群 $G$ の商なので、
-同じく滑らか・有限型・既約である。
-非交和は二つの開閉な既約・連結成分を持つ。
-幾何点群oidについては、
-系~\ref{cor:h2-point-groupoid-foundation} の全充満性、
-命題~\ref{prop:cubic-foundation-open} の cubic 逆構成、
-命題~\ref{prop:noncubic-presentation-stack} の
-同値類と慣性の計算、そして
-定理~\ref{thm:complete-h2-classification} の全被覆・非交差性を
-合わせればよい。
-
-この表示族の定義では、連結な基底上で
-cubic と noncubic を別々の開閉な場合に分けている。
-従って命題~\ref{prop:h2-line-degeneration} で構成した
-cubic 一般点・noncubic 特殊点の族を、
-元の自然な意味での相対 $\HH$ 族として許容するかどうかに
-関係なく、このスタックには入れられない。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[三次Hilbert値までの相対二次提示のスタック]
@@ -1506,52 +869,8 @@ $[X_3/\operatorname{PGL}(U)]$ を経由し、
 内在的 $\HH$ の条件は $X_3$ の定義には含めない。
 \end{proposition}
 \begin{proof}
-$\mathcal E$ は階数 $81-56=25$ である。
-二次環の三次成分は
-\[
- R_3\simeq
- \operatorname{coker}\bigl(
- U\otimes\mathcal J\to\mathcal E\otimes U\bigr)
-\]
-であるから、$\operatorname{rank}\mathcal L_3=176$
-という条件は、三次成分が階数
-$25\cdot9-176=49$ の局所自由加群であることと同値である。
-行列の階数が所定値である条件は
-大きい小行列式の消滅と少なくとも一つの
-所定次数小行列式の可逆性で定める
-局所閉 stratum であり、その上で像・余核は部分束になる。
-この構成は基底変更と両立し、
-$\operatorname{PGL}(U)$-不変な有限型スキーム $X_3$ を与える。
-$\operatorname{PGL}(U)$ は滑らかな有限型群なので、
-商は有限型 Artin スタックとなる
-\cite[Tag 0DLS]{StacksModuli}。
-
-$\operatorname{GL}(U)$ 版の群oid解釈は
-生成元の枠束と関係部分束の降下そのものである。
-中心 $\mathbb G_m$ は $X_3$ に自明に作用するが、
-全次数 $R_n$ には重み $n$ で作用する。
-命題~\ref{prop:antiserre-gerbe-neutral} の
-線束
-\[
- \mathcal L=
- (\det\mathcal R_1)^{-11}
-       \otimes(\det\mathcal R_2)^2
-\]
-は中心重み $-11\cdot9+2\cdot(2\cdot25)=1$ を持つ。
-従って全次数で
-$\mathcal R_n^{\mathrm{norm}}=
- \mathcal R_n\otimes\mathcal L^{-n}$
-は中心重み零になり、
-環構造ごと $\operatorname{PGL}(U)$ 商へ降下する。
-これは任意底変更と整合する
-普遍二次環である。
-高次成分が局所自由であるとはここでは主張しない。
-
-cubic・noncubic の既存の相対反 Serre 環と
-それらを結ぶ特殊化族では、
-全次数で階数 $(2n+1)^2$ の局所自由性が
-既に証明されている。従って三次階数は四十九であり、
-その関係射は $X_3$ を経由する。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[二根対一致点での一次変形の相違]
@@ -1567,53 +886,8 @@ $\mathfrak Q_{\mathrm{fnd}}$ に実現したときの
 形式近傍は同値でない。
 \end{proposition}
 \begin{proof}
-命題~\ref{prop:noncubic-third-degree-tangent} により
-$\mathcal D_{3,\ge49}$ の点 $x$ での
-Grassmannian 内の一次接空間次元は $84$ である。
-$\mathcal L_3$ の階数がここでちょうど $176$ なので、
-$X_3$ はこの閉 determinantal locus の
-$\operatorname{rank}\mathcal L_3\ge176$ という開部分であり、
-両者の接空間は一致する。
-$\operatorname{PGL}_9$ 軌道の接次元は $79$ である。
-従って商スタックの接複体の $[-1,0]$ 切断は
-\[
- [\mathfrak{pgl}_9\longrightarrow T_xX_3]
-\]
-であり、その $H^0$ の次元は $84-79=5$ となる。
-
-一方 $\mathfrak Q_{\mathrm{fnd}}$ は
-命題~\ref{prop:relative-ruling-involution} による
-有限 \'etale 商の構成と
-命題~\ref{prop:foundation-stack} から、
-滑らかで相対次元三である。
-ここで慣性の Lie 次元を幾何点の集合だけから結論してはならない。
-foundation を一つ選び、その表示の安定化群を $H$ とする。
-$H$ は滑らかな線形群 $\mathcal G/K$ の閉部分群なので有限型である。
-固定有限代数の相対逆双対化双加群と構造対象 $e_0\Lambda$ から
-反 Serre 環の次数一・二の積を作る操作は有限完全複体の操作であり、
-任意の係数環への底変更と整合する。
-従ってこの操作は代数群の射
-\[
- H\longrightarrow\operatorname{Stab}_{\operatorname{PGL}_9}(J)
-\]
-を与える。系~\ref{cor:h2-point-groupoid-foundation} と
-補題~\ref{lem:pointed-degree-scalar} により、$k$ 点では単射であり、
-その像は二つの内在的 ruling のうち選んだ一つを保つ部分群である。
-従って像の指数は高々二である。
-標数零の有限型群スキームは滑らかであり、代数群の射の像は閉部分群である。
-よって核は自明で、像と標的は同じ Lie 次元を持つ。
-後者は軌道の接次元の計算から $80-79=1$ である。
-さらに $\mathfrak F_0\to\mathfrak Q_{\mathrm{fnd}}$ は有限 \'etale なので、
-両者の慣性 Lie 次元は等しい。
-滑らかな Artin スタックでは
-\[
- \dim H^0(T_x\mathfrak Q_{\mathrm{fnd}})
- =\dim\mathfrak Q_{\mathrm{fnd}}
-  +\dim H^{-1}(T_x\mathfrak Q_{\mathrm{fnd}})
- =3+1=4.
-\]
-したがって二つのスタックの接複体は
-$H^0$ の次元が異なり、形式近傍は同値でない。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[三つのスタックの役割と内在的 $\HHstack$]
@@ -1678,23 +952,8 @@ $P$ が同一の変形 $X_u$ の左右の作用を持つ perfect kernel に持�
 \end{lemma}
 
 \begin{proof}
-核 $P$ の持上げ障害は、左右から作用する変形類の差
-\[
- \operatorname{ob}(P;u,u)
- =u\circ P-P\circ u\in\operatorname{Ext}^2(P,P)
-\]
-である。ここで左・右作用の規約は、以下の $u-\Phi_*u$ との同定に合わせる。
-この障害の解釈には Lowen~\cite[Theorems 1.1 and 4.8, Corollary 4.9]{Lowen2008}
-の characteristic morphism の定理を用いる。
-$P$ は同値の核なので、左右の Hochschild 作用はいずれも同型であり、
-その比較が $\Phi_*$ である
-\cite[Proposition 5.6 and Lemma 5.8, arXiv v3]{Toda2009}。
-従って一方の同型 $\operatorname{Ext}^2(P,P)\simeq\operatorname{HH}^2(X)$ の下で
-障害は $u-\Phi_*u$ に対応する。持上げがあれば障害は零なので主張を得る。
-
-Toda~\cite[Theorems 1.1 and 4.7, arXiv v3]{Toda2009} は
-$v=\Phi_*u$ のとき $X_u$ と $X_v$ の間へ同値を持ち上げる十分条件を述べる。
-本補題では上の障害計算によって必要性を示した。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{proposition}[可換 quadric 上の根でも持上げ障害が生じる]
@@ -1715,44 +974,8 @@ $\pi=\partial_z\wedge\partial_w$ の Hochschild 類とすると、
 \end{proposition}
 
 \begin{proof}
-$f^*L\simeq L$ と $f^2=\operatorname{id}$ から平方の式を得る。
-また $s^{2n}\mathcal O_Q=\mathcal O_Q(2n,2n)$ なので、
-閉ファイバーの $(\mathcal O_Q,s)$ は Artin--Zhang ample である。
-Segre 埋込みにより $f$ は $\mathbb P^3$ の線形対合へ延びる。
-切断環は可換 quadric の切断環の Zhang twist であり、
-多項式環の同じ twist を型 $(1,4,6,4,1)$ の AS 正則被覆に取れる。
-従ってこれは元の $\mathcal H_2$ 対象の適合根である。
-$\partial_z$ は $\mathbb P^1$ 上の大域ベクトル場であり、
-無限遠の座標 $\zeta=z^{-1}$ では $-\zeta^2\partial_\zeta$ となる。
-従って $\pi$ は $Q$ 全体の非零大域切断である。
-
-$T_Q\simeq\mathcal O_Q(2,0)\oplus\mathcal O_Q(0,2)$ なので
-$H^1(Q,T_Q)=H^2(Q,\mathcal O_Q)=0$ である。HKR 同型から
-\[
- \operatorname{HH}^2(Q)
- \simeq H^0(Q,\textstyle\bigwedge^2 T_Q)
- \simeq H^0(Q,\mathcal O_Q(2,2))
-\]
-を得る。線束による tensor は、その線束が自明な各開集合では恒等関手と
-同型であるため、局所の bivector 成分には恒等に作用する。
-上の HKR 分解には他の成分がなく、局所制限への写像が単射なので、
-$-\otimes L$ は $\operatorname{HH}^2(Q)$ 全体にも恒等に作用する。
-一方 $f^*\pi=-\pi$ であり、従って
-\[
- s_*u=-u\ne u.
-\]
-補題~\ref{lem:autoequivalence-deformation-obstruction} より持上げは存在しない。
-
-対象となる一次変形は具体的にも構成できる。
-$\mathcal A_\pi=\mathcal O_Q\oplus\varepsilon\mathcal O_Q$ に
-\[
- a\star b=ab+\frac{\varepsilon}{2}\pi(da,db)
-\]
-を入れると、$\pi$ の二重導分性と $\varepsilon^2=0$ により積は結合的である。
-これは Toda~\cite[\S\S3--4, arXiv v3]{Toda2009} の
-$(\alpha,\beta,\gamma)=(0,0,\pi)$ に対する $R$-flat な代数層であり、
-同所の Ore 局所化と coherent 加群の構成によって、
-その加群圏は $\operatorname{coh}Q$ の類 $u$ の一次変形を与える。
+証明は相対モジュライ別稿 \cite[\texttt{foundation_stack} 節]{QuadricModuli2026} に置く。
+ここでは後続の分類側から参照するため、仮定と主張を保持する。
 \end{proof}
 
 \begin{remark}[結論の範囲]

@@ -1,0 +1,420 @@
+% !TeX root = ../nc-quadric-moduli.tex
+% 2026-11-21 / v1.12
+\section{可換 quadric の全一次方向を覆う二次 AS 被覆}
+\label{sec:quadric-first-order-as}
+
+$k$ は標数零、$A=k[\varepsilon]/(\varepsilon^2)$、
+$P=k[x_0,x_1,x_2,x_3]$、$q=x_0x_3-x_1x_2$ とする。
+$\epsilon_{ijkl}$ は $\epsilon_{0123}=1$ で定まる交代記号である。
+
+\begin{proposition}[一次の Jacobian 被覆]
+\label{prop:quadric-first-order-jacobian-cover}
+$f\in P_2/kq$ を取り、$q_i=\partial_iq$、$f_i=\partial_if$ と書く。
+$P$ 上の交代二重導分 $\gamma_f$ を
+\[
+ \gamma_f(x_i,x_j)=\sum_{k,l=0}^3\epsilon_{ijkl}q_kf_l
+\]
+で定める。$f$ の $kq$ による変更はこの式を変えない。
+$\mathcal A_f=P\otimes_kA$ に積
+\[
+ a\star b=ab+\frac{\varepsilon}{2}\gamma_f(a,b)
+\]
+を入れると、これは次数別有限自由の二次 AS4 被覆となり、
+ベクトル空間の同一視で指定した $q\in(\mathcal A_f)_2$ は中心正則である。
+商 $\mathcal B_f=\mathcal A_f/(q)$ も全次数有限自由であり、
+階数は $(n+1)^2$ である。
+これらの平坦性・相対 Koszul 完全性・相対 Gorenstein 双対は底変更と両立する。
+任意の Noetherian $A$-代数への底変更後にも左右 noetherian である。
+\end{proposition}
+\begin{proof}
+二重導分の Leibniz 則により
+\[
+ \gamma_f(a,b)c+\gamma_f(ab,c)
+ =a\gamma_f(b,c)+\gamma_f(a,bc).
+\]
+従って $\varepsilon^2=0$ を使えば積は結合的である。
+この一次の結合性には高次の量子化定理を用いていない。
+交代記号の縮約から $\gamma_f(q,-)=0$ なので
+$q\star a=qa=a\star q$ である。
+従って $q$ のイデアルは通常の $qP\otimes A$ に一致し、
+商は $(P/(q))\otimes A$ と同じ次数別加群を持つ。
+通常の $q$ の乗法は単射なので、左右正則性も従う。
+
+二次提示は
+\[
+ x_ix_j-x_jx_i=\varepsilon\gamma_f(x_i,x_j)
+\]
+で与えられる。右辺の二次式を任意の固定順序で持ち上げてよい。
+その選択の差には再び $\varepsilon$ が付くため、全体の差は零となる。
+この関係で単項式を順序付けると、主項の inversion は減少し、
+補正項には $\varepsilon$ が付く。補正項の再順序付けは
+$\varepsilon^2=0$ によって可換計算になる。
+従って各次数は通常の順序付き単項式で張られる。
+明示的な $\star$ 積の中でその像は、通常の単項式から
+$1+\varepsilon M_n$ という可逆行列で得られるので独立でもある。
+これで二次提示と全次数 PBW 基底を得る。
+
+閉 fiber は四変数多項式環である。
+三次の平坦性と閉 fiber の Koszul 性から
+補題~\ref{lem:relative-koszul-degree-three} を適用し、
+左右の相対 Koszul 解消と、その全ての syzygy 束の底変更を得る。
+二次双対の階数は $(1,4,6,4,1)$、五次以降は零であり、
+Frobenius pairing は閉 fiber の外積の完全 pairing を持ち上げるので完全である。
+従って標準 Koszul 複体の双対は最高次数の $A(4)$ だけをコホモロジーに持ち、
+相対 AS4 条件を満たす。
+
+最後に $\varepsilon\mathcal A_f$ の平方は零で、
+商は noetherian な $P$、このイデアルは左右 $P$-加群として有限生成である。
+よって左右 noetherian である。
+Noetherian な $A$-代数 $D$ へ底変更しても、商は
+$(D/\varepsilon D)[x_0,x_1,x_2,x_3]$、nilpotent ideal の係数は
+有限生成 $D/\varepsilon D$-加群 $\varepsilon D$ なので同じ議論が通る。
+商 $\mathcal B_f$ についても従う。
+\end{proof}
+
+ここで $q$ は次数別加群 $P\otimes A$ 内の元である。
+非可換の積記号を使って $x_0\star x_3-x_1\star x_2$ と書いた元とは、
+一般に $\varepsilon$ の二次補正だけ異なる。
+
+\begin{lemma}[全 bivector 方向の回復]
+\label{lem:quadric-jacobian-bivectors}
+$Q=\operatorname{Proj}(P/(q))$ の $x_0\ne0$ の chart で
+$z=x_2/x_0$、$w=x_1/x_0$ と置く。
+$\mathcal B_f$ の次数零局所化の一次交換子は
+\[
+ \{z,w\}=2\frac{f}{x_0^2}
+        =2f(1,w,z,zw)
+\]
+である。従って $f\mapsto\gamma_f|_Q$ は
+$P_2/kq\simeq H^0(Q,\bigwedge^2T_Q)$ という線形同型を与える。
+\end{lemma}
+\begin{proof}
+Leibniz 則で分母を処理し、$x_0x_3=x_1x_2$ を使うと
+\[
+ \{z,w\}
+ =\frac{x_0f_0+x_1f_1+x_2f_2+x_3f_3}{x_0^2}
+ =\frac{2f}{x_0^2}.
+\]
+最後は $f$ の斉次次数が二であることによる Euler の式である。
+Segre の二次切断制限 $P_2\to H^0(Q,\mathcal O_Q(2,2))$ は
+全射で核が $kq$ なので主張を得る。
+\end{proof}
+
+\begin{proposition}[Abel 変形の Hochschild 類と係数の規約]
+\label{prop:quadric-jacobian-abelian-class}
+$\operatorname{qgr}\mathcal B_f$ を閉 fiber $\operatorname{coh}Q$ の
+pointed flat Abel 一次変形とみなしたとき、その Hochschild 類は、
+各標準 affine chart 上で二コサイクル $\gamma_f/2$ により表される。
+HKR の規約を
+\[
+ v\wedge w\longmapsto
+ \left[(a,b)\longmapsto
+   \frac{v(a)w(b)-w(a)v(b)}2\right]
+\]
+と固定すると、対応する bivector は
+\[
+ \pi_f=2f(1,w,z,zw)\,\partial_z\wedge\partial_w
+ \quad (x_0\ne0)
+\]
+である。従って任意の指定された一次類
+$u\leftrightarrow h(z,w)\partial_z\wedge\partial_w$
+に対して、$f$ の制限を $h/2$ と取ればこの類を実現できる。
+\end{proposition}
+\begin{proof}
+$s=x_i$ と置く。$s$ の $\star$-冪は通常の冪であり、
+任意の $n\ge0$ と $b$ に対して
+\[
+ \begin{aligned}
+ s^{n+1}\star b
+  &=\bigl(sb+\varepsilon(n+\tfrac12)\gamma_f(s,b)\bigr)\star s^n,\\
+ b\star s^{n+1}
+  &=s^n\star\bigl(sb-\varepsilon(n+\tfrac12)\gamma_f(s,b)\bigr).
+ \end{aligned}
+\]
+これは二重導分の Leibniz 則を展開した恒等式である。
+また閉 fiber で $s$ は正則であり、$\varepsilon$-filtration により
+$\mathcal B_f$ でも左右正則である。
+従って $\{s^n:n\ge0\}$ は左右の homogeneous Ore 集合である。
+
+二重導分を通常の可換局所化へ延長すると、局所化の積も
+$a\star b=ab+\varepsilon\gamma_f(a,b)/2$ で与えられる。
+例えば $s^{-1}$ はそのまま $\star$-逆元であり、
+\[
+ s^{-1}\star b=s^{-1}b-\frac{\varepsilon}{2}s^{-2}\gamma_f(s,b),
+ \qquad
+ b\star s^{-1}=s^{-1}b+\frac{\varepsilon}{2}s^{-2}\gamma_f(s,b).
+\]
+上の Ore 式とこの逆元によって、
+$\mathcal B_f[s^{-1}]$ は
+$(P/(q))[s^{-1}]\otimes A$ 上のこの積に同型となる。
+次数零を取れば
+\[
+ D_i=(\mathcal B_f[x_i^{-1}])_0
+      =\mathcal O_Q(D_+(x_i))\otimes A
+\]
+に同じ積を入れた環を得る。
+
+Ore 局所化は次数付き加群圏の exact localization であり、
+局所化環は次数一の単元を持つため、その次数付き加群圏は
+$\operatorname{Mod}D_i$ と同値である。
+torsion 加群はこの局所化で零になるので、
+$\operatorname{QGr}\mathcal B_f$ から $\operatorname{Mod}D_i$ への
+exact localization が得られる。その閉 fiber は
+$\operatorname{QCoh}Q$ の $D_+(x_i)$ への通常の制限である。
+nilpotent 変形と局所化の対応
+\cite[Theorem 7.1, Proposition 8.12]{LowenVanDenBergh2006}
+により、これは元の Abel 変形の局所化である。
+Hochschild 類の制限はこの局所化の変形類と一致する。
+この制限と scheme の Hochschild cohomology の比較には
+\cite[\S\S7.7--7.9, author preprint]{LowenVanDenBergh2005}
+を用いる。
+
+局所環の変形積の二コサイクルは定義から $\gamma_f/2$ である。
+この規約では一次交換子 $[a,b]_\star/\varepsilon=\gamma_f(a,b)$ が
+HKR bivector に一致する。
+前の補題の affine 計算を適用すれば表示した $\pi_f$ を得る。
+$Q$ では $H^1(T_Q)=H^2(\mathcal O_Q)=0$ なので、
+$\operatorname{HH}^2(Q)=H^0(\bigwedge^2T_Q)$ の稠密 affine chart への
+制限は単射である。従って局所計算は大域の類を一意に決定する。
+最後の係数 $1/2$ は、$f\mapsto\pi_f$ に現れる Euler 因子 $2$ を相殺する。
+\end{proof}
+
+\begin{lemma}[近恒等の補正と右 Zhang twist の規約]
+\label{lem:quadric-first-order-root-twist}
+$\delta\in\mathfrak{sl}_2\oplus\mathfrak{sl}_2$ を Segre 表示の $P_1$ に作用させ、
+$\alpha=1+\varepsilon\delta$ と置く。
+これは $\mathcal A_f$ と $\mathcal B_f$ の次数付き自己同型で、$\alpha(q)=q$ である。
+$\mathcal C=\operatorname{qgr}\mathcal B_f$、$F=(1)$ とし、
+その全軌道環が $\mathcal B_f$ に一致すると仮定する。
+右加群に作用を $\alpha^{-1}$ で twist する自己同値を $G_\alpha$ とすれば、
+標識 $G_\alpha(\pi\mathcal B_f)\simeq\pi\mathcal B_f$ を
+$b\mapsto\alpha(b)$ で取ることにより、
+$G_\alpha$ の全軌道環上の作用は $\alpha$ となる。
+従って $s=G_\alpha F$ の右規約の全軌道環は
+\[
+ a*_{s}b=\alpha^{\deg b}(a)*_Fb
+\]
+という右 Zhang twist $\mathcal B_f^\alpha$ であり、
+$\mathcal A_f^\alpha$ はその相対 AS4 被覆を与える。
+\end{lemma}
+\begin{proof}
+$\delta$ は通常の $P$ の次数零導分であり、Segre 方程式を固定する。
+$\alpha$ が $\star$ 積を保つ式の一次項には、通常の積の導分条件だけが現れ、
+$\gamma_f$ への追加の作用には $\varepsilon^2$ が付く。
+従って自己同型性と $\alpha(q)=q$ が従う。
+$G_\alpha$ は $F$ と可換し、上記の標識で次数 $n$ の射に $\alpha$ を作用させる。
+右の軌道積は $a*_sb=s^{\deg b}(a)\circ b$ なので表示した式を得る。
+被覆と切断の Zhang twist は全次数加群・Koszul 解消・Frobenius 双対を保ち、
+中心正則 $q$ は正則正規元となる。
+\end{proof}
+
+
+\subsection{可換 quadric の全一次変形に対する適合表示}
+\label{subsec:quadric-first-order-bridge}
+
+$k$ は標数零、$A=k[\varepsilon]/(\varepsilon^2)$ とする。
+$Q=\mathbf P^1_k\times\mathbf P^1_k$、$L=\mathcal O_Q(1,1)$ と置き、
+命題~\ref{prop:quadric-first-order-jacobian-cover} の
+$\mathcal B_f=\mathcal A_f/(q)$ を用いる。
+以下の最初の補題では、変形された圏が $\mathfrak H_2$ に属するとは仮定しない。
+
+\begin{lemma}[商圏の平坦性と全次数の飽和]
+\label{lem:quadric-first-order-flat-saturated}
+$\mathcal G_A=\operatorname{QGr}\mathcal B_f$、
+$\mathcal C_A=\operatorname{qgr}\mathcal B_f$、
+$\mathcal O_A=\pi\mathcal B_f$、$F=(1)$ と置く。
+このとき $(\mathcal C_A,\mathcal O_A)$ は
+$(\operatorname{coh}Q,\mathcal O_Q)$ の flat pointed Abel 変形であり、
+$\mathcal O_A$ は $A$ 上平坦である。
+自然な射は全次数で同型
+\[
+ \mathcal B_f\xrightarrow{\ \sim\ }
+ \bigoplus_{n\ge0}\operatorname{Hom}_{\mathcal C_A}
+       (\mathcal O_A,F^n\mathcal O_A)
+\]
+となる。また $\mathcal O_A$ は相対例外的である。
+\end{lemma}
+\begin{proof}
+$\mathcal B_f$ は右 noetherian、次数一生成、全次数 $A$-自由である。
+従って $\operatorname{QGr}\mathcal B_f$ は局所 noetherian な Gabriel 商であり、
+その noetherian 部分は $\operatorname{qgr}\mathcal B_f$ である。
+完全な商関手 $\pi$ は有限提示 $A$-加群との tensor と可換するので、
+各 $\pi\mathcal B_f(i)$ は $A$ 上平坦である。
+各 noetherian 対象はこれらの有限直和の商だから、
+任意の有限提示 $A$-加群 $M$ に対して
+$\operatorname{Tor}^A_1(M,-)$ は co-effaceable である。
+従って \cite[Proposition 3.1, Definition 3.2]{LowenVanDenBergh2006}
+の意味で $\mathcal C_A$ は flat Abel 圏である。
+この議論は命題~\ref{prop:artin-relations-flat-abelian} の証明の一般部分であり、
+反 Serre の次数移動または $\mathfrak H_2$ 所属を使わない。
+
+閉ファイバーも同命題の証明で確認できる。
+具体的には $\mathcal B_0=P/(q)$-加群を $\mathcal B_f$-加群とみなす関手は
+torsion を保ち、商圏上で完全充満な関手を与える。
+その像は $\varepsilon$ で消される対象全体である。
+最後の主張には、商関手の $A$-線形右随伴 $\omega$ を使えばよい。
+$\varepsilon X=0$ なら $\varepsilon\omega X=0$ であり、
+$\pi\omega X\simeq X$ である。
+従って閉ファイバーは $\operatorname{QCoh}Q$、noetherian 部分は
+$\operatorname{coh}Q$ となり、$\mathcal O_A$ の閉ファイバーは $\mathcal O_Q$ である。
+
+全軌道環の一致は foundation を使う前に証明できる。
+$i:\operatorname{QCoh}Q\to\mathcal G_A$ を閉ファイバーの完全な包含とする。
+flat な始域 $\mathcal O_A$ に対する change-of-rings により
+\[
+ \operatorname{Ext}^j_{\mathcal G_A}(\mathcal O_A,iN)
+ \simeq\operatorname{Ext}^j_Q(\mathcal O_Q,N)\qquad(j\ge0).
+\]
+実際、\cite[Proposition 4.7]{LowenVanDenBergh2006} を反対圏へ適用すると、
+$E_2^{p,q}=\operatorname{Ext}^p_Q(\operatorname{Tor}^A_q(k,\mathcal O_A),N)$
+から左辺へのスペクトル系列を得る。
+$\mathcal O_A$ の平坦性によって $q=0$ 以外は零となる。
+$F^n\mathcal O_A$ も平坦なので、$n\ge0$ に対して完全列
+\[
+ 0\longrightarrow iL^n\xrightarrow{j}F^n\mathcal O_A
+   \xrightarrow{r}iL^n\longrightarrow0
+\]
+があり、$\varepsilon$ の作用は $j\circ r$ に一致する。
+$H^{>0}(Q,L^n)=0$ を使って Hom と Ext を計算すれば
+\[
+ 0\longrightarrow V_n\longrightarrow H_n\longrightarrow V_n\longrightarrow0,
+ \qquad V_n=H^0(Q,L^n),\quad
+ H_n=\operatorname{Hom}(\mathcal O_A,F^n\mathcal O_A),
+\]
+を得て、$H_n$ 上でも $\varepsilon=j\circ r$ である。
+従って $\ker(\varepsilon:H_n\to H_n)=\varepsilon H_n$、
+$H_n/\varepsilon H_n=V_n$ となり、$H_n$ は階数 $(n+1)^2$ の自由 $A$-加群である。
+自然な射 $(\mathcal B_f)_n\to H_n$ は閉ファイバーで通常の全切断環の同型になる。
+両辺が同階数自由なので、この射は同型である。
+自然な射は右軌道積と整合するため、次数付き環の同型となる。
+同じ完全列で高次 Ext は零となる。
+特に $n=0$ から $\operatorname{End}(\mathcal O_A)=A$ と
+$\operatorname{Ext}^{>0}(\mathcal O_A,\mathcal O_A)=0$ を得る。
+\end{proof}
+
+\begin{lemma}[平方根補正の全近恒等方向は次数付き自己同型から来る]
+\label{lem:quadric-first-order-correction-geometric}
+$\mathcal G_A$ の finite foundation 表示を取り、
+その近恒等な derived Picard 群の核を $K_A$ と書く。
+命題~\ref{prop:artin-serre-square-correction} の補正元は、
+ある $\delta\in\mathfrak{sl}_2\oplus\mathfrak{sl}_2$ と
+$\alpha=1+\varepsilon\delta$ に対する $G_\alpha$ で表される。
+ここで $G_\alpha$ は右加群の作用を $\alpha^{-1}$ で twist する関手である。
+\end{lemma}
+\begin{proof}
+前補題は flat Abel 変形であることを既に与えたから、
+定理~\ref{thm:artin-foundation-lift} を適用できる。
+補題~\ref{lem:artin-infinitesimal-dpic} を一次基底に適用すると
+\[
+ K_A\simeq\varepsilon\operatorname{HH}^1(Q)
+ =\varepsilon H^0(Q,T_Q)
+ =\varepsilon(\mathfrak{sl}_2\oplus\mathfrak{sl}_2)
+\]
+を得る。第二の等号には $H^1(Q,\mathcal O_Q)=0$ を使う。
+Segre の四次元一次切断空間上の traceless な作用は $q$ を固定し、
+補題~\ref{lem:quadric-first-order-root-twist} により
+$\alpha=1+\varepsilon\delta$ は $\mathcal A_f$ と $\mathcal B_f$ の自己同型になる。
+
+対応する $K_A$ の元が $+\varepsilon\delta$ であることを規約込みで確認する。
+右作用を $\alpha^{-1}$ で変えた tensor 双加群
+${}_1R_{\alpha^{-1}}$ は、写像 $r\mapsto\alpha(r)$ により
+${}_\alpha R_1$ と同型である。
+従って近恒等双加群を左作用の自己同型で記述したとき、その一次導分は $+\delta$ である。
+標準 affine chart への Ore 局所化でも同じ式が成立し、
+Hochschild 一次類は関数への導分 $\delta$ に制限される。
+ここでは特殊ファイバー上の恒等関手との標準的同定を固定している。
+$H^1(Q,\mathcal O_Q)=0$ によりこの局所ベクトル場は大域の
+$\operatorname{HH}^1$ 類を決定する。
+また閉ファイバーの大域中心は $k$ なので、特殊ファイバーの恒等関手との
+同定を忘れてもこの近恒等核の記述は変わらない。
+従って $\delta\mapsto[G_\alpha]$ は表示した $K_A$ の同型であり、
+必要な補正元はこの形で実現される。
+\end{proof}
+
+\begin{theorem}[可換 quadric の全一次方向は相対 $\mathfrak H_2$ に入る]
+\label{thm:quadric-all-first-order-h2}
+$u\in\operatorname{HH}^2(Q)$ を任意に取る。
+この一次類を持つ $(\operatorname{coh}Q,\mathcal O_Q)$ の flat pointed Abel 変形には、
+$s_0=(-)\otimes\mathcal O_Q(1,1)$ の持上げ $s_A$ と相対 AS4 被覆が存在し、
+定義~\ref{def:relative-h2} の全有限型基底変更を含む相対族を構成できる。
+従って、この点での $\mathfrak H_2$ から pointed Abel 変形への一次忘却写像は全射である。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:quadric-jacobian-abelian-class} の HKR 規約で
+$u=h(z,w)\partial_z\wedge\partial_w$ と表し、
+$f(1,w,z,zw)=h(z,w)/2$ を選ぶ。
+前の平坦性・飽和補題と同命題により、
+$(\operatorname{qgr}\mathcal B_f,\pi\mathcal B_f)$ はちょうど一次類 $u$ の変形である。
+この選択は全九次元の $\operatorname{HH}^2(Q)$ を覆う。
+
+$F=(1)$ は完全自己同値で、閉ファイバーは $s_0$ である。
+その Morita 核は compact generator の像から得られる可逆 perfect 双加群である。
+$t_A=S_A^{-1}[2]$ と置くと、$d=F^2t_A^{-1}$ は $K_A$ に属する。
+命題~\ref{prop:artin-serre-square-correction} に従い
+$e=d^{-1/2}$ と取る。
+前補題によって $e=[G_\alpha]$ となる $\alpha$ を選べるので、
+\[
+ s_A=G_\alpha F,\qquad s_A^2\simeq t_A
+\]
+を得る。$G_\alpha$ は $F$ と可換する。
+
+補題~\ref{lem:quadric-first-order-root-twist} と全軌道環の一致により、
+$s_A$ の全軌道環は右 Zhang twist $\mathcal B_f^\alpha$ であり、
+\[
+ \mathcal B_f^\alpha\simeq\mathcal A_f^\alpha/(q)
+\]
+が相対 AS4 被覆となる。
+各次数は自由で、$q$ は左右正則正規である。
+従って命題~\ref{prop:artin-witness-relative-promotion} の仮定が全て成立し、
+任意の有限型 $A$-代数への基底変更を含む相対 $\mathfrak H_2$ 族を得る。
+
+最後に、flat Abel 一次変形の同型類はその Hochschild 二次類で分類される
+\cite[Theorem 3.1 and Remark 3.5, author preprint]{LowenVanDenBergh2005}。
+$\operatorname{Ext}^{1,2}_Q(\mathcal O_Q,\mathcal O_Q)=0$ なので、
+構造対象の flat な持上げは存在し、その同型類は一意である。
+従って同じ $u$ を持つ任意の pointed Abel 一次変形に以上の表示を移せる。
+これは定理~\ref{thm:quadric-all-artin-h2} の一次の場合に対する具体的構成である。
+\end{proof}
+
+
+\begin{corollary}[可換点の内在的な接空間]
+\label{cor:quadric-intrinsic-tangent}
+可換対象 $x=(\operatorname{coh}Q,\mathcal O_Q)$ において、
+一次変形の忘却により自然な同定
+\[
+ T_x\mathfrak H_2\simeq\operatorname{HH}^2(Q)
+      \simeq H^0(Q,\mathcal O_Q(2,2))
+\]
+を得る。従って内在的接空間は九次元である。
+反 Serre 関係式を表す点を $\bar x\in[X_3/\operatorname{PGL}_9]$ と書けば、
+\[
+ \dim H^0T_{\bar x}[X_3/\operatorname{PGL}_9]=15,
+ \qquad \dim\ker(T_{\bar x}\to\operatorname{HH}^2(Q))=6.
+\]
+後者の六次元は canonical 反 Serre 偏極からのずれであり、
+$\mathfrak H_2$ の追加変形方向ではない。
+\end{corollary}
+\begin{proof}
+全射性は前定理による。
+基底 $A$ 上の pointed exact 同値は Ind 圏へ延長し、
+各有限型 $A'$-作用へ適用することで module-object 圏の同値を与える。
+相対族の定義における基底変更同値により、この延長は自然同型を除いて一意である。
+根と被覆を標識に加えていないので、同じ pointed Abel 一次変形を持つ
+二つの相対 $\mathfrak H_2$ 変形は同型である。これが単射性を与える。
+
+線形構造との整合も確認できる。
+有限次元 $k$-空間 $I$ と二乗零拡大 $A=k\oplus I$ に対し、基底 $\epsilon_a$ を選んで
+$\gamma=\sum_a\epsilon_a\gamma_{f_a}$ とし、$ab+\gamma(a,b)/2$ を用いる。
+$I^2=0$ なので PBW・中心切断・相対 AS4 の証明は同じである。
+飽和の証明では $0\to I\otimes_kL^n\to F^n\mathcal O_A\to L^n\to0$ を用い、
+軌道 Hom は $A$ 上自由となる。
+近恒等核は $I\otimes_k\operatorname{HH}^1(Q)$ であり、
+補正は $1+\sum_a\epsilon_a\delta_a$ で表される。
+従って全ての二乗零拡大で同じ全射・単射を得て、$I$ の線形写像と可換する。
+このことが表示した自然な接空間の同定を与える。
+最後の二式は $\dim\operatorname{HH}^1(Q)=6$ と
+系~\ref{cor:artin-polarization-retraction} の分裂完全列から従う。
+\end{proof}
+
+全 Artin 変形の認識は系~\ref{cor:quadric-formal-deformation-equivalence} で得られる。
+これらの形式的結果だけから内在的 $\mathfrak H_2$ 全体の代数性は従わない。
