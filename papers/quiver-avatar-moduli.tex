@@ -1,0 +1,202 @@
+% 日本語 LuaLaTeX。2026-11-21 / v0.1
+% エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
+\RequirePackage{fix-cm}
+\documentclass[a4paper,11pt]{ltjsarticle}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+\DeclareFontFamily{U}{rsfs}{\skewchar\font127}
+\DeclareFontShape{U}{rsfs}{m}{n}{<-6> rsfs5 <6-8> rsfs7 <8-> rsfs10}{}
+\usepackage[margin=25mm]{geometry}
+\usepackage{booktabs,tabularx,array,enumitem}
+\usepackage[unicode,pdfusetitle,colorlinks=true,
+  linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{corollary}[theorem]{系}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定義}
+\newtheorem{assumption}[theorem]{仮定}
+\newtheorem{example}[theorem]{例}
+\newtheorem{problem}[theorem]{問題}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注意}
+\renewcommand{\proofname}{証明}
+\newcommand{\kk}{k}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\Gm}{\mathbb G_m}
+\newcommand{\HH}{\mathcal H_2}
+\newcommand{\HHstack}{\mathfrak H_2}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\coh}{coh}
+\DeclareMathOperator{\qgr}{qgr}
+\DeclareMathOperator{\Perf}{Perf}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Supp}{Supp}
+\title{非可換二次曲面の八本・十本・十二本矢表示：\\
+  モジュライの開部分、反標準 avatar、内在的忘却}
+\author{}
+\date{2026年11月21日\quad v0.1（公表用草稿）}
+\begin{document}
+\maketitle
+\begin{abstract}
+非可換二次曲面の四頂点表示について、矢数の変化をモジュライの族として記述する。
+有限 foundation の生成矢、関係の双対を加えた箙、非最小な potential 表示を区別する。
+固定した Hom 次元を持つ有限有向代数の結合律スキームを構成し、
+二つの隣接乗法の階数から、八本、二種類の十本、十二本への層別を得る。
+少ない矢数の開部分は、正確に十本または十二本を要求する層ではなく、
+非最小表示を含めた共通モジュライの開部分である。
+重み四 potential の二つの二次係数による消去は任意の基底上で明示できるが、
+通常の right-equivalence 商には消去される対の自己同型が残る。
+従って Jacobian 代数の一致を、そのまま表示スタックの同値とすることはできない。
+
+幾何側では、$\Sigma_0$ または $\Sigma_2$ 上の反標準因子と
+非自明な $\Pic^0$ パラメータを用い、直積型 square avatar と
+二種類の十本矢 chart の関係を記述する。
+統一偏極と rotated square の Hilbert 偏極は異なり、
+$\Sigma_2$ の出現だけでは最小十二本矢型を意味しない。
+最後に、構造対象のみを指定した強い内在的モジュライ $\HHstack$ への忘却を扱う。
+相対 heart、反 Serre の豊富な exact 平方根、同じ根の全軌道環の AS4 被覆を
+確認した部分では忘却射が定義される。
+この適合部分の開性や、統一 avatar と全相対 AS 代数とのスタック同値は
+別の認識問題として残し、有限表示の代数性とは区別する。
+\end{abstract}
+\tableofcontents
+
+\section{Introduction}
+\label{sec:qa-introduction}
+
+三次元 AS 正則 $\mathbb Z$-代数の四周期表示では、同じ幾何的構成に対して
+八本、十本、十二本の矢を持つ箙が現れる。
+これらを別々の分類集合として並べるだけでは、
+生成元と関係が同時に消去される変形や、異なる foundation の比較を捉えられない。
+本稿は、まず共通の有限代数のモジュライを構成し、その上の二つの開条件と
+二つの階数低下条件として矢数を整理する。
+次に反標準 avatar の幾何的 chart を比較し、
+最後に構造対象付き Abel 圏への忘却に必要な条件を分離する。
+
+\subsection{三つの問題と本稿の結果}
+
+本稿で扱う問題には、次の三つの水準がある。
+\begin{enumerate}
+\item \emph{有限表示のモジュライ。}
+  四頂点間の Hom 次元と結合律を固定した代数スタックは有限型 Artin である。
+  隣接する二つの乗法が両方とも同型である部分、一方が同型である二つの部分、
+  双方に一次元の欠損を許す部分を比較する。
+  これが八本・十本・十二本の開部分の正確な有限代数版である。
+\item \emph{AS 代数と avatar。}
+  四周期の全 AS 条件と幾何的 avatar の対応には、有限 foundation の分類に加えて
+  全単純分解、noetherian 性、相対平坦性、降下が必要である。
+  体上の既存原稿の分類結果と、今回の有限代数・幾何的 chart の証明を区別する。
+\item \emph{内在的な対象。}
+  構造対象 $\OO$ だけを指定した $\HHstack$ は、選んだ箙、potential、
+  foundation、平方根、ambient を忘れる。
+  しかしそれらの存在条件を失うわけではない。
+  特に AS3 正則性や $\Sigma_2$ という有限表現モジュライだけから、
+  $\HHstack$ の全相対条件は導けない。
+\end{enumerate}
+
+有限代数版では、二種類の十本矢 chart の交わりが八本矢 chart である。
+二つの十本矢 chart の和集合の補集合が最小十二本矢の層となる。
+これに対し、各 chart の内部で正確に十本が最小生成矢として残る部分は
+八本矢部分の境界である。
+このため、本稿では上限を許す chart と最小本数が一定の層を同じ記号で表さない。
+
+直積型 collection
+\[
+ (\OO,\OO(1,0),\OO(0,1),\OO(1,1))
+\]
+そのものの有限箙は八本、四本の最小関係の双対を加えた relation QP は十二本である。
+固定した一頂点 mutation により、八本と一方の十本を含む chart が得られる。
+従って直積型と十本矢 chart の対応は mutation を介した対応であり、
+元の箙の矢数を十本と数えるという意味ではない。
+
+\subsection{先行研究と依存関係}
+
+有限箙の関係式を moduli stack として扱う一般的枠組みは
+Abdelgadir--Okawa--Ueda \cite[Definitions 3.5, 4.1; Proposition 3.6]{AOU2014}
+による。本稿は四頂点の Hom 次元を固定して結合律を具体的な行列方程式で書き、
+二つの乗法の階数が最小箙に与える影響を計算する。
+これは一般論の新しい証明を主張するものではない。
+Derksen--Weyman--Zelevinsky \cite[Theorem 4.6; Section 5]{DWZ2008}
+は完備道代数の potential の splitting と mutation を構成した。
+ここで必要な消去は内部次数四のため有限回の三角変換で済み、
+通常の道代数にも任意基底にも同じ式を適用できる。
+ただし pair の消去と quotient stack の慣性の消去は別の操作である。
+
+AS 正則 quadric の cubic 型については Van den Bergh \cite{VdB2011}、
+その幾何的データと potential のモジュライについては
+Okawa--Ueda \cite{OU2014} が基礎となる。
+ここで用いる square・rotated square の反標準 avatar と十本矢 mutation は
+大川--植田の日本語草稿 v7 \cite{AvatarVSeven2026} に、
+十二本矢型の追加と統一 avatar は研究ノート \cite{Q12Avatar2026} に記載されている。
+幾何的な相対 twist は \cite{Q12Weyl2026}、
+これらの関係の整理は \cite{Synthesis2026} を参照する。
+これらは未公刊の研究資料であり、そこに記載された全 AS 分類の証明を
+今回独立に検証済みの結果として引用しない。
+本稿では必要な有限線形代数・消去・chart の証明を本文に置き、
+追加の再構成入力を要する主張を明記する。
+
+内在的な $\HH$ とその相対化 $\HHstack$ は、同じ研究の主論文
+\cite{QuadricIntrinsic2026} の対象である。
+主論文は構造対象を保つ exact 同値による分類と相対認識を扱い、
+本稿は表示の層別と avatar の幾何を独立に説明する。
+主論文中の全分類や相対再構成の証明は本稿に重複させない。
+本稿の結果も、全 $\HHstack$ の代数性、全 avatar の相対 AS 認識、
+または公刊に向けた包括的な新規性確認の完了を意味しない。
+
+\subsection{規約}
+
+$\kk$ は標数零の代数閉体とする。
+族は $\kk$ 上局所有限型スキームの fppf site 上で考え、非被約基底を含む。
+矢の積は合成順で、$ab$ は先に $b$、次に $a$ を通る道である。
+有限 foundation は四つの順序付き頂点を保持し、
+右加群規約に対応する導来同値と標準 heart の exact 同値を区別する。
+基底上の係数を消去に使う条件は可逆性であり、単に零でないことではない。
+
+\input{quiver-avatar/qp_presentations}
+\input{quiver-avatar/foundation_charts}
+\input{quiver-avatar/avatar_charts}
+\input{quiver-avatar/intrinsic_forgetting}
+
+\section{比較を完成させるための認識問題}
+\label{sec:qa-remaining}
+
+本稿の有限代数の開部分と、幾何的 avatar の開部分は、それぞれ独立に定義される。
+両者を相対 AS 分類として同定するには、avatar から得る有限代数が
+全周期にわたる相対 AS 代数を再構成し、逆向きの幾何構成と任意底変更に可換すること、
+および同型の層と自己同型群が一致することを証明する必要がある。
+体上の全単射はこの最後の同型層の比較を代替しない。
+
+さらに $\HHstack$ へ進むには、選んだ構造対象に対する標準 heart、
+相対 Serre 双対、豊富な exact 平方根、その同じ平方根の全軌道環の
+正則正規 AS4 被覆を認識する必要がある。
+これらを満たす部分には忘却射があるが、
+その部分が十二本矢表示モジュライの開部分であることは別の命題である。
+平方根や被覆を選んだ有限表示の incidence が存在することから、
+それらの局所存在だけを要求する部分の開性や代数性を推論してはならない。
+
+従って次の研究課題は、矢数だけを減らす追加の消去ではなく、
+相対 AS 再構成と内在的認識の二つの比較を閉じることである。
+どちらの場合も、marked な表示の自己同型から消える核、
+構造対象の mutation による移動、非被約底での基底変更を同時に追跡する。
+この順序により、有限型の表示空間を先に構成したことと、
+内在的モジュライを表現したことの論理的な境界が明確になる。
+
+\bibliographystyle{alpha}
+\bibliography{references}
+\end{document}

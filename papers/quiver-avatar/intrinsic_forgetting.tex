@@ -1,0 +1,316 @@
+% !TEX root = ../quiver-avatar-moduli.tex
+% 2026-11-21
+\section{内在的なモジュライへの忘却}
+\label{sec:qa-intrinsic-forgetting}
+
+有限 foundation、周期的 AS 代数、avatar、および構造対象だけを指定した
+Abel 圏は、保持する構造も同型の意味も異なる。
+本節では、前節までの開部分と内在的モジュライとの関係を、
+既に構成した射と、相対的な認識を要する射とに分けて述べる。
+
+\subsection{標的となる強い内在的クラス}
+
+本稿の \(\HH\)、\(\HHstack\) は
+\cite{QuadricIntrinsic2026} の \texttt{def:h2}、
+\texttt{def:relative-h2} の意味で用いる。
+特に、任意の三次元 AS 正則 \(\mathbb Z\)-代数の tails 圏を
+無条件に \(\HH\) と呼ぶわけではない。
+
+\begin{definition}[体上の強い内在的クラス]
+\label{def:qa-h2}
+\(\HH\) の対象は \((\mathcal C,\OO)\) であり、次を満たす。
+\begin{enumerate}
+\item \(\mathcal C\) は \(\kk\)-線形 noetherian Abel 圏で、
+\(D^b(\mathcal C)\) は Hom 有限で Serre 関手 \(S\) を持つ。
+\item \(\OO\) は rank-one torsion-free exceptional 対象である。
+ここで $\mathcal C_0$ は有限長対象の部分圏、$\mathcal C_1$ は
+$\mathcal C/\mathcal C_0$ で有限長となる対象の逆像とし、
+$q:\mathcal C\to\mathcal C/\mathcal C_1$ とする。
+条件は $q\OO$ が非零単純かつ $\Hom(\mathcal C_1,\OO)=0$ である。
+また exceptional とは $\End(\OO)=\kk$、$\Ext^{i}(\OO,\OO)=0$ ($i>0$) をいう。
+\item 完全自己同値 \(s\) が存在し、
+\(s^2\simeq S^{-1}[2]\) かつ \((\OO,s)\) は Artin--Zhang ample である。
+\item 同じ \(s\) に対して、全軌道環
+\[
+ B(\mathcal C,\OO,s)
+   =\bigoplus_{n\ge0}\Hom(\OO,s^n\OO)
+\]
+が \(A/(g)\) と同型である。
+ここで \(A\) は左右 noetherian、二次 Koszul AS 正則、
+型 \((1,4,6,4,1)\) の環、\(g\in A_2\) は左右正則正規元である。
+\end{enumerate}
+\(s\)、根同型、\(A\)、\(g\)、商表示は指定構造ではない。
+射は \(\OO\) の同型を伴う完全同値であり、
+その同型を保つ自然同型によって一射を同一視する。
+\end{definition}
+
+ここで型 \((1,4,6,4,1)\) は、自明加群の最小解消の階数列が
+この列で、global dimension と Gorenstein parameter がともに四であることを意味する。
+\(g\) の中心性は要求しない。
+また、ある商圏との同値だけでなく、指定した \(\OO\) と同じ \(s\) の
+\emph{全軌道環} に対する表示を要求する。
+
+相対版 \(\HHstack\) は、標数零の代数閉体上の局所有限型スキームの
+fppf site 上で定義する。
+圏の基底変更は Ind 圏における加群対象の圏によるものであり、
+Hom を tensor するだけの基底変更ではない。
+対象と完全列の fppf descent、有限 Hom と flat base change、
+平坦な \(\OO\) を要求する。
+局所 canonical compact 導来圏は相対 smooth proper で、
+相対 Serre 双対性と導来基底変更に適合する。
+全幾何ファイバーは定義~\ref{def:qa-h2} を満たす。
+さらに、\(s\)、AZ 条件、全軌道環の AS4 被覆は
+\emph{非被約基底も含めて fppf 局所に存在する}ことを要求する。
+根や被覆を重なり上で同一視することは要求しない。
+これらは標識ではなく存在条件だからである。
+
+\begin{remark}[相対存在は幾何点条件より強い]
+\label{rem:qa-relative-root}
+全幾何ファイバーが \(\HH\) に入っても、
+相対平方根、AZ ampleness、相対 AS4 被覆が存在することは別問題である。
+例外対象の無障害性や有限代数の \(\operatorname{HH}^3\) の消滅だけでは、
+これらの条件は得られない。
+\cite{QuadricIntrinsic2026} の
+\texttt{prop:chosen-root-does-not-lift} は、可換 quadric 上の
+ある適合根が、特定の一次 Abel 変形へ持ち上がらない例を与える。
+これは別の根の存在まで否定する例ではなく、
+\(\HHstack\) の非代数性や許容部分の非開性を証明するものでもない。
+\end{remark}
+
+\subsection{忘却射の正確な定義域}
+
+\begin{definition}[内在的条件に適合する族]
+\label{def:qa-compatible-chart}
+\(\mathfrak U\) を、周期的代数または avatar から
+基底変更と同型に関して自然に \((\mathcal C,\OO)\) を構成する
+fppf パラメータスタックとする。
+\(\mathfrak U_{\HH}\) は、その構成した族が
+上記の \(\HHstack\) の相対条件を満たす対象の全部分スタックとする。
+この定義において、\(\mathfrak U_{\HH}\) が代数的または開であることは
+仮定も結論もしない。
+\end{definition}
+
+\begin{proposition}[適合族からの忘却]
+\label{prop:qa-compatible-forgetting}
+定義~\ref{def:qa-compatible-chart} の構成は射
+\[
+ \pi_{\mathfrak U}:\mathfrak U_{\HH}\longrightarrow\HHstack,
+ \qquad u\longmapsto(\mathcal C_u,\OO_u)
+\]
+を与える。
+二つの chart 間の変換が、基底変更と両立する pointed exact 同値を
+与えるなら、二つの忘却射はその変換に沿って自然に二同型となる。
+\end{proposition}
+\begin{proof}
+\(\mathfrak U_{\HH}\) の条件は fppf 局所的で、
+pointed exact 同値と基底変更に安定である。
+従って同型で飽和した全部分スタックを定める。
+構成した圏の系、構造対象、その比較同型を保持して
+残る標識を忘れれば、定義された標的への functor を得る。
+二つの構成を結ぶ pointed exact 同値が任意の基底変更と整合する場合には、
+それらの同値がそのまま二つの functor の二同型を与える。
+\end{proof}
+
+この命題は忘却の意味を明示するものであり、
+未知の条件を有限個の方程式で認識したという定理ではない。
+特に \(\mathfrak F_{\le12}\) は有限代数だけを分類するので、
+そこから直接 \(\mathcal C\) を取ることはできない。
+\(\operatorname{Perf}(A)\) の構成だけでは、元の曲面の heart は選ばれていない。
+有限代数の標準的な加群 heart と、tilting によって移された曲面の heart を
+同一視してはならない。
+
+「十二本矢の適当な開部分から \(\HHstack\) への自然な射」という主張を
+有限な表示で実現するためには、少なくとも次を示す必要がある。
+\begin{enumerate}
+\item 使用する periodic algebra、grading、foundation と heart を
+相対的に構成し、全次数の平坦性、noetherian 性、基底変更を確認する。
+\item 指定した \(\OO\) の相対例外性・rank 条件、相対 Serre 公式、
+適合する完全平方根と AZ ampleness を確認する。
+\item 同じ根の全軌道環が、相対 AS4 環の正則正規二次切断となることを確認する。
+\item これらの条件を持つ部分関手が、考えている表示スタックの
+不変開部分で表されることを証明し、表示変更の全ての射を降下させる。
+\end{enumerate}
+根と全軌道環が既に与えられた場合、固定軌道環への AS4 被覆を選ぶ空間は
+\cite{QuadricIntrinsic2026} の \texttt{thm:relative-finite-as-cover} により、
+\(\operatorname{Gr}(6,K)\) 内の有限表示局所閉 incidence として記述できる。
+しかし、その被覆を忘れた fppf 像の開性・代数性や、根そのものの存在は
+この有限判定の結論ではない。
+
+\subsection{十二本矢の全体を送ることへの具体的な障害}
+
+\begin{lemma}[反 Serre 軌道の生成は必要である]
+\label{lem:qa-antiserre-necessary}
+\((\mathcal C,\OO)\in\HH\) ならば、
+\(t=S^{-1}[2]\) に対する \((\OO,t)\) も AZ ample である。
+特に、非零対象 \(M\) に対して
+\(\Hom(t^{-n}\OO,M)=0\) が全ての \(n\ge0\) で成立することはない。
+\end{lemma}
+\begin{proof}
+定義の根 \(s\) を選ぶ。
+その全軌道環 \(B=A/(g)\) は次数一で生成されるので、
+AZ 再構成と偶数 Veronese により
+\[
+ (\mathcal C,\OO,s^2)
+ \simeq(\qgr B^{(2)},\pi B^{(2)},(1)).
+\]
+右辺の構造対象とシフトは ample であり、\(s^2\simeq t\) である。
+これは \cite{QuadricIntrinsic2026} の
+\texttt{lem:ample-square-from-generation} と同じ議論である。
+最後の主張は AZ の生成条件から従う。
+\end{proof}
+
+\begin{example}[重み付き十二本矢と residual gerbe]
+\label{ex:qa-weighted-not-h2}
+\(S=\kk[x,y,z]\)、\(\deg x=\deg y=1\)、\(\deg z=2\) とし、
+\(\mathcal X=\PP(1,1,2)\) を重み付き射影 \emph{stack} とする。
+この環は global dimension 三、Gorenstein parameter 四の
+noetherian AS 正則環である。
+しかし
+\[
+ (\coh\mathcal X,\OO_{\mathcal X})\notin\HH.
+\]
+\end{example}
+\begin{proof}
+通常の三変数 Koszul 解消に各変数の重みを入れると
+\[
+ 0\longrightarrow S(-4)
+ \longrightarrow S(-3)^2\oplus S(-2)
+ \longrightarrow S(-1)^2\oplus S(-2)
+ \longrightarrow S\longrightarrow\kk\longrightarrow0
+\]
+を得る。これは AS 条件と Gorenstein parameter を与える。
+
+\((\OO,\OO(1),\OO(2),\OO(3))\) の有限 End 代数を考える。
+隣接する \(x_i,y_i\) が六本、距離二の \(z_0,z_1\) が二本であり、
+最小関係は
+\[
+ \begin{split}
+ x_1y_0-y_1x_0&=0,&x_2y_1-y_2x_1&=0,\\
+ z_1x_0-x_2z_0&=0,&z_1y_0-y_2z_0&=0.
+ \end{split}
+\]
+従って relation completion は十二本矢である。
+前節の四写像表示では \(a,b\) はともに階数三で、核は交代テンソルの直線、
+\(c,d\) は全射である。よってこの点は実際に
+\(\mathfrak F_{\le12}\) の最小十二本矢 locus に属する。
+この四対象が full strong であることも直接確認できる。
+重み付き多項式環の局所コホモロジーから
+\(H^1(\mathcal X,\OO(n))=0\) であり、
+Serre 双対により \(n\ge-3\) では \(H^2(\mathcal X,\OO(n))=0\) である。
+これで strong 性が従う。
+三変数の sheaf Koszul 完全列は四つの連続する twist から
+全ての twist を生成し、有限生成 graded \(S\)-加群の有限自由解消により
+これらは \(D^b(\coh\mathcal X)\) 全体を生成する。
+
+一方、重み付き Euler 列から
+\(\omega_{\mathcal X}=\OO(-4)\) であり、\(t=-\otimes\OO(4)\) である。
+点 \([0:0:1]\) の residual gerbe を
+\(i:B\mu_2\hookrightarrow\mathcal X\) とし、
+\(\chi\) を \(\mu_2\) の非自明な一次元表現とする。
+非零 coherent 対象 \(M=i_*\chi\) に対し、全ての \(n\ge0\) で
+\[
+ \Hom(\OO(-4n),i_*\chi)
+ =H^0(B\mu_2,\chi)=0.
+\]
+\(\OO(4n)\) の gerbe 上の指標が自明だからである。
+補題~\ref{lem:qa-antiserre-necessary} に反するので、主張を得る。
+\end{proof}
+
+\begin{example}[\(\Sigma_2\) 自身の構造対象]
+\label{ex:qa-hirzebruch-not-h2}
+\(Y=\Sigma_2\) の負断面を \(C\)、ファイバーを \(f\) とする。
+\(C^2=-2\)、\(-K_Y=2C+4f\) なので、
+\(\OO_Y(-K_Y)|_C\simeq\OO_C\) である。
+従って \(M=i_*\OO_C(-1)\ne0\) について
+\[
+ \Hom\bigl(\OO_Y(nK_Y),M\bigr)
+   =H^0(C,\OO_C(-1))=0\qquad(n\ge0).
+\]
+同じ必要条件から \((\coh\Sigma_2,\OO_{\Sigma_2})\notin\HH\) となる。
+これは \emph{avatar の一点 Hilbert 曲面が \(\Sigma_2\) である}ことと、
+元の Abel 圏が \(\coh\Sigma_2\) であることを混同してよいという意味ではない。
+Hilbert 曲面の型だけから、対応する非可換圏の \(\HH\) 適合性は決まらない。
+\end{example}
+
+この二例は、十二本矢の全 locus、AS 正則性、あるいは
+full strong foundation の存在だけで忘却の標的が \(\HHstack\) になる、
+という主張を否定する。
+適切な開部分が存在する可能性を否定するものではなく、
+その開部分には構造対象の反 Serre 軌道に対する生成条件も必要であることを示す。
+
+\subsection{標識、射、既存の表示スタック}
+
+\(\HHstack\) への忘却では \(\OO\) を保持する。
+従って、foundation の mutation が構造対象を別の対象へ移す場合には、
+そのまま同じ pointed 対象の表示変更と扱えない。
+QP の mutation が dg 導来同値を与えても、
+指定した heart の完全同値と \(\OO\) の同型は別途必要である。
+\cite{QuadricIntrinsic2026} の
+\texttt{cor:pointed-derived-exact} は体上の \(\HH\) 対象の間の判定であり、
+任意の相対 periodic family について同じ結論を自動的に与えるものではない。
+
+同様に、消去可能な二本の矢 \(x,y\) と項 \(yx\) を付加した生の QP には、
+\((x,y)\mapsto(\lambda x,\lambda^{-1}y)\) という自己同型がある。
+消去後の表示ではこの自己同型は見えなくなる。
+従って、生の安定化 QP groupoid の消去を、
+射を補正しないままスタック同値とすることはできない。
+有限 foundation の頂点スカラーの剛体化、
+周期的環の次数スカラーの除去、
+構造対象を保つ自己同値全体での同一視は、それぞれ異なる操作である。
+
+現在の内在的研究との関係をまとめると、
+\cite{QuadricIntrinsic2026} の有限二写像表示 \(\mathfrak F_0\) は、
+一方の長さ二の積を可逆にした foundation chart である。
+
+\begin{proposition}[幾何点における十本矢 chart の被覆]
+\label{prop:qa-h2-normal-ten-chart}
+体上の \(\HH\) の任意の対象は、
+\(\mathfrak F_{\le10}^{(a)}\) に属する normal foundation を持つ。
+これは幾何点での主張であり、任意の \(\HHstack\) の族における
+foundation の相対的な存在・降下を結論するものではない。
+\end{proposition}
+\begin{proof}
+\cite{QuadricIntrinsic2026} の \texttt{thm:normal-helix} と
+\texttt{prop:ruling-involution-mutation} により、
+\((E_0,E_1,E_2,E_3)=(\OO,X,s\OO,Z)\) という foundation があり、
+本節の \(b\) は同型、\(c\) は全射である。
+\(E_0,E_1,E_2\) は rank-one torsion-free 対象である。
+このような対象間の非零射は単射である。
+実際、像が低い Gabriel--Krull 段階に入れば標的の torsion-free 性に反し、
+従って rank-one 商では非零射、すなわち同型を誘導する。
+その核は低い段階に入るが、始域の torsion-free 性によって零である。
+従って二つの隣接する非零射の合成は零にならず、
+\(\ker a\) は非零の分解可能テンソルを含まない。
+\(b\) は同型なので他方の核は零であり、
+\(c\) の全射性から定義~\ref{def:qa-foundation-open} の全条件を満たす。
+\end{proof}
+
+相対的な ruling 交換を \(\tau\) とすると、
+\[
+ \mathfrak Q_{\mathrm{fnd}}=[\mathfrak F_0/S_2]
+\]
+は有限型 Artin スタックであり、体上では
+\(\HH(\kk)\) をその full subgroupoid として実現する
+（同論文 \texttt{cor:h2-point-groupoid-foundation}）。
+この幾何点の結果だけから、\(\mathfrak Q_{\mathrm{fnd}}\) 全体または
+その未特定の開部分が \(\HHstack\) と同値であるとはいえない。
+
+相対的には、同論文の反 Serre 認識によって全忠実な射
+\[
+ \HHstack\hookrightarrow
+ \mathfrak P=[X_3/\PGL_9]
+\]
+がある。
+ここで \(X_3\subset\operatorname{Gr}(56,81)\) は、
+九生成元・五十六二次関係の環の三次成分が階数四十九となる
+scheme-theoretic な局所閉 locus である。
+\[
+ X_{\mathrm{as}}=X_3\times_{\mathfrak P}\HHstack
+\]
+は不変 fppf 部分層として定義され、
+\(\HHstack\simeq[X_{\mathrm{as}}/\PGL_9]\) が成立する。
+\(X_{\mathrm{as}}\) の有限型代数空間による表現可能性は未証明であり、
+その開性や局所閉性も結論していない。
+従って本稿の八・十・十二本矢の明示的な開部分は、
+この相対認識問題への有限表示の候補を与えるが、
+それ自体で内在的モジュライの代数性を解決するものではない。

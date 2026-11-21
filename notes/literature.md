@@ -111,6 +111,21 @@ cubicから全H2への比較、最初の軌道対象の認識、階数三支持�
 
 本文のA64 foundation chart、全Artin局所変形の表示、HH消滅、geometric cubic開部分、ruling二択と二短完全列による相対S2交換、全H2の幾何点群oidの全充満な実現、noncubic慣性とχ商、九生成のdegree gerbeの中立化は、これらを踏まえた明示構成である。cubic非空開の稠密性から実現点集合の誘導位相での既約性が従い、任意noncubic点への一次元特殊化は二写像の線形補間で構成する。相対smoothproper性は有向代数の有限長相対bar分解で直接示す。内在的相対fppf stackの再構成・全忠実性・対角の有限表示性はrelative_moduli節で証明した。実現部分層の代数性と位相比較は未証明である。既知文献との包括的な新規性比較は未完了。
 
+## 八・十・十二本矢と avatar の資料
+
+2026-11-21に原資料の該当箇所を確認。別稿の証明は現行ソースに保持し、旧PDFの取得を再開の前提としない。未公刊資料にある全AS分類の独立検証と新規性の確認は未完了である。
+
+| 引用キー・資料 | 確認箇所と適用範囲 |
+| --- | --- |
+| `DWZ2008`、Derksen–Weyman–Zelevinsky, *Quivers with potentials and their representations I: Mutations*, Selecta Math. 14 (2008), 59–119, DOI 10.1007/s00029-008-0057-9、[arXiv:0704.0649](https://arxiv.org/abs/0704.0649) | Theorem4.6のsplitting、§5のmutation。一般定理は完備道代数。別稿のweight4の場合は三角変換を直接書き、有限道代数・任意基底で証明する。 |
+| `AOU2014`、[arXiv:1411.7770v1](https://arxiv.org/abs/1411.7770v1) | Definitions3.5,4.1・Proposition3.6。relationsの有限型stackとgroupoidの区別。別稿は四頂点の全Homと結合律を固定する明示モデル。 |
+| `AvatarVSeven2026`、大川新・植田一石、`quadric_avatar_classification_parts_I_II_ja_20260916_v7.pdf`、114頁 | §38 product有限箙8矢4関係、Theorem39.1のmutation後16−2r矢、Proposition40.3のSchur補元、Theorem51.4/Corollary51.5の全square/非最小10本矢、Proposition52.3の残存scalar、Theorem53.2の仮定付き相対対応。 |
+| `Q12Avatar2026`、`q12_avatar_ja_20261014_v1.pdf`、24頁、著者記載なしの未公刊研究資料 | Definition15.2・Theorem15.3の体上AS同型類分類。Remark11.3のCl0/Cl2、Proposition14.1の最深境界の安定性障害。相対stack同値として引用しない。 |
+| `Q12Weyl2026`、`q12_weyl_extension_ja_20261014_v1.pdf`、22頁、著者記載なしの未公刊研究資料 | Definition4.1、Lemma5.1、Propositions5.2–5.3、Theorem5.4。$p_*(HP^n)$ による幾何的twist。別稿は非被約因子・垂直成分・相対降下を含めて証明を記す。 |
+| `Synthesis2026`、`quadric_synthesis_ja_20261017_v1.pdf`、79頁、未公刊研究資料 | 印刷頁51–54（PDF55–58）、68–69（PDF72–73）。§7.11–7.12の統一avatar、§9の相対操作、§13.3の相対AS/avatar認識・最深Hilbert問題・自己同型/降下の未解決性。 |
+
+square辞書 $H=F_sG_sP^{-1}$ とrotated square $H_r=F_sG_sP$ を区別する。$P=\mathcal O_D$ の古典同型類への特殊化を、Picard零切断のstack上の収縮として扱わない。finite foundation、raw QP、graded algebra、pointed heartはそれぞれ異なる同型と慣性を持つ。
+
 ## 公表前と後続の比較課題
 
 1. 全noncubic帰着・全境界の適合周期・有限pointed同値判定の先行研究上の位置を一次資料で精査する。

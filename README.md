@@ -2,13 +2,28 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.10、数学原稿v1.9。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.11、主論文v1.10、別稿v0.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
 [CLOUD_CODEX.md](CLOUD_CODEX.md) に、環境の準備・起動用の依頼文・検証・保存手順を置く。最終目標は研究方針F1–F6を満たす**全H2のpointed exact同値分類**。一補題やcommitで止めず、現行資料を更新しながら次の未解決課題へ進む。
 
 **全H2の分類定理の証明を統合した。** cubic側はlinearデータと、整・被約・非被約を含む全てのVan den Bergh許容四つ組で構成し、四生成環の二次関係に対する有限の代数的判定で重複を除く。noncubic側はP1上の二つの二点集合の非順序対の同時射影同値で分類する。両領域は交わらず、全対象を覆う。統一定理と各構成の独立数学点検を完了した。外部査読・形式証明・包括的な新規性確定とは区別する。組版等の実際の確認範囲は研究ノートを参照。
+
+## 八本・十本・十二本矢と avatar
+
+独立した公表用草稿 [papers/quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) に、表示モジュライ・反標準 avatar・内在的忘却の関係をまとめた。主論文は全H2のpointed分類と相対認識を、別稿は矢数の層別と幾何的chartを扱う。
+
+| 対象 | 確立した関係 | 留保 |
+| --- | --- | --- |
+| 有限 foundation | Hom次元 $(2,2,2,4,4,6)$ の結合律 $c(1\otimes a)=d(b\otimes1)$ から有限型Artinスタック $\mathfrak F_{\le12}$ を構成。二つの10本矢開部分の交わりが8本矢部分 | AS条件・滑らかさ・相対H2認識はこの構成に含めない |
+| 重み付きQP | 二つの可逆な二次係数で対角pairを消去。Jacobian代数のモジュライでは8→10→12は開埋め込み | 生のright-equivalence商には消去pairの $\mathbb G_m$ 慣性が残る |
+| 曲線型avatar | $P\in\operatorname{Pic}^0(D)$、$P\ne\mathcal O_D$。$H\mapsto HP$ による再埋め込みから二つの10本矢開部分と交わりの8本矢部分を構成 | 全相対AS代数とのスタック同値は未証明。AS最小矢数との辞書は明示した未公刊分類入力による |
+| 直積型square | 全 $(2,2)$ Cartier因子と非自明な $\operatorname{Pic}^0$ は、一方の非最小10本矢chartに対応 | 最小10本矢はその境界。元のproduct collection自体は有限8生成矢・4関係、relation completionは12本 |
+| $\Sigma_2$ 境界 | 負断面 $S$ と交わらない因子は一方の10本矢境界、$S\le D$ は最深12本矢層 | $\Sigma_2$ の出現だけで12本矢とはいえない。$P=\mathcal O_D$ の古典点は別途扱う |
+| 内在的忘却 | 相対heart・適合平方根・AZ豊富性・同じ根のAS4被覆を満たす部分から $\mathfrak H_2$ への射。全H2幾何点は10本矢normal foundationを持つ | その適合部分の開性は未証明。$\operatorname{coh}\mathbb P(1,1,2)$ と $\operatorname{coh}\Sigma_2$ の構造対象は強いH2条件を満たさない |
+
+証明は [有限QP](papers/quiver-avatar/qp_presentations.tex)、[有限foundation](papers/quiver-avatar/foundation_charts.tex)、[avatar](papers/quiver-avatar/avatar_charts.tex)、[内在的忘却](papers/quiver-avatar/intrinsic_forgetting.tex) に置く。独立読取り・計算・組版の実施範囲は研究ノートを参照。
 
 ## モジュライのスタック構成
 
@@ -82,6 +97,8 @@ $$
 | [CLOUD_CODEX.md](CLOUD_CODEX.md) | Cloud環境の準備、起動用の依頼文、検証・保存・再開の手順 |
 | [scripts](scripts) | 依存の準備と、構成・検算・組版の独立した確認 |
 | [papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | 本文のある主論文。日本語LuaLaTeX、著者欄空欄 |
+| [papers/quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 八・十・十二本矢、avatar、内在的忘却を扱う独立した日本語LuaLaTeX論文 |
+| [papers/quiver-avatar](papers/quiver-avatar) | 別稿の有限QP・foundation・幾何的chart・忘却の証明 |
 | [papers/sections](papers/sections) | 主分類定理、全被覆、逆構成、同値判定、基準例の証明を収めた分割節 |
 | [papers/references.bib](papers/references.bib) | 確認した一次文献の書誌 |
 | [notes/research_notes.md](notes/research_notes.md) | 証明状態、障害、再開に必要な知識、検証範囲 |
@@ -106,6 +123,15 @@ bash scripts/bootstrap.sh
 python3 scripts/check.py doctor
 python3 scripts/check.py all
 ```
+
+別稿は次で個別に確認・組版する。
+
+```sh
+python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
+python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex
+```
+
+出力は `build/quiver-avatar-moduli.pdf` と同名の `.synctex.gz`。ルートの `latexmk` は両論文を組版する。
 
 Python 3.9以上とSymPy、およびLuaTeX-jaを含むTeX Live/MacTeX、latexmk、BibTeXを用いる。出力は `build/nc-quadric-classification.pdf` と同名の `.synctex.gz`。PDF・組版中間物はGitで追跡しない。
 

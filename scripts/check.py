@@ -162,12 +162,12 @@ def sources() -> int:
         visited.add(path)
         display = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
         original = path.read_text(encoding="utf-8")
-        for target in re.findall(r"^\s*%\s*!TeX\s+root\s*=\s*(.+)$", original, flags=re.M):
+        for target in re.findall(r"^\s*%\s*!TeX\s+root\s*=\s*(.+)$", original, flags=re.M | re.I):
             root_target = (path.parent / target.strip()).resolve()
             if not root_target.is_file():
                 failures.append(f"{display}: missing TeX root {target.strip()}")
             elif root_target != MAIN.resolve():
-                failures.append(f"{display}: TeX root does not point to the main manuscript: {target.strip()}")
+                failures.append(f"{display}: TeX root does not point to the selected manuscript: {target.strip()}")
         text = tex_without_comments(original)
         for label in re.findall(r"\\label\{([^}]+)\}", text):
             labels[label].append(display)
@@ -278,9 +278,9 @@ def build() -> int:
         print("\n".join(result.stdout.splitlines()[-35:]))
         return summary("build", [f"latexmk exited {result.returncode}"], [])
     failures = []
-    pdf = ROOT / "build/nc-quadric-classification.pdf"
-    sync = ROOT / "build/nc-quadric-classification.synctex.gz"
-    log = ROOT / "build/nc-quadric-classification.log"
+    pdf = ROOT / "build" / f"{MAIN.stem}.pdf"
+    sync = ROOT / "build" / f"{MAIN.stem}.synctex.gz"
+    log = ROOT / "build" / f"{MAIN.stem}.log"
     if not pdf.is_file() or pdf.stat().st_size == 0:
         failures.append("expected PDF missing or empty")
     else:
@@ -309,9 +309,16 @@ def build() -> int:
 
 
 def main() -> int:
+    global MAIN
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("doctor", "sources", "math", "build", "all"))
+    parser.add_argument("--manuscript", default="papers/nc-quadric-classification.tex",
+                        help="main TeX file directly under papers/ (default: primary manuscript)")
     args = parser.parse_args()
+    selected = (ROOT / args.manuscript).resolve()
+    if selected.parent != (ROOT / "papers").resolve() or selected.suffix != ".tex" or not selected.is_file():
+        parser.error("--manuscript must name an existing main .tex file directly under papers/")
+    MAIN = selected
     commands = {"doctor": doctor, "sources": sources, "math": math_checks, "build": build}
     results = []
     names = ("sources", "math", "build") if args.command == "all" else (args.command,)

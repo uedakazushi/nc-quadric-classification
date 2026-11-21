@@ -1,0 +1,347 @@
+% !TEX root = ../quiver-avatar-moduli.tex
+% 2026-11-21 / v1.0
+\section{矢の本数、安定化表示、および開部分スタック}
+\label{sec:qa-presentations}
+
+本節では、有限 foundation の最小矢、relation-dual の戻り矢を加えた
+箙、重み付き箙の非最小表示を区別する。
+この区別のもとで、八本矢のモジュライが十本矢のモジュライの開部分となる
+という主張を、任意の底上で正確に定式化する。
+基礎体を $\kk$ とし、積 $ba$ は $a$ の後に $b$ を合成する規約とする。
+本節の代数的な消去には標数の制限を要しない。
+
+\subsection{直積型 collection の最小表示}
+
+\begin{proposition}[直積型 collection の矢と関係]
+\label{prop:qa-product-count}
+$X=\PP^1\times\PP^1$ とし、
+\[
+ (E_0,E_1,E_2,E_3)
+   =(\OO,\OO(1,0),\OO(0,1),\OO(1,1))
+\]
+と置く。有限代数 $B=\End_X(\bigoplus_{i=0}^3E_i)$ の最小箙は
+\[
+ a_i:0\longrightarrow1,\quad b_j:0\longrightarrow2,\quad
+ u_j:1\longrightarrow3,\quad v_i:2\longrightarrow3
+ \qquad(i,j=0,1)
+\]
+の八本の矢を持ち、最小関係は
+\begin{equation}
+\label{eq:qa-square-relations}
+ r_{ij}=u_ja_i-v_ib_j\qquad(i,j=0,1)
+\end{equation}
+の四本である。従って relation-dual の戻り矢
+$c_{ij}:3\to0$ を加えた relation QP は十二本矢であり、potential は
+\begin{equation}
+\label{eq:qa-square-potential}
+ W_{\mathrm{sq}}=\sum_{i,j=0}^1c_{ij}(u_ja_i-v_ib_j)
+\end{equation}
+である。これは道長に関して reduced である。
+\end{proposition}
+
+\begin{proof}
+$V=H^0(X,\OO(1,0))$、$U=H^0(X,\OO(0,1))$ はともに二次元である。
+非恒等 Hom のうち、$\Hom(E_0,E_3)$ 以外の非零成分は
+$V,U,U,V$ の四つである。
+$\Hom(E_1,E_2)=H^0(X,\OO(-1,1))=0$ であり、
+$\Hom(E_0,E_3)=V\otimes U$ への二つの道の合成はともに同型である。
+従って二段階の道空間 $(U\otimes V)\oplus(V\otimes U)$ から
+$V\otimes U$ への核は四次元で、\eqref{eq:qa-square-relations} が基底となる。
+それより長い道は存在せず、これらが関係の全てである。
+関係に一次部分はないので八本の矢は最小であり、
+関係を他の矢で左右から乗じて新たな関係を得る余地もない。
+四本の双対矢を加えると十二本となる。
+\eqref{eq:qa-square-potential} は道長三なので、その二次部分は零である。
+\end{proof}
+
+\begin{remark}[十二本という数だけでは箙を指定できない]
+\label{rem:qa-two-twelve-quivers}
+命題~\ref{prop:qa-product-count} の箙を $Q_{\mathrm{sq}}$ と書く。
+後述する $Q_{12}$ は四辺に各二本の矢を持つ有向四角形と四本の対角矢からなる。
+$Q_{\mathrm{sq}}$ は $3\to0$ に四本の矢を持ち、$1\to2$ の矢を持たない。
+従って両者は同じ十二本矢の箙ではない。
+また、直積型 collection 自身の relation QP を十本矢と数えることはできない。
+十本矢との対応を主張する際には、mutation と collection の変更を明示する必要がある。
+この数え方は \cite[Remark 38.2]{AvatarVSeven2026} と一致する。
+\end{remark}
+
+\subsection{二つの可縮 pair を持つ共通表示}
+
+四頂点を $\mathbb Z/4\mathbb Z$ で標識し、$Q_8$ を
+各 $i\to i+1$ に二本の矢を持つ有向四角形とする。
+その矢の重みを一とする。
+$Q_{10}^{\mathrm{odd}}$ はこれに
+\[
+ x:1\longrightarrow3,\qquad y:3\longrightarrow1
+\]
+を加えた箙で、追加矢の重みは二とする。
+$Q_{10}^{\mathrm{even}}$ は代わりに
+\[
+ u:0\longrightarrow2,\qquad v:2\longrightarrow0
+\]
+を加えたもの、$Q_{12}$ は両方の pair を加えたものとする。
+以下の potential は重み四の巡回同値類であり、potential の定数倍は
+同一視しない。
+
+\begin{lemma}[共通 potential の形]
+\label{lem:qa-universal-potential}
+$Q_{12}$ の重み四の potential は一意に
+\begin{equation}
+\label{eq:qa-universal-potential}
+ W=H+yq+px+vq'+p'u+\lambda yx+\mu vu
+\end{equation}
+と書ける。ここで $H$ は $Q_8$ の道長四の potential、
+$q:1\to3$、$p:3\to1$、$q':0\to2$、$p':2\to0$ は
+$Q_8$ の道長二の線形結合であり、$\lambda,\mu$ は係数である。
+従って基底を固定した potential 空間は
+\[
+ P_8\simeq\mathbb A^{16},\qquad
+ P_{10}^{\mathrm{odd}}\simeq P_{10}^{\mathrm{even}}\simeq\mathbb A^{25},
+ \qquad P_{12}\simeq\mathbb A^{34}
+\]
+である。これらの記述は任意の $\kk$-scheme 上で成立する。
+\end{lemma}
+
+\begin{proof}
+重み四の cycle が重み二の矢を持たなければ、四辺を一周するので
+$2^4=16$ 個の道が巡回同値類の基底を与える。
+重み二の矢を一つ持つ場合は、残りの二本が $Q_8$ の道長二の道となり、
+四本の対角矢それぞれについて四個の可能性がある。
+重み二の矢を二つ持つ cycle は $yx$ と $vu$ の二つだけである。
+この三種類は巡回回転で混ざらないので、直和分解と次元の式を得る。
+同じ道の基底を任意の可換係数環上で用いれば相対的な主張も従う。
+\end{proof}
+
+\begin{proposition}[任意の底上の有限な消去]
+\label{prop:qa-relative-elimination}
+$T$ 上で \eqref{eq:qa-universal-potential} が与えられているとする。
+$\lambda\in\Gamma(T,\OO_T)^\times$ なら、
+\[
+ x'=x+\lambda^{-1}q,\qquad y'=y+\lambda^{-1}p
+\]
+によって
+\begin{equation}
+\label{eq:qa-one-pair-elimination}
+ W=\lambda y'x'+H-\lambda^{-1}pq+vq'+p'u+\mu vu
+\end{equation}
+となる。従って通常の重み付き道代数で定義した Jacobian 代数について
+\[
+ \Jac(Q_{12},W)
+ \simeq
+ \Jac(Q_{10}^{\mathrm{even}},H-\lambda^{-1}pq+vq'+p'u+\mu vu)
+\]
+が成り立つ。$\mu$ が可逆な場合も同様で、両方が可逆なら
+\begin{equation}
+\label{eq:qa-two-pair-elimination}
+ \Jac(Q_{12},W)
+ \simeq\Jac(Q_8,H-\lambda^{-1}pq-\mu^{-1}p'q').
+\end{equation}
+これらの構成は任意の基底変換と両立する。
+\end{proposition}
+
+\begin{proof}
+$p,q$ は $x,y,u,v$ を含まないので、表示した変換は逆も多項式である
+重み付き道代数の自己同型である。式は積を展開して確認できる。
+変換後の cyclic derivative は $\lambda x'$ と $\lambda y'$ を含むため、
+Jacobian 商では $x'=y'=0$ である。
+残りの cyclic derivative は残余 potential のものに一致する。
+二つの pair の変換は互いの矢を変更せず、順序を問わず実行できる。
+用いた演算は係数の加減乗除と、表示した可逆元の逆元だけである。
+従って同型は任意の基底変換後にも同じ式で成立する。
+\end{proof}
+
+\begin{remark}[一般の splitting theorem との関係]
+一般の QP の splitting theorem は完備道代数上の
+\cite[Theorem 4.6]{DWZ2008} による。
+命題~\ref{prop:qa-relative-elimination} では混合項が追加矢を含まないため、
+有限回の三角変換だけで分離できる。従って完備化も極限操作も不要である。
+この相対計算は AS 正則性や各次数成分の平坦性を主張していない。
+それらは別の仮定または定理を必要とする。
+\end{remark}
+
+幾何点上の最小矢数は次の四つの場合に分かれる。
+表の $\lambda=0$、$\mu=0$ は、その幾何点の剰余体での等式である。
+\begin{center}
+\begin{tabular}{c|c|c}
+係数 & 残る最小対角矢 & 最小矢数 \\
+\hline
+$\lambda\ne0,\ \mu\ne0$ & なし & $8$ \\
+$\lambda=0,\ \mu\ne0$ & $x,y$ & $10$（odd）\\
+$\lambda\ne0,\ \mu=0$ & $u,v$ & $10$（even）\\
+$\lambda=0,\ \mu=0$ & $x,y,u,v$ & $12$
+\end{tabular}
+\end{center}
+消去後の potential は道長三以上なので、Jacobian ideal に一次関係はない。
+これが表の最小性の根拠である。
+非被約な底上では、全幾何点で係数が零でも係数自身が零とは限らない。
+例えば $\lambda=\epsilon$ on $\Spec\kk[\epsilon]/(\epsilon^2)$ は可逆でなく、
+最後の pair を消去できない。
+
+\subsection{通常の QP スタックに残る慣性}
+
+ここでは頂点を固定する全ての重み付き道代数自己同型を射とする。
+$G_8=(\GL_2)^4$ と置くと、重み一の矢の像は基底変更で尽くされる。
+十本矢では、さらに各追加矢の非零スカラー倍と、
+同じ始点・終点を持つ道長二の道の付加が許される。従って
+\[
+ G_{10}=(G_8\times\Gm^2)\ltimes\mathbb G_a^8,
+ \qquad
+ G_{12}=(G_8\times\Gm^4)\ltimes\mathbb G_a^{16}.
+\]
+群の作用は potential の変数変換であり、
+$\mathcal P_r=[P_r/G_r]$ を通常の重み付き QP 商スタックとする。
+この節では頂点スカラーの rigidification は行わない。
+
+\begin{proposition}[可縮 pair の残余慣性]
+\label{prop:qa-stabilized-inertia}
+上の群と頂点標識を用いると、
+\begin{align}
+ [\{\lambda\ne0\}\subset P_{10}^{\mathrm{odd}}/G_{10}]
+   &\simeq \mathcal P_8\times B\Gm,\label{eq:qa-qp-gerbe-one}\\
+ [\{\lambda\mu\ne0\}\subset P_{12}/G_{12}]
+   &\simeq \mathcal P_8\times B(\Gm^2).
+   \label{eq:qa-qp-gerbe-two}
+\end{align}
+特に、消去によってこれらの通常の QP スタックを
+$\mathcal P_8$ と同定することはできない。
+\end{proposition}
+
+\begin{proof}
+十本矢の場合、命題~\ref{prop:qa-relative-elimination} により
+$p=q=0$ とでき、さらに一方の矢のスケールを変えて $\lambda=1$ とできる。
+これは係数環上の可逆元の逆を用いる代数的な正規化である。
+正規化した切片は $H+yx$ の形の potential の空間 $P_8$ である。
+
+この切片の二点 $H+yx$ と $\widetilde H+yx$ を結ぶ自己同型を調べる。
+重み一部分の作用を $g\in G_8$、対角矢の作用を
+$x\mapsto\alpha x+q_0$、$y\mapsto\beta y+p_0$ と書く。
+変換後に $yq_0$ と $p_0x$ の混合項が消えるには、
+$\alpha,\beta$ が可逆なので $p_0=q_0=0$ が必要である。
+$yx$ の係数から $\alpha\beta=1$ を得る。
+従って切片間の全ての射は
+\[
+ (g,t):\quad H\longmapsto gH,\quad
+ x\longmapsto tx,\quad y\longmapsto t^{-1}y
+\]
+であり、その群は $G_8\times\Gm$ である。
+後半の $\Gm$ は $P_8$ に自明に作用する。
+各対象が fppf 局所にこの切片へ移り、切片間の射がちょうど上の群で
+記述されるので、商スタックの同値~\eqref{eq:qa-qp-gerbe-one} を得る。
+二つの pair について同じ正規化を独立に行えば
+\eqref{eq:qa-qp-gerbe-two} を得る。
+ここでは切片とその安定化群を明示したので、単に gerbe と述べるだけでなく
+直積との同値まで得られている。
+\end{proof}
+
+\begin{remark}[表示を忘れる操作]
+消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
+Jacobian 商では恒等である。
+従って通常の QP groupoid から代数 groupoid への忘却は忠実でない。
+同じ障害は \cite[Proposition 52.3]{AvatarVSeven2026} で指摘されている。
+一般に関係式の表示の自己同型と商代数の自己同型を区別すべきことは
+\cite[Proposition 3.3]{AOU2014} にも現れる。
+有限有向箙の関係式スタックの有限型性
+\cite[Definition 3.5, Proposition 3.6]{AOU2014} は有用であるが、
+その定理だけから、ここで扱う無限次元 graded 代数の全次数平坦な族や
+内在的モジュライの代数性は従わない。
+\end{remark}
+
+\subsection{代数の射を用いた正確な開埋込み}
+
+\begin{definition}[代数の fppf スタック]
+\label{def:qa-algebra-stack}
+$\mathfrak M_{12}^{\mathrm{alg}}$ の $T$ 上の対象は、
+$A_0=\OO_T^4$ と四つの標識付き冪等元を持つ非負次数付き代数
+$A=\bigoplus_{d\ge0}A_d$ で、各 $A_d$ が有限階数局所自由、かつ
+fppf 局所に $\Jac(Q_{12},W)$ の形の表示を持つものとする。
+射は頂点と次数を保つ全ての代数同型とし、potential、矢の基底、
+表示からの全射はデータに含めない。
+$\mathfrak M_{10}^{\mathrm{odd,alg}}$、
+$\mathfrak M_{10}^{\mathrm{even,alg}}$、$\mathfrak M_8^{\mathrm{alg}}$
+もそれぞれの箙を用いて同様に定義する。
+これらは fppf 降下を持つ代数のスタックの充満部分スタックである。
+この定義に AS 正則性は含めない。
+\end{definition}
+
+各対象について、添字を $\mathbb Z/4\mathbb Z$ で読み、有限表示層
+\begin{equation}
+\label{eq:qa-indecomposables}
+ C_i(A)=\operatorname{coker}\left(
+ e_{i+2}A_1e_{i+1}\otimes_{\OO_T}e_{i+1}A_1e_i
+ \longrightarrow e_{i+2}A_2e_i\right)
+\end{equation}
+を定める。これは重み二における新しい生成元の層であり、
+定義は表示に依存しない。
+
+\begin{theorem}[矢の少ない代数スタックの開性]
+\label{thm:qa-open-algebra-stacks}
+可縮 pair を追加することによって、充満な開埋込み
+\begin{equation}
+\label{eq:qa-open-diagram}
+ \begin{aligned}
+ \mathfrak M_8^{\mathrm{alg}}&\lhook\joinrel\longrightarrow
+ \mathfrak M_{10}^{\mathrm{odd,alg}}
+ \lhook\joinrel\longrightarrow\mathfrak M_{12}^{\mathrm{alg}},\\
+ \mathfrak M_8^{\mathrm{alg}}&\lhook\joinrel\longrightarrow
+ \mathfrak M_{10}^{\mathrm{even,alg}}
+ \lhook\joinrel\longrightarrow\mathfrak M_{12}^{\mathrm{alg}}.
+ \end{aligned}
+\end{equation}
+を得る。
+両十本矢開部分の交わりは $\mathfrak M_8^{\mathrm{alg}}$ である。
+正確には、それぞれの像は
+\begin{align*}
+ \mathfrak M_{10}^{\mathrm{odd,alg}}&=\{C_0=C_2=0\},\\
+ \mathfrak M_{10}^{\mathrm{even,alg}}&=\{C_1=C_3=0\},\\
+ \mathfrak M_8^{\mathrm{alg}}&=\{C_0=C_1=C_2=C_3=0\}
+\end{align*}
+である。開埋込みという主張は任意の scheme からの基底変換について成立し、
+各スタックの代数性を仮定しない。
+\end{theorem}
+
+\begin{proof}
+十本矢の表示に $vu$ を追加しても Jacobian 代数は変わらず、
+八本矢からは $yx$ と $vu$ を追加できる。
+従って同じ代数を対象として送る関手が存在する。
+射は両辺とも全ての次数付き頂点固定代数同型なので、関手は充満忠実である。
+
+局所表示~\eqref{eq:qa-universal-potential} で
+\eqref{eq:qa-indecomposables} を計算する。
+重み二の関係は四本の重み二の矢による cyclic derivative だけである。
+道長二の積を割ると、これらの関係は
+$\lambda x=\lambda y=\mu u=\mu v=0$ となる。従って局所的に
+\[
+ C_1\simeq C_3\simeq\OO_T/(\lambda),\qquad
+ C_0\simeq C_2\simeq\OO_T/(\mu).
+\]
+特に $C_0=C_2=0$ と $\mu$ の可逆性は同値であり、
+命題~\ref{prop:qa-relative-elimination} により
+$Q_{10}^{\mathrm{odd}}$ の表示を得る。他の二つの場合も同様である。
+逆に小さい箙の表示では、対応する生成元層は明らかに零である。
+これにより像の表示を得る。
+
+有限表示層 $C_i$ の消滅 locus は、その support の補集合という開集合である。
+また cokernel は任意の基底変換と両立する。
+従って任意の $T\to\mathfrak M_{12}^{\mathrm{alg}}$ による各関手の
+基底変換は、対応する $C_i$ の消滅で定まる $T$ の開部分そのものである。
+これは開埋込みの主張と交わりの式を同時に証明する。
+\end{proof}
+
+\begin{remark}[最小型、相対型、および追加条件]
+\label{rem:qa-open-limits}
+十本矢の開部分に八本矢の対象が入るのは、
+定義~\ref{def:qa-algebra-stack} が非最小の十本矢表示も許すためである。
+幾何点で最小矢がちょうど十本の対象だけを取れば、八本矢の対象は含まれない。
+相対的に固定した最小型を扱うときは、残る $C_i$ が階数一の局所自由層で
+あることを課す。この条件は局所表示では対応する mass 係数が底上で
+零となることを要求し、全幾何点で零という条件より強い。
+
+本節の開性は、同型と基底変換に不変な追加条件を課した共通の
+部分スタックへ制限しても保たれる。
+ただし AS 条件を満たす部分がどの部分であるか、その部分の代数性、
+avatar からの全域被覆、さらに構造対象を保つ内在的圏への射は
+この定理の結論に含まれない。
+また $\mathfrak M_r^{\mathrm{alg}}$ では四頂点と周期的な graded 表示を
+保持している。これを忘れた $\mathcal O$-marked の exact 同値を、
+次数付き代数同型と同一視してはならない。
+\end{remark}

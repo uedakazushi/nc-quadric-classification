@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-21 / v0.10。数学原稿の現行版はv1.9。
+2026-11-21 / v0.11。主論文はv1.10、別稿はv0.1。
 
 ## Cloud Codexへの継続指示
 
@@ -21,6 +21,7 @@
 
 - 全体の入口：[research-hub](https://github.com/uedakazushi/research-hub)。再開時に該当研究の概要、他研究との関係、再開先を確認する。
 - 最初に読む研究方針：`00_research_plan.md`。続いて本AGENTS.mdの適用される指示と `notes/research_notes.md`、必要な原稿・検証記録を確認する。
+- 別稿：`papers/quiver-avatar-moduli.tex`。八・十・十二本矢の表示モジュライ・avatar・内在的忘却を扱う。分割節は `papers/quiver-avatar/`。個別の `sources`・`build` には `--manuscript papers/quiver-avatar-moduli.tex` を付ける。
 - 主たる公表用原稿：`papers/nc-quadric-classification.tex`。リポジトリ直下からの相対パスであり、本文のある主原稿とする。節のソースを別ファイルから読み込んでもよい。独立した別論文には内容を表す名前を付け、役割をREADMEと研究方針に記す。
 - 本研究の現行ソース・入力・再現資産の正本はGitHubの `main`。研究以外の日常todoは別に管理する。
 

@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.10（数学原稿v1.9）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.11（主論文v1.10、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -9,6 +9,20 @@
 右加群を採用し、`B_n=Hom(O,sⁿO)`、`a*b=s^{deg b}(a)∘b`。`Γ_*(M)`の右作用も同じ順序。cubic repoの表示された積と反対なので、外部のNakayama・正規化自己同型の公式を直接コピーしない。
 
 強いH2条件は `B ≅ A/(g)`、`A`は型14641、`g∈A₂`は正則正規。`g`の代表のスカラーは区別せず、最終対象ではambient自体を忘れる。`s²≅S⁻¹[2]`の同型は指定しない。根同型をrigidifyしたmoduliやtrace coherenceは別問題である。
+
+## 八・十・十二本矢、avatar、内在的忘却
+
+証明の正本は別稿 `papers/quiver-avatar-moduli.tex`。有限foundationの生成矢、relation completion、potentialの非最小表示を区別する。有限foundationではHom次元を $(2,2,2,4,4,6)$ に固定し、積 $a,b,c,d$ の唯一の結合律 $c(1\otimes a)=d(b\otimes1)$ を課す。二つの核に分解可能テンソルを許さず、$(c,d)$ の**合併した写像**の全射性を要求する。個々の $c,d$ の全射を要求する必要はない。$\delta_a,\delta_b\in\{0,1\}$ により生成矢 $6+\delta_a+\delta_b$、関係 $2+\delta_a+\delta_b$、完成矢 $8+2(\delta_a+\delta_b)$ を得る。$b$ 可逆と $a$ 可逆が二つの10本矢open、交わりが8本矢open。最小10本・12本の層をこれらのopenと同一視しない。
+
+weighted QPの二つのmass係数 $\lambda,\mu$ が可逆なら対角pairを消去できる。非被約基底では非零というだけでは不足する。生のright-equivalence商では各pairの $\mathbb G_m$ 自己同型が残るため、代数の同型とQPスタック同値を分ける。有限foundationの頂点scalar剛体化とも別操作である。
+
+曲線型avatarは $D\in|2h|$、fiberwise非自明な $P\in\operatorname{Pic}^0(D)$。直像 $p_*(HP^n)$ と評価で再埋め込みし、幾何的並進 $\mathsf T$ を得る。$\Sigma_0$ 部分 $\mathcal U$ と $\mathsf T^{-1}\mathcal U$ が二つの10本矢open、交わりが8本矢open。最深閉locusは $\Sigma_2$ の負断面 $S$ を含む因子。$S$ を避ける $\Sigma_2$ は10本矢境界である。全square曲線型から奇数側10本矢chartへの辞書は $F=F_s, H=F_sG_sP^{-1}$。rotated squareの $H_r=F_sG_sP$ とは逆の壁を持つ。
+
+$P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限代数の同型類では古典型Cl0/Cl2へ落ちるという既存入力があるが、自己同型・降下を含む収縮は未構成。Cl2はweighted projective stack $\mathbb P(1,1,2)$ であり、$\operatorname{coh}\Sigma_2$ と同一視しない。
+
+相対heart・Serre・豊富なexact平方根・同じ根の全軌道環のAS4被覆を確認した部分から $\mathfrak H_2$ への忘却がある。この部分を定義するだけで開性が証明されたとはしない。weighted projective stackのsign skyscraperは全ての $\mathcal O(-4n)$ から不可視であり、H2で必要な反SerreのAZ豊富性に反する。Sigma2の負断面上の $\mathcal O_S(-1)$ も同様。一方、主論文のnormal helixにより、全H2幾何点は上記の10本矢openにfoundationを持つ。これを任意の相対H2族のlifting定理へ読み替えない。
+
+幾何的再埋め込み・有限線形代数は別稿に直接証明を置いた。全AS分類との辞書は `Q12Avatar2026` 定理15.3等の体上結果を入力とし、未公刊資料の全証明を今回監査済みとは扱わない。具体的な出典・版・節は文献ノートに保持する。
 
 ## 相対平坦性の確立した認識
 
@@ -224,13 +238,13 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-2026-11-21 / 数学原稿v1.9。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
+2026-11-21 / 主論文v1.10、別稿v0.1。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
 
-**今回の論理点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
+**主論文の既存入力の点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
 
-**今回の計算実行。** GitHub mainから取得した `computations/verify_noncubic_second_order.py` をそのまま実行してPASSした。importにより25 unit pivot、六係数回収、全16072×1400線型条件の階数、標数零の有理核83/83/84も再実行される。横断2/2/3方向の基底と全二項和について3/3/6個の二次補正を検証し、二根対一致の場合の分母は2,1,2,2,1,1。残差は整数演算で厳密に零である。全次数の平坦性はこの有限計算ではなく、PPの定理と本文の適用による。新しい `computations/verify_antiserre_polarization.py` も実行PASSで、中心一次部分dim1→0とorbit rank79→80を標数零で確認した。全て有理数・整数・有限体による計算で、浮動小数点近似を用いない。
+**主論文の既存計算の確認範囲。** GitHub mainから取得した `computations/verify_noncubic_second_order.py` をそのまま実行してPASSした。importにより25 unit pivot、六係数回収、全16072×1400線型条件の階数、標数零の有理核83/83/84も再実行される。横断2/2/3方向の基底と全二項和について3/3/6個の二次補正を検証し、二根対一致の場合の分母は2,1,2,2,1,1。残差は整数演算で厳密に零である。全次数の平坦性はこの有限計算ではなく、PPの定理と本文の適用による。新しい `computations/verify_antiserre_polarization.py` も実行PASSで、中心一次部分dim1→0とorbit rank79→80を標数零で確認した。全て有理数・整数・有限体による計算で、浮動小数点近似を用いない。
 
-実行環境はPython3.12.14、SymPy1.14.0、NumPy2.3.5、Numba0.68.1。NumPy/Numbaは重い検算のオプションで、標準math suiteの必須依存にはしない。今回の全旧math suiteの再実行はしていない。
+実行環境はPython3.12.14、SymPy1.14.0、NumPy2.3.5、Numba0.68.1。NumPy/Numbaは重い検算のオプションで、標準math suiteの必須依存にはしない。別稿の作成に伴う全旧math suiteの再実行はしていない。
 
 ```sh
 python3 scripts/check.py doctor
@@ -240,7 +254,9 @@ python3 computations/verify_antiserre_polarization.py
 latexmk
 ```
 
-**組版・参照確認。** 全追加節を統合したv1.9をLuaLaTeXで組版し、134頁のPDFとSyncTeXを生成した。最終logにはWarning、Overfull/Underfull、文字欠落、未定義参照の報告がない。表紙・目次、既存の修正箇所、新節を含む選択22頁をPNGで確認し、最終の定義修正後は117–131頁を再描画して確認した。全134頁の目視確認を意味しない。静的checkerは28 manuscript files、256 labels、158 citation uses、7 Markdown filesでPASS。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施である。
+**別稿の論理点検。** QPの消去と慣性、有限foundationの開条件・関係数・重なり、avatarの支持補題・消滅・垂直fiberのTor・非被約基底への直像と降下、weighted stackとSigma2の反Serre障害は独立読取りを行った。全AS同型類分類の再監査、相対AS/avatar同値、適合H2部分の開性の証明は含めない。
+
+**組版・参照確認。** 現行二論文の最終組版・画像確認と、別稿の有限例の計算は実行中。主論文の既存版では134頁、選択22頁および相対定義の117–131頁の画像確認を実施済みであり、全頁目視確認を意味しない。現行版の確認完了時に結果を置き換える。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

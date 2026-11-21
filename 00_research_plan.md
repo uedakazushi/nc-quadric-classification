@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.10。**再開時は本書を最初に読む。GitHub `main` が正本。** 数学原稿はv1.9。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.11。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.10、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -13,6 +13,8 @@
 **固定平方根に対する被覆。** 相対軌道環Bが与えられれば、AS4被覆を選ぶ空間はGr(6,K)内の有限表示局所閉incidenceになる。元の環は四次まで、二次双対は五次までで判定できる。任意底変更のnoetherian性はB_Tの仮定と区別する。有限型incidenceのfppf像は一般には代数空間でなく、これだけでH2の代数性は従わない。`papers/sections/relative_as_cover.tex`。
 
 **既存の幾何入力。** 体上の全同値類分類、foundation商、cubic開部分、noncubic表示商を保持する。実現幾何点集合はfoundationからの誘導位相で既約・連結各1。各noncubic点へのcubic特殊化はsmooth proper dg族と全次数平坦な反Serre環族で構成済みだが、相対H2の全条件と位相比較は未完成である。
+
+**矢数と avatar の比較。** 別稿 `papers/quiver-avatar-moduli.tex` に、有限foundationの結合律スキームと二つの10本矢開部分、重み四QPの消去と残存慣性、反標準avatarの相対再埋め込みと4層をまとめた。全square曲線型は一方の非最小10本矢chartに対応し、8本矢はその開部分。$\Sigma_2$ で負断面を避ける場合は10本矢、含む場合は最深12本矢である。相対heart・根・AS4被覆を満たす部分から内在的忘却があるが、その部分の開性は未証明。重み付き射影stackの古典12本矢点は強いH2に入らない。有限代数の開性、幾何的avatarの開性、相対AS分類、内在的認識を別々に扱う。
 
 検証状態は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に集約する。新しい局所定義のdescendableなglobal compact圏との比較を、定義の局所条件やfppf stack性の証明と混同しない。
 
@@ -113,6 +115,18 @@ $$
 
 原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類、全幾何点groupoidの実現と実現集合の誘導位相での成分数は確立した。内在的な相対fppf stackは定義・構成した。その代数性と、位相がこの誘導位相に一致することは未完成である。
 
+### 別稿の到達点と依存範囲
+
+| 結果 | 証明の所在・確実性 |
+| --- | --- |
+| 有限型Artin $\mathfrak F_{\le12}$ と二つの10本矢開部分、交わりの8本矢部分 | `prop:qa-foundation-stack`, `thm:qa-foundation-open-diagram`。結合律128変数48式、核の非分解性と合併乗法の全射性を使用 |
+| 最小完成矢数 $8+2(\delta_a+\delta_b)$ | `prop:qa-foundation-arrow-count`。quadratic関係の重なり零と残る2本のcubic関係を証明 |
+| QPの任意基底上の消去、残る慣性、代数モジュライの開性 | `prop:qa-relative-elimination`, `prop:qa-stabilized-inertia`, `thm:qa-open-algebra-stacks`。生のQP商と代数の同型を区別 |
+| 幾何的並進 $H\mapsto HP^n$ と二つのopen、square辞書 | `thm:qa-translation`, `thm:qa-open-charts`, `cor:qa-square-chart`。非被約因子・非被約基底・垂直成分・Picard類の降下を含む直接証明 |
+| 最小8/10/12というAS側の意味 | `Q12Avatar2026` 定理15.3の体上分類を入力とする。全AS分類の独立再監査・相対stack同値は未完了 |
+| 適合部分からの内在的忘却と全H2幾何点の10本矢被覆 | `prop:qa-compatible-forgetting`, `prop:qa-h2-normal-ten-chart`。相対適合部分の開性・任意H2族のfoundation持上げは未証明 |
+| 古典12本矢とSigma2構造対象の除外 | `ex:qa-weighted-not-h2`, `ex:qa-hirzebruch-not-h2`。反Serre軌道から見えない対象によって全ての適合根を排除 |
+
 ## 4. 完全分類の達成条件
 
 標数零の代数閉体上の、主原稿 `def:h2` の全対象を分類する。最終成果は、具体的な代数的・幾何学的データP、明示的なadmissibility、データ上の同値関係を与え、
@@ -154,7 +168,8 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 1. **canonical反Serre偏極を有限表示で認識する。** `relative_moduli.tex` の $X_{\mathrm{as}}\subset X_3$ を出発点に、`antiserre_polarization.tex` の一定qgr・非一定表示の方向を除く条件を作る。foundationの有限な双加群複体から得る反Serre軌道と、表示されたdegree shiftを比較する。degree-line twistを許す必要があるため、正規化した普遍環に大域的な $(1)=S^{-1}[2]$ をそのまま課さない。全忠実性と対角の有限表示性は再び未解決としない。
 2. **平方根と被覆の局所持上げを調べる。** `relative_as_cover.tex` の有限表示incidenceを使い、固定相対軌道環への被覆のfppf局所存在がどの基底上で成立するかを判定する。根は標識ではない。選んだ根の非持上げと、別の根も含む非存在を混同しない。有限型射のfppf像が非代数的となる同節の例を踏まえ、scheme-theoretic imageや幾何点閉包だけで済ませない。
 3. **階数3境界の相対正規形を閉じる。** 全H2の二ruling、有限foundation、相対S2交換を入力に、noncubic境界の内在族から局所モデルへ移ることを証明する。既存のcubic→全noncubic特殊化を相対H2族として認識できれば、成分問題の位相比較にも進める。
-4. **必要な変形計算を選ぶ。** 三次平坦性から全次数平坦性は解決済みなので、次数4のHilbert条件を独立の追加制約として再計算しない。既存の横断二次jetはflat Abel変形になる。高次障害計算をする場合は、canonical偏極・根・被覆のどの残存条件を検証するかを先に明示する。
+4. **avatarと相対AS代数の比較を閉じる。** 別稿の $H\mapsto HP^n$ は幾何的stackの自己同値として証明済み。次はavatarからの有限foundationと全周期AS代数を相対的に構成し、底変更と同型層を比較する。元のproduct QP、weighted12本矢、固定構造対象の移動を区別する。$P=\mathcal O_D$ の古典点への収縮は同型類の説明だけでは足りない。内在的忘却に進むときは重み付き古典点の反例を基準にする。
+5. **必要な変形計算を選ぶ。** 三次平坦性から全次数平坦性は解決済みなので、次数4のHilbert条件を独立の追加制約として再計算しない。既存の横断二次jetはflat Abel変形になる。高次障害計算をする場合は、canonical偏極・根・被覆のどの残存条件を検証するかを先に明示する。
 
 有限型基底上での代数的表現の目標は、$X_{\mathrm{as}}$ を有限型代数空間として表すことである。局所閉部分スキームとしての構成は十分条件だが必要条件とは主張しない。一般Noetherian基底への連続拡張・極限保存性と、貼り合わせた局所compact圏が大域のcanonical $D(\operatorname{Ind}\mathcal C)^c$ に一致することは別に確認する。
 
@@ -164,7 +179,9 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 7. 正本・依存関係・再開
 
-- 主論文：[papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex)。独立した別論文は現時点ではない。
+- 主論文：[papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex)。全H2のpointed分類と相対認識。
+- 別稿：[papers/quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex)。八・十・十二本矢の表示モジュライ、反標準avatar、内在的忘却。主論文の分類証明を重複させない。
+- 別稿の組版：`python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex`。同じ指定で `sources` も実行できる。
 - 現行知識・障害・再現：[notes/research_notes.md](notes/research_notes.md)。文献仮定・版・リンク：[notes/literature.md](notes/literature.md)、書誌：[papers/references.bib](papers/references.bib)。
 - 計算：[computations/verify_quadric.py](computations/verify_quadric.py)。`python3 -m pip install -r requirements.txt` 後、repoルートで `python3 computations/verify_quadric.py`。
 - Cloudの導入と検証：[CLOUD_CODEX.md](CLOUD_CODEX.md)、`bash scripts/bootstrap.sh`、`python3 scripts/check.py doctor`。構成・検算・組版を個別に実行でき、欠落依存が独立な数学作業を止めないようにする。

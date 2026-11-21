@@ -1,0 +1,437 @@
+% !TeX root = ../quiver-avatar-moduli.tex
+\section{反標準 avatar の族と二つの十本矢 chart}
+\label{sec:qa-avatar-charts}
+
+本節では幾何的な族を直接定義し、その間の開埋め込みを証明する。
+代数の同型類から幾何的 avatar への対応は
+\cite[定義15.2・定理15.3]{Q12Avatar2026}に記載されているが、
+その同型類分類を相対 AS 代数の stack 同値として使用しない。
+族上の再埋め込みは\cite[第4--5節]{Q12Weyl2026}に基づき、
+開部分の判定に必要なコホモロジー、非被約因子、垂直成分および降下を以下で確認する。
+統合ノート\cite[第7.11--7.12項・第9節・第13.3項]{Synthesis2026}は
+これらの出典と主張の水準を整理した資料であり、独立の検証の代用とはしない。
+
+\subsection{分類する幾何データ}
+
+基礎体 $\kk$ は標数零の代数閉体とする。
+射影束は一次元商を分類する規約を用いる。
+次の二つの標識付き曲面を考える。
+\[
+\begin{array}{c|c|c}
+Y&h&f\\\hline
+\Sigma _0=\PP^1\times\PP^1&\OO(1,1)&\OO(1,0)\\
+\Sigma _2=\PP_{\PP^1}(\OO\oplus\OO(2))&\OO_{\PP(\OO\oplus\OO(2))}(1)&\pi^*\OO_{\PP^1}(1)
+\end{array}
+\]
+いずれも $h^2=2$, $hf=1$, $f^2=0$, $-K_Y=2h$ である。
+$\Sigma _2$ の負断面は $S=h-2f$ である。
+本節の $\Pic^0$ は Picard 群の単位成分を表す。
+
+\begin{definition}[曲線型の相対 avatar]
+\label{def:qa-avatar}
+局所 Noetherian な $\kk$-scheme $T$ 上の
+$\mathcal A_{12}^{\times}$ の対象を
+\[
+ (Y\xrightarrow{\pi}B\longrightarrow T;\ h,f;\ D\hookrightarrow Y;\ P)
+\]
+とする。ここで $B/T$ は $\PP^1$-fibration、$Y/B$ は
+$T$ 上 fppf 局所で $\PP_B(\mathcal E)$ と表示される射影直線族であり、
+各幾何 fiber の $(Y,h,f)$ は上表のいずれかである。
+$h,f$ は相対 Picard の類で、$f$ は指定した ruling に対応する。
+$D$ は $T$ 上平坦な相対有効 Cartier 因子で、相対因子類は $2h$ である。
+$P$ は $\Pic^0_{D/T}$ の section で、各幾何 fiber 上で非自明とする。
+射は ruling、標識、$D$ および $P$ の類を保つ $T$ 上の同型である。
+線束の scalar trivialization はデータに加えない。
+\end{definition}
+
+この定義は $\Sigma _0$ と $\Sigma _2$ の間で型が跳ぶ族を許す。
+実際の線束を用いる式は fppf 局所で解釈し、基底からの線束の tensor は区別しない。
+以下で
+\[
+ p=\pi|_D:D\longrightarrow B,\qquad F=\OO_Y(f)|_D,\qquad H=\OO_Y(h)|_D
+\]
+と書く。特に $H$ は線束であり、内在的モジュライの記号とは無関係である。
+曲面、因子および相対 Picard 類の降下により、定義\ref{def:qa-avatar}は
+fppf stack を定める。本節の「開部分 stack」は任意の基底への引戻しが
+開部分 scheme となる意味で用いる。
+
+\begin{remark}[有限表示と scalar の扱い]
+fppf 局所で $B=\PP^1_T$ とし、$\mathcal E=\pi_*\OO_Y(h)$ を取ると、
+各幾何 fiber の分裂型は $\OO(1)^{\oplus2}$ または $\OO\oplus\OO(2)$ である。
+評価列は
+\[
+ 0\longrightarrow \mathcal R\otimes\OO_B(-1)
+ \longrightarrow \mathcal V\otimes\OO_B
+ \longrightarrow\mathcal E\longrightarrow0,
+ \qquad\rank\mathcal R=2,\quad\rank\mathcal V=4
+\]
+となる。したがって線形行列、その余核の射影束上の相対反標準因子、
+および相対 Picard 類によって局所的な parameter を記述できる。
+この表示の基底変更をすべて新たな自己同型として保持すると、
+定義\ref{def:qa-avatar}と異なる stack になる。
+本節の射はあくまで標識付き曲面と因子の同型である。
+\end{remark}
+
+\subsection{非被約因子を含むコホモロジー}
+
+\begin{lemma}[支持に対する判定]
+\label{lem:qa-support}
+体上で $D\in|2h|$ とする。このとき
+$\omega_D\simeq\OO_D$、$h^0(\OO_D)=h^1(\OO_D)=1$ である。
+真の非零部分因子 $0<Z<D$ について $Z(D-Z)\geq2$ が成り立つ。
+線束 $N$ の非零切断が正確に $Z\leq D$ に支持されるなら
+\[
+ \deg_ZN\ \geq\ Z(D-Z).
+\]
+従って、線束 $L$ がすべての $0<Z\leq D$ について
+\begin{equation}
+ \deg_ZL+Z(D-Z)>0
+ \label{eq:qa-support-vanishing}
+\end{equation}
+を満たせば $H^1(D,L)=0$ である。
+\end{lemma}
+
+\begin{proof}
+随伴と $0\to\omega_Y\to\OO_Y\to\OO_D\to0$ により
+双対化層と構造層のコホモロジーを得る。
+$\Sigma _0$ では $D=2f+2g$、$Z=af+bg$ と書けて
+\[
+ Z(D-Z)=2(a+b-ab),\qquad 0\leq a,b\leq2.
+\]
+$Z=0,D$ を除いたすべての場合で右辺は二以上である。
+$\Sigma _2$ では $D=2S+4f$、$Z=aS+bf$ と書くと
+\[
+ Z(D-Z)=2a^2+2b(1-a),\qquad0\leq a\leq2,\quad0\leq b\leq4.
+\]
+$a=0$ では $b\geq1$、$a=1$ では右辺が二、
+$a=2$ では真部分因子なら $b\leq3$ なので、同じ結論を得る。
+
+切断の generic annihilator によって、その正確な支持である部分因子 $Z$ を取る。
+各既約成分の generic な Artin 局所環で切断の消滅次数を取り除いて $Z$ の重複度を定めると、
+切断は $N|_Z(-(D-Z))$ の、各 generic point で可逆な切断になる。
+$Z$ は Cohen--Macaulay なので、この切断が定める
+$\OO_Z\to N|_Z(-(D-Z))$ は単射で、余核は有限長である。
+Euler 特性を比較すれば不等式を得る。
+これは部分因子を重複度込みで取る議論であり、$D$ の被約性を使わない。
+最後は $\omega_D\simeq\OO_D$ による Serre 双対を用い、
+$L^{-1}$ の切断にこの不等式を適用すればよい。
+\end{proof}
+
+\begin{lemma}[再埋め込みに必要な消滅]
+\label{lem:qa-vanishing}
+$R\in\Pic^0(D)$ とする。このとき
+\[
+ H^1(D,HR)=H^1(D,HF^{-1}R)=0,\qquad
+ \chi(HR)=4,\quad\chi(HF^{-1}R)=2.
+\]
+また $R\not\simeq\OO_D$ なら $H^*(D,R)=0$ である。
+\end{lemma}
+
+\begin{proof}
+$R$ は各部分因子上で次数零である。
+$h$ は nef で全次数が四なので、補題\ref{lem:qa-support}を適用できる。
+$\Sigma _0$ では $h-f$ も nef で全次数が二である。
+$\Sigma _2$ では $Z=aS+bf$ 上で
+\[
+ \deg_Z(h-f)+Z(D-Z)=2a^2-a+3b-2ab.
+\]
+$a=0,1,2$ に対する右辺はそれぞれ $3b$, $1+b$, $6-b$ であり、
+$Z\neq0$ の許される範囲で正である。Riemann--Roch が Euler 特性を与える。
+$R$ の非零切断は真部分因子には支持されない。
+全体に支持される切断の余核は次数零なので零であり、$R$ は自明になる。
+$R^{-1}$ にも同じ議論を適用し、Serre 双対を使う。
+\end{proof}
+
+\subsection{Picard twist による相対的な再埋め込み}
+
+\begin{proposition}[垂直成分がある場合も含む直像]
+\label{prop:qa-pushforward}
+定義\ref{def:qa-avatar}の族で、$R\in\Pic^0_{D/T}(T)$ を取る。
+fppf 局所で線束によって表示すると
+\[
+ Rp_*(HR)\simeq\mathcal E_R:=p_*(HR)
+\]
+は $B$ 上の階数二の局所自由層であり、任意の基底変換と両立する。
+各幾何 fiber $B_t\simeq\PP^1$ 上で次数二かつ大域生成である。
+評価写像は閉埋め込み
+\[
+ j_R:D\hookrightarrow Y_R:=\PP_B(\mathcal E_R)
+\]
+を定め、像は相対反標準 Cartier 因子である。
+新しい標識の制限は $F_R=F$、$H_R=HR$ である。
+\end{proposition}
+
+\begin{proof}
+まず体上で $b\in B$、$G_b=\pi^{-1}(b)$ とする。
+$G_b$ が $D$ の成分でなければ $D\cap G_b$ は長さ二の scheme であり、
+導来 fiber の切断は二次元で次数零に集中する。
+$G_b\leq D$ なら、局所 parameter $t$ と $D$ の方程式 $t^m a$、$t\nmid a$ を用いると
+\[
+ \operatorname{ann}_{\OO_Y/(t^ma)}(t)=(t^{m-1}a)/(t^ma).
+\]
+したがって $L=HR$ の $B$ 方向の導来制限は
+\[
+ \mathcal H^{-1}=L|_{G_b}\otimes\OO_{G_b}(-D+G_b)\simeq\OO_{\PP^1}(-1),
+ \qquad
+ \mathcal H^0=L|_{G_b}\simeq\OO_{\PP^1}(1)
+\]
+を持つ。ここで $\deg_{G_b}L=1$、$D G_b=2$、$G_b^2=0$ を使った。
+次数 $-1$ の層は acyclic であるから、この場合も直像の導来 fiber は $\kk(b)^2[0]$ となる。
+垂直成分を持つ $p$ は有限でも平坦でもないが、この計算にはその仮定を要しない。
+
+$i_*L$ は Cartier immersion $i:D\hookrightarrow Y$ の線束の直像なので perfect である。
+滑らかな射影的射 $\pi$ による perfect pushforward と導来基底変換を用いると、
+$R\pi_*i_*L$ は perfect である。
+すべての導来 fiber が同じ階数二の次数零複体なので、局所的に可逆 minor で
+可縮項を消去することにより、階数二の局所自由層となる。
+族の場合、$i_*L$ は $T$ 上平坦であり、まず $T$ の幾何 fiber、次に $B_t$ の一点へ
+制限すれば同じ計算になる。このため非被約な基底も含めて結論が成り立つ。
+
+補題\ref{lem:qa-vanishing}と Riemann--Roch により
+\[
+ \deg\mathcal E_R=\chi(HR)-2=2,\qquad
+ H^1(B,\mathcal E_R(-1))=H^1(D,HF^{-1}R)=0.
+\]
+$\PP^1$ 上の分裂定理より、分裂型は $\OO(1)^{\oplus2}$ または $\OO\oplus\OO(2)$ である。
+
+各 $B$-fiber での評価は、長さ二の scheme 上の完全切断の評価、
+または $\OO_{\PP^1}(1)$ の評価である。従って全射で、誘導される fiber の射は閉埋め込みである。
+Nakayama の補題から全評価も全射となる。$j_R$ は proper かつ quasi-finite なので有限であり、
+有限射の基底変換と再度の Nakayama により
+$\OO_{Y_R}\to(j_R)_*\OO_D$ は全射である。
+体上では像は滑らかな曲面内の Cohen--Macaulay な余次元一部分 scheme なので Cartier である。
+像の類を $a h_R+b f_R$ とすると、ruling との交点から $a=2$、
+$h_R$ との交点 $\deg_D(HR)=4$ から $b=0$ を得る。
+族では $D/T$ の平坦性と各 fiber の Cartier 性によって相対 Cartier 性が従う。
+各 fiber で自明な差の線束は、$H^1(\OO_{Y_t})=0$ と基底変換により基底から来るので、
+相対 Picard 類も $2h_R$ である。
+\end{proof}
+
+\begin{theorem}[族上の幾何的並進]
+\label{thm:qa-translation}
+前命題において $R=P^n$ とした構成は $\mathcal A_{12}^{\times}$ の自己同値
+$\mathsf T^n$ を定める。自然な同型
+\[
+ \mathsf T^m\mathsf T^n\simeq\mathsf T^{m+n},\qquad
+ \mathsf T^0\simeq\operatorname{id}
+\]
+があり、逆操作は $P^{-n}$ を用いる同じ構成である。
+\end{theorem}
+
+\begin{proof}
+抽象的な $D$、ruling $p:D\to B$ および $P$ は変更せず、$H$ を $HP^n$ に変える。
+二回適用した直像は $p_*(HP^nP^m)$ なので、tensor の結合則が合成則を与える。
+$R=\OO_D$ の場合、制限列
+\[
+ 0\longrightarrow\OO_Y(-h)\longrightarrow\OO_Y(h)\longrightarrow i_*H\longrightarrow0
+\]
+と $R\pi_*\OO_Y(-h)=0$ が元の $\mathcal E=\pi_*\OO_Y(h)$ を回収する。
+相対的には左項に基底線束の tensor が入ることがあるが、同じ消滅が成り立つ。
+評価の自然性により射影束だけでなく $D$ の埋め込みも回収する。
+線束の代表を基底線束で tensor すると直像も同じ線束で tensor されるため、
+射影束および相対標識は変わらない。
+$q:D\to T$ について、各幾何 fiber で $h^0(\OO_D)=1$ であるから、
+コホモロジーと基底変換により $q_*\OO_D=\OO_T$ が任意の基底変換後も成立する。
+従って線束代表の自己同型は基底からの scalar であり、射影化で消える。
+従って構成と合成同型は fppf 降下し、射と基底変換に整合する。
+\end{proof}
+
+この定理は\cite[定理5.4]{Q12Weyl2026}の操作である。
+ここで証明したのは幾何的 avatar の stack 上の並進であり、
+無限二面体群のすべての関係を stack 上へ持ち上げる主張ではない。
+
+\subsection{二つの開 chart と四つの層}
+
+\begin{definition}[幾何的な八本矢・十本矢 chart]
+\label{def:qa-open-charts}
+$\mathcal U\subset\mathcal A_{12}^{\times}$ を、全幾何 fiber が $\Sigma _0$ である部分とする。
+\[
+ \mathcal A_{10,\mathrm e}^{\times}:=\mathcal U,
+ \qquad
+ \mathcal A_{10,\mathrm o}^{\times}:=\mathsf T^{-1}(\mathcal U),
+ \qquad
+ \mathcal A_8^{\times}:=\mathcal U\cap\mathsf T^{-1}(\mathcal U)
+\]
+と置く。添字 $\mathrm e,\mathrm o$ は、後述する標準表示で残る偶数対角・奇数対角に対応する。
+ここでは定義自体を幾何データだけで与えている。
+\end{definition}
+
+\begin{theorem}[avatar の開部分 stack]
+\label{thm:qa-open-charts}
+次の射は開埋め込みである。
+\[
+ \mathcal A_8^{\times}\hookrightarrow
+ \mathcal A_{10,\mathrm o}^{\times}\hookrightarrow\mathcal A_{12}^{\times},
+ \qquad
+ \mathcal A_8^{\times}\hookrightarrow
+ \mathcal A_{10,\mathrm e}^{\times}\hookrightarrow\mathcal A_{12}^{\times}.
+\]
+幾何点での層は次の表で与えられる。
+\begin{center}
+\begin{tabular}{c|c|c}
+曲面&曲線型の条件&属する層\\\hline
+$\Sigma _0$&$P\not\simeq F^2H^{-1}$&$\mathcal A_8^{\times}$\\
+$\Sigma _0$&$P\simeq F^2H^{-1}$&$\mathcal A_{10,\mathrm e}^{\times}\setminus\mathcal A_8^{\times}$\\
+$\Sigma _2$&$D\cap S=\varnothing$&$\mathcal A_{10,\mathrm o}^{\times}\setminus\mathcal A_8^{\times}$\\
+$\Sigma _2$&$S\leq D$&$\mathcal A_{12}^{\times}\setminus
+(\mathcal A_{10,\mathrm e}^{\times}\cup\mathcal A_{10,\mathrm o}^{\times})$
+\end{tabular}
+\end{center}
+最後の行は幾何点集合として閉 locus である。
+全 fiber がこの型となる族の充満部分関手に、閉埋め込みを自動的に与える主張ではない。
+表の層の最小矢数が順に $8,10,10,12$ になるという
+AS 代数側の解釈には、\cite[定理15.3]{Q12Avatar2026}の同型類分類を入力として用いる。
+\end{theorem}
+
+\begin{proof}
+$\mathcal E=\pi_*\OO_Y(h)$ の二つの分裂型は
+\[
+ h^0(B_t,\mathcal E_t(-2))=
+ \begin{cases}0&Y_t=\Sigma _0,\\1&Y_t=\Sigma _2\end{cases}
+\]
+によって区別される。コホモロジーの上半連続性から $\mathcal U$ は開である。
+自己同値 $\mathsf T$ による逆像と交わりも開なので、すべての開埋め込みを得る。
+残るのは幾何点での条件である。
+
+$\Sigma _0$ で $H=FG$ と書くと
+\[
+ h^0(B,\mathcal E_P(-2))=h^0(D,GF^{-1}P).
+\]
+$Z=af+bg$ に対し、$GF^{-1}P$ の次数は $a-b$ である。
+真部分因子では
+\[
+ Z(D-Z)-\deg_Z(GF^{-1}P)=a+3b-2ab>0.
+\]
+よって補題\ref{lem:qa-support}により、この線束の非零切断は全体に支持される。
+全次数は零なので、非零切断があることは線束が自明であることと同値である。
+従って $\mathsf T(Y)=\Sigma _2$ となる条件はちょうど $P\simeq F^2H^{-1}$ である。
+
+$\Sigma _2$ で $D\cap S=\varnothing$ なら $H\simeq F^2$ だから
+$h^0(D,HF^{-2}P)=h^0(D,P)=0$ であり、$\mathsf T(Y)=\Sigma _0$ となる。
+$S\leq D$ なら $C=D-S$ と置く。$C\sim h+2f$ であり、
+$\OO_Y(-C)$ は $\pi$ に沿って次数 $-1$ なので acyclic である。
+従って $h^0(\OO_C)=1$, $h^1(\OO_C)=0$、標数零より $\Pic^0(C)=0$ を得る。
+残余因子の完全列は
+\[
+ 0\longrightarrow P|_C\longrightarrow\OO_D(S)P
+ \longrightarrow\OO_S(-2)\longrightarrow0.
+\]
+$P|_C\simeq\OO_C$ なので $h^0(D,HF^{-2}P)=1$ である。
+従って $\mathsf T(Y)=\Sigma _2$ のままである。
+最後に $D S=0$ であるから、有効因子 $D$ は $S$ を含むか $S$ を避けるかのいずれかである。
+これですべての場合を得る。閉性は二つの開部分の和の補集合であることによる。
+\end{proof}
+
+\begin{remark}[「十本矢全体」の二通りの意味]
+最小十本矢の二つの層の和は $\mathcal A_8^{\times}$ を含まない。
+これに対し上の $\mathcal A_{10,\mathrm o}^{\times}$ と
+$\mathcal A_{10,\mathrm e}^{\times}$ は、可縮な pair を許す十本矢表示の
+幾何的 chart に対応し、八本矢部分を開部分として含む。
+二つの十本矢 chart の和は、最深の十二本矢層の補集合である。
+この区別なしに「矢の少ないモジュライが矢の多いモジュライの開部分である」
+と述べることはできない。
+\end{remark}
+
+\subsection{直積型 collection と全 square avatar}
+
+$\mathcal A_{\mathrm{sq}}^{\times}$ を、順序付きの二つの ruling を持つ
+$\Sigma _0$-族、その相対 $(2,2)$ Cartier 因子 $D$、および fiberwise 非自明な
+$P\in\Pic^0_{D/T}$ の stack とする。
+曲線上の ruling の制限を $F_s,G_s$ と書く。
+これは $h=f+g$ と置くことによって $\mathcal U$ と同じ幾何的 stack である。
+
+\begin{corollary}[全 square chart の相対的な対応]
+\label{cor:qa-square-chart}
+幾何的 stack の同値
+\[
+ \mathcal A_{\mathrm{sq}}^{\times}
+ \xrightarrow[\ \mathsf T^{-1}\ ]{\ \sim\ }
+ \mathcal A_{10,\mathrm o}^{\times}
+\]
+があり、制限線束は
+\begin{equation}
+ F=F_s,\qquad H=F_sG_sP^{-1},\qquad P=P
+ \label{eq:qa-square-dictionary}
+\end{equation}
+となる。逆には $\mathsf T$ によって得られる $\Sigma _0$ 上で
+\[
+ F_s=F,\qquad G_s=HPF^{-1}
+\]
+を取る。square 座標で八本矢部分となる条件は
+$P\not\simeq G_sF_s^{-1}$ であり、壁 $P\simeq G_sF_s^{-1}$ は
+負断面を避ける $\Sigma _2$ 上の奇数対角十本矢層に移る。
+\end{corollary}
+
+\begin{proof}
+定義から $\mathsf T^{-1}:\mathcal U\to\mathsf T^{-1}(\mathcal U)$ は同値であり、
+その線束の式が\eqref{eq:qa-square-dictionary}である。
+逆の式は $H_s=HP=F_sG_s$ による。
+元の $\Sigma _0$ で $\mathsf T^{-1}$ が $\Sigma _2$ を与える条件は、
+定理\ref{thm:qa-open-charts}の計算を $P^{-1}$ に対して行って
+$P^{-1}=F_sG_s^{-1}$、すなわち $P=G_sF_s^{-1}$ である。
+その像は $\mathcal A_{10,\mathrm o}^{\times}$ にあるので負断面を避ける。
+\end{proof}
+
+この系では反標準因子を滑らか、被約または既約と仮定していない。
+従って「十本でちょうど全ての quadric の divisor と $\Pic^0$ が出る」
+という記述は、\emph{奇数対角の非最小十本矢 chart と全 square avatar の対応}
+として正確に定式化できる。最小十本矢だけの主張ではなく、$P=\OO_D$ も除いている。
+
+代数側の square foundation は
+\[
+ B_{\mathrm{sq}}=\End_{\to}(P,F_s,G_s,F_sG_s)
+\]
+であり、可換な基準 collection は
+$(\OO,\OO(1,0),\OO(0,1),\OO(1,1))$ である
+\cite[定義1.2・定理1.3]{AvatarVSeven2026}。
+最初の二項の左 mutation は曲線上で
+\[
+ (P^2F_s^{-1},P,G_s,F_sG_s)
+\]
+を与える。共通に $F_sP^{-1}$ を tensor すると
+\[
+ (P,F_s,F_sG_sP^{-1},F_s^2G_sP^{-1})=(P,F,H,HF)
+\]
+となり、上の幾何的辞書と一致する。
+この mutation による AS 代数の対応は
+\cite[定理51.4・系51.5、相対版は定理53.2]{AvatarVSeven2026}の入力である。
+幾何的な開埋め込みの証明は、この AS 対応を使っていない。
+
+\begin{remark}[二つの $\Sigma _2$ への移行]
+\label{rem:qa-rotated-square}
+square helix の foundation を一つ進めた rotated square の偏極は
+\[
+ F_r=F_s,\qquad H_r=F_sG_sP
+\]
+である\cite[命題11.1・定理15.1]{AvatarVSeven2026}。
+一方、\eqref{eq:qa-square-dictionary}の偏極は $H=F_sG_sP^{-1}$ である。
+前者の $\Sigma _2$ 条件は $P=F_sG_s^{-1}$、後者の条件は $P=G_sF_s^{-1}$ となる。
+これらは一般には別の壁である。
+foundation の移動や mutation とともに選ばれる構造対象も変わるため、
+固定された構造対象の内在的一点 Hilbert 関手を同じものとして扱わない。
+\end{remark}
+
+\subsection{古典点と最深境界の扱い}
+
+本節の stack は一貫して $P$ が各 fiber で非自明な曲線型を扱った。
+体上の分類では、$P=\OO_D$ とした有限 directed algebra は $D$ の選択に依存せず、
+\[
+ \mathrm{Cl}_0:\operatorname{coh}(\PP^1\times\PP^1),\qquad
+ \mathrm{Cl}_2:\operatorname{coh}(\PP(1,1,2))
+\]
+という二つの古典型に対応する
+\cite[注意11.3・定理15.3]{Q12Avatar2026}。
+後者の $\PP(1,1,2)$ は重み付き射影 stack である。
+これは同型類の説明であり、相対 Picard の零切断を二点へ自動的に縮約する
+stack の構成ではない。零切断では $D$ とその自己同型が残るため、
+相対的に古典点を加えるには別途の収縮または同一視を定義する必要がある。
+
+最深の十二本矢層についても、三頂点の有限安定表現のモジュライが $\Sigma _2$ になることと、
+標準 heart における内在的一点 Hilbert 曲面が $\Sigma _2$ になることは異なる。
+古典型の負断面上には、一つの foundation では安定であっても、
+次の foundation では最後の頂点から生成されなくなる表現が存在する
+\cite[命題14.1]{Q12Avatar2026}。
+したがって本節の開部分 stack だけから、全 $\mathcal A_{12}^{\times}$ の
+内在的 quadric モジュライへの射、あるいはその射の定義域が開であることを結論しない。
+そこでは構造対象、標準 heart、豊富性、Serre 平方根および相対 AS 持上げを
+別に検証しなければならない。

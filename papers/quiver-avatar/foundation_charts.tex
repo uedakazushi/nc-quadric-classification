@@ -1,0 +1,259 @@
+% !TEX root = ../quiver-avatar-moduli.tex
+% 2026-11-21
+\section{有限 foundation の二つの十本矢開部分}
+\label{sec:qa-finite-foundations}
+
+本節では、矢の本数による開部分を実際の代数スタックとして構成する。
+対象は四頂点の有限 directed algebra であり、AS 正則性や標準 heart は
+この構成の条件に含めない。最後に数える矢は、有限代数そのものの矢と
+最小関係に双対な戻り矢を合わせた relation completion の矢である。
+従って、ここで得る開部分の定理と、AS 代数・avatar の相対分類定理とは
+異なる主張である。
+
+\subsection{全ての積を保持する有限表示}
+
+\(U,V,W\) を二次元、\(E,F\) を四次元、\(N\) を六次元の
+\(\kk\)-ベクトル空間とし、頂点成分を
+\[
+ A_{01}=U,\quad A_{12}=V,\quad A_{23}=W,\qquad
+ A_{02}=E,\quad A_{13}=F,\quad A_{03}=N
+\]
+と固定する。対角成分は \(A_{ii}=\kk\)、逆向き成分は零とする。
+非自明な積は四写像
+\[
+ \begin{split}
+ a&:V\otimes U\longrightarrow E,&
+ b&:W\otimes V\longrightarrow F,\\
+ c&:W\otimes E\longrightarrow N,&
+ d&:F\otimes U\longrightarrow N
+ \end{split}
+\]
+であり、結合律はただ一つの写像等式
+\begin{equation}
+ c(1_W\otimes a)=d(b\otimes1_U)
+ \quad\text{in }\Hom(W\otimes V\otimes U,N)
+ \label{eq:qa-associativity}
+\end{equation}
+である。この等式の定める閉アフィンスキームを \(Z\) と書く。
+\(Z\subset\mathbb A^{128}\) は有限型である。
+全ての積を保持するため、後に \(a\) または \(b\) の階数が落ちても
+有限代数のベクトル空間としての階数二十四は変わらない。
+
+\begin{definition}[foundation の許容開部分]
+\label{def:qa-foundation-open}
+\(Z\) の開部分 \(Z^{\mathrm{nd}}\) を次の条件で定める。
+\begin{enumerate}
+\item \((c,d): (W\otimes E)\oplus(F\otimes U)\to N\) は全射である。
+\item 全ての幾何ファイバーで、\(\ker a\) と \(\ker b\) は
+非零の分解可能テンソルを含まない。
+\end{enumerate}
+ここで \(Z^{\mathrm{nd}}\) の記号は上記の有限条件だけを意味し、
+AS 正則性を意味しない。
+\end{definition}
+
+\begin{lemma}
+\label{lem:qa-foundation-open-ranks}
+定義~\ref{def:qa-foundation-open} は基底変更と両立する開条件である。
+各幾何点で \(\rank a,\rank b\in\{3,4\}\) である。
+\end{lemma}
+\begin{proof}
+全射性は最大 minor の非消滅条件である。
+\(a\) について、\(Z\times\PP(V)\times\PP(U)\) 上で
+\(a(v\otimes u)=0\) となる閉 incidence を取る。
+射影空間の積からの射影は proper なので、その \(Z\) への像は閉である。
+その補集合が第二条件を表す。\(b\) についても同じである。
+
+二次元空間のテンソル積の射影化 \(\PP^3\) において、
+分解可能テンソルは Segre 二次曲面をなす。
+代数閉体上の射影直線はこの二次曲面と交わる。
+従って二次元以上の核は非零の分解可能テンソルを含むので、
+許される核の次元は零または一である。
+\end{proof}
+
+\[
+ G=\GL(U)\times\GL(V)\times\GL(W)
+       \times\GL(E)\times\GL(F)\times\GL(N)
+\]
+を各空間の基底変更で作用させる。
+頂点の対角単元 \((\lambda_0,\lambda_1,\lambda_2,\lambda_3)\)
+が \(A_{ij}\) 上で \(\lambda_j\lambda_i^{-1}\) 倍する作用の像を
+\(K\subset G\) と書く。
+共通スカラーを除けば \(K\simeq\Gm^3\) であり、
+\(K\) は \(Z\) 上自明に作用する中心部分群である。
+
+\begin{proposition}[有限代数の代数スタック]
+\label{prop:qa-foundation-stack}
+\[
+ \mathfrak F^{\mathrm{lin}}_{\le12}=[Z^{\mathrm{nd}}/G],
+ \qquad
+ \mathfrak F_{\le12}=[Z^{\mathrm{nd}}/(G/K)]
+\]
+は有限型 Artin スタックである。
+前者は上記の階数の頂点成分と積を持つ有限代数のスタックであり、
+後者は頂点ごとの比較同型のスカラーによる中心 \(K\) を剛体化したものである。
+この命題ではスタックの滑らかさも AS locus の開性も主張しない。
+\end{proposition}
+\begin{proof}
+各頂点成分を局所自由層とする同じデータは、fppf 局所に基底を選ぶと
+\(Z^{\mathrm{nd}}\) の点で表される。
+代数の同型はこれらの空間の基底変更と正確に一致する。
+従って前者の商は指定した moduli を表す。
+\(G\) と \(G/K\) は滑らかな有限型代数群なので、
+両商は有限型 Artin スタックである。
+\(K\) は各対象に中心自己同型として含まれるため、
+\([Z^{\mathrm{nd}}/G]\to[Z^{\mathrm{nd}}/(G/K)]\) はその剛体化である。
+\end{proof}
+
+\subsection{最小生成元と最小関係の数}
+
+\begin{proposition}[八・十・十二本の有限代数的判定]
+\label{prop:qa-foundation-arrow-count}
+\(Z^{\mathrm{nd}}\) の幾何点に対応する代数を \(A\) とし、
+\[
+ \delta_a=4-\rank a,\qquad \delta_b=4-\rank b
+ \quad\in\{0,1\}
+\]
+と置く。\(A\) の最小 directed quiver は
+\(6+\delta_a+\delta_b\) 本の矢を持ち、最小関係は
+\(2+\delta_a+\delta_b\) 本である。
+従って、最小関係ごとに一本の戻り矢を加えた relation completion は
+\begin{equation}
+ 8+2(\delta_a+\delta_b)
+ \label{eq:qa-foundation-arrow-count}
+\end{equation}
+本の矢を持つ。
+\end{proposition}
+\begin{proof}
+隣接頂点間には各二本、合計六本の矢がある。
+\(E/\operatorname{im}a\) と \(F/\operatorname{im}b\) の基底を取り、
+それぞれ \(0\to2\)、\(1\to3\) の追加生成矢とする。
+\((c,d)\) の全射性により、\(0\to3\) の全ての元は
+\(0\to2\to3\) または \(0\to1\to3\) を経由する積で生成されるので、
+\(0\to3\) の追加生成矢はない。
+従って生成矢の数は \(6+\delta_a+\delta_b\) である。
+
+\(0\to2\)、\(1\to3\) の最小関係は、それぞれ
+\(K_a=\ker a\)、\(K_b=\ker b\) であり、その次元は
+\(\delta_a,\delta_b\) である。
+これらの関係を課す前の \(0\to3\) の道の空間は
+\[
+ (W\otimes V\otimes U)
+ \oplus\bigl(W\otimes(E/\operatorname{im}a)\bigr)
+ \oplus\bigl((F/\operatorname{im}b)\otimes U\bigr)
+\]
+という、次元 \(8+2\delta_a+2\delta_b\) の空間である。
+短い関係の生成する部分空間は最初の直和成分内の
+\[
+ (W\otimes K_a)+(K_b\otimes U)
+\]
+であり、この和は直和である。
+実際、両核が一次元で共通の非零テンソルがあれば、
+それは \(w\otimes\kappa_a=\kappa_b\otimes u\) と書ける。
+\(w\) に対して非零となる線形形式で縮約すると、
+\(\kappa_a\) が分解可能になり、定義に反する。
+一方の核が零の場合は明らかである。
+
+従って短い関係を課した後の \(0\to3\) 成分は次元八である。
+結合律~\eqref{eq:qa-associativity} により \(N\) への写像が定まり、
+これは \((c,d)\) の全射性によって全射である。
+残る核は二次元であり、ちょうど二本の新たな最小関係を与える。
+添字次数は三であるが、追加矢があるときは道長二と三の項を含み得る。
+既に短い関係の生成する部分で割っているため、これらは最小関係であり、
+四頂点の有向性から、それ以外の始点・終点に新たな関係はない。
+これで関係数と \eqref{eq:qa-foundation-arrow-count} を得る。
+\end{proof}
+
+添字の差による重みを有限代数の矢 \(i\to j\) に与え、
+同じ始点・終点を持つ関係の戻り矢には重み \(4-(j-i)\) を与える。
+関係 potential の各項は重み四となる。
+隣接矢六本と \(0\to3\) の二つの関係の戻り矢は、
+四周期の各隣接頂点を結ぶ二本ずつの重み一の矢を与える。
+\(\delta_a=1\) なら \(0\to2\)、\(2\to0\) の重み二の矢を一組、
+\(\delta_b=1\) なら \(1\to3\)、\(3\to1\) の重み二の矢を一組加える。
+従って重み付きの箙自体は、八本矢、二種類の十本矢、十二本矢の
+それぞれの配置に正確に一致する。
+この配置の一致は、potential の復元や AS 正則性、
+QP の同型と有限代数の同型の比較まで含む主張ではない。
+
+\subsection{二つの開部分とその共通部分}
+
+\begin{theorem}[矢数を上限とする開部分]
+\label{thm:qa-foundation-open-diagram}
+\(Z^{\mathrm{nd}}\) 上で \(a\)、\(b\) が可逆となる開部分を
+それぞれ \(Z_a,Z_b\) と書く。
+\[
+ \begin{split}
+ \mathfrak F_{\le10}^{(a)}&=[Z_b/(G/K)],&
+ \mathfrak F_{\le10}^{(b)}&=[Z_a/(G/K)],\\
+ \mathfrak F_8&=[(Z_a\cap Z_b)/(G/K)]
+ \end{split}
+\]
+と置く。上付き \((a)\)、\((b)\) は、階数低下を許す写像を示す。
+これらは \(\mathfrak F_{\le12}\) の開部分スタックであり、
+\begin{equation}
+ \mathfrak F_8
+ =\mathfrak F_{\le10}^{(a)}
+       \cap\mathfrak F_{\le10}^{(b)}.
+ \label{eq:qa-foundation-chart-intersection}
+\end{equation}
+両十本矢開部分の合併は、最小 relation completion の矢数が
+高々十である locus である。
+その補集合は、幾何点上では \(\rank a=\rank b=3\) の
+最小十二本矢 locus である。
+\end{theorem}
+\begin{proof}
+可逆性は行列式の非消滅であり、\(G/K\) の作用で不変である。
+不変開部分からの商の射は representable な open immersion である。
+交わりと合併は同じ基底上で計算できる。
+矢数との対応は命題~\ref{prop:qa-foundation-arrow-count} による。
+\end{proof}
+
+\begin{remark}[最小本数の層と開部分の区別]
+\label{rem:qa-exact-arrow-strata}
+例えば \(\mathfrak F_{\le10}^{(a)}\) は八本矢の点も含む。
+最小十本矢の点だけを取った層は
+\(\mathfrak F_{\le10}^{(a)}\setminus\mathfrak F_8\) であり、
+八本矢の moduli を開部分として含むのはこの層ではない。
+非被約基底について「階数三の層」と呼ぶときは、単なる幾何点条件でなく、
+対応する大きな minor の消滅と三次 minor の可逆性を課した
+scheme-theoretic な階数 locus を用いる。
+本節の開部分は可逆性で定義されており、この区別による曖昧さを持たない。
+また、選んだ最小関係とその戻り矢から作る QP の自己同型群を、
+有限代数の自己同型群と同一視したわけではない。
+QP から有限代数への回復と射の比較には別の証明が必要である。
+\end{remark}
+
+\subsection{既存の normal foundation chart の位置}
+
+\begin{proposition}[一方の積を可逆にした表示]
+\label{prop:qa-existing-foundation-chart}
+\(b\) が可逆な開部分では \(F\simeq W\otimes V\) と同定でき、
+結合律は \(d\) を \(a,c\) から一意に決める。
+従って、この開部分の線形データは既存の normal foundation 表示
+\[
+ F_{\mathrm{old}}:P\otimes W_1\to W_2,
+ \qquad G_{\mathrm{old}}:Q\otimes W_2\to W_3
+\]
+において
+\((P,W_1,W_2,Q,W_3)=(V,U,E,W,N)\)、
+\((F_{\mathrm{old}},G_{\mathrm{old}})=(a,c)\) としたものに一致する。
+この同定の下で \((c,d)\) の全射性は \(c\) の全射性に等しい。
+既存の表示の全開部分と比較する際には、
+本節の分解可能な核を持たない条件を追加する。
+\end{proposition}
+\begin{proof}
+\eqref{eq:qa-associativity} の右辺で \(b\otimes1_U\) が同型なので、
+\(d=c(1_W\otimes a)(b^{-1}\otimes1_U)\) である。
+残る空間と二写像は表示したものに一致する。
+\(d\) は \(c\) を経由するので、両者の像の和は \(c\) の像である。
+\end{proof}
+
+この比較により、\cite{QuadricIntrinsic2026} の
+\texttt{prop:foundation-stack} に現れる一方の積を恒等化した chart と、
+本節の二つの積がともに階数三になる境界とを区別できる。
+古い二写像表示で \(\rank F_{\mathrm{old}}=2\) として得られる十二本矢表示は、
+本節の許容開部分には入らない。
+その核は二次元であり分解可能テンソルを含むからである。
+また、その十二本矢は一方の対角位置に二組の追加矢を持つのに対し、
+本節の最小十二本矢は両対角位置に一組ずつの追加矢を持つ。
+矢の総数だけから、これらを同じ型と扱ってはならない。
