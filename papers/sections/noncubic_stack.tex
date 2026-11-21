@@ -412,8 +412,10 @@ $g'$ は twist 後には正規元で、掛け算は元の $g'$ の乗法と
 \begin{remark}[相対主張の範囲]
 前二結果は、明示された二形式の族から、底変更と整合する次数付き環、
 正則切断、およびその幾何ファイバー上の適合根を局所的に構成する。
-任意の底環について両側 noetherian 性、相対双対化複体や相対 Serre 関手の存在を
-主張するものではない。また、任意の内在的 $\mathcal H_2$ 族がこの正規形へ
+左右 noetherian 性は noetherian 基底では後続の
+命題~\ref{prop:noncubic-relative-noetherian} で証明するが、
+相対双対化複体や相対 Serre 関手の存在まで
+この局所表示だけから主張するものではない。また、任意の内在的 $\mathcal H_2$ 族がこの正規形へ
 \'etale 局所に還元できるという認識定理も含めていない。
 局所的な平方根の存在と、内在的な族の相対分類を区別する必要がある。
 \end{remark}
@@ -585,43 +587,83 @@ $\mathcal J\subset\mathcal R_1^{\otimes2}$ はその枠に関して
 として開・閉・有限表示であることまでは主張しない。
 \end{proof}
 
+\begin{lemma}[二重平方環の中心 Clifford 表示]
+\label{lem:noncubic-relative-clifford-center}
+任意の可換環 $A$ 上の二元二次形式 $f_1,f_2$ に対し、
+\[
+ B=A[u,v]\langle c,d\rangle/(c^2-f_1,\ d^2-f_2),
+ \qquad h=cd+dc
+\]
+とする。$h$ は中心元であり、
+\[
+ C=A[u,v,h]\subset B,\qquad
+ B=C\oplus Cc\oplus Cd\oplus C(cd)
+ \tag{NC-Cl}\label{eq:noncubic-relative-clifford}
+\]
+は次数付き $C$-加群として自由な直和である
+（$\deg u=\deg v=\deg c=\deg d=1,\ \deg h=2$）。
+特に $B$ は二元二次形式
+$c^2=f_1,\ d^2=f_2,\ cd+dc=h$
+の Clifford 代数として、中心多項式環上の階数四の代数である。
+この表示は任意の底変更と可換する。
+\end{lemma}
+\begin{proof}
+$u,v$ は中心なので、$c^2=f_1,d^2=f_2$ から
+$[c,h]=[d,h]=0$ が直接従う。
+関係
+\[
+ c^2=f_1,\qquad d^2=f_2,\qquad dc=h-cd
+\]
+を使うと、任意の語は $C$ 上 $1,c,d,cd$ の
+線型結合に整理できる。従って右辺から $B$ への自然射は全射である。
+一方、交互語基底によって $B$ の各次数は $A$-自由であり、
+Hilbert 級数は $(1+z)/(1-z)^3$ である。
+右辺も $A$-自由で、その Hilbert 級数は
+\[
+ \frac{1+2z+z^2}{(1-z)^2(1-z^2)}
+ =\frac{1+z}{(1-z)^3}
+\]
+と一致する。
+各次数では同じ階数の有限自由 $A$-加群の間の全射なので
+同型である。従って $C$ も本当に $B$ の多項式部分環であり、
+全表示は任意の底変更に両立する。
+\end{proof}
+
 \begin{proposition}[noetherian 基底上の noncubic 表示の有限性]
 \label{prop:noncubic-relative-noetherian}
 任意の可換 noetherian 基底に引き戻した普遍環 $\mathcal B$、
 および上記の反 Serre 環 $\mathcal R$ は左右 noetherian である。
-この主張は相対 Serre 双対性や相対 heart の認識を仮定しない。
+より精密には $\mathcal B$ は中央多項式環上階数四の有限自由代数、
+$\mathcal R$ は同じ中央多項式環の四次 Veronese 上
+有限生成加群である。
+これらの主張は相対 Serre 双対性や相対 heart の認識を仮定しない。
 \end{proposition}
 \begin{proof}
 noetherian なアフィン基底 $\operatorname{Spec}A$ 上で調べる。
-補題~\ref{lem:noncubic-local-exchange} の
-有限 \'etale 被覆の後、命題~\ref{prop:noncubic-relative-regular-cut}
-の Ore 環
-\[
- A'=A[u,v,x][y;\tau,\partial]
-\]
-があり、$\mathcal B=A'/(g')$ である。
-$A[u,v,x]$ は左右 noetherian、$\tau$ は自己同型なので
-Ore 拡大の noetherian 性から $A'$、従って $\mathcal B$ も
-左右 noetherian である。
-有限忠実平坦な拡大で右・左イデアルの昇鎖が停止すれば
-元の環の昇鎖も停止するため、元のアフィン基底へ降下する。
+前補題により
+$C=A[u,v,h]$ は $\mathcal B$ の中央に入り、
+$\mathcal B$ は $C$ 上階数四の自由加群である。
+$C$ は可換 noetherian なので、$\mathcal B$ は左右 noetherian である。
 
-次数一生成の $\mathcal B$ の偶数 Veronese
-$\mathcal B^{(2)}$ は左右 noetherian である。
-実際、その右イデアルの昇鎖 $I_j$ について
-$I_j\mathcal B$ は $\mathcal B$ の右イデアルの昇鎖であり、
-偶数次数の直和因子への射影から
-$(I_j\mathcal B)\cap\mathcal B^{(2)}=I_j$ となる。
-左も同様である。
-$\mathcal R$ はこの偶数 Veronese の $\iota$ による
-Zhang twist と線束 twist である。
-局所的に線束を自明化すれば、Zhang twist は
-次数付き加群圏の同値を与えるので、左右の
-次数付き noetherian 性を保つ。
-非負次数付けに対する最高次数項の標準的議論によって
-通常の左右 noetherian 性も従う。
-以上の証明はどの幾何点が noncubic であるかを調べるものではなく、
-非被約基底を含む表示族に対して成立する。
+さらに $\mathcal R$ を、偶数 Veronese
+$\mathcal B^{(2)}$ の $\iota$ による Zhang twist とみなす。
+$C^{(4)}=\bigoplus_{m\ge0}C_{4m}$ は有限生成の
+可換 noetherian 環である。
+$\iota$ は $C$ 上恒等であり、$C_{4m}$ の元は
+$\mathcal R$ の次数 $2m$ に入る。
+この次数では $\iota^{2m}=1$ だから
+(\ref{eq:noncubic-antiserre-product}) の
+左・右の積は通常の積と一致する。
+従って $C^{(4)}$ は $\mathcal R$ の中心に入る。
+$C$ は $C^{(4)}$ 上有限生成加群であり
+（任意の次数四以上の単項式は次数四の単項式で割れる）、
+$\mathcal B$ は $C$ 上階数四の自由加群である。
+従って偶数次数部分 $\mathcal R$ も
+$C^{(4)}$ 上有限生成加群となる。
+この有限性から $\mathcal R$ も左右 noetherian である。
+線束 $\mathcal D$ の twist はアフィン基底上で局所的に
+自明化できるため、結論は表示スタックの任意の
+noetherian 基底への引戻しでも成立する。
 \end{proof}
 
 \begin{remark}[内在的モジュライに残る差]
