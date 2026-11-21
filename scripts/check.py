@@ -142,7 +142,8 @@ def sources() -> int:
         "README.md", "AGENTS.md", "00_research_plan.md", "CLOUD_CODEX.md", "notes/research_notes.md",
         "notes/literature.md", "papers/nc-quadric-classification.tex", "papers/references.bib",
         "computations/verify_quadric.py", "computations/verify_pencil_tangent.py",
-        "computations/verify_reducible_quadruples.py", "requirements.txt", ".latexmkrc",
+        "computations/verify_reducible_quadruples.py", "computations/verify_noncubic_antiserre_pivots.py",
+        "requirements.txt", ".latexmkrc",
         ".vscode/settings.json", ".vscode/extensions.json", "scripts/bootstrap.sh", "scripts/check.py",
     )
     for name in required:
@@ -254,7 +255,7 @@ def math_checks() -> int:
     ok, detail = python_dependencies()
     if not ok:
         return summary("math", [], [detail])
-    scripts = ("verify_quadric.py", "verify_pencil_tangent.py", "verify_reducible_quadruples.py", "verify_stack_symmetries.py")
+    scripts = ("verify_quadric.py", "verify_pencil_tangent.py", "verify_reducible_quadruples.py", "verify_stack_symmetries.py", "verify_noncubic_antiserre_pivots.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
     for name in scripts:
