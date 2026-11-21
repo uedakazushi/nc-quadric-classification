@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-21 / v0.11（主論文v1.10、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-21 / v0.12（主論文v1.11、別稿v0.1）。最初に [研究方針](../00_research_plan.md) を読む。証明の正本は [主原稿](../papers/nc-quadric-classification.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 定義と規約
 
@@ -41,6 +41,8 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 **大域導来比較の候補（未証明・現行定理の入力ではない）。** heartのdescentだけからcanonicalな非有界導来圏のdescentを推論しない。flatなA→Bについて、まずD(G_B)とD(G)内のB-module対象との比較を、exact induction/forgetful随伴とBarr–Beckで証明する必要がある。その後の線形安定圏のdescentには、A. Mathew, *The Galois group of a stable homotopy theory*, Advances in Mathematics 291 (2016), 403–541, [DOI:10.1016/j.aim.2015.12.017](https://doi.org/10.1016/j.aim.2015.12.017) のCorollary 3.33（有限表示faithfully flat射のdescendability）、Corollary 3.42、Proposition 3.45が候補となる。compact生成・bounded coherent部分との比較は別に確認する。局所compact条件による現行定義は、この未完成の比較を必要としない。
 
 ## 相対被覆と偏極変形の障害
+
+**有限foundationでの偏極認識は解決した。** `thm:bimodule-line-comparison` は、普遍的中心が基底環である有限局所自由Λと可逆perfect双加群P,Qについて、局所同型の存在を有限表示局所閉部分で表す。K=RHom(P,Q)の負の幾何cohomologyが零、最低次Betti数が1以下となる開集合上で、d0の(r−1)-minorを可逆化しd0=diag(I,v)とする。実際の方程式v=0が普遍的H0線束を作り、その評価射P⊗H0(K)→Qのconeの消滅が残る開条件。幾何点のrankだけでは非被約方向を検出できない。比較線束は基底線束twistを記録する。任意X3族の相対foundation・shift双加群の構成はこの定理の仮定であり、結論ではない。
 
 固定した相対切断環B=T(V)/(K)に対し、`thm:relative-finite-as-cover` はGr(6,K)内にAS被覆を選ぶ有限表示局所閉空間E_Bを構成する。A3,A4の階数20,35、双対D3,D4,D5の階数4,1,0、次数3の左右像の層としての一致、次数1,2での乗法単射、双対の完全pairingを課す。非被約基底で必要なのはscheme-theoreticな条件である。A_TがnoetherianであることはB_Tのnoetherian性と同値だが、任意Noetherian底変更でのB_Tのnoetherian性をB自身から推測しない。
 
@@ -240,7 +242,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 検証範囲と再現手順
 
-2026-11-21 / 主論文v1.10、別稿v0.1。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
+2026-11-21 / 主論文v1.11、別稿v0.1。原稿の証明、今回の独立読取り、厳密計算、組版、画像表示、保存を区別する。外部査読、形式証明、包括的な新規性判定は未実施である。
 
 **主論文の既存入力の点検。** 全H2のKoszul性・PPによる相対全次数平坦性、Artin基底のnoetherian持上げとqgrのflatness、相対AS被覆の有限判定、fppf像の反例、Zhang族の中心・一次交換子は独立読取りを行った。相対定義は局所canonical compact条件に整理し、大域canonical導来降下の未閉鎖な比較を依存から外した。体上回復はfoundationのcompact generator、有限段Ext計算、flat Hom基底変更、標準hull/Oreの体拡大を点検した。接次元5対4の既存証明は、接複体の[-1,0]切断と代数群としての慣性Lie比較を補強した。体上分類全体の再監査は今回の作業には含めない。
 
@@ -263,7 +265,7 @@ latexmk
 
 **別稿の計算実行。** `computations/verify_quiver_avatar_charts.py` を実行し全PASS。Sigma0/Sigma2のCox単項式でHom次元 `(2,2,2,4,4,6)`、結合律、二つの核の非分解性、短い関係の重なり零を確認した。生成矢・関係・完成矢はSigma0で6/2/8、Sigma2で8/4/12、合成したrank(3,4)の有限代数で7/3/10、product collectionで8/4/12。整数・有理数による有限例の検算であり、合成例のAS正則性、全AS分類、stack開性、相対H2条件を認証するものではない。この軽量スクリプトは通常のmath suiteにも追加したが、今回全旧suiteは再実行していない。
 
-**組版・参照確認。** 現行主論文v1.10（134頁）と別稿v0.1（25頁）をLuaLaTeX・latexmkで組版し、両PDFとSyncTeXを生成した。両方の最終logにWarning、Overfull/Underfull、文字欠落、未定義参照の報告はない。別稿は全25頁の一覧画像を確認し、mutation/Schur補元、AS入力の定義、avatarの開部分とsquare辞書、参考文献を拡大確認した。主論文は表紙、別稿への参照を置いた5頁、書誌の133頁を確認した。主論文全134頁を今回目視したわけではない。静的checkerは主論文28 manuscript files/256 labels、別稿5 manuscript files/60 labelsと7 Markdown filesでPASS。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
+**組版・参照確認。** 直前の主論文v1.10（134頁）と別稿v0.1（25頁）をLuaLaTeX・latexmkで組版し、両PDFとSyncTeXを生成した。両方の最終logにWarning、Overfull/Underfull、文字欠落、未定義参照の報告はない。別稿は全25頁の一覧画像を確認し、mutation/Schur補元、AS入力の定義、avatarの開部分とsquare辞書、参考文献を拡大確認した。主論文は表紙、別稿への参照を置いた5頁、書誌の133頁を確認した。主論文全134頁を今回目視したわけではない。静的checkerは主論文28 manuscript files/256 labels、別稿5 manuscript files/60 labelsと7 Markdown filesでPASS。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

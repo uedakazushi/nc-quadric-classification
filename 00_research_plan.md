@@ -1,8 +1,10 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-21 / v0.11。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.10、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-21 / v0.12。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.11、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **最優先目標は、Oのみを構造として指定する内在的な相対モジュライ $\mathfrak H_2$ の代数性を証明することである。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
+
+**有限foundation上の偏極認識。** 有限局所自由代数Λの中心が任意の基底変更後も基底環であり、次数移動と反Serre関手が可逆perfect双加群P,Qで与えられる場合、fppf局所でP≃Qとなる部分層を有限表示局所閉部分スキームとして構成した。RHom(P,Q)の最低次を普遍的な線束にする実際のminor方程式と、評価射のconeが零となる開条件を用いる。比較線束はdegree-line twistを吸収する。これは `papers/sections/polarization_recognition.tex` の定理であり、任意X3族に必要なfoundation・双加群表示を得ることは別問題である。
 
 **現在の到達点。** 標数零の代数閉体k上、局所有限型k-schemeのfppf siteで、Abel圏のmodule-object基底変更・descent、局所canonical compact導来圏・Serre・AZ・相対AS被覆を明記した定義を与えた。体上では既存の $\mathcal H_2$ のpointed groupoidを回復する。反Serre再構成により $\mathfrak H_2\hookrightarrow[X_3/\mathrm{PGL}_9]$ は全忠実で、対角はaffineかつ有限表示。framed実現部分層 $X_{\mathrm{as}}$ は定義され、層として $\mathfrak H_2\simeq[X_{\mathrm{as}}/\mathrm{PGL}_9]$ である。**$X_{\mathrm{as}}$ の有限型代数空間による表現可能性は未証明。** 定義と証明は `papers/sections/relative_moduli.tex`。
 
@@ -165,7 +167,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-1. **canonical反Serre偏極を有限表示で認識する。** `relative_moduli.tex` の $X_{\mathrm{as}}\subset X_3$ を出発点に、`antiserre_polarization.tex` の一定qgr・非一定表示の方向を除く条件を作る。foundationの有限な双加群複体から得る反Serre軌道と、表示されたdegree shiftを比較する。degree-line twistを許す必要があるため、正規化した普遍環に大域的な $(1)=S^{-1}[2]$ をそのまま課さない。全忠実性と対角の有限表示性は再び未解決としない。
+1. **偏極認識定理の入力となる相対foundationを構成する。** `polarization_recognition.tex` により、有限foundationと次数移動の可逆perfect双加群表示があれば、canonical反Serre条件は有限表示局所閉である。まずArtin基底のflat Abel変形にDe Deken–Lowenのgeometric helix変形定理を適用し、有限foundationとcanonical反Serre関手を作る。相対heartへの完全性、豊富性、軌道Homの基底変更を確認して、一定qgrのZhang方向との比較を閉じる。その後、任意有限型基底に同じ入力を作る。degree-line twistを忘れず、全忠実性と対角の有限表示性を再び未解決としない。
 2. **平方根と被覆の局所持上げを調べる。** `relative_as_cover.tex` の有限表示incidenceを使い、固定相対軌道環への被覆のfppf局所存在がどの基底上で成立するかを判定する。根は標識ではない。選んだ根の非持上げと、別の根も含む非存在を混同しない。有限型射のfppf像が非代数的となる同節の例を踏まえ、scheme-theoretic imageや幾何点閉包だけで済ませない。
 3. **階数3境界の相対正規形を閉じる。** 全H2の二ruling、有限foundation、相対S2交換を入力に、noncubic境界の内在族から局所モデルへ移ることを証明する。既存のcubic→全noncubic特殊化を相対H2族として認識できれば、成分問題の位相比較にも進める。
 4. **avatarと相対AS代数の比較を閉じる。** 別稿の $H\mapsto HP^n$ は幾何的stackの自己同値として証明済み。次はavatarからの有限foundationと全周期AS代数を相対的に構成し、底変更と同型層を比較する。元のproduct QP、weighted12本矢、固定構造対象の移動を区別する。$P=\mathcal O_D$ の古典点への収縮は同型類の説明だけでは足りない。内在的忘却に進むときは重み付き古典点の反例を基準にする。

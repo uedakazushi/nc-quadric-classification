@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.10
+% 日本語 LuaLaTeX。2026-11-21 / v1.11
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.10（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.11（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -87,6 +87,11 @@ noetherian な平坦 Abel 変形を与える。
 一方、pointed Abel 圏が一定であっても、次数付き環が非自明に動き、
 反 Serre 環の表示から外れる Zhang 族を構成する。
 従って全次数平坦性と $\qgr$ の構成だけでは反 Serre 偏極の認識は完了しない。
+有限 foundation と次数移動の可逆 perfect 双加群表示が得られた基底では、
+その偏極認識を有限表示局所閉部分スキームとして構成する。
+比較の最低次 Hom を普遍的な線束にする実際の方程式と、
+評価射が同型となる開条件を用いるため、非被約基底も扱える。
+任意の族にこの有限表示を与えることは別に必要である。
 
 既存の foundation 表示は滑らかな三次元 Artin スタックであり、
 全幾何点 groupoid を自己同値群ごと全充満に実現する。
@@ -441,6 +446,7 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 \input{sections/noncubic_stack}
 \input{sections/relative_koszul}
 \input{sections/relative_moduli}
+\input{sections/polarization_recognition}
 \input{sections/relative_as_cover}
 \input{sections/antiserre_polarization}
 
