@@ -111,7 +111,7 @@ Serre 関手および duality の選択自体は標識に含めない。
 二つの選択の比較は、表現する双対 functor の Yoneda 一意性による。
 \end{definition}
 
-\subsection{相対的な強い $\mathcal H_2$ 条件}
+\subsection{相対的な強い\texorpdfstring{$\mathcal H_2$}{H2}条件}
 
 相対 quadratic AS4 被覆とは、局所 affine 基底 $A$ 上の次数付き環
 $\mathcal B=T_A(V)/(I)$ であって、$\operatorname{rk}V=4$、
@@ -137,9 +137,12 @@ $\mathcal C$ と対象 $\mathcal O\in\mathcal C_T$ の対で、以下を満た�
   (\ref{eq:relative-perfect-basechange}) と相対 Serre 条件を満たす。
   これらの chart の全ての affine 基底変更上で
   $\mathbf R\operatorname{Hom}(\mathcal O,\mathcal O)\simeq A[0]$。
-\item 各幾何 fiber の標識は、定義~\ref{def:gk-rank} の意味で
-  rank one torsion-free である。fiber 圏は module-object 基底変更、
-  または下記の全軌道環の $\qgr$ によって計算し、その一致を要求する。
+\item 各幾何 fiber の対 $(\mathcal C_{\bar t},\mathcal O_{\bar t})$ は、
+  体上の定義~\ref{def:h2} の $\mathcal H_2$ に属する。
+  特に標識は定義~\ref{def:gk-rank} の意味で rank one torsion-free であり、
+  Serre 条件は fiber の全 $D^b(\mathcal C_{\bar t})$ に成立する。
+  fiber 圏は module-object 基底変更、または下記の全軌道環の
+  $\qgr$ によって計算し、その一致を要求する。
 \item $T$ の fppf 局所で、系全体の線形完全自己同値 $s$ が存在する。
   前記の chart と共通細分を取った局所 compact 導来部分で
   $s^2\simeq S^{-1}[2]$ であり、全ての affine 基底変更上で
@@ -318,7 +321,9 @@ $k$ 上の体としての値を取る評価 functor は
 この主張は任意 noetherian 基底への延長を含まない。
 \end{proposition}
 \begin{proof}
-左から右は定義の特殊化である。
+左から右は (RQ2) の幾何 fiber 条件による。
+特に元の定義における全 $D^b(\mathcal C)$ 上の Serre 条件を、
+compact 部分だけの相対 Serre 条件から推論していない。
 ここで $k$ は代数閉体なので、非空の有限型 fppf chart は $k$-点を持つ。
 従って局所存在として課した平方根、被覆、相対導来条件はその点へ引き戻せる。
 非代数閉体上で fppf 局所に根を持つという条件と、その体上で根を持つという

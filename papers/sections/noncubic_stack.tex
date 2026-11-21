@@ -626,10 +626,10 @@ $\det W$ を $u\wedge v$ で自明化する。
 全体まで $\mathcal R$ とその二次関係を延長する。
 次数一の九生成元を
 \[
- x_0=u^2,\quad x_1=uv,\quad x_2=v^2,\qquad
- p_0=uc,\quad p_1=vc,\quad
- q_0=ud,\quad q_1=vd,\quad
- z=cd,\quad z'=dc
+ \begin{gathered}
+ x_0=u^2,\quad x_1=uv,\quad x_2=v^2,\\
+ p_0=uc,\quad p_1=vc,\quad q_0=ud,\quad q_1=vd,\quad z=cd,\quad z'=dc
+ \end{gathered}
  \tag{NC-9}\label{eq:noncubic-nine-generators}
 \]
 と置く（右辺はすべて $\mathcal B_2$ の元で、
@@ -1232,7 +1232,7 @@ $d^2$ を整数係数で再構成し、
 \]
 が\emph{厳密な有理数の等式}となることを検証した。
 この計算は
-\texttt{computations/verify\_noncubic\_second\_order.py}
+\path{computations/verify_noncubic_second_order.py}
 で再現できるようにした。
 非交差・一根共有点では三組ずつ、
 二根対一致点では六組の補正を検証し、

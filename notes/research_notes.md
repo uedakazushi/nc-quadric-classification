@@ -16,11 +16,13 @@
 
 ## 内在的相対定義と認識
 
-`papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
+`papers/sections/relative_moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
 相対AZ再構成、自然自己同型Aut(Id)=A×、pointed二自己同型の消滅から、反Serre関係の射 Φ:H2→[X3/PGL9] は全忠実となる。対角はaffine有限表示であり、framed部分層X_asを用いたH2≃[X_as/PGL9]はfppf stackとして成立する。**未証明なのはX_asの有限型代数空間による表現可能性**である。有限型siteだけで定義した関手を、極限保存を示さずに任意scheme上の関手として扱わない。
 
 正規化に用いるL=(det R1)^−11(det R2)^2について、Rnorm_n=R_n⊗L^−nのshiftは元のt⊗L^−1に対応する。従って普遍正規化環へ大域的に(1)=S^−1[2]を課すのは誤りであり、基底線束twistを許すかfppf局所で比較する。
+
+**大域導来比較の候補（未証明・現行定理の入力ではない）。** heartのdescentだけからcanonicalな非有界導来圏のdescentを推論しない。flatなA→Bについて、まずD(G_B)とD(G)内のB-module対象との比較を、exact induction/forgetful随伴とBarr–Beckで証明する必要がある。その後の線形安定圏のdescentには、A. Mathew, *The Galois group of a stable homotopy theory*, Advances in Mathematics 291 (2016), 403–541, [DOI:10.1016/j.aim.2015.12.017](https://doi.org/10.1016/j.aim.2015.12.017) のCorollary 3.33（有限表示faithfully flat射のdescendability）、Corollary 3.42、Proposition 3.45が候補となる。compact生成・bounded coherent部分との比較は別に確認する。局所compact条件による現行定義は、この未完成の比較を必要としない。
 
 ## 相対被覆と偏極変形の障害
 
@@ -65,7 +67,7 @@
 | noncubicの内部次数0 Hochschild 次元 | 非交差、一根共有、一致根対でHH¹_0=1,1,2、HH²_0=3,3,5。C¹=81、C²=1400、C³=16072、rank(d¹)=80,80,79、rank(d²)=1317,1317,1316 | thm:noncubic-hh01-hh2。foundation代数のHH≥3消滅とは異なる |
 | 横断2/2/3方向の二次持上げ | 三次Hilbert locusの横断部分の各基底ベクトルと二基底の全ての和について、Schur補行列の二次障害を打ち消す有理数補正を計算し整数行列で正確に検査。全横断方向がk[t]/(t³)上で三次成分平坦な2-jetを持つ | prop:noncubic-transverse-second-order。全次数の二次flatnessとflat Abel実現は確立。3次以上の形式積分と相対H2認識は未証明 |
 | noncubicのLie接方向と三次Hilbert条件 | disjoint, shared, equalの三点でPGL9軌道+六係数のrank81（軌道80/80/79、交点5/5/4）。三次関係L:V⊗J→(V²/J)⊗Vはrank176、kernel328/cokernel49。法101の全16072線形条件rank1317/1317/1316。標数零で接次元=83/83/84（有理核の全整数検証）、三次条件の接空間を群+係数81方向で割った次元は正確に2/2/3（実際の相対H2変形かは未証明） | prop:noncubic-third-degree-tangent。局所SymPy/NumPy/Numba exact演算を実行。全次数平坦性は相対Koszul節により確立。内在H2の接空間とは未同定 |
-| 関係式像の構成可能性と既約閉包 | 2つの有限型chartの像の和はH2の全幾何関係像。Chevalleyで構成可能。cubic枠束像の被約閉包Z₂はPGL9不変既約有限型、全noncubicは反Serre二次族による特殊化で[Z₂/PGL9]に入る | prop:h2-constructible-relations-and-irreducible-closure。Z₂の全点がH2とは未証明。有限表示の内在的X_asとは別 |
+| 関係式像の構成可能性と既約閉包 | 2つの有限型chartの像の和はH2の全幾何関係像。Chevalleyで構成可能。cubic枠束像の被約閉包Z₂はPGL9不変既約有限型、全noncubicは反Serre二次族による特殊化で[Z₂/PGL9]に入る | prop:h2-constructible-relations-and-irreducible-closure。Z₂の全点がH2とは未証明。表現可能性未証明の内在的部分層X_asとは別 |
 | noncubicの相対heart・相対orbit | `R`の`qgr R`を構造対象付きnoetherian Abel heartとして任意のNoetherian基底上に定義。étale局所に`qgr B^σ≃qgr R`。weighted P(1,1,2)上`RHom(B,tⁿB)=B₂ₙ[0]`が全n・底変更に整合（`cor:noncubic-relative-orbit-hom`, `prop:noncubic-relative-heart-veronese`） | 任意の内在的noncubic族のこの相対heartへの帰着、全flat coherent対象の相対双対・AZ/AS等 |
 | cubicの相対反Serre環 | smooth proper foundationの逆Serre双加群から`RHom(e₀Λ,tⁿe₀Λ)`。cubic開では全nでrank(2n+1)²局所自由 | 任意のH2族からの相対foundation抽出 |
 | 共通Grassmann射と実際の特殊化 | cubic開Cとnoncubic表示[P/G]の双方から`[Gr(56,81)/PGL9]`へ射。各noncubic点へのfoundation直線族も全次数平坦な反Serre環の族を与える | 両chartの相対的な貼合せとfull内在H2との同値 |
@@ -238,7 +240,7 @@ python3 computations/verify_antiserre_polarization.py
 latexmk
 ```
 
-**組版・参照確認。** 統合途中の117頁LuaLaTeX組版とSyncTeX生成は成功した。今回の新節を全て含むv1.9の再組版と画像確認は統合後に実施する。静的checkerの最新結果は確定時に更新する。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施である。
+**組版・参照確認。** 全追加節を統合したv1.9をLuaLaTeXで組版し、134頁のPDFとSyncTeXを生成した。最終logにはWarning、Overfull/Underfull、文字欠落、未定義参照の報告がない。表紙・目次、既存の修正箇所、新節を含む選択22頁をPNGで確認し、最終の定義修正後は117–131頁を再描画して確認した。全134頁の目視確認を意味しない。静的checkerは28 manuscript files、256 labels、158 citation uses、7 Markdown filesでPASS。PDF・ログ・中間生成物は追跡しない。VS Code UI、Cloud環境の作成や新規task起動は未実施である。
 
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 

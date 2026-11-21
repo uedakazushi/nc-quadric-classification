@@ -3,6 +3,9 @@
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
 \usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs}
+% rsfs の小さな添字も、代替サイズではなく設計フォントの拡縮で組む。
+\DeclareFontFamily{U}{rsfs}{\skewchar\font127}
+\DeclareFontShape{U}{rsfs}{m}{n}{<-6> rsfs5 <6-8> rsfs7 <8-> rsfs10}{}
 \usepackage[margin=25mm]{geometry}
 \usepackage{booktabs,enumitem}
 \usepackage[unicode,pdfusetitle,colorlinks=true,
