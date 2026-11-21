@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-21 / 運用v0.3、数学原稿v1.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-21 / 運用v0.3、数学原稿v1.4。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 ## Cloud Codexで続ける
 
@@ -27,6 +27,9 @@
 - **noncubic の相対 Abel heart：** 降下した反Serre環 `R` の `qgr R` から、平方根を大域的に選ばない構造対象付き相対 noetherian Abel 圏を構成した。étale 局所には既存の `qgr B^σ` に Veronese 同値で一致し、中心 Clifford order の perfect Serre 双対を使って `RHom(O,tⁿO)=B₂ₙ[0]` を全次数で計算できる（[noncubic 証明節](papers/sections/noncubic_stack.tex)）。全内在的 `\mathfrak H_2` と同一視するための相対 AZ/AS 条件・任意族の正規形はなお未証明。
 - noncubic上の選択不要な反Serre環 `R_n=B_{2n}⊗(det W)^−n`、積 `a⋆b=aιⁿ(b)` は`[P/G]`へ降下する。cubic開でもfoundationの相対逆Serre双加群から同じ階数の環を構成し、**双方で `[Gr(56,81)/PGL9]` への射**を与える。各noncubic点への既存のdg退化は、全次数平坦な反Serre環の実際の一径数族にもなる（[証明節](papers/sections/foundation_stack.tex)）。
 - 反Serre環の候補 `[X_as/PGL9]` では、rank9・rank25の行列式線束によりdegree-scalar gerbeを中立化できる。ただし相対実現locus X_as の有限表示、Serre/AZ再構成と全H2の族との同定は未証明。
+- **二次関係は全反Serre環を決定する。** 一般の二次環の偶数Veroneseに対する相対的な直接証明を用いて、cubic・noncubic・全特殊化族で $\mathcal R=T(\mathcal R_1)/(\mathcal J)$、rank($\mathcal R_1$)=9、rank($\mathcal J$)=56を証明。元の一般定理はPolishchuk–Positselski既知であり、今回の貢献は相対族・明示構成への適用（[foundation証明](papers/sections/foundation_stack.tex)）。
+- **noncubic 六係数の固定 Grassmann affine cell：** $\mathcal R_1$ の標準九基底の積から25個のunit pivotを選び、残り56列の関係係数が多項式であることを示した。二つの平方積から二形式の六係数が回復できるため、フレーム付き六次元表示 $\mathbb A^6$ は固定Grassmann cellへ閉埋込み、非退化パラメータ開 $P$ は局所閉埋込み（[命題](papers/sections/noncubic_stack.tex)、[厳密計算](computations/verify_noncubic_antiserre_pivots.py)）。群商が内在的モジュライと同値であるとはまだ言わない。
+- **有限型既約な代数的包絡：** cubic の関係式像の被約閉包 $Z_2\subset\operatorname{Gr}(56,81)$ はPGL9不変・既約。商 $[Z_2/\operatorname{PGL}_9]$ は有限型Artinスタックで、全H2幾何点を含み、cubic像が稠密。全幾何点の関係像は有限型2 chartの像の構成可能な和。しかし $Z_2$ にH2でない点が含まれる可能性があるため、まだ $\mathfrak H_2$ ではない。
 - 可換quadric上でも、選んだSerre根が固定したabelian一次変形へ持ち上がらない例を構成した。自己同値がHochschild変形類を保つことが必要である。この例は相対H2の非開性や別の根の非存在を意味せず、構成した変形がH2の族であるとも主張しない。
 
 **全H2の内在的なArtinスタックの完成は、これらの表示スタックと体上の全充満なgroupoidの構成と区別する。** 相対ruling交換とS2の整合性は証明済み。現在の核心は、非被約基底を含む内在的H2実現locusの有限表示、相対Serre/AZ再構成と表示の認識・降下である。実現集合の誘導位相と、構成すべき内在的相対モジュライの位相との一致も、この比較に含める。
@@ -81,12 +84,13 @@ $$
 | [notes/ore_quadric_deformations.md](notes/ore_quadric_deformations.md) | 相対変形を試すOre族の証明稿。相対CY・Serre・H2認識は未証明 |
 | [notes/literature.md](notes/literature.md) | 文献の版・仮定・適用範囲・リンク |
 | [computations/verify_reducible_quadruples.py](computations/verify_reducible_quadruples.py) | 全非整曲線型の三次関係・四次テンソル・周期平方・必要な貼合せの記号恒等式 |
+| [computations/verify_noncubic_antiserre_pivots.py](computations/verify_noncubic_antiserre_pivots.py) | noncubic反Serre環の9生成元・25 unit pivotと六係数の多項式回収を正確に検算 |
 | [computations/verify_stack_symmetries.py](computations/verify_stack_symmetries.py) | noncubic慣性の射影群関係、χの共変性、局所対合・正則切断の記号恒等式 |
 | [computations/verify_quadric.py](computations/verify_quadric.py) | Segre積・Ore正規性・低次数階数の厳密演算による再現 |
 
 ## 再生成
 
-現行v1.3原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数は別途代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
+現行v1.4原稿の**変更後LuaLaTeX組版・SyncTeX生成は未実施**。直前のv1.2原稿については97頁のLuaLaTeX組版・SyncTeX生成がPASS。cubic開部分の稠密性、各noncubic点への特殊化、相対smooth proper性の証明は従前に点検した。今回のClifford階数・trace・反Serre次数の階数と、新たな25 pivot・六係数回収を代数的・記号的に照合したが、全相対heartの再構成はまだ証明していない。計算資産は変更しておらず、同日の厳密計算PASSを保持し、今回の成分・特殊化証明の確認と区別する。証明の独立点検と画像表示の実施範囲は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
 
 repoルートで実行する。
 
