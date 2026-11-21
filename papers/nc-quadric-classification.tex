@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-21 / v1.19
+% 日本語 LuaLaTeX。2026-11-21 / v1.20
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月21日\quad v1.19（全対象の同値類分類・相対表示研究）}
+\date{2026年11月21日\quad v1.20（全対象の同値類分類・相対表示研究）}
 
 \begin{document}
 \maketitle
@@ -119,8 +119,12 @@ cubic AS 正則となる。さらに標準 cubic 解消を相対的に帰納し�
 その四次重なりから canonical な六次元関係束を構成し、
 Artin 段階での有限判定と Krull 交叉定理により
 可換点の Zariski 近傍で全次数平坦・正則正規二次切断を備えた
-homological AS4 被覆を得る。ただし左右 Noetherian 性と
-相対 tails heart・AZ 豊富性は残る。
+homological AS4 被覆を得る。
+さらに可換 Segre 環を特殊ファイバーとする完備局所変形では、
+$\mathfrak m$-進付随次数環と固定内部次数ごとの完備性により
+環が左右 Noetherian となるため、形式完備近傍では
+真正の相対 Noetherian AS4 被覆も得られる。
+有限型開全体の Noetherian 性、相対 tails heart・AZ 豊富性は残る。
 二周期 cubic 列の相対 canonical hull を
 構成し、全 Artin 変形に同じ根の相対 AS4 被覆を与える。
 適合表示を全有限型基底変更上の系へ昇格させることで、可換点での

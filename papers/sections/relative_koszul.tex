@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.9
+% 2026-11-21 / v1.20
 \section{三次平坦性から全次数平坦性への相対的な認識}
 \label{sec:relative-koszul}
 
@@ -153,6 +153,60 @@ $\mathcal R_{m-i}\otimes\mathcal K_i$ からなる有限な局所自由複体で
 アフィン開上の有界な完全射影複体は分裂するため、
 これは局所分裂完全であり、任意の底変更後も完全である。
 右 Koszul 複体についても同じ証明を適用する。
+\end{proof}
+
+
+\begin{lemma}[完備局所変形の可換特殊ファイバーによる Noetherian 判定]
+\label{lem:complete-local-commutative-fibre-noetherian}
+$(R,\mathfrak m,\kappa)$ を完備 Noetherian 局所環とし、
+$C=\bigoplus_{d\ge0}C_d$ を $C_0=R$ の
+非負次数付き結合的 $R$-代数とする。
+$R$ は中心に入り、全ての $C_d$ は有限自由 $R$-加群とする。
+特殊ファイバー $C_\kappa=C\otimes_R\kappa$ が
+有限生成\emph{可換} $\kappa$-代数なら、
+$C$ は左右 Noetherian である。
+\end{lemma}
+\begin{proof}
+各斉次次数に $\mathfrak m$-進フィルトレーションを入れる。
+有限自由性から、環として
+\[
+ \operatorname{gr}_{\mathfrak m} C
+ \simeq \operatorname{gr}_{\mathfrak m}R
+               \otimes_\kappa C_\kappa
+ \tag{Complete-gr}\label{eq:complete-local-gr}
+\]
+となる。右辺は可換であり、
+$\operatorname{gr}_{\mathfrak m}R$ は有限生成
+可換 $\kappa$-代数、$C_\kappa$ も可換有限生成なので、
+この付随次数環は Noetherian である。
+
+任意の斉次右イデアル $I$ に
+$I\cap\mathfrak m^pC$ による誘導フィルトレーションを入れる。
+$\operatorname{gr}_{\mathfrak m}I$ は上の可換 Noetherian 環の
+二重斉次イデアルだから、有限個の二重斉次初期記号で生成される。
+それらを $I$ の斉次元 $x_1,\ldots,x_r$ に持ち上げる。
+内部次数 $d$ の $x\in I$ について、
+初期記号を $x_i$ の初期記号の右線形結合で表し、
+係数を $C_{d-\deg x_i}$ に持ち上げて差を取ると
+$\mathfrak m$-位数が厳密に増える。
+繰り返すことで係数の $\mathfrak m$-位数が無限に増す級数を得る。
+各固定次数 $C_{d-\deg x_i}$ は有限自由、
+$R$ は完備だから係数級数が収束し、
+$\bigcap_p\mathfrak m^pC_d=0$ より
+$x=\sum_i x_i b_i$ を得る。
+したがって全ての斉次右イデアルは有限生成である。
+この議論は各\emph{固定次数}で完備性を使うのであり、
+無限直和 $C$ 自体が $\mathfrak m$-進完備であると
+仮定していない。
+
+任意の右イデアル $J$ について、
+内部次数の増加フィルトレーション
+$F_nC=\bigoplus_{d\le n}C_d$ を使う。
+$\operatorname{gr}_FJ$ は $C$ の斉次右イデアルで
+有限生成だから、その初期記号を $J$ に持ち上げ、
+最高内部次数を減らす有限帰納法により $J$ も有限生成となる。
+これで右 Noetherian 性を得る。
+左イデアルについて全く同じ議論を行えばよい。
 \end{proof}
 
 \begin{corollary}[全幾何ファイバーが $\HH$ 型である関係式族]
