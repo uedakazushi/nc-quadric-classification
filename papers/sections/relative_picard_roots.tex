@@ -50,24 +50,8 @@ $P$ の $C$ への作用があり、その構成は任意の底変更および�
 作用の符号を \eqref{eq:field-eta} と合わせて $\eta$ と書く。
 \end{proposition}
 
-\begin{proof}[相対作用の構成]
-\cite[p.~355, Proposition 5.5 and Corollary 5.7]{ArtinTateVanDenBergh1991} は初めから
-任意の基底 $S$ 上の因子の族 $C/S$ を扱う。
-相対多重次数零の直線束 $a$ と section $p:S\to C$ に対し、
-$a\otimes I_p$ が局所的にある一意な section $p'$ の ideal と同型になることを示す。
-具体的には
-\[
- \pi_*\mathcal Hom(a\otimes I_p,\OO_C)
-\]
-が階数一で、その局所生成射が単射になり、余核が section の構造層となる。
-一意性によりこの操作が貼り合わさり、任意の底変更と両立する群作用となる。
-原典の (5.8) の $\eta_a$ はこの作用に $a^{-1}$ を入れた符号である。
-したがって smooth elliptic fiber 上では usual translation となり、
-Lemma 5.10(iii) が \eqref{eq:field-eta} を与える。
-ideal と tensor による一意な構成なので、曲線族の同型への自然性も成り立つ。
-
-Corollary 5.7 は相対的である一方、Lemma 5.10(iii) の記述は体上である。
-以下では、この違いを埋める普遍基底上の議論を明記する。
+\begin{proof}
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{被約な普遍基底で証明してから底変更する}
@@ -110,35 +94,7 @@ canonical 四周期
 \end{lemma}
 
 \begin{proof}
-固定した $i,j$ に対し、$D_{ij}$ は有限個の tensor 積と三次関係からなる
-有限自由加群間の行列の余核として提示される。
-全ての幾何ファイバーは cubic AS 正則で、$\dim D_{ij}$ は一定である。
-従って提示行列のファイバー階数は一定である。
-適切な階数の小行列式が単元となる近傍で行列を掃き出すと、
-余分な block の全成分は全ての点で零となる。
-$S$ は被約なので、その block 自体が零である。
-従って余核は局所自由で、提示は局所的に標準形へ分裂する。
-
-標準 cubic 複体の固定内部次数は有限局所自由複体となり、
-全幾何ファイバーで完全である。
-そのような有限複体は局所的に分裂完全であるから、任意底変更後も完全である。
-この解消を使って定義される kernels、images および四次の overlap も
-直和因子となり、任意底変更と両立する。
-双対複体の固定内部次数も有限局所自由複体である。
-各幾何ファイバーの AS 双対により、その各 cohomology の次元は一定であり、
-これと各項の階数から各微分の階数も一定となる。
-被約性を用いた同じ行列の標準形により、像・核・cohomology は局所直和因子となり、
-その形成は任意底変更と両立する。
-特に右単純対象 $S_i$ と $P_j=e_jD$ について
-\[
- \operatorname{Ext}^q_{\operatorname{Gr}D}(S_i,P_j)=0
- \quad\text{unless }q=3,\ j=i+4,
- \qquad
- \operatorname{Ext}^3(S_i,P_{i+4})\simeq W_i^\vee.
-\]
-最後の同定は解消の最高項への Hom から得られる。
-各固定次数ごとの議論で十分であり、無限個の次数を同時に自明化する
-一つの開被覆は必要ない。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 普遍 point curve を $\pi:C\to S$ とする。
@@ -169,13 +125,7 @@ $X$ を被約スキーム、$Y\to X$ を相対 diagonal が immersion である�
 \end{lemma}
 
 \begin{proof}
-equalizer $E\to X$ は diagonal の底変更なので immersion である。
-仮定よりその像は $|X|$ 全体である。
-従って局所的には $X$ の全ての点で零となる ideal による閉 immersion であり、
-$X$ の被約性からその ideal は零である。
-相対 Picard の diagonal は quasi-compact immersion である
-\cite[Lemma 108.9.2]{StacksRelativePicard}。
-相対 Picard 全体の separatedness は必要ない。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{lemma}[普遍 helix の相対的な差]\label{lem:relative-helix-difference}
@@ -188,15 +138,7 @@ $N=[\mathcal L_2\mathcal L_0^{-1}]$ は $P=\Pic^0_{C/S}$ の section であり�
 \end{lemma}
 
 \begin{proof}
-各幾何ファイバーの admissibility により、$\mathcal L_2$ と $\mathcal L_0$ の多重次数は等しい。
-従って $N$ は $P$ に属する。
-体上の elliptic helix は
-$\mathcal L_i\mathcal L_{i+1}^{-1}\mathcal L_{i+2}^{-1}\mathcal L_{i+3}\simeq\OO_C$
-を満たすので、隣接する二つの差
-$[\mathcal L_{i+2}\mathcal L_i^{-1}]$ と $[\mathcal L_{i+3}\mathcal L_{i+1}^{-1}]$ は等しい。
-全ての差は $N$ に等しく、被約な $S$ に補題~\ref{lem:reduced-equalizer} を適用して
-\eqref{eq:helix-difference} を相対的に得る。
-有限個の $i$ についてこの議論を行えば、以下の二周期の構成には十分である。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{平方根の étale パラメータ空間}
@@ -217,32 +159,7 @@ $a^{-2}=N$、すなわち $a^2=N^{-1}$ を満たす。
 \end{lemma}
 
 \begin{proof}
-\eqref{eq:curve-sequence} と曲線の相対 Picard の一般定理により
-$\Pic_{C/S}$ は代数空間で局所有限表示であり、相対次元一の曲線であるため滑らかである
-\cite[Lemma 108.9.5]{StacksRelativePicard}。
-相対 Picard は quasi-separated でもあるため、
-\cite[Appendix A, Lemma A.1]{HolmesMolchoOrecchiaPoiret2023} を適用できる。
-その fiberwise identity component $P$ は一意な開部分群である。
-開部分と幾何ファイバーの恒等成分による特徴付けの一意性から、任意の底変更と両立する。
-各ファイバーの接空間は $H^1(C_s,\OO_{C_s})$ なので相対次元は一である。
-
-ここで多重次数零と identity component の一致は非被約ファイバーも含む。
-体上で nilradical を $I\subset\OO_C$ とすると、標数零の有限な対数級数により
-$1+I\simeq I$ が成り立つ。
-$H^2(C,I)=0$ なので $\Pic C\to\Pic C_{\mathrm{red}}$ は全射であり、
-その核は $H^1(C,I)$ から来る連結な加法群である。
-被約曲線では正規化と conductor の単元の完全列により、
-多重次数零の部分は、正規化の各成分の Jacobian の積の
-連結な torus・unipotent 群による拡大である。
-従って多重次数零の部分はちょうど連結成分 $\Pic^0(C)$ となる。
-相対的には滑らかな群代数空間の fiberwise identity component の開部分群を取っている。
-
-二倍写像の相対微分は群の単位元で $2\,\mathrm{id}$、他の点ではその平行移動である。
-$2$ は可逆なので、滑らかな相対一次元空間の間の $[-2]$ は étale となる。
-各幾何ファイバーでその像は開部分群である。
-ファイバー $P_s$ は連結なので、この像は全体である。
-従って $[-2]$ は全射である。
-\eqref{eq:T} の主張は底変更から従う。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 $T$ は $k$ 上滑らかで被約である。
@@ -273,47 +190,7 @@ $T$ の Zariski 開被覆上で同型
 \end{lemma}
 
 \begin{proof}
-全幾何点で \eqref{eq:field-eta} と $\deg\mathcal L_i=2$ により
-\[
- [\sigma^*\mathcal L_i]=[\mathcal L_i]a^{-2}=[\mathcal L_i]N=[\mathcal L_{i+2}]
-\]
-である。
-被約な $T$ 上で補題~\ref{lem:reduced-equalizer} を適用すると、これは
-相対 Picard 空間の section としての等式である。
-
-従って $\sigma^*\mathcal L_i\otimes\mathcal L_{i+2}^{-1}$ は基底の直線束の引戻しである。
-詳しくは、相対 Picard class が零なので fppf 局所に自明となる。
-$\pi_*\OO_{C_T}=\OO_T$ が普遍的に成り立つことから、その自明化の変換関数は
-基底から来るため、直線束そのものが基底へ降下する。
-四つの比較直線束を Zariski 局所に自明化して\eqref{eq:epsilons} を得る。
-
-$\pi_*\mathcal L_i$ は $V_i\otimes\OO_T$ と同一視される。
-これは全ファイバーで $H^1(\mathcal L_i)=0$、$h^0(\mathcal L_i)=2$ であり、
-普遍 evaluation との比較がファイバー上同型になることから従う。
-\eqref{eq:epsilons} による切断の引戻しは可逆写像
-$\beta_i:V_i\to V_{i+2}$ を与える。
-三次関係は
-\[
- R_i=\ker\left(V_i\otimes V_{i+1}\otimes V_{i+2}
-   \longrightarrow\pi_*(\mathcal L_i\mathcal L_{i+1}\mathcal L_{i+2})\right)
-\]
-であるから、$\beta_0,\ldots,\beta_3$ は $R_0,R_1$ を $R_2,R_3$ へ移す。
-従ってその tensor 積は $W_0$ を $W_2$ へ移す。
-四周期により $\beta_{i+4}=\beta_i$ と延長する。
-巡回を $c$ と書けば、対応する tensor 積の射について
-\[
- c(\beta_0\otimes\beta_1\otimes\beta_2\otimes\beta_3)
-  =(\beta_1\otimes\beta_2\otimes\beta_3\otimes\beta_0)c
-\]
-が成り立つ。
-従って $W_0$ を $W_2$ へ移すことから、巡回された全ての $W_i$、
-従って全ての三次関係を保つ。
-逆写像も同じ性質を持ち、\eqref{eq:beta} を得る。
-最初の隣接 pair に対する曲線の作用は、構成から $\sigma$ の作用である。
-三点 correspondence の二つの隣接 pair への射影はスキーム同型であり、
-代数同型による作用と可換する。
-この自然性により、全ての添字で同じ $\sigma$ が誘導される。
-従って四周期に延長した $\beta$ の平方も、切断上の $\sigma^{2*}$ と projectively 一致する。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \subsection{平方と canonical 四周期の比較}
@@ -337,110 +214,7 @@ $\beta_i:V_i\to V_{i+2}$ を与える。
 \end{theorem}
 
 \begin{proof}
-\emph{(a) 四周期と Picard の符号.}
-$\eta$ は可換群の作用なので、$T$ 上で厳密に
-\[
- \sigma^2=\eta(a)^2=\eta(a^2)=\eta(N^{-1})
- \tag{PR-11}\label{eq:sigma-square}
-\]
-である。
-ただしこの式だけで canonical $\theta$ との同定を済ませない。
-その同定には次の tensor の比較を使う。
-
-\emph{(b) smooth elliptic locus での tensor 比較.}
-$S_{\mathrm{sm}}\subset S$ を $C/S$ が滑らかな曲線の locus とする。
-これは非空開部分で、既約な $S$ において稠密である。
-その上の各幾何点では、補題~\ref{lem:elliptic-period-square} の次の計算を使う。
-原点を選び、$\mathcal L_i$ の次数二の因子和を $b_i$ と書くと
-$b_{i+2}-b_i$ は一定である。
-$\sigma$ は $2v=b_i-b_{i+2}$ を満たす平行移動 $p\mapsto p+v$ である。
-$\mathcal L_{i+2}$ の二重被覆の involution を
-$\iota_{i+2}(p)=b_{i+2}-p$ とする。
-
-$w_i$ を一般点 $p$ の $\mathcal L_{i+2}$ の評価で縮約し、
-$p'=\iota_{i+2}(p)$ を使って二つの rank-one summand に分ける。
-隣接二因子の縮約の非零性により、その両係数は非零である。
-$w_{i+2}$ が $w_i$ の二回巡回であることから、
-$\theta_i$ による $\mathcal L_{i+4}$ の $p$ における評価の引戻しは
-$\mathcal L_i$ の $p'$ における評価である。
-後者は $\mathcal L_i$ の involution を使うと
-\[
- \iota_i(p')=p+b_i-b_{i+2}=p+2v
-\]
-における評価と同じである。
-従って $\theta_i$ と $\beta_{i+2}\beta_i$ は $V_i$ 上で projectively 等しい。
-この比較は切断の引戻しという \eqref{eq:epsilons} の向きと一致する。
-
-\emph{(c) 普遍基底上での延長.}
-$T\to S$ は étale なので、$T_{\mathrm{sm}}$ は $T$ の各既約成分で稠密である。
-実際、$T$ は滑らかであり、その各成分の像は $S$ の非空開部分を含む。
-四つの projective linear map
-\[
- [\beta_{i+2}\beta_i],\ [\theta_i]
- \quad(i\bmod4)
-\]
-は $\PGL(V_i,V_{i+4})$ という separated な空間への射である。
-(b) により $T_{\mathrm{sm}}$ の全幾何点で一致し、
-$T$ は被約なので、全 $T$ で一致する。
-ここで被約なのは普遍根の基底 $T$ である。
-任意の非被約な底変更先で、幾何ファイバーの一致だけから結論しているのではない。
-
-\emph{(d) 頂点スカラーの明示.}
-したがって一意な単元 $c_i\in\OO_T^\times$ があり、
-\[
- \beta_{i+2}\beta_i=c_i\theta_i,
- \qquad c_{i+4}=c_i
-\]
-となる。
-$u_0=1$、$u_{i+1}=c_i^{-1}u_i$ と全整数について再帰的に定める。
-各 $u_i$ は有限積からなる単元である。
-すると
-\[
- \delta|_{D_{ij}}=\frac{u_i}{u_j}\,\mathrm{id}_{D_{ij}}
-\]
-は代数自己同型で、一次生成性により \eqref{eq:beta-square} が成り立つ。
-右加群の $i$ 成分を $u_i$ 倍する射は、$\delta$ による引戻しと恒等関手の自然同型を与える。
-従って tails 上の平方同型を得る。
-
-\emph{(e) 基底上の Serre 双加群比較.}
-定理~\ref{thm:relative-cubic-tails-tilting} により、連続四項の直和は
-相対 compact tilting generator となる。
-その有限 foundation 代数を $\Lambda$ とし、
-$s^2$ と相対反 Serre 関手 $S^{-1}[2]$ を表す
-可逆 perfect $\Lambda$-双加群を $P,Q$ とする。
-$P$ は実際の次数移動 $s=(2)_\beta$ を標準 dg Morita 同値で移したものである。
-$Q$ は $\Lambda$ の相対 Serre 双加群の逆と $[2]$ から得られる。
-有限 foundation の相対 smooth proper 性
-（補題~\ref{lem:foundation-relative-smooth-proper}）により、
-これらは基底変更と整合する可逆 perfect 双加群である。
-
-全ての幾何点で (a)--(d) が成り立つので、
-\emph{ここで構成した同じ $\beta$} に
-命題~\ref{prop:admissible-period-h2} を適用できる。
-従って $P_{\bar t}\simeq Q_{\bar t}$ である。
-これは各ファイバーに何らかの根が存在するという主張より強く、
-普遍次数移動 $s$ の平方そのものの比較である。
-
-任意の底変更後にも $Z(\Lambda)=\mathcal O_T$ である。
-実際、中心元は四つの頂点で scalar であり、
-隣接する忠実な有限局所自由 Hom 加群との可換性により全 scalar が等しい。
-従って定理~\ref{thm:bimodule-line-comparison} を $P,Q$ に適用できる。
-比較 locus $T_{P\sim Q}\hookrightarrow T$ は有限表示局所閉 immersion で、
-全ての幾何点を含む。
-$T$ は被約なので、補題~\ref{lem:reduced-equalizer} の proof と同じ ideal の議論により
-$T_{P\sim Q}=T$ となる。
-この locus の構成は、最低次 Hom の行列を基底環で零にする条件を含むので、
-非被約基底に対しても有効な scheme-theoretic 比較である。
-
-したがって比較線束
-\[
- \ell=H^0\mathbf R\mathcal Hom_{\Lambda^e}(P,Q)
-\]
-と評価同型 $P\otimes\ell\simeq Q$ を得る。
-さらに Zariski 局所に $\ell$ を自明化すれば
-\eqref{eq:Serre-square} が成り立つ。
-全ての射は普遍根の基底上に構成されているため、
-任意の非被約基底への引戻し後も同じ同型が成り立つ。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 
@@ -482,11 +256,7 @@ $S$ を覆う有限個の affine scheme $T_\alpha$ と étale 射 $T_\alpha\to S
 \end{corollary}
 
 \begin{proof}
-$T\to S$ は étale 全射であり、その scheme chart の affine open の像は
-$S$ を開被覆する。$S$ は準コンパクトなので有限個を選べる。
-各 affine chart は $S$ 上有限型に取れる。
-四つの Picard 比較直線束と Serre 比較線束 $\ell$ を
-有限個の affine open で自明化し、必要な被覆を細分する。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \begin{corollary}[指定した Picard 根の全 Artin 持上げ]\label{cor:all-artin-root}
@@ -499,10 +269,7 @@ $x\in S(k)$ と $a_x\in\Pic^0(C_x)$、$a_x^{-2}=N_x$ を固定する。
 \end{corollary}
 
 \begin{proof}
-étale 射は nilpotent closed immersion に対して形式的 étale である。
-閉点の持上げ $t$ から $\operatorname{Spec} A\to T$ が一意に得られる。
-さらに選んだ Zariski 近傍は $t$ を含むので、$\operatorname{Spec} A$ 全体がその近傍へ入る。
-そこで構成した \eqref{eq:beta-square} と \eqref{eq:Serre-square} を引き戻す。
+完全な証明は相対モジュライ論文 \cite[\texttt{relative_picard_roots}]{QuadricModuli2026} に置く。
 \end{proof}
 
 \paragraph{Abelian 変形と atlas への適用.}

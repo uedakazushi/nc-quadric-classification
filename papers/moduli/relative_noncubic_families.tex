@@ -1,0 +1,505 @@
+% !TEX root = ../nc-quadric-moduli.tex
+% 2026-11-21 / v1.36
+\section{明示 noncubic 表示族の相対内在的実現}
+\label{sec:relative-noncubic-families}
+
+第~\cite[\texttt{sec:noncubic-stack}]{QuadricIntrinsic2026}節の中央二重平方族について、
+canonical compact 圏と任意の Noetherian 基底変更を含む全相対条件を確認する。
+重み付き射影スタック上の Clifford 代数として heart を表し、
+その対角加群の perfectness を幾何ファイバーから持ち上げる。
+これにより表示スタック $\mathfrak N^{\mathrm{pres}}$ から
+内在的 $\mathfrak H_2$ への実際の射を得る。
+全ての基底上平坦 coherent 対象が compact であるという追加条件は用いない。
+任意の noncubic 特殊ファイバーを持つ相対族の正規形や、
+cubic を横断する開近傍の効果性とは区別する。
+
+\subsection{中央有限代数に対する fiberwise perfectness の持上げ}
+
+\begin{lemma}\label{lem:nc-fiber-perfect}
+$R\to D$ を Noetherian 可換環の準同型、$H$ を中心に $D$ の作用する
+有限 $D$-代数、$M$ を有限 $D$-加群である右 $H$-加群とする。
+$H,M$ は $R$ 上平坦と仮定する。
+$\mathfrak q\in\operatorname{Spec} D$、$\mathfrak p=\mathfrak q\cap R$ とする。
+対応する fiber の点において
+\[
+ M\otimes_R\kappa(\mathfrak p)
+ \quad\text{が}\quad
+ H\otimes_R\kappa(\mathfrak p)\text{ 上 perfect}
+\]
+ならば、$M$ は $\mathfrak q$ のある近傍で $H$ 上 perfect である。
+\end{lemma}
+
+\begin{proof}
+まず $R$ を $R_{\mathfrak p}$、$D$ を $D_{\mathfrak q}$ に替える。
+さらに $D$ の henselization へ忠実平坦に移る。
+中心に沿う平坦 tensor は $R$-Tor を計算する複体と可換するので、
+$H,M$ の $R$-平坦性はこれらの変更後も保たれる。
+$D$ は Noetherian henselian 局所環、極大イデアルを $\mathfrak n$ と書く。
+$R$ の極大イデアル $\mathfrak pR_{\mathfrak p}$ を以下 $\mathfrak m$ と書けば、
+$\mathfrak mD\subset\mathfrak n$ である。
+
+有限 $D$-代数 $H$ は semiperfect である。
+この標準事実は非可換 $H$ にも適用される。
+実際、$\mathfrak nH\subset\operatorname{Jac}(H)$ であり、$H/\mathfrak nH$ は有限次元代数である。
+同代数の idempotent の lift $e\in H$ を取り、有限 $D$-生成系上の左乗法行列に
+determinant trick を用いれば、$e$ を消す monic 多項式で、剰余が
+$t^a(t-1)^b$ となるものを得る。
+Hensel 分解と中国剰余定理により $e$ の多項式として idempotent を持ち上げられる。
+corner 代数へ帰納的に適用して完全直交系を持ち上げると、
+有限生成 $H$-加群は有限生成 projective cover を持つ。
+
+有限自由右 $H$-加群による $M$ の部分解消を、fiber 上の射影次元以上の長さ $n$ まで取る。
+$H$ は Noetherian（有限 $D$-加群）なので全 syzygy は有限である。
+各段で商が $R$-平坦であることから、帰納的に全 syzygy も $R$-平坦となる。
+従ってこの部分解消の fiber は完全であり、$n$ 番目の syzygy $K$ に対し
+\[
+ \overline K=K/\mathfrak mK
+\]
+は $\overline H=H/\mathfrak mH$ 上 projective である。
+fiber の perfectness は幾何的剰余体への忠実平坦拡大でも検出できる。
+
+最小 projective cover $P\twoheadrightarrow K$ を取り、核を $L$ とする。
+$\mathfrak mH\subset\operatorname{Jac}(H)$ なので
+\[
+ \operatorname{Jac}(\overline H)=\operatorname{Jac}(H)/\mathfrak mH.
+\]
+したがって $\overline P\twoheadrightarrow\overline K$ も最小 projective cover である。
+$\overline K$ 自身が projective なのでこれは同型となる。
+一方 $K$ の $R$-平坦性から、$0\to L\to P\to K\to0$ を
+$\kappa(\mathfrak p)$ へ tensor した列は左端でも完全である。
+従って $L/\mathfrak mL=0$。
+$L$ は有限 $D$-加群で $\mathfrak mD\subset\mathfrak n$ だから、Nakayama により $L=0$。
+従って $K$ は projective であり、$M$ は有限 projective 解消を持つ。
+
+有限表示加群の projectivity は中心に沿う忠実平坦拡大から降下するので、
+henselization の前の $D_{\mathfrak q}$ 上でも $K$ は projective である。
+有限表示と splitting の有限個の係数を広げれば、同じ性質が $\mathfrak q$ の近傍で成立する。
+\end{proof}
+
+\begin{remark}
+この補題は、$R$ 上の平坦性を省いた fiber 判定ではない。
+特に有限自由解消の syzygy の $R$-平坦性と、最後の
+$\operatorname{Tor}_1^R(K,\kappa(\mathfrak p))=0$ の両方を使う。
+基底の被約性、正則性、有限 Krull 次元は用いない。
+\end{remark}
+
+\subsection{noncubic heart の weighted stack 表示}
+
+$k$ を標数零の体、$R$ を可換 Noetherian $k$-代数とする。
+判別式が可逆な二元二次形式 $f_1,f_2\in R[u,v]_2$ を取り、
+\[
+ B=R[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2),
+ \qquad h=cd+dc,
+ \qquad C=R[u,v,h],\quad\deg(u,v,h)=(1,1,2)
+\]
+と置く。$u,v$ は中心にある。
+補題~\cite[\texttt{lem:noncubic-relative-clifford-center}]{QuadricIntrinsic2026} より
+\[
+ B=C\oplus Cc\oplus Cd\oplus C(cd)
+\]
+であり、この表示は全ての基底変更と両立する。
+$X=\PP_R(1,1,2)=[(\operatorname{Spec} C\setminus V(C_+))/\mathbb G_m]$ とし、
+$\mathcal B$ を $B$ の対応する $X$ 上の代数層とする。
+\[
+ \mathcal B\simeq\OO_X\oplus\OO_X(-1)^{\oplus2}\oplus\OO_X(-2)
+ \quad\text{as }\OO_X\text{-modules}.
+ \tag{NCF-1}\label{eq:nc-clifford-sheaf}
+\]
+
+\begin{proposition}\label{prop:nc-qgr-weighted}
+構造対象を保つ完全同値
+\[
+ \operatorname{QGr} B\simeq\operatorname{QCoh}(X,\mathcal B),\qquad
+ \qgr B\simeq\coh(X,\mathcal B)
+\]
+がある。これは任意の Noetherian 基底変更における module-object 比較と整合する。
+coherent 対象間の Hom は有限 $R$-加群であり、任意の平坦基底変更と可換する。
+対象・射・完全列について fppf descent が成立する。
+\end{proposition}
+
+\begin{proof}
+$B$ は Noetherian 中央環 $C$ 上有限なので左右 Noetherian であり、
+これは任意の Noetherian $R$-代数への引戻しでも成立する。
+有限個の斉次 $C$-基底の次数は $0,1,1,2$ なので、
+右 $B$-加群の元について $B_+$-torsion と $C_+$-torsion は一致する。
+例えば $mC_{\ge r}=0$ なら $mB_{\ge r+2}=0$ である。
+中心元 $u,v,h$ の局所化による sheafification の核もこの torsion である。
+従って graded 加群の開部分への局所化と $\mathbb G_m$ 同変 descent が第一の同値を与える。
+両辺の Noetherian 対象を取れば第二の同値を得る。
+
+$X$ は $R$ 上 smooth proper な tame Deligne--Mumford stack である。
+具体的に $u\ne0$、$v\ne0$ の二つの affine chart と、
+$h\ne0$ の chart $[\mathbb A^2_R/\mu_2]$ で覆われる。
+$2$ は可逆であり、$\mu_2$ と $\mathbb G_m$ の不変部分を取る操作は完全である。
+したがって上の sheafification、局所化、同変 descent は任意の基底変更と整合する。
+さらに affine 射 $X_{R'}\to X_R$ の下で、$R'$ 作用を持つ
+$\mathcal B$-加群はちょうど $\mathcal B_{R'}$-加群である。
+これは通常の引戻しが $R'\otimes_R-$ である module-object 基底変更である。
+
+coherent $\mathcal B$-加群 $E,F$ に対して、
+$\mathcal Hom_{\mathcal B}(E,F)$ は coherent $\OO_X$-加群である。
+その大域切断の有限性は weighted projective Serre 有限性から従う。
+この有限性は、有限 graded $C$-加群の偶数・奇数成分を
+通常の次数一生成環 $C^{(2)}$ 上の有限加群として扱うことでも得られる。
+平坦基底変更では、有限表示性により内部 Hom が基底変更し、
+上の有限 chart の \v{C}ech 複体と完全な不変部分によって大域 $H^0$ も基底変更する。
+fppf descent は各 affine chart の加群の忠実平坦降下を同変に貼り合わせればよい。
+\end{proof}
+
+\begin{lemma}[weighted cohomology]\label{lem:nc-weighted-cohomology}
+任意の $j\in\mathbb Z$ について $\mathbf R\Gamma(X,\OO_X(j))$ は
+有限 projective $R$-複体であり、任意の基底変更と可換する。
+\[
+ H^0(X,\OO_X(j))=C_j,\qquad H^1(X,\OO_X(j))=0,
+ \qquad H^2(X,\OO_X(j))=C_{-j-4}^{\vee},
+\]
+ただし負次数の $C$ は零とする。
+従って $\mathbf R\Gamma(X,\mathcal B(j))$ も同じ普遍性を持つ。
+特に $n\ge0$ なら
+\[
+ \mathbf R\Gamma(X,\mathcal B(n))=B_n[0].
+ \tag{NCF-2}\label{eq:nc-full-orbit-cohomology}
+\]
+\end{lemma}
+
+\begin{proof}
+$u,v,h$ の局所化の graded degree $j$ 成分を取る有限 \v{C}ech 複体を用いる。
+Laurent 単項式の各指数ベクトルごとに分けると、
+三指数が全て非負の場合に $H^0$、全て負の場合に $H^2$ が残り、
+その他は係数 $\pm1$ の simplex 複体となって分裂完全である。
+$H^2$ の基底を $u^{-a-1}v^{-b-1}h^{-c-1}$ と書けば、重みは $-a-b-2c-4$ である。
+これが表示された双対を与える。
+固定重みでは残る単項式は有限個で、収縮は $R$ に依存しない。
+従って任意の非平坦な基底変更でも成立する。
+\eqref{eq:nc-clifford-sheaf} へ適用し、$n\ge0$ では最小 twist が $-2$ となることを使う。
+\end{proof}
+
+\subsection{canonical compact 圏と相対 smooth proper 性}
+
+\begin{proposition}\label{prop:nc-compact-generator}
+\[
+ G=\bigoplus_{i=0}^3\mathcal B(i)
+\]
+は $D(\operatorname{QCoh}(X,\mathcal B))$ の compact generator である。
+その dg 自己準同型代数を $E_R=\mathbf R\End(G)$ とすると、
+$E_R$ は $R$ 上 perfect であり、任意の Noetherian $R$-代数 $R'$ に対して
+\[
+ E_R\otimes_R^{\mathbf L}R'\simeq E_{R'},\qquad
+ D(\operatorname{QGr} B)^c\simeq\operatorname{Perf}(E_R)
+\]
+となる。この同定は実際の module-object 引戻しの導来関手に対して
+\[
+ D(\operatorname{QGr} B)^c\otimes_{\operatorname{Perf} R}\operatorname{Perf} R'
+ \simeq D(\operatorname{QGr} B_{R'})^c
+ \tag{NCF-3}\label{eq:nc-perfect-basechange}
+\]
+を与える。compact 対象は $D^b(\qgr B)$ に属する。
+\end{proposition}
+
+\begin{proof}
+忘却関手は直和と可換し、
+\[
+ \mathbf R\Hom_{\mathcal B}(\mathcal B(i),M)
+ =\mathbf R\Gamma(X,M(-i))
+\]
+は有限 \v{C}ech 複体と完全な不変部分で計算できる。
+従って全ての $\mathcal B(i)$ は compact である。
+全整数の $\OO_X(i)$ は $D(\operatorname{QCoh} X)$ の生成系である。
+実際、全ての $\mathbf R\Gamma(X,N(i))$ が零なら、
+$u$ または $v$ の乗法に沿う filtered colimit を取ると二つの affine chart 上での
+導来切断が零となる。
+$h$ の乗法では偶数・奇数の二つの colimit を取れば、
+$[\mathbb A^2/\mu_2]$ 上の二つの character 成分がともに零となる。
+有限 \v{C}ech 複体はこれらの colimit と可換するため、$N$ は全 chart で零である。
+この議論は複体を上下有界と仮定しない。
+随伴により全ての $\mathcal B(i)$ も生成系となる。
+さらに $u,v,h$ が $X$ 上共通零点を持たないことから、
+\[
+ 0\to\mathcal B(n-4)\to
+ \mathcal B(n-3)^{\oplus2}\oplus\mathcal B(n-2)\to
+ \mathcal B(n-1)^{\oplus2}\oplus\mathcal B(n-2)\to
+ \mathcal B(n)\to0
+ \tag{NCF-4}\label{eq:nc-weighted-koszul}
+\]
+が完全である。これは中心の weighted Koszul 列を
+局所自由な $\mathcal B$ へ tensor したものである。
+上下の帰納法により任意の $\mathcal B(n)$ は $G$ の thick closure に属する。
+従って $G$ は compact generator である。
+
+各 dg Hom 成分は
+$\mathbf R\Gamma(X,\mathcal B(j-i))$ なので前補題を適用できる。
+積も元の $B$ の積と \v{C}ech の積から構成され、基底変更と整合する。
+これで $E_R$ の proper 性と dg 代数としての基底変更を得る。
+$G$ の各項は基底上平坦であり、実際の導来引戻しで $G_{R'}$ へ移る。
+よって標準 dg Morita 比較の下でその引戻しは
+$-\otimes_{E_R}^{\mathbf L}E_{R'}$ となり、\eqref{eq:nc-perfect-basechange} を得る。
+最後に $G$ は coherent な heart の対象であり、その有限 cones と直和因子は
+$D^b(\qgr B)$ に入る。
+また canonical compacts は、局所的に有限生成 projective $\mathcal B$-加群の
+有限複体で表される対象にちょうど等しい。
+一方向は $G$ が局所自由であることから従う。
+逆向きには、有限個の上の chart 上での有限 projective 表示を用いると、
+内部導来 Hom が直和と可換し、一様に有限な cohomological amplitude を持つ。
+有限 \v{C}ech 複体と完全な $\mu_2$ 不変部分を取ってもこの性質を保つので、
+その対象は global に compact である。
+同じ証明は $X\times_R X$ とその有限局所自由代数にも適用できる。
+\end{proof}
+
+\begin{remark}
+$G$ を tilting と主張していない。
+例えば負の差に \eqref{eq:nc-clifford-sheaf} を適用すると $H^2$ が現れる。
+有限な通常の End 代数に置き換えず、$E_R$ は dg 代数として扱う。
+\end{remark}
+
+\begin{proposition}\label{prop:nc-relative-smooth}
+上の canonical compact 圏は $R$ 上 smooth proper である。
+この結論は任意の Noetherian 基底変更後に成立する。
+\end{proposition}
+
+\begin{proof}
+proper 性は前命題による。
+$Y=X\times_R X$ 上で
+\[
+ \mathcal H=p_1^*\mathcal B^{\mathrm{op}}\otimes_{\OO_Y}p_2^*\mathcal B,
+ \qquad M=\Delta_*\mathcal B
+\]
+と置く。$\mathcal H$ は $\OO_Y$ 上有限局所自由で、$M$ は coherent である。
+$X/R$ の diagonal $\Delta$ は有限であり、基底変更に対して pushforward は
+通常の加群の制限として計算される。
+従って $M$ も $R$ 上平坦である。
+ここで stack の diagonal を closed immersion と仮定していない。
+
+まず幾何ファイバー上の $M$ の perfectness を確認する。
+既存の体上の逆構成
+定理~\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026} により、
+非退化な $f_1,f_2$ の全ての幾何ファイバーは $\mathcal H_2$ の対象である。
+定理~\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026} の四項 foundation を $T$ とする。
+その canonical compact 性と非有界導来圏での生成性は、
+定理~\cite[\texttt{thm:artin-foundation-lift}]{QuadricIntrinsic2026} を Artin 基底 $A=k$ に適用した場合である。
+同定理の証明は局所 Noetherian 性・体上の大域次元二・DDL の compactness 条件を確認している。
+従って $T$ はここで必要な非有界導来圏の compact tilting generator である。
+対応する有限代数 $\Lambda$ は相対 normalized bar 解消により smooth である。
+この入力から幾何ファイバー上の対角加群が perfect と分かることを、次のように具体化する。
+$T$ とその左双対 $T^\vee=\mathbf R\mathcal Hom_{\mathcal B}(T,\mathcal B)$ の外積は、
+右 $\mathcal H$-加群の compact generator を与える。
+実際、前命題の $G$ は $T$ の thick closure に、逆に $T$ は $G$ の thick closure に属する。
+左右の有限 cones と外積により、$T^\vee\boxtimes T$ は
+$(\mathcal B^{\mathrm{op}}(-i))\boxtimes\mathcal B(j)$ の生成する圏を生成する。
+後者は \eqref{eq:nc-weighted-koszul} を両因子へ適用すれば全ての compacts を生成する。
+この外積の dg End は $\Lambda^{\mathrm{op}}\otimes_k\Lambda$ であり、
+$M$ は Morita 表示で対角双加群 $\Lambda$ に対応する。
+従って $\Lambda$ の有限双加群解消は $M$ の perfectness を与える。
+これは幾何ファイバー上の主張であって、族の foundation を先に仮定していない。
+
+$Y$ の任意の affine étale chart $\operatorname{Spec} D\to Y$ へ移る。
+$D$ は Noetherian で、$\mathcal H$ は有限 $D$-代数、$M$ は有限 $D$-加群となる。
+双方の $R$-平坦性は étale pullback で保たれる。
+幾何ファイバーの perfectness は剰余体へ忠実平坦降下するので、
+補題~\ref{lem:nc-fiber-perfect} が適用できる。
+従って $M$ は $\mathcal H$ 上局所 perfect であり、étale descent により $Y$ 上 perfect である。
+重み二の chart では $\mu_2$ が étale かつ linearly reductive なので、同じ議論がそのまま降下する。
+
+最後に、$G^\vee\boxtimes G$ による積上の compact Morita 表示を取る。
+その dg End は $E_R^{\mathrm{op}}\otimes_R^{\mathbf L}E_R$ であり、
+対角 $M$ は $E_R$ の対角双加群に対応する。
+従ってこの双加群は perfect であり、$E_R$ は $R$ 上 smooth である。
+同じ入力は任意の Noetherian $R'$ 上で成立し、
+また対角の有限解消は導来基底変更でも保存される。
+\end{proof}
+
+\subsection{同じ根・全軌道・相対 AS4 被覆}
+
+\begin{proposition}\label{prop:nc-root-ample-orbit}
+étale 局所に、$B$ の次数付き自己同型 $\sigma$ で
+\[
+ \sigma^2=\iota,\qquad
+ \iota(u)=u,\quad\iota(v)=v,\quad\iota(c)=-c,\quad\iota(d)=-d
+\]
+となるものを選べる。
+canonical compact 圏の相対 Serre 関手と、heart の完全自己同値は
+\[
+ S=(-)_\iota(-2)[2],\qquad s=(-)_\sigma(1),\qquad s^2=S^{-1}[2]
+\]
+を満たす。$(\mathcal B,s)$ は AZ ample であり、
+右軌道積の全軌道環は $B^\sigma$ に等しい。
+これらは任意の Noetherian 基底変更と整合する。
+\end{proposition}
+
+\begin{proof}
+補題~\cite[\texttt{lem:noncubic-local-exchange}]{QuadricIntrinsic2026} により、étale 局所に二形式を交換する
+対合 $L$ と単元 $\eta,\gamma$ を
+\[
+ L^2=1,\quad Lf_1=\eta f_2,\quad Lf_2=\eta^{-1}f_1,\quad\gamma^2=\eta
+\]
+と選び、$\sigma|_{Ru\oplus Rv}=L$、$\sigma(c)=\gamma d$、
+$\sigma(d)=-\gamma^{-1}c$ と置ける。
+判別式が可逆な二根を étale 局所で順序付け、第一根対を $\{0,\infty\}$、
+第二根対を $\{a,1/b\}$ とすれば
+$1-ab$ は単元である。
+行列 $\left(\begin{smallmatrix}1&-a\\b&-1\end{smallmatrix}\right)$ の平方は
+$(1-ab)I$ なので、単元の平方根を二度付加することで上の選択を行える。
+これは二根対の一致点を含む。
+
+命題~\cite[\texttt{prop:noncubic-relative-serre-on-perfect}]{QuadricIntrinsic2026} の Clifford trace は
+\[
+ \mathcal Hom_{\OO_X}(\mathcal B,\OO_X(-4))
+ \simeq\mathcal B_\iota(-2)
+\]
+を与える。
+前節で canonical compacts がまさに $\mathcal B$ 上 perfect な対象であることを確認したので、
+この trace の相対双対性は求める canonical compact 圏の Serre 双対性である。
+双対性は weighted \v{C}ech の residue pairing でも直接確認でき、
+補題~\ref{lem:nc-weighted-cohomology} と同様に任意の基底変更と整合する。
+平方の式は $\sigma^2=\iota$ から従う。
+
+$s^n\mathcal B$ は右 $\mathcal B$-加群として $\mathcal B(n)$ と同型である。
+AZ の生成条件は、有限生成 graded $B$-加群の高い truncation の有限生成性から従う。
+全射の coherent kernel $K$ に対して
+\[
+ \Ext^1(\mathcal B(-n),K)=H^1(X,K(n))=0\quad(n\gg0)
+\]
+が成り立つ。
+最後の消滅は中央 $C$ に関する Serre 消滅で、
+偶数・奇数の二つの有限 $C^{(2)}$-加群に通常の Serre 消滅を適用すればよい。
+これが AZ の Hom 全射条件を与える。
+
+全軌道の次数 $n\ge0$ は \eqref{eq:nc-full-orbit-cohomology} により $B_n$ である。
+$a\in B_m$ は $\mathcal B\to s^m\mathcal B$ の射
+$x\mapsto a\sigma^m(x)$ に対応する。
+従って $a*b=s^n(a)\circ b$ という右規約の積は
+\[
+ a*b=a\sigma^m(b)\qquad(a\in B_m,b\in B_n)
+\]
+となり、通常の Zhang twist $B^\sigma$ の積に一致する。
+全次数・任意基底変更で同じ計算を用いる。
+\end{proof}
+
+\begin{proposition}[全相対 AS4 条件]\label{prop:nc-full-relative-as4}
+前命題の選択の下で
+\[
+ A'=R[u,v]\langle c,d\rangle/
+ \bigl((c^2-f_1)-\eta(d^2-f_2)\bigr),\qquad
+ g'=(c^2-f_1)+\eta(d^2-f_2)
+\]
+と置く。
+$A=(A')^\sigma$ と $g'$ は、定義~\ref{def:relative-h2}の相対 quadratic AS4 被覆の全条件を満たし、
+\[
+ A/(g')=B^\sigma
+\]
+である。特に全ての Noetherian 基底変更後も $A$ は左右 Noetherian であり、
+左右・双加群 Koszul 解消および正則正規切断は任意の底変更後も完全である。
+\end{proposition}
+
+\begin{proof}
+$x=c+\gamma d$、$y=c-\gamma d$ とすると $2\gamma$ は単元であり、
+\[
+ \begin{gathered}
+ A'=R[u,v,x][y;\tau,\partial],\qquad
+ \tau(u)=u,\quad\tau(v)=v,\quad\tau(x)=-x,\\
+ \partial(u)=\partial(v)=0,\qquad\partial(x)=2(f_1-\eta f_2).
+ \end{gathered}
+\]
+従って $u^av^bx^iy^j$ は $R$-基底で、
+全次数は階数 $\binom{n+3}{3}$ の有限自由加群である。
+可逆自己同型による Ore 拡大の左右 Hilbert 基底定理により、
+$R$ が Noetherian なら $A'$ も左右 Noetherian である。
+各 Noetherian $R'$ について同じ Ore 表示を持つため普遍 Noetherian 性が成立する。
+Zhang twist は有限生成 graded 加群と graded Noetherian 性を保つ。
+一般のイデアルは最高内部次数の初期項を用いるので、$A$ 自身も左右 Noetherian となる。
+
+二次関係は monic な PBW 書換えであり、関係加群は $V^{\otimes2}$ の階数六の直和因子である。
+既存の体上の Ore 計算は、全幾何ファイバーが quadratic Koszul AS 正則
+型 $(1,4,6,4,1)$ であることを与える。
+ここで相対結論を fiber 次元一定だけから導かない。
+$A'_1,A'_2,A'_3$ は PBW 基底により既に自由なので、
+補題~\ref{lem:relative-koszul-degree-three} の相対 Koszul 定理を適用できる。
+二次双対の全次数は基底変更する有限 projective 加群となり、
+階数は $1,4,6,4,1$、次数五以上は零である。
+双対の積の Frobenius pairing は有限 projective 加群間の射であり、
+全幾何ファイバーで同型なので基底上で同型となる。
+左右 Koszul 複体は各内部次数で有限 projective 複体となり、
+その fiber の完全性により局所分裂完全である。
+双加群 Koszul 複体にも同じ判定を適用できる。
+従ってそれらの完全性は任意の非平坦基底変更後も保たれ、
+相対 AS 双対性も Frobenius pairing によって従う。
+同じ議論は $A$ の Zhang twist についても成立する。
+
+最後に
+\[
+ g'=\tfrac12(x^2+y^2)-(f_1+\eta f_2)
+\]
+は $A'$ の中央にある。
+$y$ に関する最高係数が $1/2$ なので、$R$ に零因子があっても左右乗法は単射である。
+その商の基底は $u^av^b$ と $c,d$ の交互語との積であり、全次数自由である。
+また $\sigma(g')=g'$、$\sigma$ は $A'$ 上にも延びる。
+twist 後は
+\[
+ g'*_\sigma a=g'\sigma^2(a),\qquad a*_\sigma g'=ag'
+\]
+なので $g'$ は正則正規であり、normalizer は $\sigma^2$ である。
+元の正則乗法と自己同型の合成であるため、任意底変更後も正則性を保つ。
+商は表示から $B^\sigma$ である。
+\end{proof}
+
+\subsection{表示スタックからの実際の相対族と残る境界問題}
+
+\begin{theorem}\label{thm:noncubic-relative-effectivity}
+第~\cite[\texttt{sec:noncubic-stack}]{QuadricIntrinsic2026}節の表示スタック
+\[
+ \mathfrak N^{\mathrm{pres}}=[P/G],\qquad
+ P=Q^{\mathrm{nd}}\times Q^{\mathrm{nd}}
+\]
+上の降下した反 Serre 環 $\mathcal R$ は、任意の有限型 affine test $T$ 上で
+\[
+ (\mathcal C_T,\mathcal O_T)=(\qgr\mathcal R_T,\pi\mathcal R_T)
+\]
+という実際の相対 $\mathfrak H_2$ 族を定める。
+従って自然な射
+\[
+ q_{\mathrm{nc}}:\mathfrak N^{\mathrm{pres}}\longrightarrow\mathfrak H_2
+\]
+が存在し、その全ての幾何ファイバーは noncubic である。
+ここでは平方根・AS4 被覆は局所的 witness であり、出力の標識に加えない。
+\end{theorem}
+
+\begin{proof}
+命題~\cite[\texttt{prop:noncubic-antiserre-descent}]{QuadricIntrinsic2026} により $\mathcal R$ は表示スタック上に実際に降下する。
+affine 局所に行列式線束を自明化し、前節の $\sigma$ を選ぶと
+$\mathcal R=(B^\sigma)^{(2)}$ である。
+命題~\cite[\texttt{prop:noncubic-relative-heart-veronese}]{QuadricIntrinsic2026} の Veronese 比較は構造対象を保ち、
+任意基底変更に整合する。
+従って以下の全条件はこの fppf 局所表示で確認すればよい。
+
+命題~\ref{prop:nc-qgr-weighted} が noetherian Abel 系、module-object 基底変更、
+coherent Hom の有限性と平坦基底変更、fppf descent を与える。
+命題~\ref{prop:nc-compact-generator} と命題~\ref{prop:nc-relative-smooth} が
+canonical compact 部分の smooth proper 性、$D^b(\mathcal C_T)$ への包含、
+任意導来基底変更を与える。
+標識 $\mathcal B$ は $R$ 上平坦で、補題~\ref{lem:nc-weighted-cohomology} により
+$\mathbf R\Hom(\mathcal B,\mathcal B)=R[0]$ である。
+従って (RQ1) が成立する。
+
+全幾何ファイバーでは、既存の noncubic 逆構成により Gabriel--Krull の
+rank one torsion-free 条件を含む体上の全 $\mathcal H_2$ 条件が成立する。
+fiber 圏は上の module-object 基底変更と一致するから (RQ2) が成立する。
+命題~\ref{prop:nc-root-ample-orbit} は同じ局所 $s$ に対する相対 Serre 平方と AZ 豊富性を与える。
+命題~\ref{prop:nc-full-relative-as4} はその全軌道環 $B^\sigma$ の相対 AS4 被覆を与える。
+従って (RQ3), (RQ4) も成立する。
+
+$\mathcal R$ 自体とその加群の降下は選んだ $\sigma$ に依存しない。
+一方 $s$ と被覆の存在は相対 $\mathfrak H_2$ の定義により fppf 局所条件である。
+よってこれらの局所的な検証は、表示スタック上の一つの相対系へ貼り合わさる。
+また AZ 生成系は基底上平坦なので、補題~\ref{lem:relative-h2-flat-center} と同じ co-effaceability により
+Lowen--Van den Bergh の flat Abel 性も従う。
+\end{proof}
+
+\begin{remark}[noncubic 境界との区別]
+$q_{\mathrm{nc}}$ の存在だけでは、noncubic 点を含む開近傍の atlas は得られない。
+特に任意の Artin 変形は、閉 fiber が noncubic でも
+隣接乗法の四次 minor が非零の冪零元となり得る。
+従って二形式表示の次元一のパラメータ族で全ての横断変形を捉えたことにはならない。
+任意の相対 $\mathfrak H_2$ 族の noncubic 表示への局所還元、
+この射の相対全忠実性・monomorphism 性、および cubic を横断する近傍の効果性は別途証明が必要である。
+ここでの対角加群の議論は、明示的な中央有限な Clifford order を持つ族に適用したものであり、
+一般の root-family が同じ中央有限表示を持つとは仮定していない。
+\end{remark}

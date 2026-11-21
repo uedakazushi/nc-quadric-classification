@@ -1,0 +1,226 @@
+% !TEX root = ../nc-quadric-moduli.tex
+% 2026-11-21 / v1.35
+\section{一般の幾何的 cubic 族の相対内在的実現}
+\label{sec:relative-cubic-families}
+
+本節では、可換二次曲面を中心とするという制限を外し、
+普遍 Noetherian 性と canonical hull を相対 tails の認識に結び付ける。
+Serre 平方関係は、まず指定された周期の独立な入力として明記する。
+次節の Picard 構成が非線型の普遍族上でこの入力を供給する。
+
+\subsection{周期を選ぶ前の canonical compact 圏}
+
+$R$ を可換 Noetherian $k$-代数とし、
+$C$ を定理~\ref{thm:relative-geometric-cubic-noetherian} の仮定を満たす
+正の向きの $R$-線形 $\mathbb Z$-代数とする。
+右表現可能加群を $P_i=e_iC$、$\mathcal O_i=\pi P_i$ と書く。
+三次関係を $R_i$、四次 overlap を $W_i$ とする。
+
+\begin{proposition}[一般 geometric cubic 族の canonical tails]
+\label{prop:general-cubic-canonical-tails}
+任意の可換 Noetherian $R$-代数 $R'$ 上で
+$\operatorname{QGr}(C_{R'})$ は locally Noetherian であり、
+任意の連続四項の直和はその非有界導来圏の compact tilting generator である。
+特に
+\[
+ T=\bigoplus_{i=0}^3\mathcal O_{-i},\qquad
+ \Gamma=\operatorname{End}(T)
+\]
+と置くと、$\Gamma$ は階数 $24$ の有限 projective $R$-代数であり、
+\[
+ D(\operatorname{QGr}C)\simeq D(\operatorname{Mod}\Gamma),\qquad
+ D(\operatorname{QGr}C)^c\simeq\operatorname{Perf}\Gamma.
+ \tag{GC-Morita}\label{eq:general-cubic-canonical-morita}
+\]
+この比較は実際の module-object 引戻しの導来関手と整合する。
+compact 圏は相対 smooth proper で、相対 Serre 関手とその任意基底変更を持つ。
+この命題では二周期の存在を仮定しない。
+\end{proposition}
+
+\begin{proof}
+全成分の projectivity と四次 overlap に対し、
+補題~\ref{lem:relative-geometric-cubic-flatness} の標準 cubic 解消を用いる。
+その各内部次数は $R$ 上分裂完全である。
+双対複体にも同じ fiber 判定を適用すると
+\[
+ \operatorname{Ext}^q_{\operatorname{Gr}C}(S_i,P_j)=0
+ \quad\text{unless }(q,j)=(3,i+4),\qquad
+ \operatorname{Ext}^3(S_i,P_{i+4})=W_i^\vee
+\]
+を得る。実際、この双対複体の各項は有限 projective である。
+消滅する fiber 複体は局所分裂完全であり、
+例外の $(q,j)=(3,i+4)$ では最終項が $W_i^\vee$、
+直前の項は正の向きにより零である。
+これらの議論は任意の基底変更後にも成立する。
+従って定理~\ref{thm:relative-cubic-tails-tilting} の全入力が揃い、
+式~\eqref{eq:general-cubic-canonical-morita} を得る。
+
+定理~\ref{thm:relative-geometric-cubic-noetherian} により
+$C_{R'}$ の各 row は Noetherian である。
+したがって $\operatorname{QGr}C_{R'}$ は locally Noetherian で、
+$\mathcal O_i$ は Noetherian 生成系をなす。
+その有限 cones と直和因子である compact 対象は
+$D^b(\operatorname{qgr}C_{R'})$ に属する。
+
+四項窓の前向き Hom の階数は $1,2,4,6$ である。
+対角を $E=R^4$ とし、厳密に上三角な部分を $J$ とすると、
+$\Gamma=E\oplus J$、各 $e_iJe_j$ は有限 projective で、
+$J^{\otimes_E4}=0$ である。
+$E$ 上の normalized bar 解消は長さ三であり、
+各項 $\Gamma\otimes_EJ^{\otimes_Er}\otimes_E\Gamma$ は
+有限生成 projective な $\Gamma$ 双加群となる。
+従って $\Gamma$ は相対 smooth、$R$ 上有限 projective なので proper である。
+これは補題~\ref{lem:foundation-relative-smooth-proper} と同じ直接の議論である。
+相対 Serre 双加群は
+$\mathcal S_\Gamma=\mathbf R\operatorname{Hom}_R(\Gamma,R)$
+であり、任意の基底変更と整合する。
+
+最後に各 $\mathcal O_i$ は、全成分が基底上平坦な $P_i$ の像なので、
+module-object の意味で基底上平坦である。
+通常の引戻しがこの tilting summand 上で導来引戻しを計算する。
+summand と全ての射を基底変更すると、変更後の $T$ と $\Gamma$ を得る。
+よって Morita 表示における実際の導来引戻しは
+$-\otimes_\Gamma^{\mathbf L}\Gamma_{R'}$ であり、
+compact 圏と Serre 双加群の比較もこの引戻しに対して成立する。
+\end{proof}
+
+\subsection{実際の二周期からの全相対条件}
+
+$C$ に二周期同型 $\beta:C\to C(2)$ を指定し、
+\[
+ B_n=C_{0,2n},\qquad a\star b=a\,\beta^m(b)
+ \quad(a\in B_m,\ b\in B_n)
+ \tag{GC-prod}\label{eq:general-cubic-period-product}
+\]
+と定める。$\check B\simeq C^{\mathrm{ev}}$ の下で、
+$B$ の次数移動 $(1)$ は $C$ の right tails 上で
+$\mathcal O_i\mapsto\mathcal O_{i-2}$ という完全自己同値 $s$ を与える。
+矢も $\beta^{-1}$ で移す。単に対象の置換を指定しているのではない。
+式~\eqref{eq:general-cubic-canonical-morita} によって
+$s$ を表す可逆 perfect $\Gamma$ 双加群を $P_s$ と書く。
+
+\begin{theorem}[Serre 適合二周期族の相対効果性]
+\label{thm:geometric-cubic-relative-effectivity}
+上の $C,\beta$ に対し、基底の fppf 局所で
+\[
+ P_s\otimes_\Gamma^{\mathbf L}P_s
+       \simeq\mathcal S_\Gamma^{-1}[2]
+ \tag{GC-root}\label{eq:general-cubic-serre-input}
+\]
+が与えられ、任意の基底変更ではこの同型を引き戻すとする。
+このとき有限型 $R$-基底上の系
+\[
+ \mathcal C_{R'}=\operatorname{qgr}(B\otimes_RR'),\qquad
+ \mathcal O_{R'}=\pi(B\otimes_RR')
+ \tag{GC-family}\label{eq:general-cubic-relative-family}
+\]
+は定義~\ref{def:relative-abelian-system}、
+\ref{def:relative-h2} の全条件を満たす。
+特に $\operatorname{Spec}R$ が元の局所有限型 $k$-site に属すれば、
+実際の $\mathfrak H_2(R)$ の対象を与える。
+平方根、平方同型、二周期、cubic helix および AS4 被覆は、
+構成に用いる witness であり、出力の標識には加えない。
+
+各 affine Noetherian 基底変更上で全相対 $\chi_q$ も成立する。
+$R$ が元の site に属さない場合は、
+有限型 $R$-test 上で同じ全公理が成立するという意味に限る。
+\end{theorem}
+
+\begin{proof}
+\emph{Noetherian heart と基底変更。}
+系~\ref{cor:relative-periodic-even-noetherian} により、
+全ての Noetherian $R'$ について $B'=B\otimes_RR'$ は左右 Noetherian である。
+従って $\operatorname{QGr}B'$ は locally Noetherian、
+その Noetherian 部分圏は $\operatorname{qgr}B'$ であり、
+この部分圏の Ind 圏が $\operatorname{QGr}B'$ となる。
+偶数頂点への制限は
+$\operatorname{QGr}C_{R'}\simeq\operatorname{QGr}B'$ を与える。
+この同値は表現可能加群と全ての射を保ち、任意の基底変更と整合する。
+
+$B'$ は有限 projective な一次成分で生成される。
+補題~\ref{lem:qgr-module-object-basechange} により、
+module-object 基底変更と tensor の結合則による coherent 比較が得られる。
+flat base change は完全、faithfully flat base change はさらに保守的である。
+したがって系~\ref{cor:quadric-local-tails-fppf-descent} の
+comonadic な降下の証明がそのまま適用でき、
+対象・射・完全列の有効 fppf descent を得る。
+この議論に可換 quadric の特殊ファイバーは用いない。
+補題~\ref{lem:relative-cubic-coherent-cohomology} により、
+全ての coherent Hom は有限で、flat base change と可換する。
+
+\emph{canonical compact 圏と相対 Serre。}
+前命題と偶数制限により、canonical compact 圏は
+$\operatorname{Perf}\Gamma_{R'}$ である。
+これは相対 smooth proper で、実際の module-object 導来引戻し、
+構造対象、および Serre 双加群と整合する。
+構造対象は基底上平坦で、
+\[
+ \mathbf R\operatorname{Hom}(\mathcal O_{R'},\mathcal O_{R'})
+       \simeq R'[0]
+\]
+である。従って (RQ1) と相対 Serre 条件が成立する。
+式~\eqref{eq:general-cubic-serre-input} の引戻しにより
+$s^2\simeq S^{-1}[2]$ が同じ canonical compact 圏上で成り立つ。
+
+\emph{AZ 豊富性と全軌道環。}
+有限生成次数付き $B'$ 加群の十分高い truncation は有限生成であり、
+任意に大きい次数以上の有限個の斉次生成元を取れる。
+その像を $\operatorname{qgr}B'$ へ移すと AZ (A1) を得る。
+任意の全射の kernel は Noetherian なので、
+補題~\ref{lem:relative-cubic-coherent-cohomology} の一様な
+$\operatorname{Ext}^1$ 消滅を適用して AZ (A2) を得る。
+また式~\eqref{eq:cubic-tails-line-cohomology} より
+\[
+ \operatorname{Hom}(\mathcal O_0,s^n\mathcal O_0)
+       =C_{-2n,0}\xrightarrow[\sim]{\beta^n}C_{0,2n}=B'_n .
+\]
+ここでは非負次数の全てに対し同型があり、低次数の切捨てはない。
+右軌道積 $x*y=s^n(x)\circ y$ をこの同型で送ると、
+$x\star y=x\,\beta^m(y)$（$x\in B'_m,\ y\in B'_n$）となる。
+従って全軌道環と式~\eqref{eq:general-cubic-period-product} は、
+全次数・積・任意の基底変更に関して一致する。
+
+\emph{同じ根に対する相対 AS4 被覆。}
+定理~\ref{thm:universal-cubic-hull} を $C,\beta$ に適用する。
+得られる $A\to B$ は全次数 projective な canonical hull であり、
+可逆部分束 $G\subset A_2$ による左右正則正規切断である。
+$G$ を有限 affine 開被覆で自明化すれば、実際の二次の元 $g$ を取れる。
+各 $A_{R'}$ は左右 Noetherian、相対 Koszul Frobenius であり、
+全ての解消と二次切断は任意の基底変更後も完全である。
+これが同じ次数移動 $s$ に対する (RQ4) を与える。
+
+\emph{幾何ファイバーと全相対 $\chi$。}
+各幾何ファイバーの $C$ は geometric cubic AS 正則
+$\mathbb Z$-代数である。
+定理~\cite[\texttt{thm:all-admissible-inverse}]{QuadricIntrinsic2026} と偶数制限により、
+その構造対象を持つ tails は体上の $\mathcal H_2$ に属する。
+特に Gabriel--Krull rank one torsion-free 条件と、
+fiber の全 $D^b$ に関する Serre 条件が成立する。
+その fiber は上記の module-object 基底変更によるものと一致するので、
+(RQ2) も満たされる。
+
+最後に全 $\chi_q$ については
+補題~\ref{lem:relative-cubic-global-chi} の証明を適用する。
+そこで用いる入力は、同じ affine 基底での Noetherian 性、
+構造対象間の普遍 cohomology 公式、coherent 対象の一様 Serre 消滅、
+$\operatorname{cd}\omega\le2$ および有限 projective な各 $B'_n$ である。
+これらは本節で全て確認されている。
+有限幅の局所 cohomology spectral sequence によるその証明は、
+$Q$ を中心とする族という条件を用いない。
+反対側にも同じ議論を適用して左右の全相対 $\chi_q$ を得る。
+\end{proof}
+
+\begin{remark}[Hom の向きで表示する場合]
+\label{rem:general-cubic-right-orientation}
+framed 五つ組を $D_{ij}=\operatorname{Hom}(E_i,E_j)$ として
+回復する場合には、右加群のために
+\[
+ C_{ij}=D_{-j,-i},\qquad \beta_C=\beta_D^{-1}
+\]
+を用いる。このとき $E_i$ は $\pi e_{-i}C$ に対応し、
+四項 foundation の頂点・全 Hom・積が一致する。
+canonical 四周期も反転し、$\beta_D^2=\theta_D$ が
+頂点スカラーを除いて成立すれば、$C$ 側でも対応する平方関係が成立する。
+相対 Serre の比較は $C$ の canonical compact 圏で行う。
+反対の積を暗黙に同じ環と同一視しない。
+\end{remark}
