@@ -615,6 +615,109 @@ $\mathcal B_4$ は任意基底上で自由であり、
 $\mathcal J$ の底変更も成立する。
 \end{proof}
 
+\begin{proposition}[noncubic Grassmann 射の明示的な affine cell]
+\label{prop:noncubic-grassmann-explicit-cell}
+$W=ku\oplus kv$ の基底を固定し、
+$\det W$ を $u\wedge v$ で自明化する。
+二形式 $(f_1,f_2)$ の係数に関する六次元アフィン空間
+\[
+ \mathbb A^6=\operatorname{Sym}^2W\oplus\operatorname{Sym}^2W
+\]
+全体まで $\mathcal R$ とその二次関係を延長する。
+次数一の九生成元を
+\[
+ x_0=u^2,\quad x_1=uv,\quad x_2=v^2,\qquad
+ p_0=uc,\quad p_1=vc,\quad
+ q_0=ud,\quad q_1=vd,\quad
+ z=cd,\quad z'=dc
+ \tag{NC-9}\label{eq:noncubic-nine-generators}
+\]
+と置く（右辺はすべて $\mathcal B_2$ の元で、
+$\mathcal R$ の積には $\star$ を用いる）。
+以下の二十五個の積
+\[
+\begin{gathered}
+ x_0\star x_0,\ x_0\star x_1,\ x_0\star x_2,\
+ x_1\star x_2,\ x_2\star x_2,\\
+ x_0\star p_0,\ x_0\star p_1,\
+ x_1\star p_1,\ x_2\star p_1,\quad
+ x_0\star q_0,\ x_0\star q_1,\
+ x_1\star q_1,\ x_2\star q_1,\\
+ x_i\star z,\ x_i\star z'\quad(i=0,1,2),\\
+ p_0\star z',\ p_1\star z',\
+ q_0\star z,\ q_1\star z,\quad
+ z\star z,\ z'\star z'
+\end{gathered}
+\tag{NC-25}\label{eq:noncubic-25-pivots}
+\]
+は、どの $(f_1,f_2)$ 上でも $\mathcal R_2$ の基底となる。
+従って積写像 $\mathcal R_1^{\otimes2}\to\mathcal R_2$ の
+固定した $25\times25$ minor は $\pm1$ である。
+
+この minor に対応する
+$\operatorname{Gr}(56,81)$ の affine cell を
+$\mathbb A^{25\cdot56}$ と同定すれば、
+\[
+ \Phi:\mathbb A^6\longrightarrow\mathbb A^{25\cdot56}
+ \tag{NC-cell}\label{eq:noncubic-cell-map}
+\]
+は全係数環にわたり多項式であり、
+実際には\emph{閉埋込み}である。
+従って非退化二形式の開集合 $P\subset\mathbb A^6$ は、
+固定された同じ cell への局所閉埋込みとして実現される。
+ここで述べる埋込みは\emph{基底を固定した表示空間}の埋込みであり、
+その群商が内在的な $\HHstack$ へ閉埋込みとなるとは
+主張しない。
+\end{proposition}
+\begin{proof}
+$\mathcal B$ の $u^av^bw$（$w$ は $c,d$ の交互語）
+という単項式基底は、二形式が退化しても成立する。
+次数四の二十五個の基底を、交互語の長さ
+$0,1,2,3,4$ ごとに並べると、それぞれ
+\[
+ 5,\quad 8,\quad 6,\quad4,\quad2
+\]
+個である。
+式~(\ref{eq:noncubic-25-pivots}) の積は、
+この順にちょうど全基底単項式を列挙する。
+右因子が $p_i,q_i$ の場合だけ
+$\iota$ によって負符号が付き、それ以外は正符号となる。
+どの積にも $c^2$ や $d^2$ の簡約は生じず、
+したがってこの $25$ 列の行列は、
+上記単項式基底で符号付き置換行列である。
+その行列式は $\pm1$ で、二形式の係数に依存しない。
+
+この基底を使えば、残り $56$ 個の二語積を
+$c^2=f_1,d^2=f_2$ によって簡約した係数を
+$\mathbb A^{25\cdot56}$ の座標として取れる。
+簡約はモニックなので、各座標は二形式の六係数の
+多項式である。従って $\Phi$ は多項式射である。
+
+閉埋込み性には、六係数をこの座標から回復すればよい。
+\[
+ f_1=a u^2+buv+c v^2,\qquad
+ f_2=a' u^2+b'uv+c'v^2
+\]
+と置くと
+\[
+ p_0\star p_0=-u^2f_1
+   =-a u^4-bu^3v-cu^2v^2,\qquad
+ q_0\star q_0=-u^2f_2
+   =-a'u^4-b'u^3v-c'u^2v^2.
+\]
+右辺の三基底単項式は
+$x_0\star x_0,x_0\star x_1,x_0\star x_2$
+に対応する固定 pivot である。
+従って $\Phi$ の行列座標のうち六つが
+$-a,-b,-c,-a',-b',-c'$ となる。
+この六座標の射影
+$\mathbb A^{25\cdot56}\to\mathbb A^6$
+と $\Phi$ の合成は、符号反転を除き恒等である。
+従って $\Phi$ はアフィン空間間の多項式写像のグラフとして
+閉埋込みになる。$P$ は判別式の非消滅開であるため、
+その制限は局所閉埋込みである。
+\end{proof}
+
 \begin{lemma}[二重平方環の中心 Clifford 表示]
 \label{lem:noncubic-relative-clifford-center}
 任意の可換環 $A$ 上の二元二次形式 $f_1,f_2$ に対し、
