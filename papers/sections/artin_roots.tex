@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-classification.tex
-% 2026-11-21 / v1.16
+% 2026-11-21 / v1.17
 \section{Serre 平方根の Artin 持上げ}
 \label{sec:artin-serre-roots}
 \subsection{Artin 基底での Serre 根の平方関係}
@@ -799,9 +799,166 @@ coevaluation を合成して $V_i\simeq V_{i+4}$ とすれば、
 二つの $W$ はこの同型による巡回で一致する
 （補題~\ref{lem:relative-cubic-tensors-artin} と同じ線形代数）。
 従って全関係は一つの geometric quintuple の標準再構成であり、
-体上の分類 \cite[Theorem 4.31, arXiv v3]{VdB2011} により
+体上の分類 \cite[arXiv v3, Theorem 5.5.10]{VdB2011} により
 各幾何ファイバーの cubic AS 正則性が従う。
 体上の定理を相対 flatness の定理に読み替えてはいない。
+\end{proof}
+
+
+\begin{lemma}[幾何的 cubic 表示の相対全次数平坦性]
+\label{lem:relative-geometric-cubic-flatness}
+$S$ を局所 Noetherian スキームとし、
+$V_i$ を階数二の局所自由層、
+$R_i\subset V_i\otimes V_{i+1}\otimes V_{i+2}$
+を階数二の直和因子とする。
+$D=T_{\mathbb Z,\mathcal O_S}(V_i)/(R_i)$ と置く。
+全幾何ファイバーが三次元 cubic AS 正則
+$\mathbb Z$-代数であり、標準解消に現れる
+\[
+ W_i=(R_i\otimes V_{i+3})\cap(V_i\otimes R_{i+1})
+\]
+が $S$ 上の階数一の直和因子で、全幾何ファイバーの
+syzygy と一致すると仮定する。
+このとき全ての $i\le j$ について $D_{ij}$ は
+有限局所自由で、
+\[
+ \operatorname{rk}D_{i,i+2m}=(m+1)^2,\qquad
+ \operatorname{rk}D_{i,i+2m+1}=(m+1)(m+2).
+\]
+さらに右表現可能加群 $P_i=e_iD$ に対する
+\[
+ 0\longrightarrow W_i\otimes P_{i+4}
+ \longrightarrow R_i\otimes P_{i+3}
+ \longrightarrow V_i\otimes P_{i+1}
+ \longrightarrow P_i\longrightarrow S_i\longrightarrow0
+ \tag{Geo-res}\label{eq:relative-geometric-cubic-resolution}
+\]
+は各内部次数で局所分裂完全であり、
+任意の $S$-基底変更後にも完全である。
+$S_i$ は頂点 $i$ に $\mathcal O_S$ を置く加群とする。
+この結論は全次数に対して\emph{同じ} $S$ 上で成立する。
+左右 Noetherian 性はここでは主張しない。
+\end{lemma}
+\begin{proof}
+各 $D_{ij}$ は有限個の tensor 加群の商なので有限表示である。
+$n=j-i$ に関して帰納する。
+$n=0,1,2,3$ では階数は $1,2,4,6$ で、
+関係の直和因子性から局所自由である。
+$n\ge4$ とし、$D_{i+a,j}$（$a=1,3,4$）の
+局所自由性と基底変更整合性が既知とする。
+三次関係による商の定義から
+\[
+ W_i\otimes D_{i+4,j}\xrightarrow{d_2}
+ R_i\otimes D_{i+3,j}\xrightarrow{d_1}
+ V_i\otimes D_{i+1,j}\longrightarrow D_{ij}\longrightarrow0
+ \tag{Geo-$n$}\label{eq:relative-geometric-cubic-degree}
+\]
+は複体で、右端は実際の余核表示である。
+全幾何ファイバーでは体上の cubic AS 正則代数の
+標準解消が完全である
+\cite[arXiv v3, Theorem 5.5.7(1)]{VdB2011}。
+左三項は帰納法で局所自由なので、
+幾何点で $d_2$ が単射となる最大 minor を可逆化すれば
+$d_2$ は直和因子への単射である。
+その余核から右の局所自由層への誘導写像も
+全幾何点で単射であり、同様に直和因子への単射となる。
+従って複体は局所分裂完全で、
+最後の余核 $D_{ij}$ も有限局所自由である。
+幾何ファイバーの Hilbert 関数から階数公式が従う。
+全 $n$ についてこの帰納法を行えば、同じ $S$ 上で
+全内部次数の分裂完全性が得られる。
+局所分裂完全列は任意の tensor 底変更で完全だから、
+(\ref{eq:relative-geometric-cubic-resolution}) も
+任意底変更と可換する。
+\end{proof}
+
+\begin{proposition}[可換点の有限型開近傍における全軌道 Hom]
+\label{prop:quadric-uniform-cubic-hom-open}
+命題~\ref{prop:quadric-geometric-quintuple-open} の
+$U_{\mathrm{geo}}$ を可換点 $u$ のまわりで
+\emph{一度だけ} Zariski 開に縮めると、
+全ての $i\le j$ について、相対 perfect 圏で
+\[
+ D^{\mathrm{pres}}_{ij}[0]
+ \xrightarrow{\ \sim\ }
+ \mathbf R\operatorname{Hom}(L_i,L_j)
+ \tag{Geo-Hom}\label{eq:quadric-uniform-geometric-hom}
+\]
+が成立する。左辺は
+$D^{\mathrm{pres}}=T_{\mathbb Z}(V_i)/(R_i)$ の成分である。
+従って両辺は任意の基底変更と可換し、
+全次数で階数 $h_{j-i}$ の局所自由層となる。
+とくに、$\mathsf s$ の二項移動から作る偶数環
+\[
+ B=\bigoplus_{n\ge0}
+   \operatorname{Hom}(L_0,\mathsf s^nL_0)
+\]
+は全次数で局所自由かつ任意底変更と整合し、
+\[
+ \operatorname{rk}B_n=(n+1)^2,\qquad
+ B=T(B_1)/(J),\quad
+ \operatorname{rk}B_1=4,\quad\operatorname{rk}J=7.
+\]
+この結果は左右 Noetherian 性、相対 tails heart、
+AZ 豊富性、相対 AS4 被覆、内在的 $\mathfrak H_2$
+の効果性を含まない。
+\end{proposition}
+\begin{proof}
+補題~\ref{lem:relative-geometric-cubic-flatness} により
+$D^{\mathrm{pres}}$ の全成分とその標準解消は
+同じ $U_{\mathrm{geo}}$ 上で局所分裂完全である。
+
+四項の相対 Euler 複体
+\[
+ \mathcal E_i^\bullet:\quad
+ L_i\longrightarrow V_i^\vee\otimes L_{i+1}
+ \longrightarrow R_i^\vee\otimes L_{i+3}
+ \longrightarrow W_i^\vee\otimes L_{i+4}
+ \tag{Geo-Euler}\label{eq:quadric-relative-geometric-euler}
+\]
+を作る。矢は合成による coevaluation と
+$R_i,W_i$ の包含から定まり、関係とその重なりにより
+連続する合成が零になる。四項窓の相対 Hom は
+次数零に集中しているため、この有限複体を
+perfect enhancement 上で coherent に実現できる。
+可換点では二つの parity の各複体は
+$\mathbb P^1\times\mathbb P^1$ の二つの Euler 完全列を
+継いだものであり、totalization は零である。
+perfect cone の零性は開条件なので、
+$i=0,1$ の二つの複体が完全になるよう
+$u$ の一つの開近傍へ縮める。
+$\mathsf s$ の二項移動により、同じ開上で
+全ての $i$ の Euler 複体が完全である。
+
+(\ref{eq:quadric-uniform-geometric-hom}) を
+$n=j-i$ に関して帰納する。
+$n\le3$ は四項窓と積の定義から成立する。
+$n\ge4$ では (\ref{eq:quadric-relative-geometric-euler}) に
+$\mathbf R\operatorname{Hom}(-,L_j)$ を適用すると、
+$\mathbf R\operatorname{Hom}(L_i,L_j)$ は
+\[
+ W_i\otimes\mathbf R\operatorname{Hom}(L_{i+4},L_j)
+ \longrightarrow
+ R_i\otimes\mathbf R\operatorname{Hom}(L_{i+3},L_j)
+ \longrightarrow
+ V_i\otimes\mathbf R\operatorname{Hom}(L_{i+1},L_j)
+\]
+の導来余核となる。
+帰納法により右辺はすべてより短い距離の
+$D^{\mathrm{pres}}$ の成分であり、
+その複体は (\ref{eq:relative-geometric-cubic-degree})
+と同じである。補題による局所分裂完全性から
+その導来余核は $D^{\mathrm{pres}}_{ij}[0]$ で、
+合成射からの自然な比較と一致する。
+これで全 $n$ に対して主張が従う。
+
+偶数環の次数 $n$ は二項周期で $D_{0,2n}$ に一致する。
+三次表示の二次 Veronese の相対的な二次提示に
+補題~\ref{lem:relative-quadratic-veronese} を適用すれば、
+$B$ は二次関係で表示される。二次関係の核の階数は
+$4^2-9=7$ であり、局所直和因子である。
+全ての比較は有限局所自由層の分裂表示から得られるため、
+任意底変更と整合する。
 \end{proof}
 
 \begin{remark}[この代数化で残る条件]
@@ -809,9 +966,9 @@ coevaluation を合成して $V_i\simeq V_{i+4}$ とすれば、
 命題~\ref{prop:quadric-etale-finite-window} の四項窓、
 定理~\ref{thm:quadric-local-all-degree-cubic} の
 可換点の局所環における全次数の cubic・二次提示、
-及び命題~\ref{prop:quadric-geometric-quintuple-open} の
-有限型開における幾何的 cubic ファイバーである。
-一般有限型の開近傍で、全ての長さの Hom と三次提示を一様に制御し、
+及び命題~\ref{prop:quadric-uniform-cubic-hom-open} の
+有限型開上での全次数 Hom と相対 cubic 解消である。
+一つの有限型開で全ての長さの Hom と三次提示は制御できるが、
 その根と helix が noetherian な相対 tails heart を与え、
 canonical な $D(\operatorname{Ind}\mathcal C)^c$ を回復し、
 AZ 豊富性と全有限型基底変更を満たすことは別の相対実現命題を要する。
