@@ -58,3 +58,22 @@ assert C*C == u*v*s.eye(4)
 assert D*D == f2*s.eye(4)
 assert C*D + D*C == h*s.eye(4)
 print("PASS: relative ruling-module Clifford matrices over the polynomial ring")
+
+# The two boundary equations have independent differentials on the full
+# Lagrangian tangent space. Construct a dual Lagrangian complement, so a
+# symmetric 4x4 matrix Q represents an arbitrary first-order tangent.
+L = M.col_join(N)
+omega = s.BlockMatrix([[s.zeros(4), s.eye(4)],
+                       [-s.eye(4), s.zeros(4)]]).as_explicit()
+selector = s.eye(8)[:, [4, 5, 6, 0]]
+K0 = selector*(L.T*omega*selector).inv()
+K = K0 + L*(K0.T*omega*K0)/2
+assert L.T*omega*K == s.eye(4)
+assert K.T*omega*K == s.zeros(4)
+Q = s.zeros(4)
+for i in range(4):
+    for j in range(i, 4):
+        Q[i, j] = Q[j, i] = s.Symbol(f"q{i}{j}")
+assert s.expand(s.trace(M.adjugate()*K[:4, :]*Q) - Q[3, 3]) == 0
+assert s.expand(s.trace(N.adjugate()*K[4:, :]*Q) - delta*Q[2, 2]) == 0
+print("PASS: boundary differentials q33 and (alpha^2+beta*gamma)*q22 are independent")

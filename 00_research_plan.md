@@ -1,8 +1,8 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.42。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.41、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.43。**再開時は本書を最初に読む。GitHub `main` が正本。** 主論文はv1.42、別稿はv0.1。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
-**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。現在の優先事項は、有限型atlasの証明監査と、foundation表示・境界幾何との比較である。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
+**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。現在の優先事項は、公表前の証明・文献監査と、相対表示・偏極の局所構造の具体化である。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
 ## 現在の到達点と未解決の核心
 
@@ -34,9 +34,11 @@
 
 **noncubic境界を横断する有限型効果性。** `thm:noncubic-finite-type-effectivity` は、全noncubic点に実際のH2族を持つ有限型étale近傍を構成する。Lagrangian四平面の二射影M,Nに対し、Segreとの交点を除き、Cr(N adj M)とCr(M adj N)の行列式を可逆化する。全幾何fiberをcubicまたは二形式normal foundationへ認識し、同じ四項とSerre四周期から全Homを有限projectiveにする。非被約閉部分V(det M,det N)のétale相対正規形と二つのcubic開から普遍Noetherian性を貼り合わせる。全fiber Koszulを先に確認し、局所中央線をspreadして同じ根の中央AS4被覆を得る。一般のKoszul開性や無限個の開の交叉は使わない。証明は `papers/sections/noncubic_finite_type.tex`。
 
-**内在的な全モジュライの有限型代数性。** `thm:global-h2-smooth-finite-type` により、局所有限型k-schemeのsite上のH2は、有限型・滑らか・純次元3のArtinスタックにより表され、対角はaffine有限表示である。指定されたpointed同型を保つArtin持上げで各効果的近傍をsmooth chartとし、実際のnoncubic表示族の準コンパクト性から有限個を選ぶ。relationはU×_[X3/PGL9]Uで、根・被覆・foundationを保存しない全pointed同値を含む。X_asは有限型・滑らか・純次元83のスキームとなる。一致根対では接次元が内在側4・ambient側5（framedでは83・84）なので、X_as→X3は開immersionではない。証明は `papers/sections/h2_smooth_atlas.tex`。
+**内在的な全モジュライの有限型代数性。** `thm:global-h2-smooth-finite-type` により、局所有限型k-schemeのsite上のH2は、有限型・滑らか・純次元3のArtinスタックにより表され、対角はaffine有限表示である。指定されたpointed同型を保つArtin持上げで各効果的近傍をsmooth chartとし、実際のnoncubic表示族の準コンパクト性から有限個を選ぶ。relationはU×_[X3/PGL9]Uで、根・被覆・foundationを保存しない全pointed同値を含む。X_asは有限型・滑らか・既約・純次元83のスキームとなる。一致根対では接次元が内在側4・ambient側5（framedでは83・84）なので、X_as→X3は開immersionではない。証明は `papers/sections/h2_smooth_atlas.tex`。
 
-**残る比較と次の課題。** 全H2の代数性とX_asの表現可能性は証明した。有限foundationのruling商Q_fndとの相対同値・位相比較、境界の幾何と成分の記述、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致は別の課題である。公表前の先行研究比較と広い証明監査も続ける。新規性の包括的確定・外部査読・形式証明は未実施である。
+**内在的な既約性とnoncubic境界。** `prop:global-h2-irreducible` は、根を選ぶ前の普遍cubic Z代数のtailsを使って実際の族を降下し、cubic開の既約性と全H2内での稠密性を証明する。したがって全H2は既約・連結である。`thm:noncubic-boundary-smooth-codim-two` により、被約noncubic境界N=(H2\V_cub)_redは有限型・smooth・既約・純次元1で、H2への正則閉埋込みの余次元は2。LGの接空間Sym²L*上で二行列式の微分は交点二線ℓ,mへのq(ℓ,ℓ),q(m,m)であり独立となる。smooth共通chartでこのscheme-theoreticな閉部分をNの引戻しと同定する。非被約testでは全fiberがnoncubicというだけではNへの因数分解は従わない。
+
+**残る比較と次の課題。** 全H2の有限型smooth Artin性・既約性、被約境界のsmooth性と余次元2、X_asのsmoothスキーム性は証明した。Q_fndおよび二形式表示商との相対groupoid比較、X_asの局所閉性と偏極認識方程式、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致は別の課題である。公表前の先行研究比較と証明監査を続ける。新規性の包括的確定・外部査読・形式証明は未実施である。
 
 **別稿と研究間の関係。** `papers/quiver-avatar-moduli.tex`（v0.1）は有限foundationの8/10/12矢chart、重み四QP、反標準avatarを扱う独立論文である。体上の表示と相対H2の実現条件を区別する。cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は構成済みだが、個々の既存dg特殊化の内在H2認識は、その族ごとに確認する。詳細な主張状態は下の表と研究ノートを正本とする。
 
@@ -153,12 +155,16 @@ $$
 | 五頂点窓と局所canonical tails | 同じNoetherian局所基底上で全軌道自由・Noetherian heart・任意導来基底変更。極小Betti数の固定を不要にする | `lem:five-window-bar-lifting`, `prop:five-window-canonical-tails`, `thm:noncubic-local-tails-effectivity` |
 | 局所中央被覆と全noncubic Artin認識 | regular local foundation chartのgeneric cubicを使って中心線を延長。全Artinで形式H2＝Abel、無障害。有限型開への延長は `thm:noncubic-finite-type-effectivity` | `thm:noncubic-local-central-hull`, `cor:noncubic-all-artin-h2` |
 | 中央二次元の全次数正則性の有限型一様化 | P=E/(φ)の次数0–4が有限projective、P₅=0、指定局所環でφ正則。EはR[φ]上有限で、一つの開で全次数正則・projective。Koszul性は未主張 | `lem:spread-central-regular-line` |
+| noncubicを横断する有限型効果性 | 有限LG認識、全fiberから全Homのprojectivity、非被約閉部分のnormal tilting、Noetherian貼合せ、同じ根の中央AS4延長 | `thm:noncubic-finite-type-effectivity` |
+| 全内在的H2の有限型代数性 | 有限型smooth Artin、純次元3、affine有限表示対角。指定pointed Artin同型を保つatlas | `thm:global-h2-smooth-finite-type` |
+| 全H2と被約noncubic境界の幾何 | H2は既約、cubic開が稠密。Nはsmooth既約純次元1、正則閉埋込みcodim2 | `prop:global-h2-irreducible`, `thm:noncubic-boundary-smooth-codim-two` |
+| framed実現スキームと非開性 | X_asはsmooth純次元83。一致根対でambient接次元84のため開immersionでない | `cor:global-xas-smooth-scheme`, `prop:global-h2-not-ambient-open` |
 | 可換Qの全一次変形の相対H2実現 | Jacobian AS4被覆とZhang補正。任意有限次元二乗零理想へ拡張。内在接dim9、偏極付き接dim15、核dim6 | `thm:quadric-all-first-order-h2`, `cor:quadric-intrinsic-tangent` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
 
 最後の障害例は、選んだ根の持上げを否定するものであり、相対H2 locusの非開性、別の根の非存在、全H2の相対moduliの非存在を主張しない。全H2の相対moduliの代数性を証明済みとは扱わない。
 
-原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類、全幾何点groupoidの実現と実現集合の誘導位相での成分数は確立した。内在的な相対fppf stackは定義・構成した。その有限型代数性は成立した。foundation表示の誘導位相との比較は別に残る。
+原稿の生成・検算・組版の実施状況は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) に記す。全同値類の分類、全幾何点groupoidの実現と実現集合の誘導位相での成分数は確立した。内在的な相対fppf stackは定義・構成した。有限型代数性・既約性・被約境界の余次元二は内在的に証明した。foundation表示との相対groupoid比較は別に残る。
 
 ### 別稿の到達点と依存範囲
 
@@ -202,7 +208,7 @@ F1–F6が揃うまでは「完全分類」と報告しない。条件付きの�
 
 cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れたpointed同値を数え切れないため、最初の軌道対象の内在性に基づく有限判定を最終仕様に採用した。これは具体的な必要十分条件で、未知の圏同値や未知のAS条件を言い換えただけではない。抽象的な基礎体上では有限代数的判定であり、機械実行には係数体の有効な表示を要する。
 
-現在はこの同値類分類を、非被約底も含む族と自己同値を保持するスタックへ拡張する。反Serre環の全次数は二次関係から復元でき、noncubic六係数は固定Grassmann affine cellへ局所閉埋込みとなり、全実現点は構成可能な集合として既約包絡[Z2/PGL9]に含まれる。noncubicでは表示商と全幾何点慣性を構成した。finite foundationの開部分F0上ではruling交換を相対的に構成し、coherentなS2商Q_fndを得た。全H2(k)はそのfull subgroupoidとして実現され、全pointed自己同値も捉える。F0→Q_fndは実際に有限étale二重被覆であるが、これを任意の内在的H2族のruling被覆と同定する相対認識は残る。H2実現集合はcubic非空開を含むため誘導位相で既約であり、各noncubic点へのcubicからのpointed smooth proper dg特殊化を構成した。さらに各特殊化について反Serre軌道のperfect複体が次数零の局所自由環に集中し、`[Gr(56,81)/PGL9]` への実際の曲線が得られる。全foundation変形に相対平方根・AS被覆が存在するとは主張しない。
+この同値類分類を、非被約底も含む族と自己同値を保持する有限型smooth Artinスタックへ拡張した。反Serre環の全次数は二次関係から復元でき、noncubic六係数は固定Grassmann affine cellへ局所閉埋込みとなり、全実現点は構成可能な集合として既約包絡[Z2/PGL9]に含まれる。noncubicでは表示商と全幾何点慣性を構成した。finite foundationの開部分F0上ではruling交換を相対的に構成し、coherentなS2商Q_fndを得た。全H2(k)はそのfull subgroupoidとして実現され、全pointed自己同値も捉える。F0→Q_fndは実際に有限étale二重被覆であるが、これを任意の内在的H2族のruling被覆と同定する相対認識は残る。H2実現集合はcubic非空開を含むため誘導位相で既約であり、各noncubic点へのcubicからのpointed smooth proper dg特殊化を構成した。さらに各特殊化について反Serre軌道のperfect複体が次数零の局所自由環に集中し、`[Gr(56,81)/PGL9]` への実際の曲線が得られる。全H2点の適切な有限型近傍には相対平方根と同じ根のAS4被覆が存在する。foundation表示全体との相対同値は別に検討する。
 
 公表前の包括的な先行研究比較と第三者による証明レビューも必要である。既知のVdB分類、PresottoのZ-domain、MCM・helix・AS双対性、関係式stackと変形比較を本研究の新しい成果とはしない。一般の自己同値・根・ambient忘却ファイバーやcubic同値の幾何的簡約も、必要な範囲で扱う。
 
@@ -213,7 +219,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 ## 6. 次の実行単位
 
 1. **有限型atlasの公表前監査を仕上げる。** `noncubic_finite_type.tex` の有限LG条件→全fiber認識→全軌道→Noetherian貼合せ→中央AS4被覆の依存を点検する。特に閉基底上のnormal foundationの相対tilting、右軌道積、同じ根との比較を保つ。`h2_smooth_atlas.tex` の指定Artin同型と有限部分被覆を点検する。新規性は既知のVdB・DDL・PP・Stacksの入力と分けて調査する。
-2. **内在的な境界と成分を記述する。** 既存cubic表示の既約な有限型基底からH2への実際の相対射を確認し、noncubic atlasのcubic開との接続から既約性を検討する。foundationの誘導位相だけで結論しない。次にQ_fndとの相対比較に必要なrulingの降下を切り分ける。
+2. **境界とfoundationの相対表示を比較する。** H2の既約性と被約境界Nのsmooth性・余次元2は証明済み。Nのsmooth chartでは二行列式が環上で零となり、étale局所に二形式模型へ移る。この相対normal formとpointed反Serre再構成から、Npres→Nの相対全忠実性・rulingの降下・有限慣性を比較する。全fiber noncubicという条件とNへの因数分解を区別する。
 3. **framed実現像の局所幾何を調べる。** X_asはsmooth83次元スキームで、一致根対ではX3の接次元84との相違がある。`cor:artin-polarization-retraction` の余分なHH¹方向を用い、局所閉性や具体的な偏極認識方程式を調べる。開性を目標にしない。
 
 全スキーム上の商[U/R]は元の有限型site上のH2を延長する。任意Noetherian基底で同じAbel公理を課した関手との一致、および一般のcanonical非有界導来圏の大域descentは別に確認する。

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.41
+% 日本語 LuaLaTeX。2026-11-22 / v1.42
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v1.41（全モジュライの有限型代数性）}
+\date{2026年11月22日\quad v1.42（内在的モジュライと滑らかなnoncubic境界）}
 
 \begin{document}
 \maketitle
@@ -65,10 +65,12 @@ $\OO$ は Gabriel--Krull 商で rank one torsion-free かつ exceptional とし�
 $\PP^1$ 上の二つの被約二点集合の非順序対の同時射影同値で分類する。
 
 局所有限型基底の fppf site 上の内在的スタック $\mathfrak H_2$ は、
-有限型で滑らかな純次元三の Artin スタックにより表され、対角は affine 有限表示である。
+有限型で滑らかな既約・純次元三の Artin スタックにより表され、対角は affine 有限表示である。
 反 Serre 再構成による全忠実射
 $\mathfrak H_2\hookrightarrow[X_3/\operatorname{PGL}_9]$ の framed 実現空間
-$X_{\mathrm{as}}$ は、有限型で滑らかな純次元八十三のスキームである。
+$X_{\mathrm{as}}$ は、有限型で滑らかな既約・純次元八十三のスキームである。
+被約 noncubic 境界は滑らかで既約な純次元一の閉部分スタックであり、
+その閉埋込みは余次元二の正則閉埋込みである。
 ただし一致根対では $X_3$ の接次元が八十四となり、実現像はそこで開ではない。
 
 証明では、cubic 族の普遍 Noetherian 性・相対 Picard 根・canonical AS4 hull と、
@@ -112,16 +114,19 @@ $s=-\otimes H$ は $s^2\simeq S^{-1}[2]$ という平方根である。
 \begin{theorem}[全モジュライの有限型代数性]
 局所有限型 $k$-スキーム上の $\HHstack$ は、有限型で滑らかな純次元三の
 Artin スタックにより表され、対角は affine かつ有限表示である。
-framed 実現空間 $X_{\mathrm{as}}$ は有限型で滑らかな純次元八十三のスキームであり、
+framed 実現空間 $X_{\mathrm{as}}$ は有限型で滑らかな既約・純次元八十三のスキームであり、
 \[
  \HHstack\simeq[X_{\mathrm{as}}/\operatorname{PGL}_9].
 \]
-全幾何 fiber が cubic となる部分は Artin 開部分をなす。
+全体は既約であり、全幾何 fiber が cubic となる Artin 開部分は稠密である。
+その被約閉補集合は smooth・既約・純次元一で、余次元二の正則閉埋込みを与える。
 noncubic の一致根対では $X_{\mathrm{as}}\to X_3$ は open immersion ではない。
 \end{theorem}
 
 全体の証明は定理~\ref{thm:global-h2-smooth-finite-type}、
 系~\ref{cor:global-xas-smooth-scheme}、命題~\ref{prop:global-h2-not-ambient-open} に置く。
+既約性と境界の主張は命題~\ref{prop:global-h2-irreducible} と
+定理~\ref{thm:noncubic-boundary-smooth-codim-two} に置く。
 cubic 開部分には定理~\ref{thm:cubic-smooth-open} を用いる。
 周期を選ばない普遍 Noetherian 性、同じ二周期の canonical AS4 hull、
 相対 Picard 根、quintuple の Artin 持上げを順に用いる。
@@ -613,13 +618,16 @@ $M\mapsto M_{\nu^{-1}}$ が tails 上で自然に恒等であることが必要�
 Deligne--Mumford スタックにはならない。
 \end{remark}
 
-\begin{problem}[相対表示と境界の幾何]
+\begin{problem}[境界の相対表示と framed 局所構造]
 定理~\ref{thm:global-h2-smooth-finite-type} により $\HHstack$ の有限型代数性は成立し、
 系~\ref{cor:global-xas-smooth-scheme} により framed 実現空間は smooth スキームとなる。
 有限 foundation の ruling 商 $\mathfrak Q_{\mathrm{fnd}}$ との相対比較を具体化し、
-内在的な位相での成分と noncubic 境界の局所幾何を記述せよ。
+被約 noncubic 境界と二形式表示商の相対 groupoid を比較せよ。
+全体の既約性と被約境界の滑らかさ・余次元二は、
+命題~\ref{prop:global-h2-irreducible} と定理~\ref{thm:noncubic-boundary-smooth-codim-two} で成立した。
 既存の smooth proper dg 特殊化族そのものの相対 $\HHstack$ 認識は、各族について別に確認する。
-命題~\ref{prop:h2-component-density} の誘導位相での既約性を、比較なしに内在的な成分数と同一視しない。
+この内在的な既約性の証明は、実際の相対族の連続性を使い、
+命題~\ref{prop:h2-component-density} の誘導位相との同一視を必要としない。
 
 また $X_{\mathrm{as}}\to X_3$ の局所閉性と具体的な認識方程式を調べよ。
 一致根対では命題~\ref{prop:global-h2-not-ambient-open} が開性を否定する。
