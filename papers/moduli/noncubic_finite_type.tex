@@ -1,0 +1,854 @@
+% !TeX root = ../nc-quadric-moduli.tex
+% 2026-11-22 / v1.43（Bへ9証明移管）
+\section{noncubic 境界を横断する有限型効果性}
+\label{sec:noncubic-finite-type}
+
+局所環上の構成を一つの有限型近傍へ広げる。
+有限 foundation の Lagrangian 表示に全幾何点を認識する有限開条件を課し、
+その同じ基底の全 fiber の geometric helix を用いて全 Hom を先に平坦化する。
+二つの cubic 開部分と非被約 noncubic 閉部分から Noetherian 性を貼り合わせ、
+局所中央被覆を有限型開へ延長する。
+一般の Koszul 性の開性や、無限個の開集合の交叉の開性は用いない。
+以下の相対結果とその組合せの新規性は未確認である。
+
+\subsection{Lagrangian 開部分の全幾何点の認識}
+
+以下では標数零の代数閉体上で考える。
+前節の Grassmann 表示で、第二 summand の $D_L$ による基底変更を行い、
+$H=U\oplus U^*$、$U=k^2\otimes k^2\simeq\operatorname{Mat}_2(k)$ と書く。
+交代形式は二 summand 間の標準評価から作るものとする。
+この基底変更は二次元因子上の同型なので分解テンソルの集合を保つ。
+$\Sigma_U\subset\mathbb P(U)$ と $\Sigma_{U^*}\subset\mathbb P(U^*)$ を
+二つの Segre 二次曲面とする。
+
+\begin{lemma}[両階数三の Lagrangian 平面の直接正規形]
+\label{lem:lagrangian-double-rank-three-recognition}
+$L\subset U\oplus U^*$ を Lagrangian 四平面とする。
+二つの射影の階数がともに三で、$L\cap U$ と $L\cap U^*$ の各生成元が
+二次正方行列として可逆であると仮定する。
+このとき $\operatorname{GL}_2\times\operatorname{GL}_2$ の $U$ 上の tensor 作用と
+$U^*$ 上の反傾作用、および $L$ の基底変更により、$L$ は
+\begin{equation}\label{eq:lagrangian-rank-three-normal-form}
+\begin{aligned}
+ L=\bigl\langle&(-E_{21},\alpha E_{12}+\gamma E_{21}),\quad
+ (E_{12},\beta E_{12}-\alpha E_{21}),\\
+ &(-D_0,0),\quad (0,I_2)\bigr\rangle,
+ \qquad \alpha^2+\beta\gamma=1.
+\end{aligned}
+\end{equation}
+となる。ここで $D_0=\operatorname{diag}(1,-1)$ である。
+対応する有限 foundation は、中央二重平方環
+\[
+ k[u,v]\langle c,d\rangle/
+ \bigl(c^2-uv,\ d^2-(\alpha u+\beta v)(\gamma u-\alpha v)\bigr)
+\]
+の既知の normal foundation と同型である。
+この認識は、候補 foundation 自身の domain 性や $\mathcal H_2$ 所属を仮定しない。
+\end{lemma}
+\begin{proof}
+交点線を可逆行列 $X\in U$、$Y\in U^*$ で生成する。
+Lagrangian 条件から $\operatorname{tr}(X^tY)=0$ である。
+作用を $X\mapsto gXh^t$、$Y\mapsto g^{-t}Yh^{-1}$ と書くと、
+$X^tY$ は $h$ により共役変換される。
+この行列は可逆かつ trace 零であり、標数零では異なる固有値 $\lambda,-\lambda$ を持つ。
+従って基底変更と交点線の生成元の定数倍により
+\[
+ L\cap U=kD_0,\qquad L\cap U^*=kI_2
+\]
+とできる。
+二射影の像は、それぞれ反対の交点線の annihilator なので、
+$\langle D_0,E_{12},E_{21}\rangle$ と
+$\langle I_2,E_{12},E_{21}\rangle$ である。
+交点線の成分を引けば、残る二次元部分は
+$\langle E_{12},E_{21}\rangle$ からその双対への graph となる。
+Lagrangian 条件によりその行列は対称であり、交点が指定した二線だけであることから可逆である。
+これを $Q=(q_{ij})$ と書く。
+
+$U$ の scalar $t$ と $U^*$ の scalar $t^{-1}$ により $Q$ は $t^{-2}Q$ に移る。
+代数閉性を用いて $t^4=-\det Q$ と選べば $\det Q=-1$ と正規化できる。
+$\alpha=-q_{12}$、$\beta=q_{11}$、$\gamma=-q_{22}$ と置くと
+$\alpha^2+\beta\gamma=1$ であり、graph の二基底と交点二線は
+\eqref{eq:lagrangian-rank-three-normal-form} となる。
+第二 summand の $D_L$ による基底変更を戻すと、これは
+式~\cite[\texttt{eq:nchh-plane}]{QuadricIntrinsic2026} の四列の行列そのものである。
+その式は中央二重平方環の二つの行列分解から直接計算した有限 foundation の表示である。
+二形式はともに非退化なので、第~\cite[\texttt{sec:relative-noncubic-families}]{QuadricIntrinsic2026}節の逆構成によって
+実際の $\mathcal H_2$ 対象を与える。
+この比較は有限代数の積を保ち、元の構造頂点も保つ。
+\end{proof}
+
+\begin{proposition}[非被約閉基底上の両階数三正規形]
+\label{prop:lagrangian-relative-double-rank-three}
+$R$ を標数零の体上の可換環、$L\subset U_R\oplus U_R^*$ を
+Lagrangian な階数四の部分束とする。
+二射影の三次小行列式がそれぞれ単位イデアルを生成し、その四次行列式が
+$R$ の元としてともに零であると仮定する。
+さらに二つの交点線束の局所生成元は、二次正方行列として可逆とする。
+このとき $\operatorname{Spec}R$ の \texorpdfstring{\'etale}{etale} 被覆上で、
+前補題の式~\eqref{eq:lagrangian-rank-three-normal-form} が成立する。
+従ってその有限 foundation は同じ基底上の明示中央二重平方族の
+有限 foundation と同型である。基底の被約性は不要である。
+\end{proposition}
+\begin{proof}
+三次小行列式を可逆化し、行基本変形と列基本変形を行うと、射影行列は
+$\operatorname{diag}(I_3,a)$ の形となる。
+四次行列式が実際に零なので $a=0$ であり、各 kernel、image、cokernel は
+所定階数の局所自由部分束または商束となる。
+特に $L\cap U_R$ と $L\cap U_R^*$ は線束である。
+Zariski 局所にその可逆行列としての生成元を $X,Y$ と選ぶ。
+等方性から $T=X^tY$ は trace 零であり、$\det T$ は可逆である。
+Cayley--Hamilton により $T^2=-\det(T)I_2$ である。
+
+$\lambda^2=-\det T$ を満たす可逆元 $\lambda$ を有限 \texorpdfstring{\'etale}{etale}
+被覆により加える。その上で
+\[
+ e_\pm=\frac12(I_2\pm\lambda^{-1}T)
+\]
+は互いに直交する階数一の idempotent であり、$R^2$ を二つの固有線束へ分解する。
+各固有線束の局所基底を選び、$hTh^{-1}=\lambda D_0$ とする。
+$g=D_0h^{-t}X^{-1}$ と置くと、前補題の tensor 作用は
+\[
+ gXh^t=D_0,\qquad g^{-t}Yh^{-1}=\lambda I_2
+\]
+を与える。$Y$ の生成元を $\lambda^{-1}$ 倍すれば交点線は $RD_0$ と $RI_2$ となる。
+
+両射影の像は反対の交点線の annihilator に一致する。
+これらの束はそれぞれ
+$RD_0\oplus\langle E_{12},E_{21}\rangle_R$ と
+$RI_2\oplus\langle E_{12},E_{21}\rangle_R$ である。
+$L$ から二交点線を割った階数二束は、両側の
+$\langle E_{12},E_{21}\rangle_R$ へ同型に射影する。
+従ってこれは可逆行列 $Q$ の graph であり、等方性により $Q=Q^t$ である。
+次に $t^4=-\det Q$ の有限 \texorpdfstring{\'etale}{etale} 被覆へ移り、
+$U_R,U_R^*$ の scalar を $t,t^{-1}$ 倍すると $\det Q=-1$ となる。
+この被覆が \texorpdfstring{\'etale}{etale} であることには、$4t^3$ が可逆であることだけを使う。
+$\alpha=-q_{12}$、$\beta=q_{11}$、$\gamma=-q_{22}$ と置けば、
+$\alpha^2+\beta\gamma=1$ と式~\eqref{eq:lagrangian-rank-three-normal-form} が
+$R$ 上の恒等式として成立する。
+式~\cite[\texttt{eq:nchh-plane}]{QuadricIntrinsic2026} の比較もそのまま相対的に成立する。
+\end{proof}
+
+\paragraph{Cross reshuffling.}
+$M\in\operatorname{Hom}(U,U^*)$ を四因子テンソルと見て、その係数を
+$M_{ck,ab}$ と書く。cross reshuffling を
+\[
+ \operatorname{Cr}(M)_{ka,bc}=M_{ck,ab}
+\]
+で定める。これは中間の隣接二因子を入力とする縮約を表す四次正方行列である。
+$M=y\otimes\nu$ が階数一で、$y$ と $\nu$ がそれぞれ二次正方行列として可逆なら、
+$\operatorname{Cr}(M)$ は行・列の並替を除いて二つの可逆二次行列の Kronecker 積であり、可逆である。
+
+\begin{proposition}[noncubic 点を含む全幾何点認識の開部分]
+\label{prop:lagrangian-geometric-recognition-open}
+$L_0$ を前補題の条件を満たす点とし、有限 foundation の Grassmann chart 内にあるとする。
+$\operatorname{LG}(4,H)$ における $L_0$ の開近傍 $W$ を取れて、その全幾何点の
+有限 foundation は $\mathcal H_2$ 対象の normal foundation となる。
+具体的に、$L$ の局所基底を列行列
+\[
+ \begin{pmatrix}M\\N\end{pmatrix},\qquad M,N\in\operatorname{Mat}_4
+\]
+で表し、次の有限開条件を課せばよい。
+\begin{enumerate}
+\item $\mathbb P(L\cap U)\cap\Sigma_U=\varnothing$、
+      $\mathbb P(L\cap U^*)\cap\Sigma_{U^*}=\varnothing$。
+\item $\operatorname{Cr}(N\operatorname{adj}M)$ と
+      $\operatorname{Cr}(M\operatorname{adj}N)$ が可逆である。
+\end{enumerate}
+二つの射影がともに階数三なら前補題の noncubic 型であり、
+少なくとも一方の階数が四なら一方の ruling foundation が geometric cubic 型である。
+この命題は幾何点での有限 foundation の認識であり、相対 heart の存在を結論に先取りしない。
+\end{proposition}
+\begin{proof}
+(1) の失敗は、$L$ が固定された Segre 二次曲面上の点を含むという
+射影 incidence の像である。従って (1) は開条件である。
+$\mathbb P^3$ の任意の直線は代数閉体上で Segre 二次曲面と交わるので、
+(1) により両方の交点の次元は高々一、両射影の階数は三以上である。
+
+$L$ の基底を $T$ により変えると
+\[
+ N\operatorname{adj}M\longmapsto
+ BT\operatorname{adj}(AT)=(\det T)N\operatorname{adj}M
+\]
+である。従って (2) も基底に依存しない開条件である。
+指定点 $L_0$ では $M$ の階数が三なので、$\operatorname{adj}M$ の像は
+$\ker M$、その行空間は $\operatorname{ann}(\operatorname{im}M)$ である。
+$(M;N)$ の単射性により $N\ker M$ は非零で、$L_0\cap U^*$ を与える。
+また Lagrangian 条件により
+$\operatorname{ann}(\operatorname{im}M)=L_0\cap U^*$ である。
+従って $N\operatorname{adj}M$ は、二次正方行列として非退化な二元の階数一外積である。
+上の Kronecker 積の観察により、その cross reshuffling は可逆である。
+$M\operatorname{adj}N$ についても同様である。
+従って (1), (2) はともに $L_0$ で成立する。
+
+$M$ が可逆な幾何点を取る。元の $F$ は同型であり、
+その cubic quintuple の四因子テンソルは、二次元因子上の同型と定数倍を除いて
+\[
+ K=BA^{-1}
+\]
+である。Lagrangian 条件 $M^tB=N^tA$ により $K$ は対称である。
+一組の隣接二因子の縮約が零となることは、$K$ の核が非零の分解テンソルを含むことに等しい。
+この核は $L\cap U$ なので (1) に反する。
+反対の隣接二因子については $K^t=K$ によって同じ結論を得る。
+残る二組の隣接二因子は $\operatorname{Cr}(K)$ とその転置で表され、
+\[
+ \operatorname{Cr}(K)
+ = (\det M)^{-1}\operatorname{Cr}(N\operatorname{adj}M)
+\]
+は (2) により可逆である。
+従って四組全ての隣接縮約が非零であり、geometric 条件を満たす。
+命題~\cite[\texttt{prop:cubic-foundation-open}]{QuadricIntrinsic2026} の cubic 逆構成により、
+元の foundation は実際の $\mathcal H_2$ 対象から来る。
+
+$N$ が可逆な場合は、命題~\cite[\texttt{prop:relative-ruling-involution}]{QuadricIntrinsic2026} の二短完全列で
+ruling を交換する。その第一合成は $j^t$ に相当し、したがって可逆である。
+新しい cubic tensor は二次元因子の同型と隣接対を保つ因子順の反転を除いて $AB^{-1}$ であり、
+同じ議論と第二の cross 条件が geometric 性を与える。
+この因子順は次のように直接確認できる。
+元の四因子を $(V_0,V_1,V_2,K^*)$ とし、
+$F:V_0\otimes V_1\to D$、$j:D^*\to V_2\otimes K^*$ と書く。
+ruling 交換後の第一合成は $j^t$、新しい関係束の包含は $F$ の curry であり、
+四因子は $(K,V_2^*,V_1^*,V_0^*)$ となる。
+従って新しいテンソルの係数は
+\[
+ w'_{kcba}=(F^\vee j^{-1})_{ab,ck}.
+\]
+標準交代形式への基底変更を入れた射影行列は
+$M=-F^\vee$、$N=D_Lj$ なので、$D_L^2=I_4$ を使うと
+\[
+ F^\vee j^{-1}=-AB^{-1}D_L.
+\]
+$D_L$ は一つの二次元因子だけの基底変更であり、
+$(a,b,c,k)$ から $(k,c,b,a)$ への反転は隣接対の集合を保つ。
+また $M^tB=N^tA$ から $AB^{-1}=(AB^{-1})^t$ が従うので、
+両 summand を交換した前段の判定がそのまま適用できる。
+ruling 交換は導来圏内の指定構造頂点を保つ mutation である。
+認識した cubic $\mathcal H_2$ 対象の二つ目の normal foundation が元の foundation なので、
+元の点も $\mathcal H_2$ に由来する。
+両射影が階数三の場合は前補題を適用する。
+\end{proof}
+
+\begin{corollary}[cubic 二開部分と noncubic 閉部分]
+\label{cor:lagrangian-open-closed-recognition}
+前命題の $W$ において、二つの行列式を零とする閉部分スキームを
+$D=V(\det M,\det N)$ と置く。
+$D$ は非被約でもよい。$D$ 上では命題~\ref{prop:lagrangian-relative-double-rank-three} の正規形が
+\texorpdfstring{\'etale}{etale} 局所に成立し、対応する有限 foundation は
+相対中央二重平方族のものに一致する。
+開補集合は $D(\det M)$ と $D(\det N)$ で覆われ、
+前者は元の ruling の geometric cubic 表示、後者は交換した ruling の
+geometric cubic 表示を持つ。
+\end{corollary}
+\begin{proof}
+$D$ 上では各三次小行列式が単位イデアルを生成し、
+交点線の determinant も幾何点で零とならないので局所的に可逆である。
+命題~\ref{prop:lagrangian-relative-double-rank-three} を適用する。
+二つの cubic 開部分については前命題の geometric 判定が全幾何点で成立し、
+geometric locus は射影 incidence の像の補集合として定義された開部分なので、
+その判定は任意の基底変更と両立する。
+\end{proof}
+
+\subsection{全幾何 fiber の有限 foundation 認識からの一様化}
+
+\begin{theorem}[normal foundation の全 fiber 認識による全軌道の一様化]
+\label{thm:uniform-orbit-from-normal-fibers}
+$R$ を本稿の基礎体 $k$ 上の可換 Noetherian 代数、$\Lambda$ を有限 projective $R$-代数とし、
+$\operatorname{Perf}\Lambda$ は相対 smooth proper とする。
+$F_0,F_1,F_2,F_3$ を相対 full strong exceptional foundation とし、
+$\operatorname{End}(\bigoplus_{a=0}^3F_a)\simeq\Lambda$ の同定を固定する。
+実際の可逆 perfect Morita 双加群による自己同値 $\mathsf s$ と同型
+\[
+ \mathsf s^2\simeq S^{-1}[2],\qquad
+ \mathsf sF_0\simeq F_2,\qquad \mathsf sF_1\simeq F_3
+\]
+を固定する。ここで $S$ は canonical な相対 Serre 関手である。
+各幾何点 $x$ において、$\operatorname{Perf}\Lambda_x$ とある体上の
+$\HH$ 対象 $(\mathcal C_x,\mathcal O_x)$ の導来圏との同値があり、
+$(F_0,F_1,F_2,F_3)_x$ を定理~\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026} の
+normal helix の最初の四項に送ると仮定する。
+この仮定は各 fiber の有限 foundation に関するものであり、
+$R$ 上の heart や相対正規形を先に仮定しない。
+
+\[
+ E_{2a}=\mathsf s^aF_0,\qquad E_{2a+1}=\mathsf s^aF_1,
+ \qquad C_{ij}=\operatorname{Hom}_{\Lambda}(E_{-j},E_{-i})\quad(i\le j)
+\]
+と置き、$i>j$ では $C_{ij}=0$ とする。この同じ $R$ 上で次が成立する。
+\begin{enumerate}
+\item 全 $i\le j$ に対して $\mathbf R\operatorname{Hom}(E_i,E_j)$ は
+  次数零の有限 projective $R$-加群に集中し、その階数は
+  \[
+  h_{2n}=(n+1)^2,\qquad h_{2n+1}=(n+1)(n+2)
+  \]
+  である。全 Hom と合成は任意の導来基底変更と整合する。
+\item 全軌道環
+  \[
+  B=\bigoplus_{n\ge0}\operatorname{Hom}(F_0,\mathsf s^nF_0)
+  \]
+  は一次生成・二次・相対 Koszul であり、全 $B_n$ は階数 $(n+1)^2$ の
+  有限 projective 加群である。二次関係は階数七の直和因子となり、
+  双対 $B^!$ の全次数、左右および双加群 Koszul 解消は任意基底変更と両立する。
+\item $C$ の各頂点単純加群には、距離四以内の五頂点 bar 解消があり、
+  これは任意基底変更後にも完全である。
+  任意の可換 $R$-代数 $R'$ に対し、canonical な比較
+  \[
+  D(\operatorname{QGr}B_{R'})\simeq D(\operatorname{Mod}\Lambda_{R'}),
+  \qquad D(\operatorname{QGr}B_{R'})^c\simeq\operatorname{Perf}\Lambda_{R'}
+  \]
+  があり、$\pi B$ を $F_0$ に、$(1)$ を最初に選んだ実際の $\mathsf s$ に送る。
+  この比較とその Serre 平方同型は、非平坦なものを含む導来基底変更と整合する。
+\end{enumerate}
+さらに $B$ が左右 Noetherian なら、任意の有限型可換 $R$-代数 $R'$ 上で、
+$\operatorname{qgr}B_{R'}$ は Noetherian heart、module-object 基底変更と fppf descent、
+一般 coherent Hom の有限性と平坦基底変更、全 $\chi_q$、AZ 豊富性を持つ。
+構造対象は平坦かつ exceptional であり、全幾何 fiber は仮定した $\HH$ の heart と
+構造対象を保って exact 同値である。
+同じ根の相対 AS4 被覆の存在は、この定理の結論とは別に確認する。
+\end{theorem}
+
+\begin{proof}
+各 fiber の列を同定する。
+$E_{i+4}=S^{-1}E_i[2]$ であり、最初の四項は指定された $F_0,\ldots,F_3$ である。
+体上の normal helix も同じ四項と同じ反 Serre 四周期を持つから、
+全整数 $i$ で両列が一致する。
+ここで選び直した別の根との比較は必要ない。
+最初に与えた $\mathsf s$ がこの列の二項移動を実現する。
+
+$\Lambda$ の相対 smooth proper 性により、各
+$K_{ij}=\mathbf R\operatorname{Hom}_{\Lambda}(E_i,E_j)$ は $R$ 上 perfect である。
+normal helix の geometric 性から、全幾何 fiber の $K_{ij}$ は
+$i\le j$ のとき階数 $h_{j-i}$ の次数零成分だけを持つ。
+perfect 複体の fiber 判定
+\cite[Tag 0BDK, Lemma 36.31.3]{StacksPerfectFibers}
+によれば、その所定階数・所定次数への集中を表す開部分は全幾何点を含むので
+$\operatorname{Spec}R$ 全体である。
+従って各 $K_{ij}$ 自体が指定階数の vector bundle となる。
+この操作は $i,j$ ごとに新たな開を選ぶものではない。
+既に同じ基底の全 fiber に認識仮定があり、その全体上に判定を適用している。
+有限 projective 性から、非平坦な基底変更でも通常の tensor が導来 tensor と一致する。
+これで (1) を得る。
+
+体上の normal helix では、$C$ は距離高々二の成分で生成され、
+奇数頂点からの正距離の射は直後の偶数頂点を経由する。
+対応する積の余核は各成分で有限生成であり、全幾何 fiber で零なので零である。
+従ってこれらの生成条件は $R$ 上で成立する。
+同様に、$B_1\otimes B_n\to B_{n+1}$ は全射となる。
+二次関係 $J=\ker(B_1^{\otimes2}\to B_2)$ は、$B_2$ の projectivity により
+階数七の直和因子である。
+$T_R(B_1)/(J)\to B$ は各次数で有限生成加群から projective 加群への全射となる。
+この全射は $R$ 上分裂する。
+各 fiber の偶数 $\mathbb Z$-代数は既知の $\HH$ 切断環のものと同じであり、
+二次で Koszul である。
+実際の二周期の選択が異なっても、頂点単純加群の線形解消は同じ偶数
+$\mathbb Z$-代数に属するので、この二つの性質は変わらない。
+具体的には、周期を指定して得る次数付き環の次数付き加群圏は、各次数成分を
+対応する頂点に置くことで、この偶数 $\mathbb Z$-代数の加群圏と同値になる。
+生成次数と解消の線形性もこの対応で保たれる。
+従って上の全射の kernel の全 fiber は零であり、有限生成性と Nakayama により零である。
+これで $B$ の二次提示を得る。
+
+ここまでに $B_1,B_2,B_3$ の有限 projective 性と、全幾何 fiber の Koszul 性を
+互いに独立に確認した。
+各局所環で Polishchuk--Positselski の局所 Koszul 変形定理
+\cite[Chapter 6, Theorem 7.3]{PolishchukPositselski2005} を適用できる。
+補題~\ref{lem:relative-koszul-degree-three} と同じ局所貼合せにより、
+全双対成分の projectivity、相対 Koszul 性、任意底変更と両立する解消を得る。
+一つの特殊点の Koszul 性を開全体へ外挿していないことに注意する。
+
+$C$ の全幾何 fiber は既知の normal helix の AS 正則 $\mathbb Z$-代数である。
+各 $S_i$ の解消の支持は $i,\ldots,i+4$、終項は $P_{i+4}$ 一個であり、
+AS 双対条件も成立する。
+従って補題~\cite[\texttt{lem:five-window-bar-lifting}]{QuadricIntrinsic2026} の全幾何 fiber 版を、そのまま $R$ 上で適用する。
+全 $C_{ij}$ の projectivity は既に (1) で得ているため、この適用は循環しない。
+極小 Betti 数が cubic と noncubic の間で変わっても、五頂点の非極小 bar 複体は共通である。
+命題~\cite[\texttt{prop:five-window-canonical-tails}]{QuadricIntrinsic2026} により、全基底変更後の
+canonical torsion 局所化、四項 tilting、compact 圏の比較を得る。
+
+比較が指定の全軌道を保つことも確認する。
+$P_i\mapsto E_{-i}$ とする cocontinuous derived functor を取る。
+前向きの derived Hom が次数零に集中しているため、向き付けられた dg 部分圏の
+truncation と $H^0$ の zigzag によりこの functor を構成できる。
+五頂点 bar 解消の像は有限個の perfect $\Lambda$-対象からなる複体である。
+各幾何 fiber では、normal helix の AZ 比較の下で単純 torsion 加群の解消の像となるので零である。
+従ってその totalization は基底上の perfect fiber 判定で零となる。
+二項移動と整合するため、二つの parity のこの比較だけで全 $i$ を扱える。
+導来 torsion kernel は $\operatorname{loc}\{S_i\}$ なので、functor は tails へ降りる。
+四項 tilting generator の End 代数を元の $\Lambda$ と同定するから、これは Morita 同値である。
+奇数始点の生成条件から偶数頂点への restriction は
+$\operatorname{QGr}C\simeq\operatorname{QGr}B$ を与える。
+全 $P_i$ の像が指定された $E_{-i}$ であり、二項移動が指定された $\mathsf s$ なので、
+次数移動および実際の平方同型も対応する。
+全構成は有限 projective 係数の解消と導来 tensor から得られ、任意基底変更と整合する。
+
+最後に $B$ が左右 Noetherian とする。
+有限型中心基底変更は有限個の中心変数の付加と商であるため、全 $B_{R'}$ も左右 Noetherian である。
+補題~\cite[\texttt{lem:relative-cubic-coherent-cohomology}]{QuadricIntrinsic2026} と
+補題~\cite[\texttt{lem:relative-cubic-global-chi}]{QuadricIntrinsic2026} の証明は、Noetherian 生成系と
+式~\cite[\texttt{eq:five-window-tails-cohomology}]{QuadricIntrinsic2026} の有限幅の cohomology 公式を用いるので、
+この五頂点の場合にも同じ証明が適用できる。
+module-object 基底変更は補題~\ref{lem:qgr-module-object-basechange} による。
+各 fiber では元の normal helix が豊富であり、その偶数部分も元の $\HH$ の
+切断列であるから、得られた heart と指定した $(\mathcal C_x,\mathcal O_x)$ は
+構造対象を保って exact 同値となる。
+\end{proof}
+
+\begin{remark}[有限型認識で必要な入力の順序]
+この定理では、有限 foundation の全幾何 fiber を既知の normal または cubic 型へ
+認識する有限型開条件が、全次数の一様性を供給している。
+各次数の平坦 locus を無限に交叉する必要はない。
+ここでの大域的な結論は有限 projective 性であり、無限個の Hom 束を
+一つの開上で同時に自由化するという、不要な強い主張は含めていない。
+また $B$ の Koszul 性を使って全 forward Hom を証明してはいない。
+全 fiber の geometric helix から Hom を先に平坦化し、その後に相対 Koszul 原理を使う。
+Noetherian 性と同じ根の AS4 被覆は、この順序の後に別途供給すべき入力である。
+\end{remark}
+
+\subsection{閉部分と二つの cubic 開部分からの Noetherian 性}
+
+\begin{lemma}[標準 noncubic 族の相対 normal tilting]
+\label{lem:nc-relative-normal-tilting}
+$R$ を可換 Noetherian $k$-代数とし、
+$f_1=uv$、$f_2=(\alpha u+\beta v)(\gamma u-\alpha v)$、
+$\alpha^2+\beta\gamma=1$ とする。
+\[
+ B_0=R[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2),\qquad
+ Z=R[u,v,h],\quad h=cd+dc
+\]
+と置く。式~\cite[\texttt{eq:nchh-plane}]{QuadricIntrinsic2026} の行列分解の cokernel を $M_c,M_d$ とすれば、
+両者は $Z$-加群として
+\[
+ M_c\simeq Z^{\oplus2}\oplus Z(-1)^{\oplus2},\qquad
+ M_d\simeq Z^{\oplus2}\oplus Z(-1)^{\oplus2}
+\]
+であり、これらの表示は任意の基底変更と両立する。
+特に四項
+\[
+ T=(\pi B_0,\pi M_c,\pi B_0(1),\pi M_d(1))
+\]
+は相対 full strong exceptional foundation で、その End 代数は
+式~\cite[\texttt{eq:nchh-plane}]{QuadricIntrinsic2026} の有限 foundation 代数に一致する。
+対応する相対 Morita 同値は四対象、合成、相対 Serre 関手を保ち、
+任意の Noetherian 基底変更と整合する。
+\end{lemma}
+\begin{proof}
+$M_c$ の右生成元を行 $e=(e_1,e_2)$ と書く。
+$e\Phi_c=0$ は
+\[
+ e c=e C_c,\qquad C_c=\begin{pmatrix}0&u\\v&0\end{pmatrix},
+ \qquad C_c^2=f_1I_2
+\]
+に等しい。
+$B_0$ は $Z$ 上の基底 $1,c,d,cd$ を持つので、この関係による reduction で
+$e_1,e_2,e_1d,e_2d$ が $M_c$ を $Z$ 上生成する。
+線形独立性を、作用を明示して確認する。
+基底行 $\mathcal E=(e_1,e_2,e_1d,e_2d)$ に対する係数を列に置くと、
+右乗法 $c,d$ はそれぞれ次の行列で表される。
+\[
+ C=\begin{pmatrix}C_c&hI_2\\0&-C_c\end{pmatrix},\qquad
+ D=\begin{pmatrix}0&f_2I_2\\I_2&0\end{pmatrix}.
+\]
+すなわち $(\mathcal E z)c=\mathcal E Cz$、
+$(\mathcal E z)d=\mathcal E Dz$ である。
+$C^2=f_1I_4$、$D^2=f_2I_4$、$CD+DC=hI_4$ だから、
+これらは $Z^{\oplus2}\oplus Z(-1)^{\oplus2}$ 上の右 $B_0$-作用を定める。
+最初の二基底は $e\Phi_c=0$ を満たすので、この自由加群への
+$M_c$ からの全射を得る。
+他方、前記の reduction は逆向きの $Z$-線形全射を与える。
+両合成は指定四基底上で恒等なので、求める同型である。
+$M_d$ も $c,d$ を交換し、
+$C_c$ を $\left(\begin{smallmatrix}0&\alpha u+\beta v\\
+\gamma u-\alpha v&0\end{smallmatrix}\right)$ に替えれば同じである。
+この証明は係数環上の恒等式なので、任意基底変更と両立する。
+
+命題~\cite[\texttt{prop:nc-qgr-weighted}]{QuadricIntrinsic2026} の weighted stack
+$X=\mathbb P_R(1,1,2)$ と Clifford order $\mathcal B_0$ を用いる。
+上の二加群は中心 $Z$ 上有限自由なので、対応する sheaf は $R$ 上平坦である。
+全幾何 fiber の $\pi M_c,\pi M_d$ は既知の noncubic $\HH$ 対象の
+normal foundation に属し、canonical compact 対象である。
+中心の affine \texorpdfstring{\'etale}{etale} chart 上で
+補題~\cite[\texttt{lem:nc-fiber-perfect}]{QuadricIntrinsic2026} を適用すると、両 sheaf は $\mathcal B_0$ 上局所 perfect となる。
+命題~\cite[\texttt{prop:nc-compact-generator}]{QuadricIntrinsic2026} によって、それらは global にも compact である。
+この compactness と平坦性は、任意の Noetherian 基底変更に保たれる。
+
+命題~\cite[\texttt{prop:nc-relative-smooth}]{QuadricIntrinsic2026} の相対 smooth proper 性により、
+四項の間の全 derived Hom は $R$ 上 perfect で、導来基底変更と両立する。
+各幾何 fiber で四項は normal foundation なので、perfect fiber 判定により、
+その全 Hom は所定階数の次数零 vector bundle、逆向きの Hom は零となる。
+行列分解からの射は、式~\cite[\texttt{eq:nchh-plane}]{QuadricIntrinsic2026} の有限代数から
+$\Gamma=\operatorname{End}(\bigoplus T_i)$ への代数準同型を与える。
+各幾何 fiber で同型であり、双方は所定階数の有限 projective 加群なので、
+これは $R$ 上でも同型である。
+特に $\Gamma$ は有限 foundation の normalized bar 解消により相対 smooth である。
+
+full 性を別に確認する。
+$G=\bigoplus_{j=0}^3\mathcal B_0(j)$ を既知の compact generator とし、
+$T_\Sigma=\bigoplus T_i$ と置く。
+相対 Morita 随伴
+\[
+ \mathsf F=(-)\otimes_\Gamma^{\mathbf L}T_\Sigma,
+ \qquad \mathsf G=\mathbf R\operatorname{Hom}(T_\Sigma,-)
+\]
+を取る。$\mathbf R\operatorname{End}(T_\Sigma)=\Gamma[0]$ より
+$\mathsf F$ は $\operatorname{Perf}\Gamma$ 上 fully faithful である。
+$\mathsf G(G)$ は $R$ 上 perfect であり、$\Gamma$ の相対 smooth 性から
+$\Gamma$ 上も perfect である。
+従って counit の cone
+\[
+ K=\operatorname{Cone}(\mathsf F\mathsf G(G)\longrightarrow G)
+\]
+は compact である。各幾何 fiber では $T_\Sigma$ が tilting generator なので $K$ は零となる。
+$\mathbf R\operatorname{Hom}(G,K)$ は $R$ 上 perfect で全幾何 fiber が零だから零であり、
+$G$ の生成性から $K=0$ である。
+従って $G$ は $T_\Sigma$ の thick 閉包に属し、$T_\Sigma$ も compact generator となる。
+これで相対 Morita 同値を得る。
+全構成は perfect 対象の評価と tensor から成り、基底変更と整合する。
+Serre 関手との比較は相対双対 functor の Yoneda 一意性による。
+\end{proof}
+
+\paragraph{四周期からの Hom $\mathbb Z$-代数の比較。}
+標識付き四項 foundation の同型から得た相対 Morita 同値を $F$、
+両側の反 Serre 関手を $t,t_0$ と書く。
+上の比較は自然同型 $\eta:Ft\simeq t_0F$ を与える。
+最初の四項の同型 $\varphi_a:F(E_a)\simeq E_a^0$ ($0\le a<4$) と、
+選んだ実際の平方同型による四周期を用い、
+$i=a+4n$ に対して $\eta$ の反復から
+$\varphi_i:F(E_i)\simeq E_i^0$ を定める。負の $n$ には逆同型を使う。
+\[
+ f\longmapsto\varphi_jF(f)\varphi_i^{-1}
+ \qquad(f:E_i\longrightarrow E_j)
+\]
+は合成を保つ全 Hom $\mathbb Z$-代数の同型であり、任意基底変更と両立する。
+この比較に、二つの根そのものを同一視する仮定は要らない。
+異なる $\varphi_i$ の選択は頂点ごとの共役を与えるだけなので、
+偶数制限の row と column の Noetherian 性、および線型解消の存在は変わらない。
+
+
+
+\begin{lemma}[二つの cubic 開部分と noncubic 閉部分からの普遍 Noetherian 性]
+\label{lem:lg-two-rulings-universal-noetherian}
+$R$ を可換 Noetherian 環とし、有限 LG 認識開上の foundation と
+実際の Morita 根 $s$ を取る。四項を $E_0,E_1,E_2,E_3$ と書き、
+指定された同型
+\[
+ sE_0\simeq E_2,\qquad sE_1\simeq E_3,
+ \qquad s^2\simeq S^{-1}[2]
+\]
+を用いて $E_{2n}=s^nE_0$, $E_{2n+1}=s^nE_1$ と置く。
+全ての前向き導来 Hom は有限 projective 加群に次数零で集中し、
+任意の底変更と両立することを既に確認したとする。
+このとき同じ根による偶数軌道環
+\[
+ C_n=\operatorname{Hom}(E_0,s^nE_0),\qquad
+ a*b=s^{\deg b}(a)\circ b
+\]
+は、任意の可換 Noetherian $R$-代数 $T$ に対して
+$C_T=C\otimes_RT$ が左右 Noetherian となる。
+
+ここで有限 LG 認識開について用いる入力は次の三つである。
+二つの射影行列を $M,N$ として
+\[
+ a=\det M,\quad b=\det N,\quad I=(a,b),
+ \qquad Z=\operatorname{Spec}(R/I)
+\]
+と置く。
+\begin{enumerate}
+\item $D(a)$ では選んだ ruling の helix が geometric cubic 型である。
+\item $D(b)$ では反対の ruling の helix が geometric cubic 型である。
+\item $Z$ 上では、非被約構造を含めて、foundation が \'etale 局所的に
+  判別式の可逆な二形式による標準 noncubic foundation と同型である。
+\end{enumerate}
+これらは追加の全次数条件ではなく、有限 LG 認識で確認する条件である。
+\end{lemma}
+
+\begin{proof}
+まず二つ目の cubic 開部分で、偶数軌道環が変わらないことを明示する。
+$U=\operatorname{Hom}(E_2,E_3)$ とし、相対評価射から perfect 対象
+\[
+ Y=\operatorname{Cone}\bigl(U\otimes_RE_2\longrightarrow E_3\bigr)[-1]
+\]
+を定める。各幾何 fiber の正規 helix では
+式~\cite[\texttt{eq:normal-ruling-evaluation}]{QuadricIntrinsic2026} が
+\[
+ 0\longrightarrow Y\longrightarrow E_2^{\oplus2}
+ \longrightarrow E_3\longrightarrow0
+\]
+を与え、$Y$ は $E_1$ と反対の初期 ruling である。
+実際、同式の記号で $E_3=\pi X_1(1)$ と書けば
+核は $\pi p(X_1)$ であり、$X_0=pc(X_1)$ より
+$p(X_1)=c(X_0)$ となる。
+従って反対側の列は
+\[
+ E'_{2n}=E_{2n},\qquad E'_{2n+1}=s^nY
+\]
+と取れる。評価射と cone の形成は導来底変更と両立する。
+この列の前向き Hom も、全幾何 fiber での正規 helix の消滅から
+同じ基底上で有限 projective に次数零で集中する。
+
+特に ruling の交換は偶数対象を全く変えない。
+偶数対象間の Hom、その合成、および指定された $s$ による二周期同型も
+変わらない。従って $D(b)$ で反対側の cubic helix から得る偶数環は
+同じ $C_b$ である。単に二つの環の fiber を比較しているのではない。
+
+各 cubic 開部分では、全 Hom の projectivity と底変更整合性が既にある。
+隣接生成性、階数二の cubic relation、可逆な四次 syzygy、およびその縮約同型は、
+各固定次数における有限 projective 加群の写像として定義できる。
+幾何 fiber で geometric cubic の提示と標準解消になるので、
+それらの余核と解消のホモロジーは零である。
+例えば関係部分加群は、既に projective と分かっている Hom 成分への
+全射の核として得るため、projectivity と底変更をここで循環して仮定しない。
+これによって定理~\cite[\texttt{thm:relative-geometric-cubic-noetherian}]{QuadricIntrinsic2026} の
+相対入力が二つの開部分で全て成立する。
+系~\cite[\texttt{cor:relative-periodic-even-noetherian}]{QuadricIntrinsic2026} により
+$C_a$ と $C_b$ は、任意の Noetherian 基底変更後にも左右 Noetherian である。
+
+次に閉部分 $Z$ を扱う。
+仮定 (3) の \'etale 局所標準化は、三次 minor の可逆性と
+$\det M=\det N=0$ の実際の等式から得られる。
+従ってこれは被約点集合上の標準化ではなく、$R/I$ 上の foundation の同型である。
+標準 noncubic 族の係数環を $R'$ とし、その環を
+\[
+ B_0=R'[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2),
+ \qquad h=cd+dc
+\]
+と書く。$u,v$ は中央であり、
+\[
+ B_0=R'[u,v,h]\oplus R'[u,v,h]c
+       \oplus R'[u,v,h]d\oplus R'[u,v,h](cd)
+\]
+である（補題~\cite[\texttt{lem:noncubic-relative-clifford-center}]{QuadricIntrinsic2026}）。
+従って $B_0$ は Noetherian 中央環上の有限自由代数であり、
+任意の Noetherian $R'$-代数への底変更後も左右 Noetherian である。
+
+ここで標準族の根と $s$ を同一視する必要はない。
+補題~\ref{lem:nc-relative-normal-tilting} の相対 tilting により、
+標識付き四項 foundation の同型は、両側の相対 Morita 同値を通して
+四対象を同定し、相対 Serre 関手を保つ。
+四周期
+$E_{i+4}\simeq S^{-1}E_i[2]$ を用いると全対象列が同定される。
+各対象の同型で Hom を共役すれば、合成を保つ Hom $\mathbb Z$-代数の同型を得る。
+特に偶数制限は、標準族の
+$\operatorname{Hom}(\pi B_0(m),\pi B_0(n))$ からなる
+$\mathbb Z$-代数と同型である。
+標準族での Hom 計算は相対結果により $\check B_0$ と一致する。
+従って $C_{R'}$ の associated $\mathbb Z$-代数の全 row と column は
+Noetherian である。この結論は二周期化の選び方に依存しない。
+補題~\cite[\texttt{lem:patch-graded-to-ungraded}]{QuadricIntrinsic2026} を使うと、$C_{R'}$ 自身も
+左右 Noetherian となる。
+
+有限 affine \'etale 被覆の積を使えば、この Noetherian 性は
+$C/IC$ へ忠実平坦に降下する。
+同じ議論は $Z$ 上の任意の Noetherian 基底変更後にも成立する。
+ここで有限被覆を取れるのは、対象となる affine 基底が準コンパクトで、
+標準化が有限表示の \'etale 局所操作からなるためである。
+
+最後に定理~\cite[\texttt{thm:patch-noetherian}]{QuadricIntrinsic2026} を、環 $C$ と中心イデアル
+$I=(a,b)$ に適用する。
+各 $C_n$ は有限 $R$-加群であり、$C/IC,C_a,C_b$ の左右 Noetherian 性を
+確認したので、$C$ も左右 Noetherian である。
+この段階は、各 stalk の Noetherian 性から全体へ推論するものではない。
+実際には $I$-進完成と二つの開部分の有限忠実平坦被覆による貼合せである。
+
+任意の可換 Noetherian $R$-代数 $T$ に対しては、$I_T=(a,b)T$ と置く。
+商と局所化は底変更と可換するので
+\[
+ C_T/I_TC_T\cong(C/IC)\otimes_{R/I}(T/I_T),
+ \qquad (C_T)_a=C_a\otimes_{R_a}T_a,
+ \qquad (C_T)_b=C_b\otimes_{R_b}T_b
+\]
+である。右辺は上で証明した普遍性により左右 Noetherian であり、
+$(C_T)_n$ は有限 $T$-加群である。
+同じ貼合せ定理を $T,I_T,C_T$ に適用して結論を得る。
+\end{proof}
+
+\subsection{同じ根に対する中央 AS4 被覆の延長}
+
+\begin{lemma}[局所中央被覆の有限型近傍への延長]
+\label{lem:spread-local-central-hull}
+$R$ を可換 Noetherian 環、$\mathfrak p\in\operatorname{Spec}R$ とする。
+$B=T_R(V)/(J)$ は連結二次 $R$-代数であり、
+$V,J$ はそれぞれ階数四、七の有限 projective 加群、
+$J\subset V^{\otimes2}$ は直和因子とする。
+$B$ は相対 Koszul であり、全ての $B_n$ は階数 $(n+1)^2$ の
+有限 projective 加群として任意の底変更と両立すると仮定する。
+$E=B^!$ と置く。
+
+局所環 $R_{\mathfrak p}$ 上で、中央正則元
+$\phi_{\mathfrak p}\in(E_{\mathfrak p})_2$ があり、
+$P_{\mathfrak p}=E_{\mathfrak p}/(\phi_{\mathfrak p})$ は
+階数列 $(1,4,6,4,1)$ の有限自由 Frobenius 代数であるとする。
+このとき $\mathfrak p\in D(f)$ となる一つの主開部分へ制限すれば、
+$\phi_{\mathfrak p}$ は中央元 $\phi\in(E_f)_2$ に延長し、次が成り立つ。
+\begin{enumerate}
+\item $\phi$ は全次数で正則であり、この性質は任意の底変更に保たれる。
+\item $P=E_f/(\phi)$ は階数列 $(1,4,6,4,1)$ の相対 Koszul
+  Frobenius 代数であり、$A=P^!$ の全次数は有限 projective である。
+\item $A$ は相対 quadratic Koszul AS4 型の代数であり、
+  ある中央正則二次元 $g$ によって $A/(g)\cong B_f$ と書ける。
+  この表示、正則性、左右および双加群 Koszul 解消は任意の底変更と両立する。
+\end{enumerate}
+さらに任意の可換 Noetherian $R_f$-代数 $T$ に対して $B_T$ が左右 Noetherian
+ならば、$A_T$ も左右 Noetherian である。
+この主張には、$D(f)$ の全ての noncubic fiber において指定した根を
+別の ``良い根'' と比較する仮定は要らない。
+\end{lemma}
+
+\begin{proof}
+相対 Koszul 双対性により、$E$ の各次数は有限 projective であり、
+任意の底変更と両立する。また全ての幾何 fiber $E_{\bar s}$ は Koszul である。
+まず $\phi_{\mathfrak p}$ を有限生成加群 $E_2$ の局所化の元として表し、
+一つの主開部分上の元 $\phi$ へ延長する。
+一次生成加群 $E_1$ の有限個の生成元との交換子は $E_3$ の元であり、
+$R_{\mathfrak p}$ 上で零である。従ってさらに一つの主開部分へ制限して
+これら全てを零とできる。$E$ は一次生成なので $\phi$ は中央である。
+
+$P=E/(\phi)$ と置く。各 $P_i$ は有限表示 $R$-加群である。
+$0\leq i\leq4$ に対する指定階数での局所自由性と $P_5=0$ は、
+有限個の条件として $\mathfrak p$ の一つの開近傍へ広がる。
+同様に、$P_4$ を自明化したときの Frobenius pairings
+$P_i\otimes P_{4-i}\to P_4$ の非退化性も、有限個の行列式を
+可逆化することによって同じ近傍で成立させられる。
+$P$ は一次生成なので $P_5=0$ は $P_n=0$ ($n\geq5$) を含意する。
+補題~\cite[\texttt{lem:spread-central-regular-line}]{QuadricIntrinsic2026} を適用すると、さらに一度縮めて
+$\phi$ の全次数正則性と任意底変更後の正則性が得られる。
+
+ここで Koszul 性を新たに開条件として使う必要はない。
+各幾何 fiber において $E_{\bar s}$ は既に Koszul であり、
+$\phi_{\bar s}$ は中央正則二次元である。
+正則正規二次元による Koszul 代数の商は Koszul だから、
+全ての $P_{\bar s}$ が Koszul となる。
+$P_1,P_2,P_3$ の局所自由性は既に確認したので、
+相対 Koszul 変形原理
+（補題~\ref{lem:relative-koszul-degree-three}）を適用できる。
+従って $P$ は相対 Koszul であり、$A=P^!$ の全次数も有限 projective、
+その階数は $\binom{n+3}{3}$ である。
+Frobenius pairings と相対 Koszul 双対性が相対 AS4 型を与える。
+
+最後に $\phi$ を $J=E_2^\vee$ 上の全射としてみて $H=\ker\phi$ と置く。
+局所的に $J/H$ を生成する $g$ を選べば、$A=T(V)/(H)$、$A/(g)=B$ となる。
+ここでは $\phi$ を一つの大域的元として延長したので $J/H\cong R$ であり、
+$g$ も大域的に選べる。
+$K_3=(J\otimes V)\cap(V\otimes J)=E_3^\vee$ 上の二つの縮約
+$\phi\otimes1,1\otimes\phi:K_3\to V$ は、$\phi$ の中央性により等しい。
+$\phi E_1\to E_3$ は直和因子への単射だから、この共通写像は全射である。
+従って任意の $v\in V$ に対して $A_3$ 内で $gv=vg$ となり、$g$ は中央である。
+短完全列の候補
+\[
+ A_{n-2}\xrightarrow{\,g\,}A_n\longrightarrow B_n\longrightarrow0
+\]
+で、$B_n$ が projective なので右側の核は projective である。
+$h_B=(1-t^2)h_A$ よりその階数は $A_{n-2}$ の階数に等しく、
+この核への全射は同階数の有限 projective 加群間の同型となる。
+従って左側も単射であり、列は split exact な $R$-加群列である。
+任意底変更後にも $g$ は正則となる。
+Koszul 解消の底変更整合性は相対 Koszul 双対性に含まれる。
+Noetherian 性の最後の主張は、中央正則元による次数有界な $g$-進
+フィルトレーションから $\operatorname{gr}_gA_T\cong B_T[g]$ を取り、
+左右の有限生成性を持ち上げれば従う。
+\end{proof}
+
+\begin{remark}[一般の Koszul 開性との区別]
+上の証明は、指定点の Frobenius 代数 $P_{\mathfrak p}$ が Koszul だから
+近傍全体でも Koszul になる、という推論を使っていない。
+先に全幾何 fiber の helix を H2 モデルとして認識し、
+その同じ even Hom $\mathbb Z$-代数の線形解消から $B_{\bar s}$ の
+Koszul 性を得る。この全 fiber の入力と、中央元の一様正則性を経由して
+$P_{\bar s}$ の Koszul 性を導く点が重要である。
+一般の二次代数では、三次成分の次元を固定したパラメータ空間における
+$n$-Koszul locus は開であり、Koszul locus はこれらの可算共通部分である
+\cite[Chapter 6, Theorem 2.1 and Corollary 2.2]{PolishchukPositselski2005}。
+また同書 Chapter 6, \S6 は、Koszul locus が constructible でない族を与える。
+これらを本研究の特別な中央延長に対する否定結果と解するべきではないが、
+局所 Koszul 変形原理だけから単一の有限型開近傍での Koszul 性を
+推論できるわけではない。本証明は、全幾何 fiber の明示的認識という
+別の有限型入力を使って、この問題を回避する。
+\end{remark}
+
+\subsection{noncubic 点の有限型近傍での全相対認識}
+
+\begin{theorem}[noncubic 境界を横断する有限型効果性]
+\label{thm:noncubic-finite-type-effectivity}
+任意の noncubic $\HH$ 対象の normal foundation に対応する点 $x$ と、
+定理~\cite[\texttt{thm:noncubic-hh-trivial-root}]{QuadricIntrinsic2026} の良い根を取る。
+有限 foundation の smooth affine chart $(S,x)$ の有限型 affine
+\texorpdfstring{\'etale}{etale} 近傍 $(U,u)\to(S,x)$ 上に、
+構造対象だけを指定した実際の相対族
+\[
+ q_U:U\longrightarrow\mathfrak H_2
+\]
+が存在する。この族の canonical compact 圏は普遍 foundation 代数
+$\Lambda_U$ の perfect 圏であり、四項窓は普遍 projective に対応する。
+
+同じ $U$ 上で、選んだ実際の Morita 根 $\mathsf s$ は heart の exact 自己同値となり、
+全軌道環 $B$ は二次・相対 Koszul・全次数有限 projective である。
+任意の Noetherian 基底変更後に $B$ は左右 Noetherian であり、
+同じ根に対する中央正則二次被覆
+\[
+ A/(g)\simeq B,
+ \qquad \rank A_n=\binom{n+3}{3}
+\]
+を持つ。$A$ は相対 quadratic Koszul AS4 型で、同じ普遍 Noetherian 性を持つ。
+全 Hom、canonical tails の比較、相対 Serre 平方同型、被覆の正則性と
+左右・双加群 Koszul 解消は任意の導来基底変更と整合する。
+根・根同型・被覆はこの族を構成する補助選択であり、$q_U$ の標識には含めない。
+\end{theorem}
+
+\begin{proof}
+最初に有限型の近傍を選ぶ。
+命題~\cite[\texttt{prop:noncubic-lagrangian-etale-slice}]{QuadricIntrinsic2026} の representable な
+\texorpdfstring{\'etale}{etale} 射を $S$ へ引き戻す。
+$G^+$ は smooth なので、その torsor は指定幾何点の
+\texorpdfstring{\'etale}{etale} 近傍で切断を持つ。
+従ってさらに affine \texorpdfstring{\'etale}{etale} 近傍へ移り、
+実際の Lagrangian 四平面とその射影行列を持つものとできる。
+命題~\ref{prop:lagrangian-geometric-recognition-open} の有限開条件を課す。
+その条件は指定点で成立するので、この制限は $x$ を失わない。
+系~\cite[\texttt{cor:noncubic-etale-morita-root}]{QuadricIntrinsic2026} の近傍との共通
+\texorpdfstring{\'etale}{etale} 細分を取り、実際の Morita 根、平方同型、
+式~\cite[\texttt{eq:noncubic-etale-root-window}]{QuadricIntrinsic2026} の二対象比較を同時に固定する。
+必要なら $u$ の affine 開へ縮める。
+
+この同じ近傍の全幾何 fiber の四項 foundation は、
+命題~\ref{prop:lagrangian-geometric-recognition-open} により
+既知の $\HH$ の normal foundation である。
+定理~\ref{thm:uniform-orbit-from-normal-fibers} を適用して、
+全 forward Hom の有限 projective 性、全軌道の二次提示と相対 Koszul 性、
+五頂点 bar 解消と canonical tails 比較を得る。
+この段階では全次数の平坦開を交叉していない。
+全幾何 fiber に同じ有限次元の認識を先に与えたことを用いている。
+
+系~\ref{cor:lagrangian-open-closed-recognition} は
+$V(\det M,\det N)$ の非被約構造を含む相対正規形と、二つの cubic 開部分を与える。
+補題~\ref{lem:lg-two-rulings-universal-noetherian} により、
+全軌道環の任意の Noetherian 基底変更後の左右 Noetherian 性が従う。
+従って定理~\ref{thm:uniform-orbit-from-normal-fibers} の最後の主張も適用できる。
+一般 coherent Hom の有限性と平坦基底変更、module-object 基底変更、
+fppf descent、AZ 豊富性と全 $\chi_q$ を同じ近傍上で得る。
+各 fiber の heart は、元の normal helix の AZ 再構成によって
+既知の $\HH$ の heart と構造対象を保って exact 同値である。
+特に Gabriel--Krull の rank-one torsion-free 条件も満たす。
+これは導来同値だけから heart を認識する推論ではない。
+
+$S$ は smooth で $U\to S$ は \texorpdfstring{\'etale}{etale} なので、
+$R=\mathcal O_{U,u}$ は正則局所環である。
+指定点の既存の局所中央被覆定理
+\cite[\texttt{thm:noncubic-local-central-hull}]{QuadricIntrinsic2026} を適用すると、
+$E_R=B_R^!$ の中央正則二次元 $\phi_R$ と
+階数列 $(1,4,6,4,1)$ の Frobenius 商を得る。
+ここで使う全軌道と根は既に同じものとして比較済みである。
+また geometric cubic locus は、既約な有限 foundation 表示空間の稠密開である
+（命題~\cite[\texttt{prop:cubic-foundation-open}]{QuadricIntrinsic2026}）。
+$S$ はその非空開部分で、$U\to S$ は \texorpdfstring{\'etale}{etale} だから、
+$U$ の各成分は $S$ に dominant であり、その一般点はこの cubic 開部分に入る。
+従って同定理の generic cubic 条件も満たされる。
+補題~\ref{lem:spread-local-central-hull} により、一つの開近傍へ縮めて
+中央 AS4 被覆を全次数・任意底変更について延長できる。
+$B$ の普遍 Noetherian 性から被覆 $A$ のそれも従う。
+
+最後に $\operatorname{qgr}B$ と $\pi B$ を取る。
+次数移動は exact であり、canonical 導来比較の下で最初に選んだ
+$\mathsf s$ と実際の平方同型に対応する。
+四項 tilting は相対 smooth proper な $\Lambda_U$ との Morita 同値を与え、
+canonical compact、相対 Serre、非平坦を含む導来基底変更の条件を満たす。
+上で確認した heart、fiber、AZ、全軌道、同じ根の AS4 被覆と合わせ、
+定義~\ref{def:relative-h2} の全公理が成立する。
+従って $q_U$ は、幾何点の表示だけでなく実際の相対 $\mathfrak H_2$ 族である。
+\end{proof}
