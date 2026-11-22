@@ -74,16 +74,42 @@ smooth conicの標準パラメータを与える。
 $F_c$、$\ker M_d$からは$F_d$となる
 （C prop:qa-point-mcm-matrix-pencils）。
 これは線形matrix factorizationの**pointwise kernel**と
-幾何的二pencilの一致であって、
-MCMのfinite directed Endの積の同一視は未証明。
+幾何的二pencilの一致である。
+
+**noncubic normal helixの二つの隣接乗法の像も同定（Cで証明）。**
+$V=\Hom(\pi B_f,\pi B_f(1))=(B_f)_1$とすると、
+Aの\`cor:normal-cubic-defect\`で記述した
+$X_c,X_d$の隣接合成像は、MCM行列の四つの成分から
+\[
+ U_c=\langle c,\ell_1,\ell_2\rangle
+     =\langle u,v,c\rangle,\qquad
+ U_d=\langle d,m_1,m_2\rangle
+     =\langle u,v,d\rangle
+\]
+となる。一方、点曲線$E_f$上では
+$F_c^2=F_d^2=\OO_{E_f}(1)$であり、
+$\operatorname{Sym}^2H^0(F_c)$および
+$\operatorname{Sym}^2H^0(F_d)$のVeronese積像は
+それぞれ$Q_c$、$Q_d$の超平面切断に等しいため、
+上の$U_c,U_d$と一致する。
+両像は三次元、交わりは$\langle u,v\rangle$、
+和は$V$の四次元全体。
+証明正本：C \`prop:qa-point-mcm-composition-veronese\`。
+これで**二つのrank-three隣接積について
+AS側と点曲線pencil側の具体的な積像が一致**した。
+ただし元normal helixの全有限directed End代数
+（ほかのHom空間、最小関係、全合成）および
+構造対象$\pi B_f$の同定は未証明。
 
 **核心的な未解決部分。**
 E_fの二pencilで得られるsquare avatarと
 C_qのspectral avatarは2-isogenyのdual kernelで結ばれる。
 B_fのnormal helixからAS avatarとして
 正確にどちらが抽出されるかはまだ証明していない。
+二つの隣接合成の像までの一致は達成した。
 次はB_fの非自由MCM二型$X_c,X_d$から作る
-四項helixの**有限directed End代数の全Homと積**を、
+四項helixの**ほかのHom・全合成・最小関係を含む
+finite directed End代数全体**を、
 $E_f$の二pencilのEndと比較する。
 その後で$\pi B_f$が対応するexceptional対象、
 AS Serre completion、O-pointed exact heartの
