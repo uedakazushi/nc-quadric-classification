@@ -280,6 +280,7 @@ def math_checks() -> int:
                "verify_cubic_geometric_adjugate.py",
                "verify_avatar_pointed_dictionary.py",
                "verify_noncubic_pointed_end.py",
+               "verify_noncubic_root_descent.py",
                "verify_rootpair_resolvent_spectral.py",
                "verify_as_avatar_euler.py", "verify_avatar_cubic_obstruction.py", "verify_nodal_exceptional_parity.py",
                "verify_noncubic_boundary.py")

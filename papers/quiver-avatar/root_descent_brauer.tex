@@ -1,0 +1,285 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / root-factor monodromy and generic Brauer obstruction
+
+\section{根の内部交換と相対avatarのBrauer障害}
+\label{sec:qa-root-descent-brauer}
+
+本節では有限directed End代数の相対比較と、その上の線束を
+無標識の二次形式モジュライへ降下させる問題を区別する。
+根対を\emph{内部で}交換する操作には厳密な行列表示があるが、
+因子の逆数倍も忘れると一般conicが非分裂になる。
+とくに$E_f$と$C_q$の相違とは独立な障害が現れる。
+
+\begin{proposition}[二つの根対の内部交換による厳密な有限End降下]
+\label{prop:qa-root-swaps-linearization}
+命題~\ref{prop:qa-point-relative-split-root-end}の
+順序付き一次形式空間$S$上で
+$W=(\mathbb Z/2)^2$を、$\ell_1,\ell_2$の交換と
+$m_1,m_2$の交換で作用させる。
+$W$は$S$に自由に作用する。
+$\iota\in k$を$\iota^2=-1$となるように一つ選ぶと、
+相対spinor加群$\mathcal X_c,\mathcal X_d$および
+四項$(\mathcal B,\mathcal X_c,\mathcal B(1),
+\mathcal X_d(1))$には、$W$の\emph{厳密な}
+線形化を与えられる。
+従って相対有限directed Endの同型
+\[
+ \mathfrak B_S\xrightarrow{\sim}\mathfrak G_S
+\]
+は$W$-同変にでき、
+有限\'{e}tale商$S/W$上の有限局所自由代数の同型へ降下する。
+降下後の比較も$S/W$の任意の基底変更と可換する。
+根対の内部交換と、二つの二次形式の\emph{相互交換}は
+異なる作用であり、後者についてはここでは述べない。
+\end{proposition}
+\begin{proof}
+$\ell_1=s,\ell_2=t$と記し、右加群の
+二項行列表示を
+\[
+ M(s,t)=\begin{pmatrix}c&s\\t&-c\end{pmatrix},
+ \quad
+ J=\begin{pmatrix}0&1\\-1&0\end{pmatrix},
+ \quad J^2=-I_2
+\]
+とする。行列の各成分$s,t,c$は相互に可換するので
+直接の乗法から
+\[
+ M(t,s)=JM(s,t)J,\qquad
+ (\iota J)M(s,t)=M(t,s)(-\iota J).
+ \tag{Swap-matrix}\label{eq:qa-root-swap-matrix}
+\]
+を得る。
+ここで$(\iota J)^2=(-\iota J)^2=I_2$である。
+従って二項表示の自由加群に対し、
+余核側で$\iota J$、関係側で$-\iota J$を使えば、
+二回の根交換が恒等である鎖同型が定まる。
+その余核への作用が$\mathcal X_c$の厳密な
+$\mathbb Z/2$-線形化である。
+$\ell$の交換は$\mathcal X_d$と$\mathcal B$には恒等で作用する。
+同様に$m$の交換には$d,m_1,m_2$を使い、
+$\mathcal X_d$に同じ行列で線形化する。
+二つの作用は異なる加群成分にのみ非自明に働くので可換し、
+四項と全Hom・合成に$W$-作用を与える。
+
+$f_1=-\ell_1\ell_2$、$f_2=-m_1m_2$は
+それぞれの内部交換で不変だから、
+$\mathcal B,\mathcal R=\mathcal B/(cd-dc)$には
+基底変換と両立する自明な係数の輸送がある。
+$\mathcal X_i\otimes_{\mathcal B}\mathcal R$の
+sheafificationに上の線形化を輸送し、
+その線束を$\mathcal F,\mathcal G$と同定する。
+四項の後二項
+$L_2\simeq\mathcal F^2$、$L_3\simeq\mathcal F^2\mathcal G$
+には、それぞれ$\mathcal B(1)$と$\mathcal X_d(1)$の
+制限から線形化を輸送する。
+ここで$\mathcal F^2\simeq\OO_{\mathcal E}(1)$の
+選択された同型が、$\mathcal F$の線形化の
+tensor平方と自動的に両立するとは仮定しない。
+必要なのは四つの\emph{対象ごと}に整合する線形化であり、
+それにより命題~\ref{prop:qa-point-relative-split-root-end}の
+有限End射は自然性から$W$-同変である。
+二つの一次形式が独立なので、それぞれの交換が固定する
+$S$の幾何点は存在しない。
+$W$は有限定数群で標数零だから
+$S\to S/W$は有限\'{e}tale torsorである。
+有限局所自由加群・その積と代数同型の
+faithfully flat descentが適用でき、主張が従う。
+
+$\iota$を$-\iota$へ変えると、各交換の
+線形化が符号指標だけ変わる。
+従ってこの命題は線形化の\emph{存在}を述べ、
+選択に依らない正準線形化とは主張しない。
+\end{proof}
+
+\begin{proposition}[普遍二次形式のconicは一般に非分裂]
+\label{prop:qa-universal-conic-brauer-obstruction}
+$k$を標数零の代数閉体とし、
+\[
+ U=\operatorname{Spec}k[a,b,d,(b^2-4ad)^{-1}],
+ \quad K=k(a,b,d),\quad \Delta=b^2-4ad
+\]
+と置く。$K$上の滑らかなconic
+\begin{equation}
+ Q:\quad c^2=au^2+buv+dv^2\subset\PP^2_K
+ \label{eq:qa-generic-conic}
+\end{equation}
+は$K$-有理点を持たない。
+そのSeveri--Brauer類は
+\[
+ \alpha(Q)=(a,\Delta)\ne0\quad\text{in}\quad
+ \operatorname{Br}(K)[2]
+ \tag{Brauer-class}\label{eq:qa-conic-brauer-class}
+\]
+であり、$\Delta$を一様化元とする離散付値の
+留数は$[a]\ne1$である。
+従って$Q$には幾何次数一の線束が存在せず、
+$\bar K$上の同型$Q_{\bar K}\simeq\PP^1$で定まる
+次数一束$\OO_{\PP^1}(1)$は$K$上へ降下しない。
+ここで射影平面から制限した$\OO_Q(1)$は
+幾何次数\emph{二}である。
+
+さらに二つの独立な一般二次形式の係数体を$K_{12}$とし、
+$Q_c,Q_d$のファイバー積である滑らかな
+$E=Q_c\times_{\PP^1}Q_d$を考える。
+幾何学的な次数二pencil
+$F_c=p_c^*\OO_{(Q_c)_{\bar K_{12}}\simeq\PP^1}(1)$と
+$F_d=p_d^*\OO_{(Q_d)_{\bar K_{12}}\simeq\PP^1}(1)$は
+Galois不変なPicard\emph{類}ではあるが、
+一般には$E$上の実際の線束として降下しない。
+そのHochschild--Serre障害はそれぞれ
+\begin{equation}
+ \partial_E[F_c]=\alpha(Q_c),\qquad
+ \partial_E[F_d]=\alpha(Q_d),\qquad
+ \partial_E[F_dF_c^{-1}]=\alpha(Q_d)-\alpha(Q_c).
+ \label{eq:qa-point-pencils-brauer-obstruction}
+\end{equation}
+であり、三つとも$K_{12}$のBrauer群で非零である。
+\end{proposition}
+\begin{proof}
+$K=k(a,b,\Delta)$と見なせる。
+$a\ne0$の開上で
+$z=u+(b/2a)v$と置くと、
+\eqref{eq:qa-generic-conic}は
+\[
+ c^2-a z^2=-\frac{\Delta}{4a}v^2
+ \tag{Diagonal-conic}\label{eq:qa-diagonal-conic}
+\]
+となる。右辺は$-\Delta/(4a)$を係数とする
+ノルム方程式で、対応するquaternion類は
+$(a,-\Delta/(4a))=(a,\Delta)$である
+（$-1$と$4$は$k$で平方）。
+$\Delta$の付値に対し$a$は単元で、
+剰余体$k(a,b)$内の$a$は平方ではない。
+従ってquaternion類の留数は非自明な$[a]$となる。
+
+非分裂性はBrauer類の一般論を用いずに次のようにも示せる。
+$\Delta$-進DVRで仮に\eqref{eq:qa-diagonal-conic}に
+射影有理点があるとする。座標$(c,z,v)$をprimitiveに規格化し、
+$\Delta$で還元すると
+$\bar c^{\,2}=a\bar z^{\,2}$となる。
+$a$が剰余体で非平方なので$\bar c=\bar z=0$である。
+従って$\bar v\ne0$だが、
+左辺の付値は二以上、右辺の付値は一となり矛盾する。
+滑らかな種数零曲線上の幾何次数一線束が
+$K$上に存在すればRiemann--Rochにより
+その非零切断の零点から次数一の$K$-有効因子、
+すなわち$K$-有理点が得られるので、存在しない。
+
+二つの独立係数のときも、
+第一の判別式$\Delta_c$で取った留数は
+$\alpha(Q_c)$に対し$[a_c]\ne1$、
+$\alpha(Q_d)$に対し零である。
+同様に$\Delta_d$では役割が交換する。
+よって二つのquaternion類はそれぞれ非零で、
+和または差も非零である。
+
+最後の主張は、滑らかな射影幾何的整曲線に対する
+Galois descentのPicard--Brauer境界
+\[
+ 0\longrightarrow\Pic(E)
+ \longrightarrow\Pic(E_{\bar K_{12}})^{G_{K_{12}}}
+ \xrightarrow{\ \partial_E\ }\operatorname{Br}(K_{12})
+\]
+とそのpullbackに関する自然性による。
+滑らかなconicの幾何次数一Picard類の障害は
+そのSeveri--Brauer類$\alpha(Q_i)$であり、
+$p_i:E\to Q_i$で引き戻した類の障害も同じである。
+Picard群上の差を取れば第三の式を得る。
+これは$\Pic^0$の\emph{類}に相当する
+Galois不変点があることと、その類の
+実際の線束による代表があることの違いである。
+\end{proof}
+
+\begin{corollary}[二つの分岐根を選ぶ次数四の\'{e}tale分裂被覆]
+\label{cor:qa-root-choice-etale-splitting}
+$U_2$を、標数零の代数閉体上の二つの
+非退化二元二次形式$(f_1,f_2)$の全パラメータ空間とする。
+二つの根対の相互共有は許す。
+$Z_i\subset U_2\times\PP^1$を$f_i=0$の
+相対零点とし、
+\[
+ \widetilde U_2=Z_1\times_{U_2}Z_2
+       \longrightarrow U_2
+ \tag{Root-choice-cover}\label{eq:qa-root-choice-four-cover}
+\]
+と置く。この射は、共有根および一致根対の境界を含めて
+有限\'{e}tale次数四である。
+$\widetilde U_2$上の二つのconic
+$Q_c,Q_d$には、それぞれ自然な分岐点section
+$\sigma_c,\sigma_d$が存在し、
+\[
+ N_c=\OO_{Q_c}(\sigma_c),\qquad
+ N_d=\OO_{Q_d}(\sigma_d)
+\]
+は相対次数一の実際の線束である。
+従って$E=Q_c\times_{\PP^1}Q_d$上には
+$F=p_c^*N_c,\ G=p_d^*N_d$という
+大域的な二つの次数二pencilが存在し、
+各幾何fiber上で
+\[
+ F^2=G^2=\OO_E(1),\qquad
+ P=GF^{-1}\in\Pic^0(E)[2]\setminus\{0\}
+\]
+となる。これらの等式はまず各幾何fiberのPicard類の等式であり、
+基底上の線束捩れを固定する正準の
+平方同型を主張しない。
+この被覆は一般conicのBrauer障害を明示的に消すが、
+相対AS heartのpointed同値や
+$\widetilde U_2\to U_2$についての
+線束の降下を自動的には与えない。
+\end{corollary}
+\begin{proof}
+各$f_i$の判別式が可逆なので
+$Z_i\to U_2$は有限\'{e}tale次数二である。
+二つを独立に基底変更しても有限\'{e}tale性が保たれ、
+fiberの次数は$2\cdot2=4$となる。
+根の共有は$f_1,f_2$の相互関係であり、
+個々の$Z_i\to U_2$が\'{e}taleであることを妨げない。
+
+選ばれた根$p_i$では$f_i(p_i)=0$なので
+$Q_i:c_i^2=f_i$の上に$(p_i,c_i=0)$という
+sectionが定まる。$Q_i$は相対的に滑らかなconicで、
+このsectionは有効Cartier因子を与える。
+従って$\OO_{Q_i}(\sigma_i)$は相対次数一。
+$E$への引戻しは相対次数二である。
+各幾何fiberでは$Q_i\simeq\PP^1$なので
+$N_i^{\otimes2}$はconic超平面束になり、
+補題~\ref{lem:qa-pointed-all-rootpair-geometry}から
+$P$が非自明な多重次数零の二捩れとなる。
+各式の相対的な捩れは、線束の基底からの引戻しを
+標識から除く既存のavatar規約に従う。
+\end{proof}
+
+\begin{remark}[相対有限Endと無標識avatarの正確な境界]
+\label{rem:qa-brauer-scope}
+命題~\ref{prop:qa-root-swaps-linearization}は
+\emph{根対内の有限な順序交換}を消す降下である。
+二つの一次形式を
+$(\ell_1,\ell_2)\mapsto(t\ell_1,t^{-1}\ell_2)$
+と変える$\Gm$作用も同時に割った
+二次形式の係数空間への線束の降下ではない。
+実際、
+\[
+ D(t)=\operatorname{diag}(t,1),\qquad
+ M(t\ell_1,t^{-1}\ell_2)=D(t)M(\ell_1,\ell_2)D(t)^{-1}
+\]
+だが、根交換の行列$J$について
+\[
+ J D(t)J^{-1}
+   =\operatorname{diag}(1,t)
+   =tD(t^{-1}) .
+\]
+右辺の余分なスカラーは、
+線束の表示が単なる$PGL_2$作用から
+自動的に$GL_2$作用へ持ち上がらないことの
+有限行列的な兆候である。
+実際に線束が降下しないことは
+命題~\ref{prop:qa-universal-conic-brauer-obstruction}で
+基礎体のBrauer類から証明した。
+この障害から、\emph{別の}Morita表示、twisted sheaf、
+または内在的$\mathcal H_2$の相対stack自体が
+存在しないとは結論しない。
+従って次の課題はBrauer類を殺す適切な
+gerbe/相対AS表示の構成と、二つの根対の相互交換の
+相対mutation・pointingの降下である。
+\end{remark}

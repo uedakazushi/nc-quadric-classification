@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.13。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.7。
+2026-11-22 / v1.14。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.8。
 
 ## 公表用三論文への再編（確定方針）
 
@@ -8,7 +8,7 @@
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：主原稿 `papers/nc-quadric-avatar.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによる別avatarへ戻す構成と$C_q$・$\Sigma_2$側の$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。 全noncubic O-marked幾何同型類≅Σ₂のD∈|−K|,D∩S=∅,0≠P∈Pic⁰(D)[2]の同型類もCに証明。Bのχ=1二点はnodal/I2で区別。次は$C_q$・$\Sigma_2$の別avatarのqgr heartとの比較と相対elementary transformを検証する。
 
-**原稿C v3.7のpointed認識上の最重要区別。**
+**原稿C v3.8のpointed認識上の最重要区別。**
 noncubic中央二重平方環の可換点曲線
 $E_f:\ c^2=f_1,\ d^2=f_2$と、quartic spectral曲線
 $C_q:\ y^2=f_1f_2$は、非共有根では
@@ -43,9 +43,11 @@ $\im\mu_d=\langle u,v,d\rangle$であり、
 
 **順序付き分解普遍族の相対有限End（C v3.7）。** $S=k[\ell_i,m_i,(\det\ell\,\det m)^{-1}]$（二組の独立一次形式）上で、四項$(\mathcal B,\mathcal X_c,\mathcal B(1),\mathcal X_d(1))$の有限graded directed Endと$E_S=Q_c\times_{\mathbb P^1}Q_d$上の$(\mathcal O,F,F^2,F^2G)$のEndを、**任意の$S$-基底変更（非被約も含む）と可換な代数同型**として証明した（C prop:qa-point-relative-split-root-end）。被約でsmoothな普遍底で有限表示行列の全幾何fiber階数が一定であることから局所分裂を得て、その後に非被約底へ引き戻す。これは有限Homと全積の相対同型であり、相対$\qgr$ heart・Serre根・AS被覆の同型や、根の順序を忘れるstack降下はまだ証明していない。
 
-**継続指示：** smooth/nodal/$I_2$の三型全てで$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。次は根の順序を忘れる降下と相対Serre完成、$C_q$・$\Sigma_2$側の別avatarとの比較を個別に検証し、全相対$\qgr$同値を先取りしない。
+**根交換降下・Brauer障害・次数四分裂被覆（C v3.8）。** 順序付き一次因子の普遍族$S$上では、内部根交換群$W=C_2^2$のspinor行列分解を$J=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$、$i^2=-1$により厳密に線形化した（$M(\ell_2,\ell_1)=JM(\ell_1,\ell_2)J$、$(iJ)^2=I$）。相対finite End同型は有限étale商$S/W$上へ降下し、任意底変更と可換（C prop:qa-root-swaps-linearization）。一方、全二次形式係数空間での一般conic$c^2=au^2+buv+dv^2$のBrauer類$(a,\Delta)$、$\Delta=b^2-4ad$は$\Delta$沿い留数$[a]\ne1$で非零。二つの独立一般形式では$\alpha_c,\alpha_d,\alpha_d-\alpha_c$が非零で、点曲線$E_f$上の二pencil$F_c,F_d$と$P=F_dF_c^{-1}$の幾何Picard類を普通の相対線束として全係数商へ降下させることはできない（C prop:qa-universal-conic-brauer-obstruction）。各形式の分岐根を一つずつ選ぶ$Z_1\times Z_2\to U_2$は共有根・一致根対を含むsquarefree locus全体で有限étale次数4。この上ではconicの分岐sectionから相対次数一線束$N_i=\mathcal O_{Q_i}(\sigma_i)$、点曲線上の二pencilが存在（C cor:qa-root-choice-etale-splitting）。有限Endの降下、実線束、相対$\qgr$-heart、無標識stackは別問題。新たな厳密SymPy検算は行列恒等式・conic対角化に限り、Brauer非自明性は本文の離散付値による証明に依存する。
 
-**論文C v3.7の分類正本（最優先）。**
+**継続指示：** smooth/nodal/$I_2$の三型全てで$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。根対内の交換$W$ではfinite Endを降下できるが、因子スカラーも忘れた通常の線束降下は一般Brauer障害を持つ。次はgerbe/twisted Morita、相対Serre完成、$C_q$・$\Sigma_2$の別avatarを個別に検証し、全相対$\qgr$同値を先取りしない。
+
+**論文C v3.8の分類正本（最優先）。**
 `papers/nc-quadric-avatar.tex` から
 `papers/quiver-avatar/as_helix_classification.tex` と
 `papers/quiver-avatar/as10_mutation_classification.tex` を読み込む。
