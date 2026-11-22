@@ -442,3 +442,146 @@ $D_F=\{P\simeq GF^{-1}\}$と
 AS正則であるという結論ではない。
 \end{proof}
 
+
+\subsection{十二本矢relation QPとgroupoidの正しい水準}
+\label{subsec:qa-as12-qp-status}
+
+\begin{proposition}[十二本矢QPが表すもの]
+\label{prop:qa-as12-relation-qp-status}
+square型finite directed foundationの最小矢は八本、
+最小関係は四本である。
+その各関係に双対の戻り矢を加えると、
+四周期のrelation QPは十二本矢となり、
+potentialは$W=\sum_{\alpha=1}^4c_\alpha r_\alpha$である。
+このように得られた\emph{AS square由来の}
+十二本矢QPは
+定理~\ref{thm:qa-as-avatar-bijection}のsquare avatarに
+よってunderlying AS代数まで分類される。
+ただし、\emph{任意の}reduced十二本矢QPを
+独立なAS正則クラスとして分類する定理は、
+この主張には含まれない。
+\end{proposition}
+\begin{proof}
+有限foundationの四本の最小関係の
+dual bimoduleを二周期の戻り矢に取ると
+relation potentialが得られる。
+双加群の対角分解は、各関係$r$を
+各矢で切った微分$\partial_a(\sum r^*r)$が
+Serre completionの随伴関係になることを示す。
+本件のfinite directed quiverの関係は
+すべてsourceからsinkへ向かいoverlapしないため、
+これ以外に次のsyzygyはない。
+補題~\ref{lem:qa-as-serre-unique-recovery}は
+その全四周期completionを初期Endから一意に回収する。
+従ってsquare avatarの全単射は
+relation QPから再構成された
+AS square locusの全体に適用される。
+一方、QPを単にreducedとする条件は
+AS最小射影分解の完全性や
+Gorenstein条件を保証しない。
+\end{proof}
+
+\begin{example}[任意の十二本矢を同一視できない例]
+\label{ex:qa-as12-weighted-stack}
+重み付き射影stack
+$X=\PP(1,1,2)$、$S=k[x,y,z]$、
+$\deg x=\deg y=1$、$\deg z=2$とする。
+$(\OO,\OO(1),\OO(2),\OO(3))$の
+finite directed foundationは、
+隣接頂点の$x_i,y_i$六本と
+$z_0:0\to2,z_1:1\to3$の二本、
+合計八本の矢を持ち、
+\[
+r_0=x_1y_0-y_1x_0,\quad
+r_1=x_2y_1-y_2x_1,\quad
+r_x=z_1x_0-x_2z_0,\quad
+r_y=z_1y_0-y_2z_0
+\]
+が最小関係である。
+戻り矢を加えると
+\begin{equation}
+ W_{112}=\sum_{i\in\mathbb Z/4}
+ z_{i+2}(x_{i+1}y_i-y_{i+1}x_i)
+ \label{eq:qa-as12-weighted-qp}
+\end{equation}
+を得る。これはreducedな十二本矢QPだが、
+各頂点が$z_i,z_{i+2}$のoriented $2$-cycleに属し、
+いずれの頂点でも通常のDWZ mutationは
+その局所仮定を満たさない。
+したがって矢数とpotentialの次数だけで、
+square由来の十本矢mutationと同じ分類対象とは
+結論できない。
+\end{example}
+
+\begin{proposition}[underlying AS代数のgroupoid]
+\label{prop:qa-as10-groupoid}
+全整数頂点を保つ代数同型を射とすると、
+評価・余評価の全周期構成は
+\[
+\mathbf{AS}_{\rm sq}\simeq
+ \mathbf{AS}_{c}\amalg
+ \mathbf{AS}_{10}^{\mathrm{min}}
+\]
+というgroupoid同値に持ち上がる。
+ただしtrivial pairを加えたQPの
+\emph{未修正の}right-equivalence groupoidから
+Jacobian algebraへの忘却は一般に忠実でない。
+\end{proposition}
+\begin{proof}
+代数同型は標準射影加群とHomの合成を運ぶ。
+kernelとcokernelの評価・余評価は自然な構成なので、
+補題~\ref{lem:qa-as10-all-index-mutual-inverse}の
+同定は同型射とも可換する。
+全$q\in\mathbb Z$で構成するため、
+初期四頂点で恒等でも他の頂点で異なる
+scalar gaugeを見失わない。
+これがgroupoidのquasi-inverseを与える。
+他方、$W'=W+yx$をstable QPとすると、
+$x\mapsto tx,\ y\mapsto t^{-1}y$は
+非自明なright-equivalenceだが、
+Jacobian商では$x=y=0$なので恒等射に写る。
+よってQP側の未修正groupoidの忠実性は失敗する。
+代数側のgroupoid同値と混同してはならない。
+\end{proof}
+
+\begin{theorem}[相対AS族での固定mutation]
+\label{thm:qa-as10-relative-families}
+$S$を局所Noetherianな$k$-schemeとする。
+各$A_{ji}$が有限階数局所自由で、
+幾何fiberが上記AS型を満たし、
+finite foundation・対角双加群・単純分解が
+必要な範囲で$S$-perfectである相対AS族を考える。
+この範囲では指定mutationと逆mutationが
+互いに逆な基底変更可換の族構成を与える。
+squareからのtargetの全成分は局所自由であり、
+最小cubic八本矢fiberと最小十本矢fiberは
+同じ族の中で平坦に貼り合う。
+この定理は相対perfect性を課さない全ての族の分類、
+または対応するstackの代数性を主張しない。
+\end{theorem}
+\begin{proof}
+有限foundationの相対perfect categoryで
+Serre双加群と全周期のevaluationのconeを構成する。
+有限個の添字$i,j$に対する
+$\RHom(H_i,H_j)$は$S$上perfectで、
+導来基底変更と可換する。
+各幾何fiberで補題
+~\ref{lem:qa-as10-all-index-mutual-inverse}により
+高次コホモロジーが消え、
+次数零の次元は補題
+~\ref{lem:qa-as10-hilbert-foundation}で一定。
+有限自由複体の可逆minorを局所的に消すと、
+次数零の局所自由束に準同型となり、
+全基底変更に両立する。
+従って$H^0\RHom(H_i,H_j)$は局所自由で
+積も基底変更と可換し、全target代数が貼り合う。
+逆の余評価にも同じ議論を適用する。
+非最小十本矢表示
+$W_\lambda=\lambda yx+yq+px+H$で
+$\lambda$が可逆ならtrivial pairを消せるが、
+$\lambda=0$では消えない。
+両fiberは同じ相対Homで構成された代数の
+fiberなので平坦性とcocycleは保たれる。
+非最小表示の存在だけから
+Jacobian族の平坦性を推論したわけではない。
+\end{proof}
