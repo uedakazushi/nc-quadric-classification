@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.28。二mass対角解消・Jacobian/Serreと全次数階数。
+% 2026-11-23 / v4.29。全H2のQP二段剛体化とmutation貼合せ。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -955,6 +955,124 @@ preprojective次数移動を$t$へ対応させれば
 AZ同値は通常のmodule-object引戻しとcoherentに
 整合する．ただしQPの全群oidから$ruling$忘却を
 自動的に導いたものではない．
+\end{proof}
+
+
+\subsection{内在的$H_2$への二段の剛体化とruling mutation貼合せ}
+\label{subsec:qa-two-mass-rigidification-ruling-glue}
+
+前項のfinite foundation stackにおいて，
+定理~\ref{thm:qa-square-explicit-h2-open}で定める
+四交差条件を満たす開を$\mathfrak F_{\HH}$と記し，
+unrigidifiedな開を$\mathfrak F_{\HH}^{\rm lin}$と書く．
+同じ開の$\Phi_{12}$による逆像を
+$\mathfrak P_{12,\HH}^{\rm nd}$とする．
+これは幾何点条件で代用せず，相対開として定義する．
+QPの同型層の部分群を
+\[
+ \mathcal K_{\rm mass}
+ =\ker\left(
+    I_{\mathfrak P_{12,\HH}^{\rm nd}}
+      \longrightarrow\Phi_{12}^*I_{\mathfrak F_{\HH}^{\rm lin}}
+       \right)
+\]
+と置く．
+前節の計算から，fppf局所に
+$\mathcal K_{\rm mass}\simeq
+ \mathcal U_\lambda\times\mathcal U_\mu$である．
+
+\begin{theorem}[QP表示から内在的$H_2$への相対rigidification]
+\label{thm:qa-two-mass-h2-rigidification-ruling-glue}
+$\mathcal K_{\rm mass}$による剛体化を
+$\operatorname{Rig}_{\rm mass}$，finite foundationの
+頂点スカラー群$\Gm^3$による剛体化を
+$\operatorname{Rig}_{\rm vert}$と記す．
+これらはfppf群oidの局所同型層を各指定kernelで割り，
+stackificationしたものとして定義する．すると
+\[
+ \boxed{\quad
+ \operatorname{Rig}_{\rm vert}\!
+   \left(\operatorname{Rig}_{\rm mass}
+       \mathfrak P_{12,\HH}^{\rm nd}\right)
+ \ \simeq\ \mathfrak F_{\HH}
+ \ \simeq\ \mathfrak H_2^{\rm rul}.
+ \quad}
+ \tag{Rig}\label{eq:qa-two-mass-h2-double-rigidification}
+\]
+さらに有限squareとnormalの相対mutationは，
+右辺にcoherentなruling交換$S_2$作用を定め，
+\[
+ \boxed{\qquad
+  \left[
+   \operatorname{Rig}_{\rm vert}
+    \operatorname{Rig}_{\rm mass}
+       \mathfrak P_{12,\HH}^{\rm nd}
+     \bigm/ S_2
+  \right]\ \simeq\ \mathfrak H_2
+ \qquad}
+ \tag{Mut}\label{eq:qa-two-mass-mutation-h2-quotient}
+\]
+となる．
+
+この二つの同値は，非被約底・全Isom・慣性を含み，
+全ての本稿の相対基底変更と整合する．
+式~\eqref{eq:qa-two-mass-jacobian-pointed-heart}の
+ordinary Jacobian/Serre完成の同値は，
+mass-gaugeを忘れたfinite foundation上で自然であり，
+$S_2$のmutation後も**同じ相対heart**へ移る．
+ただし，$S_2$が未剛体化のraw十二矢QPの
+単一のweight-preserving right-equivalenceとして作用するとは
+主張しない．実際それは一般cubic点では不可能である
+（系~\ref{cor:qa-cubic-qp-inversion-not-right-equivalent}）．
+この定理の領域は全$H_2$をちょうど覆う明示開であり，
+その外の任意のQPをAS正則・$H_2$適合と判定するものではない．
+\end{theorem}
+\begin{proof}
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}により，
+$\Phi_{12}$はfppf局所にessentially surjectiveで，
+Isomの射もfppf局所に全射であり，そのkernelが
+$\mathcal K_{\rm mass}$である．
+従って対象の局所持上げと射の局所持上げをそのkernelで
+同一視すれば，$fppf$ stackificationは正確に
+$\mathfrak F_{\HH}^{\rm lin}$になる．
+これは局所同値による構成であり，
+gerbeが大域的に自明であると仮定しない．
+命題~\ref{prop:qa-foundation-stack}により，
+頂点スカラーの局所中心は$\Gm^3$で，
+その剛体化の標的は$\mathfrak F_{\HH}$である．
+系~\ref{cor:qa-h2-square-foundation-open}と
+定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}
+がこれを$\mathfrak H_2^{\rm rul}$と同定する．
+ここでは全幾何fiberの比較だけではなく，
+既存のsquare/normal有限相対同値と，
+実際の相対heartの認識を用いた．
+
+二つのsquare中間頂点を交換する$\sigma$は，
+定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}
+の核・余核による相対mutationと整合する．
+その有限群のcoherent作用は
+$\mathfrak F_{\HH}$上の$\tau$となり，
+内在的rulingを忘れる商は$\mathfrak H_2$となる．
+従って二番目の同型も全相対groupoidとして成立する．
+
+定理~\ref{thm:qa-two-mass-h2-locus-jacobian-heart}の
+Jacobian/Serre同型は
+finite directed代数$\Lambda$の逆双対化・tensorと
+対応する実際のtilting Morita同型から構成したので，
+$\Lambda$の同型とその相対base changeに自然である．
+massゲージはfinite代数上恒等であるから，
+この同型は最初のrigidificationを通過する．
+頂点スカラーは同じ実際の四対象を線束で捩る操作に
+対応し，$\Lambda$の同型層を剛体化した後も
+同じheartとの同値を定める．
+二ruling交換のmutationは実際の相対coneであり，
+定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}は
+そのperfect Morita比較と全積を与える．
+両側のstandard tailsは既に
+$\mathcal C_S$の実際のheartとして認識されているので，
+この比較は$t$-exactであり，Serre作用$t$を保つ．
+これにより同じ相対heartへの貼合せを得る．
+ただしraw QPの単一座標変換を構成したわけではない．
 \end{proof}
 
 \begin{remark}[解決した比較と残るAS心の問題]
