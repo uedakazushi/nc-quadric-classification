@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v1.2。相対評価coneと全頂点線束変更のstrict fppf降下。
+% 2026-11-23 / v1.3。全finite-square Isomに対するdual normalの2自然性とQP kernelの不変性。
 \section{回転・mutationと相対heart}
 \label{sec:qa-relative-rotated-mutated}
 
@@ -487,6 +487,120 @@ $M_1^{-1}$が掛かる．
 作られ，二回の線束変更について
 $M_i(N_iE_i)\simeq(M_iN_i)E_i$という標準結合と
 両立する．よって三重重なりでもcocycleが閉じる．
+\end{proof}
+
+\begin{proposition}[有限squareの全Isomに対する双対normal比較の2自然性]
+\label{prop:qa-dual-normal-all-square-isom-naturality}
+本稿の$H_2$実現可能開上の四頂点を保つ
+有限square foundationの任意の相対同型$\varphi$を取る．
+$\varphi$は全Hom束・二積・単位を保つものとし，
+対応する相対perfect Morita同値を$\Phi_\varphi$，
+反対squareの同値を$\Phi_\varphi^\vee$と書く．
+前補題の相対評価cone$F$，$H=t^{-1}Z_1$，
+可逆層$L=\mathbf R\operatorname{Hom}(F,H)$，
+および反対側の$Z_2^\vee,K=\mathbb D H$に対して
+canonicalな比較
+\[
+ \begin{gathered}
+ \Phi_\varphi(F)\simeq F',\qquad
+ \Phi_\varphi(H)\simeq H',\qquad
+ L\xrightarrow{\sim}L',\\
+ \Phi_\varphi^\vee(Z_2^\vee)\simeq
+ (Z_2^\vee)',\qquad
+ \Phi_\varphi^\vee(K)\simeq K'
+ \tag{NI}\label{eq:qa-dual-normal-full-isom-naturality}
+ \end{gathered}
+\]
+を得る．これらは
+$L\otimes F\simeq H$と
+$K\simeq Z_2^\vee\otimes L^\vee$
+の評価同型に関して可換であり，
+同型の合成と任意の相対基底変更について
+coherentな2-isomorphismを満たす．
+局所的な頂点の可逆層捩れを含めると，
+式~\eqref{eq:qa-dual-normal-vertex-line-weights}
+の係数を加えた同じ2自然性となる．
+
+さらに，定理~
+\ref{thm:qa-two-mass-all-finite-foundation-gerbe}
+のQP表示から有限foundationへの射で
+この比較を引き戻す．
+その相対kernel
+$\mathcal U_\lambda\times\mathcal U_\mu$のmassゲージと，
+補題~\ref{lem:qa-q12-long-relation-lift-shear}
+の局所残余関係lift shearは，
+それぞれ\emph{有限$\Lambda$への誘導同型が恒等}である．
+従って引き戻した双対normalのheart比較は
+両変換に対してcanonicalな単位2-isomorphismで不変となり，
+mass/shearの非可換な半直積作用を含む任意の合成と
+整合する．頂点scalarsについては
+系~\ref{cor:qa-dual-normal-vertex-line-descent}の
+線束重みを用いる．
+以上は有限foundationと同じ$H_2$のheartの
+\emph{Isomに関する降下}であって，
+異なるruling間の比較をraw QPの
+right-equivalenceとして構成した主張ではない．
+\end{proposition}
+\begin{proof}
+全Hom束と積の保存により，
+$\varphi$は$V=\operatorname{Hom}(E_0,E_1)$を
+$V'$と同定し，evaluation
+$V\otimes E_0\to E_1$を
+$V'\otimes E'_0\to E'_1$へ送る．
+相対perfect圏の固定されたdg増強で
+cone形成は射の同型に自然なので
+$\Phi_\varphi(F)\simeq F'$となる．
+同様にcoevaluationの射とそのconeも移り，
+$\Phi_\varphi(Z_1)\simeq Z_1'$が成立する．
+相対Serre双対性は
+$R$-perfectなHom複体の双対によって特徴付けられるので，
+Morita同値のもとで
+$\Phi_\varphi t\simeq t'\Phi_\varphi$という
+canonicalな自然比較を持つ．
+従って$H=t^{-1}Z_1$も対応する．
+
+$L=\mathbf R\operatorname{Hom}(F,H)$に
+相対Moritaの全忠実性を適用すると
+$L\simeq L'$となり，perfectなHomとその評価の
+自然性から$L\otimes F\simeq H$の図式は可換である．
+反対代数のMorita同値に対し
+\[
+ \Phi_\varphi^\vee\circ\mathbb D
+ \simeq\mathbb D'\circ\Phi_\varphi
+\]
+がperfect双対の自然な随伴同型として成立する．
+この同型と双対coevaluationの自然性から
+$Z_2^\vee,K$および線束値比較の可換性を得る．
+同型$\varphi,\psi$の合成に対する各比較は
+同じevaluation・coevaluation・Serreの
+普遍的な自然同型から構成される．
+それらの合成の結合則と単位則が
+2-isomorphismのcocycleを与える．
+したがって選んだconeモデルの
+任意の準同型代表に依存しない．
+基底変更についても有限perfectなHom，双対，
+tensorとconeによる形成から同じ結論となる．
+
+massゲージは対角生成元を
+$x\mapsto x+t r_b$，$u\mapsto u+s r_a$
+へ移すが，有限商では$r_a=r_b=0$なので
+$\Lambda$上の恒等を誘導する．
+残余長関係lift shearは戻り矢$v,y$だけを変更して
+有限矢の全成分を固定し，
+relation idealも変えず，同じ有限$\Lambda$へ
+恒等を誘導する．
+従ってどちらの変換の有限foundation像も
+単位射であり，先に証明した自然比較の
+単位公理によって引き戻したheart比較にも
+canonicalな単位2-isomorphismが作用する．
+具体的なmass/shearの半直積
+~\eqref{eq:qa-q12-mass-shear-conjugation}
+と局所枠のcocycleは，この有限像の恒等性と
+矛盾しない．頂点scalarsは有限表現上の
+内部共役として作用するが，
+対応する例外対象の基底線束捩れを
+系~\ref{cor:qa-dual-normal-vertex-line-descent}
+で明示しており，その作用も合成に整合する．
 \end{proof}
 
 \begin{proposition}[二つの反対窓は同じ双対heartに入る]
