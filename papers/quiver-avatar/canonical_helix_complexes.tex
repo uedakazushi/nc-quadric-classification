@@ -151,6 +151,57 @@ $(P,F,G,FG)$ となる．
 仮定したものではない．
 \end{proof}
 
+\begin{proposition}[全整数 helix の前向き Ext 消滅]
+\label{prop:qa-core-forward-ext-vanishing}
+上記の square および rotated square の曲線上の線束列について
+\[
+ \Ext_D^p(L_i,L_j)=0\qquad(p>0,\ i<j)
+\]
+が成り立つ．曲線が可約・非被約であっても同様である．
+これは曲線上の forward acyclicity の主張であり，
+この段階で例外 collection の fullness や
+非可換 AS--Gorenstein 性を主張するものではない．
+\end{proposition}
+\begin{proof}
+Gorenstein 曲線 $D$ 上で
+$\Ext^p_D(L_i,L_j)=H^p(D,L_jL_i^{-1})$ であり，
+$p\ge2$ は自動的に零である．
+rotated の連続する四商は，$q$ 番目の区間で
+\[
+ C P^{-1},\quad FP^{2q},\quad HP^{4q},
+       \quad FP^{2q+1},
+ \qquad C=HF^{-2}.
+\]
+唯一の総次数零の商 $CP^{-1}$ は
+avatar の除外条件 $P\ne C$ と
+補題~\ref{lem:qa-core-curve-vanishing}(4) で acyclic である．
+その他の商は各成分上非負次数の線束であり，
+少なくとも一つ含めば全体上の次数は正である．
+複数の連続商の tensor 積は，単独の
+$CP^{-1}$ 以外は各部分曲線上非負次数を持ち，
+$D$ 全体上正次数を持つ．
+ここで $C$ 自体の成分次数は零ではない場合があるが，
+$C$ の両側には $F$ または $H$ の商が隣接し，
+それらとの積は各部分曲線に非負次数を持つ．
+補題~\ref{lem:qa-core-curve-vanishing}の証明で得た
+cluster 消滅の不等式 $(**)$ を $\ell=0$ に適用すれば
+$H^1=0$ である．
+
+square では四つの連続商は
+\[
+ FP^{2q-1},\quad GF^{-1},\quad FP^{2q},
+       \quad FGP^{4q+1}
+\]
+である．$GF^{-1}$ の単独の acyclicity は
+$\Sigma_0$ 上の Cartier 制限列，
+または補題~\ref{lem:qa-core-curve-vanishing}(4)
+による．それ以外は上と同様に
+nef な正次数の商を少なくとも一つ含み，
+$GF^{-1}$ を隣接商と組にすると
+各部分曲線上の次数は非負になる．
+同じ cluster 判定から $H^1=0$ が従う．
+\end{proof}
+
 \begin{remark}[AS 正則性への論理的な境界]
 \label{rem:qa-core-helix-not-as}
 前命題と系は，両端と中間項を持つ
