@@ -1,6 +1,45 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.72（A v1.69・20節、B v0.33・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.73（A v1.69・20節、B v0.34・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 相対Clifford閉部分のPBWと普遍Noetherian降下
+
+任意の可換係数環$R$、任意の中心二次式$f_1,f_2\in R[u,v]_2$について
+$B=R[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$、
+$h=cd+dc$は中心元であり、$B$は中心多項式環
+$R[u,v,h]$上の基底$(1,c,d,cd)$を持つ有限自由代数である。
+独立な中央変数$h$を持つ表示において
+$c^2\to f_1,d^2\to f_2,dc\to h-cd$はmonicな書換規則となり、
+長さ三の全重なり$ccc,ddd,dcc,ddc$はそれぞれ
+$f_1c,f_2d,f_1d,f_2c$へ両側から帰着する。
+長さ+辞書式で終了するため合流し、任意の非被約係数環上でも
+中心環の埋込みと自由基底が同時に証明できる。
+原稿Bの lem:noncubic-relative-clifford-center に証明を保持する。
+厳密記号計算は computations/verify_clifford_pbw.py にある。
+この証明は二形式の判別式の可逆性を必要としない（ただし、
+その後の$\HH$認識には必要となる）。
+
+$R_0$がNoetherianなら、$B$はNoetherian中心
+$R_0[u,v,h]$上有限なので左右Noetherian。
+任意のNoetherian$R_0$-代数$T$でも同じ基底が残る。
+有限個のaffine étale標準化$R_0\to R_\nu$が基底を覆い、
+有限foundationの全indexed Homと相対Serre四周期が
+標準族の対応するHomと*環族として*同定されるとき、
+$\prod R_\nu$は忠実平坦で、任意のNoetherian底変更後も
+有限積のaffine étale被覆であり続ける。
+各row/columnの部分加群の有限生成性はこの忠実平坦な被覆から
+有限個の頂点同次生成元を降下することで得られる。
+補題 lem:closed-clifford-fpqc-noetherian に証明を保持。
+幾何点ごとの同型だけでなく、閉部分環$R/(\det M,\det N)$
+での実際の相対標準化が必要である。
+
+元の全基底$R$での左右Noetherian性にはさらに
+二つのcubic主開部分$D(\det M),D(\det N)$上の
+既存のgeometric cubic Noetherian構成を用い、
+thm:patch-noetherian の次数別$I$進完備化と
+$\widehat R_I\times R_a\times R_b$ の忠実平坦被覆を組み合わせる。
+この最後の「閉+開⇒全体」の独立再検証と、
+選んだ根での相対中央AS4被覆への適用は引き続き要監査。
 
 ## 非被約基底の幾何的rankとscheme-theoreticなnoncubic境界
 
@@ -35,8 +74,9 @@ computations/verify_lagrangian_recognition.py に正確な記号計算を収め�
 貼合せ自体は$I=(\det M,\det N)$による
 scheme-theoreticな閉部分$R/I$と、開部分$R_a,R_b$を使うため、
 この例の存在と整合する。
-次はR/I上のétale局所相対標準化が実際のfinite Morita foundationと
-全偶数Homを同定する箇所を詳しく点検する。
+R/I上のétale相対標準化、Serre四周期からの全indexed Hom比較と
+Noetherian性のfpqc降下は本ノート冒頭とBの対応補題に整理した。
+次は二つのcubic主開での一様Noetherian性と$I$進貼合せを点検する。
 
 ## Lagrangian 正規形の cross reshuffling に関する符号と開条件
 

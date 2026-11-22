@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.48（Clifford PBWとfpqc閉部分降下を分離）
+% 2026-11-22 / v1.49（閉部分の全Hom Z代数の同定を明示）
 \section{noncubic 境界を横断する有限型効果性}
 \label{sec:noncubic-finite-type}
 
@@ -815,8 +815,12 @@ monic PBW の四つの重なりの検証は係数の被約性に依存しない�
 補題~\ref{lem:nc-relative-normal-tilting} の相対 tilting が
 最初の四対象・合成・相対 Serre 関手を同定する。
 両者の四周期 $E_{i+4}\simeq S^{-1}E_i[2]$ を使えば
-全 indexed Hom $\mathbb Z$-代数が頂点ごとの共役で一致し、
-偶数部分に制限しても同じである。
+全 indexed Hom $\mathbb Z$-代数が頂点ごとの共役で一致する。
+標準族側の相対 Hom の計算は
+定理~\ref{thm:noncubic-relative-effectivity} の構成により
+$\check B_0$、すなわち全次数の自由シフト間の Hom と同定される。
+偶数部分に制限してもこの同定は保たれ、
+実際に選んだ平方根を標準族の根へ同一視する必要はない。
 そこで補題~\ref{lem:closed-clifford-fpqc-noetherian} を、
 この \'{e}tale 局所的な \emph{相対} 同型に適用する。
 結果として $C/IC$ は左右 Noetherian であり、
