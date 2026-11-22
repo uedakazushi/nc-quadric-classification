@@ -1,16 +1,16 @@
 # Cloud Codexで研究を継続する
 
-2026-11-23 / v0.17。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.69、論文Bはv0.41（依存と組版の監査中）、論文Cはv4.22。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
+2026-11-23 / v0.18。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.69、論文Bはv0.41（依存と組版の監査中）、論文Cはv4.23。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
 
 ## 論文Cを最優先で完成するための現行実行単位
 
-**最優先目標は `papers/nc-quadric-avatar.tex`（論文C）を証明と先行研究比較のある独立した公表可能な論文として完成させること。** 研究方針のC1–C4を終了基準とする。C2の全H2半不変式環・中央affine chart・noncubic閉像・二商特異点は `papers/quiver-avatar/global_h2_invariant_hull.tex` に証明を統合した。第一の未解決核心はC3の全相対AS/QP群oid：既知の可縮pair余剰慣性 $B\mathbb G_m^2$（`prop:qa-stabilized-inertia`）を剛体化した最小8矢QPと、可逆cubic finite foundationのright-equivalence・同型層・頂点スカラー慣性を比較してから、rank3壁とnoncubic側へ延長する。C4の証明・一次資料比較・全稿LuaLaTeX組版も未完了。A（20分類節）とB（31相対節）は有効な入力として監査を行うが、その公表準備だけで作業を停止せず、Cより先に優先しない。数学的検証・ソース検査・組版・main保存・hub更新を区別する。
+**最優先目標は `papers/nc-quadric-avatar.tex`（論文C）を証明と先行研究比較のある独立した公表可能な論文として完成させること。** 研究方針のC1–C4を終了基準とする。C2の全H2半不変式環・中央affine chart・noncubic閉像・二商特異点は `papers/quiver-avatar/global_h2_invariant_hull.tex` に証明を統合した。C3の可逆cubic開では、最小8矢QPとrank24有限foundationのfppf全groupoid同値、および三頂点scalar慣性の剛体化とH2 chartへの相対認識を `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に証明済み。二正規化間のmutation glueが単なるright-equivalenceでないことも証明した。**第一の未解決核心はrank3 scheme壁とnilpotent massを含む非最小十／十二矢の相対群oid、right-equivalenceとheart比較**。既知の可縮pair余剰慣性 `BGm²` を保持する。C4の証明・一次資料比較・全稿LuaLaTeX組版も未完了。A（20分類節）とB（31相対節）は有効な入力として監査を行うが、その公表準備だけで作業を停止せず、Cより先に優先しない。数学的検証・ソース検査・組版・main保存・hub更新を区別する。
 
 ## 起動時の依頼文
 
 このrepoを選んだCloud taskに、次の依頼を渡す。以後の実行単位は研究方針を更新して引き継ぐので、過去の会話は必要ない。
 
-> AGENTS.mdと00_research_plan.mdに従い、**論文Cの完成を最優先目標として固定し、研究方針のC1–C4を確認して、最優先の未解決C3（全相対AS/QP群oidとright-equivalence・慣性・heart比較）から研究を進めて下さい。** A/Bは必要な入力として使い、A/Bの公表準備を理由にCの数学的問題を後回しにしないで下さい。研究方針が指定する現在の第一着手から始め、証明・反例・一次文献比較・必要な厳密計算を行い、結果を日本語LuaLaTeXの主原稿と現行ノートへ統合して下さい。一補題・検算・commitを終了条件とせず、保存後も次の課題へ進んで下さい。切りのよいところで随時、長くても前回の成功したpushから約15分以内に通常commitとmainへの反映を行い、研究の区切りにresearch-hubも更新して下さい。他の作業者の変更を保持し、force pushとGitHub Actionsの追加・起動は行わないで下さい。実際の実行上限や不可欠な外部制約に達した場合は、証明境界と次の具体的一手を現行資料へ保存して下さい。
+> AGENTS.mdと00_research_plan.mdに従い、**論文Cの完成を最優先目標として固定し、研究方針のC1–C4を確認して、C3の未決着であるrank3壁・nilpotent mass・非最小十／十二矢QPのright-equivalenceと全相対heart比較を実際に進めて下さい。** A/Bは必要な入力として使い、A/Bの公表準備を理由にCの数学的問題を後回しにしないで下さい。研究方針が指定する現在の第一着手から始め、証明・反例・一次文献比較・必要な厳密計算を行い、結果を日本語LuaLaTeXの主原稿と現行ノートへ統合して下さい。一補題・検算・commitを終了条件とせず、保存後も次の課題へ進んで下さい。切りのよいところで随時、長くても前回の成功したpushから約15分以内に通常commitとmainへの反映を行い、研究の区切りにresearch-hubも更新して下さい。他の作業者の変更を保持し、force pushとGitHub Actionsの追加・起動は行わないで下さい。実際の実行上限や不可欠な外部制約に達した場合は、証明境界と次の具体的一手を現行資料へ保存して下さい。
 
 AGENTS.mdは、研究の継続手順と達成条件を与える。実行時間・利用可能な道具・ネットワーク・認証は実際のCloud環境に従う。別taskの自動起動や無期限実行を設定するファイルではない。
 
