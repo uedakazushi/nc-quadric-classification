@@ -1,6 +1,33 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.01（A v1.69・20節、B v0.39・31節、C v2.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.02（A v1.69・20節、B v0.39・31節、C v2.8）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 論文C：幾何的AS入力の自足化と共有根の相対線束障害
+
+**現在有効な入力。** 添付の大川--植田v7（Parts I--II）のうち、反標準曲線の消滅と二pencil、
+square/rotated再埋込み、有限foundationの評価行列、四つのcanonical複体を、
+Cの `square_rotated_foundations.tex` と `canonical_helix_complexes.tex` に証明として組み込んだ。
+直接的な曲線上の完全性と、元のAS Z代数の全周期最小射影分解・Noether性・O-marked heart同値は別である。
+必要なカテゴリー的なAS認識の詳細は元のv7中のhelix/realization構成と原稿A・Bの仮定を突き合わせて継続する。
+
+**新しい最小解消上の障害。**
+$A=k[[a,b,y]]/(ab-y^2)=k[[c,d]]^{\pm}$、
+$s=a-b$ に対し、反不変加群 $M=Ac+Ad$ は最小解消で
+$\mathcal O_E(1)$ に制限する可逆線束になる。
+局所chartは $(a,y,b)=(u,ut,ut^2)$、$(vw^2,vw,v)$、重なりで $v=ut^2,w=t^{-1}$。
+既約nodalな特殊曲線のstrict transform $D'$ は例外 $E$ と二点で交わり、
+$E^2=-2, D'\cdot E=2$。ゆえに垂直因子twistによる $\deg_E$ の変化は偶数で、
+多重次数零の相対$\Pic^0$線束にすることはできない。
+**制限は同じ一径数基底上の最小解消のみ**であり、base change / compactified Picard / 別モデルを排除しない。
+証明正本はCの `nodal_resolution_obstruction.tex`、
+整数・記号chartの再現資産は `computations/verify_nodal_exceptional_parity.py`。
+有限計算は局所公式の検算であり、相対groupoid同値の検証ではない。
+
+**次の最小課題。** 共有根のcompactified Picardの反不変moduleから
+基底変更・stable reduction・`Sigma_2`のrelative elementary transformを含む
+正しい`O`標識の相対avatarに至る射を構成する。別方向では同じ四項の有限directed End代数から
+canonical Serre根・元のAS qgr heartが一致するかを直接比較する。
+全noncubic同型類全単射（集合論）とこの相対射は引き続き区別する。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
