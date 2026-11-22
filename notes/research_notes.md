@@ -1,6 +1,14 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.36（A v1.69・20節、B v0.41・31節、C v4.22）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.37（A v1.69・20節、B v0.41・31節、C v4.23）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 八矢QPとcubic有限foundationの全相対groupoid
+
+**原稿上の新定理（論文C）。** 八矢四次potential `H∈(W⊗V⊗U)⊗T`（四束rank2）を第四矢Tで微分し、rank2の部分束 `R=im(∂_T H)⊂W⊗V⊗U` を得る。rank2直接因子の開 `P8^(2)` は普遍Grassmann上の `Isom(T∨,R)`-torsorだから、fppf相対群oid `[P8^(2)/GL2⁴]≃[Gr(2,8)/GL2³]`。一方finite directed foundationで二つの二段積a,bが可逆なopenでは、結合律の二経路が共通全射 `m:W⊗V⊗U→N`（N rank6）に一致し、`R=ker m`。全二段・三段の積を保持して `F8^lin≃[Gr(2,8)/GL2³]` を構成した。全scheme底変更・Isom・慣性まで成立。三頂点scalar `Gm³` をrigidifyすると `[Gr(2,8)/PGL2³]`、幾何四重テンソルopenはH2の選択ordered cubic chartに等しい。これはraw QP群oidが直接H2に同値という主張ではない。既証明の12矢消去pairはさらに `BGm²` を生む。
+
+**cubic二chartの障害。** f可逆/g可逆な二正規化の変換 `T↦T⁻¹` は一般には右同値ではない。四量子ビット粗不変式の固定部分は `e3=±d e1` に限られる。Cartan固有値(1,2,3,4)で(e1,e2,d,e3)=(30,273,24,820)、p_adj=9625、q_adj=6510100となるためgeometric可逆開にありながら固定されない。従って全H2のQP比較にはmutation/window変更を伴うchart glueが必要である。
+
+**再現・残課題。** [証明](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) と [検算](../computations/verify_q8_cubic_groupoid.py)。後者はGitHub blob SHA `3d2dc22b227786185c9cea5844505fa8fabf1020` と一致するコピーをPython 3/SymPyで実行し、12項目全PASS。これは一般fppf同値の証明でなく、frame torsor・結合律・全積の証明は原稿にある。次の核心はrank3 scheme壁・nilpotent mass上の非最小十/十二矢QPのright-equivalenceと全相対AS heart比較。最小矢束の非平坦例（`coker μG=O/(δ)`、δ=ε）を避けて全幾何fiberの本数から群oid同値を推測しない。
 
 ## 全H2のGram pencil不変式環と明示good moduli
 
