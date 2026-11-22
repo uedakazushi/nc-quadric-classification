@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.4（内在H2稠密開を一般ruling交換で商表示）
+% 2026-11-22 / v2.5（generic smooth/finiteのStacks一次参照を追加）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -474,7 +474,8 @@ $G_{\mathrm{eff}}$はsmoothな十三次元群だから
 $\mathscr G^{\mathrm{nl}}\to
 [\mathscr G^{\mathrm{nl}}/G_{\mathrm{eff}}]$
 はsmoothな相対次元十三の全射atlasである。
-smoothnessのsmooth被覆による局所判定から
+smoothnessのsmooth被覆による局所判定
+（\href{https://stacks.math.columbia.edu/tag/075T}{Stacks Project, Tag 075T}）から
 $\overline{\mathcal F}_{\mathrm{geo}}$もsmoothとなる。
 $\dim\mathfrak Q_{\mathrm{geo}}^{\mathrm{rig}}
 =16-13=3$であり、論文Bの
@@ -591,9 +592,12 @@ $\operatorname{Aut}_{\HHstack}(y)$は
 
 前定理により忘却射はこの開で表現可能étale、
 したがって局所準有限である。
-有限型の準有限étale射は、
-有限の幾何的一般fiberを持つ場合、
-始域と標的の適切な稠密開へ縮めれば有限étaleになる。
+ここでの射は有限型かつ準分離であり、
+一般fiberは有限なので、
+\href{https://stacks.math.columbia.edu/tag/0BBA}{Stacks Project, Tag 0BBA,
+Lemma 68.21.1}を標的のsmooth atlas上で適用し、
+étale降下を用いて標的の稠密開へ縮めると有限となる。
+もともとétaleだから、その開では有限étaleである。
 その次数は上で示した二である。
 \end{proof}
 
