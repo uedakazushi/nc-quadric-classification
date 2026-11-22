@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.9（一cubic境界のfiber一点と有限étale延長障害）
+% 2026-11-22 / v4.0（Artin基底での二normal ruling復元とmutation整合）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -788,6 +788,77 @@ smooth相対次元零の結論から、
 ~\ref{cor:qa-quintuple-h2-generic-degree-two}
 により二点である。従って同じ開に有限étale
 次数二として延長できない。
+\end{proof}
+
+\begin{proposition}[Artin変形上の二つの内在的rulingと相対mutation]
+\label{prop:qa-ou-formal-two-ruling-lifts}
+$k$を標数零の代数閉体、
+$y=(\mathcal C,\mathcal O)\in\HHstack(k)$を任意の点とし、
+論文Bの二つのnormal foundationを
+$\mathcal E^X=(\mathcal O,X,M,Z)$、
+$\mathcal E^Y=(\mathcal O,Y,M,Z')$とする。
+$(A,\mathfrak m,k)$を局所Artin $k$-代数、
+$y_A=(\mathcal C_A,\mathcal O_A)$を
+$y$の指定還元同型付きflat pointed Abel変形とする。
+このとき以下が成立する。
+\begin{enumerate}
+\item それぞれのfull geometric helix、
+従って各四項normal foundationは、
+$\mathcal C_A$にflatに持ち上がり、
+指定還元同型の下でその同型類は一意である。
+二つの持上げは互いに同型でない。
+\item 各持上げのEnd代数は階数二十四のflat
+foundation代数であり、nilpotentな基底変更に整合する。
+それぞれから始まる有限表示は、
+相対normal foundationの開$U_0$に属する。
+\item 論文Bの二短完全列による相対mutation
+$\tau$は、選んだ第一の持上げを第二の持上げに移す。
+この対応は任意の局所Artin基底変更と、
+pointed変形の同型に関する二者の置換と両立する。
+\end{enumerate}
+従って一cubic境界
+~\eqref{eq:qa-ou-one-cubic-divisor}でも、
+\emph{両方のnormal foundationの選択}は
+Artin形式近傍で消失せず、形式的には二つの
+互いに異なる持上げを持つ。
+ただしこれは同型類の\emph{Artin局所}での
+命題であり、任意の有限型・非被約基底上に
+この二択を有限étale代数空間として代数化したこと、
+また$\mathfrak Q_{\mathrm{fnd}}\simeq\HHstack$という
+全相対群oid同値を証明したことを意味しない。
+\end{proposition}
+\begin{proof}
+二つのnormal foundationは論文B
+\cite[\texttt{cor:two-intrinsic-foundations}]{QuadricModuli2026}
+により存在し、その第一項は同じ$\mathcal O$、
+第二項$X,Y$は互いに非同型である。
+論文B
+\cite[\texttt{thm:artin-foundation-lift}]{QuadricModuli2026}
+を各full helixへ独立に適用すると、
+各項のflat noetherian持上げの同型類の一意性、
+四項tilting性、前向きHomの有限自由性と
+階数二十四のEnd代数が得られる。
+二つの持上げが同型なら還元後の$X,Y$も
+同型となるため矛盾する。
+任意の局所Artin基底変更への整合性は
+この一意性と同定されたflat Homから従う。
+
+論文B
+\cite[\texttt{prop:ruling-involution-mutation},
+\texttt{prop:relative-ruling-involution}]{QuadricModuli2026}
+は、全normal foundationで二つの評価写像の
+全射・部分束条件が成立し、そのkernel/cokernel
+構成が任意基底変更に整合して二つのrulingを交換する
+代数的対合$\tau$となることを証明している。
+したがって各Artin持上げにも$\tau$が定義される。
+$\tau(\mathcal E_A^X)$の還元は
+$\mathcal E^Y$なので、持上げの一意性によって
+$\mathcal E_A^Y$と同型である。
+同様に二度のmutationは恒等と整合する。
+任意のpointed変形同型は各normal helixを
+二つのいずれかへ移し、その還元に対応する
+選択は一意なので、形式的な二択の置換と両立する。
+以上はArtin形式変形に限った議論である。
 \end{proof}
 
 \begin{corollary}[$j=0$の$A_4$点の三次元接表現と粗形式商]
