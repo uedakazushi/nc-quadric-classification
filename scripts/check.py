@@ -145,6 +145,7 @@ def sources() -> int:
         "papers/nc-quadric-moduli.tex", "papers/nc-quadric-avatar.tex", "papers/references.bib",
         "papers/quiver-avatar/as_helix_classification.tex", "papers/quiver-avatar/as10_mutation_classification.tex",
         "computations/verify_as_avatar_euler.py",
+        "computations/verify_avatar_cubic_obstruction.py",
         "computations/verify_quadric.py", "computations/verify_pencil_tangent.py",
         "computations/verify_reducible_quadruples.py", "computations/verify_noncubic_antiserre_pivots.py",
         "requirements.txt", ".latexmkrc",
@@ -277,7 +278,7 @@ def math_checks() -> int:
                "verify_cubic_geometric_adjugate.py",
                "verify_avatar_pointed_dictionary.py",
                "verify_rootpair_resolvent_spectral.py",
-               "verify_as_avatar_euler.py", "verify_nodal_exceptional_parity.py",
+               "verify_as_avatar_euler.py", "verify_avatar_cubic_obstruction.py", "verify_nodal_exceptional_parity.py",
                "verify_noncubic_boundary.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
