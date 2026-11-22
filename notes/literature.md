@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.49。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.50。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -8,6 +8,8 @@
 本研究の対象は、構造として指定された $(\mathcal C,\mathcal O)$ であり、exact autoequivalence $s$、同型 $s^2\simeq\mathbb S^{-1}[2]$、および orbit algebra の quadratic AS-regular ambient 表示は存在条件として扱う。この区別を保った分類と marking 忘却が課題である。
 
 既知の cubic AS-regular $\mathbb Z$-algebra、geometric quintuple、admissible quadruple の分類や hypersurface embedding を新成果として扱わない。特に、quadratic hull の存在と quadratic envelope による canonical recovery は別の主張である。
+
+Alper–Hall–Rydh, *A Luna étale slice theorem for algebraic stacks*, Annals of Mathematics **191** (2020), 675–738, DOI [10.4007/annals.2020.191.3.1](https://doi.org/10.4007/annals.2020.191.3.1)。[刊行PDF](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p01-s.pdf)のTheorem 1.2（印刷p.676）を2026-11-22に本文画像で直接確認した。quasi-separatedな局所有限型Artinスタック、affine stabilizers、閉じたsmooth点、線型簡約な**全**stabilizerが仮定である。normal representationのGIT商へのaffine étale近傍と、それをbasechangeしたquotient stackからのétale写像を与える。affine diagonalなら後者をaffineに選べる。対象の良モジュライ射をZariski開へ無条件に降下させる主張ではない。本研究の一致類ではfull H_eqの線型簡約性、閉点性、smooth・affine diagonalを本文で照合した。
 
 ## De Deken–Lowenとatlas・framedの一次資料
 

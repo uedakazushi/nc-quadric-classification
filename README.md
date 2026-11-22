@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.79、論文A v1.69、論文B v0.38（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.80、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、一般cubic領域における既存quintuple/GITモジュライと内在的H2の相対比較、およびその境界への延長。Cは有限表示の確立部分とheart/ASの未完成な比較を区別する。
 
@@ -27,6 +27,10 @@ noncubic有限型効果性では、[五頂点barとcanonical tails](papers/modul
 今回変更した節のTeX環境バランスと新補題の参照を静的に点検。三稿全体のソースchecker・LuaLaTeX組版はローカルcheckout不能のため未実施。31分割節の一括チェックは接続側の操作数上限で実行できなかった。次の重点はnoncubic境界の相対groupoid、慣性、good/coarse moduli。
 
 ## noncubic境界の相対groupoidとgood/coarse moduli
+
+一致根対の形式局所模型についてAHRの刊行定理（2020年Theorem1.2）の全仮定を照合し、全慣性の線型化から三つの二次不変式ac、(x+y)²、(x−y)²を独立計算した。局所good moduliの原点への微分は零である一方、不変式環は滑らかな三次元多項式環となる。この共通étale近傍のgood moduliがH2のZariski開へ降下するかは別問題であり、今後は既存GITのforgetful射のfiber・慣性と合わせて検討する。
+
+
 
 [P/G]から内在的被約境界への同値は、標数零の群スキーム慣性、smooth境界chartの相対二形式族への因数分解、相対tilting・反Serre再構成、接空間全射とétale判定を組み合わせる。[境界比較論文Bの節](papers/moduli/noncubic_boundary_comparison.tex)では、正標数のBα_pが幾何点の抽象群単射からのrepresentabilityの反例になることを明示した。一致根対の慣性重みは±2、形式的二変数の不変式はk[[ac]]、good moduli座標χ=1/(1−4ac)は微分零・混合Hessian4である。これらの代数的恒等式は[境界検算](computations/verify_noncubic_boundary.py)と整合する。
 

@@ -1,6 +1,76 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.77（A v1.69・20節、B v0.38・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.78（A v1.69・20節、B v0.39・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 一致類の全慣性・AHR形式対・局所good moduliの二次的性質
+
+**AHR適用の全仮定。** 一致根対の閉gerbe
+$\mathcal G=BH_{\mathrm{eq}}$は内在的H2の閉点で、
+内在スタックは有限型smooth Artin・affine diagonalを持つ
+（Bの thm:global-h2-smooth-finite-type）。
+$H_{\mathrm{eq}}$の連結成分は$\mathbb G_m$、非連結成分は有限群で、
+標数零なので**全安定化群**が線型簡約。
+AHRの刊行一次PDF（Annals of Mathematics 191 (2020), 675–738,
+Theorem1.2、印刷p.676）を直接確認した：
+smooth closed point、linearly reductive stabilizer、
+quasi-separated finite-type Artin stack with affine stabilizersの下で、
+$V=\operatorname{HH}^2$のGIT商$V/\!/H$へのaffine étale近傍$U$と
+\[
+ [W/H]=[V/H]\times_{V/\!/H}U\longrightarrow\mathfrak H_2
+\]
+のétale射が得られ、affine diagonalなら後者もaffineに取れる。
+$H$はsmoothなのでnormal representationは
+$\mathfrak H_2$の点の一次変形空間$V$に一致する。
+この適用範囲からZariski開のgood moduli降下を結論してはいけない。
+
+**境界を含む形式対。**
+Bの prop:noncubic-coincident-full-normal-representationでは
+$V=V_{\mathrm b}\oplus V_{\mathrm n}$、
+境界方向$(a,c)$のトーラス重みは$(2,-2)$、
+法方向$(x,y)$では連結トーラスは自明。
+有限生成元$e_1,e_2,r,\tau$は前論文Bの表の通り作用する。
+$\mathfrak N$はsmoothな余次元二の閉部分なので、
+sliceの完備局所環においてH安定な境界イデアル$I$と
+極大イデアル$\mathfrak m$の余接完全列を得る。
+Hの線型簡約性でI内の法余接liftと境界方向liftを
+同変に選び、$(a,c,x,y)$をregular parametersにできる。
+その結果、形式的な対は
+$([\operatorname{Spf}k[[a,c,x,y]]/H],
+ [\operatorname{Spf}k[[a,c]]/H])$、
+境界は$x=y=0$となる。
+これは有限次数の接表現だけからの類推ではなく、
+AHRのétale sliceと同変正則座標の持上げを使う。
+
+**全群の三つの二次不変式。**
+$w=ac$, $p=(x+y)^2$, $q=(x-y)^2$は、
+連結トーラス・法同時符号・反射r・ruling交換τの
+全生成元によって保存されることを
+SymPyの多項式代入で独立確認した。
+三元のJacobianのgeneric rankは3であり、
+$k[V]^{H_{\mathrm{eq}}}=k[w,p,q]$は
+三元の多項式環である（証明はBの
+cor:noncubic-coincident-polynomial-invariants）。
+四変数を次数1とすると三生成元はすべて二次、
+Hilbert級数は$(1-z^2)^{-3}$であり、
+原点のgood moduli射の微分は零。
+それでも商原点はsmoothな三次元点である。
+境界では$p=q=0$、$\chi-1=4w/(1-4w)$で
+滑らかな一次元軸に対応する。
+この局所計算は形式線型化の有効性と
+global good moduliの存在を同一視するものではない。
+現行計算のassertionは
+computations/verify_noncubic_boundary.py に統合した。
+ただし現行全スクリプトのローカルcheckout実行は未実施であり、
+今回独立に実行したのは各四つの群作用の多項式恒等式、
+Jacobianの非零minorとHilbert数値の確認までである。
+
+**次の数学的課題。** AHR共通étale近傍上のgood moduli射を、
+$\mathfrak H_2$のZariski開へ降下できる条件を検討する。
+同時に一般cubicのOkawa–Ueda GIT表示から内在H2への
+根・四窓・rulingを忘れる射の相対fiberを、
+境界と慣性を保って比較する。
+A/B公表前の三稿source checker・LuaLaTeX組版、
+先行研究との包括的新規性確認、全証明独立監査も残る。
 
 ## noncubic 被約境界の相対商・慣性・good/coarse 比較
 
@@ -76,8 +146,8 @@ cohomological affinenessにより反証する。
 全証明の形式検証を混同しない。
 
 **次に点検すること。**
-一致類の非連結慣性の全接・法表現、
-AHR形式局所線型化の仮定と形式不変式環を重点監査する。
+一致類の全慣性とAHR形式局所模型の仮定・不変式は本ノート冒頭へ統合した。
+次は局所good moduliのZariski降下と一般cubic GIT表示との比較を研究する。
 A/B/C全source checker・LuaLaTeX組版、全証明独立監査は未実施。
 
 ## 指定 Artin 同型の持上げとsmooth atlas・framed実現
