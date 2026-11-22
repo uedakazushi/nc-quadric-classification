@@ -1,0 +1,730 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / C v4.8
+\section{Spectral双対化の相対射と二次線束のgerbe}
+\label{sec:qa-spectral-relative-nonfaithful-map}
+
+本節の前半では標数零の体上で，二形式の四分岐根が相異なる開を扱う．
+後半では二重根を許す平坦代数モデルと，その境界でのSerre障害を扱う．
+$\mathfrak N^{\rm sm}=[P^{\rm sm}/G]$を非順序の二形式表示stack，
+$\mathfrak N^{\rm sm,ord}=[P^{\rm sm}/G^\circ]$を
+二形式の順序を保った表示stackとする．ここで
+$G^\circ=(\GL_2\times\Gm^2)/D$であり，
+$\mathfrak N^{\rm sm,ord}\to\mathfrak N^{\rm sm}$は
+二形式の順序を選ぶ有限\'etale二重被覆である．
+これは表示stackとして任意の基底へ引き戻せる構成である．
+内在的H2族への解釈は，論文Bの相対表示同値が適用されるsiteで行う．
+
+\subsection{二重被覆による表示とpencilのBrauer類}
+
+\begin{lemma}[二conic被覆のgroupoid]
+\label{lem:qa-rootpair-double-cover-groupoid}
+$S$上の$\mathfrak N^{\rm sm}$の対象は，次のデータと同値である：
+相対genus zero曲線$Z/S$と，順序を忘れた二つの有限平坦二重被覆
+$Q_1,Q_2\to Z$で，各$Q_i/S$も相対genus zeroであり，
+分岐因子は相対次数二の\'etale因子で互いに交わらないもの．
+非順序の二被覆は二重\'etale被覆上で順序を付けて記述してよい．
+順序を保ったデータは$\mathfrak N^{\rm sm,ord}$に対応する．
+\end{lemma}
+\begin{proof}
+$Q_i\to Z$のtrace分解を
+$\OO_Z\oplus L_i^{-1}$と書く．分岐次数二より$L_i$の相対次数は一である．
+順序を選ぶ\'etale被覆上で$L_1$は実際の線束なので，
+$Z\simeq\PP(q_*L_1)$となる．
+$L_2L_1^{-1}$は基底から引き戻した線束である．
+fppf局所的に$Z\simeq\PP^1$，$L_i\simeq\OO(1)$とすると，
+被覆は$c_i^2=f_i(u,v)$になる．座標と二つのtracefree生成線の変更は
+$\widetilde G$の作用そのもので，射影曲線と被覆への作用の核は
+共通次数スカラー$D$である．したがって同型のgroupoidは
+$[P^{\rm sm}/G]$と一致する．逆向きはこの局所式からの有効降下である．
+\end{proof}
+
+\begin{lemma}[spectral pencilのtwistと反不変線束]
+\label{lem:qa-spectral-relative-pencil-brauer}
+非順序の入力に対し，点曲線
+$E=Q_1\times_ZQ_2$，同時符号$\delta$の商$C=E/\langle\delta\rangle$，
+$p:C\to Z$を取る．$E\to C$は有限\'etale二重被覆であり，
+\[
+ r_*\OO_E=\OO_C\oplus M,\qquad
+ \mu:M^{\otimes2}\xrightarrow{\sim}\OO_C
+\]
+は実際の線束と二次積である．$[M]$は全幾何fiberで非零二捩れである．
+一方，$F=p^*\OO_Z(1)$という記法は一般に相対Picard類を表し，
+実際の線束を無条件に表さない．その線束化障害は$Z$のBrauer類
+$\alpha_Z\in\operatorname{Br}(S)[2]$である．
+順序を選んだ被覆では$L_1$が存在するので$\alpha_Z$は消える．
+\end{lemma}
+\begin{proof}
+四根が相異なるので$E/S,C/S$は滑らかなgenus one曲線であり，
+$\delta$は固定点を持たない．trace分解と積は任意基底変更に可換である．
+各幾何fiberで$E$が連結だから，その非自明な\'etale二重被覆を表す$M$は
+非零二捩れである．これは射影曲線の構造層の固有成分から作るため，
+共通次数スカラーは自明に作用する．
+$\OO_Z(1)$は相対次数一のPicard類で，その境界類は$\alpha_Z$である．
+相対Picardの境界写像は$p^*$と可換するので，$F$の障害も$\alpha_Z$となる．
+従って$M$が実際の線束であることから$F$まで線束化してはならない．
+\end{proof}
+
+\begin{example}[pencilのBrauer障害が非零になる入力]
+\label{ex:qa-spectral-relative-pencil-nonsplit}
+$k$を標数零の代数閉体，$K=k(s,t)$とし，
+\[
+ f_1=u^2+v^2,\qquad f_2=u^2+t^2v^2
+\]
+を取る．四根は相異なる．$\widetilde G$の変換
+\[
+ h:(u,v,c,d)\longmapsto(-tv,u,d,-tc)
+\]
+はこの二形式を交換して保ち，$h^2$は全四変数への$-t$倍である．
+従って$G$における$h$は位数二である．
+$K(\sqrt{s})/K$と$h$によってこの対象をtwistする．
+その基底conicは，$\PP^1$上の射影変換
+$\left(\begin{smallmatrix}0&-t\\1&0\end{smallmatrix}\right)$による降下であり，
+Brauer類は$(s,-t)=(s,t)\ne0$である．
+非零性は$t$における剰余が$s\in k(s)^\times/k(s)^{\times2}$となることから従う．
+この入力のspectral pencilは実際の線束にならないが，$(M,\mu)$は存在する．
+以下の相対構成は$F$の線束化を要求しない．
+\end{example}
+
+\subsection{二つのinvolutionの商による相対射}
+
+\begin{theorem}[spectral双対化の非忠実な相対射]
+\label{thm:qa-spectral-relative-nonfaithful-map}
+任意基底変更と両立する射
+\[
+ \mathscr D^{\rm ord}:\mathfrak N^{\rm sm}
+       \longrightarrow\mathfrak N^{\rm sm,ord},\qquad
+ \mathscr D=\operatorname{forget}\circ\mathscr D^{\rm ord}
+       :\mathfrak N^{\rm sm}\longrightarrow\mathfrak N^{\rm sm}
+\]
+が存在し，幾何同型類上で$\chi\mapsto\chi/(\chi-1)$を誘導する．
+具体的には，$\iota$を$p:C\to Z$のdeck involution，
+$t_{[M]}$を$J(C/S)$の点$[M]$による$C$上の平行移動と置き，
+\[
+ \iota'=t_{[M]}\iota,\quad
+ Z'=C/\langle\iota,t_{[M]}\rangle,\quad
+ Q'_1=C/\langle\iota\rangle=Z,\quad
+ Q'_2=C/\langle\iota'\rangle
+\]
+から得る\emph{順序付き}二被覆を$\mathscr D^{\rm ord}$とする．
+特にこの構成はsmooth域上の相対射であり，stack自己同値ではない．
+\end{theorem}
+\begin{proof}
+$C$は$J(C/S)$のtorsorであり，$[M]\in J(C/S)[2]$から
+$t_{[M]}$が自然に定まる．$\iota$はJacobian上で$-1$を誘導するので
+$t_{[M]}$と可換し，$\iota'$もinvolutionである．
+$[M]$は全fiberで非零だから$t_{[M]}$は固定点を持たない．
+fppf局所的に$C$に原点を選ぶと，$\iota$と$\iota'$は
+$x\mapsto a-x$，$x\mapsto a+[M]-x$となる．
+各固定点schemeは$[2]$のfiberで\'etale次数四であり，両者は交わらない．
+
+有限群の位数は可逆なので商とその構造層の不変部分は任意の基底変更と可換する．
+上の固定点の記述から$Q'_1,Q'_2,Z'$は相対genus zero曲線で，
+$Q'_i\to Z'$の分岐は各相対次数二，両分岐は交わらない．
+$C\to Q'_1\times_{Z'}Q'_2$は全幾何fiberで同型であり，
+双方の$Z'$上の直像代数は階数四の局所自由加群だから同型である．
+前補題のgroupoid記述によって，これが実際の表示stackの対象を与える．
+
+入力の同型は$(C,p,M,\mu)$を自然に移し，$[M]$，二involution，
+その商をすべて保つ．従って対象だけでなく射とその合成も保存される．
+入力の二形式交換にも自然であり，共通次数スカラーはすべての商に自明に作用する．
+この構成は非被約基底を含む任意基底変更に可換である．
+
+二形式族を直接書くこともできる．$q:Z'\to S$とし，
+$Q'_i$のtrace分解を$\OO_{Z'}\oplus (L'_i)^{-1}$と書く．
+$L'_1$の相対次数は一なので$W'=q_*L'_1$は階数二で，
+$Z'\simeq\PP(W')$となる．評価同型により
+$L'_2\simeq L'_1\otimes q^*T$となる基底線束$T$が定まる．
+二被覆の積は
+\[
+ q_1\in\operatorname{Sym}^2W',\qquad
+ q_2\in\operatorname{Sym}^2W'\otimes T^{\otimes2}
+\]
+を与える．したがって一次生成束
+$W'\oplus\OO_Sc'\oplus T^{-1}d'$に対し，$W'$を中心とし，
+$c'^2=q_1$，$d'^2=q_2$を課した二形式環が実際に大域構成できる．
+第二の式は$T^{-2}\to\operatorname{Sym}^2W'$という関係式を意味する．
+基底線束$T$を捨てずに残すことがcocycleの適合を保証する．
+
+正規形$f_1=uv$，$f_2=u^2+a uv+bv^2$では，
+$C:y^2=x(x^2+ax+b)$上で
+\[
+ t_{[M]}(x,y)=(b/x,-by/x^2),\qquad
+ X=x+b/x,\quad c'=x-b/x,\quad d'=y/x
+\]
+を取れる．その関係は
+\[
+ c'^2=X^2-4b,\qquad d'^2=X+a.
+\]
+従って出力二形式は
+$g_1=U^2-4bV^2$，$g_2=UV+aV^2$である．
+$U'=U+aV$と二形式交換によって
+\[
+ (g_2,g_1)=(U'V,\ U'^2-2aU'V+(a^2-4b)V^2)
+\]
+となる．これは既存の双対二同種模型なので，
+$\chi\mapsto\chi/(\chi-1)$を与える．
+非忠実性とfiberは次の命題で示す．
+\end{proof}
+
+\subsection{逆構成の二次線束gerbe}
+
+\begin{proposition}[順序付き標的上の$\mu_2$-gerbe]
+\label{prop:qa-spectral-relative-quadratic-gerbe}
+$\mathscr D^{\rm ord}$は$\mu_2$でband付けされたgerbeである．
+具体的に，順序付き標的$Q'_1,Q'_2\to Z'$の点曲線
+$C=Q'_1\times_{Z'}Q'_2$上で，二つの次数二pencilの相対Picard類を
+$F_1,F_2$，その差を$P=F_2F_1^{-1}\ne0$とする．
+$\mathscr D^{\rm ord}$のfiberは，$P$を代表する実際の線束$M$と
+$\mu:M^{\otimes2}\simeq\OO_C$のgroupoidである．
+射はこの二次積を保つ線束同型とする．
+このgerbeのBrauer像は
+\[
+ \beta=\alpha(Q'_2)-\alpha(Q'_1)\in\operatorname{Br}(S)[2]
+\]
+である．一般の基底では$\operatorname{Pic}(S)/2$の寄与もあり得るので，
+$H^2(S,\mu_2)$のgerbe類そのものをBrauer像だけで同定しない．
+\end{proposition}
+\begin{proof}
+Picard stackからPicard functorへの射がgerbeであることは
+\cite[Lemma~108.9.1, Tag~0DME]{StacksRelativePicard}の一般論である．
+以下ではその二次積付きのfiberを直接記述する．
+線束と二乗自明化の$\mu_2$-torsorとの対応は
+Kummer列と\cite[Tag~040Q]{StacksKummer}による．
+相対Picard類$P$はfppf局所的に線束$M$で表される．
+$P^2=1$なので$M^2$は基底から引き戻した線束で，
+基底をさらに局所化すれば二次積$\mu$を選べる．
+二つの選択は基底上の線束とその二乗自明化だけ異なり，
+局所的に同型である．自己同型は$\mu_2$である．
+ここでは$\pi_*\OO_C=\OO_S$を使っている．
+従ってこの選択のgroupoidは$\mu_2$-gerbeをなす．
+相対Picardの境界類の加法性から，$P$の線束化障害は
+$\alpha(Q'_2)-\alpha(Q'_1)$である．
+二次積を忘れるとこれがgerbe類のBrauer像となる．
+
+このgerbeが実際に$\mathscr D^{\rm ord}$のfiberであることを確認する．
+二次線束$(M,\mu)$から
+$E=\operatorname{Spec}_C(\OO_C\oplus M)$を構成する．
+これは幾何fiberで連結な\'etale二重被覆である．
+$\iota_1$を$C\to Q'_1$のdeck involutionとする．
+$\iota_1$はJacobian上$-1$として作用するため$[M]$を保つ．
+従って二次線束$\iota_1^*(M,\mu)\otimes(M,\mu)^{-1}$の
+相対Picard類は零であり，それは基底上の二次線束の引戻しである．
+対応する基底上の$\mu_2$-torsorをfppf局所的に自明化すれば，
+$\iota_1^*(M,\mu)\simeq(M,\mu)$を得る．
+これが$\iota_1$の$E$へのliftを与え，その全体は$\mu_2$-torsorをなす．
+二つのliftを$\widetilde\iota_1,\delta\widetilde\iota_1$と書く．
+各liftの二乗は恒等である：$\iota_1$の固定点schemeは
+\'etale全射で，その上の二点被覆では任意の置換の二乗が恒等である．
+二乗は$E/C$のdeck変換なので，そこで恒等なら全体で恒等である．
+
+二つのliftは可換し，積は$\delta$である．
+liftのJacobian作用は$-1$である：norm isogeny
+$r_*:J(E/S)\to J(C/S)$との可換性から，$-1$との差は
+有限\'etale核に入るが，連結Jacobianからこの有限群への群準同型は零である．
+従って各liftは幾何fiberで四つの固定点を持つ．
+各商$E/\langle\widetilde\iota_1\rangle$，
+$E/\langle\delta\widetilde\iota_1\rangle$は相対conicであり，
+共通基底$Q'_1=C/\langle\iota_1\rangle$への二重被覆となる．
+両分岐は交わらず，各分岐次数は二である．
+liftを交換すると二被覆が交換されるだけだから，
+その\emph{非順序}対は追加の選択なしに$S$上へ降下する．
+これが$\mathfrak N^{\rm sm}$の対象である．
+
+そのspectral商は構成した$C$，反不変二次線束は$(M,\mu)$，
+spectral二重射は$C\to Q'_1$である．
+$F_2F_1^{-1}=P$と二pencilのdeck involutionの関係から，
+$\iota_2=t_P\iota_1$である．よって前定理の構成は
+元の順序付き$Q'_1,Q'_2\to Z'$を回収する．
+逆に入力からこの手続を行うと，元の$E\to C$と
+二つのliftの非順序対を回収する．
+線束同型と被覆同型の対応も自然なので，これはfiber groupoidの同値である．
+\end{proof}
+
+\begin{corollary}[慣性の核と幾何homotopy fiber]
+\label{cor:qa-spectral-relative-two-mu2-gerbes}
+$\mathscr D$の相対慣性の核は同時符号$\delta$による$\mu_2$である．
+任意の幾何点におけるhomotopy fiberは
+\[
+ B\mu_2\ \amalg\ B\mu_2
+\]
+と同値である．一般点では慣性準同型の像は二conicを個別に保つ
+位数八の部分群であり，全慣性の位数十六に対して指数二である．
+したがって，幾何同型類上では対合でも，
+$\mathscr D$は全忠実でもstack自己同値でもない．
+\end{corollary}
+\begin{proof}
+$\mathscr D^{\rm ord}$は前命題の$\mu_2$-gerbeで，
+$\mu_2$は$E\to C$のdeck変換そのものである．
+順序忘却は表現可能な有限\'etale二重被覆だから，
+幾何点への2-fiberは二点，その各点上のgerbeは$B\mu_2$となる．
+一般点の慣性については，gerbeの慣性全射と順序忘却の慣性単射を合成する．
+\end{proof}
+
+\begin{remark}[一般点の逆構成に必要な拡大次数]
+\label{rem:qa-spectral-relative-gerbe-index-four}
+順序付き標的の独立二形式の普遍係数体では，既存の
+定理~\ref{thm:qa-generic-point-period-two-index-four}により
+$\beta=\alpha(Q'_2)-\alpha(Q'_1)$のindexは四である．
+体上では$H^2(K,\mu_2)\to\operatorname{Br}(K)[2]$が同型なので，
+この場合の二次線束gerbeは非neutralであり，
+その対象を得るための有限拡大次数の最小値は四である．
+実際、indexが拡大次数を割り、分岐根選択の四重被覆がこの下界を達成する．
+従って幾何fiberが$B\mu_2$であることと，
+元の体上に逆構成の対象が存在することは別である．
+また$\mathscr D$は幾何同型類上の対合を持ち上げるが，
+$\mathscr D^2\simeq\operatorname{Id}$という相対自然同型は主張しない．
+\end{remark}
+
+\subsection{Smooth spectral対合に対する慣性の中心bandの障害}
+\label{subsec:qa-spectral-center-band-obstruction}
+
+この小節では$k$を標数零の代数閉体とする。
+以下で$\mathfrak N^{\rm sm}$は、二形式が根を共有しない開部分である。
+その粗モジュライ座標は
+$U=\mathbb A^1_\chi\setminus\{1\}$である。
+幾何同型類の対合
+$\varphi(\chi)=\chi/(\chi-1)$は$U$の自己同型であるが、
+これを全pointed慣性を保つstack自己同値へ持ち上げることはできない。
+各幾何点の抽象群だけの比較では、この障害は見えない。
+
+\begin{proposition}[自己双対点と等$j$点の幾何慣性]
+\label{prop:qa-spectral-geometric-inertia-comparison}
+$D_8$を位数八の二面体群とする。
+$\mathfrak N^{\rm sm}$の幾何慣性とspectral対合の対応は次の通りである。
+\[
+\begin{array}{c|c|c}
+\chi&\varphi(\chi)&\text{pointed慣性}\\\hline
+0&0&H_0\ (|H_0|=32)\\
+2&2&D_8\times C_2\\
+\chi_+=(81+45\sqrt{-7})/128&\chi_-&D_8\times C_2\\
+\chi_-=(81-45\sqrt{-7})/128&\chi_+&D_8\times C_2\\
+\chi\ne0,1&\varphi(\chi)\ne0,1&D_8\times C_2
+\end{array}
+\]
+ここで$H_0$は論文Bの非分裂完全列
+\[
+1\longrightarrow\mu_2^2\longrightarrow H_0
+\longrightarrow D_8\longrightarrow1
+\]
+で記述される群である。
+特に二つの自己双対点の慣性は互いに異なるが、
+対合は各点を固定するので、この事実自体は対合を排除しない。
+等$j=-3375$の二点でも慣性の抽象群は同じである。
+\end{proposition}
+\begin{proof}
+論文Bの\cite[\texttt{prop:noncubic-all-stabilizers}]{QuadricModuli2026}
+はsmooth域で追加の根配置対称性が生じる条件を
+$\chi=0$と同定する。
+従って$\chi=2,\chi_\pm$には追加の慣性がない。
+残りは式~\eqref{eq:qa-spectral-atkin-lehner-chi}と
+例~\ref{ex:qa-spectral-equal-j-not-pointed}から従う。
+\end{proof}
+
+\begin{lemma}[一般慣性の中心とその二次分裂体]
+\label{lem:qa-noncubic-generic-inertia-center}
+$K=k(\chi)$、$b=(\chi-1)/(4\chi)$とし、$K$上の表示
+\[
+ f=(uv,\ u^2+uv+bv^2)
+\]
+の$G$内の安定化群を$H_f$とする。
+その幾何群は$D_8\times C_2$であり、中心は
+\begin{equation}
+ Z(H_f)\simeq
+ \operatorname{Spec}K\ \amalg\ \operatorname{Spec}K\
+ \amalg\ \operatorname{Spec}K(\sqrt b)
+ \label{eq:qa-noncubic-center-splitting}
+\end{equation}
+という基礎有限\'{e}taleスキームを持つ。
+最初の二点は恒等元と$c,d$の同時符号反転である。
+これは単なる位数の計算ではなく、中心へのGalois作用の計算である。
+\end{lemma}
+\begin{proof}
+$r^2=b$を取り、$e_1,e_2$を$c,d$の個別符号反転とする。
+列$(u,v,c,d)^{\mathsf t}$への置換行列を
+\[
+ R=\operatorname{diag}\left(
+ \begin{pmatrix}0&b\\1&0\end{pmatrix},r,r\right)
+\]
+と置く。$R(uv)=buv$、
+$R(u^2+uv+bv^2)=b(u^2+uv+bv^2)$なので、
+$R$は$B_f$の次数付き自己同型である。
+また$R^2=bI_4$だから、次数スカラーを除いた$G$内では位数二である。
+
+幾何体上で$\rho_1,\rho_2$を$x^2+x+b$の二根、
+$\theta^2=\rho_2$とし、もう一つの生成元を
+\[
+ T=\operatorname{diag}\left(
+ \begin{pmatrix}\rho_2&-b\\1&-\rho_2\end{pmatrix},
+ \begin{pmatrix}0&\theta\\
+ \theta(\rho_2-\rho_1)&0\end{pmatrix}\right)
+\]
+と取れる。これは二形式を交換する。
+直接計算すると、射影群で
+\[
+ R^2=T^2=e_1^2=e_2^2=1,\quad
+ [R,e_i]=[e_1,e_2]=1,\quad
+ Te_1T^{-1}=e_2,\quad [R,T]=e_1e_2.
+\]
+従って$z=Re_1$は中央対合である。
+これらは一般根配置の全$V_4$を持ち上げ、核の$\mu_2^2$も含むため、
+全安定化群を生成する。
+その中心は
+\[
+ Z(H_f)(\overline K)=\{1,e_1e_2,z,z(e_1e_2)\}
+ =\{1,e_1e_2,Re_1,Re_2\}.
+\]
+
+最初の二元は$K$上で定義される。
+$r\mapsto-r$は$R\mapsto(e_1e_2)R$を与えるので、
+残る二元を交換する。
+$b$は$\chi=1$で奇数付値を持ち非平方だから、
+その二元は正確に$K(\sqrt b)$で分裂する。
+これで表示した有限\'{e}taleスキームとGalois作用を得る。
+\end{proof}
+
+\begin{theorem}[smooth spectral対合は全stack自己同値へ持ち上がらない]
+\label{thm:qa-spectral-no-stack-autoequivalence}
+幾何pointed同型類に
+$\chi\mapsto\chi/(\chi-1)$を誘導する
+$k$-stack自己同値
+\[
+ \mathfrak N^{\rm sm}\longrightarrow\mathfrak N^{\rm sm}
+\]
+は存在しない。
+より強く、この粗モジュライ自己同型を覆う射は、
+一般点でrepresentableになることができない。
+したがって定理~\ref{thm:qa-spectral-relative-nonfaithful-map}の相対射に
+現れる非自明な慣性核は、別の構成を選んでも一般点で除去できない。
+\end{theorem}
+\begin{proof}
+まず一般coarse fiberを同じ体$K=k(\chi)$上で比較する。
+前補題の表示は$K$-有理点を持つ。
+$P\to\mathbb A^1_\chi$の一般fiberはsmoothである。
+実際、上の正規形では$\chi=(1-4b)^{-1}$の微分が
+$4(1-4b)^{-2}db\ne0$であり、群作用により全一般fiberで同じことが成立する。
+また、
+各幾何fiberの根対は$\chi$によって一意に決まる。
+従って$G_K$はこのfiberに幾何的に推移的に作用する。
+安定化群は有限\'{e}taleで、軌道写像はsmooth全射だから、
+このfiberはfppf斉次空間$G_K/H_f$に同型である。
+したがって$\mathfrak N^{\rm sm}$の一般coarse fiberは
+neutral gerbe $BH_f$である。
+
+対合で引き戻した標的の一般fiberにも同じ表示を使えるが、
+第二形式の係数は
+\[
+ b'=\frac{\varphi(\chi)-1}{4\varphi(\chi)}
+ =\frac1{4\chi}
+\]
+となる。その表示を$f'$と書くと、標的gerbeは$BH_{f'}$である。
+前補題により、その中心の非有理二点の分裂体は$K(\sqrt{b'})$である。
+しかし
+\[
+ \frac b{b'}=\chi-1\notin K^{\times2}.
+\]
+$b,b'$はともに非平方なので、二つの二次拡大
+$K(\sqrt b)$と$K(\sqrt{b'})$は$K$上非同型である。
+従って$Z(H_f)$と$Z(H_{f'})$は有限\'{e}tale群スキームとして非同型である。
+ここでは標的を$\varphi$で引き戻してから$K$上で比較しており、
+粗モジュライの体自己同型を二度適用していない。
+
+gerbe同値がneutral objectをneutral objectへ送る必要はないが、
+この自由度は中心の差を解消しない。
+実際、$BH_f\simeq BH_{f'}$の下で自明$H_f$-torsorの像が
+$H_{f'}$-torsor $Q$ならば、
+\[
+ H_f\simeq\operatorname{Aut}(Q)={}^{Q}H_{f'}
+\]
+となる。右辺は共役によるinner formである。
+共役は中心に自明に作用するため
+$Z({}^{Q}H_{f'})\simeq Z(H_{f'})$であり、先の非同型に矛盾する。
+これでstack自己同値は排除される。
+
+一般点でrepresentableな射では、\cite[Tag~04YY]{StacksModuli}により、
+自明対象の慣性から
+$\operatorname{Aut}(Q)$への写像がmonomorphismになる。
+両方の幾何位数は十六であるから、有限\'{e}tale群のこの射は同型となる。
+同じ中心の矛盾が成立する。
+\end{proof}
+
+\begin{remark}[幾何慣性とbandを区別する]
+この障害は$\chi=0$での追加慣性や、境界$\chi=1$での極とは独立である。
+すでに一般coarse fiberの上で現れる。
+中心の二次分裂体は、点曲線$E_f$の非有理二捩れ二点の分裂体とも一致する。
+二同種先の二捩れ群を元のものと同一視できないことが、
+ここではpointed自己同値群の中心という内在的不変量に現れている。
+幾何同型類の対合、慣性を非忠実に送る相対射、
+全慣性を保つstack自己同値は別の主張である。
+\end{remark}
+
+\subsection{二重根を許す平坦表示と境界での無限高次 Ext}
+\label{subsec:qa-spectral-singular-boundary}
+
+smooth spectral同型類には、二重根を許す中央二重平方代数としての
+明示的な平坦延長がある。しかし、その特殊fiberのtails圏は
+$\mathcal H_2$には属さない。このことを、固定した二対象間の
+全高次Extの計算によって示す。
+
+\begin{proposition}[両境界traitのgeneric像に対する平坦な代数モデル]
+\label{prop:qa-spectral-flat-singular-boundary}
+$r\in\{1,2\}$とし、$A_r=k[t,(1-4t^r)^{-1}]$と置く。
+入力をそれぞれ
+\[
+ \begin{array}{c|c|c}
+ r&f_1&f_2\\\hline
+ 1&uv&u^2+uv+tv^2\\
+ 2&uv&tu^2+uv+tv^2
+ \end{array}
+\]
+とし、両方に対して
+\[
+ g_1=U^2-4t^rV^2,\qquad g_2=UV+V^2,
+ \qquad
+ \mathcal B^{(r)}=A_r[U,V]\langle c,d\rangle/
+       (c^2-g_1,d^2-g_2)
+\]
+と置く。$U,V$は中心にあり、四生成元は全て次数一とする。
+次が成立する。
+\begin{enumerate}
+\item 各$\mathcal B^{(r)}_n$は階数$(n+1)^2$の自由$A_r$-加群である。
+  $t\ne0$の幾何fiberでは二つの$g_i$がsquarefreeかつ根を共有せず、
+  そのpointed同型類は入力のsmooth spectral同型類である。
+  入力の$t=0$は$r=1$では一根共有、$r=2$では根対一致であり、
+  二つの出力代数は共通の特殊fiber
+  \[
+   B_0=k[U,V]\langle c,d\rangle/
+       (c^2-U^2,d^2-UV-V^2)
+  \]
+  を持つ。
+\item
+  $X=B_0/(c-U)B_0$とする。さらに$S=k[V]$に
+  \[
+   s\cdot U=s\cdot c=0,\qquad
+   s\cdot V=Vs,\qquad s\cdot d=Vs
+   \quad(s\in S)
+  \]
+  で次数付き右$B_0$-加群構造を入れる。
+  このとき全ての$n\ge0$について
+  \begin{equation}
+    \operatorname{Ext}^n_{\qgr B_0}(\pi X,\pi S)\simeq k.
+    \label{eq:qa-spectral-boundary-infinite-ext}
+  \end{equation}
+\item $D^b(\qgr B_0)$は右Serre関手を持たない。
+  特に$(\qgr B_0,\pi B_0)$は$\mathcal H_2$の対象でなく、
+  $\qgr B_0$の大域次元は無限である。
+\end{enumerate}
+第一項のgeneric幾何同型類の主張は、全慣性を保つ相対自己同値の
+存在を意味しない。
+\end{proposition}
+
+\begin{proof}
+\paragraph{平坦性とgeneric同型類.}
+二形式の判別式に仮定を置かない中央Clifford標準形
+\cite[\texttt{lem:noncubic-relative-clifford-center}]{QuadricModuli2026}
+により、$h=cd+dc$、$C_r=A_r[U,V,h]$とすれば
+\[
+ \mathcal B^{(r)}=C_r\oplus C_rc\oplus C_rd\oplus C_rcd,
+ \qquad \deg h=2.
+\]
+従って各次数は自由であり、Hilbert級数は
+\[
+ \frac{1+2z+z^2}{(1-z)^2(1-z^2)}
+ =\frac{1+z}{(1-z)^3}
+ =\sum_{n\ge0}(n+1)^2z^n
+\]
+となる。これは二重根を持つ$t=0$でも変わらない。
+
+入力の不変量は$\chi(f)=1/(1-4t^r)$である。
+出力の判別式は$\operatorname{disc}(g_1)=16t^r$、
+$\operatorname{disc}(g_2)=1$、混合判別式は$-2$なので、
+\[
+ \chi(g)=\frac1{4t^r}
+ =\frac{\chi(f)}{\chi(f)-1}.
+\]
+$g_2$の二根$V=0,U+V=0$での$g_1$の値は、それぞれ
+$U^2,(1-4t^r)V^2$である。従って$t(1-4t^r)\ne0$では
+両形式はsquarefreeかつ根を共有しない。
+smooth noncubicの幾何分類とspectral対合公式から第一項を得る。
+generic fiberにおける表示を直接見るには、一般に
+$f_2=pu^2+auv+bv^2$に対するspectral曲線
+\[
+ y^2=x(px^2+ax+b)
+\]
+で
+\[
+ \xi=px+\frac b x,\qquad
+ c'=px-\frac b x,\qquad d'=\frac y x
+\]
+と置けばよい。すると
+\[
+ (c')^2=\xi^2-4pb,\qquad (d')^2=\xi+a
+\]
+となる。上の二族では$(p,a,b)=(1,1,t),(t,1,t)$なので、
+$pb=t^r$であり、斉次化すると表示した$g_1,g_2$になる。
+第二族では$p=t$が特殊点で可逆でないため、
+ここではこの座標構成をgeneric fiber上でのみ用いている。
+特殊fiberまでのcanonicalな相対spectral構成は主張しない。
+
+\paragraph{二周期自由解消の完全性.}
+ここから$t=0$とする。
+$R_c=k[U,V,c]/(c^2-U^2)$と置く。
+同じClifford標準形により
+\[
+ B_0=R_c[h]\oplus R_c[h]d
+\]
+は左$R_c$-加群として自由である。
+$R_c$では
+\[
+ \operatorname{Ann}_{R_c}(c-U)=(c+U)R_c,
+ \qquad
+ \operatorname{Ann}_{R_c}(c+U)=(c-U)R_c.
+\]
+例えば$a,b\in k[U,V]$に対し
+$(c-U)(a+bc)=(a-Ub)c-U(a-Ub)$であるから、
+第一の等式は基底$1,c$の係数比較だけで従う。
+従って$R_c/(c-U)$の交互乗法による二周期自由解消を
+$-\otimes_{R_c}B_0$で移すと、完全列
+\begin{equation}
+ \cdots\xrightarrow{\,c-U\,} B_0(-2)
+ \xrightarrow{\,c+U\,}B_0(-1)
+ \xrightarrow{\,c-U\,}B_0
+ \longrightarrow X\longrightarrow0
+ \label{eq:qa-spectral-boundary-periodic-resolution}
+\end{equation}
+を得る。各矢印は\emph{左乗法}による右加群準同型であり、
+一般に第$i$微分は$i$が奇数なら$c-U$、偶数なら$c+U$である。
+表示式の省略部分もこの規則に従う。
+
+\paragraph{tailsで自由項から点対象への高次Extが消えること.}
+$C=k[U,V,h]$、
+\[
+ \mathcal Y=\mathbb P_k(1,1,2)
+ =[(\operatorname{Spec}C\setminus V(C_+))/\mathbb G_m]
+\]
+を重み付き射影\emph{スタック}とし、
+$\mathscr B$を$B_0$に対応する代数層とする。
+中央Clifford標準形の基底次数は$0,1,1,2$なので、
+$B_+$-torsionと$C_+$-torsionは一致する。
+従って中心局所化と$\mathbb G_m$同変descentによって
+\[
+ \qgr B_0\simeq\operatorname{coh}(\mathcal Y,\mathscr B)
+\]
+を得る。この同値には二形式のsquarefree性を要さない。
+これは\cite[\texttt{prop:nc-qgr-weighted}の証明]{QuadricModuli2026}
+のsheafification部分と同じ議論である。
+
+$S$上では$h=cd+dc$が零であり、$C$-加群として
+$S=C/(U,h)$である。したがって$\mathscr S=\widetilde S$は
+通常点$p=[0:1:0]\in\mathcal Y$に支持された
+一次元のskyscraper加群である。
+この点は次数一座標$V$が非零のaffine chartにあり、慣性を持たない。
+各$\mathscr B(-i)$は局所的に自由な右$\mathscr B$-加群だから、
+局所Extと大域cohomologyのスペクトル系列により
+\[
+ \operatorname{Ext}^q_{\qgr B_0}(\pi B_0(-i),\pi S)
+ \simeq H^q(\mathcal Y,\mathscr S(i))
+ =\begin{cases}k,&q=0,\\0,&q>0\end{cases}
+ \quad(i\in\mathbb Z).
+\]
+ここでは点支持のcoherent層の高次cohomology消滅だけを用い、
+$\mathscr B$の滑らかさや有限大域次元は仮定していない。
+
+完全関手$\pi$で二周期解消を移し、
+$\operatorname{Hom}_{\qgr B_0}(-,\pi S)$を適用する。
+全自由項はこのHomに対して高次acyclicであるから、
+得られたHom複体が$\operatorname{Ext}^*(\pi X,\pi S)$を計算する。
+実際、任意の有限次数について解消を十分長く切り、
+通常のdimension shiftingを用いればよい。
+各項は$k$であり、$c-U,c+U$はいずれも$S$に零として作用するため、
+全微分が零になる。従って
+\eqref{eq:qa-spectral-boundary-infinite-ext}を得る。
+
+\paragraph{Serre関手の不存在.}
+もし$D^b(\qgr B_0)$が右Serre関手$\mathbb S$を持てば、
+\[
+ \operatorname{Ext}^n(\pi X,\pi S)^*
+ \simeq
+ \operatorname{Hom}_{D^b(\qgr B_0)}
+       (\pi S,\mathbb S(\pi X)[-n])
+\]
+となる。$\mathbb S(\pi X)$は有界複体なので、$n\gg0$では
+右辺が標準$t$構造の直交性によって零となる。
+これは左辺が全$n\ge0$で$k$であることに反する。
+従って右Serre関手は存在せず、$\mathcal H_2$の最初の条件に反する。
+また全高次Extの非消滅から、大域次元は無限である。
+\end{proof}
+
+\begin{corollary}[この表示族におけるsquarefree条件の必要十分性]
+\label{cor:qa-double-square-degenerate-not-h2}
+$k$を標数零の代数閉体、$f_1,f_2\in k[U,V]_2$を任意の二元二次形式とする。
+零形式も許し、
+\[
+ B(f_1,f_2)=k[U,V]\langle c,d\rangle/(c^2-f_1,d^2-f_2)
+\]
+と置く。いずれかの$f_i$がsquarefreeでなければ、
+有限生成次数付き右加群$X$と点加群$S_\delta$が存在し、
+\[
+ \operatorname{Ext}^n_{\qgr B(f_1,f_2)}(\pi X,\pi S_\delta)
+ \simeq k\qquad(n\ge0)
+\]
+となる。従って$D^b(\qgr B(f_1,f_2))$は右Serre関手を持たない。
+
+特に\emph{この中央二重平方表示族の中では}
+\[
+ (\qgr B(f_1,f_2),\pi B(f_1,f_2))\in\mathcal H_2
+ \quad\Longleftrightarrow\quad
+ \operatorname{disc}(f_1)\operatorname{disc}(f_2)\ne0.
+\]
+二つのsquarefree形式が根を共有したり、同じ根対を持ったりすることは許される。
+\end{corollary}
+\begin{proof}
+必要なら二形式を交換する。
+$f_1$が非零かつ非squarefreeならば、$\operatorname{GL}_2$による座標変更と
+$c$の定数倍により$f_1=U^2$とできる。
+$\delta\in k$を$\delta^2=f_2(0,1)$となるように選び、
+\[
+ S_\delta=k[V],\qquad
+ s\cdot U=s\cdot c=0,\quad s\cdot V=Vs,\quad
+ s\cdot d=\delta Vs
+\]
+とする。$f_2(0,V)=\delta^2V^2$なので、これは右$B(f_1,f_2)$-加群である。
+$X=B(f_1,f_2)/(c-U)B(f_1,f_2)$には前命題と同じ交互$c\pm U$の
+二周期解消がある。
+この完全性には第二形式を用いていない。
+中心$k[U,V,h]$上で$S_\delta=k[U,V,h]/(U,h)$であることも変わらないため、
+同じskyscraperのExt消滅と零微分の計算から結論を得る。
+
+$f_1=0$の場合には$R_c=k[U,V,c]/(c^2)$とし、
+$X=B(f_1,f_2)/cB(f_1,f_2)$とする。
+$\operatorname{Ann}_{R_c}(c)=cR_c$と左$R_c$-自由性により
+\[
+ \cdots\xrightarrow{\,c\,}B(f_1,f_2)(-2)
+ \xrightarrow{\,c\,}B(f_1,f_2)(-1)
+ \xrightarrow{\,c\,}B(f_1,f_2)
+ \longrightarrow X\longrightarrow0
+\]
+は完全である。同じ$S_\delta$を用いれば、今度は全微分$c$が零として作用する。
+従ってこの場合にも全次数のExtは$k$となる。
+右Serre関手の不存在は前命題の最後の段落による。
+
+判別式がともに非零の場合の十分性は、既存のnoncubic逆構成
+\cite[\texttt{thm:noncubic-relative-effectivity}]{QuadricModuli2026}
+を体上に適用して得られる。
+そこで用いるZhang twistとVeronese比較は構造対象を保つので、
+ここでの$(\qgr B(f_1,f_2),\pi B(f_1,f_2))$自身が$\mathcal H_2$に属する。
+この十分性は先行する論文Bの結果であり、上の非squarefreeの場合の
+Ext計算とは区別する。
+\end{proof}
+
+\begin{remark}[この境界計算の範囲]
+$d$が$-V$として作用する点加群$S_-=k[V]$でも同じ計算が成立する。
+一方、本命題は特定の平坦な代数延長候補についての計算であり、
+全ての可能な$\mathcal H_2$への延長をそれだけで排除するものではない。
+全ての延長を排除する主張には、noncubicの閉性と$\chi$の極を用いる
+先のtraitの議論を適用する。
+ここで得た無限高次Extは、自然な中央二重平方表示を境界まで保った際に
+失われる圏論的条件を具体化している。
+右Serre関手を排除した圏は有界coherent導来圏$D^b(\qgr B_0)$である。
+perfect部分圏におけるClifford双加群のSerre公式とは矛盾しない。
+実際、上で構成した$\pi X$はperfectではない。
+\end{remark}

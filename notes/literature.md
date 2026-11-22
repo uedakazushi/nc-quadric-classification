@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.81。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.82。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## Spectral-pointed対応と二同種の一次資料
@@ -8,6 +8,16 @@
 Silverman, *The Arithmetic of Elliptic Curves*, 2nd ed., GTM 106, Springer, 2009, DOI [10.1007/978-0-387-09494-6](https://doi.org/10.1007/978-0-387-09494-6), Chapter III, Example 4.5, printed p.70 を[第2版の一次本文](https://www.math.ens.psl.eu/~obenoist/refs/Silverman.pdf)（PDF 88頁目）で照合した。$y^2=x(x^2+ax+b)$ と $Y^2=X(X^2-2aX+a^2-4b)$ の双対二同種が明示される。Cで採用したYの符号は同書と逆だが、核と標識付き商は同じである。今回の引用キーは `SilvermanAEC2009`。別版の `SilvermanAEC1986` の当該箇所を再確認したと読み替えない。
 
 二同種の双対化・Atkin–Lehner対合・商の公式は既知結果である。本稿の具体的な追加は、逆pencil構成とAS10の指定一番頂点を介してspectral avatarのpointed H2像を同定し、noncubic不変量で $\chi\mapsto\chi/(\chi-1)$ と書くこと、自己双対二点と二捩れ標識を失う等j反例を示すこと、およびBの閉境界を入力に二退化型でH2族への延長を排除することである。証明正本は [spectral対合と境界](../papers/quiver-avatar/spectral_atkin_lehner.tex)。このpointed適用・延長不能の新規性を網羅的に確定したとは主張しない。
+
+## 相対spectral gerbe・慣性・特異境界の入力
+
+Stacks Projectの [Lemma 108.9.1, Tag 0DME](https://stacks.math.columbia.edu/tag/0DME) は、相対Picard stackからPicard functorへの射がgerbeとなることを与える。[Section 59.28, Tag 03PK](https://stacks.math.columbia.edu/tag/03PK) のKummer列と [Lemma 59.28.5, Tag 040Q](https://stacks.math.columbia.edu/tag/040Q) は、線束と二乗自明化の組と $\mu_2$-torsorとの対応を与える。これらを2026-11-22に一次本文で確認した。一般基底で $\operatorname{Pic}(S)/2$ を捨てて $H^2(S,\mu_2)$ をBrauer 2-torsionと同一視してはならない。引用キーは `StacksRelativePicard`、`StacksKummer`。
+
+[原稿Cの相対対応](../papers/quiver-avatar/spectral_relative_correspondence.tex) は、この既知一般論を使って順序付き二conic標的上の二次線束gerbeを記述し、入力二被覆との局所逆・射・降下を直接証明する。任意基底変更と両立する射、その $\mu_2$ 核、幾何fiber $2B\mu_2$、一般逆gerbeのindex 4が具体的な結論である。古典的二同種の新発見としない。
+
+[Stacks Lemma 101.6.2, Tag 04YY](https://stacks.math.columbia.edu/tag/04YY) は相対慣性核の自明性によるrepresentability判定を与え、同日に本文を照合した。Cでは一般慣性の中心を具体的に計算し、双対化前後の非同型な二次分裂体がinner formでも残ることから、粗対合を覆う自己同値と一般representable liftを排除する。幾何点の抽象群の同型だけを比較した結果ではない。
+
+境界の無限Extは、Bの任意二形式に対するClifford標準形とweighted projective stackへのsheafificationを入力に、Cで周期解消から証明する。通常のmatrix factorization・dimension shifting・Serre双対性の一般手法と、具体的な退化代数における $\operatorname{Ext}^n=k$ およびH2判別式条件を区別する。公表前にはdouble-cover moduli、marked 2-isogeny、Clifford orderの特異性に関する追加文献比較が必要であり、包括的新規性は未確定。
 
 ## 対称Morita降下と相対Serre完成
 

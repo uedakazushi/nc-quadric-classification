@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.21（A v1.69・20節、B v0.40・31節、C v4.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.22（A v1.69・20節、B v0.40・31節、C v4.8）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## Cの相対pointed模型と同変Serre
 
@@ -12,7 +12,7 @@
 
 ## Spectral avatarのpointed像と境界の障害
 
-正本は [spectral対合と延長不能](../papers/quiver-avatar/spectral_atkin_lehner.tex)。標数零代数閉体上、smooth根対のspectral avatar $(C_f,F,FP,P)$ を指定AS10 mutation・一番頂点の構造対象で実現すると、元の $\mathcal H(f)$ ではなく $\mathcal H(f^\vee)$ を得る。これは幾何同型類上の二同種双対化であり、$\chi^\vee=\chi/(\chi-1)$。元とpointed exact同値なのは $\chi=0,2$ に限られる。任意のrotated構造頂点や全相対groupoidを同定したものではない。
+正本は [spectral対合と延長不能](../papers/quiver-avatar/spectral_atkin_lehner.tex)。標数零代数閉体上、smooth根対のspectral avatar $(C_f,F,FP,P)$ を指定AS10 mutation・一番頂点の構造対象で実現すると、元の $\mathcal H(f)$ ではなく $\mathcal H(f^\vee)$ を得る。これは幾何同型類上の二同種双対化であり、$\chi^\vee=\chi/(\chi-1)$。元とpointed exact同値なのは $\chi=0,2$ に限られる。このsmooth対応の相対groupoidは下のgerbe分解で決定する。任意のrotated構造頂点や全avatar/QP表示groupoidは含めない。
 
 再開に必要な最小式は、$f_1=uv$、$f_2=u^2+a uv+bv^2$、$b(a^2-4b)\ne0$ に対する
 \[
@@ -29,9 +29,73 @@ j(E_f)=\frac{64(4\chi-3)^3}{\chi-1}.
 
 この二族は実際のnoncubic族である。像にH2族としてのtrait延長があれば、論文Bのnoncubic境界の閉性からその全体が $\mathfrak N$ を経由する。しかし正則な $\chi:\mathfrak N\to\mathbb A^1$ に極が生じるため矛盾する。任意の有限分岐trait基底変更でも極は消えない。これは固定spectral曲線上のPicard線束の非延長より強い内在的障害であり、全noncubic境界からH2へのspectral延長を今後の存在目標にしない。
 
-次はsmooth対応の同型層・慣性・降下を計算する。境界はH2外の二次積付きtorsion-free対象などを標的とし、既存の積欠損・節点奇偶障害を入力にする。古典的二同種公式はSilverman第2版III Example 4.5に帰属する。今回のpointed適用の包括的新規性は未確認。
+Smooth対応の相対射と同型層・慣性は次節で決定した。次はH2外の二次積付きtorsion-free対象のArtin性・有限型開・境界fiberを調べ、平坦特異代数と比較する。既存の積欠損・節点奇偶障害も入力にする。古典的二同種公式はSilverman第2版III Example 4.5に帰属し、今回のpointed適用の包括的新規性は未確認。
 
-再現：`python3 computations/verify_spectral_atkin_lehner.py` は二同種・対合・二つの $j$ 公式・固定点・等 $j$ 反例・境界極をSymPy厳密演算でPASS。閉stack入力と圏の認識は原稿の証明であり、この計算の認証範囲ではない。
+再現：`python3 computations/verify_spectral_atkin_lehner.py` は二同種・対合・二つの $j$ 公式・固定点・等 $j$ 反例・境界極に加え、相対商座標、慣性生成行列と中心の平方類、nonsplit pencilのcocycleをSymPy厳密演算で確認する。閉stack入力・gerbe同値・無限Ext・圏の認識は原稿の証明であり、この計算の認証範囲ではない。
+
+## Smooth spectralの相対gerbeと中心band
+
+証明正本は [相対spectral対応](../papers/quiver-avatar/spectral_relative_correspondence.tex)。入力の非順序二conic被覆 $Q_1,Q_2\to Z$ から、$E=Q_1\times_ZQ_2$、同時符号の商 $C=E/\delta$、反不変二次線束 $(M,\mu)$ を得る。$C\to Z$ のdeck involutionを $\iota$ とすると、$\iota'=t_{[M]}\iota$ との四元群商が順序付き出力を与える。$M$ は実際の線束だが、spectral pencilのPicard類の障害は $\alpha_Z$ であり、線束とは限らない。
+
+射の正確な形は
+\[
+\mathfrak N^{\rm sm}
+\xrightarrow[\text{banded }\mu_2\text{-gerbe}]{\mathscr D^{\rm ord}}
+\mathfrak N^{\rm sm,ord}
+\xrightarrow[\deg 2]{\mathrm{forget}}
+\mathfrak N^{\rm sm}.
+\]
+第二射は表現可能な有限étale射。幾何fiberは $B\mu_2\amalg B\mu_2$ で、任意の体上で二つのneutral gerbeへ分裂すると主張しない。自然な相対慣性核は同時符号 $\delta$、一般点の像は位数8、全慣性は位数16。出力二形式からrank45の相対pointed認識を適用できる。
+
+逆gerbeは、標的点曲線の二pencil差 $P=F_2F_1^{-1}$ を実際の線束で代表し、その二乗自明化を選ぶgroupoidである。Brauer像は $\beta=\alpha(Q'_2)-\alpha(Q'_1)$。一般基底では $\operatorname{Pic}(S)/2$ の寄与を捨てない。普遍係数体ではindex 4なので、逆構成に必要な有限分裂拡大の最小次数は4。相対Picardの一般gerbe論とKummer対応はStacksの既知入力であり、ここでは被覆groupoidとの逆構成を証明した。
+
+**粗対合を覆う全stack自己同値は存在しない。** $K=k(\chi)$、$b=(\chi-1)/(4\chi)$、$f=(uv,u^2+uv+bv^2)$ とすると、一般慣性 $H_f$ の中心の基礎有限étaleスキームは
+\[
+\operatorname{Spec}K\amalg\operatorname{Spec}K
+\amalg\operatorname{Spec}K(\sqrt b).
+\]
+対合で引き戻した標的では $b'=1/(4\chi)$。比 $b/b'=\chi-1$ は非平方で、中心は同型でない。gerbe同値がneutral objectをtorsorへ移してもinner twistは中心を変えないため矛盾する。一般点でrepresentableな射も慣性16→16の単射を強いるので存在しない。これは追加慣性のある $\chi=0$ や境界極とは独立の障害である。
+
+**Brauer障害を保つ試験入力。** $K=k(s,t)$ 上の $f_1=u^2+v^2,\ f_2=u^2+t^2v^2$ を、$K(\sqrt s)/K$ と $h(u,v,c,d)=(-tv,u,d,-tc)$ でtwistする。$h^2$ は共通次数スカラー $-t$ であり、基底conicは非零Brauer類 $(s,t)$ を持つ。この入力でも $(M,\mu)$ は実在する。pencilを勝手に線束化した構成を排除する具体例となる。
+
+## 特異境界の平坦模型・無限Ext・弱い共変射
+
+二traitのgeneric像には
+\[
+B^{(r)}=k[t,(1-4t^r)^{-1}][U,V]\langle c,d\rangle/
+(c^2-U^2+4t^rV^2,\ d^2-UV-V^2),\qquad r=1,2,
+\]
+がある。中央Clifford基底により各次数階数は $(n+1)^2$ で平坦。特殊fiber $B_0$ では、$X=B_0/(c-U)B_0$ と $S=k[V]$（$U=c=0,\ d=V$）に対して
+\[
+\operatorname{Ext}^n_{\qgr B_0}(\pi X,\pi S)=k
+\quad(n\ge0).
+\]
+証明は左 $R_c=k[U,V,c]/(c^2-U^2)$ 自由性からの交互 $c-U,c+U$ 解消と、重み付き射影**スタック**上の通常点 $[0:1:0]$ への高次cohomology消滅による。$D^b(\qgr B_0)$ の右Serre像は有界でなければならず、この無限非消滅と矛盾する。Perf上のSerre公式は否定しない。
+
+任意の非squarefree第一形式は非零なら $U^2$、零なら0へ帰着し、第二形式の $f_2(0,1)$ の平方根 $\delta$ を選んで $d=\delta V$ とする。同じ二周期、または $c^2=0$ の一周期解消が使える。このため、標数零代数閉体上の**中央二重平方表示族内**では
+\[
+(\qgr B_f,\pi B_f)\in H2
+\iff \Delta(f_1)\Delta(f_2)\ne0.
+\]
+十分性はBの `thm:noncubic-relative-effectivity`、必要性はCの `cor:qa-double-square-degenerate-not-h2`。共有根・一致根対は引き続き含む。
+
+### 不変式からの別の相対射は自然なspectral延長ではない
+
+$D$ を混合判別式、$J=\Delta_1\Delta_2$、$\ell=\det A/(a_ca_d)$ とする。全表示群 $G$ 上で $\ell$ は共通次数スカラーに自明で、入力二形式の交換にも不変。$D\mapsto\ell^2D,\ J\mapsto\ell^4J$ に対し
+\[
+g_1=U^2-(D^2-J)V^2,\qquad g_2=UV+DV^2,\qquad
+\rho(g)=[\operatorname{diag}(1,\ell^2),1,\ell]
+\]
+は厳密に同変である。従って全 $\mathfrak N$ から、重根を許す順序付き二形式表示stackへの弱い相対射がある。表示ベクトル束の重みは $W'=\mathcal O U\oplus L^2V,\ c'\in\mathcal O,\ d'\in L$、または共通次数スカラーで同値な $W'=L^{-2}U\oplus\mathcal O V,\ c'\in L^{-2},d'\in L^{-1}$。逆向きの重みを採らない。
+
+直接計算で
+\[
+\Delta(g_1)=4(D^2-J),\quad \Delta(g_2)=1,\quad
+D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
+\]
+従って $J$ 可逆の入力では出力は零形式を持たず共通根もなく、smooth域の粗座標は $\chi/(\chi-1)$。$\chi=1$ では第一形式だけが重根を持つ。各次数はClifford基底により平坦で、上の無限Ext障害へ入る。
+
+ただし両出力conicは $V=0,c'=\pm U$ および $V=d'=0$ のsectionを持ち、Brauer類が零になる。自然な $\mathscr D^{\rm ord}$ の第一conicは元の基底 $Z$、第二conicも同じBrauer類であり、上の $(s,t)$ の入力では一致しない。一般安定化群上では $\ell^2=1$、個別符号が $\ell=-1$ を実現するため、この弱い射の慣性像は2・核8。自然な射の像8・核2とも異なる。粗座標の一致から相対射の同一性や自然な境界延長を結論してはならない。この障害を、次のtorsion-free標的の認識で使う。
 
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
@@ -1005,7 +1069,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 全H2のnormal ruling選択被覆とfinite foundation表現開への開埋込はCに証明を記載した。次は相対Isom/K剛体化/Artin効果性を独立に監査し、実現可能開Wを計算可能な有限条件で決める。一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
 正則半単純開で有限étale次数2・慣性μ₂²同型・KS同型となる。
 さらに稠密開のcanonical S₂ deck商を取れば内在H2そのものに同値。
-片側・交点の二捩れ特殊座での局所慣性と粗分岐に加え、j特殊値の二cubic開でのCM障害除去と一cubic境界fiber一点・A4例外を解決。次は欠けたnoncubic foundationの相対復元、全noncubic境界とのgroupoid比較を調べる。粗分岐とstack的étale性の区別を保つ。
+片側・交点の二捩れ特殊座での局所慣性と粗分岐に加え、j特殊値の二cubic開でのCM障害除去と一cubic境界fiber一点・A4例外を解決。点曲線側のnoncubic相対復元とsmooth spectralのgerbe比較は証明済みであり、次は自然なspectral射の境界標的と全avatar/QPの比較を調べる。粗分岐とstack的étale性の区別を保つ。
 `lem:elliptic-two-reflections` と
 `cor:two-intrinsic-foundations` の相対化が最も具体的な手掛かり。
 A/Bの全公表前監査・一次文献新規性比較・三稿の実組版は未完了。
@@ -2008,7 +2072,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 ## 検証範囲と再現手順
 
-**現行C v4.7の確認範囲（2026-11-22、日本時間）。** 相対mutation、全G降下、交換符号、全次数Serre完成とpointed heart、およびsmooth spectralの指定AS10 pointing・逆構成・境界延長不能を分担・相互点検し統合した。KellerのMorita/CY completionとSilverman第2版の二同種公式を一次本文と照合した。`python3 scripts/check.py papers` は三稿の構成・ラベル・引用と論文間の明示参照を検査する。`verify_symmetric_morita.py`、`verify_spectral_atkin_lehner.py`、`verify_noncubic_pointed_end.py`、`verify_rootpair_resolvent_spectral.py` を実行PASS。新二本は標準math suiteへ登録したが全既存suiteは再実行していない。`check.py build --manuscript papers/nc-quadric-avatar.tex` は必要TeXファイルを利用できずSKIP（終了コード2）。PDF全体の表示・VS Code UI・形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
+**現行C v4.8の確認範囲（2026-11-22、日本時間）。** 相対mutation、全G降下、交換符号、全次数Serre完成とpointed heart、smooth spectralの指定AS10 pointing・相対二conic構成・二次線束gerbeの逆構成・中心bandによる自己同値不存在、および境界延長不能・周期解消による無限Extを分担し、統合稿も相互読取りした。KellerのMorita/CY completion、Silverman第2版の二同種公式、StacksのPicard gerbe・Kummer対応・慣性によるrepresentability判定を一次本文と照合した。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:20・485・155、明示的な論文間参照120件）。構成検査であり証明の認証ではない。`verify_symmetric_morita.py`、`verify_spectral_atkin_lehner.py`、`verify_noncubic_pointed_end.py`、`verify_rootpair_resolvent_spectral.py` を実行PASS。spectral検算は慣性行列・二次分裂体・弱い共変式まで拡張して10項目PASS。新二本は標準math suiteへ登録したが全既存suiteは再実行していない。`check.py build --manuscript papers/nc-quadric-avatar.tex` は必要TeXファイルを利用できずSKIP（終了コード2）。PDF全体の表示・VS Code UI・形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
 
 
 **現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現行3原稿で `scripts/check.py papers` は実行PASS、LuaLaTeXの実組版は依存不足により未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
@@ -2017,7 +2081,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 **既存の有限型代数性の検証範囲。** 主論文v1.44の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlas、普遍cubic族の降下と既約性、被約境界の余次元2とsmooth降下、ambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
 
-**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.7のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
+**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.8のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
 
 **現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 

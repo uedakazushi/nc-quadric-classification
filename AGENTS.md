@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.23。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.7。
+2026-11-22 / v1.24。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.8。
 
 ## 公表用三論文の役割
 
@@ -26,7 +26,15 @@
 
 標数零の代数閉体上で、この対応は `χ ↦ χ/(χ−1)`。smooth域の自己双対pointed同型類は正確に `χ=0,2` である。曲線のj値だけで判定せず、非零二捩れ標識も保存する。正本は [spectral_atkin_lehner.tex](papers/quiver-avatar/spectral_atkin_lehner.tex)、`thm:qa-spectral-avatar-pointed-involution`、`prop:qa-spectral-atkin-lehner-chi`。
 
-一根共有と根対一致へ退化する二つの明示trait族では、対応先のχがそれぞれ一位と二位の極を持つ。Bのnoncubic境界の閉性と全域正則なχを用い、対応先はH2族へ延長できず、有限分岐trait基底変更でも障害が残ることを証明した（`cor:qa-spectral-involution-no-h2-extension`）。従ってこのsmooth対応を全noncubic境界からH2への射に延長することはできない。同じ指定square変換・mutation・pointingによるspectral Σ2実現にもこの結論を適用する。別のrotated AS構造頂点や任意基底上のspectral自己同値は未構成である。
+一根共有と根対一致へ退化する二つの明示trait族では、対応先のχがそれぞれ一位と二位の極を持つ。Bのnoncubic境界の閉性と全域正則なχを用い、対応先はH2族へ延長できず、有限分岐trait基底変更でも障害が残ることを証明した（`cor:qa-spectral-involution-no-h2-extension`）。従ってこのsmooth対応を全noncubic境界からH2への射に延長することはできない。同じ指定square変換・mutation・pointingによるspectral Σ2実現にもこの結論を適用する。別のrotated AS構造頂点は未比較である。smooth spectral対応には以下の相対射があるが、粗対合を覆うstack自己同値は存在しない。
+
+### Smooth相対gerbeと特異境界
+
+正本は [spectral_relative_correspondence.tex](papers/quiver-avatar/spectral_relative_correspondence.tex)。smooth域の自然な射 $\mathscr D$ を、順序付き標的へのbanded $\mu_2$-gerbe $\mathscr D^{\mathrm{ord}}$ と、順序忘却の表現可能な有限étale二重被覆に分解した。任意基底変更と両立し、幾何fiberは $B\mu_2\amalg B\mu_2$。相対慣性核は同時符号 $\mu_2$、一般像は全慣性16に対して位数8である。逆gerbeのBrauer像は二conicの類の差で、一般係数体ではindex 4。二次線束 $(M,\mu)$ は実在してもspectral pencilはBrauer障害を持ち得る。
+
+粗対合を覆うstack自己同値、さらに一般点でrepresentableな射は存在しない。一般慣性の中心の二次分裂体は $k(\chi)(\sqrt{(\chi-1)/(4\chi)})$、双対後は $k(\chi)(\sqrt{1/(4\chi)})$ で、inner twistでは一致しない。この否定と、構成済みの非忠実な相対射を混同しない。
+
+二つの境界traitのgeneric像には $g_1=U^2-4t^rV^2,\ g_2=UV+V^2$（$r=1,2$）という全次数平坦な中央二重平方モデルがある。特殊fiberの二周期解消から固定二対象間の $\operatorname{Ext}^n=k$ を全 $n\ge0$ で証明し、$D^b(\qgr B_0)$ の右Serre関手の不存在を得た。任意の重根・零形式にも拡張でき、この表示族内のH2条件は各二次形式の判別式が非零であることと同値。二形式の共有根・一致根対は排除しない。Perf上のSerre公式の不存在や、自然な境界射の構成はこの結果から主張しない。
 
 ### 保持する分類・障害・再開先
 
@@ -46,7 +54,7 @@
 
 ## Cの残課題と検証方針
 
-- E_f側の相対mutation、全商降下、Serre完成、pointed heart回収を未解決へ戻さない。smooth spectral実現については双対対応を使い、境界延長不能を単なる証明不足と記さない。
+- E_f側の相対mutation、全商降下、Serre完成、pointed heart回収、およびsmooth spectral相対射・gerbe分解を未解決へ戻さない。stack自己同値とH2境界延長は不存在が証明済みであり、単なる証明不足と記さない。境界の具体的な平坦代数モデルを出発点とし、自然な射の延長先とその同型層を調べる。
 - 任意のAS/avatar/QP表示stack全体のright-equivalence groupoid、一般cubic域の表示忘却fiber・慣性、既存GITとの相対比較は別に検証する。体上AS分類や特定noncubic族の相対認識から全表示stack同値を推論しない。
 - 二次積付きtorsion-free標的 `TF^quad` への射は任意基底変更と両立して構成済み。標的のArtin性・有限型開条件、表示射の全忠実性・fiber、非被約基底での慣性・変形は残課題。nodalとI2の極限の自己同型は異なり、I2極限は非単純なのでsimple/fine compactified Picardだけを標的に選ばない。このtorsion-free相対射と、延長不能なsmooth spectral-pointed H2対応を区別する。
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。

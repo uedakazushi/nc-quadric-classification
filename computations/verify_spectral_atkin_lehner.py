@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Exact identities for the smooth spectral-avatar Atkin--Lehner comparison.
 
-Checks the classical two-isogeny equation, the chi-coordinate involution,
-both j functions, self-dual and equal-j-but-distinct marked points, and
-the two boundary poles.  It does NOT verify categorical reconstruction,
-pointed equivalence, or the closed-stack input in the nonextension proof.
+Checks two-isogeny and quotient equations, the chi-coordinate involution,
+both j functions, marked self-duality, boundary poles, the inertia-center
+matrix identities and its two quadratic splitting classes. It does NOT
+verify categorical reconstruction, gerbe descent, or stack recognition.
 Requires SymPy.  No random samples or floating-point arithmetic.
 """
 import sympy as sp
@@ -12,6 +12,91 @@ import sympy as sp
 
 def is_zero(value):
     assert sp.factor(value) == 0, value
+
+
+def valuation_at(value, variable, point):
+    numerator, denominator = sp.cancel(value).as_numer_denom()
+    orders = []
+    for polynomial in (numerator, denominator):
+        order = 0
+        while polynomial.subs(variable, point) == 0:
+            polynomial = sp.cancel(polynomial / (variable-point))
+            order += 1
+        orders.append(order)
+    return orders[0]-orders[1]
+
+
+def relative_identities():
+    x, p, a, b, chi, t, u, v = sp.symbols("x p a b chi t u v")
+    quotient_x = p*x+b/x
+    quotient_c = p*x-b/x
+    quotient_d_squared = (p*x*x+a*x+b)/x
+    is_zero(quotient_c**2-quotient_x**2+4*p*b)
+    is_zero(quotient_d_squared-quotient_x-a)
+    input_chi = a*a/(a*a-4*p*b)
+    output_chi = a*a/(4*p*b)
+    is_zero(input_chi/(input_chi-1)-output_chi)
+    for exponent in (1, 2):
+        is_zero(output_chi.subs({a: 1, p: 1, b: t**exponent})-1/(4*t**exponent))
+    print("PASS: relative conic quotient formulas and both flat boundary models")
+
+    r, theta = sp.symbols("r theta")
+    root_b = -theta**2*(theta**2+1)
+    rr = sp.diag(sp.Matrix([[0, root_b], [1, 0]]), r, r)
+    tt = sp.diag(sp.Matrix([[theta**2, -root_b], [1, -theta**2]]),
+                 sp.Matrix([[0, theta], [theta*(2*theta**2+1), 0]]))
+    e1, e2 = sp.diag(1, 1, -1, 1), sp.diag(1, 1, 1, -1)
+    simultaneous = e1*e2
+    identities = [rr*rr-root_b*sp.eye(4),
+                  tt*tt-theta**2*(2*theta**2+1)*sp.eye(4),
+                  tt*e1-e2*tt, rr*e1-e1*rr,
+                  rr*tt+simultaneous*tt*rr,
+                  rr.subs(r, -r)-simultaneous*rr]
+    for matrix in identities:
+        for entry in matrix:
+            is_zero(sp.rem(sp.expand(entry), r*r-root_b, r))
+    first, second = u*v, u*u+u*v+root_b*v*v
+    for matrix, multiplier in [(rr[:2, :2], root_b)]:
+        uu, vv = matrix*sp.Matrix([u, v])
+        is_zero(first.subs({u: uu, v: vv}, simultaneous=True)-multiplier*first)
+        is_zero(second.subs({u: uu, v: vv}, simultaneous=True)-multiplier*second)
+    uu, vv = tt[:2, :2]*sp.Matrix([u, v])
+    is_zero(first.subs({u: uu, v: vv}, simultaneous=True)-theta**2*second)
+    is_zero(second.subs({u: uu, v: vv}, simultaneous=True)
+            -theta**2*(2*theta**2+1)**2*first)
+    print("PASS: generic stabilizer, projective commutator, and Galois-center identities")
+
+    center_b = (chi-1)/(4*chi)
+    target_b = 1/(4*chi)
+    is_zero(center_b/target_b-(chi-1))
+    assert valuation_at(center_b, chi, 1) == 1
+    assert valuation_at(target_b, chi, 1) == 0
+    assert valuation_at(center_b, chi, 0) == -1
+    assert valuation_at(target_b, chi, 0) == -1
+    print("PASS: two nontrivial quadratic center classes differ at chi=1")
+
+    hh = sp.Matrix([[0, -t, 0, 0], [1, 0, 0, 0],
+                    [0, 0, 0, 1], [0, 0, -t, 0]])
+    assert hh*hh == -t*sp.eye(4)
+    uu, vv = -t*v, u
+    is_zero(uu**2+vv**2-(u*u+t*t*v*v))
+    is_zero(uu**2+t*t*vv**2-t*t*(u*u+v*v))
+    print("PASS: nonsplit-pencil descent cocycle h^2=-t and form exchange")
+
+    mixed, product, weight = sp.symbols("mixed product weight", nonzero=True)
+    g1 = u*u-(mixed*mixed-product)*v*v
+    g2 = u*v+mixed*v*v
+    transformed = {mixed: weight**2*mixed, product: weight**4*product}
+    is_zero(g1.subs(v, weight**2*v)-g1.subs(transformed, simultaneous=True))
+    is_zero(g2.subs(v, weight**2*v)/weight**2
+            -g2.subs(transformed, simultaneous=True))
+    is_zero(sp.discriminant(g1.subs(v, 1), u)-4*(mixed*mixed-product))
+    # Binary g2 has coefficients (0,1,mixed), so its discriminant is 1.
+    mixed_output = -2*mixed
+    is_zero(mixed_output**2/(4*(mixed*mixed-product))
+            -(mixed*mixed/product)/(mixed*mixed/product-1))
+    is_zero(sp.resultant(g1.subs(v, 1), g2.subs(v, 1), u)-product)
+    print("PASS: weak covariant equivariance, discriminants, resultant, and coarse map")
 
 
 def main():
@@ -62,7 +147,8 @@ def main():
     is_zero(w.subs(chi,source_shared)-1/(4*t))
     is_zero(w.subs(chi,source_equal)-1/(4*t*t))
     print("PASS: shared-root and equal-pair boundary pole identities")
-    print("NOT CHECKED: categorical recognition, stack closedness, or novelty")
+    relative_identities()
+    print("NOT CHECKED: gerbe equivalence, stack closedness, infinite Ext, or novelty")
 
 
 if __name__ == "__main__":

@@ -149,6 +149,7 @@ def sources() -> int:
         "papers/quiver-avatar/symmetric_morita_descent.tex",
         "papers/quiver-avatar/relative_serre_completion.tex",
         "papers/quiver-avatar/spectral_atkin_lehner.tex",
+        "papers/quiver-avatar/spectral_relative_correspondence.tex",
         "computations/verify_symmetric_morita.py",
         "computations/verify_spectral_atkin_lehner.py",
         "computations/verify_as_avatar_euler.py",

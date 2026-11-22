@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v1.23。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.40（相対理論の31節）、論文Cはv4.7。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v1.24。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.40（相対理論の31節）、論文Cはv4.8。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。局所good moduliの降下もこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -12,7 +12,11 @@
 
 **Smooth spectral avatarの指定pointed実現は、一般には元のH2対象と異なる。** 四根相異なる領域で、双対2-isogenyから得る対応は $\chi\mapsto\chi^\vee=\chi/(\chi-1)$。元のpointed対象に戻るのは $\chi=0,2$（$j=1728,8000$）に限る。これは古典的Fricke対合を、指定mutationと構造頂点を持つH2実現へ適用した結果である。一根共有・根対一致へ退化する二族の像は $\chi^\vee$ に極を持ち、有限分岐基底変更後にもH2族へ延長できない。[spectral対合と境界延長不能](papers/quiver-avatar/spectral_atkin_lehner.tex)。
 
-**次の一手はsmooth spectral対応の相対groupoid比較である。** 二捩れを標識した双対isogenyの族から始め、同型の層・慣性・fppf降下を決定する。幾何点の対合がそのままスタック対合を与えるとは仮定しない。境界を含む標的はH2の外側のcompactificationで検討する。別のrotated構造頂点と全QP群oidの比較は、このsmooth対応とは別に残す。詳細な達成条件はP4–P5に置く。
+**Smooth spectral対応の相対groupoidを決定した。** 自然な射は、順序付き標的へのbanded $\mu_2$-gerbeと順序忘却の有限étale二重被覆の合成である。幾何fiberは $B\mu_2\amalg B\mu_2$、一般慣性の核は2、像は8。逆gerbeのBrauer像は二conicの類の差で、一般係数体でindex 4。粗対合を覆ういかなるstack自己同値・一般点でrepresentableな射も、中心の二次分裂体の相違により存在しない。[相対gerbe・慣性・境界](papers/quiver-avatar/spectral_relative_correspondence.tex)。
+
+**境界の圏論的障害も具体化した。** 二境界traitのgeneric像には $g_1=U^2-4t^rV^2,\ g_2=UV+V^2$（$r=1,2$）という全次数平坦な代数モデルがある。共通特殊fiberで固定二対象の全高次Extが $k$ となり、$D^b(\qgr B_0)$ に右Serre関手は存在しない。一般に、この中央二重平方表示族のH2条件は $\Delta_1\Delta_2\ne0$ と同値である。各形式の重根と、二形式間の共有根を区別する。
+
+**次の一手は自然なspectral射の境界標的の認識である。** 既存の二次積付きtorsion-free groupoidと上の平坦退化を比較し、Artin性・有限型開・同型層・非被約底の慣性を調べる。不変式から作る別の弱い共変射は研究ノートに保持したが、conicのBrauer類と慣性核が異なるため自然な $\mathscr D$ の延長にはならない。別のrotated構造頂点と全QP群oidの比較も残る。達成条件はP4–P5に置く。
 
 ## 現行実行計画と達成基準（公表準備から次の比較研究へ）
 
@@ -26,7 +30,7 @@
 
 **P3：文献比較と公表編集。** Belmans, *Hochschild cohomology of noncommutative planes and quadrics*（JNCG 13 (2019), 769–795, doi:10.4171/JNCG/338）を主にcubic側の既知HH計算として明記する。VdB、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa OWR2022、Okawa–Ueda 2014の既知の分類・line-bundle格子・GITを本研究の追加成果から区別する。AのIntroductionは分類・忘却・noncubicに、Bは四つの主定理群（代数性、境界相対同値、good/coarse moduli、形式局所構造）に焦点を当て、必要な証明を削らず本文を読みやすく再配置する。LuaLaTeX/latexmkで三稿ごとにPDF・SyncTeXと表示を確認し、未実施なら明記する。新規性の包括調査・第三者査読は別状態とする。
 
-**P4：AS/avatar分類と、指定構造対象を保つ比較（論文C v4.7）。** 中心目標は、最小分解型を指定したAS正則Z代数・avatar・O-marked H2・potentialの関係を、同型類、有限代数、相対pointed heartの各水準で決定することである。体上の全単射を相対群oid同値と読み替えず、構造頂点を移すmutationと、構造対象を保つ同値を区別する。
+**P4：AS/avatar分類と、指定構造対象を保つ比較（論文C v4.8）。** 中心目標は、最小分解型を指定したAS正則Z代数・avatar・O-marked H2・potentialの関係を、同型類、有限代数、相対pointed heartの各水準で決定することである。体上の全単射を相対群oid同値と読み替えず、構造頂点を移すmutationと、構造対象を保つ同値を区別する。
 
 現在有効なCの結果は次の通り。証明は現行論文の参照先を正本とし、版ごとの増補記録は再開に用いない。
 
@@ -39,15 +43,17 @@
 | 点曲線とspectral曲線 | $E_f=\{c^2=f_1,d^2=f_2\}$ と $C_q=\{y^2=f_1f_2\}$ はsmooth時に双対2-isogenyで関係する。$E_f$の二conic pencilから全noncubic幾何点の有限Endと積を同定し、正しいshift後の構造頂点でpointed認識。[点曲線の比較](papers/quiver-avatar/point_spectral_isogeny.tex) |
 | 全商上の相対認識 | 対称窓のrank45代数、実際のspinor tilting、canonical Serre完成と零頂点cornerにより、$E_f$側を全二形式商上の元のH2族と同定。局所有限型の非被約底・非平坦引戻し・fppf降下を含む。[Morita降下](papers/quiver-avatar/symmetric_morita_descent.tex)、[Serreとheart](papers/quiver-avatar/relative_serre_completion.tex) |
 | Spectral側のpointed像 | smooth領域の指定mutation・pointingで $\chi^\vee=\chi/(\chi-1)$。自己双対点は0,2。二つの $\chi=1$ 境界型へ向かう像は、有限分岐基底変更後にもH2族へ延長不能。[spectral対合](papers/quiver-avatar/spectral_atkin_lehner.tex) |
+| Smooth spectralの相対射・慣性 | 順序付き標的へのbanded $\mu_2$-gerbeと有限étale二重被覆に分解。幾何fiberは $2B\mu_2$。中心の二次分裂体により全stack自己同値・一般representable liftは不存在。[相対対応](papers/quiver-avatar/spectral_relative_correspondence.tex) |
+| 特異代数への平坦退化とH2条件 | 両境界traitの平坦代数模型と無限高次Extを構成。この表示族内ではH2条件は各形式のsquarefree性と同値。[境界のSerre障害](papers/quiver-avatar/spectral_relative_correspondence.tex) |
 | Brauer・半周期・OUの障害 | 一般点曲線のperiod/indexは2/4。根選択、半周期、OU四重torsorを区別し、共通spectral incidence上でもOU/半周期の被覆・2-torsion群スキーム・自然な二同種によるKummer像が一致しないことを証明。[Brauer降下](papers/quiver-avatar/root_descent_brauer.tex)、[半周期](papers/quiver-avatar/half_period_ruling.tex)、[GIT比較](papers/quiver-avatar/git_comparison.tex) |
 | Spectral境界の相対対象 | 根対から二次積付きrank-one torsion-free moduleへの相対射を構成。通常Picard線束への延長、最小解消による多重次数零化の障害を保持する。[avatarの相対構成](papers/quiver-avatar/avatar_charts.tex)、[節点解消の障害](papers/quiver-avatar/nodal_resolution_obstruction.tex) |
 | Cubic・GIT・内在的二ruling | 滑らかなcubicのVdB↔square辞書、Oを保つruling交換、一般quintuple→H2の次数2、potential→H2の次数8、特殊慣性と粗分岐を記述。内在的二ruling被覆とfoundation実現可能開の $S_2$ 商を証明。全GIT・全QPの相対同値は含まない。[GIT比較](papers/quiver-avatar/git_comparison.tex) |
 
-**P4の次の達成条件。** Smooth spectral対応について、標識付き2-isogenyの族からAS側の有限代数と指定構造射影を構成し、同型の層と慣性の写像を明示する。相対双対化の自然性・全周期のSerre輸送・fppf cocycleを確認し、対応を相対射または対応stackとして定式化する。全忠実性や対合性に追加標識・剛体化が必要なら、その核と理由を定理に含める。幾何点の $\chi$ の式だけを相対同値の証明としない。
+**P4の相対smooth達成条件は満たした。** 二conic被覆のgroupoidから $\mathscr D^{\mathrm{ord}}$ を任意基底変更と両立して構成し、二次線束の逆gerbe・全射と合成・fppf cocycle・慣性核を決定した。出力の二形式族とrank45相対pointed認識を合成して指定heartへ戻す。幾何対合をstack自己同値へ強化することは中心bandの障害で不可能である。次はこの自然な射の境界問題をP5で扱い、別pointing・全AS/QP groupoidを独立に比較する。
 
 **P5：境界の標的と全表示の比較。** 優先順位は次の通り。
 
-1. **H2の外側でspectral境界を受ける標的を選ぶ。** 二次積付きtorsion-free spectral対象、compactified Picard、必要な曲線修正のどれが同型・慣性と基底変更を保つかを比較する。一根共有・一致根対の二族を必須の試験とし、H2値の延長不能を回避できる標的の範囲を明記する。通常線束の可逆化だけでH2への延長が得られるとは考えない。
+1. **自然なspectral射を境界で受ける標的を認識する。** 二次積付きtorsion-free groupoidのArtin性、有限型開、同型層、非被約底の慣性を決定し、明示的な平坦代数 $g_1=U^2-4t^rV^2,\ g_2=UV+V^2$ と比較する。特殊fiberでは $D^b$ の右Serreが存在しないため、H2の公理を維持した延長は目標にしない。共変式による弱い射は両出力conicをsplitにし、一般慣性核8を持つため、核2の自然な射の代用にならない。これをBrauer降下の試験に使う。
 2. **別のrotated構造頂点を認識する。** $\Sigma_2$から既存のsquare辞書を経て今回と同じpointingを取る場合はspectral対合の範囲に入るが、rotated ASの別頂点は未比較である。構造対象の移動とheartを明示し、$P=0$古典点、最深 $\Sigma_2$ 境界、その他のavatarは仮定を分けて扱う。
 3. **全相対AS・QP群oidを比較する。** 任意のavatar族の全周期AS再構成、同型の層、相対heart、AS4被覆を検証する。8/10/12矢QPの消去pairのスカラー慣性、right-equivalenceと通常代数同型の差を保持する。有限foundationの実現可能開の具体的な有限式、全GITへの延長は並行課題とする。
 
@@ -57,15 +63,15 @@
 
 - **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
-- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-avatar.tex`（v4.7）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。二境界型へのH2延長不能を踏まえ、次はsmooth対応の相対同型層・慣性・降下と、H2外のcompactificationを研究する。別のrotated pointing・全相対AS/ potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
+- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-avatar.tex`（v4.8）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。相対smooth射はμ₂-gerbeと二重被覆に分解し、全stack自己同値の不存在と特異境界の無限高次Extも証明した。次は自然な射のH2外の境界標的を研究する。別のrotated pointing・全相対AS/ potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
 
 **公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは指定AS分解・avatarの分類、八・十・十二本矢QP、pointed認識と相対比較を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
 
-**現在の検証実装。** `scripts/check.py papers` はA/B/Cそれぞれのsources検査に加え、AとBで明記した相手原稿の定理ラベルが実際の `\input` 系に存在することを確認する。ソースの実行検査およびLuaLaTeX組版は現環境で未実施。分類の有限判定では輸送子の閉剰余類性を明記し、有限停止に必要な仮定を強調した。
+**現在の検証実装。** `scripts/check.py papers` はA/B/Cそれぞれのsources検査に加え、AとBで明記した相手原稿の定理ラベルが実際の `\input` 系に存在することを確認する。現行checkoutで三稿のソース・相互参照検査を実行PASS。LuaLaTeX組版は必要TeXファイルを利用できずSKIPであり、現行PDFは未生成。分類の有限判定では輸送子の閉剰余類性を明記し、有限停止に必要な仮定を強調した。
 
 **依存監査の確定範囲。** BからAへの残余の17種類の定理・補題・式ラベルはAの現行分類20節に定義されている。Aの分類主定理の証明はB固有の主定理には依存しない原稿構成とした。これはソース依存の確認で、全数学的証明の独立監査とは異なる。
 
-**次の最優先実行単位。** CではP4のsmooth spectral相対groupoid比較を進め、境界はP5のH2外の標的として扱う。rank45の降下・相対mutation・$E_f$側heart認識は証明済みの入力として用い、全avatarへの一般化だけを未解決として残す。並行して、非被約D上のPicard、AS側のrank-forcing、spherical helix実現定理、AS10逆mutation、Keller/Keller–Yangの適用と相対perfect base changeを独立監査する。A/BのP1–P3、三稿の引用・一次文献比較・組版を継続し、`python3 scripts/check.py papers` と実施可能な組版の結果は研究ノートへ記す。
+**次の最優先実行単位。** CではP4のsmooth spectral相対groupoid比較を証明済みの入力とし、P5の自然な境界標的と平坦代数モデルとの比較を進める。rank45の降下・相対mutation・$E_f$側heart認識は証明済みの入力として用い、全avatarへの一般化だけを未解決として残す。並行して、非被約D上のPicard、AS側のrank-forcing、spherical helix実現定理、AS10逆mutation、Keller/Keller–Yangの適用と相対perfect base changeを独立監査する。A/BのP1–P3、三稿の引用・一次文献比較・組版を継続し、`python3 scripts/check.py papers` と実施可能な組版の結果は研究ノートへ記す。
 
 
 ## 現在の到達点と未解決の核心
@@ -110,7 +116,7 @@
 
 **残る比較と次の課題。** 境界の相対商表示・DM開の普遍的粗モジュライ・全有限成分の法表現・一致類に沿う形式対は証明した。次は、共通étale近傍のgood moduliをH2の開部分または全体へ降下できるかを調べる。全H2のgood moduli spaceの存在は未確定であり、全H2の粗モジュライ不存在とは別の問題である。X_asの局所閉性と偏極認識方程式、Q_fndとの全体の相対groupoid比較、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致も残る。公表前の一次文献比較・証明監査・組版を続け、包括的新規性・外部査読・形式証明とは区別する。
 
-**別稿と研究間の関係。** `papers/nc-quadric-avatar.tex`（v4.7）は、AS/avatarの分類と、QP・GITから内在的H2への比較を扱う独立論文である。Aの体上分類とBの相対H2・境界同値を入力に、$E_f$側の全商上の相対pointed認識、smooth spectral側の像と延長不能を区別して記述する。Cの対象を限定した認識を、全foundation・全AS表示の相対同値へ一般化しない。Cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は保持し、既存の各dg特殊化の内在H2認識は族ごとに確認する。詳細はC本文と研究ノートを正本とする。
+**別稿と研究間の関係。** `papers/nc-quadric-avatar.tex`（v4.8）は、AS/avatarの分類と、QP・GITから内在的H2への比較を扱う独立論文である。Aの体上分類とBの相対H2・境界同値を入力に、$E_f$側の全商上の相対pointed認識、smooth spectral側の像と延長不能を区別して記述する。Cの対象を限定した認識を、全foundation・全AS表示の相対同値へ一般化しない。Cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は保持し、既存の各dg特殊化の内在H2認識は族ごとに確認する。詳細はC本文と研究ノートを正本とする。
 
 検証範囲・再生成手順は [研究ノート](notes/research_notes.md#検証範囲と再現手順)、文献の仮定・規約は [文献比較](notes/literature.md) に集約する。
 
@@ -252,7 +258,7 @@ $$
 | 全noncubic根対とsquare/$\Sigma_2$ avatarの幾何同型類対応 | `thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection`, `thm:qa-all-noncubic-sigma2-anticanonical-avatar-bijection`。指定heartを自動的に同定しない |
 | 全商のrank45相対Moritaと $E_f$ 側pointed heart | `thm:qa-unordered-rank45-morita-descent`, `prop:qa-symmetric-spinor-relative-tilting`, `thm:qa-symmetric-relative-pointed-heart`。Bの相対normal tilting・反Serre再構成を入力。非被約局所有限型底を含む |
 | 全次数Serre完成とcanonical符号 | `cor:qa-rank45-all-degree-serre`, `lem:qa-symmetric-equivariant-serre-character`。各次数階数 $196n^2+196n+45$、零頂点corner階数 $(2n+1)^2$、9生成56二次関係。交換指標 $\varepsilon^n$ を含む |
-| Smooth spectralの指定pointed像と自己双対点 | `thm:qa-spectral-avatar-pointed-involution`, `prop:qa-spectral-atkin-lehner-chi`。$\chi^\vee=\chi/(\chi-1)$、固定点0,2。相対同型層・慣性・降下は次課題 |
+| Smooth spectralの指定pointed像と自己双対点 | `thm:qa-spectral-avatar-pointed-involution`, `prop:qa-spectral-atkin-lehner-chi`。$\chi^\vee=\chi/(\chi-1)$、固定点0,2。相対化はμ₂-gerbeと二重被覆として成立。全stack自己同値は不存在 |
 | 二境界型のH2延長不能 | `cor:qa-spectral-involution-no-h2-extension`。Bの閉境界 $\mathfrak N\subset\mathfrak H_2$ と正則不変量 $\chi$ を入力。二つの明示族について有限分岐基底変更後も不能 |
 | 内在的二ruling被覆とfoundation実現可能開 | `thm:qa-global-two-ruling-etale-cover`, `thm:qa-intrinsic-h2-open-in-foundation-stack`。全foundation・全avatar・全potentialの群oid同値は主張しない |
 | 古典12本矢と $\Sigma_2$ の構造対象の除外 | `ex:qa-weighted-not-h2`, `ex:qa-hirzebruch-not-h2`。反Serre軌道から見えない対象により全適合根を排除。別pointingとの比較は別問題 |
@@ -299,7 +305,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-CはP4のsmooth spectral相対比較とP5の境界標的を先に進める。以下はA/Bと共通する継続課題。
+CはP4のsmooth相対gerbeを入力として、P5の自然な境界標的と特異代数の比較を先に進める。以下はA/Bと共通する継続課題。
 
 1. **局所good moduliの降下を調べる。** 一致類の共通étale商近傍と不変式環 k[ac,(x+y)²,(x−y)²] を入力とする。stabilizer-preserving条件、飽和開、重なり上の比較を確認し、H2のZariski開または全体へ降下できる範囲と障害を切り分ける。N^DMの粗モジュライ射χ_DMは任意底変更と両立するが、この制限射はgoodではなく、慣性も非properである。これを全体のgood moduliの存在・不存在に直結させない。
 2. **framed実現像と偏極認識を具体化する。** X_asはsmooth83次元スキームで、一致根対ではX3の接次元84との相違がある。`cor:artin-polarization-retraction` の余分なHH¹方向と、今回決定した全慣性表現・形式対を用い、局所閉性や具体的な偏極認識方程式を調べる。開性を目標にしない。

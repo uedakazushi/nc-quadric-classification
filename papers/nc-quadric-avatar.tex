@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v4.7
+% 日本語 LuaLaTeX。2026-11-22 / v4.8
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v4.7（相対pointed認識・spectral対合と境界延長不能）}
+\date{2026年11月22日\quad v4.8（相対pointed認識・spectral gerbeと境界のSerre障害）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -76,8 +76,16 @@ noncubic二形式の点曲線側では、対称な四項のBrauer増幅から
 一方、spectral曲線側の指定AS実現はsmooth幾何同型類上で
 $\chi\mapsto\chi/(\chi-1)$という二同種の双対化を与え、
 元のpointed対象と一致するのは$\chi=0,2$だけである。
+その相対射は、順序付き標的上の$\mu_2$-gerbeと
+有限\'{e}tale二重被覆の合成で、幾何fiberは$B\mu_2\amalg B\mu_2$となる。
+一般慣性の中心bandは双対化で変わるため、
+この粗対合を覆う一般点で表現可能な射は存在しない。
 二つのnoncubic境界型では、この対応先は有限基底変更後にも
 H2族として延長できない。
+二重根を許す平坦な中央二重平方表示は存在するが、
+固定二対象間の全高次Ext非消滅から、特殊fiberの有界coherent導来圏は
+右Serre関手を失う。任意の二形式を許すこの表示族内で、
+H2条件は二つの判別式の非消滅と同値である。
 
 さらに、cubicの線束辞書、normal rulingの二重忘却、
 Okawa--Uedaの四重GIT射とPicard根torsor、その慣性と局所粗分岐を比較する。
@@ -155,6 +163,19 @@ noncubic境界の閉性により、H2全体へも族として延長不能とな�
 二同種の双対化そのものは古典的であり、
 本稿の追加部分は指定pointingとの同定と内在的境界への適用である。
 この適用の新規性について網羅的な文献調査は未完了である。
+
+相対構成は第~\ref{sec:qa-spectral-relative-nonfaithful-map}節で与える。
+二つのinvolutionの商から順序付き二conic被覆を作ると、
+その逆構成のfiberは二捩れPicard類を実際の二次線束へ持ち上げる
+$\mu_2$-gerbeである。順序忘却を合成した幾何fiberは
+$B\mu_2\amalg B\mu_2$となる。
+一般慣性の中心の二次分裂体を比較し、
+粗対合を覆ういかなる射も一般点で表現可能にはならないことも示す。
+さらに両境界に対する平坦な代数表示を構成し、
+周期解消から特殊fiberの全高次Extを計算する。
+この計算は二重根または零形式を持つ全中央二重平方表示へ適用され、
+その有界coherent導来圏の右Serre関手の不存在を与える。
+
 
 第~\ref{sec:qa-half-period-ruling}節ではsmooth locus上で
 $2t=P$の次数四有限étale torsorを作り、平行移動による
@@ -363,6 +384,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/symmetric_morita_descent}
 \input{quiver-avatar/relative_serre_completion}
 \input{quiver-avatar/spectral_atkin_lehner}
+\input{quiver-avatar/spectral_relative_correspondence}
 \input{quiver-avatar/half_period_ruling}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
@@ -376,12 +398,19 @@ $\kk$ は標数零の代数閉体とする。
 smooth spectral側の指定pointingについても、
 定理~\ref{thm:qa-spectral-avatar-pointed-involution}と
 命題~\ref{prop:qa-spectral-atkin-lehner-chi}で像の幾何同型類は決定した。
-次の問題は、このsmooth対応を同型の層・慣性・降下を含む相対groupoidで記述すること、
-および別のrotated構造頂点が与えるpointed対象を認識することである。
+このsmooth対応は定理~\ref{thm:qa-spectral-relative-nonfaithful-map}と
+命題~\ref{prop:qa-spectral-relative-quadratic-gerbe}により、
+非忠実な相対射とその二次線束gerbeとして記述できた。
+定理~\ref{thm:qa-spectral-no-stack-autoequivalence}は、別の構成でも
+一般点で表現可能なliftを得られないことを示す。
+別のrotated構造頂点が与えるpointed対象の認識は残る。
 系~\ref{cor:qa-spectral-involution-no-h2-extension}により、
 spectral対応を全noncubic境界からH2へ延長する目標は成立しない。
 境界を含む比較にはH2の外側に標的を広げ、
 二次積付きtorsion-free spectral対象などの適切なcompactificationを選ぶ必要がある。
+命題~\ref{prop:qa-spectral-flat-singular-boundary}は二つの平坦代数モデルを与えるが、
+その特殊fiberは周期Extを持つため、smoothなH2とは異なる境界対象である。
+次はその同型層・変形・慣性を、二次積付きspectral対象と比較する。
 以下の課題は、他のavatarや全AS表示を含む範囲を扱う。
 本稿の有限代数の開部分と、幾何的 avatar の開部分は、それぞれ独立に定義される。
 両者を相対 AS 分類として同定するには、avatar から得る有限代数が
