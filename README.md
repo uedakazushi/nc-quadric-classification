@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.08、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.09、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、A/Bの公表前監査と並行して、**論文CのAS↔avatar全単射・十本矢逆mutationの証明を原PDF・外部定理と独立照合**する。その後、Cで一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,13 +12,13 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **最小AS分解型によるavatar分類、10本矢mutationとcubic導来非同値の完全判定** | v3.2。sq/rsqとavatarの体上全単射、独立AS10逆mutation、左右Noether/商圏同値を保持。**二つの10矢壁の交点Zは非零2捩れP・G≅FPで、smooth/nodal/I2に限る。任意cubic ASとのQgr／Db(qgr)同値はZの外で、かつそのときだけ成立**（原PDF定理21.1の証明を統合）。12矢は主にrelation-dual QP表示。noncubic spectral相対射・OU GIT比較を保持。内在的O-marked心とのpointed同値と全相対QP stack同値は未証明 |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS分解型のavatar分類、10本矢mutation、cubic導来非同値の全判定** | v3.3。sq/rsqとavatarの体上全単射、AS10の独立逆mutation、cubic型への到達可能性iff非二重壁を保持。**二つの10矢壁の交点は固定smooth楕円上で横断的な3点、固定nodal/I2上では各1点**。Kellerのundeformed CY completionのtensor成分とKeller–Yangのreduced条件を明示的に点検。12矢QPと独立ASクラスは区別。内在的O-marked心とのpointed同値・全相対QP stack同値は未証明 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS正則代数とavatarの分類・cubic非同値（v3.2）
+## 論文C：AS正則代数とavatarの分類・cubic非同値（v3.3）
 
 **中心定理の証明を含む現行原稿。**
 [平方型・回転平方型のAS/avatar分類](papers/quiver-avatar/as_helix_classification.tex)は
@@ -48,7 +48,7 @@ right-equivalence groupoid同値は主張しない。
 対応する証明節のstatic auditと数値漸化式の有限検算を別々に記録し、
 C全文のLuaLaTeX組版は未実施。
 
-**分類定理の独立監査で増補した事項（C v3.2）。**
+**分類定理の独立監査で増補した事項（C v3.3）。**
 ASsq/ASrsqの四周期最小分解から四相の有理母関数を解き、
 \(\sum_{m\ge0}\dim A_{i+4m,i}u^m=(1+6u+u^2)/(1-u)^3\)
 を全次数で導いた。AS10はHilbert級数
@@ -73,7 +73,7 @@ Keller–Yang Thm6.2のloop/2-cycle/cyclic representativeの
 再現コード： [Euler母関数](computations/verify_as_avatar_euler.py)
 （scripts/check.pyのmath suiteにも登録）。
 
-**二つの10本矢壁の交点とcubic導来非同値（C v3.2）。**
+**二つの10本矢壁の交点とcubic導来非同値（C v3.3）。**
 [二重壁の幾何](papers/quiver-avatar/as10_mutation_classification.tex)
 では$Z=D_F\cap D_G=\{0\ne P\in\Pic^0(D)[2],\,G\simeq FP\}$
 を示し、曲線の多重次数と$\Pic^0$の2捩れを使って
@@ -95,6 +95,36 @@ pointed同値は自動的に従わない。**
 分類全体の独立再監査、構造対象付き相対比較、
 全文LuaLaTeX組版は未完了。
 
+**二つのmutation壁の局所scheme構造（C v3.3）。**
+滑らかな楕円曲線と第一次数二pencil $F$を固定し、
+$\eta=GF^{-1},P\in\Pic^0(E)$をパラメータとすると、
+二壁は$\eta=P$、$\eta=P^{-1}$。
+Pencilの評価列とPicard上の一次変形のcup productにより
+二壁は被約Cartier因子で、非零二捩れ点での
+Jacobian determinantは$-2$（標数零）。
+従って交点は**scheme-theoreticに横断的**で、
+固定smooth曲線上では3点、smooth楕円族で相対有限étale三次。
+固定nodal/$I_2$では$\Pic^0\simeq\Gm$で
+交点が各1つの被約点となる
+（[証明節](papers/quiver-avatar/as10_mutation_classification.tex)）。
+これらは標識付き・固定曲線のパラメータ空間の主張であり、
+内在O-marked H2 stackの慣性や開埋込を証明しない。
+\`computations/verify_avatar_cubic_obstruction.py\`の
+Jacobianと$\Gm[2]$の有限SymPy検算はPASS。
+
+**GinzburgのDG集中の仮定点検。**
+[AS10 QP節](papers/quiver-avatar/as10_mutation_classification.tex)
+に、$B$の有限大域次元二、minimal relationのlength$\ge2$、
+Keller (2011 Thm6.10) undeformed completionの
+$\Theta^{\otimes_B^{\mathbf L}m}$と全helix前向きRHomの対応、
+内部正次数による完備版への降下、
+Keller–Yang (2011 Thm6.2) の
+\emph{source potentialがreduced}である条件と
+(c1)--(c3)の各局所条件を明記した。
+一般3-CY性や単なる導来同値から通常AS正則性を推論しない。
+Keller一般定理の全proofと
+全AS分解へのDG降下の全面的な独立監査は残る。
+
 ### 幾何的基礎と相対境界
 
 
@@ -107,7 +137,7 @@ pointed同値は自動的に従わない。**
 全AS代数の分類・Noether性の証明は前掲の新節に統合済み。
 一方、元のO-marked heartの直接同値と全非被約基底での相対AS分類は別問題である。
 
-**相対 spectral 境界の現在の結果（C v3.2）。**
+**相対 spectral 境界の現在の結果（C v3.3）。**
 [共有根の局所解析・二次積欠損・三型の正規化極限](papers/quiver-avatar/nodal_resolution_obstruction.tex)を
 本文の定理・証明として保持する。共有根A1の最小解消上では
 反不変moduleの可逆化の例外次数が1で、垂直Cartier twistでも奇偶は変わらない。
