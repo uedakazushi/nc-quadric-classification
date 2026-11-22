@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.1（一般pointed忘却の二rulingと次数2）
+% 2026-11-22 / v2.2（一般接同型と次数二をC全体へ統合）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -441,8 +441,9 @@ $\mathfrak Q_{\mathrm{rs}}^{\mathrm{rig}}$ に制限すると、
 
 ここで証明したétale性は
 $\overline{\mathcal F}_{\mathrm{geo}}$の\emph{一般開での}
-性質であり、その幾何fiberの次数、全慣性群の有限成分、
-全cubic境界での表現可能性・étale性までを断定しない。
+性質である。幾何fiberの一般次数と一般有限慣性の全体は
+次の系~\ref{cor:qa-quintuple-h2-generic-degree-two}で決定するが、
+全cubic境界での表現可能性・étale性は主張しない。
 \end{theorem}
 \begin{proof}
 論文B~\cite[\texttt{lem:universal-nonlinear-cubic-h2-family},
@@ -604,8 +605,12 @@ $\operatorname{Aut}_{\HHstack}(y)$は
 ~\eqref{eq:qa-geometric-cubic-rigid-map}ではない。
 その$\mu_2^2$慣性がpointed自己同値で忠実に残ることは
 命題~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}で証明した。
-しかし標的の全慣性の同定、接写像・異なる四窓とrulingを
-忘れたpointed fiberの決定は未解決である。
+さらに定理~\ref{thm:qa-quintuple-h2-generic-etale}と
+系~\ref{cor:qa-quintuple-h2-generic-degree-two}により
+一般開でのétale性・全慣性・pointed fiberの二点性を決定した。
+残るのは特殊cubic点・noncubic境界の慣性変化、
+全体への有限étale二重被覆の延長と分岐、
+異なる四窓・rulingの相対的なcoherentな復元である。
 表示側の$\mu_2^2$は楕円点曲線の翻訳自己同型として
 Picard根の同型類を固定する。
 これに対して四重被覆のdeck型の$E[2]$作用は
@@ -1639,9 +1644,12 @@ $\HHstack$-対象は、選択にかかわらず
 特に滑らかな楕円曲線上の四つのPicard根は、
 \emph{固定quintupleの四つの異なるpointed対象ではない}。
 
-この定理は $\overline{\mathcal F}_{\mathrm{geo}}$ の
+この定理単独では $\overline{\mathcal F}_{\mathrm{geo}}$ の
 表現可能性・全忠実性・幾何ファイバーの有限性、
 およびGIT compactification全体への延長を主張しない。
+一般点での表現可能・étale性と幾何次数二は
+定理~\ref{thm:qa-quintuple-h2-generic-etale}と
+系~\ref{cor:qa-quintuple-h2-generic-degree-two}で別に証明する。
 \end{theorem}
 \begin{proof}
 $\mathscr G^{\mathrm{nl}}$ 上の普遍quintupleは
@@ -1699,7 +1707,9 @@ $k$ 上smoothで、純次元三である。
 その $\HHstack$ への射~\eqref{eq:qa-geometric-cubic-rigid-map}
 は同じ局所次元三のsmooth Artinスタック間の射である。
 この次元の一致は相対射の étale 性や
-pointed同値群の全忠実性を単独で意味しない。
+pointed同値群の全忠実性を\emph{単独では}意味しない。
+実際のsmoothness入力と一般慣性単射を加えると
+定理~\ref{thm:qa-quintuple-h2-generic-etale}のétale性が従う。
 \end{corollary}
 \begin{proof}
 $\mathscr G^{\mathrm{nl}}$ は16次元テンソル空間の
@@ -1716,22 +1726,25 @@ smooth性は群と表示開のsmooth性から従う。
 この数値だけからは従わない。
 \end{proof}
 
-\begin{remark}[残るpointed忘却の具体的な比較]
+\begin{remark}[一般二重被覆から残る相対比較]
 \label{rem:qa-git-next-fiber}
+定理~\ref{thm:qa-quintuple-h2-generic-etale}と
+系~\ref{cor:qa-quintuple-h2-generic-degree-two}により、
+剛体化quintupleから内在的$\HHstack$への忘却は
+滑らかな一般点の稠密開で有限étale次数二であり、
+その接写像は同型、一般慣性は両側$\mu_2^2$となる。
+二枚は二つのnormalized ruling foundationに対応する。
+一方、
 定理~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}
-は、有効potentialと有効quintupleの\emph{表示}スタック間で
-一般四重射を有限étaleかつ慣性同型まで強める。
-これは$\HHstack$への忘却射の表現可能性・
-étale性・次数を含意しない。
-一般quintupleの有限慣性
-~\ref{eq:qa-ou-generic-finite-inertia}がpointed射で
-忠実に残ることは命題
-~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}で確定した。
-次は$\operatorname{Aut}_{\HHstack}(y)$の残る元を分類し、
-$T\overline{\mathcal F}_{\mathrm{geo}}$の
-三次元接写像を実際に計算する。
-続いて四項foundationのmutation/rulingを忘れる
-相対homotopy fiberと、潜在的な新しい自己同値を調べる。
-非対角の全幾何族、noncubic境界および
-$\HHstack$全体のgood moduliの問題は別に残す。
+は\emph{表示}スタック間の次数四射であり、
+Picardの四つの局所半根も追加標識なので、
+これらを二重のpointed忘却と混同しない。
+
+次に必要なのは、二つのnormalized foundationを
+相対的なrank-one torsion-free対象から
+非被約基底も含めてcoherentに構成・降下し、
+この有限étale二重被覆が特殊cubic点で分岐するか、
+noncubic境界でどの表示を失うかを調べることである。
+特殊点の全慣性・pointed 2-fiber、
+$\HHstack$のglobal good moduliへの降下は別課題である。
 \end{remark}
