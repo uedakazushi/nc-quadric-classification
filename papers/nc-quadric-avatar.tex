@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v2.9
+% 日本語 LuaLaTeX。2026-11-22 / v3.0
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -46,18 +46,36 @@
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\coh}{coh}
 \DeclareMathOperator{\qgr}{qgr}
+\DeclareMathOperator{\Qgr}{Qgr}
 \DeclareMathOperator{\Perf}{Perf}
 \DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Supp}{Supp}
-\title{非可換二次曲面の八本・十本・十二本矢表示：\\
-  既存GITとの比較と内在的忘却}
+\title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
+  八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v2.9（spectral積欠損・正規化極限・慣性）}
+\date{2026年11月22日\quad v3.0（AS/avatar分類・十本矢逆mutationを自己完結化）}
 \begin{document}
 \maketitle
 \begin{abstract}
+本稿の第一の主結果は、指定された最小単純射影分解型を持つ
+square/rotated square型AS正則$\mathbb Z$-代数と
+適切な反標準avatarの\emph{同型類の全単射}である。
+AS条件からの階数強制と点Hilbert曲面・Picard線束の抽出、
+任意のavatarからのacyclic spherical helixによるAS--Gorenstein逆構成、
+全整数Serre completionによる互逆性、および左右Noether性を証明する。
+さらに独立に最小分解を課した十本矢型を定義し、
+Ginzburg次数零集中、Keller--Yang mutation、
+全周期の評価・余評価により、
+square型全体とcubic型・最小十本矢型の非交和の全単射を証明する。
+十本矢型のavatar条件は$G\simeq FP$である。
+十二本矢はsquareの有限foundationの八矢と
+四つのrelation-dual戻り矢からなるQP表示であり、
+任意の十二本矢potentialのAS分類を意味しない。
+underlying Z-代数のgroupoidと適切な相対perfect AS族にも
+構成を拡張するが、未修正のstable QP groupoidとは区別する。
+
 非可換二次曲面の四頂点表示について、矢数の変化をモジュライの族として記述する。
 有限 foundation の生成矢、関係の双対を加えた箙、非最小な potential 表示を区別する。
 固定した Hom 次元を持つ有限有向代数の結合律スキームを構成し、
@@ -120,8 +138,11 @@ O-marked heartとの同値はここでは示していない。
 有限directed foundationの行列・scheme-theoreticな復元、
 正負全周期にわたる四つのcanonical exact complexを
 仮定と証明を含めて本稿内に組み直す。
-ただしこの曲線上の完全列だけでは、元のAS $\mathbb Z$-代数の
-相対Noether性や内在的heartとの一致はまだ従わない。
+さらに最小AS分解の必要条件、spherical helixからの全代数の
+逆構成、有限foundationの相互逆性を統合して、
+体上のAS分類の証明を完成させる。
+曲線上の完全列だけから任意基底上の相対AS分類や
+内在的O-marked heartとの同値が従うわけではない。
 幾何側では、$\Sigma_0$ または $\Sigma_2$ 上の反標準因子と
 非自明な $\Pic^0$ パラメータを用い、直積型 square avatar と
 二種類の十本矢 chart の関係を記述する。
@@ -228,7 +249,16 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 \section{Introduction}
 \label{sec:qa-introduction}
 
-本論文の第一の問題は、\textbf{O-marked quadric、potential、avatar}を
+本論文の第一の主定理は、
+\emph{avatarと、最小射影分解型を指定したAS正則$\mathbb Z$-代数}
+の同型類の全単射である。
+その証明は第~\ref{sec:qa-as-avatar-classification}節に、
+十本矢の独立ASクラスとQP表示の正確な関係は
+第~\ref{sec:qa-as10-mutation-classification}節に置く。
+ここでは有限directed foundation、relation-dual QP、
+underlying AS代数、O-marked内在的heartの四水準を混同しない。
+
+本論文の第二の問題は、\textbf{O-marked quadric、potential、avatar}を
 単に隣接する記述として並べるのではなく、
 具体的な同型類の全単射と、それを誘導するモジュライ間の射で結ぶことである。
 特に、potentialの頂点と四項foundation、avatarの二ruling、
@@ -399,6 +429,8 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/foundation_charts}
 \input{quiver-avatar/square_rotated_foundations}
 \input{quiver-avatar/canonical_helix_complexes}
+\input{quiver-avatar/as_helix_classification}
+\input{quiver-avatar/as10_mutation_classification}
 \input{quiver-avatar/avatar_charts}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
