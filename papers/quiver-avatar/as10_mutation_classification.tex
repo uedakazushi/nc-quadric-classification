@@ -229,6 +229,63 @@ $F,G$を入れ替えれば$\mu_F$の主張も得る。
 \end{proof}
 
 
+\begin{lemma}[二捩れ二重壁には非被約因子とcuspidal型が現れない]
+\label{lem:qa-as10-double-wall-reduced-geometries}
+$D\subset\PP^1\times\PP^1$を任意の$(2,2)$ Cartier因子、
+$F=\OO_D(1,0)$、$G=\OO_D(0,1)$とする。
+$P=GF^{-1}\in\Pic^0(D)$が
+非自明な二捩れなら、$D$は\emph{被約}で、
+次の三型のいずれかである：
+滑らかな種数一曲線、既約一節点曲線、
+または二つの$(1,1)$曲線が異なる二点で
+横断的に交わる$I_2$曲線。
+これらの場合の非自明二捩れの個数は、
+それぞれ$3,1,1$である。
+\end{lemma}
+\begin{proof}
+$P\in\Pic^0(D)$なので、
+$D$の任意の既約成分$C$で$\deg_C P=0$。
+$C$の二重次数を$(a,b)$とすれば
+$\deg_C(GF^{-1})=a-b$（二つのrulingの規約を
+交換しても符号が変わるだけ）であり、
+従って$a=b$である。
+$D$の全二重次数は$(2,2)$なので、
+成分の重複度まで含めて可能なのは
+既約$(2,2)$、二つの$(1,1)$、
+あるいは$(1,1)$曲線の二重化だけである。
+
+二重化$D=2C$なら$C\simeq\PP^1$で
+$I_{C/D}\simeq\OO_C(-C)\simeq\OO_{\PP^1}(-2)$、
+$I_{C/D}^{\,2}=0$となる。
+単元の完全列
+$1\to1+I_{C/D}\to\OO_D^\times\to\OO_C^\times\to1$
+と$1+I_{C/D}\simeq(I_{C/D},+)$から
+$\Pic^0(D)\simeq H^1(C,\OO_C(-C))\simeq\mathbb G_a$。
+標数零では非自明二捩れを持たないので除外される。
+
+既約被約$(2,2)$の場合、算術種数は一。
+滑らかなら$\Pic^0(D)$は楕円曲線であり、
+非零二捩れは三点。
+特異なら正規化は$\PP^1$で、
+$\delta=1$だから特異点は普通節点またはcuspである。
+節点の局所貼合せ群は$\mathbb G_m$で
+非零二捩れが一点、cuspでは$\mathbb G_a$となり
+非零二捩れは存在しない。
+
+相異なる$(1,1)$曲線$C_1,C_2$はそれぞれ$\PP^1$で、
+交差scheme$T=C_1\cap C_2$の長さは二。
+単元の貼合せ完全列によれば
+\[
+ \Pic^0(C_1\cup C_2)
+ \simeq H^0(T,\OO_T^\times)/k^\times .
+\]
+$T$が異なる二つの被約点ならこの群は$\mathbb G_m$、
+長さ二の一点なら$1+\epsilon k\simeq\mathbb G_a$。
+従って非零二捩れを持つのは
+二横断交点を持つ$I_2$の場合だけで、
+二捩れは一点である。
+\end{proof}
+
 \begin{proposition}[二つの最小十本矢壁と二捩れ交点]
 \label{prop:qa-as10-double-wall-characterization}
 曲線型square avatar $(D,F,G,P)$ を固定する。
