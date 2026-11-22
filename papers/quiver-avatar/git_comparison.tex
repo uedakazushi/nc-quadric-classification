@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.8（特殊ruling交換点の相対2-fiberと非分岐を確定）
+% 2026-11-22 / v2.9（二つの特別座の全pointed慣性群型を決定）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -679,6 +679,76 @@ ruling交換自己同値を与える。
 上記groupoidの全充満性から$\mu_2^2$である。
 ruling交換成分は存在するときこの部分群とは異なる
 一つの剰余類となるため、全慣性は位数八である。
+\end{proof}
+
+\begin{proposition}[二つの二捩れ特別座での全pointed慣性群の型]
+\label{prop:qa-elliptic-special-inertia-group-types}
+命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}の
+滑らかな許容楕円四つ組が、正則半単純な
+quintuple開に属するとする。
+さらに$j(E)\ne0,1728$とする。
+$\delta,\eta-\delta$の二捩れ性が次のいずれか
+一方だけ成立する場合、対応するpointed対象$y$の
+全幾何的自己同値群はそれぞれ
+\[
+ \begin{array}{c|c}
+ \eta-\delta\in E[2]\setminus\{0\},\
+ \delta\notin E[2] &\Aut_{\HHstack}(y)\simeq C_4\times C_2\\
+ \delta\in E[2]\setminus\{0\},\
+ \eta-\delta\notin E[2] &\Aut_{\HHstack}(y)\simeq C_2^3 .
+ \end{array}
+ \tag{OU-special-I}\label{eq:qa-ou-special-inertia-group-types}
+\]
+ここで$C_m$は位数$m$の巡回群である。
+両二捩れ条件が同時に成り立つ部分や
+$j(E)=0,1728$はこの命題の対象外である。
+
+この群型はスタックのpointed慣性群の抽象型であり、
+その法表現や粗モジュライ空間上の分岐型はまだ指定しない。
+\end{proposition}
+\begin{proof}
+選んだnormalized foundationを保つ自己同値群は、
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}より
+$H\simeq E[2]$であり、楕円点曲線上では二捩れ平行移動として
+忠実に作用する。群oidの全充満性により、これが
+全自己同値群$A$の指数二部分群である。
+命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}は、
+二つのfoundationを交換する成分が
+\[
+ \epsilon(\delta)=\delta,\qquad
+ \epsilon(\eta)=2\delta-\eta,\qquad \epsilon\in\{1,-1\}
+\]
+で特徴付けられることを示す。
+
+まず$\eta-\delta$が非零二捩れで
+$\delta\notin E[2]$の場合、$\epsilon=1$しかない。
+ruling交換を誘導する曲線自己同型はtranslation
+$t_v$であり、最初の次数二線束
+$L_0\mapsto L_0L_1L_2^{-1}$の比較から
+$2v=\pm(\eta-\delta)\ne0$である。
+よって$v$は位数四で、$v^2$に相当する二倍点
+$2v$は$E[2]$の非零元である。
+この交換自己同値と$H=E[2]$は全てtranslationなので
+可換であり、生成する位数八の群は
+$C_4\times C_2$となる。
+
+次に$\delta$が非零二捩れ、
+$\eta-\delta\notin E[2]$の場合は$\epsilon=-1$しかない。
+交換自己同値の曲線上の作用は$t_v\circ[-1]$であり、
+その二乗は恒等である。
+$E[2]$の平行移動と共役したときの線型作用は
+$-1$だが、$E[2]$上では恒等である。
+したがってその交換自己同値は$H$と可換で、
+位数二を持つ。
+以上の曲線作用がpointed自己同値を忠実に検出することを
+確認する。$H$上の作用は平行移動の忠実性で検出できる。
+もし$A$の元が曲線上恒等でありながらfoundationを交換するなら、
+対応する四つ組$U$と$R(U)$が恒等曲線射によって同型となるが、
+その第一線束はそれぞれ$L_0$と$L_0L_1L_2^{-1}$で、
+$\eta\ne\delta$により同型でない。
+従って核は存在しない。
+この忠実性から反転型の交換自己同値は実際にも
+二乗が恒等であり、$A\simeq C_2^3$が従う。
 \end{proof}
 
 \begin{proposition}[ruling交換特別点のstack的2-fiberは二点のまま]
