@@ -142,6 +142,31 @@ $R\to R'$ は faithfully flat である．与えられた全射を引き戻す�
 $D(\operatorname{Ind}\mathcal C)$ に対する Morita 表示を使っていない．
 \end{proof}
 
+\begin{remark}[AZ生成における構造対象の位置と二段presentation]
+\label{rem:qa-relative-az-noninitial-structure}
+命題~\ref{prop:qa-relative-flat-foundation-az}では，
+指定構造対象$\mathcal O$が$T$のいずれかの
+直和因子であればよく，先頭の因子である必要はない．
+実際，AZ1は$\mathcal O$の直和因子性のみを使い，
+AZ2の証明は各$E_i$から十分前向きの
+$t^m\mathcal O$への高次Ext消滅のみを使う．
+二回の$\mathcal O$-軌道対象からの表示
+$0\to L\to P\to K\to0$，
+$0\to L'\to P'\to L\to0$は
+$\operatorname{Ext}^1(E,P)=
+ \operatorname{Ext}^2(E,P')=
+ \operatorname{Ext}^3(E,L')=0$
+から$\operatorname{Ext}^1(E,K)=0$を与える．
+最後の消滅には平坦compact始域の
+補題~\ref{lem:qa-flat-compact-ext-two}を使い，
+基底の絶対大域次元二は仮定していない．
+従ってこれは反対normalの第一頂点が
+強い$H_2$ pointingでなくても，
+他の頂点に適合構造対象を含む場合に適用できる．
+ただし全ての候補対象が\emph{同じ相対heart}の
+基底平坦compact対象であることは別途確認しなければならない．
+\end{remark}
+
 \subsection{相対square完成の標準tails心}
 \label{subsec:qa-relative-square-tails-heart}
 
