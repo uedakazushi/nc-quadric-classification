@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.41。rank三壁の反対normal H2障害を明示し左Noether主張を限定。
+% 2026-11-23 / v4.42。反対normalのdual square heartと非先頭基準点による左Noether証明。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1554,6 +1554,140 @@ $\operatorname{rk}M_{\widehat f}
 これは有理数の有限行列計算でも独立検算できる．
 \end{proof}
 
+\begin{lemma}[反対normalの双対square heartへの実現と左Noether性]
+\label{lem:qa-q12-opposite-normal-dual-heart-az}
+本稿の$H_2$実現可能開上で，
+square四項を$(E_0,E_1,E_2,E_3)$，
+そこからのnormal四項を
+\[
+ X=(E_0,E_2,E_3,Z_1),\qquad
+ Z_1=\operatorname{Cone}
+ (E_1\to\operatorname{Hom}(E_1,E_3)^\vee\otimes E_3)
+\]
+とする．$\Lambda=\operatorname{End}(\bigoplus X_i)$を取る．
+命題~\ref{prop:qa-square-opposite-cross-involution}
+による反対squareが定める相対$H_2$ heartを
+$\mathcal C^\vee$とし，その構造対象を$Q_0$，
+反Serre関手を$t^\vee$と書く．
+有限perfect反同値
+$\mathbb D=\mathbf R\operatorname{Hom}
+(-,\operatorname{End}(\oplus E_i))$の下で
+$Q_i=\mathbb D E_{3-i}$と同定する．
+すると逆順双対normal四項
+\[
+ Y=(\mathbb D Z_1,Q_0,Q_1,Q_3)
+ \tag{ON}\label{eq:qa-q12-opposite-normal-dual-window}
+\]
+は，全て$\mathcal C^\vee$の基底平坦compactな
+heart対象からなる相対full strong tilting foundationであり，
+有限Endは$\Lambda^{\mathrm{op}}$である．
+$Y$の最初の対象$\mathbb D Z_1$が
+強い$H_2$ pointingを与えることは要求しない．
+実際，一重rank三壁では命題~
+\ref{prop:qa-q12-opposite-normal-rank-three-obstruction}
+によりその条件は失敗する．
+
+$(\bigoplus Y_i,t^\vee)$は
+$\mathcal C^\vee$の相対AZ ample pairであり，
+その通常の反Serre完成
+$C(\Lambda^{\mathrm{op}})$は
+本稿の局所有限型siteの各affine test上で右Noetherianとなる．
+従って$C(\Lambda)$は左Noetherianである．
+同定は本稿で許す非被約・非平坦な基底変更とも整合する．
+\end{lemma}
+\begin{proof}
+反対squareは命題~
+\ref{prop:qa-square-opposite-cross-involution}
+により$V_{\mathrm{cross}}$内の実際の相対族であり，
+補題~\ref{lem:qa-classified-fiber-finite-square-recognition}
+を通じて$\mathcal C^\vee$とその四対象$Q_i$が存在する．
+この四項は基底平坦compactである．
+他方，元のsquareから得たnormalの相対coneは
+任意基底変更と可換し，$X_i$は相対full strong
+tilting foundationである．
+perfect反同値で逆順にすれば$Y$もfull strongで，
+そのEndが$\Lambda^{\mathrm{op}}$となる．
+
+heart所属を調べるため
+\[
+ K=\mathbb D(t^{-1}Z_1)
+\]
+と置く．
+各幾何fiber上でのAS squareの全整数評価・逆mutation
+（補題~\ref{lem:qa-as10-all-index-mutual-inverse}）
+を反対圏へ移すと，
+$K$は反対squareのもう一方のnormal cone
+\[
+ Z_2^\vee=
+ \operatorname{Cone}\bigl(
+ Q_2\to\operatorname{Hom}(Q_2,Q_3)^\vee\otimes Q_3
+ \bigr)
+\]
+と同型である．この比較は古典fiberも含む．
+$Z_2^\vee$はsquare/normalの相対mutation
+（定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}）
+および全$H_2$の実現可能開によって，
+実際に$\mathcal C^\vee$の基底平坦compact対象である．
+$K$も相対perfectであるから，
+補題~\ref{lem:qa-relative-exceptional-line-comparison}
+の線束値評価を使うと，
+ある可逆層$L$について相対同型
+$K\simeq Z_2^\vee\otimes L$を得る．
+従って$K$は同じheart内にある．
+相対反同値の周期公式
+（補題~\ref{lem:qa-relative-dual-reverses-antiserre}）
+は$\mathbb Dt^{-1}\simeq t^\vee\mathbb D$なので
+\[
+ \mathbb DZ_1\simeq(t^\vee)^{-1}K
+\]
+である．$t^\vee$はheart上の完全自己同値であり，
+$\mathbb DZ_1$も基底平坦compactなheart対象となる．
+これで$Y$の全項の所属を確認した．
+
+重要なのは，$\bigoplus Y_i$が構造対象
+$Q_0=\mathbb DE_3$を\emph{二番目の直和因子として}
+含むことである．
+従って相対AZ生成条件AZ1は$\mathcal C^\vee$の
+$(Q_0,t^\vee)$から従う．
+残るAZ2の入力を独立に確認する．
+$n\ge1$，$X_i\in(E_0,E_2,E_3,Z_1)$に対して
+反同値の全忠実性・周期公式から
+\[
+ \mathbf R\operatorname{Hom}_{\mathcal C^\vee}
+   (\mathbb DX_i,(t^\vee)^nQ_0)
+ \simeq
+ \mathbf R\operatorname{Hom}_{\mathcal C}
+   (E_3,t^nX_i)
+ \tag{OD}\label{eq:qa-q12-dual-normal-forward-ext}
+\]
+を得る．右辺は正規四周期helixにおいて，
+$E_3=X_2$から$X_{i+4n}$への前向きHomである．
+$i+4n\ge4>2$なので，論文Aの
+\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}
+により正次数Extは全て消える．
+相対perfect-fiber判定を用いると，
+この消滅は任意の非被約底・基底変更にも成立する．
+
+以上を命題~\ref{prop:qa-relative-flat-foundation-az}
+に，基準対象を$Q_0$に取って適用する．
+同命題の証明は$Q_0$を直和因子とすることだけを用い，
+その因子が四項の先頭であることは要求しない．
+従って$(\bigoplus Y_i,t^\vee)$は相対AZ ampleである．
+有限Endは$\Lambda^{\mathrm{op}}$であり，
+全coherent Homの有限性も相対$H_2$公理から従う．
+一般End環版のArtin--Zhang再構成
+\cite[Theorem 4.5(1)]{AZ1994}
+（または\cite[Theorem 7.3]{OACU2026}）
+により$C(\Lambda^{\mathrm{op}})$は右Noetherianである．
+補題~\ref{lem:qa-serre-completion-opposite}の
+\[
+ C(\Lambda^{\mathrm{op}})\simeq C(\Lambda)^{\mathrm{op}}
+\]
+から$C(\Lambda)$の左Noether性が従う．
+この証明は\emph{反対normalの零番頂点}への
+$H_2$認識を使っていない．
+\end{proof}
+
 \begin{theorem}[H2実現可能開上の全次数・同じheartの比較]
 \label{thm:qa-two-mass-h2-locus-jacobian-heart}
 前定理の相対QP群oidを，有限foundationが
@@ -1582,7 +1716,7 @@ preprojective次数の全$n\geq0$について
 \]
 である．
 本稿の局所有限型siteのaffine test上では
-Jacobian algebraは右Noetherianであり，
+Jacobian algebraは左右Noetherianであり，
 \[
  \boxed{\quad
  \bigl(\qgr\operatorname{Jac}(Q_{12},\mathcal W),
@@ -1649,22 +1783,14 @@ normal foundationは構造対象$\mathcal O_S$を含み，
 したがって$(T,t)$は相対AZ ampleであり，
 通常軌道環は右Noetherianかつその$\qgr$は
 実際の$\mathcal C_S$に同値である．
-左Noether性についてはこの証明からは結論しない．
-反対squareのSerre完成は
-系~\ref{cor:qa-relative-square-completion-two-sided-noetherian}
-によって左右Noetherianであるが，
-反対\emph{normal}四項が同じ$H_2$ pointingを
-持つことは命題~
-\ref{prop:qa-q12-opposite-normal-rank-three-obstruction}
-によって一重rank三壁で否定される．
-従って反対normalに相対$H_2$のAZ補題を
-そのまま適用して左Noether性を推論することはできない．
-反対normalの実際の心内性・豊富性を別の対象を
-基準として証明するか，有限mutationの下での
-左右Noether性を直接示すことが残る．
-右Noether性と右$qgr$のpointed exact認識は
-前段の相対AZ議論で成立しており，
-この不足には依存しない．
+左Noether性は補題~
+\ref{lem:qa-q12-opposite-normal-dual-heart-az}により
+別の経路から得る．
+その証明は反対squareの構造対象$Q_0$を
+反対normal四項の\emph{二番目}の頂点として保持し，
+相対AZ ample性を検証するものである．
+反対normalの零番頂点自体が強い$H_2$ pointingを
+与えるという誤った推論は使わない．
 各cone・対角解消は有限束から構成され，
 許された基底変更と整合する．
 最小矢束のflat性は仮定しない．
