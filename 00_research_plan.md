@@ -43,15 +43,24 @@ $\nu_*(O_{\mathbf P^1}(-1)\oplus O_{\mathbf P^1}(-1))$（非単純、End=$k^2$�
 $\mu_2,\mu_2^2$（C prop:qa-spectral-product-defect、
 thm:qa-spectral-three-fiber-limits、cor:qa-spectral-pair-finite-inertia）。
 **したがって simple sheaf の fine compactified Jacobian のみでは I2 を受けられない。**
-次は $(C,M,\mu)$ の相対groupoid・基底変更・偏極と
-noncubic O-marked stack の慣性を比較する。
+さらに相対groupoid $\mathfrak{TF}^{quad}$ を
+曲線束・有限二重被覆・相対平坦rank-one torsion-free層・
+fiberwise自己双対な二次積の組として定義し、
+論文Bの二形式表示商 $[P/G]$ から
+$\mathfrak{TF}^{quad}$ への fppf 相対射を構成した
+（C prop:qa-spectral-quadratic-stack-map）。
+係数スカラー群・二形式交換・同時斉次スカラー $D$ に対する
+同変性を確認した。標的のArtin性・finite type性や
+この射の全忠実性、O-marked heartとの同値は未証明である。
+次はこの相対射のfiber・慣性・変形・偏極条件と
+noncubic O-marked stack を比較する。
 既知の一般 compactified Jacobian 理論（Altman--Kleiman,
 Christ--Payne--Shen）と明示積計算を区別し、新規性の包括確認は未実施。
 次の実際の研究は、base change後のsemistable model・compactified Picard・elementary transformのどれで
 正しい相対groupoidへ到達するかを絞り、有限foundationのSerre作用・元のAS qgr heartの比較を優先する。
 この追加結果の数学的な独立全面監査、公開一次文献との包括比較、Cの全組版は未実施であり、コード・静的参照検査と区別する。
 
-**P5：三者対応の相対化と境界認識。** (i) 根対→spectral $(C,M,\mu)$ の相対射を、節点で非局所自由なMの全rank-one torsion-free stackと二次積欠損の幾何として解析し、元のsquare/Σ2上の反標準avatarへelementary transformで移せるか証明する。(ii) 非cubic平方根環B_fのAS qgrとavatar由来AS代数のheartが同じO-marked対象になる必要十分条件・自己同値群/慣性を検証する。(iii) 8/10/12本矢の統一potentialの消去可能pairとスカラー慣性を正しく商に組み込み、相対モジュライ射を作る。(iv) cubicのVdB↔squareとの境界接合、P=0可換点の収縮、Σ2最深のO-marked適合性を解決する。 **Σ₂の幾何全単射をavatar由来AS代数のqgr heartの直接同定で検証すること、および節点で非自由なspectral moduleをelementary transform/compactified Picardで相対可逆化することを最優先にする。**
+**P5：三者対応の相対化と境界認識。** (i) 構成済みの根対→spectral $(C,M,\mu)$ fppf相対射の全忠実性・慣性・変形と対象となるtorsion-free二次積stackの代数性を解析し、元のsquare/Σ2上の反標準avatarへelementary transformで移せるか証明する。(ii) 非cubic平方根環B_fのAS qgrとavatar由来AS代数のheartが同じO-marked対象になる必要十分条件・自己同値群/慣性を検証する。(iii) 8/10/12本矢の統一potentialの消去可能pairとスカラー慣性を正しく商に組み込み、相対モジュライ射を作る。(iv) cubicのVdB↔squareとの境界接合、P=0可換点の収縮、Σ2最深のO-marked適合性を解決する。 **Σ₂の幾何全単射をavatar由来AS代数のqgr heartの直接同定で検証すること、および節点で非自由なspectral moduleをelementary transform/compactified Picardで相対可逆化することを最優先にする。**
 
 **直ちに着手する一手：** 全noncubic Σ₂ avatarの元AS Z代数とBの中央二重平方B_fについて、有向End代数・反Serre環・O-pointingを比較する。並行してnodalのA1反不変reflexive sheafをelementary transformしてΣ₂側Pic⁰の相対線束へ移す構成を研究する。三者対応の射・慣性に直結しない周辺計算は優先度を下げる。
 
