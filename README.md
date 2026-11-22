@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.41、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.30。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.42、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.30。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **最上位目標：論文Cの完成。** [研究方針C1–C4](00_research_plan.md#最上位目標論文cの完成2026-11-23) に従う。**C1・C2は原稿上達成。C3はH2実現可能開全体のQP→finite foundation→Jacobian/Serre→pointed heartと二ruling mutation商まで原稿上到達。H2外の全AS/avatar/QP stack分類は未完、C4の独立監査・新C全稿LuaLaTeX組版も未完了。** C3では二massに沿う滑らかなゲージ群 `U_λ×U_μ` と相対対角解消から、ordinary Jacobianをcanonical Serre completionと全次数・非被約基底を含めて比較した。二段剛体化の後の相対商はruling付きH2と一致し、ruling交換はright-equivalenceでなくcoherentな相対mutationにより貼り合う。今後はまず新C3定理の独立数学監査、Keller訂正条件とAZ/Noether/非被約base-change、次にC4の先行研究比較・組版を最優先する。A/Bは必要な論理的入力として扱う。
 
@@ -54,7 +54,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 
 ### 二massのQPから全H2への相対groupoidと反Serre完成
 
-共通十二矢potential `W=H+yq+px+vq'+p'u+λyx+μvu` の全fppf群oidからrank24 finite foundationの全積を復元する。余剰慣性は滑らか・平坦な `U_λ×U_μ`（`U_λ=Spec R[t,(1+λt)^(-1)]`）であり、両rank3壁ではGa²、両mass可逆でGm²。相対短対角解消のEuler階数は(68,52,8)→24で、ordinary relation idealを生成することを確認し、訂正済みKellerのrelation QP表示から `Jac(Q12,W)≅H⁰Π₃(Λ)` を導いた。**全H2実現可能開**ではnormal tiltingと反Serreの全次数forward Ext消滅により `Jac_n≅Hom(T,tⁿT)`、階数 `64n²+64n+24`、左右Noether性、同じpointed `qgr` heartの認識を得る。massゲージと頂点Gm³を順に剛体化すれば`H₂^rul`、coherentなruling mutationのS₂商が`H₂`。両cubic chartは一般にright-equivalenceで直接貼れない。**H2外のraw QPのAS正則性は主張せず、全AS/avatar stackの無条件比較にも拡張しない。** [主証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)、[対角・Euler検算](computations/verify_q12_diagonal_euler.py)。新C3の独立数学監査・全稿組版は未実施。
+共通十二矢potential `W=H+yq+px+vq'+p'u+λyx+μvu` の全fppf群oidからrank24 finite foundationの全積を復元する。余剰慣性は滑らか・平坦な `U_λ×U_μ`（`U_λ=Spec R[t,(1+λt)^(-1)]`）であり、両rank3壁ではGa²、両mass可逆でGm²。相対短対角解消のEuler階数は(68,52,8)→24で、ordinary relation idealを生成することを確認し、訂正済みKellerのrelation QP表示から `Jac(Q12,W)≅H⁰Π₃(Λ)` を導いた。**全H2実現可能開**ではnormal tiltingと反Serreの全次数forward Ext消滅により `Jac_n≅Hom(T,tⁿT)`、階数 `64n²+64n+24`、左右Noether性、同じpointed `qgr` heartの認識を得る。massゲージと頂点Gm³を順に剛体化すれば`H₂^rul`、coherentなruling mutationのS₂商が`H₂`。両cubic chartは一般にright-equivalenceで直接貼れない。**H2外のraw QPのAS正則性は主張せず、全AS/avatar stackの無条件比較にも拡張しない。** [主証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)、[Euler検算](computations/verify_q12_diagonal_euler.py)、[24次元noncubic有理数モデルの双加群対角複体を直接検査するコード](computations/verify_q12_bimodule_diagonal.py)。指定標本では複体の項が68,52,8次元、微分rankが44,8で全完全性を確かめた。これは一般相対証明の検証ではない。新C3の包括的独立数学監査・全稿組版は未実施。
 
 
 ### Gram pencilによる大域good moduliの明示表示
