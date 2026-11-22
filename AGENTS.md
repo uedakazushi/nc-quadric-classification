@@ -1,12 +1,24 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.03。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.7。
+2026-11-22 / v1.04。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.8。
 
 ## 公表用三論文への再編（確定方針）
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：主原稿 `papers/quiver-avatar-moduli.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによるavatarへ戻す構成と元AS avatarの$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。 全noncubic O-marked幾何同型類≅Σ₂のD∈|−K|,D∩S=∅,0≠P∈Pic⁰(D)[2]の同型類もCに証明。Bのχ=1二点はnodal/I2で区別。次はAS avatarのqgr heartの直接同値と相対elementary transformを検証する。
+
+**論文Cの必須参照と現在の障害。**
+添付の大川--植田v7 Parts I--IIで必要な反標準曲線消滅・二pencil・square/rotated変換・
+finite directed foundationのscheme復元を `papers/quiver-avatar/square_rotated_foundations.tex`、
+四項canonical exact complexと周期式を `papers/quiver-avatar/canonical_helix_complexes.tex` に
+証明ごと組み込んだ。曲線上の証明と、全AS Z代数のNoether性・相対標準heart/O同値は区別する。
+共有根A1の反不変moduleを同じ基底上で最小解消すると例外曲線への次数が奇数となるため、
+垂直Cartier twistだけでは多重次数零の相対Picard線束にできない
+（`papers/quiver-avatar/nodal_resolution_obstruction.tex`、検算は `computations/verify_nodal_exceptional_parity.py`）。
+次はこの障害を避ける正確なbase change / compactified Picard / 相対elementary transformを研究し、
+原AS avatarのqgr heartとpointed O-markingの直接比較を証明する。
+証明済みの体上全単射を非被約底の相対射へ読み替えない。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 
