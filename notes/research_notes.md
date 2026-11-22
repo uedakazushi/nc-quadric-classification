@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.50（A v1.69・20節、B v0.41・31節、C v4.43）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.51（A v1.69・20節、B v0.41・31節、C v4.43）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
@@ -30,7 +30,7 @@
 
 **冪零massでの慣性群の加法化。** $\lambda^N=0$かつ基底が$\mathbb Q$代数なら$\mathcal U_\lambda=\operatorname{Spec}R[t,(1+\lambda t)^{-1}]$は$z=\sum_{j=1}^N(-1)^{j-1}\lambda^{j-1}t^j/j$で$\mathbb G_a$に同型（逆は$t=\sum_{j=1}^N\lambda^{j-1}z^j/j!$）。$\lambda=\epsilon,\epsilon^2=0$では$z=t-\epsilon t^2/2$。二massがともに冪零なら局所ゲージは$\mathbb G_a^2$となる。これは全mass軸のGm/Ga遷移やgerbeの大域自明化を主張しない。証明は[C3のnilpotent log補題](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。一般係数での相対対角分裂・ordinary idealは一般補題で原稿上証明済み。双対dg模型とcyclic derivativeの明示式もC原稿上追加した。次は関係lift・同型層のcoherent降下、左右Noether/同じheart・ruling mutationをさらに監査する。
 
-**数値検算。** 数値Eulerの16頂点対で総階数(68,52,8)→24、normal Serreの全次数式 `64n²+64n+24` はSymPyの整数・記号計算で独立検算した。[再現コード](../computations/verify_q12_diagonal_euler.py) をGitHubに記録したが、当該GitHubファイルの再取得・同一byte実行は未実施。数値は対角複体の完全性やfppf同値の形式証明ではない。Keller ordinary idealと相対対角の全基底変更・normal反対代数からの左Noetherは現行Cの証明を入口に監査済み。次は全IsomとS2/coherent heartを独立監査し、C4の一次文献比較・LuaLaTeX全稿組版・PDF表示を実行する。H2外の一般AS/avatar表示の分類の追加可能性は独立に評価する。
+**数値検算。** 数値Eulerの16頂点対で総階数(68,52,8)→24、normal Serreの全次数式 `64n²+64n+24` はSymPyの整数・記号計算で独立検算した。[再現コード](../computations/verify_q12_diagonal_euler.py) の現行GitHub blob SHA `8b5d72e6ce31792a665781b4ca560207d9b4a99d` と同一byteのファイルを読み戻してPython 3で直接再実行した。16頂点対Euler・Serreの全$n$記号式・古典dual normalの非先頭構造対象$Q_0$とKünneth高次Ext消滅の三検査は全てPASS。これは他の検算スクリプトの同一byte実行を意味しない。数値は対角複体の完全性やfppf同値の形式証明ではない。Keller ordinary idealと相対対角の全基底変更・normal反対代数からの左Noetherは現行Cの証明を入口に監査済み。次は全IsomとS2/coherent heartを独立監査し、C4の一次文献比較・LuaLaTeX全稿組版・PDF表示を実行する。H2外の一般AS/avatar表示の分類の追加可能性は独立に評価する。
 
 ## 全H2のGram pencil不変式環と明示good moduli
 
