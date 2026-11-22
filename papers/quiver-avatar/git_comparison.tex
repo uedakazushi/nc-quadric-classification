@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.5（OU z2座標とPicard根の明示対応、Kummer障害を追加）
+% 2026-11-22 / v0.6（OU S4/S3作用群訂正・twisted torsorの相対定式化）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -171,54 +171,172 @@ $g\in\operatorname{Aut}_{\mathfrak Y}(y)$ の形である。
 
 \subsection{次数四射の $S_4$-monodromy と Picard 平方根}
 
-\begin{proposition}[OU次数四射の一般Galois閉包]
+\begin{proposition}[OU四重射の全符号群と一般 Galois 閉包]
 \label{prop:qa-ou-fourfold-s4-monodromy}
-標数零の代数閉体上で、Okawa--Ueda \cite[\S5, (5.8)]{OU2014}
-のGIT有限射を、対角化による稠密な一般開で考える。
-同論文の表示は
+Okawa--Ueda \cite[\S5, (5.8)]{OU2014} の
+potential GIT から quintuple GIT への有限射は、
+対角化後の表示で
 \[
- \PP^3/S_3\longrightarrow
- \PP^3/\bigl(S_3\ltimes(\mathbb Z/2)^3\bigr)
+ \PP^3/S_4^{\mathrm{coord}}
+ \longrightarrow
+ \PP^3/\bigl((\mathbb Z/2)^3\rtimes
+                    S_4^{\mathrm{coord}}\bigr)
  \tag{OU-4}\label{eq:qa-ou-fourfold-diagonal}
 \]
-であり、$\PP^3$ では同時符号反転が自明に作用する。
-従って有効な符号変更群と全群はそれぞれ
+である。ここで $(\mathbb Z/2)^3$ は四座標の
+\emph{偶数個の符号変更}からなる群であり、
+同時に全四座標を反転する元は $\PP^3$ 上自明に作用する。
+従って有効符号群と有効全群は
 \[
- \Gamma=(\mathbb F_2)^3/
-   \langle(1,1,1)\rangle\simeq(\mathbb F_2)^2,\qquad
- G=\Gamma\rtimes S_3\simeq\operatorname{AGL}_2(\mathbb F_2)
- \simeq S_4.
+ V=\bigl\{(\epsilon_1,\ldots,\epsilon_4)\in\mathbb F_2^4:
+             \textstyle\sum_i\epsilon_i=0\bigr\}
+        /\langle(1,1,1,1)\rangle
+   \simeq\mathbb F_2^2,\qquad
+ G=V\rtimes S_4^{\mathrm{coord}},\quad |G|=96.
+ \tag{OU-G}\label{eq:qa-ou-projective-effective-group}
 \]
-$S_3$ は $\Gamma$ の三つの非零元を置換する標準的な
-$\operatorname{GL}_2(\mathbb F_2)$-作用を持つ。
-一般の射~\eqref{eq:qa-ou-fourfold-diagonal} は次数四で、
-\emph{Galois射ではなく}、その関数体拡大のGalois閉包の群は $S_4$ である。
-$\Gamma$ を自明化する表示の方へ引き戻した場合にのみ、
-$\Gamma$-torsorとしての四点の符号変更を直接見ることができる。
+$S_4^{\mathrm{coord}}$ の $V$ への作用は、
+四点を二組へ分ける三つの分割の置換作用を通じて
+\[
+ S_4^{\mathrm{coord}}\twoheadrightarrow
+ \operatorname{GL}_2(\mathbb F_2)\simeq S_3
+\]
+へ因数分解し、その核は
+\[
+ K_4=\{1,(12)(34),(13)(24),(14)(23)\}\simeq(\mathbb Z/2)^2.
+\]
+一般位置の関数体拡大
+$k(\PP^3)^{S_4^{\mathrm{coord}}}/k(\PP^3)^G$
+は次数四で、非 Galois であり、その Galois 閉包の群は
+\[
+ G/K_4\simeq V\rtimes\operatorname{GL}_2(\mathbb F_2)
+ \simeq\operatorname{AGL}_2(\mathbb F_2)
+ \simeq S_4^{\mathrm{mon}}.
+ \tag{OU-mon}\label{eq:qa-ou-galois-closure-s4}
+\]
+従って座標を置換する $S_4^{\mathrm{coord}}$ と
+四枚のsheetのmonodromy群 $S_4^{\mathrm{mon}}$ は、
+同じ抽象群でも異なる役割を持つ。
 \end{proposition}
 \begin{proof}
-$\mathbb F_2^3$ の標準基底の剰余類を $e_1,e_2,e_3$ とする。
-商 $\Gamma$ では $e_1+e_2+e_3=0$ なので、
-三つはまさに非零元である。$S_3$ がこれらを置換する作用は忠実で、
-$\operatorname{Aut}_{\mathbb F_2}(\Gamma)
-=\operatorname{GL}_2(\mathbb F_2)$ は位数六なので同型となる。
-$\Gamma$ の四元上への平行移動とこの線型作用を合わせた
-$G$ は四元上の忠実で推移的な位数 $4\cdot6=24$ の置換群、
-従って $S_4$ である。
-$H=S_3$ は原点の安定化群で、$[G:H]=4$。
-標数零の一般対角座標はこの有限群作用に対し自明な
-幾何安定化群を持つので、
-関数体拡大 $k(\PP^3)^H/k(\PP^3)^G$ の次数は四である。
-$H$ の $G$ における core（全共役の共通部分）は、
-四元上の推移作用の核と一致し、忠実性から自明である。
-従ってこの非正規拡大のGalois閉包は $k(\PP^3)$ であり、
-Galois群は $G\simeq S_4$ となる。
-最終のtorsorに関する文は、
-$H$ の選択を消した一般の基底では
-$\Gamma$ が一定群として作用する四重Galois被覆を
-無条件に得られない、という意味である。
-置換群の全24元とcoreは
-\path{computations/verify_ou_fourfold.py} で再現できる。
+OUの式~(5.8)は明確に $S_4$ と偶数符号群 $(\mathbb Z/2)^3$
+を用いている。同時反転の中心二元を割ると
+式~\eqref{eq:qa-ou-projective-effective-group} の $V$ と
+$G$ が得られる。非零の $V$ の三元は、四点集合を二対に分ける
+$\{12|34,13|24,14|23\}$ と同一視される。
+その置換に対する $S_4$ の核は上記 $K_4$ である。
+
+$H=S_4^{\mathrm{coord}}\subset G$ とする。
+$G/H$ は四元集合 $V$ と同一視され、
+$(v,\sigma)\in V\rtimes H$ は $u\in V$ に
+$u\mapsto v+\sigma(u)$ と作用する。
+この作用の核は $K_4$ なので、像は
+$V\rtimes\operatorname{GL}_2(\mathbb F_2)$、
+位数 $4\cdot6=24$ の四元上忠実な置換群である。
+従って像は $S_4^{\mathrm{mon}}$ に等しい。
+一般の対角座標で $G$ の射影作用の安定化群は自明だから、
+有限群不変体の次数は $[G:H]=4$ となる。
+$H$ の全共役の共通部分 $\operatorname{Core}_G(H)$ は、
+$G/H$ への置換作用の核 $K_4$ である。
+従って関数体拡大の Galois 閉包は
+$k(\PP^3)^{K_4}$ で、その Galois 群は $G/K_4$。
+位数・核・四元への全置換は
+\path{computations/verify_ou_fourfold.py} で検算できる。
+\end{proof}
+
+\begin{proposition}[OU四重射の自然なtwisted $V$-torsor構造]
+\label{prop:qa-ou-twisted-fourfold-torsor}
+$X\subset\PP^3$ を、上の $G$ が自由に作用する
+非空な $G$-不変開部分とし、$B=X/G$、
+$Y=X/H$ と置く。
+$G$ の $V$ への線型作用
+$(v,\sigma):u\mapsto\sigma(u)$ を使い、
+$B$ 上の有限 étale 群スキーム
+\[
+ \mathcal V=X\times^{G}V_{\mathrm{lin}}
+ \tag{OU-V}\label{eq:qa-ou-twisted-sign-local-system}
+\]
+を定める。このとき $Y\to B$ は有限 étale 次数四であり、
+自然に $\mathcal V$-torsorである。
+特に、単なる四点集合ではなく、OU四重射には
+$\mathcal V$-torsor class
+\[
+ [Y]\in H^1_{\acute et}(B,\mathcal V)
+ \tag{OU-class}\label{eq:qa-ou-torsor-class}
+\]
+が定義される。
+一般に$\mathcal V$は定数群スキームではなく、
+その線型monodromyは $S_3\simeq\GL_2(\mathbb F_2)$ である。
+\end{proposition}
+\begin{proof}
+有限群の自由作用の商 $X\to B$ は有限 étale
+$G$-torsorである。
+$G/H\simeq V$ の同一視の下で
+$g=(v,\sigma)\in G$ は $V$ に
+$u\mapsto v+\sigma(u)$ で作用する。
+従って $Y\simeq X\times^G V_{\mathrm{aff}}$ である。
+$V$ の平行移動作用
+$(t,u)\mapsto t+u$ は、$G$ の線型作用とアフィン作用に対し
+\[
+ g(t+u)=\sigma(t)+g(u)
+\]
+を満たすから、$X$から降下して
+$\mathcal V\times_B Y\to Y$ を与える。
+$X$ 上でこの作用は四元集合 $V$ への自由かつ推移的な
+平行移動作用であるため、降下後もtorsorになる。
+$\mathcal V$ の線型monodromyは
+$G\to\GL(V)$ の像であり、前命題より $S_3$ である。
+\end{proof}
+
+\begin{remark}[四点分岐曲線の二捩れ局所系との対応]
+\label{rem:qa-ou-ramification-2torsion-local-system}
+対角値 $x_1,\ldots,x_4$ を順序付けた開 $X$ 上では、
+四点分岐を持つ種数一曲線
+$E_{\mathrm{sp}}:\ y^2=\prod_{i=1}^4(t-x_i)$
+を考えられる（各 $x_i$ が相異なる開に制限する）。
+この曲線の $2$-torsion は
+四分岐点の偶数個の部分集合を全体集合との補集合で
+同一視した $V$ と一致し、
+$S_4^{\mathrm{coord}}$ が三つの非零点を置換する作用も
+式~\eqref{eq:qa-ou-projective-effective-group} と一致する。
+従ってpotential側で座標の符号変更を固定した後の
+OU符号局所系には、この分岐曲線の$E_{\mathrm{sp}}[2]$という模型がある。
+しかし偶数符号変更は一般に分岐点集合
+$\{x_1,\ldots,x_4\}\subset\PP^1$ 自体を変える。
+従って、この\emph{曲線}を何の比較もなく
+quintuple側の $B$ に降下させたり、
+論文Bの geometric quintuple の点曲線 $C$ と
+同一視したりしてはならない。
+確定したのは符号群の線型局所系 $\mathcal V$ である。
+\end{remark}
+
+\begin{corollary}[OU classとPicard Kummer classの正確な比較条件]
+\label{cor:qa-ou-picard-h1-criterion}
+$S\to B$ を滑らかな非線型geometric quintupleの
+有限型基底への射とし、その相対点曲線のJacobianを
+$E=\Pic^0_{C/S}$、$N=\mathcal L_2\mathcal L_0^{-1}$ とする。
+$S$ 上の有限 étale 群スキームの\emph{実際の同型}
+\[
+ \varphi:\mathcal V_S\xrightarrow{\sim}E[2]
+\]
+が構成された場合には、OU四重射の引戻しと
+適合Picard根空間 $T_N$ が$E[2]$-torsorとして
+同型となる必要十分条件は
+\[
+ \varphi_*([Y]|_S)=\delta_{[-2]}(N)
+ \quad\text{in }H^1_{\acute et}(S,E[2]).
+ \tag{OU-vs-PR}\label{eq:qa-ou-vs-picard-h1}
+\]
+この同型$\varphi$の構成と等式の検証は未解決であり、
+OUの次数四とH2への忘却次数の同一性も含意しない。
+\end{corollary}
+\begin{proof}
+前命題はOU側の $\mathcal V$-torsor classを、
+補題~\ref{lem:qa-picard-kummer-torsor} はPicard側の
+$E[2]$-torsor classを与える。
+群スキーム同型$\varphi$で前者の構造群を移すと、
+二つのtorsorが同型であることと、
+それらの $H^1$ class が一致することは同値である。
 \end{proof}
 
 \begin{proposition}[適合Picard平方根の幾何fiberの濃度]
