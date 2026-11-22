@@ -495,14 +495,33 @@ $H_0=K_0$を$E_0$と同定するものではなく、
 \begin{proof}
 squareの左右Noether性は
 命題~\ref{prop:qa-as-avatar-noetherian}で得ている。
-その四周期反Serre移動$s=S^{-1}[2]$の下で、
-$(E_0,s)$はampleである。
-実際、正規正則四次元族の商に現れる
-$D$上の$\OO_D(2h)$はampleであり、
-その正方向のSerre消滅と、四つのcanonical
-kernel--cokernel列による他の標準頂点の生成を
-合わせると、Artin--Zhangの生成条件
-(AZ1)と遠方Ext消滅条件(AZ2)が従う。
+まずその四周期反Serre移動$s=S^{-1}[2]$の下で
+$(E_0,s)$がampleであることを確認する。
+両側イデアル
+$\mathfrak a_0=\sum_{q\in\mathbb Z}Ae_{4q}A$
+を取り、residue $0$ の全頂点を殺す。
+square型はrotated型を一頂点移したもので、
+rotated型からresidue $3$ を除いたquiverには
+各周期の二本の$pencil$矢だけが残る。
+それらは二本以上連結できないので
+$A/\mathfrak a_0$の十分離れた頂点間の成分は零である。
+任意の有限生成右加群$M$を十分小さい添字で切断し、
+residue $0$ の成分から生成される部分加群を$L$とする。
+$M/L$は$A/\mathfrak a_0$上の有限生成加群だから
+有限次元である。従って$\pi L=\pi M$となり、
+有限個の負の軌道対象から$\pi M$への全射が得られる。
+これは$(E_0,s)$のArtin--Zhang生成条件(AZ1)である。
+
+高次Extについては、AS最小分解と左右局所双対性により
+$M$の有限生成射影分解の各標準項$P_a$に対し
+十分小さい$j$で
+$\Ext^{>0}(E_j,E_a)=0$となる。
+この分解に$\Hom(E_j,-)$を適用すると
+$\Ext^{>0}(E_j,\pi M)=0$である。
+任意のepimorphismのkernelにもこの消滅を適用すれば
+遠方の$\Hom(E_j,-)$の全射性が得られ、
+Artin--Zhangの(AZ2)を満たす。
+従って$(E_0,s)$はampleである。
 
 $T_H=H_0\oplus H_1\oplus H_2\oplus H_3$とおく。
 $H_1=E_0$なので$(T_H,s)$は(AZ1)を満たす。
