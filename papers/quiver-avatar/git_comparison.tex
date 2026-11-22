@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v4.3（実現可能foundation開の有限多項式判定の存在）
+% 2026-11-22 / v4.4（可換Qの慣性gerbe上でのruling二重被覆非自明性）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -1227,6 +1227,48 @@ $\mathcal G/K$-不変である。
 有限個の生成元を各々含む有限次元の
 $\mathcal G/K$-部分表現の和を取れば、
 最後の主張も従う。
+\end{proof}
+
+\begin{corollary}[可換二次曲面の自己同値群における二重被覆の非自明性]
+\label{cor:qa-ruling-cover-nontrivial-commutative-gerbe}
+可換二次曲面
+$Q=\PP^1\times\PP^1$と
+$\mathcal O=\mathcal O_Q$が与える
+$\HHstack$の幾何点において、
+pointed自己同値群は
+\[
+ A=\Aut(Q,\mathcal O_Q)
+   \simeq(\PGL_2\times\PGL_2)\rtimes C_2
+\]
+であり、二つのnormal rulingを保存する部分群は
+$H=\PGL_2\times\PGL_2$である。
+定理~\ref{thm:qa-global-two-ruling-etale-cover}
+の二重被覆をこの点の自己同値gerbe
+$BA\to\HHstack$へ引き戻すと
+\[
+ BH\longrightarrow BA
+\]
+となる。これは表現可能有限étale次数二であり、
+$A$の非自明なfactor交換により二sheetを入れ替える。
+従って全$\HHstack$上のruling被覆には、
+全自己同値群と可換な大域的なruling選択sectionは存在しない。
+\end{corollary}
+\begin{proof}
+可換二次曲面のexact自己同値は
+Gabrielの再構成によりスキーム自己同型に由来し、
+$\mathcal O_Q$を保つので線束twistは自明である。
+$\Aut(\PP^1\times\PP^1)$は
+二つの因子の個別の射影変換とfactor交換からなる。
+二つのnormal rulingは
+$\mathcal O(1,0)$と$\mathcal O(0,1)$に対応する。
+個別因子を保つ部分群は両rulingを保ち、
+factor交換の剰余類は二つを交換する。
+従って選択の相対群oidは$[A/H]$の
+二元集合の作用で記述され、
+そのスタック被覆は$BH\to BA$である。
+もし全$\HHstack$に大域sectionがあれば
+$BA$上にも$A$-同変な二元集合のsectionを与えるが、
+factor交換が自由に二点を置換するため不可能である。
 \end{proof}
 
 \begin{corollary}[$j=0$の$A_4$点の三次元接表現と粗形式商]
