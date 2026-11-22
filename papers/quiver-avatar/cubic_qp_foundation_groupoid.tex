@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.25。可逆cubicとmass壁の相対QP群oid。
+% 2026-11-23 / v4.26。全二massのQP/finite foundation群oid。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -528,6 +528,186 @@ $q$のprimitive性と$\delta$の任意の冪零値を許し，
 同じpotentialが実際のflatな相対有限代数・全次数完成を
 与えることを示す．前定理を適用すれば結論が従う．
 \end{proof}
+
+
+\subsection{二つのmassと全finite foundationの相対群oid}
+\label{subsec:qa-two-mass-finite-gerbe}
+
+前項の片側の正規形を両側で同時に用いる．
+十二矢の共通potential
+\[
+ \mathcal W=H+yq+px+vq'+p'u+\lambda yx+\mu vu
+ \tag{2M}\label{eq:qa-two-mass-potential}
+\]
+について，$x:1\to3,y:3\to1$，
+$u:0\to2,v:2\to0$とする．
+四辺の隣接矢束は$U:0\to1,V:1\to2,
+W:2\to3,T:3\to0$であり，
+$q\in W\otimes V,\ q'\in V\otimes U$は二段道，
+$p\in U\otimes T,\ p'\in T\otimes W$は反対側の二段道とする．
+二つのmass$\lambda,\mu$は可逆と仮定しない．
+\[
+ \begin{split}
+  D_a&=(V\otimes U)\oplus\mathcal O u,&
+  r_a&=q'+\mu u,\\
+  D_b&=(W\otimes V)\oplus\mathcal O x,&
+  r_b&=q+\lambda x,\\
+  \mathcal B&=(W\otimes V\otimes U)
+              \oplus(W\otimes\mathcal O u)
+              \oplus(\mathcal O x\otimes U)
+ \end{split}
+ \tag{PB}\label{eq:qa-two-mass-path-bundles}
+\]
+と置く．各$D_a,D_b$は階数五，$\mathcal B$は階数十二である．
+$\mathcal B$内の二つの短関係の像
+\[
+ (W\otimes r_a)+(r_b\otimes U)\subset\mathcal B
+\]
+は次の開条件の下で階数四の直和因子となる．
+まず$\mu\ne0$または$q'$が非分解可能，
+$\lambda\ne0$または$q$が非分解可能であることを
+全幾何点で課す．続いて
+\[
+ (W\otimes\mathcal O r_a)\oplus
+ (\mathcal O r_b\otimes U)\oplus T^\vee
+       \longrightarrow\mathcal B,\qquad
+ (w\otimes r_a,r_b\otimes u_0,\tau)\longmapsto
+ w\otimes r_a+r_b\otimes u_0+
+             \partial_T\mathcal W(\tau)
+ \tag{6R}\label{eq:qa-two-mass-six-relations}
+\]
+が階数六の直和因子であることを要求する．
+この条件で定まる開表示群oidを
+$\mathfrak P_{12}^{\rm nd}$と書く．
+
+\begin{theorem}[二massのQP表示と全finite foundationのgerbe比較]
+\label{thm:qa-two-mass-all-finite-foundation-gerbe}
+式~\eqref{eq:qa-two-mass-path-bundles}--%
+\eqref{eq:qa-two-mass-six-relations}から
+\[
+ E=D_a/(\mathcal O r_a),\quad
+ F=D_b/(\mathcal O r_b),\quad
+ N=\mathcal B/
+ \bigl(W\otimes r_a+r_b\otimes U+
+       \operatorname{im}\partial_T\mathcal W\bigr)
+ \tag{REC}\label{eq:qa-two-mass-foundation-reconstruction}
+\]
+を構成すると，$E,F,N$はそれぞれ階数四・四・六の局所自由束
+となり，有限有向代数の全積を持つ相対射
+\[
+ \Phi_{12}:\mathfrak P_{12}^{\rm nd}
+                 \longrightarrow\mathfrak F_{\le12}^{\rm lin}
+ \tag{GM}\label{eq:qa-two-mass-gerbe-map}
+\]
+を得る．この射はfppf局所にessentially surjectiveで，
+全Isom-sheafの射もfppf局所に全射である．
+その自己同型核は局所表示~\eqref{eq:qa-two-mass-potential}の下で
+\[
+ \boxed{\quad
+ \ker\operatorname{Aut}(\Phi_{12})
+       \simeq\mathcal U_\lambda\times\mathcal U_\mu
+ \quad}
+ \tag{G2}\label{eq:qa-two-mass-gauge-kernel}
+\]
+であり，二群は式~\eqref{eq:qa-mass-gauge-group-law}の
+smooth/flatな群スキームである．従って
+$\Phi_{12}$はfppf局所にこの二次元群を相対慣性とするgerbeとなる．
+二massが可逆なら$\Gm^2$，一方だけ零なら
+$\Gm\times\mathbb G_a$，両方零なら$\mathbb G_a^2$である．
+非被約底上のnilpotent massも含み，結論は任意基底変更に保たれる．
+
+$\Phi_{12}$の対象は原則として有限foundationである．
+全相対AS正則性，canonically chosen heart，
+および全AS/avatar/QP表示stackから内在的$H_2$への
+無条件な同値はこの定理の結論には含めない．
+\end{theorem}
+\begin{proof}
+$r_a,r_b$はそれぞれ各幾何点でprimitiveである．
+短関係二組が独立なことを確認する．
+$\lambda$または$\mu$が非零なら対応する短関係は
+$x\otimes U$または$W\otimes u$に非零の成分を持つため，
+交わりは零である．両者が零のときは
+\[
+ W\otimes q'\subset W\otimes V\otimes U,\qquad
+ q\otimes U\subset W\otimes V\otimes U
+\]
+の交わりを考える．非零元が共通すれば，
+$w\otimes q'=q\otimes u_0$を得る．
+$w$に対する非零線型形式で縮約すると，
+$q'$が分解可能となり，仮定に反する．
+したがって短関係は常にrank四の直和因子である．
+第~\eqref{eq:qa-two-mass-six-relations}式はその上に
+さらにrank二のrelation束を加え，
+$E,F,N$を指定階数の局所自由束にする．
+二段積は$V\otimes U\to E$と$W\otimes V\to F$である．
+三段積は$W\otimes E\to N$と$F\otimes U\to N$であり，
+共通の三段道部分を同じ$\mathcal B$に置いたので結合律が成立する．
+合併全射も$N$の定義から従う．
+幾何fiberで二段積がrank三なら、そのkernelは
+$q'$または$q$の非分解可能な線であるから，
+定義~\ref{def:qa-foundation-open}の$Z^{\rm nd}$に属する．
+
+逆に$Z^{\rm nd}$の任意の局所族では，二つの二段積
+$a:V\otimes U\to E$，$b:W\otimes V\to F$のrankは
+各幾何fiberで三以上である．三次minorを局所に可逆化して
+行・列の基底を選べば
+\[
+ a\sim\operatorname{diag}(I_3,-\mu),\qquad
+ b\sim\operatorname{diag}(I_3,-\lambda)
+\]
+とできる．このとき$E=D_a/(r_a)$，
+$F=D_b/(r_b)$であり，rank三のfiberでの$q',q$は
+既存の非分解可能kernelの生成元として取れる．
+$W\otimes E\oplus F\otimes U\to N$は全射であり，
+共通三段道に関する結合律を課して
+$\mathcal B\to N$を得る．そのkernelはrank六の直和因子で，
+四本の短関係を含む．後者による商のkernelはrank二の束となる．
+その局所基底を$T^\vee$と同定し，$\mathcal B$へliftを選べば
+$\partial_T\mathcal W$を得る．
+liftの三段道成分を$H$，
+二つの追加生成矢にかかる成分を$p,p'$と読めば，
+式~\eqref{eq:qa-two-mass-potential}が得られる．
+従って全積を回収し，fppf局所のessential surjectivityを得る．
+選んだ二つの短関係のframe，二つの追加矢のsplitting，
+残りの二関係のframeとliftを合わせれば，
+有限foundation同型を右同値に局所的に持ち上げられる．
+
+自己同型核については，二つの追加生成矢の像が
+有限代数で恒等になる条件から，それぞれ唯一の
+\[
+ x\mapsto(1+\lambda t)x+tq,\qquad
+ u\mapsto(1+\mu s)u+sq'
+\]
+を得る．元の隣接矢束$U,V,W$は恒等，最後の戻り矢束$T$も
+独立な二関係のframeであるため恒等に保たれる．
+残る$y,v$の変換はpotentialの係数比較で一意に定まり，
+\[
+ y\mapsto(1+\lambda t)^{-1}(y-tp),\qquad
+ v\mapsto(1+\mu s)^{-1}(v-sp')
+\]
+となる．二組の矢・二段道は互いを含まないので，
+これらの作用は可換し，両方ともJacobian商上では恒等である．
+したがって核は丁度$\mathcal U_\lambda\times\mathcal U_\mu$．
+この核の構成も関係bundleの局所表示も基底変更と可換し，
+結論を得る．
+\end{proof}
+
+\begin{remark}[解決した比較と残るAS心の問題]
+\label{rem:qa-two-mass-heart-scope}
+本定理は，finite foundationのrank三壁が二つ同時に起こる
+noncubic側を含む．raw QP表示の余剰慣性は
+ここでは一般にsmoothな二次元群として制御される．
+これと，幾何点だけで非平坦な最小矢束を無視した
+reduced QP表示の固定は異なる．
+さらに内在的$\mathfrak H_2$への比較では，
+有限foundation全体とH2の実現可能開を区別する．
+H2開への制限は定理~\ref{thm:qa-square-explicit-h2-open}で
+判定できるが，その上のraw Jacobian代数が同じ相対heartを
+与えること，二rulingのmutationを含む全chartの貼合せは
+別途のAS・Serre比較を要する．
+従ってC3は有限群oidの比較を得た段階であり，
+AS/avatar/QP/H2を全領域で同値にしたとは主張しない．
+\end{remark}
 
 \begin{remark}[十二矢QPの余剰慣性と残る比較]
 \label{rem:qa-cubic-qp-remaining-inertia}
