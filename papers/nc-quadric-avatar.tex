@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v3.2
+% 日本語 LuaLaTeX。2026-11-22 / v3.3
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v3.2（二重壁の幾何とcubic導来非同値の完全判定）}
+\date{2026年11月22日\quad v3.3（Ginzburg完備化の監査と二重壁の横断性）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -84,6 +84,13 @@ square/rotated側ではcoherentな有界導来Morita同値を示すが、
 これをO-marked構造対象を保つ同値と同一視しない。
 二つの最小十本矢壁の交点は非零二捩れ$P^2=\OO_D,\ G=FP$であり、
 その反標準曲線はsmooth、既約nodal、$I_2$の三型だけとなる。
+さらに曲線と第一次数二pencilを固定すると、
+この二重壁は二つのCartier壁の
+\emph{scheme-theoreticに横断的な}交点であり、
+各幾何fiber上の長さはsmooth/nodal/$I_2$で$3/1/1$となる。
+滑らかな楕円族では二重壁は相対的に有限étale三次である。
+これはavatarの標識付きパラメータ空間についての結論で、
+内在的O-markedモジュライへの相対同型ではない。
 さらにこの交点が、任意のcubic AS代数と
 \emph{導来同値にならない}正確なlocusであることを証明する。
 滑らかな楕円曲線では任意のcubic候補foundationを
@@ -275,6 +282,8 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 十本矢の独立ASクラスとQP表示の正確な関係、
 rank-three壁、mutation後のNoether性・商圏同値は
 第~\ref{sec:qa-as10-mutation-classification}節に置く。
+同節では二重壁のscheme-theoretic横断性と
+非零二捩れの相対有限étale三次も記述する。
 二つのmutation壁の交点と、cubic型への到達不能性の完全判定は
 第~\ref{sec:qa-as-cubic-obstruction}節で証明する。
 最小分解からの有理Hilbert級数の導出と
