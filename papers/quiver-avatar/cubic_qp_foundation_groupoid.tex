@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.36。massゲージと関係lift shearの半直積、双対数交換子。
+% 2026-11-23 / v4.37。mass/liftの半直積、双対数交換子、頂点scalarの中心性。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1421,6 +1421,46 @@ QPの同型層の部分群を
 前節の計算から，fppf局所に
 $\mathcal K_{\rm mass}\simeq
  \mathcal U_\lambda\times\mathcal U_\mu$である．
+
+\begin{lemma}[頂点scalarsの中心性と二段剛体化]
+\label{lem:qa-q12-vertex-scalars-central}
+四頂点のscalars
+$Z_{\rm vert}=\mathbb G_m^4/\mathbb G_m$
+が，始点$i$，終点$j$の任意の矢$a$に
+$z_jz_i^{-1}a$として作用するとする．
+この作用はweightを保存する全頂点固定right-equivalenceと
+厳密に可換し，特に二massゲージ
+$\mathcal U_\lambda\times\mathcal U_\mu$および
+補題~\ref{lem:qa-q12-long-relation-lift-shear}の
+残余長関係lift変更のshearと可換である．
+従って定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+QP→finite foundationのkernelを剛体化する局所groupoidでは，
+頂点scalarsは独立な中心部分群として残る．
+指定した二段剛体化はfppf局所で
+二つのkernelを順に割る操作として両順序で一致する．
+これはkerの存在・smooth性と局所Isom全射を
+同定した上での結論であり，
+gerbeが大域的に自明だという主張ではない．
+\end{lemma}
+\begin{proof}
+頂点$i$から$j$への任意の道$a_1\cdots a_m$に
+$Z_{\rm vert}$は
+$\prod_\nu z_{t(a_\nu)}z_{s(a_\nu)}^{-1}
+=z_jz_i^{-1}$を掛ける．
+右同値が元の矢を同じ始終点の道の線形結合へ送るなら，
+その全ての項は同じ比で変換される．
+従って$Z_{\rm vert}$との可換性は
+自由道代数上の恒等式として成立する．
+各potentialの巡回道は始終点が等しいので，
+$Z_{\rm vert}$はpotentialを固定する．
+特にmassゲージとlift shearは頂点・weightを保つから
+同じ結論が適用できる．
+両kernelは同型層の核として正規であり，
+中心$Z_{\rm vert}$は最初のmass剛体化後も残る．
+従ってfppf局所のIsomを二群の積で割る結果は
+割る順序によらない．ただし$S_2$のmutation商は
+これとは別に定理の後段で構成する．
+\end{proof}
 
 \begin{theorem}[QP表示から内在的$H_2$への相対rigidification]
 \label{thm:qa-two-mass-h2-rigidification-ruling-glue}
