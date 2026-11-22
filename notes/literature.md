@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.92。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.93。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 全H2の共通線形化と大域良モジュライ
@@ -10,6 +10,12 @@ Alper, *Good moduli spaces for Artin stacks*, 刊行版の [本文](https://www.
 全H2良モジュライの閉境界にはAlper Lemma4.14（印字p.2367）のclosed-image good moduliと、直像の完全性を用いる。境界符号線束の直像零・normalなgood image・一致点のnonCartesianな引戻しは現行Bのruling交換と法表現を入力にCで証明する。
 
 OU2014 [arXiv:1403.0713](https://arxiv.org/pdf/1403.0713) §3 (3.9)–(3.16),(3.19) の k[f2,f4,g4,f6]（通常次数2,4,4,6）を一次確認した。Cubic gaugeのχ0次数は通常次数の半分となるためP(1,2,2,3)のgeometric開と良モジュライを同定する。既存重み付き射影商を新結果とせず、adj(T)の交差縮約による次数12・18の二式と、全H2の大域線形化との一致を本稿の具体化とする。同本文(3.17)のstability主張やstack birationalityの表現はこの適用には用いない。
+
+Cubic開の新しい二式は、OU2014のCartan制限がW(D4)不変式環への同型であることを用いて全行列へ延長する。Newton恒等式により四生成元をe1,e2,d,e3へ置換できる。これにより既存GITの非geometricな被約補集合を二本のP(1,2)と通常節点で記述するが、先行文献に同じ補集合の別表現がないことまで確認したとはしない。
+
+Mori–Okawa–Ueda, *Moduli of noncommutative Hirzebruch surfaces*, [arXiv:1903.06457](https://arxiv.org/pdf/1903.06457), Theorem1.1（p.3）、§5.3 (5.24)–(5.26)（p.25）、Remark7.1（p.30）を一次本文で確認した。Sheaf bimodule・関係式・滑らかなelliptic quadrupleの双有理比較、四因子tensorの自明scalar核、次数(1,1,2) AS Z代数を考える動機は既知である。本稿の全pointed H2の相対groupoid・noncubicを含むgood moduliとは範囲が異なる。
+
+Okawa–Ueda, *Marked Artin–Schelter surfaces of del Pezzo types*, [arXiv:2508.04986v1](https://arxiv.org/abs/2508.04986v1)（2025）、Definition1.1（p.1）とTheorem6.4（p.8）を一次本文で確認した。Very strong helixをmarkingとし固定quiverのpotential stackのAS-regular開を扱う。Elliptic tupleとの比較は双有理であり、固定markingを忘れた全strong H2の相対同値・全境界good moduliをこの定理から推論しない。Potential stackとAS開の考え方は既知結果として引用する。今回確認した範囲だけから新規性の完全調査済みとはしない。
 
 ## 全H2開の明示式と通常代数の降下
 

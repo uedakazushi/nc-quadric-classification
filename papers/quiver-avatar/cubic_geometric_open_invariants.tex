@@ -1,0 +1,187 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.20 / cubic geometric 開の不変式表示。
+
+\subsection{四量子ビット不変式によるgeometric開の二本の補曲線}
+\label{subsec:qa-cubic-geometric-open-invariants}
+
+前項の $f=1$ chart と交差縮約の規約を保つ。
+固定した Segre 双線型形式を $J$ とし，
+\[
+ K_T=JT^{\mathrm t}JT,\qquad
+ e_i=e_i(K_T)\ (i=1,2,3),\qquad d=\det T
+\]
+と置く。右辺の $e_i$ は行列の固有値の第 $i$ 基本対称式である。
+$e_1,e_2,d,e_3$ の通常の多項式次数は $2,4,4,6$，
+前項の指標 $\chi$ による次数は $1,2,2,3$ である。
+Okawa--Ueda の不変式環の計算
+\cite[\S3, (3.9)--(3.16)]{OU2014} と Newton の恒等式により
+\[
+ k[T]^{SL_2^4}=k[e_1,e_2,d,e_3].
+ \tag{CI}\label{eq:qa-cubic-elementary-invariant-ring}
+\]
+従って既存 GIT 商には同次座標
+$[e_1:e_2:d:e_3]$ を持つ
+$\mathbb P(1,2,2,3)$ を用いることができる。
+
+\begin{proposition}[二半不変式の普遍恒等式]
+\label{prop:qa-cubic-adjugate-explicit-invariants}
+$N(T)=\operatorname{Cr}(\operatorname{adj}T)$，
+$p_{\rm adj}=\det N(T)$，
+$q_{\rm adj}=e_3(JN(T)^{\mathrm t}JN(T))$ とする。
+任意の $4\times4$ 行列 $T$ に対し，次の多項式恒等式が成立する。
+\[
+ \begin{split}
+ 16p_{\rm adj}
+   &=e_3^2-4d^2e_2+8d^3,\\
+ 16q_{\rm adj}
+   &=e_3^3-4d^2e_2e_3+16d^4e_1-8d^3e_3.
+ \end{split}
+ \tag{CPQ}\label{eq:qa-cubic-adjugate-pq-formulas}
+\]
+特に
+\[
+ q_{\rm adj}-e_3p_{\rm adj}
+     =d^3(de_1-e_3).
+ \tag{CPQ-diff}\label{eq:qa-cubic-adjugate-pq-difference}
+\]
+\end{proposition}
+\begin{proof}
+基底を $e_{00},e_{01},e_{10},e_{11}$ の順とし，
+$H$ の列を
+\[
+ e_{00}+e_{11},\quad e_{00}-e_{11},\quad
+ e_{01}+e_{10},\quad e_{01}-e_{10}
+\]
+とする。
+この各列を適当な定数で割れば $J$ に関する正規直交基底となる。
+その定数対角行列は以下の対角行列と可換なので，
+Cartan 部分空間を
+\[
+ T=H\operatorname{diag}(x_1,x_2,x_3,x_4)H^{-1}
+\]
+と書いてよい。この部分空間では
+\[
+ e_i=e_i(x_1^2,x_2^2,x_3^2,x_4^2),\qquad
+ d=x_1x_2x_3x_4 .
+\]
+$\lambda_i=\prod_{j\ne i}x_j$ と置けば，
+$\operatorname{adj}T$ の同じ基底での固有値は $\lambda_i$ である。
+交差縮約の係数を直接並べ替えると，$N(T)$ も同じ $H$ で対角化され，
+その固有値 $\mu_i$ は
+\[
+ \begin{pmatrix}\mu_1\\\mu_2\\\mu_3\\\mu_4\end{pmatrix}
+ =
+ \frac12
+ \begin{pmatrix}
+ 1&1&1&1\\
+ 1&1&-1&-1\\
+ 1&-1&1&-1\\
+ 1&-1&-1&1
+ \end{pmatrix}
+ \begin{pmatrix}\lambda_1\\\lambda_2\\\lambda_3\\\lambda_4\end{pmatrix}.
+ \tag{CH}\label{eq:qa-cross-adjugate-hadamard}
+\]
+この $N(T)$ は対称で $J$ と可換なので，
+$JN(T)^{\mathrm t}JN(T)=N(T)^2$ である。
+
+$E_i=e_i(\lambda_1^2,\ldots,\lambda_4^2)$，
+$D=\lambda_1\lambda_2\lambda_3\lambda_4$ と置くと，
+式~\eqref{eq:qa-cross-adjugate-hadamard} の四つの線型式の展開により
+\[
+ \begin{split}
+ 16\prod_i\mu_i&=E_1^2-4E_2+8D,\\
+ 16e_3(\mu_1^2,\ldots,\mu_4^2)
+     &=E_1^3-4E_1E_2+16E_3-8DE_1.
+ \end{split}
+\]
+一方，補積 $\lambda_i$ の定義から
+\[
+ E_1=e_3,\qquad E_2=d^2e_2,\qquad
+ E_3=d^4e_1,\qquad D=d^3 .
+\]
+代入すると求める二式を得る。
+
+以上は Cartan 部分空間上の計算だが，両辺は全て $SL_2^4$ 不変式である。
+式~\eqref{eq:qa-cubic-elementary-invariant-ring} の直交群による記述では，
+Cartan への制限は $W(D_4)$ 不変式環との同型，特に単射である。
+従って二式は全行列空間上の普遍恒等式となる。
+最後の式は二式を引き算すれば従う。
+\end{proof}
+
+\begin{corollary}[Geometric開の被約補集合]
+\label{cor:qa-cubic-geometric-two-complement-curves}
+$\Omega_{\rm geo}\subset\mathbb P(1,2,2,3)$ を前項の geometric 開の
+良モジュライとする。その補集合を被約構造で考えると
+\[
+ \bigl(\mathbb P(1,2,2,3)\setminus\Omega_{\rm geo}\bigr)_{\rm red}
+    =C_0\cup C_1,
+\]
+\[
+ C_0=V(d,e_3),\qquad
+ C_1=V(e_3-de_1,\ 4e_2-e_1^2-8d).
+ \tag{CC}\label{eq:qa-cubic-two-bad-curves}
+\]
+両成分は $\mathbb P(1,2)$ と同型であり，
+唯一の交点は $[2:1:0:0]$ である。
+被約和の同次イデアルは
+\[
+ \sqrt{(p_{\rm adj},q_{\rm adj})}
+ =
+ (e_3-de_1,\ d(4e_2-e_1^2-8d)).
+ \tag{CR}\label{eq:qa-cubic-geometric-radical}
+\]
+交点の近傍でこの和は通常の節点である。
+\end{corollary}
+\begin{proof}
+$h=e_3-de_1$，$\ell=4e_2-e_1^2-8d$ と置く。
+前命題から，二式のイデアルは単元の係数を除いて
+\[
+ I=(h^2+2de_1h-d^2\ell,\ d^3h)
+\]
+と書ける。
+これを含む素イデアルは，$d$ を含む場合には $h$ も含み，
+$d$ を含まない場合には $h,\ell$ を含む。
+逆に $(d,h)$ と $(h,\ell)$ はともに $I$ を含む素イデアルである。
+従って
+\[
+ \sqrt I=(d,h)\cap(h,\ell)=(h,d\ell).
+\]
+最後の等号は $h$ で割った多項式環において $d$ と $\ell$ が
+互いに素であることによる。
+
+$C_0$ の座標環は $k[e_1,e_2]$，$C_1$ の座標環は $k[e_1,d]$ なので，
+両者は重み $(1,2)$ の射影直線となる。
+例えば後者の閉埋込みは
+\[
+ [s:t]\longmapsto
+ [s:(s^2+8t)/4:t:st]
+\]
+で与えられる。
+共通点では $d=e_3=0$ と $4e_2=e_1^2$ が成り立つため，
+射影点は $[2:1:0:0]$ に限られる。
+
+この点は $e_1\ne0$ の滑らかな affine chart に入る。
+その座標を
+\[
+ u=\frac{4e_2}{e_1^2}-1,\qquad
+ v=\frac d{e_1^2},\qquad
+ w=\frac{e_3}{e_1^3}
+\]
+とすると，被約和のイデアルは $(w-v,\ v(u-8v))$ である。
+滑らかな面 $w=v$ の正則座標 $v,u-8v$ に関する二軸の和なので，
+通常の節点である。
+\end{proof}
+
+\begin{remark}[被約補集合と検算の範囲]
+式~\eqref{eq:qa-cubic-geometric-radical} は radical の等式であり，
+二つの高次式が定める閉部分そのものを被約と主張してはいない。
+ここでの二曲線は既存 cubic GIT の非 geometric 領域であり，
+全 $H_2$ の大域的 good moduli に含まれる noncubic 閉曲線とは区別する。
+
+再現コード \texttt{verify\_cubic\_adjugate\_invariants.py} は，
+上の基底と交差縮約を係数から実装し，Cartan 恒等式，
+階数四・三・二の非対角行列での直接式，
+および radical 証明に使った代数恒等式を exact arithmetic で検算する。
+全行列上での恒等式の証明は，これらの有限例ではなく，
+上記の不変式制限の単射性によって与えている。
+\end{remark}

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.19
+% 日本語 LuaLaTeX。2026-11-23 / v4.20
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.19（全H2の三半不変式と準射影的良モジュライ）}
+\date{2026年11月23日\quad v4.20（cubic開の二補曲線と全H2の良モジュライ）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -96,7 +96,9 @@ canonical Serre完成と四頂点展開の左右Noether性，実際の相対AS�
 さらに左右kernel条件をGram行列の二式へ集約し，同じ指標の三半不変式で
 全$H_2$開を覆う．比による重なりの飽和性を示すことで，
 全$\HHstack$の分離的な準射影的good moduli spaceを構成する．
-各cubic開を既存の四量子ビットGIT商の明示開と同定し，
+各cubic開を既存の四量子ビットGIT商の明示開と同定する．
+その被約補集合は$\mathbb P(1,2,2,3)$内の二本の$\mathbb P(1,2)$であり，
+唯一の交点で通常の節点を作る．さらに，
 noncubicの$\mathbb A^1_\chi$を大域良モジュライへ閉埋め込む．
 階数因子の良モジュライ像は正規であり，
 noncubic閉像のschemeとしての引戻しには一致点で非被約な厚みが生じる．
@@ -446,6 +448,25 @@ $P(M)=\det M$と$Q(M)=e_3(JM^{\rm t}JM)$でまとめ、
 本稿はこの原理を全$H_2$開へ適用するための半不変式と共通指標を明示する。
 三式が不変式環を生成することや、良モジュライ空間の全方程式を求めたことは主張しない。
 
+\paragraph{固定表示のモジュライとの比較}
+四量子ビットの不変式環と重み付き射影商は
+\cite[\S3, (3.9)--(3.16)]{OU2014}の既知結果である．
+Mori--Okawa--Ueda の関係式スタックと elliptic quadruple の双有理比較でも，
+四因子 tensor と三次元の自明 scalar 核が明示されている
+\cite[Theorem 1.1, \S5.3, (5.24)--(5.26)]{MOU2019}．
+また固定 helix 型の marked AS surface は，very strong helix を標識に持つ
+potential stack の AS-regular 開として扱われ，elliptic tuple との比較は双有理である
+\cite[Definition 1.1, Theorem 6.4]{OU2025MarkedAS}．
+従って，固定表示の商を作ること自体や，その AS 開の存在を本稿の成果とはしない．
+本稿の対象は構造対象を保つ完全同値を射とする全相対 strong $H_2$ であり，
+二つの積がともに階数三となる noncubic 部分も含む．
+前記の良モジュライ定理はこの全開を覆い，cubic chart では既存商との
+比較を命題~\ref{prop:qa-global-cubic-four-qubit-good-moduli}で与える．
+さらに命題~\ref{prop:qa-cubic-adjugate-explicit-invariants}と
+系~\ref{cor:qa-cubic-geometric-two-complement-curves}では，
+$e_i=e_i(JT^{\rm t}JT)$，$d=\det T$ により二半不変式と被約補曲線を明示する．
+この具体的な相対範囲の比較と，包括的な新規性の確認は区別する．
+
 \paragraph{既知の降下原理と本稿の具体化}
 局所対象を Hom の双対で増幅してスカラーの曖昧さを消す操作は，
 twisted sheaf における重みの相殺と重み零の降下という既知の原理に属する
@@ -530,6 +551,7 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/square_rank_boundary_geometry}
 \input{quiver-avatar/global_h2_good_moduli}
 \input{quiver-avatar/global_h2_cubic_git_comparison}
+\input{quiver-avatar/cubic_geometric_open_invariants}
 \input{quiver-avatar/global_good_moduli_boundary_images}
 \input{quiver-avatar/universal_h2_square_morita}
 \input{quiver-avatar/relative_rotated_mutated_tails}

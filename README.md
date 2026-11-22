@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.35、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.19。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.36、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.20。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従う。Cでは自然なFricke射の全noncubicからbalanced標的への延長と境界fiberを証明した。非被約曲線・古典型を含む全標準頂点を体上で判定し、曲線型の相対族では適合開上の全標準頂点を同じH2 heart内で認識した。canonical square AS qgrの相対認識と全H2開の20式判定を得た。二つのdeterminant境界と大域good moduliも構成した。次は既存GITの不変式による開方程式とchart間の変換を計算する。A/Bの公表前監査・文献比較を保持し、詳細は各現行原稿を正本とする。
 
@@ -16,17 +16,19 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS分解とavatarの分類、pointed認識と相対比較** | v4.19。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS分解とavatarの分類、pointed認識と相対比較** | v4.20。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。現行checkout上で三稿のsource・相互ラベル検査を実行してPASS。LuaLaTeX依存が不足するため現行三稿の組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS/avatar分類とpointed認識（v4.19）
+## 論文C：AS/avatar分類とpointed認識（v4.20）
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
 
 **良モジュライ上のcubic開と境界。** Ordered cubic開は飽和しており、f=1の残余群とχ0次数を比較すると、既存四量子ビット商P(1,2,2,3)の開D+(p_adj)∪D+(q_adj)と同型となる。p_adj=P(Cr(adjT))、q_adj=Q(Cr(adjT))の通常次数は12・18。noncubicのA1χはMへ閉埋込みとなり、cubic/noncubicは同じgood fiberに混在しない。階数因子Dの正規化列の差はruling符号線束で、その直像が零になるため、Dのgood imageは既に正規である。一方、noncubic閉像のscheme逆像は一致点で元のNより厚い。符号慣性が法方向に−Idで作用し、good像が一定の非零横断一次変形を与える。 [cubic比較](papers/quiver-avatar/global_h2_cubic_git_comparison.tex)・[境界像](papers/quiver-avatar/global_good_moduli_boundary_images.tex)。
+
+**Cubic開の不変式方程式。** e_i=e_i(JTᵗJT)、d=det T とすると、16p_adj=e3²−4d²e2+8d³、16q_adj=e3³−4d²e2e3+16d⁴e1−8d³e3。Cartan上のHadamard計算と不変式制限の単射性から全行列上で証明した。被約補集合は C0={d=e3=0} と C1={e3=de1, 4e2=e1²+8d} で、両者はP(1,2)、唯一の交点[2:1:0:0]は通常節点となる。高次イデアル自体の被約性を主張せず、この二曲線と全H2内のnoncubic A1χを区別する。 [証明](papers/quiver-avatar/cubic_geometric_open_invariants.tex)。
 
 **全H2の有限square表示とcanonicalなrank81代数。** 四つのrank2束とrank4束への二乗法をパラメータ化するA32の開から、rank16 squareとrank24 normal foundationの全相対stack同値を核・余核で構成した。頂点トーラスKとruling交換S2を含め、Q_fndは((GL2^4×GL4)/Gm³)⋊S2による商になる。H2はその不変開として表され、古典型も同じ有限表示で扱える。二積の合併全射は追加開であり、H2上では成立する。全H2上のTcan=⊕Ei⊗Hom(O,Ei)∨は頂点線束と二rulingの交換を消して降下し、通常のEnd代数はrank81。canonical完成のn次は81(2n+1)²、O角は(2n+1)²で、左右Noether性とpointed tails認識を得る。H2開は二乗法の随伴行列から作る二つの交差縮約とその転置について、kernelがSegreを避ける四条件で完全に判定した。各条件は五生成idealの非零開で、計20式以内（次数16・24）となる。両rank3壁も含み、既存相対開との一致により非被約底でも全groupoidを認識する。四交差条件をさらに同じ指標の三半不変式へまとめ、全H2の分離的・準射影的good moduliを構成した。任意AS/QP族の全比較は別課題である。[有限stack同値](papers/quiver-avatar/relative_square_foundation_stack.tex)、[全H2のrank81代数](papers/quiver-avatar/universal_h2_square_morita.tex)。
 
@@ -152,7 +154,7 @@ latexmk papers/nc-quadric-avatar.tex
 
 `papers/` に `cd` して `latexmk nc-quadric-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
 
-**現行原稿の組版確認状況（2026-11-23）。** C v4.19のbuildは必要TeXファイルを利用できずSKIP（終了コード2）。LuaTeX-jaを含む依存を揃えた環境で、上記の三稿を再組版する必要がある。Cの数式モード、Markdown記号の混入、未定義演算子 `\Spin`・`\SL`・`\Br` は訂正済みで、構成・ラベル・引用・環境の静的検査はPASS。現行PDF全体の生成・表示確認は未実施であり、断片の組版や過去版の成功を代用しない。未解決引用はBibTeXと必要な再実行が完了したログで判定する。
+**現行原稿の組版確認状況（2026-11-23）。** C v4.20のbuildは必要TeXファイルを利用できずSKIP（終了コード2）。LuaTeX-jaを含む依存を揃えた環境で、上記の三稿を再組版する必要がある。Cの数式モード、Markdown記号の混入、未定義演算子 `\Spin`・`\SL`・`\Br` は訂正済みで、構成・ラベル・引用・環境の静的検査はPASS。現行PDF全体の生成・表示確認は未実施であり、断片の組版や過去版の成功を代用しない。未解決引用はBibTeXと必要な再実行が完了したログで判定する。
 
 ## VS Code / LuaLaTeX の組版環境
 
