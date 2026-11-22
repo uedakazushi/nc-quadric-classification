@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.6（OU S4/S3作用群訂正・twisted torsorの相対定式化）
+% 2026-11-22 / v0.7（OU/Picard比較の同変半点による必要十分条件）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -337,6 +337,44 @@ $E[2]$-torsor classを与える。
 群スキーム同型$\varphi$で前者の構造群を移すと、
 二つのtorsorが同型であることと、
 それらの $H^1$ class が一致することは同値である。
+\end{proof}
+
+\begin{lemma}[potential側で検証できる同変半点の判定]
+\label{lem:qa-ou-equivariant-halfpoint-test}
+系~\ref{cor:qa-ou-picard-h1-criterion} の状況で、
+$P=Y\times_BS$ をOU四重torsorとし、
+$\varphi:\mathcal V_S\xrightarrow{\sim}E[2]$ を
+群スキームの同型とする。
+$P$ の $\mathcal V_S$-作用を $p\mapsto p+v$ と書く。
+このときOU四重torsorと相対Picard根torsor $T_N$ が
+$\varphi$ に関して同型であることは、
+\emph{potential側への引戻し} $E_P\to P$ 上に
+section $a\in E(P)$ が存在し、
+\[
+ [-2]a=N|_P,\qquad
+ a(p+v)=a(p)+\varphi(v)
+ \quad
+ (p\in P,\ v\in\mathcal V_S)
+ \tag{OU-half}\label{eq:qa-ou-equivariant-halfpoint}
+\]
+を満たすことと同値である。
+ここで第二式は $P\times_S\mathcal V_S$ 上の
+二つのsectionの等式として読む。
+従って「potential表示が適合Serre根を自然に選ぶ」
+という予想を証明するには、単に各幾何点で四つの根が
+存在することでは足りず、式~\eqref{eq:qa-ou-equivariant-halfpoint}
+の\emph{相対的かつ同変}な半点を構成する必要がある。
+\end{lemma}
+\begin{proof}
+求めるtorsor同型 $P\to T_N$ を $T_N\subset E$ に
+合成したものが section $a$ を与える。
+$T_N$は$E[2]$の平行移動で作用するtorsorなので、
+その同変性は第二式に等しい。
+逆にそのような $a$ があれば
+$p\mapsto(p,a(p))$ は $S$ 上の射 $P\to T_N$ を定め、
+第二式により$\varphi$-equivariantである。
+torsor間の同変射はfppf局所で
+群の平行移動に帰着し、必ず同型となる。
 \end{proof}
 
 \begin{proposition}[適合Picard平方根の幾何fiberの濃度]
