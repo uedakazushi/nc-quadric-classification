@@ -10,7 +10,7 @@
 
 **Cの達成基準：** (C1) 既存の8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲を完全に記述する。(C2) 二cubic chartを含む全H2のgood moduliの中央affine補完・局所特異性・noncubic像を不変式環で記述する。(C3) 全相対AS/QP群oidについて、比較が成り立つ最大の明示的領域で同型層と慣性、矢消去・potential right-equivalence、相対heartを証明し、成立しない範囲には反例または正確な障害を与える。(C4) Cの定理と全証明・先行研究の一次比較を整理し、LuaLaTeX組版を確認して公表可能性を独立監査する。**C2の明示環・中央chart・二商特異点は原稿上で達成した（独立監査・組版は未実施）。C3とC4は未達成であり、C全体を完成したとは扱わない。**
 
-**直近の実行順：** 二つのGram二次形式のpencilで全半不変環を求め、中央affine chartの重み零環とnoncubic閉曲線、二孤立商特異点をCに統合した。今後の第一の未解決核心はC3の**全相対AS/QP群oid**である。最初に可逆cubic開で有限foundation同型層と最小8矢・relation-dual 12矢QPのright-equivalenceの違いを計算し、特に頂点スカラー慣性・消去pairとpotentialの係数を追う。次にrank3壁へ延長し、全相対heartと比較する。難しい大域同型を未証明のまま宣言せず、成立域と反例・障害を区別する。研究の区切りでは対象repoを先にmainへ保存し、research-hubの本研究の重点・再開先を更新する。一般の保存許可・正本運用は下の恒常原則とAGENTS.mdに従う。
+**直近の実行順：** 二つのGram二次形式のpencilで全半不変環を求め、中央affine chartの重み零環とnoncubic閉曲線、二孤立商特異点をCに統合した。今後の第一の未解決核心はC3の**全相対AS/QP群oid**である。まず既証明の可縮pairに伴う $\mathcal P_{12}^{\lambda\mu\ne0}\simeq\mathcal P_8\times B\mathbb G_m^2$ （`prop:qa-stabilized-inertia`）を前提とし、raw QP groupoidはfinite foundationやH2と忠実には同値にならないことを保持する。そのうえで二つの余剰トーラスを剛体化した後の実際の $\mathcal P_8$ と可逆cubic finite foundationの同型層・頂点スカラー・potentialの規格化を比較する。次にrank3壁へ延長し、全相対heartと比較する。難しい大域同型を未証明のまま宣言せず、成立域と反例・障害を区別する。研究の区切りでは対象repoを先にmainへ保存し、research-hubの本研究の重点・再開先を更新する。一般の保存許可・正本運用は下の恒常原則とAGENTS.mdに従う。
 
 ## Cの現行実行単位
 
@@ -117,7 +117,7 @@
 
 **依存監査の確定範囲。** BからAへの残余の17種類の定理・補題・式ラベルはAの現行分類20節に定義されている。Aの分類主定理の証明はB固有の主定理には依存しない原稿構成とした。これはソース依存の確認で、全数学的証明の独立監査とは異なる。
 
-**次の最優先実行単位（C完成優先）。** Cでは全H2の準射影的good moduli、noncubic A1χの閉埋込み・境界像の正規性・非Cartesianな一次厚みを入力とする。Cubic開の二式と被約補曲線は確立した。二chartの貼合せと全H2から既存GITへの正則射は確立した。Gram pencilによって D(PfPg)=D₊(Δ₈) の重み零環、noncubic閉曲線の方程式と局所特異性を決定済み。次は最小8矢QPの表示同型層とfinite foundationの同型層を可逆cubic開で比較し、scalar kernel、right-equivalenceの慣性を計算した後にrank3壁とnoncubicへ拡張する。canonical rank81代数・回転/mutationの左右Noetherなtails・全Fricke境界射は確立済みの入力として保持する。A/BのP1–P3、先行研究比較と三稿組版の監査も継続し、各検証の実施範囲を研究ノートへ記す。
+**次の最優先実行単位（C完成優先）。** Cでは全H2の準射影的good moduli、noncubic A1χの閉埋込み・境界像の正規性・非Cartesianな一次厚みを入力とする。Cubic開の二式と被約補曲線は確立した。二chartの貼合せと全H2から既存GITへの正則射は確立した。Gram pencilによって D(PfPg)=D₊(Δ₈) の重み零環、noncubic閉曲線の方程式と局所特異性を決定済み。次は既知の可縮pair由来の余剰慣性 $B\mathbb G_m^2$ を先に剛体化してから、最小8矢QPのright-equivalenceとfinite foundationの同型層・頂点スカラーを可逆cubic開で比較し、rank3壁・noncubicへ拡張する。canonical rank81代数・回転/mutationの左右Noetherなtails・全Fricke境界射は確立済みの入力として保持する。A/BのP1–P3、先行研究比較と三稿組版の監査も継続し、各検証の実施範囲を研究ノートへ記す。
 
 
 ## 現在の到達点と未解決の核心
