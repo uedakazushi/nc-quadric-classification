@@ -190,3 +190,180 @@ $\bigwedge^2H^0(D,L)$という一次元空間である。
 特定のmutation列に依存せず、
 全てのcubic候補を排除した。
 \end{proof}
+
+\subsection{特異二重壁への平滑化による拡張}
+\label{subsec:qa-as-cubic-degenerate-obstruction}
+
+\begin{lemma}[二捩れとfinite foundationを保つ平滑化]
+\label{lem:qa-as-cubic-two-torsion-smoothing}
+任意の幾何的二重壁avatar$(D,F,G,P)$に対し、
+$R=k[[t]]$上のprojective flat family
+$\mathscr D\to\Spec R$と線束
+$\mathscr F,\mathscr P$が存在し、
+特殊fiberは$(D,F,P)$で、
+\[
+\mathscr P^{\otimes2}\simeq\OO_{\mathscr D},
+\qquad
+\mathscr G=\mathscr F\mathscr P
+\]
+を満たし、幾何的generic fiberは
+滑らかな楕円曲線で
+$\mathscr P$は非自明二捩れである。
+さらに
+\[
+ B_R=\End_{\rm dir,\mathscr D/R}
+ (\mathscr P,\mathscr F,\mathscr G,\mathscr F\mathscr G)
+\]
+は$R$上有限自由で、
+特殊fiberで元の$B(D,F,G,P)$、
+generic fiberで滑らかな二重壁のfoundationとなる。
+\end{lemma}
+\begin{proof}
+$D$を定める$(2,2)$切断を$s_0$とし、
+一般の$s_1$によって
+$s_0+ts_1=0$を
+$(\PP^1\times\PP^1)\times\Spec R$内に取る。
+相対Cartier因子なので平坦で、
+一般切断を選べば幾何generic fiberは滑らか。
+$\mathscr F$は第一rulingの引戻しとする。
+
+特殊fiberで$P^2\simeq\OO_D$の同型を一つ選び、
+$\mathscr T_0=\Spec_D(\OO_D\oplus P)$を
+対応する有限étale $\mu_2$-torsorとする。
+$2$が可逆なので、
+nilpotent閉埋込み上のétale siteの不変性から
+$\mathscr T_0$は各
+$\mathscr D_n=\mathscr D\times_RR/(t^{n+1})$
+へ互換的に一意に持ち上がる。
+Grothendieckの形式的存在とfully faithfulness
+\cite[Tags 0BQB, 087V]{StacksModuli}によって
+有限étale被覆を$\mathscr D$上に代数化する。
+その符号固有層は線束$\mathscr P$であり、
+二乗同型も代数化される。
+特殊fiberの$H^0(D,P)$は零
+（補題~\ref{lem:qa-core-curve-vanishing}）だから、
+上半連続性からgeneric fiberでも
+$H^0(\mathscr D_{\bar K},\mathscr P_{\bar K})=0$。
+したがってgeneric fiberでも二捩れは非自明。
+
+各forward Homを定める線束差は、
+特殊fiberで$H^1$が零
+（同じ消滅補題と四頂点のHom次元表）。
+cohomologyと基底変更より
+全相対$H^0$は有限自由で任意の基底変更と可換する。
+その合成も$R$-双線形に定まり、
+有限自由なdirected $R$-代数$B_R$を与える。
+これはfamilyとして無限AS代数を仮定する構成ではない。
+\end{proof}
+
+\begin{lemma}[exceptional perfect複体とcubic候補の形式持上げ]
+\label{lem:qa-as-cubic-perfect-lifting}
+$R=k[[t]]$、
+$B_R$を固定四idempotentを持つ有限自由$R$-代数とする。
+特殊fiber$B_0$上のcubic候補foundation
+$(Q_0,\ldots,Q_3)\subset\operatorname{per}B_0$は、
+$\operatorname{per}B_R$の四つのstrictly perfect
+複体$(\widetilde Q_0,\ldots,\widetilde Q_3)$に持ち上がる。
+generic fiberでもstrong exceptionality、
+Euler行列$G_c$、合成同型
+\eqref{eq:qa-as-cubic-two-compositions}、
+$K_0$上の整数基底条件が保たれる。
+\end{lemma}
+\begin{proof}
+各$Q_i$を標準idempotent射影の有限直和からなる
+有界複体で表示する。各項を$B_R$上に持ち上げる。
+微分を$t^{n+1}$まで持ち上げた後の
+二乗の$t^{n+1}$係数は
+$\Hom^\bullet(Q_i,Q_i)$の次数二のcocycleとなる。
+$Q_i$のexceptionalityから$\Ext^2(Q_i,Q_i)=0$なので、
+次数一のhomotopyで補正できる。
+これを反復して$t$-進完全な微分を作る。
+各項は有限自由$R$加群を基礎とするので
+完全極限は実際の有界strictly perfect複体を与える。
+
+各pairのderived Homは有界有限自由$R$-複体である。
+特殊fiberでは次数零だけにコホモロジーがある。
+局所環上で微分の可逆成分を消去すると、
+残るminimal complexの特殊fiberの微分は零。
+特殊fiberのコホモロジー集中から
+残る項は次数零だけと分かる。
+よってgeneric fiberのHomも次数零に集中し、
+その次元は特殊fiberと同じ。
+二つの隣接合成の行列式は特殊fiberで単元なので
+$R$上でも単元で、generic fiberで同型となる。
+項の標準射影の重複度は変わらず、
+$K_0$の基底変換行列は整数行列として同じなので
+determinant$\pm1$を保つ。
+\end{proof}
+
+\begin{theorem}[cubic型へ到達できるための必要十分条件]
+\label{thm:qa-as-cubic-reachability}
+$A$をsquare型AS正則$\mathbb Z$-代数とし、
+そのavatarが$(D,F,G,P)$であるとする。
+古典型は常に到達可能とする。
+曲線型について以下は同値である：
+\begin{enumerate}
+\item $P^{\otimes2}\not\simeq\OO_D$、
+      または$G\not\simeq FP$。
+\item 二つの指定中間頂点mutationのうち
+      少なくとも一方がcubic型AS代数を与える。
+\item あるcubic型AS代数$A_c$に対して
+      $\Qgr A\simeq\Qgr A_c$という
+      $k$-線形完全Abel同値がある。
+\item あるcubic型AS代数$A_c$に対して
+      $D^b(\qgr A)\simeq D^b(\qgr A_c)$という
+      $k$-線形三角同値がある。
+\end{enumerate}
+したがって二重壁$D_F\cap D_G$は、
+単に二つのmutationが十本矢になるlocusでなく、
+\emph{任意のcubic型との導来同値を排除する正確なlocus}
+である。
+この定理はsquare型ASの商圏に関する主張であって、
+同じ幾何的avatarを持つ内在的O-marked
+noncubic対象とのpointed同値を意味しない。
+\end{theorem}
+\begin{proof}
+(1)と(2)の同値は
+命題~\ref{prop:qa-as10-double-wall-characterization}と
+定理~\ref{thm:qa-as10-forward-as}に従う。
+(2)なら命題~\ref{prop:qa-as10-noetherian-qgr}を
+選んだmutation頂点に適用し(3)を得る。
+(3)の同値はNoetherian対象に制限でき、
+連接対象の有界導来圏へ延長されるので(4)を得る。
+
+逆に(4)が成り立ち、avatarが二重壁に属すると仮定する。
+cubic型の標準四対象を導来同値によって
+$\mathcal D=\operatorname{per}B$へ運べば、
+定義~\ref{def:qa-as-cubic-candidate}の
+strong exceptional・Euler・合成同型・整数基底の
+全条件を満たすcubic候補foundationとなる。
+$D$が滑らかなら
+命題~\ref{prop:qa-as-cubic-smooth-no-candidate}に矛盾する。
+
+$D$が特異な場合、
+補題~\ref{lem:qa-as10-double-wall-reduced-geometries}より
+既約一節点か$I_2$型である。
+補題~\ref{lem:qa-as-cubic-two-torsion-smoothing}により、
+二重壁の性質を保ったsmooth generic fiberを持つ
+有限自由なdirected代数$B_R$を得る。
+補題~\ref{lem:qa-as-cubic-perfect-lifting}により
+特殊fiberの任意のcubic候補foundationは
+generic fiberへ持ち上がり、
+すべての候補条件が保持される。
+しかしsmooth generic fiberは再び二重壁だから
+滑らかな場合の不存在に反する。
+従って(4)なら二重壁の外側、すなわち(1)が必要。
+\end{proof}
+
+\begin{remark}[分類同型とheartの区別]
+\label{rem:qa-as-cubic-obstruction-marking}
+非二重壁では商Abel圏のcubic presentationは存在するが、
+そのmutationで選ばれた標準対象は元の$E_0$とは
+一般に異なる。
+二重壁での導来非同値はこれより強く、
+どのexceptional foundationを使っても回避できない。
+一方、定理~\ref{thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection}
+が与えるnoncubic O-marked幾何点との対応は
+\emph{avatarの同型類}だけについてであり、
+その構造対象を保つrealizationを証明する別課題を残す。
+\end{remark}
