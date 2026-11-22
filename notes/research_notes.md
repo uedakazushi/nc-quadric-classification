@@ -1,6 +1,16 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.29（A v1.69・20節、B v0.40・31節、C v4.15）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.30（A v1.69・20節、B v0.40・31節、C v4.16）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 相対square完成の全次数認識
+
+**Canonical squareの全次数代数と相対tailsを認識した。** 基底平坦compactなEに対するExt^{q}(E,K)=0（q>2）を相対Serre双対とinjective cogeneratorから証明し、二段のO軌道被覆でT=⊕EiのAZ2を得た。canonical Serre完成は左右Noetherianで、四頂点展開は全成分・全積と任意scheme基底変更を保つ。係数束を残した実際の単純AS解消と相対Gorenstein双対を構成し、qgrは同じ相対H2 heartと、全標準対象を保って完全同値となる。左右Noether性・heartの基底は本稿の局所有限型siteとし、特異基底での絶対大域次元は主張しない。全幾何fiberが分類済みsquare型である有限族へも適用でき、古典fiberを許す。頂点線束と周期線束は明示的に保持する。[相対AZとtails](../papers/quiver-avatar/relative_square_tails_recognition.tex)、[反対代数と左Noether性](../papers/quiver-avatar/relative_square_opposite.tex)、[全整数展開とAS解消](../papers/quiver-avatar/relative_square_unfolding.tex)。
+
+**証明の依存と射程。** 任意Kに使うSerre随伴はRHom_R(RHom(E,K),I)=RHom(K,SE⊗I)であり、Eのcompactnessと基底平坦性が必要。heart全体の大域次元二とはしない。AZ2は二段のO軌道被覆とExt³消滅を用い、有限fppf被覆からHomのflat base changeで降下する。反対代数の四頂点は3−iで反転し、体上のdual avatar (P⁻¹,FP⁻¹,GP⁻¹)と分類済みfinite-square族の認識から左Noether性を得る。globalなdualcurve族の構成を入力としない。
+
+**再開に必要な規約。** B=C(Λ)、A_{4q+j,4p+i}=e_jB_{q−p}e_i、Pack(M)_ne_i=M_{i−4n}。Λの二段階積の核Rはrank4で、最長道長二の短対角解消から通常のJacobian表示を直接得る。Keller Theorem6.10のordinary relation ideal生成に関する訂正も満たす。全整数の頂点線束変更ではA′_{ba}=L_b A_{ba} L_a⁻¹、単純解消の最左係数はL_i L_{i−4}⁻¹である。canonical族と任意の別AS族を線束無視で同一視しない。
+
+**次の課題。** rank16 squareデータとrank24 F0の相対mutationを互いに逆なstack射として構成し、joint multiplication全射条件とH2開の関係を調べる。分類済みfinite-square族の認識は古典fiberを含むため、古典型への変化を扱う基礎は得られた。
 
 ## 相対行列式開と同じheartの全標準頂点
 
@@ -12,7 +22,7 @@
 
 同節ではUi上の三次関係核Rから四重tensorを構成し、実際のgeometric cubic Z族を復元する。Linear cubicのinverse mutationはclassical squareなので、曲線型sourceからは生じない。全次数平坦・Noether性とcanonical tailsはBの既存相対結果を適用し、C0とのpointed exact同値を得る。
 
-**保持すべき因子と範囲。** 曲線上のZ1は $FG^2\otimes\det(p_*G)^\vee$。Cubicの四次overlap・添字線束を消したstrict周期同一視は主張せず、canonical Serre tensor比較と区別する。全標準頂点のH2条件は同じ相対heart上で完成した。次はT=⊕EiのAZ2と全square AS qgrの比較であり、古典型への次元変化と全AS/QP群oid同値は別課題である。
+**保持すべき因子と範囲。** 曲線上のZ1は $FG^2\otimes\det(p_*G)^\vee$。Cubicの四次overlap・添字線束を消したstrict周期同一視は主張せず、canonical Serre tensor比較と区別する。全標準頂点のH2条件は同じ相対heart上で完成した。T=⊕EiのAZ2とcanonical square AS qgrの比較は上節で証明した。有限square表示の全stack比較と全AS/QP群oid同値は別課題である。
 
 ## 全標準構造頂点の判定と頂点ideal
 
@@ -2188,7 +2198,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 ## 検証範囲と再現手順
 
-**現行C v4.15の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は12項目の厳密計算PASS。全halving式・pencil多重次数・全群作用と平方根overlapも含む。大域降下、二収縮のPerf像、全有限分岐後の平方根障害、全halving torsorの証明も相互読取りした。さらに代数的target chart・flat good-moduli性・DM開の非完全直像、およびspinorの反Serre生成障害と全四位相を独立読取りした。Alper刊行版の定義・fpqc降下を一次確認した。 全point schemeのscheme論的計算・任意底の普遍族・孤立二点の順序被覆、頂点idealの必要十分判定、全AS型の標準頂点分類を二名が独立に読取りした。Aのcubic逆構成は適用範囲と結論を再確認し、内部証明全体を再監査したとはしない。RSS2020のLemma6.6とProposition6.10の証明を一次照合した。 相対行列式開・普遍Cartier壁・非被約底の反例、rank16から24へのcone・K内部共役降下・E3の同じheartでの認識を独立読取りし、Stacks 0B91・07Z6・0E6Bの一次本文を照合した。 中間二頂点の実normal窓、相互AZ生成による同heart判定、実際のcubic族回復とlinear除外を独立読取りした。Keller1994 §§4.3,8.2のcompact生成・双加群Moritaを一次確認し、Bの普遍cubic平坦性・Noether性の適用範囲も確認した。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:28・588・185、明示的な論文間参照132件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
+**現行C v4.16の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は12項目の厳密計算PASS。全halving式・pencil多重次数・全群作用と平方根overlapも含む。大域降下、二収縮のPerf像、全有限分岐後の平方根障害、全halving torsorの証明も相互読取りした。さらに代数的target chart・flat good-moduli性・DM開の非完全直像、およびspinorの反Serre生成障害と全四位相を独立読取りした。Alper刊行版の定義・fpqc降下を一次確認した。 全point schemeのscheme論的計算・任意底の普遍族・孤立二点の順序被覆、頂点idealの必要十分判定、全AS型の標準頂点分類を二名が独立に読取りした。Aのcubic逆構成は適用範囲と結論を再確認し、内部証明全体を再監査したとはしない。RSS2020のLemma6.6とProposition6.10の証明を一次照合した。 相対行列式開・普遍Cartier壁・非被約底の反例、rank16から24へのcone・K内部共役降下・E3の同じheartでの認識を独立読取りし、Stacks 0B91・07Z6・0E6Bの一次本文を照合した。 中間二頂点の実normal窓、相互AZ生成による同heart判定、実際のcubic族回復とlinear除外を独立読取りした。Keller1994 §§4.3,8.2のcompact生成・双加群Moritaを一次確認し、Bの普遍cubic平坦性・Noether性の適用範囲も確認した。基底平坦compactのExt次元・四対象のAZ生成・opposite認識・左右Noether性・packing・係数束付きAS解消を独立読取りした。OACU2026 Theorem7.3とKeller Theorem6.10の著者訂正を一次照合した。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:31・619・189、明示的な論文間参照133件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
 
 
 **現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現行3原稿で `scripts/check.py papers` は実行PASS、LuaLaTeXの実組版は依存不足により未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
@@ -2197,7 +2207,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 **既存の有限型代数性の検証範囲。** 主論文v1.44の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlas、普遍cubic族の降下と既約性、被約境界の余次元2とsmooth降下、ambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
 
-**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.15のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
+**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.16のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
 
 **現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 

@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.31。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.15。
+2026-11-23 / v1.32。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.16。
 
 ## 公表用三論文の役割
 
@@ -9,6 +9,8 @@
 - C：`papers/nc-quadric-avatar.tex` はAS代数・potential・anticanonical avatarの分類と内在的H2への比較の正本。分割節は `papers/quiver-avatar/`。体上AS分類、E_f側の全noncubic相対pointed認識、smooth spectral avatarの双対対応と境界延長不能を区別して記述する。任意のAS/avatar/QP表示stack全体とH2との相対同値は主張しない。
 
 ## Cの現在の到達点と比較範囲
+
+**Canonical squareの全次数代数と相対tailsを認識した。** 基底平坦compactなEに対するExt^{q}(E,K)=0（q>2）を相対Serre双対とinjective cogeneratorから証明し、二段のO軌道被覆でT=⊕EiのAZ2を得た。canonical Serre完成は左右Noetherianで、四頂点展開は全成分・全積と任意scheme基底変更を保つ。係数束を残した実際の単純AS解消と相対Gorenstein双対を構成し、qgrは同じ相対H2 heartと、全標準対象を保って完全同値となる。左右Noether性・heartの基底は本稿の局所有限型siteとし、特異基底での絶対大域次元は主張しない。全幾何fiberが分類済みsquare型である有限族へも適用でき、古典fiberを許す。頂点線束と周期線束は明示的に保持する。[相対AZとtails](papers/quiver-avatar/relative_square_tails_recognition.tex)、[反対代数と左Noether性](papers/quiver-avatar/relative_square_opposite.tex)、[全整数展開とAS解消](papers/quiver-avatar/relative_square_unfolding.tex)。
 
 ### 点曲線側の全noncubic相対pointed認識
 
@@ -80,7 +82,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 
 - E_f側の相対mutation、全商降下、Serre完成、pointed heart回収、およびsmooth spectral相対射・gerbe分解を未解決へ戻さない。stack自己同値とH2境界延長は不存在が証明済みであり、単なる証明不足と記さない。境界の具体的な平坦代数モデルを出発点とし、自然な射の延長先とその同型層を調べる。
 - 任意のAS/avatar/QP表示stack全体のright-equivalence groupoid、一般cubic域の表示忘却fiber・慣性、既存GITとの相対比較は別に検証する。体上AS分類や特定noncubic族の相対認識から全表示stack同値を推論しない。
-- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。全分類AS型の標準頂点を体上で判定した。次は二つの乗法行列式による相対開とpointed認識を調べる。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
+- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。全分類AS型の標準頂点を体上で判定した。二つの乗法行列式開と同じ相対heartのpointed認識も証明済み。次はfinite squareとnormal foundationの相対stack比較を調べる。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 

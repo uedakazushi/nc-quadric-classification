@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.15
+% 日本語 LuaLaTeX。2026-11-23 / v4.16
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.15（全標準頂点の相対heart認識とcubic族の回復）}
+\date{2026年11月23日\quad v4.16（相対square完成の左右Noether性・AS解消・tails認識）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -82,6 +82,10 @@ $GP\not\simeq F$，$G\not\simeq FP$であり，端の二頂点は常に属する
 一般square曲線族では実際のnormal窓を構成し，
 全標準頂点の適合開上で，同じ相対heartの強い$\HH$構造対象条件を認識する．
 両側のAZ生成対象によってcompact Morita比較の$t$-exactnessを証明する．
+さらに，平坦compact対象の相対Ext次元を使って四対象の和のAZ豊富性を示し，
+canonical Serre完成と四頂点展開の左右Noether性，実際の相対AS解消，
+標準対象を保つtailsと同じheartの完全同値を証明する．
+有限代数の全幾何fiberが分類済みsquare型である族には古典型も含めて適用する．
 Noncubic中央二重平方環の全point schemeは
 可換点曲線と二つの孤立点の非交和であり，shiftは孤立二点を交換する．
 noncubic由来のsquare・rotated・最小十本矢型の全四位相も具体的に同定する。
@@ -454,6 +458,9 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/relative_vertex_determinants}
 \input{quiver-avatar/relative_avatar_pointed_recognition}
 \input{quiver-avatar/relative_avatar_heart_comparison}
+\input{quiver-avatar/relative_square_tails_recognition}
+\input{quiver-avatar/relative_square_opposite}
+\input{quiver-avatar/relative_square_unfolding}
 \input{quiver-avatar/spectral_atkin_lehner}
 \input{quiver-avatar/spectral_relative_correspondence}
 \input{quiver-avatar/half_period_ruling}

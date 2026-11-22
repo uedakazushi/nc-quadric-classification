@@ -1,0 +1,211 @@
+% !TEX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / 相対square完成と実際のtails認識。
+\subsection{有限square族への限定的な拡張}
+\label{subsec:qa-finite-square-family-opposite}
+
+以下で基底は本稿の局所有限型 $k$-scheme の site に属するものとする。
+次の補題は任意の四頂点代数を扱うのではなく、全幾何 fiber が既に分類された
+square 型である有限局所自由族だけを扱う。
+
+\begin{lemma}[分類済みfiberを持つ有限square族]
+\label{lem:qa-classified-fiber-finite-square-recognition}
+$S$ 上の有限局所自由代数 $B$ が四つの直交冪等元
+$e_0,e_1,e_2,e_3$ を持ち、その右射影 $P_i=e_iB$ の Hom 束が
+\[
+ \left(\operatorname{rk}\operatorname{Hom}(P_i,P_j)\right)_{i,j}
+ =\begin{pmatrix}1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1\end{pmatrix}
+\]
+であるとする。対角成分は単位によって $\mathcal O_S$ と同定され、
+逆向き成分は零とする。
+さらに各幾何 fiber が、本稿で分類した square AS 型の初期四項の
+有限 End 代数と、頂点と全積を保って同型であると仮定する。
+古典型も許す。
+
+このとき $B$ の実際の相対 perfect 圏から、$P_0$ を構造対象とする
+相対 $\mathfrak H_2$ 族が構成される。四つの $P_i$ はこの同じ heart の
+基底平坦対象となり、共通の fppf 局所 chart で compact である。
+通常の canonical Serre 完成
+\[
+ C(B)=\bigoplus_{n\geq0}
+ H^0\left(\Theta_B^{\otimes_B^{\mathbf L}n}\right),\qquad
+ \Theta_B=\mathbf R\operatorname{Hom}_{B^e}(B,B^e)[2]
+\]
+は、各局所 affine chart とその許された基底変更上で右 Noetherian であり、
+その tails はこの相対 heart と同値になる。
+\end{lemma}
+\begin{proof}
+有限 directed 代数の normalized bar 解消により、$B$ は相対 smooth proper であり、
+全 perfect Hom と相対 inverse Serre 関手は任意基底変更と可換する。
+$H_{ij}=\operatorname{Hom}(P_i,P_j)$ とし、実際の cone
+\[
+ Z_1=\operatorname{Cone}(P_1\to H_{13}^{\vee}\otimes P_3),\qquad
+ N_F=(P_0,P_2,P_3,Z_1)
+\]
+を取る。幾何 fiber の分類によって、二つの随伴
+\[
+ H_{01}\longrightarrow H_{13}^{\vee}\otimes H_{03},\qquad
+ H_{02}\longrightarrow H_{23}^{\vee}\otimes H_{03}
+\]
+は各 fiber で単射である。曲線型では pencil の大域生成性、古典型では
+通常の $\mathbb P^1\times\mathbb P^1$ の評価列による。
+従って両者は基底上でも部分束の包含となる。
+
+定理~\ref{thm:qa-relative-square-e0-e3-h2} の有限 cone の計算は、
+これらの Hom 束と全積しか使わない。
+したがって $N_F$ は相対 full strong exceptional 四項であり、
+通常 End は階数二十四、$U_0$ の全射・部分束条件を満たす。
+反対の二中間頂点を用いる窓 $N_G$ とは、B の相対 ruling 対合で交換される。
+
+各幾何 fiber で $N_F$ が真正な normal foundation であることも、
+同定理の体上の証明をそのまま適用できる。
+cubic 開上では cubic 逆構成、一重壁では相対 ruling 交換の体上の形、
+二重壁では既存の noncubic 認識を使う。
+古典型では例えば
+$(\mathcal O,\mathcal O(0,1),\mathcal O(1,1),\mathcal O(1,2))$
+という normal 四項に一致する。
+よって実際の射 $S\to\mathfrak F_0$ の全幾何 fiber が
+$\mathfrak F_{\HH}$ に入り、既存の開埋込 $\Xi$ の逆を適用できる。
+正規窓およびもう一方の ruling 窓から、四つの $P_i$ が
+同じ相対 heart の基底平坦対象であることを得る。
+
+全幾何 fiber の square helix の forward Ext 消滅と perfect-fiber 判定により、
+$\mathbf R\operatorname{Hom}(P_i,t^mP_j)$ は $m\geq1$ に対して
+次数零に集中する。とくに相対 AZ 命題の forward 条件が成立する。
+従って $\bigoplus_iP_i$ は相対 AZ ample であり、
+定理~\ref{thm:qa-relative-square-completion-tails} の証明を適用して
+右 Noether 性と tails の認識を得る。
+ここでは幾何 fiber の分類を入力とし、大域的な曲線 avatar の復元や
+まだ得ていない左 Noether 性は使っていない。
+\end{proof}
+
+\subsection{反対代数の四頂点と添字の規約}
+
+\begin{lemma}[square有限基礎の反対代数]
+\label{lem:qa-square-foundation-opposite}
+前補題の $B$ に対し $B^{\rm op}$ の標準冪等元を
+\[
+ f_i=e_{3-i}\qquad(0\leq i\leq3)
+\]
+と番号付け直す。このとき $B^{\rm op}$ も前補題の仮定を満たす。
+\end{lemma}
+\begin{proof}
+$Q_i=f_iB^{\rm op}$ とすると
+\[
+ \operatorname{Hom}_{B^{\rm op}}(Q_i,Q_j)
+ =f_jB^{\rm op}f_i
+ =e_{3-i}Be_{3-j}
+ =\operatorname{Hom}_B(P_{3-j},P_{3-i}).
+\]
+したがって Hom の階数表は再び square 型となり、積は元の積を逆転したものである。
+
+幾何 fiber が曲線型 avatar $(D;P,F,G)$ に対応する場合を直接確認する。
+\[
+ P'=P^{-1},\qquad F'=FP^{-1},\qquad G'=GP^{-1}
+\]
+と置く。既存の曲線消滅補題により $F',G'$ は大域生成の次数二 pencil、
+$F'G'=FGP^{-2}$ は very ample である。
+また $G'(F')^{-1}=GF^{-1}$ は acyclic なので、二 pencil は同じ $D$ の
+$(2,2)$ 埋込みを与える。$P'\ne\mathcal O_D$ も保たれる。
+従って $(D;P',F',G')$ は再び square avatar である。
+
+元の四線束を $(L_0,L_1,L_2,L_3)=(P,F,G,FG)$ とすれば、
+新しい四線束は
+\[
+ (P',F',G',F'G')
+ =(FGP^{-1})\otimes
+ (L_3^{-1},L_2^{-1},L_1^{-1},L_0^{-1}).
+\]
+可逆層の双対は射の合成を逆転し、共通 tensor は Hom を保つ。
+よって新しい directed End は、全積を含めて $B^{\rm op}$ と同型である。
+本稿の avatar から AS 代数への逆構成により、これは分類済み square AS 型の
+有限基礎となる。古典型でも、逆順双対 collection に
+$\mathcal O(1,1)$ を共通 tensor すると標準 square collection を得る。
+従って全幾何 fiber で所要の仮定が成立する。
+\end{proof}
+
+\begin{remark}[全整数AS代数で書く場合の反転]
+本稿の正向きの規約が $A_{ji}=\operatorname{Hom}(E_i,E_j)$ であるとき、
+上の有限基礎に対応する indexed opposite は
+\[
+ A^{\dagger}_{ji}=A_{3-i,\,3-j}
+\]
+であり、積を逆にする。
+$i\mapsto-i$ だけを使うと初期位相がずれるので、同じ四位相表を主張するときは
+定数 $3$ を保持する。
+右単純の分解を双対化すると、元の添字 $i$ の右単純から
+添字 $i-4$ の左単純の分解を得る。
+新しい添字 $j$ に対して元の $i=7-j$ であり、距離 $k$ は $4-k$ に変わる。
+従って $Q_{1,\rm new}$ は $Q_{2,\rm old}$、$Q_{2,\rm new}$ は
+$Q_{1,\rm old}$ から得られる。
+この変換は定義~\ref{def:qa-as-square-rotated-minimal} の square の四行を
+それぞれ同じ四行へ送る。
+ただし前補題の証明は、この全整数の双対性を未証明の入力にせず、
+各体上の双対 avatar の有限 End を直接用いた。
+\end{remark}
+
+\subsection{inverse dualizing complexとopposite}
+
+\begin{lemma}[Serre完成の反対代数への適合性]
+\label{lem:qa-serre-completion-opposite}
+$B$ を基底上有限局所自由で相対 smooth な代数とする。
+$M^{\rm op}$ は $B$-双加群 $M$ の左右を交換した $B^{\rm op}$-双加群を表す。
+有限対角解消に対して自然な同型
+\[
+ \Theta_{B^{\rm op}}\simeq(\Theta_B)^{\rm op}
+\]
+があり、非負 tensor 冪とその積を合わせると
+\[
+ \Pi_3(B^{\rm op})\simeq\Pi_3(B)^{\rm op}
+\]
+という内部次数付き dg 代数の自然な quasi-isomorphism を得る。
+したがって通常の次数零部分についても
+\[
+ C(B^{\rm op})\simeq C(B)^{\rm op}
+\]
+が成立する。全ての比較は任意基底変更と可換する。
+\end{lemma}
+\begin{proof}
+二つの enveloping 代数の間の因子交換
+\[
+ (B^{\rm op})^e=B^{\rm op}\otimes B
+   \xrightarrow{\sim}B\otimes B^{\rm op}=B^e
+\]
+は対角双加群と有限局所射影対角解消を対応させる。
+この解消を enveloping 代数で双対化し、標準の左右交換によって再び
+双加群と解釈すれば、inverse dualizing complex の表示した同型を得る。
+cohomological shift $[2]$ はこの比較と可換する。
+
+左右交換は tensor 積について反モノイド的であり、
+\[
+ (M\otimes_B^{\mathbf L}N)^{\rm op}
+ \xrightarrow{\sim}
+ N^{\rm op}\otimes_{B^{\rm op}}^{\mathbf L}M^{\rm op}
+\]
+を与える。複体で書けば交換には cohomological Koszul 符号を付ける。
+これを各 tensor 冪へ反復適用すると、積の順序を逆にした
+内部次数付き dg 代数の quasi-isomorphism となる。
+次数零 cohomology 上ではこの符号は通常の反対代数の積を与え、
+内部次数に新たな符号を挿入しない。
+有限局所射影解消、双対、tensor と因子交換はいずれも基底変更に自然なので、
+全ての同型は任意基底変更と可換する。
+\end{proof}
+
+\begin{corollary}[square完成の左右Noether性]
+\label{cor:qa-relative-square-completion-two-sided-noetherian}
+実際の相対 curve-type square avatar から構成した $\Lambda$ について、
+$C(\Lambda)$ は各局所 affine chart とその許された基底変更上で
+左右 Noetherian である。
+\end{corollary}
+\begin{proof}
+右 Noether 性は既存の tails 認識による。
+反転した $\Lambda^{\rm op}$ は
+補題~\ref{lem:qa-square-foundation-opposite} により
+全幾何 fiber が分類済み square 型である有限局所自由族なので、
+補題~\ref{lem:qa-classified-fiber-finite-square-recognition} により
+$C(\Lambda^{\rm op})$ は右 Noetherian である。
+前補題の同型によりこれは $C(\Lambda)^{\rm op}$ の右 Noether 性であり、
+$C(\Lambda)$ の左 Noether 性を意味する。
+必要な局所主張は中央の faithfully flat 基底変更によって降下する。
+一般の任意 Noetherian $k$-基底への強 Noether 性や、任意 AS/QP 表示との
+同一視は、この系から追加で主張しない。
+\end{proof}

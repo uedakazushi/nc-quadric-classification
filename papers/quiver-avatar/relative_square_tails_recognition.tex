@@ -1,0 +1,242 @@
+% !TEX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / 相対square完成と実際のtails認識。
+\section{相対square完成のAS解消とtails認識}
+\label{sec:qa-relative-square-completion}
+
+\subsection{平坦compact対象の相対Ext次元}
+\label{subsec:qa-flat-compact-ext-dimension}
+
+以下では基底を局所有限型 $k$-scheme とし，必要に応じて共通の fppf
+局所 affine chart $S=\operatorname{Spec}R$ を取る．特異な基底上で
+coherent heart 全体の大域次元が二であるとは仮定しない．
+
+\begin{lemma}[平坦compactな始域に対する相対Serre評価]
+\label{lem:qa-flat-compact-ext-two}
+$\mathcal C$ を相対 $H_2$ の heart とし，その局所 compact 圏が
+$R$ 上有限 projective で相対 smooth な代数 $\Gamma$ によって
+Morita 表示されているとする．$E\in\mathcal C$ が $R$ 上平坦かつ
+compact なら，任意の $K\in\operatorname{Ind}\mathcal C$ に対して
+\[
+ \operatorname{Ext}^q_{\operatorname{Ind}\mathcal C}(E,K)=0
+ \qquad(q>2)
+ \tag{FE2}\label{eq:qa-flat-compact-ext-two}
+\]
+が成立する．この結論は同じ仮定を満たす任意基底変更後にも成立する．
+\end{lemma}
+\begin{proof}
+$I$ を $R$-加群圏の injective cogenerator とする．
+相対 Serre 双対を compact な第二変数だけに限定せず，次の随伴として使う：
+\[
+ \mathbf R\operatorname{Hom}_R
+   (\mathbf R\operatorname{Hom}_{\mathcal C}(E,K),I)
+ \simeq
+ \mathbf R\operatorname{Hom}_{\mathcal C}
+   (K,\mathsf S E\otimes_R^{\mathbf L}I).
+ \tag{SA}\label{eq:qa-serre-injective-adjunction}
+\]
+この式は任意の $K\in D(\operatorname{Ind}\mathcal C)$ に対して成立する．
+実際，Morita 表示で $E$ に対応する perfect 右 $\Gamma$-加群を $Q$，
+\[
+ Q^\vee=\mathbf R\operatorname{Hom}_\Gamma(Q,\Gamma)
+\]
+をその左双対とする．$\Gamma$ が $R$ 上 perfect なので $Q^\vee$ も
+$R$ 上 perfect である．tensor--Hom 随伴と有限 perfect 双対によって
+\[
+ \begin{split}
+ \mathbf R\operatorname{Hom}_R
+  (K\otimes_\Gamma^{\mathbf L}Q^\vee,I)
+ &\simeq \mathbf R\operatorname{Hom}_\Gamma
+     (K,\mathbf R\operatorname{Hom}_R(Q^\vee,I))\\
+ &\simeq \mathbf R\operatorname{Hom}_\Gamma
+     (K,\mathbf R\operatorname{Hom}_R(Q^\vee,R)
+                    \otimes_R^{\mathbf L}I)
+ \end{split}
+\]
+を得る．最後の右加群は $\mathsf S Q\otimes_R^{\mathbf L}I$ であり，
+これが式~\eqref{eq:qa-serre-injective-adjunction} である．
+ここで $K$ の compactness や基底平坦性は使っていない．
+
+相対 $H_2$ では $\mathsf S E=t^{-1}E[2]$ であり，canonical $t$ は
+heart 上完全で $R$-線形である．従って $t^{-1}E$ も基底平坦で，
+\[
+ \mathsf S E\otimes_R^{\mathbf L}I
+       =(t^{-1}E\otimes_R I)[2]
+\]
+となる．括弧内は Ind heart の対象である．$K$ も heart にあるので，
+式~\eqref{eq:qa-serre-injective-adjunction} の右辺は cohomological
+次数 $-2$ 未満で零である．一方 $I$ の injectivity により，左辺の
+次数 $-q$ cohomology は
+\[
+ \operatorname{Hom}_R
+       (\operatorname{Ext}^q_{\mathcal C}(E,K),I)
+\]
+である．$I$ が cogenerator であることから
+式~\eqref{eq:qa-flat-compact-ext-two} が従う．
+\end{proof}
+
+\begin{proposition}[有限個の平坦対象を加えた相対AZ生成]
+\label{prop:qa-relative-flat-foundation-az}
+$\mathcal C,\mathcal O$ を相対 $H_2$ 族とし，
+$E_0=\mathcal O,E_1,\ldots,E_r$ を基底平坦 compact な heart 対象とする．
+各 affine 基底変更の共通 fppf 局所 chart 上で前補題の有限 Morita
+表示があり，そこで各 $i$ に対し
+\[
+ \operatorname{Ext}^q(E_i,t^m\mathcal O)=0
+ \qquad(q>0,\ m\gg0)
+ \tag{FO}\label{eq:qa-flat-foundation-forward-o}
+\]
+を仮定する．このとき
+\[
+ T=\bigoplus_{i=0}^r E_i
+\]
+に対し $(T,t)$ は各 affine 基底変更上で AZ ample である．
+\end{proposition}
+\begin{proof}
+$(\mathcal O,t)$ は論文Bの相対反 Serre 再構成により AZ ample であり，
+$\mathcal O$ は $T$ の直和因子なので生成条件 AZ1 は直ちに従う．
+
+まず上記の局所 Morita chart 上で議論する．AZ2 のため，任意の
+coherent 対象 $K$ に対して
+\[
+ \operatorname{Ext}^1(t^{-n}E_i,K)=0\quad(n\gg0)
+ \tag{FV}\label{eq:qa-flat-foundation-ext-one-vanish}
+\]
+を示す．AZ1 を二回使い，短完全列
+\[
+ 0\longrightarrow L\longrightarrow P\longrightarrow K\longrightarrow0,
+ \qquad
+ 0\longrightarrow L'\longrightarrow P'\longrightarrow L\longrightarrow0
+\]
+を取る．ここで $P,P'$ は有限個の $t^{-a}\mathcal O$ の直和である．
+基底の正則性も $K,L,L'$ の基底平坦性も仮定しない．
+条件~\eqref{eq:qa-flat-foundation-forward-o} により，十分大きい $n$ について
+\[
+ \operatorname{Ext}^1(t^{-n}E_i,P)=0,
+ \qquad \operatorname{Ext}^2(t^{-n}E_i,P')=0
+\]
+となる．さらに $t^{-n}E_i$ は基底平坦 compact なので，前補題から
+$\operatorname{Ext}^3(t^{-n}E_i,L')=0$ である．
+二つの長完全列により
+\[
+ \operatorname{Ext}^1(t^{-n}E_i,K)
+  \hookrightarrow\operatorname{Ext}^2(t^{-n}E_i,L)=0
+\]
+を得る．これが式~\eqref{eq:qa-flat-foundation-ext-one-vanish} である．
+任意の全射の kernel にこの消滅を適用すれば AZ2 を得る．
+各 $i$ は有限個なので，一つの十分大きい $n$ を選べる．
+
+一般の affine noetherian 基底 $\operatorname{Spec}R$ 上の AZ2 を確認する．
+その準compactnessにより，共通 Morita chart となる有限個の affine fppf
+被覆を選べる．その非交和を $\operatorname{Spec}R'$ とすれば，
+$R\to R'$ は faithfully flat である．与えられた全射を引き戻すと，
+有限個の chart 上の消滅から一つの十分大きい $n$ の範囲で
+\[
+ \operatorname{Hom}(t^{-n}T,M)\otimes_R R'
+ \longrightarrow
+ \operatorname{Hom}(t^{-n}T,N)\otimes_R R'
+\]
+が全射となる．ここでは相対 $H_2$ の coherent Hom の flat base change
+と $t$ の基底変更整合性を用いている．余核を faithfully flat に
+引き戻すと零なので，もとの Hom 写像も全射である．
+これにより AZ2 は基底全体で成立する．この最後の議論には大域の
+$D(\operatorname{Ind}\mathcal C)$ に対する Morita 表示を使っていない．
+\end{proof}
+
+\subsection{相対square完成の標準tails心}
+\label{subsec:qa-relative-square-tails-heart}
+
+\begin{theorem}[square完成の相対標識付きtails認識]
+\label{thm:qa-relative-square-completion-tails}
+相対 curve-type square avatar の実際の有限代数を $\Lambda$，
+その四つの標準対象を $E_0,\ldots,E_3$ とする．
+定理~\ref{thm:qa-relative-square-e0-e3-h2} の相対 $H_2$ heart
+$\mathcal C_0$ を用い，$T=\bigoplus_{i=0}^3E_i$ と置く．
+その通常の相対 Serre 完成を
+\[
+ C(\Lambda)=\bigoplus_{n\geq0}
+ H^0(\Theta_\Lambda^{\otimes_\Lambda^{\mathbf L}n}),
+ \qquad
+ \Theta_\Lambda=\mathbf R\operatorname{Hom}_{\Lambda^e}
+                      (\Lambda,\Lambda^e)[2]
+\]
+とする．全ての本稿の affine 基底変更上で，
+$C(\Lambda)$ は右 noetherian であり，実際の完全同値
+\[
+ \qgr C(\Lambda)\xrightarrow{\sim}\mathcal C_0
+ \tag{SQH}\label{eq:qa-relative-square-completion-heart}
+\]
+が存在する．標準冪等元を $e_i$ とすると，この同値は
+$\pi(e_iC(\Lambda))\mapsto E_i$ と次数移動 $(1)\mapsto t$ を保つ．
+四頂点の周期的 unfolding による square $\mathbb Z$-代数を
+$A(\Lambda)$ と書けば，同じ主張は $\qgr A(\Lambda)$ にも成立する．
+
+同値~\eqref{eq:qa-relative-square-completion-heart} は任意の本稿の
+基底変更に対する module-object 引戻しと coherent に整合する．
+次数別代数 $C(\Lambda)$，$A(\Lambda)$ の形成自体は，前節の
+Serre tensor 比較により任意の scheme 基底変更と可換する．
+\end{theorem}
+\begin{proof}
+前節で全 $E_i$ は $\mathcal C_0$ の基底平坦 compact な heart 対象であり，
+$T$ の有限 End は実際の $\Lambda$ と同定されている．
+全 forward Hom 複体は基底上 perfect で，全幾何 fiber の geometric helix
+上の前向き Ext 消滅から次数零に集中する．特に $m\geq1$ について
+\[
+ \mathbf R\operatorname{Hom}(E_i,t^mE_0)
+\]
+は次数零の有限局所自由層である．これは任意基底変更後にも成り立つ．
+従って前命題の条件~\eqref{eq:qa-flat-foundation-forward-o} が成立し，
+$(T,t)$ は相対 AZ ample である．
+
+通常の軌道環
+\[
+ R(T,t)=\bigoplus_{n\geq0}\operatorname{Hom}(T,t^nT)
+\]
+に対し，$\operatorname{End}(T)=\Lambda$ は右 noetherian であり，
+全 coherent Hom は有限 $R$-加群なので有限 $\Lambda$-加群でもある．
+一般の End 環に対する Artin--Zhang 再構成を適用すると，
+$R(T,t)$ の右 noetherian 性と
+\[
+ \mathcal C_0\simeq\qgr R(T,t)
+\]
+を得る．ここで用いる形は，論文B
+\cite[\texttt{prop:relative-h2-antiserre-reconstruction}]{QuadricModuli2026}
+が引用する \cite[Theorem 4.5(1)]{AZ1994}，
+\cite[Theorem 7.3]{OACU2026} と同じである．
+
+共通の fppf 局所 chart の実際の tilting Morita 同値の下で $t$ は
+$-\otimes_\Lambda^{\mathbf L}\Theta_\Lambda$ に対応する．
+従って
+\[
+ \mathbf R\operatorname{Hom}(T,t^nT)
+  \simeq \Theta_\Lambda^{\otimes_\Lambda^{\mathbf L}n}
+\]
+は積を保つ同型である．全次数の次数零集中を取り，coherent Hom の
+flat base change に沿って降下すると，基底全体で
+$R(T,t)=C(\Lambda)$ を得る．四つの冪等元による成分分解は標準
+$E_i$ を保つ．有限個の頂点ごとに graded 成分を並べ直す通常の
+folding/unfolding は graded 加群圏の同値を与え，有限生成性と
+torsion を保つので $\qgr A(\Lambda)$ についても同じ結論となる．
+
+最後に，AZ 同値の逆向きは graded 自由加群のシフトを
+$t^{-n}T$ に送り，有限表示の余核へ延長して作られる．
+通常の module-object 引戻しは右完全なので，この有限表示の構成と
+可換する．標準射影 $e_iC(\Lambda)$ についても同様である．
+自由対象上の比較は合成に対して coherent であり，有限表示への
+延長の一意性から全対象上の比較も coherent となる．
+非平坦基底変更に対して全対象の低次数 $\Gamma_*$ が可換すると
+仮定する必要はない．
+非 affine な基底ではこの比較に沿って Abel 圏の descent を適用し，
+実際の完全同値を貼り合わせる．
+大域の $D(\operatorname{Ind}\mathcal C_0)$ と局所 compact 圏の descent
+を同一視する追加命題は用いていない．
+\end{proof}
+
+\begin{remark}[結論の範囲]
+これは実際の曲線 avatar 族から構成した有限 square 代数とその canonical
+Serre 完成に対する認識である．任意の AS/QP 族の Noetherian 性，任意の
+presentation の相対 $H_2$ 性，あるいは全 presentation stack と
+$\mathfrak H_2$ の同一視を結論していない．また
+式~\eqref{eq:qa-flat-compact-ext-two} は始域を基底平坦 compact とした
+相対的な消滅であり，特異な基底上の heart 全体の大域次元二という
+主張ではない．
+\end{remark}

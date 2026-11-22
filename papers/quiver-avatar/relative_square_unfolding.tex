@@ -1,0 +1,292 @@
+% !TEX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / 相対square完成と実際のtails認識。
+\subsection{四冪等元による全整数展開}
+\label{subsec:qa-relative-square-unfolding}
+
+以下で $S$ は前節と同じ flat な曲線型 square avatar の基底であり，
+まず実際の線束と四標準対象を持つ chart 上で考える．
+有限代数を $\Lambda$，標準冪等元を $e_0,\ldots,e_3$ とし，
+通常の相対 Serre 完成を
+\[
+ B=C(\Lambda)=\bigoplus_{n\ge0}B_n,
+ \qquad B_n=H^0(\Theta_\Lambda^{\otimes_\Lambda^{\mathbf L}n})
+\]
+と書く．特に $B_0=\Lambda$ であり，その零次数代数を
+$\OO_S^{\oplus4}$ に置き換えることはしない．
+
+\begin{proposition}[canonical square の全整数展開]
+\label{prop:qa-relative-square-unfolding}
+$a=4p+i$, $b=4q+j$，$0\le i,j\le3$ に対して
+\[
+ A_{ba}=
+ \begin{cases}
+ e_jB_{q-p}e_i,&q\ge p,\\
+ 0,&q<p
+ \end{cases}
+ \tag{UF}\label{eq:qa-square-unfolding-components}
+\]
+と定め，積を $B$ の積から移す．これは $A_{aa}=\OO_S$，
+$A_{ba}=0$ ($b<a$) の positively directed な
+$\mathbb Z$-代数であり，同時の四頂点移動
+$A_{b+4,a+4}=A_{ba}$ を持つ．
+全成分は有限局所自由で，積を含めて任意の scheme 基底変更と可換する．
+相対 heart の標準対象を $E_i$ とし，
+\[
+ E_{4p+i}=t^pE_i,\qquad t=\mathsf S^{-1}[2]
+\]
+と置くと，$b\ge a$ で
+\[
+ A_{ba}=\operatorname{Hom}(E_a,E_b)
+\]
+が全ての積を含めて成立する．
+
+右加群圏には，基底変更と可換な完全同値
+\[
+ \operatorname{Gr}_{\mathbb Z}(A)\xrightarrow{\sim}
+ \operatorname{Gr}(B),
+ \qquad (\operatorname{Pack}M)_n e_i=M_{i-4n}
+ \tag{PK}\label{eq:qa-square-packing}
+\]
+がある．これは有限生成性，有限表示性，torsion を保ち，
+\[
+ P_{4p+i}=e_{4p+i}A\longmapsto e_iB(p),
+ \qquad B(p)_n=B_{n+p}
+\]
+となる．従って前節の相対 AZ 再構成の範囲では
+$A$ の全ての右 row は noetherian であり，
+\[
+ \qgr A\simeq\qgr B\simeq\mathcal C_0,
+ \qquad \pi P_a\longmapsto E_a
+ \tag{UQ}\label{eq:qa-square-unfolded-heart}
+\]
+という実際の完全同値を得る．この比較は同じ範囲の任意基底変更と
+coherent に整合する．
+\end{proposition}
+\begin{proof}
+$q=p$ のとき，$e_j\Lambda e_i=0$ ($j<i$) なので
+式~\eqref{eq:qa-square-unfolding-components} は positively directed である．
+結合則と単位は $B$ のものから従う．相対 Serre tensor の
+基底変更命題により $B_n$ は全て有限局所自由であり，
+冪等元 corner はその直和因子だから同じ性質を持つ．
+compact Morita の Serre 比較は
+\[
+ e_jB_ne_i=\operatorname{Hom}(E_i,t^nE_j)\qquad(n\ge0)
+\]
+を，右規約の軌道積を含めて与える．$t$ が自己同値なので
+$b\ge a$ の表示式が従う．
+
+右 $A$-加群の作用は $M_b\otimes A_{ba}\to M_a$ である．
+式~\eqref{eq:qa-square-packing} において
+\[
+ M_{j-4n}\otimes e_jB_me_i\longrightarrow M_{i-4(n+m)}
+\]
+は次数 $n$ と $m$ の通常の右 graded 作用になる．
+逆は $M_{4p+i}=N_{-p}e_i$ であり，両構成は互いに厳密に逆である．
+標準射影についての式は成分を代入して確かめられる．
+従って有限個の標準射影による表示を両向きに移せる．
+
+$A$ 側の torsion は各同次元が十分負の頂点への作用で消えること，
+$B$ 側の torsion は各同次元が $B_{\ge N}$ により消えることである．
+対応する頂点差は $4m+j-i$ であり，$|j-i|\le3$ なので，
+一方の十分遠方という条件は他方と同値である．
+よって全 graded 加群の torsion 局所化も同値になり，
+noetherian 対象に制限すると $\qgr$ の同値となる．
+$B$ の右 noetherian 性から各 $e_iB(p)$ は noetherian であり，
+$A$ の全右 row に同じことが従う．
+最後に，$B$ の AZ 同値と通常の module-object 基底変更との比較は
+前節の有限表示の余核による構成である．packing 自体は成分の並べ替え
+だけなので，その coherent な比較をそのまま移せる．
+\end{proof}
+
+\subsection{係数束を残した実際のAS解消}
+\label{subsec:qa-relative-square-simple-resolutions}
+
+上の代数の幾何 fiber が square AS 型であることと，
+相対的な単純解消が実際に存在し全基底変更に保たれることを区別する．
+後者は以下の有限な relation 表示により証明できる．
+
+\begin{proposition}[相対squareの単純解消とAS双対]
+\label{prop:qa-relative-square-as-resolutions}
+式~\eqref{eq:qa-square-unfolding-components} の $A$ は，
+任意の頂点 $i$ において，係数が有限局所自由な実際の最小 AS 解消を持つ．
+その四位相の重複度は定義~\ref{def:qa-as-square-rotated-minimal} の
+square 表の通りであり，最左項は canonical な規約で $P_{i-4}$ である．
+これらの解消，その左向きの双対解消，および
+\[
+ \mathcal E xt_A^q(S_i,A)=0\quad(q\ne3),
+ \qquad
+ \mathcal E xt_A^3(S_i,A)\simeq {}_\ell S_{i-4}
+ \tag{RAG}\label{eq:qa-square-relative-as-gorenstein}
+\]
+は任意の scheme 基底変更に保たれる．
+ここで $S_i$ は頂点 $i$ に $\OO_S$ を置いた標準右加群である．
+特異な係数環を含め，代数の絶対大域次元が三であるとは主張しない．
+\end{proposition}
+\begin{proof}
+\emph{有限関係表示．}
+$D_0=\bigoplus_{r=0}^3\OO_Se_r$ と置き，有限 square quiver の
+四つの矢束を
+\[
+ V_{10}=\mathcal H_{01},\quad V_{20}=\mathcal H_{02},\quad
+ V_{31}=\mathcal H_{13},\quad V_{32}=\mathcal H_{23}
+\]
+とする．いずれも階数二である．二段階合成は実際に全射
+\[
+ (V_{31}\otimes V_{10})\oplus(V_{32}\otimes V_{20})
+       \longrightarrow\mathcal H_{03}
+\]
+であり，その核を $R$ とする．全射性は各幾何 fiber の square 有限表示と
+Nakayama から従い，標的が局所自由なので $R$ は階数四の部分束である．
+この完全列は任意基底変更に保たれる．
+$V$ を四矢束の $D_0$-双加群直和とすると
+\[
+ \Lambda=T_{D_0}(V)/(R).
+\]
+有限 quiver の道長は高々二であり，$R$ は source $0$ から sink $3$ の
+成分だけにある．従って関係の重なりはなく，通常の関係 ideal は
+実際に $R$ によって生成される．
+
+この表示には任意基底変更と可換な有限相対対角解消
+\[
+ 0\longrightarrow\Lambda\otimes_{D_0}R\otimes_{D_0}\Lambda
+ \longrightarrow\Lambda\otimes_{D_0}V\otimes_{D_0}\Lambda
+ \longrightarrow\Lambda\otimes_{D_0}\Lambda
+ \longrightarrow\Lambda\longrightarrow0
+ \tag{DR}\label{eq:qa-square-short-diagonal}
+\]
+がある．最初の微分は，道 $ba$ に対する
+$b\otimes a\otimes1+1\otimes b\otimes a$ の和，次は
+$x\otimes v\otimes y\mapsto xv\otimes y-x\otimes vy$ である．
+道長が高々二で，二段階道の積の核がちょうど $R$ であることから
+各頂点対の成分で完全性を直接確認できる．
+あるいは関係と矢の局所枠で通常の bar 解消の可縮な道部分を消去すれば，
+同じ複体を得る．全項は $\Lambda^e$ 上有限局所射影である．
+
+\emph{通常のcompletionとrelation potential．}
+$R^\vee$ を戻り矢 $3\to0$ として加え，
+$R\hookrightarrow V\otimes_{D_0}V$ と恒等 tensor による
+tautological な巡回類
+\[
+ W=\sum_\alpha c_\alpha r_\alpha
+ \tag{RP}\label{eq:qa-square-relative-relation-potential}
+\]
+を取る．この表示は $R$ の局所枠 $r_\alpha$ と双対枠 $c_\alpha$ に依存しない．
+元の矢の block 次数を零，戻り矢の block 次数を一とする．
+式~\eqref{eq:qa-square-short-diagonal} を双対化し $[2]$ だけ移すと，
+$\Theta_\Lambda$ の次数零の生成束は $R^\vee$，
+次数 $-1$ の生成束は $V^\vee$，次数 $-2$ は四頂点の単位束になる．
+その tensor dg 代数の次数零部分では，元の関係 $R$ と，
+$V^\vee$ の微分である $\partial_VW$ が課される．
+$\partial_{R^\vee}W=R$ だから
+\[
+ B=H^0\Pi_3(\Lambda)
+   \simeq \operatorname{Jac}(V\oplus R^\vee,W)
+ \tag{RJ}\label{eq:qa-square-relative-jacobian}
+\]
+を得る．これは有限な解消の実際の双対計算であり，
+一般の変形 parameter に対する CY 性や，arrow-adic 完備化を用いない．
+体上では \cite[Theorem 6.10]{KellerDeformedCY2011} の relation QP 計算に
+一致する．その訂正で要求される ordinary ideal の生成条件も，上の
+道長二の表示で満たされる．訂正の一次資料は
+\url{https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCorrCYCompletion.pdf}
+で確認できる．
+
+\emph{全整数の単純複体．}
+戻り矢を展開すると，非零の矢束 $\mathcal V_{ba}$ は
+\[
+\begin{array}{c|c}
+ (b,a)&\mathcal V_{ba}\\\hline
+ (4q+1,4q)&V_{10}\\
+ (4q+2,4q)&V_{20}\\
+ (4q+3,4q+1)&V_{31}\\
+ (4q+3,4q+2)&V_{32}\\
+ (4q+4,4q+3)&R^\vee
+\end{array}
+\]
+である．全矢は正の頂点差を持ち，$W$ の各巡回項の頂点差の和は四である．
+通常の potential 複体は，基底を選ばず
+\[
+\begin{split}
+0\longrightarrow P_{i-4}
+ &\longrightarrow\bigoplus_j\mathcal V_{j,i-4}^{\vee}\otimes P_j
+ \longrightarrow\bigoplus_j\mathcal V_{ij}\otimes P_j\\
+ &\longrightarrow P_i\longrightarrow S_i\longrightarrow0
+\end{split}
+\tag{SR}\label{eq:qa-square-relative-simple-resolution}
+\]
+と書ける．右の微分は矢の評価，中間微分は cyclic derivative の
+最後の矢による分解，左の微分は矢の余評価である．
+合成が零であることは Jacobian 関係と巡回恒等式から従う．
+係数束を枠で自明化すると，四位相はちょうど既存の square 最小分解表となる．
+
+各幾何 fiber では，式~\eqref{eq:qa-square-relative-jacobian} は元の
+square AS 代数の relation 表示であり，この potential 複体は完全である．
+これは体上の全整数 AS 分類と，
+補題~\ref{lem:qa-as10-ginzburg-concentration} の square の場合の
+標準単純解消による．任意の固定した右頂点成分を取れば，
+式~\eqref{eq:qa-square-relative-simple-resolution} の増大複体は
+有限局所自由層の有界複体になる．全導来幾何 fiber が零なので複体自体が
+零と準同型であり，局所的に分裂している．
+従って式は実際に完全で，任意基底変更後にも完全である．
+最小性は各微分の成分が正の頂点差を持つことから従う．
+
+最後にこの有限射影解消を $A$ で双対化する．
+各左頂点成分も有限局所自由層の有界複体であり，最終項から
+標準左単純 ${}_\ell S_{i-4}$ への canonical augmentation を持つ．
+幾何 fiber の AS 双対性により，この増大複体の全 fiber は完全である．
+同じ perfect-fiber 判定で式~\eqref{eq:qa-square-relative-as-gorenstein} と
+その任意基底変更を得る．左単純の解消はこの双対複体そのものである．
+この議論に左 noetherian 性を先取りしていない．
+\end{proof}
+
+\begin{remark}[頂点線束と周期の標識]
+\label{rem:qa-square-unfolding-vertex-lines}
+実際の標準対象を $E_a'=E_a\otimes L_a$ に変更すると，
+対応する全整数代数は
+\[
+ A'_{ba}=L_b\otimes A_{ba}\otimes L_a^{\vee}
+ \tag{VG}\label{eq:qa-square-vertex-line-gauge}
+\]
+となる．右加群の同値は $M_a\mapsto M_a\otimes L_a^{\vee}$ である．
+したがって線束を自明化せずに，有限表示，torsion，および tails の比較を
+移せる．ただしこの操作は，選択なしの厳密な代数同型と同じではない．
+
+有限四対象の基底線束変更を canonical $t$ で延長する場合は
+$L_{4p+i}=L_i$ であり，四周期も保たれる．
+一方，周期代表を $u=t\otimes N$ に変更すると
+$L_{4p+i}=L_i\otimes N^p$ となり，block 次数 $m$ の成分は
+さらに $N^m$ を tensor される．
+この規約での単純解消の最左項は
+\[
+ P'_{i-4}\otimes L_i\otimes L_{i-4}^{\vee}
+\]
+であり，その係数線束を黙って消去してはならない．
+
+本節で構成した $A$ は実際の canonical $t$ と有限 $\Lambda$ からの
+unfolding である．別途与えた相対 AS $\mathbb Z$-代数族と同一視するには，
+有限 End の同型に加えて，全整数対象を canonical Serre transport と
+比較する同型，または式~\eqref{eq:qa-square-vertex-line-gauge} の線束を
+含む比較を示す．この条件を省いた全 AS/QP presentation groupoid の
+相対同値を主張していない．
+\end{remark}
+
+\begin{corollary}[展開後の左右Noether性]
+\label{cor:qa-relative-square-unfolding-two-sided-noetherian}
+前節と同じ局所 affine chart とその許された基底変更上で，
+$A$ の全ての右 row および左 column は noetherian である．
+\end{corollary}
+\begin{proof}
+右 row については命題~\ref{prop:qa-relative-square-unfolding} による．
+系~\ref{cor:qa-relative-square-completion-two-sided-noetherian} によって
+$B^{\mathrm{op}}$ も右 noetherian である．その冪等元を
+$f_i=e_{3-i}$ と並べ直して同じ packing を用いると，
+対応する全整数代数は
+\[
+ A^{\dagger}_{ba}=A_{3-a,\,3-b}
+\]
+であり，積は元の積を反転したものである．
+その全右 row が noetherian なので，元の $A$ の全左 column も
+noetherian となる．左側の有限性にはここで実際に反対代数の
+相対 $H_2$ 認識と AZ 再構成を使っており，
+単純 AS 双対解消だけから推論していない．
+\end{proof}

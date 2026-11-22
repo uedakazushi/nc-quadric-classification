@@ -1,7 +1,13 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.89。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.90。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 相対AZ・全整数展開・relation potential
+
+Artin–Zhang Theorem4.5(1)の一般End環に対する再構成を、Okawa–Abdelgadir–Chan–Ueda, *Degenerations of orbifold curves as noncommutative varieties*, Nagoya Math. J.261(2026), e4, [DOI](https://doi.org/10.1017/nmj.2025.10067) のTheorem7.3と§7のfolding/unfolding（式7.1–7.5）で一次照合した。既知のAZ再構成やpacking自体を新結果とはせず、相対H2の平坦compact Ext次元から四対象のAZ2を導く証明、および指定square完成への適用を本稿の内容とする。引用キーは `AZ1994`, `OACU2026`。
+
+Keller, *Deformed Calabi–Yau completions*, Theorem6.10について[著者の訂正](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCorrCYCompletion.pdf)を一次確認した。minimal relationsがordinary ideal Iを生成する仮定が必要であり、arrow-adic完備化後の生成だけでは足りない。この訂正をundeformed caseでは不要と解釈しない。本稿のsquareは最長道長二なのでordinary idealの条件を満たし、相対Jacobian同定は実際の短対角解消を双対化して独立に証明する。一般変形parameterのCY性を相対的に無条件輸入しない。包括的新規性は未確認。
 
 ## 相対heart判定に用いるdg Morita
 
