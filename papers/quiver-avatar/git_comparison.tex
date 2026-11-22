@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.5（一般quintuple剛体化後の有限慣性と接slice）
+% 2026-11-22 / v1.6（有効potential/quintupleスタックの一般エタール四重射）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -246,6 +246,115 @@ GITの粗空間の有理同値に関する主張とは別である。
 この有限慣性が本稿のpointed忘却射で
 忠実に保存されるかは、point対象への作用を含む
 相対groupoid比較として別途検証する。
+\end{remark}
+
+\begin{theorem}[potentialからquintupleへの一般四重射のスタック的エタール性]
+\label{thm:qa-ou-rigid-potential-quintuple-generic-etale}
+標数零の代数閉体$k$上、$U$を四次元非退化二次空間とする。
+SO表示に関する有効作用群
+\[
+ P=\bigl(\SO(U)\times\Gm\bigr)/
+           \langle(-I,1)\rangle,\qquad
+ Q=\bigl(\SO(U)\times\SO(U)\times\Gm\bigr)/Z
+\]
+を考える。ただし$Z$は命題
+~\ref{prop:qa-ou-generic-quintuple-finite-inertia}の証明に
+現れる位数四の中心核であり、
+$P$と$Q$はそれぞれpotential表示
+$\operatorname{Sym}^2U$とquintuple表示
+$\operatorname{End}U$に忠実に作用する群である。
+同じ二次形式で同一視した対称行列の包含と、
+群準同型
+\[
+ \operatorname{Sym}^2U\hookrightarrow\operatorname{End}U,
+ \qquad (g,\lambda)\longmapsto(g,g,\lambda)
+\]
+は商スタックの射
+\[
+ \iota:\bigl[(\operatorname{Sym}^2U)^{\rm rs}/P\bigr]
+       \longrightarrow
+       \bigl[(\operatorname{End}U)^{\rm rs}/Q\bigr]
+ \tag{OU-stack-4}\label{eq:qa-ou-generic-stack-fourfold}
+\]
+を誘導する。ここで$\mathrm{rs}$は
+固有値の非零・二乗の相異性・前命題のtrace条件を
+満たす滑らかなGIT安定稠密開とし、必要に応じて
+双方でさらに同じ像の稠密開へ縮める。
+
+この射は一般点の幾何慣性
+$\mu_2^2\to\mu_2^2$において\emph{同型}であり、
+接写像も同型である。従って$\iota$は
+ある稠密開への制限で、表現可能な有限étale次数四の射となる。
+この四重射は有限慣性$\mu_2^2$を消すrigidificationではなく、
+その慣性を各sheetで保持する。
+\end{theorem}
+\begin{proof}
+潜在的に異なる四つの$\GL_2$作用を、
+OU \cite[\S3, (3.6)--(3.10)]{OU2014}の
+$\Spin_4\simeq\SL_2\times\SL_2$と
+similitude scalarに変換すると、
+上記二つの忠実な有効群とその射になる。
+$Z=\{(\epsilon I,\eta I,\epsilon\eta)\}$なので
+$(g,g,\lambda)\in Z$は
+$g=\pm I$、$\lambda=1$に同値である。
+従って$P\to Q$は単射である。
+
+$x_1,\ldots,x_4$を一般の対角固有値として
+$X=\operatorname{diag}(x_1,\ldots,x_4)$とする。
+$P$の幾何安定化群では
+$\lambda gXg^{\mathsf T}=X$である。
+$\sum_i x_i\ne0$の開へ縮めると
+traceから$\lambda=1$が従い、
+相異なる$x_i$の固有直線の保存により
+$g=\operatorname{diag}(\epsilon_i)$、
+$\prod_i\epsilon_i=1$となる。
+$(-I,1)$で割ると$\mu_2^2$である。
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
+により$Q$の同じ点の安定化群も$\mu_2^2$で、
+包含$g\mapsto(g,g)$はこれらを同型にする。
+
+$P$の無限小作用は、
+$\mathfrak{so}_4\oplus k$から対称行列への
+\[
+ (A,\alpha)\longmapsto AX-XA+\alpha X
+\]
+であり、$i<j$の対称非対角成分は
+$(x_j-x_i)A_{ij}$で全て得られる。
+従ってその商の接空間は
+$k^4/k(x_1,x_2,x_3,x_4)$である。
+$Q$側の無限小作用は
+$AX-XB+\alpha X$で、
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
+により同じ商接空間となる。
+包含による接写像はこの同定の下で恒等写像である。
+
+正則半単純開では両群作用の安定化群は有限étaleで、
+商スタックは滑らかなDeligne--Mumfordスタックである。
+慣性への単射から射はこの開で代数空間に表現可能であり、
+上記の接写像同型からétaleとなる。
+OU \cite[Theorem 1.1(4)]{OU2014}の
+粗GIT商の射は有限次数四なので、
+分岐と非正則半単純部分の像を避けて開を縮めると、
+この表現可能étale射は有限で各幾何fiberに
+四点を持つ。群oidの点ごとの慣性も同型なので、
+粗空間での四点とスタックの幾何fiberの四対象は
+この開で一致する。
+\end{proof}
+
+\begin{remark}[残るpointed射の慣性とroot deck群の相違]
+\label{rem:qa-ou-stack-fourfold-not-h2-forgetting}
+定理~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}
+が記述するのは有効\emph{表示}スタック間の
+四重射であり、$\mathfrak H_2$への忘却射
+~\eqref{eq:qa-geometric-cubic-rigid-map}ではない。
+その$\mu_2^2$慣性がpointed自己同値で
+忠実に残るか、さらに異なる四窓・rulingが
+一つのpointed対象に何種類対応するかは未解決である。
+表示側の$\mu_2^2$は楕円点曲線の翻訳自己同型として
+Picard根の同型類を固定する。
+これに対して四重被覆のdeck型の$E[2]$作用は
+四つの根を推移的に動かす。両作用の
+区別は、一般の相対群oid比較に必要である。
 \end{remark}
 
 \begin{remark}[GITの次数と慣性を混同しない]
