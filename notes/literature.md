@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.57。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.58。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -74,6 +74,45 @@ OU既知の粗GIT有限次数4と合わせて一般有限étale四重射を得�
 さらにVdB2011の幾何的商D→D_geomとcoh(C)の完全忠実埋込から一般μ₂²慣性がpointed忘却へ単射となる。Bの普遍非線型cubicのsmooth atlas `lem:universal-nonlinear-cubic-h2-family` を使うと剛体化quintuple→H2はsmooth相対次元0、一般開でétale、KS同型・HH¹=0・dimHH²=3となる。Bの二つの内在的foundationと楕円ruling交換は一般fiberの二点を与える。ゆえに一般有限étale次数2、potentialの合成では次数8。この相対比較の新規性は未確認で、Bのsmoothness証明全体を今回独立再点検したという意味ではない。詳しい証明はCのprop:qa-ou-generic-quintuple-finite-inertia、thm:qa-ou-rigid-potential-quintuple-generic-etale、prop:qa-ou-generic-inertia-faithful-to-h2。
 今回確認したのは一次資料の表現・仮定・正則半単純模型であり、
 OU全原稿の網羅的再監査ではない。
+
+## 一般étale忘却と有限二重被覆の一次入力
+
+本研究の論文Bの `lem:universal-nonlinear-cubic-h2-family` は、非線型
+geometric quintupleの射影表示開から内在的H2への射が
+representable smoothであることを、指定pointed Artin持上げに基づいて証明する。
+`cor:cubic-formal-h2-abelian` は形式変形の接・自己同値のLieを
+HH²・HH¹に同定し、`thm:global-h2-smooth-finite-type` は
+H2がsmooth純次元3であることを示す。これらは未公刊の本研究内入力。
+一般quintuple剛体化スタック側もsmooth純次元3であり、
+Bの射との合成がsmoothなので、source smooth atlasによる局所判定から
+忘却はsmooth相対次元0となる。
+
+Stacks Project
+[Tag 075T, Section 101.33](https://stacks.math.columbia.edu/tag/075T)
+は代数スタック射のsmoothnessをsmooth source-and-target局所に判定する
+定義と合成の性質を記す。これを2026-11-22に公開本文で確認した。
+[Tag 0BBA, Lemma 68.21.1](https://stacks.math.columbia.edu/tag/0BBA)
+は代数空間のquasi-separated finite type射について、
+標的のgeneric point上のfiberが有限であることと、
+そのgeneric pointを含む開に縮めてfiniteとなることが同値と示す。
+同じく2026-11-22に本文を直接確認した。
+本研究ではH2のsmooth atlasへ引き戻して適用し、étale descentで降下する。
+この一般的事実と本研究固有の慣性単射・二foundationの復元を区別する。
+
+論文Bの `cor:two-intrinsic-foundations` と
+`cor:h2-point-groupoid-foundation` は
+指定Oから始まる二つのnormalized foundationの充満な群oid記述、
+`lem:elliptic-two-reflections` は
+R:(η,δ)↦(2δ−η,δ)の具体的な楕円変換を与える。
+CではこれらとVan den Berghのquintuple復元を合わせ、
+j(E)≠0,1728、δ∉E[2]、η∉{0,δ,2δ}の開で二つのliftが
+非同型・一般fiber二点であることを証明した。
+有限étale二重射のcanonical involutionは
+rank2 finite étale代数でi(a)=Tr(a)−aにより構成され、
+幾何点でnormalized ruling交換に一致する。
+従って稠密開の相対商H2≃[quintuple/S2]、
+potentialの一般合成次数8もC原稿に証明を置く。
+これらの一般的な先行研究に対する新規性の網羅的調査は未完了である。
 
 ## 研究の位置
 
