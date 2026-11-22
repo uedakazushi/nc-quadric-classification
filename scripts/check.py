@@ -142,7 +142,7 @@ def sources() -> int:
     required = (
         "README.md", "AGENTS.md", "00_research_plan.md", "CLOUD_CODEX.md", "notes/research_notes.md",
         "notes/literature.md", "papers/nc-quadric-classification.tex",
-        "papers/nc-quadric-moduli.tex", "papers/quiver-avatar-moduli.tex", "papers/references.bib",
+        "papers/nc-quadric-moduli.tex", "papers/nc-quadric-avatar.tex", "papers/references.bib",
         "computations/verify_quadric.py", "computations/verify_pencil_tangent.py",
         "computations/verify_reducible_quadruples.py", "computations/verify_noncubic_antiserre_pivots.py",
         "requirements.txt", ".latexmkrc",
@@ -173,7 +173,7 @@ def sources() -> int:
         text = tex_without_comments(original)
         # Guard against pasting Markdown and Unicode maths into paper C.
         # The latter can trigger "Missing $ inserted" at an unescaped underscore.
-        if MAIN.name == "quiver-avatar-moduli.tex":
+        if MAIN.name == "nc-quadric-avatar.tex":
             for lineno, line in enumerate(text.splitlines(), 1):
                 if re.search(r"\*\*[^*\n]+\*\*", line):
                     failures.append(f"{display}:{lineno}: Markdown bold in LaTeX; use \\textbf{{...}}")
@@ -336,7 +336,7 @@ def cross_paper_labels() -> int:
     roots = {
         "QuadricIntrinsic2026": ROOT / "papers/nc-quadric-classification.tex",
         "QuadricModuli2026": ROOT / "papers/nc-quadric-moduli.tex",
-        "QuiverAvatarModuli2026": ROOT / "papers/quiver-avatar-moduli.tex",
+        "QuiverAvatarModuli2026": ROOT / "papers/nc-quadric-avatar.tex",
     }
     sources_by_key: dict[str, dict[Path, str]] = {}
     labels_by_key: dict[str, set[str]] = {}
@@ -402,7 +402,7 @@ def papers() -> int:
         for manuscript in (
             "nc-quadric-classification.tex",
             "nc-quadric-moduli.tex",
-            "quiver-avatar-moduli.tex",
+            "nc-quadric-avatar.tex",
         ):
             MAIN = ROOT / "papers" / manuscript
             print(f"\nSOURCE AUDIT: {MAIN.relative_to(ROOT)}", flush=True)
