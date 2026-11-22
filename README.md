@@ -150,10 +150,22 @@ $f_1=x(x-1),f_2=(x-2)(x-3)$では
 従来の二根対↔$C_q$上のavatarの体上同型類全単射を、
 **$B_f$の点曲線$E_f$そのものの同一視や
 qgrのpointed同値と読み替えてはならない。**
-次は論文Aのnoncubic normal helixの二つの非自由MCM対象
-$X_c,X_d$の有限directed Endと、
-$E_f$上の二pencil avatarのEndを比較し、
-構造対象OとSerre移動まで同定することを優先する。
+さらに[同じ証明節](papers/quiver-avatar/point_spectral_isogeny.tex)で、
+noncubic normal helixの二つの隣接合成像を
+\[
+\operatorname{im}\mu_c=\langle u,v,c\rangle,\qquad
+\operatorname{im}\mu_d=\langle u,v,d\rangle
+\]
+と計算し、$E_f$上の$F_c,F_d$の
+$\operatorname{Sym}^2H^0(F_c),\operatorname{Sym}^2H^0(F_d)$
+のVeronese積像と厳密に一致することを証明した。
+二像の共通部分は$\langle u,v\rangle$、和は$(B_f)_1$全体である。
+**これはmatrix-factorizationのkernelのみならず、
+2つのrank-three乗法の像が一致したことを意味する。**
+次は他のHom・最小関係・全合成を含む
+normal helixのfinite directed End代数と
+$E_f$側のavatar Endを直接比較し、
+構造対象O・Serre completion・pointed exact同値まで追う。
 共有根ではisogenyはétaleでなく、torsion-free
 spectral moduleへ移行する。
 本比較の外部文献との包括的新規性は未確認。
