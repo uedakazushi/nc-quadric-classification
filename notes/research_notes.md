@@ -1,16 +1,21 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.38（A v1.69・20節、B v0.41・31節、C v4.24）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.39（A v1.69・20節、B v0.41・31節、C v4.26）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
-## 八矢QPとcubic有限foundationの全相対groupoid
+## 十・十二矢の二massと全finite foundationの相対groupoid
 
-**原稿上の新定理（論文C）。** 八矢四次potential `H∈(W⊗V⊗U)⊗T`（四束rank2）を第四矢Tで微分し、rank2の部分束 `R=im(∂_T H)⊂W⊗V⊗U` を得る。rank2直接因子の開 `P8^(2)` は普遍Grassmann上の `Isom(T∨,R)`-torsorだから、fppf相対群oid `[P8^(2)/GL2⁴]≃[Gr(2,8)/GL2³]`。一方finite directed foundationで二つの二段積a,bが可逆なopenでは、結合律の二経路が共通全射 `m:W⊗V⊗U→N`（N rank6）に一致し、`R=ker m`。全二段・三段の積を保持して `F8^lin≃[Gr(2,8)/GL2³]` を構成した。全scheme底変更・Isom・慣性まで成立。三頂点scalar `Gm³` をrigidifyすると `[Gr(2,8)/PGL2³]`、幾何四重テンソルopenはH2の選択ordered cubic chartに等しい。これはraw QP群oidが直接H2に同値という主張ではない。既証明の12矢消去pairはさらに `BGm²` を生む。
+**論文Cの現行定理。** 八矢のrank-two第四矢微分に関しては、`[P8^(2)/GL2^4] ≃ [Gr(2,8)/GL2^3] ≃ F8^lin` が非被約底を含むfppf群oid同値であり、頂点scalarsのGm³を剛体化するとordered cubic H2 chartへ移る。二cubic正規化 T,T⁻¹ は一般にright-equivalenceではないのでmutation/window変更が必要。
 
-**cubic二chartの障害。** f可逆/g可逆な二正規化の変換 `T↦T⁻¹` は一般には右同値ではない。四量子ビット粗不変式の固定部分は `e3=±d e1` に限られる。Cartan固有値(1,2,3,4)で(e1,e2,d,e3)=(30,273,24,820)、p_adj=9625、q_adj=6510100となるためgeometric可逆開にありながら固定されない。従って全H2のQP比較にはmutation/window変更を伴うchart glueが必要である。
+**滑らかなmassゲージ。** 非最小十矢potential `W_λ=H+yq+px+λyx` に対し、`a=1+λt` として `x↦ax+tq`, `y↦a^(-1)(y−tp)` はpotentialを巡回同値で厳密に保ち、Jacobian代数上恒等。群 `U_λ=Spec R[t,a^(-1)]` の法則は `t⋆s=t+s+λts`。λ単元でGm、λ=0でGa、dual number λ=εでもsmooth flat。既知のraw `H+εyx` だけの非平坦な対角scalar慣性とは別であり、actual mutation AS族 `H+yq+px+εyx` にこのsmoothゲージ群が実際に作用する。
 
-**nilpotent massとQP慣性の明示障害。** raw QPの一組の可縮pair x,y とweight4 potential H に対し Wλ=H+λyx と置く。二矢の対角スカラー (t,s) がpotentialを固定する必要十分条件は λ(ts−1)=0。従って Tλ=Spec R[t±,s±]/(λ(ts−1)) は、λ単元ならGm、λ=0ならGm²、R=k[ε]/ε²、λ=εなら ε(ts−1)=0 かつ (ts−1) mod ε ≠0 によって非平坦。これは**raw QPの部分慣性の計算**であり、Wλがflat AS族であることや全慣性がTλで尽きることは主張しない。証明はCの新節、検算は [verify_qp_mass_inertia.py](../computations/verify_qp_mass_inertia.py)、GitHub blob SHA `e4252d9e7fc117383ef1f33572e0967a27679c96` と一致のコピーで4項目PASS。rank三の実ASの比較はなお別問題。
+**一mass有限groupoid。** 偶数対角十矢表示では `D=(V⊗U)⊕Rx`, `r=q+λx`、短関係 `W⊗r` と二本の三段関係がrank四直和因子となる開を定義する。`E=D/(r)`、`N=(W⊗D)/(W⊗r+im∂_T W)`を使って二段・三段の全積を復元する。fppf局所で全finite foundationを覆い、全Isomの核は `U_λ`。rank三scheme壁・λ=εの非平坦最小矢層も含む。これ自体は全次数ASの認識ではない。
 
-**再現・残課題。** [証明](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) と [検算](../computations/verify_q8_cubic_groupoid.py)。後者はGitHub blob SHA `3d2dc22b227786185c9cea5844505fa8fabf1020` と一致するコピーをPython 3/SymPyで実行し、12項目全PASS。これは一般fppf同値の証明でなく、frame torsor・結合律・全積の証明は原稿にある。次の核心はrank3 scheme壁・nilpotent mass上の非最小十/十二矢QPのright-equivalenceと全相対AS heart比較。最小矢束の非平坦例（`coker μG=O/(δ)`、δ=ε）を避けて全幾何fiberの本数から群oid同値を推測しない。
+**二mass全finite groupoid。** 共通12矢potential `H+yq+px+vq'+p'u+λyx+μvu` において、`D_a=(V⊗U)⊕Ru`, `r_a=q'+μu`, `D_b=(W⊗V)⊕Rx`, `r_b=q+λx`。三段道のrank12束 `B=(W⊗V⊗U)⊕(W⊗Ru)⊕(Rx⊗U)` に短関係 `W⊗r_a` と `r_b⊗U` (rank合計4) および二本の残余関係 `∂_T W` を入れ、rank六直和因子を要求する。この開で E,F rank4、N rank6 の全有限foundationが成立し、fppf局所のforgetful gerbeの慣性核は **`U_λ×U_μ`**。両rank三の幾何壁でGa²、両mass可逆でGm²、nilpotent massでもsmooth flat。全基底変更、同型層まで主張するのは有限代数水準である。証明正本：[C3の現行節](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。既存の `prop:qa-stabilized-inertia` のcubic二pairのBGm²と両立する。
+
+**再現と確実性。** `python3 computations/verify_q10_mass_gerbe.py` と `python3 computations/verify_q12_two_mass_gerbe.py` は、mass群法則、潜在関数係数、短関係の単元minor、二段積のdet、三段積の結合律・全射の明示モデルを検査する。数学的に等価なSymPy計算はこの作業で実行しPASS。GitHubへ掲載した両ファイルそのものをローカルcontainerで再ダウンロード・再実行した検証は未実施。一般fppf群oid同値は原稿のframingと関係束の証明であり、有限モデルの検算だけからは従わない。包括的な独立証明監査・LuaLaTeX組版も未実施。
+
+**残るC3の核心。** 全H2のfinite foundation実現可能開に制限して、relation-dual ordinary QP Jacobianの全次数AS完成をcanonical Serre完成と比較し、全基底変更・左/右Noether性・AZ heartの一致を証明するか適用外の障害を示す。選択したfoundationを変えるmutation/windowの相対t-exact glueとruling交換を確定する。raw QPを剛体化せずにH2と忠実同値としない。これはC1（既存範囲の整理）・C2（good moduliの明示）を原稿上達成した後の優先課題であり、C4の独立監査は残る。
+
 
 ## 全H2のGram pencil不変式環と明示good moduli
 
