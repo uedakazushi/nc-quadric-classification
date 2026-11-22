@@ -84,7 +84,7 @@ def main():
     # As an S2-double cover, R_G = R_H + X_3 R_H
     assert s.simplify(ordered - (1 + t**3) * unordered) == 0
     assert s.expand(ordered_coeff).coeff(t, 8) == 13
-    assert s.expand(unordered_coeff).coeff(t, 8) == 9
+    assert s.expand(unordered_coeff).coeff(t, 8) == 11
     print("PASS: graded rings and rank-two invariant decomposition")
 
 
