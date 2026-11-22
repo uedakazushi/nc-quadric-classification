@@ -1,14 +1,63 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.03（A v1.69・20節、B v0.39・31節、C v2.9）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.04（A v1.69・20節、B v0.39・31節、C v3.0）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
-## 論文C：幾何的AS入力の自足化と共有根の相対線束障害
+## 論文C：最小AS分解型とavatarの分類・相対境界
 
-**現在有効な入力。** 添付の大川--植田v7（Parts I--II）のうち、反標準曲線の消滅と二pencil、
-square/rotated再埋込み、有限foundationの評価行列、四つのcanonical複体と全周期の前向きExt消滅を、
-Cの `square_rotated_foundations.tex` と `canonical_helix_complexes.tex` に証明として組み込んだ。
-直接的な曲線上の完全性と、元のAS Z代数の全周期最小射影分解・Noether性・O-marked heart同値は別である。
-必要なカテゴリー的なAS認識の詳細は元のv7中のhelix/realization構成と原稿A・Bの仮定を突き合わせて継続する。
+**中心定理（原PDFからCへ証明移管）。**
+原資料『非可換二次曲面の二つの反標準avatar』v7の
+定理1.3・命題2.4/6.5/7.1/12.1をもとに、
+`papers/quiver-avatar/as_helix_classification.tex` の
+`thm:qa-as-avatar-bijection` を主定理とする。
+指定された四周期最小分解とAS–Gorenstein条件を持つ
+square/rotated square型のAS正則Z代数の頂点保存同型類と、
+曲線型（非被約Dも許す）・古典型avatarの同型類がそれぞれ一対一対応する。
+逆向きは有限directed Endとacyclic spherical helix、
+Serre完成による全Z代数復元。
+必要方向は単純分解とHilbert増大からのrank forcing、
+点表現上のΣ0/Σ2・反標準D・Pic0の抽出。
+左右Noether性は正則normal四次元族とtwisted section algebraに帰着。
+curve上のcanonical完全列は
+`square_rotated_foundations.tex` と
+`canonical_helix_complexes.tex` に証明を保持。
+
+**最小10本矢型の独立分類（原PDF第48--53節）。**
+`papers/quiver-avatar/as10_mutation_classification.tex` の
+`thm:qa-as10-global-bijection` は
+ASsq の全体と ASc ⊔ AS10^min の頂点保存同型類の全単射。
+AS10^min はmutation像を参照しない最小右射影分解と
+AS–Gorenstein条件で定義し、
+逆mutationを任意のtargetに適用。
+非最小reductionのrank 4/3はcubic 8本/最小10本を分け、
+10本側のavatar条件は G≅F P（P≠O_D）である。
+全整数の評価・余評価が双方向のinverseを与える。
+right-equivalence groupoidのtrivial pair gaugeは
+underlying algebraのgroupoidとは異なる。
+相対族についてはfinite foundation等のperfect性を課した
+局所Noetherian基底に限って基底変更対応を扱う。
+**12本矢は通常8本のfoundation矢＋4本のrelation-dual戻り矢のQP表示であり、
+一般の12本矢QPに独立ASクラスの全分類は主張しない。**
+P(1,1,2)のrelation QPはDWZのmutation頂点を持たない反例。
+
+**一般定理・検証の所在。**
+外部入力は Okawa–Ueda (arXiv:2007.07620, Theorem 5)
+のacyclic spherical helix→exceptional realization、
+Keller (2011, Theorem 6.10) の`undeformed` CY completion、
+Keller–Yang (2011, Theorem 6.2) のQP mutation、
+twisted section algebraのNoether性。
+元PDFの分類の証明を現在の原稿に組み直したことと、
+今回その全数学的推論を独立に検証したことは区別する。
+いずれも原資料著者の結果であり、
+この移管を新発見・外部査読済みとは扱わない。
+最優先の独立監査は、ASの必要rank forcingの商、
+非被約DのPic0判定、Yoneda truncation、DG双加群三角形、
+Keller–Yang局所仮定、全整数inverseの自然性。
+一方、O-marked内在的H2 heartとのpointed同値と
+一般非被約底での無条件相対ASスタック同値は未証明。
+
+**相対spectral境界で既に得た結果と核心。**
+
+
 
 **共有根の相対線束障害と奇偶類（Cで証明）。**
 $A=k[[a,b,y]]/(ab-y^2)=k[[c,d]]^{\pm}$、
