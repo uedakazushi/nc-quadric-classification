@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.32。相対Euler--conormal完全性判定と二mass全基底の対角解消。
+% 2026-11-23 / v4.33。非最小関係の相対dual tensor dg微分を明示したJacobain比較。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -973,29 +973,88 @@ preprojective次数一，finite foundationの元の矢に次数零を
 AS正則性は従わない．
 \end{theorem}
 \begin{proof}
-式~\eqref{eq:qa-two-mass-relative-diagonal}を
-$\Lambda^e$双対化して二つだけcohomological degreeを
-移す．元の矢束$V_{\rm fin}$の双対は次数$-1$，
-関係の双対$R_{\rm fin}^\vee$は
-preprojective次数一・cohomological次数零，
-頂点単位の双対は次数$-2$の生成束を与える．
-この有限な双対複体からのtensor dg algebraの
-次数零の生成元は$V_{\rm fin}\oplus R_{\rm fin}^\vee$である．
-次数$-1$の生成元の微分は関係そのものと
-relation potential
+補題~\ref{lem:qa-relative-euler-conormal-diagonal}と
+命題~\ref{prop:qa-two-mass-short-relative-diagonal}によって，
+二mass全開上の分裂完全な$\Lambda^e$局所射影解消がある．
+$P_i$をその三項とし，$\Lambda^e$双対を取ると，
+$\Theta_\Lambda$は
 \[
- \mathcal W=\langle R_{\rm fin},R_{\rm fin}^\vee\rangle_{\rm cyc}
+ \Theta_\Lambda\simeq
+ \bigl[P_0^\vee\xrightarrow{\partial_1^\vee}
+       P_1^\vee\xrightarrow{\partial_2^\vee}
+       P_2^\vee\bigr][2]
 \]
-の元の矢に関するcyclic derivativesを課す．
-現在の局所枠で短関係と残余二関係を書けば，
-これは正確に式~\eqref{eq:qa-two-mass-potential}である．
-よって$H^0$はそのordinaryな二側Jacobian idealで割った
-代数であり，式~\eqref{eq:qa-two-mass-jacobian-preprojective}
-を得る．
-$R_{\rm fin}$の枠変更は$R_{\rm fin}^\vee$の逆転置と
-相殺され，計算は降下する．
-使った複体は基底上分裂した有限局所射影なので，
-双対化・相対tensor表示は基底変更と整合する．
+で表せる．この複体では，$P_2^\vee$に
+cohomological次数$0$，$P_1^\vee$に$-1$，
+$P_0^\vee$に$-2$を与える．
+頂点代数$D_0$の相対separabilityにより，
+各双対は逆向きの有限束値矢として表示できる．
+$P_2^\vee$の四本の関係双対はpreprojective次数$1$，
+元の$V_{\rm fin}$はpreprojective次数$0$である．
+
+局所的に関係束の枠$r_\alpha$と
+双対枠$r_\alpha^*$を選ぶ．
+二段のrelation potentialを
+\[
+ \mathcal W_{\rm rel}
+   =\sum_\alpha (r_\alpha r_\alpha^*)_{\rm cyc}
+ \tag{RP}\label{eq:qa-q12-relation-potential-contraction}
+\]
+と置く．その展開は，二つの短関係
+$q'+\mu u,\ q+\lambda x$と二つの残余長関係から，
+正確に式~\eqref{eq:qa-two-mass-potential}を与える．
+右加群・道の合成規約を用いた
+$\partial_2$の非可換微分
+\[
+ \partial_2(r_\alpha)
+  =\sum_{w=v_1\cdots v_m\text{ in }r_\alpha}
+    \sum_{j=1}^m
+    v_1\cdots v_{j-1}\otimes v_j\otimes
+      v_{j+1}\cdots v_m
+\]
+を双対化すると，degree $-1$の生成元$v^*$
+のdg微分は
+\[
+ d(v^*)=\partial_v\mathcal W_{\rm rel}
+\]
+となる．他方，$P_2^\vee$の生成元
+$r_\alpha^*$はcohomological次数$0$で閉じている．
+よって通常のtensor dg algebraの次数零cohomologyは
+\[
+ \begin{aligned}
+ H^0T_\Lambda(\Theta_\Lambda)
+ &\simeq
+ T_\Lambda(R_{\rm fin}^\vee)/
+     \bigl(\partial_v\mathcal W_{\rm rel}\bigr)_{v\in V_{\rm fin}}\\
+ &\simeq
+ T_{D_0}(V_{\rm fin}\oplus R_{\rm fin}^\vee)/
+   \bigl(
+      \partial_v\mathcal W_{\rm rel},
+      \partial_{r_\alpha^*}\mathcal W_{\rm rel}
+   \bigr)_{v,\alpha}.
+ \end{aligned}
+\]
+二番目の同型で
+$\partial_{r_\alpha^*}\mathcal W_{\rm rel}=r_\alpha$
+を既に$\Lambda=F/(r_\alpha)$に課している．
+次数$-2$の頂点生成元は$H^0$の新しい関係を
+生まず，dg algebraは\emph{ordinary}な
+tensor直和で作るため完備化イデアルを必要としない．
+すなわち右辺は通常のJacobian algebraである．
+
+基底変更に対して$P_\bullet$は
+$\mathcal O_S$上分裂完全であり，
+各項は有限局所射影な$\Lambda^e$-加群である．
+従って双対複体と各tensor次数の構成は
+任意の本稿の基底変更と整合し，
+関係束の枠変更では
+$\sum_\alpha r_\alpha r_\alpha^*$の
+canonical contractionが不変なので，
+上の同型はfppf局所表示から降下する．
+これは$H^0$の代数としての計算であり，
+全Ginzburg dg algebraと任意のraw QPの間の
+大域準同型・dg準同値を意味しない．
+
 Kellerのrelation QP/3-CY completion表示
 \cite[Theorem 6.10 と訂正]{KellerDeformedCY2011}
 は，元来\emph{minimal relations}を用いた表示である．
