@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v4.1（全H2の内在的normal ruling選択の有限étale二重被覆）
+% 2026-11-22 / v4.2（全H2のfinite foundation表示開への相対埋込）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -894,12 +894,12 @@ $U\amalg U\to U$と同型である。
 従って非被約な任意の基底変更に対しても
 局所的に二つの選択を与える。
 
-ただし、ここで大域的に構成したのは
-\emph{内在的な二つのnormal foundationの選択被覆}であり、
-$\mathfrak H_2^{\mathrm{rul}}$を有限代数表示スタック
-$\mathfrak F_0$の\emph{開部分}として同定したこと、
-あるいは$[\mathfrak F_0/S_2]$のある開部分全体を
-$\HHstack$と同定したことはまだ主張しない。
+本定理ではまず内在的な二つのnormal foundationの
+選択被覆のみを構成する。
+さらにその有限foundation表示への開埋込と
+$\HHstack$の全相対商同型を示すには
+次の定理~\ref{thm:qa-intrinsic-h2-open-in-foundation-stack}
+の相対Isom・Artin効果性の比較が必要である。
 \end{theorem}
 \begin{proof}
 論文Bの
@@ -1019,6 +1019,165 @@ Artin基底でそれぞれ一意に持ち上がる
 （命題~\ref{prop:qa-ou-formal-two-ruling-lifts}）。
 従って有限étale被覆の二sheetは
 形式変形でも境界を越えて維持される。
+\end{proof}
+
+\begin{theorem}[内在的$H_2$の有限foundation表示スタックへの開埋込]
+\label{thm:qa-intrinsic-h2-open-in-foundation-stack}
+論文B
+\cite[\texttt{prop:foundation-stack},
+\texttt{prop:relative-ruling-involution}]{QuadricModuli2026}
+の有限型滑らかな表示スタックと代数的対合を
+\[
+ \mathfrak F_0=[U_0/(\mathcal G/K)],\qquad
+ \tau:\mathfrak F_0\xrightarrow{\sim}\mathfrak F_0,\qquad
+ \mathfrak Q_{\mathrm{fnd}}=[\mathfrak F_0/S_2]
+\]
+とする。すると定理~\ref{thm:qa-global-two-ruling-etale-cover}
+の内在的ruling選択被覆から、
+相対foundationのEnd代数を取る射
+\[
+ \Xi:\mathfrak H_2^{\mathrm{rul}}
+            \longrightarrow\mathfrak F_0
+ \tag{F-open}\label{eq:qa-h2-foundation-open}
+\]
+が自然に定まり、これは\emph{開埋込}である。
+像を$\mathfrak F_{\HH}\subset\mathfrak F_0$と置くと
+$\mathfrak F_{\HH}$は$\tau$-不変の有限型開部分スタックで、
+\[
+ \boxed{\quad
+   \mathfrak H_2^{\mathrm{rul}}
+       \simeq\mathfrak F_{\HH},\qquad
+   \HHstack\simeq[\mathfrak F_{\HH}/S_2]
+   \subset\mathfrak Q_{\mathrm{fnd}}.\quad}
+ \tag{F-H2}\label{eq:qa-full-intrinsic-foundation-open}
+\]
+従って\emph{非被約有限型基底を含む全相対groupoid}について、
+実現可能なnormal foundationのlocusは
+有限foundationスタックの開部分として代数化される。
+これは任意の$\mathfrak F_0$点が内在$H_2$対象である
+という主張ではない。
+また有限foundationの\emph{開}への同定であり、
+quintuple GIT compactificationへの大域的延長や
+全$\HHstack$のgood/coarse moduliの存在は含まない。
+\end{theorem}
+\begin{proof}
+\emph{(1) 射の構成と相対降下。}
+定理~\ref{thm:qa-global-two-ruling-etale-cover}の
+atlas $U\to\HHstack$上で一方のnormal foundationを
+選び、四項窓
+$\mathcal E=(\mathcal O,E_1,M,E_3)$の
+relative End代数$\Lambda_{\mathcal E}$を取る。
+論文Bの相対Hom計算は、頂点を保持して
+$\Lambda_{\mathcal E}$を階数二十四の有限局所自由な
+foundation代数と同定し、その二写像は
+$U_0$の全射・部分束条件を満たす。
+Hom束を局所自明化した上で得る
+$U\to U_0$は、基底変更を
+$\mathcal G/K$で割れば
+$U\to\mathfrak F_0$を与える。
+
+二つのchartのpointed exact同型が選んだ
+rulingを保つ重なりでは、各foundation項の
+比較Isomは相対的な階数一の可逆Hom束となる。
+これをfppf局所で自明化して得るEnd代数の同型は、
+各対象の比較同型の単元倍だけ曖昧である。
+その曖昧さは頂点スカラー共役の
+$K\simeq\Gm^3$であり、
+$\mathcal G/K$商では消える。
+三重重なりでの差も$K$に属するため
+一意な合成整合性を持つ。
+従って選択被覆上で射$\Xi$が降下する。
+論文Bの相対mutationはEnd代数と
+底変更に自然なので
+\[
+ \Xi\circ\tau_{\mathrm{rul}}
+   \simeq\tau_{\mathrm{fnd}}\circ\Xi
+\]
+はcoherentに成立する。
+
+\emph{(2) 全相対Isomの全忠実性。}
+二つの相対$H_2$族と選択foundationの間に、
+有限foundation代数の頂点を保つ同型があるとする。
+論文B
+\cite[\texttt{lem:foundation-relative-antiserre-perfect}]{QuadricModuli2026}
+のrelative inverse dualizing複体を使えば、
+この同型は構造対象と
+$t=S^{-1}[2]$を保つdg Morita同型を誘導し、
+全次数の軌道Hom
+\[
+ \mathscr R_n=
+   \RHom(\mathcal O,t^n\mathcal O)
+\]
+とその積を同型にする。
+実現された$H_2$族ではこの複体は次数零で
+指定Hilbert階数を持つ。
+従って二次関係部分束を含むcanonical
+反Serre環の同型が得られる。
+論文B
+\cite[\texttt{prop:relative-h2-stack-recognition}]{QuadricModuli2026}
+の$\Phi:\HHstack\to[X_3/\PGL_9]$の
+\emph{任意有限型基底での全忠実性}により、
+これに対応するpointed exact同型は一意である。
+各幾何ファイバーでこの同型が指定foundationを
+保存することは論文B
+\cite[\texttt{cor:h2-point-groupoid-foundation}]{QuadricModuli2026}
+の全充満な幾何点比較から従う。
+保存・交換の別は前定理の相対Homによる開閉分解で
+\emph{任意の}基底上で判定できるから、
+この同型は選択foundationを相対的にも保存する。
+逆に選択を保つpointed exact同型は
+相対End代数同型を与える。
+従って$\Xi$は全相対groupoidで全忠実、
+すなわち代数スタックのmonomorphismである。
+
+\emph{(3) 相対Artin変形の同値。}
+$y$を任意の幾何点、$\mathcal E_y$を
+選んだnormal foundationとする。
+論文B
+\cite[\texttt{thm:artin-foundation-lift},
+\texttt{lem:foundation-artin-deformation}]{QuadricModuli2026}
+により、指定閉fiberとfoundationを持つ
+pointed Abel Artin変形は、
+頂点付き有限foundation代数の全Artin変形に
+同値に対応する。
+この比較は同型類だけでなく、
+各Homの基底・積と指定された還元の
+pointed同型を保持する。
+
+この変形同値の\emph{効果性}もここで確認する。
+cubic点では論文Bの
+\cite[\texttt{thm:quintuple-chart-artin-lifting}]{QuadricModuli2026}
+のétale有効chart、
+noncubic点では
+\cite[\texttt{cor:noncubic-effective-smooth-neighborhood}]{QuadricModuli2026}
+の$U_y\to S\subset\mathbb A^{64}$という
+étale有効chart、
+可換二次曲面では
+\cite[\texttt{cor:quadric-effective-smooth-neighborhood}]{QuadricModuli2026}
+の対応するétale chartを使う。
+いずれも既存の局所Artin環のpointed
+foundation変形をétale持上げして、
+実際の相対$\HHstack$族へ昇格できる。
+従って$\Xi$は全幾何点で
+形式的にétaleである。
+
+$\Xi$は有限型代数スタック間の局所有限表示射で、
+既にmonomorphismなので代数空間に表現可能である。
+局所有限表示・形式的étaleからétale性が従う
+（\href{https://stacks.math.columbia.edu/tag/0616}
+ {Stacks Project, Tag 0616, Lemma 76.16.8}）。
+さらにétale monomorphismは開埋込である
+（\href{https://stacks.math.columbia.edu/tag/05W4}
+ {Stacks Project, Tag 05W4, Lemma 67.51.2}）。
+これで$\Xi$は開埋込となる。
+
+\emph{(4) 対合商。}
+$\Xi$の$\tau$-同変性から像は$\tau$-不変。
+選択被覆のcanonical $S_2$商は
+定理~\ref{thm:qa-global-two-ruling-etale-cover}により
+$\HHstack$に同値である。
+開埋込上での対合商もこの同値を保つので
+式~\eqref{eq:qa-full-intrinsic-foundation-open}が従う。
 \end{proof}
 
 \begin{corollary}[$j=0$の$A_4$点の三次元接表現と粗形式商]
