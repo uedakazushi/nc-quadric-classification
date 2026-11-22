@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.9
+% 日本語 LuaLaTeX。2026-11-22 / v2.0
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -51,7 +51,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.9（OU分岐方程式・反射法表現・交点のA1型粗空間）}
+\date{2026年11月22日\quad v2.0（CM点の拡張と一cubic境界のA4例外）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -115,6 +115,13 @@ $(1,1,-1)$となり、粗射は形式的に$Z=z^2$となる。
 源慣性が$C_2^3$、標的慣性が$D_8\times C_2$へ増大し、
 粗射の局所型は$k[[s,a,c]]\to k[[s,a,b,c]]/(b^2-ac)$となる。
 これらの粗空間分岐にもかかわらず、忘却のスタック射自体はétaleである。
+さらに両方のrulingがcubicである開では$j(E)=0,1728$でも
+追加の複素乗法自己同型が三束保存・交換に関与できず、
+level-twoのLegendre変形座標によって同じ法表現・粗分岐が成り立つ。
+他方、$\eta=2\delta$、$\delta\notin E[2]$の一cubic境界では
+もう一方のfoundationがnoncubicになるため、忘却はétaleでもfiberは一点。
+特に$j=0$の非零3捩れCM固定点では全慣性$A_4$が現れ、
+接の$C_3$重み$(2,1,1)$による孤立巡回商型の粗形式環となる。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -130,8 +137,8 @@ GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決
 正則半単純な非対角potential族には相対Hodge-Jacobian同型と
 特性係数による相対半点を任意底変更と可換に構成する。
 potentialを選ばない一般quintupleから内在$\HHstack$への
-特殊な$j=0,1728$とnoncubic境界、
-二rulingのmutationの相対群oidへのcoherentな延長、
+一cubic境界で欠けたnoncubic foundationの相対的復元、
+全noncubic境界と二rulingのmutationの相対群oidへのcoherentな延長、
 および局所粗モデルの大域化は未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
@@ -159,6 +166,8 @@ Okawa--Ueda の quintuple/potential GIT と比較する。
 OU不変量による粗分岐式と交点の横断$A_1$局所型まで計算する。
 これらを既知のpotential/quintupleの次数四射や
 Picard根の四選択とは区別して扱う。
+複素乗法で$j=0,1728$となっても二cubic開では追加の交換はなく、
+一cubic境界ではfiberのsheetを一つ失うことも区別する。
 
 \subsection{三つの表示と内在的モジュライの比較}
 

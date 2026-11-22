@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.61。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.62。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -144,6 +144,37 @@ source粗環が$k[[s,a,b,c]]/(b^2-ac)$となる。
 C本文で証明した本研究の結果（包括的新規性未確認）である。
 計算コードはcomputations/verify_ou_special_reflection.py。
 ここからj=0,1728やnoncubic境界、全H2へのglobal粗射を推論しない。
+
+**CM elliptic automorphismsとlevel-two局所変形（一次資料）。**
+Joseph H. Silverman, *The Arithmetic of Elliptic Curves*,
+Graduate Texts in Mathematics **106**, Springer, 1986,
+DOI [10.1007/978-1-4757-1920-8](https://doi.org/10.1007/978-1-4757-1920-8),
+Chapter III, Theorem 10.1 and Corollary 10.2。
+標数零のAut(E,0)がj一般値でC2、j=1728でC4、
+j=0でC6となることを直接確認。
+参考にA. V. Sutherland, MIT 18.782 Lecture 26 (2013),
+[PDF](https://math.mit.edu/classes/18.782/2023sp/LectureNotes26.pdf),
+Theorem 26.11 (PDF 0-index p.3)でも一次講義原稿を
+ページ画像で確認した。
+本研究ではCM環のNorm(1−i)=2、Norm(1−ζ3)=3、
+1+ζ3=−ζ3²の単元性から、
+二cubic開で追加CM自己同型が三束保存・ruling交換できないことを独立証明。
+jはCM点で曲線変形の局所座標でないため、フルlevel-two
+Legendre λ（j(λ)はj0で3重・1728で2重）へ置き換える。
+この適用範囲の精密化は既存文献の未確認新規結果として推測せず、
+本研究の直接証明と既知CM分類とを分ける。
+
+**一cubic境界とj0のA4点（研究内の新しい直接証明）。**
+滑らかなη=2δ、δ∉E[2]ではruling交換後の
+η'=0で第二foundationがnoncubicとなる。
+quintupleから内在H2へのpointed忘却はこの点で
+representable étaleだが2-fiberは一点。
+一般の有限étale次数2はこの境界へ同じsourceのままでは延長できない。
+j=0、0≠δ∈ker(ζ3−1)≅C3、η=2δでは全慣性A4、
+接のC3重み(2,1,1)で局所粗形式環は
+k[[a,u,v]]^{C3}。これは全noncubic境界の定理ではない。
+証明はCのCM補題・A4命題・一cubic境界系にあり、
+通常のOU2014やVdB2011の定理として未確認のまま帰属させない。
 
 ## 研究の位置
 

@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.93（A v1.69・20節、B v0.39・31節、C v1.9）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.94（A v1.69・20節、B v0.39・31節、C v2.0）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -299,6 +299,58 @@ global coarse/good moduliの存在。局所粗同型を大域に延長したと�
 j=0,1728等のruling交換固定点と慣性増大を調べる。
 滑らかな二捩れ座の局所粗分岐は確定。次はj=0,1728の楕円追加自己同型とnoncubic境界でのfiber・正規形・有限性、相対ruling mutationの延長を監査する。
 
+**複素乗法点の二cubic開と一cubic例外（Cで証明）。**
+滑らかな許容楕円四つ組の差η,δがδ≠0、η∉{0,δ,2δ}を満たすなら、
+Aut(E,0)がC4（j=1728）またはC6（j=0）に拡大しても、
+η,δの同時固定や(η,δ)↦(2δ−η,δ)のruling交換を生む
+ε≠±1は存在しない。
+ε=±iではker(ε−1)=ker(ε+1)は位数2なので
+η=δまたはη∈{0,δ}を強制して許容性に反する。
+位数6のεはε−1がunitでδ≠0に反し、
+位数3のεでは1+ε=−ε²がunitなので交換ならη=δ、
+三束保存ならker(ε−1)≅C3の非零二点がη=2δとなり
+二cubic開から外れる。
+従ってjを除外せずにruling交換の必要十分条件
+δ∈E[2]またはη−δ∈E[2]が成立し、
+既存の片側反射・粗二重分岐・交点A1局所型もCMに拡張した。
+ただしjはCM点の局所座標ではない。
+Legendre E_λ:y²=x(x−1)(x−λ)のフルlevel2をétale局所に選び、
+λを曲線変形座標にする。j(λ)=256(λ²−λ+1)³/[λ²(λ−1)²]で、
+j=0は3重、j=1728は2重の分岐を持つ。
+証明はCのlem:qa-ou-cm-no-extra-two-cubic-automorphisms、
+lem:qa-ou-cm-level-two-deformation-coordinate。
+一次資料Silverman, Arithmetic of Elliptic Curves, III.10.1（1986）を確認。
+
+**一cubic境界のfiber一点とA4例外。**
+η=2δ、δ∉E[2]なら最初の三束は相異なりcubic。
+R(η,δ)=(0,δ)は第一二線束が一致するためnoncubic。
+Bの二normalized foundationの全充満性により、
+pointed自己同値は唯一のcubic foundationを保つ。
+従ってquintuple→H2の2-fiberは自明慣性の一点。
+点曲線のfully faithful coh(E)包含により慣性射は単射、
+Bのsmooth相対次元零と合わせて忘却はこの点でétale。
+一般二cubic locusのfiber二点とは異なるため、
+一cubic境界を越えて有限étale次数2を維持できない。
+これは分岐ではなく第二sheetがnoncubic foundationへ移る現象。
+
+特にj=0、ρ位数3、0≠δ∈ker(ρ−1)≅C3、
+η=2δの例では源・標的の全pointed慣性は
+E[2]⋊C3≅A4（位数12）、幾何2-fiberは一点。
+E:y²=x³+1、δ=(0,1)、η=(0,−1)が明示例。
+E_a:y²=x³+ax+1の3次元変形(a,u,v)上で
+有効C3は(ζ³? の記号は使わず)重み(2,1,1) mod3、
+すなわち(a,u,v)↦(ζ²a,ζu,ζv)で作用する。
+E[2]は変形差を固定するため接作用が自明。
+局所粗形式不変式環はk[[a,u,v]]^{C3}で孤立巡回商型1/3(2,1,1)。
+論文Cのprop:qa-ou-cm-jzero-one-cubic-a4、
+cor:qa-ou-cm-a4-tangent-representation、
+cor:qa-ou-one-cubic-fiber-and-nonfinitenessが証明正本。
+有限群・Legendre恒等式の検算資産：
+computations/verify_ou_cm_automorphisms.py。
+この例は*一cubic境界*の現象であり、全H2のnoncubic locusの分類ではない。
+次の核心はBの有限foundation相対mutationで欠けたsheetを復元し、
+noncubic境界との群oid比較を完成すること。
+
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
 C_ij=D_{-j,-i}を作り、Bの
@@ -316,7 +368,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
 正則半単純開で有限étale次数2・慣性μ₂²同型・KS同型となる。
 さらに稠密開のcanonical S₂ deck商を取れば内在H2そのものに同値。
-片側・交点の二捩れ特殊座での局所慣性と粗分岐は解決済み。次はj=0,1728の追加楕円自己同型、noncubic境界への相対延長、およびmutationのcoherent降下を調べる。粗分岐とstack的étale性の区別を保つ。
+片側・交点の二捩れ特殊座での局所慣性と粗分岐に加え、j特殊値の二cubic開でのCM障害除去と一cubic境界fiber一点・A4例外を解決。次は欠けたnoncubic foundationの相対復元、全noncubic境界とのgroupoid比較を調べる。粗分岐とstack的étale性の区別を保つ。
 `lem:elliptic-two-reflections` と
 `cor:two-intrinsic-foundations` の相対化が最も具体的な手掛かり。
 A/Bの全公表前監査・一次文献新規性比較・三稿の実組版は未完了。
