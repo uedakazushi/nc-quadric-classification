@@ -134,6 +134,44 @@ $\ker r^*=\{\OO_{C_q},M_C\}$となる．
 $r^*$ は全射となり，最後の完全列を得る．
 \end{proof}
 
+
+\begin{corollary}[非零二捩れ付き楕円曲線上の双対二重商]
+\label{cor:qa-point-spectral-atkin-lehner}
+滑らかな楕円曲線と非零二捩れの組
+$(T,L)$ の同型類に対し
+\[
+ \mathcal W_2(T,L)=
+ \bigl(T/\langle L\rangle,\ L^\vee\bigr)
+ \tag{Dual-wall}\label{eq:qa-point-spectral-dual-wall}
+\]
+と置く．ここで $L$ を原点選択によって
+位数二の点とみなし，$L^\vee$は
+商 isogeny の双対核を指定する非零二捩れである．
+この対応は同型類上の involution：
+$\mathcal W_2^2=\mathrm{id}$ を定める．
+前定理の根対から生じる二つの組は
+\[
+ \mathcal W_2(C_q,M_C)=(E_f,P_E),\qquad
+ \mathcal W_2(E_f,P_E)=(C_q,M_C)
+\]
+を満たす．
+これは楕円曲線と二捩れ\emph{だけ}の対応であり，
+$F_d,F_c$と$p^*\OO_{\PP^1}(1)$という
+異なる degree-two pencil まで
+自動的に同一視するものではない．
+\end{corollary}
+\begin{proof}
+有限 \'{e}tale 二重 isogeny
+$T\to T/\langle L\rangle$に対し，
+双対 isogeny の核は位数二である．
+さらに双対を取れば，楕円曲線の主偏極による
+二重双対の自然同型から元の isogeny に戻る．
+従って商と双対核の操作は二回で元に戻る．
+前定理で$r:E_f\to C_q$の核は$P_E$であり，
+$r^\vee:C_q\to E_f$の核は$M_C$と示したので，
+二つの表示が得られる．
+\end{proof}
+
 \begin{example}[二曲線は一般に同型でない]
 \label{ex:qa-point-spectral-j-distinction}
 アフィン座標$x=u/v$で
