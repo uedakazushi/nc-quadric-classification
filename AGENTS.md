@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.40。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.30。
+2026-11-23 / v1.41。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.31。
 
 ## 公表用三論文の役割
 
@@ -98,7 +98,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 
 - E_f側の相対mutation、全商降下、Serre完成、pointed heart回収、およびsmooth spectral相対射・gerbe分解を未解決へ戻さない。stack自己同値とH2境界延長は不存在が証明済みであり、単なる証明不足と記さない。境界の具体的な平坦代数モデルを出発点とし、自然な射の延長先とその同型層を調べる。
 - 任意のAS/avatar/QP表示stack全体のright-equivalence groupoid、一般cubic域の表示忘却fiber・慣性、既存GITとの相対比較は別に検証する。体上AS分類や特定noncubic族の相対認識から全表示stack同値を推論しない。
-- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。全分類AS型の標準頂点を体上で判定した。二つの乗法行列式開と同じ相対heartのpointed認識も証明済み。finite squareとnormal foundationの全相対stack比較、およびH2開の20式判定も成立した。全域determinant境界と大域good moduliも構成した。境界像とcubic開の飽和性も確立した。Gram二形式pencilによる全半不変式環・中央affine chart・二商特異点はC v4.22で原稿上解決済み。次はrank3壁でのQP右同値・heart・mutation貼合せを扱う。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
+- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。全分類AS型の標準頂点を体上で判定した。二つの乗法行列式開と同じ相対heartのpointed認識も証明済み。finite squareとnormal foundationの全相対stack比較、およびH2開の20式判定も成立した。全域determinant境界と大域good moduliも構成した。境界像とcubic開の飽和性も確立した。Gram二形式pencilによる全半不変式環・中央affine chart・二商特異点はC v4.22で原稿上解決済み。rank3壁でのQP右同値・heart・mutation貼合せはC3原稿上達成。次は一般の非被約基底での相対対角・Keller訂正・左右Noetherとcoherent descentを独立監査する。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 

@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.44。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.30。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.45。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.31。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は論文C（AS正則Z代数・avatar・H2・QP/GIT比較）の完成である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,7 +10,8 @@
 
 **Cの達成基準と現行判定：** (C1) 8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲：**原稿上達成**。(C2) 全H2 good moduliの不変式・中央affine・noncubic・局所特異性：**原稿上達成**。(C3) 最大の明示的な比較開上でAS/QP・avatar・pointed H2のgroupoid・慣性・right-equivalence・heartと障害を決定：**H2の相対実現可能開全体について、二mass十二矢QP→finite foundationの全局所Isom、相対対角解消、ordinary Jacobian=H0Π3=canonical Serre完成、全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とcoherentなruling mutation商を原稿上で達成**。H2外の任意AS/avatar/QP stack全体の分類は未完成で、H2の比較と区別する。(C4) 全論文の独立証明監査、一次文献の網羅的比較、LuaLaTeX全稿PDF・SyncTeXと表示：**未完了**。C1–C3の「原稿上」とC4の独立検証を取り違えず、C4未達成の間は論文C全体を完成扱いにしない。
 
-**次の優先課題：** まずC3の新しい相対対角解消とKellerの訂正条件、幾何fiber上のnormal helixの全次数Ext消滅、相対AZの左右Noether、mass/頂点scalarsの剛体化とruling交換のcoherenceを**独立に再点検**する。相対対角解消については両rank3の有理数上24次元の明示例で双加群複体 `68←52←8` を作り、微分の階数 `44,8` と合成零・全完全性を計算確認した（[再現コード](computations/verify_q12_bimodule_diagonal.py)）。**これは一つの幾何点の検証であり一般flat相対証明を認証しない。**とくに任意非被約底のbase-changeとGm³中心核、未選択rulingのmutation貼合せで誤った同値を主張していないか反例を探索する。次にC4として日本語LuaLaTeXの現行C全稿を組版・引用確認し、外部一次文献を照合して論文のIntroductionと証明配置を編集する。一般AS/avatar/QP stackで強いH2の外側に残る相対pointingと忘却は、H2全体との比較を曖昧にしない独立の後続課題として数学的重要性を再評価する。A/BはCの論理的入力に必要な範囲で監査する。研究の区切りでは対象mainを保存した後、research-hubの該当概要を更新する。
+**次の優先課題：** C3の相対対角解消、ordinary Jacobian、反Serre全次数、左右Noether性、mass/頂点scalarsの剛体化とruling交換のcoherenceを**独立に監査**する。$\mathbb Q[\lambda,\mu]$上の一つの二mass族については、四つのrank境界型すべてで双加群解消$(68,52,8)$、微分rank$(44,8)$を厳密に検査した。固定された二次・三次関係の二変数族では、全幾何fiberでの分裂完全性から冪零基底を含む全基底変更まで従う（[補題と証明書](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)、[計算コード](computations/verify_q12_bimodule_diagonal.py)）。**これは任意のfoundation族に関するC3の一般証明の代用ではない。** massが冪零ならゲージ群には打切り対数による局所加法座標がある。次は一般係数・非被約底の対角分裂とordinary ideal生成、相対AZの左Noether性、剛体化の正規性・$S_2$のcoherenceを監査し、C4として一次文献比較・現行日本語LuaLaTeX C全稿のPDF/SyncTeX組版と表示を行う。一般AS/avatar/QP stackの$H_2$外に残る部分は後続課題とする。研究区切りには対象mainを先に保存し、hubの当該項目を更新する。
+
 
 ## Cの現行実行単位
 
@@ -353,16 +354,14 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-論文Cの完成を最優先とする。全Fricke境界射・全標準頂点の相対認識・canonical square AS完成とtails・全H2開の20式判定を確立済みの入力とし、大域good moduliの中央affine補完はC原稿に解明済みであり、第一の未解決核心を全相対AS/QP groupoidの確定とその公表前監査に移す。以下はA/Bと共通する継続課題。
+**最優先は論文CのC3独立監査とC4完成。** H2実現可能開上のQP→finite foundation→ordinary Jacobian/Serre→pointed heart、二段剛体化と二ruling mutation商は**原稿上証明済み**。ここを未解決の再構成課題へ戻さないが、独立監査済みとも呼ばない。
 
-1. **大域good moduliの境界と不変式を決める。** Cの三半不変式による飽和開を入力とする。N→A1χの閉埋込み、位相的飽和性とscheme逆像の厚み、階数因子のnormalなgood imageは証明済み。次はcubic chartの補曲線と貼合せ式を求める。一致類の形式不変式 k[ac,(x+y)²,(x−y)²] と大域商の完備局所環を比較する。N^DMの粗モジュライ射χ_DMは任意底変更と両立するが、この制限射はgoodではなく、慣性も非properである。これを全体のgood moduliの存在・不存在に直結させない。
-2. **framed実現像と偏極認識を具体化する。** X_asはsmooth83次元スキームで、一致根対ではX3の接次元84との相違がある。`cor:artin-polarization-retraction` の余分なHH¹方向と、今回決定した全慣性表現・形式対を用い、局所閉性や具体的な偏極認識方程式を調べる。開性を目標にしない。
-3. **Q_fndとの相対groupoid比較を進める。** 全幾何点での全充満性と全Artin認識に加え、実際の族のruling被覆・相対heart・降下を比較する。境界上で既証明のNpres≃Nを利用し、全体の相対同値を幾何点比較だけから結論しない。
-4. **公表前監査を仕上げる。** 有限LG条件→全fiber認識→全軌道→Noetherian貼合せ→中央AS4被覆と、指定Artin同型を保つatlasを点検する。境界の粗・良モジュライ、相対ruling mutation、AHRの適用範囲も監査する。既知のVdB・DDL・PP・Stacks・Alper・AHRの入力と本研究の成果を分け、新規性比較と不足TeX依存を解消した環境での組版を行う。
+1. **相対対角解消の一般性と基底変更を点検。** prop:qa-two-mass-short-relative-diagonal のrank四短関係とrank二残余関係について、任意の非被約局所基底で交差零・分裂性・bar簡約・$\Lambda^e$局所射影性を確認する。二mass四境界型の明示族は [C3補題](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) と computations/verify_q12_bimodule_diagonal.py で全基底変更まで証明書付きで検証したが、一般族の証明ではない。次は二短関係が独立な一般の$q,q'$と残余二平面へ議論を拡張する。
+2. **Keller訂正・通常ideal・AZ/反対環を点検。** 2011年訂正のordinary ideal生成性を実際の二mass表示で確認し、最小関係の仮定を非最小族へ誤用していないか検討する。反Serre全次数・基底変更、左右Noetherとpointed heartの証明を独立に辿り、境界での最小矢束非平坦性から誤った推論がないか確認する。nilpotent massの加法化は局所frameに依存し、全体のgerbe自明化を意味しない。
+3. **二段剛体化とrulingのcoherenceを点検。** fppf同型層の核$\mathcal U_\lambda\times\mathcal U_\mu$と$\Gm^3$、正規性・基底変更、mutationの二重合成とpointed $t$-exact性を確認する。一般cubicで単一right-equivalenceが存在しないことと、mutationによるstack同値を分ける。
+4. **C4公表前整理。** Keller、VdB、AS/QP・AZ・Alper等の一次資料と定理仮定を照合し、Introduction・引用・独立寄与を整理する。scripts/check.py papers、C原稿のsources/build、LuaLaTeX全稿PDF・SyncTeX・ページ表示を実施する。未実行・依存制約を明記する。
 
-全スキーム上の商[U/R]は元の有限型site上のH2を延長する。任意Noetherian基底で同じAbel公理を課した関手との一致、および一般のcanonical非有界導来圏の大域descentは別に確認する。
-
-体上の分類、全Artin形式認識、局所環上の効果性、有限型効果性を未解決へ戻さない。cubic有限同値判定の簡約、一般GL4判定solver、全根・全ambientの列挙、外部査読・形式証明は独立の後続課題である。
+A/Bの相対有限型性・Artin認識・境界の局所good moduliおよび偏極の未整理な比較は、Cへの依存入力の監査として扱う。主原稿Aの全H2分類やBの既証明定理を「未解決」と書き直さない。全AS/avatar/QP stackのH2外、一般の別heart、全自己同値・全根の忘却は独立の後続課題である。
 
 ## 7. 正本・依存関係・再開
 

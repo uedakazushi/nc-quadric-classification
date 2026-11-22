@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.41（A v1.69・20節、B v0.41・31節、C v4.30）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.42（A v1.69・20節、B v0.41・31節、C v4.31）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
@@ -14,7 +14,9 @@
 
 **二段剛体化とruling交換。** raw QPのmass kernel `U_λ×U_μ`をIsom sheafから剛体化し、さらに頂点scalar `Gm³`を剛体化すると、既証明のfinite square/normal相対groupoidにより `H₂^rul` を得る。coherentな二ruling交換は有限squareの中間頂点交換と相対perfect mutationで実現し、S2商で `H₂` を得る。二cubic正規化 `T,T⁻¹`は一般にはright-equivalenceでない。つまりrulingの貼合せはraw QPの一つの座標変換でなく、選択窓のmutationと同じheartへのAZ認識で行う。
 
-**相対対角解消の独立した特定例の監査。** 両massが零の非可換24次元有限directed代数を有理数上で構成した。二つの二段積はrank3で、kernel線は非分解可能なq=q′=(1,0,0,1)。三段道12次元から短関係4本と残余長関係2本を取りrank6商とし、四頂点全積を直接計算した。この代数の双加群対角複体の全行列は `C_2=Q^8 -> C_1=Q^52 -> C_0=Q^68 -> Λ=Q^24` となり、実際に `d_1 d_2=0`、`rank(d_1)=44`、`rank(d_2)=8` をSymPyの有理数線形代数で確認した。従ってこの**指定した一点の例**では短対角複体が全ての項で完全となる（augmented mapの核rankは68−24=44）。再現は [verify_q12_bimodule_diagonal.py](../computations/verify_q12_bimodule_diagonal.py)。GitHubへソースとして保存したが、同名のGitHub blob自体を取得したコードを再実行したのではなく、数学的に同値なローカル構成を実行してPASSした。この一点の完全性を非被約基底の全相対定理へ外挿しない。**次の監査は全関係のordinary ideal性、一般基底での完全性、左Noetherとruling/S₂下降。**
+**二mass四境界型と冪零基底の独立した監査。** 有理数上の$q=q'=I_2$（非分解可能）と，三段関係$W_0V_1U_0=W_1V_0U_1=0$を固定し，$\Lambda_{\mathbb Q[\lambda,\mu]}$を構成した。短関係は$q'+\mu u,q+\lambda x$，三段関係の$12\times6$行列は最初の六行が行列式1なので，全二変数族で有限代数は階数24の自由加群。4種類の幾何型 $(\lambda,\mu)=(0,0),(1,0),(0,1),(1,1)$ に対し，二段積・三段積・四項関係・両側の非可換微分を整数行列として実装した。各組で$C_2=\mathbb Q^8\to C_1=\mathbb Q^{52}\to C_0=\mathbb Q^{68}\to\Lambda=\mathbb Q^{24}$，$\partial_1\partial_2=0$と$\operatorname{rank}(\partial_1,\partial_2)=(44,8)$を厳密に検算した。rank下界は法101の消去，rank上界は終項の分裂全射と列数で証明した。これらは浮動小数点近似でない。非零massは対角矢をスカラー倍して1へ移せるので，この**指定された二変数族**の全標数零幾何fiberで複体は完全であり，局所自由項のconstant-rank判定から$\mathbb Q[\lambda,\mu]$上で分裂完全，従って任意の$\mathbb Q$代数への基底変更後も完全となる。この数学的帰結は四標本の数値傾向の外挿ではなく，族の正規化と分裂性の論証に依存する。証明位置：[C3の明示族補題](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)、再現：python3 computations/verify_q12_bimodule_diagonal.py。ローカルで同じ代数構成の4型検算は全PASS。GitHubに更新したソースの直接再実行・全既存suiteの再実行は未実施。**全finite foundation stackの一般係数・一般base changeについてはこの検算では認証できない。**
+
+**冪零massでの慣性群の加法化。** $\lambda^N=0$かつ基底が$\mathbb Q$代数なら$\mathcal U_\lambda=\operatorname{Spec}R[t,(1+\lambda t)^{-1}]$は$z=\sum_{j=1}^N(-1)^{j-1}\lambda^{j-1}t^j/j$で$\mathbb G_a$に同型（逆は$t=\sum_{j=1}^N\lambda^{j-1}z^j/j!$）。$\lambda=\epsilon,\epsilon^2=0$では$z=t-\epsilon t^2/2$。二massがともに冪零なら局所ゲージは$\mathbb G_a^2$となる。これは全mass軸のGm/Ga遷移やgerbeの大域自明化を主張しない。証明は[C3のnilpotent log補題](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。次の監査対象は一般係数での相対対角分裂・ordinary ideal、左右Noether/同じheart、剛体化とcoherentなruling mutationである。
 
 **数値検算。** 数値Eulerの16頂点対で総階数(68,52,8)→24、normal Serreの全次数式 `64n²+64n+24` はSymPyの整数・記号計算で独立検算した。[再現コード](../computations/verify_q12_diagonal_euler.py) をGitHubに記録したが、当該GitHubファイルの再取得・同一byte実行は未実施。数値は対角複体の完全性やfppf同値の形式証明ではない。次はKeller ordinary ideal・相対対角のbase-change・normal opposite側の左Noether・massゲージとS2のcoherent actionを独立監査し、その後C4の一次文献比較・LuaLaTeX全稿組版・PDF表示を実行する。H2外の一般AS/avatar表示の分類の追加可能性は独立に評価する。
 
@@ -22,7 +24,7 @@
 
 **現行結論（論文Cの定理）。** 二つのGram二次形式 \(S_f=fJf^{\rm t},S_g=gJg^{\rm t}\) の四次pencilの係数を \(F^2,I_1,I_2,I_3,G_0^2\) とし、\(A_2=FG_0,B_2=I_2,X_3=FI_3,Y_3=G_0I_1,D_4=I_1I_3,C_3=X_3+Y_3\) とする。順序付きの半不変式環は \(k[A_2,B_2,X_3,Y_3,D_4]/(X_3Y_3-A_2D_4)\)、非順序は \(k[A_2,B_2,C_3,D_4]\)（重み2,2,3,4）。非順序good moduliは重み付き射影三空間の明示開である。\(L_2=B_2-2A_2,\ \Delta_8=(D_4+4A_2L_2)^2-4L_2C_3^2\) と置けば \(\Delta_8=256P_fP_g\)、中央affine chartは \(D_+(\Delta_8)\)、座標環は重み零局所化。noncubic閉曲線は\(A_2=C_3=0,\ D_4\ne0,\ \chi=B_2^2/(4D_4)\)。特異点は\(p_3=[0:0:1:0]\)の\(1/3(1,1,2)\)と\(p_4=[0:0:0:1]\)の\(1/2(1,1,1)\)だけ。**全証明**は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex) へ移した。一般の二対称形式pencilの不変式定理はBhargava–Gross–Wang §4.2の既知結果であり、本研究では線形化・ruling交換・H2開・noncubic境界への適用を証明した。包括的新規性は未確認。
 
-**検証・次の核心。** SymPyで四行列の稠密標本と階数三の標本、binary二形式正規形で交差多項式と\(\Delta_8\)、\(\chi\)を厳密算術で検算した。再現コードは `computations/verify_global_h2_pencil_invariants.py`。**GitHub上の同ファイルをGit blob SHA `85c78e1b7eaac07a05b5a8708ee9bc0e1f15dc34` と照合したローカルコピーで実行し、境界記号式・有理数4組（rank3を含む）・Hilbert係数が全てPASS**。これは不変式環の有限生成・相対群oidを形式証明したものではない。C2の大域good moduliの環・中央chart・二特異点の記述は原稿上到達した。**最優先の未解決核心はC3の全AS/QP群oid、scalar慣性・right-equivalenceと相対heartの比較**。既存の `prop:qa-stabilized-inertia` により通常の12矢QPは非退化二pair開で $\mathcal P_8\times B\mathbb G_m^2$ と同値であり、この余剰慣性を保持したままfinite foundation/H2との忠実な同値は不可能。C3ではまず二pairの剛体化後の最小8矢QPと可逆cubic finite foundationの同型層・頂点スカラーを比較し、次にrank3境界へ進める。
+**検証・次の核心。** SymPyで四行列の稠密標本と階数三の標本、binary二形式正規形で交差多項式と\(\Delta_8\)、\(\chi\)を厳密算術で検算した。再現コードは `computations/verify_global_h2_pencil_invariants.py`。**GitHub上の同ファイルをGit blob SHA `85c78e1b7eaac07a05b5a8708ee9bc0e1f15dc34` と照合したローカルコピーで実行し、境界記号式・有理数4組（rank3を含む）・Hilbert係数が全てPASS**。これは不変式環の有限生成・相対群oidを形式証明したものではない。C2の大域good moduliの環・中央chart・二特異点の記述は原稿上到達した。**現行優先はC3の独立監査とC4の文献・組版・公表準備である。** 全H2実現可能開の二mass相対QP/foundation、ordinary Jacobian/Serre、二段剛体化とruling mutationはC3原稿上の証明に到達した。外側の全AS/avatar/QP stackとH2の無条件同値を主張せず、一次資料の仮定・一般非被約底・Noether性・coherent descentを検証する。
 
 ## 全H2の三半不変式と良モジュライ
 
