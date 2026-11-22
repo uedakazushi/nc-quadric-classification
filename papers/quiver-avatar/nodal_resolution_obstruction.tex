@@ -115,12 +115,15 @@ compactified Picard，または安定モデルと偏極を
 相対 torsion-free sheaf 自身には自然な二次積があり，
 その余核によって境界を scheme-theoretic に測定できる．
 以下では定理~\ref{thm:qa-noncubic-rootpair-torsionfree-spectral-module}
-の記号を使い，二形式は各々二つの相異なる根を持つとする．
+の相対構成を使い，積欠損は任意の基底上で定義する．
+幾何 fiber の正規化を論じる箇所では，
+各二形式が二つの相異なる根を持つと仮定する．
 
 \begin{proposition}[乗法欠損の長さと自己双対性]
 \label{prop:qa-spectral-product-defect}
-$B=\PP^1_k$，$f_1,f_2\in H^0(B,\OO_B(2))$ は
-非零で各々 squarefree，$k$ は標数零の代数閉体とする．
+$k$ は標数零の代数閉体，$S$ は任意の
+$k$-scheme，$B=\PP^1_S$ とし，
+$f_1,f_2$ は $B/S$ 上の相対二次形式とする．
 $C=\{y^2=f_1f_2\}$ と
 $\mathcal M=(r_*\OO_{\widetilde C})^-$ を取る．
 反不変元の積から生じる
@@ -132,14 +135,19 @@ $\mathcal M=(r_*\OO_{\widetilde C})^-$ を取る．
 \item $\operatorname{im}\mu=\mathcal I=(f_1,f_2,y)$ であり，
   $T=V_B(f_1,f_2)$ を $y=0$ によって $C$ に埋め込むと
   \[
-     \coker\mu\simeq\OO_T,\qquad
-     \operatorname{length}(\coker\mu)
-       =\deg\gcd(f_1,f_2)\in\{0,1,2\}.
+     \coker\mu\simeq\OO_T .
      \tag{Sq-defect}\label{eq:qa-spectral-square-defect}
   \]
   この余核は二根対の共通零点の
-  \emph{scheme-theoretic} な構造層である．
-\item 各幾何 fiber において，積の随伴射
+  \emph{scheme-theoretic} な構造層であり，
+  \emph{非被約な $S$ を含む任意の基底変更}と可換する．
+  各幾何 fiber の $f_i$ が squarefree なら
+  \[
+     \operatorname{length}(\coker\mu)
+       =\deg\gcd(f_1,f_2)\in\{0,1,2\}.
+  \]
+\item 各幾何 fiber の $f_i$ が squarefree と仮定すると，
+  積の随伴射
   \[
    \mu^\flat:\mathcal M
        \longrightarrow
@@ -161,7 +169,9 @@ $c^2=f_1,\ d^2=f_2,\ cd=y$ である．
  \OO_C/(f_1,f_2,y)
  \simeq\OO_B/(f_1,f_2)
 \]
-が従う．$f_i$ は各々 squarefree なので，
+が従う．局所座標によるイデアル等式なので
+この余核の表示は任意の基底変更で保たれる．
+各 $f_i$ が squarefree な幾何 fiber では，
 その共通零点は $0,1,2$ 個の被約点である．
 
 自己双対性は，二形式が共通根を持たない開集合では
@@ -194,7 +204,9 @@ $v\mapsto2(x-y)$ は各直和因子で同型となる．
 
 \begin{theorem}[noncubic 三型の compactified spectral limit]
 \label{thm:qa-spectral-three-fiber-limits}
-前命題の仮定を置き，$\nu:\widehat C\to C$ を
+前命題で $S=\Spec k$ とし，
+$f_1,f_2$ は各々 squarefree とする．
+$\nu:\widehat C\to C$ を
 節点での正規化とする．
 \begin{enumerate}
 \item 二根対が交わらない smooth 型では
@@ -264,6 +276,40 @@ End は $k\oplus k$ となる．
 最後の留保は，simple/fine と
 semistable/coarse の compactification を
 混同しないためである．
+\end{proof}
+
+
+\begin{corollary}[二次積を保持した fiberwise 慣性]
+\label{cor:qa-spectral-pair-finite-inertia}
+前定理の三型で曲線 $C$ を固定し，二次積 $\mu$ を
+保存する $\OO_C$-線型自己同型群を
+$\Aut_C(\mathcal M,\mu)$ と書く．すると
+\[
+ \Aut_C(\mathcal M,\mu)\simeq
+ \begin{cases}
+   \mu_2,& C \text{ が smooth または既約 nodal},\\
+   \mu_2\times\mu_2,& C \text{ が } I_2 \text{ 型}.
+ \end{cases}
+\]
+ここで $\mu_2$ は標数零での平方根群スキームである．
+とくに $I_2$ では underlying sheaf の
+$\Gm^2$ 慣性が二次積の保存条件により有限化する．
+これは \emph{固定した spectral 曲線上の組
+$(\mathcal M,\mu)$ の自己同型群}の計算であり，
+曲線の自己同型を含む全 avatar／O-marked
+モジュライの慣性同定ではない．
+\end{corollary}
+\begin{proof}
+smooth と既約 nodal の $\End_C(\mathcal M)=k$
+より自己同型はスカラー $\lambda\in k^\times$ である．
+$\mu$ は非零なので，その保存条件は $\lambda^2=1$．
+$I_2$ では二正規化成分上のそれぞれのスカラー
+$(\lambda_+,\lambda_-)\in(k^\times)^2$ が全自己同型である．
+式 (Node-M) の積は異なる成分間で零，
+各同じ成分では非零なので，
+$\lambda_+^2=\lambda_-^2=1$ が必要十分である．
+同じ議論は可換 $k$-代数上の自己同型にも適用でき，
+指定された群スキームの同型を得る．
 \end{proof}
 
 \begin{remark}[相対 avatar に必要なモジュライの選択]
