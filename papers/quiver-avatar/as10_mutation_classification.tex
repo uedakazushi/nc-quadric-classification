@@ -228,6 +228,76 @@ $F,G$を入れ替えれば$\mu_F$の主張も得る。
 滑らかさも被約性も使わない。
 \end{proof}
 
+
+\begin{proposition}[二つの最小十本矢壁と二捩れ交点]
+\label{prop:qa-as10-double-wall-characterization}
+曲線型square avatar $(D,F,G,P)$ を固定する。
+二つの順序付き中間頂点のmutationに対し、
+\[
+ D_F=\{\operatorname{rk}\mu_G=3\},\qquad
+ D_G=\{\operatorname{rk}\mu_F=3\}
+\]
+と定める。すると幾何点の集合として
+\begin{equation}
+ D_F\cap D_G=
+ \{P\in\Pic^0(D)[2]\setminus\{\OO_D\},\quad
+     G\simeq FP\}.
+ \label{eq:qa-as10-double-wall-locus}
+\end{equation}
+$D_F\setminus D_G$では指定した第一mutationだけが
+最小十本矢、第二mutationはcubic八本矢となり、
+$D_G\setminus D_F$ではその逆である。
+交点では二つの指定mutationがともに最小十本矢となるが、
+\emph{得られた二つの標識付き代数を同一視しない}。
+
+さらに定理
+~\ref{thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection}
+との合成により、この交点の
+\emph{avatar幾何同型類の集合}は
+論文Bの全noncubic被約二根対の
+O-marked幾何同型類集合と全単射する。
+ここで必要なのは標識を保つavatar同型と
+根対の同型類対応だけであり、
+avatar側のAS代数の$\qgr$と
+内在的noncubic heartのpointed同値は主張しない。
+\end{proposition}
+\begin{proof}
+補題~\ref{lem:qa-as10-rank-wall-pencils}より
+$D_F$上では$P\simeq GF^{-1}$、
+$D_G$上では$P\simeq FG^{-1}$である。
+したがって両条件は$P\simeq P^{-1}$、
+すなわち$P^{\otimes2}\simeq\OO_D$と
+$G\simeq FP$に同値である。
+square avatarの定義から$P\not\simeq\OO_D$である。
+逆も同じ式で確認できる。
+各mutationの最小矢数は
+命題~\ref{prop:qa-as10-reduction}の
+Schur complementによる階数4/3の二分岐に従う。
+第二mutationは$F,G$を交換して同じ計算を適用する。
+最後の全単射は後述のroot-pair avatar分類で
+条件が式~\eqref{eq:qa-as10-double-wall-locus}と
+厳密に一致することから従う。
+\end{proof}
+
+\begin{remark}[cubicへの到達不能性には別の証明が必要]
+\label{rem:qa-as10-two-walls-not-full-obstruction}
+両mutationの階数3という事実\emph{だけ}から
+他のすべてのcubic foundationが存在しないとは言えない。
+元草稿\cite[定理21.1・35.1]{AvatarVSeven2026}は
+$D_F\cap D_G$こそが
+$cubic$型とアーベル（さらに導来）同値でない
+square型の正確な例外locusであると証明している。
+その否定方向は、滑らかな$D$では
+任意のcubic候補foundationのPicard
+線束への帰着と二つの乗法の同時非可逆性、
+非滑らかな$D$では二捩れを保つ平滑化と
+有限projective complexのArtin持上げを用いる。
+本節のmutation分類と幾何的root-pair対応は
+その\emph{全候補の不存在証明}の代わりではない。
+したがって元草稿の命題をC内で独立に使う場合は
+この追加証明を明示的に取り込む必要がある。
+\end{remark}
+
 \begin{proposition}[Schur complementと最小矢数]
 \label{prop:qa-as10-reduction}
 square finite foundationの四つの最小関係の空間を$R$、
