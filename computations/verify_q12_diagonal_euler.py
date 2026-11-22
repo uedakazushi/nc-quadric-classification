@@ -55,4 +55,32 @@ ones = sp.ones(4, 1)
 total_hilbert = sp.expand((ones.T * G * Sinv_power * ones)[0])
 assert sp.simplify(total_hilbert - (64*n**2 + 64*n + 24)) == 0
 print("PASS: normal Serre Euler rank is 64*n^2 + 64*n + 24")
+# Independent geometric check: P1 x P1, with the reversed opposite
+# normal four-term window Y = (O(0,-1), O, O(1,0), O(1,1)).
+# Its *second* term is the H2 structure object O.
+Y = [(0, -1), (0, 0), (1, 0), (1, 1)]
+h0_p1 = lambda d: max(d+1, 0)
+h1_p1 = lambda d: max(-d-1, 0)
+H = sp.Matrix(4, 4, lambda i, j:
+    h0_p1(Y[j][0]-Y[i][0])*h0_p1(Y[j][1]-Y[i][1]))
+assert H == G
+for m in range(8):
+    for ai, bi in Y:
+        for aj, bj in Y:
+            u, v = 2*m+aj-ai, 2*m+bj-bi
+            # Kunneth formula for H^1 and H^2 of O(u,v).
+            assert h1_p1(u)*h0_p1(v)+h0_p1(u)*h1_p1(v) == 0
+            assert h1_p1(u)*h1_p1(v) == 0
+            if m >= 1:
+                assert u >= 0 and v >= 0
+symbolic_classical = sp.expand(sum(
+    (2*n+aj-ai+1)*(2*n+bj-bi+1)
+    for ai,bi in Y for aj,bj in Y))
+assert sp.simplify(symbolic_classical-(64*n*n+64*n+24)) == 0
+for m in range(7):
+    actual = sum(h0_p1(2*m+aj-ai)*h0_p1(2*m+bj-bi)
+                 for ai,bi in Y for aj,bj in Y)
+    assert actual == 64*m*m+64*m+24
+print("PASS: classical opposite-normal Y, noninitial O, Ext vanish and Hilbert polynomial")
+
 print("All Q12 diagonal numerical/Serre checks passed.")
