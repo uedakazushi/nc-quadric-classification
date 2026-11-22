@@ -1,12 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.98。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.2。
+2026-11-22 / v0.99。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.3。
 
 ## 公表用三論文への再編（確定方針）
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：論文C `papers/quiver-avatar-moduli.tex` と節 `papers/quiver-avatar/git_comparison.tex` がOU GIT・quiver/QP/avatar→内在H2比較の正本。一般OUのquintuple→H2次数2・potential→quintuple次数4・合成次数8、特殊二捩れ/CM/一cubic境界の群型・粗分岐を保持。**全H2上で二normal foundationの有限étale次数2選択被覆を構成し、選択付きH2は有限foundationスタック$\mathfrak F_0$の$S_2$不変な開$\mathfrak F_{\HH}$と同型、$\mathfrak H_2\simeq[\mathfrak F_{\HH}/S_2]$。** これはBのsmooth atlas・Artin foundation・relative反Serre・Kスカラー剛体化を入力として証明本文を追加。**次はこの開埋込のrelative Isom/étale降下・各chart効果性を独立監査し、有限表示の具体的認識条件、noncubic境界での明示群oidを決める。** 全$\mathfrak F_0$が実現可能という誤解、local粗/GITの大域同値、全avatar/AS認識を避ける。A/Bの公表前独立証明監査、実組版、新規性調査は別状態。
+- C：論文C `papers/quiver-avatar-moduli.tex` と節 `papers/quiver-avatar/git_comparison.tex` がOU GIT・quiver/QP/avatar→内在H2比較の正本。一般OUのquintuple→H2次数2・potential→quintuple次数4・合成次数8、特殊二捩れ/CM/一cubic境界の群型・粗分岐を保持。**全H2上で二normal foundationの有限étale次数2選択被覆を構成し、選択付きH2は有限foundationスタック$\mathfrak F_0$の$S_2$不変な開$\mathfrak F_{\HH}$と同型、$\mathfrak H_2\simeq[\mathfrak F_{\HH}/S_2]$。** これはBのsmooth atlas・Artin foundation・relative反Serre・Kスカラー剛体化を入力として証明本文を追加。可換Qのfactor交換による全被覆の非自明性と、Noether性による非構成的有限多項式判定の存在もCに証明済み。**次はこの開埋込のrelative Isom/étale降下・各chart効果性を独立監査し、有限表示の具体的認識条件、noncubic境界での明示群oidを決める。** 全$\mathfrak F_0$が実現可能という誤解、local粗/GITの大域同値、全avatar/AS認識を避ける。A/Bの公表前独立証明監査、実組版、新規性調査は別状態。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 

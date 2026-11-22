@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.96（A v1.69・20節、B v0.39・31節、C v2.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.97（A v1.69・20節、B v0.39・31節、C v2.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -402,6 +402,21 @@ relative Serre root、AS4被覆、AZ/Noetherian性など
 有限個の検査可能条件へ還元する必要がある。
 一cubic境界ではquintuple忘却fiber1でもnormal ruling選択coverは2。
 両者を混同しない。
+
+**実現可能開の有限方程式の存在と二重被覆の非自明性。**
+F_H⊂F0の逆像W_H⊂U0⊂A^64は不変開部分。
+閉補集合のA^64での閉包のイデアルIはNoether性で有限生成。
+従って有限個の多項式P_iが存在し、W_H上では少なくとも一つが非零、
+補集合は全P_iの共通零点。代数群G/Kの有理作用により
+Iは安定で、生成元を有限次元のG/K部分表現に取れる。
+これは存在結果だけで、P_iの具体式・次数・計算量は未知。
+C cor:qa-realizable-foundation-finite-open-criterionを参照。
+可換Q=P1×P1ではpointed自己同値群が
+A=(PGL2×PGL2)⋊C2、指定rulingを保つH=PGL2×PGL2。
+ruling選択被覆をその慣性gerbe BAへ引き戻すとBH→BA、
+非自明な剰余C2が二sheetを交換するため、大域sectionはない。
+C cor:qa-ruling-cover-nontrivial-commutative-gerbeに証明。
+この二点を実現可能開の明示的判定と混同しない。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
