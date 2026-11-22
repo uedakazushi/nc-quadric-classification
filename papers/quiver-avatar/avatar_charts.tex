@@ -1158,6 +1158,66 @@ $\mathcal M$は各節点で非局所自由である。
 作用し、構成は元の表示群の作用に整合する。
 \end{proof}
 
+\begin{corollary}[noncubic中央二重平方環の可換点曲線からの幾何射]
+\label{cor:qa-noncubic-central-square-point-curve-spectral-avatar}
+論文A・Bのnoncubic中央二重平方環
+\[
+ B_f=k[u,v]\langle c,d\rangle/
+          (c^2-f_1(u,v),\,d^2-f_2(u,v))
+\]
+に対し、通常の可換化を施した環と
+その射影曲線は
+\[
+ B_f^{\mathrm{ab}}=
+ k[u,v,c,d]/(c^2-f_1,\,d^2-f_2),\qquad
+ E_f=\operatorname{Proj}(B_f^{\mathrm{ab}})
+ \subset\PP^3
+\]
+である。これは定理
+~\ref{thm:qa-noncubic-rootpair-torsionfree-spectral-module}
+の四重被覆$\widetilde C$と自然に同型であり、
+\[
+ \boxed{\quad
+ E_f\xrightarrow{/\,\mu_2}C_{f_1f_2}
+ \xrightarrow{\;2:1\;}\PP^1,
+ \qquad
+ \mathcal M=(r_*\OO_{E_f})^- .
+ \quad}
+ \tag{NC-point-avatar}\label{eq:qa-noncubic-pointcurve-spectral-factorization}
+\]
+$\mu_2$は$(c,d)\mapsto(-c,-d)$として作用する。
+この対合の固定点は$f_1,f_2$の
+共通根の上に限られるので、二根対が
+非交差なら第一射はétale、
+一根共有または一致根対では
+固定点に対応する節点でramifiedな商となる。
+
+この射はnoncubic線形代数$B_f$から
+rank-one torsion-free spectral avatarへの
+\emph{具体的な幾何構成}である。
+非可換な$B_f$の$\qgr$と
+$\OO$-marked avatar側のheartが同値である
+と主張するものではない。
+\end{corollary}
+\begin{proof}
+$u,v$は中央にあるので、可換化において
+追加される関係は$cd=dc$だけである。
+そのProJの$\PP^1=\operatorname{Proj}k[u,v]$上の
+相対座標環は$1,c,d,cd$を基底とする
+二重平方根代数となる。
+これは前定理の$\widetilde C$そのものである。
+同時符号の不変部分は$1,cd$、
+反不変部分は$c,d$なので、
+商と$\mathcal M$の表示も一致する。
+非自明な同時符号の固定点は、
+射影座標$(u,v)$が非零である限り
+$c=d=0$を満たす点に限られ、
+これは$f_1=f_2=0$と同値である。
+$(u,v)=(0,0)$では二つの平方関係から
+$c=d=0$となり射影点は存在しない。
+従って固定点の条件が従う。
+\end{proof}
+
 \begin{proposition}[共有根退化での可逆Picard延長の局所障害]
 \label{prop:qa-rootpair-nodal-picard-nonextension}
 $R=k[[s]]$上の二根対の退化
