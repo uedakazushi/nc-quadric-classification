@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.35。massゲージと関係lift shearの半直積および標的の輸送。
+% 2026-11-23 / v4.36。massゲージと関係lift shearの半直積、双対数交換子。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1105,6 +1105,28 @@ $L_yq+\lambda L_yx+L_vq'+\mu L_vu$である．
 $K$の二直和因子に対して自然である．
 よって任意基底変更に整合し，結論を得る．
 \end{proof}
+
+\begin{example}[双対数上では二作用は可換でない]
+\label{ex:qa-q12-mass-shear-first-order-commutator}
+$R=k[\varepsilon]/(\varepsilon^2)$，
+$\lambda=\varepsilon,\ \mu=0$とし，
+質量ゲージのパラメータを$t=1$とする．
+残余関係liftに$L_y\notin\varepsilon\cdot
+R\langle Q_{12}\rangle$を含むshearを選ぶ．
+このとき式~\eqref{eq:qa-q12-mass-shear-conjugation}から
+\[
+ (g_{\varepsilon,1}\phi_\alpha
+   g_{\varepsilon,1}^{-1}\phi_\alpha^{-1})(y)
+    =y+\varepsilon L_y\ne y .
+\]
+一方，$\varepsilon=0$の幾何fiberでは
+$g$と$\phi_\alpha$は可換になる．
+従って幾何fiberの加法的ゲージとlift選択の比較だけで，
+非被約底の相対groupoidを可換な直積として記述してはならない．
+これは全QP表示stackのAS正則性や
+内在的$H_2$への同値の反例ではなく，
+座標変換群のscheme論的な非可換性の例である．
+\end{example}
 
 \begin{theorem}[ordinary QP Jacobianと3-preprojective完成]
 \label{thm:qa-two-mass-jacobian-preprojective}
