@@ -140,6 +140,84 @@ $r^*$ は全射となり，最後の完全列を得る．
 \end{proof}
 
 
+
+\begin{proposition}[非自由MCM二型の行列核は点曲線の二pencilを回収する]
+\label{prop:qa-point-mcm-matrix-pencils}
+前定理の仮定の下で，$f_1=-\ell_1\ell_2$，
+$f_2=-m_1m_2$と因数分解し，
+$\ell_1,\ell_2$および$m_1,m_2$を
+それぞれ独立な一次形式とする．
+中央二重平方環 $B_f$ で
+\[
+ M_c=\begin{pmatrix}c&\ell_1\\\ell_2&-c\end{pmatrix},
+ \qquad
+ M_d=\begin{pmatrix}d&m_1\\m_2&-d\end{pmatrix}
+ \tag{MCM-matrices}\label{eq:qa-point-mcm-matrices}
+\]
+と置くと，$M_c^2=M_d^2=0$であり，
+それぞれは元のnoncubic normal helixに使う
+二つの線形matrix factorizationの表示となる．
+$E_f$上では両行列が全点で階数一となり，
+その右核の直線から定まる射
+\[
+ \kappa_c:E_f\longrightarrow\PP^1,\qquad
+ \kappa_d:E_f\longrightarrow\PP^1
+\]
+は，それぞれ前定理の
+$p_c:E_f\to Q_c$，$p_d:E_f\to Q_d$
+と conic の同型 $Q_c,Q_d\simeq\PP^1$
+との合成に一致する（終域の射影変換を除く）．
+従って
+\[
+ \kappa_c^*\OO_{\PP^1}(1)\simeq F_c,\qquad
+ \kappa_d^*\OO_{\PP^1}(1)\simeq F_d .
+ \tag{MCM-pencils}\label{eq:qa-point-mcm-pencil-classes}
+\]
+これは\emph{matrix factorizationの点上のkernel}と
+幾何的な二pencilの一致であり，
+ASのfinite directed End代数全体の同型や
+$\pi B_f$を保つpointed心の同型を
+まだ結論しない．
+\end{proposition}
+\begin{proof}
+$u,v$ は $B_f$ の中心にあり，
+$c^2=f_1=-\ell_1\ell_2$，
+$d^2=f_2=-m_1m_2$だから
+行列の平方はそれぞれ零である．
+これは
+\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026}
+の二つの非自由MCM型に用いる
+線形行列分解の表示である．
+$E_f$の点において$M_c$が零行列となるなら
+$c=\ell_1=\ell_2=0$が必要だが，
+$\ell_1,\ell_2$は$\PP^1_{[u:v]}$上で
+共通零点を持たない．
+従って行列の階数は一である．
+同じ議論が$M_d$にも適用できる．
+
+$M_c$の成分は$u,v,c$だけに依存するので，
+$\kappa_c$は conic $Q_c$ を経由する．
+$\ell_1,\ell_2$を $s,t$ とする座標で
+$Q_c$の式は $c^2+st=0$である．
+その標準パラメータ表示
+\[
+ [s:t:c]=[a^2:-b^2:ab]
+\]
+の下で
+\[
+ M_c=
+ \begin{pmatrix}a\\-b\end{pmatrix}
+ \begin{pmatrix}b&a\end{pmatrix}
+\]
+となるから，右核は直線$[a:-b]$である．
+これは conicのパラメータ$[a:b]$への
+射影線形自己同型であり，
+$\kappa_c$は$Q_c\simeq\PP^1$を通る次数二射となる．
+よって$\kappa_c^*\OO(1)=F_c$を得る．
+$m_1,m_2,d$を用いた同じ計算で
+$F_d$の主張も従う．
+\end{proof}
+
 \begin{corollary}[非零二捩れ付き楕円曲線上の双対二重商]
 \label{cor:qa-point-spectral-atkin-lehner}
 滑らかな楕円曲線と非零二捩れの組
