@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.9（OU §4と§5の群・部分群対の抽象同型を証明）
+% 2026-11-22 / v1.0（OU四重射のspectral Kummer表示と分岐点torsorとの区別）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -379,6 +379,154 @@ quintuple側の $B$ に降下させたり、
 論文Bの geometric quintuple の点曲線 $C$ と
 同一視したりしてはならない。
 確定したのは符号群の線型局所系 $\mathcal V$ である。
+\end{remark}
+
+
+\begin{theorem}[対角OU四重被覆の明示的spectral Kummer表示]
+\label{thm:qa-ou-spectral-kummer}
+標数零の体上で前命題の $G=V\rtimes S_4^{\mathrm{coord}}$ と
+$H=S_4^{\mathrm{coord}}$ を考える。
+$G$ が自由に作用し、$x_i\ne0$ と $x_i^2\ne x_j^2$ を満たす
+$\PP^3$ の $G$-不変稠密開をさらに縮めて $X^\circ$ とする。
+$B^\circ=X^\circ/G$、$Y^\circ=X^\circ/H$ と置く。
+このとき $B^\circ$ 上に、次の性質を持つ自然な相対楕円曲線
+$\mathcal E_{\mathrm{sp}}$ と二つのsectionが存在する。
+対角表示 $[x_1:\cdots:x_4]$ 上では、相対曲線は
+\[
+ E_{\mathrm{sp}}:\quad
+ y^2=\prod_{i=1}^{4}(t-x_i^2),\qquad
+ O=\infty_+,\qquad P_+=(0,c),\quad c=\prod_i x_i
+ \tag{OU-sp}\label{eq:qa-ou-spectral-elliptic}
+\]
+である。ただし $\infty_\pm$ は $y/t^2\to\pm1$ で指定する
+二つの無限遠点であり、$O$ を群法則の原点とする。
+このとき $B^\circ$ 上の有限 étale 四重被覆について
+\[
+ Y^\circ \ \xrightarrow{\ \sim\ }\
+ [2]^{-1}(P_+)
+ :=B^\circ\times_{\mathcal E_{\mathrm{sp}},P_+,[2]}
+                \mathcal E_{\mathrm{sp}}
+ \tag{OU-Kum}\label{eq:qa-ou-spectral-kummer}
+\]
+という同型がある。特に群局所系の同型
+$\mathcal V|_{B^\circ}\simeq\mathcal E_{\mathrm{sp}}[2]$ の下で
+\[
+ [Y^\circ]=\delta_{[2]}(P_+)
+ \quad\text{in }H^1_{\acute et}
+                  (B^\circ,\mathcal E_{\mathrm{sp}}[2]).
+ \tag{OU-Kum-class}\label{eq:qa-ou-spectral-kummer-class}
+\]
+論文Bの $[-2]$-規約では、同じ四重torsorは
+$[-2]^{-1}(-P_+)$ と書ける。
+\end{theorem}
+\begin{proof}
+$x_i$ を同時に $\lambda$ 倍すれば
+$t\mapsto\lambda^2t$、$y\mapsto\lambda^4y$ で曲線と
+$O,P_+$ は同型になる。この重み二・四の変換は射影座標の
+変更と両立する。偶数符号変更は $x_i^2$ と $c$ を保ち、
+座標置換は四つの因子を並べ替えるので、
+曲線、二つの無限遠点、$P_+$ は $G$-同変に降下する。
+$x_i^2$ が相異なるため、曲線は滑らかな種数一曲線である。
+
+$\prod_{i=1}^4(z-x_i)=
+ z^4-s_1z^3+s_2z^2-s_3z+c$ と置き、
+\[
+ q(t)=t^2+s_2t+c,\qquad \ell(t)=s_1t+s_3
+\]
+とする。恒等式
+\[
+ \prod_i(t-x_i^2)=q(t)^2-t\ell(t)^2
+ \tag{OU-factor}\label{eq:qa-ou-spectral-factorization}
+\]
+が多項式環で成り立つ。
+$s_1\ne0$ の開では
+\[
+ t_0=-s_3/s_1,\qquad
+ Q_x=(t_0,-q(t_0))\in E_{\mathrm{sp}}
+ \tag{OU-half-explicit}\label{eq:qa-ou-spectral-halfpoint}
+\]
+が定まる。必要ならすべての偶数符号変更について
+$s_1\ne0$ となる $G$-不変開へ縮める。
+$P_-=(0,-c)$ と書けば、一般点で
+\[
+ \operatorname{div}(y+q(t))
+   =P_-+2Q_x-2\infty_+-\infty_-,
+ \qquad
+ \operatorname{div}(t)
+   =P_++P_- -\infty_+-\infty_- .
+\]
+第一式は、式~\eqref{eq:qa-ou-spectral-factorization} により
+$y+q$ が $t=t_0$ で二重に消え、$t=0$ で単純に消えることと、
+両無限遠点での極位数がそれぞれ二・一であることから従う。
+二つの主因子の差を取ると
+$2(Q_x-O)\sim P_+-O$ なので、$[2]Q_x=P_+$ である。
+
+$s_i$ は座標置換に不変である。
+同時符号反転は $(s_1,s_3)\mapsto(-s_1,-s_3)$、
+$(s_2,c)\mapsto(s_2,c)$ と作用し、$Q_x$ は不変である。
+従って式~\eqref{eq:qa-ou-spectral-halfpoint} は
+$H$-不変であり、$Y^\circ\to[2]^{-1}(P_+)$ を定める。
+一般点でこの射は四つの異なる半点を与える。
+実際、$x=(1,2,3,5)$ とし、全体符号反転を除いた四つの
+偶数符号選択を取ると、$t_0$ の値は
+\[
+ -61/11,\qquad29/5,\qquad19/3,\qquad-11
+\]
+であり相異なる。この計算は
+\path{computations/verify_ou_spectral_halving.py} でも確認できる。
+従って有限 étale 次数四の両被覆の射は、
+さらに適切な $G$-不変稠密開に縮めれば同型となる。
+
+四つの根の差は $\mathcal E_{\mathrm{sp}}[2]$ に属する。
+符号変更による四つの半点の推移的な作用から
+$V\simeq\mathcal E_{\mathrm{sp}}[2]$ が得られ、
+座標置換による三つの非零元の作用とも両立する。
+これは四分岐点の偶数部分集合を全体集合で割った
+標準的な $S_4$-加群の同型に等しい。
+よって同型は有限群局所系およびそのtorsor作用を保ち、
+Kummer列から最後の式が従う。
+\end{proof}
+
+\begin{proposition}[分岐点の四重射は別のtorsorである]
+\label{prop:qa-ou-spectral-branch-not-sign}
+同じ $B^\circ$ 上で、
+$E_{\mathrm{sp}}$ の四つの分岐点
+$R_i=(x_i^2,0)$ が定める次数四の有限 étale 被覆を
+$R\to B^\circ$ とする。原点を $P_+$ に取り直すと
+\[
+ R\simeq [2]^{-1}(P_--P_+)
+\]
+であるが、一般に $R$ とOUの $Y^\circ$ は
+$B^\circ$ 上の被覆として同型でない。
+前者の $G$-monodromyの核は $V$、後者の核は $K_4$ である。
+\end{proposition}
+\begin{proof}
+$t-x_i^2$ と $t$ の主因子の比較から
+$2R_i\sim P_++P_-$、従って
+$2(R_i-P_+)\sim P_--P_+$ である。
+一方、$G$ の符号変更群 $V$ は各 $x_i^2$ を固定し、
+$R_i$ の四枚には自明に作用する。
+その四枚の置換群は座標群 $S_4^{\mathrm{coord}}$ 全体で、
+monodromyの核は $V$ である。
+OU四重被覆の核は前命題の $K_4$ であり、$V\ne K_4$。
+同じ連結Galois被覆 $X^\circ\to B^\circ$ により
+trivializeされる二つの有限被覆が同型なら
+対応する $G$-集合も同型でなければならない。
+しかし作用核が異なるので同型ではない。
+\end{proof}
+\begin{remark}[spectral曲線とquintuple点曲線を区別する]
+\label{rem:qa-ou-spectral-vs-quintuple}
+定理~\ref{thm:qa-ou-spectral-kummer} はOU四重射の
+\emph{実際の}楕円Kummer模型を与える。
+しかし $\mathcal E_{\mathrm{sp}}$ と、論文Bの
+geometric quintupleから構成される
+$\Pic^0_{C/S}$ の相対同型、および
+$-P_+$ と $\mathcal L_2\mathcal L_0^{-1}$
+の対応は証明していない。
+したがってこの定理だけでは、元のquintuple側の
+Picard平方根torsorとの同一性は結論しない。
+まず二つの楕円族の$j$-不変量と指定点の対応を、
+実際のOU $\S4$--$\S5$ の同変表示上で検証する必要がある。
 \end{remark}
 
 \begin{corollary}[OU classとPicard Kummer classの正確な比較条件]

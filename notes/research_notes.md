@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.81（A v1.69・20節、B v0.39・31節、C v0.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.82（A v1.69・20節、B v0.39・31節、C v0.8）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -45,6 +45,29 @@ V_signは四点分岐genus1の2-torsionと標準的に同型。
 そのspectral curveや群スキームを
 quintuple曲線のE[2]と無証明に同一視しない。
 
+**OU四重被覆のspectral Kummer模型（Cで証明）。**
+二乗座標 a_i=x_i² の四分岐点から
+E_sp: y²=∏(t−a_i) を作ると、
+無限遠の正のsection O=∞_+ と P+=(0,∏x_i) が
+G=V⋊S4_coord の作用を降下する。E_sp の群原点を O とし、
+V=even sign/<all signs> は E_sp[2] と同型となる。
+四つのsign sheetは [2]^{-1}(P+) の四つの点そのものである。
+具体的には、∏(z−x_i)=z⁴−s1z³+s2z²−s3z+c、
+q(t)=t²+s2t+c、l(t)=s1t+s3 とすると
+q(t)²−∏(t−x_i²)=t l(t)²。
+t0=−s3/s1、Q=(t0,−q(t0)) は 2(Q−O)∼P+−O。
+偶数符号の四選択は一般に異なる Q を与える（Python厳密検算）。
+よってOUのclassはこの *spectral* 曲線に対し
+δ_[2](P+) = δ_[-2](−P+) として明示できた。
+分岐点R_iは別のPicard半点torsor（P_-−P_+の半点）をなし、
+そのmonodromy核はV、OU側はK4で、両者は異なる。
+証明正本はCのthm:qa-ou-spectral-kummerと
+prop:qa-ou-spectral-branch-not-sign。
+再現は computations/verify_ou_spectral_halving.py。
+重要な未解決点はこのE_sp/P+と、geometric quintupleの
+Jacobian/N=L2 L0^-1との**実際の相対幾何同型**であり、
+spectral Kummerの解決を元々のPicard比較の解決としない。
+
 **Picardの半点とnodal境界障害。**
 Bのlem:picard-halvesでは根空間
 T_N=S×_(N,Pic0,[-2])Pic0はétale全射。
@@ -72,7 +95,7 @@ P×_S𝒱の上の等式として確認することである。
 幾何点ごとの半点存在だけでは足りない。
 論文Cの cor:qa-ou-picard-h1-criterion、
 lem:qa-ou-equivariant-halfpoint-test に証明を保持。
-この同型は**現在未解決**である。
+ここでのquintuple側の同型は**現在未解決**である（spectral Kummer同型はCで証明）。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
@@ -88,8 +111,10 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
 **再開する数学的核心。**
-OU §4の(G_ell,H_ell)と§5の(G,H)の群対同型を
-実際の幾何的quintuple族の同変双有理対応へ昇格する。
+まずspectral E_spの相対$j$とP+を、OU §4の幾何的quintuple族の
+相対JacobianとNの下で同定できるか、実際の不変式で調べる。
+そのうえで(G_ell,H_ell)と§5の(G,H)の群対同型を
+実際の同変双有理対応へ昇格する。
 群局所系の同定とKummer class一致を計算し、
 potential上の同変半点を構成または障害を示す。
 次に剛体化quintuple→H2の慣性写像と微分を調べる。

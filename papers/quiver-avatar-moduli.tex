@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.7
+% 日本語 LuaLaTeX。2026-11-22 / v0.8
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v0.7（OUの実際のS4置換群とtwisted四重torsorを訂正）}
+\date{2026年11月22日\quad v0.8（spectral楕円曲線の明示Kummer模型）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -81,7 +81,10 @@ quintuple 表示の四次元スカラー慣性が pointed な忘却で消える�
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
 Picard二等分はE[2]-torsorの次数4となる。
 節点・尖点へ退化するとPicard根の幾何fiberは2点・1点へ変わる。
-この四重射の群作用の比較と被覆の実際の同型は区別する。
+OU対角四重射自体は、二乗座標を分岐点とするspectral楕円曲線上で、
+明示したsectionの二等分Kummer torsorに幾何的に同型である。
+一方でquintupleの点曲線のPicard根との比較は未解決であり、
+この二つの幾何的同型の対象を区別する。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。
