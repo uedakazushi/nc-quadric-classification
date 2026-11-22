@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.1
+% 2026-11-22 / v0.2（OU S4-monodromy とPicard根退化を追加）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -168,9 +168,138 @@ $g\in\operatorname{Aut}_{\mathfrak Y}(y)$ の形である。
 同型になるため、式~\eqref{eq:qa-fiber-cosets} が得られる。
 \end{proof}
 
+
+\subsection{次数四射の $S_4$-monodromy と Picard 平方根}
+
+\begin{proposition}[OU次数四射の一般Galois閉包]
+\label{prop:qa-ou-fourfold-s4-monodromy}
+標数零の代数閉体上で、Okawa--Ueda \cite[\S5, (5.8)]{OU2014}
+のGIT有限射を、対角化による稠密な一般開で考える。
+同論文の表示は
+\[
+ \PP^3/S_3\longrightarrow
+ \PP^3/\bigl(S_3\ltimes(\mathbb Z/2)^3\bigr)
+ \tag{OU-4}\label{eq:qa-ou-fourfold-diagonal}
+\]
+であり、$\PP^3$ では同時符号反転が自明に作用する。
+従って有効な符号変更群と全群はそれぞれ
+\[
+ \Gamma=(\mathbb F_2)^3/
+   \langle(1,1,1)\rangle\simeq(\mathbb F_2)^2,\qquad
+ G=\Gamma\rtimes S_3\simeq\operatorname{AGL}_2(\mathbb F_2)
+ \simeq S_4.
+\]
+$S_3$ は $\Gamma$ の三つの非零元を置換する標準的な
+$\operatorname{GL}_2(\mathbb F_2)$-作用を持つ。
+一般の射~\eqref{eq:qa-ou-fourfold-diagonal} は次数四で、
+\emph{Galois射ではなく}、その関数体拡大のGalois閉包の群は $S_4$ である。
+$\Gamma$ を自明化する表示の方へ引き戻した場合にのみ、
+$\Gamma$-torsorとしての四点の符号変更を直接見ることができる。
+\end{proposition}
+\begin{proof}
+$\mathbb F_2^3$ の標準基底の剰余類を $e_1,e_2,e_3$ とする。
+商 $\Gamma$ では $e_1+e_2+e_3=0$ なので、
+三つはまさに非零元である。$S_3$ がこれらを置換する作用は忠実で、
+$\operatorname{Aut}_{\mathbb F_2}(\Gamma)
+=\operatorname{GL}_2(\mathbb F_2)$ は位数六なので同型となる。
+$\Gamma$ の四元上への平行移動とこの線型作用を合わせた
+$G$ は四元上の忠実で推移的な位数 $4\cdot6=24$ の置換群、
+従って $S_4$ である。
+$H=S_3$ は原点の安定化群で、$[G:H]=4$。
+標数零の一般対角座標はこの有限群作用に対し自明な
+幾何安定化群を持つので、
+関数体拡大 $k(\PP^3)^H/k(\PP^3)^G$ の次数は四である。
+$H$ の $G$ における core（全共役の共通部分）は、
+四元上の推移作用の核と一致し、忠実性から自明である。
+従ってこの非正規拡大のGalois閉包は $k(\PP^3)$ であり、
+Galois群は $G\simeq S_4$ となる。
+最終のtorsorに関する文は、
+$H$ の選択を消した一般の基底では
+$\Gamma$ が一定群として作用する四重Galois被覆を
+無条件に得られない、という意味である。
+置換群の全24元とcoreは
+\path{computations/verify_ou_fourfold.py} で再現できる。
+\end{proof}
+
+\begin{proposition}[適合Picard平方根の幾何fiberの濃度]
+\label{prop:qa-picard-roots-degeneration-count}
+論文Bの非線型geometric cubic quintupleの相対曲線
+$C\to S$ と $N\in\Pic^0_{C/S}(S)$ を考え、
+同論文 \cite[\texttt{lem:picard-halves}]{QuadricModuli2026}
+の平方根空間
+\[
+ T=S\times_{\Pic^0_{C/S},[-2]}\Pic^0_{C/S}
+ \tag{PR-4}\label{eq:qa-picard-root-torsor}
+\]
+を取る。これは $S$ 上 étale 全射である。
+滑らかな楕円曲線の locus $S_{\mathrm{sm}}$ 上では
+$T_{S_{\mathrm{sm}}}\to S_{\mathrm{sm}}$ は
+$\Pic^0_{C/S}[2]$-torsorであり、有限 étale 次数四である。
+各代数閉幾何点での平方根の個数は、曲線が
+滑らかな楕円曲線、既約一節点の種数一曲線、
+既約一尖点の種数一曲線である場合、それぞれ
+\[
+ \begin{array}{c|ccc}
+ C_{\bar s}&\text{smooth elliptic}&\text{nodal}&\text{cuspidal}\\ \hline
+ \Pic^0(C_{\bar s})&E&\mathbb G_m&\mathbb G_a\\
+ \#T_{\bar s}&4&2&1
+ \end{array}
+ \tag{PR-count}\label{eq:qa-picard-root-count}
+\]
+となる。従って滑らかなfiberと節点fiberが同じ連結基底族に
+現れるとき、$T\to S$ はその族上で有限 étale
+\emph{次数四のまま}延長することはできない。
+\end{proposition}
+\begin{proof}
+$\Pic^0_{C/S}$ は滑らかな相対一次元可換群代数空間で、
+$[-2]$ は étale 全射であることを論文Bの
+\cite[\texttt{lem:picard-halves}]{QuadricModuli2026} が示す。
+滑らかな種数一のfiberのPicard零成分は楕円曲線の
+相対Jacobianであり、$[-2]$ は有限 étale
+次数 $2^{2}=4$ のisogenyである。
+そのpullbackは四点の$E[2]$-torsorとなる。
+
+一節点曲線の正規化は $\PP^1$ で、節点の二つの原像の
+fiberの貼合せスカラーにより
+$\Pic^0\simeq\mathbb G_m$ となる。
+$[-2]$ は $z\mapsto z^{-2}$ なので、
+代数閉体の各非零値の逆像は二点である。
+一尖点曲線では正規化との貼合せの一次jetの加法群から
+$\Pic^0\simeq\mathbb G_a$ となる。
+$[-2]$ は $z\mapsto-2z$、従って一意の平方根を持つ。
+いずれも標数零では étale である。
+最後の主張は有限 étale 射の次数が連結基底上で
+局所定数となることから従う。
+\end{proof}
+
+\begin{remark}[四点の抽象的な一致と比較すべきtorsor class]
+\label{rem:qa-ou-picard-fourfold-not-identical}
+OU側の $\Gamma\simeq\mathbb F_2^2$ と
+楕円曲線上の $E[2](\bar k)\simeq\mathbb F_2^2$ は、
+$S_3=\operatorname{GL}_2(\mathbb F_2)$ の
+三非零元に対する作用も含めて同じ抽象モデルを持つ。
+これは次数四の一致を説明する\emph{候補}であって、
+OUの有限射とPicard平方根空間の同型を証明するものではない。
+特にOU側は一般に$S_4$-monodromyの非Galois四重射であり、
+Picard側は変動する群スキーム$E[2]$のtorsorである。
+二つが同じ基底上に引き戻され、
+$E[2]$の局所系とOUの符号変更局所系が同定できた後に、
+両torsorの相対同型を確認する必要がある。
+標識、自己同型群、さらにpointed同値による商は
+その後に初めて比較できる。
+節点・尖点における式~\eqref{eq:qa-picard-root-count} は
+Picard根空間そのもののfiberの個数であり、
+OU射の分岐fiberや$\HHstack$への忘却fiberを
+数えたものではない。
+\end{remark}
+
 \begin{remark}[Cで次に必要な具体的計算]
 \label{rem:qa-git-next-fiber}
-第一段階では、一般geometric cubic quintupleの
+第一段階では、式~\eqref{eq:qa-ou-fourfold-diagonal} の
+$S_4$-monodromyと式~\eqref{eq:qa-picard-root-torsor} の
+相対$E[2]$-torsorを同じsmooth elliptic quintuple基底へ引き戻し、
+二つの四重射のモノドロミーとtorsor classを比較する。
+そのうえで一般geometric cubic quintupleの
 適合する有限型開において
 $\operatorname{Aut}(\mathcal C,\OO)$ と
 標識を保存する自己同型群の像を計算する。
