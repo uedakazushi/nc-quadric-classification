@@ -86,3 +86,22 @@ for i in range(4):
 assert s.expand(s.trace(M.adjugate()*K[:4, :]*Q) - Q[3, 3]) == 0
 assert s.expand(s.trace(N.adjugate()*K[4:, :]*Q) - delta*Q[2, 2]) == 0
 print("PASS: boundary differentials q33 and (alpha^2+beta*gamma)*q22 are independent")
+
+# Exact dual-number first-order transverse family.  Its geometric fiber is
+# rank (3,3), but the family does not factor through det(M)=det(N)=0.
+epsilon = s.Symbol("epsilon")
+M0 = s.Matrix([[0, 0, -1, 0], [0, 1, 0, 0],
+               [-1, 0, 0, 0], [0, 0, 1, 0]])
+N0 = s.Matrix([[0, 0, 0, 1], [1, 0, 0, 0],
+               [0, -1, 0, 0], [0, 0, 0, 1]])
+perturb = s.zeros(4)
+perturb[0, 3] = -s.Rational(1, 2)
+perturb[3, 3] = -s.Rational(1, 2)
+M_eps = M0 + epsilon * perturb
+assert M_eps.T * N0 == N0.T * M_eps
+assert M0.rank() == N0.rank() == 3
+assert M0.col_join(N0).rank() == 4
+assert M_eps.det() == epsilon and N0.det() == 0
+assert s.expand(cross(N0*M_eps.adjugate()).det() - (epsilon**2-1)) == 0
+assert cross(M_eps*N0.adjugate()).det() == -1
+print("PASS: dual-number Lagrangian transverse family has determinant epsilon != 0")

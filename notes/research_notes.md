@@ -1,6 +1,42 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.71（A v1.69・20節、B v0.32・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.72（A v1.69・20節、B v0.33・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 非被約基底の幾何的rankとscheme-theoreticなnoncubic境界
+
+論文Bの認識開 $W\subset\operatorname{LG}(4,8)$ 上で
+$D=V(\det M,\det N)$ は、Bの
+lem:lagrangian-boundary-transverse により
+**基礎体上はsmoothな余次元二の閉部分である**。
+したがって$D$自身を「非被約でもよい」と記述するのは正確でない。
+一方で、$D$を非被約な一般基底へpullbackすると非被約な閉部分となり得る。
+相対normal formをその基底上で適用するには$\det M=\det N=0$が
+元として成立することが必要であり、各幾何fiberのrankが三であるだけでは足りない。
+
+反例：$R=k[\varepsilon]/(\varepsilon^2)$ 上で
+$M_\varepsilon=
+\left(\begin{smallmatrix}
+0&0&-1&-\varepsilon/2\\0&1&0&0\\-1&0&0&0\\0&0&1&-\varepsilon/2
+\end{smallmatrix}\right)$,
+$N=
+\left(\begin{smallmatrix}
+0&0&0&1\\1&0&0&0\\0&-1&0&0\\0&0&0&1
+\end{smallmatrix}\right)$
+は$M_\varepsilon^tN=N^tM_\varepsilon$を満たす。
+特殊fiberの両射影はrank3、交点線の可逆性・二つのcross行列式の
+開条件も成立する。しかし$\det M_\varepsilon=\varepsilon\ne0$、
+$\det N=0$。cross行列式は$\varepsilon^2-1=-1$と$-1$となり、
+したがってnilpotentな横断方向を持つ実際のLagrangian変形である。
+本文の ex:lg-nilpotent-transverse-determinant に完全な行列を保持し、
+computations/verify_lagrangian_recognition.py に正確な記号計算を収める。
+
+これは**境界と横断変形を識別する具体例**であり、
+普遍Noetherian貼合せの反例ではない。
+貼合せ自体は$I=(\det M,\det N)$による
+scheme-theoreticな閉部分$R/I$と、開部分$R_a,R_b$を使うため、
+この例の存在と整合する。
+次はR/I上のétale局所相対標準化が実際のfinite Morita foundationと
+全偶数Homを同定する箇所を詳しく点検する。
 
 ## Lagrangian 正規形の cross reshuffling に関する符号と開条件
 

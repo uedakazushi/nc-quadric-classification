@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.46（非退化二形式とcross規約を明示）
+% 2026-11-22 / v1.47（非被約基底の横断例と閉部分条件を明示）
 \section{noncubic 境界を横断する有限型効果性}
 \label{sec:noncubic-finite-type}
 
@@ -238,7 +238,13 @@ ruling 交換は導来圏内の指定構造頂点を保つ mutation である。
 \label{cor:lagrangian-open-closed-recognition}
 前命題の $W$ において、二つの行列式を零とする閉部分スキームを
 $D=V(\det M,\det N)$ と置く。
-$D$ は非被約でもよい。$D$ 上では命題~\ref{prop:lagrangian-relative-double-rank-three} の正規形が
+後の補題~\ref{lem:lagrangian-boundary-transverse} により、
+$k$ 上のこの $D$ 自身は smooth（従って reduced）である。
+ただし非被約な任意の基底へ引き戻した閉部分スキームは
+非被約となり得る。以下の相対正規形では各行列式が
+\emph{基底環の元として零}であることを要求し、
+幾何 fiber で階数三となるだけの条件に置き換えない。
+$D$ 上では命題~\ref{prop:lagrangian-relative-double-rank-three} の正規形が
 \texorpdfstring{\'etale}{etale} 局所に成立し、対応する有限 foundation は
 相対中央二重平方族のものに一致する。
 開補集合は $D(\det M)$ と $D(\det N)$ で覆われ、
@@ -277,6 +283,52 @@ $\det\operatorname{Cr}(Y\otimes\nu)=-(\det Y\,\det\nu)^2$ である。
 これは有限型認識命題の開条件の非消滅を補強するものであり、
 同命題の全相対認識をこの行列式計算だけで証明するものではない。
 \end{remark}
+
+\begin{example}[幾何 fiber が noncubic でも閉部分を経由しない一次変形]
+\label{ex:lg-nilpotent-transverse-determinant}
+$R=k[\varepsilon]/(\varepsilon^2)$ とし、標準交代形式を持つ
+$U_R\oplus U_R^*$ 内の Lagrangian 四平面を、
+その基底の二射影行列
+\[
+ M_\varepsilon=
+ \begin{pmatrix}
+ 0&0&-1&-\varepsilon/2\\
+ 0&1&0&0\\
+ -1&0&0&0\\
+ 0&0&1&-\varepsilon/2
+ \end{pmatrix},\qquad
+ N_\varepsilon=
+ \begin{pmatrix}
+ 0&0&0&1\\
+ 1&0&0&0\\
+ 0&-1&0&0\\
+ 0&0&0&1
+ \end{pmatrix}
+\]
+で定める。直接の行列積により
+$M_\varepsilon^{t}N_\varepsilon=N_\varepsilon^{t}M_\varepsilon$
+が成立する。剰余体への還元では両射影の階数は三、
+各交点線は可逆二次正方行列で生成される。
+従って上の認識開部分の $R$-点となる。
+一方
+\[
+ \det M_\varepsilon=\varepsilon\ne0,\qquad
+ \det N_\varepsilon=0.
+\]
+さらに本文の cross reshuffling 規約では
+\[
+ \det\operatorname{Cr}(N_\varepsilon\operatorname{adj}M_\varepsilon)
+ =\varepsilon^2-1=-1,\qquad
+ \det\operatorname{Cr}(M_\varepsilon\operatorname{adj}N_\varepsilon)=-1
+\]
+が $R$ 上で成立する。
+唯一の幾何 fiber は noncubic であるが、この族は
+閉部分 $V(\det M,\det N)$ を経由しない。
+したがって命題~\ref{prop:lagrangian-relative-double-rank-three} の
+\emph{scheme-theoretic} な行列式零条件は本質的である。
+この検算は
+\path{computations/verify_lagrangian_recognition.py} で再現できる。
+\end{example}
 
 \subsection{全幾何 fiber の有限 foundation 認識からの一様化}
 
