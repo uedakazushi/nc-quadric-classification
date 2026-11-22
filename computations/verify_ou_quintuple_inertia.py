@@ -59,6 +59,31 @@ def rank(rows):
 orb = [[vectors[c][r] for c in range(13)] for r in range(N*N)]
 assert rank(orb) == 13
 
+# For the SO_4 x G_m action on symmetric endomorphisms,
+# delta X = A X - X A + alpha X; six off-diagonal symmetric
+# entries and one diagonal scalar are independent.
+potential_vectors = []
+for i,j in combinations(range(N),2):
+    v=[Fraction(0) for _ in range(N*N)]
+    v[N*i+j]=Fraction(x[j]-x[i])
+    v[N*j+i]=Fraction(x[j]-x[i])
+    potential_vectors.append(v)
+potential_vectors.append(vectors[-1])
+upper = [(i,j) for i in range(N) for j in range(i,N)]
+pot_orb = [[potential_vectors[c][N*i+j] for c in range(7)]
+           for i,j in upper]
+assert rank(pot_orb) == 7
+assert N*(N+1)//2-rank(pot_orb) == N*N-rank(orb) == 3
+
+# Four generic potential sheets up to even sign / simultaneous sign.
+sheet_values = set()
+for d in product((-1,1),repeat=N):
+    if d[0]!=1 or prod(d)!=1:
+        continue
+    sheet_values.add(tuple(d[i]*x[i] for i in range(N)))
+assert len(sheet_values)==4
+
+
 # A representative in every class (modulo simultaneous -I) has sign_0=+1.
 D = [d for d in product((-1,1),repeat=N) if d[0]==1 and prod(d)==1]
 assert len(D)==4
@@ -77,5 +102,6 @@ for d in D:
         assert x[j]**2-x[i]**2 != 0
 
 print("PASS: 4 residual sign classes, exact finite stabilizer calculation")
-print("PASS: orbit rank 13 in Mat_4; 3-dimensional tangent quotient over Q")
+print("PASS: orbit ranks 7 (Sym^2_4) and 13 (Mat_4), shared tangent Q^4/Qx")
+print("PASS: 4 generic potential sheets and isomorphic finite inertia groups")
 print("PASS: residual group fixes tangent quotient and acts freely on C")
