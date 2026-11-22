@@ -1,9 +1,9 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.70。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.71。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
-## 原稿C v3.0：avatar–AS分類の出典と外部入力
+## 原稿C v3.1：avatar–AS分類の出典と外部入力
 
 **研究の直接の入力：** 大川新之介・植田一石、
 未公刊日本語草稿『非可換二次曲面の二つの反標準avatar』
@@ -37,6 +37,28 @@
   Ginzburgの次数零集中と単純最小分解の完全性を確認する。
 - Twisted homogeneous coordinate ringの標準Noether定理を
   ASから得る四次正規正則familyの商に用いる。
+
+**今回確認した原資料箇所と未完の監査。**
+元草稿§8の命題8.1は左右Noether性・coherent導来Morita同値・
+Serre$\nu[2]$を正規四次familyから導く。
+§52の命題52.1は固定mutationの両側Noether性・
+$\Qgr A'\simeq\Qgr A$, $\qgr A'\simeq\qgr A$を
+共通ample corner・Artin--Zhangに帰着する。
+これらをCのprop:qa-as-avatar-coherent-moritaおよび
+prop:qa-as10-noetherian-qgrに証明付きで統合した。
+Keller--Yang Theorem 6.2の(c1)全quiverのloop禁止、
+(c2)mutation頂点を通るoriented 2-cycleの禁止、
+(c3)potentialの巡回同値代表の局所条件を
+一次資料に照合し、Cで各条件とGinzburg次数零集中を
+別々の入力とした。
+元資料§15.4の二乗法の階数壁(15.6)を
+pencilの評価列と$H^*(GF^{-1}P^{-1})$の消滅から
+非被約Dを含めて直接再証明した。
+四周期Hilbertの全次数等式もEuler有理級数で独立再計算した。
+他方、Artin--Zhangの再構成仮定すべての独立な確認、
+AS-Gorenstein性を与えるdg実現の全論理、
+Keller--Yangのproof全文と網羅的新規性は未監査。
+上記結果の出典は新しい独立発見ではなく原草稿である。
 
 **区別：** 12本矢は8本のfinite foundation矢＋4本の
 relation-dual戻り矢であることが多く、
