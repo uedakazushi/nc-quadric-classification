@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v3.0
+% 日本語 LuaLaTeX。2026-11-22 / v3.1
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v3.0（AS/avatar分類・十本矢逆mutationを自己完結化）}
+\date{2026年11月22日\quad v3.1（AS/avatar分類の数値・mutation・商圏比較の監査）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -73,6 +73,15 @@ square型全体とcubic型・最小十本矢型の非交和の全単射を証明
 十二本矢はsquareの有限foundationの八矢と
 四つのrelation-dual戻り矢からなるQP表示であり、
 任意の十二本矢potentialのAS分類を意味しない。
+AS分解のEuler漸化式を四周期有理母関数として解き、
+全$m$で$\dim A_{i+4m,i}=(2m+1)^2$を証明する。
+非被約反標準因子でもpencil trickにより
+最小十本矢壁が$P\simeq GF^{-1}$に正確に一致する。
+指定mutationについてKeller--Yangの局所条件を確認し、
+mutation先の左右Noether性と
+$\Qgr,\qgr$のAbel圏同値を共通ample cornerから導く。
+square/rotated側ではcoherentな有界導来Morita同値を示すが、
+これをO-marked構造対象を保つ同値と同一視しない。
 underlying Z-代数のgroupoidと適切な相対perfect AS族にも
 構成を拡張するが、未修正のstable QP groupoidとは区別する。
 
@@ -253,8 +262,11 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 \emph{avatarと、最小射影分解型を指定したAS正則$\mathbb Z$-代数}
 の同型類の全単射である。
 その証明は第~\ref{sec:qa-as-avatar-classification}節に、
-十本矢の独立ASクラスとQP表示の正確な関係は
+十本矢の独立ASクラスとQP表示の正確な関係、
+rank-three壁、mutation後のNoether性・商圏同値は
 第~\ref{sec:qa-as10-mutation-classification}節に置く。
+最小分解からの有理Hilbert級数の導出と
+AS--Gorenstein性の証明を別の論理段階として扱う。
 ここでは有限directed foundation、relation-dual QP、
 underlying AS代数、O-marked内在的heartの四水準を混同しない。
 
