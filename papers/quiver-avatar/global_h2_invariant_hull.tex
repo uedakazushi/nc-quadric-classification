@@ -1,0 +1,303 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.22. 二つの四変数二次形式のpencilによる全半不変環。
+
+\subsection{二つのGram二次形式のpencilと全大域不変式環}
+\label{subsec:qa-global-h2-invariant-hull}
+
+標数零の代数閉体 $k$ 上で、全$H_2$の線形表示
+$X=\operatorname{Hom}(C\otimes A,W)\oplus
+\operatorname{Hom}(D\otimes B,W)=\mathbb A^{32}$
+と $G,H=G\rtimes S_2$、線形化 $\chi_0$ は
+第~\ref{subsec:qa-global-h2-good-moduli}節のものとする。
+$A,B,C,D$ は二次元、$W$ は四次元である。
+Segre双線型形式 $J$ を式~\eqref{eq:qa-cross-pair-two-polynomials} の直前と
+同じ規約で固定する。$f,g$ を二つの四次正方行列として、
+\[
+ S_f=fJf^{\mathrm t},\qquad S_g=gJg^{\mathrm t},\qquad
+ F=\det f,\quad G_0=\det g
+\]
+とする。次の四次pencilの係数を定義する：
+\[
+ \det(XS_f+YS_g)
+ =F^2X^4+I_1X^3Y+I_2X^2Y^2+I_3XY^3+G_0^2Y^4.
+ \tag{GP}\label{eq:qa-global-gram-pencil}
+\]
+この $X,Y$ はpencilの形式変数であり、全係数空間$X$とは区別する。
+
+\begin{theorem}[全半不変式環の明示表示]
+\label{thm:qa-global-h2-full-semiinvariant-ring}
+同じ $\chi_0$ に関する半不変式環を
+$R_G=R_G(\chi_0)$、$R_H=R_H(\chi_0)$ と書く。
+\[
+ A_2=FG_0,\quad B_2=I_2,\quad
+ X_3=FI_3,\quad Y_3=G_0I_1,\quad D_4=I_1I_3
+\]
+と置くと、添字は$\chi_0$次数であり、自然な次数付き環の同型
+\[
+ \boxed{\quad
+ R_G\simeq
+ \frac{k[A_2,B_2,X_3,Y_3,D_4]}
+ {(X_3Y_3-A_2D_4)},\qquad
+ \deg(A_2,B_2,X_3,Y_3,D_4)=(2,2,3,3,4).
+ \quad}
+ \tag{RG}\label{eq:qa-global-h2-ordered-semiinvariant-ring}
+\]
+が成立する。ruling交換は $X_3\leftrightarrow Y_3$、
+$A_2,B_2,D_4$ を固定する。従って
+$C_3=X_3+Y_3$ と置けば
+\[
+ \boxed{\quad
+ R_H=R_G^{S_2}\simeq k[A_2,B_2,C_3,D_4],
+ \qquad \deg(A_2,B_2,C_3,D_4)=(2,2,3,4).
+ \quad}
+ \tag{RH}\label{eq:qa-global-h2-unordered-semiinvariant-ring}
+\]
+特に、構成済みの全good moduliは明示的な開埋め込み
+\[
+ M\hookrightarrow\mathbb P(2,2,3,4),\qquad
+ M^{\rm rul}\hookrightarrow
+ \operatorname{Proj}k[A_2,B_2,X_3,Y_3,D_4]/(X_3Y_3-A_2D_4)
+ \tag{WP}\label{eq:qa-global-h2-weighted-projective-hull}
+\]
+を持つ。これは同型類の粗モジュライ空間の存在を主張するものではない。
+\end{theorem}
+\begin{proof}
+まず $SL(A)\times SL(C)$ が $C\otimes A$ に及ぼす作用は
+$SO(J)$ の標準作用に一致する（中心の有限核は不変式に影響しない）。
+直交群の第一基本定理を四つの列ベクトルに適用すると、
+$f$ についての不変式は対称行列 $S_f$ の十成分と
+向きを表す $F$ で生成され、唯一の関係は
+$\det S_f=F^2$ である。$g$ についても同じなので、
+$SL(A)\times SL(B)\times SL(C)\times SL(D)$ の不変式環は
+\[
+ \frac{k[(S_f)_{ij},(S_g)_{ij},F,G_0]}
+ {(\det S_f-F^2,\ \det S_g-G_0^2)}.
+\]
+続いて $SL(W)$ の不変式を取る。
+二つの対称四次形式に対する $SL_4$ 不変式環は、
+四次pencilの五係数で自由に生成される
+\cite[\S4.2]{BhargavaGrossWang2015}。
+標数零で $SL(W)$ は線型簡約なので、
+上記二つの不変な関係による剰余と不変式の取得は交換する。
+従って
+\[
+ k[X]^{SL(W)\times SL_2^4}
+ =k[F,G_0,I_1,I_2,I_3].
+ \tag{P0}\label{eq:qa-global-h2-five-pencil-invariants}
+\]
+ここで既知の二形式pencilの不変式定理自体の新規性は主張しない。
+
+残る五つの$GL$の行列式文字を
+$(a,b,c,d,w)$ とし、第~\eqref{eq:qa-h2-git-characters}式を用いる。
+$F,G_0$ の指標はそれぞれ $w/(ac)^2,w/(bd)^2$、
+$I_j$ の指標は $w^2/(ac)^{4-j}(bd)^j$ である。
+ゆえに単項式 $F^uG_0^vI_1^pI_2^qI_3^r$ が
+$\chi_0$ の正の冪を持つ必要十分条件は
+\[
+ u+p=v+r.
+ \tag{bal}\label{eq:qa-global-h2-balanced-exponents}
+\]
+その場合の$\chi_0$次数は $u+v+2(p+q+r)$ である。
+この非負整数半群は、$FG_0,I_2,FI_3,G_0I_1,I_1I_3$
+の五元で生成され、その関係は
+$(FI_3)(G_0I_1)=(FG_0)(I_1I_3)$ の一つだけである。
+例えば重みが釣り合うように左側の組$(F,I_1)$と
+右側の組$(G_0,I_3)$から積を組み、対角的な四つの組と
+$I_2$を取り出せば半群の表示が直接得られる。
+これで式~\eqref{eq:qa-global-h2-ordered-semiinvariant-ring} が従う。
+
+二積交換は二次形式pencilの両端と中間の係数
+$I_1,I_3$ を交換する。
+$X_3Y_3=A_2D_4$ と $C_3=X_3+Y_3$ により
+$R_G=k[A_2,B_2,C_3,D_4,X_3]/(X_3^2-C_3X_3+A_2D_4)$
+は $k[A_2,B_2,C_3,D_4]$ 上の自由階数二代数である。
+交換が $X_3\mapsto C_3-X_3$ なので、不変部分は
+ちょうど基底環となる。最後の開埋め込みは
+定理~\ref{thm:qa-global-h2-quasiprojective-good-moduli} と
+その同一指標による飽和開の定義から従う。
+\end{proof}
+
+\begin{lemma}[交差縮約の多項式と中央判別式]
+\label{lem:qa-global-h2-gram-cross-polynomials}
+第~\ref{subsec:qa-global-h2-good-moduli}節の
+$P_f,Q_f,P_g,Q_g$ は、全$X$上で
+\[
+ \begin{aligned}
+ 16P_f&=I_1^2-4F^2I_2+8F^3G_0,\\
+ 16Q_f&=I_1^3-4F^2I_1I_2+16F^4I_3-8F^3G_0I_1,\\
+ 16P_g&=I_3^2-4G_0^2I_2+8G_0^3F,\\
+ 16Q_g&=I_3^3-4G_0^2I_3I_2+16G_0^4I_1-8G_0^3FI_3.
+ \end{aligned}
+ \tag{PQGP}\label{eq:qa-global-h2-cross-pencil-identities}
+\]
+特に $L_2=B_2-2A_2$ と置けば、重み八の式
+\[
+ \boxed{\quad
+ \Delta_8=(D_4+4A_2L_2)^2-4L_2C_3^2
+             =256P_fP_g
+ \quad}
+ \tag{D8}\label{eq:qa-global-h2-central-discriminant}
+\]
+が成立する。
+\end{lemma}
+\begin{proof}
+$f$ を可逆とする稠密開では $f$ を単位行列に規格化し、
+$T=f^{-1}g$ と置ける。
+このchartの四量子ビット不変式は
+$I_1=e_1(JT^{\mathrm t}JT)$、
+$I_2=e_2(JT^{\mathrm t}JT)$、
+$I_3=e_3(JT^{\mathrm t}JT)$、$G_0=\det T$ である。
+$M_f=\operatorname{Cr}(T)$ と
+$M_g=\operatorname{Cr}(\operatorname{adj}T)$ に対する
+Hadamardの四固有値恒等式
+（命題~\ref{prop:qa-cubic-adjugate-explicit-invariants} の証明）
+をそれぞれ適用すると、表示した四式を得る。
+実際に各式の左右は同じ$GL$指標を持つので、
+規格化に用いた$F$の冪を復元した式が上記となる。
+稠密開で一致する多項式は全$X$で一致する。
+
+最後に第一式と第三式を掛け、
+$X_3Y_3=A_2D_4$ と $C_3=X_3+Y_3$ を使うと
+\[
+ \begin{split}
+ (16)^2P_fP_g
+ &= (D_4+4A_2(B_2-2A_2))^2\\
+ &\hspace{1cm}-4(B_2-2A_2)(X_3+Y_3)^2
+ \end{split}
+\]
+を得る。これは多項式恒等式なので階数三の壁も含む。
+\end{proof}
+
+\begin{proposition}[中央affine chartとnoncubic閉曲線の全座標]
+\label{prop:qa-global-h2-central-affine-ring}
+全$H_2$の非順序good moduli $M$ において、
+二つの交差行列式がともに可逆となる飽和開は
+\[
+ \boxed{\quad M_0=D_+(\Delta_8)\subset\mathbb P(2,2,3,4),\qquad
+ \Gamma(M_0,\mathcal O)
+ =\bigl(k[A_2,B_2,C_3,D_4,\Delta_8^{-1}]\bigr)_0.\quad}
+ \tag{AFF}\label{eq:qa-global-h2-central-affine-ring}
+\]
+この開は全noncubic閉像を含む。
+その閉像はこの開の中で
+\[
+ \boxed{\quad \overline N=V_+(A_2,C_3)\cap M_0
+  \simeq\operatorname{Spec}k[\chi],
+  \qquad\chi=\frac{B_2^2}{4D_4}.\quad}
+ \tag{NC}\label{eq:qa-global-h2-noncubic-in-pencils}
+\]
+すなわち閉像は被約schemeとしても二つの明示方程式で与えられる。
+\end{proposition}
+\begin{proof}
+定理~\ref{thm:qa-global-h2-quasiprojective-good-moduli} の被覆では
+$s_0=(P_fP_g)^3$ である。前補題の式~\eqref{eq:qa-global-h2-central-discriminant}
+により、その標準開は $D_+(\Delta_8)$ と同じであり、
+その環は表示した重み零の局所化である。
+
+noncubicでは $F=G_0=0$ であるから $A_2=C_3=0$。
+逆に $V_{\rm cross}$ 上で $A_2=C_3=0$ とする。
+仮に $F=0,G_0\ne0$ なら第一の交差行列式は
+$16P_f=I_1^2$ であり、$f$ が階数三のため
+$P_f\ne0$、従って $I_1\ne0$ である。
+しかし $C_3=G_0I_1\ne0$ となり矛盾する。
+$f,g$ を交換した場合も同じなので、両者は階数三である。
+この場合 $P_fP_g=(I_1I_3)^2/256$ なので
+$D_4\ne0$。従って $A_2=C_3=0$ と
+$D_4\ne0$ の閉部分は $D_+(\Delta_8)$ に含まれ、
+\[
+  V_+(A_2,C_3)\cap M_0=D_+(D_4)\subset\mathbb P(2,4)
+    =\operatorname{Spec}k[B_2^2/D_4]
+\]
+となる。
+
+$\chi$ の係数を確認する。両階数三の中央二重平方正規形
+（命題~\ref{prop:qa-double-rank-three-conic-recognition}）で、
+$h_f=uv$、$h_g=(au+bv)(cu+dv)$ と置く。
+$W$の基底を$(c,u,v,d)$に取り、乗法の行列を
+\[
+ f=\begin{pmatrix}
+ 1&0&0&1\\0&1&0&0\\0&0&1&0\\0&0&0&0
+ \end{pmatrix},\qquad
+ g=\begin{pmatrix}
+ 0&0&0&0\\0&a&c&0\\0&b&d&0\\1&0&0&1
+ \end{pmatrix}
+\]
+と選ぶと、式~\eqref{eq:qa-global-gram-pencil} の直接展開で
+\[
+ I_1=-4,\qquad I_2=-8(ad+bc),\qquad
+ I_3=-4(ad-bc)^2.
+\]
+従って
+\[
+ \frac{B_2^2}{4D_4}
+   =\frac{(ad+bc)^2}{(ad-bc)^2}
+   =\frac{D(h_f,h_g)^2}{\Delta(h_f)\Delta(h_g)}
+   =\chi
+\]
+となり、右辺は論文Bの
+$\cite[\texttt{prop:moduli-noncubic-good-moduli}]{QuadricModuli2026}$
+における不変式である。
+既存の閉埋め込み
+（命題~\ref{prop:qa-global-closed-boundary-good-images}）
+とこの座標同型により、非被約な余分のscheme構造を
+閉像そのものへ付け加えずに式~\eqref{eq:qa-global-h2-noncubic-in-pencils}
+を得る。閉像の逆像の厚みは
+命題~\ref{prop:qa-noncubic-good-image-noncartesian} と矛盾しない。
+\end{proof}
+
+\begin{corollary}[良モジュライの二つの孤立商特異点]
+\label{cor:qa-global-h2-two-quotient-singularities}
+標数零の代数閉体上で、全good moduli $M$ の
+特異点は次の二点だけである：
+\[
+ p_3=[0:0:1:0],\qquad
+ p_4=[0:0:0:1]\quad\in\mathbb P(2,2,3,4).
+\]
+それぞれの形式局所解析型は
+\[
+ p_3:\ \tfrac13(1,1,2),\qquad
+ p_4:\ \tfrac12(1,1,1).
+\]
+$p_4$ はnoncubic閉曲線 $\chi=0$ 上にあり、
+$p_3$ はcubic開にある。
+それ以外の全点で $M$ は滑らかである。
+\end{corollary}
+\begin{proof}
+$p_4$ では$\Delta_8=D_4^2\ne0$。
+$p_3$ では $A_2=B_2=D_4=0$、
+$C_3\ne0$ である。関係式 $X_3Y_3=A_2D_4$ により
+一方の$X_3,Y_3$だけが非零である。
+式~\eqref{eq:qa-global-h2-cross-pencil-identities} から
+$Q_fQ_g$ は非零となるため
+$s_3=(Q_fQ_g)^2\ne0$。
+従って二点とも$M$に属する。
+
+重み三の座標$C_3$のchartでは、原点近傍は
+$\mathbb A^3/\mu_3$ であり、残り三座標
+$(A_2,B_2,D_4)$への重みは $(2,2,1)$。
+これは型$\tfrac13(1,1,2)$である。
+重み四の座標$D_4$のchartでは、$\mu_4$ が
+$(A_2,B_2,C_3)$へ重み$(2,2,3)$で作用する。
+位数二の部分群は$C_3$の符号だけを変えるため、
+まずその不変式を取れば座標$(A_2,B_2,C_3^2)$を得る。
+残余$\mu_2$は三座標を同時に反転するので、
+型$\tfrac12(1,1,1)$となる。
+その他の重み二座標のchartでは、残る
+$\mu_2$ の非自明元は$C_3$だけを反転する擬鏡映であり、
+粗商は滑らかである。各chartの重なりにも
+新たな特異点はない。
+最後に前命題の$\chi$座標を適用すれば
+$p_4\in\overline N$、$\chi(p_4)=0$を得る。
+\end{proof}
+
+\begin{remark}[新しい環の計算と先行研究の切り分け]
+\label{rem:qa-global-h2-invariant-hull-status}
+二対称形式の不変式環と直交群の第一基本定理は既知の入力である。
+ここで新たに得たのは、内在的$H_2$の共通線形化$\chi_0$に対する
+全半不変環の正確な抽出、ruling交換の不変式、
+明示的な中央affine補完、noncubic曲線の方程式および
+二商特異点の決定である。これらの組合せの先行研究に対する
+包括的新規性は未確認である。
+全相対AS/QP群oidの同型やright-equivalenceの比較は
+この不変式環の計算だけでは得られない。
+\end{remark}
