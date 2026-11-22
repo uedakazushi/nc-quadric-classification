@@ -1,0 +1,192 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / cubic reachability and derived obstruction
+\section{二重壁でのcubic型への到達不能性}
+\label{sec:qa-as-cubic-obstruction}
+
+二つの乗法がともに階数三となることだけでは、
+他のmutation列や別のexceptional foundationによる
+cubic型への到達を排除できない。
+本節ではこの強い否定方向を
+\cite[第19--21節]{AvatarVSeven2026}から
+必要な数値・層論・平滑化の証明を保って統合する。
+分類対象は引き続き全整数頂点を保つAS代数、
+比較対象は構造対象を指定しない商Abel圏・導来圏である。
+
+\subsection{有限foundationでのcubic候補の条件}
+\label{subsec:qa-as-cubic-candidate}
+
+$A\in\mathrm{AS}_{\mathrm{sq}}$の有限foundationを
+$B=\End(E_0,E_1,E_2,E_3)$、
+$\mathcal D=\operatorname{per}B\simeq D^b(\qgr A)$とする。
+そのEuler行列は
+\[
+G_{\mathrm{sq}}=
+\begin{pmatrix}
+1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1
+\end{pmatrix}.
+\]
+\begin{definition}[cubic候補foundation]
+\label{def:qa-as-cubic-candidate}
+$\mathcal D$の四対象$(Q_0,Q_1,Q_2,Q_3)$が
+cubic候補foundationであるとは、
+strong exceptionalであり、
+その$K_0(\mathcal D)$の類が整数基底をなし、
+Euler行列が
+\[
+G_c=
+\begin{pmatrix}
+1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
+\end{pmatrix}
+\]
+で、二つの隣接合成
+\begin{equation}
+\Hom(Q_{i+1},Q_{i+2})\otimes\Hom(Q_i,Q_{i+1})
+\xrightarrow{\ \sim\ }\Hom(Q_i,Q_{i+2})
+\quad(i=0,1)
+\label{eq:qa-as-cubic-two-compositions}
+\end{equation}
+が同型であることをいう。
+fullnessは別途仮定しない。
+任意のcubic AS代数の標準四対象はこの条件を満たす。
+\end{definition}
+
+\begin{lemma}[cubic候補のrankと数値線束型]
+\label{lem:qa-as-cubic-candidate-numerical}
+cubic候補$(Q_0,\ldots,Q_3)$が存在すれば
+共通の$[1]$ shiftの後、全$Q_i$の数値rankは一、
+かつ適当な$a,b\in\mathbb Z$に対して
+\[
+c_1(Q_i)=(a,b),\ (a+1,b),\
+(a+1,b+1),\ (a+2,b+1)
+\]
+または二つのrulingを交換した順序を取る。
+数値Chern座標を$(r,a,b,s)$と書けば
+各$Q_i$は$s=ab$を満たす。
+\end{lemma}
+\begin{proof}
+squareの標準基底に対応する数値座標を
+\[
+[E_0]=(1,0,0,0),\quad [E_1]=(1,1,0,0),\quad
+[E_2]=(1,0,1,0),\quad [E_3]=(1,1,1,1)
+\]
+とする。$x^2=y^2=0,\ xy=1$の形式的Chern記号で
+Serre作用は
+\[
+S_*(r,a,b,s)=(r,a-2r,b-2r,s-2a-2b+4r)
+\]
+であり、
+\[
+(S_*-1)^2v=8r(v)\delta,\qquad
+\delta=(0,0,0,1).
+\]
+cubicのEuler行列$G_c$から計算した
+同じ作用の二乗は、四つの候補基底ベクトルを
+同一のprimitiveな交代結合
+$[Q_0]-[Q_1]-[Q_2]+[Q_3]$へ送る。
+従って各rankは共通整数$r$であり、
+この結合が$K_0$のprimitive元なので$r=\pm1$。
+共通shiftで$r=1$とする。
+自己Euler値は$1+2s-2ab=1$なので$s=ab$。
+二つのrank一数値類のEuler値は
+$(1+a_j-a_i)(1+b_j-b_i)$。
+隣接方向のEuler値は二、逆向きは零だから、
+差は$(1,0)$または$(0,1)$。
+二段隔てたEuler値四により差は$(1,1)$となるので、
+隣接差は交互となり主張を得る。
+\end{proof}
+
+\begin{lemma}[曲線への制限とdeterminant]
+\label{lem:qa-as-cubic-restriction-determinant}
+$(D,F,G,P)$をsquare avatarとし、
+$\rho:\operatorname{per}B\to\Perf(D)$を
+四線束$(P,F,G,FG)$へのrealizationとする。
+任意の$X,Y\in\mathcal D$に自然な三角形
+\begin{equation}
+\RHom(Y,X)^\vee[-2]\longrightarrow
+\RHom(X,Y)\longrightarrow
+\RHom_D(\rho X,\rho Y)
+\label{eq:qa-as-cubic-spherical-restriction}
+\end{equation}
+がある。
+数値類$[X]=(r,a,b,s)$に対し
+\begin{equation}
+\det(\rho X)=F^aG^bP^{\,r-a-b+s}.
+\label{eq:qa-as-cubic-determinant}
+\end{equation}
+$D$が滑らかで$X$がrank一のexceptional対象なら
+$\rho X$は次数零のshiftを除き線束である。
+\end{lemma}
+\begin{proof}
+前節のdg双加群三角形
+\eqref{eq:qa-as-dg-triangle}とSerre双対性を
+$\RHom(X,-)$へ適用すると
+\eqref{eq:qa-as-cubic-spherical-restriction}を得る。
+$X=Y$がexceptionalなら、
+右辺の自己$\RHom$は$k\oplus k[-1]$となる。
+$D$が滑らかなら$\coh D$は遺伝的で、
+有界複体はコホモロジー層のshiftの直和になる。
+Endが$k$でrankが一だから、
+制限は一つのrank-one indecomposable vector bundleの
+shift、すなわち線束のshiftである。
+（torsionとvector bundleの拡大は分裂する。）
+rank一の符号を共通shiftで正に揃える。
+
+数値基底の座標を解くと
+\[
+[X]=(r-a-b+s)[E_0]+(a-s)[E_1]
+ +(b-s)[E_2]+s[E_3].
+\]
+perfect複体のdeterminantの加法性と
+$\rho(E_0,E_1,E_2,E_3)=(P,F,G,FG)$から
+\eqref{eq:qa-as-cubic-determinant}を得る。
+\end{proof}
+
+\begin{proposition}[滑らかな二重壁では任意のcubic候補が不存在]
+\label{prop:qa-as-cubic-smooth-no-candidate}
+$D$を滑らかな楕円曲線とし、
+$P^{\otimes2}\simeq\OO_D$、
+$P\not\simeq\OO_D$、$G\simeq FP$とする。
+$\mathcal D=\operatorname{per}B(D,F,G,P)$には
+cubic候補foundationは存在しない。
+\end{proposition}
+\begin{proof}
+候補を仮定する。
+補題~\ref{lem:qa-as-cubic-candidate-numerical}により
+全rankを一とし、補題
+~\ref{lem:qa-as-cubic-restriction-determinant}により
+$\rho Q_i=N_i[2m_i]$と書く。
+隣接する$N_i$の次数差は二で、
+$\Ext$の三角形と正次数線束の$H^1=0$から
+前向きHomが次数零に集中するため、
+各$m_i$は共通である。
+共通shiftを除き、$N_i$を四線束とする。
+
+\eqref{eq:qa-as-cubic-determinant}で
+$G=FP$、$s=ab$、$P^2=\OO_D$を用いると
+$\det(\rho Q)=F^{a+b}P^{1-a+ab}$となる。
+数値差が$(1,0),(0,1),(1,0)$の場合、
+連続する三つの商線束は
+\[
+(N_1N_0^{-1},N_2N_1^{-1},N_3N_2^{-1})
+=(FP^{b-1},FP^{a+1},FP^b).
+\]
+逆順のrulingなら
+$(FP^a,FP^b,FP^{a+1})$となる。
+$P$が位数二なので商は$F,FP$の二種類だけで、
+最初と最後が異なる。
+従って三つのうち隣接する二つは同型である。
+その共通次数二線束を$L$とすると、
+合成写像
+\[
+ H^0(D,L)\otimes H^0(D,L)\longrightarrow H^0(D,L^2)
+\]
+のkernelは
+$\bigwedge^2H^0(D,L)$という一次元空間である。
+他方\eqref{eq:qa-as-cubic-spherical-restriction}によって
+候補のforward Homと合成は
+この線束上のHomと合成に一致する。
+これは\eqref{eq:qa-as-cubic-two-compositions}の
+同型性に矛盾する。
+特定のmutation列に依存せず、
+全てのcubic候補を排除した。
+\end{proof}
