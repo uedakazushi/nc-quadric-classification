@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.2（OU S4-monodromy とPicard根退化を追加）
+% 2026-11-22 / v0.3（相対quintuple→H2射とPicard根の選択非依存を証明）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -293,9 +293,108 @@ OU射の分岐fiberや$\HHstack$への忘却fiberを
 数えたものではない。
 \end{remark}
 
+\subsection{一般非線型 cubic の実際の相対比較射}
+
+\begin{theorem}[geometric quintuple から pointed 相対スタックへの射]
+\label{thm:qa-geometric-cubic-relative-forgetting}
+$\mathscr G^{\mathrm{nl}}$ を、式~\eqref{eq:qa-ou-scalar-kernel}
+のテンソル表示空間 $T\setminus\{0\}$ のうち
+Van den Bergh の\emph{非線型 geometric quintuple}
+を与える $\widetilde G$-不変開部分とする。
+このとき局所有限型 $k$-スキーム上の fppf site において
+\[
+ \mathcal F_{\mathrm{geo}}:
+ [\mathscr G^{\mathrm{nl}}/\widetilde G]
+ \longrightarrow\HHstack,\qquad
+ (V_0,V_1,V_2,V_3,W\hookrightarrow
+       V_0\otimes\cdots\otimes V_3)
+ \longmapsto
+ (\operatorname{qgr}C,\pi e_0C)
+ \tag{GIT-H2}\label{eq:qa-geometric-cubic-comparison-map}
+\]
+という\emph{実際の相対群oid射}が定義される。
+ここで $D$ はquintupleのcubic $\mathbb Z$-代数、
+右加群・向きの規約を論文Bに合わせて
+$C_{ij}=D_{-j,-i}$ とする。
+$\operatorname{qgr}C$ の相対heartは
+module-object 基底変更・fppf descent を伴って構成される。
+
+この射は $K\simeq\Gm^4$ の慣性を自明にする自然な
+二同型を持ち、その剛体化を通じて
+\[
+ \overline{\mathcal F}_{\mathrm{geo}}:
+ [\mathscr G^{\mathrm{nl}}/(\widetilde G/K)]
+ \longrightarrow\HHstack
+ \tag{GIT-H2-rig}\label{eq:qa-geometric-cubic-rigid-map}
+\]
+と因数分解する。
+
+さらに、論文Bの相対Picard二等分空間
+$T_{\mathrm{root}}\to\mathscr G^{\mathrm{nl}}$ で選んだ
+二周期 $\beta$ と Serre 平方同型を使って得る
+$\HHstack$-対象は、選択にかかわらず
+式~\eqref{eq:qa-geometric-cubic-comparison-map}
+の像の引戻しである。
+特に滑らかな楕円曲線上の四つのPicard根は、
+\emph{固定quintupleの四つの異なるpointed対象ではない}。
+
+この定理は $\overline{\mathcal F}_{\mathrm{geo}}$ の
+表現可能性・全忠実性・幾何ファイバーの有限性、
+およびGIT compactification全体への延長を主張しない。
+\end{theorem}
+\begin{proof}
+$\mathscr G^{\mathrm{nl}}$ 上の普遍quintupleは
+相対的なcubic $\mathbb Z$-代数 $D$ を定める。
+双対・添字反転により $C_{ij}=D_{-j,-i}$ とするのは
+論文B \cite[\texttt{thm:geometric-cubic-relative-effectivity}]{QuadricModuli2026}
+の右tails規約である。
+同論文 \cite[\texttt{prop:general-cubic-canonical-tails}]{QuadricModuli2026}
+により、二周期を選ぶ\emph{前}から
+$\operatorname{qgr}C$ と $\pi e_0C$ は
+全係数基底変更に整合する相対Abel族であり、
+compact Morita理論・Serre双加群も基底上に構成される。
+
+一方、同論文
+\cite[\texttt{lem:picard-halves},
+\texttt{thm:relative-compatible-root}]{QuadricModuli2026}
+は普遍基底を被覆するétale局所で
+実際の二周期 $\beta$ とそのSerre平方比較を構成し、
+\cite[\texttt{thm:geometric-cubic-relative-effectivity}]{QuadricModuli2026}
+が同じ相対圏と構造対象に対して
+AZ性・全軌道AS4被覆を含む $\HHstack$ の条件を証明する。
+これらは\emph{存在条件}で、追加標識ではなく
+fppf局所で判定される。
+従って基底上にもともとある
+$(\operatorname{qgr}C,\pi e_0C)$ が
+$\HHstack$ の実際の対象を定める。
+ここでは選んだ $\beta$ を降下させたのではなく、
+既に存在する圏と構造対象に対して、
+必要な局所witnessの存在を確認している。
+同じ議論は任意の局所有限型の非被約基底変更で成立する。
+
+quintupleの同型は $\mathbb Z$-代数の同型を誘導し、
+右tailsの相対heartおよび $\pi e_0C$ の同型を保つ。
+この操作は恒等、合成、任意の基底変更と両立する。
+従って $\widetilde G$-equivariantな族として
+式~\eqref{eq:qa-geometric-cubic-comparison-map} が
+fppf descentにより構成される。
+
+命題~\ref{prop:qa-ou-scalar-gerbe} の頂点ごとの
+共役による自然同型は、添字零でスカラーを1に規格化すれば
+pointedである。各 $\gamma_i$ は四つのスカラーの
+積による指標として選べるので、
+$K$ の積に関する二同型の整合性も成立する。
+従って $K$ の作用を剛体化した表示スタックへ
+この射は降下する。
+最後に根空間上で$\beta$を替えても
+$\operatorname{qgr}C$と$\pi e_0C$は元の基底から
+引き戻した\emph{同じ}対象であり、結論が従う。
+\end{proof}
+
 \begin{remark}[Cで次に必要な具体的計算]
 \label{rem:qa-git-next-fiber}
-第一段階では、式~\eqref{eq:qa-ou-fourfold-diagonal} の
+実際の相対射は定理~\ref{thm:qa-geometric-cubic-relative-forgetting} で構成した。
+次の段階では、式~\eqref{eq:qa-ou-fourfold-diagonal} の
 $S_4$-monodromyと式~\eqref{eq:qa-picard-root-torsor} の
 相対$E[2]$-torsorを同じsmooth elliptic quintuple基底へ引き戻し、
 二つの四重射のモノドロミーとtorsor classを比較する。
