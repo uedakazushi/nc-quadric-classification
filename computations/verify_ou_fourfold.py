@@ -67,6 +67,21 @@ assert len(core) == 4
 assert len(G) // len(core) == 24
 assert len(G) // len(S4) == 4
 assert set(perm[0] for perm in aff_image) == set(V)
+# The coordinate S4 splits as Klein-four semidirect point stabilizer S3.
+S3_mark = {p for p in S4 if p[3] == 3}
+assert len(S3_mark) == 6
+assert len(S3_mark.intersection(kernel)) == 1
+
+
+def compose(p, q):
+    return tuple(p[q[i]] for i in range(4))
+
+
+assert {compose(k, s) for k in kernel for s in S3_mark} == set(S4)
+# Hence G=(V_sign x K4_coordinate) rtimes S3_mark, with both
+# two-dimensional factors carrying the standard GL2(F2) action.
+assert len(V) * len(kernel) * len(S3_mark) == len(G)
+print("PASS: G=(F2^2_sign x Klein4_coordinate) rtimes GL2(F2), order96")
 print("PASS: OU S4 coordinate permutations, effective V=(F2)^2 sign group")
 print("PASS: |Gprojective|=96; |Hcoordinate|=24; index4; core(H)=V4")
 print("PASS: G/core(H)=AGL2(F2)=S4 monodromy on four sheets")
