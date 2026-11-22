@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.8（点対象による一般pointed忘却の慣性単射）
+% 2026-11-22 / v1.9（慣性単射後の次の問題を整理）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -407,9 +407,10 @@ fully faithful性により、その像もpointed Abel圏で
 が記述するのは有効\emph{表示}スタック間の
 四重射であり、$\mathfrak H_2$への忘却射
 ~\eqref{eq:qa-geometric-cubic-rigid-map}ではない。
-その$\mu_2^2$慣性がpointed自己同値で
-忠実に残るか、さらに異なる四窓・rulingが
-一つのpointed対象に何種類対応するかは未解決である。
+その$\mu_2^2$慣性がpointed自己同値で忠実に残ることは
+命題~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}で証明した。
+しかし標的の全慣性の同定、接写像・異なる四窓とrulingを
+忘れたpointed fiberの決定は未解決である。
 表示側の$\mu_2^2$は楕円点曲線の翻訳自己同型として
 Picard根の同型類を固定する。
 これに対して四重被覆のdeck型の$E[2]$作用は
@@ -1527,13 +1528,13 @@ smooth性は群と表示開のsmooth性から従う。
 一般四重射を有限étaleかつ慣性同型まで強める。
 これは$\HHstack$への忘却射の表現可能性・
 étale性・次数を含意しない。
-次の検証では定理
-~\ref{thm:qa-geometric-cubic-relative-forgetting}
-のpointed射について、一般quintupleの有限慣性
-~\ref{eq:qa-ou-generic-finite-inertia}の像を
-点対象への作用と比較し、
+一般quintupleの有限慣性
+~\ref{eq:qa-ou-generic-finite-inertia}がpointed射で
+忠実に残ることは命題
+~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}で確定した。
+次は$\operatorname{Aut}_{\HHstack}(y)$の残る元を分類し、
 $T\overline{\mathcal F}_{\mathrm{geo}}$の
-三次元の接写像を実際に計算する。
+三次元接写像を実際に計算する。
 続いて四項foundationのmutation/rulingを忘れる
 相対homotopy fiberと、潜在的な新しい自己同値を調べる。
 非対角の全幾何族、noncubic境界および
