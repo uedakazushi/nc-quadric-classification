@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.27。二massの相対対角解消・Jacobian・H2心の同定。
+% 2026-11-23 / v4.28。二mass対角解消・Jacobian/Serreと全次数階数。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -845,7 +845,13 @@ preprojective次数の全$n\geq0$について
  \tag{SH}\label{eq:qa-two-mass-jacobian-serre-orbit}
 \]
 を満たす．全次数は基底上局所自由で，全積と任意の
-本稿の基底変更と可換する．
+本稿の基底変更と可換する．さらにその階数は
+\[
+ \operatorname{rk}\operatorname{Jac}(Q_{12},\mathcal W)_n
+   =64n^2+64n+24\qquad(n\ge0)
+ \tag{Hilb}\label{eq:qa-two-mass-jacobian-hilbert-ranks}
+\]
+である．
 本稿の局所有限型siteのaffine test上では
 Jacobian algebraは左右Noetherianであり，
 \[
@@ -888,6 +894,23 @@ perfect-fiber判定は有限局所自由な
 $H^0$と任意の基底変更を与える．
 前定理の相対同型により，
 Jacobian algebraの全次数はこの反Serre軌道環となる．
+normal finite foundationのEuler行列は
+\[
+ G=\begin{pmatrix}
+1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
+\end{pmatrix}.
+\]
+$S=G^{-1}G^{\mathsf t}$、$N=S^{-1}-I_4$とすると
+$N^3=0$であり，$\boldsymbol 1=(1,1,1,1)^{\mathsf t}$に対して
+\[
+ \boldsymbol1^{\mathsf t}GS^{-n}\boldsymbol1
+ =\boldsymbol1^{\mathsf t}G
+ (I+nN+\tfrac{n(n-1)}2N^2)\boldsymbol1
+ =64n^2+64n+24
+\]
+を得る．前向きExt消滅と局所自由性を確認した後のEuler計算なので，
+この数値だけから全次数集中を導いていない．
+再現は\texttt{computations/verify\_q12\_diagonal\_euler.py}．
 
 右Noether性と心の認識は，
 定理~\ref{thm:qa-relative-square-completion-tails}で用いた
