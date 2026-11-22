@@ -182,6 +182,52 @@ reduced QPでは微分はすべて正次数だから
 \subsection{全square型からの変換と逆変換}
 \label{subsec:qa-as10-inverse-mutation}
 
+\begin{lemma}[十本矢壁のpencilによる必要十分条件]
+\label{lem:qa-as10-rank-wall-pencils}
+任意のsquare曲線型avatar
+$(D,F,G,P)$（$D$は非被約でもよい）について、
+\[
+ \mu_G:H^0(F)\otimes H^0(GP^{-1})
+   \longrightarrow H^0(FGP^{-1})
+\]
+は階数四または三であり、
+\begin{equation}
+ \operatorname{rk}\mu_G=3
+ \quad\Longleftrightarrow\quad
+ GP^{-1}\simeq F
+ \quad\Longleftrightarrow\quad P\simeq GF^{-1}.
+ \label{eq:qa-as10-rank-wall}
+\end{equation}
+反対側の乗法
+$\mu_F:H^0(G)\otimes H^0(FP^{-1})
+ \to H^0(FGP^{-1})$も
+$\operatorname{rk}\mu_F=3\Leftrightarrow P\simeq FG^{-1}$である。
+二つの階数が同時に三となる壁を排除しない。
+\end{lemma}
+\begin{proof}
+$F$は二次元の切断空間を持つ大域生成pencilなので
+\[
+0\to F^{-1}\to H^0(F)\otimes\OO_D\to F\to0
+\]
+は$D$上完全である。$GP^{-1}$をtensorすると
+\[
+0\to GF^{-1}P^{-1}
+ \to H^0(F)\otimes GP^{-1}
+ \to FGP^{-1}\to0.
+\]
+補題~\ref{lem:qa-core-curve-vanishing}より
+$Q=GF^{-1}P^{-1}$が非自明なら
+$H^0(Q)=H^1(Q)=0$、したがって
+$\mu_G$は四次元空間の間の同型である。
+$Q\simeq\OO_D$なら
+$h^0(Q)=h^1(Q)=1$であり、上の長完全列から
+$\ker\mu_G\simeq k$、$\operatorname{rk}\mu_G=3$となる。
+$F,G$を入れ替えれば$\mu_F$の主張も得る。
+これらの議論は$p_a(D)=1$・$D$のCartier性と
+線束のpencil評価列にのみ依存し、
+滑らかさも被約性も使わない。
+\end{proof}
+
 \begin{proposition}[Schur complementと最小矢数]
 \label{prop:qa-as10-reduction}
 square finite foundationの四つの最小関係の空間を$R$、
@@ -241,7 +287,7 @@ $x,y$は最小矢として残る。
 $r=3$では$\ker\mu_G$は一次元で、
 \eqref{eq:qa-as10-reduced-potential}の
 $q$と$p$は非零である。
-幾何的には
+幾何的には、補題~\ref{lem:qa-as10-rank-wall-pencils}より
 $D_F=\{P\simeq GF^{-1}\}$が階数三のlocus、
 補集合$U_F$が階数四のlocusである。
 \end{proof}
