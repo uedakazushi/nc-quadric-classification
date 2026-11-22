@@ -1,0 +1,228 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / AS/avatar classification, source v7 Parts I-II
+\section{AS正則$\mathbb Z$-代数とavatarの相互逆な分類}
+\label{sec:qa-as-avatar-classification}
+
+本節の目的は有限directed foundationの記述を
+\emph{全整数頂点のAS正則$\mathbb Z$-代数の同型類}
+との全単射へ昇格させることである。
+元の証明は\cite[第2--8節，第11--12節]{AvatarVSeven2026}にある。
+前二節で証明した曲線上の消滅・評価行列・canonical複体を入力とし、
+残っていたAS--Gorenstein性、全helixの一意性と
+必要条件の逆向きもここで示す。
+一般的なspherical helix実現定理だけは
+\cite[Theorem 5]{OkawaUedaSpherical2020}を外部入力とし、
+本件でどのようにAS分解を得るかを明記する。
+
+\subsection{最小分解で指定する二型}
+\label{subsec:qa-as-minimal-types}
+
+$A=\bigoplus_{j\ge i}A_{ji}$は局所有限、
+$A_{ii}=k$、$A_{ji}=0$ ($j<i$)の
+positively directed $\mathbb Z$-代数とする。
+$P_i=e_iA$、$S_i$を右射影・右単純加群とする。
+頂点をすべて保つ代数同型で分類し、
+矢の基底や四周期同型の選択は追加データとしない。
+
+\begin{definition}[二つのAS型]
+\label{def:qa-as-square-rotated-minimal}
+$I=\mathrm{rsq},\mathrm{sq}$に対し
+$A\in\mathrm{AS}_{I}$とは、
+すべての$i$で最小右射影分解
+\begin{equation}
+0\to P_{i-4}\to Q_{2,i}\to Q_{1,i}
+ \to P_i\to S_i\to0
+\label{eq:qa-as-two-minimal-resolutions}
+\end{equation}
+を持ち、さらに
+\begin{equation}
+\Ext_A^q(S_i,A)=0\ (q\ne3),\qquad
+\Ext_A^3(S_i,A)\simeq {}_\ell S_{i-4}
+\label{eq:qa-as-two-gorenstein}
+\end{equation}
+を満たすものとする。
+$Q_{2,i},Q_{1,i}$は次の四周期表で指定する。
+\[
+\begin{array}{c|c|l|l}
+I&i\bmod4&Q_{2,i}&Q_{1,i}\\ \hline
+\mathrm{rsq}&0&P_{i-2}^{\oplus2}&P_{i-1}^{\oplus2}\\
+&1&P_{i-3}^{\oplus2}&P_{i-2}^{\oplus2}\\
+&2&P_{i-3}^{\oplus4}&P_{i-2}^{\oplus2}\oplus P_{i-1}^{\oplus2}\\
+&3&P_{i-3}^{\oplus2}\oplus P_{i-2}^{\oplus2}&P_{i-1}^{\oplus4}\\ \hline
+\mathrm{sq}&0&P_{i-3}^{\oplus2}\oplus P_{i-2}^{\oplus2}&P_{i-1}^{\oplus4}\\
+&1&P_{i-2}^{\oplus2}&P_{i-1}^{\oplus2}\\
+&2&P_{i-3}^{\oplus2}&P_{i-2}^{\oplus2}\\
+&3&P_{i-3}^{\oplus4}&P_{i-2}^{\oplus2}\oplus P_{i-1}^{\oplus2}
+\end{array}
+\]
+左右Noether性・幾何性・周期のtrivializationは仮定しない。
+\end{definition}
+
+\begin{lemma}[局所双対性と全$\mathbb Z$-代数の回収]
+\label{lem:qa-as-serre-unique-recovery}
+$A\in\mathrm{AS}_I$、$E_i=\pi P_i\in\Qgr A$とする。
+$\mathcal D_{\rm lin}=\operatorname{thick}\{E_i\mid i\in\mathbb Z\}$
+において連続する四対象はstrong exceptional tilting generatorである。
+そのEnd代数$B$は大域次元二で、
+Serre関手$S_B$により
+\begin{equation}
+E_{i+4}\simeq S_B^{-1}(E_i)[2],\qquad
+A_{ji}=\Hom(E_i,E_j)\quad(j\ge i)
+\label{eq:qa-as-serre-completion}
+\end{equation}
+を得る。全代数は初期四頂点のEnd代数から
+頂点を保つ同型を除いて一意に決まる。
+その数値Euler行列は
+\[
+G_{\rm rsq}=\begin{pmatrix}
+1&0&2&6\\0&1&2&6\\0&0&1&4\\0&0&0&1
+\end{pmatrix},\quad
+G_{\rm sq}=\begin{pmatrix}
+1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1
+\end{pmatrix},
+\]
+かつ$\dim A_{i+4m,i}=(2m+1)^2$である。
+\end{lemma}
+\begin{proof}
+最小分解を各頂点で評価したEuler漸化式は、
+負の成分が零で対角が$k$という初期条件から
+全Hom次元を一意に定める。
+可換基準collection
+$(\OO,\OO(1,0),\OO(0,1),\OO(1,1))$と
+$(\OO,\OO(-1,1),\OO(0,1),\OO(1,2))$
+にも同じ漸化式が成立し、上の行列を得る。
+四周期のHilbert関数は
+$h^0(\PP^1\times\PP^1,\OO(2m,2m))=(2m+1)^2$。
+
+左右の最小分解と
+\eqref{eq:qa-as-two-gorenstein}から
+graded torsionの局所双対性を得る：
+$R\tau(P_i)\simeq D(Ae_{i+4})[-3]$。
+従って前向き$\Ext^{>0}_{\Qgr A}(E_i,E_j)$は消える。
+最小分解を$\pi$で移した四項完全列を
+正負双方へ繰り返すと連続四対象は全$E_j$を生成する。
+有限quiverの最小関係はsourceからsinkへ向かい、
+関係同士のoverlapを持たない。
+よってその有限End代数の単純分解の長さは高々二。
+導来Morita同値と最小分解のSerre双対の比較により
+$S_B(E_i)=E_{i-4}[2]$となる。
+関手$S_B$の一意性は四項をずらした
+同定の両立性を保証し、\eqref{eq:qa-as-serre-completion}を得る。
+これは周期同型の選択を分類データへ加える主張ではない。
+\end{proof}
+
+\subsection{AS条件からavatarを復元する}
+\label{subsec:qa-as-to-avatar}
+
+\begin{lemma}[AS条件が強制する階数]
+\label{lem:qa-as-required-ranks}
+rotated型の有限quiverを
+$0\overset{2}{\longrightarrow}2
+ \overset{4}{\longrightarrow}3$、
+$1\overset{2}{\longrightarrow}2$と書き、
+$R_0,R_1$を二つの二次元関係空間とする。
+$V=H^0(2\to3)$とし、
+二つの関係評価行列を$M_0(v),M_1(v)$、
+随伴関係の$4\times4$行列を
+$T(c,d),\widetilde T(a,b)$とすると
+\begin{enumerate}
+\item $R_0,R_1\subset V\otimes k^2$に
+ 非零の分解可能テンソルはない。
+\item $\det M_0(v)=\det M_1(v)=0$、
+ $v\ne0$なら両行列の階数は一。
+\item $c,d$がともに非零なら
+ $\operatorname{rk}T(c,d)\ge3$、
+ $a,b$がともに非零なら
+ $\operatorname{rk}\widetilde T(a,b)\ge3$。
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+四周期の有限quiverのsourceとsinkを連結し、
+各ブロック内の元の関係とその随伴微分関係を
+すべて課した商を考える。
+一ブロックのboundary cornerを$W$とすると、
+$m$ブロックのcornerは$W^{\otimes m}$である。
+境界間の道は一意に分割され、関係は各ブロックの
+一つの因子にだけ作用するからである。
+$\dim W\ge2$なら成分次元は少なくとも$2^m$となり、
+前補題の$(2m+1)^2$に反する。
+
+第一の違反では関係を$v_0a_0=0$に正規化し、
+片枝と$v_0,a_0$および不要な戻り矢を零にする。
+境界間の三道に高々一関係が残り$\dim W\ge2$。
+第二の違反では例えば$M_0(v)=0$とし、
+$M_1(v)$の左右kernelに沿って矢を選ぶ。
+五道に高々三関係だけ残す商を得る。
+第三の違反では$T$の階数が高々二のとき
+$c=d=(1,0)$とし、係数列の張る二次元部分空間を
+捨てる。残る二本の$v$と四本以上のboundary道に
+高々二関係しかないので$\dim W\ge2$。
+各場合で消した矢で切った微分関係も商へ写しており、
+単純に忘れたわけではない。
+左最小分解に同じ議論を適用すると
+$\widetilde T$の階数条件を得る。
+\end{proof}
+
+\begin{proposition}[一点表示の幾何]
+\label{prop:qa-as-extraction}
+任意の$A\in\mathrm{AS}_{\rm rsq}$から
+\[
+Y=\PP_{\PP^1}(\mathcal E)\simeq\Sigma_0\ \text{または}\ \Sigma_2,
+\quad
+D\hookrightarrow Y,\quad
+P\in\Pic^0(D)
+\]
+を回収できる。曲線型では
+$D\in|2h|$、$\Sigma_2$なら$D\cap S=\varnothing$、
+かつ$P\ne\OO_D,\OO_D(h-2f)$となる。
+初期四項は
+\[
+(P,\OO_D(h-2f),\OO_D(h-f),\OO_D(2h-f)).
+\]
+$D=Y$の場合には$\Sigma_0$の古典型一点を得る。
+\end{proposition}
+\begin{proof}
+保持三頂点の安定表現は
+$\{([b],[v])\in\PP^1\times\PP^3\mid M_1(v)b=0\}$
+である。関係が分解可能でないので
+$0\to\OO(-1)^2\to\OO^4\to\mathcal E\to0$
+の左写像は各点で単射となる。
+rank二・次数二の大域生成束$\mathcal E$は
+$\OO(1)^2$または$\OO\oplus\OO(2)$だから
+$Y$の二型を得る。
+忘れた頂点を加える評価は
+$\kappa:\OO_Y^2\to\OO_Y(h)^2$である。
+前補題により零点上の階数は一なので、
+局所的に$\kappa\sim\operatorname{diag}(1,q)$。
+従って$\PP_Y(\coker\kappa)=V(q)=D$は
+scheme-theoretic閉埋め込みであり、
+$\det\kappa$の類は$2h$。
+$\Sigma_2$の負断面を$|h|$で縮約した点は
+$M_1=0$を与え、必要階数条件から
+$D\cap S=\varnothing$となる。
+普遍右表現の双対と余核$Q$を用いて
+$P=Q^{-1}\OO_D(2h-f)$と正規化する。
+
+四つのkernel--cokernel操作
+\eqref{eq:qa-core-rsq-complex0}--%
+\eqref{eq:qa-core-rsq-complex3}により
+点表現を正負両方へscheme-theoreticに動かせる。
+得られる曲線自己同型$\sigma$は
+$\sigma^*F=FP^2$、$\sigma^*H=HP^4$を満たす。
+$\sigma$は成分の有限集合を置換するので
+各成分上$\deg P=0$。
+被約曲線のnormalizationと非被約曲線の
+nilpotent filtrationから、多重次数零の部分は
+$\Pic^0(D)$である。
+曲面上の$\kappa$の二項解消を
+$\OO_Y(-2h+f)$および$\OO_Y(-h-f)$で捩る。
+K\"unneth公式・射影束公式から
+$H^\bullet(P^{-1})=
+ H^\bullet(\OO_D(h-2f)P^{-1})=0$である。
+これが二つの除外条件を強制する。
+$\det\kappa\equiv0$なら
+$\Sigma_2$は起こらず、
+$\Pic(\Sigma_0)$のtorsion-freenessから
+古典型の$P=\OO_Y$を得る。
+\end{proof}
+
