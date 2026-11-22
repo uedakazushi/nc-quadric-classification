@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / 全基底上の有限表示とcanonicalな相対認識。
+% 2026-11-23 / v1.1。反対normalの相対評価coneと線束値dual heart比較。
 \section{回転・mutationと相対heart}
 \label{sec:qa-relative-rotated-mutated}
 
@@ -331,6 +331,99 @@ cross-Hom が相対 perfect であることと，fiber の例外性が本質で�
 また $L$ の自明性は主張していない．
 \end{proof}
 
+\begin{lemma}[相対評価coneと逆順双対normalの実際の同定]
+\label{lem:qa-dual-normal-relative-evaluation-cone}
+本稿の$H_2$実現可能な相対square四項
+$(E_0,E_1,E_2,E_3)$について
+\[
+ V=\operatorname{Hom}(E_0,E_1),\qquad
+ F=\operatorname{Cone}
+  \bigl(V\otimes E_0\xrightarrow{\rm ev}E_1\bigr)[-1],
+ \qquad H=t^{-1}Z_1
+\]
+と置く．全対象と評価射は相対perfectで，
+任意の基底変更と可換する．
+各幾何fiberで$F_{\bar s}\simeq H_{\bar s}$が
+例外対象として成立するなら，
+\[
+ L=\mathbf R\operatorname{Hom}(F,H)
+\]
+は基底上の可逆層であり，評価は
+$L\otimes F\xrightarrow{\sim}H$を与える．
+
+反対squareの四項を
+$Q_i=\mathbb D E_{3-i}$とし，
+\[
+ Z_2^\vee=\operatorname{Cone}\Bigl(
+ Q_2\longrightarrow
+ \operatorname{Hom}(Q_2,Q_3)^\vee\otimes Q_3
+ \Bigr)
+\]
+を相対normal coneとする．このとき
+\[
+ \mathbb D F\xrightarrow{\sim}Z_2^\vee,
+ \qquad
+ \mathbb D H\xrightarrow{\sim}Z_2^\vee\otimes L^\vee
+ \tag{ECN}\label{eq:qa-dual-normal-relative-cone-comparison}
+\]
+は，局所代表を固定したとき実際の相対perfect圏の
+同型であり，全ての本稿の基底変更と可換する．
+代表を頂点線束で捩る場合には，
+対応する同型はその線束係数を保持して貼り合う．
+
+従って$Z_2^\vee$が反対squareの相対heart内の
+基底平坦compact対象なら，
+$K=\mathbb D(t^{-1}Z_1)$も同じ性質を持つ．
+ここで必要なのは\emph{評価coneの相対的な構成}と
+fiberwise例外対象の比較であり，
+幾何fiberで短完全な評価列を
+相対heart上で未検証のまま短完全列と
+断言することではない．
+\end{lemma}
+\begin{proof}
+有限局所自由な$V$と相対perfect対象の
+evaluationから$F$を直接構成しているので，
+$F$は相対perfectであり導来基底変更と可換する．
+幾何fiber上での
+\[
+ 0\longrightarrow H_{\bar s}
+ \longrightarrow V_{\bar s}\otimes E_{0,\bar s}
+ \longrightarrow E_{1,\bar s}\longrightarrow0
+\]
+は全整数square helixの評価完全列である
+（補題~\ref{lem:qa-as10-all-index-mutual-inverse}）．
+従って$F_{\bar s}\simeq H_{\bar s}$となる．
+補題~\ref{lem:qa-relative-exceptional-line-comparison}を
+$F,H$に適用すると，$L$は可逆層となり，
+$L\otimes F\simeq H$を得る．
+
+perfect反同値$\mathbb D$で
+$F\to V\otimes E_0\to E_1\to F[1]$
+を反転すると，実際の三角
+\[
+ Q_2=\mathbb DE_1\longrightarrow
+ V^\vee\otimes Q_3=\mathbb D(V\otimes E_0)
+ \longrightarrow\mathbb D F\longrightarrow Q_2[1]
+\]
+が得られる．
+$\operatorname{Hom}(Q_2,Q_3)\simeq
+ \operatorname{Hom}(E_0,E_1)=V$であり，
+左辺の最初の矢は元の評価の双対，
+すなわち相対coevaluationである．
+ゆえに$\mathbb DF\simeq Z_2^\vee$となる．
+基底線束を捩る場合も双対・評価は
+naturalなtensor縮約だけから作られるため，
+線束係数を保持して同じ比較が成立する．
+
+$\mathbb D$は基底線束のtensorをその双対へ移すから
+$L\otimes F\simeq H$を双対化すると
+$\mathbb DH\simeq\mathbb DF\otimes L^\vee$を得る．
+最後のheart所属は，
+同じheartの基底平坦compact対象を
+基底可逆層でtensorしてもその性質が保たれることと，
+全比較が基底変更と可換することから従う．
+\end{proof}
+
 \begin{proposition}[二つの反対窓は同じ双対heartに入る]
 \label{prop:qa-relative-rot-mut-dual-windows}
 二つの逆順双対窓を
@@ -354,45 +447,31 @@ $\Lambda_{\rm rot}^{\rm op}$，$\Lambda_{\rm mut}^{\rm op}$ と同型となる�
 回転側は全て $Q_i$ とその canonical 周期移動なので，基底平坦な
 heart 対象であることも直ちに従う．
 
-mutation 側の $K$ については，fiberwise な heart 条件をそのまま
-相対 heart 条件に読み替えず，前補題の例外対象の比較を使う．
-まず各幾何 fiber では，補題~\ref{lem:qa-as10-all-index-mutual-inverse}
-の全整数 mutation の評価列
+mutation側の$K$のheart所属は，
+補題~\ref{lem:qa-dual-normal-relative-evaluation-cone}を
+直接適用する．
+すなわち評価の相対cone
+$F=\operatorname{Cone}
+(V\otimes E_0\to E_1)[-1]$を先に構成し，
+各幾何fiberでの$F\simeq t^{-1}Z_1$から
+相対線束$L$を得る．
+反対squareのcoevaluation coneは
+$\mathbb DF\simeq Z_2^\vee$として
+\emph{相対的に}同定され，
 \[
- 0\longrightarrow H_0\longrightarrow V\otimes E_0
-       \longrightarrow E_1\longrightarrow0,
- \qquad V=\operatorname{Hom}(E_0,E_1),\quad H_0=t^{-1}Z_1
+ K=\mathbb D(t^{-1}Z_1)
+   \simeq Z_2^\vee\otimes L^\vee
 \]
-がある．これに perfect 反同値を適用すると
-\[
- Q_2\longrightarrow V^\vee\otimes Q_3
-       \longrightarrow K\longrightarrow Q_2[1]
-\]
-を得る．$\operatorname{Hom}(Q_2,Q_3)=V$ であり，最初の射は coevaluation
-なので，この fiber の $K$ は dual square のもう一方の normal 窓の
-第四対象 $Z_2^\vee$ である．この実際の四項は
-\[
- (Q_0,Q_1,Q_3,Z_2^\vee),\qquad
- Z_2^\vee=\operatorname{Cone}
-  \bigl(Q_2\to\operatorname{Hom}(Q_2,Q_3)^\vee\otimes Q_3\bigr)
-\]
-であり，命題~\ref{prop:qa-relative-avatar-normal-window} の
-$F,G$ を交換した窓である．その normal 性は
-定理~\ref{thm:qa-relative-square-e0-e3-h2} の体上の比較，または有限
-square 族に対する補題~\ref{lem:qa-classified-fiber-finite-square-recognition}
-で既に確認されている．よって
-$(Q_0,Q_1,Q_3,K)$ の各幾何 fiber は真正な normal foundation である．
-
-実際の $Z_2^\vee$ は dual square の相対 normal cone として存在し，
-基底平坦な heart 対象である．前補題をこの $Z_2^\vee$ と $K$ に適用すると
-\[
- L=\mathbf R\operatorname{Hom}(K,Z_2^\vee),\qquad
- L\otimes K\xrightarrow{\sim}Z_2^\vee
-\]
-を得る．従って $K\simeq Z_2^\vee\otimes L^{-1}$ は実際に
-$\mathcal C^\vee$ の基底平坦対象である．
-この線束比較は任意基底変更と整合するが，$L$ を自明とした厳密な
-第四対象の同定までは要求しない．
+となる．
+ここで$Z_2^\vee$は反対squareの
+別normal窓の第四対象であり，
+命題~\ref{prop:qa-relative-avatar-normal-window}と
+定理~\ref{thm:qa-square-explicit-h2-open}によって
+同じ相対heartの基底平坦compact対象である．
+従って$K$も同じheartに属す．
+この比較は任意基底変更と整合するが，
+$L$の自明性や相対評価列の短完全性を
+fiberwiseな情報だけから仮定してはいない．
 \end{proof}
 
 \begin{theorem}[回転・mutation完成の左右Noether性]
