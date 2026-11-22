@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v1.1。反対normalの相対評価coneと線束値dual heart比較。
+% 2026-11-23 / v1.2。相対評価coneと全頂点線束変更のstrict fppf降下。
 \section{回転・mutationと相対heart}
 \label{sec:qa-relative-rotated-mutated}
 
@@ -422,6 +422,71 @@ $\mathbb DH\simeq\mathbb DF\otimes L^\vee$を得る．
 同じheartの基底平坦compact対象を
 基底可逆層でtensorしてもその性質が保たれることと，
 全比較が基底変更と可換することから従う．
+\end{proof}
+
+\begin{corollary}[頂点線束変更に対するdual normal比較の厳密降下]
+\label{cor:qa-dual-normal-vertex-line-descent}
+前補題のsquare四項を，基底の四つの可逆層$M_i$で
+$E_i'=E_i\otimes M_i$と変更する．
+$V=\operatorname{Hom}(E_0,E_1)$とし，
+$F,H,Z_1,L$を前補題の記号とすると，
+自然な同型
+\[
+ \begin{aligned}
+ V'&\simeq V\otimes M_1M_0^{-1},&
+ F'&\simeq F\otimes M_1,\\
+ Z_1'&\simeq Z_1\otimes M_1,&
+ H'&\simeq H\otimes M_1,\\
+ L'=\mathbf R\operatorname{Hom}(F',H')
+   &\simeq L
+ \end{aligned}
+ \tag{VL}\label{eq:qa-dual-normal-vertex-line-weights}
+\]
+が成立する．反対squareでは
+$Q_2'\simeq Q_2\otimes M_1^{-1}$，
+$Q_3'\simeq Q_3\otimes M_0^{-1}$であり，
+\[
+ (Z_2^\vee)'\simeq Z_2^\vee\otimes M_1^{-1},
+ \qquad K'\simeq K\otimes M_1^{-1}.
+\]
+従って同型
+$K\simeq Z_2^\vee\otimes L^\vee$は
+全頂点線束の変更に対して\emph{同じ重み}で変換される．
+これらの比較はfppf三重重なりで
+tensor積の標準結合則に従う厳密なcocycleを満たす．
+特にこの線束変更から新しい$2$-cocycle障害は生じない．
+ただし任意のAS/QP表示stackの他のIsomや
+gerbeの大域自明化を主張しない．
+\end{corollary}
+\begin{proof}
+基底線束のHomへの作用は
+\[
+ \operatorname{Hom}(E_i\otimes M_i,E_j\otimes M_j)
+ \simeq\operatorname{Hom}(E_i,E_j)\otimes M_jM_i^{-1}
+\]
+である．$V'\otimes E_0'$と$E_1'$は
+ともに$M_1$だけ捩れるので，
+evaluationのconeは$F'=F\otimes M_1$となる．
+同様に$E_1\to\operatorname{Hom}(E_1,E_3)^\vee
+\otimes E_3$の両辺は$M_1$だけ捩れ，
+$Z_1'=Z_1\otimes M_1$を得る．
+相対Serre周期$t$は基底可逆層のtensorと可換するから
+$H'=t^{-1}Z_1'=H\otimes M_1$である．
+$\mathbf R\operatorname{Hom}$では両側の$M_1$が
+相殺し，$L'\simeq L$が自然に従う．
+
+反対側ではperfect dualが基底可逆層を逆転するので
+$Q_2'=Q_2\otimes M_1^{-1}$，
+$Q_3'=Q_3\otimes M_0^{-1}$となる．
+双対coevaluationのtargetに現れる
+$(V')^\vee\otimes Q_3'$も
+$V^\vee\otimes Q_3\otimes M_1^{-1}$となる．
+従ってそのcone，および$\mathbb D H$には
+$M_1^{-1}$が掛かる．
+全同型はHom・tensor・evaluationの自然性から
+作られ，二回の線束変更について
+$M_i(N_iE_i)\simeq(M_iN_i)E_i$という標準結合と
+両立する．よって三重重なりでもcocycleが閉じる．
 \end{proof}
 
 \begin{proposition}[二つの反対窓は同じ双対heartに入る]
