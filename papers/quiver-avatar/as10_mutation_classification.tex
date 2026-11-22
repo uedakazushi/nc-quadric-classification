@@ -146,3 +146,128 @@ reduced QPでは微分はすべて正次数だから
 推論したのではない。
 \end{proof}
 
+
+\subsection{全square型からの変換と逆変換}
+\label{subsec:qa-as10-inverse-mutation}
+
+\begin{proposition}[Schur complementと最小矢数]
+\label{prop:qa-as10-reduction}
+square finite foundationの四つの最小関係の空間を$R$、
+二つの二段階道空間を$T_F,T_G$とし、
+\[
+0\to R\to T_F\oplus T_G
+ \xrightarrow{\mu_F+\mu_G} H\to0,
+\quad \dim R=\dim T_F=\dim T_G=\dim H=4.
+\]
+頂点1のmutationの二次pairingの階数を$r$とすると
+\[
+ r=\operatorname{rk}\mu_G\in\{3,4\}.
+\]
+premutationの十六本の矢から$r$組を消すと、
+$r=4$では八本矢cubic reduced QP、
+$r=3$では最小十本矢QPを得る。
+後者のpotentialは
+\begin{equation}
+ W_{10}=yq+px+H_0
+ \label{eq:qa-as10-reduced-potential}
+\end{equation}
+で、$x:1\to3,\ y:3\to1$は内部次数二、
+$8$本のcycle矢は内部次数一である。
+\end{proposition}
+\begin{proof}
+関係の$T_F$への射影$p_F$のkernelは
+$R\cap T_G=\ker\mu_G$だから
+$\operatorname{rk}p_F=\operatorname{rk}\mu_G$。
+元のsquare relation potentialを
+$W=\sum_{\alpha=1}^4c_\alpha r_\alpha$とすると、
+mutationで生成する合成矢$x_{ji}$と
+逆矢による二段階道$p_{ji}$について
+\[
+ \widetilde W=
+ \sum_\alpha c_\alpha
+  \left(\sum_{i,j}m_{ji,\alpha}x_{ji}+q_\alpha\right)
+ +\sum_{i,j}p_{ji}x_{ji}
+\]
+を得る。二次部分の行列は$p_F$である。
+基底を選んで二次pairingを
+$\sum_{\alpha=1}^r c_\alpha x_\alpha$とし、
+$x'_\alpha=x_\alpha+q_\alpha$、
+$c'_\alpha=c_\alpha+p_\alpha$に置換する。
+これは有限回の可逆な多項式変換で
+\[
+ \widetilde W\sim_{\rm cyc}
+ \sum_{\alpha=1}^r c'_\alpha x'_\alpha
+ -\sum_{\alpha=1}^r p_\alpha q_\alpha
+ +\sum_{\beta=r+1}^4(c_\beta q_\beta+p_\beta x_\beta).
+\]
+初めの$r$組がtrivial pairである。
+$r=4$なら四周期cycle八矢だけとなり、
+$r=3$なら残る$x,y$を含む
+\eqref{eq:qa-as10-reduced-potential}が得られる。
+そのcyclic derivativeはすべて矢idealの二乗に属し、
+$x,y$は最小矢として残る。
+$r=3$では$\ker\mu_G$は一次元で、
+\eqref{eq:qa-as10-reduced-potential}の
+$q$と$p$は非零である。
+幾何的には
+$D_F=\{P\simeq GF^{-1}\}$が階数三のlocus、
+補集合$U_F$が階数四のlocusである。
+\end{proof}
+
+\begin{theorem}[mutation像のAS条件]
+\label{thm:qa-as10-forward-as}
+任意の$A\in\mathrm{AS}_{\rm sq}$の
+指定した頂点1をmutationし、
+残る四頂点を$(1,0,2,3)$から
+$(0,1,2,3)$に再番号付けする。
+reduced QPの正次数付きJacobian algebraを
+$\mathbb Z$-代数へ展開した$m(A)$は
+\[
+m(A)\in
+\begin{cases}
+\mathrm{AS}_{c},&A\in U_F,\\
+\mathrm{AS}_{10}^{\mathrm{min}},&A\in D_F.
+\end{cases}
+\]
+ここで$\mathrm{AS}_{c}$は
+cubic最小分解型を持つAS正則$\mathbb Z$-代数である。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:qa-as10-reduction}のreductionにより、
+階数四では八本のdegree-one矢が残り、
+各頂点単純に二本の隣接生成矢と
+二本の三次関係が現れる。
+これはcubic最小分解の形である。
+階数三ではさらに奇数頂点間の
+degree-two矢が一つずつ残り、
+それと双対の二次関係が残る。
+したがって
+\eqref{eq:qa-as10-minimal-resolution}の項に一致する。
+補題~\ref{lem:qa-as10-keller-yang}が
+Jacobian complexの完全性・最小性および
+AS--Gorenstein条件を与える。
+局所有限性と多項式増大は
+補題~\ref{lem:qa-as10-hilbert-foundation}の
+Euler漸化式から従う。
+\end{proof}
+
+\begin{lemma}[独立targetの逆QPに必要な非零性]
+\label{lem:qa-as10-nonzero-p}
+任意の$A'\in\mathrm{AS}_{10}^{\mathrm{min}}$の
+relation potentialを
+$W'=yq+px+H_0$とすると$p\ne0$である。
+\end{lemma}
+\begin{proof}
+補題~\ref{lem:qa-as10-ginzburg-concentration}で
+$H^{<0}\Gamma(Q,W')=0$。
+もし$p=\partial_xW'=0$なら、
+$x$に双対なdegree $-1$の生成元$x^*$は閉じる。
+$x$の内部次数は二なので$x^*$も内部次数二。
+この内部次数にdegree $-2$のloopや
+反対矢の積は存在しない（それらの内部次数は四以上）。
+従って$x^*$は境界ではなく、
+$H^{-1}\Gamma\ne0$となり矛盾する。
+これは最小分解中の独立な二次関係が
+消えてしまう矛盾でもある。
+\end{proof}
+
