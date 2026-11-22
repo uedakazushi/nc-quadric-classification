@@ -71,6 +71,8 @@ latexmk papers/quiver-avatar-moduli.tex
 
 **原稿Cの現在の組版確認状況（2026-11-22）。** 利用者のTeX Live 2026実ログでは、`papers/quiver-avatar-moduli.tex:82` の数式記号 `D∈|−K_{Σ₂}|` がテキストモードのまま記載され、`Missing $ inserted` で停止した。現行mainではこれを `$D\in|-K_{\Sigma_2}|$` 等の明示的な数式モードへ訂正し、TeX本文に紛れ込んだMarkdownの `**...**` も `\textbf{...}` に直した。修正した数式断片は別のLuaLaTeX環境で単独組版に成功した。Cの9個のTeXソースについてラベル・引用・環境バランスと同種の記号混入を静的確認し、`python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex` に回帰検査を追加した。ただし**訂正後の原稿C全体のLuaLaTeX組版は未確認**なので、最新版を取得して再実行する必要がある。
 
+**追加の組版修正（2026-11-22）。** 原稿Cの `quiver-avatar/git_comparison.tex:294` で `\Spin` が未定義となり停止した実ログを受領。同行の `\SL` も原稿Cのプリアンブルに定義がなかったため、主原稿へ `\DeclareMathOperator{\Spin}{Spin}` と `\DeclareMathOperator{\SL}{SL}` を追加した。未解決の引用・参照は途中停止時の集計なので、全組版を最後まで実行し BibTeX と再実行が完了するまで最終的な欠落とは判断しない。修正後の原稿C全文のLuaLaTeX組版成功は未確認。
+
 ## VS Code / LuaLaTeX の組版環境
 
 リポジトリの `.vscode/settings.json` はOSに依存しない `latexmk` コマンドを使う。macOS・Linux・Windowsのいずれでも、TeX Live（または互換するLaTeX環境）を導入し、**VS Codeの拡張機能プロセスから** `latexmk` がPATHで見える必要がある。WindowsではTeX LiveまたはMiKTeXの実行ファイルディレクトリをPATHに登録する。組版にはLuaLaTeX、`ltjsarticle`、latexmk等が必要である。
