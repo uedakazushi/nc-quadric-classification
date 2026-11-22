@@ -265,6 +265,7 @@ def math_checks() -> int:
                "verify_ou_hodge_ruling.py", "verify_ou_quintuple_inertia.py",
                "verify_ou_special_reflection.py", "verify_ou_cm_automorphisms.py",
                "verify_cubic_geometric_adjugate.py",
+               "verify_avatar_pointed_dictionary.py",
                "verify_noncubic_boundary.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
