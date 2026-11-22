@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.31。全H2のQP二段剛体化とmutation貼合せ、四境界型の独立証明書。
+% 2026-11-23 / v4.32。相対Euler--conormal完全性判定と二mass全基底の対角解消。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -738,6 +738,78 @@ $R_{\rm fin}$は短関係$r_a,r_b$と残余長関係二本の計四関係であ�
 始点と終点の差で定める重みは一定であり，
 関係を最小な生成元・最小な関係とは仮定しない．
 
+\begin{lemma}[有限有向道表示の相対Euler--conormal判定]
+\label{lem:qa-relative-euler-conormal-diagonal}
+$S$を任意のscheme，
+$D=\mathcal O_S^m$を頂点代数，
+$V$を有限階数の$D$-双加群とし，
+$F=T_D(V)$を道代数とする．
+$R\subset F$を有限局所自由な関係束とし，
+その生成する\emph{通常の両側イデアル}を$I$，
+$\Lambda=F/I$と置く．
+関係は最小である必要はなく，線形項を含んでもよい．
+$\Lambda$と次の項が$\mathcal O_S$上有限局所自由であるとする：
+\[
+ P_0=\Lambda\otimes_D\Lambda,\quad
+ P_1=\Lambda\otimes_DV\otimes_D\Lambda,\quad
+ P_2=\Lambda\otimes_DR\otimes_D\Lambda .
+\]
+各連結成分上で
+\[
+ \operatorname{rk}P_0-\operatorname{rk}P_1+
+ \operatorname{rk}P_2=\operatorname{rk}\Lambda
+ \tag{EC}\label{eq:qa-euler-conormal-criterion}
+\]
+なら，標準非可換微分による
+\[
+ 0\to P_2\xrightarrow{d_2}P_1\xrightarrow{d_1}
+ P_0\xrightarrow{m}\Lambda\to0
+\]
+は$\mathcal O_S$上局所分裂完全であり，
+任意のscheme基底変更後も完全である．
+さらに$D$が相対separableなら，各$P_i$は
+$\Lambda^e$上相対局所射影である．
+\end{lemma}
+\begin{proof}
+乗法$m$は$\mathcal O_S$-線形なsection
+$a\mapsto1\otimes a$を持ち，
+$K_0=\ker m$は階数
+$\operatorname{rk}P_0-\operatorname{rk}\Lambda$の
+局所自由加群である．
+$F$が$D$上$V$で生成されることから，
+道の長さに沿ったtelescopingによって
+$d_1:P_1\twoheadrightarrow K_0$となる．
+従って$K_1=\ker d_1$も局所自由で，
+\[
+ \operatorname{rk}K_1
+ =\operatorname{rk}P_1-\operatorname{rk}P_0
+    +\operatorname{rk}\Lambda
+ =\operatorname{rk}P_2.
+\]
+一方，非可換普遍微分のconormal表示
+\[
+ \Lambda\otimes_D R\otimes_D\Lambda
+ \xrightarrow{d_2}
+ \Lambda\otimes_D V\otimes_D\Lambda
+ \longrightarrow\Omega^1_{\Lambda/D}\longrightarrow0
+\]
+は右完全である．実際，
+$\Omega^1_{\Lambda/D}\simeq K_0$は
+生成矢の導分を生成元とし，
+その関係は$I$の元の導分で生成される．
+$I=(R)$が\emph{通常の}両側イデアルなので，
+$a r b$の導分は$\Lambda$上$a\,(dr)\,b$となり，
+$R$の導分だけで全てを生成する．
+この議論は関係の最小性，基底の被約性を要しない．
+よって$d_2:P_2\twoheadrightarrow K_1$である．
+同階数の局所自由加群間の全射は同型であるから，
+全複体は$\mathcal O_S$上局所分裂完全となる．
+基底変更も分裂複体を保つ．
+最後の相対局所射影性は
+$D=\mathcal O_S^m$が分離的な頂点代数であることと
+各関係・矢束の局所自由性から従う．
+\end{proof}
+
 \begin{proposition}[二mass全有限族の短い相対対角解消]
 \label{prop:qa-two-mass-short-relative-diagonal}
 全ての$\mathfrak P_{12}^{\rm nd}$の局所係数環上で，
@@ -756,48 +828,69 @@ $\Lambda$は$\Lambda^e$に関する有限局所射影な解消
 特異基底上の$\Lambda$の絶対大域次元が二であるとは主張しない．
 \end{proposition}
 \begin{proof}
-局所的に短関係
-$r_a=q'+\mu u$と$r_b=q+\lambda x$を枠に選び，
-三段道の全束$\mathcal B$へ四つの短関係の両側合成を移す．
-前定理で確認した通り
+自由道代数$F=T_{D_0}(V_{\rm fin})$は，
+全矢が頂点番号を増すため道長三以下で有限である．
+二段の$(0,2),(1,3)$成分はそれぞれ
+$D_a,D_b$，三段の$(0,3)$成分は
+$\mathcal B$であり，その他の非対角成分は
+三つの隣接する階数二束のみである．
+関係式の通常の両側イデアル$I$は
+$(0,2)$成分で$\mathcal O r_a$，
+$(1,3)$成分で$\mathcal O r_b$，$(0,3)$成分で
 \[
- (W\otimes r_a)\cap(r_b\otimes U)=0
+ I_{03}=
+  (W\otimes r_a)+(r_b\otimes U)+
+  R_{{\rm fin},03}
+ \subset\mathcal B
 \]
-が全幾何fiberで成立し，和は階数四の直和因子となる．
-全ての三段道は$0\to3$に限られ，
-四本の短関係の合成を除いた三段道の関係束は
-残りの二本の$R_{\rm fin,03}$で尽くされる．
-最大の頂点差は三であるから，これ以上の道や
-別の関係重なりは存在しない．
+を持ち，その他は零である．
+ここで$R_{{\rm fin},03}$は
+$\partial_T\mathcal W$の二本の局所liftである．
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+直和因子条件~\eqref{eq:qa-two-mass-six-relations}により，
+$I_{03}$は階数六の局所自由直和因子である．
+短関係も階数一の直和因子だから，
+$I$は各頂点成分で相対的に分裂し，
+\emph{ordinary}な道代数商$F/I$は
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+$\Lambda$と一致する．
+完備化した関係イデアルしか生成していない
+という問題はここでは起こらない．
 
-式~\eqref{eq:qa-two-mass-relative-diagonal}の
-微分は標準的な非可換微分，
-すなわち矢$v$に対して
-$1\otimes v\otimes1\mapsto v\otimes1-1\otimes v$，
-関係$r=\sum v_1\cdots v_m$に対して
+$\Lambda$の$(i,j)$成分の階数は
 \[
- 1\otimes r\otimes1
- \longmapsto
- \sum_{v_1\cdots v_m\text{ in }r}
- \sum_{j=1}^m
-   v_1\cdots v_{j-1}\otimes v_j\otimes
-       v_{j+1}\cdots v_m
+ G=(\operatorname{rk}e_j\Lambda e_i)_{i,j}
+ =\begin{pmatrix}
+ 1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
+ \end{pmatrix}.
 \]
-で定める．$\partial_1\partial_2=0$は関係が
-$\Lambda$で零であることから従う．
-相対の標準bar解消で頂点間の道を長さによって分けると，
-頂点差一では矢のみ，差二では一本の短関係を持つ
-道束の直和分解になり，差三では
-短関係からの四つの合成と
-残余二関係が直和で全kernelとなる．
-従ってbar解消から分裂可縮な道部分を除くと
-表示した長さ二の複体を得る．
-この簡約には短関係と長関係の直和因子性だけを用い，
-$\lambda,\mu$による除法は必要ない．
-各頂点対で分裂する有限束の操作なので，
-相対完全性と全基底変更が従う．
-$\Lambda^e$局所射影性は$D_0=\mathcal O_S^4$が
-相対separableであることによる．
+従って$\Lambda$の全階数は$24$，
+各頂点についての左・右因子の階数は
+$(13,7,3,1)$および$(1,3,7,13)$である．
+この二組から
+\[
+ \operatorname{rk}P_0
+ =13\cdot1+7\cdot3+3\cdot7+1\cdot13=68.
+\]
+隣接三組の矢は各階数二，対角二矢は各階数一なので
+\[
+ \operatorname{rk}P_1
+ =2(7\cdot1+3\cdot3+1\cdot7)
+   +(3\cdot1+1\cdot3)=52.
+\]
+関係束の終点と始点は順に
+$(0,2),(1,3),(0,3)$で階数$(1,1,2)$ゆえ，
+\[
+ \operatorname{rk}P_2
+ =3\cdot1+1\cdot3+2\cdot1=8.
+\]
+以上から$68-52+8=24$であり，
+補題~\ref{lem:qa-relative-euler-conormal-diagonal}を
+適用すれば相対分裂完全性と任意基底変更が従う．
+$D_0=\mathcal O_S^4$は相対separableなので
+各項は$\Lambda^e$上相対局所射影である．
+短関係の線形項$\lambda x,\mu u$の消去や
+massによる除法は用いていない．
 \end{proof}
 
 \begin{lemma}[二massの四境界型を覆う明示的な対角解消の検査]
