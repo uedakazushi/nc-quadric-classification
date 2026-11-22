@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.04（A v1.69・20節、B v0.39・31節、C v3.0）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.05（A v1.69・20節、B v0.39・31節、C v3.1）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
@@ -21,6 +21,31 @@ curve上のcanonical完全列は
 `square_rotated_foundations.tex` と
 `canonical_helix_complexes.tex` に証明を保持。
 
+**検証したEuler数値と非被約avatarのrank壁（C v3.1）。**
+ASsq/ASrsq最小分解の四相Euler漸化式から
+$H_r(z)=\sum_{n\ge0}\dim A_{i,i-n}z^n$を作ると、
+全位相で
+$\frac14\sum_{j=0}^3 H_r(\mathrm i^jz)
+ =(1+6z^4+z^8)/(1-z^4)^3$となる。
+ゆえに全$m\ge0$で$\dim A_{i+4m,i}=(2m+1)^2$。
+AS10の級数は$1/((1-t)^2(1-t^2))$。
+SymPyによる有理母関数の四相逆行列・root-of-unity射影と
+有限次数整数再帰を独立に実行しPASSを得た。
+再現コード：computations/verify_as_avatar_euler.py。
+最小射影分解の\emph{完全性}、AS–Gorenstein性、
+helixの実現はこの数値計算では検証できない。
+
+square avatarでは$Q=GF^{-1}P^{-1}$とし
+$F$のbasepoint-free pencil評価列を$GP^{-1}$でtensorすると
+$0\to Q\to H^0(F)\otimes GP^{-1}\to FGP^{-1}\to0$。
+$Q$が非自明なら$H^*(Q)=0$で乗法$\mu_G$は階数4、
+$Q=O_D$なら$h^0(Q)=h^1(Q)=1$で階数3。
+したがって$D$が非被約でも
+$\operatorname{rk}\mu_G=3\iff P=GF^{-1}$。
+反対側の階数3壁は$P=FG^{-1}$。
+両方が階数3の二捩れavatarも許される。
+証明正本：C lem:qa-as10-rank-wall-pencils。
+
 **最小10本矢型の独立分類（原PDF第48--53節）。**
 `papers/quiver-avatar/as10_mutation_classification.tex` の
 `thm:qa-as10-global-bijection` は
@@ -38,6 +63,32 @@ underlying algebraのgroupoidとは異なる。
 **12本矢は通常8本のfoundation矢＋4本のrelation-dual戻り矢のQP表示であり、
 一般の12本矢QPに独立ASクラスの全分類は主張しない。**
 P(1,1,2)のrelation QPはDWZのmutation頂点を持たない反例。
+
+**Mutation後のNoether性とAbel/derived比較。**
+C prop:qa-as10-noetherian-qgrに、
+square側の反Serre四周期$E_0$軌道のcofinal residue
+cornerとAZ1/AZ2、mutation後の$H_1=E_0$を含む
+$T_H$に対する評価列のExt消滅を用いて、
+mutation先の左右Noether性および
+$\Qgr m(A)\simeq\Qgr A,\ \qgr m(A)\simeq\qgr A$
+のproofを統合した（元PDF命題52.1）。
+C prop:qa-as-avatar-coherent-moritaには
+Noether性と全単純分解から
+$D^b(\qgr A)\simeq D^b(\mathrm{mod}\,B)$、
+Serre$\nu[2]$を導くproofを置く（元PDF命題8.1）。
+これらはunderlying Abel/derived同値であり、
+O-marked structure objectを固定するpointed同値ではない。
+一般有限生成graded加群の分解停止、corner道の有界性、
+AZ再構成の仮定、Serre transportは独立監査未完了。
+
+**Keller–Yangの一次資料との照合。**
+Theorem 6.2の(c1)loopなし、
+(c2)mutation頂点を通る2-cycleなし、
+(c3)potentialの巡回表示を指定頂点から始めない
+局所条件を確認してC lem:qa-as10-keller-yangに明記。
+Ginzburg次数零集中は別の入力、
+通常AS分解への降下は追加の証明を要する。
+元の一般定理の全証明は独立検証していない。
 
 **一般定理・検証の所在。**
 外部入力は Okawa–Ueda (arXiv:2007.07620, Theorem 5)
