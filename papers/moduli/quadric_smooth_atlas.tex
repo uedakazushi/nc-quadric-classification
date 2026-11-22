@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.34（4証明を論文Bへ移管）
+% 2026-11-22 / v1.35（指定同型持上げからのsmoothness判定を独立補題へ統合）
 \section{可換二次曲面を含む滑らかな Artin 開部分}
 \label{sec:quadric-smooth-atlas}
 
@@ -42,6 +42,74 @@ $\Lambda_{12}\otimes\Lambda_{23}\to\Lambda_{13}$ が同型である。
 以下では $S\subset S_0$ を開部分とする。
 一般の滑らかな foundation chart を用いる場合も、後述の基底の持上げを
 その smooth chart の無限小持上げに置き換えれば同じ証明になる。
+
+\begin{lemma}[指定された Artin 同型の持上げによる smooth 性]
+\label{lem:pointed-artin-lifting-smooth-bridge}
+$k$ を代数閉体、$\mathfrak F$ を局所有限型 $k$-スキーム上の
+fppf groupoid stack とし、affine finite-presentation 対角を持つ
+有限型 Artin スタック $\mathfrak P$ への全忠実な射
+$\Phi:\mathfrak F\to\mathfrak P$ が与えられているとする。
+$U$ を有限型 $k$-スキーム、$q:U\to\mathfrak F$ を射とする。
+任意の剰余体 $k$ の局所 Artin $k$-代数の small extension
+$A'\twoheadrightarrow A$、$u_A\in U(A)$、
+$c_{A'}\in\mathfrak F(A')$、および\emph{指定された}
+$\alpha_A:q(u_A)\xrightarrow{\sim}c_{A'}|_A$ に対し、
+$u_A$ と $\alpha_A$ の両方を延長する
+$u_{A'}\in U(A')$ および
+$\alpha_{A'}:q(u_{A'})\xrightarrow{\sim}c_{A'}$
+が存在すると仮定する。
+このとき $q$ はスキームで表現可能な smooth 射である。
+その fppf 像 $\mathfrak V$ は開部分スタックであり、
+\[
+ \mathfrak V\simeq[U/R],\qquad
+ R=U\times_{\mathfrak F}U
+   \simeq U\times_{\mathfrak P}U
+\]
+は有限型の smooth groupoid 表示を与える。
+$U$ が $k$ 上 smooth なら $\mathfrak V$ も smooth である。
+\end{lemma}
+\begin{proof}
+任意の有限型 affine $k$-スキーム $T$ と
+$T\to\mathfrak F$ を取る。全忠実性によって
+\[
+ Z_T:=U\times_{\mathfrak F}T
+ \simeq U\times_{\mathfrak P}T
+\]
+である。右辺は $\mathfrak P$ の対角の
+$U\times_kT$ への基底変更であるから、$Z_T$ は
+$U\times_kT$ 上 affine かつ有限表示のスキームである。
+従って $Z_T\to T$ は有限型スキーム間の局所有限表示射である。
+この段階で $\mathfrak F$ 自身の代数性を仮定していない。
+
+$z\in Z_T$ を閉点とする。$Z_T$ は有限型 $k$-スキーム、
+$k$ は代数閉体なので $\kappa(z)=k$ である。
+$z$ を含む任意の small Artin lifting diagram
+$\operatorname{Spec}A\to Z_T$、
+$\operatorname{Spec}A'\to T$ は、還元先 $u_A$、
+$T$ から引き戻した族 $c_{A'}$、
+およびその\emph{指定された}同型 $\alpha_A$
+からなる。仮定によって $u_{A'}$ と $\alpha_{A'}$ を
+同時に持ち上げられるので、$\operatorname{Spec}A'\to Z_T$
+の持上げが得られる。
+Stacks Project \cite[Tag 02HY, Lemma 37.12.2]{StacksSmoothAtlas}
+の有限型 Artin 試験では剰余体は $\kappa(z)=k$ であり、
+必要な小拡大の持上げはすべて上の仮定に含まれる。
+$Z_T\to T$ の非 smooth locus は閉で、非空なら
+有限型 $k$-スキーム $Z_T$ の閉点を含む。
+よって全点で smooth である。
+
+任意の局所有限型 $T$ は有限型 affine 開で覆えるから
+$q$ はスキームで表現可能な smooth 射となる。
+その smooth 射の像は基底変更と整合する開部分であり、
+その上では fppf 局所に section が存在する。
+$R=U\times_{\mathfrak F}U$ は有限型スキームで、
+二つの射 $R\rightrightarrows U$ は $q$ の基底変更として
+smooth である。smooth groupoid の商定理
+\cite[Tags 04X0, 04TK]{StacksSmoothAtlas} が
+$[U/R]\simeq\mathfrak V$ を与える。
+最後の滑らかさは smooth atlas $U\to\mathfrak V$ と
+$U/k$ の smooth 性から従う。
+\end{proof}
 
 \begin{theorem}[効果的 foundation 族からの局所 atlas]
 \label{thm:atlas-from-effective-foundation}
@@ -122,6 +190,11 @@ $A'\to A$ は coherent な可換環の冪零拡大であり、$A$ は $A'$ 上�
 $\alpha_A$ により $E_{i,A}$ を $\mathcal C_A$ に移す。
 これらは flat な対象であり、compact geometric helix を成す。
 \cite[Theorem 5.13(1)--(4)]{DeDekenLowen2011} を基底環 $A$ と拡大 $A'\to A$ に適用する。
+ここでは $E_{i,A}$ が heart に属する $A$-flat 対象であるため、
+同定理の $D^-_{\mathrm{ffd}}$ の仮定を満たす。
+単なる strong exceptional collection の持上げだけから
+前向き全 Hom の平坦性を推論せず、同定理の geometric 性と
+(4) の全前向き Hom に関する仮定を併せて用いる。
 すると各 $E_{i,A}$ は、同型類一意に flat な対象 $E'_{i}$ へ持ち上がり、
 指定した還元同型を選べる。持上げた四項窓は再び compact tilting generator であり、
 前向き Hom は平坦で還元と可換する。
@@ -219,55 +292,19 @@ $\Phi$ の全忠実性から、これは pointed exact 同型 $\alpha_{A'}$ に�
 \subsection{任意の有限型基底上の smoothness}
 
 \begin{proof}[定理~\ref{thm:atlas-from-effective-foundation} の証明]
-$T\to\mathfrak H_2$ を任意の局所有限型スキームからの射とする。
-$\Phi$ の全忠実性により二ファイバー積の自然射は同値であり、
-\[
- Z_T:=U\times_{\mathfrak H_2}T\simeq U\times_{\mathfrak P}T.
-\]
-右辺から $U\times_kT$ への射は $\mathfrak P$ の対角の基底変更であるから、
-affine かつ有限表示である。従って $Z_T$ はスキームであり、
-$Z_T\to T$ は局所有限表示である。
-これで $q$ の表現可能性と有限表示性を、$\mathfrak H_2$ 自身の代数性を使わずに得る。
-
-$T$ の有限型 affine 開部分ごとに議論すればよい。
-このとき $Z_T$ も有限型 $k$ スキームなので、全ての閉点の剰余体は $k$ である。
-$z\in Z_T(k)$ において small Artin extension $A'\twoheadrightarrow A$ と
-可換図式
-\[
- \begin{matrix}
- \operatorname{Spec} A&\longrightarrow&Z_T\\
- \big\downarrow&&\big\downarrow\\
- \operatorname{Spec} A'&\longrightarrow&T
- \end{matrix}
-\]
-を取る。上の点は、$u_A$、$T$ 側の族の還元、両者の指定された
-pointed exact 同型を与える。
-補題~\ref{lem:atlas-artin-lift} がこの図式の持上げを与える。
-よって $Z_T\to T$ は各閉点で smooth である。
-ここで用いているのは有限型 Noetherian 基底上の Artin 持上げ判定
-\cite[Tag 02HY, Lemma 37.12.2]{StacksSmoothAtlas} である。
-同補題が要求する $\beta:\operatorname{Spec} A'\to T$ の有限型性を仮定すると、
-$A'$ は有限型 Artin $k$ 代数であり、その剰余体は $k$ である。
-従って上の持上げは同補題の全ての試験図式を覆う。
-非 smooth locus は閉であり、非空なら閉点を持つので、$Z_T\to T$ 全体が smooth となる。
-
-以上が任意の $T$ に成り立つから、$q:U\to\mathfrak H_2$ は
-表現可能な smooth 射である。
-その fppf 像を $\mathfrak V$ とする。
-各 $T\to\mathfrak H_2$ に対する $\mathfrak V\times_{\mathfrak H_2}T$ は、
-smooth 射 $Z_T\to T$ の像に対応する開部分スキームである。
-実際、この射はその開像上で smooth 全射であり、fppf 局所に section を持つ。
-したがって $\mathfrak V\subset\mathfrak H_2$ は開部分スタックである。
-
-$R=U\times_{\mathfrak H_2}U$ は上と同じ理由で有限型スキームであり、
-二つの射 $R\rightrightarrows U$ は $q$ の基底変更なので smooth である。
-よって $(U,R)$ は smooth groupoid であり、
-\cite[Tags 04X0, 04TK]{StacksSmoothAtlas} により $[U/R]$ は Artin スタックとなる。
-$q$ が $\mathfrak V$ を fppf に覆うことと Isom 層の一致から
-$[U/R]\simeq\mathfrak V$ を得る。
-$U$ は有限型であり、この smooth atlas により $\mathfrak V$ は有限型である。
-さらに $U\to S$ は \'etale、$S$ は滑らかなので $U$ は $k$ 上 smooth であり、
-従って $\mathfrak V$ も $k$ 上 smooth である。
+前節の補題~\ref{lem:atlas-artin-lift} は、
+$U$ の点だけでなく\emph{指定された pointed exact 同型}も
+すべての small Artin extension に沿って持ち上げる。
+また $\Phi:\mathfrak H_2\to\mathfrak P$ は
+全忠実で、$\mathfrak P$ は affine 有限表示対角を持つ。
+従って補題~\ref{lem:pointed-artin-lifting-smooth-bridge}
+を適用できる。
+特に $q$ の表現可能性・smooth 性と
+$R=U\times_{\mathfrak P}U$ による
+全ての pointed 同型を含む smooth groupoid 表示が従う。
+$U\to S$ は étale で $S$ は affine 空間の開部分なので、
+$U$ は $k$ 上 smooth である。
+従ってその開像も smooth Artin スタックである。
 \end{proof}
 
 \begin{remark}[全 site への拡張の範囲]

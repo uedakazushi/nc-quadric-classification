@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-21（全証明をBへ移管）
+% 2026-11-22 / v1.1（指定Artin同型のsmoothness判定を共有補題に統合）
 \section{一般 cubic helix の持上げと cubic locus の滑らかな開性}
 \label{sec:cubic-smooth-atlas}
 
@@ -398,24 +398,14 @@ Grothendieck 圏の $A'$ 線形完全同値は任意の代数の加群対象の�
 \end{corollary}
 
 \begin{proof}
-任意の有限型 affine $T\to\mathfrak H_2$ に対し
-\[
- Z=U\times_{\mathfrak H_2}T\simeq U\times_{\mathfrak P}T
-\]
-は $U\times T$ 上 affine かつ有限表示である。従って $Z$ は有限型 $k$ スキームであり、
-$Z\to T$ は局所有限表示である。
-前定理は $Z\to T$ の指定点・指定還元を持つ small Artin 持上げを与える。
-Stacks Project の smoothness 判定 \cite[Tag 02HY]{StacksSmoothAtlas} に現れる
-$\operatorname{Spec} A'\to T$ が finite type であるテストでは、$A'$ は有限型 Artin $k$ 代数である。
-$k$ は代数閉なのでその剰余体は $k$ となり、前定理が全てのテストを含む。
-冪零拡大は small extension に分解できるので同判定を適用でき、$Z\to T$ は smooth である。
-
-従って $q$ は representable smooth であり、その像は開である。
-$R=U\times_{\mathfrak H_2}U$ は有限型スキームで、両射影が smooth な groupoid となる。
-その quotient は開像を表し、smooth groupoid の商定理により Artin スタックである
-\cite[Tags 04X0, 04TK]{StacksSmoothAtlas}。
-$S$ は射影空間の開部分で smooth、$U\to S$ は étale なので、$U$ も smooth である。
-従ってこの開像は $k$ 上 smooth である。
+前定理は、$u_A$ の持上げだけでなく、
+指定された pointed exact 同型 $\alpha_A$ の持上げも与える。
+$\Phi$ の全忠実性と affine 有限表示対角を使うと、
+補題~\ref{lem:pointed-artin-lifting-smooth-bridge} の仮定が成立する。
+従って $q$ は表現可能な smooth 射で、その像は
+$R=U\times_{\mathfrak P}U$ により表示された開部分スタックである。
+$S$ は射影空間の開部分で $k$ 上 smooth、
+$U\to S$ は étale なので、開像も smooth である。
 \end{proof}
 
 \subsection{全 cubic locus の有限型 smooth 開部分}

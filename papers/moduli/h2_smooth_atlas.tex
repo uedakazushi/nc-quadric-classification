@@ -1,7 +1,7 @@
 % 相対効果性の補助結果と普遍 cubic 表示の入力は分類論文
 % \cite{QuadricIntrinsic2026} の対応する節から引用する。
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.43（全体の有限型Artin性・境界smooth性の8証明をBへ移管）
+% 2026-11-22 / v1.44（pointed Artin smooth bridgeとnoncubic chart次元を明確化）
 \section{内在的な全モジュライの有限型代数性}
 \label{sec:global-h2-smooth-atlas}
 
@@ -65,15 +65,14 @@ $a_x$ の全点での étale 性により、これは $u_A$ を保つ $u_{A'}\in
 module-object 基底変更により、その同型は全有限型 test 上の相対系にも延長する。
 この議論は根や被覆を同型の標識へ加えず、指定した pointed 同型をそのまま保つ。
 
-任意の有限型 affine $T\to\mathfrak H_2$ に対して
-\[
- U_x\times_{\mathfrak H_2}T\simeq U_x\times_{\mathfrak P}T,
- \qquad\mathfrak P=[X_3/\operatorname{PGL}_9]
-\]
-は affine 有限表示対角の基底変更なので有限型スキームである。
-上の指定 Artin 持上げと \cite[Tag 02HY]{StacksSmoothAtlas} により、その $T$ への射は smooth である。
-同 tag の有限型 Artin test は、$k$ が代数閉なので剰余体 $k$ の test に含まれる。
-開像と smooth groupoid の商の構成は定理~\ref{thm:atlas-from-effective-foundation} の通りである。
+これらの指定された Artin 同型の持上げと、
+$\Phi:\mathfrak H_2\to\mathfrak P$ の全忠実性は
+補題~\ref{lem:pointed-artin-lifting-smooth-bridge} の全仮定を満たす。
+従って $q_x$ はスキームで表現可能な smooth 射で、
+その開像は全ての pointed 同型を relation に含めた
+smooth groupoid により表される。
+この推論は有限型スキーム上の Tag 02HY の Artin 試験に帰着し、
+現時点で $\mathfrak H_2$ 全体が Artin スタックであるとは仮定しない。
 \end{proof}
 
 \subsection{有限個の chart による全体の表示}
@@ -149,6 +148,26 @@ $\operatorname{HH}^1(\Lambda)$ であり、
 命題~\ref{prop:foundation-hochschild} によって両次元の差は三である。
 滑らかな Artin スタックの局所次元はこの差に等しいから、全閉点で三となる。
 有限型 smooth atlas の各成分は閉点を持ち、次元は局所一定なので、全体は純次元三である。
+\end{proof}
+
+\begin{corollary}[noncubic 有効 chart の相対次元]
+\label{cor:noncubic-atlas-relative-dimension}
+上の $q_x:U_x\to\mathfrak H_2$ は、像上で相対次元
+$64-3=61$ の smooth 射である。
+その relation scheme
+$R_x=U_x\times_{\mathfrak H_2}U_x$ は
+$k$ 上 smooth な純次元 $64+61=125$ のスキームである。
+\end{corollary}
+\begin{proof}
+$U_x$ は $S\subset\mathbb A^{64}$ の有限型 étale 近傍なので、
+その各点における次元は64である。
+定理~\ref{thm:global-h2-smooth-finite-type} により
+$\mathfrak H_2$ は純次元3でsmoothである。
+smoothなスタック射の相対次元公式より $q_x$ は相対次元61。
+$R_x\to U_x$ は $q_x$ の基底変更であるため、
+相対次元61の smooth 射で、総次元は125となる。
+これはsmooth atlasのfiber次元の整合性を表すものであり、
+非cubic点のモジュライに新たな変形方向を加えたものではない。
 \end{proof}
 
 \subsection{普遍 cubic 族の降下と内在的な既約性}
