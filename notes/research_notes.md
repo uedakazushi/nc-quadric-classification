@@ -1202,7 +1202,7 @@ Okawa--Ueda の GIT 次数四射と Serre 根の忘却が同一かどうかは�
 
 ## 八・十・十二本矢、avatar、内在的忘却
 
-証明の正本は別稿 `papers/quiver-avatar-moduli.tex`。有限foundationの生成矢、relation completion、potentialの非最小表示を区別する。有限foundationではHom次元を $(2,2,2,4,4,6)$ に固定し、積 $a,b,c,d$ の唯一の結合律 $c(1\otimes a)=d(b\otimes1)$ を課す。二つの核に分解可能テンソルを許さず、$(c,d)$ の**合併した写像**の全射性を要求する。個々の $c,d$ の全射を要求する必要はない。$\delta_a,\delta_b\in\{0,1\}$ により生成矢 $6+\delta_a+\delta_b$、関係 $2+\delta_a+\delta_b$、完成矢 $8+2(\delta_a+\delta_b)$ を得る。$b$ 可逆と $a$ 可逆が二つの10本矢open、交わりが8本矢open。最小10本・12本の層をこれらのopenと同一視しない。
+証明の正本は別稿 `papers/nc-quadric-avatar.tex`。有限foundationの生成矢、relation completion、potentialの非最小表示を区別する。有限foundationではHom次元を $(2,2,2,4,4,6)$ に固定し、積 $a,b,c,d$ の唯一の結合律 $c(1\otimes a)=d(b\otimes1)$ を課す。二つの核に分解可能テンソルを許さず、$(c,d)$ の**合併した写像**の全射性を要求する。個々の $c,d$ の全射を要求する必要はない。$\delta_a,\delta_b\in\{0,1\}$ により生成矢 $6+\delta_a+\delta_b$、関係 $2+\delta_a+\delta_b$、完成矢 $8+2(\delta_a+\delta_b)$ を得る。$b$ 可逆と $a$ 可逆が二つの10本矢open、交わりが8本矢open。最小10本・12本の層をこれらのopenと同一視しない。
 
 product relation QPの一頂点premutationでは4本を追加して16本となり、4×4 mass行列の階数r組を消去して16−2r本を得る。三次minor上ではSchur補元 λ=d−eD⁻¹b が残る係数。別稿 `prop:qa-square-mutation-count` と `prop:qa-square-relative-schur` に有限三角変換の直接証明がある。
 
@@ -1642,8 +1642,8 @@ python3 computations/verify_noncubic_boundary.py
 python3 computations/verify_noncubic_central_hull.py
 # NumPy/Numba を入れた場合の独立な接空間証明書
 python3 computations/verify_commutative_quadric_tangent.py
-python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
-python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex
+python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex
+python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex
 latexmk
 ```
 
