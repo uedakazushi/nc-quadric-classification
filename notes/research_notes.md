@@ -63,19 +63,32 @@ MathMIT Sutherlandの古典的modular polynomial $\Phi_2$ の
 検算はcomputations/verify_rootpair_resolvent_spectral.pyに統合。
 これは多項式等式の計算で、相対pointed同値の証明ではない。
 
+**MCM行列のkernelから$E_f$の二pencilを直接復元（証明済み）。**
+$f_1=-\ell_1\ell_2,\ f_2=-m_1m_2$について
+$M_c=\left(\begin{smallmatrix}c&\ell_1\\\ell_2&-c\end{smallmatrix}\right)$、
+$M_d=\left(\begin{smallmatrix}d&m_1\\m_2&-d\end{smallmatrix}\right)$
+は$B_f$で平方零、$E_f$上の各点で階数1。
+その右kernel直線は$(u,v,c)$および$(u,v,d)$の
+smooth conicの標準パラメータを与える。
+従って$\ker M_c$の射の$\OO_{\PP^1}(1)$のpullbackは
+$F_c$、$\ker M_d$からは$F_d$となる
+（C prop:qa-point-mcm-matrix-pencils）。
+これは線形matrix factorizationの**pointwise kernel**と
+幾何的二pencilの一致であって、
+MCMのfinite directed Endの積の同一視は未証明。
+
 **核心的な未解決部分。**
 E_fの二pencilで得られるsquare avatarと
-C_qのspectral avatarは
-2-isogenyのdual kernelで結ばれるが、
-B_fの**normal helix**からのAS avatarが
-どちらに正確に対応するかは未証明。
-とくにB_fの非自由MCM二型$X_c,X_d$と
-二つのconic商の$F_c,F_d$の有限directed Hom
-および積を直接比較し、normal helixの
-$\pi B_f$がavatar側でどのexceptional対象へ対応するかを
-確認することが直近の課題。
-この順序を守らずC_q上のavatarをB_fの点曲線と同一視すると、
-今回のj不一致例で破綻する。
+C_qのspectral avatarは2-isogenyのdual kernelで結ばれる。
+B_fのnormal helixからAS avatarとして
+正確にどちらが抽出されるかはまだ証明していない。
+次はB_fの非自由MCM二型$X_c,X_d$から作る
+四項helixの**有限directed End代数の全Homと積**を、
+$E_f$の二pencilのEndと比較する。
+その後で$\pi B_f$が対応するexceptional対象、
+AS Serre completion、O-pointed exact heartの
+同定を行う。C_qをB_fの点曲線と同一視する
+近道はj不一致例で破綻する。
 一根共有または一致根対では同時符号商は
 有限étale isogenyでなく、spectral M_Cが
 節点で非局所自由になることを用いる。
