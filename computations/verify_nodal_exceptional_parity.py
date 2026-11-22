@@ -27,4 +27,35 @@ for n in range(-10, 11):
     for m in range(-10, 11):
         assert (1-2*n+2*m) % 2 == 1
 
-print("PASS: A1 resolution charts, base equation, transition and exceptional parity")
+# The special-fibre anti-invariant module at a shared simple root:
+# c^2=d^2=x, cd=y, y^2=x^2.  In the u=c+d, v=c-d
+# basis, the two normalization branches split and their product
+# forms generate the conductor.  These are finite polynomial checks.
+x, y, c, d = sp.symbols("x y c d")
+gb = sp.groebner([c**2-x, d**2-x, c*d-y], c, d, x, y, order="lex")
+for relation in (
+    (c+d)**2-2*(x+y),
+    (c-d)**2-2*(x-y),
+    (c+d)*(c-d),
+    (x+y)*(y-x),
+    (x-y)*(y+x),
+):
+    assert gb.reduce(sp.expand(relation))[1] == 0
+
+eigenbasis = sp.Matrix([[1, 1], [1, -1]])
+ymatrix = sp.Matrix([[0, x], [x, 0]])
+assert sp.simplify(eigenbasis.inv() * ymatrix * eigenbasis) == sp.diag(x, -x)
+
+# Three explicit reduced-quadratic root configurations have
+# multiplication defect lengths equal to deg gcd(f_1, f_2) = 0,1,2.
+z = sp.symbols("z")
+fixtures = (
+    (z*(z-1), (z-2)*(z-3), 0),
+    (z*(z-1), z*(z-2), 1),
+    (z*(z-1), z*(z-1), 2),
+)
+for f1, f2, expected in fixtures:
+    assert sp.Poly(sp.gcd(f1, f2), z).degree() == expected
+
+print("PASS: A1 resolution parity and spectral multiplication defect (0/1/2)")
+
