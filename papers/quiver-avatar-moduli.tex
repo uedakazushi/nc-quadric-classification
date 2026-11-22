@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v2.3
+% 日本語 LuaLaTeX。2026-11-22 / v2.4
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -52,7 +52,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v2.3（実現可能開の有限多項式判定の存在と非自明なruling cover）}
+\date{2026年11月22日\quad v2.4（cubic幾何開の明示quartic/sextic判定）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -138,7 +138,10 @@ $\HHstack\simeq[\mathfrak F_{\HH}/S_2]$が全相対群oidの同型となる。
 有限型・非被約基底にわたって二択の一方として存在する。
 この実現可能開の逆像は$\mathbb A^{64}$の不変開なので、
 Noether性により有限個の多項式の非同時消滅条件で記述できる。
-これは存在証明であり、多項式の具体式・次数上界は未計算。
+これは全実現可能開に対する非構成的存在証明であり、その具体式・次数上界は未計算。
+一方Fが可逆なcubic幾何部分では、四つの隣接flatteningの
+行列式（次数4）とadjugate列の二次行列式（次数6）で
+計20式の具体的開判定を得る。
 また可換$\PP^1\times\PP^1$のfactor交換から、
 このruling被覆に自己同値と両立する大域sectionは存在しない。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
@@ -175,6 +178,8 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 生成元と関係が同時に消去される変形や、異なる foundation の比較を捉えられない。
 本稿は、まず共通の有限代数のモジュライを構成し、その上の二つの開条件と
 二つの階数低下条件として矢数を整理する。
+さらにgeometric cubic部分の隣接四重tensorの非退化性は
+四次4式・六次16式の明示的多項式判定へ書き換える。
 次に反標準 avatar の幾何的 chart を比較し、
 最後に構造対象付き Abel 圏への忘却に必要な条件を分離し、
 Okawa--Ueda の quintuple/potential GIT と比較する。

@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.97（A v1.69・20節、B v0.39・31節、C v2.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.98（A v1.69・20節、B v0.39・31節、C v2.4）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -417,6 +417,8 @@ ruling選択被覆をその慣性gerbe BAへ引き戻すとBH→BA、
 非自明な剰余C2が二sheetを交換するため、大域sectionはない。
 C cor:qa-ruling-cover-nontrivial-commutative-gerbeに証明。
 この二点を実現可能開の明示的判定と混同しない。
+
+**cubic geometric四重テンソルの具体的有限判定。** Fが同型でGが全射のnormal foundationでw∈⊗_{i=0}^3V_iを復元。各隣接2因子の4×4 flattening M_iについて、ker(M_i)に分解可能テンソルがないことがgeometric性。rank4ならdet M_i≠0、rank≤2ならprojective kernelは線を含みSegre quadricと交わるので不許容、rank3ならadj(M_i)の非零列がkernelを張るので、列の2×2 reshapeがfull rankであることが必要十分。detは次数4、adj列2×2detは次数6。四つのiごとに1+4式、計20個の明示非消滅判定。基底変更の下でも不変。C lem:qa-explicit-cubic-geometric-adjugateが証明正本。整数でrank3 entangled/decomposable, rank2, rank4と一般/退化wを検算。computations/verify_cubic_geometric_adjugate.pyを標準math suiteに登録したが、保存スクリプト自体の実行状態と独立数学的全証明監査は別。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから

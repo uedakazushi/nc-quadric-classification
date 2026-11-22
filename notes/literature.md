@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.65。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.66。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -181,6 +181,8 @@ k[[a,u,v]]^{C3}。これは全noncubic境界の定理ではない。
 **有限étale二択の降下と開埋込：一般理論の一次入力。** Stacks Project [Tag 0BLY, Lemma95.6.1](https://stacks.math.columbia.edu/tag/0BLY) は有限étale morphismのfppf効果的降下を与える。[Tag 0616, Lemma76.16.8](https://stacks.math.columbia.edu/tag/0616) は代数空間の局所有限表示・形式的étaleとétaleの同値、[Tag 05W4, Lemma67.51.2](https://stacks.math.columbia.edu/tag/05W4) はétale universally injective morphismの開埋込性を示す。今回これらの本文を一次web版で確認した。数学的固有入力はBの全H2 smooth atlas・relative perfect Morita/反Serre・Artin foundation deformation/効果的étale chart、およびCで構成した相対Homの二選択の開閉cocycleである。Cに全H2のfinite étale ruling coverと、選択付きH2から有限foundationスタックの実現可能開への開埋込・S2商同型を証明として統合した。**未確認点**：Bの全原稿にわたる相対perfectness/Artin効果性の全面独立監査、非被約基底のKスカラー比較の独立形式検証、有限minorによる実現可能開のexplicitな認識条件。既存の一般定理と本研究固有のH2群oid比較を区別し、結果の新規性は未確認。
 
 **非構成的有限多項式判定と可換gerbeの証明範囲。** U0⊂A64は有限型開、realizable W_Hは開なので、その閉補集合のイデアルがNoether性で有限生成となる。G/Kのrational作用で有限次元安定部分表現を選べる。これはStacksの一般原理と本研究の新しい相対開埋込の形式的帰結で、explicitな演算アルゴリズムではない。可換QのAut=(PGL2×PGL2)⋊C2の因子交換からruling coverの非自明性が従う。C cor:qa-realizable-foundation-finite-open-criterion、cor:qa-ruling-cover-nontrivial-commutative-gerbeに証明。文献の包括的新規性は未確認。
+
+**VdB geometric開の明示多項式化。** Van den Bergh 2011 Definition 5.3.1とB prop:cubic-foundation-openの隣接二因子縮約非退化条件をC lem:qa-explicit-cubic-geometric-adjugateで明示quartic/sexticの計20個の多項式に変換した。rank3のkerがSegreの分解可能座を避けることとadjugate列の2×2det非零を同定する直接線形代数。幾何的cubic開の存在自体はVdBの既知入力で、20式への具体化の包括的新規性は未確認。noncubic全realizable開には適用しない。
 
 ## 研究の位置
 
