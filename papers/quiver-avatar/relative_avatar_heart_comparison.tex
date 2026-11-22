@@ -1,0 +1,348 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v1.0
+\section{相対heartの比較とcubic代数族の回復}
+\label{sec:qa-relative-avatar-heart-comparison}
+
+\subsection{相互の生成対象による相対 heart の認識}
+\label{subsec:qa-relative-mutual-heart-recognition}
+
+次の議論は fiberwise な $t$-exactness の持上げではない．
+両側で既に構成された相対 $H_2$ heart の中に，互いの構造対象が
+実際に存在することを用いる．したがって非被約基底でも同じ証明が成立する．
+
+\begin{lemma}[生成族に対する非正性の検出]
+\label{lem:qa-generators-detect-right-texactness}
+$\mathcal A,\mathcal B$ を局所 noetherian Grothendieck 圏とし，
+$\mathcal A$ の noetherian 部分を $\mathcal A^{\rm noeth}$ とする．
+$\{L_\alpha\}$ を $\mathcal A^{\rm noeth}$ 内の族であって，
+全ての noetherian 対象がその有限直和の商であると仮定する．
+標準の安定導来 enhancement の間の colimit を保つ完全関手
+\[
+ \mathsf F:D(\mathcal A)\longrightarrow D(\mathcal B)
+\]
+が全ての $L_\alpha$ を $D^{\leq0}(\mathcal B)$ に送るなら，
+$\mathsf F$ は右 $t$-exact，すなわち
+$\mathsf F(D^{\leq0}(\mathcal A))\subset D^{\leq0}(\mathcal B)$ である．
+\end{lemma}
+\begin{proof}
+任意の noetherian 対象 $M$ に対し，生成族からの全射を取り，
+その kernel にも同じ操作を繰り返す．kernel も noetherian なので，
+\[
+ \cdots\longrightarrow Q^{-2}\longrightarrow Q^{-1}
+       \longrightarrow Q^0\longrightarrow M\longrightarrow0
+\]
+という完全列を得る．各 $Q^{-j}$ は $L_\alpha$ の有限直和である．
+これは射影解消である必要はなく，通常の複体 $Q^\bullet$ が
+$M$ とquasi-isomorphicであることだけを使う．
+
+$Q^\bullet$ は，区間 $[-n,0]$ に制限した brutal truncation
+$\sigma^{\geq-n}Q^\bullet$ の順方向 homotopy colimit である．
+実際，これらは複体の包含写像による系であり，filtered colimit の
+完全性からその homotopy colimit は項別 colimit とquasi-isomorphicである．
+各有限複体の像は $D^{\leq0}(\mathcal B)$ に属する．
+同部分圏は coproduct と extension に閉じているので，
+sequential homotopy colimit にも閉じている．したがって
+$\mathsf F(M)\in D^{\leq0}(\mathcal B)$ である．
+
+任意の $\mathcal A$ の対象は noetherian 部分対象の filtered colimit である．
+導来圏の標準 enhancement において，この colimit は homotopy colimit
+とも一致し，$D^{\leq0}$ はこれらのfiltered homotopy colimitに閉じている．
+これはGrothendieck圏のAB5による．$\mathsf F$ はこれを保つので，任意の heart 対象も
+非正部分に送られる．
+最後に，$D^{\leq0}(\mathcal A)$ の任意の対象を次数 $0$ 以下の複体で表し，
+再び有限 brutal truncation の homotopy colimit として書けば結論を得る．
+本稿で用いる $\mathsf F$ は perfect Morita 関手の Ind 延長であり，
+この enhancement と全 colimit の保存を備えている．
+\end{proof}
+
+\begin{proposition}[相対 $H_2$ heart の相互標識判定]
+\label{prop:qa-h2-mutual-markings-heart-test}
+同じ基底 $S$ 上の二つの相対 $H_2$ 族を
+$(\mathcal C,\mathcal O)$，$(\mathcal D,\mathcal P)$ とする．
+共通の fppf 局所 chart 上の compact 圏の間に，
+任意基底変更と整合する $S$-線形 Morita 同値
+\[
+ \mathsf F^c:\mathcal D^{\rm perf}\xrightarrow{\sim}
+                  \mathcal C^{\rm perf}
+\]
+があるとする．さらに，実際の相対 heart に関する条件
+\[
+ \mathsf F^c(\mathcal P)\in\mathcal C,
+ \qquad
+ (\mathsf F^c)^{-1}(\mathcal O)\in\mathcal D
+ \tag{MH}\label{eq:qa-mutual-heart-condition}
+\]
+がその chart の全ての affine 基底変更上で成立すると仮定する．
+このとき $\mathsf F^c$ は唯一の colimit を保つ導来 Morita 同値へ延長され，
+その延長は $t$-exact である．従って基底変更と整合する完全同値
+\[
+ \mathsf F:\mathcal D\xrightarrow{\sim}\mathcal C
+\]
+を得る．初めの compact 比較に coherent な降下データがある場合，
+この完全同値にも同じ降下データがある．
+\end{proposition}
+\begin{proof}
+相対 $H_2$ の定義により，各局所 affine chart 上で
+$D(\operatorname{Ind}\mathcal C)$ と
+$D(\operatorname{Ind}\mathcal D)$ は compactly generated である．
+従って perfect Morita 同値はこれらの間の colimit を保つ同値に
+一意に延長される（\cite[\S4.3,\S8.2]{Keller1994}の標準dg Morita）．
+
+canonical な相対反 Serre 関手をそれぞれ $t_{\mathcal C},t_{\mathcal D}$
+と書く．両者は heart 上で完全であり，Serre 双対の一意性により
+\[
+ \mathsf F^c t_{\mathcal D}\simeq
+ t_{\mathcal C}\mathsf F^c
+\]
+が成り立つ．論文Bの
+\cite[\texttt{prop:relative-h2-antiserre-reconstruction}]{QuadricModuli2026}
+により，$\{t_{\mathcal C}^{-n}\mathcal O\}_{n\geq0}$ と
+$\{t_{\mathcal D}^{-n}\mathcal P\}_{n\geq0}$ はそれぞれ AZ 生成族である．
+条件~\eqref{eq:qa-mutual-heart-condition} と $t$ の完全性から，
+これらの生成族は $\mathsf F$ とその逆によって相手の heart に送られる．
+前補題を両向きに適用すると，$\mathsf F$ と $\mathsf F^{-1}$ は
+ともに右 $t$-exact である．従って
+$\mathsf F(D^{\leq0})=D^{\leq0}$ であり，直交性から非負部分も保つ．
+これで $t$-exactness が従う．
+
+得られる Ind heart の完全同値は noetherian 対象を保つので，
+指定された coherent heart の完全同値に制限される．
+任意の基底変更に対する導来比較は compact 生成対象上の比較から
+一意に延長される．通常の module-object 引戻しはその次数零 cohomology
+なので，$t$-exactness によって通常の引戻しとの coherent な比較を得る．
+降下データの間の自然同型も compact 生成対象から一意に延長される．
+したがって局所判定を貼り合わせられる．ここでは，任意の相対 compact
+圏に独立の heart を与えたり，fiberwise な cohomology 一致から heart を
+復元したりしていない．
+\end{proof}
+
+\begin{corollary}[中間頂点も同じ相対 heart 内で認識される]
+\label{cor:qa-relative-middle-same-heart}
+定理~\ref{thm:qa-relative-avatar-middle-h2-realizations} の記法で，
+その compact Morita 比較は完全同値
+\[
+ \mathcal C_i\xrightarrow{\sim}\mathcal C_0|_{U_i},
+ \qquad \mathcal O_i\longmapsto E_i\quad(i=1,2)
+\]
+へ延長される．従って，元の同じ相対 heart の対
+$(\mathcal C_0|_{U_i},E_i)$ が実際に $\mathfrak H_2(U_i)$ の対象である．
+この主張と比較は任意基底変更と整合する．
+\end{corollary}
+\begin{proof}
+前節では全 $E_j$ が $\mathcal C_0$ の基底平坦な heart 対象であることを
+既に示した．従って $\mathsf F^c(\mathcal O_i)=E_i$ は第一条件を満たす．
+一方，$\mathcal N_i$ の第四対象は $t_\Lambda E_0$ である．
+真正な normal foundation の第四対象は $\mathcal C_i$ の基底平坦な
+heart 対象だから，canonical $t_i^{-1}$ を適用して
+\[
+ (\mathsf F^c)^{-1}(E_0)
+   =t_i^{-1}(\text{$\mathcal N_i$ の第四対象})\in\mathcal C_i
+\]
+を得る．$t_i^{-1}$ は完全であり基底変更と可換するので，
+この対象も基底上平坦であり，全ての affine 基底変更後に同じ議論が成立する．
+これが第二条件である．前命題を適用すればよい．
+頂点の相対枠を変えた際の基底線束との tensor は，heart の完全自己同値であり，
+この二条件と基底平坦性を保つ．従って実際の cone に含まれる determinant
+線束や，剛体化した foundation chart の頂点線束を自明化する必要もない．
+\end{proof}
+
+\begin{remark}[この判定の範囲]
+前命題で必要なのは互いの構造対象が相手の実際の heart に属するという
+二つの条件である．その検証を，幾何 fiber で heart に属することだけで
+置き換えることはしない．また相手が未構成の一般 AS 商圏である場合には，
+compact generation と相対 AZ 生成族の存在が別途必要である．
+したがって本系は，任意の相対 AS/QP stack と $H_2$ stack の同一視ではない．
+\end{remark}
+
+\begin{theorem}[同じ相対heartの全標準構造頂点の開条件]
+\label{thm:qa-relative-all-vertex-h2-open}
+前節のflat曲線型square avatarから構成した相対heart $\mathcal C_0$ と
+その四つの基底平坦な対象 $E_i$ を取る．
+局所有限型siteの任意の底変更 $S'\to S$ について，
+\[
+ (\mathcal C_{0,S'},E_{i,S'})\in\HHstack(S')
+ \quad\Longleftrightarrow\quad S'\to S\text{ が }U_i\text{ を経由する},
+\]
+ただし
+\[
+ U_0=U_3=S,\qquad U_1=D(\det\mu_F),\qquad U_2=D(\det\mu_G)
+\]
+である．したがってこの二行列式開は，幾何fiberの適合性だけでなく，
+\emph{同じ実際の相対heart}の中の強い$\HH$構造対象条件を表す．
+必要な根・AS4被覆は局所存在条件のままであり，標識へ加えない．
+\end{theorem}
+\begin{proof}
+$U_0,U_3$ では定理~\ref{thm:qa-relative-square-e0-e3-h2}，
+$U_1,U_2$ では前系を用いる．
+いずれも任意のsite内の底変更と整合する．
+逆に相対$\HH$の条件は全幾何fiberの$\HH$所属を含むので，
+定理~\ref{thm:qa-relative-vertex-determinant-open}によって
+底変更は該当する開を経由する．
+\end{proof}
+
+
+\subsection{有限窓からの実際のcubic族}
+
+\begin{proposition}[avatarのnormal窓からの相対cubic代数族]
+\label{prop:qa-relative-cubic-from-avatar-window}
+flat な曲線型 square avatar の族に対し，
+$U_2=D(\det\mu_G)$ 上の normal 窓
+\[
+ (E_0,E_2,E_3,Z_1),\qquad
+ Z_1=\operatorname{Cone}
+   (E_1\to\mathcal H_{13}^{\vee}\otimes E_3)
+\]
+を取る．その実際の有限 End 代数を $\Gamma_F$ とする．
+すると非線型 geometric quintuple の相対族が基底変更と可換に復元され，
+その cubic $\mathbb Z$-代数族の初期四項の End は
+$\Gamma_F$ と全ての積を含めて同型になる．
+全次数の成分は有限局所自由で，標準 cubic 解消と AS 双対は
+任意基底変更後にも成立する．
+局所 affine な Noetherian 底では全 projective row と column は
+左右 Noetherian であり，任意の Noetherian 基底変更後も同様である．
+
+この cubic 族の canonical tails は，実際の相対 $H_2$ 族である．
+その指定零対象からの normal foundation は $\lambda_F$ を与えるので，
+$\Xi^{-1}\lambda_F$ によって構成した $E_0$ の相対 $H_2$ 族と
+pointed exact 同値である．
+$U_1=D(\det\mu_F)$ 上にも $F,G$ を交換した同じ主張が成立する．
+\end{proposition}
+\begin{proof}
+\emph{(1) 有限ベクトル束から実際のquintupleを作る．}
+記号を
+\[
+ \mathcal U=\mathcal H_{02},\qquad
+ \mathcal V=\mathcal H_{23},\qquad
+ \mathcal W=\mathcal H_{13}^{\vee},\qquad
+ C=\operatorname{coker}
+   (\mathcal H_{01}\to\mathcal H_{13}^{\vee}\otimes\mathcal H_{03})
+\]
+とする．三つの束 $\mathcal U,\mathcal V,\mathcal W$ は階数二，
+$C$ は階数六である．$U_2$ 上では第一の合成
+\[
+ \mathcal V\otimes\mathcal U\xrightarrow{\sim}\mathcal H_{03}
+\]
+が同型であり，最後の合成は全射なので
+\[
+ 0\to R\longrightarrow
+ \mathcal W\otimes\mathcal V\otimes\mathcal U
+ \longrightarrow C\to0
+\]
+という階数二の核を持つ局所分裂完全列を得る．
+従って包含をテンソルに読み替えると
+\[
+ w_R\in
+ \mathcal U\otimes\mathcal V\otimes\mathcal W\otimes R^\vee
+\]
+となる．これは nowhere zero で，四つの階数二の束と
+可逆なテンソル直線 $\OO\,w_R$ を与える．
+全構成はベクトル束の核・双対・tensor と実際の積から来るので，
+非平坦なものを含む任意基底変更と可換する．
+
+これは論文B \cite[\texttt{prop:cubic-foundation-open}]{QuadricModuli2026} の構成そのものである．
+各幾何 fiber は第一mutationで得た cubic AS 代数の有限窓だから，
+$w_R$ は各 fiber で geometric である．
+geometric 条件は双対射影束上の proper incidence の補集合という
+実際の開条件なので，この族全体が geometric 開へ因数分解する．
+枠を選ぶ局所化を除けば，この操作は avatar の全同型にも自然である．
+
+\emph{(2) linear fiber がないこと．}
+もしある幾何 fiber が linear cubic であれば，その標準四項を
+\[
+ (H_0,H_1,H_2,H_3)
+ =(\OO,\OO(1,0),\OO(1,1),\OO(2,1))
+\]
+と取れる．逆mutationの余評価列は通常の pencil 評価列であり，
+\[
+ M=\operatorname{coker}(\OO\to\OO(1,0)^{\oplus2})
+   =\OO(2,0).
+\]
+従って逆square窓 $(H_1,M,H_2,H_3)$ は，
+$\OO(-1,0)$ を共通tensorすると
+\[
+ (\OO,\OO(1,0),\OO(0,1),\OO(1,1))
+\]
+という classical square になる．
+補題~\ref{lem:qa-as10-all-index-mutual-inverse} の全整数での互逆性と
+定理~\ref{thm:qa-as-avatar-bijection} の同型類分類により，
+元の square avatar も classical でなければならない．
+これは入力が Cartier 曲線型であることに反する．
+有限 End から回復される一点表現も，曲線型では一次元の $D$，
+classical では二次元の $Y$ なので両型は区別される．
+従って全族は非線型 geometric 開へ因数分解する．
+幾何 fiber に linear 点がないことからこの\emph{開}への因子化を
+結論しているので，非被約基底でも問題はない．
+
+\emph{(3) 全次数とcanonical tails．}
+復元したquintupleから，三次関係を $w_R$ の縮約として定め，
+四因子を巡回して全整数の cubic $\mathbb Z$-代数を作る．
+初期四頂点では二段階合成に関係がなく，三段階合成の関係は
+正に上の $R$ である．従ってその有限 End は $\Gamma_F$ と一致する．
+この同定は単に Hom 階数の一致ではなく，全ての積を保持する．
+
+有限型の非線型 geometric 普遍族の
+論文B \cite[\texttt{lem:universal-flatness}]{QuadricModuli2026} を引き戻せば，
+全次数の局所自由性，標準 cubic 解消，AS 双対，および全基底変更との
+整合性を得る．非被約な入力基底の行列の fiber 階数一定性だけから
+平坦性を推論する必要はない．
+同論文 \cite[\texttt{thm:relative-geometric-cubic-noetherian}]{QuadricModuli2026} が
+任意 Noetherian 基底変更後の row/column Noether 性を与え，
+\cite[\texttt{prop:general-cubic-canonical-tails}]{QuadricModuli2026} が実際の module-object
+基底変更と整合する canonical tails，四項 tilting と Serre 比較を与える．
+右加群の添字反転は
+定理~\ref{thm:qa-geometric-cubic-relative-forgetting} の規約に従う．
+
+同定した初期四項を $Q_0,Q_1,Q_2,Q_3$ とし，
+forward の添字規約で書けば
+\[
+ (Q_0,Q_1,Q_2,Q_3)=(E_0,E_2,E_3,Z_1)
+\]
+である．有限 End の相対 Morita 同値は相対 Serre functor を保つので，
+canonical inverse dualizing complex とその各非負 tensor 冪は
+$\Gamma_F$ のものと一致し，この比較は積と基底変更に整合する．
+ここで得た実際の cubic 代数族に，四次 overlap の可逆束や
+頂点線束を省略した厳密な四周期を追加で課すことはしない．
+全整数添字付き代数と canonical Serre 完成の\emph{厳密な}表示同一視には，
+これらの可逆束を含む vertex-line transport の明記が別に必要である．
+
+\emph{(4) 既存の相対H2射とnormal窓の認識．}
+定理~\ref{thm:qa-geometric-cubic-relative-forgetting} を適用すれば，
+上の canonical tails 自体が $Q_0$ を構造対象とする
+実際の $\HHstack$ 族となる．
+非線型の特異・可約・非被約曲線もこの定理の範囲に入る．
+
+その標準四項が相対的にも真正な normal 窓であることを確認する．
+適合二周期を選ぶ fppf 局所では $Q_2=sQ_0$ が実際に成立する．
+真の局所 normal ruling を $X,Y$ とすると，$Q_1$ は
+各幾何 fiber で $X$ または $Y$ の一方である
+（論文A \cite[\texttt{thm:cubic-coverage}]{QuadricIntrinsic2026} の必要性証明）．
+双方は canonical compact なので $\RHom(Q_1,X)$ は
+perfect で導来基底変更と可換し，fiber は $k[0]$ または零である．
+従って matching locus は開閉で，該当側では Hom は可逆層となる．
+評価
+\[
+ Q_1\otimes\Hom(Q_1,X)\longrightarrow X
+\]
+の perfect cone は全幾何 fiber で零なので，評価は同型である．
+非matching側では $Y$ に同じ議論を適用する．
+第四項も normal 第四項との perfect Hom と評価，または相対的な
+左直交の一意性で同定される．
+これで，基底線束 twist を除いて標準四項が実際の normal foundation
+となることを確認できる．
+
+従ってこの相対 $H_2$ 族の選択normal窓の有限表示は
+実際の $\Gamma_F$，すなわち $\lambda_F$ に一致する．
+$\Xi$ の全相対 groupoid 上での全忠実性により，
+この canonical cubic tails は $\Xi^{-1}\lambda_F$ と
+pointed exact 同値である．
+これは fiberwise exact 同値を直接相対化したものではなく，
+既に構成済みの二つの相対 $H_2$ 族を，実際の finite normal End を通して
+比較している．$U_1$ は $F,G$ の交換で同じである．
+\end{proof}
+
+\begin{remark}[用途と範囲]
+この命題は二つの開上で，有限 avatar 窓から実際の全次数 cubic 族を
+回復する手続きを与える．別に与えた任意の相対 AS/QP 族とこの族が
+同型であることは，その族の全整数積と Serre transport を比較して述べる．
+また，この段階でも任意の表示 groupoid 全体の同値を主張しない．
+\end{remark}

@@ -1,7 +1,11 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.88。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.89。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 相対heart判定に用いるdg Morita
+
+Keller, *Deriving DG categories*, Ann. sci. École Norm. Sup. (4)27(1994),63–102、[著者本文](https://webusers.imj-prg.fr/~bernhard.keller/publ/ddc.pdf) の §4.3 と §8.2 を一次再確認した。Compact生成圏のdg加群表示と、small generatorsに対応する双加群tensorによる非有界導来同値が既知入力である。Cはenhanced Moritaのcolimit保存と相対H2のAZ生成を使い、両構造対象が相手heartに実際に入る条件からt-exactnessを直接証明する。このheart判定を既知Morita定理そのものの結論とはしない。非被約底の全fiber同値だけでt-exactnessを推論しない。一般補題の包括的新規性は未調査。既存キー `Keller1994` を使用。
 
 ## 相対乗法束・Fitting閉部分の一次資料
 

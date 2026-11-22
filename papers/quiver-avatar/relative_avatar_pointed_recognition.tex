@@ -1,7 +1,7 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v1.0
+% 2026-11-23 / v1.1
 
-\section{一般square族の相対normal窓と二つの構造対象}
+\section{一般square族の相対normal窓と構造対象}
 \label{sec:qa-relative-avatar-pointed-recognition}
 
 本節では有限型基底上の実際の avatar 族から，相対 $\HHstack$ の対象を作る．
@@ -298,12 +298,170 @@ $\mathbb Z$-代数族の $\qgr$ heart と同じであることは，
 確認した場合に述べる．finite End の同型や全 Serre tensor の一致だけで
 この追加の $t$-exactness を結論しない．
 
-$E_1,E_2$ の幾何的 $H_2$ 開部分では，別の cubic normal 窓から
-同様の相対 $H_2$ 族と compact marking を構成する方法がある．
-しかしその構成と $\mathcal C_0$ の\emph{同じ heart}内の
-$(\mathcal C_0,E_i)$ との一致を主張するには，
-cubic tails の相対認識または相対 AZ 比較が別に必要である．
-本節の $E_3$ はこの問題を $M=s\mathcal O$ によって直接解決した場合である．
+$E_1,E_2$ については以下で適合開上の実際のnormal窓を作る．
+そのcompact比較は系~\ref{cor:qa-relative-middle-same-heart}で，
+両側の実際のAZ生成対象を使って同じheartの完全同値へ延長する．
 任意 AS/avatar/QP 表示 stack 全体の同値や，表示を忘れる全相対 fiber の
 分類は本定理に含まれない．
 \end{remark}
+
+\subsection{二つの中間頂点の開部分上の相対実現}
+\label{subsec:qa-relative-middle-pointings}
+
+以下は前節と同じ flat な曲線型 avatar 族に限る．
+classical 型を含む，point scheme の次元が変わる族の構成ではない．
+$\Lambda,E_i,Z_1,Z_2$ を前節の実際の相対 perfect 対象とし，
+\[
+ t_\Lambda=(-)\otimes_\Lambda^{\mathbf L}
+          \RHom_{\Lambda^e}(\Lambda,\Lambda^e)[2]
+\]
+を canonical な相対 inverse Serre 移動とする．
+これは $\Perf\Lambda$ の自己同値であり，任意基底変更と可換する．
+この段階では $t_\Lambda$ による任意の別 heart の保存を仮定しない．
+
+\[
+ \begin{split}
+ \mu_G &:p_*F\otimes p_*(GP^{-1})\longrightarrow p_*(FGP^{-1}),\\
+ \mu_F &:p_*G\otimes p_*(FP^{-1})\longrightarrow p_*(FGP^{-1})
+ \end{split}
+\]
+を階数四の束の間の乗法とし，実際の determinant-unit 開を
+\[
+ U_2=D(\det\mu_G),\qquad U_1=D(\det\mu_F)
+\]
+と置く．両開の形成は任意基底変更と可換する．
+特に非被約基底でも，単なる幾何点集合に名前を付けたものではない．
+本節は，幾何 fiber が全て階数三であることから
+determinant のスキームとしての零 locus へ因数分解するといった推論を用いない．
+
+相対 perfect 圏の比較は前節と同じ fppf 局所 canonical compact 圏の系の
+意味で用い，大域 $D(\operatorname{Ind}\mathcal C_i)^c$ とその descent の
+一致を追加で主張しない．
+
+\begin{lemma}[有限directed模型における相対tiltingの検出]
+\label{lem:qa-relative-avatar-perfect-tilting-detection}
+$A$ を $S$ 上有限局所自由で相対 smooth な代数とし，
+$T_0,\ldots,T_3\in\Perf(A)$ とする．各幾何 fiber において
+この四項が full strong exceptional foundation であり，
+forward Hom の階数が固定されていると仮定する．
+さらにこの階数表が directed で対角階数一であるとする．
+すると $\Gamma=\operatorname{End}(\bigoplus_iT_i)$ は
+有限局所自由な通常の directed 代数で，
+\[
+ \Perf\Gamma\xrightarrow{\sim}\Perf A
+\]
+は全四対象を保つ相対 Morita 同値である．
+その構成は任意基底変更と可換する．
+\end{lemma}
+\begin{proof}
+相対 smooth proper 性から全ての $\RHom_A(T_i,T_j)$ は
+$S$ 上 perfect で導来基底変更と可換する．
+幾何 fiber の次数零集中から，これらは指定階数の vector bundle
+または零である．対角は単位写像
+$\OO_S\to\RHom_A(T_i,T_i)$ によって $\OO_S$ と同定される．
+従って通常 End $\Gamma$ は有限局所自由かつ directed であり，
+有限 normalized bar 解消によって相対 smooth である．
+
+$T=\bigoplus_iT_i$ とし，Morita 随伴を
+\[
+ \mathsf F=(-)\otimes_\Gamma^{\mathbf L}T,
+ \qquad\mathsf G=\RHom_A(T,-)
+\]
+とする．$\RHom_A(T,T)=\Gamma[0]$ なので $\mathsf F$ は完全忠実である．
+また $\mathsf G(A)$ は基底上 perfect であり，$\Gamma$ の相対 smooth 性により
+$\Gamma$ 上も perfect である．後者は $\Gamma$ の有限対角解消を
+$\mathsf G(A)$ と tensor して確認できる．
+従って
+\[
+ K=\operatorname{Cone}(\mathsf F\mathsf G(A)\to A)
+\]
+は $A$ 上，したがって基底上 perfect である．
+各幾何 fiber では $T$ が full tilting なので $K$ の fiber は零である．
+perfect 複体の fiber 判定により $K=0$ である．
+同じ議論を任意の $M\in\Perf(A)$ に対する counit の cone に適用すれば，
+その cone も零となるので $\mathsf F$ は本質的全射でもある．
+これにより，非 affine な $S$ 上で $\OO_S$ 単体による
+通常の thick 生成を仮定する必要もない．
+全ての双対・tensor・counit は有限 perfect データから作られるので
+任意基底変更と可換する．
+\end{proof}
+
+\begin{theorem}[中間頂点の開上の実際の相対$H_2$族]
+\label{thm:qa-relative-avatar-middle-h2-realizations}
+$U_2$ 上で
+\[
+ \mathcal N_2=(E_2,E_3,Z_1,t_\Lambda E_0),
+\]
+$U_1$ 上で
+\[
+ \mathcal N_1=(E_1,E_3,Z_2,t_\Lambda E_0)
+\]
+と置く．これらはそれぞれ相対 full strong exceptional な
+階数二十四の normal foundation であり，実際の射
+\[
+ \lambda_i:U_i\longrightarrow\mathfrak F_{\HH},\qquad
+ \rho_i:U_i\xrightarrow{\lambda_i}\mathfrak F_{\HH}
+      \xrightarrow{\Xi^{-1}}\mathfrak H_2^{\rm rul}
+      \longrightarrow\HHstack\quad(i=1,2)
+\]
+を与える．その出力を $(\mathcal C_i,\mathcal O_i)$ と書くと，
+pointed compact Morita 同値
+\[
+ (\Perf\Lambda|_{U_i},E_i)
+       \simeq(\mathcal C_i^{\rm perf},\mathcal O_i)
+\]
+が存在する．これは全ての相対 Serre 構造，非負の全 tensor 次数の
+orbit 複体と積，および任意基底変更と整合する．
+
+各幾何 fiber では，この実現は元の square AS 商圏の標準頂点
+$E_i$ を構造対象とする pointed exact 同型類を与える．
+このcompact比較の相対的な$t$-exactnessは，
+系~\ref{cor:qa-relative-middle-same-heart}で証明する．
+\end{theorem}
+\begin{proof}
+$U_2$ の各幾何 fiber では第一mutationが cubic 型である．
+その全整数 helix を $(H_j)$ とすれば，前節の識別と
+canonical Serre 周期により
+\[
+ (H_1,H_2,H_3,H_4,H_5)
+ =(E_0,E_2,E_3,Z_1,tE_0).
+\]
+従って $\mathcal N_2$ の fiber は cubic helix の四項
+$(H_2,H_3,H_4,H_5)$ である．
+論文Aの全 cubic 逆構成と \cite[\texttt{thm:cubic-coverage}]{QuadricIntrinsic2026} の証明は，
+任意の添字 shift に対し，これを指定零対象 $H_2=E_2$ の
+真正な normal foundation に同定する．
+特に全ての fiber で full strong，rank 二十四である．
+$\mathcal N_2$ は $S$ 上の有限 perfect cone と相対 Serre functor
+から構成されているので，前補題を適用できる．
+これにより全 Hom と積が vector bundle として定まり，
+全基底上の relative tilting を得る．
+
+normal foundation の中間合成
+\[
+ \Hom(T_1,T_2)\otimes\Hom(T_2,T_3)
+   \longrightarrow\Hom(T_1,T_3)
+\]
+は各幾何 fiber で同型なので，基底上でも同型である．
+従ってその End をBの二写像表示に置ける．
+$G_{\rm old}$ の全射性と $\alpha_{F_{\rm old}}$ の部分束条件は，
+真正な normal foundation の各幾何 fiber で成立する．
+いずれも有限局所自由層の間の最大階数の開条件なので，
+それらは基底全体で成立する．よって実際の
+$U_2\to\mathfrak F_0$ を得る．
+その全幾何 fiber が $\mathfrak F_{\HH}$ に入るため，
+既存の開埋込により一意に $\mathfrak F_{\HH}$ を通る．
+$\Xi^{-1}$ を適用すると相対 $H_2$ の全公理を持つ
+実際の族 $\mathcal C_2$ を得る．
+
+$U_1$ では $F,G$ を交換した第二mutationを用いれば，全く同じ証明で
+$\mathcal N_1$ と $\mathcal C_1$ を得る．
+compact Morita 同値の降下は前節と同じく，頂点スカラーの内部共役を
+指定零対象で一に正規化することにより行う．
+Serre functor と全ての非負 tensor 冪の移送には
+命題~\ref{prop:qa-pointed-morita-serre-transport} を用いる．
+全構成は arbitrary pullback で同じ cone，Serre 複体，determinant-unit
+開および foundation 射を与える．
+相対 $\HHstack$ の公理については，前節と同じ局所有限型の site の
+範囲を守る．
+\end{proof}

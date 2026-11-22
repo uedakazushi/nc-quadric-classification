@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.14
+% 日本語 LuaLaTeX。2026-11-23 / v4.15
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.14（相対行列式開と一般square族の構造対象）}
+\date{2026年11月23日\quad v4.15（全標準頂点の相対heart認識とcubic族の回復）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -80,7 +80,8 @@ $GP\not\simeq F$，$G\not\simeq FP$であり，端の二頂点は常に属する
 最小十本矢型では奇数頂点だけが属する．
 この判定を二つの乗法行列式の可逆開として相対化し，任意底変更を証明する．
 一般square曲線族では実際のnormal窓を構成し，
-零番・三番頂点の相対$\HH$族とpointed compact Morita同値を得る．
+全標準頂点の適合開上で，同じ相対heartの強い$\HH$構造対象条件を認識する．
+両側のAZ生成対象によってcompact Morita比較の$t$-exactnessを証明する．
 Noncubic中央二重平方環の全point schemeは
 可換点曲線と二つの孤立点の非交和であり，shiftは孤立二点を交換する．
 noncubic由来のsquare・rotated・最小十本矢型の全四位相も具体的に同定する。
@@ -431,7 +432,9 @@ blowup，形式関数定理，最小正則模型の一意性は既知の一般�
 さらに定理~\ref{thm:qa-relative-square-e0-e3-h2} は，実際のconeによる
 rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点の
 相対$\HH$族とpointed compact Morita同値を構成する．
-この構成と，別に定義された全相対AS $\qgr$ heartとのexact比較は区別する．
+さらに定理~\ref{thm:qa-relative-all-vertex-h2-open} は，中間二頂点も同じ相対heart内で認識し，
+命題~\ref{prop:qa-relative-cubic-from-avatar-window} は二つの適合開で実際の全次数cubic族を回復する．
+別に定義された全相対square AS $\qgr$ heartとの比較は，なお個別に確認する．
 
 \input{quiver-avatar/qp_presentations}
 \input{quiver-avatar/foundation_charts}
@@ -450,6 +453,7 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/general_vertex_az}
 \input{quiver-avatar/relative_vertex_determinants}
 \input{quiver-avatar/relative_avatar_pointed_recognition}
+\input{quiver-avatar/relative_avatar_heart_comparison}
 \input{quiver-avatar/spectral_atkin_lehner}
 \input{quiver-avatar/spectral_relative_correspondence}
 \input{quiver-avatar/half_period_ruling}
@@ -479,7 +483,8 @@ rotated零番頂点と最小十本矢型零番頂点を反Serre生成障害で�
 全分類AS型の標準頂点へ体上判定を拡張する．
 第~\ref{sec:qa-relative-vertex-determinants}節はこの判定を任意底変更に適合する二行列式開へ移し，
 第~\ref{sec:qa-relative-avatar-pointed-recognition}節はflat曲線型square族の零番・三番頂点の実際の相対$\HH$族を構成する．
-残る二頂点の同じheartでの認識，別定義の相対AS qgr heartとの比較と，全相対AS/QP表示の比較は残る。
+第~\ref{sec:qa-relative-avatar-heart-comparison}節は中間二頂点も同じheartで認識し，
+適合開上の実際のcubic族を復元する．別定義の相対square AS qgr heartと，全相対AS/QP表示の比較は残る。
 系~\ref{cor:qa-spectral-involution-no-h2-extension}により、
 spectral対応を全noncubic境界からH2へ延長する目標は成立しない。
 境界を含む比較にはH2の外側に標的を広げ、
