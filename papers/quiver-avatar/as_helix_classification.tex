@@ -308,8 +308,26 @@ $H^1$消滅に帰着する。
 最後のphaseでは
 命題~\ref{prop:qa-core-directed-foundations}の
 四行四列評価の大域切断がちょうど全射を与える。
-他の頂点のkernel次元はHom次元表と一致し、
-余分な高次syzygyはない。
+中間の完全性もEuler特性だけには依存しない。
+canonical複体を一時的に
+$0\to L_i\to M_1\to M_2\to L_{i+4}\to0$と書く。
+共変Yonedaの頂点$b$における
+$\Hom(M_1,L_b)\to\Hom(L_i,L_b)$のkernelの次元を
+計算すると
+\[
+\begin{array}{c|c|ccc}
+i\bmod4&\text{相対次数}&b=1&b=2&b=3\\ \hline
+0&(0,0,2,6)&0&0&2\\
+1&(0,2,6,8)&0&2&4\\
+2&(0,4,6,6)&0&2&2\\
+3&(0,2,2,4)&0&0&4
+\end{array}
+\]
+となる。この数は$\dim\Hom(M_2,L_b)$と等しい。
+同じ次数の異なる二項間に残り得るHomは
+avatarの除外条件により零であるから、
+中間のkernelは実際に$M_2$のYoneda像と一致する。
+従って余分な高次syzygyはない。
 前向きExt消滅から最初の写像も単射となる。
 三回のmutationは頂点1,2,3を順次消す
 Yoneda truncationなので、
