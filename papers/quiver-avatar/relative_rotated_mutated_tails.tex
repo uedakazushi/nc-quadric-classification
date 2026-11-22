@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v1.3。全finite-square Isomに対するdual normalの2自然性とQP kernelの不変性。
+% 2026-11-23 / v1.4。全finite-square Isomから相対heartへのt-exactな2自然降下。
 \section{回転・mutationと相対heart}
 \label{sec:qa-relative-rotated-mutated}
 
@@ -601,6 +601,95 @@ canonicalな単位2-isomorphismが作用する．
 対応する例外対象の基底線束捩れを
 系~\ref{cor:qa-dual-normal-vertex-line-descent}
 で明示しており，その作用も合成に整合する．
+\end{proof}
+
+
+\begin{corollary}[有限squareの全Isomから同じ相対heartへの$2$自然降下]
+\label{cor:qa-all-square-isom-pointed-heart-descent}
+内在的$H_2$の実現可能開で，四頂点を保つ有限square
+foundationの相対同型$\varphi$と，それが誘導する
+相対perfect Morita同値$\Phi_\varphi^c$を取る．
+零番構造対象を$E_0=\mathcal O$とする局所標識のもとで，
+$\Phi_\varphi^c(E_0)\simeq E_0'$であり，
+逆同値も$E_0'$を$E_0$へ送る．
+一般の頂点線束による標識変更
+$E_i\mapsto E_i\otimes M_i$を許す場合には，
+この等式を$\Phi_\varphi^c(E_0)\simeq E_0'\otimes M_0$
+と読み，逆側にも$M_0^{-1}$を保持する．
+
+$\Phi_\varphi^c$のcolimit保存Ind延長は相対標準
+$t$構造に関して$t$-exactであり，
+実際のnoetherian相対heartの完全同値を誘導する．
+零番の線束を局所自明化してpointingの同型を指定すれば，
+これは構造対象とcanonicalな反Serre作用を保つ
+pointed exact同値となる．
+自明化を選ばない場合に得られるのは，
+上記$M_0$の重みを保持した同じheartの比較である．
+
+この同値は有限squareの全Isomの合成と
+任意の本稿のscheme基底変更に対して$2$自然である．
+とくに二mass十二矢QPからの引戻しでは，
+massゲージと残余長関係lift shearは有限foundationへ
+恒等を誘導するため，heart上でも単位$2$-同型として作用する．
+頂点スカラーは対応する線束重みを持ち，
+二段剛体化後のruling交換$S_2$は
+同じ相対heartのcoherentな同値として作用する．
+未剛体化のraw QPでの単一right-equivalence，
+$H_2$外の全QP同型，任意の導来非平坦引戻しの
+$t$-exact性は主張しない．
+\end{corollary}
+\begin{proof}
+各affine fppf chartでの相対$H_2$のpointed認識
+（系~\ref{cor:qa-h2-square-foundation-open}）により，
+$\Phi_\varphi^c$は実際のfull strong
+foundationと零番構造対象の同型に由来する．
+有限perfect Homと積を保つので，
+反Serre作用の相対Morita自然性から
+\[
+ \Phi_\varphi^c t\simeq t'\Phi_\varphi^c
+\]
+を得る．同型の合成・基底変更の$2$自然性は
+命題~\ref{prop:qa-dual-normal-all-square-isom-naturality}の
+評価・coevaluation・Serre比較と同じ構成である．
+
+論文Bの相対反Serre再構成を用いると，
+$\{t^{-n}E_0\}_{n\ge0}$と
+$\{(t')^{-n}E_0'\}_{n\ge0}$は
+それぞれのnoetherian heartのAZ生成族である．
+$\Phi_\varphi^c$は前者を
+$(t')^{-n}E_0'$（線束変更があれば
+$(t')^{-n}E_0'\otimes M_0$）へ送り，
+逆同値も後者を対応するheart対象へ送る．
+基底可逆層のtensorはheart上完全である．
+従って補題~
+\ref{lem:qa-generators-detect-right-texactness}を
+両向きに適用できる．これは命題~
+\ref{prop:qa-h2-mutual-markings-heart-test}の
+相互標識条件を全Isomについて具体的に検証した
+場合である．二つのInd延長はともに右$t$-exactであり，
+互いに逆だから非正部分を同一視する．
+$t$構造の直交性により非負部分も同一視し，
+両関手は$t$-exactとなる．
+noetherian対象を保つので，
+相対coherent heartにも完全同値を誘導する．
+
+有限perfect Morita同値の任意の自然変換は，
+compact生成性によりInd延長に一意に移る．
+$t$-exactな関手の間の自然変換は
+零次cohomologyへの制限でheart上の自然変換となる．
+合成に関する結合・単位の$2$-同型は
+この操作の函手性から保存される．
+頂点線束重みのcocycleは系~
+\ref{cor:qa-dual-normal-vertex-line-descent}により閉じる．
+massゲージとlift shearの有限foundation像が恒等であること，
+および二段剛体化後の$S_2$のcoherenceは
+それぞれ命題~
+\ref{prop:qa-dual-normal-all-square-isom-naturality}と
+命題~\ref{prop:qa-q12-strict-square-s2-coherence}を用いる．
+この構成は導来Morita比較とそのInd延長の
+任意基底変更との整合を使い，
+非平坦な引戻しが一般のheart対象上
+導来$t$-exactだとは推論しない．
 \end{proof}
 
 \begin{proposition}[二つの反対窓は同じ双対heartに入る]
