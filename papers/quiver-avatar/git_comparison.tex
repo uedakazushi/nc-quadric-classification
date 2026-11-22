@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.1（二つの特殊慣性のreflection法表現と粗二重分岐）
+% 2026-11-22 / v3.2（粗忘却のramificationをOU不変式D±で表示）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -942,6 +942,63 @@ geometric stable quintupleの閉軌道を持ち、
 を与え、$Z=z^2$の分岐指数は二である。
 局所粗空間の分岐とスタック射のétale性は
 異なる主張であり、矛盾しない。
+\end{proof}
+
+\begin{corollary}[OU GIT不変量による粗忘却の分岐方程式]
+\label{cor:qa-ou-coarse-branch-invariant-equations}
+系~\ref{cor:qa-ou-quintuple-j-invariants}の
+OU不変量$f_2,f_4,f_6,g_4$を使い、
+重み六の同次式
+\[
+ D_\pm=
+ f_2^3-3f_2f_4+2f_6\ \pm 6f_2g_4
+ \tag{OU-Bpm}\label{eq:qa-ou-coarse-branch-invariants}
+\]
+を定める。
+正則半単純な滑らかな楕円一般開
+（$g_4\ne0$、$f_2\ne0$、$j\ne0,1728$、
+四つの$x_i^2$相異）では、
+剛体化quintupleから内在的$\HHstack$への
+一般二重忘却について、局所粗モジュライ上の
+\emph{単純分岐のramification座}は
+\[
+ D_+D_-=0
+ \tag{OU-Bdiv}\label{eq:qa-ou-coarse-ramification-divisor}
+\]
+で与えられる（源の粗空間上の式）。
+$D_+=0$は$\delta\in E[2]$、
+$D_-=0$は$\eta-\delta\in E[2]$に対応する。
+二つの成分は$f_2g_4\ne0$の開で交わらず、
+各成分の一般点で粗射の分岐指数は二である。
+
+この式は\emph{指定した稠密開上}のもので、
+$D_+D_-$を全GIT compactificationやnoncubic境界の
+分岐判別式と同一視するものではない。
+\end{corollary}
+\begin{proof}
+系~\ref{cor:qa-ou-quintuple-j-invariants}の
+Newton恒等式は
+\[
+ e_1=f_2,\qquad
+ 6e_3=f_2^3-3f_2f_4+2f_6,\qquad c=g_4
+\]
+を与える。
+よって$D_\pm=6(e_3\pm e_1c)$であり、
+命題~\ref{prop:qa-ou-spectral-torsion-divisors}から
+二つの二捩れ座の同定が従う。
+命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}
+により、指定した開で非自明なruling交換
+自己同値が存在するのはこの二座に限る。
+定理~\ref{thm:qa-ou-special-reflection-coarse-branch}
+では、その各点での局所粗射が
+$Z=z^2$と同型であることを証明した。
+従ってこの二座は源側の粗射の分岐座であり、
+それ以外の点では一般有限étale二重射の
+粗射も非分岐である。
+$f_2g_4\ne0$から$D_+$と$D_-$の零点は交わらない。
+相対$E[2]$が有限étaleであるため、
+二捩れsectionの指定条件は局所的には滑らかな
+Cartier因子であり、一般点で重複しない。
 \end{proof}
 
 \begin{proposition}[ruling交換特別点のstack的2-fiberは二点のまま]
