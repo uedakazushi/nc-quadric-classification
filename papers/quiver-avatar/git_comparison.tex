@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.0（OU四重射のspectral Kummer表示と分岐点torsorとの区別）
+% 2026-11-22 / v1.1（対角potential点曲線を二quadric完全交叉で同定）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -386,7 +386,7 @@ $K_4$ を $z_1$ 因子、$V$ を $z_2$ 因子へ
 \label{rem:qa-ou-ramification-2torsion-local-system}
 対角値 $x_1,\ldots,x_4$ を順序付けた開 $X$ 上では、
 四点分岐を持つ種数一曲線
-$E_{\mathrm{sp}}:\ y^2=\prod_{i=1}^4(t-x_i)$
+$E_{\mathrm{raw}}:\ y^2=\prod_{i=1}^4(t-x_i)$
 を考えられる（各 $x_i$ が相異なる開に制限する）。
 この曲線の $2$-torsion は
 四分岐点の偶数個の部分集合を全体集合との補集合で
@@ -394,7 +394,7 @@ $E_{\mathrm{sp}}:\ y^2=\prod_{i=1}^4(t-x_i)$
 $S_4^{\mathrm{coord}}$ が三つの非零点を置換する作用も
 式~\eqref{eq:qa-ou-projective-effective-group} と一致する。
 従ってpotential側で座標の符号変更を固定した後の
-OU符号局所系には、この分岐曲線の$E_{\mathrm{sp}}[2]$という模型がある。
+OU符号局所系には、この未降下のraw四分岐曲線の$E_{\mathrm{raw}}[2]$という抽象模型がある。
 しかし偶数符号変更は一般に分岐点集合
 $\{x_1,\ldots,x_4\}\subset\PP^1$ 自体を変える。
 従って、この\emph{曲線}を何の比較もなく
@@ -550,6 +550,107 @@ $-P_+$ と $\mathcal L_2\mathcal L_0^{-1}$
 Picard平方根torsorとの同一性は結論しない。
 まず二つの楕円族の$j$-不変量と指定点の対応を、
 実際のOU $\S4$--$\S5$ の同変表示上で検証する必要がある。
+\end{remark}
+
+
+\begin{proposition}[potential quintupleの点曲線とquadric pencil]
+\label{prop:qa-ou-pointcurve-quadric-pencil}
+OUのpotentialから作るgeometric quintuple
+$(V_0,V_1,V_0,V_1,\Bbbk\Phi)$ の、滑らかな非線型
+点曲線を$C$とする。ここで$V_i$は二次元、
+$U=V_0^\vee\otimes V_1^\vee$とし、
+$U$上のdecomposability quadricを$q=0$と書く。
+$V_i$の交代形式により$U$とその双対を同一視したとき、
+$\Phi$の縮約を$q$-自己随伴な線型変換$X:U\to U$で表す。
+このとき
+\[
+ C\simeq\{[u]\in\PP(U)\mid q(u)=q(Xu)=0\}.
+ \tag{OU-CI}\label{eq:qa-ou-pointcurve-two-quadrics}
+\]
+特に$X$を$q$-直交対角化して固有値を
+$x_1,\ldots,x_4$とすれば
+\[
+ C=\left\{\sum_{i=1}^4u_i^2=0,\quad
+               \sum_{i=1}^4x_i^2u_i^2=0\right\}
+ \subset\PP^3.
+ \tag{OU-CI-diag}\label{eq:qa-ou-pointcurve-diagonal}
+\]
+従って$C$を切り出すquadric pencil
+$tq-q\circ X$ の判別式は
+$\prod_i(t-x_i^2)$であり、
+定理~\ref{thm:qa-ou-spectral-kummer} の
+$E_{\mathrm{sp}}$ はそのrulingの二重被覆である。
+
+滑らかな$C$上では、このrulingの二重被覆は
+$\Pic^2(C)$に同型である。$t=\infty$の二つの点は
+$\mathcal L_0,\mathcal L_1$、$t=0$の二つの点は
+$\mathcal L_2$ と
+$H_C\mathcal L_2^{-1}$ に対応する。
+ここで$H_C=\mathcal O_C(1)\simeq\mathcal L_0\mathcal L_1$。
+特に、$\infty_+$を$\mathcal L_0$に送る規格化の下で
+$\operatorname{Jac}(C)$と$E_{\mathrm{sp}}$は
+\emph{対角表示上の楕円曲線として}同型であり、
+OU符号局所系と$\operatorname{Jac}(C)[2]$の比較が得られる。
+\end{proposition}
+\begin{proof}
+Van den Berghの点曲線構成
+\cite[\S2, (2.19), (2.21)--(2.28)]{OU2014} では、
+$u_0\otimes u_1\in U$を最初の二頂点で評価すると、
+残りの二頂点のテンソル$\Phi(u_0,u_1,-,-)$が現れる。
+これがdecomposableであることが
+三頂点点曲線の最初の二頂点への射の像の条件である。
+最初のテンソル$u=u_0\otimes u_1$もdecomposableなので
+$q(u)=0$であり、縮約テンソルがdecomposableである条件は
+$q(Xu)=0$である。geometric条件の下では
+次の二頂点は一意に回復されるので、射は同型を与える。
+$X$は$q$-自己随伴なので、対角化による表示が従う。
+判別式は$\det(tI-X^2)=\prod_i(t-x_i^2)$である。
+
+$\Pic^2(C)$ の点$M$は完全線形系$|M|$によって
+$C$上の次数二のdivisorの束を与える。
+各divisorの二点を結ぶ直線の掃くquadricは
+$C$を含み、必ず上記のpencilに属する。
+その二次曲面のrulingを$M$に対応させる。
+逆にpencilのsmoothなquadricのrulingを$C$へ制限すれば
+次数二の線束を得る。singularなrank三のquadricでは
+一つのrulingがあり、これは二重被覆の分岐点となる。
+以上は族として代数的で、両側の構成は逆写像になる。
+同じsmooth quadricの二つのrulingの制限は積が
+$H_C$なので、この二重被覆の交換作用は
+$M\mapsto H_CM^{-1}$である。
+
+$q=0$は最初の二頂点のSegre quadricであり、
+そのrulingの制限は$\mathcal L_0,\mathcal L_1$である。
+$q\circ X=0$は$X(u)$がdecomposableという条件を
+与えるquadricなので、$X$の像の第一因子から
+$\mathcal L_2$が得られ、もう一つは
+$H_C\mathcal L_2^{-1}$である。
+判別式の二重被覆は前定理の$E_{\mathrm{sp}}$と一致する。
+$\infty_+\mapsto\mathcal L_0$を指定すると、
+$\Pic^2(C)$の原点を$\mathcal L_0$に置いた
+Jacobianとの同型が定まる。
+\end{proof}
+
+\begin{remark}[残る符号と降下の問題]
+\label{rem:qa-ou-ruling-orientation}
+命題~\ref{prop:qa-ou-pointcurve-quadric-pencil} は、
+spectral曲線の\emph{Jacobianとしての同定}を
+potentialの対角表示上で与える。
+しかし$t=0$の$\{P_+,P_-\}$のうち
+$\mathcal L_2$に対応するsheetを、
+固定した$\infty_+$・OUの左右規約の下で
+$P_+$と同定する向きの計算は、ここでは行っていない。
+さらに、原点、ruling、線束の同型を
+quintuple側の任意の基底変更と
+全$G$-作用に関して降下させる必要がある。
+従って
+$[2]^{-1}(P_+)$ と
+$[-2]^{-1}(\mathcal L_2\mathcal L_0^{-1})$
+の相対的な同型はこの命題だけでは結論しない。
+次の具体的な確認は、直交群の向きを保つ局所座標で
+$t=\infty$の第一rulingを固定し、
+$t=0$の$\det X$の符号が
+$\mathcal L_2$に当たることを検算することである。
 \end{remark}
 
 \begin{corollary}[OU classとPicard Kummer classの正確な比較条件]
