@@ -145,9 +145,21 @@ AS--Gorenstein条件を満たす。
 \end{lemma}
 \begin{proof}
 \cite[Theorem 6.2]{KellerYang2011}を用いる。
-必要なのはGinzburgの次数零集中、
-mutation頂点にloopがないこと、および
-局所的な2-cycle除外条件である。
+適用する原論文の条件を明記する。
+Keller--Yangの(c1)はquiver全体にloopがないこと、
+(c2)はmutation頂点を通る有向2-cycleがないこと、
+(c3)はpotentialを巡回同値で取り直して
+mutation頂点から始まるcyclic pathが存在しないこと、
+さらに入力する完備Ginzburgが次数零に集中することである。
+本節の全relation QPにはloopがなく、
+指定したsquareの中間頂点および
+独立最小10本矢型の逆mutation頂点は
+2-cycleを通らない。
+(c3)については、loopのない有向閉路には
+mutation頂点以外の頂点が含まれるので、
+各閉路の表示の始点をその頂点へ巡回移動すればよい。
+したがって両場合で(c1)--(c3)を満たし、
+次数零集中は前補題が供給する。
 squareの指定中間頂点にloop・2-cycleはなく、
 最小十本矢型の2-cycleは別の二頂点間だけにあり、
 逆mutation頂点を通らない。
@@ -462,6 +474,62 @@ $D_F=\{P\simeq GF^{-1}\}$と
 AS正則であるという結論ではない。
 \end{proof}
 
+
+\begin{proposition}[Mutation先の左右Noether性と商圏]
+\label{prop:qa-as10-noetherian-qgr}
+$A\in\mathrm{AS}_{\rm sq}$ とし、
+$A'=m(A)\in\mathrm{AS}_{c}\amalg\mathrm{AS}_{10}^{\mathrm{min}}$
+を指定一頂点mutationで得た代数とする。
+両代数は左右Noetherianであり、
+\[
+   \Qgr A'\simeq\Qgr A,\qquad
+   \qgr A'\simeq\qgr A
+\]
+という完全なAbel圏同値を持つ。
+この同値はsquare側の$E_0$とmutation側の$H_1$
+（$H_1=E_0$）を共通の反標準ample軌道として実現する。
+\emph{ただし}mutation側で構造対象とされる
+$H_0=K_0$を$E_0$と同定するものではなく、
+構造対象を保つpointed同値とは区別する。
+\end{proposition}
+\begin{proof}
+squareの左右Noether性は
+命題~\ref{prop:qa-as-avatar-noetherian}で得ている。
+その四周期反Serre移動$s=S^{-1}[2]$の下で、
+$(E_0,s)$はampleである。
+実際、正規正則四次元族の商に現れる
+$D$上の$\OO_D(2h)$はampleであり、
+その正方向のSerre消滅と、四つのcanonical
+kernel--cokernel列による他の標準頂点の生成を
+合わせると、Artin--Zhangの生成条件
+(AZ1)と遠方Ext消滅条件(AZ2)が従う。
+
+$T_H=H_0\oplus H_1\oplus H_2\oplus H_3$とおく。
+$H_1=E_0$なので$(T_H,s)$は(AZ1)を満たす。
+$H_0=K_0$は評価列
+\[
+ 0\to K_q\to V_q\otimes E_{4q}
+      \longrightarrow E_{4q+1}\to0
+\]
+のkernelである。
+任意の固定した連接対象$M$に対して
+$\Ext^{>0}(E_{4q},M)$と
+$\Ext^{>0}(E_{4q+1},M)$は十分遠方で消え、
+この列に$\Hom(-,M)$を適用すると
+$\Ext^{>0}(K_q,M)=0$も従う。
+よって$(T_H,s)$は(AZ2)も満たす。
+各$H_i$は既知のNoetherianな連接対象であり、
+有限次元Homの条件も満たす。
+Artin--Zhangのample pair再構成により、
+$(T_H,s)$のsection algebraは右Noetherianで、
+その$\Qgr$は$\Qgr A$に同値となる。
+補題~\ref{lem:qa-as10-all-index-mutual-inverse}の
+全整数Hom同定によってsection algebraは
+$A'$の四周期まとめである。
+反対向きのAS最小分解および反対quiverに
+同じ構成を適用すれば左Noether性が従う。
+Noetherian対象に制限して$\qgr$の同値も得る。
+\end{proof}
 
 \subsection{十二本矢relation QPとgroupoidの正しい水準}
 \label{subsec:qa-as12-qp-status}
