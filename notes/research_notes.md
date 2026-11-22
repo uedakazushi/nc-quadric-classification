@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.40（A v1.69・20節、B v0.41・31節、C v4.30）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.41（A v1.69・20節、B v0.41・31節、C v4.30）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
@@ -14,7 +14,9 @@
 
 **二段剛体化とruling交換。** raw QPのmass kernel `U_λ×U_μ`をIsom sheafから剛体化し、さらに頂点scalar `Gm³`を剛体化すると、既証明のfinite square/normal相対groupoidにより `H₂^rul` を得る。coherentな二ruling交換は有限squareの中間頂点交換と相対perfect mutationで実現し、S2商で `H₂` を得る。二cubic正規化 `T,T⁻¹`は一般にはright-equivalenceでない。つまりrulingの貼合せはraw QPの一つの座標変換でなく、選択窓のmutationと同じheartへのAZ認識で行う。
 
-**検算と最優先の監査。** 数値Eulerの16頂点対で総階数(68,52,8)→24、normal Serreの全次数式 `64n²+64n+24` はSymPyの整数・記号計算で独立検算した。[再現コード](../computations/verify_q12_diagonal_euler.py) をGitHubに記録したが、当該GitHubファイルの再取得・同一byte実行は未実施。数値は対角複体の完全性やfppf同値の形式証明ではない。次はKeller ordinary ideal・相対対角のbase-change・normal opposite側の左Noether・massゲージとS2のcoherent actionを独立監査し、その後C4の一次文献比較・LuaLaTeX全稿組版・PDF表示を実行する。H2外の一般AS/avatar表示の分類の追加可能性は独立に評価する。
+**相対対角解消の独立した特定例の監査。** 両massが零の非可換24次元有限directed代数を有理数上で構成した。二つの二段積はrank3で、kernel線は非分解可能なq=q′=(1,0,0,1)。三段道12次元から短関係4本と残余長関係2本を取りrank6商とし、四頂点全積を直接計算した。この代数の双加群対角複体の全行列は `C_2=Q^8 -> C_1=Q^52 -> C_0=Q^68 -> Λ=Q^24` となり、実際に `d_1 d_2=0`、`rank(d_1)=44`、`rank(d_2)=8` をSymPyの有理数線形代数で確認した。従ってこの**指定した一点の例**では短対角複体が全ての項で完全となる（augmented mapの核rankは68−24=44）。再現は [verify_q12_bimodule_diagonal.py](../computations/verify_q12_bimodule_diagonal.py)。GitHubへソースとして保存したが、同名のGitHub blob自体を取得したコードを再実行したのではなく、数学的に同値なローカル構成を実行してPASSした。この一点の完全性を非被約基底の全相対定理へ外挿しない。**次の監査は全関係のordinary ideal性、一般基底での完全性、左Noetherとruling/S₂下降。**
+
+**数値検算。** 数値Eulerの16頂点対で総階数(68,52,8)→24、normal Serreの全次数式 `64n²+64n+24` はSymPyの整数・記号計算で独立検算した。[再現コード](../computations/verify_q12_diagonal_euler.py) をGitHubに記録したが、当該GitHubファイルの再取得・同一byte実行は未実施。数値は対角複体の完全性やfppf同値の形式証明ではない。次はKeller ordinary ideal・相対対角のbase-change・normal opposite側の左Noether・massゲージとS2のcoherent actionを独立監査し、その後C4の一次文献比較・LuaLaTeX全稿組版・PDF表示を実行する。H2外の一般AS/avatar表示の分類の追加可能性は独立に評価する。
 
 ## 全H2のGram pencil不変式環と明示good moduli
 
