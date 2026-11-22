@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.34。関係liftの三角right-equivalenceとdg Jacobian比較。
+% 2026-11-23 / v4.35。massゲージと関係lift shearの半直積および標的の輸送。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1013,6 +1013,97 @@ massの可逆性や基底の被約性は不要である．
 $\sum_i t_ir_i$を固定し，
 上の加法的shearと自然に可換な半直積作用を作る．
 従って重なりでのcocycleも厳密に成立する．
+\end{proof}
+
+\begin{proposition}[massゲージと長関係liftのshearの半直積関係]
+\label{prop:qa-q12-mass-shear-compatibility}
+補題~\ref{lem:qa-q12-long-relation-lift-shear}の局所枠を固定し，
+\[
+ L_v=\sum_i t_iw_i,\qquad L_y=\sum_i u_it_i,\qquad
+ a=1+\lambda t,\quad b=1+\mu s
+\]
+と置く．二massのゲージ変換を$g_{t,s}$，
+長関係liftのshearを$\phi_\alpha$とする．
+するとweighted ordinary道代数の変換として
+\[
+ \begin{aligned}
+ g_{t,s}\phi_\alpha g_{t,s}^{-1}(y)&=y+aL_y,\\
+ g_{t,s}\phi_\alpha g_{t,s}^{-1}(v)&=v+bL_v
+ \end{aligned}
+ \tag{MS}\label{eq:qa-q12-mass-shear-conjugation}
+\]
+であり，他の生成矢上の値は$\phi_\alpha$に等しい．
+すなわち局所lift選択の加法群
+$\mathbb V(\operatorname{Hom}(R_{{\rm fin},03},K))$
+（相対階数八）に対し，massゲージは
+\[
+ (w_i,u_i)\longmapsto(bw_i,au_i)
+\]
+として作用する．一般の非被約基底でも，
+shearとmassゲージを可換な直積群としては扱えない．
+
+さらに$\mathcal W^\alpha=\phi_\alpha(\mathcal W)$とし，
+同じ共通十二矢の正規形に書き直すと
+\[
+ p^\alpha=p+\lambda L_y,\qquad
+ (p')^\alpha=p'+\mu L_v,\qquad
+ H^\alpha=H+L_yq+L_vq'
+ \tag{TC}\label{eq:qa-q12-mass-shear-target-coefficients}
+\]
+である（最後は巡回同値まで）．
+従って$\phi_\alpha g_{t,s}\phi_\alpha^{-1}$は，
+$p,p'$を$p^\alpha,(p')^\alpha$に置き換えた
+**新しい**potentialのmassゲージに正確に等しい．
+この同一視は全係数環のbase changeと可換し，
+任意の$\lambda,\mu$（零因子・冪零元を含む）について成立する．
+これは\emph{局所関係liftの変換groupoid}の
+compatibilityであって，$\mathfrak H_2$へ至る
+全$ruling$ mutationのcoherenceを単独で証明するものではない．
+\end{proposition}
+\begin{proof}
+二つのmass変換は各々
+\[
+ \begin{array}{ll}
+ x\mapsto ax+tq,&y\mapsto a^{-1}(y-tp),\\
+ u\mapsto bu+sq',&v\mapsto b^{-1}(v-sp')
+ \end{array}
+\]
+である．$q,q',p,p'$と$L_y,L_v$はいずれも
+四辺の隣接矢および戻り矢$T$から作られるため，
+mass変換にもshearにも固定される．
+$g_{t,s}^{-1}$は$y\mapsto ay+tp$，
+$v\mapsto bv+sp'$を満たすから
+\[
+ \begin{aligned}
+ (g\phi_\alpha g^{-1})(y)
+ &=g\bigl(a(y+L_y)+tp\bigr)
+  =y+aL_y,\\
+ (g\phi_\alpha g^{-1})(v)
+ &=g\bigl(b(v+L_v)+sp'\bigr)
+  =v+bL_v .
+ \end{aligned}
+\]
+残りの矢の値も直ちに確認でき，第一の式を得る．
+次に$\phi_\alpha$を
+$\mathcal W=H+yq+px+vq'+p'u+\lambda yx+\mu vu$
+に代入すると，追加項は
+$L_yq+\lambda L_yx+L_vq'+\mu L_vu$である．
+従って二つの二段道の係数は式~\eqref{eq:qa-q12-mass-shear-target-coefficients}
+に変わる．
+実際，
+\[
+ (\phi_\alpha g\phi_\alpha^{-1})(y)
+ =a^{-1}\bigl(y-t(p+\lambda L_y)\bigr),
+ \quad
+ (\phi_\alpha g\phi_\alpha^{-1})(v)
+ =b^{-1}\bigl(v-s(p'+\mu L_v)\bigr)
+\]
+となり，$x,u$に対しては元と同じ公式である．
+これは変更後の$\mathcal W^\alpha$のmassゲージである．
+全ての計算は$a,b$だけを単元として可逆化した
+多項式恒等式であり，局所関係束の枠を変えても
+$K$の二直和因子に対して自然である．
+よって任意基底変更に整合し，結論を得る．
 \end{proof}
 
 \begin{theorem}[ordinary QP Jacobianと3-preprojective完成]
