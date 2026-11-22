@@ -4,9 +4,9 @@
 
 ## 全H2のGram pencil不変式環と明示good moduli
 
-**現行結論（論文Cの定理）。** 二つのGram二次形式 \\(S_f=fJf^{\\rm t},S_g=gJg^{\\rm t}\\) の四次pencilの係数を \\(F^2,I_1,I_2,I_3,G_0^2\\) とし、\\(A_2=FG_0,B_2=I_2,X_3=FI_3,Y_3=G_0I_1,D_4=I_1I_3,C_3=X_3+Y_3\\) とする。順序付きの半不変式環は \\(k[A_2,B_2,X_3,Y_3,D_4]/(X_3Y_3-A_2D_4)\\)、非順序は \\(k[A_2,B_2,C_3,D_4]\\)（重み2,2,3,4）。非順序good moduliは重み付き射影三空間の明示開である。\\(L_2=B_2-2A_2,\\ \Delta_8=(D_4+4A_2L_2)^2-4L_2C_3^2\\) と置けば \\(\Delta_8=256P_fP_g\\)、中央affine chartは \\(D_+(\Delta_8)\\)、座標環は重み零局所化。noncubic閉曲線は\\(A_2=C_3=0,\ D_4\ne0,\ \chi=B_2^2/(4D_4)\\)。特異点は\\(p_3=[0:0:1:0]\\)の\\(1/3(1,1,2)\\)と\\(p_4=[0:0:0:1]\\)の\\(1/2(1,1,1)\\)だけ。**全証明**は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex) へ移した。一般の二対称形式pencilの不変式定理はBhargava–Gross–Wang §4.2の既知結果であり、本研究では線形化・ruling交換・H2開・noncubic境界への適用を証明した。包括的新規性は未確認。
+**現行結論（論文Cの定理）。** 二つのGram二次形式 \(S_f=fJf^{\rm t},S_g=gJg^{\rm t}\) の四次pencilの係数を \(F^2,I_1,I_2,I_3,G_0^2\) とし、\(A_2=FG_0,B_2=I_2,X_3=FI_3,Y_3=G_0I_1,D_4=I_1I_3,C_3=X_3+Y_3\) とする。順序付きの半不変式環は \(k[A_2,B_2,X_3,Y_3,D_4]/(X_3Y_3-A_2D_4)\)、非順序は \(k[A_2,B_2,C_3,D_4]\)（重み2,2,3,4）。非順序good moduliは重み付き射影三空間の明示開である。\(L_2=B_2-2A_2,\ \Delta_8=(D_4+4A_2L_2)^2-4L_2C_3^2\) と置けば \(\Delta_8=256P_fP_g\)、中央affine chartは \(D_+(\Delta_8)\)、座標環は重み零局所化。noncubic閉曲線は\(A_2=C_3=0,\ D_4\ne0,\ \chi=B_2^2/(4D_4)\)。特異点は\(p_3=[0:0:1:0]\)の\(1/3(1,1,2)\)と\(p_4=[0:0:0:1]\)の\(1/2(1,1,1)\)だけ。**全証明**は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex) へ移した。一般の二対称形式pencilの不変式定理はBhargava–Gross–Wang §4.2の既知結果であり、本研究では線形化・ruling交換・H2開・noncubic境界への適用を証明した。包括的新規性は未確認。
 
-**検証・次の核心。** SymPyで四行列の稠密標本と階数三の標本、binary二形式正規形で交差多項式と\\(\Delta_8\\)、\\(\chi\\)を厳密算術で検算した。再現コードは `computations/verify_global_h2_pencil_invariants.py`。これは不変式環の有限生成・相対群oidを形式証明したものではない。C2の大域good moduliの環・中央chart・二特異点の記述は原稿上到達した。**最優先の未解決核心はC3の全AS/QP群oid、scalar慣性・right-equivalenceと相対heartの比較**。まずcubic可逆開、次にrank3境界へ進める。
+**検証・次の核心。** SymPyで四行列の稠密標本と階数三の標本、binary二形式正規形で交差多項式と\(\Delta_8\)、\(\chi\)を厳密算術で検算した。再現コードは `computations/verify_global_h2_pencil_invariants.py`。これは不変式環の有限生成・相対群oidを形式証明したものではない。C2の大域good moduliの環・中央chart・二特異点の記述は原稿上到達した。**最優先の未解決核心はC3の全AS/QP群oid、scalar慣性・right-equivalenceと相対heartの比較**。まずcubic可逆開、次にrank3境界へ進める。
 
 ## 全H2の三半不変式と良モジュライ
 
