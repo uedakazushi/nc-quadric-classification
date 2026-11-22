@@ -630,6 +630,64 @@ underlying Abel圏の同値類は保つが、
 unpointed moduli問題である。
 \end{proof}
 
+\begin{corollary}[OU potentialからsquare avatar、O-marked対象への一般次数]
+\label{cor:qa-ou-potential-square-avatar-pointed-degrees}
+論文C
+~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}
+の正則半単純な滑らかな楕円開を、
+前定理の二cubic開~\eqref{eq:qa-square-two-cubic-open}
+および一般慣性同型の稠密開へ制限する。
+この開ではpotentialの幾何的四重表示が
+VdB四つ組$(E,L_0,L_1,L_2)$を与え、
+式~\eqref{eq:qa-square-vdb-explicit}により
+\emph{square avatarへの相対的な対応}がある。
+全ての線束・曲線が相対的に構成される
+étale chart上では、これは基底変更と可換な
+代数スタックの射となり、
+相対的な曲線同型を通じて降下する。
+一方、対応の幾何的fiberの一般次数は
+\[
+ \boxed{
+ \begin{array}{ccc}
+ \text{有効potential表示}
+   &\xrightarrow{\;4\;}&
+  \text{順序付きsquare avatar}\\
+ &&\big\downarrow\vcenter{\rlap{$\scriptstyle 2$}}\\
+ &&\text{O-marked }\mathfrak H_2
+ \end{array}}
+ \tag{Pot-Sq-H2}\label{eq:qa-potential-square-pointed-degrees}
+\]
+であり、potentialからO-marked対象への
+一般次数は$4\cdot2=8$である。
+ここで上の$4$はpotential/quintupleの
+\emph{表示間}の一般四重射、
+下の$2$は二つのnormal foundationの忘却であり、
+$\Pic^0$の四つの平方根の選択を
+追加標識として数えた次数ではない。
+\end{corollary}
+\begin{proof}
+Cの
+~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}
+による一般有限étale四重射は、
+指定された幾何quintupleの相対四重テンソルを与える。
+滑らかな正則半単純開では、C
+~\ref{cor:qa-ou-relative-hodge-quadric-pencil}
+の点曲線と二rulingの相対構成が、
+基底変更と可換な三つの次数二線束を与える。
+それらのテンソル積と二つの完全線形系で
+式~\eqref{eq:qa-square-vdb-explicit}の
+square avatarを相対的に作る。
+曲線・線束の同型を保つので基底変更と降下に
+関して自然である。
+VdBの四つ組の幾何的同型類とsquare avatarの
+全単射は定理
+~\ref{thm:qa-elliptic-vdb-square-avatar-bijection}で証明した。
+これとCの
+~\ref{cor:qa-quintuple-h2-generic-degree-two}の
+二つのfoundationの一般次数を合成すれば
+表示された幾何一般次数が従う。
+\end{proof}
+
 \begin{remark}[一cubic境界と古典点での辞書の射程]
 \label{rem:qa-square-avatar-boundary-cautions}
 $G_sF_s^{-1}=P^2$では、$r_1$後の
