@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v3.1
+% 日本語 LuaLaTeX。2026-11-22 / v3.2
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v3.1（AS/avatar分類の数値・mutation・商圏比較の監査）}
+\date{2026年11月22日\quad v3.2（二重壁の幾何とcubic導来非同値の完全判定）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -82,6 +82,16 @@ mutation先の左右Noether性と
 $\Qgr,\qgr$のAbel圏同値を共通ample cornerから導く。
 square/rotated側ではcoherentな有界導来Morita同値を示すが、
 これをO-marked構造対象を保つ同値と同一視しない。
+二つの最小十本矢壁の交点は非零二捩れ$P^2=\OO_D,\ G=FP$であり、
+その反標準曲線はsmooth、既約nodal、$I_2$の三型だけとなる。
+さらにこの交点が、任意のcubic AS代数と
+\emph{導来同値にならない}正確なlocusであることを証明する。
+滑らかな楕円曲線では任意のcubic候補foundationを
+数値Serre作用・determinant・pencil乗法のkernelで排除し、
+退化二型へは二捩れを保つ平滑化と
+exceptional perfect複体の形式持上げで拡張する。
+この導来非同値は、内在的noncubic O-marked heartとの
+pointed同値の構成とは異なる問題である。
 underlying Z-代数のgroupoidと適切な相対perfect AS族にも
 構成を拡張するが、未修正のstable QP groupoidとは区別する。
 
@@ -265,6 +275,8 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 十本矢の独立ASクラスとQP表示の正確な関係、
 rank-three壁、mutation後のNoether性・商圏同値は
 第~\ref{sec:qa-as10-mutation-classification}節に置く。
+二つのmutation壁の交点と、cubic型への到達不能性の完全判定は
+第~\ref{sec:qa-as-cubic-obstruction}節で証明する。
 最小分解からの有理Hilbert級数の導出と
 AS--Gorenstein性の証明を別の論理段階として扱う。
 ここでは有限directed foundation、relation-dual QP、
@@ -443,6 +455,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/canonical_helix_complexes}
 \input{quiver-avatar/as_helix_classification}
 \input{quiver-avatar/as10_mutation_classification}
+\input{quiver-avatar/cubic_obstruction_all_loci}
 \input{quiver-avatar/avatar_charts}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
