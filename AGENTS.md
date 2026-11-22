@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.38。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.23。
+2026-11-23 / v1.38。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.24。
 
 ## 公表用三論文の役割
 
@@ -10,7 +10,7 @@
 
 ## Cの現在の到達点と比較範囲
 
-**最優先：論文CのC1–C4完成。** 2026-11-23に、rank二微分を持つ八矢四次QPと二段乗法が可逆なrank24 finite foundationの全fppf群oid同値、三頂点scalarのGm³-gerbe、ordered cubic H2 chartへの剛体化を `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に証明した。二cubic正規化は一般にはright-equivalenceでないためmutation/window glueが必要。新証明の全参考と数学的正確性の独立監査は未完了。**次の未解決核心はrank3壁の非最小十／十二矢QP、nilpotent mass、全相対AS心の同定と貼合せ**である。可逆cubic領域の群oid同値を未解決へ戻さず、raw十二矢QPの余剰BGm²を剛体化しないままH2と忠実同値と記さない。
+**最優先：論文CのC1–C4完成。** 2026-11-23に、rank二微分を持つ八矢四次QPと二段乗法が可逆なrank24 finite foundationの全fppf群oid同値、三頂点scalarのGm³-gerbe、ordered cubic H2 chartへの剛体化を `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に証明した。二cubic正規化は一般にはright-equivalenceでないためmutation/window glueが必要。またraw QPでλ=εのnilpotent massに沿う対角pair scalingは非平坦な部分慣性を持つと確認した。flat AS族での障害と混同しない。新証明の全参考と数学的正確性の独立監査は未完了。**次の未解決核心はrank3壁の非最小十／十二矢QP、nilpotent mass、全相対AS心の同定と貼合せ**である。可逆cubic領域の群oid同値を未解決へ戻さず、raw十二矢QPの余剰BGm²を剛体化しないままH2と忠実同値と記さない。
 
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
