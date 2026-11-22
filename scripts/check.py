@@ -145,6 +145,7 @@ def sources() -> int:
         "papers/nc-quadric-moduli.tex", "papers/nc-quadric-avatar.tex", "papers/references.bib",
         "papers/quiver-avatar/as_helix_classification.tex", "papers/quiver-avatar/as10_mutation_classification.tex",
         "papers/quiver-avatar/cubic_obstruction_all_loci.tex",
+        "papers/quiver-avatar/point_spectral_isogeny.tex",
         "computations/verify_as_avatar_euler.py",
         "computations/verify_avatar_cubic_obstruction.py",
         "computations/verify_quadric.py", "computations/verify_pencil_tangent.py",
