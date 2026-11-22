@@ -92,6 +92,33 @@ eq('positive tangent weight',s.Poly(new,u,v).coeff_monomial(u*u)-t*t*a)
 eq('negative tangent weight',s.Poly(new,u,v).coeff_monomial(v*v)-c/(t*t))
 print('PASS: exact fiber/resultant/derivative identities; harmonic projective stabilizer order32, root image8 and kernel4; coincident quotient relations and boundary torus weights')
 
+# Full coincident-inertia action on the four-dimensional intrinsic tangent.
+# The invariant quotient starts in degree two; the three generators are
+# w=a*c, p=(normal_x+normal_y)**2, q=(normal_x-normal_y)**2.
+normal_x, normal_y = s.symbols("normal_x normal_y")
+w = a*c
+p = (normal_x+normal_y)**2
+q = (normal_x-normal_y)**2
+full_actions = {
+    "connected torus": {a:t*t*a, c:c/(t*t), normal_x:normal_x, normal_y:normal_y},
+    "sign": {a:a, c:c, normal_x:-normal_x, normal_y:-normal_y},
+    "root reflection": {a:c, c:a, normal_x:-normal_x, normal_y:-normal_y},
+    "ruling exchange": {a:-a, c:-c, normal_x:normal_y, normal_y:normal_x},
+}
+for name, substitution in full_actions.items():
+    for value in (w, p, q):
+        eq("full coincident inertia invariants: "+name,
+           value.subs(substitution, simultaneous=True)-value)
+invariant_jacobian = s.Matrix([
+    [s.diff(value, v) for v in (a,c,normal_x,normal_y)]
+    for value in (w,p,q)
+])
+assert s.factor(invariant_jacobian[:, [0,2,3]].det()) == -8*c*(normal_x-normal_y)*(normal_x+normal_y)
+assert all(s.diff(value, v).subs({a:0,c:0,normal_x:0,normal_y:0}) == 0
+           for value in (w,p,q) for v in (a,c,normal_x,normal_y))
+print("PASS: full coincident inertia preserves three algebraically independent quadratics; quotient differential vanishes")
+
+
 # Coincident connected-inertia action on the intrinsic transverse directions.
 D0 = s.diag(1, -1)
 DL = s.diag(1, 1, -1, -1)

@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.47（正標数慣性反例と一致点の局所不変式を追加）
+% 2026-11-22 / v1.48（AHR形式模型の二次不変式と接微分を明示）
 \section{noncubic 境界の内在的商表示とモジュライ写像}
 \label{sec:noncubic-boundary-comparison}
 
@@ -1018,3 +1018,31 @@ $k[[w,\xi^2,\eta^2]]$ を得る。
 $[W/H_{\mathrm{eq}}]\to\mathfrak H_2$ が近傍全体で慣性を同型に写すとは仮定せず、
 good moduli space をそのまま $\mathfrak H_2$ の開部分へ降下させていない。
 \end{proof}
+
+\begin{remark}[形式良モジュライ射の二次的分岐]
+\label{rem:coincident-local-good-quotient-quadratic}
+一致点で全接表現を
+$V=V_{\mathrm b}\oplus V_{\mathrm n}=\langle a,c,x,y\rangle$
+と書き、四変数に同じ次数一を与える。
+前系の三つの不変式
+\[
+ w=ac,\qquad p=(x+y)^2,\qquad q=(x-y)^2
+\]
+はいずれも次数二であり、非零の一次不変式は存在しない。
+従ってこの線型化模型からその三次元良モジュライ空間への
+射の原点における一次微分は\emph{零}である。
+一方、商の座標環は三元多項式環であり、その Hilbert 級数は
+\[
+ \sum_{n\ge0}\dim k[V]^{H_{\mathrm{eq}}}_n\,z^n
+ =\frac{1}{(1-z^2)^3}.
+\]
+これは商の原点が滑らかな三次元点であることと矛盾しない。
+接空間の微分が零でも、最初の非自明な商座標が二次に現れるためである。
+境界では $p=q=0$、$\chi-1=4w/(1-4w)$ となり、
+局所商の境界像は滑らかな一次元の座標軸となる。
+ただしこの良モジュライ射は前定理の\emph{共通 étale 近傍}上のもので、
+$\mathfrak H_2$ の Zariski 開部分への降下を意味しない。
+全安定化群の生成元が $w,p,q$ を保つことと、
+三生成元の Jacobian の generic rank が三であることを
+\path{computations/verify_noncubic_boundary.py} で厳密検算する。
+\end{remark}
