@@ -1,0 +1,148 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / minimal ten-arrow AS type, mutation and twelve-arrow status
+\section{最小十本矢型の独立AS分類と十二本矢表示}
+\label{sec:qa-as10-mutation-classification}
+
+前節のsquare AS代数から一頂点mutationを行うと、
+重み四relation potentialのreductionにより
+八本矢cubic型または最小十本矢型が現れる。
+ここで矢の本数だけからAS正則性を結論してはならない。
+元草稿\cite[第VIII部，第X部]{AvatarVSeven2026}の
+Ginzburg次数零集中・独立逆構成・評価/余評価の証明を
+本稿のavatar分類に接続する。
+
+\subsection{Mutation像によらない最小十本矢AS条件}
+\label{subsec:qa-as10-minimal}
+
+\begin{definition}[最小十本矢AS型]
+\label{def:qa-as10-minimal}
+$i$が奇数なら$\varepsilon_i=1$、
+偶数なら$\varepsilon_i=0$とする。
+positively directedで局所有限、
+$A_{ii}=k$の$\mathbb Z$-代数が
+$\mathrm{AS}_{10}^{\mathrm{min}}$に属するとは、
+全$i$の右単純$S_i$に対して
+\begin{equation}
+0\to P_{i-4}\to
+ P_{i-3}^{\oplus2}\oplus P_{i-2}^{\oplus\varepsilon_i}
+ \to P_{i-1}^{\oplus2}\oplus P_{i-2}^{\oplus\varepsilon_i}
+ \to P_i\to S_i\to0
+\label{eq:qa-as10-minimal-resolution}
+\end{equation}
+が最小であり、さらに
+$\Ext_A^q(S_i,A)=0$ ($q\ne3$)、
+$\Ext_A^3(S_i,A)\simeq {}_\ell S_{i-4}$
+を満たすことをいう。
+同型は全整数頂点を保つ。
+QP、mutation元、周期同型と分解の基底は
+定義の標識ではない。
+\end{definition}
+
+\begin{lemma}[Hilbert関数と有限quiver]
+\label{lem:qa-as10-hilbert-foundation}
+$A\in\mathrm{AS}_{10}^{\mathrm{min}}$なら
+\[
+\dim A_{i+2r,i}=(r+1)^2,\qquad
+\dim A_{i+2r+1,i}=(r+1)(r+2).
+\]
+四頂点のfinite directed algebraは大域次元二で、
+最小quiverに
+$0\to1\to2\to3$の各二矢と
+追加の$x:1\to3$を持ち、
+最小関係は$1\to3$の一二次関係と
+$0\to3$の二三次関係である。
+この有限foundationは全$\mathbb Z$-代数を
+Serre関手で一意に回収する。
+\end{lemma}
+\begin{proof}
+\eqref{eq:qa-as10-minimal-resolution}の
+二つの$P_{i-2}$項はEuler漸化式で相殺され、
+$h_n-2h_{n-1}+2h_{n-3}-h_{n-4}=0$、
+$h_0=1$、$h_n=0$ ($n<0$)を得る。
+生成関数は
+$1/((1-t)^2(1-t^2))$であり、表示の次元が従う。
+最小分解の前二段を四頂点へ制限すると、
+列挙した矢と三つの関係が現れ、
+関係同士の次のoverlapはないため
+大域次元二である。
+左右AS双対性による局所コホモロジーの証明は
+補題~\ref{lem:qa-as-serre-unique-recovery}と同じで、
+連続四項のSerre関手による
+$E_{i+4}=S_B^{-1}(E_i)[2]$が全代数を回収する。
+\end{proof}
+
+\subsection{Ginzburg次数零集中によるAS条件}
+\label{subsec:qa-as10-ginzburg}
+
+\begin{lemma}[relation QPの次数零集中]
+\label{lem:qa-as10-ginzburg-concentration}
+square型、cubic型または
+$\mathrm{AS}_{10}^{\mathrm{min}}$の有限foundationから
+最小関係の双対戻り矢で作るrelation QPを$(Q,W)$とする。
+非完備およびarrow-adic完備Ginzburg dg代数について
+\[
+ H^j\Gamma(Q,W)=H^j\widehat\Gamma(Q,W)=0
+ \qquad(j\ne0)
+\]
+が成立する。
+\end{lemma}
+\begin{proof}
+有限foundationの大域次元は二なので、
+未変形の3-Calabi--Yau completion
+$\Pi_3(B)=T_B\RHom_{B^e}(B,B^e)[2]$を考える。
+\cite[Theorem 6.10]{KellerDeformedCY2011}の
+未変形の場合はrelation Ginzburg dg代数と
+$\Pi_3(B)$の準同型を与える。
+その$m$番目のtensor成分は
+$S_B^{-m}[2m]$の全周期Homとして計算できる。
+$m=0$では有限foundationのtilting性、
+$m\ge1$では
+前節~\ref{lem:qa-as-serre-unique-recovery}または
+前補題の前向きExt消滅によって
+次数零だけに集中する。
+従って直和も次数零集中を満たす。
+ここで用いたのは未変形completionであり、
+任意のdeformation parameterのCY性ではない。
+
+元の矢の内部次数は$1,2$、
+反対矢は$4-d$、頂点loopは$4$である。
+全dg生成元の内部次数は正で、
+各内部次数成分は有限次元複体。
+完備化は内部次数の直積であり、
+体上の直積は完全なので
+各次数の集中は完備版でも保たれる。
+逆向きも各内部次数成分を取れば成立する。
+\end{proof}
+
+\begin{lemma}[mutation後の最小AS分解]
+\label{lem:qa-as10-keller-yang}
+前補題のQPを、loopとoriented $2$-cycleを通らない
+指定のmutation頂点で変換すると、
+reduced QPのGinzburg dg代数も次数零に集中する。
+その正次数付きJacobian algebraの頂点単純加群は
+長さ三の完全な最小自己双対分解を持ち、
+AS--Gorenstein条件を満たす。
+\end{lemma}
+\begin{proof}
+\cite[Theorem 6.2]{KellerYang2011}を用いる。
+必要なのはGinzburgの次数零集中、
+mutation頂点にloopがないこと、および
+局所的な2-cycle除外条件である。
+squareの指定中間頂点にloop・2-cycleはなく、
+最小十本矢型の2-cycleは別の二頂点間だけにあり、
+逆mutation頂点を通らない。
+前補題が第一の入力を保証する。
+mutation後の完備Ginzburgの次数零集中が得られ、
+正の内部次数付けで非完備版へ降りる。
+Ginzburgの頂点単純の標準semifree解消を
+$H^0\Gamma$に移すと、
+恒等射、入る矢、最小関係、四次最上項からなる
+Jacobian complexを得る。
+次数零集中によりこれは\emph{実際に完全}である。
+双対複体には最上次数の左単純だけが残る。
+reduced QPでは微分はすべて正次数だから
+最小性も成り立つ。
+単なるdg導来同値から通常代数のAS正則性を
+推論したのではない。
+\end{proof}
+
