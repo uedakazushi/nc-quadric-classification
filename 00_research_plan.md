@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.48。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.34。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.49。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.37。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は論文C（AS正則Z代数・avatar・H2・QP/GIT比較）の完成である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,7 +10,7 @@
 
 **Cの達成基準と現行判定：** (C1) 8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲：**原稿上達成**。(C2) 全H2 good moduliの不変式・中央affine・noncubic・局所特異性：**原稿上達成**。(C3) 最大の明示的な比較開上でAS/QP・avatar・pointed H2のgroupoid・慣性・right-equivalence・heartと障害を決定：**H2の相対実現可能開全体について、二mass十二矢QP→finite foundationの全局所Isom、相対対角解消、ordinary Jacobian=H0Π3=canonical Serre完成、全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とcoherentなruling mutation商を原稿上で達成**。H2外の任意AS/avatar/QP stack全体の分類は未完成で、H2の比較と区別する。(C4) 全論文の独立証明監査、一次文献の網羅的比較、LuaLaTeX全稿PDF・SyncTeXと表示：**未完了**。C1–C3の「原稿上」とC4の独立検証を取り違えず、C4未達成の間は論文C全体を完成扱いにしない。
 
-**次の優先課題：** C3の相対対角解消は一般のEuler--conormal判定を用いて**全有限foundation・任意非被約基底での分裂完全性を原稿上直接証明した**。自由有向道代数の通常両側idealは二短関係・四つの合成・残余二長関係で生成される。普遍非可換微分のconormal列と階数$(68,52,8)$・$\operatorname{rk}\Lambda=24$から一般完全性が従い，指定四境界型の検算への依存がなくなった。Kellerの2011年著者訂正にあるordinary ideal生成条件もこの二mass有限代数について確認した（[C3の新一般補題と証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)）。**C3のJacobian/H⁰Π₃比較についても、対角解消の双対複体の次数0,-1,-2と、degree -1微分=cyclic derivativeを原稿へ具体的に記した。** 残余長関係の任意局所lift変更は戻り矢の三角right-equivalenceで吸収され、加法的な厳密cocycleを満たすことも新補題で示した。次はこれをmassゲージ・頂点scalars・ruling mutationの全Isomへ統合する監査、反Serre全次数・左右Noether/AZ、S₂-mutation coherenceを進める。C4の一次文献比較と現行C全稿LuaLaTeX組版・表示は未完了。H2外の全AS/avatar/QP表示stackは別課題。対象mainの保存後にhubを更新する。
+**次の優先課題：** C3の相対対角解消は一般のEuler--conormal判定を用いて**全有限foundation・任意非被約基底での分裂完全性を原稿上直接証明した**。自由有向道代数の通常両側idealは二短関係・四つの合成・残余二長関係で生成される。普遍非可換微分のconormal列と階数$(68,52,8)$・$\operatorname{rk}\Lambda=24$から一般完全性が従い，指定四境界型の検算への依存がなくなった。Kellerの2011年著者訂正にあるordinary ideal生成条件もこの二mass有限代数について確認した（[C3の新一般補題と証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)）。**C3のJacobian/H⁰Π₃比較についても、対角解消の双対複体の次数0,-1,-2と、degree -1微分=cyclic derivativeを原稿へ具体的に記した。** 残余長関係の任意局所lift変更は戻り矢の三角right-equivalenceで吸収され、加法的な厳密cocycleを満たすことも新補題で示した。massゲージとlift shearの共役はa=1+λt、b=1+μsによる(w_i,u_i)→(bw_i,au_i)であり、局所lift後のp,p'の係数補正と厳密な輸送公式を証明した。双対数上では特殊fiberで可換でも相対群は非可換となる明示例がある。頂点scalarsは全頂点固定right-equivalenceと可換であり、局所二段剛体化の順序は交換できる（C3の新命題・例・中心性補題、computations/verify_q12_mass_shear.py）。次は全frame・全Isomにわたるcoherent descentとS₂-mutation、反Serre全次数・左右Noether/AZを監査する。C4の一次文献比較と現行C全稿LuaLaTeX組版・表示は未完了。H2外の全AS/avatar/QP表示stackは別課題。対象mainの保存後にhubを更新する。
 
 
 ## Cの現行実行単位
@@ -356,7 +356,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 **最優先は論文CのC3独立監査とC4完成。** H2実現可能開上のQP→finite foundation→ordinary Jacobian/Serre→pointed heart、二段剛体化と二ruling mutation商は**原稿上証明済み**。ここを未解決の再構成課題へ戻さないが、独立監査済みとも呼ばない。
 
-1. **非最小QPの全Isom・mass/rulingとのcoherent降下を独立監査。** Euler--conormal一般補題によってordinary ideal生成・対角解消の局所分裂性・任意基底変更は原稿上確認済み。次はこの解消を直接双対化した$\mathbf R\operatorname{Hom}_{\Lambda^e}(\Lambda,\Lambda^e)[2]$の生成元・微分と，十二矢potentialの全cyclic derivativeを枠変更・冪零massを含めて直接比較する。Keller Theorem 6.10の最小関係仮定を非最小十二矢QPへそのまま輸入しない。
+1. **局所mass/shearの半直積を全Isom・S₂に降下させる監査。** Euler--conormal一般補題によってordinary ideal生成・対角解消の局所分裂性・任意基底変更は原稿上確認済み。双対dg微分とcyclic derivativeは原稿上明示済み。mass/shearの半直積作用、new potentialの係数補正・頂点中心性は局所で証明済み。次は他の短関係frame・長関係GL₂とmass選択の同型を全fppf重なりで比較し、S₂-mutation商とのcoherenceを監査する。Keller Theorem 6.10の最小関係仮定を非最小十二矢QPへそのまま輸入しない。
 2. **反Serre・AZ・反対環側の左Noetherを独立監査。** ordinary ideal生成は一般Euler--conormal証明で確認済みであり、非最小QPのdg比較とは区別する。反Serre全次数・基底変更、左右Noetherとpointed heartの証明を独立に辿り、境界での最小矢束非平坦性から誤った推論がないか確認する。nilpotent massの加法化は局所frameに依存し、全体のgerbe自明化を意味しない。
 3. **二段剛体化とrulingのcoherenceを点検。** fppf同型層の核$\mathcal U_\lambda\times\mathcal U_\mu$と$\Gm^3$、正規性・基底変更、mutationの二重合成とpointed $t$-exact性を確認する。一般cubicで単一right-equivalenceが存在しないことと、mutationによるstack同値を分ける。
 4. **C4公表前整理。** Keller、VdB、AS/QP・AZ・Alper等の一次資料と定理仮定を照合し、Introduction・引用・独立寄与を整理する。scripts/check.py papers、C原稿のsources/build、LuaLaTeX全稿PDF・SyncTeX・ページ表示を実施する。未実行・依存制約を明記する。
