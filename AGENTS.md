@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.15。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.9。
+2026-11-22 / v1.16。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv4.0。
 
 ## 公表用三論文への再編（確定方針）
 
@@ -8,7 +8,7 @@
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：主原稿 `papers/nc-quadric-avatar.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによる別avatarへ戻す構成と$C_q$・$\Sigma_2$側の$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。 全noncubic O-marked幾何同型類≅Σ₂のD∈|−K|,D∩S=∅,0≠P∈Pic⁰(D)[2]の同型類もCに証明。Bのχ=1二点はnodal/I2で区別。次は$C_q$・$\Sigma_2$の別avatarのqgr heartとの比較と相対elementary transformを検証する。
 
-**原稿C v3.9のpointed認識上の最重要区別。**
+**原稿C v4.0のpointed認識上の最重要区別。**
 noncubic中央二重平方環の可換点曲線
 $E_f:\ c^2=f_1,\ d^2=f_2$と、quartic spectral曲線
 $C_q:\ y^2=f_1f_2$は、非共有根では
@@ -43,11 +43,11 @@ $\im\mu_d=\langle u,v,d\rangle$であり、
 
 **順序付き分解普遍族の相対有限End（C v3.7）。** $S=k[\ell_i,m_i,(\det\ell\,\det m)^{-1}]$（二組の独立一次形式）上で、四項$(\mathcal B,\mathcal X_c,\mathcal B(1),\mathcal X_d(1))$の有限graded directed Endと$E_S=Q_c\times_{\mathbb P^1}Q_d$上の$(\mathcal O,F,F^2,F^2G)$のEndを、**任意の$S$-基底変更（非被約も含む）と可換な代数同型**として証明した（C prop:qa-point-relative-split-root-end）。被約でsmoothな普遍底で有限表示行列の全幾何fiber階数が一定であることから局所分裂を得て、その後に非被約底へ引き戻す。これは有限Homと全積の相対同型であり、相対$\qgr$ heart・Serre根・AS被覆の同型や、根の順序を忘れるstack降下はまだ証明していない。
 
-**Brauer-gerbe上の相対avatarとruling交換（C v3.9）。** 順序付き一次因子の普遍族$S$で、内部根交換$W=C_2^2$のspinor行列分解を$J=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$、$i^2=-1$を用いて厳密に線形化した。相対有限End同型は$S/W$へ降下し任意底変更と可換（C prop:qa-root-swaps-linearization）。しかし一般二次形式$f=au^2+buv+dv^2$のconicのBrauer類$(a,\Delta)$、$\Delta=b^2-4ad$は$\Delta$沿い留数$[a]\ne1$で非零。二形式では$\alpha_c,\alpha_d,\alpha_d-\alpha_c$が非零なので、$E_f$上の二pencilと二捩れの幾何Picard類は全係数商で普通の線束として降下しない（C prop:qa-universal-conic-brauer-obstruction）。各形式の分岐根を一つずつ選ぶ$Z_1\times Z_2\to U_2$は共有根・一致根対を含むsquarefree locusで有限étale次数4、この上で両conicの相対次数一束を構成できる（C cor:qa-root-choice-etale-splitting）。さらに次数一束の選択stack$\mathscr G_c\times_{U_2}\mathscr G_d$は一般に非中立な$\Gm^2$-gerbeで、その上に$E=Q_c\times_{\PP^1}Q_d$と二pencil$F,G$、$P=GF^{-1}$から相対square avatarが存在する。二根対相互交換は$(F,G,P)\mapsto(G,F,P^{-1})$という厳密なruling対合（C thm:qa-brauer-gerbe-square-avatar）。**未解決**はこのgerbe上のspinor finite End/Morita・相対Serre完成・pointed$\qgr$ heartの比較、ruling交換のAS側mutationとの両立、無標識stackの全群oid。有限End・実線束・相対heart・stackを混同しない。行列等式とconic対角化はcomputations/verify_noncubic_root_descent.pyで厳密検算PASS、Brauer非自明性はDVRの数学的論証であり計算結果ではない。
+**四頂点のBrauer重みと相対Azumaya-Morita表示（C v4.0）。** 二conicの次数一束$N_i$と階数二の$V_i=q_{i*}N_i$から、相対双対化により$N_i^2\simeq\mathcal O_{Q_i}(1)\otimes\det V_i$を証明。$H=\mathcal O_{E_f}(1)$とし四項を$(\mathcal O_E,F,H,HG)$へdeterminant正規化すると、$\Gm^2$-gerbeの重みは$((0,0),(1,0),(0,0),(0,1))$。したがって頂点のAzumaya Brauer類は**$(0,\alpha_c,0,\alpha_d)$**。各$T_{ij}=\pi_*(L_i^{-1}L_j)$に対し、重み零の$T_{ij}\otimes W_i\otimes W_j^\vee$を係数空間$U_2$へ降下させると、全合成を持つ$(A_i,A_j)$-双加群$\mathsf M_{ij}$を得る（C lem:qa-morita-determinant-normalization, thm:qa-twisted-four-vertex-morita）。全三退化型・任意基底変更に対応し、分岐根選択の分裂被覆ではspinor finite EndのMorita増幅と局所一致する。さらに一般点で$\alpha_c-\alpha_d\neq0$だから、二根対交換は**頂点固定のMorita自己同値には降下しない**（C cor:qa-morita-ruling-exchange-phase）。適切なmutationとpointing調整は必要条件だが、その相対的存在は未証明。先行入力はBergh--Schnürer 2021の一般gerbe重み分解・twisted Morita、今回の新しい部分は特定四項の重み・双加群合成と障害の適用。有限End・相対AS completion・相対pointed qgr・全stack群oidを区別する。整数重み・Morita積の有限計算は実行PASS。全数学的独立全面監査・LuaLaTeX組版・新規性網羅調査は未実施。
 
-**継続指示：** smooth/nodal/$I_2$の三型全てで$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。根対内の交換$W$ではfinite Endを降下できるが、因子スカラーも忘れた通常の線束降下は一般Brauer障害を持つ。幾何avatarの$\Gm^2$-gerbeとruling対合は構成済みだが、spinor finite Endのtwisted Morita降下、相対Serre完成、O-pointed$\qgr$同値は未解決。別avatarとの比較も独立に検証し、全相対同値を先取りしない。
+**継続指示：** smooth/nodal/$I_2$の三型全てで$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。根対内の交換$W$ではfinite Endを降下できるが、因子スカラーも忘れた通常の線束降下は一般Brauer障害を持つ。幾何avatarとAzumaya双加群有限Morita降下は構成済みで、generic ruling交換の頂点固定同値は排除済み。次はmutationと相対Serre完成・O-pointed$\qgr$同値を構成する。別avatarとの比較も独立に検証し、全相対同値を先取りしない。
 
-**論文C v3.9の分類正本（最優先）。**
+**論文C v4.0の分類正本（最優先）。**
 `papers/nc-quadric-avatar.tex` から
 `papers/quiver-avatar/as_helix_classification.tex` と
 `papers/quiver-avatar/as10_mutation_classification.tex` を読み込む。

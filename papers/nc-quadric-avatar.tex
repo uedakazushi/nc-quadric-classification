@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v3.9
+% 日本語 LuaLaTeX。2026-11-22 / v4.0
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v3.9（Brauer gerbe上の相対avatarとruling交換）}
+\date{2026年11月22日\quad v4.0（四頂点Brauer重みとAzumaya双加群Morita表示）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -166,7 +166,15 @@ $E_f$の二つのpencil線束や非零二捩れ線束には
 $\Gm^2$-gerbe上に相対square avatarを構成し、
 二つの根対の相互交換が$(F,G,P)\mapsto(G,F,P^{-1})$という
 厳密なruling対合になることを証明する。
-これは相対$\qgr$圏の同値やAS側のpointing交換の降下とは異なる。
+さらに、四項を$(\OO_E,F,H,HG)$へdeterminant補正し、
+そのBrauer重みが$0,\alpha_c,0,\alpha_d$となることを計算する。
+この重みを用いて、有限Endを一つの通常代数としてでなく
+四つのAzumaya頂点とその間の双加群からなる
+有向Morita圏として係数空間へ降下する。
+一般点で$\alpha_c\ne\alpha_d$なのでruling交換を
+頂点固定のMorita自己同値にすることは不可能であり、
+mutationを伴う位相変更が不可欠である。
+これは相対$\qgr$圏の同値やAS側のmutationの降下とは異なる。
 $C_q$・$\Sigma_2$の別avatarとのpointed比較も未解決である。
 実例$f_1=x(x-1),f_2=(x-2)(x-3)$では
 $j(E_f)=28756228/3$、$j(C_q)=35152/9$で、
@@ -346,6 +354,10 @@ conicのBrauer類が非零となりpencilの線束降下を妨げること、
 分岐根選択による次数四の\'{e}tale分裂被覆、
 およびBrauer gerbe上の相対avatarと根対相互交換の
 ruling対合を証明する。
+さらに第~\ref{sec:qa-twisted-morita-weights}節で
+determinant補正後の四項のBrauer重みを計算し、
+Azumaya双加群の有向Morita圏を係数空間へ構成する。
+一般点のruling交換は頂点固定Moritaでは実現できない。
 ただしAS側の相対mutation・$\qgr$圏・Serre根の一括降下と
 無標識stackの群oid認識は別問題である。
 ここでは有限directed foundation、relation-dual QP、
@@ -528,6 +540,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/avatar_charts}
 \input{quiver-avatar/point_spectral_isogeny}
 \input{quiver-avatar/root_descent_brauer}
+\input{quiver-avatar/twisted_morita_weights}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}

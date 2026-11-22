@@ -1,0 +1,194 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22: relative Azumaya vertex classes and finite directed Morita model
+\section{Brauer重みを持つ四頂点Morita表示}
+\label{sec:qa-twisted-morita-weights}
+前節のgerbe上の幾何avatarの四項Endは、慣性の重みを
+記録してAzumaya頂点・双加群矢により係数空間へ降下する。
+ここでは有限EndのMorita表示のみを扱い、
+相対AS完成およびpointed \qgr の同値は主張しない。
+gerbeの重み分解およびtwisted sheafのMorita理論は
+\cite[Theorems~4.7 and 5.4]{BerghSchnurer2021}
+および\cite[Theorem~6.2 and Remark~6.3]{BerghSchnurer2021}
+の一般論を使う。
+
+\begin{lemma}[conic pencilのdeterminant補正]
+\label{lem:qa-morita-determinant-normalization}
+前節の$U_2$と$\mathscr G=\mathscr G_c\times_{U_2}\mathscr G_d$を取る。
+$q_i:Q_i\to\mathscr G$を普遍smooth conic、
+$N_i$を普遍相対幾何次数一束とし、
+$V_i=q_{i*}N_i$（$i=c,d$）と置く。
+$V_i$は階数二、全基底変更可換で、
+一次元商の規約で$Q_i\simeq\PP_{\mathscr G}(V_i)$となる。
+conic超平面束を$\OO_{Q_i}(1)$とすれば
+\begin{equation}
+ N_i^{\otimes2}\simeq
+ \OO_{Q_i}(1)\otimes q_i^*\det V_i .
+ \label{eq:qa-morita-determinant-square}
+\end{equation}
+$E=Q_c\times_{\PP^1}Q_d$、
+$p_i:E\to Q_i$、$\pi:E\to\mathscr G$、
+$F=p_c^*N_c$、$G=p_d^*N_d$、
+$H=\OO_E(1)$と書くと
+\begin{equation}
+ F^2\simeq H\pi^*\det V_c,\quad
+ G^2\simeq H\pi^*\det V_d,\quad
+ (GF^{-1})^2\simeq\pi^*(\det V_d(\det V_c)^{-1}).
+ \label{eq:qa-morita-fg-square}
+\end{equation}
+従って$GF^{-1}$が相対Picardの二捩れsectionであることと、
+gerbe上でその二乗線束が実際に自明であることは異なる。
+\end{lemma}
+\begin{proof}
+各幾何conicは$\PP^1$であり、$N_i$の相対次数は一だから
+$V_i$は階数二で$R^1q_{i*}N_i=0$、
+相対評価は全射である。評価が定める
+$Q_i\to\PP(V_i)$は各fiberで次数一の完全線形系なので同型。
+商規約の相対Euler列は
+$\omega_{Q_i/\mathscr G}\simeq N_i^{-2}\otimes q_i^*\det V_i$
+を与える。一方、二次Cartier超曲面
+$Q_i\subset\PP^2_{U_2}$の随伴から
+$\omega_{Q_i/\mathscr G}\simeq\OO_{Q_i}(-1)$である。
+これで最初の式が得られる。
+両conicの超平面束は、共通の$\PP^1_{[u:v]}$の
+$\OO(1)$の引戻しだから、$E$上で同じ$H$になる。
+二式の引戻しと商で残りの式が従う。
+$\det V_c,\det V_d$の慣性重みは$(2,0),(0,2)$であり、
+最後の右辺の自明化を仮定してはならない。
+\end{proof}
+
+\begin{theorem}[四頂点のAzumaya双加群による有限Morita表示]
+\label{thm:qa-twisted-four-vertex-morita}
+前補題の記号で、gerbe上の四線束を
+\begin{equation}
+ (L_0,L_1,L_2,L_3)=(\OO_E,F,H,HG)
+ \label{eq:qa-morita-normalized-four}
+\end{equation}
+と正規化する。
+$T_{ij}=\pi_*(L_i^{-1}L_j)$（$i\le j$）は
+有限局所自由で、任意の基底変更と可換する。
+非対角成分の階数と慣性$\Gm^2$の指標は
+\begin{equation}
+\begin{array}{c|rrrrrr}
+(i,j)&01&02&03&12&13&23\\\hline
+\operatorname{rk}T_{ij}&2&4&6&2&4&2\\
+\operatorname{wt}T_{ij}&(1,0)&(0,0)&(0,1)&(-1,0)&(-1,1)&(0,1)
+\end{array}
+\label{eq:qa-morita-hom-weights}
+\end{equation}
+であり、$T_{ii}=\OO_{\mathscr G}$である。
+四項の重みは
+$w_0=(0,0)$、$w_1=(1,0)$、$w_2=(0,0)$、$w_3=(0,1)$。
+$W_0=W_2=\OO_{\mathscr G}$、
+$W_1=V_c$、$W_3=V_d$とする。
+重み零の降下を$\operatorname{Desc}$で記し、
+\[
+ A_i=\operatorname{Desc}\End(W_i),\qquad
+ {\mathsf M}_{ij}
+ =\operatorname{Desc}(T_{ij}\otimes W_i\otimes W_j^\vee)
+ \quad(i\le j)
+\]
+と定義する。$A_i$は$U_2$上のAzumaya代数であり
+\begin{equation}
+ \operatorname{rk}(A_0,A_1,A_2,A_3)=(1,4,1,4),\qquad
+ ([A_0],[A_1],[A_2],[A_3])=(0,\alpha_c,0,\alpha_d).
+ \label{eq:qa-morita-vertex-classes}
+\end{equation}
+（oppositeの規約による符号は二捩れのため影響しない。）
+$\mathsf M_{ij}$は有限局所自由な$(A_i,A_j)$双加群、
+$\mathsf M_{ii}=A_i$であり、
+\begin{equation}
+ {\mathsf M}_{ij}\otimes_{A_j}{\mathsf M}_{jk}
+ \longrightarrow{\mathsf M}_{ik}
+ \qquad(i\le j\le k)
+ \label{eq:qa-morita-bimodule-product}
+\end{equation}
+は結合的で単位を持つ。
+この四頂点Azumaya双加群有向圏は
+$U_2$の任意の基底変更と可換する。
+分岐根を選ぶ有限étale分裂被覆の上で
+$V_i$と$\det V_c$をさらに局所自明化すると、
+命題~\ref{prop:qa-point-relative-split-root-end}の
+spinor有限End代数の通常のMorita増幅に一致する。
+\emph{相対AS完成と相対pointed $\qgr$の同値は結論しない。}
+\end{theorem}
+\begin{proof}
+$\pi:E\to\mathscr G$は$(2,2)$ Cartier族である。
+$i<j$なら$L_jL_i^{-1}$の各既約成分上の次数は正である。
+相対$(2,2)$分解とcohomology-and-base-changeによって
+$R^1\pi_*(L_jL_i^{-1})=0$となり、
+$T_{ij}$は指定階数の有限局所自由束で基底変更と可換する。
+対角は$\pi_*\OO_E=\OO_{\mathscr G}$である
+（$R^1\pi_*\OO_E$の消滅は用いない）。
+
+gerbeの慣性$(\lambda_c,\lambda_d)$は
+$N_c,N_d$を各々の文字でスカラー倍する。
+$F,G$の重みは$(1,0),(0,1)$、
+二次形式の係数に由来する$H$の重みは$(0,0)$である。
+$T_{ij}$の重みは$w_j-w_i$となり、
+表の全項が従う。
+
+$W_i$の重みは$w_i$である。
+$\End(W_i)$は重み零、
+$T_{ij}\otimes W_i\otimes W_j^\vee$の重みは
+$(w_j-w_i)+w_i-w_j=0$である。
+対角化可能群をbandとするgerbeの重み零sheafは
+基底へ一意に降下する
+\cite[Theorem~4.7]{BerghSchnurer2021}。
+そのため$A_i$と$\mathsf M_{ij}$が存在する。
+$V_c,V_d$はそれぞれのBrauer類のrank-two twisted bundleなので、
+$\End(V_c),\End(V_d)$の降下は階数四Azumayaである。
+
+$W_i$への左$\End(W_i)$作用と
+$W_j^\vee$への右$\End(W_j)$作用で
+$\mathsf M_{ij}$を双加群にする。
+合成には線束の乗法$T_{ij}T_{jk}\to T_{ik}$と
+\[
+ (W_i\otimes W_j^\vee)
+ \otimes_{\End W_j}(W_j\otimes W_k^\vee)
+ \simeq W_i\otimes W_k^\vee
+\]
+というMorita evaluationを用いる。
+結合律と単位はこの二つの構成のそれから従う。
+重み零なので降下後も各等式は成り立つ。
+
+分岐根選択の被覆上では両conicが$\PP^1$-bundleに分裂し、
+各$V_i$を局所自明化できる。
+すると$A_i$は行列代数、$\mathsf M_{ij}$は
+$T_{ij}$のMorita増幅になる。
+式~\eqref{eq:qa-morita-fg-square}で
+$\det V_c$を自明化すると四項は
+$(\OO_E,F,F^2,F^2G)$に一致する。
+命題~\ref{prop:qa-point-relative-split-root-end}を適用して
+局所spinor有限EndとのMorita同型が得られる。
+一般の全整数AS完成の降下は使っていない。
+\end{proof}
+
+\begin{corollary}[ruling交換の頂点固定Morita降下は不可能]
+\label{cor:qa-morita-ruling-exchange-phase}
+$U_2$の二つの二次形式の交換$\epsilon$は
+上記の頂点Brauer類を
+\[
+ (0,\alpha_c,0,\alpha_d)
+   \longmapsto(0,\alpha_d,0,\alpha_c)
+\]
+と交換する。
+一般点では$\alpha_c,\alpha_d$が独立なので、
+この交換を全四頂点\emph{固定}のMorita自己同値として
+降下させることは不可能である。
+特にO-pointingを固定した相対比較でも、
+残りのcollectionの位相変更・mutationを省略して
+頂点固定同型を主張してはならない。
+適切なmutationを伴う同値の存在・不存在は
+この結論に含まない。
+\end{corollary}
+\begin{proof}
+頂点固定のMorita同値が存在すれば、
+特に一番頂点のAzumaya代数$A_1$と
+$\epsilon^*A_1$はMorita同値となる。
+そのBrauer類はそれぞれ$\alpha_c,\alpha_d$なので、
+$\alpha_c=\alpha_d$が必要である。
+しかし命題~\ref{prop:qa-universal-conic-brauer-obstruction}は
+一般係数体上で$\alpha_c-\alpha_d\ne0$を証明した。
+この矛盾は頂点固定の同値だけを排除し、
+異なる四項の導来mutationには適用されない。
+\end{proof}

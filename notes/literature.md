@@ -1,7 +1,33 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.74。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.75。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 相対gerbeとAzumaya-Moritaの一次入力
+
+Daniel Bergh--Olaf M. Schnürer,
+*Decompositions of derived categories of gerbes and of families of Brauer--Severi varieties*,
+**Documenta Mathematica 26** (2021), 1465--1500,
+[doi:10.4171/DM/846](https://doi.org/10.4171/DM/846)
+（原稿Cの引用キー BerghSchnurer2021）。
+出版社の書誌・概要を確認。Theorem 4.7の対角化可能群gerbeの
+QCoh重み分解と重み零の基底降下、Theorem 5.4の導来重み分解、
+Theorem 6.2/Remark 6.3のBrauer--Severiに対するtwisted成分の
+一般理論を入力とする。本文全証明の独立監査を行ったとは報告しない。
+
+この一般論はCの新規結果ではない。本研究の追加内容は、
+noncubic二conicのgerbe上のdeterminant補正
+$N_i^2\simeq\mathcal O_{Q_i}(1)\otimes\det(q_{i*}N_i)$、
+四線束$(\mathcal O_E,F,H,HG)$の明示重み
+$0,(1,0),0,(0,1)$、Brauer類$(0,\alpha_c,0,\alpha_d)$、
+各HomをAzumaya双加群へ降下させた合成公式と、
+generic ruling交換に頂点固定Morita同値が存在しないという
+$\alpha_c\ne\alpha_d$に基づく障害
+（C lem:qa-morita-determinant-normalization、
+thm:qa-twisted-four-vertex-morita、
+cor:qa-morita-ruling-exchange-phase）。
+これは有限Endの記述であり、gerbe上の相対AS完成・
+相対qgr同値や、ruling交換をmutationしたpointed射の実現は未確認。
 
 ## 原稿C v3.4：avatar–AS分類の出典と外部入力
 

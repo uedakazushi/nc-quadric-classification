@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.15、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.9。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.16、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v4.0。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、A/Bの公表前監査と並行して、**論文CのAS↔avatar全単射・十本矢逆mutationの証明を原PDF・外部定理と独立照合**する。その後、Cで一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,13 +12,13 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS最小分解のavatar分類、mutationとnoncubic pointed認識** | v3.9。sq/rsqの全avatar対応、独立AS10・cubic導来非同値、二重壁の横断性を保持。点曲線E_fとspectral曲線C_qの双対2-isogenyを保持。**全noncubic幾何点で、正しい一添字shift後の有限End代数を全積ごと同定し、O-pointed exact同値を原稿に証明した。** 具体的にj値が異なる例を示す。別のspectral/$\Sigma_2$ avatarとのpointed比較、および非被約基底の相対$\qgr$ groupoidは未証明。順序付き根対の有限End同型は任意の基底変更へ延長済み。12矢はQP表示との区別を保持 |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS最小分解のavatar分類、mutationとnoncubic pointed認識** | v4.0。sq/rsqの全avatar対応、独立AS10・cubic導来非同値、二重壁の横断性を保持。点曲線E_fとspectral曲線C_qの双対2-isogenyを保持。**全noncubic幾何点で、正しい一添字shift後の有限End代数を全積ごと同定し、O-pointed exact同値を原稿に証明した。** 具体的にj値が異なる例を示す。別のspectral/$\Sigma_2$ avatarとのpointed比較、および非被約基底の相対$\qgr$ groupoidは未証明。順序付き根対の有限End同型は任意の基底変更へ延長済み。12矢はQP表示との区別を保持 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS正則代数・avatar分類とpointed認識（v3.9）
+## 論文C：AS正則代数・avatar分類とpointed認識（v4.0）
 
 **中心定理の証明を含む現行原稿。**
 [平方型・回転平方型のAS/avatar分類](papers/quiver-avatar/as_helix_classification.tex)は
@@ -166,7 +166,7 @@ $\operatorname{Sym}^2H^0(F_c),\operatorname{Sym}^2H^0(F_d)$
 
 **順序付き分解普遍族の相対有限End（C v3.7）。** $S=k[\ell_i,m_i,(\det\ell\,\det m)^{-1}]$（二組の独立一次形式）上で、四項$(\mathcal B,\mathcal X_c,\mathcal B(1),\mathcal X_d(1))$の有限graded directed Endと$E_S=Q_c\times_{\mathbb P^1}Q_d$上の$(\mathcal O,F,F^2,F^2G)$のEndを、**任意の$S$-基底変更（非被約も含む）と可換な代数同型**として証明した（C prop:qa-point-relative-split-root-end）。被約でsmoothな普遍底で有限表示行列の全幾何fiber階数が一定であることから局所分裂を得て、その後に非被約底へ引き戻す。これは有限Homと全積の相対同型であり、相対$\qgr$ heart・Serre根・AS被覆の同型や、根の順序を忘れるstack降下はまだ証明していない。
 
-**Brauer-gerbe上の相対avatarとruling交換（C v3.9）。** 順序付き一次因子の普遍族$S$で、内部根交換$W=C_2^2$のspinor行列分解を$J=\left(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\right)$、$i^2=-1$を用いて厳密に線形化した。相対有限End同型は$S/W$へ降下し任意底変更と可換（C prop:qa-root-swaps-linearization）。しかし一般二次形式$f=au^2+buv+dv^2$のconicのBrauer類$(a,\Delta)$、$\Delta=b^2-4ad$は$\Delta$沿い留数$[a]\ne1$で非零。二形式では$\alpha_c,\alpha_d,\alpha_d-\alpha_c$が非零なので、$E_f$上の二pencilと二捩れの幾何Picard類は全係数商で普通の線束として降下しない（C prop:qa-universal-conic-brauer-obstruction）。各形式の分岐根を一つずつ選ぶ$Z_1\times Z_2\to U_2$は共有根・一致根対を含むsquarefree locusで有限étale次数4、この上で両conicの相対次数一束を構成できる（C cor:qa-root-choice-etale-splitting）。さらに次数一束の選択stack$\mathscr G_c\times_{U_2}\mathscr G_d$は一般に非中立な$\Gm^2$-gerbeで、その上に$E=Q_c\times_{\PP^1}Q_d$と二pencil$F,G$、$P=GF^{-1}$から相対square avatarが存在する。二根対相互交換は$(F,G,P)\mapsto(G,F,P^{-1})$という厳密なruling対合（C thm:qa-brauer-gerbe-square-avatar）。**未解決**はこのgerbe上のspinor finite End/Morita・相対Serre完成・pointed$\qgr$ heartの比較、ruling交換のAS側mutationとの両立、無標識stackの全群oid。有限End・実線束・相対heart・stackを混同しない。行列等式とconic対角化はcomputations/verify_noncubic_root_descent.pyで厳密検算PASS、Brauer非自明性はDVRの数学的論証であり計算結果ではない。
+**四頂点のBrauer重みと相対Azumaya-Morita表示（C v4.0）。** 二conicの次数一束$N_i$と階数二の$V_i=q_{i*}N_i$から、相対双対化により$N_i^2\simeq\mathcal O_{Q_i}(1)\otimes\det V_i$を証明。$H=\mathcal O_{E_f}(1)$とし四項を$(\mathcal O_E,F,H,HG)$へdeterminant正規化すると、$\Gm^2$-gerbeの重みは$((0,0),(1,0),(0,0),(0,1))$。したがって頂点のAzumaya Brauer類は**$(0,\alpha_c,0,\alpha_d)$**。各$T_{ij}=\pi_*(L_i^{-1}L_j)$に対し、重み零の$T_{ij}\otimes W_i\otimes W_j^\vee$を係数空間$U_2$へ降下させると、全合成を持つ$(A_i,A_j)$-双加群$\mathsf M_{ij}$を得る（C lem:qa-morita-determinant-normalization, thm:qa-twisted-four-vertex-morita）。全三退化型・任意基底変更に対応し、分岐根選択の分裂被覆ではspinor finite EndのMorita増幅と局所一致する。さらに一般点で$\alpha_c-\alpha_d\neq0$だから、二根対交換は**頂点固定のMorita自己同値には降下しない**（C cor:qa-morita-ruling-exchange-phase）。適切なmutationとpointing調整は必要条件だが、その相対的存在は未証明。先行入力はBergh--Schnürer 2021の一般gerbe重み分解・twisted Morita、今回の新しい部分は特定四項の重み・双加群合成と障害の適用。有限End・相対AS completion・相対pointed qgr・全stack群oidを区別する。整数重み・Morita積の有限計算は実行PASS。全数学的独立全面監査・LuaLaTeX組版・新規性網羅調査は未実施。
 
 ### 幾何的基礎と相対境界
 
