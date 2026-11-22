@@ -16,7 +16,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS分解とavatarの分類、pointed認識と相対比較** | v4.21。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS分解とavatarの分類、pointed認識と相対比較** | v4.22。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -54,7 +54,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 
 ### Gram pencilによる大域good moduliの明示表示
 
-非順序の全H2 good moduliは\\(\mathbb P(2,2,3,4)\\)の明示開で、全半不変式環は\\(k[A_2,B_2,C_3,D_4]\\)（重み2,2,3,4）。中央affine chartは\\(\Delta_8=(D_4+4A_2(B_2-2A_2))^2-4(B_2-2A_2)C_3^2\ne0\\)、その環は重み零局所化であり、noncubic閉像は\\(A_2=C_3=0,\ \chi=B_2^2/(4D_4)\\)。二商特異点の解析型は\\(1/3(1,1,2)\\)、\\(1/2(1,1,1)\\)。[全証明](papers/quiver-avatar/global_h2_invariant_hull.tex)、[検算コード](computations/verify_global_h2_pencil_invariants.py)。一般二対称形式の不変式環は既知入力。C3の全相対AS/QP群oid比較とC4の公表前監査・全稿組版は未完成。
+非順序の全H2 good moduliは\(\mathbb P(2,2,3,4)\)の明示開で、全半不変式環は\(k[A_2,B_2,C_3,D_4]\)（重み2,2,3,4）。中央affine chartは\(\Delta_8=(D_4+4A_2(B_2-2A_2))^2-4(B_2-2A_2)C_3^2\ne0\)、その環は重み零局所化であり、noncubic閉像は\(A_2=C_3=0,\ \chi=B_2^2/(4D_4)\)。二商特異点の解析型は\(1/3(1,1,2)\)、\(1/2(1,1,1)\)。[全証明](papers/quiver-avatar/global_h2_invariant_hull.tex)、[検算コード](computations/verify_global_h2_pencil_invariants.py)。一般二対称形式の不変式環は既知入力。C3の全相対AS/QP群oid比較とC4の公表前監査・全稿組版は未完成。
 
 ### 点曲線側の相対認識とspectral側の像
 
