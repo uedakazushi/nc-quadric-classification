@@ -1,0 +1,280 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / scratch draft: vertex-ideal criterion and all classified avatars
+\section{頂点idealによる反Serre生成判定と一般avatar}
+\label{sec:qa-general-vertex-az}
+
+前節の二捩れspinorによる障害を，一般のavatarへ無条件に
+外挿することはできない．本節では先にAS helixの頂点idealに
+よる生成判定を証明する．最小十本矢型では二本の追加矢が作る
+無限pathを用いることで，二捩れを仮定せずに偶数頂点を排除できる．
+その後，非被約曲線を許すsquare avatarについて，二つのmutation壁と
+cubicのpointed逆構成を用いて全四位相を判定する．
+
+\subsection{十分負の成分比較と頂点ideal}
+
+$A$を本稿のsquare，rotated，cubic，または最小十本矢型の
+左右Noetherian AS $\mathbb Z$-代数とする．
+$P_i=e_iA$, $E_i=\pi P_i$，
+$t=S^{-1}[2]$と書き，$tE_i\simeq E_{i+4}$の規約を用いる．
+右加群の$j$成分は$M_j=Me_j$であり，
+$(P_a)_j=A_{aj}$は$j\le a$に支持される．
+
+\begin{lemma}[有限射影解消からの遠方成分比較]
+\label{lem:qa-as-far-component-comparison}
+任意の有限生成次数付き右$A$加群$M$に対し，$j\ll0$なら
+自然な写像は同型
+\[
+ M_j\xrightarrow{\sim}\Hom_{\qgr A}(E_j,\pi M)
+\]
+を与え，さらに$\Ext^r_{\qgr A}(E_j,\pi M)=0$ ($r>0$)である．
+必要な$j$の上限は$M$に依存してよい．
+\end{lemma}
+\begin{proof}
+$A$は左右Noetherianであり，左右の単純加群は長さ三のAS解消を持つ．
+従って$M$には有限個の標準射影$P_a$からなる長さ三以下の解消がある．
+これは命題~\ref{prop:qa-as-avatar-coherent-morita}の証明と同じである：
+右AS解消を双対化すると，AS--Gorenstein条件から全ての左単純の
+長さ三の射影解消を得る．有限生成右加群は添字について上に有界で，
+graded Nakayamaによる極小射影被覆を持つ．
+有限生成syzygyの極小射影被覆を取ると，第四項が非零なら
+いずれかの左単純との$\Tor_{>3}$で検出され，
+左単純の長さ三の解消に矛盾する．
+AS10についても定理~\ref{thm:qa-as10-global-bijection}および
+命題~\ref{prop:qa-as10-noetherian-qgr}により同じ入力が成立する．
+
+この有限解消を$P_\bullet\to M$とする．
+補題~\ref{lem:qa-as-serre-unique-recovery}，
+補題~\ref{lem:qa-as10-hilbert-foundation}および全整数mutationの
+前向きExt消滅より，$j$を解消に現れる全$a$より十分小さく取れば
+\[
+ \RHom(E_j,\pi P_a)=A_{aj}[0]
+\]
+であり，同型は全写像と両立する．
+従って$\RHom(E_j,\pi P_\bullet)$は元の射影解消の$j$成分そのもので，
+そのコホモロジーは次数零の$M_j$だけである．
+$\pi$は完全なので，これは$\RHom(E_j,\pi M)$を計算する．
+ここでは任意の個別頂点の豊富性や，一般的な$\chi$定理を先に仮定していない．
+\end{proof}
+
+\begin{theorem}[頂点idealによる反Serre豊富性の必要十分条件]
+\label{thm:qa-vertex-ideal-az-criterion}
+$i\in\mathbb Z$を固定し，
+\[
+ I_i=\sum_{q\in\mathbb Z}Ae_{i+4q}A,
+ \qquad C_i=A/I_i
+\]
+と置く．次は同値である：
+\begin{enumerate}
+\item $(E_i,t)$はArtin--Zhang ampleである．
+\item すべての$j\in\mathbb Z$について右$C_i$加群$e_jC_i$は
+      有限次元である．
+\end{enumerate}
+特に，削除後に無限次元の標準右射影が残る位相は
+強い$\HH$の構造頂点にならない．
+\end{theorem}
+\begin{proof}
+(2)を仮定する．任意の$\pi M\in\qgr A$と任意の下限$N$を取る．
+$M$を十分負の添字まで切断しても$\pi M$は変わらないので，
+$M_j=0$ ($j>i-4N$)としてよい．
+この切断もNoether性により有限生成である．
+選択したresidueの成分から生成される部分加群を
+\[
+ L=MI_i=\sum_q M_{i+4q}A
+\]
+と置く．$M/L$は有限生成$C_i$加群なので，(2)より有限次元である．
+$L$はNoetherianな$M$の部分加群であるから有限生成であり，
+有限個の$M_{i-4n}$ ($n\ge N$)の元で生成できる．
+よって有限直和からの全射
+\[
+ \bigoplus_{\alpha}t^{-n_\alpha}E_i\twoheadrightarrow\pi M,
+ \qquad n_\alpha\ge N
+\]
+を得る．これが任意に深い負の軌道による(AZ1)である．
+任意の全射のkernelに前補題を適用すれば，十分大きい$n$で
+$\Ext^1(t^{-n}E_i,\ker)=0$となり，(AZ2)も得る．
+
+逆に$e_jC_i$が無限次元となる$j$が存在するとする．
+$M=e_jC_i$は$P_j$の商なので有限生成で，$\pi M\ne0$である．
+すべての$q$で$M_{i+4q}=0$だから，前補題によって
+\[
+ \Hom(t^{-n}E_i,\pi M)=0\qquad(n\gg0).
+\]
+十分大きい$N$を選べば，非零対象$t^N\pi M$への
+全ての$\Hom(t^{-n}E_i,-)$ ($n\ge0$)が零になる．
+これは(AZ1)に反する．最後の主張は
+補題~\ref{lem:qa-antiserre-necessary}による．
+\end{proof}
+
+\subsection{最小十本矢型の追加矢が与える一般の障害}
+
+\begin{proposition}[最小十本矢型では偶数位相が生成しない]
+\label{prop:qa-as10-general-even-obstruction}
+任意の$A\in\mathrm{AS}_{10}^{\mathrm{min}}$について，
+$(E_i,t)$がAZ ampleであることと$i$が奇数であることは同値である．
+特に全ての偶数$i$について
+\[
+ (\qgr A,E_i)\notin\HH.
+\]
+この主張に$P$の二捩れ性，avatar曲線の滑らかさは不要である．
+\end{proposition}
+\begin{proof}
+定理~\ref{thm:qa-as10-global-bijection}と
+式~\eqref{eq:qa-as10-reduced-potential}により，四周期表示のpotentialは
+\[
+ W=yq+px+H,
+\]
+ただし$x:1\to3$, $y:3\to1$は内部次数二，
+$p,q$はcycle矢二本の線形結合，$H$はcycle矢四本の線形結合である．
+全整数への展開では$x,y$が奇数頂点を二つずつ進める．
+
+全偶数頂点を削除すると，八本のcycle矢はすべて零になり，
+奇数頂点を結ぶ$x,y$だけが残る．
+全てのcyclic derivativeは，削除されたcycle矢を少なくとも一本含む：
+$\partial_xW=p$と$\partial_yW=q$は二本，
+cycle矢による微分は一本または三本を含む．
+従って残る$x,y$には関係がなく，商は奇数頂点上の一本の有向鎖の
+道代数である．その標準右射影$M=e_1C$は，
+すべての奇数$j\le1$で$M_j\simeq k$，偶数$j$で$M_j=0$となる
+無限次元一元生成加群である．
+各偶数位相だけを削除する商はさらに$C$へ全射するので，
+前定理の有限次元条件を満たさない．
+
+奇数の一つの位相を削除すると，追加矢$x,y$はともに消え，
+残るcycle矢は各周期で長さ高々二の有向鎖になる．
+従って削除後の各標準右射影は有限次元であり，前定理を適用できる．
+\end{proof}
+
+\begin{remark}[非二捩れでの障害と二周期point module]
+この無限path加群はAS10の追加矢から構成され，
+中央二重平方表示や中心元$cd+dc$を必要としない．
+従って二捩れnoncubicの場合の二周期point moduleによる障害には，
+一般$P$でも有効なAS10側の表現がある．
+一方，一般avatarに中央二重平方環$B_f$や
+通常の次数一生成point schemeが付随すると主張しているのではない．
+\end{remark}
+
+\subsection{一般曲線型avatarの全四位相}
+
+以下，$(D,F,G,P)$を本稿のsquare曲線型avatarとする．
+$D$は非被約でもよく，$F,G$は指定された$(2,2)$埋め込みの
+相異なる二ruling，$P\in\Pic^0(D)\setminus\{\OO_D\}$である．
+二つの壁を
+\[
+ D_F=\{G\simeq FP\},\qquad D_G=\{GP\simeq F\}
+\]
+と書く．ここで$D_F,D_G$は曲線そのものでなくパラメータ上の条件である．
+
+\begin{theorem}[一般square曲線型avatarの構造頂点]
+\label{thm:qa-general-square-pointings}
+square AS helixを$(E_i)$とすると，各位相について
+強い$\HH$への所属と反Serre軌道のAZ豊富性は同値であり，
+次の表で与えられる：
+\[
+\begin{array}{c|c|c}
+ i\bmod4& (E_i,t)\text{ がAZ ample}&(\qgr A,E_i)\in\HH\\ \hline
+ 0,3&\text{常に成立}&\text{常に成立}\\
+ 1&GP\not\simeq F&GP\not\simeq F\\
+ 2&G\not\simeq FP&G\not\simeq FP
+\end{array}
+\]
+\end{theorem}
+\begin{proof}
+第一mutationの全整数exact比較は
+\[
+ H_0=\ker(E_0^{\oplus2}\to E_1),\quad
+ H_1=E_0,\quad H_2=E_2,\quad H_3=E_3
+\]
+である．$D_F$上では最小十本矢型なので，前命題によって
+$E_2=H_2$の反Serre生成条件が破れる．
+$F,G$を交換して第二mutationを行えば，$D_G$上で
+$E_1$について同じ結論を得る．
+
+$D_F$の外では定理~\ref{thm:qa-as10-forward-as}により
+第一mutationはcubic型AS代数である．この定理は曲線の被約性を要求しない．
+命題~\ref{prop:qa-as10-noetherian-qgr}のexact同値は
+上記の$H_1=E_0$, $H_2=E_2$, $H_3=E_3$を保つ．
+論文A~\cite[\texttt{thm:all-admissible-inverse}]{QuadricIntrinsic2026}は，
+\emph{任意の}三次三次元AS正則$\mathbb Z$-代数の標準零頂点を
+構造対象とする組が強い$\HH$に属することを述べる．
+これを得られたcubic代数および各添字shiftに適用すると，
+全$H_i$を構造対象とする組が強い$\HH$に属する．
+特に$E_0,E_2,E_3$の所属を得る．
+ここで同じrootやcurve上のtensorがnc heartへ延びるとは仮定しない．
+
+第二mutationを用いると，$D_G$の外で$E_0,E_1,E_3$の所属を得る．
+二壁の交点では$P^2=\OO_D$, $P\ne\OO_D$, $G=FP$である．
+補題~\ref{lem:qa-as10-double-wall-reduced-geometries}により，
+この場合$D$はsmooth/nodal/$I_2$の三型に限られる．
+全三型についての既存のnoncubic認識と
+系~\ref{cor:qa-noncubic-avatar-vertex-h2-status}により
+$E_0,E_3$が強い$\HH$に属する．
+これで表の全ての肯定・否定を得た．
+肯定側のAZ豊富性は補題~\ref{lem:qa-antiserre-necessary}から従い，
+否定側はすでに生成障害そのものとして証明されている．
+四周期はexact自己同値$t$なので，全整数へ結論が移る．
+\end{proof}
+
+\begin{corollary}[Rotated零頂点と一般最小十本矢型のpointing]
+\label{cor:qa-general-rotated-as10-pointings}
+曲線型rotated avatarを$(D,F_r,H_r,P)$，
+$C=H_rF_r^{-2}$とし，標準helixを$(R_i)$とする．
+強い$\HH$への所属は
+\[
+\begin{array}{c|c}
+ i\bmod4&(\qgr A_{\rm rsq},R_i)\in\HH\\ \hline
+ 0&C\not\simeq\OO_D\\
+ 1&C\not\simeq P^2\\
+ 2,3&\text{常に成立}
+\end{array}
+\]
+である．とくに零頂点はHilbert曲面が$\Sigma_0$の場合に属し，
+$\Sigma_2$の場合には属さない．
+また，全ての最小十本矢型avatarでは
+構造頂点$H_i$が強い$\HH$に属することと$i$が奇数であることは同値である．
+\end{corollary}
+\begin{proof}
+squareとの辞書は
+$F_s=F_r$, $G_s=H_rF_r^{-1}P^{-1}$，
+また$R_i=E_{i+1}$である．従って
+\[
+ G_sP\simeq F_s\iff C\simeq\OO_D,
+ \qquad
+ G_s\simeq F_sP\iff C\simeq P^2.
+\]
+前定理に代入すればrotatedの表を得る．
+Hilbert曲面の判定は
+定理~\ref{thm:qa-core-avatar-square-rotated}による．
+この結論は$\coh\Sigma_2$との同一視から得たものではなく，
+AS10の無限pathによる生成障害から得ている．
+
+最小十本矢型では$D_F$上にあり，$H_1=E_0$，$H_3=E_3$なので
+奇数位相は前定理によって強い$\HH$に属する．
+偶数位相は命題~\ref{prop:qa-as10-general-even-obstruction}により除外される．
+\end{proof}
+
+\begin{proposition}[古典型の全位相]
+\label{prop:qa-classical-all-vertex-pointings}
+squareおよびrotatedの各一つの古典型では，
+すべての標準頂点を構造対象とする組が強い$\HH$に属する．
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:qa-as-extraction}と
+定理~\ref{thm:qa-as-avatar-bijection}の古典型は
+$\PP^1\times\PP^1$であり，標準四項はそれぞれ
+\[
+ (\OO,\OO(1,0),\OO(0,1),\OO(1,1)),\qquad
+ (\OO,\OO(-1,1),\OO(0,1),\OO(1,2))
+\]
+である．全整数helixも線束からなる．各線束とのtensorはexact自己同値で，
+$(\coh(\PP^1\times\PP^1),\OO)$は通常のSegre表示による
+強い$\HH$の対象だから，結論を得る．
+古典型を曲線型の許容条件$P\ne\OO_D$へ形式的に代入したものではない．
+\end{proof}
+
+\begin{remark}[範囲と残る比較]
+以上は本稿で分類した体上のsquare／rotated／最小十本矢型の
+全標準構造頂点を扱う．任意の非標準exceptional対象を構造対象とする問題，
+一般avatar族の相対pointed認識，任意基底上のAS/QP群oidの同値は別の課題である．
+また，一般のpointed圏について「反Serre ampleなら強い$\HH$」と
+主張したのではなく，表の肯定側では実際のcubic/noncubic認識を用いた．
+\end{remark}

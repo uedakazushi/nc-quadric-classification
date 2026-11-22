@@ -1,7 +1,13 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.86。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.87。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 点加群・fat pointと生成障害の先行研究
+
+Smith–Van den Bergh, *Noncommutative quadric surfaces*, J. Noncommut. Geom.7 (2013),817–856, [DOI](https://doi.org/10.4171/JNCG/136) の刊行本文§10.5と、Rogalski–Sierra–Stafford, *Some noncommutative minimal surfaces*, Adv. Math.369 (2020),107151, [DOI](https://doi.org/10.1016/j.aim.2020.107151)、[著者版](https://www.pure.ed.ac.uk/ws/portalfiles/portal/141851809/1807.09889.pdf) のLemma6.6とProposition6.10の証明（印字pp.22,24–25）を2026-11-23に一次確認した。後者は無限位数translationのSklyanin quadricで余剰単純対象のmultiplicityを決定し、MCM line idealの非generator性をtrace quotientの点加群で検出する。通常のpoint moduleとmultiplicity>1のfat pointを区別する必要がある。
+
+楕円base locus外に点加群があることや、trace商で生成性を調べる一般手法を新結果とはしない。Cは中央二重平方表示の全point schemeと交換shift、全標準頂点の反Serre豊富性・H2所属を直接証明する。今回照合した無限位数Sklyanin pencilの結果は、曲線上shiftが恒等となるこの二平方表示をそのまま含む定理ではない。表示が同値な有限中心・Clifford系文献との網羅的照合は未完了で、新規性は未確定である。引用キー `SVdB2013`, `RogalskiSierraStafford2020`。
 
 ## Artin targetへの良モジュライ射と構造頂点の障害
 
@@ -9,7 +15,7 @@ Alper, *Good moduli spaces for Artin stacks*, Ann. Inst. Fourier 63(6) (2013), 2
 
 Cの具体的な追加は、Frickeの自然な順序付き延長をこの意味の平坦な良モジュライ射と同定し、sourceのDM開へ制限すると直像完全性を失うことを明示する点である。非順序射はgeneric O直像のrankが2なので同じ結論にならない。商・不変式一般論の新規主張とはしない。
 
-Noncubic spinor pointingの排除は、二周期point moduleとh局所化の直接証明を用いる。反Serre生成の必要性は既存の次数1生成・Veronese・AZ再構成を入力とする。今回の具体的な貢献はsquare/rotated/最小AS10の全四位相の判定であり、一般Pの全avatar、任意のexceptional対象の標識分類へ拡大しない。この排除と既存のpoint-module分類との包括的新規性比較は未完了。
+Noncubic spinor pointingの排除は、二周期point moduleとh局所化の直接証明を用いる。反Serre生成の必要性は既存の次数1生成・Veronese・AZ再構成を入力とする。今回の具体的な貢献はsquare/rotated/最小AS10の全四位相の判定であり、全分類AS型の標準頂点には、別の頂点ideal判定とcubic逆構成を用いて拡張した。任意の非標準exceptional対象の標識分類へは拡大しない。この排除と既存のpoint-module分類との包括的新規性比較は未完了。
 
 ## 境界graph・自由符号商・構造層の入力
 

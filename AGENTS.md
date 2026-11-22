@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.28。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.12。
+2026-11-23 / v1.29。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.13。
 
 ## 公表用三論文の役割
 
@@ -26,7 +26,7 @@
 
 標数零の代数閉体上で、この対応は `χ ↦ χ/(χ−1)`。smooth域の自己双対pointed同型類は正確に `χ=0,2` である。曲線のj値だけで判定せず、非零二捩れ標識も保存する。正本は [spectral_atkin_lehner.tex](papers/quiver-avatar/spectral_atkin_lehner.tex)、`thm:qa-spectral-avatar-pointed-involution`、`prop:qa-spectral-atkin-lehner-chi`。
 
-一根共有と根対一致へ退化する二つの明示trait族では、対応先のχがそれぞれ一位と二位の極を持つ。Bのnoncubic境界の閉性と全域正則なχを用い、対応先はH2族へ延長できず、有限分岐trait基底変更でも障害が残ることを証明した（`cor:qa-spectral-involution-no-h2-extension`）。従ってこのsmooth対応を全noncubic境界からH2への射に延長することはできない。同じ指定square変換・mutation・pointingによるspectral Σ2実現にもこの結論を適用する。noncubic由来のrotated零頂点は強いH2外と判定済みであり、一般Pのrotated型は未比較である。smooth spectral対応には以下の相対射があるが、粗対合を覆うstack自己同値は存在しない。
+一根共有と根対一致へ退化する二つの明示trait族では、対応先のχがそれぞれ一位と二位の極を持つ。Bのnoncubic境界の閉性と全域正則なχを用い、対応先はH2族へ延長できず、有限分岐trait基底変更でも障害が残ることを証明した（`cor:qa-spectral-involution-no-h2-extension`）。従ってこのsmooth対応を全noncubic境界からH2への射に延長することはできない。同じ指定square変換・mutation・pointingによるspectral Σ2実現にもこの結論を適用する。noncubic由来のrotated零頂点は強いH2外と判定済みであり、一般Pを含む全標準頂点の体上判定は成立した。smooth spectral対応には以下の相対射があるが、粗対合を覆うstack自己同値は存在しない。
 
 ### Smooth相対gerbeと特異境界
 
@@ -52,6 +52,10 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 
 **順序付きFricke延長は平坦な良モジュライ射である。** 実際の代数的target atlas上で $[\operatorname{Spec}R[a,b]/(ab-q)/\mathbb G_m]\to\operatorname{Spec}R$ と表示し、平坦・有限表示・全射、構造層の直像同型とquasi-coherent直像の完全性を証明した。Artin targetを許すAlper Remark 4.4の意味でのgood moduli space morphismであり、任意底変更後も成立する。非smooth locusは一致根対に限られ、射は非分離・非proper。一致点を除くDM開では直像の完全性が失われ、中央μ₂を剛体化した局所模型は原点を二重にした直線となる。順序忘却後の射は一般fiberが二つなので、この良モジュライ性を持たない。[証明](papers/quiver-avatar/fricke_boundary_descent.tex)。
 
+**標準構造頂点のH2所属を全分類AS型で判定した。** Square曲線型では位相0,3は常に所属し、位相1は $GP\not\simeq F$、位相2は $G\not\simeq FP$ のときに限り所属する。Rotatedでは $C=HF^{-2}$ として位相0は $C\not\simeq\mathcal O$、位相1は $C\not\simeq P^2$、位相2,3は常に所属する。最小十本矢型は奇数位相だけが所属し、古典型は全位相が所属する。非被約曲線も含む体上の定理である。頂点ideal商の全標準右射影の有限次元性と反Serre豊富性の同値を証明し、肯定側には実際のcubic/noncubic pointed認識を使う。[全標準頂点の判定](papers/quiver-avatar/general_vertex_az.tex)。
+
+**全point schemeと孤立二点。** 中央二重平方環では全point schemeは $E_f\amalg\{p_c,p_d\}$、shiftは曲線上で恒等、付加二点を交換する。multilinear schemeを自己同型のgraphとして計算し、全truncationの安定化、任意底変更と普遍族を確認した。表示商上の孤立二点は根対の順序付け二重被覆として降下する。graded普遍加群の次数スカラーgerbeは区別する。[証明](papers/quiver-avatar/spinor_pointing_obstruction.tex)。
+
 **Noncubic由来の構造頂点を全四位相で判定した。** 同じ $\qgr B_f$ の二spinor $\pi X_c,\pi X_d$ は、二周期point moduleへの全反Serre軌道からのHomが零となるため、強いH2の構造対象にはならない。H2に属する位相はsquareで0,3、rotatedで2,3、最小十本矢型で1,3であり、全整数へ四周期化する。特にrotated零頂点・最小十本矢型零頂点は除外された。曲線上のpencil辞書や同じHilbert数値だけではこの障害を検出できない。[構造頂点と生成障害](papers/quiver-avatar/spinor_pointing_obstruction.tex)。
 
 ### 保持する分類・障害・再開先
@@ -74,7 +78,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 
 - E_f側の相対mutation、全商降下、Serre完成、pointed heart回収、およびsmooth spectral相対射・gerbe分解を未解決へ戻さない。stack自己同値とH2境界延長は不存在が証明済みであり、単なる証明不足と記さない。境界の具体的な平坦代数モデルを出発点とし、自然な射の延長先とその同型層を調べる。
 - 任意のAS/avatar/QP表示stack全体のright-equivalence groupoid、一般cubic域の表示忘却fiber・慣性、既存GITとの相対比較は別に検証する。体上AS分類や特定noncubic族の相対認識から全表示stack同値を推論しない。
-- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。noncubic由来の全四位相も判定した。次は一般Pのrotated構造頂点の反Serre生成を調べる。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
+- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。全分類AS型の標準頂点を体上で判定した。次は二つの乗法行列式による相対開とpointed認識を調べる。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 
