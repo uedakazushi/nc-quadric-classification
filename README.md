@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.8。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.8。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -64,12 +64,12 @@ noncubic有限型効果性では、[五頂点barとcanonical tails](papers/modul
 git pull --ff-only
 latexmk papers/nc-quadric-classification.tex
 latexmk papers/nc-quadric-moduli.tex
-latexmk papers/quiver-avatar-moduli.tex
+latexmk papers/nc-quadric-avatar.tex
 ```
 
 `papers/` に `cd` して `latexmk nc-quadric-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
 
-**原稿Cの現在の組版確認状況（2026-11-22）。** 利用者のTeX Live 2026実ログでは、`papers/quiver-avatar-moduli.tex:82` の数式記号 `D∈|−K_{Σ₂}|` がテキストモードのまま記載され、`Missing $ inserted` で停止した。現行mainではこれを `$D\in|-K_{\Sigma_2}|$` 等の明示的な数式モードへ訂正し、TeX本文に紛れ込んだMarkdownの `**...**` も `\textbf{...}` に直した。修正した数式断片は別のLuaLaTeX環境で単独組版に成功した。Cの9個のTeXソースについてラベル・引用・環境バランスと同種の記号混入を静的確認し、`python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex` に回帰検査を追加した。ただし**訂正後の原稿C全体のLuaLaTeX組版は未確認**なので、最新版を取得して再実行する必要がある。
+**原稿Cの現在の組版確認状況（2026-11-22）。** 利用者のTeX Live 2026実ログでは、`papers/nc-quadric-avatar.tex:82` の数式記号 `D∈|−K_{Σ₂}|` がテキストモードのまま記載され、`Missing $ inserted` で停止した。現行mainではこれを `$D\in|-K_{\Sigma_2}|$` 等の明示的な数式モードへ訂正し、TeX本文に紛れ込んだMarkdownの `**...**` も `\textbf{...}` に直した。修正した数式断片は別のLuaLaTeX環境で単独組版に成功した。Cの9個のTeXソースについてラベル・引用・環境バランスと同種の記号混入を静的確認し、`python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex` に回帰検査を追加した。ただし**訂正後の原稿C全体のLuaLaTeX組版は未確認**なので、最新版を取得して再実行する必要がある。
 
 **追加の組版修正（2026-11-22）。** 原稿Cの `quiver-avatar/git_comparison.tex:294` で `\Spin` が未定義となり停止した実ログを受領。同行の `\SL` も原稿Cのプリアンブルに定義がなかったため、主原稿へ `\DeclareMathOperator{\Spin}{Spin}` と `\DeclareMathOperator{\SL}{SL}` を追加した。未解決の引用・参照は途中停止時の集計なので、全組版を最後まで実行し BibTeX と再実行が完了するまで最終的な欠落とは判断しない。修正後の原稿C全文のLuaLaTeX組版成功は未確認。
 
@@ -79,7 +79,7 @@ latexmk papers/quiver-avatar-moduli.tex
 
 macOSでFinder/DockからVS Codeを起動した場合、MacTeXが導入されていても `/Library/TeX/texbin` が拡張機能のPATHに含まれないことがある。この場合、**Macだけのローカル対処**として、VS Codeのユーザー設定（リポジトリで共有しない設定）で `latex-workshop.latex.tools` の `latexmk-project` の `command` を `/Library/TeX/texbin/latexmk` に、`latex-workshop.latex.clean.command` も同じ絶対パスに指定する。共有設定の `cwd` と `args` は維持する。あるいは、`/Library/TeX/texbin` をVS Codeの起動環境PATHに追加してから再起動する。Macの `.latexmkrc` はMacTeXのディレクトリが存在する場合にのみ子プロセスのPATHを補うが、**latexmk自体を起動する前のPATH問題は解決しない**。
 
-VS Codeではリポジトリのルートをフォルダとして開き、`papers/nc-quadric-classification.tex`、`papers/nc-quadric-moduli.tex` または `papers/quiver-avatar-moduli.tex` をアクティブにして LaTeX Workshop のビルドを実行する。PDFとSyncTeXは `build/` に出力される。まずターミナルで `latexmk -v` と `lualatex --version` を確認し、ビルドが失敗した場合は LaTeX Workshop のログで `spawn latexmk ENOENT` の有無を確認する。
+VS Codeではリポジトリのルートをフォルダとして開き、`papers/nc-quadric-classification.tex`、`papers/nc-quadric-moduli.tex` または `papers/nc-quadric-avatar.tex` をアクティブにして LaTeX Workshop のビルドを実行する。PDFとSyncTeXは `build/` に出力される。まずターミナルで `latexmk -v` と `lualatex --version` を確認し、ビルドが失敗した場合は LaTeX Workshop のログで `spawn latexmk ENOENT` の有無を確認する。
 
 ## Cloud Codexで続ける
 
@@ -126,7 +126,7 @@ BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidal
 
 ## 八本・十本・十二本矢と avatar
 
-独立した公表用草稿 [papers/quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) に、表示モジュライ・反標準 avatar・内在的忘却の関係をまとめた。主論文は全H2のpointed分類と相対認識を、別稿は矢数の層別と幾何的chartを扱う。
+独立した公表用草稿 [papers/nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) に、表示モジュライ・反標準 avatar・内在的忘却の関係をまとめた。主論文は全H2のpointed分類と相対認識を、別稿は矢数の層別と幾何的chartを扱う。
 
 | 対象 | 確立した関係 | 留保 |
 | --- | --- | --- |
@@ -240,7 +240,7 @@ $$
 | [CLOUD_CODEX.md](CLOUD_CODEX.md) | Cloud環境の準備、起動用の依頼文、検証・保存・再開の手順 |
 | [scripts](scripts) | 依存の準備と、構成・検算・組版の独立した確認 |
 | [papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | 本文のある主論文。日本語LuaLaTeX、著者欄空欄 |
-| [papers/quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 八・十・十二本矢、avatar、内在的忘却を扱う独立した日本語LuaLaTeX論文 |
+| [papers/nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | 八・十・十二本矢、avatar、内在的忘却を扱う独立した日本語LuaLaTeX論文 |
 | [papers/quiver-avatar](papers/quiver-avatar) | 別稿の有限QP・foundation・幾何的chart・忘却の証明 |
 | [papers/sections](papers/sections) | 主分類定理、全被覆、逆構成、同値判定、基準例の証明を収めた分割節 |
 | [papers/references.bib](papers/references.bib) | 確認した一次文献の書誌 |
@@ -275,13 +275,13 @@ python3 scripts/check.py all
 別稿は次で個別に確認・組版する。
 
 ```sh
-python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex
-python3 scripts/check.py build --manuscript papers/quiver-avatar-moduli.tex
+python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex
+python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex
 python3 computations/verify_quiver_avatar_charts.py
 python3 computations/verify_quadric_first_order_roots.py
 ```
 
-出力は `build/quiver-avatar-moduli.pdf` と同名の `.synctex.gz`。ルートの `latexmk` は両論文を組版する。
+出力は `build/nc-quadric-avatar.pdf` と同名の `.synctex.gz`。ルートの `latexmk` は両論文を組版する。
 
 Python 3.9以上とSymPy、およびLuaTeX-jaを含むTeX Live/MacTeX、latexmk、BibTeXを用いる。出力は `build/nc-quadric-classification.pdf` と同名の `.synctex.gz`。PDF・組版中間物はGitで追跡しない。
 
