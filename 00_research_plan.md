@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v1.04。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv2.8。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v1.05。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv2.8。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。局所good moduliの降下もこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -16,10 +16,10 @@
 
 **P3：文献比較と公表編集。** Belmans, *Hochschild cohomology of noncommutative planes and quadrics*（JNCG 13 (2019), 769–795, doi:10.4171/JNCG/338）を主にcubic側の既知HH計算として明記する。VdB、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa OWR2022、Okawa–Ueda 2014の既知の分類・line-bundle格子・GITを本研究の追加成果から区別する。AのIntroductionは分類・忘却・noncubicに、Bは四つの主定理群（代数性、境界相対同値、good/coarse moduli、形式局所構造）に焦点を当て、必要な証明を削らず本文を読みやすく再配置する。LuaLaTeX/latexmkで三稿ごとにPDF・SyncTeXと表示を確認し、未実施なら明記する。新規性の包括調査・第三者査読は別状態とする。
 
-**P4（最優先）：O-marked quadric・線形代数／potential・反標準avatarの具体的全対応（論文C v2.8）。** 目標は**同型類の明示的全単射**またはそれを誘導する**相対モジュライの射**。滑らかな楕円cubicではVdB三線束とsquare avatarの双方向式(F_s,G_s,P)=(L2,L1 L2 L0^{-1},L2 L0^{-1})、Oを保つr1:(F_s,G_s,P)↦(G_sP^{-1},F_sP,P)の商を証明。OU potential→avatarは一般次数4、→O-markedは8（別の表示次数）。**今回noncubicの全幾何点へ拡張：** Bの被約二根対 {f1,f2} に対してq=f1f2の四次resolventを作る。全二次因子分割の射Sym²(P²)→P⁴は有限一般次数3（古典的quartic resolvent）。qの(1,1,1,1)/(2,1,1)/(2,2)はそれぞれsmooth genus1/既約nodal genus1/二P¹が二節点で交差するI2型。これらのC_qのPic⁰[2]\{0}は3/1/1点で、対応する被約二根対の分割も3/1/1通り。F_s=p*O(1)、G_s=F_sPを用いて全型を(2,2) anticanonical divisorとして埋め込み、**noncubic根対全同型類↔P²=O,P≠OかつG_s=F_sPを満たすsquare avatar全幾何同型類↔Bの全noncubic O-marked同型類**を証明（C thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection）。nodalとI2の(2,2)式も明示。**相対射とその障害：** Bの中央二重平方環B_f=k[u,v]〈c,d〉/(c²-f1,d²-f2)の可換化の点曲線E_f=Proj B_f^{ab}に同時符号μ₂を作用させ、E_f→C_q:y²=f1f2と反不変rank-one torsion-free degree0 module Mを得る。p_*M=O(-1)²、yc=f1d,yd=f2cというmatrix factorizationで任意基底変更に整合する相対射（C thm:qa-noncubic-rootpair-torsionfree-spectral-module、cor:qa-noncubic-central-square-point-curve-spectral-avatar）。smooth fiberではMは非零2torsion線束だが、共有根では節点で非局所自由。具体的f1=x(x-1),f2=(x-s)(x-2)では全空間A=k[[x,s,y]]/(y²-x(x-s))≅k[[c,d]]^{±}がA1型、反不変Mは非自由reflexiveで、一般2torsion線束はこの固定C族のinvertible sheafへ延長不能と証明。**ゆえに幾何同型類の全単射と通常Pic⁰を用いる相対スタック射は異なる**。Σ2へのelementary transformやrank-one torsion-free compactified avatarが次の候補。既存の全H2 normal ruling finite étale double cover・finite foundation実現可能開のS₂商、OU慣性・局所粗分岐、cubic quartic/sextic判定は入力として維持。**未決定：** avatar由来AS ℤ代数のqgrがBのO-marked heartと一致する直接認識、同型類全単射を誘導する元のPic⁰ avatar stackの相対射、Σ2最深・非被約/他の境界・P=0古典型、8/10/12矢potentialの安定同値を含む全相対群oid。
+**P4（最優先）：O-marked quadric・線形代数／potential・反標準avatarの具体的全対応（論文C v2.9）。** 目標は**同型類の明示的全単射**またはそれを誘導する**相対モジュライの射**。滑らかな楕円cubicではVdB三線束とsquare avatarの双方向式(F_s,G_s,P)=(L2,L1 L2 L0^{-1},L2 L0^{-1})、Oを保つr1:(F_s,G_s,P)↦(G_sP^{-1},F_sP,P)の商を証明。OU potential→avatarは一般次数4、→O-markedは8（別の表示次数）。**今回noncubicの全幾何点へ拡張：** Bの被約二根対 {f1,f2} に対してq=f1f2の四次resolventを作る。全二次因子分割の射Sym²(P²)→P⁴は有限一般次数3（古典的quartic resolvent）。qの(1,1,1,1)/(2,1,1)/(2,2)はそれぞれsmooth genus1/既約nodal genus1/二P¹が二節点で交差するI2型。これらのC_qのPic⁰[2]\{0}は3/1/1点で、対応する被約二根対の分割も3/1/1通り。F_s=p*O(1)、G_s=F_sPを用いて全型を(2,2) anticanonical divisorとして埋め込み、**noncubic根対全同型類↔P²=O,P≠OかつG_s=F_sPを満たすsquare avatar全幾何同型類↔Bの全noncubic O-marked同型類**を証明（C thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection）。nodalとI2の(2,2)式も明示。**相対射とその障害：** Bの中央二重平方環B_f=k[u,v]〈c,d〉/(c²-f1,d²-f2)の可換化の点曲線E_f=Proj B_f^{ab}に同時符号μ₂を作用させ、E_f→C_q:y²=f1f2と反不変rank-one torsion-free degree0 module Mを得る。p_*M=O(-1)²、yc=f1d,yd=f2cというmatrix factorizationで任意基底変更に整合する相対射（C thm:qa-noncubic-rootpair-torsionfree-spectral-module、cor:qa-noncubic-central-square-point-curve-spectral-avatar）。smooth fiberではMは非零2torsion線束だが、共有根では節点で非局所自由。具体的f1=x(x-1),f2=(x-s)(x-2)では全空間A=k[[x,s,y]]/(y²-x(x-s))≅k[[c,d]]^{±}がA1型、反不変Mは非自由reflexiveで、一般2torsion線束はこの固定C族のinvertible sheafへ延長不能と証明。**ゆえに幾何同型類の全単射と通常Pic⁰を用いる相対スタック射は異なる**。Σ2へのelementary transformやrank-one torsion-free compactified avatarが次の候補。既存の全H2 normal ruling finite étale double cover・finite foundation実現可能開のS₂商、OU慣性・局所粗分岐、cubic quartic/sextic判定は入力として維持。**未決定：** avatar由来AS ℤ代数のqgrがBのO-marked heartと一致する直接認識、同型類全単射を誘導する元のPic⁰ avatar stackの相対射、Σ2最深・非被約/他の境界・P=0古典型、8/10/12矢potentialの安定同値を含む全相対群oid。
 **Σ₂での全noncubic分類を証明：** 負断面Sを避ける反標準因子D∈|−K_{Σ₂}|と0≠P∈Pic⁰(D)[2]の幾何同型類は、全noncubic O-marked quadricの幾何exact同型類と全単射（C thm:qa-all-noncubic-sigma2-anticanonical-avatar-bijection）。H=O(h)|D=F²、F=O(f)|Dを用いるsquare換算はF_s=F,G_s=FP。P非自明2捩れによりDはsmooth、既約nodal、二P¹二節点(I2)の三型だけ。Bの良moduliでχ=1に重なる一根共有と根対一致も、Σ₂のnodalとI2で区別（C cor:qa-sigma2-avatar-separates-special-noncubic-classes）。これは**体上の同型類全単射**で、avatar AS代数の元のqgr heartとO-markedの直接同値、非被約底の通常Pic⁰線束を使う相対射ではない。
 
-**原稿Cの自己完結化と新障害（2026-11-22 / C v2.8）。**
+**原稿Cの自己完結化と新障害（2026-11-22 / C v2.9）。**
 添付の大川--植田「非可換二次曲面の二つの反標準avatar」v7（Parts I--II）から、Cの比較に不可欠な曲線上の理論を
 `papers/quiver-avatar/square_rotated_foundations.tex` と
 `papers/quiver-avatar/canonical_helix_complexes.tex` に証明付きで統合した。
@@ -32,11 +32,26 @@
 垂直Cartier twistでも次数の奇偶が保たれると示した。
 したがって**同一一径数基底上でのA1最小解消だけでは、多重次数零の相対Picard線束化は不可能**である。
 局所chartと奇偶恒等式は `computations/verify_nodal_exceptional_parity.py` に保存した。
+**相対spectral二次積の精密化（C v2.9）。** 二形式族の反不変層 $M$ とその積
+$\mu:M\otimes M\to O_C$ について、任意の基底（非被約底を含む）で
+$\operatorname{im}\mu=(f_1,f_2,y)$、$\operatorname{coker}\mu\simeq O_{V(f_1,f_2)}$ を証明。
+各squarefree幾何fiberで積欠損長はsmooth/nodal/I2の順に $0/1/2$、
+積の随伴射 $M\simeq M^\vee$ は同型である。
+nodal極限は $\nu_*O_{\mathbf P^1}(-1)$（単純）、I2極限は
+$\nu_*(O_{\mathbf P^1}(-1)\oplus O_{\mathbf P^1}(-1))$（非単純、End=$k^2$）。
+曲線固定で二次積まで保存すると自己同型はそれぞれ
+$\mu_2,\mu_2^2$（C prop:qa-spectral-product-defect、
+thm:qa-spectral-three-fiber-limits、cor:qa-spectral-pair-finite-inertia）。
+**したがって simple sheaf の fine compactified Jacobian のみでは I2 を受けられない。**
+次は $(C,M,\mu)$ の相対groupoid・基底変更・偏極と
+noncubic O-marked stack の慣性を比較する。
+既知の一般 compactified Jacobian 理論（Altman--Kleiman,
+Christ--Payne--Shen）と明示積計算を区別し、新規性の包括確認は未実施。
 次の実際の研究は、base change後のsemistable model・compactified Picard・elementary transformのどれで
 正しい相対groupoidへ到達するかを絞り、有限foundationのSerre作用・元のAS qgr heartの比較を優先する。
 この追加結果の数学的な独立全面監査、公開一次文献との包括比較、Cの全組版は未実施であり、コード・静的参照検査と区別する。
 
-**P5：三者対応の相対化と境界認識。** (i) 根対→spectral (C,M)の相対射を、節点で非局所自由なMのcompactified Picard /rank-one reflexive moduleの幾何として解析し、元のsquare/Σ2上の反標準avatarへelementary transformで移せるか証明する。(ii) 非cubic平方根環B_fのAS qgrとavatar由来AS代数のheartが同じO-marked対象になる必要十分条件・自己同値群/慣性を検証する。(iii) 8/10/12本矢の統一potentialの消去可能pairとスカラー慣性を正しく商に組み込み、相対モジュライ射を作る。(iv) cubicのVdB↔squareとの境界接合、P=0可換点の収縮、Σ2最深のO-marked適合性を解決する。 **Σ₂の幾何全単射をavatar由来AS代数のqgr heartの直接同定で検証すること、および節点で非自由なspectral moduleをelementary transform/compactified Picardで相対可逆化することを最優先にする。**
+**P5：三者対応の相対化と境界認識。** (i) 根対→spectral $(C,M,\mu)$ の相対射を、節点で非局所自由なMの全rank-one torsion-free stackと二次積欠損の幾何として解析し、元のsquare/Σ2上の反標準avatarへelementary transformで移せるか証明する。(ii) 非cubic平方根環B_fのAS qgrとavatar由来AS代数のheartが同じO-marked対象になる必要十分条件・自己同値群/慣性を検証する。(iii) 8/10/12本矢の統一potentialの消去可能pairとスカラー慣性を正しく商に組み込み、相対モジュライ射を作る。(iv) cubicのVdB↔squareとの境界接合、P=0可換点の収縮、Σ2最深のO-marked適合性を解決する。 **Σ₂の幾何全単射をavatar由来AS代数のqgr heartの直接同定で検証すること、および節点で非自由なspectral moduleをelementary transform/compactified Picardで相対可逆化することを最優先にする。**
 
 **直ちに着手する一手：** 全noncubic Σ₂ avatarの元AS Z代数とBの中央二重平方B_fについて、有向End代数・反Serre環・O-pointingを比較する。並行してnodalのA1反不変reflexive sheafをelementary transformしてΣ₂側Pic⁰の相対線束へ移す構成を研究する。三者対応の射・慣性に直結しない周辺計算は優先度を下げる。
 
@@ -44,7 +59,7 @@
 
 - **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
-- **C・O-marked／potential／avatar対応：** C v2.8。滑らかな楕円cubicのVdB↔square公式とO保存r1商、potential→avatar一般次数4・→H2次数8を保持。noncubicの四根相異なる開の同型類全単射を共有根・一致根対にも拡張し、root pair↔smooth/nodal/I2の非零2torsion square avatar↔Bの全noncubic幾何同型類全単射を証明。中央二重平方環の可換点曲線からspectral double cover・rank-one torsion-free moduleへの相対射を明示。共有根A1で通常Pic0線束への相対延長が不可能な具体例を証明し、形式的な集合対応と相対射を区別。元のAS avatar qgrとの直接同値、Σ2 elementary transform、全potentialの相対groupoidが核心的未解決。 全noncubicはΣ₂のD∈|−K|, D∩S=∅, 0≠P∈Pic⁰(D)[2]の幾何同型類と全単射まで達成。元AS heartの直接比較と相対Pic⁰射は未証明。
+- **C・O-marked／potential／avatar対応：** C v2.9。滑らかな楕円cubicのVdB↔square公式とO保存r1商、potential→avatar一般次数4・→H2次数8を保持。noncubicの四根相異なる開の同型類全単射を共有根・一致根対にも拡張し、root pair↔smooth/nodal/I2の非零2torsion square avatar↔Bの全noncubic幾何同型類全単射を証明。中央二重平方環の可換点曲線からspectral double cover・rank-one torsion-free moduleへの相対射を明示。共有根A1で通常Pic0線束への相対延長が不可能な具体例を証明し、形式的な集合対応と相対射を区別。元のAS avatar qgrとの直接同値、Σ2 elementary transform、全potentialの相対groupoidが核心的未解決。 全noncubicはΣ₂のD∈|−K|, D∩S=∅, 0≠P∈Pic⁰(D)[2]の幾何同型類と全単射まで達成。元AS heartの直接比較と相対Pic⁰射は未証明。
 
 **公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは八・十・十二本矢、QPとavatarの表示を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
 
