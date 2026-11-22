@@ -1,0 +1,168 @@
+% !TeX root = ../quiver-avatar-moduli.tex
+% 2026-11-22: 幾何的avatarの四つのcanonical列
+\section{反標準 avatar の canonical complexes と周期}
+\label{sec:qa-self-contained-helix}
+
+この節は前節の幾何的補題から四項の canonical complex を
+構成する．これは有限 foundation と全周期の関係を明示する
+ためのものであり，任意の相対基底上の AS 正則性と
+内在的な心の同定を無条件に主張するものではない．
+
+\begin{proposition}[rotated square の四つの完全列]
+\label{prop:qa-core-rotated-complexes}
+定理~\ref{thm:qa-core-avatar-square-rotated} の
+rotated square 曲線型 avatar を固定し，
+\[
+\begin{gathered}
+L_0=P,\quad L_1=HF^{-2},\quad
+L_2=HF^{-1},\quad L_3=H^2F^{-1},\\
+L_4=H^2P,\quad L_5=H^3F^{-2},\quad
+L_6=H^3F^{-1}P^2,\quad L_7=H^4F^{-1}P^6 .
+\end{gathered}
+\]
+これらの線束の間には directed foundation の評価写像と
+最小関係から作られる次の四つの局所分裂完全列がある：
+\begin{align}
+0&\to L_0\to L_2^{\oplus2}\to L_3^{\oplus2}
+     \to L_4\to0,\label{eq:qa-core-rsq-complex0}\\
+0&\to L_1\to L_2^{\oplus2}\to L_3^{\oplus2}
+     \to L_5\to0,\label{eq:qa-core-rsq-complex1}\\
+0&\to L_2\to L_3^{\oplus4}
+     \to L_4^{\oplus2}\oplus L_5^{\oplus2}
+     \to L_6\to0,\label{eq:qa-core-rsq-complex2}\\
+0&\to L_3\to L_4^{\oplus2}\oplus L_5^{\oplus2}
+     \to L_6^{\oplus4}\to L_7\to0.
+     \label{eq:qa-core-rsq-complex3}
+\end{align}
+任意の $q\in\mathbb Z$ に対して，$i=0,1,2,3$ とし
+\[
+\begin{array}{c|cccc}
+i&0&1&2&3\\ \hline
+G_i&0&h-2f&h-f&2h-f\\
+d_i&0&0&2&6\\
+\varepsilon_i&1&0&0&0
+\end{array}
+\]
+と書くと，
+\begin{equation}
+L_{4q+i}=\OO_D(G_i+2qh)
+           P^{\,4q(q-1)+d_iq+\varepsilon_i}
+\label{eq:qa-core-rsq-periodic-L}
+\end{equation}
+は同じ四列の全整数平行移動を持つ．
+\end{proposition}
+\begin{proof}
+$A=L_2L_0^{-1}=HF^{-1}P^{-1}$ は
+補題~\ref{lem:qa-core-curve-vanishing} により二切断の
+大域生成 pencil である．評価列
+$0\to A^{-1}\to\OO_D^{\oplus2}\to A\to0$
+を $L_2$ で tensor すると
+\[
+0\to L_0\to L_2^{\oplus2}\to L_2^2L_0^{-1}\to0 .
+\]
+他方 $L_3(L_2^2L_0^{-1})^{-1}=FP$ も pencil なので，
+その評価列を $L_3$ で tensor した
+\[
+0\to L_2^2L_0^{-1}\to L_3^{\oplus2}\to L_4\to0
+\]
+と splice すれば第一列となる．
+第二列は $L_2L_1^{-1}=F$ と
+$L_3H^{-1}=HF^{-1}$ という二 pencil の評価列
+\[
+0\to L_1\to L_2^{\oplus2}\to H\to0,\qquad
+0\to H\to L_3^{\oplus2}\to L_5\to0
+\]
+を splice して得られる．
+ここで $HF^{-1}$ は二切断の大域生成 pencil である．
+
+第三列には，二つの pencil $a_+=FP$，$b_+=HF^{-1}$
+を用いる．比 $b_+a_+^{-1}=HF^{-2}P^{-1}$ は
+補題~\ref{lem:qa-core-curve-vanishing} より acyclic，
+積 $a_+b_+=HP$ は very ample である．
+よって補題~\ref{lem:qa-core-two-pencils} で得る
+別の $(2,2)$ 埋め込み上に，
+命題~\ref{prop:qa-core-directed-foundations} の
+四行四列の対角分解を適用する．
+その曲線への導来制限では，
+Cartier 因子の標準 Tor 項
+$\operatorname{Tor}_1(\iota_*Q,\OO_D)=Q(-D)$
+が左端に現れる．
+$Q=HP^2$ を代入し，全体を $L_3$ で tensor すると
+第三列の四項と係数 $4,2+2,1$ が得られる．
+これは局所的に長さ一の Cartier 解消を制限して
+得た完全列なので，単に Euler 特性の等号ではない．
+
+第四列も，二つの pencil
+$a_0=HF^{-1}P$，$b_0=FP^2$ を使う．
+その比 $a_0b_0^{-1}=HF^{-2}P^{-1}$ は acyclic，
+積は $HP^3$ で very ample である．
+同じ四行四列分解を $Q=HP^2$ に適用し，
+導来制限と双対化を行った後 $L_6$ で tensor すると
+第四列を得る．
+第三，第四列の中間写像は対角分解の評価から得られ，
+大域切断に戻すと四本の矢と二本ずつの最小関係に一致する．
+全列は線束の局所分裂完全列である．
+
+周期については，各連続四項を共通線束で
+tensor して最初の項を $P$ に正規化すると，
+二つの ruling の役割を担う線束は
+$F_q=FP^{2q}$ と $H_q=HP^{4q}$ となる．
+$H_qF_q^{-2}=HF^{-2}$ は不変なので，これらは
+同じ非自明性と消滅条件を満たす．
+前節の二 pencil の再埋め込みを各 $q\in\mathbb Z$
+に適用でき，上の四列を繰り返して構成できる．
+線束の差分を帰納的に追うと
+式~\eqref{eq:qa-core-rsq-periodic-L} を得る．
+\end{proof}
+
+\begin{corollary}[square の四つの完全列]
+\label{cor:qa-core-square-complexes}
+square avatar の $L_0=P,L_1=F,L_2=G,L_3=FG$ に対し
+\[
+(L_4,L_5,L_6,L_7)
+=(F^2G^2P,\ F^3G^2P^2,\ F^2G^3P^2,\ F^3G^3P^4)
+\]
+とおくと，
+\begin{align*}
+0&\to L_0\to L_1^{\oplus2}\oplus L_2^{\oplus2}
+       \to L_3^{\oplus4}\to L_4\to0,\\
+0&\to L_1\to L_3^{\oplus2}\to L_4^{\oplus2}
+       \to L_5\to0,\\
+0&\to L_2\to L_3^{\oplus2}\to L_4^{\oplus2}
+       \to L_6\to0,\\
+0&\to L_3\to L_4^{\oplus4}
+       \to L_5^{\oplus2}\oplus L_6^{\oplus2}
+       \to L_7\to0
+\end{align*}
+が canonical な局所分裂完全列となる．
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:qa-core-avatar-square-rotated} により，
+square の一つ後方または前方の foundation を
+rotated の四項と比較する．
+正確には rotated の $(L_{-1},L_0,L_1,L_2)$ を
+$L_{-1}=F^{-1}P^2$ から出発して
+共通線束 $FP^{-1}$ で tensor すると
+$(P,F,G,FG)$ となる．
+前命題の列を一つ添字移動し，
+全項にこの共通線束を tensor すれば四列を得る．
+この操作は曲線上の線束の標準化であって，
+非可換圏に $(-)\otimes FP^{-1}$ という自己同値を
+仮定したものではない．
+\end{proof}
+
+\begin{remark}[AS 正則性への論理的な境界]
+\label{rem:qa-core-helix-not-as}
+前命題と系は，両端と中間項を持つ
+\emph{実際に完全な}曲線上の複体を与える．
+非可換な全 $\mathbb Z$-代数の AS 正則性には，
+これらを canonical exceptional helix の
+最小射影分解として実現し，
+反対向きの $\Ext^3$ による Gorenstein 性を示す
+別の導来圏比較が必要である．
+この比較のためには acyclic spherical helix と
+有限 directed algebra の Serre 関手を用いる．
+本稿Cではこれを体上の入力の範囲と明示し，
+相対基底変更・元の O-marked heart の一致を
+上記四列だけから結論しない．
+\end{remark}
