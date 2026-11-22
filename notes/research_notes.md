@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.90（A v1.69・20節、B v0.39・31節、C v1.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.91（A v1.69・20節、B v0.39・31節、C v1.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -210,7 +210,7 @@ B `cor:two-intrinsic-foundations` は、固定pointed対象で
 B `lem:elliptic-two-reflections` のもう一方は
 R(U)=(E,L0L1L2^{-1},L2,L1)、差は(2δ−η,δ)。
 j(E)≠0,1728、δ∉E[2]、η−δ∉E[2]、η∉{0,2δ} の非空稠密開では
-Aut(E,0)={±1}、εδ=δからε=1、εη=2δ−ηからη=δとなり矛盾。
+Aut(E,0)={±1}、εδ=δからε=1、εη=2δ−ηから2(η−δ)=0となり、η−δ∉E[2]に矛盾。
 二つの四つ組は非同型で、両方cubic型。pointed自己同値に
 ruling交換成分がなく、全慣性はμ₂²。
 よって忘却の2-fiberは慣性核のない二つの対象からなり、
@@ -231,7 +231,7 @@ C `cor:qa-quintuple-h2-generic-degree-two` と
 [2]:E→Eの全射性を使ってtranslationで合わせられる。
 Bの二foundation全充満性からpointed自己同値へ昇格。
 正則半単純な特別点では指定foundationの慣性μ₂²はindex2、
-内在H2の全慣性は位数8。群拡大の型・局所分岐は未解決。
+内在H2の全慣性は位数8。**相対2-fiberはなお二点：** sourceのquintuple同型類は一つでも、Aut_H2（位数8）/Aut_source（位数4）の二剰余類から自明慣性の二対象を得る。pointed忘却は正則半単純開で表現可能étaleなので、この点でstack射は非分岐。Cのprop:qa-special-ruling-two-fiber-no-stack-ramificationに証明。粗モジュライ上の分岐・群拡大の型は未解決。
 一般有限étale二重射の稠密openにはδ,η−δ∉E[2]を課す。
 証明正本はCのprop:qa-elliptic-ruling-swap-two-torsion。
 
@@ -257,8 +257,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
 正則半単純開で有限étale次数2・慣性μ₂²同型・KS同型となる。
 さらに稠密開のcanonical S₂ deck商を取れば内在H2そのものに同値。
-次は特殊cubic点で二つのrulingの同型が生じるときの
-慣性と分岐、またnoncubic境界への延長を相対群oidとして調べる。
+次は特殊cubicの全慣性の群拡大・粗モジュライ上の分岐と、noncubic境界への相対延長を調べる。正則半単純特別点のstack的étale非分岐とは区別する。
 `lem:elliptic-two-reflections` と
 `cor:two-intrinsic-foundations` の相対化が最も具体的な手掛かり。
 A/Bの全公表前監査・一次文献新規性比較・三稿の実組版は未完了。

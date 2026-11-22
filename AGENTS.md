@@ -1,12 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.92。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv1.6。
+2026-11-22 / v0.93。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv1.7。
 
 ## 公表用三論文への再編（確定方針）
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：論文C `papers/quiver-avatar-moduli.tex` と `papers/quiver-avatar/git_comparison.tex` がOU GIT/quiver/QP/avatar→内在H2比較の正本。OU2014 S4/S3印刷不整合は四固有値S4に訂正して区別。OU spectral Kummer、quintuple点曲線Jacobian/Hodge符号、Picard根比較、正則半単純potentialの相対Hodgeを保持。剛体化quintupleにはμ₂²=Jac(C)[2]の有限慣性が残り、一般pointed忘却に忠実に作用。論文Bの普遍cubic smooth atlasにより忘却は全非線型geometric開でsmooth相対次元0、一般開で表現可能étale、HH¹=0・HH²=3・KS同型。二つの内在的normalized foundationと楕円R交換により一般有限étale次数2、potential→quintupleの一般次数4と合成してpotential→H2は一般次数8。さらに一般二枚のcanonical deck S₂商で内在H2の稠密開をArtinスタックとして同定済み。一般openはδ,η−δ∉E[2]に縮める。j≠0,1728の許容楕円四つ組では二つのfoundationを交換する自己同値が存在する必要十分条件はδ∈E[2]またはη−δ∈E[2]。正則半単純特別点の内在H2慣性は位数8。**次は二捩れ特別座の群拡大・局所分岐・normal representationと、Bの相対ruling mutationのcoherent延長。** 3つの次数と4つのPicard根は異なる。全数学的独立監査や組版は別状態。
+- C：論文C `papers/quiver-avatar-moduli.tex` と `papers/quiver-avatar/git_comparison.tex` がOU GIT/quiver/QP/avatar→内在H2比較の正本。OU2014 S4/S3印刷不整合は四固有値S4に訂正して区別。OU spectral Kummer、quintuple点曲線Jacobian/Hodge符号、Picard根比較、正則半単純potentialの相対Hodgeを保持。剛体化quintupleにはμ₂²=Jac(C)[2]の有限慣性が残り、一般pointed忘却に忠実に作用。論文Bの普遍cubic smooth atlasにより忘却は全非線型geometric開でsmooth相対次元0、一般開で表現可能étale、HH¹=0・HH²=3・KS同型。二つの内在的normalized foundationと楕円R交換により一般有限étale次数2、potential→quintupleの一般次数4と合成してpotential→H2は一般次数8。さらに一般二枚のcanonical deck S₂商で内在H2の稠密開をArtinスタックとして同定済み。一般openはδ,η−δ∉E[2]に縮める。j≠0,1728の許容楕円四つ組では二つのfoundationを交換する自己同値が存在する必要十分条件はδ∈E[2]またはη−δ∈E[2]。正則半単純特別点の内在H2慣性は位数8。正則半単純特別座の相対2-fiberは二点のまま（Aut_H2/Aut_quintupleの剰余類）でstack忘却はétale非分岐。**次は二捩れ特別座の群拡大・粗空間の局所分岐・normal representationと、Bの相対ruling mutationのcoherent延長。** 3つの次数と4つのPicard根は異なる。全数学的独立監査や組版は別状態。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 

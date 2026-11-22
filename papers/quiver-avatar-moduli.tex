@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.6
+% 日本語 LuaLaTeX。2026-11-22 / v1.7
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.6（特殊ruling交換の二捩れ条件）}
+\date{2026年11月22日\quad v1.7（特殊ruling交換とstack的非分岐）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -97,6 +97,9 @@ ruling foundationの交換と幾何点上で一致する。
 交換自己同値が生じるのは$\delta\in E[2]$または
 $\eta-\delta\in E[2]$のとき、かつそのときに限る。
 正則半単純特別点の全慣性は位数8となる。
+同じquintuple同型類が一つでも相対2-fiberには
+pointed比較同型の剰余類から二対象が残り、
+忘却はstackとして表現可能étale・非分岐である。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -208,6 +211,8 @@ OUの一般安定化群という表現は単位連結成分と全慣性を区別
 定理~\ref{thm:qa-h2-generic-ruling-quotient}で与える。
 特殊ruling交換の正確な二捩れ条件は
 命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}に証明する。
+特別点の2-fiberは命題
+~\ref{prop:qa-special-ruling-two-fiber-no-stack-ramification}に示す。
 ここで用いる square・rotated square の反標準 avatar と十本矢 mutation は
 大川--植田の日本語草稿 v7 \cite{AvatarVSeven2026} に、
 十二本矢型の追加と統一 avatar は研究ノート \cite{Q12Avatar2026} に記載されている。
