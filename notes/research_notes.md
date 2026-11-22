@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.83（A v1.69・20節、B v0.39・31節、C v0.9）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.84（A v1.69・20節、B v0.39・31節、C v1.0）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -83,16 +83,33 @@ j=1728·4I³/(4I³−J²)を導出した。
 有理点x=(1,2,3,5)でj=3796416/1225をcross ratioと照合。
 証明正本はC prop:qa-ou-pointcurve-quadric-pencil と
 cor:qa-ou-quintuple-j-invariants。
-**残る幾何的核心**は∞の第一rulingの規約の下で
-t=0のy=+det(X)がL2に対応するかという向きと、
-このJacobian同型・Nの選択がquintupleの
-基底変更・スタックのG作用へcoherentに降下するかである。
-従って元のOU/Picard torsor同型はまだ未証明。
+**Hodge符号と対角一般開のPicard根一致（Cで証明）。**
+$q_t=tq-q\circ X$ に対し $a_i=t-x_i^2$、
+$y^2=\prod a_i$ とすると、中間外冪のHodge対合は
+$J_{t,y}(e_i\wedge e_j)=\epsilon_{ijkl}y/(a_ka_l)e_k\wedge e_l$。
+Segre $q=2(ad-bc)$ では第一因子固定のplaneが正、
+第二因子固定が負のchiralityを持つ。
+$\infty_+$ を $\mathcal L_0$ とすると、
+$t=0,y=\det X$ で
+$J_{0,\det X}=(\Lambda^2X)^{-1}J_q(\Lambda^2X)$
+だから $P_+\leftrightarrow\mathcal L_2$。
+$\Theta:E_{sp}\simeq\operatorname{Pic}^0(C)$ で
+$P_+\mapsto N=\mathcal L_2\mathcal L_0^{-1}$、
+$Q\mapsto-\Theta(Q)$ は$[-2]a=N$を満たす。
+偶数符号はtarget側SO4、四座標置換は両側SO4の符号付き置換。
+異なる置換liftの差は各rulingに自明に作用するので
+Jacobian・指定点・torsorがGの商に降下する。
+奇数符号変更では$P_+$/$P_-$と二rulingが交換される。
+証明正本：Cのlem:qa-ou-hodge-ruling-sign、
+thm:qa-ou-diagonal-picard-torsor。
+厳密符号検算：computations/verify_ou_hodge_ruling.py。
 
-以前の未解決点のうち「E_spとJacobianのjが等しいか」は解決。
-重要な未解決点はこのE_sp/P+と、geometric quintupleの
-N=L2 L0^-1の**sheet選択および相対降下**であり、
-spectral Kummerの解決を元々のPicard比較の解決としない。
+**現行の未解決課題。** この同型は滑らかな対角稠密開で
+Jacobian・指定点・torsorについて確立したものであり、
+非対角quintupleの全相対族、粗GIT全域のuniversal曲線、
+中心スカラー剛体化後の慣性・微分・pointed fiber、
+nodal・cuspidal境界への延長を主張しない。
+次は相対Hodge/Spinor認識と相対基底変更への拡張を調べる。
 
 **Picardの半点とnodal境界障害。**
 Bのlem:picard-halvesでは根空間
@@ -121,7 +138,7 @@ P×_S𝒱の上の等式として確認することである。
 幾何点ごとの半点存在だけでは足りない。
 論文Cの cor:qa-ou-picard-h1-criterion、
 lem:qa-ou-equivariant-halfpoint-test に証明を保持。
-ここでのquintuple側の同型は**現在未解決**である（spectral Kummer同型はCで証明）。
+quintuple側の同型は**滑らかな対角一般開では証明済み**。一般非対角族・剛体化後の慣性・境界への拡張は未解決。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
@@ -137,17 +154,13 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
 **再開する数学的核心。**
-対角potential上で確認したJac(C)≅E_spとj公式を入力に、
-まず∞第一rulingとt=0のy=detXがL2を与える向きを
-局所SO4/Spin4規約で検証し、群作用のcoherent降下を示す。
-そのうえで(G_ell,H_ell)と§5の(G,H)の群対同型を
-実際の同変双有理対応へ昇格する。
-群局所系の同定とKummer class一致を計算し、
-potential上の同変半点を構成または障害を示す。
-次に剛体化quintuple→H2の慣性写像と微分を調べる。
-OUの次数4をH2忘却の次数と断定しない。
-Aはユーザー手元での組版成功報告あり。
-B/Cの実組版・全面独立証明監査・網羅的新規性確認は未了。
+対角一般開のOU/Picard根torsor同型を、非対角相対quadric pencilの
+Spin/Hodgeの構成へ延長し、任意底変更でのcoherenceを点検する。
+次に剛体化されたquintuple→H2の慣性像・接写像と
+pointed fiberを計算する。OU GITの次数4をH2忘却の次数としない。
+nodalを含む基底上の同じ有限torsor延長は不可能である。
+Aはユーザー手元の組版成功報告があるが、B/Cの実組版・
+全面数学的独立監査・網羅的新規性調査は未完了。
 
 ## 一致類の全慣性・AHR形式対・局所good moduliの二次的性質
 
