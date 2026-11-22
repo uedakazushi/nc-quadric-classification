@@ -413,7 +413,9 @@ $\mathcal O$-marked 圏の族との同値を主張するには、相対再構成
 \label{subsec:noncubic-antiserre-descent}
 
 ここでは表示スタックの上に、適合平方根を族として選ばずに
-反 Serre 切断環を復元する。これは単なる幾何点での同値類の記述より強いが、
+反 Serre 切断環の次数線束による正規化を構成する。
+canonical同変反Serre環との交換符号の差は
+注意~\ref{rem:noncubic-equivariant-antiserre-sign}で明示する。これは単なる幾何点での同値類の記述より強いが、
 内在的な相対 Abel 圏の再構成とは区別する。
 $\widetilde G$、$D$、$G$、$P$ は本節の冒頭の記号とする。
 $P$ 上の普遍二重平方環を $\mathcal B$ とし、
@@ -510,6 +512,45 @@ $s^2\simeq S^{-1}[2]$ なのでその偶数部分は
 $\mathcal D$ の線維の自明化は各次数の共通次数スカラーを変えるだけで、
 幾何点の代数同型類には影響しない。
 \end{proof}
+
+\begin{remark}[canonical同変反Serre環の交換指標]
+\label{rem:noncubic-equivariant-antiserre-sign}
+$\varepsilon$を二形式交換$S_2$の符号指標とする。
+式~\eqref{eq:noncubic-antiserre-product}の$\mathcal R$は通常の代数として降下するが、
+canonical Serre双対を保つ同変線型化の軌道環は
+\[
+ \mathcal R^{\rm can}_n
+   =\mathcal B_{2n}\otimes(\det W)^{-n}\otimes\varepsilon^n
+   =\mathcal R_n\otimes\varepsilon^n
+\]
+である。この符号は次の有限計算で検出できる。
+中心$Z=\mathcal O_P[u,v,h]$、$h=cd+dc$に対する
+$Z$-基底$(1,c,d,cd)$の最後の係数を取るFrobenius traceを$\lambda$とすると、
+$\lambda(xy)=\lambda(y\iota(x))$であり、pairing行列は
+\[
+ \begin{pmatrix}0&0&0&1\\0&0&1&0\\0&-1&0&0\\1&0&0&h\end{pmatrix}
+\]
+で行列式は$-1$である。
+$(A,a_c,a_d)$の下で中心のcanonical生成元の指標は
+$\det(W)a_ca_d$、双対traceの指標は$(a_ca_d)^{-1}$となる。
+交換は$h$を固定し$cd$を$dc=h-cd$へ送るため、traceの指標は$-1$である。
+従ってweighted中心上の相対双対化は
+\[
+ S=(-)_\iota(-2)\otimes\det W\otimes\varepsilon[2],\qquad
+ S^{-1}[2]=(-)_\iota(2)\otimes(\det W)^{-1}\otimes\varepsilon
+\]
+という同変式を与える。
+順序と係数座標を固定した基底上では、後の相対Serreの式と同じである。
+$f_1=f_2=uv$では$H^2(\mathcal O_B(-2))$の\v{C}ech生成元
+$cd/(uvh)$が交換により$1/(uv)-cd/(uvh)$へ移り、
+第一項は境界なので符号$-1$を直接確認できる。
+
+任意の基底線束$L$について$R^{(L)}_n=R_n\otimes L^n$と置けば、
+$M_n\mapsto M_n\otimes L^n$はtorsionと有限生成性を保つgraded加群圏の同値である。
+従って$\mathcal R$と$\mathcal R^{\rm can}$の構造対象付き$\qgr$は同値であり、
+本稿の境界の相対同定・慣性・粗および良モジュライの結論は変わらない。
+canonical Serreの同変同定では$\varepsilon$を省略しない。
+\end{remark}
 
 \begin{proposition}[九生成元の相対二次関係と商スタックへの射]
 \label{prop:noncubic-antiserre-grassmann}
@@ -1417,9 +1458,11 @@ $\mathsf t=S_A^{-1}[2]$ に対し、全ての $n\ge0$ で
 積は (\ref{eq:noncubic-antiserre-product}) の
 $\iota$-twist された積（行列式線束の twist を除く）である。
 従って命題~\ref{prop:noncubic-antiserre-descent}
-の相対環は、幾何点で一致するだけでなく、
-明示された noncubic 表示族の perfect 圏の
-\emph{実際の相対反 Serre 軌道環} を降下したものである。
+の相対環を$\mathcal R_n^{\rm can}=\mathcal R_n\otimes\varepsilon^n$と
+補正すると、明示された noncubic 表示族の perfect 圏の
+\emph{実際の同変相対反 Serre 軌道環}の降下となる
+（注意~\ref{rem:noncubic-equivariant-antiserre-sign}）。
+補正前の環も次数線束twistを除いて同じ構造対象付きheartを与える。
 \end{corollary}
 \begin{proof}
 式~(\ref{eq:noncubic-relative-serre-functor}) より

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v4.5
+% 日本語 LuaLaTeX。2026-11-22 / v4.6
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -43,6 +43,7 @@
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Br}{Br}
 \DeclareMathOperator{\Jac}{Jac}
 \DeclareMathOperator{\coh}{coh}
 \DeclareMathOperator{\qgr}{qgr}
@@ -55,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v4.5（共通incidenceと二同種Kummer類の明示的障害）}
+\date{2026年11月22日\quad v4.6（対称Morita表示・相対Serre完成とpointed heart）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -359,6 +360,16 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。
 剛体化後の忘却の表現可能性と実際のファイバーは引き続き未決定である。
+対称四項$(\mathcal O,X_c,X_d,\mathcal O(1))$への相対mutationにより、
+点曲線側の比較を非被約基底と二形式交換へ拡張する。
+conicのBrauer類を保つspinor増幅と共通座標表現を用い、
+全noncubic商$[P/G]$上に構造対象の零頂点を持つ階数四十五の通常代数を構成する。
+その相対Serre tensor代数は全次数で次数零に集中し、
+零頂点の反Serre角から元の相対pointed heartを回収する。
+同変Serre作用には二形式交換の符号指標が必要であり、
+符号を省いた正規化環との関係を次数線束twistとして明示する。
+これは点曲線$E_f$側の相対比較であり、
+別のspectral曲線$C_q$からのavatarを同一視する主張ではない。
 \end{abstract}
 \tableofcontents
 
@@ -606,6 +617,8 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/point_spectral_isogeny}
 \input{quiver-avatar/root_descent_brauer}
 \input{quiver-avatar/twisted_morita_weights}
+\input{quiver-avatar/symmetric_morita_descent}
+\input{quiver-avatar/relative_serre_completion}
 \input{quiver-avatar/half_period_ruling}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
@@ -614,6 +627,8 @@ $\kk$ は標数零の代数閉体とする。
 \section{比較を完成させるための認識問題}
 \label{sec:qa-remaining}
 
+点曲線側の全noncubic相対族については、定理~\ref{thm:qa-symmetric-relative-pointed-heart}により
+構造対象を保つ比較が成立した。以下の課題は、他のavatarや全AS表示を含む範囲を扱う。
 本稿の有限代数の開部分と、幾何的 avatar の開部分は、それぞれ独立に定義される。
 両者を相対 AS 分類として同定するには、avatar から得る有限代数が
 全周期にわたる相対 AS 代数を再構成し、逆向きの幾何構成と任意底変更に可換すること、

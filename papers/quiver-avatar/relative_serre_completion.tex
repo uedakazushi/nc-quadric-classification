@@ -1,0 +1,498 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / all-degree relative Serre completion and equivariant heart
+\section{相対Serre完成と構造対象付きheart}
+\label{sec:qa-relative-serre-completion}
+\subsection{有限Azumaya表示の相対Serre tensor代数}
+\label{subsec:qa-relative-morita-serre}
+
+以下でいうcompletionは，内部次数に関する\emph{直和}
+$T_A(\Theta)=\bigoplus_{m\ge0}\Theta^{\otimes_A^{\mathbf L}m}$
+である．無限直積によるarrow-adic completionの基底変更は
+この主張には含めない．また，この構成だけで
+AS正則性，Noether性，または標準$\qgr$心の一致を結論しない．
+
+\begin{lemma}[Azumaya頂点を持つ有向代数の有限対角解消]
+\label{lem:qa-directed-azumaya-bar}
+$S$をスキームとし，$A$を有限局所自由な
+$\OO_S$-代数とする．（必要なら順を反転して）大域的な直交冪等元
+$e_0,\ldots,e_{r-1}$の和を$1$とし，
+$e_iAe_j=0$ ($i>j$)，$D_i=e_iAe_i$は
+$\OO_S$上Azumaya，$M_{ij}=e_iAe_j$は
+$\OO_S$上有限局所自由と仮定する．
+$D=\bigoplus_iD_i$，$J=\bigoplus_{i<j}M_{ij}$と置く．
+すると$J^{\otimes_Dr}=0$であり，
+\begin{equation}
+0\longrightarrow A\otimes_DJ^{\otimes_D(r-1)}\otimes_DA
+\longrightarrow\cdots\longrightarrow
+A\otimes_DJ\otimes_DA
+\longrightarrow A\otimes_DA\longrightarrow A\longrightarrow0
+\label{eq:qa-directed-finite-bar}
+\end{equation}
+は$A$の相対enveloping代数
+$A^e=A\otimes_{\OO_S}A^{\mathrm{op}}$上の
+有限局所射影解消である．この解消は任意の基底変更と可換する．
+特に$A$は$S$上properかつhomologically smoothである．
+同じ結論は，$D\subset A$と増大冪零ideal $J$，
+$A=D\oplus J$が大域的に与えられ，$D$が
+$\OO_S$上有限局所自由separableで，
+あるfppf被覆上で上記のAzumaya頂点表示を持つ場合にも成り立つ．
+頂点そのものが大域的に番号付けできる必要はない．
+\end{lemma}
+\begin{proof}
+$J$のtensor成分は
+$M_{i_0i_1}\otimes_{D_{i_1}}\cdots
+\otimes_{D_{i_{n-1}}}M_{i_{n-1}i_n}$，
+$i_0<\cdots<i_n$，に分かれるので$n\ge r$では零である．
+$D_i\otimes D_j^{\mathrm{op}}$はAzumayaであり，
+その上の$\OO_S$-有限局所自由加群は
+代数上も有限局所射影である．これはAzumaya代数を
+行列代数にするfppf被覆上でMorita同値を用いて確認でき，
+有限局所射影性の忠実平坦降下によって元の底へ戻る．
+同じ議論とMorita contractionから，
+$J^{\otimes_Dn}$は$D^e$上有限局所射影となる．
+従って各誘導加群
+$A\otimes_DJ^{\otimes_Dn}\otimes_DA$は
+$A^e$上有限局所射影である．
+
+$A=D\oplus J$という$D$-双加群分解により，
+式\eqref{eq:qa-directed-finite-bar}は相対bar解消の
+normalized部分である．微分は隣接する二因子の積の
+交代和で，最後の写像は乗法である．
+bar解消の単位挿入による収縮とdegenerate部分の除去により
+増大複体は完全となる．この議論は基礎環が体であることを用いない．
+分解$A=D\oplus J$，tensor成分，微分と収縮は
+すべて任意の基底変更に保たれる．
+したがって非平坦な基底変更の後にも同じ解消が得られる．
+$A$自体は$\OO_S$上有限局所自由なのでproperでもある．
+最後の拡張では，$D^e$上の有限局所射影性と
+$J^{\otimes_Dr}=0$を与えられた被覆上で確認する．
+bar複体は大域的な$D,J$だけから定義されるので，
+完全性と有限局所射影性の忠実平坦降下で同じ結論を得る．
+\end{proof}
+
+\begin{proposition}[相対inverse dualizing complexと全tensor次数]
+\label{prop:qa-relative-serre-tensor-base-change}
+前補題の仮定の下で
+\[
+\Theta_A=\RHom_{A^e}(A,A^e)[2],\qquad
+K_m(A)=\Theta_A^{\otimes_A^{\mathbf L}m}\quad(m\ge0),
+\qquad K_0(A)=A
+\]
+とする．各$K_m(A)$は$\OO_S$上perfectであり，
+任意の$f:S'\to S$について自然な同型
+\begin{equation}
+Lf^*K_m(A)\simeq K_m(f^*A)
+\label{eq:qa-serre-tensor-all-base-change}
+\end{equation}
+が積と整合する．従って
+$\Pi_3(A)=\bigoplus_{m\ge0}K_m(A)$は
+任意基底変更と可換な内部次数付きdg代数を定める．
+
+さらに，全幾何点$\bar s\to S$，すべての$m\ge0$について
+\begin{equation}
+H^pK_m(A_{\bar s})=0\qquad(p\ne0)
+\tag{Fwd}\label{eq:qa-relative-geometric-forward}
+\end{equation}
+を仮定する．この場合$K_m(A)$は
+有限局所自由加群$C_m(A)=H^0K_m(A)$に準同型で，
+\[
+C(A)=\bigoplus_{m\ge0}C_m(A)
+\]
+は通常の内部次数付き代数となる．各次数と積は
+任意の基底変更と可換する．
+基底の被約性・正則性を仮定する必要はない．
+\end{proposition}
+\begin{proof}
+前補題の有限局所射影解消を$A^e$で双対化する．
+これにより$\Theta_A$は，有限局所射影$A^e$-加群の
+有界複体で表される．$A$が$\OO_S$-有限局所自由なので，
+各項は左右の$A$-加群としても局所射影であり，
+$\OO_S$上も有限局所自由である．
+したがって各固定$m$の導来tensor冪は，
+この代表を$m$回tensorした有界複体で計算できる．
+その各項は$\OO_S$上有限局所自由である．
+有限局所射影加群の双対・tensorは任意基底変更と可換し，
+先のbar解消も基底変更後の対角を解消するので
+式\eqref{eq:qa-serre-tensor-all-base-change}が従う．
+結合と単位との適合はtensor積の自然性から従う．
+導来引戻しは直和を保つので，内部次数付きdg代数全体も
+基底変更と可換する．
+
+最後の主張はperfect複体のfiberによるTor-amplitude判定である．
+ここでは局所的な有限自由複体を取り，各点の局所環で
+微分行列に現れる可逆成分を収縮して極小複体にする．
+剰余体へのtensorで微分が零となったこの複体に
+次数零以外のcohomologyがないなら，
+次数零以外の自由項はすべて零である．
+使った可逆小行列はその点の開近傍で可逆であるから，
+元の複体も近傍で次数零の有限自由加群に準同型となる．
+これを$K_m(A)$へ各$m$ごとに適用する．
+非被約底上の行列をfiber階数一定だけで分裂させたのではなく，
+\emph{perfect複体の全導来fiberの次数集中}を使った点が重要である．
+この結果から$H^0$と任意基底変更の可換性も従う．
+全$m$を一度に制御する有限個の次数判定を仮定していない．
+\end{proof}
+
+\begin{proposition}[pointed Morita同値によるSerre tensor代数の移送]
+\label{prop:qa-pointed-morita-serre-transport}
+$A,B$を$S$上proper smoothな代数とし，
+$P$を$(B,A)$-双加群，$Q$を$(A,B)$-双加群とする
+可逆なperfect Morita datum
+\[
+P\otimes_A^{\mathbf L}Q\simeq B,
+\qquad Q\otimes_B^{\mathbf L}P\simeq A
+\]
+を固定する．この同型には通常の単位・余単位の整合性を課す．
+すると全$m\ge0$にわたり
+\begin{equation}
+Q\otimes_B^{\mathbf L}K_m(B)\otimes_B^{\mathbf L}P
+\simeq K_m(A)
+\label{eq:qa-pointed-morita-theta}
+\end{equation}
+が積と整合し，$\Pi_3(A)$と$\Pi_3(B)$は
+内部次数を保って導来Morita同値となる．
+
+さらに$fB$，$eA$を指定した右射影対象とし，
+指定同型$fB\otimes_B^{\mathbf L}P\simeq eA$を仮定する．
+このとき全次数のpointed orbit複体
+\begin{equation}
+\RHom_B(fB,fB\otimes_B^{\mathbf L}K_m(B))
+\simeq
+\RHom_A(eA,eA\otimes_A^{\mathbf L}K_m(A))
+\label{eq:qa-pointed-morita-orbit}
+\end{equation}
+は積と整合する．両辺が次数零に集中する場合には
+構造対象の反Serre軌道環の同型となる．
+この構成は合成するMorita datumおよび任意基底変更と整合する．
+従って，既にcoherentなpointed Morita降下datumがあるなら，
+そのdatumはSerre tensor代数とpointed orbit代数へ移送される．
+\end{proposition}
+\begin{proof}
+双加群圏の同値
+$X\mapsto Q\otimes_B^{\mathbf L}X\otimes_B^{\mathbf L}P$
+は対角$B$を$A$へ移し，tensor積を保つ．
+有限perfect対角の双対化とも整合するので，
+$\RHom_{B^e}(B,B^e)$は
+$\RHom_{A^e}(A,A^e)$へ移る．
+これは\cite[Proposition~3.10(e)]{KellerDeformedCY2011}
+のinverse dualizing complexのMorita共変性である．
+したがって$m=1$の式が成り立つ．
+中間因子$P\otimes_A^{\mathbf L}Q\simeq B$の縮約により
+全$m$の式と積への適合を得る．
+tensor代数の導来Morita同値は
+\cite[Proposition~4.2]{KellerDeformedCY2011}，
+または同じ縮約を内部次数ごとに用いた双加群で得られる．
+指定射影対象の同型とMorita全忠実性を適用すれば
+式\eqref{eq:qa-pointed-morita-orbit}が従う．
+
+右加群の軌道積は本稿の規約
+$a*b=s^n(a)\circ b$（$\deg b=n$）であり，
+同値と$s=-\otimes_A^{\mathbf L}\Theta_A$の交換同型を使うため
+この順序も保存される．
+合成・基底変更への適合は，選択したMorita datumの
+単位・余単位の整合性と双対化の自然性から従う．
+任意の二つの局所Morita同値が自動的にcoherentな
+降下datumを成す，という主張はしていない．
+\end{proof}
+
+\begin{remark}[四頂点模型への適用と残る認識問題]
+\label{rem:qa-relative-serre-application-scope}
+階数五十四の$\mathsf A_{\mathrm{Mor}}$とその反対環には
+$r=4$のbar解消を無条件に適用できる．
+定理~\ref{thm:qa-unordered-rank45-morita-descent}のsquare模型では，
+その非零な厳密増大chainは長さ二までなので
+$J^{\otimes_D3}=0$となり，対角解消の長さは二に短縮する．
+これは一般の四頂点有向代数に大域次元二を仮定することと異なる．
+
+右Yonedaの比較には$\mathsf A_{\mathrm{Mor}}^{\mathrm{op}}$を使う。
+幾何fiberにおけるfinite EndのMorita比較と
+全整数helixのforward Ext消滅を証明済みの入力に取れば，
+条件\eqref{eq:qa-relative-geometric-forward}を確認できる．
+この場合，非被約底も含む通常のSerre tensor代数まで得られる．
+しかしfinite Endの同型，そのdg completion，
+全次数の次数零集中，Noetherian $\qgr$心と元の心の同値は
+それぞれ別の段階である．Noether性とheartに必要な相対豊富性・
+tails認識はMorita形式論だけからは出ず、後の
+定理~\ref{thm:qa-symmetric-relative-pointed-heart}で元の族のtilting表示を使う。
+同様に，対象や二根対を交換する\emph{新しい}Morita datumの存在は
+本命題の仮定であって結論ではない．
+\end{remark}
+
+
+\begin{corollary}[pointed反Serre環の相対二次表示]
+\label{cor:qa-morita-relative-antiserre-quadratic}
+命題~\ref{prop:qa-relative-serre-tensor-base-change}の
+全fiber集中条件を仮定し，指定冪等元$e$について
+$R_m=eC_m(A)e$と置く．さらに全幾何fiberの次数付き環
+$R_{\bar s}=\bigoplus_mR_m\otimes\kappa(\bar s)$が
+論文AのH2対象の反Serre軌道環に同型であると仮定する．
+このとき
+\[
+\operatorname{rk}R_m=(2m+1)^2,\qquad
+Q=\ker(R_1\otimes R_1\longrightarrow R_2)
+\]
+はそれぞれ有限局所自由で，$\operatorname{rk}R_1=9$，
+$\operatorname{rk}Q=56$，かつ
+\[
+R\simeq T_{\OO_S}(R_1)/(Q).
+\]
+この表示は任意の基底変更と可換する．
+\end{corollary}
+\begin{proof}
+$e$によるcornerは有限局所自由加群の冪等直和因子である．
+幾何fiberでのHilbert関数から指定rankを得る．
+各$m\ge2$について乗法
+$R_1\otimes R_{m-1}\to R_m$は全幾何fiberで全射であり，
+余核は有限型なのでNakayamaにより全射である．
+特に$m=2$のkernel $Q$は局所的に分裂した有限局所自由加群となり，
+基底変更と可換する．
+$\widetilde R=T(R_1)/(Q)$と置く．
+各$\widetilde R_m$は有限表示$\OO_S$-加群であり，
+その構成は任意基底変更と可換する．
+自然な全射$\widetilde R_m\to R_m$は
+$R_m$が局所射影なので局所的に分裂する．
+そのkernelは有限型である．
+各幾何fiberでは論文Aの反Serre環の二次性により
+この全射は同型だから，kernelの全fiberは零である．
+再びNakayamaによりkernelが零となる．
+この議論は全$m$について行い，有限次数の検算だけで
+全次数の二次性を推論してはいない．
+\end{proof}
+
+\begin{remark}[square模型の全次数数値]
+\label{rem:qa-square-amplified-serre-ranks}
+基本square foundationのEuler行列を
+\[
+G=\begin{pmatrix}1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1\end{pmatrix}
+\]
+とし，増幅数を$r=(1,2,2,1)^t$とする．
+Serre作用の数値行列は$S=G^{-1}G^t$で，
+$(S-I)^3=0$である．$t=2m$と置くと
+\[
+GS^{-m}=
+\begin{pmatrix}
+(t+1)^2&(t+1)(t+2)&(t+1)(t+2)&(t+2)^2\\
+t(t+1)&(t+1)^2&t(t+2)&(t+1)(t+2)\\
+t(t+1)&t(t+2)&(t+1)^2&(t+1)(t+2)\\
+t^2&t(t+1)&t(t+1)&(t+1)^2
+\end{pmatrix}.
+\]
+これは$S^{-m}=I-m(S-I)+\binom{m+1}{2}(S-I)^2$
+から全整数$m$について従う．
+したがってforward集中を\emph{別に}証明した場合には，
+増幅したcompletionの第$m$成分のrankは
+\[
+r^tGS^{-m}r=144m^2+144m+30,
+\]
+零番cornerのrankは$(2m+1)^2$である．
+$r=(1,2,2,2)^t$という別の増幅では
+$r^tGS^{-m}r=196m^2+196m+45$となる．
+数値恒等式自体はforward集中やAS正則性の証明ではない．
+ここで使用するSerre関手は\emph{有限ordinary directed End代数}
+のperfect加群圏のSerre関手であり，
+genus一曲線上の線束直和のderived Endとは異なる．
+後者には対角$\Ext^1$があり，本計算の代数に置き換えてはならない．
+\end{remark}
+
+\begin{corollary}[対称模型の全次数Serre代数]
+\label{cor:qa-rank45-all-degree-serre}
+$\mathsf A=\mathcal A_\square^{45}$とする。
+その$\Pi_3(\mathsf A)$は全ての内部次数でcohomological degree零に集中する。
+$C_m=H^0(\Theta_{\mathsf A}^{\otimes_{\mathsf A}^{\mathbf L}m})$とおくと
+\[
+ \operatorname{rk}C_m=196m^2+196m+45,\qquad
+ R_m=e_0C_me_0,\quad \operatorname{rk}R_m=(2m+1)^2 .
+\]
+全成分と積は任意の基底変更と可換し、
+$R=\bigoplus_m R_m$は九生成・階数五十六の二次関係を持つ。
+\end{corollary}
+\begin{proof}
+対角部分はrulingを順序付ける有限\'etale被覆上でAzumaya代数の積となり、
+その下では中間二頂点間のHomは零である。
+従って大域のseparable対角部分$D$とradical $J$について
+$J^{\otimes_D3}=0$であり、補題~\ref{lem:qa-directed-azumaya-bar}は
+長さ二の相対解消を与える。
+ここで通常Endの右Yoneda規約では、同補題の冪等元を逆順に並べればよい。
+各幾何fiberでは$\mathsf A$は系~\ref{cor:qa-symmetric-square-field-pointing}
+のfull strong square foundationの増幅である。
+$m\ge1$に対する全ての成分は
+$\RHom(E_i,S^{-m}E_j[2m])$であり、
+$j+4m>i$という全整数helixの前向きExt消滅により次数零に集中する。
+$m=0$は元の有限代数である。
+命題~\ref{prop:qa-relative-serre-tensor-base-change}から
+全基底上の局所自由性と基底変更が従う。
+rankは注意~\ref{rem:qa-square-amplified-serre-ranks}、
+cornerの二次性は系~\ref{cor:qa-morita-relative-antiserre-quadratic}による。
+\end{proof}
+
+\begin{lemma}[交換指標を含む相対Serre線形化]
+\label{lem:qa-symmetric-equivariant-serre-character}
+$P$上の普遍二形式環$\mathcal B$について、
+$\widetilde G=(\GL(W)\times\Gm^2)\rtimes S_2$と
+$D\subset\widetilde G$を論文Bと同じ群とする。
+$\varepsilon:\widetilde G\to\{\pm1\}$を二形式交換の符号指標、
+$\mathcal D=\det W$と置く。
+$\iota$は$c,d$の同時符号反転である。
+canonical compact圏の\emph{同変}相対Serre関手は
+\begin{equation}
+ S=(-)_\iota(-2)\otimes\mathcal D\otimes\varepsilon[2],
+ \qquad
+ t=S^{-1}[2]=(-)_\iota(2)\otimes\mathcal D^{-1}\otimes\varepsilon.
+ \label{eq:qa-equivariant-serre-sign}
+\end{equation}
+従って構造対象のcanonical反Serre環は
+\begin{equation}
+ \mathcal R^{\rm can}_n
+ =\mathcal B_{2n}\otimes\mathcal D^{-n}\otimes\varepsilon^n,
+ \qquad a\star b=a\,\iota^n(b)\quad(a\in\mathcal R^{\rm can}_n).
+ \label{eq:qa-canonical-antiserre-sign}
+\end{equation}
+ここで$\varepsilon$は基底上の同変線束であり、
+二形式の順序を固定した恒等成分上では自明である。
+$c,d$の独立スカラー指標は式に残らない。
+\end{lemma}
+\begin{proof}
+中心を$Z=\OO_P[u,v,h]$、$h=cd+dc$とすると
+$\mathcal B=Z\oplus Zc\oplus Zd\oplus Zcd$である。
+最後の係数を取る$Z$-線形写像を$\lambda:\mathcal B\to Z$と書く。
+基底$(1,c,d,cd)$に対するpairing
+$(x,y)\mapsto\lambda(xy)$の行列は
+\[
+ \begin{pmatrix}
+ 0&0&0&1\\
+ 0&0&1&0\\
+ 0&-1&0&0\\
+ 1&0&0&h
+ \end{pmatrix}.
+\]
+その行列式は$-1$であり、全基底上でperfectである。
+また$\lambda(xy)=\lambda(y\iota(x))$なので、
+これはNakayama作用$\iota$を持つFrobenius pairingである。
+
+恒等成分の$(A,a_c,a_d)$では$h$は$a_ca_d$倍される。
+中心のcanonical生成元$du\wedge dv\wedge dh$の指標は
+$\det(W)a_ca_d$、双対側の$\lambda$の指標は
+$(a_ca_d)^{-1}$である。
+両者は相殺して$\det W$だけが残る。
+一方、交換$c\leftrightarrow d$は$h$を固定し、
+$cd\mapsto dc=h-cd$とする。
+従って$\lambda\circ\varepsilon=-\lambda$であり、
+中心のcanonical生成元は交換で不変である。
+このためFrobenius双対化には追加の指標$\varepsilon$が残る。
+内部次数は中心のcanonical shift $-4$と
+$\lambda$の次数$-2$から$-2$となる。
+weighted projective中心上の相対双対化を行えば
+式~\eqref{eq:qa-equivariant-serre-sign}を得る。
+このpairingは係数環上の恒等式なので非平坦な基底変更にも保たれる。
+
+式~\eqref{eq:qa-canonical-antiserre-sign}は$t$の反復と
+右加群規約の軌道積から従う。
+$D$は$\mathcal B_{2n}$に重み$2n$、
+$\mathcal D^{-n}$に重み$-2n$で作用し、
+$\varepsilon|_D=1$なので、全体は$G=\widetilde G/D$へ降下する。
+\end{proof}
+
+\begin{remark}[交換符号の検出と次数線束twist]
+\label{rem:qa-antiserre-sign-test}
+交換符号は単なる左右規約ではない。
+$f_1=f_2=uv$で交換を考えると、
+$H^2(\qgr B,\OO(-2))$の生成元はweighted \v{C}ech表示で
+$cd/(uvh)$である。
+交換はこれを$1/(uv)-cd/(uvh)$へ送り、
+$1/(uv)$は\v{C}ech境界なので、この一次元空間への作用は$-1$である。
+$H^0(\OO)=k$への作用は$+1$だから、同変Serre双対には
+式~\eqref{eq:qa-equivariant-serre-sign}の符号が必要である。
+
+なお、任意の基底線束$L$について
+$R^{(L)}_n=R_n\otimes L^n$とすると、
+$M_n\mapsto M_n\otimes L^n$はgraded加群圏の同値を与え、
+有限生成性とtorsionを保つ。
+従って$(\qgr R,\pi R)\simeq
+(\qgr R^{(L)},\pi R^{(L)})$である。
+符号を省いた環とcanonical反Serre環の違いは$L=\varepsilon$の
+このtwistであり、構造対象付きのheartを変更しない。
+ただしcanonical Serre関手の同変同定、またはgraded環そのものの
+同変同型を述べる場合には符号を省略できない。
+\end{remark}
+
+\begin{theorem}[対称有限Morita表示の反Serre角と相対pointed heart]
+\label{thm:qa-symmetric-relative-pointed-heart}
+前述の二形式商$\mathfrak N^{\rm pres}=[P/G]$上へ降下した
+対称有限Morita代数を$\mathsf A$とし、
+構造対象を表す零頂点の射影を$P_0$とする。
+局所的な基本表示は四項$(B,X_c,X_d,B(1))$であり、
+rank-$45$表示では各spinorと最後の項を指定係数束で増幅する。
+相対Serre関手から$t_{\mathsf A}=S_{\mathsf A}^{-1}[2]$を定め、
+\[
+ \mathcal R_{\mathsf A}
+ =\bigoplus_{n\ge0}
+ \Hom_{\Perf\mathsf A}(P_0,t_{\mathsf A}^{n}P_0)
+\]
+に軌道積を入れる。この環は
+式~\eqref{eq:qa-canonical-antiserre-sign}の$\mathcal R^{\rm can}$に
+自然に同型である。
+各成分は階数$(2n+1)^2$の局所自由束であり、積と同型は
+任意の局所有限型基底変更（非被約を含む）に適合する。
+従って全ての有限型affine test $T\to\mathfrak N^{\rm pres}$について
+\[
+ (\qgr\mathcal R_{\mathsf A,T},\pi\mathcal R_{\mathsf A,T})
+ \simeq (\mathcal C_T,\mathcal O_T)
+\]
+は内在的noncubic族とのpointed exact同値である。
+これらの同値はmodule-object基底変更およびfppf降下と可換する。
+これは\emph{点曲線$E_f$側の対称Morita avatarの比較}であり、
+$C_q$や$\Sigma_2$由来の別avatarのheart、全QP stack、
+全ての有限代数の同型groupoidの分類を述べない。
+\end{theorem}
+\begin{proof}
+まず$f_i$の順序と分解を選んだfppf chartへ移る。
+論文Bの\cite[\texttt{lem:nc-relative-normal-tilting}]{QuadricModuli2026}
+を用いると、normal四項は元の二形式族のcanonical compact圏の
+相対compact tilting generatorである。
+そこで命題~\ref{prop:qa-symmetric-square-relative-mutation}を適用し、
+対称四項へ置き換える。
+Morita増幅は同じ加法閉包を生成するので、指定係数束を用いた
+対称有限代数$\mathsf A$についても、
+\[
+ \Perf\mathsf A_T\simeq D(\operatorname{QGr}B_T)^c
+\]
+という相対Morita同値を得る。
+零頂点は$\pi B_T$へ送られる。
+ここで有限代数の同型だけを使ったのではなく、元の相対族における
+\emph{compact tilting generator}を実際に用いている。
+
+この入力の局所perfectnessは直接にも検出できる。
+$X_c=\coker M_c$は$\ell_1$または$\ell_2$の可逆なchartでは
+一生成自由な$B$-加群である。
+$h$が可逆なchartでは$N=\operatorname{diag}(d,-d)$とすると
+$M_cN+NM_c=hI$、$M_c^2=0$である。
+従って$h^{-1}M_cN$は次数零冪等元で、
+$\im M_c=\ker M_c$は直和因子となる。
+これらのchartはweighted projective中心を覆う。
+$X_d$も同様であり、以上の全式は任意基底変更に保たれる。
+相対strongnessとfullnessはBの同補題の
+perfect Hom集中とcompact generatorのcounit判定により成立する。
+
+相対Morita同値は相対Serre双対とYoneda一意性によって自然に可換する。
+零頂点の同型とこの自然同型を\emph{同じものの反復}で各次数へ拡張すれば、
+すべての$\Hom(P_0,t^nP_0)$と積を同時に同定できる。
+前補題により、右辺は正しい交換指標を含む
+$\mathcal B_{2n}\mathcal D^{-n}\varepsilon^n$である。
+この同定は元の行列表示、評価、Morita増幅から作られるので、
+基底変換、因子スカラー、根交換、二形式交換の全てに自然である。
+従って$G$への降下cocycleと整合し、$\mathfrak N^{\rm pres}$上へ降下する。
+
+最後にheartを回収する。
+局所的には$\mathcal D$を自明化し順序を選べば
+$t=(-)_\iota(2)$であり、$(\pi B,t)$はAZ ampleである
+\cite[\texttt{prop:nc-root-ample-orbit}]{QuadricModuli2026}。
+相対反Serre再構成
+\cite[\texttt{prop:relative-h2-antiserre-reconstruction}]{QuadricModuli2026}
+により、この全軌道環の$\qgr$は元の構造対象付きheartに一致する。
+符号線束が非自明でも前注意の次数線束twistがpointed heartを保つ。
+再構成の逆関手は自由graded加群のシフトから軌道対象へ送り、
+有限表示の余核へ延ばすものなので、非平坦な通常の基底変更にも可換する。
+このため局所的な同値はmodule-object引戻しとfppf降下を保って貼り合う。
+有限代数間の導来同値だけからAbel同値を推論する段階はない。
+\end{proof}
+

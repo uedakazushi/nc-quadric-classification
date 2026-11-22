@@ -1,0 +1,599 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / symmetric foundation and equivariant pointed Morita descent
+\section{対称foundationと無標識商へのMorita降下}
+\label{sec:qa-symmetric-morita-descent}
+本節では有限圏の射を$\Hom(T_i,T_j)$と書き、通常の合成を持つ
+$\Gamma=\End(\bigoplus_iT_i)$の右Yoneda加群$e_i\Gamma$を使う。
+従って$\Hom(e_i\Gamma,e_j\Gamma)=e_j\Gamma e_i$である。
+前節の$\mathsf M_{ij}$を上三角位置$e_iAe_j$に置く規約とは
+反対環で移り合う。以下のMorita比較にはこの向きの変更を含める。
+
+\subsection{二つのrulingを対称に置く相対foundation}
+
+\begin{proposition}[対称squareへの相対mutation]
+\label{prop:qa-symmetric-square-relative-mutation}
+命題~\ref{prop:qa-point-relative-split-root-end}の順序付き分解普遍底を
+$S$とし、$T$を任意の可換$S$-代数とする。
+四頂点の有限代数$\mathfrak B_T$の標準射影対象を
+$(U_0,U_1,U_2,U_3)$と書き、元の四項
+$(\mathcal B,\mathcal X_c,\mathcal B(1),\mathcal X_d(1))$
+と同じ順に標識する。
+\[
+ V=\Hom(U_2,U_3),\qquad
+ K=\operatorname{Cone}(V\otimes_TU_2\xrightarrow{\rm ev}U_3)[-1]
+\]
+と置く。このとき
+\begin{equation}
+ (U_0,U_1,K,U_2)
+ \tag{Sym-square}\label{eq:qa-symmetric-square-foundation}
+\end{equation}
+は相対full strong exceptional collectionである。
+その有限End代数$\Gamma_{\rm sq,T}$は階数$16$の有限局所自由代数で、
+全Hom、積、上のmutation、および
+\[
+ \Perf\mathfrak B_T\simeq\Perf\Gamma_{\rm sq,T}
+\]
+は任意の$T$-基底変更と可換する。
+この同値は$U_0$を保つ。
+また$E_T$上の四線束を用いる自然な同定
+\begin{equation}
+ \Gamma_{\rm sq,T}\simeq
+ \End_{\rm dir}^{E_T}(\OO,F,G,H),\qquad H=F^2=G^2
+ \label{eq:qa-symmetric-square-curve-end}
+\end{equation}
+を持つ。そのHom階数行列は
+\[
+ \begin{pmatrix}
+ 1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1
+ \end{pmatrix}.
+\]
+ここで曲線上の\emph{導来}Endとの同一視はしていない。
+対角の$\Ext^1_E(L,L)=H^1(E,\OO_E)$は消えない。
+\end{proposition}
+\begin{proof}
+$M_d^2=0$の周期的線形分解は、全ての係数環上で
+\begin{equation}
+ 0\longrightarrow X_d\longrightarrow B(1)^{\oplus2}
+ \longrightarrow X_d(1)\longrightarrow0
+ \label{eq:qa-symmetric-square-spinor-evaluation}
+\end{equation}
+を与える。完全性は$B$の交互語PBW表示、または中心
+$T[u,v,h]$（$h=cd+dc$）上の四元自由表示から確認できる。
+従って全幾何fiberで$K$は$X_d$に一致する。
+二型は根対一致の場合にも相異なる。
+実際、同型なら点曲線への制限で$F\simeq G$となり、
+補題~\ref{lem:qa-pointed-all-rootpair-geometry}の
+$H^*(E,GF^{-1})=0$に反する。
+strongnessを有限Homから確認する。
+評価三角に$\RHom(U_i,-)$を適用した三つの写像は
+\[
+ V\otimes T_{02}\longrightarrow T_{03}\quad(8\to6),\qquad
+ V\otimes T_{12}\longrightarrow T_{13}\quad(4\to4),\qquad
+ V\otimes T_{22}\longrightarrow T_{23}\quad(2\to2)
+\]
+である。最初は曲線の評価列から全射で核は$H^0(G)=V$、
+第二は同列に$F^{-1}$を掛けた$H^*(GF^{-1})=0$から同型、
+第三は恒等写像である。逆向きには元の有向性から
+$\RHom(K,U_0)=\RHom(K,U_1)=0$、
+$\RHom(K,U_2)=V^\vee[0]$を得る。
+また$\RHom(K,U_3)=(\End V/\OO)[0]$なので、
+評価三角へ$\RHom(K,-)$を適用すると
+$\End V\to\End V/\OO$の核から$\RHom(K,K)=\OO[0]$となる。
+これで新四項の全非零次数Ext消滅と表示したHom階数が確認できる。
+生成性は同じ評価三角から従う。
+特に二つのspinorの相互Ext消滅を省略して推論してはいない。
+
+まず被約な普遍底$S$上で議論する。
+$U_i$は有限代数のprojective、$K$はprojectiveの二項複体だから、
+上の四項間の各$\RHom$は$S$上perfectである。
+全幾何fiberで次数零に集中するので、perfect fiber判定により
+それ自体が表示した階数の局所自由束となる。
+この同定は非平坦なものを含む任意の基底変更に保たれる。
+従って$T$上の主張も成立する。
+また$U_3$は$K$と$U_2$から評価三角で回収されるので、
+四項は元の全projectiveを生成し、fullnessも相対的に成立する。
+tilting Moritaの構成はこの評価と導来tensorから得られ、
+$U_0$を動かさず任意の基底変更と整合する。
+
+曲線上ではpencil $G$の評価列に$H=G^2$を掛けると
+$0\to G\to H^{\oplus2}\to HG\to0$となる。
+元の四頂点Endの同定の下で、この列は上のmutationに対応する。
+二つの中間項の間は$H^*(E,GF^{-1})=0$、
+他の前向きHomは正次数線束の切断なので
+$(2,2)$ Cartier分解から全基底変更可換な局所自由束となる。
+制限は全幾何fiberで同型であり、両辺が局所自由なので
+全Homと積について式~\eqref{eq:qa-symmetric-square-curve-end}を得る。
+階数の和は$4+(2+2+4+2+2)=16$である。
+\end{proof}
+
+\begin{corollary}[square avatarそのものの零頂点pointing]
+\label{cor:qa-symmetric-square-field-pointing}
+標数零の代数閉体上、二形式がそれぞれsquarefreeなら、
+共有根と根対一致を含め、点曲線側square avatar
+\[
+ (E_f,F_d,F_c,P_E),\qquad P_E=F_dF_c^{-1}
+\]
+のsquare型AS $\mathbb Z$-代数を$A_{\rm sq}$とすると
+\[
+ (\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm sq},\pi e_0A_{\rm sq})
+\]
+というpointed exact同値がある。
+従来の最小十本矢型の一添字shiftと矛盾せず、
+ここでは末尾のruling evaluationで対称squareへ戻した。
+\end{corollary}
+\begin{proof}
+$F=F_c,G=F_d,P=GF^{-1}$と置く。
+square avatar $(E,G,F,P)$の初期曲線四項は
+$(P,G,F,GF)$である。
+$P^2=\OO$、$F^2=G^2=H$を使い全項を$P^{-1}$でtensorすると
+\[
+ (\OO,F,G,H)
+\]
+になる。共通tensorは全Homと積を保つ。
+前命題により、その有限Endは
+$(\pi B_f,\pi X_c,\pi X_d,\pi B_f(1))$のEndに一致する。
+両側はfull strong foundationで、Serre完成は有限Endから一意に定まる。
+補題~\ref{lem:qa-as-serre-unique-recovery}、
+命題~\ref{prop:qa-as-avatar-coherent-morita}と
+分類論文Aのnormal helixおよびAZ再構成を適用する。
+初期零頂点が$\pi B_f$なので同値はpointedである。
+\end{proof}
+
+\begin{proposition}[determinantを保つ五十四次元表示から三十次元表示へのmutation]
+\label{prop:qa-symmetric-morita-rank30-mutation}
+定理~\ref{thm:qa-twisted-four-vertex-morita}のgerbe上で、
+$F,G,H,V_c,V_d$を同じ記号とする。
+四項$(\OO,F,H,HG)$に付随する階数$54$の上三角代数の反対環$\mathsf A_{\mathrm{Mor}}^{\mathrm{op}}$から、
+四項$(\OO,F,G,H)$と係数束
+\[
+ (W_0,W_1,W_2,W_3)=(\OO,V_c,V_d,\OO)
+\]
+に付随する有限Morita代数$\mathsf A_{\rm sq}$へ、
+零頂点を保つ基底変更可換な相対tilting mutationが存在する。
+$\mathsf A_{\rm sq}$は係数空間$U_2$上の階数$30$の有限局所自由代数で、
+頂点のBrauer類は$(0,\alpha_c,\alpha_d,0)$である。
+二形式交換は中間二頂点を交換し、零頂点を固定する。
+\end{proposition}
+\begin{proof}
+gerbe上のpencil評価は
+$0\to G^{-1}\det V_d\to\pi^*V_d\to G\to0$である。
+式~\eqref{eq:qa-morita-fg-square}の
+$G^2=H\pi^*\det V_d$を代入すると
+\begin{equation}
+ 0\longrightarrow G\longrightarrow H\pi^*V_d
+ \longrightarrow HG\longrightarrow0
+ \label{eq:qa-symmetric-gerbe-evaluation}
+\end{equation}
+を得る。$\pi^*V_d^\vee$でtensorすれば
+\begin{equation}
+ 0\longrightarrow G\pi^*V_d^\vee
+ \longrightarrow H\pi^*\End(V_d)
+ \longrightarrow HG\pi^*V_d^\vee\longrightarrow0.
+ \label{eq:qa-symmetric-amplified-evaluation}
+\end{equation}
+全項は慣性重み零である。
+従ってこの列と、その写像から作るfinite-categoryのmutationは
+$U_2$へ降下する。
+局所に$V_d$を自明化すれば前命題のmutationのMorita増幅に一致し、
+評価写像の自然性から重なり上の比較はcocycleを満たす。
+この議論は$\det V_d$を自明化しない。
+
+新四項の重みは$(0,e_c,e_d,0)$であり、
+各Homに$W_i\otimes W_j^\vee$を掛けると重み零となる。
+対角階数は$(1,4,4,1)$、四辺は各$4$、
+零頂点から終頂点への成分は$4$なので、総階数は
+$1+4+4+1+4+4+4+4+4=30$である。
+二つの中間項間のHomは零。
+二形式交換は$F,V_c$と$G,V_d$を同時に交換し、
+$\OO,H$を固定するため、全合成と零頂点を保つ。
+逆mutationと対合のcocycleも評価・余評価の自然性から従う。
+\end{proof}
+
+\begin{remark}[相対heartへの比較に必要な追加論証]
+有限代数間のtilting同値だけからheartの同値は従わない。
+本件の点曲線側では、論文Bの
+\cite[\texttt{lem:nc-relative-normal-tilting},
+\texttt{prop:nc-root-ample-orbit}]{QuadricModuli2026}
+が、元の二形式族の相対compact tiltingと
+$t=S^{-1}[2]=(-)_\iota(2)$のheart上のexactな作用を与える。
+同じ零頂点と相対Serreを保つ同値から
+$\bigoplus_{m\ge0}\Hom(\OO,t^m\OO)$の全積付き同型を得た後に、
+\cite[\texttt{prop:relative-h2-antiserre-reconstruction}]{QuadricModuli2026}
+を適用する必要がある。
+その適用範囲は元のrelative H2のsite（局所有限型、非被約を許す）である。
+全可換環上の素朴なAbel公理や全QP stackの同値はこの議論に含まれない。
+\end{remark}
+
+
+\subsection{対称な有限Morita表示の全表示群への降下}
+\label{subsec:qa-symmetric-full-group-descent}
+
+二つのrulingを同じ位相に置く対称四項
+$(\OO_E,F,G,H)$では、根対交換は中間二頂点だけを交換する。
+この表示は、非対称四項
+$(\OO_E,F,H,HG)$についての頂点固定Brauer障害と両立する。
+ただし表示群の共通次数スカラーを除くには、
+$H$の線型化の重みも処理しなければならない。
+本項では二次元の共通座標表現による増幅を使い、
+非被約基底変更にも適合する通常の有限代数として降下させる。
+
+\begin{lemma}[conicの次数一束の選択に依らない階数二束]
+\label{lem:qa-conic-canonical-rank-two-bundle}
+$Q\to T$をsmooth conic族とし、$\mathscr G_Q\to T$を
+相対幾何次数一の可逆層の$\Gm$-gerbeとする。
+普遍束$N$と$V=q_*N$に対し、
+$N\otimes q^*V^\vee$は$Q\times_T\mathscr G_Q$から
+$Q$上の階数二ベクトル束$U_Q$へ降下する。
+この構成はconic族の同型と任意の基底変更に関して自然であり、
+次数一束の代表・その同型・その基底線束捩れの選択に依らない。
+特にconicを恒等射として作用させる群は$U_Q$に自明に作用する。
+\end{lemma}
+\begin{proof}
+$N$と$V$は同じ慣性指標を持つので
+$N\otimes q^*V^\vee$の慣性重みは零である。
+重み零sheafの降下
+\cite[Theorem~4.7]{BerghSchnurer2021}を適用する。
+選択独立性は局所表示でも直接見える。
+$N'=N\otimes q^*M$とすれば、基底変更と射影公式により
+$V'=V\otimes M$であるから、自然な縮約が
+\[
+ N'\otimes q^*(V')^\vee
+ \simeq N\otimes q^*V^\vee
+\]
+を与える。二つの代表の同型をスカラー倍しても
+そのスカラーは$N$と$V^\vee$で打ち消し合う。
+この縮約は三つ以上の基底線束のtensor積について結合的であり、
+Cechの三重重なり上のcocycleは厳密に一致する。
+conicの同型によるpullbackと$q_*N$の基底変更同型も
+この縮約と可換するため、自然性と最後の主張を得る。
+\end{proof}
+
+二形式の係数空間を$P=U_2$とし、論文Bの表示群を
+\[
+ \widetilde G=(\operatorname{GL}(W)\times\Gm^2)\rtimes S_2,
+ \qquad
+ D=\{(\lambda I_W,\lambda,\lambda)\},
+ \qquad G=\widetilde G/D
+\]
+と書く。$W=ku\oplus kv$は共通二次元座標表現である。
+$\widetilde G$の作用は
+$(A,a_c,a_d)\cdot(f_c,f_d)
+ =(a_c^{-2}\operatorname{Sym}^2(A)f_c,
+   a_d^{-2}\operatorname{Sym}^2(A)f_d)$。
+対応する次数付き座標輸送は
+$W\mapsto A(W)$、$c\mapsto a_c c$、$d\mapsto a_d d$である。
+このため$D$は$E\subset\PP^3_P$と両conicには恒等に作用し、
+自然線型化を持つ$H=\OO_E(1)$と$W$にはいずれも重み一で作用する。
+
+$p_c:E\to Q_c$、$p_d:E\to Q_d$に対し
+\[
+ U_c=p_c^*U_{Q_c},\qquad U_d=p_d^*U_{Q_d},\qquad
+ K=H\otimes\pi^*W^\vee
+\]
+と置く。ここで$W$は$P$上の定数束に標準$\widetilde G$線型化を入れたもの。
+$U_c,U_d$は個々には根対を順序付ける部分群上の対象だが、
+$U_c\oplus U_d$は$S_2$の交換を含む全群に自然に同変である。
+
+\begin{theorem}[無標識二形式商上の階数四十五のpointed有限代数]
+\label{thm:qa-unordered-rank45-morita-descent}
+$P$上の族$E$に
+\[
+ \mathcal V_\square
+ =\OO_E\oplus U_c\oplus U_d\oplus K
+ \qquad (\operatorname{rk}=1+2+2+2=7)
+\]
+を取る。この束の$\widetilde G$線型化では$D$が自明に作用し、
+従って$[E/G]\to[P/G]=\mathfrak N^{\mathrm{pres}}$上へ降下する。
+右加群のYoneda規約に合わせ、通常の合成を積とする
+\begin{equation}
+ \mathcal A_\square^{45}
+   =\pi_*\mathcal End_E(\mathcal V_\square)
+ \label{eq:qa-rank45-ordinary-end}
+\end{equation}
+と置く。従って$e_j\mathcal A_\square^{45}e_i$が
+$i$番から$j$番へのHomであり、右射影加群$e_i\mathcal A_\square^{45}$の
+間のHomもこの向きである。これは$\mathfrak N^{\mathrm{pres}}$上の
+単位付き有限局所自由な通常の代数で、階数は$45$である。
+全非被約基底変更を含む任意の基底変更と可換する。
+
+根対を順序付ける二重被覆上では四頂点に分かれ、
+各頂点の隅代数の階数は$(1,4,4,4)$、
+非零非対角成分の階数は
+\[
+ \begin{array}{c|ccccc}
+ (i,j)&01&02&03&13&23\\\hline
+ \operatorname{rk}&4&4&8&8&8
+ \end{array}.
+\]
+従って$45=(1+4+4+4)+(4+4+8+8+8)$である。
+無標識商上では$e_0,e_3,e_1+e_2$が大域的な冪等元で、
+中間二頂点はruling交換で置換される。
+特に$e_0\mathcal A_\square^{45}e_0=\OO$であり、
+すべての降下同型はこの指定頂点とその恒等元を保つ。
+
+各代数閉幾何点では、この代数は
+$(\OO_E,F,G,H)$の基本有限directed End
+（次元$16$）のMorita増幅である。
+係数空間$P$への引戻しは、同四項に階数
+$(1,2,2,1)$の増幅を施した階数$30$の代数とMorita同値であり、
+このMorita同値も零番の指定対象を保つ。
+この定理は有限代数・perfect Morita表示の降下であり、
+単独で相対AS完成や相対$\qgr$ heartの一致を結論しない。
+\end{theorem}
+\begin{proof}
+補題~\ref{lem:qa-conic-canonical-rank-two-bundle}により、
+$U_c,U_d$にはconic族の全同型について自然な輸送がある。
+$\operatorname{GL}(W)$と二つの係数スカラーはconicの同型を誘導し、
+$S_2$は二つの束を厳密に交換する。
+$D$はconicには恒等なので$U_c,U_d$に自明に作用する。
+一方$K=H\otimes W^\vee$上の$D$重みは$1-1=0$である。
+$S_2$は$W$を保ち、$H$には$c,d$の座標交換として作用する。
+従って$\mathcal V_\square$には全$\widetilde G$線型化があり、
+$D$を通じて自明なので$G$線型化へ降下する。
+合成同型は幾何的pullbackとtensor縮約の自然同型から作るため、
+二回の交換も三重重なりのcocycleも恒等に一致する。
+$\OO_E$の直和因子には単位sectionを固定する標準線型化を使う。
+
+有限局所自由性と階数はgerbe上で計算できる。
+この基底では
+\[
+ U_c=F\otimes V_c^\vee,
+ \quad U_d=G\otimes V_d^\vee,
+ \quad K=H\otimes W^\vee.
+\]
+全幾何fiberで$GF^{-1}$は非自明な多重次数零線束である。
+smooth/nodal/$I_2$のいずれでも
+$H^0(GF^{-1})=H^1(GF^{-1})=0$であり、逆の束にも同じ消滅がある。
+実際、次数零の非零sectionは全成分上で零点を持たず、
+線束の自明化となるので非自明性に反する。
+$H^1$には$\omega_E\simeq\OO_E$とSerre双対を使う。
+相対コホモロジー・基底変更により、この消滅は
+任意の非被約引戻し後にも成立する。
+
+残る前向きHomの基本階数は
+\[
+ \dim H^0(F)=\dim H^0(G)
+ =\dim H^0(HF^{-1})=\dim H^0(HG^{-1})=2,
+ \qquad\dim H^0(H)=4.
+\]
+これらは各成分上正次数で$H^1=0$である。
+後向きの負次数Homは零、対角は$\pi_*\OO_E=\OO_P$である。
+ここで対角$R^1\pi_*\OO_E$の消滅は仮定しない。
+全Homの基底変更可換性は、既存の$(2,2)$ Cartier族の計算、
+あるいは$E\to\PP^1_P$の
+$\OO\oplus\OO(-1)^{\oplus2}\oplus\OO(-2)$という直像表示から従う。
+従って上記の五つの基本Homに
+$r_ir_j$、$r=(1,2,2,2)$を掛けた階数が表の値となる。
+対角は$r_i^2$であり、全階数は$45$。
+積は実際の束の射の合成から来るため結合的で、
+基底変更および群の輸送と可換する。
+
+二次形式の交換は$U_c,U_d$の直和因子だけを入れ替え、
+$\OO_E$と$K$を保つ。
+従って主張した冪等元は無標識商へ降下する。
+零番には増幅を施していないので、その隅は$\OO$のままである。
+各幾何点では$V_c,V_d,W$は二次元の通常ベクトル空間であり、
+元の四つの射影generatorをそれぞれ$1,2,2,2$個に増幅した代数になる。
+全ての増幅階数が正なので基本代数とMorita同値である。
+係数空間上では$W$は通常の二次元自明束であるから、
+最後の因子を二回重ねることだけを除けば階数$30$の増幅を得る。
+この加法generatorの変更は零番因子を一個のまま保つ。
+\end{proof}
+
+\begin{remark}[頂点Brauer類と増幅の役割]
+\label{rem:qa-rank45-polarization-brauer}
+順序付き二重被覆上で、階数四の中間頂点のBrauer類は
+conicの類$\alpha_c,\alpha_d$である。
+最後の隅は$\operatorname{End}(W^\vee)$の$G$同変降下であり、
+基底の$\PP(W)$に対応する階数四Azumaya代数である。
+これは$\operatorname{End}(W)$の降下の反対代数であるが、
+Brauer類は二捩れなので同じ類を表す。
+係数空間上では行列代数だが、無標識商上のその類を
+追加の論証なしに零と扱わない。
+
+順序付き部分群では、$a_c$の一次元指標を用いて
+$H\otimes a_c^{-1}$を作るだけでも共通次数スカラーを消せる。
+しかし根対交換はこの選択を$H\otimes a_d^{-1}$に変えるため、
+対称な厳密線型化を自動的には与えない。
+$H\otimes W^\vee$という増幅は、
+二次元座標表現が根対交換で保たれることを利用して
+この非対称な選択を避ける。
+これは基本線束の下降を証明する操作ではなく、
+その障害をAzumaya隅に保持した有限Morita表示である。
+またruling交換は中間二頂点を実際に置換するため、
+系~\ref{cor:qa-morita-ruling-exchange-phase}の
+\emph{四頂点固定}の不可能性と矛盾しない。
+\end{remark}
+
+
+\subsection{実際のspinor加群の降下と内在的compact圏}
+\label{subsec:qa-symmetric-spinor-gluing}
+
+以下の構成は、有限End代数を曲線上で降下させるだけでなく、
+内在的な相対noncubic heartの中のgeneratorを直接与える。
+通常のEnd代数と、前節の上三角双加群代数の積の向きを区別する。
+本項では$\Gamma=\operatorname{End}(\bigoplus T_i)$に対し
+$P_i=\operatorname{Hom}(\bigoplus T_j,T_i)=e_i\Gamma$を右加群とし、
+$\operatorname{Hom}_\Gamma(P_i,P_j)=e_j\Gamma e_i$
+というYoneda規約を一貫して用いる。
+旧表示の$\mathsf M_{ij}$を$e_i\mathsf A_{\mathrm{Mor}}e_j$に置く
+上三角積は、同じ束の通常Endの\emph{反対環}である。
+その表示を本項の右Yonedaに移す際は
+$\mathsf A_{\mathrm{Mor}}^{\mathrm{op}}$を用いる。
+階数と二捩れBrauer類は変わらないが、
+この反対環の操作を省略して右加群圏を同一視しない。
+
+\begin{lemma}[conic section moduleからのspinorの自然構成]
+\label{lem:qa-intrinsic-spinor-induced-module}
+$P=U_2$上で
+\[
+ C=\OO_P[u,v],\quad
+ R_i=C[c_i]/(c_i^2-f_i),\quad
+ \mathcal B=C\langle c,d\rangle/(c^2-f_c,d^2-f_d),
+ \qquad (c_c=c,\ c_d=d)
+\]
+と置く。$\mathscr G_i$上で
+\[
+ S_i(N_i)=\bigoplus_{n\ge0}
+      q_{i*}(N_i\otimes\OO_{Q_i}(n)),\qquad
+ X_i(N_i)=S_i(N_i)\otimes_{R_i}\mathcal B
+\]
+を次数付き右加群として定義する。
+この構成は任意の基底変更と可換し、
+根が分解する局所座標では既存の行列分解のcokernel $X_i$に一致する。
+$\mathcal B$は左$R_i$加群として自由である。
+各次数の$X_i(N_i)$は有限局所自由で、階数は$(n+1)(n+2)$である。
+
+$V_i=q_{i*}N_i$とすれば
+\begin{equation}
+ Y_i=\operatorname{Desc}_{\mathscr G_i/P}
+                  (X_i(N_i)\otimes V_i^\vee)
+ \label{eq:qa-spinor-amplified-descent}
+\end{equation}
+は$P$上の実際の有限生成次数付き右$\mathcal B$加群である。
+その次数$n$成分の階数は$2(n+1)(n+2)$。
+構成はconicの同型、係数スカラー、共通$\operatorname{GL}(W)$作用に自然で、
+二形式交換は$Y_c$と$Y_d$を厳密に交換する。
+\end{lemma}
+\begin{proof}
+$\mathcal B$の中央係数$C$上のPBW基底は$c,d$の交互語である。
+左$R_c$加群としては、空語と$d$から始まる交互語
+\[
+ 1,d,dc,dcd,dcdc,\ldots
+\]
+を基底に取れる。各$C$-交互語はこの基底の一つ、または
+その左に$c$を付けたものに一意に分かれるためである。
+$d$側も同様であり、左$R_i$上の自由性が従う。
+
+smooth conic上では$N_i\otimes\OO_{Q_i}(n)$の幾何次数は$2n+1$で、
+$n\ge0$なら一次コホモロジーは零。
+その直像は階数$2n+2$のベクトル束で任意の基底変更と可換する。
+左$R_i$自由基底は各非負次数に一個なので、
+$X_i(N_i)_n$の階数は
+$\sum_{j=0}^n(2j+2)=(n+1)(n+2)$。
+基底変更と可換する同じ直和記述が平坦性も与える。
+
+根を分解して$Q_i\simeq\PP^1$、$N_i\simeq\OO(1)$とすると、
+$S_i(N_i)$は二次Veronese環の奇数section moduleである。
+$s=a^2,t=-b^2,c_i=ab$と置けば、
+\[
+ \begin{pmatrix}c_i&s\\t&-c_i\end{pmatrix}
+  =\binom{a}{-b}(b\ \ a)
+\]
+であり、この行列のcokernelは
+$\bigoplus_{n\ge0}H^0(\PP^1,\OO(2n+1))$である。
+左$R_i$自由な$\mathcal B$へtensorしても表示は完全なので、
+既存のspinor $X_i$を得る。特に有限生成性がfppf局所に成り立ち降下する。
+
+$N_i$を$N_i\otimes q_i^*M$へ替えると
+$S_i(N_i)$、$X_i(N_i)$、$V_i$はすべて$M$をtensorする。
+従って式~\eqref{eq:qa-spinor-amplified-descent}のtensor縮約は
+$M$を正確に消し、慣性指標も零になる。
+補題~\ref{lem:qa-conic-canonical-rank-two-bundle}と同じcocycle計算で
+$Y_i$は厳密に降下し、全同型と基底変更に自然である。
+\end{proof}
+
+\begin{proposition}[対称spinor generatorの相対pointed Morita表示]
+\label{prop:qa-symmetric-spinor-relative-tilting}
+上の記号を用い、locally finite typeな基底上の相対noncubic heartで
+\begin{equation}
+ \mathcal T_\square
+ =\pi\mathcal B\ \oplus\ \pi Y_c\ \oplus\ \pi Y_d\
+       \oplus\bigl(\pi\mathcal B(1)\otimes W^\vee\bigr)
+ \label{eq:qa-rank45-actual-spinor-generator}
+\end{equation}
+を取る。これは相対tilting compact generatorである。
+この対象とその構造対象因子は$\mathfrak N^{\mathrm{pres}}=[P/G]$上へ降下する。
+自然な可換化による有限Homの比較は
+\begin{equation}
+ \operatorname{End}(\mathcal T_\square)
+       \simeq\mathcal A_\square^{45}
+ \label{eq:qa-rank45-actual-spinor-end}
+\end{equation}
+となり、任意のNoetherian基底変更と可換する。
+従ってcanonical compact圏には、構造対象を零番射影対象へ送る
+相対的な同値
+\begin{equation}
+ D(\operatorname{Ind}\mathcal C)^c
+       \simeq\operatorname{Perf}(\mathcal A_\square^{45})
+ \label{eq:qa-rank45-intrinsic-perfect-equivalence}
+\end{equation}
+を得る。ここで右辺は右加群のperfect圏であり、
+$\mathcal O$の像は$e_0\mathcal A_\square^{45}$である。
+このperfect圏の同値と、任意に選んだAS表示の標準heartが一致することは区別する。
+\end{proposition}
+\begin{proof}
+最初に相対tilting性を根が分解するfppf被覆上で確認する。
+$Y_i$はspinor $X_i$の階数二の増幅なので、
+増幅を外した四項
+$(\pi\mathcal B,\pi X_c,\pi X_d,\pi\mathcal B(1))$
+を考えればよい。
+$G=p_d^*N_d$の評価列と
+$G^2=H\det V_d$から、conic上およびそのsection moduleに
+\[
+ 0\longrightarrow N_d\longrightarrow
+ V_d\otimes\OO_{Q_d}(1)\longrightarrow
+ N_d\otimes\OO_{Q_d}(1)\longrightarrow0
+\]
+を得る。この列を各非負次数で直像してから
+左$R_d$自由な$\mathcal B$へtensorすると、実際の完全列
+\begin{equation}
+ 0\longrightarrow X_d\longrightarrow
+ V_d\otimes\mathcal B(1)\longrightarrow X_d(1)
+       \longrightarrow0
+ \label{eq:qa-spinor-relative-euler-sequence}
+\end{equation}
+を得る。すべて任意の基底変更と可換する。
+
+論文Bの相対smooth proper性、compactness、相対normal tiltingの議論
+\cite[\texttt{prop:nc-relative-smooth},
+\texttt{prop:nc-compact-generator},
+\texttt{lem:nc-relative-normal-tilting}]{QuadricModuli2026}
+を普遍二形式族へ適用すると、
+$(\pi\mathcal B,\pi X_c,\pi\mathcal B(1),\pi X_d(1))$
+は相対full strong foundationである。
+ここで特定の正規化された係数形に範囲を制限しない。
+根分解被覆上で両spinorは中心$\OO[u,v,cd+dc]$上
+$Z^2\oplus Z(-1)^2$となる同じ行列計算を持ち、
+全幾何fiberでAのnormal foundationに一致する。
+このためBの証明で用いる相対perfectness、derived Homの基底変更、
+fiberwise full性の検出が同じまま適用できる。
+
+式~\eqref{eq:qa-spinor-relative-euler-sequence}は末尾二項のevaluation mutationである。
+命題~\ref{prop:qa-symmetric-square-relative-mutation}の有限Hom計算により、
+これを$(\pi X_d,\pi\mathcal B(1))$に替えた四項も相対full strongとなる。
+その計算は$H^*(GF^{-1})=0$と二つのpencilの評価列を使い、
+幾何点だけのmutationから相対性を推論するものではない。
+正の階数の局所自由束による増幅は生成する加法閉包を変えないので、
+$\mathcal T_\square$もtilting compact generatorである。
+
+$\mathcal B\to\mathcal B^{\mathrm{ab}}$による制限は
+$Y_i$を$U_i$に、$\mathcal B(1)\otimes W^\vee$を$K$に送る。
+順序付き根分解被覆上では既存の相対有限End比較
+（命題~\ref{prop:qa-point-relative-split-root-end}）と
+式~\eqref{eq:qa-spinor-relative-euler-sequence}のmutation比較から、
+この制限は対称四項のすべての有限Homと積の同型を与える。
+対象・制限射・評価射の三つがconic section moduleから自然に作られるため、
+これらの同型は重なりで一致して式~\eqref{eq:qa-rank45-actual-spinor-end}へ降下する。
+
+最後に共通次数スカラー$\lambda\in D$を追う。
+$Y_i$の次数$n$には$\lambda^n$が作用し、
+$\mathcal B(1)\otimes W^\vee$にも
+$\lambda^{n+1}\lambda^{-1}=\lambda^n$が作用する。
+$\mathcal B$の次数$n$も同じ重みである。
+次数スカラーによる右加群の輸送には
+\[
+ m_n\longmapsto\lambda^{-n}m_n
+\]
+という自然同型があり、この同型が四因子すべてに共通に働く。
+特に構造対象の次数零の単位では恒等である。
+従って$\widetilde G$の作用を$G$へ剛体化する降下データと
+$\mathcal T_\square$の線型化は完全に整合する。
+二形式交換は中間二因子を交換し、残る二因子とpointingを保つ。
+相対tilting Morita
+\cite[Sections~8.2 and 9.2]{Keller1994}
+を適用すると式~\eqref{eq:qa-rank45-intrinsic-perfect-equivalence}を得る。
+end代数・tilting対象・その評価はすべてbase changeに可換なので、
+この同値も任意のNoetherian基底変更に整合する。
+\end{proof}
+

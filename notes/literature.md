@@ -1,7 +1,13 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.79。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.80。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 対称Morita降下と相対Serre完成
+
+Keller, *Deformed Calabi–Yau completions*, arXiv:0908.3499v5 の §2.3、Proposition 3.10(e)、§4.1、Proposition 4.2 の一次本文を今回照合した。基礎環は一般可換環で、inverse dualizing complexと直和tensor completionのMorita共変性を入力とする。無限積完備化の非平坦基底変更はこの引用から主張しない。2018年erratum（arXiv:1809.01126）の非零変形パラメータに関する追加条件を今回のundeformed構成へ混同しない。
+
+一般gerbe重み零降下・twisted MoritaはBergh–Schnürer 2021、derived MoritaはKeller 1994の既知入力。Cの新しい具体化は対称spinor四項・全表示群へのrank45降下・指定零頂点と相対Serre角の比較、および二形式交換の符号εの計算である。全次数の次数零集中には既存体上helixのforward Ext消滅を用い、有限数値検算を代用しない。これらの新規性の包括的な調査は未完了。
 
 ## OU/noncubicの共通spectral incidenceとKummer類の不一致
 
@@ -347,7 +353,7 @@ GのVへの線型作用で定めた変動群スキーム
 𝒱=X×^G V_linのtorsorであることを証明。
 この class [Y]∈H¹_et(B,𝒱) は、滑らかな対角一般開では
 spectral Kummer模型と二quadric鉛筆のHodge符号により
-Picardのδ_[-2](N)∈H¹_et(S,E[2])に実際に一致する。
+Picardの$\delta_{[-2]}(N)$∈H¹_et(S,E[2])に実際に一致する。
 正則半単純potentialの非対角族でも相対半点を構成済み。
 この比較をpotentialを選ばない一般quintupleの相対groupoidへ
 拡張する問題は残る。
