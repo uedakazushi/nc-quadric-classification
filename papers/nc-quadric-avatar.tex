@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v3.6
+% 日本語 LuaLaTeX。2026-11-22 / v3.7
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v3.6（全noncubic幾何点のpointed認識）}
+\date{2026年11月22日\quad v3.7（全noncubic pointed認識と相対有限End）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -153,8 +153,10 @@ smooth、共有根のnodal、根対一致の$I_2$の
 mutation後の四項は一添字ずらし、
 $(H_1,H_2,H_3,H_4)$に合わせることで
 構造対象を保つpointed exact同値を証明する。
-非被約基底上の相対群oidおよび
-$C_q$・$\Sigma_2$の別avatarとのpointed比較は未解決である。
+さらに、根を順序付きで分解した普遍係数空間では、
+有限End代数の同型が任意の非被約基底変更と両立することを証明する。
+これは相対$\qgr$圏の同値やroot-label忘却の降下とは異なる。
+$C_q$・$\Sigma_2$の別avatarとのpointed比較も未解決である。
 実例$f_1=x(x-1),f_2=(x-2)(x-3)$では
 $j(E_f)=28756228/3$、$j(C_q)=35152/9$で、
 点曲線とspectral曲線の単純な同一視は誤りである。
@@ -324,7 +326,10 @@ pointed認識を証明する。
 MCM行列kernelから二pencilを回収し、
 四頂点Endの全Homと積を点曲線への制限で同定する。
 標準頂点$H_0$でなくshift後の$H_1$に構造対象を対応させる。
-共有根・一致根対は体上の定理に含まれ、非被約基底の相対群oid認識は別問題である。
+順序付き分解の普遍族では、有限graded End代数の比較を
+任意の非被約基底変更へ延長する。
+ただし相対$\qgr$圏・Serre根の一括降下と
+無標識stackの群oid認識は別問題である。
 ここでは有限directed foundation、relation-dual QP、
 underlying AS代数、O-marked内在的heartの四水準を混同しない。
 

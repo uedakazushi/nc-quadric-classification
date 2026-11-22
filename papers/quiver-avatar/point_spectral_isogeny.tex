@@ -626,6 +626,130 @@ $(\qgr B_f,\pi B_f)$へ帰着する。
 これは全自己同型群の同一視や族上のstack同値を述べない。
 \end{proof}
 
+\begin{proposition}[順序付き二根対の普遍族における相対有限End]
+\label{prop:qa-point-relative-split-root-end}
+$k$を標数零の代数閉体とし、
+\[
+ S=k[a_{11},a_{12},a_{21},a_{22},
+       b_{11},b_{12},b_{21},b_{22},
+       (\det a\,\det b)^{-1}]
+\]
+と置く。$S$はsmoothな被約整域である。
+$\ell_i=a_{i1}u+a_{i2}v$、
+$m_i=b_{i1}u+b_{i2}v$、$f_1=-\ell_1\ell_2$、
+$f_2=-m_1m_2$とし、
+\[
+ \mathcal B=S[u,v]\langle c,d\rangle/
+      (c^2-f_1,d^2-f_2),\quad
+ \mathcal R=\mathcal B/(cd-dc),\quad
+ \mathcal E=\operatorname{Proj}\mathcal R
+\]
+を取る。
+行列~\eqref{eq:qa-point-mcm-matrices}で定める
+相対graded右加群を$\mathcal X_c,\mathcal X_d$とする。
+二つのconicを根の分解から$\PP^1_S$に自明化し、
+その相対次数一線束の$\mathcal E$への引戻しを
+$\mathcal F,\mathcal G$とする。
+\[
+  (M_0,M_1,M_2,M_3)
+   =(\mathcal B,\mathcal X_c,\mathcal B(1),\mathcal X_d(1)),
+  \quad
+  (L_0,L_1,L_2,L_3)
+   =(\OO_{\mathcal E},\mathcal F,\mathcal F^2,
+                                \mathcal F^2\mathcal G).
+\]
+前向きHomを用いる有限directed $S$-代数
+\[
+ \mathfrak B_S=\bigoplus_{0\le i\le j\le3}
+    \operatorname{Hom}^{0}_{\operatorname{gr}\mathcal B}(M_i,M_j),
+ \quad
+ \mathfrak G_S=\bigoplus_{0\le i\le j\le3}
+    H^0(\mathcal E,\mathcal Hom(L_i,L_j))
+\]
+は成分ごとに有限局所自由であり、
+$\mathcal B\to\mathcal R$による制限は
+\begin{equation}
+ \mathfrak B_S\xrightarrow{\ \sim\ }\mathfrak G_S
+ \label{eq:qa-point-relative-split-root-end}
+\end{equation}
+という$S$-代数の同型を与える。
+これは\emph{任意の}$S$-代数$T$（非被約でもよい）への
+基底変更と可換し、その後も全Homと合成を保つ。
+
+この命題は有限graded Hom代数の比較であり、
+任意の基底上の相対$\qgr$ Abel圏の同値、
+Serre根・AS被覆の一括降下、
+または根の順序を忘れるstack同値を主張しない。
+\end{proposition}
+\begin{proof}
+$\mathcal B$の次数別PBW基底は
+$c^2=f_1,d^2=f_2$を使い同一文字の隣接組を
+縮約する正規形から得られる。
+$f_i$は中央の二変数多項式なのでDiamond条件の重なりは解消し、
+各$\mathcal B_n$は$S$-有限自由である。
+相対行列分解により$\mathcal X_c,\mathcal X_d$は
+次数零の二生成元と次数一の二関係を持つ。
+とくに相対graded Homの各成分は、
+これらの生成元の像に関する\emph{有限個}の
+線形方程式の核として得られ、
+必要なターゲットの次数は高々二である。
+
+$\mathcal X_i$の次数$0,1,2$の表示は
+有限自由$S$-加群間の行列で与えられる。
+全幾何fiberでその次元はそれぞれ$2,6,12$である
+（分類論文Aの線形matrix factorizationのHilbert計算、
+または同じ最小分解のEuler漸化式）。
+$S$が被約だから、これらの表示行列の階数一定性から
+ある階数より大きい小行列式は$S$で実際に零となる。
+その階数の小行列式が可逆な開集合で
+行と列の基本変換を行えば行列は局所的に
+$\operatorname{diag}(I_r,0)$となる。
+従って$\mathcal X_i$の当該各次数は
+有限局所自由で、任意の基底変更と可換する。
+非被約底上で単に幾何fiberの階数一定性を
+仮定しているのではなく、\emph{被約な普遍底$S$上で
+一度分裂した行列を引き戻している}ことが重要である。
+
+同じ議論を相対Homの有限線形方程式に適用する。
+その全幾何fiberでのHom次元は
+補題~\ref{lem:qa-pointed-abelianization-four-end}により
+\[
+ \begin{pmatrix}
+ 1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
+ \end{pmatrix}
+\]
+で一定である。
+従って$\mathfrak B_S$は成分ごとに有限局所自由で、
+形成は任意の$S$-基底変更と可換する。
+
+一方、補題~\ref{lem:qa-pointed-all-rootpair-geometry}の
+ファイバー積表示は$S$上の相対Cartier因子
+$\mathcal E\subset\PP^1_S\times_S\PP^1_S$を与える。
+$\mathcal E$は$S$-平坦であり、
+$(2,2)$分解の相対cohomologyにより
+$i<j$の$\mathcal Hom(L_i,L_j)$の
+$H^0$は表示した階数で有限局所自由かつ
+$R^1$は零、任意の基底変更と可換する。
+対角の$\mathcal Hom(L_i,L_i)=\OO_{\mathcal E}$は
+$R^0\pi_*\OO_{\mathcal E}=\OO_S$、
+$R^1\pi_*\OO_{\mathcal E}\simeq\OO_S$である。
+必要なのは$R^0$であり、後者を零とは主張しない。
+従って$\mathfrak G_S$も同じ性質を持つ。
+
+$\mathcal X_c\otimes_{\mathcal B}\mathcal R$および
+$\mathcal X_d\otimes_{\mathcal B}\mathcal R$は
+conic上のodd section moduleの相対自由拡大なので、
+$\mathcal F,\mathcal G$にsheafifyする。
+よって$\mathcal B\to\mathcal R$から
+自然な相対代数射$\mathfrak B_S\to\mathfrak G_S$がある。
+全幾何fiberでは前補題によって同型であり、
+両辺は同階数の局所自由加群だから
+Nakayamaの補題で$S$上でも同型となる。
+この同型を$T$へtensorすれば、
+任意の非被約$S$-代数でも全積を保つ
+\eqref{eq:qa-point-relative-split-root-end}が得られる。
+\end{proof}
+
 \begin{corollary}[非零二捩れ付き楕円曲線上の双対二重商]
 \label{cor:qa-point-spectral-atkin-lehner}
 滑らかな楕円曲線と非零二捩れの組
