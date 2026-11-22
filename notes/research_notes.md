@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.89（A v1.69・20節、B v0.39・31節、C v1.5）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.90（A v1.69・20節、B v0.39・31節、C v1.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -209,7 +209,7 @@ B `cor:two-intrinsic-foundations` は、固定pointed対象で
 楕円四つ組 U=(E,L0,L1,L2) の差をη=L1−L0, δ=L2−L0とすると
 B `lem:elliptic-two-reflections` のもう一方は
 R(U)=(E,L0L1L2^{-1},L2,L1)、差は(2δ−η,δ)。
-j(E)≠0,1728、δ∉E[2]、η∉{0,δ,2δ} の非空稠密開では
+j(E)≠0,1728、δ∉E[2]、η−δ∉E[2]、η∉{0,2δ} の非空稠密開では
 Aut(E,0)={±1}、εδ=δからε=1、εη=2δ−ηからη=δとなり矛盾。
 二つの四つ組は非同型で、両方cubic型。pointed自己同値に
 ruling交換成分がなく、全慣性はμ₂²。
@@ -222,7 +222,20 @@ C `cor:qa-quintuple-h2-generic-degree-two` と
 この8を4つのPicard Serre根の数や自己同値群の位数と混同しない。
 **稠密開でのstack同型。** 表現可能有限étale次数2のquintuple→H2には、任意基底変更と可換なcanonical deck対合がある。étale局所に二つのsheetが分裂するときの交換で、rank2代数上の式i(a)=Tr(a)−aにより一意に構成する。従ってH2の適当な稠密開は剛体化quintuple一般開のS₂商と同値。幾何点では二つのnormalized foundationの交換。C thm:qa-h2-generic-ruling-quotientが証明正本。これは特殊点全体でBの相対mutationが既にH2を表現すると結論しない。
 
-**次の核心：** 特殊cubicのη=2δ・δ∈E[2]・
+**特殊ruling交換の二捩れ条件（Cで証明）。**
+滑らかな許容楕円四つ組でj(E)≠0,1728、δ≠0、η∉{0,δ,2δ}とする。
+二つのnormalized foundationを交換するpointed自己同値が存在する必要十分条件は
+δ∈E[2]またはη−δ∈E[2]。
+楕円自己同型の線型部分ε∈{±1}についてεδ=δ、εη=2δ−η が必要十分。
+ε=1なら2(η−δ)=0、ε=−1なら2δ=0。最初の次数二線束は
+[2]:E→Eの全射性を使ってtranslationで合わせられる。
+Bの二foundation全充満性からpointed自己同値へ昇格。
+正則半単純な特別点では指定foundationの慣性μ₂²はindex2、
+内在H2の全慣性は位数8。群拡大の型・局所分岐は未解決。
+一般有限étale二重射の稠密openにはδ,η−δ∉E[2]を課す。
+証明正本はCのprop:qa-elliptic-ruling-swap-two-torsion。
+
+**次の核心：** 特殊cubicのη−δ∈E[2]・δ∈E[2]・
 j=0,1728等のruling交換固定点と慣性増大を調べる。
 二rulingの有限étale被覆とその分岐を相対非被約基底で構成し、
 noncubic境界でのfiber・正規形・有限性を監査する。

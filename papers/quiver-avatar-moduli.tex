@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.5
+% 日本語 LuaLaTeX。2026-11-22 / v1.6
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.5（内在H2の一般S₂商スタック同型）}
+\date{2026年11月22日\quad v1.6（特殊ruling交換の二捩れ条件）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -92,6 +92,11 @@ $\HHstack$への射はsmooth相対次元零で、一般開では
 内在$\HHstack$の稠密開は剛体化quintupleの一般開の
 $S_2$商スタックに同値となり、対合は二つのnormalized
 ruling foundationの交換と幾何点上で一致する。
+一般openには$\delta,\eta-\delta\notin E[2]$を課す。
+一方、$j(E)\ne0,1728$の滑らかな許容四つ組で
+交換自己同値が生じるのは$\delta\in E[2]$または
+$\eta-\delta\in E[2]$のとき、かつそのときに限る。
+正則半単純特別点の全慣性は位数8となる。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -107,8 +112,8 @@ GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決
 正則半単純な非対角potential族には相対Hodge-Jacobian同型と
 特性係数による相対半点を任意底変更と可換に構成する。
 potentialを選ばない一般quintupleから内在$\HHstack$への
-特殊cubicおよびnoncubic境界の慣性・分岐・pointed fiber、
-二rulingの相対的降下は未解決である。
+特殊cubicおよびnoncubic境界の局所分岐・群拡大の型・pointed fiberの相対化、
+二rulingの全相対的降下は未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。
@@ -201,6 +206,8 @@ OUの一般安定化群という表現は単位連結成分と全慣性を区別
 系~\ref{cor:qa-potential-h2-generic-degree-eight}に示す。
 さらに稠密開でのスタック的な商同型は
 定理~\ref{thm:qa-h2-generic-ruling-quotient}で与える。
+特殊ruling交換の正確な二捩れ条件は
+命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}に証明する。
 ここで用いる square・rotated square の反標準 avatar と十本矢 mutation は
 大川--植田の日本語草稿 v7 \cite{AvatarVSeven2026} に、
 十二本矢型の追加と統一 avatar は研究ノート \cite{Q12Avatar2026} に記載されている。
