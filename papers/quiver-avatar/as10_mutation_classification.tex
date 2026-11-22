@@ -361,10 +361,26 @@ $(F,G)$の完全線形系は$(2,2)$閉埋め込みを与える。
 乗法の階数三条件は$H^0(E,\eta P^{-1})\ne0$と
 同値である。$\Pic^0(E)$上でこの条件の
 Fitting divisorは恒等点の被約Cartier因子である。
-これは次数零非自明線束には切断がなく、
-$\Pic^0(E)$の原点での$R\Gamma$の接微分が
-非零であること（標準的な楕円曲線の
-Poincaré線束のcohomologyとbase change）による。
+これが被約な一次零点であることは
+次の一次変形計算から直接分かる。
+$Q_\epsilon$を自明線束の非自明な一次変形とし、
+$\xi\in H^1(E,\OO_E)\simeq k$をその拡大類とする。
+短完全列
+\[
+ 0\to\OO_E\xrightarrow{\cdot\epsilon}
+ Q_\epsilon\longrightarrow\OO_E\to0
+\]
+の接続準同型
+$H^0(\OO_E)\xrightarrow{\delta_\xi}H^1(\OO_E)$は
+$1\mapsto\xi$である。
+$\xi\ne0$ならこれは同型なので、
+自明線束の定数切断は非自明な一次変形に
+持ち上がらない。
+従って$R\Gamma(Q)$の二項局所自由表示の
+行列式は原点で一次の零点を持つ。
+Pencil評価列から得られる$\mu_G$の
+行列式はこの局所表示の行列式と単元倍で一致し、
+階数三のFitting条件も被約となる。
 
 点$(P_0,\eta_0)=(P_0,P_0)$で
 $0\ne P_0\in E[2]$を取る。
