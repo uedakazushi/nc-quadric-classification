@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.91（A v1.69・20節、B v0.39・31節、C v1.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.92（A v1.69・20節、B v0.39・31節、C v1.8）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -234,6 +234,18 @@ Bの二foundation全充満性からpointed自己同値へ昇格。
 内在H2の全慣性は位数8。**相対2-fiberはなお二点：** sourceのquintuple同型類は一つでも、Aut_H2（位数8）/Aut_source（位数4）の二剰余類から自明慣性の二対象を得る。pointed忘却は正則半単純開で表現可能étaleなので、この点でstack射は非分岐。Cのprop:qa-special-ruling-two-fiber-no-stack-ramificationに証明。粗モジュライ上の分岐・群拡大の型は未解決。
 一般有限étale二重射の稠密openにはδ,η−δ∉E[2]を課す。
 証明正本はCのprop:qa-elliptic-ruling-swap-two-torsion。
+
+**片側二捩れ特別座の全慣性群型（Cで証明）。**
+正則半単純・j≠0,1728で、η−δ∈E[2]\{0}かつδ∉E[2]なら
+ruling交換は位数4の楕円translation t_vで、2v=±(η−δ)。
+E[2]と合わせて全pointed慣性はC4×C2となる。
+δ∈E[2]\{0}かつη−δ∉E[2]なら、交換はt_v∘[-1]で
+二乗恒等、E[2]への共役も恒等であるためC2³となる。
+曲線上の作用の忠実性は、foundation保持部分E[2]の忠実性と、
+交換成分が曲線恒等ならL0とL0L1L2^{-1}の非同型性
+（η≠δ）に反することから従う。
+Cのprop:qa-elliptic-special-inertia-group-typesが証明正本。
+二条件同時・j=0,1728は対象外、粗空間の法表現・分岐は未解決。
 
 **次の核心：** 特殊cubicのη−δ∈E[2]・δ∈E[2]・
 j=0,1728等のruling交換固定点と慣性増大を調べる。
