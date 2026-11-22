@@ -1,0 +1,325 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / C v4.7
+\section{Spectral avatarのpointed実現と境界延長不能}
+\label{sec:qa-spectral-pointed-atkin-lehner}
+
+本節では基礎体$k$を標数零の代数閉体とし，
+根を共有しない二つのsquarefree二次形式だけを扱う．
+すなわち点曲線とspectral曲線はともに滑らかである．
+avatarからのpointed対象とは，
+定理~\ref{thm:qa-point-all-noncubic-pointed}と同じ
+mutation後の一番頂点を指定したAS商圏を意味する．
+この位相の指定を省略しない．
+二同種の商公式とAtkin--Lehner対合自体は古典的な楕円曲線論である．
+二同種の具体式は\cite[III, Example~4.5]{SilvermanAEC2009}と照合する．
+本節で行うのは，それを本稿のpointed認識定理と組み合わせ，
+二つのavatar分類が与えるH2対象の差を明示することである．
+この適用の新規性について包括的な先行研究調査はまだ行っていない．
+
+\subsection{二捩れ標識を保つ逆構成}
+
+\begin{lemma}[smooth二捩れavatarの点曲線型逆構成]
+\label{lem:qa-smooth-point-avatar-inverse}
+$T$を滑らかな種数一曲線，$F$を次数二線束，
+$0\ne P\in\Pic^0(T)[2]$とし，$G=FP$と置く．
+このとき根を共有しないsquarefree二次形式$g_1,g_2$が存在して，
+\[
+T\simeq E_g=\{c^2=g_1(u,v),\ d^2=g_2(u,v)\}\subset\PP^3
+\]
+となり，二conic商から得るpencilはそれぞれ$F,G$となる．
+根対の$\PGL_2$-同型類は$(T,F,G)$から一意に決まる．
+またこの同型類は$(T,P)$だけに依存する．
+従って点曲線型の対応
+\[
+\{\text{根を共有しない被約二根対}\}/\PGL_2
+\longleftrightarrow
+\{(T,P):T\text{ smooth genus one},\ 0\ne P\in\Pic^0(T)[2]\}/\simeq
+\]
+も全単射である．左辺の根対は二つの被約二点集合の非順序対を意味し，
+各二次形式の非零スカラー倍は忘れている．
+\end{lemma}
+\begin{proof}
+原点を選び，次数二線束$F$に対応する群の点を$a$，
+$P$に対応する非零二捩れ点を$p$とする．
+$|F|$と$|G|$のdeck involutionは
+\[
+\iota_F(x)=a-x,\qquad \iota_G(x)=a+p-x
+\]
+である．従って両者は可換で，積は自由な平行移動$t_p$となる．
+生成する群$V=\langle\iota_F,\iota_G\rangle$は四元群である．
+$Q_F=T/\langle\iota_F\rangle$と
+$Q_G=T/\langle\iota_G\rangle$は射影直線であり，
+さらに$Z=T/V$も射影直線となる．
+双方の$Q_i\to Z$は次数二で，それぞれ二点で分岐する．
+
+この二つの分岐因子は交わらない．実際，
+滑らかな曲線の標数零有限群商の点の慣性群は巡回群である．
+もし二つの中間二重被覆が同じ点で分岐すれば，
+その点の慣性は両方の商で非自明でなければならず，
+$V$内の可能な位数二部分群は$\langle t_p\rangle$だけとなる．
+しかし$t_p$は固定点を持たない．
+四元群全体は巡回群でないので慣性群にならない．
+よって分岐点は四点相異なる．
+
+$Z\simeq\PP^1_{[u:v]}$の座標を選べば二重被覆は
+$Q_F=\{c^2=g_1(u,v)\}$，
+$Q_G=\{d^2=g_2(u,v)\}$と書ける．
+分岐の被約性から$g_1,g_2$はsquarefreeである．
+四元群拡大の中間体の合成を取ると
+$T\to Q_F\times_ZQ_G$は有限birationalであり，
+右辺は分岐因子が交わらないため滑らかである．
+したがって同型となる．
+各$Q_i$上の次数一線束の引戻しは，
+構成上$F,G$である．
+この商の構成は根対を座標変換と交換を除いて一意に回収する．
+
+$T$上で次数二線束を別の$F'$へ変えても，
+$[2]:\Pic^0(T)\to\Pic^0(T)$が全射なので
+ある平行移動$t$で$t^*F\simeq F'$となる．
+平行移動は$\Pic^0(T)$に自明に作用するため
+$t^*(FP)\simeq F'P$も成り立つ．
+従って$(T,F,FP)$の同型類は$(T,P)$だけで決まる．
+同じ議論で二pencilを交換できるから，根対の順序も
+この同型類に追加の選択を与えない．
+前向きの構成は定理~\ref{thm:qa-point-spectral-dual-two-isogeny}であり，
+以上はその逆である．
+\end{proof}
+
+\begin{theorem}[spectral avatarのAS実現はAtkin--Lehner対合を与える]
+\label{thm:qa-spectral-avatar-pointed-involution}
+$f=(f_1,f_2)$を上記のsmooth根対とし，
+$\mathcal H(f)=(\qgr B_f,\pi B_f)$と置く．
+spectral二重被覆$p:C_f\to\PP^1$に対し
+$F=p^*\OO(1)$，$P=M_C$，$G=FP$とする．
+square avatar $(C_f,F,G,P)$から指定mutationを行い，
+一番頂点を指定して得るpointed AS商圏を
+$\mathcal H_{\mathrm{sp}}(f)$と書く．
+この対象はnoncubic H2に属し，あるsmooth根対$f^\vee$について
+\[
+\mathcal H_{\mathrm{sp}}(f)\simeq\mathcal H(f^\vee)
+\]
+となる．幾何同型類上の$f\mapsto f^\vee$は対合である．
+点曲線およびspectral曲線を二捩れ標識付きで書けば
+\[
+(E_{f^\vee},P_{E_{f^\vee}})\simeq(C_f,M_C),\qquad
+(C_{f^\vee},M_{C_{f^\vee}})\simeq(E_f,P_{E_f}).
+\]
+すなわちこの対合は既存の二同種の双対化
+$\mathcal W_2$である．
+
+特に
+\begin{equation}
+\mathcal H_{\mathrm{sp}}(f)\simeq\mathcal H(f)
+\quad\Longleftrightarrow\quad
+(C_f,M_C)\simeq(E_f,P_{E_f}).
+\label{eq:qa-spectral-pointed-selfdual-criterion}
+\end{equation}
+左辺は構造対象を保つexact同値を意味する．
+一般にはこの条件は成立しない．
+\end{theorem}
+\begin{proof}
+前補題を$(T,F,G)=(C_f,F,FP)$へ適用し，
+$E_{f^\vee}\simeq C_f$と二pencilの同定を得る．
+定理~\ref{thm:qa-point-all-noncubic-pointed}により，
+このavatarの指定したpointed AS実現は
+$\mathcal H(f^\vee)$とexact同値である．
+また同定は二捩れの差も保つので
+$(E_{f^\vee},P_{E_{f^\vee}})\simeq(C_f,M_C)$である．
+定理~\ref{thm:qa-point-spectral-dual-two-isogeny}の双対性を
+$f$と$f^\vee$へ適用すれば第二の同型も得られる．
+二度双対を取ると元の二同種へ戻るので，
+前補題の一意性から$f^{\vee\vee}\simeq f$である．
+
+論文Aのnoncubic pointed分類は，
+$\mathcal H(f)\simeq\mathcal H(g)$の必要十分条件が
+根対の$\PGL_2$-同型であることを与える．
+前補題はこれを点曲線型の二捩れ標識付き同型へ
+言い換えるから，式\eqref{eq:qa-spectral-pointed-selfdual-criterion}を得る．
+この主張は幾何同型類と指定したpointed実現の比較であり，
+任意基底上の相対自己同値・Morita cocycleを構成したものではない．
+\end{proof}
+
+\subsection{不変量と自己双対点}
+
+\begin{proposition}[$\chi$座標での対合と二つの自己双対点]
+\label{prop:qa-spectral-atkin-lehner-chi}
+論文Bの不変式
+$\chi=D(f_1,f_2)^2/(\Delta(f_1)\Delta(f_2))$を使う．
+smooth根対の同型類は$\chi\in k\setminus\{1\}$で分類され，
+前定理の対合は
+\begin{equation}
+\chi\longmapsto\chi^\vee=\frac{\chi}{\chi-1}
+\label{eq:qa-spectral-atkin-lehner-chi}
+\end{equation}
+である．従ってspectral avatarの指定pointed AS実現が
+元の$\mathcal H(f)$と同値となるsmooth幾何同型類は
+正確に$\chi=0,2$の二つである．
+その曲線の$j$値はそれぞれ$1728,8000$である．
+一般の$j$不変式は
+\begin{equation}
+j(C_f)=\frac{64(\chi+3)^3}{(\chi-1)^2},\qquad
+j(E_f)=\frac{64(4\chi-3)^3}{\chi-1}.
+\label{eq:qa-two-j-functions-chi}
+\end{equation}
+\end{proposition}
+\begin{proof}
+二根を$0,\infty$へ送ると，スカラーを除いて
+\[
+f_1=uv,\qquad f_2=u^2+a uv+bv^2,
+\qquad b\ne0,\quad a^2-4b\ne0
+\]
+と書ける．ここで$b\ne0$は根を共有しない条件である．
+この正規形では
+$\chi=a^2/(a^2-4b)$となる．
+座標の対角変換と第二形式のスカラー変換で$b=1$にでき，
+残る$a\leftrightarrow-a$も座標変換で実現する．
+従って$a^2/b$，同じことだが$\chi$が完全不変量となる．
+$\chi=1$は$b=0$を意味するのでsmooth域から除外される．
+
+spectral曲線はWeierstrass表示
+\[
+C_f:\ y^2=x(x^2+ax+b)
+\]
+を持ち，指定二捩れは$(0,0)$である．
+この点を核とする二同種の商は
+\[
+E':\ Y^2=X\bigl(X^2-2aX+(a^2-4b)\bigr).
+\]
+実際，
+\[
+X=x+a+\frac b x,\qquad
+Y=y\left(1-\frac b{x^2}\right)
+\]
+を代入すれば右辺の方程式が成立する．
+この射は有限次数二で，$O$と$(0,0)$を同じ無限遠点へ送り，
+商の標識二捩れは再び$(0,0)$である．
+定理~\ref{thm:qa-point-spectral-dual-two-isogeny}より
+$(E',(0,0))\simeq(E_f,P_{E_f})$となる．
+したがって$f^\vee$のspectral表示として
+\[
+f_1^\vee=uv,\qquad
+f_2^\vee=u^2-2a uv+(a^2-4b)v^2
+\]
+を取れる．この二形式は判別式$1,16b$を持ち，
+根を共有しない条件は$a^2-4b\ne0$だから，
+再びsmooth根対である．不変式を代入して
+\[
+\chi^\vee=\frac{4a^2}{16b}
+=\frac{\chi}{\chi-1}
+\]
+を得る．この変換の二乗は恒等で，固定点方程式は
+$\chi(\chi-2)=0$である．
+
+一般Weierstrass模型$y^2=x(x^2+ax+b)$の
+$c_4=16(a^2-3b)$，$\Delta_E=16b^2(a^2-4b)$から
+\[
+j=\frac{256(a^2-3b)^3}{b^2(a^2-4b)}
+\]
+を得る．これと二同種先の係数$(-2a,a^2-4b)$を代入すると
+式\eqref{eq:qa-two-j-functions-chi}となる．
+最後に$\chi=0,2$を代入する．
+\end{proof}
+
+\begin{example}[元のpointed quadricと異なるspectral avatar]
+\label{ex:qa-spectral-avatar-pointed-inequivalent}
+既存の例~\ref{ex:qa-point-spectral-j-distinction}の
+$f_1=x(x-1)$，$f_2=(x-2)(x-3)$では
+$\Delta(f_1)=\Delta(f_2)=1$，$D(f_1,f_2)=-7$なので
+$\chi=49$である．spectral avatarの指定pointed AS実現は
+$\chi^\vee=49/48$のnoncubic H2対象となり，
+$\chi=49$の元の対象とはpointed exact同値でない．
+曲線の不一致も
+$j(C_f)=35152/9$，$j(E_f)=28756228/3$
+から直接見える．
+\end{example}
+
+\begin{example}[曲線が同型でもpointed対象は異なり得る]
+\label{ex:qa-spectral-equal-j-not-pointed}
+二つの$j$が等しい条件の分子は
+\[
+(4\chi-3)^3(\chi-1)-(\chi+3)^3
+=\chi(\chi-2)(64\chi^2-81\chi+81)
+\]
+である．従って自己双対点$0,2$のほかにも
+\[
+\chi_\pm=\frac{81\pm45\sqrt{-7}}{128}
+\]
+で曲線は同型となる．しかし
+$\chi_+^\vee=\chi_-$，$\chi_-^\vee=\chi_+$であり，
+これらは相異なるpointed H2同型類である．
+両点で$j(C_f)=j(E_f)=-3375$となることは
+$64(\chi+3)^3+3375(\chi-1)^2$を
+$64\chi^2-81\chi+81$で割った剰余が零であることから分かる．
+この例は，式\eqref{eq:qa-spectral-pointed-selfdual-criterion}で
+曲線だけでなく非零二捩れ標識も保存する必要を示す．
+\end{example}
+
+\subsection{二つの境界型での延長不能}
+
+\begin{corollary}[二つのnoncubic境界型でのH2延長不能]
+\label{cor:qa-spectral-involution-no-h2-extension}
+論文Bの内在的noncubic境界$\mathfrak N\subset\mathfrak H_2$の
+閉性と相対表示同値を入力とする．
+上記のsmooth幾何点上のspectral-pointed対応を
+全$\mathfrak N$上の射$\mathfrak N\to\mathfrak H_2$に延長することはできない．
+より具体的には，次の二族の幾何generic fiberの対応先は，
+いずれも$t=0$を越えるH2族に延長できない：
+\[
+\begin{array}{c|c|c|c}
+f_1&f_2&\chi&\chi^\vee\\\hline
+uv&u^2+uv+t v^2&(1-4t)^{-1}&(4t)^{-1}\\
+uv&t u^2+uv+t v^2&(1-4t^2)^{-1}&(4t^2)^{-1}.
+\end{array}
+\]
+第一族の特殊fiberは一根共有，第二族は根対一致である．
+この延長不能は任意の有限分岐trait基底変更の後にも残る．
+\end{corollary}
+\begin{proof}
+第一族は$\operatorname{Spec}k[t,(1-4t)^{-1}]$，
+第二族は$\operatorname{Spec}k[t,(1-4t^2)^{-1}]$上で定義される．
+各二次形式の判別式は全基底上可逆で，
+論文Bの二形式表示は実際の$\mathfrak N$-族を与える．
+$t\ne0$では四根相異なる．
+表の$\chi$は判別式の極化の直接計算から，
+$\chi^\vee$は式\eqref{eq:qa-spectral-atkin-lehner-chi}から得る．
+
+以下では論文Bの代数的stackを全schemeへ通常に延長して扱い，
+任意Noetherian基底上の素朴なAbel圏公理の同値を仮定しない．
+いずれかの族の対応先に，$t=0$の局所trait上の
+H2延長$h$が存在すると仮定する．
+その幾何generic fiberはnoncubicだから，忠実平坦降下により
+$h$のgeneric fiberは閉部分stack$\mathfrak N$に因数分解する．
+ここで閉性は論文Bの
+\cite[\texttt{thm:noncubic-boundary-smooth-codim-two}]{QuadricModuli2026}
+を用いる．$h$による$\mathfrak N$の引戻しはtraitの閉部分であり，
+そのidealはgeneric fiberで零となる．
+traitの局所環は整域なのでこのideal自体が零であり，
+延長$h$全体が$\mathfrak N$に因数分解する．
+
+一方，論文Bの相対表示同値と
+\cite[\texttt{prop:noncubic-good-moduli}]{QuadricModuli2026}により，
+$\chi:\mathfrak N\to\mathbb A^1$は全域の正則射である．
+従って$\chi\circ h$はtrait上の正則関数でなければならない．
+そのgeneric値は表の$(4t)^{-1}$または$(4t^2)^{-1}$であり，
+負の付値を持つので矛盾する．
+有限分岐拡大後は$t$の付値が正の整数倍となるだけで，
+この極は消えない．
+全$\mathfrak N$からの延長射があれば
+上の有限型二族へ制限できるので，その存在も否定される．
+\end{proof}
+
+\begin{remark}[$\Sigma_2$模型と相対範囲]
+\label{rem:qa-sigma2-spectral-involution-scope}
+式~\eqref{eq:qa-noncubic-sigma2-square-dictionary}によって
+spectral $\Sigma_2$データをsquare avatarへ変換し，
+本節の指定mutation・pointingでAS商圏を作る限り，
+そのpointed同型類も上記の$\chi^\vee$である．
+これにより，spectral $\Sigma_2$の集合論的分類対応を
+元の$\mathcal H(f)$とのpointed同値と同一視できないことが分かる．
+一方，別に指定したrotated ASの構造頂点や，
+退化境界・非被約基底上の相対同値までは主張しない．
+特に$\chi=1$の二型では，直前の系によって
+対応先そのものをH2族に延長できない．
+これは固定spectral曲線上の通常Picard線束の非延長障害とは
+別の，内在的pointed対象に対する障害である．
+\end{remark}

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v4.6
+% 日本語 LuaLaTeX。2026-11-22 / v4.7
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,320 +56,35 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v4.6（対称Morita表示・相対Serre完成とpointed heart）}
+\date{2026年11月22日\quad v4.7（相対pointed認識・spectral対合と境界延長不能）}
 \begin{document}
 \maketitle
 \begin{abstract}
-本稿の第一の主結果は、指定された最小単純射影分解型を持つ
-square/rotated square型AS正則$\mathbb Z$-代数と
-適切な反標準avatarの\emph{同型類の全単射}である。
-AS条件からの階数強制と点Hilbert曲面・Picard線束の抽出、
-任意のavatarからのacyclic spherical helixによるAS--Gorenstein逆構成、
-全整数Serre completionによる互逆性、および左右Noether性を証明する。
-さらに独立に最小分解を課した十本矢型を定義し、
-Ginzburg次数零集中、Keller--Yang mutation、
-全周期の評価・余評価により、
-square型全体とcubic型・最小十本矢型の非交和の全単射を証明する。
-十本矢型のavatar条件は$G\simeq FP$である。
-十二本矢はsquareの有限foundationの八矢と
-四つのrelation-dual戻り矢からなるQP表示であり、
-任意の十二本矢potentialのAS分類を意味しない。
-AS分解のEuler漸化式を四周期有理母関数として解き、
-全$m$で$\dim A_{i+4m,i}=(2m+1)^2$を証明する。
-非被約反標準因子でもpencil trickにより
-最小十本矢壁が$P\simeq GF^{-1}$に正確に一致する。
-指定mutationについてKeller--Yangの局所条件を確認し、
-mutation先の左右Noether性と
-$\Qgr,\qgr$のAbel圏同値を共通ample cornerから導く。
-square/rotated側ではcoherentな有界導来Morita同値を示すが、
-これをO-marked構造対象を保つ同値と同一視しない。
-二つの最小十本矢壁の交点は非零二捩れ$P^2=\OO_D,\ G=FP$であり、
-その反標準曲線はsmooth、既約nodal、$I_2$の三型だけとなる。
-さらに曲線と第一次数二pencilを固定すると、
-この二重壁は二つのCartier壁の
-\emph{scheme-theoreticに横断的な}交点であり、
-各幾何fiber上の長さはsmooth/nodal/$I_2$で$3/1/1$となる。
-滑らかな楕円族では二重壁は相対的に有限étale三次である。
-これはavatarの標識付きパラメータ空間についての結論で、
-内在的O-markedモジュライへの相対同型ではない。
-さらにこの交点が、任意のcubic AS代数と
-\emph{導来同値にならない}正確なlocusであることを証明する。
-滑らかな楕円曲線では任意のcubic候補foundationを
-数値Serre作用・determinant・pencil乗法のkernelで排除し、
-退化二型へは二捩れを保つ平滑化と
-exceptional perfect複体の形式持上げで拡張する。
-この導来非同値は、内在的noncubic O-marked heartとの
-pointed同値の構成とは異なる問題である。
-underlying Z-代数のgroupoidと適切な相対perfect AS族にも
-構成を拡張するが、未修正のstable QP groupoidとは区別する。
+最小単純射影分解型を指定したsquare型・rotated square型の
+AS正則$\mathbb Z$-代数を、反標準avatarの同型類によって分類する。
+十本矢型を最小分解から独立に定義し、square型とのmutation逆対応を与える。
+二つのmutation壁の交点は非零二捩れで記述され、
+cubic型への到達不能性を特徴づける。
+十二本矢は有限foundationのrelation-dual QP表示として扱う。
 
-非可換二次曲面の四頂点表示について、矢数の変化をモジュライの族として記述する。
-有限 foundation の生成矢、関係の双対を加えた箙、非最小な potential 表示を区別する。
-固定した Hom 次元を持つ有限有向代数の結合律スキームを構成し、
-二つの隣接乗法の階数から、八本、二種類の十本、十二本への層別を得る。
-少ない矢数の開部分は、正確に十本または十二本を要求する層ではなく、
-非最小表示を含めた共通モジュライの開部分である。
-重み四 potential の二つの二次係数による消去は任意の基底上で明示できるが、
-通常の right-equivalence 商には消去される対の自己同型が残る。
-従って Jacobian 代数の一致を、そのまま表示スタックの同値とすることはできない。
+次に、内在的な構造対象付き非可換二次曲面との比較を行う。
+noncubic二形式の点曲線側では、対称な四項のBrauer増幅から
+全表示商上に階数$45$の通常の有限代数を構成する。
+実際の相対spinor generator、全次数Serre完成、零頂点の反Serre角を用い、
+非被約基底と退化型を含めて元のpointed heartを回収する。
+同変Serre作用には二形式交換の符号指標が必要である。
+一方、spectral曲線側の指定AS実現はsmooth幾何同型類上で
+$\chi\mapsto\chi/(\chi-1)$という二同種の双対化を与え、
+元のpointed対象と一致するのは$\chi=0,2$だけである。
+二つのnoncubic境界型では、この対応先は有限基底変更後にも
+H2族として延長できない。
 
-本稿の中心目標は、構造対象を指定したO-marked非可換二次曲面、
-線形代数的potential、反標準avatarの三者に、体上同型類の明示全単射
-またはそれを誘導する相対モジュライ射を与えることである。
-滑らかな楕円cubic型では、VdB四つ組とsquare avatarの双方向公式と
-O-markingを保つruling反射による同型類商を証明する。
-potentialからavatarへの一般表示次数は4、O-markedまでの合成は8となる。
-さらにnoncubicの\textbf{全幾何点}について、二つの被約二根対の積
-$q=f_1f_2$による有限三重quartic-resolventと
-算術種数一の二重被覆$C_q:y^2=q$を構成し、
-四根相異・一根共有・二根対一致に対応する
-smooth/nodal/I2の三型を分類する。
-各型で非零二捩れ$P\in\Pic^0(C_q)[2]$を使った
-$(2,2)$反標準square avatarを明示し、
-Bのnoncubic O-marked全幾何同型類と全単射を得る。
-さらに平方型を相対幾何変換により、$\Sigma_2$ の負断面 $S$ を避ける
-$D\in|-K_{\Sigma_2}|$ と $0\ne P\in\Pic^0(D)[2]$ へ移すことで、
-全noncubic O-marked同型類を $\Sigma_2$ の反標準 avatar でも分類する。
-$\chi=1$ の二つの特殊同型類は $D$ の既約 nodal 型と $I_2$ 型で区別される。
-同時に中央二重平方環の可換化の点曲線$E_f$から
-$E_f\to C_q$とrank-one torsion-free反不変module$M$への
-相対射を構成する。
-今回さらに、四根相異なる場合の$E_f\to C_q$は
-\emph{次数二のétale isogeny}であり、
-その二曲線が一般に同型でないことを証明する。
-$E_f$上にも二つのconic商に由来する次数二pencil
-$F_d,F_c$が存在し、
-$0\ne F_cF_d^{-1}\in\Pic^0(E_f)[2]$となる。
-$E_f$側と$C_q$側の二捩れ付き楕円曲線は
-互いに\emph{双対二重isogeny}で交換される。
-noncubicの二つの非自由MCM型の線形行列の
-kernel射は$E_f$の二つのpencilを直接回収し、
-その二つの隣接Hom積の像も
-conic Veroneseの対称積像と一致する。
-さらに、点曲線を二conic二重被覆のファイバー積
-$E_f=Q_c\times_{\PP^1}Q_d$として全退化型で同定する。
-smooth、共有根のnodal、根対一致の$I_2$の
-全noncubic幾何点で四頂点End代数の全Homと積を
-点曲線への制限から同定する。
-mutation後の四項は一添字ずらし、
-$(H_1,H_2,H_3,H_4)$に合わせることで
-構造対象を保つpointed exact同値を証明する。
-さらに、根を順序付きで分解した普遍係数空間では、
-有限End代数の同型が任意の非被約基底変更と両立することを証明する。
-二根対内の有限順序交換$(\mathbb Z/2)^2$には
-行列分解の厳密な線形化を与え、相対有限Endを商へ降下させる。
-しかし一般の二次形式のconicはBrauer類$(a,\Delta)$が非零で、
-$E_f$の二つのpencil線束や非零二捩れ線束には
-全係数空間への降下障害がある。
-各二次形式の分岐根を一つずつ選ぶ有限étale次数四被覆は
-この障害を消し、nodal・$I_2$境界でも幾何avatarを構成する。
-さらに両conicの幾何次数一線束の選択を分類する
-$\Gm^2$-gerbe上に相対square avatarを構成し、
-二つの根対の相互交換が$(F,G,P)\mapsto(G,F,P^{-1})$という
-厳密なruling対合になることを証明する。
-さらに、四項を$(\OO_E,F,H,HG)$へdeterminant補正し、
-そのBrauer重みが$0,\alpha_c,0,\alpha_d$となることを計算する。
-この重みを用いて、有限Endを一つの通常代数としてでなく
-四つのAzumaya頂点とその間の双加群からなる
-有向Morita圏として係数空間へ降下する。
-その上三角の合成は係数空間上の階数54の
-有限局所自由な通常代数を与え、各幾何点で
-階数24の基本有限End代数とMorita同値である。
-一般点で$\alpha_c\ne\alpha_d$なのでruling交換を
-頂点固定のMorita自己同値にすることは不可能であり、
-mutationを伴う位相変更が不可欠である。
-一方、滑らかな点曲線の相対Jacobianでは、
-非零二捩れ$P=GF^{-1}$の半周期$2t=P$を選ぶ
-次数四の有限étale torsorがあり、その上の
-平行移動は四項$(\OO_E,F,H,HG)$を
-$(\OO_E,G,H,HF)$へ相対Picard類として送る。
-一般の点曲線$E_f$はperiod二・index四であり、
-二conicのBrauer類の差はindex四のbiquaternion division類となる。
-半周期torsorはこのBrauer差を分裂させる最小次数四の被覆で、
-その上の平行移動は二conicの同型も誘導する。
-さらに各二次形式の分岐根を一つずつ選ぶ次数四の被覆とは
-一般に同型ではない。四根が既に有理的な三変数族でさえ、
-半周期torsorは二つの非自明な二次拡大に分かれる。
-このためBrauer分裂の後にも別のKummer障害が残る。
-さらに半周期torsorの一般Galois閉包群が
-位数八の二面体群$D_4$であることを計算し、
-根選択四重射のKlein四元群と区別する。
-OU四重射の一般monodromyは$S_4$だが、
-非零二捩れに相当する四分岐点の二対分割を一つ選ぶ
-次数三の被覆に引き戻すと$D_4$へ制限される。
-さらに四つのOU固有値$x_i$の二乗$r_i=x_i^2$を
-二対に分割する共通incidence基底を構成し、
-OUのspectral曲線をnoncubicの$C_q:y^2=\prod_i(t-r_i)$と
-相対的に同定する。
-この基底上でもOU四重射とnoncubic半周期torsorは
-どちらも一般monodromy$D_4$だが、
-全固有値を指定した被覆上ではOU四重射だけが分裂する。
-noncubic側は$F(\sqrt A)\times F(\sqrt B)$
-（$A=(r_4-r_1)(r_3-r_2)$,
-$B=(r_3-r_1)(r_4-r_2)$）で、両平方類が独立非自明なので、
-両有限étale四重被覆は\emph{非同型}である。
-さらにこの全固有値体上で
-$J(C_q)[2]$は四点全て有理的だが、
-$J(E_f)[2]$は二点しか有理的でない。
-従って比較に必要な有限群局所系自体も一致しない。
-さらに自然な二同種$\phi=r^*:J(C_q)\to J(E_f)$の
-$2$-torsion写像でOUのKummer類を押し出しても、
-$\phi[2]_*\delta(P_+)\ne\delta(P_E)$となることを証明する。
-全固有値体上で前者はOUの有理半点から零、
-後者は非分裂半周期torsorから非零となる。
-この結果は相対AS mutation/pointing同値を排除しない。
-これは相対$\qgr$圏の同値やAS側のmutationの降下とは異なる。
-$C_q$・$\Sigma_2$の別avatarとのpointed比較も未解決である。
-実例$f_1=x(x-1),f_2=(x-2)(x-3)$では
-$j(E_f)=28756228/3$、$j(C_q)=35152/9$で、
-点曲線とspectral曲線の単純な同一視は誤りである。
-smoothでは$M=P$だが、
-共有根で$M$は表面$A_1$型の非自由reflexive moduleとなるため、
-通常の可逆な$\Pic^0$線束として固定$C_q$族に延長できない。
-さらに共有根の全空間を最小解消しても、反不変moduleの
-可逆化は例外$\PP^1$上に奇数次数（自然な可逆化では次数1）を持つ。
-元の基底での垂直因子twistではその奇偶は変わらず、
-通常の多重次数零の相対Picardには最小解消だけで移れない。
-一方、反不変moduleの積$\mu:M\otimes M\to\OO_C$の像は
-$(f_1,f_2,y)$で、余核は二根対の共通零点の構造層である。
-この式は非被約基底を含む任意の基底変更と可換し、
-smooth/nodal/$I_2$で欠損長は$0,1,2$となる。
-各幾何fiberでは$M\simeq M^\vee$だが、
-nodal極限は$\nu_*\OO_{\PP^1}(-1)$、
-$I_2$極限は二つの$\OO_{\PP^1}(-1)$の正規化からの直像となる。
-$I_2$では$M$自体の自己同型群が$\Gm^2$となり、
-通常のsimpleなfine compactified Picardには入らない。
-二次積を保持した固定曲線上の慣性は$\mu_2^2$に縮小する。
-さらにこれらを任意の基底で自然化し、
-二形式表示の商スタック$[P/G]$から
-二重被覆・torsion-free sheaf・自己双対的二次積の組
-$(C,M,\mu)$のfppf相対groupoidへの実際の射を構成する。
-ただし標的のArtin性や、この射の全忠実性・
-O-marked heartとの同値はここでは示していない。
-従って、体上全単射、torsion-free spectral相対射、
-元の可逆Picard avatarへの相対射を明確に区別する。
-古典Picard零切断の重複、wallの次元差、
-元AS avatarの$\qgr$心の相対認識の不足も区別する。
-さらに未公刊のsquare／rotated square分類草稿のうち本研究に不可欠な
-反標準曲線のコホモロジー消滅、二つのpencilによる再埋め込み、
-有限directed foundationの行列・scheme-theoreticな復元、
-正負全周期にわたる四つのcanonical exact complexを
-仮定と証明を含めて本稿内に組み直す。
-さらに最小AS分解の必要条件、spherical helixからの全代数の
-逆構成、有限foundationの相互逆性を統合して、
-体上のAS分類の証明を完成させる。
-曲線上の完全列だけから任意基底上の相対AS分類や
-内在的O-marked heartとの同値が従うわけではない。
-幾何側では、$\Sigma_0$ または $\Sigma_2$ 上の反標準因子と
-非自明な $\Pic^0$ パラメータを用い、直積型 square avatar と
-二種類の十本矢 chart の関係を記述する。
-統一偏極と rotated square の Hilbert 偏極は異なり、
-$\Sigma_2$ の出現だけでは最小十二本矢型を意味しない。
-最後に、構造対象のみを指定した強い内在的モジュライ $\HHstack$ への忘却を扱う。
-相対 heart、反 Serre の豊富な exact 平方根、同じ根の全軌道環の AS4 被覆を
-確認した部分では忘却射が定義される。
-この適合部分の開性や、統一 avatar と全相対 AS 代数とのスタック同値は
-別の認識問題として残し、有限表示の代数性とは区別する。
-Okawa--Ueda の quintuple と conifold potential の既存 GIT 商を比較対象に加え、
-quintuple 表示の四次元スカラー慣性が pointed な忘却で消えること、
-ただし一般点の有限慣性$\mu_2^2$は剛体化後も残り、
-点曲線のJacobian二捩れ翻訳群に一致することを証明する。
-有効potential/quintuple表示スタックの一般次数四射は
-慣性・接写像が同型で、適切な稠密開では表現可能有限étaleとなる。
-さらに幾何的点曲線の完全忠実な点対象から、
-一般の有限慣性が内在pointed忘却でも忠実に残ることを証明する。
-論文Bの普遍cubic smooth atlasを合わせると、剛体化quintupleから
-$\HHstack$への射はsmooth相対次元零で、一般開では
-表現可能étale、Kodaira--Spencer同型、$HH^1=0,\dim HH^2=3$。
-さらに二つの内在的ruling foundationの比較から、
-一般の幾何fiberは二点となり有限étale次数二を得る。
-有効potential表示から$\HHstack$への合成射は一般次数八である。
-一般有限étale二重射のcanonical deck対合を取ると、
-内在$\HHstack$の稠密開は剛体化quintupleの一般開の
-$S_2$商スタックに同値となり、対合は二つのnormalized
-ruling foundationの交換と幾何点上で一致する。
-一般openには$\delta,\eta-\delta\notin E[2]$を課す。
-一方、$j(E)\ne0,1728$の滑らかな許容四つ組で
-交換自己同値が生じるのは$\delta\in E[2]$または
-$\eta-\delta\in E[2]$のとき、かつそのときに限る。
-正則半単純特別点の全慣性は位数8となる。
-同じquintuple同型類が一つでも相対2-fiberには
-pointed比較同型の剰余類から二対象が残り、
-忘却はstackとして表現可能étale・非分岐である。
-さらに片側の二捩れ条件のみ成立する正則半単純楕円点では、
-translation型の全慣性群は$C_4\times C_2$、
-反転型では$C_2^3$である。
-さらに$e_1,e_3$を二乗固有値の基本対称式、
-$c=\prod_i x_i$とすると、二捩れ特別座は
-$e_3\pm e_1c=0$で与えられる。
-OU不変量では$D_\pm=f_2^3-3f_2f_4+2f_6\pm6f_2g_4$となり、
-正則半単純開の粗忘却の分岐座は$D_+D_-=0$である。
-二つの片側特別座では慣性の三次元接表現が
-$(1,1,-1)$となり、粗射は形式的に$Z=z^2$となる。
-両条件が同時に成立する$e_1=e_3=0$の交点では
-源慣性が$C_2^3$、標的慣性が$D_8\times C_2$へ増大し、
-粗射の局所型は$k[[s,a,c]]\to k[[s,a,b,c]]/(b^2-ac)$となる。
-これらの粗空間分岐にもかかわらず、忘却のスタック射自体はétaleである。
-さらに両方のrulingがcubicである開では$j(E)=0,1728$でも
-追加の複素乗法自己同型が三束保存・交換に関与できず、
-level-twoのLegendre変形座標によって同じ法表現・粗分岐が成り立つ。
-他方、$\eta=2\delta$、$\delta\notin E[2]$の一cubic境界では
-もう一方のfoundationがnoncubicになるため、忘却はétaleでもfiberは一点。
-特に$j=0$の非零3捩れCM固定点では全慣性$A_4$が現れ、
-接の$C_3$重み$(2,1,1)$による孤立巡回商型の粗形式環となる。
-他方、論文BのArtin foundation持上げと相対mutationにより、
-任意のpointed Artin変形では二つのnormal foundationがそれぞれ
-同型類一意に持ち上がり、相対kernel/cokernel mutationが交換する。
-さらにBの有限型smooth atlasの相対foundationを用い、
-二つのrulingを保つか交換するかを相対perfect Homの階数で開閉判定し、
-全内在$\HHstack$上に表現可能な有限étale次数二の
-normal ruling選択被覆$\mathfrak H_2^{\mathrm{rul}}$を構成する。
-その選択foundationの相対End代数は有限foundation表示スタック
-$\mathfrak F_0$への開埋込を与え、実現可能な$S_2$-不変開
-$\mathfrak F_{\HH}$について
-$\HHstack\simeq[\mathfrak F_{\HH}/S_2]$が全相対群oidの同型となる。
-従って一cubic境界でも内在的な第二のnoncubic foundationは
-有限型・非被約基底にわたって二択の一方として存在する。
-この実現可能開の逆像は$\mathbb A^{64}$の不変開なので、
-Noether性により有限個の多項式の非同時消滅条件で記述できる。
-これは全実現可能開に対する非構成的存在証明であり、その具体式・次数上界は未計算。
-一方Fが可逆なcubic幾何部分では、四つの隣接flatteningの
-行列式（次数4）とadjugate列の二次行列式（次数6）で
-計20式の具体的開判定を得る。
-また可換$\PP^1\times\PP^1$のfactor交換から、
-このruling被覆に自己同値と両立する大域sectionは存在しない。
-忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
-既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
-OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
-Picard二等分はE[2]-torsorの次数4となる。
-節点・尖点へ退化するとPicard根の幾何fiberは2点・1点へ変わる。
-OU対角四重射自体は、二乗座標を分岐点とするspectral楕円曲線上で、
-明示したsectionの二等分Kummer torsorに幾何的に同型である。
-対角potentialのgeometric quintuple点曲線は二quadric完全交叉であり、
-その鉛筆の判別式が同じspectral曲線となるため、Jacobianとの同型と
-GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決定し、
-滑らかな対角稠密開ではOU四重射とquintupleのPicard根torsorの
-同型を偶数符号・置換・スカラーに同変に構成する。
-正則半単純な非対角potential族には相対Hodge-Jacobian同型と
-特性係数による相対半点を任意底変更と可換に構成する。
-potentialを選ばない一般quintupleから内在$\HHstack$への
-有限foundation表示内の実現可能開を具体的な有限minor/相対AS条件として
-明示すること（有限多項式の存在までは証明）、avatar/QP表示との全相対認識、
-および局所粗モデルの大域化は未解決である。
-さらに非線型geometric quintupleの全相対族からは
-根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
-選んだ四つのPicard根は同じ相対tails対象に忘却される。
-剛体化後の忘却の表現可能性と実際のファイバーは引き続き未決定である。
-対称四項$(\mathcal O,X_c,X_d,\mathcal O(1))$への相対mutationにより、
-点曲線側の比較を非被約基底と二形式交換へ拡張する。
-conicのBrauer類を保つspinor増幅と共通座標表現を用い、
-全noncubic商$[P/G]$上に構造対象の零頂点を持つ階数四十五の通常代数を構成する。
-その相対Serre tensor代数は全次数で次数零に集中し、
-零頂点の反Serre角から元の相対pointed heartを回収する。
-同変Serre作用には二形式交換の符号指標が必要であり、
-符号を省いた正規化環との関係を次数線束twistとして明示する。
-これは点曲線$E_f$側の相対比較であり、
-別のspectral曲線$C_q$からのavatarを同一視する主張ではない。
+さらに、cubicの線束辞書、normal rulingの二重忘却、
+Okawa--Uedaの四重GIT射とPicard根torsor、その慣性と局所粗分岐を比較する。
+同じspectral曲線上で定義されるOU四重射とnoncubic半周期torsorは、
+共通の標識incidenceへ引き戻しても、自然な二同種で押し出しても一致しない。
+体上の分類、具体的な相対射、全avatarまたはQP表示stackの認識を区別し、
+後二者の間に残る未解決範囲を明示する。
 \end{abstract}
 \tableofcontents
 
@@ -413,6 +128,34 @@ determinant補正後の四項のBrauer重みを計算し、
 Azumaya双加群の有向Morita圏を係数空間へ構成し、
 階数54の通常の有限代数としても明示する。
 一般点のruling交換は頂点固定Moritaでは実現できない。
+
+この障害を越えるため、第~\ref{sec:qa-symmetric-morita-descent}節では
+$(\mathcal O,X_c,X_d,\mathcal O(1))$への相対mutationを構成する。
+二形式交換が中間二頂点を交換する対称表示を使い、
+共通座標表現による増幅で全商$[P/G]$へ階数$45$の通常代数を降下させる。
+実際のspinor generatorとの比較により、
+構造対象を零頂点に固定したcompact Morita同値を得る。
+第~\ref{sec:qa-relative-serre-completion}節は有限separable対角bar解消を用いて
+全tensor次数の相対Serre完成と任意基底変更を扱い、
+零頂点の反Serre角によって元の相対pointed heartを回収する。
+ここで二形式交換の符号指標$\varepsilon$を含むcanonical Serre作用を計算し、
+論文Bの正規化表示との次数線束捩れを明示する。
+
+第~\ref{sec:qa-spectral-pointed-atkin-lehner}節では、
+spectral曲線のavatarに対して同じ指定AS実現を行うと、
+一般に元と異なるpointed対象が得られることを証明する。
+二同種の商公式\cite[III, Example~4.5]{SilvermanAEC2009}と
+点曲線型の逆構成を組み合わせると、smooth幾何同型類上の対応は
+$\chi\mapsto\chi/(\chi-1)$となる。
+自己双対点は正確に$\chi=0,2$であり、
+曲線の$j$値だけではpointed同値を判定できない例も示す。
+さらに共有根と一致根対の双方への退化で像の$\chi$に極が現れ、
+noncubic境界の閉性により、H2全体へも族として延長不能となる。
+これは固定spectral曲線上のPicard線束の延長障害より強い主張である。
+二同種の双対化そのものは古典的であり、
+本稿の追加部分は指定pointingとの同定と内在的境界への適用である。
+この適用の新規性について網羅的な文献調査は未完了である。
+
 第~\ref{sec:qa-half-period-ruling}節ではsmooth locus上で
 $2t=P$の次数四有限étale torsorを作り、平行移動による
 二pencilと有限Endの幾何比較に加え、
@@ -434,8 +177,8 @@ OUのspectral曲線とnoncubicの$C_q$を同定する。
 $\phi[2]_*:H^1(J(C_q)[2])\to H^1(J(E_f)[2])$で
 OUの四重射を押し出しても、
 noncubicの半周期Kummer類とは一致しない。
-ただしAS側の相対mutation・$\qgr$圏・Serre根の一括降下と
-無標識stackの群oid認識は別問題である。
+点曲線側の相対mutation・pointed heartへの降下は上記の構成で得られるが、
+任意のavatar/AS/QP表示stackの同型層を含む認識は別問題である。
 ここでは有限directed foundation、relation-dual QP、
 underlying AS代数、O-marked内在的heartの四水準を混同しない。
 
@@ -619,6 +362,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/twisted_morita_weights}
 \input{quiver-avatar/symmetric_morita_descent}
 \input{quiver-avatar/relative_serre_completion}
+\input{quiver-avatar/spectral_atkin_lehner}
 \input{quiver-avatar/half_period_ruling}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
@@ -628,7 +372,17 @@ $\kk$ は標数零の代数閉体とする。
 \label{sec:qa-remaining}
 
 点曲線側の全noncubic相対族については、定理~\ref{thm:qa-symmetric-relative-pointed-heart}により
-構造対象を保つ比較が成立した。以下の課題は、他のavatarや全AS表示を含む範囲を扱う。
+構造対象を保つ比較が成立した。
+smooth spectral側の指定pointingについても、
+定理~\ref{thm:qa-spectral-avatar-pointed-involution}と
+命題~\ref{prop:qa-spectral-atkin-lehner-chi}で像の幾何同型類は決定した。
+次の問題は、このsmooth対応を同型の層・慣性・降下を含む相対groupoidで記述すること、
+および別のrotated構造頂点が与えるpointed対象を認識することである。
+系~\ref{cor:qa-spectral-involution-no-h2-extension}により、
+spectral対応を全noncubic境界からH2へ延長する目標は成立しない。
+境界を含む比較にはH2の外側に標的を広げ、
+二次積付きtorsion-free spectral対象などの適切なcompactificationを選ぶ必要がある。
+以下の課題は、他のavatarや全AS表示を含む範囲を扱う。
 本稿の有限代数の開部分と、幾何的 avatar の開部分は、それぞれ独立に定義される。
 両者を相対 AS 分類として同定するには、avatar から得る有限代数が
 全周期にわたる相対 AS 代数を再構成し、逆向きの幾何構成と任意底変更に可換すること、

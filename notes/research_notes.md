@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.20（A v1.69・20節、B v0.40・31節、C v4.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.21（A v1.69・20節、B v0.40・31節、C v4.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## Cの相対pointed模型と同変Serre
 
@@ -9,6 +9,29 @@
 **同変Serreの訂正。** 二形式交換の符号指標を ε とすると canonical反Serre環は `R_n^can=B_{2n}⊗(det W)^(-n)⊗ε^n`。Frobenius traceの交換反不変性からこの符号を証明した。Bの符号を含まない表示は次数線束による正規化として保持し、canonical環との違いを明記した。pointed qgr、射影関係式表示、境界の同値・慣性の結論は変わらない。通常Endの右Yoneda規約と旧上三角双加群表示の反対環も明示して区別した。
 
 再現：`python3 computations/verify_symmetric_morita.py`。三つの有理モデルで中二spinor間のHom消滅、8→4の積と四関係、全次数Euler/Serre恒等式、交換traceの符号を厳密演算で確認した。代数降下とheart同値の証明は原稿による。
+
+## Spectral avatarのpointed像と境界の障害
+
+正本は [spectral対合と延長不能](../papers/quiver-avatar/spectral_atkin_lehner.tex)。標数零代数閉体上、smooth根対のspectral avatar $(C_f,F,FP,P)$ を指定AS10 mutation・一番頂点の構造対象で実現すると、元の $\mathcal H(f)$ ではなく $\mathcal H(f^\vee)$ を得る。これは幾何同型類上の二同種双対化であり、$\chi^\vee=\chi/(\chi-1)$。元とpointed exact同値なのは $\chi=0,2$ に限られる。任意のrotated構造頂点や全相対groupoidを同定したものではない。
+
+再開に必要な最小式は、$f_1=uv$、$f_2=u^2+a uv+bv^2$、$b(a^2-4b)\ne0$ に対する
+\[
+(a,b)\longmapsto(-2a,a^2-4b),\qquad
+j(C_f)=\frac{64(\chi+3)^3}{(\chi-1)^2},\quad
+j(E_f)=\frac{64(4\chi-3)^3}{\chi-1}.
+\]
+自己双対点の $j$ は1728と8000。$\chi_\pm=(81\pm45\sqrt{-7})/128$ では両曲線の $j=-3375$ が等しいが、二捩れ標識は交換されpointed対象は異なる。このため $j$ 一致だけによる認識は不十分である。逆構成は二pencilのdeck involutionが作る四元群商から二つの分岐二点集合を回収する。
+
+| 退化型 | 二形式族 $f_1=uv$ の第二形式 | 元の $\chi$ | spectral-pointed像の $\chi^\vee$ |
+| --- | --- | --- | --- |
+| 一根共有 | $u^2+uv+t v^2$ | $1/(1-4t)$ | $1/(4t)$ |
+| 根対一致 | $t u^2+uv+t v^2$ | $1/(1-4t^2)$ | $1/(4t^2)$ |
+
+この二族は実際のnoncubic族である。像にH2族としてのtrait延長があれば、論文Bのnoncubic境界の閉性からその全体が $\mathfrak N$ を経由する。しかし正則な $\chi:\mathfrak N\to\mathbb A^1$ に極が生じるため矛盾する。任意の有限分岐trait基底変更でも極は消えない。これは固定spectral曲線上のPicard線束の非延長より強い内在的障害であり、全noncubic境界からH2へのspectral延長を今後の存在目標にしない。
+
+次はsmooth対応の同型層・慣性・降下を計算する。境界はH2外の二次積付きtorsion-free対象などを標的とし、既存の積欠損・節点奇偶障害を入力にする。古典的二同種公式はSilverman第2版III Example 4.5に帰属する。今回のpointed適用の包括的新規性は未確認。
+
+再現：`python3 computations/verify_spectral_atkin_lehner.py` は二同種・対合・二つの $j$ 公式・固定点・等 $j$ 反例・境界極をSymPy厳密演算でPASS。閉stack入力と圏の認識は原稿の証明であり、この計算の認証範囲ではない。
 
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
@@ -107,19 +130,19 @@ $\operatorname{Sym}^2H^0(F_d)$のVeronese積像は
 AS側と点曲線pencil側の具体的な積像が一致**した。
 この二つのrank-three積像だけでは有限Endの同型は従わないが、Cの次の定理は全Homの制限単射と次元比較を補い、全幾何点でpointed同値を証明する。
 
-**全noncubic幾何点のpointed認識（C v3.7）。** 二つのsquarefree二次形式の根対は、相異・一根共有・一致をすべて許す。点曲線$E_f=\operatorname{Proj} B_f^{\mathrm{ab}}$は二conicのファイバー積$Q_c\times_{\mathbb P^1}Q_d$で、smooth/nodal/$I_2$の$(2,2)$ Cartier因子になる（C lem:qa-pointed-all-rootpair-geometry）。$X_c,X_d$の可換化によるspinor section moduleと、四頂点Endの全Hom・全合成の同型は三型すべてで成立する（C lem:qa-pointed-abelianization-four-end）。square avatar $(E_f,F_c,F_d,P_E)$の指定mutation後、比較すべき四項は$(H_0,\ldots,H_3)$でなく**$(H_1,\ldots,H_4)$**。この位相でSerre完成・AZを使い、全noncubic $\mathcal H_2(k)$について$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$という**体上のO-pointed exact同値**を原稿で証明した（C thm:qa-point-all-noncubic-pointed, cor:qa-point-all-noncubic-h2）。$C_q$のspectral avatarや$\Sigma_2$の別avatarとのpointed同値、非被約基底の相対groupoid・慣性・descentは未解決。三型の有理係数モデルで次数1–2の厳密計算をPASSしたが、数学的全証明の独立全面監査・新規性・組版は別状態。
+**全noncubic幾何点のpointed認識（C v3.7）。** 二つのsquarefree二次形式の根対は、相異・一根共有・一致をすべて許す。点曲線$E_f=\operatorname{Proj} B_f^{\mathrm{ab}}$は二conicのファイバー積$Q_c\times_{\mathbb P^1}Q_d$で、smooth/nodal/$I_2$の$(2,2)$ Cartier因子になる（C lem:qa-pointed-all-rootpair-geometry）。$X_c,X_d$の可換化によるspinor section moduleと、四頂点Endの全Hom・全合成の同型は三型すべてで成立する（C lem:qa-pointed-abelianization-four-end）。square avatar $(E_f,F_c,F_d,P_E)$の指定mutation後、比較すべき四項は$(H_0,\ldots,H_3)$でなく**$(H_1,\ldots,H_4)$**。この位相でSerre完成・AZを使い、全noncubic $\mathcal H_2(k)$について$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$という**体上のO-pointed exact同値**を原稿で証明した（C thm:qa-point-all-noncubic-pointed, cor:qa-point-all-noncubic-h2）。点曲線側の非被約基底を含む相対pointed認識は対称Morita表示で成立する。smooth spectral側の指定AS10 pointingは上記の二同種対合で決定済みであり、別のrotated pointingと全avatar/QP表示groupoidの比較は残る。三型の有理係数モデルで次数1–2の厳密計算をPASSしたが、数学的全証明の独立全面監査・新規性・組版は別状態。
 
-**順序付き分解普遍族の相対有限End（C v3.7）。** $S=k[\ell_i,m_i,(\det\ell\,\det m)^{-1}]$（二組の独立一次形式）上で、四項$(\mathcal B,\mathcal X_c,\mathcal B(1),\mathcal X_d(1))$の有限graded directed Endと$E_S=Q_c\times_{\mathbb P^1}Q_d$上の$(\mathcal O,F,F^2,F^2G)$のEndを、**任意の$S$-基底変更（非被約も含む）と可換な代数同型**として証明した（C prop:qa-point-relative-split-root-end）。被約でsmoothな普遍底で有限表示行列の全幾何fiber階数が一定であることから局所分裂を得て、その後に非被約底へ引き戻す。これは有限Homと全積の相対同型であり、相対$\qgr$ heart・Serre根・AS被覆の同型や、根の順序を忘れるstack降下はまだ証明していない。
+**順序付き分解普遍族の相対有限End（C v3.7）。** $S=k[\ell_i,m_i,(\det\ell\,\det m)^{-1}]$（二組の独立一次形式）上で、四項$(\mathcal B,\mathcal X_c,\mathcal B(1),\mathcal X_d(1))$の有限graded directed Endと$E_S=Q_c\times_{\mathbb P^1}Q_d$上の$(\mathcal O,F,F^2,F^2G)$のEndを、**任意の$S$-基底変更（非被約も含む）と可換な代数同型**として証明した（C prop:qa-point-relative-split-root-end）。被約でsmoothな普遍底で有限表示行列の全幾何fiber階数が一定であることから局所分裂を得て、その後に非被約底へ引き戻す。この有限Homと全積の比較を入力として、対称Morita降下と相対Serre完成の二節で全二形式商上のpointed heart比較を証明した。全avatar/AS/QP表示stackの認識とは区別する。
 
-**四頂点のBrauer重みとAzumaya双加群Morita表示（C v4.1）。** 二conicの普遍次数一線束$N_i$、$V_i=q_{i*}N_i$に対し、相対双対化から$N_i^2\simeq\mathcal O_{Q_i}(1)\otimes\det V_i$を証明。$H=\mathcal O_E(1)$として四項を$(L_0,L_1,L_2,L_3)=(\mathcal O_E,F,H,HG)$へ正規化した。$\Gm^2$-gerbeの慣性重みは$w_i=((0,0),(1,0),(0,0),(0,1))$、非対角$T_{ij}=\pi_*(L_i^{-1}L_j)$の階数は$(2,4,6,2,4,2)$、重みは$(1,0),(0,0),(0,1),(-1,0),(-1,1),(0,1)$（順に01,02,03,12,13,23）。$W_0=W_2=\mathcal O$, $W_1=V_c$, $W_3=V_d$とおくと$\operatorname{End}(W_i)$は重み零で、係数空間上のAzumaya代数$A_i$に降下する。Brauer類は$(0,\alpha_c,0,\alpha_d)$。$T_{ij}\otimes W_i\otimes W_j^\vee$も重み零で、$(A_i,A_j)$-双加群$\mathsf M_{ij}$へ降下し、Morita evaluationによって$\mathsf M_{ij}\otimes_{A_j}\mathsf M_{jk}\to\mathsf M_{ik}$の全合成を得る。これが原稿C thm:qa-twisted-four-vertex-morita。分岐根選択被覆で$V_i$と$\det V_c$を自明化すると元のspinor有限EndのMorita増幅に一致。一般点で$\alpha_c-\alpha_d\ne0$なので二根対交換を**頂点固定Morita自己同値**にすることは不可能（C cor:qa-morita-ruling-exchange-phase）。mutation後の位相を変える必要があるが、その相対構成とAS/Serre completion, pointed$\qgr$は未証明。既知のgerbe重み一般論はBergh--Schnürer (2021)に帰属し、本研究の追加は四項の具体的重み・双加群合成とgeneric rulingの障害。
+**四頂点のBrauer重みとAzumaya双加群Morita表示（C v4.1）。** 二conicの普遍次数一線束$N_i$、$V_i=q_{i*}N_i$に対し、相対双対化から$N_i^2\simeq\mathcal O_{Q_i}(1)\otimes\det V_i$を証明。$H=\mathcal O_E(1)$として四項を$(L_0,L_1,L_2,L_3)=(\mathcal O_E,F,H,HG)$へ正規化した。$\Gm^2$-gerbeの慣性重みは$w_i=((0,0),(1,0),(0,0),(0,1))$、非対角$T_{ij}=\pi_*(L_i^{-1}L_j)$の階数は$(2,4,6,2,4,2)$、重みは$(1,0),(0,0),(0,1),(-1,0),(-1,1),(0,1)$（順に01,02,03,12,13,23）。$W_0=W_2=\mathcal O$, $W_1=V_c$, $W_3=V_d$とおくと$\operatorname{End}(W_i)$は重み零で、係数空間上のAzumaya代数$A_i$に降下する。Brauer類は$(0,\alpha_c,0,\alpha_d)$。$T_{ij}\otimes W_i\otimes W_j^\vee$も重み零で、$(A_i,A_j)$-双加群$\mathsf M_{ij}$へ降下し、Morita evaluationによって$\mathsf M_{ij}\otimes_{A_j}\mathsf M_{jk}\to\mathsf M_{ik}$の全合成を得る。これが原稿C thm:qa-twisted-four-vertex-morita。分岐根選択被覆で$V_i$と$\det V_c$を自明化すると元のspinor有限EndのMorita増幅に一致。一般点で$\alpha_c-\alpha_d\ne0$なので二根対交換を**頂点固定Morita自己同値**にすることは不可能（C cor:qa-morita-ruling-exchange-phase）。この位相変更は対称四項への相対mutationで実現し、全商への階数45表示・全次数Serre完成・pointed heartの比較まで証明した。既知のgerbe重み一般論はBergh--Schnürer (2021)に帰属し、本研究の追加は四項の具体的重み・双加群合成とgeneric rulingの障害。
 
-**一般noncubicのperiod-indexと二つの四重被覆の識別（C v4.2）。** 独立な二形式の普遍係数体$K_{12}$で、二conicのBrauer類の差$\beta=\alpha_c-\alpha_d$はAlbert 6次元形式$q=\langle a_c,\Delta_c,-a_c\Delta_c,-a_d,-\Delta_d,a_d\Delta_d\rangle$の二段階Springer剰余判定により**index 4**のdivision biquaternionを表す（C thm:qa-generic-point-period-two-index-four、先行入力 Lam--Leep--Tignol 1993 Thm 2.3、Lam 2005 Ch VI）。一般点曲線$E_f=Q_c\times_{\mathbb P^1}Q_d$の閉点は両conicを分裂させるので次数がすべて4の倍数。一方$E_f\to\mathbb P^1$は次数4、幾何次数二のpencil Picard類が$K_{12}$有理なので、**period(E_f)=2、index(E_f)=4**。smooth半周期torsor$T_P=[2]^{-1}(P)$では平行移動が二deck involutionを共役にし、実際のconic同型$Q_c|_{T_P}\simeq Q_d|_{T_P}$を誘導する。従って$\beta|_{T_P}=0$。index4から一般$T_P$は連結な次数4拡大で、$\beta$の最小次数分裂被覆（C prop:qa-half-period-conic-isomorphism）。**分岐根選択の別の次数4被覆とは非同型**。monic全根分裂族$f_1=x(x-a)$、$f_2=(x-b)(x-c)$ over $K_0=k(a,b,c)$では根選択は4つのsectionを持つ一方、二同種模型の半周期は$\operatorname{Spec}(K_0(\sqrt{c(b-a)})\times K_0(\sqrt{b(c-a)}))$と二つの非自明二次拡大に分かれる（C thm:qa-half-period-not-root-choice）。Brauer類を両方分裂させても半周期のKummer障害は残る。OU四重射とのmonodromy比較は済み、共通incidenceでの被覆同型と二同種Kummer像の一致は否定された（C v4.6）。相対mutation/pointingは未解決。SymPyはquartic→cubic、2-isogeny、倍算の多項式恒等式だけPASSし、index4と被覆非同型の数学的証明は原稿依存。
+**一般noncubicのperiod-indexと二つの四重被覆の識別（C v4.2）。** 独立な二形式の普遍係数体$K_{12}$で、二conicのBrauer類の差$\beta=\alpha_c-\alpha_d$はAlbert 6次元形式$q=\langle a_c,\Delta_c,-a_c\Delta_c,-a_d,-\Delta_d,a_d\Delta_d\rangle$の二段階Springer剰余判定により**index 4**のdivision biquaternionを表す（C thm:qa-generic-point-period-two-index-four、先行入力 Lam--Leep--Tignol 1993 Thm 2.3、Lam 2005 Ch VI）。一般点曲線$E_f=Q_c\times_{\mathbb P^1}Q_d$の閉点は両conicを分裂させるので次数がすべて4の倍数。一方$E_f\to\mathbb P^1$は次数4、幾何次数二のpencil Picard類が$K_{12}$有理なので、**period(E_f)=2、index(E_f)=4**。smooth半周期torsor$T_P=[2]^{-1}(P)$では平行移動が二deck involutionを共役にし、実際のconic同型$Q_c|_{T_P}\simeq Q_d|_{T_P}$を誘導する。従って$\beta|_{T_P}=0$。index4から一般$T_P$は連結な次数4拡大で、$\beta$の最小次数分裂被覆（C prop:qa-half-period-conic-isomorphism）。**分岐根選択の別の次数4被覆とは非同型**。monic全根分裂族$f_1=x(x-a)$、$f_2=(x-b)(x-c)$ over $K_0=k(a,b,c)$では根選択は4つのsectionを持つ一方、二同種模型の半周期は$\operatorname{Spec}(K_0(\sqrt{c(b-a)})\times K_0(\sqrt{b(c-a)}))$と二つの非自明二次拡大に分かれる（C thm:qa-half-period-not-root-choice）。Brauer類を両方分裂させても半周期のKummer障害は残る。OU四重射とのmonodromy比較は済み、共通incidenceでの被覆同型と二同種Kummer像の一致は否定された（C v4.6）。点曲線側の相対mutation/pointingは対称Morita表示で成立する。SymPyはquartic→cubic、2-isogeny、倍算の多項式恒等式だけPASSし、index4と被覆非同型の数学的証明は原稿依存。
 
-**共通spectral incidence上のOU/noncubic四重torsorの非同型（C v4.6）。** OU対角potentialの四固有値$x_i$、有効群$G=V\rtimes S_4$、二対分割$\mathfrak p=\{12|34\}$の安定化群$H_{\mathfrak p}$を取り、$I_{\mathfrak p}=X^\circ/(V\rtimes H_{\mathfrak p})$という自然な次数3の標識incidence基底を構成。$f_1=(t-x_1^2)(t-x_2^2)$、$f_2=(t-x_3^2)(t-x_4^2)$から、OUのspectral楕円曲線$E_{\mathrm{sp}}$とnoncubicの$C_q:y^2=f_1f_2$は**この基底上で一致**し、点曲線$E_f$はその次数2のétale被覆となる。OU四重射$Y_{\mathfrak p}=X^\circ/H_{\mathfrak p}\to I_{\mathfrak p}$とnoncubic半周期$T_{\mathfrak p}=[2]^{-1}(P_E)$はいずれも一般monodromy$D_4$だが、**有限étale被覆として非同型**（C thm:qa-ou-half-period-common-incidence-not-isomorphic）。全固有値を指定した$F=k(z_1,z_2,z_3)$へ引き戻すとOU側は自明な4点被覆、noncubic側は$F(\sqrt A)\times F(\sqrt B)$、$A=(1-z_1^2)(z_3^2-z_2^2)$、$B=(z_3^2-z_1^2)(1-z_2^2)$であり、$[A],[B]$は独立非平方。さらにOUの$J(C_q)[2]$は$F$で全4点有理的だが、noncubicの$J(E_f)[2]$は$O$と$P_E$の2点しか有理的でなく、残る二点に$\sqrt{AB}$が必要（C prop:qa-ou-half-common-incidence-groups-distinct）。従って同じspectral曲線・同じ$D_4$という群論だけではKummer類も有限群スキームも同一視できない。さらに自然な二同種$\phi=r^*:J(C_q)\to J(E_f)$の$2$-torsion写像を用いても、**$\phi[2]_*[Y_{\mathfrak p}]=\delta_{E_f,2}(\phi(P_+))\ne\delta_{E_f,2}(P_E)=[T_{\mathfrak p}]$** と証明した（C cor:qa-ou-half-isogeny-kummer-classes-distinct）。全固有値体$F$上で前者はOUの有理半点により零、後者は非分裂半周期により非零。従って自然なKummer類の比較も不一致と確定し、次は相対Morita mutation/pointingという別水準の問題になる。全群oid・相対$qgr$同値はなお未解決。computations/verify_ou_half_common_incidence.pyは四次式同一性、平方類の付値、OU4点の有理性、非分裂$J(E_f)[2]$判別式をSymPy厳密演算でPASS。数学的降下・新規性・LuaLaTeX組版は別状態。
+**共通spectral incidence上のOU/noncubic四重torsorの非同型（C v4.6）。** OU対角potentialの四固有値$x_i$、有効群$G=V\rtimes S_4$、二対分割$\mathfrak p=\{12|34\}$の安定化群$H_{\mathfrak p}$を取り、$I_{\mathfrak p}=X^\circ/(V\rtimes H_{\mathfrak p})$という自然な次数3の標識incidence基底を構成。$f_1=(t-x_1^2)(t-x_2^2)$、$f_2=(t-x_3^2)(t-x_4^2)$から、OUのspectral楕円曲線$E_{\mathrm{sp}}$とnoncubicの$C_q:y^2=f_1f_2$は**この基底上で一致**し、点曲線$E_f$はその次数2のétale被覆となる。OU四重射$Y_{\mathfrak p}=X^\circ/H_{\mathfrak p}\to I_{\mathfrak p}$とnoncubic半周期$T_{\mathfrak p}=[2]^{-1}(P_E)$はいずれも一般monodromy$D_4$だが、**有限étale被覆として非同型**（C thm:qa-ou-half-period-common-incidence-not-isomorphic）。全固有値を指定した$F=k(z_1,z_2,z_3)$へ引き戻すとOU側は自明な4点被覆、noncubic側は$F(\sqrt A)\times F(\sqrt B)$、$A=(1-z_1^2)(z_3^2-z_2^2)$、$B=(z_3^2-z_1^2)(1-z_2^2)$であり、$[A],[B]$は独立非平方。さらにOUの$J(C_q)[2]$は$F$で全4点有理的だが、noncubicの$J(E_f)[2]$は$O$と$P_E$の2点しか有理的でなく、残る二点に$\sqrt{AB}$が必要（C prop:qa-ou-half-common-incidence-groups-distinct）。従って同じspectral曲線・同じ$D_4$という群論だけではKummer類も有限群スキームも同一視できない。さらに自然な二同種$\phi=r^*:J(C_q)\to J(E_f)$の$2$-torsion写像を用いても、**$\phi[2]_*[Y_{\mathfrak p}]=\delta_{E_f,2}(\phi(P_+))\ne\delta_{E_f,2}(P_E)=[T_{\mathfrak p}]$** と証明した（C cor:qa-ou-half-isogeny-kummer-classes-distinct）。全固有値体$F$上で前者はOUの有理半点により零、後者は非分裂半周期により非零。自然なKummer類の比較は不一致と確定している。点曲線側の相対Morita mutation/pointingは成立するが、OUを含む全avatar/QP表示groupoidの比較は残る。computations/verify_ou_half_common_incidence.pyは四次式同一性、平方類の付値、OU4点の有理性、非分裂$J(E_f)[2]$判別式をSymPy厳密演算でPASS。数学的降下・新規性・LuaLaTeX組版は別状態。
 
 上三角の双加群を合成した$\mathsf A_{\mathrm{Mor}}=\bigoplus_{i\le j}\mathsf M_{ij}$は係数空間上の**階数54の有限局所自由な通常の代数**で、零番隅は$\mathcal O_{U_2}$。全幾何fiberで階数24の基本有限End代数とMorita同値（C cor:qa-morita-rank54）。Brauer障害は通常代数の存在を排除せず、基本頂点をrank-oneのまま維持する降下を妨げる。
 
-**証明で使う最小データ。** $R=B_f/(cd-dc)$は$E_f$の同次座標環。$X_c\otimes_B R$と$X_d\otimes_B R$はそれぞれ$p_c^*\mathcal O_{\mathbb P^1}(1)$、$p_d^*\mathcal O_{\mathbb P^1}(1)$の全section module。次数0・1には可換化による核がない。四頂点Hom次元は上三角$(1,2,4,6;1,2,4;1,2;1)$、曲線の次数$(0,2,4,6)$と一致。$X_c\to B(1)$の二基底行は$(c,\ell_1)$、$(-\ell_2,c)$で、二段階積は$\left(\begin{smallmatrix}c&\ell_1\\-\ell_2&c\end{smallmatrix}\right)$。全三退化型の全Hom同型は二段階積像だけに依存せず、次数1における制限単射と次元比較から得る。mutationの評価列から$H_0=P^2F^{-1}$、一周期後$H_4=FG^2$。よって$H_1,\ldots,H_4$に共通$P^{-1}$を掛けると$(\mathcal O,F,F^2,F^2G)$となる。**追加幾何：** $E_f=Q_c\times_{\mathbb P^1}Q_d$はsmooth/nodal/$I_2$の$(2,2)$ Cartier因子で、$p_{c*}\mathcal O_E=\mathcal O_{\mathbb P^1}\oplus\mathcal O_{\mathbb P^1}(-2)$が全三型で成立する。各$X_c\otimes_B R$は$F_c$のsection moduleに全次数で一致する。**未確認**：相対Zhang twistとSerre completionのdescent、有限Endの比較から相対$\qgr$-heartへの昇格、根の順序を忘れる群oid、別avatarのpointed比較とpotential stack。計算再現は `computations/verify_noncubic_pointed_end.py`（三型の有理係数モデル、低次数に限定）。
+**証明で使う最小データ。** $R=B_f/(cd-dc)$は$E_f$の同次座標環。$X_c\otimes_B R$と$X_d\otimes_B R$はそれぞれ$p_c^*\mathcal O_{\mathbb P^1}(1)$、$p_d^*\mathcal O_{\mathbb P^1}(1)$の全section module。次数0・1には可換化による核がない。四頂点Hom次元は上三角$(1,2,4,6;1,2,4;1,2;1)$、曲線の次数$(0,2,4,6)$と一致。$X_c\to B(1)$の二基底行は$(c,\ell_1)$、$(-\ell_2,c)$で、二段階積は$\left(\begin{smallmatrix}c&\ell_1\\-\ell_2&c\end{smallmatrix}\right)$。全三退化型の全Hom同型は二段階積像だけに依存せず、次数1における制限単射と次元比較から得る。mutationの評価列から$H_0=P^2F^{-1}$、一周期後$H_4=FG^2$。よって$H_1,\ldots,H_4$に共通$P^{-1}$を掛けると$(\mathcal O,F,F^2,F^2G)$となる。**追加幾何：** $E_f=Q_c\times_{\mathbb P^1}Q_d$はsmooth/nodal/$I_2$の$(2,2)$ Cartier因子で、$p_{c*}\mathcal O_E=\mathcal O_{\mathbb P^1}\oplus\mathcal O_{\mathbb P^1}(-2)$が全三型で成立する。各$X_c\otimes_B R$は$F_c$のsection moduleに全次数で一致する。**現在の範囲**：点曲線側の全表示商への相対Serre完成・pointed heart比較は成立し、smooth spectral指定pointingの像も決定した。別rotated pointingと全potential stackの相対認識は未解決。計算再現は `computations/verify_noncubic_pointed_end.py`（三型の有理係数モデル、低次数に限定）。
 
 **検証したEuler数値と非被約avatarのrank壁（C v3.4）。**
 ASsq/ASrsq最小分解の四相Euler漸化式から
@@ -254,9 +277,9 @@ mutationのQgr同値。
 pointed qgr-heart同値は別途必要。
 この定理は原PDFの既存結果を原稿へ移管したもので、
 新規発見の主張ではない。
-一般基底での相対mutation／Qgr同値、DG/Ginzburg
-集中の独立全面監査、O-marked heartへの相対実現が
-次の研究の核心となる。
+点曲線側のnoncubic族では相対mutationとpointed heartを構成した。
+任意のavatar族についての相対認識とDG/Ginzburg集中の
+独立全面監査は残る。
 
 
 **Mutation後のNoether性とAbel/derived比較。**
@@ -868,9 +891,11 @@ y²=x(x−1)(x−λ)、translationは
 (x,y)→(λ/x,−λy/x²)。
 これはBのnoncubic全根対分類と合成して
 **四根相異なるO-marked noncubicの同型類**
-との全単射。avatar側AS代数のqgrが
-そのO-marked heart自身に一致することは
-**未証明**。C thm:qa-avatar-two-torsion-root-pair-bijection。
+との全単射。指定AS10 mutation・一番頂点で実現したavatar側の
+pointed AS heartは $\chi^\vee=\chi/(\chi-1)$ の対象であり、
+元と一致するのは $\chi=0,2$ に限られる。
+C thm:qa-avatar-two-torsion-root-pair-bijection と
+thm:qa-spectral-avatar-pointed-involutionを区別する。
 共有根・一致根対については以下のspectral曲線・Picard境界で幾何同型類全単射まで完成（相対Picard線束射とは区別）。
 
 **二つの別のwallと古典点。**
@@ -902,7 +927,8 @@ G_s=F_sPの完全線形系は全三型で(2,2)閉埋込みを与え、
 {smooth/nodal/I2のsquare(2,2)反標準因子D、
 P=G_sF_s^{-1}≠O,P²=O}/isomの全単射。
 さらにBの根対↔H2 noncubic分類を合成して全noncubic
-O-marked幾何同型類のavatar分類（ただし元AS avatarのqgr同定は未証明）。
+O-marked幾何同型類のavatar分類を得る。ただしこの集合対応は
+smooth域の指定AS実現と一致せず、後者は $\chi^\vee$ を与える。
 nodalのnormalized t模型 X=t²,Z=(1−t²)/t ⇒ XZ²=(1−X)²；
 I2の模型は(Z−X)(Z+X)=0。
 正本C thm:qa-noncubic-rootpair-quartic-resolvent、
@@ -930,15 +956,16 @@ generic M_Kを延長するreflexive sheafとの差は特殊fiber整数倍
 （主因子）に限られ、可逆な延長Lは存在しない。
 従って**特異fiberでP=-1を選ぶ幾何同型類の全単射は、
 滑らかなP_tからの通常Pic0 line-bundle相対射としては実現できない**。
-これはΣ2の別の再埋込やminimal resolutionによる解決を禁止せず、
-その構成が次の最優先課題。正本C
+この局所Picard障害だけでは別模型を排除しないが、
+指定spectral-pointed対応にはさらにH2族への延長不能が成立する。
+境界比較はH2外の適切な標的で扱う。正本C
 thm:qa-noncubic-rootpair-torsionfree-spectral-module、
 cor:qa-noncubic-central-square-point-curve-spectral-avatar、
 prop:qa-rootpair-nodal-picard-nonextension。
 計算的検算：SymPyでquartic resolvent根、A²=qI、
 singular quartic q、nodal(2,2) parametrization、接方向を独立に確認。
-保存したverify_rootpair_resolvent_spectral.pyをmath suiteに登録、
-スクリプト本体の実行は未確認。
+verify_rootpair_resolvent_spectral.pyはmath suiteに登録し、
+現行保存コードを実行PASS。
 以上はAS avatar由来のnoncommutative qgrとO-marked心の同値証明ではない。
 
 **Σ₂での全noncubic分類を証明：** 負断面Sを避ける反標準因子D∈|−K_{Σ₂}|と0≠P∈Pic⁰(D)[2]の幾何同型類は、全noncubic O-marked quadricの幾何exact同型類と全単射（C thm:qa-all-noncubic-sigma2-anticanonical-avatar-bijection）。H=O(h)|D=F²、F=O(f)|Dを用いるsquare換算はF_s=F,G_s=FP。P非自明2捩れによりDはsmooth、既約nodal、二P¹二節点(I2)の三型だけ。Bの良moduliでχ=1に重なる一根共有と根対一致も、Σ₂のnodalとI2で区別（C cor:qa-sigma2-avatar-separates-special-noncubic-classes）。これは**体上の同型類全単射**で、avatar AS代数の元のqgr heartとO-markedの直接同値、非被約底の通常Pic⁰線束を使う相対射ではない。
@@ -950,8 +977,9 @@ cubicのVdB-square-O-marked対応に加え、全noncubic根対と
 nodal/I2を含む2torsion square avatarの幾何同型類全単射、
 noncubic線形代数からtorsion-free spectral avatarへの相対射、
 共有根A1での通常Pic0線束延長不能をCに証明として統合。
-残るのは相対torsion-freeをΣ2幾何avatarへ変換する構成、
-元AS avatar qgrとpointed H2心の直接認識、
+E_f側の相対pointed認識、smooth spectral指定pointingの二同種対合、
+二境界でのH2延長不能は証明済み。残るのはsmooth対応の同型層・慣性・降下、
+別のrotated pointing、H2外のtorsion-free境界標的、
 古典零切断・Σ2最深境界、8/10/12矢potentialの全相対群oid。
 旧Q12 avatar草稿・synthesisは内部未公刊入力で、
 論文Cに必要な証明を統合していく。
@@ -1980,16 +2008,16 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 ## 検証範囲と再現手順
 
-**現行C v4.6の確認範囲（2026-11-22、日本時間）。** 相対mutation、全G降下、交換符号、全次数Serre完成とpointed heartの新証明を三担当で分担・相互点検し、主担当が統合した。入力A/B全体の再証明・形式証明・外部査読・網羅的新規性確認とは区別する。`python3 scripts/check.py papers` は三稿の構成・ラベル・引用と論文間の明示参照についてPASS。`python3 computations/verify_symmetric_morita.py` は三退化型の有限Hom、Serreの全次数多項式恒等式、Frobenius交換符号についてPASS。`doctor` と `bootstrap.sh --with-tex` を実行したが、LuaTeX-ja等のパッケージ不足と既存の非対話管理者権限なしにより組版はSKIP。PDF表示・VS Code UI・全既存計算suiteの今回の再実行は未実施。
+**現行C v4.7の確認範囲（2026-11-22、日本時間）。** 相対mutation、全G降下、交換符号、全次数Serre完成とpointed heart、およびsmooth spectralの指定AS10 pointing・逆構成・境界延長不能を分担・相互点検し統合した。KellerのMorita/CY completionとSilverman第2版の二同種公式を一次本文と照合した。`python3 scripts/check.py papers` は三稿の構成・ラベル・引用と論文間の明示参照を検査する。`verify_symmetric_morita.py`、`verify_spectral_atkin_lehner.py`、`verify_noncubic_pointed_end.py`、`verify_rootpair_resolvent_spectral.py` を実行PASS。新二本は標準math suiteへ登録したが全既存suiteは再実行していない。`check.py build --manuscript papers/nc-quadric-avatar.tex` は必要TeXファイルを利用できずSKIP（終了コード2）。PDF全体の表示・VS Code UI・形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
 
 
-**現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現在の3原稿で `scripts/check.py papers` の全体実行およびLuaLaTeXの実組版は未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
+**現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現行3原稿で `scripts/check.py papers` は実行PASS、LuaLaTeXの実組版は依存不足により未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
 
 **現行版の追加検証（2026-11-22）。** 境界の相対表示・特殊fiber・全慣性・任意代数空間への非分離に加え、DM開の粗モジュライの任意底変更、Hartogsによる非good性、DVRによる慣性の非proper性、全有限成分の法表現、相対ruling mutation、AHRを用いる形式対と局所不変式環を独立読取りした。`verify_noncubic_boundary.py` の既存検算に、DVR自己同型、fiberの微分、全16次元Grassmann接空間・rank12の軌道・4次元HH²と有限成分の作用の厳密検算を統合してPASS。`verify_stack_symmetries.py` も再実行してPASS。全旧suiteは再実行せず、形式証明器も用いていない。
 
 **既存の有限型代数性の検証範囲。** 主論文v1.44の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlas、普遍cubic族の降下と既約性、被約境界の余次元2とsmooth降下、ambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
 
-**現行版の組版制約。** 今回の環境にはLuaTeX-ja等の必要TeXファイルがなく、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。v1.44のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。下記v1.40の組版記録を新原稿の確認と読み替えない。ソース参照確認は現行版でPASS（50 manuscript files / 610 labels / 288 citation uses / 7 Markdown files）。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
+**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.7のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
 
 **現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 
