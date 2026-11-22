@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.02（A v1.69・20節、B v0.39・31節、C v2.8）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.03（A v1.69・20節、B v0.39・31節、C v2.9）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：幾何的AS入力の自足化と共有根の相対線束障害
 
@@ -10,24 +10,75 @@ Cの `square_rotated_foundations.tex` と `canonical_helix_complexes.tex` に証
 直接的な曲線上の完全性と、元のAS Z代数の全周期最小射影分解・Noether性・O-marked heart同値は別である。
 必要なカテゴリー的なAS認識の詳細は元のv7中のhelix/realization構成と原稿A・Bの仮定を突き合わせて継続する。
 
-**新しい最小解消上の障害。**
+**共有根の相対線束障害と奇偶類（Cで証明）。**
 $A=k[[a,b,y]]/(ab-y^2)=k[[c,d]]^{\pm}$、
-$s=a-b$ に対し、反不変加群 $M=Ac+Ad$ は最小解消で
-$\mathcal O_E(1)$ に制限する可逆線束になる。
-局所chartは $(a,y,b)=(u,ut,ut^2)$、$(vw^2,vw,v)$、重なりで $v=ut^2,w=t^{-1}$。
-既約nodalな特殊曲線のstrict transform $D'$ は例外 $E$ と二点で交わり、
-$E^2=-2, D'\cdot E=2$。ゆえに垂直因子twistによる $\deg_E$ の変化は偶数で、
-多重次数零の相対$\Pic^0$線束にすることはできない。
-**制限は同じ一径数基底上の最小解消のみ**であり、base change / compactified Picard / 別モデルを排除しない。
-証明正本はCの `nodal_resolution_obstruction.tex`、
-整数・記号chartの再現資産は `computations/verify_nodal_exceptional_parity.py`。
-有限計算は局所公式の検算であり、相対groupoid同値の検証ではない。
+$s=a-b$、反不変加群 $M=Ac+Ad$ とする。
+最小解消の chart は $(a,y,b)=(u,ut,ut^2)$ と
+$(vw^2,vw,v)$、重なりで $v=ut^2,w=t^{-1}$。
+$(\pi^*M)/\mathrm{tors}$ は例外曲線 $E$ 上で
+$\mathcal O_E(1)$ に制限する。
+既約 nodal 特殊曲線の strict transform $D'$ は
+$E$ と二点で交わり、$E^2=-2,\ D'\cdot E=2$ だから、
+垂直 Cartier twist による $\deg_E$ の変化は偶数。
+同じ一径数基底での A1 最小解消だけでは
+多重次数零の相対 $\Pic^0$ 線束にできない。
+基底変更・stable reduction・compactified Picard・別モデルは
+この障害で排除されない。
 
-**次の最小課題。** 共有根のcompactified Picardの反不変moduleから
-基底変更・stable reduction・`Sigma_2`のrelative elementary transformを含む
-正しい`O`標識の相対avatarに至る射を構成する。別方向では同じ四項の有限directed End代数から
-canonical Serre根・元のAS qgr heartが一致するかを直接比較する。
-全noncubic同型類全単射（集合論）とこの相対射は引き続き区別する。
+**二次積の任意基底での scheme-theoretic 欠損（Cで証明）。**
+$C:y^2=f_1f_2$ と反不変 torsion-free sheaf $\mathcal M$ に
+自然な対称積 $\mu:\mathcal M\otimes\mathcal M\to\mathcal O_C$ がある。
+像は局所的に $(f_1,f_2,y)$、余核は
+$\mathcal O_{\{f_1=f_2=y=0\}}\simeq
+ \mathcal O_{\PP^1_S}/(f_1,f_2)$。
+これは非被約底を含む任意基底変更と可換し、
+各被約二根対の幾何 fiber 上では欠損長が
+smooth/nodal/I2の順に$0/1/2$となる。
+積の随伴射 $\mu^\flat:\mathcal M\to\mathcal M^\vee$
+は **各squarefree幾何fiber上** で同型だが、
+節点では $\mu$ 自体は全射ではない。
+通常の line-bundle 二捩れと区別する。
+
+**正規化上の極限と自己同型（Cで証明）。**
+- smooth: $\mathcal M$ は非零二捩れ線束、$\End_C(M)=k$。
+- 既約 nodal: $\mathcal M=\nu_*\mathcal O_{\PP^1}(-1)$、
+  $\End_C(M)=k$（単純）。これは
+  $\Pic^0(C)\simeq\Gm$ の非零二捩れ線束（貼合せ値$-1$）とは
+  同型でない。
+- $I_2$: $\mathcal M=\nu_*(\mathcal O_{\PP^1}(-1)
+  \oplus\mathcal O_{\PP^1}(-1))$、$\End_C(M)=k\oplus k$。
+  従って underlying sheaf は非単純で、
+  simple/fine compactified Jacobian の対象ではない。
+  一方、曲線を固定して二次積まで保存する組の慣性は
+  smooth/nodal で $\mu_2$、I2 で $\mu_2^2$ となる。
+  これは全O-marked avatar stackの慣性計算ではない。
+
+証明正本は papers/quiver-avatar/nodal_resolution_obstruction.tex
+（prop:qa-spectral-product-defect、
+thm:qa-spectral-three-fiber-limits、
+cor:qa-spectral-pair-finite-inertia）。
+既知のrank-one torsion-free sheaf・多重次数・compactificationの
+一般理論は Altman--Kleiman (1980) と
+Christ--Payne--Shen (2023, DOI 10.1090/tran/8875) に依拠する。
+二形式からの明示的な積欠損と極限の計算が本稿での追加内容で、
+包括的新規性調査は未実施。
+計算資産 computations/verify_nodal_exceptional_parity.py は
+A1 chart・奇偶に加えて、局所環の平方積関係と
+交差根数$0/1/2$の有限多項式検算を含む。
+これは数学的な相対groupoid同値の形式検証ではない。
+
+**最優先の次の課題。**
+単純層だけのfine compactified Picardではなく、
+非単純I2点も受けるrank-one torsion-free
+**二次積付き**stack $\operatorname{TF}^{\mathrm{quad}}$
+（必要なら偏極・半安定と固定曲線の標識も含む）を
+正確に定義する。根対の群作用による $(C,M,\mu)$ の相対射を
+非被約基底で構成し、nodal/I2の慣性と変形理論を
+論文Bのnoncubic内在的境界stackと比較する。
+その後でsquare/$\Sigma_2$への相対elementary transform、
+canonical Serre根・元のAS $\qgr$ heartとO-markingの
+pointedな同一視を確立する。
+体上同型類全単射と相対stack同値を混同しない。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
