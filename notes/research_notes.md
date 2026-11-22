@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.88（A v1.69・20節、B v0.39・31節、C v1.4）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.89（A v1.69・20節、B v0.39・31節、C v1.5）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -220,6 +220,8 @@ ruling交換成分がなく、全慣性はμ₂²。
 C `cor:qa-quintuple-h2-generic-degree-two` と
 `cor:qa-potential-h2-generic-degree-eight` に証明。
 この8を4つのPicard Serre根の数や自己同値群の位数と混同しない。
+**稠密開でのstack同型。** 表現可能有限étale次数2のquintuple→H2には、任意基底変更と可換なcanonical deck対合がある。étale局所に二つのsheetが分裂するときの交換で、rank2代数上の式i(a)=Tr(a)−aにより一意に構成する。従ってH2の適当な稠密開は剛体化quintuple一般開のS₂商と同値。幾何点では二つのnormalized foundationの交換。C thm:qa-h2-generic-ruling-quotientが証明正本。これは特殊点全体でBの相対mutationが既にH2を表現すると結論しない。
+
 **次の核心：** 特殊cubicのη=2δ・δ∈E[2]・
 j=0,1728等のruling交換固定点と慣性増大を調べる。
 二rulingの有限étale被覆とその分岐を相対非被約基底で構成し、
@@ -241,6 +243,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 **再開する数学的核心。**
 一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
 正則半単純開で有限étale次数2・慣性μ₂²同型・KS同型となる。
+さらに稠密開のcanonical S₂ deck商を取れば内在H2そのものに同値。
 次は特殊cubic点で二つのrulingの同型が生じるときの
 慣性と分岐、またnoncubic境界への延長を相対群oidとして調べる。
 `lem:elliptic-two-reflections` と

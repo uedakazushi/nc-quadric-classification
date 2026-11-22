@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.4
+% 日本語 LuaLaTeX。2026-11-22 / v1.5
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.4（一般étale性とpointed忘却次数二）}
+\date{2026年11月22日\quad v1.5（内在H2の一般S₂商スタック同型）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -88,6 +88,10 @@ $\HHstack$への射はsmooth相対次元零で、一般開では
 さらに二つの内在的ruling foundationの比較から、
 一般の幾何fiberは二点となり有限étale次数二を得る。
 有効potential表示から$\HHstack$への合成射は一般次数八である。
+一般有限étale二重射のcanonical deck対合を取ると、
+内在$\HHstack$の稠密開は剛体化quintupleの一般開の
+$S_2$商スタックに同値となり、対合は二つのnormalized
+ruling foundationの交換と幾何点上で一致する。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -195,6 +199,8 @@ OUの一般安定化群という表現は単位連結成分と全慣性を区別
 一般次数二とpotential合成の次数八は
 系~\ref{cor:qa-quintuple-h2-generic-degree-two}と
 系~\ref{cor:qa-potential-h2-generic-degree-eight}に示す。
+さらに稠密開でのスタック的な商同型は
+定理~\ref{thm:qa-h2-generic-ruling-quotient}で与える。
 ここで用いる square・rotated square の反標準 avatar と十本矢 mutation は
 大川--植田の日本語草稿 v7 \cite{AvatarVSeven2026} に、
 十二本矢型の追加と統一 avatar は研究ノート \cite{Q12Avatar2026} に記載されている。
