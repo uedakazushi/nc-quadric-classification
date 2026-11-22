@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.0（OU二捩れ特別座のspectral方程式を計算）
+% 2026-11-22 / v3.1（二つの特殊慣性のreflection法表現と粗二重分岐）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -824,6 +824,124 @@ $\eta\ne\delta$により同型でない。
 従って核は存在しない。
 この忠実性から反転型の交換自己同値は実際にも
 二乗が恒等であり、$A\simeq C_2^3$が従う。
+\end{proof}
+
+\begin{theorem}[特殊ruling慣性の法表現と局所粗二重分岐]
+\label{thm:qa-ou-special-reflection-coarse-branch}
+命題~\ref{prop:qa-elliptic-special-inertia-group-types}の
+二つの片側二捩れ特別座の点$x$を取る。
+$\delta,\eta$は上記の楕円差パラメータとし、
+$j(E)\ne0,1728$、
+$\prod_i x_i\ne0$、$x_i^2$は相異なり、
+$e_1=\sum x_i^2\ne0$とする。
+幾何的quintupleから内在的$\HHstack$への忘却の
+正則半単純開上で、
+\[
+ H=\Aut_{\mathfrak Q_{\mathrm{geo}}^{\mathrm{rig}}}(x)
+   \simeq E[2],\qquad
+ A=\Aut_{\HHstack}(\overline{\mathcal F}_{\mathrm{geo}}(x)),
+ \quad [A:H]=2 .
+\]
+このとき、三次元の相対変形接空間における
+$H$の作用は自明であり、
+$A/H\simeq C_2$の非自明元の固有値は
+\[
+ \left(1,1,-1\right).
+ \tag{OU-reflection}\label{eq:qa-ou-special-normal-representation}
+\]
+特に二つの特別座はいずれも
+\emph{余次元一のpseudo-reflection}の固定座である。
+
+より詳しく、$x$が閉じた点として表される
+tame Deligne--Mumford局所商chart（あるいはその
+形式完成）を取る。源と標的の\emph{局所粗モジュライ
+germ}の完成局所環は、非標準的な形式座標$s,w,z$によって
+\[
+ \widehat{\mathcal O}_{\mathrm{coarse}(\mathfrak Q),\bar x}
+  \simeq k[[s,w,z]],\qquad
+ \widehat{\mathcal O}_{\mathrm{coarse}(\HHstack),\bar y}
+  \simeq k[[s,w,z^2]],
+ \tag{OU-branch}\label{eq:qa-ou-special-coarse-branch}
+\]
+と表せる。粗空間に誘導された二重射の局所方程式は
+$Z=z^2$であり、特別座の一般点で分岐指数は二、
+両粗germは滑らかな三次元である。
+一方、スタックの忘却射そのものは
+定理~\ref{thm:qa-quintuple-h2-generic-etale}により
+\emph{表現可能étaleのまま}である。
+
+$A\simeq C_4\times C_2$であるtranslation型と
+$A\simeq C_2^3$である反転型は
+\emph{抽象群型は異なるが、この三次元接表現と
+粗二重分岐の局所型は同じ}である。
+ここでは局所粗germのみを扱い、
+$\HHstack$全体にglobal coarse/good moduliが
+存在することは主張しない。
+\end{theorem}
+\begin{proof}
+smoothな楕円曲線と三つの次数二線束の
+変形は、最初の線束$L_0$をtranslationで
+規格化すると、局所的に$(E,\eta,\delta)$で
+記述できる。$[2]:E\to E$はétaleなので
+$L_0$の規格化はétale局所に可能である。
+$j\ne0,1728$では楕円曲線の変形パラメータに
+$j-j_0$を使え、$\eta,\delta$の変形には
+相対楕円曲線の形式群の座標が使える。
+従って三次元の形式versal baseが得られる。
+$H=E[2]$は点曲線を二捩れ平行移動で動かすが、
+線束の差$\eta,\delta$と$j$を固定する。
+そのため$H$の接作用は自明である。
+$H$は標数零で有限だから、形式座標を平均して
+高次にも$H$の作用を自明化できる。
+
+$\eta-\delta=\tau\in E[2]\setminus\{0\}$、
+$\delta\notin E[2]$のtranslation型では
+非自明な$A/H$の元は
+\[
+ R:(\eta,\delta)\longmapsto(2\delta-\eta,\delta)
+\]
+で表される。$\tau$は有限étale群$E[2]$の
+局所sectionとして一意に延長できる。
+相対形式群のlogarithmを使って
+$z=\log_E(\eta-\delta-\tau)$と置くと
+$R(z)=-z$であり、$j$と$\delta$の変形を固定する。
+従って接作用は$(1,1,-1)$である。
+
+$\delta=\sigma\in E[2]\setminus\{0\}$、
+$\eta-\delta\notin E[2]$の反転型では、
+二つのfoundationの比較同型の楕円線型部が
+$\epsilon=-1$であり、対応する変換は
+\[
+ (-1)\circ R:(\eta,\delta)
+        \longmapsto(\eta-2\delta,-\delta).
+\]
+この変換は$\eta-\delta$を保つ。
+$z=\log_E(\delta-\sigma)$は$z\mapsto-z$となり、
+$j,\eta-\delta$の変形を固定する。
+いずれも形式的な法座標$z$の反射だけである。
+
+一般点の忘却射は表現可能étaleなので、
+源の三次元versal接空間は標的の接空間と
+同型であり、標的慣性の作用は上記の
+$A/H$を通じた反射となる。
+$A$は有限で標数零のため線型簡約である。
+局所商としての形式変形空間の記述には
+Alper--Hall--Rydh
+\cite[Theorem 1.2]{AlperHallRydh2020}の
+smooth閉点・線型簡約安定化群に対する
+étale sliceを用いる。正則半単純な対象は
+geometric stable quintupleの閉軌道を持ち、
+同定したスタックの局所chartで閉点を選べる。
+有限群の形式作用は線型化できるので、
+源の$H$-不変式環は$k[[s,w,z]]$、
+標的の$A$-不変式環は
+\[
+ k[[s,w,z]]^A=k[[s,w,z^2]]
+\]
+となる。これは式~\eqref{eq:qa-ou-special-coarse-branch}
+を与え、$Z=z^2$の分岐指数は二である。
+局所粗空間の分岐とスタック射のétale性は
+異なる主張であり、矛盾しない。
 \end{proof}
 
 \begin{proposition}[ruling交換特別点のstack的2-fiberは二点のまま]
