@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.09。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.3。
+2026-11-22 / v1.10。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.4。
 
 ## 公表用三論文への再編（確定方針）
 
@@ -8,7 +8,37 @@
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：主原稿 `papers/nc-quadric-avatar.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによるavatarへ戻す構成と元AS avatarの$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。 全noncubic O-marked幾何同型類≅Σ₂のD∈|−K|,D∩S=∅,0≠P∈Pic⁰(D)[2]の同型類もCに証明。Bのχ=1二点はnodal/I2で区別。次はAS avatarのqgr heartの直接同値と相対elementary transformを検証する。
 
-**論文C v3.3の分類正本（最優先）。**
+**原稿C v3.4の新しいpointed認識上の最重要区別。**
+noncubic中央二重平方環の可換点曲線
+$E_f:\ c^2=f_1,\ d^2=f_2$と、quartic spectral曲線
+$C_q:\ y^2=f_1f_2$は、非共有根では
+自由同時符号の商$E_f\to C_q$による
+**次数2のétale isogenyで、一般には同型でない**。
+$E_f$上には個別符号反転の二conic商から
+次数二pencil $F_d,F_c$と非零2torsion
+$P_E=F_cF_d^{-1}$があり、square二重壁avatarを作る。
+$C_q$上の反不変二捩れ$M_C$は
+$r^*:\Pic^0(C_q)\to\Pic^0(E_f)$の核。
+$(C_q,M_C)$と$(E_f,P_E)$は双対2-isogenyで交換されるが
+次数二pencilとAS finite foundationは自動同定されない。
+証明はpapers/quiver-avatar/point_spectral_isogeny.tex、
+根の簡単な例で$j(C_q)=35152/9$、
+$j(E_f)=28756228/3$、$\Phi_2=0$の厳密算術検算は
+computations/verify_rootpair_resolvent_spectral.py。
+**重要：C_qの既存avatarをB_fの可換点曲線E_fと同一視して
+内在的O-marked心とのpointed同値を導いてはならない。**
+最優先実行単位は、分類論文Aのnoncubic normal helix
+$(\pi B_f,\pi X_c,\pi B_f(1),\pi X_d(1))$の
+有限directed End代数・二つのmatrix factorizationと、
+E_f側のconic商からの二pencil avatarの有限Endを直接比較し、
+Oの保存とSerre completionを追うこと。
+現時点ではどちらの曲線がnormal helixのAS avatarとなるか
+未証明であり、非共有根でない境界では
+isogenyがétaleでなくなる。
+元の同型類全単射、2-isogenyの幾何証明、
+pointed qgr同値、相対stack射を別々の状態として扱う。
+
+**論文C v3.4の分類正本（最優先）。**
 `papers/nc-quadric-avatar.tex` から
 `papers/quiver-avatar/as_helix_classification.tex` と
 `papers/quiver-avatar/as10_mutation_classification.tex` を読み込む。
@@ -29,7 +59,7 @@ acyclic spherical helix実現は外部一般定理として明示している。
 次の重点はAS分類の独立監査（特に非被約Pic0とrank forcing、
 Ginzburg集中・逆mutation・全整数評価/余評価）とC全文組版。
 新数値検算は `computations/verify_as_avatar_euler.py`。
-C v3.3ではASsq/ASrsqの四相Euler生成関数を有理関数として
+C v3.4ではASsq/ASrsqの四相Euler生成関数を有理関数として
 全次数厳密計算し、AS10の偶奇級数も独立検算した。
 非被約Dを含むpencil trickにより
 $\operatorname{rk}\mu_G=3\iff P=GF^{-1}$を証明した。
@@ -45,7 +75,7 @@ finite projective dimension・Ginzburg次数零集中・
 相対完全性の残りの依存を最優先監査。
 これはunderlying Abel同値でpointed O-marked同値ではない。
 
-**原稿C v3.3：二重壁と全cubic導来非同値の正本。**
+**原稿C v3.4：二重壁と全cubic導来非同値の正本。**
 $\mathrm{AS}_{sq}$の二つの最小10矢mutation壁の交点は
 $Z=\{0\ne P\in\Pic^0(D)[2],G\simeq FP\}$。
 \`papers/quiver-avatar/as10_mutation_classification.tex\` の
@@ -71,7 +101,7 @@ exceptional perfect複体の持上げで排除する。
 はSerre数値格子と二捩れparityのみを厳密検算。
 GAGA・perfect持上げ・全導来非同値を形式証明したとは扱わない。
 
-**原稿C v3.3のGinzburg／二重壁の局所監査。**
+**原稿C v3.4のGinzburg／二重壁の局所監査。**
 Keller (2011 Thm6.10)のrelation Ginzburg=undeformed
 3-CY completionの適用には有限$B$のgldim2と
 minimal relationsが矢idealの二乗にあることが必要。
