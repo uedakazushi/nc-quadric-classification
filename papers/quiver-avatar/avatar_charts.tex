@@ -1221,6 +1221,159 @@ Weil因子記述から、$L$と$\mathcal M$の差は
 混同しないためである。
 \end{proof}
 
+\begin{theorem}[全noncubic根対と二捩れsquare avatarの体上同型類全単射]
+\label{thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection}
+$k$を標数零の代数閉体とする。
+論文Bのnoncubic根対の全幾何点、すなわち
+$\PP^1$上の\emph{各々は被約}な二点因子の
+非順序対$\{B_1,B_2\}$の
+$\PGL_2$-同型類集合を考える。
+これは、次の条件を持つsquare avatarの
+\emph{同型類集合}と自然に全単射する。
+\[
+ \begin{gathered}
+ (Y=\PP^1\times\PP^1;\
+  D\in|\OO_Y(2,2)|;\ F_s,G_s,P),\\
+ P=G_sF_s^{-1}\ne\OO_D,\qquad
+ P^{\otimes2}\simeq\OO_D,\\
+ D\text{ はsmooth genus }1,\quad
+ \text{既約一節点、または二}\PP^1
+ \text{が二節点で交わる曲線}.
+ \end{gathered}
+ \tag{Sq-all-nc}\label{eq:qa-all-noncubic-square-avatar-bijection}
+\]
+ここで$F_s=\OO_D(1,0)$、
+$G_s=\OO_D(0,1)$であり、
+二rulingの順序は保持する。
+この全単射は、論文Bの
+\cite[\texttt{thm:noncubic-intrinsic-presentation-equivalence}]{QuadricModuli2026}
+を介して、\emph{全noncubic O-marked H2幾何同型類}の
+集合論的なavatar分類を与える。
+
+構成は次の通りである。
+まず$q=f_1f_2$から
+式~\eqref{eq:qa-rootpair-spectral-curve}の
+二重被覆$p:C_q\to\PP^1$と
+$F_s=p^*\OO_{\PP^1}(1)$を取る。
+\begin{enumerate}
+\item 四根相異なる場合は、
+定理~\ref{thm:qa-avatar-two-torsion-root-pair-bijection}
+の分割に対応する非零
+$P\in\Pic^0(C_q)[2]$を取る。
+\item 一根共有または二根対一致の場合は
+$\Pic^0(C_q)\simeq\mathbb G_m$なので、
+その\emph{唯一の}非自明二捩れ点$P=-1$
+を取る。
+\end{enumerate}
+いずれの場合も$G_s=F_sP$は次数二で
+大域生成され、二つの完全線形系の積
+\[
+ C_q\longrightarrow
+ \PP H^0(F_s)^\vee\times\PP H^0(G_s)^\vee
+\]
+は$(2,2)$反標準Cartier因子への閉埋込みとなる。
+この逆操作は、square avatarの
+第一rulingの二重被覆$D\to\PP^1$の
+分岐四次因子と$P$から、
+四根相異なる場合には三分割の一つを、
+一根共有・一致根対では唯一の
+被約二根対分割を復元することである。
+
+\emph{重要：} これは\emph{体上の同型類の全単射}である。
+上の二場合で特別に選んだ
+$P=-1\in\mathbb G_m$は、
+必ずしも滑らかな族の2-torsion線束の極限でない。
+実際、命題
+~\ref{prop:qa-rootpair-nodal-picard-nonextension}
+の一根共有族では延長できない。
+従ってこの全単射を、そのまま
+通常のPicard avatarスタックへの
+相対モジュライ射、または元のavatar
+AS代数の$\qgr$のpointed同値と
+読み替えてはならない。
+\end{theorem}
+\begin{proof}
+smoothな場合は定理
+~\ref{thm:qa-avatar-two-torsion-root-pair-bijection}
+による。以下、特異な二場合を調べる。
+
+\emph{既約一節点の場合。}
+$C_q$の正規化は$\nu:\PP^1\to C_q$で、
+節点の二逆像を$a,b$とする。
+$\Pic^0(C_q)$の線束は、
+正規化上の自明線束の
+$a,b$での貼合せスカラー
+$\lambda\in k^\times$で分類される。
+従って$\Pic^0(C_q)\simeq\mathbb G_m$で、
+非自明二捩れは貼合せ比$-1$だけである。
+
+$F_s=p^*\OO(1)$は正規化上次数二で、
+節点での貼合せ比を$1$に規格化できる。
+$G_s=F_sP$は正規化上の$\OO(2)$で、
+貼合せ比は$-1$となる。
+$H^0(C_q,G_s)$は$H^0(\PP^1,\OO(2))$の
+$a,b$における値が符号反対になる
+二次元部分空間である。
+これはbasepoint-freeである。
+実際、$a,b$の二評価汎関数の
+非自明な線形結合は、
+二次Veroneseの双対円錐上で
+単一点の評価汎関数には一致しない。
+（異なる二点を結ぶ割線が二次曲線と
+交わるのはその両端のみである。）
+従って$|G_s|$も有限な次数二射を与える。
+
+$F_s\not\simeq G_s$なので、
+この二射の積は総次数二ではあり得ず、
+$C_q$上の一般点で単射である。
+像の二rulingへの次数は各二だから
+$(2,2)$因子で、算術種数は一。
+元の$C_q$も算術種数一なので、
+有限双有理射の構造層の余核はEuler特性零、
+従って零であり、積射は閉埋込みとなる。
+
+\emph{二根対一致の場合。}
+$C_q=C_+\cup C_-$は二つの$\PP^1$が
+相異なる二節点で交わる曲線である。
+正規化上の各成分の次数零線束は自明であり、
+二つの節点での貼合せ比
+$(\lambda_1,\lambda_2)$を
+成分ごとの定数倍で同一視すると、
+$\lambda_1/\lambda_2\in\mathbb G_m$
+だけが残る。
+よって$\Pic^0(C_q)\simeq\mathbb G_m$、
+非自明二捩れはこの比が$-1$のものに限る。
+$F_s$は各成分で$\OO_{\PP^1}(1)$であり、
+$G_s=F_sP$も各成分で次数一、
+二節点での値の二条件から
+$H^0(C_q,G_s)$は二次元で大域生成される。
+二つの成分の像は、
+第一$\PP^1$から第二$\PP^1$への
+二つの$(1,1)$グラフとなる。
+貼合せ比$-1$ゆえ二グラフは異なり、
+ちょうど二つの節点で横断する。
+従って像は元の$C_q$と同型な
+$(2,2)$Cartier因子である。
+
+逆向きは平方freeな二つの二次因子の
+分割を数えることで得られる。
+四単根なら三通りで非零$E[2]$の三点に対応する。
+$(2,1,1)$なら
+$(a,b)\mid(a,c)$の一通り、
+$(2,2)$なら
+$(a,b)\mid(a,b)$の一通りしか
+二因子ともsquarefreeにする分割はない。
+同じ各曲線の$\Pic^0[2]\setminus0$の
+点数が$3,1,1$なので、逆は一意である。
+元の第二rulingは
+$G_s=F_sP$で復元されるから、
+曲線・線束の同型はavatarの同型となる。
+最後にBのnoncubic根対分類と合成すれば
+O-marked同型類への全単射が得られる。
+相対射に関する留保は直前命題の
+非延長例により必要である。
+\end{proof}
+
 \begin{proposition}[Picard零切断の全体を古典pointとして追加できない理由]
 \label{prop:qa-avatar-zero-picard-collapse}
 $Y=\PP^1\times\PP^1$、
