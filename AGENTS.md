@@ -1,12 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.97。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.1。
+2026-11-22 / v0.98。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.2。
 
 ## 公表用三論文への再編（確定方針）
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：論文C `papers/quiver-avatar-moduli.tex` と節 `papers/quiver-avatar/git_comparison.tex` をOU GIT・quiver/QP/avatar→内在H2比較の正本にする。OU2014のS4/S3印刷不整合は四固有値S4訂正解釈と明記。spectral Kummer、Jacobian/Hodge/Picard根、quintuple→H2一般有限étale次数2・potential→quintuple次数4・potential→H2次数8、稠密開H2≃[quintuple/S₂]を保持。特殊ruling交換の二捩れ条件はδ∈E[2]またはη−δ∈E[2]。OU不変量D±=f2³−3f2f4+2f6±6f2g4は滑らかな正則半単純開の局所粗二重分岐を記述し、片側特別座では法反射(1,1,−1)、交点e1=e3=0ではsource慣性C2³、H2慣性D8×C2・横断A1粗二重射となる。stack忘却は当該開でétale。二cubic開ではj=0/1728の追加CM自己同型が三束保存・ruling交換を生まないことを証明し、CMではLegendre level2座標で局所粗分岐証明を補強。j0のη=2δ（非零3捩れ）にはA4慣性と接重み(2,1,1)が現れ、一般一cubic境界η=2δ, δ∉E[2]ではquintuple→H2がétaleでもfiber一点で、有限étale次数2としては延長不可。Artin基底では二つのnormal foundationがflatにuniqueに持ち上がり、Bのkernel/cokernel相対mutationで交換する。C prop:qa-ou-formal-two-ruling-liftsを参照。**次は形式二選択の有限型非被約基底への代数化、normal foundation表示とH2の全相対groupoid比較、noncubic境界の慣性/fiber。** global coarse/good moduliを局所分岐から推論しない。A/Bの独立証明監査・三稿の実組版・先行研究新規性照合は別状態。
+- C：論文C `papers/quiver-avatar-moduli.tex` と節 `papers/quiver-avatar/git_comparison.tex` がOU GIT・quiver/QP/avatar→内在H2比較の正本。一般OUのquintuple→H2次数2・potential→quintuple次数4・合成次数8、特殊二捩れ/CM/一cubic境界の群型・粗分岐を保持。**全H2上で二normal foundationの有限étale次数2選択被覆を構成し、選択付きH2は有限foundationスタック$\mathfrak F_0$の$S_2$不変な開$\mathfrak F_{\HH}$と同型、$\mathfrak H_2\simeq[\mathfrak F_{\HH}/S_2]$。** これはBのsmooth atlas・Artin foundation・relative反Serre・Kスカラー剛体化を入力として証明本文を追加。**次はこの開埋込のrelative Isom/étale降下・各chart効果性を独立監査し、有限表示の具体的認識条件、noncubic境界での明示群oidを決める。** 全$\mathfrak F_0$が実現可能という誤解、local粗/GITの大域同値、全avatar/AS認識を避ける。A/Bの公表前独立証明監査、実組版、新規性調査は別状態。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 

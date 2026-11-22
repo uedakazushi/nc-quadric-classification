@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.95（A v1.69・20節、B v0.39・31節、C v2.1）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.96（A v1.69・20節、B v0.39・31節、C v2.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -350,25 +350,58 @@ computations/verify_ou_cm_automorphisms.py。
 この例は*一cubic境界*の現象であり、全H2のnoncubic locusの分類ではない。
 Artin形式変形の二normal foundation持上げとmutation交換は解決。次はこれを有限型非被約基底に代数化し、full noncubic境界とのgroupoid比較を完成すること。
 
-**Artin上の二rulingの一意持上げと形式的交換（Cで証明）。**
-任意のH2点の二つのnormal foundation X/Yに対し、
-B thm:artin-foundation-liftを各full geometric helixへ適用すると、
-任意のflat pointed Artin変形A上で、それぞれの列が
-flat noetherian対象の列として同型類一意で持ち上がり、
-全Homのfinite free性と階数24のtilting End代数を保つ。
-特別ファイバーでX≇Yなので二持上げは異なる。
-B prop:relative-ruling-involutionと
-prop:ruling-involution-mutationによるkernel/cokernelの相対対合τは
-全normal foundationの有限表示に適用でき、
-Artin持上げ後も定義され、τ(X_A)≅Y_Aとなる。
-したがって一cubic境界でもnoncubic側のnormalized foundationは
-Artin形式近傍で存在し、cubic quintuple表示が欠くsheetを補完する。
-この整合性はArtin局所の同型類に関するもので、選択スタックを
-一般有限型非被約基底上に代数化したことも、全相対H2との
-groupoid同値を示したことも意味しない。
-証明正本C prop:qa-ou-formal-two-ruling-lifts。
-次はfinite foundation stackの相対mutationと選択を含む
-framed atlasのdescentを比較し、全noncubic境界での効果性を監査。
+**全H2の二normal ruling有限étale選択被覆とfinite foundation開（Cに証明）。**
+Bの全H2 smooth atlas U→H2は各成分でfull flat normal foundation
+E^X=(O,X,M,Z)を持つ。相対mutation τは
+E^Y=(O,Y,M,Z')を任意基底変更と可換に与える。
+二者は互いに直交し、Ext^{≠0}(X,X)=0、RHom(X,Y)=0。
+R=U×_{H2}U上の普遍pointed exact同型φについて、
+P=RHom_R(φ(p1*X),p2*X)はperfect・derived base-change可能で、
+全幾何fiberはk[0]または0。perfect性と導来fiberのTor振幅から
+Pは局所的にrank1 vector bundle[0]または0へ簡約される。
+従ってRは開閉部分R_same⊔R_swapへ分裂し、
+三重重なりの二択の置換は代数的なS2-valued cocycle。
+U⊔U→Uをこのcocycleでfppf降下させると
+representable finite étale次数2のH2^{rul}→H2を得る。
+全cubic/noncubic・任意の有限型非被約基底に有効。
+そのS2商は全H2である。
+一次入力：Stacks Project Tag 0BLY (Lemma95.6.1)、Bの
+thm:global-h2-smooth-finite-typeとprop:relative-ruling-involution。
+証明正本C thm:qa-global-two-ruling-etale-cover。
+
+**有限foundationスタックの実現可能開。**
+BのF0=[U0/(G/K)]は滑らかな有限型3次元Artin stack。
+H2^{rul}上の選択四項foundationのEnd代数は
+flat rank24でU0のopen minor条件を満たし、
+頂点基底の変更・比較同型のスカラーKを剛体化して
+Xi:H2^{rul}→F0の相対射を得る。
+finite foundation代数同型は相対逆dualizingとorbit Homで
+全次数の反Serre環とその二次関係を同一視する。
+Bのprop:relative-h2-stack-recognitionの
+Phi:H2→[X3/PGL9]の全忠実性からpointed exact同型を唯一復元し、
+前段の開閉cocycleで選択foundationを保存することも確認する。
+よってXiは相対groupoidで全忠実、monomorphism。
+Bのthm:artin-foundation-lift/lem:foundation-artin-deformationと
+実際のcubic・commutative・noncubic étale有効chartから
+pointed Abel Artin変形とfinite foundation Artin変形が
+指定還元・Hom基底・同型を含めて同値となる。
+従ってXiは形式的étale。
+局所有限表示かつrepresentableなのでétale、
+étale monomorphismなのでopen immersion
+（Stacks Tags 0616,05W4）。
+像W=F_Hはτ不変なopenで、
+H2^{rul}≅W、全H2≅[W/S2]⊂Q_fndとなる。
+証明正本C thm:qa-intrinsic-h2-open-in-foundation-stack。
+**証明状態：** C本文に相対下降・Artin効果性の証明を記載。
+Bの相対理論自体の全証明の独立再監査、実LuaLaTeX、
+形式証明器検証は未実施。さらにXiがすべての非被約基底で
+厳密にfully faithfulとなるためのKスカラー2-cocycleと
+相対Morita exactnessの細部を独立再点検する価値がある。
+ここで証明した開の**明示的有限判定**は未解決：
+relative Serre root、AS4被覆、AZ/Noetherian性など
+有限個の検査可能条件へ還元する必要がある。
+一cubic境界ではquintuple忘却fiber1でもnormal ruling選択coverは2。
+両者を混同しない。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
@@ -384,7 +417,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の一般開の慣性・微分・pointed fiber、および滑らかな二捩れ特殊座の局所粗型は決定した。非線型geometric以外の境界の全相対比較は未完成。
 
 **再開する数学的核心。**
-一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
+全H2のnormal ruling選択被覆とfinite foundation表現開への開埋込はCに証明を記載した。次は相対Isom/K剛体化/Artin効果性を独立に監査し、実現可能開Wを計算可能な有限条件で決める。一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
 正則半単純開で有限étale次数2・慣性μ₂²同型・KS同型となる。
 さらに稠密開のcanonical S₂ deck商を取れば内在H2そのものに同値。
 片側・交点の二捩れ特殊座での局所慣性と粗分岐に加え、j特殊値の二cubic開でのCM障害除去と一cubic境界fiber一点・A4例外を解決。次は欠けたnoncubic foundationの相対復元、全noncubic境界とのgroupoid比較を調べる。粗分岐とstack的étale性の区別を保つ。

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v2.1
+% 日本語 LuaLaTeX。2026-11-22 / v2.2
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -51,7 +51,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v2.1（Artin形式近傍の二normal foundation復元）}
+\date{2026年11月22日\quad v2.2（全H2のruling選択被覆とfinite foundation開同型）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -125,8 +125,17 @@ level-twoのLegendre変形座標によって同じ法表現・粗分岐が成り
 他方、論文BのArtin foundation持上げと相対mutationにより、
 任意のpointed Artin変形では二つのnormal foundationがそれぞれ
 同型類一意に持ち上がり、相対kernel/cokernel mutationが交換する。
-従って一cubic境界の第二のnoncubic foundationは形式的には消失せず、
-一般有限型基底へのこの二択の代数化が次の課題となる。
+さらにBの有限型smooth atlasの相対foundationを用い、
+二つのrulingを保つか交換するかを相対perfect Homの階数で開閉判定し、
+全内在$\HHstack$上に表現可能な有限étale次数二の
+normal ruling選択被覆$\mathfrak H_2^{\mathrm{rul}}$を構成する。
+その選択foundationの相対End代数は有限foundation表示スタック
+$\mathfrak F_0$への開埋込を与え、実現可能な$S_2$-不変開
+$\mathfrak F_{\HH}$について
+$\HHstack\simeq[\mathfrak F_{\HH}/S_2]$が全相対群oidの同型となる。
+従って一cubic境界でも内在的な第二のnoncubic foundationは
+有限型・非被約基底にわたって二択の一方として存在する。
+ただし実現可能開の具体的な有限方程式による認識は未解決である。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -142,8 +151,8 @@ GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決
 正則半単純な非対角potential族には相対Hodge-Jacobian同型と
 特性係数による相対半点を任意底変更と可換に構成する。
 potentialを選ばない一般quintupleから内在$\HHstack$への
-一cubic境界で欠けたnoncubic foundationの相対的復元、
-全noncubic境界と二rulingのmutationの相対群oidへのcoherentな延長、
+有限foundation表示内の実現可能開を具体的な有限minor/相対AS条件として
+明示すること、avatar/QP表示との全相対認識、
 および局所粗モデルの大域化は未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
@@ -248,6 +257,11 @@ OUの一般安定化群という表現は単位連結成分と全慣性を区別
 定理~\ref{thm:qa-h2-generic-ruling-quotient}で与える。
 Artin形式変形上の二normal foundationの一意持上げは
 命題~\ref{prop:qa-ou-formal-two-ruling-lifts}に示す。
+さらに全H2のnormal ruling選択の有限étale二重被覆は
+定理~\ref{thm:qa-global-two-ruling-etale-cover}、
+finite foundationの実現可能開への開埋込と
+全相対$S_2$商同型は
+定理~\ref{thm:qa-intrinsic-h2-open-in-foundation-stack}に与える。
 二捩れ特別座のspectral方程式と粗局所分岐は
 命題~\ref{prop:qa-ou-spectral-torsion-divisors}、
 定理~\ref{thm:qa-ou-special-reflection-coarse-branch}、

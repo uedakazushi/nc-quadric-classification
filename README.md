@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.97、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.98、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | OU GIT・quiver/QP/avatarと内在H2比較 | v2.1。spectral Kummer、Picard根、一般のquintuple→H2次数2・potential→H2次数8、稠密S₂商を証明。二捩れ特別座のOU不変式D±、片側反射の粗二重分岐、交点のD8×C2慣性と横断A1特異被覆を導出。スタック忘却は該当滑らかな開でétale。二cubic開ではCM特殊jも同じ比較が成立。j0でη=2δのA4例外と一cubic境界のfiber一点を証明。Artin基底で二normal foundationは一意持上げ・相対mutationで交換と証明。有限型非被約基底への代数化は未解決 |
+| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | OU GIT・quiver/QP/avatarと内在H2比較 | v2.2。一般のquintuple→H2次数2・potential→H2次数8、OU二捩れ特殊座・局所粗分岐、CMと一cubic境界を保持。**全H2（cubic/noncubic）でnormal ruling選択の有限étale二重被覆を構成し、実現可能finite foundationの開$\mathfrak F_{\HH}\subset\mathfrak F_0$と$\mathfrak H_2\simeq[\mathfrak F_{\HH}/S_2]$を証明。** 実現可能開の明示的有限判定・全avatar/AS認識・独立監査は残課題 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -80,9 +80,9 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **複素乗法と一cubic境界（C v2.0）。** 滑らかな楕円四つ組で両normalized rulingがcubicなら、複素乗法が増える`j=0,1728`でも追加の位数3/4/6自己同型は三つの次数二線束を保存せず、ruling交換も誘導しない。従って二捩れの交換判定・反射の粗分岐・交点のA1局所型はCM値にも拡張できる。CMでは`j`自身は曲線変形の座標でなく、フルlevel2のLegendre `λ` を用いる（jの零点は3重、j−1728の零点は2重）。一方、`η=2δ`、`δ∉E[2]` の**一cubic境界**では第二foundationがnoncubicとなり、quintuple→H2はpointed étaleのままfiberが一点になるため、一般の有限étale二重射は延長不可。特に`j=0`、非零3-torsion `δ` が位数3のCM自己同型に固定される例 `E:y²=x³+1, δ=(0,1), η=(0,−1)` では、全pointed慣性`A4=E[2]⋊C3`、三次元接の有効C3重み`(2,1,1)`、局所粗形式環は孤立巡回商特異点`k[[a,u,v]]^{C3}`。証明は[論文Cの比較節](papers/quiver-avatar/git_comparison.tex)、有限群・Legendre計算は[検算スクリプト](computations/verify_ou_cm_automorphisms.py)。Bの相対mutationで欠けたnoncubic sheetを補完することが次の課題。
 
-**Artin形式近傍では二ruling選択を復元（C v2.1）。** Bの[Artin foundation持上げ](papers/moduli/artin_foundation.tex)は、各full geometric helixと四項foundationを任意のflat pointed Artin変形へ同型類一意で持ち上げる。Bの[相対ruling mutation](papers/moduli/foundation_stack.tex)は、全normal foundationで定義されるkernel/cokernel構成でありArtin基底変更と整合する。したがって一cubic境界でも二つのnormal foundationの形式持上げは互いに非同型のまま存在し、mutationで交換される（[論文Cの命題](papers/quiver-avatar/git_comparison.tex) `prop:qa-ou-formal-two-ruling-lifts`）。cubic quintupleの忘却では第二sheetを失うが、normal foundation自体は形式的に失われない。**未解決：** この形式二選択の有限型非被約基底への代数化、選択を含む全相対groupoid比較、noncubic境界へのextension。
+**全内在的H2の二ruling被覆とfinite foundation開認識（C v2.2）。** Bのfinite type smooth atlasはcubic/noncubicの各chartにflat compact normal foundationを持ち、相対mutationが第二foundationを任意の非被約基底変更と可換に構成する。atlasの関係群oid上で$\operatorname{RHom}(X,X')$の導来fiberが$k[0]$または零となるため、開閉分解から$S_2$-cocycleを作り有限étale次数2の$\mathfrak H_2^{\mathrm{rul}}\to\mathfrak H_2$へfppf降下。さらに相対End代数・反Serre環の全忠実性・Bの有効Artin/étale chartから、$\mathfrak H_2^{\mathrm{rul}}$はfinite foundationの滑らかな表示スタック$\mathfrak F_0$の**開部分$\mathfrak F_{\HH}$**に同型。**全相対スタック同型$\mathfrak H_2\simeq[\mathfrak F_{\HH}/S_2]$** を証明（[論文Cの定理](papers/quiver-avatar/git_comparison.tex)：`thm:qa-global-two-ruling-etale-cover`, `thm:qa-intrinsic-h2-open-in-foundation-stack`）。一cubic境界ではquintuple側の二枚が一枚になるが、内在的選択被覆はnoncubic foundationを含む二枚を維持する。これは$\mathfrak F_0$の全点が実現可能であることや、全avatar・potential群oidとの同値ではない。次は実現可能開を有限な計算条件で明示し、境界と全相対AS認識を調べる。
 
-BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidalでは1点。OU楕円z2のE[2]平行移動は四つの根に対応し、**対角滑らかな一般開**ではOU四重torsorとPicard根の一致を証明済み。一般quintuple→内在H2の一般全慣性・接同型・二点fiber、さらに滑らかな楕円型の二捩れ特別座とその局所粗分岐は解決。次は一cubic境界で欠けたnoncubic foundationを相対的に補完し、全noncubic境界での慣性・fiberを調べる。nodalを含む連結基底に有限OU射と非有限Picard根をそのまま同型に延長できない。検算：[有限群](computations/verify_ou_fourfold.py)、[半点・j](computations/verify_ou_spectral_halving.py)、[Hodge符号](computations/verify_ou_hodge_ruling.py)。
+BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidalでは1点。OU楕円z2のE[2]平行移動は四つの根に対応し、**対角滑らかな一般開**ではOU四重torsorとPicard根の一致を証明済み。一般quintuple→内在H2の一般全慣性・接同型・二点fiber、さらに滑らかな楕円型の二捩れ特別座とその局所粗分岐は解決。全H2のnormal foundation二択と有限表示開への比較を得た。次はその実現可能開の計算的有限判定と、noncubic境界での明示的慣性・fiberを調べる。nodalを含む連結基底に有限OU射と非有限Picard根をそのまま同型に延長できない。検算：[有限群](computations/verify_ou_fourfold.py)、[半点・j](computations/verify_ou_spectral_halving.py)、[Hodge符号](computations/verify_ou_hodge_ruling.py)。
 
 ## 八本・十本・十二本矢と avatar
 

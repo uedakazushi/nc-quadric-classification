@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.63。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.64。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -177,6 +177,8 @@ k[[a,u,v]]^{C3}。これは全noncubic境界の定理ではない。
 通常のOU2014やVdB2011の定理として未確認のまま帰属させない。
 
 **Artin変形と相対rulingの内部入力。** Cのprop:qa-ou-formal-two-ruling-liftsは、論文Bのthm:artin-foundation-lift（De Deken--Lowen 2011 Theorem 5.13の適用、flat geometric helixの同型類一意持上げ）と、prop:relative-ruling-involution/prop:ruling-involution-mutation（base change自然なkernel/cokernel mutation）から、全H2点の二normal foundationがArtin形式近傍で互いに非同型に持ち上がることを導く。これは文献の一般的なhelix変形定理の新規主張とは区別する。有限型の非被約基底での選択スタックの代数化、非cubic全境界への群oid同値は引き続き未証明。
+
+**有限étale二択の降下と開埋込：一般理論の一次入力。** Stacks Project [Tag 0BLY, Lemma95.6.1](https://stacks.math.columbia.edu/tag/0BLY) は有限étale morphismのfppf効果的降下を与える。[Tag 0616, Lemma76.16.8](https://stacks.math.columbia.edu/tag/0616) は代数空間の局所有限表示・形式的étaleとétaleの同値、[Tag 05W4, Lemma67.51.2](https://stacks.math.columbia.edu/tag/05W4) はétale universally injective morphismの開埋込性を示す。今回これらの本文を一次web版で確認した。数学的固有入力はBの全H2 smooth atlas・relative perfect Morita/反Serre・Artin foundation deformation/効果的étale chart、およびCで構成した相対Homの二選択の開閉cocycleである。Cに全H2のfinite étale ruling coverと、選択付きH2から有限foundationスタックの実現可能開への開埋込・S2商同型を証明として統合した。**未確認点**：Bの全原稿にわたる相対perfectness/Artin効果性の全面独立監査、非被約基底のKスカラー比較の独立形式検証、有限minorによる実現可能開のexplicitな認識条件。既存の一般定理と本研究固有のH2群oid比較を区別し、結果の新規性は未確認。
 
 ## 研究の位置
 
