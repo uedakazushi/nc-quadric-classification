@@ -113,14 +113,37 @@ $\Pi_3(B)=T_B\RHom_{B^e}(B,B^e)[2]$を考える。
 \cite[Theorem 6.10]{KellerDeformedCY2011}の
 未変形の場合はrelation Ginzburg dg代数と
 $\Pi_3(B)$の準同型を与える。
-その$m$番目のtensor成分は
-$S_B^{-m}[2m]$の全周期Homとして計算できる。
-$m=0$では有限foundationのtilting性、
-$m\ge1$では
+$\Theta=\RHom_{B^e}(B,B^e)[2]$と書く。
+有限大域次元二の$B$のSerre関手を$S_B$とすれば、
+$\Theta$が表す逆Serre双加群の作用は
+$s=S_B^{-1}[2]$である。
+したがって四つの標準射影対象$E_i$について
+\[
+ e_j\bigl(\Theta^{\otimes_B^{\mathbf L}m}\bigr)e_i
+  \simeq\RHom_B(E_i,s^m E_j),\qquad
+ 0\le i,j\le3 .
+ \tag{CY-components}\label{eq:qa-as10-cy-tensor-components}
+\]
+この式は$\Theta$の双側perfect代表と
+有限Morita同値で計算するため、同型はdgの水準にある。
+$m=0$は通常代数$B$の成分なので次数零。
+$m\ge1$なら$s^mE_j=E_{j+4m}$であり、
+$j+4m>i$である。
+square/rotated/cubic/独立AS10のいずれでも
+該当する最小分解から得た
+全整数exceptional helixの\emph{前向き}
+$\RHom$は次数零に集中する。
+この最後の点は単に有限foundationがtiltingである
+という仮定からは従わない。
 前節~\ref{lem:qa-as-serre-unique-recovery}または
-前補題の前向きExt消滅によって
-次数零だけに集中する。
-従って直和も次数零集中を満たす。
+補題~\ref{lem:qa-as10-hilbert-foundation}の
+全整数Serre復元と前向きExt消滅を使用する。
+各$m$について全四頂点pairで次数零集中なので
+$\Pi_3(B)=\bigoplus_{m\ge0}
+ \Theta^{\otimes_B^{\mathbf L}m}$も
+次数零集中となる。
+これは未変形completionの計算であって、
+一般deformation parameterのCY性を用いない。
 ここで用いたのは未変形completionであり、
 任意のdeformation parameterのCY性ではない。
 
@@ -136,7 +159,10 @@ $m\ge1$では
 
 \begin{lemma}[mutation後の最小AS分解]
 \label{lem:qa-as10-keller-yang}
-前補題のQPを、loopとoriented $2$-cycleを通らない
+前補題のrelation QPのpotentialは
+最小関係に一つのdual矢を乗じるため
+元の矢数長で三以上であり、\emph{reduced}である。
+このQPを、loopとoriented $2$-cycleを通らない
 指定のmutation頂点で変換すると、
 reduced QPのGinzburg dg代数も次数零に集中する。
 その正次数付きJacobian algebraの頂点単純加群は
@@ -158,6 +184,9 @@ mutation頂点から始まるcyclic pathが存在しないこと、
 (c3)については、loopのない有向閉路には
 mutation頂点以外の頂点が含まれるので、
 各閉路の表示の始点をその頂点へ巡回移動すればよい。
+従って入力のpotentialがreducedであることと
+(c1)--(c3)をすべて確認した上で
+\emph{完備版}のTheorem 6.2を適用する。
 したがって両場合で(c1)--(c3)を満たし、
 次数零集中は前補題が供給する。
 squareの指定中間頂点にloop・2-cycleはなく、
