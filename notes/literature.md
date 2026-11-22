@@ -1,9 +1,9 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.72。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.73。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
-## 原稿C v3.2：avatar–AS分類の出典と外部入力
+## 原稿C v3.3：avatar–AS分類の出典と外部入力
 
 **研究の直接の入力：** 大川新之介・植田一石、
 未公刊日本語草稿『非可換二次曲面の二つの反標準avatar』
@@ -27,14 +27,27 @@
   [DOI:10.1515/crelle.2011.031](https://doi.org/10.1515/crelle.2011.031)、
   **Theorem 6.10のundeformed case**を有限大域次元2の
   relation Ginzburgと3-CY completionの比較に用いる。
+  仮定は有限quiverと矢idealの二乗に入るminimal関係、
+  finite-dimensional algebraのglobal dimension$\le2$。
+  $W=\sum_r r\rho_r$とし、変形パラメータ$c=0$とする。
+  Cでは$\Theta=\RHom_{B^e}(B,B^e)[2]$の
+  各tensor冪と全整数helix forward RHomの一致を
+  四頂点成分ごとに確認し、$m\ge1$で
+  $j+4m>i$を使う。内部正次数の完備化も別に扱う。
   一般のdeformed completionについて訂正文があるため、
   Cの適用をundeformedに限定する。
 - Bernhard Keller–Dong Yang, *Derived equivalences from mutations of
   quivers with potential*, Adv. Math. **226** (2011), 2118–2168,
   [DOI:10.1016/j.aim.2010.09.019](https://doi.org/10.1016/j.aim.2010.09.019)、
   **Theorem 6.2**をloop/2-cycleを通らない指定頂点のmutationに適用。
-  dg由来同値だけからAS正則性を言わず、
-  Ginzburgの次数零集中と単純最小分解の完全性を確認する。
+  同論文§6.1は**reduced potential**と完備Ginzburgの
+  $H^{\ne0}=0$を先に要求する。
+  relation potentialはminimal関係length$\ge2$と
+  dual矢を掛けたlength$\ge3$なのでreduced。
+  (c1)--(c3)は同論文§2.4の正確な条件であり、
+  いずれもCで明記した。dg由来同値だけから
+  AS正則性を言わず、Ginzburgの次数零集中と
+  通常の単純最小分解への降下を別々に論じる。
 - Twisted homogeneous coordinate ringの標準Noether定理を
   ASから得る四次正規正則familyの商に用いる。
 
@@ -87,6 +100,22 @@ perfect複体の持上げによりnodal/I2へ拡張する。
 新規性や形式的な導来圏の証明器による検証ではない。
 完全なカテゴリカル／stack相対化と
 内在的O-marked H2へのpointed同値は別の研究課題。
+
+**二重壁の局所scheme構造（C v3.3、独自の局所計算）。**
+元PDF§15.4・§42は二乗法の階数壁および
+二重壁のsmooth/nodal/I2分類を与える。
+Cではさらに、固定した滑らかな楕円曲線と
+次数二pencil$F$のパラメータ$\eta=GF^{-1},P$に対し
+二壁を$\eta=P,\eta=P^{-1}$という
+\emph{scheme-theoretic Fitting条件}として書いた。
+自明線束の一次変形の接続写像
+$H^0(\OO_D)\to H^1(\OO_D)$が変形類とのcup積であるため
+壁は被約Cartier、非零二捩れ点で微分行列式$-2$。
+交点のscheme長はsmooth/nodal/I2で$3/1/1$、
+smooth楕円曲線族では非零E[2]が有限étale三次となる。
+これは固定曲線／標識付きavatar側の結果であって、
+論文Bの内在的Artin境界とのstack同型ではない。
+本計算の先行研究に対する包括的新規性は未確認。
 
 **区別：** 12本矢は8本のfinite foundation矢＋4本の
 relation-dual戻り矢であることが多く、
