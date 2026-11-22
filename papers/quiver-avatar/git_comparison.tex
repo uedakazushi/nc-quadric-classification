@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.1（対角potential点曲線を二quadric完全交叉で同定）
+% 2026-11-22 / v1.2（点曲線の二quadric完全交叉とGIT不変式によるjを同定）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -556,7 +556,7 @@ Picard平方根torsorとの同一性は結論しない。
 \begin{proposition}[potential quintupleの点曲線とquadric pencil]
 \label{prop:qa-ou-pointcurve-quadric-pencil}
 OUのpotentialから作るgeometric quintuple
-$(V_0,V_1,V_0,V_1,\Bbbk\Phi)$ の、滑らかな非線型
+$(V_0,V_1,V_0,V_1,\kk\Phi)$ の、滑らかな非線型
 点曲線を$C$とする。ここで$V_i$は二次元、
 $U=V_0^\vee\otimes V_1^\vee$とし、
 $U$上のdecomposability quadricを$q=0$と書く。
@@ -629,6 +629,50 @@ $H_C\mathcal L_2^{-1}$である。
 $\infty_+\mapsto\mathcal L_0$を指定すると、
 $\Pic^2(C)$の原点を$\mathcal L_0$に置いた
 Jacobianとの同型が定まる。
+\end{proof}
+
+\begin{corollary}[quintuple点曲線の$j$-不変量のGIT公式]
+\label{cor:qa-ou-quintuple-j-invariants}
+OU \cite[\S3, (3.12)--(3.16)]{OU2014} の
+重み付き不変量$f_2,f_4,f_6,g_4$を用いて
+\[
+ e_1=f_2,\quad e_2=\frac{f_2^2-f_4}{2},\quad
+ e_3=\frac{f_2^3-3f_2f_4+2f_6}{6},\quad
+ e_4=g_4^2
+\]
+と置き、さらに
+\[
+ \begin{split}
+ I&=e_2^2-3e_1e_3+12e_4,\\
+ J&=-2e_2^3+9e_1e_2e_3-27e_3^2
+       -27e_1^2e_4+72e_2e_4
+ \end{split}
+ \tag{OU-IJ}\label{eq:qa-ou-quintuple-binary-quartic-IJ}
+\]
+と定める。$\prod_i(x_i^2-x_j^2)$が非零の開では、
+quintuple点曲線$C$のJacobianの$j$-不変量は
+\[
+ j(C)=\frac{1728\cdot4I^3}{4I^3-J^2}.
+ \tag{OU-j}\label{eq:qa-ou-quintuple-j}
+\]
+従って、対角表示から得たspectral曲線の
+$j$がquintuple曲線の$j$と一致することは
+単なる一致候補ではなく、具体的な不変式として確認できる。
+\end{corollary}
+\begin{proof}
+$e_i$は$x_1^2,\ldots,x_4^2$の基本対称式であり、
+上の表示はNewtonの恒等式である。
+従ってquadric pencilの判別式は
+$f(t)=t^4-e_1t^3+e_2t^2-e_3t+e_4$となる。
+この二元四次形式の古典的不変量は
+式~\eqref{eq:qa-ou-quintuple-binary-quartic-IJ} の$I,J$で、
+判別式は$(4I^3-J^2)/27$、$j$は表示した式である。
+命題~\ref{prop:qa-ou-pointcurve-quadric-pencil} より
+この判別式曲線は$\operatorname{Jac}(C)$に同型である。
+任意の四つの相異なる枝点の交比を$\lambda$とすると
+同じ式は
+$256(1-\lambda+\lambda^2)^3/
+ (\lambda^2(1-\lambda)^2)$に一致する。
 \end{proof}
 
 \begin{remark}[残る符号と降下の問題]

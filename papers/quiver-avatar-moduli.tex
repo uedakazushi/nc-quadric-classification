@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.8
+% 日本語 LuaLaTeX。2026-11-22 / v0.9
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v0.8（spectral楕円曲線の明示Kummer模型）}
+\date{2026年11月22日\quad v0.9（spectral Kummerとquintuple点曲線の二quadric鉛筆）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -83,8 +83,10 @@ Picard二等分はE[2]-torsorの次数4となる。
 節点・尖点へ退化するとPicard根の幾何fiberは2点・1点へ変わる。
 OU対角四重射自体は、二乗座標を分岐点とするspectral楕円曲線上で、
 明示したsectionの二等分Kummer torsorに幾何的に同型である。
-一方でquintupleの点曲線のPicard根との比較は未解決であり、
-この二つの幾何的同型の対象を区別する。
+対角potentialのgeometric quintuple点曲線は二quadric完全交叉であり、
+その鉛筆の判別式が同じspectral曲線となるため、Jacobianとの同型と
+GIT不変量による$j$の公式も得る。ただし$ruling$の符号と相対降下を
+まだ検証しておらず、quintupleのPicard根とのtorsor同型は未証明である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。

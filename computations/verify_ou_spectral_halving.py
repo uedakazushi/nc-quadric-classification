@@ -59,10 +59,30 @@ def main():
         assert point_data(tuple(reversed(y))) == points[sign]
     assert len(points) == 4
     assert len(set(points.values())) == 4
+    # Independent discriminant/j check for the diagonal intersection
+    # q(u)=sum u_i^2=0 and q(Xu)=sum x_i^2 u_i^2=0.
+    a = tuple(z*z for z in x)
+    e1 = sum(a)
+    e2 = sum(prod(c) for c in combinations(a, 2))
+    e3 = sum(prod(c) for c in combinations(a, 3))
+    e4 = prod(a)
+    I = e2*e2 - 3*e1*e3 + 12*e4
+    J = (-2*e2**3 + 9*e1*e2*e3 - 27*e3**2
+         - 27*e1**2*e4 + 72*e2*e4)
+    quartic_j = Fraction(1728*4*I**3, 4*I**3-J**2)
+    cross = Fraction((a[0]-a[2])*(a[1]-a[3]),
+                     (a[0]-a[3])*(a[1]-a[2]))
+    legendre_j = 256*(1-cross+cross**2)**3/(cross**2*(1-cross)**2)
+    disc = prod((a[i]-a[j])**2
+                for i, j in combinations(range(4), 2))
+    assert 4*I**3-J**2 == 27*disc
+    assert quartic_j == legendre_j == Fraction(3796416, 1225)
     for sign, (t0, y0) in sorted(points.items()):
         print(f"{sign}: Q=(t={t0}, y={y0})")
     print("PASS: quartic factorization, four distinct halves, "
           "permutation and global-sign invariance (exact Q)")
+    print(f"PASS: pencil discriminant and invariant j={quartic_j} "
+          "(binary quartic = Legendre, exact Q)")
 
 
 if __name__ == "__main__":

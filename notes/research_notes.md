@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.82（A v1.69・20節、B v0.39・31節、C v0.8）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.83（A v1.69・20節、B v0.39・31節、C v0.9）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -68,8 +68,30 @@ t0=−s3/s1、Q=(t0,−q(t0)) は 2(Q−O)∼P+−O。
 証明正本はCのthm:qa-ou-spectral-kummerと
 prop:qa-ou-spectral-branch-not-sign。
 再現は computations/verify_ou_spectral_halving.py。
+**点曲線とのJacobian比較も進展した。**
+potential Φの縮約線型変換をq-自己随伴Xとして表すと、
+point curve C は P³中の {q(u)=q(Xu)=0}。
+対角X=diag(x_i)では二次式Σu_i²=Σx_i²u_i²=0となり、
+quadric pencil det(tI−X²)=∏(t−x_i²) の二重ruling被覆は
+Pic²(C)に同型。∞の二rulingはL0,L1、t=0は
+L2とH_C L2^-1、H_C=L0L1。
+従ってE_spとJac(C)は**対角potential atlas上で実際に同型**。
+さらにOUのf2,f4,f6,g4からe_iをNewton恒等式で作り、
+I=e2²−3e1e3+12e4、
+J=−2e2³+9e1e2e3−27e3²−27e1²e4+72e2e4、
+j=1728·4I³/(4I³−J²)を導出した。
+有理点x=(1,2,3,5)でj=3796416/1225をcross ratioと照合。
+証明正本はC prop:qa-ou-pointcurve-quadric-pencil と
+cor:qa-ou-quintuple-j-invariants。
+**残る幾何的核心**は∞の第一rulingの規約の下で
+t=0のy=+det(X)がL2に対応するかという向きと、
+このJacobian同型・Nの選択がquintupleの
+基底変更・スタックのG作用へcoherentに降下するかである。
+従って元のOU/Picard torsor同型はまだ未証明。
+
+以前の未解決点のうち「E_spとJacobianのjが等しいか」は解決。
 重要な未解決点はこのE_sp/P+と、geometric quintupleの
-Jacobian/N=L2 L0^-1との**実際の相対幾何同型**であり、
+N=L2 L0^-1の**sheet選択および相対降下**であり、
 spectral Kummerの解決を元々のPicard比較の解決としない。
 
 **Picardの半点とnodal境界障害。**
@@ -115,8 +137,9 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
 **再開する数学的核心。**
-まずspectral E_spの相対$j$とP+を、OU §4の幾何的quintuple族の
-相対JacobianとNの下で同定できるか、実際の不変式で調べる。
+対角potential上で確認したJac(C)≅E_spとj公式を入力に、
+まず∞第一rulingとt=0のy=detXがL2を与える向きを
+局所SO4/Spin4規約で検証し、群作用のcoherent降下を示す。
 そのうえで(G_ell,H_ell)と§5の(G,H)の群対同型を
 実際の同変双有理対応へ昇格する。
 群局所系の同定とKummer class一致を計算し、

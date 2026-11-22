@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.84。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv0.8。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.85。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv0.9。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。局所good moduliの降下もこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -16,17 +16,17 @@
 
 **P3：文献比較と公表編集。** Belmans, *Hochschild cohomology of noncommutative planes and quadrics*（JNCG 13 (2019), 769–795, doi:10.4171/JNCG/338）を主にcubic側の既知HH計算として明記する。VdB、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa OWR2022、Okawa–Ueda 2014の既知の分類・line-bundle格子・GITを本研究の追加成果から区別する。AのIntroductionは分類・忘却・noncubicに、Bは四つの主定理群（代数性、境界相対同値、good/coarse moduli、形式局所構造）に焦点を当て、必要な証明を削らず本文を読みやすく再配置する。LuaLaTeX/latexmkで三稿ごとにPDF・SyncTeXと表示を確認し、未実施なら明記する。新規性の包括調査・第三者査読は別状態とする。
 
-**P4：論文Cの中心研究——OU四重GIT射からquintupleのPicard根への幾何的比較。** OU2014 §5 (5.3)の四固有値S4_coord（(5.8)直後にはS3と印刷され不整合）、有効符号群V=F2²、G=V⋊S4（位数96）、monodromy群S4_monとtwisted V-torsor構造を証明済み。§4のE[2]×E[2]群との抽象対同型もある。**新たな実成果：**OU対角x_iの二乗を分岐点とするspectral楕円曲線E_sp:y²=∏(t−x_i²)、原点∞+、P+=(0,∏x_i)をG商へ降下し、OU四重被覆を[2]^{-1}(P+)と明示的に同型にした。s_iをx_iの基本対称式とすると半点はt=−s3/s1、y=−(t²+s2t+s4)で、除数計算により二等分を証明。単なる四分岐点のtorsorはmonodromy核がVで、OU側K4と異なり同型でない。**未解決：** E_spと実際のgeometric quintupleのJacobianの同型、および−P+とN=L2L0^{-1}の対応を構成しなければ、OU四重射=論文Bの[-2]根とは結論できない。nodalを含む全基底では有限OU射と非有限Picard根の同一性は不可能。次は両楕円族のjと指定点・2-torsionの対応をOU §4–5の実表示上で検証する。剛体化後の慣性・微分・pointed fiberとA/Bの公表前監査も継続。
+**P4：論文Cの中心研究——OU四重GIT射とquintuple Picard根の相対同型。** 原論文OU2014 §5は(5.3) S4と(5.8)直後のS3印刷が不整合で、(5.3)からS4訂正解釈を採用。群G=(F2²_sign)⋊S4_coord（位数96）、非Galois四重射のS4_monとtwisted V-torsor、楕円§4群対との抽象同型を確立。**今回の進展：** 対角値x_i²のspectral楕円曲線E_sp:y²=∏(t−x_i²)、O=∞+、P+=(0,∏x_i)の[2]^{-1}(P+)をOU四重射と明示半点で同型にした。さらにpotential quintupleの点曲線CはP³内のq(u)=q(Xu)=0（Xはq自己随伴な縮約）であり、そのquadric pencil det(tI−X²)=∏(t−x_i²)のruling被覆Pic²(C)は**同じE_sp**。∞のrulingはL0,L1、t=0のrulingはL2,H_C L2^-1なので、対角表示上Jac(C)との同型とOUのf2,f4,f6,g4によるj公式も証明。**まだ必要：** ∞第一rulingの規約でP+=(0,detX)が実際にL2に当たるorientation signの計算と、群作用・任意底変更へのcoherent降下。その後にPicard[-2]根torsorとの比較を完成する。nodalを含む全基底への単純延長は不可能。剛体化後の慣性・微分・pointed fiberとA/Bの公表前監査は継続。
 
 **P5：標識忘却・偏極認識・Cの独立性。** noncubic中央二重平方族に対する\(\mathcal O\)の候補と自己同値作用を記述し、楕円型の既存格子結果と接続する。\(X_{\mathrm{as}}\to X_3\) の一致点の横断方程式と局所閉性を調べる。Cでは有限foundation/weighted QP/avatarから、同一基底上でheart、exact Serre根、AZ、全軌道AS4を認識する有限条件を求め、まずcubicの有効開で相対比較定理を証明する。有限代数やderived同値だけでheartまで得たとしない。
 
-**直ちに着手する一手：** 論文Cのthm:qa-ou-spectral-kummerとprop:qa-ou-spectral-branch-not-signの明示的なquartic因子分解・主因子計算を入力に、OU §4の楕円四つ組のJacobianがE_spと同じものかをまず不変式（j、level-2局所系、標識付き点）で比較する。同型が得られたときだけP+とN=L2L0^{-1}の同変半点・Kummer class一致を調べる。得られない場合はその差を反例または障害として特定する。A/Bの論文監査、Cの全体の実組版・独立監査、新規性確認は引き続き別作業。
+**直ちに着手する一手：** Cのprop:qa-ou-pointcurve-quadric-pencilとcor:qa-ou-quintuple-j-invariantsで対角potential側のJacobian同型・j公式が証明できた。次はSO4の向き付き4空間とquintupleのV0/V2 ruling規約に従って、t=∞の∞+↔L0を固定したときt=0のP+=(0,detX)↔L2となることをSpin4/Cliffordまたは明示行列で確認する。次いでG作用と相対基底変更を含むgroupoid-level descentおよびOU class=Picard Kummer classを証明する。orientationが逆なら補正付きの正しい関係を与える。A/B公表前監査・全面組版・新規性調査は別状態。
 
 ## 公表用原稿の三論文体制（2026-11-22に確定）
 
 - **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
-- **C・表示と内在的モジュライの比較：** 論文C v0.8。非線型quintupleからH2への相対射と中心Gm⁴剛体化、OU四重射のS4モノドロミーとV-torsorを保持。二乗対角値に由来するspectral楕円曲線E_sp上の**実際のKummer四重射同型**と明示半点を証明（数値は独立厳密検算）。分岐点四重射とのmonodromyの違いも証明。quintuple Jacobianとの相対同型・N対応、剛体化後の慣性・pointed fiberは未解決。A/Bは引き続き分類・Artin理論を供給する。
+- **C・表示と内在的モジュライの比較：** 論文C v0.9。非線型quintuple→H2の相対射・Gm⁴剛体化、OU四重射のtwisted V-torsorとspectral Kummer同型を保持。**今回さらにCの点曲線を二quadric交叉として特定し、判別式曲線E_sp≅Pic²(C)（対角表示上）とGIT不変式のjを証明。** 残るのはP+のruling符号と相対降下、quintuple[-2]根へのtorsor同型、剛体化後の慣性・pointed fiber。A/Bは分類・Artin結果を提供。
 
 **公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは八・十・十二本矢、QPとavatarの表示を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
 
