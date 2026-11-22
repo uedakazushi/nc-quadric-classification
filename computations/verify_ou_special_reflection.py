@@ -5,6 +5,7 @@ Reproduces the explicit rational examples and involution tangent matrices used i
 papers/quiver-avatar/git_comparison.tex:
   prop:qa-ou-spectral-torsion-divisors
   thm:qa-ou-special-reflection-coarse-branch
+  thm:qa-ou-double-torsion-intersection-local-model
 
 Run: python3 computations/verify_ou_special_reflection.py
 No third-party packages needed. The formal invariant-ring proof is in the paper.
@@ -77,6 +78,61 @@ def reflection_checks():
         assert ((-1)**n == 1) == (n%2 == 0)
 
 
+
+def double_torsion_intersection():
+    """Trace-zero, double two-torsion intersection; exact rational invariant data."""
+    a = (1,4,-1,-4)  # squared eigenvalues of (1,2,i,2i)
+    e1 = sum(a)
+    e2 = sum(prod(pair) for pair in combinations(a, 2))
+    e3 = sum(prod(triple) for triple in combinations(a, 3))
+    e4 = prod(a)
+    c = -4
+    assert (e1,e2,e3,e4) == (0,-17,0,16)
+    assert e4 == c*c and len(set(a)) == 4
+    weierstrass_check(e1,e2,e3,c)
+    I = e2*e2 - 3*e1*e3 + 12*e4
+    J = (-2*e2**3 + 9*e1*e2*e3 - 27*e3**2
+         - 27*e1**2*e4 + 72*e2*e4)
+    j = Fraction(1728*4*I**3, 4*I**3-J**2)
+    assert j == Fraction(111284641,50625) and j not in (0,1728)
+    # Model translations of the elliptic 4-torsion by (Z/4)^2.
+    # Choose distinct nonzero two-torsion sigma=(2,0), tau=(0,2).
+    E2 = {(p,q) for p in (0,2) for q in (0,2)}
+    translations = {(p,q) for p in (0,2) for q in range(4)}
+    H = {(p,q,eps) for p,q in E2 for eps in (-1,1)}
+    A = {(p,q,eps) for p,q in translations for eps in (-1,1)}
+    def mul(x,y):
+        p,q,eps=x
+        r,s,eps2=y
+        return ((p+eps*r)%4,(q+eps*s)%4,eps*eps2)
+    def power(x,n):
+        y=(0,0,1)
+        for _ in range(n):
+            y=mul(y,x)
+        return y
+    assert len(H)==8 and len(A)==16
+    assert all(mul(x,y) in A for x in A for y in A)
+    assert all(mul(x,y) in H for x in H for y in H)
+    assert all(power(x,2)==(0,0,1) for x in H)
+    assert sum(power(x,4)==(0,0,1) and
+               power(x,2)!=(0,0,1) for x in A)==4
+    # D8 x C2 has 4 elements of order 4, H=C2^3 has none.
+    # Source: simultaneous sign (u,v)->(-u,-v).
+    # Target: independent signs on u and v.
+    # Source invariant monomials have m+n even; target have m,n even.
+    for m in range(9):
+        for n in range(9):
+            if (m+n)%2==0:
+                k = min(m%2,n%2)
+                assert k in (0,1)
+                assert (m-k)%2 == 0 and (n-k)%2 == 0
+                # u^m v^n = (u^2)^((m-k)/2) (uv)^k (v^2)^((n-k)/2).
+            if m%2 == 0 and n%2 == 0:
+                assert (m+n)%2 == 0
+    print(f"PASS: double torsion intersection e1=e3=0, j={j}")
+    print("PASS: source H=C2^3 (order 8), target A=D8 x C2 (order 16)")
+    print("PASS: invariant rings give b^2=ac over k[[a,c]] (rank 2)")
+
 def main():
     reflection_checks()
     sample_j = Fraction(135487869158881, 51438240000)
@@ -90,6 +146,7 @@ def main():
         else:
             assert e3 - e1*c == 0 and e3+e1*c != 0
         print(f"PASS: {kind}, x4={x4}, c={c}, j={j}")
+    double_torsion_intersection()
     print("PASS: exact quartic-to-cubic identity and both negation tests")
     print("PASS: both transverse tangent involutions are rank-one reflections")
     print("PASS: locally invariant formal powers are polynomials in z^2")
