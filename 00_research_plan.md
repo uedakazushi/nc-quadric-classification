@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.39。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.22。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.40。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.23。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は論文C（AS正則Z代数・avatar・H2・QP/GIT比較）の完成である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -8,13 +8,15 @@
 
 **不変の最優先目標：** `papers/nc-quadric-avatar.tex` を、指定した最小分解型のAS正則Z代数・幾何avatar・構造対象付きH2・有限QP／既存GITを、同型類だけでなく相対groupoid・慣性・heartまで比較できる、証明を備えた公表可能な独立論文へ完成させる。A/Bは論理的入力として使う。Cの中心問題が残る間、A/Bの公表前監査だけを目的とする作業へ研究優先度を戻さない。
 
-**Cの達成基準：** (C1) 既存の8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲を完全に記述する。(C2) 二cubic chartを含む全H2のgood moduliの中央affine補完・局所特異性・noncubic像を不変式環で記述する。(C3) 全相対AS/QP群oidについて、比較が成り立つ最大の明示的領域で同型層と慣性、矢消去・potential right-equivalence、相対heartを証明し、成立しない範囲には反例または正確な障害を与える。(C4) Cの定理と全証明・先行研究の一次比較を整理し、LuaLaTeX組版を確認して公表可能性を独立監査する。**C2の明示環・中央chart・二商特異点は原稿上で達成した（独立監査・組版は未実施）。C3とC4は未達成であり、C全体を完成したとは扱わない。**
+**Cの達成基準：** (C1) 既存の8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲を完全に記述する。(C2) 二cubic chartを含む全H2のgood moduliの中央affine補完・局所特異性・noncubic像を不変式環で記述する。(C3) 全相対AS/QP群oidについて、比較が成り立つ最大の明示的領域で同型層と慣性、矢消去・potential right-equivalence、相対heartを証明し、成立しない範囲には反例または正確な障害を与える。(C4) Cの定理と全証明・先行研究の一次比較を整理し、LuaLaTeX組版を確認して公表可能性を独立監査する。**C2の明示環・中央chart・二商特異点は原稿上で達成（独立監査・組版は未実施）。C3の可逆cubic開における八矢QPの相対groupoid・有限foundationの同値および余剰慣性は原稿上で決着した。C3のrank三壁・noncubicでの全AS/QP比較、C4は未達成であり、C全体を完成したとは扱わない。**
 
-**直近の実行順：** 二つのGram二次形式のpencilで全半不変環を求め、中央affine chartの重み零環とnoncubic閉曲線、二孤立商特異点をCに統合した。今後の第一の未解決核心はC3の**全相対AS/QP群oid**である。まず既証明の可縮pairに伴う $\mathcal P_{12}^{\lambda\mu\ne0}\simeq\mathcal P_8\times B\mathbb G_m^2$ （`prop:qa-stabilized-inertia`）を前提とし、raw QP groupoidはfinite foundationやH2と忠実には同値にならないことを保持する。そのうえで二つの余剰トーラスを剛体化した後の実際の $\mathcal P_8$ と可逆cubic finite foundationの同型層・頂点スカラー・potentialの規格化を比較する。次にrank3壁へ延長し、全相対heartと比較する。難しい大域同型を未証明のまま宣言せず、成立域と反例・障害を区別する。研究の区切りでは対象repoを先にmainへ保存し、research-hubの本研究の重点・再開先を更新する。一般の保存許可・正本運用は下の恒常原則とAGENTS.mdに従う。
+**直近の実行順：** C3の可逆cubic開では、四次八矢potentialを第四矢群で微分した階数二部分束から、全有限積を持つ階数24のdirected foundationをfppf局所で復元した。全Isom・慣性の同値 `[P_8^(2)/GL_2^4] ≃ [Gr(2,8)/GL_2^3] ≃ F_8^lin`、三頂点scalarの剛体化後の `F_8 ≃ [Gr(2,8)/PGL_2^3]`、幾何cubic開上のH2へのGm³-gerbeを原稿で証明した（[C3の証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)）。二cubic正規化 T,T⁻¹ は一般には頂点固定right-equivalenceでなく、mutation/window変更による貼合せを要する。既証明の可縮二pairはraw十二矢QPへさらにB(Gm²)の余剰慣性を与える。**次はrank三のscheme壁とnilpotent massを含む十・十二矢QPで、非最小関係・全周期AS完成・right-equivalenceの相対Isomを比較する。** 特に一次変形δ=εで非平坦な最小矢層と、有限代数の全積がflatであることを両立させる非最小QPを出発点とする。相対heartを同一視するには実際のAZ/Serre比較を要する。A/Bは必要な入力として使う。Cの独立監査、先行研究比較、現行LuaLaTeX組版も未実施。研究の区切りにはまず対象repoのmainを保存し、その事実に基づいてhubを更新する。
 
 ## Cの現行実行単位
 
-**全半不変式環と中央chart（C2の原稿上の到達点）。** Gram pencil det(X fJfᵗ+Y gJgᵗ)=F²X⁴+I₁X³Y+I₂X²Y²+I₃XY³+G₀²Y⁴ を導入した。共通線形化 χ₀ の順序付き半不変環は k[A₂,B₂,X₃,Y₃,D₄]/(X₃Y₃−A₂D₄)、非順序環は k[A₂,B₂,C₃,D₄]、重み(2,2,3,4)。Δ₈=(D₄+4A₂(B₂−2A₂))²−4(B₂−2A₂)C₃²=256P_fP_g とすると、中央affine chartは D₊(Δ₈)⊂P(2,2,3,4)、環は重み零局所化。noncubic閉像は A₂=C₃=0、χ=B₂²/(4D₄)。全good moduliの特異点は p₃=[0:0:1:0] の 1/3(1,1,2) と p₄=[0:0:0:1] の 1/2(1,1,1) だけで、p₄はχ=0上。二対称形式の不変式環はBhargava–Gross–Wang §4.2を既知入力とし、出所と全証明は [Cの新節](papers/quiver-avatar/global_h2_invariant_hull.tex) に記した。数式の有限記号・有理数検算は実施したが、全定理の独立監査・現行稿組版は未実施。**次の数学的中心はC3の群oid比較。**
+**C3の可逆cubic相対groupoid（今回の原稿上の到達点）。** 隣接矢束U,V,WからE=W⊗V⊗U（階数8）を作る。八矢四次potentialの第四矢群でのcyclic derivativeが階数二の部分束R↪Eを与える領域で、第四矢GL₂のframe torsorよりQPの全right-equivalence商は[Gr(2,E)/GL₂³]に等しい。rank24 directed foundationの二つのrank4乗法を可逆化すると、結合律と全積surjectionにより同じR=ker(E→N)を得るので、finite foundationのunrigidified全相対groupoidもこれに等しい。頂点scalarsのGm³を剛体化するとH2の選択cubic chartに到達する。一般には二cubic正規化T,T⁻¹の不変式が異なり、頂点固定right-equivalenceでは貼れない。詳細 [定理・証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)、[12項目の厳密検算](computations/verify_q8_cubic_groupoid.py)。GitHub blob SHA一致の検算コードをPython/SymPyで実行し全PASS。有限例の計算はfppf同値の証明ではなく、原稿内のframe bundle・全積の論証と区別する。既知のraw十二矢の余剰Gm²も保持し、全AS/QP群oidの完成は未達成。
+
+**全半不変式環と中央chart（C2の原稿上の到達点）。** Gram pencil det(X fJfᵗ+Y gJgᵗ)=F²X⁴+I₁X³Y+I₂X²Y²+I₃XY³+G₀²Y⁴ を導入した。共通線形化 χ₀ の順序付き半不変環は k[A₂,B₂,X₃,Y₃,D₄]/(X₃Y₃−A₂D₄)、非順序環は k[A₂,B₂,C₃,D₄]、重み(2,2,3,4)。Δ₈=(D₄+4A₂(B₂−2A₂))²−4(B₂−2A₂)C₃²=256P_fP_g とすると、中央affine chartは D₊(Δ₈)⊂P(2,2,3,4)、環は重み零局所化。noncubic閉像は A₂=C₃=0、χ=B₂²/(4D₄)。全good moduliの特異点は p₃=[0:0:1:0] の 1/3(1,1,2) と p₄=[0:0:0:1] の 1/2(1,1,1) だけで、p₄はχ=0上。二対称形式の不変式環はBhargava–Gross–Wang §4.2を既知入力とし、出所と全証明は [Cの新節](papers/quiver-avatar/global_h2_invariant_hull.tex) に記した。数式の有限記号・有理数検算は実施したが、全定理の独立監査・現行稿組版は未実施。**次の数学的中心はC3のrank三境界・非最小十／十二矢QP、nilpotent mass、mutation glueの全相対groupoid比較。**
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
 
@@ -117,7 +119,7 @@
 
 **依存監査の確定範囲。** BからAへの残余の17種類の定理・補題・式ラベルはAの現行分類20節に定義されている。Aの分類主定理の証明はB固有の主定理には依存しない原稿構成とした。これはソース依存の確認で、全数学的証明の独立監査とは異なる。
 
-**次の最優先実行単位（C完成優先）。** Cでは全H2の準射影的good moduli、noncubic A1χの閉埋込み・境界像の正規性・非Cartesianな一次厚みを入力とする。Cubic開の二式と被約補曲線は確立した。二chartの貼合せと全H2から既存GITへの正則射は確立した。Gram pencilによって D(PfPg)=D₊(Δ₈) の重み零環、noncubic閉曲線の方程式と局所特異性を決定済み。次は既知の可縮pair由来の余剰慣性 $B\mathbb G_m^2$ を先に剛体化してから、最小8矢QPのright-equivalenceとfinite foundationの同型層・頂点スカラーを可逆cubic開で比較し、rank3壁・noncubicへ拡張する。canonical rank81代数・回転/mutationの左右Noetherなtails・全Fricke境界射は確立済みの入力として保持する。A/BのP1–P3、先行研究比較と三稿組版の監査も継続し、各検証の実施範囲を研究ノートへ記す。
+**次の最優先実行単位（C完成優先）。** Cでは全H2の準射影的good moduli、noncubic A1χの閉埋込み・境界像の正規性・非Cartesianな一次厚みを入力とする。Cubic開の二式と被約補曲線は確立した。二chartの貼合せと全H2から既存GITへの正則射は確立した。Gram pencilによって D(PfPg)=D₊(Δ₈) の重み零環、noncubic閉曲線の方程式と局所特異性を決定済み。可逆cubic開の最小8矢QPのright-equivalenceとfinite foundation全Isomの同値、および頂点Gm³の剛体化は原稿上証明済み。次は非最小の十・十二矢QPでscheme階数三壁・nilpotent massを保って関係束と相対慣性を計算し、rank3/noncubicへ拡張する。canonical rank81代数・回転/mutationの左右Noetherなtails・全Fricke境界射は確立済みの入力として保持する。A/BのP1–P3、先行研究比較と三稿組版の監査も継続し、各検証の実施範囲を研究ノートへ記す。
 
 
 ## 現在の到達点と未解決の核心
