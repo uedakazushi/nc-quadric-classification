@@ -1,0 +1,195 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / two genuinely distinct genus-one curves in noncubic comparison
+\section{Noncubic の点曲線と spectral 曲線の二重 isogeny}
+\label{sec:qa-point-spectral-isogeny}
+
+noncubic の中央二重平方環から得る可換点曲線と，
+二根対の四次 resolvent から得る spectral 曲線は，
+滑らかな場合でさえ一般に同型ではない．
+両者の関係を明示することは，avatar の幾何的分類を
+内在的 O-marked heart の同値と取り違えないために必要である．
+
+\begin{theorem}[点曲線とspectral曲線の二重 isogeny]
+\label{thm:qa-point-spectral-dual-two-isogeny}
+$k$ を標数 $0$ の代数閉体，
+$f_1,f_2\in k[u,v]_2$ を squarefree かつ互いに
+根を共有しない二次形式とする．
+\[
+ \begin{split}
+ E_f&=\{c^2=f_1(u,v),\ d^2=f_2(u,v)\}
+                   \ \subset\PP^3_{[u:v:c:d]},\\
+ C_q&=\{y^2=f_1(u,v)f_2(u,v)\}
+             \ \longrightarrow\PP^1_{[u:v]}
+ \end{split}
+\]
+と置く．$E_f$ は
+定理~\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026}
+に現れる中央二重平方環の可換点曲線であり，
+$C_q$ は
+式~\eqref{eq:qa-rootpair-spectral-curve}の
+spectral 曲線である．
+次が成り立つ．
+\begin{enumerate}
+\item $E_f$ と $C_q$ は滑らかな連結種数一曲線である．
+ 同時符号対合
+ $\tau(u,v,c,d)=(u,v,-c,-d)$ は $E_f$ に自由に作用し，
+ \[
+   r:E_f\longrightarrow C_q,\qquad
+   [u:v:c:d]\longmapsto([u:v],y=cd)
+   \tag{Point--spectral}\label{eq:qa-point-spectral-cover}
+ \]
+ はその有限 \'{e}tale 二重商である．
+ 原点を選べば $r$ は次数二の isogeny となる．
+\item $\alpha(c,d)=(-c,d)$ と $\beta(c,d)=(c,-d)$ とする．
+ これらの商は滑らかな conic
+ \[
+    Q_d=\{d^2=f_2(u,v)\},\qquad
+    Q_c=\{c^2=f_1(u,v)\}
+ \]
+ であり，商射を $p_d:E_f\to Q_d$，
+ $p_c:E_f\to Q_c$ と書く．
+ $Q_d,Q_c\simeq\PP^1$ 上で各々唯一の次数一線束
+ $N_d,N_c$ を取り，
+ $F_d=p_d^*N_d,\ F_c=p_c^*N_c$ とすると
+ \[
+   \deg F_d=\deg F_c=2,\quad
+   F_d^{\otimes2}\simeq F_c^{\otimes2}
+       \simeq\OO_{E_f}(1),\quad
+   0\ne P_E:=F_cF_d^{-1}\in\Pic^0(E_f)[2].
+   \tag{Point-avatar}\label{eq:qa-point-curve-double-wall}
+ \]
+ 従って $(E_f,F_d,F_c,P_E)$ 自身が
+ 二重壁上の square avatar を与える．
+ また $\tau$ は $P_E$ による非自明二捩れ平行移動である．
+\item
+ $M_C=(r_*\OO_{E_f})^-$ は
+ 定理~\ref{thm:qa-noncubic-rootpair-torsionfree-spectral-module}
+ の非自明二捩れ線束である．
+ その $\Pic^0(C_q)[2]$ の点は，
+ $r$ の\emph{双対 isogeny}の核を生成する：
+ \[
+     0\longrightarrow
+       \{\OO_{C_q},M_C\}
+       \longrightarrow\Pic^0(C_q)
+       \xrightarrow{\ r^*\ }\Pic^0(E_f)
+       \longrightarrow0.
+       \tag{Dual-2}\label{eq:qa-point-spectral-dual-isogeny}
+ \]
+ 特に原点の選択の下で
+ $E_f\simeq C_q/\langle M_C\rangle$ である．
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+$E_f\to\PP^1$ は $c,d$ の符号を独立に変える
+biquadratic な次数四被覆である．
+$f_1,f_2$ の四分岐点が互いに異なるため，
+各分岐点では一方の平方根だけが分岐し，
+$E_f$ は滑らかで連結である．
+Riemann--Hurwitz により
+\[
+ 2g(E_f)-2=4(-2)+4\cdot2=0.
+\]
+同時符号対合の固定点では$c=d=0$を要するが，
+これは$f_1=f_2=0$を意味して仮定に反する．
+この対合の不変関数は
+$u,v$ と $cd=y$ で，$y^2=f_1f_2$であるから，
+商は$C_q$である．
+商は非分岐二重被覆で，$C_q$も種数一となる．
+
+$\alpha$ と $\beta$ の不変式から，それぞれの
+商が $Q_d,Q_c$ であることが直ちに従う．
+squarefree 性によって conic は滑らかであり，
+$k$ は代数閉だから $\PP^1$ に同型である．
+Conic の超平面線束は $\OO_{\PP^1}(2)$なので，
+その平方根となる次数一線束は一意に存在する．
+$E_f$ の埋込の線形座標
+$(u,v,d)$，$(u,v,c)$ はそれぞれ
+$Q_d$，$Q_c$ の超平面切断の引戻しだから
+$F_d^2=F_c^2=\OO_{E_f}(1)$となる．
+もし $F_d\simeq F_c$ なら二つの次数二線形系は
+基底の射影変換を除いて同じ射を定め，
+その deck involution も一致するはずである．
+しかし $\alpha\ne\beta$ なので非自明性を得る．
+
+滑らかな種数一曲線の次数二線束 $L$ は，
+原点を選んで$x\mapsto \ell_L-x$という
+involution を定める．
+従って二線束$F_d,F_c$の involution
+$\alpha,\beta$の積は，その差
+$F_cF_d^{-1}=P_E$による平行移動である
+（符号の違いは二捩れゆえ消える）．
+これで第二項が従う．
+
+最後に$E_f\to C_q$は \'{e}tale な
+$\mu_2$-torsorであり，
+$r_*\OO_{E_f}=\OO_{C_q}\oplus M_C$，
+$M_C^{\otimes2}\simeq\OO_{C_q}$である．
+$H^0(C_q,M_C)=0$は
+式~\eqref{eq:qa-rootpair-spectral-module}から従う．
+従って $M_C$ は非自明である．
+有限 \'{e}tale 同種写像の双対性，
+または線束の Galois descent から，
+$\ker r^*=\{\OO_{C_q},M_C\}$となる．
+次数二の isogeny の双対も次数二なので
+$r^*$ は全射となり，最後の完全列を得る．
+\end{proof}
+
+\begin{example}[二曲線は一般に同型でない]
+\label{ex:qa-point-spectral-j-distinction}
+アフィン座標$x=u/v$で
+$f_1=x(x-1)$，$f_2=(x-2)(x-3)$とする．
+$C_q$の射影模型は
+\[
+ y^2=x(x-1)(x-2)(x-3).
+\]
+一方 $E_f$の関数体で
+$t=d/(x-3)$と置けば
+\[
+ x=\frac{3t^2-2}{t^2-1},\qquad
+ z=(t^2-1)c,\qquad
+ z^2=(3t^2-2)(2t^2-1)=6t^4-7t^2+2.
+\]
+四次式 $az^4+bz^3+cz^2+dz+e$ の
+不変式を $I=12ae-3bd+c^2$，
+$J=72ace+9bcd-27ad^2-27b^2e-2c^3$
+とすると
+$j=1728\cdot4I^3/(4I^3-J^2)$である．
+$C_q$の四次式には $(I,J)=(13,-70)$，
+$E_f$の上の四次式には $(I,J)=(193,-5362)$を得るので，
+\[
+ \boxed{j(C_q)=\frac{35152}{9},\qquad
+        j(E_f)=\frac{28756228}{3}.}
+ \tag{Distinct-j}\label{eq:qa-point-spectral-distinct-j}
+\]
+従って両曲線は同型でない．
+この有理数の計算は
+\texttt{computations/verify\_rootpair\_resolvent\_spectral.py}
+にも厳密算術の検算を置く．
+\end{example}
+
+\begin{remark}[pointed 認識への帰結と退化境界]
+\label{rem:qa-point-spectral-pointed-warning}
+定理~\ref{thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection}
+で使った square avatar の曲線は \emph{$C_q$} である．
+一方，noncubic 中央二重平方環そのものの
+可換点曲線は \emph{$E_f$} であり，
+第二項は $E_f$ 上にも自然な
+二捩れ double-wall avatar があることを示す．
+式~\eqref{eq:qa-point-spectral-distinct-j}により，
+二つの構成を同一曲線とみなして
+avatar由来AS代数と$\qgr B_f$の
+pointed同値を結論することはできない．
+\emph{どちらの曲線が特定のnormal helixの
+AS avatarとして抽出されるか}，
+およびそのexceptional foundationの対応は
+まだ直接同定していない．これは次の認識問題である．
+
+$f_1,f_2$ が一根を共有すると，
+$\tau$には固定点が生じ，
+$r$は有限 \'{e}tale 二重isogenyではなくなる．
+その際に正しい相対対象は
+式~\eqref{eq:qa-rootpair-spectral-module}の
+torsion-free $M_C$とその二次積であり，
+双対isogenyの短完全列を特異fiberへ
+そのまま延長してはならない．
+\end{remark}
