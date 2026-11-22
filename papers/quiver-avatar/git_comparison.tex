@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.3（二捩れ交点でのD8×C2慣性とA1粗二重被覆）
+% 2026-11-22 / v3.4（trace零での追加SO安定化元も明示）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -1149,6 +1149,35 @@ $\prod_i(t-x_i^2)=t^4-17t^2+16$なので
 根は$1,4,-1,-4$で相異なり、
 $j$は式~\eqref{eq:qa-ou-quintuple-j}から計算できる。
 \end{proof}
+
+\begin{remark}[trace零交点で現れる追加のOU直交対称性]
+\label{rem:qa-ou-trace-zero-extra-stabilizer}
+前定理の例を
+$D=\operatorname{diag}(1,2,\iota,2\iota)$
+（$\iota^2=-1$）と書き、
+$P$を添字$(1\,3)(2\,4)$の置換行列とする。
+\[
+ h=P,\qquad g=\iota^{-1}DPD^{-1}
+\]
+と置くと$g,h\in\SO_4$であり、
+\[
+ \iota\,gDh^{\mathsf T}=D,\qquad
+ (g,h,\iota)^2=(-I,I,-1)\in Z
+\]
+が成り立つ。ここで$Z$は命題
+~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
+の有効群の中心核である。
+従って$(g,h,\iota)$は有効quintuple慣性の
+位数二の\emph{新しい}元を与える。
+一般の$e_1\ne0$の証明では、traceによって
+$\lambda^2=1$を強制してこの元を排除していた。
+$e_1=e_3=0$の対称分岐点集合では
+$D^2$の固有値集合が$a\mapsto-a$で不変となり、
+この追加対称性が可能になる。
+この計算は、二重二捩れ交点が
+単に二つの一般反射の横断交叉ではなく、
+source自身の慣性増大を伴うことを示す。
+\end{remark}
 
 \begin{proposition}[ruling交換特別点のstack的2-fiberは二点のまま]
 \label{prop:qa-special-ruling-two-fiber-no-stack-ramification}
