@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v2.7
+% 日本語 LuaLaTeX。2026-11-22 / v2.8
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -52,7 +52,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v2.7（全noncubicのSigma2反標準avatar分類）}
+\date{2026年11月22日\quad v2.8（square/rotatedの幾何的自足化とA1奇偶障害）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -356,7 +356,9 @@ $\kk$ は標数零の代数閉体とする。
 
 \input{quiver-avatar/qp_presentations}
 \input{quiver-avatar/foundation_charts}
+\input{quiver-avatar/square_rotated_foundations}
 \input{quiver-avatar/avatar_charts}
+\input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}
 
