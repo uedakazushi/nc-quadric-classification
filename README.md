@@ -69,7 +69,7 @@ latexmk papers/quiver-avatar-moduli.tex
 
 `papers/` に `cd` して `latexmk nc-quadric-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
 
-**原稿Cの現在の組版確認状況（2026-11-22）。** 利用者のTeX Live 2026実ログでは、\`papers/quiver-avatar-moduli.tex:82\` の数式記号 \`D∈|−K_{Σ₂}|\` がテキストモードのまま記載され、\`Missing $ inserted\` で停止した。現行mainではこれを \`$D\in|-K_{\Sigma_2}|$\` 等の明示的な数式モードへ訂正し、TeX本文に紛れ込んだMarkdownの \`**...**\` も \`\\textbf{...}\` に直した。修正した数式断片は別のLuaLaTeX環境で単独組版に成功した。Cの9個のTeXソースについてラベル・引用・環境バランスと同種の記号混入を静的確認し、\`python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex\` に回帰検査を追加した。ただし**訂正後の原稿C全体のLuaLaTeX組版は未確認**なので、最新版を取得して再実行する必要がある。
+**原稿Cの現在の組版確認状況（2026-11-22）。** 利用者のTeX Live 2026実ログでは、`papers/quiver-avatar-moduli.tex:82` の数式記号 `D∈|−K_{Σ₂}|` がテキストモードのまま記載され、`Missing $ inserted` で停止した。現行mainではこれを `$D\in|-K_{\Sigma_2}|$` 等の明示的な数式モードへ訂正し、TeX本文に紛れ込んだMarkdownの `**...**` も `\textbf{...}` に直した。修正した数式断片は別のLuaLaTeX環境で単独組版に成功した。Cの9個のTeXソースについてラベル・引用・環境バランスと同種の記号混入を静的確認し、`python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex` に回帰検査を追加した。ただし**訂正後の原稿C全体のLuaLaTeX組版は未確認**なので、最新版を取得して再実行する必要がある。
 
 ## VS Code / LuaLaTeX の組版環境
 
