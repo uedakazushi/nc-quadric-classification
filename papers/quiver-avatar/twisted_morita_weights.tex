@@ -163,6 +163,57 @@ $(\OO_E,F,F^2,F^2G)$に一致する。
 一般の全整数AS完成の降下は使っていない。
 \end{proof}
 
+\begin{corollary}[階数五十四の相対有限代数とpointed頂点]
+\label{cor:qa-morita-rank54}
+前定理のAzumaya双加群を上三角に直和し、
+\[
+ \mathsf A_{\mathrm{Mor}}
+   =\bigoplus_{0\le i\le j\le3}\mathsf M_{ij}
+\]
+に式~\eqref{eq:qa-morita-bimodule-product}の積を入れる。
+これは$U_2$上の単位付き有限局所自由な
+\emph{通常の}$\OO_{U_2}$-代数で、
+\begin{equation}
+ \operatorname{rk}_{\OO_{U_2}}\mathsf A_{\mathrm{Mor}}
+ =1+4+1+4+
+   (4+4+12+4+16+4)=54.
+ \label{eq:qa-morita-rank54}
+\end{equation}
+四つの標準冪等元は係数空間上で定義され、
+零番の隅代数は$A_0=\OO_{U_2}$である。
+任意の代数閉幾何点では、
+この代数は四頂点の基本finite directed End
+（ベクトル空間次元$24$）とMorita同値である。
+したがってBrauer障害は通常の有限代数\emph{の存在}を
+排除せず、各頂点を基本的な一次元Endにした
+rank-$24$の表示を標識込みで全域降下させる
+素朴な方法を妨げるものである。
+\end{corollary}
+\begin{proof}
+各$\mathsf M_{ij}$は有限局所自由で
+非減少添字の道だけを合成し、
+他の積を零とすれば結合的な上三角代数になる。
+対角単位の和が全体の単位である。
+$W_0,W_1,W_2,W_3$の階数は$(1,2,1,2)$なので、
+非対角の$\mathsf M_{ij}$の階数は
+$(2,4,6,2,4,2)$を$r_ir_j$倍して
+$(4,4,12,4,16,4)$となる。
+対角$A_i$の階数は$(1,4,1,4)$で、
+表示した和が$54$である。
+
+各幾何点ではgerbeが分裂し、四つの$W_i$を
+通常の階数$r_i$のベクトル空間と同定できる。
+従って$\mathsf A_{\mathrm{Mor}}$は基本finite Endの
+各標準射影対象を$r_i$個ずつ複製したgeneratorのEndとなる。
+全$r_i\ge1$なのでそのgeneratorと元の四項は
+同じ加法閉包を生成し、Morita同値である。
+元の基本代数の次元は
+$4+(2+4+6+2+4+2)=24$である。
+零番の冪等元は重み零の元の構造対象に対応する。
+ただしこのfinite Morita同値から
+相対$\qgr$-heartの同値は主張しない。
+\end{proof}
+
 \begin{corollary}[ruling交換の頂点固定Morita降下は不可能]
 \label{cor:qa-morita-ruling-exchange-phase}
 $U_2$の二つの二次形式の交換$\epsilon$は
