@@ -297,6 +297,8 @@ def math_checks() -> int:
                "verify_square_h2_open.py",
                "verify_square_h2_semiinvariants.py",
                "verify_q12_mass_shear.py",
+               "verify_q12_diagonal_euler.py",
+               "verify_q12_bimodule_diagonal.py",
                "verify_cubic_adjugate_invariants.py",
                "verify_cubic_inversion_global_maps.py",
                "verify_spectral_atkin_lehner.py",
