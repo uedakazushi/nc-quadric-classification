@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.51。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.40。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.52。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.42。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は論文C（AS正則Z代数・avatar・H2・QP/GIT比較）の完成である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,7 +10,8 @@
 
 **Cの達成基準と現行判定：** (C1) 8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲：**原稿上達成**。(C2) 全H2 good moduliの不変式・中央affine・noncubic・局所特異性：**原稿上達成**。(C3) 最大の明示的な比較開上でAS/QP・avatar・pointed H2のgroupoid・慣性・right-equivalence・heartと障害を決定：**H2の相対実現可能開全体について、二mass十二矢QP→finite foundationの全局所Isom、相対対角解消、ordinary Jacobian=H0Π3=canonical Serre完成、全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とcoherentなruling mutation商を原稿上で達成**。H2外の任意AS/avatar/QP stack全体の分類は未完成で、H2の比較と区別する。(C4) 全論文の独立証明監査、一次文献の網羅的比較、LuaLaTeX全稿PDF・SyncTeXと表示：**未完了**。C1–C3の「原稿上」とC4の独立検証を取り違えず、C4未達成の間は論文C全体を完成扱いにしない。
 
-**次の優先課題：** C3のH2実現可能開上のQP/有限foundation/ordinary Jacobian/反Serre/pointed heart・剛体化とruling交換は原稿上到達した。有限directed代数の短対角解消は通常関係idealとEuler--conormal判定で任意非被約底にわたり分裂完全であり、非最小QPの双対dg微分とJacobian商も明示済み。局所lift shearとmassゲージの半直積作用・双対数での非可換例・頂点scalarの中心性と交わり自明性を証明した。**今回、短関係と対角矢の全frame変更を追うと、$x'=dx+h,\ r'=cr$の下で$\lambda'=(c/d)\lambda,\ t'=(d/c)t$となり、mass kernelはQP表示stack上の線束$\mathscr L=\operatorname{Hom}(\mathscr X,\mathscr R)$に値を持つ滑らかな群$\mathcal U_{\lambda,\mathscr L}$として大域的に降下することを証明した。** 冪零massの打切対数は線束値の加法群へ降下し、zero mass境界は大域定数$\mathbb G_a$とは限らない。さらにsquareの二積交換はstrictな$S_2$作用であり、二段剛体化後のQP商へcoherentに輸送されることを明示した（[C3証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)、[検算](computations/verify_q12_mass_shear.py)）。**次の核心は** 全frame変更・mass/shearと$ruling$の相対Isomの独立監査、反Serre全次数のperfect-fiber判定は全nで確認済み。残る相対AZ・opposite経由の左Noether性の独立監査、C4一次文献比較・C全稿LuaLaTeX組版と表示。H2外の全AS/avatar/QP stackの無条件同値は別課題。研究repoのmain保存後にhubを更新する。
+**次の優先課題：** 論文CのC1–C3は$H_2$実現可能開に関して原稿上証明済みだが，C4の独立監査・文献比較・全稿組版は未完。相対二mass QP→finite foundationの全同型層，Euler--conormal相対対角解消，nonminimal ordinary Jacobian／Serre，pointed heartと二段剛体化・ruling商を保持する。今回の監査で，全square表示の反対代数は$(A,B,C,D;f,g)\mapsto(D,C,B,A;g\tau,f\tau)$というstrict対合を持ち，四交差開を全非被約底で保つと証明した（[反対square命題](papers/quiver-avatar/relative_square_opposite.tex)）。一方，**一重rank3壁で反対normalの逆squareは四交差条件を破る**という有理数反例を見つけ，従前の「反対normalの零番頂点は再び強い$H_2$ pointing」という誤った左Noether証明経路を削除した。これを[論文Cの反対normal障害と修復](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)に統合した。修復では反対squareの正しい相対heart $\mathcal C^\vee$を使い，逆順双対normal $Y=(\mathbb DZ_1,Q_0,Q_1,Q_3)$をそのheart内に構成する。**適合構造対象$Q_0$は二番目の直和因子で足りる**。全$n$のforward Ext消滅と相対AZ2の二段presentationを使い，$C(\Lambda^{\rm op})$の右Noether性，従って$C(\Lambda)$の左Noether性を改めて証明した。厳密なrank3反例は[計算コード](computations/verify_square_h2_open.py)に収録し，独立SymPy計算でPASSした。**次は**この非先頭構造対象の相対AZ・perfect反同値・全非被約底におけるheart降下を包括的に点検し，C4の一次文献網羅比較・日本語LuaLaTeX C全稿PDF／SyncTeX・表示を実施する。全$H_2$外の任意AS/avatar/QP stackは独立の後続課題。対象mainを先に保存してからhubを更新する。
+
 
 ## Cの現行実行単位
 
@@ -353,14 +354,13 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**最優先は論文CのC3独立監査とC4完成。** H2実現可能開上のQP→finite foundation→ordinary Jacobian/Serre→pointed heart、二段剛体化と二ruling mutation商は**原稿上証明済み**。ここを未解決の再構成課題へ戻さないが、独立監査済みとも呼ばない。
+**最優先はC3の修正後の独立依存監査とC4公表用完成。** $H_2$実現可能開の相対QP/AS・Jacobian・同じheart・二段剛体化・coherent $S_2$商は原稿上の主定理。square反対代数の開保存，一重rank3で反対normalのpointingが不適合になる例，適合$Q_0$を第二直和因子として用いる双対heart/AZによる左Noether修復を新しい正本とする。
 
-1. **局所mass/shearの半直積を全Isom・S₂に降下させる監査。** Euler--conormal一般補題によってordinary ideal生成・対角解消の局所分裂性・任意基底変更は原稿上確認済み。双対dg微分とcyclic derivativeは原稿上明示済み。mass/shearの半直積作用、new potentialの係数補正・頂点中心性は局所で証明済み。短関係/対角矢の全frame変更に対するmass群の線束値降下と、strict square交換を通じた二段剛体化後のS₂-coherenceはC原稿上証明済み。次は長関係の全GL₂変換とmass/shearの合同作用、全fppf Isomと既存AZ/heart認識との接続を独立監査する。Keller Theorem 6.10の最小関係仮定を非最小十二矢QPへそのまま輸入しない。
-2. **全次数の局所自由性を入力とする相対AZ・opposite側の左Noetherを独立監査。** ordinary ideal生成は一般Euler--conormal証明で確認済みであり、非最小QPのdg比較とは区別する。論文Aのnormal四周期helixの全n前向きExt消滅とperfect-fiber判定を新補題により独立確認し、全次数局所自由性・任意非平坦基底変更を証明した。次はAZ2の二重presentationとopposite squareからの左Noether性・pointed heartを独立に辿る。境界の最小矢束非平坦性を全次数の障害と取り違えない。nilpotent massの加法化は局所frameに依存し、全体のgerbe自明化を意味しない。
-3. **二段剛体化とrulingのcoherenceを点検。** fppf同型層の核$\mathcal U_\lambda\times\mathcal U_\mu$と$\Gm^3$、正規性・基底変更、mutationの二重合成とpointed $t$-exact性を確認する。一般cubicで単一right-equivalenceが存在しないことと、mutationによるstack同値を分ける。
-4. **C4公表前整理。** Keller、VdB、AS/QP・AZ・Alper等の一次資料と定理仮定を照合し、Introduction・引用・独立寄与を整理する。scripts/check.py papers、C原稿のsources/build、LuaLaTeX全稿PDF・SyncTeX・ページ表示を実施する。未実行・依存制約を明記する。
+1. **修復した左Noether/AZの全面監査。** `lem:qa-q12-opposite-normal-dual-heart-az`を入口として，反対squareの$Q_i$が同じheartの基底平坦compact対象であること，$K=\mathbb D(t^{-1}Z_1)$と相対normal cone $Z_2^\vee$の線束値比較，$\mathbb DZ_1=(t^\vee)^{-1}K$，$\mathbf RHom(\mathbb DX_i,(t^\vee)^nQ_0)\simeq\mathbf RHom(E_3,t^nX_i)$の全$n$消滅を点検する。相対AZのAZ1は$Q_0$が非先頭の直和因子で足り，AZ2は$0\to L\to P\to K$と$0\to L'\to P'\to L$の二重presentation・Ext$^{>2}$消滅を用いる。fiberwise heart所属のみから相対heart所属を推論しない。
+2. **全Isom・反対対合・rulingの整合。** Squareのstrict oppositeとmiddle-swapが可換であることは証明済み。QPの局所mass/shear，関係frameと頂点scalarの全Isom，二段剛体化後のstrict square $S_2$作用のweak輸送と，同じpointed heartの$t$-exact性の依存を別々に照合する。rank3 opposite normalの失敗を強い$H_2$の不在とNoether性の反例へ誤拡張しない。
+3. **C4公表前検査。** `python3 scripts/check.py papers`，C原稿のsources/buildを実行し，LuaLaTeXでPDF/SyncTeX・ページ表示を確認する。Keller，VdB，Artin–Zhang，OACU，Alper等の一次資料の仮定，Introductionの位置付け・新規性を精査する。依存不足や未実行検証は明記する。
 
-A/Bの相対有限型性・Artin認識・境界の局所good moduliおよび偏極の未整理な比較は、Cへの依存入力の監査として扱う。主原稿Aの全H2分類やBの既証明定理を「未解決」と書き直さない。全AS/avatar/QP stackのH2外、一般の別heart、全自己同値・全根の忘却は独立の後続課題である。
+A/BはCへの論理的入力として必要な範囲で監査し，既存分類を未解決へ戻さない。$H_2$外の一般AS/avatar/QP表示の分類・全根／ambient忘却は後続の独立課題とする。
 
 ## 7. 正本・依存関係・再開
 
