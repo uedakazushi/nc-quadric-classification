@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.20
+% 日本語 LuaLaTeX。2026-11-23 / v4.21
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.20（cubic開の二補曲線と全H2の良モジュライ）}
+\date{2026年11月23日\quad v4.21（cubic貼合せ・粗二重射と全域のGIT比較）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -98,7 +98,11 @@ canonical Serre完成と四頂点展開の左右Noether性，実際の相対AS�
 全$\HHstack$の分離的な準射影的good moduli spaceを構成する．
 各cubic開を既存の四量子ビットGIT商の明示開と同定する．
 その被約補集合は$\mathbb P(1,2,2,3)$内の二本の$\mathbb P(1,2)$であり，
-唯一の交点で通常の節点を作る．さらに，
+唯一の交点で通常の節点を作る．二つの cubic chart の貼合せを
+重み付き逆行列写像で記述し，両積可逆な非順序良モジュライは
+$\mathbb A^3$ から一本の直線を除いた開となる．
+全 ordered 良モジュライから既存 GIT 商への二射も構成するが，
+これらは noncubic 閉曲線を一点へ送る．さらに，
 noncubicの$\mathbb A^1_\chi$を大域良モジュライへ閉埋め込む．
 階数因子の良モジュライ像は正規であり，
 noncubic閉像のschemeとしての引戻しには一致点で非被約な厚みが生じる．
@@ -465,6 +469,12 @@ potential stack の AS-regular 開として扱われ，elliptic tuple との比�
 さらに命題~\ref{prop:qa-cubic-adjugate-explicit-invariants}と
 系~\ref{cor:qa-cubic-geometric-two-complement-curves}では，
 $e_i=e_i(JT^{\rm t}JT)$，$d=\det T$ により二半不変式と被約補曲線を明示する．
+命題~\ref{prop:qa-cubic-weighted-inversion-gluing}と
+系~\ref{cor:qa-both-invertible-good-moduli-affine-open}は，
+この開の二つのコピーを貼り合わせ，両積可逆な非順序商を
+三次元 affine 空間の直線の補として記述する．
+定理~\ref{thm:qa-global-two-ou-morphisms}は全域の既存 GIT 商への二射を与えるが，
+noncubic 曲線を収縮するため，全良モジュライの埋込みではない．
 この具体的な相対範囲の比較と，包括的な新規性の確認は区別する．
 
 \paragraph{既知の降下原理と本稿の具体化}
@@ -552,6 +562,7 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/global_h2_good_moduli}
 \input{quiver-avatar/global_h2_cubic_git_comparison}
 \input{quiver-avatar/cubic_geometric_open_invariants}
+\input{quiver-avatar/cubic_inversion_global_morphisms}
 \input{quiver-avatar/global_good_moduli_boundary_images}
 \input{quiver-avatar/universal_h2_square_morita}
 \input{quiver-avatar/relative_rotated_mutated_tails}

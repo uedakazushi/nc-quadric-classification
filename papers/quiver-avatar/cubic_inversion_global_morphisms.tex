@@ -1,0 +1,334 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.21 / cubic chart の貼合せと全域のGIT比較。
+
+\subsection{二つのcubic chartの貼合せと重み付き逆行列写像}
+\label{subsec:qa-cubic-inversion-gluing}
+
+$\mathbb W=\mathbb P(1,2,2,3)$ の座標を
+$[e_1:e_2:d:e_3]$ とし，前項の geometric 開を
+$\Omega=\Omega_{\rm geo}=\mathbb W\setminus(C_0\cup C_1)$ と書く。
+この式で用いる補集合は underlying closed set である。
+二つの高次式が定める閉部分をその radical と取り違えない。
+$\Omega^\times=\Omega\cap D_+(d)$ と置く。
+
+\begin{proposition}[重み付きCremona対合とcubic chartの貼合せ]
+\label{prop:qa-cubic-weighted-inversion-gluing}
+逆行列操作 $T\mapsto T^{-1}$ が $\Omega^\times$ に誘導する対合は
+\[
+ \iota[e_1:e_2:d:e_3]
+       =[e_3:d^2e_2:d^3:d^4e_1]
+ \tag{INV}\label{eq:qa-cubic-weighted-cremona}
+\]
+である。右辺の四式はそれぞれ重み $3,6,6,9$ を持つ。
+同じ式は $\mathbb W\setminus C_0$ から $\mathbb W$ への正則射を定め，
+特に $\Omega$ 全体で定義される。しかし
+\[
+ \iota(\Omega\cap V(d))=\{q_0\},
+ \qquad q_0=[1:0:0:0]\in C_0\setminus C_1
+\]
+であり，$\Omega^\times$ 上の対合は $\Omega\to\Omega$ の射へ延長できない。
+
+全 ordered good moduli の cubic 開は，二つの $\Omega$ を
+$\Omega^\times$ 上のこの対合で貼り合わせたスキームである：
+\[
+ M^{\rm rul}\setminus\overline N^{\rm rul}
+   \simeq\Omega_f\mathop{\cup}_{\iota}\Omega_g.
+ \tag{GL}\label{eq:qa-cubic-two-git-chart-gluing}
+\]
+ここで $\overline N^{\rm rul}\simeq\mathbb A^1_\chi$ は noncubic 閉像である。
+ruling 交換は二つの chart を同じ同次座標のまま交換する。
+全 $M^{\rm rul}$ 上のこの正則対合は
+$\Omega^\times$ 上で式~\eqref{eq:qa-cubic-weighted-cremona} に一致し，
+$\overline N^{\rm rul}$ 上では恒等である。
+\end{proposition}
+\begin{proof}
+$K_T=JT^{\rm t}JT$ とすると，$K_{T^{-1}}$ は $K_T^{-1}$ と相似である。
+$\det K_T=d^2$ だから，逆行列の基本対称式は
+\[
+ e_1(T^{-1})=\frac{e_3}{d^2},\qquad
+ e_2(T^{-1})=\frac{e_2}{d^2},\qquad
+ d(T^{-1})=\frac1d,\qquad
+ e_3(T^{-1})=\frac{e_1}{d^2}.
+\]
+重み $(1,2,2,3)$ のスカラーとして $d^2$ を掛ければ
+式~\eqref{eq:qa-cubic-weighted-cremona} を得る。
+二回適用した四座標は
+\[
+ [d^4e_1:d^8e_2:d^9:d^{12}e_3]
+\]
+であり，これは重み付きスカラー $d^4$ によって元の点と同じである。
+逆行列による geometric 条件の保存は
+補題~\ref{lem:qa-cubic-adjugate-two-invariants} の ruling 二平面の議論による。
+
+式の四座標が同時に零となる台は $d=e_3=0$，すなわち $C_0$ である。
+従ってその補で正則射を与える。
+$d=0$ では geometric 条件は $e_3\ne0$ なので，像は $q_0$ となる。
+$\Omega$ は整であり，$\mathbb W$ は separated である。
+仮に $\Omega\to\Omega$ への延長があれば，その $\mathbb W$ への合成は
+稠密開 $\Omega^\times$ で上の正則射と一致するので，全体で一致する。
+しかし $q_0\notin\Omega$ であり矛盾する。
+同じ理由で $\Omega\cap V(d)$ のどの点の近傍にも $\Omega$ 値の延長はない。
+
+一方，$f,g$ がともに可逆な square では
+$f=1$ の chart の行列は $T=f^{-1}g$，
+$g=1$ の chart の行列は $T'=g^{-1}f=T^{-1}$ である。
+命題~\ref{prop:qa-global-cubic-four-qubit-good-moduli} の相対 chart 同型と，
+命題~\ref{prop:qa-global-closed-boundary-good-images} の飽和性を用いると，
+二つの good moduli chart の共通部分は正に $\Omega^\times$ となり，
+その貼合せ写像が $\iota$ である。
+二つの cubic 開の補は noncubic 閉像だから，表示した貼合せを得る。
+
+ruling 交換は有限表示 square 上で $f,g$ と対応する四つの係数束を交換する。
+従って二つの chart の間では同じ座標値を持つ点へ移り，
+共通部分の一方の chart で見れば $\iota$ となる。
+その作用は半不変式環上の作用，または good moduli の普遍性により
+全 $M^{\rm rul}$ へ降下する。
+補題~\ref{lem:qa-noncubic-ruling-sign-pushforward-zero} は
+ordered および unordered の noncubic good moduli をともに
+$\mathbb A^1_\chi$ とし，その間の射を恒等とする。
+よって ruling 交換はこの閉部分の上でも scheme として恒等である。
+\end{proof}
+
+\subsection{重み二の慣性を含めた固定部分と粗二重射}
+
+\begin{proposition}[可逆cubic領域の粗環と固定部分]
+\label{prop:qa-cubic-inversion-weight-two-fixed-locus}
+$D_+(d)\subset\mathbb W$ は
+\[
+ \operatorname{Spec}
+ k[b,u,v,w]/(uw-v^2),
+ \qquad
+ b=\frac{e_2}{d},\quad
+ u=\frac{e_1^2}{d},\quad
+ v=\frac{e_1e_3}{d^2},\quad
+ w=\frac{e_3^2}{d^3}
+ \tag{AC}\label{eq:qa-cubic-invertible-affine-ring}
+\]
+であり，$\iota$ は $u,w$ を交換し $b,v$ を固定する。
+その scheme-theoretic fixed locus は
+\[
+ u=w,\qquad (u-v)(u+v)=0
+\]
+で，被約な二成分である。
+同次座標では $e_3=\pm de_1$ という二つの被約部分の和となる。
+両成分の交差は $u=v=w=0$ であり，
+$\Omega^\times$ 内では $b\ne2$ の直線である。
+特に $e_1=e_3=0$ の重み二の点を除外する必要はない。
+
+商の affine 環は
+\[
+ \bigl(k[b,u,v,w]/(uw-v^2)\bigr)^{\langle\iota\rangle}
+       =k[b,s,v],\qquad s=u+w.
+\]
+$z=u-w$ と置けば粗二重射の方程式は
+\[
+ z^2=s^2-4v^2=(s-2v)(s+2v).
+ \tag{DB}\label{eq:qa-cubic-inversion-double-cover}
+\]
+従って標的は smooth であり，二つの branch 因子は横断する Cartier 因子である。
+源の二つの固定成分は，交差する重み二の locus ではそれぞれ Cartier ではない。
+\end{proposition}
+\begin{proof}
+$d$ の平方根を用いて重み付き座標を $d=1$ に規格化すると，
+残る $\mu_2$ は三座標 $(a,b,c)$ に
+\[
+ (a,b,c)\longmapsto(-a,b,-c)
+\]
+と作用する。ここで形式的には
+$a=e_1/\sqrt d$，$b=e_2/d$，$c=e_3/d^{3/2}$ である。
+この $\mu_2$ の不変式は $u=a^2,v=ac,w=c^2$ で，唯一の関係は $uw=v^2$。
+これは degree-zero localization の計算でもあり，
+式~\eqref{eq:qa-cubic-invertible-affine-ring} は粗スキーム上での同型である。
+式~\eqref{eq:qa-cubic-weighted-cremona} はこの被覆上で $a,c$ の交換となる。
+従って粗環では $u,w$ を交換し，固定イデアルは $(u-w)$ である。
+商を取ると $(u-v)(u+v)=0$ となり，被約二成分の主張を得る。
+
+$e_1=e_3=0$ では $u=v=w=0$ である。
+この直線上で前項の二式は
+$p_{\rm adj}=(2-b)/4$，$q_{\rm adj}=0$ となるから，
+geometric 開に残る条件は $b\ne2$ である。
+
+環を $s=u+w,z=u-w$ で書き直すと
+\[
+ k[b,u,v,w]/(uw-v^2)
+   =k[b,s,v,z]/(z^2-s^2+4v^2).
+\]
+対合は $z\mapsto-z$ なので不変式環と二重射の式が従う。
+$s-2v,s+2v$ の微分は交差上で一次独立だから，二つの branch 因子は横断する。
+源の個々の固定成分のイデアルは
+$(u-w,u-v)$ と $(u-w,u+v)$ である。
+交差上ではこれらのイデアルの最小生成元は二つで，
+height 一の主イデアルではない。従って個々の成分は Cartier でない。
+\end{proof}
+
+\begin{corollary}[両積可逆なunordered良モジュライの明示開]
+\label{cor:qa-both-invertible-good-moduli-affine-open}
+$M^{44}\subset M$ を両方の積が階数四となる飽和開の good moduli とする。
+このとき
+\[
+ M^{44}\simeq
+ \mathbb A^3_{b,s,v}\setminus
+ V(s-2v,\ v-4b+8).
+ \tag{M44}\label{eq:qa-both-invertible-a3-minus-line}
+\]
+右辺で除いているものは一本の affine 直線である。
+\end{corollary}
+\begin{proof}
+$D_+(d)$ では $C_0$ は空であり，$C_1$ の粗方程式は
+\[
+ u=v=w=4b-8
+\]
+となる。これは $\iota$ によって点ごとに固定される曲線であり，
+その商像は $s=2v,\ v=4b-8$ である。
+有限群の商の fiber は幾何点の軌道なので，この曲線は位相的に飽和し，
+その補の商は表示した直線の補となる。
+ただし直線の scheme としての逆像は，上の二重射の式から $z^2=0$ の厚みを持つ．
+ここで使った飽和性は台についてのものである．
+全 $M^{\rm rul}$ から $M$ への射は ruling 交換による有限全射の商である。
+実際，構成に用いた $H$-半不変式 $h_i$ の共通 chart 上で
+\[
+ \bigl(k[X][h_i^{-1}]^G\bigr)^{S_2}
+     =k[X][h_i^{-1}]^H
+\]
+となり，有限群の不変式環への拡大は有限整拡大である。
+この三つの affine chart は両 good moduli を覆うので，有限全射性が従う。
+両積可逆な開の ordered chart は $\Omega^\times$ である。
+よって上の quotient 計算が正に $M^{44}$ を与える。
+\end{proof}
+
+\subsection{随伴tensorによる全域の既存GIT商への射}
+
+\begin{theorem}[二つの全域OU射]
+\label{thm:qa-global-two-ou-morphisms}
+全 ordered good moduli から二つの正則射
+\[
+ \rho_f,\rho_g:M^{\rm rul}\longrightarrow\mathbb W
+\]
+が存在し，次の性質を持つ。
+\begin{enumerate}
+\item $\rho_f$ は $f$ が可逆な cubic chart を $\Omega$ と同型に写し，
+      $g$ が可逆な chart では式~\eqref{eq:qa-cubic-weighted-cremona} で与えられる。
+      $\rho_g$ には $f,g$ を交換した記述が成立する。
+\item 集合としての像はともに $\Omega\cup\{q_0\}$ であり，
+      $\rho_f^{-1}(\Omega)=M_f^{\rm rul}$，
+      $\rho_g^{-1}(\Omega)=M_g^{\rm rul}$ が開部分として成立する。
+      $\rho_f$ は $\mathfrak D_f$ の全閉像を $q_0$ に送り，
+      $\rho_g$ は $\mathfrak D_g$ の全閉像を $q_0$ に送る。
+      特に noncubic 閉曲線 $\overline N^{\rm rul}\simeq\mathbb A^1_\chi$ は
+      どちらの射でも $q_0$ へ写る。
+\item ruling 交換 $\sigma$ に対し
+      $\rho_g=\rho_f\circ\sigma$ である。
+\end{enumerate}
+これらの射の像は稠密な真部分であり，後の系で示す通り射は proper でない。
+また二つの射の積は noncubic 閉曲線を復元できない。
+\end{theorem}
+\begin{proof}
+全 $V_{\rm cross}$ 上で
+\[
+ T_f=\operatorname{adj}(f)g:
+      D\otimes B\longrightarrow C\otimes A\otimes L_f
+\]
+を用いる。通常の四因子の二対縮約としてその Gram 不変式を取り，
+\[
+ E_i^{(f)}=e_i(JT_f^{\rm t}JT_f)\quad(i=1,2,3),
+ \qquad D^{(f)}=\det T_f
+\]
+と書く。
+基底変更による二つの Segre 形式の similitude の比は
+\[
+ \chi_f^2\frac{ac}{bd}=\zeta_f
+\]
+である。従って四式
+$E_1^{(f)},E_2^{(f)},D^{(f)},E_3^{(f)}$ の指標は
+\[
+ \zeta_f,\quad\zeta_f^2,\quad\zeta_f^2,\quad\zeta_f^3
+\]
+で，通常の $f,g$ 座標の総次数は $8,16,16,24$ である。
+
+この四式が同時に零にならないことを確認する。
+$f$ が可逆なら
+$T_f=(\det f)f^{-1}g$ は geometric tensor の非零スカラー倍であり，
+前節の GIT 比較により semistable である。
+従ってその四つの基本不変式は同時に零にならない。
+
+$\operatorname{rk}f=3$ の場合には
+$\operatorname{adj}(f)=\kappa\lambda^{\rm t}$ と書け，
+$T_f=\kappa\psi^{\rm t}$，$\psi^{\rm t}=\lambda^{\rm t}g$ である。
+$V_{\rm cross}$ の条件と階数一テンソルの交差縮約の補題から，
+$\kappa,\psi$ はともに Segre 二次形式に関して非等方である。
+従って
+\[
+ E_1^{(f)}=(\kappa^{\rm t}J\kappa)(\psi^{\rm t}J\psi)\ne0,
+ \qquad E_2^{(f)}=D^{(f)}=E_3^{(f)}=0.
+\]
+全 $V_{\rm cross}$ では $\operatorname{rk}f\ge3$ なので，これで全場合を尽くす。
+
+以上の四式は，実際の正則射
+\[
+ V_{\rm cross}\longrightarrow\mathbb W,
+ \qquad
+ (f,g)\longmapsto
+ [E_1^{(f)}:E_2^{(f)}:D^{(f)}:E_3^{(f)}]
+\]
+を定める。指標が重み $(1,2,2,3)$ に従っているため，この射は $G$-不変であり，
+$\mathfrak H_2^{\rm rul}$ から $\mathbb W$ への射となる。
+ここで指標は $\zeta_f$ であって $\chi_0$ ではない。
+$R_G(\chi_0)$ への同次数環準同型を仮定するのではなく，
+good moduli space の代数空間を標的とする普遍性
+\cite[Theorem 6.6]{AlperGoodModuli2013} によって
+この射を $\rho_f:M^{\rm rul}\to\mathbb W$ へ降下させる。
+$g$ 側にも同じ構成を行う。
+
+$f=1$ chart では定義がそのまま $T=f^{-1}g$ の四不変式であり，
+$\rho_f$ は既存の $\Omega$ との chart 同型である。
+$g=1$ chart では $T_f=\operatorname{adj}(g^{-1}f)$ であるため，
+$f$ も可逆な稠密開では逆行列写像に一致する。
+両辺は $\Omega$ から separated な $\mathbb W$ への正則射なので，
+全 $g=1$ chart で同じ式となる。
+階数三の場合の計算は，$\mathfrak D_f$ 全体の像が $q_0$ であることも示す。
+この閉部分は被約であり，その good moduli 閉像も被約であるから，
+閉像上でも射は定値射である。
+
+飽和性により，$M^{\rm rul}$ の各点は
+$f$ 可逆な chart または $\mathfrak D_f$ の閉像に属する。
+前者の像は $\Omega$，後者の像は $q_0\notin\Omega$ なので，
+集合としての像と開逆像の主張を得る。
+noncubic 閉部分は両階数三であり，二つの射でともに $q_0$ へ写る。
+最後に，ruling 交換は $T_f,T_g$ の構成を交換するから
+$\rho_g=\rho_f\circ\sigma$ である。
+\end{proof}
+
+\begin{corollary}[全good moduliの非proper性]
+\label{cor:qa-global-good-moduli-nonproper}
+$\rho_f,\rho_g$ は proper でなく，$M^{\rm rul}$ および $M$ は
+$k$ 上 proper でない。
+また $(\rho_f,\rho_g):M^{\rm rul}\to\mathbb W\times\mathbb W$ は
+noncubic 閉曲線全体を $(q_0,q_0)$ へ送るため，閉埋込みではない。
+\end{corollary}
+\begin{proof}
+$\Omega\cup\{q_0\}$ は $\mathbb W$ の稠密な真部分であり，閉じていない。
+Proper 射の像は閉じているから，$\rho_f,\rho_g$ は proper でない。
+$M^{\rm rul}$ と $M$ には noncubic good moduli
+$\mathbb A^1_\chi$ が閉埋め込まれている。
+Proper なスキームの閉部分は proper であるから，両者は $k$ 上 proper でない。
+最後の主張は，閉埋込みは幾何点で単射であることと，
+$\overline N^{\rm rul}\simeq\mathbb A^1_\chi$ 上で二つの射がともに定値であることから従う。
+\end{proof}
+
+\begin{remark}[既存分岐式との一致]
+$\Omega^\times$ における二つの固定成分の式は
+$e_3\pm de_1=0$ である。
+Newton の恒等式によって，既存の OU 座標では
+$D_\pm=6(e_3\pm de_1)$ となる
+（系~\ref{cor:qa-ou-coarse-branch-invariant-equations}）。
+上の計算はその式を $e_1=e_3=0$ の重み二の locus まで含めて
+粗スキーム上で検証し，その点での源の二次錐と標的の横断 branch を区別する。
+一方，$\Omega$ の補曲線 $C_0,C_1$ は非 geometric tensor の閉集合であり，
+全 $H_2$ の noncubic 閉曲線ではない。
+全域射 $\rho_f,\rho_g$ はこの区別を保ちながら，後者を一点 $q_0$ に送る。
+
+再現コード \texttt{verify\_cubic\_inversion\_global\_maps.py} は，
+重み付き逆写像の二乗，非対角行列の Gram 逆行列式，
+階数一 tensor の普遍不変式，粗環の二重被覆式と指標を厳密算術で検算する。
+射の存在，貼合せおよび降下の証明は，上記の環と相対商の議論による。
+\end{remark}

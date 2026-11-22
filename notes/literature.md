@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.93。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.94。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 全H2の共通線形化と大域良モジュライ
@@ -16,6 +16,8 @@ Cubic開の新しい二式は、OU2014のCartan制限がW(D4)不変式環への�
 Mori–Okawa–Ueda, *Moduli of noncommutative Hirzebruch surfaces*, [arXiv:1903.06457](https://arxiv.org/pdf/1903.06457), Theorem1.1（p.3）、§5.3 (5.24)–(5.26)（p.25）、Remark7.1（p.30）を一次本文で確認した。Sheaf bimodule・関係式・滑らかなelliptic quadrupleの双有理比較、四因子tensorの自明scalar核、次数(1,1,2) AS Z代数を考える動機は既知である。本稿の全pointed H2の相対groupoid・noncubicを含むgood moduliとは範囲が異なる。
 
 Okawa–Ueda, *Marked Artin–Schelter surfaces of del Pezzo types*, [arXiv:2508.04986v1](https://arxiv.org/abs/2508.04986v1)（2025）、Definition1.1（p.1）とTheorem6.4（p.8）を一次本文で確認した。Very strong helixをmarkingとし固定quiverのpotential stackのAS-regular開を扱う。Elliptic tupleとの比較は双有理であり、固定markingを忘れた全strong H2の相対同値・全境界good moduliをこの定理から推論しない。Potential stackとAS開の考え方は既知結果として引用する。今回確認した範囲だけから新規性の完全調査済みとはしない。
+
+全域OU射ρf,ρgの構成には、Alper刊行Theorem6.6（印字p.2375）のlocally Noetherianなgood moduliの代数空間への普遍性を用いる。随伴tensorの指標ζfと全H2の線形化χ0を同一視せず、まずstackからWPSへの不変射を作ってから降下する。二cubic chartの反転と固定scheme・粗二重射の計算は本文の環計算で証明する。全良モジュライのnonproper性は閉部分A1χから既に従うため、一般GIT理論の新原理として扱わない。
 
 ## 全H2開の明示式と通常代数の降下
 
