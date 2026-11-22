@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.5（generic smooth/finiteのStacks一次参照を追加）
+% 2026-11-22 / v2.6（一般二ruling非同型条件に2捩れ除外を補充）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -514,7 +514,8 @@ $U=(E,L_0,L_1,L_2)$ について
  \delta=[L_2]-[L_0]\in\Pic^0(E),\qquad
  j(E)\ne0,1728,\quad
  \delta\notin E[2],\quad
- \eta\notin\{0,\delta,2\delta\}
+ \eta-\delta\notin E[2],\quad
+ \eta\notin\{0,2\delta\}
  \tag{OU-H2-gen}\label{eq:qa-ou-h2-two-rulings-open}
 \]
 を仮定する。この条件は非空な稠密開を定める。
@@ -569,7 +570,8 @@ $\Pic^0(E)$の差に自明に作用する。
 \]
 $j(E)\ne0,1728$では$\Aut(E,0)=\{\pm1\}$であり、
 $\delta\notin E[2]$だから$\epsilon=1$しかない。
-このとき第二式は$\eta=\delta$となり仮定に反する。
+このとき第二式は$2(\eta-\delta)=0$となり、
+$\eta-\delta\notin E[2]$に反する。
 従って二つは異なる。
 
 さらに論文Bの
