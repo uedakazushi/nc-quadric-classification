@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.47。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.48。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -8,6 +8,17 @@
 本研究の対象は、構造として指定された $(\mathcal C,\mathcal O)$ であり、exact autoequivalence $s$、同型 $s^2\simeq\mathbb S^{-1}[2]$、および orbit algebra の quadratic AS-regular ambient 表示は存在条件として扱う。この区別を保った分類と marking 忘却が課題である。
 
 既知の cubic AS-regular $\mathbb Z$-algebra、geometric quintuple、admissible quadruple の分類や hypersurface embedding を新成果として扱わない。特に、quadratic hull の存在と quadratic envelope による canonical recovery は別の主張である。
+
+## De Deken–Lowenとatlas・framedの一次資料
+
+Olivier De Deken and Wendy Lowen, *Abelian and derived deformations in the presence of $\mathbb Z$-generating geometric helices*, J. Noncommut. Geom. **5** (2011), no.4, 477–505, DOI [10.4171/JNCG/83](https://doi.org/10.4171/JNCG/83)。
+[刊行一次PDF](https://ems.press/content/serial-article-files/30497) pp.501–502のDefinition5.12とTheorem5.13(1)–(4)を2026-11-22に直接確認した。(1)一意なhelix持上げ、(2)flat heart対象のflat持上げ、(3)strong性・四項窓内のHomの平坦性、(4)geometric性・全前向きHomの平坦性を区別する。$D^-_{\mathrm{ffd}}$とflat Grothendieck変形の仮定も必要。BのArtin持上げ補題では(4)を全前向きHomに用いる。
+
+Stacks Project [Tag 02HY](https://stacks.math.columbia.edu/tag/02HY), Lemma 37.12.2：局所Noetherian基底上で局所有限型scheme射のsmooth性をsmall Artin持上げで判定する。有限型$k$-schemeの閉点の剰余体が$k$であることを使い、指定pointed同型を含むliftingを要求する。
+[Tag 05W6](https://stacks.math.columbia.edu/tag/05W6), Lemma 76.14.8：locally finite type monomorphism of algebraic spacesはunramified・separated・locally quasi-finite・representableとなる。
+[Tag 03XX](https://stacks.math.columbia.edu/tag/03XX), Proposition 67.50.2：schemeへのseparated locally quasi-finiteな代数空間の射は始域のscheme性を与える。
+Bのframed実現の原稿引用に一致するが、開あるいは局所閉immersionを結論する入力ではない。
+これらは各引用箇所の一次本文の確認であり、本研究の全相対構成の完全な形式検証ではない。
 
 ## AS正則 Z-algebra の単純加群双対条件と引用先
 

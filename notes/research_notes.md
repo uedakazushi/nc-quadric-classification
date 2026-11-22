@@ -1,6 +1,67 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.75（A v1.69・20節、B v0.36・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.76（A v1.69・20節、B v0.37・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 指定 Artin 同型の持上げとsmooth atlas・framed実現
+
+**smooth性の独立判定。** 相対反Serre再構成による全忠実な
+$\Phi:\mathfrak H_2\to\mathfrak P=[X_3/\operatorname{PGL}_9]$
+と$\mathfrak P$のaffine有限表示対角が入力となる。
+有限型$U\to\mathfrak H_2$について、局所Artin環のsmall extension
+$A'\twoheadrightarrow A$で指定された
+$u_A\in U(A)$、$c_{A'}\in\mathfrak H_2(A')$、
+pointed exact同型$\alpha_A:q(u_A)\simeq c_{A'}|_A$を
+両方とも指定還元に沿って持ち上げられるなら、
+\[
+ Z_T=U\times_{\mathfrak H_2}T
+ \simeq U\times_{\mathfrak P}T
+\]
+は全有限型affine$T$について有限型スキームとなる。
+$k$は代数閉体なので$Z_T$の閉点の剰余体は$k$であり、
+Stacks Tag 02HYのArtin小拡大判定を各閉点で適用し、
+smoothでない点の閉集合が空であることを得る。
+これがBの新しい lem:pointed-artin-lifting-smooth-bridge である。
+現時点で全$\mathfrak H_2$の代数性を前提とせず、
+開像は$R=U\times_{\mathfrak P}U$によるsmooth groupoidの商となる。
+単なる対象のArtin持上げや接次元の一致からsmoothを結論しない。
+
+**De Deken–Lowenの原文。** J. Noncommut. Geom. 5 (2011)
+pp.501–502のDefinition5.12、Theorem5.13(1)–(4)を一次PDFで確認。
+geometric (4,3)-helixの各対象が$D^-_{\mathrm{ffd}}$に属し、
+元の基底からのflat Grothendieck変形があることが入力。
+(1)はhelixの一意な持上げ、(2)はflat heart対象の持上げ、
+(3)はstrong性と四項窓内のHomの平坦性、
+(4)はgeometric性と全前向きHomの平坦性を述べる。
+BのArtin持上げ補題では、対象とHomの指定還元基底を延長して
+有限foundationの座標を復元し、étaleな$U\to S$から$u_A$を延長する。
+持上げた窓のMorita同値は相対Serreと反Serre環を保つため、
+$\Phi$の全忠実性で指定された$\alpha_A$へ還元するexact同型を回復する。
+導来同値一般を無条件にheart-exactとしていない。
+
+**非cubic chartとframedの数値。**
+noncubic chart $U_x$は$\mathbb A^{64}$の開のétale近傍、
+全$\mathfrak H_2$の局所次元は原稿主定理で3。
+従って$q_x$は相対次元61、
+$R_x=U_x\times_{\mathfrak H_2}U_x$は125次元。
+他方$X_{\mathrm{as}}$は$\operatorname{PGL}_9$-torsorにより
+スタック上相対次元80、総次元83となる。
+この二つのrigidificationを混同しない。
+Stack Tag 05W6のlocally finite type monoからunramified・
+separated・locally quasi-finite・representableが従うこと、
+Tag 03XXにより代数空間からスキームへのそのような射で
+始域がスキームとなることを確認した。
+有限型monoを無条件にopen immersionとはしない。
+一致根対のambient非開性はBの主張のまま保持する。
+
+**状態・次の課題。** 今回は原稿Bの可換・cubic・noncubic
+smooth atlasのArtin持上げ→smooth性を共通補題へ統合した。
+B相対認識節末尾の全Artin・framed結果の誤ったAへの引用を、
+B内部の正しい定理・系へ訂正した。
+変更対象4節のTeX環境バランスと補題引用の静的点検はPASS。
+31分割節の一括GitHub取得検査は接続側の操作数上限で未実施、
+全checkerとLuaLaTeX組版、全数学的証明の独立監査も未完了。
+次はnoncubic境界の相対groupoid・慣性・good/coarse moduliの
+依存を点検する。
 
 ## 同じ Serre 根の中央 AS4 被覆：有限条件から全次数へ
 

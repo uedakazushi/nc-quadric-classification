@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.77、論文A v1.69、論文B v0.36（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.78、論文A v1.69、論文B v0.37（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、一般cubic領域における既存quintuple/GITモジュライと内在的H2の相対比較、およびその境界への延長。Cは有限表示の確立部分とheart/ASの未完成な比較を区別する。
 
@@ -18,28 +18,13 @@
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 五頂点barと相対heartの検証
+## 論文Bの証明監査と再現
 
-中央AS4被覆の有限型延長を監査し、E=B!の全次数階数からP=E/(φ)のFrobenius階数へのHilbert整合性を明記した。P5=0からEをR[t]有限生成にし、中央二次元の乗法核を一つの主開で全次数同時に消す証明を確認。Koszulな二次正則商の根拠Shelton–Tingey2001を本文へ追加した。次は全H2のArtin持上げとsmooth atlasの監査に進む。
+noncubic有限型効果性では、[五頂点barとcanonical tails](papers/moduli/noncubic_local_tails.tex)、[中央Clifford閉部分のPBW・Noetherian貼合せ・AS4延長](papers/moduli/noncubic_finite_type.tex)の依存関係を整理した。可換quadricでの終頂点Torの厳密計算は[五頂点検算](computations/verify_five_window_terminal.py)、Cliffordの任意可換係数環上の書換は[PBW検算](computations/verify_clifford_pbw.py)で再現できる。有限次数の計算と全相対主定理の証明は区別する。
 
+[atlas構成](papers/moduli/quadric_smooth_atlas.tex)に、指定pointed exact同型のArtin持上げからrepresentable smoothを導く独立補題を追加。可換・cubic・noncubic chartの重複論証を統合し、[全体smooth atlas・framed空間](papers/moduli/h2_smooth_atlas.tex)へ接続した。noncubic chartは64次元、atlasの相対次元61、relation scheme125次元、PGL₉枠X_as83次元。相対代数性とframedの証明正本は**論文B**であり、論文Aへの古い参照を訂正した。
 
-相対cubic二主開と中央Clifford閉部分の普遍Noetherian性から、次数別I進完備化と忠実平坦降下による元の偶数環のNoetherian貼合せを監査した。Keelerの相対一様消滅について2018年の正式Corrigendumを本文と文献表に追加した。次は同じ根の中央AS4被覆の有限型延長を点検する。
-
-
-閉部分の中央二重平方環の自由基底は、全可換係数環（冪零を含む）で合流するmonic PBW規則により示した。任意Noetherian基底変更後の普遍Noetherian性と有限étale標準化からの忠実平坦なrow/column降下を独立補題として論文Bに整理した。再現用の [四重なり検算](computations/verify_clifford_pbw.py) も標準数学検査に追加。次はcubic二開部分・閉部分の次数別完備化貼合せを点検する。
-
-
-LG認識の閉部分 $D=V(\det M,\det N)$ は基礎体上smooth・reducedであり、任意の非被約基底へpullbackした閉部分との区別が必要。特殊fiberで両rank3でも行列式が非零冪零元になる双対数環上の明示例を論文Bと厳密検算コードに加え、scheme-theoreticな行列式零の仮定を強調した。次にR/I上の相対正規形・普遍Noetherian貼合せを監査する。
-
-
-LG rank3正規形のcross reshufflingは本文の添字規約に従い、二つの行列式はともに−1となる。係数二形式の独立性も線形因子の行列式−1で確認した。現行のLagrangian検算コードは16添字の定義式と各多項式恒等式を厳密に確認する。これらは有限型開条件の検算であり、相対heartの全証明ではない。
-
-
-BW-fiberの仮定は、強いH2のnormal foundationと論文AのAS正則解消から導き、単純加群Ext消滅の根拠をMori–NymanのASR2定義に修正した。coherent Homの平坦基底変更は有限基底代数の有界複体に対する別補題で示し、非平坦通常Homの反例を記した。詳細は研究ノートと論文Bの相対有限型認識節にある。
-
-
-
-[論文Bの非cubic五頂点窓](papers/moduli/noncubic_local_tails.tex) に、終頂点係数複体からrank-one Tor₃、連続四項のcompact生成性へ進む三角の証明を統合した。導来Moritaによるheartの移送と、通常の加群heartの区別も明記した。[厳密検算コード](computations/verify_five_window_terminal.py) は可換quadricの両parityで係数階数(9,40,48,16)、微分階数(9,31,16)、次数3のみ一次元のホモロジーを検証し、さらに両parityで明示的な4項サイクルが境界でないことを確認した。ローカル実行と保存ファイルの同一性も確認した。これは**可換標準fiberの検算**であり、全noncubic点でのBW-fiber条件・有限型chartの全効果性を検証したわけではない。
+今回変更した節のTeX環境バランスと新補題の参照を静的に点検。三稿全体のソースchecker・LuaLaTeX組版はローカルcheckout不能のため未実施。31分割節の一括チェックは接続側の操作数上限で実行できなかった。次の重点はnoncubic境界の相対groupoid、慣性、good/coarse moduli。
 
 ## VS Code / LuaLaTeX の組版環境
 
