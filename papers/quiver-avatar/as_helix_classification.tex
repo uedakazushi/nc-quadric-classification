@@ -328,3 +328,143 @@ Serre traceの$\,{}_\ell S_{i-4}$だけが残り、
 非恒等矢の頂点差が正なので最小である。
 \end{proof}
 
+
+\begin{proposition}[有限Endと全代数の相互逆性]
+\label{prop:qa-as-inverse-foundations}
+$A\in\mathrm{AS}_{\rm rsq}$から取り出した
+$(Y,D,P)$の初期四頂点Endは
+\[
+A|_{\{0,1,2,3\}}\simeq
+\End_{\rm dir}
+(P,\OO_D(h-2f),\OO_D(h-f),\OO_D(2h-f))
+\]
+であり、古典型は$Y$上の可換基準collectionである。
+逆にavatarの有限Endから構成した代数の
+点表現と余核線束は元の$(Y,D,P)$を回収する。
+\end{proposition}
+\begin{proof}
+後者は命題~\ref{prop:qa-core-directed-foundations}の
+二行二列評価行列の局所標準形
+$\operatorname{diag}(1,q)$から
+$\PP_Y(\coker\kappa)=D$を回収し、
+忘れられた線束の正規化で$P$を得ることによる。
+前者は、AS代数から作った
+\[
+0\to\OO_Y^{\oplus2}\xrightarrow{\kappa}
+\OO_Y(h)^{\oplus2}\to\iota_*Q\to0
+\]
+を$\OO_Y(-h)$で捩った大域切断から
+$0\to2$の二矢を回収する。
+元の列の大域切断は$0\to3$の
+二つの最小関係と全道を回収する。
+保持三頂点のHomと合成は
+$f,h,h+f$の制限列のacyclicityから得られ、
+$0\to1$のHomの消滅は
+$H^\bullet(\OO_D(h-2f)P^{-1})=0$である。
+古典型でもkernelのdeterminant計算が
+$\OO_Y(-f)$を与え、可換基準collectionを回収する。
+全$\mathbb Z$-代数は
+補題~\ref{lem:qa-as-serre-unique-recovery}が決めるから
+有限Endの同型で止まらない。
+\end{proof}
+
+\begin{theorem}[squareとrotated squareのavatar分類]
+\label{thm:qa-as-avatar-bijection}
+定義~\ref{def:qa-as-square-rotated-minimal}の
+最小分解型を持つAS正則$\mathbb Z$-代数について
+\begin{equation}
+\mathrm{AS}_{\rm rsq}/\cong\simeq
+ \mathrm{Av}_{\rm rsq}/\cong,\qquad
+\mathrm{AS}_{\rm sq}/\cong\simeq
+ \mathrm{Av}_{\rm sq}/\cong .
+\label{eq:qa-as-avatar-two-bijections}
+\end{equation}
+$\mathrm{Av}_{\rm rsq}$は
+$D\in|2h|$（$\Sigma_2$では$D\cap S=\varnothing$）と
+$P\in\Pic^0(D)\setminus\{\OO_D,\OO_D(h-2f)\}$、
+$\mathrm{Av}_{\rm sq}$は順序付きrulingを持つ
+$D\subset\PP^1\times\PP^1$の$(2,2)$反標準因子と
+$P\in\Pic^0(D)\setminus\{\OO_D\}$からなる。
+各々に一つの古典型を含める。
+曲線の滑らかさ・被約性・既約性は課さない。
+逆構成の有限foundationは
+\[
+B_{\rm rsq}=\End_{\rm dir}(P,HF^{-2},HF^{-1},H^2F^{-1}),
+\qquad
+B_{\rm sq}=\End_{\rm dir}(P,F,G,FG).
+\]
+\end{theorem}
+\begin{proof}
+rotated型では命題~\ref{prop:qa-as-extraction}が必要性、
+命題~\ref{prop:qa-as-helix-reconstruction}が
+任意avatarのAS実現、
+命題~\ref{prop:qa-as-inverse-foundations}と
+補題~\ref{lem:qa-as-serre-unique-recovery}が
+両構成の相互逆性を与える。
+代数同型は点表現・普遍線束を保ち、
+avatar同型はHomと合成を保つので、
+頂点を保つ代数同型類の全単射となる。
+
+square型代数を一つ進めた
+$A^{[1]}_{ji}=A_{j+1,i+1}$は
+表からrotated型であり逆shiftも存在する。
+一方定理~\ref{thm:qa-core-avatar-square-rotated}は
+二つのavatarの同型類を相互変換する。
+rotatedの一つ前の四項を曲線上の共通線束
+$FP^{-1}$で正規化すると
+$(L_{-1},L_0,L_1,L_2)\otimes FP^{-1}
+=(P,F,G,FG)$となる。
+これは曲線上の操作であって、
+非可換圏上にtensor自己同値を仮定しない。
+全代数のSerre復元もshiftと可換なので
+square側の全単射が従う。
+とくに$P=FG^{-1}$や$P=GF^{-1}$を
+squareの許容条件から排除してはならない。
+この共鳴はrotatedの$\Sigma_2$への移行を
+記録し得るがAS正則性を破らない。
+\end{proof}
+
+\begin{proposition}[左右Noether性]
+\label{prop:qa-as-avatar-noetherian}
+上記二型の全代数は左右Noetherianである。
+曲線型には四次の正規正則family
+$g_i\in A_{i+4,i}$があり、その商は
+$D$のtwisted section algebraを与える。
+\end{proposition}
+\begin{proof}
+式~\eqref{eq:qa-as-rhom-comparison}の次数零から
+$j>i$について
+\[
+0\to A_{j-4,i}\xrightarrow{\,g\,}A_{ji}
+\to H^0(D,L_jL_i^{-1})\to0
+\]
+を得る。三角形の自然性から$g$は左右normalかつ正則。
+周期式~\eqref{eq:qa-core-rsq-periodic-L}と
+点表現上の自己同型$\sigma$により共通tensorの後
+$L_{i+4}=\sigma^*L_i\otimes\OO_D(2h)$。
+$2h$は$\Sigma_2$でも$D\cap S=\varnothing$によって
+$D$上ampleである。
+$\sigma$の成分置換は有限だから$\sigma$-ampleで、
+twisted section algebraは左右Noetherian。
+異なるresidueのcoherent section moduleも有限生成。
+四周期のまとめた代数を$J$とすると
+$J/gJ$はNoetherianであり、
+$g$の正の内部次数を用いた
+leading termの有限生成元の持ち上げは
+各次数で有限回で停止する。
+従って$J$も、ひいては$A$も左右Noetherian。
+古典型は通常の可換曲面のNoether性に帰着する。
+\end{proof}
+
+\begin{remark}[一般定理への依存と未証明の比較]
+\label{rem:qa-as-classification-scope}
+本節では元PDFの体上分類の
+必要性・逆構成・全代数の相互逆性を移管した。
+spherical helix実現の一般定理
+\cite[Theorem 5]{OkawaUedaSpherical2020}と
+twisted section algebraのNoether性は外部入力である。
+これはAS代数の同型類の対応であり、
+別に定義された内在的O-marked$\HHstack$との
+pointed同値や任意の非被約基底上のAS相対分類を
+意味しない。
+\end{remark}
