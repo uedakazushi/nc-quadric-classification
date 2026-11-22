@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.26。全二massのQP/finite foundation群oid。
+% 2026-11-23 / v4.27。二massの相対対角解消・Jacobian・H2心の同定。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -690,6 +690,229 @@ liftの三段道成分を$H$，
 したがって核は丁度$\mathcal U_\lambda\times\mathcal U_\mu$．
 この核の構成も関係bundleの局所表示も基底変更と可換し，
 結論を得る．
+\end{proof}
+
+
+\subsection{二massの相対対角解消とordinary JacobianのAS認識}
+\label{subsec:qa-two-mass-diagonal-serre-comparison}
+
+前定理のfinite foundationを
+$\Lambda=\operatorname{End}(\bigoplus_{i=0}^3 E_i)$と記す．
+ここで$E_i$はまず形式的な四頂点であり，
+実際の$H_2$ heartに所属するという仮定はまだ課さない．
+有限矢束を$V_{\rm fin}$，関係束を$R_{\rm fin}$，
+分裂頂点代数を$D_0=\bigoplus_{i=0}^3\mathcal O_Se_i$とする．
+$V_{\rm fin}$は隣接六矢と対角$x,u$の計八矢，
+$R_{\rm fin}$は短関係$r_a,r_b$と残余長関係二本の計四関係である．
+各関係の係数にnilpotent massがあっても
+始点と終点の差で定める重みは一定であり，
+関係を最小な生成元・最小な関係とは仮定しない．
+
+\begin{proposition}[二mass全有限族の短い相対対角解消]
+\label{prop:qa-two-mass-short-relative-diagonal}
+全ての$\mathfrak P_{12}^{\rm nd}$の局所係数環上で，
+$\Lambda$は$\Lambda^e$に関する有限局所射影な解消
+\[
+ 0\longrightarrow
+ \Lambda\otimes_{D_0}R_{\rm fin}\otimes_{D_0}\Lambda
+ \xrightarrow{\partial_2}
+ \Lambda\otimes_{D_0}V_{\rm fin}\otimes_{D_0}\Lambda
+ \xrightarrow{\partial_1}
+ \Lambda\otimes_{D_0}\Lambda
+ \xrightarrow{m}\Lambda\longrightarrow0
+ \tag{DR12}\label{eq:qa-two-mass-relative-diagonal}
+\]
+を持つ．これは全ての任意のscheme基底変更と整合する．
+特異基底上の$\Lambda$の絶対大域次元が二であるとは主張しない．
+\end{proposition}
+\begin{proof}
+局所的に短関係
+$r_a=q'+\mu u$と$r_b=q+\lambda x$を枠に選び，
+三段道の全束$\mathcal B$へ四つの短関係の両側合成を移す．
+前定理で確認した通り
+\[
+ (W\otimes r_a)\cap(r_b\otimes U)=0
+\]
+が全幾何fiberで成立し，和は階数四の直和因子となる．
+全ての三段道は$0\to3$に限られ，
+四本の短関係の合成を除いた三段道の関係束は
+残りの二本の$R_{\rm fin,03}$で尽くされる．
+最大の頂点差は三であるから，これ以上の道や
+別の関係重なりは存在しない．
+
+式~\eqref{eq:qa-two-mass-relative-diagonal}の
+微分は標準的な非可換微分，
+すなわち矢$v$に対して
+$1\otimes v\otimes1\mapsto v\otimes1-1\otimes v$，
+関係$r=\sum v_1\cdots v_m$に対して
+\[
+ 1\otimes r\otimes1
+ \longmapsto
+ \sum_{v_1\cdots v_m\text{ in }r}
+ \sum_{j=1}^m
+   v_1\cdots v_{j-1}\otimes v_j\otimes
+       v_{j+1}\cdots v_m
+\]
+で定める．$\partial_1\partial_2=0$は関係が
+$\Lambda$で零であることから従う．
+相対の標準bar解消で頂点間の道を長さによって分けると，
+頂点差一では矢のみ，差二では一本の短関係を持つ
+道束の直和分解になり，差三では
+短関係からの四つの合成と
+残余二関係が直和で全kernelとなる．
+従ってbar解消から分裂可縮な道部分を除くと
+表示した長さ二の複体を得る．
+この簡約には短関係と長関係の直和因子性だけを用い，
+$\lambda,\mu$による除法は必要ない．
+各頂点対で分裂する有限束の操作なので，
+相対完全性と全基底変更が従う．
+$\Lambda^e$局所射影性は$D_0=\mathcal O_S^4$が
+相対separableであることによる．
+\end{proof}
+
+\begin{theorem}[ordinary QP Jacobianと3-preprojective完成]
+\label{thm:qa-two-mass-jacobian-preprojective}
+$\Theta_\Lambda=
+ \mathbf R\operatorname{Hom}_{\Lambda^e}
+              (\Lambda,\Lambda^e)[2]$とし，
+ordinaryなtensor dg algebra
+$\Pi_3(\Lambda)=T_\Lambda(\Theta_\Lambda)$を取る．
+前定理の係数環上で，relation-dualの戻り矢に
+preprojective次数一，finite foundationの元の矢に次数零を
+与えると，積を保つ自然な次数付き代数の同型
+\[
+ \boxed{\quad
+ H^0\Pi_3(\Lambda)
+ \simeq
+ \operatorname{Jac}
+  (Q_{12},\,H+yq+px+vq'+p'u+\lambda yx+\mu vu)
+ \quad}
+ \tag{JP}\label{eq:qa-two-mass-jacobian-preprojective}
+\]
+があり，任意のscheme基底変更に保たれる．
+これは単に幾何点ごとの同型ではなく，
+実際の束値関係と双対束を用いる相対同型である．
+この結論だけから全次数成分の局所自由性・Noether性・
+AS正則性は従わない．
+\end{theorem}
+\begin{proof}
+式~\eqref{eq:qa-two-mass-relative-diagonal}を
+$\Lambda^e$双対化して二つだけcohomological degreeを
+移す．元の矢束$V_{\rm fin}$の双対は次数$-1$，
+関係の双対$R_{\rm fin}^\vee$は
+preprojective次数一・cohomological次数零，
+頂点単位の双対は次数$-2$の生成束を与える．
+この有限な双対複体からのtensor dg algebraの
+次数零の生成元は$V_{\rm fin}\oplus R_{\rm fin}^\vee$である．
+次数$-1$の生成元の微分は関係そのものと
+relation potential
+\[
+ \mathcal W=\langle R_{\rm fin},R_{\rm fin}^\vee\rangle_{\rm cyc}
+\]
+の元の矢に関するcyclic derivativesを課す．
+現在の局所枠で短関係と残余二関係を書けば，
+これは正確に式~\eqref{eq:qa-two-mass-potential}である．
+よって$H^0$はそのordinaryな二側Jacobian idealで割った
+代数であり，式~\eqref{eq:qa-two-mass-jacobian-preprojective}
+を得る．
+$R_{\rm fin}$の枠変更は$R_{\rm fin}^\vee$の逆転置と
+相殺され，計算は降下する．
+使った複体は基底上分裂した有限局所射影なので，
+双対化・相対tensor表示は基底変更と整合する．
+この計算は既知のKellerのrelation QP/3-CY completion表示
+\cite[Theorem 6.10 と訂正]{KellerDeformedCY2011}
+と一致するが，nonminimal relationとnilpotent massの
+相対適用に必要な短い解消は上で個別に示した．
+\end{proof}
+
+\begin{theorem}[H2実現可能開上の全次数・同じheartの比較]
+\label{thm:qa-two-mass-h2-locus-jacobian-heart}
+前定理の相対QP群oidを，有限foundationが
+定理~\ref{thm:qa-square-explicit-h2-open}の
+実現可能なordered $H_2$開に属する部分へ制限する．
+この開では，fppf局所に構造対象を含む実際の
+full strong normal foundation
+$(E_0,E_1,E_2,E_3)$があり，有限Endは$\Lambda$である．
+$\mathcal C_S$を対応する相対pointed heart，
+$t=\mathsf S^{-1}[2]$をその反Serre作用とする．
+このとき前定理のJacobian algebraは，
+preprojective次数の全$n\geq0$について
+\[
+ \operatorname{Jac}(Q_{12},\mathcal W)_n
+ \simeq
+ \operatorname{Hom}_{\mathcal C_S}
+       (T,t^nT),\qquad T=\bigoplus_{i=0}^3E_i
+ \tag{SH}\label{eq:qa-two-mass-jacobian-serre-orbit}
+\]
+を満たす．全次数は基底上局所自由で，全積と任意の
+本稿の基底変更と可換する．
+本稿の局所有限型siteのaffine test上では
+Jacobian algebraは左右Noetherianであり，
+\[
+ \boxed{\quad
+ \bigl(\qgr\operatorname{Jac}(Q_{12},\mathcal W),
+       \,\pi e_0\operatorname{Jac}(Q_{12},\mathcal W),(1)\bigr)
+ \simeq(\mathcal C_S,\mathcal O_S,t)
+ \quad}
+ \tag{JH}\label{eq:qa-two-mass-jacobian-pointed-heart}
+\]
+という実際のpointed exact同値を得る．
+ここで零頂点はnormal foundationの$E_0=\mathcal O_S$を
+指定するものであり，
+その指定が強い$H_2$ pointingを与える開に限る．
+相対QPの余剰ゲージ慣性と三つの頂点scalarsを
+剛体化した後の比較として読む．
+一般のAS族の分類や，選択したfoundationの忘却後の
+二ruling・mutation貼合せの全群oid同値は含めない．
+\end{theorem}
+\begin{proof}
+定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}と
+系~\ref{cor:qa-h2-square-foundation-open}は，
+有限normal foundationと内在的$H_2$の実現可能開との
+相対同型を与える．square四項から実際の相対coneで
+normal四項を構成するので，そのperfect圏は
+$\operatorname{Perf}\Lambda$にMorita同値であり，
+Serre作用を保つ．
+従って$\Theta_\Lambda$の$n$次tensor冪は
+\[
+ \Theta_\Lambda^{\otimes_\Lambda^{\mathbf L}n}
+ \simeq\mathbf R\operatorname{Hom}(T,t^nT)
+\]
+に対応し，積も合成と一致する．
+各幾何fiber上のnormal full geometric helixの
+前向きExt消滅（論文A
+\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}）より，
+$n\ge0$の右辺はcohomological degree零に集中する．
+相対のHom複体はperfectであり，その固定$n$ごとの
+perfect-fiber判定は有限局所自由な
+$H^0$と任意の基底変更を与える．
+前定理の相対同型により，
+Jacobian algebraの全次数はこの反Serre軌道環となる．
+
+右Noether性と心の認識は，
+定理~\ref{thm:qa-relative-square-completion-tails}で用いた
+相対AZ ample補題~\ref{prop:qa-relative-flat-foundation-az}
+をnormal四項に適用して得る．
+normal foundationは構造対象$\mathcal O_S$を含み，
+十分な$t^n\mathcal O_S$に対する全高次Extは
+上の幾何fiber消滅とperfect-fiber判定により零となる．
+したがって$(T,t)$は相対AZ ampleであり，
+通常軌道環は右Noetherianかつその$\qgr$は
+実際の$\mathcal C_S$に同値である．
+左Noether性については，normal四項の双対の相対full
+strong性と逆Serre completionの比較により，
+補題~\ref{lem:qa-serre-completion-opposite}の
+同じ議論を適用する．
+この議論は相対perfectnessと左右oppositeに
+のみ依存し，最小矢束のflat性を仮定しない．
+
+最後に零頂点の標準射影を$\mathcal O_S$に対応させ，
+preprojective次数移動を$t$へ対応させれば
+式~\eqref{eq:qa-two-mass-jacobian-pointed-heart}となる．
+標準射影のシフトと有限表示の余核で定める
+AZ同値は通常のmodule-object引戻しとcoherentに
+整合する．ただしQPの全群oidから$ruling$忘却を
+自動的に導いたものではない．
 \end{proof}
 
 \begin{remark}[解決した比較と残るAS心の問題]
