@@ -223,6 +223,107 @@ scheme-theoretic な階数 locus を用いる。
 QP から有限代数への回復と射の比較には別の証明が必要である。
 \end{remark}
 
+\subsection{cubic表示の幾何条件に対する次数六以下の明示的検査}
+\label{subsec:qa-explicit-geometric-fourfold-test}
+
+既存のnormal foundation chartで最初の積が同型となる場合、
+論文B~\cite[\texttt{prop:cubic-foundation-open}]{QuadricModuli2026}
+は二次元空間$V_0,V_1,V_2,V_3$の
+四重テンソル$w\in V_0\otimes\cdots\otimes V_3$の
+geometric性を使ってcubic逆構成を行う。
+以下はこのgeometric開を
+\emph{完全に明示的な次数四・六の多項式条件}に書き直す。
+
+\begin{lemma}[四重テンソルのgeometric性のadjugate判定]
+\label{lem:qa-explicit-cubic-geometric-adjugate}
+$k$を代数閉体とし、各$V_i$を二次元として、
+$w\in V_0\otimes V_1\otimes V_2\otimes V_3$
+を取る。$i\in\mathbb Z/4\mathbb Z$について、
+隣接二因子の縮約行列を
+\[
+ M_i:(V_i\otimes V_{i+1})^\vee
+       \longrightarrow V_{i+2}\otimes V_{i+3}
+\]
+とする。基底を選んで$M_i$を$4\times4$行列とみなす。
+$A_i=\operatorname{adj}(M_i)$をその古典的adjugateとし、
+その第$j$列を二因子の$2\times2$テンソルに
+reshapeした行列を$C_{ij}$（$1\le j\le4$）とする。
+\[
+ d_i=\det M_i,\qquad
+ h_{ij}=\det C_{ij}
+ \tag{Geo-poly}\label{eq:qa-cubic-geometric-minors}
+\]
+と置く。$d_i$は$w$の成分の次数四、
+$h_{ij}$は次数六の多項式である。
+
+Van den Berghのgeometric条件
+\[
+ (\phi_i\otimes\phi_{i+1})\mathbin{\lrcorner}w\ne0
+ \quad\text{for all }i,\quad
+ 0\ne\phi_i\in V_i^\vee,\ \
+ 0\ne\phi_{i+1}\in V_{i+1}^\vee
+\]
+と次の有限条件は同値である。
+\[
+ \boxed{\quad
+  \text{各$i=0,1,2,3$について、}
+  \quad d_i\ne0
+  \ \text{または}\ 
+  h_{i1},h_{i2},h_{i3},h_{i4}
+  \text{の少なくとも一つが非零}.\quad}
+ \tag{Geo-test}\label{eq:qa-cubic-geometric-finite-test}
+\]
+従ってgeometric四重テンソル開は、
+\emph{四つの次数四式と十六の次数六式だけ}
+を使って定義される。
+各$M_i$の行・列の基底変更に対し
+この非消滅条件は不変なので、
+有限foundationの相対chartへ降下する。
+
+これは前段の一般存在定理
+~\ref{cor:qa-realizable-foundation-finite-open-criterion}
+で未計算だった\emph{全実現可能開}の方程式ではなく、
+$F$が可逆であるcubic部分における
+geometric条件の具体的な判定式である。
+\end{lemma}
+\begin{proof}
+固定した$i$について、$K_i=\ker M_i$を
+四次元空間$(V_i\otimes V_{i+1})^\vee$の部分空間とする。
+geometric条件は、$K_i$に非零の
+\emph{分解可能}二因子テンソルがないことと同値。
+これは
+$\PP(K_i)\cap\operatorname{Seg}(\PP^1\times\PP^1)=\varnothing$
+という条件である。
+Segre像は$\PP^3$の滑らかな二次曲面で、
+分解可能な$2\times2$行列は行列式零によって特徴付けられる。
+
+$\operatorname{rank}M_i=4$なら$K_i=0$なので条件は成立し、
+$d_i\ne0$と同値である。
+$\operatorname{rank}M_i\le2$なら
+$\dim K_i\ge2$なので$\PP(K_i)$は少なくとも直線を含む。
+代数閉体上で任意の射影直線は二次曲面と交わる
+（線上で行列式を制限した二次形式に零点がある、
+恒等零の場合も交わる）。
+従ってgeometric条件は失敗する。
+このとき全ての$3\times3$小行列式が零なので
+$A_i=0$となり、全ての$h_{ij}$は零である。
+
+残る$\operatorname{rank}M_i=3$の場合、
+$A_i$は階数一の非零行列で、像が
+一次元の$K_i$と一致する。
+その非零列は$K_i$を張るので、
+$K_i$が分解可能テンソルを含まないことは、
+いずれかの列をreshapeした$2\times2$行列の
+行列式が非零となることと同値である。
+これがいずれかの$h_{ij}\ne0$という条件になる。
+
+基底変更で$K_i$は
+$(\operatorname{GL}(V_i)\otimes\operatorname{GL}(V_{i+1}))^\vee$
+により移り、Segreの分解可能座も不変だから、
+判定条件は基底によらない。
+四つの$i$について適用すれば結論を得る。
+\end{proof}
+
 \subsection{既存の normal foundation chart の位置}
 
 \begin{proposition}[一方の積を可逆にした表示]
