@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.3（Hodge ruling符号とOU/Picard torsor）
+% 2026-11-22 / v1.4（正則半単純potentialの相対Hodge・半点へ拡張）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -765,6 +765,79 @@ $(X,u)\mapsto(R_\sigma XR_\sigma^{-1},R_\sigma u)$
 (\lambda X,\lambda^2t,\lambda^4y)$を誘導し、
 $C$、指定ruling、torsor式を保つ。
 以上の降下データから有限étale降下で結論を得る。
+\end{proof}
+
+\begin{corollary}[正則半単純potentialの非対角・相対Hodge構成]
+\label{cor:qa-ou-relative-regular-semisimple-potential}
+$k$ は代数閉体、$\operatorname{char}k=0$とする。
+$S$ を任意の$k$-スキーム、$(U,q)$ を
+第一rulingの向きを付けた相対Segre型の
+階数四の非退化二次束とする。
+$q$-自己随伴な$X\in\End_S(U)$ が可逆で、
+$f(t)=\det(tI-X^2)$ の判別式が可逆、
+相対曲線
+\[
+ C=\{q(u)=q(Xu)=0\}\subset\PP_S(U)
+\]
+が滑らかであると仮定する。
+このとき相対的なruling被覆
+$\mathcal E_{\mathrm{sp}}\to S$ と
+$\Pic^2_{C/S}$ は
+$\infty_+\mapsto\mathcal L_0$、
+$(0,\det X)\mapsto\mathcal L_2$ の下で
+任意の基底変更と可換に同型となる。
+特に $\mathcal E_{\mathrm{sp}}\simeq\Pic^0_{C/S}$
+は群スキーム同型であり、
+$P_+=(0,\det X)$ は
+$N=\mathcal L_2\mathcal L_0^{-1}$ に対応する。
+
+$X$の特性多項式を
+\[
+ \det(zI-X)=z^4-s_1z^3+s_2z^2-s_3z+c
+\]
+とし、$s_1$が可逆な開で
+$t_0=-s_3/s_1$ と置く。
+必要なら $f(t_0)$ が可逆な開へ縮める。
+この開上で、特性係数だけを使うsection
+\[
+ Q_X=\bigl(t_0,-(t_0^2+s_2t_0+c)\bigr)
+ \in\mathcal E_{\mathrm{sp}}(S)
+ \tag{OU-relative-half}\label{eq:qa-ou-relative-halfpoint}
+\]
+は$[2]Q_X=P_+$を満たす。
+従って $a_X=-\Theta(Q_X)$ は
+$[-2]a_X=N$ という相対Picard根を与える。
+このsectionは$SO(q)$共役と任意の基底変更に自然である。
+\end{corollary}
+\begin{proof}
+$X$ の固有値の二乗が相異なるので、有限étale局所に
+その固有線が分解する。$q$-自己随伴性により
+異なる固有線は直交し、$q$の非退化性から各固有線は
+非等方的である。さらにétale局所に長さ一の
+固有ベクトルを選び、向きを合わせれば
+$SO(q)$-正規直交基底で$X$を対角化できる。
+この表示上のruling二重被覆とPicardの同定は
+命題~\ref{prop:qa-ou-pointcurve-quadric-pencil} と
+補題~\ref{lem:qa-ou-hodge-ruling-sign} による。
+異なる対角化の差は$SO(q)$であり、
+その作用は第一rulingを保つため
+同型がétale降下して任意の底変更と可換になる。
+$\det X$ の符号も向きを保つ基底変更で不変である。
+
+次に$X$の特性係数は対角化後の$x_i$の基本対称式で、
+従って恒等式
+\[
+ \det(tI-X^2)
+   =(t^2+s_2t+c)^2-t(s_1t+s_3)^2
+\]
+は$S$上で成立する。
+式~\eqref{eq:qa-ou-relative-halfpoint} が相対曲線上のsection
+であることと、$[2]Q_X=P_+$は
+定理~\ref{thm:qa-ou-spectral-kummer} の除数計算を
+étale局所に適用して得られる。
+これらは相対Picard群におけるsectionの等式なので
+降下し、基底変更とも可換である。
+特性係数は$SO(q)$共役不変だからsectionの自然性も従う。
 \end{proof}
 
 \begin{remark}[偶数符号群と残る比較]
