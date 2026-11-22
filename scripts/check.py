@@ -263,7 +263,8 @@ def math_checks() -> int:
                "verify_lagrangian_recognition.py", "verify_clifford_pbw.py",
                "verify_ou_fourfold.py", "verify_ou_spectral_halving.py",
                "verify_ou_hodge_ruling.py", "verify_ou_quintuple_inertia.py",
-               "verify_ou_special_reflection.py", "verify_noncubic_boundary.py")
+               "verify_ou_special_reflection.py", "verify_ou_cm_automorphisms.py",
+               "verify_noncubic_boundary.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
     for name in scripts:
