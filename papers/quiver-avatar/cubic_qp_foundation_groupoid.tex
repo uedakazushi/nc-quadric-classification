@@ -1,0 +1,231 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.23。cubic八矢QPと有限foundationの相対群oid。
+
+\subsection{八矢QPから有限cubic foundationへの全相対群oid}
+\label{subsec:qa-cubic-qp-foundation-groupoid}
+
+本項では前記の四頂点とweightを保持し，標数零の体$k$上で扱う．
+以下の有限Grassmann商の同型自体は任意の基礎体上で成立する．
+八矢箙$Q_8$の隣接矢束を
+\[
+ U:0\to1,\qquad V:1\to2,\qquad W:2\to3,\qquad T:3\to0
+\]
+（いずれも階数二）とし，
+\(\mathcal V=W\otimes V\otimes U\) と置く．
+頂点で始点を固定した巡回道を用いれば，
+weight四のpotentialは正確に
+\[
+ H\in\mathcal V\otimes T,\qquad
+ \partial_T H:\ T^\vee\longrightarrow\mathcal V
+ \tag{QP8}\label{eq:qa-cubic-qp-flattening}
+\]
+に対応する．ここでは巡回同値を取っても余分な係数商は生じない．
+任意のスキーム上で \(\partial_T H\) が階数二の局所自由直和因子
+である開を \(P_8^{(2)}\) と書く．
+これはrank-two flatteningの全minorの単位イデアル条件である．
+\[
+ G_8=\GL(U)\times\GL(V)\times\GL(W)\times\GL(T),
+ \qquad G_3=\GL(U)\times\GL(V)\times\GL(W)
+\]
+を重み付きright-equivalence群とする．$Q_8$では任意の
+重み一の矢はその始点終点の二矢の線型結合であり，
+同じ始点終点の重み一の長い道は存在しない．従って
+重みを保つ右同値の全群は正に$G_8$である．
+非重み付き完備道代数の全自己同型群と同一視しない．
+
+\begin{theorem}[八矢QPと階数二関係束の相対groupoid同値]
+\label{thm:qa-cubic-qp-grassmann-groupoid}
+次のfppfスタックの自然な同値がある：
+\[
+ \boxed{\quad
+ [P_8^{(2)}/G_8]\ \simeq\
+ [\operatorname{Gr}(2,\mathcal V)/G_3]\quad}.
+ \tag{QG}\label{eq:qa-cubic-qp-grassmann-stack}
+\]
+左辺はweight四の四次potentialと重み付きright-equivalenceを
+すべての同型として持つ．右辺は三つの階数二束と
+$\mathcal V$内の階数二直和因子$R$を同型とともに持つ．
+同値は$H$を
+$R=\operatorname{im}(\partial_T H)$へ送る．
+任意のスキームへの基底変更，非被約基底，Isom-sheafおよび
+慣性群スキームと整合する．
+\end{theorem}
+\begin{proof}
+$G_3$をいったん忘れ，各矢束を固定する．
+$\operatorname{Gr}(2,\mathcal V)$の普遍階数二部分束を
+$\mathcal R\subset\mathcal V$とする．
+$\partial_T H$の像が$\mathcal R$であるという条件は，
+$T^\vee\xrightarrow{\sim}\mathcal R$という同型を選ぶことに等しい．
+従って
+\[
+ P_8^{(2)}
+ =\operatorname{Isom}_{\operatorname{Gr}(2,\mathcal V)}
+       (T^\vee,\mathcal R)
+\]
+は普遍部分束の$\GL(T)$-torsorであり，Zariski局所に自明である．
+$\GL(T)$は$P_8^{(2)}$上自由に作用し，
+その幾何商およびfppf商は正確にGrassmannスキームとなる．
+このtorsorは$G_3$-同変なので，残りの群による商を取れば
+表示した二商スタックの同値が得られる．
+具体的な逆関手では，$R$に対して$T=R^\vee$と置き，
+$\mathcal V\otimes R^\vee$内の恒等テンソルをpotentialとする．
+基底変更に伴う第四矢束の自動的な同型は全right-equivalenceを回収する．
+単なる幾何点の全単射でなくtorsor同値なので，
+相対同型層と慣性も回収する．
+\end{proof}
+
+\begin{proposition}[四頂点finite foundationの全積を保つ同型]
+\label{prop:qa-cubic-qp-finite-foundation-groupoid}
+有限代数スタック
+\(\mathfrak F_8^{\rm lin}=[(Z_a\cap Z_b)/G]\)
+（命題~\ref{thm:qa-foundation-open-diagram}のunrigidified版）
+には自然な同値
+\[
+ \boxed{\quad
+ \mathfrak F_8^{\rm lin}
+ \ \simeq\
+ [\operatorname{Gr}(2,\mathcal V)/G_3]
+ \ \simeq\ [P_8^{(2)}/G_8]\quad}.
+ \tag{FG}\label{eq:qa-cubic-qp-finite-groupoid}
+\]
+ここでは有限代数の階数二十四の全成分・全積を保存する．
+QPからの関手は、最後の矢群$T$に沿うcyclic derivativesが張る
+三段道の関係束を取り，四頂点のdirected windowの有限End代数を
+回収する．Jacobian商の全次数AS正則性は主張しない．
+\end{proposition}
+\begin{proof}
+有限foundationの三つの隣接Hom束を$U,V,W$とする．
+$Z_a\cap Z_b$では二つの乗法
+\[
+ a:V\otimes U\xrightarrow{\sim}E,\qquad
+ b:W\otimes V\xrightarrow{\sim}F
+\]
+が可逆である．
+従って$E=V\otimes U$，$F=W\otimes V$へ基底変更で
+厳密に規格化できる．
+結合律$c(1_W\otimes a)=d(b\otimes1_U)$により
+$W\otimes E$と$F\otimes U$の両経路の合成は，同一の写像
+\[
+ m:\mathcal V=W\otimes V\otimes U\longrightarrow N
+\]
+となる．元の$(c,d)$の合併全射性は$m$の全射性と同値である．
+$\operatorname{rank}\mathcal V=8$，$\operatorname{rank}N=6$だから，
+$R=\ker m$は階数二の直和因子である．逆に任意の$R$から
+\[
+ E=V\otimes U,\quad F=W\otimes V,\quad
+ N=\mathcal V/R
+\]
+および二つの標準的な商写像$c,d$を取れば，全積と結合律を
+満たす有限directed代数が得られる．この構成は互いに逆で，
+$E,F,N$のbasis torsorも含めて任意の基底変更と可換する．
+したがって有限代数の全isomorphism groupoidは
+$[\operatorname{Gr}(2,\mathcal V)/G_3]$に等しい．
+定理~\ref{thm:qa-cubic-qp-grassmann-groupoid}と合わせれば結論が従う．
+
+さらに八矢QPの微分$\partial_T H$は二つの長さ三の関係を与える．
+四頂点のdirected windowでは頂点$3\to0$の矢を通る道は存在しない．
+従って他のcyclic derivativesに由来する余分な関係はなく，
+最初の四頂点の有限Endの長さ三の商は正確に$\mathcal V/R$である．
+二段道には関係がないので，有限代数の全積が一致する．
+\end{proof}
+
+\begin{corollary}[頂点スカラーの慣性とcubic $H_2$の相対認識]
+\label{cor:qa-cubic-qp-pointed-h2-gerbe}
+前命題の$G_3$の三つのscalar部分群
+\(K_{\rm vert}\simeq\Gm^3\)はGrassmann上自明に作用する．
+その剛体化は有限foundationの
+\(\mathfrak F_8=[(Z_a\cap Z_b)/(G/K)]\) と一致し，
+\[
+ \mathfrak F_8\simeq
+ [\operatorname{Gr}(2,\mathcal V)/\operatorname{PGL}_2^3].
+ \tag{Fr}\label{eq:qa-cubic-qp-rigid-foundation}
+\]
+八矢側では，四つの矢群のscalarの積が一となる
+\[
+ K_{\rm QP}=
+ \{(\alpha,\beta,\gamma,\delta)\in\Gm^4:
+                 \alpha\beta\gamma\delta=1\}
+ \simeq\Gm^3
+\]
+がpotentialを点ごとに固定する．
+$G_8/K_{\rm QP}$への変更が正に上の剛体化を与え，
+幾何点の安定化群にはfppf群スキームの完全列
+\[
+ 1\longrightarrow K_{\rm QP}\longrightarrow
+ \operatorname{Aut}_{[P_8^{(2)}/G_8]}(H)
+ \longrightarrow\operatorname{Aut}_{\mathfrak F_8}(R)
+ \longrightarrow1
+ \tag{St}\label{eq:qa-cubic-qp-stabilizer-exact}
+\]
+がある．
+
+四重テンソルのVan den Bergh geometric開$\mathscr G$を
+指定すると、この同値はその不変開へ制限される．
+幾何開では$\partial_T H$が階数二である．
+既存の cubic 表示の相対同型
+\(\mathfrak U_f\simeq[\mathscr G/G_f]\)
+（命題~\ref{prop:qa-global-cubic-four-qubit-good-moduli}）
+により，矢群のdualとcyclic順序を合わせて
+\[
+ \boxed{\quad
+ [\mathscr G/G_8]\ \longrightarrow\
+ [\mathscr G/(G_8/K_{\rm QP})]\simeq\mathfrak U_f
+ \quad}
+ \tag{HC}\label{eq:qa-cubic-qp-h2-cubic-gerbe}
+\]
+はbanded $\Gm^3$-gerbeである．
+同値は実際のcubic表示の相対groupoidを含むが，
+選んだ正規窓・rulingの忘却や任意AS族のheartとの同一視は
+追加で検証を要する．
+\end{corollary}
+\begin{proof}
+四頂点のscalar $(\lambda_0,\ldots,\lambda_3)$は
+隣接Homに
+$(\lambda_1/\lambda_0,\lambda_2/\lambda_1,
+\lambda_3/\lambda_2)$で作用する．この三つの値は独立で，
+三重tensorの関係部分空間には共通scalarとして作用するから
+Grassmann上自明である．
+第四矢群のscalarはその逆積となり，表示した
+$K_{\rm QP}$に一致する．中心部分群の作用が自明な
+商スタックの剛体化について，二つの表示を比べれば
+群スキームの完全列が従う．
+$K_{\rm vert}$の群作用を割った有効群は
+$\operatorname{PGL}_2^3$である．
+
+幾何条件は四重テンソルの不変開条件である．
+もし第四矢群に関するflatteningの階数が一以下なら，
+四因子テンソルを二因子対二因子の$4\times4$行列として見たとき
+その階数は高々二となる．
+しかしgeometric条件はその行列と転置のkernelがSegreを避ける
+ことを含み，階数二以下を許さない
+（補題~\ref{lem:qa-cubic-adjugate-two-invariants}）．
+従って$\mathscr G\subset P_8^{(2)}$である．
+$f$可逆な$cubic$ H2 chartにおける残余群$G_f$は，
+前の四重テンソル表示の四つの矢群の有効群であり，
+双対に使う因子についてscalarを逆に読めば
+$G_f\simeq G_8/K_{\rm QP}$となる．
+命題~\ref{prop:qa-global-cubic-four-qubit-good-moduli}は
+この商を実際の相対cubic H2 chartに同定するので，
+結論を得る．
+\end{proof}
+
+\begin{remark}[十二矢QPの余剰慣性と残る比較]
+\label{rem:qa-cubic-qp-remaining-inertia}
+命題~\ref{prop:qa-stabilized-inertia}で既証明の
+\(
+ \mathcal P_{12}^{\lambda\mu\ne0}
+ \simeq\mathcal P_8\times B(\Gm^2)
+\)
+をgeometric開に制限すれば、十二矢QPから上の有限
+foundationへの忘却には、通常の四頂点scalarの$\Gm^3$に加え
+二つの可縮pairの$\Gm^2$がある．
+従ってraw十二矢QPの全right-equivalence群oidを
+$\mathfrak U_f$へ忠実に同定してはならない．
+本項は八矢の相対同型層を可逆cubic開で決着させるものであり，
+rank-three壁・noncubic・nilpotent massを持つ十／十二矢での
+相対QP群oidや同じheartを保つ比較までは証明しない．
+特に\(\operatorname{coker}\mu_G=\OO/(\delta)\)が
+非平坦となる一次変形
+（命題~\ref{prop:qa-relative-as10-minimal-arrow-wall}）を
+幾何fiberごとの最小矢数だけから復元することはできない．
+\end{remark}
