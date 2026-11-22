@@ -355,6 +355,56 @@ generic fiberへ持ち上がり、
 従って(4)なら二重壁の外側、すなわち(1)が必要。
 \end{proof}
 
+\begin{corollary}[rotated squareによる導来非cubic locusの明示式]
+\label{cor:qa-as-cubic-rotated-sigma2-exception}
+$A$をrotated square型のAS正則$\mathbb Z$-代数とする。
+そのavatarを$(Y,D;F,H,P)$とし、
+$C_D=HF^{-2}=\OO_D(h-2f)$と置く。
+古典型を除く曲線型において、次は同値である：
+\begin{enumerate}
+\item $D^b(\qgr A)$は
+      \emph{いかなる}cubic型AS正則$\mathbb Z$-代数の
+      有界導来圏とも同値でない；
+\item $\Qgr A$はいかなるcubic型AS代数の
+      $\Qgr$とも完全Abel同値でない；
+\item $Y\simeq\Sigma_2$かつ
+      $0\ne P\in\Pic^0(D)[2]$。
+\end{enumerate}
+従ってrotated squareの$\Sigma_0$側では
+\emph{常に}少なくとも一つのcubic presentationがあり、
+$\Sigma_2$側では$P^{\otimes2}\not\simeq\OO_D$なら
+cubic presentationがある。
+$\Sigma_2$側の非零二捩れlocusは
+smooth／既約nodal／$I_2$の三型だけである。
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:qa-core-avatar-square-rotated}の
+squareへの変換は
+\[
+ F_s=F,\qquad G_s=HF^{-1}P^{-1},
+ \qquad G_sF_s^{-1}=C_DP^{-1}
+\]
+である。二重壁の条件は
+$P\simeq G_sF_s^{-1}$かつ
+$P^{\otimes2}\simeq\OO_D$なので
+$C_D\simeq P^{\otimes2}\simeq\OO_D$となる。
+$Y=\Sigma_2$なら$C_D\simeq\OO_D$であり、
+二重壁に属するための条件は
+$0\ne P\in\Pic^0(D)[2]$だけである。
+$Y=\Sigma_0$では
+$C_D=\OO_D(g-f)$は非自明である。
+実際、二つのrulingの制限$pencil$が一致すれば
+$D\to\PP^1\times\PP^1$は対角へ因数分解し、
+$(2,2)$の閉埋め込みにならない。
+従って二重壁は$\Sigma_0$側には存在しない。
+
+以上を定理~\ref{thm:qa-as-cubic-reachability}に
+適用して(1)--(3)を得る。
+$\Sigma_2$側での三型の限定は
+補題~\ref{lem:qa-as10-double-wall-reduced-geometries}による。
+古典型は同じ定理でcubic到達可能である。
+\end{proof}
+
 \begin{remark}[分類同型とheartの区別]
 \label{rem:qa-as-cubic-obstruction-marking}
 非二重壁では商Abel圏のcubic presentationは存在するが、
