@@ -1,10 +1,10 @@
 # Cloud Codexで研究を継続する
 
-2026-11-23 / v0.18。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.69、論文Bはv0.41（依存と組版の監査中）、論文Cはv4.23。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
+2026-11-23 / v0.19。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.69、論文Bはv0.41（依存と組版の監査中）、論文Cはv4.24。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
 
 ## 論文Cを最優先で完成するための現行実行単位
 
-**最優先目標は `papers/nc-quadric-avatar.tex`（論文C）を証明と先行研究比較のある独立した公表可能な論文として完成させること。** 研究方針のC1–C4を終了基準とする。C2の全H2半不変式環・中央affine chart・noncubic閉像・二商特異点は `papers/quiver-avatar/global_h2_invariant_hull.tex` に証明を統合した。C3の可逆cubic開では、最小8矢QPとrank24有限foundationのfppf全groupoid同値、および三頂点scalar慣性の剛体化とH2 chartへの相対認識を `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に証明済み。二正規化間のmutation glueが単なるright-equivalenceでないことも証明した。**第一の未解決核心はrank3 scheme壁とnilpotent massを含む非最小十／十二矢の相対群oid、right-equivalenceとheart比較**。既知の可縮pair余剰慣性 `BGm²` を保持する。C4の証明・一次資料比較・全稿LuaLaTeX組版も未完了。A（20分類節）とB（31相対節）は有効な入力として監査を行うが、その公表準備だけで作業を停止せず、Cより先に優先しない。数学的検証・ソース検査・組版・main保存・hub更新を区別する。
+**最優先目標は `papers/nc-quadric-avatar.tex`（論文C）を証明と先行研究比較のある独立した公表可能な論文として完成させること。** 研究方針のC1–C4を終了基準とする。C2の全H2半不変式環・中央affine chart・noncubic閉像・二商特異点は `papers/quiver-avatar/global_h2_invariant_hull.tex` に証明を統合した。C3の可逆cubic開では、最小8矢QPとrank24有限foundationのfppf全groupoid同値、および三頂点scalar慣性の剛体化とH2 chartへの相対認識を `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に証明済み。二正規化間のmutation glueが単なるright-equivalenceでないことも証明した。Raw QPでmass係数λ=εを持つpairの対角慣性が非平坦となる明示例を `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に追加し、SymPyの4検査PASS。これをflat AS族へ無条件に拡張しない。**第一の未解決核心はrank3 scheme壁とnilpotent massを含む実際の非最小十／十二矢AS/QP相対群oid、right-equivalenceとheart比較**。既知の可縮pair余剰慣性 `BGm²` を保持する。C4の証明・一次資料比較・全稿LuaLaTeX組版も未完了。A（20分類節）とB（31相対節）は有効な入力として監査を行うが、その公表準備だけで作業を停止せず、Cより先に優先しない。数学的検証・ソース検査・組版・main保存・hub更新を区別する。
 
 ## 起動時の依頼文
 
