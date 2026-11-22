@@ -315,6 +315,80 @@ $T$が異なる二つの被約点ならこの群は$\mathbb G_m$、
 二捩れは一点である。
 \end{proof}
 
+\begin{proposition}[滑らかなavatarにおける二重壁の横断性]
+\label{prop:qa-as10-double-wall-transversality}
+$k$を標数零の代数閉体とし、滑らかな楕円曲線
+$E/k$と次数二線束$F\in\Pic^2(E)$を固定する。
+平方型avatarのパラメータを
+\[
+ (P,\eta)\in
+ U=(\Pic^0(E)\setminus\{\OO_E\})^2,
+ \qquad G=F\eta
+\]
+で表す。ここでは曲線$E$と$F$を固定しており、
+曲線の自己同型による商を取らない。
+二つのmutationの階数三壁はそれぞれ
+\[
+ D_F=\{\eta=P\},\qquad
+ D_G=\{\eta=P^{-1}\}\quad\subset U .
+\]
+これらは滑らかなCartier因子で、
+\emph{scheme-theoreticに横断的}に交わる。
+交わりは
+\[
+ D_F\cap D_G
+ \ \simeq\ E[2]\setminus\{0\}
+\]
+であるから、被約な三点からなる。
+$E$を滑らかな楕円曲線族へ動かしても、
+対応する\emph{標識付き}相対パラメータ空間では、
+この交点は基底上有限étale三次となる。
+特に二重壁の余次元は二で、
+その通常の法空間に二つの壁の独立な一次方向がある。
+これは自己同型で割った内在的O-marked
+モジュライでのstack同型や慣性同定を
+意味しない。
+\end{proposition}
+\begin{proof}
+$U$の各点で、二つの次数二線束$F,G$は
+$G\not\simeq F$を満たす。
+補題~\ref{lem:qa-core-two-pencils}によって
+$(F,G)$の完全線形系は$(2,2)$閉埋め込みを与える。
+補題~\ref{lem:qa-as10-rank-wall-pencils}を使えば
+二つの壁は記載した等式でscheme-theoreticに
+切られる。実際、$F$のpencil評価列の
+核と余核の相対cohomologyを取ると、
+乗法の階数三条件は$H^0(E,\eta P^{-1})\ne0$と
+同値である。$\Pic^0(E)$上でこの条件の
+Fitting divisorは恒等点の被約Cartier因子である。
+これは次数零非自明線束には切断がなく、
+$\Pic^0(E)$の原点での$R\Gamma$の接微分が
+非零であること（標準的な楕円曲線の
+Poincaré線束のcohomologyとbase change）による。
+
+点$(P_0,\eta_0)=(P_0,P_0)$で
+$0\ne P_0\in E[2]$を取る。
+群法則の形式座標を$u$（$P$の変化）、
+$v$（$\eta$の変化）とすると、
+$P_0^{-1}=P_0$であり、原点付近での
+反転の微分は$-1$なので、
+二壁の接方程式は
+\[
+ v-u=0,\qquad v+u=0.
+\]
+そのJacobian行列
+$\left(\begin{smallmatrix}-1&1\\1&1\end{smallmatrix}\right)$
+は行列式$-2\ne0$を持つ。
+従って二壁は横断的で、
+交わりは$\{P^{\otimes2}=\OO_E,\eta=P\}$の
+被約schemeとなる。
+標数零では$[2]:\Pic^0(E)\to\Pic^0(E)$は
+étale次数四なので、非零部分は三点である。
+同じ議論は任意の滑らかな楕円曲線族上で
+相対Picardを用いて適用でき、
+非零二捩れ群スキームが有限étale次数三を与える。
+\end{proof}
+
 \begin{proposition}[二つの最小十本矢壁と二捩れ交点]
 \label{prop:qa-as10-double-wall-characterization}
 曲線型square avatar $(D,F,G,P)$ を固定する。
