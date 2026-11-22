@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.4（正則半単純potentialの相対Hodge・半点へ拡張）
+% 2026-11-22 / v1.5（一般quintuple剛体化後の有限慣性と接slice）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -112,6 +112,141 @@ twist functorと恒等 functorの自然同型を与える。
 忘却による相対慣性の核が $K$ を含むため、
 射が表現可能であるための必要条件（相対慣性の自明性）に反する。
 \end{proof}
+
+\begin{proposition}[一般quintupleの有限慣性と三次元の接slice]
+\label{prop:qa-ou-generic-quintuple-finite-inertia}
+$k$を標数零の代数閉体とし、
+$G_{\mathrm{eff}}=\widetilde G/K$ を
+命題~\ref{prop:qa-ou-scalar-gerbe} の有効quintuple表示群とする。
+一般のquintuple $t$ を、Okawa--Ueda
+\cite[\S3, (3.9)--(3.16)]{OU2014} の
+$SO_4\times SO_4$表示で
+$X=\operatorname{diag}(x_1,x_2,x_3,x_4)$ と書く。
+\[
+ \prod_i x_i\ne0,\qquad
+ \prod_{i<j}(x_i^2-x_j^2)\ne0,\qquad
+ \sum_i x_i^2\ne0
+ \tag{OU-gen}\label{eq:qa-ou-stabilizer-generic-open}
+\]
+を仮定すると、その\emph{剛体化後の}幾何的慣性は
+\[
+ \operatorname{Stab}_{G_{\mathrm{eff}}}(t)
+ \simeq
+ \{\operatorname{diag}(\epsilon_1,\ldots,\epsilon_4):
+       \epsilon_i^2=1,\ \prod_i\epsilon_i=1\}
+       /\langle -I_4\rangle
+ \simeq\mu_2^2 .
+ \tag{OU-inertia}\label{eq:qa-ou-generic-finite-inertia}
+\]
+特に$K\simeq\Gm^4$を消しても
+一般quintupleの全慣性は自明にはならない。
+
+さらに$\mathfrak M_{\mathrm{qui}}^{\mathrm{rig}}
+=[\mathscr G^{\mathrm{nl}}/G_{\mathrm{eff}}]$
+の一般点における
+接空間は三次元で、上記の有限慣性はこれに
+\emph{自明に}作用する。
+対角sliceでは
+\[
+ T_{[t]}\mathfrak M_{\mathrm{qui}}^{\mathrm{rig}}
+ \simeq
+ \bigoplus_{i=1}^4 k\,E_{ii}\big/
+          k\cdot\operatorname{diag}(x_1,\ldots,x_4).
+ \tag{OU-tangent}\label{eq:qa-ou-generic-rigid-tangent}
+\]
+対応する点曲線
+$C=\{\sum u_i^2=\sum x_i^2u_i^2=0\}\subset\PP^3$
+が滑らかな場合、有限慣性の非単位元はすべて$C$上
+固定点を持たず、作用は
+$\operatorname{Jac}(C)[2]$の全平行移動群に一致する。
+これらの平行移動は$\Pic^0(C)$上では恒等に作用する。
+従って適合Picard根の\emph{同型類の四点集合}上では
+この有限慣性は各点を固定するが、
+Picard根torsorの構造群$E[2]$は四点を推移的に動かす。
+両者を抽象群の位数が同じという理由だけで
+同一のdeck作用とみなしてはならない。
+\end{proposition}
+\begin{proof}
+四重テンソルへの$\widetilde G$作用は、両側の
+$\GL_2\times\GL_2$から$\mathrm{GSO}_4$への写像によって
+$\widehat G=\SO_4\times\SO_4\times\Gm$の
+$(g,h,\lambda)\cdot X=\lambda gXh^{\mathsf T}$
+として表される。体$k$が代数閉なので、この表示の像は
+$G_{\mathrm{eff}}$の像と一致する。
+$\widehat G$から作用群への核は
+\[
+ Z=\{(\epsilon I_4,\eta I_4,\epsilon\eta):
+              \epsilon,\eta\in\mu_2\}
+ \simeq\mu_2^2 .
+\]
+従って安定化群を$\widehat G$で計算して
+最後に$Z$で割ればよい。
+
+$\lambda gXh^{\mathsf T}=X$ならば
+$h(X^{\mathsf T}X)h^{\mathsf T}
+=\lambda^{-2}X^{\mathsf T}X$となる。
+双方のtraceを取ると
+$\sum_i x_i^2\ne0$より$\lambda^2=1$。
+$Z$の元を掛けて$\lambda=1$に正規化する。
+$x_i^2$が相異なるので、
+$h$は対角符号行列であり$\det h=1$を満たす。
+さらに$gX=Xh$と全$x_i\ne0$から$g=h$。
+八個の偶数符号行列を同時反転$-I_4$で割ると
+式~\eqref{eq:qa-ou-generic-finite-inertia}の四元が得られる。
+これは標数零で有限étaleなので無限小慣性は零である。
+
+$\mathfrak{so}_4\oplus\mathfrak{so}_4\oplus k$の
+接軌道写像は
+\[
+ (A,B,\alpha)\longmapsto AX-XB+\alpha X.
+\]
+対角成分は$\alpha x_i$、
+各$i<j$の非対角二成分に対する線型写像は
+\[
+ \begin{pmatrix}x_j&-x_i\\-x_i&x_j\end{pmatrix}
+ \begin{pmatrix}A_{ij}\\B_{ij}\end{pmatrix},
+\]
+その行列式は$x_j^2-x_i^2\ne0$である。
+よって軌道接空間は全十二個の非対角方向と
+対角線$kX$からなり、次元$12+1=13$。
+残る対角三次元に対する
+$(D,D)$の共役作用は自明だから、接空間と
+有限慣性作用は表示の通りである。
+
+非単位の偶数符号行列の代表を
+$D=\operatorname{diag}(-1,-1,1,1)$
+（添字を適宜交換）とする。
+その$\PP^3$上の固定点は
+$u_3=u_4=0$または$u_1=u_2=0$のどちらかにある。
+前者では$C$の二式
+$u_1^2+u_2^2=x_1^2u_1^2+x_2^2u_2^2=0$
+の行列式が$x_2^2-x_1^2\ne0$であり、
+後者も同様だから、$C$との交わりは空である。
+したがって有限慣性の各非単位元は
+滑らかな種数一曲線の固定点を持たない位数二自己同型で、
+非零二捩れ点による平行移動に等しい。
+位数四の忠実作用なので全$\operatorname{Jac}(C)[2]$となる。
+楕円曲線の平行移動は$\Pic^0$上で恒等となるので、
+四つの根の同型類を各々固定する。
+これは同型類の作用であり、線束の線型化や
+スタック上の二射の一意性を主張しない。
+\end{proof}
+
+\begin{remark}[OU2014の「一般安定化群」の読み方]
+\label{rem:qa-ou-generic-inertia-source-audit}
+Okawa--Ueda \cite[Theorem 1.1(1)]{OU2014} には
+quintuple表示のgeneral stabilizerを$\Gm^4$とする
+記載がある。これを\emph{全}幾何慣性と解釈すると
+前命題の$\mu_2^2$と一致しない。
+$\Gm^4$は一般安定化群の単位連結成分であり、
+剛体化後にも有限四元群が残る、と区別するのが正確である。
+従って原論文の「剛体化後はGIT商とbirational」を
+スタックの一般安定化群が自明という意味で直接使わない。
+GITの粗空間の有理同値に関する主張とは別である。
+この有限慣性が本稿のpointed忘却射で
+忠実に保存されるかは、point対象への作用を含む
+相対groupoid比較として別途検証する。
+\end{remark}
 
 \begin{remark}[GITの次数と慣性を混同しない]
 \label{rem:qa-ou-degree-four-not-root}
