@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.21
+% 日本語 LuaLaTeX。2026-11-23 / v4.22
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.21（cubic貼合せ・粗二重射と全域のGIT比較）}
+\date{2026年11月23日\quad v4.22（全半不変環・中央affine環・二商特異点）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -156,6 +156,11 @@ Okawa--Uedaの四重GIT射とPicard根torsor、その慣性と局所粗分岐を
 共通の標識incidenceへ引き戻しても、自然な二同種で押し出しても一致しない。
 体上の分類、具体的な相対射、全avatarまたはQP表示stackの認識を区別し、
 後二者の間に残る未解決範囲を明示する。
+さらに二つのGram二次形式のpencilから、全$H_2$の共通線形化に関する
+順序付き半不変環を五生成・一関係式で、非順序環を
+重み$(2,2,3,4)$の四変数多項式環で記述する。
+中央affine chart、noncubic閉曲線の方程式と二つの孤立商特異点を決定する。
+既知の対称形式pencilの不変式定理を入力とし、全相対AS/QP群oid比較はなお未完成である。
 \end{abstract}
 \tableofcontents
 
@@ -564,6 +569,7 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/cubic_geometric_open_invariants}
 \input{quiver-avatar/cubic_inversion_global_morphisms}
 \input{quiver-avatar/global_good_moduli_boundary_images}
+\input{quiver-avatar/global_h2_invariant_hull}
 \input{quiver-avatar/universal_h2_square_morita}
 \input{quiver-avatar/relative_rotated_mutated_tails}
 \input{quiver-avatar/spectral_atkin_lehner}
