@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.7（OU/Picard比較の同変半点による必要十分条件）
+% 2026-11-22 / v0.8（節点退化でのfinite/étaleの障害を追加）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -426,6 +426,36 @@ $[-2]$ は $z\mapsto-2z$、従って一意の平方根を持つ。
 いずれも標数零では étale である。
 最後の主張は有限 étale 射の次数が連結基底上で
 局所定数となることから従う。
+\end{proof}
+
+\begin{corollary}[節点退化へのOU有限射とPicard根空間の同一視は不可能]
+\label{cor:qa-ou-nodal-compactification-obstruction}
+$S$ を連結な局所有限型 $k$-スキームとし、
+滑らかな楕円曲線のfiberと既約一節点のfiberを含む
+非線型geometric cubic曲線族 $C\to S$ と
+$N\in\Pic^0_{C/S}(S)$ を取る。
+さらに $S\to\overline M_{\mathrm{qui}}$ が定義され、
+OUの有限GIT射
+$\overline M_{\mathrm{pot}}\to\overline M_{\mathrm{qui}}$
+を $S$ へ基底変更した有限射を $Y_S\to S$ とする。
+このとき $Y_S$ とPicard根空間
+\[
+ T_N=S\times_{\Pic^0_{C/S},[-2]}\Pic^0_{C/S}
+\]
+は、\emph{基底$S$上のスキームまたは代数空間として同型でない}。
+従って一般の滑らかなlocus上で両torsorを同一視できたとしても、
+節点fiberを含む基底全体へ同じ$\Pic^0[-2]$空間のままで
+その同型を延長することはできない。
+\end{corollary}
+\begin{proof}
+OUの射は有限なので任意基底変更 $Y_S\to S$ も有限である。
+一方、論文B \cite[\texttt{lem:picard-halves}]{QuadricModuli2026}
+により$T_N\to S$はétale全射である。
+もし両者が同型なら$T_N\to S$は有限étaleとなり、
+連結基底上では一定次数を持つ。
+しかし前命題~\ref{prop:qa-picard-roots-degeneration-count} により、
+smooth elliptic fiberでは4点、既約nodal fiberでは2点である。
+これに矛盾する。
 \end{proof}
 
 \begin{remark}[四点の抽象的な一致と比較すべきtorsor class]
