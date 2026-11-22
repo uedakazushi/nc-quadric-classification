@@ -524,6 +524,56 @@ leading termの有限生成元の持ち上げは
 古典型は通常の可換曲面のNoether性に帰着する。
 \end{proof}
 
+\begin{proposition}[Noether性からcoherentな導来同値へ]
+\label{prop:qa-as-avatar-coherent-morita}
+前定理のsquare／rotated square型の代数$A$について
+$X=\Qgr A$、$\coh X=\qgr A$と置き、
+$T=E_0\oplus E_1\oplus E_2\oplus E_3$、
+$B=\End(T)$とする。
+すると
+\[
+ \RHom_X(T,-):
+ D^b(\coh X)\xrightarrow{\ \sim\ }D^b(\mathrm{mod}\,B)
+\]
+は三角圏同値である。
+さらに$\coh X$の完全自己同値$\nu$があり、
+$\nu E_i\simeq E_{i-4}$、
+$D^b(\coh X)$のSerre関手は
+$\nu[2]$と同型になる。
+これは\emph{導来}Morita同値であり、
+$\coh X\simeq\mathrm{mod}\,B$という
+Abel圏同値を主張しない。
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:qa-as-avatar-noetherian}より
+$A$は左右Noetherianである。
+有限生成graded加群の有限表示のsyzygyに、
+左右の最小単純分解と$\Tor$の検出を繰り返すと、
+射影分解は長さ三以内で停止する。
+実際、さらに非零のsyzygyがあれば、
+左単純加群との$\Tor_{>3}$に非零の項を持つが、
+左単純の長さ三の射影分解に矛盾する。
+従って各連接対象は有限個の$E_i$のconeから生成される。
+補題~\ref{lem:qa-as-serre-unique-recovery}の
+四周期完全列により、これらの$E_i$は
+$T$が生成する厚部分圏に入る。
+$T$はstrong exceptional tiltingであり、
+そのEndは有限大域次元二の$B$である。
+これで導来Morita同値が$\coh X$の
+有界導来圏全体へ延長される。
+
+四周期のSerre同型
+$E_{i+4}\simeq S_B^{-1}(E_i)[2]$を
+全整数で自然化した$\mathbb Z$-代数のtransportは、
+graded加群のexactな四頂点ずらしと可換で、
+torsionを保つ。
+従って商圏の完全自己同値$\nu$を与え、
+$\nu E_i=E_{i-4}$となる。
+有限tilting generatorとその全Endにおいて
+$\nu[2]$は$B$のSerre関手と一致する。
+生成性からSerre関手として同型となる。
+\end{proof}
+
 \begin{remark}[一般定理への依存と未証明の比較]
 \label{rem:qa-as-classification-scope}
 本節では元PDFの体上分類の
