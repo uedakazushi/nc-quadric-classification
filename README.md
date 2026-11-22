@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS最小分解のavatar分類、mutationとnoncubic pointed認識** | v3.4。sq/rsqの全avatar対応、独立AS10・cubic導来非同値、二重壁の横断性を保持。**新たに点曲線E_fとspectral曲線C_qが2-isogenousだが一般非同型であること、二つの自然な2torsion avatarが双対2-isogenyで交換されることを証明。** 具体的にj値が異なる例を示す。内在O-marked heartとの直接pointed同値、normal helixのどちらのavatarへの復元かは未証明。12矢はQP表示との区別を保持 |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS最小分解のavatar分類、mutationとnoncubic pointed認識** | v3.5。sq/rsqの全avatar対応、独立AS10・cubic導来非同値、二重壁の横断性を保持。点曲線E_fとspectral曲線C_qの双対2-isogenyを保持。**smooth noncubicで、正しい一添字shift後の有限End代数を全積ごと同定し、O-pointed exact同値を原稿に証明した。** 具体的にj値が異なる例を示す。内在O-marked heartとの直接pointed同値、normal helixのどちらのavatarへの復元かは未証明。12矢はQP表示との区別を保持 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 

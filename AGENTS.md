@@ -8,7 +8,7 @@
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：主原稿 `papers/nc-quadric-avatar.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによるavatarへ戻す構成と元AS avatarの$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。 全noncubic O-marked幾何同型類≅Σ₂のD∈|−K|,D∩S=∅,0≠P∈Pic⁰(D)[2]の同型類もCに証明。Bのχ=1二点はnodal/I2で区別。次はAS avatarのqgr heartの直接同値と相対elementary transformを検証する。
 
-**原稿C v3.4の新しいpointed認識上の最重要区別。**
+**原稿C v3.5のpointed認識上の最重要区別。**
 noncubic中央二重平方環の可換点曲線
 $E_f:\ c^2=f_1,\ d^2=f_2$と、quartic spectral曲線
 $C_q:\ y^2=f_1f_2$は、非共有根では
@@ -43,7 +43,7 @@ $\im\mu_d=\langle u,v,d\rangle$であり、
 
 **継続指示：** smoothの構成では必ず$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。次は共有根と一致根対のsection moduleの飽和と非被約底の効果性を個別に検証し、全相対同値を先取りしない。
 
-**論文C v3.4の分類正本（最優先）。**
+**論文C v3.5の分類正本（最優先）。**
 `papers/nc-quadric-avatar.tex` から
 `papers/quiver-avatar/as_helix_classification.tex` と
 `papers/quiver-avatar/as10_mutation_classification.tex` を読み込む。
