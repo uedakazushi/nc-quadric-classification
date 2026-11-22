@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.67。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.68。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -218,6 +218,31 @@ P=O_Dを全Dに追加すると可換foundationの
 Sigma2古典weighted型はstrong H2に無条件に入らない。
 退化因子・潜在的な相対AS認識・全potential安定化の
 一次資料/包括的新規性照合は未完了。
+
+**noncubic quartic resolvent・torsion-free spectral avatarの新しい比較。**
+既知入力：J. E. Cremona, *Reduction of Binary Cubic and Quartic Forms*,
+LMS J. Comput. Math. 2 (1999), 62–92,
+DOI 10.1112/S1461157000000073,
+§4.3のquartic cubic-resolventと分割三通りを一次刊行PDFで確認。
+Cremona (2001)のcorrigendumは別のProposition14への訂正で、
+今回のquartic-resolvent式には依存しない。
+A. B. Altman and S. L. Kleiman, *Compactifying the Picard scheme*,
+Adv. Math. 35 (1980), 50–112,
+DOI 10.1016/0001-8708(80)90043-2 は
+rank-one torsion-free sheafを使う将来のcompactified Picardの
+基本文献として書誌情報を確認（本文全体は未確認）。
+本研究で新たに直接証明：noncubicの二根対すべての幾何同型類を
+smooth/nodal/I2のP≠O,P²=O square(2,2) avatarと全単射で
+比較し、同じC_qに対しcentral-square B_fの可換化の点曲線
+E_fの同時符号反不変module Mでtorsion-free spectral相対射を構成。
+共有根f1=x(x−1),f2=(x−s)(x−2)では
+A=k[[x,s,y]]/(y²−x(x−s))≅k[[c,d]]^{±}、
+M=Ac+Adの非自由性から、相対Pic0線束への直接延長を否定。
+これらはC本文の証明であり、CremonaやAltman--Kleimanが
+今回の分類・相対障害を既に示したという意味ではない。
+元avatar AS qgrとO-marked heartの同値、
+Σ2 minimal resolution/elementary transform、全potential相対射は未証明。
+この未確認点を新規性の推測で埋めない。
 
 ## 研究の位置
 

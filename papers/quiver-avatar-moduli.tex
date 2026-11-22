@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v2.5
+% 日本語 LuaLaTeX。2026-11-22 / v2.6
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -52,7 +52,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v2.5（三者対応：square avatar・O-marking反射・noncubic二根対）}
+\date{2026年11月22日\quad v2.6（全noncubic根対のavatar全単射とtorsion-free spectral射）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -72,11 +72,23 @@
 滑らかな楕円cubic型では、VdB四つ組とsquare avatarの双方向公式と
 O-markingを保つruling反射による同型類商を証明する。
 potentialからavatarへの一般表示次数は4、O-markedまでの合成は8となる。
-さらにsmooth ellipticのnoncubic境界では、非零2捩れavatar壁を
-四つの相異なる分岐点の非順序二根対と同定し、
-Bのnoncubic分類と合成して幾何的同型類の全単射を得る。
-古典Picard零切断の重複、wallの次元差、潜在的な相対AS認識の不足を
-明確に区別する。
+さらにnoncubicの**全幾何点**について、二つの被約二根対の積
+$q=f_1f_2$による有限三重quartic-resolventと
+算術種数一の二重被覆$C_q:y^2=q$を構成し、
+四根相異・一根共有・二根対一致に対応する
+smooth/nodal/I2の三型を分類する。
+各型で非零二捩れ$P\in\Pic^0(C_q)[2]$を使った
+$(2,2)$反標準square avatarを明示し、
+Bのnoncubic O-marked全幾何同型類と全単射を得る。
+同時に中央二重平方環の可換化の点曲線$E_f$から
+$E_f\to C_q$とrank-one torsion-free反不変module$M$への
+相対射を構成する。smoothでは$M=P$だが、
+共有根で$M$は表面$A_1$型の非自由reflexive moduleとなるため、
+通常の可逆な$\Pic^0$線束として固定$C_q$族に延長できない。
+従って、体上全単射、torsion-free spectral相対射、
+元の可逆Picard avatarへの相対射を明確に区別する。
+古典Picard零切断の重複、wallの次元差、
+元AS avatarの$\qgr$心の相対認識の不足も区別する。
 幾何側では、$\Sigma_0$ または $\Sigma_2$ 上の反標準因子と
 非自明な $\Pic^0$ パラメータを用い、直積型 square avatar と
 二種類の十本矢 chart の関係を記述する。
@@ -189,8 +201,9 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 特に、potentialの頂点と四項foundation、avatarの二ruling、
 内在的な構造対象$\OO$をそれぞれ区別して忘却を行う。
 滑らかな楕円cubicの三線束辞書と$r_1$商、
-四根相異なるnoncubic境界の二捩れavatarと二根対の全単射を
-本稿の具体的な比較定理とする。
+共有根・根対一致を含む全noncubic境界の二捩れavatarと二根対の
+幾何的全単射、およびrank-one torsion-free spectral中間射と
+可逆Picard延長障害を本稿の具体的な比較定理とする。
 これらの証明は第~\ref{sec:qa-avatar-charts}節に置く。
 $\Sigma_2$の最深境界・非被約因子・古典零切断・全相対AS認識は
 結論に含めず、必要な追加構成を明記する。

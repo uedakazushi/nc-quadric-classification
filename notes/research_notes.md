@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.99（A v1.69・20節、B v0.39・31節、C v2.5）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.00（A v1.69・20節、B v0.39・31節、C v2.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -466,7 +466,7 @@ y²=x(x−1)(x−λ)、translationは
 との全単射。avatar側AS代数のqgrが
 そのO-marked heart自身に一致することは
 **未証明**。C thm:qa-avatar-two-torsion-root-pair-bijection。
-共有根・一致根対の縮退は未完成。
+共有根・一致根対については以下のspectral曲線・Picard境界で幾何同型類全単射まで完成（相対Picard線束射とは区別）。
 
 **二つの別のwallと古典点。**
 η=G_s/F_s、δ=Pとするとη=2δは
@@ -479,11 +479,71 @@ Dの選択が消える。古典点の収縮が必要。
 C prop:qa-avatar-walls-and-noncubic-dimensionと
 prop:qa-avatar-zero-picard-collapse。
 
+**全noncubic根対のquartic resolventとsquare avatar幾何同型類（Cで証明）。**
+二つの非退化二次形式の非順序対{f1,f2}からq=f1f2を作る。
+全Sym²(P(Sym²W*))→P(Sym⁴W*)は有限全射・一般次数3。
+monic q=x⁴+ax³+bx²+cx+dでは分割を表すcubic resolvent
+z³−bz²+(ac−4d)z−(a²d+c²−4bd)=0（既知古典理論、
+Cremona1999 Section4.3を一次資料確認）。
+f_i squarefreeの条件下の三型：
+(1,1,1,1) smooth genus1、(2,1,1)既約nodal genus1、
+(2,2)二P¹が二節点で交わるI2。全部 connected Gorenstein p_a=1。
+C_q:y²=q→P¹を取りF_s=p*O(1)。
+smoothでは非零P∈Pic0(C_q)[2]が三個、quartic根の三分割に対応。
+nodal・I2ではPic0(C_q)≅Gmなので非零2torsion P=-1が
+唯一、squarefree二根対分割も唯一。
+G_s=F_sPの完全線形系は全三型で(2,2)閉埋込みを与え、
+{非順序二つのreduced二点因子}/PGL2 と
+{smooth/nodal/I2のsquare(2,2)反標準因子D、
+P=G_sF_s^{-1}≠O,P²=O}/isomの全単射。
+さらにBの根対↔H2 noncubic分類を合成して全noncubic
+O-marked幾何同型類のavatar分類（ただし元AS avatarのqgr同定は未証明）。
+nodalのnormalized t模型 X=t²,Z=(1−t²)/t ⇒ XZ²=(1−X)²；
+I2の模型は(Z−X)(Z+X)=0。
+正本C thm:qa-noncubic-rootpair-quartic-resolvent、
+thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection、
+rem:qa-singular-square-avatar-explicit-models。
+
+**全noncubic根対からの相対torsion-free spectral射とPicard非延長。**
+B_f=k[u,v]〈c,d〉/(c²−f1,d²−f2)の可換化の点曲線
+E_f=Proj k[u,v,c,d]/(c²−f1,d²−f2)はP¹上四重被覆。
+同時符号(c,d)↦(−c,−d)の商はC_q:y²=f1f2、
+y=cd。反不変module M=(r_*O_{E_f})^-はC_q上rank1
+torsionfree degree0、p_*M=O_{P¹}(-1)^2、
+yc=f1d,yd=f2c、行列A=[[0,f2],[f1,0]]はA²=f1f2 I。
+このデータはBのnoncubic二形式表示[P/G]の全相対基底変更に
+両立するため、finite double coverとtorsion-free sheafの
+相対群oidへの射を与える。smoothならMはP≠O,P²=Oで
+以前の分割に一致。共有根ではnodalのnodeでM非局所自由、
+一致根対ではI2の二節点で非局所自由。
+具体例f1=x(x−1),f2=(x−s)(x−2), s→0の
+全空間の完成環A=k[[x,s,y]]/(y²−x(x−s))
+≅k[[c,d]]^{±}はA1表面特異点。
+反不変M=Ac+AdはMCM/reflexive rank1だが最小生成元2で非自由。
+特殊C0は既約Cartier(div(s))なので、
+generic M_Kを延長するreflexive sheafとの差は特殊fiber整数倍
+（主因子）に限られ、可逆な延長Lは存在しない。
+従って**特異fiberでP=-1を選ぶ幾何同型類の全単射は、
+滑らかなP_tからの通常Pic0 line-bundle相対射としては実現できない**。
+これはΣ2の別の再埋込やminimal resolutionによる解決を禁止せず、
+その構成が次の最優先課題。正本C
+thm:qa-noncubic-rootpair-torsionfree-spectral-module、
+cor:qa-noncubic-central-square-point-curve-spectral-avatar、
+prop:qa-rootpair-nodal-picard-nonextension。
+計算的検算：SymPyでquartic resolvent根、A²=qI、
+singular quartic q、nodal(2,2) parametrization、接方向を独立に確認。
+保存したverify_rootpair_resolvent_spectral.pyをmath suiteに登録、
+スクリプト本体の実行は未確認。
+以上はAS avatar由来のnoncommutative qgrとO-marked心の同値証明ではない。
+
 **再開点と主張状態。**
-上記同型類全単射・壁次元障害・零切断はCに証明を置いた。
-非被約D全域・Σ2最深境界・Q12のAS avatar→pointed heart
-の直接認識、potential 8/10/12矢のすべての
-相対射と慣性の一致は未解決。
+cubicのVdB-square-O-marked対応に加え、全noncubic根対と
+nodal/I2を含む2torsion square avatarの幾何同型類全単射、
+noncubic線形代数からtorsion-free spectral avatarへの相対射、
+共有根A1での通常Pic0線束延長不能をCに証明として統合。
+残るのは相対torsion-freeをΣ2幾何avatarへ変換する構成、
+元AS avatar qgrとpointed H2心の直接認識、
+古典零切断・Σ2最深境界、8/10/12矢potentialの全相対群oid。
 旧Q12 avatar草稿・synthesisは内部未公刊入力で、
 論文Cに必要な証明を統合していく。
 関連出典はnotes/literature.md。A/Bの主結果の独立再監査・

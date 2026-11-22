@@ -1,12 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.01。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.5。
+2026-11-22 / v1.02。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.6。
 
 ## 公表用三論文への再編（確定方針）
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：`papers/quiver-avatar-moduli.tex`（主原稿）と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`を**O-marked quadric／potential／avatarの三者の明示的分類・モジュライ射**の正本とする。最優先は同型類全単射またはそれを誘導する相対射の完成。滑らかな楕円cubic型の VdB↔square avatar の公式 $(F_s,G_s,P)=(L_2,L_1L_2L_0^{-1},L_2L_0^{-1})$ とOを保つ$r_1$-商（$r_0$は原則Oを変える）、一般potential→avatar4・O-marked8を保持。noncubic四根相異なる開では$G_s=F_sP$かつ非零2捩れ$P$のavatar↔二根対↔O-marked境界の体上全単射が成立。これらはavatar AS $\qgr$の元のheartとの直接同値をまだ証明しない。零Picard古典点の収縮、非被約・nodal/reducible因子、$\Sigma_2$最深、全8/10/12矢potentialのstable equivalence・相対群oidが残る。全H2のfinite foundation開・ruling有限étale被覆およびOU慣性/特殊比較・四次六次判定は有用な入力として保持。**次はnoncubic根対の退化と$\Sigma_2$ avatarのO-marked適合性、potential群oidの射を実際に証明する。** 証明本文・独立監査・実組版・GitHub・hubは別状態として扱う。
+- C：主原稿 `papers/quiver-avatar-moduli.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによるavatarへ戻す構成と元AS avatarの$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 
