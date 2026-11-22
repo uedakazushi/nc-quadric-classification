@@ -1,0 +1,682 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / C v4.9
+\section{節点spectral曲線上の二次自己双対層の代数性}
+\label{sec:qa-tf-quad-artin}
+
+本節では標数零の体$k$上で，幾何fiberがsmooth，既約nodal，
+または$I_2$となるspectral二重被覆だけを扱う．
+非被約曲線を許す元の$\mathfrak{TF}^{\rm quad}$全体の代数性・有界性を
+ここから主張しない．またrank oneは\emph{各既約成分上でrank one}を意味する．
+単純層であること，安定性，固定多重次数を定義に加えない．
+
+\subsection{曲線の有限型基底と定義}
+
+$Q_{\rm nod}\subset\operatorname{Sym}^4(k^2)$を，零でなく，
+幾何的な根の重複度が高々二となる二元四次形式の開集合とする．
+\[
+ H=\bigl(\GL_2\times\Gm\bigr)
+       /\{(\lambda I,\lambda^2)\},\qquad
+ (A,a)\cdot h=a^{-2}\operatorname{Sym}^4(A)h
+\]
+とし，$\mathfrak D_{\rm nod}=[Q_{\rm nod}/H]$と置く．
+この有限型Artin stackは，conic束$q:B\to S$と，
+相対次数$-2$の線束$N$，射$h:N^{\otimes2}\to\OO_B$からなる
+有限平坦二重被覆
+\[
+ p:C=\operatorname{Spec}_B(\OO_B\oplus N)\longrightarrow B
+\]
+で，上記三型の幾何fiberを持つものを分類する．
+実際，fppf局所で$B=\PP^1$，$N=\OO(-2)$とすると$y^2=h(u,v)$となり，
+表示変更の核は記載した共通重みスカラーである．
+$C/S$は平坦・射影・有限表示で，幾何fiberは被約・連結・Gorensteinである．
+二形式族からは$h=f_1f_2$によってこの基底への射を得る．
+
+$\mathfrak T_{\rm nod}\to\mathfrak D_{\rm nod}$を次のstackとする．
+対象は$S$-flatな有限表示$\OO_C$-module $M$で，
+各幾何fiberでrank-one torsion-free，$\chi(M_s)=0$となるものと，
+対称な$\OO_C$-双線型射
+\[
+ \mu:M\otimes_{\OO_C}M\longrightarrow\OO_C
+\]
+で，各幾何fiberの随伴射$\mu_s^\flat:M_s\to M_s^\vee$が同型となるもの．
+射は被覆と二次積付き層の同型である．
+これは既存の$\mathfrak{TF}^{\rm quad}$を上記の節点曲線基底へ制限したものである．
+
+\subsection{Frobenius表示とtrace零条件}
+
+\begin{lemma}[相対直像の局所自由性と双対]
+\label{lem:qa-tf-frobenius-duality}
+上記の$M$について$V=p_*M$は$B$上の階数二ベクトル束である．
+$A=p_*\OO_C=\OO_B\oplus N$の積と射影$\lambda:A\to N$は完全pairing
+\[
+ A\otimes_{\OO_B}A\longrightarrow N,\qquad
+ (a,b)\longmapsto\lambda(ab)
+\]
+を与える．従って
+\begin{equation}
+ p_*\mathcal H om_C(M,\OO_C)
+   \simeq\mathcal H om_B(V,N)=V^\vee\otimes N
+ \label{eq:qa-tf-frobenius-dual}
+\end{equation}
+は任意基底変更と可換である．
+$\mu$の$N$成分$b=\lambda\circ p_*\mu$は
+$\operatorname{Sym}^2V\to N$という非退化二次形式になる．
+この非退化性は$\mu_s^\flat$の全幾何fiberでの同型と同値で，
+その場合$\mu^\flat$自体も相対的に同型である．
+\end{lemma}
+\begin{proof}
+各幾何fiberで$p_*M_s$は$\PP^1$上のtorsion-free層である．
+実際，基底曲線の局所パラメータは$C_s$の全成分上で非零であり，
+$M_s$に非零因子として作用する．従って$p_*M_s$は階数二のベクトル束となる．
+$V$は$S$-flatで有限表示だから，fiberによる平坦性判定を適用すると
+$B$上で平坦，したがって局所自由となる
+\cite[Theorem~76.23.3, Tag~05X0]{StacksCoherentSheaves}．
+
+$N$の局所生成元を$y$とすると，pairingの行列は
+$\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$である．
+従って$A\simeq\mathcal H om_B(A,N)$であり，有限射の随伴から記載の双対同型を得る．
+右辺はベクトル束の双対なので，非平坦基底変更にも可換する．
+$\mu^\flat$はこの同型の下で$b^\flat:V\to V^\vee\otimes N$になる．
+同階数ベクトル束の射が全幾何fiberで同型なら行列式は単元であり，
+全体で同型である．
+\end{proof}
+
+\begin{lemma}[trace零は非被約基底でも成立する]
+\label{lem:qa-tf-trace-zero}
+$A$の$N$成分の作用を$\theta:N\otimes V\to V$と書くと，
+\[
+ \theta(1_N\otimes\theta)=h\otimes1_V,
+ \qquad\operatorname{Tr}(\theta)=0
+\]
+が成立する．逆に$V$が階数二ベクトル束で，$\theta$がこの二条件を満たせば，
+対応する$A$-moduleは全幾何fiberで各既約成分上rank oneかつtorsion-freeである．
+\end{lemma}
+\begin{proof}
+第一式は$A$の作用の結合性である．第二式を幾何fiberで確認するだけでは不十分なので，
+以下の議論を用いる．$h$は各fiberで零でない四次形式である．
+fppf局所で$B=\PP^1_S$とし，$h$の零点でない無限遠点を選べば，
+アフィンchart上の$h$はleading係数が単元の四次多項式となる．
+従って$h$は任意基底変更後にも非零因子である．
+$U=B\setminus V(h)$では$C_U\to U$は有限\'etaleで，$C_U/S$は滑らかである．
+$M$は$S$-flatで，各fiberのこの開上では線束だから，
+再びfiberによる平坦性判定により$M|_{C_U}$は実際の線束である．
+その$N$作用のtraceは$A$自身のtraceと等しく零となる．
+$\operatorname{Tr}(\theta)$は$N^\vee$のsectionであり，
+$h$を可逆化した開で零，$h$は非零因子なので，全$B$上で零である．
+
+逆に幾何fiberの$B_s$のgeneric pointで，$A_s$は二次\'etale代数である．
+非分裂の場合，二次体上の$V$はrank oneとなる．
+分裂する場合も，$\theta$のtrace零条件と$\theta^2=h$により，
+異なる二固有値の固有空間はそれぞれ一次元である．
+従って$M_s$は全成分上rank oneである．
+$V_s$が$B_s$上局所自由なので$M_s$に零次元torsionはなく，
+被約曲線上でtorsion-freeとなる．
+\end{proof}
+
+\begin{remark}[rank one条件を落としてはならない]
+例えば$I_2$で$h=a^2$の場合，$\theta=aI$は$\theta^2=hI$を満たし，
+非退化双曲型$b$に関して自己随伴であるが，一方の成分にrank two，
+他方にrank zeroのmoduleを与える．これは本節の対象ではなく，
+$\operatorname{Tr}(\theta)=0$がこの誤った成分を除外する．
+\end{remark}
+
+\subsection{一様有界性と有限型Artin stack}
+
+\begin{lemma}[自己双対rank-one層の一様有界性]
+\label{lem:qa-tf-uniform-boundedness}
+任意の幾何fiberで
+\[
+ h^0(C_s,M_s)\le1,
+\qquad
+ p_*M_s\simeq
+ \OO_{\PP^1}(-1)^{\oplus2}
+ \quad\text{または}\quad
+ \OO_{\PP^1}\oplus\OO_{\PP^1}(-2).
+\]
+後者は$M_s\simeq\OO_{C_s}$のときに限る．
+$\mathcal L=p^*\omega_{B/S}^{-1}$と置くと，全幾何fiberで
+$M_s\otimes\mathcal L_s$は大域生成され，$H^1=0$，$h^0=4$である．
+$\mathcal L$に関する$M$のHilbert多項式は$4n$である．
+\end{lemma}
+\begin{proof}
+$0\ne s\in H^0(C_s,M_s)$があれば，torsion-free性から
+$s$は少なくとも一つの成分のgeneric pointで非零である．
+そこでは$\mu$は一次元空間上の非退化対称形式なので$\mu(s,s)\ne0$である．
+$C_s$は\emph{被約かつ連結}で$H^0(\OO_{C_s})=k(s)$だから，
+$\mu(s,s)$は非零定数である．
+よって$\OO_{C_s}\xrightarrow{s}M_s$は$\mu(s,-)/\mu(s,s)$により分裂する．
+残る直和因子はrank zeroかつtorsion-freeなので零となり，$M_s\simeq\OO_{C_s}$である．
+従って$h^0\le1$である．この論証を非被約曲線へ適用してはならない．
+
+$\chi(p_*M_s)=0$より$p_*M_s$の次数は$-2$である．
+$\PP^1$上の分解型と$h^0\le1$から，記載した二型だけが残る．
+いずれも$(p_*M_s)(2)$は大域生成，$H^1=0$，$h^0=4$である．
+有限射の評価$p^*p_*M_s\to M_s$は全射なので，$M_s\otimes\mathcal L_s$にも従う．
+$\deg\mathcal L_s=4$と$\chi(M_s)=0$からHilbert多項式を得る．
+\end{proof}
+
+\begin{theorem}[節点曲線上の二次自己双対標的の代数性]
+\label{thm:qa-tf-nodal-finite-type-artin}
+$\mathfrak T_{\rm nod}$は$k$上有限型のArtin stackであり，
+$\mathfrak D_{\rm nod}$に対して局所有限表示，対角はaffineかつ有限表示である．
+$k$上の対角もaffineかつ有限表示である．
+定義・構成は任意の基底変更と可換し，nonsimpleな$I_2$の層を含む．
+\end{theorem}
+\begin{proof}
+まず$\mathfrak D_{\rm nod}$のatlas $Q_{\rm nod}$へ引き戻す．
+この上では$B=\PP^1$，$N=\OO(-2)$である．
+階数二・次数$-2$のベクトル束のstack $\operatorname{Bun}_{2,-2}(B)$を用いる．
+これはcoherent sheaf stackの開部分で，Artin，局所有限表示，
+affine有限表示対角を持つ
+\cite[Theorem~99.6.1, Tag~09DS; Lemmas~108.4.1--108.4.2]{StacksCoherentSheaves}．
+
+その普遍$V$上に$\theta:N\otimes V\to V$と
+$b:\operatorname{Sym}^2V\to N$を加える．
+これらのHom functorはaffine有限表示である
+\cite[Proposition~99.3.10, Tag~08K6]{StacksCoherentSheaves}．対象側は有限表示・基底flat・proper supportである．
+条件$\theta^2=h$，$\operatorname{Tr}\theta=0$，および
+\[
+ b(\theta(n\otimes v),w)=b(v,\theta(n\otimes w))
+\]
+はHom functor上の閉条件である．
+$b$の非退化性は開条件である：行列式の零点の$B$上でのsupportは閉であり，
+$B$が基底上properなのでその像も閉になる．
+
+これらの閉条件と開条件で定めたstackは$\mathfrak T_{\rm nod}$と同値である．
+前二補題が一方向を与える．逆向きには$\theta$で$A$-moduleを作ると，
+trace零により全成分rank oneとtorsion-free性を得る．
+$V$が$B$上局所自由なので対応する$M$は基底flatで有限表示である．
+Frobenius双対により$b$は対称な$A$-双線型$\mu$を一意に与える．
+実際，$N$の局所生成元$y$で$b=b_0y$，$\theta(y,-)=Y$と書けば
+\[
+ \mu(v,w)=b_0(Yv,w)+y\,b_0(v,w).
+\]
+自己随伴条件と$Y^2=h$から$A$-双線型性と対称性が直接確認できる．
+$b$が非退化なので$\mu^\flat$も同型である．
+これはすべての射と合成について自然で，任意基底変更とも両立する．
+
+この構成からArtin性と局所有限表示を得る．
+二対象のIsomはベクトル束のaffine有限表示Isomの中に
+$\theta$と$b$を保存する閉条件を課したものなので，対角もaffine有限表示である．
+$\mathfrak D_{\rm nod}=[Q_{\rm nod}/H]$自身もaffine有限表示対角を持つため，
+$k$上の対角にも従う．
+
+最後にquasi-compactnessを確認する．前補題により全対象で
+$V(2)$は大域生成，$R^1q_*V(2)=0$，$q_*V(2)$は階数四で基底変更と可換である．
+従ってそのframeを取ると，全対象は一つの固定Hilbert多項式
+$2n+4$のQuot空間
+\[
+ \operatorname{Quot}^{2n+4}_{\OO_{\PP^1}^{\oplus4}/\PP^1/Q_{\rm nod}}
+\]
+で被覆される．具体的にはquotientが階数二ベクトル束で，
+大域切断への写像$\OO^4\to q_*V(2)$が同型となる開部分を取る．
+固定Hilbert多項式のQuotは有限表示であり，底$Q_{\rm nod}$はNoetherianなので，
+この開もquasi-compactで有限型である
+\cite[Lemma~108.6.1, Tag~0DP9]{StacksCoherentSheaves}．
+その上に上記二Homを加え閉条件・開条件を課すと有限型空間を得る．
+frameを忘れる射は$\GL_4$-torsorで滑らか全射である．
+従って$\mathfrak T_{\rm nod}$は有限型となる．
+\end{proof}
+
+\begin{remark}[固定Hilbert多項式だけでは足りない]
+自己双対性を外すと，同じ$I_2$曲線上の多重次数$(m,-m)$の線束は
+すべてHilbert多項式$4n$を持つが，$m$は非有界である．
+上の有限型性は固定多項式だけによらず，
+rank one・被約連結性・非退化二次積から得た一様生成性に依存する．
+また本節は非被約quartic曲線上の標的や，その全体の有限型性を扱わない．
+\end{remark}
+
+\subsection{Balanced開と等方線の相対降下}
+
+\begin{lemma}[balanced開と基底上の等方線二重被覆]
+\label{lem:qa-tf-balanced-isotropic-descent}
+$\mathfrak T_{\rm nod}$内の条件$H^0(C_s,M_s)=0$は開であり，
+$V_s=\OO_{\PP^1}(-1)^{\oplus2}$と同値である．
+この開上で$b$の等方線を分類する$Y\to B$は有限\'etale二重被覆となる．
+ある有限\'etale二重被覆$S'\to S$が自然に定まり，
+$Y\simeq B\times_SS'$となる．
+$S'$上で$V=K_1\oplus K_2$と等方線に分裂し，
+$K_i$の相対次数は$-1$，$K_1\otimes K_2\simeq N$である．
+\end{lemma}
+\begin{proof}
+$H^0$の上半連続性と分解型の補題から開性と同値を得る．
+非退化な二元対称形式の等方線schemeは，標数二でないので有限\'etale次数二である．
+各幾何fiberの$B_s=\PP^1$上ではこの被覆は自明な二重被覆である．
+$\pi_Y:Y\to S$はproper smoothで，幾何fiberは二つの$\PP^1$の非交和，
+$H^0=2$，$H^1=0$である．従って$\pi_{Y*}\OO_Y$は任意基底変更と可換な
+階数二の局所自由代数で，全幾何fiberが\'etaleなので有限\'etale代数となる．
+$S'=\operatorname{Spec}_S(\pi_{Y*}\OO_Y)$と置く．
+$Y\to B\times_SS'$に対応する$B$上の階数二局所自由代数間の射は
+全幾何fiberで同型だから，全体でも同型である．
+二つの異なる等方線の和は$V$全体であり，交差pairingは完全である．
+相対次数はbalanced分解型から従う．
+\end{proof}
+
+等方線上の平方は$\mu(K_i^{\otimes2})\subset\OO_B$となり，
+$K_i^{-2}$の相対二次sectionを与える．
+このsectionがsquarefreeである条件は開であり，二重被覆上の両条件を課して
+基底へ降下できる．既存の二形式族はこの開に入り，
+$I_2$の$M=\nu_*(\OO_{\PP^1}(-1)\oplus\OO_{\PP^1}(-1))$も含まれる．
+この層は$\End(M)=k^2$でnonsimpleだが，二次積を保つ慣性は$\mu_2^2$である．
+したがってsimple sheafだけのcompactified Picardに置換してはいけない．
+等方線と平方sectionから二形式を回収するgroupoid同値は，
+相対認識の別命題で述べる．
+
+\subsection{Balanced二次積の相互逆な有限表示}
+
+\begin{proposition}[二形式の再構成と結合律の自動性]
+\label{prop:qa-tf-balanced-quadratic-inverse}
+補題~\ref{lem:qa-tf-trace-zero}の状況で，$V=p_*M$はfiberwiseに
+$\OO_{\PP^1}(-1)^{\oplus2}$であるとする．
+また対称な$\OO_C$-双線型写像
+$\mu:M\otimes_{\OO_C}M\to\OO_C$が各幾何fiberで自己双対性を誘導するとする．
+このときfppf局所的に二元二次形式$f_1,f_2$と生成元$c,d,y$を選んで
+\[
+ \begin{gathered}
+ C=\{y^2=f_1f_2\},\qquad
+ p_*M=\OO_B(-1)c\oplus\OO_B(-1)d,\\
+ yc=f_1d,\qquad yd=f_2c,\\
+ \mu(c,c)=f_1,\qquad\mu(d,d)=f_2,\qquad\mu(c,d)=y
+ \end{gathered}
+\]
+と書ける．
+従って$\OO_C\oplus M$に
+\[
+ (a,m)(b,n)=(ab+\mu(m,n),\ an+bm)
+\]
+で定めた積は可換かつ結合的であり，
+\begin{equation}
+ \operatorname{Spec}_C(\OO_C\oplus M)
+ \simeq
+ \operatorname{Spec}_B
+ \OO_B[c,d]/(c^2-f_1,d^2-f_2)
+ \label{eq:qa-tf-reconstructed-cover}
+\end{equation}
+となる．右辺では$c,d$は次数一のtwisted生成元である．
+
+同型の変更は$B$の座標変換，$c,d$の個別スカラー，二項の交換であり，
+共通次数スカラーを除けば二形式表示の同型に一致する．
+特に追加の結合律条件は，このbalancedかつgenerically reducedな範囲では不要である．
+\end{proposition}
+\begin{proof}
+Balanced条件とcohomology and base changeにより，$S$上fppf局所的に
+$V=\OO_B(-1)^{\oplus2}$と書ける．
+tracezero線も$L=\OO_B(-2)$と書ける．
+補題~\ref{lem:qa-tf-frobenius-duality}により$q=\lambda\mu$は非退化である．
+その行列の成分は$H^0(B,\OO_B)=\OO_S$に属するので，
+rank two非退化二次形式を$S$上fppf局所的にsplitすれば，
+\[
+ q(c,c)=q(d,d)=0,\qquad q(c,d)=y
+\]
+とできる．従って二元二次形式$f_1,f_2,a$を用いて
+\[
+ \mu(c,c)=f_1,\quad\mu(d,d)=f_2,
+ \quad\mu(c,d)=a+y
+\]
+と書ける．
+
+まず結合律を仮定せず，$\OO_C$-双線型性だけを使う．
+$Yc=r c+s d$と置き，
+$\mu(Yc,c)=y\mu(c,c)$および
+$\mu(Yc,d)=y\mu(c,d)$の$1,y$係数を比較すると
+\[
+ s=f_1,\qquad r=a,\qquad 2af_1=0,
+ \qquad h=a^2+f_1f_2
+\]
+を得る．$Yd$についても同様に
+\[
+ Yd=f_2c+a d,\qquad2af_2=0.
+\]
+従って$Y$の行列は
+\[
+                 Y=\begin{pmatrix}a&f_2\\f_1&a\end{pmatrix}.
+\]
+補題~\ref{lem:qa-tf-trace-zero}の$\operatorname{Tr}(Y)=0$と$2$の可逆性より$a=0$．
+以上の全表示を得る．
+なお，少なくとも一方の$f_i$がfiberwise squarefreeである開では，
+その$f_i$の相対Cartier性と$2af_i=0$だけからも$a=0$が直接従う．
+
+$\OO_C\oplus M$は$B$上で$1,c,d,y$を基底とするrank four vector bundleであり，
+得られた式は$c^2=f_1,d^2=f_2,cd=y$の積表に一致する．
+右辺の二つのmonic二次関係は$B$上同じ四元基底を持つため，
+式\eqref{eq:qa-tf-reconstructed-cover}は代数同型である．
+特に結合律はこの実際の代数同型から従う．
+
+最後に同型の形を確認する．tracezero線は有限平坦二重射のtraceで内在的に定まり，
+したがって全同型は$q$のsimilitudeを誘導する．
+$q(xc+zd)=2xz\,y$の二つの等方線は$c,d$の非順序対である．
+任意の可換環上で$\left(\begin{smallmatrix}\alpha&\beta\\\gamma&\delta\end{smallmatrix}\right)$が
+この形式のsimilitudeなら，
+\[
+ \alpha\gamma=\beta\delta=0,
+ \qquad\alpha\delta+\beta\gamma\in R^\times.
+\]
+$e=\alpha\delta/(\alpha\delta+\beta\gamma)$は冪等元であり，
+$e=1$側では行列は対角，$e=0$側では反対角となる．
+従って冪零元による隠れた混合はなく，等方線の非順序対は任意基底で回復される．
+二形式の二乗とcross積が全残余の係数を決める．
+射影曲線とその被覆に自明に作用する共通スカラーは，表示群の$D$に一致する．
+\end{proof}
+
+\subsection{等方線による二重平方表示の相対認識}
+\label{subsec:qa-tf-relative-recognition}
+
+$\mathfrak T_{\rm bal}\subset\mathfrak T_{\rm nod}$を
+$H^0(C_s,M_s)=0$で定まるbalanced開とする．
+$W=k^2$に対し
+\[
+ \overline P_{\rm nod}
+ =\{(f_1,f_2)\in\operatorname{Sym}^2W\times\operatorname{Sym}^2W
+       \mid f_1f_2\ne0,\ \text{全ての幾何的根の重複度が高々二}\}
+\]
+と置く．これは六次元アフィン空間の開集合である．
+各$f_i$が二重根を持つ場合を許すが，その積の三重根は許さない．
+表示群を
+\[
+ G=((\operatorname{GL}(W)\times\Gm^2)\rtimes S_2)/D,
+ \qquad D=\{(\lambda I,\lambda,\lambda)\}
+\]
+とする．両形式がsquarefreeとなる開は従来の$P$である．
+
+\begin{theorem}[balanced標的の群商表示と元のnoncubic開]
+\label{thm:qa-tf-balanced-quotient-recognition}
+二重平方表示からの構成は，任意の$k$-schemeを底とするfppf stackの同値
+\[
+ [\overline P_{\rm nod}/G]\xrightarrow{\sim}\mathfrak T_{\rm bal}
+\]
+を与える．非被約底も含み，任意の基底変更と可換する．
+
+この同値の下で，元の表示stack$\mathfrak N^{\rm pres}=[P/G]$は，
+二つの等方線上の平方sectionが両方ともsquarefreeとなる開部分
+$\mathfrak T_{\rm adm}\subset\mathfrak T_{\rm bal}$に一致する．
+特に既存の射
+\[
+ \mathfrak N^{\rm pres}\longrightarrow\mathfrak{TF}^{\rm quad}
+\]
+は全忠実であり，節点曲線上の標的$\mathfrak T_{\rm nod}$への射としては
+representableな開埋込みである．この主張は内在的$\mathcal H_2$への
+spectral双対化射の全忠実性を意味しない．
+\end{theorem}
+\begin{proof}
+\paragraph{二形式からの構成.}
+$(f_1,f_2)\in\overline P_{\rm nod}(S)$について
+\[
+ A=\OO_B\oplus\OO_B(-2)y,\quad y^2=f_1f_2,
+ \qquad V=\OO_B(-1)c\oplus\OO_B(-1)d
+\]
+と置き，$y$の$V$上の作用と対称積を
+\[
+ Y=\begin{pmatrix}0&f_2\\f_1&0\end{pmatrix},\qquad
+ \mu(c,c)=f_1,\quad\mu(d,d)=f_2,\quad\mu(c,d)=y
+\]
+とする．これは従来の同時符号の反不変部分と同じ構成である．
+$Y^2=f_1f_2I$，$\operatorname{Tr}Y=0$だから，
+補題~\ref{lem:qa-tf-trace-zero}により対応する$C$上の層は
+全幾何fiberで各成分上rank oneかつtorsion-freeである．
+$V$が$B$上局所自由なので底上平坦であり，Euler特性は零である．
+積のtrace-zero成分は行列
+$\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$を持つので，
+補題~\ref{lem:qa-tf-frobenius-duality}により$\mu^\flat$は同型である．
+従ってこれは$\mathfrak T_{\rm bal}$の対象となる．
+二形式のsquarefree性はこの構成には必要ない．
+
+\paragraph{逆構成と全忠実性.}
+補題~\ref{lem:qa-tf-balanced-isotropic-descent}により等方線の順序は
+底上の有限\'etale二重被覆で選べる．
+命題~\ref{prop:qa-tf-balanced-quadratic-inverse}は，任意の非被約底でも
+$Y=\left(\begin{smallmatrix}a&f_2\\f_1&a\end{smallmatrix}\right)$の
+trace零から$a=0$，$h=f_1f_2$を与え，二形式と全積を回収する．
+もとの$C$が幾何的に被約節点曲線だから，
+$f_1f_2$の根の重複度は高々二で，局所表示は$\overline P_{\rm nod}$に入る．
+同命題のsimilitude行列の冪等元分解は，各同型が
+対角または反対角の二生成元変換と底の$\operatorname{GL}_2$変換に由来し，
+不定性が正確に共通次数スカラー$D$であることを示す．
+この一意な回収はfppf局所で自然なので降下し，Isom sheafの同型を与える．
+従って局所再構成と合わせてstack同値を得る．
+
+全操作は有限平坦直像，trace，二次積，等方線とその平方sectionで与えられ，
+任意の基底変更と可換する．
+平方sectionのsquarefree性は相対二次形式の判別式が単元という開条件であり，
+二等方線を交換しても不変である．従って$P$に対応する開は
+正確に$\mathfrak T_{\rm adm}$である．
+\end{proof}
+
+\begin{corollary}[smoothなbalanced標的とH2開の判別式]
+\label{cor:qa-tf-h2-admissible-open}
+$\mathfrak T_{\rm bal}$はsmooth既約・有限型の純次元一のArtin stackである．
+その内在的に定めた開$\mathfrak T_{\rm adm}$は，中央二重平方表示族が
+H2を与える領域と正確に一致する．内在的相対H2族との解釈は
+論文Bの相対表示同値が適用される局所有限型siteで行う．
+\end{corollary}
+\begin{proof}
+$\overline P_{\rm nod}$は六次元アフィン空間の非空開で，
+$G$は次元五のsmooth群なので，前定理の商表示から最初の主張を得る．
+二形式のH2条件は系~\ref{cor:qa-double-square-degenerate-not-h2}により
+$\Delta_1\Delta_2\ne0$と同値であり，これは$\mathfrak T_{\rm adm}$の定義である．
+相対解釈には論文Bの
+\cite[\texttt{thm:noncubic-intrinsic-presentation-equivalence}]{QuadricModuli2026}
+を用いる．
+\end{proof}
+
+\begin{corollary}[順序付けと表示射の幾何fiber]
+\label{cor:qa-tf-ordered-double-cover}
+$G^{\rm ord}=(\operatorname{GL}(W)\times\Gm^2)/D$とする．
+等方線の順序を保持したbalanced標的には
+\[
+ [\overline P_{\rm nod}/G^{\rm ord}]
+       \simeq\mathfrak T_{\rm bal}^{\rm ord}
+\]
+という同値があり，順序忘却はrepresentable有限\'etale次数二である．
+元のnoncubic開にも同じ主張が成立する．
+従って二次積付き層とpencilを全て保持した標的に対し，
+非順序付き表示射の像上の幾何2-fiberは一点，
+順序付き表示射の幾何2-fiberは二点である．
+これは$B\mu_2$というfiberではない．
+\end{corollary}
+\begin{proof}
+二つの等方線は，底上の有限\'etale二重被覆として回収される．
+その順序を選ぶことはこの被覆を自明化して一方のsheetを選ぶことと同じである．
+前定理の全忠実性を順序を保つ射へ制限すると主張が従う．
+\end{proof}
+
+
+\begin{corollary}[全noncubic境界での元の符号被覆の回収]
+\label{cor:qa-tf-original-point-cover-reconstruction}
+二つの$f_i$が各fiberでsquarefreeなら，共有根・一致根対を含め，
+$(C\to B,M,\mu)$から元の点曲線
+$E_f=\{c^2=f_1,d^2=f_2\}$と同時符号$\delta$を任意の基底変更と可換に回収できる．
+$\delta$は$\OO_C\oplus M$の二項に$+1,-1$として作用する．
+その不変部分は$\OO_C$であり，固定点閉部分は
+\[
+ \operatorname{Spec}_C\bigl(\OO_C/\operatorname{im}\mu\bigr)
+ =V_C(f_1,f_2,y).
+\]
+従って共有根で$\mu$が全射でなくても，符号被覆の代数は完全に回復される．
+この被覆は$B$上有限平坦rank fourであるが，共有根のあるfiberでは
+$C$上の有限平坦二重被覆ではない．
+\end{corollary}
+\begin{proof}
+前命題を普遍二形式の表示に適用する．
+同時符号の固定点idealは反不変部分$M$で生成され，
+その偶数部分には$\mu(M,M)$が入るため，固定点環は記載の商である．
+$C$上平坦なら$\OO_C\oplus M$はrank two vector bundleであり，
+その直和因子$M$はline bundleとなる．共有根の節点で$M$は非局所自由なので
+この平坦性は成立しない．
+\end{proof}
+
+\subsection{二つのnoncubic境界における慣性と忘却の核}
+\label{subsec:qa-tf-boundary-inertia}
+
+以下では$k$を標数零の代数閉体とする．
+$\delta$は$c,d$の同時符号，$e_1,e_2$は個別符号とする．
+一致型では$\tau$を$c,d$の交換とする．
+各群は自然同型類をさらに割った群ではなく，
+曲線・層・二次積の実際の自己同型群スキームである．
+
+\begin{proposition}[全二次データの慣性と曲線への射]
+\label{prop:qa-tf-boundary-inertia-maps}
+元のnoncubic表示の二つの境界では，二次積付きTF標的の全慣性は
+入力の慣性と同型である．具体的に，一根共有のnodal型では
+\[
+ H_{\rm nod}\simeq D_8,
+ \qquad H_{\rm nod}^{\rm ord}\simeq\mu_2^2,
+\]
+一致する$I_2$型では，$O(uv)=\Gm\rtimes C_2$として
+\[
+ H_{\rm eq}\simeq(O(uv)\times D_8)/\langle(-I,\delta)\rangle,
+ \qquad
+ H_{\rm eq}^{\rm ord}
+   \simeq(O(uv)\times\mu_2^2)/\langle(-I,\delta)\rangle.
+\]
+従って表示射自身の慣性準同型の核は，両境界で自明である．
+
+一方，二次積付き層を忘れて被覆$(C\xrightarrow p B)$だけを残すと，
+非順序付き入力の慣性準同型は全射となり，
+\[
+ \begin{array}{c|c|c}
+ \text{型}&\text{核}&\operatorname{Aut}(C\xrightarrow pB)\\\hline
+ \text{既約nodal}&\langle\delta\rangle\simeq\mu_2&C_2\times C_2\\
+ I_2&\langle\delta,\tau\rangle\simeq\mu_2^2
+          &(\Gm\rtimes C_2)\times C_2
+ \end{array}
+\]
+となる．順序付き入力では核は両型とも$\langle\delta\rangle$である．
+nodal型の順序付き像は被覆のdeck involutionからなる$C_2$で指数二，
+$I_2$型の順序付き像は標的の全群である．
+\end{proposition}
+\begin{proof}
+全TF慣性については前定理の全忠実性と，論文Bの全慣性計算
+\cite[\texttt{prop:noncubic-all-stabilizers}]{QuadricModuli2026}を使う．
+順序付き部分群は$c,d$の交換を行わない部分群である．
+
+被覆を固定する核は
+$\operatorname{Aut}_C(M,\mu)$であり，
+系~\ref{cor:qa-spectral-pair-finite-inertia}から
+nodal型では$\mu_2$，$I_2$型では$\mu_2^2$である．
+nodal型では$-1_M$が$\delta$である．
+$I_2$型の正規化成分上の生成元$c+d,c-d$に対し，
+$\delta$は両方の符号，$\tau$は後者だけの符号を反転する．
+従って核は記載した部分群であり，順序を保持すると$\tau$は除かれる．
+
+nodal型では$f_1=v(u-v)$，$f_2=v(u+v)$と規格化できる．
+被覆は$y^2=v^2(u^2-v^2)$であり，底上では唯一の二重根を固定し，
+残りの二根を交換してよい．従って底の群は$C_2$，
+そのliftと$y\mapsto-y$は可換な対合だから，被覆の群は$C_2^2$である．
+個別符号はdeck involutionを与える．
+$i^2=-1$を選ぶと
+\[
+ (u,v,c,d)\longmapsto(-u,v,id,-ic)
+\]
+は底の残りの対合を持ち上げる．よって非順序付きの像は全群である．
+順序付きの底自己同型は三つの相異なる根を個別に固定するので恒等であり，
+像はdeck群だけとなる．
+
+$I_2$型では$f_1=f_2=uv$とできる．
+二成分$y=uv,y=-uv$は各々$B$に同型であり，被覆の自己同型は
+二節点を保つ底の自己同型と，独立な成分交換からなる．
+従って$\operatorname{Aut}(C\to B)=(\Gm\rtimes C_2)\times C_2$である．
+$H_{\rm eq}$からの射は，$O(uv)$の射影化と
+\[
+ D_8\longrightarrow C_2,\qquad e_1,e_2\longmapsto-1,
+       \quad\tau\longmapsto1
+\]
+の積から誘導される．これらはともにfppf全射であり，
+$D_8$を$\mu_2^2$へ制限しても後者は全射である．
+従って$I_2$では順序付きの場合も全群を得る．
+\end{proof}
+
+\begin{remark}[smooth二次線束gerbeとの相違]
+smooth域のspectral双対化で現れた$\mu_2$核は，
+実際の二次線束$(M,\mu)$からそのPicard類へ移り，
+層の$-1$自己同型を忘れる段階に由来する．
+本節の標的は$(M,\mu)$を実際の層として保持するので，
+$\delta=-1_M$を消さない．
+境界で単に$\operatorname{Aut}_C(M,\mu)$を計算して得る
+$\mu_2$または$\mu_2^2$は，表示射の核ではなく，
+\emph{そこからさらに層を忘れる射の核}である．
+\end{remark}
+
+\begin{remark}[一般ribbonを加える際に残る仮定]
+\label{rem:qa-tf-associativity-ribbon-warning}
+上のtraceの議論は，分岐四次形式が各fiberで非零であることを使う．
+この条件とgeneric rank one条件を落とすと，自己双対な対称積だけでは結合律は従わない．
+例えば$R=k[\epsilon]/(\epsilon^2)$，$A=R[y]/(y^2)$，
+$M=Rc\oplus Rd$に$y\cdot c=\epsilon c$，$y\cdot d=\epsilon d$と作用させ，
+\[
+ \mu(c,c)=\mu(d,d)=0,\qquad\mu(c,d)=\epsilon+y
+\]
+と置く．これは対称かつ$A$-双線型で，
+$\operatorname{Ann}_A(y-\epsilon)=R(y+\epsilon)$から自己双対である．
+しかし
+\[
+ (c\cdot c)\cdot d=0,
+ \qquad c\cdot(c\cdot d)=2\epsilon c\ne0.
+\]
+ここで特殊fiberの$M$はribbonのgeneric点で自由rank oneでない．
+従ってこれは本節のnodal TFの反例ではなく，より広い非被約曲線を含める場合に
+rankの定義と結合律条件を省略できないことを示す例である．
+\end{remark}
+
+\subsection{Fricke出力の平坦点曲線との比較}
+
+\begin{proposition}[二つのtraitでのgeneric同型と特殊曲線の相違]
+\label{prop:qa-tf-spectral-flat-model-point-curve}
+$k$を標数零の代数閉体とし，$r=1,2$について
+\[
+ p_1=1,\quad p_2=t,\qquad b_1=b_2=t,
+ \qquad
+ C_r=\{y^2=uv(p_ru^2+uv+b_rv^2)\}
+\]
+と置く．平坦出力代数$\mathcal B^{(r)}$の可換点曲線は
+\[
+ E'_r=\{c^2=U^2-4t^rV^2,\quad d^2=V(U+V)\}\subset\PP^3.
+\]
+そのgeneric fiberと$C_r$の間の同型は，有理式
+\[
+ \Phi_r:[u:v:y]\dashrightarrow
+ [p_ru^2+b_rv^2:uv:p_ru^2-b_rv^2:y]
+\]
+によって与えられる．
+しかしこの指定generic同型は$t=0$を越える曲線族の同型には延長できない．
+これは有限trait基底変更後にも成立する．
+特に$r=2$では，別のgeneric自己同型を合成した全ての同型について
+延長不能を主張しているのではない．
+\end{proposition}
+\begin{proof}
+四座標は同じ重み二であり，
+\[
+ (p_ru^2-b_rv^2)^2=(p_ru^2+b_rv^2)^2-4p_rb_r(uv)^2,
+ \qquad y^2=(uv)(p_ru^2+b_rv^2+uv)
+\]
+なので，$p_rb_r=t^r$から像は$E'_r$に入る．
+$t\ne0$，$uv\ne0$の開では
+$x=u/v$を$(U+c)/(2p_rV)$で回復できるのでbirationalである．
+generic fiberは双方smooth proper genus oneだから，このbirational mapは同型へ延びる．
+
+共通の特殊fiber$E'_0$は$c=U$と$c=-U$の二つのsmooth conic
+$d^2=V(U+V)$からなり，$[0:1:0:1]$と$[0:1:0:-1]$で横断的に交わる．
+従って$I_2$型である．
+一方，$C_{1,0}=\{y^2=u^2v(u+v)\}$は既約nodal曲線なので，
+$r=1$では特殊fiber自体が同型でない．
+
+$r=2$では$C_{2,0}=\{y^2=u^2v^2\}$も$I_2$型だが，
+$uv\ne0$上の$\Phi_2$は
+\[
+                     [u:v:y]\longmapsto[0:1:0:\pm1]
+\]
+となり，各成分の稠密開を一点へ収縮する．
+もしgeneric同型を延長する族同型が存在すれば，分離性により
+$\Phi_2$が定義される開上でこの式と一致するため矛盾する．
+有限trait基底変更は特殊fiberの型やこの式の収縮を変えない．
+\end{proof}
+
+\begin{remark}[再構成と境界双対化の区別]
+二次積付きTFデータの代数$\OO_C\oplus M$は，入力の元の点曲線と符号を復元する．
+Fricke出力の点曲線はsmooth域で$C$と同型になるが，前命題の固定モデルでは
+その同型が境界を越えない．従って元の符号被覆の再構成だけから，
+Fricke射のcompactificationが自動的に定まるわけではない．
+節点で$M$が非局所自由なら$[M]$は通常の$\Pic^0(C)$の点ではなく，
+smooth構成に用いた$t_{[M]}$もそのまま定義できない．
+次の課題は，必要な曲線修正とpointingを指定し，二つのtraitで異なる収縮を
+同型・慣性・基底変更と両立させる境界対応を構成することである．
+\end{remark}

@@ -99,6 +99,46 @@ def relative_identities():
     print("PASS: weak covariant equivariance, discriminants, resultant, and coarse map")
 
 
+def torsion_free_recognition_identities():
+    a, f1, f2, h = sp.symbols("a f1 f2 h")
+    pairing = sp.Matrix([[0, 1], [1, 0]])
+    action = sp.Matrix([[a, f2], [f1, a]])
+    scalar_product = sp.Matrix([[f1, a], [a, f2]])
+    assert pairing.det() == -1
+    assert action.T*pairing == scalar_product
+    assert action*action-h*sp.eye(2) == sp.Matrix([
+        [a*a+f1*f2-h, 2*a*f2],
+        [2*a*f1, a*a+f1*f2-h],
+    ])
+    assert sp.trace(action) == 2*a
+    assert action.subs(a, 0)**2 == f1*f2*sp.eye(2)
+    print("PASS: Frobenius pairing and trace-zero quadratic-module normal form")
+
+    aa, bb, cc, dd = sp.symbols("aa bb cc dd")
+    matrix = sp.Matrix([[aa, bb], [cc, dd]])
+    similarity = aa*dd+bb*cc
+    assert matrix.T*pairing*matrix == sp.Matrix([
+        [2*aa*cc, similarity], [similarity, 2*bb*dd],
+    ])
+    ideal = sp.groebner([aa*cc, bb*dd], aa, bb, cc, dd)
+    # The numerator of e^2-e for e=aa*dd/similarity vanishes.
+    assert ideal.reduce((aa*dd)**2-aa*dd*similarity)[1] == 0
+    assert ideal.reduce(sp.expand(matrix.det()**2-similarity**2))[1] == 0
+    print("PASS: hyperbolic similitude identities and monomial idempotent decomposition")
+
+    x, y, left, right = sp.symbols("x y left right")
+    node_product = sp.Matrix([[x, y], [y, x]])
+    branch_basis = sp.Matrix([[1, 1], [1, -1]])
+    diagonal_product = branch_basis.T*node_product*branch_basis
+    assert diagonal_product == sp.diag(2*(x+y), 2*(x-y))
+    scaling = sp.diag(left, right)
+    difference = scaling.T*diagonal_product*scaling-diagonal_product-sp.diag(
+        2*(x+y)*(left*left-1), 2*(x-y)*(right*right-1))
+    for entry in difference:
+        is_zero(entry)
+    print("PASS: nodal quadratic product and independent branch-square constraints")
+
+
 def main():
     x, a, b, chi, t = sp.symbols("x a b chi t")
     equation = x * (x**2 + a*x + b)
@@ -148,6 +188,7 @@ def main():
     is_zero(w.subs(chi,source_equal)-1/(4*t*t))
     print("PASS: shared-root and equal-pair boundary pole identities")
     relative_identities()
+    torsion_free_recognition_identities()
     print("NOT CHECKED: gerbe equivalence, stack closedness, infinite Ext, or novelty")
 
 

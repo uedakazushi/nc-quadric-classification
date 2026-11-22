@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v4.8
+% 日本語 LuaLaTeX。2026-11-22 / v4.9
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v4.8（相対pointed認識・spectral gerbeと境界のSerre障害）}
+\date{2026年11月22日\quad v4.9（相対pointed認識・spectral gerbeとtorsion-free標的）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -86,6 +86,13 @@ H2族として延長できない。
 固定二対象間の全高次Ext非消滅から、特殊fiberの有界coherent導来圏は
 右Serre関手を失う。任意の二形式を許すこの表示族内で、
 H2条件は二つの判別式の非消滅と同値である。
+節点spectral曲線上の二次自己双対torsion-free層の標的は
+有限型Artin stackとなり、balanced開は二形式商として相対的に認識できる。
+元のnoncubicはそのsquarefree開に全忠実に埋まり、
+非単純な$I_2$極限を含めて全同型と慣性を回収する。
+この認識は実際の二次積を保持するもので、
+smooth Fricke射の非忠実性や境界延長問題とは異なる。
+
 
 さらに、cubicの線束辞書、normal rulingの二重忘却、
 Okawa--Uedaの四重GIT射とPicard根torsor、その慣性と局所粗分岐を比較する。
@@ -387,6 +394,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/spectral_relative_correspondence}
 \input{quiver-avatar/half_period_ruling}
 \input{quiver-avatar/nodal_resolution_obstruction}
+\input{quiver-avatar/torsion_free_spectral_recognition}
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}
 
@@ -410,7 +418,10 @@ spectral対応を全noncubic境界からH2へ延長する目標は成立しな�
 二次積付きtorsion-free spectral対象などの適切なcompactificationを選ぶ必要がある。
 命題~\ref{prop:qa-spectral-flat-singular-boundary}は二つの平坦代数モデルを与えるが、
 その特殊fiberは周期Extを持つため、smoothなH2とは異なる境界対象である。
-次はその同型層・変形・慣性を、二次積付きspectral対象と比較する。
+第~\ref{sec:qa-tf-quad-artin}節では節点TF標的の有限型Artin性と
+balanced部分の群商表示、元のnoncubicの全忠実な開埋込みまで証明した。
+ただし命題~\ref{prop:qa-tf-spectral-flat-model-point-curve}の指定generic同型は
+二境界でそのまま族同型へ延長せず、曲線修正を伴うFricke対応が次の課題である。
 以下の課題は、他のavatarや全AS表示を含む範囲を扱う。
 本稿の有限代数の開部分と、幾何的 avatar の開部分は、それぞれ独立に定義される。
 両者を相対 AS 分類として同定するには、avatar から得る有限代数が

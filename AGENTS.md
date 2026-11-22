@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.24。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.8。
+2026-11-22 / v1.25。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.9。
 
 ## 公表用三論文の役割
 
@@ -36,6 +36,14 @@
 
 二つの境界traitのgeneric像には $g_1=U^2-4t^rV^2,\ g_2=UV+V^2$（$r=1,2$）という全次数平坦な中央二重平方モデルがある。特殊fiberの二周期解消から固定二対象間の $\operatorname{Ext}^n=k$ を全 $n\ge0$ で証明し、$D^b(\qgr B_0)$ の右Serre関手の不存在を得た。任意の重根・零形式にも拡張でき、この表示族内のH2条件は各二次形式の判別式が非零であることと同値。二形式の共有根・一致根対は排除しない。Perf上のSerre公式の不存在や、自然な境界射の構成はこの結果から主張しない。
 
+### 二次積付きTF標的の代数性と全忠実な認識
+
+[境界標的の認識](papers/quiver-avatar/torsion_free_spectral_recognition.tex) で、幾何fiberがsmooth/nodal/I2となる二重被覆と二次自己双対rank-one TF層の標的 $\mathfrak T_{\rm nod}$ の有限型Artin性、affine有限表示対角を証明した。各成分でrank one、曲線の幾何被約性・連結性、有限表示を仮定する。自己双対性から $h^0(M)\le1$、$p_*M$ の分解型を二型に制限し、固定Quotで有界性を示す。非被約spectral曲線全体へ外挿しない。
+
+Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline P_{\rm nod}/G]$ と同値。tracezero成分の非退化二次形式の等方線から二形式と全同型を回復し、任意非被約底への降下を含む。元のNは両平方sectionのsquarefree開であり、TF標的への射は全忠実な開埋込み。実際の $(M,\mu)$ を保持するため同時符号は消えない。層を忘れると固定曲線上の核はnodalでμ₂、I2でμ₂²となる。
+
+元の点曲線と符号は $\OO_C\oplus M$ で全境界から再構成できる。しかしFricke出力の平坦点曲線との指定generic同型は、共有根ではnodal対I2、一致根対では成分収縮のため族同型へ延長しない。TF認識をsmooth Fricke射の境界延長と読み替えない。
+
 ### 保持する分類・障害・再開先
 
 | 内容 | 現行の証明・参照先 |
@@ -56,7 +64,7 @@
 
 - E_f側の相対mutation、全商降下、Serre完成、pointed heart回収、およびsmooth spectral相対射・gerbe分解を未解決へ戻さない。stack自己同値とH2境界延長は不存在が証明済みであり、単なる証明不足と記さない。境界の具体的な平坦代数モデルを出発点とし、自然な射の延長先とその同型層を調べる。
 - 任意のAS/avatar/QP表示stack全体のright-equivalence groupoid、一般cubic域の表示忘却fiber・慣性、既存GITとの相対比較は別に検証する。体上AS分類や特定noncubic族の相対認識から全表示stack同値を推論しない。
-- 二次積付きtorsion-free標的 `TF^quad` への射は任意基底変更と両立して構成済み。標的のArtin性・有限型開条件、表示射の全忠実性・fiber、非被約基底での慣性・変形は残課題。nodalとI2の極限の自己同型は異なり、I2極限は非単純なのでsimple/fine compactified Picardだけを標的に選ばない。このtorsion-free相対射と、延長不能なsmooth spectral-pointed H2対応を区別する。
+- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。次はFricke双対化のグラフ閉包と曲線修正を扱う。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 

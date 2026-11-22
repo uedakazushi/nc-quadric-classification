@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.82。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.83。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## Spectral-pointed対応と二同種の一次資料
@@ -8,6 +8,12 @@
 Silverman, *The Arithmetic of Elliptic Curves*, 2nd ed., GTM 106, Springer, 2009, DOI [10.1007/978-0-387-09494-6](https://doi.org/10.1007/978-0-387-09494-6), Chapter III, Example 4.5, printed p.70 を[第2版の一次本文](https://www.math.ens.psl.eu/~obenoist/refs/Silverman.pdf)（PDF 88頁目）で照合した。$y^2=x(x^2+ax+b)$ と $Y^2=X(X^2-2aX+a^2-4b)$ の双対二同種が明示される。Cで採用したYの符号は同書と逆だが、核と標識付き商は同じである。今回の引用キーは `SilvermanAEC2009`。別版の `SilvermanAEC1986` の当該箇所を再確認したと読み替えない。
 
 二同種の双対化・Atkin–Lehner対合・商の公式は既知結果である。本稿の具体的な追加は、逆pencil構成とAS10の指定一番頂点を介してspectral avatarのpointed H2像を同定し、noncubic不変量で $\chi\mapsto\chi/(\chi-1)$ と書くこと、自己双対二点と二捩れ標識を失う等j反例を示すこと、およびBの閉境界を入力に二退化型でH2族への延長を排除することである。証明正本は [spectral対合と境界](../papers/quiver-avatar/spectral_atkin_lehner.tex)。このpointed適用・延長不能の新規性を網羅的に確定したとは主張しない。
+
+## 節点二次自己双対TF標的の代数性
+
+2026-11-22にStacks Projectの一次本文を確認した。Coh stackのArtin性は [Theorem 99.6.1, 09DS](https://stacks.math.columbia.edu/tag/09DS)、affine有限表示対角と局所有限表示は [Lemmas 108.4.1–108.4.2, 0DLX](https://stacks.math.columbia.edu/tag/0DLX)。Homのaffine有限表示は [Proposition 99.3.10, 08K6](https://stacks.math.columbia.edu/tag/08K6) で、標的層のfinite presentation・基底flat・proper supportを確認する。直像ベクトル束へのfiberwise flatnessは [Theorem 76.23.3, 05X0](https://stacks.math.columbia.edu/tag/05X0)、固定多項式Quotの有限型性は [Lemma 108.6.1, 0DP9](https://stacks.math.columbia.edu/tag/0DP9)。引用キーは `StacksCoherentSheaves`。
+
+Cの具体的な追加は、二重代数のFrobenius双対による自己双対性の有限行列表示、非被約底でのtrace零、被約連結rank-one自己双対層の $h^0\le1$ と二分解型による一様有界性、等方線からの全二形式・同型層の回収である。[証明](../papers/quiver-avatar/torsion_free_spectral_recognition.tex) は全節点標的の有限型Artin性と、balanced開 $[\overline P_{\rm nod}/G]$、元のnoncubicのsquarefree開を与える。既知のCoh/Quot代数性を新成果とはしない。非被約spectral曲線全体の有限型性、任意AS heartとの比較、包括的な新規性の確定は未実施。
 
 ## 相対spectral gerbe・慣性・特異境界の入力
 

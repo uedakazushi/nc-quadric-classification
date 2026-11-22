@@ -330,8 +330,10 @@ torsion-free coherent $\OO_C$-sheaf $M$，
 $M\xrightarrow{\sim}\mathcal H om_C(M,\OO_C)$
 を誘導するものとする．
 射は曲線束・二重射・層・二次積をすべて保つ同型である．
-この groupoid が Artin stack として有限型・滑らか等である
-ことはここでは主張しない．
+この定義だけから全体の代数性は主張しない．
+幾何被約の節点曲線に制限した標的の有限型Artin性は
+定理~\ref{thm:qa-tf-nodal-finite-type-artin}で，
+balanced開の群商表示は定理~\ref{thm:qa-tf-balanced-quotient-recognition}で証明する．
 
 論文Bの被約根対の表示商
 $\mathfrak N^{\mathrm{pres}}=[P/G]$ から
@@ -345,8 +347,9 @@ $\mathfrak N^{\mathrm{pres}}=[P/G]$ から
 これは非被約基底への任意の基底変更と両立し，
 像の乗法欠損層は
 $\coker\mu\simeq\OO_{V_B(f_1,f_2)}$ である．
-この射の全忠実性，像の局所閉性，内在的
-O-marked stack への適合・比較同値は未証明である．
+定理~\ref{thm:qa-tf-balanced-quotient-recognition}により，
+この射は全忠実であり，節点TF標的への射としては開埋込みとなる．
+この実際の二次積を保持した認識と，Fricke双対化のH2像は区別する．
 \end{proposition}
 \begin{proof}
 表示空間 $P$ 上の普遍二形式から
@@ -391,5 +394,7 @@ rank-one torsion-free sheaf の compactification と
 相対曲線 $C/B$ と $\mathcal M$ のみならず，
 \emph{自己双対な二次積 $\mu^\flat$ と
 長さ $0,1,2$ の積欠損}も保持する群oidである．
-この群oidと avatar AS 心の同値は未証明である．
+この節点群oidのbalanced開と二形式表示の同値は
+定理~\ref{thm:qa-tf-balanced-quotient-recognition}で証明する．
+任意のavatar AS heartとの同値や，Fricke双対化の境界拡張は含まない．
 \end{remark}
