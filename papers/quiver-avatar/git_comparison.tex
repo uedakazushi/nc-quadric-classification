@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.0（論文Bのsmooth atlasから一般pointed忘却のétale性・HHを導出）
+% 2026-11-22 / v2.1（一般pointed忘却の二rulingと次数2）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -500,6 +500,100 @@ $\operatorname{HH}^1(\Lambda)$にそれぞれ同定する。
 ~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
 で三次元と直接計算済みであり、
 式~\eqref{eq:qa-ou-h2-generic-kodaira-spencer}が従う。
+\end{proof}
+
+\begin{corollary}[一般pointed忘却の幾何次数は二]
+\label{cor:qa-quintuple-h2-generic-degree-two}
+定理~\ref{thm:qa-quintuple-h2-generic-etale}の開をさらに縮め、
+対応する滑らかな楕円四つ組
+$U=(E,L_0,L_1,L_2)$ について
+\[
+ \eta=[L_1]-[L_0],\quad
+ \delta=[L_2]-[L_0]\in\Pic^0(E),\qquad
+ j(E)\ne0,1728,\quad
+ \delta\notin E[2],\quad
+ \eta\notin\{0,\delta,2\delta\}
+ \tag{OU-H2-gen}\label{eq:qa-ou-h2-two-rulings-open}
+\]
+を仮定する。この条件は非空な稠密開を定める。
+このとき、固定したpointed対象
+$y=(\mathcal C,\mathcal O)$の
+$\overline{\mathcal F}_{\mathrm{geo}}$に関する
+幾何的2-fiberは、自己同型群が自明な
+\emph{二つの対象}からなる。
+それらは$y$の二つの内在的normalized foundationを
+選ぶことに対応する。
+従って一般の表現可能étale忘却射の幾何次数は二である。
+さらに適切な稠密開へ制限すると
+この忘却射は有限étale次数二となる。
+
+この次数二と、
+定理~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}
+の\emph{表示間}の次数四、
+ならびにPicard平方根の四つの局所選択とは異なる。
+\end{corollary}
+\begin{proof}
+論文Bの
+\cite[\texttt{cor:two-intrinsic-foundations}]{QuadricModuli2026}
+によれば$y$の構造対象から始まるnormalized foundationは、
+各項の同型までちょうど二つである。
+第一のfoundationは$U$を与え、
+もう一方は同論文
+\cite[\texttt{lem:elliptic-two-reflections}]{QuadricModuli2026}
+のruling交換により
+\[
+ R(U)=(E,L_0L_1L_2^{-1},L_2,L_1),\qquad
+ (\eta,\delta)\longmapsto(2\delta-\eta,\delta)
+\]
+を与える。式~\eqref{eq:qa-ou-h2-two-rulings-open}の条件で
+両者は非線型geometric cubicに属する。
+Van den Berghのquintuple復元
+\cite[Theorem 5.5.10]{VdB2011}により、
+選んだ各normalized foundationは
+$G_{\mathrm{eff}}$による同型を除いて一意の
+quintuple表示を定める。
+従って忘却の幾何的2-fiberには高々二つの
+quintuple同型類があり、各foundationから少なくとも一つを得る。
+
+この二つが同型なら、$U$と$R(U)$は
+曲線同型を介した四つ組として同型である。
+任意の$E$の自己同型はtranslationと
+$\epsilon\in\Aut(E,0)$の合成であり、translationは
+$\Pic^0(E)$の差に自明に作用する。
+よって必要条件は
+\[
+ \epsilon(\delta)=\delta,\qquad
+ \epsilon(\eta)=2\delta-\eta.
+\]
+$j(E)\ne0,1728$では$\Aut(E,0)=\{\pm1\}$であり、
+$\delta\notin E[2]$だから$\epsilon=1$しかない。
+このとき第二式は$\eta=\delta$となり仮定に反する。
+従って二つは異なる。
+
+さらに論文Bの
+\cite[\texttt{cor:h2-point-groupoid-foundation}]{QuadricModuli2026}
+によれば、pointed自己同値は二つのfoundationを
+置換し、そのうち一方を保つ成分は
+quintuple表示の剛体化自己同型群と一致する。
+上で二つのfoundationを交換する自己同値が
+存在しないことを示したから、
+$\operatorname{Aut}_{\HHstack}(y)$は
+両者を保つ群に等しい。
+この群は命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
+の$\mu_2^2$である。
+従って各源点の慣性から標的慣性への写像は同型である。
+相対2-fiberの自己同型はその核なので自明、
+また相対fiberの同型類に関する
+命題~\ref{prop:qa-forgetful-homotopy-fiber} の剰余集合は
+各quintuple同型類に対して一点になる。
+よってfiberはちょうど二つの離散的対象を持つ。
+
+前定理により忘却射はこの開で表現可能étale、
+したがって局所準有限である。
+有限型の準有限étale射は、
+有限の幾何的一般fiberを持つ場合、
+始域と標的の適切な稠密開へ縮めれば有限étaleになる。
+その次数は上で示した二である。
 \end{proof}
 
 \begin{remark}[残るpointed射の慣性とroot deck群の相違]
