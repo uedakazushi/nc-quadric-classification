@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.40。全次数のnormal helix/perfect-fiber判定を分離して証明。
+% 2026-11-23 / v4.41。rank三壁の反対normal H2障害を明示し左Noether主張を限定。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1454,6 +1454,106 @@ $P_n\simeq\mathbf R\operatorname{Hom}(T,t^nT)$
 全ての$n\ge0$に対する結論を得る．
 \end{proof}
 
+\begin{proposition}[一重rank三壁で反対normalの$H_2$認識は失敗する]
+\label{prop:qa-q12-opposite-normal-rank-three-obstruction}
+二積の全$H_2$開$V_{\mathrm{cross}}$の幾何点で
+$\operatorname{rk}g=3$とし，$f$側の
+normal foundation $\Lambda_f$を取る．
+四頂点を逆順にした$\Lambda_f^{\mathrm{op}}$は，
+有限normal表示の$U_0$の全射・部分束条件を満たすが，
+その逆squareデータは$V_{\mathrm{cross}}$に属さない．
+実際，その二積はともに可逆なのに，
+交差行列の階数は$1$である．
+従って$\Lambda_f^{\mathrm{op}}$を
+\emph{同じ構造対象の強い$H_2$ pointing}を持つ
+normal foundationとして認識し，
+その相対AZ/Noether定理を適用することはできない．
+この結論は$C(\Lambda_f)$の左Noether性が偽である
+ことを意味せず，特定の証明経路に対する障害である．
+\end{proposition}
+\begin{proof}
+元のsquareデータを
+$(A,B,C,D,W;f,g)$とし，
+\[
+ N=(C^\vee\otimes W)/\alpha_f(A),\qquad
+ \alpha_f:A\hookrightarrow C^\vee\otimes W
+\]
+と書く．$\Lambda_f$のnormalデータは
+$(W_1,W_2,W_3;P,Q)=(B,W,N;D,C^\vee)$
+である．反対代数の頂点を逆順にすると，
+そのnormalデータは
+\[
+ (W_1',W_2',W_3';P',Q')
+ =(C^\vee,C^\vee\otimes D,N;D,B)
+\]
+となる．$F':D\otimes C^\vee\to C^\vee\otimes D$
+は標準交換であり，随伴は部分束の包含である．
+$G':B\otimes C^\vee\otimes D\to N$は
+$C^\vee\otimes g$と$C^\vee\otimes W\to N$の合成である．
+
+$\ker g=k\kappa$は階数二の非分解tensor
+$\kappa\in D\otimes B$によって生成される．
+$\ell_g\in W^\vee$を$\operatorname{im}g$の
+annihilatorとする．
+$T_g=\operatorname{adj}(g)f
+=\kappa\otimes(\ell_gf)$であり，
+補題~\ref{lem:qa-rank-one-cross-kronecker}と
+四交差条件から，
+$\ell_gf:C\otimes A\to k$の
+$A\to C^\vee$への随伴は同型である．
+従って
+\[
+ C^\vee\otimes\operatorname{im}g+\alpha_f(A)
+       =C^\vee\otimes W
+\]
+であり，$G'$は全射である．
+そのkernelは
+\[
+ \ker G'=C^\vee\otimes\ker g
+          =C^\vee\otimes k\kappa
+\]
+である．
+よってnormalからsquareへの逆構成
+~\eqref{eq:qa-normal-to-square-data}により，
+\[
+ (\widehat A,\widehat B,\widehat C,
+       \widehat D,\widehat W)
+ =(C^\vee\otimes k\kappa,\ C^\vee,\ B^\vee,\
+   D,\ C^\vee\otimes D)
+\]
+を得る．$\widehat g:D\otimes C^\vee\to
+C^\vee\otimes D$は交換写像であり，
+$\widehat f:B^\vee\otimes
+ (C^\vee\otimes k\kappa)\to C^\vee\otimes D$
+は$\kappa:B^\vee\xrightarrow{\sim}D$との縮約である．
+したがって両者は可逆である．
+しかし
+$\widehat f^{-1}\widehat g$は
+$\kappa^{-1}:D\to B^\vee$と
+$\operatorname{id}_{C^\vee}$のtensor積であり，
+交差縮約$M_{\widehat f}$は
+$\kappa^{-1}$による一次元の縮約値を
+$\operatorname{id}_{C^\vee}$へ送る写像となる．
+従って$\operatorname{rk}M_{\widehat f}=1$で，
+四交差開には属さない．
+
+具体的には標準枠で
+\[
+ f=I_4,\qquad
+ g=\begin{pmatrix}
+ 1&0&0&1\\0&1&-1&0\\0&1&1&0\\-1&-1&-1&-1
+ \end{pmatrix}
+\]
+と取れば，
+$\operatorname{rk}g=3$，$\ker g=k(-1,0,0,1)$，
+$\det M_f=-1$，$\det M_g=16$であり，
+元のsquareは真正な$H_2$開にある．
+反対normalの逆squareでは
+$\operatorname{rk}M_{\widehat f}
+=\operatorname{rk}M_{\widehat g}=1$である．
+これは有理数の有限行列計算でも独立検算できる．
+\end{proof}
+
 \begin{theorem}[H2実現可能開上の全次数・同じheartの比較]
 \label{thm:qa-two-mass-h2-locus-jacobian-heart}
 前定理の相対QP群oidを，有限foundationが
@@ -1482,7 +1582,7 @@ preprojective次数の全$n\geq0$について
 \]
 である．
 本稿の局所有限型siteのaffine test上では
-Jacobian algebraは左右Noetherianであり，
+Jacobian algebraは右Noetherianであり，
 \[
  \boxed{\quad
  \bigl(\qgr\operatorname{Jac}(Q_{12},\mathcal W),
@@ -1549,28 +1649,22 @@ normal foundationは構造対象$\mathcal O_S$を含み，
 したがって$(T,t)$は相対AZ ampleであり，
 通常軌道環は右Noetherianかつその$\qgr$は
 実際の$\mathcal C_S$に同値である．
-左Noether性を別に確認する．
-normal四項を相対mutationで得た元のsquare四項に戻す
-（定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}）．
-square有限代数のindexed oppositeは，頂点を逆順にし，
-補題~\ref{lem:qa-square-foundation-opposite}により
-全幾何fiberが再び分類済みsquare型の有限基礎となる．
-補題~\ref{lem:qa-classified-fiber-finite-square-recognition}により，
-この反対squareにも実際の相対heartと右Noetherな
-canonical完成がある．
-元のsquareからnormalへの有限coneを反対圏で逆向きに取れば，
-反対normal四項をこのheartのfull strong foundationとして得る．
-その関係束とHomの相対perfect性は，元の相対coneの
-双対・基底変更によって保持される．
-反対normalの幾何fiberでも対応するnormal helixの
-forward Ext消滅が成立するため，
-前段の相対AZ議論を反対normalに適用し，
-$C(\Lambda^{\rm op})$の右Noether性を得る．
-補題~\ref{lem:qa-serre-completion-opposite}の
-$C(\Lambda^{\rm op})\simeq C(\Lambda)^{\rm op}$
-により$C(\Lambda)$は左Noetherである．
-この反転には頂点の逆順とSerreの向きの交換が必要であり，
-単に同じheart上で全対象を双対化したと主張するものではない．
+左Noether性についてはこの証明からは結論しない．
+反対squareのSerre完成は
+系~\ref{cor:qa-relative-square-completion-two-sided-noetherian}
+によって左右Noetherianであるが，
+反対\emph{normal}四項が同じ$H_2$ pointingを
+持つことは命題~
+\ref{prop:qa-q12-opposite-normal-rank-three-obstruction}
+によって一重rank三壁で否定される．
+従って反対normalに相対$H_2$のAZ補題を
+そのまま適用して左Noether性を推論することはできない．
+反対normalの実際の心内性・豊富性を別の対象を
+基準として証明するか，有限mutationの下での
+左右Noether性を直接示すことが残る．
+右Noether性と右$qgr$のpointed exact認識は
+前段の相対AZ議論で成立しており，
+この不足には依存しない．
 各cone・対角解消は有限束から構成され，
 許された基底変更と整合する．
 最小矢束のflat性は仮定しない．
