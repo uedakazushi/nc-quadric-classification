@@ -4,7 +4,7 @@
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-資料確認日：2026-11-23（日本時間）。v1.99。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v2.0。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 全H2の共通線形化と大域良モジュライ
@@ -39,7 +39,7 @@ Keller, *Deformed Calabi–Yau completions*, Theorem 6.10 の[著者による201
 
 ## 相対heart判定に用いるdg Morita
 
-**C4で必要な二種類の基底変更の区別（2026-11-23、原稿内で直接証明）。** Keller 1994 §8.2 のdg Morita定理はcompact生成から非有界導来同値を与えるが、それだけで標準heartに$t$-exactだとは言わない。Cの`cor:qa-all-square-isom-pointed-heart-descent`では反SerreAZ生成族の両向き保存から$t$-exact性を証明し、さらに`lem:qa-h2-heart-underived-base-change`では非平坦基底変更の通常module-object引戻しを$H^0\mathbf Lb^*$と同一視して2自然性を確認した。$k[\varepsilon]/(\varepsilon^2)\to k$の周期Torは導来引戻し自体の$t$-exact性を否定する標準的反例。別に`lem:qa-q12-hzero-nonflat-base-change`では非正・基底K-flatなSerre tensor dg模型の零次と任意基底変更をtruncation三角で直接交換する。Kellerのordinary ideal訂正は引き続き別条件であり、これらの引戻し補題をKellerやAZ原典の新しい結論として帰属させない。原論文AZ1994 Theorem4.5の本文未取得という制約は保持する。
+**C4で必要な二種類の基底変更の区別（2026-11-23、原稿内で直接証明）。** Keller 1994 §8.2 のdg Morita定理はcompact生成から非有界導来同値を与えるが、それだけで標準heartに$t$-exactだとは言わない。Cの`cor:qa-all-square-isom-pointed-heart-descent`では反SerreAZ生成族の両向き保存から$t$-exact性を証明し、さらに`lem:qa-h2-heart-underived-base-change`では非平坦基底変更の通常module-object引戻しを$H^0\mathbf Lb^*$と同一視して2自然性を確認した。$k[\varepsilon]/(\varepsilon^2)\to k$の周期Torは導来引戻し自体の$t$-exact性を否定する標準的反例。別に`lem:qa-q12-hzero-nonflat-base-change`では非正・基底K-flatなSerre tensor dg模型の零次と任意基底変更をtruncation三角で直接交換する。Kellerのordinary ideal訂正は引き続き別条件であり、これらの引戻し補題をKellerやAZ原典の新しい結論として帰属させない。**基底$K$-flat性の外部入力**はStacks Project [Tag 064K, Lemma 15.60.7](https://stacks.math.columbia.edu/tag/064K)の「上に有界な平坦加群複体は$K$-flat」という原文・証明を確認した。$H^0$の任意基底変更公式とTor反例は本稿でtruncation三角・周期自由解消を直接示し、Stacksの新規性は主張しない。原論文AZ1994 Theorem4.5の本文未取得という制約は保持する。
 
 
 Keller, *Deriving DG categories*, Ann. sci. École Norm. Sup. (4)27(1994),63–102、[著者本文](https://webusers.imj-prg.fr/~bernhard.keller/publ/ddc.pdf) の §4.3 と §8.2 を一次再確認した。Compact生成圏のdg加群表示と、small generatorsに対応する双加群tensorによる非有界導来同値が既知入力である。Cはenhanced Moritaのcolimit保存と相対H2のAZ生成を使い、両構造対象が相手heartに実際に入る条件からt-exactnessを直接証明する。このheart判定を既知Morita定理そのものの結論とはしない。非被約底の全fiber同値だけでt-exactnessを推論しない。一般補題の包括的新規性は未調査。既存キー `Keller1994` を使用。
