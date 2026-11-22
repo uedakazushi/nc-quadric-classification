@@ -73,7 +73,7 @@
 
 - **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
-- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-avatar.tex`（v4.11）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。相対smooth射はμ₂-gerbeと二重被覆に分解し、全stack自己同値の不存在と特異境界の無限高次Extも証明した。節点TF標的の有限型Artin性とbalanced商・元Nの開埋込みに加え、二traitの半安定graph・出力二次線束延長・四捩れ補正を証明した。次は全表示群に同変な境界対応を研究する。別のrotated pointing・全相対AS/ potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
+- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-avatar.tex`（v4.11）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。相対smooth射はμ₂-gerbeと二重被覆に分解し、全stack自己同値の不存在と特異境界の無限高次Extも証明した。節点TF標的の有限型Artin性とbalanced商・元Nの開埋込みに加え、二traitの半安定graph・出力二次線束延長・四捩れ補正を証明した。全表示群に同変な自然Fricke射の境界降下と全fiber、全有限分岐後の入力二捩れ障害も証明した。次は別のrotated pointingを認識する。全相対AS/potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
 
 **公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは指定AS分解・avatarの分類、八・十・十二本矢QP、pointed認識と相対比較を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
 
@@ -81,7 +81,7 @@
 
 **依存監査の確定範囲。** BからAへの残余の17種類の定理・補題・式ラベルはAの現行分類20節に定義されている。Aの分類主定理の証明はB固有の主定理には依存しない原稿構成とした。これはソース依存の確認で、全数学的証明の独立監査とは異なる。
 
-**次の最優先実行単位。** CではP4のsmooth spectral相対groupoid比較を証明済みの入力とし、P5の二trait上の境界延長を入力として、全表示群に同変な境界対応への降下と半周期・line bundleの障害を進める。rank45の降下・相対mutation・$E_f$側heart認識は証明済みの入力として用い、全avatarへの一般化だけを未解決として残す。並行して、非被約D上のPicard、AS側のrank-forcing、spherical helix実現定理、AS10逆mutation、Keller/Keller–Yangの適用と相対perfect base changeを独立監査する。A/BのP1–P3、三稿の引用・一次文献比較・組版を継続し、`python3 scripts/check.py papers` と実施可能な組版の結果は研究ノートへ記す。
+**次の最優先実行単位。** CではP4の相対pointed認識と、P5の全Fricke境界射・全fiber・半周期およびline bundle/Perfの障害を証明済みの入力とし、別rotated構造頂点のpointed認識へ進む。rank45の降下・相対mutation・$E_f$側heart認識は証明済みの入力として用い、全avatarへの一般化だけを未解決として残す。並行して、非被約D上のPicard、AS側のrank-forcing、spherical helix実現定理、AS10逆mutation、Keller/Keller–Yangの適用と相対perfect base changeを独立監査する。A/BのP1–P3、三稿の引用・一次文献比較・組版を継続し、`python3 scripts/check.py papers` と実施可能な組版の結果は研究ノートへ記す。
 
 
 ## 現在の到達点と未解決の核心
