@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.78。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.79。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU/noncubicの共通spectral incidenceとKummer類の不一致
@@ -32,6 +32,15 @@ $J(E_f)[2]$は2点しか有理的でない
 （他二点は$\sqrt{AB}$を要する、
 C prop:qa-ou-half-common-incidence-groups-distinct）。
 ゆえに比較する有限\'etale群スキーム自体が異なる。
+さらに自然な二同種$\phi=r^*:J(C_q)\to J(E_f)$から
+誘導される$\phi[2]$によってOU Kummer類を押し出しても
+$\phi[2]_*[Y_{\mathfrak p}]\ne[T_{\mathfrak p}]$
+である（C cor:qa-ou-half-isogeny-kummer-classes-distinct）。
+証明は全固有値体$F$上で
+$[Y]|_F=0$、$[T]|_F\ne0$という
+Kummer境界の自然性に基づく。
+したがって比較の自然な射まで含めて
+Kummer類の不一致を証明した。
 
 これは本研究で証明した比較結果で、先行文献の
 Kummer exact sequenceや二同種の一般事実とは区別する。
@@ -78,7 +87,7 @@ S4の線型商S3の安定化群がC2に縮み、
 OU側はpotential/quintuple表示の別基底とそのspectral curveの
 Kummer section、noncubic側は$C_q$と一般に非同型な
 二同種曲線$J(E_f)$の非零2捩れ$P_E$を二等分する。
-共通相対基底の射・Jacobian同型・Kummer classの比較は未構成。
+共通spectral incidenceはC v4.5で構成したが、OU四重torsorとnoncubic半周期torsorはその上で非同型であり、自然な二同種のKummer押出しでも類は一致しない。残るのは相対mutation・pointingとMoritaの降下である。
 
 ## 一般biquaternionのindexと楕円曲線の四重被覆
 

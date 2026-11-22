@@ -625,6 +625,71 @@ $O$と$(0,0)=P_E$の二点だけである。
 これは有限\'{e}tale群としての非同型を示す。
 \end{proof}
 
+\begin{corollary}[双対二同種写像でもKummer類は一致しない]
+\label{cor:qa-ou-half-isogeny-kummer-classes-distinct}
+定理~\ref{thm:qa-ou-half-period-common-incidence-not-isomorphic}
+の共通incidence基底$I_{\mathfrak p}$上で
+$r:E_f\to C_q$を同時符号による次数二\'{e}tale商、
+\[
+ \phi=r^*:J(C_q)\longrightarrow J(E_f)
+\]
+をその引戻しisogenyとする。
+$\phi[2]:J(C_q)[2]\to J(E_f)[2]$を誘導射とし、
+OU四重torsorとnoncubic半周期torsorの類をそれぞれ
+\[
+ [Y_{\mathfrak p}]=\delta_{C_q,2}(P_+)
+ \in H^1_{\acute et}(I_{\mathfrak p},J(C_q)[2]),
+ \qquad
+ [T_{\mathfrak p}]=\delta_{E_f,2}(P_E)
+ \in H^1_{\acute et}(I_{\mathfrak p},J(E_f)[2])
+\]
+と置く。このとき
+\begin{equation}
+ \boxed{
+ \phi[2]_*[Y_{\mathfrak p}]
+   =\delta_{E_f,2}(\phi(P_+))
+   \ne\delta_{E_f,2}(P_E)
+   =[T_{\mathfrak p}]
+ }
+ \label{eq:qa-ou-half-isogeny-kummer-nonmatching}
+\end{equation}
+が成立する。
+すなわち二つの曲線の間の
+\emph{自然な次数二isogenyで押し出しても}
+Kummer torsorの降下類は一致しない。
+特に全固有値体$F=k(z_1,z_2,z_3)$では
+\[
+ \phi(P_+)\in2J(E_f)(F),
+ \qquad
+ P_E\notin2J(E_f)(F).
+\]
+この障害は両torsorを比較する自然な写像で
+実際に検出されるが、異なるmutation後の
+相対pointed圏同値を排除するものではない。
+\end{corollary}
+\begin{proof}
+$\phi$は群スキームの準同型であるから
+$\phi\circ[2]=[2]\circ\phi$であり、
+$[2]$-Kummer列からの境界写像は
+$\phi$に関して自然である。
+従って式の最初の等号が従う。
+
+全固有値を指定した$X^\circ$の関数体$F$へ制限する。
+定理~\ref{thm:qa-ou-spectral-kummer}で構成した
+OU半点$Q_x$は$C_q(F)$に属し、
+$2Q_x=P_+$を満たす。
+従って$\delta_{C_q,2}(P_+)|_F=0$であり、
+その$\phi[2]$による像も零である。
+一方、式~\eqref{eq:qa-common-incidence-halfpoint-classes}
+の$A,B$はそれぞれ非平方なので、
+$T_{\mathfrak p}(F)=\varnothing$である。
+従って$\delta_{E_f,2}(P_E)|_F\ne0$となる。
+二つの類は$F$上で既に異なるため、
+$I_{\mathfrak p}$上でも異なる。
+最後の二式は$2\phi(Q_x)=\phi(P_+)$と
+$T_{\mathfrak p}(F)=\varnothing$から従う。
+\end{proof}
+
 \begin{remark}[異なる次数四被覆と特異境界]
 \label{rem:qa-half-period-versus-root-cover}
 半周期torsor $T_P$は$J[2]$-torsorであり、

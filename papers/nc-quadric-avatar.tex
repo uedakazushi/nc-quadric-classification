@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v4.4
+% 日本語 LuaLaTeX。2026-11-22 / v4.5
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v4.4（共通spectral incidenceと二四重torsorの非同型）}
+\date{2026年11月22日\quad v4.5（共通incidenceと二同種Kummer類の明示的障害）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -211,6 +211,11 @@ $B=(r_3-r_1)(r_4-r_2)$）で、両平方類が独立非自明なので、
 $J(C_q)[2]$は四点全て有理的だが、
 $J(E_f)[2]$は二点しか有理的でない。
 従って比較に必要な有限群局所系自体も一致しない。
+さらに自然な二同種$\phi=r^*:J(C_q)\to J(E_f)$の
+$2$-torsion写像でOUのKummer類を押し出しても、
+$\phi[2]_*\delta(P_+)\ne\delta(P_E)$となることを証明する。
+全固有値体上で前者はOUの有理半点から零、
+後者は非分裂半周期torsorから非零となる。
 この結果は相対AS mutation/pointing同値を排除しない。
 これは相対$\qgr$圏の同値やAS側のmutationの降下とは異なる。
 $C_q$・$\Sigma_2$の別avatarとのpointed比較も未解決である。
@@ -414,6 +419,10 @@ OUのspectral曲線とnoncubicの$C_q$を同定する。
 全固有値体への引戻しでOU側のみ分裂するため非同型と証明する。
 さらに二torsion局所系$J(C_q)[2]$と$J(E_f)[2]$も
 その体上で非同型である。
+自然な二同種のKummer写像
+$\phi[2]_*:H^1(J(C_q)[2])\to H^1(J(E_f)[2])$で
+OUの四重射を押し出しても、
+noncubicの半周期Kummer類とは一致しない。
 ただしAS側の相対mutation・$\qgr$圏・Serre根の一括降下と
 無標識stackの群oid認識は別問題である。
 ここでは有限directed foundation、relation-dual QP、
