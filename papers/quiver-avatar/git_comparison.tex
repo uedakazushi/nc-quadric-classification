@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.6（CM点のlevel-two変形座標と局所粗型の延長）
+% 2026-11-22 / v3.7（CM j制限を除き局所反射・二重交点まで適用）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -730,7 +730,6 @@ $U=(E,L_0,L_1,L_2)$ について
 \[
  \eta=[L_1]-[L_0],\quad
  \delta=[L_2]-[L_0]\in\Pic^0(E),\qquad
- j(E)\ne0,1728,\quad
  \delta\notin E[2],\quad
  \eta-\delta\notin E[2],\quad
  \eta\notin\{0,2\delta\}
@@ -786,8 +785,10 @@ $\Pic^0(E)$の差に自明に作用する。
  \epsilon(\delta)=\delta,\qquad
  \epsilon(\eta)=2\delta-\eta.
 \]
-$j(E)\ne0,1728$では$\Aut(E,0)=\{\pm1\}$であり、
-$\delta\notin E[2]$だから$\epsilon=1$しかない。
+補題~\ref{lem:qa-ou-cm-no-extra-two-cubic-automorphisms}
+により、$j(E)=0,1728$を含めて
+$\epsilon\in\{\pm1\}$に限られる。
+$\delta\notin E[2]$なので$\epsilon=1$しかない。
 このとき第二式は$2(\eta-\delta)=0$となり、
 $\eta-\delta\notin E[2]$に反する。
 従って二つは異なる。
@@ -827,7 +828,6 @@ $k$を標数零の代数閉体とし、
 滑らかな楕円許容四つ組$U=(E,L_0,L_1,L_2)$の
 $\eta=[L_1]-[L_0]$、$\delta=[L_2]-[L_0]$が
 \[
- j(E)\ne0,1728,\quad
  \delta\ne0,\quad \eta\notin\{0,\delta,2\delta\}
 \]
 を満たすとする。特に$U$とruling交換後の
@@ -877,7 +877,9 @@ $[2]:E\to E$の全射性でtranslationを選んで
 最初の次数二線束を一致させる。
 二つの差が一致しているため残りの次数二線束も一致し、
 四つ組同型が得られる。
-$j(E)\ne0,1728$では$\Aut(E,0)=\{\pm1\}$である。
+補題~\ref{lem:qa-ou-cm-no-extra-two-cubic-automorphisms}
+により、追加の複素乗法自己同型はこの条件を満たさない。
+よって$\epsilon\in\{\pm1\}$であり、
 $\epsilon=1$なら式~\eqref{eq:qa-ou-ruling-swap-epsilon}
 は$2(\eta-\delta)=0$と同値、
 $\epsilon=-1$なら同式は$2\delta=0$と同値である。
@@ -979,7 +981,6 @@ $j$の値も直接計算できる。
 命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}の
 滑らかな許容楕円四つ組が、正則半単純な
 quintuple開に属するとする。
-さらに$j(E)\ne0,1728$とする。
 $\delta,\eta-\delta$の二捩れ性が次のいずれか
 一方だけ成立する場合、対応するpointed対象$y$の
 全幾何的自己同値群はそれぞれ
@@ -993,8 +994,11 @@ $\delta,\eta-\delta$の二捩れ性が次のいずれか
  \tag{OU-special-I}\label{eq:qa-ou-special-inertia-group-types}
 \]
 ここで$C_m$は位数$m$の巡回群である。
-両二捩れ条件が同時に成り立つ部分や
-$j(E)=0,1728$はこの命題の対象外である。
+両二捩れ条件が同時に成り立つ部分は
+この命題の対象外である。
+$j(E)=0,1728$も、補題
+~\ref{lem:qa-ou-cm-no-extra-two-cubic-automorphisms}
+により指定の二cubic開上では同じ結論に含まれる。
 
 この群型はスタックのpointed慣性群の抽象型であり、
 その法表現や粗モジュライ空間上の分岐型はまだ指定しない。
@@ -1049,7 +1053,6 @@ $\eta\ne\delta$により同型でない。
 命題~\ref{prop:qa-elliptic-special-inertia-group-types}の
 二つの片側二捩れ特別座の点$x$を取る。
 $\delta,\eta$は上記の楕円差パラメータとし、
-$j(E)\ne0,1728$、
 $\prod_i x_i\ne0$、$x_i^2$は相異なり、
 $e_1=\sum x_i^2\ne0$とする。
 幾何的quintupleから内在的$\HHstack$への忘却の
@@ -1102,9 +1105,13 @@ smoothな楕円曲線と三つの次数二線束の
 規格化すると、局所的に$(E,\eta,\delta)$で
 記述できる。$[2]:E\to E$はétaleなので
 $L_0$の規格化はétale局所に可能である。
-$j\ne0,1728$では楕円曲線の変形パラメータに
-$j-j_0$を使え、$\eta,\delta$の変形には
-相対楕円曲線の形式群の座標が使える。
+$j(E)=0,1728$のときには$j-j_0$は
+局所座標でないことに注意する。
+補題~\ref{lem:qa-ou-cm-level-two-deformation-coordinate}
+のlevel-two標識をétale局所に取れば、
+曲線変形パラメータ$s=\lambda-\lambda_0$と
+$\eta,\delta$の相対形式群座標を使える。
+通常の$j$の点でも同じ座標を使ってよい。
 従って三次元の形式versal baseが得られる。
 $H=E[2]$は点曲線を二捩れ平行移動で動かすが、
 線束の差$\eta,\delta$と$j$を固定する。
@@ -1174,7 +1181,7 @@ OU不変量$f_2,f_4,f_6,g_4$を使い、
 \]
 を定める。
 正則半単純な滑らかな楕円一般開
-（$g_4\ne0$、$f_2\ne0$、$j\ne0,1728$、
+（$g_4\ne0$、$f_2\ne0$、
 四つの$x_i^2$相異）では、
 剛体化quintupleから内在的$\HHstack$への
 一般二重忘却について、局所粗モジュライ上の
@@ -1224,7 +1231,6 @@ Cartier因子であり、一般点で重複しない。
 $k$を標数零の代数閉体とし、
 $U=(E,\mathcal L_0,\mathcal L_1,\mathcal L_2)$を
 滑らかな許容楕円四つ組とする。
-$j(E)\ne0,1728$、
 $\delta=\mathcal L_2\mathcal L_0^{-1}$と
 $\tau=\eta-\delta$が
 \emph{相異なる非零}二捩れ点であると仮定する。
@@ -1295,9 +1301,10 @@ $\sigma=\delta$、$\tau=\eta-\delta$は
 $E[2]$の異なる非零元である。
 $\eta=\sigma+\tau$は第三の非零二捩れ点となる。
 $\mathcal L_0\simeq\mathcal O_E(2o)$となる原点$o$を
-取る。$j\ne0,1728$なので、楕円自己同型は
-$t_w$と$t_w\circ[-1]$の形に限る。
-三つの線束を個別に保存する元は、
+取る。補題~\ref{lem:qa-ou-cm-no-extra-two-cubic-automorphisms}
+により、許容二cubic開では$j(E)=0,1728$でも
+追加の複素乗法自己同型は三線束を保存しない。
+従って三つの線束を個別に保存する元は、
 翻訳部分$w\in E[2]$の四元と、
 それぞれに$[-1]$を付けた四元である。
 $[-1]$は$E[2]$に自明に共役するので、
@@ -1324,8 +1331,12 @@ $\coh E\hookrightarrow\qgr D$のfully faithful性により、
 この点でも表現可能étaleとなる。
 
 次に形式変形座標を求める。
-$j$を一つの座標$s$とし、有限étaleな$E[2]$の
-二section$\sigma,\tau$をétale局所に延長する。
+補題~\ref{lem:qa-ou-cm-level-two-deformation-coordinate}
+により、$j=0,1728$も含めて
+フルlevel-twoのLegendre座標
+$s=\lambda-\lambda_0$を曲線変形座標とする。
+有限étaleな$E[2]$の二section
+$\sigma,\tau$をétale局所に延長する。
 相対楕円形式群のlogarithmを用いて
 \[
  u=\log_E(\eta-\delta-\tau),\qquad
