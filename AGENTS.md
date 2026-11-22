@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.39。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.26。
+2026-11-23 / v1.40。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.30。
 
 ## 公表用三論文の役割
 
@@ -10,7 +10,7 @@
 
 ## Cの現在の到達点と比較範囲
 
-**最優先：論文CのC1–C4完成。** C1・C2は原稿上達成、独立監査はC4で行う。C3については `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に、八矢の可逆cubic相対群oidに加えて、非最小十矢の滑らかな一massゲージと十二矢の両rank3壁・nilpotent baseを含む全有限foundationのfppf局所gerbeを証明した。余剰慣性は`U_λ×U_μ`（単元massでGm²、両rank3壁でGa²）であり、非平坦対角scalarのraw QP模型とは異なる。**次の核心はAS正則な全次数Jacobian/Serre完成とそのactual heart、ruling/mutation glueの相対同定**。有限groupoidの証明を全AS比較の完成へ飛躍させず、先行文献・全原稿組版をC4として監査する。
+**最優先：論文CのC1–C4完成。** C1・C2は原稿上達成。C3は`papers/quiver-avatar/cubic_qp_foundation_groupoid.tex`で、二mass十二矢QPの全finite foundation gerbeと余剰smooth gaugeに加え、短い相対対角解消、ordinary Jacobian=H⁰Π₃(Λ)、全H2実現可能開での反Serre全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とruling S₂-mutation商まで原稿上証明した。**第一優先はこの新C3の独立証明監査と、C4の先行研究比較・全C LuaLaTeX組版であり、C全体を完成したとは扱わない。** 一般QP全体のAS正則性・H2外の全AS/avatar stack比較は未解決。旧raw `H+εyx` の非平坦対角scalarと、actual AS familyの滑らかなmassゲージを混同しない。
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
 
@@ -102,7 +102,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 
-**最優先目標は論文Cの完成**（`papers/nc-quadric-avatar.tex`）。`00_research_plan.md` のC1–C4達成条件に従う。中央affine補完・局所特異性およびrank3/noncubicを含む全有限QP/foundation群oidと二massの余剰慣性は原稿上決着済み。次は全相対AS/Jacobianのcanonical Serre完成・actual heart・mutation glueを進め、独立監査・先行研究比較・LuaLaTeX組版によりC公表稿を完成させる。A/B監査・文献比較は有効な入力として維持するが、Cの未解決核心を放置してA/Bの公表作業を優先しない。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
+**最優先目標は論文Cの完成**（`papers/nc-quadric-avatar.tex`）。`00_research_plan.md` のC1–C4達成条件に従う。中央affine・全有限QP/foundation群oid・二mass・H2実現可能開のJacobian/Serre/heartとS₂-mutation商は原稿上決着。次はこの全証明を独立監査し、非被約基底・訂正Keller・左右Noether・stack rigidificationの仮定を検証し、先行研究比較とLuaLaTeX全稿組版・PDF表示によってC公表稿を完成させる。A/B監査・文献比較は有効な入力として維持するが、Cの未解決核心を放置してA/Bの公表作業を優先しない。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 
 ## Cloud Codexへの継続指示
 
