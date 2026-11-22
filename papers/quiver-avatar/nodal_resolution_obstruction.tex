@@ -105,3 +105,180 @@ compactified Picard，または安定モデルと偏極を
 で可逆延長の例外成分上の次数が奇数になる．
 相対 $\Pic^0$ の多重次数零の線束にはなり得ない．
 \end{proof}
+
+
+\subsection{Spectral 二捩れ乗法の欠損と正規化上の極限}
+\label{subsec:qa-spectral-compactified-limit}
+
+前の奇偶障害は，線束の極限が存在しないという意味ではなく，
+\emph{可逆線束に限った極限が存在しない}ことを意味する．
+相対 torsion-free sheaf 自身には自然な二次積があり，
+その余核によって境界を scheme-theoretic に測定できる．
+以下では定理~\ref{thm:qa-noncubic-rootpair-torsionfree-spectral-module}
+の記号を使い，二形式は各々二つの相異なる根を持つとする．
+
+\begin{proposition}[乗法欠損の長さと自己双対性]
+\label{prop:qa-spectral-product-defect}
+$B=\PP^1_k$，$f_1,f_2\in H^0(B,\OO_B(2))$ は
+非零で各々 squarefree，$k$ は標数零の代数閉体とする．
+$C=\{y^2=f_1f_2\}$ と
+$\mathcal M=(r_*\OO_{\widetilde C})^-$ を取る．
+反不変元の積から生じる
+\[
+ \mu:\mathcal M\otimes_{\OO_C}\mathcal M\longrightarrow\OO_C
+\]
+について，次が成り立つ．
+\begin{enumerate}
+\item $\operatorname{im}\mu=\mathcal I=(f_1,f_2,y)$ であり，
+  $T=V_B(f_1,f_2)$ を $y=0$ によって $C$ に埋め込むと
+  \[
+     \coker\mu\simeq\OO_T,\qquad
+     \operatorname{length}(\coker\mu)
+       =\deg\gcd(f_1,f_2)\in\{0,1,2\}.
+     \tag{Sq-defect}\label{eq:qa-spectral-square-defect}
+  \]
+  この余核は二根対の共通零点の
+  \emph{scheme-theoretic} な構造層である．
+\item 各幾何 fiber において，積の随伴射
+  \[
+   \mu^\flat:\mathcal M
+       \longrightarrow
+       \mathcal H om_C(\mathcal M,\OO_C)
+  \]
+  は同型である．つまり $\mathcal M$ は自己双対だが，
+  $\mu$ が全射となるのは二根対が交わらない場合に限る．
+\end{enumerate}
+特に $\mu^\flat$ の同型と
+可逆線束としての $\mathcal M^{\otimes2}\simeq\OO_C$
+とは，節点では異なる主張である．
+\end{proposition}
+\begin{proof}
+相対射 $r:\widetilde C\to C$ に関する
+同時符号の反不変元は局所的に $c,d$ で生成され，
+$c^2=f_1,\ d^2=f_2,\ cd=y$ である．
+従って積の像は記載のイデアルで，
+\[
+ \OO_C/(f_1,f_2,y)
+ \simeq\OO_B/(f_1,f_2)
+\]
+が従う．$f_i$ は各々 squarefree なので，
+その共通零点は $0,1,2$ 個の被約点である．
+
+自己双対性は，二形式が共通根を持たない開集合では
+通常の非分岐二重 torsor の二次積から従う．
+共通根では完備局所座標と単元の平方根を選ぶと，
+\[
+ A_0=k[[x,y]]/(y^2-x^2),\quad
+ M_0=\langle c,d\mid yc=xd,\ yd=xc\rangle,
+ \qquad c^2=d^2=x,\quad cd=y .
+\]
+ここで $u=c+d,\ v=c-d$ とすれば
+\[
+  M_0\simeq A_0/(y-x)\,u
+          \ \oplus\ A_0/(y+x)\,v,
+  \qquad u^2=2(x+y),\quad
+  v^2=2(x-y),\quad uv=0.                 \tag{Node-M}
+\]
+環 $A_0$ において
+\[
+ \begin{split}
+  \Hom_{A_0}(A_0/(y-x),A_0)&=(x+y),\\
+  \Hom_{A_0}(A_0/(y+x),A_0)&=(x-y)
+ \end{split}
+\]
+であり，積からの $u\mapsto 2(x+y)$ と
+$v\mapsto2(x-y)$ は各直和因子で同型となる．
+異なる枝間の Hom は零なので，$\mu^\flat$ は同型である．
+各共通根は同じ局所型であり，主張が従う．
+\end{proof}
+
+\begin{theorem}[noncubic 三型の compactified spectral limit]
+\label{thm:qa-spectral-three-fiber-limits}
+前命題の仮定を置き，$\nu:\widehat C\to C$ を
+節点での正規化とする．
+\begin{enumerate}
+\item 二根対が交わらない smooth 型では
+  $\mathcal M$ は非自明な $\Pic^0(C)[2]$ の線束であり，
+  $\End_C(\mathcal M)=k$ である．
+\item ちょうど一根共有する既約 nodal 型では
+  $\widehat C\simeq\PP^1$ であり，
+  \[
+       \mathcal M\simeq\nu_*\OO_{\PP^1}(-1),
+       \qquad \End_C(\mathcal M)=k .
+       \tag{Node-limit}\label{eq:qa-spectral-nodal-limit}
+  \]
+  これは次数零の rank-one torsion-free \emph{単純}層だが，
+  $\Pic^0(C)\simeq\Gm$ の非自明二捩れ線束
+  （節点の貼合せ比 $-1$）とは同型でない．
+\item 二根対が一致する $I_2$ 型では
+  $\widehat C=C_+\amalg C_-$，$C_\pm\simeq\PP^1$ であり，
+  \[
+       \mathcal M\simeq
+       \nu_*(\OO_{C_+}(-1)\oplus\OO_{C_-}(-1)),
+       \qquad \End_C(\mathcal M)\simeq k\oplus k .
+       \tag{I2-limit}\label{eq:qa-spectral-i2-limit}
+  \]
+  従って $\Aut_C(\mathcal M)\simeq\Gm^2$ で，
+  この層は\emph{単純でない}．
+\end{enumerate}
+三型とも $\chi(\mathcal M)=0$ である．
+従って，前定理の全相対族を受けるモジュライを
+\emph{単純な} rank-one torsion-free sheaf に限定すると，
+$I_2$ 型の点が脱落する．
+ただし適切な偏極に関する半安定層の粗モジュライを
+排除するものではない．
+\end{theorem}
+\begin{proof}
+(1) は定理
+~\ref{thm:qa-noncubic-rootpair-torsionfree-spectral-module}
+により従う．
+各節点での式 (Node-M) は
+正規化の二枝の直像の局所模型そのものである．
+従って非局所自由な全節点で正規化すると，
+$\mathcal M=\nu_*Q$ となる線束 $Q$ が存在する．
+
+(2) の正規化は種数零の滑らかな連結曲線であり，
+$Q\simeq\OO_{\PP^1}(d)$ と書ける．
+既知の
+$p_*\mathcal M\simeq\OO_{\PP^1}(-1)^{\oplus2}$
+によって $\chi(\mathcal M)=0$ なので，
+$\chi(Q)=d+1=0$，従って $d=-1$ である．
+また
+$\mathcal E nd_C(\nu_*Q)\simeq\nu_*\OO_{\widehat C}$
+であるから，大域 End は $k$ となる．
+$\Pic^0(C)$ の元は節点でも局所自由なので，
+非局所自由な $\mathcal M$ とは同型にならない．
+
+(3) では比例する二形式をスカラーで規格化して
+$f_1=f_2=f$ とできる．曲線は $y=\pm f$ の二成分で，
+正規化後の各成分は $B\simeq\PP^1$ に同型である．
+$y$ の $c,d$ 上の作用は
+$\left(\begin{smallmatrix}0&f\\f&0\end{smallmatrix}\right)$
+なので，$c+d$ と $c-d$ がそれぞれ
+$y=f$ と $y=-f$ に支持される固有生成元となる．
+$p_*\mathcal M=\OO_B(-1)c\oplus\OO_B(-1)d$ から
+各固有成分は $\OO_B(-1)$ である．
+異なる既約成分間には非零な sheaf Hom はなく，
+各成分の自己準同型環は $H^0(\OO_{\PP^1})=k$ だから
+End は $k\oplus k$ となる．
+最後の留保は，simple/fine と
+semistable/coarse の compactification を
+混同しないためである．
+\end{proof}
+
+\begin{remark}[相対 avatar に必要なモジュライの選択]
+\label{rem:qa-spectral-compactification-choice}
+既約 nodal 型では $\nu_*\OO_{\PP^1}(-1)$ が
+単純な compactified Picard の境界点となる一方，
+$I_2$ 型では automorphism が $\Gm^2$ になる．
+rank-one torsion-free sheaf の compactification と
+安定性条件の一般論は
+\cite{AltmanKleiman1980,ChristPayneShen2023} を参照する．
+本稿の固有な入力は式~\eqref{eq:qa-spectral-square-defect}と
+二根対の三型に沿った explicit な極限表示である．
+今後の正確な比較対象は，
+相対曲線 $C/B$ と $\mathcal M$ のみならず，
+\emph{自己双対な二次積 $\mu^\flat$ と
+長さ $0,1,2$ の積欠損}も保持する群oidである．
+この群oidと avatar AS 心の同値は未証明である．
+\end{remark}
