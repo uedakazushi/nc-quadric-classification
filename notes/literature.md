@@ -1,5 +1,9 @@
 # 非可換 quadric 分類：現行文献比較
 
+## 二対称形式pencilの不変式定理（Cの明示good moduliの入力）
+
+Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
+
 資料確認日：2026-11-23（日本時間）。v1.94。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
