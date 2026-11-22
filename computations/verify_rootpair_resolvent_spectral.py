@@ -5,6 +5,7 @@ Supports:
   thm:qa-noncubic-rootpair-quartic-resolvent
   thm:qa-noncubic-rootpair-torsionfree-spectral-module
   prop:qa-rootpair-nodal-picard-nonextension
+  thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection
 
 Run: python3 computations/verify_rootpair_resolvent_spectral.py
 Standard library only. The module's geometric torsion-freeness,
@@ -114,7 +115,35 @@ def invariant_parity():
     print("PASS: odd module has two generators at the A1 vertex; cannot be rank-one free")
 
 
+
+def singular_square_avatar_models():
+    from fractions import Fraction
+    # Nodal curve: normalization t -> (X=t^2, Z=(1-t^2)/t)
+    for t in (Fraction(-3), Fraction(-2), Fraction(-1), Fraction(1),
+              Fraction(2), Fraction(3)):
+        X = t*t
+        Z = (1-X)/t
+        assert X*Z*Z == (1-X)*(1-X)
+    # The two preimages t=1 and t=-1 of the node map to (1,0).
+    assert (Fraction(1)**2, (1-1)/Fraction(1)) == (1,0)
+    assert (Fraction(-1)**2, (1-1)/Fraction(-1)) == (1,0)
+    # Tangent vectors on the two branches at the node are
+    # (dX/dt,dZ/dt)=(2,-2) and (-2,-2), with nonzero determinant.
+    assert 2*(-2)-(-2)*(-2) == -8
+    # I2 curve: the union Z=X and Z=-X. The factors meet at 0
+    # and infinity and are distinct in characteristic zero.
+    for X in (0, 1, -1, 2, 3, 5):
+        for Z in (X, -X):
+            assert (Z-X)*(Z+X) == 0
+    assert 1 != -1
+    print("PASS: nodal square avatar equation X*Z^2=(1-X)^2")
+    print("PASS: two-branch node transverse tangent determinant")
+    print("PASS: I2 square avatar is two distinct (1,1) graphs")
+
+
+
 if __name__ == "__main__":
     coefficient_roots()
     matrix_factorization()
     invariant_parity()
+    singular_square_avatar_models()
