@@ -226,3 +226,105 @@ $\Pic(\Sigma_0)$のtorsion-freenessから
 古典型の$P=\OO_Y$を得る。
 \end{proof}
 
+
+\subsection{Avatarからの全AS代数の逆構成}
+\label{subsec:qa-as-avatar-inverse}
+
+\begin{lemma}[canonical truncation]
+\label{lem:qa-as-canonical-truncation}
+rotated square avatarから前節の$L_i$を全整数に作る。
+任意の$i$でcanonical四項列を
+初期四頂点の共変Yonedaへ制限すると、
+頂点単純加群の最小射影分解になる。
+特に三回の右mutationは
+\begin{equation}
+T^{-1}_{L_{i+3}}T^{-1}_{L_{i+2}}T^{-1}_{L_{i+1}}(L_i)
+ \simeq L_{i+4}[-2]
+\label{eq:qa-as-canonical-mutation}
+\end{equation}
+を満たす。
+\end{lemma}
+\begin{proof}
+$pencil$の評価列で作った
+\eqref{eq:qa-core-rsq-complex0}と
+\eqref{eq:qa-core-rsq-complex1}は
+Yonedaで最初の二種の最小関係と一次syzygyを与える。
+後二列は四行四列の対角分解の
+Cartier曲線への導来制限と双対化から来るので
+Tor項を含めて完全である。
+Yoneda像のaugmentationの全射性は、
+二pencilを後続の線束で捩った
+$H^1$消滅に帰着する。
+最後のphaseでは
+命題~\ref{prop:qa-core-directed-foundations}の
+四行四列評価の大域切断がちょうど全射を与える。
+他の頂点のkernel次元はHom次元表と一致し、
+余分な高次syzygyはない。
+前向きExt消滅から最初の写像も単射となる。
+三回のmutationは頂点1,2,3を順次消す
+Yoneda truncationなので、
+$D$上に実現すると最後の$L_{i+4}[-2]$のみが残る。
+\end{proof}
+
+\begin{proposition}[spherical helixによるAS正則性]
+\label{prop:qa-as-helix-reconstruction}
+任意の曲線型rotated square avatarから
+$B=\End_{\rm dir}(L_0,L_1,L_2,L_3)$を作る。
+その標準射影対象を$E_0,\ldots,E_3$とし、
+$E_{i+4}=S_B^{-1}(E_i)[2]$で延長すると
+\[
+ A(D,P)_{ji}=\Hom(E_i,E_j)\quad(j\ge i)
+\]
+は$\mathrm{AS}_{\mathrm{rsq}}$に属する。
+\end{proposition}
+\begin{proof}
+$\omega_D=\OO_D$かつ
+$H^0(\OO_D)=H^1(\OO_D)=k$だから
+各$L_i$は一次元spherical objectである。
+全整数のcanonical完全列と
+命題~\ref{prop:qa-core-forward-ext-vanishing}、
+前補題はacyclic spherical helixを与える。
+その実現には
+\cite[Theorem 5]{OkawaUedaSpherical2020}を用いる。
+以下、本件でのAS分解への橋を明記する。
+
+$C$を四線束のfull dg Endとする。
+$B$は前向き次数零Homと対角の恒等射を含み、
+残るExtはSerre traceで$DB[-1]$となる。
+従って双加群三角形
+\begin{equation}
+ DB[-2]\longrightarrow B\longrightarrow C
+ \longrightarrow DB[-1]
+ \label{eq:qa-as-dg-triangle}
+\end{equation}
+がある。
+有限代数$B$のSerre関手を用いると
+realizationとその右随伴の間に
+$S_B[-2]\to\mathrm{id}\to\iota^*\iota_*$を得る。
+前補題とこの三角形から
+$E_i$のrealizationは全整数で$L_i$となり、
+\begin{equation}
+\RHom(E_i,E_{j-4})\longrightarrow
+\RHom(E_i,E_j)\longrightarrow
+\RHom_D(L_i,L_j)
+\label{eq:qa-as-rhom-comparison}
+\end{equation}
+が成立する。
+幅四以内の半直交性と前向きExt消滅を初期条件に
+$j-i$について帰納すれば、
+前向き$\RHom(E_i,E_j)$は次数零に集中する。
+
+四項canonical複体をSerre関手で閉じ、
+$\Hom(E_j,-)$を適用する。
+$j<i$では完全、$j=i$でaugmentationの$k$だけが残る。
+中間項は
+\eqref{eq:qa-core-rsq-complex0}--%
+\eqref{eq:qa-core-rsq-complex3}の逆順であり、
+定義~\ref{def:qa-as-square-rotated-minimal}の
+rotated型最小分解表と一致する。
+反対向きの$\Hom$では最上次数三に
+Serre traceの$\,{}_\ell S_{i-4}$だけが残り、
+左右AS--Gorenstein条件を得る。
+非恒等矢の頂点差が正なので最小である。
+\end{proof}
+
