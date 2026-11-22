@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.05。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.9。
+2026-11-22 / v1.06。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.0。
 
 ## 公表用三論文への再編（確定方針）
 
@@ -8,11 +8,33 @@
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：主原稿 `papers/nc-quadric-avatar.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによるavatarへ戻す構成と元AS avatarの$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。 全noncubic O-marked幾何同型類≅Σ₂のD∈|−K|,D∩S=∅,0≠P∈Pic⁰(D)[2]の同型類もCに証明。Bのχ=1二点はnodal/I2で区別。次はAS avatarのqgr heartの直接同値と相対elementary transformを検証する。
 
+**論文C v3.0の分類正本（最優先）。**
+`papers/nc-quadric-avatar.tex` から
+`papers/quiver-avatar/as_helix_classification.tex` と
+`papers/quiver-avatar/as10_mutation_classification.tex` を読み込む。
+前者の `thm:qa-as-avatar-bijection` は
+最小分解型を指定した square/rotated AS正則Z代数と
+対応avatar（非被約反標準Dを含む）の頂点保存同型類全単射、
+必要AS階数・逆spherical helix・全Serre completion・左右Noether性を扱う。
+後者の `thm:qa-as10-global-bijection` は独立定義の最小10本矢ASと
+cubic ASとの非交和が全square ASに一致するmutation逆対応、
+およびAS10のavatar条件G≅FPを証明する。
+**十二本矢は通常八本のfinite foundation＋四本のrelation-dual戻り矢のQP表示で、
+任意の十二本矢QP全体をAS正則としない。**
+Keller undeformed CY completionとKeller--Yang mutation、Okawa--Uedaの
+acyclic spherical helix実現は外部一般定理として明示している。
+旧PDFの主張を移管した事実と全証明の独立再検証済みかを混同しない。
+体上AS分類・仮定付きrelative perfect AS族と、
+元のO-marked H2 heartのpointed同値・全相対QP stack同値は区別する。
+次の重点はAS分類の独立監査（特に非被約Pic0とrank forcing、
+Ginzburg集中・逆mutation・全整数評価/余評価）とC全文組版。
+新数値検算は `computations/verify_as_avatar_euler.py`。
+
 **論文Cの必須参照と現在の障害。**
 添付の大川--植田v7 Parts I--IIで必要な反標準曲線消滅・二pencil・square/rotated変換・
 finite directed foundationのscheme復元を `papers/quiver-avatar/square_rotated_foundations.tex`、
 四項canonical exact complex・周期式・前向きExt消滅を `papers/quiver-avatar/canonical_helix_complexes.tex` に
-証明ごと組み込んだ。曲線上の証明と、全AS Z代数のNoether性・相対標準heart/O同値は区別する。
+証明ごと組み込んだ。全AS Z代数の体上分類・Noether性は新設の分類節で扱い、相対標準heart/O同値は別の未解決課題である。
 共有根A1の反不変moduleを同じ基底上で最小解消すると例外曲線への次数が奇数となるため、
 垂直Cartier twistだけでは多重次数零の相対Picard線束にできない
 （`papers/quiver-avatar/nodal_resolution_obstruction.tex`、検算は `computations/verify_nodal_exceptional_parity.py`）。
