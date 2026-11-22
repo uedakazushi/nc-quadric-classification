@@ -1,21 +1,20 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.39（A v1.69・20節、B v0.41・31節、C v4.26）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.40（A v1.69・20節、B v0.41・31節、C v4.30）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
-## 十・十二矢の二massと全finite foundationの相対groupoid
+## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
-**論文Cの現行定理。** 八矢のrank-two第四矢微分に関しては、`[P8^(2)/GL2^4] ≃ [Gr(2,8)/GL2^3] ≃ F8^lin` が非被約底を含むfppf群oid同値であり、頂点scalarsのGm³を剛体化するとordered cubic H2 chartへ移る。二cubic正規化 T,T⁻¹ は一般にright-equivalenceではないのでmutation/window変更が必要。
+**範囲と主張状態。** 論文CのC1（既存AS/avatar・標準頂点・相対tailsの分類範囲）とC2（全H2 good moduliの明示）は**原稿上達成**。C3も**H2実現可能な明示開全体**では次の比較・glueを原稿上証明したが、H2外の任意AS/avatar/QP表示stack全体の分類とC4の独立数学監査は未完了。[主たる証明](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。
 
-**滑らかなmassゲージ。** 非最小十矢potential `W_λ=H+yq+px+λyx` に対し、`a=1+λt` として `x↦ax+tq`, `y↦a^(-1)(y−tp)` はpotentialを巡回同値で厳密に保ち、Jacobian代数上恒等。群 `U_λ=Spec R[t,a^(-1)]` の法則は `t⋆s=t+s+λts`。λ単元でGm、λ=0でGa、dual number λ=εでもsmooth flat。既知のraw `H+εyx` だけの非平坦な対角scalar慣性とは別であり、actual mutation AS族 `H+yq+px+εyx` にこのsmoothゲージ群が実際に作用する。
+**相対finite groupoidとmass。** 共通十二矢potentialは `W=H+yq+px+vq'+p'u+λyx+μvu`。階数五の二段道束 `D_a,D_b` を短関係 `r_a=q'+μu, r_b=q+λx` で割り、rank12三段道束の短関係四本・残余長関係二本をrank六直和因子として割ると、rank24 directed finite foundationの全積を回収する。QP表示groupoid→finite foundationはfppf局所essentially surjective、Isom全射、kernelは `U_λ×U_μ`、`U_λ=Spec R[t,(1+λt)^(-1)]`、群法則`t⋆s=t+s+λts`。両rank3の特殊幾何点ではGa²、両mass単元でGm²、nilpotent mass上でもsmooth/flat。元のraw `H+εyx`の非平坦な対角scalar慣性は別モデルであり、実際のAS族のsmooth gaugeと同一視しない。
 
-**一mass有限groupoid。** 偶数対角十矢表示では `D=(V⊗U)⊕Rx`, `r=q+λx`、短関係 `W⊗r` と二本の三段関係がrank四直和因子となる開を定義する。`E=D/(r)`、`N=(W⊗D)/(W⊗r+im∂_T W)`を使って二段・三段の全積を復元する。fppf局所で全finite foundationを覆い、全Isomの核は `U_λ`。rank三scheme壁・λ=εの非平坦最小矢層も含む。これ自体は全次数ASの認識ではない。
+**相対二段対角解消。** 四頂点の元の矢束`V_fin`は8、関係束`R_fin`は4（短関係各1、長関係2）。短関係の三段合成4本は独立であり、残り2本とあわせ全rank六関係を生成する。道長は3以下。従って `0→Λ⊗_D R_fin⊗_DΛ→Λ⊗_D V_fin⊗_DΛ→Λ⊗_DΛ→Λ→0` は基底上分裂局所射影な対角解消。この有限解消の双対をtensor化し、関係をordinary idealとして生成していることを確認することで、Keller訂正済みの `Jac(Q12,W)≅H⁰Π₃(Λ)` をpreprojective次数付きで得る。nilpotent coefficientを含む任意基底変更と可換。CY性の一般変形パラメータに関する2018年erratumは今回のundeformed tensor completionには輸入しない。[一次訂正との照合](literature.md)。
 
-**二mass全finite groupoid。** 共通12矢potential `H+yq+px+vq'+p'u+λyx+μvu` において、`D_a=(V⊗U)⊕Ru`, `r_a=q'+μu`, `D_b=(W⊗V)⊕Rx`, `r_b=q+λx`。三段道のrank12束 `B=(W⊗V⊗U)⊕(W⊗Ru)⊕(Rx⊗U)` に短関係 `W⊗r_a` と `r_b⊗U` (rank合計4) および二本の残余関係 `∂_T W` を入れ、rank六直和因子を要求する。この開で E,F rank4、N rank6 の全有限foundationが成立し、fppf局所のforgetful gerbeの慣性核は **`U_λ×U_μ`**。両rank三の幾何壁でGa²、両mass可逆でGm²、nilpotent massでもsmooth flat。全基底変更、同型層まで主張するのは有限代数水準である。証明正本：[C3の現行節](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。既存の `prop:qa-stabilized-inertia` のcubic二pairのBGm²と両立する。
+**内在的H2上のSerreとpointed heart。** 既存の有限square↔normal foundation相対同値と全H2の明示開を使い、normal full strong `T=⊕E_i` を実際の相対heart内に取る。 `Θ_Λ^{⊗^L n}≃RHom(T,tⁿT)` のforward Ext消滅とperfect-fiber判定により、全 `n≥0` で `Jac(Q12,W)_n≅Hom(T,tⁿT)` と基底変更を得る。Euler行列 `G=[[1,2,4,6],[0,1,2,4],[0,0,1,2],[0,0,0,1]]` の `(G^{-1}Gᵗ)^{-n}` から全階数 `64n²+64n+24`。相対AZ ample・opposite square dualizationから左右Noetherと `(qgr Jac,πe0Jac,(1))≃(C,O,t)` を得る。対応は**H2実現可能開**であり、一般のraw QPには拡張しない。
 
-**再現と確実性。** `python3 computations/verify_q10_mass_gerbe.py` と `python3 computations/verify_q12_two_mass_gerbe.py` は、mass群法則、潜在関数係数、短関係の単元minor、二段積のdet、三段積の結合律・全射の明示モデルを検査する。数学的に等価なSymPy計算はこの作業で実行しPASS。GitHubへ掲載した両ファイルそのものをローカルcontainerで再ダウンロード・再実行した検証は未実施。一般fppf群oid同値は原稿のframingと関係束の証明であり、有限モデルの検算だけからは従わない。包括的な独立証明監査・LuaLaTeX組版も未実施。
+**二段剛体化とruling交換。** raw QPのmass kernel `U_λ×U_μ`をIsom sheafから剛体化し、さらに頂点scalar `Gm³`を剛体化すると、既証明のfinite square/normal相対groupoidにより `H₂^rul` を得る。coherentな二ruling交換は有限squareの中間頂点交換と相対perfect mutationで実現し、S2商で `H₂` を得る。二cubic正規化 `T,T⁻¹`は一般にはright-equivalenceでない。つまりrulingの貼合せはraw QPの一つの座標変換でなく、選択窓のmutationと同じheartへのAZ認識で行う。
 
-**残るC3の核心。** 全H2のfinite foundation実現可能開に制限して、relation-dual ordinary QP Jacobianの全次数AS完成をcanonical Serre完成と比較し、全基底変更・左/右Noether性・AZ heartの一致を証明するか適用外の障害を示す。選択したfoundationを変えるmutation/windowの相対t-exact glueとruling交換を確定する。raw QPを剛体化せずにH2と忠実同値としない。これはC1（既存範囲の整理）・C2（good moduliの明示）を原稿上達成した後の優先課題であり、C4の独立監査は残る。
-
+**検算と最優先の監査。** 数値Eulerの16頂点対で総階数(68,52,8)→24、normal Serreの全次数式 `64n²+64n+24` はSymPyの整数・記号計算で独立検算した。[再現コード](../computations/verify_q12_diagonal_euler.py) をGitHubに記録したが、当該GitHubファイルの再取得・同一byte実行は未実施。数値は対角複体の完全性やfppf同値の形式証明ではない。次はKeller ordinary ideal・相対対角のbase-change・normal opposite側の左Noether・massゲージとS2のcoherent actionを独立監査し、その後C4の一次文献比較・LuaLaTeX全稿組版・PDF表示を実行する。H2外の一般AS/avatar表示の分類の追加可能性は独立に評価する。
 
 ## 全H2のGram pencil不変式環と明示good moduli
 
