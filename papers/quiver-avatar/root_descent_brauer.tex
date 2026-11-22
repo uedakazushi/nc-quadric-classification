@@ -250,6 +250,91 @@ $P$が非自明な多重次数零の二捩れとなる。
 標識から除く既存のavatar規約に従う。
 \end{proof}
 
+\begin{theorem}[二つのBrauer gerbe上の相対square avatarと根対交換]
+\label{thm:qa-brauer-gerbe-square-avatar}
+前系の二つのsquarefree二次形式の係数空間$U_2$に対し、
+$Q_i\to U_2$をその普遍smooth conicとする。
+$\mathscr G_i$を、$T\to U_2$上の
+$Q_i\times_{U_2}T$の相対幾何次数一の
+\emph{実際の可逆層}$N_i$とその同型のstackと置く。
+すると
+\[
+ \mathscr G=\mathscr G_c\times_{U_2}\mathscr G_d
+ \longrightarrow U_2
+\]
+は$\Gm^2$-gerbeであり、その二つのBrauer類は
+$\alpha(Q_c),\alpha(Q_d)$である。
+一般点では両類が独立かつ非零なので、このgerbeは非中立である。
+系~\ref{cor:qa-root-choice-etale-splitting}の
+有限\'{e}tale次数四被覆は$\mathscr G$を中立化する。
+
+$\mathscr G$上には普遍的な
+$N_c,N_d$が存在する。
+$E=Q_c\times_{\PP^1}Q_d\hookrightarrow Q_c\times Q_d$とし、
+$F=p_c^*N_c$、$G=p_d^*N_d$、
+$P=GF^{-1}$と置けば、
+\[
+ (E\subset Q_c\times Q_d;\ F,G,P)
+\]
+は$\mathscr G$上の相対square avatarを与える。
+すなわち$E$は任意の幾何fiberで
+smooth/nodal/$I_2$の$(2,2)$反標準Cartier因子、
+$P$は相対$\Pic^0(E/\mathscr G)$の非零二捩れsectionである。
+二つの二次形式の交換は、gerbeの二因子を交換し、
+\begin{equation}
+ (E;F,G,P)\longmapsto(E;G,F,P^{-1})
+ \label{eq:qa-gerbe-ruling-exchange}
+\end{equation}
+という相対avatarの厳密な対合を誘導する。
+この対合がASの固定した四頂点collectionを
+頂点ごとに保つとは主張しない。
+\end{theorem}
+\begin{proof}
+smooth conicはfppf局所に$\PP^1$となる。
+相対次数一の可逆層の二つの選択は、
+$\PP^1_T$上では基底から引き戻した線束だけ異なり、
+fppf局所に同型になる。
+また連結なsmooth proper conicについて
+$\pi_*\OO_{Q_i}=\OO_T$だから、
+一つの次数一束の自己同型は
+$\Gm(T)$である。従って$\mathscr G_i$は
+$\Gm$-gerbeで、その類は
+次数一の幾何Picard類の降下障害、
+すなわち$Q_i$のSeveri--Brauer類$\alpha(Q_i)$である。
+命題~\ref{prop:qa-universal-conic-brauer-obstruction}により、
+一般点で両類は独立非零。
+根選択の次数四被覆上では実際の$N_i$を
+構成済みなのでgerbeは中立化される。
+
+$\mathscr G$の普遍可逆層を用いると
+$Q_c,Q_d$は$\PP^1$-bundleとして表示される。
+相対対角の引戻し
+$E\hookrightarrow Q_c\times Q_d$は
+各幾何fiberで$(2,2)$のCartier因子で、
+$\mathscr G$上平坦である。
+$F,G$はその各rulingの次数二pencilである。
+相対Picard類として
+$N_c^2$および$N_d^2$は、
+元の$\PP^1$の$\OO(1)$からの
+二重射の引戻しと一致する。
+よって$P^2=\OO_E$は基底線束の捩れを除いた
+相対Picard類での等式である。
+補題~\ref{lem:qa-pointed-all-rootpair-geometry}によって
+各幾何fiberで$P$は非零で、
+多重次数は零である。従って相対$\Pic^0$
+の非零二捩れsectionを得る。
+線束のscalar trivializationはavatarの標識に加えないので、
+これが既存の相対avatarの定義と整合する。
+
+最後に係数の二因子交換は
+$Q_c\leftrightarrow Q_d$、$N_c\leftrightarrow N_d$
+を交換するだけであり、
+$P=GF^{-1}$を$P^{-1}$へ送る。
+二回適用すれば恒等となる。
+これはrulingを保持するfoundationの同型ではなく、
+rulingを\emph{交換する}別の幾何操作である。
+\end{proof}
+
 \begin{remark}[相対有限Endと無標識avatarの正確な境界]
 \label{rem:qa-brauer-scope}
 命題~\ref{prop:qa-root-swaps-linearization}は
@@ -279,7 +364,12 @@ $(\ell_1,\ell_2)\mapsto(t\ell_1,t^{-1}\ell_2)$
 この障害から、\emph{別の}Morita表示、twisted sheaf、
 または内在的$\mathcal H_2$の相対stack自体が
 存在しないとは結論しない。
-従って次の課題はBrauer類を殺す適切な
-gerbe/相対AS表示の構成と、二つの根対の相互交換の
-相対mutation・pointingの降下である。
+上の定理では、Brauer類を記録する
+$\Gm^2$-gerbeと相対\emph{幾何}avatarを構成した。
+なおこのgerbe上に、Bのspinor有限End代数と整合する
+twisted Morita表示・相対AS完成・pointed heart同値を
+構成することは別の未解決問題である。
+二つの根対の相互交換は幾何avatar上の
+ruling対合として定義済みだが、
+AS側の相対mutation・pointingの降下は未完了である。
 \end{remark}

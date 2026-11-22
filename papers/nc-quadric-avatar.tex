@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v3.8
+% 日本語 LuaLaTeX。2026-11-22 / v3.9
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v3.8（有限Endの根交換降下と一般conicのBrauer障害）}
+\date{2026年11月22日\quad v3.9（Brauer gerbe上の相対avatarとruling交換）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -162,7 +162,11 @@ $E_f$の二つのpencil線束や非零二捩れ線束には
 全係数空間への降下障害がある。
 各二次形式の分岐根を一つずつ選ぶ有限étale次数四被覆は
 この障害を消し、nodal・$I_2$境界でも幾何avatarを構成する。
-これは相対$\qgr$圏の同値や無標識stackの降下とは異なる。
+さらに両conicの幾何次数一線束の選択を分類する
+$\Gm^2$-gerbe上に相対square avatarを構成し、
+二つの根対の相互交換が$(F,G,P)\mapsto(G,F,P^{-1})$という
+厳密なruling対合になることを証明する。
+これは相対$\qgr$圏の同値やAS側のpointing交換の降下とは異なる。
 $C_q$・$\Sigma_2$の別avatarとのpointed比較も未解決である。
 実例$f_1=x(x-1),f_2=(x-2)(x-3)$では
 $j(E_f)=28756228/3$、$j(C_q)=35152/9$で、
@@ -339,8 +343,10 @@ MCM行列kernelから二pencilを回収し、
 根対内の順序交換の厳密な降下と、
 因子のスカラー変換も忘れた一般二次形式では
 conicのBrauer類が非零となりpencilの線束降下を妨げること、
-および分岐根選択による次数四の\'{e}tale分裂被覆を証明する。
-ただし相対$\qgr$圏・Serre根の一括降下と
+分岐根選択による次数四の\'{e}tale分裂被覆、
+およびBrauer gerbe上の相対avatarと根対相互交換の
+ruling対合を証明する。
+ただしAS側の相対mutation・$\qgr$圏・Serre根の一括降下と
 無標識stackの群oid認識は別問題である。
 ここでは有限directed foundation、relation-dual QP、
 underlying AS代数、O-marked内在的heartの四水準を混同しない。
