@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.5（CM除外不要とj=0一cubic A4例外）
+% 2026-11-22 / v3.6（CM点のlevel-two変形座標と局所粗型の延長）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -569,6 +569,65 @@ $2\eta=2\delta=0$のときである。
 交換条件では$\epsilon=1$が
 $2(\eta-\delta)=0$と同値、
 $\epsilon=-1$が$2\delta=0$と同値となる。
+\end{proof}
+
+\begin{lemma}[CM点での楕円変形には$j$でなくlevel-two座標を使う]
+\label{lem:qa-ou-cm-level-two-deformation-coordinate}
+標数零の滑らかな楕円曲線$E$の形式変形を
+フルlevel-two標識の有限étale被覆へ引き戻すと、
+Legendre表示
+\[
+ E_\lambda:\quad y^2=x(x-1)(x-\lambda),\qquad
+ \lambda\notin\{0,1\}
+\]
+のパラメータ$\lambda$を曲線変形の局所座標に取れる。
+\[
+ j(\lambda)=
+ 256\,\frac{(\lambda^2-\lambda+1)^3}
+              {\lambda^2(\lambda-1)^2},\qquad
+ j(\lambda)-1728=
+ 64\,\frac{(\lambda+1)^2(\lambda-2)^2(2\lambda-1)^2}
+           {\lambda^2(\lambda-1)^2}.
+ \tag{CM-lambda}\label{eq:qa-ou-cm-legendre-j}
+\]
+特に$j=0$では$j$は$\lambda$に三重、
+$j=1728$では二重に分岐するので、
+前節の局所粗分岐証明で用いた「$j$を一つの
+形式変形座標にする」という記述はこの二値では
+そのまま使えない。
+
+他方、二cubic開~\eqref{eq:qa-ou-cm-two-cubic-open}
+上で前補題が適用できる限り、曲線変形の座標を
+$s=\lambda-\lambda_0$、線束差の変形を
+相対形式群座標$u,v$で取れる。
+ruling交換$R$と反転$[-1]$は$\lambda$を固定し、
+$u,v$には以前計算した整数係数の線形変換で作用する。
+従って片側二捩れ座での反射$(1,1,-1)$と
+二つの特別座の交点での独立符号変更・横断$A_1$
+という局所型は、$j=0,1728$でも
+追加のCM安定化群がない二cubic開ではそのまま成立する。
+\end{lemma}
+\begin{proof}
+フルlevel-two標識は三つの非零二捩れ点の順序を
+記録するので、$\PP^1$上の四分岐点を
+$(0,1,\lambda,\infty)$に正規化する。
+この操作は変形族に対してétale局所で可能であり、
+標数零では$E[2]$は有限étaleである。
+式~\eqref{eq:qa-ou-cm-legendre-j}は
+Legendreの判別式と三次不変式からの直接計算で、
+後半の恒等式も多項式展開で確かめられる。
+$\lambda^2-\lambda+1$の根は単根なので
+$j$の零点の位数は三、$j-1728$の零点の位数は
+指定した三点でそれぞれ二である。
+一方、level-two標識を固定すると非自明な
+複素乗法自己同型は三つの非零二捩れ点の
+置換を誘導して標識を保てない。
+残る$[-1]$は各二捩れ点を固定するが、
+前補題により二cubic開の四つ組への作用は
+既に扱ったものだけである。
+$\lambda$はその$[-1]$でも不変で、
+相対楕円形式群の対数は任意の底変更と整合する。
+従って$ruling$変換の法表現は従来と同じとなる。
 \end{proof}
 
 \begin{proposition}[$j=0$の一cubic ruling例外と$A_4$慣性]
