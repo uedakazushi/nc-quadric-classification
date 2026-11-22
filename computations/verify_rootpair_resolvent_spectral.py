@@ -6,6 +6,7 @@ Supports:
   thm:qa-noncubic-rootpair-torsionfree-spectral-module
   prop:qa-rootpair-nodal-picard-nonextension
   thm:qa-noncubic-rootpair-all-geometric-square-avatar-bijection
+  thm:qa-point-spectral-dual-two-isogeny (distinct-j example only)
 
 Run: python3 computations/verify_rootpair_resolvent_spectral.py
 Standard library only. The module's geometric torsion-freeness,
@@ -142,8 +143,39 @@ def singular_square_avatar_models():
 
 
 
+def verify_point_curve_two_isogeny_j():
+    """Exact quartic invariant witness: E_f and C_q are 2-isogenous, not isomorphic.
+
+    The birational parameter t=d/(x-3) for
+    c²=x(x-1), d²=(x-2)(x-3) gives
+       z²=6*t**4-7*t**2+2,
+    whereas C_q is y²=x*(x-1)*(x-2)*(x-3).
+    This script tests the two quartic j invariants, not an elliptic
+    curve isogeny certificate or the global geometric construction.
+    """
+    from fractions import Fraction
+
+    def j_quartic(a, b, c, d, e):
+        I = 12*a*e - 3*b*d + c*c
+        J = 72*a*c*e + 9*b*c*d - 27*a*d*d - 27*b*b*e - 2*c*c*c
+        delta = 4*I**3-J**2
+        assert delta
+        return Fraction(1728*4*I**3, delta)
+
+    # Expand x(x-1)(x-2)(x-3) = x^4 - 6x^3 + 11x^2 - 6x.
+    j_spectral = j_quartic(1, -6, 11, -6, 0)
+    # Under t=d/(x-3), z=(t²-1)c:
+    # z²=(3t²-2)(2t²-1)=6t^4-7t²+2.
+    j_point = j_quartic(6, 0, -7, 0, 2)
+    assert j_spectral == Fraction(35152, 9)
+    assert j_point == Fraction(28756228, 3)
+    assert j_point != j_spectral
+    print("PASS: smooth point curve versus spectral curve have distinct exact j invariants")
+
+
 if __name__ == "__main__":
     coefficient_roots()
     matrix_factorization()
     invariant_parity()
     singular_square_avatar_models()
+    verify_point_curve_two_isogeny_j()
