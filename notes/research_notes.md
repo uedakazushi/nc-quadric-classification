@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.85（A v1.69・20節、B v0.39・31節、C v1.1）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.86（A v1.69・20節、B v0.39・31節、C v1.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -152,6 +152,46 @@ P×_S𝒱の上の等式として確認することである。
 lem:qa-ou-equivariant-halfpoint-test に証明を保持。
 quintuple側の同型は**滑らかな対角一般開では証明済み**。一般非対角族・剛体化後の慣性・境界への拡張は未解決。
 
+
+**剛体化後も残るquintuple一般慣性とスタック四重射（Cで証明）。**
+OU2014 Theorem1.1(1),(3) の「一般安定化群Gm⁴/Gm」を
+文字通り全慣性と解釈すると有限成分を見落とす。
+quintuple群G̃/K（K=Gm⁴）を
+(SO4×SO4×Gm)/Z, |Z|=4 と表す。
+正則半単純一般対角X=diag(x_i)では、
+λgXhᵀ=Xのtrace条件からλ²=1、中心核でλ=1へ正規化し、
+g=h=diag(ε_i), ∏ε_i=1。
+全反転−Iを割ると慣性はμ₂²（位数4）となる。
+Lie接写像(A,B,α)↦AX−XB+αXのorbit rankは13/16、
+接sliceはdiagonal k⁴/kx（dim3）、慣性作用は自明。
+点曲線C={Σu_i²=Σx_i²u_i²=0}で二つの−1を持つ
+Dは固定点がなく、楕円平行移動の全Jac(C)[2]に一致。
+C上の翻訳はPic⁰(C)に自明に作用するので、
+四つのPicard根の**同型類**をそれぞれ固定する。
+これを根torsorのdeck E[2]（四根に自由推移的作用）と混同しない。
+原稿の命題 prop:qa-ou-generic-quintuple-finite-inertia に証明。
+
+有効potential側はP=(SO4×Gm)/⟨(-I,1)⟩、
+有効quintuple側はQ=(SO4×SO4×Gm)/Z。
+群単射g↦(g,g)とSym²U↪EndUの一般点では
+慣性がμ₂²同型、potentialのLie orbit rank7/10、
+quintuple側rank13/16で、ともに接slice k⁴/kx。
+従って表示スタックの一般四重射は表現可能étale。
+OUの有限次数4のGIT射と合わせて、適当な稠密開では
+表現可能な有限étale次数4の**スタック射**となる。
+これはquadric内在H2への忘却射ではない。
+原稿 thm:qa-ou-rigid-potential-quintuple-generic-etale を参照。
+再現資産は computations/verify_ou_quintuple_inertia.py。
+検算の範囲は有限符号群・有理数での軌道行列rank・固定点障害であり、
+厳密な一般記号的証明は論文本文に置く。
+
+**未解決の分岐点。** 剛体化quintuple→内在H2の慣性像が
+一般の四元群に忠実か否かを、幾何的point module群の作用から検証する。
+source側の有限慣性がroot deckとして作用するという推論は誤り。
+さらに三次元slice k⁴/kxから内在HH²への微分を実際に求め、
+pointed同値で消えるdirectionsや別ruling/foundationを検出する。
+一般quintuple→H2がétale・表現可能・次数4と結論してはならない。
+
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
 C_ij=D_{-j,-i}を作り、Bの
@@ -166,6 +206,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
 **再開する数学的核心。**
+有効表示間の一般有限étale四重射とμ₂²の慣性同型は確立した。次は表示→内在H2の慣性核・接射・homotopy fiberを調べる。
 正則半単純potentialの非対角族に対する相対半点は構成済み。
 対角一般開のOU/Picard根torsor同型を、非対角相対quadric pencilの
 Spin/Hodgeの構成へ延長し、任意底変更でのcoherenceを点検する。

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.1
+% 日本語 LuaLaTeX。2026-11-22 / v1.2
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.1（非対角正則半単純potentialの相対Hodge半点）}
+\date{2026年11月22日\quad v1.2（剛体化後の有限慣性と表示スタック四重射）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -76,7 +76,11 @@ $\Sigma_2$ の出現だけでは最小十二本矢型を意味しない。
 別の認識問題として残し、有限表示の代数性とは区別する。
 Okawa--Ueda の quintuple と conifold potential の既存 GIT 商を比較対象に加え、
 quintuple 表示の四次元スカラー慣性が pointed な忘却で消えること、
-忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れることを証明する。
+ただし一般点の有限慣性$\mu_2^2$は剛体化後も残り、
+点曲線のJacobian二捩れ翻訳群に一致することを証明する。
+有効potential/quintuple表示スタックの一般次数四射は
+慣性・接写像が同型で、適切な稠密開では表現可能有限étaleとなる。
+忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
 Picard二等分はE[2]-torsorの次数4となる。
@@ -90,7 +94,8 @@ GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決
 同型を偶数符号・置換・スカラーに同変に構成する。
 正則半単純な非対角potential族には相対Hodge-Jacobian同型と
 特性係数による相対半点を任意底変更と可換に構成する。
-potentialを選ばない一般quintupleの全相対族・境界・慣性・pointed fiberは未解決である。
+potentialを選ばない一般quintupleから内在$\HHstack$への
+慣性像・接写像・pointed fiber、境界での比較は未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。
@@ -167,8 +172,13 @@ AS 正則 quadric の cubic 型については Van den Bergh \cite{VdB2011}、
 Okawa--Ueda \cite[Theorem 1.1]{OU2014} が基礎となる。
 同定理の四次有限射は potential の GIT 商から quintuple の GIT 商への射であり、
 内在的 $\HHstack$ への根・構造対象忘却の次数を述べるものではない。
-その表示側のスカラー慣性の核を本稿の
-命題~\ref{prop:qa-ou-scalar-gerbe} で計算する。
+表示側の四次元スカラー慣性の核を命題~\ref{prop:qa-ou-scalar-gerbe}、
+剛体化後にも残る一般有限慣性を命題
+~\ref{prop:qa-ou-generic-quintuple-finite-inertia}で計算する。
+OUの一般安定化群という表現は単位連結成分と全慣性を区別して読む。
+また、potential→quintupleの既知GIT次数四射を
+定理~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}で
+一般の表現可能有限étaleスタック射へ強める。
 ここで用いる square・rotated square の反標準 avatar と十本矢 mutation は
 大川--植田の日本語草稿 v7 \cite{AvatarVSeven2026} に、
 十二本矢型の追加と統一 avatar は研究ノート \cite{Q12Avatar2026} に記載されている。
