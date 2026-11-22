@@ -429,6 +429,236 @@ $(\OO,\OO(1,0),\OO(0,1),\OO(1,1))$ である
 \cite[定理51.4・系51.5、相対版は定理53.2]{AvatarVSeven2026}の入力である。
 幾何的な開埋め込みの証明は、この AS 対応を使っていない。
 
+\subsection{滑らかな楕円型における三者の明示的辞書}
+\label{subsec:qa-square-elliptic-pointed-dictionary}
+
+\begin{theorem}[VdB楕円四つ組とsquare avatarの同型類の全単射]
+\label{thm:qa-elliptic-vdb-square-avatar-bijection}
+$k$を標数零の代数閉体とする。
+滑らかな楕円曲線$E$上のVan den Bergh許容四つ組
+$(E,L_0,L_1,L_2)$で、各$L_i$は次数二、
+\[
+ L_1L_0^{-1}\ne\OO_E,\qquad
+ L_2L_0^{-1}\ne\OO_E,\qquad
+ L_1L_2^{-1}\ne\OO_E
+ \tag{VdB-adm}\label{eq:qa-vdb-square-admissibility}
+\]
+を満たすものの、曲線・三線束を保つ同型類を考える。
+これは、\emph{順序付き}二rulingを持つ
+滑らかなsquare avatar
+$(Y=\PP^1\times\PP^1,D,P)$で
+\[
+ D\in|\OO_Y(2,2)|,\qquad D\text{ は滑らか},\qquad
+ P\in\Pic^0(D)\setminus\{\OO_D\},\qquad
+ P\not\simeq G_sF_s^{-1}
+ \tag{Sq-cub}\label{eq:qa-square-elliptic-cubic-open}
+\]
+を満たすものの同型類と自然に全単射する。
+ここで$F_s=\OO_D(1,0)$、
+$G_s=\OO_D(0,1)$とし、
+二rulingの順序は同型の中で保持する。
+
+全単射の\emph{両方向の式}は
+\[
+ \boxed{
+ \begin{aligned}
+ (E;L_0,L_1,L_2)&\longmapsto
+  (D\hookrightarrow\PP H^0(F_s)^\vee
+           \times\PP H^0(G_s)^\vee;\ P),\\
+ F_s&=L_2,\qquad
+ G_s=L_1L_2L_0^{-1},\qquad
+ P=L_2L_0^{-1},\\
+ (D;F_s,G_s,P)&\longmapsto
+  (E=D;\ L_0=F_sP^{-1},\
+   L_1=G_sP^{-1},\ L_2=F_s).
+ \end{aligned}}
+ \tag{Sq-VdB}\label{eq:qa-square-vdb-explicit}
+\]
+で与えられる。
+この同型類の比較は、周期同型や根を
+追加標識にしないVdBのcubic$\mathbb Z$-代数
+の幾何的分類を通じて、
+\emph{選んだcubic normal foundation}の
+相対的な$k$点の辞書になる。
+
+差パラメータ
+$\eta=L_1L_0^{-1}$、
+$\delta=L_2L_0^{-1}$を用いれば、
+\[
+ \eta=G_sF_s^{-1},\qquad \delta=P.
+ \tag{Sq-diff}\label{eq:qa-square-vdb-differences}
+\]
+\end{theorem}
+\begin{proof}
+まず$L_0,L_1,L_2$から
+$P=L_2L_0^{-1}$、
+$F_s=L_2$、
+$G_s=L_1L_2L_0^{-1}$を作ると、
+$F_s,G_s$はいずれも次数二で、
+$G_sF_s^{-1}=L_1L_0^{-1}$である。
+式~\eqref{eq:qa-vdb-square-admissibility}より
+$F_s\not\simeq G_s$である。
+滑らかな楕円曲線上の相異なる次数二線束の
+完全線形系は、それぞれ二重被覆
+$E\to\PP^1$を与え、その積は
+$\PP^1\times\PP^1$への閉埋込みである。
+像は$(2,2)$因子で、反標準因子となる。
+また$P\ne\OO_E$、
+$P\not\simeq G_sF_s^{-1}$である。
+これは曲線同型を保ち、線形系の基底の選択を
+$\PGL_2^2$で割ればavatarの同型類を定める。
+
+逆にsquare avatarから
+$L_0=F_sP^{-1}$、
+$L_1=G_sP^{-1}$、
+$L_2=F_s$を作ると、
+式~\eqref{eq:qa-square-elliptic-cubic-open}により
+$\eta=G_sF_s^{-1}\ne\OO_E$、
+$\delta=P\ne\OO_E$、
+$\eta\ne\delta$となる。
+従ってVdBの許容条件が成立する。
+二つの式を順次適用すると三線束と
+二つのrulingの完全線形系をそのまま回収するので、
+互いに逆である。
+VdBの幾何的quintuple復元
+\cite[Theorem 5.5.10]{VdB2011}を適用すれば
+最後の解釈も従う。
+\end{proof}
+
+\begin{theorem}[O-markingを保つruling反射と楕円型の商全単射]
+\label{thm:qa-elliptic-avatar-pointed-quotient}
+前定理のsquare avatarについてさらに
+\[
+ G_sF_s^{-1}\not\simeq P^2
+ \tag{two-cub}\label{eq:qa-square-two-cubic-open}
+\]
+を課した開を$\mathcal A_{\mathrm{sq,ell}}^{2c}$とする。
+この開上では
+\[
+ \boxed{\quad
+ r_1(F_s,G_s,P)
+  =(G_sP^{-1},F_sP,P)
+ \quad}
+ \tag{Sq-R}\label{eq:qa-square-pointed-reflection}
+\]
+は、右辺の二つの次数二線束が定める
+新しい$(2,2)$埋込みを用いて、
+幾何的avatarの同型類の対合を定める。
+前定理の式~\eqref{eq:qa-square-vdb-explicit}の下で、
+これは論文Bの
+\cite[\texttt{lem:elliptic-two-reflections}]{QuadricModuli2026}
+の\emph{構造対象$\OO$を保つ}ruling交換
+\[
+ (L_0,L_1,L_2)\longmapsto
+ (L_0L_1L_2^{-1},L_2,L_1)
+\]
+に一致する。
+従って、$y=(\mathcal C,\OO)$が滑らかな
+楕円型かつ二つのnormal foundationがともに
+cubic型となる\emph{幾何的なO-marked同型類集合}は
+\[
+ \boxed{\quad
+ \bigl|\mathcal A_{\mathrm{sq,ell}}^{2c}(k)\bigr|
+    /\langle r_1\rangle
+ \ \xrightarrow{\ \sim\ }\
+ \bigl|\mathfrak H_{2,\mathrm{ell}}^{2c}(k)\bigr|
+ \quad}
+ \tag{Sq-H2}\label{eq:qa-square-pointed-bijection}
+\]
+と全単射する。
+左辺はavatar同型類の集合をとってから
+$r_1$の軌道で割ることを意味する。
+ここでは$S_2$の商の全相対stack同値を
+この幾何的全単射だけから推論しない。
+
+一方、helixの一段の移動に対応する
+\[
+ r_0(F_s,G_s,P)=(G_s,F_sP,P)
+ \tag{Sq-T}\label{eq:qa-square-unpointed-shift}
+\]
+はVdB四つ組の
+$(L_0,L_1,L_2)\mapsto(L_1,L_2,L_3)$に
+対応するが、一般に$\OO$を変更する。
+従って\emph{O-marked}同型類を得るために
+$r_0$まで同一視してはならない。
+
+この商の記述は、一般の二つのavatarの
+$r_1$-軌道が二元であることを要求しない。
+特殊な二捩れ慣性点では二つが同型になる。
+\end{theorem}
+\begin{proof}
+式~\eqref{eq:qa-square-vdb-explicit}を
+$r_1$の右辺へ適用すると
+\[
+ \begin{aligned}
+ L'_0&=G_sP^{-2}
+       =L_0L_1L_2^{-1},\\
+ L'_1&=F_s=L_2,\qquad
+ L'_2=G_sP^{-1}=L_1
+ \end{aligned}
+\]
+を得る。新しい二ruling線束が相異なる条件は
+$G_sP^{-1}\not\simeq F_sP$、
+すなわち式~\eqref{eq:qa-square-two-cubic-open}
+に他ならない。
+もう一度適用すると$(F_s,G_s,P)$を回収するため
+対合である。
+
+論文Bの
+\cite[\texttt{cor:two-intrinsic-foundations},
+\texttt{cor:h2-point-groupoid-foundation}]{QuadricModuli2026}
+は、指定$\OO$から始まるnormal foundationは
+exact同値の下でちょうど二択であり、
+二つともcubic型なら他方は上記$R$で得られること、
+またfoundation同型はpointed exact同型を
+完全に検出することを示す。
+Van den Berghの四つ組復元を合わせれば、
+二cubic楕円型のpointed同型類に関する
+核と像はちょうど$r_1$の同型類軌道となる。
+これが式~\eqref{eq:qa-square-pointed-bijection}である。
+
+同様に$r_0$の右辺から得る
+$(L'_0,L'_1,L'_2)$は
+\[
+ (G_sP^{-1},F_s,G_s)=(L_1,L_2,L_3),
+ \quad L_3=L_0^{-1}L_1L_2
+\]
+である。論文Bの同じ補題では、この添字移動は
+underlying Abel圏の同値類は保つが、
+一般に構造対象$\OO$を保たない。
+従って$r_0$を割るのは別の
+unpointed moduli問題である。
+\end{proof}
+
+\begin{remark}[一cubic境界と古典点での辞書の射程]
+\label{rem:qa-square-avatar-boundary-cautions}
+$G_sF_s^{-1}=P^2$では、$r_1$後の
+$F'_s=G_sP^{-1}$と$G'_s=F_sP$が一致し、
+square$(2,2)$埋込みを構成できない。
+これは論文C
+~\ref{cor:qa-ou-one-cubic-fiber-and-nonfiniteness}
+の一cubic境界であり、
+二つ目のnormal foundationはnoncubicとして
+内在的な選択被覆
+~\ref{thm:qa-global-two-ruling-etale-cover}
+に残る。
+
+また$P=\OO_D$を任意の$(2,2)$因子に
+そのまま許すと、これらの曲線から得る
+可換な四項foundation代数は$D$に依存せず、
+同じ可換quadricを重複して数える。
+従って全同型類の全単射には古典点を
+別途一点として追加し、元のavatarの
+$P=0$座を単に追加するだけでは足りない。
+$\Sigma_2$の古典型は別のweighted
+stackを生み、無条件には$\HHstack$に入らない。
+$\Sigma_2$曲線型でのO-marked適合性、
+非被約反標準因子を含む全対応、
+およびpotentialの安定化・自己同型群の比較は
+式~\eqref{eq:qa-square-pointed-bijection}
+の証明には含まれない。
+\end{remark}
+
 \begin{remark}[二つの $\Sigma _2$ への移行]
 \label{rem:qa-rotated-square}
 square helix の foundation を一つ進めた rotated square の偏極は
