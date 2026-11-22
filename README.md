@@ -69,78 +69,7 @@ latexmk papers/quiver-avatar-moduli.tex
 
 `papers/` に `cd` して `latexmk nc-quadric-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
 
-**原稿Cの現在の組版確認状況（2026-11-22）。** 利用者のTeX Live 2026実ログでは、`papers/quiver-avatar-moduli.tex:82` の数式記号 `D∈|−K_{Σ₂}|` がテキストモードのまま記載され、`Missing $ inserted` で停止した。現行mainでこれを `$D\\in|-K_{\\Sigma_2}|# nc-quadric-classification
-
-**構造対象 O のみを指定した非可換 quadric surface の分類。**
-
-2026-11-22 / 運用v1.04、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.8。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
-
-**現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
-
-## 公表用原稿：三論文へ再編
-
-| 原稿 | 中心課題 | 状態 |
-| --- | --- | --- |
-| **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
-| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.8。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
-
-論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
-
-Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
-
-## 論文C：添付v7の幾何的核心を本文に統合（v2.8）
-
-論文Cの新設節 [square / rotated の幾何・有限foundation](papers/quiver-avatar/square_rotated_foundations.tex) と
-[canonical複体・全整数周期](papers/quiver-avatar/canonical_helix_complexes.tex) に、
-大川--植田の未公刊草稿「非可換二次曲面の二つの反標準avatar」v7（Parts I--II）から
-反標準Cartier曲線のPicard消滅、二pencilの再埋込み、4×4・2×2の評価行列によるscheme-theoretic復元、
-四つの局所分裂完全列と周期全体の前向きExt消滅を**定義・仮定・証明ごと**組み入れた。
-元論文を持たなくてもこれらの有限幾何は追える。
-ただし、元の全AS正則Z代数のNoether性、元のO-marked heartの直接同値、
-非被約底を含む全AS相対分類を、この追加だけで証明したわけではない。
-
-**新しい研究結果：** [共有根A1の最小解消上の奇偶障害](papers/quiver-avatar/nodal_resolution_obstruction.tex)。
-相対spectral反不変moduleを解消上で可逆化すると、
-例外P¹上の次数は1であり、既約nodal特殊曲線の垂直Cartier twistでも奇数に保たれる。
-ゆえに`同じ一径数基底でA1を最小解消するだけ`では、
-通常の多重次数零の相対Picard line-bundle avatarは構成できない。
-底変更・compactified Picard・相対モデル変更の可能性は残る。
-[局所恒等式の再現コード](computations/verify_nodal_exceptional_parity.py) はmath suiteに登録。
-Cの相対心の直接認識と8/10/12矢の全potential groupoidはなお未解決である。
-
-## 論文Bの証明監査と再現
-
-noncubic有限型効果性では、[五頂点barとcanonical tails](papers/moduli/noncubic_local_tails.tex)、[中央Clifford閉部分のPBW・Noetherian貼合せ・AS4延長](papers/moduli/noncubic_finite_type.tex)の依存関係を整理した。可換quadricでの終頂点Torの厳密計算は[五頂点検算](computations/verify_five_window_terminal.py)、Cliffordの任意可換係数環上の書換は[PBW検算](computations/verify_clifford_pbw.py)で再現できる。有限次数の計算と全相対主定理の証明は区別する。
-
-[atlas構成](papers/moduli/quadric_smooth_atlas.tex)に、指定pointed exact同型のArtin持上げからrepresentable smoothを導く独立補題を追加。可換・cubic・noncubic chartの重複論証を統合し、[全体smooth atlas・framed空間](papers/moduli/h2_smooth_atlas.tex)へ接続した。noncubic chartは64次元、atlasの相対次元61、relation scheme125次元、PGL₉枠X_as83次元。相対代数性とframedの証明正本は**論文B**であり、論文Aへの古い参照を訂正した。
-
-今回変更した節のTeX環境バランスと新補題の参照を静的に点検。三稿全体のソースchecker・LuaLaTeX組版はローカルcheckout不能のため未実施。31分割節の一括チェックは接続側の操作数上限で実行できなかった。次の重点はnoncubic境界の相対groupoid、慣性、good/coarse moduli。
-
-## noncubic境界の相対groupoidとgood/coarse moduli
-
-一致根対の形式局所模型についてAHRの刊行定理（2020年Theorem1.2）の全仮定を照合し、全慣性の線型化から三つの二次不変式ac、(x+y)²、(x−y)²を独立計算した。局所good moduliの原点への微分は零である一方、不変式環は滑らかな三次元多項式環となる。この共通étale近傍のgood moduliがH2のZariski開へ降下するかは別問題であり、今後は既存GITのforgetful射のfiber・慣性と合わせて検討する。
-
-
-
-[P/G]から内在的被約境界への同値は、標数零の群スキーム慣性、smooth境界chartの相対二形式族への因数分解、相対tilting・反Serre再構成、接空間全射とétale判定を組み合わせる。[境界比較論文Bの節](papers/moduli/noncubic_boundary_comparison.tex)では、正標数のBα_pが幾何点の抽象群単射からのrepresentabilityの反例になることを明示した。一致根対の慣性重みは±2、形式的二変数の不変式はk[[ac]]、good moduli座標χ=1/(1−4ac)は微分零・混合Hessian4である。これらの代数的恒等式は[境界検算](computations/verify_noncubic_boundary.py)と整合する。
-
-表示商全体のgood moduli A¹と、閉gerbeを除くDM開のcoarse A¹は異なる。後者はnon-good、慣性はnonproperである。DM開の任意基底変更に対する粗空間は、有限μ₂局所商を各基底上で再構成して証明する。詳細な証明の依存と未検証箇所は[現行研究ノート](notes/research_notes.md)を参照。
-
-## ローカル組版の最短手順（TeX Live 2026）
-
-**リポジトリ直下**（`README.md` と `.latexmkrc` があるディレクトリ）で、最新版へ更新してから次を実行する。
-
-```sh
-git pull --ff-only
-latexmk papers/nc-quadric-classification.tex
-latexmk papers/nc-quadric-moduli.tex
-latexmk papers/quiver-avatar-moduli.tex
-```
-
-`papers/` に `cd` して `latexmk nc-quadric-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
-
- 等の明示的な数式モードへ訂正し、TeX本文に紛れ込んだMarkdownの `**...**` も `\\textbf{...}` に直した。修正した数式断片は別のLuaLaTeX環境で単独組版に成功した。Cの9 TeXソースについてラベル・引用・環境バランスと同種の数学Unicode／Markdown混入を静的確認し、`python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex` に回帰検査を追加した。ただし**訂正後の原稿C全体のLuaLaTeX組版は未確認**なので、最新版を取得して再実行する必要がある。
+**原稿Cの現在の組版確認状況（2026-11-22）。** 利用者のTeX Live 2026実ログでは、\`papers/quiver-avatar-moduli.tex:82\` の数式記号 \`D∈|−K_{Σ₂}|\` がテキストモードのまま記載され、\`Missing $ inserted\` で停止した。現行mainではこれを \`$D\in|-K_{\Sigma_2}|$\` 等の明示的な数式モードへ訂正し、TeX本文に紛れ込んだMarkdownの \`**...**\` も \`\\textbf{...}\` に直した。修正した数式断片は別のLuaLaTeX環境で単独組版に成功した。Cの9個のTeXソースについてラベル・引用・環境バランスと同種の記号混入を静的確認し、\`python3 scripts/check.py sources --manuscript papers/quiver-avatar-moduli.tex\` に回帰検査を追加した。ただし**訂正後の原稿C全体のLuaLaTeX組版は未確認**なので、最新版を取得して再実行する必要がある。
 
 ## VS Code / LuaLaTeX の組版環境
 
