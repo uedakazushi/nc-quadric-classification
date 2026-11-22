@@ -54,7 +54,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 
 ### Gram pencilによる大域good moduliの明示表示
 
-非順序の全H2 good moduliは\(\mathbb P(2,2,3,4)\)の明示開で、全半不変式環は\(k[A_2,B_2,C_3,D_4]\)（重み2,2,3,4）。中央affine chartは\(\Delta_8=(D_4+4A_2(B_2-2A_2))^2-4(B_2-2A_2)C_3^2\ne0\)、その環は重み零局所化であり、noncubic閉像は\(A_2=C_3=0,\ \chi=B_2^2/(4D_4)\)。二商特異点の解析型は\(1/3(1,1,2)\)、\(1/2(1,1,1)\)。[全証明](papers/quiver-avatar/global_h2_invariant_hull.tex)、[検算コード](computations/verify_global_h2_pencil_invariants.py)。一般二対称形式の不変式環は既知入力。C3の全相対AS/QP群oid比較とC4の公表前監査・全稿組版は未完成。
+非順序の全H2 good moduliは\(\mathbb P(2,2,3,4)\)の明示開で、全半不変式環は\(k[A_2,B_2,C_3,D_4]\)（重み2,2,3,4）。中央affine chartは\(\Delta_8=(D_4+4A_2(B_2-2A_2))^2-4(B_2-2A_2)C_3^2\ne0\)、その環は重み零局所化であり、noncubic閉像は\(A_2=C_3=0,\ \chi=B_2^2/(4D_4)\)。二商特異点の解析型は\(1/3(1,1,2)\)、\(1/2(1,1,1)\)。[全証明](papers/quiver-avatar/global_h2_invariant_hull.tex)、[検算コード](computations/verify_global_h2_pencil_invariants.py) はGit blob SHA一致のコピーを実行し全PASS（記号的noncubic境界・有理数4例・Hilbert係数）。一般二対称形式の不変式環は既知入力。C3の全相対AS/QP群oid比較とC4の公表前監査・全稿組版は未完成。
 
 ### 点曲線側の相対認識とspectral側の像
 
