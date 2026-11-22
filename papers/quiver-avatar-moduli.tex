@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.8
+% 日本語 LuaLaTeX。2026-11-22 / v1.9
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -51,7 +51,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.8（片側二捩れ特別座の慣性群型）}
+\date{2026年11月22日\quad v1.9（OU分岐方程式・反射法表現・交点のA1型粗空間）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -104,6 +104,17 @@ pointed比較同型の剰余類から二対象が残り、
 さらに片側の二捩れ条件のみ成立する正則半単純楕円点では、
 translation型の全慣性群は$C_4\times C_2$、
 反転型では$C_2^3$である。
+さらに$e_1,e_3$を二乗固有値の基本対称式、
+$c=\prod_i x_i$とすると、二捩れ特別座は
+$e_3\pm e_1c=0$で与えられる。
+OU不変量では$D_\pm=f_2^3-3f_2f_4+2f_6\pm6f_2g_4$となり、
+正則半単純開の粗忘却の分岐座は$D_+D_-=0$である。
+二つの片側特別座では慣性の三次元接表現が
+$(1,1,-1)$となり、粗射は形式的に$Z=z^2$となる。
+両条件が同時に成立する$e_1=e_3=0$の交点では
+源慣性が$C_2^3$、標的慣性が$D_8\times C_2$へ増大し、
+粗射の局所型は$k[[s,a,c]]\to k[[s,a,b,c]]/(b^2-ac)$となる。
+これらの粗空間分岐にもかかわらず、忘却のスタック射自体はétaleである。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -119,8 +130,9 @@ GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決
 正則半単純な非対角potential族には相対Hodge-Jacobian同型と
 特性係数による相対半点を任意底変更と可換に構成する。
 potentialを選ばない一般quintupleから内在$\HHstack$への
-特殊cubicおよびnoncubic境界の局所分岐・両二捩れ条件の交点での慣性・pointed fiberの相対化、
-二rulingの全相対的降下は未解決である。
+特殊な$j=0,1728$とnoncubic境界、
+二rulingのmutationの相対群oidへのcoherentな延長、
+および局所粗モデルの大域化は未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。
@@ -140,6 +152,13 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 次に反標準 avatar の幾何的 chart を比較し、
 最後に構造対象付き Abel 圏への忘却に必要な条件を分離し、
 Okawa--Ueda の quintuple/potential GIT と比較する。
+特に滑らかな楕円型の稠密開では二つのnormalized rulingが
+有限étale二重忘却の二sheetになり、そのstack商として
+内在的モジュライを記述できる。
+さらに二捩れ特別座では、内在的慣性の法表現を求め、
+OU不変量による粗分岐式と交点の横断$A_1$局所型まで計算する。
+これらを既知のpotential/quintupleの次数四射や
+Picard根の四選択とは区別して扱う。
 
 \subsection{三つの表示と内在的モジュライの比較}
 
@@ -213,6 +232,12 @@ OUの一般安定化群という表現は単位連結成分と全慣性を区別
 系~\ref{cor:qa-potential-h2-generic-degree-eight}に示す。
 さらに稠密開でのスタック的な商同型は
 定理~\ref{thm:qa-h2-generic-ruling-quotient}で与える。
+二捩れ特別座のspectral方程式と粗局所分岐は
+命題~\ref{prop:qa-ou-spectral-torsion-divisors}、
+定理~\ref{thm:qa-ou-special-reflection-coarse-branch}、
+系~\ref{cor:qa-ou-coarse-branch-invariant-equations}に、
+交点の慣性・横断$A_1$モデルは
+定理~\ref{thm:qa-ou-double-torsion-intersection-local-model}に示す。
 片側二捩れ特別座の全慣性群型は
 命題~\ref{prop:qa-elliptic-special-inertia-group-types}に示す。
 特殊ruling交換の正確な二捩れ条件は
