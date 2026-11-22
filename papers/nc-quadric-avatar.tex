@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.24
+% 日本語 LuaLaTeX。2026-11-23 / v4.26
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.24（八矢群oidとnilpotent massの慣性障害）}
+\date{2026年11月23日\quad v4.26（全二massのQP/foundation相対群oidと滑らかなゲージ核）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -166,9 +166,16 @@ Okawa--Uedaの四重GIT射とPicard根torsor、その慣性と局所粗分岐を
 相対groupoidを非被約底・全Isomまで同定する。
 頂点scalarの三次元トーラスを剛体化すると、そのpointed cubic H2 chartを得る。
 二cubic正規化は一般には頂点固定の右同値では結ばれず、mutationによる貼合せが必要である。
-Raw QPではnilpotentなmass係数上で対角慣性群スキームが非平坦になることも示す。
-これはflatなAS族の存在を意味しない。
-Rank三壁と非最小十・十二矢の全相対AS/QP groupoid比較は未完成である。
+さらに非最小十矢のmass係数に対し、滑らかなゲージ群
+$\mathcal U_\lambda=\Spec R[t,(1+\lambda t)^{-1}]$を構成する。
+非最小十二矢の二mass正規形から、両rank三壁および非被約底を含め、
+全有限foundationの相対groupoidへfppf局所にessentially surjectiveな射を得る。
+全Isomの局所全射性と、余剰慣性が
+$\mathcal U_\lambda\times\mathcal U_\mu$であることを証明する。
+これは有限代数の相対比較であり、任意のQPのAS正則性は含まない。
+別のraw potentialでのnilpotent massに伴う非平坦な対角慣性と、
+実際のmutation AS族にも作用する滑らかなゲージ核を区別する。
+Rank三壁を含む全相対AS完成・heartの同定と二rulingのmutation貼合せは未完成である。
 \end{abstract}
 \tableofcontents
 
@@ -320,6 +327,10 @@ $\Sigma_2$の最深境界・非被約因子・古典零切断・全相対AS認�
 二つの階数低下条件として矢数を整理する。
 さらにgeometric cubic部分の隣接四重tensorの非退化性は
 四次4式・六次16式の明示的多項式判定へ書き換える。
+加えて第~\ref{subsec:qa-two-mass-finite-gerbe}節では、
+raw八・十・十二矢potentialの非最小表示を同じ有限foundationに対応させ、
+全二mass（nilpotentを含む）で余剰ゲージ慣性を明示する。
+有限表示の相対同型層と、全次数AS完成や心の一致は別の問題として扱う。
 次に反標準 avatar の幾何的 chart を比較し、
 最後に構造対象付き Abel 圏への忘却に必要な条件を分離し、
 Okawa--Ueda の quintuple/potential GIT と比較する。
