@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v0.3
+% 日本語 LuaLaTeX。2026-11-22 / v0.4
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -48,9 +48,9 @@
 \DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\Supp}{Supp}
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
-  モジュライの開部分、反標準 avatar、内在的忘却}
+  既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v0.3（公表用草稿）}
+\date{2026年11月22日\quad v0.4（GIT比較と慣性核の補題を統合）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -74,6 +74,10 @@ $\Sigma_2$ の出現だけでは最小十二本矢型を意味しない。
 確認した部分では忘却射が定義される。
 この適合部分の開性や、統一 avatar と全相対 AS 代数とのスタック同値は
 別の認識問題として残し、有限表示の代数性とは区別する。
+Okawa--Ueda の quintuple と conifold potential の既存 GIT 商を比較対象に加え、
+quintuple 表示の四次元スカラー慣性が pointed な忘却で消えること、
+忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れることを証明する。
+既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 \end{abstract}
 \tableofcontents
 
@@ -87,11 +91,14 @@ $\Sigma_2$ の出現だけでは最小十二本矢型を意味しない。
 本稿は、まず共通の有限代数のモジュライを構成し、その上の二つの開条件と
 二つの階数低下条件として矢数を整理する。
 次に反標準 avatar の幾何的 chart を比較し、
-最後に構造対象付き Abel 圏への忘却に必要な条件を分離する。
+最後に構造対象付き Abel 圏への忘却に必要な条件を分離し、
+Okawa--Ueda の quintuple/potential GIT と比較する。
 
-\subsection{三つの問題と本稿の結果}
+\subsection{三つの表示と内在的モジュライの比較}
 
 本稿で扱う問題には、次の三つの水準がある。
+とくに既存GIT商を内在的モジュライと結び付ける相対比較を本稿Cの
+中心研究課題とする（第~\ref{sec:qa-git-comparison}節）。
 \begin{enumerate}
 \item \emph{有限表示のモジュライ。}
   四頂点間の Hom 次元と結合律を固定した代数スタックは有限型 Artin である。
@@ -140,7 +147,11 @@ Derksen--Weyman--Zelevinsky \cite[Theorem 4.6; Section 5]{DWZ2008}
 
 AS 正則 quadric の cubic 型については Van den Bergh \cite{VdB2011}、
 その幾何的データと potential のモジュライについては
-Okawa--Ueda \cite{OU2014} が基礎となる。
+Okawa--Ueda \cite[Theorem 1.1]{OU2014} が基礎となる。
+同定理の四次有限射は potential の GIT 商から quintuple の GIT 商への射であり、
+内在的 $\HHstack$ への根・構造対象忘却の次数を述べるものではない。
+その表示側のスカラー慣性の核を本稿の
+命題~\ref{prop:qa-ou-scalar-gerbe} で計算する。
 ここで用いる square・rotated square の反標準 avatar と十本矢 mutation は
 大川--植田の日本語草稿 v7 \cite{AvatarVSeven2026} に、
 十二本矢型の追加と統一 avatar は研究ノート \cite{Q12Avatar2026} に記載されている。
@@ -174,6 +185,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/foundation_charts}
 \input{quiver-avatar/avatar_charts}
 \input{quiver-avatar/intrinsic_forgetting}
+\input{quiver-avatar/git_comparison}
 
 \section{比較を完成させるための認識問題}
 \label{sec:qa-remaining}
@@ -194,6 +206,9 @@ $\kk$ は標数零の代数閉体とする。
 
 従って次の研究課題は、矢数だけを減らす追加の消去ではなく、
 相対 AS 再構成と内在的認識の二つの比較を閉じることである。
+一般 cubic quintuple の表示群のスカラー核を除いた後で、
+pointed exact 自己同型との対応と相対ファイバーを決定することが先決となる。
+既存 GIT の次数四を内在的な忘却次数と読み替えない。
 どちらの場合も、marked な表示の自己同型から消える核、
 構造対象の mutation による移動、非被約底での基底変更を同時に追跡する。
 この順序により、有限型の表示空間を先に構成したことと、

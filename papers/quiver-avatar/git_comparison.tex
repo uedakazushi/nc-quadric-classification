@@ -1,0 +1,185 @@
+% !TeX root = ../quiver-avatar-moduli.tex
+% 2026-11-22 / v0.1
+\section{既存GITと内在的モジュライの比較}
+\label{sec:qa-git-comparison}
+
+本節は Okawa--Ueda \cite[Theorem 1.1]{OU2014} の
+quintuple と conifold potential の GIT 商を、
+本稿の有限 foundation と内在的 $\HHstack$ に対する比較問題へ接続する。
+二つの既存 GIT 商自体を本稿の新しい成果とはしない。
+また、表示を忘れた $\HHstack$ への射は
+定義~\ref{def:qa-compatible-chart} の適合する領域でのみ構成し、
+GIT compactification 全体で自動的に存在するとは主張しない。
+
+\subsection{既存の次数四射と三つの忘却}
+
+$V_0,V_1,V_2,V_3$ を二次元、$W$ を一次元の $k$-ベクトル空間とし、
+\[
+ T=(V_0\otimes V_1\otimes V_2\otimes V_3)\otimes W^\vee,\qquad
+ \widetilde G=\prod_{i=0}^3\GL(V_i)\times\GL(W)
+\]
+と置く。Okawa--Uedaの生のquintuple表示スタックを
+$\mathfrak M_{\mathrm{qui}}^{\mathrm{raw}}=[T/\widetilde G]$ と書く。
+$T$ の零元を含む表示スタックの記法であり、
+$\HHstack$ を定義するものではない。
+同論文のpotential表示を $\mathfrak M_{\mathrm{pot}}$ とし、
+その compact GIT 商を $\overline M_{\mathrm{pot}}$、
+quintuple側の商を $\overline M_{\mathrm{qui}}$ とする。
+既知結果は
+\[
+ \overline M_{\mathrm{pot}}\simeq\PP(1,2,3,4),\qquad
+ \overline M_{\mathrm{qui}}\simeq\PP(2,4,4,6),\qquad
+ \overline M_{\mathrm{pot}}\longrightarrow\overline M_{\mathrm{qui}}
+ \text{ が有限次数 }4
+\]
+である。右端の射は潜在的なSerre平方根の忘却射ではなく、
+\emph{potentialからquintupleへの表示の射}である。
+
+本研究では区別すべき射が少なくとも三つある。
+potentialからquintupleへの射、quintupleから四項foundationへの
+表示上の射、そして適合foundationから pointed exact 対象
+$(\mathcal C,\OO)$ への忘却射である。
+最後の射では、quintupleの標識、ruling、Serre平方根とその同型、
+ambientを保持しない。これらの射のどの組合せが
+相対スタック射として存在するかは、対象と自然同型を個別に調べる必要がある。
+
+\subsection{スカラー慣性の核}
+
+\begin{proposition}[生のquintuple表示の四次元スカラー核]
+\label{prop:qa-ou-scalar-gerbe}
+次の中央部分群スキームは $\widetilde G$ に含まれる。
+\[
+ K=\left\{
+ \bigl(\lambda_0\mathrm{id}_{V_0},\ldots,
+       \lambda_3\mathrm{id}_{V_3},
+       (\lambda_0\lambda_1\lambda_2\lambda_3)\mathrm{id}_{W}\bigr)
+ :\lambda_i\in\Gm
+ \right\}\simeq\Gm^4.
+ \tag{GIT-K}\label{eq:qa-ou-scalar-kernel}
+\]
+$K$ は $T$ 全体に自明に作用する。従って
+\[
+ [T/\widetilde G]\longrightarrow[T/(\widetilde G/K)]
+ \tag{GIT-rig}\label{eq:qa-ou-rigidification}
+\]
+は $K$ を相対慣性とする fppf gerbe である。
+
+さらに、quintupleから対応する $\mathbb Z$-代数のtails圏と
+添字零の構造対象を作る通常の構成が実際の相対族を与え、
+その対象が $\HHstack$ の公理を満たす領域では、
+$K$ の全元は pointed exact 自己同値の\emph{恒等射}へ写る。
+従って、この領域の生の表示スタックから $\HHstack$ への
+標準的な忘却射は表現可能ではない。
+少なくともこのスカラー慣性を消さずに
+全忠実な相対比較射を得ることはできない。
+\end{proposition}
+\begin{proof}
+$\widetilde G$ のスカラー部分の作用は
+$T$ 上で
+\[
+ (\lambda_0,\ldots,\lambda_3,\mu)\cdot t
+   =(\lambda_0\lambda_1\lambda_2\lambda_3)\mu^{-1}t
+\]
+である。従って式~\eqref{eq:qa-ou-scalar-kernel} は
+$T$ への作用の核に含まれる中央な四次元トーラスである。
+$\widetilde G/K$ は群スキームとして存在し、
+$\widetilde G\to\widetilde G/K$ は忠実平坦なので、
+$K$ の作用が自明である場合の商スタックの一般的な構成から
+式~\eqref{eq:qa-ou-rigidification} はgerbeになる。
+
+後半は表現を変えるスカラーが圏に与える作用を直接調べる。
+quintupleを使って構成した $\mathbb Z$-代数を $D$ とし、
+その隣接Hom空間を $V_i$（または採用する双対規約）で表す。
+スカラー変更は、各頂点の単元を変えない
+\[
+ D_{ij}\longrightarrow D_{ij},\qquad
+ a\longmapsto\gamma_i^{-1}\gamma_j\,a
+\]
+という次数ごとの共役に帰着する。
+ここで隣接空間での所定のスカラーに合うよう
+$\gamma_i\in k^\times$ を漸化的に選ぶ。
+四つの隣接スカラーの積が一次関係線 $W$ のスカラーと一致する
+ことが、quintupleの関係を保つ条件である。
+右graded $D$-加群の次数 $i$ の成分に
+$\gamma_i^{-1}$ を掛ける自然変換は、この共役による
+twist functorと恒等 functorの自然同型を与える。
+したがってtailsへの降下でも恒等と自然同型であり、
+添字零の構造対象の同型も同じスカラーで規格化できる。
+相対族でも単元を用いて同じ計算ができる。
+
+一方、元の表示スタックでは任意の $K$ の元は
+各点の自己同型として残る。
+忘却による相対慣性の核が $K$ を含むため、
+射が表現可能であるための必要条件（相対慣性の自明性）に反する。
+\end{proof}
+
+\begin{remark}[GITの次数と慣性を混同しない]
+\label{rem:qa-ou-degree-four-not-root}
+Okawa--Ueda \cite[Theorem 1.1(4)]{OU2014} の次数四は、
+compact GIT 商の有限射の一般ファイバーの次数である。
+式~\eqref{eq:qa-ou-scalar-kernel} の群は
+quintuple表示の自己同型に既に存在し、
+pointed忘却では消える。
+したがってその次数四を、標識を忘れた
+$\HHstack$ の一般ファイバーの位数、
+あるいは可換点でのSerre平方根の個数と同一視できない。
+適合する族の範囲、表示側の剛体化、全pointed同型の像と核、
+および閉軌道の選択が別途必要である。
+\end{remark}
+
+\subsection{相対ファイバーの群oidとしての公式}
+
+\begin{proposition}[忘却射の幾何ファイバーと慣性核]
+\label{prop:qa-forgetful-homotopy-fiber}
+$F:\mathfrak X\to\mathfrak Y$ を $k$-上の groupoid stack の射とし、
+$y\in\mathfrak Y(k)$ を取る。
+幾何ファイバーの groupoid
+$\mathfrak X_y=\mathfrak X\times_{\mathfrak Y}\operatorname{Spec}k$
+の対象は、$x\in\mathfrak X(k)$ と同型
+$\alpha:F(x)\xrightarrow{\sim}y$ の組である。
+その点 $(x,\alpha)$ の自己同型群は
+\[
+ \operatorname{Aut}_{\mathfrak X_y}(x,\alpha)
+ =\ker\bigl(\operatorname{Aut}_{\mathfrak X}(x)
+       \longrightarrow\operatorname{Aut}_{\mathfrak Y}(F(x))\bigr).
+ \tag{Fib-I}\label{eq:qa-fiber-inertia}
+\]
+さらに、$F(x)\simeq y$ となる $\mathfrak X(k)$ の同型類を
+一つずつ選ぶと、$\mathfrak X_y(k)$ の同型類の集合は
+\[
+ \coprod_{[x]:\,F(x)\simeq y}
+ \operatorname{Aut}_{\mathfrak Y}(y)\Big/
+  \alpha\,F(\operatorname{Aut}_{\mathfrak X}(x))\,\alpha^{-1}
+ \tag{Fib-C}\label{eq:qa-fiber-cosets}
+\]
+と同一視される。右辺は群の商ではなく、一般には剰余\emph{集合}である。
+従って同型類のファイバーの濃度、スタックの相対慣性、
+GITの有限射の次数はそれぞれ異なる量である。
+\end{proposition}
+\begin{proof}
+二つの対象 $(x,\alpha),(x',\alpha')$ の間の射は
+$f:x\to x'$ で $\alpha'F(f)=\alpha$ を満たすものである。
+$x=x'$、$\alpha=\alpha'$ とすれば
+式~\eqref{eq:qa-fiber-inertia} が直ちに従う。
+固定した $x$ について同型 $\alpha:F(x)\to y$ を一つ選ぶと、
+他の全ての同型は $g\alpha$、
+$g\in\operatorname{Aut}_{\mathfrak Y}(y)$ の形である。
+二つの選択は $\operatorname{Aut}_{\mathfrak X}(x)$ の像による作用で
+同型になるため、式~\eqref{eq:qa-fiber-cosets} が得られる。
+\end{proof}
+
+\begin{remark}[Cで次に必要な具体的計算]
+\label{rem:qa-git-next-fiber}
+第一段階では、一般geometric cubic quintupleの
+適合する有限型開において
+$\operatorname{Aut}(\mathcal C,\OO)$ と
+標識を保存する自己同型群の像を計算する。
+次に上の二式を用いて、rulingと四窓を忘れる
+pointed相対ファイバーを求める。
+その後に、potentialからquintupleへの既存次数四射と照合する。
+楕円型の構造対象の格子・特殊な自己同型、
+noncubic境界への特殊化は別の段階とする。
+$\HHstack$ 全体のgood moduliの存在、
+標識適合領域の開性・全表示との相対同値は
+現時点では未証明として保持する。
+\end{remark}
