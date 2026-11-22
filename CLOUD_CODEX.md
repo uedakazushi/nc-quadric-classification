@@ -4,7 +4,7 @@
 
 ## 論文Cを最優先で完成するための現行実行単位
 
-**最優先目標は `papers/nc-quadric-avatar.tex`（論文C）を証明と先行研究比較のある独立した公表可能な論文として完成させること。** 研究方針のC1–C4を終了基準とする。C2の全H2半不変式環・中央affine chart・noncubic閉像・二商特異点は `papers/quiver-avatar/global_h2_invariant_hull.tex` に証明を統合した。第一の未解決核心はC3の全相対AS/QP群oid：可逆cubic開で最小8矢/relation-dual 12矢QPのright-equivalenceと有限foundationの同型層・スカラー慣性を比較し、rank3壁とnoncubic側へ延長する。C4の証明・一次資料比較・全稿LuaLaTeX組版も未完了。A（20分類節）とB（31相対節）は有効な入力として監査を行うが、その公表準備だけで作業を停止せず、Cより先に優先しない。数学的検証・ソース検査・組版・main保存・hub更新を区別する。
+**最優先目標は `papers/nc-quadric-avatar.tex`（論文C）を証明と先行研究比較のある独立した公表可能な論文として完成させること。** 研究方針のC1–C4を終了基準とする。C2の全H2半不変式環・中央affine chart・noncubic閉像・二商特異点は `papers/quiver-avatar/global_h2_invariant_hull.tex` に証明を統合した。第一の未解決核心はC3の全相対AS/QP群oid：既知の可縮pair余剰慣性 $B\mathbb G_m^2$（`prop:qa-stabilized-inertia`）を剛体化した最小8矢QPと、可逆cubic finite foundationのright-equivalence・同型層・頂点スカラー慣性を比較してから、rank3壁とnoncubic側へ延長する。C4の証明・一次資料比較・全稿LuaLaTeX組版も未完了。A（20分類節）とB（31相対節）は有効な入力として監査を行うが、その公表準備だけで作業を停止せず、Cより先に優先しない。数学的検証・ソース検査・組版・main保存・hub更新を区別する。
 
 ## 起動時の依頼文
 
