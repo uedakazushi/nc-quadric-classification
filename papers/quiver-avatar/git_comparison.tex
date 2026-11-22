@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.4（剛体化quintuple stackの次元三を追加）
+% 2026-11-22 / v0.5（OU z2座標とPicard根の明示対応、Kummer障害を追加）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -292,6 +292,77 @@ Picard根空間そのもののfiberの個数であり、
 OU射の分岐fiberや$\HHstack$への忘却fiberを
 数えたものではない。
 \end{remark}
+
+\begin{proposition}[OU楕円四つ組の $z_2$ と適合Picard根]
+\label{prop:qa-ou-elliptic-half-coordinate}
+滑らかな楕円曲線 $E$ に原点 $o$ を取り、
+Okawa--Ueda \cite[\S4, (4.12)--(4.13)]{OU2014}
+の楕円四つ組を
+\[
+ (E,\mathcal L_0,\mathcal L_1,\mathcal L_2)
+ =
+ (E,\OO_E(2o),\OO_E(2z_1),\OO_E(2z_2))
+\]
+と書く。論文Bの
+$N=\mathcal L_2\mathcal L_0^{-1}\in\Pic^0(E)$ に対する
+$a^{-2}=N$ の解集合は
+\[
+ \left\{
+ \OO_E(o-z_2)\otimes\xi:\xi\in E[2]
+ \right\}
+ \tag{OU-PR}\label{eq:qa-ou-elliptic-half-coordinate}
+\]
+である。従ってOUの楕円四つ組の birational 表示において、
+$\mathcal L_0,\mathcal L_1,\mathcal L_2$ を固定したまま
+$z_2$ に2-torsionを加える操作は、
+\emph{対応するPicard平方根の四つの選択}に一致する。
+これは式~(4.13)の $(\mathbb Z/2)^4$ のうち
+$z_2$ に作用する一つの $(\mathbb Z/2)^2$ の因子である。
+
+ただし、式~\eqref{eq:qa-ou-fourfold-diagonal} の
+potential GITからquintuple GITへの次数四の
+\emph{四つのsheet}がこの $z_2$ 因子のtorsorと同型であることは、
+この命題の結論ではない。
+\end{proposition}
+\begin{proof}
+$N=\OO_E(2z_2-2o)$ であるから
+$a_0=\OO_E(o-z_2)$ は
+$a_0^{\otimes(-2)}=N$ を満たす。
+二つの根$a,a_0$の比は二乗が自明な
+$\Pic^0(E)[2]=E[2]$ の元であり、逆にその全元は解を与える。
+$z_2$ の取り換え $z_2\mapsto z_2+t$（$2t=0$）は
+$\OO_E(2z_2)$ を変えず、$a_0$ を
+$\OO_E(-t)$ 倍する。従って四つの選択と自由かつ推移的に対応する。
+OUの式~(4.11)--(4.13)は $z_1,z_2$ の独立した
+2-torsion平行移動を含むので、最後の因子の同定も従う。
+\end{proof}
+
+\begin{lemma}[Picard平方根のKummer class]
+\label{lem:qa-picard-kummer-torsor}
+滑らかな楕円曲線の相対族 $E\to S$ と
+$N\in E(S)$ に対し、平方根空間
+$T_N=S\times_{E,[-2]}E$ の
+$E[2]$-torsor class は、étale siteのKummer列
+\[
+ 0\longrightarrow E[2]\longrightarrow E
+ \xrightarrow{[-2]}E\longrightarrow0
+\]
+から得られる連結写像による
+$\delta_{[-2]}(N)\in H^1_{\mathrm{\acute et}}(S,E[2])$
+である。
+従って、同じ基底上でOUの四重射に
+$E[2]$-torsor構造を与える局所系の同型を
+別途構成できた場合に限り、そのtorsorとPicard根空間が同型となる
+必要十分条件は二つの $H^1$ class の一致である。
+\end{lemma}
+\begin{proof}
+$[-2]$ は滑らかな楕円群スキーム上の有限étale isogenyで
+核は$E[2]$なので、示した短完全列はétale層として完全。
+$N$ の局所持上げの差から得るČech 1-cocycleこそ
+$T_N$ のtorsor classである。
+比較先にも同じ構造群スキームを同定した後は、
+torsorの同型類の分類が$H^1$で与えられることから従う。
+\end{proof}
 
 \subsection{一般非線型 cubic の実際の相対比較射}
 
