@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.2（点曲線の二quadric完全交叉とGIT不変式によるjを同定）
+% 2026-11-22 / v1.3（Hodge ruling符号とOU/Picard torsor）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -675,26 +675,108 @@ $256(1-\lambda+\lambda^2)^3/
  (\lambda^2(1-\lambda)^2)$に一致する。
 \end{proof}
 
-\begin{remark}[残る符号と降下の問題]
+\begin{lemma}[Hodge対合によるOUのruling符号]
+\label{lem:qa-ou-hodge-ruling-sign}
+命題~\ref{prop:qa-ou-pointcurve-quadric-pencil} の対角表示で
+$x_i\ne0$、$x_i^2$ が互いに異なるとする。
+$\infty_+$ を $y/t^2\to+1$ のsheetとして
+最初のSegre quadricの第一因子のruling $\mathcal L_0$ に対応させる。
+このとき $P_+=(0,c)$、$c=\prod_i x_i=\det X$ は
+$q\circ X=0$ の第一因子のruling $\mathcal L_2$ に対応する。
+反対sheet $P_-=(0,-c)$ は $H_C\mathcal L_2^{-1}$ に対応する。
+\end{lemma}
+\begin{proof}
+$q_t=tq-q\circ X$ の対角基底で $a_i=t-x_i^2$ と置く。
+向きと平方根 $y^2=\prod_i a_i$ によって正規化された
+$\Lambda^2U$ 上のHodge対合は、相補添字 $\{i,j,k,l\}=\{1,2,3,4\}$
+に対して
+\[
+ J_{t,y}(e_i\wedge e_j)=
+   \epsilon_{ijkl}\frac{y}{a_ka_l}\,e_k\wedge e_l,
+ \qquad J_{t,y}^2=1.
+ \tag{OU-Hodge}\label{eq:qa-ou-hodge-normalization}
+\]
+$t=\infty$ の $y/t^2\to+1$ では $J_{t,y}\to J_q$。
+Segre座標 $(a,b,c',d)$ の $q=2(ad-bc')$ と
+体積 $da\wedge db\wedge dc'\wedge dd$ において
+$J_q(e_a\wedge e_b)=+e_a\wedge e_b$、
+$J_q(e_a\wedge e_{c'})=-e_a\wedge e_{c'}$ である。
+従って第一因子を固定するrulingが正のchiralityである。
+この規約は$SO(q)$で保たれる。
+$t=0$、$y=c$ では
+\[
+ J_{0,c}(e_i\wedge e_j)=
+ \epsilon_{ijkl}\frac{x_ix_j}{x_kx_l}\,e_k\wedge e_l
+ =(\Lambda^2X)^{-1}J_q(\Lambda^2X)(e_i\wedge e_j).
+ \tag{OU-Hodge-0}\label{eq:qa-ou-hodge-zero}
+\]
+これは $X$ によって標準Segreの第一rulingを引き戻した
+chiralityである。$q_t|_{t=0}=-q\circ X$ の
+全体スカラー $-1$ は四次元の中間次数Hodge対合を変えない。
+よって $P_+\leftrightarrow\mathcal L_2$ である。
+\end{proof}
+
+\begin{theorem}[滑らかな対角開でのOU四重射とPicard根の同一視]
+\label{thm:qa-ou-diagonal-picard-torsor}
+定理~\ref{thm:qa-ou-spectral-kummer} の$G$-自由な
+稠密開を、$C$が滑らか、$x_i\ne0$、
+$x_i^2$が相異なる開へ縮める。
+$\mathcal L_0$ を原点とするruling対応は
+\[
+ \Theta:E_{\mathrm{sp}}\xrightarrow{\sim}\operatorname{Pic}^0(C),
+ \qquad z\longmapsto\mathcal M_z\mathcal L_0^{-1},
+ \qquad \Theta(P_+)=N:=\mathcal L_2\mathcal L_0^{-1}
+\]
+を満たし、従って
+\[
+ [2]^{-1}(P_+)\xrightarrow[\ Q\mapsto-\Theta(Q)\ ]{\sim}
+ [-2]^{-1}(N)
+ \tag{OU-Pic}\label{eq:qa-ou-generic-picard-identification}
+\]
+は $\Theta[2]$ に関してtorsor同型である。
+Jacobian、指定点$N$、このtorsor同型は
+偶数符号変更、$S_4$座標置換、同時スカラーに同変であり、
+対角商の滑らかな稠密開に降下する。
+これは\emph{Jacobianと指定点・torsorの降下}であって、
+粗GIT全体へのuniversal曲線の降下や
+全quintuple表示スタックの同値ではない。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:qa-ou-pointcurve-quadric-pencil} の
+ruling被覆と前補題より $\Theta(P_+)=N$。
+定理~\ref{thm:qa-ou-spectral-kummer} では $[2]Q_x=P_+$、
+従って $[-2](-\Theta(Q_x))=N$。
+$-v=v$（$v$は二捩れ）なのでtorsor作用も保つ。
+
+偶数符号変更は $X\mapsto D_\epsilon X$、
+$D_\epsilon\in SO(q)$（target側）で実現される。
+$q\circ X$ と$C$、二quadricの第一rulingを保つため
+$\mathcal L_0,\mathcal L_2,N$は不変である。
+座標置換 $\sigma$ は行列式$+1$の符号付き置換
+$R_\sigma\in SO(q)$を取り、
+$(X,u)\mapsto(R_\sigma XR_\sigma^{-1},R_\sigma u)$
+で実現する。両側とも$SO(q)$なので第一rulingを保つ。
+異なる$R_\sigma$の差は、対角の偶数符号行列で
+各$q_t$と可換、各rulingを個別に保つ。
+よって$\operatorname{Pic}^2(C)$上の誘導射は選択に依存せず
+合成にも整合する。半点$Q_x$は$x_i$の対称式であり置換不変、
+偶数符号群は二捩れ平行移動で作用する。
+同時スカラーは$(X,t,y)\mapsto
+(\lambda X,\lambda^2t,\lambda^4y)$を誘導し、
+$C$、指定ruling、torsor式を保つ。
+以上の降下データから有限étale降下で結論を得る。
+\end{proof}
+
+\begin{remark}[偶数符号群と残る比較]
 \label{rem:qa-ou-ruling-orientation}
-命題~\ref{prop:qa-ou-pointcurve-quadric-pencil} は、
-spectral曲線の\emph{Jacobianとしての同定}を
-potentialの対角表示上で与える。
-しかし$t=0$の$\{P_+,P_-\}$のうち
-$\mathcal L_2$に対応するsheetを、
-固定した$\infty_+$・OUの左右規約の下で
-$P_+$と同定する向きの計算は、ここでは行っていない。
-さらに、原点、ruling、線束の同型を
-quintuple側の任意の基底変更と
-全$G$-作用に関して降下させる必要がある。
-従って
-$[2]^{-1}(P_+)$ と
-$[-2]^{-1}(\mathcal L_2\mathcal L_0^{-1})$
-の相対的な同型はこの命題だけでは結論しない。
-次の具体的な確認は、直交群の向きを保つ局所座標で
-$t=\infty$の第一rulingを固定し、
-$t=0$の$\det X$の符号が
-$\mathcal L_2$に当たることを検算することである。
+奇数個の符号変更は$\det X$を反転させ、
+$P_+\leftrightarrow P_-$、
+$\mathcal L_2\leftrightarrow H_C\mathcal L_2^{-1}$を交換する。
+従って指定点を保つ商には偶数符号群が必要である。
+定理は対角の滑らかな一般開に限る。
+非対角quintupleの全相対族、全GIT compactification、
+剛体化後の慣性・微分・pointed fiber、
+nodal・cuspidal境界への延長は未解決である。
 \end{remark}
 
 \begin{corollary}[OU classとPicard Kummer classの正確な比較条件]
