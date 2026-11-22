@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.98（A v1.69・20節、B v0.39・31節、C v2.4）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.99（A v1.69・20節、B v0.39・31節、C v2.5）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -419,6 +419,77 @@ C cor:qa-ruling-cover-nontrivial-commutative-gerbeに証明。
 この二点を実現可能開の明示的判定と混同しない。
 
 **cubic geometric四重テンソルの具体的有限判定。** Fが同型でGが全射のnormal foundationでw∈⊗_{i=0}^3V_iを復元。各隣接2因子の4×4 flattening M_iについて、ker(M_i)に分解可能テンソルがないことがgeometric性。rank4ならdet M_i≠0、rank≤2ならprojective kernelは線を含みSegre quadricと交わるので不許容、rank3ならadj(M_i)の非零列がkernelを張るので、列の2×2 reshapeがfull rankであることが必要十分。detは次数4、adj列2×2detは次数6。四つのiごとに1+4式、計20個の明示非消滅判定。基底変更の下でも不変。C lem:qa-explicit-cubic-geometric-adjugateが証明正本。整数でrank3 entangled/decomposable, rank2, rank4と一般/退化wを検算。computations/verify_cubic_geometric_adjugate.pyを標準math suiteに登録したが、保存スクリプト自体の実行状態と独立数学的全証明監査は別。
+
+**中心の三者対応（O-marked／potential／反標準avatar）。**
+最優先研究目標は体上同型類の明示的全単射、または
+相対モジュライ射の構成。avatarはY=Σ0又はΣ2、
+D∈|-K_Y|（非被約も含む）、P∈Pic0(D)。
+potentialには8/10/12矢・trivial pairを許す表示を使う。
+個々のGIT慣性・有限minorはこの対応に必要な時だけ優先する。
+
+**滑らかな楕円cubicで得た明示全単射。**
+VdBの三線束 L0,L1,L2（各deg2）から
+F_s=L2、G_s=L1 L2 L0^{-1}、P=L2 L0^{-1}。
+逆 L0=F_sP^{-1}、L1=G_sP^{-1}、L2=F_s。
+F_s≠G_s、P≠O、P≠G_s/F_sが必要十分条件。
+これらの同型類が対応し、選んだcubic normal foundationを表す。
+二rulingともcubicとなる条件 G_s/F_s≠P² の下、
+Rがr1(F_s,G_s,P)=(G_sP^{-1},F_sP,P)となる。
+r1²=1、O-marked同型類はavatar同型類のr1商。
+r0(F_s,G_s,P)=(G_s,F_sP,P)はhelix shift、
+一般に構造対象Oを変えるため割らない。
+特殊自己同型点は固定軌道を許す。
+C thm:qa-elliptic-vdb-square-avatar-bijection、
+thm:qa-elliptic-avatar-pointed-quotientに証明。
+OU effective potential→quintuple一般4枚、
+quintuple↔square avatar、avatar→O-marked一般2枚、
+従って一般potential→avatar4、→O-marked8。
+C cor:qa-ou-potential-square-avatar-pointed-degrees。
+これはPicard平方根4個の新しい標識を数えたものではない。
+
+**滑らかな楕円noncubicの稠密境界。**
+wall G_s=F_sPはsmooth avatar同型類で2次元、
+内在noncubic境界は1次元。無条件の
+quasi-finiteな同型類射は不可能。
+非零P∈Pic0(E)[2]を課すと1次元。
+F_sの二重被覆π_F:E→P1の四分岐点に対し
+Pが定める非零2torsion translationが二組の
+二点集合を作る。
+逆に互いに素な二つの二点集合B1,B2に対して
+四分岐点の二重被覆E、F_s=π*O(1)、
+指定分割に対応する非零Pを復元。
+Legendre B1={0,∞}、B2={1,λ}なら
+y²=x(x−1)(x−λ)、translationは
+(x,y)→(λ/x,−λy/x²)。
+これはBのnoncubic全根対分類と合成して
+**四根相異なるO-marked noncubicの同型類**
+との全単射。avatar側AS代数のqgrが
+そのO-marked heart自身に一致することは
+**未証明**。C thm:qa-avatar-two-torsion-root-pair-bijection。
+共有根・一致根対の縮退は未完成。
+
+**二つの別のwallと古典点。**
+η=G_s/F_s、δ=Pとするとη=2δは
+最初がcubic・r1後がnoncubicの一cubic境界。
+η=δは最初もnoncubic、Σ2十本矢に移る壁。
+P=O_Dを全Dで許すと四線束の前向きHom/積は
+元の可換Σ0上のcollectionのものと同じで
+Dの選択が消える。古典点の収縮が必要。
+Σ2の古典weighted stackはstrong H2に無条件には入らない。
+C prop:qa-avatar-walls-and-noncubic-dimensionと
+prop:qa-avatar-zero-picard-collapse。
+
+**再開点と主張状態。**
+上記同型類全単射・壁次元障害・零切断はCに証明を置いた。
+非被約D全域・Σ2最深境界・Q12のAS avatar→pointed heart
+の直接認識、potential 8/10/12矢のすべての
+相対射と慣性の一致は未解決。
+旧Q12 avatar草稿・synthesisは内部未公刊入力で、
+論文Cに必要な証明を統合していく。
+関連出典はnotes/literature.md。A/Bの主結果の独立再監査・
+CのLuaLaTeX組版・新規性調査も未完了。
+検算はcomputations/verify_avatar_pointed_dictionary.py
+（GitHubの保存コード本体実行はまだ未確認）。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v2.4
+% 日本語 LuaLaTeX。2026-11-22 / v2.5
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -52,7 +52,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v2.4（cubic幾何開の明示quartic/sextic判定）}
+\date{2026年11月22日\quad v2.5（三者対応：square avatar・O-marking反射・noncubic二根対）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -66,6 +66,17 @@
 通常の right-equivalence 商には消去される対の自己同型が残る。
 従って Jacobian 代数の一致を、そのまま表示スタックの同値とすることはできない。
 
+本稿の中心目標は、構造対象を指定したO-marked非可換二次曲面、
+線形代数的potential、反標準avatarの三者に、体上同型類の明示全単射
+またはそれを誘導する相対モジュライ射を与えることである。
+滑らかな楕円cubic型では、VdB四つ組とsquare avatarの双方向公式と
+O-markingを保つruling反射による同型類商を証明する。
+potentialからavatarへの一般表示次数は4、O-markedまでの合成は8となる。
+さらにsmooth ellipticのnoncubic境界では、非零2捩れavatar壁を
+四つの相異なる分岐点の非順序二根対と同定し、
+Bのnoncubic分類と合成して幾何的同型類の全単射を得る。
+古典Picard零切断の重複、wallの次元差、潜在的な相対AS認識の不足を
+明確に区別する。
 幾何側では、$\Sigma_0$ または $\Sigma_2$ 上の反標準因子と
 非自明な $\Pic^0$ パラメータを用い、直積型 square avatar と
 二種類の十本矢 chart の関係を記述する。
@@ -171,6 +182,19 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 
 \section{Introduction}
 \label{sec:qa-introduction}
+
+本論文の第一の問題は、**O-marked quadric、potential、avatar**を
+単に隣接する記述として並べるのではなく、
+具体的な同型類の全単射と、それを誘導するモジュライ間の射で結ぶことである。
+特に、potentialの頂点と四項foundation、avatarの二ruling、
+内在的な構造対象$\OO$をそれぞれ区別して忘却を行う。
+滑らかな楕円cubicの三線束辞書と$r_1$商、
+四根相異なるnoncubic境界の二捩れavatarと二根対の全単射を
+本稿の具体的な比較定理とする。
+これらの証明は第~\ref{sec:qa-avatar-charts}節に置く。
+$\Sigma_2$の最深境界・非被約因子・古典零切断・全相対AS認識は
+結論に含めず、必要な追加構成を明記する。
+
 
 三次元 AS 正則 $\mathbb Z$-代数の四周期表示では、同じ幾何的構成に対して
 八本、十本、十二本の矢を持つ箙が現れる。

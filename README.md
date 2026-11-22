@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.00、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.4。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.01、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.5。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | OU GIT・quiver/QP/avatarと内在H2比較 | v2.4。一般のquintuple→H2次数2・potential→H2次数8、OU二捩れ特殊座・局所粗分岐、CMと一cubic境界を保持。**全H2（cubic/noncubic）でnormal ruling選択の有限étale二重被覆を構成し、実現可能finite foundationの開$\mathfrak F_{\HH}\subset\mathfrak F_0$と$\mathfrak H_2\simeq[\mathfrak F_{\HH}/S_2]$を証明。** 可換Q上の非自明なrulingモノドロミーを記述し、実現可能開は有限個の多項式の非同時消滅で表せる（非構成的）。cubic geometric部分は四次4式・六次16式で明示判定。全noncubic判定・全avatar/AS認識・独立監査は残課題 |
+| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | **O-marked quadric・potential・反標準avatarの明示的対応** | v2.5。滑らかな楕円cubic型のVdB四つ組↔square avatarの双方向公式と、Oを保つ$r_1$-商同型類を証明。一般OU potential→avatarは4、→O-markedは8。noncubic四根相異なる部分で非零2捩れavatar壁↔二根対↔O-markedの同型類全単射を証明。全H2のruling二重被覆／finite foundation開の相対同型、以前のOU特殊群・四次六次テストを維持。全avatarのAS heart認識・退化D・全potentialの相対射は未解決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -64,6 +64,16 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 [CLOUD_CODEX.md](CLOUD_CODEX.md) に、環境の準備・起動用の依頼文・検証・保存手順を置く。最終目標は研究方針F1–F6を満たす**全H2のpointed exact同値分類**。一補題やcommitで止めず、現行資料を更新しながら次の未解決課題へ進む。
 
 **全H2の分類と、内在的モジュライの有限型smooth Artin性を証明した。** cubic側はlinearデータと、整・被約・非被約を含む全てのVan den Bergh許容四つ組で構成し、四生成環の二次関係に対する有限の代数的判定で重複を除く。noncubic側はP1上の二つの二点集合の非順序対の同時射影同値で分類する。両領域は交わらず、全対象を覆う。統一定理の証明本文は現行原稿に保持し、個別の論理点検と有限次数の厳密計算を行った。全証明の独立監査は未完了である。外部査読・形式証明・包括的な新規性確定とは区別する。組版等の実際の確認範囲は研究ノートを参照。
+
+## 研究の中心目標：O-marked・potential・avatarの三者対応
+
+**求めるもの：** O-marked quadric $(\mathcal C,\mathcal O)$、線形代数的なpotential（8/10/12矢）、反標準avatar $(Y,D,P)$（$Y=\PP^1\times\PP^1$または$\Sigma_2$、$D\in|-K_Y|$、$P\in\Pic^0(D)$）について、**同型類の明示的全単射**またはそれを誘導する**相対モジュライ射**を構成する。標識・頂点・rulingの忘却、古典点の収縮、自己同値・慣性を明示する。
+
+**滑らかな楕円cubic型で達成：** VdB三線束からsquare avatarは $(F_s,G_s,P)=(L_2,L_1L_2L_0^{-1},L_2L_0^{-1})$、逆は $(L_0,L_1,L_2)=(F_sP^{-1},G_sP^{-1},F_s)$。二cubic開のO-marked同型類は$r_1:(F_s,G_s,P)\mapsto(G_sP^{-1},F_sP,P)$の商。$r_0:(F_s,G_s,P)\mapsto(G_s,F_sP,P)$は一般に$\mathcal O$を変えるので割らない。一般potential→avatarは4枚、O-markedまで8枚（[新定理](papers/quiver-avatar/avatar_charts.tex)）。
+
+**滑らかなnoncubic境界の稠密開で達成：** $G_s=F_sP$、$0\ne P\in\Pic^0(E)[2]$のavatarと$\PP^1$上の四つの相異なる根の非順序二根対は、$|F_s|$と非零2捩れ平行移動を用いて全単射。Bのnoncubic分類と合成してO-marked境界の同型類と対応。ただしavatar由来AS $\qgr$を元のO-marked heartと同一視する直接証明はまだない。
+
+**未解決：** 共有根・一致根対・非被約$D$、$\Sigma_2$最深境界、$P=0$古典点の正しい収縮、potentialの全相対群oidと8/10/12矢のstable equivalence、avatarのAS心とO-markedの相対認識。非零Picardのsquare wallは2次元だが内在noncubic境界は1次元なので無条件の全avatar同一視は不可。これらが今後の優先目標であり、個々のminorの追加は従属課題。
 
 ## 論文C：既存GITと内在的モジュライの比較
 

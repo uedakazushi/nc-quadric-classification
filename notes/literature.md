@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.66。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.67。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -183,6 +183,41 @@ k[[a,u,v]]^{C3}。これは全noncubic境界の定理ではない。
 **非構成的有限多項式判定と可換gerbeの証明範囲。** U0⊂A64は有限型開、realizable W_Hは開なので、その閉補集合のイデアルがNoether性で有限生成となる。G/Kのrational作用で有限次元安定部分表現を選べる。これはStacksの一般原理と本研究の新しい相対開埋込の形式的帰結で、explicitな演算アルゴリズムではない。可換QのAut=(PGL2×PGL2)⋊C2の因子交換からruling coverの非自明性が従う。C cor:qa-realizable-foundation-finite-open-criterion、cor:qa-ruling-cover-nontrivial-commutative-gerbeに証明。文献の包括的新規性は未確認。
 
 **VdB geometric開の明示多項式化。** Van den Bergh 2011 Definition 5.3.1とB prop:cubic-foundation-openの隣接二因子縮約非退化条件をC lem:qa-explicit-cubic-geometric-adjugateで明示quartic/sexticの計20個の多項式に変換した。rank3のkerがSegreの分解可能座を避けることとadjugate列の2×2det非零を同定する直接線形代数。幾何的cubic開の存在自体はVdBの既知入力で、20式への具体化の包括的新規性は未確認。noncubic全realizable開には適用しない。
+
+**O-marked–potential–avatarの三者比較に使った既知入力・内部資料。**
+Michel Van den Bergh, *Noncommutative quadrics*, IMRN 2011,
+Theorem 5.5.10 (arXiv:0807.3753v3)：
+geometric cubic Z-algebraと許容楕円四つ組の分類。
+Okawa--Ueda, *Noncommutative quadric surfaces and
+noncommutative conifolds*, arXiv:1403.0713 (2014)：
+conifold potentialの既存GITからquadric GITへの有限次数4射。
+本研究Bのcor:two-intrinsic-foundationsと
+lem:elliptic-two-reflectionsを用い、
+CでO-marked同型類のruling反射商を新たに証明。
+大川--植田の未公刊日本語草稿 *非可換二次曲面の二つの反標準avatar*
+（2026-09-16 v7、内部参考文献AvatarVSeven2026）と
+未公刊quadric_synthesis_ja_20261017_v1.pdf の
+§§7.12, 8.3に
+(A_c,B_c,A_cP)=(F_sP^{-1},G_sP^{-1},F_s)、
+r1(F_s,G_s,P)=(G_sP^{-1},F_sP,P)
+が記載されていることを今回Libraryの本文で照合した。
+これらはAS Z-algebraの標識付き分類であり、
+O-marked全同値類・相対heartの定理と
+混同しない。
+Cの新定理で滑らかな楕円cubicの
+この明示式の双方向性・O-markingのr1商を証明。
+noncubic側はBの二根対分類から、smooth楕円2torsion avatar壁と
+四根相異なるroot-pair同型類を
+二重被覆/branch pairingで直接同定した。
+Legendre座標では(x,y)→(λ/x,−λy/x²)。
+この幾何的同型類の全単射が
+avatar AS側から実際のO-marked heartを与える
+ことまで証明していない。
+P=O_Dを全Dに追加すると可換foundationの
+重複計上がある（Cの制限列で直接証明）。
+Sigma2古典weighted型はstrong H2に無条件に入らない。
+退化因子・潜在的な相対AS認識・全potential安定化の
+一次資料/包括的新規性照合は未完了。
 
 ## 研究の位置
 
