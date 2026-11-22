@@ -1,7 +1,40 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.75。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.76。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 一般biquaternionのindexと楕円曲線の四重被覆
+
+Lam--Leep--Tignol, *Biquaternion algebras and quartic extensions*,
+**Publ. Math. IHÉS 77 (1993), 63--102**,
+[doi:10.1007/BF02699188](https://doi.org/10.1007/BF02699188),
+**Theorem 2.3（論文内p.66）**を一次PDFの該当頁まで確認。
+二四元数代数に対応する6次元Albert形式がanisotropicであることと、
+当該次数4代数がdivisionであることの同値を使用する。
+Lam, *Introduction to Quadratic Forms over Fields*,
+AMS Graduate Studies in Mathematics 67 (2005),
+[doi:10.1090/gsm/067](https://doi.org/10.1090/gsm/067),
+Chapter VI, Proposition 1.9の離散付値の二剰余形式判定を使用する。
+書誌情報は出版社で確認。Lamの本の本文全体の独立検証は未実施。
+
+C v4.2は独立一般二次形式のBrauer類
+$\\beta=(a_c,\\Delta_c)+(a_d,\\Delta_d)$に対する
+6次元Albert形式の二重Laurent付値検査から
+$\\operatorname{ind}(\\beta)=4$を導き、
+一般noncubic点曲線$E_f$のperiod 2・index 4、
+半周期torsor$T_P$の最小次数4でのBrauer差分裂を証明する。
+通常の二同種写像公式はWeierstrass変数の直接代入で検証し、
+monic split-root族で$T_P$が二つの非自明な二次体に分かれることから
+分岐根選択の別の四重被覆と非同型であると証明する。
+一般Albert判定と2-isogeny公式そのものは本研究の新発見としない。
+この特殊なBrauer差・period-index計算および二被覆比較の
+包括的先行研究上の新規性は未確認。
+証明正本はCの
+thm:qa-generic-point-period-two-index-four、
+prop:qa-half-period-conic-isomorphism、
+thm:qa-half-period-not-root-choice。
+計算再現はcomputations/verify_half_period_fourfold.py
+（多項式恒等式のみ、anisotropyやGalois非平方性の形式証明ではない）。
 
 ## 相対gerbeとAzumaya-Moritaの一次入力
 

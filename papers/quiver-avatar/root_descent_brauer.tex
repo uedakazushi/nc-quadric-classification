@@ -190,6 +190,107 @@ Galois不変点があることと、その類の
 実際の線束による代表があることの違いである。
 \end{proof}
 
+\begin{theorem}[一般noncubic点曲線のperiod二・index四]
+\label{thm:qa-generic-point-period-two-index-four}
+標数零の代数閉体$k$上、独立な二元二次形式
+\[
+ f_c=a_cu^2+b_cuv+d_cv^2,\qquad
+ f_d=a_du^2+b_duv+d_dv^2
+\]
+の普遍係数体
+$K=k(a_c,b_c,d_c,a_d,b_d,d_d)$を考える。
+$\Delta_i=b_i^2-4a_id_i$、
+$\alpha_i=(a_i,\Delta_i)\in\Br(K)[2]$と置く。
+このとき
+\begin{equation}
+ \boxed{\operatorname{ind}(\alpha_c-\alpha_d)=4}.
+ \label{eq:qa-biquaternion-index-four}
+\end{equation}
+また$K$上の滑らかな種数一曲線
+\[
+ E=\{c^2=f_c(u,v),\ d^2=f_d(u,v)\}\subset\PP^3_K
+\]
+は
+\begin{equation}
+ \boxed{\operatorname{per}(E)=2,\qquad
+        \operatorname{ind}(E)=4}.
+ \label{eq:qa-point-period-index-24}
+\end{equation}
+ここで$\operatorname{per}(E)$は$J(E)$-torsorの位数、
+$\operatorname{ind}(E)$は$K$上の閉点の次数の最大公約数である。
+従って$\alpha_c-\alpha_d$を分裂させる任意の有限体拡大は
+次数が四の倍数であり、次数二では分裂しない。
+\end{theorem}
+\begin{proof}
+$K$は
+\[
+ F(\Delta_c,\Delta_d),\qquad
+ F=k(a_c,b_c,a_d,b_d)
+\]
+と同型である。なぜなら$a_i\ne0$の開で
+$d_i=(b_i^2-\Delta_i)/(4a_i)$と解けるからである。
+$\alpha_c-\alpha_d$は二捩れなので、
+その類を表す次数四のbiquaternion代数は
+\[
+ \mathcal D=(a_c,\Delta_c)_K\otimes_K
+             (a_d,\Delta_d)_K
+\]
+である。Albertの6次元形式
+\cite[Theorem~2.3]{LamLeepTignol1993}を
+\begin{equation}
+ q=\langle a_c,\Delta_c,-a_c\Delta_c,
+          -a_d,-\Delta_d,a_d\Delta_d\rangle
+ \label{eq:qa-biquaternion-albert-form}
+\end{equation}
+と取る。Albertの定理では、
+この形式がanisotropicであることと
+$\mathcal D$がdivisionであることは同値である。
+
+$K$を二重Laurent級数体
+$L=F((\Delta_c))((\Delta_d))$へ埋め込む。
+$\Delta_d$-付値に対する$q$の二剰余形式は
+\[
+ q_0=\langle a_c,\Delta_c,-a_c\Delta_c,-a_d\rangle,
+ \qquad q_1=\langle-1,a_d\rangle
+\]
+である。$a_d$は$F((\Delta_c))$で非平方なので
+$q_1$はanisotropicである。
+さらに$q_0$の$\Delta_c$-付値での二剰余形式は
+\[
+ \langle a_c,-a_d\rangle,\qquad
+ \langle1,-a_c\rangle .
+\]
+$F$は四変数の純超越体であり、
+$a_c/a_d$と$a_c$はいずれも非平方だから、
+この二つもanisotropicである。
+二段階のSpringer剰余形式判定
+\cite[Chapter VI, Proposition~1.9]{LamQuadraticForms2005}により$q$は
+$L$上anisotropic、従って$K$上でもanisotropic。
+ゆえに$\mathcal D$は次数四のdivision代数であり
+\eqref{eq:qa-biquaternion-index-four}を得る。
+
+$E\to\PP^1_{[u:v]}$は次数四の有限射なので
+$K$-有理な基点のfiberは次数四の零サイクルであり、
+$\operatorname{ind}(E)$は四を割る。
+逆に、任意の閉点$x\in E$の剰余体$K(x)$では
+$E(K(x))$に点があるから、射影
+$E\to Q_c,Q_d$を通じて両conicが分裂する。
+従って$\mathcal D$も$K(x)$上で分裂する。
+division代数のindexは任意の分裂拡大の次数を割るので
+$4\mid[K(x):K]$である。
+ゆえに$\operatorname{ind}(E)=4$である。
+
+各幾何conic$Q_i$にはGalois不変な
+幾何次数一Picard類があり、その$E$への引戻しは
+$\Pic^2_{E/K}(K)$の点を与える
+（実際の線束へ降下するとは限らない）。
+従って$E$のperiodは二を割る。
+もしperiodが一なら滑らかな種数一曲線$E$には
+$\Pic^1_{E/K}(K)=E(K)$の点があるが、
+index四に反する。
+従ってperiodは二である。
+\end{proof}
+
 \begin{corollary}[二つの分岐根を選ぶ次数四の\'{e}tale分裂被覆]
 \label{cor:qa-root-choice-etale-splitting}
 $U_2$を、標数零の代数閉体上の二つの

@@ -282,6 +282,7 @@ def math_checks() -> int:
                "verify_noncubic_pointed_end.py",
                "verify_noncubic_root_descent.py",
                "verify_avatar_morita_weights.py",
+               "verify_half_period_fourfold.py",
                "verify_rootpair_resolvent_spectral.py",
                "verify_as_avatar_euler.py", "verify_avatar_cubic_obstruction.py", "verify_nodal_exceptional_parity.py",
                "verify_noncubic_boundary.py")

@@ -108,13 +108,189 @@ $\alpha_c=\alpha_d$が従うが、
 矛盾するので$T_P(K_{12})=\varnothing$である。
 \end{proof}
 
+\begin{proposition}[半周期による二conicの同型とBrauer差の最小分裂]
+\label{prop:qa-half-period-conic-isomorphism}
+定理~\ref{thm:qa-half-period-ruling-torsor}の
+有限\'{e}tale四重被覆$T_P\to U^\circ$上で、
+二つのdeck involution
+\[
+ \beta(c,d)=(c,-d),\quad
+ \alpha(c,d)=(-c,d)
+\]
+の商$Q_c=E/\langle\beta\rangle$、
+$Q_d=E/\langle\alpha\rangle$は
+$\tau_t$によるconjugationを通して
+\begin{equation}
+ \Phi_t:Q_c|_{T_P}\xrightarrow{\sim}Q_d|_{T_P},
+ \qquad
+ \Phi_t\circ p_c=p_d\circ\tau_t
+ \label{eq:qa-half-period-conic-iso}
+\end{equation}
+という\emph{実際のconicの同型}を持つ。
+この同型は共通の$\PP^1_{[u:v]}$を保つとは限らない。
+とくに$T_P$上で
+\[
+ \alpha_c|_{T_P}=\alpha_d|_{T_P},\qquad
+ (\alpha_c-\alpha_d)|_{T_P}=0 .
+\]
+一般係数体$K_{12}$上では$T_P$は
+\emph{連結な}次数四の体拡大を定め、
+$\alpha_c-\alpha_d$のindex四を分裂させる
+最小可能次数の被覆である。
+どの次数二以下の体拡大もこの差を分裂させない。
+\end{proposition}
+\begin{proof}
+各滑らかな種数一fiber上で、次数二pencil$L$に対応する
+deck involutionは、原点を仮に選んだとき
+$i_L(x)=s_L-x$と書ける。
+$L=F,G$に対する二つの定数の差は
+$[GF^{-1}]=P$であり、
+$i_F=\beta$, $i_G=\alpha$である。
+したがって$2t=P$から
+\[
+ \tau_t\beta\tau_t^{-1}=\alpha
+\]
+が従う。この等式は原点を選ばず相対的に成立する。
+従って$p_d\tau_t$は$\beta$-orbit上定数であり、
+$Q_c$を経由する射$\Phi_t$を定める。
+逆射は$\tau_{-t}$から得られるので同型である。
+Brauer--Severi conicの同型はそのBrauer類を等しくする。
+
+一般係数体上では
+定理~\ref{thm:qa-generic-point-period-two-index-four}より
+$\operatorname{ind}(\alpha_c-\alpha_d)=4$である。
+有限次数の体拡大がこの類を分裂させるには
+次数が四の倍数でなければならない。
+$T_P$は合計次数四の有限\'{e}tale被覆であり、
+その各連結成分の剰余体は上の差を分裂させる。
+従って一般fiberは一つの次数四の体であり、
+次数は最小である。
+\end{proof}
+
+\begin{theorem}[分岐根選択と半周期の二つの四重被覆は異なる]
+\label{thm:qa-half-period-not-root-choice}
+$T_P\to U^\circ$と、
+系~\ref{cor:qa-root-choice-etale-splitting}の
+分岐根選択被覆
+$\widetilde U_2|_{U^\circ}\to U^\circ$は、
+\emph{相対有限\'{e}tale被覆として同型でない}。
+さらに一般係数体上の有限\'{e}tale代数としても非同型である。
+
+実際、$a,b,c$を代数独立な変数とし、
+$K_0=k(a,b,c)$上のmonic split-root族
+\[
+ f_1=x(x-a),\qquad f_2=(x-b)(x-c)
+ \quad(x=u/v)
+\]
+を考える。$a,b,c$が互いに異なり零でもない開に制限する。
+この族では分岐根選択被覆は四つの
+$K_0$-有理点からなるが、半周期torsorは
+\begin{equation}
+ (T_P)_{K_0}\simeq
+ \operatorname{Spec}\bigl(K_0(\sqrt A)\times K_0(\sqrt B)\bigr),
+ \quad
+ A=c(b-a),\quad B=b(c-a),
+ \label{eq:qa-half-period-split-roots-quadratics}
+\end{equation}
+という、二つの非自明な二次拡大の非交和である。
+特に\emph{両conicのBrauer類がすでに零でも}
+半周期を大域的に選べるとは限らない。
+よってBrauer障害の消滅とruling交換の半周期の
+Kummer障害は別の条件である。
+\end{theorem}
+\begin{proof}
+このsplit-root族では各$f_i$の二根は
+$K_0$-有理なので、根選択被覆は
+$\operatorname{Spec}(K_0^{\oplus4})$である。
+一方、spectral曲線
+\[
+ C_q:\quad y^2=x(x-a)(x-b)(x-c)
+\]
+は$P_0=(0,0)$を原点に選べる滑らかな楕円曲線である。
+変数
+\[
+ \xi=-\frac{abc}{x}+bc,\qquad
+ \eta=\frac{abc}{x^2}\,y
+\]
+を取って整理すると
+\begin{equation}
+ C_q\simeq
+ \{\eta^2=\xi(\xi-A)(\xi-B)\},\qquad
+ A=c(b-a),\quad B=b(c-a).
+ \label{eq:qa-half-period-spectral-weierstrass}
+\end{equation}
+これは直接展開して確かめられ、
+$P_0$はWeierstrass模型の無限遠点、
+$P_a=(a,0)$は$(\xi,\eta)=(0,0)$に移る。
+二重被覆$E_f\to C_q$は$c^2=f_1$を付加するので、
+対応する二捩れ線束は
+\[
+ M_C=\OO_{C_q}(P_a-P_0).
+\]
+実際、$f_1$の零因子は$2P_0+2P_a$であり、
+極因子は$2(\infty_++\infty_-)$である。
+$x$の完全次数二pencilのfiberとして
+$\infty_++\infty_-\sim2P_0$を用いれば
+この記述が得られる。
+従って$M_C$は
+\eqref{eq:qa-half-period-spectral-weierstrass}上の
+$(0,0)$に対応する。
+
+双対二重isogenyの定理
+~\ref{thm:qa-point-spectral-dual-two-isogeny}と
+通常の核$(0,0)$の二同種写像を使うと、
+$J(E_f)$は
+\begin{equation}
+ \mathcal E':
+ Y^2=X\bigl(X^2+2(A+B)X+(A-B)^2\bigr),
+ \qquad
+ P_E=(0,0)
+ \label{eq:qa-half-period-isogenous-model}
+\end{equation}
+となる。例えば、
+$C_q$上の$(\xi,\eta)$から
+$\bigl(\eta^2/\xi^2,\eta(1-AB/\xi^2)\bigr)$
+を取れば、上式への二同種写像を得ることが
+代入計算で確認でき、その核は$\{0,(0,0)\}$である。
+
+$\mathcal E'$上の非零点$Q=(X,Y)$について
+倍算の$x$座標は
+\[
+ X([2]Q)=
+ \frac{(X^2-(A-B)^2)^2}
+ {4X(X^2+2(A+B)X+(A-B)^2)} .
+\]
+したがって$[2]Q=P_E=(0,0)$なら
+$X=\pm(A-B)$であり、その場合の$Y^2$は
+\[
+ \begin{array}{c|cc}
+ X&A-B&-(A-B)\\\hline
+ Y^2&4A(A-B)^2&4B(A-B)^2
+ \end{array}.
+\]
+$A=c(b-a)$および$B=b(c-a)$は
+$K_0=k(a,b,c)$でいずれも非平方であり、
+それぞれ別の平方類を与える。
+ゆえに四つのhalf pointの体は正確に
+\eqref{eq:qa-half-period-split-roots-quadratics}の
+二つの二次体となり、$K_0$-有理half pointは存在しない。
+
+これで二つの被覆が$U^\circ$上で非同型と分かる。
+さらに$U^\circ$は滑らかな整スキームなので、
+有限\'{e}tale被覆はその一般係数体上の
+有限\'{e}tale代数から正規化により一意に回収できる。
+従って一般係数体上でも二被覆は非同型である。
+\end{proof}
+
 \begin{remark}[異なる次数四被覆と特異境界]
 \label{rem:qa-half-period-versus-root-cover}
 半周期torsor $T_P$は$J[2]$-torsorであり、
 前節の「各二次形式から分岐根を一つずつ選ぶ」
-有限\'{e}tale次数四被覆とは定義が異なる。
-両被覆の同型、OUの一般次数四射との比較、
-およびそのGaloisモノドロミーの一致は未確認である。
+有限\'{e}tale次数四被覆と
+定理~\ref{thm:qa-half-period-not-root-choice}で
+\emph{非同型}と証明した。
+OUの一般次数四射との比較および各被覆の
+全Galoisモノドロミーの記述は未確認である。
 nodal/$I_2$では相対$\Pic^0$の$[2]$の幾何次数が
 smooth fiberの四から変わるため、
 上記の同じ次数四の\'{e}tale torsorを
