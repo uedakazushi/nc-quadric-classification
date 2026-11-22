@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v4.0
+% 日本語 LuaLaTeX。2026-11-22 / v4.1
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v4.0（四頂点Brauer重みとAzumaya双加群Morita表示）}
+\date{2026年11月22日\quad v4.1（相対Morita表示とsmooth ruling半周期torsor）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -177,6 +177,12 @@ $\Gm^2$-gerbe上に相対square avatarを構成し、
 一般点で$\alpha_c\ne\alpha_d$なのでruling交換を
 頂点固定のMorita自己同値にすることは不可能であり、
 mutationを伴う位相変更が不可欠である。
+一方、滑らかな点曲線の相対Jacobianでは、
+非零二捩れ$P=GF^{-1}$の半周期$2t=P$を選ぶ
+次数四の有限étale torsorがあり、その上の
+平行移動は四項$(\OO_E,F,H,HG)$を
+$(\OO_E,G,H,HF)$へ相対Picard類として送る。
+この半周期torsorは一般係数体上では非自明である。
 これは相対$\qgr$圏の同値やAS側のmutationの降下とは異なる。
 $C_q$・$\Sigma_2$の別avatarとのpointed比較も未解決である。
 実例$f_1=x(x-1),f_2=(x-2)(x-3)$では
@@ -362,6 +368,9 @@ determinant補正後の四項のBrauer重みを計算し、
 Azumaya双加群の有向Morita圏を係数空間へ構成し、
 階数54の通常の有限代数としても明示する。
 一般点のruling交換は頂点固定Moritaでは実現できない。
+第~\ref{sec:qa-half-period-ruling}節ではsmooth locus上で
+$2t=P$の次数四有限étale torsorを作り、平行移動による
+二pencilと有限Endの幾何比較、およびgenericでのtorsorの非中立性を証明する。
 ただしAS側の相対mutation・$\qgr$圏・Serre根の一括降下と
 無標識stackの群oid認識は別問題である。
 ここでは有限directed foundation、relation-dual QP、
@@ -545,6 +554,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/point_spectral_isogeny}
 \input{quiver-avatar/root_descent_brauer}
 \input{quiver-avatar/twisted_morita_weights}
+\input{quiver-avatar/half_period_ruling}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}

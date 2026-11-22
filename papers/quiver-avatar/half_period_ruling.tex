@@ -1,0 +1,122 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-22 / smooth ruling interchange through a four-sheeted half-period torsor
+\section{滑らかなnoncubicのruling交換と半周期torsor}
+\label{sec:qa-half-period-ruling}
+
+前節は一般係数体でruling交換が頂点固定のMorita
+自己同値にならないことを示した。
+一方、幾何的に四項を交換するための
+\emph{有限\'{e}tale被覆}は、Jacobianの半周期から構成できる。
+ここで点曲線が滑らかな開に限定し、
+nodal/$I_2$への同じ次数四の延長は主張しない。
+
+\begin{theorem}[半周期による二pencil交換の次数四torsor]
+\label{thm:qa-half-period-ruling-torsor}
+$U^\circ\subset U_2$を、二つの二次形式の四根が相異なる開とし、
+$E\to U^\circ$を滑らかな種数一の点曲線、
+$J=\Pic^0_{E/U^\circ}$をその相対Jacobianとする。
+前節のBrauer gerbe上で定義した
+$P=[GF^{-1}]$は、根の選択や線束の
+基底捩れによらない非零な
+$P\in J(U^\circ)[2]$へ降下する。
+$[2]:J\to J$のこのsection上のfiber
+\begin{equation}
+ T_P=U^\circ\times_{P,J,[2]}J
+ \xrightarrow{\quad}U^\circ
+ \label{eq:qa-half-period-four-cover}
+\end{equation}
+は有限\'{e}tale次数四で、
+$J[2]$のtorsorである。
+
+$T_P$上のtautological sectionを$t$とする。
+種数一torsor $E_{T_P}$に対する
+Jacobianの平行移動$\tau_t$は、
+相対Picard類について
+\begin{equation}
+ [\tau_t^*F]=[G],\quad
+ [\tau_t^*G]=[F],\quad
+ [\tau_t^*H]=[H],\quad
+ [\tau_t^*(HG)]=[HF]
+ \label{eq:qa-half-period-exchange}
+\end{equation}
+を満たす。
+従って相対四項
+$(\OO_E,F,H,HG)$と$(\OO_E,G,H,HF)$は、
+$T_P$をBrauer gerbeへ引き戻した後、
+必要な基底線束の捩れを除けば
+$\tau_t^*$によって全Homと積を保って対応する。
+実際の各頂点線束の同型を同時に選ぶには、
+さらにfppf局所化してよい。
+これは幾何的finite Endの比較であって、
+相対AS mutationや相対pointed$\qgr$同値を証明しない。
+
+一般係数体$K_{12}$上では$T_P$に有理点がない。
+従って上記の半周期による四頂点交換を
+一般係数体上で一点の選択として実現することはできない。
+\end{theorem}
+\begin{proof}
+$E$は元の二conicの係数空間$U^\circ$上で定義される。
+gerbe上の$F,G$の相対Picard類は
+線束の基底からの捩れに不変であり、
+各$\Gm$慣性も相対Picard類には自明に作用する。
+よって$P=[GF^{-1}]$は$J$のsectionへ降下する。
+各幾何fiberで非零二捩れであることは
+補題~\ref{lem:qa-pointed-all-rootpair-geometry}による。
+標数零の楕円曲線の$[2]$は有限\'{e}tale次数四であるため、
+base changeした$T_P$も同じ性質を持ち、
+各fiberは$J[2]$の自由かつ推移的なtorsorである。
+
+滑らかな種数一曲線$E_s$を幾何点$s$上でとり、
+一時的に原点を選ぶ。
+次数$d$の線束$L$は次数$d$の因子の線型同値類であり、
+平行移動によるpullbackは
+\[
+ [\tau_t^*L]-[L]=-d t\quad\text{in }\Pic^0(E_s)
+ \tag{Translation-degree}\label{eq:qa-half-period-degree}
+\]
+となる。実際、$\sum_\nu x_\nu$のpullbackは
+$\sum_\nu(x_\nu-t)$で、両者の差は$-dt$である。
+この公式は原点の選択によらないため相対Picardに降下する。
+$F,G$の次数はともに二、$H$の次数は四であり、
+$2t=P$かつ$2P=0$だから
+\[
+ -2t=-P=P,\qquad -4t=-2P=0.
+\]
+従って$\tau_t^*$は$F$を$FP=G$に、
+$G$を$GP=F$に、$H$を$H$に送る。
+積についても同じであり、
+式~\eqref{eq:qa-half-period-exchange}を得る。
+曲線の自己同型のpullbackは射の合成を保つので、
+各頂点の線束同型をfppf局所で選べば
+有限Endの全合成が比較できる。
+ただしその選択のdescent datumまではここで作っていない。
+
+最後に$K_{12}$上で$2t=P$となる
+$K_{12}$-有理点$t$が存在すると仮定する。
+この$t$による平行移動は
+$K_{12}$-自己同型$\tau_t$である。
+幾何Picard類$F,G$のHochschild--Serre境界は
+前節の命題~
+\ref{prop:qa-universal-conic-brauer-obstruction}により
+$\partial_E[F]=\alpha_c$、
+$\partial_E[G]=\alpha_d$である。
+この境界は基礎体上の自己同型pullbackと可換し、
+右端の$\operatorname{Br}(K_{12})$には自明に作用する。
+$\tau_t^*[F]=[G]$から
+$\alpha_c=\alpha_d$が従うが、
+同命題で$\alpha_c-\alpha_d\ne0$と証明している。
+矛盾するので$T_P(K_{12})=\varnothing$である。
+\end{proof}
+
+\begin{remark}[異なる次数四被覆と特異境界]
+\label{rem:qa-half-period-versus-root-cover}
+半周期torsor $T_P$は$J[2]$-torsorであり、
+前節の「各二次形式から分岐根を一つずつ選ぶ」
+有限\'{e}tale次数四被覆とは定義が異なる。
+両被覆の同型、OUの一般次数四射との比較、
+およびそのGaloisモノドロミーの一致は未確認である。
+nodal/$I_2$では相対$\Pic^0$の$[2]$の幾何次数が
+smooth fiberの四から変わるため、
+上記の同じ次数四の\'{e}tale torsorを
+境界まで自動的に延長してはならない。
+\end{remark}
