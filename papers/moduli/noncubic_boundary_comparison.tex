@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.46（相対境界比較の全16証明をBへ移管）
+% 2026-11-22 / v1.47（正標数慣性反例と一致点の局所不変式を追加）
 \section{noncubic 境界の内在的商表示とモジュライ写像}
 \label{sec:noncubic-boundary-comparison}
 
@@ -63,6 +63,20 @@ fppf 降下により相対慣性は $\mathcal X$ 上で自明となり、
 相対慣性による表現可能性判定を適用できる
 \cite[Tag 04YY, Lemma 101.6.2]{StacksBoundaryComparison}。
 \end{proof}
+
+\begin{remark}[標数零の仮定が必要な理由]
+\label{rem:charzero-inertia-faithful-necessity}
+上の補題を正標数へそのまま拡張することはできない。
+$\operatorname{char}k=p>0$ のとき
+$B\alpha_p\to\operatorname{Spec}k$ は、代数閉拡大体
+$K/k$ 上の自己同型の\emph{抽象群}については
+$\alpha_p(K)=\{0\}$ なので単射条件を満たす。
+しかし相対慣性群スキームは非自明な $\alpha_p$ であり、
+Stacks Project \cite[Tag 04YY]{StacksBoundaryComparison} の判定から
+この射は代数空間で表現可能ではない。
+標数零では有限型群スキームの幾何 fiber が smooth になるため、
+この障害を排除できる。
+\end{remark}
 
 \begin{lemma}[幾何点の自己同型群のスキームとしての比較]
 \label{lem:nc-geometric-inertia-scheme-iso}
@@ -245,22 +259,50 @@ $h$ を定数の $G(K)$ 元で移せば、$h(u)=p$ としてよい。
 代数スタックとしての同型から元の site 上での同値が従い、非被約基底も含まれる。
 \end{proof}
 
-\begin{remark}[一致根対における二つの接方向]
+\begin{remark}[一致根対の二つの接方向と良モジュライの局所不変式]
+\label{rem:noncubic-coincident-chi-tangent-loss}
 根対が異なる点では無限小慣性は零であり、両境界スタックの接次元は一である。
 一致根対では無限小慣性は一次元であり、接次元は二である。
-局所的に第一形式を $uv$ と固定し、第二形式の $uv$ 係数を一とすれば
+第一形式を $uv$、第二形式の $uv$ 係数を一とする
+局所表示
 \[
- f_2=a u^2+uv+c v^2
+ f_2=a u^2+uv+c v^2,\qquad \Delta(f_2)=1-4ac\ne0
 \]
-が一致点 $(a,c)=(0,0)$ における二つの接方向を与える。
-前定理はこの二方向も内在的な接空間へ同型に送られることを示す。
-この chart では
+を使うと、$(a,c)=(0,0)$ における二つの接方向が得られる。
+連結慣性トーラスは
+$(a,c)\mapsto(t^2a,t^{-2}c)$ と作用し、
+二因子の交換と二形式の交換も積 $ac$ を保つ
+（命題~\ref{prop:noncubic-coincident-gerbe-tangent}）。
+したがってこの二変数の\emph{形式的な接表示}に対する
+不変式環は
 \[
- \chi=\frac{1}{1-4ac},\qquad
- \chi-1=\frac{4ac}{1-4ac}.
+ k[[a,c]]^{\mathbb G_m}=k[[ac]]
 \]
-従って一致点で $d\chi=0$ であり、良モジュライ座標の一次微分だけでは
-この接比較を検証できない。
+であり、全慣性の有限成分も $ac$ に自明に作用する。
+ここで主張したのは表示チャート上の接表現の不変式である。
+内在的スタック全体の形式局所模型は、後の
+定理~\ref{thm:noncubic-coincident-formal-pair} に従う。
+
+表示上の良モジュライ座標は
+\[
+ \chi=\frac1{1-4ac},\qquad
+ \chi-1=\frac{4ac}{1-4ac}
+\]
+なので、$ac$ は $\chi-1$ の形式局所座標でもある。
+厳密に
+\[
+ \left.\frac{\partial\chi}{\partial a}\right|_{(0,0)}
+ =\left.\frac{\partial\chi}{\partial c}\right|_{(0,0)}=0,
+ \qquad
+ \left.\frac{\partial^2\chi}{\partial a\,\partial c}
+ \right|_{(0,0)}=4
+\]
+が成立する。この一次微分の消滅は、境界の二つの接方向が
+消えることを意味しない。
+前定理の接空間全射性は、$\chi$ の微分ではなく、
+smooth 境界チャートの相対\emph{二形式族の因数分解}から得ている。
+これらの導関数と重みは
+\path{computations/verify_noncubic_boundary.py} の有限記号計算と整合する。
 \end{remark}
 
 \subsection{境界の良モジュライ空間と全体の粗モジュライ障害}
