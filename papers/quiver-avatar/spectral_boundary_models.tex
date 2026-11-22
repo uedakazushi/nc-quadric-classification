@@ -534,3 +534,470 @@ $a$の符号を変えると$\Psi$は$(e_ce_d)\Psi$に，$F$は$F^{-1}$に変わ�
 実際，$E'_2$の平方形式の一つは$t=0$で二重根を持ち，
 既存の無限ExtによるH2延長障害はそのまま残る．
 \end{remark}
+
+\subsection{四捩れ補正のtorsorと境界の分岐次数}
+\label{subsec:qa-boundary-halving-torsor}
+
+引き続き$R=k[[t]]$，$K=k((t))$，$r=1,2$とする．
+$C_{r,K}$は$X=p_ru/v,\ Y=p_ry/v^2$により
+\[
+ \mathcal E_r:\quad Y^2=X^3+X^2+t^rX
+\]
+と同型になる．原点は無限遠点である．$P=(0,0)$と置き，
+$\iota=[-1]$，$j=T_P$とする．比較する二つのconic quotientは
+$\mathcal E_r/\langle\iota\rangle$および
+$\mathcal E_r/\langle j\iota\rangle$である．
+
+\begin{proposition}[二捩れ点の全halving scheme]
+\label{prop:qa-boundary-all-halves}
+$\mathcal H_r=[2]^{-1}(P)$は$\mathcal E_r[2]$のtorsorであり，
+有限\'etale次数四の$K$-schemeとして
+\[
+ \mathcal H_r\simeq
+ \Spec K[X,Z]/(X^2-t^r,\ Z^2-1-2X),\qquad Y=XZ
+ \tag{H-four}\label{eq:qa-boundary-four-halves}
+\]
+と書ける．従って幾何点は
+\[
+ X=\pm t^{r/2},\qquad
+ Y=\pm X\sqrt{1+2X}
+\]
+の四点である．より正確に，$L=K(\sqrt t)$として
+\[
+ \mathcal H_1\simeq\Spec L\amalg\Spec L,
+ \qquad
+ \mathcal H_2\simeq\coprod_{i=1}^4\Spec K.
+\]
+$r=1$の最小分裂体は$L$であり，最小分岐指数は二である．
+$r=2$では拡大を要しない．
+\end{proposition}
+\begin{proof}
+$q=t^r$と置く．倍点公式から
+\[
+ X(2Q)=\frac{(X(Q)^2-q)^2}
+ {4X(Q)(X(Q)^2+X(Q)+q)}
+\]
+を得る．$2Q=P$なら$Q$は原点でも二捩れ点でもないので分母は非零であり，
+$X(Q)^2=q$となる．曲線の方程式はこの条件のもとで
+$Y(Q)^2=X(Q)^2(1+2X(Q))$となる．逆にこれらの四点は倍点が$P$である．
+標数零で$[2]$は\'etale次数四だから，幾何点の計算は記載の有限\'etale
+schemeを決定する．右辺の代数は$X$と$Z$が単元であり，
+Jacobianの行列式$4XZ$も単元なので，直接にも\'etale性が分かる．
+
+$r=1$では$s^2=t$を添加すると$X=\pm s$であり，
+$1\pm2s$には$k[[s]]$内に定数項一の一意な平方根がある．
+$\sigma(s)=-s$はこれらの平方根を交換するので，四点は二つの長さ二の
+Galois軌道に分かれる．一つのhalvingの定義体も$X(Q)$として$\sqrt t$を含むため，
+これより小さい分裂体はない．有限拡大の正規化された付値について
+$2v(X(Q))=v(t)$が必要だから，分岐指数は偶数でなければならない．
+$r=2$では$X=\pm t$と$\sqrt{1\pm2t}$がすべて$K$に属する．
+\end{proof}
+
+\begin{remark}[ramified Kummer class]
+$\mathcal E_r[2]$は$K$上splitである．実際，残る二つの二捩れ点の$X$座標は
+\[
+ \alpha_r=\frac{-1+\sqrt{1-4t^r}}2,\qquad
+ \beta_r=\frac{-1-\sqrt{1-4t^r}}2
+\]
+である．$r=1$について$s^2=t$，$a_\pm=\sqrt{1\pm2s}\equiv1\pmod s$，
+$Q=(s,sa_+)$とすると，$\sigma Q=(-s,-sa_-)$である．
+差$\sigma Q-Q$の加法公式の傾きは$(a_--a_+)/2$なので，
+その$X$座標は
+\[
+ \left(\frac{a_--a_+}{2}\right)^2-1
+   =\frac{-1-a_+a_-}{2}=\beta_1.
+\]
+従って$\sigma Q-Q=T_{\beta_1}$，ただし$T_{\beta_1}=(\beta_1,0)$である．
+基底$(T_{\beta_1},P)$によって$\mathcal E_1[2]\simeq\mu_2^2$と同定すると，
+$\mathcal H_1$のKummer classは$(t,1)\in(K^\times/K^{\times2})^2$である．
+これは選んだ基底に関する記述であり，$r=2$のclassは零である．
+\end{remark}
+
+\begin{proposition}[pencil交換のtranslation torsorと全自己同型]
+\label{prop:qa-boundary-pencil-exchange-torsor}
+二つのinvolution $\iota,j\iota$を交換するtranslationは，正に
+\[
+ \{T_Q\mid Q\in\mathcal H_r\}
+\]
+である．従ってtranslationによる交換のtorsorは四点scheme $\mathcal H_r$である．
+全曲線自己同型まで許した交換schemeは
+\[
+ \{T_Q\circ[\epsilon]\mid Q\in\mathcal H_r,\ \epsilon=\pm1\}
+       \simeq\mathcal H_r\times\mu_2
+\]
+であり，次数は八である．
+
+より一般に，二つのinvolutionの非順序付き集合を保つ全群は
+\[
+ \mathcal G_r=
+ \{T_Q\circ[\epsilon]\mid 2Q\in\{0,P\},\ \epsilon=\pm1\}
+\]
+という有限\'etale次数十六の群スキームであり，完全列
+\[
+ 1\longrightarrow\mathcal E_r[2]\rtimes\mu_2
+ \longrightarrow\mathcal G_r\longrightarrow C_2\longrightarrow1
+\]
+を持つ．$r=1$の交換cosetは$K$-点を持たず，$r=2$ではsplitである．
+幾何点上の全群は$D_8\times C_2$である（$D_8$の位数を八とする）．
+\end{proposition}
+\begin{proof}
+$T_Q\iota T_Q^{-1}=T_{2Q}\iota$だから，二involutionを交換する条件は
+$2Q=P$である．この条件のもとではもう一方も$\iota$へ移る．
+曲線の$j$-不変量は
+\[
+ j(\mathcal E_r)=
+ \frac{256(1-3t^r)^3}{t^{2r}(1-4t^r)}
+\]
+で非定数であり，特に$0,1728$ではない．従って原点を保つ自己同型は
+$\{\pm1\}$である\cite[III, Theorem~10.1]{SilvermanAEC2009}．
+全自己同型をtranslationと原点固定自己同型に分解すると，表示を得る．
+$[2]^{-1}\{0,P\}$の幾何群は$C_4\times C_2$で，$[-1]$は反転として作用するため，
+全幾何群は$D_8\times C_2$となる．
+$r=2$では$T_Q\circ[-1]$が交換coset内の位数二元を与えるので，完全列もsplitする．
+$r=1$には交換cosetの$K$-点がないので，$K$上のsplitは不可能である．
+\end{proof}
+
+\begin{proposition}[四つの補正の模型への延長]
+\label{prop:qa-boundary-halves-model-extension}
+$r=2$では，すべての$Q\in\mathcal H_2(K)$について
+\[
+ \varphi_2\circ T_{-Q}:C_2\xrightarrow{\sim}E'_2
+\]
+が$R$上の同型へ延長する．$[-1]$との合成も含めた八つの交換補正にも同じ主張が成り立つ．
+
+$r=1$では$L=K(\sqrt t)$上で四つのtranslation補正が定義されるが，
+未修正の$C_1$と$E'_1$の同型には延長しない．これはさらに任意の有限DVR基底変更を
+行っても同じである．一方，両曲線の最小正則模型へ移れば，
+定義体上のすべての補正は一意に同型へ延長する．
+\end{proposition}
+\begin{proof}
+$r=2$では$Q_0=(t,t\sqrt{1+2t})$に対し，既に構成した$\Psi$が
+$\varphi_2T_{-Q_0}$の延長である．任意の$Q$との差$Q-Q_0$は二捩れなので，
+$\mathcal E_2[2]$のtranslationが元の$C_2$上に延長することを示せばよい．
+$P$のtranslationは$j[u:v:y]=[v:u:-y]$である．
+$\beta=\beta_2\in R^\times$とすると，もう一つの生成元$(\beta,0)$によるtranslationは
+\[
+ [u:v:y]\longmapsto
+ [\beta u-tv:tu-\beta v:-\beta(2\beta+1)y]
+\]
+である．二つの重み一座標の変換行列の行列式は
+$-\beta(2\beta+1)\in R^\times$であり，重み二座標も同じ単元倍だから，
+これは$R$上の自己同型である．一般fiberでの加法公式と一致し，
+元の方程式を保つことも直接確認できる．従って四つすべての補正が延長する．
+$[-1]=\iota$も$R$上に延長するので，八つの交換補正についても従う．
+
+$r=1$では，基底変更後も$C_{1,0}$は既約，$E'_{1,0}$は二成分なので，
+原模型の同型は存在しない．最小正則模型に関する主張は，
+正の種数を持つ滑らかな射影曲線の最小正則模型の一意性
+\cite[Lemma~55.10.1, Tag~0C6B]{StacksMinimalModels}
+を，指定した一般fiber同型によって標識を変えて適用すれば従う．
+一意性は一般fiberのscheme-theoretic密性と分離性による．
+\end{proof}
+
+\begin{corollary}[成分cycle上の四分の一回転]
+\label{cor:qa-boundary-halves-component-rotation}
+$t=s^e$という有限基底変更を行い，$er$が偶数であるとする．
+最小正則模型の特殊fiberは$I_{2er}$型である．
+二捩れtranslation $T_P$はcycleの半回転，四つの$T_Q$は
+\[
+ \pm er/2\quad\text{in}\quad\mathbb Z/(2er)
+\]
+という四分の一回転として作用し，二つの符号には各々二つのhalvingが属する．
+特に$r=1$では最小分裂拡大後の$I_4$で，$r=2$では元の$I_4$で，
+一つの成分だけの回転となる．
+\end{corollary}
+\begin{proof}
+最小正則模型のcycleと$T_P$の自由な半回転はgraphの構成およびその基底変更から得る．
+$T_Q$は最小正則模型へ一意に延長し，その二乗は$T_P$である．
+長さ$2er\ge4$のcycleの反転の二乗は恒等なので，$T_Q$の作用は回転でなければならない．
+回転量$m$は$2m\equiv er\pmod{2er}$を満たし，解は$\pm er/2$である．
+$Q$と$-Q$は互いに逆な回転を与え，四つのhalvingは二つの対$\{Q,-Q\}$に分かれる．
+従って各回転量には二点ずつ属する．
+\end{proof}
+
+\begin{remark}[局所補正と全体の標準性]
+ここで決定したのは，二つの指定traitにおけるhalving torsorと曲線模型への延長である．
+四捩れ点の選択を全moduli上で標準化したわけではなく，
+$r=1$には実際にramifiedな二次障害がある．
+またr=2の延長は二つのquotient pencilの順序を交換する．
+これらの曲線同型から，指定したAS10の構造対象を保つH2族への延長を推論してはならない．
+\end{remark}
+
+\subsection{共通$I_4$模型におけるpencilの降下と平方根障害}
+\label{subsec:qa-boundary-pencils-descent}
+
+以下では指定された$\varphi_2$のgraphである共通正則模型を$X=X_2$とし，
+$a:X\to C_2$，$b:X\to E'_2$と書く．
+特殊fiberの成分は$(D_+,L_0,D_-,L_\infty)$の順で表示する．
+$a$は$L_0,L_\infty$を，$b$は$D_+,D_-$を収縮する．
+$S_0,S_\infty$は$C_2$のsection
+$[u:v:y]=[0:1:0],[1:0:0]$のstrict transformとする．
+これらはそれぞれ$L_0,L_\infty$の滑らかな点で横断的に交わる．
+$E'_2$への像を$P_0=[A:B:V:d]=[0:1:0:0]$，
+$P_\infty=[1:0:0:0]$と書く．
+これらのsectionは$E'_2$の正則部分を通るので，Cartier divisorである．
+
+\begin{lemma}[$A_1$収縮に対する線束の降下]
+\label{lem:qa-a1-line-bundle-descent}
+$f:\widetilde Y\to Y$が，本節で現れる有限個の互いに交わらない
+$A_1$点の最小解消，またはその開への制限であるとする．
+その例外曲線を$L_i\simeq\mathbb P^1$とする．
+$\widetilde Y$上の線束$\mathcal L$が$Y$上の線束へ降下するための必要十分条件は
+\[
+ \deg(\mathcal L|_{L_i})=0\quad\text{for all }i
+\]
+である．このとき$f_*\mathcal L$が降下先であり，
+$\mathbf Rf_*\mathcal L\simeq f_*\mathcal L$，
+$f^*f_*\mathcal L\simeq\mathcal L$となる．
+\end{lemma}
+\begin{proof}
+必要性は明らかである．十分性は各特異点の近傍で調べればよい．
+一つの例外曲線を$L$とし，そのidealを$J=\mathcal O(-L)$とする．
+この解消は特異点の極大idealのblowupなので，
+極大idealの逆像は$J$である．$L^2=-2$より
+\[
+ J^n/J^{n+1}\simeq\mathcal O_{\mathbb P^1}(2n).
+\]
+$\mathcal L|_L$は次数零なので自明である．
+上の層の$H^1$が零であることから，この自明化を各無限小近傍$nL$へ
+互いに両立するよう順次持ち上げられる．
+従って形式関数定理を次数零に適用すると，$f_*\mathcal L$の
+特異点での完備化は$\widehat{\mathcal O}_{Y}$に同型である．
+完備化は忠実平坦なので$f_*\mathcal L$はそこで階数一局所自由である．
+同じ無限小近傍上の$H^1$消滅から$R^1f_*\mathcal L=0$となり，
+二階以上もfiber次元が一であるため零である．
+評価射$f^*f_*\mathcal L\to\mathcal L$は例外曲線上とその外で同型となるので，全体で同型である．
+\end{proof}
+
+\begin{proposition}[二つの降下条件とPerfの像]
+\label{prop:qa-boundary-two-descent-images}
+$\mathcal L\in\Pic(X)$について
+\[
+ \begin{split}
+ \mathcal L\in\operatorname{im}(a^*:\Pic(C_2)\to\Pic(X))
+ &\iff\deg_{L_0}\mathcal L=\deg_{L_\infty}\mathcal L=0,\\
+ \mathcal L\in\operatorname{im}(b^*:\Pic(E'_2)\to\Pic(X))
+ &\iff\deg_{D_+}\mathcal L=\deg_{D_-}\mathcal L=0.
+ \end{split}
+\]
+従って両方に降下する線束は，全四成分上の次数が零の線束と正確に一致する．
+特に正のgeneric次数を持つ線束は，指定した二射$a,b$の両方へは降下しない．
+
+$\mathbf La^*\Perf(C_2)$と$\mathbf Lb^*\Perf(E'_2)$は
+$\Perf(X)$の異なる全忠実な部分圏であり，どちらも他方に含まれない．
+一方，両者は$\mathcal O_X$を含む．
+\end{proposition}
+\begin{proof}
+線束の降下条件は前補題を二つの射に適用したものである．
+特殊fiberは被約なので，線束のgeneric次数は四成分上の次数の和に等しい．
+従って両方への降下はgeneric次数零を要求する．
+
+$F=\mathcal O_{C_2}(1)$は二重被覆$C_2\to\mathbb P^1_R$のpencilである．
+$a^*F$のmultidegreeは
+\[
+                 (1,0,1,0)
+\]
+となる．他方，$H=\mathcal O_{E'_2}(1)$の$b$による引戻しは
+\[
+                 (0,2,0,2)
+\]
+というmultidegreeを持つ．
+前者が$\mathbf Lb^*P$，$P\in\Perf(E'_2)$であるとすると，
+収縮される$D_+\simeq\mathbb P^1$への導来制限は
+$\mathcal O_{D_+}\otimes_k^{\mathbf L}(P\otimes^{\mathbf L}k(P_+))$
+となる．これは有限次元ベクトル空間の複体を定数化したものであるが，
+$a^*F|_{D_+}=\mathcal O_{\mathbb P^1}(1)$はその形ではない．
+従って$a^*F$は$b$の像に属さない．
+同様に$b^*H|_{L_0}=\mathcal O_{\mathbb P^1}(2)$なので，
+$b^*H$は$a$の像に属さない．
+全忠実性と構造層の保存は，前節の$\mathbf Ra_*\mathcal O_X=\mathcal O_{C_2}$，
+$\mathbf Rb_*\mathcal O_X=\mathcal O_{E'_2}$から従う．
+\end{proof}
+
+\begin{proposition}[二つのpencilの具体的な延長]
+\label{prop:qa-boundary-pencil-multidegrees}
+$F=\mathcal O_{C_2}(1)$，$H=\mathcal O_{E'_2}(1)$とする．
+$E'_2$上の線束を
+\[
+ N_0=\mathcal O_{E'_2}(2P_0),\quad
+ N_\infty=\mathcal O_{E'_2}(2P_\infty),\quad
+ N_2=\mathcal O_{E'_2}(P_0+P_\infty)
+\]
+で定める．generic fiber上では，$N_0,N_\infty$はともに第一conicの
+次数一pencilの引戻し，$N_2$は第二conicの次数一pencilの引戻しである．
+$X$上では次の等式が成り立つ．
+\[
+ \begin{split}
+ a^*F&\simeq\mathcal O_X(2S_0+L_0)
+       \simeq\mathcal O_X(2S_\infty+L_\infty),\\
+ b^*N_0&\simeq\mathcal O_X(2S_0)
+       \simeq a^*F\otimes\mathcal O_X(-L_0),\\
+ b^*N_\infty&\simeq\mathcal O_X(2S_\infty)
+       \simeq a^*F\otimes\mathcal O_X(-L_\infty),\\
+ b^*N_2&\simeq\mathcal O_X(S_0+S_\infty),\\
+ b^*H&\simeq(a^*F)^{\otimes2}\otimes\mathcal O_X(-L_0-L_\infty)
+       \simeq\mathcal O_X(2S_0+2S_\infty).
+ \end{split}
+ \tag{P-desc}\label{eq:qa-boundary-pencil-divisors}
+\]
+従ってmultidegreeは
+\[
+ \begin{array}{c|c}
+ \text{線束}&(D_+,L_0,D_-,L_\infty)\\\hline
+ a^*F&(1,0,1,0)\\
+ b^*N_0&(0,2,0,0)\\
+ b^*N_\infty&(0,0,0,2)\\
+ b^*N_2&(0,1,0,1)\\
+ b^*H&(0,2,0,2)
+ \end{array}
+\]
+となる．また$E'_2$上で
+\[
+             N_0\otimes N_\infty\simeq N_2^{\otimes2}\simeq H.
+\]
+\end{proposition}
+\begin{proof}
+$C_2$上で$u=0,v=0$はそれぞれgenericに二重点を切り出す．
+$[u:v:y]=[0:1:0]$近傍のblowup chart $u=x$，$y=xz$，$t=xs$から，
+$u$は例外$L_0$に沿って一次で消える．
+$t$-chartで$u=t\alpha,y=t\beta$とすると
+$\beta^2=\alpha^2+\alpha+t^2\alpha^3$であり，
+section近傍では$\alpha$は$\beta^2$の単元倍である．
+従って$u$の引戻しのdivisorは$2S_0+L_0$である．
+$v$についても同様なので最初の等式を得る．
+$b$は$P_0,P_\infty$の近傍で同型であるから，
+$N_0,N_\infty,N_2$の引戻しは記載のsection divisorとなる．
+
+第一conicは$Q'_1:AB=t^2V^2$で，$P_0,P_\infty$の像は
+$q_0=[0:1:0]$，$q_\infty=[1:0:0]$である．
+これらは全族の正則部分を通るsectionで，
+$E'_2\to Q'_1$による逆像はそれぞれ$2P_0,2P_\infty$である．
+従って$N_0,N_\infty$は$\mathcal O_{Q'_1}(q_0),\mathcal O_{Q'_1}(q_\infty)$の引戻しである．
+第二conicは$Q'_2:d^2=V(U+V)$で，
+\[
+ [s:z]\longmapsto[U:V:d]=[s^2-z^2:z^2:sz]
+\]
+により$\mathbb P^1_R$と同型である．
+その$z=0$の点の逆像は$P_0+P_\infty$なので，第二pencilの引戻しは$N_2$となる．
+$Q'_1$のhyperplane $V=0$は$q_0+q_\infty$，
+$Q'_2$のhyperplane $V=0$はその次数一divisorの二倍であるため，
+$N_0N_\infty=N_2^2=H$を得る．
+
+最後に，$X$は四sectionが生成する線型系のbase idealのblowupであり，
+その例外divisorは$L_0+L_\infty$である．
+この線型系は$F^{\otimes2}$の部分系なので
+$b^*H=(a^*F)^{\otimes2}(-L_0-L_\infty)$となる．
+これはsection divisorからの等式とも一致する．
+multidegreeは，$S_i$が$L_i$と一度だけ交わることと
+$I_4$の交点行列から計算できる．
+\end{proof}
+
+\begin{lemma}[$I_N$の重み付き次数]
+\label{lem:qa-cycle-weighted-degree-obstruction}
+$N\ge2$とし，正則半安定模型の被約特殊fiberが
+$\Gamma_0,\ldots,\Gamma_{N-1}$を巡回順に並べた$I_N$型であるとする．
+$\mathcal L$のmultidegreeを$d_j=\deg_{\Gamma_j}\mathcal L$として
+\[
+                  w(\mathcal L)=\sum_{j=0}^{N-1}j d_j\pmod N
+\]
+と置く．この値は整数vertical divisorによるtwistで変わらない．
+$\mathcal L^{\otimes2}\simeq\mathcal O$なら全$d_j$が零なので，特に$w(\mathcal L)=0$である．
+\end{lemma}
+\begin{proof}
+$N\ge3$で一つの成分$\Gamma_i$をtwistすると，multidegreeには
+第$i$成分に$-2$，隣接成分に各$1$が加わる．
+重み付き和の変化は$-2i+(i-1)+(i+1)$であり，
+添字が巡回する箇所でも$N$の倍数しか加わらない．
+$N=2$では二成分の交点数は$2$で，変化は$(-2,2)$または$(2,-2)$だから同じ結論となる．
+整数vertical divisorはこれらの成分の整数結合なので主張が従う．
+\end{proof}
+
+\begin{theorem}[全有限分岐後にも残る入力二捩れの平方根障害]
+\label{thm:qa-boundary-input-two-torsion-line-obstruction}
+$r=1,2$，$e\ge1$とし，$t=s^e$の後の共通最小正則模型を$X_r^{(e)}$とする．
+入力のgeneric二捩れを
+\[
+ M_{r,K'}=\mathcal O_{C_{r,K'}}\bigl([0:1:0]-[1:0:0]\bigr),
+ \qquad K'=k((s)),
+\]
+とし，指定された$\varphi_{r,K'}$によって共通generic fiberへ移す．
+この線束の類を延長する線束$\mathcal M$は$X_r^{(e)}$上に存在するが，
+\[
+                    \mathcal M^{\otimes2}\simeq\mathcal O_{X_r^{(e)}}
+\]
+を満たすものは存在しない．
+従って$C_r\times_R k[[s]]$上または$E'_r\times_Rk[[s]]$上にも，
+このgeneric二捩れを延長する二次線束は存在しない．
+
+さらに，generic第一conicの次数一pencilの引戻しを延長する線束$N$で，
+\[
+                         N^{\otimes2}\simeq\mathcal O_{E'_r}(1)
+\]
+を満たすものは，いずれの有限DVR基底変更後にも存在しない．
+ここで右辺も同じ基底変更を施している．
+\end{theorem}
+\begin{proof}
+二つのgeneric点を延長するsectionのstrict transformを
+$S_0,S_\infty$とする．これらは元の$I_2$または$I_4$のcycleで反対側の成分を通る．
+有限基底変更と解消は各辺を$e$個の辺に分割するので，
+$I_N$，$N=2re$において両sectionの成分間距離は$re=N/2$となる．
+$S_\infty$が通る成分を$\Gamma_0$とすれば，$S_0$が通る成分は$\Gamma_{N/2}$である．
+従って
+\[
+ \mathcal M_0=\mathcal O_{X_r^{(e)}}(S_0-S_\infty)
+ \quad\text{は}\quad
+ w(\mathcal M_0)=N/2\ne0\pmod N
+\]
+を満たす．
+
+模型は正則なので，他の延長は$\mathcal M_0\otimes\mathcal O(D)$，
+$D$が整数vertical divisor，と書ける．
+実際，generic fiber上の同型を有理sectionと見れば，そのdivisorはverticalである．
+前補題より$w$はこのtwistで変わらない．
+従ってどの延長も全成分上の次数を零にはできず，その平方も自明にはならない．
+元の特異模型上に二次線束があれば共通正則模型への引戻しが反例となるので，
+それらの模型上にも存在しない．
+
+第二conic$Q'_2:d^2=V(U+V)$は全族上で$\mathbb P^1_R$と同型である．
+その次数一pencilの引戻し
+$N_2=\mathcal O_{E'_r}(P_0+P_\infty)$は線束として存在し，
+$N_2^{\otimes2}\simeq\mathcal O_{E'_r}(1)$を満たす．
+generic第一pencilは$\varphi_r$により$\mathcal O_{C_r}(2[1:0:0])$へ，
+第二pencilは$\mathcal O_{C_r}([0:1:0]+[1:0:0])$へ移る．
+両者の比は$M_{r,K'}$である．従って第一pencilの延長$N$も同じ平方を持てば，
+$N\otimes N_2^{-1}$が禁止された二次線束となる．
+\end{proof}
+
+\begin{remark}[一致型における平方の具体的な欠損]
+$r=2,e=1$では，式\eqref{eq:qa-boundary-pencil-divisors}から直接
+\[
+ \mathcal O_X(S_0-S_\infty)^{\otimes2}
+          \simeq\mathcal O_X(L_\infty-L_0)
+\]
+を得る．他の延長の平方を自明にするには
+$2D+L_\infty-L_0=m(D_++L_0+D_-+L_\infty)$が必要だが，
+$D_+$の係数は$m$が偶数，$L_0$の係数は$m$が奇数であることを要求する．
+ここでverticalな主divisorが全fiberの整数倍に限られるのは，
+その有理関数がproperで幾何的に整なgeneric fiber上で零点も極も持たず，
+$K^\times$の元となるためである．
+これは重み付き次数による一般的な障害の最小の具体例である．
+\end{remark}
+
+\begin{remark}[線束自体の延長との区別]
+$r=2$では$\mathcal M_0=\mathcal O_X(S_0-S_\infty)$を
+$\mathcal O_X(D_++L_0)$でtwistするとmultidegreeは$(-1,0,1,0)$となる．
+従って$a$の両例外成分上で次数零となり，$C_2$上の線束へ降下する．
+また$E'_2$上では$\mathcal O(P_0-P_\infty)$が線束としての延長である．
+前定理が排除するのは，このgeneric線束を\emph{二乗が自明な線束として}
+延長することである．
+\end{remark}
+
+\begin{remark}[入力と出力の二次線束]
+上の不存在は入力の$M_{r,K'}$についての主張である．
+出力の商曲線$C'_2$上には，前節で構成したFricke二次線束$M'_2$が
+全族上で存在し，その二乗は自明である．
+曲線$E'_2$上で平行移動を与える入力二捩れと，
+商$C'_2$上でその被覆を分類する出力二次線束は異なるデータである．
+また二つのPerf部分圏が構造層を共有することから，
+非可換H2 heartや指定されたpencilが一致すると推論することはできない．
+\end{remark}

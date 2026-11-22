@@ -1,6 +1,22 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.24（A v1.69・20節、B v0.40・31節、C v4.10）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.25（A v1.69・20節、B v0.40・31節、C v4.11）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 全Fricke境界射・pencil・半周期の現在の結論
+
+正本は [全表示groupoid上の降下](../papers/quiver-avatar/fricke_boundary_descent.tex) と [共通模型・pencil・半周期](../papers/quiver-avatar/spectral_boundary_models.tex)。自然な順序付き射は全 $\mathfrak N^{\rm pres}$ から $\mathfrak U=\{\Delta(g_2)\operatorname{Res}(g_1,g_2)\ne0\}\subset\mathfrak T_{\rm bal}^{\rm ord}$ へ延長する。形式表示だけに依存せず、$\chi\ne0$ 上の全fppf Isomと平方根選択を比較し、残るsmooth開と貼り合わせた。
+
+再開用の式は $q=(\chi-1)/(4\chi)=ab$、入力 $(uv,au^2+uv+bv^2)$、出力 $(U^2-4qV^2,V(U+V))$。$\rho^2=1-4q,\ \ell^2=(1+\rho)/2$ の可逆平方根をétale局所で選ぶ。入力交換は $L=\left(\begin{smallmatrix}\ell&b/\ell\\a/\ell&\ell\end{smallmatrix}\right)$、$c_0'=d_0,d_0'=\rho c_0$、$(a,b)'=(-a,-b)$。出力交換は $(U,V,C,D)\mapsto(-U-4qV,U+V,-\rho C,\rho D)$。$\ell$の符号差は入力の同時符号で出力では消え、$\rho$の符号差は $m=\ell\ell',m^2=ab$ によるordered行列 $\left(\begin{smallmatrix}0&b/m\\a/m&0\end{smallmatrix}\right)e_d$ で、出力では同時符号 $\delta'$ に一致する。この等式が三重overlapを含む降下を与える。形式近傍の $\Gamma=\mu_2^3$ を全域の定数bandとは扱わない。
+
+線束境界点とそのframeを固定した2-fiberは $[\operatorname{Spec}k[a,b]/(ab)/\mathbb G_m]$、重み $(-2,2)$。二つの非零軸は各々 $B\mu_2$、原点は $B\mathbb G_m$。慣性写像は一致で $H_{\rm eq}\twoheadrightarrow\mu_2^3$・核 $\mathbb G_m$、一根共有で $D_8\to\mu_2^3$・核 $\mu_2$・像4。smoothの一般核2・非順序付き標的への像8を保つ。これは粗式だけ同じで核8・像2となる弱い共変射とは異なる。
+
+共通I4模型を $(D_+,L_0,D_-,L_\infty)$ の順に並べる。線束がa側へ降下する条件は $\deg L_0=\deg L_\infty=0$、b側へ降下する条件は $\deg D_+=\deg D_-=0$。$a^*F$ のmultidegreeは $(1,0,1,0)$、$b^*H$ は $(0,2,0,2)$ なのでPerfの像は互いに包含しない。$b^*N_0=a^*F(-L_0)$、$b^*N_\infty=a^*F(-L_\infty)$、$N_0N_\infty=N_2^2=H$。第一pencilの線束延長は存在するが、その平方をHにすることはできない。
+
+任意有限分岐 $t=s^e$ 後の最小正則模型は $I_N,N=2re$。入力二捩れの標準延長 $\mathcal O(S_0-S_\infty)$ は $\sum j\deg_{\Gamma_j}\equiv N/2\pmod N$ であり、整数vertical twistはこれを変えない。従って入力二捩れは線束としては延長するが、二乗自明な線束には延長しない。出力商曲線上の二次線束は別のデータで、全族上に存在する。
+
+全halving schemeは $[2]^{-1}(P)=\operatorname{Spec}K[X,Z]/(X^2-t^r,Z^2-1-2X)$、$Y=XZ$。一根共有では二つの $\operatorname{Spec}K(\sqrt t)$、一致では四つの $\operatorname{Spec}K$。一根共有のKummer classは指定基底で $(t,1)$。全交換はこの四点torsorと $\{\pm1\}$ の積。一致では全四translation補正が元模型の同型に延長し、共有根では未修正模型の成分数が異なる。最小正則模型では定義体上の全補正が延長し、成分cycleに四分の一回転で作用する。
+
+今回の範囲では直接証明と相互読取りを完了したが、包括的新規性・形式証明・外部査読を完了したとはしない。次は別rotated構造頂点のpointed認識と、既知文献に対する貢献範囲の絞り込みを扱う。
 
 ## Fricke境界の共通正則模型と二次線束
 
@@ -14,7 +30,7 @@ $r=2$の主要chartは $t=xs,y=xz,z^2=1+s(1+x^2)$、出力 $[A:B:V:d]=[sx^2:s:1:
 $\Psi=[a^2(u+v)^2-(v-u)^2:(v-u)^2:4ay:a(u+v)(v-u)]$
 がある。指定同型との差は $F=\Psi^{-1}\Phi_2=T_Q$、$Q=[1:1:a]$、$2Q=(0,0)$ という四捩れtranslation。$F^2=[v:u:-y]$。$\Phi_2\iota=e_d\Phi_2$ に対し $\Psi\iota=e_c\Psi$ なので、補正は二conicの順序を交換する。共有根の未修正模型は特殊成分数が違い、有限DVR拡大後にも抽象同型にならない。
 
-有限étale二次代数・trace分解・線束の構成は任意非平坦基底変更と可換。graph形成はflat base changeに限定し、$t=s^e$後の節点 $xy=s^e$ を解消するとI$_{2re}$、商I$_{re}$。次の核心は全G同変な境界射への降下である。境界線束点の慣性、半周期の分裂、二つの収縮に対するline bundle/Perf像を計算する。単一traitでの存在を大域的射の存在と読み替えない。
+有限étale二次代数・trace分解・線束の構成は任意非平坦基底変更と可換。graph形成はflat base changeに限定し、$t=s^e$後の節点 $xy=s^e$ を解消するとI$_{2re}$、商I$_{re}$。全G同変な境界射への降下、全境界fiber、半周期の分裂、line bundle/Perf像は上節の結論により決定した。graph形成と解消の任意非平坦基底変更は未主張である。
 
 ## 二次積付きTF標的の有限型性と相対認識
 
@@ -41,13 +57,13 @@ $\Psi=[a^2(u+v)^2-(v-u)^2:(v-u)^2:4ay:a(u+v)(v-u)]$
 
 **Pencilの役割。** 曲線と $(M,\mu)$ を残してpencilを忘れると、nodalの全慣性は $\Gm\rtimes C_2$、入力D8は $\mu_4\rtimes C_2$。I2の全群は $\Gm^2\rtimes(C_2\times C_2)$、pencil保存群は $t_+^2=t_-^2$ の部分群である。従ってpencilを忘れた標的への写像は慣性単射であっても全射でなく、先の開埋込みの主張には二重射を保持することが必要である。
 
-**Fricke境界でなお必要な曲線修正。** 元の点曲線と同時符号は $\operatorname{Spec}_C(\OO_C\oplus M)$ から全境界で回復する。一方、平坦Fricke出力の点曲線との指定generic同型は
+**Fricke境界の指定同型と曲線修正。** 元の点曲線と同時符号は $\operatorname{Spec}_C(\OO_C\oplus M)$ から全境界で回復する。一方、平坦Fricke出力の点曲線との指定generic同型は
 \[
 [u:v:y]\dashrightarrow
 [p_ru^2+b_rv^2:uv:p_ru^2-b_rv^2:y],
 \quad(p_1,b_1)=(1,t),\ (p_2,b_2)=(t,t).
 \]
-$r=1$では入力特殊曲線はnodal、出力はI2であり族同型に延長しない。$r=2$では双方I2だが、この式が各成分の稠密開を一点へ収縮する。有限trait基底変更でもこの指定式の障害は残る。$r=2$の別のgeneric同型すべてを否定したものではない。次はこのグラフ閉包・正規化と半安定修正を、慣性・pointing・底変更とともに比較する。
+$r=1$では入力特殊曲線はnodal、出力はI2であり族同型に延長しない。$r=2$では双方I2だが、この式が各成分の稠密開を一点へ収縮する。有限trait基底変更でもこの指定式の障害は残る。$r=2$の別のgeneric同型すべてを否定したものではない。このgraph閉包は上記の正則I2/I4模型であり、慣性・pencil・底変更の比較も現行境界節に統合した。
 
 Frobenius/trace・inverse matrix・similitude・node積の厳密恒等式は `verify_spectral_atkin_lehner.py` の15項目へ統合した。Artin性・全忠実性・全基底への降下の証明は原稿で分担・相互点検し、有限計算からは結論しない。
 
@@ -78,7 +94,7 @@ j(E_f)=\frac{64(4\chi-3)^3}{\chi-1}.
 
 この二族は実際のnoncubic族である。像にH2族としてのtrait延長があれば、論文Bのnoncubic境界の閉性からその全体が $\mathfrak N$ を経由する。しかし正則な $\chi:\mathfrak N\to\mathbb A^1$ に極が生じるため矛盾する。任意の有限分岐trait基底変更でも極は消えない。これは固定spectral曲線上のPicard線束の非延長より強い内在的障害であり、全noncubic境界からH2へのspectral延長を今後の存在目標にしない。
 
-Smooth対応の相対射と同型層・慣性は次節で決定した。節点TF標的のArtin性・有限型性・balanced商・元Nの開埋込みは証明済み。次はFricke境界の曲線修正と平坦特異代数を比較する。既存の積欠損・節点奇偶障害も入力にする。古典的二同種公式はSilverman第2版III Example 4.5に帰属し、今回のpointed適用の包括的新規性は未確認。
+Smooth対応の相対射と同型層・慣性は次節で決定した。節点TF標的のArtin性・有限型性・balanced商・元Nの開埋込みは証明済み。Fricke境界の曲線修正と全groupoid上の射は上記の境界節で構成した。既存の積欠損・節点奇偶障害も入力にする。古典的二同種公式はSilverman第2版III Example 4.5に帰属し、今回のpointed適用の包括的新規性は未確認。
 
 再現：`python3 computations/verify_spectral_atkin_lehner.py` は二同種・対合・二つの $j$ 公式・固定点・等 $j$ 反例・境界極に加え、相対商座標、慣性生成行列と中心の平方類、nonsplit pencilのcocycleをSymPy厳密演算で確認する。閉stack入力・gerbe同値・無限Ext・圏の認識は原稿の証明であり、この計算の認証範囲ではない。
 
@@ -474,8 +490,7 @@ $E$ と二点で交わり、$E^2=-2,\ D'\cdot E=2$ だから、
 垂直 Cartier twist による $\deg_E$ の変化は偶数。
 同じ一径数基底での A1 最小解消だけでは
 多重次数零の相対 $\Pic^0$ 線束にできない。
-基底変更・stable reduction・compactified Picard・別モデルは
-この障害で排除されない。
+二traitでは任意有限分岐後の最小正則模型I_Nにも重み付き次数N/2 mod Nが残り、入力二捩れを多重次数零・二乗自明な線束には延長できない。線束自体の延長、非可逆TF層、および別の商曲線上のFricke出力二次線束は区別する。証明は現行の境界模型節を参照。
 
 **二次積の任意基底での scheme-theoretic 欠損（Cで証明）。**
 $C:y^2=f_1f_2$ と反不変 torsion-free sheaf $\mathcal M$ に
@@ -534,14 +549,7 @@ $(C,M,\mu)$へのfppf相対群oid射が存在する
 （C prop:qa-spectral-quadratic-stack-map）。
 欠損余核の表示は非被約底を含む任意の基底変更と可換する。
 
-**未解決の核心**は $\mathfrak{TF}^{quad}$ のArtin性・
-有限型開条件の記述、表示射の全忠実性・fiber・慣性・
-相対変形、偏極・半安定と非単純I2点を両立するモジュライ、
-および内在的O-marked H2境界へのgroupoid比較である。
-その後でsquare/$\Sigma_2$への相対elementary transform、
-canonical Serre根・元のAS $\qgr$ heartとO-markingの
-pointedな同一視を確立する。
-体上同型類全単射と相対stack同値を混同しない。
+節点曲線のTF標的のArtin性・有限型性、balanced開の表示、全忠実性、fiber・慣性は [標的認識](../papers/quiver-avatar/torsion_free_spectral_recognition.tex) で証明済み。自然なFricke射の大域的境界延長は [降下節](../papers/quiver-avatar/fricke_boundary_descent.tex) に置く。非被約spectral曲線全体の標的と任意AS heartの認識は別の未解決問題である。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -2121,7 +2129,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 ## 検証範囲と再現手順
 
-**現行C v4.10の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は8項目の厳密計算PASS。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:22・522・164、明示的な論文間参照122件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
+**現行C v4.11の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は12項目の厳密計算PASS。全halving式・pencil多重次数・全群作用と平方根overlapも含む。大域降下、二収縮のPerf像、全有限分岐後の平方根障害、全halving torsorの証明も相互読取りした。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:23・542・169、明示的な論文間参照122件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
 
 
 **現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現行3原稿で `scripts/check.py papers` は実行PASS、LuaLaTeXの実組版は依存不足により未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
@@ -2130,7 +2138,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 **既存の有限型代数性の検証範囲。** 主論文v1.44の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlas、普遍cubic族の降下と既約性、被約境界の余次元2とsmooth降下、ambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
 
-**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.10のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
+**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.11のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
 
 **現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 

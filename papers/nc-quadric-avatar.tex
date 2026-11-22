@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.10
+% 日本語 LuaLaTeX。2026-11-23 / v4.11
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.10（Fricke境界模型・二次線束と四捩れ補正）}
+\date{2026年11月23日\quad v4.11（Fricke射の大域的境界延長と平方根障害）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -97,6 +97,11 @@ smooth Fricke射の非忠実性とは異なる。
 Fricke出力の二次線束は全族上可逆で，balanced標的の追加境界へ延長する。
 根対一致型では四捩れtranslationによる補正同型が元の模型間でも延長し，
 この補正は二つのconicの順序を交換する。
+入力二捩れの二次線束延長は，いずれの有限分岐後の最小正則模型にも存在しない。
+さらに全表示群の同型と平方根選択のcocycleを比較し，
+自然な順序付きFricke射を全noncubicからbalanced標的へ延長する。
+線束境界上の2-fiberは$[\Spec k[a,b]/(ab)/\Gm]$で，
+トーラスの重みは$(-2,2)$，二つの穿孔枝は$B\mu_2$，交点は$B\Gm$となる。
 
 
 さらに、cubicの線束辞書、normal rulingの二重忘却、
@@ -382,6 +387,15 @@ $\kk$ は標数零の代数閉体とする。
 右加群規約に対応する導来同値と標準 heart の exact 同値を区別する。
 基底上の係数を消去に使う条件は可逆性であり、単に零でないことではない。
 
+境界比較の具体的な構成は，第~\ref{sec:qa-spectral-boundary-models}節の
+共通正則模型，pencilの多重次数，四捩れ補正の全torsorを経て，
+第~\ref{sec:qa-global-fricke-boundary}節の大域的Fricke射へ進む．
+blowup，形式関数定理，最小正則模型の一意性は既知の一般結果
+\cite{StacksBlowups,StacksFormalFunctions,StacksMinimalModels}を用いる．
+本稿で直接証明する部分は，指定された二模型の比較，入力二捩れの全有限分岐後の障害，
+全表示群に対する出力作用とその降下，および線束境界上の全fiberである．
+これらの組合せについて包括的な新規性の確定は行っていない．
+
 \input{quiver-avatar/qp_presentations}
 \input{quiver-avatar/foundation_charts}
 \input{quiver-avatar/square_rotated_foundations}
@@ -401,6 +415,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/torsion_free_spectral_recognition}
 \input{quiver-avatar/spectral_boundary_models}
+\input{quiver-avatar/fricke_boundary_descent}
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}
 
@@ -429,7 +444,11 @@ balanced部分の群商表示、元のnoncubicの全忠実な開埋込みまで�
 第~\ref{sec:qa-spectral-boundary-models}節では，二境界traitのgraph閉包を
 正則な$I_2/I_4$模型として構成し，有限\'etaleな符号被覆と二次線束を延長した．
 根対一致型には四捩れtranslationで補正した別の模型同型も存在するが，
-二conicの順序を交換する．全表示群に同変な境界射と，その任意基底変更への降下は残る．
+二conicの順序を交換する．入力二捩れの平方根障害は，任意の有限分岐後の
+最小正則模型にも残る．第~\ref{sec:qa-global-fricke-boundary}節では，
+全表示groupoidの正規化と平方根選択の比較から，自然な順序付きFricke射を
+全noncubicからbalanced標的へ延長し，線束境界上の全2-fiberと慣性を決定した．
+この標的の拡張はH2延長不能の結論と両立する．
 以下の課題は、他のavatarや全AS表示を含む範囲を扱う。
 本稿の有限代数の開部分と、幾何的 avatar の開部分は、それぞれ独立に定義される。
 両者を相対 AS 分類として同定するには、avatar から得る有限代数が

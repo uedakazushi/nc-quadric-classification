@@ -1,0 +1,400 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 日本語 LuaLaTeX。2026-11-23 / v4.11。
+\section{自然なFricke射の全noncubic境界への延長}
+\label{sec:qa-global-fricke-boundary}
+
+本節では二trait上の構成を，全表示groupoid上の射へ延長する．
+標的には二次自己双対線束を持つ節点対象を加える．
+一致点の全慣性による局所表示から始め，補助平方根の選択を変える
+全同型を比較して，任意基底変更と両立する大域射を構成する．
+
+\subsection{一致根対に沿うFricke射の全慣性付き形式延長}
+
+以下では$k$を標数零の代数閉体とする．
+入力の一致点を$(uv,uv)$，出力の線束境界点を
+$\ell_0=(U^2,V(U+V))$で表す．
+$H=H_{\rm eq}$は入力の全慣性，$\Gamma$は$\ell_0$の全慣性を表す．
+入力の次数一生成元を$c_0,d_0$，二形式の変形parameterを$a,b$とし，
+出力の次数一生成元を$C,D$とする．
+
+\begin{proposition}[線束境界点の慣性と形式変形]
+\label{prop:qa-fricke-line-formal-target}
+$\ell_0$の全慣性は$\Gamma\simeq\mu_2^3$であり，
+一次変形空間は一次元，$\Gamma$の接作用は自明である．
+この点のresidual gerbeに沿うbalanced標的の形式完備化は
+\[
+ \widehat{\mathfrak T}_{\mathrm{bal},\ell_0}
+ \simeq[\operatorname{Spf}k[[q]]/\Gamma]
+\]
+であり，$\Gamma$は$q$に自明に作用する．
+第一形式が二重根を持つ順序付きの点を選んだ
+$\mathfrak T_{\mathrm{bal}}^{\rm ord}$の形式完備化も同じ表示である．
+ここではこの順序付きの持上げを用いる．普遍一変数族として
+\[
+ g_{1,q}=U^2-4qV^2,\qquad g_2=V(U+V)
+\]
+を取れる．この近傍では$1/\chi=4q$である．
+\end{proposition}
+\begin{proof}
+$u=U,v=U+2V$と第二生成元の二倍によって，閉点を
+$(u^2,v^2-u^2)$へ移す．第一形式の二重根と第二形式の二単根を保つ
+$\PGL_2$部分群は$v\mapsto-v$による$C_2$だけである．
+二つの形式の型が異なるため，形式交換は安定化群に入らない．
+$v\mapsto-v$は二形式を正確に保存する位数二の行列で持ち上がり，
+二つの生成元の独立な符号と可換する．従って全群は$\mu_2^3$となる．
+
+行列の一次変分を$\left(\begin{smallmatrix}\alpha&\beta\\\gamma&\delta\end{smallmatrix}\right)$，
+生成元のスカラー変分を$r,s$とすると，六係数への軌道微分は
+\[
+ \bigl(2(\alpha-r),2\beta,0,
+       2(s-\alpha),2(\gamma-\beta),2(\delta-s)\bigr).
+\]
+その階数は五，核は共通次数スカラーだけである．
+従って第一形式の$v^2$係数が横断parameterとなる．
+上の三つの符号対称性はこの係数を保つので接作用は自明である．
+
+形式的陰関数定理により，閉点で恒等に合同な群変換を使って
+任意のArtin変形をこの一変数族へ正規化できる．
+閉点の各慣性元には，下に与える族全体の明示的な持上げがある．
+また$1/\chi=4q$はこの近傍で正則なので，二つの正規形が同型なら
+nilpotent parameterも含めて$q$は等しい．
+軌道微分の核を共通スカラーで割ると零になるため，
+閉点の同型を指定した正規化の持上げは一意である．
+よって全Artin同型を含む形式商表示が得られる．
+\end{proof}
+
+\begin{theorem}[自然なFricke射の形式延長]
+\label{thm:qa-fricke-formal-equivariant-extension}
+$A=k[[a,b]]$，$q=ab$とし，$A$内の一意な平方根
+\[
+ \rho^2=1-4ab,\quad\rho\equiv1,\qquad
+ \ell^2=(1+\rho)/2,\quad\ell\equiv1
+\]
+を取る．一致根対の全慣性
+\[
+ H=\bigl((\Gm\rtimes C_2)\times D_8\bigr)
+       /\langle(-1,e_ce_d)\rangle
+\]
+を用いた形式表示上で，$\mathscr D^{\rm ord}$は
+\[
+ \boxed{
+ [\operatorname{Spf}A/H]\longrightarrow
+ [\operatorname{Spf}k[[q]]/\Gamma],\qquad
+ q=ab
+ }
+\]
+へ延びる．慣性の準同型は
+\[
+ H\longrightarrow H/H^\circ\xrightarrow{\sim}\Gamma,
+ \qquad H^\circ=\Gm
+\]
+である．この射は，全群作用と全Artin同型を含む形式射である．
+平方根を補助変数とする下記の\'etale chartへ代数化すると，
+その$ab\ne0$の開上で指定した自然な順序付きFricke射と一致する．
+\end{theorem}
+\begin{proof}
+\paragraph{入力の全群作用.}
+入力族を
+\[
+ c_0^2=uv,\qquad d_0^2=au^2+uv+bv^2
+\]
+とする．$H$の生成元$T_z,r,e_c,e_d,\tau$のparameterへの作用は
+\[
+ T_z(a,b)=(z^{-2}a,z^2b),\quad r(a,b)=(b,a),\quad
+ e_c(a,b)=e_d(a,b)=(a,b),\quad\tau(a,b)=(-a,-b).
+\]
+生成元の持上げを次で定める：
+\[
+ \begin{array}{c|cccc}
+ &u'&v'&c'_0&d'_0\\\hline
+ T_z&zu&z^{-1}v&c_0&d_0\\
+ r&v&u&c_0&d_0\\
+ e_c&u&v&-c_0&d_0\\
+ e_d&u&v&c_0&-d_0\\
+ \tau&\ell u+(b/\ell)v&(a/\ell)u+\ell v&d_0&\rho c_0
+ \end{array}
+\]
+全生成元は$q,\rho,\ell$を保つ．$\tau$の行列を$L(a,b)$とすると
+\[
+ \ell^2+ab/\ell^2=1,\qquad
+ \ell^2-ab/\ell^2=\rho,
+\]
+より
+\[
+ u'v'=au^2+uv+bv^2,
+ \qquad -a(u')^2+u'v'-b(v')^2=\rho^2uv
+\]
+が成り立つ．従って$\tau$はparameter$(-a,-b)$の入力族への同型である．
+
+群関係も実際の同型として確認できる．
+\[
+ L(-a,-b)L(a,b)=\rho I_2
+\]
+であり，$\tau^2$は四つの次数一生成元全ての$\rho$倍となるので，
+共通次数スカラーを割った群では恒等である．
+$r^2=1$，$rT_zr=T_{z^{-1}}$，$\tau e_c\tau=e_d$が成立し，
+$\tau$は$r,T_z$と可換する．例えば
+\[
+ L(z^{-2}a,z^2b)\operatorname{diag}(z,z^{-1})
+ =\operatorname{diag}(z,z^{-1})L(a,b)
+\]
+が最後の可換性を与える．さらに$T_{-1}$と$e_ce_d$の差は
+全次数一生成元への$-1$倍なので，中央商の関係も満たされる．
+従ってこれは単なる閉点の接表現でなく，作用groupoid全体の有効なcocycleである．
+
+この族が一致点に沿う全形式変形を表すことも直接確認できる．
+Artin局所基底上で第一の非退化二形式を$uv$にし，
+第二形式の可逆な$uv$係数を生成元の単元倍で一にすれば上の形になる．
+順序を保つ正規形間の同型は$T_z,r,e_c,e_d$で尽くされる．
+順序を交換する同型は，上の$\tau$を合成して順序を保つ同型へ帰着する．
+よって本表示は全同型を含み，論文Bの一致点の形式表示と一致する．
+
+\paragraph{出力の全群作用.}
+出力族を
+\[
+ C^2=U^2-4qV^2,\qquad D^2=V(U+V)
+\]
+とし，入力の生成元の像を
+\[
+ \begin{array}{c|cccc}
+ &U'&V'&C'&D'\\\hline
+ T_z&U&V&C&D\\
+ r&U&V&-C&D\\
+ e_c,e_d&U&V&C&-D\\
+ \tau&-U-4qV&U+V&-\rho C&\rho D
+ \end{array}
+\]
+で与える．$\tau$の二次元行列の二乗は$\rho^2I_2$であり，
+二形式はいずれも$\rho^2$倍される．従ってこれは実際の出力同型で，
+その二乗は共通次数スカラーである．
+三つの非自明な生成元$r,e_c,\tau$の像は可換な独立の対合であり，
+閉点では出力の全慣性$\mu_2^3$を生成する．
+入力の連結トーラスが核で，その商は$\mu_2^3$であるから，
+表示した慣性準同型が得られる．
+
+\paragraph{自然なgeneric射との一致.}
+入力のspectral曲線上の$y=c_0d_0$に対し
+\[
+ (U,V,C,D)=(au^2+bv^2,uv,au^2-bv^2,y)
+\]
+を用いる．平方根を補助変数として添加した代数的chartの$ab\ne0$上では，
+これは指定したFrickeのgeneric同型である．
+ここで$\operatorname{Spf}A$自体に$ab\ne0$という開があると主張してはいない．
+$T_z,r,e_c,e_d$に関する同変性は直ちに従う．
+$\tau$では$y'=\rho y$であり，直接計算により
+\[
+ \begin{split}
+ -a(u')^2-b(v')^2&=-U-4qV,\\
+ u'v'&=U+V,\\
+ -a(u')^2+b(v')^2&=-\rho C
+ \end{split}
+\]
+となる．従って出力の表は自然なFricke射の全入力同型への作用そのものである．
+特にこの射は，粗式だけが同じで一般慣性核が位数八になる弱い共変射とは異なる．
+\end{proof}
+
+\begin{corollary}[特殊慣性と形式fiber]
+\label{cor:qa-fricke-formal-boundary-fiber}
+前定理の射の一致点での相対慣性は$\Gm$であり，
+特殊慣性写像は$H_{\rm eq}\twoheadrightarrow\mu_2^3$である．
+一方，代数化したchartの$ab=0$の各穿孔枝では入力慣性は$D_8$，核は
+$\mu_2=\langle e_ce_d\rangle$，像は$\mu_2^2$で指数二である．
+同じ代数的chartの$ab\ne0$の一般点でも核は$\mu_2$で，
+順序付き出力の全慣性への像の位数は八である．
+非順序付き出力の一般慣性は位数十六なので，順序忘却後の像は指数二となる．
+
+出力の閉点とその同型を固定した形式fiberは
+\[
+ [\operatorname{Spf}k[[a,b]]/(ab)\,/\Gm],
+ \qquad z\cdot(a,b)=(z^{-2}a,z^2b)
+\]
+である．これは$[\Spec k[a,b]/(ab)\,/\Gm]$の原点に沿う形式完備化であり，
+その代数的模型の二つの穿孔枝は各々$B\mu_2$，原点は$B\Gm$となる．
+\end{corollary}
+\begin{proof}
+群準同型$H\twoheadrightarrow\Gamma$の核が$\Gm$であるため，
+出力のframeを固定した2-fiberではその核だけで割る．
+基底のfiber方程式は$ab=0$である．
+軸上の非零点を保つトーラス元は$z^2=1$だけで，
+$r$は二つの軸を交換するためその点の安定化群に入らない．
+$e_c,e_d$と，必要なトーラス元を合成した$\tau$により
+入力慣性$D_8$を得て，像は$r$の像を含まない$\mu_2^2$となる．
+$ab\ne0$では$r$にもトーラス元を合成して点を固定できるので，
+像は全$\Gamma$となり，核は引き続き$\mu_2$である．
+\end{proof}
+
+
+\subsection{全noncubic境界へのFricke射の降下}
+
+本節では前節の形式計算を，平方根を補助変数とする\'etale chartで
+全同型の計算へ拡張する．出力の二形式には順序を保持する．
+\[
+ \mathfrak U=
+ \{(g_1,g_2)\in\mathfrak T_{\rm bal}^{\rm ord}
+       \mid \Delta(g_2)\ne0,\ \operatorname{Res}(g_1,g_2)\ne0\}
+\]
+と置く．この条件は表示の変更に不変である．
+非退化な$g_1$を持つ部分は$\mathfrak N^{\rm sm,ord}$であり，
+残る幾何点は第一形式が二重根，第二形式がsquarefreeで，
+両者の根が交わらない線束境界点である．
+
+\begin{theorem}[自然な順序付きFricke射の大域的境界延長]
+\label{thm:qa-global-fricke-balanced-extension}
+自然なsmooth射$\mathscr D^{\rm ord}$を延長する射
+\[
+ \overline{\mathscr D}^{\rm ord}:\mathfrak N^{\rm pres}
+       \longrightarrow\mathfrak U
+\]
+が存在する．構成は表示groupoidの全同型を保存し，
+任意基底変更と両立する．
+その一根共有および根対一致の特殊像は，ともに
+$(U^2,V(U+V))$が表す線束境界点である．
+この出力は二次自己双対線束を持つが，元のnoncubic開には属さない．
+\end{theorem}
+\begin{proof}
+\paragraph{一致境界を含む開と\'etale補助変数.}
+$\mathfrak N_*=\{\chi\ne0\}\subset\mathfrak N^{\rm pres}$とし，
+\[
+ q=\frac{\chi-1}{4\chi},\qquad
+ T=\Spec k[q,(1-4q)^{-1}]
+\]
+と置く．$\mathfrak N_*$から$T$への射は正則である．
+\[
+ \widetilde T=
+ \Spec k[q,\rho,\ell,(\rho\ell)^{-1}]/
+ (\rho^2-1+4q,\ 2\ell^2-1-\rho)
+\]
+は$T$の全射\'etale被覆である．
+実際，$2\rho$と$4\ell$は可逆であり，
+幾何点では$\rho$の二つの選択の少なくとも一つについて$1+\rho\ne0$となる．
+特に$q=0$上では$\rho=1$，$\ell=\pm1$である．
+\[
+ S=\Spec k[a,b,(1-4ab)^{-1}]\times_{q=ab,T}\widetilde T
+\]
+とし，前節と同じ$H=H_{\rm eq}$を作用させる．
+$q,\rho,\ell$は$H$-不変とする．
+前節の全生成元と全群関係の式は，この代数的chart上でも定義される．
+
+\paragraph{全groupoidの正規化.}
+表示族$(uv,au^2+uv+bv^2)$は同値
+\[
+ [S/H]\xrightarrow{\sim}
+ \mathfrak N_*\times_T\widetilde T
+ \tag{F-chart}\label{eq:qa-global-fricke-chart}
+\]
+を与える．これを全基底上の同型について確認する．
+まずfppf局所的に第一の非退化二形式を$uv$へ移す．
+$\chi\ne0$より第二形式の$uv$係数は可逆であるため，
+第二生成元を単元倍してその係数を一にできる．
+このとき$\chi=(1-4ab)^{-1}$なので，補助変数の条件も保存される．
+従って表示族は対象について局所的に全射である．
+
+順序を保つ二つの正規形の同型を取る．
+第一生成元のスカラーを共通次数スカラーで一にすると，
+座標行列は$O(uv)$に属する．第二形式の$uv$係数が一なので，
+第二生成元の残るスカラーは$\pm1$である．
+従って全ordered同型は$T_z,r,e_c,e_d$で尽くされる．
+これは任意環上でも成り立つ．$uv$を保つ行列の対角型・反対角型は，
+対応する冪等元による開閉分解上で決まるからである．
+非順序の同型は，明示的な$\tau$を一度合成してordered同型へ帰着する．
+前節で全群関係を確認したので，\eqref{eq:qa-global-fricke-chart}は
+幾何点だけでなく全groupoidの同値である．
+
+\paragraph{chart上の出力.}
+$S$上で
+\[
+ (g_1,g_2)=(U^2-4abV^2,V(U+V))
+\]
+を取り，前節の出力作用表を用いる．
+$\Delta(g_2)=1$かつ$\operatorname{Res}(g_1,g_2)=1-4ab=\rho^2$は可逆なので，
+これは$\mathfrak U$の対象である．全群関係が成立するため，
+\eqref{eq:qa-global-fricke-chart}上の射が得られる．
+出力の対象自体は$\rho,\ell$の選択に依存しない．
+以下で矢についても補助変数から降下することを確認する．
+
+\paragraph{平方根の選択を変えた際の全Isom.}
+二重overlapで二つの選択を$(\rho,\ell)$，$(\rho',\ell')$と書く．
+$2,\rho,\ell$が可逆なので，底を開閉分解して符号関係を固定できる．
+ordered矢の持上げと出力は補助変数に依存しないため，
+$\tau$の持上げだけを比較すれば十分である．
+
+$\rho'=\rho,\ell'=-\ell$の場合，入力の$\tau$の持上げは
+$T_{-1}\tau=(e_ce_d)\tau$へ変わる．
+出力は$T_{-1}$を恒等へ写すため，出力の矢は変わらない．
+
+$\rho'=-\rho$の場合は，$\ell,\ell'$の可逆性より$q$も可逆である．
+$m=\ell\ell'$と置くと$m^2=q=ab$であり，
+\[
+ R_{a,b,m}=\begin{pmatrix}0&b/m\\a/m&0\end{pmatrix}\in O(uv)
+\]
+が定義される．入力の座標行列は正確に
+\[
+ L(\rho',\ell')L(\rho,\ell)^{-1}=R_{a,b,m}
+\]
+を満たす．第一生成元の像は同じで，第二生成元の像は反対符号となるので，
+入力の二つの$\tau$の差は，parameter$(-a,-b)$の対象の
+ordered自己同型$R_{a,b,m}e_d$である．
+$R_{a,b,m}=T_{b/m}r$だから，その出力は$C$の符号であり，
+$R_{a,b,m}e_d$の出力は$\delta'=(C,D)\mapsto(-C,-D)$となる．
+一方，出力の$\tau$の式は
+\[
+ (U,V,C,D)\longmapsto
+ (-U-4qV,U+V,-\rho C,\rho D)
+\]
+なので，$\rho$の符号を変えると正確に$\delta'$だけ変わる．
+従って入力の同じ矢は，どちらの補助変数を使っても同じ出力の矢を与える．
+
+以上は対象上の恒等同型を比較として用いた等式であるため，
+三重overlapのcocycleも成立する．全てのunordered矢は
+ordered矢と$\tau$の合成なので，これで全Isomの降下が確認できた．
+有限局所自由束・二次積およびその同型の有効fppf降下により，
+$\mathfrak N_*$上の射を得る．
+
+\paragraph{smooth射との貼合せ.}
+$\mathfrak N_*\cap\mathfrak N^{\rm sm}$では$ab$が可逆である．
+前節の$\Phi$に関する全生成元の同変計算により，
+構成した射は自然な$\mathscr D^{\rm ord}$と全groupoid上で一致する．
+$\chi=0$の入力はresultantが非零なのでsmooth域に属する．
+従って$\mathfrak N_*\cup\mathfrak N^{\rm sm}=\mathfrak N^{\rm pres}$であり，
+二つの射を貼り合わせて主張の大域射を得る．
+構成は局所自由な二次代数とその同型の式および有効降下によるので，
+任意基底変更と両立する．
+\end{proof}
+
+\begin{corollary}[線束境界上の全fiber]
+\label{cor:qa-global-fricke-boundary-fiber}
+第一形式が二重根となる順序付き線束境界点$\ell_0$とそのframeを固定する．
+前定理の射のscheme-theoretic $2$-fiberは
+\[
+ \boxed{
+ (\overline{\mathscr D}^{\rm ord})^{-1}(\ell_0)
+ \simeq[\Spec k[a,b]/(ab)\,/\Gm],
+ \qquad z\cdot(a,b)=(z^{-2}a,z^2b).
+ }
+\]
+二つの穿孔枝は各々$B\mu_2$であり，原点は$B\Gm$である．
+この原点が一致根対，穿孔枝が一根共有に対応する．
+一致点の慣性写像は$H_{\rm eq}\twoheadrightarrow\mu_2^3$で核$\Gm$，
+一根共有点では$D_8\to\mu_2^3$で核$\mu_2$，像は位数四となる．
+\end{corollary}
+\begin{proof}
+像が$\ell_0$となる入力は$\chi=1$である．
+前定理のchartを$q=0,\rho=\ell=1$へ制限すると，
+入力は$[\Spec k[a,b]/(ab)/H]$，出力のresidual gerbeは$B\Gamma$となる．
+$H\twoheadrightarrow\Gamma$の核は$\Gm$であるから，
+出力のframeを固定した2-fiberは核だけで割った記載の商となる．
+非零軸上のトーラス安定化群は$\mu_2$，原点の安定化群は$\Gm$であり，
+慣性写像については前節の全生成元表から従う．
+\end{proof}
+
+\begin{remark}[延長の標的とH2障害]
+この定理は自然なspectral射の全groupoid上の境界延長を与えるが，
+標的は二次積付きTF標的の開部分$\mathfrak U$である．
+特殊出力の第一形式は重根を持つためH2には属さず，
+既存のH2延長不能・無限Extの結論は変わらない．
+また表示chart上で出力conicがsplitであることから，
+降下後の全conicもsplitであると推論しない．
+出力の全同型作用には$r,e_c,\tau$の独立な三対合が残り，
+一般慣性核は$\mu_2$，非順序付き標的への一般像は位数八である．
+この点で弱い共変式の一般慣性核八・像二とは異なる．
+\end{remark}

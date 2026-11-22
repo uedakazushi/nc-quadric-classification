@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.84。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.85。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 境界graph・自由符号商・構造層の入力
@@ -9,7 +9,11 @@
 
 [同Lemma 66.14.2, Tag 07S7](https://stacks.math.columbia.edu/tag/07S7) は射影的scheme上の有限局所自由群の自由作用についてscheme商とtorsorを与える。本稿では群C2がétaleなので被覆もétale。引用キー `StacksFreeQuotients`。[Theorem 30.20.5, Tag 02OC](https://stacks.math.columbia.edu/tag/02OC) はNoetherian基底・proper射・coherent層に対する形式関数定理であり、A1解消の無限小近傍の $\OO_{\PP^1}(2j)$ のcohomology消滅から $Rf_*\OO=\OO$ を導く。引用キー `StacksFormalFunctions`。
 
-古典的なblowup・有理二重点・楕円曲線の加法公式を新結果とはしない。Cの具体的な結論は二traitの指定同型のgraph、二組の交互収縮、自然Fricke像のbalanced TF延長と被約線束境界、一致型の模型同型と四捩れtranslation・conic順序交換の組合せである。証明は [境界模型](../papers/quiver-avatar/spectral_boundary_models.tex)。全G同変な境界射、任意非平坦底でのgraph形成、H2 heartの延長、包括的新規性確認は未主張。
+古典的なblowup・有理二重点・楕円曲線の加法公式を新結果とはしない。Cの具体的な結論は二traitの指定同型のgraph、二組の交互収縮、自然Fricke像のbalanced TF延長と被約線束境界、一致型の模型同型と四捩れtranslation・conic順序交換の組合せである。証明は [境界模型](../papers/quiver-avatar/spectral_boundary_models.tex)。全G同変な自然Fricke射のbalanced標的への境界降下と全fiberは [大域降下](../papers/quiver-avatar/fricke_boundary_descent.tex) に直接証明した。任意非平坦底でのgraph形成、H2 heartの延長、包括的新規性確認は主張しない。
+
+[Stacks Lemma 55.10.1, Tag 0C6B](https://stacks.math.columbia.edu/tag/0C6B) の正の種数の滑らかな射影曲線の最小正則模型の一意性を2026-11-23に一次確認した。指定generic同型で標識を変えることで全halving補正を最小正則模型へ延長する。原模型の同型やpencilの平方根延長はこの一般定理から従わない。引用キー `StacksMinimalModels`。同日のSilverman第2版III Theorem 10.1（printed p.103）の一次確認により、$j\ne0,1728$ の原点固定自己同型は $\{\pm1\}$ とした。halving四点の具体式・最小分岐・Kummer class・成分回転は原稿の直接計算である。
+
+全Fricke降下は、既知の二同種・二次線束と有限étale被覆の対応に対する具体的な全群作用の計算である。新しい主張の範囲は、二重根を許すbalanced標的への任意基底変更と両立する自然な射、および境界の $[\operatorname{Spec}k[a,b]/(ab)/\mathbb G_m]$ fiberと慣性である。古典的な楕円曲線の加法公式・コンパクト化一般論を新発見とはしない。admissible cover・Prym・spin compactificationとの包括的な文献比較は未完了である。
 
 ## Spectral-pointed対応と二同種の一次資料
 
