@@ -495,8 +495,15 @@ $\mathcal U_\lambda\xrightarrow{\sim}\mathbb G_{a,R}$
 $t=\sum_{j=1}^{N}\lambda^{j-1}z^j/j!$である．
 従って二つのmassが冪零なら，局所表示のゲージ核は
 $\mathbb G_{a,R}^2$に同型である．
-ただしこの座標はmassの枠に依存し，
-任意の非冪零massを含む全基底での大域同型を意味しない．
+定数群$\mathbb G_{a,R}$への座標表示はmassの
+局所frameに依存するが，
+命題~\ref{prop:qa-mass-gauge-line-bundle-descent}によれば
+この多項式は線束値で降下する．
+従って冪零mass上では内在的に
+$\mathcal U_{\lambda,\mathscr L}\simeq\mathbb V(\mathscr L)$
+となる．ただし$\mathscr L$が非自明なら
+大域的に定数$\mathbb G_a$とは限らず，
+非冪零massまでの全域加法化も主張しない．
 \end{lemma}
 \begin{proof}
 $\lambda$が冪零なら$1+\lambda t$は任意の$t$に対して可逆である．
@@ -749,6 +756,13 @@ $\Phi_{12}$はfppf局所にこの二次元群を相対慣性とするgerbeとな
 二massが可逆なら$\Gm^2$，一方だけ零なら
 $\Gm\times\mathbb G_a$，両方零なら$\mathbb G_a^2$である．
 非被約底上のnilpotent massも含み，結論は任意基底変更に保たれる．
+ここで$\mathcal U_\lambda\times\mathcal U_\mu$は局所frameによる表示であり，
+frameを忘れた相対群スキームは
+命題~\ref{prop:qa-mass-gauge-line-bundle-descent}の
+二つの線束値群$\mathcal U_{\lambda,\mathscr L_x}$
+および$\mathcal U_{\mu,\mathscr L_u}$の積として貼り合う．
+zero massの境界では各因子は線束の加法群であり，
+自明な$\mathbb G_a$と大域的に同一視する必要はない．
 
 $\Phi_{12}$の対象は原則として有限foundationである．
 全相対AS正則性，canonically chosen heart，
