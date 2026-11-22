@@ -27,13 +27,26 @@ $j(E_f)=28756228/3$、$\Phi_2=0$の厳密算術検算は
 computations/verify_rootpair_resolvent_spectral.py。
 **重要：C_qの既存avatarをB_fの可換点曲線E_fと同一視して
 内在的O-marked心とのpointed同値を導いてはならない。**
-最優先実行単位は、分類論文Aのnoncubic normal helix
+**既に証明された比較の範囲：**
+分類論文Aのnoncubic normal helixの二つのMCM行列
+$M_c,M_d$のpoint-curve上のkernel射は
+conic商$Q_c,Q_d$の次数二pencil $F_c,F_d$を回収する
+（C prop:qa-point-mcm-matrix-pencils）。
+さらにその隣接Hom積の像は
+$\im\mu_c=\langle u,v,c\rangle$と
+$\im\mu_d=\langle u,v,d\rangle$であり、
+二pencilのVeronese対称積像に一致する
+（C prop:qa-point-mcm-composition-veronese）。
+二像は各階数3で交わりは$\langle u,v\rangle$、
+和は$(B_f)_1$全体。
+**最優先の未解決事項**は、normal helix
 $(\pi B_f,\pi X_c,\pi B_f(1),\pi X_d(1))$の
-有限directed End代数・二つのmatrix factorizationと、
-E_f側のconic商からの二pencil avatarの有限Endを直接比較し、
-Oの保存とSerre completionを追うこと。
+残りのHom・全合成・最小関係を含む
+有限directed End代数の同定、
+O-pointingとSerre completionの整合、
+内在H2 heartのpointed exact同値である。
 現時点ではどちらの曲線がnormal helixのAS avatarとなるか
-未証明であり、非共有根でない境界では
+未証明であり、根を共有する境界では
 isogenyがétaleでなくなる。
 元の同型類全単射、2-isogenyの幾何証明、
 pointed qgr同値、相対stack射を別々の状態として扱う。
