@@ -158,9 +158,7 @@ $\Phi_2(X,Y)$の古典的な7種の係数は
 で確認した。
 厳密有理数では$j(C_q)=35152/9$、
 $j(E_f)=28756228/3$、$\Phi_2(j(C_q),j(E_f))=0$。
-計算はcomputation/verify_rootpair_resolvent_spectral.py
-ではなく、実在する
-\`computations/verify_rootpair_resolvent_spectral.py\`に収めた。
+厳密算術の検算は`computations/verify_rootpair_resolvent_spectral.py`に収めた。
 同じ式を作業環境で独立に再計算してPASS。
 この結果は2-isogenyの幾何証明の整合検査であり、
 AS分類やpointed同値を計算で検証したものではない。
