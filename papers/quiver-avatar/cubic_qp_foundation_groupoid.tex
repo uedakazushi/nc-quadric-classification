@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.37。mass/liftの半直積、双対数交換子、頂点scalarの中心性。
+% 2026-11-23 / v4.38。strict square交換からのrigidified QP商のcoherent S2作用。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1466,6 +1466,120 @@ $z_1/z_0=z_2/z_1=z_3/z_2=z_0/z_3=1$が必要で，
 従ってfppf局所のIsomを二群の積で割る結果は
 割る順序によらない．ただし$S_2$のmutation商は
 これとは別に定理の後段で構成する．
+\end{proof}
+
+\begin{proposition}[strict square対合によるrigidified QP商の$S_2$-coherence]
+\label{prop:qa-q12-strict-square-s2-coherence}
+定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}
+のsquare表示
+\[
+ \mathfrak S_{\HH}
+  =[V_\square^{\HH}/(G_\square/K_\square)]
+\]
+を用いる．ここで$V_\square^{\HH}$は二つの積
+$f:C\otimes A\to W$，$g:D\otimes B\to W$
+の内在的$H_2$開であり，
+\[
+ K_\square=
+ \bigl\{(\ell_1,\ell_2,
+ \ell_3/\ell_1,\ell_3/\ell_2,\ell_3)\bigr\}
+ \simeq\Gm^3
+\]
+とする．
+\[
+ \sigma(A,B,C,D,W;f,g)
+       =(B,A,D,C,W;g,f)
+ \tag{SS}\label{eq:qa-q12-strict-square-swap}
+\]
+は係数schemeの\emph{strict}な対合である．
+これは$G_\square$上の対応する二組の$\GL_2$の交換と
+両立し，$K_\square$を保存する．
+従って商stackにはstrictな$S_2$作用が存在し，
+\[
+ [\mathfrak S_{\HH}/S_2]
+ \simeq
+ [V_\square^{\HH}/
+          ((G_\square/K_\square)\rtimes S_2)]
+ \tag{SQ}\label{eq:qa-q12-strict-square-stack-quotient}
+\]
+となる．
+
+$\operatorname{Rig}_{\rm vert}
+\operatorname{Rig}_{\rm mass}
+ \mathfrak P_{12,\HH}^{\rm nd}$
+から$\mathfrak S_{\HH}$への相対groupoid同値を使うと，
+このstrictなsquare作用はrigidified QP商に
+coherentな（一般にはweakな）$S_2$作用を誘導する．
+同値の準逆を取り直しても得られる作用とその商は
+equivariant同値の意味で変わらない．
+作用の二重合成と単位の2-isomorphismは
+square側の$\sigma^2=\operatorname{id}$から移送され，
+任意の本稿の基底変更と可換する．
+
+この操作は\emph{massと頂点scalarsの両剛体化後}の作用である．
+未剛体化raw十二矢QPの重み付きright-equivalenceを
+使って$\sigma$を構成したことにはならない．
+さらに同じ相対heartへの作用は，
+系~\ref{cor:qa-h2-square-foundation-open}の
+実際の相対pointed認識を通じて得るものであり，
+本命題のstrict有限stack作用だけから
+新しい$t$-exact同値を作ったとは主張しない．
+\end{proposition}
+\begin{proof}
+$G_\square$の標識因子を
+$(g_A,g_B,g_C,g_D,g_W)$とすると，
+$\sigma$は
+$(g_B,g_A,g_D,g_C,g_W)$への交換と整合する．
+$K_\square$の元をこれで交換すると
+\[
+ (\ell_2,\ell_1,
+ \ell_3/\ell_2,\ell_3/\ell_1,\ell_3)
+\]
+となり，再び$K_\square$に属する．
+二回交換は係数と群の双方で恒等である．
+$V_\square^{\HH}$は二積の内在的四交差条件で定まり，
+中間rulingの交換に対して不変である．
+従って作用は商に降下し，
+式~\eqref{eq:qa-q12-strict-square-stack-quotient}は
+semidirect quotientの標準的な群oid表示から従う．
+
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}
+は，QPからfinite foundationへの射がfppf局所に対象と
+Isomの全射を持ち，指定mass kernelを同型層から
+割ると有限foundationの全groupoidになることを示す．
+補題~\ref{lem:qa-q12-vertex-scalars-central}の
+中心性・交わり自明性によって，
+さらに頂点scalarsを割った局所groupoidは
+$\mathfrak F_{\HH}$に同値である．
+この同値は同型層に忠実な局所同値なので
+stackification後も同値を与える．
+
+定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}
+のkernel/cokernel構成の準逆と合成し，
+二段剛体化後のstackと$\mathfrak S_{\HH}$の
+同値$F$を得る．
+$F$の準逆$G$とunit/counitを選ぶと，
+誘導作用は$G\sigma F$と記述される．
+その二乗の$G\sigma FG\sigma F\simeq
+G\sigma^2F\simeq GF\simeq\operatorname{id}$は
+unit/counitの三角恒等式を用いた自然2-isomorphismである．
+三回以上の合成の整合条件も同じ三角恒等式によるため，
+$S_2$のcoherent作用が得られる．
+これはsquare側でstrictな作用を
+同値によって輸送する標準的な2-圏の構成である．
+二つの準逆の間の標準自然同値は
+これらの2-isomorphismと両立するので，
+商stackはequivariant同値の下で不変である．
+square表示の交換，核・余核と同型層の
+fppf降下は全て任意基底変更と可換する．
+
+最後に$\mathfrak S_{\HH}$から
+$\mathfrak H_2^{\rm rul}$への同値は
+内在的な相対pointed heartの認識を用いており，
+中間頂点交換は構造対象$E_0=\OO$を保つ．
+従って$H_2$の忘却商としての同定には，
+上記有限stackのcoherent作用に加えて
+既存の実際の$t$-exact相対heart比較を用いる．
 \end{proof}
 
 \begin{theorem}[QP表示から内在的$H_2$への相対rigidification]
