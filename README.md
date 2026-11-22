@@ -24,7 +24,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 [canonical複体・全整数周期](papers/quiver-avatar/canonical_helix_complexes.tex) に、
 大川--植田の未公刊草稿「非可換二次曲面の二つの反標準avatar」v7（Parts I--II）から
 反標準Cartier曲線のPicard消滅、二pencilの再埋込み、4×4・2×2の評価行列によるscheme-theoretic復元、
-四つの局所分裂完全列を**定義・仮定・証明ごと**組み入れた。
+四つの局所分裂完全列と周期全体の前向きExt消滅を**定義・仮定・証明ごと**組み入れた。
 元論文を持たなくてもこれらの有限幾何は追える。
 ただし、元の全AS正則Z代数のNoether性、元のO-marked heartの直接同値、
 非被約底を含む全AS相対分類を、この追加だけで証明したわけではない。
