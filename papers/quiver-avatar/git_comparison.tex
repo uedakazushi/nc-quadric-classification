@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.3（potential→H2の一般次数八）
+% 2026-11-22 / v2.4（内在H2稠密開を一般ruling交換で商表示）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -595,6 +595,63 @@ $\operatorname{Aut}_{\HHstack}(y)$は
 有限の幾何的一般fiberを持つ場合、
 始域と標的の適切な稠密開へ縮めれば有限étaleになる。
 その次数は上で示した二である。
+\end{proof}
+
+\begin{theorem}[内在的H2の稠密開のquintuple商表示]
+\label{thm:qa-h2-generic-ruling-quotient}
+系~\ref{cor:qa-quintuple-h2-generic-degree-two}の
+非空な開を必要に応じて縮めると、
+$\HHstack$の稠密開部分スタック
+$\mathfrak H_2^\circ$と、
+その上のquintuple剛体化表示の逆像
+$\mathfrak Q^\circ$に対し
+\[
+ \mathfrak Q^\circ\longrightarrow
+ \mathfrak H_2^\circ
+ \quad\text{は有限étaleな}\quad S_2\text{-torsor},\qquad
+ [\mathfrak Q^\circ/S_2]\xrightarrow{\ \sim\ }
+ \mathfrak H_2^\circ
+ \tag{OU-H2-quot}\label{eq:qa-h2-generic-ruling-quotient}
+\]
+が\emph{Artinスタックとして}成立する。
+ここで$S_2$はquintupleの四つの線型因子を
+形式的に任意置換する群ではなく、
+有限étale二重被覆のcanonical deck対合として作用する。
+各幾何点では、これは二つの内在的normalized ruling
+foundationの交換に一致する。
+
+この主張は、有限型・smoothな全$\HHstack$と
+既存GIT compactificationの大域同値、
+特殊cubic点のdeck固定点と境界の分岐を含まない。
+\end{theorem}
+\begin{proof}
+前系~\ref{cor:qa-quintuple-h2-generic-degree-two}は、
+表現可能有限étale次数二の射を与える。
+一般に任意の基底上の有限étale次数二代数$A/B$には
+標準対合
+\[
+  \iota(a)=\operatorname{Tr}_{A/B}(a)-a
+\]
+がある。étale局所に$A=B\times B$と分裂させると
+$\iota(a,b)=(b,a)$であり、互換操作なので
+標準対合は基底変更・降下と整合する。
+有限étale二重射が代数空間に表現可能であるため、
+この操作を任意のtest schemeのfiberへ適用して
+$\mathfrak Q^\circ$上のcoherentな$S_2$作用を得る。
+分裂したétale局所では
+$\mathfrak Q^\circ\times_{\mathfrak H_2^\circ}
+\mathfrak Q^\circ\simeq
+\mathfrak Q^\circ\amalg\mathfrak Q^\circ$であり、
+二つの成分は恒等と$\iota$のgraphである。
+従って有限étale$S_2$-torsorとなり、
+その商スタックは$\mathfrak H_2^\circ$と同値である。
+
+各幾何fiberの二つの対象は前系の証明により
+二つのnormalized foundationの選択に対応する。
+$\iota$は恒等でないsheetの一意の交換だから、
+その幾何点での作用はruling交換と一致する。
+特殊点を含めたmutation functorの相対的同定や
+分岐記述は、この一般開のtorsorからは導かない。
 \end{proof}
 
 \begin{corollary}[potential表示から内在的pointed対象への一般次数八]
