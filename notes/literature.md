@@ -1,9 +1,9 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.73。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.74。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
-## 原稿C v3.3：avatar–AS分類の出典と外部入力
+## 原稿C v3.4：avatar–AS分類の出典と外部入力
 
 **研究の直接の入力：** 大川新之介・植田一石、
 未公刊日本語草稿『非可換二次曲面の二つの反標準avatar』
@@ -116,6 +116,56 @@ smooth楕円曲線族では非零E[2]が有限étale三次となる。
 これは固定曲線／標識付きavatar側の結果であって、
 論文Bの内在的Artin境界とのstack同型ではない。
 本計算の先行研究に対する包括的新規性は未確認。
+
+**noncubic点曲線・spectral曲線の双対2-isogeny（C v3.4）。**
+中央二重平方環$B_f$の可換点曲線$E_f$と
+quartic-resolvent曲線$C_q$について、
+非交差二根対なら自由な同時符号の商$E_f\to C_q$は
+有限étale次数2のisogenyである。
+二つの個別符号商$E_f\to Q_c,Q_d$はconic上の
+次数一線束から二つの次数二pencil$F_c,F_d$を与え、
+$P_E=F_cF_d^{-1}\in\Pic^0(E_f)[2]\setminus0$。
+反不変線束$M_C=(r_*\OO_{E_f})^-$は
+$r^*:\Pic^0(C_q)\to\Pic^0(E_f)$の核を生成し、
+$(E_f,P_E)$と$(C_q,M_C)$は双対2-isogenyで交換される。
+**この二曲線を混同して内在的O-pointed同値を推論しない。**
+$E_f$上の二pencilはnoncubic MCM行列$M_c,M_d$の
+right kernelから直接回収できる。
+さらにAのnormal helixの二つの隣接乗法の像は
+$\langle u,v,c\rangle,\ \langle u,v,d\rangle$であり、
+二conicのVeronese対称積像に一致する。
+この最後の比較は、全有限directed End代数の
+同型やO-pointed qgr同値ではない。
+証明正本：
+[Cの点曲線・spectral曲線節](../papers/quiver-avatar/point_spectral_isogeny.tex)
+（thm:qa-point-spectral-dual-two-isogeny,
+prop:qa-point-mcm-matrix-pencils,
+prop:qa-point-mcm-composition-veronese）。
+
+**j値と古典modular polynomialの一次確認。**
+$f_1=x(x-1), f_2=(x-2)(x-3)$における
+$C_q:y^2=x(x-1)(x-2)(x-3)$と
+$E_f:z^2=6t^4-7t^2+2$の二quarticの
+$I,J$は$(13,-70)$と$(193,-5362)$。
+四次形式の$I=12ae-3bd+c^2$、
+$J=72ace+9bcd-27ad^2-27b^2e-2c^3$は
+[Womackの論文付録](https://johncremona.github.io/theses/womack.pdf)
+ならびに
+[Cambridgeの文献](https://api.repository.cam.ac.uk/server/api/core/bitstreams/02fb71ba-0e5e-472e-ae84-bbfd55ab5917/content)
+に記載される。
+$\Phi_2(X,Y)$の古典的な7種の係数は
+[MIT Sutherlandのmodular polynomial表](https://klein.mit.edu/~drew/ClassicalModPolys.html)
+で確認した。
+厳密有理数では$j(C_q)=35152/9$、
+$j(E_f)=28756228/3$、$\Phi_2(j(C_q),j(E_f))=0$。
+計算はcomputation/verify_rootpair_resolvent_spectral.py
+ではなく、実在する
+\`computations/verify_rootpair_resolvent_spectral.py\`に収めた。
+同じ式を作業環境で独立に再計算してPASS。
+この結果は2-isogenyの幾何証明の整合検査であり、
+AS分類やpointed同値を計算で検証したものではない。
+二重isogenyのmoduli上の既知性と本件の
+MCM演算の具体的貢献の網羅的新規性確認は未実施。
 
 **区別：** 12本矢は8本のfinite foundation矢＋4本の
 relation-dual戻り矢であることが多く、
