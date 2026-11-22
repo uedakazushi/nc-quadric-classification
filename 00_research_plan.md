@@ -25,7 +25,7 @@
 `papers/quiver-avatar/canonical_helix_complexes.tex` に証明付きで統合した。
 反標準Cartier因子の部分曲線・Picard消滅、二pencilによるsquare/rotated相互再埋込み、
 4×4・2×2の評価行列と有限directed foundationの余核復元、
-四つのcanonical exact complexと全整数周期の線束式を含む。
+四つのcanonical exact complex・全整数周期の線束式と曲線上の前向きExt消滅を含む。
 これらは**曲線上の幾何的証明**であり、添付論文の全AS正則性、全周期の無限Z代数の分類・左右Noether性・元のO-marked heartのpointed同値の証明すべてを移管できたと主張しない。
 新命題 `prop:qa-nodal-resolution-odd-exceptional-degree`（`papers/quiver-avatar/nodal_resolution_obstruction.tex`）で、
 共有根の相対A1商上の反不変reflexive moduleは最小解消の例外P1上で次数1になり、
