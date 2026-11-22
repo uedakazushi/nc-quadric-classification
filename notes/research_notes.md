@@ -67,14 +67,25 @@ A1 chart・奇偶に加えて、局所環の平方積関係と
 交差根数$0/1/2$の有限多項式検算を含む。
 これは数学的な相対groupoid同値の形式検証ではない。
 
-**最優先の次の課題。**
-単純層だけのfine compactified Picardではなく、
-非単純I2点も受けるrank-one torsion-free
-**二次積付き**stack $\operatorname{TF}^{\mathrm{quad}}$
-（必要なら偏極・半安定と固定曲線の標識も含む）を
-正確に定義する。根対の群作用による $(C,M,\mu)$ の相対射を
-非被約基底で構成し、nodal/I2の慣性と変形理論を
-論文Bのnoncubic内在的境界stackと比較する。
+**構成済みの相対二次積groupoid射と次の課題。**
+$fppf$ groupoid $\mathfrak{TF}^{quad}$ の対象を、
+相対$\PP^1$束 $B/S$、種数一の有限平坦二重被覆
+$C\to B$、相対平坦rank-one torsion-free次数零層$M$、
+および幾何fiberで自己双対性を誘導する積
+$\mu:M\otimes M\to O_C$ と定義する。
+論文Bの表示群
+$G=((GL(W)\times G_m^2)\rtimes S_2)/D$
+は二つの平方根変数の置換・スカラー変更で積を保存し、
+対角$D$の作用はProj上自明である。
+したがって二形式表示商$[P/G]$から
+$(C,M,\mu)$へのfppf相対群oid射が存在する
+（C prop:qa-spectral-quadratic-stack-map）。
+欠損余核の表示は非被約底を含む任意の基底変更と可換する。
+
+**未解決の核心**は $\mathfrak{TF}^{quad}$ のArtin性・
+有限型開条件の記述、表示射の全忠実性・fiber・慣性・
+相対変形、偏極・半安定と非単純I2点を両立するモジュライ、
+および内在的O-marked H2境界へのgroupoid比較である。
 その後でsquare/$\Sigma_2$への相対elementary transform、
 canonical Serre根・元のAS $\qgr$ heartとO-markingの
 pointedな同一視を確立する。
