@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.45。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.31。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.46。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.32。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は論文C（AS正則Z代数・avatar・H2・QP/GIT比較）の完成である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,14 +10,14 @@
 
 **Cの達成基準と現行判定：** (C1) 8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲：**原稿上達成**。(C2) 全H2 good moduliの不変式・中央affine・noncubic・局所特異性：**原稿上達成**。(C3) 最大の明示的な比較開上でAS/QP・avatar・pointed H2のgroupoid・慣性・right-equivalence・heartと障害を決定：**H2の相対実現可能開全体について、二mass十二矢QP→finite foundationの全局所Isom、相対対角解消、ordinary Jacobian=H0Π3=canonical Serre完成、全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とcoherentなruling mutation商を原稿上で達成**。H2外の任意AS/avatar/QP stack全体の分類は未完成で、H2の比較と区別する。(C4) 全論文の独立証明監査、一次文献の網羅的比較、LuaLaTeX全稿PDF・SyncTeXと表示：**未完了**。C1–C3の「原稿上」とC4の独立検証を取り違えず、C4未達成の間は論文C全体を完成扱いにしない。
 
-**次の優先課題：** C3の相対対角解消、ordinary Jacobian、反Serre全次数、左右Noether性、mass/頂点scalarsの剛体化とruling交換のcoherenceを**独立に監査**する。$\mathbb Q[\lambda,\mu]$上の一つの二mass族については、四つのrank境界型すべてで双加群解消$(68,52,8)$、微分rank$(44,8)$を厳密に検査した。固定された二次・三次関係の二変数族では、全幾何fiberでの分裂完全性から冪零基底を含む全基底変更まで従う（[補題と証明書](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)、[計算コード](computations/verify_q12_bimodule_diagonal.py)）。**これは任意のfoundation族に関するC3の一般証明の代用ではない。** massが冪零ならゲージ群には打切り対数による局所加法座標がある。次は一般係数・非被約底の対角分裂とordinary ideal生成、相対AZの左Noether性、剛体化の正規性・$S_2$のcoherenceを監査し、C4として一次文献比較・現行日本語LuaLaTeX C全稿のPDF/SyncTeX組版と表示を行う。一般AS/avatar/QP stackの$H_2$外に残る部分は後続課題とする。研究区切りには対象mainを先に保存し、hubの当該項目を更新する。
+**次の優先課題：** C3の相対対角解消は一般のEuler--conormal判定を用いて**全有限foundation・任意非被約基底での分裂完全性を原稿上直接証明した**。自由有向道代数の通常両側idealは二短関係・四つの合成・残余二長関係で生成される。普遍非可換微分のconormal列と階数$(68,52,8)$・$\operatorname{rk}\Lambda=24$から一般完全性が従い，指定四境界型の検算への依存がなくなった。Kellerの2011年著者訂正にあるordinary ideal生成条件もこの二mass有限代数について確認した（[C3の新一般補題と証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)）。**次は**短対角解消の双対化による非最小QPのdg tensor模型・cyclic derivativeの相対同定，反Serre全次数・左右Noether/AZ，二段剛体化とS₂-mutation coherenceを監査する。C4の一次文献比較と現行C全稿LuaLaTeX組版・表示は未完了。H2外の全AS/avatar/QP表示stackは別課題。対象mainの保存後にhubを更新する。
 
 
 ## Cの現行実行単位
 
 **C3のH2実現可能開全体の相対QP/AS/heart比較（原稿上の主定理）。** 非最小十二矢の二mass $W=H+yq+px+vq'+p'u+\lambda yx+\mu vu$ は、階数六の関係束からrank24有限normal foundationを復元する。全非被約基底上のQP groupoidからfinite foundationへのfppf局所全Isom射の核はsmooth/flatな $\mathcal U_\lambda\times\mathcal U_\mu$ で、両rank3壁ではGa²、可逆cubicではGm²。有限directed代数の短い相対対角解消（矢8、関係4、道長高々3）を構成し、訂正済みKellerのordinary ideal条件を検証して $\operatorname{Jac}(Q_{12},W)\simeq H^0\Pi_3(\Lambda)$ を得た。H2実現可能開では実際のnormal tiltingと反Serre周期により $\operatorname{Jac}_n\simeq\operatorname{Hom}(T,t^nT)$、階数 $64n^2+64n+24$、全base-change・左右Noether・pointed tails同値を証明。mass kernelと頂点scalar Gm³の二段剛体化は $\mathfrak H_2^{\rm rul}$、coherentなsquare/normal mutationによるS₂商は $\mathfrak H_2$。二cubic正規化は一般に単一right-equivalenceではない。**H2外の任意QPがAS正則と主張せず、全AS/avatarの相対分類とも取り違えない。** 正本は[C3の一体化した証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。有限rankとEulerの独立計算は[検算](computations/verify_q12_diagonal_euler.py)。原稿中に証明を書いた状態であり、全新定理の包括的独立数学監査・全稿組版・形式証明は未実施。一方、特定のnoncubic 24次元有限代数の双加群対角複体でrank(68,52,8)・微分rank(44,8)を正確に計算し、その例での完全性を再検証した。[独立標本検算](computations/verify_q12_bimodule_diagonal.py)。
 
-**全半不変式環と中央chart（C2の原稿上の到達点）。** Gram pencil det(X fJfᵗ+Y gJgᵗ)=F²X⁴+I₁X³Y+I₂X²Y²+I₃XY³+G₀²Y⁴ を導入した。共通線形化 χ₀ の順序付き半不変環は k[A₂,B₂,X₃,Y₃,D₄]/(X₃Y₃−A₂D₄)、非順序環は k[A₂,B₂,C₃,D₄]、重み(2,2,3,4)。Δ₈=(D₄+4A₂(B₂−2A₂))²−4(B₂−2A₂)C₃²=256P_fP_g とすると、中央affine chartは D₊(Δ₈)⊂P(2,2,3,4)、環は重み零局所化。noncubic閉像は A₂=C₃=0、χ=B₂²/(4D₄)。全good moduliの特異点は p₃=[0:0:1:0] の 1/3(1,1,2) と p₄=[0:0:0:1] の 1/2(1,1,1) だけで、p₄はχ=0上。二対称形式の不変式環はBhargava–Gross–Wang §4.2を既知入力とし、出所と全証明は [Cの新節](papers/quiver-avatar/global_h2_invariant_hull.tex) に記した。数式の有限記号・有理数検算は実施したが、全定理の独立監査・現行稿組版は未実施。**次の数学的中心はC3のrank三境界・非最小十／十二矢QP、nilpotent mass、mutation glueの全相対groupoid比較。**
+**全半不変式環と中央chart（C2の原稿上の到達点）。** Gram pencil det(X fJfᵗ+Y gJgᵗ)=F²X⁴+I₁X³Y+I₂X²Y²+I₃XY³+G₀²Y⁴ を導入した。共通線形化 χ₀ の順序付き半不変環は k[A₂,B₂,X₃,Y₃,D₄]/(X₃Y₃−A₂D₄)、非順序環は k[A₂,B₂,C₃,D₄]、重み(2,2,3,4)。Δ₈=(D₄+4A₂(B₂−2A₂))²−4(B₂−2A₂)C₃²=256P_fP_g とすると、中央affine chartは D₊(Δ₈)⊂P(2,2,3,4)、環は重み零局所化。noncubic閉像は A₂=C₃=0、χ=B₂²/(4D₄)。全good moduliの特異点は p₃=[0:0:1:0] の 1/3(1,1,2) と p₄=[0:0:0:1] の 1/2(1,1,1) だけで、p₄はχ=0上。二対称形式の不変式環はBhargava–Gross–Wang §4.2を既知入力とし、出所と全証明は [Cの新節](papers/quiver-avatar/global_h2_invariant_hull.tex) に記した。数式の有限記号・有理数検算は実施したが、全定理の独立監査・現行稿組版は未実施。**C3のrank三壁・非最小QP・mutation貼合せは原稿上到達し、相対対角解消は一般Euler--conormal判定で直接証明済み。残るのはdg/Serre/Noether/coherenceの独立監査とC4。**
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
 
@@ -356,8 +356,8 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 **最優先は論文CのC3独立監査とC4完成。** H2実現可能開上のQP→finite foundation→ordinary Jacobian/Serre→pointed heart、二段剛体化と二ruling mutation商は**原稿上証明済み**。ここを未解決の再構成課題へ戻さないが、独立監査済みとも呼ばない。
 
-1. **相対対角解消の一般性と基底変更を点検。** prop:qa-two-mass-short-relative-diagonal のrank四短関係とrank二残余関係について、任意の非被約局所基底で交差零・分裂性・bar簡約・$\Lambda^e$局所射影性を確認する。二mass四境界型の明示族は [C3補題](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) と computations/verify_q12_bimodule_diagonal.py で全基底変更まで証明書付きで検証したが、一般族の証明ではない。次は二短関係が独立な一般の$q,q'$と残余二平面へ議論を拡張する。
-2. **Keller訂正・通常ideal・AZ/反対環を点検。** 2011年訂正のordinary ideal生成性を実際の二mass表示で確認し、最小関係の仮定を非最小族へ誤用していないか検討する。反Serre全次数・基底変更、左右Noetherとpointed heartの証明を独立に辿り、境界での最小矢束非平坦性から誤った推論がないか確認する。nilpotent massの加法化は局所frameに依存し、全体のgerbe自明化を意味しない。
+1. **非最小QPのdg双対とcyclic derivativeを独立監査。** Euler--conormal一般補題によってordinary ideal生成・対角解消の局所分裂性・任意基底変更は原稿上確認済み。次はこの解消を直接双対化した$\mathbf R\operatorname{Hom}_{\Lambda^e}(\Lambda,\Lambda^e)[2]$の生成元・微分と，十二矢potentialの全cyclic derivativeを枠変更・冪零massを含めて直接比較する。Keller Theorem 6.10の最小関係仮定を非最小十二矢QPへそのまま輸入しない。
+2. **反Serre・AZ・反対環側の左Noetherを独立監査。** ordinary ideal生成は一般Euler--conormal証明で確認済みであり、非最小QPのdg比較とは区別する。反Serre全次数・基底変更、左右Noetherとpointed heartの証明を独立に辿り、境界での最小矢束非平坦性から誤った推論がないか確認する。nilpotent massの加法化は局所frameに依存し、全体のgerbe自明化を意味しない。
 3. **二段剛体化とrulingのcoherenceを点検。** fppf同型層の核$\mathcal U_\lambda\times\mathcal U_\mu$と$\Gm^3$、正規性・基底変更、mutationの二重合成とpointed $t$-exact性を確認する。一般cubicで単一right-equivalenceが存在しないことと、mutationによるstack同値を分ける。
 4. **C4公表前整理。** Keller、VdB、AS/QP・AZ・Alper等の一次資料と定理仮定を照合し、Introduction・引用・独立寄与を整理する。scripts/check.py papers、C原稿のsources/build、LuaLaTeX全稿PDF・SyncTeX・ページ表示を実施する。未実行・依存制約を明記する。
 

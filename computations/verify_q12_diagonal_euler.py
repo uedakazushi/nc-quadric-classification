@@ -1,8 +1,9 @@
 """Exact rank/Euler/Hilbert checks for the Q12 finite normal foundation.
 
 Run: python3 computations/verify_q12_diagonal_euler.py
-Needs SymPy. Euler consistency is necessary but not sufficient for
-exactness of the relative diagonal resolution; its proof is in the TeX.
+Needs SymPy. Euler consistency alone is not sufficient. Together with ordinary
+ideal generation and the noncommutative universal conormal sequence,
+it gives a split resolution (see Euler-conormal lemma in the TeX).
 """
 import sympy as sp
 
@@ -27,6 +28,13 @@ def component(p, q):
 assert sum(sum(row) for row in A) == 24
 assert sum(mult for _, _, mult in V) == 8
 assert sum(mult for _, _, mult in R) == 4
+# Directed free path algebra: four vertices, eight arrows, twelve
+# length-two and eight length-three paths.  The relation ideal has
+# 2 short generators, 4 one-sided composites, and 2 residual paths;
+# their INDEPENDENCE is the separate direct-summand condition in TeX.
+assert 4+8+12+8 == 32
+assert 2+4+2 == 8
+assert 32-8 == 24
 total = [0, 0, 0]
 for target in range(4):
     for source in range(4):
