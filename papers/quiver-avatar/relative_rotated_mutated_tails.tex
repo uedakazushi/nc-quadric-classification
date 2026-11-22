@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v1.4。全finite-square Isomから相対heartへのt-exactな2自然降下。
+% 2026-11-23 / v1.5。全Isomのheart降下と非平坦引戻しのH0比較。
 \section{回転・mutationと相対heart}
 \label{sec:qa-relative-rotated-mutated}
 
@@ -690,6 +690,64 @@ massゲージとlift shearの有限foundation像が恒等であること，
 任意基底変更との整合を使い，
 非平坦な引戻しが一般のheart対象上
 導来$t$-exactだとは推論しない．
+heart上の通常の基底変更とその三重cocycleは
+補題~\ref{lem:qa-h2-heart-underived-base-change}で
+$H^0$を通じて別途確認する．
+\end{proof}
+
+\begin{lemma}[非平坦基底変更におけるheartの零次比較]
+\label{lem:qa-h2-heart-underived-base-change}
+前系の相対Morita同値が基底変更と導来水準で整合し，
+各局所affine基底上で$t$-exactであるとする．
+任意の基底変更$b:S'\to S$の導来引戻しを
+$\mathbf Lb_{\mathcal C}^*,\mathbf Lb_{\mathcal D}^*$
+とし，heart上の通常の（右完全な）module-object引戻しを
+\[
+ b_{\mathcal C}^{\heartsuit}(M)
+ :=H^0(\mathbf Lb_{\mathcal C}^*M),\qquad
+ b_{\mathcal D}^{\heartsuit}(N)
+ :=H^0(\mathbf Lb_{\mathcal D}^*N)
+\]
+と置く．すると実際のheart同値$\Phi^\heartsuit$について
+\[
+ \Phi_{S'}^\heartsuit b_{\mathcal C}^{\heartsuit}
+ \xrightarrow{\ \sim\ }
+ b_{\mathcal D}^{\heartsuit}\Phi_S^\heartsuit
+ \tag{HB}\label{eq:qa-h2-heart-nonflat-pullback}
+\]
+があり，任意の二回の基底変更と同型の合成に
+coherentである．ここで導来引戻し自体を
+$t$-exactと仮定・主張しない．
+\end{lemma}
+\begin{proof}
+導来水準の比較
+$\Phi_{S'}\mathbf Lb_{\mathcal C}^*
+ \simeq\mathbf Lb_{\mathcal D}^*\Phi_S$
+に$H^0$を適用する．$\Phi_S,\Phi_{S'}$は$t$-exact
+なので，$H^0\Phi_{S'}\simeq\Phi_{S'}^\heartsuit H^0$
+および$H^0\Phi_SM=\Phi_S^\heartsuit M$が成立し，
+式~\eqref{eq:qa-h2-heart-nonflat-pullback}を得る．
+
+二回の引戻し$b,c$について，$\mathbf Lb^*M$は
+非正次数にある．truncation三角の負次数部分に
+$\mathbf Lc^*$を施しても負次数に留まるので，
+\[
+ H^0\mathbf Lc^* H^0\mathbf Lb^*M
+ \simeq H^0\mathbf Lc^*\mathbf Lb^*M.
+\]
+したがって通常の引戻しの合成比較は導来引戻しの
+結合則から降り，三重重なりのcocycleも保存する．
+同型の合成についても$H^0$の函手性で従う．
+例として$R=k[\varepsilon]/(\varepsilon^2)$，
+$R'=k=R/(\varepsilon)$，$M=k$とすると，
+$\cdots\xrightarrow{\varepsilon}R
+\xrightarrow{\varepsilon}R\to k$は自由解消であり，
+$\operatorname{Tor}^R_i(k,k)=k$は全$i\ge0$で非零である．
+よって$\mathbf Lb^*k$はheartに属さないが，
+$H^0(\mathbf Lb^*k)=k\otimes_Rk=k$である．
+この反例は式~\eqref{eq:qa-h2-heart-nonflat-pullback}
+に影響せず，導来引戻しまで$t$-exactとする
+過剰な解釈を排除する．
 \end{proof}
 
 \begin{proposition}[二つの反対窓は同じ双対heartに入る]
