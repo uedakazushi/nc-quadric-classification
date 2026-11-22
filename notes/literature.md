@@ -1,63 +1,54 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.52。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.53。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
-## OU2014 §4–5と相対Serre根の比較資料
+## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
 
-OU2014 arXiv:1403.0713v1の印刷p.8 (4.11)–(4.13)と
-p.9 (5.8)–(5.10) を2026-11-22に一次PDFの各ページ画像で確認。
-§4は(E,O(2o),O(2z1),O(2z2))の楕円四つ組を与え、
-z1とz2それぞれに独立のE[2]平行移動を使う。
-§5はpotential→quintupleの有限GIT次数4を
-P³/S3→P³/(S3⋉(Z/2)³)の表示と同時符号反転の自明性で証明する。
-OU側の有効群Γ=F₂²、全群Γ⋊S3≅S4、
-一般四重射のS4 Galois閉包という群論は本稿Cでの新しい演繹。
-Bの相対Picard rootの式a^-2=NとOUのL2/L0を比較すると
-a=O(o−z2)⊗E[2]となることも本稿Cの直接計算である。
-ただしOU potential coverとz2のE[2] root coverそのものの同型は未証明。
+Shinnosuke Okawa and Kazushi Ueda,
+*Noncommutative quadric surfaces and noncommutative conifolds*,
+[arXiv:1403.0713v1](https://arxiv.org/pdf/1403.0713), 2014。
+2026-11-22に印刷p.3 Theorem1.1、p.8 §4 (4.11)–(4.13)、
+p.9 §5 (5.8)–(5.10)の一次PDFページを読み直した。
+quintuple GITはP(2,4,4,6)、potential GITはP(1,2,3,4)、
+potential→quintupleの有限射は次数4（既知）。
+§5の対角表示は**P³/S4 → P³/(S4⋉(Z/2)³)**であり、
+旧資料のS3座標置換という記載は誤りだったため訂正した。
+even sign群の射影的有効商VはF2²、G=V⋊S4は96元、
+S4のVへの作用核はKlein四元群K4。
+一般Galois閉包の群G/K4はS4_mon（別の置換作用）。
+Cでこの群論を証明し、検算コードを更新した。
+§4の群はSL2(F2)⋉(Z/2)^4で、z1,z2の独立した二捩れ平行移動を含む。
+Cは両群のindex4部分群まで含めた抽象同型
+G=(V_sign⊕K4_coord)⋊S3≅(E[2]_{z2}⊕E[2]_{z1})⋊S3
+を証明したが、**幾何的な同変双有理同型は未証明**。
 
-論文Bの相対cubic理論
+Cの四重射は一般の自由作用開で
+B=X/G、Y=X/S4を持つ有限étale射となり、
+GのVへの線型作用で定めた変動群スキーム
+𝒱=X×^G V_linのtorsorであることを証明。
+この class [Y]∈H¹_et(B,𝒱) がPicardの
+δ_[-2](N)∈H¹_et(S,E[2])と一致するかは、
+群スキーム𝒱_S≅E[2]を実際に構成してから比較する必要がある。
+OU §4の楕円四つ組(E,O(2o),O(2z1),O(2z2))に対する
+半点O(o−z2)⊗E[2]はCで直接計算した。
+potential上の同変半点の構成は同型を与える必要十分条件。
+節点退化まで同型を延長することは、
+OUの有限射とPicard[-2]のétale根空間の4対2という
+fiber数の違いにより不可能と証明済み。
+これらは原典の主定理ではなくCの新しい計算・補題である。
+
+Bの相対効果性入力
 prop:general-cubic-canonical-tails、
 thm:geometric-cubic-relative-effectivity、
 lem:picard-halves、
-thm:relative-compatible-root を2026-11-22に直接再読した。
-非線型geometric quintupleのcanonical tails・Oは
-Picard根を選ぶ前に基底上にある。
-相対Serre根とAS4被覆はfppf局所の存在条件なので、
-quintupleから内在的H2への相対射が根の選択なしで定まる
-というCの新定理を証明する。
-これはBの有限型相対効果性を引用した結果であって、
-OUのGIT半安定化全体にH2への射があるという意味ではない。
-なおB自身の全主定理の独立な全面検証は未完了。
-
-## 論文CのOkawa--Ueda GIT比較と慣性の一次資料
-
-Shinnosuke Okawa and Kazushi Ueda, *Noncommutative quadric surfaces and noncommutative conifolds*, [arXiv:1403.0713v1](https://arxiv.org/pdf/1403.0713), 2014。
-2026-11-22に一次PDFの印刷p.3・Theorem1.1(1)--(4)をページ画像で確認した。
-quintuple表示の生のmoduli stackのgeneric stabilizerはGm^4で、
-その後のGIT商はP(2,4,4,6)、
-conifold potential側の生stackのgeneric stabilizerはGm、
-そのGIT商はP(1,2,3,4)。
-potential GITからquintuple GITへの有限射は**次数4**である。
-これらは既知の結果であり、本研究の新成果ではない。
-同定理は構造対象Oだけを指定した本研究のH2への
-忘却射の次数や、二つのGIT商と内在的H2がスタック同値であるとは述べない。
-
-Cの新補題 prop:qa-ou-scalar-gerbe は、
-quintuple群∏GL(V_i)×GL(W)に含まれる
-中心K≅Gm^4が関係テンソル全体に自明に作用し、
-さらにquintupleから作るZ代数の頂点共役を通じて
-pointed tailsの恒等自然変換へ落ちることを示す。
-この慣性核が消えない生の表示商からH2への射は
-表現可能ではあり得ない。
-これは既知のgeneric stabilizerの記述と
-本研究のpointed比較を明示的につなぐ確実な命題であるが、
-全quintuple上の適合H2族の存在・相対開性は未解決。
-Cの prop:qa-forgetful-homotopy-fiber は
-Aut群の剰余集合と相対慣性を区別する一般groupoid補題。
-GITのdegree4から内在的Serre根の個数は推定しない。
-
+thm:relative-compatible-root はGitHub主原稿で照合した。
+非線型geometric quintupleのcanonical tailsと構造対象は、
+Picard根の選択前から存在する。
+その根とAS4被覆をfppf局所のwitnessとして使い、
+Cでquintuple→H2相対射を構成した。
+全GIT compactificationへこの射が延長するという主張ではなく、
+Bの全数学的証明を今回独立に全面検証したわけでもない。
 
 ## 研究の位置
 

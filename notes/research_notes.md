@@ -1,127 +1,101 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.80（A v1.69・20節、B v0.39・31節、C v0.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.81（A v1.69・20節、B v0.39・31節、C v0.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
-## 論文Cの現行結果：一般cubic比較射・OU次数四・Picard半点
+## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
-比較の定理と十分な証明は論文Cの
-papers/quiver-avatar/git_comparison.tex に一括して収録した。
-ここには再開に必要な関係と未解決点のみを記す。
+**正本と確実性。** 数学的定理・証明は論文C
+(papers/quiver-avatar/git_comparison.tex)に置く。
+以下は検算規約・相対比較の入力・現在残る核心のみ。
+OU2014 §4 (4.11)–(4.13)、§5 (5.8)–(5.10)の一次PDFを再確認した。
+§5の対角表示は
+P³/S4_coord → P³/((Z/2)³⋊S4_coord)である。
+**旧ノートとCのS3_coord表記は誤り**であり、現在は訂正済み。
 
-**OU次数四の群論。**
-OU2014 §5 (5.8) ではpotential GITからquintuple GITへの射を
-P³/S3 → P³/(S3⋉(Z/2)³) と記述する。
-射影空間の同時符号反転を除くと有効な符号群は
-Γ=F₂³/<(1,1,1)>≅F₂²で、S3はΓの非零三元を置換する。
-従って有効全群Γ⋊S3=AGL₂(F₂)≅S4、
-S3は原点安定化群（index4、core自明）。
-一般座標の安定化群は自明なので関数体の次数四拡大は
-非Galois、Galois閉包群はS4。
-実際の有限群計算はcomputations/verify_ou_fourfold.pyにあり、
-24のaffine置換と位数6の安定化群を独立Pythonで検算した。
+**OUの実際の群と四重torsor。**
+四座標の偶数符号群の射影的有効商
+V={e∈F2^4:∑e_i=0}/<1111>≅F2²、
+座標置換H=S4_coordとし、G=V⋊H（位数96）。
+HのVへの作用の核は二重互換K4（位数4）で、
+像はGL2(F2)≅S3。
+coset G/HはVの四元でありGはu↦v+σ(u)と作用する。
+Core_G(H)=K4、G/K4=AGL2(F2)≅S4_mon。
+よってOU一般四重射は非GaloisでGalois閉包S4_mon。
+単なる定数V-torsorではない。
+Gが自由に作用する稠密な対角開Xに対しB=X/G,
+Y=X/Hは、線型作用による可変有限étale群局所系
+𝒱=X×^G V_linの自然なtorsorで、
+[Y]∈H¹_et(B,𝒱)となる。
+この作用群の有限計算はcomputations/verify_ou_fourfold.py
+（even sign 8, V 4, G 96, core 4, image 24、
+K4⋊S3=H）で独立に確認し、ソースにassertionsを追加した。
+今回の計算検証はOU/Picard両torsor同型の形式証明ではない。
 
-**相対Picard根の幾何点。**
-Bのlem:picard-halvesにおけるT=S×_(N,Pic0,[-2])Pic0はétale全射。
-smooth ellipticならE[2]四重torsor、既約nodalならPic0=Gmで2点、
-既約cuspidalならPic0=Gaで1点である。
-同一連結基底にsmoothとnodalがあればT→Sは
-全体に有限étale次数4にはなれない。
-これはPicard根の相対表示についての結果で、
-OU GITの境界sheetの個数ではない。
+**OU §4の楕円群との強い抽象的整合性。**
+H=S4_coordはK4⋊S3_markに分裂するので
+G=(V_sign⊕K4_coord)⋊S3_mark。
+V_signとK4_coordは同じS3標準二次元表現であり、
+OU §4のG_ell=(E[2]_{z1}⊕E[2]_{z2})⋊SL2(F2)と
+**index4部分群を含む抽象有限群対として同型**となる。
+V_signをz2、K4をz1側と対応できるが、
+これは同変双有理写像の存在を証明しない。
+四分岐点の偶数部分集合/補集合によって
+V_signは四点分岐genus1の2-torsionと標準的に同型。
+ただし符号反転が分岐点集合自体を変えるので
+そのspectral curveや群スキームを
+quintuple曲線のE[2]と無証明に同一視しない。
 
-**OU楕円四つ組との明示対応。**
-OU2014 §4 (4.12),(4.13) の
-(E,O(2o),O(2z1),O(2z2))では
-N=L2 L0^-1=O(2z2−2o)。
-よってa^-2=Nの全根は a=O(o−z2)⊗ξ, ξ∈E[2]。
-OUのbirational楕円一様化のz2平行移動E[2]因子が
-この四つのPicard根そのものとなる。
-OU §5のpotential→quintupleの次数4射が
-これと同じ被覆であるとはまだ示していない。
-smooth elliptic相対族ではPicard根のtorsor classは
-δ_[-2](N)∈H¹_et(S,E[2])である。
-OUの有効符号局所系を同じ基底のE[2]に同定した後は、
-二つのH¹ classを比較すれば同型・非同型が決まる。
+**Picardの半点とnodal境界障害。**
+Bのlem:picard-halvesでは根空間
+T_N=S×_(N,Pic0,[-2])Pic0はétale全射。
+smooth ellipticならE[2]-torsorで幾何fiber4点、
+既約nodalではPic0=Gmで2点、cuspidalではPic0=Gaで1点。
+OU §4楕円四つ組(E,O(2o),O(2z1),O(2z2))では
+N=L2 L0^-1=O(2z2−2o)、
+a=O(o−z2)⊗ξ（ξ∈E[2]）。
+z2にE[2]を足す操作はこの半点の四選択と一致する。
+OU有限GIT射とT_Nが連結基底S上で同型なら
+T_Nは有限étale次数4となるが、同じ基底にsmoothとnodalが
+ある場合にはfiberが4/2と異なるので**同型は不可能**。
+滑らかなgeneric locusでの比較と境界までの
+有限compactificationを別課題とする。
 
-**実際の相対群oid射を構成済み。**
-非線型geometric quintupleの表示開S上の
-普遍cubic Z代数DからC_ij=D_{-j,-i}とする。
-Bのprop:general-cubic-canonical-tailsで、二周期を選ぶ前から
-(qgr C,π e0 C)と相対heart・module-object底変更が基底上にある。
-BのPicard étale根chartで構成するSerre平方根βと
-Bのthm:geometric-cubic-relative-effectivityによるAS4被覆は、
-この基底上で既にあるpointed族がH2の公理を満たす
-fppf局所的なwitnessであり、H2の標識ではない。
-従ってquintuple表示スタック→H2の実際の相対射を根なしで構成する。
-生の表示のGm⁴慣性はZ代数の頂点共役でpointed恒等に落ちるので、
-剛体化した表示スタックからの相対射へ因数分解する。
-その表示スタックは16−(17−4)=3次元smoothで、
-標的H2もsmooth純三次元。これはétale性やfiberの濃度を証明しない。
-同一quintupleのPicard根四つはH2の異なる四対象ではなく、
-全て同じ相対tails対象のwitnessである。
-Cのthm:qa-geometric-cubic-relative-forgetting と
-cor:qa-quintuple-rigid-dimensionに証明を保持する。
+**二つの相対torsorを同定する具体的テスト。**
+smooth elliptic quintuple基底S→Bにおいて
+群局所系𝒱_S≅E[2]を幾何的に構成し、
+φ_*[Y_S]=δ_[-2](N) in H¹_et(S,E[2])を証明すれば、
+OU四重torsor≅Picard根torsorとなる。
+同値な実践的課題は、OU potential側P=Y×_B S上で
+a∈E(P)を構成し、
+[-2]a=N|_P、a(p+v)=a(p)+φ(v)を
+P×_S𝒱の上の等式として確認することである。
+幾何点ごとの半点存在だけでは足りない。
+論文Cの cor:qa-ou-picard-h1-criterion、
+lem:qa-ou-equivariant-halfpoint-test に証明を保持。
+この同型は**現在未解決**である。
 
-**未解決の核心と次の作業。**
-OU §5の一般四重sheetをOU §4楕円四つ組へ引き戻し、
-z2平行移動のE[2] torsorとmonodromy・Kummer classを
-実際の座標で比較する。
-その後、剛体化表示→H2の慣性群写像、微分、
-ruling/四項窓のpointed fiberを計算する。
-一般群oidの剰余集合と相対慣性核の公式はCに既証明。
-OUの次数4＝H2忘却の次数とは仮定しない。
-AのLuaLaTeX成功はユーザー手元で確認、B/Cの組版、
-全証明独立監査・包括的新規性比較は未実施。
+**H2忘却の構成済みの範囲。**
+非線型geometric quintupleの普遍cubic Z代数Dから
+C_ij=D_{-j,-i}を作り、Bの
+prop:general-cubic-canonical-tails・
+thm:geometric-cubic-relative-effectivityと
+Picard étale根構成を使うことで、根を選ばずに
+(qgr C,π e0C)∈H2を与える相対群oid射がある。
+Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
+剛体化表示スタックはsmooth純3次元でH2の同次元。
+四つのPicard根は同じpointed対象のwitnessであり
+四つの異なるH2対象ではない。
+剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
-## 論文C：既存GITと内在的H2を比較する際の慣性核とファイバー
-
-**一次文献と対象の違い。** Okawa--Ueda, arXiv:1403.0713v1,
-Theorem1.1(1)--(4)（印刷p.3）を一次PDFのページ画像で2026-11-22に確認した。
-quintupleのcompact GITはP(2,4,4,6)、conifold potentialのcompact GITは
-P(1,2,3,4)、後者から前者への有限射は次数4である。
-quintupleの生のstackはgeneric stabilizer Gm^4を持ち、
-potentialの生のstackはgeneric Gmを持つ。
-このGIT有限射は、構造対象Oだけを保つH2への平方根・ruling忘却ではない。
-GIT閉軌道とpointed exact同値の同一視も未証明。
-
-**今回の新しい確実な補題（Cの正本）。**
-V0,V1,V2,V3を二次元、Wを一次元とすると、
-T=V0⊗V1⊗V2⊗V3⊗W^∨に対して
-G=∏GL(Vi)×GL(W)のスカラー作用は
-(λ0,...,λ3,μ)↦(∏λi)/μである。従って
-K={(λ0 id,...,λ3 id,(∏λi)id_W)}≅Gm^4は中心かつTに自明に作用する。
-生の表示商[T/G]→[T/(G/K)]はK-gerbeとなる。
-実際にH2へ入るquintuple族に限れば、隣接Homのスカラー変更を
-γ_i^-1γ_jの頂点共役として書け、graded moduleの次数ごとの
-γ_i^-1倍からtailsの恒等functorとの自然同型が得られる。
-構造対象の同型も正規化できる。
-従って表示のK慣性はpointed忘却で恒等射に落ち、
-この未剛体化表示からH2への忘却射は**表現可能でない**。
-論文Cの prop:qa-ou-scalar-gerbe に全証明がある。
-これはOUによるgeneric Gm^4の存在を超えて、
-内在的pointed比較における**慣性写像の核**を述べる。
-この命題はH2への相対射を全GIT半安定領域で構成したという主張ではない。
-
-**群oidの一般公式。**
-実際の忘却射F:X→Yとy∈Y(k)に対し、homotopy fiberの対象は
-(x,α:F(x)≅y)で、自己同型はKer(Aut_X(x)→Aut_Y(F(x)))。
-ファイバーの同型類は、F(x)≅yとなるXの同型類に関して、
-Aut_Y(y)/αF(Aut_X(x))α^-1の剰余集合の直和である。
-式はCの prop:qa-forgetful-homotopy-fiber に証明済み。
-よって**GITの次数、幾何ファイバーの同型類の濃度、
-homotopy fiberの慣性核**は三つの別量であり、互いに数え替えない。
-
-**次の具体的着手点。**
-一般geometric cubicの有効開のquintupleから相対H2への実際の射を確認し、
-同じOを持つpointed groupoidにおいて
-(A)頂点スカラーの剛体化、(B)残る有限慣性、
-(C)ruling/四窓を動かした際のpointed同値、
-(D)potential→quintupleの次数4との関係を順に計算する。
-Cの相対AS/heart適合部分が開であること、
-全GIT compactificationからH2への射、
-generic fiberの有限性・次数は**未証明**。
-Bは標的H2のArtin性・慣性・境界の正本、Aは体上分類の正本。
-独立のGIT比較をBへ重複させない。
+**再開する数学的核心。**
+OU §4の(G_ell,H_ell)と§5の(G,H)の群対同型を
+実際の幾何的quintuple族の同変双有理対応へ昇格する。
+群局所系の同定とKummer class一致を計算し、
+potential上の同変半点を構成または障害を示す。
+次に剛体化quintuple→H2の慣性写像と微分を調べる。
+OUの次数4をH2忘却の次数と断定しない。
+Aはユーザー手元での組版成功報告あり。
+B/Cの実組版・全面独立証明監査・網羅的新規性確認は未了。
 
 ## 一致類の全慣性・AHR形式対・局所good moduliの二次的性質
 

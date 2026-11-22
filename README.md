@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.82、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v0.6。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.83、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v0.7。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 既存quintuple/conifold GIT・有限箙/QP・avatarと内在的H2の比較 | v0.6。非線型geometric quintuple→H2の相対射を構成。スカラー剛体化後dim3、OU四重GITのS4-monodromyとPicard根4/2/1・OU楕円z2の明示対応を証明。二つの四重被覆の同型・慣性・fiberは未解決 |
+| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 既存OU GIT・quiver/QP/avatarとH2の相対比較 | v0.7。OUの正しい座標S4を再確認・修正し有効96元群と一般S4 Galois閉包を証明。四重射のtwisted有限V-torsor、§4楕円群との抽象対同型、nodalへの非延長、同変半点の比較条件を追加。実際のtorsor同型と慣性fiberは未解決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -65,15 +65,13 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **全H2の分類と、内在的モジュライの有限型smooth Artin性を証明した。** cubic側はlinearデータと、整・被約・非被約を含む全てのVan den Bergh許容四つ組で構成し、四生成環の二次関係に対する有限の代数的判定で重複を除く。noncubic側はP1上の二つの二点集合の非順序対の同時射影同値で分類する。両領域は交わらず、全対象を覆う。統一定理の証明本文は現行原稿に保持し、個別の論理点検と有限次数の厳密計算を行った。全証明の独立監査は未完了である。外部査読・形式証明・包括的な新規性確定とは区別する。組版等の実際の確認範囲は研究ノートを参照。
 
-## 論文C：GIT比較の位置づけと第一命題
+## 論文C：既存GITと内在的モジュライの比較
 
-**最新結果（C v0.6）。** [GIT比較節](papers/quiver-avatar/git_comparison.tex)で、OU2014の一般次数4射は非GaloisでGalois閉包群S4であること、Picard二等分の幾何fiberはsmooth ellipticで4、既約nodalで2、cuspidalで1であることを証明した。OU楕円四つ組(E,O(2o),O(2z1),O(2z2))の根はO(o−z2)⊗E[2]で、z2の2-torsion平行移動と一致する。**非線型geometric quintupleから内在的H2への実際の相対群oid射**は、Bのcanonical tailsが根の選択前から存在するため構成でき、中心Gm⁴を剛体化すると表示側も標的H2と同じsmooth純3次元となる。固定quintupleのPicard四根は同じH2対象のwitnessであり、異なる四対象ではない。OU四重sheetとPicard E[2] torsorの同型は未確定。次はKummer class・monodromyを同じ楕円四つ組基底で比較し、剛体化後の慣性・微分・pointed fiberを求める。群論の独立検算は[OU四重射のPython検算](computations/verify_ou_fourfold.py)にある。
+[論文CのGIT比較節](papers/quiver-avatar/git_comparison.tex)では、非線型geometric quintupleから内在的H2への実際の相対群oid射、Gm⁴スカラー慣性のpointed忘却による消滅、剛体化後smooth純3次元、一般forgetful homotopy fiberの自己同型核・剰余集合を証明している。
 
+**OU2014の厳密な群比較（v0.7）。** 原論文§5 (5.8)の正しい表示は **P³/S4_coord→P³/(S4_coord⋉(Z2)³)**。有効符号群はF2²、全有効群は96元。座標S4の作用核Klein四元群を除いたGalois閉包のmonodromyは別のS4（24元）で、一般の次数4射は非Galois。この四重射は線型monodromy S3の変動有限群局所系𝒱のtorsorとして構成できる。OU§4楕円四つ組の二つのE[2]平行移動群の半直積と、**index4部分群を含めて抽象群が一致**することも証明した。この群同型は両表示の幾何的な同変双有理同型をまだ与えない。
 
-
-既存Okawa--Ueda (2014) のGIT有限射 P(1,2,3,4)→P(2,4,4,6)（次数4）は、potentialからquintupleへの写像であり、内在的H2へのSerre根忘却の次数ではない。[CのGIT比較節](papers/quiver-avatar/git_comparison.tex)で、生のquintuple表示の中心Gm⁴が関係テンソル全体に自明に作用し、pointed tails圏への忘却では頂点ごとの共役により恒等自己同値に落ちることを証明した。従って未剛体化の生の表示からH2への忘却は表現可能でない。忘却のhomotopy fiberに関する自己同型核とAut群の剰余集合も独立命題として証明した。これらは相対GIT比較の障害と正しい計算対象の特定であって、一般cubicの相対忘却fiberの次数確定ではない。
-
-**Cの次の課題：** 一般geometric cubicの有効開で実際の相対比較射を作り、頂点スカラー剛体化後の慣性像、pointed同値、ruling/四窓忘却のfiberを計算する。BのArtin性・境界定理は引用し、GIT比較の数学的証明はCへ置く。A/B公表前監査は優先事項として継続する。
+BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidalでは1点。OU楕円座標z2の2-torsion平行移動はこの四つの根に対応するが、OU potential四重射とのtorsor同型は未証明。一般smooth基底での同型判定は**H¹のKummer class一致**、あるいはpotential側での相対同変半点の構成に帰着する。OUのGIT射は有限なので、Picard根のfiberが4/2と変わるnodal退化を含む基底上では、そのまま両者を同型にすることはできない。再現可能な[有限群計算](computations/verify_ou_fourfold.py)は96元の実効群、Klein四元核、24元のmonodromyをチェックする。次は§4と§5の群対同型を実際の幾何的quintuple族上に実現し、Kummer class・慣性・微分を計算する。
 
 ## 八本・十本・十二本矢と avatar
 
