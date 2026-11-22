@@ -1,9 +1,9 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.71。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.72。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
-## 原稿C v3.1：avatar–AS分類の出典と外部入力
+## 原稿C v3.2：avatar–AS分類の出典と外部入力
 
 **研究の直接の入力：** 大川新之介・植田一石、
 未公刊日本語草稿『非可換二次曲面の二つの反標準avatar』
@@ -59,6 +59,34 @@ pencilの評価列と$H^*(GF^{-1}P^{-1})$の消滅から
 AS-Gorenstein性を与えるdg実現の全論理、
 Keller--Yangのproof全文と網羅的新規性は未監査。
 上記結果の出典は新しい独立発見ではなく原草稿である。
+
+**原PDF §§19–21・42のcubic型到達判定の移管。**
+定理21.1は、square型の$Qgr$/導来圏が
+いずれかのcubic型のそれと同値であるための
+必要十分条件が非零二捩れ二重壁$Z$の外側であるとする。
+肯定方向は§18の二mutation chartとample corner、
+否定方向は§19のsmooth楕円上での
+任意strong exceptional cubic候補の数値rank強制、
+realization三角形とdeterminant、
+連続二pencilが一致するときの乗法kernelで示す。
+§20では$\mu_2$-torsorを保つ形式的平滑化、
+有限自由End代数上の$\Ext^2=0$を用いた
+perfect複体の持上げによりnodal/I2へ拡張する。
+これをC
+\`papers/quiver-avatar/cubic_obstruction_all_loci.tex\`に
+定義・補題・証明付きで組み込んだ。
+さらにCの\`as10_mutation_classification.tex\`では、
+二重壁の曲線がsmooth/nodal/I2だけになることを
+多重次数とPic^0のconnected groupから直接証明。
+一般の非被約$(2,2)$因子、cuspidal曲線、
+接する$(1,1)$二成分では非零2torsionが存在しない。
+数値Serre行列・2torsion隣接商のparityは
+\`computations/verify_avatar_cubic_obstruction.py\`の
+独立有限整数計算でPASS。
+これらは原PDFの既存結果の移管・検算であり、
+新規性や形式的な導来圏の証明器による検証ではない。
+完全なカテゴリカル／stack相対化と
+内在的O-marked H2へのpointed同値は別の研究課題。
 
 **区別：** 12本矢は8本のfinite foundation矢＋4本の
 relation-dual戻り矢であることが多く、
