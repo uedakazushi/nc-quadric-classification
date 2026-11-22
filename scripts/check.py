@@ -171,6 +171,14 @@ def sources() -> int:
             elif root_target != MAIN.resolve():
                 failures.append(f"{display}: TeX root does not point to the selected manuscript: {target.strip()}")
         text = tex_without_comments(original)
+        # Guard against pasting Markdown and Unicode maths into paper C.
+        # The latter can trigger "Missing $ inserted" at an unescaped underscore.
+        if MAIN.name == "quiver-avatar-moduli.tex":
+            for lineno, line in enumerate(text.splitlines(), 1):
+                if re.search(r"\*\*[^*\n]+\*\*", line):
+                    failures.append(f"{display}:{lineno}: Markdown bold in LaTeX; use \\textbf{{...}}")
+                if re.search(r"[∈≠≤≥→←↔]|Σ₂|Pic⁰|χ\s*=", line):
+                    failures.append(f"{display}:{lineno}: Unicode maths; use TeX math mode")
         for label in re.findall(r"\\label\{([^}]+)\}", text):
             labels[label].append(display)
         for refs in re.findall(r"\\(?:ref|eqref|pageref|autoref|cref|Cref)\{([^}]+)\}", text):
