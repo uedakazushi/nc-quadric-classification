@@ -1,6 +1,84 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.76（A v1.69・20節、B v0.37・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.77（A v1.69・20節、B v0.38・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## noncubic 被約境界の相対商・慣性・good/coarse 比較
+
+**幾何点から相対groupoidへ。**
+$\mathfrak N=(\mathfrak H_2\setminus\mathfrak V_{\rm cub})_{\rm red}$、
+表示商$\mathfrak N^{\mathrm{pres}}=[P/G]$はsmooth純次元1。
+Bの thm:noncubic-intrinsic-presentation-equivalence は
+幾何点分類だけでなく、char0の相対慣性（有限型群スキームのsmooth性）、
+Lagrangian境界smooth chartの二形式族への実際のétale相対標準化、
+相対tilting・Serre自然性から全反Serre軌道環の同型、
+AZ再構成でのpointed exact同値、
+接空間の全射と同次元smooth性からのrepresentable étale性、
+幾何groupoidの同値からStacks Tag0DUDによる同型、という順で証明する。
+全ての非被約testについての結論は、
+この相対**代数スタック同型**から従う。
+各命題の出典はBの同節である。
+
+**標数零が本質的。**
+char$p>0$の$B\alpha_p\to\operatorname{Spec}k$では
+全代数閉拡大体上の抽象自己同型群は自明だが、
+相対慣性群スキーム$\alpha_p$は非自明。
+従って抽象自己同型群の幾何点での単射性から
+representabilityを導くchar0補題は正標数へ拡張できない。
+Bの rem:charzero-inertia-faithful-necessity に明示した。
+
+**一致根対の局所形式不変式。**
+$f_1=uv$、$f_2=au^2+uv+cv^2$、$1-4ac\ne0$とし、
+残余慣性の連結トーラスは
+$(a,c)\mapsto(t^2a,t^{-2}c)$と作用する。
+有限成分は二つの方向の交換と同時符号変更で積$ac$を保つ。
+この二変数の形式的接表現の不変式は$k[[ac]]$である。
+good moduli座標$\chi=1/(1-4ac)$に対して
+$\partial_a\chi(0)=\partial_c\chi(0)=0$、
+$\partial_a\partial_c\chi(0)=4$を
+SymPy厳密式で独立確認した。
+境界stackの接空間は二次元、慣性Lieは一次元で局所次元1。
+good moduliの微分零から境界接空間の消滅を推論しない。
+相対同値の接全射性は二形式族へのsmooth chart因数分解に基づく。
+内在スタック全体の形式模型は別のAHR線型化定理で扱う。
+
+**goodとcoarseの比較と実際の障害。**
+$k[P]^G=k[\chi]$により表示商全体の
+$\chi:[P/G]\to\mathbb A^1$はgood moduli。
+固定第一形式$uv$では
+$\chi=b^2/(b^2-4ac)$であり、
+$\chi=\xi$のfiberは
+$(1-\xi)b^2+4\xi ac=0$かつ$\Delta\ne0$。
+$\xi\ne0,1$ならsmooth、$\xi=0$は二重Cartier divisor、
+$\xi=1$は$ac=0$のreduced node。
+$P$は整で$\chi$非定数なので$k[P]$は
+PID$k[\chi]$上torsion-free、従ってflat。
+一致根対の閉gerbeを除くDM開は、
+局所的な有限商
+$[\mathbb A^1_x/\mu_2]\to\mathbb A^1_\chi$、
+$\chi=x^2$を持つ。
+任意基底変更$\chi\mapsto s\in A$後も
+$A[x]/(x^2-s)=A\oplus Ax$、
+$\mu_2$不変式は$A$（標数零）なので、
+任意基底変更に両立するcoarse moduliを与える。
+Stacks Tags0DUP/0DURの一般のuniform categoricalは
+通常flat base changeの主張であり、
+任意basechangeへの拡張はこの具体的な有限商の再計算から示す。
+DM開はgoodではなく、比例する二形式の余次元二の閉部分を
+normal affine$P$から除いた非affine$P^\circ$の非affine性と
+cohomological affinenessにより反証する。
+またDVR族$f_1=uv$, $f_2=(u-v)(u-t^2v)$上の
+一般fiber慣性$A_t$は$\det A_t=-t^4$かつ
+係数に単元1を持ち、$\operatorname{PGL}_4$のDVR点へ延長できない。
+この行列式と二形式を$t^2$倍する作用をSymPyで独立確認した。
+従ってDM開の慣性はproperでない。
+全H2の粗空間不存在は別の穿孔直線の特殊化で示す。
+以上の式の検算と、普遍的coarse性・相対groupoid同値の
+全証明の形式検証を混同しない。
+
+**次に点検すること。**
+一致類の非連結慣性の全接・法表現、
+AHR形式局所線型化の仮定と形式不変式環を重点監査する。
+A/B/C全source checker・LuaLaTeX組版、全証明独立監査は未実施。
 
 ## 指定 Artin 同型の持上げとsmooth atlas・framed実現
 
@@ -60,8 +138,9 @@ B内部の正しい定理・系へ訂正した。
 変更対象4節のTeX環境バランスと補題引用の静的点検はPASS。
 31分割節の一括GitHub取得検査は接続側の操作数上限で未実施、
 全checkerとLuaLaTeX組版、全数学的証明の独立監査も未完了。
-次はnoncubic境界の相対groupoid・慣性・good/coarse moduliの
-依存を点検する。
+noncubic境界の相対groupoid・慣性・good/coarse moduliは
+本ノート冒頭の現行整理に統合した。
+次は一致根対の形式局所AHR線型化と全非連結慣性を検証する。
 
 ## 同じ Serre 根の中央 AS4 被覆：有限条件から全次数へ
 
