@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.42。反対normalのdual square heartと非先頭基準点による左Noether証明。
+% 2026-11-23 / v4.43。反対normalの非先頭AZと古典quadricの独立確認。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1687,6 +1687,59 @@ $i+4n\ge4>2$なので，論文Aの
 この証明は\emph{反対normalの零番頂点}への
 $H_2$認識を使っていない．
 \end{proof}
+
+\begin{example}[古典quadric上の非先頭構造対象による相対AZの検証]
+\label{ex:qa-q12-classical-dual-noninitial-az}
+古典quadric$\PP^1\times\PP^1$のsquare四項を
+\[
+ E=(\OO,\OO(1,0),\OO(0,1),\OO(1,1))
+\]
+とする．第一normal coneは評価完全列により
+$Z_1=\OO(1,2)$となり，normal四項は
+\[
+ X=(\OO,\OO(0,1),\OO(1,1),\OO(1,2)).
+\]
+同じ可換曲面を反対squareのheartとして実現し，
+perfect反同値を
+$\mathbb D(-)=\mathbf R\mathcal Hom(-,\OO(1,1))$
+と具体化すると，
+\[
+ \begin{split}
+ (Q_0,Q_1,Q_2,Q_3)
+     &=(\OO,\OO(1,0),\OO(0,1),\OO(1,1)),\\
+ Y=(\mathbb DZ_1,Q_0,Q_1,Q_3)
+     &=(\OO(0,-1),\OO,\OO(1,0),\OO(1,1)).
+ \end{split}
+\]
+これは通常のheartにあるfull strong normal四項であり，
+そのEuler行列は
+\[
+ \left(\operatorname{rk}\operatorname{Hom}(Y_i,Y_j)\right)_{i,j}
+ =\begin{pmatrix}1&2&4&6\\0&1&2&4\\
+                         0&0&1&2\\0&0&0&1\end{pmatrix}.
+\]
+$Y_0=\OO(0,-1)$は適合構造対象$Q_0=\OO$ではなく，
+\emph{二番目の直和因子}が適合構造対象である．
+$t^\vee=-\otimes\OO(2,2)$とし，
+$Y_i=\OO(a_i,b_i)$，$(a_i,b_i)=
+(0,-1),(0,0),(1,0),(1,1)$とすると，
+$n\ge1$では全Homの高次Extが消え，
+\[
+ \begin{split}
+ \sum_{i,j}\dim\operatorname{Hom}
+    (Y_i,(t^\vee)^nY_j)
+ &=\sum_{i,j}
+    (2n+a_j-a_i+1)(2n+b_j-b_i+1)\\
+ &=64n^2+64n+24.
+ \end{split}
+\]
+$n=0$でも有限Endの階数は$24$である．
+これは非先頭AZ基準対象と反Serre階数式の
+二つを独立に確認する古典的なモデルである．
+一般のnoncubic境界や非被約基底に関する証明は
+補題~\ref{lem:qa-q12-opposite-normal-dual-heart-az}
+の相対perfect/heart比較による．
+\end{example}
 
 \begin{theorem}[H2実現可能開上の全次数・同じheartの比較]
 \label{thm:qa-two-mass-h2-locus-jacobian-heart}
