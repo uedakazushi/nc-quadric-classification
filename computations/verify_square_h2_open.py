@@ -143,7 +143,74 @@ def examples():
     print("PASS five-factor basis changes and middle-vertex exchange on all accepted examples")
 
 
+def opposite_square_and_normal_obstruction():
+    """Full H2 square is opposite-invariant; reversed normal pointing need not be."""
+    flip = sp.Matrix(4, 4, lambda i, j: int(i == 2*(j % 2)+j//2))
+    assert flip**2 == sp.eye(4) and flip.det() == -1
+    matrices_to_test = [
+        sp.eye(4),
+        sp.diag(1, 2, -3, 1),
+        sp.Matrix([[1, 0, 1, 0], [0, 1, 0, 1],
+                   [0, 0, 1, 0], [0, 0, 0, 2]]),
+        sp.Matrix([[1, 2, 0, 1], [0, 1, 1, 0],
+                   [0, 0, 1, 2], [0, 0, 0, 1]]),
+        sp.Matrix([[1, 0, 0, 1], [0, 1, -1, 0],
+                   [0, 1, 1, 0], [-1, -1, -1, -1]]),
+    ]
+    for f, g in zip(matrices_to_test, reversed(matrices_to_test)):
+        mf, mft, mg, mgt = matrices(f, g)
+        n1, n1t, n2, n2t = matrices(g*flip, f*flip)
+        assert n1 == -mgt and n2 == -mft
+        assert n1t == -mg and n2t == -mf
+        assert criterion(f, g) == criterion(g*flip, f*flip)
+    print("PASS: strict opposite-square cross-transpose identity, five rational pairs")
+
+    f = sp.eye(4)
+    g = sp.Matrix([[1, 0, 0, 1], [0, 1, -1, 0],
+                   [0, 1, 1, 0], [-1, -1, -1, -1]])
+    assert g.rank() == 3 and g.nullspace()[0] == sp.Matrix([-1, 0, 0, 1])
+    assert matrices(f, g)[0].det() == -1
+    assert matrices(f, g)[2].det() == 16
+    assert criterion(f, g)
+
+    # For f-normal N=(C^* tensor W)/alpha_f(A), reverse its opposite,
+    # and form the square chart by taking the kernel of G'.
+    alpha = sp.zeros(8, 2)
+    for c in range(2):
+        for w in range(4):
+            for a in range(2):
+                alpha[4*c+w, a] = f[w, 2*c+a]
+    piv = list(alpha.T.rref()[1])
+    free = [i for i in range(8) if i not in piv]
+    inv = alpha.extract(piv, [0, 1]).inv()
+    quotient = sp.zeros(6, 8)
+    for k, row in enumerate(free):
+        quotient[k, row] = 1
+        coeff = alpha.extract([row], [0, 1])*inv
+        for j, p in enumerate(piv):
+            quotient[k, p] -= coeff[0, j]
+    assert quotient*alpha == sp.zeros(6, 2)
+    source_to_middle = sp.zeros(8, 8)
+    for b in range(2):
+        for c in range(2):
+            for d in range(2):
+                for w in range(4):
+                    source_to_middle[4*c+w, 4*b+2*c+d] = g[w, 2*d+b]
+    Gprime = quotient*source_to_middle
+    assert Gprime.rank() == 6
+    ns = Gprime.nullspace()
+    assert len(ns) == 2
+    opposite_normal_f = sp.Matrix(4, 4,
+        lambda row, col: ns[col % 2][4*(col//2)+row])
+    opposite_normal_g = flip
+    assert opposite_normal_f.det() != 0 and opposite_normal_g.det() != 0
+    assert [m.rank() for m in matrices(opposite_normal_f, opposite_normal_g)] == [1]*4
+    assert not criterion(opposite_normal_f, opposite_normal_g)
+    print("PASS: rank-three H2 square with reversed opposite normal outside H2")
+
+
 if __name__ == "__main__":
     symbolic_indices()
     examples()
+    opposite_square_and_normal_obstruction()
     print("Scope: exact identities and examples only; the H2 theorem and relative claims require proofs.")
