@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v4.2（全H2のfinite foundation表示開への相対埋込）
+% 2026-11-22 / v4.3（実現可能foundation開の有限多項式判定の存在）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -1178,6 +1178,55 @@ $\Xi$の$\tau$-同変性から像は$\tau$-不変。
 $\HHstack$に同値である。
 開埋込上での対合商もこの同値を保つので
 式~\eqref{eq:qa-full-intrinsic-foundation-open}が従う。
+\end{proof}
+
+\begin{corollary}[実現可能foundationの有限多項式判定の存在]
+\label{cor:qa-realizable-foundation-finite-open-criterion}
+定理~\ref{thm:qa-intrinsic-h2-open-in-foundation-stack}の
+実現可能開$\mathfrak F_{\HH}$を、
+二写像のパラメータ空間
+$U_0\subset\mathbb A^{64}$へ引き戻して
+$W_{\HH}\subset U_0$と書く。
+すると有限個の多項式
+\[
+ P_1,\ldots,P_m\in
+ k[\mathbb A^{64}]
+ \quad(m<\infty)
+ \tag{F-test}\label{eq:qa-foundation-finite-polynomial-open}
+\]
+が存在し、任意の幾何点$(F,G)\in U_0$について
+\[
+ (F,G)\in W_{\HH}
+ \quad\Longleftrightarrow\quad
+ \text{少なくとも一つの$P_i(F,G)$が非零}
+\]
+が成立する。これらの多項式が同時に零となる
+閉部分は$\mathcal G/K$-不変である。
+標数零では、そのイデアルの有限生成元を
+有限次元の$\mathcal G/K$-部分表現に含めることもできる。
+
+この系は\emph{有限個の多項式が存在する}という
+Noether性の帰結であり、
+実際の$P_i$の計算、次数上界、
+効率的なmembership判定、
+あるいはrelative Serre根・AS4条件の
+明示的有限認識を構成したものではない。
+これらは引き続き具体的研究課題である。
+\end{corollary}
+\begin{proof}
+$U_0$は$\mathbb A^{64}$の不変開部分であり、
+$W_{\HH}$は前定理によりその不変開部分である。
+$Z=U_0\setminus W_{\HH}$は$U_0$の閉部分なので、
+$\mathbb A^{64}$での閉包$\overline Z$について
+$\overline Z\cap U_0=Z$となる。
+多項式環はNoether環なので、$\overline Z$の
+被約閉イデアルは有限個の多項式で生成される。
+この有限個を$P_i$とすれば条件が従う。
+作用は有理的で、閉集合の不変性からそのイデアルは
+$\mathcal G/K$-不変である。
+有限個の生成元を各々含む有限次元の
+$\mathcal G/K$-部分表現の和を取れば、
+最後の主張も従う。
 \end{proof}
 
 \begin{corollary}[$j=0$の$A_4$点の三次元接表現と粗形式商]
