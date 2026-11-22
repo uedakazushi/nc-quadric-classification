@@ -4,7 +4,7 @@
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-資料確認日：2026-11-23（日本時間）。v1.94。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.95。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 全H2の共通線形化と大域良モジュライ
@@ -35,7 +35,7 @@ Antieau–Elmanto, *Descent for semiorthogonal decompositions*, Adv.Math.380(202
 
 Artin–Zhang Theorem4.5(1)の一般End環に対する再構成を、Okawa–Abdelgadir–Chan–Ueda, *Degenerations of orbifold curves as noncommutative varieties*, Nagoya Math. J.261(2026), e4, [DOI](https://doi.org/10.1017/nmj.2025.10067) のTheorem7.3と§7のfolding/unfolding（式7.1–7.5）で一次照合した。既知のAZ再構成やpacking自体を新結果とはせず、相対H2の平坦compact Ext次元から四対象のAZ2を導く証明、および指定square完成への適用を本稿の内容とする。引用キーは `AZ1994`, `OACU2026`。
 
-Keller, *Deformed Calabi–Yau completions*, Theorem6.10について[著者の訂正](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCorrCYCompletion.pdf)を一次確認した。minimal relationsがordinary ideal Iを生成する仮定が必要であり、arrow-adic完備化後の生成だけでは足りない。この訂正をundeformed caseでは不要と解釈しない。本稿のsquareは最長道長二なのでordinary idealの条件を満たし、相対Jacobian同定は実際の短対角解消を双対化して独立に証明する。一般変形parameterのCY性を相対的に無条件輸入しない。包括的新規性は未確認。
+Keller, *Deformed Calabi–Yau completions*, Theorem 6.10 の[著者による2011年の訂正](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCorrCYCompletion.pdf)を一次PDFの画像と本文で再確認した。relation QPの比較には、指定したrelationsがarrow-adic完備化でなく**ordinaryな関係ideal**を生成する条件が必要である。本研究のsquare有限代数は最長道長二で、今回の二mass normal finite foundationは最長道長三。後者は二つの短関係と二本の残余長関係が、三段道のrank六kernelを生成し、短関係の全合成を含んだordinary idealを生成することを直接証明した（[短い相対対角解消とJacobian/Serre比較](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)）。したがって非最小関係・nilpotent massでも訂正条件を満たす。さらに[2018年のerratum](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerErratumCYCompletions.pdf)の冒頭とTheorem 1.1を一次PDF画像で確認した。非零deformation parameterからのCY性にはnegative cyclic classの入力が必要だが、今回の結果は**undeformed** 3-preprojective tensor completionとH0のordinary Jacobian表示であり、この追加CY性の無条件輸入を行わない。二つの訂正の内容・依存は区別する。相対完全性はKellerの一般論だけから推論せず、有限bundleの対角解消とperfect-fiber判定を個別に使う。包括的新規性と全証明の独立監査は未完了。
 
 ## 相対heart判定に用いるdg Morita
 
