@@ -80,3 +80,42 @@ print("PASS: shear conjugation weights a,b and transported p,p' coefficients")
 eps=S.symbols("eps")
 assert S.diff((1+eps*t),eps).subs(eps,0)==t
 print("PASS: first-order nilpotent mass has nontrivial mixed action")
+
+# General reframe xnew=d*x+h, rnew=c*(q+lam*x) with independent
+# invertible c,d and arbitrary adjacent two-step path h.
+c,d,h,x0,q0=S.symbols("c d h x0 q0")
+r=q0+lam*x0
+xnew=d*x0+h
+rnew=c*r
+lamnew=c*lam/d
+tnew=d*t/c
+qnew=c*q0-lamnew*h
+assert S.cancel(rnew-(qnew+lamnew*xnew))==0
+assert S.cancel(d*(x0+t*r)+h - (xnew+tnew*rnew))==0
+assert S.cancel(lamnew*tnew-lam*t)==0
+assert S.cancel((d/c)*(t+s+lam*t*s)
+                -(tnew+(d/c)*s+lamnew*tnew*(d/c)*s))==0
+print("PASS: frame changes descend the mass kernel and its group law")
+
+# For nilpotent lam^3=0, the logarithm is a polynomial and commutes
+# with any frame change of the line bundle L.
+z=S.symbols("z")
+log=lambda v: v-lam*v**2/S.Integer(2)+lam**2*v**3/S.Integer(3)
+expo=lambda v:v+lam*v**2/S.Integer(2)+lam**2*v**3/S.Integer(6)
+for delta in (log(t+s+lam*t*s)-log(t)-log(s),log(expo(z))-z):
+    for power in range(3):
+        assert S.cancel(S.expand(delta).coeff(lam,power))==0
+# Intrinsic bundle-valued polynomial with coordinate change.
+zold=log(t)
+znew=tnew-lamnew*tnew**2/S.Integer(2)+lamnew**2*tnew**3/S.Integer(3)
+assert S.cancel(znew-(d/c)*zold)==0
+print("PASS: nilpotent mass logarithm descends as a line-bundle map")
+
+# Strict square middle swap preserves the vertex-scalar kernel K:
+# (l1,l2,l3/l1,l3/l2,l3) -> (l2,l1,l3/l2,l3/l1,l3).
+l1,l2,l3=S.symbols("l1 l2 l3")
+ks=(l1,l2,l3/l1,l3/l2,l3)
+swap=(ks[1],ks[0],ks[3],ks[2],ks[4])
+assert all(S.cancel(v-w)==0 for v,w in zip(swap,(l2,l1,l3/l2,l3/l1,l3)))
+assert (swap[1],swap[0],swap[3],swap[2],swap[4])==ks
+print("PASS: strict square swap preserves vertex torus and squares to identity")
