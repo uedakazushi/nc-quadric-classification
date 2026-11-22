@@ -6,7 +6,7 @@
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：論文C papers/quiver-avatar-moduli.tex と節 papers/quiver-avatar/git_comparison.tex をquiver/QP/avatarとOU GIT→H2比較の正本とする。OU §5のS4_coord、有効Gの96元とtwisted V-torsor、§4楕円群との抽象群対同型に加え、OU四重射は二乗対角値を分岐点とするspectral曲線E_sp上の[2]^{-1}(P+)に**実際に同型**と明示半点で証明済み。これはquintuple点曲線との同一性を与えない。次はE_sp/Jacobianの相対j・標識点N・局所系を比べ、quintuple[-2]根との同一性または障害を求める。nodalへの非延長、剛体化後の慣性・pointed fiberの未解決を保持し、OU GIT次数4をH2忘却次数としない。Bは相対Artin標的の定理を供給する。
+- C：論文C papers/quiver-avatar-moduli.tex と節 papers/quiver-avatar/git_comparison.tex をquiver/QP/avatarとOU GIT→H2比較の正本とする。OU §5 (5.3)に由来するS4_coord（(5.8)直後の印刷S3とは不整合）、有効Gの96元とtwisted V-torsor、§4楕円群との抽象群対同型に加え、OU四重射は二乗対角値を分岐点とするspectral曲線E_sp上の[2]^{-1}(P+)に**実際に同型**と明示半点で証明済み。これはquintuple点曲線との同一性を与えない。次はE_sp/Jacobianの相対j・標識点N・局所系を比べ、quintuple[-2]根との同一性または障害を求める。nodalへの非延長、剛体化後の慣性・pointed fiberの未解決を保持し、OU GIT次数4をH2忘却次数としない。Bは相対Artin標的の定理を供給する。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 

@@ -173,9 +173,10 @@ $g\in\operatorname{Aut}_{\mathfrak Y}(y)$ の形である。
 
 \begin{proposition}[OU四重射の全符号群と一般 Galois 閉包]
 \label{prop:qa-ou-fourfold-s4-monodromy}
-Okawa--Ueda \cite[\S5, (5.8)]{OU2014} の
+Okawa--Ueda \cite[\S5, (5.3), (5.8)]{OU2014} の
 potential GIT から quintuple GIT への有限射は、
-対角化後の表示で
+\emph{同論文(5.3)の四固有値の対称群と整合するように}
+対角表示を読み直すと
 \[
  \PP^3/S_4^{\mathrm{coord}}
  \longrightarrow
@@ -219,8 +220,15 @@ $k(\PP^3)^{S_4^{\mathrm{coord}}}/k(\PP^3)^G$
 同じ抽象群でも異なる役割を持つ。
 \end{proposition}
 \begin{proof}
-OUの式~(5.8)は明確に $S_4$ と偶数符号群 $(\mathbb Z/2)^3$
-を用いている。同時反転の中心二元を割ると
+原論文の式~(5.3)は四つの固有値の不変式環を
+$k[x_1,x_2,x_3,x_4]^{S_4}=k[f_1,f_2,f_3,f_4]$
+と明示する。しかし(5.8)直後の商表示には
+二箇所 $S_3$ と印刷されており、(5.3)と不整合である。
+ここで使う $S_4$ は(5.3)の四座標の任意の置換から
+導出した\emph{訂正解釈}であり、(5.8)の印刷内容を
+そのまま引用したものではない。
+偶数符号群 $(\mathbb Z/2)^3$ の
+同時反転の中心二元を割ると
 式~\eqref{eq:qa-ou-projective-effective-group} の $V$ と
 $G$ が得られる。非零の $V$ の三元は、四点集合を二対に分ける
 $\{12|34,13|24,14|23\}$ と同一視される。
@@ -243,6 +251,21 @@ $k(\PP^3)^{K_4}$ で、その Galois 群は $G/K_4$。
 位数・核・四元への全置換は
 \path{computations/verify_ou_fourfold.py} で検算できる。
 \end{proof}
+
+\begin{remark}[OU原論文の式(5.3)と(5.8)の不整合]
+\label{rem:qa-ou-source-s3-s4-discrepancy}
+\cite[\S5, p.~9]{OU2014} の(5.3)は $S_4$ を用いる。
+一方、(5.8)の直後の商表示では
+$S_3$ が二度印刷されている。
+前者は四つの固有値の全対称式
+$f_1,f_2,f_3,f_4$ と、(5.7)の
+$\PP(1,2,3,4)$ の記述に直接対応する。
+三座標しか置換しない $S_3$ では同じ不変環にはならない。
+本節の四重被覆は(5.3)の $S_4$ に従って再構成したもので、
+(5.8)の印刷上の不整合を明示的に訂正して扱う。
+GIT有限射そのものとその次数四は
+\cite[Theorem~1.1(4)]{OU2014} の既知の結論である。
+\end{remark}
 
 \begin{proposition}[OU四重射の自然なtwisted $V$-torsor構造]
 \label{prop:qa-ou-twisted-fourfold-torsor}

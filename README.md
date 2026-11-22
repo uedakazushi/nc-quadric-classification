@@ -69,7 +69,7 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 [論文CのGIT比較節](papers/quiver-avatar/git_comparison.tex)では、非線型geometric quintupleから内在的H2への実際の相対群oid射、Gm⁴スカラー慣性のpointed忘却による消滅、剛体化後smooth純3次元、一般forgetful homotopy fiberの自己同型核・剰余集合を証明している。
 
-**OU2014の群比較とspectral Kummer実現（v0.8）。** 原論文§5 (5.8)の正しい表示は **P³/S4_coord→P³/(S4_coord⋉(Z2)³)**。有効符号群はF2²、全有効群は96元。座標S4の作用核Klein四元群を除いたGalois閉包のmonodromyは別のS4（24元）で、一般の次数4射は非Galois。この四重射は線型monodromy S3の変動有限群局所系𝒱のtorsorとして構成できる。OU§4楕円四つ組の二つのE[2]平行移動群の半直積と、**index4部分群を含めて抽象群が一致**することも証明した。この群同型は両表示の幾何的な同変双有理同型をまだ与えない。
+**OU2014の群比較とspectral Kummer実現（v0.8）。** 原論文§5 (5.3)は四固有値の全置換S4、しかし(5.8)直後の商表示はS3と印刷されていて不整合がある。(5.3)の不変式環から導く**訂正解釈**は **P³/S4_coord→P³/(S4_coord⋉(Z2)³)**。有効符号群はF2²、全有効群は96元。座標S4の作用核Klein四元群を除いたGalois閉包のmonodromyは別のS4（24元）で、一般の次数4射は非Galois。この四重射は線型monodromy S3の変動有限群局所系𝒱のtorsorとして構成できる。OU§4楕円四つ組の二つのE[2]平行移動群の半直積と、**index4部分群を含めて抽象群が一致**することも証明した。この群同型は両表示の幾何的な同変双有理同型をまだ与えない。
 
 **新しい実証結果：** 対角値x_iの二乗を四分岐点とするspectral曲線 y²=∏(t−x_i²)、∞+を原点、P+=(0,∏x_i)としたとき、OU四重射は **[2]^{-1}(P+)** に相対的に同型となる。明示式は t0=−s3/s1、y0=−(t0²+s2t0+s4)。四半点の厳密検算は[専用コード](computations/verify_ou_spectral_halving.py)で再現できる。四つの分岐点自身の半点torsorはOU四重射とmonodromy核が異なり、区別が必要。**ただしこのspectral曲線とquintupleの点曲線のJacobianおよび指定Nの同一視は未証明**である。
 
