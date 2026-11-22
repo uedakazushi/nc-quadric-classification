@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.86（A v1.69・20節、B v0.39・31節、C v1.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.87（A v1.69・20節、B v0.39・31節、C v1.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -185,8 +185,9 @@ OUの有限次数4のGIT射と合わせて、適当な稠密開では
 検算の範囲は有限符号群・有理数での軌道行列rank・固定点障害であり、
 厳密な一般記号的証明は論文本文に置く。
 
-**未解決の分岐点。** 剛体化quintuple→内在H2の慣性像が
-一般の四元群に忠実か否かを、幾何的point module群の作用から検証する。
+**一般pointed忘却の慣性単射（Cで証明）。** VdBの幾何的商D→D_geomは四つ組同型に自然。qgr D_geom≅coh C→qgr Dはexact fully faithfulであり、Aのelliptic_inverse節にB/(h)版の証明がある。剛体化quintupleの非単位μ₂²はC上の2捩れ平行移動で、skyscraper点対象k(p)を非同型なk(p+ξ)へ移す。したがってpointed exact自己同値への慣性写像は一般開で単射で、剛体化quintuple→H2は同開で代数空間に表現可能。標的の全慣性・忘却のétale性・次数までは未解決。証明正本はC prop:qa-ou-generic-inertia-faithful-to-h2。
+
+**未解決の分岐点。** 標的Aut(C,O)に残る自己同値（ruling交換等）とpointed fiberを検証する。
 source側の有限慣性がroot deckとして作用するという推論は誤り。
 さらに三次元slice k⁴/kxから内在HH²への微分を実際に求め、
 pointed同値で消えるdirectionsや別ruling/foundationを検出する。
@@ -206,7 +207,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
 **再開する数学的核心。**
-有効表示間の一般有限étale四重射とμ₂²の慣性同型は確立した。次は表示→内在H2の慣性核・接射・homotopy fiberを調べる。
+有効表示間の一般有限étale四重射とμ₂²慣性同型、さらに表示→内在H2のμ₂²慣性単射・表現可能性を確立した。次は標的全慣性・接射・homotopy fiberを調べる。
 正則半単純potentialの非対角族に対する相対半点は構成済み。
 対角一般開のOU/Picard根torsor同型を、非対角相対quadric pencilの
 Spin/Hodgeの構成へ延長し、任意底変更でのcoherenceを点検する。

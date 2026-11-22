@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.2
+% 日本語 LuaLaTeX。2026-11-22 / v1.3
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.2（剛体化後の有限慣性と表示スタック四重射）}
+\date{2026年11月22日\quad v1.3（一般pointed忘却の慣性単射）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -80,6 +80,9 @@ quintuple 表示の四次元スカラー慣性が pointed な忘却で消える�
 点曲線のJacobian二捩れ翻訳群に一致することを証明する。
 有効potential/quintuple表示スタックの一般次数四射は
 慣性・接写像が同型で、適切な稠密開では表現可能有限étaleとなる。
+さらに幾何的点曲線の完全忠実な点対象から、
+一般の有限慣性が内在pointed忘却でも忠実に残り、
+剛体化quintupleから$\HHstack$への一般開での表現可能性を得る。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -95,7 +98,7 @@ GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決
 正則半単純な非対角potential族には相対Hodge-Jacobian同型と
 特性係数による相対半点を任意底変更と可換に構成する。
 potentialを選ばない一般quintupleから内在$\HHstack$への
-慣性像・接写像・pointed fiber、境界での比較は未解決である。
+標的の全慣性・接写像・pointed fiber、境界での比較は未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。
@@ -179,6 +182,8 @@ OUの一般安定化群という表現は単位連結成分と全慣性を区別
 また、potential→quintupleの既知GIT次数四射を
 定理~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}で
 一般の表現可能有限étaleスタック射へ強める。
+さらに命題~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}では
+点曲線の点対象からpointed忘却の一般慣性単射を証明する。
 ここで用いる square・rotated square の反標準 avatar と十本矢 mutation は
 大川--植田の日本語草稿 v7 \cite{AvatarVSeven2026} に、
 十二本矢型の追加と統一 avatar は研究ノート \cite{Q12Avatar2026} に記載されている。

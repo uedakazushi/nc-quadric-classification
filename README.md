@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.88、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v1.2。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.89、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v1.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 既存OU GIT・quiver/QP/avatarとH2の相対比較 | v1.2。spectral Kummer、quintuple点曲線のJacobian・j公式、Hodge ruling符号P+↔L2を証明。対角滑らかな稠密開でPicard根torsorとのG同変比較を完了。非対角正則半単純potentialの相対半点も構成。一般剛体化quintupleのμ2²慣性・接sliceと有効potential→quintupleの有限étale四重射を証明。内在H2への慣性像・接射・fiberは未決 |
+| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | 既存OU GIT・quiver/QP/avatarとH2の相対比較 | v1.3。spectral Kummer、quintuple点曲線のJacobian・j公式、Hodge ruling符号P+↔L2を証明。対角滑らかな稠密開でPicard根torsorとのG同変比較を完了。非対角正則半単純potentialの相対半点も構成。一般剛体化quintupleのμ2²慣性・接sliceと有効potential→quintupleの有限étale四重射を証明。pointed忘却への一般μ₂²慣性単射を証明。標的の全慣性・接射・fiberは未決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -69,14 +69,14 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 [論文CのGIT比較節](papers/quiver-avatar/git_comparison.tex)では、非線型geometric quintupleから内在的H2への実際の相対群oid射、Gm⁴スカラー慣性のpointed忘却による消滅、剛体化後smooth純3次元、一般forgetful homotopy fiberの自己同型核・剰余集合を証明している。
 
-**OU2014の群比較・spectral Kummer・quintuple曲線（v1.2）。** 原論文§5 (5.3)は四固有値の全置換S4、しかし(5.8)直後の商表示はS3と印刷されていて不整合がある。(5.3)の不変式環から導く**訂正解釈**は **P³/S4_coord→P³/(S4_coord⋉(Z2)³)**。有効符号群はF2²、全有効群は96元。座標S4の作用核Klein四元群を除いたGalois閉包のmonodromyは別のS4（24元）で、一般の次数4射は非Galois。この四重射は線型monodromy S3の変動有限群局所系𝒱のtorsorとして構成できる。OU§4楕円四つ組の二つのE[2]平行移動群の半直積と、**index4部分群を含めて抽象群が一致**することも証明した。この群同型は両表示の幾何的な同変双有理同型をまだ与えない。
+**OU2014の群比較・spectral Kummer・quintuple曲線（v1.3）。** 原論文§5 (5.3)は四固有値の全置換S4、しかし(5.8)直後の商表示はS3と印刷されていて不整合がある。(5.3)の不変式環から導く**訂正解釈**は **P³/S4_coord→P³/(S4_coord⋉(Z2)³)**。有効符号群はF2²、全有効群は96元。座標S4の作用核Klein四元群を除いたGalois閉包のmonodromyは別のS4（24元）で、一般の次数4射は非Galois。この四重射は線型monodromy S3の変動有限群局所系𝒱のtorsorとして構成できる。OU§4楕円四つ組の二つのE[2]平行移動群の半直積と、**index4部分群を含めて抽象群が一致**することも証明した。この群同型は両表示の幾何的な同変双有理同型をまだ与えない。
 
 **新しい実証結果：** 対角値x_iの二乗を四分岐点とするspectral曲線 y²=∏(t−x_i²)、∞+を原点、P+=(0,∏x_i)としたとき、OU四重射は **[2]^{-1}(P+)** に相対的に同型となる。明示式は t0=−s3/s1、y0=−(t0²+s2t0+s4)。四半点の厳密検算は[専用コード](computations/verify_ou_spectral_halving.py)で再現できる。四つの分岐点自身の半点torsorはOU四重射とmonodromy核が異なり、区別が必要。**さらに対角potential quintupleの点曲線は q(u)=q(Xu)=0 の二quadric完全交叉であり、Jacobianは同じspectral曲線**である。quadric pencilのruling被覆≅Pic²(C)を使い、OU不変量からのj公式を証明した。**さらにHodge対合でP+↔L2のruling符号を確定し、対角の滑らかな稠密開ではOU四重torsorと指定NのPicard[-2]根torsorを同型にした。** 偶数符号・S4置換・スカラーに関してJacobianと指定点がG同変に降下する。正則半単純な非対角potential族には相対HodgeでJacobian・指定点・明示半点を任意底変更と可換に構成した。potentialを選ばない一般quintuple族・GIT全体のuniversal曲線・慣性/pointed fiberは未解決である。
 
 
-**一般表示スタックの有限慣性・接slice（C v1.2で追加）。** OU2014 Theorem1.1(1),(3) は一般安定化群を四次元/一次元スカラートーラスと記しているが、全慣性としては有限補正が必要。正則半単純一般点のquintupleを `X=diag(x₁,x₂,x₃,x₄)` とすると、`G_eff=G̃/Gm⁴` に残る安定化群は偶数符号行列を全反転で割った **μ₂²**。楕円点曲線 `C={Σuᵢ²=Σxᵢ²uᵢ²=0}` 上で各非単位元は固定点を持たず、`Jac(C)[2]` の平行移動に一致する。Picard根の**同型類**には自明に作用するので、四つの根を推移的に動かすdeck群とは別の作用である。接軌道の階数は有効potentialで7（10次元）、有効quintupleで13（16次元）、両接sliceは `k⁴/kx`。**有効potential→有効quintuple表示スタックの一般次数4射は慣性・接写像が同型のため、適切な稠密開で表現可能な有限étale射となる。** これは `H2` への忘却射の表現可能性・次数を証明しない。証明は[論文CのGIT節](papers/quiver-avatar/git_comparison.tex)、厳密検算は[専用コード](computations/verify_ou_quintuple_inertia.py)（source側一般安定化群・接rankと四sheet）を参照。
+**一般表示スタックの有限慣性・接slice（C v1.2で追加）。** OU2014 Theorem1.1(1),(3) は一般安定化群を四次元/一次元スカラートーラスと記しているが、全慣性としては有限補正が必要。正則半単純一般点のquintupleを `X=diag(x₁,x₂,x₃,x₄)` とすると、`G_eff=G̃/Gm⁴` に残る安定化群は偶数符号行列を全反転で割った **μ₂²**。楕円点曲線 `C={Σuᵢ²=Σxᵢ²uᵢ²=0}` 上で各非単位元は固定点を持たず、`Jac(C)[2]` の平行移動に一致する。Picard根の**同型類**には自明に作用するので、四つの根を推移的に動かすdeck群とは別の作用である。接軌道の階数は有効potentialで7（10次元）、有効quintupleで13（16次元）、両接sliceは `k⁴/kx`。**有効potential→有効quintuple表示スタックの一般次数4射は慣性・接写像が同型のため、適切な稠密開で表現可能な有限étale射となる。** さらに一般μ₂²がcoh(C)のskyscraper点対象を非同型な点対象へ動かすことから、内在H2への慣性写像は一般開で単射、**剛体化quintuple→H2の忘却射は同開で表現可能**と証明した。ただし標的全慣性、忘却射のétale性・次数は未解決。証明は[論文CのGIT節](papers/quiver-avatar/git_comparison.tex)、厳密検算は[専用コード](computations/verify_ou_quintuple_inertia.py)（source側一般安定化群・接rankと四sheet）を参照。
 
-BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidalでは1点。OU楕円z2のE[2]平行移動は四つの根に対応し、**対角滑らかな一般開**ではOU四重torsorとPicard根の一致を証明済み。potentialを選ばない一般quintuple→内在H2の慣性核・接写像・pointed fiberを次に調べる。nodalを含む連結基底に有限OU射と非有限Picard根をそのまま同型に延長できない。検算：[有限群](computations/verify_ou_fourfold.py)、[半点・j](computations/verify_ou_spectral_halving.py)、[Hodge符号](computations/verify_ou_hodge_ruling.py)。
+BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidalでは1点。OU楕円z2のE[2]平行移動は四つの根に対応し、**対角滑らかな一般開**ではOU四重torsorとPicard根の一致を証明済み。一般quintuple→内在H2の全慣性・接写像・pointed fiberを次に調べる（μ₂²慣性核は一般開で零と確定）。nodalを含む連結基底に有限OU射と非有限Picard根をそのまま同型に延長できない。検算：[有限群](computations/verify_ou_fourfold.py)、[半点・j](computations/verify_ou_spectral_halving.py)、[Hodge符号](computations/verify_ou_hodge_ruling.py)。
 
 ## 八本・十本・十二本矢と avatar
 

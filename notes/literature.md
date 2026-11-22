@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.55。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.56。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -71,8 +71,7 @@ p.7 (3.10)–(3.19)の左右SO4作用を用いて、
 有限慣性同型・接写像同型を証明し、
 OU既知の粗GIT有限次数4と合わせて一般有限étale四重射を得た。
 これはOU主定理の粗モジュライの次数4を否定するものではない。
-詳しい証明はCのprop:qa-ou-generic-quintuple-finite-inertiaおよび
-thm:qa-ou-rigid-potential-quintuple-generic-etale。
+さらにVdB2011の幾何的商D→D_geomとcoh(C)の完全忠実埋込を使い、一般μ₂²が内在H2へのpointed忘却で単射になることを証明した。これにより忘却射は一般開で表現可能だが、全慣性・étale性・次数は未解決。詳しい証明はCのprop:qa-ou-generic-quintuple-finite-inertia、thm:qa-ou-rigid-potential-quintuple-generic-etale、prop:qa-ou-generic-inertia-faithful-to-h2。
 今回確認したのは一次資料の表現・仮定・正則半単純模型であり、
 OU全原稿の網羅的再監査ではない。
 
