@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.9（慣性単射後の次の問題を整理）
+% 2026-11-22 / v2.0（論文Bのsmooth atlasから一般pointed忘却のétale性・HHを導出）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -399,6 +399,107 @@ fully faithful性により、その像もpointed Abel圏で
 したがって慣性射が単射となり、
 代数スタックの射の表現可能性の判定から
 この開で代数空間に表現可能である。
+\end{proof}
+
+\begin{theorem}[quintupleから内在的$\mathfrak H_2$への相対smoothnessと一般エタール性]
+\label{thm:qa-quintuple-h2-generic-etale}
+$k$ を標数零の代数閉体とし、非線型geometric quintupleの
+剛体化表示スタックを
+\[
+ \mathfrak Q_{\mathrm{geo}}^{\mathrm{rig}}
+ =[\mathscr G^{\mathrm{nl}}/G_{\mathrm{eff}}],
+ \qquad G_{\mathrm{eff}}=\widetilde G/K
+\]
+と書く。定理~\ref{thm:qa-geometric-cubic-relative-forgetting} の
+根を追加標識としない忘却射
+\[
+ \overline{\mathcal F}_{\mathrm{geo}}:
+ \mathfrak Q_{\mathrm{geo}}^{\mathrm{rig}}\longrightarrow\HHstack
+\]
+は、非線型geometric quintupleの全領域で
+Artinスタックの射としてsmooth、相対次元零である。
+
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia} と
+命題~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}
+の正則半単純な滑らかな非空稠密開
+$\mathfrak Q_{\mathrm{rs}}^{\mathrm{rig}}$ に制限すると、
+この射は\emph{表現可能かつétale}となる。
+特に各幾何点で接複体への射は同型であり、
+有限foundation代数$\Lambda$に対して
+\[
+ \operatorname{HH}^1(\Lambda)=0,\qquad
+ \dim_k\operatorname{HH}^2(\Lambda)=3,\qquad
+ T_{[X]}\mathfrak Q_{\mathrm{rs}}^{\mathrm{rig}}
+ \xrightarrow{\ \sim\ }
+ T_{\overline{\mathcal F}_{\mathrm{geo}}([X])}\HHstack
+ \cong\operatorname{HH}^2(\Lambda).
+ \tag{OU-H2-KS}\label{eq:qa-ou-h2-generic-kodaira-spencer}
+\]
+最後の接空間は
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
+の$k^4/k(x_1,x_2,x_3,x_4)$である。
+
+ここで証明したétale性は
+$\overline{\mathcal F}_{\mathrm{geo}}$の\emph{一般開での}
+性質であり、その幾何fiberの次数、全慣性群の有限成分、
+全cubic境界での表現可能性・étale性までを断定しない。
+\end{theorem}
+\begin{proof}
+論文B~\cite[\texttt{lem:universal-nonlinear-cubic-h2-family},
+\texttt{thm:quintuple-chart-artin-lifting}]{QuadricModuli2026}
+により、射影化した非線型geometric quintupleの開
+$S_{\mathrm e}\subset\mathbb P^{15}$から
+$\HHstack$への、根を選ぶ前の普遍族の射
+$q_{\mathrm e}:S_{\mathrm e}\to\HHstack$は
+表現可能なsmooth射である。
+これは四項窓とその基底を指定されたpointed同型とともに
+Artin small extensionへ持ち上げる定理によっており、
+単なる全幾何点の分類や次元一致の推測ではない。
+
+$\mathscr G^{\mathrm{nl}}\to S_{\mathrm e}$は
+普遍quintupleのテンソル直線の
+非零ベクトルからなる$\mathbb G_m$-torsorであり、
+smoothな相対次元一の射である。
+したがって合成
+\[
+ \mathscr G^{\mathrm{nl}}\longrightarrow
+ S_{\mathrm e}\xrightarrow{q_{\mathrm e}}\HHstack
+\]
+はsmoothであり、定理
+~\ref{thm:qa-geometric-cubic-relative-forgetting}
+の$\overline{\mathcal F}_{\mathrm{geo}}$と
+商atlasを経由して一致する。
+$G_{\mathrm{eff}}$はsmoothな十三次元群だから
+$\mathscr G^{\mathrm{nl}}\to
+[\mathscr G^{\mathrm{nl}}/G_{\mathrm{eff}}]$
+はsmoothな相対次元十三の全射atlasである。
+smoothnessのsmooth被覆による局所判定から
+$\overline{\mathcal F}_{\mathrm{geo}}$もsmoothとなる。
+$\dim\mathfrak Q_{\mathrm{geo}}^{\mathrm{rig}}
+=16-13=3$であり、論文Bの
+\cite[\texttt{thm:global-h2-smooth-finite-type}]{QuadricModuli2026}
+により$\dim\HHstack=3$、両者とも純次元三である。
+相対次元は$3-3=0$となる。
+
+指定した稠密開での有限慣性の単射性は
+命題~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}
+で既に証明した。よって同開では射が代数空間に
+表現可能となる。
+表現可能でsmooth相対次元零の射はétaleである。
+これは相対無限小持上げに関する証明であり、
+Lie軌道階数だけからétale性を推測したものではない。
+
+源の有限慣性は標数零でétaleなのでLie代数が零である。
+étale射は接複体を同型にするから、
+標的の無限小自己同型空間も零となる。
+論文B~\cite[\texttt{cor:cubic-formal-h2-abelian}]{QuadricModuli2026}
+は標的の接・無限小自己同型を
+$\operatorname{HH}^2(\Lambda)$と
+$\operatorname{HH}^1(\Lambda)$にそれぞれ同定する。
+源の接空間は命題
+~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
+で三次元と直接計算済みであり、
+式~\eqref{eq:qa-ou-h2-generic-kodaira-spencer}が従う。
 \end{proof}
 
 \begin{remark}[残るpointed射の慣性とroot deck群の相違]
