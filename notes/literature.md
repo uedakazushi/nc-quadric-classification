@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.46。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.47。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -28,6 +28,8 @@ Proposition 4.11はASF局所コホモロジーとExtの比較である。
 論文Aの cor:normal-cubic-defect を別に用いる。
 今回は著者稿regV8の該当箇所を確認したもので、arXiv v1や出版版の
 定理番号の完全一致まで確認したものではない。
+
+Shelton–Tingey, *On Koszul Algebras and a New Construction of Artin–Schelter Regular Algebras*, J. Algebra 241 (2001), 789–798, DOI [10.1006/jabr.2001.8781](https://doi.org/10.1006/jabr.2001.8781)。刊行版のabstractで「Koszul代数のregular normal quadratic elementによる商はKoszul」を確認（2026-11-22）。論文Bの有限型中央被覆では、各fiberで既にKoszulな$E=B^!$と、独立に証明した中央正則性を使ってこの定理を適用する。Koszul locusの一般的な開性に置き換えることはできない。
 
 ## compact 局所化の一次資料
 

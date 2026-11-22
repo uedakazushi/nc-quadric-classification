@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.49（閉部分の全Hom Z代数の同定を明示）
+% 2026-11-22 / v1.50（AS4 Hilbert関係と二次正則Koszul商の一次文献を追加）
 \section{noncubic 境界を横断する有限型効果性}
 \label{sec:noncubic-finite-type}
 
@@ -882,6 +882,21 @@ $\phi_{\mathfrak p}$ は中央元 $\phi\in(E_f)_2$ に延長し、次が成り�
 \begin{proof}
 相対 Koszul 双対性により、$E$ の各次数は有限 projective であり、
 任意の底変更と両立する。また全ての幾何 fiber $E_{\bar s}$ は Koszul である。
+この段階の Hilbert 級数は、$\operatorname{rank}B_n=(n+1)^2$ と
+Koszul 双対の恒等式から既に決まっており、
+\[
+ h_B(z)=\frac{1+z}{(1-z)^3},\qquad
+ h_E(z)=\frac1{h_B(-z)}=\frac{(1+z)^3}{1-z}.
+ \tag{AS4-ranks}\label{eq:noncubic-spread-as4-hilbert}
+\]
+従って $\operatorname{rank}E_n$ は
+$1,4,7,8,8,\ldots$ であり、
+$\phi$ が正則なら
+\[
+ h_{E/(\phi)}(z)=(1-z^2)h_E(z)=(1+z)^4
+\]
+となる。これは必要な商の階数列 $(1,4,6,4,1)$ と整合する
+数値検査であって、正則性自体の証明ではない。
 まず $\phi_{\mathfrak p}$ を有限生成加群 $E_2$ の局所化の元として表し、
 一つの主開部分上の元 $\phi$ へ延長する。
 一次生成加群 $E_1$ の有限個の生成元との交換子は $E_3$ の元であり、
@@ -901,8 +916,8 @@ $\phi$ の全次数正則性と任意底変更後の正則性が得られる。
 ここで Koszul 性を新たに開条件として使う必要はない。
 各幾何 fiber において $E_{\bar s}$ は既に Koszul であり、
 $\phi_{\bar s}$ は中央正則二次元である。
-正則正規二次元による Koszul 代数の商は Koszul だから、
-全ての $P_{\bar s}$ が Koszul となる。
+正則正規二次元による Koszul 代数の商は Koszul である
+\cite{SheltonTingey2001}。従って全ての $P_{\bar s}$ が Koszul となる。
 $P_1,P_2,P_3$ の局所自由性は既に確認したので、
 相対 Koszul 変形原理
 （補題~\ref{lem:relative-koszul-degree-three}）を適用できる。
