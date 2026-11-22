@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.39。線束値massゲージの降下とstrict square S2作用。
+% 2026-11-23 / v4.40。全次数のnormal helix/perfect-fiber判定を分離して証明。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1391,6 +1391,69 @@ negative cyclic parameter条件は，今回の\emph{undeformed}
 $\Pi_3(\Lambda)$と$H^0$表示の証明には輸入しない．
 \end{proof}
 
+\begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
+\label{lem:qa-q12-all-degree-perfect-fiber}
+$\mathfrak F_{\HH}$の本稿の局所有限型affine chart上で，
+normal full strong foundation
+$T=\bigoplus_{i=0}^3E_i$，
+$t=\mathsf S^{-1}[2]$および
+$\Lambda=\operatorname{End}(T)$を取る．
+各$n\ge0$に対し
+\[
+ P_n=\Theta_\Lambda^{\otimes_\Lambda^{\mathbf L}n},
+ \qquad
+ \Theta_\Lambda=
+ \mathbf R\operatorname{Hom}_{\Lambda^e}(\Lambda,\Lambda^e)[2]
+\]
+は基底上perfectで，幾何fiberでは次数零に集中する．
+従って$H^0(P_n)$は基底上有限局所自由，
+$H^q(P_n)=0$（$q\ne0$）であり，
+任意の（非平坦なものを含む）scheme基底変更と可換する．
+これは各$n$に対する主張であり，
+この結論だけから全次数を合わせた代数の
+左右Noether性を推論しない．
+\end{lemma}
+\begin{proof}
+命題~\ref{prop:qa-two-mass-short-relative-diagonal}の
+相対双加群解消は各項が有限局所射影で，
+基底上も分裂完全である．
+これを双対化すると$\Theta_\Lambda$は
+有限個の基底上局所自由な$\Lambda$-双加群の
+bounded complexで表せる．
+各項は左右の$\Lambda$加群としても相対局所射影なので，
+固定した$n$個のderived tensorを形成しても
+基底上有限perfect複体となる．
+
+論文Aの定理
+\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}
+の幾何fiber上の正規四周期helixは
+$E_{j+4n}\simeq t^nE_j$を満たす．
+$n\ge1$，$0\le i,j\le3$では
+$j+4n\ge i$なので，geometric helixの
+前向き消滅から
+$\operatorname{Ext}^q(E_i,t^nE_j)=0$
+（$q>0$）である．
+$n=0$も四項がstrong exceptionalなので同様である．
+$E_i,t^nE_j$は実際のheart内の対象であり，
+負のExtも零となる．
+実際の相対tilting Morita比較によって
+$P_n\simeq\mathbf R\operatorname{Hom}(T,t^nT)$
+は幾何fiberごとに次数零に集中する．
+
+有限perfect複体の局所自由模型を
+任意の基底点の局所環で取る．
+剰余体上で可逆な微分成分を
+局所環上でも初等変換により可縮対として消去し，
+残った最小複体を考える．
+残余体上のcohomologyが次数零だけにあるので，
+この最小複体は次数零以外の自由項を持たない．
+従って$P_n$はその点の近傍で
+次数零の有限局所自由加群に準同型であり，
+任意の基底変更後もそのまま同型となる．
+この手続きは$n$ごとに適用され，
+全ての$n\ge0$に対する結論を得る．
+\end{proof}
+
 \begin{theorem}[H2実現可能開上の全次数・同じheartの比較]
 \label{thm:qa-two-mass-h2-locus-jacobian-heart}
 前定理の相対QP群oidを，有限foundationが
@@ -1451,13 +1514,11 @@ Serre作用を保つ．
  \simeq\mathbf R\operatorname{Hom}(T,t^nT)
 \]
 に対応し，積も合成と一致する．
-各幾何fiber上のnormal full geometric helixの
-前向きExt消滅（論文A
-\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}）より，
-$n\ge0$の右辺はcohomological degree零に集中する．
-相対のHom複体はperfectであり，その固定$n$ごとの
-perfect-fiber判定は有限局所自由な
-$H^0$と任意の基底変更を与える．
+補題~\ref{lem:qa-q12-all-degree-perfect-fiber}で
+四周期helixの全整数前向きExt消滅と
+相対perfect-fiber判定を個別に確認したので，
+$n\ge0$の右辺は次数零の有限局所自由層となり，
+任意の非平坦基底変更とも整合する．
 前定理の相対同型により，
 Jacobian algebraの全次数はこの反Serre軌道環となる．
 normal finite foundationのEuler行列は
