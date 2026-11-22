@@ -36,6 +36,21 @@ noncubic有限型効果性では、[五頂点barとcanonical tails](papers/modul
 
 表示商全体のgood moduli A¹と、閉gerbeを除くDM開のcoarse A¹は異なる。後者はnon-good、慣性はnonproperである。DM開の任意基底変更に対する粗空間は、有限μ₂局所商を各基底上で再構成して証明する。詳細な証明の依存と未検証箇所は[現行研究ノート](notes/research_notes.md)を参照。
 
+## ローカル組版の最短手順（TeX Live 2026）
+
+**リポジトリ直下**（`README.md` と `.latexmkrc` があるディレクトリ）で、最新版へ更新してから次を実行する。
+
+```sh
+git pull --ff-only
+latexmk papers/nc-quadric-classification.tex
+latexmk papers/nc-quadric-moduli.tex
+latexmk papers/quiver-avatar-moduli.tex
+```
+
+`papers/` に `cd` して `latexmk nc-quadric-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
+
+2026-11-22に受領した実ログでは、旧原稿の `sections/foundation_stack.tex:788` の `Undefined control sequence \mathscr` で最初のLuaLaTeXビルドが停止した。現行主原稿は `mathrsfs` を読み込むのでこのコマンドは定義される。ログの `Citation ... undefined` / `Reference ... undefined` の大半は初回実行時の未解決参照であり、今回の最初の停止原因ではない。**最新版をルートから再ビルドした成功ログはまだ受領していないため、三稿の完全組版成功は未確認。**
+
 ## VS Code / LuaLaTeX の組版環境
 
 リポジトリの `.vscode/settings.json` はOSに依存しない `latexmk` コマンドを使う。macOS・Linux・Windowsのいずれでも、TeX Live（または互換するLaTeX環境）を導入し、**VS Codeの拡張機能プロセスから** `latexmk` がPATHで見える必要がある。WindowsではTeX LiveまたはMiKTeXの実行ファイルディレクトリをPATHに登録する。組版にはLuaLaTeX、`ltjsarticle`、latexmk等が必要である。
