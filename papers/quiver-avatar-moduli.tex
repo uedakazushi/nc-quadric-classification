@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.0
+% 日本語 LuaLaTeX。2026-11-22 / v1.1
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -50,7 +50,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.0（Hodgeのruling符号と対角OU/Picard根の比較）}
+\date{2026年11月22日\quad v1.1（非対角正則半単純potentialの相対Hodge半点）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -88,7 +88,9 @@ OU対角四重射自体は、二乗座標を分岐点とするspectral楕円曲�
 GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決定し、
 滑らかな対角稠密開ではOU四重射とquintupleのPicard根torsorの
 同型を偶数符号・置換・スカラーに同変に構成する。
-非対角の全相対族、境界への延長、慣性・pointed fiberは未解決である。
+正則半単純な非対角potential族には相対Hodge-Jacobian同型と
+特性係数による相対半点を任意底変更と可換に構成する。
+potentialを選ばない一般quintupleの全相対族・境界・慣性・pointed fiberは未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
 選んだ四つのPicard根は同じ相対tails対象に忘却される。

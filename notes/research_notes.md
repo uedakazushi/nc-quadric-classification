@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.84（A v1.69・20節、B v0.39・31節、C v1.0）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.85（A v1.69・20節、B v0.39・31節、C v1.1）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -104,12 +104,24 @@ Jacobian・指定点・torsorがGの商に降下する。
 thm:qa-ou-diagonal-picard-torsor。
 厳密符号検算：computations/verify_ou_hodge_ruling.py。
 
+**非対角正則半単純potentialの相対版（Cで証明）。**
+$q$-自己随伴な$X$の$\det X$および$\operatorname{disc}\det(tI-X^2)$が
+可逆な族では、étale局所SO(q)対角化とHodgeの自然性から
+$\mathcal E_{sp}\simeq\operatorname{Pic}^0_{C/S}$、
+$P_+\leftrightarrow N$が任意の底変更と可換に成立する。
+$\det(zI-X)=z^4-s_1z^3+s_2z^2-s_3z+c$の$s_1$可逆開で
+$t_0=-s_3/s_1$、$Q_X=(t_0,-(t_0^2+s_2t_0+c))$は
+$[2]Q_X=P_+$を満たし、$a_X=-\Theta(Q_X)$は
+$[-2]a_X=N$の相対半点。詳しくはCの
+cor:qa-ou-relative-regular-semisimple-potential。
+potentialを選ぶ前の一般quintupleの全相対groupoid比較までは含めない。
+
 **現行の未解決課題。** この同型は滑らかな対角稠密開で
 Jacobian・指定点・torsorについて確立したものであり、
-非対角quintupleの全相対族、粗GIT全域のuniversal曲線、
+potentialを選ばない一般quintupleの全相対族、粗GIT全域のuniversal曲線、
 中心スカラー剛体化後の慣性・微分・pointed fiber、
 nodal・cuspidal境界への延長を主張しない。
-次は相対Hodge/Spinor認識と相対基底変更への拡張を調べる。
+次はpotentialを選ばない一般quintupleへの相対groupoid降下と慣性・接写像を調べる。
 
 **Picardの半点とnodal境界障害。**
 Bのlem:picard-halvesでは根空間
@@ -154,6 +166,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
 **再開する数学的核心。**
+正則半単純potentialの非対角族に対する相対半点は構成済み。
 対角一般開のOU/Picard根torsor同型を、非対角相対quadric pencilの
 Spin/Hodgeの構成へ延長し、任意底変更でのcoherenceを点検する。
 次に剛体化されたquintuple→H2の慣性像・接写像と
