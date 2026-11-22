@@ -47,8 +47,13 @@ $\operatorname{End}(M)=k^2$ の**非単純層**である。
 曲線を固定し積を保存した自己同型はsmooth/nodalで$\mu_2$、
 I2で$\mu_2^2$となる。
 したがって単純層のfine compactified Picardだけを相対射の標的に選ぶことはできない。
-**次の焦点は $(C,M,\mu)$ を保つ相対groupoidと内在的O-marked境界の慣性・変形比較**、
-および$ \Sigma_2 $への相対elementary transformとAS heartの同定である。
+さらに、論文Bの二形式表示商 $[P/G]$ から、
+有限平坦二重被覆・rank-one torsion-free 層・自己双対性を誘導する二次積
+$(C,M,\mu)$ を扱うfppf相対groupoidへの**実際の基底変更可換な射**を構成した
+（C prop:qa-spectral-quadratic-stack-map）。
+**次の焦点はこの射の全忠実性・相対慣性・変形と、内在的O-marked境界の比較**、
+および $\Sigma_2$ への相対elementary transform と AS heart の同定である。
+標的groupoidのArtin性・有限型性、相対同値と新規性は未証明である。
 
 [局所関係式のSymPy検算](computations/verify_nodal_exceptional_parity.py)に
 平方積の導出・三型の共通根数0/1/2の検査を追加した。
