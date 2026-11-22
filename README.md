@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.11、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.5。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.12、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.6。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、A/Bの公表前監査と並行して、**論文CのAS↔avatar全単射・十本矢逆mutationの証明を原PDF・外部定理と独立照合**する。その後、Cで一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,13 +12,13 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS最小分解のavatar分類、mutationとnoncubic pointed認識** | v3.5。sq/rsqの全avatar対応、独立AS10・cubic導来非同値、二重壁の横断性を保持。点曲線E_fとspectral曲線C_qの双対2-isogenyを保持。**smooth noncubicで、正しい一添字shift後の有限End代数を全積ごと同定し、O-pointed exact同値を原稿に証明した。** 具体的にj値が異なる例を示す。内在O-marked heartとの直接pointed同値、normal helixのどちらのavatarへの復元かは未証明。12矢はQP表示との区別を保持 |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS最小分解のavatar分類、mutationとnoncubic pointed認識** | v3.6。sq/rsqの全avatar対応、独立AS10・cubic導来非同値、二重壁の横断性を保持。点曲線E_fとspectral曲線C_qの双対2-isogenyを保持。**全noncubic幾何点で、正しい一添字shift後の有限End代数を全積ごと同定し、O-pointed exact同値を原稿に証明した。** 具体的にj値が異なる例を示す。別のspectral/$\Sigma_2$ avatarとのpointed比較、および非被約基底の相対groupoidは未証明。12矢はQP表示との区別を保持 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS正則代数・avatar分類とpointed認識（v3.5）
+## 論文C：AS正則代数・avatar分類とpointed認識（v3.6）
 
 **中心定理の証明を含む現行原稿。**
 [平方型・回転平方型のAS/avatar分類](papers/quiver-avatar/as_helix_classification.tex)は
@@ -162,7 +162,7 @@ $\operatorname{Sym}^2H^0(F_c),\operatorname{Sym}^2H^0(F_d)$
 二像の共通部分は$\langle u,v\rangle$、和は$(B_f)_1$全体である。
 **これはmatrix-factorizationのkernelのみならず、
 2つのrank-three乗法の像が一致したことを意味する。**
-**滑らかなnoncubicのpointed認識（C v3.5）。** 四根が相異なる二形式に対し、$B_f/(cd-dc)$の点曲線$E_f$へ四頂点$(B_f,X_c,B_f(1),X_d(1))$を制限すると、線束列$(\mathcal O,F_c,F_c^2,F_c^2F_d)$との全Hom・全合成を保つ有限directed End同型を得た（C \`lem:qa-pointed-abelianization-four-end\`）。Zhang twistでAの適合normal helixに戻ることを明記した。square avatar $(E_f,F_c,F_d,P_E)$のmutation後は、標準の$(H_0,\ldots,H_3)$でなく**一添字ずらした$(H_1,\ldots,H_4)$**と同定される。前者と頂点固定で比較すると$0\to2$合成の核次元が$1$対$0$となり不可能。正しい位相でSerre完成・AZを使うと、\`$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$\`という**smooth体上のpointed exact同値**を原稿に証明した（C \`thm:qa-point-smooth-noncubic-pointed\`）。これによりsmooth locusでのfinite End同型という旧課題は解決したが、共有根・一致根対、全相対群oid、compactified avatar、potentialsの忘却については未解決。今回の独立した厳密検算は一つの有理係数模型の次数1–2とHom階数のみで、包括的な分類証明・新規性・全組版を検証したものではない。
+**全noncubic幾何点のpointed認識（C v3.6）。** 二つのsquarefree二次形式の根対は、相異・一根共有・一致をすべて許す。点曲線$E_f=\operatorname{Proj} B_f^{\mathrm{ab}}$は二conicのファイバー積$Q_c\times_{\mathbb P^1}Q_d$で、smooth/nodal/$I_2$の$(2,2)$ Cartier因子になる（C lem:qa-pointed-all-rootpair-geometry）。$X_c,X_d$の可換化によるspinor section moduleと、四頂点Endの全Hom・全合成の同型は三型すべてで成立する（C lem:qa-pointed-abelianization-four-end）。square avatar $(E_f,F_c,F_d,P_E)$の指定mutation後、比較すべき四項は$(H_0,\ldots,H_3)$でなく**$(H_1,\ldots,H_4)$**。この位相でSerre完成・AZを使い、全noncubic $\mathcal H_2(k)$について$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$という**体上のO-pointed exact同値**を原稿で証明した（C thm:qa-point-all-noncubic-pointed, cor:qa-point-all-noncubic-h2）。$C_q$のspectral avatarや$\Sigma_2$の別avatarとのpointed同値、非被約基底の相対groupoid・慣性・descentは未解決。三型の有理係数モデルで次数1–2の厳密計算をPASSしたが、数学的全証明の独立全面監査・新規性・組版は別状態。
 
 ### 幾何的基礎と相対境界
 
@@ -174,7 +174,7 @@ $\operatorname{Sym}^2H^0(F_c),\operatorname{Sym}^2H^0(F_d)$
 四つの局所分裂完全列と周期全体の前向きExt消滅を**定義・仮定・証明ごと**組み入れた。
 元論文を持たなくてもこれらの有限幾何は追える。
 全AS代数の分類・Noether性の証明は前掲の新節に統合済み。
-一方、元のO-marked heartの直接同値と全非被約基底での相対AS分類は別問題である。
+一方、$E_f$側のpointed同値は全noncubic幾何点で証明したが、$C_q$・$\Sigma_2$側の別avatarとのpointed比較と全非被約基底での相対AS分類は別問題である。
 
 **相対 spectral 境界の現在の結果（C v3.4）。**
 [共有根の局所解析・二次積欠損・三型の正規化極限](papers/quiver-avatar/nodal_resolution_obstruction.tex)を

@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.09（A v1.69・20節、B v0.39・31節、C v3.5）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.10（A v1.69・20節、B v0.39・31節、C v3.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
@@ -97,13 +97,11 @@ $\operatorname{Sym}^2H^0(F_d)$のVeronese積像は
 証明正本：C \`prop:qa-point-mcm-composition-veronese\`。
 これで**二つのrank-three隣接積について
 AS側と点曲線pencil側の具体的な積像が一致**した。
-ただし元normal helixの全有限directed End代数
-（ほかのHom空間、最小関係、全合成）および
-構造対象$\pi B_f$の同定は未証明。
+この二つのrank-three積像だけでは有限Endの同型は従わないが、Cの次の定理は全Homの制限単射と次元比較を補い、全幾何点でpointed同値を証明する。
 
-**滑らかなnoncubicのpointed認識（C v3.5）。** 四根が相異なる二形式に対し、$B_f/(cd-dc)$の点曲線$E_f$へ四頂点$(B_f,X_c,B_f(1),X_d(1))$を制限すると、線束列$(\mathcal O,F_c,F_c^2,F_c^2F_d)$との全Hom・全合成を保つ有限directed End同型を得た（C \`lem:qa-pointed-abelianization-four-end\`）。Zhang twistでAの適合normal helixに戻ることを明記した。square avatar $(E_f,F_c,F_d,P_E)$のmutation後は、標準の$(H_0,\ldots,H_3)$でなく**一添字ずらした$(H_1,\ldots,H_4)$**と同定される。前者と頂点固定で比較すると$0\to2$合成の核次元が$1$対$0$となり不可能。正しい位相でSerre完成・AZを使うと、\`$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$\`という**smooth体上のpointed exact同値**を原稿に証明した（C \`thm:qa-point-smooth-noncubic-pointed\`）。これによりsmooth locusでのfinite End同型という旧課題は解決したが、共有根・一致根対、全相対群oid、compactified avatar、potentialsの忘却については未解決。今回の独立した厳密検算は一つの有理係数模型の次数1–2とHom階数のみで、包括的な分類証明・新規性・全組版を検証したものではない。
+**全noncubic幾何点のpointed認識（C v3.6）。** 二つのsquarefree二次形式の根対は、相異・一根共有・一致をすべて許す。点曲線$E_f=\operatorname{Proj} B_f^{\mathrm{ab}}$は二conicのファイバー積$Q_c\times_{\mathbb P^1}Q_d$で、smooth/nodal/$I_2$の$(2,2)$ Cartier因子になる（C lem:qa-pointed-all-rootpair-geometry）。$X_c,X_d$の可換化によるspinor section moduleと、四頂点Endの全Hom・全合成の同型は三型すべてで成立する（C lem:qa-pointed-abelianization-four-end）。square avatar $(E_f,F_c,F_d,P_E)$の指定mutation後、比較すべき四項は$(H_0,\ldots,H_3)$でなく**$(H_1,\ldots,H_4)$**。この位相でSerre完成・AZを使い、全noncubic $\mathcal H_2(k)$について$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$という**体上のO-pointed exact同値**を原稿で証明した（C thm:qa-point-all-noncubic-pointed, cor:qa-point-all-noncubic-h2）。$C_q$のspectral avatarや$\Sigma_2$の別avatarとのpointed同値、非被約基底の相対groupoid・慣性・descentは未解決。三型の有理係数モデルで次数1–2の厳密計算をPASSしたが、数学的全証明の独立全面監査・新規性・組版は別状態。
 
-**証明で使う最小データ。** $R=B_f/(cd-dc)$は$E_f$の同次座標環。$X_c\otimes_B R$と$X_d\otimes_B R$はそれぞれ$p_c^*\mathcal O_{\mathbb P^1}(1)$、$p_d^*\mathcal O_{\mathbb P^1}(1)$の全section module。次数0・1には可換化による核がない。四頂点Hom次元は上三角$(1,2,4,6;1,2,4;1,2;1)$、曲線の次数$(0,2,4,6)$と一致。$X_c\to B(1)$の二基底行は$(c,\ell_1)$、$(-\ell_2,c)$で、二段階積は$\left(\begin{smallmatrix}c&\ell_1\\-\ell_2&c\end{smallmatrix}\right)$。smoothでの全Hom同型は二段階積像だけに依存せず、次数1における制限単射と次元比較から得る。mutationの評価列から$H_0=P^2F^{-1}$、一周期後$H_4=FG^2$。よって$H_1,\ldots,H_4$に共通$P^{-1}$を掛けると$(\mathcal O,F,F^2,F^2G)$となる。**未確認**：nodal/I2でのsection module saturation、相対Zhang twistのdescent、potential stackへの比較。計算再現は `computations/verify_noncubic_pointed_end.py`（有理係数の一例に限定）。
+**証明で使う最小データ。** $R=B_f/(cd-dc)$は$E_f$の同次座標環。$X_c\otimes_B R$と$X_d\otimes_B R$はそれぞれ$p_c^*\mathcal O_{\mathbb P^1}(1)$、$p_d^*\mathcal O_{\mathbb P^1}(1)$の全section module。次数0・1には可換化による核がない。四頂点Hom次元は上三角$(1,2,4,6;1,2,4;1,2;1)$、曲線の次数$(0,2,4,6)$と一致。$X_c\to B(1)$の二基底行は$(c,\ell_1)$、$(-\ell_2,c)$で、二段階積は$\left(\begin{smallmatrix}c&\ell_1\\-\ell_2&c\end{smallmatrix}\right)$。全三退化型の全Hom同型は二段階積像だけに依存せず、次数1における制限単射と次元比較から得る。mutationの評価列から$H_0=P^2F^{-1}$、一周期後$H_4=FG^2$。よって$H_1,\ldots,H_4$に共通$P^{-1}$を掛けると$(\mathcal O,F,F^2,F^2G)$となる。**追加幾何：** $E_f=Q_c\times_{\mathbb P^1}Q_d$はsmooth/nodal/$I_2$の$(2,2)$ Cartier因子で、$p_{c*}\mathcal O_E=\mathcal O_{\mathbb P^1}\oplus\mathcal O_{\mathbb P^1}(-2)$が全三型で成立する。各$X_c\otimes_B R$は$F_c$のsection moduleに全次数で一致する。**未確認**：非被約基底での相対Zhang twistのdescent、相対有限Endの全忠実性、別avatarのpointed比較とpotential stack。計算再現は `computations/verify_noncubic_pointed_end.py`（三型の有理係数モデル、低次数に限定）。
 
 **検証したEuler数値と非被約avatarのrank壁（C v3.4）。**
 ASsq/ASrsq最小分解の四相Euler漸化式から

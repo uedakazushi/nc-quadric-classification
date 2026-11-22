@@ -1,84 +1,105 @@
 #!/usr/bin/env python3
-"""Exact QQ check for smooth noncubic pointed End; one example, degrees <= 2.
-B=k[u,v]<c,d>/(c^2+uv,d^2+(u-v)(u-2v)).
-Requires sympy; does not certify AS regularity or full pointed equivalence.
+"""Exact degree <=2 checks for three geometric noncubic strata.
+
+This is a finite linear-algebra consistency test, not a proof of the
+general pointed equivalence, AS regularity, or relative stack descent.
+Requires Python 3 and sympy.
 """
-import sympy as S
+import sympy as sp
 
-B1 = ("u", "v", "c", "d")
-B2 = ("uu", "uv", "vv", "uc", "vc", "ud", "vd", "cd", "dc")
-i1 = {x: j for j, x in enumerate(B1)}
-i2 = {x: j for j, x in enumerate(B2)}
-f1 = {"uv": -1}
-f2 = {"uu": -1, "uv": 3, "vv": -2}
+V = ("u", "v", "c", "d")
+W = ("uu", "uv", "vv", "uc", "vc", "ud", "vd", "cd", "dc")
+V_INDEX = {x: i for i, x in enumerate(V)}
+W_INDEX = {x: i for i, x in enumerate(W)}
+F1 = {"uv": -1}  # c^2 = -uv
 
-def mul(x, y):
-    if x in "uv" and y in "uv":
-        return {"".join(sorted(x+y)): 1}
-    if x in "uv" and y in "cd":
-        return {x+y: 1}
-    if x in "cd" and y in "uv":
-        return {y+x: 1}
+def mul2(x, y, f2):
+    if x in ("u", "v") and y in ("u", "v"):
+        return {"".join(sorted((x, y))): 1}
+    if x in ("u", "v") and y in ("c", "d"):
+        return {x + y: 1}
+    if x in ("c", "d") and y in ("u", "v"):
+        return {y + x: 1}
     if x == y == "c":
-        return f1
+        return F1
     if x == y == "d":
         return f2
-    return {x+y: 1}
+    return {x + y: 1}
 
-def right(x, b):
-    out = S.zeros(9, 1)
-    for y, a in b.items():
-        for mon, coeff in mul(x, y).items():
-            out[i2[mon]] += a*coeff
+def right1(x, polynomial, f2):
+    out = sp.zeros(len(W), 1)
+    for y, a in polynomial.items():
+        for name, coeff in mul2(x, y, f2).items():
+            out[W_INDEX[name]] += a * coeff
     return out
 
-def vec(first, second):
-    out = S.zeros(8, 1)
-    for term, coeff in first.items():
-        out[i1[term]] += coeff
-    for term, coeff in second.items():
-        out[4+i1[term]] += coeff
+def vector2(first, second):
+    out = sp.zeros(2 * len(V), 1)
+    for j, p in enumerate((first, second)):
+        for name, coeff in p.items():
+            out[j * len(V) + V_INDEX[name]] += coeff
     return out
 
-def rm(v, b):
-    out = S.zeros(18, 1)
-    for j in range(8):
-        if v[j]:
-            out[9*(j//4):9*(j//4)+9, 0] += v[j]*right(B1[j % 4], b)
+def times_degree1(v, polynomial, f2):
+    out = sp.zeros(2 * len(W), 1)
+    for i in range(len(v)):
+        if v[i] != 0:
+            out[len(W) * (i // len(V)):len(W) * (i // len(V) + 1), 0] += (
+                v[i] * right1(V[i % len(V)], polynomial, f2)
+            )
     return out
 
-rd1 = vec({"d": 1}, {"u": 1, "v": -2})
-rd2 = vec({"u": 1, "v": -1}, {"d": -1})
-R1 = S.Matrix.hstack(rd1, rd2)
-R2 = S.Matrix.hstack(*(rm(r, {b: 1})
-                         for r in (rd1, rd2) for b in B1))
-assert (R1.rank(), R2.rank()) == (2, 6)
-assert (8-R1.rank(), 18-R2.rank()) == (6, 12)
+def verify(label, f2, m1, m2):
+    # X_d=coker [[d,m1],[m2,-d]], with d^2=-m1*m2.
+    relations = (vector2({"d": 1}, m2), vector2(m1, {"d": -1}))
+    R1 = sp.Matrix.hstack(*relations)
+    R2 = sp.Matrix.hstack(*(
+        times_degree1(rel, {b: 1}, f2)
+        for rel in relations for b in V
+    ))
+    # A morphism X_c -> X_d(1) is determined by the two images
+    # of degree-zero generators, in (X_d)_1.
+    columns = []
+    for i in range(16):
+        z0, z1 = sp.zeros(8, 1), sp.zeros(8, 1)
+        if i < 8:
+            z0[i] = 1
+        else:
+            z1[i - 8] = 1
+        # X_c relations (c,v), (u,-c).
+        columns.append(sp.Matrix.vstack(
+            times_degree1(z0, {"c": 1}, f2)
+            + times_degree1(z1, {"v": 1}, f2),
+            times_degree1(z0, {"u": 1}, f2)
+            - times_degree1(z1, {"c": 1}, f2)
+        ))
+    C = sp.Matrix.hstack(*columns)
+    RR = sp.diag(R2, R2)
+    dim_hom = 16 - (C.row_join(RR).rank() - RR.rank()) - 2 * R1.rank()
+    first_product = sp.Matrix([
+        [0, 1, 0, 0],
+        [0, 0, -1, 0],
+        [1, 0, 0, 1],
+        [0, 0, 0, 0],
+    ])
+    assert (R1.rank(), R2.rank()) == (2, 6)
+    assert dim_hom == 4
+    assert first_product.rank() == 3
+    assert first_product.nullspace() == [sp.Matrix([-1, 0, 0, 1])]
+    print(f"PASS {label}: X_d[1]=6, X_d[2]=12, "
+          f"Hom(X_c,X_d(1))={dim_hom}, first product rank=3")
 
-# Xc has column relations (c,v) and (u,-c).
-# A map Xc -> Xd(1) is determined by 2 images in (Xd)_1.
-columns = []
-for j in range(16):
-    w0, w1 = S.zeros(8, 1), S.zeros(8, 1)
-    if j < 8:
-        w0[j] = 1
-    else:
-        w1[j-8] = 1
-    columns.append(S.Matrix.vstack(
-        rm(w0, {"c": 1}) + rm(w1, {"v": 1}),
-        rm(w0, {"u": 1}) - rm(w1, {"c": 1})))
-conditions = S.Matrix.hstack(*columns)
-rel = S.diag(R2, R2)
-raw_dim = 16 - (conditions.row_join(rel).rank() - rel.rank())
-assert raw_dim == 8
-assert raw_dim - 2*R1.rank() == 4
+def main():
+    verify("disjoint",
+           {"uu": -1, "uv": 3, "vv": -2},
+           {"u": 1, "v": -2}, {"u": 1, "v": -1})
+    verify("one-shared-root",
+           {"uu": -1, "uv": 1},
+           {"u": 1}, {"u": 1, "v": -1})
+    verify("coincident-root-pairs",
+           {"uv": -1},
+           {"u": 1}, {"v": 1})
+    print("Scope: three rational points and degree <=2 only")
 
-# Dual MCM evaluation first product has entries [c,u,-v,c].
-first_product = S.Matrix([
-    [0, 1, 0, 0], [0, 0, -1, 0],
-    [1, 0, 0, 1], [0, 0, 0, 0]])
-assert first_product.rank() == 3
-assert first_product.nullspace() == [S.Matrix([-1, 0, 0, 1])]
-print("PASS QQ: Xd degree 1=6, degree 2=12; Hom(Xc,Xd(1))=4")
-print("PASS QQ: first product rank 3, alternating kernel dimension 1")
-print("Scope: one smooth rational example, low degree only")
+if __name__ == "__main__":
+    main()

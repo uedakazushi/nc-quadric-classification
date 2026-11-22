@@ -143,7 +143,10 @@ $r^*$ は全射となり，最後の完全列を得る．
 
 \begin{proposition}[非自由MCM二型の行列核は点曲線の二pencilを回収する]
 \label{prop:qa-point-mcm-matrix-pencils}
-前定理の仮定の下で，$f_1=-\ell_1\ell_2$，
+$k$を標数零の代数閉体とし，
+$f_1,f_2$をそれぞれsquarefreeな二元二次形式とする
+（根対の共有を許す）．
+$f_1=-\ell_1\ell_2$，
 $f_2=-m_1m_2$と因数分解し，
 $\ell_1,\ell_2$および$m_1,m_2$を
 それぞれ独立な一次形式とする．
@@ -309,14 +312,105 @@ $\langle u,v,c\rangle$である．
 二つの部分空間の共通部分と和は明らかである．
 \end{proof}
 
+\begin{lemma}[全noncubic点曲線のファイバー積と二つのpencil]
+\label{lem:qa-pointed-all-rootpair-geometry}
+$k$を標数零の代数閉体とし、
+$f_1,f_2\in k[u,v]_2$をそれぞれsquarefreeとする。
+\emph{二つの根対が共有根を持つことを許す。}
+\[
+ Q_c=\operatorname{Proj}k[u,v,c]/(c^2-f_1),\quad
+ Q_d=\operatorname{Proj}k[u,v,d]/(d^2-f_2),\quad
+ E=\{c^2=f_1,\ d^2=f_2\}\subset\PP^3 .
+\]
+自然な二重被覆$q_c:Q_c\to\PP^1_{[u:v]}$,
+$q_d:Q_d\to\PP^1_{[u:v]}$に関して、
+\begin{equation}
+ E\simeq Q_c\times_{\PP^1}Q_d
+ \ \hookrightarrow\ Q_c\times Q_d\simeq\PP^1\times\PP^1
+\label{eq:qa-pointed-fiber-product}
+\end{equation}
+は$(2,2)$型の被約Cartier因子である。
+四根相異なるときは滑らかな種数一曲線、
+共有根が一つのときは既約nodal曲線、
+二つの根対が一致するときは二本の滑らかな有理曲線が
+二点で横断する$I_2$曲線となる。
+各射影$p_c:E\to Q_c$、$p_d:E\to Q_d$から
+\[
+ F=p_c^*\OO_{\PP^1}(1),\qquad
+ G=p_d^*\OO_{\PP^1}(1),\qquad P=GF^{-1}
+\]
+を定めると、
+\[
+ F^2\simeq G^2\simeq\OO_E(1),\qquad
+ 0\ne P\in\Pic^0(E)[2],\qquad H^*(E,P)=0 .
+\]
+従って$(E,F,G,P)$は全三退化型でsquare avatarを定め、
+その線束列$(\OO_E,F,F^2,F^2G)$の
+上三角Hom次元は
+\[
+ \begin{pmatrix}
+ 1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
+ \end{pmatrix}.
+\]
+\end{lemma}
+\begin{proof}
+$f_i$がsquarefreeなので$Q_c,Q_d$は滑らかなconicで、
+いずれも$\PP^1$に同型である。
+各$q_i$は次数二、かつ
+$q_i^*\OO_{\PP^1}(1)=\OO_{Q_i}(1)
+ \simeq\OO_{\PP^1}(2)$である。
+$u,v$は$E$上で同時に零にならないから、
+両平方根の相対代数を$\PP^1_{[u:v]}$上で取ると
+\eqref{eq:qa-pointed-fiber-product}を得る。
+右の閉埋め込みは対角
+$\Delta\subset\PP^1\times\PP^1$の引戻しであり、
+その因子類は$(2,2)$である。
+特に$E$は連結・Gorenstein、$\omega_E\simeq\OO_E$、
+$h^0(\OO_E)=h^1(\OO_E)=1$である。
+
+$f_1,f_2$が互いに素なら二つの二重被覆は
+独立した分岐を持つので$E$は滑らかである。
+共通根を一つ持つ場合、根を局所座標$x=0$に移すと
+$f_1=x\,a(x), f_2=x\,b(x)$、$a(0)b(0)\ne0$となる。
+$c^2=xa(x)$で$x$を消去すると
+$d^2=(b(0)/a(0))c^2+$三次以上の項を得て、
+その点はordinary nodeである。
+二つの平方根の関数体拡大は独立だから$E$は既約である。
+二根対一致なら$f_2=\lambda f_1$であり、
+$(d-\sqrt\lambda c)(d+\sqrt\lambda c)=0$となる。
+二成分はconicで、$c=d=0$の二根で横断する。
+ゆえに全ての$E$は被約である。
+
+二つの平方根の射影で$\OO_E(1)$は
+各$Q_i$のconic超平面線束の引戻しである。
+従って$F^2=G^2=\OO_E(1)$。
+$I_2$でも$F,G$の各既約成分上の次数はともに一で、
+他の二型では次数二だから$P=GF^{-1}$は多重次数零である。
+さらに$(2,2)$ Cartier分解
+\[
+ 0\to\OO_{\PP^1\times\PP^1}(a-2,b-2)
+ \to\OO_{\PP^1\times\PP^1}(a,b)
+ \to\OO_E(a,b)\to0
+\]
+を$(a,b)=(-1,1)$に適用すると$H^0(E,P)=0$を得る。
+$\omega_E=\OO_E$とSerre双対性から$H^1(E,P)=0$。
+従って$P\ne\OO_E$であり、$P^2=\OO_E$である。
+同じ分解から
+$h^0\OO_E(1,0)=h^0\OO_E(0,1)=2$、
+$h^0\OO_E(2,0)=h^0\OO_E(1,1)=4$、
+$h^0\OO_E(2,1)=6$を得て、
+表の全ての成分が従う。
+\end{proof}
+
 \begin{lemma}[noncubic 点曲線への制限と四頂点Endの同型]
 \label{lem:qa-pointed-abelianization-four-end}
 標数零の代数閉体上、$f_1,f_2$がそれぞれ相異なる二根を持ち、
-互いに根を共有しないとする。
+共有根を持ってもよいとする（前補題の全三型）。
 $B=B_f$、$R=B/(cd-dc)$、$E=\operatorname{Proj}R=E_f$とする。
-$f_1=-\ell_1\ell_2$, $f_2=-m_1m_2$に対する
+式~\eqref{eq:qa-point-mcm-matrices}に現れる
 二つの右$B$-加群$X_c=\operatorname{coker}M_c$,
-$X_d=\operatorname{coker}M_d$を前命題のように取る。
+$X_d=\operatorname{coker}M_d$を用いる。
+両行列分解は各$f_i$のsquarefree性だけで定義される。
 $F=F_c$, $G=F_d$と書けば、次の自然な制限は
 頂点と全合成を保つ有限次元代数の同型である：
 \begin{equation}
@@ -334,6 +428,7 @@ $F=F_c$, $G=F_d$と書けば、次の自然な制限は
 \begin{proof}
 $R_c=k[u,v,c]/(c^2-f_1)$とおく。
 $R=R_c\oplus dR_c(-1)$は$R_c$上自由である。
+この次数付き自由分解は二根対の共有・一致に依存しない。
 滑らかなconic $Q_c=\operatorname{Proj}R_c\simeq\PP^1$
 上で$M_c$は$s=\ell_1,t=\ell_2$により
 \[
@@ -386,7 +481,7 @@ $(\pi B,\pi X_c,\pi B(1),\pi X_d(1))$
 \tag{Four-End-dims}\label{eq:qa-pointed-four-end-dimensions}
 \]
 右辺の曲線上の線束も次数$0,2,4,6$であり、
-$E$が滑らかな種数一曲線なので同じ次元を持つ。
+前補題の$(2,2)$ Cartier表示により、nodal・$I_2$を含め同じ次元を持つ。
 
 左辺の各Homは生成元の像で決まり、
 $B_0,B_1,(X_d)_0,(X_d)_1$のいずれかに値を持つ。
@@ -418,10 +513,11 @@ $H^0(F)\otimes H^0(F)\to H^0(F^2)$の
 二つの二次元Homの\emph{双線形積そのもの}を同定する。
 \end{proof}
 
-\begin{theorem}[滑らかなnoncubicの位相を合わせたpointed認識]
+\begin{theorem}[全noncubic幾何点の位相を合わせたpointed認識]
 \label{thm:qa-point-smooth-noncubic-pointed}
+\label{thm:qa-point-all-noncubic-pointed}
 \label{prop:qa-point-mcm-pointed-finite-end-reduction}
-前補題の仮定の下で、
+補題~\ref{lem:qa-pointed-all-rootpair-geometry}の仮定の下で、
 square avatar $(E,F,G,P)$を
 $F=F_c$, $G=F_d$, $P=GF^{-1}\ne\OO_E$で定める。
 $P^2=\OO_E$かつ$G=FP$である。
@@ -500,12 +596,35 @@ $(H_0,H_1,H_2,H_3)$に\emph{頂点固定で}
 後者は最小十本矢型の定義により
 $0\to2$に最小関係を持たず、核は零である。
 従って一添字shiftは単なる記法でなく必要条件である。
-なお定理は四根相異なるsmooth noncubicの
+本定理は四根相異・一根共有・二根対一致の全noncubic幾何点について
 \emph{体上のpointed同値}を述べる。
-一根共有・二根対一致における同じ式の相対化、
+非被約基底上での同じ式の相対化、
 非被約底上のgroupoid、$C_q$側の通常Picardへの延長、
 およびpotential全体の相対忘却は主張しない。
 \end{remark}
+
+\begin{corollary}[全noncubic $\mathcal H_2$ 幾何対象のpointed avatar]
+\label{cor:qa-point-all-noncubic-h2}
+標数零の代数閉体上、分類論文Aの強い$\HH$に属する
+任意のnoncubic $(\mathcal C,\OO)$ は、
+全三退化型を含む非自明二捩れsquare avatar
+$(E_f,F_c,F_d,F_dF_c^{-1})$から
+指定mutationで作ったAS正則$\mathbb Z$-代数
+$A_{\rm av}$を用いて
+\[
+ (\mathcal C,\OO)\simeq
+ (\qgr A_{\rm av},\pi e_1A_{\rm av})
+\]
+とpointed exact同値になる。
+\end{corollary}
+\begin{proof}
+分類論文Aの
+\cite[\texttt{thm:noncubic-classification}]{QuadricIntrinsic2026}
+は全noncubic同値類を二つのsquarefree二次形式による
+$(\qgr B_f,\pi B_f)$へ帰着する。
+前定理を適用すればよい。
+これは全自己同型群の同一視や族上のstack同値を述べない。
+\end{proof}
 
 \begin{corollary}[非零二捩れ付き楕円曲線上の双対二重商]
 \label{cor:qa-point-spectral-atkin-lehner}
@@ -589,10 +708,11 @@ $E_f$の上の四次式には $(I,J)=(193,-5362)$を得るので，
 二つの構成を同一曲線とみなして
 avatar由来AS代数と$\qgr B_f$の
 pointed同値を結論することはできない．
-\emph{どちらの曲線が特定のnormal helixの
-AS avatarとして抽出されるか}，
-およびそのexceptional foundationの対応は
-まだ直接同定していない．これは次の認識問題である．
+定理~\ref{thm:qa-point-all-noncubic-pointed}により、
+点曲線$E_f$のpencilから得るAS代数については
+mutation後の一添字shiftを通してpointed heartを直接認識できる。
+これは$C_q$側avatarとの直接同一視や、
+相対stackの同値ではない．
 
 $f_1,f_2$ が一根を共有すると，
 $\tau$には固定点が生じ，
