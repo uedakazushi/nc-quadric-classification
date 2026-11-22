@@ -1042,7 +1042,10 @@ Gorensteinでもある。
  (f_1,f_2)\in
  \bigl(\operatorname{Sym}^2W^\vee\bigr)_{\mathrm{nd}}^2
 \]
-上で、$\PP(W)$への射影を$p$として
+上で、$B=\PP(W)$と置き、
+$\widetilde p:\widetilde C\to B$、
+$p:C\to B$を以下の有限射、
+$r:\widetilde C\to C$をその間の自然な射とする。
 \[
  \widetilde C=
  \operatorname{Spec}_{\PP(W)}
@@ -1056,15 +1059,16 @@ $\OO_{\PP(W)}(-1)$の生成元、$y=cd$は
 $\OO_{\PP(W)}(-2)$の生成元と解釈する。
 $\widetilde C$から$C$への有限射は
 $(c,d)\mapsto(-c,-d)$の商であり、
-反不変部分
+$\OO_C$-加群としての反不変部分と
+その$B$への直像はそれぞれ
 \[
- \mathcal M=
-  \bigl(p_*\OO_{\widetilde C}\bigr)^-
- \cong\OO_{\PP(W)}(-1)c
-       \oplus\OO_{\PP(W)}(-1)d
+ \mathcal M=(r_*\OO_{\widetilde C})^-,
+ \qquad
+ p_*\mathcal M
+ \cong\OO_B(-1)c\oplus\OO_B(-1)d
  \tag{Res-M}\label{eq:qa-rootpair-spectral-module}
 \]
-は$\OO_C$-加群として
+であり、$\mathcal M$は
 \[
  y c=f_1 d,\qquad y d=f_2 c
  \tag{Res-MF}\label{eq:qa-rootpair-spectral-matrix-factorization}
@@ -1097,8 +1101,9 @@ $\mathcal M$はその節点で局所自由でなく、
 \end{theorem}
 \begin{proof}
 二つの二次平方根の代数は、
-$\OO_{\PP(W)}$上の基底$1,c,d,cd$を持つ
+$\OO_B$上の基底$1,c,d,cd$を持つ
 階数四の局所自由代数である。
+$\widetilde p_*\OO_{\widetilde C}$の
 同時符号変換の不変部分は$1,cd$、
 反不変部分は$c,d$なので
 式~\eqref{eq:qa-rootpair-spectral-module}を得る。
@@ -1110,7 +1115,7 @@ $y=cd$による積は
       =f_1f_2 I_2
 \]
 というmatrix factorizationである。
-$\OO_{\PP(W)}$上で$\mathcal M$は
+$p_*\mathcal M$は$B$上で
 $\OO(-1)^{\oplus2}$だから、
 二形式パラメータとその任意基底変更に対して平坦。
 各幾何fiberでは二次拡大のgeneric点でrank一で、
@@ -1130,7 +1135,8 @@ $c,d$が同時に零となる点がないため
 $\widetilde C\to C$は有限étaleの二重torsor。
 このとき反不変部分$\mathcal M$は
 invertibleかつ$\mathcal M^2\simeq\OO_C$。
-$H^0(C,\mathcal M)=H^0(\PP^1,\OO(-1)^{\oplus2})=0$
+$H^0(C,\mathcal M)=H^0(B,p_*\mathcal M)
+ =H^0(\PP^1,\OO(-1)^{\oplus2})=0$
 なので非自明である。
 $\widetilde C$の三つの二次部分被覆の
 分岐分割から、これは前定理の2-torsionに一致する。
