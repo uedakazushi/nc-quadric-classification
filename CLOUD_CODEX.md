@@ -1,16 +1,16 @@
 # Cloud Codexで研究を継続する
 
-2026-11-23 / v0.20。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.69、論文Bはv0.41（依存と組版の監査中）、論文Cはv4.26。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
+2026-11-23 / v0.21。研究内容の正本は [研究方針](00_research_plan.md)、継続・保存の指示は [AGENTS.md](AGENTS.md)。論文Aはv1.69、論文Bはv0.41（依存と組版の監査中）、論文Cはv4.30。全H2の体上同値類分類と、相対モジュライの代数性・表示からの内在的認識を区別する。次の着手は研究方針の現行の実行単位を参照する。
 
 ## 論文Cを最優先で完成するための現行実行単位
 
-**最優先目標は `papers/nc-quadric-avatar.tex`（論文C）の完成。** 研究方針のC1–C4を達成基準とする。C1/C2は原稿上達成。C3では可逆cubic八矢から二mass十二矢の両rank3壁・nilpotent基底まで、QP表示→有限foundationのfppf局所gerbeを相対Isom・慣性を含めて構成した。余剰gaugeは`U_λ×U_μ`、`U_λ=Spec R[t,(1+λt)^(-1)]`。**次の第一課題は、H2実現可能開のrelation-dual ordinary QP Jacobianとcanonical AS/Serre完成を全次数・左右Noether・相対base-change・heartの水準で照合すること。** `papers/quiver-avatar/relative_square_unfolding.tex`、`relative_square_tails_recognition.tex`、`relative_rotated_mutated_tails.tex`、`universal_h2_square_morita.tex`を使い、AS/heart比較の証明または反例をCへ統合し、その後mutation/window glueを決定する。相対finite groupoidを全AS認識の代用にしない。C4の一次資料・全証明の独立監査・LuaLaTeX組版は未了。A/Bは必要な入力として保持するがCより優先しない。生成・計算・証明・組版・push・hub更新を区別する。
+**最優先は論文Cを独立検証済みの公表可能な論文に完成させること。** C1/C2は原稿上達成、C3は **H2実現可能開全体の二mass QP→finite foundation→ordinary Jacobian=H⁰Π₃(Λ)=canonical Serre→左右Noether/pointed heart→mass/頂点scalarsの二段rigidificationとcoherentなruling S₂-mutation商** を `papers/quiver-avatar/cubic_qp_foundation_groupoid.tex` に全証明として統合した。有限束と関係の相対二段対角解消、Keller 2011/2018訂正の区別、normal oppositeの左Noether議論を入力にする。**次の第一課題は新C3の独立数学監査**：相対対角の短完全性、ordinary ideal生成、nilpotent base-change、n≥0のforward Ext/AZ、左Noether、mass/頂点慣性の核とS₂のcocycleを異なる観点で再導出し、反例があれば主張を訂正する。次いでC4の一次文献・全source/引用・LuaLaTeX全稿PDF/SyncTeX・表示を検証し、Introductionと公表用原稿を仕上げる。H2外の任意AS/avatar/QP stackには同じ定理を無条件拡張しない。A/BはCで必要な入力として読取り、GitHub main正本・hub更新を維持。
 
 ## 起動時の依頼文
 
 このrepoを選んだCloud taskに、次の依頼を渡す。以後の実行単位は研究方針を更新して引き継ぐので、過去の会話は必要ない。
 
-> AGENTS.mdと00_research_plan.mdに従い、**論文Cの完成を最優先目標として固定し、研究方針のC1–C4を確認して、C3の未決着である全次数AS/JacobianとSerre完成・相対heart同定・mutation glueを、既証明の全有限foundation gerbeを入力として実際に進めて下さい。** A/Bは必要な入力として使い、A/Bの公表準備を理由にCの数学的問題を後回しにしないで下さい。研究方針が指定する現在の第一着手から始め、証明・反例・一次文献比較・必要な厳密計算を行い、結果を日本語LuaLaTeXの主原稿と現行ノートへ統合して下さい。一補題・検算・commitを終了条件とせず、保存後も次の課題へ進んで下さい。切りのよいところで随時、長くても前回の成功したpushから約15分以内に通常commitとmainへの反映を行い、研究の区切りにresearch-hubも更新して下さい。他の作業者の変更を保持し、force pushとGitHub Actionsの追加・起動は行わないで下さい。実際の実行上限や不可欠な外部制約に達した場合は、証明境界と次の具体的一手を現行資料へ保存して下さい。
+> AGENTS.mdと00_research_plan.mdに従い、**論文Cの完成を最優先目標として固定し、研究方針のC1–C4を確認して、H2実現可能開について新C3に証明を追加した相対対角・Keller訂正・全次数AS/Jacobian/Serre・AZ心・mass/頂点scalarsとS₂ mutationの相対同型を独立に監査し、必要な訂正や改善を行って下さい。続いてC4の先行研究一次比較・全稿LuaLaTeX/SyncTeX/参照/表示を完了させて下さい。** A/Bは必要な入力として使い、A/Bの公表準備を理由にCの数学的問題を後回しにしないで下さい。研究方針が指定する現在の第一着手から始め、証明・反例・一次文献比較・必要な厳密計算を行い、結果を日本語LuaLaTeXの主原稿と現行ノートへ統合して下さい。一補題・検算・commitを終了条件とせず、保存後も次の課題へ進んで下さい。切りのよいところで随時、長くても前回の成功したpushから約15分以内に通常commitとmainへの反映を行い、研究の区切りにresearch-hubも更新して下さい。他の作業者の変更を保持し、force pushとGitHub Actionsの追加・起動は行わないで下さい。実際の実行上限や不可欠な外部制約に達した場合は、証明境界と次の具体的一手を現行資料へ保存して下さい。
 
 AGENTS.mdは、研究の継続手順と達成条件を与える。実行時間・利用可能な道具・ネットワーク・認証は実際のCloud環境に従う。別taskの自動起動や無期限実行を設定するファイルではない。
 
