@@ -1,0 +1,327 @@
+% !TeX root = ../quiver-avatar-moduli.tex
+% 2026-11-22: square / rotated-square の幾何的・有限代数的基礎を本文内で証明
+\section{Square と rotated square の自己完結な幾何的基礎}
+\label{sec:qa-self-contained-foundations}
+
+この節は，未公刊草稿 \cite{AvatarVSeven2026} の第I--II部から
+本稿Cの比較に必要な部分を取り出して，仮定と証明を与え直す．
+とくに \emph{反標準曲線上の幾何的 avatar，同型類の相互変換，
+有限 directed foundation の復元} は以下の証明だけで読める．
+これと，無限周期の AS--Gorenstein 分解，Noether 性，
+内在的 Hilbert 関手の認識とは別の定理である．
+後者の全証明を有限次元の計算から自動的に推論しない．
+
+\subsection{定義と非被約曲線を含む消滅補題}
+
+$k$ は標数零の代数閉体とする．
+$Y$ は，$h^2=2,\ hf=1,\ f^2=0,\ -K_Y=2h$ を満たす
+標識付き $\Sigma_0=\PP^1\times\PP^1$
+（$h=f+g$）または
+$\Sigma_2=\PP_{\PP^1}(\OO\oplus\OO(2))$
+（負断面 $S=h-2f$）とする．
+$D\in|2h|$ を有効 Cartier 因子とし，
+$Y=\Sigma_2$ では $D\cap S=\varnothing$ を課す．
+以下，$F=\OO_D(f)$，$H=\OO_D(h)$，
+$C=\OO_D(h-2f)$ とする．
+$\Sigma_2$ の場合には $C\simeq\OO_D$ である．
+曲線は非被約・可約でもよい．
+
+\begin{lemma}[部分曲線と Picard 消滅]
+\label{lem:qa-core-curve-vanishing}
+上の $D$ について
+$\omega_D\simeq\OO_D$，
+$h^0(\OO_D)=h^1(\OO_D)=1$ が成り立つ．
+真の非零な有効部分曲線 $0<Z<D$ には
+$Z(D-Z)\ge2$，したがって $p_a(Z)\le0$ が成り立つ．
+さらに $R\in\Pic^0(D)$ とすると，
+\begin{enumerate}
+\item $R\not\simeq\OO_D$ なら $H^0(D,R)=H^1(D,R)=0$;
+\item $FR$ と $(H F^{-1})R$ は大域生成な次数二の
+      pencil で，$h^0=2$，$H^1=0$;
+\item $HR$ は very ample で，$h^0=4$，$H^1=0$;
+\item $CR\not\simeq\OO_D$ なら $H^0(D,CR)=H^1(D,CR)=0$.
+\end{enumerate}
+この主張は $D$ の滑らかさも被約性も仮定しない．
+\end{lemma}
+\begin{proof}
+随伴公式と
+$0\to\omega_Y\to\OO_Y\to\OO_D\to0$
+から最初の主張が従う．
+$\Sigma_0$ で $Z=af+bg$（$0\le a,b\le2$）なら
+$Z(D-Z)=2a+2b-2ab$ であり，$0,D$ 以外は二以上である．
+$\Sigma_2$ では $D\cap S=\varnothing$ より
+$Z\cdot S=0$ であるから，$Z=aS+bf$ と書けば $b=2a$．
+$0<Z<D$ のとき $Z\equiv h$ であり，
+$Z(D-Z)=h^2=2$ となる．
+随伴公式
+$2p_a(Z)-2=-Z(D-Z)$ も得られる．
+
+ここで非被約曲線にも使える二つの観察を証明しておく．
+線束 $N$ の切断が generic に非零となる最大の部分曲線を
+$Z$ とすると，その切断は
+$N|_Z(-(D-Z))$ の generic に単射な切断を誘導する．
+ゆえに
+\[
+ \deg_Z N\ge Z(D-Z).                                      \tag{*}
+\]
+また長さ $\ell$ の零次元部分 scheme $\xi\subset D$ と
+線束 $M$ に対して $H^1(I_\xi M)\ne0$ なら，
+Serre 双対性から $I_\xi M\to\omega_D$ の非零射を得る．
+像の generic annihilator が定める $Z$ 上に射を因数分解し，
+$Z$ の双対化層と余核の長さを比較すると
+\[
+ \deg_Z M\le 2p_a(Z)-2+\ell .                             \tag{**}
+\]
+ここで $\omega_Z=\mathcal Hom_D(\OO_Z,\omega_D)$
+という随伴を用いる．両議論は局所的な annihilator と
+Cohen--Macaulay 曲線の双対性だけに依存するので，
+nilpotent layer を持つ部分曲線にも適用できる．
+
+$R\in\Pic^0(D)$ の各成分次数は零である．
+$R$ に切断があれば，真部分 $Z$ への
+generic support は $(*)$ に反し，全体への切断なら
+零点を持たず $R\simeq\OO_D$ となる．
+$\omega_D\simeq\OO_D$ と双対性により (1) が従う．
+$F$ と $HF^{-1}$ は各部分曲線上非負次数を持つ．
+$\Sigma_2$ では $HF^{-1}\simeq F$ なので同じ主張である．
+$(**)$ を $\ell=0,1$ に適用すると
+$H^1$ の消滅と長さ一の点の生成が従い，
+Riemann--Roch から切断数は二である．
+$H$ は真部分曲線上正次数を持つ
+（$\Sigma_2$ の唯一の例外 $S$ は $D$ と交わらない）．
+$(**)$ を $\ell=0,1,2$ に適用すると $HR$ は
+全ての長さ二の cluster を分離するので very ample，
+かつ $h^0(HR)=4$ となる．
+最後に $\Sigma_2$ では $C=\OO_D$ なので (1) に帰着する．
+$\Sigma_0$ では $C=g-f$ であり，
+真部分曲線 $Z=af+bg$ に対する
+$C\cdot Z=a-b\ge 2a+2b-2ab$ は成立しない．
+$(*)$ は $CR$ の切断を排除し，全体への切断は
+$CR\simeq\OO_D$ を強制する．
+$C^{-1}R^{-1}$ に同じ議論を適用し，双対性で
+$H^1(CR)=0$ を得る．
+\end{proof}
+
+\subsection{二つの pencil と $\Sigma_2$ への再埋め込み}
+
+\begin{lemma}[独立な pencil と一致する pencil]
+\label{lem:qa-core-two-pencils}
+$A,B\in\Pic(D)$ を大域生成の次数二線束とし，
+$h^0(A)=h^0(B)=2$，
+$AB$ を very ample で $h^0(AB)=4$ とする．
+\begin{enumerate}
+\item $H^*(BA^{-1})=0$ なら，完全 pencil の積は
+$D\hookrightarrow\PP H^0(A)^\vee\times\PP H^0(B)^\vee$
+という閉埋め込みで，像は $(2,2)$ Cartier 因子である．
+\item $B\simeq A$ かつ $p:D\to\PP^1$ が有限なら，
+$A^2$ の完全線形系から
+$D\hookrightarrow\Sigma_2$ を得る．
+像は負断面を避ける $|2h|$ の Cartier 因子であり，
+$\OO_D(f)=A,\ \OO_D(h)=A^2$ である．
+この埋め込みは標識付き曲面の同型を除き一意である．
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(1) $A$ の評価列を $B$ で tensor した
+\[
+ 0\to BA^{-1}\to H^0(A)\otimes B\to AB\to0
+\]
+に大域切断を取る．消滅仮定によって
+$H^0(A)\otimes H^0(B)\xrightarrow{\sim}H^0(AB)$
+である．従って Segre 埋め込みとの合成は
+very ample な $|AB|$ であり，もとの積も閉埋め込みである．
+Cohen--Macaulay 曲線の滑らかな曲面内への余次元一閉埋め込みは
+Cartier であり，各 ruling との交点数二から類は $(2,2)$ となる．
+
+(2) $H^0(A^2)$ は四次元で，
+$\Sym^2H^0(A)$ は三次元部分空間となる．
+$p$ が有限ゆえ非定数であり，
+$\Sym^2H^0(A)\to H^0(A^2)$ は単射である．
+補元を $z$ とすると，$A^2$ への商
+$\OO_D\oplus p^*\OO_{\PP^1}(2)\to A^2$ は
+$(z,1)$ で与えられる．
+これは quotient 規約の
+$\Sigma_2=\PP_{\PP^1}(\OO\oplus\OO(2))$
+への射を定める．第二成分が可逆なので負断面を避ける．
+$|h|$ との合成は完全な $|A^2|$ であり，閉埋め込みである．
+$fD=2,\ hD=4$ から像は $2h$ である．
+$z$ の変更は三角形の束自己同型で吸収される．
+\end{proof}
+
+\begin{theorem}[square と rotated square の avatar の相互変換]
+\label{thm:qa-core-avatar-square-rotated}
+次の二種類の標識付き曲線型 avatar の同型類は自然に全単射する：
+\[
+\begin{array}{ll}
+\text{\rm square:}&
+(D\subset\PP^1\times\PP^1;\ F,G,P),\
+P\in\Pic^0(D)\setminus\{\OO_D\},\\
+\text{\rm rotated:}&
+(D\subset Y;\ F,H,P),\
+Y=\Sigma_0\text{ または }\Sigma_2,\
+P\not\simeq\OO_D,\ C,\
+D\cap S=\varnothing\text{ if }Y=\Sigma_2.
+\end{array}
+\]
+ここで square の $F,G$ は順序付き ruling，
+rotated の $F,H$ は $f,h$ の制限，$C=HF^{-2}$ である．
+同型類の対応は
+\begin{equation}
+\begin{aligned}
+\mathrm{rotated}\longmapsto\mathrm{square}:&
+  \quad F_s=F,\quad G_s=HF^{-1}P^{-1},\\
+\mathrm{square}\longmapsto\mathrm{rotated}:&
+  \quad F_r=F_s,\quad H_r=F_sG_sP .
+\end{aligned}
+\label{eq:qa-core-rsq-sq}
+\end{equation}
+さらに rotated の Hilbert 曲面が $\Sigma_2$ となるのは
+$G_sP\simeq F_s$ の場合に限る．
+\emph{square の許容条件に}
+$P\ne F_sG_s^{-1}$ \emph{や}
+$P\ne G_sF_s^{-1}$ \emph{を追加してはならない．}
+\end{theorem}
+\begin{proof}
+rotated からは補題~\ref{lem:qa-core-curve-vanishing}より
+$F$ と $HF^{-1}P^{-1}$ は二つの大域生成 pencil で，
+積 $HP^{-1}$ は very ample である．
+その比 $HF^{-2}P^{-1}=CP^{-1}$ は
+仮定により非自明で，補題の (4) から acyclic である．
+補題~\ref{lem:qa-core-two-pencils}(1) により
+$(2,2)$ Cartier 因子へ埋め込める．
+
+逆に square から $F_s$ と $G_sP$ を取る．
+これらは大域生成次数二 pencil で，
+積 $F_sG_sP$ は very ample である．
+$G_sP\not\simeq F_s$ なら，比
+$G_sF_s^{-1}P$ は非自明なので
+補題~\ref{lem:qa-core-curve-vanishing}(4) から acyclic であり，
+$\Sigma_0$ 上に再埋め込みができる．
+$G_sP\simeq F_s$ のとき
+$F_s^2\simeq F_sG_sP$ は very ample である．
+$F_s$ は $G_s$ とともに各成分上正次数を持ち
+（$P$ の各成分次数は零），
+対応する $D\to\PP^1$ は有限である．
+補題~\ref{lem:qa-core-two-pencils}(2) で $\Sigma_2$ を得る．
+この場合 $H_r=F_s^2$ なので $C_r=\OO_D$ である．
+一般の場合 $C_r=G_sF_s^{-1}P$ であり，
+$P=C_r$ なら $F_s=G_s$ となる．
+元の $(2,2)$ 埋め込みでは二つの ruling は異なり
+$H^*(G_sF_s^{-1})=0$ なので，これは起こらない．
+最後に式~\eqref{eq:qa-core-rsq-sq}の合成は
+$F_s,G_s$，または $F_r,H_r$ を厳密に回収する．
+完全 pencil と補元の一意性により曲面上の同型類も回収する．
+\end{proof}
+
+\subsection{有限 directed foundation と反標準行列式}
+
+四頂点の directed algebra は，$i<j$ に
+$\Hom_D(L_i,L_j)$，対角に $k$，逆向きに零を置き，
+積を切断の乗法で定めたものとする．
+この定義は $\Perf(D)$ の full dg endomorphism algebra
+を意味しない．
+
+\begin{proposition}[二種類の有限 foundation と点曲線の復元]
+\label{prop:qa-core-directed-foundations}
+曲線型 avatar に対して
+\[
+\begin{aligned}
+B_{\rm sq}&=\End_{\rm dir}(P,F_s,G_s,F_sG_s),\\
+B_{\rm rsq}&=\End_{\rm dir}
+ (P,C_r,H_rF_r^{-1},H_r^2F_r^{-1})
+\end{aligned}
+\]
+を考える．square の Hom 次元上三角行列は
+$\left(\begin{smallmatrix}
+1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1
+\end{smallmatrix}\right)$，
+rotated のそれは
+$\left(\begin{smallmatrix}
+1&0&2&6\\0&1&2&6\\0&0&1&4\\0&0&0&1
+\end{smallmatrix}\right)$
+である．いずれも対応する四頂点箙とその最小関係を与え，
+四頂点の点表現を三頂点へ忘れる射は，
+関係の普遍評価行列の余核の相対射影化として
+\emph{もとの} $D\hookrightarrow Y$ を回収する．
+特に square の行列は rank 四から三への Cartier 退化で，
+rotated は rank 二から一への退化である．
+\end{proposition}
+\begin{proof}
+線束の差の $H^0$ を補題~\ref{lem:qa-core-curve-vanishing}
+で計算すれば表示の Hom 次元を得る．
+square で非自明な矢は四つの二次元空間
+$H^0(F_sP^{-1}),H^0(G_sP^{-1}),H^0(F_s),H^0(G_s)$
+であり，関係は $0\to3$ の四次元空間である．
+rotated では $0\to2$ と $1\to2$ の二次元空間，
+$2\to3$ の四次元空間が生成矢で，
+$0\to3$ と $1\to3$ に各二次元の関係がある．
+後者の二つの関係は pencil の評価列から直接得られる．
+
+square での四つの関係を同時に扱うには，
+$\PP^1$ の対角の Koszul 分解を二つ外積して
+$\PP^1\times\PP^1$ の対角分解を作る．
+それを $\iota_*(H_sP)$ に作用させて大域切断を取ると，
+補題の消滅と $h^0=2,2,4$ から
+\[
+ 0\longrightarrow\OO_Y(-f)^{\oplus2}
+       \oplus\OO_Y(-g)^{\oplus2}
+ \longrightarrow\OO_Y^{\oplus4}
+ \longrightarrow\iota_*(H_sP)\longrightarrow0
+\]
+となる．曲面上で双対化し，Cartier 双対性を使うと
+\begin{equation}
+0\to\OO_Y^{\oplus4}
+ \xrightarrow{\kappa_{\rm sq}}
+ \OO_Y(g)^{\oplus2}\oplus\OO_Y(f)^{\oplus2}
+ \to\iota_*(H_sP^{-1})\to0 .
+\label{eq:qa-core-square-matrix}
+\end{equation}
+大域切断と $(-f),(-g)$ への tensor は
+元の四矢空間と四関係を与えるので，
+$\kappa_{\rm sq}$ は普遍評価行列である．
+余核は局所的に $\OO_Y/(q)$ の自由 rank-one
+加群であり，局所行基本変形により
+$\kappa_{\rm sq}\sim\operatorname{diag}(1,1,1,q)$．
+ゆえに $\PP_Y(\coker\kappa_{\rm sq})=V(q)=D$ である．
+
+rotated では $N=H_rF_r^{-1}P^{-1}$ とおく．
+$\Sigma_0$ では同じ積の対角分解と
+$H^*(P^{-1})=H^*(C_rP^{-1})=0$ を用い，
+$\Sigma_2$ では有限平坦な二重射
+$p:D\to\PP^1$ の $p_*N\simeq\OO_{\PP^1}^{\oplus2}$
+を用いる．いずれも
+\[
+0\to\OO_Y(-h)^{\oplus2}\to\OO_Y^{\oplus2}
+  \to\iota_*N\to0
+\]
+となる．$\OO_Y(h)$ で tensor すると
+\begin{equation}
+0\to\OO_Y^{\oplus2}
+ \xrightarrow{\kappa_{\rm rsq}}
+ \OO_Y(h)^{\oplus2}
+ \to\iota_*(H_r^2F_r^{-1}P^{-1})\to0 .
+\label{eq:qa-core-rotated-matrix}
+\end{equation}
+元の二関係と八道から大域切断で
+$\kappa_{\rm rsq}$ を回収する．
+局所標準形は $\operatorname{diag}(1,q)$ であり，
+その相対射影化は再び $D$ である．
+最後の普遍線束の商を
+$H_s$ または $H_r^2F_r^{-1}$ で正規化すると
+$P$ が回収される．
+これは単なる幾何点の行列式の一致ではなく，
+余核による scheme-theoretic な復元である．
+\end{proof}
+
+\begin{remark}[この節から AS 分類へ進むための残りの入力]
+\label{rem:qa-core-as-scope}
+上の構成は \emph{任意の}曲線型 avatar に対して成立する．
+有限 foundation から全整数添字の AS 正則
+$\mathbb Z$-代数を得るには，さらに四つの canonical
+kernel--cokernel 列を全周期で構成し，
+mutation と Serre 関手を比較する必要がある．
+その際に非可換圏の実際の最小射影分解と
+AS--Gorenstein 双対性を点検しなければならない．
+本稿の他の節が有限 foundation と AS 代数を
+区別するのはこのためである．
+\end{remark}
