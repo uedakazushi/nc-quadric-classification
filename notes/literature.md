@@ -1,7 +1,35 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.50。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.51。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 論文CのOkawa--Ueda GIT比較と慣性の一次資料
+
+Shinnosuke Okawa and Kazushi Ueda, *Noncommutative quadric surfaces and noncommutative conifolds*, [arXiv:1403.0713v1](https://arxiv.org/pdf/1403.0713), 2014。
+2026-11-22に一次PDFの印刷p.3・Theorem1.1(1)--(4)をページ画像で確認した。
+quintuple表示の生のmoduli stackのgeneric stabilizerはGm^4で、
+その後のGIT商はP(2,4,4,6)、
+conifold potential側の生stackのgeneric stabilizerはGm、
+そのGIT商はP(1,2,3,4)。
+potential GITからquintuple GITへの有限射は**次数4**である。
+これらは既知の結果であり、本研究の新成果ではない。
+同定理は構造対象Oだけを指定した本研究のH2への
+忘却射の次数や、二つのGIT商と内在的H2がスタック同値であるとは述べない。
+
+Cの新補題 prop:qa-ou-scalar-gerbe は、
+quintuple群∏GL(V_i)×GL(W)に含まれる
+中心K≅Gm^4が関係テンソル全体に自明に作用し、
+さらにquintupleから作るZ代数の頂点共役を通じて
+pointed tailsの恒等自然変換へ落ちることを示す。
+この慣性核が消えない生の表示商からH2への射は
+表現可能ではあり得ない。
+これは既知のgeneric stabilizerの記述と
+本研究のpointed比較を明示的につなぐ確実な命題であるが、
+全quintuple上の適合H2族の存在・相対開性は未解決。
+Cの prop:qa-forgetful-homotopy-fiber は
+Aut群の剰余集合と相対慣性を区別する一般groupoid補題。
+GITのdegree4から内在的Serre根の個数は推定しない。
+
 
 ## 研究の位置
 

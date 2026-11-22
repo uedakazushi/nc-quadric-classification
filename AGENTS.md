@@ -1,12 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.80。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv0.3。
+2026-11-22 / v0.81。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv0.4。
 
 ## 公表用三論文への再編（確定方針）
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：`papers/quiver-avatar-moduli.tex` は有限quiver表示とavatarの独立稿とし、相対内在的認識の未解決条件を明示する。
+- C：`papers/quiver-avatar-moduli.tex` は既存Okawa--Ueda quintuple/conifold GITと内在的H2の比較、有限quiver/QP/avatar、標識忘却の独立稿とする。新しいGIT比較節は `papers/quiver-avatar/git_comparison.tex` に置き、一般cubicの相対fiber・慣性を最優先で研究する。Bは標的Artinスタックを供給し、GIT比較をBに重複させない。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 

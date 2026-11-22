@@ -1,6 +1,56 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.78（A v1.69・20節、B v0.39・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.79（A v1.69・20節、B v0.39・31節、C v0.4）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 論文C：既存GITと内在的H2を比較する際の慣性核とファイバー
+
+**一次文献と対象の違い。** Okawa--Ueda, arXiv:1403.0713v1,
+Theorem1.1(1)--(4)（印刷p.3）を一次PDFのページ画像で2026-11-22に確認した。
+quintupleのcompact GITはP(2,4,4,6)、conifold potentialのcompact GITは
+P(1,2,3,4)、後者から前者への有限射は次数4である。
+quintupleの生のstackはgeneric stabilizer Gm^4を持ち、
+potentialの生のstackはgeneric Gmを持つ。
+このGIT有限射は、構造対象Oだけを保つH2への平方根・ruling忘却ではない。
+GIT閉軌道とpointed exact同値の同一視も未証明。
+
+**今回の新しい確実な補題（Cの正本）。**
+V0,V1,V2,V3を二次元、Wを一次元とすると、
+T=V0⊗V1⊗V2⊗V3⊗W^∨に対して
+G=∏GL(Vi)×GL(W)のスカラー作用は
+(λ0,...,λ3,μ)↦(∏λi)/μである。従って
+K={(λ0 id,...,λ3 id,(∏λi)id_W)}≅Gm^4は中心かつTに自明に作用する。
+生の表示商[T/G]→[T/(G/K)]はK-gerbeとなる。
+実際にH2へ入るquintuple族に限れば、隣接Homのスカラー変更を
+γ_i^-1γ_jの頂点共役として書け、graded moduleの次数ごとの
+γ_i^-1倍からtailsの恒等functorとの自然同型が得られる。
+構造対象の同型も正規化できる。
+従って表示のK慣性はpointed忘却で恒等射に落ち、
+この未剛体化表示からH2への忘却射は**表現可能でない**。
+論文Cの prop:qa-ou-scalar-gerbe に全証明がある。
+これはOUによるgeneric Gm^4の存在を超えて、
+内在的pointed比較における**慣性写像の核**を述べる。
+この命題はH2への相対射を全GIT半安定領域で構成したという主張ではない。
+
+**群oidの一般公式。**
+実際の忘却射F:X→Yとy∈Y(k)に対し、homotopy fiberの対象は
+(x,α:F(x)≅y)で、自己同型はKer(Aut_X(x)→Aut_Y(F(x)))。
+ファイバーの同型類は、F(x)≅yとなるXの同型類に関して、
+Aut_Y(y)/αF(Aut_X(x))α^-1の剰余集合の直和である。
+式はCの prop:qa-forgetful-homotopy-fiber に証明済み。
+よって**GITの次数、幾何ファイバーの同型類の濃度、
+homotopy fiberの慣性核**は三つの別量であり、互いに数え替えない。
+
+**次の具体的着手点。**
+一般geometric cubicの有効開のquintupleから相対H2への実際の射を確認し、
+同じOを持つpointed groupoidにおいて
+(A)頂点スカラーの剛体化、(B)残る有限慣性、
+(C)ruling/四窓を動かした際のpointed同値、
+(D)potential→quintupleの次数4との関係を順に計算する。
+Cの相対AS/heart適合部分が開であること、
+全GIT compactificationからH2への射、
+generic fiberの有限性・次数は**未証明**。
+Bは標的H2のArtin性・慣性・境界の正本、Aは体上分類の正本。
+独立のGIT比較をBへ重複させない。
 
 ## 一致類の全慣性・AHR形式対・局所good moduliの二次的性質
 
