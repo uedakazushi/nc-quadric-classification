@@ -405,6 +405,38 @@ $\left(\begin{smallmatrix}-1&1\\1&1\end{smallmatrix}\right)$
 非零二捩れ群スキームが有限étale次数三を与える。
 \end{proof}
 
+\begin{corollary}[nodalと$I_2$型の固定曲線でも二重壁は横断的]
+\label{cor:qa-as10-singular-double-wall-transversality}
+$D$を既約一節点または$I_2$型の$(2,2)$反標準曲線、
+$F=\OO_D(1,0)$とし、$\Pic^0(D)$の二つの変数
+$(P,\eta)$で$G=F\eta$と書く。
+この\emph{固定された特異曲線}のパラメータ空間でも
+二つのmutation壁はscheme-theoreticに横断的で、
+その交点は一つの被約点である。
+したがってsmooth/nodal/$I_2$の各固定曲線上で、
+二重壁の交点のscheme長はそれぞれ$3/1/1$である。
+異なる曲線型の点を同一視する主張ではない。
+\end{corollary}
+\begin{proof}
+補題~\ref{lem:qa-as10-double-wall-reduced-geometries}の
+単元貼合せ計算によって、
+nodal型でも$I_2$型でも$\Pic^0(D)\simeq\Gm$である。
+従って$\Pic^0(D)[2]\setminus\{0\}$は
+非零元$-1$の一つの被約点である。
+二つの完全な次数二pencilの評価列と
+補題~\ref{lem:qa-core-curve-vanishing}を用いれば、
+前命題と同様に壁の方程式は
+$\eta=P$と$\eta=P^{-1}$になる。
+$H^0(\OO_D)=H^1(\OO_D)=k$なので、
+自明線束の一次変形における
+$H^0\to H^1$の接続はその変形類自身であり、
+Fittingの階数三条件が一次の被約Cartier因子を
+定めることも同じ証明で確認できる。
+$\Gm$で$P_0=-1$とすると
+二つの壁の接方向は$v-u$、$v+u$で、
+標数零では横断的である。
+\end{proof}
+
 \begin{proposition}[二つの最小十本矢壁と二捩れ交点]
 \label{prop:qa-as10-double-wall-characterization}
 曲線型square avatar $(D,F,G,P)$ を固定する。
