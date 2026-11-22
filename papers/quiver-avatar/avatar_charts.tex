@@ -919,6 +919,307 @@ $\PGL_2$で割った群oidとして記述されており、
 元のavatar AS代数の直接認識とは区別する。
 \end{proof}
 
+\subsection{二根対のquartic resolventと退化avatarの非可逆Picardパラメータ}
+\label{subsec:qa-rootpair-resolvent-singular-avatar}
+
+\begin{theorem}[noncubic根対の三重quartic resolventと三つの退化型]
+\label{thm:qa-noncubic-rootpair-quartic-resolvent}
+$k$を標数零の代数閉体、$W$を二次元ベクトル空間とし、
+$\mathcal D_2=\PP(\operatorname{Sym}^2W^\vee)$、
+$\mathcal D_4=\PP(\operatorname{Sym}^4W^\vee)$と置く。
+二つの二次形式をその順序を忘れて掛ける射
+\[
+ \mu:\operatorname{Sym}^2(\mathcal D_2)\longrightarrow
+             \mathcal D_4,\qquad
+ \{[f_1],[f_2]\}\longmapsto[f_1f_2]
+ \tag{Res-4}\label{eq:qa-rootpair-resolvent-map}
+\]
+は全射有限射であり、一般次数は$3$である。
+根が相異なる四次形式$q$の上の三点は
+四根の非順序二根対への三分割を表す。
+アフィンmonic chartで
+\[
+ q(x)=x^4+a x^3+b x^2+c x+d
+\]
+とすると、四根$\alpha_1,\ldots,\alpha_4$の
+二組分割から得る
+$\alpha_i\alpha_j+\alpha_k\alpha_\ell$の
+三つの値は
+\[
+ R_q(z)=z^3-bz^2+(ac-4d)z
+             -(a^2d+c^2-4bd)
+ \tag{Res-cub}\label{eq:qa-rootpair-resolvent-cubic}
+\]
+の三根に一致する。
+この三重射は古典的なquartic resolventの
+幾何的な表示である。
+
+$\mathcal D_2^{\mathrm{sf}}$を二つの相異なる
+根を持つ二次形式の開部分とする。
+論文Bのnoncubic根対表示の
+\[
+ \mathcal R_{\mathrm{sf}}=
+ \operatorname{Sym}^2(\mathcal D_2^{\mathrm{sf}})
+\]
+上では$q=f_1f_2$の幾何的根配置は
+次の三型に限られ、それぞれ
+\[
+ C_q:\quad y^2=f_1f_2
+ \quad\text{in }\operatorname{Tot}\OO_{\PP^1}(2)
+ \tag{Res-curve}\label{eq:qa-rootpair-spectral-curve}
+\]
+の射影的二重被覆が次の形となる。
+\[
+ \begin{array}{c|c|c}
+ \text{根配置}&q\text{の重複度}&C_q\\\hline
+ B_1\cap B_2=\varnothing&(1,1,1,1)&\text{smooth genus }1\\
+ |B_1\cap B_2|=1&(2,1,1)&\text{既約nodal genus }1\\
+ B_1=B_2&(2,2)&\text{二つの}\PP^1\text{が二節点で交わる}
+ \end{array}
+ \tag{Res-strata}\label{eq:qa-rootpair-three-strata}
+\]
+三型とも$C_q$は連結なGorenstein曲線で
+算術種数$1$である。
+この構成は$\operatorname{PGL}(W)$と
+根対交換の作用に自然であり、論文Bの
+根対スタック
+$\mathfrak R=[((\mathcal D_2^{\mathrm{sf}})^2)/
+(\operatorname{PGL}(W)\times S_2)]$
+からquartic二重被覆のスタックへの射を与える。
+ただし全$\operatorname{Sym}^2(\mathcal D_2)$の
+有限射と、平方因子を除いた
+$\mathcal R_{\mathrm{sf}}$上の制限射は区別する。
+\end{theorem}
+\begin{proof}
+四次形式の任意の因数分解は
+その根の重複度付き四点集合から
+二点ずつを選ぶ有限個の操作なので、
+$\mu$の幾何fiberは有限である。
+$\operatorname{Sym}^2(\mathcal D_2)$は射影的、
+従って$\mu$はproperかつquasi-finiteで
+有限である。代数閉体上ではすべての四次形式が
+二次形式の積となるので全射。
+四根が相異なれば分割は三つあり、
+一般次数は三となる。
+式~\eqref{eq:qa-rootpair-resolvent-cubic}は
+四根の基本対称式を展開すれば得られる。
+例えば三値を
+$u_{12|34}=\alpha_1\alpha_2+\alpha_3\alpha_4$
+などと置くと、
+$\sum u=b$、
+$\sum_{r<s}u_ru_s=ac-4d$、
+$\prod u=a^2d+c^2-4bd$である。
+
+$f_1,f_2$の根が各々相異なるので、
+積の各根の重複度は高々二である。
+共通根の個数が$0,1,2$の三場合が
+表の各行に一致する。
+四単根なら二重被覆はsmoothでRiemann--Hurwitzにより
+genus一。一つの二重根の近くでは
+$y^2=t^2u(t)$、$u(0)\ne0$なので、
+étale局所で$y'^2=t^2$という普通節点になる。
+残り二単根から二重被覆は既約で、
+正規化はgenus零。
+二つの二重根なら$f_1=f_2$（射影類として）で、
+$y^2=f_1^2$は二つのsection
+$y=\pm f_1$の和である。
+各sectionは$\PP^1$で、$f_1$の二単根で横断する。
+二重被覆の代数
+$\OO_{\PP^1}\oplus\OO_{\PP^1}(-2)y$
+から$\chi(\OO_{C_q})=1+(-1)=0$であり、
+全型で$p_a(C_q)=1$。
+局所的に平面曲線の節点またはsmoothなので
+Gorensteinでもある。
+群の作用については積と二重被覆の
+構成が自然であることから従う。
+\end{proof}
+
+\begin{theorem}[根対からの相対torsion-free spectral avatar]
+\label{thm:qa-noncubic-rootpair-torsionfree-spectral-module}
+論文Bの二形式表示
+\[
+ (f_1,f_2)\in
+ \bigl(\operatorname{Sym}^2W^\vee\bigr)_{\mathrm{nd}}^2
+\]
+上で、$\PP(W)$への射影を$p$として
+\[
+ \widetilde C=
+ \operatorname{Spec}_{\PP(W)}
+  \frac{\OO_{\PP(W)}[c,d]}
+       {(c^2-f_1,\ d^2-f_2)},\qquad
+ C=\operatorname{Spec}_{\PP(W)}
+  \frac{\OO_{\PP(W)}[y]}{(y^2-f_1f_2)}
+\]
+を取る。ただし$c,d$は局所的に
+$\OO_{\PP(W)}(-1)$の生成元、$y=cd$は
+$\OO_{\PP(W)}(-2)$の生成元と解釈する。
+$\widetilde C$から$C$への有限射は
+$(c,d)\mapsto(-c,-d)$の商であり、
+反不変部分
+\[
+ \mathcal M=
+  \bigl(p_*\OO_{\widetilde C}\bigr)^-
+ \cong\OO_{\PP(W)}(-1)c
+       \oplus\OO_{\PP(W)}(-1)d
+ \tag{Res-M}\label{eq:qa-rootpair-spectral-module}
+\]
+は$\OO_C$-加群として
+\[
+ y c=f_1 d,\qquad y d=f_2 c
+ \tag{Res-MF}\label{eq:qa-rootpair-spectral-matrix-factorization}
+\]
+を満たす。全二形式族と任意の基底変更にわたり、
+$C$は有限平坦二重被覆、$\mathcal M$は
+\emph{相対平坦なrank-one torsion-free sheaf}
+（各幾何fiber上で次数零）となる。
+この構成は二形式の基底変更・スカラー変更・
+二形式交換に関して自然なので、
+論文Bのnoncubic表示スタック
+$\mathfrak N^{\mathrm{pres}}=[P/G]$から
+「種数一の有限二重被覆とrank-one
+torsion-free sheaf」の相対群oidへの射を与える。
+
+二根対が交わらない滑らかなfiberでは、
+$\widetilde C\to C$はétale $\mu_2$-torsor、
+$\mathcal M$は非自明な
+$\Pic^0(C)[2]$の線束である。
+これは定理
+~\ref{thm:qa-avatar-two-torsion-root-pair-bijection}
+で定めた分割の2-torsionと一致する。
+他方、根対が一根を共有するとき
+$\mathcal M$はその節点で局所自由でなく、
+二根対が一致するときは二つの節点で
+局所自由でない。
+従って\emph{全noncubic根対配置にわたって}
+自然に存在するのは通常の$\Pic^0$線束ではなく、
+この相対torsion-free spectral moduleである。
+\end{theorem}
+\begin{proof}
+二つの二次平方根の代数は、
+$\OO_{\PP(W)}$上の基底$1,c,d,cd$を持つ
+階数四の局所自由代数である。
+同時符号変換の不変部分は$1,cd$、
+反不変部分は$c,d$なので
+式~\eqref{eq:qa-rootpair-spectral-module}を得る。
+$y=cd$による積は
+式~\eqref{eq:qa-rootpair-spectral-matrix-factorization}
+で与えられ、形式的には
+\[
+ \begin{pmatrix}0&f_2\\f_1&0\end{pmatrix}^2
+      =f_1f_2 I_2
+\]
+というmatrix factorizationである。
+$\OO_{\PP(W)}$上で$\mathcal M$は
+$\OO(-1)^{\oplus2}$だから、
+二形式パラメータとその任意基底変更に対して平坦。
+各幾何fiberでは二次拡大のgeneric点でrank一で、
+局所的に二次平方根代数の直和因子であるから
+torsion-freeである。
+Euler特性は
+\[
+ \chi(C,\mathcal M)
+ =\chi(\PP^1,\OO(-1)^{\oplus2})=0
+ =\chi(C,\OO_C)
+\]
+なので次数零である。
+
+$f_1,f_2$に共通零点がなければ、
+$c,d$が同時に零となる点がないため
+同時符号対合は自由で、
+$\widetilde C\to C$は有限étaleの二重torsor。
+このとき反不変部分$\mathcal M$は
+invertibleかつ$\mathcal M^2\simeq\OO_C$。
+$H^0(C,\mathcal M)=H^0(\PP^1,\OO(-1)^{\oplus2})=0$
+なので非自明である。
+$\widetilde C$の三つの二次部分被覆の
+分岐分割から、これは前定理の2-torsionに一致する。
+
+共有根の局所では単元の平方根をétale局所に取り、
+\[
+ \OO_{C,o}^{\wedge}
+  \simeq k[[x,y]]/(y^2-x^2),\qquad
+ \mathcal M_o\cong
+   \langle c,d\mid yc=xd,\ yd=xc\rangle .
+\]
+$\mathcal M_o/(x,y)\mathcal M_o$の次元は二なので、
+rank一局所自由ではない。
+一致根対では$C$は二つのsectionの和で、
+その二つの交点の局所方程式も同じになり、
+$\mathcal M$は各節点で非局所自由である。
+二形式の交換は$c,d$の交換、
+スカラー変更は平方根のスカラー変更として
+作用し、構成は元の表示群の作用に整合する。
+\end{proof}
+
+\begin{proposition}[共有根退化での可逆Picard延長の局所障害]
+\label{prop:qa-rootpair-nodal-picard-nonextension}
+$R=k[[s]]$上の二根対の退化
+\[
+ f_1=x(x-1),\qquad f_2=(x-s)(x-2)
+\]
+を取り、$C_R:y^2=f_1f_2$とする。
+その一般fiberは滑らかな楕円曲線であり、
+特殊fiberは既約な一節点曲線となる。
+一般fiberの自然な非零2-torsion線束
+$\mathcal M_K$は、
+\emph{$C_R$全体の可逆線束には延長できない}。
+従って二根対から
+$C:y^2=f_1f_2$と
+\emph{可逆な}$P\in\Pic^0(C)$を
+割り当てる滑らかなavatar辞書は、
+この族に沿ってそのまま相対射としては延長できない。
+
+この障害は、$C_R$の節点における
+表面$A_1$特異点と、
+そこでの非自明なrank-one reflexive module
+によって検出される。
+$C_R$以外の曲線へのavatar再埋込み、
+$\Sigma_2$へのelementary transform、
+またはcompactified Picard型データによる
+延長の可能性は排除しない。
+\end{proposition}
+\begin{proof}
+$s=0$では$f_1f_2=x^2(x-1)(x-2)$であり、
+特殊曲線は既約nodal genus一である。
+共通根$x=s=0$の完成局所環では、
+単元の平方根で座標を正規化すると
+\[
+ A=k[[x,s,y]]/(y^2-x(x-s)).
+\]
+二形式を別々に平方根化する被覆の完成環は
+$B=k[[c,d]]$で、
+\[
+ x=c^2,\quad x-s=d^2,\quad y=cd,\quad
+ A\simeq B^{\{\pm1\}}
+\]
+となる。$B$上の同時符号の反不変部分
+$M=Ac+Ad$は、商$A$上の
+rank-one maximal Cohen--Macaulay、従って
+rank-one reflexive moduleである。
+その最小生成元は$c,d$の二つなので非自由であり、
+$A$は表面$A_1$特異点を持つ。
+これは前定理の$\mathcal M$の完成stalkである。
+
+相対曲線の全空間$C_R$はnormalであり、
+その唯一の特異点で上記$A_1$局所型を持つ。
+$\mathcal M$はnormal曲面上の
+rank-one reflexive sheafで、
+一般fiberでは$\mathcal M_K\in\Pic^0(C_K)[2]$。
+もし可逆線束$L$が全空間上に存在して
+$L_K\simeq\mathcal M_K$となれば、
+normal曲面上のrank-one reflexive sheafの
+Weil因子記述から、$L$と$\mathcal M$の差は
+特殊fiberに支持されるWeil因子となる。
+この特殊fiberは\emph{既約}かつ
+パラメータ$s$で切られたCartier因子なので、
+その整数倍は主因子である。
+従って$L\simeq\mathcal M$となり、
+節点での非局所自由性に矛盾する。
+最後の留保は$C_R$を固定したときの
+可逆延長障害と、別のavatarモデルの存在を
+混同しないためである。
+\end{proof}
+
 \begin{proposition}[Picard零切断の全体を古典pointとして追加できない理由]
 \label{prop:qa-avatar-zero-picard-collapse}
 $Y=\PP^1\times\PP^1$、
