@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.9（二つの特別座の全pointed慣性群型を決定）
+% 2026-11-22 / v3.0（OU二捩れ特別座のspectral方程式を計算）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -679,6 +679,81 @@ ruling交換自己同値を与える。
 上記groupoidの全充満性から$\mu_2^2$である。
 ruling交換成分は存在するときこの部分群とは異なる
 一つの剰余類となるため、全慣性は位数八である。
+\end{proof}
+
+\begin{proposition}[spectral座標での二つの二捩れ特別座の方程式]
+\label{prop:qa-ou-spectral-torsion-divisors}
+命題~\ref{prop:qa-ou-pointcurve-quadric-pencil}の
+正則半単純な対角potentialで
+$x_i\ne0$、$x_i^2$が互いに異なるとする。
+$x_i^2$の基本対称式を$e_1,e_2,e_3,e_4$、
+$c=\prod_i x_i$（従って$e_4=c^2$）と書く。
+$\infty_+$を原点とする
+$E_{\mathrm{sp}}:y^2=\prod_i(t-x_i^2)$上で
+$O_-=\infty_-$、$P_\pm=(0,\pm c)$と置く。
+すると前述のruling同型
+$\Theta:E_{\mathrm{sp}}\simeq\Pic^0(C)$に関して
+\[
+ \Theta(O_-)=\eta:=\mathcal L_1\mathcal L_0^{-1},
+ \quad \Theta(P_+)=\delta:=\mathcal L_2\mathcal L_0^{-1},
+ \quad \Theta(P_-)=\eta-\delta.
+\]
+さらに、
+\[
+ \begin{split}
+ \delta\in\Jac(C)[2]&\ \Longleftrightarrow\
+                  e_3+e_1c=0,\\
+ \eta-\delta\in\Jac(C)[2]&\ \Longleftrightarrow\
+                  e_3-e_1c=0 .
+ \end{split}
+ \tag{OU-torsion-div}\label{eq:qa-ou-torsion-divisors}
+\]
+従って$e_1c\ne0$の正則半単純開では
+二つの特別座は互いに交わらない。
+実際、$x=(1,2,3,-6)$は前者に、
+$x=(1,2,3,6)$は後者に属し、
+どちらも$e_1=50$で$x_i^2$は相異なる。
+この二例の曲線は同じ$j$-不変量
+$135487869158881/51438240000\ne0,1728$を持つ。
+\end{proposition}
+\begin{proof}
+$\infty_\pm$は$t=\infty$の二ruling、
+$P_\pm$は$t=0$の二rulingである。
+命題~\ref{prop:qa-ou-pointcurve-quadric-pencil}と
+補題~\ref{lem:qa-ou-hodge-ruling-sign}により、
+それぞれ$\mathcal L_0,\mathcal L_1$、
+$\mathcal L_2,\mathcal L_0\mathcal L_1\mathcal L_2^{-1}$
+に対応する。原点を$\mathcal L_0$に取れば
+初めの三式を得る。
+
+$f(t)=t^4-e_1t^3+e_2t^2-e_3t+c^2$とし、
+\[
+ b=-e_1/2,\qquad d=e_2/2-e_1^2/8,\qquad
+ u=y+t^2+bt+d,\quad v=tu
+\]
+と置く。$\infty_+$で$u,v$の極位数は$2,3$であり、
+$\infty_-$では両者正則なので、
+原点$\infty_+$の一般化Weierstrass座標を与える。
+直接展開すると
+\[
+ v^2+buv-(bd+e_3/2)v
+   =\frac12u^3-du^2+\frac{d^2-c^2}{2}u .
+ \tag{OU-W}\label{eq:qa-ou-spectral-weierstrass}
+\]
+$P_\pm$は$(u,v)=(d\pm c,0)$に移る。
+このWeierstrass曲線で点が二捩れである条件は、
+負元を取る対合に固定されること、すなわち
+$2v+bu-(bd+e_3/2)=0$である。
+$P_\pm$に代入すれば左辺は
+$-(e_3\pm e_1c)/2$になるので二条件が従う。
+
+両方成立すれば$e_3=0=e_1c$であり、
+$c\ne0$だから$e_1=0$を強制する。
+最後の例では$e_3=1800$、
+$c=\mp36$、$e_1=50$であり、各方程式を満たす。
+四つの根$1,4,9,36$の相異性と、
+式~\eqref{eq:qa-ou-quintuple-j}による
+$j$の値も直接計算できる。
 \end{proof}
 
 \begin{proposition}[二つの二捩れ特別座での全pointed慣性群の型]
