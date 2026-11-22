@@ -1,0 +1,256 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v1.0
+\section{相対avatarの構造頂点と二つの行列式開}
+\label{sec:qa-relative-vertex-determinants}
+
+本節は，体上の全構造頂点判定を，任意の非被約底変更と両立する
+有限表示の開条件へ移す．まず相対曲線と実際の線束だけから
+二つの乗法行列を作る．この幾何適合開の構成と，実際の相対
+pointed $\HH$族の認識は区別し，後者に必要な入力を末尾に明記する．
+
+\subsection{相対乗法束と全基底変更}
+
+$T$を$k$-schemeとし，$f:\mathcal D\to T$をproper，flat，
+finite presentationな射とする．$\mathcal F,\mathcal G,\mathcal P$を
+$\mathcal D$上の可逆層とし，各幾何点$\bar t\to T$において
+\[
+ (\mathcal D_{\bar t},\mathcal F_{\bar t},
+   \mathcal G_{\bar t},\mathcal P_{\bar t})
+\]
+が本稿のsquare曲線型avatarであると仮定する．
+曲線の被約性も$T$の被約性も仮定しない．
+とくに$\mathcal P_{\bar t}\in\Pic^0(\mathcal D_{\bar t})
+\setminus\{\OO\}$である．
+
+\begin{lemma}[二つのrank四乗法束]
+\label{lem:qa-relative-pencil-multiplication-bundles}
+$\mathcal V(L)=f_*L$と書く．
+\[
+\mathcal V(\mathcal F),\quad\mathcal V(\mathcal G),\quad
+\mathcal V(\mathcal F\mathcal P^{-1}),\quad
+\mathcal V(\mathcal G\mathcal P^{-1})
+\]
+は階数二，$\mathcal W=\mathcal V(\mathcal F\mathcal G\mathcal P^{-1})$
+は階数四の有限局所自由層である．
+これらの高次直像は零で，形成は任意の$T'\to T$と可換する．
+従って切断の乗法はrank四束間の二つの写像
+\begin{align}
+ \mu_G:&\ \mathcal V(\mathcal F)\otimes
+          \mathcal V(\mathcal G\mathcal P^{-1})\longrightarrow\mathcal W,
+          \label{eq:qa-relative-mu-g}\\
+ \mu_F:&\ \mathcal V(\mathcal G)\otimes
+          \mathcal V(\mathcal F\mathcal P^{-1})\longrightarrow\mathcal W
+          \label{eq:qa-relative-mu-f}
+\end{align}
+を定め，両写像も任意の底変更と可換する．
+全幾何fiberにおける階数は三または四である．
+\end{lemma}
+\begin{proof}
+補題~\ref{lem:qa-core-curve-vanishing}より，各fiberで対象線束の
+$H^1$は零，$H^0$の次元は記載した二または四である．
+各$Rf_*L$はperfectで，任意の導来底変更と可換する
+（\href{https://stacks.math.columbia.edu/tag/0B91}
+{Stacks Project, Tag 0B91, Lemma 36.30.4}）．
+その全幾何fiberが次数零に集中するので，有限自由複体の可逆minorを
+順に消去すれば，$Rf_*L$自体が記載した階数の局所自由層となる．
+従って導来底変更は通常の底変更となる．
+これは非被約底上でコホモロジー次元が一定という理由だけから
+局所自由性を推論するものではない．
+乗法の自然性は導来底変更およびprojection formulaと両立し，
+階数三または四という主張は
+補題~\ref{lem:qa-as10-rank-wall-pencils}から従う．
+\end{proof}
+
+\subsection{幾何適合開とschemeとしての悪いlocus}
+
+\begin{theorem}[標準構造頂点の有限表示開部分関手]
+\label{thm:qa-relative-vertex-determinant-open}
+体上のAS/avatar対応で各幾何fiberから得られる$i$番標準構造頂点について，
+$T$上のschemeの部分関手$\mathscr U_i$を，すべての幾何fiberの
+指定pointingが強い$\HH$に属する底変更$T'\to T$の全体とする．
+これは次の有限表示open immersion $U_i\hookrightarrow T$で表される：
+\begin{equation}
+ U_0=U_3=T,\qquad
+ U_1=D(\det\mu_F),\qquad U_2=D(\det\mu_G).
+ \label{eq:qa-relative-square-vertex-open}
+\end{equation}
+行列式はそれぞれ
+$\det\mathcal W\otimes\det(\operatorname{dom}\mu)^{-1}$の切断である．
+すべての$T'\to T$について
+\[
+ U_i(\mathcal D_{T'},\mathcal F_{T'},\mathcal G_{T'},\mathcal P_{T'})
+ =U_i\times_T T'
+\]
+がschemeとして成立する．
+
+悪い閉部分schemeを
+\[
+ Z_F=V\bigl(\operatorname{Fitt}_0\coker\mu_G\bigr),\qquad
+ Z_G=V\bigl(\operatorname{Fitt}_0\coker\mu_F\bigr)
+\]
+と置けば，$U_1=T\setminus Z_G$，$U_2=T\setminus Z_F$である．
+$Z_F,Z_G$も有限表示であり，任意の底変更と可換する．
+各写像は局所的に
+\begin{equation}
+ \operatorname{diag}(1,1,1,\delta)
+ \label{eq:qa-relative-wall-schur-normal-form}
+\end{equation}
+と同値であり，対応する悪い閉部分は$(\delta)$で定義される．
+その余核は悪い閉部分上の線束のpushforwardである．
+\end{theorem}
+\begin{proof}
+前補題により乗法束と行列式はすべての底変更と可換する．
+定理~\ref{thm:qa-general-square-pointings}によって，幾何fiberの
+一番頂点は$\mu_F$が可逆の場合に，二番頂点は$\mu_G$が可逆の場合に
+ちょうど強い$\HH$へ属する．
+線束の切断が全幾何点で非零であることは，その切断が可逆であることと
+同値であり，非被約底でも成り立つ．
+従って各部分関手は記載した行列式の可逆開で表される．
+線束を局所自明化すればprincipal openであるため，
+open immersionは有限表示である．
+
+rank四束間の写像の第零Fitting idealは行列式で生成される．
+Fitting idealの形成は任意の環準同型と可換する
+（\href{https://stacks.math.columbia.edu/tag/07Z6}
+{Stacks Project, Tag 07Z6, Lemma 15.8.4(3)--(4)}）．
+全幾何fiberで階数が三以上なので，三次minorの可逆開が$T$を覆う．
+その上で行列の消去を行えば
+\eqref{eq:qa-relative-wall-schur-normal-form}を得る．
+余核は局所的に$\OO_T/(\delta)$であり，これらの局所表示は
+$V(\delta)$上の可逆層として貼り合う．
+ここで$\delta$が非零因子であるとは仮定していない．
+\end{proof}
+
+\begin{corollary}[Rotated族と最小十本矢族の開部分]
+\label{cor:qa-relative-rotated-as10-open}
+rotated族から
+$\mathcal F_s=\mathcal F_r$，
+$\mathcal G_s=\mathcal H_r\mathcal F_r^{-1}\mathcal P^{-1}$
+によって二乗法を作ると，rotatedの各位相の幾何適合開は
+\[
+ U^{\rm rsq}_0=D(\det\mu_F),\quad
+ U^{\rm rsq}_1=D(\det\mu_G),\quad
+ U^{\rm rsq}_2=U^{\rm rsq}_3=T.
+\]
+全幾何fiberが最小十本矢型である族では，偶数位相の幾何適合開は空，
+奇数位相の幾何適合開は$T$である．
+これらはいずれも任意の底変更と可換する．
+\end{corollary}
+\begin{proof}
+前者は$R_i=E_{i+1}$と相対line bundleの式に，後者は
+系~\ref{cor:qa-general-rotated-as10-pointings}に従う．
+rotatedから得た線束の各fiberはsquare avatarなので，
+前補題と前定理をそのまま適用できる．
+\end{proof}
+
+\subsection{普遍楕円パラメータ上のCartier壁}
+
+\begin{proposition}[普遍壁はCartier，任意引戻しではFitting閉部分]
+\label{prop:qa-relative-universal-cartier-walls}
+$E\to S$を標数零の滑らかな楕円曲線族，$F$を相対次数二線束とし，
+$J=\Pic^0(E/S)$と置く．
+\[
+ V=(J\setminus0)\times_S(J\setminus0),\qquad
+ (P,\eta)\in V,\quad G=F\eta
+\]
+上で，必要ならPoincare束を持つfppf chartへ移って乗法束を作る．
+このときscheme-theoreticに
+\[
+ Z_F=\{\eta=P\},\qquad Z_G=\{\eta=P^{-1}\}
+\]
+であり，両者は$V$上の有効Cartier因子である．
+両者の交わりは$J[2]\setminus0$で，$S$上有限etale次数三である．
+相対余次元二で横断的に交わる．
+
+任意のavatar族への引戻しについては，悪い閉部分は上記Fitting理想の
+引戻しであるが，有効Cartier因子であるとは限らない．
+引き戻した局所行列式が非零因子である場合に限り，Cartierである．
+\end{proposition}
+\begin{proof}
+次数二pencil $A$と$B$について，相対評価列は
+\[
+ 0\to f^*\det\mathcal V(A)\otimes BA^{-1}
+ \to f^*\mathcal V(A)\otimes B\to AB\to0
+\]
+を与える．正次数項の高次直像消滅から
+\[
+ Rf_*(BA^{-1})\otimes\det\mathcal V(A)
+ \simeq
+ [\mathcal V(A)\otimes\mathcal V(B)\xrightarrow{\mu}\mathcal V(AB)]
+\]
+を得る．右辺の二項は次数零，一に置く．
+従って行列式の消滅は，次数零線束$BA^{-1}$のcohomology jumpを
+そのscheme構造も含めて記録する．
+
+普遍$J$の零断面上では対象線束は基底からの線束を除き自明であり，
+kernelとcokernelは各一の線束となる．
+ここでは$Rf_*\OO_E$のunitからの分裂と
+$f_*\OO_E=\OO_S$を用いる
+（\href{https://stacks.math.columbia.edu/tag/0E6B}
+{Stacks Project, Tag 0E6B, Lemma 75.26.7}）．
+したがって行列式は零断面上でscheme-theoreticに零となる．
+各幾何fiberで零断面に垂直な非零接方向
+$\xi\in H^1(E_s,\OO_{E_s})$を取ると，
+対応する一次変形$Q_\epsilon$の接続写像は
+\[
+ H^0(\OO_{E_s})\longrightarrow H^1(\OO_{E_s}),\qquad1\longmapsto\xi
+\]
+である．従って残る一行一列の微分は非零で，行列式は零断面で一次の零点を持つ．
+零断面の局所Cartier方程式を$z$とすれば，行列式は$zu$と書け，
+このfiber上の計算から$u$は単元である．
+ゆえにこの同定は非被約な$S$上でもscheme-theoreticに成立する．
+
+$\mu_G$では$BA^{-1}=\eta P^{-1}$，
+$\mu_F$では$BA^{-1}=\eta^{-1}P^{-1}$であるから，
+記載した二つのgraphを得る．
+滑らかな相対一次元群$J$におけるdiagonalおよび反転のgraphは
+有効Cartierである．交点では$P^2=\OO$，かつ$P\ne\OO$であり，
+$2$は可逆なので$J[2]\setminus0$は有限etale次数三である．
+二つの相対法方向は$d\eta-dP$，$d\eta+dP$であり，
+行列式$2$が可逆であることから横断性が従う．
+Poincare束の基底からのline bundle twistは行列式の局所方程式を
+単元倍するだけなので，これらの閉部分はchartから降下する．
+最後の主張は局所正規形の$\delta$がCartier方程式となる条件そのものである．
+\end{proof}
+
+\begin{example}[非被約底での階数三条件]
+普遍壁に横断する一次変形を
+$T=\Spec k[\epsilon]/(\epsilon^2)$へ引き戻すと，局所乗法行列は
+\[
+ \operatorname{diag}(1,1,1,\epsilon)
+\]
+となる．全幾何fiberの階数は三だが，行列式は$T$上恒等的に零ではない．
+悪いFitting閉部分は$V(\epsilon)$で，有効Cartier因子ではない．
+一方，対応する幾何適合開は空である．
+したがって幾何fiberの階数だけからscheme-theoreticな壁への因数分解，
+kernel束の局所自由性，またはCartier性を推論しない．
+\end{example}
+
+\subsection{相対pointed認識へ進むための有限入力}
+
+\begin{lemma}[既存H2開への相対因数分解]
+\label{lem:qa-relative-foundation-open-factorization}
+$T$を本稿の相対モジュライsite内の基底とする．
+実際の有限局所自由foundation代数族と全積から
+射$\lambda:T\to\mathfrak F_0$が与えられ，
+その全幾何fiberが実現可能開$\mathfrak F_{\HH}$に入るとする．
+このとき$\lambda$は一意に$\mathfrak F_{\HH}$を経由し，
+定理~\ref{thm:qa-intrinsic-h2-open-in-foundation-stack}により
+実際の相対pointed $\HH$族を定める．
+この構成は任意のsite内の底変更と同型射に適合する．
+\end{lemma}
+\begin{proof}
+開部分への因数分解は位相空間の像で判定できるので，
+非被約底についても$\lambda$は$\mathfrak F_{\HH}$を経由する．
+同定$\mathfrak F_{\HH}\simeq\mathfrak H_2^{\rm rul}$を合成すればよい．
+開埋込とこの同値の自然性から底変更・同型射への適合性が従う．
+\end{proof}
+
+この補題で必要なのは，四頂点の全Hom束と全合成を持つ
+\emph{実際の}相対foundation族，$\mathfrak F_0$の条件，
+および幾何fiberにおけるnormal foundationとしての認識である．
+行列式開の上にあるという事実だけからこれらを省略しない．
+さらに，こうして得た$\HH$族と，別に与えた相対AS代数の$qgr$ heartを
+同一視するには，構造対象を保つ相対tilting比較，Serre完成と
+相対AZ再構成を確認する必要がある．
+本節の二行列式だけで全AS/QP stackを$\HHstack$と同定したとは主張しない．

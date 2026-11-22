@@ -1,7 +1,11 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.87。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.88。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 相対乗法束・Fitting閉部分の一次資料
+
+Stacks Project [Tag 0B91](https://stacks.math.columbia.edu/tag/0B91), Lemma36.30.4 はproper finite presentationな射とflat性の下でperfect複体の直像のperfect性と任意底変更を与える。[Tag 07Z6](https://stacks.math.columbia.edu/tag/07Z6), Lemma15.8.4(3)–(4) はFitting理想の任意底変更と有限生成性。[Tag 0E6B](https://stacks.math.columbia.edu/tag/0E6B), Lemma75.26.7 はproper flat fp・全fiberのH0(O)=kの下で構造層直像とunitのétale局所分裂を与える。2026-11-23に一次本文を確認した。これらの一般定理は既知入力であり、二行列式開・普遍壁のscheme構造・rank16からrank24への実際の相対mutationとH2認識が本稿で証明する適用部分である。包括的新規性は未確定。
 
 ## 点加群・fat pointと生成障害の先行研究
 

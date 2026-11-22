@@ -1,0 +1,309 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v1.0
+
+\section{一般square族の相対normal窓と二つの構造対象}
+\label{sec:qa-relative-avatar-pointed-recognition}
+
+本節では有限型基底上の実際の avatar 族から，相対 $\HHstack$ の対象を作る．
+構成には，定理~\ref{thm:qa-intrinsic-h2-open-in-foundation-stack} の
+\emph{相対的な}開埋込
+\[
+ \Xi:\mathfrak H_2^{\rm rul}\xrightarrow{\sim}\mathfrak F_{\HH}
+ \subset\mathfrak F_0
+\]
+を既知の入力として使う．幾何 fiber の $H_2$ 性だけから
+相対 Serre 平方根や相対 AS4 被覆の存在を推論するのではない．
+
+\subsection{基底と実際の有限代数族}
+
+$k$ は標数零の代数閉体とする．$S$ を $k$ 上局所有限型のスキームとし，
+$p:D\to S$ を proper flat finite presentation な曲線族とする．
+fppf 局所で $D\subset\PP^1_S\times_S\PP^1_S$ は
+相対 $(2,2)$ Cartier 因子で，$F,G$ は二つの ruling の制限であるとする．
+$P$ は $D$ 上の可逆層で，各幾何 fiber において
+$(D_s,F_s,G_s,P_s)$ が本稿の square 曲線型 avatar であると仮定する．
+特に $P_s\in\Pic^0(D_s)\setminus\{\OO_{D_s}\}$ である．
+曲線の非被約性と可約性を許す．
+古典型で反標準データが曲線から曲面へ変わる族は，このflat曲線族の範囲に含めない．
+以下の構成はこのデータの同型に自然であるから，この定義の
+avatar の fppf groupoid に対しても適用できる．
+この groupoid を任意の AS/QP 表示 groupoid と同一視することはしない．
+
+\[
+ (L_0,L_1,L_2,L_3)=(P,F,G,FG),\qquad
+ \mathcal H_{ij}=p_*(L_jL_i^{-1})\quad(i<j)
+\]
+と置く．補題~\ref{lem:qa-core-curve-vanishing} と
+proper flat な射の perfect pushforward と任意基底変更
+（\href{https://stacks.math.columbia.edu/tag/0B91}{Stacks Project, Tag 0B91}）
+により，$\mathcal H_{ij}$ は所定階数の有限局所自由層であり，
+$\mathcal H_{12}=0$，
+\[
+ (\operatorname{rk}\mathcal H_{01},\operatorname{rk}\mathcal H_{02},
+  \operatorname{rk}\mathcal H_{03},\operatorname{rk}\mathcal H_{13},
+  \operatorname{rk}\mathcal H_{23})=(2,2,4,2,2).
+\]
+各束と切断の積は非平坦なものを含む任意基底変更と可換する．
+実際，導来 pushforward の各幾何 fiber が次数零に集中するので，
+perfect 複体の fiber 判定を用いている．
+
+右 Yoneda の規約で
+\[
+ e_j\Lambda e_i=\mathcal H_{ij}\ (i<j),\qquad
+ e_i\Lambda e_i=\OO_S,\qquad e_i\Lambda e_j=0\ (i<j)
+\]
+と定め，積を切断乗法とする．これは階数十六の有限局所自由な
+directed 代数である．この定義は $\Perf(D)$ の full derived End
+ではない．特に対角の $H^1(\OO_D)$ を代数へ加えない．
+$E_i=e_i\Lambda\in\Perf(\Lambda)$ とすれば
+\[
+ \RHom(E_i,E_j)=\mathcal H_{ij}[0]\quad(i<j)
+\]
+であり，逆向きの Hom は零である．
+有限 normalized bar 解消によって $\Lambda$ は相対 smooth proper である．
+
+\begin{proposition}[全基底上のnormal候補窓]
+\label{prop:qa-relative-avatar-normal-window}
+$V=\mathcal H_{13}=p_*G$ とし，実際の relative cone
+\[
+ Z_1=\operatorname{Cone}
+  \bigl(E_1\xrightarrow{\rm coev}V^\vee\otimes E_3\bigr)
+\]
+を取る．すると
+\[
+ \mathcal N_F=(E_0,E_2,E_3,Z_1)
+\]
+は相対 full strong exceptional foundation であり，その通常の End
+代数 $\Gamma_F$ は階数二十四である．この窓は
+$\mathfrak F_0$ の点 $\lambda_F:S\to\mathfrak F_0$ を与える．
+窓，End 代数，全ての合成，対応する compact Morita 同値と
+$\lambda_F$ は任意の基底変更に可換する．
+
+同様に $F,G$ と $E_1,E_2$ を交換して
+\[
+ Z_2=\operatorname{Cone}
+ \bigl(E_2\to\mathcal H_{23}^\vee\otimes E_3\bigr),\qquad
+ \mathcal N_G=(E_0,E_1,E_3,Z_2)
+\]
+を得る．論文Bの相対 ruling 交換 $\tau$ に対し
+$\tau\lambda_F\simeq\lambda_G$ が coherent に成立する．
+\end{proposition}
+\begin{proof}
+四項の間で新しく調べる必要がある Hom は
+\[
+ \RHom(E_0,Z_1)
+ =\operatorname{Cone}\bigl(
+   \alpha:\mathcal H_{01}\to V^\vee\otimes\mathcal H_{03}\bigr)
+\]
+である．$\alpha$ は $G$ の切断乗法の随伴である．
+各幾何 fiber 上で，$a\in H^0(FP^{-1})$ がその kernel に入るなら，
+$aH^0(G)=0$ である．$G$ は大域生成なので，局所的な生成切断で
+縮約すれば $a=0$ となる．これは非被約な $D_s$ 上でも成立する．
+従って $\alpha$ は基底上の部分束包含であり，
+\[
+ C=\operatorname{coker}\alpha
+\]
+は階数六の有限局所自由層である．
+余核とその完全列は任意基底変更に保たれる．
+
+残る Hom は cone の三角から直接
+\[
+ \RHom(E_2,Z_1)=V^\vee\otimes\mathcal H_{23},\qquad
+ \RHom(E_3,Z_1)=V^\vee
+\]
+となり，いずれも次数零である．逆向きの Hom は零で，
+$Z_1$ の自己 Hom は $\OO_S[0]$ である．
+最後の二主張は相対 exceptional pair $(E_1,E_3)$ の mutation，
+または同じ三角の Hom 列で確認できる．
+$E_1$ はこの三角から回復できるので四項は full である．
+従って通常 End の階数表は
+\[
+ \begin{pmatrix}1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1\end{pmatrix}
+\]
+となる．
+
+論文Bの二写像表示では
+\[
+ (W_1,W_2,W_3;P_{\rm old},Q_{\rm old})
+ =(\mathcal H_{02},\mathcal H_{03},C;
+   \mathcal H_{23},V^\vee).
+\]
+$G_{\rm old}:V^\vee\otimes\mathcal H_{03}\to C$ は定義上全射である．
+$F_{\rm old}$ は $F$ の切断乗法であり，その随伴
+\[
+ \alpha_{F_{\rm old}}:
+ \mathcal H_{02}\to\mathcal H_{23}^\vee\otimes\mathcal H_{03}
+\]
+も $F$ の大域生成性によって部分束包含である．
+従って実際に $U_0$ の全射・部分束条件を満たす．
+これは Euler 行列の一致だけから normal chart への所属を
+推論したものではない．
+
+四項は有界な有限 projective 複体とその cone から作られる．
+通常 End の全 Hom が vector bundle であることを既に示したので，
+tilting Morita 同値
+$\Perf(\Gamma_F)\simeq\Perf(\Lambda)$ は全四対象を保ち，
+任意基底変更に整合する．
+
+最後にBの ruling 交換を $\mathcal N_F$ に適用すると，
+新しい第二対象は
+\[
+ \operatorname{Cone}(V^\vee\otimes E_3\to Z_1)[-1]=E_1,
+\]
+第四対象は $\operatorname{Cone}(E_2\to\mathcal H_{23}^\vee\otimes E_3)=Z_2$
+である．従って二つの窓が交換される．
+この同定は同じ二つの cone 三角の交換から来るため，
+二回適用と三重重なりの整合性も保たれる．
+\end{proof}
+
+\begin{remark}[相対determinant因子]
+曲線へ制限した $Z_1$ は一般には $FG^2$ 自体ではない．
+pencil の双対評価列から
+\[
+ 0\to F\to(p_*G)^\vee\otimes FG
+   \to FG^2\otimes\det(p_*G)^\vee\to0
+\]
+となるので，最後の determinant 因子を保持する．
+$\mathfrak F_0$ では頂点ごとの基底線束 twist は剛体化に吸収されるが，
+実際の相対 tilting 対象や End 代数の比較では省略しない．
+上の cone による定義はこの因子を自動的に保持する．
+\end{remark}
+
+\begin{theorem}[一般square族の相対$E_0$・$E_3$認識]
+\label{thm:qa-relative-square-e0-e3-h2}
+上記の avatar 族に対して $\lambda_F$ は
+$\mathfrak F_{\HH}$ を通り，したがって実際の射
+\[
+ \rho_0:S\longrightarrow\HHstack
+\]
+を与える．その相対 Abel 圏を $\mathcal C_0$，構造対象を
+$\mathcal O_0$ と書くと，pointed compact Morita 同値
+\[
+ (\Perf\Lambda,E_0)\simeq(\mathcal C_0^{\rm perf},\mathcal O_0)
+\]
+があり，全ての相対 Serre 構造と任意基底変更に整合する．
+ここで $\mathcal C_0^{\rm perf}$ は局所canonical compact chartと整合する相対perfect圏を表す．
+今回の有限tiltingと内部共役による降下の範囲で扱い，任意affine上の
+大域的 $D(\operatorname{Ind}\mathcal C_0)^c$ との同定や，
+特異基底上での $D^b(\mathcal C_0)$ との同一視は主張しない．
+
+四つの $E_i$ は同じ $\mathcal C_0$ の基底上平坦な compact 対象へ移る．
+特に $E_3$ の像を $\mathcal M$ とすると
+\[
+ (\mathcal C_0,\mathcal M)\in\HHstack(S)
+\]
+であり，第二の実際の射 $\rho_3:S\to\HHstack$ を得る．
+両構成は avatar の全同型と $F,G$ の交換に自然である．
+後者の交換では内在的 ruling の選択だけが交換される．
+\end{theorem}
+\begin{proof}
+まず $\lambda_F$ の各幾何 fiber が\emph{真正な normal foundation}
+であることを確認する．$D_F=\{G=FP\}$，$D_G=\{GP=F\}$ と書く．
+
+$D_F$ の外では第一mutationが cubic 型であり，
+その標準四項 $(H_1,H_2,H_3,H_4)$ は $\mathcal N_F$ に一致する．
+第四項の同定は full exceptional helix の Serre mutation から従う：
+$H_0=\operatorname{Cone}(E_0\otimes\Hom(E_0,E_1)\to E_1)[-1]$
+を右へ移し，$E_1$ と $E_2$ の直交性を用いると
+$tH_0=\operatorname{Cone}(E_1\to\Hom(E_1,E_3)^\vee\otimes E_3)=Z_1$
+となる．論文Aの全 cubic 逆構成と
+\cite[\texttt{thm:all-admissible-inverse},\texttt{thm:cubic-coverage}]{QuadricIntrinsic2026} の必要性証明は，標準 cubic 窓の
+第三対象を $s\mathcal O$，第二対象を実際の MCM ruling に同定する．
+第四対象はBの \cite[\texttt{cor:two-intrinsic-foundations}]{QuadricModuli2026} により一意である．
+従ってこれらの同定により，
+これは $H_1=E_0$ を構造対象とする真正な normal foundation である．
+
+$D_G$ の外では第二mutationによって $\mathcal N_G$ が同じ意味で
+cubic normal foundation となる．前命題の相対 ruling 交換は
+$\tau\mathcal N_F=\mathcal N_G$ を与え，Bの
+\cite[\texttt{prop:ruling-involution-mutation}]{QuadricModuli2026} は真正な normal foundation を
+もう一方の真正な normal foundation へ送る．
+従って single-wall $D_F\setminus D_G$ でも $\mathcal N_F$ は normal である．
+二壁の交点は非自明二捩れの全 noncubic locus であり，
+既存の全三型の pointed 認識と実際の spinor 評価列が
+$\mathcal N_F$ を normal foundation に同定する．
+これで全幾何 fiber の $\mathfrak F_{\HH}$ への所属を得る．
+
+$\mathfrak F_{\HH}\subset\mathfrak F_0$ は既に証明された\emph{開}埋込である．
+従って $\lambda_F^{-1}(\mathfrak F_{\HH})$ は $S$ の開部分であり，
+全幾何点を含むので $S$ 全体に等しい．
+この開への因子化は非被約基底でも成立する．
+$\Xi^{-1}\lambda_F$ と ruling 忘却を合成して $\rho_0$ を得る．
+この段階で相対 $H_2$ の全公理は $\Xi^{-1}$ から供給されており，
+fiber ごとの AS4 被覆を単に貼り合わせたのではない．
+
+次に compact 比較を説明する．fppf 局所で $\Xi^{-1}\lambda_F$ の
+normal 四対象と $\Gamma_F$ の頂点を比較する．
+Bの相対 full normal tilting とその全 Hom の比較により，
+相対 tilting Morita 同値 $\Perf\Gamma_F\simeq\mathcal C_0^{\rm perf}$ を得る．
+上の $\Perf\Lambda\simeq\Perf\Gamma_F$ と合成する．
+比較同型の変更は頂点スカラーによる内部共役である．
+その実施単元は零頂点で一となるよう一意に正規化でき，
+対応する Morita functor の自然同型は $E_0$ の標識上恒等となる．
+三重重なりでも同じ内部単元の積により整合するので，
+この pointed compact 比較は降下する．
+全構成は有限 projective 複体，cone，dual と tensor から作られ，
+任意の基底変更に整合する．
+
+$\mathcal N_F$ の各項の像は相対 normal 四項なので
+heart に属し，基底上平坦かつ compact である．
+もう一方の ruling 窓の第二項が $E_1$ なので，$E_1$ にも同じことが成立する．
+特に $E_3$ は normal foundation の第三対象 $M$ へ移る．
+$H_2$ の normal helix では，fppf 局所に適合 Serre 根 $s$ を選ぶと
+$M\simeq s\mathcal O$ である（基底線束 twist を含む場合も許す）．
+exact 自己同値 $s$ と基底線束による tensor は $H_2$ 条件を移すから，
+同じ heart の $(\mathcal C_0,\mathcal M)$ も相対 $H_2$ である．
+大域的に一つの $s$ を選ぶ必要はない．
+対象 $\mathcal M$ 自体は実際の $E_3$ の像として既に降下しており，
+$H_2$ の性質は fppf 局所で課されるためである．
+
+最後に $F,G$ の交換は $\lambda_F$ と $\lambda_G$ を交換する．
+$\Xi$ の相対 ruling 対合への同変性と
+$\HHstack=[\mathfrak H_2^{\rm rul}/S_2]$ により，
+$\rho_0$ はこの交換と整合する．
+Bの ruling 交換は第三対象 $M$ を保つので $\rho_3$ も同様である．
+\end{proof}
+
+\begin{corollary}[全Serre tensor次数の比較]
+\label{cor:qa-relative-avatar-all-serre-degrees}
+前定理の compact Morita 同値は，$E_0$ と $E_3$ の
+全ての非負次数 $m\ge0$ の反Serre orbit 複体とその積を相対的に同定する．
+各次数は finite locally free で，任意基底変更と可換する．
+さらに $\Lambda$ 自体の非負内部次数付き Serre completion も，
+命題~\ref{prop:qa-relative-serre-tensor-base-change} により
+通常の次数付き代数であり，次数別に任意基底変更と可換する．
+\end{corollary}
+\begin{proof}
+pointed Morita による inverse dualizing complex と全 tensor 冪の移送は
+命題~\ref{prop:qa-pointed-morita-serre-transport} を用いる．
+相対 $H_2$ の反Serre orbit は全非負次数で vector bundle である．
+$\Lambda$ 全体については，各幾何 fiber の全整数 helix の
+前向き Ext 消滅から同命題の geometric forward 条件が成立する．
+finite diagonal 解消により各 tensor 冪が perfect なので，
+導来 fiber の次数集中判定が全次数それぞれに適用できる．
+\end{proof}
+
+\begin{remark}[基底とheartの比較範囲]
+有限代数，cone，vector bundle，compact Morita と Serre tensor の
+構成そのものは，任意のスキームへの基底変更と可換する．
+内在的な Abel 圏の全公理を持つ $\HHstack$ への射については，
+論文Bで定義された局所有限型 $k$-scheme の site 上で述べている．
+任意の Noetherian 基底に対する素朴な Abel 公理との一致や
+strong Noether 性をこの構成から追加で結論しない．
+
+また，ここで構成した heart は $\Xi^{-1}$ による実際の内在的 heart
+$\mathcal C_0$ である．別に与えた全次数の相対 square AS
+$\mathbb Z$-代数族の $\qgr$ heart と同じであることは，
+その族の相対 Noether 性，torsion 局所化，または相対 AZ 比較を
+確認した場合に述べる．finite End の同型や全 Serre tensor の一致だけで
+この追加の $t$-exactness を結論しない．
+
+$E_1,E_2$ の幾何的 $H_2$ 開部分では，別の cubic normal 窓から
+同様の相対 $H_2$ 族と compact marking を構成する方法がある．
+しかしその構成と $\mathcal C_0$ の\emph{同じ heart}内の
+$(\mathcal C_0,E_i)$ との一致を主張するには，
+cubic tails の相対認識または相対 AZ 比較が別に必要である．
+本節の $E_3$ はこの問題を $M=s\mathcal O$ によって直接解決した場合である．
+任意 AS/avatar/QP 表示 stack 全体の同値や，表示を忘れる全相対 fiber の
+分類は本定理に含まれない．
+\end{remark}
