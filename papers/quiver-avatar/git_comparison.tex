@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.2（一般接同型と次数二をC全体へ統合）
+% 2026-11-22 / v2.3（potential→H2の一般次数八）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -595,6 +595,36 @@ $\operatorname{Aut}_{\HHstack}(y)$は
 有限の幾何的一般fiberを持つ場合、
 始域と標的の適切な稠密開へ縮めれば有限étaleになる。
 その次数は上で示した二である。
+\end{proof}
+
+\begin{corollary}[potential表示から内在的pointed対象への一般次数八]
+\label{cor:qa-potential-h2-generic-degree-eight}
+定理~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}
+の有効potential表示スタックから
+$\HHstack$への、quintuple表示を経由する合成射を考える。
+系~\ref{cor:qa-quintuple-h2-generic-degree-two}の
+非空稠密開とその逆像を取り、さらに必要なら縮めると、
+この合成は表現可能な有限étale次数八の射となる。
+幾何的一般点の八つのliftは
+\emph{二つのnormalized ruling foundation}と、
+各foundationのquintuple表示に対する
+\emph{四つのpotential表示}の選択からなる。
+これはpotentialからquintupleへの次数四と
+quintupleからpointed対象への次数二の積であり、
+四つのSerre平方根の標識や
+内在的$\HHstack$の一般自己同値群の位数を
+八とする主張ではない。
+\end{corollary}
+\begin{proof}
+両射は定理
+~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}と
+系~\ref{cor:qa-quintuple-h2-generic-degree-two}により、
+指定した開上で表現可能な有限étale射となる。
+その合成も表現可能な有限étale射であり、
+次数の乗法性により$4\cdot2=8$である。
+各幾何fiberの記述は二射の構成と、
+同じpointed対象の二つのfoundationが
+一般には同型でないことから従う。
 \end{proof}
 
 \begin{remark}[残るpointed射の慣性とroot deck群の相違]
