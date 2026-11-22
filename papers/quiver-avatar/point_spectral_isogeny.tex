@@ -309,6 +309,86 @@ $\langle u,v,c\rangle$である．
 二つの部分空間の共通部分と和は明らかである．
 \end{proof}
 
+\begin{proposition}[pointed認識の有限directed End代数への帰着]
+\label{prop:qa-point-mcm-pointed-finite-end-reduction}
+前定理のsmooth noncubic二形式$f_1,f_2$を固定する．
+分類論文Aの定理
+~\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}
+で得られるnormal helixを$(E_i)_{i\in\mathbb Z}$とし，
+$E_0=\pi B_f$であるように添字を取る．
+その最初の四項の有限directed End代数を
+\[
+ B_{\mathrm{nc}}=
+       \End_{\mathrm{dir}}(E_0,E_1,E_2,E_3)
+\]
+と書く．一方，本節で構成した
+$E_f$上のsquare avatar
+$(E_f,F_d,F_c,P_E)$から
+定理~\ref{thm:qa-as-avatar-bijection}によって
+square型AS$\mathbb Z$-代数$A_{\mathrm{sq}}$を作り，
+二重壁で指定できる一つのmutationによって
+最小十本矢型$A_{\mathrm{av}}$を得る．
+その標準四項$(H_0,\ldots,H_3)$の
+有限directed End代数を$B_{\mathrm{av}}$とする．
+
+\emph{仮に}頂点とcompositionを保つ代数同型
+\[
+ \phi:B_{\mathrm{nc}}\xrightarrow{\ \sim\ }B_{\mathrm{av}}
+ \tag{Finite-End}\label{eq:qa-point-finite-end-goal}
+\]
+が存在するなら，全整数のSerre完成で同型な
+AS$\mathbb Z$-代数が得られ，
+\[
+ (\qgr B_f,\pi B_f)
+       \simeq
+ (\qgr A_{\mathrm{av}},\pi e_0 A_{\mathrm{av}})
+ \tag{Pointed-AS}\label{eq:qa-point-pointed-comparison-reduction}
+\]
+という構造対象を保つexact同値が従う．
+従ってsmooth noncubic locusでのpointed認識には，
+選んだmutationと頂点規約を固定した後，
+\emph{有限四頂点End代数の全Homと全composition}の
+比較が十分である．
+
+命題~\ref{prop:qa-point-mcm-composition-veronese}で
+確認した二つのrank-three乗法の像の一致は，
+式~\eqref{eq:qa-point-finite-end-goal}の
+\emph{必要な部分計算}だが，
+それだけでは同型の存在を証明しない．
+特に$\pi B_f$は
+avatar側のmutation\emph{後}の第一標準対象
+$H_0$へ送るべきであり，
+mutation\emph{前}のsquare foundationの
+第一対象とのpointed同一視は主張しない．
+\end{proposition}
+\begin{proof}
+分類論文Aのnormal helixはampleで，
+その$\mathbb Z$-代数は標準対象$E_0=\pi B_f$を保って
+$\qgr B_f$を再構成する．
+定理~\ref{thm:qa-as10-global-bijection}と
+補題~\ref{lem:qa-as10-hilbert-foundation}によれば，
+両側とも最小十本矢型の全$\mathbb Z$-代数は
+四連続対象のfinite directed Endと
+Serre関手による
+$E_{i+4}\simeq S^{-1}(E_i)[2]$から一意に再構成される．
+$\phi$は有限Morita同値を与え，
+Serre関手と自然に可換するので，
+両側の全整数helixと前向きHomの合成を同定する．
+したがって全$\mathbb Z$-代数が同型となる．
+
+両側のhelixがampleであることは，noncubic側では
+Aのnormal-helix定理，avatar mutation側では
+命題~\ref{prop:qa-as10-noetherian-qgr}と
+そのArtin--Zhang再構成から従う．
+各整数頂点の自由射影の対応は
+$\qgr$のexact同値へ降り，
+特に零番頂点を保つので
+$E_0=\pi B_f$と
+$H_0=\pi e_0 A_{\mathrm{av}}$を対応させる．
+最後の注意は，mutationによる構造対象の移動を
+無条件の同一視に置き換えないためである．
+\end{proof}
+
 \begin{corollary}[非零二捩れ付き楕円曲線上の双対二重商]
 \label{cor:qa-point-spectral-atkin-lehner}
 滑らかな楕円曲線と非零二捩れの組
