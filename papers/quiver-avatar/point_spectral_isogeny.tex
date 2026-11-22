@@ -309,85 +309,203 @@ $\langle u,v,c\rangle$である．
 二つの部分空間の共通部分と和は明らかである．
 \end{proof}
 
-\begin{proposition}[pointed認識の有限directed End代数への帰着]
-\label{prop:qa-point-mcm-pointed-finite-end-reduction}
-前定理のsmooth noncubic二形式$f_1,f_2$を固定する．
-分類論文Aの定理
-~\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}
-で得られるnormal helixを$(E_i)_{i\in\mathbb Z}$とし，
-$E_0=\pi B_f$であるように添字を取る．
-その最初の四項の有限directed End代数を
-\[
- B_{\mathrm{nc}}=
-       \End_{\mathrm{dir}}(E_0,E_1,E_2,E_3)
-\]
-と書く．一方，本節で構成した
-$E_f$上のsquare avatar
-$(E_f,F_d,F_c,P_E)$から
-定理~\ref{thm:qa-as-avatar-bijection}によって
-square型AS$\mathbb Z$-代数$A_{\mathrm{sq}}$を作り，
-二重壁で指定できる一つのmutationによって
-最小十本矢型$A_{\mathrm{av}}$を得る．
-その標準四項$(H_0,\ldots,H_3)$の
-有限directed End代数を$B_{\mathrm{av}}$とする．
-
-\emph{仮に}頂点とcompositionを保つ代数同型
-\[
- \phi:B_{\mathrm{nc}}\xrightarrow{\ \sim\ }B_{\mathrm{av}}
- \tag{Finite-End}\label{eq:qa-point-finite-end-goal}
-\]
-が存在するなら，全整数のSerre完成で同型な
-AS$\mathbb Z$-代数が得られ，
-\[
- (\qgr B_f,\pi B_f)
-       \simeq
- (\qgr A_{\mathrm{av}},\pi e_0 A_{\mathrm{av}})
- \tag{Pointed-AS}\label{eq:qa-point-pointed-comparison-reduction}
-\]
-という構造対象を保つexact同値が従う．
-従ってsmooth noncubic locusでのpointed認識には，
-選んだmutationと頂点規約を固定した後，
-\emph{有限四頂点End代数の全Homと全composition}の
-比較が十分である．
-
-命題~\ref{prop:qa-point-mcm-composition-veronese}で
-確認した二つのrank-three乗法の像の一致は，
-式~\eqref{eq:qa-point-finite-end-goal}の
-\emph{必要な部分計算}だが，
-それだけでは同型の存在を証明しない．
-特に$\pi B_f$は
-avatar側のmutation\emph{後}の第一標準対象
-$H_0$へ送るべきであり，
-mutation\emph{前}のsquare foundationの
-第一対象とのpointed同一視は主張しない．
-\end{proposition}
+\begin{lemma}[noncubic 点曲線への制限と四頂点Endの同型]
+\label{lem:qa-pointed-abelianization-four-end}
+標数零の代数閉体上、$f_1,f_2$がそれぞれ相異なる二根を持ち、
+互いに根を共有しないとする。
+$B=B_f$、$R=B/(cd-dc)$、$E=\operatorname{Proj}R=E_f$とする。
+$f_1=-\ell_1\ell_2$, $f_2=-m_1m_2$に対する
+二つの右$B$-加群$X_c=\operatorname{coker}M_c$,
+$X_d=\operatorname{coker}M_d$を前命題のように取る。
+$F=F_c$, $G=F_d$と書けば、次の自然な制限は
+頂点と全合成を保つ有限次元代数の同型である：
+\begin{equation}
+\End_{\rm dir}^{\qgr B}
+ (\pi B,\pi X_c,\pi B(1),\pi X_d(1))
+ \ \xrightarrow{\ \sim\ }\
+\End_{\rm dir}^{E}
+ (\OO_E,F,F^2,F^2G).
+\label{eq:qa-pointed-four-end-abelianization}
+\end{equation}
+ここで$F^2=G^2=\OO_E(1)$であり、
+左辺では$B$の通常シフト$(1)$を記すが、
+これ自体を適合Serre平方根とは主張しない。
+\end{lemma}
 \begin{proof}
-分類論文Aのnormal helixはampleで，
-その$\mathbb Z$-代数は標準対象$E_0=\pi B_f$を保って
-$\qgr B_f$を再構成する．
-定理~\ref{thm:qa-as10-global-bijection}と
-補題~\ref{lem:qa-as10-hilbert-foundation}によれば，
-両側とも最小十本矢型の全$\mathbb Z$-代数は
-四連続対象のfinite directed Endと
-Serre関手による
-$E_{i+4}\simeq S^{-1}(E_i)[2]$から一意に再構成される．
-$\phi$は有限Morita同値を与え，
-Serre関手と自然に可換するので，
-両側の全整数helixと前向きHomの合成を同定する．
-したがって全$\mathbb Z$-代数が同型となる．
+$R_c=k[u,v,c]/(c^2-f_1)$とおく。
+$R=R_c\oplus dR_c(-1)$は$R_c$上自由である。
+滑らかなconic $Q_c=\operatorname{Proj}R_c\simeq\PP^1$
+上で$M_c$は$s=\ell_1,t=\ell_2$により
+\[
+c^2+st=0,\qquad
+[s:t:c]=[a^2:-b^2:ab],\qquad
+M_c=\binom{a}{-b}(b\ \ a)
+\]
+となる。従って$\operatorname{coker}M_c$を
+$R_c$へ制限した次数付き加群は
+$\bigoplus_{n\ge0}H^0(Q_c,\OO_{\PP^1}(2n+1))$である。
+$R_c\to R$への自由な拡大と
+$p_{c*}\OO_E\simeq\OO_{\PP^1}\oplus\OO_{\PP^1}(-2)$から
+\[
+X_c\otimes_B R
+ \simeq\bigoplus_{n\ge0}H^0(E,F\OO_E(n)),
+\qquad
+X_d\otimes_B R
+ \simeq\bigoplus_{n\ge0}H^0(E,G\OO_E(n)).
+\tag{Spinor--sections}\label{eq:qa-pointed-spinor-sections}
+\]
+両式は単にsheafificationの同型ではなく、
+非負次数のsection moduleの同型である。
+特に右辺は有限長torsionを持たない。
+$B\to R$の核は次数二の$cd-dc$で生成されるので、
+$B_0,B_1$ならびに$(X_c)_0,(X_c)_1,
+(X_d)_0,(X_d)_1$は、それぞれ$R$への制限で不変である。
 
-両側のhelixがampleであることは，noncubic側では
-Aのnormal-helix定理，avatar mutation側では
-命題~\ref{prop:qa-as10-noetherian-qgr}と
-そのArtin--Zhang再構成から従う．
-各整数頂点の自由射影の対応は
-$\qgr$のexact同値へ降り，
-特に零番頂点を保つので
-$E_0=\pi B_f$と
-$H_0=\pi e_0 A_{\mathrm{av}}$を対応させる．
-最後の注意は，mutationによる構造対象の移動を
-無条件の同一視に置き換えないためである．
+Aの適合表示をここで明確にする。
+分類論文Aの
+\cite[\texttt{thm:ore-anticommuting-central}]{QuadricIntrinsic2026}
+で構成するZhang自己同型$\sigma$は、
+線形座標変換を伴って$c,d$を交換し、
+$B^\sigma$の通常シフトを適合根とする。
+右Zhang同値でそのnormal helixの四連続対象を$B$側へ
+戻すと、自由加群のshiftの作用を$\sigma$で輸送し、
+二つのspinor型も交換するので、
+添字を選んで
+$(\pi B,\pi X_c,\pi B(1),\pi X_d(1))$
+を得る。この輸送は次数付き加群の単なる同一視ではなく、
+右作用の$\sigma$-twistを含む。
+従って
+\cite[\texttt{thm:normal-helix},
+\texttt{cor:normal-cubic-defect}]{QuadricIntrinsic2026}
+のHom計算と、深さ三によるgraded/tails比較が適用できる。
+四頂点の上三角Hom次元は
+\[
+\begin{pmatrix}
+1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
+\end{pmatrix}.
+\tag{Four-End-dims}\label{eq:qa-pointed-four-end-dimensions}
+\]
+右辺の曲線上の線束も次数$0,2,4,6$であり、
+$E$が滑らかな種数一曲線なので同じ次元を持つ。
+
+左辺の各Homは生成元の像で決まり、
+$B_0,B_1,(X_d)_0,(X_d)_1$のいずれかに値を持つ。
+特に$\Hom(X_c,X_d(1))$の射は
+$X_c$の次数零の二生成元の$(X_d)_1$内の像で決まる。
+上記の低次数の制限単射性と
+\eqref{eq:qa-pointed-spinor-sections}により、
+どのHomも右辺のsheaf Homへ単射となる。
+両辺の次元が一致するため全て同型である。
+$-\otimes_B R$は右完全で、個々の加群射の合成を保つため、
+上の六つの同型は同時に全積を保つ。
+
+最初の二段階合成はさらに直接確認できる。
+$X_c$の次数零生成元を$e_1,e_2$とし、
+$\Hom_B(X_c,B(1))$の基底を
+$(c,\ell_1),(-\ell_2,c)$と取ると、
+合成の$2\times2$行列は
+\[
+\begin{pmatrix}
+c&\ell_1\\-\ell_2&c
+\end{pmatrix}.
+\]
+従って唯一の二次関係は二つの対角道の差であり、
+像は$\langle c,\ell_1,\ell_2\rangle$である。
+上のconic表示で行列は
+$\binom{a}{b}(b\ \ a)$となり、
+$H^0(F)\otimes H^0(F)\to H^0(F^2)$の
+反対称核と一致する。この計算は像の一致だけでなく、
+二つの二次元Homの\emph{双線形積そのもの}を同定する。
 \end{proof}
+
+\begin{theorem}[滑らかなnoncubicの位相を合わせたpointed認識]
+\label{thm:qa-point-smooth-noncubic-pointed}
+\label{prop:qa-point-mcm-pointed-finite-end-reduction}
+前補題の仮定の下で、
+square avatar $(E,F,G,P)$を
+$F=F_c$, $G=F_d$, $P=GF^{-1}\ne\OO_E$で定める。
+$P^2=\OO_E$かつ$G=FP$である。
+このsquare型AS$\mathbb Z$-代数を論文Cの指定mutationで
+最小十本矢型$A_{\rm av}$に移し、
+mutation後のhelixを$(H_i)_{i\in\mathbb Z}$とする。
+このとき
+\begin{equation}
+ \End_{\rm dir}^{\qgr B_f}(E_0,E_1,E_2,E_3)
+ \ \simeq\
+ \End_{\rm dir}^{\qgr A_{\rm av}}(H_1,H_2,H_3,H_4),
+\qquad E_0=\pi B_f,
+\label{eq:qa-pointed-shifted-four-end}
+\end{equation}
+という頂点と全合成を保つ同型が存在する。
+論文Aのnormal-helixと本稿のAS10 Serre完成・Noether性・AZ再構成を
+適用すると、
+\begin{equation}
+(\qgr B_f,\pi B_f)\simeq
+(\qgr A_{\rm av},\,\pi e_1A_{\rm av})
+\tag{Smooth-pointed}\label{eq:qa-pointed-smooth-equivalence}
+\end{equation}
+というpointed exact同値を得る。
+ここで構造対象の像はmutation\emph{後の一番頂点}であり、
+ゼロ番頂点ではない。
+\end{theorem}
+\begin{proof}
+square側の曲線上の初期四項は$(P,F,G,FG)$である。
+補題~\ref{lem:qa-as10-all-index-mutual-inverse}で扱うevaluation mutationでは
+\[
+ H_0=K_0,\quad H_1=P,\quad H_2=G,\quad H_3=FG,
+\quad
+ K_0=\ker\bigl(H^0(FP^{-1})\otimes P\to F\bigr)
+      =P^2F^{-1}.
+\]
+次のsquare項は
+系~\ref{cor:qa-core-square-complexes}の式から
+$L_4=F^2G^2P,\ L_5=F^3G^2P^2$である。
+ゆえに一周期後のevaluation kernelは
+\[
+ H_4=K_1=L_4^2L_5^{-1}=FG^2.
+\]
+$P^2=\OO_E$, $G=FP$を代入し、
+四項$(H_1,H_2,H_3,H_4)=(P,FP,F^2P,F^3)$を
+共通線束$P^{-1}$でtensorすると
+\[
+(\OO_E,F,F^2,F^3P^{-1})
+   =(\OO_E,F,F^2,F^2G).
+\]
+共通線束のtensorは曲線上の全Homとその積を保つ。
+前補題と本稿の全整数mutationのEnd同定を合わせれば
+\eqref{eq:qa-pointed-shifted-four-end}を得る。
+これは線束上の計算であり、任意のnc heartに
+線束tensor自己同値を仮定するものではない。
+
+Aのnormal helixはfullでample、
+Cのmutation後のhelixもfull very strongで、
+Noether性とAZ amplenessを持つ。
+有限Endの同型はtilting Morita同値を与え、
+Serre関手と自然に可換する。
+従って四項をSerre完成して得られる全整数の
+前向きHomと積は一致する。
+補題~\ref{lem:qa-as-serre-unique-recovery}と
+補題~\ref{lem:qa-as10-all-index-mutual-inverse}および
+\cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}
+の再構成を適用して
+\eqref{eq:qa-pointed-smooth-equivalence}を得る。
+\end{proof}
+
+\begin{remark}[位相の取り違えと相対境界]
+\label{rem:qa-pointed-phase-obstruction}
+同じnoncubic normal四項をmutation後の
+$(H_0,H_1,H_2,H_3)$に\emph{頂点固定で}
+同定することはできない。
+前者の$0\to1\to2$合成の核は一次元だが、
+後者は最小十本矢型の定義により
+$0\to2$に最小関係を持たず、核は零である。
+従って一添字shiftは単なる記法でなく必要条件である。
+なお定理は四根相異なるsmooth noncubicの
+\emph{体上のpointed同値}を述べる。
+一根共有・二根対一致における同じ式の相対化、
+非被約底上のgroupoid、$C_q$側の通常Picardへの延長、
+およびpotential全体の相対忘却は主張しない。
+\end{remark}
 
 \begin{corollary}[非零二捩れ付き楕円曲線上の双対二重商]
 \label{cor:qa-point-spectral-atkin-lehner}

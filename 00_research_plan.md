@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v1.10。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv3.4。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v1.11。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv3.5。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。局所good moduliの降下もこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -213,34 +213,11 @@ $H^0(E_f,\OO_{E_f}(1))$内の像と一致し、
 Aの\`cor:normal-cubic-defect\`のmatrix-factorizationによる
 積の計算を利用しており、両隣接積の階数3と
 conic Veronese像の一致は明示的に確認した。
-**pointed認識の有限End帰着も形式的に証明した。**
-noncubic normal helixのfinite directed algebra
-$B_{\mathrm{nc}}=\End_{\mathrm{dir}}(E_0,\ldots,E_3)$
-（$E_0=\pi B_f$）と、
-$E_f$側のsquare avatarを一度mutationして得る
-最小AS10 helixの
-$B_{\mathrm{av}}=\End_{\mathrm{dir}}(H_0,\ldots,H_3)$について、
-頂点保存・composition保存同型
-$B_{\mathrm{nc}}\simeq B_{\mathrm{av}}$が存在すれば、
-両側のSerre完成の一意性とAZ amplenessから
-**$(\qgr B_f,\pi B_f)\simeq
-(\qgr A_{\mathrm{av}},\pi e_0A_{\mathrm{av}})$**
-というpointed exact同値が従う
-（C \`prop:qa-point-mcm-pointed-finite-end-reduction\`）。
-これは条件付きの還元であり、有限End同型そのものは
-まだ未証明。特に比較先はmutation**後**の
-第一標準対象であって、square側の原初のOではない。
-**次の核心はこの有限四頂点End代数の
-残りのHom・最小関係・全合成を明示して
-上記同型を実際に構成すること**。
-二つのrank-three像だけの一致から
-全End同型を推論しない。
-共有根境界ではisogenyはétaleでなくなり、
-$C_q$の非局所自由spectral moduleへ切り替える。
+**滑らかなnoncubicのpointed認識（C v3.5）。** 四根が相異なる二形式に対し、$B_f/(cd-dc)$の点曲線$E_f$へ四頂点$(B_f,X_c,B_f(1),X_d(1))$を制限すると、線束列$(\mathcal O,F_c,F_c^2,F_c^2F_d)$との全Hom・全合成を保つ有限directed End同型を得た（C \`lem:qa-pointed-abelianization-four-end\`）。Zhang twistでAの適合normal helixに戻ることを明記した。square avatar $(E_f,F_c,F_d,P_E)$のmutation後は、標準の$(H_0,\ldots,H_3)$でなく**一添字ずらした$(H_1,\ldots,H_4)$**と同定される。前者と頂点固定で比較すると$0\to2$合成の核次元が$1$対$0$となり不可能。正しい位相でSerre完成・AZを使うと、\`$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$\`という**smooth体上のpointed exact同値**を原稿に証明した（C \`thm:qa-point-smooth-noncubic-pointed\`）。これによりsmooth locusでのfinite End同型という旧課題は解決したが、共有根・一致根対、全相対群oid、compactified avatar、potentialsの忘却については未解決。今回の独立した厳密検算は一つの有理係数模型の次数1–2とHom階数のみで、包括的な分類証明・新規性・全組版を検証したものではない。
 
 **P5：三者対応の相対化と境界認識。** (i) 構成済みの根対→spectral $(C,M,\mu)$ fppf相対射の全忠実性・慣性・変形と対象となるtorsion-free二次積stackの代数性を解析し、元のsquare/Σ2上の反標準avatarへelementary transformで移せるか証明する。(ii) 非cubic平方根環B_fのAS qgrとavatar由来AS代数のheartが同じO-marked対象になる必要十分条件・自己同値群/慣性を検証する。(iii) 8/10/12本矢の統一potentialの消去可能pairとスカラー慣性を正しく商に組み込み、相対モジュライ射を作る。(iv) cubicのVdB↔squareとの境界接合、P=0可換点の収縮、Σ2最深のO-marked適合性を解決する。 **Σ₂の幾何全単射をavatar由来AS代数のqgr heartの直接同定で検証すること、および節点で非自由なspectral moduleをelementary transform/compactified Picardで相対可逆化することを最優先にする。**
 
-**直ちに着手する一手：** 全noncubic Σ₂ avatarの元AS Z代数とBの中央二重平方B_fについて、有向End代数・反Serre環・O-pointingを比較する。並行してnodalのA1反不変reflexive sheafをelementary transformしてΣ₂側Pic⁰の相対線束へ移す構成を研究する。三者対応の射・慣性に直結しない周辺計算は優先度を下げる。
+**直ちに着手する一手：** nodalおよびI2の$E_f$上でspinor section moduleの低次数制限とrank-one line bundleの積を検証し、smoothで確立した一添字shift後のpointed End同型を境界へ延ばす。並行してnodalのA1反不変reflexive sheafをelementary transformしてΣ₂側Pic⁰の相対線束へ移す構成を研究する。三者対応の射・慣性に直結しない周辺計算は優先度を下げる。
 
 ## 公表用原稿の三論文体制（2026-11-22に確定）
 
@@ -254,7 +231,7 @@ $C_q$の非局所自由spectral moduleへ切り替える。
 
 **依存監査の確定範囲。** BからAへの残余の17種類の定理・補題・式ラベルはAの現行分類20節に定義されている。Aの分類主定理の証明はB固有の主定理には依存しない原稿構成とした。これはソース依存の確認で、全数学的証明の独立監査とは異なる。
 
-**次の最優先実行単位。** まず点曲線$E_f$とspectral曲線$C_q$の2-isogeny差を踏まえ、noncubic normal helixの有限End代数を$E_f$上の二pencil avatarへ直接照合し、O-pointingとAS Serre completionを追う。その上で原稿C v3.4に移管したAS↔avatar分類の残る依存を原PDFの一次証明と照合し、特に非被約D上のPic0、AS側のrank-forcing、spherical helix実現定理の適用、10矢逆mutation・Keller--Yangの仮定、相対perfect base changeを独立監査する。三稿の組版とC→B引用を修正、Belmans等の一次文献比較をA/Bへ反映、Aの退化四つ組逆構成・Bのfive-window/境界比較の監査を進める。`python3 scripts/check.py papers` と可能な環境での三稿別組版を行い、未実施は未実施と記す。P4はA/Bを公表できる状態に整えつつ、一般cubic開で具体的な比較fiberから開始する。
+**次の最優先実行単位。** smooth noncubicのpointed End同型を既証明のA/CのSerre完成に照らして独立監査し、一根共有・二根対一致への延長を調べる。その上で原稿C v3.4に移管したAS↔avatar分類の残る依存を原PDFの一次証明と照合し、特に非被約D上のPic0、AS側のrank-forcing、spherical helix実現定理の適用、10矢逆mutation・Keller--Yangの仮定、相対perfect base changeを独立監査する。三稿の組版とC→B引用を修正、Belmans等の一次文献比較をA/Bへ反映、Aの退化四つ組逆構成・Bのfive-window/境界比較の監査を進める。`python3 scripts/check.py papers` と可能な環境での三稿別組版を行い、未実施は未実施と記す。P4はA/Bを公表できる状態に整えつつ、一般cubic開で具体的な比較fiberから開始する。
 
 
 ## 現在の到達点と未解決の核心

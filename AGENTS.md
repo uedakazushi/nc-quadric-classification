@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.10。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.4。
+2026-11-22 / v1.11。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv3.5。
 
 ## 公表用三論文への再編（確定方針）
 
@@ -39,28 +39,9 @@ $\im\mu_d=\langle u,v,d\rangle$であり、
 （C prop:qa-point-mcm-composition-veronese）。
 二像は各階数3で交わりは$\langle u,v\rangle$、
 和は$(B_f)_1$全体。
-**条件付きpointed認識の帰着も証明した。**
-noncubic normal helixの四頂点End
-$B_{\mathrm{nc}}=\End_{\mathrm{dir}}(E_0,\ldots,E_3)$
-（$E_0=\pi B_f$）と、$E_f$上のsquare avatarを一度
-正しくmutationした最小AS10 helixの
-$B_{\mathrm{av}}=\End_{\mathrm{dir}}(H_0,\ldots,H_3)$の
-頂点・compositionを保つ同型が存在すれば、
-Serre完成の一意性とAZ amplenessで
-$(\qgr B_f,\pi B_f)\simeq
-(\qgr A_{\mathrm{av}},\pi e_0A_{\mathrm{av}})$という
-O-pointed exact同値を得る
-（C prop:qa-point-mcm-pointed-finite-end-reduction）。
-**最優先の未解決事項**は、
-上記$B_{\mathrm{nc}}\cong B_{\mathrm{av}}$を
-残りのHom・最小関係・全合成の計算で実際に証明すること。
-部分的な二rank-three乗法像の一致と、
-全End同型・O-pointed認識を混同しない。
-現時点ではどちらの曲線がnormal helixのAS avatarとなるか
-未証明であり、根を共有する境界では
-isogenyがétaleでなくなる。
-元の同型類全単射、2-isogenyの幾何証明、
-pointed qgr同値、相対stack射を別々の状態として扱う。
+**滑らかなnoncubicのpointed認識（C v3.5）。** 四根が相異なる二形式に対し、$B_f/(cd-dc)$の点曲線$E_f$へ四頂点$(B_f,X_c,B_f(1),X_d(1))$を制限すると、線束列$(\mathcal O,F_c,F_c^2,F_c^2F_d)$との全Hom・全合成を保つ有限directed End同型を得た（C \`lem:qa-pointed-abelianization-four-end\`）。Zhang twistでAの適合normal helixに戻ることを明記した。square avatar $(E_f,F_c,F_d,P_E)$のmutation後は、標準の$(H_0,\ldots,H_3)$でなく**一添字ずらした$(H_1,\ldots,H_4)$**と同定される。前者と頂点固定で比較すると$0\to2$合成の核次元が$1$対$0$となり不可能。正しい位相でSerre完成・AZを使うと、\`$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$\`という**smooth体上のpointed exact同値**を原稿に証明した（C \`thm:qa-point-smooth-noncubic-pointed\`）。これによりsmooth locusでのfinite End同型という旧課題は解決したが、共有根・一致根対、全相対群oid、compactified avatar、potentialsの忘却については未解決。今回の独立した厳密検算は一つの有理係数模型の次数1–2とHom階数のみで、包括的な分類証明・新規性・全組版を検証したものではない。
+
+**継続指示：** smoothの構成では必ず$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。次は共有根と一致根対のsection moduleの飽和と非被約底の効果性を個別に検証し、全相対同値を先取りしない。
 
 **論文C v3.4の分類正本（最優先）。**
 `papers/nc-quadric-avatar.tex` から

@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.10、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.4。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.11、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.5。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、A/Bの公表前監査と並行して、**論文CのAS↔avatar全単射・十本矢逆mutationの証明を原PDF・外部定理と独立照合**する。その後、Cで一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -18,7 +18,7 @@
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS正則代数・avatar分類とpointed認識（v3.4）
+## 論文C：AS正則代数・avatar分類とpointed認識（v3.5）
 
 **中心定理の証明を含む現行原稿。**
 [平方型・回転平方型のAS/avatar分類](papers/quiver-avatar/as_helix_classification.tex)は
@@ -162,26 +162,7 @@ $\operatorname{Sym}^2H^0(F_c),\operatorname{Sym}^2H^0(F_d)$
 二像の共通部分は$\langle u,v\rangle$、和は$(B_f)_1$全体である。
 **これはmatrix-factorizationのkernelのみならず、
 2つのrank-three乗法の像が一致したことを意味する。**
-さらに、Aのnoncubic normal helixの四頂点
-finite directed End代数$B_{\mathrm{nc}}$と
-$E_f$ avatarを一つmutationして得る最小AS10 helixの
-四頂点End代数$B_{\mathrm{av}}$の間に
-頂点・compositionを保つ同型が\emph{存在すれば}、
-全Serre完成とAZ amplenessから
-\[
- (\qgr B_f,\pi B_f)\simeq
- (\qgr A_{\mathrm{av}},\pi e_0A_{\mathrm{av}})
-\]
-というO-pointed exact同値が従うことを証明した
-（C \`prop:qa-point-mcm-pointed-finite-end-reduction\`）。
-**有限Endの同型の存在そのものは未証明**であり、
-rank-three積像の一致だけでは足りない。
-次は他のHom・最小関係・全合成を含む
-$B_{\mathrm{nc}}\cong B_{\mathrm{av}}$を直接構成する。
-構造対象を対応させる先は**mutation後**の第一標準対象である。
-共有根ではisogenyはétaleでなく、torsion-free
-spectral moduleへ移行する。
-本比較の外部文献との包括的新規性は未確認。
+**滑らかなnoncubicのpointed認識（C v3.5）。** 四根が相異なる二形式に対し、$B_f/(cd-dc)$の点曲線$E_f$へ四頂点$(B_f,X_c,B_f(1),X_d(1))$を制限すると、線束列$(\mathcal O,F_c,F_c^2,F_c^2F_d)$との全Hom・全合成を保つ有限directed End同型を得た（C \`lem:qa-pointed-abelianization-four-end\`）。Zhang twistでAの適合normal helixに戻ることを明記した。square avatar $(E_f,F_c,F_d,P_E)$のmutation後は、標準の$(H_0,\ldots,H_3)$でなく**一添字ずらした$(H_1,\ldots,H_4)$**と同定される。前者と頂点固定で比較すると$0\to2$合成の核次元が$1$対$0$となり不可能。正しい位相でSerre完成・AZを使うと、\`$(\qgr B_f,\pi B_f)\simeq(\qgr A_{\rm av},\pi e_1A_{\rm av})$\`という**smooth体上のpointed exact同値**を原稿に証明した（C \`thm:qa-point-smooth-noncubic-pointed\`）。これによりsmooth locusでのfinite End同型という旧課題は解決したが、共有根・一致根対、全相対群oid、compactified avatar、potentialsの忘却については未解決。今回の独立した厳密検算は一つの有理係数模型の次数1–2とHom階数のみで、包括的な分類証明・新規性・全組版を検証したものではない。
 
 ### 幾何的基礎と相対境界
 
