@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.8（節点退化でのfinite/étaleの障害を追加）
+% 2026-11-22 / v0.9（OU §4と§5の群・部分群対の抽象同型を証明）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -286,6 +286,77 @@ $X$ 上でこの作用は四元集合 $V$ への自由かつ推移的な
 平行移動作用であるため、降下後もtorsorになる。
 $\mathcal V$ の線型monodromyは
 $G\to\GL(V)$ の像であり、前命題より $S_3$ である。
+\end{proof}
+
+\begin{proposition}[OU §5 と楕円四つ組 §4 の有限群の対]
+\label{prop:qa-ou-sign-elliptic-groups-pair}
+前命題の $G=V\rtimes S_4^{\mathrm{coord}}$ と
+$H=S_4^{\mathrm{coord}}$ に対し、
+$S_4^{\mathrm{coord}}$ の四座標のうち一つを指定する。
+その座標の安定化群を
+$S_3^{\mathrm{mark}}\subset S_4^{\mathrm{coord}}$ とすると
+\[
+ S_4^{\mathrm{coord}}=K_4\rtimes S_3^{\mathrm{mark}},
+ \qquad
+ G=(V\oplus K_4)\rtimes S_3^{\mathrm{mark}}.
+ \tag{OU-split}\label{eq:qa-ou-pair-splitting}
+\]
+$V$ と $K_4$ は共に $\mathbb F_2^2$ 上の
+標準的な $\mathrm{GL}_2(\mathbb F_2)$-作用を持つ。
+従ってOUの楕円四つ組表示
+\cite[\S4, (4.11)--(4.13)]{OU2014} の
+\[
+ G_{\mathrm{ell}}=
+ (\mathbb F_2^2{}_{z_1}\oplus
+  \mathbb F_2^2{}_{z_2})
+     \rtimes\mathrm{GL}_2(\mathbb F_2)
+\]
+に対し、次の\emph{抽象的な有限群と部分群の対}の同型が存在する。
+\[
+ (G,H)\simeq
+ \left(G_{\mathrm{ell}},
+       \mathbb F_2^2{}_{z_1}
+         \rtimes\mathrm{GL}_2(\mathbb F_2)\right).
+ \tag{OU-pair}\label{eq:qa-ou-elliptic-finite-pair}
+\]
+この同型では $V$ を $z_2$ の平行移動群へ、
+$K_4$ を $z_1$ の平行移動群へ送れる。
+従って双方の有限商表示に次数四の中間被覆という
+\emph{同じ群論的な型}が現れる。
+
+ただし、同型は座標の選択と二つの平行移動因子の区別を用いており、
+OU §4 の楕円四つ組空間と §5 の対角potential空間の間の
+$G$-同変双有理写像を構成したものではない。
+従って相対torsor classの一致はまだ結論しない。
+\end{proposition}
+\begin{proof}
+$K_4$ は二重互換からなる正規Klein四元群である。
+指定座標の安定化群 $S_3^{\mathrm{mark}}$ は
+$K_4$ と自明に交わり、位数は6であるから
+$S_4^{\mathrm{coord}}=K_4\rtimes S_3^{\mathrm{mark}}$。
+$K_4$ は $V$ 上に自明に作用する
+（$S_4^{\mathrm{coord}}\to\mathrm{GL}(V)$ の核だから）
+ので式~\eqref{eq:qa-ou-pair-splitting} が成り立つ。
+
+$V$ の非零三元は二対分割
+$12|34$, $13|24$, $14|23$ に対応する。
+$K_4$ の非単位三元は対応する二重互換
+$(12)(34)$, $(13)(24)$, $(14)(23)$ なので、
+これらを対応させると $S_4^{\mathrm{coord}}$-同変な
+群同型 $V\simeq K_4$ が得られる。
+$S_3^{\mathrm{mark}}$ は各三非零元を置換するため、
+両因子への作用は標準的な
+$\mathrm{GL}_2(\mathbb F_2)$-作用である。
+OU §4の式~(4.11)--(4.13) は
+$z_1,z_2$ の独立した二捩れ平行移動と、
+双方に対角的に作用する$\mathrm{SL}_2(\mathbb F_2)$
+（$\mathrm{SL}_2(\mathbb F_2)=\mathrm{GL}_2(\mathbb F_2)$）
+の半直積として書かれている。
+$K_4$ を $z_1$ 因子、$V$ を $z_2$ 因子へ
+送れば部分群 $H=K_4\rtimes S_3^{\mathrm{mark}}$
+まで含めて所望の同型を得る。
+指定座標の安定化群の選択を必要とするので、
+具体的な幾何的torsorの同型を含意しない。
 \end{proof}
 
 \begin{remark}[四点分岐曲線の二捩れ局所系との対応]
