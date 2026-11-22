@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.48。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.49。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 研究の位置
@@ -295,6 +295,8 @@ framed実現空間のスキーム性には [Stacks Tag 05W6](https://stacks.math
 ## 内在的境界の相対比較と粗モジュライ障害
 
 Stacksの一次本文で[0BF6](https://stacks.math.columbia.edu/tag/0BF6) Lemma39.8.2（Cartier）、[02G3](https://stacks.math.columbia.edu/tag/02G3) Lemma29.36.2（微分零によるunramified）、[024T](https://stacks.math.columbia.edu/tag/024T) Proposition41.6.1（unramified射の切断）、[04YY](https://stacks.math.columbia.edu/tag/04YY) Lemma101.6.2（相対慣性によるrepresentability）、[025G](https://stacks.math.columbia.edu/tag/025G)、[0DUD](https://stacks.math.columbia.edu/tag/0DUD) Lemma101.45.7（étale・慣性・幾何groupoidによる同型判定）を2026-11-22に確認した。一般判定は既知入力であり、実際の境界chartの族を二形式模型へ比較する相対tilting・反Serre再構成が本文の追加部分である。
+
+Stacks Project [Tag 0DUP](https://stacks.math.columbia.edu/tag/0DUP) Lemma106.13.4 と [Tag 0DUR](https://stacks.math.columbia.edu/tag/0DUR) Lemma106.13.6 を2026-11-22に一次確認。前者はwell-nigh affine stackのcategorical moduliをaffine schemeの範囲で、後者は任意の代数空間への普遍性へ拡張する。一般のuniform categorical moduliの基底変更は平坦基底変更を意味し、任意の基底変更との整合性まで両Tagだけから主張しない。論文BのDM開では、任意基底Aで有限商の局所モデル Spec A[x]/(x²−s) を再構成し、μ₂の不変式環がAとなることを直接確認して任意基底変更に対する粗空間の普遍性を証明する。
 
 Alper [arXiv:0804.2242v3](https://arxiv.org/pdf/0804.2242v3) のTheorem13.2（affine reductive quotientのgood moduli）、Theorem6.6（代数空間への普遍性）を再確認した。§2の規約はquasi-separatedである。任意の代数空間に対する全H2の粗モジュライ不存在は、この規約を広げず、穿孔直線上でfppf局所定値な族とétale scheme chartを使う本文の直接証明による。χの特殊fiber・全慣性・連結慣性表現の包括的新規性は未確認である。
 
