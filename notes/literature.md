@@ -13,7 +13,7 @@ Silverman, *The Arithmetic of Elliptic Curves*, 2nd ed., GTM 106, Springer, 2009
 
 2026-11-22にStacks Projectの一次本文を確認した。Coh stackのArtin性は [Theorem 99.6.1, 09DS](https://stacks.math.columbia.edu/tag/09DS)、affine有限表示対角と局所有限表示は [Lemmas 108.4.1–108.4.2, 0DLX](https://stacks.math.columbia.edu/tag/0DLX)。Homのaffine有限表示は [Proposition 99.3.10, 08K6](https://stacks.math.columbia.edu/tag/08K6) で、標的層のfinite presentation・基底flat・proper supportを確認する。直像ベクトル束へのfiberwise flatnessは [Theorem 76.23.3, 05X0](https://stacks.math.columbia.edu/tag/05X0)、固定多項式Quotの有限型性は [Lemma 108.6.1, 0DP9](https://stacks.math.columbia.edu/tag/0DP9)。引用キーは `StacksCoherentSheaves`。
 
-Cの具体的な追加は、二重代数のFrobenius双対による自己双対性の有限行列表示、非被約底でのtrace零、被約連結rank-one自己双対層の $h^0\le1$ と二分解型による一様有界性、等方線からの全二形式・同型層の回収である。[証明](../papers/quiver-avatar/torsion_free_spectral_recognition.tex) は全節点標的の有限型Artin性と、balanced開 $[\overline P_{\rm nod}/G]$、元のnoncubicのsquarefree開を与える。既知のCoh/Quot代数性を新成果とはしない。非被約spectral曲線全体の有限型性、任意AS heartとの比較、包括的な新規性の確定は未実施。
+Cの具体的な追加は、二重代数のFrobenius双対による自己双対性の有限行列表示、非被約底でのtrace零、被約連結rank-one自己双対層の $h^0\le1$ と二分解型による一様有界性、等方線からの全二形式・同型層の回収である。[証明](../papers/quiver-avatar/torsion_free_spectral_recognition.tex) は全節点標的の有限型Artin性と、balanced開 $[\overline P_{\rm nod}/G]$、元のnoncubicのsquarefree開を与える。既知のCoh/Quot代数性を新成果とはしない。固定被覆のfiberは二次因子分解schemeと交換作用で計算し、境界の非被約構造まで保持する。これは二捩れ・四分岐点の二対分割の古典的関係を具体的なTF標的へ適用するもので、包括的新規性は未確定。非被約spectral曲線全体の有限型性、任意AS heartとの比較、包括的な新規性の確定は未実施。
 
 ## 相対spectral gerbe・慣性・特異境界の入力
 

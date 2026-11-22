@@ -23,6 +23,10 @@
 
 元の $\mathfrak N$ は両等方平方の判別式非零の開 $\mathfrak T_{\rm adm}$ に一致し、TF標的への射は全忠実な開埋込みである。二形式間の共有根や一致を含む。実際の $(M,\mu)$ を保持するので同時符号 $\delta$ は消えない。さらに層を忘れて $(C,p)$ のみとすると、nodalでは核 $\langle\delta\rangle=\mu_2$・像 $C_2^2$、I2では核 $\langle\delta,\tau\rangle=\mu_2^2$・像 $(\Gm\rtimes C_2)\times C_2$。この核を、TFへの全忠実な表示射自身の核と混同しない。
 
+**固定した被覆上のscheme-theoretic fiber。** 曲線と二重射を固定し、分岐外に無限遠点を選んで $y^2=h(x)$ をmonicにする。$Z_h$ をmonic二次因子分解 $q_1q_2=h$ の長さ6のschemeとすると、balanced忘却fiberは $[Z_h/S_2]\times B\mu_2$ である。Smoothでは $3B\mu_2$。$Z_2=\Spec k[\epsilon]/\epsilon^2$、$Z_{2,2}=\Spec k[\epsilon,\eta]/(\epsilon^2,\eta^2)$ とすると、nodalでは $(\Spec k\amalg Z_2)\times B\mu_2$、I2では $(\Spec k\amalg[Z_{2,2}/C_2])\times B\mu_2$。$C_2$ は両変数を同時反転する。元Nの境界fiberは各々後者の非自由成分だけである。I2の不変式環にも $k[\epsilon\eta]\simeq k[z]/z^2$ の厚みが残る。幾何点の個数や閉点慣性だけでは、このfiberを記述できない。
+
+**Pencilの役割。** 曲線と $(M,\mu)$ を残してpencilを忘れると、nodalの全慣性は $\Gm\rtimes C_2$、入力D8は $\mu_4\rtimes C_2$。I2の全群は $\Gm^2\rtimes(C_2\times C_2)$、pencil保存群は $t_+^2=t_-^2$ の部分群である。従ってpencilを忘れた標的への写像は慣性単射であっても全射でなく、先の開埋込みの主張には二重射を保持することが必要である。
+
 **Fricke境界でなお必要な曲線修正。** 元の点曲線と同時符号は $\operatorname{Spec}_C(\OO_C\oplus M)$ から全境界で回復する。一方、平坦Fricke出力の点曲線との指定generic同型は
 \[
 [u:v:y]\dashrightarrow
@@ -31,7 +35,7 @@
 \]
 $r=1$では入力特殊曲線はnodal、出力はI2であり族同型に延長しない。$r=2$では双方I2だが、この式が各成分の稠密開を一点へ収縮する。有限trait基底変更でもこの指定式の障害は残る。$r=2$の別のgeneric同型すべてを否定したものではない。次はこのグラフ閉包・正規化と半安定修正を、慣性・pointing・底変更とともに比較する。
 
-Frobenius/trace・inverse matrix・similitude・node積の厳密恒等式は `verify_spectral_atkin_lehner.py` の13項目へ統合した。Artin性・全忠実性・全基底への降下の証明は原稿で分担・相互点検し、有限計算からは結論しない。
+Frobenius/trace・inverse matrix・similitude・node積の厳密恒等式は `verify_spectral_atkin_lehner.py` の15項目へ統合した。Artin性・全忠実性・全基底への降下の証明は原稿で分担・相互点検し、有限計算からは結論しない。
 
 ## Cの相対pointed模型と同変Serre
 
@@ -2103,7 +2107,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 ## 検証範囲と再現手順
 
-**現行C v4.9の確認範囲（2026-11-22、日本時間）。** 相対mutation、全G降下、交換符号、全次数Serre完成とpointed heart、smooth spectralの指定AS10 pointing・相対二conic構成・二次線束gerbeの逆構成・中心bandによる自己同値不存在、および境界延長不能・周期解消による無限Ext、節点TF標的のArtin性・有界性・balanced商表示・全同型層・境界慣性を分担し、統合稿も相互読取りした。KellerのMorita/CY completion、Silverman第2版の二同種公式、StacksのPicard gerbe・Kummer対応・慣性によるrepresentability判定を一次本文と照合した。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:21・503・161、明示的な論文間参照122件）。構成検査であり証明の認証ではない。`verify_symmetric_morita.py`、`verify_spectral_atkin_lehner.py`、`verify_noncubic_pointed_end.py`、`verify_rootpair_resolvent_spectral.py` を実行PASS。spectral検算は慣性行列・二次分裂体・弱い共変式・TF有限行列まで拡張して13項目PASS。新二本は標準math suiteへ登録したが全既存suiteは再実行していない。`check.py build --manuscript papers/nc-quadric-avatar.tex` は必要TeXファイルを利用できずSKIP（終了コード2）。PDF全体の表示・VS Code UI・形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
+**現行C v4.9の確認範囲（2026-11-22、日本時間）。** 相対mutation、全G降下、交換符号、全次数Serre完成とpointed heart、smooth spectralの指定AS10 pointing・相対二conic構成・二次線束gerbeの逆構成・中心bandによる自己同値不存在、および境界延長不能・周期解消による無限Ext、節点TF標的のArtin性・有界性・balanced商表示・全同型層・境界慣性・固定被覆上の非被約ファイバー・pencil忘却後の慣性を分担し、統合稿も相互読取りした。KellerのMorita/CY completion、Silverman第2版の二同種公式、StacksのPicard gerbe・Kummer対応・慣性によるrepresentability判定を一次本文と照合した。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:21・507・161、明示的な論文間参照122件）。構成検査であり証明の認証ではない。`verify_symmetric_morita.py`、`verify_spectral_atkin_lehner.py`、`verify_noncubic_pointed_end.py`、`verify_rootpair_resolvent_spectral.py` を実行PASS。spectral検算は慣性行列・二次分裂体・弱い共変式・TF有限行列・固定被覆の長さ六の分解scheme・二乗零変形まで拡張して15項目PASS。新二本は標準math suiteへ登録したが全既存suiteは再実行していない。`check.py build --manuscript papers/nc-quadric-avatar.tex` は必要TeXファイルを利用できずSKIP（終了コード2）。PDF全体の表示・VS Code UI・形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
 
 
 **現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現行3原稿で `scripts/check.py papers` は実行PASS、LuaLaTeXの実組版は依存不足により未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。

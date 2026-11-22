@@ -139,6 +139,37 @@ def torsion_free_recognition_identities():
     print("PASS: nodal quadratic product and independent branch-square constraints")
 
 
+def fixed_cover_factorization_identities():
+    x, a, b, e, eta = sp.symbols("x a b e eta")
+    for h in (x*x*(x*x-1), x*x*(x-1)**2):
+        coefficients = sp.Poly(h, x)
+        c = coefficients.nth(3)-a
+        d = coefficients.nth(2)-b-a*c
+        product = sp.Poly((x*x+a*x+b)*(x*x+c*x+d)-h, x)
+        ideal = sp.groebner([product.nth(1), product.nth(0)], a, b)
+        leading = [p.LM(order=ideal.order).exponents for p in ideal.polys]
+
+        def standard(i, j):
+            return not any(i >= r and j >= s for r, s in leading)
+
+        assert not standard(6, 0) and not standard(0, 6)
+        basis = [(i, j) for i in range(6) for j in range(6) if standard(i, j)]
+        assert len(basis) == 6
+    print("PASS: both fixed-boundary monic factorization schemes have length six")
+
+    nodal_product = ((x+e)*(x-1))*((x-e)*(x+1))-x*x*(x*x-1)
+    assert sp.rem(sp.expand(nodal_product), e*e, e) == 0
+    i2_first, i2_second = (x-e)*(x-1-eta), (x+e)*(x-1+eta)
+    ideal = sp.groebner([e*e, eta*eta], x, e, eta)
+    assert ideal.reduce(sp.expand(i2_first*i2_second-x*x*(x-1)**2))[1] == 0
+    assert sp.expand(i2_first.subs({e:-e, eta:-eta}, simultaneous=True)-i2_second) == 0
+    # The two coefficients of i2_first generate the full length-four local algebra.
+    s, constant = -e-eta, e+e*eta
+    assert ideal.reduce(sp.expand(constant*(1+s)-e))[1] == 0
+    assert ideal.reduce(sp.expand(-s-constant*(1+s)-eta))[1] == 0
+    print("PASS: length-two/length-four nilpotent families and complement involution")
+
+
 def main():
     x, a, b, chi, t = sp.symbols("x a b chi t")
     equation = x * (x**2 + a*x + b)
@@ -189,6 +220,7 @@ def main():
     print("PASS: shared-root and equal-pair boundary pole identities")
     relative_identities()
     torsion_free_recognition_identities()
+    fixed_cover_factorization_identities()
     print("NOT CHECKED: gerbe equivalence, stack closedness, infinite Ext, or novelty")
 
 

@@ -40,7 +40,7 @@
 
 [境界標的の認識](papers/quiver-avatar/torsion_free_spectral_recognition.tex) で、幾何fiberがsmooth/nodal/I2となる二重被覆と二次自己双対rank-one TF層の標的 $\mathfrak T_{\rm nod}$ の有限型Artin性、affine有限表示対角を証明した。各成分でrank one、曲線の幾何被約性・連結性、有限表示を仮定する。自己双対性から $h^0(M)\le1$、$p_*M$ の分解型を二型に制限し、固定Quotで有界性を示す。非被約spectral曲線全体へ外挿しない。
 
-Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline P_{\rm nod}/G]$ と同値。tracezero成分の非退化二次形式の等方線から二形式と全同型を回復し、任意非被約底への降下を含む。元のNは両平方sectionのsquarefree開であり、TF標的への射は全忠実な開埋込み。実際の $(M,\mu)$ を保持するため同時符号は消えない。層を忘れると固定曲線上の核はnodalでμ₂、I2でμ₂²となる。
+Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline P_{\rm nod}/G]$ と同値。tracezero成分の非退化二次形式の等方線から二形式と全同型を回復し、任意非被約底への降下を含む。元のNは両平方sectionのsquarefree開であり、TF標的への射は全忠実な開埋込み。実際の $(M,\mu)$ を保持するため同時符号は消えない。層を忘れると固定曲線上の核はnodalでμ₂、I2でμ₂²となる。固定被覆へのforget fiberは $[Z_h/S_2]\times B\mu_2$、$Z_h$ は長さ6のmonic二次因子分解scheme。nodalの非自由成分はdual numbers、I2は二変数の平方零環を同時符号で割る。閉点慣性だけでfiberを同定しない。
 
 元の点曲線と符号は $\OO_C\oplus M$ で全境界から再構成できる。しかしFricke出力の平坦点曲線との指定generic同型は、共有根ではnodal対I2、一致根対では成分収縮のため族同型へ延長しない。TF認識をsmooth Fricke射の境界延長と読み替えない。
 

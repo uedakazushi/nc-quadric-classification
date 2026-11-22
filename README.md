@@ -56,7 +56,7 @@ $$
 
 ### 二次積付きtorsion-free標的の認識
 
-幾何fiberがsmooth/nodal/I2となる有限二重被覆と二次自己双対TF層の標的 $\mathfrak T_{\rm nod}$ は、有限型Artinスタックでaffine有限表示対角を持つ。$H^0(M)=0$ の開は、積の根重複が高々二となる二形式対の商 $[\overline P_{\rm nod}/G]$ と同値である。二次積のtrace-zero成分の二等方線が元の生成線を回復するため、任意非被約底でも同型層まで認識できる。
+幾何fiberがsmooth/nodal/I2となる有限二重被覆と二次自己双対TF層の標的 $\mathfrak T_{\rm nod}$ は、有限型Artinスタックでaffine有限表示対角を持つ。$H^0(M)=0$ の開は、積の根重複が高々二となる二形式対の商 $[\overline P_{\rm nod}/G]$ と同値である。二次積のtrace-zero成分の二等方線が元の生成線を回復するため、任意非被約底でも同型層まで認識できる。固定被覆への忘却fiberでは、共有根に長さ2、一致根対に長さ4の非被約因子分解schemeが現れ、後者には交換対合が作用する。
 
 この中で両形式がsquarefreeとなる開は、元のnoncubic $\mathfrak N$ そのものである。従って実際の $(M,\mu)$ と二重射を保持するTF標的への射は、境界を含め全忠実な開埋込みとなる。smooth Fricke射のμ₂核は二次線束の自己同型を忘れる段階に生じ、この全忠実性と矛盾しない。[証明と境界慣性](papers/quiver-avatar/torsion_free_spectral_recognition.tex)。
 

@@ -596,6 +596,220 @@ $\mu_2$または$\mu_2^2$は，表示射の核ではなく，
 \emph{そこからさらに層を忘れる射の核}である．
 \end{remark}
 
+\subsection{固定被覆上の非被約fiberとpencil忘却}
+\label{subsec:qa-tf-fixed-cover-fibers}
+
+\begin{proposition}[固定被覆上のscheme-theoretic fiber]
+\label{prop:qa-tf-scheme-theoretic-fibers}
+$k$を標数零の代数閉体とし，
+$(C\xrightarrow pB)\in\mathfrak D_{\rm nod}(k)$を固定する．
+分岐点でない無限遠点を選び，$B\setminus\{\infty\}=\mathbb A^1_x$上で
+被覆を$y^2=h(x)$，$h$をmonic四次多項式として表す．
+\[
+ Z_h=\{(q_1,q_2)\mid q_i\text{ はmonic二次多項式},\ q_1q_2=h\}
+\]
+を係数比較で定める有限$k$-schemeとし，$S_2$は二因子を交換するとする．
+このとき長さは$\operatorname{length}Z_h=6$であり，
+\emph{任意の非被約test schemeも含めた}stack fiberは
+\[
+ \mathfrak T_{\rm bal}\times_{\mathfrak D_{\rm nod}}\Spec k
+       \simeq[Z_h/S_2]\times B\mu_2.
+ \tag{TF-fiber}\label{eq:qa-tf-scheme-fiber-factorization}
+\]
+ここで外側の$\mu_2$は$-1_M$であり，$Z_h$には自明に作用する．
+順序付きbalanced標的のfiberは$Z_h\times B\mu_2$である．
+
+\[
+ Z_2=\Spec k[\epsilon]/(\epsilon^2),\qquad
+ Z_{2,2}=\Spec k[\epsilon,\eta]/(\epsilon^2,\eta^2)
+\]
+と置き，$C_2$は$Z_{2,2}$に
+$(\epsilon,\eta)\mapsto(-\epsilon,-\eta)$で作用するとする．
+三型の実際のfiberは次の通りである．
+\[
+ \begin{array}{c|c|c}
+ \text{型}&\mathfrak T_{\rm bal}\text{のfiber}
+                    &\mathfrak N^{\rm pres}\text{のfiber}\\\hline
+ \text{smooth}&\displaystyle\coprod_{j=1}^3 B\mu_2
+               &\displaystyle\coprod_{j=1}^3 B\mu_2\\[2mm]
+ \text{既約nodal}&(\Spec k\amalg Z_2)\times B\mu_2
+               &Z_2\times B\mu_2\\[1mm]
+ I_2&(\Spec k\amalg[Z_{2,2}/C_2])\times B\mu_2
+               &[Z_{2,2}/C_2]\times B\mu_2
+ \end{array}
+\]
+nodalと$I_2$で最初の被約成分は非自明な二捩れ\emph{線束}を表し，
+残る非被約成分が元のnoncubic入力の非局所自由層を表す．
+順序付きnoncubic表示のfiberは，順に
+\[
+ \coprod_{j=1}^6B\mu_2,\qquad
+ (Z_2\amalg Z_2)\times B\mu_2,\qquad
+ Z_{2,2}\times B\mu_2
+\]
+である．特に境界の$k$-点群oidを数えるだけでは，これらのfiberは回復できない．
+\end{proposition}
+\begin{proof}
+\paragraph{固定被覆上のframe群.}
+定理~\ref{thm:qa-tf-balanced-quotient-recognition}により，
+被覆を固定した二次データはfppf局所的に
+\[
+ \mu(c,c)=f_1,\qquad\mu(d,d)=f_2,\qquad
+ \mu(c,d)=y,\qquad f_1f_2=h
+\]
+と書ける．底と被覆を恒等に固定しているので，frame変更は
+\[
+ c\mapsto tc,\quad d\mapsto t^{-1}d
+\]
+と$c,d$の交換からなる．
+$h$がmonicなので$f_1,f_2$のleading係数は互いに逆な単元$a,a^{-1}$である．
+fppf局所的に$t^2=a^{-1}$を選べば両因子をmonicにでき，
+残る対角frame群は$\mu_2$となる．
+因子交換はこのmonic条件を保ち，そのliftの二乗は恒等である．
+またこの交換は残る$\mu_2$に自明に作用する．
+従ってfiberは
+\[
+ [Z_h/(\mu_2\times S_2)]
+       \simeq[Z_h/S_2]\times B\mu_2
+\]
+である．これは単に幾何点の全射を示したものではなく，
+任意基底でのframeと全同型の計算である．
+
+\paragraph{因子分解schemeの局所環.}
+幾何点は$h$の根の重複度を二つの二次因子へ分配する方法で決まり，有限個である．
+従って係数比較で定まるaffine有限型scheme $Z_h$は有限$k$-schemeであり，
+各点の局所環はArtin環である．
+相異なる根のcluster間は互いに素なので，monic多項式のHensel分解により，
+局所変形を各clusterで独立に記述できる．
+単根はそれを割り当てた因子内で固定される．
+二重根$a$を両因子に一つずつ割り当てる場合は，局所因子を
+\[
+ (x-a-\epsilon)(x-a-\epsilon')=(x-a)^2
+\]
+と書くと，$\epsilon'=-\epsilon$，$\epsilon^2=0$となる．
+二重根を一方の因子にまとめて割り当てる場合は変形方向を持たない．
+この議論は局所Artin test環上の因子分解を一意に記述するので，
+単なる接空間計算ではなく局所環そのものを決定している．
+
+四根が相異なる場合は，順序付き分割が六つあり，$Z_h$は六つの被約点となる．
+$S_2$はこれらを二つずつ交換する．
+
+nodal型で$h=(x-a)^2(x-b)(x-c)$なら，
+$(x-a)^2$を一方にまとめる分解とその逆が二つの被約点を与える．
+二重根を二因子へ分ける分解とその逆は，各々局所環
+$k[\epsilon]/(\epsilon^2)$を持つ．
+$S_2$は被約点同士，非被約点同士を交換するので，
+\[
+             [Z_h/S_2]\simeq\Spec k\amalg Z_2.
+\]
+
+$I_2$型で$h=(x-a)^2(x-b)^2$なら，
+二つの二重根を別々の因子へまとめる分解とその逆が二つの被約点を与える．
+残る点$q_1=q_2=(x-a)(x-b)$の全局所変形は
+\[
+ \begin{split}
+ q_1&=(x-a-\epsilon)(x-b-\eta),\\
+ q_2&=(x-a+\epsilon)(x-b+\eta),\qquad
+          \epsilon^2=\eta^2=0
+ \end{split}
+\]
+である．従って局所環は$k[\epsilon,\eta]/(\epsilon^2,\eta^2)$であり，
+因子交換は$(\epsilon,\eta)$の同時符号反転となる．
+よって
+\[
+             [Z_h/S_2]\simeq\Spec k\amalg[Z_{2,2}/C_2].
+\]
+これらの局所環の長さは，順に$6$，$1+1+2+2=6$，$1+1+4=6$である．
+
+元のnoncubic開は両因子がsquarefreeである条件に対応する．
+従って境界では二重根を両因子へ分けた非被約成分だけが残る．
+順序付きの場合は$S_2$を取らないので，最後の三式も従う．
+\end{proof}
+
+\begin{remark}[非自由点の慣性と非被約方向]
+nodalの非自由点では，fiberは$Z_2\times B\mu_2$であり，
+固定した曲線上の一次変形が一つ残る．
+$I_2$の非自由点では，二つの一次方向に因子交換がともに符号反転で作用する．
+その閉点の慣性は$\mu_2\times C_2\simeq\mu_2^2$だが，
+fiber全体を$B(\mu_2^2)$と同一視することはできない．
+さらに
+\[
+ \bigl(k[\epsilon,\eta]/(\epsilon^2,\eta^2)\bigr)^{C_2}
+       =k[\epsilon\eta]\simeq k[z]/(z^2)
+\]
+なので，この部分の粗モジュライにも非被約構造が残る．
+\end{remark}
+
+\begin{proposition}[pencilを忘れた場合の慣性の増大]
+\label{prop:qa-tf-curve-only-inertia}
+命題~\ref{prop:qa-tf-boundary-inertia-maps}の元のnoncubic境界層を取り，pencilを保持しない群
+$\operatorname{Aut}(C,M,\mu)$を考える．
+nodal型では
+\[
+ \operatorname{Aut}(C,M,\mu)\simeq\Gm\rtimes C_2,
+ \qquad H_{\rm nod}\simeq\mu_4\rtimes C_2
+\]
+と座標を選べる．ここで後者がpencilを保つ部分群である．
+$I_2$型では
+\[
+ \operatorname{Aut}(C,M,\mu)
+   \simeq\Gm^2\rtimes(C_{2,\rm node}\times C_{2,\rm comp}),
+\]
+節点交換は両トーラス座標を逆数へ移し，成分交換は二座標を交換する．
+この表示においてpencilを保つ$H_{\rm eq}$は
+\[
+ \{(t_+,t_-)\in\Gm^2\mid t_+^2=t_-^2\}
+       \rtimes(C_{2,\rm node}\times C_{2,\rm comp})
+\]
+である．従ってpencilを忘れると，表示射の慣性写像は依然単射だが，
+両境界とも全射でなくなる．
+
+元のnoncubic入力の群$H_{\rm nod},H_{\rm eq}$から，
+さらに層も忘れて$C$だけを保持する合成を考えると，その慣性写像の核は
+命題~\ref{prop:qa-tf-boundary-inertia-maps}と同じである．
+像は$\operatorname{Aut}(C\to B)$であり，
+$\operatorname{Aut}(C)$全体ではない．
+この像の主張は元の入力群からの合成についてのものであり，
+より大きい$\operatorname{Aut}(C,M,\mu)$全体から$\operatorname{Aut}(C)$への
+忘却射は両型で全射である．
+一方，拡大後の全群$\operatorname{Aut}(C,M,\mu)\to\operatorname{Aut}(C)$は両型とも全射である．
+元の入力群からのnodal型の像は$\Gm\rtimes C_2$内の$C_2^2$，
+$I_2$型の像は二成分の底自己同型が一致する
+$(\Gm\rtimes C_2)\times C_2$である．
+\end{proposition}
+\begin{proof}
+nodal型では正規化$\widehat C=\PP^1$の二点を貼り合わせて$C$を得る．
+$M=\nu_*\OO_{\PP^1}(-1)$であり，二次積は
+\[
+ \OO_{\PP^1}(-1)^{\otimes2}
+       \xrightarrow{\sim}\OO_{\PP^1}(-p_0-p_\infty)
+\]
+を通してconductorへ写る．
+従って線束と二次積の自己同型は$O(z_0z_1)\simeq\Gm\rtimes C_2$である．
+曲線自己同型への射は，トーラス上で$t\mapsto t^2$となり，核は$\mu_2$である．
+正規化の座標を$w$とし，pencilを
+$x=(w+w^{-1})/2$と表す．
+二次積付き自己同型のトーラス元$t$は$w\mapsto t^2w$として作用するので，
+このpencilを保つ条件は$t^4=1$である．
+反転$w\mapsto w^{-1}$も保つので，部分群は$D_8$となる．
+
+$I_2$型では，正規化の二成分上で各々同じ
+$\OO(-1)$と二節点のconductorへの二次積を持つ．
+二成分の自己同型は各々$O(z_0z_1)$に属するが，
+節点を交換するかどうかは両成分で一致しなければならない．
+さらに成分交換を許すと記載した半直積を得る．
+曲線の各成分上の自己同型はトーラス座標$t_\pm^2$を持つ．
+pencilは両成分から同じ$B$への同型であるから，
+それを保つ条件は$t_+^2=t_-^2$である．
+
+最後に$p$は全射なので，曲線の自己同型が恒等なら，
+それと可換する底の自己同型も恒等である．
+従って$p$を忘れても慣性写像の核は変わらない．
+正規化上で二節点の逆像を保つ自己同型を取ると，
+nodal型で$\operatorname{Aut}(C)=\Gm\rtimes C_2$，
+$I_2$型で$\operatorname{Aut}(C)=\Gm^2\rtimes(C_{2,\rm node}\times C_{2,\rm comp})$
+となり，記載した像が得られる．
+\end{proof}
+
 \begin{remark}[一般ribbonを加える際に残る仮定]
 \label{rem:qa-tf-associativity-ribbon-warning}
 上のtraceの議論は，分岐四次形式が各fiberで非零であることを使う．

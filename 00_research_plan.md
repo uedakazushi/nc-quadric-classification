@@ -16,7 +16,7 @@
 
 **境界の圏論的障害も具体化した。** 二境界traitのgeneric像には $g_1=U^2-4t^rV^2,\ g_2=UV+V^2$（$r=1,2$）という全次数平坦な代数モデルがある。共通特殊fiberで固定二対象の全高次Extが $k$ となり、$D^b(\qgr B_0)$ に右Serre関手は存在しない。一般に、この中央二重平方表示族のH2条件は $\Delta_1\Delta_2\ne0$ と同値である。各形式の重根と、二形式間の共有根を区別する。
 
-**二次積付きtorsion-free標的を相対的に認識した。** 幾何fiberがsmooth/nodal/I2の標的 $\mathfrak T_{\rm nod}$ は有限型Artinでaffine有限表示対角を持つ。$H^0(M)=0$ のbalanced開は $[\overline P_{\rm nod}/G]$ に等価であり、$\overline P_{\rm nod}$ は積の根重複が高々二の二形式対。元の $\mathfrak N=[P/G]$ は両等方線の平方sectionがsquarefreeとなる開に一致する。任意非被約底でIsom sheaf・慣性を回復し、元の点曲線と同時符号も $\OO_C\oplus M$ から再構成できる。[標的の代数性と認識](papers/quiver-avatar/torsion_free_spectral_recognition.tex)。
+**二次積付きtorsion-free標的を相対的に認識した。** 幾何fiberがsmooth/nodal/I2の標的 $\mathfrak T_{\rm nod}$ は有限型Artinでaffine有限表示対角を持つ。$H^0(M)=0$ のbalanced開は $[\overline P_{\rm nod}/G]$ に等価であり、$\overline P_{\rm nod}$ は積の根重複が高々二の二形式対。元の $\mathfrak N=[P/G]$ は両等方線の平方sectionがsquarefreeとなる開に一致する。任意非被約底でIsom sheaf・慣性を回復し、元の点曲線と同時符号も $\OO_C\oplus M$ から再構成できる。固定した被覆への忘却fiberも長さ6の二次因子分解schemeで決定し、境界の長さ2・4の非被約構造と交換作用を保持した。[標的の代数性と認識](papers/quiver-avatar/torsion_free_spectral_recognition.tex)。
 
 **次の一手はFricke双対化の境界対応を曲線修正とともに定式化することである。** 節点spectral曲線上の二次積付きtorsion-free標的の有限型Artin性と、balanced部分の群商表示、元のnoncubic開の全忠実な認識は証明した。これは元の符号被覆を回収する射であり、非忠実なsmooth Fricke射の延長そのものではない。二traitの指定generic同型は、共有根では特殊曲線の型が違い、一致根対では各成分を収縮するため、そのまま族同型に延長しない。グラフ閉包・正規化と必要な半安定曲線修正を比較し、同型・慣性・pointingを保つ境界対応を調べる。別rotated pointing・全AS/QP群oidも残る。
 
