@@ -197,11 +197,28 @@ $\kappa_c,\kappa_d:E_f\to\PP^1$が定まり、
 従って$\kappa_c^*\OO(1)=F_c$、
 $\kappa_d^*\OO(1)=F_d$を直接証明
 （C \`prop:qa-point-mcm-matrix-pencils\`）。
-**次の核心**はこの二pencil・行列kernelの対応を
+**二つのrank-three隣接積の像も直接同定した。**
+noncubic normal helixの隣接合成
+$\mu_c,\mu_d$の像は、それぞれ二つのconic商
+$F_c,F_d$の対称積
+$\operatorname{Sym}^2H^0(E_f,F_c),\operatorname{Sym}^2H^0(E_f,F_d)$の
+$H^0(E_f,\OO_{E_f}(1))$内の像と一致し、
+\[
+  U_c=\langle u,v,c\rangle,\quad
+  U_d=\langle u,v,d\rangle,\quad
+  U_c\cap U_d=\langle u,v\rangle,\quad
+  U_c+U_d=(B_f)_1
+\]
+を得た（C \`prop:qa-point-mcm-composition-veronese\`）。
+Aの\`cor:normal-cubic-defect\`のmatrix-factorizationによる
+積の計算を利用しており、両隣接積の階数3と
+conic Veronese像の一致は明示的に確認した。
+**次の核心**は二つの像部分空間だけでなく、
 normal helix
 $(\pi B_f,\pi X_c,\pi B_f(1),\pi X_d(1))$の
-\emph{全有限directed End代数・積・O-pointing}に昇格させ、
-ASのSerre completionとpointed heartの復元を証明すること。
+全Hom空間・全合成・最小関係を
+$E_f$のfinite directed foundationと比較し、
+AS Serre completion・O-pointing・pointed heartの復元を証明すること。
 共有根境界ではisogenyはétaleでなくなり、
 $C_q$の非局所自由spectral moduleへ切り替える。
 
