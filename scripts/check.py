@@ -260,7 +260,7 @@ def math_checks() -> int:
     scripts = ("verify_quadric.py", "verify_pencil_tangent.py", "verify_reducible_quadruples.py", "verify_five_window_terminal.py", "verify_stack_symmetries.py", "verify_noncubic_antiserre_pivots.py",
                "verify_quiver_avatar_charts.py", "verify_quadric_first_order_roots.py",
                "verify_noncubic_gale_root.py", "verify_noncubic_central_hull.py",
-               "verify_lagrangian_recognition.py", "verify_noncubic_boundary.py")
+               "verify_lagrangian_recognition.py", "verify_clifford_pbw.py", "verify_noncubic_boundary.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
     for name in scripts:

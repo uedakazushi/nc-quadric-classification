@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.4（不変式の全証明は相対モジュライ別稿へ移管）
+% 2026-11-22 / v1.5（中心Clifford自由性を任意基底のmonic PBWで証明）
 \section{中央二重平方族の商スタックと慣性}
 \label{sec:noncubic-stack}
 
@@ -1271,17 +1271,41 @@ $[c,h]=[d,h]=0$ が直接従う。
 \]
 を使うと、任意の語は $C$ 上 $1,c,d,cd$ の
 線型結合に整理できる。従って右辺から $B$ への自然射は全射である。
-一方、交互語基底によって $B$ の各次数は $A$-自由であり、
-Hilbert 級数は $(1+z)/(1-z)^3$ である。
-右辺も $A$-自由で、その Hilbert 級数は
+この全射が単射でもあることを、係数環に被約性を要求しない
+monic な書換規則で直接確かめる。
+まず $A[u,v,h]$ を \emph{独立な} 中央変数 $h$ を加えた
+多項式環として、二つの非可換記号 $c,d$ に
 \[
- \frac{1+2z+z^2}{(1-z)^2(1-z^2)}
- =\frac{1+z}{(1-z)^3}
+ cc\rightsquigarrow f_1,\qquad
+ dd\rightsquigarrow f_2,\qquad
+ dc\rightsquigarrow h-cd
 \]
-と一致する。
-各次数では同じ階数の有限自由 $A$-加群の間の全射なので
-同型である。従って $C$ も本当に $B$ の多項式部分環であり、
-全表示は任意の底変更に両立する。
+という規則を課した代数 $\widetilde B$ を考える。
+語の長さと辞書式順序（$d>c$）を使えば、
+どの規則でも語の順序は真に下がるので書換は停止する。
+左辺がいずれも長さ二であるため、検討すべき重なりは
+$ccc,ddd,dcc,ddc$ の四つだけである。
+前二者は $f_1c=cf_1$、$f_2d=df_2$ に帰着する。
+残る二者はそれぞれ
+\[
+ (dc)c=(h-cd)c
+   =hc-c(h-cd)=f_1d=d(cc),
+\]
+\[
+ (dd)c=f_2c
+   =hd-(h-cd)d=d(dc)
+\]
+に帰着する。従って全ての重なりは合流し、
+monic 版の Diamond lemma の帰納的な標準形の議論により
+$\widetilde B$ は $A[u,v,h]$ 上
+$1,c,d,cd$ を自由基底に持つ。
+関係 $h=dc+cd$ から $\widetilde B$ と元の $B$ は互いに
+逆の自然な準同型を持つので同型である。
+特に中心多項式環の埋込みと階数四の自由性が同時に従う。
+全係数の恒等式としての monic な書換なので、
+冪零元を含む任意の基底変更後にも同じ証明が成立する。
+四つの重なりの検算は
+\path{computations/verify_clifford_pbw.py} で再現できる。
 \end{proof}
 
 \begin{proposition}[Clifford trace と相対 Serre 双加群]

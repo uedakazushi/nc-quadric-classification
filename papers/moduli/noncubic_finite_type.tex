@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-moduli.tex
-% 2026-11-22 / v1.47（非被約基底の横断例と閉部分条件を明示）
+% 2026-11-22 / v1.48（Clifford PBWとfpqc閉部分降下を分離）
 \section{noncubic 境界を横断する有限型効果性}
 \label{sec:noncubic-finite-type}
 
@@ -666,6 +666,62 @@ $\varphi_i:F(E_i)\simeq E_i^0$ を定める。負の $n$ には逆同型を使�
 
 
 
+\begin{lemma}[中央 Clifford 閉部分の普遍 Noetherian 性と忠実平坦降下]
+\label{lem:closed-clifford-fpqc-noetherian}
+$R_0$ を可換 Noetherian 環、$f_1,f_2\in R_0[u,v]_2$ とし、
+\[
+ B_0=R_0[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)
+\]
+と置く。任意の可換 Noetherian $R_0$-代数 $T$ について
+$B_0\otimes_{R_0}T$ は左右 Noetherian である。
+さらに $D$ を正の向きの $R_0$-線形 $\mathbb Z$-代数とし、
+全 $D_{ij}$ は有限 projective で任意基底変更と可換すると仮定する。
+有限個の affine \texorpdfstring{\'etale}{etale} 射
+$\operatorname{Spec}R_\nu\to\operatorname{Spec}R_0$ が被覆し、
+その上で $D$ の全 indexed Hom と合成が
+上の型の標準中央 Clifford 族の indexed Hom と同型になるなら、
+任意の可換 Noetherian $R_0$-代数 $T$ 上で
+$D_T$ の全 row と column は Noetherian となる。
+\end{lemma}
+\begin{proof}
+補題~\ref{lem:noncubic-relative-clifford-center} の
+任意基底上の PBW 表示により
+\[
+ B_0\otimes_{R_0}T
+ \cong T[u,v,h]\oplus T[u,v,h]c
+                  \oplus T[u,v,h]d\oplus T[u,v,h]cd.
+\]
+$T$ が Noetherian なので中心多項式環 $T[u,v,h]$ は
+Noetherian であり、その有限加群である上の非可換環も
+左右 Noetherian である。
+標準族の indexed Hom $\mathbb Z$-代数はその次数付き環の
+自由シフトの Hom を記述するので、各 row と column は
+対応する次数付き自由加群と同じ Noetherian 性を持つ。
+これは任意の Noetherian $T$ でも成立する。
+
+$R_*=\prod_\nu R_\nu$ と置く。有限個の flat \'{e}tale
+射の和が全射なので $R_0\to R_*$ は忠実平坦である。
+任意の Noetherian $R_0$-代数 $T$ についても
+$T\to T\otimes_{R_0}R_*$ は忠実平坦となり、
+後者は有限型 \'{e}tale $T$-代数の有限直積として
+Noetherian である。
+指定した indexed Hom の同型は任意の $T$ への基底変更後も
+全成分と合成について保たれる。
+従って各 row と column はこの忠実平坦な被覆の上で
+Noetherian である。
+
+右 row $P_i$ の任意の部分加群 $N\subset P_i$ に対し、
+$N\otimes_T(T\otimes_{R_0}R_*)$ は有限個の頂点同次元で
+生成される。それらの生成元をテンソルの有限和で表し、
+現れた有限個の $N$ の頂点同次元が生成する部分加群を
+$N_0$ とする。忠実平坦性から
+$(N/N_0)\otimes_T(T\otimes_{R_0}R_*)=0$ は $N=N_0$
+を意味する。従って $P_i$ は Noetherian。
+左 column にも同じ議論を適用する。
+この方法では被約な幾何点集合での同型だけでは足りず、
+\emph{閉部分の環 $R_0$ 上の実際の相対同型}を入力とする。
+\end{proof}
+
 \begin{lemma}[二つの cubic 開部分と noncubic 閉部分からの普遍 Noetherian 性]
 \label{lem:lg-two-rulings-universal-noetherian}
 $R$ を可換 Noetherian 環とし、有限 LG 認識開上の foundation と
@@ -747,41 +803,26 @@ $C_a$ と $C_b$ は、任意の Noetherian 基底変更後にも左右 Noetheria
 仮定 (3) の \'etale 局所標準化は、三次 minor の可逆性と
 $\det M=\det N=0$ の実際の等式から得られる。
 従ってこれは被約点集合上の標準化ではなく、$R/I$ 上の foundation の同型である。
-標準 noncubic 族の係数環を $R'$ とし、その環を
-\[
- B_0=R'[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2),
- \qquad h=cd+dc
-\]
-と書く。$u,v$ は中央であり、
-\[
- B_0=R'[u,v,h]\oplus R'[u,v,h]c
-       \oplus R'[u,v,h]d\oplus R'[u,v,h](cd)
-\]
-である（補題~\ref{lem:noncubic-relative-clifford-center}）。
-従って $B_0$ は Noetherian 中央環上の有限自由代数であり、
-任意の Noetherian $R'$-代数への底変更後も左右 Noetherian である。
+標準 noncubic 族の係数環を $R'$ と書く。
+補題~\ref{lem:noncubic-relative-clifford-center} は、
+冪零元を含む任意の係数環上でも
+$B_0=R'[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$ が
+中心 $R'[u,v,h]$ 上階数四の自由代数となることを保証する。
+ここでは $h=cd+dc$ であり、
+monic PBW の四つの重なりの検証は係数の被約性に依存しない。
 
-ここで標準族の根と $s$ を同一視する必要はない。
-補題~\ref{lem:nc-relative-normal-tilting} の相対 tilting により、
-標識付き四項 foundation の同型は、両側の相対 Morita 同値を通して
-四対象を同定し、相対 Serre 関手を保つ。
-四周期
-$E_{i+4}\simeq S^{-1}E_i[2]$ を用いると全対象列が同定される。
-各対象の同型で Hom を共役すれば、合成を保つ Hom $\mathbb Z$-代数の同型を得る。
-特に偶数制限は、標準族の
-$\operatorname{Hom}(\pi B_0(m),\pi B_0(n))$ からなる
-$\mathbb Z$-代数と同型である。
-標準族での Hom 計算は相対結果により $\check B_0$ と一致する。
-従って $C_{R'}$ の associated $\mathbb Z$-代数の全 row と column は
-Noetherian である。この結論は二周期化の選び方に依存しない。
-補題~\ref{lem:patch-graded-to-ungraded} を使うと、$C_{R'}$ 自身も
-左右 Noetherian となる。
-
-有限 affine \'etale 被覆の積を使えば、この Noetherian 性は
-$C/IC$ へ忠実平坦に降下する。
-同じ議論は $Z$ 上の任意の Noetherian 基底変更後にも成立する。
-ここで有限被覆を取れるのは、対象となる affine 基底が準コンパクトで、
-標準化が有限表示の \'etale 局所操作からなるためである。
+標準族の根と選んだ $s$ を同一視する必要もない。
+補題~\ref{lem:nc-relative-normal-tilting} の相対 tilting が
+最初の四対象・合成・相対 Serre 関手を同定する。
+両者の四周期 $E_{i+4}\simeq S^{-1}E_i[2]$ を使えば
+全 indexed Hom $\mathbb Z$-代数が頂点ごとの共役で一致し、
+偶数部分に制限しても同じである。
+そこで補題~\ref{lem:closed-clifford-fpqc-noetherian} を、
+この \'{e}tale 局所的な \emph{相対} 同型に適用する。
+結果として $C/IC$ は左右 Noetherian であり、
+任意の Noetherian $R/I$-代数への基底変更後も左右 Noetherian となる。
+忠実平坦降下の対象は各 row と column であり、
+点ごとの Noetherian 性をそのまま降下したものではない。
 
 最後に定理~\ref{thm:patch-noetherian} を、環 $C$ と中心イデアル
 $I=(a,b)$ に適用する。
