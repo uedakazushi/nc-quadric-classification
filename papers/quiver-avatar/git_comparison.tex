@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v1.7（比較の残余問題を慣性・接射へ整理）
+% 2026-11-22 / v1.8（点対象による一般pointed忘却の慣性単射）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -339,6 +339,66 @@ OU \cite[Theorem 1.1(4)]{OU2014}の
 四点を持つ。群oidの点ごとの慣性も同型なので、
 粗空間での四点とスタックの幾何fiberの四対象は
 この開で一致する。
+\end{proof}
+
+\begin{proposition}[一般geometric quintupleの有限慣性はpointed忘却で消えない]
+\label{prop:qa-ou-generic-inertia-faithful-to-h2}
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia} の
+正則半単純な滑らかな非線型geometric quintuple
+$t$ と、その対応するpointed対象
+$y=\overline{\mathcal F}_{\mathrm{geo}}(t)\in\HHstack(k)$
+を考える。
+その$\mu_2^2$-有限慣性からpointed exact自己同値群への
+準同型
+\[
+ \operatorname{Stab}_{G_{\mathrm{eff}}}(t)
+       \longrightarrow\operatorname{Aut}_{\HHstack}(y)
+ \tag{OU-H2-I}\label{eq:qa-ou-h2-generic-inertia-injection}
+\]
+は単射である。
+従ってこの正則半単純滑らかな稠密開への制限では、
+剛体化quintupleから$\HHstack$への射
+~\eqref{eq:qa-geometric-cubic-rigid-map}は
+代数空間に表現可能である。
+ただしこの命題は標的の\emph{全}慣性群、
+接写像の階数、あるいは忘却射のétale性・次数を決定しない。
+\end{proposition}
+\begin{proof}
+Van den Berghの幾何的cubic $\mathbb Z$-代数から
+その点曲線$C$のtwisted homogeneous coordinate
+$\mathbb Z$-代数への標準商
+$D\twoheadrightarrow D_{\mathrm{geom}}$ が存在する
+\cite[Theorem 5.5.6]{VdB2011}。
+その商のtails圏は$\coh C$と同値であり、
+$\qgr D$へexactかつfully faithfulに埋め込まれる。
+本研究の分類主稿でも、二周期偶数環への移送後の
+正則正規商$B/(h)$で同じ包含を証明している
+\cite{QuadricIntrinsic2026}。
+右加群・添字反転による
+$C_{ij}=D_{-j,-i}$の規約でも、
+この幾何的部分圏と点対象の同型類の区別は保たれる。
+
+幾何的商$D\to D_{\mathrm{geom}}$は、
+許容四つ組$(C,\mathcal L_0,\mathcal L_1,\mathcal L_2)$の
+切断乗法から構成するため、その四つ組の自己同型に
+関して自然である。命題
+~\ref{prop:qa-ou-generic-quintuple-finite-inertia} の
+非単位元は$C$上の非零二捩れ平行移動
+$p\mapsto p+\xi$を誘導する。
+従って$\coh C$からの点対象$i_*(k(p))$は
+$i_*(k(p+\xi))$へ移る。
+平行移動に固定点はなく、$k(p)$と$k(p+\xi)$は
+$\coh C$内で非同型である。
+fully faithful性により、その像もpointed Abel圏で
+非同型となる。
+ゆえにこの自己同値は恒等関手と自然同型ではなく、
+慣性準同型の核には非単位元がない。
+
+正則半単純開でsource慣性は有限étaleであり、
+同じ議論を任意の代数閉幾何点に適用できる。
+したがって慣性射が単射となり、
+代数スタックの射の表現可能性の判定から
+この開で代数空間に表現可能である。
 \end{proof}
 
 \begin{remark}[残るpointed射の慣性とroot deck群の相違]
