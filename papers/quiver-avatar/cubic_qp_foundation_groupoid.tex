@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.38。strict square交換からのrigidified QP商のcoherent S2作用。
+% 2026-11-23 / v4.39。線束値massゲージの降下とstrict square S2作用。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -374,6 +374,110 @@ $x$に加えた$q$の係数から$t$が復元される．
 $\lambda$が単元なら$x$のスカラー$a$から$t$が復元される．
 単位ideal条件によりこれらがZariski局所に適用でき，
 作用は単射である．
+\end{proof}
+
+\begin{proposition}[massゲージ群の全frame変更と線束値降下]
+\label{prop:qa-mass-gauge-line-bundle-descent}
+局所的に短関係$r=q+\lambda x$を考える．
+ここで$x$は追加対角矢の局所frame，
+$q$は隣接矢だけの二段道とする．
+同じ関係線と対角矢の別の局所表示を
+\[
+ x'=d x+h,\qquad r'=c r,\qquad
+ q'=c q-\frac{c\lambda}{d}h,\qquad
+ \lambda'=\frac{c}{d}\lambda ,
+ \tag{RF}\label{eq:qa-mass-reframing}
+\]
+と書く．ただし$c,d$は局所的な単元，
+$h$は隣接矢の二段道であり，
+四辺の矢束の一般線形基底変更も同時に許す．
+$h$はその基底変更後の道として読む．
+massゲージを$x\mapsto x+t r$と表示すると，
+新frameでは
+\[
+ t'=\frac dc\,t,\qquad
+ 1+\lambda't'=1+\lambda t
+ \tag{MT}\label{eq:qa-mass-gauge-reframing}
+\]
+となる．
+この変換は全係数環上の群スキーム同型で，
+重なりの合成について厳密なcocycleを満たす．
+
+より内在的には，対角矢のframe線束を$\mathscr X$，
+短関係のframe線束を$\mathscr R$とし，
+$\mathscr L=\mathscr Hom(\mathscr X,\mathscr R)$と置く．
+mass係数は
+$\lambda\in\Gamma(S,\mathscr L^\vee)$であり，
+ゲージkernelは，線束のベクトル群$\mathbb V(\mathscr L)$の
+\[
+ \mathcal U_{\lambda,\mathscr L}
+ =\left\{t\in\mathbb V(\mathscr L):
+       1+\langle\lambda,t\rangle\in\mathbb G_m\right\}
+ \tag{UL}\label{eq:qa-mass-gauge-intrinsic-line-group}
+\]
+という開部分群へ降下する．群法則は
+\[
+ t\star s=t+s+\langle\lambda,t\rangle s
+\]
+であり，階数一なので可換である．
+$\lambda$が nowhere vanishing な開では
+$a=1+\langle\lambda,t\rangle$により
+標準的に$\Gm$となる．
+$\lambda=0$の閉部分では$\mathbb V(\mathscr L)$となり，
+この加法群は$\mathscr L$が非自明なら
+大域的な定数$\mathbb G_a$とは限らない．
+標数零で$\lambda^{\otimes N}=0$なら，
+補題~\ref{lem:qa-mass-gauge-nilpotent-log}の打切り対数は
+frameによらない線束値多項式となり，
+$\mathcal U_{\lambda,\mathscr L}
+ \simeq\mathbb V(\mathscr L)$を与える．
+二つのmassには各々この構成が適用される．
+\end{proposition}
+\begin{proof}
+既存のmassゲージの公式は
+$x\mapsto(1+\lambda t)x+tq=x+t r$である．
+この作用は隣接矢とその道$h$を固定するので，
+\[
+ \gamma_t(x')
+ =d(x+t r)+h=x'+d t r
+ =x'+(d/c)t r' .
+\]
+これが式~\eqref{eq:qa-mass-gauge-reframing}を与える．
+局所表示~\eqref{eq:qa-mass-reframing}の下で
+$r'=q'+\lambda'x'$なので，
+新しい$x'$に対しても同じ形の作用である．
+$\lambda't'=\lambda t$は単元条件を保存し，
+\[
+ \frac dc(t+s+\lambda ts)
+ =t'+s'+\lambda't's'
+\]
+なので群法則も保つ．
+frame変更の合成は二つの単元比の積であり，
+道のずらし$h$は$t$の変換に寄与しない．
+従って群oidの重なりでcocycleが厳密に成立する．
+
+$x,r$のframeを替えたとき，
+$\mathscr Hom(\mathscr X,\mathscr R)$の座標は
+$(d/c)t$，双対線束の$\lambda$の座標は
+$(c/d)\lambda$へ変わる．
+従って$1+\langle\lambda,t\rangle$と
+上の群法則は全局所表示を通じて降下する．
+zero locusでは群法則の二次項が消える．
+$\lambda$が非消滅なら
+$\lambda:\mathscr L\xrightarrow{\sim}\OO_S$により
+$\mathbb V(\mathscr L)$を自明化し，$a$が群同型を与える．
+
+最後に$\lambda^{\otimes N}=0$なら
+\[
+ z=\sum_{j=1}^{N}
+   \frac{(-1)^{j-1}}j
+     \langle\lambda,t\rangle^{j-1}t
+\]
+は$\mathscr L$値の多項式で，逆は
+$\sum_{j=1}^{N}
+ \langle\lambda,z\rangle^{j-1}z/j!$である．
+標数零の打切り$\log$と$\exp$の恒等式により
+$\star$を加法に移し，frame変更とも可換する．
 \end{proof}
 
 \begin{lemma}[冪零mass上の滑らかなゲージの加法座標]
