@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.43。反対normalの非先頭AZと古典quadricの独立確認。
+% 2026-11-23 / v4.44。双対normalの相対評価coneと線束値比較を独立監査。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1608,40 +1608,51 @@ tilting foundationである．
 perfect反同値で逆順にすれば$Y$もfull strongで，
 そのEndが$\Lambda^{\mathrm{op}}$となる．
 
-heart所属を調べるため
+heart所属を調べるため，まず
 \[
- K=\mathbb D(t^{-1}Z_1)
+ F=\operatorname{Cone}
+  \bigl(\operatorname{Hom}(E_0,E_1)\otimes E_0
+       \xrightarrow{\rm ev}E_1\bigr)[-1],
+ \qquad K=\mathbb D(t^{-1}Z_1)
 \]
-と置く．
-各幾何fiber上でのAS squareの全整数評価・逆mutation
-（補題~\ref{lem:qa-as10-all-index-mutual-inverse}）
-を反対圏へ移すと，
-$K$は反対squareのもう一方のnormal cone
+を相対perfect圏で構成する．
+評価射の\emph{相対cone}を先に取ることで，
+幾何fiberで短完全な評価列を
+基底上で無条件に短完全とする推論を避けられる．
+補題~\ref{lem:qa-dual-normal-relative-evaluation-cone}
+により各幾何fiberの例外対象の同型
+$F_{\bar s}\simeq(t^{-1}Z_1)_{\bar s}$は，
+相対的には可逆層$L$を保った
 \[
- Z_2^\vee=
+ L\otimes F\simeq t^{-1}Z_1,\qquad
+ \mathbb DF\simeq
+ Z_2^\vee:=
  \operatorname{Cone}\bigl(
  Q_2\to\operatorname{Hom}(Q_2,Q_3)^\vee\otimes Q_3
  \bigr)
 \]
-と同型である．この比較は古典fiberも含む．
-$Z_2^\vee$はsquare/normalの相対mutation
-（定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}）
-および全$H_2$の実現可能開によって，
-実際に$\mathcal C^\vee$の基底平坦compact対象である．
-$K$も相対perfectであるから，
-補題~\ref{lem:qa-relative-exceptional-line-comparison}
-の線束値評価を使うと，
-ある可逆層$L$について相対同型
-$K\simeq Z_2^\vee\otimes L$を得る．
-従って$K$は同じheart内にある．
-相対反同値の周期公式
+という同型へ持ち上がる．したがって
+\[
+ K\simeq Z_2^\vee\otimes L^\vee
+\]
+が\emph{実際の相対perfect圏}で成立する．
+$Z_2^\vee$は反対squareの別normal窓の第四対象であり，
+全$H_2$の相対認識によって同じ
+$\mathcal C^\vee$の基底平坦compactなheart対象である．
+よって$K$も同じheartに属す．
+周期公式
+$\mathbb Dt^{-1}\simeq t^\vee\mathbb D$
 （補題~\ref{lem:qa-relative-dual-reverses-antiserre}）
-は$\mathbb Dt^{-1}\simeq t^\vee\mathbb D$なので
+から
 \[
  \mathbb DZ_1\simeq(t^\vee)^{-1}K
 \]
-である．$t^\vee$はheart上の完全自己同値であり，
-$\mathbb DZ_1$も基底平坦compactなheart対象となる．
+を得る．$t^\vee$はheart上の完全自己同値なので，
+$\mathbb DZ_1$も基底平坦compactである．
+全ての比較は有限perfectなcone・双対・tensorと
+相対例外対象の線束値比較で構成されるから，
+非被約・非平坦なものを含む本稿の
+任意基底変更と可換する．
 これで$Y$の全項の所属を確認した．
 
 重要なのは，$\bigoplus Y_i$が構造対象
