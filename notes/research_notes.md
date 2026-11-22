@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.07（A v1.69・20節、B v0.39・31節、C v3.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.08（A v1.69・20節、B v0.39・31節、C v3.4）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
@@ -21,7 +21,66 @@ curve上のcanonical完全列は
 `square_rotated_foundations.tex` と
 `canonical_helix_complexes.tex` に証明を保持。
 
-**検証したEuler数値と非被約avatarのrank壁（C v3.3）。**
+**内在的noncubic heartの直接認識に必要な2-isogenyの区別（Cで新証明）。**
+中央二重平方環 $B_f$ の可換点曲線を
+$E_f=\{c^2=f_1(u,v),d^2=f_2(u,v)\}\subset\PP^3$、
+二根対のspectral曲線を
+$C_q=\{y^2=f_1f_2\}$とする。
+根対が非交差ならともにsmooth genus1だが
+$E_f\to C_q,\ y=cd$は同時符号$\mu_2$の
+**自由商による2-isogeny**であり、一般に同型ではない。
+$E_f$上の二つの個別符号商はsmooth conic
+$Q_d=\{d^2=f_2\}$、$Q_c=\{c^2=f_1\}$。
+それぞれの次数一線束のpullbackを$F_d,F_c$とすると
+$F_d^2=F_c^2=\OO_{E_f}(1)$、
+$P_E=F_cF_d^{-1}\in\Pic^0(E_f)[2]\setminus\{0\}$。
+$\tau(c,d)=(-c,-d)$は$P_E$によるtranslationなので
+$(E_f,F_d,F_c,P_E)$は二重壁のsquare avatar。
+一方、$M_C=(r_*\OO_{E_f})^-$は
+$C_q$上の非零2torsionで、
+$\ker(r^*:\Pic^0(C_q)\to\Pic^0(E_f))
+=\{0,M_C\}$。
+よって$(C_q,M_C)\mapsto(E_f,P_E)$は
+非零2torsion付き楕円曲線の**双対2-isogeny involution**。
+（C thm:qa-point-spectral-dual-two-isogeny,
+cor:qa-point-spectral-atkin-lehner。）
+以前のspectral構成のavatarは$C_q$上であり、
+$B_f$の点曲線は$E_f$上。
+両者の同型を仮定して有限EndやO-pointingを比較してはならない。
+
+**非同型性の厳密数値例。**
+$f_1=x(x-1),f_2=(x-2)(x-3)$なら
+$C_q:y^2=x(x-1)(x-2)(x-3)$、
+$E_f$は$t=d/(x-3),z=(t^2-1)c$によって
+$z^2=6t^4-7t^2+2$へ双有理化される。
+二進四次不変式$I,J$はそれぞれ
+$(13,-70)$、$(193,-5362)$で、
+$j(C_q)=35152/9$、$j(E_f)=28756228/3$。
+両者は相異なるが、
+$\Phi_2(j(C_q),j(E_f))=0$を厳密整数算術で確認。
+MathMIT Sutherlandの古典的modular polynomial $\Phi_2$ の
+明示係数を一次webページで確認。
+検算はcomputations/verify_rootpair_resolvent_spectral.pyに統合。
+これは多項式等式の計算で、相対pointed同値の証明ではない。
+
+**核心的な未解決部分。**
+E_fの二pencilで得られるsquare avatarと
+C_qのspectral avatarは
+2-isogenyのdual kernelで結ばれるが、
+B_fの**normal helix**からのAS avatarが
+どちらに正確に対応するかは未証明。
+とくにB_fの非自由MCM二型$X_c,X_d$と
+二つのconic商の$F_c,F_d$の有限directed Hom
+および積を直接比較し、normal helixの
+$\pi B_f$がavatar側でどのexceptional対象へ対応するかを
+確認することが直近の課題。
+この順序を守らずC_q上のavatarをB_fの点曲線と同一視すると、
+今回のj不一致例で破綻する。
+一根共有または一致根対では同時符号商は
+有限étale isogenyでなく、spectral M_Cが
+節点で非局所自由になることを用いる。
+
+**検証したEuler数値と非被約avatarのrank壁（C v3.4）。**
 ASsq/ASrsq最小分解の四相Euler漸化式から
 $H_r(z)=\sum_{n\ge0}\dim A_{i,i-n}z^n$を作ると、
 全位相で
@@ -64,7 +123,7 @@ underlying algebraのgroupoidとは異なる。
 一般の12本矢QPに独立ASクラスの全分類は主張しない。**
 P(1,1,2)のrelation QPはDWZのmutation頂点を持たない反例。
 
-**二重壁とcubic到達可能性の完全判定（C v3.3）。**
+**二重壁とcubic到達可能性の完全判定（C v3.4）。**
 二つの合成$\mu_G,\mu_F$が同時に階数3へ落ちる
 $Z=D_F\cap D_G$は
 $P^2\simeq O_D,\ P\ne O_D,\ G\simeq FP$と同値。
