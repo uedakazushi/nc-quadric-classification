@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v4.0（Artin基底での二normal ruling復元とmutation整合）
+% 2026-11-22 / v4.1（全H2の内在的normal ruling選択の有限étale二重被覆）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -859,6 +859,166 @@ $\mathcal E_A^Y$と同型である。
 二つのいずれかへ移し、その還元に対応する
 選択は一意なので、形式的な二択の置換と両立する。
 以上はArtin形式変形に限った議論である。
+\end{proof}
+
+\begin{theorem}[内在的二ruling選択の大域有限étale二重被覆]
+\label{thm:qa-global-two-ruling-etale-cover}
+標数零の内在的有限型Artinスタック$\HHstack$に対し、
+二つのnormal ruling foundationのうち一方を選ぶ
+スタック$\mathfrak H_2^{\mathrm{rul}}$が存在し、
+\[
+ \pi_{\mathrm{rul}}:
+ \mathfrak H_2^{\mathrm{rul}}\longrightarrow\HHstack
+ \tag{Rul-2}\label{eq:qa-global-ruling-cover}
+\]
+は\emph{代数空間に表現可能な有限étale次数二}の射である。
+そのcanonical deck対合は二つのnormal foundationを交換し、
+\[
+ [\mathfrak H_2^{\mathrm{rul}}/S_2]
+       \xrightarrow{\ \sim\ }\HHstack
+ \tag{Rul-quot}\label{eq:qa-global-ruling-quotient}
+\]
+が\emph{全cubic/noncubic locusを含む
+Artinスタック上}で成立する。
+
+より具体的には、論文Bの有限型smooth全射atlas
+$U\to\HHstack$を取ると、その各成分には
+相対full normal foundation
+$\mathcal E^X=(\mathcal O,X,M,Z)$があり、
+相対mutationで
+$\mathcal E^Y=(\mathcal O,Y,M,Z')$
+が得られる。
+被覆~\eqref{eq:qa-global-ruling-cover}の$U$への
+引戻しは、これら二つで標識された
+$U\amalg U\to U$と同型である。
+従って非被約な任意の基底変更に対しても
+局所的に二つの選択を与える。
+
+ただし、ここで大域的に構成したのは
+\emph{内在的な二つのnormal foundationの選択被覆}であり、
+$\mathfrak H_2^{\mathrm{rul}}$を有限代数表示スタック
+$\mathfrak F_0$の\emph{開部分}として同定したこと、
+あるいは$[\mathfrak F_0/S_2]$のある開部分全体を
+$\HHstack$と同定したことはまだ主張しない。
+\end{theorem}
+\begin{proof}
+論文Bの
+\cite[\texttt{thm:global-h2-smooth-finite-type},
+\texttt{thm:cubic-smooth-open},
+\texttt{cor:noncubic-effective-smooth-neighborhood}]{QuadricModuli2026}
+により、有限型のsmooth全射
+$q:U\to\HHstack$を、各成分上にflat compactな
+full normal geometric helixを持つように取れる。
+非cubic点では有限foundation表示のétale近傍から、
+cubic点では相対geometric quintupleと可換二次曲面の
+有効近傍から得る。
+各四項窓$\mathcal E^X$は基底変更に対して
+strong exceptionalで、相対$\RHom$は有限局所自由である。
+論文B
+\cite[\texttt{prop:relative-ruling-involution},
+\texttt{prop:ruling-involution-mutation}]{QuadricModuli2026}
+の二つのkernel/cokernelを取れば、
+非被約な任意底変更と可換に
+もう一方の$\mathcal E^Y=\tau\mathcal E^X$を得る。
+各幾何ファイバーでは
+\[
+ \RHom(X,X)=k[0],\quad
+ \RHom(X,Y)=\RHom(Y,X)=0,\quad
+ \RHom(Y,Y)=k[0]
+ \tag{Rul-orth}\label{eq:qa-ruling-relative-orthogonality}
+\]
+である。これは同論文
+\cite[\texttt{prop:ruling-involution-mutation}]{QuadricModuli2026}
+のmutation計算により従う。
+
+smooth groupoid $R=U\times_{\HHstack}U
+\rightrightarrows U$を取る。
+$R$上には二つの相対pointed族の
+普遍exact同型$\varphi$がある。
+$p_1,p_2:R\to U$を射影とし、
+\[
+ P=\RHom_R(\varphi(p_1^*X),p_2^*X)
+\]
+という相対導来Hom複体を考える。
+$\HHstack$の相対perfect/smooth proper性と
+foundationのflat compact性により$P$はperfectで、
+任意の基底変更と可換である。
+各幾何点で$\varphi(X)$は二つの内在的rulingの
+どちらかに同型だから、
+式~\eqref{eq:qa-ruling-relative-orthogonality}より
+$P$の導来幾何fiberは$k[0]$または$0$である。
+perfect複体の局所自由性の判定から、
+$P$は$R$上で局所的に
+$\mathcal O_R[0]$または$0$と準同型であり、
+前者の座$R_{\mathrm{same}}$と
+後者の座$R_{\mathrm{swap}}$は
+互いに補な\emph{開かつ閉}の部分空間をなす。
+ここで「すべての幾何fiberでExtが零または$k$」
+という事実だけでなく、相対perfect性と
+\emph{導来}基底変更を使っている。
+
+従って二つのrulingに対する
+普遍pointed同型の作用は、代数的で局所定数な
+写像
+\[
+ c:R\longrightarrow S_2=\{1,\tau\}
+\]
+となる。合成と恒等に関するcocycle条件は、
+三重fiber積$U\times_{\HHstack}U
+\times_{\HHstack}U$の全幾何点での
+二択の置換から従う。
+等しい開閉部分空間の判定なので、
+この条件は非被約基底上にも成立する。
+
+自明な有限étale二重被覆$U\amalg U\to U$に
+$c$で与える$R$-descent datumを置く。
+有限étale射のfppf効果的降下
+（\href{https://stacks.math.columbia.edu/tag/0BLY}
+ {Stacks Project, Tag 0BLY, Lemma 95.6.1}）
+により、これは$\HHstack=[U/R]$上の
+代数空間に表現可能な有限étale次数二射
+$\pi_{\mathrm{rul}}$へ降下する。
+$U\amalg U$上の交換対合は$c$と可換だから
+canonicalな$S_2$作用として降下し、
+各幾何fiberに自由・推移的に作用する。
+よって$\pi_{\mathrm{rul}}$は$S_2$-torsorであり、
+その商スタックは$\HHstack$と同値である。
+
+この構成は選んだatlasや基底の選択に依存しない。
+実際、共通smooth細分上では、二つの選択が
+$\{X,Y\}$として内在的に特徴付けられ、
+上の開閉分解とcocycleが一意だからである。
+また二つの選択の個別の線型化・線束twistは
+ここでは標識に加えない。
+それらを含む有限代数表示との相対同一視は
+別の比較課題として残す。
+\end{proof}
+
+\begin{corollary}[一cubic境界を横断する内在的二sheetの実現]
+\label{cor:qa-ruling-cover-one-cubic-extension}
+式~\eqref{eq:qa-ou-one-cubic-divisor}の
+一cubic楕円点の任意の有限型smooth近傍上でも、
+$\pi_{\mathrm{rul}}$は有限étale次数二のままである。
+その二つの幾何sheetは、
+一つのcubic normal foundationと、
+もう一つの\emph{noncubic} normal foundationの選択である。
+従って系~\ref{cor:qa-ou-one-cubic-fiber-and-nonfiniteness}
+で示した「有限étale次数二として延長できない」という
+障害は、\emph{quintupleだけから作る}忘却射
+の障害であって、normal foundation全体の
+選択被覆の障害ではない。
+\end{corollary}
+\begin{proof}
+前定理の有限étale被覆をこの近傍へ基底変更する。
+論文Bの二foundationの内在性と
+\cite[\texttt{lem:elliptic-two-reflections}]{QuadricModuli2026}
+の$\eta=2\delta$の計算から、
+一方がcubic、他方がnoncubicと分かる。
+二つのnormal foundationは
+Artin基底でそれぞれ一意に持ち上がる
+（命題~\ref{prop:qa-ou-formal-two-ruling-lifts}）。
+従って有限étale被覆の二sheetは
+形式変形でも境界を越えて維持される。
 \end{proof}
 
 \begin{corollary}[$j=0$の$A_4$点の三次元接表現と粗形式商]
