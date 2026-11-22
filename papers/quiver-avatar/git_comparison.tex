@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.6（一般二ruling非同型条件に2捩れ除外を補充）
+% 2026-11-22 / v2.7（ruling交換の正確な二捩れ特別座を決定）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -601,6 +601,84 @@ Lemma 68.21.1}を標的のsmooth atlas上で適用し、
 étale降下を用いて標的の稠密開へ縮めると有限となる。
 もともとétaleだから、その開では有限étaleである。
 その次数は上で示した二である。
+\end{proof}
+
+\begin{proposition}[楕円型のruling交換自己同値の正確な二捩れ条件]
+\label{prop:qa-elliptic-ruling-swap-two-torsion}
+$k$を標数零の代数閉体とし、
+滑らかな楕円許容四つ組$U=(E,L_0,L_1,L_2)$の
+$\eta=[L_1]-[L_0]$、$\delta=[L_2]-[L_0]$が
+\[
+ j(E)\ne0,1728,\quad
+ \delta\ne0,\quad \eta\notin\{0,\delta,2\delta\}
+\]
+を満たすとする。特に$U$とruling交換後の
+$R(U)$は両方ともgeometric cubic表示を持つ。
+このとき、次の条件は同値である。
+\[
+ \begin{gathered}
+ \text{$U$と$R(U)$が曲線同型を介して同型な四つ組である},\\
+ \text{対応するpointed対象に二つのnormal foundationを
+ 交換する自己同値がある},\\
+ \delta\in E[2]\quad\text{または}\quad
+ \eta-\delta\in E[2].
+ \end{gathered}
+ \tag{OU-swap-locus}\label{eq:qa-ou-elliptic-ruling-swap-locus}
+\]
+したがって一般二重忘却の二つのsheetは、
+少なくとも幾何同型類の上ではこの二つの閉条件で
+一致し得る。しかし、これだけから
+スタック射の分岐や有限étale性の失敗は結論しない。
+
+さらに上の条件を満たす点が
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}の
+正則半単純領域にも属するとき、
+内在的pointed自己同値群は、
+指定foundationを保つ$\mu_2^2$を指数二の部分群として持つ。
+従って全幾何的慣性の位数は八である。
+群拡大の分裂型や法方向への作用は
+この命題では決定しない。
+\end{proposition}
+\begin{proof}
+論文B
+\cite[\texttt{lem:elliptic-two-reflections}]{QuadricModuli2026}
+によるruling交換は
+$(\eta,\delta)\mapsto(2\delta-\eta,\delta)$である。
+任意の楕円曲線の自己同型はtranslationと
+$\epsilon\in\Aut(E,0)$の合成であり、
+translationは$\Pic^0(E)$の差に自明に作用する。
+従って二四つ組が同型なら
+\[
+ \epsilon(\delta)=\delta,\qquad
+ \epsilon(\eta)=2\delta-\eta
+ \tag{OU-swap-eq}\label{eq:qa-ou-ruling-swap-epsilon}
+\]
+が必要である。
+逆にこの条件が成立すれば、まず
+$[2]:E\to E$の全射性でtranslationを選んで
+最初の次数二線束を一致させる。
+二つの差が一致しているため残りの次数二線束も一致し、
+四つ組同型が得られる。
+$j(E)\ne0,1728$では$\Aut(E,0)=\{\pm1\}$である。
+$\epsilon=1$なら式~\eqref{eq:qa-ou-ruling-swap-epsilon}
+は$2(\eta-\delta)=0$と同値、
+$\epsilon=-1$なら同式は$2\delta=0$と同値である。
+よって第三条件と第一条件は同値となる。
+
+第一条件と第二条件の同値は、論文Bの
+\cite[\texttt{cor:two-intrinsic-foundations},
+\texttt{cor:h2-point-groupoid-foundation}]{QuadricModuli2026}
+による。二つのnormal foundationは全ての候補を尽くし、
+その相対mutationは実際のpointed exact同値に対応する。
+四つ組同型はnormal helixの全窓を復元するから、
+ruling交換自己同値を与える。
+逆にそのような自己同値は二四つ組の同型を誘導する。
+
+最後に正則半単純領域で指定foundationを保つ自己同値群は、
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}と
+上記groupoidの全充満性から$\mu_2^2$である。
+ruling交換成分は存在するときこの部分群とは異なる
+一つの剰余類となるため、全慣性は位数八である。
 \end{proof}
 
 \begin{theorem}[内在的H2の稠密開のquintuple商表示]
