@@ -1,7 +1,15 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.85。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.86。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## Artin targetへの良モジュライ射と構造頂点の障害
+
+Alper, *Good moduli spaces for Artin stacks*, Ann. Inst. Fourier 63(6) (2013), 2349–2402, [doi:10.5802/aif.2833](https://doi.org/10.5802/aif.2833) の [刊行本文](https://www.numdam.org/article/AIF_2013__63_6_2349_0.pdf) を2026-11-23に一次確認した。Remark4.4はArtin targetについてのgood moduli space morphism、Proposition3.10(v)はcohomological affinenessのfaithfully-flat降下、Proposition4.7はbasechange/descent、Example12.9はlinearly reductive affine quotientを扱う。引用キー `AlperGoodModuli2013` を刊行版用に追加し、旧arXiv v3の `Alper2009` の定理番号を変更していない。
+
+Cの具体的な追加は、Frickeの自然な順序付き延長をこの意味の平坦な良モジュライ射と同定し、sourceのDM開へ制限すると直像完全性を失うことを明示する点である。非順序射はgeneric O直像のrankが2なので同じ結論にならない。商・不変式一般論の新規主張とはしない。
+
+Noncubic spinor pointingの排除は、二周期point moduleとh局所化の直接証明を用いる。反Serre生成の必要性は既存の次数1生成・Veronese・AZ再構成を入力とする。今回の具体的な貢献はsquare/rotated/最小AS10の全四位相の判定であり、一般Pの全avatar、任意のexceptional対象の標識分類へ拡大しない。この排除と既存のpoint-module分類との包括的新規性比較は未完了。
 
 ## 境界graph・自由符号商・構造層の入力
 

@@ -1,0 +1,221 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 日本語 LuaLaTeX。2026-11-23 / noncubic構造頂点の全四位相。
+\section{Noncubic avatarの別構造頂点と反Serre生成障害}
+\label{sec:qa-spinor-pointing-obstruction}
+
+本節は，非自明二捩れavatarに付随する同じAbel圏で
+構造対象を変えた場合を扱う．
+定理~\ref{thm:qa-point-all-noncubic-pointed}が認識した
+最小十本矢型の一番頂点に対し，零番頂点を構造対象とする組は
+強い$\HH$には属さない．
+対応するrotated型の零番頂点についても同じ結論を得る．
+障害は曲線上の線束の数値ではなく，
+ある非零point moduleが構造対象の反Serre軌道から見えないことである．
+
+\subsection{二周期point moduleとspinorの直交性}
+
+$k$を標数零の代数閉体，$f_1,f_2\in k[u,v]_2$を
+それぞれsquarefreeな二次形式とする．
+二形式の共有根および根対一致を許す．
+中央二重平方環を
+\[
+ B=B_f=k\langle u,v,c,d\rangle/
+   (u,v\text{ は中心的},\ c^2=f_1,\ d^2=f_2)
+\]
+と書き，$h=cd+dc\in Z(B)_2$と置く．
+$f_1=-\ell_1\ell_2$, $f_2=-m_1m_2$と因数分解し，
+式~\eqref{eq:qa-point-mcm-matrices}の右$B$加群
+\[
+ X_c=\coker\begin{pmatrix}c&\ell_1\\\ell_2&-c\end{pmatrix},
+ \qquad
+ X_d=\coker\begin{pmatrix}d&m_1\\m_2&-d\end{pmatrix}
+\]
+を用いる．両余核は次数零に二つの生成元を持つ．
+
+\begin{lemma}[二周期point moduleが与える直交対象]
+\label{lem:qa-spinor-period-two-point-orthogonality}
+次数付き右$B$加群$Q_c=\bigoplus_{j\ge0}ke_j$を
+$\deg e_j=j$，$Q_cu=Q_cv=0$および
+\[
+ e_{2j}c=e_{2j+1},\quad e_{2j+1}c=0,
+ \qquad
+ e_{2j}d=0,\quad e_{2j+1}d=e_{2j+2}
+ \qquad(j\ge0)
+\]
+で定義する．$Q_d$は$c,d$を交換した加群とする．
+これらは一元生成のpoint moduleで，$\pi Q_c,\pi Q_d$は非零である．
+すべての整数$n$について
+\begin{equation}
+ \Hom_{\qgr B}(\pi X_c(-2n),\pi Q_c)=0,
+ \qquad
+ \Hom_{\qgr B}(\pi X_d(-2n),\pi Q_d)=0
+ \label{eq:qa-spinor-point-orthogonality}
+\end{equation}
+が成り立つ．
+\end{lemma}
+\begin{proof}
+$u=v=0$上では$f_1=f_2=0$なので，上の作用は
+$c^2=d^2=0$を満たし，$B$加群を定める．
+$e_0$から$c,d$を交互に作用させて全基底を得る．
+各次数の次元は一であるから$Q_c$は有限生成で無限次元，
+したがって$\pi Q_c\ne0$である．また
+\[
+ e_jh=e_{j+2}\qquad(j\ge0)
+\]
+であり，$Q_c$は$h$-torsionを持たない．
+
+中心元$h$を次数付きで可逆化し，$B_h=B[h^{-1}]$とする．
+任意の有限生成次数付き加群$M$に対する自然写像
+\begin{equation}
+ \Hom_{\qgr B}(\pi M,\pi Q_c)
+ \longrightarrow
+ \Hom_{\mathrm{Gr}B_h}(M_h,(Q_c)_h)
+ \label{eq:qa-spinor-localization-hom-injection}
+\end{equation}
+は単射である．実際，$Q_c$には非零有限次元部分加群がない．
+従って$qgr$の射は，$M/M'$が有限次元となる次数付き部分加群
+$M'\subset M$から$Q_c$への射で表せる．
+有限次元加群は$h$の冪で殺されるので$M'_h=M_h$である．
+この射が局所化後に零なら，その像は$Q_c$の$h$-torsion部分に
+含まれるため，元の射も零である．
+この議論はまた\eqref{eq:qa-spinor-localization-hom-injection}の
+代表の選択への非依存性を示す．
+
+$(Q_c)_h$には全整数$j$について$e_j$があり，各偶数次数で
+\[
+ (-)c:k e_{2j}\xrightarrow{\sim}k e_{2j+1}
+\]
+となる．$X_c(-2n)_h$の次数$2n$の二生成元の像を
+$a e_{2n},b e_{2n}$と書く．
+$u,v$は標的に零として作用するため，$X_c$の表示行列の関係は
+この二つの像にそれぞれ$c$が零として作用することを要求する．
+上の単射性から$a=b=0$であり，
+局所化後の次数零Homは零である．
+\eqref{eq:qa-spinor-localization-hom-injection}より
+最初の消滅を得る．$c,d$を交換すれば第二の消滅を得る．
+\end{proof}
+
+\begin{theorem}[Noncubic spinor pointingは強い$\HH$に属さない]
+\label{thm:qa-spinor-pointing-not-h2}
+上の全三型のnoncubic環について
+\[
+ (\qgr B_f,\pi X_c)\notin\HH,
+ \qquad
+ (\qgr B_f,\pi X_d)\notin\HH.
+\]
+より強く，両構造対象の反Serre軌道は
+Artin--Zhangの生成条件を満たさない．
+\end{theorem}
+\begin{proof}
+$\iota$を$u,v$を固定して$c,d$を同時に反転する自己同型とする．
+補題~\ref{lem:qa-symmetric-equivariant-serre-character}を
+体上で用いると，反Serre自己同値は
+\[
+ t=S^{-1}[2]=(-)_\iota(2)
+\]
+である．$J=\operatorname{diag}(1,-1)$とすれば
+\[
+ \iota(M_c)=-J M_c J,
+ \qquad \iota(M_d)=-J M_d J.
+\]
+従って表示の基底変換により$(X_c)_\iota\simeq X_c$および
+$(X_d)_\iota\simeq X_d$を得る．特に全整数$n$について
+\[
+ t^{-n}\pi X_c\simeq\pi X_c(-2n),
+ \qquad t^{-n}\pi X_d\simeq\pi X_d(-2n).
+\]
+前補題の非零対象$\pi Q_c$および$\pi Q_d$は，
+対応する反Serre軌道の全対象から直交する．
+よって有限個の負の軌道対象の直和からこれらへの全射は存在せず，
+生成条件(AZ1)が破れる．
+補題~\ref{lem:qa-antiserre-necessary}は強い$\HH$の対象に対して
+反Serre軌道の豊富性を要求するので，結論を得る．
+\end{proof}
+
+\begin{remark}[障害の位置]
+$Q_c,Q_d$は$u=v=0$上に支持される二周期point moduleである．
+$cd-dc$は$Q_c$の偶数次数に$h$，奇数次数に$-h$として作用するので，
+これらは可換化$B/(cd-dc)$上の加群ではない．
+従って点曲線$E_f=\operatorname{Proj}(B/(cd-dc))$上の
+線束とpencilの辞書だけでは，上の直交対象を検出できない．
+この障害は$\operatorname{coh}\Sigma_2$の負断面による反例とは独立である．
+\end{remark}
+
+\subsection{Square，rotated，最小十本矢型の全四位相}
+
+\begin{corollary}[Noncubic由来avatarの構造頂点の分類]
+\label{cor:qa-noncubic-avatar-vertex-h2-status}
+点曲線$E_f$の二pencilを$F=F_c$, $G=F_d$，
+$P=GF^{-1}$とし，$P^2=\OO_{E_f}$，$P\ne\OO_{E_f}$とする．
+このsquare avatarから作るsquare型代数を$A_{\rm sq}$，
+対応するrotated型を$A_{\rm rsq}=A_{\rm sq}^{[1]}$，
+指定mutationによる最小十本矢型を$A_{10}$とする．
+各商圏の標準helixをそれぞれ$(E_i)$，$(R_i)$，$(H_i)$と書く．
+既存のexact同値の下で，初期四項は次のように同定される：
+\begin{equation}
+\begin{array}{c|cccc|c}
+ &0&1&2&3&\HH\text{に属する位相}\\ \hline
+ (E_i)&\pi B&\pi X_d&\pi X_c&\pi B(1)&0,3\\
+ (R_i)&\pi X_d&\pi X_c&\pi B(1)&\pi B(2)&2,3\\
+ (H_i)&\pi X_d(-1)&\pi B&\pi X_c&\pi B(1)&1,3
+\end{array}
+\label{eq:qa-avatar-vertex-pointing-table}
+\end{equation}
+最右欄は添字を四で割った剰余を意味し，すべての整数頂点に適用する．
+従ってrotated型の零番頂点と，最小十本矢型の零番頂点を
+構造対象とする組はいずれも強い$\HH$に属さない．
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:qa-point-all-noncubic-pointed}が与える
+\emph{頂点と全合成を保つ}finite End同型およびexact同値は
+\[
+ (H_1,H_2,H_3,H_4)
+ \longmapsto(\pi B,\pi X_c,\pi B(1),\pi X_d(1))
+\]
+である．$H_4=tH_0$と，前定理の$(X_d)_\iota\simeq X_d$から
+$H_0$の像は$\pi X_d(-1)$となる．
+
+補題~\ref{lem:qa-as10-all-index-mutual-inverse}の逆mutationでは
+$E_0=H_1$, $E_2=H_2$, $E_3=H_3$であり，$E_1$は余評価列
+\[
+ 0\longrightarrow H_0\longrightarrow
+ \Hom(H_0,H_1)^\vee\otimes H_1\longrightarrow E_1\longrightarrow0
+\]
+の余核である．$M_d^2=0$からの線形行列分解は
+\[
+ 0\longrightarrow X_d(-1)\longrightarrow B^{\oplus2}
+ \longrightarrow X_d\longrightarrow0
+\]
+を与える（式~\eqref{eq:qa-symmetric-square-spinor-evaluation}を一度shiftする）．
+この包含の二成分は$\Hom(\pi X_d(-1),\pi B)$の基底なので，
+前記余評価と基底変換を除き一致する．
+従って$E_1$の像は$\pi X_d$であり，squareの行を得る．
+
+定理~\ref{thm:qa-as-avatar-bijection}の証明における
+添字shiftは$R_i=E_{i+1}$を与える．
+また$E_4=tE_0$の像は$\pi B(2)$である．
+これでrotatedの行も得る．
+この同定は曲線上の共通線束tensorだけから結論したものではなく，
+有限End同型，Serre完成，exact mutationおよび実際の行列分解を用いている．
+
+$(\qgr B,\pi B)$は強い$\HH$の対象であり，
+通常次数shift$(j)$はexact自己同値なので
+$(\qgr B,\pi B(j))$も強い$\HH$に属する．
+ここでは$(1)$自体を適合Serre平方根と主張する必要はなく，
+既存の適合根をこのexact同値で共役すればよい．
+一方，前定理と次数shiftにより$\pi X_c(j)$，$\pi X_d(j)$を
+構造対象とする組は強い$\HH$に属さない．
+反Serre関手$t$もexact自己同値なので，四周期を通してこの結論が保たれる．
+\end{proof}
+
+\begin{remark}[Spectral avatarへの帰結と主張範囲]
+滑らかなspectral avatarの指定square実現にこの系を適用すると，
+mutation後の一番頂点は
+定理~\ref{thm:qa-spectral-avatar-pointed-involution}の
+$\mathcal H(f^\vee)$を与えるが，零番頂点および対応する
+rotated零番頂点は強い$\HH$の外にある．
+従ってこれらを別のFricke像や元の$\mathcal H(f)$と
+pointed exact同値にすることはできない．
+本節はnoncubic root-pair由来の非自明二捩れavatarを扱い，
+一般の$P$を持つ全rotated型avatarの構造頂点を分類するものではない．
+\end{remark}

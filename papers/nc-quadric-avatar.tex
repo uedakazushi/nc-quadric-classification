@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.11
+% 日本語 LuaLaTeX。2026-11-23 / v4.12
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.11（Fricke射の大域的境界延長と平方根障害）}
+\date{2026年11月23日\quad v4.12（Fricke境界の良モジュライ射と構造頂点の生成障害）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -73,6 +73,10 @@ noncubic二形式の点曲線側では、対称な四項のBrauer増幅から
 実際の相対spinor generator、全次数Serre完成、零頂点の反Serre角を用い、
 非被約基底と退化型を含めて元のpointed heartを回収する。
 同変Serre作用には二形式交換の符号指標が必要である。
+noncubic由来のsquare・rotated・最小十本矢型の全四位相も判定する。
+spinorを構造対象とする位相では，二周期point moduleへの
+全反Serre軌道からのHomが消滅するため，強い$\HH$には属さない。
+これによりrotated零番頂点と最小十本矢型零番頂点を排除する。
 一方、spectral曲線側の指定AS実現はsmooth幾何同型類上で
 $\chi\mapsto\chi/(\chi-1)$という二同種の双対化を与え、
 元のpointed対象と一致するのは$\chi=0,2$だけである。
@@ -102,6 +106,9 @@ Fricke出力の二次線束は全族上可逆で，balanced標的の追加境界
 自然な順序付きFricke射を全noncubicからbalanced標的へ延長する。
 線束境界上の2-fiberは$[\Spec k[a,b]/(ab)/\Gm]$で，
 トーラスの重みは$(-2,2)$，二つの穿孔枝は$B\mu_2$，交点は$B\Gm$となる。
+順序付き延長は平坦・有限表示・全射で，quasi-coherent直像は完全，
+構造層直像は構造層となる．Artin stackを標的に許す良モジュライ射であり，
+一致点を除くとこの直像完全性を失う．
 
 
 さらに、cubicの線束辞書、normal rulingの二重忘却、
@@ -409,6 +416,7 @@ blowup，形式関数定理，最小正則模型の一意性は既知の一般�
 \input{quiver-avatar/twisted_morita_weights}
 \input{quiver-avatar/symmetric_morita_descent}
 \input{quiver-avatar/relative_serre_completion}
+\input{quiver-avatar/spinor_pointing_obstruction}
 \input{quiver-avatar/spectral_atkin_lehner}
 \input{quiver-avatar/spectral_relative_correspondence}
 \input{quiver-avatar/half_period_ruling}
@@ -432,7 +440,9 @@ smooth spectral側の指定pointingについても、
 非忠実な相対射とその二次線束gerbeとして記述できた。
 定理~\ref{thm:qa-spectral-no-stack-autoequivalence}は、別の構成でも
 一般点で表現可能なliftを得られないことを示す。
-別のrotated構造頂点が与えるpointed対象の認識は残る。
+第~\ref{sec:qa-spinor-pointing-obstruction}節はnoncubic由来の全四位相を判定し，
+rotated零番頂点と最小十本矢型零番頂点を反Serre生成障害で排除する．
+一般の$P$を持つrotated型の構造頂点と，全相対AS/QP表示の認識は残る。
 系~\ref{cor:qa-spectral-involution-no-h2-extension}により、
 spectral対応を全noncubic境界からH2へ延長する目標は成立しない。
 境界を含む比較にはH2の外側に標的を広げ、

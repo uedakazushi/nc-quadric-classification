@@ -398,3 +398,188 @@ $H\twoheadrightarrow\Gamma$の核は$\Gm$であるから，
 一般慣性核は$\mu_2$，非順序付き標的への一般像は位数八である．
 この点で弱い共変式の一般慣性核八・像二とは異なる．
 \end{remark}
+
+\subsection{射の平坦性・良モジュライ性と非分離性}
+
+\begin{proposition}[境界Fricke射の平坦性とcoherent商の性質]
+\label{prop:qa-fricke-flat-good-moduli}
+大域射
+\[
+ \overline{\mathscr D}^{\rm ord}:\mathfrak N^{\rm pres}
+       \longrightarrow\mathfrak U
+\]
+は平坦，有限表示，全射である．さらに
+\[
+ (\overline{\mathscr D}^{\rm ord})_*\OO_{\mathfrak N^{\rm pres}}
+       =\OO_{\mathfrak U},
+\]
+かつquasi-coherent層の直像は完全である．
+従ってtargetもArtin stackである場合の
+\cite[Remark~4.4]{AlperGoodModuli2013}の意味で，
+これはgood moduli space morphismである．
+これらの性質は任意基底変更後にも成立する．
+\end{proposition}
+\begin{proof}
+形式完備化だけから主張を導くことはせず，実際の代数的target chartを構成する．
+$g_i=A_i u^2+B_iuv+C_iv^2$に対し
+$\Delta_i=B_i^2-4A_iC_i$，
+$D(g_1,g_2)=B_1B_2-2A_1C_2-2A_2C_1$と置く．
+従って$D^2-\Delta_1\Delta_2=4\operatorname{Res}(g_1,g_2)$である．
+\[
+ \mathfrak U_*=
+ \{D(g_1,g_2)\ne0\}\subset\mathfrak U,
+ \qquad q=\frac{\Delta(g_1)\Delta(g_2)}{4D(g_1,g_2)^2}
+\]
+と置く．resultant恒等式より$1-4q$は可逆である．
+前定理と同じ$T=\Spec k[q,(1-4q)^{-1}]$および
+$\widetilde T\to T$を用いる．
+
+\paragraph{代数的なtargetの全groupoid.}
+$\mathfrak U_*$の対象はfppf局所的に
+\[
+ (g_1,g_2)=(A u^2+uv+Bv^2,uv)
+\]
+へ正規化できる．第二形式の非退化性によりそれを$uv$とし，
+$D\ne0$により第一形式の可逆な混合係数を一にする．
+この表示では
+\[
+ AB=\frac{1-4q}{4}\in\OO^\times.
+\]
+全ordered同型は，共通次数スカラーを割った後の$O(uv)$作用と
+独立な生成元符号で尽くされる．
+積$AB$を固定した二つの表示は，fppf局所的な単元の平方根を使った
+$u\mapsto zu,v\mapsto z^{-1}v$で互いに移る．
+
+$\widetilde T$上では$\rho^2=1-4q$である．
+section $(U^2-4qV^2,V(U+V))$に
+$u=V,v=U+V$と第一生成元の定数倍を施すと，
+上の正規形で
+\[
+ A=-\rho^2/2,\qquad B=-1/2
+\]
+を得る．このsectionのordered安定化群を計算する．
+$O(uv)$の対角成分では安定条件は$z^2=1$，
+反対角変換を$(u,v)\mapsto(z^{-1}v,zu)$と書けば
+その安定条件は$z^2=A/B=\rho^2$であり，それぞれ二つの解を持つ．
+残る独立な生成元符号を合わせると，安定化群は正確に位数八となる．
+前節の$e_C,e_D,\tau$の出力行列は可換な独立の対合であり，
+この群全体を与える．従って$\Gamma\simeq\mu_2^3$として，
+\emph{代数的stack}の同値
+\[
+ \mathfrak U_*\times_T\widetilde T
+       \simeq B\Gamma\times\widetilde T
+\]
+を得る．これは形式近傍の記述を外挿したものではなく，
+対象のfppf局所正規化と全ordered同型の計算による．
+
+\paragraph{射のatlas上の表示.}
+前定理のsource chartは$[S/H]$，群準同型は
+$H\twoheadrightarrow\Gamma$で核$\Gm$である．
+従ってtargetのatlas $\widetilde T\to\mathfrak U_*$による基底変更は
+\[
+ [S/\Gm]\longrightarrow\widetilde T.
+\]
+$\widetilde T=\Spec R$と書けば，
+\[
+ S=\Spec R[a,b]/(ab-q),\qquad
+ z\cdot(a,b)=(z^{-2}a,z^2b).
+\]
+$R[a,b]/(ab-q)$は$R$-加群として
+\[
+                  1,\ a^n,\ b^n\quad(n\ge1)
+\]
+を基底に持つ．従って$S\to\Spec R$は平坦かつ有限表示であり，
+$a=1,b=q$というsectionを持つので全射である．
+$S\to[S/\Gm]$はsmooth全射であるため，
+商stackからの射も平坦，有限表示，全射となる．
+
+また$\Gm$-不変式環は正確に$R$である．
+$\Gm$-同変加群は次数付き加群であり，不変部分は次数零の直和因子だから，
+不変部分を取る関手は完全である．
+従って$[S/\Gm]\to\Spec R$の構造層直像は$R$で，
+quasi-coherent直像は完全となる．
+この議論は$R$を任意の$R$-代数へ替えても同じである．
+
+\paragraph{全targetへの降下.}
+$D(g_1,g_2)=0$で$\Delta(g_2)$とresultantが可逆なら，
+$\Delta(g_1)\Delta(g_2)=-4\operatorname{Res}(g_1,g_2)$より
+$\Delta(g_1)$も可逆である．従って
+\[
+ \mathfrak U=\mathfrak U_*\cup\mathfrak N^{\rm sm,ord}.
+\]
+後者上で射は既存のbanded $\mu_2$-gerbeであり，
+同じ平坦性・有限表示性・全射性と完全直像，構造層直像の条件を満たす．
+平坦性等はtargetのfppf局所で確認でき，
+cohomological affinenessもfpqc降下する
+\cite[Proposition~3.10(v)]{AlperGoodModuli2013}．
+$\mathfrak U$はaffine対角を持つので，同文献Remark~4.4の
+Artin targetへの拡張を適用できる．
+以上により全域の主張を得る．任意基底変更についても，
+上の局所表示と有限線型簡約群$\mu_2$の不変部分の完全性から同じ結論が従う．
+\end{proof}
+
+\begin{remark}[順序忘却後の射との区別]
+構造層直像が構造層と一致するという結論は，順序付き射についてのものである．
+非順序付き標的へ合成した射はsmooth域で$\mu_2$-gerbeと有限\'etale二重被覆の合成であり，
+その一般幾何fiberは$B\mu_2\amalg B\mu_2$である．
+従って一般点の構造層直像は階数二となる．
+従ってこの合成を同じ意味のgood moduli space morphismとは呼ばない．
+\end{remark}
+
+\begin{corollary}[非smooth locusと非分離性]
+\label{cor:qa-fricke-nonsmooth-nonseparated}
+$\overline{\mathscr D}^{\rm ord}$がsmoothでない点は，入力の一致根対の
+residual gerbeに正確に一致する．この射は分離的でなく，従ってproperでもない．
+\end{corollary}
+\begin{proof}
+前命題の実際のtarget atlas上で，射は
+\[
+ [\Spec B[a,b]/(ab-q)/\Gm]\longrightarrow\Spec B
+\]
+であり，$\Gm$の重みは$(-2,2)$である．
+そのsmooth atlas $\Spec B[a,b]/(ab-q)$から底への射は
+$a,b$のいずれかが可逆なところでsmoothである．
+$a=b=0$の幾何点ではfiberが通常の節点$ab=0$を持つのでsmoothでない．
+商stackへのatlasはsmooth全射だから，これが射自身のsmooth locusも決定する．
+残るsmooth入力開上では既存の$\mu_2$-gerbeでありsmoothである．
+
+原点における相対慣性は$\Gm$である．射が分離的ならその相対対角はproperであり，
+そのfiberである$\Gm\to\Spec k$もproperでなければならない．これは不可能なので，
+射は非分離であり，properでもない．
+\end{proof}
+
+\begin{remark}[一致点を除くと直像の完全性を失う]
+\label{rem:qa-fricke-dm-open-doubled-origin}
+前命題の全射は，入力の一致点を除いたDM開に制限すると
+cohomologically affineではなくなる．これは実際のatlas上で直接確認できる．
+$B=\OO(\widetilde T)$とし，
+\[
+ W^\times=\Spec B[a,b]/(ab-q)\setminus V(a,b),\qquad
+ \mathcal V=[W^\times/\Gm]
+\]
+と置く．$D(a)$と$D(b)$による二つの開部分商は各々$B\mu_2$を$\Spec B$上に持ち，
+その共通部分は$B\mu_2$を$\Spec B[1/q]$上に持つ．
+それぞれの構造層は高次cohomologyを持たないので，\v Cech複体から
+\[
+ H^1(\mathcal V,\OO_{\mathcal V})
+       \simeq B[1/q]/B\ne0
+\]
+を得る．ここでは$B$は元の\'etale atlasの環であり，$q$は非零因子かつ非単元である．
+従ってDM開への制限ではquasi-coherent直像の完全性が失われる．
+
+また，恒等に作用する中央$\mu_2\subset\Gm$をrigidifyすると，
+有効なトーラスは重み$(-1,1)$で自由に作用し，その商は
+\[
+ \Spec B\ \underset{\Spec B[1/q]}{\cup}\ \Spec B
+\]
+となる．これは$q=0$の点を二重にした非分離模型である．
+この記述は実際の代数的atlas上のもので，形式schemeの存在しない穿孔開を
+用いているわけではない．元の$\mu_2$-gerbeの全域的自明性は主張しない．
+\end{remark}
+
+\begin{remark}[順序付き射と順序忘却]
+構造層の直像同型とgood moduli space morphismの結論は
+順序付き射$\overline{\mathscr D}^{\rm ord}$についてのものである．
+順序を忘れた合成射はsmooth開上で有限\'etale二重被覆を含み，
+一般点の構造層直像は階数二となるため，同じ条件を満たさない．
+\end{remark}

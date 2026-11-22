@@ -1,6 +1,26 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.25（A v1.69・20節、B v0.40・31節、C v4.11）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.26（A v1.69・20節、B v0.40・31節、C v4.12）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## Noncubic avatarの全位相と見えないpoint module
+
+証明正本は [spinor_pointing_obstruction.tex](../papers/quiver-avatar/spinor_pointing_obstruction.tex)。$h=cd+dc$ を中心の次数2元とし、$Q_c$ は $u=v=0$、$e_{2j}c=e_{2j+1}$、$e_{2j+1}d=e_{2j+2}$、残りの作用零で定める。$e_jh=e_{j+2}$ なのでh-torsionfreeな非零point module。$X_c$の表示行列はここでdiag(c,−c)となり、h局所化後の偶数次数でcが単射であることから、全nについてHom(πXc(−2n),πQc)=0。tails Homから局所化Homへの単射も証明した。c,d交換でXdも同様。
+
+反Serreは $t=(-)_\iota(2)$、$\iota(c,d)=(-c,-d)$。$\iota(M_c)=-J M_cJ$ によりspinorはこのtwistで不変となり、上のHom消滅が全反Serre軌道の生成失敗を与える。強いH2でeven軌道の生成が必要なのは、AS4二次切断の軌道環が次数1で生成され、偶数Veroneseが同じqgrを回復するためである。一般のAZ ample pairの二乗に無条件でample性を課してはいない。
+
+| 型 | 0 | 1 | 2 | 3 | H2位相 |
+| --- | --- | --- | --- | --- | --- |
+| square | B | Xd | Xc | B(1) | 0,3 |
+| rotated | Xd | Xc | B(1) | B(2) | 2,3 |
+| 最小AS10 | Xd(−1) | B | Xc | B(1) | 1,3 |
+
+各項はπを施したqgr対象。finite Endの頂点対応、Serre完成、実際のMF余評価列により同定し、曲線上の共通tensorだけから推論しない。四周期で全整数に適用する。Q_c,Q_dはcd−dcが±hとして作用するので可換化の曲線E_fには現れない。反Serre角のHilbert数値が同じでも、同じunderlying Abel圏の構造対象としてのH2適合性は異なる。
+
+## 順序付きFricke射の良モジュライ性
+
+[大域降下節](../papers/quiver-avatar/fricke_boundary_descent.tex) に実際のalgebraic target atlasを追加した。判別式極化D≠0の開で第二形式をuv、第一をAu²+uv+Bv²へ正規化し、AB=(1−4q)/4が単元であることと全O(uv)同型からtargetをétale局所でBΓ×Tへ同定する。sourceのatlas basechangeは[Spec R[a,b]/(ab−q)/Gm]、weights±2。環のR基底1,a^n,b^nと次数零不変部分により、flat fp surj、O直像O、QCoh直像完全を任意底変更込みで証明する。Alper刊行版Remark4.4のArtin targetへのgood moduli space morphismである。非smooth locusは一致点のみ、Gm慣性があるので非分離・非proper。
+
+一致点を除いたDM開では、D(a),D(b)の二開によるČechでH¹(O)=R[1/q]/R≠0となり、cohomological affinenessを失う。中央μ₂をrigidifyした局所模型は二つのq直線をq≠0で貼った二重原点直線。元のμ₂-gerbeが全域で自明とは主張しない。順序忘却後はgenericで構造層直像がrank2となるので、同じgood-moduli条件は成立しない。
 
 ## 全Fricke境界射・pencil・半周期の現在の結論
 
@@ -16,7 +36,7 @@
 
 全halving schemeは $[2]^{-1}(P)=\operatorname{Spec}K[X,Z]/(X^2-t^r,Z^2-1-2X)$、$Y=XZ$。一根共有では二つの $\operatorname{Spec}K(\sqrt t)$、一致では四つの $\operatorname{Spec}K$。一根共有のKummer classは指定基底で $(t,1)$。全交換はこの四点torsorと $\{\pm1\}$ の積。一致では全四translation補正が元模型の同型に延長し、共有根では未修正模型の成分数が異なる。最小正則模型では定義体上の全補正が延長し、成分cycleに四分の一回転で作用する。
 
-今回の範囲では直接証明と相互読取りを完了したが、包括的新規性・形式証明・外部査読を完了したとはしない。次は別rotated構造頂点のpointed認識と、既知文献に対する貢献範囲の絞り込みを扱う。
+今回の範囲では直接証明と相互読取りを完了したが、包括的新規性・形式証明・外部査読を完了したとはしない。noncubic由来の全四位相は上節で判定した。次は一般Pのrotated型の反Serre生成判定と、既知文献に対する貢献範囲の絞り込みを扱う。
 
 ## Fricke境界の共通正則模型と二次線束
 
@@ -77,7 +97,7 @@ Frobenius/trace・inverse matrix・similitude・node積の厳密恒等式は `ve
 
 ## Spectral avatarのpointed像と境界の障害
 
-正本は [spectral対合と延長不能](../papers/quiver-avatar/spectral_atkin_lehner.tex)。標数零代数閉体上、smooth根対のspectral avatar $(C_f,F,FP,P)$ を指定AS10 mutation・一番頂点の構造対象で実現すると、元の $\mathcal H(f)$ ではなく $\mathcal H(f^\vee)$ を得る。これは幾何同型類上の二同種双対化であり、$\chi^\vee=\chi/(\chi-1)$。元とpointed exact同値なのは $\chi=0,2$ に限られる。このsmooth対応の相対groupoidは下のgerbe分解で決定する。任意のrotated構造頂点や全avatar/QP表示groupoidは含めない。
+正本は [spectral対合と延長不能](../papers/quiver-avatar/spectral_atkin_lehner.tex)。標数零代数閉体上、smooth根対のspectral avatar $(C_f,F,FP,P)$ を指定AS10 mutation・一番頂点の構造対象で実現すると、元の $\mathcal H(f)$ ではなく $\mathcal H(f^\vee)$ を得る。これは幾何同型類上の二同種双対化であり、$\chi^\vee=\chi/(\chi-1)$。元とpointed exact同値なのは $\chi=0,2$ に限られる。このsmooth対応の相対groupoidは下のgerbe分解で決定する。noncubic由来のrotated零頂点は上節で強いH2外と判定した。一般Pのrotated構造頂点や全avatar/QP表示groupoidは含めない。
 
 再開に必要な最小式は、$f_1=uv$、$f_2=u^2+a uv+bv^2$、$b(a^2-4b)\ne0$ に対する
 \[
@@ -2129,7 +2149,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 ## 検証範囲と再現手順
 
-**現行C v4.11の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は12項目の厳密計算PASS。全halving式・pencil多重次数・全群作用と平方根overlapも含む。大域降下、二収縮のPerf像、全有限分岐後の平方根障害、全halving torsorの証明も相互読取りした。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:23・542・169、明示的な論文間参照122件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
+**現行C v4.12の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は12項目の厳密計算PASS。全halving式・pencil多重次数・全群作用と平方根overlapも含む。大域降下、二収縮のPerf像、全有限分岐後の平方根障害、全halving torsorの証明も相互読取りした。さらに代数的target chart・flat good-moduli性・DM開の非完全直像、およびspinorの反Serre生成障害と全四位相を独立読取りした。Alper刊行版の定義・fpqc降下を一次確認した。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:24・552・171、明示的な論文間参照122件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
 
 
 **現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現行3原稿で `scripts/check.py papers` は実行PASS、LuaLaTeXの実組版は依存不足により未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
@@ -2138,7 +2158,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 **既存の有限型代数性の検証範囲。** 主論文v1.44の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlas、普遍cubic族の降下と既約性、被約境界の余次元2とsmooth降下、ambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
 
-**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.11のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
+**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.12のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
 
 **現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 
