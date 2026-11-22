@@ -717,6 +717,87 @@ $\Sigma_2$曲線型でのO-marked適合性、
 の証明には含まれない。
 \end{remark}
 
+\begin{proposition}[二つのwallは異なり、noncubic avatar壁には追加認識が必要]
+\label{prop:qa-avatar-walls-and-noncubic-dimension}
+滑らかな楕円型square avatarについて、
+$\eta=G_sF_s^{-1}$、$\delta=P$と書く。
+次の二つのwallを区別する。
+\begin{enumerate}
+\item $\eta=2\delta$、$\delta\notin E[2]$：
+式~\eqref{eq:qa-square-vdb-explicit}の四つ組は
+geometric cubic型であるが、
+$r_1$後の第二foundationはnoncubicになる。
+したがって元のO-marked点は
+\emph{cubic locusに属する}。
+\item $\eta=\delta\ne0$：
+式~\eqref{eq:qa-square-vdb-explicit}の
+$L_1=L_2$なので元のfoundationが
+geometric cubic型ではない。
+このwallはsquareの八本矢開の補集合であり、
+曲線型avatarの十本矢・$\Sigma_2$ chartへ
+移行する。
+\end{enumerate}
+後者の全smooth楕円avatar同型類の
+パラメータ空間は、楕円曲線の$j$と
+非零点$\delta\in E$を局所座標として
+\emph{二次元}である。
+一方、論文Bの内在noncubic境界
+$\mathfrak N\subset\HHstack$は
+\emph{純一次元}のArtinスタックである。
+従ってこのwall\emph{全体}を
+内在noncubic境界と表現可能quasi-finiteな
+モジュライ同型で結び付けることはできない。
+O-marked適合性はこのwall上で
+さらに制限されるか、あるいは
+同じpointed対象へ正の相対次元を持って
+潰れるかのいずれかである。
+
+特に非零二捩れ$P$の条件$P^2=\OO_E$は
+楕円曲線のmoduli上で一次元を定め、
+次に検討すべき\emph{候補}ではあるが、
+それが内在noncubic境界をちょうど尽くすことは
+ここでは証明していない。
+\end{proposition}
+\begin{proof}
+最初のwallでは$L_0=F_sP^{-1}$、
+$L_1=G_sP^{-1}$、$L_2=F_s$が
+互いに相異なり、VdB許容条件を満たす。
+$r_1$による新しい二線束は
+$G_sP^{-1}=F_sP$と$F_sP$で一致するので、
+第二はnoncubicとなる。
+これはC
+~\ref{cor:qa-ou-one-cubic-fiber-and-nonfiniteness}
+の一cubic境界に一致する。
+次のwallでは$G_s=F_sP$だから
+$L_1=G_sP^{-1}=F_s=L_2$となる。
+$\mathcal A_8^\times$の条件
+~\eqref{eq:qa-square-elliptic-cubic-open}
+に反することも直接に分かる。
+$\Sigma_2$との対応は
+系~\ref{cor:qa-square-chart}に従う。
+
+最後の次元を計算する。
+楕円曲線$E$のmoduliは一次元で、
+$F_s\in\Pic^2(E)$の選択は曲線の
+translationによって動かせる。
+標数零では$[2]:E\to E$が全射なので、
+このtranslationの軌道は$\Pic^2(E)$全体である。
+$\eta=\delta$の下では$G_s=F_sP$だから
+残るパラメータは
+$E$と$0\ne P\in\Pic^0(E)$で、
+そのmoduliの一般次元は$1+1=2$。
+一方、論文B
+\cite[\texttt{thm:noncubic-boundary-smooth-codim-two}]{QuadricModuli2026}
+は全$\HHstack$が純次元三で
+$\mathfrak N$が滑らかな余次元二、
+すなわち純次元一であることを証明している。
+有限型quasi-finite射の像は源の各成分と同じ
+次元を持つので、この二次元wall全体を
+一次元の境界にquasi-finiteに写すことはできない。
+最後の二捩れ条件の次元も
+有限étaleな$E[2]\setminus0$から従う。
+\end{proof}
+
 \begin{remark}[二つの $\Sigma _2$ への移行]
 \label{rem:qa-rotated-square}
 square helix の foundation を一つ進めた rotated square の偏極は
