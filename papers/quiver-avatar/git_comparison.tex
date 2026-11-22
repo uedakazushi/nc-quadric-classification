@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.7（CM j制限を除き局所反射・二重交点まで適用）
+% 2026-11-22 / v3.8（j0 A4の接重みと孤立巡回商局所型）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -720,6 +720,78 @@ pointed自己同値は両者を交換できない。
 例では$\rho$の固定点$x=0$の二点は
 三次曲線の変曲点で位数三であり、
 互いに負元となる。
+\end{proof}
+
+\begin{corollary}[$j=0$の$A_4$点の三次元接表現と粗形式商]
+\label{cor:qa-ou-cm-a4-tangent-representation}
+命題~\ref{prop:qa-ou-cm-jzero-one-cubic-a4}の
+具体例
+\[
+ E_0:y^2=x^3+1,\quad
+ \delta_0=(0,1),\quad\eta_0=(0,-1)
+\]
+で、内在的$\HHstack$および剛体化quintupleの
+三次元接空間における$A_4$の作用は、
+正規部分群$E[2]\simeq C_2^2$上では自明であり、
+$A_4/E[2]\simeq C_3$の生成元に対し
+\[
+ (a,u,v)\longmapsto
+   (\zeta_3^2a,\zeta_3u,\zeta_3v),
+ \qquad \zeta_3^3=1,\quad\zeta_3\ne1
+ \tag{CM-A4-T}\label{eq:qa-ou-cm-a4-tangent-weights}
+\]
+となる形式座標を取れる。
+したがって対応する局所的な形式粗不変式環は
+\[
+ k[[a,u,v]]^{C_3},\qquad
+ C_3\text{ の重み }(2,1,1)\pmod3
+ \tag{CM-A4-Q}\label{eq:qa-ou-cm-a4-coarse-invariants}
+\]
+であり、孤立した三次元巡回商特異点
+$\frac13(2,1,1)$を持つ。
+この例は一cubic rulingの点であり、
+一般の有限étale二重忘却の欠けた第二sheetが、
+粗空間の特異性や分岐の「もう一方のsheet」として
+存在することを意味しない。
+\end{corollary}
+\begin{proof}
+最初の次数二線束$L_0=\mathcal O_{E_0}(2o)$を保つ
+変形を取る。楕円曲線自体の一パラメータversal族は
+\[
+ E_a:\quad y^2=x^3+ax+1
+\]
+で記述できる。$[3]$は標数零で有限étaleなので
+$\delta_0,\eta_0$は局所的に三捩れsection
+$\delta_a,\eta_a=2\delta_a$へ一意に延長できる。
+それらからの相対形式群の偏差を$u,v$として、
+$\delta,\eta$を独立に動かせる。
+したがって$(a,u,v)$は四つ組表示の
+三次元の形式変形座標となる。
+
+原点固定自己同型
+$\rho(x,y)=(\zeta_3x,y)$は、
+$E_a$を$E_{\zeta_3^2a}$へ写す。
+よって曲線変形の基底座標は
+$a\mapsto\zeta_3^2a$となる。
+$\rho$は$\delta_0,\eta_0$を固定し、
+相対楕円形式群の接空間では
+$x\mapsto\zeta_3x$によって
+$u,v\mapsto\zeta_3u,\zeta_3v$となる。
+標数零の有限群作用は形式的に線型化できるので、
+全次数で式~\eqref{eq:qa-ou-cm-a4-tangent-weights}
+を実現する形式座標を取れる。
+他方、$E[2]$のtranslationは$\Pic^0(E)$の差と
+楕円曲線の変形を恒等に保つため、接作用も恒等である。
+
+命題~\ref{prop:qa-ou-cm-jzero-one-cubic-a4}で
+sourceとtargetの慣性が同型な$A_4$で、
+忘却射がétaleであることを証明した。
+従って両接表現は一致する。
+$C_3$の三重固有値はいずれも$1$でないので、
+固定部分空間は零次元であり、
+生成元はpseudo-reflectionでない。
+よって不変式環は原点に孤立した
+非正則な巡回商特異点を持つ。
 \end{proof}
 
 \begin{corollary}[一般pointed忘却の幾何次数は二]
