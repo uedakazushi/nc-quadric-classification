@@ -162,10 +162,23 @@ $\operatorname{Sym}^2H^0(F_c),\operatorname{Sym}^2H^0(F_d)$
 二像の共通部分は$\langle u,v\rangle$、和は$(B_f)_1$全体である。
 **これはmatrix-factorizationのkernelのみならず、
 2つのrank-three乗法の像が一致したことを意味する。**
+さらに、Aのnoncubic normal helixの四頂点
+finite directed End代数$B_{\mathrm{nc}}$と
+$E_f$ avatarを一つmutationして得る最小AS10 helixの
+四頂点End代数$B_{\mathrm{av}}$の間に
+頂点・compositionを保つ同型が\emph{存在すれば}、
+全Serre完成とAZ amplenessから
+\[
+ (\qgr B_f,\pi B_f)\simeq
+ (\qgr A_{\mathrm{av}},\pi e_0A_{\mathrm{av}})
+\]
+というO-pointed exact同値が従うことを証明した
+（C \`prop:qa-point-mcm-pointed-finite-end-reduction\`）。
+**有限Endの同型の存在そのものは未証明**であり、
+rank-three積像の一致だけでは足りない。
 次は他のHom・最小関係・全合成を含む
-normal helixのfinite directed End代数と
-$E_f$側のavatar Endを直接比較し、
-構造対象O・Serre completion・pointed exact同値まで追う。
+$B_{\mathrm{nc}}\cong B_{\mathrm{av}}$を直接構成する。
+構造対象を対応させる先は**mutation後**の第一標準対象である。
 共有根ではisogenyはétaleでなく、torsion-free
 spectral moduleへ移行する。
 本比較の外部文献との包括的新規性は未確認。
