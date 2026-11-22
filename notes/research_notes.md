@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.06（A v1.69・20節、B v0.39・31節、C v3.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.07（A v1.69・20節、B v0.39・31節、C v3.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
@@ -21,7 +21,7 @@ curve上のcanonical完全列は
 `square_rotated_foundations.tex` と
 `canonical_helix_complexes.tex` に証明を保持。
 
-**検証したEuler数値と非被約avatarのrank壁（C v3.2）。**
+**検証したEuler数値と非被約avatarのrank壁（C v3.3）。**
 ASsq/ASrsq最小分解の四相Euler漸化式から
 $H_r(z)=\sum_{n\ge0}\dim A_{i,i-n}z^n$を作ると、
 全位相で
@@ -64,7 +64,7 @@ underlying algebraのgroupoidとは異なる。
 一般の12本矢QPに独立ASクラスの全分類は主張しない。**
 P(1,1,2)のrelation QPはDWZのmutation頂点を持たない反例。
 
-**二重壁とcubic到達可能性の完全判定（C v3.2）。**
+**二重壁とcubic到達可能性の完全判定（C v3.3）。**
 二つの合成$\mu_G,\mu_F$が同時に階数3へ落ちる
 $Z=D_F\cap D_G$は
 $P^2\simeq O_D,\ P\ne O_D,\ G\simeq FP$と同値。
@@ -79,6 +79,36 @@ $P\in\Pic^0(D)$より、$D$の各既約成分のbidegreeは$(a,a)$。
 Cの根対avatar三型と一致する。
 証明正本：C lem:qa-as10-double-wall-reduced-geometries,
 prop:qa-as10-double-wall-characterization。
+
+**標識付き二重壁のscheme-theoretic局所幾何（今回追加）。**
+滑らかな楕円曲線$E$と次数二線束$F$を固定し、
+$\eta=GF^{-1}$、$P$を$\Pic^0(E)^2$で動かす。
+$P,\eta\ne0$なら$(F,G)$はsquare埋め込みを定める。
+二つのmutation壁はそれぞれ$\eta=P$、$\eta=P^{-1}$。
+自明線束$Q=\OO_E$の一次変形
+$0\to\OO_E\to Q_\epsilon\to\OO_E\to0$の接続は
+$H^0(\OO_E)\to H^1(\OO_E)$における$\xi$とのcup積であり、
+非零$\xi$なら同型。
+Pencil trickの相対行列式はよって
+Picard原点で一次の零点を持ち、
+二壁は\emph{被約な}Cartier divisorとなる。
+非零二捩れ点の局所座標$(u,v)$では接方程式が
+$v-u$と$v+u$でJacobian determinantは$-2$。
+従って横断的で、固定smooth曲線上の交点は三つの被約点。
+曲線が動く滑らかな楕円族においては
+$E[2]\setminus\{0\}$が相対有限étale三次となる。
+固定nodal/$I_2$では$\Pic^0(D)\cong\Gm$、
+非零2捩れ$-1$が一つで同じ横断性が成立。
+**交点のscheme長はsmooth/nodal/I2で3/1/1**。
+これは標識付き・固定曲線のパラメータの結果であり、
+inner H2 stackの慣性・相対scheme同型を与えない。
+証明：C prop:qa-as10-double-wall-transversality,
+cor:qa-as10-singular-double-wall-transversality。
+局所Jacobianと$\Gm[2]$は既存コード
+computations/verify_avatar_cubic_obstruction.pyで
+SymPy exact計算を実行してPASS。
+数学的な局所scheme計算を証明器で検証したわけではなく、
+この局所結果の公表新規性は未確認。
 
 **さらに強い主定理（元PDF定理21.1）。**
 Cの新設
@@ -146,14 +176,35 @@ O-marked structure objectを固定するpointed同値ではない。
 一般有限生成graded加群の分解停止、corner道の有界性、
 AZ再構成の仮定、Serre transportは独立監査未完了。
 
-**Keller–Yangの一次資料との照合。**
-Theorem 6.2の(c1)loopなし、
-(c2)mutation頂点を通る2-cycleなし、
-(c3)potentialの巡回表示を指定頂点から始めない
-局所条件を確認してC lem:qa-as10-keller-yangに明記。
-Ginzburg次数零集中は別の入力、
-通常AS分解への降下は追加の証明を要する。
-元の一般定理の全証明は独立検証していない。
+**Keller--Ginzburg／Keller–Yangの一次監査。**
+有限directed$B$は$\mathrm{gldim}\,B=2$かつ
+minimal relationsが矢idealの二乗にある。
+Keller (2011, Thm6.10, undeformed case)で
+relation QPの$\Gamma(Q,W)$は
+$\Pi_3(B)=T_B\Theta$に準同型、$\Theta=
+\RHom_{B^e}(B,B^e)[2]$。
+各$m$次tensor成分について
+$e_j\Theta^{\otimes_B^{\mathbf L}m}e_i
+\simeq\RHom_B(E_i,S_B^{-m}E_j[2m])$。
+$m=0$は有限代数$B$、$m\ge1$では
+$j+4m>i$であるため全整数のforward Ext消滅を適用し、
+degree 0集中を得る。
+全Ginzburg生成元の内部次数は正、各次数有限なので
+内部次数直積とarrow-adic完備化が整合し、
+非完備版と完備版の集中を一致させる。
+Keller–Yang (2011, Thm6.2)には
+源potentialが\emph{reduced}であることも必要。
+relation potentialはminimal relation length$\ge2$と
+dual矢の積でlength$\ge3$だから満たす。
+(c1)全quiver loopなし、
+(c2)mutation頂点にoriented 2-cycleなし、
+(c3)cyclic representativeが指定頂点から始まらない
+という三局所条件も別々に確認。
+C lem:qa-as10-ginzburg-concentrationと
+lem:qa-as10-keller-yangに詳細を統合。
+これは引用定理の適用仮定と各tensor成分の論理点検で、
+全AS最小分解へのDG降下・AS--Gorenstein性の全証明の
+独立形式検証ではない。
 
 **一般定理・検証の所在。**
 外部入力は Okawa–Ueda (arXiv:2007.07620, Theorem 5)
