@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.29。全H2のQP二段剛体化とmutation貼合せ。
+% 2026-11-23 / v4.31。全H2のQP二段剛体化とmutation貼合せ、四境界型の独立証明書。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -374,6 +374,36 @@ $x$に加えた$q$の係数から$t$が復元される．
 $\lambda$が単元なら$x$のスカラー$a$から$t$が復元される．
 単位ideal条件によりこれらがZariski局所に適用でき，
 作用は単射である．
+\end{proof}
+
+\begin{lemma}[冪零mass上の滑らかなゲージの加法座標]
+\label{lem:qa-mass-gauge-nilpotent-log}
+$R$を$\mathbb Q$代数，$\lambda\in R$を$\lambda^N=0$
+を満たす元とする．局所mass枠を固定したとき，
+\[
+ z=L_\lambda(t):=
+   \sum_{j=1}^{N}
+       \frac{(-1)^{j-1}}{j}\lambda^{j-1}t^j
+\]
+は群スキームの同型
+$\mathcal U_\lambda\xrightarrow{\sim}\mathbb G_{a,R}$
+を与える．逆写像は
+$t=\sum_{j=1}^{N}\lambda^{j-1}z^j/j!$である．
+従って二つのmassが冪零なら，局所表示のゲージ核は
+$\mathbb G_{a,R}^2$に同型である．
+ただしこの座標はmassの枠に依存し，
+任意の非冪零massを含む全基底での大域同型を意味しない．
+\end{lemma}
+\begin{proof}
+$\lambda$が冪零なら$1+\lambda t$は任意の$t$に対して可逆である．
+恒等式
+$1+\lambda(t\star s)=(1+\lambda t)(1+\lambda s)$に
+形式的な$\log$を適用し，$\lambda^N=0$で打ち切れば
+$L_\lambda(t\star s)=L_\lambda(t)+L_\lambda(s)$を得る．
+これは$\mathbb Q[\lambda,t,s]/(\lambda^N)$内の
+多項式恒等式なので，$\lambda$が零因子でも成立する．
+打ち切った$\exp$と$\log$の形式的逆関係が
+明示した逆多項式を与える．
 \end{proof}
 
 \begin{theorem}[一積可逆なscheme壁の十矢QP群oid]
@@ -770,6 +800,60 @@ $\Lambda^e$局所射影性は$D_0=\mathcal O_S^4$が
 相対separableであることによる．
 \end{proof}
 
+\begin{lemma}[二massの四境界型を覆う明示的な対角解消の検査]
+\label{lem:qa-q12-four-stratum-diagonal-check}
+$R_0=\mathbb Q[\lambda,\mu]$上で，
+\[
+ q'=V_0U_0+V_1U_1,\qquad
+ q=W_0V_0+W_1V_1
+\]
+とし，有限directed代数を
+短関係$r_a=q'+\mu u,\ r_b=q+\lambda x$および
+二つの残余長関係
+$W_0V_1U_0,\ W_1V_0U_1$で定める．
+この特定の二mass族では，式~\eqref{eq:qa-two-mass-relative-diagonal}
+の複体は$R_0$上で分裂完全であり，
+任意の$\mathbb Q$代数への基底変更後も完全である．
+この結論は一般の$\mathfrak P_{12}^{\rm nd}$を
+本族へ正規化したという主張を含まない．
+\end{lemma}
+\begin{proof}
+三段道の十二生成元を
+$W_wV_vU_a\ (0\leq w,v,a\leq1)$，
+$W_wu$，$xU_a$の順に並べる．
+短関係の四つの合成と二つの長関係の
+$12\times6$係数行列は，最初の六行の行列式が$1$である．
+従って全$R_0$上で三段の商は自由階数六であり，
+全有限代数は階数二十四の自由加群となる．
+二次の商も$q,q'$の係数$1$で分裂している．
+
+この自由基底で対角複体の微分を非可換微分から構成する．
+$C_0,C_1,C_2$の階数はそれぞれ$68,52,8$である．
+厳密整数演算により$\lambda,\mu\in\{0,1\}$の四組で
+$\partial_1\partial_2=0$，
+$\operatorname{rank}\partial_1=44$，
+$\operatorname{rank}\partial_2=8$を確認する．
+階数の下界は法$101$の消去計算で得られ，
+上界は$C_0\to\Lambda$の分裂全射
+（核階数$68-24=44$）と$C_2$の階数八から従う．
+再現可能な有限証明書は
+\texttt{computations/verify\_q12\_bimodule\_diagonal.py}である．
+
+幾何fiberで非零の$\lambda$または$\mu$は，
+それぞれ$x$または$u$を非零スカラー倍して$1$にできる．
+長関係は両対角生成元を含まないので，
+この操作は対応する有限代数の同型を与える．
+従って全ての標数零の幾何fiberで，
+上の四組と同じ解消の完全性が成立する．
+項と終項が有限自由であるから，
+fiberwise exactnessの局所定数階数判定を適用すると，
+複体は$R_0$上局所分裂完全となる．
+よって全ての$\mathbb Q$代数への基底変更でも完全である．
+これは明示族に関する独立検査であり，
+命題~\ref{prop:qa-two-mass-short-relative-diagonal}
+の任意の有限foundationに関する証明には代わらない．
+\end{proof}
+
 \begin{theorem}[ordinary QP Jacobianと3-preprojective完成]
 \label{thm:qa-two-mass-jacobian-preprojective}
 $\Theta_\Lambda=
@@ -1094,40 +1178,37 @@ $\mathcal C_S$の実際のheartとして認識されているので，
 ただしraw QPの単一座標変換を構成したわけではない．
 \end{proof}
 
-\begin{remark}[解決した比較と残るAS心の問題]
+\begin{remark}[相対$H_2$で解決した比較と残る表示の問題]
 \label{rem:qa-two-mass-heart-scope}
-本定理は，finite foundationのrank三壁が二つ同時に起こる
-noncubic側を含む．raw QP表示の余剰慣性は
-ここでは一般にsmoothな二次元群として制御される．
-これと，幾何点だけで非平坦な最小矢束を無視した
-reduced QP表示の固定は異なる．
-さらに内在的$\mathfrak H_2$への比較では，
-有限foundation全体とH2の実現可能開を区別する．
-H2開への制限は定理~\ref{thm:qa-square-explicit-h2-open}で
-判定できるが，その上のraw Jacobian代数が同じ相対heartを
-与えること，二rulingのmutationを含む全chartの貼合せは
-別途のAS・Serre比較を要する．
-従ってC3は有限群oidの比較を得た段階であり，
-AS/avatar/QP/H2を全領域で同値にしたとは主張しない．
+有限foundationの二つのrank三壁が同時に生じる
+noncubic側も本節の相対構成に含まれる．
+内在的$\mathfrak H_2$への比較には
+定理~\ref{thm:qa-square-explicit-h2-open}で定める
+実現可能開を課す．この開上の
+ordinary Jacobian/Serre完成の全次数とpointed heartは
+定理~\ref{thm:qa-two-mass-h2-locus-jacobian-heart}で，
+二rulingのmutation貼合せは
+定理~\ref{thm:qa-two-mass-h2-rigidification-ruling-glue}で
+それぞれ示した．
+未解決なのは，この開の外側を含む任意の
+AS/avatar/QP表示stackの分類・忘却であり，
+本節の相対同値をその領域へ拡張してはならない．
 \end{remark}
 
-\begin{remark}[十二矢QPの余剰慣性と残る比較]
+\begin{remark}[十二矢QPの余剰慣性の範囲]
 \label{rem:qa-cubic-qp-remaining-inertia}
-命題~\ref{prop:qa-stabilized-inertia}で既証明の
-\(
- \mathcal P_{12}^{\lambda\mu\ne0}
- \simeq\mathcal P_8\times B(\Gm^2)
-\)
-をgeometric開に制限すれば、十二矢QPから上の有限
-foundationへの忘却には、通常の四頂点scalarの$\Gm^3$に加え
-二つの可縮pairの$\Gm^2$がある．
-従ってraw十二矢QPの全right-equivalence群oidを
-$\mathfrak U_f$へ忠実に同定してはならない．
-本項は八矢の相対同型層を可逆cubic開で決着させるものであり，
-rank-three壁・noncubic・nilpotent massを持つ十／十二矢での
-相対QP群oidや同じheartを保つ比較までは証明しない．
-特に\(\operatorname{coker}\mu_G=\OO/(\delta)\)が
+命題~\ref{prop:qa-stabilized-inertia}の
+$\mathcal P_{12}^{\lambda\mu\ne0}
+ \simeq\mathcal P_8\times B(\Gm^2)$は，
+可逆cubic域での余剰慣性を示す．
+非可逆massを含む二群の相対的な置換は
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+$\mathcal U_\lambda\times\mathcal U_\mu$である．
+このmass kernelと頂点scalarsを剛体化した後の
+$H_2$実現可能開では全groupoidとheartの比較が成立するが，
+一般のraw十二矢QP全体との同値は得ていない．
+特に$\operatorname{coker}\mu_G=\mathcal O/(\delta)$が
 非平坦となる一次変形
-（命題~\ref{prop:qa-relative-as10-minimal-arrow-wall}）を
-幾何fiberごとの最小矢数だけから復元することはできない．
+（命題~\ref{prop:qa-relative-as10-minimal-arrow-wall}）は，
+幾何fiberの最小矢数だけでは復元できない．
 \end{remark}
