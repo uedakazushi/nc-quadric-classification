@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.2（粗忘却のramificationをOU不変式D±で表示）
+% 2026-11-22 / v3.3（二捩れ交点でのD8×C2慣性とA1粗二重被覆）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -999,6 +999,155 @@ $f_2g_4\ne0$から$D_+$と$D_-$の零点は交わらない。
 相対$E[2]$が有限étaleであるため、
 二捩れsectionの指定条件は局所的には滑らかな
 Cartier因子であり、一般点で重複しない。
+\end{proof}
+
+\begin{theorem}[二つの二捩れ座の交点：増大慣性と$A_1$型粗二重被覆]
+\label{thm:qa-ou-double-torsion-intersection-local-model}
+$k$を標数零の代数閉体とし、
+$U=(E,\mathcal L_0,\mathcal L_1,\mathcal L_2)$を
+滑らかな許容楕円四つ組とする。
+$j(E)\ne0,1728$、
+$\delta=\mathcal L_2\mathcal L_0^{-1}$と
+$\tau=\eta-\delta$が
+\emph{相異なる非零}二捩れ点であると仮定する。
+さらに対応するquintupleが
+滑らかなgeometric cubicのclosed stable点を
+定めるとする。
+この場合、quintupleの有効表示スタックでの
+幾何的慣性$H$と内在的pointed慣性$A$は
+\[
+ H\simeq C_2^3,\qquad
+ A\simeq D_8\times C_2,\qquad [A:H]=2.
+ \tag{OU-double-I}\label{eq:qa-ou-double-torsion-inertia}
+\]
+$D_8$は位数八の二面体群である。
+この点のquintupleから$\HHstack$への
+相対忘却は、慣性単射と論文Bのsmoothnessから
+表現可能étaleである。
+
+二つのスタックの局所的な三次元形式変形に対し、
+非標準的な形式座標$s,u,v$を選ぶと、
+$H$の接表現は
+\[
+ (s,u,v)\longmapsto(s,-u,-v)
+\]
+で生成され、$A$の接表現の像は
+\[
+ (s,u,v)\longmapsto(s,-u,v),\qquad
+ (s,u,v)\longmapsto(s,u,-v)
+\]
+で生成される。
+したがって局所粗モジュライgermの完成環と
+粗忘却射は
+\[
+ \begin{aligned}
+ \widehat{\mathcal O}_{\mathrm{coarse}(\HHstack),\bar y}
+   &\simeq k[[s,a,c]],\\
+ \widehat{\mathcal O}_{\mathrm{coarse}(\mathfrak Q),\bar x}
+   &\simeq k[[s,a,b,c]]/(b^2-ac),\\
+ \widehat{\mathcal O}_{\mathrm{coarse}(\HHstack),\bar y}
+   &\longrightarrow
+     \widehat{\mathcal O}_{\mathrm{coarse}(\mathfrak Q),\bar x},
+      \quad a\mapsto a,\ c\mapsto c .
+ \end{aligned}
+ \tag{OU-double-A1}\label{eq:qa-ou-double-torsion-a1-cover}
+\]
+すなわち粗射は有限平坦次数二、
+分岐式は$ac=0$で、源は横断的な
+$A_1$型二次錐特異点を持ち、
+標的は滑らかな三次元である。
+これは\emph{粗射の分岐}であり、
+pointed忘却のスタック射はétaleのままである。
+
+OU spectral座標では、この交点は
+$e_1=e_3=0$（$c\ne0$）と等価である。
+例えば対角値$x=(1,2,\iota,2\iota)$、
+$\iota^2=-1$の場合、二乗固有値
+$(1,4,-1,-4)$は相異なり、
+$e_1=e_3=0$、$c=-4$であり、
+\[
+ j(E)=\frac{111284641}{50625}\ne0,1728.
+\]
+従ってこの特異な局所型は滑らかな
+quintuple locusにも実際に現れる。
+\end{theorem}
+\begin{proof}
+両二捩れ条件と$\eta\ne0$から
+$\sigma=\delta$、$\tau=\eta-\delta$は
+$E[2]$の異なる非零元である。
+$\eta=\sigma+\tau$は第三の非零二捩れ点となる。
+$\mathcal L_0\simeq\mathcal O_E(2o)$となる原点$o$を
+取る。$j\ne0,1728$なので、楕円自己同型は
+$t_w$と$t_w\circ[-1]$の形に限る。
+三つの線束を個別に保存する元は、
+翻訳部分$w\in E[2]$の四元と、
+それぞれに$[-1]$を付けた四元である。
+$[-1]$は$E[2]$に自明に共役するので、
+sourceの安定化群は$H\simeq C_2^3$となる。
+
+二つのnormalized foundationを交換するには
+命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}
+の$R(U)$への同型が必要十分である。
+$\eta-\delta=\tau\ne0$に対する交換translation
+$t_v$を一つ選び、$2v=\tau$とする。
+$v$は四捩れ点であり、
+$T=\langle E[2],v\rangle\simeq C_4\times C_2$は
+位数八の翻訳群である。
+これと$[-1]$を合わせた全群は
+$T\rtimes\langle[-1]\rangle$で、
+反転は$C_4$上で逆元を取り、$C_2$上で自明に作用する。
+よって$A\simeq D_8\times C_2$、$[A:H]=2$。
+VdBの点曲線商から得る
+$\coh E\hookrightarrow\qgr D$のfully faithful性により、
+これらの異なる楕円自己同型は異なるpointed自己同値を定める。
+従って源慣性$H\to A$は単射である。
+論文Bの普遍非線型cubic smooth atlasによって
+忘却射はsmooth相対次元零なので、
+この点でも表現可能étaleとなる。
+
+次に形式変形座標を求める。
+$j$を一つの座標$s$とし、有限étaleな$E[2]$の
+二section$\sigma,\tau$をétale局所に延長する。
+相対楕円形式群のlogarithmを用いて
+\[
+ u=\log_E(\eta-\delta-\tau),\qquad
+ v=\log_E(\delta-\sigma)
+\]
+と取る。$E[2]$のtranslationはこの二差を変えず、
+sourceの$[-1]$は$(u,v)\mapsto(-u,-v)$となる。
+一方ruling交換$R$は
+$(\eta,\delta)\mapsto(2\delta-\eta,\delta)$なので
+$(u,v)\mapsto(-u,v)$となる。
+この二作用の合成から$(u,v)\mapsto(u,-v)$も得る。
+従って$H$と$A$の接表現は表示した通りである。
+
+源・標的ともsmoothな有限慣性の
+Deligne--Mumford局所stackであり、
+Alper--Hall--Rydh
+\cite[Theorem 1.2]{AlperHallRydh2020}
+のétale sliceと標数零の形式線型化により、
+局所粗germの完成環は三次元形式versal環
+$k[[s,u,v]]$のそれぞれの不変式環となる。
+$H$では同時符号反転だけが有効なので
+\[
+ k[[s,u,v]]^H
+   =k[[s,u^2,uv,v^2]]
+   \simeq k[[s,a,b,c]]/(b^2-ac).
+\]
+$A$では$u$と$v$の独立な符号変更が有効であり
+$k[[s,u,v]]^A=k[[s,u^2,v^2]]$となる。
+不変式環の包含が式
+~\eqref{eq:qa-ou-double-torsion-a1-cover}を与える。
+$1,b$を基底とする階数二の自由加群なので有限平坦、
+判別式は$4ac$である。
+非零標数零の下で分岐式は$ac=0$となる。
+
+最後に命題~\ref{prop:qa-ou-spectral-torsion-divisors}より
+二条件の同時成立は$e_1=e_3=0$と等価である。
+表示した例では
+$\prod_i(t-x_i^2)=t^4-17t^2+16$なので
+根は$1,4,-1,-4$で相異なり、
+$j$は式~\eqref{eq:qa-ou-quintuple-j}から計算できる。
 \end{proof}
 
 \begin{proposition}[ruling交換特別点のstack的2-fiberは二点のまま]
