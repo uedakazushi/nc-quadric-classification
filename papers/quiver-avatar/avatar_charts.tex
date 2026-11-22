@@ -919,6 +919,48 @@ $\PGL_2$で割った群oidとして記述されており、
 元のavatar AS代数の直接認識とは区別する。
 \end{proof}
 
+\begin{proposition}[Picard零切断の全体を古典pointとして追加できない理由]
+\label{prop:qa-avatar-zero-picard-collapse}
+$Y=\PP^1\times\PP^1$、
+$D\in|\OO_Y(2,2)|$を任意の反標準Cartier因子とし、
+$P=\OO_D$と置く。
+このとき曲線上の四線束
+\[
+ (\OO_D,\ F_s,\ G_s,\ F_sG_s)
+\]
+の有向End代数（各積を含む）は、
+$D$の選択に依存せず、
+$Y$上の可換quadricの標準四項collection
+\[
+ (\OO_Y,\OO_Y(1,0),\OO_Y(0,1),\OO_Y(1,1))
+\]
+の有向End代数と同型である。
+従って$\Pic^0$の零切断をそのまま
+曲線型avatarに追加すると、
+異なる$D$が同一の可換foundation代数を与え、
+O-marked分類への単射性が失われる。
+古典的な可換quadricは、曲線型とは別に
+一点として追加する必要がある。
+\end{proposition}
+\begin{proof}
+相異なる四項の間のHomに現れる
+$\OO_Y(a,b)$は、
+$a,b\in\{-1,0,1\}$の範囲にある。
+各々についてCartier制限列
+\[
+ 0\to\OO_Y(a-2,b-2)\to
+ \OO_Y(a,b)\to\OO_D(a,b)\to0
+\]
+を考えると、$a-2\le-1$、$b-2\le-1$であり、
+Künnethの公式から
+$H^0(Y,\OO(a-2,b-2))=
+H^1(Y,\OO(a-2,b-2))=0$である。
+従って四項間の全Homの制限は同型となる。
+構成は線束の合成に関して自然なので、
+有向End代数の積も保存する。
+右辺は$D$に依存しない。
+\end{proof}
+
 \begin{remark}[二つの $\Sigma _2$ への移行]
 \label{rem:qa-rotated-square}
 square helix の foundation を一つ進めた rotated square の偏極は
