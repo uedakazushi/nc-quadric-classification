@@ -247,6 +247,52 @@ $\Omega^\times$に属し、一方$820\ne\pm24\cdot30$である。
 従って一般点で右同値にはならない。
 \end{proof}
 
+\begin{lemma}[nilpotent mass上の対角慣性は非平坦になり得る]
+\label{lem:qa-cubic-qp-nilpotent-mass-scaling}
+一組の重み二の可縮pair $x,y$を八矢potential $H$に加えて
+\[
+ W_\lambda=H+\lambda yx
+\]
+とする。$x\mapsto tx,\ y\mapsto sy$で与えられる
+二つの矢の対角スカラー変換のうち、
+potentialを固定する部分群スキームは
+\[
+ \mathcal T_\lambda=
+ \operatorname{Spec}
+ \frac{R[t^{\pm1},s^{\pm1}]}{(\lambda(ts-1))}
+ \ \subset\ (\mathbb G_{m,R})^2.
+ \tag{Mass}\label{eq:qa-qp-mass-scaling-group}
+\]
+$\lambda$が可逆なら$\mathcal T_\lambda\simeq\Gm_R$、
+$\lambda=0$なら$\mathcal T_\lambda\simeq(\Gm_R)^2$である。
+特に$R=k[\epsilon]/(\epsilon^2)$、$\lambda=\epsilon$では
+$\mathcal T_\lambda$は$R$上平坦でない。
+
+この補題は通常のright-equivalence商内の明示的な部分慣性の
+計算であり、$W_\lambda$が全次数flatなAS正則族をなすこと、
+あるいは全慣性群スキームが$\mathcal T_\lambda$に等しいことは
+主張しない。
+\end{lemma}
+\begin{proof}
+$H$は$x,y$を含まず、変換によって
+$W_\lambda$は$H+\lambda st\,yx$へ移る。
+二種類の巡回道は独立だから固定条件は
+$\lambda(st-1)=0$に等しい。
+これは任意可換$R$-代数への基底変更後も同じ等式である。
+$\lambda$が単元なら$st=1$、
+$\lambda=0$なら条件は空である。
+
+双対数環での非平坦性を証明する。
+表示した環を$A$とし、$z=st-1\in A$と置く。
+$\epsilon z=0$だが、$z$は$A/\epsilon A
+=k[t^{\pm1},s^{\pm1}]$で非零である。
+もし$A$が$R$上flatなら、$R$の完全列
+$0\to(\epsilon)\to R\to k\to0$
+を$A$でtensorすることで
+$\ker(\epsilon:A\to A)=\epsilon A$となる。
+これは$z\notin\epsilon A$と矛盾する。
+\end{proof}
+
 \begin{remark}[十二矢QPの余剰慣性と残る比較]
 \label{rem:qa-cubic-qp-remaining-inertia}
 命題~\ref{prop:qa-stabilized-inertia}で既証明の
