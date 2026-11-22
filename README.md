@@ -2,9 +2,9 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.38、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.21。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.39、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.22。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
-**最上位目標：論文Cの完成。** [研究方針のC1–C4](00_research_plan.md#最上位目標論文cの完成2026-11-23) に従い、既存AS/avatar分類・相対認識を統合し、全H2 good moduliの中央affine補完と局所特異性、および全相対AS/QP群oid比較を決着させ、公表可能な証明へ仕上げる。A/Bの監査・公表作業は継続するがCより優先しない。Cでは自然なFricke射の全noncubicからbalanced標的への延長と境界fiberを証明した。非被約曲線・古典型を含む全標準頂点を体上で判定し、曲線型の相対族では適合開上の全標準頂点を同じH2 heart内で認識した。canonical square AS qgrの相対認識と全H2開の20式判定を得た。二つのdeterminant境界と大域good moduliも構成した。次は既存GITの不変式による開方程式とchart間の変換を計算する。A/Bの公表前監査・文献比較を保持し、詳細は各現行原稿を正本とする。
+**最上位目標：論文Cの完成。** [研究方針のC1–C4](00_research_plan.md#最上位目標論文cの完成2026-11-23) に従い、既存AS/avatar分類・相対認識を統合し、全H2 good moduliの中央affine補完と局所特異性、および全相対AS/QP群oid比較を決着させ、公表可能な証明へ仕上げる。A/Bの監査・公表作業は継続するがCより優先しない。Cでは自然なFricke射の全noncubicからbalanced標的への延長と境界fiberを証明した。非被約曲線・古典型を含む全標準頂点を体上で判定し、曲線型の相対族では適合開上の全標準頂点を同じH2 heart内で認識した。canonical square AS qgrの相対認識と全H2開の20式判定を得た。二つのdeterminant境界と大域good moduliに加え、Gram pencilによる全半不変式環、中央affine環、noncubic閉曲線の方程式、二孤立商特異点を原稿に証明した。次はC3の全相対AS/QP群oidと慣性・right-equivalenceの比較を進める。A/Bの公表前監査・文献比較を保持し、詳細は各現行原稿を正本とする。
 
 **Cの現行到達点。** 点曲線 $E_f$ 側は、全二形式商 $[P/G]$ 上のrank45対称Morita代数・相対spinor tilting・全次数Serre完成により、非被約局所有限型底を含む元のpointed H2族と同定した。Smooth spectral側の指定pointingは $\chi\mapsto\chi/(\chi-1)$ を与え、自己双対点は0,2。一根共有・根対一致へ退化する二族の像は、有限分岐基底変更後にもH2族へ延長できない。相対射はμ₂-gerbeと有限étale二重被覆に分解し、中心の分裂体によりstack自己同値は不可能である。境界の平坦代数模型では全高次Extの非消滅を証明し、この表示族内のH2条件を各形式のsquarefree性と同定した。詳しい適用範囲と証明先は下の論文C節に置く。
 
@@ -22,7 +22,7 @@
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。現行checkout上で三稿のsource・相互ラベル検査を実行してPASS。LuaLaTeX依存が不足するため現行三稿の組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS/avatar分類とpointed認識（v4.21）
+## 論文C：AS/avatar分類とpointed認識（v4.22）
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
 
@@ -51,6 +51,10 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 **順序付きFricke延長は平坦な良モジュライ射である。** 実際の代数的target atlas上で $[\operatorname{Spec}R[a,b]/(ab-q)/\mathbb G_m]\to\operatorname{Spec}R$ と表示し、平坦・有限表示・全射、構造層の直像同型とquasi-coherent直像の完全性を証明した。Artin targetを許すAlper Remark 4.4の意味でのgood moduli space morphismであり、任意底変更後も成立する。非smooth locusは一致根対に限られ、射は非分離・非proper。一致点を除くDM開では直像の完全性が失われ、中央μ₂を剛体化した局所模型は原点を二重にした直線となる。順序忘却後の射は一般fiberが二つなので、この良モジュライ性を持たない。[証明](papers/quiver-avatar/fricke_boundary_descent.tex)。
 
 [論文C](papers/nc-quadric-avatar.tex)は、指定した最小分解型のAS正則Z代数とavatarの分類を中心に、有限QP・既存GIT・内在的H2を比較する。現在の要点は、**点曲線側は全noncubic相対族で元のpointed heartを認識でき、spectral側の指定pointingはsmooth領域でも一般に別のH2対象を与える**ことである。
+
+### Gram pencilによる大域good moduliの明示表示
+
+非順序の全H2 good moduliは\\(\mathbb P(2,2,3,4)\\)の明示開で、全半不変式環は\\(k[A_2,B_2,C_3,D_4]\\)（重み2,2,3,4）。中央affine chartは\\(\Delta_8=(D_4+4A_2(B_2-2A_2))^2-4(B_2-2A_2)C_3^2\ne0\\)、その環は重み零局所化であり、noncubic閉像は\\(A_2=C_3=0,\ \chi=B_2^2/(4D_4)\\)。二商特異点の解析型は\\(1/3(1,1,2)\\)、\\(1/2(1,1,1)\\)。[全証明](papers/quiver-avatar/global_h2_invariant_hull.tex)、[検算コード](computations/verify_global_h2_pencil_invariants.py)。一般二対称形式の不変式環は既知入力。C3の全相対AS/QP群oid比較とC4の公表前監査・全稿組版は未完成。
 
 ### 点曲線側の相対認識とspectral側の像
 
@@ -117,9 +121,9 @@ $\OO_C\oplus M$ は元の点曲線・同時符号を回復する。指定generic
 
 ### 次の研究と検証の状態
 
-1. **H2適合頂点の相対開とpointed認識。** 全分類AS型の標準頂点を体上で判定した。次は二つのpencil乗法の行列式が定める開を任意底変更と比較し、cubic開の相対mutation・heartと二重壁のrank45模型を貼り合わせる。
+1. **最優先：全相対AS/QP群oidの同型層・慣性・heart。** 既存のH2開・pencil不変式環・標準頂点認識を入力とし、まず可逆cubic開で最小QPのright-equivalenceと有限foundationの同型層を比較し、次にrank3壁とnoncubicへ広げる。
 
-2. **全相対AS・QP groupoidの比較。** 全周期の再構成・同型層・相対heartを検証し、有限foundationの幾何同型類分類と区別する。
+2. **全周期の認識と境界の慣性。** 8/10/12矢の消去pairのスカラー層を保持し、全相対AS実現の最大片と反例・障害を決定する。
 
 3. **公表前の文献・証明・組版確認。** A/Bの監査とCの新しい境界射の先行研究比較を続ける。
 
