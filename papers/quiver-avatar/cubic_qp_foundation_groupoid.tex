@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.33。非最小関係の相対dual tensor dg微分を明示したJacobian比較。
+% 2026-11-23 / v4.34。関係liftの三角right-equivalenceとdg Jacobian比較。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -947,6 +947,74 @@ fiberwise exactnessの局所定数階数判定を適用すると，
 の任意の有限foundationに関する証明には代わらない．
 \end{proof}
 
+\begin{lemma}[残余長関係の局所lift変更は厳密な右同値で貼り合う]
+\label{lem:qa-q12-long-relation-lift-shear}
+二つの短関係の局所枠$r_a=q'+\mu u$，
+$r_b=q+\lambda x$を固定し，
+その三段合成が作る階数四直和因子を
+\[
+ K=(W\otimes r_a)\oplus(r_b\otimes U)
+       \subset\mathcal B
+\]
+とする．残余長関係の階数二束の
+$\mathcal B/K$への埋込みに対し，
+二つの局所liftを選んだ差は
+$\alpha:R_{{\rm fin},03}\to K$に属する．
+長関係の枠を$r_1,r_2$，双対の戻り矢を
+$t_1,t_2$とし，
+\[
+ \alpha(r_i)=w_i r_a+r_b u_i
+ \quad(w_i\in W,\ u_i\in U)
+\]
+と局所的に表す．
+変換
+\[
+ \begin{aligned}
+  \phi_\alpha(v)&=v+\sum_{i=1}^2t_iw_i,&
+  \phi_\alpha(y)&=y+\sum_{i=1}^2u_it_i,\\
+  \phi_\alpha(t_i)&=t_i,&
+  \phi_\alpha(U,V,W,x,u)&=(U,V,W,x,u)
+ \end{aligned}
+ \tag{LS}\label{eq:qa-q12-long-lift-shear}
+\]
+はweighted ordinary道代数の三角的な右同値であり，
+lift前後のrelation potentialを巡回同値まで結ぶ．
+$\phi_{-\alpha}$はその逆で，
+$\phi_{\alpha+\beta}=\phi_\alpha\phi_\beta$が厳密に成り立つ．
+さらに関係枠の線形変換を双対枠の逆転置で
+相殺することで，これらの同型は任意の基底変更と
+全重なりのcocycleを保つ．
+この右同値は\emph{同じ有限foundation上の局所liftの変更}
+に関するものであり，二ruling交換のmutationが
+単一のQP右同値になることを主張しない．
+\end{lemma}
+\begin{proof}
+局所的なrelation potentialは
+\[
+ \mathcal W_{\rm rel}
+   =\sum_i t_i r_i+v r_a+y r_b
+ \qquad\text{（巡回同値）}
+\]
+である．長関係を$r_i+\alpha(r_i)$に変えると
+その差は
+$\sum_i t_iw_i r_a+\sum_i t_i r_bu_i$となる．
+後項は巡回回転によって
+$\sum_i u_it_i r_b$に等しい．
+従ってこの差は，式~\eqref{eq:qa-q12-long-lift-shear}
+を元のpotentialへ代入した差に等しい．
+$t_iw_i$は$v$と同じ始終点・weight，
+$u_it_i$は$y$と同じ始終点・weightを持つ．
+変換は$v,y$以外の生成矢を固定するから，
+その逆は加えた二段道の符号を変えるだけであり，
+二変換の合成は厳密に加法的である．
+任意の係数環上の有限多項式恒等式なので，
+massの可逆性や基底の被約性は不要である．
+関係のGL枠変更と双対の逆転置は
+$\sum_i t_ir_i$を固定し，
+上の加法的shearと自然に可換な半直積作用を作る．
+従って重なりでのcocycleも厳密に成立する．
+\end{proof}
+
 \begin{theorem}[ordinary QP Jacobianと3-preprojective完成]
 \label{thm:qa-two-mass-jacobian-preprojective}
 $\Theta_\Lambda=
@@ -1041,6 +1109,11 @@ $\partial_{r_\alpha^*}\mathcal W_{\rm rel}=r_\alpha$
 生まず，dg algebraは\emph{ordinary}な
 tensor直和で作るため完備化イデアルを必要としない．
 すなわち右辺は通常のJacobian algebraである．
+
+補題~\ref{lem:qa-q12-long-relation-lift-shear}により，
+長関係のlift変更が生じるfppf重なりでは
+このJacobian表示は実際の三角的right-equivalenceで貼り合い，
+関係枠変更とのcocycleも満たす．
 
 基底変更に対して$P_\bullet$は
 $\mathcal O_S$上分裂完全であり，
