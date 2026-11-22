@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v1.1。反対squareの厳密対合と四交差条件の転置不変性。
+% 2026-11-23 / v1.2。全H2 square開の反対対合と左右Noether性の適用範囲。
 \subsection{有限square族への限定的な拡張}
 \label{subsec:qa-finite-square-family-opposite}
 
@@ -198,6 +198,19 @@ $(A,B,C,D)$上で可換な二つの位数二の置換なので，
 と番号付け直す。このとき $B^{\rm op}$ も前補題の仮定を満たす。
 \end{lemma}
 \begin{proof}
+まず前補題の$B$は局所的なsquare二積データを持つ．
+全幾何fiberが分類済みsquare AS型なので，
+各fiberは定理~\ref{thm:qa-square-explicit-h2-open}の
+四交差開に属する．四交差条件は開条件であり，
+基底上の全幾何点で成立するから，
+非被約基底を含めた元の二積データは
+$V_{\mathrm{cross}}$を通る．
+命題~\ref{prop:qa-square-opposite-cross-involution}を
+適用すれば，$B^{\rm op}$も同じ開に属し，
+よって全幾何fiberが分類済みsquare型である．
+以下ではこれと独立に，体上の曲線avatarの
+具体的な反転も確認する．
+
 $Q_i=f_iB^{\rm op}$ とすると
 \[
  \operatorname{Hom}_{B^{\rm op}}(Q_i,Q_j)
@@ -301,13 +314,20 @@ cohomological shift $[2]$ はこの比較と可換する。
 
 \begin{corollary}[square完成の左右Noether性]
 \label{cor:qa-relative-square-completion-two-sided-noetherian}
-実際の相対 curve-type square avatar から構成した $\Lambda$ について、
-$C(\Lambda)$ は各局所 affine chart とその許された基底変更上で
-左右 Noetherian である。
+補題~\ref{lem:qa-classified-fiber-finite-square-recognition}
+の仮定を満たす任意の有限局所自由square族$\Lambda$について，
+特に全$H_2$実現可能なsquare表示開
+$V_{\mathrm{cross}}$の普遍代数について，
+$C(\Lambda)$は本稿の局所有限型siteの各affine chartと
+許された基底変更上で左右Noetherianである．
+実際の相対curve-type avatarだけでなく，
+古典型とrank三の境界族も含む．
 \end{corollary}
 \begin{proof}
-右 Noether 性は既存の tails 認識による。
-反転した $\Lambda^{\rm op}$ は
+右Noether性は補題~
+\ref{lem:qa-classified-fiber-finite-square-recognition}
+の相対tails認識による．
+反転した$\Lambda^{\rm op}$は
 補題~\ref{lem:qa-square-foundation-opposite} により
 全幾何 fiber が分類済み square 型である有限局所自由族なので、
 補題~\ref{lem:qa-classified-fiber-finite-square-recognition} により
