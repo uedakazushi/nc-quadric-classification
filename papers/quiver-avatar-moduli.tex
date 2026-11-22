@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.7
+% 日本語 LuaLaTeX。2026-11-22 / v1.8
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -51,7 +51,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v1.7（特殊ruling交換とstack的非分岐）}
+\date{2026年11月22日\quad v1.8（片側二捩れ特別座の慣性群型）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -101,6 +101,9 @@ $\eta-\delta\in E[2]$のとき、かつそのときに限る。
 同じquintuple同型類が一つでも相対2-fiberには
 pointed比較同型の剰余類から二対象が残り、
 忘却はstackとして表現可能étale・非分岐である。
+さらに片側の二捩れ条件のみ成立する正則半単純楕円点では、
+translation型の全慣性群は$C_4\times C_2$、
+反転型では$C_2^3$である。
 忘却射の相対ファイバーには表示の軌道だけでなく自己同型群の商が現れる。
 既存の次数四 GIT 射を Serre 平方根の忘却と同一視しない。
 OU射の座標置換群はS4、有効符号群はF2²、Galois閉包の群も別のS4であり、滑らかな楕円曲線上の
@@ -116,7 +119,7 @@ GIT不変量による$j$の公式も得る。Hodge対合でrulingの符号を決
 正則半単純な非対角potential族には相対Hodge-Jacobian同型と
 特性係数による相対半点を任意底変更と可換に構成する。
 potentialを選ばない一般quintupleから内在$\HHstack$への
-特殊cubicおよびnoncubic境界の局所分岐・群拡大の型・pointed fiberの相対化、
+特殊cubicおよびnoncubic境界の局所分岐・両二捩れ条件の交点での慣性・pointed fiberの相対化、
 二rulingの全相対的降下は未解決である。
 さらに非線型geometric quintupleの全相対族からは
 根を標識として選ぶことなくpointedな内在的H2への射が構成でき、
@@ -210,6 +213,8 @@ OUの一般安定化群という表現は単位連結成分と全慣性を区別
 系~\ref{cor:qa-potential-h2-generic-degree-eight}に示す。
 さらに稠密開でのスタック的な商同型は
 定理~\ref{thm:qa-h2-generic-ruling-quotient}で与える。
+片側二捩れ特別座の全慣性群型は
+命題~\ref{prop:qa-elliptic-special-inertia-group-types}に示す。
 特殊ruling交換の正確な二捩れ条件は
 命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}に証明する。
 特別点の2-fiberは命題
