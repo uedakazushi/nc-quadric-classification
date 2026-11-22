@@ -426,6 +426,205 @@ $\operatorname{GL}_2(\mathbb F_2)\simeq S_3$によって
 異なる基底上のtorsor cocycleを比較できないことによる。
 \end{proof}
 
+\begin{theorem}[共通spectral incidence上の二四重torsorは非同型]
+\label{thm:qa-ou-half-period-common-incidence-not-isomorphic}
+$X^\circ\subset\PP^3_{[x_1:x_2:x_3:x_4]}$を
+$x_i\ne0$、$x_i^2\ne x_j^2$、および
+前節の有効群
+$G=V\rtimes S_4^{\mathrm{coord}}$が自由に作用する
+稠密な$G$-不変開とする。
+二対分割
+$\mathfrak p=\{12\mid34\}$を固定し、
+その集合的安定化群
+$H_{\mathfrak p}\subset S_4$（位数$8$）と
+\[
+ \Gamma_{\mathfrak p}=V\rtimes H_{\mathfrak p},
+ \qquad
+ I_{\mathfrak p}=X^\circ/\Gamma_{\mathfrak p}
+\]
+を置く。$I_{\mathfrak p}\to B=X^\circ/G$は
+四分岐点の二対分割を一つ選ぶ次数三の
+有限\'{e}tale被覆である。
+OU四重射$Y=X^\circ/S_4\to B$の引戻しは
+\[
+ Y_{\mathfrak p}
+ :=Y\times_BI_{\mathfrak p}
+ \simeq X^\circ/H_{\mathfrak p}
+ \longrightarrow I_{\mathfrak p}
+\]
+である。
+
+この同じincidence基底上で、四つの二乗固有値
+$r_i=x_i^2$（共通スカラー倍まで）を用い
+\begin{equation}
+ f_1(t,z)=(t-r_1z)(t-r_2z),\qquad
+ f_2(t,z)=(t-r_3z)(t-r_4z)
+ \label{eq:qa-common-incidence-rootpair}
+\end{equation}
+と置く。$x_i\mapsto\lambda x_i$のとき
+$t\mapsto\lambda^2t$、各平方根変数と$y$を
+それぞれ$\lambda^2,\lambda^4$倍すれば、
+構成は射影的な変更と両立する。
+$\Gamma_{\mathfrak p}$の作用は根対の内部交換・
+二根対相互交換および偶数符号変更からなり、
+二根対相互交換では平方根変数を交換する。
+従ってこれらの相対曲線は$I_{\mathfrak p}$へ降下する。
+特に
+\begin{equation}
+ C_q:\ y^2=f_1f_2=\prod_{i=1}^4(t-r_iz)
+       \quad=\quad E_{\mathrm{sp}}^{\mathrm{OU}}
+ \label{eq:qa-common-ou-noncubic-spectral}
+\end{equation}
+はOU側のspectral曲線と同一であり、
+\[
+ E_f=\{c^2=f_1,\ d^2=f_2\}
+   \xrightarrow{\;2:1\;} C_q
+\]
+は同時符号商である。
+二対分割は$C_q$上の非零二捩れ$M_C$を定め、
+Jacobianについて
+$J(E_f)\simeq J(C_q)/\langle M_C\rangle$となる。
+OU側の四重torsorは
+$Y_{\mathfrak p}=[2]^{-1}(P_+)$
+（$P_+=(0,\prod_i x_i)$は$C_q$上の点）であり、
+noncubic側のものは
+\[
+ T_{\mathfrak p}
+   =[2]^{-1}(P_E),\qquad
+ 0\ne P_E=[F_dF_c^{-1}]\in J(E_f)[2]
+\]
+である。双方の一般monodromy群は$D_4$であるが、
+\begin{equation}
+ \boxed{Y_{\mathfrak p}\not\simeq T_{\mathfrak p}
+ \quad\text{as finite \'etale covers of }I_{\mathfrak p}.}
+ \label{eq:qa-ou-half-common-incidence-nonisom}
+\end{equation}
+実際、$X^\circ$へ引き戻すとOU四重射は
+$\coprod_{4}X^\circ$に分裂するが、
+$T_{\mathfrak p}$は分裂しない。
+従って両torsorのKummer classは、
+この自然な共通incidence基底上で一致しない。
+この結果は、別の未知の基底変更や相対mutation後の
+pointed同値の不存在を主張しない。
+\end{theorem}
+\begin{proof}
+$G/\Gamma_{\mathfrak p}$の濃度は
+$[S_4:H_{\mathfrak p}]=3$であり、
+$G=S_4\Gamma_{\mathfrak p}$、
+$S_4\cap\Gamma_{\mathfrak p}=H_{\mathfrak p}$だから
+OU被覆の引戻し式が従う。
+$X^\circ\to I_{\mathfrak p}$は
+$\Gamma_{\mathfrak p}$-torsorなので、
+$Y_{\mathfrak p}\times_{I_{\mathfrak p}}X^\circ$
+は四つの自明なsheetに分かれる。
+
+二対分割のもとで式
+\eqref{eq:qa-common-incidence-rootpair}を取ると、
+偶数符号群$V$は$r_i$を固定し、
+$H_{\mathfrak p}$は二つの根対の内部を置換するか
+二根対を交換する。
+射影スカラーの作用は式の直前で述べた重みと
+両立するから、曲線$C_q,E_f$は降下する。
+非零二捩れ$M_C$は二対分割で定まり、
+$P_E$はruling交換で逆元になるだけなので、
+$J(E_f)$のsectionとして降下する。
+二曲線の関係とOUのKummer表示は
+定理~\ref{thm:qa-point-spectral-dual-two-isogeny}、
+\ref{thm:qa-ou-spectral-kummer}である。
+
+$x_4=1$の射影chartを取り、
+$z_i=x_i/x_4$（$i=1,2,3$）と書く。
+$X^\circ$の関数体は$F=k(z_1,z_2,z_3)$である。
+$x_i^2$の四分岐点を$x_1^2$だけ平行移動して
+定理~\ref{thm:qa-half-period-not-root-choice}を適用すると、
+$T_{\mathfrak p}$の$F$への引戻しは
+\begin{equation}
+ \operatorname{Spec}
+ \left(F(\sqrt A)\times F(\sqrt B)\right),\qquad
+ \begin{aligned}
+ A&=(1-z_1^2)(z_3^2-z_2^2),\\
+ B&=(z_3^2-z_1^2)(1-z_2^2)
+ \end{aligned}
+ \label{eq:qa-common-incidence-halfpoint-classes}
+\end{equation}
+となる。
+$A$の素因子$z_1-1$の指数は一、$B$では零である。
+逆に$B$の素因子$z_3-z_1$の指数は一、$A$では零である。
+従って$[A],[B]\in F^\times/F^{\times2}$は独立であり、
+右辺の二つの二次拡大は非自明である。
+従って$T_{\mathfrak p}$は$X^\circ$上で分裂せず、
+自明化されるOU四重射と同型ではない。
+
+最後に両monodromyが$D_4$であることを確認する。
+OU側は命題~\ref{prop:qa-ou-fourfold-dihedral-restriction}に
+よって明らかである。
+$T_{\mathfrak p}$は非零二捩れsectionを持つので
+モノドロミーは$D_4$に含まれる。
+$X^\circ$の関数体上で平方類$[A],[B]$が
+独立なので、分解体の符号変更群$(\mathbb Z/2)^2$
+が実現される。
+さらに$H_{\mathfrak p}$中の$(12)$は
+$A$と$B$を交換するため
+二つの符号変更を交換する位数二の作用も得られる。
+従って上界$D_4$が達成される。
+
+$Y_{\mathfrak p}$と$T_{\mathfrak p}$は
+基底の関数体へ引き戻した有限\'{e}tale代数さえ
+同型でないため、被覆としての非同型が従う。
+\end{proof}
+
+\begin{proposition}[共通incidenceの二torsorの作用群も異なる]
+\label{prop:qa-ou-half-common-incidence-groups-distinct}
+定理~\ref{thm:qa-ou-half-period-common-incidence-not-isomorphic}
+の全固有値を指定する被覆$X^\circ$の関数体
+$F=k(z_1,z_2,z_3)$上では、
+二つの楕円曲線の$2$-torsion有限\'{e}tale群は
+\begin{equation}
+ \#J(C_q)[2](F)=4,\qquad
+ \#J(E_f)[2](F)=2 .
+ \label{eq:qa-ou-half-two-torsion-groups}
+\end{equation}
+特に
+\[
+ J(C_q)[2]_F\not\simeq J(E_f)[2]_F
+\]
+である。
+従ってOUのKummer torsor
+$[2]^{-1}(P_+)$とnoncubic側の
+$[2]^{-1}(P_E)$は、共通のspectral曲線$C_q$を
+持つからといって同じ有限群スキームの
+$H^1$の類として直接比較できない。
+両Jacobianを結ぶ次数二isogenyは存在するが、
+その$2$-torsion上の射は同型ではない。
+\end{proposition}
+\begin{proof}
+$C_q:y^2=\prod_{i=1}^4(t-r_i)$では
+四分岐点$R_i=(r_i,0)$が全て$F$-有理である。
+各$t-r_i$の主因子は
+$2R_i-\infty_+-\infty_-$だから、
+$2(R_i-R_1)\sim0$である。
+$i=2,3,4$の三つの差は全て非自明かつ互いに異なる。
+従って$J(C_q)[2]$の四点は全て$F$-有理となる。
+
+一方、式~\eqref{eq:qa-half-period-isogenous-model}は
+$J(E_f)$の模型を
+\[
+ Y^2=X\bigl(X^2+2(A+B)X+(A-B)^2\bigr)
+\]
+と与える。
+非零$2$-torsionの$X$座標は
+\[
+ X=0,\qquad X=-(A+B)\pm2\sqrt{AB}.
+\]
+式~\eqref{eq:qa-common-incidence-halfpoint-classes}の
+$A,B$について$AB$は$F$上非平方である。
+実際、素因子$z_1-1$に関して$A$の付値は一、
+$B$は零だから$AB$の付値は奇数である。
+従って$F$-有理な$2$-torsionは
+$O$と$(0,0)=P_E$の二点だけである。
+これは有限\'{e}tale群としての非同型を示す。
+\end{proof}
+
 \begin{remark}[異なる次数四被覆と特異境界]
 \label{rem:qa-half-period-versus-root-cover}
 半周期torsor $T_P$は$J[2]$-torsorであり、
@@ -439,15 +638,18 @@ $\operatorname{GL}_2(\mathbb F_2)\simeq S_3$によって
 OUの一般四重射は$S_4$であり、
 非零二捩れを選ぶ次数三被覆の後に$D_4$となる
 （命題~\ref{prop:qa-ou-fourfold-dihedral-restriction}）。
-ただしこの群の一致からOU torsorと$T_P$の
-同型を結論してはならない。
-前者はpotential/quintupleのGIT表示側、
-後者はnoncubic二形式から作った点曲線$E_f$の
-Jacobian側に属し、両基底の比較射は未構成である。
-また根対の三分割はspectral曲線$C_q$の
-非零二捩れ$M_C$を選ぶが、$T_P$は
-$C_q$とは一般に非同型な二同種曲線$J(E_f)$上の
-別の二捩れ$P_E$を二等分する。
+命題~\ref{thm:qa-ou-half-period-common-incidence-not-isomorphic}
+により、OUの四固有値平方を二対分割する
+自然な共通incidence基底$I_{\mathfrak p}$上では、
+両torsorは\emph{同じ}$D_4$-monodromy群を持ちながら
+有限\'{e}tale被覆として非同型である。
+この基底上ではOUのspectral曲線とnoncubicの
+$C_q$は一致するが、noncubicの半周期torsorは
+その二同種$J(E_f)$上の別の非零二捩れ$P_E$を
+二等分する。従って群の一致やspectral曲線の一致だけでは
+Kummer類の同一性は導けない。
+異なる別の基底変更・derived mutation後の
+pointed圏同値の有無はここから結論しない。
 nodal/$I_2$では相対$\Pic^0$の$[2]$の幾何次数が
 smooth fiberの四から変わるため、
 上記の同じ次数四の\'{e}tale torsorを

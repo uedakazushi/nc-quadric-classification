@@ -1,7 +1,47 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.77。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.78。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## OU/noncubicの共通spectral incidenceとKummer類の不一致
+
+一次資料としてOkawa--Ueda (2014, arXiv:1403.0713)の
+Theorem 1.1(4)にあるpotential→quintuple有限次数4射、
+および論文Cで同文献の§5から再構成した対角固有値表示を使う。
+OUのspectral Kummer同型自体はC
+thm:qa-ou-spectral-kummerの証明による。既知のOU一般次数4
+射の新発見とは主張しない。
+
+四固有値$x_i$の二乗$r_i=x_i^2$を二対分割し、
+二対分割の安定化群で割ったincidence基底
+$I_{\mathfrak p}=X^\circ/(V\rtimes H_{\mathfrak p})$を構成した。
+そこではOU spectral曲線
+$E_{\rm sp}:y^2=\prod_i(t-r_i)$とnoncubicの
+$C_q:y^2=f_1f_2$は同一の相対四次被覆である。
+noncubic点曲線$E_f\to C_q$は非分岐次数2の被覆。
+両四重torsorは同じ一般$D_4$-monodromyを持つが、
+全固有値を指定した関数体$F=k(z_1,z_2,z_3)$上では
+OU側は4つの自明sheet、noncubic側は
+$F(\sqrt A)\times F(\sqrt B)$となり非同型。
+$A=(1-z_1^2)(z_3^2-z_2^2)$、
+$B=(z_3^2-z_1^2)(1-z_2^2)$の独立非平方性は
+一次素因子の奇付値から証明した
+（C thm:qa-ou-half-period-common-incidence-not-isomorphic）。
+同じ$F$上で$J(C_q)[2]$は4点全て有理的だが、
+$J(E_f)[2]$は2点しか有理的でない
+（他二点は$\sqrt{AB}$を要する、
+C prop:qa-ou-half-common-incidence-groups-distinct）。
+ゆえに比較する有限\'etale群スキーム自体が異なる。
+
+これは本研究で証明した比較結果で、先行文献の
+Kummer exact sequenceや二同種の一般事実とは区別する。
+ただし相対mutation、pointed qgr、別の任意基底変更後での
+同値の有無、外部文献全体に対する新規性は未解決。
+計算の範囲は
+computations/verify_ou_half_common_incidence.py
+の四次式恒等式、平方類奇付値、OU halfpointの有理性、
+isogenous Jacobianの非分裂2torsion判別式。
+原稿に証明があることと独立の数学的全面監査は区別する。
 
 ## 二つの有限四重射のmonodromy：D4とS4の射程
 
