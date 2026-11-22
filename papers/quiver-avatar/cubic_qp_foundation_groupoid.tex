@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.23。cubic八矢QPと有限foundationの相対群oid。
+% 2026-11-23 / v4.25。可逆cubicとmass壁の相対QP群oid。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -291,6 +291,238 @@ $0\to(\epsilon)\to R\to k\to0$
 を$A$でtensorすることで
 $\ker(\epsilon:A\to A)=\epsilon A$となる。
 これは$z\notin\epsilon A$と矛盾する。
+\end{proof}
+
+
+\subsection{非最小十矢のmassゲージと相対群oid}
+\label{subsec:qa-ten-arrow-mass-gerbe}
+
+次は八矢領域から階数三のscheme壁への移行を扱う．
+四辺のrank-two矢束を$U,V,W,T$とし，偶数対角の
+$x:0\to2,\ y:2\to0$を追加する．
+$Q_8$の矢だけで作る道
+$q:0\to2$，$p:2\to0$を用いて，
+\[
+ \mathcal W_\lambda=H+yq+px+\lambda yx
+ \tag{MG}\label{eq:qa-mass-gauge-potential}
+\]
+とする．ここで$H$は四辺を一周するquartic potentialである．
+$q\in V\otimes U$，$p\in T\otimes W$であり，これらを
+$x,y$に依存しないものとして保つ．
+$\lambda$は任意の可換係数環$R$の元で，零因子でもよい．
+
+\begin{theorem}[massを横断する滑らかなゲージ群]
+\label{thm:qa-mass-gauge-smooth-group}
+\[
+ \mathcal U_\lambda
+ =\Spec R[t,(1+\lambda t)^{-1}],\qquad
+ t\star s=t+s+\lambda ts
+ \tag{UG}\label{eq:qa-mass-gauge-group-law}
+\]
+は$R$上smoothかつflatな相対次元一の可換群スキームである．
+その$\mathcal W_\lambda$への重みを保つ右同値作用は
+$a=1+\lambda t$として
+\[
+ x\longmapsto ax+tq,\qquad
+ y\longmapsto a^{-1}(y-tp),
+ \qquad U,V,W,T\text{の各矢は固定}
+ \tag{GA}\label{eq:qa-mass-gauge-action}
+\]
+で与えられる．この右同値はpotentialを巡回同値の意味で
+厳密に固定し，$\Jac(Q_{10},\mathcal W_\lambda)$には
+恒等自己同型を誘導する．
+$R/(\lambda)$上では$\mathcal U_0=\Gm^0\times\mathbb G_a
+\simeq\mathbb G_a$，$\lambda$が単元の開では
+$t\mapsto1+\lambda t$で$\mathcal U_\lambda\simeq\Gm$となる．
+$\lambda=\epsilon$ on $R=k[\epsilon]/(\epsilon^2)$でも
+$\mathcal U_\epsilon$はsmooth/flatである．
+$(\lambda,q)$が係数環上単位idealを生成するとき，この作用は
+right-equivalenceの安定化群への群スキーム単射である．
+\end{theorem}
+\begin{proof}
+$1+\lambda t$を可逆化した$\mathbb A^1_R$の主開なので
+smooth/flatは直ちに従う．積の式に対し
+$1+\lambda(t\star s)=(1+\lambda t)(1+\lambda s)$，
+逆元は$-t/(1+\lambda t)$である．
+右同値の逆写像も同じ形式で与えられる．
+
+式~\eqref{eq:qa-mass-gauge-action}をpotentialに代入する．
+$x'=ax+tq$，$y'=a^{-1}y-ta^{-1}p$と置くと，
+$y'q,px',\lambda y'x'$の展開で，
+$yx,yq,px,pq$の巡回係数はそれぞれ
+\[
+ \lambda,\qquad
+ a^{-1}(1+\lambda t)=1,\qquad
+ a(1-\lambda t/a)=1,\qquad
+ t-t/a-\lambda t^2/a=0 .
+\]
+$pq$と$qp$は巡回同値であり，ゆえに
+$\mathcal W_\lambda(x',y')\sim_{\rm cyc}
+\mathcal W_\lambda(x,y)$である．
+さらに
+\[
+ x'-x=t(q+\lambda x)=t\,\partial_y\mathcal W_\lambda,
+ \qquad
+ y'-y=-\frac{t}{a}(p+\lambda y)
+      =-\frac{t}{a}\,\partial_x\mathcal W_\lambda .
+\]
+従ってJacobian商では各生成矢の像が等しい．
+$\lambda$が単元なら$a$が任意の可逆元を走り，
+$\lambda=0$なら加法群となる．
+もし$\lambda$が単元でない点で$q$の一成分が単元なら，
+$x$に加えた$q$の係数から$t$が復元される．
+$\lambda$が単元なら$x$のスカラー$a$から$t$が復元される．
+単位ideal条件によりこれらがZariski局所に適用でき，
+作用は単射である．
+\end{proof}
+
+\begin{theorem}[一積可逆なscheme壁の十矢QP群oid]
+\label{thm:qa-ten-arrow-relative-finite-gerbe}
+$Z^{\rm nd}$と$G$を有限foundationの
+定義~\ref{def:qa-foundation-open}・命題~\ref{prop:qa-foundation-stack}
+に従うものとする．$b:W\otimes V\to F$が可逆な開の
+unrigidified stackを
+\[
+ \mathfrak F^{\rm lin}_{b\text{-inv}}
+   =[(Z^{\rm nd}\cap D(\det b))/G]
+\]
+と置く．十矢potential空間のうち
+式~\eqref{eq:qa-mass-gauge-potential}の係数が次の
+二条件を満たす開groupoidを$\mathfrak P^{\rm good}_{10,e}$
+とする：
+\begin{enumerate}
+ \item 全幾何点で，$\lambda\ne0$または$q$が非分解可能
+       （すなわち$D(\lambda)\cup D(\det q)$）．
+ \item $\mathcal D=(V\otimes U)\oplus\mathcal O x$，
+       $r=q+\lambda x$とし，
+       $\partial_T\mathcal W_\lambda:T^\vee\to W\otimes\mathcal D$
+       を取ると，次の写像の像が階数四の直和因子である：
+       \[
+       (W\otimes\mathcal O r)\oplus T^\vee
+          \longrightarrow W\otimes\mathcal D,\qquad
+       (w\otimes r,\tau)\longmapsto
+             w\otimes r+\partial_T\mathcal W_\lambda(\tau).
+       \tag{FR}\label{eq:qa-mass-gauge-relation-bundle}
+       \]
+\end{enumerate}
+この開はweighted right-equivalence groupoidの制限として
+任意の基底変更に安定である．
+その各対象から
+\[
+ E=\mathcal D/(\mathcal O r),\quad
+ F=W\otimes V,\quad
+ N=(W\otimes\mathcal D)/
+       (W\otimes r+\operatorname{im}\partial_T\mathcal W_\lambda)
+ \tag{FD}\label{eq:qa-mass-gauge-finite-reconstruction}
+\]
+を構成すると，有限foundationの全積を保存する射
+\[
+ \Phi:\mathfrak P^{\rm good}_{10,e}
+          \longrightarrow\mathfrak F^{\rm lin}_{b\text{-inv}}
+\]
+が得られる．$\Phi$はfppf局所にessentially surjectiveで，
+全Isom sheafの射もfppf局所に全射である．
+各対象における自己同型の核は
+定理~\ref{thm:qa-mass-gauge-smooth-group}の
+$\mathcal U_\lambda$に正確に等しい．
+すなわち$\Phi$はfppf局所に$\mathcal U_\lambda$を
+相対慣性とするgerbeであり，幾何的rank三の壁上では
+$\mathbb G_a$，可逆cubic開では$\Gm$となる．
+$\lambda$がnilpotentでも群スキームはsmooth/flatである．
+この定理は有限代数のgroupoidについての主張であり，
+任意のpotentialのAS正則性を含まない．
+\end{theorem}
+\begin{proof}
+第一条件は幾何点での条件であり，
+$\lambda=0$では$q$の非分解性は二因子の基底変更と
+可逆scalar倍で保存される．
+$x$への二段道の付加は$q$を$\lambda$倍の道だけ変えるので，
+この条件は右同値に不変である．第二条件も，関係束とその
+直和因子性の不変性から保たれる．
+
+$r$は各幾何点で非零のprimitive元であり，
+$\mathcal O r\subset\mathcal D$はrank-one直和因子である．
+第二条件によって$E,N$はそれぞれrank四・六の束となる．
+二段の積$a:V\otimes U\to E$は商写像，$b$は恒等，
+三段の積$c:W\otimes E\to N$は商写像，
+$d:(W\otimes V)\otimes U\to N$はその合成である．
+従って結合律と$(c,d)$の全射性を満たす．
+$\lambda\ne0$なら$a$は可逆であり，
+$\lambda=0$では$\ker a=kq$がSegreを避ける．
+ゆえに全ての幾何点で$Z^{\rm nd}$の条件を満たす．
+$x,y,T$のright-equivalenceはrelationの枠やliftを変更する
+だけなので，この構成は相対groupoid射となる．
+
+逆方向を局所的に構成する．
+$b$が可逆なfinite foundationでは結合律により
+$d$は$c$と$a$から決まり，$(c,d)$の全射性は$c$の全射性と同値である．
+$a$は各幾何点でrank三または四である．
+ある三次minorを可逆化し，源$V\otimes U$の第四基底を$q$，
+標的$E$の第四補元を$x$と選べば
+$a\sim\operatorname{diag}(I_3,-\lambda)$となり，
+$E\simeq((V\otimes U)\oplus\mathcal O x)/(q+\lambda x)$を得る．
+rank三の点では$q$は既存の非分解可能kernel線の生成元なので，
+$\det q$は単元に取れる．
+$c$の核$K\subset W\otimes E$はrank二の直和因子である．
+その局所基底を$T^\vee$で標識し，
+$W\otimes\mathcal D\to W\otimes E$へのliftを選べば
+$\partial_T\mathcal W_\lambda$の二本を得る．
+各liftを三段道成分と$x$成分に分けると
+$H+px$が復元し，$y(q+\lambda x)$を追加して
+十矢potentialを得る．構成~\eqref{eq:qa-mass-gauge-finite-reconstruction}
+は元の全積を回収する．
+これらの枠・splitting・liftはfppf局所に取れ，
+任意の有限foundation同型も同じ選択を合わせることで
+十矢right-equivalenceへ局所に持ち上がる．
+
+最後に自己同型核を計算する．
+有限foundationを恒等に保つ右同値は$U,V,W$上で恒等であり，
+$x\mapsto\alpha x+z$について
+$\alpha x+z-x$が$E$で零である．
+$r=q+\lambda x$がprimitiveだから，これは唯一の$t$について
+\[
+ \alpha=1+\lambda t,\qquad z=tq
+\]
+と同値である．$\alpha$は単元なので$t\in\mathcal U_\lambda$．
+また$\partial_T\mathcal W_\lambda$の$W\otimes E$への像は
+rank二直和因子であり，$N$を恒等に固定する
+potential自己同型は$T$の基底を変更できない．
+残る$y\mapsto\beta y+h$をpotentialの係数と比較する．
+$r$がprimitiveであることから
+\[
+ \beta=(1+\lambda t)^{-1},
+ \qquad h=-t(1+\lambda t)^{-1}p
+\]
+が一意に強制される．これは
+式~\eqref{eq:qa-mass-gauge-action}そのものである．
+従って核の群スキームは$\mathcal U_\lambda$に尽き，
+任意基底変更でも同じ計算が成立する．
+\end{proof}
+
+\begin{corollary}[実際のmutation AS族への適用範囲]
+\label{cor:qa-mass-gauge-actual-as-window}
+定理~\ref{thm:qa-relative-mutation-nonminimal-as-resolutions}
+の局所十矢表示
+$\mathcal W_\delta=\delta yx+yq+px+H$は
+上記$\Phi$の対象である．特に
+$\delta=\epsilon$ on $k[\epsilon]/(\epsilon^2)$でも
+finite foundationの全成分と全積は平坦に回収され，
+raw QP自己同型からfinite foundation自己同型への核には
+滑らかな$\mathcal U_\epsilon$が現れる．
+既存の非平坦な対角scalar部分慣性
+$\mathcal T_\epsilon$（補題~\ref{lem:qa-cubic-qp-nilpotent-mass-scaling}）
+と、この滑らかなゲージ核は別の部分群である．
+全相対heartと選択したmutation窓の一致は
+定理~\ref{thm:qa-relative-rot-mut-completion-heart}による．
+ここから選択した窓を忘れた全AS/QP stackと
+内在的$H_2$の同値を推論しない．
+\end{corollary}
+\begin{proof}
+補題~\ref{lem:qa-relative-mutation-seven-three-presentation}は
+$q$のprimitive性と$\delta$の任意の冪零値を許し，
+命題~\ref{prop:qa-relative-mutation-ordinary-jacobian}は
+同じpotentialが実際のflatな相対有限代数・全次数完成を
+与えることを示す．前定理を適用すれば結論が従う．
 \end{proof}
 
 \begin{remark}[十二矢QPの余剰慣性と残る比較]
