@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.94（A v1.69・20節、B v0.39・31節、C v2.0）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.95（A v1.69・20節、B v0.39・31節、C v2.1）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -348,8 +348,27 @@ cor:qa-ou-one-cubic-fiber-and-nonfinitenessが証明正本。
 有限群・Legendre恒等式の検算資産：
 computations/verify_ou_cm_automorphisms.py。
 この例は*一cubic境界*の現象であり、全H2のnoncubic locusの分類ではない。
-次の核心はBの有限foundation相対mutationで欠けたsheetを復元し、
-noncubic境界との群oid比較を完成すること。
+Artin形式変形の二normal foundation持上げとmutation交換は解決。次はこれを有限型非被約基底に代数化し、full noncubic境界とのgroupoid比較を完成すること。
+
+**Artin上の二rulingの一意持上げと形式的交換（Cで証明）。**
+任意のH2点の二つのnormal foundation X/Yに対し、
+B thm:artin-foundation-liftを各full geometric helixへ適用すると、
+任意のflat pointed Artin変形A上で、それぞれの列が
+flat noetherian対象の列として同型類一意で持ち上がり、
+全Homのfinite free性と階数24のtilting End代数を保つ。
+特別ファイバーでX≇Yなので二持上げは異なる。
+B prop:relative-ruling-involutionと
+prop:ruling-involution-mutationによるkernel/cokernelの相対対合τは
+全normal foundationの有限表示に適用でき、
+Artin持上げ後も定義され、τ(X_A)≅Y_Aとなる。
+したがって一cubic境界でもnoncubic側のnormalized foundationは
+Artin形式近傍で存在し、cubic quintuple表示が欠くsheetを補完する。
+この整合性はArtin局所の同型類に関するもので、選択スタックを
+一般有限型非被約基底上に代数化したことも、全相対H2との
+groupoid同値を示したことも意味しない。
+証明正本C prop:qa-ou-formal-two-ruling-lifts。
+次はfinite foundation stackの相対mutationと選択を含む
+framed atlasのdescentを比較し、全noncubic境界での効果性を監査。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから

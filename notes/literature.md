@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.62。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.63。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -175,6 +175,8 @@ j=0、0≠δ∈ker(ζ3−1)≅C3、η=2δでは全慣性A4、
 k[[a,u,v]]^{C3}。これは全noncubic境界の定理ではない。
 証明はCのCM補題・A4命題・一cubic境界系にあり、
 通常のOU2014やVdB2011の定理として未確認のまま帰属させない。
+
+**Artin変形と相対rulingの内部入力。** Cのprop:qa-ou-formal-two-ruling-liftsは、論文Bのthm:artin-foundation-lift（De Deken--Lowen 2011 Theorem 5.13の適用、flat geometric helixの同型類一意持上げ）と、prop:relative-ruling-involution/prop:ruling-involution-mutation（base change自然なkernel/cokernel mutation）から、全H2点の二normal foundationがArtin形式近傍で互いに非同型に持ち上がることを導く。これは文献の一般的なhelix変形定理の新規主張とは区別する。有限型の非被約基底での選択スタックの代数化、非cubic全境界への群oid同値は引き続き未証明。
 
 ## 研究の位置
 
