@@ -922,12 +922,31 @@ normal foundationは構造対象$\mathcal O_S$を含み，
 したがって$(T,t)$は相対AZ ampleであり，
 通常軌道環は右Noetherianかつその$\qgr$は
 実際の$\mathcal C_S$に同値である．
-左Noether性については，normal四項の双対の相対full
-strong性と逆Serre completionの比較により，
+左Noether性を別に確認する．
+normal四項を相対mutationで得た元のsquare四項に戻す
+（定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}）．
+square有限代数のindexed oppositeは，頂点を逆順にし，
+補題~\ref{lem:qa-square-foundation-opposite}により
+全幾何fiberが再び分類済みsquare型の有限基礎となる．
+補題~\ref{lem:qa-classified-fiber-finite-square-recognition}により，
+この反対squareにも実際の相対heartと右Noetherな
+canonical完成がある．
+元のsquareからnormalへの有限coneを反対圏で逆向きに取れば，
+反対normal四項をこのheartのfull strong foundationとして得る．
+その関係束とHomの相対perfect性は，元の相対coneの
+双対・基底変更によって保持される．
+反対normalの幾何fiberでも対応するnormal helixの
+forward Ext消滅が成立するため，
+前段の相対AZ議論を反対normalに適用し，
+$C(\Lambda^{\rm op})$の右Noether性を得る．
 補題~\ref{lem:qa-serre-completion-opposite}の
-同じ議論を適用する．
-この議論は相対perfectnessと左右oppositeに
-のみ依存し，最小矢束のflat性を仮定しない．
+$C(\Lambda^{\rm op})\simeq C(\Lambda)^{\rm op}$
+により$C(\Lambda)$は左Noetherである．
+この反転には頂点の逆順とSerreの向きの交換が必要であり，
+単に同じheart上で全対象を双対化したと主張するものではない．
+各cone・対角解消は有限束から構成され，
+許された基底変更と整合する．
+最小矢束のflat性は仮定しない．
 
 最後に零頂点の標準射影を$\mathcal O_S$に対応させ，
 preprojective次数移動を$t$へ対応させれば
