@@ -39,12 +39,23 @@ $\im\mu_d=\langle u,v,d\rangle$であり、
 （C prop:qa-point-mcm-composition-veronese）。
 二像は各階数3で交わりは$\langle u,v\rangle$、
 和は$(B_f)_1$全体。
-**最優先の未解決事項**は、normal helix
-$(\pi B_f,\pi X_c,\pi B_f(1),\pi X_d(1))$の
-残りのHom・全合成・最小関係を含む
-有限directed End代数の同定、
-O-pointingとSerre completionの整合、
-内在H2 heartのpointed exact同値である。
+**条件付きpointed認識の帰着も証明した。**
+noncubic normal helixの四頂点End
+$B_{\mathrm{nc}}=\End_{\mathrm{dir}}(E_0,\ldots,E_3)$
+（$E_0=\pi B_f$）と、$E_f$上のsquare avatarを一度
+正しくmutationした最小AS10 helixの
+$B_{\mathrm{av}}=\End_{\mathrm{dir}}(H_0,\ldots,H_3)$の
+頂点・compositionを保つ同型が存在すれば、
+Serre完成の一意性とAZ amplenessで
+$(\qgr B_f,\pi B_f)\simeq
+(\qgr A_{\mathrm{av}},\pi e_0A_{\mathrm{av}})$という
+O-pointed exact同値を得る
+（C prop:qa-point-mcm-pointed-finite-end-reduction）。
+**最優先の未解決事項**は、
+上記$B_{\mathrm{nc}}\cong B_{\mathrm{av}}$を
+残りのHom・最小関係・全合成の計算で実際に証明すること。
+部分的な二rank-three乗法像の一致と、
+全End同型・O-pointed認識を混同しない。
 現時点ではどちらの曲線がnormal helixのAS avatarとなるか
 未証明であり、根を共有する境界では
 isogenyがétaleでなくなる。
