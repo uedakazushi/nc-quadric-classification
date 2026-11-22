@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v2.7（ruling交換の正確な二捩れ特別座を決定）
+% 2026-11-22 / v2.8（特殊ruling交換点の相対2-fiberと非分岐を確定）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -679,6 +679,53 @@ ruling交換自己同値を与える。
 上記groupoidの全充満性から$\mu_2^2$である。
 ruling交換成分は存在するときこの部分群とは異なる
 一つの剰余類となるため、全慣性は位数八である。
+\end{proof}
+
+\begin{proposition}[ruling交換特別点のstack的2-fiberは二点のまま]
+\label{prop:qa-special-ruling-two-fiber-no-stack-ramification}
+命題~\ref{prop:qa-elliptic-ruling-swap-two-torsion}の
+許容楕円四つ組$U$がさらに
+命題~\ref{prop:qa-ou-generic-quintuple-finite-inertia}の
+正則半単純・非線型geometric開に属し、
+二つのnormalized foundationがともにgeometric cubicであるとする。
+$\delta\in E[2]$または$\eta-\delta\in E[2]$ならば、
+$\overline{\mathcal F}_{\mathrm{geo}}$の
+$y=(\mathcal C,\mathcal O)$における幾何的2-fiberは
+\emph{自明な自己同型群を持つ二つの対象}からなる。
+ただしこのとき源のquintupleの同型類は一つだけであり、
+二つの2-fiber対象は、その同じquintuple表示から
+$y$への二つの相異なるpointed比較同型によって区別される。
+
+また、この点で$\overline{\mathcal F}_{\mathrm{geo}}$は
+表現可能étaleであるため、\emph{スタック射として分岐しない}。
+二つのfoundationを交換する自己同値が作る固定点から、
+粗モジュライ空間上の二重商の分岐を自動的に結論することはできない。
+\end{proposition}
+\begin{proof}
+前命題と論文Bの二foundation full groupoid比較により、
+二つのnormalized foundationは一つのquintuple同型類に属する。
+同じ結果から標的の自己同値群$A=\Aut_{\HHstack}(y)$は、
+指定foundationを保存する部分群
+$H=\Aut_{\mathfrak Q_{\mathrm{geo}}^{\mathrm{rig}}}(U)
+\simeq\mu_2^2$を指数二で含む。
+したがって$|A|=8$、$|H|=4$である。
+
+命題~\ref{prop:qa-forgetful-homotopy-fiber}の
+式~\eqref{eq:qa-fiber-cosets}を適用する。
+源の同型類が一つなので、
+相対2-fiberの同型類は$A/H$の二つの剰余類である。
+点対象への作用から$H\to A$は単射
+（命題~\ref{prop:qa-ou-generic-inertia-faithful-to-h2}）。
+よって相対2-fiberのどの対象の慣性も
+$\ker(H\to A)=1$である。
+従って二つの離散的な対象が残る。
+
+同じ慣性単射の成立する正則半単純openでは
+定理~\ref{thm:qa-quintuple-h2-generic-etale}により
+忘却射は表現可能étaleであるから、
+この特別点でもスタック射自体は非分岐である。
+粗空間上での分岐は、慣性とその変形方向への作用を
+別途計算して判定すべき問題である。
 \end{proof}
 
 \begin{theorem}[内在的H2の稠密開のquintuple商表示]
