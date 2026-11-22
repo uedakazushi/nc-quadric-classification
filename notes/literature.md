@@ -1,7 +1,35 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.51。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.52。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## OU2014 §4–5と相対Serre根の比較資料
+
+OU2014 arXiv:1403.0713v1の印刷p.8 (4.11)–(4.13)と
+p.9 (5.8)–(5.10) を2026-11-22に一次PDFの各ページ画像で確認。
+§4は(E,O(2o),O(2z1),O(2z2))の楕円四つ組を与え、
+z1とz2それぞれに独立のE[2]平行移動を使う。
+§5はpotential→quintupleの有限GIT次数4を
+P³/S3→P³/(S3⋉(Z/2)³)の表示と同時符号反転の自明性で証明する。
+OU側の有効群Γ=F₂²、全群Γ⋊S3≅S4、
+一般四重射のS4 Galois閉包という群論は本稿Cでの新しい演繹。
+Bの相対Picard rootの式a^-2=NとOUのL2/L0を比較すると
+a=O(o−z2)⊗E[2]となることも本稿Cの直接計算である。
+ただしOU potential coverとz2のE[2] root coverそのものの同型は未証明。
+
+論文Bの相対cubic理論
+prop:general-cubic-canonical-tails、
+thm:geometric-cubic-relative-effectivity、
+lem:picard-halves、
+thm:relative-compatible-root を2026-11-22に直接再読した。
+非線型geometric quintupleのcanonical tails・Oは
+Picard根を選ぶ前に基底上にある。
+相対Serre根とAS4被覆はfppf局所の存在条件なので、
+quintupleから内在的H2への相対射が根の選択なしで定まる
+というCの新定理を証明する。
+これはBの有限型相対効果性を引用した結果であって、
+OUのGIT半安定化全体にH2への射があるという意味ではない。
+なおB自身の全主定理の独立な全面検証は未完了。
 
 ## 論文CのOkawa--Ueda GIT比較と慣性の一次資料
 
