@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v3.3
+% 日本語 LuaLaTeX。2026-11-22 / v3.4
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v3.3（Ginzburg完備化の監査と二重壁の横断性）}
+\date{2026年11月22日\quad v3.4（noncubic点曲線とspectral曲線の双対二重isogeny）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -132,7 +132,21 @@ $D\in|-K_{\Sigma_2}|$ と $0\ne P\in\Pic^0(D)[2]$ へ移すことで、
 $\chi=1$ の二つの特殊同型類は $D$ の既約 nodal 型と $I_2$ 型で区別される。
 同時に中央二重平方環の可換化の点曲線$E_f$から
 $E_f\to C_q$とrank-one torsion-free反不変module$M$への
-相対射を構成する。smoothでは$M=P$だが、
+相対射を構成する。
+今回さらに、四根相異なる場合の$E_f\to C_q$は
+\emph{次数二のétale isogeny}であり、
+その二曲線が一般に同型でないことを証明する。
+$E_f$上にも二つのconic商に由来する次数二pencil
+$F_d,F_c$が存在し、
+$0\ne F_cF_d^{-1}\in\Pic^0(E_f)[2]$となる。
+$E_f$側と$C_q$側の二捩れ付き楕円曲線は
+互いに\emph{双対二重isogeny}で交換されるが、
+それぞれの次数二pencilと
+AS finite foundationを同一視するには別の議論が必要である。
+実例$f_1=x(x-1),f_2=(x-2)(x-3)$では
+$j(E_f)=28756228/3$、$j(C_q)=35152/9$で、
+点曲線とspectral曲線の単純な同一視は誤りである。
+smoothでは$M=P$だが、
 共有根で$M$は表面$A_1$型の非自由reflexive moduleとなるため、
 通常の可逆な$\Pic^0$線束として固定$C_q$族に延長できない。
 さらに共有根の全空間を最小解消しても、反不変moduleの
@@ -288,6 +302,11 @@ rank-three壁、mutation後のNoether性・商圏同値は
 第~\ref{sec:qa-as-cubic-obstruction}節で証明する。
 最小分解からの有理Hilbert級数の導出と
 AS--Gorenstein性の証明を別の論理段階として扱う。
+また noncubic 二形式に自然な点曲線$E_f$と
+spectral 曲線$C_q$が2-isogenousだが一般に非同型であることを
+第~\ref{sec:qa-point-spectral-isogeny}節で説明し、
+どの曲線が内在的normal helixのavatarとして抽出されるかを
+独立のpointed認識問題として区別する。
 ここでは有限directed foundation、relation-dual QP、
 underlying AS代数、O-marked内在的heartの四水準を混同しない。
 
@@ -466,6 +485,7 @@ $\kk$ は標数零の代数閉体とする。
 \input{quiver-avatar/as10_mutation_classification}
 \input{quiver-avatar/cubic_obstruction_all_loci}
 \input{quiver-avatar/avatar_charts}
+\input{quiver-avatar/point_spectral_isogeny}
 \input{quiver-avatar/nodal_resolution_obstruction}
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}
