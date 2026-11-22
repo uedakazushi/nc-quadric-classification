@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.06、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.0。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.07、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v3.1。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、A/Bの公表前監査と並行して、**論文CのAS↔avatar全単射・十本矢逆mutationの証明を原PDF・外部定理と独立照合**する。その後、Cで一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,13 +12,13 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **最小AS分解型によるavatar分類とmutation**、QP・GIT・内在的忘却 | **v3.0：square/rotated AS↔avatar全単射、独立最小10本矢AS↔指定avatar条件G≅FPを原PDFから証明付きで統合。12本矢は原則relation-dual QP表示で、無条件の別ASクラスとは区別する。** noncubic spectral相対群oid・境界慣性、OU表示を保持。元AS qgrとO-marked心の直接同値・全相対QP同値は未証明 |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **最小AS分解型によるavatar分類とmutation**、QP・GIT・内在的忘却 | **v3.1：square/rotated AS↔avatar全単射、独立最小10本矢AS↔指定avatar条件G≅FPを原PDFから証明付きで統合。12本矢は原則relation-dual QP表示で、無条件の別ASクラスとは区別する。** noncubic spectral相対群oid・境界慣性、OU表示を保持。元AS qgrとO-marked心の直接同値・全相対QP同値は未証明 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS正則代数とavatarの全単射（v3.0）
+## 論文C：AS正則代数とavatarの全単射（v3.1）
 
 **中心定理の証明を含む現行原稿。**
 [平方型・回転平方型のAS/avatar分類](papers/quiver-avatar/as_helix_classification.tex)は
@@ -48,6 +48,31 @@ right-equivalence groupoid同値は主張しない。
 対応する証明節のstatic auditと数値漸化式の有限検算を別々に記録し、
 C全文のLuaLaTeX組版は未実施。
 
+**分類定理の独立監査で増補した事項（C v3.1）。**
+ASsq/ASrsqの四周期最小分解から四相の有理母関数を解き、
+\(\sum_{m\ge0}\dim A_{i+4m,i}u^m=(1+6u+u^2)/(1-u)^3\)
+を全次数で導いた。AS10はHilbert級数
+\(1/((1-t)^2(1-t^2))\)。
+このEulerの数値結果はSymbolic SymPyと有限整数計算の両方で検証済みで、
+分解の完全性・AS–Gorenstein性とは別。
+square avatarの二pencil評価列から、
+**非被約反標準Dを含む**rank-three壁
+\(\operatorname{rk}\mu_G=3\iff P\simeq GF^{-1}\)を直接証明。
+Keller–Yang Thm6.2のloop/2-cycle/cyclic representativeの
+各mutation仮定を一次資料と照合した。
+
+[独立分類とcoherent Morita](papers/quiver-avatar/as_helix_classification.tex)
+にはNoether性後の\(D^b(\qgr A)\simeq D^b(\mathrm{mod}\,B)\)・Serre関手を、
+[mutationの補助定理](papers/quiver-avatar/as10_mutation_classification.tex)
+には元PDF命題52.1の
+**mutation先の左右Noether性と\(\Qgr,\qgr\)のAbel圏同値**
+を追加した。
+後者は構造対象を指定したpointed exact同値ではない。
+分類の全証明の独立監査、全ASの相対化、C全文LuaLaTeX組版、
+包括的新規性の照合は未完了。
+再現コード： [Euler母関数](computations/verify_as_avatar_euler.py)
+（scripts/check.pyのmath suiteにも登録）。
+
 ### 幾何的基礎と相対境界
 
 
@@ -60,7 +85,7 @@ C全文のLuaLaTeX組版は未実施。
 全AS代数の分類・Noether性の証明は前掲の新節に統合済み。
 一方、元のO-marked heartの直接同値と全非被約基底での相対AS分類は別問題である。
 
-**相対 spectral 境界の現在の結果（C v3.0）。**
+**相対 spectral 境界の現在の結果（C v3.1）。**
 [共有根の局所解析・二次積欠損・三型の正規化極限](papers/quiver-avatar/nodal_resolution_obstruction.tex)を
 本文の定理・証明として保持する。共有根A1の最小解消上では
 反不変moduleの可逆化の例外次数が1で、垂直Cartier twistでも奇偶は変わらない。
