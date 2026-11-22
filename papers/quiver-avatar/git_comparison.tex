@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v0.3（相対quintuple→H2射とPicard根の選択非依存を証明）
+% 2026-11-22 / v0.4（剛体化quintuple stackの次元三を追加）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -389,6 +389,30 @@ $K$ の積に関する二同型の整合性も成立する。
 最後に根空間上で$\beta$を替えても
 $\operatorname{qgr}C$と$\pi e_0C$は元の基底から
 引き戻した\emph{同じ}対象であり、結論が従う。
+\end{proof}
+
+\begin{corollary}[quintuple の剛体化後の相対次元]
+\label{cor:qa-quintuple-rigid-dimension}
+前定理の剛体化された表示スタックは
+$k$ 上smoothで、純次元三である。
+その $\HHstack$ への射~\eqref{eq:qa-geometric-cubic-rigid-map}
+は同じ局所次元三のsmooth Artinスタック間の射である。
+この次元の一致は相対射の étale 性や
+pointed同値群の全忠実性を単独で意味しない。
+\end{corollary}
+\begin{proof}
+$\mathscr G^{\mathrm{nl}}$ は16次元テンソル空間の
+smoothな開部分である。
+$\dim\widetilde G=4\cdot\dim\GL_2+\dim\GL_1=17$、
+$\dim K=4$ なので
+$\dim(\widetilde G/K)=13$ である。
+従ってそのquotient stackの次元は $16-13=3$、
+smooth性は群と表示開のsmooth性から従う。
+一方、論文B
+\cite[\texttt{thm:global-h2-smooth-finite-type}]{QuadricModuli2026}
+が $\HHstack$ のsmooth純次元三を与える。
+両者の間の相対射の微分・慣性核の計算は
+この数値だけからは従わない。
 \end{proof}
 
 \begin{remark}[Cで次に必要な具体的計算]
