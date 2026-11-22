@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-22 / v0.81。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv0.4。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-22 / v0.82。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.39（相対理論の31節）、論文Cはv0.6。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。局所good moduliの降下もこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -16,17 +16,17 @@
 
 **P3：文献比較と公表編集。** Belmans, *Hochschild cohomology of noncommutative planes and quadrics*（JNCG 13 (2019), 769–795, doi:10.4171/JNCG/338）を主にcubic側の既知HH計算として明記する。VdB、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa OWR2022、Okawa–Ueda 2014の既知の分類・line-bundle格子・GITを本研究の追加成果から区別する。AのIntroductionは分類・忘却・noncubicに、Bは四つの主定理群（代数性、境界相対同値、good/coarse moduli、形式局所構造）に焦点を当て、必要な証明を削らず本文を読みやすく再配置する。LuaLaTeX/latexmkで三稿ごとにPDF・SyncTeXと表示を確認し、未実施なら明記する。新規性の包括調査・第三者査読は別状態とする。
 
-**P4：論文Cの中心研究——既存GIT・表示・内在的moduliの比較。** Okawa--Ueda 2014のquintuple GIT商P(2,4,4,6)とconifold potential GIT商P(1,2,3,4)の次数4射を既知の入力とする。Cに新設した `papers/quiver-avatar/git_comparison.tex` で、生のquintuple表示のGm^4スカラー慣性核（`prop:qa-ou-scalar-gerbe`）と、pointed忘却射の幾何ファイバーの剰余集合・慣性核の公式（`prop:qa-forgetful-homotopy-fiber`）を証明した。**最初の新たな中心課題は一般geometric cubic開で、構造対象Oを保持するquintupleからH2への実際の相対射を構成し、頂点スカラーの剛体化後の自己同型群写像とファイバーを計算すること。** その後ruling/四窓・平方根の忘却、potentialの次数4と比較し、境界へ延長する。GITの次数4を内在的忘却次数と仮定せず、粗GITのS-equivalenceとpointed exact同値を区別する。Bのgood/coarse moduli・AHRの局所模型は必要な時だけCから明確に引用し、GIT比較の本文をBと重複させない。
+**P4：論文Cの中心研究——既存GIT・表示・内在的moduliの比較。** CのGIT比較節で、OU2014の次数4射の一般Galois閉包はS4（有効符号群F2²とS3の半直積）、BのPicard[-2]根はsmooth ellipticではE[2]四重torsor、既約nodalでは2点、cuspidalでは1点と証明した。OU楕円四つ組(E,O(2o),O(2z1),O(2z2))における相対根はO(o−z2)⊗E[2]であり、z2の2-torsion平行移動と一致する。二つの四重被覆の一致は、E[2]局所系の同型とKummer H¹ classの比較に帰着したが未証明。さらにBのcanonical relative cubic tails・相対Picard根を用い、**非線型geometric quintupleから内在的H2への実際の相対群oid射を平方根の選択なしで構成し、生のGm⁴スカラー慣性を剛体化して因数分解した**。剛体化quintupleスタックと内在的H2は共にsmooth純次元3。四つのPicard根は固定quintupleに対する同一のpointed対象の局所witnessであり、四つのpointed対象ではない。次はOU四重射を§4の楕円四つ組モデルに引き戻し、z2平行移動のE[2] torsorと同型かをモノドロミーとKummer classで調べ、その後剛体化後の慣性写像・微分・pointed fiberを決定する。Bは標的Artinモジュライの理論、Aは体上分類として引用し、GIT比較の証明正本をCに保持する。
 
 **P5：標識忘却・偏極認識・Cの独立性。** noncubic中央二重平方族に対する\(\mathcal O\)の候補と自己同値作用を記述し、楕円型の既存格子結果と接続する。\(X_{\mathrm{as}}\to X_3\) の一致点の横断方程式と局所閉性を調べる。Cでは有限foundation/weighted QP/avatarから、同一基底上でheart、exact Serre根、AZ、全軌道AS4を認識する有限条件を求め、まずcubicの有効開で相対比較定理を証明する。有限代数やderived同値だけでheartまで得たとしない。
 
-**直ちに着手する一手：** ユーザーの方針に従い、GITとの具体的な比較をCの独立の数学的中心問題に位置づけた。OU2014 arXiv:1403.0713v1 Theorem1.1のstackのgeneric Gm^4慣性、重み付きGIT商とpotential→quintuple次数4を一次PDFで確認。C v0.4では表示上の中心Gm^4を式で書き、対応するZ代数の頂点共役がtailsの恒等自然同型に落ちるため、未剛体化のquintuple表示から内在的H2への忘却は非表現可能であると証明した。また忘却のhomotopy fiberの自己同型核と剰余集合を別に導出した。**次は一般geometric cubicの有効開の実際の比較射を相対的に構成し、標識側の自己同型像・核およびpointedなファイバーを具体的に計算する。** A/B公表前証明監査と参考文献・LuaLaTeXチェックは並行し、BをGIT比較の論文へ改変しない。Cの全相対比較・次数4の内在的解釈は未証明である。
+**直ちに着手する一手：** C v0.6にOU §4–5の実際の相対比較を統合した。OU一般四重射のS4 Galois閉包、相対Picard根の4/2/1退化、OU楕円座標z2とPicard根の明示対応・Kummer class、幾何quintupleからH2への根を選ばない相対群oid射を証明。スカラーGm⁴剛体化後dim3が内在的H2と一致する。**次はOUの一般四重射のsheetを楕円四つ組の同じ基底へ引き戻し、Picard z2平行移動E[2] torsorとの同一性・差を実際の群作用とmonodromyで決定する。続いて剛体化後の慣性像・微分・pointed fiberを計算する。** AはユーザーのLuaLaTeX組版成功報告あり、B/Cの実組版・全数学的独立証明監査・先行研究全面照合は未完了。
 
 ## 公表用原稿の三論文体制（2026-11-22に確定）
 
 - **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
-- **C・表示と内在的モジュライの比較：** `papers/quiver-avatar-moduli.tex` に八・十・十二本矢、QP消去、avatarに加えてOkawa--Uedaのquintuple/conifold GITとH2への忘却を中心結果として置く。既存の有限次数4と内在的忘却ファイバーを区別し、現状では後者の一般cubicへの相対比較は未完成。A/Bの分類・Artin主定理の証明は複製せず引用する。
+- **C・表示と内在的モジュライの比較：** 論文C v0.6。八・十・十二本矢、QP、avatarと既存GIT比較を担当。非線型geometric quintupleからH2への相対射とGm⁴剛体化は証明済み。OU一般四重射のS4 Galois閉包・Picard rootとのz2対応も証明済み。両四重被覆そのものの同型と剛体化後の慣性・pointed fiberは未解決。A/Bの分類・相対Artin主定理は引用する。
 
 **公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは八・十・十二本矢、QPとavatarの表示を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
 
