@@ -209,6 +209,44 @@ $G_f\simeq G_8/K_{\rm QP}$となる．
 結論を得る．
 \end{proof}
 
+\begin{corollary}[二cubic正規化を貼る操作は一般には右同値でない]
+\label{cor:qa-cubic-qp-inversion-not-right-equivalent}
+両cubic chartの交わり$\Omega^\times$上で、
+$f$可逆な正規化と$g$可逆な正規化から得る二つの
+四重テンソル$T,T^{-1}$は、一般点で頂点を固定する
+八矢weight-preserving right-equivalenceでは結ばれない。
+同値となり得る点の粗good moduli像は
+\[
+ e_3=de_1\quad\text{または}\quad e_3=-de_1
+ \tag{Fix}\label{eq:qa-cubic-qp-inversion-right-equivalence-locus}
+\]
+という二つの固有閉部分の和に含まれる。
+従って二cubic chartの全域比較には、
+八矢QPの単一のright-equivalence商だけでなく、
+実際のmutation・window変更に対応する貼合せが必要である。
+\end{corollary}
+\begin{proof}
+命題~\ref{prop:qa-cubic-weighted-inversion-gluing}によって、
+二つのchartの四重テンソル不変式は
+$[e_1:e_2:d:e_3]$と
+$\iota[e_1:e_2:d:e_3]=[e_3:d^2e_2:d^3:d^4e_1]$
+である。
+weight-preserving right-equivalenceなら四因子の
+$\GL_2^4$作用による同じorbitであるため、その四量子ビットGIT
+同次不変式も一致する。
+命題~\ref{prop:qa-cubic-inversion-weight-two-fixed-locus}により、
+この等式の固定部分は正に表示した二つの閉部分である。
+それらが真であることは、例えばCartanの固有値を
+$(1,2,3,4)$とした可逆行列の不変式
+\[
+ (e_1,e_2,d,e_3)=(30,273,24,820)
+\]
+からも従う。この行列では
+$p_{\rm adj}=9625$、$q_{\rm adj}=6510100$が非零なので
+$\Omega^\times$に属し、一方$820\ne\pm24\cdot30$である。
+従って一般点で右同値にはならない。
+\end{proof}
+
 \begin{remark}[十二矢QPの余剰慣性と残る比較]
 \label{rem:qa-cubic-qp-remaining-inertia}
 命題~\ref{prop:qa-stabilized-inertia}で既証明の
