@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v4.2
+% 日本語 LuaLaTeX。2026-11-22 / v4.3
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -55,7 +55,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v4.2（generic period-index四と二つの四重被覆の非同型）}
+\date{2026年11月22日\quad v4.3（半周期D4 monodromyとOU三分割後の比較）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -190,6 +190,14 @@ $(\OO_E,G,H,HF)$へ相対Picard類として送る。
 一般に同型ではない。四根が既に有理的な三変数族でさえ、
 半周期torsorは二つの非自明な二次拡大に分かれる。
 このためBrauer分裂の後にも別のKummer障害が残る。
+さらに半周期torsorの一般Galois閉包群が
+位数八の二面体群$D_4$であることを計算し、
+根選択四重射のKlein四元群と区別する。
+OU四重射の一般monodromyは$S_4$だが、
+非零二捩れに相当する四分岐点の二対分割を一つ選ぶ
+次数三の被覆に引き戻すと$D_4$へ制限される。
+これは群論上の整合であり、OU torsorと
+noncubicの半周期torsorを同一視するものではない。
 これは相対$\qgr$圏の同値やAS側のmutationの降下とは異なる。
 $C_q$・$\Sigma_2$の別avatarとのpointed比較も未解決である。
 実例$f_1=x(x-1),f_2=(x-2)(x-3)$では
@@ -382,6 +390,11 @@ Brauer差のindex四と点曲線のperiod二・index四、
 半周期torsorが二conicを同型化する最小次数四の分裂被覆であることを証明する。
 分岐根を選ぶもう一つの四重被覆とは同型でないことも、
 全根が分裂した三変数族の二同種模型で直接示す。
+同じ模型で独立平方根の符号変更と根対内部交換を合成し、
+半周期torsorの一般$D_4$ monodromyを確定する。
+OU側の一般$S_4$ monodromyは非零二捩れを選ぶ
+次数三の標識被覆で$D_4$へ減少するが、
+両者は元来別の基底上のtorsorである。
 ただしAS側の相対mutation・$\qgr$圏・Serre根の一括降下と
 無標識stackの群oid認識は別問題である。
 ここでは有限directed foundation、relation-dual QP、

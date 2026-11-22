@@ -282,6 +282,150 @@ $K_0=k(a,b,c)$でいずれも非平方であり、
 従って一般係数体上でも二被覆は非同型である。
 \end{proof}
 
+\begin{theorem}[一般半周期四重射の二面体モノドロミー]
+\label{thm:qa-half-period-dihedral-monodromy}
+$U^\circ$を定理~\ref{thm:qa-half-period-ruling-torsor}の
+二つの独立なsquarefree二次形式の四根相異なる開とする。
+$T_P=[2]^{-1}(P)\to U^\circ$の
+一般関数体拡大のGalois閉包群は
+\begin{equation}
+ \operatorname{Mon}(T_P/U^\circ)
+ \simeq(\mathbb Z/2)^2\rtimes\mathbb Z/2
+ \simeq D_4,\qquad |D_4|=8 .
+ \label{eq:qa-half-period-dihedral-monodromy}
+\end{equation}
+ここで最後の$\mathbb Z/2$は
+$(\mathbb Z/2)^2$の二つの非自明な生成元を交換する。
+同じ$U^\circ$上の
+「各二次形式の根を一つずつ選ぶ」有限\'{e}tale四重射
+の一般Galois群は
+\[
+  (\mathbb Z/2)^2
+\]
+であり、両四重射のmonodromy群は異なる。
+\end{theorem}
+\begin{proof}
+$J[2]$を幾何fiberで$\mathbb F_2^2$と同一視する。
+$P\ne0$は$U^\circ$上のsectionだから、
+$\pi_1^{\acute et}(U^\circ)$の$J[2]$への線型作用は
+$P$を固定する
+$\operatorname{GL}_2(\mathbb F_2)_P\simeq\mathbb Z/2$
+に入る。
+$T_P$は$J[2]$-torsorなので、四つの半点への
+全作用はaffine群
+\[
+ \mathbb F_2^2\rtimes
+ \operatorname{GL}_2(\mathbb F_2)_P\simeq D_4
+\]
+の部分群となる。従って位数八は上界である。
+
+上界が達成されることを特別な滑らかな部分族で示す。
+\[
+ f_1=x(x-a),\qquad
+ f_2=x^2-sx+p=(x-b)(x-c)
+\]
+とし、
+$K_1=k(a,s,p)$、
+$L=k(a,b,c)$、$s=b+c,\ p=bc$と置く。
+$a,b,c,0$を相異なるものとする。
+$L/K_1$は$b\leftrightarrow c$による二次Galois拡大である。
+定理~\ref{thm:qa-half-period-not-root-choice}の
+Weierstrass二同種模型を適用し、
+\[
+ A=c(b-a),\quad B=b(c-a),\quad
+ D=A-B=a(b-c)
+\]
+と書けば、$T_P$の四点は
+\[
+ (X,Y)=(D,\ \pm2D\sqrt A),
+ \qquad (-D,\ \pm2D\sqrt B)
+\]
+と表示される。従ってその分解体は
+\[
+ M=L(\sqrt A,\sqrt B).
+\]
+$L=k(a,b,c)$では、$A$は素因子$b-a$の付値が奇数で
+$B$はその付値が零、
+逆に$B$は$c-a$の付値が奇数で$A$は零である。
+このため$[A],[B]\in L^\times/L^{\times2}$は
+独立で、
+$\operatorname{Gal}(M/L)\simeq(\mathbb Z/2)^2$である。
+$b\leftrightarrow c$は$A\leftrightarrow B$、
+$D\mapsto-D$を満たす。
+これを
+$\sqrt A\leftrightarrow\sqrt B$で$M$へ延長すれば、
+二つの独立な符号変更を交換する位数二の元になる。
+従って
+\[
+ \operatorname{Gal}(M/K_1)
+ \simeq(\mathbb Z/2)^2\rtimes\mathbb Z/2\simeq D_4 .
+\]
+この群は上の四点に忠実に作用し、
+二つの符号変更は各二点を交換し、
+$b\leftrightarrow c$は二対を交換する。
+よってこの部分族のmonodromyは$D_4$である。
+有限\'{e}tale被覆の基底変更後のmonodromyは
+元の被覆のmonodromyの部分群だから、
+$U^\circ$上の一般monodromyも上界$D_4$に一致する。
+
+一方、根選択被覆の一般分解体は
+二つの独立な判別式平方根の合成である。
+二つの判別式の平方類は独立だから
+一般Galois群は$(\mathbb Z/2)^2$である。
+\end{proof}
+
+\begin{proposition}[OU四重射の次数三標識後のモノドロミー]
+\label{prop:qa-ou-fourfold-dihedral-restriction}
+論文Cの命題~
+\ref{prop:qa-ou-fourfold-s4-monodromy}と
+\ref{prop:qa-ou-twisted-fourfold-torsor}で扱った
+OUの正則半単純開の一般四重射を考える。
+そのGalois閉包群は
+$\operatorname{AGL}_2(\mathbb F_2)\simeq S_4$である。
+四枚の平行移動群$V\simeq\mathbb F_2^2$の
+非零元$v\in V\setminus\{0\}$を一つ選ぶ
+有限\'{e}tale次数三の標識被覆へ引き戻すと、
+四重射の一般monodromyは
+\begin{equation}
+ V\rtimes\operatorname{GL}_2(\mathbb F_2)_v
+ \simeq D_4 .
+ \label{eq:qa-ou-dihedral-reduction}
+\end{equation}
+四つの分岐点を二対へ分割する三つの方法は
+この次数三標識の幾何的模型である。
+従って非零二捩れを一つ選ぶ操作は、
+OUの$S_4$型monodromyを
+前定理の$D_4$型まで減少させる
+\emph{必要な群論的整合操作}である。
+
+しかしこれはOUのpotential/quintuple表示側と
+noncubic二根対側に
+共通の基底モジュライ射を構成するものではない。
+二つの$D_4$-torsorの同型、
+そのKummer cocycleの一致、
+およびAS/pointed $\qgr$ の同値は主張しない。
+\end{proposition}
+\begin{proof}
+OU四重射は位数四のaffine space $V$への
+$V\rtimes\operatorname{GL}_2(\mathbb F_2)$の
+忠実なaffine作用で記述され、
+一般monodromyは全群である
+（命題~\ref{prop:qa-ou-fourfold-s4-monodromy}）。
+その線型部分の三つの非零元への作用は推移的なので、
+一つを選ぶ被覆は次数三である。
+その点安定化群は
+$\operatorname{GL}_2(\mathbb F_2)_v\simeq\mathbb Z/2$、
+affine作用の逆像は位数八の
+$V\rtimes\mathbb Z/2\simeq D_4$となる。
+これは依然四元集合に忠実に作用するので、
+制限した四重射の一般monodromyはちょうど$D_4$である。
+四分岐点の二対分割は三つあり、
+$\operatorname{GL}_2(\mathbb F_2)\simeq S_3$によって
+非零二捩れ三点と同じ置換作用を受ける。
+最後の留保は、群作用の同型だけからは
+異なる基底上のtorsor cocycleを比較できないことによる。
+\end{proof}
+
 \begin{remark}[異なる次数四被覆と特異境界]
 \label{rem:qa-half-period-versus-root-cover}
 半周期torsor $T_P$は$J[2]$-torsorであり、
@@ -289,8 +433,21 @@ $K_0=k(a,b,c)$でいずれも非平方であり、
 有限\'{e}tale次数四被覆と
 定理~\ref{thm:qa-half-period-not-root-choice}で
 \emph{非同型}と証明した。
-OUの一般次数四射との比較および各被覆の
-全Galoisモノドロミーの記述は未確認である。
+定理~\ref{thm:qa-half-period-dihedral-monodromy}により
+一般半周期四重射のmonodromyは$D_4$、
+根選択四重射のそれは$(\mathbb Z/2)^2$と確定した。
+OUの一般四重射は$S_4$であり、
+非零二捩れを選ぶ次数三被覆の後に$D_4$となる
+（命題~\ref{prop:qa-ou-fourfold-dihedral-restriction}）。
+ただしこの群の一致からOU torsorと$T_P$の
+同型を結論してはならない。
+前者はpotential/quintupleのGIT表示側、
+後者はnoncubic二形式から作った点曲線$E_f$の
+Jacobian側に属し、両基底の比較射は未構成である。
+また根対の三分割はspectral曲線$C_q$の
+非零二捩れ$M_C$を選ぶが、$T_P$は
+$C_q$とは一般に非同型な二同種曲線$J(E_f)$上の
+別の二捩れ$P_E$を二等分する。
 nodal/$I_2$では相対$\Pic^0$の$[2]$の幾何次数が
 smooth fiberの四から変わるため、
 上記の同じ次数四の\'{e}tale torsorを

@@ -1,7 +1,44 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.76。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.77。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 二つの有限四重射のmonodromy：D4とS4の射程
+
+Okawa--Ueda, *Noncommutative quadric surfaces and noncommutative conifolds*
+(arXiv:1403.0713, 2014)、Theorem 1.1(4)のpotential GIT
+からquintuple GITへの次数4有限射を入力とする。
+OU §5の四固有値置換をS4と解釈した原稿Cの
+prop:qa-ou-fourfold-s4-monodromyは、
+有効符号群V=F2²と線型群GL2(F2)からなる
+AGL2(F2)≃S4を一般Galois閉包群として計算済み。
+OU (5.3) のS4と (5.8) のS3との印刷上の不整合は
+C rem:qa-ou-source-s3-s4-discrepancyに明示し、
+原論文の印刷式をそのまま引用した主張とは区別する。
+
+本研究のnoncubic側では
+$P\in J(E_f)[2]\setminus0$の半周期torsor
+$T_P=[2]^{-1}(P)$のmonodromyが
+$F_2^2\rtimes GL_2(F_2)_P≃D_4$に含まれる。
+三変数部分族$f_1=x(x-a),\,f_2=(x-b)(x-c)$で
+$A=c(b-a),B=b(c-a)$と置き、
+$b,c$を交換できる基底$K_1=k(a,b+c,bc)$へ戻すと、
+分解体$k(a,b,c)(\sqrt A,\sqrt B)$の群が
+$(C_2)^2\rtimes C_2=D_4$となり上界達成。
+一方root-choice四重射の一般群は$C_2^2$。
+原稿C thm:qa-half-period-dihedral-monodromyの証明正本と
+computations/verify_half_period_monodromy.pyの有限置換群検算を参照。
+
+OU側でも非零2捩れ≃四分岐点の二対分割を一つ選ぶ
+次数3有限étale標識被覆へ引き戻すと、
+S4の線型商S3の安定化群がC2に縮み、
+一般四重射のmonodromyは$F_2^2\rtimes C_2=D_4$となる
+（C prop:qa-ou-fourfold-dihedral-restriction）。
+この群の一致は**OUのtorsorとnoncubic $T_P$の同型を意味しない**。
+OU側はpotential/quintuple表示の別基底とそのspectral curveの
+Kummer section、noncubic側は$C_q$と一般に非同型な
+二同種曲線$J(E_f)$の非零2捩れ$P_E$を二等分する。
+共通相対基底の射・Jacobian同型・Kummer classの比較は未構成。
 
 ## 一般biquaternionのindexと楕円曲線の四重被覆
 

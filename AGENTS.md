@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.18。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv4.2。
+2026-11-22 / v1.19。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv4.3。
 
 ## 公表用三論文への再編（確定方針）
 
@@ -8,7 +8,7 @@
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：主原稿 `papers/nc-quadric-avatar.tex` と `papers/quiver-avatar/avatar_charts.tex`・`git_comparison.tex`が**O-marked quadric／potential／anticanonical avatarの同型類全単射・相対射**の正本。smooth cubic VdB↔square線束公式、O保存r1商、potential→avatar4/→H2合成8を保持。**今回、noncubic全幾何点**の二根対↔smooth/nodal/I2の$P=G_sF_s^{-1}\ne0$かつ$P^2=1$であるsquare avatar↔Bのnoncubic O-marked全同型類の全単射をCに証明。$B_f=k[u,v]\langle c,d\rangle/(c^2-f_1,d^2-f_2)$の可換化の点曲線$E_f$と同時符号商$C:y^2=f_1f_2$、反不変rank-one torsion-free spectral module$M$による**実際の相対射**も構成。共有根の節点では$M$は$A_1$表面の非自由reflexiveで、通常Pic0線束に相対延長不可。**集合論的全単射とPicard線束の相対射を混同しない。** 次はminimal resolution/Σ2 elementary transformによる別avatarへ戻す構成と$C_q$・$\Sigma_2$側の$\qgr$ heartの同定、8/10/12 potential stable groupoid。既存H2 finite foundation開・ruling二択、OU慣性・有限多項式・四次六次結果は正本に保持。A/B証明・一次文献・実組版・push・hub各状態を区別。 全noncubic O-marked幾何同型類≅Σ₂のD∈|−K|,D∩S=∅,0≠P∈Pic⁰(D)[2]の同型類もCに証明。Bのχ=1二点はnodal/I2で区別。次は$C_q$・$\Sigma_2$の別avatarのqgr heartとの比較と相対elementary transformを検証する。
 
-**原稿C v4.2のpointed認識上の最重要区別。**
+**原稿C v4.3のpointed認識上の最重要区別。**
 noncubic中央二重平方環の可換点曲線
 $E_f:\ c^2=f_1,\ d^2=f_2$と、quartic spectral曲線
 $C_q:\ y^2=f_1f_2$は、非共有根では
@@ -47,11 +47,13 @@ $\im\mu_d=\langle u,v,d\rangle$であり、
 
 **一般noncubicのperiod-indexと二つの四重被覆の識別（C v4.2）。** 独立な二形式の普遍係数体$K_{12}$で、二conicのBrauer類の差$\beta=\alpha_c-\alpha_d$はAlbert 6次元形式$q=\langle a_c,\Delta_c,-a_c\Delta_c,-a_d,-\Delta_d,a_d\Delta_d\rangle$の二段階Springer剰余判定により**index 4**のdivision biquaternionを表す（C thm:qa-generic-point-period-two-index-four、先行入力 Lam--Leep--Tignol 1993 Thm 2.3、Lam 2005 Ch VI）。一般点曲線$E_f=Q_c\times_{\mathbb P^1}Q_d$の閉点は両conicを分裂させるので次数がすべて4の倍数。一方$E_f\to\mathbb P^1$は次数4、幾何次数二のpencil Picard類が$K_{12}$有理なので、**period(E_f)=2、index(E_f)=4**。smooth半周期torsor$T_P=[2]^{-1}(P)$では平行移動が二deck involutionを共役にし、実際のconic同型$Q_c|_{T_P}\simeq Q_d|_{T_P}$を誘導する。従って$\beta|_{T_P}=0$。index4から一般$T_P$は連結な次数4拡大で、$\beta$の最小次数分裂被覆（C prop:qa-half-period-conic-isomorphism）。**分岐根選択の別の次数4被覆とは非同型**。monic全根分裂族$f_1=x(x-a)$、$f_2=(x-b)(x-c)$ over $K_0=k(a,b,c)$では根選択は4つのsectionを持つ一方、二同種模型の半周期は$\operatorname{Spec}(K_0(\sqrt{c(b-a)})\times K_0(\sqrt{b(c-a)}))$と二つの非自明二次拡大に分かれる（C thm:qa-half-period-not-root-choice）。Brauer類を両方分裂させても半周期のKummer障害は残る。OU次数4射との同型・monodromyおよび相対mutation/pointingは未解決。SymPyはquartic→cubic、2-isogeny、倍算の多項式恒等式だけPASSし、index4と被覆非同型の数学的証明は原稿依存。
 
+**半周期torsorの二面体モノドロミーとOU三分割標識（C v4.3）。** 滑らかなnoncubic開$U^\circ$の$T_P=[2]^{-1}(P)$は、$P\in J(E_f)[2]\setminus0$が大域sectionなので一般monodromyが$\mathbb F_2^2\rtimes\operatorname{GL}_2(\mathbb F_2)_P\simeq D_4$に含まれる。部分族$f_1=x(x-a), f_2=x^2-sx+p=(x-b)(x-c)$で$L=k(a,b,c)$、$K_1=k(a,s,p)$、$A=c(b-a)$、$B=b(c-a)$と置くと、四半点の分解体$M=L(\sqrt A,\sqrt B)$は、独立な平方類$A,B$の符号群$\mathbb F_2^2$に$b\leftrightarrow c$が二因子を交換する半直積で作用し、$\operatorname{Gal}(M/K_1)=D_4$。よって一般上界が達成される（C thm:qa-half-period-dihedral-monodromy）。根選択四重射の一般Galois群は$C_2^2$、OUのpotential/quintuple四重射の一般monodromyは$S_4$（C prop:qa-ou-fourfold-s4-monodromy）。OU側で四分岐点の二対分割≃非零2捩れを一つ選ぶ**次数3**の標識被覆へ引き戻すと、線型monodromyが$\operatorname{GL}_2(\mathbb F_2)_v\simeq C_2$に下がり、四重射の全monodromyが$D_4$となる（C prop:qa-ou-fourfold-dihedral-restriction）。これはnoncubic二根対・quartic resolventの群論的整合であり、**OUの$D_4$-torsorと$T_P$の相対同型を意味しない**。OU側は別の基底/別のspectral曲線に属し、$T_P$は一般に非同型な二同種$J(E_f)$上の2torsionの半点である。共通基底の比較射・torsor cocycle・relative AS/pointingの整合は未解決。計算再現はcomputations/verify_half_period_monodromy.py（有限置換群の位数8/4/24と安定化群の厳密チェック、平方類の非自明性の数学的証明とは別）。
+
 上三角の双加群を合成した$\mathsf A_{\mathrm{Mor}}=\bigoplus_{i\le j}\mathsf M_{ij}$は係数空間上の**階数54の有限局所自由な通常の代数**で、零番隅は$\mathcal O_{U_2}$。全幾何fiberで階数24の基本有限End代数とMorita同値（C cor:qa-morita-rank54）。Brauer障害は通常代数の存在を排除せず、基本頂点をrank-oneのまま維持する降下を妨げる。
 
-**継続指示：** smooth/nodal/$I_2$の三型全てで$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。根対内の交換$W$ではfinite Endを降下できるが、因子スカラーも忘れた通常の線束降下は一般Brauer障害を持つ。幾何avatarとAzumaya双加群有限Morita降下は構成済みで、generic ruling交換の頂点固定同値は排除済み。smooth開の半周期torsor上のPicard類交換までは構成済み。次は有限Moritaのgluingとmutation、相対Serre完成・O-pointed$\qgr$同値を構成し、分岐根選択四重被覆と半周期四重被覆は非同型と証明済み。OUの次数4射はなおどちらとも先取りして同一視しない。別avatarとの比較も独立に検証し、全相対同値を先取りしない。
+**継続指示：** smooth/nodal/$I_2$の三型全てで$(H_1,\dots,H_4)$へ位相を合わせ、$(H_0,\dots,H_3)$と頂点固定で同定しない。根対内の交換$W$ではfinite Endを降下できるが、因子スカラーも忘れた通常の線束降下は一般Brauer障害を持つ。幾何avatarとAzumaya双加群有限Morita降下は構成済みで、generic ruling交換の頂点固定同値は排除済み。smooth開の半周期torsor上のPicard類交換までは構成済み。次は有限Moritaのgluingとmutation、相対Serre完成・O-pointed$\qgr$同値を構成し、分岐根選択四重被覆と半周期四重被覆は非同型と証明済み。OU四重射の一般S4、半周期のD4、OU非零2捩れ三重標識後のD4は証明済み。ただし群の一致からtorsor同型を先取りせず、相対基底射・cocycle・O-pointingを個別に検証する。別avatarとの比較も独立に検証し、全相対同値を先取りしない。
 
-**論文C v4.2の分類正本（最優先）。**
+**論文C v4.3の分類正本（最優先）。**
 `papers/nc-quadric-avatar.tex` から
 `papers/quiver-avatar/as_helix_classification.tex` と
 `papers/quiver-avatar/as10_mutation_classification.tex` を読み込む。
