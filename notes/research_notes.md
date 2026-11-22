@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.92（A v1.69・20節、B v0.39・31節、C v1.8）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.93（A v1.69・20節、B v0.39・31節、C v1.9）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -247,10 +247,57 @@ E[2]と合わせて全pointed慣性はC4×C2となる。
 Cのprop:qa-elliptic-special-inertia-group-typesが証明正本。
 二条件同時・j=0,1728は対象外、粗空間の法表現・分岐は未解決。
 
+**OU spectral二捩れの方程式と局所粗分岐（Cで証明）。**
+E_sp:y²=∏(t−x_i²)、O=∞+、P±=(0,±c)に対し
+ruling同型でΘ(P+)=δ、Θ(P−)=η−δ。
+e_iをx_i²の基本対称式、c=∏x_iと置けば
+δ∈E[2] ⇔ e3+e1c=0、η−δ∈E[2] ⇔ e3−e1c=0。
+Weierstrass化 u=y+t²−e1 t/2+(e2/2−e1²/8)、v=tu
+によって2v+a1u+a3をP±へ代入する直接証明。
+OUの f2,f4,f6,g4 では重み6式
+D±=f2³−3f2f4+2f6±6f2g4。
+滑らかな正則半単純・f2g4≠0・j≠0,1728の開で
+源粗モジュライのramification座はD+D−=0。
+片側座のH2慣性はC4×C2またはC2³、sourceμ₂²は
+変形(j,η,δ)に自明。交換R(η,δ)=(2δ−η,δ)あるいは
+(-1)R(η,δ)=(η−2δ,−δ)の法作用は−1、接固有値(1,1,−1)。
+Alper--Hall--Rydh Theorem1.2のsmooth閉点étale sliceで
+局所粗germはk[[s,w,z]]→k[[s,w,z²]]（分岐指数2）。
+これは局所粗射であり、スタック忘却はétale非分岐。
+例x=(1,2,3,−6)とx=(1,2,3,6)がそれぞれ二特別座に属する。
+証明正本はC prop:qa-ou-spectral-torsion-divisors、
+thm:qa-ou-special-reflection-coarse-branch、
+cor:qa-ou-coarse-branch-invariant-equations。
+
+**二捩れ交点の新しい局所型（Cで証明）。**
+同時条件はc≠0の下e1=e3=0で、判別式
+f(t)=t⁴+e2t²+c²がt↦−t対称となる。
+x=(1,2,i,2i), i²=−1が滑らかな例
+（x_i²=(1,4,−1,−4)、e2=−17、c=−4、
+j=111284641/50625）。
+この点のquintuple全慣性H=C2³、
+pointed H2全慣性A=D8×C2（位数16）。
+源Hは変形座標(s,u,v)に同時符号(-u,-v)、
+標的Aはu,vの独立な符号変更で作用する。
+形式的な局所粗環は
+source k[[s,a,b,c]]/(b²−ac), target k[[s,a,c]]、
+粗忘却はa,cを固定する有限平坦次数2（分岐ac=0）。
+source粗germに横断A1特異点が発生しtargetは滑らか。
+stack忘却は点対象の忠実作用とBのsmooth atlasから
+この交点でも表現可能étale。
+SO表示ではλ=i、h=(13)(24)、g=i^{-1}DhD^{-1}
+（D=diag(1,2,i,2i)）が追加位数2慣性を明示。
+証明正本はC thm:qa-ou-double-torsion-intersection-local-modelと
+rem:qa-ou-trace-zero-extra-stabilizer。
+再現資産computations/verify_ou_special_reflection.py。
+実施した独立検算は有理数上のquartic/Weierstrass恒等式・
+j・二反射行列・有限抽象群計算で、全相対スタック証明の形式検証ではない。
+**残る課題**はj=0,1728、noncubic境界、相対ruling mutationの全降下、
+global coarse/good moduliの存在。局所粗同型を大域に延長したと主張しない。
+
 **次の核心：** 特殊cubicのη−δ∈E[2]・δ∈E[2]・
 j=0,1728等のruling交換固定点と慣性増大を調べる。
-二rulingの有限étale被覆とその分岐を相対非被約基底で構成し、
-noncubic境界でのfiber・正規形・有限性を監査する。
+滑らかな二捩れ座の局所粗分岐は確定。次はj=0,1728の楕円追加自己同型とnoncubic境界でのfiber・正規形・有限性、相対ruling mutationの延長を監査する。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
@@ -263,13 +310,13 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化表示スタックはsmooth純3次元でH2の同次元。
 四つのPicard根は同じpointed対象のwitnessであり
 四つの異なるH2対象ではない。
-剛体化後の慣性像・微分・pointed fiberの計算は未完成。
+剛体化後の一般開の慣性・微分・pointed fiber、および滑らかな二捩れ特殊座の局所粗型は決定した。非線型geometric以外の境界の全相対比較は未完成。
 
 **再開する数学的核心。**
 一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
 正則半単純開で有限étale次数2・慣性μ₂²同型・KS同型となる。
 さらに稠密開のcanonical S₂ deck商を取れば内在H2そのものに同値。
-次は特殊cubicの全慣性の群拡大・粗モジュライ上の分岐と、noncubic境界への相対延長を調べる。正則半単純特別点のstack的étale非分岐とは区別する。
+片側・交点の二捩れ特殊座での局所慣性と粗分岐は解決済み。次はj=0,1728の追加楕円自己同型、noncubic境界への相対延長、およびmutationのcoherent降下を調べる。粗分岐とstack的étale性の区別を保つ。
 `lem:elliptic-two-reflections` と
 `cor:two-intrinsic-foundations` の相対化が最も具体的な手掛かり。
 A/Bの全公表前監査・一次文献新規性比較・三稿の実組版は未完了。

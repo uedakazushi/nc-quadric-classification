@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.94、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v1.8。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.95、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v1.9。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | OU GIT、quiver/QP/avatar と内在H2の相対比較 | v1.8。spectral Kummer/Jacobian/Hodgeの一般比較と正則半単純potentialの相対半点を保持。剛体化quintuple→H2は全非線型geometric領域でsmooth相対次元0、正則半単純一般開で表現可能étale・HH¹=0・HH²=3・KS同型。二つの内在的foundationから一般有限étale次数2、potential→H2は一般次数8。quintuple側のcanonical二枚deck対合で商を取るとH2の稠密開に同値。一般openでη−δ∉E[2]も課す。特殊ruling交換の必要十分条件はδ∈E[2]またはη−δ∈E[2]。正則半単純な特別点の慣性は位数8。正則半単純特別点の相対2-fiberは二点でstack忘却はétale非分岐。片側特別座の全慣性群型はC4×C2/C2³。粗モジュライの局所分岐と相対降下は未解決 |
+| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | OU GIT・quiver/QP/avatarと内在H2比較 | v1.9。spectral Kummer、Picard根、一般のquintuple→H2次数2・potential→H2次数8、稠密S₂商を証明。二捩れ特別座のOU不変式D±、片側反射の粗二重分岐、交点のD8×C2慣性と横断A1特異被覆を導出。スタック忘却は該当滑らかな開でétale。j特殊点・noncubic境界・相対mutationの延長は未解決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -76,7 +76,9 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 **一般GITから内在H2への比較（C v1.8）。** OU2014一般quintupleのスカラーGm⁴剛体化後にもμ₂²の慣性が残り、点曲線Jac(C)[2]の平行移動としてpointed H2へ忠実に写る。quintupleの16次元表示空間／13次元有効群はsmooth純次元3。Bの[普遍非線型cubic smooth atlas](papers/moduli/h2_smooth_atlas.tex)を使い、剛体化quintuple→内在H2は**全非線型geometric locusでsmooth相対次元0**と示した。正則半単純一般開では慣性単射から表現可能étaleで、Kodaira–Spencerは `k⁴/kx≅HH²(Λ)`、`HH¹(Λ)=0`、`dim HH²(Λ)=3` となる。Bの[二つのnormalized foundation](papers/moduli/foundation_stack.tex)と[楕円ruling交換](papers/moduli/marking_forgetting.tex)の `R:(η,δ)↦(2δ−η,δ)` から、一般 `j≠0,1728, δ∉E[2], η−δ∉E[2], η∉{0,2δ}` で二つのfoundationは非同型。したがって忘却は稠密開で**有限étale次数2**、pointed自己同値の全慣性はμ₂²。別の有効potential→quintuple表示射の一般次数4を合成すると、potential→内在H2は一般次数8となる。これはPicard根四選択やH2のroot付き忘却次数とは異なる。証明は[論文CのGIT比較節](papers/quiver-avatar/git_comparison.tex)の `thm:qa-quintuple-h2-generic-etale`、`cor:qa-quintuple-h2-generic-degree-two`、`cor:qa-potential-h2-generic-degree-eight`。特殊cubic/noncubic点のfiber・慣性・分岐、一般二枚にcanonical S₂ deck対合があり、稠密開では **H2 ≅ [quintuple剛体化表示/S₂]** のArtinスタック同値まで証明した（[商表示定理](papers/quiver-avatar/git_comparison.tex)）。**特殊ruling交換の正確な条件：** j(E)≠0,1728、δ≠0、η∉{0,δ,2δ}なら、二つのnormalized foundationを交換するpointed自己同値が存在することとδ∈E[2]またはη−δ∈E[2]は同値。正則半単純な特別点の全pointed慣性の位数は8。正則半単純特別点ではsourceの同型類が一つでも、Aut_H2/Aut_quintupleの二剰余類により相対2-fiberは二点のまま。既存の表現可能étale性からstack忘却はこの点でも非分岐。二つの二捩れ条件の片方だけが成立する正則半単純・j≠0,1728点では、η−δ∈E[2]非零のtranslation型はC₄×C₂、δ∈E[2]非零の反転型はC₂³と、全pointed慣性群の型も決定した。二条件同時・j=0,1728・粗モジュライの局所分岐と法表現、mutationのcoherentな拡張・全体への延長は未解決。Bのsmooth atlasの全証明は今回全面再検証していない。厳密な有限群・接軌道rankの検算資産：[script](computations/verify_ou_quintuple_inertia.py)。
 
-BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidalでは1点。OU楕円z2のE[2]平行移動は四つの根に対応し、**対角滑らかな一般開**ではOU四重torsorとPicard根の一致を証明済み。一般quintuple→内在H2の一般全慣性・接同型・二点fiberは解決。次は特殊cubic/noncubicの慣性と分岐、二rulingを相対的に降下させることを調べる。nodalを含む連結基底に有限OU射と非有限Picard根をそのまま同型に延長できない。検算：[有限群](computations/verify_ou_fourfold.py)、[半点・j](computations/verify_ou_spectral_halving.py)、[Hodge符号](computations/verify_ou_hodge_ruling.py)。
+**特殊二捩れ座の粗分岐と交点（C v1.9）。** $δ,η-δ$ の二捩れ性は、OU対角値の二乗の基本対称式 `e1,e3` と `c=∏xᵢ` で `e3+e1c=0`、`e3−e1c=0`。quintuple GIT不変式 `D±=f2³−3f2f4+2f6±6f2g4` を使うと、`f2g4≠0` かつ滑らかな正則半単純・`j≠0,1728` の開で、粗忘却の分岐座は `D+D−=0`。片側特別座ではpointed慣性の接法表現は `diag(1,1,−1)` で、局所粗射は `Z=z²`。**両条件の交点** `e1=e3=0` ではquintuple慣性 `C2³`、H2慣性 `D8×C2`（D8は位数8）、粗局所射は `k[[s,a,c]]→k[[s,a,b,c]]/(b²−ac)` と横断A1特異点を持つ。例は `x=(1,2,i,2i)`。粗射が分岐してもスタックの忘却射はétaleのまま。証明正本は[論文Cの比較節](papers/quiver-avatar/git_comparison.tex)、再現は[厳密検算コード](computations/verify_ou_special_reflection.py)（計算は一般証明そのものではない）。j=0,1728・noncubic・全GITへの延長やglobal coarseの存在は未解決。
+
+BのPicard[-2]根はsmooth ellipticでは4点、既約nodalでは2点、cuspidalでは1点。OU楕円z2のE[2]平行移動は四つの根に対応し、**対角滑らかな一般開**ではOU四重torsorとPicard根の一致を証明済み。一般quintuple→内在H2の一般全慣性・接同型・二点fiber、さらに滑らかな楕円型の二捩れ特別座とその局所粗分岐は解決。次はj特殊点・noncubicの慣性と二rulingの相対的降下を調べる。nodalを含む連結基底に有限OU射と非有限Picard根をそのまま同型に延長できない。検算：[有限群](computations/verify_ou_fourfold.py)、[半点・j](computations/verify_ou_spectral_halving.py)、[Hodge符号](computations/verify_ou_hodge_ruling.py)。
 
 ## 八本・十本・十二本矢と avatar
 

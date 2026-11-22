@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.60。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.61。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -117,6 +117,33 @@ potentialの一般合成次数8もC原稿に証明を置く。
 **一般openの仮定の内部訂正と特別座。** R:(η,δ)↦(2δ−η,δ)の二つの四つ組の同型条件を再点検すると、一般二枚の非同型にはη−δ∉E[2]が必要。Cの一般開を修正した。j≠0,1728の許容楕円四つ組について交換自己同値が存在する必要十分条件はδ∈E[2]またはη−δ∈E[2]。正則半単純な該当点の全慣性は位数8。これはこの研究の直接証明であり、OU・VdBの文献に書かれていると推測した主張ではない。群拡大と局所分岐、新規性の網羅的確認は未了。
 
 **特別座の群型の内部証明。** C prop:qa-elliptic-special-inertia-group-typesは片側の二捩れ条件下で全pointed慣性群型をtranslation側C4×C2、反転側C2³と計算した。OU/VdB既知の一般定理として推測・帰属せず、本研究内の幾何的群論証明として扱う。二条件同時やj=0,1728、粗空間分岐の検証は未了。
+
+**二捩れ特別座の局所粗比較と一次資料。**
+OU2014 §3の$SO_4\times SO_4\times\mathbb G_m$表示と§5の
+$f_2,f_4,f_6,g_4$不変量を既知の入力として使用。
+本研究Cでは、spectral曲線のWeierstrass座標から
+$\delta\in E[2]\Leftrightarrow e_3+e_1c=0$、
+$\eta-\delta\in E[2]\Leftrightarrow e_3-e_1c=0$と証明。
+GIT重み6式$D_\pm=f_2^3-3f_2f_4+2f_6\pm6f_2g_4$が
+正則半単純開の粗分岐座を表す。
+Alper--Hall--Rydh, *A Luna étale slice theorem for algebraic stacks*,
+Ann. Math. **191** (2020), 675–738,
+DOI 10.4007/annals.2020.191.3.1
+[刊行一次PDF](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p01-s.pdf)
+のTheorem 1.2（印刷p.676）を2026-11-22にページ画像で再確認。
+必要な仮定はsmoothな**閉点**、線型簡約な**全**stabilizer、
+quasi-separated locally finite-type stackとaffine stabilizers。
+結論はnormal representation商との共通étale近傍であり、
+global good/coarse moduliの存在ではない。
+本研究では滑らかなfinite stabilizerのstable局所点に適用し、
+formal coarse invariant ringの計算と組み合わせる。
+片側二捩れ特別座は反射法表現と$Z=z^2$、
+交点$e_1=e_3=0$では$H=C_2^3$、$A=D_8\times C_2$となり
+source粗環が$k[[s,a,b,c]]/(b^2-ac)$となる。
+これらの特殊群・局所粗式は既存文献の引用主張ではなく、
+C本文で証明した本研究の結果（包括的新規性未確認）である。
+計算コードはcomputations/verify_ou_special_reflection.py。
+ここからj=0,1728やnoncubic境界、全H2へのglobal粗射を推論しない。
 
 ## 研究の位置
 
