@@ -1,0 +1,247 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.19。全H2の飽和GIT開と良モジュライ。
+
+\subsection{共通線形化による全$H_2$のgood moduli space}
+\label{subsec:qa-global-h2-good-moduli}
+
+本項では前項の代数閉体 $k$ の標数を零とする。
+四つの二次元空間には固定した基底を取り，
+$k^2\otimes k^2$ の基底を $(00,01,10,11)$ の順に並べる。
+Segre 二次形式の対称行列を
+\[
+ J=\begin{pmatrix}
+ 0&0&0&1\\
+ 0&0&-1&0\\
+ 0&-1&0&0\\
+ 1&0&0&0
+ \end{pmatrix}
+ \quad\left(J^2=I_4,\quad\det J=1,\quad
+ x^{\rm t}Jx=2(x_{00}x_{11}-x_{01}x_{10})\right)
+\]
+とする。以下の写像の始域・終域の両方にこの規約を用いる。
+
+\begin{lemma}[左右kernel条件をまとめる二つの式]
+\label{lem:qa-segre-kernel-two-semi-invariants}
+四次正方行列 $M$ に対し
+\[
+ P(M)=\det M,\qquad
+ Q(M)=e_3(JM^{\rm t}JM)
+      =\operatorname{tr}\!\left(
+           \operatorname{adj}(M)J\operatorname{adj}(M)^{\rm t}J
+        \right)
+\]
+と置く。ここで $e_3(N)$ は
+$\det(tI_4+N)$ の $t$ の係数である。
+$P,Q$ の次数はそれぞれ四，六であり，
+\[
+ \mathcal K(M)\cap\mathcal K(M^{\rm t})=D(P(M),Q(M)).
+ \tag{PQ}\label{eq:qa-cross-pair-two-polynomials}
+\]
+この等式は普遍行列空間の開部分として成立し，任意基底変更に保たれる。
+\end{lemma}
+\begin{proof}
+$e_3(N)=\operatorname{tr}(\operatorname{adj}(N))$ と
+$\operatorname{adj}(AB)=\operatorname{adj}(B)\operatorname{adj}(A)$，
+$\operatorname{adj}(J)=J$ から二つの $Q$ の表示が一致する。
+階数四なら $P\ne0$ である。
+階数三の場合
+$\operatorname{adj}(M)=\kappa\lambda^{\rm t}$ と書けば，
+$\kappa,\lambda$ はそれぞれ $M,M^{\rm t}$ の kernel を張り，
+\[
+ Q(M)=(\kappa^{\rm t}J\kappa)(\lambda^{\rm t}J\lambda).
+\]
+従って $Q\ne0$ は二つの kernel 線がともに Segre を避けることと同値である。
+階数二以下なら随伴行列が零なので $P=Q=0$ であり，
+kernel の射影化は Segre と交わる。
+以上で幾何点における同値を得る。
+両辺が開部分であることから普遍空間上の等式と任意基底変更への整合性が従う。
+\end{proof}
+
+$X=\mathbb A^{32}$ とし，
+\[
+ \widetilde G=
+ \operatorname{GL}(A)\times\operatorname{GL}(B)
+ \times\operatorname{GL}(C)\times\operatorname{GL}(D)
+ \times\operatorname{GL}(W),\qquad
+ G=\widetilde G/K_\square
+\]
+と書く。文字 $a,b,c,d,w$ は各群要素の determinant を表すものとし，
+次の指標を定める：
+\[
+ \chi_f=\frac{w}{a^2c^2},\qquad
+ \chi_g=\frac{w}{b^2d^2},\qquad
+ \chi_0=\frac{w}{abcd},\qquad
+ \zeta_f=\chi_f\chi_0,\quad \zeta_g=\chi_g\chi_0.
+ \tag{CH}\label{eq:qa-h2-git-characters}
+\]
+いずれも $K_\square$ 上で自明であり，
+$\chi_f\chi_g=\chi_0^2$，$\zeta_f\zeta_g=\chi_0^4$ である。
+指標 $\chi_0$ は ruling 交換で不変なので
+$H=G\rtimes S_2$ へ，$S_2$ 上自明な指標として延びる。
+
+\begin{proposition}[共通指標の半不変式による飽和被覆]
+\label{prop:qa-h2-common-character-saturated-cover}
+前項の交差行列 $M_f,M_g$ に対し
+\[
+ P_f=P(M_f),\quad Q_f=Q(M_f),\qquad
+ P_g=P(M_g),\quad Q_g=Q(M_g)
+\]
+とする。その $G$-半不変指標は順に
+$\zeta_f^2,\zeta_f^3,\zeta_g^2,\zeta_g^3$ である。
+次の四式は全て指標 $\chi_0^{24}$ の半不変式である：
+\[
+ \begin{split}
+ s_0&=(P_fP_g)^3,& s_1&=P_f^3Q_g^2,\\
+ s_2&=Q_f^2P_g^3,& s_3&=(Q_fQ_g)^2.
+ \end{split}
+ \tag{SS}\label{eq:qa-h2-four-common-semi-invariants}
+\]
+これらは $X$ の座標の通常の総次数では九十六であり，
+\[
+ s_1s_2=s_0s_3,\qquad
+ V_{\rm cross}=\bigcup_{i=0}^3D(s_i).
+ \tag{SAT}\label{eq:qa-h2-saturated-semi-invariant-cover}
+\]
+また ruling 交換は $s_1,s_2$ を交換し $s_0,s_3$ を固定する。
+従って $H$ についても，同じ開部分を
+\[
+ V_{\rm cross}=D(h_0)\cup D(h_1)\cup D(h_2),\qquad
+ (h_0,h_1,h_2)=(s_0,s_3,s_1+s_2)
+ \tag{UN}\label{eq:qa-h2-three-unordered-semi-invariants}
+\]
+という同一指標 $\chi_0^{24}$ の三半不変式で覆える。
+\end{proposition}
+\begin{proof}
+$M_f:C^\vee\otimes D\to A\otimes B^\vee\otimes L_f$ の変換則は
+\[
+ M_f\longmapsto
+  \chi_f\,(g_A\otimes g_B^{-{\rm t}})\,
+  M_f\,(g_C^{-{\rm t}}\otimes g_D)^{-1}
+\]
+である。tensor 積上の determinant 二次形式に対し，
+左側の similitude factor は $\chi_f^2a/b$，
+右側の factor は $d/c$ である。
+従ってその比は
+\[
+ \frac{\chi_f^2ac}{bd}=\chi_f\chi_0=\zeta_f
+\]
+となる。
+$JM_f^{\rm t}JM_f$ は相似変換と $\zeta_f$ 倍によって変わるため，
+$Q_f=e_3(JM_f^{\rm t}JM_f)$ の指標は $\zeta_f^3$ である。
+また二次元 tensor 積の determinant はその similitude factor の二乗なので，
+$P_f$ の指標は $\zeta_f^2$ である。$g$ 側も同様である。
+
+補題~\ref{lem:qa-segre-kernel-two-semi-invariants} により
+\[
+ V_{\rm cross}=D(P_f,Q_f)\cap D(P_g,Q_g).
+\]
+この積の四通りの非消滅を正の冪で揃えたものが
+式~\eqref{eq:qa-h2-saturated-semi-invariant-cover} である。
+指標と恒等式は直接計算から従う。
+ruling 交換は固定基底の係数式において $P_f,P_g$ および $Q_f,Q_g$ を交換する。
+もし $s_1+s_2=0$ かつ $s_1$ または $s_2$ が非零なら両方とも非零であり，
+$s_1s_2=s_0s_3$ から $s_0,s_3$ も非零となる。
+これにより三式でも同じ開を覆うことが分かる。
+\end{proof}
+
+\begin{theorem}[全$H_2$の準射影的good moduli space]
+\label{thm:qa-global-h2-quasiprojective-good-moduli}
+$\Gamma=G$ または $H$ とし，半不変式の次数付き環を
+\[
+ R_\Gamma(\chi_0)=
+   \bigoplus_{n\geq0}
+   \{a\in k[X]\mid a(\gamma x)=\chi_0(\gamma)^n a(x)\}
+\]
+と定める。この環は有限生成で，次数零部分は $k$ である。
+$\Gamma=G$ なら
+\[
+ M^{\rm rul}=\bigcup_{i=0}^3D_+(s_i)
+             \subset\operatorname{Proj}R_G(\chi_0),
+\]
+$\Gamma=H$ なら
+\[
+ M=\bigcup_{i=0}^2D_+(h_i)
+             \subset\operatorname{Proj}R_H(\chi_0)
+\]
+と置く。このとき
+\[
+ \pi^{\rm rul}:\mathfrak H_2^{\rm rul}\longrightarrow M^{\rm rul},
+ \qquad
+ \pi:\mathfrak H_2\longrightarrow M
+\]
+は good moduli space morphism である。
+特に $M^{\rm rul},M$ は有限型で separated な準射影 $k$-scheme である。
+
+ここで good moduli space morphism とは，
+準コンパクトで，準連接層の直像が完全で，構造層の自然射が同型となる射をいう。
+既存の定理~\ref{thm:qa-square-explicit-h2-open} による
+全相対 groupoid の同定を用いており，
+幾何点のみの粗い対応を主張しているのではない。
+\end{theorem}
+\begin{proof}
+標数零で $G$ と $H$ は線型簡約である。
+$X\times\mathbb A^1$ 上の点への作用を
+$\gamma\cdot(x,z)=(\gamma x,\chi_0(\gamma)^{-1}z)$ とすると
+\[
+ R_\Gamma(\chi_0)\simeq(k[X][z])^\Gamma,\qquad
+ a\text{ in degree }n\longleftrightarrow az^n.
+\]
+従って簡約群の不変式の有限生成性から $R_\Gamma(\chi_0)$ は有限生成である。
+さらに $\operatorname{GL}(W)$ の scalar は $f,g$ の全座標を同じ正の重みで
+変換するため，$k[X]^\Gamma=k$ である。
+よって $\operatorname{Proj}R_\Gamma(\chi_0)$ は projective $k$-scheme であり，
+表示した開部分は準射影である。
+
+被覆に使った任意の半不変式 $h$（ordered の場合は $s_i$）は
+$\chi_0^{24}$ の指標を持つ。
+その localization について
+\[
+ \bigl(R_\Gamma(\chi_0)[h^{-1}]\bigr)_0
+       =(k[X][h^{-1}])^\Gamma
+ \tag{LC}\label{eq:qa-h2-localized-invariants}
+\]
+が成り立つ。実際，右辺の元を $a/h^m$ と書けば，
+その不変性は $a$ が指標 $\chi_0^{24m}$ の半不変式であることと同値である。
+従って各標準開の上では求める射は
+\[
+ [D(h)/\Gamma]\longrightarrow
+ \operatorname{Spec}(k[X][h^{-1}])^\Gamma
+       =D_+(h)
+\]
+という affine quotient である。
+これは線型簡約群の affine quotient の good moduli space morphism である
+\cite[Theorem 13.2]{AlperGoodModuli2013}。
+
+二つの被覆式 $h,h'$ は同じ指標を持つので，
+$D(h)\cap D(h')$ は $D(h)$ 上の不変正則関数 $h'/h$ の非消滅開である。
+したがって重なりは $D_+(h)$ の対応する principal open の逆像であり，
+飽和している。局所 quotient は同じ invariant localization によって貼り合う。
+この Zariski 局所構成から，全体で準連接直像の完全性と
+構造層の直像同型を得る。
+飽和開の貼合せについては\cite[Proposition 7.9]{AlperGoodModuli2013}にも一致する。
+これは GIT の semistable 開からの good moduli space の構成
+\cite[Theorem 13.6]{AlperGoodModuli2013} の明示的な飽和開への制限である。
+
+最後に
+$\mathfrak H_2^{\rm rul}=[V_{\rm cross}/G]$ と
+$\mathfrak H_2=[V_{\rm cross}/H]$
+という定理~\ref{thm:qa-square-explicit-h2-open}の全相対同値を用いれば結論が従う。
+\end{proof}
+
+\begin{remark}[線形化の役割と三式の限界]
+本定理の根拠は，単に $V_{\rm cross}$ が簡約群の不変開であることではない。
+同一指標にそろえた半不変式によって affine 開を覆い，
+重なりの飽和性を式~\eqref{eq:qa-h2-localized-invariants} で確認したことを使う。
+三つの $h_i$ は被覆を与えるが，不変式環を生成するとは主張しない。
+従ってこれらの三座標だけで同型類を分類することや，
+$M$ の射影平面への閉埋込みを得たという主張はしない。
+
+両階数三の閉部分では $M_f,M_g$ はともに可逆なので，
+全 noncubic 閉部分は $D(s_0)=D(P_fP_g)$ の一つの affine quotient chart に入る。
+構成したgood moduli射は標的$M$または$M^{\rm rul}$からの任意基底変更で
+good moduli射のままである\cite[Proposition 4.7]{AlperGoodModuli2013}。
+actual heartの群oidとの比較の範囲には、引き続き本稿の相対サイトを用いる。
+この良モジュライは非同型対象の軌道閉包が交わる場合にそれらを同一視する。
+従って論文B\cite[\texttt{cor:global-h2-no-coarse-space}]{QuadricModuli2026}
+の粗モジュライ不存在と矛盾しない。
+\end{remark}

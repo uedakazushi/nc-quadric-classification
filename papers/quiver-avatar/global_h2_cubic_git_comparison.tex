@@ -1,0 +1,230 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.19。Cubic開と既存四量子ビットGIT。
+
+\subsection{Cubic開の飽和性と四量子ビットGIT}
+\label{subsec:qa-global-cubic-git-comparison}
+
+前項と同じく標数零の代数閉体 $k$ 上で考える。
+$F=\det f$，$G_0=\det g$ と置き，
+$\mathfrak U_f=[V_{\rm cross}\cap D(F)/G]$，
+$\mathfrak U_g=[V_{\rm cross}\cap D(G_0)/G]$
+を ordered $H_2$ の二つの cubic 開とする。
+ここでいう cubic 開は linear quintuple に対応する古典型も含む。
+
+\begin{proposition}[二つのcubic開は飽和している]
+\label{prop:qa-global-cubic-opens-saturated}
+$\mathfrak U_f,\mathfrak U_g$ は
+$\pi^{\rm rul}:\mathfrak H_2^{\rm rul}\to M^{\rm rul}$
+について飽和開である。具体的に
+\[
+ M_f^{\rm rul}
+  =M^{\rm rul}\cap
+       \bigl(D_+(F^2P_g)\cup D_+(F^3Q_g)\bigr)
+\]
+と置けば，
+$\mathfrak U_f=(\pi^{\rm rul})^{-1}(M_f^{\rm rul})$ である。
+$g$ 側は $f,g$ を交換した式で与えられる。
+\end{proposition}
+\begin{proof}
+$F^2P_g$ と $F^3Q_g$ の指標はそれぞれ
+\[
+ \chi_f^2\zeta_g^2=\chi_0^6,\qquad
+ \chi_f^3\zeta_g^3=\chi_0^9
+\]
+である。一方，$V_{\rm cross}$ 上では $P_g,Q_g$ の少なくとも一方が
+非零なので，この開部分の内部で
+\[
+ V_{\rm cross}\cap D(F)
+ =
+ (V_{\rm cross}\cap D(F^2P_g))
+ \cup
+ (V_{\rm cross}\cap D(F^3Q_g))
+\]
+が成立する。右辺の各項は正の $\chi_0$ 冪の半不変式に対応する
+$\operatorname{Proj}R_G(\chi_0)$ の標準開の逆像である。
+これは $X=\mathbb A^{32}$ 全体で右辺が $V_{\rm cross}$ に入るという
+主張を用いていない。
+\end{proof}
+
+\paragraph{可逆な一積による四因子表示.}
+$f$ が可逆なら $W=C\otimes A$ と同一視して $f=1$ とし，
+\[
+ T=f^{-1}g:D\otimes B\longrightarrow C\otimes A,\qquad
+ w_T\in A\otimes C\otimes D^\vee\otimes B^\vee
+\]
+と書ける。この gauge の残余群は
+\[
+ G_f=
+ \bigl(\operatorname{GL}(A)\times\operatorname{GL}(B)
+       \times\operatorname{GL}(C)\times\operatorname{GL}(D)\bigr)/K_f,
+\]
+\[
+ K_f=
+ \{(\lambda_A I,\lambda_B I,\lambda_C I,\lambda_D I)
+          :\lambda_A\lambda_C=\lambda_B\lambda_D\}
+       \simeq\mathbb G_m^3 .
+\]
+これは四因子 $A,C,D^\vee,B^\vee$ の tensor 表現の有効群である。
+一次元の関係線を別に入れた raw quintuple 表示から
+四次元の自明 scalar 核を消した群とも同型である
+（命題~\ref{prop:qa-ou-scalar-gerbe}）。
+群の点への作用は
+\[
+ T\longmapsto
+ (g_C\otimes g_A)\,T\,(g_D\otimes g_B)^{-1}
+\]
+であり，この残余群上で
+\[
+ \chi_f=1,\qquad
+ \chi_0=\chi=\frac{\det A\,\det C}{\det B\,\det D}.
+ \tag{CQ}\label{eq:qa-cubic-residual-character}
+\]
+以下では $\operatorname{Cr}(T)$ を前項と同じ交差縮約とし，
+$N(T)=\operatorname{Cr}(\operatorname{adj}T)$ と置く。
+これは $f=1$ での $M_g$ である。
+
+\begin{lemma}[Geometric条件の二半不変式による判定]
+\label{lem:qa-cubic-adjugate-two-invariants}
+$w_T$ が geometric quintuple を与える必要十分条件は
+\[
+ \mathcal K(N(T))\cap\mathcal K(N(T)^{\mathrm t})
+\]
+である。従って geometric 開 $\mathscr G$ は
+\[
+ \mathscr G
+   =D\bigl(p_{\rm adj},q_{\rm adj}\bigr)
+       \subset\operatorname{Hom}(D\otimes B,C\otimes A),
+ \quad
+ p_{\rm adj}=P(N(T)),\quad q_{\rm adj}=Q(N(T)).
+ \tag{CA}\label{eq:qa-cubic-adjugate-open}
+\]
+$p_{\rm adj},q_{\rm adj}$ は通常の tensor 座標次数で $12,18$，
+$G_f$ の指標で $\chi^6,\chi^9$ の半不変式である。
+この開の等式は任意の係数スキームへの引戻しと整合する。
+\end{lemma}
+\begin{proof}
+Geometric 条件は $T,T^{\mathrm t},
+\operatorname{Cr}(T),\operatorname{Cr}(T)^{\mathrm t}$ の四つの kernel が
+非零の分解可能 tensor を含まない条件である
+\cite[Definition 5.3.1]{VdB2011}。
+$\operatorname{rk}T\le2$ なら $\operatorname{adj}T=0$ なので本補題の条件は
+成立しない。この場合，$\mathbb P(\ker T)$ は少なくとも直線を含み，
+その直線が Segre 二次曲面と交わるため geometric 条件も成立しない。
+
+$\operatorname{rk}T=4$ なら
+$\operatorname{adj}T=(\det T)T^{-1}$ である。
+可逆な $T$ について交差条件が $T^{-1}$ と同値になることは
+補題~\ref{lem:qa-cross-invertible-cubic} の証明の ruling 二平面の議論による。
+例えば $\operatorname{Cr}(T)(c^\vee\otimes d)=0$ は
+\[
+ T(kd\otimes B)=(\ker c^\vee)\otimes A
+\]
+と同値であり，逆写像を取れば $T^{-1}$ の対応する分解可能 kernel
+条件を得る。転置も同様である。
+
+残る $\operatorname{rk}T=3$ では
+\[
+ \operatorname{adj}T=\kappa\otimes\lambda,\qquad
+ k\kappa=\ker T\subset D\otimes B,\qquad
+ k\lambda=\operatorname{Ann}(\operatorname{im}T)
+                    \subset C^\vee\otimes A^\vee
+\]
+と書く。補題~\ref{lem:qa-rank-one-cross-kronecker} により，
+$N(T)$ の条件は $\kappa,\lambda$ がともに非分解可能であることと同値で，
+そのとき $N(T),N(T)^{\mathrm t}$ は実際に可逆である。
+Geometric 条件の最初の二条件は正にこの非分解可能性を要求する。
+これから残る二条件も従うことを確認する。
+仮に $\operatorname{Cr}(T)(c^\vee\otimes d)=0$ なら
+\[
+ T(kd\otimes B)\subset(\ker c^\vee)\otimes A .
+\]
+$\kappa$ が非分解可能なので，$T$ は左辺の入力二平面上で単射である。
+従ってこの包含は等号となる。
+しかし $\lambda$ が非分解可能なら，
+$\ker\lambda=\operatorname{im}T$ は
+$(\ker c^\vee)\otimes A$ のような ruling 二平面を含まない。
+これは矛盾である。
+転置の分解可能 kernel についても
+$T(D\otimes kb)\subset C\otimes\ker a^\vee$ を使えば同じ証明となる。
+
+これで全階数の場合を尽くした。
+二式による表示は
+補題~\ref{lem:qa-segre-kernel-two-semi-invariants} から従う。
+$N(T)$ の成分は $T$ の三次式なので通常次数は $12,18$ となる。
+また式~\eqref{eq:qa-cubic-residual-character} と
+$\chi_g=\chi^2$ から $\zeta_g=\chi^3$ となり，
+指標は $\zeta_g^2=\chi^6,\zeta_g^3=\chi^9$ である。
+最後に，以上の幾何点による同値は普遍係数空間の二つの開部分の一致を示す。
+従って非被約係数スキームを含めて任意の引戻し後にも同じ開を定める。
+\end{proof}
+
+\begin{proposition}[既存四量子ビット商との開部分比較]
+\label{prop:qa-global-cubic-four-qubit-good-moduli}
+四因子表現の $SL_2^4$ 不変式環に通常の多項式次数を入れ，
+その $\operatorname{Proj}$ を $\overline M_{\rm qui}$ とする。
+このとき
+\[
+ \mathfrak U_f\simeq[\mathscr G/G_f],
+ \qquad
+ M_f^{\rm rul}\simeq
+ \Omega_{\rm geo}:=
+       D_+(p_{\rm adj})\cup D_+(q_{\rm adj})
+       \subset\overline M_{\rm qui}
+\]
+という同型があり，二つの good moduli 射と整合する。
+$g$ 側も同様である。
+既知の不変式環の計算により
+\[
+ \overline M_{\rm qui}\simeq\mathbb P(2,4,4,6)
+                  \simeq\mathbb P(1,2,2,3)
+\]
+であり，右側の重みは $\chi$ による次数に対応する。
+\end{proposition}
+\begin{proof}
+$f$ の可逆性によって $W=C\otimes A$ と同一視する操作は，
+ベクトル束と全同型を保つ相対操作である。
+従って，これは単なる体上の標準形ではなく，商スタックの同型
+\[
+ [\{(f,g)\in X:F\ne0\}/G]\simeq
+ [\operatorname{Hom}(D\otimes B,C\otimes A)/G_f]
+\]
+を与える。明示的 $H_2$ 開の認識と前補題によって，その $H_2$ 開は
+$[\mathscr G/G_f]$ に一致する。
+
+四因子それぞれの $SL_2$ による不変式は偶数次数にのみ存在する。
+通常次数 $2n$ の不変式は四つの scalar に対し
+$(\lambda_A\lambda_C/\lambda_B\lambda_D)^{2n}$
+で変換するので，$GL_2^4$ に対する指標は $\chi^n$ である。
+逆も明らかで，従って
+\[
+ R_{G_f}(\chi)_n
+   =k[A\otimes C\otimes D^\vee\otimes B^\vee]^{SL_2^4}_{2n}.
+ \tag{CGIT}\label{eq:qa-cubic-half-degree-regrading}
+\]
+これは偶数次数を半分にした同じ環であり，$\operatorname{Proj}$ は変わらない。
+前補題により $\mathscr G$ はこの GIT 商の飽和開で，
+その good moduli は表示した $\Omega_{\rm geo}$ である。
+一方，命題~\ref{prop:qa-global-cubic-opens-saturated} は
+$\mathfrak U_f\to M_f^{\rm rul}$ も good moduli とする。
+Good moduli space の一意性からこの二つの scheme の同型を得る。
+
+最後の不変式環は既知の四量子ビット計算
+\cite[\S3, (3.9)--(3.16), (3.19)]{OU2014} であり，
+通常次数 $2,4,4,6$ の四つの代数的独立な生成元を持つ。
+同計算の直交群と $W(D_4)$ の不変式による記述は，
+標数零の代数閉体上で同様に成立する。
+式~\eqref{eq:qa-cubic-half-degree-regrading} により
+$\chi$ 次数の重みは $1,2,2,3$ となる。
+\end{proof}
+
+\begin{remark}[比較の範囲]
+この命題は既存の重み付き射影商の計算を新たに主張するものではない。
+本稿で追加した点は，全 $H_2$ の大域的線形化を cubic 開に制限したときの
+指標の一致と，geometric 開の明示的な飽和性である。
+全 $M^{\rm rul}$ または非順序 $M$ が
+$\overline M_{\rm qui}$ と同型であるとは主張していない。
+両階数三の noncubic 閉部分は両 cubic 開の外側にある。
+また geometric 開には非閉軌道を含み得るため，
+ここで比較するのは good moduli scheme であり，
+pointed exact 同型類を一対一に分類する coarse moduli ではない。
+\end{remark}

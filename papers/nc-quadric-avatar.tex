@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.18
+% 日本語 LuaLaTeX。2026-11-23 / v4.19
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.18（全H2開の二十多項式判定とcanonicalな階数81代数）}
+\date{2026年11月23日\quad v4.19（全H2の三半不変式と準射影的良モジュライ）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -93,6 +93,13 @@ canonical Serre完成と四頂点展開の左右Noether性，実際の相対AS�
 両階数三の壁を含み，古典型と非被約基底にも同じ開判定が適用される．
 順序付き全体上の二つの階数低下因子は横断的に交わり，
 非順序の和因子の正規化とconductorを内在的ruling被覆で記述する．
+さらに左右kernel条件をGram行列の二式へ集約し，同じ指標の三半不変式で
+全$H_2$開を覆う．比による重なりの飽和性を示すことで，
+全$\HHstack$の分離的な準射影的good moduli spaceを構成する．
+各cubic開を既存の四量子ビットGIT商の明示開と同定し，
+noncubicの$\mathbb A^1_\chi$を大域良モジュライへ閉埋め込む．
+階数因子の良モジュライ像は正規であり，
+noncubic閉像のschemeとしての引戻しには一致点で非被約な厚みが生じる．
 さらに，全内在的$H_2$上へrank81の通常の有限Morita代数を降下させ，
 その全Serre完成から構造対象を保ってheartを回復する．
 回転・第一mutationの完成も同じheartを与えるが，非被約壁を横断する
@@ -427,6 +434,18 @@ finite foundationの実現可能開への開埋込と
 任意に別途与えたAS/QP族の全相対認識、および
 公刊に向けた包括的な新規性確認は未完了である。
 
+全体の良モジュライについては、定理~\ref{thm:qa-global-h2-quasiprojective-good-moduli}が
+三本の同じ指標の半不変式による構成を与える。
+四次行列$M$の左右kernel条件を
+$P(M)=\det M$と$Q(M)=e_3(JM^{\rm t}JM)$でまとめ、
+二つの交差縮約から同一指標の三式を作る。
+各非消滅開はアフィンで、二式の比は不変な正則関数になるので、
+局所商の重なりは飽和している。
+線型簡約群のアフィン商と飽和開の貼合せ自体は
+\cite[Proposition 7.9, Theorems 13.2 and 13.6]{AlperGoodModuli2013}の既知の原理である。
+本稿はこの原理を全$H_2$開へ適用するための半不変式と共通指標を明示する。
+三式が不変式環を生成することや、良モジュライ空間の全方程式を求めたことは主張しない。
+
 \paragraph{既知の降下原理と本稿の具体化}
 局所対象を Hom の双対で増幅してスカラーの曖昧さを消す操作は，
 twisted sheaf における重みの相殺と重み零の降下という既知の原理に属する
@@ -509,6 +528,9 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/relative_square_foundation_stack}
 \input{quiver-avatar/square_explicit_h2_open}
 \input{quiver-avatar/square_rank_boundary_geometry}
+\input{quiver-avatar/global_h2_good_moduli}
+\input{quiver-avatar/global_h2_cubic_git_comparison}
+\input{quiver-avatar/global_good_moduli_boundary_images}
 \input{quiver-avatar/universal_h2_square_morita}
 \input{quiver-avatar/relative_rotated_mutated_tails}
 \input{quiver-avatar/spectral_atkin_lehner}

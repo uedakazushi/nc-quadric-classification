@@ -1,12 +1,16 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.34。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.40（相対理論の31節）、論文Cはv4.18。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.35。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.19。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
-**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。局所good moduliの降下もこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
+**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。現在の優先事項は、A・Bの公表前監査と先行研究比較を先に完了すること、その次に既存GITとの相対比較・偏極認識を進めることである。全H2のgood moduliはCで構成済みであり、その境界と不変式環をこの比較の一部として扱う。** 平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
 ## Cの現行実行単位
 
-**全H2の有限square表示とcanonicalなrank81代数。** 四つのrank2束とrank4束への二乗法をパラメータ化するA32の開から、rank16 squareとrank24 normal foundationの全相対stack同値を核・余核で構成した。頂点トーラスKとruling交換S2を含め、Q_fndは((GL2^4×GL4)/Gm³)⋊S2による商になる。H2はその不変開として表され、古典型も同じ有限表示で扱える。二積の合併全射は追加開であり、H2上では成立する。全H2上のTcan=⊕Ei⊗Hom(O,Ei)∨は頂点線束と二rulingの交換を消して降下し、通常のEnd代数はrank81。canonical完成のn次は81(2n+1)²、O角は(2n+1)²で、左右Noether性とpointed tails認識を得る。H2開は二乗法の随伴行列から作る二つの交差縮約とその転置について、kernelがSegreを避ける四条件で完全に判定した。各条件は五生成idealの非零開で、計20式以内（次数16・24）となる。両rank3壁も含み、既存相対開との一致により非被約底でも全groupoidを認識する。任意AS/QP族の全比較と大域good moduliは別課題である。[有限stack同値](papers/quiver-avatar/relative_square_foundation_stack.tex)、[全H2のrank81代数](papers/quiver-avatar/universal_h2_square_morita.tex)。
+**全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
+
+**良モジュライ上のcubic開と境界。** Ordered cubic開は飽和しており、f=1の残余群とχ0次数を比較すると、既存四量子ビット商P(1,2,2,3)の開D+(p_adj)∪D+(q_adj)と同型となる。p_adj=P(Cr(adjT))、q_adj=Q(Cr(adjT))の通常次数は12・18。noncubicのA1χはMへ閉埋込みとなり、cubic/noncubicは同じgood fiberに混在しない。階数因子Dの正規化列の差はruling符号線束で、その直像が零になるため、Dのgood imageは既に正規である。一方、noncubic閉像のscheme逆像は一致点で元のNより厚い。符号慣性が法方向に−Idで作用し、good像が一定の非零横断一次変形を与える。 [cubic比較](papers/quiver-avatar/global_h2_cubic_git_comparison.tex)・[境界像](papers/quiver-avatar/global_good_moduli_boundary_images.tex)。
+
+**全H2の有限square表示とcanonicalなrank81代数。** 四つのrank2束とrank4束への二乗法をパラメータ化するA32の開から、rank16 squareとrank24 normal foundationの全相対stack同値を核・余核で構成した。頂点トーラスKとruling交換S2を含め、Q_fndは((GL2^4×GL4)/Gm³)⋊S2による商になる。H2はその不変開として表され、古典型も同じ有限表示で扱える。二積の合併全射は追加開であり、H2上では成立する。全H2上のTcan=⊕Ei⊗Hom(O,Ei)∨は頂点線束と二rulingの交換を消して降下し、通常のEnd代数はrank81。canonical完成のn次は81(2n+1)²、O角は(2n+1)²で、左右Noether性とpointed tails認識を得る。H2開は二乗法の随伴行列から作る二つの交差縮約とその転置について、kernelがSegreを避ける四条件で完全に判定した。各条件は五生成idealの非零開で、計20式以内（次数16・24）となる。両rank3壁も含み、既存相対開との一致により非被約底でも全groupoidを認識する。四交差条件をさらに同じ指標の三半不変式へまとめ、全H2の分離的・準射影的good moduliを構成した。任意AS/QP族の全比較は別課題である。[有限stack同値](papers/quiver-avatar/relative_square_foundation_stack.tex)、[全H2のrank81代数](papers/quiver-avatar/universal_h2_square_morita.tex)。
 
 **全域の境界幾何。** 明示H2開上のdet f=0とdet g=0は滑らかなCartier因子で、共通零点では二つの微分が独立である。順序付きH2上でSNC、noncubic交点は滑らかな余次元2となる。非順序和因子の正規化は一方の順序付き因子であり、noncubic上の逆像はruling二重被覆、conductorはschemeとしてnoncubic中心である。任意引戻し後のsmooth/reduced性は主張しない。 [証明](papers/quiver-avatar/square_rank_boundary_geometry.tex)。
 
@@ -52,11 +56,11 @@
 
 **P1：Aの独立証明監査。** (i) normal helixと最初の軌道対象の認識、(ii) cubic被覆の必要十分性、(iii) 全許容四つ組の退化型ごとの二周期の平方＝反SerreとAS4 hull、(iv) standard/non-standard双方の同時untwistとnoncubic全被覆、(v) 反Serre環・GL9有限判定とGL4反復の有限停止を検討する。各主張の仮定、左右・反対環、文献定理の版・番号、全次数と有限次数の区別を記録する。既存の11本の厳密計算PASSは数学的な全証明検証とは区別する。全被覆・逆構成・同値判定に依存した本質的ギャップが零であり、残る留保を明記した時点をAの公表準備の達成基準とする。
 
-**P2：Bの独立証明監査。** (i) 相対定義・module-object基底変更と反Serre再構成、(ii) five-window canonical tailsと相対Noetherian貼合せ、(iii) Artin持上げ・良いSerre根・同じ根のAS4被覆の有限型効果性、(iv) smooth atlasの指定pointed同型持上げ、(v) noncubic被約境界の二形式相対groupoid同値と慣性、(vi) AHRを用いる一致根対の形式対を順に検証する。証明に使う有限型・Noetherian・非被約底の条件を監査し、未証明の「全基底で素朴なAbel公理」「X_asの局所閉認識」「H2開上のgood moduli降下」は主定理から分離する。BはAを引用する一方向依存に保つ。
+**P2：Bの独立証明監査。** (i) 相対定義・module-object基底変更と反Serre再構成、(ii) five-window canonical tailsと相対Noetherian貼合せ、(iii) Artin持上げ・良いSerre根・同じ根のAS4被覆の有限型効果性、(iv) smooth atlasの指定pointed同型持上げ、(v) noncubic被約境界の二形式相対groupoid同値と慣性、(vi) AHRを用いる一致根対の形式対を順に検証する。証明に使う有限型・Noetherian・非被約底の条件を監査し、未証明の「全基底で素朴なAbel公理」「X_asの局所閉認識」は主定理から分離する。Bの証明はAを入力とし、Bを用いてCで構成する大域good moduliへの参照は結果の案内として区別する。
 
 **P3：文献比較と公表編集。** Belmans, *Hochschild cohomology of noncommutative planes and quadrics*（JNCG 13 (2019), 769–795, doi:10.4171/JNCG/338）を主にcubic側の既知HH計算として明記する。VdB、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa OWR2022、Okawa–Ueda 2014の既知の分類・line-bundle格子・GITを本研究の追加成果から区別する。AのIntroductionは分類・忘却・noncubicに、Bは四つの主定理群（代数性、境界相対同値、good/coarse moduli、形式局所構造）に焦点を当て、必要な証明を削らず本文を読みやすく再配置する。LuaLaTeX/latexmkで三稿ごとにPDF・SyncTeXと表示を確認し、未実施なら明記する。新規性の包括調査・第三者査読は別状態とする。
 
-**P4：AS/avatar分類と、指定構造対象を保つ比較（論文C v4.18）。** 中心目標は、最小分解型を指定したAS正則Z代数・avatar・O-marked H2・potentialの関係を、同型類、有限代数、相対pointed heartの各水準で決定することである。体上の全単射を相対群oid同値と読み替えず、構造頂点を移すmutationと、構造対象を保つ同値を区別する。
+**P4：AS/avatar分類と、指定構造対象を保つ比較（論文C v4.19）。** 中心目標は、最小分解型を指定したAS正則Z代数・avatar・O-marked H2・potentialの関係を、同型類、有限代数、相対pointed heartの各水準で決定することである。体上の全単射を相対群oid同値と読み替えず、構造頂点を移すmutationと、構造対象を保つ同値を区別する。
 
 現在有効なCの結果は次の通り。証明は現行論文の参照先を正本とし、版ごとの増補記録は再開に用いない。
 
@@ -81,7 +85,7 @@
 
 1. **Fricke境界比較の確立済み部分を保持する。** 全noncubicからbalanced標的への自然な順序付き射、全表示群の同変性・平方根選択の降下・任意基底変更、線束境界の全fiberと慣性を証明した。二traitの共通正則模型、全半周期torsor、pencil/Perfの降下、全有限分岐後の二次線束障害はその具体的な幾何を説明する。次の実行単位は下の相対pointingとし、graph形成・解消の任意非平坦基底変更やH2 heartへの延長をこの定理から推論しない。
 
-2. **有限square表示のH2開。** 全標準頂点の相対認識、canonical squareのAS解消とtails、rank16↔rank24の全stack同値、全H2のrank81通常代数は証明した。A32の線形表示からの全H2開は随伴行列の四交差条件、計20式以内で認識した。det f・det gの全域の横断性と非順序商の境界正規化も証明した。次は既存GITとの貼合せ条件を調べる。回転・mutationのtailsと左右Noether性も確立しており、非被約壁上でも非最小AS解消を構成した。全AS/QPの同型層との比較へ用いる。
+2. **有限square表示のH2開。** 全標準頂点の相対認識、canonical squareのAS解消とtails、rank16↔rank24の全stack同値、全H2のrank81通常代数は証明した。A32の線形表示からの全H2開は随伴行列の四交差条件、計20式以内で認識した。det f・det gの全域の横断性と非順序商の境界正規化も証明した。共通指標の三半不変式による全H2のgood moduliを構成した。境界像の正規性・A1χの閉埋込み・cubic chartの飽和性も確立した。次はp_adj,q_adjを既存四生成不変式で展開する。回転・mutationのtailsと左右Noether性も確立しており、非被約壁上でも非最小AS解消を構成した。全AS/QPの同型層との比較へ用いる。
 
 3. **全相対AS・QP群oidを比較する。** 任意のavatar族の全周期AS再構成、同型の層、相対heart、AS4被覆を検証する。8/10/12矢QPの消去pairのスカラー慣性、right-equivalenceと通常代数同型の差を保持する。有限foundationの実現可能開の具体的な有限式、全GITへの延長は並行課題とする。
 
@@ -91,7 +95,7 @@
 
 - **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
 - **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
-- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-avatar.tex`（v4.18）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。相対smooth射はμ₂-gerbeと二重被覆に分解し、全stack自己同値の不存在と特異境界の無限高次Extも証明した。節点TF標的の有限型Artin性とbalanced商・元Nの開埋込みに加え、二traitの半安定graph・出力二次線束延長・四捩れ補正を証明した。全表示群に同変な自然Fricke射の境界降下と全fiber、全有限分岐後の入力二捩れ障害も証明した。noncubic由来のrotated零頂点とAS10零頂点は生成障害で排除し、全四位相を判定した。標準頂点の体上判定は全型で成立し、全相対AS/potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
+- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-avatar.tex`（v4.19）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。相対smooth射はμ₂-gerbeと二重被覆に分解し、全stack自己同値の不存在と特異境界の無限高次Extも証明した。節点TF標的の有限型Artin性とbalanced商・元Nの開埋込みに加え、二traitの半安定graph・出力二次線束延長・四捩れ補正を証明した。全表示群に同変な自然Fricke射の境界降下と全fiber、全有限分岐後の入力二捩れ障害も証明した。noncubic由来のrotated零頂点とAS10零頂点は生成障害で排除し、全四位相を判定した。標準頂点の体上判定は全型で成立し、全相対AS/potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
 
 **公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは指定AS分解・avatarの分類、八・十・十二本矢QP、pointed認識と相対比較を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
 
@@ -99,7 +103,7 @@
 
 **依存監査の確定範囲。** BからAへの残余の17種類の定理・補題・式ラベルはAの現行分類20節に定義されている。Aの分類主定理の証明はB固有の主定理には依存しない原稿構成とした。これはソース依存の確認で、全数学的証明の独立監査とは異なる。
 
-**次の最優先実行単位。** Cでは二つのdeterminant因子の全域横断性・非順序和の正規化・conductorを確立済みの入力とし、det f可逆の四因子tensor商を既存GITと比較し、両rank3壁を含む大域good moduliへの降下条件を調べる。開部分のreductive商というだけではgood moduliを推論しない。canonical rank81代数・回転/mutationの左右Noetherなtails・全Fricke境界射は確立済みの入力として保持する。A/BのP1–P3、先行研究比較と三稿組版の監査も継続し、各検証の実施範囲を研究ノートへ記す。
+**次の最優先実行単位。** Cでは全H2の準射影的good moduli、noncubic A1χの閉埋込み・境界像の正規性・非Cartesianな一次厚みを入力とする。次はCartan対角T上でp_adj,q_adjを求め、四生成不変式 e1,e2,d,e3 の多項式へ移す。Cubic開の補曲線とT↦T⁻¹による二chartの貼合せを具体化する。canonical rank81代数・回転/mutationの左右Noetherなtails・全Fricke境界射は確立済みの入力として保持する。A/BのP1–P3、先行研究比較と三稿組版の監査も継続し、各検証の実施範囲を研究ノートへ記す。
 
 
 ## 現在の到達点と未解決の核心
@@ -140,11 +144,11 @@
 
 **DM開の粗モジュライ。** 一致類を除いた N^DM→A¹_χ は任意の代数空間に対する粗モジュライ射であり、任意の底変更後も粗モジュライである。この制限射χ_DMはgood moduliではなく、慣性射はproperでもfiniteでもない。二つの根対を順序付けたchartを [A¹/μ2] に帰着し、有限被覆を持つ商の普遍性で粗モジュライを証明する。非good性はcodim2補集合のHartogs、慣性の非proper性はDVR上で延長しない具体的自己同型による。`thm:noncubic-dm-coarse`。
 
-**一致類に沿う形式対と局所良モジュライ。** 全慣性 H=((Gm⋊C2)×D8)/μ2 の有限成分も含むHH²作用を決定した。トーラスの非零重み部分と零重み部分による標準的分裂を用い、境界接を(a,c)、法方向を(x,y)とすると、トーラスの重みは(2,−2,0,0)、二つの符号は法方向に−Id、u,v交換は(a,c)を交換して法方向に−Id、ruling交換は境界接に−Id・法方向の交換として作用する。ruling交換は相対mutationで全Artin変形上に同定する。非標準的な形式対は ([Spf k[[a,c,x,y]]/H], [Spf k[[a,c]]/H]) で、境界はx=y=0、不変式環は k[[ac,(x+y)²,(x−y)²]]。AHRの共通étale商近傍はsmoothな3次元good moduliを持つ。これはH2のZariski開や全体のgood moduliの存在をまだ意味しない。`prop:noncubic-coincident-full-normal-representation`, `thm:noncubic-coincident-formal-pair`, `cor:noncubic-coincident-polynomial-invariants`。
+**一致類に沿う形式対と局所良モジュライ。** 全慣性 H=((Gm⋊C2)×D8)/μ2 の有限成分も含むHH²作用を決定した。トーラスの非零重み部分と零重み部分による標準的分裂を用い、境界接を(a,c)、法方向を(x,y)とすると、トーラスの重みは(2,−2,0,0)、二つの符号は法方向に−Id、u,v交換は(a,c)を交換して法方向に−Id、ruling交換は境界接に−Id・法方向の交換として作用する。ruling交換は相対mutationで全Artin変形上に同定する。非標準的な形式対は ([Spf k[[a,c,x,y]]/H], [Spf k[[a,c]]/H]) で、境界はx=y=0、不変式環は k[[ac,(x+y)²,(x−y)²]]。AHRの共通étale商近傍はsmoothな3次元good moduliを持つ。この局所計算のみでは大域化しないが、全体のgood moduliはCの三半不変式による飽和GIT開で別に構成した。`prop:noncubic-coincident-full-normal-representation`, `thm:noncubic-coincident-formal-pair`, `cor:noncubic-coincident-polynomial-invariants`。
 
-**残る比較と次の課題。** 境界の相対商表示・DM開の普遍的粗モジュライ・全有限成分の法表現・一致類に沿う形式対は証明した。次は、共通étale近傍のgood moduliをH2の開部分または全体へ降下できるかを調べる。全H2のgood moduli spaceの存在は未確定であり、全H2の粗モジュライ不存在とは別の問題である。X_asの局所閉性と偏極認識方程式、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致も残る。公表前の一次文献比較・証明監査・組版を続け、包括的新規性・外部査読・形式証明とは区別する。
+**残る比較と次の課題。** 境界の相対商表示・DM開の普遍的粗モジュライ・全有限成分の法表現・一致類に沿う形式対は証明した。全H2の準射影的good moduliはCで構成した。次はその不変式環・noncubic境界像・既存GITとの具体的比較を進める。全H2の粗モジュライ不存在とは両立する。X_asの局所閉性と偏極認識方程式、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致も残る。公表前の一次文献比較・証明監査・組版を続け、包括的新規性・外部査読・形式証明とは区別する。
 
-**別稿と研究間の関係。** `papers/nc-quadric-avatar.tex`（v4.18）は、AS/avatarの分類と、QP・GITから内在的H2への比較を扱う独立論文である。Aの体上分類とBの相対H2・境界同値を入力に、$E_f$側の全商上の相対pointed認識、smooth spectral側の像と延長不能を区別して記述する。Cの対象を限定した認識を、全foundation・全AS表示の相対同値へ一般化しない。Cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は保持し、既存の各dg特殊化の内在H2認識は族ごとに確認する。詳細はC本文と研究ノートを正本とする。
+**別稿と研究間の関係。** `papers/nc-quadric-avatar.tex`（v4.19）は、AS/avatarの分類と、QP・GITから内在的H2への比較を扱う独立論文である。Aの体上分類とBの相対H2・境界同値を入力に、$E_f$側の全商上の相対pointed認識、smooth spectral側の像と延長不能を区別して記述する。Cの対象を限定した認識を、全foundation・全AS表示の相対同値へ一般化しない。Cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は保持し、既存の各dg特殊化の内在H2認識は族ごとに確認する。詳細はC本文と研究ノートを正本とする。
 
 検証範囲・再生成手順は [研究ノート](notes/research_notes.md#検証範囲と再現手順)、文献の仮定・規約は [文献比較](notes/literature.md) に集約する。
 
@@ -267,7 +271,7 @@ $$
 | 全H2の粗モジュライ不存在 | 任意の代数空間への射は一根共有と一致類を同一視する | `cor:global-h2-no-coarse-space` |
 | 境界DM開の普遍的粗モジュライ | χ:N^DM→A¹は任意底変更後も粗モジュライ。goodではなく、慣性は非proper・非finite | `thm:noncubic-dm-coarse` |
 | 一致類の全慣性表現と形式対 | HH²=V_boundary⊕V_normal、全有限成分の作用を決定。形式対は四変数商とx=y=0 | `prop:noncubic-coincident-full-normal-representation`, `thm:noncubic-coincident-formal-pair` |
-| 一致類の局所良モジュライ | 不変式はac,(x+y)²,(x−y)²。共通étale商近傍のgood moduliはsmooth3次元。H2全体への降下は未証明 | `cor:noncubic-coincident-polynomial-invariants` |
+| 一致類の局所良モジュライ | 不変式はac,(x+y)²,(x−y)²。共通étale商近傍のgood moduliはsmooth3次元。全H2のgood moduliはCで別に構成済み | `cor:noncubic-coincident-polynomial-invariants` |
 | framed実現スキームと非開性 | X_asはsmooth純次元83。一致根対でambient接次元84のため開immersionでない | `cor:global-xas-smooth-scheme`, `prop:global-h2-not-ambient-open` |
 | 可換Qの全一次変形の相対H2実現 | Jacobian AS4被覆とZhang補正。任意有限次元二乗零理想へ拡張。内在接dim9、偏極付き接dim15、核dim6 | `thm:quadric-all-first-order-h2`, `cor:quadric-intrinsic-tangent` |
 | 選んだSerre根の一次変形障害 | 同じ変形へのR線形dg/Morita持上げにはHH²類の保存が必要。Q上に非保存の例 | `lem:autoequivalence-deformation-obstruction`, `prop:chosen-root-does-not-lift` |
@@ -333,9 +337,9 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-Cでは全Fricke境界射・全標準頂点の相対認識・canonical square AS完成とtails・全H2開の20式判定を確立済みの入力とし、既存GITへの貼合せと大域good moduliを調べる。以下はA/Bと共通する継続課題。
+Cでは全Fricke境界射・全標準頂点の相対認識・canonical square AS完成とtails・全H2開の20式判定を確立済みの入力とし、構成した大域good moduliの境界像と既存GITへの具体的比較を調べる。以下はA/Bと共通する継続課題。
 
-1. **局所good moduliの降下を調べる。** 一致類の共通étale商近傍と不変式環 k[ac,(x+y)²,(x−y)²] を入力とする。stabilizer-preserving条件、飽和開、重なり上の比較を確認し、H2のZariski開または全体へ降下できる範囲と障害を切り分ける。N^DMの粗モジュライ射χ_DMは任意底変更と両立するが、この制限射はgoodではなく、慣性も非properである。これを全体のgood moduliの存在・不存在に直結させない。
+1. **大域good moduliの境界と不変式を決める。** Cの三半不変式による飽和開を入力とする。N→A1χの閉埋込み、位相的飽和性とscheme逆像の厚み、階数因子のnormalなgood imageは証明済み。次はcubic chartの補曲線と貼合せ式を求める。一致類の形式不変式 k[ac,(x+y)²,(x−y)²] と大域商の完備局所環を比較する。N^DMの粗モジュライ射χ_DMは任意底変更と両立するが、この制限射はgoodではなく、慣性も非properである。これを全体のgood moduliの存在・不存在に直結させない。
 2. **framed実現像と偏極認識を具体化する。** X_asはsmooth83次元スキームで、一致根対ではX3の接次元84との相違がある。`cor:artin-polarization-retraction` の余分なHH¹方向と、今回決定した全慣性表現・形式対を用い、局所閉性や具体的な偏極認識方程式を調べる。開性を目標にしない。
 3. **Q_fndとの相対groupoid比較を進める。** 全幾何点での全充満性と全Artin認識に加え、実際の族のruling被覆・相対heart・降下を比較する。境界上で既証明のNpres≃Nを利用し、全体の相対同値を幾何点比較だけから結論しない。
 4. **公表前監査を仕上げる。** 有限LG条件→全fiber認識→全軌道→Noetherian貼合せ→中央AS4被覆と、指定Artin同型を保つatlasを点検する。境界の粗・良モジュライ、相対ruling mutation、AHRの適用範囲も監査する。既知のVdB・DDL・PP・Stacks・Alper・AHRの入力と本研究の成果を分け、新規性比較と不足TeX依存を解消した環境での組版を行う。

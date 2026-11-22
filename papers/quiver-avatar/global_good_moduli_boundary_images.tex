@@ -1,0 +1,224 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.19。全H2良モジュライの境界像。
+
+\subsection{階数境界の良モジュライ像と正規化}
+\label{subsec:qa-global-good-moduli-boundary-images}
+
+前項の記号を用い，$\pi:\mathfrak H_2\to M$ を構成済みの
+good moduli space morphism とする。
+$F=\det f$，$G_0=\det g$ と置く。
+$\mathfrak D$ は $FG_0=0$ の unordered 階数因子，
+$\mathfrak N\subset\mathfrak D$ は $F=G_0=0$ の noncubic 閉部分である。
+
+\begin{proposition}[閉境界の良モジュライと階数の飽和性]
+\label{prop:qa-global-closed-boundary-good-images}
+次の主張が成立する。
+\begin{enumerate}
+\item $\mathfrak N$ の良モジュライ射
+      $\chi:\mathfrak N\to\mathbb A^1_\chi$ は，標準的な閉埋込み
+      $\iota:\mathbb A^1_\chi\hookrightarrow M$ を通じて $\pi$ の制限に一致する。
+      $\mathfrak D$ にも良モジュライ射
+      $\pi_D:\mathfrak D\to\overline D$ があり，
+      $\overline D\hookrightarrow M$ は被約閉部分スキームである。
+\item underlying topological space について
+      \[
+       |\pi|^{-1}(|\iota(\mathbb A^1)|)=|\mathfrak N|,
+       \qquad
+       |\pi|^{-1}(|\overline D|)=|\mathfrak D|.
+      \]
+      従って cubic 点と noncubic 点が同じ良モジュライ fiber に入ることはない。
+      ordered 商では二つの開 $D(F),D(G_0)$ がそれぞれ飽和している。
+\end{enumerate}
+これらは閉部分の scheme-theoretic inverse image が元の閉部分に一致する，
+という主張ではない。
+\end{proposition}
+\begin{proof}
+有限型 good moduli space の閉部分については，
+各 affine quotient chart 上の不変式の完全性を用いる。
+実際，$B$ をその affine atlas の環，$I$ を安定イデアルとすると
+\[
+ (B/I)^\Gamma=B^\Gamma/I^\Gamma.
+\]
+従って閉部分自身の良モジュライが $M$ に閉埋め込みとなる。
+同じことは $\pi_*$ を
+$0\to\mathcal I\to\mathcal O\to\mathcal O/\mathcal I\to0$
+へ適用しても分かる
+\cite[Lemma 4.14, Theorem 4.16(iii)]{AlperGoodModuli2013}。
+既存の noncubic 表示と
+\cite[\texttt{cor:intrinsic-boundary-good-moduli}]{QuadricModuli2026}
+による $\mathfrak N\to\mathbb A^1_\chi$ は good moduli space なので，
+その一意性により最初の同定を得る。
+$\mathfrak D$ の atlas は被約であり，不変式環も被約なので
+$\overline D$ は被約である。
+
+飽和性を別に証明する。
+命題~\ref{prop:qa-global-cubic-opens-saturated} により、
+ordered 商では $D(F),D(G_0)$ はそれぞれ飽和している。
+そこでは $F^2P_g,F^3Q_g$ と交換側の半不変式を用いた。
+以下も全て $V_{\rm cross}$ の中での開集合の等式として読む。
+
+unordered 商でも直接同じことを確認できる。
+\[
+ u_0=(F^2P_g)^3,\quad u_1=(F^3Q_g)^2,
+ \qquad
+ v_0=(G_0^2P_f)^3,\quad v_1=(G_0^3Q_f)^2
+\]
+は全て指標 $\chi_0^{18}$ を持ち，ruling 交換は $u_i,v_i$ を交換する。
+従って $u_i+v_i$ と $u_iv_i$ は $H$ の正の $\chi_0$ 冪の半不変式である。
+体上の等式
+$D(u)\cup D(v)=D(u+v)\cup D(uv)$ によって，
+\[
+ D(F)\cup D(G_0)=
+ \bigcup_{i=0}^1\bigl(D(u_i+v_i)\cup D(u_iv_i)\bigr).
+\]
+この開は unordered 良モジュライについても飽和している。
+その補集合が $|\mathfrak N|$ である。
+また $FG_0$ 自身は $H$ の指標 $\chi_0^2$ の半不変式であり，
+$D(FG_0)$ は飽和している。その補集合が $|\mathfrak D|$ である。
+閉像の良モジュライへの全射性と合わせて表示した逆像の等式を得る。
+この議論は開集合の等式を用いており，閉イデアルの pullback の等式は用いていない。
+\end{proof}
+
+\begin{lemma}[ruling 符号線束の直像消滅]
+\label{lem:qa-noncubic-ruling-sign-pushforward-zero}
+$p:\mathfrak N^{\rm rul}\to\mathfrak N$ を ruling の二重被覆とし，
+\[
+ p_*\mathcal O_{\mathfrak N^{\rm rul}}
+       =\mathcal O_{\mathfrak N}\oplus\mathcal L_-
+\]
+を deck 対合の固有分解とする。このとき
+\[
+ \chi_*\mathcal L_-=0.
+\]
+特に $\chi\circ p:\mathfrak N^{\rm rul}\to\mathbb A^1_\chi$ も
+good moduli space morphism であり，ruling 二重被覆は
+良モジュライ上では恒等射を誘導する。
+\end{lemma}
+\begin{proof}
+全ての noncubic 幾何点は二形式の中央二重平方表示を持つ。
+\cite[\texttt{lem:noncubic-local-exchange}]{QuadricModuli2026}
+は二形式を交換する線型変換と，$c,d$ を互いに移す次数付き自己同型を与える。
+この自己同型は構造対象を保ち，$c,d$ の行列分解から来る
+二つの spinor 対象を交換する。従って内在的 ruling を交換する
+pointed 自己同値となる。
+その慣性元は $\mathcal L_-$ の fiber に $-1$ で作用する。
+
+任意の開 $U\subset\mathbb A^1$ 上の
+$\chi_*\mathcal L_-$ の切断を取る。
+その各幾何点での値は慣性不変であるから，標数零の下で零である。
+$\mathfrak N$ は smooth，従って被約であるため，
+smooth atlas 上でこの切断は零となり，もとの切断も零である。
+これで直像の消滅を得る。
+$p$ は有限射であり $\chi$ は cohomologically affine だから合成もそうで，
+構造層の直像は上の固有分解と消滅によって
+$\mathcal O_{\mathbb A^1}$ となる。最後の主張が従う。
+\end{proof}
+
+\begin{corollary}[階数因子の良モジュライ像は正規]
+\label{cor:qa-rank-divisor-good-image-normal}
+$\nu:\widetilde{\mathfrak D}=\mathfrak D_f\to\mathfrak D$
+を unordered 階数因子の正規化とする。
+前命題の $\overline D$ は正規であり，
+\[
+ \widetilde{\mathfrak D}\xrightarrow{\nu}\mathfrak D
+        \xrightarrow{\pi_D}\overline D
+\]
+の合成も good moduli space morphism である。
+従って $\nu$ が良モジュライに誘導する射は同型である。
+stack 上の conductor は $\mathfrak N$ であるが，
+$\overline D$ の正規化の conductor 閉部分は空である。
+\end{corollary}
+\begin{proof}
+$j:\mathfrak N\hookrightarrow\mathfrak D$ とする。
+ordered atlas 上の二枝の貼合せ列は
+\[
+ 0\longrightarrow\mathcal O_{D_f\cup D_g}
+ \longrightarrow\mathcal O_{D_f}\oplus\mathcal O_{D_g}
+ \xrightarrow{\ (a,b)\mapsto a|_Z-b|_Z\ }
+ \mathcal O_Z\longrightarrow0.
+\]
+ruling 交換は右端に符号を掛けるため，unordered 商への降下は
+\[
+ 0\longrightarrow\mathcal O_{\mathfrak D}
+ \longrightarrow\nu_*\mathcal O_{\widetilde{\mathfrak D}}
+ \longrightarrow j_*\mathcal L_-
+ \longrightarrow0
+ \tag{BD}\label{eq:qa-boundary-branch-sign-sequence}
+\]
+となる。
+$\pi_{D*}$ の完全性と直前の補題を適用すれば
+\[
+ \mathcal O_{\overline D}
+   \xrightarrow{\ \sim\ }
+   (\pi_D\circ\nu)_*\mathcal O_{\widetilde{\mathfrak D}}
+\]
+を得る。$\nu$ は有限だから合成は cohomologically affine でもあり，
+これが good moduli space の主張である。
+
+正規性は同じ affine quotient chart 上で直接確認できる。
+各 $H$-半不変式 $h$ の chart で，正規化の atlas は
+\[
+ (D_f\cap D(h))\amalg(D_g\cap D(h))
+\]
+であり，二つの滑らかな affine scheme の和である。
+これを $H$ で割った不変式環は，枝交換によって
+$D_f\cap D(h)$ の $G$-不変式環に同型である。
+正規整域の不変式環は正規であり，前段の直像同型によって
+この環が $\overline D\cap D_+(h)$ の環に一致する。
+従って $\overline D$ は正規である。
+正規化が同型なので，その conductor イデアルは単位イデアルとなる。
+\end{proof}
+
+\begin{proposition}[noncubic 閉像の引戻しは一致点で厚みを持つ]
+\label{prop:qa-noncubic-good-image-noncartesian}
+二根対一致の noncubic 点の近傍では，
+\[
+ \mathfrak N\subset
+ \mathfrak H_2\times_M\mathbb A^1_\chi
+\]
+は真の閉包含である。
+右辺の underlying reduced closed substack は $\mathfrak N$ であるが，
+scheme-theoretic fiber product は一致点で被約ではない。
+\end{proposition}
+\begin{proof}
+一致点を含む $\pi$ の affine quotient chart
+$[\operatorname{Spec}B/H]\to\operatorname{Spec}B^H$ を取り，
+その atlas の点を $x$ とする。
+$I\subset B$ は $\mathfrak N$ のイデアル，$J=I^H\subset B^H$
+はその閉像のイデアルである。
+\cite[\texttt{prop:noncubic-coincident-full-normal-representation}]
+{QuadricModuli2026} の符号自己同値 $e_1$ は，
+境界の二次元法空間とその双対に $-I_2$ で作用する。
+従って $x$ の stabilizer の作用に関し
+\[
+ e_1|_{I B_x/\mathfrak m_x I B_x}=-I_2.
+\]
+任意の $b\in J$ は stabilizer 不変なので，この商への像は零である。
+ゆえに
+\[
+ J B_x\subset\mathfrak m_x I B_x\subsetneq I B_x.
+\]
+最後の真の包含は $I$ が rank 二の conormal を持つ正則閉埋込みの
+イデアルであること，または Nakayama の補題から従う。
+左辺は fiber product のイデアルであるため，主張する真の包含を得る。
+前命題の位相的飽和性と $\mathfrak N$ の被約性により
+$\sqrt{J B_x}=I B_x$ だから，この fiber product は被約でない。
+具体的には，$e_1$ が $-1$ で作用する接ベクトルで，
+法空間への像が非零なものを取る。このベクトルは
+$\operatorname{Spec}k[\varepsilon]/(\varepsilon^2)$ 上の実際の
+$H_2$ 族を与える。全 invariant 関数の微分はこのベクトルを消すため，
+その良モジュライ像は一定である。一方，法方向が非零なので
+この族は $\mathfrak N$ には因数分解しない。
+従って上の厚みは，同じ幾何点を持つ一次変形の差を実際に検出している。
+\end{proof}
+
+\begin{remark}[閉像と引戻しの区別]
+noncubic 境界は位相的には $\pi$ の fiber の和であり，
+その良モジュライ $\mathbb A^1_\chi$ は $M$ に閉埋め込まれる。
+それでも invariant ideal の拡大は $(F,G_0)$ そのものとは限らず，
+直前の命題は一致点で実際に厚みが生じることを示す。
+また stack 上の Cartier 性や正規交差性を，良モジュライ像の
+Cartier 性や正規交差性にそのまま移してはいない。
+上の正規性は，二枝の差が ruling の符号線束となり，
+その直像が消滅することを用いた別の結論である。
+\end{remark}
