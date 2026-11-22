@@ -101,19 +101,40 @@ AS側と点曲線pencil側の具体的な積像が一致**した。
 （ほかのHom空間、最小関係、全合成）および
 構造対象$\pi B_f$の同定は未証明。
 
+**pointed同値の十分条件を有限End代数へ還元（条件付き）。**
+$E_0=\pi B_f$としてAのnoncubic normal helixを
+$(E_0,\ldots,E_3)$と書き、
+$B_{\mathrm{nc}}=\End_{\mathrm{dir}}(E_0,\ldots,E_3)$とする。
+$E_f$上の二pencil avatarから得るsquare AS代数に
+正しい一つのmutationを施した**最小AS10側**の
+四項helixを$(H_0,\ldots,H_3)$とし、
+$B_{\mathrm{av}}=\End_{\mathrm{dir}}(H_0,\ldots,H_3)$と書く。
+頂点保存・全composition保存の代数同型
+$B_{\mathrm{nc}}\cong B_{\mathrm{av}}$を構成できれば、
+双方のSerre completionの一意性とAZ amplenessから
+$(\qgr B_f,\pi B_f)\simeq
+(\qgr A_{\mathrm{av}},\pi e_0A_{\mathrm{av}})$という
+**O-pointed exact equivalence**を得る
+（C prop:qa-point-mcm-pointed-finite-end-reduction）。
+命題はこの**もし有限End同型が存在すれば**という
+仮定付きの帰着であり、その同型の存在は未証明。
+特に$\pi B_f$を同定すべき相手は
+mutation後の$H_0$であって、
+mutation前squareの原初の$E_0$とは限らない。
+
 **核心的な未解決部分。**
-E_fの二pencilで得られるsquare avatarと
-C_qのspectral avatarは2-isogenyのdual kernelで結ばれる。
-B_fのnormal helixからAS avatarとして
-正確にどちらが抽出されるかはまだ証明していない。
-二つの隣接合成の像までの一致は達成した。
-次はB_fの非自由MCM二型$X_c,X_d$から作る
-四項helixの**ほかのHom・全合成・最小関係を含む
-finite directed End代数全体**を、
-$E_f$の二pencilのEndと比較する。
-その後で$\pi B_f$が対応するexceptional対象、
-AS Serre completion、O-pointed exact heartの
-同定を行う。C_qをB_fの点曲線と同一視する
+$E_f$の二pencilで得られるsquare avatarと
+$C_q$のspectral avatarは2-isogenyのdual kernelで結ばれる。
+B_fのnormal helixから得られるAS avatarが
+どちらの曲線に対応するかは未証明。
+MCMのright kernelと二つのrank-three隣接積像は
+点曲線$E_f$の二pencilのものに一致したが、
+**残りのHom・最小関係・全compositionを含む
+$B_{\mathrm{nc}}\cong B_{\mathrm{av}}$そのもの**が
+次の研究上の核心である。
+これが完成すれば上の条件付き命題により
+O-pointed exact比較が得られる。
+$C_q$を$B_f$の点曲線と同一視する
 近道はj不一致例で破綻する。
 一根共有または一致根対では同時符号商は
 有限étale isogenyでなく、spectral M_Cが
