@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.03、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.7。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.04、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.8。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,11 +12,31 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.7。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
+| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.8。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
+
+## 論文C：添付v7の幾何的核心を本文に統合（v2.8）
+
+論文Cの新設節 [square / rotated の幾何・有限foundation](papers/quiver-avatar/square_rotated_foundations.tex) と
+[canonical複体・全整数周期](papers/quiver-avatar/canonical_helix_complexes.tex) に、
+大川--植田の未公刊草稿「非可換二次曲面の二つの反標準avatar」v7（Parts I--II）から
+反標準Cartier曲線のPicard消滅、二pencilの再埋込み、4×4・2×2の評価行列によるscheme-theoretic復元、
+四つの局所分裂完全列を**定義・仮定・証明ごと**組み入れた。
+元論文を持たなくてもこれらの有限幾何は追える。
+ただし、元の全AS正則Z代数のNoether性、元のO-marked heartの直接同値、
+非被約底を含む全AS相対分類を、この追加だけで証明したわけではない。
+
+**新しい研究結果：** [共有根A1の最小解消上の奇偶障害](papers/quiver-avatar/nodal_resolution_obstruction.tex)。
+相対spectral反不変moduleを解消上で可逆化すると、
+例外P¹上の次数は1であり、既約nodal特殊曲線の垂直Cartier twistでも奇数に保たれる。
+ゆえに`同じ一径数基底でA1を最小解消するだけ`では、
+通常の多重次数零の相対Picard line-bundle avatarは構成できない。
+底変更・compactified Picard・相対モデル変更の可能性は残る。
+[局所恒等式の再現コード](computations/verify_nodal_exceptional_parity.py) はmath suiteに登録。
+Cの相対心の直接認識と8/10/12矢の全potential groupoidはなお未解決である。
 
 ## 論文Bの証明監査と再現
 
