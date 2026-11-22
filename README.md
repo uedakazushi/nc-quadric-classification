@@ -2,9 +2,9 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.37、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.21。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.38、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.21。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
-**現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従う。Cでは自然なFricke射の全noncubicからbalanced標的への延長と境界fiberを証明した。非被約曲線・古典型を含む全標準頂点を体上で判定し、曲線型の相対族では適合開上の全標準頂点を同じH2 heart内で認識した。canonical square AS qgrの相対認識と全H2開の20式判定を得た。二つのdeterminant境界と大域good moduliも構成した。次は既存GITの不変式による開方程式とchart間の変換を計算する。A/Bの公表前監査・文献比較を保持し、詳細は各現行原稿を正本とする。
+**最上位目標：論文Cの完成。** [研究方針のC1–C4](00_research_plan.md#最上位目標論文cの完成2026-11-23) に従い、既存AS/avatar分類・相対認識を統合し、全H2 good moduliの中央affine補完と局所特異性、および全相対AS/QP群oid比較を決着させ、公表可能な証明へ仕上げる。A/Bの監査・公表作業は継続するがCより優先しない。Cでは自然なFricke射の全noncubicからbalanced標的への延長と境界fiberを証明した。非被約曲線・古典型を含む全標準頂点を体上で判定し、曲線型の相対族では適合開上の全標準頂点を同じH2 heart内で認識した。canonical square AS qgrの相対認識と全H2開の20式判定を得た。二つのdeterminant境界と大域good moduliも構成した。次は既存GITの不変式による開方程式とchart間の変換を計算する。A/Bの公表前監査・文献比較を保持し、詳細は各現行原稿を正本とする。
 
 **Cの現行到達点。** 点曲線 $E_f$ 側は、全二形式商 $[P/G]$ 上のrank45対称Morita代数・相対spinor tilting・全次数Serre完成により、非被約局所有限型底を含む元のpointed H2族と同定した。Smooth spectral側の指定pointingは $\chi\mapsto\chi/(\chi-1)$ を与え、自己双対点は0,2。一根共有・根対一致へ退化する二族の像は、有限分岐基底変更後にもH2族へ延長できない。相対射はμ₂-gerbeと有限étale二重被覆に分解し、中心の分裂体によりstack自己同値は不可能である。境界の平坦代数模型では全高次Extの非消滅を証明し、この表示族内のH2条件を各形式のsquarefree性と同定した。詳しい適用範囲と証明先は下の論文C節に置く。
 
