@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.4（trace零での追加SO安定化元も明示）
+% 2026-11-22 / v3.5（CM除外不要とj=0一cubic A4例外）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -502,6 +502,165 @@ $\operatorname{HH}^1(\Lambda)$にそれぞれ同定する。
 ~\ref{prop:qa-ou-generic-quintuple-finite-inertia}
 で三次元と直接計算済みであり、
 式~\eqref{eq:qa-ou-h2-generic-kodaira-spencer}が従う。
+\end{proof}
+
+\begin{lemma}[複素乗法点でも二cubic ruling開には追加自己同型がない]
+\label{lem:qa-ou-cm-no-extra-two-cubic-automorphisms}
+$k$を標数零の代数閉体、$E/k$を原点付き楕円曲線とし、
+$\eta,\delta\in E(k)$が
+\[
+ \delta\ne0,\qquad
+ \eta\notin\{0,\delta,2\delta\}
+ \tag{CM-open}\label{eq:qa-ou-cm-two-cubic-open}
+\]
+を満たすとする。
+このとき任意の$\epsilon\in\Aut(E,0)$について以下が成り立つ。
+\begin{enumerate}
+\item $\epsilon(\eta)=\eta$かつ$\epsilon(\delta)=\delta$なら
+$\epsilon=1$または$\epsilon=-1$である。
+後者が可能なのは$\eta,\delta\in E[2]$のときに限る。
+\item $\epsilon(\delta)=\delta$かつ
+$\epsilon(\eta)=2\delta-\eta$なら
+$\epsilon=1$または$\epsilon=-1$である。
+前者の場合は$\eta-\delta\in E[2]$、
+後者の場合は$\delta\in E[2]$が必要十分である。
+\end{enumerate}
+特に$j(E)=0,1728$に由来する追加の位数
+$3,4,6$の自己同型は、
+二つのnormalized foundationがともにcubic型である
+開では、四つ組を保存も交換もできない。
+\end{lemma}
+\begin{proof}
+$\Aut(E,0)$の標数零における分類は
+\cite[Chapter III, Theorem 10.1]{SilvermanAEC1986}による。
+$j=1728$なら$\Aut(E,0)=\{\pm1,\pm\iota\}$、
+$\iota^2=-1$であり、$j=0$なら
+$\Aut(E,0)=\mu_6$である。
+$\epsilon=\pm\iota$のとき
+$\ker(\epsilon-1)=\ker(\epsilon+1)$は
+位数二の群で、非零元は一つだけである。
+これは$1+\iota=\iota(1-\iota)$と
+$\deg(1-\iota)=2$から従う。
+$\epsilon\delta=\delta$、$\delta\ne0$なら
+$\delta$はその唯一の非零元である。
+$\epsilon\eta=\eta$は$\eta=\delta$を強制する。
+一方、交換条件は
+$(\epsilon+1)\eta=2\delta=0$なので
+$\eta=0$または$\delta$を強制する。
+いずれも仮定に反する。
+
+$j=0$で$\epsilon$が原始六乗根の場合、
+$1-\epsilon$は次数一の自己同型であるため
+$\epsilon\delta=\delta$は$\delta=0$を強制する。
+$\epsilon$が位数三の場合は
+$1+\epsilon=-\epsilon^2$が単元なので、
+交換条件
+$(1+\epsilon)\eta=2\delta=(1+\epsilon)\delta$
+は$\eta=\delta$を強制する。
+保存条件のもとでは
+$\ker(\epsilon-1)\simeq C_3$の
+二つの非零元が$\delta,\eta$でなければならず、
+$\eta=-\delta=2\delta$となる。
+これも仮定に反する。
+
+残る$\epsilon=\pm1$を代入すると、
+保存条件では$-1$が可能なのは
+$2\eta=2\delta=0$のときである。
+交換条件では$\epsilon=1$が
+$2(\eta-\delta)=0$と同値、
+$\epsilon=-1$が$2\delta=0$と同値となる。
+\end{proof}
+
+\begin{proposition}[$j=0$の一cubic ruling例外と$A_4$慣性]
+\label{prop:qa-ou-cm-jzero-one-cubic-a4}
+$k$を標数零の代数閉体とする。
+$j(E)=0$とし、位数三の原点固定自己同型
+$\rho$を一つ取り、
+\[
+ 0\ne\delta\in\ker(\rho-1)\simeq C_3,
+ \qquad \eta=2\delta=-\delta
+ \tag{CM-A4}\label{eq:qa-ou-cm-a4-parameters}
+\]
+と置く。任意の$L_0\in\Pic^2(E)$に対し、
+$L_1=L_0\otimes\eta$、
+$L_2=L_0\otimes\delta$による四つ組は
+Van den Berghの滑らかなgeometric cubic型であるが、
+ruling交換後の四つ組はcubic型ではない。
+その剛体化quintupleの幾何的自己同型群は
+\[
+ \Aut_{\mathrm{qui}}(E,L_0,L_1,L_2)
+       \simeq E[2]\rtimes\langle\rho\rangle
+       \simeq(\mathbb Z/2)^2\rtimes C_3
+       \simeq A_4 .
+ \tag{CM-A4-I}\label{eq:qa-ou-cm-a4-inertia}
+\]
+また内在的pointed対象$y$の全自己同値群も
+$A_4$であり、剛体化quintupleから$\HHstack$への
+忘却のこの点における2-fiberは、
+自明な慣性を持つ\emph{ただ一つ}の対象からなる。
+この忘却射は、この点で表現可能étaleである。
+
+例えば$E:y^2=x^3+1$、
+$\rho(x,y)=(\zeta_3x,y)$、
+$\delta=(0,1)$、$\eta=(0,-1)$は
+式~\eqref{eq:qa-ou-cm-a4-parameters}を満たす。
+\end{proposition}
+\begin{proof}
+$\ker(\rho-1)$は次数三のisogenyの核で、
+その二つの非零元は三捩れ点である。
+よって$\eta=2\delta\ne0,\delta$かつ$\delta\ne0$
+なので、三つの次数二線束は相異なり
+滑らかなgeometric cubicを定める
+\cite[Definition 5.3.1, Theorem 5.5.10]{VdB2011}。
+しかしruling交換は
+$\eta'=2\delta-\eta=0$を与えるので、
+交換後には最初の二つの次数二線束が一致し、
+geometric cubicではない
+\cite[\texttt{lem:elliptic-two-reflections}]{QuadricModuli2026}。
+
+$L_0$が$\mathcal O_E(2o)$となる原点$o$を選び直す。
+$\rho$の固定原点はこの選択と異なってもよいが、
+$[2]:E\to E$の全射性により、各$\rho$の固定
+$\eta,\delta$作用を実現する曲線自己同型の
+translation部分は一意な$E[2]$-torsorとして選べる。
+原点を固定する部分の候補は、
+$\eta,\delta$をともに固定する
+$\Aut(E,0)$の元である。
+$\rho$の三乗巡回群がこれを満たすが、
+$-1$は三捩れ非零点を固定しない。
+他の原始六乗根も非零$\delta$を固定しない。
+従って安定化群は$E[2]$による拡大で位数十二である。
+$L_0=\mathcal O_E(2o)$とし、$\rho$の原点を
+$o$に取るように最初の表示を平行移動で置き直せば
+$\rho$は三つの線束を保つ実際の位数三の
+自己同型となるため拡大は分裂する。
+$\rho$は$E[2]\setminus\{0\}$を三巡回置換する。
+よって半直積は$A_4$である。
+Van den Berghのquintuple復元と
+論文Bのfoundation groupoidの全充満性から
+表示の自己同型群も同じである。
+
+構造対象から始まる内在的normalized foundationは
+論文Bの
+\cite[\texttt{cor:two-intrinsic-foundations}]{QuadricModuli2026}
+でちょうど二つに限られる。
+一つはcubic、もう一方はnoncubicなので、
+pointed自己同値は両者を交換できない。
+同論文の
+\cite[\texttt{cor:h2-point-groupoid-foundation}]{QuadricModuli2026}
+により全pointed自己同値はcubic foundation側の
+表示自己同型で尽くされる。
+従って全慣性も$A_4$となる。
+命題~\ref{prop:qa-forgetful-homotopy-fiber}の
+自己同型群剰余類の公式から
+相対2-fiberは一点かつその慣性は自明となる。
+最後に論文Bの普遍quintupleのsmooth相対次元零と、
+この点での慣性単射を合わせると
+忘却射は表現可能étaleである。
+
+例では$\rho$の固定点$x=0$の二点は
+三次曲線の変曲点で位数三であり、
+互いに負元となる。
 \end{proof}
 
 \begin{corollary}[一般pointed忘却の幾何次数は二]
