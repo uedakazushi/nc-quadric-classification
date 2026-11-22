@@ -1,6 +1,6 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.68。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.69。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
@@ -243,6 +243,8 @@ M=Ac+Adの非自由性から、相対Pic0線束への直接延長を否定。
 元avatar AS qgrとO-marked heartの同値、
 Σ2 minimal resolution/elementary transform、全potential相対射は未証明。
 この未確認点を新規性の推測で埋めない。
+
+**Σ₂での全noncubic分類を証明：** 負断面Sを避ける反標準因子D∈|−K_{Σ₂}|と0≠P∈Pic⁰(D)[2]の幾何同型類は、全noncubic O-marked quadricの幾何exact同型類と全単射（C thm:qa-all-noncubic-sigma2-anticanonical-avatar-bijection）。H=O(h)|D=F²、F=O(f)|Dを用いるsquare換算はF_s=F,G_s=FP。P非自明2捩れによりDはsmooth、既約nodal、二P¹二節点(I2)の三型だけ。Bの良moduliでχ=1に重なる一根共有と根対一致も、Σ₂のnodalとI2で区別（C cor:qa-sigma2-avatar-separates-special-noncubic-classes）。これは**体上の同型類全単射**で、avatar AS代数の元のqgr heartとO-markedの直接同値、非被約底の通常Pic⁰線束を使う相対射ではない。 既知の幾何変換はC cor:qa-square-chartに証明され、Bのnoncubic二形式群oid分類と合成した今回のΣ₂分類は新たなCの直接証明。包括的新規性は未調査。
 
 ## 研究の位置
 

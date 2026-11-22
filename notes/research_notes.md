@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.00（A v1.69・20節、B v0.39・31節、C v2.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.01（A v1.69・20節、B v0.39・31節、C v2.7）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -535,6 +535,10 @@ singular quartic q、nodal(2,2) parametrization、接方向を独立に確認。
 保存したverify_rootpair_resolvent_spectral.pyをmath suiteに登録、
 スクリプト本体の実行は未確認。
 以上はAS avatar由来のnoncommutative qgrとO-marked心の同値証明ではない。
+
+**Σ₂での全noncubic分類を証明：** 負断面Sを避ける反標準因子D∈|−K_{Σ₂}|と0≠P∈Pic⁰(D)[2]の幾何同型類は、全noncubic O-marked quadricの幾何exact同型類と全単射（C thm:qa-all-noncubic-sigma2-anticanonical-avatar-bijection）。H=O(h)|D=F²、F=O(f)|Dを用いるsquare換算はF_s=F,G_s=FP。P非自明2捩れによりDはsmooth、既約nodal、二P¹二節点(I2)の三型だけ。Bの良moduliでχ=1に重なる一根共有と根対一致も、Σ₂のnodalとI2で区別（C cor:qa-sigma2-avatar-separates-special-noncubic-classes）。これは**体上の同型類全単射**で、avatar AS代数の元のqgr heartとO-markedの直接同値、非被約底の通常Pic⁰線束を使う相対射ではない。
+
+具体式：Σ₂でH=O(h)|D、F=O(f)|DとするとD∩S=∅よりH=F²。square←Σ₂はF_s=F,G_s=HPF^{-1}=FPで、逆はCの相対幾何変換T^{-1}。p:D→P¹は有限平坦二重被覆、p_*O_D=O⊕O(-2)。非零二捩れがある場合、quartic qの四単根・一重複・二重複二点だけが許される。cuspidal・tacnodal・double sectionのPic⁰は加法型で2捩れは自明。良moduli χ=1の共有根と根対一致はDの既約nodal/I2として区別。この集合対応を元AS代数の心の同定や相対Pic⁰同値として扱わない。
 
 **再開点と主張状態。**
 cubicのVdB-square-O-marked対応に加え、全noncubic根対と

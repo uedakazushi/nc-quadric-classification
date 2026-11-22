@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.02、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.6。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.03、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.7。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.6。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 |
+| **C** [quiver-avatar-moduli.tex](papers/quiver-avatar-moduli.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.7。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -78,6 +78,8 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 **noncubic全境界の幾何avatar分類と相対spectral中間射（C v2.6）。** Bの二つのsquarefree binary quadric $f_1,f_2$から、四次形式$q=f_1f_2$と種数1二重被覆$C_q:y^2=q$を作る。四次の因子分割Sym²(P²)→P⁴は有限一般次数3で、smooth（四単根）、既約nodal（一重複根）、I2（二重根二つ）の三型。各型の被約二根対の分割個数は3/1/1、対応する非零$\operatorname{Pic}^0(C_q)[2]$の個数も3/1/1。$F_s=p^*O(1)$、$G_s=F_sP$で二rulingの$(2,2)$埋込みを作ると、**全noncubic O-marked幾何同型類と、$P=G_sF_s^{-1}\ne O$, $P^2=O$のsquare avatar同型類が全単射**となる。nodal/I2の明示式も[論文Cのavatar節](papers/quiver-avatar/avatar_charts.tex)にある。
 
 **相対射は通常Picardではなくtorsion-free sheafを経由する。** 中央二重平方環$B_f$の可換化の点曲線$E_f=\operatorname{Proj}B_f^{ab}$を同時符号で割ると$E_f\to C_q$が得られ、その反不変部分$M$がrank-one torsion-free degree0 moduleを与える。$p_*M=O(-1)^2$、$yc=f_1d,yd=f_2c$で基底変更と整合する。smoothでは非零2torsion線束だが、共有根では$A=k[[x,s,y]]/(y^2-x(x-s))\simeq k[[c,d]]^{\pm}$という$A_1$表面特異点の非自由reflexive moduleとなり、一般線束は固定$C$族上の可逆線束へは延長できない。**従って全幾何同型類の全単射は証明したが、元のPic⁰ avatar stackへの相対射・AS $\mathbb Z$代数の同定は未証明。** 次はminimal resolution/Σ₂ elementary transformと元のAS qgrからO-marked heartへの認識を完成する。[根対の厳密検算](computations/verify_rootpair_resolvent_spectral.py)は標準math suiteに登録した。
+
+**Σ₂での全noncubic分類を証明：** 負断面Sを避ける反標準因子D∈|−K_{Σ₂}|と0≠P∈Pic⁰(D)[2]の幾何同型類は、全noncubic O-marked quadricの幾何exact同型類と全単射（C thm:qa-all-noncubic-sigma2-anticanonical-avatar-bijection）。H=O(h)|D=F²、F=O(f)|Dを用いるsquare換算はF_s=F,G_s=FP。P非自明2捩れによりDはsmooth、既約nodal、二P¹二節点(I2)の三型だけ。Bの良moduliでχ=1に重なる一根共有と根対一致も、Σ₂のnodalとI2で区別（C cor:qa-sigma2-avatar-separates-special-noncubic-classes）。これは**体上の同型類全単射**で、avatar AS代数の元のqgr heartとO-markedの直接同値、非被約底の通常Pic⁰線束を使う相対射ではない。
 
 ## 論文C：既存GITと内在的モジュライの比較
 
