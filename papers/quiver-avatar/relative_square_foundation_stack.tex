@@ -1,0 +1,298 @@
+% !TEX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / 全基底上の有限表示とcanonicalな相対認識。
+\section{有限square表示と全H2の相対foundation}
+\label{sec:qa-relative-square-foundation-stack}
+
+\subsection{二つの積による有限squareスタック}
+\label{subsec:qa-square-normal-foundation-stack}
+
+以下の有限代数の構成は任意の可換基底上で行える。
+$\mathfrak H_2$ との比較には、本稿で既に固定した標数零の基礎体と
+局所有限型基底の site を用いる。
+四つの階数二の束 $A,B,C,D$ と階数四の束 $W$、および二つの積
+\[
+ f:C\otimes A\longrightarrow W,\qquad
+ g:D\otimes B\longrightarrow W
+\]
+を取る。その随伴
+\[
+ \alpha_f:A\longrightarrow C^\vee\otimes W,\qquad
+ \alpha_g:B\longrightarrow D^\vee\otimes W
+\]
+がともに部分束の包含であることを要求する。
+対応する四頂点代数 $\Lambda_\square$ の標準射影を
+$(E_0,E_1,E_2,E_3)$ と書き、非対角の Hom 束を
+\[
+ H_{01}=A,\quad H_{02}=B,\quad H_{13}=C,\quad
+ H_{23}=D,\quad H_{03}=W
+\]
+とする。二つの中間頂点は直交し、積は $f,g$ だけで決まる。
+長さ三の非定数な道はないので、追加の結合律方程式はない。
+対角を単位によって構造層と同定すれば、この代数は階数十六である。
+
+これらの束の基底空間を固定し、二つの随伴が階数二を持つ開部分を
+\[
+ V_\square\subset
+ \operatorname{Hom}(C\otimes A,W)
+ \oplus\operatorname{Hom}(D\otimes B,W)
+ \simeq\mathbb A^{32}
+\]
+と書く。基底変更群と頂点スカラー部分群は
+\[
+ G_\square=\operatorname{GL}(A)\times\operatorname{GL}(B)
+ \times\operatorname{GL}(C)\times\operatorname{GL}(D)
+ \times\operatorname{GL}(W),
+\]
+\[
+ K_\square=
+ \left\{\left(\lambda_1,\lambda_2,
+ \frac{\lambda_3}{\lambda_1},
+ \frac{\lambda_3}{\lambda_2},\lambda_3\right)\right\}
+ \simeq\mathbb G_m^3.
+\]
+各成分は対応する束のスカラー行列を表す。
+$K_\square$ はパラメータ上自明に作用し、頂点零のスカラーを一とした
+対角単元の内部共役に一致する。
+\[
+ \mathfrak S^{\rm lin}_\square=[V_\square/G_\square],\qquad
+ \mathfrak S_\square=[V_\square/(G_\square/K_\square)]
+\]
+と置く。前者は頂点を保持した有限代数と全同型を、後者はその
+頂点スカラーによる rigidification を表す。
+
+\begin{theorem}[有限squareとnormal foundationの相対同値]
+\label{thm:qa-square-normal-foundation-stack-equivalence}
+論文Bの二写像表示
+\[
+ F:P\otimes W_1\to W_2,\qquad G:Q\otimes W_2\to W_3
+\]
+について、$U_0$ は $G$ が全射、$\alpha_F$ が部分束の包含である開部分とする。
+階数は $\operatorname{rk}(W_1,W_2,W_3;P,Q)=(2,4,6;2,2)$ である。
+任意基底変更と可換する同値
+\[
+ \Phi^{\rm lin}:\mathfrak S^{\rm lin}_\square
+       \xrightarrow{\sim}[U_0/\mathcal G]
+\]
+が、次の式によって与えられる。
+\[
+ \begin{split}
+ (W_1,W_2,W_3;P,Q)
+   &=(B,W,\operatorname{coker}\alpha_f;D,C^\vee),\\
+ F&=g,\qquad
+ G:C^\vee\otimes W\twoheadrightarrow
+             \operatorname{coker}\alpha_f.
+ \end{split}
+ \tag{SN}\label{eq:qa-square-to-normal-data}
+\]
+その逆は
+\[
+ (A,B,C,D,W)=(\ker G,W_1,Q^\vee,P,W_2),
+ \tag{NS}\label{eq:qa-normal-to-square-data}
+\]
+および $g=F$、$f$ は包含 $\ker G\hookrightarrow Q\otimes W_2$
+の随伴、という構成である。
+
+この同値は $K_\square$ と論文Bの $K$ を同定し、
+\[
+ \Phi:\mathfrak S_\square\xrightarrow{\sim}\mathfrak F_0
+\]
+へ降下する。さらに中間頂点 $1,2$ の交換を $\sigma$ とすると
+$\Phi\sigma\simeq\tau\Phi$ は coherent であり、
+\[
+ [\mathfrak S_\square/S_2]\xrightarrow{\sim}\mathfrak Q_{\rm fnd}.
+\]
+\end{theorem}
+\begin{proof}
+両随伴の部分束条件によって式~\eqref{eq:qa-square-to-normal-data} の
+余核は階数六のベクトル束であり、商写像 $G$ は全射である。
+$\alpha_F=\alpha_g$ なので、このデータは $U_0$ に属する。
+逆に $U_0$ の全射 $G$ の核は階数二の部分束であり、
+式~\eqref{eq:qa-normal-to-square-data} では
+$\alpha_f$ がこの包含、$\alpha_g=\alpha_F$ となる。
+従って逆データも $V_\square$ の束値の点である。
+
+二つの構成を合成すると、$\ker(\operatorname{coker}\alpha_f)
+=\operatorname{im}\alpha_f\simeq A$、
+$(Q\otimes W_2)/\ker G\simeq W_3$ という標準同型により元のデータを得る。
+縮約と随伴もこの同型の下で元の積に戻る。
+核・余核の列はベクトル束の短完全列であり局所的に分裂するため、
+全ての構成は任意の、非平坦なものを含む基底変更と可換する。
+同型に関する自然性から、これは全群oidの相互逆同値である。
+
+この変換は実際の相対 perfect mutation でもある。
+元の四項に対して標準 dg 増強で
+\[
+ Z_1=\operatorname{Cone}(E_1\longrightarrow C^\vee\otimes E_3)
+\]
+を取り、$(E_0,E_2,E_3,Z_1)$ を考える。
+随伴の部分束条件と二つの中間項の直交性によって、その forward Hom は
+次数零に集中し、階数表は
+\[
+ \begin{pmatrix}1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1\end{pmatrix}
+\]
+となる。特に
+\[
+ \operatorname{Hom}(E_0,Z_1)=\operatorname{coker}\alpha_f,
+ \quad\operatorname{Hom}(E_3,Z_1)=C^\vee,
+ \quad\operatorname{Hom}(E_2,Z_1)=C^\vee\otimes D.
+\]
+最後の同型は $E_3$ を経由する積そのものである。
+逆向き Hom は零、各対角は構造層であり、三角から $E_1$ を回復できるので
+この四項は相対 full strong exceptional foundation である。
+その積は式~\eqref{eq:qa-square-to-normal-data} と一致する。
+逆に normal 四項 $(\mathcal O,X,M,Z)$ から
+\[
+ Y=\operatorname{Cone}(Q\otimes M\longrightarrow Z)[-1]
+\]
+を取れば $(\mathcal O,Y,X,M)$ を得る。
+論文Bの\cite[\texttt{prop:ruling-involution-mutation}]{QuadricModuli2026}
+と同じ Hom 計算が式~\eqref{eq:qa-normal-to-square-data} を与える。
+ここでは Euler 行列だけを一致させるのではなく、cone と全ての積を同定した。
+
+square の頂点スカラーを $(1,\lambda_1,\lambda_2,\lambda_3)$ とすれば、
+cone $Z_1$ 上のスカラーは $\lambda_1$ である。
+従って normal 側の頂点スカラー $(1,\mu_1,\mu_2,\mu_3)$ との関係は
+\[
+ (\mu_1,\mu_2,\mu_3)=(\lambda_2,\lambda_3,\lambda_1).
+\]
+よって同値は二つの中心部分群を同定し、rigidification へ降下する。
+
+middle swap は $(A,C,f)$ と $(B,D,g)$ を交換して $W$ を固定する。
+その normal 像は
+\[
+ (A,W,\operatorname{coker}\alpha_g;C,D^\vee)
+\]
+と積 $f$ および商写像であり、これは論文Bの $\tau$ の式に一致する。
+二つの短完全列
+\[
+ 0\to A\xrightarrow{\alpha_f}C^\vee\otimes W
+          \to\operatorname{coker}\alpha_f\to0,\qquad
+ 0\to B\xrightarrow{\alpha_g}D^\vee\otimes W
+          \to\operatorname{coker}\alpha_g\to0
+\]
+の交換として記述すれば、二回交換と恒等の同型は自動的に整合する。
+頂点スカラー上でも $\lambda_1\leftrightarrow\lambda_2$ は
+$\mu_1\leftrightarrow\mu_3$ に一致する。
+従って $S_2$ 商の同値を得る。
+\end{proof}
+
+\begin{corollary}[三十二次元の線形表示]
+\label{cor:qa-square-linear-presentation-normal-stack}
+四つの階数二の基底空間を同じ $k^2$ と同定すると、中間頂点の交換は
+$V_\square\subset\mathbb A^{32}$ 上の線形作用であり、群の四つの
+$\operatorname{GL}_2$ 因子を対応して交換する。
+従って
+\[
+ \mathfrak Q_{\rm fnd}\simeq
+ \left[V_\square\Big/
+ \left(\left(\big((\operatorname{GL}_2)^4\times\operatorname{GL}_4\big)
+ /\mathbb G_m^3\right)\rtimes S_2\right)\right].
+\]
+$\mathfrak S_\square$ とこの商は有限型・滑らかで次元三である。
+\end{corollary}
+\begin{proof}
+上の $S_2$ 同変同値を、固定基底による線形表示で書き直す。
+$V_\square$ は滑らかな三十二次元空間の開部分であり、
+$\dim G_\square=4\cdot4+16=32$、$\dim K_\square=3$ である。
+従って商の次元は三である。
+\end{proof}
+
+\subsection{二経路による生成と内在的$H_2$開部分}
+
+\begin{proposition}[二積の同時全射性は追加の開条件]
+\label{prop:qa-square-joint-generation-open}
+二つの積の直和が全射である条件
+\[
+ V_\square^{\rm gen}
+ =\left\{f\oplus g:(C\otimes A)\oplus(D\otimes B)
+                 \twoheadrightarrow W\right\}
+\]
+は $G_\square\rtimes S_2$ 不変の開条件である。
+この条件は $U_0$ の二条件からは従わない。
+さらに各積の核が非零の分解可能テンソルを含まないと仮定しても、
+この不足は解消されない。
+\end{proposition}
+\begin{proof}
+全射性は階数四の最大階数条件なので開であり、基底変更と交換に不変である。
+反例として $W=\langle x_0,x_1,x_2,x_3\rangle$ を取り、二つの積を同じ
+行列
+\[
+ \begin{pmatrix}x_0&x_1\\x_1&x_2\end{pmatrix}
+\]
+で与える。例えば $f(c_0a_0)=x_0$、$f(c_0a_1)=f(c_1a_0)=x_1$、
+$f(c_1a_1)=x_2$ と定め、$g$ も同様とする。
+両随伴は単射であり、両積の階数は三である。
+各核は $c_0\otimes a_1-c_1\otimes a_0$ 型のテンソルで生成され、
+このテンソルの行列階数は二なので分解可能でない。
+しかし二つの像はともに $\langle x_0,x_1,x_2\rangle$ であり、
+直和写像の余核は $kx_3$ である。
+定理の同値によって、これは実際の $U_0$ 点も与える。
+\end{proof}
+
+\begin{corollary}[内在的$H_2$のsquare表示]
+\label{cor:qa-h2-square-foundation-open}
+定理~\ref{thm:qa-intrinsic-h2-open-in-foundation-stack} の
+$\tau$ 不変開部分 $\mathfrak F_{\HH}\subset\mathfrak F_0$ に対し
+\[
+ \mathfrak S_{\HH}=\Phi^{-1}(\mathfrak F_{\HH})
+\]
+と置く。これは $\sigma$ 不変の有限型開部分であり、
+\[
+ \mathfrak H_2^{\rm rul}\simeq\mathfrak S_{\HH},\qquad
+ \mathfrak H_2\simeq[\mathfrak S_{\HH}/S_2].
+\]
+さらに
+\[
+ \mathfrak S_{\HH}\subset
+ [V_\square^{\rm gen}/(G_\square/K_\square)].
+\]
+したがって全ての相対 $H_2$ 族で、二つの ruling を経由する積は合わせて
+$\operatorname{Hom}(\mathcal O,M)$ を生成する。
+この主張は非被約基底にも適用される。
+\end{corollary}
+\begin{proof}
+開部分と全相対群oidの同値は、既存の $\Xi$ と前定理の同値を合成して得る。
+残る同時全射性は幾何 fiber で確認すればよい。
+各 $H_2$ 点で二つの積は二つの MCM 型 $X,Y$ を経由する積である。
+論文Aの\cite[\texttt{cor:normal-cubic-defect}]{QuadricIntrinsic2026}
+により、いずれの階数も三以上である。
+一方が階数四なら全射性は明らかである。
+双方が階数三なら、$p=\Omega(1)$ が二型を固定する場合は
+\cite[\texttt{cor:w-distinct-supports}]{QuadricIntrinsic2026}、
+交換する場合は
+\cite[\texttt{cor:standard-supports-distinct}]{QuadricIntrinsic2026}
+によって、二つの像の超平面が異なる。
+従ってその和は四次元空間全体となる。
+これは二元集合上の $p$ の全ての場合を尽くす。
+古典型でも通常の二つの tensor 積はそれぞれ同型である。
+よって任意の相対族の幾何 fiber で最大階数となり、
+ベクトル束間の写像の全射開条件から基底上でも全射である。
+\end{proof}
+
+\begin{remark}[古典型とこの表示の射程]
+古典的な四項
+\[
+ (\mathcal O,\mathcal O(1,0),\mathcal O(0,1),\mathcal O(1,1))
+ \quad\text{on }\mathbb P^1\times\mathbb P^1
+\]
+も $\mathfrak S_{\HH}$ の点である。
+二つの積はともに通常の二次元空間の tensor 積から四次元空間への同型であり、
+その mutation は
+$(\mathcal O,\mathcal O(0,1),\mathcal O(1,1),\mathcal O(1,2))$
+という normal foundation になる。
+従ってこの有限代数表示は、曲線 avatar の平坦族を先に指定せずに、
+古典型と曲線型を同じ階数十六の有限スタックで扱う。
+再構成された幾何データの次元が古典型で上がることを、有限 Hom 束の
+階数変化と取り違える必要はない。
+
+ここで明示したのは有限代数の全スタック同値と、既存の $H_2$ 開埋込の
+その表示への移送である。
+$V_\square^{\rm gen}$ の全点が $H_2$ であることや、
+$H_2$ 開部分を定義する有限個の明示多項式条件を得たとは主張しない。
+一般の有限データで、mutation が特定の既知の Abel heart の中の短完全列となる
+ことも主張していない。有限同値はまず perfect 圏で成立し、相対 heart は
+$\mathfrak F_{\HH}$ 上で既存の $\Xi$ によって認識される。
+線形 mutation と kernel--cokernel の一般原理自体の新規性は主張せず、
+本稿では指定した二つの表示スタック、中心 rigidification、二 ruling の作用を
+全相対群oidで明示比較した結果として用いる。
+\end{remark}

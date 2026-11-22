@@ -1,0 +1,658 @@
+% !TEX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / 全基底上の有限表示とcanonicalな相対認識。
+\section{回転・mutationと相対heart}
+\label{sec:qa-relative-rotated-mutated}
+
+\subsection{回転と第一mutationの相対tails比較}
+\label{subsec:qa-relative-rotated-mutated-tails}
+
+本節の基底は，引き続き本稿の局所有限型 $k$-scheme の site に属する．
+実際の曲線型 square avatar から構成した同じ相対 heart を
+$\mathcal C_0$，四標準対象を $E_0,\ldots,E_3$ とする．
+基底線束の因子を省略しない実際の coevaluation cone を
+\[
+ Z_1=\operatorname{Cone}
+   \bigl(E_1\longrightarrow\operatorname{Hom}(E_1,E_3)^\vee\otimes E_3\bigr)
+\]
+と書き，canonical な $t=\mathsf S^{-1}[2]$ を用いる．
+次の二つの四項窓を固定する：
+\[
+ \begin{split}
+ \mathcal T_{\rm rot}&=(E_1,E_2,E_3,tE_0),\\
+ \mathcal T_{\rm mut}&=(t^{-1}Z_1,E_0,E_2,E_3).
+ \end{split}
+ \tag{RM}\label{eq:qa-relative-rot-mut-windows}
+\]
+これらの直和を $T_{\rm rot},T_{\rm mut}$ と書く．
+
+\begin{proposition}[二つの実際の相対tilting窓]
+\label{prop:qa-relative-rot-mut-finite-tilting}
+式~\eqref{eq:qa-relative-rot-mut-windows} の全対象は
+$\mathcal C_0$ の基底平坦な heart 対象であり，共通 fppf 局所 chart で
+compact である．両窓は相対 full strong exceptional foundation であり，
+通常 End 代数
+\[
+ \Lambda_{\rm rot}=\operatorname{End}(T_{\rm rot}),\qquad
+ \Lambda_{\rm mut}=\operatorname{End}(T_{\rm mut})
+\]
+は階数二十四の有限局所自由 directed 代数となる．
+Hom 階数表はそれぞれ
+\[
+ G_{\rm rot}=
+ \begin{pmatrix}
+ 1&0&2&6\\0&1&2&6\\0&0&1&4\\0&0&0&1
+ \end{pmatrix},\qquad
+ G_{\rm mut}=
+ \begin{pmatrix}
+ 1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
+ \end{pmatrix}.
+ \tag{RH}\label{eq:qa-relative-rot-mut-rank-tables}
+\]
+それぞれの perfect 圏は，四つの実際の対象を保って
+$\mathcal C_0^{\rm perf}$ と Morita 同値である．
+代数，Morita datum，および全ての積は任意基底変更と可換する．
+\end{proposition}
+\begin{proof}
+全 $E_i$ と normal foundation の第四項 $Z_1$ は既に
+$\mathcal C_0$ の基底平坦 compact 対象である．
+$t$ は heart 上完全であり基底線形なので，$tE_0$ と $t^{-1}Z_1$ にも
+同じ性質が成立する．
+
+幾何 fiber 上で第一窓は square helix の一頂点回転である．
+第二窓は第一 mutation の全整数 helix の初期四項であり，
+\[
+ (H_0,H_1,H_2,H_3,H_4)
+   =(t^{-1}Z_1,E_0,E_2,E_3,Z_1)
+\]
+となる．既存の固定 mutation と逆 mutation の比較により，
+各 fiber は cubic または最小 AS10 の full strong foundation である．
+この二型の Hilbert 関数は同じであり，両型を同一の minimal quiver と
+みなす必要はない．
+
+階数表を確認するには square の Euler 行列
+\[
+ G=\begin{pmatrix}1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1\end{pmatrix}
+\]
+と Serre の数値行列 $S=G^{-1}G^t$ を用いればよい．
+各 fiber の $K_0$ では
+$[Z_1]=2[E_3]-[E_1]$ であり，
+$[t^{-1}Z_1]=2[E_0]-[E_1]$ となる．
+二つの基底変更行列は
+\[
+ Q_{\rm rot}=
+ \begin{pmatrix}0&0&0&1\\1&0&0&-2\\0&1&0&-2\\0&0&1&4\end{pmatrix},
+ \qquad
+ Q_{\rm mut}=
+ \begin{pmatrix}2&1&0&0\\-1&0&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}
+\]
+であり，$Q^tGQ$ が式~\eqref{eq:qa-relative-rot-mut-rank-tables} を与える．
+これは fiber の数値計算であり，実際の相対 cone の係数束を
+自明な二次元束と同定しているわけではない．
+
+全対象の相対 Hom は perfect であり，各導来幾何 fiber は次数零に
+集中する．perfect-fiber 判定により Hom は指定階数の局所自由束となり，
+任意基底変更と可換する．有限 directed 代数の相対 bar 解消と
+補題~\ref{lem:qa-relative-avatar-perfect-tilting-detection} により，
+幾何 fiber の full 性も実際の相対 tilting と Morita 同値へ移る．
+\end{proof}
+
+\begin{theorem}[回転・mutation完成の同じ相対heart]
+\label{thm:qa-relative-rot-mut-completion-heart}
+$\bullet\in\{\mathrm{rot},\mathrm{mut}\}$ に対して
+\[
+ C_\bullet=\bigoplus_{n\geq0}
+ H^0\bigl(\Theta_{\Lambda_\bullet}^{\otimes_{\Lambda_\bullet}^{\mathbf L}n}\bigr)
+\]
+と置く．全 tensor 冪は次数零に集中し，各次数は有限局所自由である．
+その形成と積は任意の scheme 基底変更と可換する．
+全次数の階数は両場合とも
+\[
+ \operatorname{rk}(C_\bullet)_n=64n^2+64n+24\qquad(n\geq0)
+ \tag{RHC}\label{eq:qa-relative-rot-mut-completion-ranks}
+\]
+である．
+
+本稿の site の全 affine test 上で $C_\bullet$ は右 Noetherian であり，
+実際の相対完全同値
+\[
+ \qgr C_{\rm rot}\xrightarrow{\sim}\mathcal C_0,
+ \qquad
+ \qgr C_{\rm mut}\xrightarrow{\sim}\mathcal C_0
+ \tag{RMT}\label{eq:qa-relative-rot-mut-tails}
+\]
+が存在する．標準冪等元に対応する四対象はそれぞれ
+$\mathcal T_{\rm rot},\mathcal T_{\rm mut}$ に移り，次数移動は canonical
+$t$ に移る．四頂点の unfolding による全整数代数についても同じ結論となる．
+通常の module-object 引戻しとの比較は coherent である．
+\end{theorem}
+\begin{proof}
+共通 fppf chart 上の Morita 同値は相対 Serre 双対を保つ．
+従って第 $n$ tensor 冪は
+\[
+ \mathbf R\operatorname{Hom}(T_\bullet,t^nT_\bullet)
+\]
+に対応する．各幾何 fiber では，$n=0$ の strong 性および $n\geq1$ の
+全整数 geometric helix の forward Ext 消滅によって次数零に集中する．
+各固定 $n$ ごとの perfect-fiber 判定により，全次数で局所自由性と
+任意基底変更整合性を得る．cubic と AS10 の境界を横断する非被約基底にも
+同じ議論が成立する．
+
+階数は各 fiber で $Q_\bullet^tGS^{-n}Q_\bullet$ の成分和である．
+$(S^{-1}-I)^3=0$ なので
+\[
+ S^{-n}=I+n(S^{-1}-I)+\frac{n(n-1)}2(S^{-1}-I)^2
+\]
+を代入すると式~\eqref{eq:qa-relative-rot-mut-completion-ranks} を得る．
+
+$T_{\rm mut}$ は $E_0=\mathcal O$ を直和因子に含み，
+$T_{\rm rot}$ は $tE_0$ を含む．$(tE_0,t)$ も AZ ample である．
+各窓の対象から $t^mE_0$，または $t^m(tE_0)$ への十分前向きの
+高次 Ext は，先ほどと同じ perfect-fiber 判定により零となる．
+命題~\ref{prop:qa-relative-flat-foundation-az} を，第二の場合には
+基準対象を $tE_0$ に換えて適用すると，$(T_\bullet,t)$ は AZ ample である．
+この命題の有限個の affine fppf chart からなる被覆と Hom の flat base change による降下は，
+大域の affine test 上で AZ2 を与える．
+
+一般の有限 End 環に対する AZ 再構成を適用し，
+\[
+ \bigoplus_{n\geq0}\operatorname{Hom}(T_\bullet,t^nT_\bullet)
+       =C_\bullet
+\]
+を用いれば右 Noether 性と式~\eqref{eq:qa-relative-rot-mut-tails} を得る．
+この軌道環の同定は局所 compact Morita 比較を H0 の flat base change に
+沿って降下したものである．
+通常の基底変更との整合性は，標準射影のシフトを
+$t^{-n}\mathcal T_{\bullet,i}$ に送り，有限表示の余核へ延長する構成から従う．
+unfolding は四冪等元の成分を並べ替えるため，有限生成性と torsion を保つ．
+\end{proof}
+
+\begin{remark}[構造対象の指定]
+式~\eqref{eq:qa-relative-rot-mut-tails} は同じ実際の Abel 圏との比較であり，
+標準零対象まで $E_0$ に移すという主張ではない．
+回転側の零対象は $E_1$，mutation 側の零対象は $t^{-1}Z_1$ に移る．
+これらが強い $H_2$ pointing となる開部分は，既存の標準頂点判定で
+個別に指定する．特に最小 AS10 fiber の零対象が $H_2$ でないことと，
+その tails heart が $\mathcal C_0$ であることは両立する．
+\end{remark}
+
+\subsection{最小AS10表示とschemeとしての壁}
+\label{subsec:qa-relative-minimal-as10-scheme-wall}
+
+\begin{proposition}[最小矢束の平坦性はscheme壁を検出する]
+\label{prop:qa-relative-as10-minimal-arrow-wall}
+第一 mutation に対する乗法を
+\[
+ \mu_G:\operatorname{Hom}(E_2,E_3)\otimes\operatorname{Hom}(E_0,E_2)
+             \longrightarrow\operatorname{Hom}(E_0,E_3)
+\]
+とし，$Z_F=V(\det\mu_G)$ と置く．局所的には
+$\mu_G\sim\operatorname{diag}(I_3,\delta)$ である．
+mutation の全整数代数で，最小矢の $1\to3$ 成分は
+\[
+ (J/J^2)_{3,1}=\operatorname{coker}\mu_G
+                 \simeq\mathcal O_S/(\delta)
+ \tag{MA}\label{eq:qa-relative-as10-extra-arrow-cokernel}
+\]
+となる．ここで $J$ は正の頂点差の射からなる ideal である．
+
+したがって，指定の余分な最小矢が基底上階数一の線束となるための
+必要十分条件は，基底の射が $Z_F$ を scheme として通ることである．
+その壁上では，局所 Schur reduction により二次部分が零の reduced
+最小十本矢表示を取れる．一方，壁の補集合では四組の消去により
+八本矢 cubic 表示となる．
+\end{proposition}
+\begin{proof}
+mutation 窓の $(H_1,H_2,H_3)=(E_0,E_2,E_3)$ において，
+$1$ と $3$ の間の中間頂点は $2$ だけである．
+従って分解可能射の像はちょうど $\operatorname{im}\mu_G$ であり，
+式~\eqref{eq:qa-relative-as10-extra-arrow-cokernel} を得る．
+局所正規形から cokernel は $\mathcal O_S/(\delta)$ である．
+これが基底上の線束なら，局所的な全射
+$\mathcal O_S\to\mathcal O_S/(\delta)$ は階数一束の同型であり，
+$\delta=0$ となる．逆は明らかである．
+
+相対 square 関係束の完全列を
+\[
+ 0\longrightarrow R\longrightarrow T_F\oplus T_G
+       \xrightarrow{\mu_F+\mu_G}W\longrightarrow0
+\]
+とする．$R\to T_F$ の cokernel は $\operatorname{coker}\mu_G$ と同型である．
+これは $T_F$ の元を $W/\operatorname{im}\mu_G$ へ送る完全列から従う．
+従って premutation の二次 pairing も局所的に
+$\operatorname{diag}(I_3,u\delta)$，$u$ は単元，の形になる．
+$\delta=0$ の壁上では kernel と cokernel は実際の線束であり，
+三つの可逆な対を消去する．命題~\ref{prop:qa-as10-reduction} の
+変数変換は可逆行列と有限回の多項式置換だけからなるので，この
+scheme 壁上でも同じ計算が成立し，
+\[
+ W_{10}=yq+px+H
+\]
+という reduced 十本矢表示を得る．係数は各矢の線束・束に保持する．
+$\delta$ が可逆なら第四の対も消去でき，cubic 八本矢表示となる．
+代数族の平坦性と tails の同一性は，この表示の矢数から推論するのではなく，
+前定理の実際の Hom と Serre 完成によって既に証明されている．
+\end{proof}
+
+\begin{example}[全fiberがAS10でも最小矢束が平坦でない場合]
+普遍壁に横断する一次方向を
+$S=\operatorname{Spec}k[\epsilon]/(\epsilon^2)$ に引き戻して
+$\mu_G=\operatorname{diag}(1,1,1,\epsilon)$ とする．
+唯一の幾何 fiber は階数三であり，mutation の fiber は最小 AS10 型である．
+しかし $\epsilon\ne0$ なので $S$ は scheme として $Z_F$ を通らず，
+\[
+ (J/J^2)_{3,1}=k[\epsilon]/(\epsilon)
+\]
+は基底上平坦ではない．従って最小矢束が階数一の線束である
+相対 reduced AS10 表示にはならない．
+
+三つの可逆な対だけを消した局所表示には，単元倍を吸収して
+\[
+ W_\epsilon=\epsilon yx+yq+px+H
+\]
+という二次項が残る．これは十個の選択された生成矢を使う表示を
+禁止するという意味ではない．その表示には nilpotent な線形関係
+$\epsilon x+q$，$\epsilon y+p$ があり，最小矢の quotient が
+線束になる reduced 十本矢族とは異なる．
+それでも $\Lambda_{\rm mut}$，$C_{\rm mut}$ とその各 Hom 成分は
+前定理によって平坦であり，その相対 tails は同じ $\mathcal C_0$ である．
+\end{example}
+
+\subsection{双対square心による回転・mutationの反対代数}
+\label{subsec:qa-relative-rot-mut-opposite-heart}
+
+引き続き実際の相対 square 有限代数を $\Lambda$ とする．
+補題~\ref{lem:qa-square-foundation-opposite} と
+\ref{lem:qa-classified-fiber-finite-square-recognition} により，
+反対代数 $\Lambda^{\rm op}$ の逆順の標準射影に対応する相対 $H_2$ heart
+$\mathcal C^\vee$ を取れる．この heart の四標準対象を
+$Q_0,Q_1,Q_2,Q_3$ とし，$Q_0$ を構造対象とする．
+その canonical な反 Serre 関手を $t^\vee$ と書く．
+
+共通の fppf 局所 perfect chart 上で
+\[
+ \mathbb D=\mathbf R\operatorname{Hom}_\Lambda(-,\Lambda):
+       \Perf\Lambda\xrightarrow{\sim}(\Perf\Lambda^{\rm op})^{\rm op}
+\]
+を用いれば，$Q_i=\mathbb D E_{3-i}$ である．
+これは perfect 圏の反同値であり，元の heart の全対象に対する
+反完全同値を仮定しているのではない．
+
+\begin{lemma}[反同値とcanonical周期]
+\label{lem:qa-relative-dual-reverses-antiserre}
+任意基底変更と整合する自然な同型
+\[
+ \mathbb D t\simeq(t^\vee)^{-1}\mathbb D
+\]
+がある．従って perfect 対象の四項窓 $X_0,\ldots,X_3$ に対し，
+$Y_i=\mathbb D X_{3-i}$ と置くと
+\[
+ \mathbf R\operatorname{Hom}(Y_i,(t^\vee)^nY_j)
+ \simeq
+ \mathbf R\operatorname{Hom}(X_{3-j},t^nX_{3-i})
+ \tag{DF}\label{eq:qa-dual-window-forward-hom}
+\]
+が成立する．
+\end{lemma}
+\begin{proof}
+相対 Serre 双対の表現対象の一意性から，反同値は Serre 関手を
+逆 Serre 関手に送る．すなわち
+$\mathbb D\mathsf S\simeq(\mathsf S^\vee)^{-1}\mathbb D$ である．
+さらに $\mathbb D(E[2])=(\mathbb D E)[-2]$ なので
+\[
+ \mathbb D(\mathsf S^{-1}E[2])
+     =\mathsf S^\vee\mathbb D(E)[-2]
+     =(t^\vee)^{-1}\mathbb D(E)
+\]
+を得る．反同値の全忠実性とこの同型を使えば
+式~\eqref{eq:qa-dual-window-forward-hom} が従う．
+全ての比較は有限 perfect 双対と相対 Serre 比較から作られるため，
+任意基底変更と可換する．
+\end{proof}
+
+\begin{lemma}[例外対象のfiberwise同型と相対線束]
+\label{lem:qa-relative-exceptional-line-comparison}
+相対 smooth proper な perfect 圏の二対象 $A,B$ が，各幾何 fiber で
+同じ例外対象に同型であると仮定する．このとき
+\[
+ L=\mathbf R\operatorname{Hom}(A,B)
+\]
+は次数零の可逆層であり，評価は実際の同型
+$L\otimes A\xrightarrow{\sim}B$ を与える．
+この構成は任意基底変更と可換する．
+\end{lemma}
+\begin{proof}
+相対 proper 性と perfectness により $L$ は基底上 perfect で，導来
+基底変更と可換する．全幾何 fiber が $k[0]$ なので，perfect-fiber 判定で
+$L$ は次数零の線束となる．評価の cone は相対 perfect であり，
+各 fiber では同じ例外対象の一次元 Hom による評価だから零となる．
+再び perfect-fiber 判定を適用すると cone は零である．
+これは任意の二つの対象の fiberwise heart 条件を持ち上げる主張ではない．
+cross-Hom が相対 perfect であることと，fiber の例外性が本質である．
+また $L$ の自明性は主張していない．
+\end{proof}
+
+\begin{proposition}[二つの反対窓は同じ双対heartに入る]
+\label{prop:qa-relative-rot-mut-dual-windows}
+二つの逆順双対窓を
+\[
+ \begin{split}
+ \mathcal Y_{\rm rot}
+   &=((t^\vee)^{-1}Q_3,Q_0,Q_1,Q_2),\\
+ \mathcal Y_{\rm mut}
+   &=(Q_0,Q_1,Q_3,K),\qquad K=\mathbb D(t^{-1}Z_1)
+ \end{split}
+ \tag{DW}\label{eq:qa-relative-dual-windows}
+\]
+とする．その全対象は $\mathcal C^\vee$ の基底平坦な heart 対象である．
+それぞれ相対 full strong tilting foundation であり，通常 End は
+$\Lambda_{\rm rot}^{\rm op}$，$\Lambda_{\rm mut}^{\rm op}$ と同型となる．
+\end{proposition}
+\begin{proof}
+式~\eqref{eq:qa-relative-dual-windows} は前補題から従う．
+全対象の compactness，full 性，strong 性，および End の反対代数との
+同定は perfect 反同値によって元の窓から移る．
+回転側は全て $Q_i$ とその canonical 周期移動なので，基底平坦な
+heart 対象であることも直ちに従う．
+
+mutation 側の $K$ については，fiberwise な heart 条件をそのまま
+相対 heart 条件に読み替えず，前補題の例外対象の比較を使う．
+まず各幾何 fiber では，補題~\ref{lem:qa-as10-all-index-mutual-inverse}
+の全整数 mutation の評価列
+\[
+ 0\longrightarrow H_0\longrightarrow V\otimes E_0
+       \longrightarrow E_1\longrightarrow0,
+ \qquad V=\operatorname{Hom}(E_0,E_1),\quad H_0=t^{-1}Z_1
+\]
+がある．これに perfect 反同値を適用すると
+\[
+ Q_2\longrightarrow V^\vee\otimes Q_3
+       \longrightarrow K\longrightarrow Q_2[1]
+\]
+を得る．$\operatorname{Hom}(Q_2,Q_3)=V$ であり，最初の射は coevaluation
+なので，この fiber の $K$ は dual square のもう一方の normal 窓の
+第四対象 $Z_2^\vee$ である．この実際の四項は
+\[
+ (Q_0,Q_1,Q_3,Z_2^\vee),\qquad
+ Z_2^\vee=\operatorname{Cone}
+  \bigl(Q_2\to\operatorname{Hom}(Q_2,Q_3)^\vee\otimes Q_3\bigr)
+\]
+であり，命題~\ref{prop:qa-relative-avatar-normal-window} の
+$F,G$ を交換した窓である．その normal 性は
+定理~\ref{thm:qa-relative-square-e0-e3-h2} の体上の比較，または有限
+square 族に対する補題~\ref{lem:qa-classified-fiber-finite-square-recognition}
+で既に確認されている．よって
+$(Q_0,Q_1,Q_3,K)$ の各幾何 fiber は真正な normal foundation である．
+
+実際の $Z_2^\vee$ は dual square の相対 normal cone として存在し，
+基底平坦な heart 対象である．前補題をこの $Z_2^\vee$ と $K$ に適用すると
+\[
+ L=\mathbf R\operatorname{Hom}(K,Z_2^\vee),\qquad
+ L\otimes K\xrightarrow{\sim}Z_2^\vee
+\]
+を得る．従って $K\simeq Z_2^\vee\otimes L^{-1}$ は実際に
+$\mathcal C^\vee$ の基底平坦対象である．
+この線束比較は任意基底変更と整合するが，$L$ を自明とした厳密な
+第四対象の同定までは要求しない．
+\end{proof}
+
+\begin{theorem}[回転・mutation完成の左右Noether性]
+\label{thm:qa-relative-rot-mut-two-sided-noetherian}
+実際の相対曲線 avatar から構成した
+$C_{\rm rot},C_{\rm mut}$ は，本稿の site の全 affine test 上で
+左右 Noetherian である．さらに
+\[
+ \qgr C(\Lambda_{\rm rot}^{\rm op})\simeq\mathcal C^\vee,
+ \qquad
+ \qgr C(\Lambda_{\rm mut}^{\rm op})\simeq\mathcal C^\vee
+\]
+は，それぞれ式~\eqref{eq:qa-relative-dual-windows} の四対象と
+canonical $t^\vee$ を保つ相対完全同値である．
+\end{theorem}
+\begin{proof}
+前命題の二つの窓はいずれも $Q_0$ を直和因子に含む．
+式~\eqref{eq:qa-dual-window-forward-hom} と元の全 forward Ext 消滅から，
+各対象から $(t^\vee)^mQ_0$ への十分前向きの高次 Ext は零となる．
+全対象が基底平坦 compact なので
+命題~\ref{prop:qa-relative-flat-foundation-az} を適用できる．
+有限個の affine fppf chart からなる被覆と coherent Hom の flat base change に沿った同命題の
+降下を含めて，二つの窓の直和と $t^\vee$ は全 affine test 上で AZ ample
+となる．通常の軌道環はそれぞれ $C(\Lambda_\bullet^{\rm op})$ であり，
+一般 End 環版 AZ 再構成から右 Noether 性と表示した相対 tails 同値を得る．
+
+補題~\ref{lem:qa-serre-completion-opposite} により
+\[
+ C(\Lambda_\bullet^{\rm op})\simeq C(\Lambda_\bullet)^{\rm op}
+\]
+である．従ってその右 Noether 性は $C_\bullet$ の左 Noether 性である．
+右 Noether 性は定理~\ref{thm:qa-relative-rot-mut-completion-heart} で
+既に得ているので結論が従う．
+この証明は左 Noether 性を finite foundation の認識や最初の
+relative tails 構成の入力に使っていない．
+\end{proof}
+
+\begin{remark}[非被約壁を横断する族]
+この左 Noether 性の証明も，最小矢束の平坦性を仮定しない．
+特に $\mu_G\sim\operatorname{diag}(I_3,\epsilon)$ の一次変形に対しても
+成立する．そこで相対 reduced 最小 AS10 presentation を持たないことは，
+通常の全 Hom 代数が左右 Noetherian であることを妨げない．
+任意の site 外の Noetherian 基底に対する strong Noether 性や，
+任意の AS/QP presentation stack の同一視は追加で主張しない．
+\end{remark}
+
+\subsection{回転の添字移動とmutationの相対非最小解消}
+\label{subsec:qa-relative-mutation-nonminimal-as}
+
+前節で構成した有限代数 $\Lambda_{\rm mut}$ とその通常の Serre 完成を
+用いる．以下の表示は基底の局所 chart 上で行う．線束や高階数の係数束を
+自明化しない場合には，tensor と双対を各矢束に施した同じ式と解釈する．
+
+\begin{proposition}[rotated展開は実際の添字移動]
+\label{prop:qa-relative-rotated-index-shift}
+canonical な全整数展開について
+\[
+ (A_{\rm rot})_{ba}=(A_{\rm sq})_{b+1,a+1}
+\]
+という全積を保つ自然な同型がある．従って square の相対 AS 単純解消，
+その双対，および任意基底変更との整合性は，添字を一つずらすだけで
+rotated のものへ移る．
+\end{proposition}
+\begin{proof}
+$R_i=E_{i+1}$ ($0\leq i\leq3$) であり，$R_3=tE_0=E_4$ である．
+canonical $t$ で延長すると全整数で $R_a=E_{a+1}$ となる．
+両展開はこれらの実際の対象の Hom と合成で定義されているので，
+表示した全次数の代数同型が従う．
+\end{proof}
+
+第一 mutation の四項を $(H_0,H_1,H_2,H_3)$ とし，
+$\Gamma=\Lambda_{\rm mut}$ と置く．
+\[
+ V_{10}=\operatorname{Hom}(H_0,H_1),\quad
+ V_{21}=\operatorname{Hom}(H_1,H_2),\quad
+ V_{32}=\operatorname{Hom}(H_2,H_3)
+\]
+はいずれも階数二である．$V_{21}\otimes V_{10}\to\operatorname{Hom}(H_0,H_2)$
+は同型であり，
+\[
+ \mu:V_{32}\otimes V_{21}\longrightarrow\operatorname{Hom}(H_1,H_3)
+\]
+は既存の $\mu_G$ である．
+
+\begin{lemma}[七生成矢・三関係による有限Endの表示]
+\label{lem:qa-relative-mutation-seven-three-presentation}
+三次 minor を可逆にした局所 chart 上で，$\Gamma$ は次の実際の表示を持つ．
+六つの隣接生成矢に $x:1\to3$ を加え，$x$ の頂点差を二とする．
+関係束は $1\to3$ の階数一と $0\to3$ の階数二であり，
+局所枠を選ぶと
+\[
+ r=\delta x+q,
+ \qquad r_\alpha\in
+ (V_{32}\otimes V_{21}\otimes V_{10})
+       \oplus (\mathcal O_Sx\otimes V_{10}),\quad \alpha=1,2
+ \tag{73}\label{eq:qa-relative-mutation-seven-three}
+\]
+と書ける．$q\in V_{32}\otimes V_{21}$ は二段階道の部分束の基底の一つに
+選べる．従って $q$ の少なくとも一係数は単元である．
+$\delta$ は $\det\mu_G$ の局所方程式の単元倍であり，nilpotent でもよい．
+\end{lemma}
+\begin{proof}
+三つの二段階道とその像を部分束の基底に選び，第四の道からその三つの
+成分を引いて $q$ とする．標的の第四補元を $x$ として選ぶと，符号を
+吸収して $\mu(q)=-\delta x$ である．従って
+\[
+ (V_{32}\otimes V_{21})\oplus\mathcal O_Sx
+       \longrightarrow\operatorname{Hom}(H_1,H_3)
+\]
+は全射で，その kernel は $r=\delta x+q$ の張る線束である．
+$q$ は二段階道の基底の一つなので，これは全道束の部分束である．
+
+$0\to3$ の全道束は上の階数五束と $V_{10}$ の tensor，従って階数十である．
+合成
+\[
+ \operatorname{Hom}(H_1,H_3)\otimes V_{10}
+       \longrightarrow\operatorname{Hom}(H_0,H_3)
+\]
+は全幾何 fiber で全射である．cubic と AS10 の有限 quiver はともに，
+頂点 $0$ から出る最小矢を $0\to1$ の二本だけに持つためである．
+よって基底上でも全射であり，階数八から六へのこの写像の kernel は
+階数二の束となる．
+
+階数十の全道束から $\operatorname{Hom}(H_0,H_3)$ への kernel を $R_{30}$
+と書くと，実際の束の完全列
+\[
+ 0\longrightarrow\mathcal O_Sr\otimes V_{10}
+       \longrightarrow R_{30}\longrightarrow\overline R_{30}\longrightarrow0,
+ \qquad\operatorname{rk}R_{30}=4,\quad
+ \operatorname{rk}\overline R_{30}=2
+\]
+がある．$r\otimes V_{10}$ は $q$ の単元係数により全道束の部分束であり，
+上の商も実際に局所自由である．この列を局所的に分裂させ，
+$\overline R_{30}$ の二つの基底の lift を $r_1,r_2$ と取る．
+
+有限 quiver の他の頂点対には関係はなく，$0\to3$ の kernel は
+$rV_{10}$ と $r_1,r_2$ で尽くされる．従って通常の path algebra の
+relation ideal は正確に $(r,r_1,r_2)$ であり，表示した quotient は
+全積を含めて実際の $\Gamma$ である．この証明は base の被約性を使わない．
+\end{proof}
+
+\begin{proposition}[有限対角解消とordinary Jacobian]
+\label{prop:qa-relative-mutation-ordinary-jacobian}
+前補題の七矢束を $V$，三関係束を $R$，頂点環を
+$D_0=\bigoplus_{i=0}^3\mathcal O_Se_i$ とする．
+この表示は任意基底変更に保たれる短い相対対角解消
+\[
+ 0\longrightarrow\Gamma\otimes_{D_0}R\otimes_{D_0}\Gamma
+ \longrightarrow\Gamma\otimes_{D_0}V\otimes_{D_0}\Gamma
+ \longrightarrow\Gamma\otimes_{D_0}\Gamma
+ \longrightarrow\Gamma\longrightarrow0
+ \tag{MD}\label{eq:qa-relative-mutation-short-diagonal}
+\]
+を持つ．関係の双対戻り矢を加えた十矢 potential は
+\[
+ W_\delta=\delta yx+yq+px+H
+ \tag{MP}\label{eq:qa-relative-mutation-delta-potential}
+\]
+と書け，通常の全次数代数として
+\[
+ C(\Gamma)\simeq\operatorname{Jac}(V\oplus R^\vee,W_\delta)
+ \tag{MJ}\label{eq:qa-relative-mutation-ordinary-jacobian}
+\]
+が成立する．arrow-adic completion は用いない．
+\end{proposition}
+\begin{proof}
+式~\eqref{eq:qa-relative-mutation-short-diagonal} の第一微分は
+relation の普遍微分，次は矢の左右乗法の差である．
+relation は実際の $\Gamma$ で零なので合成は零である．
+各幾何 fiber で $\delta=0$ なら，これは既存の最小 AS10 finite foundation
+の七矢三関係による対角解消である．
+$\delta\ne0$ なら $r$ から $x$ を消去し，二つの $r_\alpha$ に代入する．
+この操作は矢 $x$ と関係 $r$ の間の可逆な成分を消すことであり，
+対角複体は cubic 六矢二関係の対角解消と一つの可縮部分に分かれる．
+従って全幾何 fiber で増大複体は完全である．
+有限個の頂点対成分では，全項は基底上有限局所自由な有界複体だから，
+perfect-fiber 判定で実際の完全性と任意基底変更後の完全性を得る．
+各項は $\Gamma^e$ 上有限局所射影である．
+
+$r$ の双対を $y:3\to1$，$r_1,r_2$ の双対を $d_1,d_2:3\to0$ とする．
+tautological relation potential
+\[
+ W_\delta=yr+d_1r_1+d_2r_2
+\]
+において，$r_\alpha$ の $xV_{10}$ 部分を $px$ にまとめ，
+三段階道の部分を $H$ にまとめると式~\eqref{eq:qa-relative-mutation-delta-potential}
+を得る．元の六隣接矢と $d_1,d_2$ は頂点差一，$x,y$ は頂点差二であり，
+potential の全巡回項は頂点差四を持つ．
+
+短対角解消を双対化して $[2]$ だけ移すと，$\Theta_\Gamma$ の
+次数零の生成束は $R^\vee$，次数 $-1$ は $V^\vee$，次数 $-2$ は
+頂点単位の束である．この非正モデルの tensor dg 代数の $H^0$ は，
+元の関係 $R$ と，$V^\vee$ の微分である $\partial_VW_\delta$ を課す．
+$\partial_{R^\vee}W_\delta=R$ だから
+式~\eqref{eq:qa-relative-mutation-ordinary-jacobian} を得る．
+この直接計算は relation に一次項 $\delta x$ がある場合にも成立する．
+各 component の平坦性は，前節の相対 Hom による $C(\Gamma)$ の構成で
+既に得ている．potential の存在だけから Jacobian の平坦性を推論していない．
+\end{proof}
+
+\begin{theorem}[壁を横断する実際の相対AS解消]
+\label{thm:qa-relative-mutation-nonminimal-as-resolutions}
+第一 mutation の全整数代数は，各局所 chart 上で，十生成矢
+potential~\eqref{eq:qa-relative-mutation-delta-potential} による
+実際の長さ三の右単純解消を持つ．係数束を自明化した重複度は
+\[
+ \begin{cases}
+ 0\to P_{i-4}\to P_{i-3}^{\oplus2}\to P_{i-1}^{\oplus2}
+                  \to P_i\to S_i\to0,&i\text{ even},\\
+ 0\to P_{i-4}\to P_{i-3}^{\oplus2}\oplus P_{i-2}
+       \to P_{i-1}^{\oplus2}\oplus P_{i-2}
+                  \to P_i\to S_i\to0,&i\text{ odd}.
+ \end{cases}
+ \tag{MS}\label{eq:qa-relative-mutation-simple-complex}
+\]
+これらの解消，その左向きの双対解消，および
+\[
+ \mathcal E xt_A^q(S_i,A)=0\ (q\ne3),\qquad
+ \mathcal E xt_A^3(S_i,A)\simeq {}_\ell S_{i-4}
+\]
+は任意の scheme 基底変更に保たれる．
+$\delta$ が可逆なら奇数位相の $P_{i-2}$ の対を可縮部分として消せば
+cubic の最小解消を得る．$\delta=0$ なら式~\eqref{eq:qa-relative-mutation-simple-complex}
+自体が最小 AS10 解消である．
+\end{theorem}
+\begin{proof}
+十矢束を $\mathcal V_{ba}$ と書くと，potential 複体は係数束を保持して
+\[
+ 0\to P_{i-4}\to
+ \bigoplus_j\mathcal V_{j,i-4}^\vee\otimes P_j\to
+ \bigoplus_j\mathcal V_{ij}\otimes P_j\to P_i\to S_i\to0
+\]
+となる．微分は矢の余評価，cyclic derivative の分解，矢の評価である．
+Jacobian 関係と巡回恒等式により合成は零である．
+二次項 $\delta yx$ は，奇数位相の二つの $P_{i-2}$ 間に係数 $\delta$ の
+成分を与える．他の成分は正の頂点差の矢を含む．
+
+各幾何 fiber の $\delta=0$ では既存の最小 AS10 の potential 解消となり，
+$\delta\ne0$ では二次対を除いた cubic の potential 解消に可縮対を加えた
+ものとなる．両者は既存の体上 AS 分類により完全である．
+任意の固定した右頂点 component は，前命題の平坦な ordinary Jacobian
+の成分からなる有限局所自由層の有界増大複体である．
+その全幾何 fiber が完全なので，perfect-fiber 判定により実際の完全性と
+任意基底変更後の完全性を得る．
+
+この有限射影解消を $A$ で双対化する．最終項から
+${}_\ell S_{i-4}$ への canonical augmentation を付けた各左 component も
+有限局所自由層の有界複体である．体上の AS 双対性と同じ fiber 判定から，
+表示した Ext の消滅・同定と左単純解消を得る．
+この議論に左 Noether 性を入力する必要はない．
+\end{proof}
+
+\begin{remark}[最小性と非被約横断方向]
+$\delta=\epsilon$，$\epsilon^2=0$ のときにも上の実際の相対解消は存在する．
+しかし中間微分に一次項の係数 $\epsilon$ が残り，
+全ての微分が正の矢 ideal に入るという相対最小性は満たさない．
+余分な最小矢の quotient は $\mathcal O_S/(\epsilon)$ であり，基底平坦ではない．
+全幾何 fiber が最小 AS10 であること，最小矢束が平坦であること，
+固定された局所自由項からなる相対 AS 解消が存在することは区別される．
+係数環が特異な場合の代数の絶対大域次元三も主張していない．
+頂点代表を線束で変更する場合の最左係数とAS双対は，
+注意~\ref{rem:qa-square-unfolding-vertex-lines} と同じ規約で保持する．
+\end{remark}

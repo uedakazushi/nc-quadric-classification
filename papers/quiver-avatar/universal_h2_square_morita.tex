@@ -1,0 +1,256 @@
+% !TEX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / 全基底上の有限表示とcanonicalな相対認識。
+\subsection{全H2上の通常のsquare Morita代数}
+\label{subsec:qa-universal-h2-square-morita81}
+
+本項では古典型を含む全ての $\HHstack$ を扱う．
+normal foundation の選択は有限 \'etale 二重被覆
+$\mathfrak H_2^{\rm rul}\to\HHstack$ 上で行い，
+実際の対象の代表とその Hom 束はさらに fppf 局所で取る．
+そのような chart で
+\[
+ (E_0,E_1,E_2,E_3)=(\mathcal O,Y,X,M),
+ \qquad V_i=\operatorname{Hom}(\mathcal O,E_i),
+ \qquad (r_0,r_1,r_2,r_3)=(1,2,2,4)
+\]
+と置く．ここで $Y$ は normal 第四項の evaluation kernel であり，
+$M$ は内在的な第一軌道対象である．
+四対象を大域に順序付けたり，基底線束を自明化したりする必要はない．
+
+\begin{proposition}[canonical な階数八十一の通常代数]
+\label{prop:qa-universal-h2-square-morita81}
+局所対象
+\[
+ T^{\rm can}=\bigoplus_{i=0}^3 E_i\otimes V_i^\vee
+ \tag{T81}\label{eq:qa-h2-canonical-amplified-generator}
+\]
+は，基底線束による代表変更と二つの ruling の交換に自然に整合し，
+全 $\HHstack$ の相対 heart の対象へ降下する．
+その End は通常の有限局所自由代数
+\[
+ \mathcal A_{81}=\operatorname{End}(T^{\rm can}),
+ \qquad \operatorname{rk}\mathcal A_{81}=81
+\]
+を定める．各相対 $H_2$ 族への引戻しで $T^{\rm can}$ は基底平坦であり，
+共通 fppf 局所 chart 上の canonical compact 圏の tilting generator となる．
+従って，実際の局所 Morita 同値
+\[
+ \operatorname{Perf}\mathcal A_{81}\simeq\mathcal C^{\rm perf}
+\]
+が得られる．$\mathcal O$ の直和因子に対応する大域冪等元 $e_0$ を持ち，
+$e_0\mathcal A_{81}e_0=\OO$，$e_0\mathcal A_{81}\mapsto\mathcal O$ である．
+
+代数，Morita datum，Hom 束および全積は任意の scheme 基底変更と可換する．
+ただし相対 heart の主張は本稿の局所有限型 $k$-scheme の site で述べ，
+大域の unbounded 導来圏と局所 compact 圏の descent の同値を新たに仮定しない．
+\end{proposition}
+\begin{proof}
+まず局所 normal foundation を $(\mathcal O,X,M,Z)$ とする．
+論文Bの相対 ruling mutation によって
+\[
+ Y=\operatorname{Cone}
+ \bigl(\operatorname{Hom}(M,Z)\otimes M\to Z\bigr)[-1]
+\]
+を取り，$(\mathcal O,Y,X,M)$ は相対 full strong square 四項となる．
+これは一般の $U_0$ 上でも成立する有限 Hom の計算である．
+$\mathfrak F_{\HH}$ 上では $Y$ は他方の実際の normalized ruling であるので，
+四対象はいずれも基底平坦な heart 対象となる．
+系~\ref{cor:qa-h2-square-foundation-open} により二積は全射である．
+
+幾何点のこの square は既存の square AS 分類の有限基礎でもある．
+実際，論文Aの \cite[\texttt{thm:normal-helix}]{QuadricIntrinsic2026}
+の normal helix を一項前から始めると
+\[
+ (H_0,H_1,H_2,H_3,H_4)=(t^{-1}Z,\mathcal O,X,M,Z)
+\]
+となる．同論文の \cite[\texttt{cor:normal-cubic-defect}]{QuadricIntrinsic2026}
+は最小単純解消を与え，合成階数が四なら cubic，三なら最小十本矢型である．
+定理~\ref{thm:qa-as10-inverse-all-targets} と
+補題~\ref{lem:qa-as10-all-index-mutual-inverse} の逆操作は
+\[
+ \operatorname{coker}
+ (t^{-1}Z\to\operatorname{Hom}(t^{-1}Z,\mathcal O)^\vee\otimes\mathcal O)
+   \simeq Y
+\]
+を与え，この square を回収する．古典型では通常の
+$(\OO,\OO(1,0),\OO(0,1),\OO(1,1))$ である．
+従って局所有限代数 $\Lambda=\operatorname{End}(\bigoplus_iE_i)$ は，
+補題~\ref{lem:qa-classified-fiber-finite-square-recognition} の範囲に入る．
+ここで大域的な曲線 avatar が存在するとは仮定していない．
+
+\emph{頂点線束の消去．}
+二つの局所代表の比較で $E_i'=E_i\otimes L_i$ なら，
+pointed な $\mathcal O$ の比較の下で $V_i'=V_i\otimes L_i$ である．
+従って自然な縮約により
+\[
+ E_i'\otimes(V_i')^\vee
+ \simeq E_i\otimes L_i\otimes V_i^\vee\otimes L_i^\vee
+ \simeq E_i\otimes V_i^\vee
+\]
+を得る．比較射を単元倍した際，対象上の単元と Hom 双対上の逆単元は
+厳密に相殺される．縮約は tensor の結合と整合するので，三重重なりの
+scalar cocycle も消える．これは有限 square 表示の頂点トーラス
+$K\simeq\Gm^3$ の全作用を消すことに等しい．
+
+pointed exact 同値は二つの ruling の非順序対と $M$ を保つ．
+ruling の交換は上の直和の二つの中間項だけを入れ替える．
+有限直和の自然な置換は二回で恒等となり，既存の ruling 交換の coherent
+$S_2$ 作用と整合する．よって $T^{\rm can}$ は ruling を選ばない
+$\HHstack$ 上へ降下する．$\mathcal O$ 項と $M\otimes V_3^\vee$ 項は
+個別に降下し，中間二項についてはその\emph{和}が降下する．
+
+同じ議論は代数を直接構成しても確認できる．局所の $(j,i)$ corner は
+\[
+ \operatorname{Hom}(E_i,E_j)\otimes V_j^\vee\otimes V_i
+\]
+であり，頂点スカラーの指標
+$(\lambda_j/\lambda_i)\lambda_j^{-1}\lambda_i$ は一である．
+合成は中間の $V_j\otimes V_j^\vee$ の縮約なので，この降下は全積を保つ．
+
+\emph{階数とtilting．}
+局所 square の Hom 階数行列を
+\[
+ G=\begin{pmatrix}1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1\end{pmatrix},
+ \qquad r=(1,2,2,4)^{\mathsf T}
+\]
+とすれば，End の階数は
+\[
+ r^{\mathsf T}Gr
+ =(1+4+4+16)+(4+4+16+16+16)=81
+\]
+である．各 $V_i$ を局所自明化すれば $T^{\rm can}$ は $E_i$ を
+$r_i$ 回ずつ増幅した四項の直和であり，full strong 性と tilting が従う．
+$r_0=1$ と単位 $V_0=\operatorname{End}(\mathcal O)=\OO$ によって
+指定冪等元の同定も得る．
+局所的な compact Morita datum の比較においても，前述の scalar cancellation
+と $S_2$ の置換が cocycle を与える．
+全 Hom 束は perfect-fiber 判定による有限局所自由束であり，
+この対角・tensor・縮約の構成は任意基底変更に保たれる．
+\end{proof}
+
+\begin{remark}[大域の対角代数]
+\label{rem:qa-h2-rank81-diagonal}
+この構成は，二つの ruling を大域にラベル付けした四つの分裂頂点を
+要求しない．ruling 選択被覆を $\pi:\mathfrak H_2^{\rm rul}\to\HHstack$ とすると，
+相対的な対角代数は
+\[
+ \mathcal D=\OO\oplus\pi_*\mathcal D_{\rm rul}\oplus\mathcal D_M
+\]
+と書ける．$\mathcal D_{\rm rul}$ は選択被覆上で局所的に
+$\operatorname{End}(V_X^\vee)$ となる次数二の Azumaya 代数，
+$\mathcal D_M$ は局所的に $\operatorname{End}(V_3^\vee)$ となる
+次数四の Azumaya 代数である．それらを大域的な行列代数と仮定しない．
+対角の階数は $1+8+16=25$ である．
+厳密に前向きの corner の和を $\mathcal J$ とすると，
+\[
+ \mathcal A_{81}=\mathcal D\oplus\mathcal J,
+ \qquad \mathcal J^{\otimes_{\mathcal D}3}=0.
+\]
+従って大域の separable 対角を持つ有限 bar 解消を適用できる．
+\end{remark}
+
+\begin{theorem}[全H2のcanonical完成とpointed tails]
+\label{thm:qa-universal-h2-rank81-completion}
+上の通常代数に対して
+\[
+ \mathcal C_{81}
+ =\bigoplus_{n\ge0}
+ H^0\left(\Theta_{\mathcal A_{81}}^{
+                   \otimes_{\mathcal A_{81}}^{\mathbf L}n}\right)
+\]
+を取る．全 tensor 冪は cohomological degree 零に集中し，
+\[
+ \operatorname{rk}(\mathcal C_{81})_n=81(2n+1)^2
+ \qquad(n\ge0).
+\]
+全次数と全積は任意の scheme 基底変更と可換する．
+零頂点 corner は canonical な反 Serre 環であり，
+\[
+ e_0\mathcal C_{81}e_0
+   =\bigoplus_{n\ge0}\operatorname{Hom}(\mathcal O,t^n\mathcal O),
+ \qquad
+ \operatorname{rk}e_0(\mathcal C_{81})_ne_0=(2n+1)^2.
+\]
+
+本稿の site の任意の affine test $S\to\HHstack$ 上で，
+$(\mathcal C_{81})_S$ は左右 Noetherian であり，実際の pointed exact 同値
+\[
+ \bigl(\qgr(\mathcal C_{81})_S,\,
+       \pi e_0(\mathcal C_{81})_S,\,(1)\bigr)
+   \simeq (\mathcal C_S,\mathcal O_S,t)
+ \tag{QT81}\label{eq:qa-h2-rank81-pointed-tails}
+\]
+が存在する．この比較は通常の module-object 基底変更と coherent に整合する．
+\end{theorem}
+\begin{proof}
+前注意の finite separable diagonal 解消により
+命題~\ref{prop:qa-relative-serre-tensor-base-change} が適用できる．
+局所 square の Morita 表示では，その第 $n$ tensor 冪は
+\[
+ \mathbf R\operatorname{Hom}(T^{\rm can},t^nT^{\rm can})
+\]
+に対応する．幾何 fiber の全整数 square helix の前向き Ext 消滅によって，
+$n=0$ を含む全 $n\ge0$ で次数零に集中する．
+perfect-fiber 判定は全基底上の局所自由性と任意基底変更を与える．
+積は相対 Serre transport と合成によるものなので，同じ比較を保つ．
+
+数値 Serre 行列を $S_G=G^{-1}G^{\mathsf T}$ とすると，fiber の階数は
+$r^{\mathsf T}GS_G^{-n}r$ である．$(S_G-I)^3=0$ を用いた直接計算は
+\[
+ r^{\mathsf T}GS_G^{-n}r=81(2n+1)^2
+\]
+を与える．これは前向き Ext 消滅を別に証明した後の階数計算である．
+$e_0$ が $\mathcal O$ を保つため，corner は全積を含めて
+表示した canonical 反 Serre 環に一致する．
+
+\emph{左右Noether性．}
+まず各 $V_i$ と四頂点が分裂する局所 chart を取る．
+$B=C(\Lambda)$ と書くと，$(\mathcal C_{81})_n$ は
+$e_jB_ne_i$ を $r_j\times r_i$ 個に増幅した block 行列である．
+各頂点の $r_i$ コピーから一つずつを選ぶ零次数冪等元を $f$ とすれば
+\[
+ f\mathcal C_{81}f\simeq B.
+\]
+零次数の同一頂点内の matrix units によって
+$\mathcal C_{81}f\mathcal C_{81}=\mathcal C_{81}$ である．
+従ってこれは通常の degree-zero graded Morita 同値である．
+局所 $\Lambda$ の全幾何 fiber は分類済み square 型であり，
+補題~\ref{lem:qa-classified-fiber-finite-square-recognition}，
+\ref{lem:qa-square-foundation-opposite}，
+\ref{lem:qa-serre-completion-opposite} によって $B$ は左右 Noetherian である．
+この性質は通常の Morita 同値で保たれ，中央の faithfully flat 基底変更で
+降下する．よって全ての指定された affine test 上で左右 Noether 性を得る．
+ここで用いた full idempotent $f$ は各増幅頂点からの一コピーの和であり，
+$\mathcal O$ だけの冪等元 $e_0$ とは区別する．
+
+\emph{実際のheart．}
+$T^{\rm can}$ は基底平坦 compact な対象の有限直和で，
+$\mathcal O$ を直和因子に含む．各項から十分前向きの
+$t^m\mathcal O$ への高次 Ext は既に消えている．
+従って命題~\ref{prop:qa-relative-flat-foundation-az} により
+$(T^{\rm can},t)$ は相対 AZ ample である．
+実際の軌道環は，全積を含めて
+\[
+ \bigoplus_{n\ge0}\operatorname{Hom}(T^{\rm can},t^nT^{\rm can})
+    =\mathcal C_{81}
+\]
+である．一般の有限 End 環に対する AZ 再構成により
+式~\eqref{eq:qa-h2-rank81-pointed-tails} を得る．
+これは $e_0$ の corner だけから graded Morita 同値を導いたものではない．
+指定対象は $T^{\rm can}$ の実際の直和因子として識別される．
+基底変更との比較は，標準射影のシフトを $t$ の軌道対象へ送り，
+有限表示の余核へ延長する構成である．したがって低次数 section の
+非平坦基底変更を仮定せずに，通常の module-object 引戻しとの
+coherent な比較を得る．
+\end{proof}
+
+\begin{remark}[この通常代数の役割]
+この結果は，古典型を含む全ての内在的 $H_2$ 族に，
+指定構造対象を保持する通常の有限 Morita 代数とその canonical 全 Serre 完成を
+付随させる．四つの rank-one 対象の大域的な代表や，ruling の順序は不要である．
+一方，任意の AS/QP presentation stack を同定するには，
+その presentation の相対平坦性，実際の全整数積，頂点線束と Serre transport，
+および全同型層を比較する別の証明が必要である．
+また任意の Noetherian $k$-基底へ相対 heart の定義を拡張したものとの
+同一視や，その意味での strong Noether 性は本定理に含めない．
+\end{remark}

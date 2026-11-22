@@ -106,9 +106,23 @@ def all_degree_euler():
     for ranks, expected in (
         ((1, 2, 2, 1), 144 * n ** 2 + 144 * n + 30),
         ((1, 2, 2, 2), 196 * n ** 2 + 196 * n + 45),
+        ((1, 2, 2, 4), 81 * (2 * n + 1) ** 2),
     ):
         r = sp.Matrix(ranks)
         assert sp.expand((r.T * h * r)[0] - expected) == 0
+    rotated = sp.Matrix([[0, 0, 0, 1], [1, 0, 0, -2],
+                         [0, 1, 0, -2], [0, 0, 1, 4]])
+    mutated = sp.Matrix([[2, 1, 0, 0], [-1, 0, 0, 0],
+                         [0, 0, 1, 0], [0, 0, 0, 1]])
+    rotated_gram = sp.Matrix([[1, 0, 2, 6], [0, 1, 2, 6],
+                             [0, 0, 1, 4], [0, 0, 0, 1]])
+    for name, window, gram in (("rotated", rotated, rotated_gram),
+                               ("mutated", mutated, chain)):
+        assert window.det() in (1, -1)
+        assert window.T * square * window == gram
+        completion = window.T * h * window
+        assert sp.expand(sum(completion) - (64*n*n + 64*n + 24)) == 0
+        print(f"PASS {name}: exact rank24 Gram; completion=64n²+64n+24")
     exchange = sp.eye(4)
     exchange.col_swap(1, 2)
     assert exchange ** 2 == sp.eye(4)
@@ -116,7 +130,7 @@ def all_degree_euler():
     assert square[1, 2] == square[2, 1] == 0
     print("PASS all degrees: mutation Euler identity; nilpotent Serre; "
           "rank30=144n²+144n+30; rank45=196n²+196n+45; "
-          "pointed corner=(2n+1)²")
+          "rank81=81(2n+1)²; pointed corner=(2n+1)²")
 
 
 def clifford_trace():
