@@ -170,7 +170,14 @@ def verify_point_curve_two_isogeny_j():
     assert j_spectral == Fraction(35152, 9)
     assert j_point == Fraction(28756228, 3)
     assert j_point != j_spectral
-    print("PASS: smooth point curve versus spectral curve have distinct exact j invariants")
+    # Classical modular polynomial Phi_2(X,Y), checked exactly at both j's.
+    X, Y = j_point, j_spectral
+    phi2 = (X**3 + Y**3 - X**2*Y**2
+            + 1488*X*Y*(X+Y) - 162000*(X**2+Y**2)
+            + 40773375*X*Y + 8748000000*(X+Y)
+            - 157464000000000)
+    assert phi2 == 0
+    print("PASS: point and spectral curves have distinct j and satisfy Phi_2(jE,jC)=0")
 
 
 if __name__ == "__main__":
