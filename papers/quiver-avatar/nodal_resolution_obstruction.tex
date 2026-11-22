@@ -312,6 +312,71 @@ $\lambda_+^2=\lambda_-^2=1$ が必要十分である．
 指定された群スキームの同型を得る．
 \end{proof}
 
+
+\begin{proposition}[二次積付き torsion-free 相対群oid への射]
+\label{prop:qa-spectral-quadratic-stack-map}
+$k$ を標数零の体とし，$\mathfrak{TF}^{\mathrm{quad}}$
+を次の fppf groupoid とする：
+$S$ 上の対象は，fppf 局所的に
+$B\simeq\PP^1_S$ となる曲線束 $B/S$，
+算術種数一の幾何 fiber を持つ有限平坦二重射
+$p:C\to B$，$S$-flat な相対次数零の rank-one
+torsion-free coherent $\OO_C$-sheaf $M$，
+および対称乗法
+\[
+ \mu:M\otimes_{\OO_C} M\longrightarrow\OO_C
+\]
+であって各幾何 fiber で
+$M\xrightarrow{\sim}\mathcal H om_C(M,\OO_C)$
+を誘導するものとする．
+射は曲線束・二重射・層・二次積をすべて保つ同型である．
+この groupoid が Artin stack として有限型・滑らか等である
+ことはここでは主張しない．
+
+論文Bの被約根対の表示商
+$\mathfrak N^{\mathrm{pres}}=[P/G]$ から
+\[
+ \mathfrak N^{\mathrm{pres}}
+       \longrightarrow\mathfrak{TF}^{\mathrm{quad}},
+ \qquad (f_1,f_2)\longmapsto(C_{f_1f_2},M,\mu)
+ \tag{Quad-spectral}\label{eq:qa-spectral-quadratic-stack-map}
+\]
+という fppf 相対 groupoid 射が定義される．
+これは非被約基底への任意の基底変更と両立し，
+像の乗法欠損層は
+$\coker\mu\simeq\OO_{V_B(f_1,f_2)}$ である．
+この射の全忠実性，像の局所閉性，内在的
+O-marked stack への適合・比較同値は未証明である．
+\end{proposition}
+\begin{proof}
+表示空間 $P$ 上の普遍二形式から
+$\widetilde C=\Spec_B\OO_B[c,d]/(c^2-f_1,d^2-f_2)$
+とその同時符号商 $C$ を構成する．
+$\widetilde C$ は $B$ 上階数四の有限平坦代数で，
+$M=(r_*\OO_{\widetilde C})^-$ の $B$ への直像は
+$\OO_B(-1)^{\oplus2}$ である．
+従って $M$ は任意の底変更と両立して相対平坦で
+各 fiber 上の Euler 特性は零である．
+rank-one torsion-free 性は
+定理~\ref{thm:qa-noncubic-rootpair-torsionfree-spectral-module}，
+幾何 fiber での二次積の自己双対性は
+命題~\ref{prop:qa-spectral-product-defect} による．
+
+論文Bの表示群
+$G=((\GL(W)\times\Gm^2)\rtimes S_2)/D$
+は，変数 $u,v,c,d$ の線型座標変換
+（$S_2$ は $c,d$ を交換する）から生じる．
+従って同時符号の分解と環の乗法を保ち，
+$(C,M,\mu)$ は $G$-同変である．
+中央の $D$ は全斉次変数の同時スカラーで，
+射影曲線上の $\OO$ とその反不変部分には自明に作用する．
+よって $[P/G]$ に降下する．
+coherent sheaf，曲線の有限平坦射，その二次積の
+fppf 有効降下によって，これは groupoid の射となる．
+欠損と基底変更については
+式~\eqref{eq:qa-spectral-square-defect} を使う．
+\end{proof}
+
 \begin{remark}[相対 avatar に必要なモジュライの選択]
 \label{rem:qa-spectral-compactification-choice}
 既約 nodal 型では $\nu_*\OO_{\PP^1}(-1)$ が
