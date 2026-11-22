@@ -1,5 +1,5 @@
 % !TeX root = ../quiver-avatar-moduli.tex
-% 2026-11-22 / v3.8（j0 A4の接重みと孤立巡回商局所型）
+% 2026-11-22 / v3.9（一cubic境界のfiber一点と有限étale延長障害）
 \section{既存GITと内在的モジュライの比較}
 \label{sec:qa-git-comparison}
 
@@ -720,6 +720,74 @@ pointed自己同値は両者を交換できない。
 例では$\rho$の固定点$x=0$の二点は
 三次曲線の変曲点で位数三であり、
 互いに負元となる。
+\end{proof}
+
+\begin{corollary}[一cubic ruling境界では忘却fiberが一点となる]
+\label{cor:qa-ou-one-cubic-fiber-and-nonfiniteness}
+標数零の代数閉体上の滑らかな許容楕円四つ組
+$U=(E,L_0,L_1,L_2)$が
+\[
+ \delta\notin E[2],\qquad \eta=2\delta
+ \tag{one-cubic}\label{eq:qa-ou-one-cubic-divisor}
+\]
+を満たすとする。
+このとき$U$は非線型geometric cubicで、
+もう一つのnormalized foundationはnoncubicである。
+剛体化quintupleから$\HHstack$への忘却は
+この点で\emph{表現可能étale}であり、
+$y=\overline{\mathcal F}_{\mathrm{geo}}(U)$の
+幾何的2-fiberは自明慣性を持つただ一つの対象からなる。
+またquintuple側の全慣性と
+$\Aut_{\HHstack}(y)$は同型である。
+
+一般の二cubic locusのfiberは二点なので、
+この一cubic境界を含む連結な開において
+quintuple忘却を\emph{有限étale次数二の射として
+延長することは不可能}である。
+失われる第二sheetは、ruling交換後に必要となる
+noncubic foundationであり、stack的な分岐ではない。
+\end{corollary}
+\begin{proof}
+$\delta\notin E[2]$だから
+$\delta\ne0$かつ$\eta=2\delta\ne0,\delta$であり、
+三つの次数二線束は相異なる。
+よって$U$は滑らかなgeometric cubicを与える。
+論文Bの
+\cite[\texttt{lem:elliptic-two-reflections},
+\texttt{cor:two-intrinsic-foundations}]{QuadricModuli2026}
+ではruling交換後の第一差は
+$\eta'=2\delta-\eta=0$となり、
+最初の二つの次数二線束が一致するため
+もう一方はnoncubicとなる。
+
+pointed自己同値はnormal foundationの非順序対を
+保つが、cubicであることは復元される
+$\mathbb Z$-代数の条件なので保存する。
+従ってこの点では唯一のcubic foundationを保存し、
+論文Bの全充満なfoundation groupoid
+\cite[\texttt{cor:h2-point-groupoid-foundation}]{QuadricModuli2026}
+により全pointed自己同値群は
+quintuple表示の剛体化自己同型群と一致する。
+同様に幾何的2-fiberの対象はcubic foundationの
+ただ一つの同型類に対応し、
+慣性の核もないので自明慣性の一点となる。
+
+幾何的quintupleの自己同型は
+$E$の自己同型として忠実に作用し、
+点曲線商のfully faithful包含
+$\coh E\hookrightarrow\qgr D$によって
+pointed自己同値へ単射となる。
+論文Bの普遍nonlinear cubic smooth atlasと
+定理~\ref{thm:qa-quintuple-h2-generic-etale}の
+smooth相対次元零の結論から、
+この点でも忘却は表現可能étaleである。
+
+有限étale次数二の射は連結な底上で全てのfiberが
+二点となる。一方、上のfiberは一点で、
+二cubic一般点では系
+~\ref{cor:qa-quintuple-h2-generic-degree-two}
+により二点である。従って同じ開に有限étale
+次数二として延長できない。
 \end{proof}
 
 \begin{corollary}[$j=0$の$A_4$点の三次元接表現と粗形式商]
