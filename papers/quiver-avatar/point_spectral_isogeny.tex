@@ -218,6 +218,97 @@ $m_1,m_2,d$を用いた同じ計算で
 $F_d$の主張も従う．
 \end{proof}
 
+\begin{proposition}[MCMの隣接積と二pencilのVeronese積の一致]
+\label{prop:qa-point-mcm-composition-veronese}
+前命題の仮定の下で，中央二重平方環の
+一次部分を
+\[
+ V=(B_f)_1=\langle u,v,c,d\rangle_k
+     \xrightarrow{\ \sim\ }
+     H^0(E_f,\OO_{E_f}(1))
+ \tag{Degree-one}\label{eq:qa-point-degree-one-restriction}
+\]
+と同定する．
+二つの非自由MCM型 $X_c,X_d$ に関する
+noncubic normal helix の隣接合成
+\[
+ \begin{aligned}
+ \mu_c:\;&
+ \Hom(\pi X_c,\pi B_f(1))
+ \otimes\Hom(\pi B_f,\pi X_c)
+ \longrightarrow\Hom(\pi B_f,\pi B_f(1)),\\
+ \mu_d:\;&
+ \Hom(\pi X_d,\pi B_f(1))
+ \otimes\Hom(\pi B_f,\pi X_d)
+ \longrightarrow\Hom(\pi B_f,\pi B_f(1))
+ \end{aligned}
+\]
+の像をそれぞれ $U_c,U_d\subset V$ とする．
+一方，$E_f$ 上の二つの次数二pencilに対する
+通常の対称積
+\[
+ m_c:\Sym^2H^0(E_f,F_c)\to H^0(E_f,F_c^2),
+ \qquad
+ m_d:\Sym^2H^0(E_f,F_d)\to H^0(E_f,F_d^2)
+\]
+の像を前式の$V$へ写す．すると
+\[
+ \boxed{
+ \im\mu_c=\im m_c=U_c=\langle u,v,c\rangle,\qquad
+ \im\mu_d=\im m_d=U_d=\langle u,v,d\rangle.}
+ \tag{Two-rank3}\label{eq:qa-point-two-rank-three-subspaces}
+\]
+特に
+\[
+ \dim U_c=\dim U_d=3,\qquad
+ U_c\cap U_d=\langle u,v\rangle,\qquad U_c+U_d=V.
+\]
+よってnoncubic normal helixの二つのMCM型に伴う
+\emph{最小十本矢の隣接合成像}は，点曲線$E_f$の
+二つのconic商pencilのVeronese像と一致する．
+ただし，この命題は二つの像部分空間と
+MCMのkernel写像を同定するもので，
+四頂点のfinite directed End代数の
+\emph{すべての積}の同型を意味しない．
+\end{proposition}
+\begin{proof}
+$E_f\subset\PP^3$は二quadricの完全交叉で，
+一次の斉次関係はない．
+よって$V=H^0(E_f,\OO_{E_f}(1))$となる．
+定理
+~\cite[\texttt{thm:normal-helix} および
+ \texttt{cor:normal-cubic-defect}]{QuadricIntrinsic2026}
+における非自由MCMの隣接合成は，
+線形matrix factorizationの
+$2\times2$成分を一次切断とみなしたものだから，
+式~\eqref{eq:qa-point-mcm-matrices}より
+\[
+ \im\mu_c=\langle c,\ell_1,\ell_2\rangle
+          =\langle u,v,c\rangle,\qquad
+ \im\mu_d=\langle d,m_1,m_2\rangle
+          =\langle u,v,d\rangle
+\]
+である．ここで各一次形式対は独立である．
+
+一方，前命題から
+$F_c=p_c^*N_c$，$N_c\simeq\OO_{\PP^1}(1)$であり，
+$H^0(E_f,F_c)=H^0(Q_c,N_c)$である．
+実際，$p_{c*}\OO_{E_f}$の不変部分は$\OO_{Q_c}$で，
+反不変部分の負次数の線束には切断がない．
+従って$m_c$は
+\[
+ \Sym^2H^0(Q_c,N_c)\longrightarrow
+ H^0(Q_c,N_c^2)=H^0(Q_c,\OO_{Q_c}(1))
+\]
+の通常のVeronese積の引戻しである．
+この積は三次元切断空間への同型であり，
+$Q_c\subset\PP^2_{[u:v:c]}$の
+超平面切断の像は
+$\langle u,v,c\rangle$である．
+同様に$m_d$の像は$\langle u,v,d\rangle$となる．
+二つの部分空間の共通部分と和は明らかである．
+\end{proof}
+
 \begin{corollary}[非零二捩れ付き楕円曲線上の双対二重商]
 \label{cor:qa-point-spectral-atkin-lehner}
 滑らかな楕円曲線と非零二捩れの組
