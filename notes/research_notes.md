@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.87（A v1.69・20節、B v0.39・31節、C v1.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.88（A v1.69・20節、B v0.39・31節、C v1.4）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：OU四重GIT・相対Picard根・内在的forgetful射
 
@@ -185,13 +185,45 @@ OUの有限次数4のGIT射と合わせて、適当な稠密開では
 検算の範囲は有限符号群・有理数での軌道行列rank・固定点障害であり、
 厳密な一般記号的証明は論文本文に置く。
 
-**一般pointed忘却の慣性単射（Cで証明）。** VdBの幾何的商D→D_geomは四つ組同型に自然。qgr D_geom≅coh C→qgr Dはexact fully faithfulであり、Aのelliptic_inverse節にB/(h)版の証明がある。剛体化quintupleの非単位μ₂²はC上の2捩れ平行移動で、skyscraper点対象k(p)を非同型なk(p+ξ)へ移す。したがってpointed exact自己同値への慣性写像は一般開で単射で、剛体化quintuple→H2は同開で代数空間に表現可能。標的の全慣性・忘却のétale性・次数までは未解決。証明正本はC prop:qa-ou-generic-inertia-faithful-to-h2。
+**pointed忘却の一般エタール性と幾何次数二（Cで証明）。**
+剛体化quintupleの一般μ₂²は、VdBの幾何的商D→D_geomと
+coh(C)の点対象の完全忠実埋込により、H2のpointed自己同値へ単射。
+非単位の2捩れ翻訳はk(p)を非同型なk(p+ξ)へ移す。
+Bの `lem:universal-nonlinear-cubic-h2-family` と
+`thm:quintuple-chart-artin-lifting` は、射影化された
+15次元の普遍非線型geometric quintuple S_e→H2が
+representable smoothであることを示す。
+テンソル非零ベクトルのGm-torsor T^nl→S_eを合成し、
+T^nl→[T^nl/G_eff]（dim G_eff=13）のsmooth atlasを使って降下すると、
+F:[T^nl/G_eff]→H2はsmooth相対次元(16−13)−3=0。
+一般μ₂²慣性の単射によりこの開でrepresentable、
+従ってétale。接複体同型から内在HH¹=0、
+HH²≅k⁴/kx（dim3）を得る。
+論文C `thm:qa-quintuple-h2-generic-etale` が証明正本。
+これはBの相対smoothness証明を新たに独立再検証した主張ではなく、
+既存入力に基づく厳密な帰結である。
 
-**未解決の分岐点。** 標的Aut(C,O)に残る自己同値（ruling交換等）とpointed fiberを検証する。
-source側の有限慣性がroot deckとして作用するという推論は誤り。
-さらに三次元slice k⁴/kxから内在HH²への微分を実際に求め、
-pointed同値で消えるdirectionsや別ruling/foundationを検出する。
-一般quintuple→H2がétale・表現可能・次数4と結論してはならない。
+**一般fiberは二つのnormalized ruling foundation。**
+B `cor:two-intrinsic-foundations` は、固定pointed対象で
+(O,X,M,Z)と(O,Y,M,Z')の二つが全てであることを証明。
+楕円四つ組 U=(E,L0,L1,L2) の差をη=L1−L0, δ=L2−L0とすると
+B `lem:elliptic-two-reflections` のもう一方は
+R(U)=(E,L0L1L2^{-1},L2,L1)、差は(2δ−η,δ)。
+j(E)≠0,1728、δ∉E[2]、η∉{0,δ,2δ} の非空稠密開では
+Aut(E,0)={±1}、εδ=δからε=1、εη=2δ−ηからη=δとなり矛盾。
+二つの四つ組は非同型で、両方cubic型。pointed自己同値に
+ruling交換成分がなく、全慣性はμ₂²。
+よって忘却の2-fiberは慣性核のない二つの対象からなり、
+一般の有限étale次数は2。
+有効potential→quintuple表示スタックは一般有限étale次数4なので
+合成potential→H2は一般有限étale次数8。
+C `cor:qa-quintuple-h2-generic-degree-two` と
+`cor:qa-potential-h2-generic-degree-eight` に証明。
+この8を4つのPicard Serre根の数や自己同値群の位数と混同しない。
+**次の核心：** 特殊cubicのη=2δ・δ∈E[2]・
+j=0,1728等のruling交換固定点と慣性増大を調べる。
+二rulingの有限étale被覆とその分岐を相対非被約基底で構成し、
+noncubic境界でのfiber・正規形・有限性を監査する。
 
 **H2忘却の構成済みの範囲。**
 非線型geometric quintupleの普遍cubic Z代数Dから
@@ -207,15 +239,13 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 剛体化後の慣性像・微分・pointed fiberの計算は未完成。
 
 **再開する数学的核心。**
-有効表示間の一般有限étale四重射とμ₂²慣性同型、さらに表示→内在H2のμ₂²慣性単射・表現可能性を確立した。次は標的全慣性・接射・homotopy fiberを調べる。
-正則半単純potentialの非対角族に対する相対半点は構成済み。
-対角一般開のOU/Picard根torsor同型を、非対角相対quadric pencilの
-Spin/Hodgeの構成へ延長し、任意底変更でのcoherenceを点検する。
-次に剛体化されたquintuple→H2の慣性像・接写像と
-pointed fiberを計算する。OU GITの次数4をH2忘却の次数としない。
-nodalを含む基底上の同じ有限torsor延長は不可能である。
-Aはユーザー手元の組版成功報告があるが、B/Cの実組版・
-全面数学的独立監査・網羅的新規性調査は未完了。
+一般のpointed忘却は表示スタック→H2でsmooth相対次元0、
+正則半単純開で有限étale次数2・慣性μ₂²同型・KS同型となる。
+次は特殊cubic点で二つのrulingの同型が生じるときの
+慣性と分岐、またnoncubic境界への延長を相対群oidとして調べる。
+`lem:elliptic-two-reflections` と
+`cor:two-intrinsic-foundations` の相対化が最も具体的な手掛かり。
+A/Bの全公表前監査・一次文献新規性比較・三稿の実組版は未完了。
 
 ## 一致類の全慣性・AHR形式対・局所good moduliの二次的性質
 

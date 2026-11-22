@@ -1,12 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v0.89。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv1.3。
+2026-11-22 / v0.90。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv1.4。
 
 ## 公表用三論文への再編（確定方針）
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：論文C `papers/quiver-avatar-moduli.tex` と `papers/quiver-avatar/git_comparison.tex` がOU GIT/quiver/QP/avatar→H2比較の正本。OU §5の(5.3) S4と(5.8)後のS3印刷不整合を維持。群96元・twisted V-torsor、spectral Kummer、点曲線とJacobian/jに加え、Hodge chiralityでP+↔L2を証明した。対角滑らかな稠密開ではOU四重射とquintupleのPicard[-2]根torsorをG同変に同定。さらに正則半単純非対角potential族へ相対Hodge・明示半点を任意底変更と可換に拡張済み。一般剛体化quintupleにも有限慣性μ₂²=Jac(C)[2]が残り、その接sliceは3次元である。potential→quintupleの有効表示スタック射は一般開で慣性同型・接同型を持つ表現可能有限étale四重射と証明。OU2014の一般安定化群Gm⁴/Gmの記述は全慣性でなく単位連結成分として読み有限補正を明記。coh(C)の完全忠実な点対象で一般μ₂²のpointed忘却への単射を証明し、一般開で剛体化quintuple→H2は表現可能。**次は標的全慣性・接写像・pointed fiber。** nodalを含む境界への単純延長は不可能、OU GIT次数4をH2忘却次数とは主張しない。
+- C：論文C `papers/quiver-avatar-moduli.tex` と `papers/quiver-avatar/git_comparison.tex` がOU GIT/quiver/QP/avatar→内在H2比較の正本。OU2014 S4/S3印刷不整合は四固有値S4に訂正して区別。OU spectral Kummer、quintuple点曲線Jacobian/Hodge符号、Picard根比較、正則半単純potentialの相対Hodgeを保持。剛体化quintupleにはμ₂²=Jac(C)[2]の有限慣性が残り、一般pointed忘却に忠実に作用。論文Bの普遍cubic smooth atlasにより忘却は全非線型geometric開でsmooth相対次元0、一般開で表現可能étale、HH¹=0・HH²=3・KS同型。二つの内在的normalized foundationと楕円R交換により一般有限étale次数2、potential→quintupleの一般次数4と合成してpotential→H2は一般次数8。**次は特殊cubic/noncubicの慣性・fiber・分岐と二ruling foundationの相対的降下。** 3つの次数と4つのPicard根は異なる。全数学的独立監査や組版は別状態。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 
