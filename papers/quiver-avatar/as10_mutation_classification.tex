@@ -271,3 +271,174 @@ $H^{-1}\Gamma\ne0$となり矛盾する。
 消えてしまう矛盾でもある。
 \end{proof}
 
+
+\begin{theorem}[任意の最小十本矢targetからの逆構成]
+\label{thm:qa-as10-inverse-all-targets}
+$\mathrm{AS}_{10}^{\mathrm{min}}$の
+\emph{任意の}元$A'$のrelation QPを
+頂点0で逆mutationすると
+square型のAS正則$\mathbb Z$-代数$n(A')$が得られ、
+そのavatarは$P\simeq GF^{-1}$を満たす。
+同じ逆操作は任意のcubic AS代数に対しても定義され、
+その像は$U_F$である。
+\end{theorem}
+\begin{proof}
+targetの有限foundationにおける
+二つの三次関係を
+$r_j=\sum_i c_{ij}x\alpha_i+h_j(\gamma,\beta,\alpha)$
+と書けば、relation potentialは
+$W'=yq+px+H_0$である。
+$\mathrm{AS}_{10}^{\mathrm{min}}$の
+頂点0はloopと2-cycleを通らない。
+逆premutationでは四本の合成矢$z_a$を追加し、
+そのうち一つを前補題の非零$p$とする
+基底を選べる。二次部分は階数一で、
+一組$(z_0,x')$のみがtrivialとなる。
+三角変数変換
+$x'=x+q_0+p_0$でその組を消すと、
+残るpotentialは
+\[
+ W_{\rm sq}=
+ yq+\sum_{a=1}^3z_a(q_a+p_a)
+\]
+となる。$y,z_1,z_2,z_3$は
+四本のrelation-dual戻り矢であり、
+反転した矢と$\beta,\gamma$はsquareの四辺になる。
+辺の内部次数を$(1,2,2,1)$、
+戻り矢を内部次数一とすれば、
+potentialは斉次次数四ですべての生成矢は正次数。
+補題~\ref{lem:qa-as10-keller-yang}の
+次数零集中と最小Jacobian分解の完全性は
+逆mutationにも適用できる。
+従って四本の関係は独立で、
+square型最小分解とAS--Gorenstein性を得る。
+DWZ mutationのinvolutivityにより
+再び前向きmutationすると元のtargetを回収し、
+square側の消去階数は三である。
+命題~\ref{prop:qa-as10-reduction}より
+$P\simeq GF^{-1}$。
+cubic targetの逆mutationでは
+二次pairingが零で四本の合成矢が残り、
+同様にsquare型と階数四の開$U_F$を得る。
+\end{proof}
+
+\begin{lemma}[全整数での評価と余評価の互逆性]
+\label{lem:qa-as10-all-index-mutual-inverse}
+square型の標準helixを$E_i$とし、
+$q\in\mathbb Z$に対し
+\[
+V_q=\Hom(E_{4q},E_{4q+1}),\quad
+0\to K_q\to V_q\otimes E_{4q}
+ \xrightarrow{\rm ev}E_{4q+1}\to0
+\]
+とする。
+$H_{4q}=K_q,\ H_{4q+1}=E_{4q},
+H_{4q+2}=E_{4q+2},H_{4q+3}=E_{4q+3}$
+と置くと、$H_i$はfull very strong helixで、
+$m(A)_{ji}=\Hom(H_i,H_j)$である。
+逆にcubic/最小十本矢targetの標準helixを$H_i$とし、
+\[
+W_q=\Hom(H_{4q},H_{4q+1}),\quad
+0\to H_{4q}\xrightarrow{\rm coev}
+ W_q^\vee\otimes H_{4q+1}\to M_q\to0
+\]
+とすれば、
+$E_{4q}=H_{4q+1}$、
+$E_{4q+1}=M_q$、
+$E_{4q+2}=H_{4q+2}$、
+$E_{4q+3}=H_{4q+3}$
+はsquareのfull very strong helixを与える。
+二構成は全整数にわたり互いに逆である。
+\end{lemma}
+\begin{proof}
+前向きevaluationの全射性は
+squareのcanonical完全列に従う。
+先行対象から$K_q$への高次Extに残り得る項は
+\[
+\operatorname{coker}\bigl(
+ V_q\otimes\Hom(E_a,E_{4q})
+ \to\Hom(E_a,E_{4q+1})\bigr)
+\]
+である。square quiverでは$4q+1$へ入る
+最小矢はすべて$4q$から来るので、
+道の分解によりこの写像は全射。
+逆方向のHomでは評価写像の単射性が
+高次Extを消す。
+$K_p,K_q$相互の消滅も
+同じ列と前述の全射性を繰り返して得られる。
+共通Serre関手から四周期性、
+評価列からfullnessを得る。
+有限foundationのHomの合成を計算すると
+命題~\ref{prop:qa-as10-reduction}の
+premutation/reductionの係数に一致し、
+全Z代数のSerre復元で$m(A)$を得る。
+
+逆向きの余評価の単射性は
+偶数終点のAS完全列の第一写像から従う。
+偶数頂点から出る最小矢は
+すべて次の頂点への二本なので、
+後続のHomはこの二本を経由して
+全射的に生成される。
+上と双対の計算で$M_q$の前向きExtは消え、
+fullnessと周期性が従う。
+最小十本矢の場合、$1\to3$のHom四次元のうち
+二段階合成の像$U$は三次元で、
+残る一次元は$x$の像である。
+非零$p$（補題~\ref{lem:qa-as10-nonzero-p}）により
+$H_1\to M_0\to H_3$の合成が
+$V/U$を生成する。
+したがって余分な$0\to3$最小矢は残らず、
+squareの四辺と四関係を回収する。
+cubicでは$U=V$なので同様である。
+
+evaluation列にHomを適用して
+$\Hom(K_q,E_{4q})\simeq V_q^\vee$と同定すると、
+その後の余評価は元の包含になり、
+余核は$E_{4q+1}$を回収する。
+逆に余評価列から出発すると次の評価のkernelは
+元の$H_{4q}$となる。
+すべての$q$に対する自然な同定なので、
+全Homと合成を保存して二構成は互いに逆となる。
+\end{proof}
+
+\begin{theorem}[独立ASクラスの全単射と十本矢avatar]
+\label{thm:qa-as10-global-bijection}
+指定したmutationによって
+\begin{equation}
+ \mathrm{AS}_{\rm sq}/\cong
+ \ \xrightarrow{\ \sim\ }\
+ \bigl(\mathrm{AS}_{c}/\cong\bigr)
+ \amalg
+ \bigl(\mathrm{AS}_{10}^{\mathrm{min}}/\cong\bigr)
+ \label{eq:qa-as10-global-bijection}
+\end{equation}
+が成立する。
+最小十本矢型のavatarは
+\begin{equation}
+ \mathrm{AS}_{10}^{\mathrm{min}}/\cong
+ \ \simeq\
+ \left\{(D,F,G,P)\in\mathrm{Av}_{\rm sq}
+       :G\simeq FP\right\}/\cong
+ \label{eq:qa-as10-avatar-locus}
+\end{equation}
+である。
+\end{theorem}
+\begin{proof}
+定理~\ref{thm:qa-as10-forward-as}が
+全square sourceから両ASクラスへの写像を与える。
+定理~\ref{thm:qa-as10-inverse-all-targets}は
+mutation像とは独立に定義した任意targetに
+逆構成を与える。
+補題~\ref{lem:qa-as10-all-index-mutual-inverse}が
+underlying$\mathbb Z$-代数としての互逆性を与える。
+二targetは最小矢数が異なり交わらない。
+第二のlocusは
+命題~\ref{prop:qa-as10-reduction}の
+$D_F=\{P\simeq GF^{-1}\}$と
+定理~\ref{thm:qa-as-avatar-bijection}による。
+曲線は滑らかでなくてもよいが
+二pencilの$(2,2)$閉埋め込みは必要である。
+すべての任意十本矢potentialが
+AS正則であるという結論ではない。
+\end{proof}
+
