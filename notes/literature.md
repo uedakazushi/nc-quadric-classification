@@ -1,7 +1,53 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-22（日本時間）。v1.69。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-22（日本時間）。v1.70。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 原稿C v3.0：avatar–AS分類の出典と外部入力
+
+**研究の直接の入力：** 大川新之介・植田一石、
+未公刊日本語草稿『非可換二次曲面の二つの反標準avatar』
+(`quadric_avatar_classification_parts_I_II_ja_20260916_v7.pdf`)。
+定義1.1–1.2、定理1.3、定義2.1、命題2.4、
+§§3–8、11–12の体上のsq/rsq分類を
+[CのAS-helix節](../papers/quiver-avatar/as_helix_classification.tex)に統合。
+定義48.1、補題49.1/命題49.2、定理50.1、51.2、51.4と系51.5、
+命題52.2、定理53.2の独立AS10・逆mutation・群oidと相対perfect条件は
+[Cのmutation節](../papers/quiver-avatar/as10_mutation_classification.tex)に統合。
+元PDFの証明を展開・編集したもので、過去の著者による既存草稿に対する
+新規な発見としての優先権を主張しない。
+
+**使用する外部一般定理と適用範囲：**
+- Okawa–Ueda, *AS-regular algebras from acyclic spherical helices*
+  (arXiv:2007.07620, 2020), **Theorem 5**：
+  acyclic spherical helixからexceptional helixへの実現。
+  Cでは曲線上のforward Ext消滅・canonical truncationを証明して適用する。
+- Bernhard Keller, *Deformed Calabi–Yau completions*,
+  J. reine angew. Math. **654** (2011), 125–180,
+  [DOI:10.1515/crelle.2011.031](https://doi.org/10.1515/crelle.2011.031)、
+  **Theorem 6.10のundeformed case**を有限大域次元2の
+  relation Ginzburgと3-CY completionの比較に用いる。
+  一般のdeformed completionについて訂正文があるため、
+  Cの適用をundeformedに限定する。
+- Bernhard Keller–Dong Yang, *Derived equivalences from mutations of
+  quivers with potential*, Adv. Math. **226** (2011), 2118–2168,
+  [DOI:10.1016/j.aim.2010.09.019](https://doi.org/10.1016/j.aim.2010.09.019)、
+  **Theorem 6.2**をloop/2-cycleを通らない指定頂点のmutationに適用。
+  dg由来同値だけからAS正則性を言わず、
+  Ginzburgの次数零集中と単純最小分解の完全性を確認する。
+- Twisted homogeneous coordinate ringの標準Noether定理を
+  ASから得る四次正規正則familyの商に用いる。
+
+**区別：** 12本矢は8本のfinite foundation矢＋4本の
+relation-dual戻り矢であることが多く、
+12本矢QPであることだけから独立ASクラスの分類は従わない。
+元草稿§43のP(1,1,2)の例はmutation局所仮定の不成立を示す。
+Cの分類定理は体上の頂点保存AS代数の同型類についての結果。
+`Qgr`のO-marked pointed同値と全基底上の無条件相対ASスタック同値は
+他の認識入力を要する。
+上記書誌識別子・原PDF中の引用箇所を確認したが、
+外部論文の証明全体・版ごとの全仮定の独立照合、
+網羅的優先権調査は未完了。
 
 ## OU2014 §4–5：座標置換群と楕円四つ組の一次資料
 
