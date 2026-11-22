@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / 相対square完成と実際のtails認識。
+% 2026-11-23 / v1.1。非先頭構造対象のAZと一般End環の有限性を再監査。
 \section{相対square完成のAS解消とtails認識}
 \label{sec:qa-relative-square-completion}
 
@@ -77,7 +77,10 @@ heart 上完全で $R$-線形である．従って $t^{-1}E$ も基底平坦で�
 \begin{proposition}[有限個の平坦対象を加えた相対AZ生成]
 \label{prop:qa-relative-flat-foundation-az}
 $\mathcal C,\mathcal O$ を相対 $H_2$ 族とし，
-$E_0=\mathcal O,E_1,\ldots,E_r$ を基底平坦 compact な heart 対象とする．
+$E_0,\ldots,E_r$ を基底平坦compactなheart対象とし，
+ある$a\in\{0,\ldots,r\}$について
+$E_a\simeq\mathcal O$と仮定する．
+構造対象が直和の先頭にあることは要求しない．
 各 affine 基底変更の共通 fppf 局所 chart 上で前補題の有限 Morita
 表示があり，そこで各 $i$ に対し
 \[
@@ -93,7 +96,12 @@ $E_0=\mathcal O,E_1,\ldots,E_r$ を基底平坦 compact な heart 対象とす�
 \end{proposition}
 \begin{proof}
 $(\mathcal O,t)$ は論文Bの相対反 Serre 再構成により AZ ample であり，
-$\mathcal O$ は $T$ の直和因子なので生成条件 AZ1 は直ちに従う．
+$\mathcal O$は$T$の直和因子である．
+任意のcoherent対象$K$への有限個の$t^{-m}\mathcal O$
+の全射は，各$t^{-m}\mathcal O$を
+$t^{-m}T$の直和因子として含めることで
+有限個の$t^{-m}T$からの全射に拡張できる．
+よってAZ1が成立する．添字$a$の値は関係しない．
 
 まず上記の局所 Morita chart 上で議論する．AZ2 のため，任意の
 coherent 対象 $K$ に対して
@@ -116,13 +124,18 @@ coherent 対象 $K$ に対して
 \]
 となる．さらに $t^{-n}E_i$ は基底平坦 compact なので，前補題から
 $\operatorname{Ext}^3(t^{-n}E_i,L')=0$ である．
-二つの長完全列により
+二つの長完全列の連結射から
 \[
  \operatorname{Ext}^1(t^{-n}E_i,K)
-  \hookrightarrow\operatorname{Ext}^2(t^{-n}E_i,L)=0
+  \hookrightarrow\operatorname{Ext}^2(t^{-n}E_i,L)
+  \hookrightarrow\operatorname{Ext}^3(t^{-n}E_i,L')=0
 \]
 を得る．これが式~\eqref{eq:qa-flat-foundation-ext-one-vanish} である．
-任意の全射の kernel にこの消滅を適用すれば AZ2 を得る．
+任意の全射$M\twoheadrightarrow N$のkernel $K$に
+この消滅を適用すると，長完全列から
+$\operatorname{Hom}(t^{-n}E_i,M)\to
+\operatorname{Hom}(t^{-n}E_i,N)$が
+$n\gg0$で全射となる．これがAZ2である．
 各 $i$ は有限個なので，一つの十分大きい $n$ を選べる．
 
 一般の affine noetherian 基底 $\operatorname{Spec}R$ 上の AZ2 を確認する．
@@ -160,12 +173,54 @@ $\operatorname{Ext}^1(E,P)=
 最後の消滅には平坦compact始域の
 補題~\ref{lem:qa-flat-compact-ext-two}を使い，
 基底の絶対大域次元二は仮定していない．
-従ってこれは反対normalの第一頂点が
+従って非先頭構造対象の場合も命題の仮定そのものに含まれる．
+これは反対normalの第一頂点が
 強い$H_2$ pointingでなくても，
 他の頂点に適合構造対象を含む場合に適用できる．
 ただし全ての候補対象が\emph{同じ相対heart}の
 基底平坦compact対象であることは別途確認しなければならない．
 \end{remark}
+
+\begin{lemma}[非先頭構造対象でのArtin--Zhang再構成の環論的仮定]
+\label{lem:qa-relative-az-endring-finiteness}
+前命題の仮定を満たすNoetherian
+affine基底$S=\operatorname{Spec}R$で，
+$\mathcal C_S$はNoetherianなAbel圏とする．
+全coherent対象$K$について
+$\operatorname{Hom}(E_i,K)$が有限$R$-加群であるとする．
+このとき$T=\bigoplus_iE_i$について
+\[
+ A_0=\operatorname{End}_{\mathcal C_S}(T)
+\]
+は右Noetherianで，
+$\operatorname{Hom}(T,K)$は有限右$A_0$-加群である．
+従ってArtin--Zhang
+\cite[Theorem 4.5(1)]{AZ1994}
+（非可換$A_0$を明記した定式化は
+\cite[Theorem 7.3]{OACU2026}）の条件が揃い，
+$\bigoplus_{n\ge0}\operatorname{Hom}(T,t^nT)$
+は右Noetherian，かつその$qgr$は
+$\mathcal C_S$と完全同値になる．
+これは本稿の局所有限型site内のNoetherian affine
+testに対する結論であり，
+任意の非Noetherian係数環上のstrong Noetherian性は含まない．
+\end{lemma}
+\begin{proof}
+$T$は有限個のcoherent対象の直和なのでNoetherianである．
+$A_0=\bigoplus_{i,j}\operatorname{Hom}(E_i,E_j)$は
+有限$R$-加群であり，$R$は単位元を通じて
+$A_0$の中心に作用する．
+任意の右$A_0$-イデアルは有限$R$-加群の部分加群なので
+有限$R$-生成である．
+その生成元は同時に右$A_0$-生成元となるため，
+$A_0$は右Noetherianである．
+$\operatorname{Hom}(T,K)$も有限$R$-加群だから
+同様に有限右$A_0$-加群である．
+前命題のAZ1とAZ2を加えると，
+引用した再構成定理のNoetherian対象・
+NoetherianなEnd環・有限coherent Hom・
+ample自己同値という全仮定を満たす．
+\end{proof}
 
 \subsection{相対square完成の標準tails心}
 \label{subsec:qa-relative-square-tails-heart}
@@ -216,8 +271,10 @@ $(T,t)$ は相対 AZ ample である．
 \[
  R(T,t)=\bigoplus_{n\geq0}\operatorname{Hom}(T,t^nT)
 \]
-に対し，$\operatorname{End}(T)=\Lambda$ は右 noetherian であり，
-全 coherent Hom は有限 $R$-加群なので有限 $\Lambda$-加群でもある．
+に対し，補題~\ref{lem:qa-relative-az-endring-finiteness}
+により$\operatorname{End}(T)=\Lambda$が右Noetherianで，
+全coherent $K$について$\operatorname{Hom}(T,K)$は
+有限$\Lambda$-加群となる．
 一般の End 環に対する Artin--Zhang 再構成を適用すると，
 $R(T,t)$ の右 noetherian 性と
 \[
