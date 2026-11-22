@@ -1,6 +1,67 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.74（A v1.69・20節、B v0.35・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.75（A v1.69・20節、B v0.36・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 同じ Serre 根の中央 AS4 被覆：有限条件から全次数へ
+
+論文Bの lem:spread-local-central-hull の入力は、
+有限型基底上の相対Koszul軌道環$B$、
+$E=B^!$の全次数projectivity、特定点の局所環で
+**実際に選んだ同じSerre根に対応する**中央正則二次元
+$\phi_{\mathfrak p}\in(E_{\mathfrak p})_2$、
+および$P_{\mathfrak p}=E_{\mathfrak p}/(\phi_{\mathfrak p})$の
+Frobenius階数列$(1,4,6,4,1)$である。
+別のrootの中心二次元を仮定から無断で取り込まない。
+
+相対Koszul性と$\operatorname{rank}B_n=(n+1)^2$から
+\[
+ h_B(z)=\frac{1+z}{(1-z)^3},\quad
+ h_E(z)=\frac{1}{h_B(-z)}=\frac{(1+z)^3}{1-z}.
+\]
+$E_n$の階数は$1,4,7,8,8,\ldots$。
+$\phi$が正則なら
+$(1-z^2)h_E(z)=(1+z)^4$となり、
+$P$は$(1,4,6,4,1,0,\ldots)$、双対$A=P^!$は
+$h_A(z)=(1-z)^{-4}$を持つ。
+この三角のHilbert恒等式はPythonの整数係数で第12次まで独立検算した。
+数値の一致単独で正則性やKoszul性を証明したとは主張しない。
+
+有限型延長の核心は、
+(1) $\phi_{\mathfrak p}$を$E_2$から一つの主開へ延長し、
+一次生成空間$E_1$との有限個の交換子を同じ主開で零にする。
+(2) $P_n$ ($n\le4$)の局所自由性、$P_5=0$と
+Frobenius pairingsの非退化性は有限個の開条件。
+$P$は次数一生成なので$P_5=0$は$P_{\ge5}=0$を含意する。
+(3) 補題 lem:spread-central-regular-line により、
+$E$は中央変数$t$（$\deg t=2$, 作用は$\phi$）の
+多項式環$R[t]$上で、$P_0,\ldots,P_4$のliftから有限生成される。
+核$K=\ker(E(-2)\xrightarrow{\phi}E)$もNoetherianな$R[t]$上有限生成。
+$K_{\mathfrak p}=0$から有限個の生成元の分母を同時に払えば
+一つの主開で**全次数の核**が零。
+(4) 各短完全列はprojectiveな$P_n$により基底上分裂するため、
+任意の非平坦基底変更後も中央正則性が保たれる。
+
+Koszul性は別入力を要する。
+全幾何fiberの$E$は先に相対Koszul性からKoszulと分かり、
+$\phi$は中央正則二次元と分かったので、
+Shelton–Tingey, J. Algebra 241 (2001), 789–798,
+doi:10.1006/jabr.2001.8781の
+「Koszul代数のregular normal quadratic quotientはKoszul」
+を適用する。刊行版のabstractでこの定理の内容を確認した。
+次に相対Koszul変形原理とFrobenius pairingで
+$P$と$A=P^!$の相対Koszul/AS4型を得る。
+$\phi$の中央性は$A$側の二次切断$g$の中央性を与え、
+$A_{n-2}\xrightarrow{g}A_n\to B_n\to0$は
+projectiveでHilbert階数が一致するため分裂完全となる。
+Noetherian性は中央正則切断の次数有界なフィルトレーションから
+$B[g]$へ帰着する。これらはBの証明本文を相互依存まで監査した結果であり、
+関連するKoszul変形定理の全証明の独立再検証や形式証明ではない。
+
+**再開重点。** finite-type局所族が実際の
+内在的$\mathfrak H_2$の全公理を満たす段階で、
+境界横断Artin持上げ、指定pointed同型のlift、
+smooth finite-type atlasとX_asの降下を再検証する。
+公開前の三稿sourceチェッカー・LuaLaTeX組版も未実施である。
 
 ## cubic二開と$I$進完備化による普遍Noetherian貼合せ
 
@@ -44,8 +105,9 @@ $\bigoplus C_n\otimes_R\widehat R_I$を用い、
 lem:spread-central-regular-lineでは、
 $P=E/(\phi)$の$P_5=0$と次数一生成性により$P_{\ge5}=0$、
 $E$が$R[t]$上有限生成、乗法核も有限生成となる。
-全次数kernelを一つの分母で消す論理と、その後の
-Frobenius・Koszul双対の全基底変更を次に独立点検する。
+全次数kernelを一つの分母で消す論理とFrobenius・Koszul双対の
+基底変更は本ノート冒頭の中央AS4節に条件と依存関係を整理した。
+次は相対H2のArtin持上げとsmooth finite-type atlasの効果性を点検する。
 
 ## 相対Clifford閉部分のPBWと普遍Noetherian降下
 
