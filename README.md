@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v1.04、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.8。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v1.05、論文A v1.69、論文B v0.39（依存・組版の監査中）、論文C v2.9。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、**論文C**で一般cubic領域のquintuple/potential GITと内在的H2の相対比較、その忘却ファイバーと慣性、境界への延長を研究すること。Bは標的となる内在的Artinモジュライの定理を供給し、GIT比較の証明を重複させない。Cのheart/AS適合性とGIT compactification全体への射の未完成な範囲を区別する。
 
@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.8。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **O-marked quadric・potential・反標準avatarの同型類全単射／相対射** | v2.9。smooth cubic VdB↔squareの明示式、O保存r1商、OU potential一般4/8次を保持。**noncubic全幾何点**の二根対↔smooth/nodal/I2 square 2torsion avatar↔O-marked全単射を証明。Bの中央二重平方環の可換点曲線からspectral coverとrank-one torsion-free moduleへの相対射も構成。共有根A1で可逆Picard線束への相対延長が不可能な反例を明示。元AS avatar qgrのheart認識、Σ2 elementary transformと全potential groupoidは未解決 | 全noncubic幾何型はΣ₂上の反標準因子D∩S=∅と非零Pic⁰(D)[2]の同型類にも全単射。原AS心の直接同定・相対Picard線束射は未解決 |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -29,14 +29,35 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 ただし、元の全AS正則Z代数のNoether性、元のO-marked heartの直接同値、
 非被約底を含む全AS相対分類を、この追加だけで証明したわけではない。
 
-**新しい研究結果：** [共有根A1の最小解消上の奇偶障害](papers/quiver-avatar/nodal_resolution_obstruction.tex)。
-相対spectral反不変moduleを解消上で可逆化すると、
-例外P¹上の次数は1であり、既約nodal特殊曲線の垂直Cartier twistでも奇数に保たれる。
-ゆえに`同じ一径数基底でA1を最小解消するだけ`では、
-通常の多重次数零の相対Picard line-bundle avatarは構成できない。
-底変更・compactified Picard・相対モデル変更の可能性は残る。
-[局所恒等式の再現コード](computations/verify_nodal_exceptional_parity.py) はmath suiteに登録。
-Cの相対心の直接認識と8/10/12矢の全potential groupoidはなお未解決である。
+**相対 spectral 境界の現在の結果（C v2.9）。**
+[共有根の局所解析・二次積欠損・三型の正規化極限](papers/quiver-avatar/nodal_resolution_obstruction.tex)を
+本文の定理・証明として保持する。共有根A1の最小解消上では
+反不変moduleの可逆化の例外次数が1で、垂直Cartier twistでも奇偶は変わらない。
+従って同じ一径数基底の最小解消だけでは、多重次数零の相対Picard線束にはできない。
+
+一方、全二形式族（非被約基底を含む）には
+$\mu:M\otimes M\to O_C$ という積があり、
+$\operatorname{im}\mu=(f_1,f_2,y)$、
+$\operatorname{coker}\mu=O_{V(f_1,f_2)}$ は任意基底変更と可換。
+smooth/nodal/I2幾何型の欠損長は $0/1/2$。
+各幾何fiberの $M$ は自己双対だが、nodalでは
+$\nu_*O_{\mathbf P^1}(-1)$、I2では二つの
+$O_{\mathbf P^1}(-1)$ の正規化直像であり、後者は
+$\operatorname{End}(M)=k^2$ の**非単純層**である。
+曲線を固定し積を保存した自己同型はsmooth/nodalで$\mu_2$、
+I2で$\mu_2^2$となる。
+したがって単純層のfine compactified Picardだけを相対射の標的に選ぶことはできない。
+**次の焦点は $(C,M,\mu)$ を保つ相対groupoidと内在的O-marked境界の慣性・変形比較**、
+および$ \Sigma_2 $への相対elementary transformとAS heartの同定である。
+
+[局所関係式のSymPy検算](computations/verify_nodal_exceptional_parity.py)に
+平方積の導出・三型の共通根数0/1/2の検査を追加した。
+計算は有限多項式恒等式の確認であり、相対groupoidの同値や
+論文A/B/Cの全証明を検証したものではない。
+compactified Jacobian の既知の一般理論は
+Altman--KleimanとChrist--Payne--Shenを参照し、
+明示的な積欠損との新規性の包括的照合は未完了。
+C全文のLuaLaTeXビルドも未確認である。
 
 ## 論文Bの証明監査と再現
 
