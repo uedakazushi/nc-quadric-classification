@@ -1,6 +1,77 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.79（A v1.69・20節、B v0.39・31節、C v0.4）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.80（A v1.69・20節、B v0.39・31節、C v0.6）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 論文Cの現行結果：一般cubic比較射・OU次数四・Picard半点
+
+比較の定理と十分な証明は論文Cの
+papers/quiver-avatar/git_comparison.tex に一括して収録した。
+ここには再開に必要な関係と未解決点のみを記す。
+
+**OU次数四の群論。**
+OU2014 §5 (5.8) ではpotential GITからquintuple GITへの射を
+P³/S3 → P³/(S3⋉(Z/2)³) と記述する。
+射影空間の同時符号反転を除くと有効な符号群は
+Γ=F₂³/<(1,1,1)>≅F₂²で、S3はΓの非零三元を置換する。
+従って有効全群Γ⋊S3=AGL₂(F₂)≅S4、
+S3は原点安定化群（index4、core自明）。
+一般座標の安定化群は自明なので関数体の次数四拡大は
+非Galois、Galois閉包群はS4。
+実際の有限群計算はcomputations/verify_ou_fourfold.pyにあり、
+24のaffine置換と位数6の安定化群を独立Pythonで検算した。
+
+**相対Picard根の幾何点。**
+Bのlem:picard-halvesにおけるT=S×_(N,Pic0,[-2])Pic0はétale全射。
+smooth ellipticならE[2]四重torsor、既約nodalならPic0=Gmで2点、
+既約cuspidalならPic0=Gaで1点である。
+同一連結基底にsmoothとnodalがあればT→Sは
+全体に有限étale次数4にはなれない。
+これはPicard根の相対表示についての結果で、
+OU GITの境界sheetの個数ではない。
+
+**OU楕円四つ組との明示対応。**
+OU2014 §4 (4.12),(4.13) の
+(E,O(2o),O(2z1),O(2z2))では
+N=L2 L0^-1=O(2z2−2o)。
+よってa^-2=Nの全根は a=O(o−z2)⊗ξ, ξ∈E[2]。
+OUのbirational楕円一様化のz2平行移動E[2]因子が
+この四つのPicard根そのものとなる。
+OU §5のpotential→quintupleの次数4射が
+これと同じ被覆であるとはまだ示していない。
+smooth elliptic相対族ではPicard根のtorsor classは
+δ_[-2](N)∈H¹_et(S,E[2])である。
+OUの有効符号局所系を同じ基底のE[2]に同定した後は、
+二つのH¹ classを比較すれば同型・非同型が決まる。
+
+**実際の相対群oid射を構成済み。**
+非線型geometric quintupleの表示開S上の
+普遍cubic Z代数DからC_ij=D_{-j,-i}とする。
+Bのprop:general-cubic-canonical-tailsで、二周期を選ぶ前から
+(qgr C,π e0 C)と相対heart・module-object底変更が基底上にある。
+BのPicard étale根chartで構成するSerre平方根βと
+Bのthm:geometric-cubic-relative-effectivityによるAS4被覆は、
+この基底上で既にあるpointed族がH2の公理を満たす
+fppf局所的なwitnessであり、H2の標識ではない。
+従ってquintuple表示スタック→H2の実際の相対射を根なしで構成する。
+生の表示のGm⁴慣性はZ代数の頂点共役でpointed恒等に落ちるので、
+剛体化した表示スタックからの相対射へ因数分解する。
+その表示スタックは16−(17−4)=3次元smoothで、
+標的H2もsmooth純三次元。これはétale性やfiberの濃度を証明しない。
+同一quintupleのPicard根四つはH2の異なる四対象ではなく、
+全て同じ相対tails対象のwitnessである。
+Cのthm:qa-geometric-cubic-relative-forgetting と
+cor:qa-quintuple-rigid-dimensionに証明を保持する。
+
+**未解決の核心と次の作業。**
+OU §5の一般四重sheetをOU §4楕円四つ組へ引き戻し、
+z2平行移動のE[2] torsorとmonodromy・Kummer classを
+実際の座標で比較する。
+その後、剛体化表示→H2の慣性群写像、微分、
+ruling/四項窓のpointed fiberを計算する。
+一般群oidの剰余集合と相対慣性核の公式はCに既証明。
+OUの次数4＝H2忘却の次数とは仮定しない。
+AのLuaLaTeX成功はユーザー手元で確認、B/Cの組版、
+全証明独立監査・包括的新規性比較は未実施。
 
 ## 論文C：既存GITと内在的H2を比較する際の慣性核とファイバー
 
