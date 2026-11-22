@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.56。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.45。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.57。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.47。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は論文C（AS正則Z代数・avatar・H2・QP/GIT比較）の完成である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
@@ -10,7 +10,7 @@
 
 **Cの達成基準と現行判定：** (C1) 8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲：**原稿上達成**。(C2) 全H2 good moduliの不変式・中央affine・noncubic・局所特異性：**原稿上達成**。(C3) 最大の明示的な比較開上でAS/QP・avatar・pointed H2のgroupoid・慣性・right-equivalence・heartと障害を決定：**H2の相対実現可能開全体について、二mass十二矢QP→finite foundationの全局所Isom、相対対角解消、ordinary Jacobian=H0Π3=canonical Serre完成、全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とcoherentなruling mutation商を原稿上で達成**。H2外の任意AS/avatar/QP stack全体の分類は未完成で、H2の比較と区別する。(C4) 全論文の独立証明監査、一次文献の網羅的比較、LuaLaTeX全稿PDF・SyncTeXと表示：**未完了**。C1–C3の「原稿上」とC4の独立検証を取り違えず、C4未達成の間は論文C全体を完成扱いにしない。
 
-**次の優先課題：** 論文CはC1–C3について全$H_2$実現可能開の有限foundation・二mass QP/Jacobian/Serre・pointed heart・ruling剛体化を原稿上証明し，C4の公表前独立監査・文献比較・全稿組版が残る。C3の左Noether性は反対squareのdual heartを使用して修復済み。反対normalの零番が強い$H_2$に属さない一重rank3反例（`prop:qa-q12-opposite-normal-rank-three-obstruction`）を保持し，逆順双対normalの第二直和因子$Q_0=\mathcal O$をAZの基準とする。**今回その一般AZ命題の仮定自体を$E_a\simeq\mathcal O$（$a$は任意の位置）に訂正**し，二重presentationによるAZ2の二つの単射，平坦compactに対するExt$^{>2}$消滅，一般End環$\operatorname{End}(T)$の有限$R$-加群性からのNoether性，coherent Homの有限性を全て明示した（[相対AZ本証明](papers/quiver-avatar/relative_square_tails_recognition.tex)）。Artin–Zhang原著と2026年の一次再録Theorem 7.3の仮定を照合（[文献比較](notes/literature.md)）。さらに古典$\PP^1\times\PP^1$では$Y=(\OO(0,-1),\OO,\OO(1,0),\OO(1,1))$と記述し，第二項が構造対象であること・全Ext消滅・階数$64n^2+64n+24$を独立に検算（[C3例](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)，[コード](computations/verify_q12_diagonal_euler.py)）。Cの全42分割節について主要TeX環境対応・各節内ラベル重複を静的確認し，主原稿を含む計235件の引用キーは全てbibの90キーに存在する。GitHubで取得した `computations/verify_q12_diagonal_euler.py` のblob SHA `8b5d72e6ce31792a665781b4ca560207d9b4a99d` とローカル実行ファイルがbyte一致し，16頂点対Euler・全次数Serre多項式・古典dual-normalの非先頭$Q_0$とExt消滅の検算が全PASSとなった。他コードの現行byte同一実行や全suiteは未確認。**全ファイル横断の参照解決・LuaLaTeX全稿/PDF/SyncTeX表示・包括的数学監査・網羅的新規性調査は未完了**。反対normalの相対heart内性については，相対評価cone $F=\operatorname{Cone}(\operatorname{Hom}(E_0,E_1)\otimes E_0\to E_1)[-1]$を先に構成し，$F_{\bar s}\simeq(t^{-1}Z_1)_{\bar s}$を基底上の線束値比較$L\otimes F\simeq t^{-1}Z_1$に持ち上げた。双対化した$\mathbb DF$は反対squareのnormal cone $Z_2^\vee$に相対的に同型，従って$\mathbb D(t^{-1}Z_1)\simeq Z_2^\vee\otimes L^\vee$と判明した（[相対評価cone補題](papers/quiver-avatar/relative_rotated_mutated_tails.tex)）。幾何fiberの短完全列を無条件に非被約底のheartの短完全列へ昇格させる推論を避けた。さらに全頂点可逆層変更$E_i'=E_i\otimes M_i$に対して$F',H'$が共に$M_1$で捩れ，$L'=\mathbf RHom(F',H')\simeq L$は不変，反対側の$K',Z_2^{\vee\prime}$は共に$M_1^{-1}$で捩れるため，この範囲のfppf三重重なりcocycleを厳密に確認した（[頂点線束の降下系](papers/quiver-avatar/relative_rotated_mutated_tails.tex)）。次は頂点線束以外の全frame・QP IsomとSerreの2自然性を独立監査し，C4の全稿参照・組版を完了させる。$H_2$外の全AS/avatar/QP stack比較は独立の後続課題。研究repoのmain保存後にhubを更新する。
+**次の優先課題：** 論文CのC1–C3は、全$H_2$実現可能開上のfinite foundation・二mass QP・Jacobian/Serre・同じpointed heart・二段剛体化とruling $S_2$商について原稿上到達した。C4の数学的独立監査・包括的文献比較・全稿組版は未完。反対normalの零番が強い$H_2$ pointingでないrank3反例を保持し、反対squareのheart内の逆順双対normal四項$Y=(\mathbb DZ_1,Q_0,Q_1,Q_3)$の第二頂点$Q_0$をAZ基準として左Noether性を証明済み。相対評価cone$F=\operatorname{Cone}(\operatorname{Hom}(E_0,E_1)\otimes E_0\to E_1)[-1]$と$H=t^{-1}Z_1$には可逆層$L=\mathbf RHom(F,H)$があり、$L\otimes F\simeq H$、$\mathbb DF\simeq Z_2^\vee$、$\mathbb DH\simeq Z_2^\vee\otimes L^\vee$が相対的に成立する。**今回さらに、有限square foundationの全頂点固定Isom**がevaluation・coevaluation・相対Serre・perfect双対・$L$をcoherentな2自然同型で移すことを原稿上証明した（[全Isom自然性](papers/quiver-avatar/relative_rotated_mutated_tails.tex)）。QPのmass kernelと関係lift shearはfinite foundation上恒等なので、この心の比較に余計な慣性は作用しない。頂点scalarsの線束重みと三重cocycleも直接制御済み。**C4静的監査：** C主原稿＋42節（計43 TeXファイル）で818個のラベルは全て一意、868件の横断参照は全て解決、235件の文献引用もbib90キー内にある。禁止Unicode数式矢印1箇所を修正し、ラベル・参照・引用集合の不変性を再確認した。[C3の実証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。この証明は$H_2$外のraw QPの全Isom分類や異なるrulingの単一right-equivalenceを含まない。次は相対心の$t$-exact性と2自然性の残余監査、一般raw QP表示・ruling商との適用範囲の比較、C4の一次資料網羅とLuaLaTeX/PDF/SyncTeX表示。現行環境ではDNS制約により全checkoutと組版を実施できず、GitHubのソースを直接取得する横断静的監査を行った（scripts/check.py papersの実行と区別）。対象mainを保存してからhubを更新する。
 
 
 ## Cの現行実行単位
@@ -354,13 +354,13 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**最優先は論文CのC3残部の独立検証とC4完成。** C1–C3の$H_2$実現可能開上のQP/foundation/Serre/pointed heart比較と二ruling商は原稿上成立し，反対normalの不適合反例を使って左Noetherの誤った証明経路を修復した。これらを外部査読済み・形式証明済みとは扱わない。
+**最優先：論文CのC3残部とC4公表用検証。** 全$H_2$開のQP/foundation/Serre/heartとruling商は原稿上の主結果であり、C4全監査は未完了。
 
-1. **非先頭構造対象を用いるAZと左Noetherの最終監査。** 修正済み `prop:qa-relative-flat-foundation-az` の仮定（$E_a=\mathcal O$は任意$a$），二段presentationのExt$^1\hookrightarrow$Ext$^2\hookrightarrow$Ext$^3=0$，補題 `lem:qa-relative-az-endring-finiteness` の有限End/Homと一次定理仮定を独立に再点検する。反対normalの同じheartへの所属は `lem:qa-dual-normal-relative-evaluation-cone` で新しく構成した相対評価coneを入力に，$\mathbb DF\simeq Z_2^\vee$と$\mathbb D(t^{-1}Z_1)\simeq Z_2^\vee\otimes L^\vee$へ還元した（原稿上証明済み）。頂点可逆層によるframe変更は `cor:qa-dual-normal-vertex-line-descent` のcanonical Hom/tensor縮約で厳密cocycleまで処理済み。次は一般QPの非頂点自己同型・全IsomとSerre/t-exactnessの整合性を点検する。古典モデルは検算であり境界の相対証明の代用にしない。
-2. **全Isom・rulingの整合。** short/long relationの全frame・mass/shearの半直積と線束値群，二段rigidification，strict square/opposite/S₂作用，pointed heartの貼合せの全2-cocycleを再点検する。$H_2$外にある反対normal零番のpointingを復活させない。
-3. **C4の実行検証と先行研究。** 全42節で主要環境対応・各節内ラベル重複なし，計235の引用キーが90 bib keyに存在することを現行ソースから静的確認済み。次は全ファイル横断のラベル・参照，`python3 scripts/check.py papers`，Cのsources/build，LuaLaTeX全稿PDF/SyncTeX・ページ表示を検証する。Artin–Zhang（原著本文未取得，2026年刊行再録Theorem7.3の一次本文で仮定を確認），Keller/VdB/Alper等の重要主張の一次仮定とIntroductionの貢献を照合する。実行環境でできない検査を完了扱いにしない。
+1. **全Isomの相対heartへの降下。** prop:qa-dual-normal-all-square-isom-naturalityは全finite square Isomの評価cone・Serre・dual-normal比較の2自然性を証明。QP mass/shearのfinite foundation像は恒等、頂点scalarsは可逆層捩れ。次は一般raw QP表現（$H_2$外は別問題）・二ruling mutation商と実際の$t$-exact pointed heartへの同型層比較がどこまで成立するかを監査する。全QPのright-equivalenceをruling交換の代用にしない。
+2. **左Noetherと双対heartの残余依存。** rank3の反対normal零番のpointing障害、正しいdual square heart内の$Y$、例外可逆層$L$、非先頭$Q_0$、相対AZ2の二重presentation、有限End/HomによるAZ再構成は原稿上証明済み。次は相対SerreのMorita自然性、特異基底の$D(\operatorname{Ind}\mathcal C)$と局所compactの扱い、fppf heart降下と既知の引用仮定を独立監査する。
+3. **C4の実行検証。** C主原稿＋42節の818ラベル一意・868参照全解決・235引用がbib90キー内、TeX主要環境対応・各節内重複なしの静的検証を実施。禁止Unicode数式矢印を修正。次はrepoを取得できる環境で python3 scripts/check.py papers と python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex を実行し、LuaLaTeX PDF/SyncTeXと目視表示を確認する。Artin–Zhang/OACU、Keller訂正、VdB、Alper等の一次資料とIntroductionの新規性を再確認する。現環境のDNS制約による全checkout不可・組版未実施を正確に記す。
 
-研究A・Bの既証明分類はCへの論理的入力として必要な範囲で監査する。H2外の一般AS/avatar/QP表示stack・別heart・根忘却の全分類は後続課題である。
+H2外の一般AS/avatar/QP表示stack・別heart・根忘却は後続の独立課題。既証明のA/B結果を根拠のない未解決課題に戻さない。
 
 ## 7. 正本・依存関係・再開
 
