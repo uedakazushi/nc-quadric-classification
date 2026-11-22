@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.04。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.8。
+2026-11-22 / v1.05。論文Aはv1.69（20節）、論文Bはv0.39（31節）、論文Cはv2.9。
 
 ## 公表用三論文への再編（確定方針）
 
@@ -16,8 +16,16 @@ finite directed foundationのscheme復元を `papers/quiver-avatar/square_rotate
 共有根A1の反不変moduleを同じ基底上で最小解消すると例外曲線への次数が奇数となるため、
 垂直Cartier twistだけでは多重次数零の相対Picard線束にできない
 （`papers/quiver-avatar/nodal_resolution_obstruction.tex`、検算は `computations/verify_nodal_exceptional_parity.py`）。
-次はこの障害を避ける正確なbase change / compactified Picard / 相対elementary transformを研究し、
-原AS avatarのqgr heartとpointed O-markingの直接比較を証明する。
+さらにCの現行節では、任意基底の二形式族についてspectral反不変層$M$の
+二次積$\mu:M\otimes M\to O_C$の像$(f_1,f_2,y)$、欠損余核$O_{V(f_1,f_2)}$
+と任意基底変更への適合を証明した（幾何fiberで欠損長0/1/2）。
+nodalの極限は$\nu_*O_{\mathbf P^1}(-1)$（単純）、
+I2は二つの$O(-1)$の正規化直像（非単純・End $k^2$）で、
+積を保つ曲線固定自己同型群はそれぞれ$\mu_2$、$\mu_2^2$。
+**simple/fine compactified Picardのみを相対標的に選ばない。**
+次は二次積を持つ全rank-one torsion-free groupoidの正確な定義、
+被約・非被約基底の慣性と変形、元H2境界とAS heartのpointed比較、
+およびbase change / 相対elementary transformを研究する。
 証明済みの体上全単射を非被約底の相対射へ読み替えない。
 
 現行作業順序は研究方針のP0–P5（A/B公表前監査、文献比較、既存GITとの比較、C相対認識）を優先する。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
