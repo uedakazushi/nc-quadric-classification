@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v2.8
+% 日本語 LuaLaTeX。2026-11-22 / v2.9
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -54,7 +54,7 @@
 \title{非可換二次曲面の八本・十本・十二本矢表示：\\
   既存GITとの比較と内在的忘却}
 \author{}
-\date{2026年11月22日\quad v2.8（square/rotatedの幾何的自足化とA1奇偶障害）}
+\date{2026年11月22日\quad v2.9（spectral積欠損・正規化極限・慣性）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -95,6 +95,16 @@ $E_f\to C_q$とrank-one torsion-free反不変module$M$への
 可逆化は例外$\PP^1$上に奇数次数（自然な可逆化では次数1）を持つ。
 元の基底での垂直因子twistではその奇偶は変わらず、
 通常の多重次数零の相対Picardには最小解消だけで移れない。
+一方、反不変moduleの積$\mu:M\otimes M\to\OO_C$の像は
+$(f_1,f_2,y)$で、余核は二根対の共通零点の構造層である。
+この式は非被約基底を含む任意の基底変更と可換し、
+smooth/nodal/$I_2$で欠損長は$0,1,2$となる。
+各幾何fiberでは$M\simeq M^\vee$だが、
+nodal極限は$\nu_*\OO_{\PP^1}(-1)$、
+$I_2$極限は二つの$\OO_{\PP^1}(-1)$の正規化からの直像となる。
+$I_2$では$M$自体の自己同型群が$\Gm^2$となり、
+通常のsimpleなfine compactified Picardには入らない。
+二次積を保持した固定曲線上の慣性は$\mu_2^2$に縮小する。
 従って、体上全単射、torsion-free spectral相対射、
 元の可逆Picard avatarへの相対射を明確に区別する。
 古典Picard零切断の重複、wallの次元差、
@@ -225,7 +235,9 @@ potentialを選ばない一般quintupleから内在$\HHstack$への
 第~\ref{sec:qa-self-contained-helix}節で自己完結に証明し、
 同型類・相対spectral射の証明は
 第~\ref{sec:qa-avatar-charts}節に置く。
-共有根の最小解消と奇偶障害は
+共有根の最小解消と奇偶障害、
+さらに二次積のscheme-theoretic欠損と三型の
+正規化極限・固定曲線上の慣性は
 第~\ref{sec:qa-nodal-resolution-parity}節で証明する。
 $\Sigma_2$の最深境界・非被約因子・古典零切断・全相対AS認識は
 結論に含めず、必要な追加構成を明記する。
