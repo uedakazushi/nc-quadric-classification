@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-22 / v1.25。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.9。
+2026-11-23 / v1.26。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.10。
 
 ## 公表用三論文の役割
 
@@ -42,7 +42,7 @@
 
 Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline P_{\rm nod}/G]$ と同値。tracezero成分の非退化二次形式の等方線から二形式と全同型を回復し、任意非被約底への降下を含む。元のNは両平方sectionのsquarefree開であり、TF標的への射は全忠実な開埋込み。実際の $(M,\mu)$ を保持するため同時符号は消えない。層を忘れると固定曲線上の核はnodalでμ₂、I2でμ₂²となる。固定被覆へのforget fiberは $[Z_h/S_2]\times B\mu_2$、$Z_h$ は長さ6のmonic二次因子分解scheme。nodalの非自由成分はdual numbers、I2は二変数の平方零環を同時符号で割る。閉点慣性だけでfiberを同定しない。
 
-元の点曲線と符号は $\OO_C\oplus M$ で全境界から再構成できる。しかしFricke出力の平坦点曲線との指定generic同型は、共有根ではnodal対I2、一致根対では成分収縮のため族同型へ延長しない。TF認識をsmooth Fricke射の境界延長と読み替えない。
+元の点曲線と符号は $\OO_C\oplus M$ で全境界から再構成できる。[二traitの境界模型](papers/quiver-avatar/spectral_boundary_models.tex) では、指定generic同型のgraphを正則I2/I4模型、自由な符号商をI1/I2模型として構成した。Fricke出力の二次線束は全族上lineで、自然なsmooth射の二trait上のbalanced標的への延長を与える。特殊対象は追加の被約線束成分であり、H2外である。一致型では四捩れ補正による別の元模型同型が存在し、同時符号を保つがconic順序を交換する。構造層を保つPerfの全忠実引戻しから、非可換H2 heartの同値を推論しない。
 
 ### 保持する分類・障害・再開先
 
@@ -64,7 +64,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 
 - E_f側の相対mutation、全商降下、Serre完成、pointed heart回収、およびsmooth spectral相対射・gerbe分解を未解決へ戻さない。stack自己同値とH2境界延長は不存在が証明済みであり、単なる証明不足と記さない。境界の具体的な平坦代数モデルを出発点とし、自然な射の延長先とその同型層を調べる。
 - 任意のAS/avatar/QP表示stack全体のright-equivalence groupoid、一般cubic域の表示忘却fiber・慣性、既存GITとの相対比較は別に検証する。体上AS分類や特定noncubic族の相対認識から全表示stack同値を推論しない。
-- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。次はFricke双対化のグラフ閉包と曲線修正を扱う。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
+- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正・二次線束延長も証明済み。次は全表示群に同変な境界対応への降下を扱う。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 

@@ -1,0 +1,536 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 日本語 LuaLaTeX。2026-11-23 / 二境界のgraph・二次線束・四捩れ補正。
+\section{Fricke境界の共通半安定模型と二次線束}
+\label{sec:qa-spectral-boundary-models}
+
+命題~\ref{prop:qa-tf-spectral-flat-model-point-curve}の指定generic同型は
+元の二模型の同型へ延長しない．本節ではそのgraph閉包を実際に構成し，
+符号被覆と二次積を共通正則模型へ延長する．
+さらに根対一致型には，四捩れtranslationで補正した別の模型同型が存在する．
+曲線の構造層を保つ比較，conicの順序，H2の構造対象は区別する．
+
+\subsection{指定した一般同型のgraph閉包と共通半安定模型}
+\label{subsec:qa-boundary-graph-semistable}
+
+$k$を標数零の代数閉体，$R=k[[t]]$，$K=k((t))$とする．
+$r=1,2$に対して
+\[
+ (p_1,b_1)=(1,t),\qquad(p_2,b_2)=(t,t),\qquad p_rb_r=t^r
+\]
+と置く．曲線模型を
+\[
+ C_r:\ y^2=uv(p_ru^2+uv+b_rv^2)
+       \subset\mathbb P_R(1,1,2),
+\]
+\[
+ E'_r:\ c^2=U^2-4t^rV^2,\quad d^2=V(U+V)
+       \subset\mathbb P_R^3
+\]
+で定める．一般fiber上の同型は
+\[
+ \varphi_r:[u:v:y]\longmapsto
+ [p_ru^2+b_rv^2:uv:p_ru^2-b_rv^2:y].
+ \tag{G-phi}\label{eq:qa-boundary-graph-phi}
+\]
+$A=(U+c)/2$，$B=(U-c)/2$とすると
+\[
+ E'_r:\ AB=t^rV^2,\quad d^2=V(A+B+V),\qquad
+ \varphi_r=[p_ru^2:b_rv^2:uv:y]
+ \tag{G-AB}\label{eq:qa-boundary-graph-ab}
+\]
+となる．以下でいうgraph閉包は，この\emph{指定された}一般同型の
+scheme-theoreticな閉包である．一般同型を変更した比較とは区別する．
+
+\begin{theorem}[二traitのgraph閉包]
+\label{thm:qa-boundary-graph-common-regular-model}
+$C_r\times_R E'_r$内の$\varphi_{r,K}$のgraph閉包を$X_r$とする．
+このとき
+\[
+ X_r\simeq\operatorname{Bl}_{\mathcal I_r}C_r,
+ \qquad
+ \mathcal I_r=(p_ru^2,b_rv^2,uv,y)\otimes\mathcal O_{C_r}(-2)
+\]
+であり，$X_r$は既に正則な射影的半安定$R$-模型である．
+追加の正規化または底の分岐被覆は必要ない．
+二つの射を$a_r:X_r\to C_r$，$b_r:X_r\to E'_r$と書く．
+\begin{enumerate}
+ \item $C_1$の全空間は$[u:v:y]=[0:1:0]$に一つの$A_1$特異点を持つ．
+ $a_1$はその極大idealのblowupによる最小解消で，$X_{1,0}$は
+ 二つの有理曲線が二点で横断的に交わる$I_2$型である．
+ $E'_1$の全空間は正則で，$b_1$は同型である．
+ \item $C_2$の全空間は$[0:1:0]$，$[1:0:0]$に二つの$A_1$特異点を持つ．
+ $a_2$は両点の極大idealをblowupする最小解消であり，
+ $X_{2,0}$は四つの有理曲線からなる$I_4$型である．
+ $D_+,D_-$を$C_{2,0}$の成分$y=\pm uv$のstrict transform，
+ $L_0,L_\infty$を$a_2$の例外曲線とすると，
+ 各$D_\pm$は各$L_0,L_\infty$と一度ずつ交わり，同種の二成分は交わらない．
+ $E'_2$は$P_\pm=[A:B:V:d]=[0:0:1:\pm1]$に二つの$A_1$特異点を持つ．
+ $b_2$は$D_\pm$をそれぞれ$P_\pm$へ収縮する最小解消であり，
+ $L_0,L_\infty$は$E'_{2,0}$の二成分へ同型に写る．
+\end{enumerate}
+従って$X_r$は共通の最小正則模型であり，特殊fiberは$I_{2r}$型である．
+\end{theorem}
+
+\begin{proof}
+四つのsectionから得るRees代数の次数一生成系は
+$\operatorname{Bl}_{\mathcal I_r}C_r\hookrightarrow C_r\times_R\mathbb P^3_R$
+を与える．blowupは整で一般fiberは元のgraphであるから，その像は
+scheme-theoreticなgraph閉包である．二つの方程式
+\eqref{eq:qa-boundary-graph-ab}はこの閉包上で成立するので，像は
+$C_r\times_R E'_r$内にある．この議論はRees代数によるblowupの定義\cite[Lemmas 31.33.2--31.33.3]{StacksBlowups}から従い，
+単に二項の比例式だけを課して余分な成分を加えたincidence schemeではない．
+
+$v=1$のchartで$x=u$と置くと，$C_r$は
+\[
+ y^2=x^2+tx+p_rx^3
+\]
+である．$N_0=(x,y,t)=(0,0,0)$における$\mathcal I_r$は
+$(x,y,t)$に等しい．$z_0=t+x+p_rx^2$と置けば
+$y^2=xz_0$であり，$\partial z_0/\partial t$は$r=1$で$1$，
+$r=2$で$1+x^2$である．従って全空間の完備局所環は$A_1$特異点
+$k[[x,y,z_0]]/(y^2-xz_0)$である．
+$r=2$の$N_\infty$でも$u,v$を交換して同じ計算ができる．
+その他の特殊fiber上の点ではJacobian判定から全空間は正則である．
+
+極大idealのblowupの$x$-chartで
+\[
+ y=xz,\qquad t=xs
+\]
+と書く．strict transformの方程式と$E'_r$への射は，それぞれ
+\[
+ \begin{array}{c|c|c}
+ r&\text{方程式}&[A:B:V:d]\\\hline
+ 1&z^2=1+x+s&[x:s:1:z]\\
+ 2&z^2=1+s(1+x^2)&[sx^2:s:1:z]
+ \end{array}
+ \tag{G-chart}\label{eq:qa-boundary-graph-chart}
+\]
+である．例外曲線は$x=0$，元の特殊fiberのstrict transformは$s=0$であり，
+交点は$z=\pm1$となる．その近傍では$x,s$が正則パラメータで，
+基底のパラメータは$t=xs$である．
+例外曲線上でこのchartから外れる点は$t$-chart
+$x=t\alpha$，$y=t\beta$で覆われ，方程式は
+\[
+ \beta^2=\alpha^2+\alpha+p_rt\alpha^3
+\]
+となる．$(t,\alpha,\beta)=(0,0,0)$では$\alpha$方向の偏微分が$-1$なので正則である．
+これら二chartは例外曲線全体を覆う：例外conicの式
+$y^2=x^2+tx$で$x=t=0$なら$y=0$となり，射影点を与えないためである．
+従って全blowupは正則で，特殊fiberは被約な単純正規交差曲線である．
+
+$r=1$では$C_{1,0}$の正規化は有理曲線であり，その節点の二枝に
+例外$\mathbb P^1$が接続するので$I_2$を得る．
+式\eqref{eq:qa-boundary-graph-chart}により，二成分は$E'_{1,0}$の二成分へ
+それぞれ次数一で写る．$E'_1$の二節点の全空間は$AB=t$で正則であり，
+それ以外も正則である．従って$b_1$はproperでquasi-finiteなbirational射で，
+正規な標的への有限birational射だから同型である．
+
+$r=2$では二つの$A_1$点の解消が，各々$D_+,D_-$の間に一つの
+例外曲線を挿入するので，記載した四成分cycleを得る．
+$E'_r$の$P_\pm$近傍では$V=1$とでき，$2d$が単元なので，
+完備局所環は$AB=t^r$に一致する．特に$r=2$では$A_1$である．
+式\eqref{eq:qa-boundary-graph-chart}の第二行は
+\[
+ B=s,\qquad t=xs,\qquad A=x^2s
+\]
+という$AB=t^2$の標準解消chartそのものである．
+$N_\infty$のchartは$A,B$を交換したchartとなる．
+従って$b_2$は正に$D_+,D_-$を収縮し，例外成分$L_0,L_\infty$は
+それぞれ$A=0,B=0$のconicへ同型に写る．
+
+全特殊fiberが被約であり，各成分は他成分と合計二回横断的に交わる．
+fiberとの交点数が零であることから各成分の自己交点は$-2$である．
+従って相対的な$(-1)$曲線はなく，これらは最小正則模型である．
+\end{proof}
+
+\begin{corollary}[符号作用とその半安定商]
+\label{cor:qa-boundary-graph-sign-quotient}
+$E'_r$上の同時符号作用は
+\[
+ \delta':[A:B:V:d]\longmapsto[B:A:V:-d]
+\]
+である．これは$X_r$へ持ち上がり，全空間上固定点を持たない．
+特殊fiberの$I_{2r}$-cycleでは半回転として作用する．
+従って
+\[
+ Y_r=X_r/\langle\delta'\rangle
+\]
+は正則な射影的半安定$R$-曲線で，特殊fiberは$I_r$型である．
+$C'_r=E'_r/\langle\delta'\rangle$と書くと，$Y_r\to C'_r$は
+$r=1$で同型，$r=2$で唯一の$A_1$点の最小解消となる．
+\end{corollary}
+\begin{proof}
+$r=1$では$X_1\simeq E'_1$である．$r=2$では
+\[
+ [u:v:y]\longmapsto[v:u:-y]
+\]
+が$C_2$上の自己同型であり，二つのblowup中心を交換するので
+$X_2$へ持ち上がる．一般fiberで$\varphi_2$により$\delta'$と一致し，
+従って全体でも$b_2$は同変である．作用は$D_+,D_-$を交換し，
+$L_0,L_\infty$を交換するので四成分cycleの半回転である．
+
+$E'_r$で固定点があると仮定する．$V\ne0$なら$A=B$，$d=0$となり，
+$d^2=V(2A+V)$より$A=-V/2$，従って$4t^r=1$となる．
+これは$R$上では不可能である．$V=0$の場合も$AB=0,d^2=0$を用いると
+射影座標が全て零となるため不可能である．従って$\delta'$は自由で，
+その同変な$X_r$上の作用も自由である．
+射影的scheme上の有限自由作用の商はschemeとして存在し\cite[Lemma 66.14.2]{StacksFreeQuotients}，$X_r\to Y_r$は有限\'{e}tale次数二である．
+正則性は\'{e}tale局所的なので$Y_r$は正則である．
+成分と節点が半回転で二つずつ同一視されるので特殊fiberは$I_r$となる．
+特に$r=1$では一つの有理成分に一つの自己節点ができる．
+$r=2$では$b_2$が収縮する$D_+,D_-$が商で一つの$(-2)$曲線となり，
+それを$C'_2$の唯一の節点へ収縮する．
+商曲線の式
+\[
+ C'_r:\ Y^2=(U^2-4t^rV^2)V(U+V)
+\]
+からも，その節点の全空間が$r=1$で正則，$r=2$で$A_1$であると確認できる．
+\end{proof}
+
+\begin{proposition}[構造層と完全複体の比較]
+\label{prop:qa-boundary-graph-structure-sheaf}
+二つの射影$a_r,b_r$について
+\[
+ \mathbf R a_{r*}\mathcal O_{X_r}\simeq\mathcal O_{C_r},
+ \qquad
+ \mathbf R b_{r*}\mathcal O_{X_r}\simeq\mathcal O_{E'_r}.
+\]
+従って$\mathbf L a_r^*$と$\mathbf L b_r^*$は各曲線模型の
+$\operatorname{Perf}$から$\operatorname{Perf}(X_r)$への全忠実関手であり，
+構造層を$\mathcal O_{X_r}$へ送る．
+この命題は曲線模型の完全複体についての比較であり，
+特異なAS heartのH2所属またはその間の同値を主張するものではない．
+\end{proposition}
+\begin{proof}
+射は正規な標的の孤立$A_1$点の解消，または同型である．
+正規性から零次順像は構造層である．
+一つの例外曲線を$L\simeq\mathbb P^1$とすると，
+$L^2=-2$より，その$n$次無限小近傍の構造層は
+$\mathcal O_{\mathbb P^1}(2j)$，$0\le j<n$を逐次商に持つ．
+これらの$H^1$は零であり，$A_1$の極大idealの逆像は$\mathcal O(-L)$だから，
+形式関数定理\cite[Theorem 30.20.5]{StacksFormalFunctions}より一階高次順像も零となる．
+二階以上も同じ近傍のcohomology消滅から零となる．
+最後の主張は完全複体に対するprojection formulaから従う．
+\end{proof}
+
+\begin{proposition}[有限分岐基底変更]
+\label{prop:qa-boundary-graph-ramified-base-change}
+$t=s^e$で$R'=k[[s]]$へ基底変更する．
+指定した一般同型のgraph閉包は$X_r\times_RR'$であり，
+その特異点は元の各節点に現れる$xy=s^e$型だけである．
+それぞれを最小解消すると$I_{2re}$型の最小正則模型を得る．
+符号作用は自由な半回転として持ち上がり，商は$I_{re}$型となる．
+\end{proposition}
+\begin{proof}
+有限DVR拡大$R\to R'$は平坦であり，Rees代数とblowupはこの基底変更と可換である．
+元の正則半安定模型の節点では$t=xy$なので，基底変更後は$xy=s^e$となる．
+この特異点の解消は$j=0,\ldots,e-1$の正則chart
+\[
+ s=\alpha\beta,\qquad
+ x=\alpha^{j+1}\beta^j,\qquad
+ y=\alpha^{e-j-1}\beta^{e-j}
+\]
+で記述できる．隣接chartの貼合せは
+$\alpha'=\beta^{-1}$，$\beta'=\alpha\beta^2$である．
+従って各辺に$e-1$本の有理成分が挿入され，cycleの長さは$e$倍となる．
+符号作用は元の節点を二つずつ交換し，対応する解消chainを交換するため自由である．
+\end{proof}
+
+\begin{remark}[基底変更の範囲]
+ここで確認したのはflat base changeと有限DVR拡大に対する挙動である．
+graph閉包や最小正則解消が任意の非平坦・非被約基底変更と可換であるとは主張しない．
+また，$r=2$では別途構成する補正同型$\Psi$が元の二つの模型の$R$同型を与える．
+指定した$\varphi_2$のgraphが非自明であることは，この別同型の存在と両立する．
+\end{remark}
+
+\subsection{二つのtraitにおけるFricke二次線束の延長}
+
+記号は前節を引き継ぎ，$E'_r$上の個別符号を$e_c,e_d$，
+同時符号を$\delta'=e_ce_d$とする．
+入力の元の点曲線$E_{f_r}$と，出力の点曲線$E'_r$は区別する．
+
+\begin{proposition}[二捩れ平行移動と順序付きconic]
+\label{prop:qa-fricke-trait-sign-conjugacy}
+指定したgeneric同型
+\[
+ \Phi_r:[u:v:y]\longmapsto
+ [p_ru^2+b_rv^2:uv:p_ru^2-b_rv^2:y]
+\]
+による$\delta'$の共役は
+\[
+ T_r:[u:v:y]\longmapsto[b_rv:p_ru:-p_rb_ry].
+ \tag{F-sign}\label{eq:qa-fricke-trait-sign}
+\]
+これは入力の二次線束$[M]$による平行移動$t_{[M]}$である．
+入力のhyperelliptic involutionを$\iota:y\mapsto-y$とすると，
+\[
+ \Phi_r\iota=e_d\Phi_r,\qquad
+ \Phi_r(T_r\iota)=e_c\Phi_r.
+\]
+従って$E'_r$の\emph{順序付き}二conic
+\[
+ Q'_1=E'_r/\langle e_d\rangle=\{c^2=U^2-4t^rV^2\},\qquad
+ Q'_2=E'_r/\langle e_c\rangle=\{d^2=V(U+V)\}
+\]
+は，generic fiber上で自然な射$\mathscr D^{\rm ord}$の
+$C_r/\langle\iota\rangle$，$C_r/\langle t_{[M]}\iota\rangle$
+にこの順序で一致する．
+\end{proposition}
+\begin{proof}
+$v=1$上で$x=u/v$と書く．$C_{r,K}$の原点を無限遠点$O$とし，
+$P=(0,0)$とすると，$\operatorname{div}(x)=2P-2O$である．
+入力の符号被覆$E_{f_r,K}\to C_{r,K}$は$x$の平方根を添加して得られるので，
+その反不変線束の類は$\OO(P-O)$である．
+曲線$y^2=x(p_rx^2+x+b_r)$上で$P$を通る直線の交点を計算すると，
+\[
+ t_P(x,y)=\left(\frac{b_r}{p_rx},
+                   -\frac{b_ry}{p_rx^2}\right).
+\]
+これは\eqref{eq:qa-fricke-trait-sign}のaffine表示である．
+同次式へ$T_r$を代入すると$U,V,c,d$は
+$p_rb_r(U,V,-c,-d)$となる．従って$\Phi_rT_r=\delta'\Phi_r$である．
+$\iota$は$\Phi_r$の$d$だけを反転するので，二つの個別符号に関する式も従う．
+これらの商は単に同型なconicというだけでなく，
+同じ$Z'=C_r/\langle\iota,T_r\rangle$への被覆として一致する．
+\end{proof}
+
+\begin{theorem}[二つのtrait上でのbalanced標的への延長]
+\label{thm:qa-fricke-trait-balanced-extension}
+\[
+ g_{1,r}=U^2-4t^rV^2,\qquad g_{2,r}=V(U+V),\qquad
+ C'_r=\{Y^2=g_{1,r}g_{2,r}\}
+\]
+と置く．順序付き二形式$(g_{1,r},g_{2,r})$は，
+$\mathscr D^{\rm ord}(f_{r,K})$の
+$\mathfrak T_{\rm bal}^{\rm ord}$への$R$上の延長を与える．
+この延長に付随する反不変層と二次積は
+\[
+ q'_*\OO_{E'_r}=\OO_{C'_r}\oplus M'_r,
+ \qquad \mu'_r:(M'_r)^{\otimes2}\xrightarrow{\sim}\OO_{C'_r}
+\]
+であり，$M'_r$は\emph{全族上の線束}，
+$q':E'_r\to C'_r$は有限\'etale二重被覆である．
+この代数，二次線束，被覆，trace分解の構成は，
+非平坦・非被約なものを含む任意の$R$-schemeへの基底変更と可換である．
+
+特殊fiberでは$C'_0$は既約nodal曲線，$E'_0$は$I_2$曲線であり，
+$M'_0$は非自明な二捩れ線束である．
+従って固定被覆上のbalanced fiberにおける追加の被約$B\mu_2$成分に属し，
+元のnoncubic開$\mathfrak N^{\rm pres}$には属さない．
+特にこの延長はH2への境界延長を与えない．
+\end{theorem}
+\begin{proof}
+$g_{1,r}g_{2,r}$は各幾何fiberで非零であり，
+generic fiberでは四根が相異なり，特殊fiberでは一つの二重根と二つの単根を持つ．
+従ってこの二形式は$\overline P_{\rm nod}$上の$R$-点である．
+balanced商表示の認識により，実際の二次積付きTF対象が得られる．
+前命題はgeneric fiber上で自然な\emph{順序付き}Fricke射との同型を指定している．
+
+線束性と基底変更は直接確認できる．
+$Z'=\PP^1_R$上で$A=\OO_{Z'}\oplus\OO_{Z'}(-2)Y$，$Y^2=g_{1,r}g_{2,r}$と書く．
+反不変部分の$Z'$上の直像は
+\[
+ p'_*M'_r=\OO_{Z'}(-1)c\oplus\OO_{Z'}(-1)d,
+ \quad Yc=g_{1,r}d,\quad Yd=g_{2,r}c,
+\]
+であり，二次積は
+\[
+ c^2=g_{1,r},\qquad d^2=g_{2,r},\qquad cd=Y
+\]
+である．$g_{1,r}$と$g_{2,r}$は共通零点を持たない．
+実際，$g_{2,r}=0$の二つの点$V=0$，$U+V=0$における$g_{1,r}$の値は，
+局所的な線束の自明化を除き，それぞれ$1$と$1-4t^r$である．
+これらは$R$の単元であり，任意の基底変更後にも単元である．
+
+$g_{1,r}$が可逆な開では$M'_r$は$c$で生成され，
+$d=(Y/g_{1,r})c$，$c^2=g_{1,r}$となる．
+$g_{2,r}$が可逆な開では同様に$d$で生成される．
+従って$M'_r$は線束で，$\mu'_r$は同型である．
+$2$が可逆なので$\operatorname{Spec}_{C'_r}(\OO\oplus M'_r)$は
+有限\'etale二重被覆であり，局所式からこれは$E'_r$と一致する．
+全ての式は局所自由加群の代数として与えられており，
+固有部分への射影$(1\pm\delta')/2$も基底変更と可換する．
+よって主張した任意基底変更との両立が得られる．
+
+$p'_*M'_r=\OO(-1)^{\oplus2}$からbalanced条件と$\chi(M'_s)=0$が従う．
+特殊fiberは
+\[
+ C'_0:\ Y^2=U^2V(U+V),\qquad
+ E'_0:\ c=\pm U,\quad d^2=V(U+V)
+\]
+である．$E'_0$の二つのsmooth conicは
+$[U:V:c:d]=[0:1:0:\pm1]$で交わり，連結な$I_2$曲線となる．
+したがって$E'_0\to C'_0$は非自明な\'etale二重被覆であり，
+$M'_0$は非自明な二捩れ線束である．
+幾何的にも，$C'_0$の正規化$d^2=V(U+V)$の二節点逆像において，
+被覆の二つの成分は交差して貼り合わされる．
+これは$\Pic^0(C'_0)\simeq\Gm$の元$-1$に対応する．
+
+最後に$g_{1,r}|_{t=0}=U^2$は重根を持ち，
+$g_{2,r}|_{t=0}=V(U+V)$はsquarefreeである．
+従って特殊対象はbalanced開には属するが，
+両平方がsquarefreeである元のnoncubic開には属さない．
+H2所属判定$\Delta_1\Delta_2\ne0$とも整合する．
+\end{proof}
+
+\begin{proposition}[共通正則モデル上の符号と二次線束]
+\label{prop:qa-fricke-regular-quotient-line}
+$r=1$では$X_1=E'_1$，$Y_1=C'_1$とする．
+$r=2$では$Y_2\to C'_2$を唯一の特殊節点のblowupとし，
+\[
+ X_2=E'_2\times_{C'_2}Y_2
+\]
+と置く．このとき$X_r,Y_r$は正則な半安定曲線族で，
+特殊fiberはそれぞれ$I_{2r}$，$I_r$型である．
+$X_r\to E'_r$は$r=2$の場合には二つの特殊節点の同時blowupである．
+同時符号$\delta'$は$X_r$に自由に作用し，
+\[
+ X_r/\langle\delta'\rangle=Y_r,
+ \qquad X_r\to Y_r\text{ は有限\'etale二重被覆}
+\]
+となる．$\beta_r:Y_r\to C'_r$とすると，その二次線束は
+\[
+ \widetilde M_r=\beta_r^*M'_r,\qquad
+ \widetilde\mu_r=\beta_r^*\mu'_r
+\]
+である．$X_r$を指定generic同型の共通正則モデルと同定したとき，
+この作用は入力の$t_{[M]}$の延長となる．
+\end{proposition}
+\begin{proof}
+$C'_r$の特殊節点の近傍で$V=1$とする．
+$U+1$の平方根はその完備局所環の単元として取れるので，
+$z=Y/\sqrt{U+1}$と書けば
+\[
+ (U-z)(U+z)=4t^r.
+\]
+従って$r=1$では全空間が正則，$r=2$では$A_1$特異点であり，
+そのblowupは一つの例外$\PP^1$を挿入する正則半安定解消である．
+同じ局所式は$E'_r$の二つの節点で，$z$を$c$として成立する．
+$E'_r\to C'_r$が有限\'etaleであるため，節点のidealの引戻しは
+二節点のidealであり，blowupの平坦基底変更から
+$X_2$は二節点の同時blowupとなる．
+各節点に一つの例外成分が挿入されるので，特殊fiberの型は記載の通りである．
+
+被覆と二次線束の式は前定理の有限\'etale代数を$Y_r$へ引き戻したものである．
+特に作用は自由であり，商は$Y_r$である．
+$\delta'$は元の二つのconic成分と二つの節点をそれぞれ交換するので，
+$I_{2r}$の双対グラフ上では半回転として作用する．
+generic fiber上の作用との一致は
+\eqref{eq:qa-fricke-trait-sign}と共通モデルのgeneric同型による．
+\end{proof}
+
+\begin{remark}[基底変更と標識の範囲]
+ここで任意基底変更と可換としたのは，構成した有限\'etale被覆と
+その二次線束，およびそれらの引戻しである．
+graph閉包，正規化，最小正則モデルを作る操作そのものが，
+任意の非平坦基底変更と可換すると主張してはいない．
+また二つの指定traitへの$\mathscr D^{\rm ord}$の延長を構成したのであり，
+全noncubicスタック上の大域的境界射や，H2 heartの延長を構成したわけではない．
+\end{remark}
+
+
+\subsection{一致型の四捩れ補正とconic順序}
+
+\begin{proposition}[一致型の別同型はtrait全体へ延長する]
+\label{prop:qa-coincident-alternative-model-isomorphism}
+$a\in R^\times$を$a^2=1+2t,\ a\equiv1\pmod t$で定める．
+次の射は$R$上の同型である：
+\[
+ \begin{split}
+ \Psi:C_2&\xrightarrow{\sim}E'_2,\\
+ [u:v:y]&\longmapsto
+ \bigl[a^2(u+v)^2-(v-u)^2:(v-u)^2:4ay:a(u+v)(v-u)\bigr].
+ \end{split}
+\]
+従って$C_2$と$E'_2$の間で延長しないのは，指定された同型$\phi_2$であり，
+抽象的な$R$-曲線としての同型の存在は妨げられない．
+一方$C_1$と$E'_1$は，特殊fiberの既約成分数が異なるので$R$上同型ではない．
+\end{proposition}
+\begin{proof}
+中間の重み付きquarticを
+\[
+ D:\quad w^2=(s^2-z^2)^2-4t^2z^4
+\]
+とする．線形変換および重み二の単元倍
+\[
+ [s:z:w]=[a(u+v):v-u:4ay]
+\]
+は$R$上可逆である．また
+\[
+ \begin{split}
+ &(a^2(u+v)^2-(1+2t)(v-u)^2)\\
+ &\hspace{12mm}\cdot(a^2(u+v)^2-(1-2t)(v-u)^2)\\
+ &=16a^2uv\bigl(tu^2+uv+tv^2\bigr)
+ \end{split}
+\]
+であるから，これは$C_2\simeq D$を与える．
+$D$の二次Veroneseは$s^2,sz,z^2,w$で生成され，
+\[
+ [s:z:w]\longmapsto[s^2-z^2:z^2:w:sz]
+\]
+により$E'_2$と同型になる．この二つを合成したものが$\Psi$である．
+
+$t=0$で$C_2$の二成分$y=\pm uv$は，$\Psi$により
+$E'_2$の二成分$c=\pm U$へそれぞれ同型に移る．
+これは$\phi_2$が二成分の稠密開を二つの節点へ収縮することとも整合する．
+\end{proof}
+
+\begin{proposition}[四捩れtranslationとpencilの交換]
+\label{prop:qa-coincident-quarter-period-correction}
+一般fiber上で$F=\Psi^{-1}\phi_2$と置くと
+\[
+ F([u:v:y])=[y-auv:y+auv:at uv(u^2-v^2)]
+\]
+であり，
+\[
+ F^2([u:v:y])=[v:u:-y],\qquad F^4=\mathrm{id}.
+\]
+$C_{2,K}$に$[1:0:0]$を原点とする群構造を入れると，$F$は位数四の点
+$Q=[1:1:a]$によるtranslationである．従って
+\[
+ \Psi=\phi_2\circ T_{-Q}.
+\]
+
+$\iota:[u:v:y]\mapsto[u:v:-y]$，
+$j:[u:v:y]\mapsto[v:u:-y]$，
+$e_c,e_d$を$E'_2$の$c,d$の個別符号とする．このとき
+\[
+ \phi_2\iota=e_d\phi_2,
+ \qquad\Psi\iota=e_c\Psi,
+ \qquad\Psi j=(e_ce_d)\Psi.
+\]
+従って$\Psi$は同時符号には同変であるが，二つのconic quotientの順序を交換する．
+\end{proposition}
+\begin{proof}
+$D\dashrightarrow E'_2$の逆を一般fiberの開上で
+$[s:z:w]=[d:V:cV]$と書けば，$F$の公式を得る．
+$u_1=y-auv,v_1=y+auv,y_1=at uv(u^2-v^2)$とすると
+\[
+ u_1v_1=tuv(u-v)^2.
+\]
+$L=2at uv(u-v)$と置いて再度$F$を作用させると
+\[
+ u_2=Lv,\qquad v_2=Lu,\qquad y_2=-L^2y
+\]
+となるため，重み付き射影座標で記載の$F^2$を得る．
+
+$X=t u/v,Y=t y/v^2$によりWeierstrass方程式
+\[
+ Y^2=X^3+X^2+t^2X
+\]
+を得る．$Q=(t,ta)$における接線の傾きは$a$であり，倍点公式から
+$2Q=(0,0)$を得る．さらに通常の加法公式に
+$m=(y/v^2-a)/(u/v-1)$を代入すると，$T_Q$は上記$F$に一致する．
+従って四捩れtranslationという記述は自己同型群の分類に依存しない．
+最後の三つの同変等式は，表示された座標式から直ちに従う．
+\end{proof}
+
+\begin{remark}[選択と主張の範囲]
+$a$の符号を変えると$\Psi$は$(e_ce_d)\Psi$に，$F$は$F^{-1}$に変わる．
+代数的なparameter空間で同じ式を使う場合は，$a^2=1+2t$という
+有限\'etale被覆上で構成する．上の結果はこのtraitの曲線模型と，
+指定された二つのquotient pencilの比較である．全moduli上の標準的な補正，
+指定AS10の構造対象の保存，あるいはH2への境界延長を主張しない．
+実際，$E'_2$の平方形式の一つは$t=0$で二重根を持ち，
+既存の無限ExtによるH2延長障害はそのまま残る．
+\end{remark}
