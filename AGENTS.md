@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.33。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.17。
+2026-11-23 / v1.34。論文Aはv1.69（20節）、論文Bはv0.40（31節）、論文Cはv4.18。
 
 ## 公表用三論文の役割
 
@@ -10,7 +10,9 @@
 
 ## Cの現在の到達点と比較範囲
 
-**全H2の有限square表示とcanonicalなrank81代数。** 四つのrank2束とrank4束への二乗法をパラメータ化するA32の開から、rank16 squareとrank24 normal foundationの全相対stack同値を核・余核で構成した。頂点トーラスKとruling交換S2を含め、Q_fndは((GL2^4×GL4)/Gm³)⋊S2による商になる。H2はその不変開として表され、古典型も同じ有限表示で扱える。二積の合併全射は追加開であり、H2上では成立する。全H2上のTcan=⊕Ei⊗Hom(O,Ei)∨は頂点線束と二rulingの交換を消して降下し、通常のEnd代数はrank81。canonical完成のn次は81(2n+1)²、O角は(2n+1)²で、左右Noether性とpointed tails認識を得る。H2開を定義する明示有限式と任意AS/QP族の全比較はまだ得ていない。[有限stack同値](papers/quiver-avatar/relative_square_foundation_stack.tex)、[全H2のrank81代数](papers/quiver-avatar/universal_h2_square_morita.tex)。
+**全H2の有限square表示とcanonicalなrank81代数。** 四つのrank2束とrank4束への二乗法をパラメータ化するA32の開から、rank16 squareとrank24 normal foundationの全相対stack同値を核・余核で構成した。頂点トーラスKとruling交換S2を含め、Q_fndは((GL2^4×GL4)/Gm³)⋊S2による商になる。H2はその不変開として表され、古典型も同じ有限表示で扱える。二積の合併全射は追加開であり、H2上では成立する。全H2上のTcan=⊕Ei⊗Hom(O,Ei)∨は頂点線束と二rulingの交換を消して降下し、通常のEnd代数はrank81。canonical完成のn次は81(2n+1)²、O角は(2n+1)²で、左右Noether性とpointed tails認識を得る。H2開は二乗法の随伴行列から作る二つの交差縮約とその転置について、kernelがSegreを避ける四条件で完全に判定した。各条件は五生成idealの非零開で、計20式以内（次数16・24）となる。両rank3壁も含み、既存相対開との一致により非被約底でも全groupoidを認識する。任意AS/QP族の全比較と大域good moduliは別課題である。[有限stack同値](papers/quiver-avatar/relative_square_foundation_stack.tex)、[全H2のrank81代数](papers/quiver-avatar/universal_h2_square_morita.tex)。
+
+**全域の境界幾何。** 明示H2開上のdet f=0とdet g=0は滑らかなCartier因子で、共通零点では二つの微分が独立である。順序付きH2上でSNC、noncubic交点は滑らかな余次元2となる。非順序和因子の正規化は一方の順序付き因子であり、noncubic上の逆像はruling二重被覆、conductorはschemeとしてnoncubic中心である。任意引戻し後のsmooth/reduced性は主張しない。 [証明](papers/quiver-avatar/square_rank_boundary_geometry.tex)。
 
 **回転・第一mutationも同じ相対heartを持つ。** (E1,E2,E3,tE0) と (t⁻¹Z1,E0,E2,E3) の有限Endはともにrank24、完成のn次は64n²+64n+24。双対square heartによって左右Noether性を証明し、全四対象とtを保つtails同値を得た。最小矢の追加成分はcoker μG=O/(δ)であり、階数一の矢束となる条件はδ=0というscheme壁への因子化である。δ=εの一次変形では全幾何fiberがAS10でも最小矢束は平坦でない。この場合も全Hom代数・tailsは平坦に構成でき、七矢三関係の有限End表示から非最小十矢potentialの実際の相対AS解消・双対を得る。[回転・mutationの相対比較](papers/quiver-avatar/relative_rotated_mutated_tails.tex)。
 
@@ -86,7 +88,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 
 - E_f側の相対mutation、全商降下、Serre完成、pointed heart回収、およびsmooth spectral相対射・gerbe分解を未解決へ戻さない。stack自己同値とH2境界延長は不存在が証明済みであり、単なる証明不足と記さない。境界の具体的な平坦代数モデルを出発点とし、自然な射の延長先とその同型層を調べる。
 - 任意のAS/avatar/QP表示stack全体のright-equivalence groupoid、一般cubic域の表示忘却fiber・慣性、既存GITとの相対比較は別に検証する。体上AS分類や特定noncubic族の相対認識から全表示stack同値を推論しない。
-- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。全分類AS型の標準頂点を体上で判定した。二つの乗法行列式開と同じ相対heartのpointed認識も証明済み。次はfinite squareとnormal foundationの相対stack比較を調べる。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
+- 節点曲線上の二次積付きTF標的の代数性・有限型性、balanced開・元Nの全忠実な開埋込み・全慣性は証明済み。二traitのgraph閉包・半安定修正に加え、自然Fricke射の全表示群同変な境界降下と全fiberも証明済み。全分類AS型の標準頂点を体上で判定した。二つの乗法行列式開と同じ相対heartのpointed認識も証明済み。finite squareとnormal foundationの全相対stack比較、およびH2開の20式判定も成立した。次はdeterminant境界と大域GIT/good moduli比較を調べる。非被約spectral曲線全体や別AS heartへの認識は未解決。I2極限は非単純なのでsimple/fine compactified Picardだけに制限しない。
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 

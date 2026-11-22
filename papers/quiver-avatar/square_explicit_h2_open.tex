@@ -1,0 +1,468 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.18。A32 の二積から全 H2 開を有限式で判定する。
+
+\subsection{随伴行列と交差縮約による明示的な$H_2$開}
+\label{subsec:qa-square-explicit-h2-open}
+
+本項では標数零の代数閉体 $k$ を固定する。
+前項と同じく $A,B,C,D$ は階数二、$W$ は階数四とし、
+\[
+ U=C\otimes A,\qquad V=D\otimes B,\qquad
+ f:U\to W,\quad g:V\to W
+\]
+を取る。固定基底で全二積の空間は $\mathbb A^{32}$ である。
+ここでは $f,g$ の可逆性を最初に仮定しない。
+
+\paragraph{線束を保持した随伴行列.}
+\[
+ L_f=\det W\otimes(\det U)^\vee,\qquad
+ L_g=\det W\otimes(\det V)^\vee
+\]
+と置く。通常の随伴行列は束値では
+\[
+ \operatorname{adj}(f):W\to U\otimes L_f,
+ \qquad \operatorname{adj}(f)f=1_U\otimes\det f
+\]
+という標準写像であり、$g$ も同様である。
+従って四因子テンソル
+\[
+ T_f=\operatorname{adj}(f)g\in
+ C\otimes A\otimes D^\vee\otimes B^\vee\otimes L_f,
+ \qquad T_g=\operatorname{adj}(g)f
+\]
+が基底なしで定まる。
+これを次の交差縮約として読む。
+\[
+ \begin{split}
+ M_f &:C^\vee\otimes D\longrightarrow A\otimes B^\vee\otimes L_f,\\
+ M_g &:D^\vee\otimes C\longrightarrow B\otimes A^\vee\otimes L_g.
+ \end{split}
+ \tag{CF}\label{eq:qa-square-cross-flattenings}
+\]
+例えば $T_f$ の係数を $(T_f)_{ca,db}$ とすれば
+$(M_f)_{ab,cd}=(T_f)_{ca,db}$ とする。
+添字は各因子の指定順で辞書式に並べる。
+さらに線束を再び終域へ移した転置を
+\[
+ \begin{split}
+ M_f^{\mathrm t}&:A^\vee\otimes B\longrightarrow C\otimes D^\vee\otimes L_f,\\
+ M_g^{\mathrm t}&:B^\vee\otimes A\longrightarrow D\otimes C^\vee\otimes L_g
+ \end{split}
+\]
+と書く。すなわち $M_f^{\mathrm t}=M_f^\vee\otimes L_f$ であり、$g$ も同様である。
+
+各始域は二つの階数二束の tensor 積である。
+写像 $M$ に対し、$\mathcal K(M)$ は、その kernel が各幾何 fiber で
+非零の分解可能テンソルを含まないという条件を表す。
+これは始域の二つの射影束の積上で、tautological な分解可能直線の
+像が零になる incidence を作り、その proper 射影の像を除いた開条件である。
+
+\begin{definition}[四つの交差縮約条件]
+\label{def:qa-square-cross-geometric-open}
+次の開部分を定める。
+\[
+ V_{\mathrm{cross}}=
+ \mathcal K(M_f)\cap\mathcal K(M_f^{\mathrm t})
+ \cap\mathcal K(M_g)\cap\mathcal K(M_g^{\mathrm t})
+ \subset\mathbb A^{32}.
+ \tag{CG}\label{eq:qa-square-four-cross-open}
+\]
+この条件は線束 $L_f,L_g$ の自明化にも、各 tensor 因子の基底にも依存しない。
+従って $G_\square\rtimes S_2$ 不変であり、任意基底変更と整合する。
+\end{definition}
+
+\begin{lemma}[階数一テンソルの交差縮約]
+\label{lem:qa-rank-one-cross-kronecker}
+$T=\kappa\otimes\psi\in(C\otimes A)\otimes(D^\vee\otimes B^\vee)$ とする。
+その交差縮約は
+\[
+ M_T=(\kappa:C^\vee\to A)\otimes(\psi:D\to B^\vee)
+\]
+である。$\mathcal K(M_T)$ が成立する必要十分条件は、
+二つの二次正方行列 $\kappa,\psi$ がともに可逆であることである。
+このとき $M_T$ と $M_T^{\mathrm t}$ はともに可逆である。
+\end{lemma}
+\begin{proof}
+二写像が可逆なら tensor 積も可逆である。
+一方、例えば $\kappa$ が特異なら、その非零 kernel 元 $c^\vee$ と
+任意の非零 $d\in D$ の tensor が $M_T$ の kernel に入る。
+$\psi$ が特異な場合も同様である。
+\end{proof}
+
+\begin{lemma}[可逆な二積領域における四因子条件]
+\label{lem:qa-cross-invertible-cubic}
+$f$ が可逆である幾何点で、$T=f^{-1}g$ を
+\[
+ w_T\in A\otimes C\otimes D^\vee\otimes B^\vee
+\]
+と読む。このとき式~\eqref{eq:qa-square-four-cross-open} は、$w_T$ が
+geometric quintuple を与えることと同値である。
+$g$ が可逆の場合も、$f,g$ を交換した同じ主張が成立する。
+\end{lemma}
+\begin{proof}
+前項の交換した normal 窓では
+$(W_1,P,Q,R)=(A,C,D^\vee,B)$ であり、
+$W\simeq C\otimes A$ の下で $R\hookrightarrow Q\otimes W$ は
+$g$ の随伴そのものである。従ってこの $w_T$ は論文Bの cubic chart の
+関係 tensor に一致する。
+geometric 条件は四つの隣接二因子の縮約が全ての非零分解可能元上で
+非零であることを要求する
+\cite[Definition 5.3.1]{VdB2011}。
+この tensor の四条件は、$\ker T$、$\ker T^{\mathrm t}$、
+交差縮約 $\operatorname{Cr}(T)$ の kernel とその転置の kernel が
+それぞれ分解可能元を含まないことである。
+$M_f=(\det f)\operatorname{Cr}(T)$ なので、後二条件は直接
+$\mathcal K(M_f),\mathcal K(M_f^{\mathrm t})$ に一致する。
+
+まず $g$ も可逆なら前二条件は空である。
+残る交差条件が $T^{-1}$ の交差条件と同値であることを確認する。
+$c^\vee\otimes d$ が $\operatorname{Cr}(T)$ の kernel に入ることは
+\[
+ T(kd\otimes B)\subset(\ker c^\vee)\otimes A
+\]
+と同値である。両辺は二次元であり $T$ が可逆なので、包含は等号となる。
+逆写像を取れば、これは $T^{-1}$ の同じ種類の ruling 二平面条件である。
+転置の分解可能 kernel についても
+$T(D\otimes kb)\subset C\otimes\ker a^\vee$ を用いれば同様である。
+従って $M_g$ とその転置の条件はこの場合に追加制約を与えない。
+
+次に $\operatorname{rk}g=3$ とする。
+\[
+ \operatorname{adj}(g)=\kappa_g\otimes\lambda_g,
+ \quad k\kappa_g=\ker g,\quad
+ k\lambda_g=\operatorname{Ann}(\operatorname{im}g)
+\]
+と書くと
+\[
+ \operatorname{adj}(g)f=\kappa_g\otimes(\lambda_gf).
+\]
+前補題により、$M_g$ の条件は $\kappa_g$ と $\lambda_gf$ が
+二次行列として可逆であることに等しい。
+これらは正に $\ker T$ と $\ker T^{\mathrm t}$ を生成する tensor である。
+同時に $M_g^{\mathrm t}$ の条件も満たされる。
+
+$\operatorname{rk}g\le2$ なら $\operatorname{adj}(g)=0$ なので
+式~\eqref{eq:qa-square-four-cross-open} は成立しない。
+また $\mathbb P(\ker T)$ は少なくとも直線を含み、代数閉体上で
+その直線は Segre 二次曲面と交わるため、$w_T$ も geometric でない。
+以上で全場合を尽くす。
+\end{proof}
+
+\subsection{両階数三の支持conicと中央二重平方}
+
+\begin{proposition}[両階数三における有限認識]
+\label{prop:qa-double-rank-three-conic-recognition}
+$\operatorname{rk}f=\operatorname{rk}g=3$ とする。
+式~\eqref{eq:qa-square-four-cross-open} が成立する必要十分条件は、
+以下の三条件である。
+\begin{enumerate}
+\item $\ker f$ と $\ker g$ の各生成 tensor は二次行列として可逆である。
+\item $W_f=\operatorname{im}f$ と $W_g=\operatorname{im}g$ は異なる。
+      従って $W_f+W_g=W$、$U_0=W_f\cap W_g$ は二次元である。
+\item $f^\vee:W_f^\vee\hookrightarrow C^\vee\otimes A^\vee$ の像の行列式を
+      $q_f$ とし、$q_g$ も同様に定める。
+      これらは smooth な ternary conic を与え、
+      \[
+       q_f|_{\operatorname{Ann}_{W_f^\vee}(U_0)}\ne0,
+       \qquad
+       q_g|_{\operatorname{Ann}_{W_g^\vee}(U_0)}\ne0.
+      \]
+\end{enumerate}
+このとき元の二積データは、全ての積を保つ基底変更の下で
+二つの非退化 binary quadratic $h_f,h_g\in\operatorname{Sym}^2U_0$ による
+中央二重平方環
+\[
+ B_h=k[u,v]\langle c,d\rangle/(c^2-h_f(u,v),d^2-h_g(u,v))
+\]
+の有限 square foundation と同型である。
+特に真正な noncubic $H_2$ foundation である。
+\end{proposition}
+\begin{proof}
+随伴行列を
+$\operatorname{adj}(f)=\kappa_f\otimes\lambda_f$ と書く。
+ここで $\lambda_f$ は $\operatorname{Ann}(W_f)$ を張る。
+すると
+\[
+ T_f=\kappa_f\otimes(\lambda_fg).
+\]
+前補題により $M_f$ の条件は両因子の行列式の非消滅と同値である。
+もし $W_f=W_g$ なら第二因子は零なので、この場合は除かれる。
+異なる場合には $\lambda_f|_{W_g}$ は $U_0$ の annihilator 線を張り、
+\[
+ \det(\lambda_fg)=q_g(\lambda_f|_{W_g}).
+\]
+$f,g$ を交換した式も合わせれば、表示した三条件に一致する。
+転置の条件は Kronecker 積が可逆となるため自動的に成立する。
+
+kernel tensor の可逆性から conic の smooth 性が従うことも確認する。
+可逆 kernel を二因子の基底変更で標準的な非退化 tensor に直せば、
+その annihilator は二次行列の trace 零 hyperplane と同値である。
+この三次元空間への行列式の制限は非退化二次形式である。
+従って $q_f,q_g$ はともに非退化である。
+
+有限代数を中央二重平方のものに直接同定する。
+共通空間の基底を $u,v$ とし、$W_f=U_0\oplus kc$ と書く。
+$f$ の積の行列を $M(c,u,v)$ とすると、$c$ の係数行列は
+$q_f|_{\operatorname{Ann}(U_0)}\ne0$ によって可逆である。
+左右基底変更によりこれを単位行列に直し、次に $c$ へ $u,v$ の一次式を
+加えることで
+\[
+ M=cI_2+N(u,v),\qquad\operatorname{tr}N=0
+\]
+とできる。このとき
+\[
+ \det M=c^2+\det N(u,v)
+\]
+であり、ternary form の非退化性から binary form $\det N$ も非退化である。
+$N$ の二次元係数空間は $\mathfrak{sl}_2$ の trace pairing について非退化なので、
+その直交補は可逆な trace 零行列 $H$ により生成される。
+$H$ の二固有値は異なるため、定数共役によって
+$H=\operatorname{diag}(\lambda,-\lambda)$ とできる。
+直交補条件から $N$ は off-diagonal となり、
+\[
+ M=\begin{pmatrix}c&\ell_1(u,v)\\\ell_2(u,v)&c\end{pmatrix},
+ \qquad h_f=\ell_1\ell_2
+\]
+を得る。$h_f$ の非退化性から $\ell_1,\ell_2$ は一次独立である。
+$W_g=U_0\oplus kd$ についても独立に同じ操作を行えるため、
+共通の $u,v$ を変えずに $g$ を同じ形にすることができる。
+
+得られた二行列は、中央二重平方環の二つの標準行列分解から得る
+$\operatorname{Hom}(\mathcal O,X)\otimes\operatorname{Hom}(X,M)$ の積である。
+例えば $\left(\begin{smallmatrix}c&\ell_1\\-\ell_2&-c\end{smallmatrix}\right)$
+の片側の基底を符号変更すれば上の行列になる。
+論文Bの\cite[\texttt{eq:nchh-plane} の直前の行列分解計算]{QuadricModuli2026}
+は normal foundation の同じ積を計算しており、前項の逆 mutation が
+対応する square を与える。
+有限 square の全積はこの二行列だけで決まるため、これは単なる
+同じ conic の認識ではなく、頂点と全積を保つ有限代数の同型である。
+非退化二形式の中央二重平方環が noncubic $H_2$ を与えることには
+\cite[\texttt{thm:ore-anticommuting-central},\texttt{thm:noncubic-classification}]
+{QuadricIntrinsic2026} を用いる。
+\end{proof}
+
+\begin{corollary}[両階数三のscheme壁における相対正規形]
+\label{cor:qa-double-rank-three-scheme-normal-form}
+\[
+ Z_{33}=V(\det f,\det g)\subset V_{\mathrm{cross}}
+\]
+を閉部分スキームとする。その任意の基底変更上で、kernel、image と共通部分
+$U_0$ は所定階数のベクトル束となる。
+\'etale 局所に前命題の中央二重平方正規形が成立し、
+二つの binary form の判別式は可逆である。
+基底の被約性は不要である。
+\end{corollary}
+\begin{proof}
+四つの交差条件は各 $f,g$ の階数が三以上であることを強制する。
+三次 minor を可逆化すると $f$ は $\operatorname{diag}(I_3,a)$ の形となる。
+$\det f=0$ が基底環の元として成立するため $a=0$ であり、$g$ も同様である。
+従って kernel と image は束となる。
+前命題の Kronecker 積の可逆性は基底上でも成立し、二つの像の和は全体である。
+その共通部分は階数二の部分束となる。
+
+前証明の係数行列の正規化と trace の除去は一般の係数環上で行える。
+非退化な二平面の直交補行列 $H$ は局所的に生成元を持ち、$\det H$ は単元である。
+$\lambda^2=-\det H$ の有限 \'etale 被覆上で、
+$(I\pm\lambda^{-1}H)/2$ による固有線束の分解を取り、各線束を局所自明化する。
+これで同じ off-diagonal 正規形を得る。
+両線形式の係数行列の行列式は単元なので、二形式は非退化である。
+全操作は有限代数の全積を保持する。
+\end{proof}
+
+\begin{theorem}[全$H_2$開の有限明示判定]
+\label{thm:qa-square-explicit-h2-open}
+四交差条件の開部分は
+\[
+ V_{\mathrm{cross}}\subset V_\square^{\rm gen}
+\]
+を満たし、前項の同値を通じて
+\[
+ [V_{\mathrm{cross}}/(G_\square/K_\square)]
+   =\mathfrak S_{\HH}\simeq\mathfrak H_2^{\rm rul}.
+\]
+従って
+\[
+ \mathfrak H_2\simeq
+ \left[V_{\mathrm{cross}}\Big/
+       \big((G_\square/K_\square)\rtimes S_2\big)\right].
+\]
+これは非被約有限型基底を含む全相対 groupoid の同値である。
+\end{theorem}
+\begin{proof}
+まず幾何点で判定する。
+$f$ または $g$ の階数が二以下なら、その随伴行列が零となるため交差条件に反する。
+従って二つの階数は三以上である。
+その場合は随伴 $A\to C^\vee W$ と $B\to D^\vee W$ が単射である。
+実際、例えば最初の kernel 元 $a\ne0$ があれば二次元空間 $C\otimes ka$
+が $\ker f$ に入ってしまう。
+一方が可逆なら $f\oplus g$ は全射であり、両階数三の場合も
+前命題によって二つの像の和は $W$ となる。
+従って $V_{\mathrm{cross}}\subset V_\square^{\rm gen}$ である。
+
+少なくとも一方が可逆なら、補題~\ref{lem:qa-cross-invertible-cubic} により
+対応する normal 窓が geometric cubic quintuple を与える。
+論文Bの\cite[\texttt{prop:cubic-foundation-open}]{QuadricModuli2026} と
+既存の cubic 逆構成によって、元の有限 square は真正な $H_2$ foundation である。
+この cubic 入力は linear な古典型も含む
+\cite[Lemma 5.3.3, Theorem 5.5.10]{VdB2011}。
+両階数三なら前命題の直接正規形が同じ結論を与える。
+
+逆に真正な $H_2$ square を取る。
+二つの合成階数は三または四である。
+一方が四なら、その ruling の normal helix は cubic であり
+\cite[\texttt{thm:cubic-coverage},\texttt{cor:normal-cubic-defect}]
+{QuadricIntrinsic2026}、その四因子テンソルは geometric である。
+補題~\ref{lem:qa-cross-invertible-cubic} により四交差条件を得る。
+両階数三なら、noncubic の体上の分類により、構造対象と二つの ruling を保って
+非退化二形式の中央二重平方表示に帰着する。
+その二つの支持 conic は $c^2-h_f$ と $d^2-h_g$ であり、
+共通 $\langle u,v\rangle$ の annihilator 上の値は単元である。
+従って前命題により四交差条件が成立する。
+ここで使う noncubic 分類は有限代数候補の domain 性を仮定するためではなく、
+既に $H_2$ に属する点の必要性にだけ用いた。
+
+以上で $V_{\mathrm{cross}}$ と、既存の $\mathfrak S_{\HH}$ を
+$V_\square$ へ引き戻した開部分は、全幾何点の集合が同じである。
+二つの開部分スキームは幾何点集合が同じなら同じ開部分である。
+従って両者は scheme として一致する。
+既存の全相対開埋込 $\Xi$ を用いると、この等式は非被約なものを含む
+既存の相対 site で許容する任意の基底にも適用され、
+表示した相対群oidの同値を与える。
+閉境界とその開補集合に関する幾何点の判定だけから、相対 heart を直接貼り合わせた
+わけではない。相対存在と全 Isom の同定は、既に証明された $\Xi$ による。
+\end{proof}
+
+\subsection{二十個以内の多項式による実装}
+
+\begin{lemma}[Segreを避けるkernelの五生成開]
+\label{lem:qa-segre-kernel-five-polynomials}
+$M$ を、始域を $k^2\otimes k^2$ と同定した四次正方行列とする。
+$Q(x)=x_{00}x_{11}-x_{01}x_{10}$ は分解可能 tensor の Segre 方程式とする。
+基底列 $e_1,\ldots,e_4$ に対し
+\[
+ I_{\rm ker}(M)=
+ \left(\det M,
+       Q(\operatorname{adj}(M)e_1),\ldots,
+       Q(\operatorname{adj}(M)e_4)\right)
+ \tag{IK}\label{eq:qa-five-polynomial-kernel-ideal}
+\]
+と置く。すると $\mathcal K(M)=D(I_{\rm ker}(M))$ である。
+ここで $D(I)$ は生成元の少なくとも一つが非零となる開部分を意味する。
+\end{lemma}
+\begin{proof}
+階数四なら行列式が非零である。
+階数三なら随伴行列は階数一で、その非零列が kernel 線を張る。
+従って kernel 線が Segre の外にあることは、表示した四つの二次式の
+少なくとも一つが非零であることと同値である。
+階数二以下なら行列式も随伴行列も零である。
+この場合、kernel の射影化は直線を含み、代数閉体上でその直線は
+Segre 二次曲面と交わる。
+これで幾何点における同値を得る。
+両辺とも開部分なので、普遍行列空間上で同じ開部分スキームとなる。
+\end{proof}
+
+\begin{corollary}[四組の明示有限式]
+\label{cor:qa-square-h2-twenty-polynomials}
+全空間 $\mathbb A^{32}$ の固定基底表示で
+\[
+ V_{\mathrm{cross}}=
+ D(I_{\rm ker}(M_f))\cap D(I_{\rm ker}(M_f^{\mathrm t}))
+ \cap D(I_{\rm ker}(M_g))\cap D(I_{\rm ker}(M_g^{\mathrm t})).
+\]
+従って四組各五個、合計二十個以内の多項式で全 $H_2$ 開を判定できる。
+各組で少なくとも一つが非零であることを要求し、二十個全ての非消滅を
+要求するのではない。
+$M_f,M_g$ の成分は $f,g$ の係数に関して次数四、各組の行列式は次数十六、
+随伴列の Segre 二次式は次数二十四である。
+転置の行列式は元の行列式と同じなので、表示した二十式には重複もある。
+
+任意基底上では、四つの引戻し ideal がそれぞれ単位 ideal となることが
+対応する条件である。
+\end{corollary}
+
+\begin{remark}[idealのscheme構造と閉境界を区別する]
+式~\eqref{eq:qa-five-polynomial-kernel-ideal} の生の五生成 ideal が
+全ての座標基底または局所枠の変更に対して同じ ideal として貼り合うとは主張しない。
+列の線形結合では二次式の polar cross term も生じるため、
+その scheme-theoretic な零集合を canonical な incidence 像と同定するには
+別の検証が必要である。
+ここで基底に依存せず決まるのは $D(I_{\rm ker})$、またはその閉補集合の
+radical ideal であり、全 $H_2$ 開の scheme としての同定にはこれで十分である。
+
+一方 $Z_{33}=V(\det f,\det g)$ は $H_2$ 開の中の実際の閉境界である。
+この上の相対中央二形式正規形には、二つの行列式が基底環で零となることを使う。
+全幾何 fiber で零という条件で置き換えてはならない。
+例えば行列式が非零の nilpotent となる一次横断族は、$H_2$ 開には属しても
+この閉境界へ scheme として因数分解しない。
+この違いは論文Bの
+\cite[\texttt{prop:lagrangian-relative-double-rank-three},
+\texttt{cor:lagrangian-open-closed-recognition}]{QuadricModuli2026}
+の閉境界と横断 chart の区別と一致する。
+今回の交差条件は、そこで使った Lagrangian chart に限らず、
+二積の全 $\mathbb A^{32}$ に書かれている。
+\end{remark}
+
+\begin{example}[二積の可逆性だけでは足りない]
+四つの二次元空間を同じ基底で同定し、$f=g=I_4$ とする。
+両積は同型であり、kernel 条件も同時全射性も満たす。
+しかし $T_f=I_4$ の交差縮約は
+\[
+ c^\vee\otimes d\longmapsto c^\vee(d)\,I_2
+\]
+であって階数一であり、分解可能 kernel を持つ。
+従ってこの aligned なデータは $H_2$ 開に属さない。
+古典的 $\mathbb P^1\times\mathbb P^1$ の二経路では、相対写像は
+二つの tensor 因子の交換である。その交差縮約は可逆であり、古典点は正しく残る。
+\end{example}
+
+
+\begin{example}[次数二十四の条件が必要となる点]
+$f=I_4$ とし、
+\[
+ g=\begin{pmatrix}
+ 1&0&0&2\\0&-1&0&0\\0&0&-1&0\\2&0&0&1
+ \end{pmatrix}
+\]
+と置く。$\det g=-3$ であるが、交差縮約は
+\[
+ M_f=\begin{pmatrix}
+ 1&0&0&-1\\0&2&0&0\\0&0&2&0\\-1&0&0&1
+ \end{pmatrix}
+\]
+となり、階数三でkernelは非分解テンソル$(1,0,0,1)$で張られる。
+その随伴列の四つのSegre値は$(16,0,0,16)$である。
+$M_f$とその転置のkernel条件が成立し、$f,g$が可逆なので
+補題~\ref{lem:qa-cross-invertible-cubic}により残る二条件も成立する。
+従ってこれは$H_2$点であり、交差行列式の非消滅だけではこの点を失う。
+随伴列の次数二十四の式を残す必要がある。
+\end{example}
+
+\begin{corollary}[明示atlas上の普遍相対square AS代数]
+\label{cor:qa-explicit-h2-atlas-square-as}
+$V_{\mathrm{cross}}$ 上の普遍階数十六square代数$\Lambda$は、
+canonical Serre完成と四頂点展開によって実際の相対square AS代数を与える。
+全次数の局所自由性、係数束付き単純解消とその双対、および各許容基底上の
+左右Noether性と指定対象を保つtails認識が成立する。
+曲線avatarが基底上で平坦な曲線族をなすことを入力にせず、古典fiberも含む。
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:qa-square-explicit-h2-open}によって全幾何fiberは真正な
+$H_2$ squareである。補題~\ref{lem:qa-classified-fiber-finite-square-recognition}、
+系~\ref{cor:qa-relative-square-completion-two-sided-noetherian}、
+命題~\ref{prop:qa-relative-square-unfolding}と
+命題~\ref{prop:qa-relative-square-as-resolutions}を適用する。
+全$\HHstack$上で増幅前の四頂点が大域降下するとは主張しない。
+そこでは命題~\ref{prop:qa-universal-h2-square-morita81}の階数八十一代数を使う。
+\end{proof}
+
+\begin{remark}[入力と本項の位置付け]
+geometric quintuple の定義と cubic 分類は
+\cite[Definition 5.3.1, Lemma 5.3.3, Theorem 5.5.10]{VdB2011}
+の既知の入力である。一次資料 arXiv:0807.3753v3 の pp.~13--14,20 で
+これらの記述を確認した。
+noncubic 分類と全相対開埋込は論文A・Bおよび本稿の既存結果に依存する。
+本項で追加したのは、二積の随伴行列からの四交差条件、両階数三の直接有限認識、
+および二十式以内での全開部分の記述である。
+この組合せの文献上の新規性は未確認であり、証明稿としての主張と
+形式証明器による検証とを同一視しない。
+\end{remark}

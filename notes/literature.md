@@ -1,7 +1,15 @@
 # 非可換 quadric 分類：現行文献比較
 
-資料確認日：2026-11-23（日本時間）。v1.90。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v1.91。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
+
+## 全H2開の明示式と通常代数の降下
+
+Van den Bergh, *Non-commutative quadrics*, [arXiv:0807.3753v3](https://arxiv.org/pdf/0807.3753v3), Definition5.3.1、Lemma5.3.3、Theorem5.5.10（印字pp.13–14,20）を一次再確認した。Geometric quintupleの隣接二因子縮約条件とcubic分類にはlinearな古典型も含まれる。Cの新定理は二積の随伴行列による四交差条件へ移し、両rank3壁も直接認識して全H2開を20式以内で記述する。既存のcubic開の存在そのものと区別し、この具体化の包括的新規性は未確認である。
+
+Lieblich, *Moduli of twisted sheaves*, Duke Math.J.138(1)(2007),23–118、[arXiv:math/0411337v2](https://arxiv.org/pdf/math/0411337v2) Lemma2.1.1.13は慣性自明な層の降下を述べる（番号はこの版）。同著者 *Twisted sheaves and the period-index problem*, Compositio144(1)(2008),1–31、[DOI](https://doi.org/10.1112/S0010437X07003144) の刊行本文 Lemma3.1.1.7とProposition3.1.2.1を確認した。Hom/tensorの重みの相殺とtwisted bundleのEndがAzumayaになる原理は既知であり、rank81構成の新原理とはしない。後者のperiod–index同値には節のintegral Noetherian仮定があるため任意底へ外挿しない。
+
+Antieau–Elmanto, *Descent for semiorthogonal decompositions*, Adv.Math.380(2021),107600、[著者最終稿](https://eldenelmanto.com/wp-content/uploads/2021/01/sodnote.pdf) §5.3 Proposition5.7を一次確認した。古典P1×P1の中間ruling blockの降下と、順序付き精密化を妨げる二重被覆は既知である。本稿の内容は、全H2の内在的squareについてO・S2・全許容基底変更を保つ実際のTcanとrank81代数、全次数完成およびpointed tailsを具体化すること。81の最小性や同様の構成の先行不存在を主張しない。一般の圏降下定理を全stack上のunbounded導来圏に無条件適用していない。
 
 ## 相対AZ・全整数展開・relation potential
 
@@ -568,7 +576,7 @@ k[[a,u,v]]^{C3}。これは全noncubic境界の定理ではない。
 
 **非構成的有限多項式判定と可換gerbeの証明範囲。** U0⊂A64は有限型開、realizable W_Hは開なので、その閉補集合のイデアルがNoether性で有限生成となる。G/Kのrational作用で有限次元安定部分表現を選べる。これはStacksの一般原理と本研究の新しい相対開埋込の形式的帰結で、explicitな演算アルゴリズムではない。可換QのAut=(PGL2×PGL2)⋊C2の因子交換からruling coverの非自明性が従う。C cor:qa-realizable-foundation-finite-open-criterion、cor:qa-ruling-cover-nontrivial-commutative-gerbeに証明。文献の包括的新規性は未確認。
 
-**VdB geometric開の明示多項式化。** Van den Bergh 2011 Definition 5.3.1とB prop:cubic-foundation-openの隣接二因子縮約非退化条件をC lem:qa-explicit-cubic-geometric-adjugateで明示quartic/sexticの計20個の多項式に変換した。rank3のkerがSegreの分解可能座を避けることとadjugate列の2×2det非零を同定する直接線形代数。幾何的cubic開の存在自体はVdBの既知入力で、20式への具体化の包括的新規性は未確認。noncubic全realizable開には適用しない。
+**VdB geometric開の明示多項式化。** Van den Bergh 2011 Definition 5.3.1とB prop:cubic-foundation-openの隣接二因子縮約非退化条件をC lem:qa-explicit-cubic-geometric-adjugateで明示quartic/sexticの計20個の多項式に変換した。rank3のkerがSegreの分解可能座を避けることとadjugate列の2×2det非零を同定する直接線形代数。幾何的cubic開の存在自体はVdBの既知入力で、20式への具体化の包括的新規性は未確認。このcubic補題自体はnoncubic全realizable開に適用しない。全H2開は新しい四交差条件の定理で別に認識した。
 
 **O-marked–potential–avatarの三者比較に使った既知入力・内部資料。**
 Michel Van den Bergh, *Noncommutative quadrics*, IMRN 2011,

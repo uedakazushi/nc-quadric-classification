@@ -1,12 +1,24 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.31（A v1.69・20節、B v0.40・31節、C v4.17）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.32（A v1.69・20節、B v0.40・31節、C v4.18）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 全H2開の四交差条件と二十式
+
+正本は [square_explicit_h2_open.tex](../papers/quiver-avatar/square_explicit_h2_open.tex)。二積 f:C⊗A→W、g:D⊗B→W の随伴合成 Tf=adj(f)g、Tg=adj(g)f を交差縮約し、Mf,Mfᵗ,Mg,Mgᵗ の各kernelがSegre二次曲面を避けることを課す。Mfの係数は (Mf)ab,cd=(Tf)ca,db。各条件は Iker(M)=(det M,Q(adj(M)e1),…,Q(adj(M)e4)) の非零開である。四組それぞれで少なくとも一式が非零、一般基底では各idealが単位idealという条件であり、全20式の同時非消滅ではない。行列式の次数は16、随伴列の二次式は24。座標変更に対してraw idealの一致は主張せず、開部分の一致を使う。
+
+**再現手順。** `python3 computations/verify_square_h2_open.py` はSymPyの整数・有理数・記号計算を使い、添字のKronecker恒等式、古典・三noncubic、rank低下・同一image・aligned反例、次数24の必要例、座標変換と交換を検算する。有限例と恒等式の確認であり、全相対定理の形式認証ではない。
+
+**証明と非被約底。** 片積可逆ではVdB geometric quintupleの四隣接条件に一致する。片積rank3では随伴の交差縮約がKronecker積となって残る二条件を補う。両rank3ではkernelの非分解性・異なる支持超平面・共通平面annihilator上での二conicの非零条件を得て、全積行列をcI+offdiag、dI+offdiagへ正規化し中央二重平方環を回復する。既存相対H2開と全幾何点が一致するため同じ開部分スキームとなり、既存Ξが相対存在・全Isomを与える。fiberwise同値だけからheartを推論していない。Z33=V(det f,det g)上の相対正規形はschemeとして両detが零であることを要し、非零nilpotentの横断族とは区別する。
+
+**有用な反例。** f=g=I4は二積可逆・joint全射を満たすが、交差縮約rank1なのでH2外である。古典squareは相対写像が二因子のflipであり交差縮約が可逆となる。従って二積のrank条件だけでは全H2開を定義できない。
+
+**全域の境界幾何。** 明示H2開上のdet f=0とdet g=0は滑らかなCartier因子で、共通零点では二つの微分が独立である。順序付きH2上でSNC、noncubic交点は滑らかな余次元2となる。非順序和因子の正規化は一方の順序付き因子であり、noncubic上の逆像はruling二重被覆、conductorはschemeとしてnoncubic中心である。任意引戻し後のsmooth/reduced性は主張しない。 [証明](../papers/quiver-avatar/square_rank_boundary_geometry.tex)。
 
 ## 有限squareスタックと全H2の通常代数
 
-**全H2の有限square表示とcanonicalなrank81代数。** 四つのrank2束とrank4束への二乗法をパラメータ化するA32の開から、rank16 squareとrank24 normal foundationの全相対stack同値を核・余核で構成した。頂点トーラスKとruling交換S2を含め、Q_fndは((GL2^4×GL4)/Gm³)⋊S2による商になる。H2はその不変開として表され、古典型も同じ有限表示で扱える。二積の合併全射は追加開であり、H2上では成立する。全H2上のTcan=⊕Ei⊗Hom(O,Ei)∨は頂点線束と二rulingの交換を消して降下し、通常のEnd代数はrank81。canonical完成のn次は81(2n+1)²、O角は(2n+1)²で、左右Noether性とpointed tails認識を得る。H2開を定義する明示有限式と任意AS/QP族の全比較はまだ得ていない。[有限stack同値](../papers/quiver-avatar/relative_square_foundation_stack.tex)、[全H2のrank81代数](../papers/quiver-avatar/universal_h2_square_morita.tex)。
+**全H2の有限square表示とcanonicalなrank81代数。** 四つのrank2束とrank4束への二乗法をパラメータ化するA32の開から、rank16 squareとrank24 normal foundationの全相対stack同値を核・余核で構成した。頂点トーラスKとruling交換S2を含め、Q_fndは((GL2^4×GL4)/Gm³)⋊S2による商になる。H2はその不変開として表され、古典型も同じ有限表示で扱える。二積の合併全射は追加開であり、H2上では成立する。全H2上のTcan=⊕Ei⊗Hom(O,Ei)∨は頂点線束と二rulingの交換を消して降下し、通常のEnd代数はrank81。canonical完成のn次は81(2n+1)²、O角は(2n+1)²で、左右Noether性とpointed tails認識を得る。H2開は二乗法の随伴行列から作る二つの交差縮約とその転置について、kernelがSegreを避ける四条件で完全に判定した。各条件は五生成idealの非零開で、計20式以内（次数16・24）となる。両rank3壁も含み、既存相対開との一致により非被約底でも全groupoidを認識する。任意AS/QP族の全比較と大域good moduliは別課題である。[有限stack同値](../papers/quiver-avatar/relative_square_foundation_stack.tex)、[全H2のrank81代数](../papers/quiver-avatar/universal_h2_square_morita.tex)。
 
-**明示的な互逆式。** squareの(A,B,C,D,W;f,g)からnormalへは(W1,W2,W3;P,Q)=(B,W,coker αf;D,C∨)、F=g、G=商写像。逆は(A,B,C,D,W)=(kerG,W1,Q∨,P,W2)。K上は(λ1,λ2,λ3)→(λ2,λ3,λ1)、二中間頂点の交換は既存τに一致する。二積がともに[[x0,x1],[x1,x2]]である例は両核に非零分解可能tensorを含まず、U0条件を満たすが、像の和が3次元に留まる。H2の同時全射性はAのnormal-cubic-defectと二つの支持相異系による。一般VgenのH2性は未証明。
+**明示的な互逆式。** squareの(A,B,C,D,W;f,g)からnormalへは(W1,W2,W3;P,Q)=(B,W,coker αf;D,C∨)、F=g、G=商写像。逆は(A,B,C,D,W)=(kerG,W1,Q∨,P,W2)。K上は(λ1,λ2,λ3)→(λ2,λ3,λ1)、二中間頂点の交換は既存τに一致する。二積がともに[[x0,x1],[x1,x2]]である例は両核に非零分解可能tensorを含まず、U0条件を満たすが、像の和が3次元に留まる。H2の同時全射性はAのnormal-cubic-defectと二つの支持相異系による。一般VgenはH2開より真に大きく、f=g=I4が反例である。
 
 **降下の要点。** Eiの代表をEi⊗Liへ変えるとHom(O,Ei)もLiを得るため、Tcanの各項で相殺する。二rulingは中間二項の和として降下する。対角はOとruling二重被覆からのdegree2 Azumaya直像とdegree4 Azumayaの和で、rank25。局所増幅(1,2,2,4)の各頂点から一コピーを選ぶfull冪等元fは、Oだけのe0と異なる。前者のgraded Moritaで左右Noether性を降下し、後者はcanonical反Serrecornerとpointingを保つ。絶対大域導来圏のdescentは仮定しない。
 
@@ -22,7 +34,7 @@
 
 **再開に必要な規約。** B=C(Λ)、A_{4q+j,4p+i}=e_jB_{q−p}e_i、Pack(M)_ne_i=M_{i−4n}。Λの二段階積の核Rはrank4で、最長道長二の短対角解消から通常のJacobian表示を直接得る。Keller Theorem6.10のordinary relation ideal生成に関する訂正も満たす。全整数の頂点線束変更ではA′_{ba}=L_b A_{ba} L_a⁻¹、単純解消の最左係数はL_i L_{i−4}⁻¹である。canonical族と任意の別AS族を線束無視で同一視しない。
 
-**次の課題。** rank16↔rank24の相対stack同値は上節で確立した。cubic geometric開と両rank3壁の二次形式を用いて、square線形表示のH2開を有限式で認識する。
+**次の課題。** rank16↔rank24の相対stack同値、全H2開の20式判定、determinant境界の横断性と非順序商の正規化は確立した。半不変式によるaffine開被覆を作り、既存GITとの大域比較を進める。
 
 ## 相対行列式開と同じheartの全標準頂点
 
@@ -34,7 +46,7 @@
 
 同節ではUi上の三次関係核Rから四重tensorを構成し、実際のgeometric cubic Z族を復元する。Linear cubicのinverse mutationはclassical squareなので、曲線型sourceからは生じない。全次数平坦・Noether性とcanonical tailsはBの既存相対結果を適用し、C0とのpointed exact同値を得る。
 
-**保持すべき因子と範囲。** 曲線上のZ1は $FG^2\otimes\det(p_*G)^\vee$。Cubicの四次overlap・添字線束を消したstrict周期同一視は主張せず、canonical Serre tensor比較と区別する。全標準頂点のH2条件は同じ相対heart上で完成した。T=⊕EiのAZ2とcanonical square AS qgrの比較は上節で証明した。有限square表示の全stack比較と全AS/QP群oid同値は別課題である。
+**保持すべき因子と範囲。** 曲線上のZ1は $FG^2\otimes\det(p_*G)^\vee$。Cubicの四次overlap・添字線束を消したstrict周期同一視は主張せず、canonical Serre tensor比較と区別する。全標準頂点のH2条件は同じ相対heart上で完成した。T=⊕EiのAZ2とcanonical square AS qgrの比較は上節で証明した。有限square表示の全stack比較は上節で完成し、全AS/QP群oid同値は別課題である。
 
 ## 全標準構造頂点の判定と頂点ideal
 
@@ -2210,7 +2222,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 ## 検証範囲と再現手順
 
-**現行C v4.17の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は12項目の厳密計算PASS。全halving式・pencil多重次数・全群作用と平方根overlapも含む。大域降下、二収縮のPerf像、全有限分岐後の平方根障害、全halving torsorの証明も相互読取りした。さらに代数的target chart・flat good-moduli性・DM開の非完全直像、およびspinorの反Serre生成障害と全四位相を独立読取りした。Alper刊行版の定義・fpqc降下を一次確認した。 全point schemeのscheme論的計算・任意底の普遍族・孤立二点の順序被覆、頂点idealの必要十分判定、全AS型の標準頂点分類を二名が独立に読取りした。Aのcubic逆構成は適用範囲と結論を再確認し、内部証明全体を再監査したとはしない。RSS2020のLemma6.6とProposition6.10の証明を一次照合した。 相対行列式開・普遍Cartier壁・非被約底の反例、rank16から24へのcone・K内部共役降下・E3の同じheartでの認識を独立読取りし、Stacks 0B91・07Z6・0E6Bの一次本文を照合した。 中間二頂点の実normal窓、相互AZ生成による同heart判定、実際のcubic族回復とlinear除外を独立読取りした。Keller1994 §§4.3,8.2のcompact生成・双加群Moritaを一次確認し、Bの普遍cubic平坦性・Noether性の適用範囲も確認した。基底平坦compactのExt次元・四対象のAZ生成・opposite認識・左右Noether性・packing・係数束付きAS解消を独立読取りした。OACU2026 Theorem7.3とKeller Theorem6.10の著者訂正を一次照合した。finite square↔normalの核・余核、K/S2、joint全射の反例、全H2のrank81降下、回転/mutationの双対heartと非被約scheme壁を独立読取りした。`python3 computations/verify_symmetric_morita.py` には回転/mutationのGram行列と全次数式、rank81の全次数式を追加し、7群の厳密計算をPASSした。七矢三関係の非最小有限表示、短対角解消、ordinary Jacobian、δを残す相対AS解消も独立読取りした。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:34・661・195、明示的な論文間参照139件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
+**現行C v4.18の確認範囲（2026-11-23、日本時間）。** 今回は二traitのRees graph・全blowup chart・交互収縮・最小性・自由符号商、自然な順序付きFricke像の二次線束延長、一致型の模型同型・四捩れ補正、構造層の高次順像とPerf引戻しを分担し、統合内容を相互読取りした。Stacksのblowup・有限自由作用の商・形式関数定理を一次本文で照合した。`verify_spectral_boundary_models.py` は12項目の厳密計算PASS。全halving式・pencil多重次数・全群作用と平方根overlapも含む。大域降下、二収縮のPerf像、全有限分岐後の平方根障害、全halving torsorの証明も相互読取りした。さらに代数的target chart・flat good-moduli性・DM開の非完全直像、およびspinorの反Serre生成障害と全四位相を独立読取りした。Alper刊行版の定義・fpqc降下を一次確認した。 全point schemeのscheme論的計算・任意底の普遍族・孤立二点の順序被覆、頂点idealの必要十分判定、全AS型の標準頂点分類を二名が独立に読取りした。Aのcubic逆構成は適用範囲と結論を再確認し、内部証明全体を再監査したとはしない。RSS2020のLemma6.6とProposition6.10の証明を一次照合した。 相対行列式開・普遍Cartier壁・非被約底の反例、rank16から24へのcone・K内部共役降下・E3の同じheartでの認識を独立読取りし、Stacks 0B91・07Z6・0E6Bの一次本文を照合した。 中間二頂点の実normal窓、相互AZ生成による同heart判定、実際のcubic族回復とlinear除外を独立読取りした。Keller1994 §§4.3,8.2のcompact生成・双加群Moritaを一次確認し、Bの普遍cubic平坦性・Noether性の適用範囲も確認した。基底平坦compactのExt次元・四対象のAZ生成・opposite認識・左右Noether性・packing・係数束付きAS解消を独立読取りした。OACU2026 Theorem7.3とKeller Theorem6.10の著者訂正を一次照合した。finite square↔normalの核・余核、K/S2、joint全射の反例、全H2のrank81降下、回転/mutationの双対heartと非被約scheme壁を独立読取りした。`python3 computations/verify_symmetric_morita.py` には回転/mutationのGram行列と全次数式、rank81の全次数式を追加し、7群の厳密計算をPASSした。七矢三関係の非最小有限表示、短対角解消、ordinary Jacobian、δを残す相対AS解消も独立読取りした。全H2開の四交差条件・両rank3正規形・20式判定と全域境界の正規化を独立読取りし、VdBの定義5.3.1・補題5.3.3・定理5.5.10を一次照合した。`verify_square_h2_open.py` は9群の厳密計算PASS。Lieblichの重み零降下とAntieau–Elmantoの古典ruling blockも一次本文で比較した。`python3 scripts/check.py papers` はPASS（A:22ファイル・139ラベル・137引用、B:32・501・223、C:36・677・207、明示的な論文間参照140件）。新スクリプトは通常math suiteへ登録したが全既存suiteは再実行していない。前回確認した相対Morita/Serre、spectral gerbe、TF認識と四本の検算（spectral15項目）の結果は保持し、今回再実行したとはしない。現行LuaLaTeX buildは依存不足でSKIP、PDFの生成・表示確認は未実施。形式証明・外部査読・A/B全証明の再監査・網羅的新規性照合は未実施。
 
 
 **現在の再編の検査境界（2026-11-22）。** Aの主原稿は分類20節、Bは相対モジュライ31節である。Bに移動した節のTeX root・主要environment対応・文献キーは節ごとに確認したが、現行3原稿で `scripts/check.py papers` は実行PASS、LuaLaTeXの実組版は依存不足により未実施である。再現用に `scripts/check.py papers` コマンドを追加した。AからBへの証明移管を、移動先の全数学的独立監査や新規定理の形式証明と読み替えない。検算済みの具体的な多項式恒等式は以下の既存の厳密計算の範囲に限る。
@@ -2219,7 +2231,7 @@ Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構�
 
 **既存の有限型代数性の検証範囲。** 主論文v1.44の有限LG認識、非被約閉部分の正規形、全fiberからの全軌道比較、普遍Noetherian貼合せ、中央AS4延長、全体atlas、普遍cubic族の降下と既約性、被約境界の余次元2とsmooth降下、ambient非開性を独立読取りした。`verify_lagrangian_recognition.py` は一般係数の多項式恒等式としてisotropy、rank(3,3)、二つのcross行列式1と(α²+βγ)⁴、階数一outer productのcross行列式(det Y det ν)²を厳密検算しPASS。有限線型代数の補助検算であり、全次数定理やstackの形式認証ではない。新規性の包括的確定・形式証明器の確認は未実施。
 
-**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.17のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
+**現行版の組版制約。** 現在の環境ではLuaTeX-ja等の必要TeXファイルを利用できず、`bootstrap.sh --with-tex` は既存root/sudo権限不足により導入できなかった。C v4.18のbuildはSKIP（終了コード2）で、新しいPDFの生成・画像確認は未実施である。過去版の組版記録を現行原稿の確認と読み替えない。三稿のソース参照確認は現行版でPASS。新しいClifford作用行列の多項式恒等式、および全Lagrangian接空間上の二行列式の微分q33と(α²+βγ)q22の独立性もPASS。
 
 **現行追加部分の確認。** Lagrangian slice、楕円全標識と忘却判定、中央AS4被覆、局所中心線の延長と指定同型付き全Artin認識を独立読取りした。五頂点bar解消・末項の消去・導来torsion kernel、局所Noetherian持上げと全有限型基底変更へのArtin昇格も適用仮定を照合した。Gale計算は三例、off-diagonal反例、一般係数6×6行列を厳密SymPyで検算PASS。中央被覆はQQ(a,b)と三特殊化で双対商次元・pairing・中心/反中心を厳密検算PASS。両スクリプトを通常math suiteへ登録したが、全旧suiteは再実行していない。形式証明・外部査読・包括的新規性確認は未実施。
 

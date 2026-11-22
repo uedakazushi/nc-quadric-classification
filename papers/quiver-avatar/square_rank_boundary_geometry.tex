@@ -1,0 +1,109 @@
+% !TeX root = ../nc-quadric-avatar.tex
+% 2026-11-23 / v4.18。全H2開上の階数低下因子。
+
+\subsection{二つの階数低下因子の横断性}
+\label{subsec:qa-square-rank-boundary-geometry}
+
+前項の明示開 $V_{\rm cross}\subset\mathbb A^{32}$ を用いる。
+$G=G_\square/K_\square$ と略記し，
+\[
+ D_f=V(\det f)\cap V_{\rm cross},\qquad
+ D_g=V(\det g)\cap V_{\rm cross},\qquad
+ Z=D_f\cap D_g
+\]
+と置く。交点と和集合にはそれぞれ
+$(\det f,\det g)$ と $(\det f\det g)$ による scheme 構造を入れる。
+
+\begin{proposition}[全域の横断的階数低下]
+\label{prop:qa-square-global-transverse-rank-divisors}
+$D_f,D_g$ は $V_{\rm cross}$ 上の滑らかな有効 Cartier 因子で，
+$Z$ は滑らかな余次元二の閉部分スキームである。
+$D_f$ と $D_g$ は横断的に交わる。
+
+従って ordered ruling stack
+$\mathfrak H_2^{\rm rul}=[V_{\rm cross}/G]$ 上に
+二つの滑らかな有効 Cartier 因子
+$\mathfrak D_f,\mathfrak D_g$ が定まり，
+その交点 $\mathfrak Z$ は滑らかで余次元二，
+和集合は単純正規交差因子である。
+特に $\dim\mathfrak Z=1$，$\dim\mathfrak D_f=\dim\mathfrak D_g=2$ である。
+unordered stack $\mathfrak H_2$ 上には，二枝の交換を許す
+\'etale 局所の正規交差因子 $\mathfrak D$ が降下する。
+\end{proposition}
+
+\begin{proof}
+明示開上では $\operatorname{rank}f,\operatorname{rank}g\geq3$ である。
+四次正方行列の determinant hypersurface は階数三の点で滑らかである。
+実際，行列式の微分の係数は三次小行列式であり，
+階数三の点では少なくとも一つが非零である。
+従って $D_f,D_g$ はともに滑らかな Cartier 因子である。
+
+二積の全空間は
+\[
+ \mathbb A^{32}
+  =\operatorname{Hom}(C\otimes A,W)
+     \times\operatorname{Hom}(D\otimes B,W)
+\]
+である。$Z$ の任意の幾何点において
+$d(\det f)$ と $d(\det g)$ は，この二つの異なる因子にそれぞれ属する
+非零 cotangent vector であるため一次独立である。
+よって $Z$ は滑らかな余次元二となり，交わりは横断的である。
+同じ計算により，交点の \'etale 局所座標では和集合の方程式を $xy=0$ とできる。
+
+$\det f,\det g$ は前節の線束 $L_f,L_g$ の $G$-equivariant section である。
+従って Cartier 因子と交点は商 stack へ降下する。
+$V_{\rm cross}\to[V_{\rm cross}/G]$ は滑らかな atlas であるため，
+滑らかさ，余次元および横断性の主張も降下する。
+$\dim[V_{\rm cross}/G]=3$ より表示した次元を得る。
+二つの因子は ruling の交換によって互いに移るので，
+和集合は $\mathfrak H_2=[V_{\rm cross}/(G\rtimes S_2)]$ へ降下する。
+順序付き二重被覆の上で既に単純正規交差であることから最後の主張が従う。
+\end{proof}
+
+\begin{corollary}[unordered階数因子の正規化]
+\label{cor:qa-square-rank-divisor-normalization}
+有限射
+\[
+ \nu:\mathfrak D_f=[D_f/G]\longrightarrow
+ \mathfrak D=[(D_f\cup D_g)/(G\rtimes S_2)]
+\]
+は $\mathfrak D$ の正規化である。
+この射は noncubic 閉部分
+$\mathfrak N=[Z/(G\rtimes S_2)]$ の外では同型であり，
+$\mathfrak N$ 上への引戻しは
+\[
+ [Z/G]\longrightarrow[Z/(G\rtimes S_2)]
+\]
+という内在的な ruling の二重被覆である。
+また $\mathfrak D$ 内の conductor 閉部分は $\mathfrak N$ である。
+\end{corollary}
+
+\begin{proof}
+二つの滑らかな因子が横断的に交わるので，
+$D_f\amalg D_g\to D_f\cup D_g$ は有限な正規化射である。
+これは交点近傍の式 $xy=0$ とその二つの smooth branch によって確認できる。
+この射は $G\rtimes S_2$-equivariant であり，
+\[
+ [(D_f\amalg D_g)/(G\rtimes S_2)]\simeq[D_f/G]
+\]
+である。従って上の正規化射を商へ降下すると $\nu$ を得る。
+有限性・代表可能性・正規化であることは上の atlas への引戻しで確認できる。
+交点を除けば正規化は同型であり，
+交点上の二枝はちょうど二つの ruling を表す。
+最後に，regular な局所係数環 $R$ 上の $R[x,y]/(xy)$ において，
+二枝への正規化の conductor は $(x,y)$ であるため，
+conductor の閉部分は scheme としても $Z$ と一致する。
+これも商へ降下する。
+\end{proof}
+
+\begin{remark}[非被約横断族と相対サイト]
+以上の Cartier 因子，交点，および正規化射は普遍的な代数 stack 上の構成である。
+その任意の scheme 基底変更を取れるが，
+任意に引き戻した因子や交点が再び滑らか・被約であるとは主張しない。
+引き戻した有限射が再び正規化となることや，conductorの形成が任意の非平坦基底変更と
+可換となることも主張しない。
+また actual heart の相対 groupoid の同定には，
+既存の $\mathfrak H_2$ の相対サイトの範囲を引き続き用いる。
+$\det f$ または $\det g$ が非零の nilpotent となる族は，
+全幾何 fiber が両階数三でも $Z$ へ因数分解しない。
+\end{remark}

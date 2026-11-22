@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.17
+% 日本語 LuaLaTeX。2026-11-23 / v4.18
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.17（全H2の有限square表示とcanonicalな階数81代数）}
+\date{2026年11月23日\quad v4.18（全H2開の二十多項式判定とcanonicalな階数81代数）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -88,6 +88,11 @@ canonical Serre完成と四頂点展開の左右Noether性，実際の相対AS�
 有限代数の全幾何fiberが分類済みsquare型である族には古典型も含めて適用する．
 二つの乗法で定まるrank16の有限squareスタックとrank24のnormalスタックを
 全基底上で同定し，頂点スカラーとruling交換を含めて比較する．
+二積の随伴行列の交差縮約に対する四つのkernel条件を用い，
+三十二次元係数空間内の全$H_2$開を二十個以内の多項式で明示する．
+両階数三の壁を含み，古典型と非被約基底にも同じ開判定が適用される．
+順序付き全体上の二つの階数低下因子は横断的に交わり，
+非順序の和因子の正規化とconductorを内在的ruling被覆で記述する．
 さらに，全内在的$H_2$上へrank81の通常の有限Morita代数を降下させ，
 その全Serre完成から構造対象を保ってheartを回復する．
 回転・第一mutationの完成も同じheartを与えるが，非被約壁を横断する
@@ -381,7 +386,10 @@ Artin形式変形上の二normal foundationの一意持上げは
 finite foundationの実現可能開への開埋込と
 全相対$S_2$商同型は
 定理~\ref{thm:qa-intrinsic-h2-open-in-foundation-stack}に与える。
-有限多項式判定の存在は系~\ref{cor:qa-realizable-foundation-finite-open-criterion}、
+有限多項式判定の存在は系~\ref{cor:qa-realizable-foundation-finite-open-criterion}に、
+全square表示上での四組・計二十式以内の具体的判定は
+定理~\ref{thm:qa-square-explicit-h2-open}と
+系~\ref{cor:qa-square-h2-twenty-polynomials}に示す。
 被覆の可換gerbe上での非自明性は系
 ~\ref{cor:qa-ruling-cover-nontrivial-commutative-gerbe}で確認する。
 二捩れ特別座のspectral方程式と粗局所分岐は
@@ -414,8 +422,39 @@ finite foundationの実現可能開への開埋込と
 本稿CにOkawa--Uedaの既存GITとの具体的な相対比較を集約する。
 本稿は表示の層別と avatar の幾何を独立に説明する。
 主論文中の全分類や相対再構成の証明は本稿に重複させない。
-本稿の結果も、全 $\HHstack$ の代数性、全 avatar の相対 AS 認識、
-または公刊に向けた包括的な新規性確認の完了を意味しない。
+全 $\HHstack$ の代数性と既存の相対開埋込は論文Bの入力であり、
+本稿は有限square商とその明示開を通じて全群oidを比較する。
+任意に別途与えたAS/QP族の全相対認識、および
+公刊に向けた包括的な新規性確認は未完了である。
+
+\paragraph{既知の降下原理と本稿の具体化}
+局所対象を Hom の双対で増幅してスカラーの曖昧さを消す操作は，
+twisted sheaf における重みの相殺と重み零の降下という既知の原理に属する
+\cite[Lemma 2.1.1.13]{LieblichTwisted2007}
+\cite[Lemma 3.1.1.7]{LieblichPeriodIndex2008}．
+増幅した対象の対角 End が Azumaya 代数となり得ることも，
+同じ理論の基本的な現象である
+\cite[Proposition 3.1.2.1 and its proof]{LieblichPeriodIndex2008}．
+また古典的な $\mathbb P^1\times\mathbb P^1$ の twisted form については，
+二つの中間 ruling を一つの block にまとめた分解の降下と，
+順序付き square への精密化を妨げる二重被覆が
+Antieau--Elmanto により記述されている
+\cite[Section 5.3, Proposition 5.7]{AntieauElmanto2021}．
+本稿で行うのは，これらの原理を $\mathfrak H_2$ の内在的 square に適用し，
+指定対象 $\mathcal O$，ruling 交換および全許容基底変更と整合する
+\[
+ T^{\rm can}
+   =\bigoplus_{i=0}^3
+       E_i\otimes\operatorname{Hom}(\mathcal O,E_i)^\vee
+\]
+を古典型も含む全 $\mathfrak H_2$ 上で具体的に構成することである．
+局所重複度 $(1,2,2,4)$ は階数 $81$ の通常の有限代数を与え，
+その canonical Serre 完成の各非負次数の局所自由性と，
+指定 $\mathcal O$ を保つ actual tails の認識までを証明する
+（命題~\ref{prop:qa-universal-h2-square-morita81}，
+定理~\ref{thm:qa-universal-h2-rank81-completion}）．
+一般の降下原理そのものや，階数 $81$ の最小性を新規な主張とはしない．
+
 
 \subsection{規約}
 
@@ -468,6 +507,8 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/relative_square_opposite}
 \input{quiver-avatar/relative_square_unfolding}
 \input{quiver-avatar/relative_square_foundation_stack}
+\input{quiver-avatar/square_explicit_h2_open}
+\input{quiver-avatar/square_rank_boundary_geometry}
 \input{quiver-avatar/universal_h2_square_morita}
 \input{quiver-avatar/relative_rotated_mutated_tails}
 \input{quiver-avatar/spectral_atkin_lehner}
