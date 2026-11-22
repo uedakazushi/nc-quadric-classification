@@ -1,0 +1,107 @@
+% !TeX root = ../quiver-avatar-moduli.tex
+% 2026-11-22: 共有根 A1 の最小解消に残る相対 Pic^0 障害
+\section{共有根の最小解消と相対 Picard の奇偶障害}
+\label{sec:qa-nodal-resolution-parity}
+
+定理~\ref{thm:qa-noncubic-rootpair-torsionfree-spectral-module}
+の相対 spectral module は共有根で非局所自由となる．
+この非自由性は，その点を最小解消して線束にすれば
+自動的に通常の相対 $\Pic^0$ に戻る，という意味ではない．
+以下は元の一径数基底を変えない最小解消での具体的な障害である．
+
+\begin{proposition}[最小解消後にも残る奇数次数]
+\label{prop:qa-nodal-resolution-odd-exceptional-degree}
+$k$ は標数零の代数閉体とし，
+$A=k[[a,b,y]]/(ab-y^2)$，
+$s=a-b$ とおく．
+符号商
+\[
+ A=k[[c,d]]^{\{\pm1\}},\qquad
+ a=c^2,\quad b=d^2,\quad y=cd
+\]
+の反不変部分
+$M=k[[c,d]]^- =Ac+Ad$
+を考える．$\pi:\widetilde X\to\Spec A$ を
+$A_1$ 特異点の最小解消，$E\simeq\PP^1$ を
+例外曲線とする．
+\[
+ L=(\pi^*M)/(\text{torsion})
+\]
+は $\widetilde X$ 上可逆で，その例外曲線への制限は
+\[
+                    L|_E\simeq\OO_{\PP^1}(1).
+\]
+特に任意の $n\in\mathbb Z$ に対し
+$\deg_E L(nE)=1-2n$ は奇数であり，
+相対 $\Pic^0$ に属する多重次数零の線束にはならない．
+
+さらに，$s$ を基底パラメータとする適切な大域曲線族で
+特殊曲線が既約一節点であれば，最小解消後の特殊
+fiber は二つの成分 $D'$ と $E$ を持ち，
+$D'\cdot E=2$ である．
+同じ generic fiber 上で $M$ と一致する
+任意の可逆延長は，$L$ から垂直 Cartier 因子で
+tensor したものであるから，
+$E$ 上の次数の奇偶は変わらない．
+従って\emph{元の一径数基底上で最小解消するだけでは}，
+非自明二捩れの generic fiber を
+多重次数零の可逆線束の相対族として延長できない．
+\end{proposition}
+\begin{proof}
+最小解消の標準二枚のアフィン chart は
+\[
+\begin{array}{c|ccc}
+ &a&y&b\\ \hline
+ U_c&u&ut&ut^2\\
+ U_d&vw^2&vw&v
+\end{array},\qquad
+v=ut^2,\quad w=t^{-1}.
+\]
+例外曲線は $u=0$ と $v=0$ を貼り合わせた
+$\PP^1_{[c:d]}$ で，自己交点は $E^2=-2$ である．
+$M$ の生成元を形式的に $e_c=c,\ e_d=d$ と書く．
+$A$ 上の関係 $yc=ad$ と $yd=bc$ を引き戻して
+torsion を除くと，
+$U_c$ では $e_d=t e_c$，
+$U_d$ では $e_c=w e_d$ となる．
+従って各 chart では一つの自由生成元を持ち，
+重なりでの遷移関数は
+$e_d=t e_c$ である．これは
+$\OO_{\PP^1}(1)$ の標準遷移である．
+$\OO(E)|_E=\OO_E(-2)$ だから
+$\deg_E L(nE)=1-2n$ が従う．
+
+$s=a-b$ を引き戻すと
+$U_c$ では $s=u(1-t^2)$，
+$U_d$ では $s=v(w^2-1)$ となる．
+従って特殊 fiber には例外成分 $E$ が重複度一で現れ，
+元の節点の二枝の strict transform が
+$E$ の $t=1,-1$ の二点に横断的に交わる．
+大域的に元の特殊曲線が既約一節点なら，
+この二枝は同じ既約 strict transform $D'$ に属する．
+ゆえに $D'\cdot E=2$ である．
+二つの可逆延長が generic fiber 上同型なら，
+正則曲面上のその比は垂直 Cartier 因子で表される．
+その成分は $E$ と $D'$ の整数係数の和なので，
+$E$ 上の次数の変化は
+$nE^2+mD'\cdot E=-2n+2m$ で偶数である．
+よって多重次数零への延長は存在しない．
+\end{proof}
+
+\begin{corollary}[相対 avatar の修正に必要な追加操作]
+\label{cor:qa-nodal-resolution-requires-more}
+共有根の noncubic spectral avatar を
+通常の相対 $\Pic^0$ へ移すには，
+元の基底を変えずに全空間の $A_1$ を最小解消するだけでは
+不十分である．
+基底変更，非可逆 rank-one torsion-free 層を許す
+compactified Picard，または安定モデルと偏極を
+同時に変更する構成のいずれかを別途検討する必要がある．
+この命題は，それらの追加操作を施した場合にも
+相対射が存在しないと主張するものではない．
+\end{corollary}
+\begin{proof}
+命題~\ref{prop:qa-nodal-resolution-odd-exceptional-degree}
+で可逆延長の例外成分上の次数が奇数になる．
+相対 $\Pic^0$ の多重次数零の線束にはなり得ない．
+\end{proof}
