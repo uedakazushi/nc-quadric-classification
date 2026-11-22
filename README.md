@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-22 / 運用v0.75、論文A v1.69、論文B v0.34（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-22 / 運用v0.76、論文A v1.69、論文B v0.35（依存・組版の監査中）、論文C v0.3。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **現行の作業順序：** [研究方針のP0–P5](00_research_plan.md#現行実行計画と達成基準公表準備から次の比較研究へ) に従い、まずA/Bの証明・先行研究・三稿の参照を監査し、公表用の構成を整える。次の中心研究は、一般cubic領域における既存quintuple/GITモジュライと内在的H2の相対比較、およびその境界への延長。Cは有限表示の確立部分とheart/ASの未完成な比較を区別する。
 
@@ -19,6 +19,9 @@
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。リポジトリ全体のcheckoutができないため、三稿の全checker実行・LuaLaTeX組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
 ## 五頂点barと相対heartの検証
+
+相対cubic二主開と中央Clifford閉部分の普遍Noetherian性から、次数別I進完備化と忠実平坦降下による元の偶数環のNoetherian貼合せを監査した。Keelerの相対一様消滅について2018年の正式Corrigendumを本文と文献表に追加した。次は同じ根の中央AS4被覆の有限型延長を点検する。
+
 
 閉部分の中央二重平方環の自由基底は、全可換係数環（冪零を含む）で合流するmonic PBW規則により示した。任意Noetherian基底変更後の普遍Noetherian性と有限étale標準化からの忠実平坦なrow/column降下を独立補題として論文Bに整理した。再現用の [四重なり検算](computations/verify_clifford_pbw.py) も標準数学検査に追加。次はcubic二開部分・閉部分の次数別完備化貼合せを点検する。
 

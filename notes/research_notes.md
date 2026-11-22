@@ -1,6 +1,51 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v0.73（A v1.69・20節、B v0.34・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v0.74（A v1.69・20節、B v0.35・31節、C v0.3）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## cubic二開と$I$進完備化による普遍Noetherian貼合せ
+
+有限型Lagrangian認識開の基底$R$で
+$a=\det M,\ b=\det N,\ I=(a,b)$とする。
+$D(a)$では指定したrulingのgeometric cubic helix、
+$D(b)$では変異した反対rulingの同様のhelixを使う。
+ruling交換は偶数頂点$E_{2i}$と指定された二周期根$s$を
+変えないので、両主開で使う偶数軌道環は同じ$C$の局所化である。
+thm:relative-geometric-cubic-noetherianは、
+全次数projectiveな相対cubic解消、四次syzygyと縮約同型、
+全幾何fiberのgeometric quintupleという入力から
+row/columnの普遍Noetherian性を導く。
+相対point curve上の積を相対豊富な$H_i=L_iL_{i+1}$の冪と
+各fiber成分で数値的に自明なnef prefixに分け、
+Keeler2003 Theorem 1.5を用いて、全nef prefixに一様な
+高次cohomology消滅を得る。
+row idealの像層の昇鎖がNoetherian coherent層で安定した後は
+固定有限presentationから全ての十分高い次数のidealを生成できる。
+linear閉部分は別の相対Segre表示で扱う。
+2018年の刊行Corrigendum（doi:10.1016/j.jalgebra.2018.03.024）は
+元のLemma 3.3を訂正し、依存する定理を再検証している。
+その一次刊行ページでこの範囲を確認し、原稿Bの書誌と引用へ追加した。
+
+中央Cliffordの非被約閉部分$R/I$とcubic二主開$R_a,R_b$の
+それぞれで、任意のNoetherian基底変更後の左右Noetherian性を持つ。
+形式貼合せの thm:patch-noetherian は、固定内部次数での
+$I$進完備化と有限生成の係数liftを使い、
+$R\to\widehat R_I\times R_a\times R_b$の忠実平坦性で
+元の各row/columnの有限生成を降下する。
+$\bigoplus C_n\otimes_R\widehat R_I$を用い、
+全内部次数の$I$進逆極限と無条件に同一視しない。
+任意のNoetherian$R$-代数$T$にも$I_T=(a,b)T$を用いて
+同じ三部分の証明を適用できる。
+この点で「幾何fiberごとのNoetherian性」のみから
+全体のNoetherian性を推論してはいない。
+
+**残る監査。** 選んだSerre根と同じ中央AS4被覆を
+有限型開へ延長する部分。局所中央線$\phi\in E_2$の
+全次数正則性から、一つの主開上の正則性を得る
+lem:spread-central-regular-lineでは、
+$P=E/(\phi)$の$P_5=0$と次数一生成性により$P_{\ge5}=0$、
+$E$が$R[t]$上有限生成、乗法核も有限生成となる。
+全次数kernelを一つの分母で消す論理と、その後の
+Frobenius・Koszul双対の全基底変更を次に独立点検する。
 
 ## 相対Clifford閉部分のPBWと普遍Noetherian降下
 
@@ -38,8 +83,8 @@ $\prod R_\nu$は忠実平坦で、任意のNoetherian底変更後も
 既存のgeometric cubic Noetherian構成を用い、
 thm:patch-noetherian の次数別$I$進完備化と
 $\widehat R_I\times R_a\times R_b$ の忠実平坦被覆を組み合わせる。
-この最後の「閉+開⇒全体」の独立再検証と、
-選んだ根での相対中央AS4被覆への適用は引き続き要監査。
+閉・開の形式貼合せは本ノート冒頭に条件を整理した。
+次は選んだ根での中央AS4被覆の全次数正則性を重点監査する。
 
 ## 非被約基底の幾何的rankとscheme-theoreticなnoncubic境界
 
