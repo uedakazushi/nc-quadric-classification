@@ -121,7 +121,7 @@ $\OO_C\oplus M$ は元の点曲線・同時符号を回復する。指定generic
 
 ### 次の研究と検証の状態
 
-1. **最優先：全相対AS/QP群oidの同型層・慣性・heart。** 既存のH2開・pencil不変式環・標準頂点認識を入力とし、まず可逆cubic開で最小QPのright-equivalenceと有限foundationの同型層を比較し、次にrank3壁とnoncubicへ広げる。
+1. **最優先：全相対AS/QP群oidの同型層・慣性・heart。** 既存のH2開・pencil不変式環・標準頂点認識を入力とし、既知の通常12矢QPの余剰慣性 $B\mathbb G_m^2$（`prop:qa-stabilized-inertia`）を剛体化し、可逆cubic開の最小8矢QPと有限foundationの同型層を比較したうえで、rank3壁とnoncubicへ広げる。
 
 2. **全周期の認識と境界の慣性。** 8/10/12矢の消去pairのスカラー層を保持し、全相対AS実現の最大片と反例・障害を決定する。
 
