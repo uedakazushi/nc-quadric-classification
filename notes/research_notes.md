@@ -5,7 +5,7 @@
 ## 論文C：幾何的AS入力の自足化と共有根の相対線束障害
 
 **現在有効な入力。** 添付の大川--植田v7（Parts I--II）のうち、反標準曲線の消滅と二pencil、
-square/rotated再埋込み、有限foundationの評価行列、四つのcanonical複体を、
+square/rotated再埋込み、有限foundationの評価行列、四つのcanonical複体と全周期の前向きExt消滅を、
 Cの `square_rotated_foundations.tex` と `canonical_helix_complexes.tex` に証明として組み込んだ。
 直接的な曲線上の完全性と、元のAS Z代数の全周期最小射影分解・Noether性・O-marked heart同値は別である。
 必要なカテゴリー的なAS認識の詳細は元のv7中のhelix/realization構成と原稿A・Bの仮定を突き合わせて継続する。
