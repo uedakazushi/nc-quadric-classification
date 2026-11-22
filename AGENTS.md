@@ -11,7 +11,7 @@
 **論文Cの必須参照と現在の障害。**
 添付の大川--植田v7 Parts I--IIで必要な反標準曲線消滅・二pencil・square/rotated変換・
 finite directed foundationのscheme復元を `papers/quiver-avatar/square_rotated_foundations.tex`、
-四項canonical exact complexと周期式を `papers/quiver-avatar/canonical_helix_complexes.tex` に
+四項canonical exact complex・周期式・前向きExt消滅を `papers/quiver-avatar/canonical_helix_complexes.tex` に
 証明ごと組み込んだ。曲線上の証明と、全AS Z代数のNoether性・相対標準heart/O同値は区別する。
 共有根A1の反不変moduleを同じ基底上で最小解消すると例外曲線への次数が奇数となるため、
 垂直Cartier twistだけでは多重次数零の相対Picard線束にできない
