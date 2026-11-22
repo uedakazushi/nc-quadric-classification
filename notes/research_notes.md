@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-22 / v1.05（A v1.69・20節、B v0.39・31節、C v3.1）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-22 / v1.06（A v1.69・20節、B v0.39・31節、C v3.2）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
@@ -21,7 +21,7 @@ curve上のcanonical完全列は
 `square_rotated_foundations.tex` と
 `canonical_helix_complexes.tex` に証明を保持。
 
-**検証したEuler数値と非被約avatarのrank壁（C v3.1）。**
+**検証したEuler数値と非被約avatarのrank壁（C v3.2）。**
 ASsq/ASrsq最小分解の四相Euler漸化式から
 $H_r(z)=\sum_{n\ge0}\dim A_{i,i-n}z^n$を作ると、
 全位相で
@@ -63,6 +63,71 @@ underlying algebraのgroupoidとは異なる。
 **12本矢は通常8本のfoundation矢＋4本のrelation-dual戻り矢のQP表示であり、
 一般の12本矢QPに独立ASクラスの全分類は主張しない。**
 P(1,1,2)のrelation QPはDWZのmutation頂点を持たない反例。
+
+**二重壁とcubic到達可能性の完全判定（C v3.2）。**
+二つの合成$\mu_G,\mu_F$が同時に階数3へ落ちる
+$Z=D_F\cap D_G$は
+$P^2\simeq O_D,\ P\ne O_D,\ G\simeq FP$と同値。
+$P\in\Pic^0(D)$より、$D$の各既約成分のbidegreeは$(a,a)$。
+可能な$(2,2)$因子は既約、二つの$(1,1)$、
+二重$(1,1)$だけ。
+後者の$\Pic^0\simeq G_a$は非零二捩れを持たない。
+既約特異$(2,2)$のcuspも$\Pic^0=G_a$、
+二つの$(1,1)$の接触型も同様。
+したがって二重壁ではDはsmooth/nodal/I2の三型のみ。
+非零二捩れの数は3/1/1で、
+Cの根対avatar三型と一致する。
+証明正本：C lem:qa-as10-double-wall-reduced-geometries,
+prop:qa-as10-double-wall-characterization。
+
+**さらに強い主定理（元PDF定理21.1）。**
+Cの新設
+papers/quiver-avatar/cubic_obstruction_all_loci.tex に
+thm:qa-as-cubic-reachabilityを統合。
+ASsqがcubic ASのQgr/qgrと完全Abel同値、
+またはDb(qgr)と三角同値になるための
+必要十分条件は$A\notin Z$。
+正方向はどちらかのrank4 chartと
+mutationのQgr同値。
+否定方向は以下の独立した補題列を必要とする。
+- Cubic候補は単に最初のmutation像とは限らず、
+  任意の四項strong exceptional＋K0整数基底＋
+  cubic Euler行列＋隣接合成二つの同型で定義する。
+- $(S_*-1)^2$のrank functionalと
+  K0のprimitive交代結合から
+  全rankは共通$\pm1$となり、
+  四線束の数値第一Chernは
+  $(a,b),(a+1,b),(a+1,b+1),(a+2,b+1)$型。
+  determinant formula
+  $\det\rho X=F^aG^bP^{r-a-b+s}$を使うと、
+  二重壁では隣接商は$F,FP$のいずれかで
+  最初と最後が異なる。したがって連続する二本が一致し、
+  $\operatorname{Sym}^2 H^0(L)$の一次元kernelのため
+  cubicの合成同型に矛盾する。
+- 特異Dは二捩れ$\mu_2$-torsorの有限étale性と
+  形式的存在で、smooth generic fiberへ平滑化する。
+  finite directed End代数はR=k[[t]]上有限自由。
+  仮に特殊fiberにcubic候補があれば、
+  $\Ext^2(Q_i,Q_i)=0$で個々のperfect complexを持ち上げ、
+  Homの有限自由複体のminimal reductionで
+  strongness、合成同型、K0基底をgenericに保つ。
+  smooth generic fiberでの矛盾に帰着する。
+- Serre数値作用・二捩れ指数parityは独立の
+  SymPyコード computations/verify_avatar_cubic_obstruction.py
+  で有限厳密検算PASS。
+  これは滑らかな候補不存在全体、形式GAGA、
+  exceptional lifting、derived同値の機械的証明ではない。
+
+**重要な比較上の注意。**
+二重壁のASsqは任意のcubic ASと導来非同値であるが、
+同じavatarを持つBのnoncubic O-marked H2対象との
+pointed qgr-heart同値は別途必要。
+この定理は原PDFの既存結果を原稿へ移管したもので、
+新規発見の主張ではない。
+一般基底での相対mutation／Qgr同値、DG/Ginzburg
+集中の独立全面監査、O-marked heartへの相対実現が
+次の研究の核心となる。
+
 
 **Mutation後のNoether性とAbel/derived比較。**
 C prop:qa-as10-noetherian-qgrに、
