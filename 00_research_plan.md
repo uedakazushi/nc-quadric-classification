@@ -213,12 +213,28 @@ $H^0(E_f,\OO_{E_f}(1))$内の像と一致し、
 Aの\`cor:normal-cubic-defect\`のmatrix-factorizationによる
 積の計算を利用しており、両隣接積の階数3と
 conic Veronese像の一致は明示的に確認した。
-**次の核心**は二つの像部分空間だけでなく、
-normal helix
-$(\pi B_f,\pi X_c,\pi B_f(1),\pi X_d(1))$の
-全Hom空間・全合成・最小関係を
-$E_f$のfinite directed foundationと比較し、
-AS Serre completion・O-pointing・pointed heartの復元を証明すること。
+**pointed認識の有限End帰着も形式的に証明した。**
+noncubic normal helixのfinite directed algebra
+$B_{\mathrm{nc}}=\End_{\mathrm{dir}}(E_0,\ldots,E_3)$
+（$E_0=\pi B_f$）と、
+$E_f$側のsquare avatarを一度mutationして得る
+最小AS10 helixの
+$B_{\mathrm{av}}=\End_{\mathrm{dir}}(H_0,\ldots,H_3)$について、
+頂点保存・composition保存同型
+$B_{\mathrm{nc}}\simeq B_{\mathrm{av}}$が存在すれば、
+両側のSerre完成の一意性とAZ amplenessから
+**$(\qgr B_f,\pi B_f)\simeq
+(\qgr A_{\mathrm{av}},\pi e_0A_{\mathrm{av}})$**
+というpointed exact同値が従う
+（C \`prop:qa-point-mcm-pointed-finite-end-reduction\`）。
+これは条件付きの還元であり、有限End同型そのものは
+まだ未証明。特に比較先はmutation**後**の
+第一標準対象であって、square側の原初のOではない。
+**次の核心はこの有限四頂点End代数の
+残りのHom・最小関係・全合成を明示して
+上記同型を実際に構成すること**。
+二つのrank-three像だけの一致から
+全End同型を推論しない。
 共有根境界ではisogenyはétaleでなくなり、
 $C_q$の非局所自由spectral moduleへ切り替える。
 
