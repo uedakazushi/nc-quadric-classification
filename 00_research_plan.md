@@ -186,15 +186,23 @@ $j(C_q)=35152/9$、$j(E_f)=28756228/3$であり、
 まだ直接同定したものではない**。
 従来の「二根対↔C_q avatar」の体上全単射と、
 $B_f$の\emph{pointed} qgrとの直接同値は依然別問題。
-**最優先の具体的一手**は、
-論文Aのnoncubic normal helix
-$(\pi B_f,\pi X_c,\pi B_f(1),\pi X_d(1))$の有限End乗法と
-二曲線上のsquare avatarの有限directed Endを
-原点・二捩れ・ruling・O-pointingまで追って比較すること。
-とくに$c,d$のmatrix factorizationで得る二つの
-degree-two pencil が$E_f$上の$F_c,F_d$と一致するか検証し、
-一致する場合にASのSerre completionとpointed heartの
-復元まで進む。共有根境界ではisogenyはétaleでなくなり、
+**noncubic MCMから点曲線avatarの二pencilまでは直接認識できた。**
+$f_1=-\ell_1\ell_2,\ f_2=-m_1m_2$として
+$M_c=\left(\begin{smallmatrix}c&\ell_1\\\ell_2&-c\end{smallmatrix}\right)$、
+$M_d=\left(\begin{smallmatrix}d&m_1\\m_2&-d\end{smallmatrix}\right)$
+を取ると、$B_f$で$M_c^2=M_d^2=0$。
+点曲線$E_f$上のrank-one右kernelから
+$\kappa_c,\kappa_d:E_f\to\PP^1$が定まり、
+それぞれのconic商$Q_c,Q_d\simeq\PP^1$と一致する。
+従って$\kappa_c^*\OO(1)=F_c$、
+$\kappa_d^*\OO(1)=F_d$を直接証明
+（C \`prop:qa-point-mcm-matrix-pencils\`）。
+**次の核心**はこの二pencil・行列kernelの対応を
+normal helix
+$(\pi B_f,\pi X_c,\pi B_f(1),\pi X_d(1))$の
+\emph{全有限directed End代数・積・O-pointing}に昇格させ、
+ASのSerre completionとpointed heartの復元を証明すること。
+共有根境界ではisogenyはétaleでなくなり、
 $C_q$の非局所自由spectral moduleへ切り替える。
 
 **P5：三者対応の相対化と境界認識。** (i) 構成済みの根対→spectral $(C,M,\mu)$ fppf相対射の全忠実性・慣性・変形と対象となるtorsion-free二次積stackの代数性を解析し、元のsquare/Σ2上の反標準avatarへelementary transformで移せるか証明する。(ii) 非cubic平方根環B_fのAS qgrとavatar由来AS代数のheartが同じO-marked対象になる必要十分条件・自己同値群/慣性を検証する。(iii) 8/10/12本矢の統一potentialの消去可能pairとスカラー慣性を正しく商に組み込み、相対モジュライ射を作る。(iv) cubicのVdB↔squareとの境界接合、P=0可換点の収縮、Σ2最深のO-marked適合性を解決する。 **Σ₂の幾何全単射をavatar由来AS代数のqgr heartの直接同定で検証すること、および節点で非自由なspectral moduleをelementary transform/compactified Picardで相対可逆化することを最優先にする。**
