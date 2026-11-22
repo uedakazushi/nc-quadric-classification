@@ -1,5 +1,5 @@
 % !TEX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / 相対square完成と実際のtails認識。
+% 2026-11-23 / v1.1。反対squareの厳密対合と四交差条件の転置不変性。
 \subsection{有限square族への限定的な拡張}
 \label{subsec:qa-finite-square-family-opposite}
 
@@ -79,6 +79,115 @@ $\mathbf R\operatorname{Hom}(P_i,t^mP_j)$ は $m\geq1$ に対して
 \end{proof}
 
 \subsection{反対代数の四頂点と添字の規約}
+
+\begin{proposition}[全square表示の反対代数と四交差開の不変性]
+\label{prop:qa-square-opposite-cross-involution}
+四頂点squareの有限積を
+\[
+ (A,B,C,D,W;f,g),\qquad
+ f:C\otimes A\to W,\quad g:D\otimes B\to W
+\]
+と書く．頂点を$0,1,2,3$から$3,2,1,0$へ
+逆順に番号付けした反対代数のsquareデータは
+\[
+ \begin{split}
+ (A^\dagger,B^\dagger,C^\dagger,D^\dagger,W^\dagger)
+    &=(D,C,B,A,W),\\
+ f^\dagger&=g\circ\tau_{B,D}:B\otimes D\to W,\\
+ g^\dagger&=f\circ\tau_{A,C}:A\otimes C\to W
+ \end{split}
+ \tag{OS}\label{eq:qa-square-opposite-bundle-data}
+\]
+である．$\tau$は二因子の標準交換写像とする．
+この操作$\dagger$は任意の可換係数環上で
+有限square表示のstrictな対合となる．
+
+四交差行列を定理~\ref{thm:qa-square-explicit-h2-open}
+の$M_f,M_g$とする．各階数二束の局所frameと
+標準の行列式線束同定の下で
+\[
+ M_{f^\dagger}=-M_g^{\mathrm t},\qquad
+ M_{g^\dagger}=-M_f^{\mathrm t}
+ \tag{OX}\label{eq:qa-square-opposite-cross-transpose}
+\]
+が成立する．従って四つのSegre回避条件の開
+$V_{\mathrm{cross}}\subset V_\square$は$\dagger$で
+schemeとして不変である．
+$\dagger$は基底変更群$G_\square$の対応する四因子を
+$(A,B,C,D)\mapsto(D,C,B,A)$と置換し，
+頂点scalar核$K_\square\simeq\Gm^3$を保存する．
+中間ruling交換$\sigma:(A,B,C,D)\mapsto(B,A,D,C)$
+ともstrictに可換する．
+よって$\dagger$は
+\[
+ \mathfrak H_2^{\rm rul}
+  \simeq[V_{\mathrm{cross}}/(G_\square/K_\square)]
+\]
+およびその$S_2$商$\mathfrak H_2$の
+相対groupoid上に対合を誘導し，
+非被約基底への任意の引戻しとも可換する．
+これは新しい標識を追加する操作ではなく，
+\emph{逆順反対有限squareの再認識}であり，
+各pointed対象が自身と同値になるという主張ではない．
+\end{proposition}
+\begin{proof}
+反対代数の右射影を$f_i=e_{3-i}$と置くと
+\[
+ \operatorname{Hom}_{B^{\mathrm{op}}}(f_iB^{\mathrm{op}},
+                                  f_jB^{\mathrm{op}})
+ =\operatorname{Hom}_B(e_{3-j}B,e_{3-i}B)
+\]
+となる．隣接四本のHom束と二つの長さ二の積を
+逆順に読めば式~\eqref{eq:qa-square-opposite-bundle-data}を得る．
+二回の反対と二回のtensor因子交換は恒等であり，
+全ての積・単位を厳密に保つ．
+
+固定局所frameで二因子の順序交換の$4\times4$行列を
+$P:(x_{00},x_{01},x_{10},x_{11})
+\mapsto(x_{00},x_{10},x_{01},x_{11})$
+とする．$P^2=1$、$\det P=-1$であり，
+$f^\dagger=gP,\ g^\dagger=fP$となる．
+任意の$4\times4$行列$M$に対して
+\[
+ \operatorname{adj}(MP)
+   =(\det P)P^{-1}\operatorname{adj}(M)
+   =-P\operatorname{adj}(M)
+\]
+なので，
+\[
+ \operatorname{adj}(f^\dagger)g^\dagger
+ =-P(\operatorname{adj}g)fP,\qquad
+ \operatorname{adj}(g^\dagger)f^\dagger
+ =-P(\operatorname{adj}f)gP .
+\]
+式~\eqref{eq:qa-square-cross-flattenings}の
+四tensor添字の交差縮約は，これらを
+それぞれ元の$M_g^{\mathrm t},M_f^{\mathrm t}$
+へ送るので式~\eqref{eq:qa-square-opposite-cross-transpose}
+となる．行列式線束の交換では$\det P=-1$の
+符号を伴う同定を用いる．
+負号・転置は四つの回避条件を順序交換するだけなので，
+$V_{\mathrm{cross}}$は全ての係数環上で不変な開である．
+
+$G_\square$の因子交換は
+$(g_A,g_B,g_C,g_D,g_W)\mapsto
+(g_D,g_C,g_B,g_A,g_W)$である．
+$K_\square$の元を
+$(\ell_1,\ell_2,\ell_3/\ell_1,
+  \ell_3/\ell_2,\ell_3)$と書くと，
+その像は
+\[
+ (\ell_3/\ell_2,\ell_3/\ell_1,
+   \ell_2,\ell_1,\ell_3)\in K_\square
+\]
+であり，核を保存する．
+この因子交換と中間ruling交換は
+$(A,B,C,D)$上で可換な二つの位数二の置換なので，
+商stackの$S_2$作用とも厳密に可換する．
+相対認識は定理~\ref{thm:qa-square-explicit-h2-open}
+によるものであり，幾何点上の同型類だけから
+相対対合を推論したわけではない．
+\end{proof}
 
 \begin{lemma}[square有限基礎の反対代数]
 \label{lem:qa-square-foundation-opposite}
