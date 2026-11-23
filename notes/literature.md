@@ -1043,3 +1043,15 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 **全整数の線束列の共通被覆の障害。** Stacks Project [Tag 0BD2, Lemma 31.18.6](https://stacks.math.columbia.edu/tag/0BD2) の一次本文で、有限局所自由な正次数の射の行列式ノルムと任意基底変更を確認した。Cの被覆障害では行列式の射影公式を直接用い、基底の線束を引き戻してからノルムを取ると次数乗になることだけを使う。有限局所自由多重切断は一般fiberの閉点を縮めて作るため、元のfppf被覆が有限であることは仮定しない。
 
 **Segre交わりの平坦開。** Stacks Project [Tag 062Y, Lemma 31.19.9 (3)](https://stacks.math.columbia.edu/tag/062Y) の一次本文で、平坦かつ局所有限表示な周囲に局所単一方程式で定義された閉部分が、幾何fiberで有効Cartierなら相対有効Cartierとなることを確認した。Cの周囲は相対Segre曲面で、非零切断の幾何fiberは整曲面上の非零局所式で定まる。零切断側の構造層上の一致には、この補題でなくTor完全列とNakayamaを使う。
+
+### 現行Cにおける未入手四資料の引用と証明の依存
+
+相対AZ再構成の三箇所（`relative_square_tails_recognition.tex` の二箇所と `cubic_qp_foundation_groupoid.tex` の反対窓）を照合した。いずれも AZ Theorem 4.5(1) と、一次本文を確認済みの [OACU刊行版 Theorem 7.3](https://www.cambridge.org/core/journals/nagoya-mathematical-journal/article/degenerations-of-orbifold-curves-as-noncommutative-varieties/F7FD772141C9BE8DE3D3DC5B830E48DA) の両方を参照する。適用対象は有限生成対象のNoether性、零次End環の右Noether性、HomのEnd環上の有限生成性、二つのample条件を満たす三つ組である。任意基底変更での比較はC内で自由対象と余核から作り、左Noether性は反対窓への同じ定理の適用で得る。出版社、CiNii、大学リポジトリに対する本文・DOI検索で、AZ原著を直接読める追加所蔵先は確認できなかった。
+
+| 未公刊資料 | 照合対象 | 現行Cで対応する証明 |
+| --- | --- | --- |
+| `AvatarVSeven2026` | 第2–8・11–12節のhelix、定理21.1・35.1のcubic到達不能、定理51.4・53.2のmutation、命題52.3の表示慣性 | [AS helixの復元](../papers/quiver-avatar/as_helix_classification.tex)、[全locusのcubic障害](../papers/quiver-avatar/cubic_obstruction_all_loci.tex)、[全整数と相対mutation](../papers/quiver-avatar/as10_mutation_classification.tex)、[可縮対と固定Jacobianのfiber](../papers/quiver-avatar/qp_presentations.tex)。命題52.3への帰属を本文で確認する作業は残る。表示慣性の計算では矢の相反する単元倍を直接与えている。 |
+| `Q12Avatar2026` | 定義15.2・定理15.3の体上分類、注意11.3の古典型、命題14.1の安定性 | [avatarの相対比較](../papers/quiver-avatar/avatar_charts.tex) の `thm:qa-avatar-presented-field-dictionary`、`thm:qa-avatar-all-mass-fiberwise-flat`、`ex:qa-as12-weighted-stack`。安定表現の曲面と内在的一点Hilbert曲面は区別し、後者への適合性を標準頂点ごとに判定する。 |
+| `Q12Weyl2026` | 第4–5節・定理5.4の再埋め込みと相対twist | [avatarの再埋め込み](../papers/quiver-avatar/avatar_charts.tex) の `prop:qa-pushforward` と `thm:qa-avatar-deep-relative-point-reconstruction`。評価束の基底変更は垂直成分を含む導来fiberを計算し、逆は有限窓の階数一表現から曲線と標識を復元する。 |
+
+この表は現行Cの証明箇所と帰属を検証するための索引である。未公刊原典について、本文にある定理番号・適用範囲・先取関係はPDF入手後の照合事項とする。
