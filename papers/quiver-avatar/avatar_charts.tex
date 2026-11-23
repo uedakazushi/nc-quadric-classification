@@ -457,6 +457,64 @@ $(0,2)$ 型では $W=H^0(\OO_B(1))$ と同定でき、
 階数 $16-6-8=2$ の局所自由層となり、任意基底変更を保つ。
 \end{proof}
 
+\begin{proposition}[鉛筆窓の射影束上の実現と相対Serre級数]
+\label{prop:qa-avatar-pencil-window-scroll}
+$Y_R$ を命題~\ref{prop:qa-pushforward}の再埋め込み先とし，
+その標識を $h_R,f_R$ と書く。$u:Y_R\to T$ と置き，
+\[
+ G=\OO_{Y_R}\oplus\OO_{Y_R}(f_R)
+       \oplus\OO_{Y_R}(h_R)\oplus\OO_{Y_R}(h_R+f_R)
+\]
+とする。制限は $u_*\mathcal End(G)$ を鉛筆窓
+$(\OO_D,F,HR,HRF)$ の有限有向 End 代数 $A$ と同定する。
+この同定は任意基底変更と可換である。
+局所 affine 基底上で $G$ は相対tilting生成対象であり，
+$A$ の対角は $A$-両側加群として perfect である。
+逆相対Serre関手にシフト $[2]$ を合成した作用は，
+この Morita 表示では $\omega_{Y_R/T}^{-1}$ によるtensorである。
+各 $n\geq0$ についてその軌道 Hom
+\[
+ \mathbf R u_*\bigl(\mathcal End(G)\otimes
+                   \omega_{Y_R/T}^{-n}\bigr)
+\]
+は次数零の局所自由層であり，積とともに任意基底変更を保つ。
+\end{proposition}
+\begin{proof}
+$\rho:Y_R\to B$ を射影束とする。
+四項の前向きの差は $0,f_R,h_R-f_R,h_R,h_R+f_R$ である。
+そのいずれかを $L$ とすると，Cartier 制限列の核は $L(-D)$ である。
+$L$ の $h_R$ 係数が一なら，$L(-D)$ は $\rho$ の fiber 上で
+次数 $-1$ であり，相対直像が全次数で消える。
+係数が零なら，$\rho$ に関する唯一の高次直像は一次で，
+幾何 fiber の $B$ 上では $\OO_B(-2)$ または $\OO_B(-1)$ となる。
+従って $u$ に関する零次・一次直像はともに消える。
+これにより零次Homの制限は同型となり，積も保たれる。
+後向きの差の相対コホモロジーは，$\rho$ 上の次数 $-1$，
+または $B$ 上の次数 $-1$ により消える。
+前向きの差では $q_*\mathcal E_R(k)$ の消滅判定と同じ分裂型を使い，
+高次直像は零である。これらの判定は
+perfectな直像の幾何 fiber によるため，任意基底変更を許す。
+
+射影束の相対対角の二項解消を用いると，
+$\Perf(Y_R)$ は $\rho^*\Perf(B)$ と
+$\rho^*\Perf(B)\otimes\OO_{Y_R}(h_R)$ で生成される。
+同じ射影直線の対角解消で $\Perf(B)$ は
+$\Perf(T)$ 上の $\OO_B,\OO_B(1)$ で生成される。
+従って affine chart で $G$ はtilting生成対象である。
+相対積 $Y_R\times_TY_R$ では外積の生成対象
+$G^\vee\boxtimes G$ を使うと，対角の構造層が
+$A$-両側加群 $A$ に対応する。
+対角は相対滑らかな曲面の正則埋め込みなので
+その構造層はperfectであり，これが両側のperfect性を与える。
+相対Serre双対は $-\otimes\omega_{Y_R/T}[2]$ である。
+$n\geq1$ の Hom の幾何 fiber では，
+各差に $2nh_R$ を加えた線束が現れる。
+$h_R$ の係数は $2n-1$ 以上，$f_R$ の係数は $-1$ 以上である。
+$\rho$ で押し出すと $\mathcal E_R$ の対称冪の各直和因子の
+次数に，少なくとも $-1$ が加わるので，高次コホモロジーがない。
+従って再び perfect な直像の零次集中から結論を得る。
+\end{proof}
+
 \begin{remark}[矢数の名称と体上の辞書]
 幾何的な開埋め込みと表の分解は、上の証明の通り
 射影束の分裂型、Picard 類および垂直成分条件から従う。
