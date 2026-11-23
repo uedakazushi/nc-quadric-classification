@@ -1055,3 +1055,11 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 | `Q12Weyl2026` | 第4–5節・定理5.4の再埋め込みと相対twist | [avatarの再埋め込み](../papers/quiver-avatar/avatar_charts.tex) の `prop:qa-pushforward` と `thm:qa-avatar-deep-relative-point-reconstruction`。評価束の基底変更は垂直成分を含む導来fiberを計算し、逆は有限窓の階数一表現から曲線と標識を復元する。 |
 
 この表は現行Cの証明箇所と帰属を検証するための索引である。未公刊原典について、本文にある定理番号・適用範囲・先取関係はPDF入手後の照合事項とする。
+
+### Belmans–Raedscheldersの四頂点mutationと幾何square
+
+Pieter Belmans–Theo Raedschelders, *Derived Categories of Noncommutative Quadrics and Hilbert Squares*, IMRN 2020, 6042–6067 の[刊行版](https://eprints.gla.ac.uk/165889/1/165889.pdf)を照合した。§3.2の式(64)–(66)はcubic AS正則Z代数の二次元関係空間と一次元重なり、および連続二因子での縮約非消滅を再掲する。Theorem 3.7の形式変形は完備Noether局所環上で古典 `coh(P¹×P¹)` を特殊fiberとする。Theorem 3.9の幾何的五つ組との対応はVan den Berghの既知定理として引用されている。
+
+Proposition 3.12はcubicの線形例外列から右mutationを実行し、strongな三ブロック窓とその有限Endを式(79)に与える。Proposition 3.13は一般の幾何的五つ組から幾何squareを作り、Theorem 3.15は二本の射影直線が交わらない開で滑らかな射影族への各fiberのadmissible埋込みを構成する。4項のmutationと有限Endの比較はCの既存結果との重なりとして扱う。ここで「幾何square」は四つの二次元空間と二つの積表示を持つ線形代数データで、Cの曲線とPicard標識からなる幾何avatarとの対応は、それぞれの有限Endを用いて読む。
+
+Cで別に証明する範囲は、最小矢が増える非可逆mass壁を含む全整数相対ASのmutation、全Isomと線束捩れを保つ復元、重み付き八・十・十二矢の表示慣性、および標準構造対象から内在的H2への2-fiberである。刊行版Theorem 3.15の対象であるHilbert squareの滑らかな射影族への導来埋込みと、CのH2へのpointed忘却射では、標的と比較する射の種類が異なる。新規性の判定はこの文献に対する比較範囲に限る。
