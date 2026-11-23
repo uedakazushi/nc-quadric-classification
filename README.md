@@ -44,7 +44,7 @@ python3 scripts/check.py all --manuscript papers/nc-quadric-surface-avatar.tex
 
 のように指定する。Aの既定原稿は papers/nc-quadric-surface.tex。出力は build/ 内の同名PDF・synctex.gz。VS Codeではリポジトリのルートを開き、LaTeX Workshopから主原稿または対応するroot指定のある分割節を組版する。macOSではMacTeXの /Library/TeX/texbin を既存設定が補う。papers/ に移動して別のlatexmk設定を誤用しない。
 
-checkerのPASS/FAIL/SKIPは実行した検査の結果のみを示す。既存の32c0782のC 411頁のビルド再現、計算・文献照合は研究ノートに記載。今回の改名・整理後に全計算や実組版を再実行したことを意味しない。PDF・組版中間物・環境キャッシュは追跡しない。
+checkerのPASS/FAIL/SKIPは実行した検査の結果のみを示す。Cのビルド再現、計算・文献照合は研究ノートに記載する。Cで用いる四層分類と相対再埋め込み・並進は本文で証明する。PDF・組版中間物・環境キャッシュは追跡しない。
 
 ## 保存と更新
 
