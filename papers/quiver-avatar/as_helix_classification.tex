@@ -150,7 +150,30 @@ $\Ext_A^3(N,P_i)\simeq\Hom_k(N_{i+4},k)$ を得る。
 $N$ に自然である。
 特に $U_{j,b}$ に適用した同型は $j$ を変える道の作用と可換であり、
 直極限で $R\tau(P_i)\simeq D(Ae_{i+4})[-3]$ となる。
-従って前向き$\Ext^{>0}_{\Qgr A}(E_i,E_j)$は消える。
+この計算を tails に移すため、$J_{i,b}$ を
+$P_i$ の頂点 $b$ 未満の部分加群とする。
+$P_i/J_{i,b}$ は有限長で、各単純の長さ三の解消から
+有限生成射影による長さ高々三の解消を持つ。
+$J_{i,b}$ も有限生成射影による長さ高々二の解消を持つ。
+さらに上の添字規約では、$J_{i,b}$ の射影解消を
+頂点 $b$ 未満の射影の直和で選べる。
+従って下に有界な torsion 加群 $N$ に対して、
+十分小さい $b$ で $\Ext_A^p(J_{i,b},N)=0$ が全 $p$ で成り立つ。
+一般の torsion 加群はそのような部分加群の filtered colimit
+であり、有限射影解消により同じ極限消滅が成り立つ。
+従って Gabriel 商の section 関手には
+論文Bの \cite[式 \texttt{eq:cubic-tails-section-colimit} と
+\texttt{eq:cubic-tails-derived-localization}]{QuadricModuli2026}
+と同じ局所化三角を適用できる。
+ここで用いたのは有限区間の射影解消と torsion 上の消滅である。
+
+この三角を $P_j$ に適用して頂点 $i$ で評価すると、
+\[
+ \Hom(E_i,E_j)=A_{ji},\qquad
+ \Ext^2(E_i,E_j)=D(A_{i,j+4}),\qquad
+ \Ext^q(E_i,E_j)=0\quad(q>0,\ q\ne2)
+\]
+を得る。特に長さ四の窓の全対で高次 Ext が消える。
 最小分解を$\pi$で移した四項完全列を
 正負双方へ繰り返すと連続四対象は全$E_j$を生成する。
 有限quiverの最小関係はsourceからsinkへ向かい、
