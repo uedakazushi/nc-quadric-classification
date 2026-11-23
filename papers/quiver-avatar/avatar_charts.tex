@@ -2347,6 +2347,45 @@ ruling交換は最初の二つの線束と対応する帯の座標を交換し�
 指定AS族全体では周期化の障害が生じ得る。
 \end{proof}
 
+\begin{corollary}[曲線型 $H_2$ fiber の周期付き重みQP表示]
+\label{cor:qa-avatar-qp-over-geometric-h2}
+$h:T\to\mathcal H^{\mathrm{curv}}$ と標準頂点 $i$ を固定する。
+幾何avatarからの $2$-fiber の二重被覆上で、実際の三線束を持つ
+有限窓と、そのcanonical四周期標識を取る。
+この標識に対する重み付きQPの比較fiberは、
+その窓の重み二・三の有限表示を選ぶ群oidである。
+八矢を選べる部分は共通八矢開の引戻しであり、
+それぞれの十矢を選べる部分は対応する対角開の引戻しである。
+十二矢の表示はその全標準pointing定義域で fppf 局所に選べる。
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:qa-avatar-odd-h2-image}と
+\ref{thm:qa-avatar-even-h2-image}で得たruling二重被覆の上で、
+系~\ref{cor:qa-avatar-line-window-gerbe}を適用する。
+左または右mutationは評価または余評価で得られるため、
+これはその捩れ付き有限窓の線形liftへ運ばれる。
+窓のSerreテンソル代数を折り畳むと
+四周期標識付きの代数となる。
+系~\ref{cor:qa-avatar-twisted-ordinary-jacobian}の同型は
+テンソル次数と重みを保つので、
+有限表示で得られる周期はこの標識と一致する。
+
+線形窓を固定した上で、定理~\ref{thm:qa-periodic-as-qp-fiber}
+の矢像に関する有限方程式が、周期付き完成への
+比較fiberを与える。これは相対同型も含む。
+十二矢表示を作るには、階数五から四への二つの
+分裂全射と残余長関係の枠を選べばよい。
+それらの存在は系~\ref{cor:qa-twisted-avatar-two-mass}による。
+十矢、八矢は単元であるmassを消去して得られる。
+逆に、当該対角矢を持たない表示では、
+展開の該当重み二の成分は重み一の二段積で生成される。
+従ってその対角余核は零となり、対応するmassは単元である。
+この逆も余核の消滅で検査するので非被約底に通用する。
+表示の比較は系~\ref{cor:qa-open-qp-h2-pointing-fibers}の
+群oidを標準周期に引き戻したものであり、
+代数を固定しても残る表示の慣性を保持する。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
