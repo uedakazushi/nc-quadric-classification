@@ -3336,17 +3336,14 @@ $\mathfrak m^n(Q_j/(N_0)_j)$ の共通部分は零である。
 この証明では、元の標準射影全体の完備化は取っていない。
 \end{proof}
 
-\begin{theorem}[一般のNoetherianアフィン基底上の左右Noether性]
-\label{thm:qa-avatar-all-affine-noetherian}
-Noetherianなアフィン試験基底上の任意の曲線型avatarについて、
-全整数Jacobianの標準右rowと標準左columnはNoetherianである。
-massや対角比較の型が基底内で変わる場合も含む。
-\end{theorem}
+\begin{lemma}[係数環の閉層と補開におけるNoether性の貼合せ]
+\label{lem:qa-avatar-noetherian-open-closed}
+$R$ をNoetherian環、$I\subset R$ を有限生成idealとし、
+$A$ を各成分が有限平坦な $R$ 上の全整数代数とする。
+$A/IA$ と $D(I)$ の有限個の単項開で標準右rowがNoetherianなら、
+$A$ の標準右rowもNoetherianである。左columnにも同じことが成り立つ。
+\end{lemma}
 \begin{proof}
-まず中心の係数環 $R$ の有限生成ideal $I$ に関する
-閉層と補開の貼合せを示す。
-$A$ の各成分が有限平坦であり、$A/IA$ と
-$D(I)$ の有限個の単項開上で標準射影がNoetherianと仮定する。
 各成分の平坦性により
 \[
  \operatorname{gr}_I A\simeq
@@ -3370,7 +3367,17 @@ $N$ を生成する有限個の元を選ぶ。
 この局所環上でも $N_j/(N_0)_j=0$ となる。
 従って各端点の商が全基底で零であり、$N=N_0$ である。
 
-この貼合せを二回使う。両mass零層では、
+\end{proof}
+
+\begin{theorem}[一般のNoetherianアフィン基底上の左右Noether性]
+\label{thm:qa-avatar-all-affine-noetherian}
+Noetherianなアフィン試験基底上の任意の曲線型avatarについて、
+全整数Jacobianの標準右rowと標準左columnはNoetherianである。
+massや対角比較の型が基底内で変わる場合も含む。
+\end{theorem}
+\begin{proof}
+補題~\ref{lem:qa-avatar-noetherian-open-closed}の貼合せを二回使う。
+両mass零層では、
 局所枠を取って対角比較 $G$ の非スカラー成分が生成するidealを取る。
 その閉層は構造層上スカラー、補開は全幾何点で非スカラーなので、
 系~\ref{cor:qa-avatar-boundary-relative-noetherian}の
@@ -4234,6 +4241,47 @@ $A_{01}\to C$ の全射条件を課したものが
 切断が構造層上恒等的に零となる条件は、この零次Fitting idealが
 射影束上で零となる条件である。
 従って全ての同型と基底変更を保ち、局所な行列表示の選択を除ける。
+\end{proof}
+
+\begin{corollary}[指定AS十二矢族の左右Noether性]
+\label{cor:qa-avatar-presented-as-relative-noetherian}
+Noetherianなアフィン基底上で、全幾何fiberが指定AS最小解消を
+持つ十二矢Jacobianの全整数展開を取る。
+このとき標準右rowと標準左columnはNoetherianである。
+基底内でmassの型が変わる場合と、冪零massや
+古典型の冪零変形を含む。
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}により
+代数の全成分は局所自由である。
+局所枠を取って二massが生成するidealを $I$ とする。
+$D(I)$ は二つの可逆mass開で覆われ、相対逆mutationで
+復元したsquare族に対する
+系~\ref{cor:qa-all-relative-as-type-hearts}と
+定理~\ref{thm:qa-relative-rot-mut-two-sided-noetherian}
+から両側Noether性を得る。
+
+構造層上で両mass零となる $V(I)$ では
+定理~\ref{thm:qa-avatar-nilpotent-incidence}により、
+階数一表現の行列式切断を構成できる。
+その有限個の係数が生成するidealを $J$ とする。
+$D(J)$ では平坦な曲線型avatarを復元するので、
+定理~\ref{thm:qa-avatar-all-affine-noetherian}を適用できる。
+$V(J)$ では古典曲面窓を得て、かつmassが構造層上零であるから
+射影束は局所的に分裂 $\Sigma_2$ となる。
+その完成は例~\ref{ex:qa-as12-weighted-stack}の
+三変数重み付き多項式環の全整数展開である。
+同じ始点を持つ道の整列基底を用いれば、
+その標準rowとcolumnの部分加群に対して
+系~\ref{cor:qa-avatar-boundary-relative-noetherian}の
+単項式idealの議論を適用できる。
+従って $V(J)$ でも両側Noether性が成り立つ。
+
+全成分の平坦性は任意基底変更を保つ。
+従って補題~\ref{lem:qa-avatar-noetherian-open-closed}を
+まず $J$ に、次いで $I$ に適用できる。
+枠を取った有限個のアフィンfppf被覆からの降下も、
+系~\ref{cor:qa-avatar-boundary-relative-noetherian}と同様である。
 \end{proof}
 
 \begin{theorem}[指定十二矢表示からの体上の幾何復元]

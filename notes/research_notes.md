@@ -2584,3 +2584,5 @@ latexmk
 **行列式逆復元の内在性の再監査。** `prop:qa-avatar-intrinsic-incidence` で、後半三頂点をまず有限窓の積と最後の鉛筆の普遍商から復元した。頂点零からの評価を付け加える有限表示加群を、全合成の整合式で直接構成した。任意の係数加群に対する普遍性を比較すると、これは既出の三行三列の行列の余核に一致する。従って行列式のidealはその零次Fitting idealであり、階数・全射条件と基底変更の比較は矢の枠や関係の持ち上げに依存しない。この確認は行列式逆復元の同型・基底変更部分を対象とする。
 
 **内在的行列式を含む394頁保存版 b3d9c1e。** 二つの `git archive b3d9c1e` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795433755 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全394頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `044845f3b7718a11e0e1683f3d66973c016111485435a4cdf8192f526b7e1bb6`、SyncTeX `40f647e87e2c9bc4642743b959ac8c1a386fd7e1dc6e15f4aeb25916b784dc26`、抽出テキスト `0e71b9beca608b70da424cb222963315616cb0f41f102ab1f255bc9b31a30131`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**全指定十二矢族の相対左右Noether性。** `lem:qa-avatar-noetherian-open-closed` では、有限平坦な各成分のI進随伴次数と端点ごとのKrull共通部分から、閉層と補開の貼合せを抽出した。`cor:qa-avatar-presented-as-relative-noetherian` はこれを古典閉層の係数idealと両massのidealに順に適用する。適用先を、曲線型の既存の相対Noether性、古典分裂射影束の重み付き整列表示、可逆mass開の相対逆mutationで区別して確認した。従って指定ASの全幾何fiberを持つ任意の相対十二矢族で、古典型の冪零変形を含め標準右rowと左columnがNoetherianである。
