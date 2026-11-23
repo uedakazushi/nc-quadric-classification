@@ -2126,6 +2126,60 @@ $\operatorname{Hom}(E_i,\pi M)=M_i$ を得る。
 族については、$H_2$ 条件を幾何点へ引き戻して結論する。
 \end{proof}
 
+\begin{theorem}[曲線型avatarの四標準頂点の相対定義域]
+\label{thm:qa-avatar-all-standard-pointing-domains}
+通常のJacobian完成の標準頂点を、捩れ付き窓
+$(P,F,H,HF)$ の順に $0,1,2,3$ とする。
+各頂点を構造対象とする $H_2$ の定義域は
+\[
+ \begin{array}{c|cccc}
+  i\bmod4&0&1&2&3\\ \hline
+  \text{定義域}
+   &\mathcal A_{10,\mathrm e}^{\times}
+   &\mathcal A_{10,\mathrm o}^{\times}
+   &\mathcal A_{10,\mathrm e}^{\times}
+   &\mathcal A_{10,\mathrm o}^{\times}
+ \end{array}
+\]
+である。これらの定義域上の射は、指定相対AS型の
+標準pointingの射を、窓の比較で引き戻したものである。
+指定した $h\in H_2(T)$ への $2$-fiber も、
+この比較に沿って
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}の
+標準pointingの $2$-fiber を引き戻して得られる。
+\end{theorem}
+\begin{proof}
+奇数対角開 $D(\mu)$ では、系~\ref{cor:qa-avatar-odd-as-jacobian}
+により第零頂点は第一mutationの初項である。
+後続する $1,2,3$ は同じ順序の標識を持つ。
+この開でさらに $\lambda$ が単元なら八矢となり、
+そうでなければ幾何点で奇数対角の最小十矢である。
+従って第一mutationの標準pointingの表を引き戻すと、
+$1,3$ では常に、$0,2$ では $D(\lambda)$ 上で
+$H_2$ 対象になる。
+
+偶数対角開 $D(\lambda)$ では、系~\ref{cor:qa-avatar-even-as-jacobian}
+で偶数対角の指定型を得る。
+この型を第一mutationの指定型に読むには添字を一つ移動する。
+幾何点で最小対角生成の開始点が偶数から奇数へ移ることが、
+この位相の確認である。
+従って標準pointingの表は一つ回転し、
+$0,2$ では常に、$1,3$ では $D(\mu)$ 上で $H_2$ 対象になる。
+この手順では反対代数の heart の同一視を仮定せず、
+全整数の指定AS型に対する相対heart比較を用いる。
+
+共通八矢開では
+定理~\ref{thm:qa-avatar-designated-as-locus}による
+頂点と積を保つ完成の比較が、標準射影を同じ対象へ送る。
+従ってここで得た射と基底変更の比較は貼り合わさる。
+両mass零では系~\ref{cor:qa-avatar-deep-pointing-obstruction}
+により全頂点が幾何点で除外される。
+開への因子化は幾何点で検査できるので、非被約底にも
+これらがちょうど定義域となる。
+最後に $2$-fiber の記述は、比較射と $h:T\to H_2$ との
+ホモトピー引戻しの結合律から従う。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
