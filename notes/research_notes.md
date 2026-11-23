@@ -389,10 +389,10 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 | --- | --- | --- |
 | S1 相対ASと全整数の復元 | 相対単純の有限射影分解と両側双対、窓局所化、Serre四頂点シフト、全線束を保つ復元と周期化障害、特異基底上の有界連接Moritaと非平坦基底変更 | squareからrotated・cubic・独立AS10へのmutationを、多段の評価と余評価、窓同型の合成まで一続きに再読する |
 | S2 幾何avatar | 向き付きGramの全Isom、階数三の錐、点表示の九係数による平坦化とArtin基底のTor、指定十二矢からの幾何逆復元、古典一致閉層 | 曲線型の評価束で使う各部分曲線の消滅と線束の多重次数を、相対逆復元と関係式の両方向から統合して再確認する |
-| S3 八・十・十二矢 | 一mass可逆窓の階数と全次数比較、両mass零および一massの退化排除、任意基底への局所自由性、戻り矢の逆転置、固定Jacobian上の群・局所標準形・帯の降下 | 重み付きGinzburgの全右同値と二重導分の始終点・符号を通して再読する |
+| S3 八・十・十二矢 | 一mass可逆窓の階数と全次数比較、両mass零および一massの退化排除、任意基底への局所自由性、戻り矢の逆転置、固定Jacobian上の群・局所標準形・帯の降下 | 二重導分の始終点・符号と重みの再監査は下記に記録済み |
 | S4 比較射・剛体化 | 周期付き像の閉方程式と冪零残差、可逆対の全右同値とスカラー慣性、負巡回直線と比較単元、cotangent比較、finite foundationのCasimir降下とrulingのMorita移送 | raw右同値と有限窓のKeller移送の比較を、cotangentの範囲と一般raw表示での指定Jacobian比較の両方から再確認する |
-| S5 内在的H2と外側 | 矢数と位相ごとの定義域・像、有限窓で標識した2-fiberへの訂正、反対偶奇の生成障害、spectral非延長と二捩れ線束の障害 | ruling再標識の各二重・三重重なりと標準頂点表の依存先を、全位相で統合して照合する |
-| S6 文献と再現性 | Keller、DWZ、Van den Bergh、Okawa–Ueda、CFHR、Liu–Wang–Wu等の一次本文。現行のTeX・文献ソースと同じ `3881017` の410頁の描画・抽出テキスト・正規化PDF・SyncTeXを二つのクリーンビルドで照合 | AZ原著、未公刊原稿3点、包括的新規性比較。残る主要証明の統合監査と、その時点の原稿での最終ビルド |
+| S5 内在的H2と外側 | 矢数と位相ごとの定義域・像、有限窓で標識した2-fiberへの訂正、反対偶奇の生成障害、spectral非延長と二捩れ線束の障害 | rulingの逆移動・重なりの合成と全位相の標準頂点表との照合は下記に記録済み |
+| S6 文献と再現性 | Keller、DWZ、Van den Bergh、Okawa–Ueda、CFHR、Liu–Wang–Wu等の一次本文。現行のTeX・文献ソースと同じ `f2914b5` の410頁の描画・抽出テキスト・正規化PDF・SyncTeXを二つのクリーンビルドで照合 | AZ原著、未公刊原稿3点、包括的新規性比較。残る主要証明の統合監査と、その時点の原稿での最終ビルド |
 
 **論文C 8cdbb14 のクリーンビルド再現性（2026-11-23）。** 同じ Git archive を空の二作業ディレクトリに展開し、LuaHBTeX 1.18.0 と latexmk 4.86 で独立にビルドした。共通設定は `SOURCE_DATE_EPOCH=1795417450 FORCE_SOURCE_DATE=1 TZ=UTC` と同じ日本語 TeX ツリー。PDFのトレーラ `/ID` を取り除いたバイト列の SHA-256 は両方とも `27dc48b47fa9dd6cec7e976b21aef8aafa87e2f780a3ce9cc3085b11a7b3bbcf`。SyncTeXを展開して作業ディレクトリの絶対パスを同じ文字列へ置換した結果と、PDFの `pdftotext -layout` の出力はバイト単位で一致。Poppler 26.05.0 で96dpiに描画した全349頁はページごとに一致した。最終ログの警告は旧フォントコマンド `\rm` の非推奨通知一件。未解決参照・引用および overfull box はなかった。同版で `python3 scripts/check.py math --manuscript papers/nc-quadric-surface-avatar.tex` は PASS。これらの再現結果は当該原稿と共通ツール環境に対するものである。
 
@@ -2762,3 +2762,8 @@ latexmk
 **固定Jacobian上の指定負巡回類による全raw表示の正規化。** `cor:qa-jacobian-cy-normalized-presentations` では、負巡回直線の枠を一つ指定し、全表示をその枠を与える表示とpotentialの単元倍に一意に分けた。cotangent比較のCasimir像を枠として取れる場合、一般raw表示が同じ指定類を与える条件は有限比較単元が一であることに尽きる。これはraw右同値がcotangent表示から来ることを仮定しない。
 
 **負巡回正規化を含む410頁保存版 f2914b5。** 二つの `git archive f2914b5` 展開で `SOURCE_DATE_EPOCH=1795443872 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全410頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `89fe597fe0304205c778a55023545c0fe4765bd1325382794dbc66f637a93983`、SyncTeX `6fb2646b1bf3f8d6907a37f30ba6b237e0c9968ed4a4dfc52511dccb404a528a`、抽出テキスト `4ad5e14001d98e94fed16f679c96c7a7453d24540f37d3e0104652024678f99e`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+
+**S5の標準頂点の全位相と相対fiberの独立照合。** 第一mutation窓を基準に実際の対象を並べると、位相 $0,1,2,3$ の射は順に $r\upsilon^{-1}, r, r\upsilon, \iota_M r$ となる。これは奇数位相の二窓が $E_0,E_3$、その前後のcubic窓が $H_0,H_2$ であることから読む。偶数版はこの表を循環させる。実際、共通potentialで奇数対は $(x,y)$、偶数対は $(u,v)$ で、添字を一つ進めると両対とそのmassが交換される。偶数版の局所窓と奇数版の局所窓は、両massが可逆なら同じ周期Jacobianから切り出し、頂点の対応をこの添字移動で取る。消去では任意順序で二つの線形方程式対を解くが、二対の式は異なる変数を消去し、残るquarticへの補正は二つの和である。従って共通八矢で有限窓とその合成は一致し、三重重なりの比較は経路の積の結合律に帰着する。
+
+$h$ のcubic rulingを選んだ後の有限窓の線形liftは、$r\upsilon$ については $\upsilon^{-1}$、$r\upsilon^{-1}$ については $\upsilon$ で引き戻した元の窓を使う。$\upsilon^2$ の第三対象との比較を二回合成すると反Serreの四頂点移動となり、評価線束の縮約で同じpointed同型を与えることを `relative_square_foundation_stack.tex` の再標識の構成と照合した。このため二つのcubic位相は同じruling被覆を持つが、固定した帯座標での線形liftの類は対応する逆移動で個別に計算する。像は両対を消した八矢で $H_2^{\rm c}$、一対の十矢でその対と同じ偶奇が全 $H_2$、反対偶奇は残存massの単元開で $H_2^{\rm c}$、十二矢で対応する反対対のmassの単元開から全 $H_2$ となる。十二矢と十矢の比較は消去対の $B\Gm$、十矢と八矢の比較は残存massが可逆な開でさらに一つの $B\Gm$ を与える。幾何avatarの射には線形liftを加えず、各対角開の対応するrulingの選択だけが残る。固定Jacobianの指定同型を忘れた $H_2$ の比較では、返り矢の単元倍が有限窓上で恒等になるため、八矢のpotential線の枠は残らない。これらは原稿の `thm:qa-all-as-relative-h2-pointing-fibers`、`cor:qa-avatar-all-presented-pointing-fiber`、`cor:qa-avatar-pointing-by-quiver` を照合した監査であり、TeXは変更していない。
