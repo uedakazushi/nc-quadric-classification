@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.52。形式性と幾何Jacobianのexact 3-CY性。
+% 2026-11-23 / v4.53。二項準自由dg解消と非完備Ginzburg局所Morita比較。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1521,6 +1521,119 @@ negative cyclic parameter条件は，今回の\emph{undeformed}
 $\Pi_3(\Lambda)$と$H^0$表示の証明には輸入しない．
 \end{proof}
 
+\begin{proposition}[非最小二massの二段準自由dg解消とGinzburg比較]
+\label{prop:qa-q12-semifree-ginzburg-morita}
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+全非退化二mass有限foundation開$\mathfrak P_{12}^{\rm nd}$上，
+局所に関係束・矢束の枠を固定する．
+$D_0=\mathcal O_S^4$とし，有限有向矢束$V_{\rm fin}$
+をcohomological次数零，関係束$R_{\rm fin}$を次数$-1$に置いた
+相対準自由dg代数
+\[
+ \mathscr F=T_{D_0}
+   \bigl(V_{\rm fin}\oplus R_{\rm fin}[1]\bigr),
+ \qquad d(V_{\rm fin})=0,\quad d(r)=r\in T_{D_0}(V_{\rm fin})
+ \tag{SF}\label{eq:qa-q12-semifree-dg-presentation}
+\]
+を取る．ここで右辺の$d(r)$は関係束の実際の
+path式への包含であり，線形mass項を許す．
+このdg代数は次数$-1,0$にのみ集中し，
+\[
+ \operatorname{rk}_R\mathscr F^0=32,\qquad
+ \operatorname{rk}_R\mathscr F^{-1}=8,\qquad
+ d:\mathscr F^{-1}\hookrightarrow\mathscr F^0
+ \ \text{は局所分裂単射}
+ \tag{SFR}\label{eq:qa-q12-semifree-ranks}
+\]
+を満たす．従って$\mathscr F\to\Lambda$は
+任意の基底変更と可換するdg代数の準同型である．
+
+さらに$Q_{12}$を$V_{\rm fin}$の八矢と
+$R_{\rm fin}^\vee$の四戻り矢からなる非完備箙とし，
+$\mathcal W_{\rm rel}=\sum_\alpha
+ (r_\alpha r_\alpha^*)_{\rm cyc}
+ =\mathcal W$（巡回同値）を取る．
+Kellerの二項dg箙の定理を用いると，
+各局所枠付きchart（およびその幾何fiber）で
+\[
+ \boxed{\quad
+ \Pi_3(\Lambda)\ \simeq_{\rm dMor}\
+ \Gamma_3(Q_{12},\mathcal W)
+ \quad}
+ \tag{GM3}\label{eq:qa-q12-local-ginzburg-dg-morita}
+\]
+という\emph{導来Morita同値}を得る．
+これは全$\mathfrak P_{12}^{\rm nd}$での局所結果であり，
+$H_2$実現可能性を要しない．
+非最小関係，零・冪零massを含めるが，
+この同値をdg代数のstrict準同型とすること，
+全QP表示stackの未剛体化Isomに対する
+大域coherent降下，また異なるrulingの単一
+right-equivalenceを主張しない．
+\end{proposition}
+\begin{proof}
+有向四頂点の$V_{\rm fin}$は
+$U:0\to1,\ V:1\to2,\ W:2\to3$が各rank二，
+対角$u:0\to2,\ x:1\to3$が各rank一である．
+関係矢は$r_a:0\to2,\ r_b:1\to3$と
+残余長関係二本$0\to3$だけなので，
+どの二本の関係矢も道として合成できない．
+従って$\mathscr F^{q}=0$（$q<-1$）であり，
+次数零は通常の自由有向道代数
+$F=T_{D_0}(V_{\rm fin})$である．
+その頂点成分のrankは
+対角$4$，隣接$6$，二段$(0,2),(1,3)$が各$5$，
+三段$(0,3)$が$12$で，計$32$となる．
+
+一個だけ関係矢を含む道は，
+二短関係自身の各一本，二本の残余長関係，
+$W\otimes r_a$の二本，
+$r_b\otimes U$の二本で尽き，rankは$8$である．
+微分$d:\mathscr F^{-1}\to F$の像は，
+通常の両側関係イデアル$I=(R_{\rm fin})$そのものである．
+$(0,2),(1,3)$成分では$r_a,r_b$がそれぞれ
+primitiveなrank一直和因子を作る．
+$(0,3)$成分では
+\[
+ W\otimes r_a,\qquad r_b\otimes U,\qquad
+ R_{{\rm fin},03}
+\]
+のrank$(2,2,2)$の合併が，
+式~\eqref{eq:qa-two-mass-six-relations}の
+rank六直和因子条件そのものである．
+したがって$d$は局所分裂単射であり，
+$\operatorname{coker}d=F/I=\Lambda$は
+階数$32-8=24$の局所自由束となる．
+よって$\mathscr F\to\Lambda$は
+全cohomological次数で準同型であり，
+分裂性から任意の非平坦基底変更も保つ．
+
+$\mathscr F$は有限局所自由な矢を順に付加する
+相対準自由dg模型である．局所枠を選べば，
+Keller \cite[Proposition~6.8]{KellerDeformedCY2011}の
+cohomological次数$0,-1$のdg箙の仮定を満たす．
+同命題はこの準自由dg模型の\emph{undeformed}
+$\Pi_3$を，$V_{\rm fin}$と関係束双対$R_{\rm fin}^\vee$
+の矢からなる箙とpotential
+$\sum_\alpha r_\alpha r_\alpha^*$の
+\emph{非完備}Ginzburg dg代数に導来Morita同値で結ぶ．
+KellerのMorita不変性と上のdg準同型により，
+$\Pi_3(\Lambda)$にも式~
+\eqref{eq:qa-q12-local-ginzburg-dg-morita}が従う．
+potentialの展開は式~
+\eqref{eq:qa-q12-relation-potential-contraction}と
+\eqref{eq:qa-two-mass-potential}で既に確認した．
+
+ここで使うのは次数$0,-1$の\emph{任意の}
+dg箙を扱うProposition~6.8であって，
+minimal relationsを使うTheorem~6.10を
+非最小mass族へ無条件に適用したのではない．
+新しい準自由dg模型の形成と準同型は全base changeに
+保たれ，局所枠ごとにKellerの同じ命題を適用できる．
+ただしそれだけで未剛体化raw QPの全Isomを保つ
+大域Morita同値のcoherent貼合せを得たとしない．
+\end{proof}
+
 \begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
 \label{lem:qa-q12-all-degree-perfect-fiber}
 $\mathfrak F_{\HH}$の本稿の局所有限型affine chart上で，
@@ -2121,6 +2234,37 @@ QPのmass/shearは有限商で恒等となる．
 coherentである．以上は既存の全$n$の消滅を
 一つのdg代数に統合した帰結であり，
 他のdg QP模型の準同型を新たに構成したものではない．
+\end{proof}
+
+\begin{corollary}[$H_2$開でのGinzburg dgとordinary Jacobianの局所Morita比較]
+\label{cor:qa-q12-h2-ginzburg-jacobian-morita}
+$H_2$実現可能開の任意の局所枠付き二masschartで，
+非完備Ginzburg dg代数とordinary Jacobian代数の間に
+\[
+ D\bigl(\Gamma_3(Q_{12},\mathcal W)\bigr)
+ \simeq
+ D\bigl(\operatorname{Jac}(Q_{12},\mathcal W)\bigr)
+ \tag{GJ}\label{eq:qa-q12-local-ginzburg-jacobian-derived}
+\]
+という局所dg加群の導来Morita同値がある．
+perfect部分も対応し，幾何fiberと同じ局所枠の
+任意の基底変更後にも成立する．
+ただし$\Gamma_3$からordinary Jacobianへの
+dg代数の準同型を構成したものではなく，
+$\Gamma_3$自体の負次数cohomologyの消滅も
+このMorita同値だけからは主張しない．
+全raw QP群oidの未剛体化Isomを含む
+大域coherentな同値は別の降下問題とする．
+\end{corollary}
+\begin{proof}
+命題~\ref{prop:qa-q12-semifree-ginzburg-morita}の
+局所Morita同値と，定理~
+\ref{thm:qa-q12-h2-serre-dg-formality}の
+$\Pi_3(\Lambda)\to
+\operatorname{Jac}(Q_{12},\mathcal W)$の
+dg準同型を合成する．
+両者は局所の準自由模型と同じ有限foundationから
+作られ，基底変更後にも同じ適用が可能である．
 \end{proof}
 
 \begin{corollary}[幾何fiberのordinary Jacobian代数のexact $3$-Calabi--Yau性]
