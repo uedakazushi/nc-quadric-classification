@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.49。非正dg完成の零次と非平坦基底変更の直接証明。
+% 2026-11-23 / v4.50。非正dg完成の負一次Tor完全列とH2上の降下。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1309,6 +1309,73 @@ $\Pi_3(\Lambda')$の同じ非正dg模型で表される．
 同様の同型を要求しない．
 \end{proof}
 
+\begin{lemma}[非正複体の負一次cohomologyの基底変更]
+\label{lem:qa-q12-first-negative-universal-coefficient}
+$R$を可換環，$C\in D^{\leq0}(R)$を非正複体とする．
+任意の$R$-代数$R'$に対し，自然な四項完全列
+\[
+ \begin{split}
+ \operatorname{Tor}_2^R(H^0C,R')
+ &\longrightarrow H^{-1}C\otimes_RR'
+ \longrightarrow H^{-1}(C\otimes_R^{\mathbf L}R')\\
+ &\longrightarrow
+ \operatorname{Tor}_1^R(H^0C,R')\longrightarrow0
+ \end{split}
+ \tag{UC}\label{eq:qa-q12-first-negative-universal-coefficient}
+\]
+がある．$H^0C$が$R$上平坦なら，
+\[
+ H^{-1}C\otimes_RR'
+ \xrightarrow{\sim}H^{-1}(C\otimes_R^{\mathbf L}R'),
+ \qquad
+ (\tau^{\leq-1}C)\otimes_R^{\mathbf L}R'
+ \xrightarrow{\sim}
+ \tau^{\leq-1}(C\otimes_R^{\mathbf L}R')
+ \tag{NC}\label{eq:qa-q12-negative-truncation-base-change}
+\]
+が成立する．全比較は$C$・$R'$の変更と二回の基底変更に
+自然である．負一次cohomology自身が平坦とは主張しない．
+\end{lemma}
+\begin{proof}
+$K=\tau^{\leq-1}C$，$M=H^0C$とおく．
+truncation三角
+$K\to C\to M\to K[1]$を
+$-\otimes_R^{\mathbf L}R'$で引き戻す．
+$K$は$D^{\leq-1}(R)$に属し，導来tensorは
+右$t$-exactであるから
+$H^0(K\otimes_R^{\mathbf L}R')=0$である．
+さらに$K[-1]\in D^{\leq0}(R)$に
+非正複体の最高cohomologyの基底変更公式を適用して
+\[
+ H^{-1}(K\otimes_R^{\mathbf L}R')
+ \simeq H^{-1}K\otimes_RR'
+ =H^{-1}C\otimes_RR'
+\]
+を得る．三角の長完全列の次数$-2,-1,0$部分で
+$H^{-j}(M\otimes_R^{\mathbf L}R')
+=\operatorname{Tor}_j^R(M,R')$を使えば，
+式~\eqref{eq:qa-q12-first-negative-universal-coefficient}が従う．
+
+$M$が平坦なら右辺の$\operatorname{Tor}_1$と
+左辺の$\operatorname{Tor}_2$が消え，最初の同型を得る．
+同時に$M\otimes_R^{\mathbf L}R'=M\otimes_RR'$は
+次数零に集中する．引き戻したtruncation三角は
+前半が$D^{\leq-1}$，後半が$D^{\geq0}$なので，
+標準$t$構造のtruncation三角そのものである．
+第二の同型も得る．全操作はcanonicalなtruncationと
+導来tensorから作ったので合成・基底変更と整合する．
+
+平坦性が必要であることは，例えば
+$R=k[\varepsilon]/(\varepsilon^2)$，
+$C=k[0]$，$R'=k$で分かる．
+このとき$H^{-1}C=0$だが
+$H^{-1}(k\otimes_R^{\mathbf L}k)
+=\operatorname{Tor}_1^R(k,k)=k$となる．
+これは一般非正複体に対する反例であり，
+本稿の$H_2$実現可能開で同じ障害が現れると
+主張するものではない．
+\end{proof}
+
 \begin{theorem}[ordinary QP Jacobianと3-preprojective完成]
 \label{thm:qa-two-mass-jacobian-preprojective}
 $\Theta_\Lambda=
@@ -1947,6 +2014,50 @@ AZ同値は通常のmodule-object引戻しとcoherentに
 自動的に導いたものではない．
 \end{proof}
 
+
+\begin{corollary}[全$H_2$実現可能開での第一負次数Serre dg降下]
+\label{cor:qa-q12-negative-one-h2-base-change}
+定理~\ref{thm:qa-two-mass-h2-locus-jacobian-heart}の
+相対$H_2$実現可能開に属する有限normal foundation
+$\Lambda$を局所Noetherian affine基底$R$上で取る．
+任意の（非平坦なものを含む）$R$-代数$R'$に対して，
+\[
+ H^{-1}\Pi_3(\Lambda)\otimes_RR'
+ \xrightarrow{\sim}
+ H^{-1}\Pi_3(\Lambda\otimes_RR')
+ \tag{N1}\label{eq:qa-q12-negative-one-h2-base-change}
+\]
+が自然に成立する．さらに複体として
+$\tau^{\leq-1}\Pi_3$の導来基底変更が標準truncationと
+可換する．相対finite foundationのIsomとQPからの
+mass/shear引戻しにも自然である．
+これは$H^{-1}\Pi_3$の平坦性，
+$H^{-2}\Pi_3$以下の通常の基底変更，
+全dg CY同値を与えるものではない．
+\end{corollary}
+\begin{proof}
+補題~\ref{lem:qa-q12-hzero-nonflat-base-change}で，
+非正の相対$K$-flat dg模型の任意基底変更整合性を得ている．
+定理~\ref{thm:qa-two-mass-h2-locus-jacobian-heart}によれば
+\[
+ H^0\Pi_3(\Lambda)\simeq\operatorname{Jac}(Q_{12},\mathcal W)
+ =\bigoplus_{n\ge0}\operatorname{Hom}(T,t^nT)
+\]
+であり，各$n$の成分は$R$上有限局所自由である．
+従って次数付き環全体は平坦な$R$-加群である
+（直和は平坦性を保つ）．
+前補題~\ref{lem:qa-q12-first-negative-universal-coefficient}の
+平坦な$H^0$の場合を$C=\Pi_3(\Lambda)$に適用すると，
+式~\eqref{eq:qa-q12-negative-one-h2-base-change}と
+負のtruncation比較を得る．
+
+証明に使う双加群解消・Serre双対・
+truncationは有限foundationの全Isomに自然であり，
+QPのmass/shearはその有限像が恒等であるから，
+引き戻した比較にも単位として作用する．
+$H^{-1}\Pi_3$自体の局所自由性や
+任意のraw QPへの拡張は使っていない．
+\end{proof}
 
 \subsection{内在的$H_2$への二段の剛体化とruling mutation貼合せ}
 \label{subsec:qa-two-mass-rigidification-ruling-glue}

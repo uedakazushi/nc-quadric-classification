@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.54。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.49。
+2026-11-23 / v1.55。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.50。
 
 ## 公表用三論文の役割
 
@@ -10,7 +10,7 @@
 
 ## Cの現在の到達点と比較範囲
 
-**最優先：論文CのC1–C4完成。** C1・C2は原稿上達成。C3は`papers/quiver-avatar/cubic_qp_foundation_groupoid.tex`で、二mass十二矢QPの全finite foundation gerbeと余剰smooth gaugeに加え、短い相対対角解消、ordinary Jacobian=H⁰Π₃(Λ)、全H2実現可能開での反Serre全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とruling S₂-mutation商まで原稿上証明した。**非平坦基底変更の境界を精密化した。** `lem:qa-q12-hzero-nonflat-base-change`は非正dg完成の$H^0$と任意底変更を、`lem:qa-h2-heart-underived-base-change`は通常heart引戻しを$H^0\mathbf Lb^*$とする全Isom2自然比較を原稿上証明。導来引戻し自体は一般に$t$-exactでない（双対数の無限Tor）。**全finite square Isomから相対heartへの$t$-exactな2自然降下は`cor:qa-all-square-isom-pointed-heart-descent`に原稿上証明した。零番の基底線束$M_0$と選んだpointingを区別し、ruling交換は剛体化後のみ主張する。第一優先はこの新C3の独立証明監査と、C4の先行研究比較・全C LuaLaTeX組版であり、C全体を完成したとは扱わない。** 一般QP全体のAS正則性・H2外の全AS/avatar stack比較は未解決。旧raw `H+εyx` の非平坦対角scalarと、actual AS familyの滑らかなmassゲージを混同しない。
+**最優先：論文CのC1–C4完成。** H2実現可能開ではC3の新`cor:qa-q12-negative-one-h2-base-change`により$H^{-1}\Pi_3$の全基底変更を証明。非正複体のTor四項完全列が基礎で、全次数の$H^0$平坦性は既存のH2限定結果を用いる。負一次自体の平坦性、$H^{-2}$以下の通常基底変更、H2外のQP一般化は未解決。 C1・C2は原稿上達成。C3は`papers/quiver-avatar/cubic_qp_foundation_groupoid.tex`で、二mass十二矢QPの全finite foundation gerbeと余剰smooth gaugeに加え、短い相対対角解消、ordinary Jacobian=H⁰Π₃(Λ)、全H2実現可能開での反Serre全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とruling S₂-mutation商まで原稿上証明した。**非平坦基底変更の境界を精密化した。** `lem:qa-q12-hzero-nonflat-base-change`は非正dg完成の$H^0$と任意底変更を、`lem:qa-h2-heart-underived-base-change`は通常heart引戻しを$H^0\mathbf Lb^*$とする全Isom2自然比較を原稿上証明。導来引戻し自体は一般に$t$-exactでない（双対数の無限Tor）。**全finite square Isomから相対heartへの$t$-exactな2自然降下は`cor:qa-all-square-isom-pointed-heart-descent`に原稿上証明した。零番の基底線束$M_0$と選んだpointingを区別し、ruling交換は剛体化後のみ主張する。第一優先はこの新C3の独立証明監査と、C4の先行研究比較・全C LuaLaTeX組版であり、C全体を完成したとは扱わない。** 一般QP全体のAS正則性・H2外の全AS/avatar stack比較は未解決。旧raw `H+εyx` の非平坦対角scalarと、actual AS familyの滑らかなmassゲージを混同しない。
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
 

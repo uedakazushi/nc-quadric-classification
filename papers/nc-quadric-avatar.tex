@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.49
+% 日本語 LuaLaTeX。2026-11-23 / v4.50
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.49（非平坦基底変更のdg零次・heart降下を精密化）}
+\date{2026年11月23日\quad v4.50（負一次Serre dgのTor障害と基底変更）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -179,8 +179,14 @@ $\mathcal U_\lambda=\Spec R[t,(1+\lambda t)^{-1}]$と、
 相対Euler--conormal判定から分裂完全な対角解消を構成し，これを直接双対化してKellerの訂正済みrelation completionと比較し、
 通常Jacobianと$H^0\Pi_3(\Lambda)$を全基底上で同定する。
 非正・基底$K$-flatな相対dg模型のtruncation三角から，
-$H^0\Pi_3$は非平坦基底変更とも交換するが，
-負次数cohomologyや全次数の平坦性はこの段階では主張しない．
+$H^0\Pi_3$は非平坦基底変更とも交換する．
+一般非正複体の$H^{-1}$の基底変更障害を
+$\operatorname{Tor}_{1,2}$の四項完全列で記述し，
+内在的$H_2$実現可能開では$H^0\Pi_3$の
+全次数局所自由性によりこの障害が消え，
+$H^{-1}\Pi_3$も任意基底変更と可換することを示す．
+負一次成分自体の平坦性や$H^{-2}$以下の
+通常の基底変更までは主張しない．
 内在的$H_2$の実現可能開では、正規四周期helixと相対perfect-fiber判定で
 全次数の局所自由性・基底変更を証明した上で反Serre軌道環と同定し、
 左右Noether性・実際のpointed tails同値と

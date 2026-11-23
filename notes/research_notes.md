@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.56（A v1.69・20節、B v0.41・31節、C v4.49）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.57（A v1.69・20節、B v0.41・31節、C v4.50）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
@@ -25,6 +25,8 @@
 **全finite square Isomから相対heartへの降下の精密条件。** 有限squareの全頂点固定同型が与えるperfect Morita同値は零番構造対象$E_0$を$E'_0$へ送る。頂点の可逆層変更を含めれば像は$E'_0\otimes M_0$で、$M_0$を自明化せずに厳密なpointingを主張しない。相対Serreの自然性により反Serre$t$と可換なので、AZ生成族$\{t^{-n}E_0\}$と逆側の生成族は双方ともheartに入る。既存の生成族による非正性判定を両向きに用い、compact Moritaのcolimit保存Ind延長が$t$-exactと従う。自然変換もcompact生成性から一意に延長され、heartへの制限で合成・基底変更の2-cocycleを保つ。massゲージ・残余関係lift shearは有限foundationに恒等を誘導し、線束の重みは先行の評価cone比較に従う。剛体化後のruling交換はstrict square側から移送した2作用であり、未剛体化raw QPのright-equivalenceではない。証明は [全Isomのheart降下系](../papers/quiver-avatar/relative_rotated_mutated_tails.tex) `cor:qa-all-square-isom-pointed-heart-descent`、C3の同じheart貼合せに参照を追加。**状態：原稿上の証明と今回の指定範囲の論理点検。** 独立第三者査読・全C証明の包括監査・形式証明・C最新版の組版は別。
 
 **非平坦基底変更における零次比較（C4で依存を精密化）。** `cubic_qp_foundation_groupoid.tex` の `lem:qa-q12-hzero-nonflat-base-change` では、相対分裂完全な三項対角解消の双対を次数$-2,-1,0$に置いた非正・基底K-flatなtensor dg模型を使う。任意の係数環変更$R\to R'$で$\Pi_3(\Lambda)\otimes_R^{\mathbf L}R'\simeq\Pi_3(\Lambda\otimes_RR')$、truncation三角とderived tensorの右$t$-exact性により$H^0\Pi_3(\Lambda)\otimes_RR'\simeq H^0\Pi_3(\Lambda\otimes_RR')$が積に自然に成立する。これは$H^{<0}$や各次数の平坦性を意味しない。`relative_rotated_mutated_tails.tex` の `lem:qa-h2-heart-underived-base-change` では、各基底で$t$-exactな相対Morita同値が導来引戻しに整合する場合、通常のheart引戻しを$H^0\mathbf Lb^*$で表すことで全Isom・二回基底変更とcoherentに比較する。$R=k[\varepsilon]/(\varepsilon^2)\to k$の$k$の周期自由解消で$\operatorname{Tor}^R_i(k,k)=k$が全$i\ge0$となるため、導来引戻し自体の$t$-exact性は**偽**。この具体例の$\varepsilon$行列は有理数上の厳密2×2線形代数でも検算したが、無限周期性は自由解消の代数的証明による。**状態：原稿上の証明、指定範囲の手計算・一次文献の適用仮定照合。** 全Cの包括独立監査・現行PDF組版は未実施。
+
+**負一次Serre dgの普遍基底変更障害とH2での消滅（原稿上証明）。** 非正$R$-複体$C$の$K=\tau^{\leq-1}C$、$M=H^0C$のtruncation三角を任意$R\to R'$で導来tensorすると、$\operatorname{Tor}_2^R(M,R')\to H^{-1}C\otimes_RR'\to H^{-1}(C\otimes_R^{\mathbf L}R')\to\operatorname{Tor}_1^R(M,R')\to0$を得る。$M$平坦なら両Torは消え、$H^{-1}$の**通常**基底変更と$\tau^{\le-1}$の**導来**基底変更が成立。二massの$H_2$実現可能開では$H^0\Pi_3=\bigoplus_{n\ge0}\operatorname{Hom}(T,t^nT)$が各次数局所自由の直和として平坦なので適用でき、全finite Isomとmass/shear引戻しにも自然。$k[\varepsilon]/\varepsilon^2$の$C=k[0]$は$H^{-1}$基底変更の一般的反例。**未証明：** $H^{-1}\Pi_3$自身の平坦性、$H^{-2}$以下の通常基底変更、負次数の消滅、任意raw QPへの拡張。詳細は[CのTor補題とH2系](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `lem:qa-q12-first-negative-universal-coefficient`・`cor:qa-q12-negative-one-h2-base-change`。今回の検証はtruncation長完全列の論理点検であり、全C4独立監査・形式証明・組版ではない。
 
 **C4全ソース横断静的監査。** C主原稿と42の分割節（計43 TeXファイル）から，818個のラベル・868件の参照・235件の文献引用をGitHubの現行ソースから抽出。ラベル重複0，未解決参照0，未定義引用キー0（bib90キー），未解決入れ子入力0，Markdown混入0。C3で1件の禁止Unicode数式矢印を発見してTeXの$\to$へ訂正し，修正後も当該節のラベル／参照／引用集合は同一と確認した。前回の節別確認から進み，全ファイル横断のref検査を済ませた。ただしこの検査はGitHubソースをJavaScriptで静的解析したもので，scripts/check.py papersの実行やLuaLaTeXビルドではない。コンテナのDNS制約により全repoのcheckoutが取得できずPDF/SyncTeXの実組版・目視は未実施。
 
