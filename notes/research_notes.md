@@ -391,7 +391,7 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 | S3 八・十・十二矢 | `thm:qa-avatar-presented-field-dictionary`、`thm:qa-avatar-all-mass-fiberwise-flat`、`thm:qa-open-qp-canonical-as-image`。mass配置ごとの有限階数、独立な有理演算による退化排除、全重みのGinzburg集中、右同値の二重導分と端点、基底変更を照合した。 |
 | S4 比較射と剛体化 | `thm:qa-periodic-as-qp-fiber`、`cor:qa-jacobian-cy-normalized-presentations`、`thm:qa-two-mass-h2-rigidification-ruling-glue`。周期付き像の閉方程式、固定Jacobianへの指定同型、消去対とmass群の慣性、rulingのMorita移送、Casimirの降下と負巡回直線の指定枠を照合した。 |
 | S5 内在的H2と外側 | `thm:qa-all-as-relative-h2-pointing-fibers`、`thm:qa-avatar-all-presented-pointing`、`cor:qa-avatar-pointing-by-quiver`。全四位相の逆再標識、像と有限窓上の2-fiber、反対偶奇の生成障害、spectral非延長と二捩れ線束の障害を照合した。 |
-| S6 文献と再現性 | 現行のTeX・文献ソースと同じ `32c0782` の411頁を二つのクリーンビルドで照合した。一次本文で確認した定理と適用仮定は [文献ノート](literature.md) に記録した。共有されたAZ原著、Weyl研究稿、v7、十二矢分類稿の引用箇所を照合し、体上の既知分類と相対比較の差を文献ノートに記録した。 |
+| S6 文献と再現性 | 現行のTeX・文献ソースと同じ `3a57b9b` の411頁を二つのクリーンビルドで照合した。一次本文で確認した定理と適用仮定は [文献ノート](literature.md) に記録した。共有されたAZ原著、Weyl研究稿、v7、十二矢分類稿の引用箇所を照合し、体上の既知分類と相対比較の差を文献ノートに記録した。 |
 
 **論文C 8cdbb14 のクリーンビルド再現性（2026-11-23）。** 同じ Git archive を空の二作業ディレクトリに展開し、LuaHBTeX 1.18.0 と latexmk 4.86 で独立にビルドした。共通設定は `SOURCE_DATE_EPOCH=1795417450 FORCE_SOURCE_DATE=1 TZ=UTC` と同じ日本語 TeX ツリー。PDFのトレーラ `/ID` を取り除いたバイト列の SHA-256 は両方とも `27dc48b47fa9dd6cec7e976b21aef8aafa87e2f780a3ce9cc3085b11a7b3bbcf`。SyncTeXを展開して作業ディレクトリの絶対パスを同じ文字列へ置換した結果と、PDFの `pdftotext -layout` の出力はバイト単位で一致。Poppler 26.05.0 で96dpiに描画した全349頁はページごとに一致した。最終ログの警告は旧フォントコマンド `\rm` の非推奨通知一件。未解決参照・引用および overfull box はなかった。同版で `python3 scripts/check.py math --manuscript papers/nc-quadric-surface-avatar.tex` は PASS。これらの再現結果は当該原稿と共通ツール環境に対するものである。
 
@@ -2718,3 +2718,7 @@ $h$ のcubic rulingを選んだ後の有限窓の線形liftは、$r\upsilon$ に
 **形式有限決定性との比較を含む411頁保存版 32c0782。** `SOURCE_DATE_EPOCH=1795444813 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーの下で二つのクリーンなアーカイブを組版した。全411頁の描画、抽出テキスト、正規化PDF・SyncTeXが一致した。SHA-256は抽出テキスト `6d6bbd36261671c242c1312dd14fc70c5db39de8bbaa474c904a24778e10ef61`、正規化PDF `ae08384b4e3aca6425ecc1462dc0d08451c15439e45756068635b0c03ff0f351`、正規化SyncTeX `4454b1981b9fe865123f6f84eb28f95a817a8b442bd1aa587bca8e4a0f62136e`。gzip検査と全論文ソース検査は通過した。最終ログでは未解決参照・Overfullはなく、既存の旧式フォントコマンドに関する警告一件を確認した。新しい古典例の行列閉路を四つの位相で検算した。
 
 **S1–S6の確認（2026-11-24）。** 指定型の主要定理と依存証明の照合は上の定理別索引にまとめた。Artin–Zhang原著、Weyl研究稿、v7、十二矢分類稿を本文と照合し、先行する体上の四層分類・相対mutationと、Cの指定相対族の全比較、表示慣性と標準頂点のfiberとの比較を文献ノートに記録した。TeX・BibTeX・組版設定が保存版 `32c0782` と同一であることを確認し、そのrevisionを展開した二つのクリーン環境でLuaLaTeXを再実行した。全411頁の描画、抽出テキスト、正規化PDF・SyncTeXの比較結果は既掲の保存版記録と完全に一致し、両SyncTeXのgzip検査も通過した。ソース検査と論文Cの数学検算を再実行し、p.108の描画を目視確認した。既存の旧式フォントコマンドの警告が一件ある。監査は指定された比較と参照文献に対するものである。
+
+**未公刊三稿への引用を外した本文版（2026-11-24）。** `3a57b9b` では [A1226]・[SYN26]・[W1226] への参照と書誌項目を除いた。四層の辞書は系 `cor:qa-avatar-four-stratum-dictionary` にまとめ、曲線型の有限窓、二mass消去、負断面の三つの場合の正則性、二古典型、全整数展開からの逆構成を本文の証明で結んだ。相対再埋め込みと並進は、支持の消滅、垂直成分のTor、評価の閉埋め込み、テンソルの合成から本文で定める。三稿の過去の照合記録は文献ノートにある。
+
+二つのクリーンなアーカイブに `SOURCE_DATE_EPOCH=1795466294 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定し、全411頁の描画、抽出テキスト、正規化PDF・SyncTeXが一致した。SHA-256は抽出テキスト `1a70a6b704109bea03bcea1716548f5ef7929bdbe25e6a3f859aa8745b2c88b2`、正規化PDF `d6bf92c1dbc7b710ae90b80a100ba05ce32042197d601c20567dc4c255fda1e6`、正規化SyncTeX `e2a461314d8da20d7356309b15a1be80d6ae58f14f5968d934fde5f7e55572b8`。ソース検査、Cの数学検算、両SyncTeXのgzip検査は通過した。最終PDFとBibTeX出力に三参照はなく、最終ログでは旧式フォントコマンドの警告一件が残る。
