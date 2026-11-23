@@ -122,6 +122,18 @@ def main():
                 defective_cells = sum((start + 2 * cell) % 4 == 0 for cell in range(half_weight))
                 expected_dimension = 1 + 3 * defective_cells - expected_rank * (defective_cells - 1)
                 assert inward_top_dimension(coefficients, start, half_weight) == expected_dimension
+        terms = [
+            (start, first + second + "z", coefficients[start][a, b])
+            for start in range(4)
+            for a, first in enumerate("xy")
+            for b, second in enumerate("xy")
+            if coefficients[start][a, b]
+        ]
+        derivatives = cyclic_derivatives(terms)
+        for start, threshold in ((1, 4), (3, 5)):
+            for half_weight in range(2, 6):
+                expected = 5 if expected_rank == 1 and half_weight >= threshold else 4
+                assert quotient_dimension(derivatives, start, 2 * half_weight, half_weight - 1) == expected
     print("PASS: the two line positions give the predicted dimensions through weight sixteen")
 
 

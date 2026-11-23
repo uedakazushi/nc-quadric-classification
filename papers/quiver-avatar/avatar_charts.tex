@@ -1133,6 +1133,43 @@ $b^{\mathsf t}J^{-1}$ に比例する条件である。
 $1+3s-r(s-1)$ である。四周期により各辺の $r$ は同じである。
 \end{proof}
 
+\begin{corollary}[反対の始点偶奇における一退化位相]
+\label{cor:qa-avatar-even-top-outward-single}
+系~\ref{cor:qa-avatar-even-top-bridge-rank}と同じ仮定で、
+退化位相 $j$ と反対の偶奇の始点 $i$ を取る。
+$\delta=b^{\mathsf t}J^{-1}a$ と置く。
+重み $2m$ の上端商の次元は、$\delta=0$ であって
+\[
+ (i\equiv j+1\pmod4\text{ かつ }m\geq4)
+ \quad\text{または}\quad
+ (i\equiv j+3\pmod4\text{ かつ }m\geq5)
+\]
+となる場合に五であり、それ以外では四である。
+\end{corollary}
+\begin{proof}
+系~\ref{cor:qa-avatar-even-top-outward}の両端への移送を使う。
+短テンソルはどの位置から移送しても同じ像になるので、
+最初の $q_i$ を取り、第二因子だけを右へ $m-1$ 回送ればよい。
+$Q_i$ は可逆なので、この像が非零かどうかは移送行列の積が
+非零かどうかと同値である。
+
+第二因子上で交互に現れる二行列は
+\[
+ A=-Q_j(Q_{j+1}^{\mathsf t})^{-1},\qquad
+ B=-Q_{j+2}(Q_{j+3}^{\mathsf t})^{-1}.
+\]
+$A$ は階数一、$B$ は可逆であり、
+$a b^{\mathsf t}$ の表示から直接 $ABA=\delta A$ を得る。
+従って $\delta\ne0$ なら任意の交互積は非零である。
+$\delta=0$ なら、交互積が零になるのは $A$ を二回以上
+含む場合に限る。
+最初の移送は $i\equiv j+1$ で $A$、
+$i\equiv j+3$ で $B$ なので、$A$ が二回現れる閾値は
+それぞれ三段、四段である。
+移送が零のときだけ短関係の共通像が消えることから、
+掲げた次元が従う。
+\end{proof}
+
 \subsection{直積型 collection と全 square avatar}
 
 $\mathcal A_{\mathrm{sq}}^{\times}$ を、順序付きの二つの ruling を持つ
