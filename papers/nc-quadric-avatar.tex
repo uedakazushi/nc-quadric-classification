@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.62
+% 日本語 LuaLaTeX。2026-11-23 / v4.63
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.62（相対cyclic複体のfppf降下とクラス降下の区別）}
+\date{2026年11月23日\quad v4.63（全相対AS/avatar/QP stack分類を最上位課題へ）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -302,6 +302,10 @@ right-equivalenceではなく相対mutationとして貼り合う。
 この比較はH2実現可能開全体に適用するが、
 その外の任意QPのAS正則性・全AS/avatar表示stackの分類や、
 全証明の独立監査を含む主張ではない。
+既存の部分比較と未解決の全相対AS/avatar/QP stack分類は区別する．
+後者を，非被約族・同型層・余剰QP慣性・剛体化・
+mutation/rulingと内在的$H_2$の内外を含めた
+本稿の最上位研究課題として明記する．
 \end{abstract}
 \tableofcontents
 
@@ -750,8 +754,62 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}
 
-\section{比較を完成させるための認識問題}
+\section{全相対AS/avatar/QP stack分類へ向けた認識問題}
 \label{sec:qa-remaining}
+
+本稿の今後の最上位目標は，ここまでに構成した
+$H_2$実現可能開に限らず，
+\emph{本稿で指定した}square/rotated square/cubic/最小十本矢
+AS正則$\mathbb Z$-代数，その幾何avatar，
+ならびに重み付き八・十・十二本矢QP表示の
+全相対$fppf$スタックの分類と比較を完成することである．
+これは任意の次数・任意の箙のAS/QPを分類するという意味ではない．
+本節では証明済みの比較と未解決の全体比較を区別する．
+特に体上の同型類の相互逆分類を，
+非被約基底上の$1$-射，自己同型，$2$-射，
+基底変更を含むstack同値へ無条件に昇格しない．
+また未修正QPの余剰慣性を忘れた同型は認めない．
+
+\begin{problem}[指定型の全相対stack分類と比較]
+\label{prob:qa-all-relative-as-avatar-qp-stacks}
+本稿の最小分解型を満たす全相対AS族と，
+対応する幾何avatar族，重み付き八・十・十二本矢QPの
+全右同値群oidについて，次を決定せよ．
+\begin{enumerate}
+\item
+対象・同型層・全ての自己同型と慣性，
+相対許容軌跡および全族を覆う$fppf$ atlasを
+非被約底を含めて明示し，
+全周期の相対AS再構成・逆幾何構成が
+どの条件下で互いに逆かを証明する．
+\item
+QPの\emph{全raw右同値}の慣性から
+可縮pair・二mass・頂点scalars等の余剰核を分離し，
+適切な剛体化とgerbeを記述して，
+有限foundation・AS・avatarとの全Isom比較，
+fiberおよび合成のcoherenceを証明する．
+\item
+標準構造対象・変異・ruling交換を通した
+$\HHstack$への忘却射の定義域・像・fiberを決定し，
+$\HHstack$外の適合しない構造対象や
+境界特異族も排除せず分類する．
+\end{enumerate}
+この三項は\emph{研究目標}であり，
+現段階で全て証明済みの定理ではない．
+\end{problem}
+
+最初の実行課題は定理~
+\ref{thm:qa-as10-relative-families}に置いた
+有限局所自由性・相対perfect性が，
+指定した\emph{全ての}AS族の定義から従うかを
+非被約双対数基底とrank三壁で判定することである．
+それが自動でなければ，限定相対定理を
+全stack分類へ読み替えず，残りの対象と
+必要な新chartを正確に記述する．
+同時に命題~\ref{prop:qa-stabilized-inertia}の
+$B\mathbb G_m$慣性が有限商で消える事実を保持し，
+未修正QPとAS/avatarの直接同値を主張しない．
+
 
 点曲線側の全noncubic相対族については、定理~\ref{thm:qa-symmetric-relative-pointed-heart}により
 構造対象を保つ比較が成立した。
