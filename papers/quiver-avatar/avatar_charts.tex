@@ -1068,6 +1068,45 @@ $Z$ は次数二のCartier因子であるため、
 評価、外積および方程式の零点の形成は任意基底変更と可換である。
 \end{proof}
 
+\begin{proposition}[対角矢のlift変更を法とする境界の三次関係]
+\label{prop:qa-avatar-deep-cubic-correction}
+系~\ref{cor:qa-avatar-deep-fixed-divisor}の相対chartで、
+隣接鉛筆を短関係で同定し、二つの対角生成商の枠を固定する。
+長関係の対角部分が与える線形同型を $G:V\to V$ とする。
+三次項のlift変更を法とした空間は、長さ二の固定因子
+$Z\subset\PP(V)$ 上の可逆層の切断空間であり、
+基底上階数二で任意基底変更と可換である。
+\end{proposition}
+\begin{proof}
+短関係と両側からのその倍を除くと、三本の隣接矢の道は
+$\operatorname{Sym}^3V$ となる。
+実際、短関係は二組の隣接因子に対する交代部分であり、
+これらを消すと三つの因子を対称化する。
+長関係の対角部分の射影は $G$ のグラフなので、
+その三次補正は $f:V\to\operatorname{Sym}^3V$ で表される。
+各対角矢のliftに二次の道を加えると
+\[
+ f(v)\longmapsto f(v)+s\,v+t\,G(v),
+ \qquad s,t\in\operatorname{Sym}^2V
+\]
+と変わる（符号は二つのliftの選び方で吸収できる）。
+
+$B=\PP(V)$ において、この変更の写像は
+次の層写像の大域切断である：
+\[
+ \OO_B(2)^{\oplus2}\longrightarrow V^\vee\otimes\OO_B(3),
+ \qquad (s,t)\longmapsto s\,\mathrm{ev}+t\,\mathrm{ev}\circ G.
+\]
+行列式の零点は前系の固定因子 $Z$ である。
+第一列の評価は全射なので、局所的にその成分の一つを
+単元として消去できる。残る成分は $Z$ のCartier方程式である。
+従ってこの層写像は単射で、その余核は
+$Z$ 上の可逆層の押し出しである。
+$\OO_B(2)$ の一次直像は零なので、大域切断を取った余核は
+この可逆層の直像そのものとなる。
+$Z$ の長さ二の有限平坦性から階数二と基底変更が従う。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
