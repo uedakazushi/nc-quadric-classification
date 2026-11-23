@@ -890,6 +890,25 @@ $M\to H_3$は$\Hom(C,H_3)$のうち$m_3$で零になる射で表される。
 行列の枠、余評価、核の形成をすべて自然に運ぶ。
 \end{proof}
 
+\begin{corollary}[十矢表示の短い乗法の行列式壁]
+十矢窓の第一の階数条件の下で、
+$\Hom(H_1,H_2)\otimes\Hom(H_2,H_3)\to\Hom(H_1,H_3)$
+を考える。両辺は階数四であり、その行列式の零点 ideal は
+mass 係数 $\lambda$ の零点 ideal に一致する。
+この一致は任意の基底変更と可換である。
+\end{corollary}
+\begin{proof}
+局所枠で二段道の束を $U$ とすると、標的は
+$(U\oplus Rx)/R(q+\lambda x)$ であり、乗法は $U$ の包含から誘導される。
+したがって乗法の余核は $R/(\lambda)$ である。
+階数四から階数四への写像の行列式は余核の
+零次 Fitting ideal を生成し、$R/(\lambda)$ の
+零次 Fitting ideal は $(\lambda)$ である。
+局所枠を変えても両 ideal は不変で、基底変更も保つ。
+特に閉 fiber で階数三でも、$\lambda$ が非零の冪零元なら
+族は行列式零の閉部分を経由しない。
+\end{proof}
+
 \begin{proposition}[可縮 pair の残余慣性]
 \label{prop:qa-stabilized-inertia}
 上の群と頂点標識を用いると、
