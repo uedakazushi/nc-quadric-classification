@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.55。mass kernelの多項式dgホモトピーとA1式。
+% 2026-11-23 / v4.56。raw右同値のA1経路と有限dgホモトピーの厳密な差。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1882,6 +1882,115 @@ coherentな単位同定は，前命題のstrictな商への射
 $p:\mathscr F\to\Lambda$を用いる．
 本命題の明示的な一パラメータホモトピーに
 未証明の高次coherenceを付加してはいない．
+\end{proof}
+
+\begin{proposition}[massゲージのraw右同値における$\mathbb A^1$経路判定]
+\label{prop:qa-q12-raw-mass-a1-path-obstruction}
+非退化二mass QPの一つの局所表示を可換係数環$R$上に取り，
+mass係数を$\lambda,\mu\in R$とする．
+式~\eqref{eq:qa-mass-gauge-action}の両因子の
+パラメータ$t,s\in R$を選び，
+\[
+ a=1+\lambda t\in R^\times,\qquad
+ b=1+\mu s\in R^\times
+\]
+とし，mass右同値を$g_{t,s}$と書く．
+頂点冪等元を固定する\emph{ordinary多項式}
+QP右同値で，$R[z]$上の一パラメータ族
+$G_z$が$G_0=\mathrm{id}$，
+$G_1=g_{t,s}$となるための必要十分条件は
+\[
+ \boxed{\quad
+ \lambda t\in\sqrt{(0)}\subset R,\qquad
+ \mu s\in\sqrt{(0)}\subset R .
+ \quad}
+ \tag{AP}\label{eq:qa-q12-raw-a1-nilpotent-criterion}
+\]
+必要性は，途中の族がmassゲージ部分群に
+属すと仮定しなくても成立する．
+十分な場合は実際にmassゲージ部分群の中で
+$G_z=g_{zt,zs}$を取れる．
+この判定はfaithfully flatな基底変更で
+改善しない：非冪零な$\lambda t$または$\mu s$を
+fppf被覆で冪零にすることはできない．
+
+例えば標数零の体$k$上で$\lambda=1,\ t=1$，
+もう一方を$s=0$とすると，
+$x:1\to3$の一次係数は$2$であり，
+$\mathrm{id}$からこのmassゲージへの
+raw右同値を通る$\mathbb A^1_k$経路は存在しない．
+対照的に双対数$R=k[\varepsilon]/(\varepsilon^2)$で
+$\lambda=\varepsilon,\ t=1$なら，
+$x$の係数$1+\varepsilon z$は
+逆元$1-\varepsilon z$を持ち，
+raw右同値を通る経路が存在する．
+
+他方，命題~
+\ref{prop:qa-q12-mass-dg-polynomial-nullhomotopy}
+の有限二項dg模型では，
+\emph{どのmassゲージでも}
+$\varphi_z=\mathrm{id}+z(\varphi^\sharp-\mathrm{id})$
+はdg代数\emph{準同型}として定義できる．
+$\lambda t$または$\mu s$が非冪零なら
+この中間写像が自己同型であるとは限らず，
+raw右同値経路の不存在と矛盾しない．
+従ってこの有限dgホモトピーを
+Ginzburg dg側のright-equivalence経路と
+同一視して相対$2$自然性を証明することはできない．
+\end{proposition}
+\begin{proof}
+矢束のうち，始点$1$・終点$3$の
+\emph{一次}矢は$x$一本であり，
+始点$0$・終点$2$の一次矢も$u$一本である．
+頂点固定の道代数右同値は矢イデアル
+$\mathfrak m$の商$\mathfrak m/\mathfrak m^2$に
+自己同型を誘導する．従って任意の
+$R[z]$上の右同値$G_z$について，
+その$x$と$u$の一次係数
+$A(z),B(z)\in R[z]$はいずれも\emph{単元}である．
+端点条件から
+\[
+ A(0)=B(0)=1,\qquad
+ A(1)=1+\lambda t,\quad B(1)=1+\mu s.
+\]
+
+一般に$P(z)=1+\sum_{j=1}^m c_jz^j$
+が$R[z]^\times$の元なら，
+各素イデアル$\mathfrak p\subset R$で
+$(R/\mathfrak p)[z]$の単元は定数なので，
+$c_j\bmod\mathfrak p=0$である．
+従って全$c_j$はnilradicalに属し冪零で，
+有限和$P(1)-1=\sum_jc_j$も冪零である．
+$A,B$に適用して必要条件を得る．
+この議論は他の矢の二次以上の項や，
+massゲージ部分群にとどまることを一切使わない．
+
+逆に$c=\lambda t,\ d=\mu s$がともに冪零なら，
+$1+cz$と$1+dz$は$R[z]$上の単元であり，
+逆元は有限幾何級数で書ける．
+式~\eqref{eq:qa-mass-gauge-action}を二箇所に
+パラメータ$zt,zs$で適用すると，
+全$z$でpotentialを巡回的に保つ
+ordinary多項式右同値$g_{zt,zs}$を得る．
+これが十分性である．
+
+$R\to R'$がfaithfully flatで，
+$c$の像が冪零なら$c^N$の像は零である．
+忠実平坦性から$c^N=0$となるので，
+非冪零性はこの基底変更で消えない．
+
+最後に有限二項模型
+$\mathscr F=F\oplus I[1]$では，
+$\delta=\varphi^\sharp-\mathrm{id}$の像が
+square-zero dg idealに入るため，
+$\mathrm{id}+z\delta$は
+途中で自己同型でなくても
+全$z$についてdg代数準同型となる．
+$x$上の一次係数は$1+z\lambda t$，
+$u$上では$1+z\mu s$であり，
+非冪零な場合には$R[z]$の単元とはならない．
+従ってraw右同値群の経路とは異なる
+dg代数ホモトピーである．
 \end{proof}
 
 \begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
