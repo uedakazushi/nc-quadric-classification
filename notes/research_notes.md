@@ -2684,3 +2684,5 @@ latexmk
 **固定Jacobianのmass慣性帯の独立監査。** `cor:qa-mass-band-determinant` は、対角矢の線束と短関係線の比を、二段道から重み二のJacobian成分への積の行列式線束として回収した。積の行列式が局所massを表し、線束値の群法則と可逆massの乗法群表示が、枠・道の持ち上げ・任意基底変更に依存しない。
 
 **mass慣性帯の行列式表示を含む407頁保存版 0620a56。** 二つの `git archive 0620a56` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440144 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全407頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `070db39c2efcc858458bba218c5a507e20ab986103ca6a7a3acf79a99b7137e5`、SyncTeX `f8c9c122102c2c1e967e02044056bf1d521e9323620b39a7ec5e752997d29048`、抽出テキスト `77823f775b45e0c9215994df946a75ce47d22dbbda0bd94c991522224604b5ad`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**固定矢像上のmass慣性の独立監査と中立化。** `cor:qa-fixed-arrow-neutral-gerbe` は、同じJacobianへの矢像を固定したあと、各対の片側への安定化群の射影が同型であることを全potentialについて用いた。反対側の作用だけで全軌道を得て、その作用は自由である。基準表示を大域的に固定できるとき、局所標準形の切断を選ばずに表示ジェルブを中立化できる。証明は冪零massでもそのまま成立する。

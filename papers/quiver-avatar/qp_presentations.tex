@@ -1612,6 +1612,55 @@ $t+t'+\ell_i(t)t'$ に対応する。
 $t\mapsto1+\ell_i(t)$ が乗法群との同型となる。
 \end{proof}
 
+\begin{corollary}[一つの矢像を固定した表示ファイバーの中立化]
+\label{cor:qa-fixed-arrow-neutral-gerbe}
+命題~\ref{prop:qa-fixed-arrow-presentation-fiber}の基準表示を
+基底上で一つ固定する。各対から一方の向きを選び、
+その矢の変換群の積を $G_x$、反対矢の変換群の積を $G_y$ とする。
+このとき表示ファイバーの同型類空間とファイバー自身は
+\[
+ X_C\simeq \mathscr D^{\rm gen}/G_y,qquad
+ \mathscr F_C\simeq X_C\times_S B_SG_x
+\]
+である。第一の商はfppf層商であり、
+$\mathscr D^{\rm gen}\to X_C$ は $G_y$-torsorである。
+この記述はmassが零因子または冪零である基底にも適用できる。
+\end{corollary}
+\begin{proof}
+基準の矢像を固定する全道代数自己同型群は
+$G_x\times_S G_y$ である。
+任意の $W\in\mathscr D^{\rm gen}$ に対し、
+その安定化群から $G_x$ への射影は同型である。
+実際 $W$ の重み二の巡回微分は、基準関係線の
+もう一つの枠を与える。
+従って $W$ に対する一方の矢の全変更係数は、
+その同じ関係線を用いて $G_x$ で表される。
+系~\ref{cor:qa-raw-periodic-jacobian-kernel}は、
+それぞれの係数について、potentialを保つ
+反対矢の係数が一意にあることを示す。
+この議論は各試験基底上で成立する。
+
+従って $G_y$ の作用は自由である。
+また同じ $(G_x\times G_y)$-軌道にある二表示は
+同じ $G_y$-軌道にある。
+実際、二表示を結ぶ変換を取り、その $G_x$ 成分を、
+始域表示の安定化群の元との合成で打ち消せる。
+ゆえに二つの作用の軌道のfppf層化は一致する。
+自由な作用の層商の定義により、
+$\mathscr D^{\rm gen}\to X_C$ は $G_y$-torsorである。
+
+最後に作用群oidの射影
+$(G_x\times G_y)\to G_x$ は
+$\mathscr F_C\to B_SG_x$ を定める。
+これと $\mathscr F_C\to X_C$ を合わせた射は、
+任意の二対象間の同型を局所的に比較したとき、
+安定化群から $G_x$ への上記の同型により充満忠実である。
+また $X_C$ 上の表示と所与の $G_x$-torsorはいずれも
+fppf局所に持ち上がるので、この射は局所本質全射である。
+よってstackの同値を得る。
+いずれの議論もmassで割らないため、冪零massを含めて成立する。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。
