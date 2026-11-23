@@ -3519,6 +3519,51 @@ Casimirを定める対角の恒等射とConnes写像が移送される。
 cotangent変換の合成と基底変更を保つ。
 \end{proof}
 
+\begin{proposition}[頂点付きfinite foundationのCasimir鎖の降下]
+\label{prop:qa-foundation-casimir-chain-descent}
+有限foundation $A$ とその頂点部分代数 $D$、
+狭義有向ideal $J$ をデータとする比較群oidを取る。
+同型は $D,J$ を保存するものとし、許される頂点の置換も含める。
+この群oid上でcanonical Casimirの巡回類と負巡回Connes像は
+homotopy-coherentに降下する。比較は任意基底変更に自然である。
+\end{proposition}
+\begin{proof}
+$A$ の対角模型を、頂点の枠を選ばない
+補題~\ref{lem:qa-directed-azumaya-bar}の有限正規化bar解消
+$P\to A$ に固定する。各項は $D,J$ と積で決まり、
+同型と基底変更の比較はtensorの結合律で与えられる。
+特に同型の合成は模型の合成と一致する。
+$\Theta=P^\vee[2]$ を用いれば、全tensor次数の
+$B=T_A(\Theta)$ とその正のtensor次数の相対mixed模型も
+同様に関手的に構成される。
+この模型はKellerの訂正
+\cite[Theorem~1.1の証明]{KellerErratumCY2018}
+のreduced模型である。
+
+ここで次数一のtrace部分
+$\Theta\otimes_{A^e} A=\operatorname{Hom}_{A^e}(P,A)[2]$
+に増大写像 $P\to A$ を置く。
+内部微分はこの増大を殺し、
+相対二項模型におけるこの成分のHochschild境界も零である。
+従ってこれを最後の巡回列に入れたものはcycleである。
+これは $\operatorname{id}_P$ の像なので既定のCasimirを表す。
+Connes像は同じtensor次数における一文字の切断で、
+負巡回模型のcycleを与える。
+有限射影双対性、増大写像、最後の巡回列への包含、
+およびConnes作用はすべてこの群oidの写像と可換である。
+従って両cycleは、単にホモロジー類が一致するだけでなく、
+各比較模型において指定した鎖の写像で一致する。
+
+fppfの\v{C}ech神経および同型の合成の神経に
+この鎖の写像を入れる。各面と退化写像と可換するため、
+指定したcycle自身がtotalizationの元を与える。
+命題~\ref{prop:qa-q12-fppf-cyclic-complex-descent}の複体の降下と
+比較すると、これが両指定類のhomotopy-coherentな降下である。
+同じ構成は頂点束の枠の変更と任意の基底変更を保つ。
+別の有限射影対角模型で得たホモロジー類との一致は、
+双対性で対角の恒等射を追うことで従う。
+\end{proof}
+
 \begin{remark}[降下した複体とCYクラスの区別]
 \label{rem:qa-q12-cyclic-complex-versus-class-descent}
 系~\ref{cor:qa-q12-finite-foundation-cyclic-complex-descent}は
@@ -3529,10 +3574,9 @@ cotangent変換の合成と基底変更を保つ。
 \emph{指定クラスのcoherentなlift}は自動的には得られない．
 不変な$\pi_0$元とhomotopy fixed pointの$\pi_0$は
 一般に一致しないためである．
-従ってcanonical Casimir cycleの鎖レベル自然性を
-三重以上の重なりまで示す問題と，
-cotangent外raw QPやruling交換でのCY class比較は
-引き続き別の未解決課題である．
+命題~\ref{prop:qa-foundation-casimir-chain-descent}では
+頂点付きfinite foundationのbar模型によりこの降下を与えた．
+cotangent外raw QPやruling交換でのCY class比較は別に扱う．
 \end{remark}
 
 \begin{corollary}[幾何fiberのordinary Jacobian代数]
