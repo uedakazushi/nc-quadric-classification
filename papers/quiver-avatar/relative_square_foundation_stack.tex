@@ -917,6 +917,41 @@ cubic有限窓を与える部分であり、像は上記のものとなる。
 同じgerbeと線束の因子を得る。
 \end{proof}
 
+\begin{corollary}[cubic の前後の線形持ち上げ障害]
+label{cor:qa-cubic-lift-obstruction-comparison}
+$h\in\HHstack(S)$ とし、$V_h$ を $h$ の ruling のうち
+normal 窓が cubic となる部分とする。
+自然な射を $j_h:V_h\to\mathcal X_{\rm c}$ と書く。
+$\beta=(\beta_1,\beta_2,\beta_3)$ を有限 square 窓の
+線形持ち上げ gerbe の $K_\square$ 値の類とすると、
+共通の $V_h$ 上で、$r\upsilon$ に対応する線形持ち上げ障害は
+$j_h^*(\upsilon^{-1})^*\beta$、
+$r\upsilon^{-1}$ に対応するそれは $j_h^*\upsilon^*\beta$ である。
+固定した $K_\square$ の座標を保つ二つの線形持ち上げ gerbe の同値を
+妨げる類は
+\[
+ j_h^*\bigl(\upsilon^*\beta-(\upsilon^{-1})^*\beta\bigr)
+ \quad\text{in}\quad H^2_{\rm fppf}(V_h,K_\square)
+\]
+であり、その消滅はそのような同値の必要十分条件である。
+この類の各成分は二捩れである。
+\end{corollary}
+\begin{proof}
+$r\upsilon$ の fiber を $V_h$ と同定するには、
+窓に $\upsilon$ を適用してから $h$ 上の ruling を読む。
+従って与えられた ruling から線形窓を持ち上げる際は
+$j_h$ の後に $\upsilon^{-1}$ を適用する。
+同じ議論で $r\upsilon^{-1}$ では $\upsilon$ を適用する。
+二つの窓の中心拡大の遷移を共通の fppf 細分で記述すると、
+差の gerbe の二次 cocycle は二組の中心値の商で与えられる。
+これが coboundary であることは、帯を保つ降下データで
+二組を同定できることと同値である。
+各成分の二捩れ性は有限窓の中心拡大の行列式指標から従い、
+引戻しと差を取っても保たれる。
+この同値が存在すれば、各全整数線束をそのまま運ぶことで
+対応する全 AS の fiber の同値を得る。
+\end{proof}
+
 \begin{corollary}[標準pointingの幾何2-fiberとruling数]
 \label{cor:qa-standard-pointing-geometric-fibers}
 $h$を幾何点上の$\HHstack$対象とする。
