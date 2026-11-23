@@ -1031,3 +1031,5 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 **固定周期代数上の表示ファイバーの降下。** Stacks Project [Tag 04SK, Lemma 80.11.1](https://stacks.math.columbia.edu/tag/04SK) の本文を確認した。基底schemeのfppf被覆に引き戻した層が代数空間なら、元の層も代数空間となる。Cでは最初に表示同型類のfppf層を定義し、基準QP表示を持つ基底上で標準形のscheme開がその層を覆うことを証明してからこの補題を適用する。可換慣性の帯の貼合せは、同型を選び直した場合の内部共役が恒等であることから本文で確認した。
 
 **特異基底での有界連接導来圏。** Stacks Project [Tag 0FCL, Lemma 13.17.4](https://stacks.math.columbia.edu/tag/0FCL) の一次本文を照合した。必要な仮定はSerre部分圏と、そこに属する対象への任意の全射が同じ部分圏の部分対象からの全射に縮められることである。論文Cでは有向和とNoether性からこの条件を両辺で確認し、有界上の同値を標準切断で有界部分に制限する。
+
+**非有界導来局所化。** Stacks Project [Tag 079P, Theorem 19.12.6](https://stacks.math.columbia.edu/tag/079P) の一次本文で、Grothendieck Abel圏の任意の複体に対するK-injective解消の存在を確認した。Cで使用する圏は頂点加群圏とその局所化Grothendieck圏である。右随伴がK-injectiveを保つことは、左随伴の完全性と複体のHom随伴で直接確認した。
