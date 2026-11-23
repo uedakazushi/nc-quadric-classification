@@ -1174,6 +1174,66 @@ $1-\lambda_d h_d$ はその点の近傍で単元であり、$a=1$ となる。
 この群のtorsorを取る関手が充満部分スタックを与える。
 \end{proof}
 
+\begin{proposition}[固定した矢像による周期付き表示fiberの商]
+\label{prop:qa-fixed-arrow-presentation-fiber}
+周期付き代数 $C$ 上の指定箙 $Q$ の表示fiberの対象
+$(W_0,\eta_0)$ を固定する。$F$ はその矢束の道代数、
+$I=\ker(\eta_0:F\to C)$ とする。
+$\mathscr D$ を、重み四のpotential $W$ に
+$\partial_b W\in I$ を課す線形方程式の閉部分スキームとし、
+$\mathscr D^{\rm gen}$ を巡回微分とその道倍が
+$I_2,I_3$ を生成する開とする。
+表示fiber全体は
+\[
+ [\mathscr D^{\rm gen}/\operatorname{Aut}(F\mathbin{/} C)]
+\]
+と同値である。ここで分母は $\eta_0$ と可換する、
+頂点と重みを保つ道代数自己同型である。
+対角対の局所枠では分母は
+$\prod_d(\mathcal U_{\lambda_d}\times\mathcal U_{\lambda_d})$
+であり、$\lambda_d$ は $W_0$ のmassである。
+方程式、開、商は任意基底変更と可換である。
+\end{proposition}
+\begin{proof}
+任意の表示 $(W,\eta)$ を考える。重み一の矢束は
+$\eta,\eta_0$ により $C_1$ の対応する束と同定できる。
+従って重み一の矢束をまず一意に揃えられる。
+重み二の対角矢の各端点について、二段道束を $D$ とし、
+局所枠で矢を $x$ とする。二つの全射
+$(\eta_0|_D,\eta_0(x))$ と $(\eta_0|_D,\eta(x))$ を比較する。
+
+$D\to C_2$ が剰余体上全射なら、その点の開近傍でも全射である。
+従ってそこで $\eta(x)=\eta_0(x)+\eta_0(s)$ と書ける。
+全射でないとき、剰余体上の余核は一次元であり、
+$\eta_0(x)$ と $\eta(x)$ はともにその基底である。
+$(D\oplus\mathcal O x)\to C_2$ の全射によって
+局所的に $\eta(x)=a\eta_0(x)+\eta_0(s)$ と持ち上げると、
+$a$ は剰余体で非零なので、開を縮めて単元にできる。
+いずれも $x\mapsto ax+s$ は可逆である。
+対角矢の端点は互いに異なるため、全対角矢について
+これらの変更を同時に行える。
+従って局所的には全対象で矢像を $\eta_0$ と揃えられる。
+
+矢像を揃えた対象は定理~\ref{thm:qa-periodic-as-qp-fiber}により
+ちょうど $\mathscr D^{\rm gen}$ の元である。
+二つのそのような対象間の矢像を保つ全右同値は
+$\operatorname{Aut}(F\mathbin{/} C)$ のうち一方のpotentialを
+他方へ移すものに尽きる。従ってこの作用群oidの
+fppfスタック化が表示fiberとなる。
+
+$\eta_0$ を固定する代入は、各対角矢について重み二の核線
+$r_d=q_d+\lambda_d x_d$ または
+$r_d'=p_d+\lambda_d y_d$ の倍を加えることに尽きる。
+核線は系~\ref{cor:qa-raw-periodic-jacobian-kernel}の通り
+$W_0$ の巡回微分で張られる。可逆条件と合成則は同系と同じだが、
+ここでは $W_0$ の保存を課さないため、二つの変更係数は独立である。
+異なる端点の代入も互いに独立であり、枠を外すと核線と
+矢束の間のHom線束を使って同じ群を得る。
+$C_2,C_3$ は局所自由なので、対応する核束への方程式と
+生成開は基底変更を保つ。矢像を運ぶ局所同型も
+全右同値を用いるため同じ底変更と整合する。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。
