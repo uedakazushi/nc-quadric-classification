@@ -404,6 +404,8 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **捩れ付き窓の二mass表示。** 二つの対角に各一本の矢を加えて短積を階数五から四への分裂全射にし、最長成分では四本の短関係延長を分裂させて残る二本を取った。負断面を含む場合にも短積の核テンソルが階数二であることは残余因子への制限で確認した。これにより有限窓は非退化二mass開の条件を満たし、両massの零点スキームは二つの対角余核のFitting壁に一致する。[有限表示](../papers/quiver-avatar/avatar_charts.tex)。
 
+**幾何avatarから指定ASへの適合開。** 奇数対角開はsquare窓の左mutation、偶数対角開は二つのpencilを同時に捩ったsquareからの逆順双対で扱い、互いの比較を内在的な両側対角の双対から貼り合わせた。両mass零境界では全整数展開の偶奇双方の重み二に最小生成が残り、指定cubic/AS10型から外れる。境界上にもordinary Jacobianの全次数比較があり、境界型自体のAS正則性を立証するには別の論証を要する。[定理](../papers/quiver-avatar/avatar_charts.tex)。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式
