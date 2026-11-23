@@ -1013,6 +1013,61 @@ $x_d=y_d=0$ を課すので残った十矢の通常Jacobianと同一になる。
 同じ直積表示を得る。
 \end{proof}
 
+\begin{corollary}[周期付きJacobianを固定する全raw右同値]
+\label{cor:qa-raw-periodic-jacobian-kernel}
+指定AS最小解消を持つ幾何fiberの族について、
+固定した重み付きQP表示から周期付きJacobianへの写像の
+自己同型核は、各対角pairの
+\[
+ \mathcal U_{\lambda_d}
+   =\operatorname{Spec}R[t,(1+\lambda_dt)^{-1}]
+\]
+の積である。ここで群法則は $t\star t'=t+t'+\lambda_d tt'$ であり、
+局所枠を外すと各因子は対応する線束値の群となる。
+八矢の場合は空積、十矢の場合は一因子、十二矢の場合は二因子である。
+これは冪零massを含め、任意基底変更に自然である。
+\end{corollary}
+\begin{proof}
+重み一では関係がないので、Jacobianを固定する右同値の
+重み一の線形部分は恒等である。
+重み二では各端点の関係idealは、対応する
+$r_d=q_d+\lambda_d x_d$ または
+$r_d'=p_d+\lambda_d y_d$ が張る直線である。
+これらは、幾何点でmassが単元か非退化な短テンソルがあるので、
+局所直和因子である。従ってJacobianを固定する変換は
+\[
+ x_d\longmapsto x_d+t_d r_d,\qquad
+ y_d\longmapsto y_d+s_d r_d'
+\]
+と一意に書ける。
+この代入が可逆である条件は $1+\lambda_d t_d$ と
+$1+\lambda_d s_d$ が単元であることである。
+
+$c_d=t_d+s_d+\lambda_d t_ds_d$ と置く。
+命題~\ref{prop:qa-raw-qp-isom-equations}に代入すると、
+純四次係数の変化は
+$\sum_d c_d[p_dq_d]_{\mathrm{cyc}}$ である。
+massが単元の因子では、二次係数の方程式から直ちに $c_d=0$ となる。
+残りの因子について、幾何点でmassが零なら
+両側の短テンソルは非退化である。
+一因子の場合は $[p_dq_d]_{\mathrm{cyc}}$ が非零である。
+二因子がともに残る場合は、その二つの四次テンソルは
+巡回順序に沿う異なる二対二分割で単積である。
+一方の分割で前者は階数一、後者は二つの階数二のテンソルの
+Kronecker積として階数四なので、二つは独立である。
+局所環で、幾何fiberにおけるこの独立性から
+可逆なminorを選べる。
+従って純四次係数の方程式は構造層上で各 $c_d=0$ を強制し、
+冪零係数の間の相殺も許さない。
+逆に全ての $c_d=0$ なら他の係数条件も満たす。
+
+従って $s_d=-t_d/(1+\lambda_dt_d)$ と一意に決まる。
+$x_d$ 側の代入を合成して群法則を得る。
+枠変更時に $t_d$ は対角矢と関係線の比の線束に値を取り、
+$\lambda_d$ は逆の重みで変わる。
+このため式は線束値の群として降下し、基底変更を保つ。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。

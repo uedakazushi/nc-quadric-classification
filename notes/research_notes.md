@@ -2608,3 +2608,5 @@ latexmk
 **一対消去の全右同値と周期付きfiber。** `cor:qa-raw-q12-to-q10-product` で十二矢の一mass単元開を、一対正規化後の十矢群oidと `B Gm` の直積として監査した。全raw Isom方程式により消去対の二段道加算が零、二スカラーの積が一となり、残る十矢の式と独立に合成できる。残るmassは零・冪零・単元のいずれでもよい。消去対は周期付きJacobianに恒等なので、標的との指定同型を含む2-fiberにも同じ直積を得る。
 
 **一対消去のfiber比較を含む397頁保存版 666c3ea。** 二つの `git archive 666c3ea` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795435281 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全397頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `6518138d6991399b35a7d69627acea225e9be1bd9e8a71a6788c70e80cbf6c32`、SyncTeX `9cbdabd60151d39a982e7c2c8421f0f8d32e023859e84f77f327b05bb30dd505`、抽出テキスト `bc31183cb0cd0620f1c08837c9a5d1df9bb0fbe881c7948d207c27d33d15c161`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**周期付きJacobianへの全raw慣性の再監査。** `cor:qa-raw-periodic-jacobian-kernel` ではJacobianに恒等を誘導する矢の像を重み一・二の関係だけから決めた。各対の二つの変更係数を t,s とすると、四次係数の増分は各対で `(t+s+λts)[pq]` になる。両mass零の各幾何fiberで二つの四次テンソルを一方の二対二分割で比較すると階数一と階数四になり、独立な列を任意の非被約底へ持ち上げられる。従って核は各mass群の積で、固定した周期付き代数のfiberに別のraw慣性が加わらないことを確認した。
