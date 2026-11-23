@@ -146,8 +146,16 @@ $(S^{-1}-I)^3=0$ なので
 
 $T_{\rm mut}$ は $E_0=\mathcal O$ を直和因子に含み，
 $T_{\rm rot}$ は $tE_0$ を含む．$(tE_0,t)$ も AZ ample である．
-各窓の対象から $t^mE_0$，または $t^m(tE_0)$ への十分前向きの
-高次 Ext は，先ほどと同じ perfect-fiber 判定により零となる．
+ここで 「十分前向き」 の下限を各幾何点で選ぶ必要はない．
+各窓の全整数 helix を $Y_j$ と書き，選んだ窓を $Y_0,ldots,Y_3$
+とする．その構造対象の直和因子を $Y_a$ とすると，
+$t^mY_a$ は線束因子を除いて $Y_{a+4m}$ である．
+$m\geq1$ なら全 $0\leq i,a\leq3$ で $a+4m>i$ であり，
+幾何 fiber の forward Ext 消滅を一律に適用できる．
+各 $m$ の相対 $\mathbf R\operatorname{Hom}(Y_i,t^mY_a)$ は
+有限 Morita 表示で基底上 perfect で，導来基底変更を保つ．
+従って各幾何点で零次に集中することから，
+任意の基底変更後も全 $m\geq1$ で高次 Ext が消える．
 命題~\ref{prop:qa-relative-flat-foundation-az} を，第二の場合には
 基準対象を $tE_0$ に換えて適用すると，$(T_\bullet,t)$ は AZ ample である．
 この命題の有限個の affine fppf chart からなる被覆と Hom の flat base change による降下は，
