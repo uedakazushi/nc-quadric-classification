@@ -1291,6 +1291,45 @@ $L_0=\mathcal O(1)$、その他の$L_i=\mathcal O_S$と置く。
 QPから全整数ASへの射は、この周期標識の忘却を経由する。
 \end{example}
 
+\begin{corollary}[周期標識付きASの有限データ]
+\label{cor:qa-periodic-as-finite-decoration}
+周期標識付きAS族は次の有限データと全同型で分類される。
+\begin{enumerate}
+\item 系~\ref{cor:qa-relative-as-line-decorated-foundation}の
+幾何fiber条件を満たす四頂点foundation $B$。
+\item 四本の線束$L_0,L_1,L_2,L_3$。
+\item 頂点を固定する同型
+\[
+ \theta:B\xrightarrow{\sim}B^{(L)},\qquad
+ B^{(L)}_{ji}= B_{ji}\otimes L_i\otimes L_j^\vee
+ \quad(0\le i\le j\le3).
+\]
+$B^{(L)}$の積は中間線束の収縮で与える。
+\end{enumerate}
+射は$B$と四線束の全同型のうち、誘導される$B^{(L)}$の
+同型と合わせて$\theta$の四角形を可換にするものとする。
+\end{corollary}
+\begin{proof}
+相対Serre復元により、第二窓の第$j$対象は
+$\mathbb S^{-1}(E_j)[2]\otimes L_j^\vee$である。
+同値$\mathbb S^{-1}[2]$がHomの合成を保つことから
+第二窓の代数を自然に$B^{(L)}$と同定する。
+系~\ref{cor:qa-relative-as-line-decorated-foundation}を
+周期移動前後の族に適用すると、
+周期標識は$\theta$と全$i$での同型
+$\ell_i:L_i\to L_{i+4}$と同じである。
+従って$i\bmod4$の代表から$\ell_i$を有限回ずつ合成し、
+負方向には逆を用いて、全$L_i$を各代表の線束に同定できる。
+この同定の後は$\ell_i$をすべて恒等にでき、$\theta$は
+最初の四線束の同定が恒等なので変わらない。
+逆に四本の線束を反復し、$\ell_i=\mathrm{id}$と
+与えられた$\theta$を指定すれば周期標識を得る。
+周期を保つ射の線束成分は$\ell_i$との可換性により
+四本から一意に定まり、有限窓ではまさに
+上記の$\theta$との可換性を課す。
+これらの構成は基底変更に自然である。
+\end{proof}
+
 \begin{theorem}[相対AS族での固定mutation]
 \label{thm:qa-as10-relative-families}
 $S$を局所Noetherianな$k$-schemeとする。

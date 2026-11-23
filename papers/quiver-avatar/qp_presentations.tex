@@ -446,7 +446,88 @@ right-equivalenceはJacobian ideal、頂点および重みを保存する。
 \end{proof}
 
 この判定は全頂点差を走る。有限個の条件によるAS適合軌跡の表示と、
-比較射の像および全fiberの分類には別の議論が必要である。
+比較射の像を大域的に表示するには別の議論が必要である。\n以下では比較先を固定したQP表示fiberを有限方程式で記述する。
+
+\begin{theorem}[周期付きAS族上のQP表示fiberの有限方程式]
+\label{thm:qa-periodic-as-qp-fiber}
+$C$を命題~\ref{prop:qa-as-period-marking-fiber}の
+四周期標識付きcubic/AS10族を折り畳んだ重み付き代数とする。
+$Q$を指定重み付き八・十・十二本矢箙の一つ、$F$をその道代数、
+$\mathcal P$を重み四のpotentialの空間とする。
+分裂した枠で、各矢$b$の像$\eta_b$をその端点・重みに対応する
+$C$の束の元として選ぶ。
+この選択と$W\in\mathcal P$について以下を課す。
+\begin{enumerate}
+\item 重み一と二で$F\to C$が全射となる。
+\item 各$b$について$\eta(\partial_bW)=0$である。
+\item 重み二と三で、巡回微分とその道倍の像が
+$K_d=\ker(F_d\to C_d)$を生成する。
+\end{enumerate}
+これらは有限個の方程式と階数開条件であり、実際に
+$\operatorname{Jac}(Q,W)\xrightarrow{\sim} C$となるための
+必要十分条件である。
+このパラメータの$G_Q$による商は、周期付きASへの
+QP射の$C$上の2-fiberを与える。
+従ってこのfiberの全自己同型は、potentialを保ち
+$\eta$の各矢像を固定する重み付きright-equivalenceである。
+\end{theorem}
+\begin{proof}
+幾何fiberの最小AS分解表は、生成元の重みが高々二、
+最小関係の重みが高々三であることを与える。
+従って第一条件から各幾何fiberにおける$\eta:F\to C$の全射性が従い、
+各成分のNakayamaの補題により基底上でも全射である。
+$C_d$が局所自由なため、この写像の各次数の核$K_d$は
+有限局所自由で任意基底変更に可換である。
+
+各幾何fiberで$K=\ker\eta$が重み高々三の成分から生成されることを示す。
+重み一について、$\eta$は各二次元矢空間を対応する
+最小生成空間と同定する。重み二については、
+重み一の二段道の像で割った商が最小生成空間である。
+選んだ重み二の矢を線形変換し、最小生成の基底へ写るものと
+合成で表せる余剰なものに分ける。
+後者の像を二段道で持ち上げ、その差を重み二の関係として課せば
+余剰矢は消去される。残る道代数は最小生成元の道代数であり、
+最小右単純分解の第二項が重み高々三の関係で生成されることをいう。
+具体的には、関係idealの正次数道による左右倍を除いた商が
+単純間の第二Torであり、有向次数に関する帰納法で
+その商の持上げがidealを生成する。
+この議論は折り畳んだ代数の成分にも適用できる。
+標識された周期により最初の四位相の関係を移せるからである。
+従って$K$は各幾何fiberで重み高々三から生成され、
+各次数で$K_d$への有限個の道倍の全射をNakayamaで検査すれば、
+基底上でも同じ生成命題を得る。重み一の核は零なので
+実際には$K_2,K_3$で十分である。
+
+第二条件でJacobian idealは$K$に入る。
+第三条件で$K_2,K_3$がそのidealに含まれ、従って両idealは一致する。
+必要性は逆向きに次数二・三を取れば直ちに従う。
+第一条件は有限個の最大minor、第二条件は係数等式、
+第三条件は局所自由束$K_2,K_3$への全射開条件なので、
+非被約底での証明と有限表示を同時に与える。
+
+$C$への同型を指定したQP表示からその矢像$\eta$が得られ、
+逆に上の条件は指定同型を与える。
+枠付き表示の変更は$\phi\in G_Q$による道への代入と、
+その代入で$\eta$を運ぶ条件で尽くされる。
+矢束はfppf局所に枠を持ち、全条件は降下するので
+指標付きパラメータの商が2-fiberとなる。
+\end{proof}
+
+\begin{corollary}[周期を忘れたAS族へのQP表示]
+\label{cor:qa-unmarked-as-qp-fiber}
+全整数のAS族$A$上のQP表示fiberは、まず
+$\operatorname{Isom}(A,\sigma A)$の元$\rho$を選び、
+次にその折り畳みへの定理~\ref{thm:qa-periodic-as-qp-fiber}の
+有限方程式で表される表示を選ぶ群oidである。
+この構成は$H_2$所属を仮定しない。
+\end{corollary}
+\begin{proof}
+QPから重み付きJacobian代数への射、
+その全整数展開、
+周期標識の忘却を合成する。
+2-fiberのpullbackの結合律と
+命題~\ref{prop:qa-as-period-marking-fiber}から従う。
+\end{proof}
 
 \begin{proposition}[可縮 pair の残余慣性]
 \label{prop:qa-stabilized-inertia}

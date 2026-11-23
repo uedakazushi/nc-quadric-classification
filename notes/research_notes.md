@@ -345,6 +345,12 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 ただし両出力conicは $V=0,c'=\pm U$ および $V=d'=0$ のsectionを持ち、Brauer類が零になる。自然な $\mathscr D^{\rm ord}$ の第一conicは元の基底 $Z$、第二conicも同じBrauer類であり、上の $(s,t)$ の入力では一致しない。一般安定化群上では $\ell^2=1$、個別符号が $\ell=-1$ を実現するため、この弱い射の慣性像は2・核8。自然な射の像8・核2とも異なる。粗座標の一致から相対射の同一性や自然な境界延長を結論してはならない。この障害を、次のtorsion-free標的の認識で使う。
 
+## 点表示の平坦化とQP比較fiber
+
+**原稿上証明済み。** 二積可逆square chartの頂点スカラー剛体化は、同一Brauer–Severi三次元空間内の二つの標識付きSegre曲面のstackと同値である。点表示は二曲面のscheme交わりであり、平坦化層は二次切断の全係数が零となる閉層と、係数が単位idealを生成する開層。古典squareの剪断変形を双対数に引き戻すと、AS代数は平坦でも点表示は平坦でない。[幾何表示と証明](../papers/quiver-avatar/relative_square_foundation_stack.tex)。
+
+**原稿上証明済み。** 周期標識は有限窓・四本の線束・線束で捩った次窓への代数同型で記述できる。固定された周期付きAS代数へのQP表示fiberは、矢の像を変数とし、重み一・二の生成条件、巡回微分の消滅、重み二・三での関係生成条件を課した有限パラメータの商となる。全ASへのfiberはさらに周期標識の選択を含む。この結果からraw側のAS適合軌跡の有限開性や比較射の大域像はまだ従わない。[QP表示fiber](../papers/quiver-avatar/qp_presentations.tex)。
+
 ## 相対ASの全整数復元とraw QP同型
 
 **実行済み検証。** C v4.64は日本語LuaLaTeXで319ページのPDFとSyncTeXを生成し、新定理とQP判定のページを表示して確認した。A/B/Cのsource checkerと論文間参照検査はPASS。CのPDFリンク先重複はhyperrefに通しIDを使わせて解消した。既存の版面幅警告、独立数学監査および包括的文献照合は残る。二massの計算コードには未閉括弧が一箇所あり、修正後に当該コードの全検算を再実行した。
