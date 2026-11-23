@@ -1408,6 +1408,49 @@ Jacobianのmixed complexへこの比較を移す。
 有限foundationのCasimir類との同定はこの計算の入力ではない。
 \end{proof}
 
+\begin{corollary}[rawループ鎖の右同値と可縮対消去]
+\label{cor:qa-raw-loop-class-naturality}
+重み付き右同値の誘導する非完備Ginzburg同型は、
+命題~\ref{prop:qa-raw-scalar-loop-class}の負巡回ループ類の
+二項mixed模型における指定cycleを保つ。
+この比較は合成および任意基底変更と厳密に可換である。
+可逆massの対の消去でも、正規化後のGinzburg模型から
+消去後の模型への射は準同型であり、同じcycleを保つ。
+\end{corollary}
+\begin{proof}
+右同値の誘導同型では、同じ頂点の次数 $-2$ のループを
+そのまま対応させる。これは
+命題~\ref{prop:qa-ginzburg-right-equivalence-double-derivations}
+の二重導分の移送において、頂点の普遍二重導分が
+保たれることによる。従って $\sum_i\mathrm d t_i$ は、
+一形式の普遍性により同じcycleへ移る。
+Hochschildから二項mixed模型への射も代数写像に自然なので、
+これは負巡回複体の準同型による指定cycleの比較である。
+ループ上の式は合成と基底変更にそのまま保たれる。
+
+一対の可逆massを平方完成して、
+potentialを $W_0+yx$ とする。
+$x,y$ とその逆矢だけを零に送り、他の矢とループを固定すると、
+$\Gamma(W_0+yx)\to\Gamma(W_0)$ というdg射を得る。
+消す四つの矢の複体は
+$d(x^*)=y$、$d(y^*)=x$ により縮約可能である。
+この射の核をループ出現数で濾過する。
+ループの微分はその出現数を一つ減らすから、
+随伴次数ではループの微分が零になる。
+残存矢の微分は消去した矢を含まず、
+消去する矢の微分は同じ消去矢の複体内で閉じる。
+従って随伴次数の核は、消去する矢の複体を
+少なくとも一つ含む道の和である。
+より具体的には、消去する矢で道を切り、
+残存部分と消去矢の複体の交互のtensorに分けられる。
+最初の消去矢にその縮約を施せば、tensorの符号規則により
+各項が縮約される。縮約は端点と重みを保つ。
+各重みでループ出現数は有限範囲だから、
+元の核も非輪状であり、射は準同型となる。
+この射は $\sum_i\mathrm d t_i$ を同じ式に送る。
+複数対の消去は順に行え、準同型とcycleの比較は合成を保つ。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。
