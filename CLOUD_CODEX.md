@@ -1,6 +1,6 @@
 # Cloud Codexで全相対AS/avatar/QP stack分類を進める
 
-2026-11-23 / v0.22。研究の正本は [研究方針](00_research_plan.md)、repoの指示は [AGENTS.md](AGENTS.md)、現行論文Cは [papers/nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) v4.63。論文A v1.69、B v0.41は論理的入力。Codexは**従来C1–C4のみで終了せず**、下の全相対stack分類のS1–S6を目標に研究を続ける。
+2026-11-23 / v0.23。研究の正本は [研究方針](00_research_plan.md)、repoの指示は [AGENTS.md](AGENTS.md)、現行論文Cは [papers/nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) v4.63。論文A v1.69、B v0.41は論理的入力。Codexは**従来C1–C4のみで終了せず**、下の全相対stack分類のS1–S6を目標に研究を続ける。
 
 ## 最上位目標と完了条件
 
@@ -37,7 +37,7 @@ repoルートで実行する。スクリプト自体は実行場所に依存せ�
 ```sh
 bash scripts/bootstrap.sh
 python3 scripts/check.py doctor
-python3 scripts/check.py sources
+python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex
 ```
 
 bootstrapは既存のPython 3.9以上とSymPyを利用し、不足する場合にrepo内の`.venv`と`requirements.txt`を使う。システムのPythonパッケージを置き換えない。依存が既に使えれば導入のための通信をしない。別のPythonを探索候補の先頭にする場合は`QUADRIC_PYTHON`に実行ファイルの絶対パスを渡す。bootstrapが表示するPython実行ファイルを使ってcheckerを起動できる。`.venv`がある場合、checkerの計算部分はそのPythonを使う。
@@ -46,7 +46,8 @@ LuaLaTeX組版とPDF表示用の依存も導入する場合は、次を用いる
 
 ```sh
 bash scripts/bootstrap.sh --with-tex
-python3 scripts/check.py all
+python3 scripts/check.py papers
+python3 scripts/check.py all --manuscript papers/nc-quadric-avatar.tex
 ```
 
 `--with-tex`はDebian/Ubuntuで、既にrootまたは非対話sudo権限がある場合に限り、latexmk・LuaTeX-ja・必要なTeXパッケージ・Popplerの導入を試す。他OSではその環境のTeX Live/MacTeX等を用いる。導入できない場合は`PARTIAL`と表示して終了し、可能な証明・資料比較・原稿編集を続ける。bootstrapの終了コード0は準備処理の終了を表し、全依存の充足や検証成功を意味しない。欠落を隠すために権限や承認設定を変更しない。
@@ -62,10 +63,11 @@ checker自体はPython標準ライブラリだけで動く。必要な段階を�
 | コマンド | 確認すること |
 | --- | --- |
 | `python3 scripts/check.py doctor` | Python/SymPy、TeX、PDF確認コマンド、現在のGit commit・branchの診断。通信・書込認証は確認しない |
-| `python3 scripts/check.py sources` | 必須ファイル、TeXのinput/root・ラベル・引用、設定JSON、ローカルMarkdown参照、Git追跡対象と空白の点検 |
+| `python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex` | 必須ファイル、TeXのinput/root・ラベル・引用、設定JSON、ローカルMarkdown参照、Git追跡対象と空白の点検 |
+| `python3 scripts/check.py papers` | A/B/Cの3原稿のソース・引用・原稿間ラベル・指定型の接続を一度に点検（数学的証明そのものではない） |
 | `python3 scripts/check.py math` | 既存の`computations/verify_quadric.py`による有理数・記号演算 |
-| `python3 scripts/check.py build` | repoの`.latexmkrc`を指定したLuaLaTeX組版、最終ログ、PDFとSyncTeX |
-| `python3 scripts/check.py all` | sources・math・buildを個別に実行し、いずれかの依存不足だけで他の確認を省略しない |
+| `python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex` | repoの`.latexmkrc`を指定したLuaLaTeX組版、最終ログ、PDFとSyncTeX |
+| `python3 scripts/check.py all --manuscript papers/nc-quadric-avatar.tex` | sources・math・buildを個別に実行し、いずれかの依存不足だけで他の確認を省略しない |
 
 検証コマンドの終了コードは**PASS=0、FAIL=1、SKIP=2**。一つでもFAILなら全体は1、FAILがなく未実施があれば2となる。doctorの0は診断処理の終了のみを意味する。数学的主張の証明、文献の適用仮定、新規性、全分類の達成、PDFの目視、GitHubへの反映をこのコードだけで判定しない。
 
