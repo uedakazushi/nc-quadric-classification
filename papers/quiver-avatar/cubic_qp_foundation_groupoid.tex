@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.53。二項準自由dg解消と非完備Ginzburg局所Morita比較。
+% 2026-11-23 / v4.54。二項関係idealのstrict dg自然性とmass/shear核の降下。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1632,6 +1632,129 @@ minimal relationsを使うTheorem~6.10を
 保たれ，局所枠ごとにKellerの同じ命題を適用できる．
 ただしそれだけで未剛体化raw QPの全Isomを保つ
 大域Morita同値のcoherent貼合せを得たとしない．
+\end{proof}
+
+\begin{proposition}[関係イデアルによる二項dg模型のstrict自然性とmass核の降下]
+\label{prop:qa-q12-dg-ideal-presentation-strict-naturality}
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+非退化二mass有限foundation開上，局所的な有限有向道代数
+\[
+ F=T_{D_0}(V_{\rm fin}),\qquad
+ I=(R_{\rm fin})\subset F,\qquad\Lambda=F/I
+\]
+を取る．$F$と$I$は基底上有限局所自由で，
+$0\to I\to F\to\Lambda\to0$は局所分裂する．
+さらに$I^2=0$であり，前命題の二項準自由dg模型には
+canonicalなdg代数同型
+\[
+ \boxed{\qquad
+ \mathscr F \simeq F\oplus I[1],
+ \quad (F\oplus I[1])^0=F,\quad
+ (F\oplus I[1])^{-1}=I,\quad
+ d|_I:I\hookrightarrow F
+ \qquad}
+ \tag{ID}\label{eq:qa-q12-intrinsic-ideal-dg-model}
+\]
+がある．右辺の積は$F$の積と$I$の$F$-双加群作用，
+および$I[1]\cdot I[1]=0$で定義する．
+
+任意の有限関係表示の同型
+$\varphi:(F,I)\xrightarrow{\sim}(F',I')$
+（$D_0$と始終点を保ち，非線形なpath置換も許す）
+は式~\eqref{eq:qa-q12-intrinsic-ideal-dg-model}の
+strictなdg同型
+\[
+ \varphi^\sharp(f,\iota[1])
+   =(\varphi(f),\varphi(\iota)[1])
+ \tag{IF}\label{eq:qa-q12-ideal-dg-functoriality}
+\]
+を一意に誘導する．合成と単位は厳密に保たれ，
+全構成は任意の非平坦基底変更にも可換する．
+自然な準同型$p:\mathscr F\to\Lambda$について
+\[
+ p'\varphi^\sharp=\bar\varphi\,p
+ \tag{IQ}\label{eq:qa-q12-ideal-dg-quotient-naturality}
+\]
+がstrictに成立する．
+
+特にQPから有限foundationへのkernelのmassゲージは
+$\bar\varphi=\mathrm{id}_\Lambda$なので，
+$\mathscr F\xrightarrow{\simeq}\Lambda$で
+Morita局所化したdg対象上ではcanonicalに単位として作用する．
+残余長関係liftのshearは$F$と$I$を変えないので，
+式~\eqref{eq:qa-q12-intrinsic-ideal-dg-model}上で
+文字通り恒等となる．従ってframe変更・mass・shearの
+全合成に関する単位とcocycleも，
+finite quotientを経由するMorita像について閉じる．
+
+この結論は二項dg模型と有限foundationの
+\emph{Morita像の全Isom自然性}である．
+Kellerの局所比較で得た特定の
+$\Gamma_3(Q_{12},\mathcal W)$への同値が，
+未剛体化QPの各right-equivalenceの
+\emph{実際のGinzburg dg作用}と一致するという
+自然変換は未構成である．異なるrulingの
+単一right-equivalenceも含まない．
+\end{proposition}
+\begin{proof}
+$I$の非零頂点成分は$(0,2),(1,3),(0,3)$だけである．
+いずれも始点は$0$または$1$，終点は$2$または$3$なので，
+二つの$I$の元は道として合成できず，$I^2=0$となる．
+式~\eqref{eq:qa-two-mass-six-relations}と
+二つのprimitive短関係は$I$が基底上rank八の
+局所直和因子であることを示す．
+
+前命題~\ref{prop:qa-q12-semifree-ginzburg-morita}では
+$\mathscr F^0=F$，$\mathscr F^{-1}$は
+短関係自身二本，三段の短関係合成四本，
+残余長関係二本からなるrank八の局所自由束であった．
+二本の関係矢は合成できないので，
+$\mathscr F^{-2}=0$である．
+またその微分$d:\mathscr F^{-1}\to F$は
+$I$への局所分裂な全射であり，同階数なので同型である．
+$d$は$F$-双加群写像であるから，
+$\mathscr F^{-1}\simeq I$は$F$-双加群同型である．
+この同定と微分が式~\eqref{eq:qa-q12-intrinsic-ideal-dg-model}
+のdg代数同型を与える．とくに関係束のframeや
+残余長関係のliftの選び方に依存しない．
+
+$\varphi(I)=I'$なら，式~\eqref{eq:qa-q12-ideal-dg-functoriality}
+は$F$の積，$F$の$I$への左右作用，包含微分を全て保つ．
+全てが$\varphi$の制限なので持上げは一意であり，
+二つの$\varphi$を合成した持上げも厳密に同じである．
+局所分裂完全列とテンソル積の形成により，
+任意の（非平坦な）基底変更にも整合する．
+商への射はdegree零で$F\to F/I$，
+負次数で零として定めるので，
+式~\eqref{eq:qa-q12-ideal-dg-quotient-naturality}は
+各次数で直接成立する．
+
+massゲージでは
+$x\mapsto x+t(q+\lambda x)=x+t r_b$，
+$u\mapsto u+s(q'+\mu u)=u+s r_a$で，
+他の有限隣接矢は固定される．
+従って有限$\Lambda$上の誘導射は恒等であり，
+$p\varphi^\sharp=p$となる．
+$p$はdg準同型なので，Morita局所化では
+このstrictな等式に沿って$\varphi^\sharp$が
+単位とcoherentに同定される．
+局所lift shearは補題~
+\ref{lem:qa-q12-long-relation-lift-shear}により
+戻り矢の選び方だけを変更し，
+有限自由道$F$と関係ideal$I$そのものを保持する．
+従って両者から得るintrinsic dg模型は同一である．
+frame変更も式~\eqref{eq:qa-q12-ideal-dg-functoriality}
+に吸収され，合成に関する等式はstrictである．
+
+最後にKellerのMorita不変性
+\cite[Proposition~4.2, Theorem~4.6]{KellerDeformedCY2011}
+により，上の自然な$\mathscr F\simeq_{\rm dg}\Lambda$
+は$\Pi_3$のMorita像にも移る．
+一方，Proposition~6.8での
+$\Gamma_3$との同定は現時点では局所枠に基づく
+Morita同値として構成しており，
+全raw right-equivalenceに関するその自然性を
+本命題の結論に追加していない．
 \end{proof}
 
 \begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
