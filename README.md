@@ -8,7 +8,7 @@
 
 **負一次Serre dgの基底変更（C v4.50）。** 任意非正複体の$H^{-1}$基底変更の核・余核を$\operatorname{Tor}_{2,1}(H^0,-)$で制御する四項完全列を証明。全$H_2$実現可能開では$H^0\Pi_3$の全次数局所自由性により両Torが消え、$H^{-1}\Pi_3$が任意の非平坦基底変更と交換し、負truncationも導来基底変更と交換する。全finite foundation Isom／mass/shearにも自然。$H^{-1}$の平坦性、$H^{-2}$以下の通常基底変更、一般raw QPへの外挿はしない。[直接証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。C4包括監査・現行版PDF組版は未完。
 
-**非平坦基底変更の精密化（C v4.49から継続）。** 非正dg Serre完成の基底K-flat模型とtruncation三角から、$H^0\Pi_3(\Lambda)$は全係数基底変更で交換する。一方、相対heartの通常引戻しは$H^0\mathbf Lb^*$であり、導来引戻しそのものは一般に$t$-exactではない（双対数上の周期Torが反例）。$t$-exactなMorita比較・導来基底変更の自然性・$H^0$を組み合わせ、全Isomのheart比較の通常引戻しに関する2-cocycleを補った。[dg零次](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)・[heart引戻し](papers/quiver-avatar/relative_rotated_mutated_tails.tex)。C4の全証明監査・組版は未完。
+**非平坦基底変更の精密化。** 非正dg Serre完成の基底K-flat模型とtruncation三角から、$H^0\Pi_3(\Lambda)$は全係数基底変更で交換する。一方、相対heartの通常引戻しは$H^0\mathbf Lb^*$であり、導来引戻しそのものは一般に$t$-exactではない（双対数上の周期Torが反例）。$t$-exactなMorita比較・導来基底変更の自然性・$H^0$を組み合わせ、全Isomのheart比較の通常引戻しに関する2-cocycleを補った。[dg零次](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)・[heart引戻し](papers/quiver-avatar/relative_rotated_mutated_tails.tex)。C4の全証明監査・組版は未完。
 
 **有限square全Isomの同じ相対heartへの降下。** 全頂点固定の有限square IsomはSerre・評価coneと可逆層$L$をcoherentに輸送する。さらに零番の反SerreAZ生成族を両方向に保つため、perfect Morita同値のInd延長は$t$-exactとなり、相対noetherian heartに2自然に降下する。頂点線束$M_0$を自明化した局所でのみ厳密なpointed同値と呼ぶ。mass/shearはfinite quotient上恒等、ruling交換は二段剛体化後のcoherent $S_2$同値であり、raw QPのright-equivalenceと混同しない。[証明](papers/quiver-avatar/relative_rotated_mutated_tails.tex) の `cor:qa-all-square-isom-pointed-heart-descent`。C4の独立監査・組版は残る。
 
