@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.71（A v1.69・20節、B v0.41・31節、C v4.63）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.72（A v1.69・20節、B v0.41・31節、C v4.63）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 全相対AS/avatar/QP stack分類の数学的核心
 
@@ -54,7 +54,7 @@
 
 **普遍Tor障害の適用範囲。** 非正複体一般にはtruncation三角から$\operatorname{Tor}_2(H^0C,R')\to H^{-1}C\otimes_R R'\to H^{-1}(C\otimes_R^{\mathbf L}R')\to\operatorname{Tor}_1(H^0C,R')\to0$が従い、双対数$R=k[\varepsilon]/(\varepsilon^2)$、$C=k[0]$で負一次の基底変更は失敗する。これは一般の導来tensorの障害であり、$H_2$開の$\Pi_3$では全次数消滅により障害が現れない。
 
-**C4全43 TeXの現行ソース静的監査（2026-11-23）。** GitHub最新mainの`papers/nc-quadric-avatar.tex`とそこから直接inputされる42分割節を全て取得し、同一パーサでラベル868・相互参照947・引用キー使用数241を数えた。未変更40ファイルの合計はラベル711・参照661・引用202、変更済みの主原稿/C3/相対rotated heart 3ファイルはラベル157・参照286・引用39。旧43ファイルの参照全解決とGit blob同一性の検証を引き継ぎ、新50ラベルと旧40ファイルの衝突なし・新参照32種類のうち変更3ファイルの定義30、残2は`relative_avatar_heart_comparison.tex`で直接定義確認。現行91 bibキーに未定義引用なし、各ファイルのTeX begin/end不均衡なし、42のinputパスに重複なし。以前の235引用と今回の241件の差の原因は未確定（抽出規則の違いが考えられる）。今回は最新ソースを**同一規則で抽出した241件**を現行値とする。**未実行：** `python3 scripts/check.py papers`、`latexmk`/LuaLaTeX全稿、PDF/SyncTeX表示、全数学的独立監査・形式証明。接続経路のGitHubソースを静的に読んだのであり、ローカルcheckoutはDNS制約で不可。
+**C4全43 TeXの現行ソース静的監査（2026-11-23）。** GitHub最新mainの`papers/nc-quadric-surface-avatar.tex`とそこから直接inputされる42分割節を全て取得し、同一パーサでラベル868・相互参照947・引用キー使用数241を数えた。未変更40ファイルの合計はラベル711・参照661・引用202、変更済みの主原稿/C3/相対rotated heart 3ファイルはラベル157・参照286・引用39。旧43ファイルの参照全解決とGit blob同一性の検証を引き継ぎ、新50ラベルと旧40ファイルの衝突なし・新参照32種類のうち変更3ファイルの定義30、残2は`relative_avatar_heart_comparison.tex`で直接定義確認。現行91 bibキーに未定義引用なし、各ファイルのTeX begin/end不均衡なし、42のinputパスに重複なし。以前の235引用と今回の241件の差の原因は未確定（抽出規則の違いが考えられる）。今回は最新ソースを**同一規則で抽出した241件**を現行値とする。**未実行：** `python3 scripts/check.py papers`、`latexmk`/LuaLaTeX全稿、PDF/SyncTeX表示、全数学的独立監査・形式証明。接続経路のGitHubソースを静的に読んだのであり、ローカルcheckoutはDNS制約で不可。
 
 **内在的H2上のSerreとpointed heart。** 既存の有限square↔normal foundation相対同値と全H2の明示開を使い、normal full strong `T=⊕E_i` を実際の相対heart内に取る。 `Θ_Λ^{⊗^L n}≃RHom(T,tⁿT)` のforward Ext消滅とperfect-fiber判定により、全 `n≥0` で `Jac(Q12,W)_n≅Hom(T,tⁿT)` と基底変更を得る。Euler行列 `G=[[1,2,4,6],[0,1,2,4],[0,0,1,2],[0,0,0,1]]` の `(G^{-1}Gᵗ)^{-n}` から全階数 `64n²+64n+24`。相対AZ ample・opposite square dualizationから左右Noetherと `(qgr Jac,πe0Jac,(1))≃(C,O,t)` を得る。対応は**H2実現可能開**であり、一般のraw QPには拡張しない。
 
@@ -1912,7 +1912,7 @@ Okawa--Ueda の GIT 次数四射と Serre 根の忘却が同一かどうかは�
 
 ## 八・十・十二本矢、avatar、内在的忘却
 
-証明の正本は別稿 `papers/nc-quadric-avatar.tex`。有限foundationの生成矢、relation completion、potentialの非最小表示を区別する。有限foundationではHom次元を $(2,2,2,4,4,6)$ に固定し、積 $a,b,c,d$ の唯一の結合律 $c(1\otimes a)=d(b\otimes1)$ を課す。二つの核に分解可能テンソルを許さず、$(c,d)$ の**合併した写像**の全射性を要求する。個々の $c,d$ の全射を要求する必要はない。$\delta_a,\delta_b\in\{0,1\}$ により生成矢 $6+\delta_a+\delta_b$、関係 $2+\delta_a+\delta_b$、完成矢 $8+2(\delta_a+\delta_b)$ を得る。$b$ 可逆と $a$ 可逆が二つの10本矢open、交わりが8本矢open。最小10本・12本の層をこれらのopenと同一視しない。
+証明の正本は別稿 `papers/nc-quadric-surface-avatar.tex`。有限foundationの生成矢、relation completion、potentialの非最小表示を区別する。有限foundationではHom次元を $(2,2,2,4,4,6)$ に固定し、積 $a,b,c,d$ の唯一の結合律 $c(1\otimes a)=d(b\otimes1)$ を課す。二つの核に分解可能テンソルを許さず、$(c,d)$ の**合併した写像**の全射性を要求する。個々の $c,d$ の全射を要求する必要はない。$\delta_a,\delta_b\in\{0,1\}$ により生成矢 $6+\delta_a+\delta_b$、関係 $2+\delta_a+\delta_b$、完成矢 $8+2(\delta_a+\delta_b)$ を得る。$b$ 可逆と $a$ 可逆が二つの10本矢open、交わりが8本矢open。最小10本・12本の層をこれらのopenと同一視しない。
 
 product relation QPの一頂点premutationでは4本を追加して16本となり、4×4 mass行列の階数r組を消去して16−2r本を得る。三次minor上ではSchur補元 λ=d−eD⁻¹b が残る係数。別稿 `prop:qa-square-mutation-count` と `prop:qa-square-relative-schur` に有限三角変換の直接証明がある。
 
@@ -2008,7 +2008,7 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **Gabriel商の生成条件。** `lem:qgr-module-object-basechange` ではBが次数一生成かつB₁有限であることを要求する。この条件なしでは次数torsionは拡大に閉じない。例えばB=k[x₁,x₂,…]、全deg xᵢ=1、I=(xᵢxⱼ:i≠j)+(xᵢ^{i+1})としE=B/I、T=B₊Eと置く。TとE/T=kはtorsionだが、1∈Eは任意に高いxᵢ冪で殺されずEはtorsionでない。現行quadricのBは有限rankのB₁で生成されるため、全ての基底変更後にも必要条件を満たす。
 
-`papers/nc-quadric-moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
+`papers/nc-quadric-surface-moduli.tex` が定義・証明の正本である。基底は標数零の代数閉体上の局所有限型scheme。相対族はnoetherian Abel圏の系とOからなり、module-objectによる基底変更、Hom有限性とflat基底変更、fppf descentを指定する。各幾何fiberには元の体上H2条件を課し、fiberの全Db上のSerre条件を明示する。これに加え、局所canonical compact圏のsmooth proper性・導来基底変更・Serreを、fppf chartの全affine基底変更上で要求する。sとAS被覆は局所存在条件であり追加標識でない。`prop:relative-h2-field-recovery` は元の体上groupoidを回復する。
 
 相対AZ再構成、自然自己同型Aut(Id)=A×、pointed二自己同型の消滅から、反Serre関係の射 Φ:H2→[X3/PGL9] は全忠実となる。対角はaffine有限表示であり、framed部分層X_asを用いたH2≃[X_as/PGL9]はfppf stackとして成立する。**X_asは有限型・滑らかな83次元スキームとして表される**。有限型siteだけで定義した関手を、極限保存を示さずに任意scheme上の関手として扱わない。
 
@@ -2306,7 +2306,7 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文の責任範囲と検証を要する依存
 
-Aの主論文 `papers/nc-quadric-classification.tex` は体上の強いH2の構成・完全分類・pointed exact同値判定を中心とし、20の分類分割節を読み込む。Bの `papers/nc-quadric-moduli.tex` は相対定義・変形・有限型効果性・Noetherian性・Serre根・境界の群商と慣性・good/coarse moduli・楕円型忘却の証明本文を31分割節に保持する。Cはquiver/QP/avatarの表示と相対適合性の未解決範囲を扱う。
+Aの主論文 `papers/nc-quadric-surface-classification.tex` は体上の強いH2の構成・完全分類・pointed exact同値判定を中心とし、20の分類分割節を読み込む。Bの `papers/nc-quadric-surface-moduli.tex` は相対定義・変形・有限型効果性・Noetherian性・Serre根・境界の群商と慣性・good/coarse moduli・楕円型忘却の証明本文を31分割節に保持する。Cはquiver/QP/avatarの表示と相対適合性の未解決範囲を扱う。
 
 **依存の核心。** BがAの体上分類・normal helix・有限同値判定を使うのはよい。BからAへの残余ラベル参照17種類はAの現行20節に実在することを確認した。Aから外した相対節はBの同名節（相対定義は分割された二節）に定理ラベルと証明数を照合し、未使用の重複sourceを現行一式から外してある。数値・例・計算的証拠と全体の相対認識・代数性の証明を混同しない。
 
@@ -2355,8 +2355,8 @@ python3 computations/verify_noncubic_boundary.py
 python3 computations/verify_noncubic_central_hull.py
 # NumPy/Numba を入れた場合の独立な接空間証明書
 python3 computations/verify_commutative_quadric_tangent.py
-python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex
-python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex
+python3 scripts/check.py sources --manuscript papers/nc-quadric-surface-avatar.tex
+python3 scripts/check.py build --manuscript papers/nc-quadric-surface-avatar.tex
 latexmk
 ```
 

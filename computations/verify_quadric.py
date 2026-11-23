@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact finite checks for the nc-quadric-classification starting examples.
+"""Exact finite checks for the nc-quadric-surface starting examples.
 
 Run from the repository root with Python 3.9+ and SymPy (checked with SymPy 1.14.0):
     python3 computations/verify_quadric.py

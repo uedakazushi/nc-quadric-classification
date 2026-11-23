@@ -21,7 +21,7 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parent.parent
-MAIN = ROOT / "papers/nc-quadric-classification.tex"
+MAIN = ROOT / "papers/nc-quadric-surface-classification.tex"
 TEX_PACKAGES = (
     "ltjsarticle.cls", "luatexja.sty", "amsmath.sty", "amssymb.sty", "amsthm.sty",
     "mathtools.sty", "geometry.sty", "booktabs.sty", "enumitem.sty", "hyperref.sty", "fix-cm.sty",
@@ -141,8 +141,8 @@ def sources() -> int:
     skipped: list[str] = []
     required = (
         "README.md", "AGENTS.md", "00_research_plan.md", "CLOUD_CODEX.md", "notes/research_notes.md",
-        "notes/literature.md", "papers/nc-quadric-classification.tex",
-        "papers/nc-quadric-moduli.tex", "papers/nc-quadric-avatar.tex", "papers/references.bib",
+        "notes/literature.md", "papers/nc-quadric-surface-classification.tex",
+        "papers/nc-quadric-surface-moduli.tex", "papers/nc-quadric-surface-avatar.tex", "papers/references.bib",
         "papers/quiver-avatar/as_helix_classification.tex", "papers/quiver-avatar/as10_mutation_classification.tex",
         "papers/quiver-avatar/cubic_obstruction_all_loci.tex",
         "papers/quiver-avatar/point_spectral_isogeny.tex",
@@ -191,7 +191,7 @@ def sources() -> int:
         text = tex_without_comments(original)
         # Guard against pasting Markdown and Unicode maths into paper C.
         # The latter can trigger "Missing $ inserted" at an unescaped underscore.
-        if MAIN.name == "nc-quadric-avatar.tex":
+        if MAIN.name == "nc-quadric-surface-avatar.tex":
             for lineno, line in enumerate(text.splitlines(), 1):
                 if re.search(r"\*\*[^*\n]+\*\*", line):
                     failures.append(f"{display}:{lineno}: Markdown bold in LaTeX; use \\textbf{{...}}")
@@ -368,9 +368,9 @@ def cross_paper_labels() -> int:
     """Audit named A/B/C cross-paper citations without needing .aux files."""
     failures: list[str] = []
     roots = {
-        "QuadricIntrinsic2026": ROOT / "papers/nc-quadric-classification.tex",
-        "QuadricModuli2026": ROOT / "papers/nc-quadric-moduli.tex",
-        "QuiverAvatarModuli2026": ROOT / "papers/nc-quadric-avatar.tex",
+        "QuadricIntrinsic2026": ROOT / "papers/nc-quadric-surface-classification.tex",
+        "QuadricModuli2026": ROOT / "papers/nc-quadric-surface-moduli.tex",
+        "QuiverAvatarModuli2026": ROOT / "papers/nc-quadric-surface-avatar.tex",
     }
     sources_by_key: dict[str, dict[Path, str]] = {}
     labels_by_key: dict[str, set[str]] = {}
@@ -434,9 +434,9 @@ def papers() -> int:
     results: list[int] = []
     try:
         for manuscript in (
-            "nc-quadric-classification.tex",
-            "nc-quadric-moduli.tex",
-            "nc-quadric-avatar.tex",
+            "nc-quadric-surface-classification.tex",
+            "nc-quadric-surface-moduli.tex",
+            "nc-quadric-surface-avatar.tex",
         ):
             MAIN = ROOT / "papers" / manuscript
             print(f"\nSOURCE AUDIT: {MAIN.relative_to(ROOT)}", flush=True)
@@ -451,7 +451,7 @@ def main() -> int:
     global MAIN
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("doctor", "sources", "papers", "math", "build", "all"))
-    parser.add_argument("--manuscript", default="papers/nc-quadric-classification.tex",
+    parser.add_argument("--manuscript", default="papers/nc-quadric-surface-classification.tex",
                         help="main TeX file directly under papers/ (default: primary manuscript)")
     args = parser.parse_args()
     selected = (ROOT / args.manuscript).resolve()

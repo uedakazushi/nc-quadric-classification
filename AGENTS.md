@@ -1,16 +1,16 @@
-# 研究リポジトリの作業指示 — nc-quadric-classification
+# 研究リポジトリの作業指示 — nc-quadric-surface
 
-2026-11-23 / v1.69。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.63。
+2026-11-23 / v1.70。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.63。
 
 ## 公表用三論文の役割
 
-- A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
-- B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
-- C：`papers/nc-quadric-avatar.tex` はAS代数・potential・anticanonical avatarの分類と内在的H2への比較の正本。分割節は `papers/quiver-avatar/`。体上AS分類、E_f側の全noncubic相対pointed認識、smooth spectral avatarの双対対応と境界延長不能を区別して記述する。任意のAS/avatar/QP表示stack全体とH2との相対同値は主張しない。
+- A：`papers/nc-quadric-surface-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
+- B：`papers/nc-quadric-surface-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
+- C：`papers/nc-quadric-surface-avatar.tex` はAS代数・potential・anticanonical avatarの分類と内在的H2への比較の正本。分割節は `papers/quiver-avatar/`。体上AS分類、E_f側の全noncubic相対pointed認識、smooth spectral avatarの双対対応と境界延長不能を区別して記述する。任意のAS/avatar/QP表示stack全体とH2との相対同値は主張しない。
 
 ## 最上位目標：論文Cの全相対スタック分類（Codexの固定終了条件）
 
-**最上位目標を2026-11-23に変更した。** `papers/nc-quadric-avatar.tex` に、指定最小AS分解型（square/rotated square/cubic/独立AS10）、その幾何avatar、重み付き8/10/12本矢QPの**全相対fppfスタック**を、非被約基底・同型層・自己同型/慣性・無限周期AS再構成・相対heart・rigidification/gerbe・mutation/rulingの貼合せ・内在的 $H_2$ への適合/非適合部分まで**正確に分類した原稿上の証明**を完成させる。任意のAS/QPという表現は指定型内の全対象を指し、無条件に全次元・任意箙へ拡張する意味ではない。都合のよいperfect/smooth/$H_2$族だけに対象を狭めて全分類と判定しない。
+**最上位目標を2026-11-23に変更した。** `papers/nc-quadric-surface-avatar.tex` に、指定最小AS分解型（square/rotated square/cubic/独立AS10）、その幾何avatar、重み付き8/10/12本矢QPの**全相対fppfスタック**を、非被約基底・同型層・自己同型/慣性・無限周期AS再構成・相対heart・rigidification/gerbe・mutation/rulingの貼合せ・内在的 $H_2$ への適合/非適合部分まで**正確に分類した原稿上の証明**を完成させる。任意のAS/QPという表現は指定型内の全対象を指し、無条件に全次元・任意箙へ拡張する意味ではない。都合のよいperfect/smooth/$H_2$族だけに対象を狭めて全分類と判定しない。
 
 **達成条件は研究方針のS1–S6すべて**。従来のC1–C3（体上AS/avatar、$H_2$開QP/foundation/heart/GIT）は重要な原稿上の成果であってS1–S5の全体ではない。従来C4は独立監査・文献・組版を扱う新S6の一部。これら旧C1–C4だけを達成しても停止しない。新しい主張のない計画整理・反例候補・計算PASS・一つの補題・commitも終了条件にしない。
 
@@ -117,7 +117,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 
-**最優先目標は論文Cでの指定AS/avatar/8・10・12本矢QPの全相対stack分類**（`papers/nc-quadric-avatar.tex`）。`00_research_plan.md` の**S1–S6**が唯一の完了判定であり、既存のC1–C4は研究の入力・検証単位である。中央affine・全有限QP/foundation群oid・二mass・H2実現可能開のJacobian/Serre/heartとS₂-mutation商は原稿上決着。次はまず全相対AS/avatar/weighted-QP stackの定義・coverage、AS10 relative perfectの自動性、全Isom・QP慣性と非被約基底での比較を進める。既存C3の数学的独立監査、Keller訂正条件、先行研究・LuaLaTeX実組版も並行して進める。A/B監査・文献比較は有効な入力として維持するが、Cの未解決核心を放置してA/Bの公表作業を優先しない。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
+**最優先目標は論文Cでの指定AS/avatar/8・10・12本矢QPの全相対stack分類**（`papers/nc-quadric-surface-avatar.tex`）。`00_research_plan.md` の**S1–S6**が唯一の完了判定であり、既存のC1–C4は研究の入力・検証単位である。中央affine・全有限QP/foundation群oid・二mass・H2実現可能開のJacobian/Serre/heartとS₂-mutation商は原稿上決着。次はまず全相対AS/avatar/weighted-QP stackの定義・coverage、AS10 relative perfectの自動性、全Isom・QP慣性と非被約基底での比較を進める。既存C3の数学的独立監査、Keller訂正条件、先行研究・LuaLaTeX実組版も並行して進める。A/B監査・文献比較は有効な入力として維持するが、Cの未解決核心を放置してA/Bの公表作業を優先しない。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 
 ## Cloud Codexへの継続指示
 
@@ -138,9 +138,9 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 
 - 全体の入口：[research-hub](https://github.com/uedakazushi/research-hub)。再開時に該当研究の概要、他研究との関係、再開先を確認する。
 - 最初に読む研究方針：`00_research_plan.md`。続いて本AGENTS.mdの適用される指示と `notes/research_notes.md`、必要な原稿・検証記録を確認する。
-- 別稿B：`papers/nc-quadric-moduli.tex`。相対モジュライ・境界の現行証明本文を保持。数学的な独立監査は継続。
-- 別稿C：`papers/nc-quadric-avatar.tex`。八・十・十二本矢の表示モジュライ・avatar・内在的忘却を扱う。分割節は `papers/quiver-avatar/`。個別の `sources`・`build` には `--manuscript papers/nc-quadric-avatar.tex` を付ける。
-- 主たる公表用原稿：`papers/nc-quadric-classification.tex`。リポジトリ直下からの相対パスであり、本文のある主原稿とする。節のソースを別ファイルから読み込んでもよい。独立した別論文には内容を表す名前を付け、役割をREADMEと研究方針に記す。
+- 別稿B：`papers/nc-quadric-surface-moduli.tex`。相対モジュライ・境界の現行証明本文を保持。数学的な独立監査は継続。
+- 別稿C：`papers/nc-quadric-surface-avatar.tex`。八・十・十二本矢の表示モジュライ・avatar・内在的忘却を扱う。分割節は `papers/quiver-avatar/`。個別の `sources`・`build` には `--manuscript papers/nc-quadric-surface-avatar.tex` を付ける。
+- 主たる公表用原稿（今回指定された名称）：`papers/nc-quadric-surface-classification.tex`。リポジトリ直下からの相対パスであり、本文のある主原稿とする。節のソースを別ファイルから読み込んでもよい。独立した別論文には内容を表す名前を付け、役割をREADMEと研究方針に記す。
 - 本研究の現行ソース・入力・再現資産の正本はGitHubの `main`。研究以外の日常todoは別に管理する。
 
 共通原則の参照先は [CHATGPT_CUSTOM_INSTRUCTIONS.md](https://github.com/uedakazushi/research-hub/blob/main/CHATGPT_CUSTOM_INSTRUCTIONS.md)。実行に必要な規則は以下にも記載し、hubへ接続できない場合にも対象研究の既存資料に基づく作業と保存を進める。未確認のhub情報は推測しない。

@@ -1,12 +1,12 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.74。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.63。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.75。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.63。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
 **内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は上記の全相対AS/avatar/QP stack分類（S1–S6）である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
 ## 最上位目標：論文Cにおける全相対AS/avatar/QP stack分類
 
-**2026-11-23に目標を引き上げた。** 主原稿 `papers/nc-quadric-avatar.tex` の最終目標は、**本研究で指定した最小AS分解型（square、rotated square、cubic、独立最小十本矢型）と、それに対応する反標準幾何avatar・8/10/12本矢の重み付きQP表示について、全相対スタックを分類し、相互の比較図式、同型層、慣性、剛体化、fibers、mutation/rulingの貼合せ、内在的 $\mathfrak H_2$ との関係を原稿上完全に証明すること**である。既存のC1–C3の $H_2$ 実現可能開での比較は基礎となる到達点であり、これだけでCを完成したと判定しない。A/Bの重要な定理は必要な入力として用いるが、A/Bの公表準備を優先してこの目標を延期しない。
+**2026-11-23に目標を引き上げた。** 主原稿 `papers/nc-quadric-surface-avatar.tex` の最終目標は、**本研究で指定した最小AS分解型（square、rotated square、cubic、独立最小十本矢型）と、それに対応する反標準幾何avatar・8/10/12本矢の重み付きQP表示について、全相対スタックを分類し、相互の比較図式、同型層、慣性、剛体化、fibers、mutation/rulingの貼合せ、内在的 $\mathfrak H_2$ との関係を原稿上完全に証明すること**である。既存のC1–C3の $H_2$ 実現可能開での比較は基礎となる到達点であり、これだけでCを完成したと判定しない。A/Bの重要な定理は必要な入力として用いるが、A/Bの公表準備を優先してこの目標を延期しない。
 
 **対象の正確な範囲。** 「任意」は上記の**指定型**を満たす全ての対象・許容族・同型を指し、一般の任意次数・任意の箙とpotential・全次元のAS正則代数を含むとの意味ではない。許容条件が本当に対象全体を覆うかを証明し、都合のよい局所自由・perfect・smooth・$H_2$適合などの追加仮定を置いた部分だけを「全分類」と呼ばない。基礎体は現行の標数零代数閉体を基礎とし、その上の局所有限型scheme、非被約・非平坦な試験基底変更を含む相対fppf/導来比較の適切な範囲を明記する。拡張できない現象には具体的な反例と正確な境界定理を与える。
 
@@ -136,11 +136,11 @@
 
 ## 公表用原稿の三論文体制（2026-11-22に確定）
 
-- **A・分類：** `papers/nc-quadric-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
-- **B・内在的相対モジュライ：** `papers/nc-quadric-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
-- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-avatar.tex`（v4.54）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。相対smooth射はμ₂-gerbeと二重被覆に分解し、全stack自己同値の不存在と特異境界の無限高次Extも証明した。節点TF標的の有限型Artin性とbalanced商・元Nの開埋込みに加え、二traitの半安定graph・出力二次線束延長・四捩れ補正を証明した。全表示群に同変な自然Fricke射の境界降下と全fiber、全有限分岐後の入力二捩れ障害も証明した。noncubic由来のrotated零頂点とAS10零頂点は生成障害で排除し、全四位相を判定した。標準頂点の体上判定は全型で成立し、全相対AS/potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
+- **A・分類：** `papers/nc-quadric-surface-classification.tex` を主原稿として維持する。体上の全H2の定義、cubic/noncubicの構成・被覆・pointed exact同値判定と、それに必要なSerre根・AS4被覆の完全な証明を中心に据える。最初に公表可能な論文として完成させる。
+- **B・内在的相対モジュライ：** `papers/nc-quadric-surface-moduli.tex` を独立原稿として新設した。相対H2、全Artin形式認識、有限型効果性、smooth既約Artin性、framed実現、noncubic境界の相対商・慣性・good/coarse moduliと形式局所構造を扱う。Aの体上分類を引用する一方向依存を原則とする。
+- **C・AS代数／avatar分類とO-marked／potential比較：** `papers/nc-quadric-surface-avatar.tex`（v4.54）。指定最小分解のAS/avatar分類、独立AS10、二重壁とcubic障害、有限QPとGITの表示を扱う。Noncubicでは点曲線 $E_f$ 側のrank45相対pointed認識を全二形式商上で証明し、smooth spectral側の指定pointed像をFricke対合として決定した。相対smooth射はμ₂-gerbeと二重被覆に分解し、全stack自己同値の不存在と特異境界の無限高次Extも証明した。節点TF標的の有限型Artin性とbalanced商・元Nの開埋込みに加え、二traitの半安定graph・出力二次線束延長・四捩れ補正を証明した。全表示群に同変な自然Fricke射の境界降下と全fiber、全有限分岐後の入力二捩れ障害も証明した。noncubic由来のrotated零頂点とAS10零頂点は生成障害で排除し、全四位相を判定した。標準頂点の体上判定は全型で成立し、全相対AS/potential群oidは未解決。詳細な証明範囲はP4–P5を参照する。
 
-**公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは指定AS分解・avatarの分類、八・十・十二本矢QP、pointed認識と相対比較を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
+**公表用原稿の現在の責任範囲。** 論文Aの主原稿 `papers/nc-quadric-surface-classification.tex` は体上の強いH2の全分類・逆構成・pointed exact同値判定を中心に構成し、分類に必要な20の分割節だけを `\\input` する。論文B `papers/nc-quadric-surface-moduli.tex` は相対H2・Artin変形・cubic/noncubic有限型効果性・Noetherian貼合せ・適合Serre根・境界相対商・慣性・good/coarse moduliと形式対、および楕円型の構造対象忘却を扱い、31の分割節を読み込む。論文Cは指定AS分解・avatarの分類、八・十・十二本矢QP、pointed認識と相対比較を担当する。Aで読まない相対節の重複sourceは、Bで証明ブロック数とラベルが保持されていることを確認して整理済み。Bの相対定義節は章ラベル `sec:moduli-relative` を使用する。
 
 **現在の検証実装。** `scripts/check.py papers` はA/B/Cそれぞれのsources検査に加え、AとBで明記した相手原稿の定理ラベルが実際の `\input` 系に存在することを確認する。現行checkoutで三稿のソース・相互参照検査を実行PASS。LuaLaTeX組版は必要TeXファイルを利用できずSKIPであり、現行PDFは未生成。分類の有限判定では輸送子の閉剰余類性を明記し、有限停止に必要な仮定を強調した。
 
@@ -191,7 +191,7 @@
 
 **残る比較と次の課題。** 境界の相対商表示・DM開の普遍的粗モジュライ・全有限成分の法表現・一致類に沿う形式対は証明した。全H2の準射影的good moduliはCで構成した。次はその不変式環・noncubic境界像・既存GITとの具体的比較を進める。全H2の粗モジュライ不存在とは両立する。X_asの局所閉性と偏極認識方程式、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致も残る。公表前の一次文献比較・証明監査・組版を続け、包括的新規性・外部査読・形式証明とは区別する。
 
-**別稿と研究間の関係。** `papers/nc-quadric-avatar.tex`（v4.30）は、AS/avatarの分類と、QP・GITから内在的H2への比較を扱う独立論文である。Aの体上分類とBの相対H2・境界同値を入力に、$E_f$側の全商上の相対pointed認識、smooth spectral側の像と延長不能を区別して記述する。Cの対象を限定した認識を、全foundation・全AS表示の相対同値へ一般化しない。Cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は保持し、既存の各dg特殊化の内在H2認識は族ごとに確認する。詳細はC本文と研究ノートを正本とする。
+**別稿と研究間の関係。** `papers/nc-quadric-surface-avatar.tex`（v4.30）は、AS/avatarの分類と、QP・GITから内在的H2への比較を扱う独立論文である。Aの体上分類とBの相対H2・境界同値を入力に、$E_f$側の全商上の相対pointed認識、smooth spectral側の像と延長不能を区別して記述する。Cの対象を限定した認識を、全foundation・全AS表示の相対同値へ一般化しない。Cubicから全noncubic点へのsmooth proper dg特殊化と全次数平坦反Serre族は保持し、既存の各dg特殊化の内在H2認識は族ごとに確認する。詳細はC本文と研究ノートを正本とする。
 
 検証範囲・再生成手順は [研究ノート](notes/research_notes.md#検証範囲と再現手順)、文献の仮定・規約は [文献比較](notes/literature.md) に集約する。
 
@@ -202,7 +202,7 @@
 1. 数学的重要性、新規性、理解の深化、応用可能性、正確性、実現可能性から研究全体の価値を最大化する。方針は柔軟に変更し、変更理由と元の目標の達成部分・残存部分を、現時点で有効な説明へ書き換える。履歴を蓄積しない。
 2. 証明済み、追加仮定付き、証明未完成、予想、計算的観察を区別する。主要主張の仮定・依存結果・証明箇所・未解決点を明記する。原稿に証明があること、今回その論理を点検したこと、計算・形式証明器を実行したこと、新規性を確定したことは別である。誤りは依存する本文・要約・方針・hubにも反映する。
 3. 重要な文献は一次資料で仮定・適用範囲・書誌を確認し、Introductionで既知結果と本研究の関係を具体化する。未確認の文献内容や新規性を推測しない。他研究の結果を使う際は定理、仮定、出典と必要なcommitを記す。文献PDFや検索結果を大量収録しない。
-4. 原稿は原則日本語LuaLaTeX。主原稿は本文のある `papers/nc-quadric-classification.tex` とし、research-hubのテンプレートと組版設定を参照する。有効な公表価値のある成果と必要な証明を論理的な順序で統合する。未完成箇所は明示し、追記式の版別原稿や重複本文を増やさない。独立論文を分ける場合は役割を説明する。
+4. 原稿は原則日本語LuaLaTeX。主原稿は本文のある `papers/nc-quadric-surface-classification.tex` とし、research-hubのテンプレートと組版設定を参照する。有効な公表価値のある成果と必要な証明を論理的な順序で統合する。未完成箇所は明示し、追記式の版別原稿や重複本文を増やさない。独立論文を分ける場合は役割を説明する。
 5. 研究ノートには論文外の着想、例、反例、計算、失敗した方法の本質的障害、文献比較、再取得困難な情報を整理する。本文に十分な証明がある事項は参照する。作業日誌、旧会話、試行履歴、解決済みtodoは不要である。
 6. 現行の方針・ノート・論文と最小限のコード・入力・文献・再現手順から自己完結して再開できるようにする。旧bundleや会話を再開の前提にしない。数学的内容や検証可能性を損なってまでファイル数・容量を減らさない。旧ZIP、旧版原稿、バックアップ、ログ、cache、組版中間物は追跡しない。必要な証明書・再取得不能な入力は保持する。Git履歴を改変しない。
 7. 研究の区切りごとに承諾なく通常コミットし、`main` へ反映する。長時間作業でも前回の成功したmainへのpushから長くても約15分以内に保存する。切りのよいところでは早めにpushし、証明途中でも確定部分と未解決箇所を明示して保存する。他の作業者の変更を保持し、force push・GitHub Actionsの追加や起動は行わない。PDFは原則追跡せず、LuaLaTeX・latexmk・SyncTeX・VS Code設定を保持する。改名時はinput、文献、root指定、README、方針、設定を整合させる。GitHub保存が成功すればLibraryへの定常的な二重保存やZIP作成はしない。失敗時の緊急保存または別途依頼時のみLibraryを使い、既存Libraryファイルを無断で削除しない。
@@ -387,16 +387,16 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 3. **全比較図式・$H_2$の内外（S4・S5）。** AS/avatar/QPの全Isomと慣性・相対mutation/rulingの2-cocycleを揃え、$H_2$へのpointing忘却の定義域・像・fiberを内在的に決定する。noncubic/spectralの既証明の境界障害を保持する。全as-tilting・heartの比較が破れる条件を明示する。
 4. **cyclic primitiveの有限Isom自然性を踏まえて高次stack降下を監査する。** `prop:qa-q12-exact-cy-primitive-isom-inertia`でcanonical exact CY classのCasimir出所・Isom自然性・mass/shear慣性の自明性を原稿上証明。相対HH/HC/HC^-複体自身のfppf Čech降下は原稿上証明済みである。次はcanonical CY primitive/classのhomotopy-coherentな群oid sectionへのlift（特に三重以上のcoherence）、ruling交換によるclass比較を監査する。 `thm:qa-q12-cotangent-keller-pseudonatural`でmass/shear/frame・有限関係表示Isomのzigzagと合成を原稿上証明。次はKeller3.7/6.6の非可換Fox双対の全始終点・符号を個別監査し、非cotangentな任意raw QP right-equivalenceがMorita比較を保存するための必要十分条件を調べる。Keller6.8の同値存在だけを2自然性の根拠にしない。$H_2$のperfect heartとruling交換は既存の別結果として保持する。
 5. **左Noetherと双対heartの残余依存。** rank3の反対normal零番のpointing障害、正しいdual square heart内の$Y$、例外可逆層$L$、非先頭$Q_0$、相対AZ2の二重presentation、有限End/HomによるAZ再構成は原稿上証明済み。次は相対SerreのMorita自然性、特異基底の$D(\operatorname{Ind}\mathcal C)$と局所compactの扱い、fppf heart降下と既知の引用仮定を独立監査する。
-6. **C4の実行検証。** 今回最新C主原稿＋42節のソースを全取得し868ラベル・947参照・241引用（bib91キー）と環境・入力先を静的監査。次はrepoを取得できる環境で python3 scripts/check.py papers と python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex を実行し、LuaLaTeX PDF/SyncTeXと目視表示を確認する。Artin–Zhang/OACU、Keller訂正、VdB、Alper等の一次資料とIntroductionの新規性を再確認する。現環境のDNS制約による全checkout不可・組版未実施を正確に記す。
+6. **C4の実行検証。** 今回最新C主原稿＋42節のソースを全取得し868ラベル・947参照・241引用（bib91キー）と環境・入力先を静的監査。次はrepoを取得できる環境で python3 scripts/check.py papers と python3 scripts/check.py build --manuscript papers/nc-quadric-surface-avatar.tex を実行し、LuaLaTeX PDF/SyncTeXと目視表示を確認する。Artin–Zhang/OACU、Keller訂正、VdB、Alper等の一次資料とIntroductionの新規性を再確認する。現環境のDNS制約による全checkout不可・組版未実施を正確に記す。
 
 H2外の指定AS/avatar/QP表示stack・別heart・根忘却の必要な比較はS1–S5の最上位研究課題であり、後続扱いで先送りしない。既証明のA/B結果を根拠のない未解決課題に戻さない。
 
 ## 7. 正本・依存関係・再開
 
-- 論文A・主原稿：[papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex)。全H2のpointed分類。相対節の証明は移管完了まで保持する。
-- 論文B：[papers/nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex)。内在的相対モジュライ・境界幾何の証明正本。全面独立監査・公表編集は継続。
-- 論文C：[papers/nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex)。指定AS分解とavatarの分類、相対pointed認識、QP・GIT比較。主論文の分類証明を重複させない。
-- 別稿の組版：`python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex`。同じ指定で `sources` も実行できる。
+- 論文A・主原稿：[papers/nc-quadric-surface-classification.tex](papers/nc-quadric-surface-classification.tex)。全H2のpointed分類。相対節の証明は移管完了まで保持する。
+- 論文B：[papers/nc-quadric-surface-moduli.tex](papers/nc-quadric-surface-moduli.tex)。内在的相対モジュライ・境界幾何の証明正本。全面独立監査・公表編集は継続。
+- 論文C：[papers/nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex)。指定AS分解とavatarの分類、相対pointed認識、QP・GIT比較。主論文の分類証明を重複させない。
+- 別稿の組版：`python3 scripts/check.py build --manuscript papers/nc-quadric-surface-avatar.tex`。同じ指定で `sources` も実行できる。
 - 現行知識・障害・再現：[notes/research_notes.md](notes/research_notes.md)。文献仮定・版・リンク：[notes/literature.md](notes/literature.md)、書誌：[papers/references.bib](papers/references.bib)。
 - 計算：[computations/verify_quadric.py](computations/verify_quadric.py)。`python3 -m pip install -r requirements.txt` 後、repoルートで `python3 computations/verify_quadric.py`。
 - Cloudの導入と検証：[CLOUD_CODEX.md](CLOUD_CODEX.md)、`bash scripts/bootstrap.sh`、`python3 scripts/check.py doctor`。構成・検算・組版を個別に実行でき、欠落依存が独立な数学作業を止めないようにする。

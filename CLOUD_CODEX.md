@@ -1,6 +1,6 @@
 # Cloud Codexで全相対AS/avatar/QP stack分類を進める
 
-2026-11-23 / v0.23。研究の正本は [研究方針](00_research_plan.md)、repoの指示は [AGENTS.md](AGENTS.md)、現行論文Cは [papers/nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) v4.63。論文A v1.69、B v0.41は論理的入力。Codexは**従来C1–C4のみで終了せず**、下の全相対stack分類のS1–S6を目標に研究を続ける。
+2026-11-23 / v0.24。研究の正本は [研究方針](00_research_plan.md)、repoの指示は [AGENTS.md](AGENTS.md)、現行論文Cは [papers/nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) v4.63。論文A v1.69、B v0.41は論理的入力。Codexは**従来C1–C4のみで終了せず**、下の全相対stack分類のS1–S6を目標に研究を続ける。
 
 ## 最上位目標と完了条件
 
@@ -20,9 +20,9 @@
 
 ## Cloud Codex taskの起動依頼文
 
-Cloud Codexで `uedakazushi/nc-quadric-classification` の `main` を対象に新しいtaskを作り、以下を渡す（以後の細かい再開点は常に最新 `00_research_plan.md` に従う）。
+Cloud Codexで `uedakazushi/nc-quadric-surface` の `main` を対象に新しいtaskを作り、以下を渡す（以後の細かい再開点は常に最新 `00_research_plan.md` に従う）。
 
-> [最上位目標] 本repoのAGENTS.md・00_research_plan.md・CLOUD_CODEX.mdとresearch-hubの対象項目を読み、論文C `papers/nc-quadric-avatar.tex` に、指定square/rotated/cubic/minimal AS10型・対応する幾何avatar・重み付き8/10/12本矢QPの**全相対fppf stack分類**を完成させてください。終了条件は方針の**S1–S6すべて**です。既存のC1–C3やH2実現可能開だけで終えず、全相対族、非被約基底、全Isom・慣性、raw QPと剛体化後の区別、groupoidの2-coherence、mutation/ruling、H2の内外の対象と比較射の像・ファイバーを証明してください。全raw QPのAS性や三stackの直接同値を先取りせず、反例や部分成立条件を明示してください。
+> [最上位目標] 本repoのAGENTS.md・00_research_plan.md・CLOUD_CODEX.mdとresearch-hubの対象項目を読み、論文C `papers/nc-quadric-surface-avatar.tex` に、指定square/rotated/cubic/minimal AS10型・対応する幾何avatar・重み付き8/10/12本矢QPの**全相対fppf stack分類**を完成させてください。終了条件は方針の**S1–S6すべて**です。既存のC1–C3やH2実現可能開だけで終えず、全相対族、非被約基底、全Isom・慣性、raw QPと剛体化後の区別、groupoidの2-coherence、mutation/ruling、H2の内外の対象と比較射の像・ファイバーを証明してください。全raw QPのAS性や三stackの直接同値を先取りせず、反例や部分成立条件を明示してください。
 >
 > [最初の一手] `as_helix_classification.tex`、`as10_mutation_classification.tex`、`relative_square_foundation_stack.tex`、`qp_presentations.tex`、`cubic_qp_foundation_groupoid.tex` を照合し、全AS/avatar/weighted-QP相対stackの対象とIsomを定義して、`thm:qa-as10-relative-families` のperfect/平坦性仮定が全指定AS族から導けるかをまず解決してください。$k[\varepsilon]/(\varepsilon^2)$・rank3壁・古典例を調べ、全族foundation被覆の本質的全射性とIsomの必要な不足補題を定理・証明または具体的反例として進めてください。
 >
@@ -37,7 +37,7 @@ repoルートで実行する。スクリプト自体は実行場所に依存せ�
 ```sh
 bash scripts/bootstrap.sh
 python3 scripts/check.py doctor
-python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex
+python3 scripts/check.py sources --manuscript papers/nc-quadric-surface-avatar.tex
 ```
 
 bootstrapは既存のPython 3.9以上とSymPyを利用し、不足する場合にrepo内の`.venv`と`requirements.txt`を使う。システムのPythonパッケージを置き換えない。依存が既に使えれば導入のための通信をしない。別のPythonを探索候補の先頭にする場合は`QUADRIC_PYTHON`に実行ファイルの絶対パスを渡す。bootstrapが表示するPython実行ファイルを使ってcheckerを起動できる。`.venv`がある場合、checkerの計算部分はそのPythonを使う。
@@ -47,7 +47,7 @@ LuaLaTeX組版とPDF表示用の依存も導入する場合は、次を用いる
 ```sh
 bash scripts/bootstrap.sh --with-tex
 python3 scripts/check.py papers
-python3 scripts/check.py all --manuscript papers/nc-quadric-avatar.tex
+python3 scripts/check.py all --manuscript papers/nc-quadric-surface-avatar.tex
 ```
 
 `--with-tex`はDebian/Ubuntuで、既にrootまたは非対話sudo権限がある場合に限り、latexmk・LuaTeX-ja・必要なTeXパッケージ・Popplerの導入を試す。他OSではその環境のTeX Live/MacTeX等を用いる。導入できない場合は`PARTIAL`と表示して終了し、可能な証明・資料比較・原稿編集を続ける。bootstrapの終了コード0は準備処理の終了を表し、全依存の充足や検証成功を意味しない。欠落を隠すために権限や承認設定を変更しない。
@@ -63,15 +63,15 @@ checker自体はPython標準ライブラリだけで動く。必要な段階を�
 | コマンド | 確認すること |
 | --- | --- |
 | `python3 scripts/check.py doctor` | Python/SymPy、TeX、PDF確認コマンド、現在のGit commit・branchの診断。通信・書込認証は確認しない |
-| `python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex` | 必須ファイル、TeXのinput/root・ラベル・引用、設定JSON、ローカルMarkdown参照、Git追跡対象と空白の点検 |
+| `python3 scripts/check.py sources --manuscript papers/nc-quadric-surface-avatar.tex` | 必須ファイル、TeXのinput/root・ラベル・引用、設定JSON、ローカルMarkdown参照、Git追跡対象と空白の点検 |
 | `python3 scripts/check.py papers` | A/B/Cの3原稿のソース・引用・原稿間ラベル・指定型の接続を一度に点検（数学的証明そのものではない） |
 | `python3 scripts/check.py math` | 既存の`computations/verify_quadric.py`による有理数・記号演算 |
-| `python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex` | repoの`.latexmkrc`を指定したLuaLaTeX組版、最終ログ、PDFとSyncTeX |
-| `python3 scripts/check.py all --manuscript papers/nc-quadric-avatar.tex` | sources・math・buildを個別に実行し、いずれかの依存不足だけで他の確認を省略しない |
+| `python3 scripts/check.py build --manuscript papers/nc-quadric-surface-avatar.tex` | repoの`.latexmkrc`を指定したLuaLaTeX組版、最終ログ、PDFとSyncTeX |
+| `python3 scripts/check.py all --manuscript papers/nc-quadric-surface-avatar.tex` | sources・math・buildを個別に実行し、いずれかの依存不足だけで他の確認を省略しない |
 
 検証コマンドの終了コードは**PASS=0、FAIL=1、SKIP=2**。一つでもFAILなら全体は1、FAILがなく未実施があれば2となる。doctorの0は診断処理の終了のみを意味する。数学的主張の証明、文献の適用仮定、新規性、全分類の達成、PDFの目視、GitHubへの反映をこのコードだけで判定しない。
 
-論文Cの組版対象は`papers/nc-quadric-avatar.tex`、出力先は`build/nc-quadric-avatar.pdf`と同名の`.synctex.gz`。論文A/Bも必要な依存検査のときは各主原稿を指定して組版する。レイアウトを変更した場合はPDFを表示して確認する。PDF・中間生成物・`.venv`は追跡しない。検算の対象と理論による証明の境界は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
+論文Cの組版対象は`papers/nc-quadric-surface-avatar.tex`、出力先は`build/nc-quadric-surface-avatar.pdf`と同名の`.synctex.gz`。論文A/Bも必要な依存検査のときは各主原稿を指定して組版する。レイアウトを変更した場合はPDFを表示して確認する。PDF・中間生成物・`.venv`は追跡しない。検算の対象と理論による証明の境界は [研究ノート](notes/research_notes.md#検証範囲と再現手順) に記す。
 
 ## 保存と再開
 

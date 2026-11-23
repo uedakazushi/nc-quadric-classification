@@ -1,8 +1,8 @@
-# nc-quadric-classification
+# nc-quadric-surface
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.72、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.63。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.73、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.63。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **最上位目標（2026-11-23変更）：論文Cで指定AS/avatar/QPの全相対スタック分類を完成する。** [研究方針のS1–S6](00_research_plan.md#最上位目標論文cにおける全相対asavatarqp-stack分類) を唯一の終了基準とし、[Codex実行・起動指示](CLOUD_CODEX.md) と [AGENTS.md](AGENTS.md) に反映済み。対象はsquare/rotated-square/cubic/独立最小AS10型、対応する幾何avatar、指定重み付き8/10/12本矢QPであり、**全対象・全相対族（非被約底を含む）・Isom/慣性・全周期AS再構成・rigidification/gerbe・mutation/rulingの貼合せ・H2内外の部分と忘却射の像/fiber**を証明する。任意の箙・任意次数のASまで拡張する意味ではない。未修正QPとAS/avatarが直接同値とは主張せず、可縮pairのB Gmおよび二mass/頂点scalar慣性を保持して必要な剛体化を決定する。
 
@@ -36,9 +36,9 @@
 
 | 原稿 | 中心課題 | 状態 |
 | --- | --- | --- |
-| **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
-| **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS/avatar/8・10・12矢QPの全相対stack分類・rigidification・H2比較（最上位研究目標）** | v4.62。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
+| **A・主原稿** [nc-quadric-surface-classification.tex](papers/nc-quadric-surface-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
+| **B** [nc-quadric-surface-moduli.tex](papers/nc-quadric-surface-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
+| **C** [nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) | **指定AS/avatar/8・10・12矢QPの全相対stack分類・rigidification・H2比較（最上位研究目標）** | v4.62。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
@@ -75,7 +75,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 
 **順序付きFricke延長は平坦な良モジュライ射である。** 実際の代数的target atlas上で $[\operatorname{Spec}R[a,b]/(ab-q)/\mathbb G_m]\to\operatorname{Spec}R$ と表示し、平坦・有限表示・全射、構造層の直像同型とquasi-coherent直像の完全性を証明した。Artin targetを許すAlper Remark 4.4の意味でのgood moduli space morphismであり、任意底変更後も成立する。非smooth locusは一致根対に限られ、射は非分離・非proper。一致点を除くDM開では直像の完全性が失われ、中央μ₂を剛体化した局所模型は原点を二重にした直線となる。順序忘却後の射は一般fiberが二つなので、この良モジュライ性を持たない。[証明](papers/quiver-avatar/fricke_boundary_descent.tex)。
 
-[論文C](papers/nc-quadric-avatar.tex)は、指定した最小分解型のAS正則Z代数とavatarの分類を中心に、有限QP・既存GIT・内在的H2を比較する。現在の要点は、**点曲線側は全noncubic相対族で元のpointed heartを認識でき、spectral側の指定pointingはsmooth領域でも一般に別のH2対象を与える**ことである。
+[論文C](papers/nc-quadric-surface-avatar.tex)は、指定した最小分解型のAS正則Z代数とavatarの分類を中心に、有限QP・既存GIT・内在的H2を比較する。現在の要点は、**点曲線側は全noncubic相対族で元のpointed heartを認識でき、spectral側の指定pointingはsmooth領域でも一般に別のH2対象を与える**ことである。
 
 ### 二massのQPから全H2への相対groupoidと反Serre完成
 
@@ -182,12 +182,12 @@ noncubic有限型効果性では、[五頂点barとcanonical tails](papers/modul
 
 ```sh
 git pull --ff-only
-latexmk papers/nc-quadric-classification.tex
-latexmk papers/nc-quadric-moduli.tex
-latexmk papers/nc-quadric-avatar.tex
+latexmk papers/nc-quadric-surface-classification.tex
+latexmk papers/nc-quadric-surface-moduli.tex
+latexmk papers/nc-quadric-surface-avatar.tex
 ```
 
-`papers/` に `cd` して `latexmk nc-quadric-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
+`papers/` に `cd` して `latexmk nc-quadric-surface-classification.tex` とすると、上位の `.latexmkrc` は自動では読まれず、通常の `latex`（LuaLaTeXではない）が選択される。`papers/` にいる場合は `cd ..` して上記を実行する。既に `papers/` で誤ったエンジンの `.aux` / `.fdb_latexmk` が生成された場合、まず `cd ..` してから上記のルート指定ビルドを行う（別ディレクトリの旧出力は新ビルドで利用しない）。
 
 **現行原稿の組版確認状況（2026-11-23）。** C v4.21のbuildは必要TeXファイルを利用できずSKIP（終了コード2）。LuaTeX-jaを含む依存を揃えた環境で、上記の三稿を再組版する必要がある。Cの数式モード、Markdown記号の混入、未定義演算子 `\Spin`・`\SL`・`\Br` は訂正済みで、構成・ラベル・引用・環境の静的検査はPASS。現行PDF全体の生成・表示確認は未実施であり、断片の組版や過去版の成功を代用しない。未解決引用はBibTeXと必要な再実行が完了したログで判定する。
 
@@ -197,7 +197,7 @@ latexmk papers/nc-quadric-avatar.tex
 
 macOSでFinder/DockからVS Codeを起動した場合、MacTeXが導入されていても `/Library/TeX/texbin` が拡張機能のPATHに含まれないことがある。この場合、**Macだけのローカル対処**として、VS Codeのユーザー設定（リポジトリで共有しない設定）で `latex-workshop.latex.tools` の `latexmk-project` の `command` を `/Library/TeX/texbin/latexmk` に、`latex-workshop.latex.clean.command` も同じ絶対パスに指定する。共有設定の `cwd` と `args` は維持する。あるいは、`/Library/TeX/texbin` をVS Codeの起動環境PATHに追加してから再起動する。Macの `.latexmkrc` はMacTeXのディレクトリが存在する場合にのみ子プロセスのPATHを補うが、**latexmk自体を起動する前のPATH問題は解決しない**。
 
-VS Codeではリポジトリのルートをフォルダとして開き、`papers/nc-quadric-classification.tex`、`papers/nc-quadric-moduli.tex` または `papers/nc-quadric-avatar.tex` をアクティブにして LaTeX Workshop のビルドを実行する。PDFとSyncTeXは `build/` に出力される。まずターミナルで `latexmk -v` と `lualatex --version` を確認し、ビルドが失敗した場合は LaTeX Workshop のログで `spawn latexmk ENOENT` の有無を確認する。
+VS Codeではリポジトリのルートをフォルダとして開き、`papers/nc-quadric-surface-classification.tex`、`papers/nc-quadric-surface-moduli.tex` または `papers/nc-quadric-surface-avatar.tex` をアクティブにして LaTeX Workshop のビルドを実行する。PDFとSyncTeXは `build/` に出力される。まずターミナルで `latexmk -v` と `lualatex --version` を確認し、ビルドが失敗した場合は LaTeX Workshop のログで `spawn latexmk ENOENT` の有無を確認する。
 
 ## Cloud Codexで続ける
 
@@ -235,7 +235,7 @@ VS Codeではリポジトリのルートをフォルダとして開き、`papers
 
 | 相対モジュライに関する結果 | 状態・証明の所在 |
 | --- | --- |
-| $\Phi:\mathfrak H_2\to[X_3/\mathrm{PGL}_9]$ は全忠実 | 相対AZ再構成とpointed二自己同型の自明性。[相対定義節](papers/nc-quadric-moduli.tex) |
+| $\Phi:\mathfrak H_2\to[X_3/\mathrm{PGL}_9]$ は全忠実 | 相対AZ再構成とpointed二自己同型の自明性。[相対定義節](papers/nc-quadric-surface-moduli.tex) |
 | 対角はaffineかつ有限表示 | 表示スタックの対角の引戻し。同節 |
 | $X_{\mathrm{as}}=X_3\times_{[X_3/\mathrm{PGL}_9]}\mathfrak H_2$ は不変fppf部分層、$\mathfrak H_2\simeq[X_{\mathrm{as}}/\mathrm{PGL}_9]$ | 有限型smoothスキームX_asによる商表示。dim X_as=83、dim H2=3。`cor:global-xas-smooth-scheme` |
 | 全H2の切断環・反Serre環はKoszul | 正則正規二次商とVeroneseの既知定理を適用。[相対Koszul節](papers/moduli/relative_koszul.tex) |
@@ -305,8 +305,8 @@ $$
 | [00_research_plan.md](00_research_plan.md) | 研究一般の原則・保存許可、目標、到達点、次の具体的な着手 |
 | [CLOUD_CODEX.md](CLOUD_CODEX.md) | Cloud環境の準備、起動用の依頼文、検証・保存・再開の手順 |
 | [scripts](scripts) | 依存の準備と、構成・検算・組版の独立した確認 |
-| [papers/nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | 本文のある主論文。日本語LuaLaTeX、著者欄空欄 |
-| [papers/nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | 指定AS分解・avatar分類、相対pointed認識、QP・GIT比較を扱う独立した日本語LuaLaTeX論文 |
+| [papers/nc-quadric-surface-classification.tex](papers/nc-quadric-surface-classification.tex) | 本文のある主論文。日本語LuaLaTeX、著者欄空欄 |
+| [papers/nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) | 指定AS分解・avatar分類、相対pointed認識、QP・GIT比較を扱う独立した日本語LuaLaTeX論文 |
 | [papers/quiver-avatar](papers/quiver-avatar) | CのAS分類・有限QP・foundation・幾何的chart・pointed認識と相対比較の証明 |
 | [papers/sections](papers/sections) | 主分類定理、全被覆、逆構成、同値判定、基準例の証明を収めた分割節 |
 | [papers/references.bib](papers/references.bib) | 確認した一次文献の書誌 |
@@ -341,15 +341,15 @@ python3 scripts/check.py all
 別稿は次で個別に確認・組版する。
 
 ```sh
-python3 scripts/check.py sources --manuscript papers/nc-quadric-avatar.tex
-python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex
+python3 scripts/check.py sources --manuscript papers/nc-quadric-surface-avatar.tex
+python3 scripts/check.py build --manuscript papers/nc-quadric-surface-avatar.tex
 python3 computations/verify_quiver_avatar_charts.py
 python3 computations/verify_quadric_first_order_roots.py
 ```
 
-出力は `build/nc-quadric-avatar.pdf` と同名の `.synctex.gz`。ルートの `latexmk` は両論文を組版する。
+出力は `build/nc-quadric-surface-avatar.pdf` と同名の `.synctex.gz`。ルートの `latexmk` は両論文を組版する。
 
-Python 3.9以上とSymPy、およびLuaTeX-jaを含むTeX Live/MacTeX、latexmk、BibTeXを用いる。出力は `build/nc-quadric-classification.pdf` と同名の `.synctex.gz`。PDF・組版中間物はGitで追跡しない。
+Python 3.9以上とSymPy、およびLuaTeX-jaを含むTeX Live/MacTeX、latexmk、BibTeXを用いる。出力は `build/nc-quadric-surface-classification.pdf` と同名の `.synctex.gz`。PDF・組版中間物はGitで追跡しない。
 
 `sources`・`math`・`build`を個別に実行できる。検証の終了コードはPASS=0、FAIL=1、SKIP=2で、未導入の依存による未実施を成功と区別する。`doctor`は診断のみ。bootstrapは不足依存を`PARTIAL`と表示して処理を終え、数学的研究を止めない。TeX導入を試すオプションは`bash scripts/bootstrap.sh --with-tex`。従来どおり`python3 computations/verify_quadric.py`と`latexmk`も使える。
 
