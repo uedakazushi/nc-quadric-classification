@@ -1336,6 +1336,62 @@ $I$ は $xx+yy$、他は始点から読む二文字を表す。
 双方が零の場合に尽き、前者は曲線型、後者は古典型を与える。
 \end{proof}
 
+\begin{theorem}[幾何fiberで両mass零となる相対族の全次数復元]
+\label{thm:qa-avatar-nilpotent-mass-reverse}
+局所Noetherianな標数零の基底 $T$ 上で十二矢potentialを取り、
+すべての幾何fiberで両massが零であり、
+通常のJacobian展開が指定AS最小解消を持つとする。
+構造層上でmassが非零の冪零元である場合も許す。
+このとき四連続窓の短関係と長関係は局所分裂し、
+窓の通常の $3$-preprojective 完成は元のJacobianを全次数で復元する。
+Jacobianの全成分は局所自由であり、
+非完備Ginzburg dg代数は零次に集中する。
+これらの結論は任意基底変更と可換である。
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:qa-avatar-as-forces-finite-ranks}は、
+各幾何fiberの短関係一列と最長成分の関係六列が
+それぞれ最大階数を持つことを与える。
+更に定理~\ref{thm:qa-avatar-zero-mass-forces-short-rank}により、
+各幾何fiberの短テンソルは階数二である。
+可逆minorで局所化するとこれらは相対的な分裂条件となり、
+式~\eqref{eq:qa-two-mass-six-relations}の開に入る。
+従って定理~\ref{thm:qa-two-mass-jacobian-preprojective}を
+適用でき、全次数と積を比較する。
+この適用はmassが構造層上零であることを要求しない。
+
+次にGinzburgの各内部重みと端点の成分を取る。
+通常矢の重みは一または二、双対矢の重みは
+四から元の矢の重みを引いた数、ループの重みは四なので、
+この成分は有界な有限局所自由複体である。
+微分は巡回微分と普遍導分で書かれ、
+任意基底変更で同じ複体を作る。
+幾何fiberでは体上の両mass零の復元により、
+有限窓は曲線型または古典型である。
+曲線型のGinzburgは系~\ref{cor:qa-avatar-ginzburg-formal}により
+零次に集中する。古典型では
+例~\ref{ex:qa-as12-weighted-stack}の整列道と
+重み $1,1,2$ の三変数のKoszul両側解消を用いる。
+この解消の三つの二次交換子は巡回微分、
+最上段はそれらの巡回恒等式である。
+したがって系~\ref{cor:qa-avatar-ginzburg-formal}の
+両側模型の論法がこの場合にも適用でき、零次集中を得る。
+有限窓の同型は定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}で
+局所的に右同値へ持ち上がる。
+命題~\ref{prop:qa-ginzburg-right-equivalence-double-derivations}により、
+この右同値は Ginzburg 模型の重み付き dg 同型を誘導する。
+
+有界有限自由複体の各fiberが零次に集中するなら、
+局所環上で微分の単元成分を順に分裂消去し、
+残る極小複体を剰余体で見ると零次項だけが残る。
+従ってもとの複体は局所的に零次の有限自由加群と
+可縮な二項複体の和になる。
+任意の引戻し後にもこの分裂は完全性を保つ。
+零次cohomologyは通常のJacobianなので所要の結論を得る。
+この復元では、冪零massを消去して曲線型avatarを
+基底上に構成する操作は行っていない。
+\end{proof}
+
 \subsection{直積型 collection と全 square avatar}
 
 $\mathcal A_{\mathrm{sq}}^{\times}$ を、順序付きの二つの ruling を持つ
