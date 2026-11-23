@@ -2825,6 +2825,36 @@ $z\mapsto z+Qw$ は、厚みを持つ負断面上で
 この復元の一意性により局所比較は合成を保って降下する。
 \end{proof}
 
+\begin{corollary}[分裂壁上の相対射影束の分裂]
+\label{cor:qa-avatar-relative-scroll-splitting}
+命題~\ref{prop:qa-avatar-relative-diagonal-wall}の
+一つの行列式壁をスキームとして通る族では、
+対応する $\mathcal E_R$ は、rulingの枠を取った後、
+基底上の線束 $L,M$ を用いて
+局所に $\OO_B(2)\otimes q^*L\oplus q^*M$ と分裂する。
+従って対応する相対 $\Sigma_2$ の負断面も
+任意基底変更と整合して構成される。
+\end{corollary}
+\begin{proof}
+鉛筆評価列の直像から、
+$\mathbf Rq_*\mathcal E_R(-2)$ は
+行列式を定める階数四の乗法行列の二項複体で表される
+（行列式線束の因子を除く）。
+その行列は壁上で局所に $\operatorname{diag}(1,1,1,0)$ なので、
+$L=q_*\mathcal E_R(-2)$ は可逆で任意基底変更と可換である。
+評価 $q^* L\to\mathcal E_R(-2)$ は
+幾何fiberの分裂型 $\OO(-2)\oplus\OO$ 上で
+第二因子を与える。従ってその値は各点で単元成分を持ち、
+相対的にも可逆な商を持つ部分線束である。
+二つ捩り直すと商は各幾何fiberで次数零であり、
+その直像 $M$ からの評価により $q^*M$ と同定される。
+拡大は $R^1q_*\OO_B(2)=0$ とアフィン基底上の消滅により
+局所的に分裂する。
+商への写像は分裂の選択によらず、対応する負断面を与える。
+この議論は行列式が構造層上零という条件を使うため、
+幾何fiberの分裂型が一定という条件だけで行わない。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
