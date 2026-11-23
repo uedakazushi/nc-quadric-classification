@@ -4175,6 +4175,67 @@ $Z=Y$ であり、$P$ は相対Picardの計算から基底の線束となる。
 全同型、合成、基底変更と両立する。
 \end{proof}
 
+\begin{proposition}[有限窓の積による行列式構成の内在的表示]
+\label{prop:qa-avatar-intrinsic-incidence}
+定理~\ref{thm:qa-avatar-nilpotent-incidence}と
+系~\ref{cor:qa-avatar-mass-crossing-incidence}の射影束および
+行列式の閉部分は有限窓 $A$ の積から直接構成できる。
+特に切断係数の消滅閉層と可逆minorを用いた開部分は、
+矢の枠と関係の持ち上げの変更を保つ。
+\end{proposition}
+\begin{proof}
+$A_{ab}$ を $a$ から $b$ への成分と書く。
+$B=\PP(A_{23})$ 上の普遍商 $m:A_{23}\to F$ とその核を取る。
+射影束に使う二次元束は
+\[
+ \mathcal E=
+ \operatorname{coker}\bigl(
+ A_{12}\otimes\ker m\longrightarrow A_{13}\otimes\OO_B
+ \bigr)
+\]
+である。短関係の表示を選んで $A_{13}$ の道を展開すると、
+$\ker m$ を含む積で割った結果は、中央矢を $F$ で捩った束と
+対角矢の直和を、普遍評価した短関係で割ったものとなる。
+これは定理~\ref{thm:qa-avatar-nilpotent-incidence}の
+$\mathcal E$ と一致する。ここで $\ker m$ は部分線束なので、
+この計算は任意基底変更を保つ。
+
+$Y=\PP_B(\mathcal E)$ 上で商線束を $H$ とすると、
+後ろの三頂点には
+$K_1=\OO_Y$、$K_2=HF^{-1}$、$K_3=H$ を置く
+普遍表現がある。その評価を
+$\operatorname{ev}_{jk}:A_{jk}\to K_kK_j^{-1}$ と書く。
+$Y$ 上で次の有限表示加群 $C$ を取る。
+生成項は $\bigoplus_{j=1}^3 A_{0j}\otimes K_j^{-1}$ である。
+$a\in A_{0j}$、$b\in A_{jk}$、$\beta\in K_k^{-1}$ に対し、
+第 $k$ 項の $(ba)\otimes\beta$ と
+第 $j$ 項の $a\otimes(\operatorname{ev}_{jk}(b)\beta)$ の差を
+関係とする（$1\leq j<k\leq3$）。
+この表示は結合的な積だけで定まり、余核の構成なので基底変更を保つ。
+
+任意の加群 $N$ に対して、$C\to N$ の写像は、
+後ろ三頂点の普遍表現を $N$ で捩り、頂点零からの写像を
+付け加える全ての積整合的な評価と一対一に対応する。
+有限道で表示した場合、この普遍性を矢の評価で書くと、
+未定なのは最初の鉛筆と $0\to2$ の対角矢の評価だけである。
+最初の鉛筆の像と対角矢の像を指定すれば、
+合成道の像は決まり、残る条件は前半の短関係と二つの長関係である。
+従って一般の $N$ に対する同じ普遍性により
+$C\simeq\operatorname{coker}M$ となる。
+この照合では $N$ を可逆層に制限していない。
+
+階数が二以上の開では、$C$ の零次Fitting idealが
+$\det M$ を生成元とする。
+その零点上で $C$ 自身が普遍一次元商であり、
+$A_{01}\to C$ の全射条件を課したものが
+定理の階数一表現スキームである。
+階数の悪い点と全射性の悪い点はこの表示で内在的に定まり、
+元の基底への固有な像から得る開も同じである。
+切断が構造層上恒等的に零となる条件は、この零次Fitting idealが
+射影束上で零となる条件である。
+従って全ての同型と基底変更を保ち、局所な行列表示の選択を除ける。
+\end{proof}
+
 \begin{theorem}[指定十二矢表示からの体上の幾何復元]
 \label{thm:qa-avatar-presented-field-dictionary}
 標数零の代数閉体上で、指定AS最小解消を持つ
