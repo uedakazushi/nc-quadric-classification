@@ -2632,3 +2632,5 @@ latexmk
 **表示標準形の貼合せ。** `cor:qa-fixed-fiber-sheaf-descent` は、局所標準形schemeを表示同型類のfppf層の開部分として同定した。基準表示や左逆を変えた三重重なりの遷移は同一の層を表現することから一致する。可換慣性の移送は代表同型に依存せず、表示fiberから同型類の代数空間への射を帯付きgerbeとして得た。
 
 **標準形の貼合せを含む401頁保存版 eefdcc8。** 二つの `git archive eefdcc8` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436929 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全401頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `841014bcb42b79046189ab8214b5f1f06fa234b4473e5e38bc3e6f814c779c6e`、SyncTeX `dd950a2b6004d15c8bf5a75748b1fb557e819ee67b53dfabbb6fb2626341875e`、抽出テキスト `2d31beb677f1035060ee695e75bce8c7e324a732d815c960648880cde7a5c319`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**特異基底の有界連接Morita同値の再監査。** `cor:qa-avatar-relative-bounded-coherent-morita` の逆向きを、短い対角表示を暗に用いない四頂点の正規化bar解消に置き換えた。非平坦な有限加群とのtensorが完全性を保つ理由を片側分裂で示し、各項を有限基底加群と頂点射影のtensorとして表示した。局所化後の零次性はrowの成分平坦性から従う。Noetherian部分の有界導来圏との同定はStacks Project Lemma 13.17.4の仮定を左右で確認した。

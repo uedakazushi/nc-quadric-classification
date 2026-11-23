@@ -1029,3 +1029,5 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 **体上の指定表示に関する依存更新。** ここまでの「定理15.3の逆向き分類を入力とする」という記録は旧版の範囲である。現行Cの `thm:qa-avatar-presented-field-dictionary` では、指定最小解消を持つ十二矢Jacobian展開に限り、全mass配置の有限階数、四連続窓からの全次数復元、曲線型・古典型と幾何同型の比較を本文の証明から得る。今後の原典照合は来歴、正確な適用範囲および新規性の確認に残る。旧PDFの原文を入手して照合したという意味ではない。
 
 **固定周期代数上の表示ファイバーの降下。** Stacks Project [Tag 04SK, Lemma 80.11.1](https://stacks.math.columbia.edu/tag/04SK) の本文を確認した。基底schemeのfppf被覆に引き戻した層が代数空間なら、元の層も代数空間となる。Cでは最初に表示同型類のfppf層を定義し、基準QP表示を持つ基底上で標準形のscheme開がその層を覆うことを証明してからこの補題を適用する。可換慣性の帯の貼合せは、同型を選び直した場合の内部共役が恒等であることから本文で確認した。
+
+**特異基底での有界連接導来圏。** Stacks Project [Tag 0FCL, Lemma 13.17.4](https://stacks.math.columbia.edu/tag/0FCL) の一次本文を照合した。必要な仮定はSerre部分圏と、そこに属する対象への任意の全射が同じ部分圏の部分対象からの全射に縮められることである。論文Cでは有向和とNoether性からこの条件を両辺で確認し、有界上の同値を標準切断で有界部分に制限する。
