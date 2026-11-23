@@ -2694,3 +2694,5 @@ latexmk
 **古典閉層の係数監査を含む408頁保存版 6eac37e。** 二つの `git archive 6eac37e` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440633 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全408頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `4b10a44f81ed5ba525cf05c7607593c5058808d840f4b3a8e7985256eb4e8db1`、SyncTeX `4abf5276025ef77ad6c3ce14bedb17644ec244d49f5a4a6cdf7be2bb3b95773a`、抽出テキスト `c97d46b90939923aebe62d8569bf1b89f25d13a842f051f1ffb0dbc7c988edfc`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **古典型に見える一次変形の平坦性監査。** `cor:qa-avatar-incidence-classical-tor` で、古典fiberの階数一表現の相対Torを行列式idealの剰余体へのtensorから直接計算した。双対数上で一次切断が非零なら、特殊fiber上のすべての点でTorが非零になる。切断の零点だけでなく、曲面全体で平坦性が破れることを確認した。
+
+**古典点のTor監査を含む409頁保存版 efe5739。** 二つの `git archive efe5739` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440869 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `e0bf83efddf39b73e0e9ed81daa7a7bee8f590d0f92dd80741f9f25e3d9b4492`、SyncTeX `b04a022151ff39eca7b2cf9e12e0bb1a9acd3d2abeebf509a4ebe8ec443f845f`、抽出テキスト `f197151c2716db8be7fa0a64d95f836ec46ea131b4e98b71028557c6198cc133`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
