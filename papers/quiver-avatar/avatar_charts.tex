@@ -678,6 +678,44 @@ $\mu$ が可逆な場合は同じく $u,v$ の対を取り除き、
 命題~\ref{prop:qa-q12-semifree-ginzburg-morita}をそのまま適用できる。
 \end{proof}
 
+\begin{corollary}[捩れ付き窓の ordinary Jacobian 完成]
+\label{cor:qa-avatar-twisted-ordinary-jacobian}
+捩れ付き有限窓 $A=\operatorname{End}_{\to}(P,F,H,HF)$ の
+局所二mass表示を $(Q_{12},\mathcal W)$ とする。
+戻り矢を preprojective 次数一とする次数付けで、
+全 tensor 次数について積を保つ同型
+\[
+ \operatorname{Jac}(Q_{12},\mathcal W)
+     \simeq H^0\Pi_3(A)
+     \simeq T_A\bigl(\operatorname{Ext}^2_{A^e}(A,A^e)\bigr)
+\]
+がある。右辺はこの有限窓に内在的である。
+この比較は非平坦なものを含む任意基底変更と可換し、
+二つの mass が同時に零になる部分にも適用される。
+可縮対を除いた表示でも、残った矢の preprojective 次数を
+用いれば同じ次数付き代数を得る。
+\end{corollary}
+\begin{proof}
+系~\ref{cor:qa-twisted-avatar-two-mass}で
+式~\eqref{eq:qa-two-mass-six-relations}の条件を確かめたので、
+定理~\ref{thm:qa-two-mass-jacobian-preprojective}を $A$ に適用する。
+この適用は有限窓の両側解消の双対から得られるもので、
+前系の導来Morita 同値に零次コホモロジーを施す推論を必要としない。
+二番目の同型は、長さ二の両側解消を双対化して $[2]$ で移した
+非正複体で $\Theta_A$ を表し、
+各 tensor 冪の零次を取れば得られる。
+その零次は各因子の零次の通常の tensor 積であり、
+同定は連結積を保つ。
+零次と基底変更の交換には
+補題~\ref{lem:qa-q12-hzero-nonflat-base-change}を使う。
+可縮対の消去では、座標変更の $x,u$ の補正は有限矢からなり、
+$y,v$ の補正は戻り矢を一つ含むので、
+preprojective 次数を保つ。
+従って可縮対を殺す Jacobian 商も次数付きである。
+ここでの零次比較は、完成の負コホモロジーの消滅や
+全次数成分の平坦性を与えるものではない。
+\end{proof}
+
 \begin{remark}[矢数の名称と体上の辞書]
 幾何的な開埋め込みと表の分解は、上の証明の通り
 射影束の分裂型、Picard 類および垂直成分条件から従う。
