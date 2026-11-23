@@ -340,7 +340,7 @@ $$
 
 Brauer・period/index・四重torsorの不一致、節点での可逆化障害、cubic GITの慣性・粗分岐はP4の参照先に保持する。証明の収録、今回の独立読取り、計算実行、組版、保存の実施状態は [研究ノートの検証範囲](notes/research_notes.md#検証範囲と再現手順) を参照する。
 
-## 4. 完全分類の達成条件
+## 4. 論文Aの体上$H_2$完全分類の達成条件（F1–F6）
 
 標数零の代数閉体上の、主原稿 `def:h2` の全対象を分類する。最終成果は、具体的な代数的・幾何学的データP、明示的なadmissibility、データ上の同値関係を与え、
 
@@ -364,7 +364,7 @@ F1–F6が揃うまでは「完全分類」と報告しない。条件付きの�
 
 自己同値群・groupoid・相対モジュライを主張する場合は、それに対応する全忠実性、自然同型、降下・底変更・代数性を別途証明する。次数スカラー等の核を調べずに反Serre環のgraded自己同型群とpointed自己同値群を同一視しない。GIT商のorbit closure・S-equivalenceがpointed exact同値と一致するかも別途確認する。これらは重要な後続目標だが、対象のpointed exact同値類の完全分類と混同しない。全ambientや全平方根の個別分類を不必要な終了条件にしない。
 
-## 5. 現在の結論と後続の研究目標
+## 5. 現在の結論と全相対stack研究に必要な入力
 
 全H2の対象同値類は二領域の非交和として分類した。cubic側はlinearデータと全許容四つ組であり、R0⊗V3+V0⊗R1を二周期で移した七次元関係Kから、二つのGL4行列のtransporterとその有限反復で同値を判定する。noncubic側は中央二重平方環であり、根対の配置が完全不変量である。全ての平方根やambientを列挙する必要はなかった。
 
@@ -382,9 +382,12 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 **最優先：論文CのS1–S5全相対stack分類、並行してS6検証。** 全$H_2$実現可能開のQP/foundation/Serre/heartとruling商は原稿上の部分結果。直ちに最初の具体的一手（全相対AS/Avatar/weighted-QPの定義・coverage・相対perfect条件/Isom）に着手し、そこで解決できない問題は仮定を明示して次の独立な未解決箇所へ進む。
 
-1. **cyclic primitiveの有限Isom自然性を踏まえて高次stack降下を監査する。** `prop:qa-q12-exact-cy-primitive-isom-inertia`でcanonical exact CY classのCasimir出所・Isom自然性・mass/shear慣性の自明性を原稿上証明。相対HH/HC/HC^-複体自身のfppf Čech降下は原稿上証明済みである。次はcanonical CY primitive/classのhomotopy-coherentな群oid sectionへのlift（特に三重以上のcoherence）、ruling交換によるclass比較を監査する。 `thm:qa-q12-cotangent-keller-pseudonatural`でmass/shear/frame・有限関係表示Isomのzigzagと合成を原稿上証明。次はKeller3.7/6.6の非可換Fox双対の全始終点・符号を個別監査し、非cotangentな任意raw QP right-equivalenceがMorita比較を保存するための必要十分条件を調べる。Keller6.8の同値存在だけを2自然性の根拠にしない。$H_2$のperfect heartとruling交換は既存の別結果として保持する。
-2. **左Noetherと双対heartの残余依存。** rank3の反対normal零番のpointing障害、正しいdual square heart内の$Y$、例外可逆層$L$、非先頭$Q_0$、相対AZ2の二重presentation、有限End/HomによるAZ再構成は原稿上証明済み。次は相対SerreのMorita自然性、特異基底の$D(\operatorname{Ind}\mathcal C)$と局所compactの扱い、fppf heart降下と既知の引用仮定を独立監査する。
-3. **C4の実行検証。** 今回最新C主原稿＋42節のソースを全取得し868ラベル・947参照・241引用（bib91キー）と環境・入力先を静的監査。次はrepoを取得できる環境で python3 scripts/check.py papers と python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex を実行し、LuaLaTeX PDF/SyncTeXと目視表示を確認する。Artin–Zhang/OACU、Keller訂正、VdB、Alper等の一次資料とIntroductionの新規性を再確認する。現環境のDNS制約による全checkout不可・組版未実施を正確に記す。
+1. **全相対AS/avatar/weighted-QPの対象・Isomと全族被覆（S1・S2）。** 体上 `thm:qa-as-avatar-bijection` と `thm:qa-as10-global-bijection` を入力にし、`thm:qa-as10-relative-families` の局所自由・perfect仮定が指定全AS族から従うかを判定する。双対数、rank3壁、古典点で全周期AS再構成・base-change・Isom-sheafを検査し、相対perfect性が自動でなければ不足する族を新しいchartで捕捉する。**最初はこの項に着手する。**
+2. **全QP群oid・非cotangent慣性（S3）。** 8/10/12本矢の各重み付きraw right-equivalence、有限foundationへの忘却の核、消去pairの$B\mathbb G_m$、二mass・vertex scalarを全非被約壁で比較する。一般raw QPをASと仮定しない。AS適合の必要十分な相対条件、rigidificationの全fiber、有限代数同型との一致/不一致を証明する。
+3. **全比較図式・$H_2$の内外（S4・S5）。** AS/avatar/QPの全Isomと慣性・相対mutation/rulingの2-cocycleを揃え、$H_2$へのpointing忘却の定義域・像・fiberを内在的に決定する。noncubic/spectralの既証明の境界障害を保持する。全as-tilting・heartの比較が破れる条件を明示する。
+4. **cyclic primitiveの有限Isom自然性を踏まえて高次stack降下を監査する。** `prop:qa-q12-exact-cy-primitive-isom-inertia`でcanonical exact CY classのCasimir出所・Isom自然性・mass/shear慣性の自明性を原稿上証明。相対HH/HC/HC^-複体自身のfppf Čech降下は原稿上証明済みである。次はcanonical CY primitive/classのhomotopy-coherentな群oid sectionへのlift（特に三重以上のcoherence）、ruling交換によるclass比較を監査する。 `thm:qa-q12-cotangent-keller-pseudonatural`でmass/shear/frame・有限関係表示Isomのzigzagと合成を原稿上証明。次はKeller3.7/6.6の非可換Fox双対の全始終点・符号を個別監査し、非cotangentな任意raw QP right-equivalenceがMorita比較を保存するための必要十分条件を調べる。Keller6.8の同値存在だけを2自然性の根拠にしない。$H_2$のperfect heartとruling交換は既存の別結果として保持する。
+5. **左Noetherと双対heartの残余依存。** rank3の反対normal零番のpointing障害、正しいdual square heart内の$Y$、例外可逆層$L$、非先頭$Q_0$、相対AZ2の二重presentation、有限End/HomによるAZ再構成は原稿上証明済み。次は相対SerreのMorita自然性、特異基底の$D(\operatorname{Ind}\mathcal C)$と局所compactの扱い、fppf heart降下と既知の引用仮定を独立監査する。
+6. **C4の実行検証。** 今回最新C主原稿＋42節のソースを全取得し868ラベル・947参照・241引用（bib91キー）と環境・入力先を静的監査。次はrepoを取得できる環境で python3 scripts/check.py papers と python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex を実行し、LuaLaTeX PDF/SyncTeXと目視表示を確認する。Artin–Zhang/OACU、Keller訂正、VdB、Alper等の一次資料とIntroductionの新規性を再確認する。現環境のDNS制約による全checkout不可・組版未実施を正確に記す。
 
 H2外の指定AS/avatar/QP表示stack・別heart・根忘却の必要な比較はS1–S5の最上位研究課題であり、後続扱いで先送りしない。既証明のA/B結果を根拠のない未解決課題に戻さない。
 
