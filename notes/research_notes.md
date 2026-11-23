@@ -2552,3 +2552,5 @@ latexmk
 **冪零massの復元を含む389頁保存版 10ecae0。** 二つの `git archive 10ecae0` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795431240 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全389頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b02911e4f0febb835ec8057feedf765f80c8a2a218090bcb268b57b749f9f0fb`、SyncTeX `33a2eb2346f2b0660889ce6d1c7bef7bf055f45e3d55ba36153f960e12c37e50`、抽出テキスト `743dc9b810697c3e5ab0e464311038640fbbbc6f3c7caa624160fe33057b5677`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一mass消去後の四次係数と低重み検査。** `prop:qa-avatar-one-mass-quartic-space` で、残った二短テンソルを独立に規格化し、四次係数の余核を二つの階数三の商のテンソル積として同定した。この九次元表示を使い、短テンソルが一つまたは二つ退化していても、全位相のHilbert次元が重み七まで指定解消と一致する標本を得た。両標本の始点零の重み八は28・36で、指定値25と異なる。一般九係数に対する高次の階数上界はこの標本検算からは結論していない。
+
+**一massの検査を含む389頁保存版 c05050a。** 二つの `git archive c05050a` 展開で共通TeXツリー、コミット時刻を固定した `SOURCE_DATE_EPOCH`、`FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全389頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `e61ca25622171b3262b65037d7c5ca7d72118419ccece42c809edbb1e450177a`、SyncTeX `163456177fef5908e3c5b82e68fd30196c8fef0dcbcc1b693663a46b6f85ecf5`、抽出テキスト `cb45a36061551d22764d308df820862873be01d767cb50f6faf5ee7c6019e91b`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・更新した厳密階数検算はPASS。
