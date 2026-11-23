@@ -423,6 +423,27 @@ Jacobian 商で固定されることと同値であり、
 関係が零または係数に零因子がある場合も同じ条件を得る。
 \end{proof}
 
+この核の条件は、枠を選んだ基底上ではさらに展開できる。
+$r_{x,d}=q_d+\lambda_d x_d$、
+$r_{y,d}=p_d+\lambda_d y_d$ と書く。
+商に恒等を誘導する代入は
+$x_d\mapsto x_d+u_dr_{x,d}$、
+$y_d\mapsto y_d+v_dr_{y,d}$ という形であり、
+可逆性は $1+\lambda_d u_d$ と $1+\lambda_d v_d$ が
+単元であることに等しい。
+$u_d,v_d$ の不定性は、対応する関係を消す annihilator である。
+$q_d,p_d$ は重み一の道で作られるので代入で固定される。
+従ってポテンシャルの差は、巡回商で
+\[
+  [\phi(W)-W]_{\rm cyc}
+   =\sum_d (u_d+v_d+\lambda_du_dv_d)
+                     [r_{y,d}r_{x,d}]_{\rm cyc}
+\]
+となる。右辺が零であることが残る安定化条件である。
+二つの対角がある場合、四段道部分では二つの寄与を足して
+判定する。パラメータの代表を変えても同じ代入を表し、
+右辺も変わらない。
+
 \begin{corollary}[可逆な一組のみの消去]
 \label{cor:qa-qp-single-mass-elimination}
 十二矢空間の$\lambda_1$可逆開のraw商は、
