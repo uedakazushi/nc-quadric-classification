@@ -1367,6 +1367,64 @@ $H^0(B,\OO_B(2))$ の制限を加える。
 上のスカラー自己同型で一致させられる。
 \end{proof}
 
+\begin{theorem}[重複負断面の十二矢JacobianのOre表示]
+\label{thm:qa-avatar-double-negative-ore}
+代数閉体上の重複負断面 $D=2S+T_4$ の窓を考える。
+適切な局所枠でその通常のJacobianの全整数展開は、
+重み $(1,1,2)$ の斉次 Ore 代数
+\[
+ k[x,y][z;\delta],\qquad
+ \delta(x)=-\tfrac14\partial_y K,quad
+ \delta(y)=\tfrac14\partial_x K
+\]
+の全整数展開である。ここで $K$ は前系で回復した四次形式の
+非零スカラー倍として取れる。
+この代数は大域次元三、Gorenstein parameter 四の
+AS正則代数である。
+\end{theorem}
+\begin{proof}
+$K$ を各単項式のすべての順列に平均して非可換四文字の式に持ち上げ、
+四つの開始点を足して $1/4$ を掛けた巡回式を $H_K$ とする。
+有限関係を与える十二矢 potential として
+\[
+ \mathcal W=
+ \sum_{i\in\mathbb Z/4}z_{i+2}
+            (x_{i+1}y_i-y_{i+1}x_i)+H_K
+\]
+を考える。$z$ による微分は全開始点で $xy=yx$ を課す。
+その関係を法とすると、$x$ または $y$ の矢による
+$H_K$ の微分は、対応する開始点の
+$\partial_x K/4$ または $\partial_y K/4$ である。
+実際、固定した矢を切る各文字位置に、開始点の和のうち
+一つだけが寄与し、残る文字は交換できる。
+従って残りの巡回微分は $zx-xz=\delta(x)$、
+$zy-yz=\delta(y)$ を全開始点で課す。
+これらはちょうど微分型 Ore 拡大の関係であり、
+標準単項式 $x^a y^b z^c$ は始点を指定すれば全成分の基底となる。
+
+有限窓の短関係は隣接交換であり、長関係の対角部分は
+恒等のグラフをなす。その三次補正の余核の四次形式は
+$x\delta(y)-y\delta(x)=K$ である。
+これは四次の Euler 恒等式による。
+従って前系の四次形式に $K$ を合わせると、
+三次補正の余核による同型判定から有限窓が同型となる。
+この判定は $G=\mathrm{id}$ では前命題の変更写像を用いる。
+両有限窓の両側対角から取る零次Serre完成は同型なので、
+系~\ref{cor:qa-avatar-twisted-ordinary-jacobian}により
+このJacobianは元の幾何avatarの通常のJacobianを全次数で与える。
+
+Ore 拡大定理 \cite[Theorem 3.3]{LWW2014} により、
+二変数多項式環の斉次微分型拡大は twisted Calabi--Yau 次元三である。
+連結次数付きの場合の AS--Gorenstein 条件は、
+両側対角双対を自明加群に適用して従う。
+大域次元の上界三は Ore 拡大の大域次元上界から、
+下界三は自明加群の第三 Ext の非零性から従う。
+PBW 基底による Hilbert 級数は
+$((1-t)^2(1-t^2))^{-1}$ で有限成長であり、
+双対化した極小解消の Euler 級数の対称性から
+Gorenstein parameter は分母の次数四となる。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
