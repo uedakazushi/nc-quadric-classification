@@ -1016,4 +1016,6 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 
 三資料のPDFは作業環境、対象リポジトリの取得済み履歴、接続済みの研究用Drive二アカウントのファイル名・題名検索では確認できなかった。
 
+**Kellerの準自由二項模型の再照合。** [著者版](https://arxiv.org/pdf/0908.3499) の命題4.2では各逆双対化テンソル冪の擬充満忠実性を構成する。命題6.6・第6.7節では一般可換係数環と二項の自由矢を許す。曲線型avatarでは準自由模型から窓への射が同じ四頂点上の準同型であるので、比較をテンソル次数・重みごとに適用した。零変形を用い、最小関係を仮定する定理6.10の適用は不要である。[論文Cの対応箇所](../papers/quiver-avatar/avatar_charts.tex)。
+
 **AZ原著の公開経路と適用範囲の再確認。** [出版社の書誌](https://www.sciencedirect.com/science/article/pii/S0001870884710875) と [CiNii](https://cir.nii.ac.jp/crid/1362262945998548480) はともに DOI 10.1006/aima.1994.1087、109巻2号、228–287頁を指す。出版社のPDFとCiNiiが記載する本文APIから原文は取得できず、OpenAlexにも別の全文所蔵先はなかった。Van den Berghの *Noncommutative quadrics* §5.1、式 (5.1) の一次本文を確認した。交互の二つの線束列による古典quadricの再構成は体上のZ代数の適用であり、Cで用いる非可換な零次自己準同型環、Noetherian affine基底、任意底変更の根拠には使わない。一般End-ring版は従来通りOACU刊行版Theorem 7.3で照合し、原著の本文照合は保留する。
