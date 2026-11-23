@@ -847,6 +847,52 @@ cubic有限窓を与える部分であり、像は上記のものとなる。
 同じgerbeと線束の因子を得る。
 \end{proof}
 
+\begin{corollary}[標準pointingの幾何2-fiberとruling数]
+\label{cor:qa-standard-pointing-geometric-fibers}
+$h$を幾何点上の$\HHstack$対象とする。
+squareの零番および三番の幾何2-fiberは二成分を持つ。
+中間二頂点の幾何2-fiberの成分数は、
+$h$の二つのnormal窓のうちcubicであるものの数である。
+各成分は、線形liftを一つ選んだ後、
+$BK_\square\times\prod_{\mathbb Z}B\Gm$と同値である。
+回転型とmutation型では
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}の
+位相対応を用いる。
+\end{corollary}
+\begin{proof}
+一般の基底$S$上で$R_h=S\times_{h,\HHstack}\mathcal X$と置く。
+これは$h$との指定同型を含むruling二重被覆である。
+$\mathcal X_{\mathrm c}$を用いる位相では
+$R_h^{\mathrm c}=R_h\times_{\mathcal X}\mathcal X_{\mathrm c}$を取る。
+相対基底上ではこれは二重被覆の開部分なので
+\'etaleかつ準有限である。
+三番では$R_{\iota_M^{-1}(h)}$を取り、
+中間では$R_h^{\mathrm c}$上の平方窓を
+$\upsilon^{-1}$またはruling交換によって元の窓へ戻す。
+mutationの零番では逆の向きに$\upsilon$を使う。
+
+各場合に、こうして得た窓への射を
+$V\to\mathcal X$とする。
+忘却射の2-fiberは
+\[
+ \bigl(V\times_{\mathcal X}[V_{\rm cross}/G_\square]\bigr)
+       \times\prod_{\mathbb Z}B\Gm
+\]
+である。最初の積は線形liftのgerbeであり、
+後の積は捩れの線束データを保持する。
+実際、標準対象の線束捩れはtensor同値で吸収でき、
+その同型間の比較は線束の積と評価の自然性による。
+このため$h$との指定同型を取った後も
+各線束の自己同型はその積の中に残る。
+ここではrulingを保つ自己同型で二択を再度割らない。
+$h$との指定同型に適合する射だけを取ることが
+2-fiberの定義だからである。
+幾何点上では二重被覆は二点であり、
+cubic開はそのうち条件を満たす点だけを取る。
+線形liftのgerbeは代数閉体上で対象を持つので、
+各点の成分が表示したclassifying stackになる。
+\end{proof}
+
 \begin{theorem}[曲線型幾何avatarの全相対Isom比較]
 \label{thm:qa-flat-curve-avatar-cross-equivalence}
 $\mathcal X=[V_{\rm cross}/(G_\square/K_\square)]$のうち
