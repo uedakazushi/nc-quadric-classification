@@ -1505,6 +1505,66 @@ $q_2=xx+yy$ なら $28$、$q_2=xx$ なら $36$ となる。
 全次数比較は定理~\ref{thm:qa-two-mass-jacobian-preprojective}による。
 \end{proof}
 
+\begin{theorem}[全mass配置での全次数平坦性と逆mutation]
+\label{thm:qa-avatar-all-mass-fiberwise-flat}
+局所Noetherianな標数零の基底上で、通常のJacobianの
+全幾何fiberが指定AS最小解消を持つ十二矢potentialを取る。
+このとき非完備Ginzburg dg代数は零次に集中し、
+Jacobianの全成分は局所自由である。
+これは任意基底変更と両立する。
+一mass以上が可逆な二開では、それぞれ対応する
+cubic/AS10族から相対逆mutationによりsquare族を回復できる。
+\end{theorem}
+\begin{proof}
+指定AS表示の相対有限窓の認識により、全基底で
+式~\eqref{eq:qa-two-mass-six-relations}の開条件が成立する。
+幾何fiberで両massが零なら、
+定理~\ref{thm:qa-avatar-nilpotent-mass-reverse}の体上の場合に
+よりGinzburgの零次集中を得る。
+
+一つ以上が可逆な幾何fiberでは、平方完成による消去後の
+指定AS型はcubicか最小十本矢型である。
+偶数側には逆順の反対代数を用い、奇数側の型に移す。
+定理~\ref{thm:qa-as10-global-bijection}と
+定理~\ref{thm:qa-as-avatar-bijection}により、
+その全整数代数は曲線型square avatarまたは古典squareから
+指定mutationで得られる。曲線型の場合の有限窓と全次数代数は
+系~\ref{cor:qa-avatar-odd-as-jacobian}、
+\ref{cor:qa-avatar-even-as-jacobian}で比較した。
+従って有限窓はそこで構成した曲線型の窓と同型で、
+Ginzburgは系~\ref{cor:qa-avatar-ginzburg-formal}により零次に集中する。
+
+古典squareの場合、相対化を要しない体上の標準四項窓を
+$\PP^1\times\PP^1$ 上でmutationする。
+得られる窓は線束を共通に捩って
+$(\OO,F,FG,F^2G)$ と書ける。$F=\OO(1,0),G=\OO(0,1)$ とすると、
+任意の二項間の差に $(2n,2n)$ を加えたとき、$n\ge1$ では
+両次数が非負で、$n=0$ でも強例外窓の高次Homは零である。
+従って反Serre軌道の全高次Homは消え、
+逆双対化複体を二つずらしたものの全テンソル冪は零次に集中する。
+二項準自由模型の比較
+（命題~\ref{prop:qa-q12-semifree-ginzburg-morita}および
+系~\ref{cor:qa-avatar-preprojective-formal}の模型の計算）により
+Ginzburgも零次に集中する。
+いずれの幾何モデルについても、定理~
+\ref{thm:qa-two-mass-all-finite-foundation-gerbe}が
+有限窓同型を右同値へ持ち上げ、
+命題~\ref{prop:qa-ginzburg-right-equivalence-double-derivations}が
+その右同値を重み付きdg同型にするので、元の表示にも同じ消滅が成立する。
+
+ここまでの消滅は全幾何fiberで成り立つ。
+定理~\ref{thm:qa-avatar-nilpotent-mass-reverse}と同じく、
+各内部重みのGinzburg複体は有界有限局所自由なので、
+局所的に可縮な二項を消去して、零次の有限自由束を得る。
+これにより基底上の全次数局所自由性、零次集中と
+任意基底変更の両立が従う。
+最後に可逆massの開では反対代数の標識変更も含めて
+定義~\ref{def:qa-relative-as-flat-stack}のcubic/AS10混合族となる。
+定理~\ref{thm:qa-as10-relative-families}の相対逆mutationを
+適用すれば、任意基底変更と全頂点固定同型と両立する
+square族を得る。
+\end{proof}
+
 \subsection{直積型 collection と全 square avatar}
 
 $\mathcal A_{\mathrm{sq}}^{\times}$ を、順序付きの二つの ruling を持つ

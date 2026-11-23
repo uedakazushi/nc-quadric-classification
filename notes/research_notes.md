@@ -2558,3 +2558,5 @@ latexmk
 **一massの退化を全係数で排除。** `thm:qa-avatar-one-mass-forces-short-rank` は階数一の短線を保つ上三角作用と、階数二の短線を保つ行列共役を用い、標本を通る一変数直線と群作用から九係数空間への支配性を微分階数九で検証した。その直線上の有理関数体で始点零の重み八を計算すると28または36で、指定解消の25に反する。minorの消滅で全ての特殊化を排除した。短・長関係の既存の最大階数判定と合わせ、全mass配置で相対有限窓の開条件が指定ASの幾何fiberだけから従う。全相対幾何avatarの逆復元は別途監査する。
 
 **一massの全係数排除を含む390頁保存版 ebe231e。** 二つの `git archive ebe231e` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795431977 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全390頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `33583d94f12b2a35bdfc4828ea6205be60d2d0bb779ba4f198d2f1a625c50b34`、SyncTeX `5de6867d436753812217cd53f027e8badedaf826eee19d8fd684d8f107e0215a`、抽出テキスト `7272da73f51d169a9cd8d9b7c4f0821bfa45f8d59fbb85470ad663152218ef02`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**全mass配置の相対次数平坦性と逆mutation。** `thm:qa-avatar-all-mass-fiberwise-flat` では、非零massの幾何fiberを相対化に先立ち体上のcubic/AS10逆mutationでsquareに戻した。曲線型のGinzburg零次集中と、古典squareの `(O,F,FG,F²G)` の反Serre軌道のKünneth消滅を別に検証した。有限窓同型は右同値へ持ち上がるので元のGinzburgでも消滅する。各重みの有限自由複体を分裂し、全mass配置のJacobianの局所自由性を得た。一mass以上が可逆な開では、これにより相対逆mutationを適用でき、全整数頂点固定同型と基底変更を保つsquare族を回復する。
