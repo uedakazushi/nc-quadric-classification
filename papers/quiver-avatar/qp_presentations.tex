@@ -388,6 +388,36 @@ $s_1=t_1=0$、$a_1b_1=1$となる。
 この切片は局所的に全対象を覆う。
 \end{proof}
 
+\begin{remark}[二つの可逆mass chartの遷移]
+\label{rem:qa-mass-chart-transition}
+順序付きの二組の可逆mass chartの共通部分では、
+各組を分離してからその係数を一にした共通切片
+\[
+ H_{\mathrm{red}}+yx+vu,\qquad
+ H_{\mathrm{red}}=H-\lambda^{-1}pq-\mu^{-1}p'q'
+\]
+を使える。
+先に$\lambda$を消すchartの座標を
+$(H_{\mathrm{red}},L_{\mathrm{even}},L_{\mathrm{odd}})$、
+先に$\mu$を消すchartの座標を
+$(H_{\mathrm{red}},L_{\mathrm{odd}},L_{\mathrm{even}})$と書けば、
+遷移は二本の線束を並べ替える。
+ここで各線束は、対応する分離対の前向き矢を表し、
+後向き矢は単位係数の積によってその双対となる。
+これは箙の頂点を移動する操作を要しない。
+
+実際、共通切片間の全右同値を
+命題~\ref{prop:qa-raw-qp-isom-equations}で比較すると、
+両組で二段道の付加は零、二矢のスカラーの積は一となる。
+従って射は八矢の右同値と、各対の前向き矢の独立な
+二つのスカラーで尽くされる。
+各正規化は相手の組の矢を固定し、四次項から自分の補正項を
+引くだけなので、二つの順序は同じ共通切片と同じ射を与える。
+従って遷移と逆遷移の合成は恒等であり、線束の降下も整合する。
+一方だけが可逆なchartでは、残る組の係数には何も割らない。
+従って消去と全右同値の比較は、残るmassが冪零である底にも適用できる。
+\end{remark}
+
 \begin{corollary}[raw安定化群の非平坦な例]
 \label{cor:qa-raw-nilpotent-nonflat-stabilizer}
 $R=k[\epsilon]/(\epsilon^2)$上の十矢で
