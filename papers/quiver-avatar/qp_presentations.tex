@@ -1345,6 +1345,60 @@ $N\times B G$ と表示する。ここで $G$ は残存対のmass群と
 比較全体も基底変更と整合する。
 \end{proof}
 
+\begin{proposition}[potentialの単元倍とraw Ginzburgのループ類]
+\label{prop:qa-raw-scalar-loop-class}
+重み付き八・十・十二矢のpotential $W$ と単元 $u$ に対し、
+$\Gamma(W)\to\Gamma(uW)$ には通常のJacobian上で恒等となる
+dg同型がある。この同型はraw Ginzburgのループから得る
+exact negative cyclic類を $u^{-1}$ 倍する。
+特に二つのループ類は、同じJacobianへの標準射が準同型となる
+指定AS適合族で、$u=1$ の場合に限り固定Jacobian上で一致する。
+\end{proposition}
+\begin{proof}
+元の矢を固定し、逆矢と次数 $-2$ のループをすべて
+$u^{-1}$ 倍する。逆矢の微分は $W$ に線形で、
+ループの微分は矢と逆矢の交換子和だから、
+これは微分と交換する道代数同型である。
+
+ループ類の鎖模型を確認する。頂点環 $D_0$ に相対的な
+正規化Hochschild mixed complexから、自由道代数の
+二項対角解消による模型への射を使う。
+Hochschild長さ零では巡回端点成分への射影、
+長さ一では $g_0[g_1]\mapsto g_0\,\mathrm d g_1$、
+長さ二以上では零とする。ここで $\mathrm d$ は普遍導分で、
+一形式を巡回商に取る。
+二項模型のHochschild境界は一形式からの交換子であり、
+Connes作用は長さ零から一への普遍導分である。
+Leibniz則により長さ二のHochschild境界は写すと零になり、
+正規化したConnes作用とも可換である。
+内部微分との可換性は、二項模型の内部微分が
+道の切断で与えられることによる。
+内部微分を除けばこの射は自由道の二項対角解消への比較なので
+Hochschild準同型である。各重みでは内部次数が有限範囲に
+あるため、内部次数による有限濾過から微分込みでも準同型となる。
+従ってこのmixed模型で巡回類とそのConnes像を計算できる。
+
+この模型の長さ零で $\sum_i t_i$ は巡回cycleである。
+実際その内部微分は交換子和で、頂点を合計した巡回商では零になる。
+従ってそのConnes像がexact negative cyclic類を定め、
+Hochschild像は $\sum_i\mathrm d t_i$ である。
+この像は重み四・homological次数三であり、
+ループの一形式は自由道の一形式の巡回商で独立である。
+一方、同じ重みのhomological次数四の鎖はない。
+実際、逆矢の重みは少なくとも二、ループの重みは四であり、
+一形式はhomological次数を一つだけ増やす。
+従ってループの一形式の非零な係数は境界にならない。
+この議論は冪零係数についても成り立つ。
+
+上のdg同型は $\sum_i t_i$ を $u^{-1}\sum_i t_i$ へ送る。
+従ってConnes像もその倍になり、Hochschild像により
+二類の差が零となるのは $u=1$ の場合に限る。
+二つの標準Jacobian射が準同型なら、両者は同じ
+Jacobianのmixed complexへこの比較を移す。
+ここで使う類はraw模型のループ類である。
+有限foundationのCasimir類との同定はこの計算の入力ではない。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。
