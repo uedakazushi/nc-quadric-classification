@@ -2,19 +2,17 @@
 \section{反標準 avatar の族と二つの十本矢 chart}
 \label{sec:qa-avatar-charts}
 
-本節では幾何的な族と指定AS表示の比較を構成する。
-体上の逆復元は定理~\ref{thm:qa-avatar-presented-field-dictionary}にまとめる。
-十二矢型と統一avatarの来歴は
-\cite[定義15.2・定理15.3]{Q12Avatar2026}を参照する。
-族上の再埋め込みは補題~\ref{lem:qa-core-curve-vanishing}、
-\ref{lem:qa-core-two-pencils}と定理~\ref{thm:qa-core-avatar-square-rotated}
-に基づく。再埋め込み操作の来歴は\cite[第4--5節]{Q12Weyl2026}、
-研究内での整理は\cite[第7.11--7.12項・第9節・第13.3項]{Synthesis2026}
-を参照する。
+本節では、幾何的な族と指定AS表示を有限有向窓
+$(P,F,H,HF)$ によって比較する。
+補題~\ref{lem:qa-support}と補題~\ref{lem:qa-vanishing}で
+非被約因子を含む消滅を示し、命題~\ref{prop:qa-pushforward}で
+相対的な再埋め込みを構成する。
+体上の逆復元と四層の分類は、定理~
+\ref{thm:qa-avatar-presented-field-dictionary}と
+系~\ref{cor:qa-avatar-four-stratum-dictionary}で証明する。
 
 \paragraph{AS 側の辞書の対象.}
-対象を $A_Q^{\mathrm{pres}}$ と書く
-（記号の来歴は\cite[第15.1項]{Q12Avatar2026}）。
+対象を $A_Q^{\mathrm{pres}}$ と書く。
 すなわち、局所有限な連結 positively directed $\mathbb Z$-代数で、
 大域次元三、Gorenstein parameter 四の AS 正則性を満たし、
 \eqref{eq:qa-universal-potential} の十二本矢 potential
@@ -38,8 +36,9 @@ $\Ext_A^q(\mathsf S_i,\mathsf P_j)=0$ for $(q,j)\ne(3,i-4)$、
 $\Ext_A^3(\mathsf S_i,\mathsf P_{i-4})\simeq\kk$ である。
 分解の Euler 特性だけを課す条件ではない。
 Noether性は幾何復元後の完成に対して証明する。
-potential 表示、trivial pair の係数、周期同型、分解の基底は選択データにしない
-\cite[定義2.1・第15.1項]{Q12Avatar2026}\cite[定義48.1]{AvatarVSeven2026}。
+potential 表示、trivial pair の係数、周期同型、分解の基底は選択データにしない。
+独立な奇数対角十本矢型の定義は
+定義~\ref{def:qa-as10-minimal}を参照する。
 この整数頂点固定の同型は、四頂点 graded 代数の同型を射とした
 $\mathfrak M_r^{\mathrm{alg}}$ と同じ相対同型層であるとは仮定しない。
 本節の幾何的 stack の同型との比較も、体上の同型類辞書と区別する。
@@ -269,7 +268,6 @@ $q:D\to T$ について、各幾何 fiber で $h^0(\OO_D)=1$ であるから、
 従って構成と合成同型は fppf 降下し、射と基底変換に整合する。
 \end{proof}
 
-この定理は\cite[定理5.4]{Q12Weyl2026}の操作である。
 ここで証明したのは幾何的 avatar の stack 上の並進であり、
 無限二面体群のすべての関係を stack 上へ持ち上げる主張ではない。
 
@@ -4793,6 +4791,64 @@ $V(J)$ では古典曲面窓を得て、かつmassが構造層上零であるか
 これらの分岐は二massの値から尽くされる。
 \end{proof}
 
+\begin{corollary}[指定AS表示と幾何avatarの四層]
+\label{cor:qa-avatar-four-stratum-dictionary}
+標数零の代数閉体上で、曲線型avatarの同型類と二つの古典型は
+$A_Q^{\mathrm{pres}}$ の整数頂点固定同型類を分類する。
+曲線型からの構成は窓 $\End_{\to}(P,F,H,HF)$ の
+反Serre完成であり、最小化した箙は次の表で与えられる。
+\[
+\begin{array}{c|l|l}
+Y & \text{曲線型の条件} & \text{最小箙} \\ \hline
+\Sigma_0 & P\not\simeq F^2H^{-1} & \text{八矢} \\
+\Sigma_0 & P\simeq F^2H^{-1} & \text{偶数対角の十矢} \\
+\Sigma_2 & D\cap S=\varnothing & \text{奇数対角の十矢} \\
+\Sigma_2 & S\le D & \text{十二矢}
+\end{array}
+\]
+古典型は $\Sigma_0$ の標準窓に対応する八矢型と、
+分裂 $\Sigma_2$ の標準窓に対応する十二矢型である。
+\end{corollary}
+\begin{proof}
+まず曲線型から捩れ付き窓を取る。系~
+\ref{cor:qa-twisted-avatar-two-mass}で二mass表示を作り、
+系~\ref{cor:qa-avatar-twisted-ordinary-jacobian}で
+周期Jacobianと有限窓の三次完成の積を同定する。
+少なくとも一massが可逆なら、系~
+\ref{cor:qa-avatar-odd-as-jacobian}と
+\ref{cor:qa-avatar-even-as-jacobian}により、
+この完成は指定cubic型または指定AS10型の展開である。
+両massが零なら、負断面を含む曲線の比較行列が
+非スカラーの半単純型、非半単純型、またはスカラー型となる。
+前二者の指定AS解消は定理~
+\ref{thm:qa-avatar-semisimple-boundary-regular}と
+\ref{thm:qa-avatar-jordan-boundary-regular}で得られ、
+最後は定理~\ref{thm:qa-avatar-double-negative-ore}で得られる。
+従っていずれも指定型に属する。
+
+次に系~\ref{cor:qa-avatar-two-mass-reduction-opens}により、
+後半の短積の行列式が単元なら奇数対角対を消去し、
+前半の短積の行列式が単元なら偶数対角対を消去する。
+残る二次項の係数は零なので、残った対は可縮ではない。
+幾何条件は定理~\ref{thm:qa-open-charts}の四層の表から従う。
+古典 $\Sigma_0$ の標準窓は二つの短積が同型であり、
+古典 $\Sigma_2$ の窓とその正則な展開は例~
+\ref{ex:qa-as12-weighted-stack}で直接計算した。
+$P=\OO_D$ と置いた場合に $D$ の選択が消える理由は、
+命題~\ref{prop:qa-avatar-pencil-window-scroll}の
+制限同型が、共通の曲面上の四線束の Hom と積を回復するからである。
+
+逆に指定AS展開を取ると、定理~
+\ref{thm:qa-avatar-presented-field-dictionary}により
+標識付き窓と幾何avatarを回復する。整数頂点固定の同型は
+指定四連続窓の同型を誘導する。頂点スカラーは幾何標識を
+変えないので、同定される幾何同型類は一意である。
+逆方向には幾何同型が全 Hom と積を保ち、
+有限窓の反Serre完成が全次数の同型を与える。
+可逆massの有無で四層を尽くし、異なる最小矢の配置は
+頂点を保つ同型で一致しない。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
@@ -6089,8 +6145,8 @@ $\coh(\PP^1\times\PP^1)$ になる。
  \mathrm{Cl}_2:\operatorname{coh}(\PP(1,1,2))
 \]
 という二つの古典型を得る。
-元の同型類分類における記述は
-\cite[注意11.3・定理15.3]{Q12Avatar2026}にある。
+この二型は系~\ref{cor:qa-avatar-four-stratum-dictionary}の
+古典型に対応する。
 後者の $\PP(1,1,2)$ は重み付き射影 stack である。
 これは同型類の説明であり、相対 Picard の零切断を二点へ自動的に縮約する
 stack の構成ではない。零切断では $D$ とその自己同型が残るため、
