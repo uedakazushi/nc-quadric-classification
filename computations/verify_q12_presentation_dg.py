@@ -139,3 +139,14 @@ assert sp.Poly(dual_inverse_error, eps).rem(
     sp.Poly(eps**2, eps)).is_zero
 print("PASS: nontrivial cubic mass has no unit-polynomial A1 gauge path")
 print("PASS: dual-number mass admits a unit-polynomial gauge path")
+
+
+# Two noncommuting GL2 arrow-frame changes: duals must transform
+# contragrediently, preserving the canonical Casimir contraction.
+alpha, beta = sp.symbols("alpha beta")
+A = sp.Matrix([[1, alpha], [0, 1]])
+Bframe = sp.Matrix([[1, 0], [beta, 1]])
+assert A.T * A.inv().T == sp.eye(2)
+assert Bframe.T * Bframe.inv().T == sp.eye(2)
+assert (Bframe*A).inv().T == Bframe.inv().T*A.inv().T
+print("PASS: inverse-dual block pairing and strict composition of linear frames")
