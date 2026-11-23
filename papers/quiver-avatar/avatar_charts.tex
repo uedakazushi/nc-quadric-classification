@@ -355,9 +355,50 @@ $P|_C\simeq\OO_C$ なので $h^0(D,HF^{-2}P)=1$ である。
 これですべての場合を得る。閉性は二つの開部分の和の補集合であることによる。
 \end{proof}
 
+\begin{lemma}[射影束の分裂型から有限窓の対角矢を数える]
+\label{lem:qa-avatar-finite-diagonal-count}
+幾何点の avatar と $R\in\Pic^0(D)$ に対し、
+$(R^{-1},F,H,HF)$ の有限有向 End 代数を取る。
+頂点 $0\to2$ と $1\to3$ の最小矢の本数は、それぞれ
+\[
+ h^0(B,\mathcal E_R(-2)),\qquad h^0(B,\mathcal E_{\OO_D}(-2))
+\]
+に等しい。
+頂点 $0\to3$ に新しい最小矢はない。
+\end{lemma}
+\begin{proof}
+$V=H^0(B,\OO_B(1))$ と置く。引戻しで
+$V=H^0(D,F)$ となる。実際、Cartier 制限列と
+相対双対性により $R^1\pi_*\OO_Y(-2h)=\OO_B(-2)$、
+$\pi_*\OO_Y(-2h)=0$ であり、$p_*F$ は
+$\OO_B(1)$ と $\OO_B(-1)$ の拡大である。
+二つの対角の合成は射影公式により
+\[
+ V\otimes H^0(B,\mathcal E_L(-1))
+     \longrightarrow H^0(B,\mathcal E_L),
+ \qquad L=R,\OO_D
+\]
+となる。$B$ 上の鉛筆の評価列
+$0\to\det(V)\otimes\OO_B(-1)\to V\otimes\OO_B
+\to\OO_B(1)\to0$ を $\mathcal E_L(-1)$ で捩る。
+$H^1(B,\mathcal E_L(-1))=0$ なので、
+合成の余核は $\det(V)\otimes H^1(B,\mathcal E_L(-2))$ である。
+$\mathcal E_L$ の分裂型が $(1,1)$ なら両側は零、
+$(0,2)$ なら零次の直和因子が合成の一次元余核を与える。
+一方、$h^0(\mathcal E_L(-2))$ は $(1,1)$ で零、$(0,2)$ で一である。
+最後に $0\to2\to3$ の合成は
+$H^0(\mathcal E_R)\otimes V\to H^0(\mathcal E_R(1))$ である。
+二つの分裂型とも全直和因子が非負次数であり、
+一次形式との乗法は全射である。
+\end{proof}
+
 \begin{remark}[矢数の名称と体上の辞書]
 幾何的な開埋め込みと表の分解は、上の証明の通り
 射影束の分裂型、Picard 類および垂直成分条件から従う。
+補題~\ref{lem:qa-avatar-finite-diagonal-count}を $R=P$ に
+適用すると、表の四行で有限窓の二つの対角の本数は
+順に $(0,0),(1,0),(0,1),(1,1)$ となる。
+この計算は有限窓の乗法に関するものである。
 各層を $8,10,10,12$ 本の最小矢数と対応させる体上の解釈は、
 $A_Q^{\mathrm{pres}}$ を対象とする
 \cite[定理15.3]{Q12Avatar2026}の同型類分類を用いる。
