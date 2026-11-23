@@ -724,9 +724,14 @@ $R=P$ と $R=\OO_D$ に別々に適用すると、表の四行で
 これらは二つの異なる窓における計算である。
 例えば $(P^{-1},F,H,HF)$ の最初の隣接 Hom は
 $H^0(FP)$ で、その積に上の $F$ の鉛筆を直接適用できない。
-各層を $8,10,10,12$ 本の最小矢数と対応させる体上の解釈は、
-$A_Q^{\mathrm{pres}}$ を対象とする
-\cite[定理15.3]{Q12Avatar2026}の同型類分類を用いる。
+各層から作るJacobianの最小矢数は
+系~\ref{cor:qa-avatar-two-mass-reduction-opens}で直接得られる。
+可逆なmass一つにつき二本の矢が消え、残るpotentialには
+二次項がない。従って巡回微分は道長二以上であり、残る矢は
+正次数idealをその平方で割った空間の基底となる。
+対応する最小矢数は順に $8,10,10,12$ である。
+この順方向の計算とは別に、指定表示を持つAS代数全体から
+出発する体上の分類は \cite[定理15.3]{Q12Avatar2026} を入力とする。
 同じ矢数の相対 QP 表示を比較する際の階数条件は、
 上の幾何学的な層の名称からは
 推論せず、各代数表示の積と関係について検証する。
@@ -4422,13 +4427,24 @@ foundation の移動や mutation とともに選ばれる構造対象も変わ�
 \subsection{古典点と最深境界の扱い}
 
 本節の stack は一貫して $P$ が各 fiber で非自明な曲線型を扱った。
-体上の分類では、$P=\OO_D$ とした有限 directed algebra は $D$ の選択に依存せず、
+$P=\OO_D$ とした有限 directed algebra は $D$ の選択に依存しない。
+これは命題~\ref{prop:qa-avatar-zero-picard-collapse}と
+命題~\ref{prop:qa-avatar-pencil-window-scroll}の制限同型による。
+直積型は曲面上の標準tilting窓であり、
+その反Serre級数のtailsは反標準線束の豊富性から
+$\coh(\PP^1\times\PP^1)$ になる。
+分裂 $\Sigma _2$ 型の有限窓は
+系~\ref{cor:qa-avatar-deep-relative-image}の古典窓であり、
+例~\ref{ex:qa-as12-weighted-stack}の全次数計算から
+重み付き多項式環のtailsを持つ。
+従って体上で
 \[
  \mathrm{Cl}_0:\operatorname{coh}(\PP^1\times\PP^1),\qquad
  \mathrm{Cl}_2:\operatorname{coh}(\PP(1,1,2))
 \]
-という二つの古典型に対応する
-\cite[注意11.3・定理15.3]{Q12Avatar2026}。
+という二つの古典型を得る。
+元の同型類分類における記述は
+\cite[注意11.3・定理15.3]{Q12Avatar2026}にある。
 後者の $\PP(1,1,2)$ は重み付き射影 stack である。
 これは同型類の説明であり、相対 Picard の零切断を二点へ自動的に縮約する
 stack の構成ではない。零切断では $D$ とその自己同型が残るため、
@@ -4440,8 +4456,7 @@ stack の構成ではない。零切断では $D$ とその自己同型が残る
 例~\ref{ex:qa-weighted-not-h2}では重み付き古典模型の全標準頂点で，
 例~\ref{ex:qa-hirzebruch-not-h2}では $\coh\Sigma_2$ 自身の全可逆層で，
 反Serre軌道の生成条件が破れることを示した。
-古典十二本矢模型ではこの有限窓の障害を直接計算できる
-（\cite[命題14.1]{Q12Avatar2026} を参照）。
+古典十二本矢模型の有限窓では、隣接する二つの窓の生成条件を次のように直接比較できる。
 例~\ref{ex:qa-as12-weighted-stack}の右加群の規約で、
 頂点 $0,1,2$ の各成分を一次元とし、
 $x_1,y_1$ の作用 $2\to1$ を $(a,b)\ne(0,0)$、
