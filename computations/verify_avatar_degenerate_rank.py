@@ -36,8 +36,8 @@ def cyclic_derivatives(terms):
     return derivatives
 
 
-def quotient_dimension(derivatives, start, weight):
-    words = paths(weight)
+def quotient_dimension(derivatives, start, weight, min_diagonals=0):
+    words = tuple(word for word in paths(weight) if word.count("z") >= min_diagonals)
     columns = {word: index for index, word in enumerate(words)}
     rows = []
     for (relation_start, degree, _arrow), relation in derivatives.items():
@@ -47,7 +47,9 @@ def quotient_dimension(derivatives, start, weight):
             for left, right in product(paths(offset), paths(weight - degree - offset)):
                 row = [0] * len(words)
                 for middle, coefficient in relation.items():
-                    row[columns[left + middle + right]] += coefficient
+                    path = left + middle + right
+                    if path in columns:
+                        row[columns[path]] += coefficient
                 rows.append(row)
     return len(words) - (DomainMatrix.from_Matrix(Matrix(rows)).rank() if rows else 0)
 
@@ -80,6 +82,7 @@ def main():
         assert [row[:5] for row in dimensions] == [[1, 2, 4, 6, 9]] * 4
         assert [row[5] for row in dimensions] == expected_weight_five
         assert [row[6] for row in dimensions] == expected_weight_six
+        assert [quotient_dimension(derivatives, start, 6, min_diagonals=2) for start in range(4)] == [5, 4, 4, 4]
     print("PASS: the quartic perturbation removes the weight-five defect, which reappears at weight six")
 
 

@@ -2508,3 +2508,5 @@ latexmk
 **重み五の対角道と純四次補正。** `prop:qa-avatar-weight-five-diagonals` は重み五の道を対角矢の本数で濾過し、二対角の商を長微分の二つの対角射影からなるブロック行列で表す。直後の例では純四次補正を加えると重み五で見えた余剰次元が消え、全位相で重み五まで指定Hilbert数値と一致する。重み六では最初の位相でなお1次元余る。再現は `python3 computations/verify_avatar_degenerate_rank.py`。有限計算は全次数AS正則性の判定には用いていない。
 
 **重み六の検算を含む382頁保存版 9b037d1。** 二つの `git archive 9b037d1` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795428445 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全382頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `677a5d210b5f8059f72ba03885ab82277af26eb8981959f1f446c125fd4b38c5`、SyncTeX `6c07dd5c8fe186b91376c58df4cd1371314d4b8f0fcb78a7ae17589f638d7c68`、抽出テキスト `eabe74649e04c967ac43e1f3d8863a3a5ce4f4cce4c0f47d681ce7b81a63bcb1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**対角本数濾過の上端。** `cor:qa-avatar-top-diagonal-filtration` では、純四次項の巡回微分が重み三の純隣接項であることから、偶数重みでは上端二段、奇数重みでは上端一段の商が純四次項に依存しないことを証明した。既出の短テンソル退化例では重み六の上端二段の次元が四位相で `5,4,4,4` であり、純四次補正の有無で一致した。この商の次元だけで全成分のHilbert次元を判定することはしていない。
