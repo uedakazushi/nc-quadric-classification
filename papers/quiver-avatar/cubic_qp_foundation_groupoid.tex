@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.56。raw右同値のA1経路と有限dgホモトピーの厳密な差。
+% 2026-11-23 / v4.57。純線形frameのGinzburg dg strict自然性とraw A1障害。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1991,6 +1991,104 @@ $u$上では$1+z\mu s$であり，
 非冪零な場合には$R[z]$の単元とはならない．
 従ってraw右同値群の経路とは異なる
 dg代数ホモトピーである．
+\end{proof}
+
+\begin{proposition}[線形frame変更に関するGinzburg dgのstrict自然性]
+\label{prop:qa-q12-ginzburg-linear-frame-strict-naturality}
+局所有限型$k$-scheme $S$上の二つの十二矢QP表示
+$(Q_{12},\mathcal W)$，$(Q'_{12},\mathcal W')$を取る．
+四頂点の冪等元を保ち，始終点と指定weightに適合する
+全次数零矢束の線形同型を
+$g:V_{\rm QP}\xrightarrow{\sim}V'_{\rm QP}$とし，
+これがpotentialを巡回同値まで輸送する，
+すなわち
+\[
+ \mathcal W'=(T_{D_0}g)(\mathcal W)
+ \quad\text{in } T_{D_0}(V'_{\rm QP})_{\rm cyc}
+ \tag{LF}\label{eq:qa-q12-ginzburg-linear-frame-potential}
+\]
+とする．このとき非完備Ginzburg dg代数には
+\emph{strict}なdg同型
+\[
+ \widetilde g:
+ \Gamma_3(Q_{12},\mathcal W)\xrightarrow{\sim}
+ \Gamma_3(Q'_{12},\mathcal W')
+ \tag{LG}\label{eq:qa-q12-ginzburg-linear-frame-dg}
+\]
+がある．局所枠で各次数零矢を$a$，その逆向き
+cohomological次数$-1$の矢を$a^*$，
+各頂点の次数$-2$ループを$\omega_i$と書けば，
+\[
+ \widetilde g|_{V_{\rm QP}}=g,\qquad
+ \widetilde g|_{V_{\rm QP}^{\vee}}=(g^{-1})^\vee,\qquad
+ \widetilde g(\omega_i)=\omega_i'
+ \tag{LT}\label{eq:qa-q12-ginzburg-linear-dual-weights}
+\]
+で与えられる．全線形frame変更の合成・単位と
+任意の（非平坦なものを含む）基底変更に
+\emph{厳密に}整合する．従って純線形frame変更だけを
+許すQP表示群oid上では，Ginzburg dg模型は
+頂点線束と逆矢の双対weightを保持して貼り合う．
+
+この命題は非線形なmass右同値
+$x\mapsto(1+\lambda t)x+tq$，
+関係lift shear
+$v\mapsto v+\sum_i t_iw_i$，
+あるいは異なるrulingのmutationに対する
+Ginzburg dgのstrict同型の存在を含まない．
+Kellerの局所Morita比較が
+\emph{全raw right-equivalence}に
+$2$自然であることも別途検証する．
+\end{proposition}
+\begin{proof}
+局所枠を選べば$g$は始終点とweightの各blockで
+可逆な行列$A$により与えられる．
+次数零の矢を列$a$として$g(a)=Aa'$と書けば，
+逆向き矢の列には逆転置$A^{-\mathsf t}$を作用させる．
+これはまさに式~\eqref{eq:qa-q12-ginzburg-linear-dual-weights}
+の可逆束の双対輸送である．
+
+Ginzburg dgの微分は
+\[
+ d(a)=0,\qquad
+ d(a^*)=\partial_a\mathcal W,\qquad
+ d(\omega_i)=e_i\sum_{a}[a,a^*]e_i
+\]
+（右辺のcommutatorは本稿の符号・道規約）で
+定められる．線形変数変換のcyclic chain ruleは
+\[
+ \partial_{a'_j}\mathcal W'
+   =\sum_i A_{ji}\,
+      (T_{D_0}g)(\partial_{a_i}\mathcal W)
+\]
+である．従って$A^{-\mathsf t}$で輸送した
+逆向き矢の微分は，
+元の$\partial_a\mathcal W$を$g$で輸送したものに一致する．
+頂点ループの微分に現れる交換子は，
+\[
+ \sum_a\bigl[g(a),(g^{-1})^\vee(a^*)\bigr]
+  =\sum_{a'}[a',a'^*]
+\]
+という評価・coevaluationの標準縮約で不変である．
+ゆえに式~\eqref{eq:qa-q12-ginzburg-linear-frame-dg}
+は微分と積を保つstrict dg同型となる．
+
+二つの線形変換$g,h$について
+$(h\circ g)^{-1\vee}=h^{-1\vee}\circ g^{-1\vee}$
+なので，この構成は逆向き矢上でも
+合成を厳密に保つ．vertexループは固定され，
+全構成は有限局所自由な矢束のtensor・dual・
+Casimir縮約で書かれている．
+従って任意基底変更とも厳密に可換する．
+特に全frameを自明化しない場合も，
+線形frame遷移のtriple overlapでcocycleは閉じる．
+
+一方massゲージや残余長関係lift shearは
+次数零の矢に長さ二以上の道を加えるので，
+単一の線形矢束同型$g$の範囲外である．
+前命題~\ref{prop:qa-q12-raw-mass-a1-path-obstruction}
+の非冪零massでの$\mathbb A^1$障害も，
+このstrict線形比較で消去したとは主張しない．
 \end{proof}
 
 \begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
