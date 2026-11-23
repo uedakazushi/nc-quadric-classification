@@ -1923,6 +1923,61 @@ $z$ の個数での濾過と可換整列代数の解消の持ち上げで
 その他の成分は零である。
 \end{proof}
 
+\begin{corollary}[幾何avatarの非完備Ginzburg dg代数の零次集中]
+\label{cor:qa-avatar-ginzburg-formal}
+全曲線型avatarの局所十二矢表示で、
+非完備 Ginzburg dg 代数から通常のJacobianへの
+標準射は準同型である。
+任意基底変更後にもこの結論は成立する。
+\end{corollary}
+\begin{proof}
+頂点環を $D_0$ とし、Ginzburg dg 代数を $G$、
+通常のJacobianを $J$ と書く。
+重み $w$ の矢に双対な負次数矢の重みは $4-w$、
+負次数ループの重みは四とする。
+まず全整数へ展開し、展開後の同じ記号で議論する。
+自由な次数付き道代数の対角には二項表示
+\[
+ G\otimes_{D_0}V_{\mathrm{dg}}\otimes_{D_0}G
+ \longrightarrow G\otimes_{D_0}G\longrightarrow G
+\]
+がある。ここで $V_{\mathrm{dg}}$ は三種類の生成元の束である。
+左の矢は一文字を左右に置く差である。
+道の長さごとに位置を動かして比較すれば、この列は完全である。
+普遍導分で $d(v)$ の道を切断し、一形式項の dg 微分を定める。
+こうして左二項を全複体にしたものは dg 両側射影模型である。
+実際、内部次数零、$-1$、$-2$ の順に生成元を加えると、
+$dv$ の切断に現れる中間生成元は先に加えたものだけなので、
+有限の準自由濾過を持つ。
+
+この模型の両側を $J$ に引き戻すと、
+$J\otimes_G^{\mathbf L}J\to J$ を計算する。
+次数 $-1$ の生成元の切断は巡回関係の切断となり、
+次数 $-2$ のループの切断は、巡回恒等式の左右の差になる。
+外側に残る負次数矢は $J$ で零になるから、
+得られる増大複体は
+定理~\ref{thm:qa-avatar-relative-cyclic-resolution}の複体である。
+従って積 $J\otimes_G^{\mathbf L}J\to J$ は準同型である。
+
+$K=\operatorname{fib}(G\to J)$ と置くと、
+$J\otimes_G^{\mathbf L}K=0$ である。
+一方、$H^0(G)\simeq J$ であり $G$ は非正次数なので、
+もし $K$ が非零なら、非零コホモロジーを持つ最大次数 $m<0$ がある。
+非正 dg 代数上の導来tensorの最高次数の公式から
+\[
+ H^m(J\otimes_G^{\mathbf L}K)
+       \simeq J\otimes_{H^0(G)}H^m(K)=H^m(K)
+\]
+となり矛盾する。この公式は標準切断三角を使い、
+最高次数だけを残して、heart対象同士の導来tensorの
+零次が $H^0(G)$ 上の通常のtensorであることから従う。
+従って $K=0$ である。
+すべての式は内部重みを保つので、
+端点を四周期で同一視しても準同型を得る。
+任意基底変更後には、同じ道模型と相対巡回解消を用いて
+まったく同じ検査ができる。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
