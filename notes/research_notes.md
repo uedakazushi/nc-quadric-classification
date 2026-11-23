@@ -2572,3 +2572,5 @@ latexmk
 **冪零massの幾何復元を含む392頁保存版 fe8c26c。** 二つの `git archive fe8c26c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795432762 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全392頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `76e9026b3a35d38e5679eeb239df3e820b673f7b37487f96baa240044bdbce10`、SyncTeX `002885132c23fb98a4ac110e17bd80248ba4f7b90dbd69c0e52e5a75f46d6500`、抽出テキスト `fc7ef92e758969ba25b26403aa88d5237ee21a12155dc8246ee39b051be3caee`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **massの型を横切る場合の比較。** `cor:qa-avatar-mass-crossing-incidence` は射影束の固有性により、階数二未満の閉集合と普遍鉛筆の非全射閉集合の像を除き、両mass零の点をすべて含む開へ行列式復元を拡張した。可逆massとの重なりで、曲線型が行列式零式を持たないことを、射影束上の線束の次数と反対rulingの場合の切断数の矛盾から検証した。曲線型開と構造層上の古典閉層で、評価を介した有限窓の比較が合成と基底変更を保つ。
+
+**massの型を横切る比較を含む393頁保存版 52eb767。** 二つの `git archive 52eb767` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795433085 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全393頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `2c095f7ae2339a7b918264e1aa472f0534f9dd609b8717a409ccac15b35877b5`、SyncTeX `ce8c1af8effec5725479478c25212eb4b5c967ebbbfae12503da3697f9c91c87`、抽出テキスト `e853171379d169920e20720b40ad923f69b775c55b8e7dfaae7bb1353349d5c1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
