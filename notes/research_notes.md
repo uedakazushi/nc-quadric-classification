@@ -2506,3 +2506,5 @@ latexmk
 **382頁保存版 8d2fd52 の再現性。** 二つの `git archive 8d2fd52` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795428112 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全382頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `171c36d0dfe1ae8cef913b1509481baa87d98c6dc3334e622aea54327cd7f3f0`、SyncTeX `163288d8cfd0dfadb1186dc98726f993a73f118039c28295a6331aec374bac7e`、抽出テキスト `8a69c4d1d344a24646d993239981f86b4233f56f59924012f38aa123bb628e3d`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。
 
 **重み五の対角道と純四次補正。** `prop:qa-avatar-weight-five-diagonals` は重み五の道を対角矢の本数で濾過し、二対角の商を長微分の二つの対角射影からなるブロック行列で表す。直後の例では純四次補正を加えると重み五で見えた余剰次元が消え、全位相で重み五まで指定Hilbert数値と一致する。重み六では最初の位相でなお1次元余る。再現は `python3 computations/verify_avatar_degenerate_rank.py`。有限計算は全次数AS正則性の判定には用いていない。
+
+**重み六の検算を含む382頁保存版 9b037d1。** 二つの `git archive 9b037d1` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795428445 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全382頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `677a5d210b5f8059f72ba03885ab82277af26eb8981959f1f446c125fd4b38c5`、SyncTeX `6c07dd5c8fe186b91376c58df4cd1371314d4b8f0fcb78a7ae17589f638d7c68`、抽出テキスト `eabe74649e04c967ac43e1f3d8863a3a5ce4f4cce4c0f47d681ce7b81a63bcb1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
