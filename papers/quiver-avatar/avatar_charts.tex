@@ -1565,6 +1565,47 @@ Ginzburgも零次に集中する。
 square族を得る。
 \end{proof}
 
+\begin{corollary}[可逆mass開での相対幾何逆復元]
+\label{cor:qa-avatar-invertible-mass-geometric-reverse}
+定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}の族について、
+一方のmassが可逆な開を取る。
+その開上で、指定位相の逆mutationによるsquare族は
+順序付きの向き付き二次式の相対幾何avatarを定める。
+幾何fiberが曲線型である開では平坦な曲線型avatarを得、
+二次式の一致閉層では古典型曲面avatarを得る。
+二つの二次式の交わりが平坦になる基底変更は、
+この開とこの閉層の非交和を通るものに限られる。
+これらの構成は全頂点固定AS同型と任意基底変更に自然である。
+\end{corollary}
+\begin{proof}
+前定理で得た相対square族に、定理~
+\ref{thm:qa-square-oriented-gram-stack}と
+系~\ref{cor:qa-extended-geometric-avatar-all-types}を適用する。
+向き付き二次式の構成は有限窓の二積とその双対からなるので、
+逆mutationで用いる評価と余評価の任意基底変更と両立する。
+頂点線束を変更したときの線形因子は、
+同系の頂点スカラーの剛体化で幾何側に作用しない。
+
+曲線型開では定理~\ref{thm:qa-flat-curve-avatar-cross-equivalence}
+により、二次式の交わりと四つの射影直線束から標識付き曲線が
+復元される。これを系~\ref{cor:qa-square-chart}で
+捩れ付き窓の曲面へ移せば、奇数側の曲線型avatarとなる。
+偶数側では同じ構成を逆順の反対代数に施し、
+系~\ref{cor:qa-avatar-even-as-jacobian}の標識に戻す。
+順方向に有限窓のSerre完成を取ると、評価と余評価の
+自然な互逆性により元の全整数Jacobianに戻る。
+この逆構成では頂点線束と周期の標識は
+線形窓の側に保持する。
+
+古典型の平坦部分は二次式の一致を構造層上で課す閉層であり、
+標識する二つの射影直線とその積が残る。
+二次式の交わりの平坦化については
+定理~\ref{thm:qa-flat-curve-avatar-cross-equivalence}の
+最後の判定をこの開へ引き戻せばよい。
+したがって幾何fiberだけが古典型である冪零変形も、
+向き付き二次式の情報を保持して比較できる。
+\end{proof}
+
 \subsection{直積型 collection と全 square avatar}
 
 $\mathcal A_{\mathrm{sq}}^{\times}$ を、順序付きの二つの ruling を持つ

@@ -2562,3 +2562,5 @@ latexmk
 **全mass配置の相対次数平坦性と逆mutation。** `thm:qa-avatar-all-mass-fiberwise-flat` では、非零massの幾何fiberを相対化に先立ち体上のcubic/AS10逆mutationでsquareに戻した。曲線型のGinzburg零次集中と、古典squareの `(O,F,FG,F²G)` の反Serre軌道のKünneth消滅を別に検証した。有限窓同型は右同値へ持ち上がるので元のGinzburgでも消滅する。各重みの有限自由複体を分裂し、全mass配置のJacobianの局所自由性を得た。一mass以上が可逆な開では、これにより相対逆mutationを適用でき、全整数頂点固定同型と基底変更を保つsquare族を回復する。
 
 **全mass配置の逆mutationを含む391頁保存版 eed3512。** 二つの `git archive eed3512` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795432241 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全391頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `7c1f647b6331bb18212328fe6be4a5436836405f63e1460c1c26a678ecd45335`、SyncTeX `429a94f9de0ab616a987a56b94e28580aff84bd78a1c8b5b06836c3150498253`、抽出テキスト `1168f4667b9e27f066294d0ca31ddaff0dd8ca9cca42dfe24f941dca1051bc33`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**可逆mass開の相対幾何逆復元。** `cor:qa-avatar-invertible-mass-geometric-reverse` は逆mutationで得たsquare族と向き付き二次式の全相対Isom比較を合成する。曲線型開ではふたつの二次式と標識線束から元の曲線型窓へ戻る。古典型は二次式一致のスキーム閉層で復元し、二次式の交わりの平坦化は曲線型開と一致閉層の非交和で得る。古典fiberだけを持つ冪零変形は向き付き二次式として保持し、周期と頂点線束は線形窓に保持する。
