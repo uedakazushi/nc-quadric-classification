@@ -19,7 +19,7 @@
 | **S1 対象と全被覆** | AS、avatar、8/10/12 QPの各fppf stackの対象・1/2-射・許容開/局所閉条件を内在的に定義し、指定型の全対象/全相対族を覆う。平坦性・perfect性が自動でない場合は補集合も分類する | **原稿上証明済み**。ASと適合QPの全範囲、面型を含む幾何avatarを記述。全ASの有限型Artin表示と重み付きfppf全被覆には反例 |
 | **S2 全相対AS↔avatar** | 全整数のAS再構成と逆幾何構成を族として証明。任意Isom sheaf、自己同型・慣性・任意基底変更・相対Noether/Serre/heart、line bundle/periodのねじれを整合させる | **原稿上証明済み**。有限foundation＋全添字の双対線束の同値、相対heart、古典変形を保持する向き付き二次式と平坦曲線上の元の標識を比較 |
 | **S3 全QP群oid** | 8/10/12本矢のAS適合軌跡を必要十分条件で記述し、全raw right-equivalence/非cotangent変換、消去pairの余剰慣性、nilpotent mass・特殊壁・同型判定・groupoidの相対貼合せを決定する | **原稿上証明済み**。全raw重み付きIsom、有限窓の適合開、一mass被覆、nilpotent massを含む表示慣性を記述 |
-| **S4 全比較図式** | 三stack間の射、核・gerbe・rigidification・fiberを構成し、全Isom/2-cocycle/原像の比較、全型のmutationとruling交換のcoherentな貼合せを証明 | **原稿上証明済み**。周期比較の飽和像、指定ASへのfiber、表示・頂点スカラーの剛体化とruling貼合せを記述 |
+| **S4 全比較図式** | 三stack間の射、核・gerbe・rigidification・fiberを構成し、全Isom/2-cocycle/原像の比較、全型のmutationとruling交換のcoherentな貼合せを証明 | **原稿に証明を収録。境界の相対比較の範囲を監査中**。周期比較の飽和像、指定ASへのfiber、表示・頂点スカラーの剛体化とruling貼合せを記述。両mass零では枠付き有限窓の全同型の方程式を任意基底上で証明。幾何同型との完全充満比較は一重負断面chartとスキームとしての重複負断面chartで証明済みで、両者を横切る非被約族での比較は監査継続 |
 | **S5 内在的 $H_2$ と外側** | 標準構造対象ごとの $H_2$ への所属・忘却射・像/全ファイバー/慣性を相対的に決定。$H_2$ の外側・古典型・noncubic・退化・nilpotent族を排除せず記述する。既知の延長不能は正確に保持 | **原稿上証明済み**。全標準頂点の定義域・像・fiber、内外のrank壁を記述。spectral境界障害と区別 |
 | **S6 公表用C4** | S1–S5の全主張の独立数学監査、一次文献・新規性比較、整合した日本語LuaLaTeX全稿の組版/PDF/SyncTeX・表示と再現性、mainとhub保存 | **検証中**。ソース・計算・LuaLaTeXは実行。全稿の独立数学監査と包括的な文献比較の範囲は研究ノートで追跡 |
 
