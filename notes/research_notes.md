@@ -2682,3 +2682,5 @@ latexmk
 **矢数別の標準頂点比較を含む407頁保存版 99b1cf9。** 二つの `git archive 99b1cf9` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439915 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全407頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `cf0beb4a01ced56d44de42c2d614f201c766d617f30e5b59ee0aeeabdd96ffba`、SyncTeX `f2c79d0a0ba45b310f49ae5e03b365b13c2465f7a3bca2d4f1c821c184498a42`、抽出テキスト `d44ad68cc12734485888f0af371d71fc7529bce90457235ab1ba4567b7491e54`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定Jacobianのmass慣性帯の独立監査。** `cor:qa-mass-band-determinant` は、対角矢の線束と短関係線の比を、二段道から重み二のJacobian成分への積の行列式線束として回収した。積の行列式が局所massを表し、線束値の群法則と可逆massの乗法群表示が、枠・道の持ち上げ・任意基底変更に依存しない。
+
+**mass慣性帯の行列式表示を含む407頁保存版 0620a56。** 二つの `git archive 0620a56` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440144 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全407頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `070db39c2efcc858458bba218c5a507e20ab986103ca6a7a3acf79a99b7137e5`、SyncTeX `f8c9c122102c2c1e967e02044056bf1d521e9323620b39a7ec5e752997d29048`、抽出テキスト `77823f775b45e0c9215994df946a75ce47d22dbbda0bd94c991522224604b5ad`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
