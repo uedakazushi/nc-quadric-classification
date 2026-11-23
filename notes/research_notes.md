@@ -2666,3 +2666,5 @@ latexmk
 **ruling窓のCasimir比較を含む405頁保存版 465d29c。** 二つの `git archive 465d29c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438952 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全405頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b23d18e958cb1d74dcc749f556cedb7e5a38723121ccfc6cad3be41144c8f5d1`、SyncTeX `7b2ceb39e8c0fa72dd68c985d100c22561eb52282eea97f46f0416a1521af784`、抽出テキスト `5c0de80d46d4a39b1f1a454ce89369fa7cfd186d0202872c30da8fc166326312`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定周期Jacobianの内在的な負巡回直線。** `prop:qa-jacobian-weight-four-cy-line` は、巡回両側解消を対角でtensorした第三項の境界が、各矢について二頂点の係数の差になることから、重み四の第三Hochschild群を直線と計算した。高次消滅により同じ次数と重みの負巡回群もこの直線である。全raw適合表示のループ類はその枠となり、固定周期代数上で一意の単元により比較できる。
+
+**負巡回直線を含む405頁保存版 8fe82c4。** 二つの `git archive 8fe82c4` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439191 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全405頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fd0720e216b15fe5d25e0938fe10b449fc5f25780d41dca896a4ef8d141c7257`、SyncTeX `699a07b53a565703e0b58509aada3a8de49a5f46e449b30c51402709cf3fa29c`、抽出テキスト `31f7af6be780680f155e4a34164b74c642a9e79c040e05602039c75740b20956`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
