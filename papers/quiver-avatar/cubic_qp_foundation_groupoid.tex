@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.60。非被約底上の相対exact 3-CY強化とC4監査。
+% 2026-11-23 / v4.61。canonical cyclic primitiveのIsom/慣性自然性。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -3185,6 +3185,136 @@ $\Lambda$と各射影解消項は$R$-flatであり，
 同じデータに適用でき，そのクラスを自然に比較できる．
 これは負巡回ホモロジー群全体について
 flat base-change theoremを仮定する議論ではない．
+\end{proof}
+
+\begin{proposition}[canonical相対cyclic primitiveのIsom自然性とmass慣性]
+\label{prop:qa-q12-exact-cy-primitive-isom-inertia}
+定理~\ref{thm:qa-q12-relative-exact-three-cy}
+の任意の局所Noetherian affine chart
+$S=\operatorname{Spec}R$上，
+$A=\Lambda$，
+$B=\Pi_3(\Lambda)$とする．
+$B\to A$の自然なaugmentationで相対Hochschild・
+cyclic complexの$A$-部分を分裂させた
+reduced cyclic homologyを用いると，
+canonicalなクラス
+\[
+ c_{\Lambda/R}\in HC^{\mathrm{red}}_2(B/R)
+ \tag{CP}\label{eq:qa-q12-canonical-relative-cyclic-primitive}
+\]
+があり，Kellerのexact CYクラスは
+\[
+ \eta_{\Lambda/R}
+   =B_{\mathrm{Connes}}(c_{\Lambda/R})
+   \in HN_3(B/R)
+ \tag{CB}\label{eq:qa-q12-canonical-relative-connes-class}
+\]
+である．
+このcyclic primitiveおよびそのConnes像は，
+\emph{全}finite foundation Isomに自然であり，
+合成と単位についての比較が成立する．
+さらに任意の可換環の基底変更$R\to R'$では，
+relative cyclic complexの自然な比較写像により，
+$c_{\Lambda/R}$の像は
+$c_{\Lambda\otimes_RR'/R'}$となり，
+$\eta$についても同様である．
+ここでは$HC_2$または$HN_3$の
+任意非平坦基底変更写像が同型とは主張しない．
+
+二massのcotangent表示群oidで
+$\Phi_{12}$のkernelに属するmassゲージ，
+および局所関係lift shearは，
+有限foundation $\Lambda$に
+恒等同型を誘導する．従って
+定理~\ref{thm:qa-q12-cotangent-keller-pseudonatural}
+のMorita比較で有限側へ輸送した
+mixed Hochschild--cyclic complex上では，
+これらの変換はcanonicalに単位作用と同定され，
+特に式~\eqref{eq:qa-q12-canonical-relative-cyclic-primitive}
+と~\eqref{eq:qa-q12-canonical-relative-connes-class}
+を保つ．
+この同定はmass--shearの非可換半直積と
+全三重重なりの合成にもcoherentである．
+
+これは\emph{Morita値の有限foundation groupoid上の
+クラスのIsom不変性}を記述する命題である．
+これだけから未剛体化QPの全stack上に
+homotopy-coherentなnegative cyclic classが存在する，
+あるいはnegative cyclic complexの任意非平坦fppf降下が
+自動的に成立すると主張しない．
+またGinzburg dgの\emph{別途定義される}
+CY classと本稿のものが全raw QP表示上で
+厳密に一致するとはまだ確認していない．
+\end{proposition}
+\begin{proof}
+命題~\ref{prop:qa-two-mass-short-relative-diagonal}
+の相対有限局所射影な双加群解消を
+$P_\bullet\to\Lambda$とする．
+Kellerの2018年erratum
+\cite[Theorem~1.1の証明，pp.~2--3]{KellerErratumCY2018}
+では，
+$\Theta_\Lambda=
+ \mathbf R\operatorname{Hom}_{\Lambda_R^e}
+            (\Lambda,\Lambda_R^e)[2]$
+のCasimir元を
+\[
+ \Theta_\Lambda\otimes_{\Lambda_R^e}^{\mathbf L}
+               \Lambda
+ \;\simeq\;
+ \operatorname{RHom}_{\Lambda_R^e}
+               (P_\bullet,P_\bullet)[2]
+ \tag{EC}\label{eq:qa-q12-exact-cy-diagonal-identity}
+\]
+の右辺の$\operatorname{id}_{P_\bullet}$に対応させ，
+これを$B=T_\Lambda(\Theta_\Lambda)$の
+一tensor次数の部分に埋め込む．
+この元は完成のreduced cyclic complexに
+次数$2$のcanonicalなクラスを与え，
+Connes写像でexact CY classとなる．
+これが~\eqref{eq:qa-q12-canonical-relative-cyclic-primitive}
+と~\eqref{eq:qa-q12-canonical-relative-connes-class}である．
+
+finite foundation同型$\varphi:\Lambda\to\Lambda'$
+は$\Lambda^e$双加群圏を移し，
+$P_\bullet$を$\Lambda'$の解消へ移す．
+この輸送によるEnd複体の写像は
+恒等射を恒等射へ送る．
+従ってco-evaluationのCasimirも保存され，
+relative cyclic complexの自然性と
+Connes写像との交換から，$c$と$\eta$が保存される．
+輸送・恒等・合成の自然性は，
+$\operatorname{id}_{\varphi_*P_\bullet}
+=\varphi_*(\operatorname{id}_{P_\bullet})$
+という恒等式から従い，
+局所枠を変えても同じ比較となる．
+
+$R\to R'$の基底変更では，
+$P_\bullet$は各項が相対有限射影で
+$R$上局所分裂完全だから，
+$P_\bullet\otimes_RR'$は
+$\Lambda\otimes_RR'$の双加群解消となる．
+双対・評価・Endの恒等元は有限局所射影模型の上で
+基底変更と整合する．
+よってcyclic complexの
+自然な比較でcanonicalなクラスが移る．
+ここでは非平坦基底変更による
+cyclic homology群全体の同型を使用しない．
+
+最後にmassゲージがfinite quotient上恒等であるのは
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}，
+relation-lift shearが有限関係idealを保ち
+finite quotient上恒等なのは補題~
+\ref{lem:qa-q12-long-relation-lift-shear}で証明した．
+定理~\ref{thm:qa-q12-cotangent-keller-pseudonatural}
+のMorita値zigzagを用いれば，
+その後の$\Pi_3(\Lambda)$側の作用は
+恒等同型の作用となる．
+mass--shear合成のcoherenceは
+finite quotientの同型に対する合成が
+strictであることから従う．
+mixed complexのMorita不変性を経た
+この意味でのクラス不変性と，
+一般stack上の新たな高次降下定理は区別する．
 \end{proof}
 
 \begin{corollary}[幾何fiberのordinary Jacobian代数]
