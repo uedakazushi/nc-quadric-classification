@@ -823,3 +823,148 @@ avatar からの全域被覆、さらに構造対象を保つ内在的圏への�
 保持している。これを忘れた $\mathcal O$-marked の exact 同値を、
 次数付き代数同型と同一視してはならない。
 \end{remark}
+\subsection{ASへの比較像と全自己同型核}
+\label{subsec:qa-open-qp-canonical-comparison}
+
+\begin{theorem}[AS適合QPのcanonical比較と表示慣性]
+\label{thm:qa-open-qp-canonical-as-image}
+定理~\ref{thm:qa-raw-qp-as-open-mass-charts}の十矢適合開を取る。
+固定四頂点窓への射は、対応する位相のmutation有限窓の全stackへの
+fppf gerbeであり、その相対慣性は$\mathcal U_\lambda$である。
+八矢では対応するcubic開への同値である。
+十二矢では一mass可逆な両chartでそれぞれ、
+十矢の比較に独立な$B\Gm$因子を加えたものとなり、
+両可逆な重なりでは八矢の比較に$B(\Gm^2)$を加える。
+これらの同型および貼合せは、全適合raw重み付き右同値に自然である。
+
+この射の全整数ASへの合成は、有限窓のcanonical Serre完成を
+全整数に展開する射である。従って
+系~\ref{cor:qa-relative-as-line-decorated-foundation}の表示では、
+すべての双対線束のcanonicalな自明化を伴う部分へ入る。
+周期付き表示では、さらに
+系~\ref{cor:qa-periodic-as-finite-decoration}の
+$\theta$はこの自明化で恒等である。
+固定AS族への比較fiberは、対応する有限窓上の上記gerbeと、
+全双対線束の同時自明化のfppf層との積である。
+許容有限窓の範囲外ではfiberは空である。
+\end{theorem}
+\begin{proof}
+十矢で奇数位相の窓を選ぶ。
+AS適合なら短関係と長関係の階数条件が成立し、
+非可逆massの幾何点では短関係$q$が非分解可能である。
+これは対応する階数三のsquare積に対する
+交差条件から従う（定理~\ref{thm:qa-raw-qp-as-open-mass-charts}）。
+従って定理~\ref{thm:qa-ten-arrow-relative-finite-gerbe}の
+反対窓版を適用できる。
+逆に各相対mutation有限窓は七矢三関係の表示を持ち、
+そのrelation-dual potentialは相対AS適合になる。
+よって全有限窓への局所全射性、全Isomの局所持上げと
+核$\mathcal U_\lambda$が従う。
+偶数位相の窓は反対代数で同じ証明になる。
+八矢は関係枠を忘れるGrassmann表示
+（定理~\ref{thm:qa-cubic-qp-grassmann-groupoid}）である。
+十二矢での主張と重なりの同定は、
+二つの互いに独立な可逆pairの消去から従う。
+
+canonical比較の同型自然性を確認する。
+固定窓の有向道代数を$F_{\rm dir}$とする。
+重み付き右同値は、この有向部分では矢の線形枠変換と、
+重み二の前向き矢への二段道の付加である。
+戻り重み一の二矢の変換は線形であり、
+戻り重み二の矢の変換には重み一の戻り矢を一つ含む
+二段道を加えることだけが許される。
+重み四のcycleは窓の境界を一回だけ越えるので、
+各cycleは戻り矢を一つだけ含む。
+従ってpotentialを保つ等式は、短関係と長関係の枠変更、
+および短関係の道倍を長関係のliftへ加える操作について、
+戻り矢が関係の反変双対として変換されることを
+一意に指定する。
+
+より具体的には、有限対角解消の矢項の写像を
+$F_{\rm dir}$の普遍微分で定め、
+関係項では各関係の像を短・長関係の線形結合および
+短関係の道倍として書いた上の係数を用いる。
+関係の普遍微分に積の法則を適用すると、
+関係そのものを含む項は有限商で零であり、
+二つの微分と可換する。
+この解消は有限代数の対角を持ち上げる。
+その双対の次数零で戻り矢の変換を読むと、
+potentialの等式から得た反変双対の式になる。
+従って
+命題~\ref{prop:qa-relative-mutation-ordinary-jacobian}の
+$H^0$同定は右同値が誘導する通常Jacobian同型を
+canonical Serre完成の同型に移す。
+この議論は枠・関係liftを変更しても、
+対角を持ち上げる写像の導来同値と$H^0$により同じである。
+消去の可縮pairは両辺の通常商で零であり、
+その$\Gm$は恒等を誘導する。
+従って全chartで同型自然性が成立し、貼合せも
+道への代入の合成と整合する。
+
+canonical Serre軌道の$E_{i+4}=tE_i$において、
+$L_i=\operatorname{Hom}(tE_i,E_i[2])$の同定は
+相対Serre双対で$\operatorname{Hom}(E_i,E_i)^\vee$となる。
+単位を用いてこの線束を自然に自明化する。
+四添字を移した積は$t$による同じ積なので、
+この標識で$\theta$は恒等である。
+全整数AS stackが有限窓と全$L_i$の積であることから、
+指定ASへの同型を選ぶには有限窓への同型と
+各自明化を選べばよい。
+これが表示した2-fiberである。
+\end{proof}
+
+\begin{corollary}[周期付き比較の飽和像]
+\label{cor:qa-qp-marked-as-saturated-image}
+前定理の許容有限窓stackを$\mathcal B$とする。
+周期付きASへの比較のfppf局所の本質的像は
+$\mathcal B\times B\Gm$である。
+追加の$B\Gm$は、四本の$L_i$を互いに同定し
+$\theta$を恒等として運ぶ共通線束を表す。
+QPの比較は共通線束のcanonicalな自明化を持つ。
+\end{corollary}
+\begin{proof}
+系~\ref{cor:qa-periodic-as-finite-decoration}で
+自明な四線束と$\theta=\mathrm{id}$を持つ対象の間の同型を調べる。
+各線束の同型スカラーを$u_i$とすると、
+非零の隣接Hom束における$\theta$との可換性は
+$u_i=u_{i+1}$を強制する。
+全隣接Homは階数二なので四スカラーは共通である。
+この共通スカラーは有限窓の任意の同型と独立に作用する。
+従ってそれらの対象と全同型をfppf降下した部分stackは
+正確に$\mathcal B\times B\Gm$である。
+前定理によりQPが与えるのは、その共通線束を自然に
+自明化した有限窓の比較であり、
+すべての許容有限窓がfppf局所に現れる。
+\end{proof}
+
+\begin{corollary}[指定pointingを持つQPの比較図式]
+\label{cor:qa-open-qp-h2-pointing-fibers}
+指定AS型に適合するraw QP上で、標準頂点の$H_2$適合開は
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}を
+有限mutation窓へ引き戻した開である。
+この開から$\HHstack$への比較は、有限窓の
+線形表示、頂点スカラー剛体化、必要な再標識、
+ruling忘却の順に行う。
+相対$h\in\HHstack(S)$への2-fiberは、
+再標識で引き戻したruling選択の適合部分の上で、
+頂点スカラーの$K_\square$-gerbeと
+定理~\ref{thm:qa-open-qp-canonical-as-image}の
+表示gerbeを重ねたものとなる。
+八矢では後者は恒等、十矢では$\mathcal U_\lambda$、
+十二矢では一mass可逆chartの$B\Gm$因子も保持する。
+\end{corollary}
+\begin{proof}
+前定理のcanonical展開と全AS相対heartの比較により、
+QPの標準頂点は実際の同じ相対heartの指定対象となる。
+$H_2$適合性はその対象についての開条件であり、
+指定AS型外のraw QPへASとしての射を定義する必要はない。
+まず有限窓への表示gerbeを取り、次に
+$K_\square$-剛体化を取り、再標識とruling忘却を合成する。
+それぞれの段階で相対2-fiberの記述があるので、
+指定した$h$への引戻しにより述べた群oidを得る。
+重なりの余分な可縮pairは通常Jacobianで零となり、
+比較の合成は定理~
+\ref{thm:qa-open-qp-canonical-as-image}の自然性と
+相対窓の評価・余評価の比較により整合する。
+従って幾何avatarに至るruling交換は剛体化後に作用する。
+\end{proof}
