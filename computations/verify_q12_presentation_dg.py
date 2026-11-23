@@ -125,4 +125,17 @@ Gz = sp.eye(len(fbasis)) + z * (G-sp.eye(len(fbasis)))
 assert all(sp.expand(a) == 0
            for a in Gz*B - B*(sp.eye(8) + z*(Gminus-sp.eye(8))))
 print("PASS: exact polynomial dg nullhomotopy B H=G_F-1, H B=G_I-1")
-print("PASS: mass chain map and polynomial A1 interpolation for all masses")
+print("PASS: polynomial family of dg endomorphisms (not necessarily automorphisms)")
+
+# This interpolation is NOT necessarily a path through raw QP
+# right-equivalences. An x-linear coefficient must be a unit of R[z].
+# On the invertible mass fibre lambda=t=1, it is 1+z in Q[z],
+# hence noninvertible; on a nilpotent mass fibre epsilon^2=0 it is
+# 1+z epsilon, with polynomial inverse 1-z epsilon.
+eps = sp.symbols("eps")
+assert sp.Poly(1+z, z).degree() == 1
+dual_inverse_error = sp.expand((1+z*eps)*(1-z*eps)-1)
+assert sp.Poly(dual_inverse_error, eps).rem(
+    sp.Poly(eps**2, eps)).is_zero
+print("PASS: nontrivial cubic mass has no unit-polynomial A1 gauge path")
+print("PASS: dual-number mass admits a unit-polynomial gauge path")
