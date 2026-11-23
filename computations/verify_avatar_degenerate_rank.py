@@ -4,7 +4,7 @@ from collections import defaultdict
 from functools import cache
 from itertools import product
 
-from sympy import Matrix, eye, kronecker_product, zeros
+from sympy import Matrix, eye, kronecker_product, symbols, zeros
 from sympy.polys.matrices import DomainMatrix
 
 
@@ -135,6 +135,18 @@ def main():
                 expected = 5 if expected_rank == 1 and half_weight >= threshold else 4
                 assert quotient_dimension(derivatives, start, 2 * half_weight, half_weight - 1) == expected
     print("PASS: the two line positions give the predicted dimensions through weight sixteen")
+
+    first_parameter, second_parameter = symbols("a b")
+    for exceptional, words in (("xx", ("xyxy", "yxyx")), ("xy", ("yxyx", "yyyx"))):
+        normalized = [(0, exceptional + "z", 1)]
+        normalized.extend((phase, word + "z", 1) for phase in (1, 2, 3) for word in ("xx", "yy"))
+        normalized.extend(
+            (0, word, coefficient)
+            for word, coefficient in zip(words, (first_parameter, second_parameter))
+        )
+        assert len(paths(6)) == 169
+        assert quotient_dimension(cyclic_derivatives(normalized), 0, 6) == 17
+    print("PASS: both generic normalized families have rank 152 at weight six")
 
 
 if __name__ == "__main__":

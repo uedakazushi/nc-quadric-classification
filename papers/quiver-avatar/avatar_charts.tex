@@ -1224,6 +1224,39 @@ $q_0=xy$ なら先頭二文字が $xy$ の語を零にし、
 いずれも残る二成分から表の代表と一意性を得る。
 \end{proof}
 
+\begin{corollary}[一退化位相は指定AS解消を持たない]
+\label{cor:qa-avatar-one-degenerate-as-excluded}
+標数零の体上で、両massが零であり、短テンソルが
+ちょうど一位相で階数一で他は可逆である十二矢potentialは、
+そのJacobian展開に指定AS最小解消を持たない。
+\end{corollary}
+\begin{proof}
+前命題により、二つの規格形のそれぞれで純四次項は
+二つのパラメータ $a,b$ だけを含む。
+始点を退化位相零に固定し、重み六の自由道を取る。
+その本数は漸化式 $p_n=2p_{n-1}+p_{n-2}$、
+$p_0=1,p_1=2$ により $169$ である。
+巡回微分の各々を両側の適合する全自由道で掛けて
+重み六となるものを列挙し、その係数を行とする行列を作る。
+この行列は $\mathbb Z[a,b]$ 上で定義され、
+\[
+ \begin{array}{c|c|c}
+ Q_0&\text{純四次項}&\text{$\mathbb Q(a,b)$ 上の階数}\\\hline
+ E_{11}&a\,xyxy+b\,yxyx&152\\
+ E_{12}&a\,yxyx+b\,yyyx&152
+ \end{array}
+\]
+となる。係数行列の作成と正確な多項式階数計算は、
+付属の \texttt{verify\_avatar\_degenerate\_rank.py} に示す。
+階数計算が意味するのは、両場合の全 $153$ 次minorが
+多項式として零であることである。
+従って任意の標数零の体への任意の特殊化でも
+関係の階数は高々 $152$、商の次元は少なくとも $17$ となる。
+指定解消なら重み六の次元は $16$ であるから矛盾する。
+これは二つの標本だけの検査ではなく、
+規格形の二つのパラメータ空間全体に適用される。
+\end{proof}
+
 \subsection{直積型 collection と全 square avatar}
 
 $\mathcal A_{\mathrm{sq}}^{\times}$ を、順序付きの二つの ruling を持つ
