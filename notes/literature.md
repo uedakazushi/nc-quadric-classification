@@ -1020,4 +1020,6 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 
 **Liu–Wang–Wu の Ore 拡大定理の本文照合。** [著者版](https://arxiv.org/pdf/1205.0893) の Theorem 3.3 は、projective な基礎体上代数が twisted Calabi–Yau 次元 $d$ であれば、自己同型と導分による Ore 拡大が twisted Calabi–Yau 次元 $d+1$ となる、とする。重複負断面で用いる基礎環は $k[x,y]$、自己同型は恒等、導分は四次形式の偏微分から作る重み二の導分である。重み付きHilbert級数、parameter四、窓とJacobianの同定はC内の別の計算であり、Ore定理だけから読み取らない。
 
+**平坦性証明のPicard chartの再照合。** [Stacks Project, Prop. 99.10.2, Tag 0D04](https://stacks.math.columbia.edu/tag/0D04) は固有・平坦・有限表示の射に対する実際の可逆層のstackの代数性を与える。普遍 Cartier 曲線にこの三仮定を確認した。滑らかさは別に、アフィン試験基底の平方零拡大に対する $1+I\mathcal O_D$ の完全列と一次元の固有射での $R^2=0$ から得る。射影束の評価核は各幾何点で次数 $-2$、切断零、階数二なので $\mathcal O(-1)^2$。その $\mathcal O(1)$ 捩れの評価を基底上で取ると有限自由な枠に持ち上がる。したがって被約chartの行列のminorを使ってから非被約試験基底へ引き戻す順序を正当化できる。[論文C](../papers/quiver-avatar/avatar_charts.tex)。
+
 **AZ原著の公開経路と適用範囲の再確認。** [出版社の書誌](https://www.sciencedirect.com/science/article/pii/S0001870884710875) と [CiNii](https://cir.nii.ac.jp/crid/1362262945998548480) はともに DOI 10.1006/aima.1994.1087、109巻2号、228–287頁を指す。出版社のPDFとCiNiiが記載する本文APIから原文は取得できず、OpenAlexにも別の全文所蔵先はなかった。Van den Berghの *Noncommutative quadrics* §5.1、式 (5.1) の一次本文を確認した。交互の二つの線束列による古典quadricの再構成は体上のZ代数の適用であり、Cで用いる非可換な零次自己準同型環、Noetherian affine基底、任意底変更の根拠には使わない。一般End-ring版は従来通りOACU刊行版Theorem 7.3で照合し、原著の本文照合は保留する。

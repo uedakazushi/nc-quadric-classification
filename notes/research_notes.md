@@ -416,6 +416,8 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **論文C 3d8388f のクリーンビルド再現性。** `SOURCE_DATE_EPOCH=1795423605 FORCE_SOURCE_DATE=1 TZ=UTC` と共通のTeXツリーで、別々の空ディレクトリからビルドした。全371頁の96dpi描画と抽出テキストは一致した。PDFトレーラの `/ID` を正規化したSHA-256は `689b2f08aaf42f8f9bea52d05085bc2809c58ec194a79487cf51e9d5614c96f5`、SyncTeXを伸長して絶対作業パスを統一したSHA-256は `df9340af6c3ed259a08f1167355bf0fea12eeb6a08cae4c5b44201e78ac0d570`。既存数学検算と論文間参照検査もPASS。二重ビルドのログで対角積の式に約12ptのはみ出しを検出したため、その後に記号の定義を本文へ移した。
 
+**版面修正版 b6175e0 のクリーンビルド再現性。** `SOURCE_DATE_EPOCH=1795423902 FORCE_SOURCE_DATE=1 TZ=UTC` と共通のTeXツリーで、二つの空ディレクトリからビルドした。全371頁の96dpi描画と抽出テキストは一致した。正規化PDFのSHA-256は `94dc98f0a495d8289593b790646bf3dbd1f843b005b5b4ee81bdac4c0d76e20c`、正規化SyncTeXは `6fdcf7ee34c518fc667718b8f7def06439b33da982e8c23aa42ce6f77c645b90`。両方の最終ログで版面のはみ出し・未解決参照・未解決引用なし。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式
