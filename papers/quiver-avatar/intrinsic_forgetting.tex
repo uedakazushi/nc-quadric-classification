@@ -172,16 +172,27 @@ pointed exact 同値と基底変更に安定である。
 \(\Hom(t^{-n}\OO,M)=0\) が全ての \(n\ge0\) で成立することはない。
 \end{lemma}
 \begin{proof}
-定義の根 \(s\) を選ぶ。
-その全軌道環 \(B=A/(g)\) は次数一で生成されるので、
-AZ 再構成と偶数 Veronese により
-\[
- (\mathcal C,\OO,s^2)
- \simeq(\qgr B^{(2)},\pi B^{(2)},(1)).
-\]
-右辺の構造対象とシフトは ample であり、\(s^2\simeq t\) である。
-これは \cite[\texttt{lem:ample-square-from-generation}]{QuadricIntrinsic2026} と同じ議論である。
-最後の主張は AZ の生成条件から従う。
+定義の根 \(s\) を選び、\(E=\OO\) と置く。
+\(B=A/(g)\) は次数一で生成される。
+AZ の生成条件を \(sE\) に適用し、得られた全射に
+\(s^{-1}\) を作用させると、\(E\) は
+\(s^{-m}E\)（\(m>0\)）の有限直和の商になる。
+次数一生成により各成分 \(s^{-m}E\to E\) は、
+最後の段が \(s^{-1}E\to E\) である合成の線形結合である。
+従って評価 \(\Hom(s^{-1}E,E)\otimes s^{-1}E\to E\) は全射となる。
+Hom 有限性により、この評価の源は有限直和である。
+これは \cite[\texttt{lem:ample-square-from-generation}]{QuadricIntrinsic2026}
+の評価全射である。
+
+任意の対象への AZ 生成全射で奇数指数 \(m\) の項があれば、
+この評価全射を \(s^{-m}\) で移して \(s^{-(m+1)}E\) の
+有限直和に置き換える。従って偶数指数の項だけで生成できる。
+指数に任意の下限を課す場合は、先に対象を正に shift して
+生成全射を作り、負の shift で戻す。
+全射に対する Hom の最終的な全射性は
+元の AZ 条件を偶数部分列に制限すれば従う。
+\(s^2\simeq t\) なので \((E,t)\) は AZ ample であり、
+最後の主張はその生成条件から従う。
 \end{proof}
 
 \begin{example}[重み付き十二本矢と residual gerbe]
