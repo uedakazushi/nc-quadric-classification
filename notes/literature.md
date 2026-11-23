@@ -4,7 +4,7 @@
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-資料確認日：2026-11-23（日本時間）。v2.7。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v2.8。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 全H2の共通線形化と大域良モジュライ
@@ -44,6 +44,8 @@ Antieau–Elmanto, *Descent for semiorthogonal decompositions*, Adv.Math.380(202
 **dg代数kernelの多項式nullhomotopy（標準的ホモトピー形式の具体適用）。** 本研究の二項模型$\mathscr F=F\oplus I[1]$は$I^2=0$ゆえdg ideal $J=I\oplus I[1]$がsquare-zero。商$F/I$上恒等な$(F,I)$の自己同型について$\delta=\varphi^\sharp-id$と$h(f)=\delta(f)[1]$（$h|_{I[1]}=0$）が$dh+hd=\delta$を満たす。標数零の$\Omega^\bullet_{R[z]/R}=R[z,dz]$を用いる$\mathrm{id}+z\delta+dz\,h$は端点で恒等と$\varphi^\sharp$になるdg代数準同型。これはsquare-zero idealとde Rham path objectからの標準的な形式的帰結であり、一般原理の新規性を主張しない。新規性未確認の本研究の具体的寄与は、QPの二mass/非被約壁の全kernelで同一公式を使えること、非平坦基底変更とfinite quotientのcoherent降下に整合させた点。[原稿](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-mass-dg-polynomial-nullhomotopy`。Keller Proposition 6.8から得るGinzburg局所Morita同値のraw right-equivalenceに対する2自然性は、これだけでは確定しない。
 
 **raw右同値のA1経路障害と有限dgホモトピーの区別（2026-11-23、内部の直接証明）。** 非可換道代数の頂点固定右同値は一矢の一次係数を$R[z]^\times$に送る。$P(z)\in R[z]^\times$で$P(0)=1$なら$P(1)-1$は冪零（全素イデアルへの剰余で定数単元のみ）。従って二massゲージの$\mathrm{id}$へのraw A1経路は$\lambda t,\mu s$が共に冪零の場合に限り、逆向きは$g_{zt,zs}$で構成する。これはfaithfully flat被覆でも改善しない。一般の多項式単元の事実と標準的経路構成は既知初等手法であり、一般原理の新規性は主張しない。本研究固有の点は、二mass非最小QPのmass核についてnecessary/sufficientを固定し、有限dg idealの全mass nullhomotopyとの**構造的な差**を厳密に認識したこと。[原稿](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-raw-mass-a1-path-obstruction`。Keller Proposition 6.8の局所Ginzburg Moritaの2自然性は依然未検証で、この障害を隠す経路議論を用いない。
+
+**Ginzburg dgの純線形frameの自然性（2026-11-23、既知構成の本稿への明示適用）。** Keller *Deformed Calabi–Yau completions* §6.5 Proposition 6.6（[一次本文](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCYCompletions.pdf)、印字p.28）にあるCasimir元と非完備Ginzburgの微分を参照。全十二矢束の線形同型$g$とpotentialのcyclic同型$W'=(Tg)W$に対し、元の矢に$g$、degree -1逆矢に$(g^{-1})^\vee$、degree -2頂点loopに恒等を作用させると、cyclic derivativeのchain ruleと$\sum[a,a^*]$のCasimir縮約が微分を保つ。したがって本稿の**純線形GL frame-only groupoid**ではGinzburg dg同型と三重cocycleがstrictであり、非被約基底にも適用できる。[直接証明](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-ginzburg-linear-frame-strict-naturality`。この自然性は基本的な線形双対・微分の性質で、新規一般原理とは主張しない。非線形massゲージ・関係lift shearの2自然比較とKeller Proposition6.8のMorita bimodule整合はまだ検証を要する。
 
 **非正dg複体の普遍Tor完全列（既知手法）。** 任意の非正複体$C$のtruncation三角は$\operatorname{Tor}_2(H^0C,R')\to H^{-1}C\otimes_RR'\to H^{-1}(C\otimes_R^{\mathbf L}R')\to\operatorname{Tor}_1(H^0C,R')\to0$を与える。これは標準的な導来tensorの形式的帰結であり、新規性を主張しない。$H_2$上のSerre dgでは全次数消滅の方が強く、このTor列を独立の未解決目標としない。
 
