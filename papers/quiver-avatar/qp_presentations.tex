@@ -701,6 +701,48 @@ Jacobianがcanonical相対完成と同型となる。
 冪零massの残る組を含め任意基底変更に成立する。
 \end{proof}
 
+\begin{corollary}[逆mutationの二つの乗法行列]
+\label{cor:qa-inverse-mutation-multiplication-matrices}
+定理~\ref{thm:qa-raw-qp-as-open-mass-charts}の第一条件を
+満たす奇数位相の十矢窓で、
+第二条件のHom集中と階数条件は
+\[
+ m_l:V\otimes\operatorname{Hom}(H_1,H_l)
+           \longrightarrow\operatorname{Hom}(H_0,H_l)
+ \qquad(l=2,3)
+\]
+について、$m_2$が同型、$m_3$が全射であることと同値である。
+その上で$M$を経由する積は、包含
+$\ker m_3\hookrightarrow V\otimes\operatorname{Hom}(H_1,H_3)$
+と$V^\vee$との収縮で与えられる。
+残る条件は得られた二積が$V_{\rm cross}$を通ることである。
+この検査は有限窓の全頂点保存Isomと任意基底変更に自然である。
+\end{corollary}
+\begin{proof}
+$C=V^\vee\otimes H_1$と置き、$M$を
+$[H_0\to C]$（次数$-1,0$）で表す。
+$l=2,3$では、逆向きのHomは有向性から零であり、
+$\RHom(M,H_l)$は次数$0,1$の複体$[m_l]$である。
+階数は$l=2$では$4\to4$、$l=3$では$8\to6$である。
+前者の零複体条件は同型、後者の次数零・階数二条件は全射に等しい。
+全射なら局所分裂するので核も任意基底変更に可換である。
+
+$H_1$との間では、$\RHom(H_1,M)=V^\vee[0]$、
+$\RHom(M,H_1)=0$となる。
+後者の二項微分は
+$\Hom(C,H_1)\to\Hom(H_0,H_1)$であり、
+余評価によって$V$の恒等写像になる。
+さらに$\RHom(M,C)=0$なので、三角の長完全列から
+$\RHom(M,M)\simeq\RHom(M,H_0[1])\simeq\OO_S[0]$を得る。
+他の頂点対のHomはもとの有限窓の成分である。
+従って$M$を含む全条件を二つの乗法行列で検査できる。
+$H_1\to M$の写像は$C$への射で表され、
+$M\to H_3$は$\Hom(C,H_3)$のうち$m_3$で零になる射で表される。
+合成は表示した収縮である。
+この記述は係数束と有限Homの積だけを用い、
+行列の枠、余評価、核の形成をすべて自然に運ぶ。
+\end{proof}
+
 \begin{proposition}[可縮 pair の残余慣性]
 \label{prop:qa-stabilized-inertia}
 上の群と頂点標識を用いると、
