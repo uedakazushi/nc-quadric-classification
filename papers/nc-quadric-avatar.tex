@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.53
+% 日本語 LuaLaTeX。2026-11-23 / v4.54
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.53（二項準自由dg解消と局所Ginzburg Morita比較）}
+\date{2026年11月23日\quad v4.54（二項dg模型の全Isom自然性とmass核の降下）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -203,8 +203,16 @@ Keller Proposition~6.8を適用すると
 局所枠付きchartで導来Morita同値となり，
 $H_2$実現可能開ではordinary Jacobianとも
 局所導来Morita同値になる．
-この比較は未剛体化raw QP全Isomの大域降下や
-Ginzburg dgからJacobianへの準同型を主張しない．
+さらに関係ideal$I$は$I^2=0$であり，
+二項準自由dg模型は$F\oplus I[1]$と
+canonicalに同定される．有限関係表示$(F,I)$の
+全同型はこのdg模型へstrictに持ち上がり，
+massゲージの有限商像が恒等であることから
+Morita局所化後のkernel作用はcoherentに自明化される．
+関係lift shearもintrinsicな$(F,I)$を変えない．
+これは有限foundation側のdg降下であり，
+未剛体化raw Ginzburg dgの全right-equivalence作用との
+自然変換や単一ruling交換を構成したものではない．
 内在的$H_2$の実現可能開では、正規四周期helixと相対perfect-fiber判定で
 全次数の局所自由性・基底変更を証明した上で反Serre軌道環と同定し、
 左右Noether性・実際のpointed tails同値と
