@@ -2592,3 +2592,5 @@ latexmk
 **全指定十二矢族の巡回解消とtailsの監査。** `prop:qa-avatar-presented-as-cyclic-resolution` では零次集中した非完備Ginzburg模型から、普遍導分の対角模型を通常のJacobianへ両側から移し、非最小巡回解消を得た。片側分裂から左右単純の解消を得、巡回切断を転置して第三次のAS双対を再点検した。全mass配置のNoether性と合わせ、従来曲線型で証明した四連続窓のtilting性、有限Endと相対Serreの回復、特異基底の有界連接Morita比較を全指定相対十二矢族へ適用した。
 
 **全指定族の巡回解消を含む395頁保存版 ad9e4a4。** 二つの `git archive ad9e4a4` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795434272 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全395頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `1af17a2815f302ab559fa418c53f19046652182770155349cab4233dd5a8e03f`、SyncTeX `8b522794510cb668d2d133352313b96d85e77d0155f943b5506dda56642095c0`、抽出テキスト `fcbe1ce0ccf4d6600d652eca40a3985f045818646b9d61c012f68ea68e2a5e3f`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**全指定十二矢族の標準頂点のH2比較。** `thm:qa-avatar-all-presented-pointing` は曲線型の表を全族に拡張し、偶数位相の定義域をλの単元開、奇数位相の定義域をμの単元開とした。両mass零の古典重み付き型の生成障害と、可逆開での古典square型の肯定判定も照合した。四つの像は全H2を覆う。各2-fiberはruling二重被覆、線形有限窓lift、canonical周期の上の重み付き表示からなり、全右同値は各箙に対する有限方程式で計算する。

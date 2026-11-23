@@ -3039,6 +3039,72 @@ $0,2$ では常に、$1,3$ では $D(\mu)$ 上で $H_2$ 対象になる。
 ホモトピー引戻しの結合律から従う。
 \end{proof}
 
+\begin{theorem}[全指定十二矢族の標準頂点の \texorpdfstring{$H_2$}{H2} 開]
+\label{thm:qa-avatar-all-presented-pointing}
+定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}の任意の族で、
+標準頂点 $i$ を構造対象とする $H_2$ の相対定義域は、
+偶数 $i$ では $D(\lambda)$、奇数 $i$ では $D(\mu)$ である。
+対応する四つの射の像はそれぞれ全 $H_2$ である。
+古典型の幾何fiberとその変形も含む。
+\end{theorem}
+\begin{proof}
+可逆mass開では同定された相対cubic/AS10族に
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}を適用する。
+第一mutationの $1,3$ と、その一頂点回転の $0,2$ は
+相対squareの標準頂点から得られる。
+曲線型以外の可逆mass開でも同じ相対逆mutationを使うため、
+向き付き二次式が一致する古典型とその変形もこの判定に含まれる。
+両方可逆な重なりでは、通常のJacobianとその標準射影を
+共通の有限窓から回復するので、指定した頂点の射が一致する。
+
+残る幾何点は両mass零である。
+体上の復元で曲線型なら
+系~\ref{cor:qa-avatar-deep-pointing-obstruction}により、
+古典型なら例~\ref{ex:qa-weighted-not-h2}により、
+全標準頂点が除外される。
+従って相対定義域に入るためには対応するmassが全幾何点で
+単元でなければならない。これはスキーム上の単元開への
+因子化そのものであるから、冪零massも含めて必要十分である。
+
+像については、任意の $H_2$ 族のrulingをfppf局所に選び、
+線形square窓を持ち上げる。
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}により、
+第一mutationの $1$ ではruling忘却、$3$ では
+再標識対合 $\iota_M$ とruling忘却の合成が得られる。
+どちらも全体を覆う。対応する有限窓は
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}で
+十二矢に持ち上がり、そのJacobianは指定ASである。
+一頂点回転を施せば偶数位相の両方について同じ結論となる。
+\end{proof}
+
+\begin{corollary}[全 \texorpdfstring{$H_2$}{H2} 上の標準頂点の比較fiber]
+任意の $h:T\to H_2$ と標準位相を固定する。
+前定理の定義域における重み付き十二矢の $2$-fiber は、
+該当する再標識（恒等、または $\iota_M$）を施した $h$ の
+ruling二重被覆の上で、有限square窓の線形liftと、
+それを指定位相へmutationした有限窓の重み付き表示を取る
+群oidである。
+有限窓の線形liftにはそのcanonical完成の周期標識が付く。
+八矢および十矢を選べる領域は、対応する可逆massの消去開である。
+各矢数の全右同値は、それぞれの重み付き箙から計算する。
+\end{corollary}
+\begin{proof}
+線形square窓の指定同型を含む比較は
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}の証明により、
+該当ruling二重被覆上の線形liftのgerbeを与える。
+この場合の全整数窓は、有限窓からのcanonical完成で固定される。
+そのため、一般の全整数AS族に現れる独立な全整数線束は
+ここでは選択データに加わらない。
+相対逆mutationとその逆が線形窓を保つので、
+指定位相へ移すと、そのcanonical周期付き完成に対し
+定理~\ref{thm:qa-periodic-as-qp-fiber}の全右同値を含む
+有限方程式の表示fiberがその上に載る。
+全同型と基底変更の比較は両定理で自然なので、
+$h$ との指定同型を含めた $2$-fiber を得る。
+八矢・十矢の表示は可逆pairを消去する開上で得られ、
+比較fiberは対応する箙での有限方程式を用いる。
+\end{proof}
+
 \begin{theorem}[奇数対角開の常に定義される二頂点の像とfiber]
 \label{thm:qa-avatar-odd-h2-image}
 $\mathcal X^{\mathrm{curv}}$ を
