@@ -349,7 +349,7 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **S1–S5は現行原稿に定理として統合した。** 幾何avatarの全体は向き付き二次式で記述し、平坦曲線開では元の標識と全Isomに戻る。全整数ASの分類は有限窓と独立な整数添字の双対線束の積であり、楕円曲線上の相異なる素数位数の線束は一つのfppf被覆でも同時に自明化できない。これは重み付き表示による全ASの被覆と有限型Artin表示の障害である。周期付きの場合は四線束と有限窓間の同型で足りる。
 
-**証明を照合した箇所。** 階数三のGram比較では、三次元非退化部分上で等長枠を比較した後、唯一の補線の座標を行列式から復元する。行列式で割らず、冪零行列式を保持する。点表示の非平坦例は同じchartの局所idealからも検査した。QP適合開については、固定ASへの重み二・三の関係生成条件と、raw側の有限逆mutation開からの二つの判定を突き合わせた。両massが零の特殊fiberは両位相に二次最小生成を残し、同時にH2の別の有限窓から比較できる場合とも区別される。周期の追加自己同型は四線束の比較を隣接Homに課して共通スカラーになる。中間頂点のH2像はcubic正常窓のshiftとその逆で照合し、第三対象では局所Serre根を二回使った結果をcanonical反Serre functorと評価で比較した。
+**証明を照合した箇所。** 階数三のGram比較では、三次元非退化部分上で等長枠を比較した後、唯一の補線の座標を行列式から復元する。行列式で割らず、冪零行列式を保持する。点表示の非平坦例は同じchartの局所idealからも検査した。QP適合開については、固定ASへの重み二・三の関係生成条件と、raw側の有限逆mutation開からの二つの判定を突き合わせた。両massが零の特殊fiberは両位相に二次最小生成を残す。さらに固定順序の真正なH2 normal窓では後二段積が同型なので、そのmassは単元である。両square積が階数三のH2境界を、両raw mass零と同一視してはならない。周期の追加自己同型は四線束の比較を隣接Homに課して共通スカラーになる。中間頂点のH2像はcubic正常窓のshiftとその逆で照合し、第三対象では局所Serre根を二回使った結果をcanonical反Serre functorと評価で比較した。
 
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
@@ -357,7 +357,7 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **原稿上証明済み。** 体上のsquare分類で初期有限窓を真正なnormal窓に同定し、明示 H2 開での相対認識を介して、全square ASの有限foundationが明示開を通ることを証明。全頂点の線束捩れは加群成分のテンソルで除ける。全rotated・cubic/AS10混合型も逆操作で同じ相対heartへ移る。基準square零番でのH2忘却fiberは、ruling選択の二重被覆上の有限窓の頂点スカラーgerbeと全双対線束の積。[正本](../papers/quiver-avatar/relative_square_foundation_stack.tex)。
 
-**原稿上証明済み。** raw重み付きQPの指定AS適合性は十矢の有限窓に対する逆mutationと明示square開で判定できる。十二矢の適合開は一mass可逆な二開で覆われる。両massが幾何点で零なら両偶奇に二次の最小生成が残るため、指定したcubic/片側AS10型には属さない。両mass零のH2型の有限foundationおよびそのSerre/heart比較は別の判定である。[正本](../papers/quiver-avatar/qp_presentations.tex)。
+**原稿上証明済み。** raw重み付きQPの指定AS適合性は十矢の有限窓に対する逆mutationと明示square開で判定できる。十二矢の適合開は一mass可逆な二開で覆われる。両massが幾何点で零なら両偶奇に二次の最小生成が残るため、指定したcubic/片側AS10型には属さない。固定normal窓のH2実現可能開では一massが単元になる。両square積の階数三境界でも各normal窓の後二段積は同型であり、両raw mass零とは異なる。[正本](../papers/quiver-avatar/qp_presentations.tex)。
 
 **原稿上証明済み。** 階数三以上のGram二次式と符号付き行列式は、非被約底でも二積の頂点スカラー剛体化を復元する。二次式だけでは区別できない冪零の向き付き行列式がある。階数が一定の三の層では二次錐の幾何データに簡約できる。[正本](../papers/quiver-avatar/relative_square_foundation_stack.tex)。
 
