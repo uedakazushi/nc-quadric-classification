@@ -3633,8 +3633,37 @@ $U_{j,b}$ は有限射影による長さ高々三の解消を持つ。
 $\operatorname{Ext}^q(J_{j,b},-)$ は $b$ を十分下げると消える。
 一般のtorsion加群はそのような部分加群のfiltered colimitであり、
 有限射影解消はこのcolimitを保つ。
-従って補題~\ref{lem:qa-as-serre-unique-recovery}と同じ
-導来局所化で tails の Hom を計算できる。
+この消滅を非有界複体にも適用する。
+$J_{j,b}$ は長さ二の有限射影解消を持つので、
+任意の複体 $Z$ に対する
+$H^n\mathbf R\operatorname{Hom}(J_{j,b},Z)$ には、
+$\operatorname{Ext}^p(J_{j,b},H^{n-p}Z)$ ($0\le p\le 2$)
+から得られる有限濾過がある。
+これは有限列の射影解消による二重複体の濾過であり、
+$Z$ の有界性を要しない。
+特に $Z$ の全コホモロジーがtorsionなら、完全な直極限を
+取った後には各次数の三つの候補がすべて消える。
+よって
+\[
+ \mathop{\mathrm{colim}}_b\,
+ \mathbf R\operatorname{Hom}(J_{j,b},Z)=0
+\]
+である。
+
+ここで $\pi$ の右随伴を $\omega$ とする。
+$\pi$ は完全なので $\omega$ はK-injective複体を
+K-injective複体に送る。$\pi\omega=\mathrm{id}$ から
+$\pi\mathbf R\omega=\mathrm{id}$ も従い、
+任意の複体 $Y$ に対する
+$Y\to\mathbf R\omega\pi Y$ のconeは
+torsionコホモロジーを持つ。
+従って上の直極限は $Y$ と $\mathbf R\omega\pi Y$ で同じである。
+一方、後者への $U_{j,b}$ からの導来Homは、
+$\pi U_{j,b}=0$ と導来随伴により零である。
+従って各 $J_{j,b}$ からの導来Homは、
+後者上では $P_j$ からの導来Homに自然に一致し、
+導来随伴により $E_j$ からのtailsの導来Homとなる。
+この同定で遷移写像は恒等である。
 $\operatorname{Hom}(E_i,E_j)$ は元の有限成分であり、
 正の Ext が残り得るのは第二次で、しかも $i\ge j+4$ のときだけである。
 これらの比較は有限局所自由な成分と双対の比較である。
@@ -3736,15 +3765,18 @@ $Y$ を覆うことができる。
 \begin{proof}
 全整数加群の導来基底変更は
 各成分に $-\otimes_R^{\mathbf L}R'$ を施す操作である。
-有限頂点支持の加群の導来引戻しも同じ範囲に支持を持つ。
-torsion加群はこのような部分加群のfiltered colimitであり、
-導来tensorとfiltered colimitは可換である。
-従ってtorsionを殺す導来局所化を通して、
-この基底変更は相対tailsの導来引戻しを定める。
-ここで導来局所化の核は有限頂点支持の加群で生成される。
-実際、torsion加群は上のcolimitで生成され、
-torsionコホモロジーを持つ複体は標準切断によって
-それらのシフトで生成される。
+torsionコホモロジーを持つ任意の複体 $Z$ について、
+$R'$ の非正次数の基底自由解消を
+下からの素朴切断の有向和として書く。
+各切断は有界な自由複体であり、
+$Z$ とのtensorは $Z$ の直和とシフトから有限回のconeで作られる。
+従って各切断とのtensorはtorsionコホモロジーを持つ。
+頂点加群の有向直極限は完全でtorsionを保つので、
+自由解消全体とのtensorでも同じ結論を得る。
+これは基底環上の計算であり、torsion性は頂点における
+道の作用から判定するので、引戻し後にも成り立つ。
+従って導来基底変更は、torsionコホモロジーを核とする
+導来局所化を通して相対tailsの導来引戻しを定める。
 
 標準射影は成分平坦なので $P_i$ は $P_i'$ に移り、
 そのtails像への作用も同じである。

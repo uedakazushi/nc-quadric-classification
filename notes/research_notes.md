@@ -2636,3 +2636,5 @@ latexmk
 **特異基底の有界連接Morita同値の再監査。** `cor:qa-avatar-relative-bounded-coherent-morita` の逆向きを、短い対角表示を暗に用いない四頂点の正規化bar解消に置き換えた。非平坦な有限加群とのtensorが完全性を保つ理由を片側分裂で示し、各項を有限基底加群と頂点射影のtensorとして表示した。局所化後の零次性はrowの成分平坦性から従う。Noetherian部分の有界導来圏との同定はStacks Project Lemma 13.17.4の仮定を左右で確認した。
 
 **有界連接Morita監査を含む401頁保存版 5954210。** 二つの `git archive 5954210` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437187 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全401頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `5118bf4f8897754b7b10df4a76cd57bb9ecf0386f121b798876fc32f64234d62`、SyncTeX `72cc98efe4a1e3373e4296ae0a4c71a294b978106107af2798cfc0088131e230`、抽出テキスト `99ae42ab12d96c2a9d1ae63a38fe7d15f3ed321f5370e2e74689f2627a73fef2`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**非有界tails局所化の独立監査。** `thm:qa-avatar-all-tails-tilting` の切断公式を、切断rowの長さ二の射影解消が与える有限濾過と、K-injective複体上の局所化随伴を使って証明した。torsionコホモロジーを持つ非有界複体も、切断Homの直極限で消える。非平坦基底変更では、自由解消の下からの有限切断を使い、任意のtorsionコホモロジー複体が引戻し後もtorsionであることを確認した。
