@@ -295,6 +295,7 @@ def math_checks() -> int:
                "verify_noncubic_pointed_end.py",
                "verify_symmetric_morita.py",
                "verify_square_h2_open.py",
+               "verify_relative_as_avatar_boundaries.py",
                "verify_square_h2_semiinvariants.py",
                "verify_q12_mass_shear.py",
                "verify_q12_diagonal_euler.py",

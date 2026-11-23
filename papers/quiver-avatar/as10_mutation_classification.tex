@@ -1246,6 +1246,46 @@ $L_i$である。実際、$E_{i+4}=T(E_i)\otimes L_i^\vee$
 射と基底変更との合成を保ち、二つの関手は相互に逆である。
 \end{proof}
 
+\begin{proposition}[全整数の線束標識に対するfppf被覆の障害]
+\label{prop:qa-as-infinite-lines-no-common-atlas}
+有限型基底上の相対square AS族の中には、
+全$L_i$が各々は線束で局所自明であるが、
+ただ一つのfppf被覆で全$L_i$を同時に自明化できない族がある。
+従って、双対線束をすべて自明とした重み付き表示では、
+全整数AS stackをfppf局所にも覆えない。
+全AS stackの有限型Artin表示も存在しない。
+\end{proposition}
+\begin{proof}
+基底を滑らかな射影楕円曲線$S$とし、
+有限窓を定数古典squareとする。
+互いに異なる素数$\ell_i$に対して、正確な位数が$\ell_i$の
+$L_i\in\Pic^0(S)$を選ぶ。
+系~\ref{cor:qa-relative-as-line-decorated-foundation}で
+これらは実際の相対AS族を定める。
+
+全線束を同時に自明化するfppf被覆があれば、
+そのうち一般点を覆う有限型の部分$U\to S$を取れる。
+$U$の一般fiberの閉点の閉包を取り、$S$を非空開$S^\circ$へ
+縮めて、この閉包を$S^\circ$上有限平坦な正次数$d$の多重切断にできる。
+実際、閉点の剰余体は$k(S)$の有限拡大であり、
+一般有限射をその有限な開へ制限した後にgeneric flatnessを使う。
+$U$上での自明化は多重切断にも移る。
+その有限平坦normを取ると、すべての
+$L_i^{\otimes d}|_{S^\circ}$が自明となる。
+一方、$\Pic(S)\to\Pic(S^\circ)$の核は
+有限個の補集合の点の因子類で生成されるので有限生成であり、
+そのtorsion部分は有限である。
+$d$を割らない任意の$\ell_i$について
+$L_i^{\otimes d}$は位数$\ell_i$のままなので矛盾する。
+
+有限型Artin stackの幾何安定化群は局所有限型である。
+しかし有限窓への制限の慣性核
+$\prod_{i\in\mathbb Z}\Gm$は、単位での接空間が
+無限個の$k$の積になり、局所有限型でない。
+有限窓の安定化群は有限型であり、もし全stackが
+有限型Artinならこの核も局所有限型になって矛盾する。
+\end{proof}
+
 \begin{proposition}[周期を忘れる射のfiberと周期化の障害]
 \label{prop:qa-as-period-marking-fiber}
 $\sigma A$を添字を四つ平行移動した$\mathbb Z$-代数とし、

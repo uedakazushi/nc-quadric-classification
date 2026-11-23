@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.67
+% 日本語 LuaLaTeX。2026-11-23 / v4.68
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -9,6 +9,7 @@
 \usepackage{booktabs,tabularx,array,enumitem}
 \usepackage[unicode,pdfusetitle,colorlinks=true,
   hypertexnames=false,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={非可換二次曲面のavatarとAS正則Z代数}}
 \numberwithin{equation}{section}
 \theoremstyle{plain}
 \newtheorem{theorem}{定理}[section]
@@ -56,7 +57,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.67（幾何avatar・全標準pointing・表示の比較）}
+\date{2026年11月23日\quad v4.68（全指定相対スタックの比較と適用範囲）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -66,6 +67,12 @@ AS正則$\mathbb Z$-代数を、反標準avatarの同型類によって分類す
 二つのmutation壁の交点は非零二捩れで記述され、
 cubic型への到達不能性を特徴づける。
 十二本矢は有限foundationのrelation-dual QP表示として扱う。
+成分局所自由な全指定AS族を、有限square窓と整数添字の双対線束で
+分類し、全同型、相対heart、標準頂点の$H_2$適合開と忘却fiberを求める。
+幾何表示には向き付き二次式を用い、平坦曲線開では元の線束標識と
+全同型を回収する。指定AS型に適合するraw重み付きQPの開を
+有限窓で判定し、表示の慣性、周期を忘れる比較像と
+ruling忘却のfiberを記述する。
 
 次に、内在的な構造対象付き非可換二次曲面との比較を行う。
 noncubic二形式の点曲線側では、対称な四項のBrauer増幅から
@@ -154,8 +161,7 @@ Fricke出力の二次線束は全族上可逆で，balanced標的の追加境界
 Okawa--Uedaの四重GIT射とPicard根torsor、その慣性と局所粗分岐を比較する。
 同じspectral曲線上で定義されるOU四重射とnoncubic半周期torsorは、
 共通の標識incidenceへ引き戻しても、自然な二同種で押し出しても一致しない。
-体上の分類、具体的な相対射、全avatarまたはQP表示stackの認識を区別し、
-後二者の間に残る未解決範囲を明示する。
+spectral表示からの射と、指定AS型の相対分類からの射では、基底変更の範囲が異なる。
 さらに二つのGram二次形式のpencilから、全$H_2$の共通線形化に関する
 順序付き半不変環を五生成・一関係式で、非順序環を
 重み$(2,2,3,4)$の四変数多項式環で記述する。
@@ -299,13 +305,11 @@ $H_2$実現可能開ではGinzburgとordinary Jacobianの
 余剰massゲージと頂点スカラーを順に剛体化すると、
 指定rulingを持つ$H_2$スタックになり、二ruling交換は
 right-equivalenceではなく相対mutationとして貼り合う。
-この比較はH2実現可能開全体に適用するが、
-その外の任意QPのAS正則性・全AS/avatar表示stackの分類や、
-全証明の独立監査を含む主張ではない。
-既存の部分比較と未解決の全相対AS/avatar/QP stack分類は区別する．
-後者を，非被約族・同型層・余剰QP慣性・剛体化・
-mutation/rulingと内在的$H_2$の内外を含めた
-本稿の最上位研究課題として明記する．
+この二mass比較の定義域は$H_2$実現可能な有限窓の開である。
+指定AS型に対するraw QPの適合開と、全相対ASへの比較は
+定理~\ref{thm:qa-raw-qp-as-open-mass-charts}と
+定理~\ref{thm:qa-open-qp-canonical-as-image}で決定する。
+二つの定義域は両mass零の壁で異なる。
 \end{abstract}
 \tableofcontents
 
@@ -754,49 +758,16 @@ rank十六からrank二十四へのnormal窓を通じて，零番・三番頂点
 \input{quiver-avatar/intrinsic_forgetting}
 \input{quiver-avatar/git_comparison}
 
-\section{全相対AS/avatar/QP stack分類へ向けた認識問題}
+\section{全相対AS・幾何avatar・QPの比較}
 \label{sec:qa-remaining}
-
-本稿の今後の最上位目標は，ここまでに構成した
-$H_2$実現可能開に限らず，
-\emph{本稿で指定した}square/rotated square/cubic/最小十本矢
-AS正則$\mathbb Z$-代数，その幾何avatar，
-ならびに重み付き八・十・十二本矢QP表示の
-全相対$fppf$スタックの分類と比較を完成することである．
-これは任意の次数・任意の箙のAS/QPを分類するという意味ではない．
-本節では証明済みの比較と未解決の全体比較を区別する．
-特に体上の同型類の相互逆分類を，
-非被約基底上の$1$-射，自己同型，$2$-射，
-基底変更を含むstack同値へ無条件に昇格しない．
-また未修正QPの余剰慣性を忘れた同型は認めない．
-
-\begin{problem}[指定型の全相対stack分類と比較]
 \label{prob:qa-all-relative-as-avatar-qp-stacks}
-本稿の最小分解型を満たす全相対AS族と，
-対応する幾何avatar族，重み付き八・十・十二本矢QPの
-全右同値群oidについて，次を決定せよ．
-\begin{enumerate}
-\item
-対象・同型層・全ての自己同型と慣性，
-相対許容軌跡および全族を覆う$fppf$ atlasを
-非被約底を含めて明示し，
-全周期の相対AS再構成・逆幾何構成が
-どの条件下で互いに逆かを証明する．
-\item
-QPの\emph{全raw右同値}の慣性から
-可縮pair・二mass・頂点scalars等の余剰核を分離し，
-適切な剛体化とgerbeを記述して，
-有限foundation・AS・avatarとの全Isom比較，
-fiberおよび合成のcoherenceを証明する．
-\item
-標準構造対象・変異・ruling交換を通した
-$\HHstack$への忘却射の定義域・像・fiberを決定し，
-$\HHstack$外の適合しない構造対象や
-境界特異族も排除せず分類する．
-\end{enumerate}
-この三項は\emph{研究目標}であり，
-現段階で全て証明済みの定理ではない．
-\end{problem}
+
+基礎体は標数零の代数閉体とし、局所有限型schemeのfppf siteで
+指定のsquare、rotated square、cubic、最小十本矢型を扱う。
+相対ASには各成分の有限局所自由性を課し、
+QPの射は頂点と重みを保つ全right-equivalenceとする。
+最小十本矢の幾何fiber条件と、その最小矢束が線束となる
+scheme壁は、非被約基底では異なる。
 
 成分局所自由な全指定型AS族では、命題~
 \ref{prop:qa-relative-as-perfectness-automatic}により
@@ -839,7 +810,7 @@ rotated零番頂点と最小十本矢型零番頂点を反Serre生成障害で�
 第~\ref{sec:qa-relative-vertex-determinants}節はこの判定を任意底変更に適合する二行列式開へ移し，
 第~\ref{sec:qa-relative-avatar-pointed-recognition}節はflat曲線型square族の零番・三番頂点の実際の相対$\HH$族を構成する．
 第~\ref{sec:qa-relative-avatar-heart-comparison}節は中間二頂点も同じheartで認識し，
-適合開上の実際のcubic族を復元する．別定義の相対square AS qgr heartと，全相対AS/QP表示の比較は残る。
+適合開上の実際のcubic族を復元する．全指定AS族の同じ相対heartとの比較は系~\ref{cor:qa-all-relative-as-type-hearts}で与える。
 系~\ref{cor:qa-spectral-involution-no-h2-extension}により、
 spectral対応を全noncubic境界からH2へ延長する目標は成立しない。
 境界を含む比較にはH2の外側に標的を広げ、
@@ -856,30 +827,13 @@ balanced部分の群商表示、元のnoncubicの全忠実な開埋込みまで�
 全表示groupoidの正規化と平方根選択の比較から，自然な順序付きFricke射を
 全noncubicからbalanced標的へ延長し，線束境界上の全2-fiberと慣性を決定した．
 この標的の拡張はH2延長不能の結論と両立する．
-以下の課題は、他のavatarや全AS表示を含む範囲を扱う。
-本稿の有限代数の開部分と、幾何的 avatar の開部分は、それぞれ独立に定義される。
-両者を相対 AS 分類として同定するには、avatar から得る有限代数が
-全周期にわたる相対 AS 代数を再構成し、逆向きの幾何構成と任意底変更に可換すること、
-および同型の層と自己同型群が一致することを証明する必要がある。
-体上の全単射はこの最後の同型層の比較を代替しない。
-
-さらに $\HHstack$ へ進むには、選んだ構造対象に対する標準 heart、
-相対 Serre 双対、豊富な exact 平方根、その同じ平方根の全軌道環の
-正則正規 AS4 被覆を認識する必要がある。
-これらを満たす部分には忘却射があるが、
-その部分が十二本矢表示モジュライの開部分であることは別の命題である。
-平方根や被覆を選んだ有限表示の incidence が存在することから、
-それらの局所存在だけを要求する部分の開性や代数性を推論してはならない。
-
-従って次の研究課題は、矢数だけを減らす追加の消去ではなく、
-相対 AS 再構成と内在的認識の二つの比較を閉じることである。
-一般 cubic quintuple の表示群のスカラー核を除いた後で、
-pointed exact 自己同型との対応と相対ファイバーを決定することが先決となる。
-既存 GIT の次数四を内在的な忘却次数と読み替えない。
-どちらの場合も、marked な表示の自己同型から消える核、
-構造対象の mutation による移動、非被約底での基底変更を同時に追跡する。
-この順序により、有限型の表示空間を先に構成したことと、
-内在的モジュライを表現したことの論理的な境界が明確になる。
+全整数ASの線束標識には有限型Artin表示の障害がある。
+命題~\ref{prop:qa-as-infinite-lines-no-common-atlas}は、
+重み付き表示が全整数ASをfppf局所にも被覆できない例を与える。
+一方、周期標識付きの許容窓とAS適合QPは有限型に表示される。
+raw QPの余剰慣性を除いた後のruling交換は相対mutationの比較である。
+個々のraw potential間の右同値は
+命題~\ref{prop:qa-raw-qp-isom-equations}の方程式で判定する。
 
 \bibliographystyle{alpha}
 \bibliography{references}
