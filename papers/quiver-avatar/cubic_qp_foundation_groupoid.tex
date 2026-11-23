@@ -2234,13 +2234,11 @@ $\mathfrak P_{12}^{\rm ct}$と記す．
 この群oid上，Kellerの局所Morita比較には
 \emph{$2$自然な選択}が存在する：
 \[
- \begin{tikzcd}[column sep=huge]
  \Gamma_3(Q_{12},\mathcal W)
-   & \Pi_3(\mathscr F)
-       \arrow[l, "\sim"']
-       \arrow[r, "\sim_{\rm Mor}"]
-   & \Pi_3(\Lambda).
- \end{tikzcd}
+  \xleftarrow{\ \sim\ }
+ \Pi_3(\mathscr F)
+  \xrightarrow{\ \sim_{\rm Mor}\ }
+ \Pi_3(\Lambda).
  \tag{KN}\label{eq:qa-q12-keller-cotangent-zigzag}
 \]
 左はProposition~6.6の相対dg模型の同定，
@@ -2295,11 +2293,12 @@ Keller模型が得られる．cohomological次数零の
 $\theta:\mathscr F\to\mathscr F'$は
 \[
  d_{\rm nc}(\theta(f))
-    =(\theta\otimes\theta)
+    =\theta_{\Omega}
        \bigl(d_{\rm nc}f\bigr)
 \]
 という普遍微分のchain ruleに従う
-（右辺は$V$の非可換Fox微分で輸送して読む）．
+（$\theta_{\Omega}$は普遍微分の自然性から定まる
+非可換Fox chain mapである）．
 従ってCuntz--Quillen双加群模型の間には
 自然なchain同型があり，
 そのperfect双対の逆変換が関係双対・
