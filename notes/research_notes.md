@@ -2702,3 +2702,5 @@ latexmk
 **高次冪零変形の平坦性監査を含む409頁保存版 dfedbdf。** 二つの `git archive dfedbdf` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795441103 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b342ea59f303835e59f1cb226393ea6360a2c1ecc19aa5f6610129070ffe9930`、SyncTeX `81f2c5dee64618364af4d1cb68eb7ba7b279bd96a17a604f6663aa11694a26f0`、抽出テキスト `5050f067748d5769ec41b817cec9c68a24e0b92ccc3b606b3667920fda01ccb6`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **局所Artin基底における古典点のTorの同定。** 行列式イデアルは切断の値域の逆線束の商であり、特殊fiberでのその全射と先頭次数への射の合成は先頭切断による単射である。従って一変数に限らず、一般の局所Artin基底で相対Torそのものが逆線束になる。
+
+**局所Artin基底のTor直線を含む409頁保存版 403922f。** 二つの `git archive 403922f` 展開で `SOURCE_DATE_EPOCH=1795441335 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `42ff89c0be4f1bbec741a537f57cb1cf389df6967c1f29afb37a0585ed8b3951`、SyncTeX `717b42eda7ae11951334c29905dcbdf03cb26155fa4a741e9baa4da2dec5d9b9`、抽出テキスト `531421b91fa9cccdeda6a67bb837d51288a5a5cb030105c5e1703f3f7702edea`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
