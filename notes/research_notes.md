@@ -2672,3 +2672,5 @@ latexmk
 **固定Jacobian上の負巡回類の比較単元の有限計算。** `cor:qa-jacobian-weight-four-cy-ratio` は、二つの巡回両側解消の間で恒等の持ち上げを重み四以下の線形方程式で解き、第三項の共通のループ係数を比較単元として与えた。内在的な負巡回直線により、枠と解の選択からの独立性および合成での乗法を得た。単元倍の比較の向きも固定Jacobian上の式として明記した。
 
 **負巡回類の有限比較を含む406頁保存版 614f90a。** 二つの `git archive 614f90a` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439411 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全406頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `247f258f7e1fce47b16eaca7a239212447d48fcbee55638f4265a9dd56d5d19c`、SyncTeX `207da663d4bd3e7b0a3adbee9049fc7319291fb84a95f9fec5cae1b6fb12ee82`、抽出テキスト `a8e48a456be503cea4e830984fac3ea8f07fc21b1dfb1afa9bfb2dcb9318dfd0`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**標準頂点のH2ファイバーの独立照合と訂正。** `cor:qa-avatar-all-presented-pointing-fiber` では、以前の記述が有限mutation窓との指定同型に加えて固定周期付きJacobianとの指定同型を取っていた。後者はH2への射のデータではない。八矢で有限窓の返り側の隣接矢束を単元倍すれば、有限窓で恒等な右同値が異なるpotentialの定数倍を結ぶ例で違いを確認した。該当ruling上の線形liftと有限窓上の表示gerbeを用いる形に本文を訂正した。

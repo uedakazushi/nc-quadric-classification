@@ -3175,31 +3175,41 @@ Homの最終全射が従う。
 \end{proof}
 
 \begin{corollary}[全 \texorpdfstring{$H_2$}{H2} 上の標準頂点の比較fiber]
+\label{cor:qa-avatar-all-presented-pointing-fiber}
 任意の $h:T\to H_2$ と標準位相を固定する。
 前定理の定義域における重み付き十二矢の $2$-fiber は、
 該当する再標識（恒等、または $\iota_M$）を施した $h$ の
-ruling二重被覆の上で、有限square窓の線形liftと、
-それを指定位相へmutationした有限窓の重み付き表示を取る
-群oidである。
-有限窓の線形liftにはそのcanonical完成の周期標識が付く。
-八矢および十矢を選べる領域は、対応する可逆massの消去開である。
-各矢数の全右同値は、それぞれの重み付き箙から計算する。
+ruling二重被覆の上で、線形square窓の持ち上げgerbeと
+対応するmutation有限窓上の表示gerbeを順に取ったものである。
+可逆対を除いた十矢の窓上の表示慣性は残るmass群であり、
+八矢の窓上の表示は同値である。
+十二矢では、この比較に消去対ごとの $B\Gm$ を加える。
 \end{corollary}
 \begin{proof}
 線形square窓の指定同型を含む比較は
-定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}の証明により、
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}により、
 該当ruling二重被覆上の線形liftのgerbeを与える。
-この場合の全整数窓は、有限窓からのcanonical完成で固定される。
-そのため、一般の全整数AS族に現れる独立な全整数線束は
-ここでは選択データに加わらない。
-相対逆mutationとその逆が線形窓を保つので、
-指定位相へ移すと、そのcanonical周期付き完成に対し
-定理~\ref{thm:qa-periodic-as-qp-fiber}の全右同値を含む
-有限方程式の表示fiberがその上に載る。
-全同型と基底変更の比較は両定理で自然なので、
-$h$ との指定同型を含めた $2$-fiber を得る。
-八矢・十矢の表示は可逆pairを消去する開上で得られ、
-比較fiberは対応する箙での有限方程式を用いる。
+ここでは全整数AS族の線束を任意に指定するのでなく、
+raw QPから有限窓を経由して射を構成する。
+指定位相のmutationはこの線形窓の変更であり、
+定理~\ref{thm:qa-open-qp-canonical-as-image}により、
+表示からmutation有限窓への射の全 $2$-fiber は
+上に記した局所表示gerbeである。
+従って系~\ref{cor:qa-open-qp-h2-pointing-fibers}の比較を
+この定義域に引き戻すと、主張の全groupoidが得られる。
+各massの単元開とその重なりの比較は相対消去の合成と一致する。
+
+ここで指定する同型は有限窓の同型と $h$ へのpointed同型である。
+定理~\ref{thm:qa-periodic-as-qp-fiber}の
+固定周期付きJacobianへの指定同型は、さらに選ぶデータである。
+たとえば八矢では一つの隣接矢束を単元倍すると、
+potentialの単元倍を移す右同値になる。
+四頂点有限窓を横切る返り側の矢束を選べば
+有限窓には恒等である。一方、その変換が
+固定Jacobianに誘導する自己同型は恒等ではないので、
+系~\ref{cor:qa-eight-potential-line-fiber}の
+固定Jacobian上では重なり線束の異なる枠が残る。
+従ってその枠を $H_2$ 上のfiberに追加することはできない。
 \end{proof}
 
 \begin{theorem}[奇数対角開の常に定義される二頂点の像とfiber]
