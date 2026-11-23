@@ -2,13 +2,15 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.60、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.52。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.61、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.53。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **最上位目標：論文Cの完成。** [研究方針C1–C4](00_research_plan.md#最上位目標論文cの完成2026-11-23) に従う。**C1・C2は原稿上達成。C3はH2実現可能開全体のQP→finite foundation→Jacobian/Serre→pointed heartと二ruling mutation商まで原稿上到達。H2外の全AS/avatar/QP stack分類は未完、C4の独立監査・新C全稿LuaLaTeX組版も未完了。** C3では二massに沿う滑らかなゲージ群 `U_λ×U_μ` と相対対角解消から、ordinary Jacobianをcanonical Serre completionと全次数・非被約基底を含めて比較した。二段剛体化の後の相対商はruling付きH2と一致し、ruling交換はright-equivalenceでなくcoherentな相対mutationにより貼り合う。今後はまず新C3定理の独立数学監査、Keller訂正条件とAZ/Noether/非被約base-change、次にC4の先行研究比較・組版を最優先する。A/Bは必要な論理的入力として扱う。
 
 **Serre dg完成の形式性（C v4.51）。** 既存の全$n$のnormal helix・相対perfect-fiber補題をordinary tensor dg直和に適用し、全$H_2$実現可能開で$H^{q\ne0}\Pi_3(\Lambda)=0$を証明。非正dg代数の標準射から$\Pi_3(\Lambda)\xrightarrow{\simeq}\operatorname{Jac}(Q_{12},\mathcal W)$というdg準同型を得る。任意非平坦基底変更・全finite Isom/mass/shearと整合し、局所dg加群導来圏／perfect部分も同値。以前の$H^{-1}$のTor基底変更系は弱い帰結として整理し、$H^{-1}$消滅は既に解決。raw QPのGinzburg dg模型、$H_2$外のAS/avatarや全定理の独立監査は結論に含まない。[原稿上の証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `thm:qa-q12-h2-serre-dg-formality`。C4の全稿組版・網羅的文献比較は未完。
 
-**各幾何fiberのordinary Jacobianはexact 3-CY（C v4.52）。** 相対finite foundationの二段双加群射影解消を幾何fiberへ移し、Keller Theorem 4.8・2018年erratum Theorem 1.1のundeformed completion定理と上のdg形式性を用いて、$\operatorname{Jac}(Q_{12,\bar s},\mathcal W_{\bar s})$はhomologically smoothなbimodule 3-Calabi--Yauでcanonical exact 3-CY構造を持つと示した。これは幾何fiber上の証明であり、特異基底上の相対CY降下、全raw QPのGinzburg dg同値は含めない。[系と証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `cor:qa-q12-h2-geometric-exact-three-cy`。
+**非最小二massの二項dg解消と非完備Ginzburg比較（C v4.53）。** 四頂点のrank8有限矢・rank4関係矢から$\mathscr F=T_{D_0}(V_{\rm fin}\oplus R_{\rm fin}[1])$を作る。関係矢は二本合成できず、cohomological次数0の自由道rank32・次数−1の関係道rank8のみ。短関係二本と三段6R直和因子により$d:\mathscr F^{-1}\to\mathscr F^0$はsplit単射で、$\mathscr F\to\Lambda$は全非退化二mass有限開の相対準自由dg解消。Keller (2011) Proposition6.8を局所枠付きchartで適用して非完備$\Gamma_3(Q_{12},\mathcal W)$と$\Pi_3(\Lambda)$の**導来Morita同値**を得る。H2実現可能開では形式性によりordinary Jacobianとも局所導来Morita同値。最小関係版Theorem6.10の無条件適用ではなく、Ginzburg dgとJacobianのstrict準同型、未剛体化全QP群oidのdg Morita大域降下は依然未解決。[Cの命題・系](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-semifree-ginzburg-morita`, `cor:qa-q12-h2-ginzburg-jacobian-morita`。
+
+**各幾何fiberのordinary Jacobianはexact 3-CY（C v4.52から継続）。** 相対finite foundationの二段双加群射影解消を幾何fiberへ移し、Keller Theorem 4.8・2018年erratum Theorem 1.1のundeformed completion定理と上のdg形式性を用いて、$\operatorname{Jac}(Q_{12,\bar s},\mathcal W_{\bar s})$はhomologically smoothなbimodule 3-Calabi--Yauでcanonical exact 3-CY構造を持つと示した。これは幾何fiber上の証明であり、特異基底上の相対CY降下、全raw QPのGinzburg dg同値は含めない。[系と証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `cor:qa-q12-h2-geometric-exact-three-cy`。
 
 **非平坦基底変更の精密化。** 非正dg Serre完成の基底K-flat模型とtruncation三角から、$H^0\Pi_3(\Lambda)$は全係数基底変更で交換する。一方、相対heartの通常引戻しは$H^0\mathbf Lb^*$であり、導来引戻しそのものは一般に$t$-exactではない（双対数上の周期Torが反例）。$t$-exactなMorita比較・導来基底変更の自然性・$H^0$を組み合わせ、全Isomのheart比較の通常引戻しに関する2-cocycleを補った。[dg零次](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)・[heart引戻し](papers/quiver-avatar/relative_rotated_mutated_tails.tex)。C4の全証明監査・組版は未完。
 
@@ -24,13 +26,13 @@
 | --- | --- | --- |
 | **A・主原稿** [nc-quadric-classification.tex](papers/nc-quadric-classification.tex) | O-marked非可換二次曲面の全分類とpointed exact同値 | 体上の全分類を中心とする20節を入力。相対主定理はBを引用 |
 | **B** [nc-quadric-moduli.tex](papers/nc-quadric-moduli.tex) | 内在的相対H2の代数性とnoncubic境界の幾何 | **相対H2・Artin変形・AS4・Koszul・cubic/noncubic効果性・境界幾何・楕円型忘却の31節を保持。Aの分類入力との残余依存を監査中** |
-| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS分解とavatarの分類、pointed認識と相対比較** | v4.52。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
+| **C** [nc-quadric-avatar.tex](papers/nc-quadric-avatar.tex) | **指定AS分解とavatarの分類、pointed認識と相対比較** | v4.53。sq/rsq・独立AS10・二重壁とcubic障害。全noncubic商上のrank45相対 $E_f$ 認識とcanonical Serre符号を証明。Smooth spectralの指定pointed像はFricke対合、二境界型の像は有限基底変更後にもH2へ延長不能。相対μ₂-gerbe・二重被覆、stack自己同値の不存在、境界無限Extを証明。節点TF標的の有限型Artin性、balanced商と元Nの開埋込みも証明。全Fricke境界射・全fiberと有限分岐後の二次線束障害を証明。全分類AS型の標準頂点を判定。全相対AS/QP群oidは残る |
 
 論文AのAbstractとIntroductionは分類に焦点を当て、相対結果の分割節は主原稿から外した。Aに残る20節は分類の構成・被覆・同値判定を担う。Bは31節で、楕円型の構造対象忘却と反Serre偏極の変形例も含む。
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。現行checkout上で三稿のsource・相互ラベル検査を実行してPASS。LuaLaTeX依存が不足するため現行三稿の組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：AS/avatar分類とpointed認識（v4.52）
+## 論文C：AS/avatar分類とpointed認識（v4.53）
 
 **全H2の準射影的良モジュライ。** 左右kernel条件は P(M)=det M、Q(M)=e3(JMᵗJM) の二式へ集約できる。二つの交差行列について s0=(PfPg)³、s1=Pf³Qg²、s2=Qf²Pg³、s3=(QfQg)² とすると同じ指標χ0²⁴を持ち、s1s2=s0s3。非順序H2開は s0,s3,s1+s2 の三非消滅開で覆われる。各開はアフィン商で、重なりは不変な比の非消滅開なので飽和している。全H2と順序付き被覆のgood moduliは半不変環のProjの開となり、分離的・有限型・準射影的なschemeである。幾何同型類を分類するcoarse moduliの不存在と両立する。三式が半不変環を生成するとは主張しない。 [証明](papers/quiver-avatar/global_h2_good_moduli.tex)。
 
