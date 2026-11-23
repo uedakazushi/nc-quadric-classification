@@ -2654,3 +2654,5 @@ latexmk
 **rawループ鎖の自然性を含む403頁保存版 f89a4dd。** 二つの `git archive f89a4dd` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438209 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全403頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `a1f37d6f9144898acf80c808f2477a9d917a247185153ef6521485f1fc5f240f`、SyncTeX `7835e7d3eb512e2d1ea1a166895613eb923bb39de975823e6bb4637841b4d333`、抽出テキスト `8cdf93847b3a8cb70c513714cc9834850b5f5494b0cacbf3b5be22f8d0b945ff`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **cotangent表示でのrawループ類とCasimir類。** `cor:qa-raw-loop-cotangent-casimir` は、頂点環上の二項mixed模型を有限準自由代数上へ相対化し、completion tensor次数一で両方の負巡回cycleを比較した。対角の恒等射は増大写像に移り、その有限双対は頂点ループの和である。Connes作用で同じ一形式を得て、cotangent表示のKeller比較に沿った同定を証明した。
+
+**cotangent Casimir比較を含む404頁保存版 a333030。** 二つの `git archive a333030` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438443 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全404頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `c9d216a3a805a95dad90143804a19ecfef1fc34591ae3c9b9e2ff71531b669ee`、SyncTeX `a9a72b7ea4af4979f598ad6da2d6083347045cba7e48400ba842f6f0908693fe`、抽出テキスト `2a2a0880b0204f41321835470c53267ff177f7fb86d7b2f03487309c4af66212`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
