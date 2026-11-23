@@ -445,9 +445,8 @@ Torは各射影の重複度を与え、所定の消滅条件により三段で�
 right-equivalenceはJacobian ideal、頂点および重みを保存する。
 \end{proof}
 
-この判定は全頂点差を走る。有限個の条件によるAS適合軌跡の表示と、
-比較射の像を大域的に表示するには別の議論が必要である。
-以下では比較先を固定したQP表示fiberを有限方程式で記述する。
+この判定は全頂点差を走る。以下では比較先を固定したQP表示fiberを有限方程式で記述し、
+さらに有限窓を補助変数としてAS適合部分stackを有限型に表示する。
 
 \begin{theorem}[周期付きAS族上のQP表示fiberの有限方程式]
 \label{thm:qa-periodic-as-qp-fiber}
@@ -528,6 +527,147 @@ QPから重み付きJacobian代数への射、
 周期標識の忘却を合成する。
 2-fiberのpullbackの結合律と
 命題~\ref{prop:qa-as-period-marking-fiber}から従う。
+\end{proof}
+
+\begin{theorem}[raw QPのAS適合スタックの有限型表示]
+\label{thm:qa-raw-qp-as-finite-type}
+指定重み付き八・十・十二本矢のraw QPスタックのうち、
+そのJacobianの全整数展開が成分局所自由なcubic/AS10混合型に
+属する充満部分スタックは、有限型代数stackである。
+raw QPへの包含は代数空間で表現可能な有限型単射であり、
+適合性の幾何点の像は構成可能である。
+非被約基底上での条件は次の有限データで表される。
+有限square窓を$V_{\mathrm{cross}}$に取り、
+四線束と周期同型を指定してcubic/AS10窓へmutationし、
+その折り畳みへの矢像に
+定理~\ref{thm:qa-periodic-as-qp-fiber}の有限方程式を課す。
+適合性・全Isom・比較射はこの表示から任意基底変更に保たれる。
+\end{theorem}
+\begin{proof}
+まず周期標識付きsquare ASは有限型代数stackである。
+実際、定理~\ref{thm:qa-all-relative-square-as-heart}で
+有限窓は明示開$[V_{\mathrm{cross}}/G_\square]$にあり、
+系~\ref{cor:qa-periodic-as-finite-decoration}の追加は
+四本の線束と有限局所自由代数間の一つの同型である。
+その同型層は有限Homの積の保存方程式と行列式開で表現される。
+従って有限型atlasを得る。
+固定mutationは四つの添字移動と可換する評価・余評価を
+全整数で行うので、周期標識を両向きに運ぶ。
+同じことがcubic/AS10混合型にも成立する。
+AS10の偶奇位相を交換した箙では添字を一つ回転して適用する。
+
+その周期付きstack上で有限ベクトル束の矢像とpotentialの
+パラメータを取り、定理~\ref{thm:qa-periodic-as-qp-fiber}の
+有限方程式と開条件を課し、$G_Q$を商にする。
+有限窓の有限型atlas上で、重み三までの折り畳みの成分は
+有限局所自由束で積も正則である。
+これは相対Serre復元と全基底変更可換性によるため、
+この操作は代数的有限型のパラメータを与える。
+得られたstackはQP、周期付きAS族$C$、および
+重み付き同型$\operatorname{Jac}(Q,W)\simeq C$の群oidである。
+
+その群oidから$C$と同型を忘れる。
+残るQPが適合するなら、Jacobian自身を展開して
+周期標識をつけることで忘れたデータを回収する。
+同型を指定しているため忘れたデータの自己同型は恒等であり、
+任意の二つの選択の間の比較は一意である。
+従ってこの忘却はraw QP上の充満部分stackとの同値を誘導し、
+raw QPへの射は単射となる。
+代数stack間の単射は代数空間で表現可能であり、
+ここでは両stackが有限型でraw QPの対角が有限型なので、
+この射も有限型である。
+像の構成可能性は有限型射のChevalleyの定理から従う。
+\end{proof}
+
+\begin{theorem}[AS適合QPの開判定と一mass被覆]
+\label{thm:qa-raw-qp-as-open-mass-charts}
+定理~\ref{thm:qa-raw-qp-as-finite-type}の適合部分は
+raw QPスタックの開部分である。
+十矢の奇数位相版では、次の有限窓判定が必要十分である。
+\begin{enumerate}
+\item $r=q+\lambda x$が部分束を張り、
+$r$の二つの道倍と$\partial_T W$の二本が
+三段道束に階数四の部分束をなす。
+\item 得られた四頂点有限代数$\Gamma$の標準射影を
+$H_0,H_1,H_2,H_3$とし、
+\[
+ V=\operatorname{Hom}(H_0,H_1),\qquad
+ M=\operatorname{Cone}(H_0\longrightarrow V^\vee\otimes H_1)
+\]
+とする。$(H_1,M,H_2,H_3)$の全Hom複体が
+square型の有限階数束に次数零で集中し、
+そのEndの二積が$V_{\mathrm{cross}}$を通る。
+\end{enumerate}
+偶数位相版は位相を回転して検査する。
+八矢版は一組に単位massを付加して検査できる。
+十二矢版では二つのmassの少なくとも一方が
+各幾何点で可逆であることを最初に課し、
+可逆な組を消去して十矢版の判定を行う。
+従って十二矢の適合stackは、十矢の適合stackと$B\Gm$の積である
+二つの開に覆われ、重なりは八矢の適合stackと$B(\Gm^2)$の積である。
+\end{theorem}
+\begin{proof}
+最初の条件は関係行列の最大minor条件である。
+その上では有限窓の全成分が局所自由である。
+有限対角bar解消により$\Perf\Gamma$の対象間の
+相対Hom複体とその基底変更を計算できる。
+次数零への集中はperfect複体の開条件であり、
+その上で指定階数の条件は局所一定の階数の開部分を選ぶことになる。
+従って第二条件も開である。
+以下で同値を証明すれば、この開は全右同値で不変である。
+
+AS適合なら、$\operatorname{Hom}(H_1,H_3)$が階数四で
+$\operatorname{Hom}(H_0,H_3)$が階数六であることから第一条件を得る。
+実際、前者は五道の束を一関係で割った商であり、
+後者は十道の束を表示した四関係で割った商である。
+商が所定階数の局所自由束なので関係束は部分束である。
+全相対逆mutationと定理~\ref{thm:qa-all-relative-square-as-heart}
+により第二条件を得る。
+
+逆に第二条件を仮定する。
+余評価三角と$\operatorname{RHom}(H_1,H_0)=0$より
+$\operatorname{RHom}(H_1,M)=V^\vee[0]$であり、
+このHomの評価は余評価三角の第二写像に一致する。
+従って逆向きの評価coneは$H_0$を回収する。
+新しい四項はこの三角により元の四射影を生成するので、
+その有限Endは$\Gamma$と同じperfect圏を持つ。
+定理~\ref{thm:qa-all-relative-square-as-heart}のcanonical平方窓を
+mutationすると、有限窓は従って$\Gamma$である。
+その全相対完成がcubic/AS10混合型になることは
+定理~\ref{thm:qa-as10-relative-families}による。
+
+元の十矢potentialは、この$\Gamma$の
+七矢三関係表示の双対戻り矢potentialそのものである。
+第一条件により、二つの長関係は短関係の道倍を割った
+階数二の関係束の基底となり、残りは短関係の枠である。
+これと補題~\ref{lem:qa-relative-mutation-seven-three-presentation}
+の表示は局所的な矢のlift、関係の枠、長関係のliftの選択だけが異なる。
+必要な短関係非分解条件は、$\lambda$が幾何点で零なら、
+第二条件のsquare積の階数三kernelがSegreを避けることから従う。
+これは補題~\ref{lem:qa-rank-one-cross-kronecker}を
+$V_{\mathrm{cross}}$の階数三点に適用した条件である。
+従って十矢の有限foundationとのgerbe比較
+（定理~\ref{thm:qa-ten-arrow-relative-finite-gerbe}の
+反対窓版）で両表示は局所右同値で結ばれる。
+命題~\ref{prop:qa-relative-mutation-ordinary-jacobian}の
+短相対対角解消とその双対化は同じ七矢三関係に適用され、
+Jacobianがcanonical相対完成と同型となる。
+よって全次数でAS適合である。
+
+十二矢で両massが同時に幾何点で零なら、
+全ての対角矢は重み二の最小生成として残る。
+実際、重み二のJacobian関係のうち対角矢に
+線形項を与えられるのは二次massの微分だけである。
+従って両方の偶奇位相に余分な最小矢が残り、
+指定したcubicまたは一方の位相のAS10にはならない。
+よって可逆massの二つの開で覆われる。
+可逆組の消去は相対Jacobianを保ち、その全右同値群oidは
+系~\ref{cor:qa-qp-single-mass-elimination}により
+表示した$B\Gm$因子を持つ。
+両方可逆な重なりでは二組の消去が独立に行われ、
+命題~\ref{prop:qa-stabilized-inertia}の二因子となる。
+以上は単元minor、相対perfect複体および相対消去だけを使うので、
+冪零massの残る組を含め任意基底変更に成立する。
 \end{proof}
 
 \begin{proposition}[可縮 pair の残余慣性]

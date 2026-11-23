@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.73、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.65。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.73、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.66。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **最上位目標（2026-11-23変更）：論文Cで指定AS/avatar/QPの全相対スタック分類を完成する。** [研究方針のS1–S6](00_research_plan.md#最上位目標論文cにおける全相対asavatarqp-stack分類) を唯一の終了基準とし、[Codex実行・起動指示](CLOUD_CODEX.md) と [AGENTS.md](AGENTS.md) に反映済み。対象はsquare/rotated-square/cubic/独立最小AS10型、対応する幾何avatar、指定重み付き8/10/12本矢QPであり、**全対象・全相対族（非被約底を含む）・Isom/慣性・全周期AS再構成・rigidification/gerbe・mutation/rulingの貼合せ・H2内外の部分と忘却射の像/fiber**を証明する。任意の箙・任意次数のASまで拡張する意味ではない。未修正QPとAS/avatarが直接同値とは主張せず、可縮pairのB Gmおよび二mass/頂点scalar慣性を保持して必要な剛体化を決定する。
 
@@ -44,7 +44,9 @@
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。現行checkout上で三稿のsource・相互ラベル検査を実行してPASS。LuaLaTeX依存が不足するため現行三稿の組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：全相対AS/avatar/QP stack分類（目標S1–S6・v4.65）
+## 論文C：全相対AS/avatar/QP stack分類（目標S1–S6・v4.66）
+
+**全相対ASのheartとQP適合開。** 指定AS型の全相対heartを有限square開から復元し、基準のsquare零番でpointingした内在的H2へのファイバーを、ruling選択・頂点スカラーgerbe・双対線束で記述した。指定AS型に適合するraw QPは明示的な有限窓開であり、十二矢は一mass可逆の二開で被覆される。階数三の冪零変形まで保持する幾何表示には、二つのGram二次式と向き付き行列式を使う。比較射の全標準頂点と全幾何avatarの元の標識、独立監査は残る。[全相対heart](papers/quiver-avatar/relative_square_foundation_stack.tex)・[QP適合開](papers/quiver-avatar/qp_presentations.tex)。
 
 **二積可逆chartとQP表示のファイバー。** 二つの標識付きSegre曲面が相対幾何表示を与え、その交わりが点表示を回収する。古典型と曲線型の平坦化層を決定し、双対数上の平坦AS族で点表示が非平坦となる例を得た。周期付きASスタックの付加データは四線束と有限窓の同型で尽くされ、固定した周期付きAS族へのQP表示は重み一から三の有限方程式と階数条件で分類する。[Segre表示](papers/quiver-avatar/relative_square_foundation_stack.tex)・[表示のファイバー](papers/quiver-avatar/qp_presentations.tex)。
 

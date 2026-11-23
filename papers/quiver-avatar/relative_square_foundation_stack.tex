@@ -477,3 +477,229 @@ Segre埋め込みはschemeとしての構成なので、非被約底にも成立
 行列式が零でない冪零元ならこの層には入らない。
 その場合は有限square表示が族を保持する。
 \end{remark}
+
+\subsection{冪零な階数変形を含む向き付き二次式表示}
+\label{subsec:qa-square-oriented-quadratic-forms}
+
+\begin{theorem}[向き付きGram表示による相対square幾何]
+\label{thm:qa-square-oriented-gram-stack}
+互いに独立な二つの経路を標識し、両双対積
+$M_1,M_2:W^\vee\to k^2\otimes k^2$について、
+Segre二次式のGram行列$Q_i=M_i^{\rm t}J M_i$が
+各幾何fiberで階数三以上となる開を取る。
+ここで$J$は固定した非退化Segre形式の対称行列である。
+この開の頂点スカラー剛体化は、次の有限型商スタックと同値である。
+\[
+ \left[
+ \{(Q_1,d_1,Q_2,d_2):
+       \det Q_i=(\det J)d_i^2,\ \operatorname{rk}Q_i\ge3\}
+ \big/
+ \left((\GL_4\times\Gm^2)/Z\right)
+ \right].
+\]
+座標$Q_i$は対称行列、$d_i$はスカラーであり、
+$(g,c_1,c_2)$の作用は
+\[
+ Q_i\longmapsto c_i g^{-{\rm t}}Q_i g^{-1},\qquad
+ d_i\longmapsto c_i^2(\det g)^{-1}d_i,\qquad
+ Z=\{(aI_4,a^2,a^2)\}.
+\]
+同値は各経路の$\det M_i$を$d_i$に送り、
+全Isomと任意基底変更を保つ。
+とくに幾何fiberでしか消えない行列式も$d_i$に保持される。
+\end{theorem}
+\begin{proof}
+一つの行列$M$に対して$(M^{\rm t}JM,\det M)=(Q,d)$を取る。
+これが$\mathrm{SO}(J)$-torsorとなることを示す。
+$Q$の幾何階数が三以上なので、基底局所に
+非退化な階数三の部分束$U$と補元$e$を選べる。
+実際、剰余体上で非退化三次元部分空間を取り、
+基底を持ち上げてそのGram行列式を反転すればよい。
+fppf局所には$U$の基底を直交化して単元の平方根を取り、
+固定空間$(k^4,J)$への等長埋め込み$M|_U$を作れる。
+標的はこの像と非退化な直交補線に分かれる。
+$M(e)$の三次元成分を$Q(-,e)|_U$から一意に決め、
+補線成分を$\det M=d$から一意に決める。
+後者は像の三枠と補線枠が基底をなすので、
+単元による除算だけを使う。
+こうして作る$M$のGram行列と$Q$は、
+最後の対角項を除いて一致する。
+両行列の行列式は与えた方程式で同じであり、
+最後の対角項の係数は$Q|_U$の可逆な行列式なので、
+最後の項も一致する。
+
+同じ$(Q,d)$の二つの持上げの間で、三枠を運ぶ等長写像は、
+標的全体で行列式一という条件を置けば補線上でも一意に決まる。
+その写像は補線の二次形式も保存する。
+実際、両方の標的で全Gram行列式は$\det J$であり、
+三枠のGram行列式は同じ単元だから、
+行列式一で補線を運んだとき補線の二次係数も一致する。
+この写像は混合Gram係数と行列式$d$により
+第四の像も運ぶ。従って二つの持上げ間の等長写像は一意で、
+この議論は$d$を消去せずに任意基底上で成立する。
+以上がtorsorの表示を与える。
+
+各経路の二因子の線形群$\GL_2\times\GL_2$は、
+Segreを保ちその二因子を交換しない相似群
+$\mathrm{GSO}(J)$にfppf局所全射であり、
+核は逆向きスカラーである。
+実際、射影上の因子を保つ同型は二因子の射影線形変換なので、
+それらを線形に持ち上げ、残る全体スカラーを一因子へ吸収する。
+これが$\mathrm{GSO}(J)$と一致することは、因子交換が
+線形行列式と相似係数の二乗の比に符号$-1$を与え、
+因子を保つテンソル積が比$+1$を与えることからも分かる。
+相似係数$c$は$Q$を$cQ$へ、$d$を$c^2d$へ送る。
+核の$\mathrm{SO}(J)$を上のtorsorで商にすると、
+二経路の群は$\Gm^2$となる。
+残る周囲枠$\GL_4$の作用は表示の式であり、
+以前の$K_\square$のうち各経路の逆向きスカラーを
+除いた像が$Z$である。従って剛体化商は表示した商と同値である。
+\end{proof}
+
+\begin{example}[二次式が同じでも向きが異なる一次変形]
+$J$を直交基底で表示し、$M=\operatorname{diag}(1,1,1,\epsilon)$、
+$\epsilon^2=0$と取る。このとき$Q$は
+$\operatorname{diag}(1,1,1,0)$のGram行列と同じだが、
+$d=\epsilon$である。$d=0$の定数錐と同じ相対点表示の
+二次方程式を持つ一方、周囲枠と相似係数による変換は
+$d$を単元倍するので、向き付き二次式として両者は同型にならない。
+\end{example}
+\subsection{全相対AS族の有限開判定と相対heart}
+\label{subsec:qa-all-as-relative-hearts}
+
+\begin{theorem}[全square型の有限窓と相対heart]
+\label{thm:qa-all-relative-square-as-heart}
+系~\ref{cor:qa-relative-as-line-decorated-foundation}の
+square型の有限foundationの条件は、
+$V_{\mathrm{cross}}$への所属と同値である。
+従って全相対square型ASのstackは
+\[
+ [V_{\mathrm{cross}}/G_\square]\ \times\
+ \prod_{i\in\mathbb Z}B\Gm
+\]
+である。全族の相対tailsは
+$[V_{\mathrm{cross}}/G_\square]\to\mathfrak H_2^{\rm rul}$から
+得る相対heartと完全同値であり、四つの標準対象と全整数の
+双対線束による捩れを保持する。
+局所Noetherian affine testで標準射影の全右rowと全左columnは
+Noetherianであり、通常の基底引戻しとの比較はcoherentである。
+\end{theorem}
+\begin{proof}
+AS族の有限窓は二積$f,g$を持つ階数十六表示である。
+まず幾何点での逆向きを示す。曲線型のsquare ASは
+定理~\ref{thm:qa-as-avatar-bijection}で分類される。
+その曲線型avatarを体上の平坦族とみなし、
+定理~\ref{thm:qa-relative-square-e0-e3-h2}の証明を適用する。
+同定されるのは単なるpointed categoryに限らず、
+その実際の$\mathcal N_F$であり、
+$D_F$の外、もう一方の単壁、二壁交点のすべてで
+真正なnormal foundationと同定される。
+有限squareからこのnormal窓への二写像は
+定理~\ref{thm:qa-square-normal-foundation-stack-equivalence}の
+核余核構成そのものである。
+従って元のsquare窓が$V_{\mathrm{cross}}$に属する。
+唯一の古典型では通常のSegre曲面の二積であり、
+系~\ref{cor:qa-h2-square-foundation-open}により同じ開に属する。
+この開への因子化は幾何点で検査できるので、非被約底にも成立する。
+
+逆に$V_{\mathrm{cross}}$上では
+系~\ref{cor:qa-explicit-h2-atlas-square-as}により
+canonical完成の標準全整数展開がsquare ASであり、
+全相対tailsおよび左右Noether性を与える。
+これに系~\ref{cor:qa-relative-as-line-decorated-foundation}を
+適用し、stackの表示を得る。
+同系の$N_i$を用いると、捩れたAS代数は各成分で
+$A_{ji}=A^{\rm can}_{ji}\otimes N_j\otimes N_i^\vee$となる。
+右加群$M$の$j$成分を$M_j\otimes N_j$に替え、
+作用の線束を収縮すると、通常のcanonical側の右加群を得る。
+逆操作は$N_j^\vee$を使う。
+各頂点の標準射影はcanonical射影とその頂点の線束のtensorに写る。
+左加群も逆の捩れで同じ比較を得る。
+この比較は有限生成、有限表示、torsionと完全列を保ち、
+任意基底変更および全線束同型に自然である。
+ゆえに相対tails、Noether性、および全有限窓Isomのheart比較
+（系~\ref{cor:qa-all-square-isom-pointed-heart-descent}）が
+一般のAS族へ移る。
+\end{proof}
+
+\begin{corollary}[回転型とcubic/AS10混合型の全相対heart]
+\label{cor:qa-all-relative-as-type-hearts}
+全rotated square型、および全cubic/AS10混合型の相対AS族は、
+同じ$V_{\mathrm{cross}}$による有限開判定と
+全相対heartを持つ。型の比較はそれぞれ添字の回転と
+定理~\ref{thm:qa-as10-relative-families}の固定mutationである。
+各相対heartは対応するsquare側の内在的$H_2$ heartであり、
+標準射影の像は回転またはmutation窓の対象と
+その線束捩れとして明示される。
+この比較は標準零対象を自動的に$H_2$の構造対象とするものではない。
+\end{corollary}
+\begin{proof}
+周期標識を要しない添字の回転、または全相対固定逆mutationで
+squareに戻す。前定理によりその有限窓は
+$V_{\mathrm{cross}}$上にあり、canonical相対heartを得る。
+元のASの有限窓はこのheartの回転またはmutation窓である。
+具体的には$E_0,\ldots,E_3$をsquareの窓とし、
+回転窓は$(E_1,E_2,E_3,tE_0)$、
+mutation窓は$(t^{-1}Z_1,E_0,E_2,E_3)$である。
+$Z_1$は有限squareとnormalの相対同値で得る第四対象であり、
+すべての対象は基底平坦である。
+全線束を保持した評価・余評価の比較により
+mutation窓の第一対象は表示した$t^{-1}Z_1$と一致する。
+square側の四頂点の標準線束捩れがあれば、対応する
+各対象も評価・余評価で誘導される線束を持つ。
+
+回転・mutationの相対完成の証明
+（定理~\ref{thm:qa-relative-rot-mut-completion-heart}、
+\ref{thm:qa-relative-rot-mut-two-sided-noetherian}）で使う
+heart側の入力は、真正な相対squareとnormal窓、
+基底平坦compact対象、および同じ$H_2$ heartにおける
+反Serre AZ生成である。
+これらは今得られた$V_{\mathrm{cross}}$上の相対heartにある。
+双対窓についても$V_{\mathrm{cross}}$上の反対squareと
+相対評価coneの比較
+（補題~\ref{lem:qa-dual-normal-relative-evaluation-cone}）
+を使うので、点表示の平坦性を必要としない。
+各窓に$E_0$または$tE_0$が含まれ、
+相対AZ判定を適用できる。
+よってcanonical完成は全相対tailsと左右Noether性を与える。
+もとのAS族に残る任意の周期線束は
+前定理と同じ行・列ごとの捩れで処理できる。
+全Isomと基底変更の整合性は、窓の比較と線束収縮の
+自然性による。
+\end{proof}
+
+\begin{corollary}[canonical square側を構造対象とする忘却射のfiber]
+\label{cor:qa-all-relative-as-canonical-h2-fiber}
+square型をその零番頂点で、rotated型とcubic/AS10混合型を
+固定逆操作で得たsquare零番でpointingする。
+このときAS stackから$\HHstack$への射は、前二結果の
+square表示を通じて
+\[
+ [V_{\rm cross}/G_\square]\times\prod_{\mathbb Z}B\Gm
+ \longrightarrow
+ [V_{\rm cross}/(G_\square/K_\square)]
+ \longrightarrow
+ [V_{\rm cross}/((G_\square/K_\square)\rtimes S_2)]
+\]
+である。任意の相対$\HHstack$対象$h$上の2-fiberは、
+$h$のruling選択の有限\'etale二重被覆の上で、
+有限窓の線形liftの$K_\square$-gerbeと
+$\prod_{\mathbb Z}B\Gm$の積となる。
+これはcanonical square側のpointingについての記述であり、
+rotated型・mutation型の任意の標準頂点を対象とする
+忘却射はこの式とは別にその定義域を指定する。
+\end{corollary}
+\begin{proof}
+系~\ref{cor:qa-all-relative-as-type-hearts}の相対heart比較は
+square零番を基準構造対象に送る。
+平方窓のIsomと全線束に自然であるので、
+表示した射を比較射として取れる。
+第一射は、双対線束を忘れ、有限窓の同型から
+頂点スカラーを剛体化する射である。
+中心的な$K_\square$は$V_{\rm cross}$に自明に作用するから、
+$[V_{\rm cross}/G_\square]\to
+ [V_{\rm cross}/(G_\square/K_\square)]$は
+fppf局所に$BK_\square$をfiberとするgerbeである。
+第二射は二つのrulingの選択を忘れる$S_2$-torsorである。
+両射の2-fiberを順に引戻すと述べた群oidを得る。
+\end{proof}

@@ -345,6 +345,14 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 ただし両出力conicは $V=0,c'=\pm U$ および $V=d'=0$ のsectionを持ち、Brauer類が零になる。自然な $\mathscr D^{\rm ord}$ の第一conicは元の基底 $Z$、第二conicも同じBrauer類であり、上の $(s,t)$ の入力では一致しない。一般安定化群上では $\ell^2=1$、個別符号が $\ell=-1$ を実現するため、この弱い射の慣性像は2・核8。自然な射の像8・核2とも異なる。粗座標の一致から相対射の同一性や自然な境界延長を結論してはならない。この障害を、次のtorsion-free標的の認識で使う。
 
+## 全指定相対ASのheart、QP適合開、向き付き二次式
+
+**原稿上証明済み。** 体上のsquare分類で初期有限窓を真正なnormal窓に同定し、明示 H2 開での相対認識を介して、全square ASの有限foundationが明示開を通ることを証明。全頂点の線束捩れは加群成分のテンソルで除ける。全rotated・cubic/AS10混合型も逆操作で同じ相対heartへ移る。基準square零番でのH2忘却fiberは、ruling選択の二重被覆上の有限窓の頂点スカラーgerbeと全双対線束の積。[正本](../papers/quiver-avatar/relative_square_foundation_stack.tex)。
+
+**原稿上証明済み。** raw重み付きQPの指定AS適合性は十矢の有限窓に対する逆mutationと明示square開で判定できる。十二矢の適合開は一mass可逆な二開で覆われる。両massが幾何点で零なら両偶奇に二次の最小生成が残るため、指定したcubic/片側AS10型には属さない。両mass零のH2型の有限foundationおよびそのSerre/heart比較は別の判定である。[正本](../papers/quiver-avatar/qp_presentations.tex)。
+
+**原稿上証明済み。** 階数三以上のGram二次式と符号付き行列式は、非被約底でも二積の頂点スカラー剛体化を復元する。二次式だけでは区別できない冪零の向き付き行列式がある。階数が一定の三の層では二次錐の幾何データに簡約できる。[正本](../papers/quiver-avatar/relative_square_foundation_stack.tex)。
+
 ## 点表示の平坦化とQP比較fiber
 
 **原稿上証明済み。** 二積可逆square chartの頂点スカラー剛体化は、同一Brauer–Severi三次元空間内の二つの標識付きSegre曲面のstackと同値である。点表示は二曲面のscheme交わりであり、平坦化層は二次切断の全係数が零となる閉層と、係数が単位idealを生成する開層。古典squareの剪断変形を双対数に引き戻すと、AS代数は平坦でも点表示は平坦でない。[幾何表示と証明](../papers/quiver-avatar/relative_square_foundation_stack.tex)。

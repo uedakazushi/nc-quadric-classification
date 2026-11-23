@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.65
+% 日本語 LuaLaTeX。2026-11-23 / v4.66
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.65（相対点表示の平坦化とQP比較fiber）}
+\date{2026年11月23日\quad v4.66（全指定相対AS heartとQP適合開）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -807,8 +807,13 @@ $\HHstack$外の適合しない構造対象や
 \ref{prop:qa-raw-qp-isom-equations}が全重み付き同型を、
 命題~\ref{prop:qa-qp-as-matrix-recognition}が
 全頂点差を使ったAS適合性の判定を与える。
-有限の適合軌跡と比較射の全fiber、および
-全幾何avatarの相対heartの復元は残る。
+定理~\ref{thm:qa-raw-qp-as-finite-type}は有限窓を補助変数に
+AS適合QPの有限型表示を与える。
+定理~\ref{thm:qa-all-relative-square-as-heart}と
+系~\ref{cor:qa-all-relative-as-type-hearts}は
+全指定AS族の相対heartを復元する。
+幾何avatarの全標識との比較、各構造対象を指定した
+$\HHstack$への像・fiberおよび剛体化の全図式は残る。
 
 
 点曲線側の全noncubic相対族については、定理~\ref{thm:qa-symmetric-relative-pointed-heart}により
