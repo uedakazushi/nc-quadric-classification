@@ -2706,3 +2706,5 @@ latexmk
 **局所Artin基底のTor直線を含む409頁保存版 403922f。** 二つの `git archive 403922f` 展開で `SOURCE_DATE_EPOCH=1795441335 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `42ff89c0be4f1bbec741a537f57cb1cf389df6967c1f29afb37a0585ed8b3951`、SyncTeX `717b42eda7ae11951334c29905dcbdf03cb26155fa4a741e9baa4da2dec5d9b9`、抽出テキスト `531421b91fa9cccdeda6a67bb837d51288a5a5cb030105c5e1703f3f7702edea`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一mass退化排除の稠密性の独立監査。** `thm:qa-avatar-one-mass-forces-short-rank` の横断族で、階数一・一および階数一・二の場合について九列の小行列式を整数で再計算し、原稿に列番号と値を記した。この小行列式から形式逆写像で像の稠密性を示し、有理関数体上の関係行列の階数上界が全係数へ移る根拠を明示した。
+
+**一mass退化排除の監査を含む409頁保存版 e78bc27。** 二つの `git archive e78bc27` 展開で `SOURCE_DATE_EPOCH=1795441585 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `136682d8ab3698fbef8b6e43869804928da16882be2834c7d6d85ed95dc70bc0`、SyncTeX `ac2f27cfab159b41f2f7ccd47273a7f52ffab05186efb3515302450d1f780b46`、抽出テキスト `163165e3d7e5fcf83edb657a964e332e29c633e116e22f78603e2f29fad62a7e`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
