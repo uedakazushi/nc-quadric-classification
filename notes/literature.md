@@ -1008,3 +1008,10 @@ Jarod Alper–Jack Hall–David Rydh, *A Luna étale slice theorem for algebraic
 
 ### 非被約曲線の切断と cluster の制限
 Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行版 (Nagoya Math. J. 154 (1999), 185–220, DOI 10.1017/S0027763000025381) および arXiv:alg-geom/9607021v1 の補題2.3–2.4と定理1.1の証明を一次本文で照合した。論文Cの有限窓に用いる不等式は、双対化層への射の annihilator が定める部分曲線への因数分解と、交わりの長さを含む Euler 特性比較で得る。C では滑らかな曲面上の Cartier 因子に限り、一般点の DVR 商を用いて同じ議論を直接証明した。
+
+### 未公刊 avatar 原稿の依存箇所
+- `AvatarVSeven2026`：square/rotated の有限窓と helix の来歴。Cの再証明とは別に、古典型を含む元草稿との照合が残る。
+- `Q12Weyl2026`：再埋め込み操作の来歴。幾何的な開埋め込みと基底変更はCの証明で検証できる。
+- `Q12Avatar2026`：定理15.3による体上の最小矢数の辞書と古典型の同定、命題14.1による負断面の安定性障害。これらの原文照合は残る。幾何的な開部分と代数側の矢数の辞書を、Cでは定理と後続の注意に分けた。
+
+三資料のPDFは作業環境、対象リポジトリの取得済み履歴、接続済みの研究用Drive二アカウントのファイル名・題名検索では確認できなかった。
