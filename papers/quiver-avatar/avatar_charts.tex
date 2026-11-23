@@ -2180,6 +2180,47 @@ $0,2$ では常に、$1,3$ では $D(\mu)$ 上で $H_2$ 対象になる。
 ホモトピー引戻しの結合律から従う。
 \end{proof}
 
+\begin{theorem}[奇数対角開の常に定義される二頂点の像とfiber]
+\label{thm:qa-avatar-odd-h2-image}
+$\mathcal X^{\mathrm{curv}}$ を
+定理~\ref{thm:qa-flat-curve-avatar-cross-equivalence}の開とする。
+この開はruling交換で保たれ、$H_2$ の開部分
+$\mathcal H^{\mathrm{curv}}$ のruling二重被覆である。
+奇数対角開の第 $1,3$ 頂点による二つの射の像は
+ともに $\mathcal H^{\mathrm{curv}}$ である。
+任意の $h:T\to H_2$ に対するそれぞれの $2$-fiber は、
+$h$ がこの開に入る部分上でのruling二重被覆である。
+\end{theorem}
+\begin{proof}
+二つの二次式の零点が相異なることは、ruling交換で変わらない。
+従ってこの開は二重被覆を通じて標的へ降りる。
+系~\ref{cor:qa-square-chart}と
+定理~\ref{thm:qa-flat-curve-avatar-cross-equivalence}により、
+奇数対角開から $\mathcal X^{\mathrm{curv}}$ への比較は
+任意基底上で全Isomを保つ同値である。
+第一mutationの第 $1$ 頂点はsquareの $E_0$ であるため、
+その射はこの同値にruling忘却を合成したものである。
+
+第 $3$ 頂点はsquareの第三対象への再標識であり、
+命題~\ref{prop:qa-all-as-relative-repointing-maps}の対合
+$\iota_M$ を第 $1$ 頂点の射に合成して得る。
+幾何点で $\mathcal H^{\mathrm{curv}}$ の補集合は古典型である。
+実際、同じ二次式の零点を持つ二積は
+定理~\ref{thm:qa-flat-curve-avatar-cross-equivalence}の
+古典型比較に帰着する。
+古典型では第三対象への再標識は
+$\PP^1\times\PP^1$ 上で $\OO(1,1)$ によるtensorから得られ、
+古典型を保つ。対合なので曲線開も保つ。
+この開の保存は幾何点で確認すれば十分であり、
+冪零変形を含む任意の試験基底上で同じである。
+
+したがって第 $1$ 頂点のfiberは $h$ に沿ったruling二重被覆で、
+第 $3$ 頂点のfiberは $\iota_M h$ に沿った同じ二重被覆である。
+対合はruling選択と整合するため、両者は自然に同定される。
+これは幾何avatarのstack自身からの射のfiberであり、
+有限窓の線形liftや全整数線束を追加で選ぶ必要がない。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
