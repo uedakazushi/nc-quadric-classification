@@ -2475,6 +2475,56 @@ $\mathfrak m^n(Q_j/(N_0)_j)$ の共通部分は零である。
 この証明では、元の標準射影全体の完備化は取っていない。
 \end{proof}
 
+\begin{theorem}[一般のNoetherianアフィン基底上の左右Noether性]
+\label{thm:qa-avatar-all-affine-noetherian}
+Noetherianなアフィン試験基底上の任意の曲線型avatarについて、
+全整数Jacobianの標準右rowと標準左columnはNoetherianである。
+massや対角比較の型が基底内で変わる場合も含む。
+\end{theorem}
+\begin{proof}
+まず中心の係数環 $R$ の有限生成ideal $I$ に関する
+閉層と補開の貼合せを示す。
+$A$ の各成分が有限平坦であり、$A/IA$ と
+$D(I)$ の有限個の単項開上で標準射影がNoetherianと仮定する。
+各成分の平坦性により
+\[
+ \operatorname{gr}_I A\simeq
+    (A/IA)\otimes_{R/I}\operatorname{gr}_I R
+\]
+となる。$\operatorname{gr}_I R$ は有限個の中心変数で
+$R/I$ 上生成されるので、前系の中心多項式の議論から
+この随伴次数の標準射影はNoetherianである。
+
+標準射影 $Q$ の部分加群 $N$ を取る。
+誘導 $I$ 進濾過の随伴次数から有限個の生成元を選び、
+$N$ へ持ち上げる。また $D(I)$ を覆う有限個の単項開上で
+$N$ を生成する有限個の元を選ぶ。
+単項開上での生成元は分母を払って $N$ の元にできる。
+これら全部が生成する部分加群を $N_0$ とする。
+補開では $N/N_0=0$ である。
+閉層の任意の素点では、随伴次数の生成から
+各端点で $N_j\subseteq (N_0)_j+I^nQ_j$ が全 $n$ で成り立ち、
+その局所環上で $I$ は極大idealに含まれる。
+有限加群 $Q_j/(N_0)_j$ へのKrullの共通部分定理を用いると、
+この局所環上でも $N_j/(N_0)_j=0$ となる。
+従って各端点の商が全基底で零であり、$N=N_0$ である。
+
+この貼合せを二回使う。両mass零層では、
+局所枠を取って対角比較 $G$ の非スカラー成分が生成するidealを取る。
+その閉層は構造層上スカラー、補開は全幾何点で非スカラーなので、
+系~\ref{cor:qa-avatar-boundary-relative-noetherian}の
+二つの判定が適用できる。従って両mass零層全体でNoether性を得る。
+次に元の基底で二つのmassが生成するidealを取る。
+その補開は可縮対を消せる指定相対AS開であり、
+系~\ref{cor:qa-all-relative-as-type-hearts}により
+そこでの標準射影はNoetherianである。
+閉層は今確認した両mass零層であるから、
+同じ貼合せにより全基底で結論を得る。
+局所枠を取ったときのNoether性は有限アフィンfppf被覆に沿って
+系~\ref{cor:qa-avatar-boundary-relative-noetherian}の
+最後の議論で降下する。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
