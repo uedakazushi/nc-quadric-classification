@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.54。二項関係idealのstrict dg自然性とmass/shear核の降下。
+% 2026-11-23 / v4.55。mass kernelの多項式dgホモトピーとA1式。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1755,6 +1755,133 @@ $\Gamma_3$との同定は現時点では局所枠に基づく
 Morita同値として構成しており，
 全raw right-equivalenceに関するその自然性を
 本命題の結論に追加していない．
+\end{proof}
+
+
+\begin{proposition}[有限関係表示のkernelの明示的dgホモトピー]
+\label{prop:qa-q12-mass-dg-polynomial-nullhomotopy}
+前命題の二項dg模型
+$\mathscr F=F\oplus I[1]$と
+$\Lambda=F/I$を用いる．
+頂点を保つ$(F,I)$の自己同型$\varphi$が
+$\Lambda$上恒等を誘導すると仮定し，
+そのstrict持上げを$\varphi^\sharp$とする．
+標数零の本稿の任意の局所affine基底$R$上で，
+$\varphi^\sharp$はdg代数写像として恒等写像に
+ホモトピックである．実際，
+\[
+ \delta=\varphi^\sharp-\mathrm{id},\qquad
+ h(f)=\delta(f)[1]\ (f\in F),\qquad
+ h(i[1])=0\ (i\in I)
+ \tag{DH}\label{eq:qa-q12-mass-dg-homotopy-derivation}
+\]
+と置くと，$h$は次数$-1$の$R$-線形導分であり，
+\[
+             dh+hd=\delta .
+ \tag{CH}\label{eq:qa-q12-mass-dg-chain-homotopy}
+\]
+さらに$\Omega_R=R[z,dz]$に
+$|z|=0,\ |dz|=1,\ d_{\mathrm{dR}}z=dz$を
+与えると，次数付き写像
+\[
+ \begin{split}
+ \mathscr H_\varphi:\mathscr F
+      &\longrightarrow\Omega_R\otimes_R\mathscr F,\\
+ a&\longmapsto 1\otimes(a+z\delta(a))
+                     +dz\otimes h(a)
+ \end{split}
+ \tag{AH}\label{eq:qa-q12-mass-dg-a1-homotopy}
+\]
+はdg代数準同型で，$z=0,1$でそれぞれ
+$\mathrm{id},\varphi^\sharp$に特殊化する．
+この構成は任意の基底変更と頂点・関係枠変更に自然である．
+
+特に二massの全$\mathcal U_\lambda\times\mathcal U_\mu$
+ゲージは，零mass・冪零massを含め，
+\emph{二項準自由dg模型そのもの}で
+同じ明示式によりホモトピー自明となる．
+これは前命題の$\Lambda$を経由する
+coherentなMorita単位作用を
+具体的なdgホモトピーで補強する．
+ただし個々の$\mathscr H_\varphi$を群の合成に関する
+strictな二単体の系と同一視せず，
+未剛体化raw Ginzburg dgのright-equivalence作用との
+比較も本命題から自動的には導かない．
+\end{proposition}
+\begin{proof}
+前命題の$J=I\oplus I[1]\subset\mathscr F$は
+dg両側イデアルであり，$I^2=0$から$J^2=0$である．
+$\varphi$が$\Lambda$上恒等なので，
+$\delta(\mathscr F)\subset J$が成立する．
+$\varphi^\sharp$はdg代数自己同型であるから，
+$\delta$は微分と可換する．また
+\[
+ \delta(ab)=\delta(a)b+a\delta(b)+\delta(a)\delta(b)
+           =\delta(a)b+a\delta(b)
+\]
+であり，$\delta$は次数零の導分となる．
+
+式~\eqref{eq:qa-q12-mass-dg-homotopy-derivation}
+の$h$は$F$上では$\delta$の$I[1]$への持上げで，
+$I[1]$上では零である．$I[1]$と$I[1]$の積が零だから，
+これは次数$-1$のgraded Leibniz則を満たす．
+$f\in F$について
+$(dh+hd)(f)=d(\delta(f)[1])=\delta(f)$である．
+$i[1]\in I[1]$については
+\[
+ (dh+hd)(i[1])=h(i)=\delta(i)[1]
+             =\varphi^\sharp(i[1])-i[1] .
+\]
+よって式~\eqref{eq:qa-q12-mass-dg-chain-homotopy}を得る．
+
+$\varphi_z=\mathrm{id}+z\delta$とする．
+$\delta(\mathscr F)\subset J,\ J^2=0$だから，
+$\varphi_z$は全$z$についてdg代数準同型である
+（途中で自己同型である必要はない）．
+$h(\mathscr F)\subset J$なので
+$h(a)\delta(b)=\delta(a)h(b)=0$が成立する．
+したがって式~\eqref{eq:qa-q12-mass-dg-a1-homotopy}の
+右辺は積を保つ．また全微分を$d_{\rm tot}$とすると
+\[
+ \begin{aligned}
+ d_{\rm tot}\mathscr H_\varphi(a)
+ &=\varphi_z(da)+dz\otimes
+       \bigl(\delta(a)-dh(a)\bigr)\\
+ &=\varphi_z(da)+dz\otimes h(da)
+  =\mathscr H_\varphi(da),
+ \end{aligned}
+\]
+ゆえにdg代数準同型である．
+本稿の$R$は標数零の体上の代数なので，
+$\Omega_R$の端点評価は準同型であり，
+式はdg代数の標準的な多項式微分形式による
+ホモトピーを与える．
+
+massゲージでは
+$\varphi(x)-x=t r_b$，
+$\varphi(u)-u=s r_a$であり，有限隣接矢は固定される．
+したがって$h(x)=t r_b[1]$，
+$h(u)=s r_a[1]$となる．
+関係束の局所枠に関する全変換も
+式~\eqref{eq:qa-q12-mass-dg-homotopy-derivation}の
+inclusion $I\hookrightarrow F$と$\varphi$だけから
+決まるので，任意基底変更に整合する．
+この恒等式は任意の$\lambda,\mu,t,s$で多項式的で，
+massが単元か否かによる除法を用いない．
+明示モデルの整数係数行列では
+\[
+ BH=G_F-I,\qquad HB=G_{I[1]}-I
+\]
+が成立する．ここで$B$はrank八の関係微分，
+$H$は式~\eqref{eq:qa-q12-mass-dg-homotopy-derivation}
+の行列であり，
+\texttt{computations/verify\_q12\_presentation\_dg.py}で
+全パラメータに関する記号恒等式を検算できる．
+群作用の合成・cocycleに対する
+coherentな単位同定は，前命題のstrictな商への射
+$p:\mathscr F\to\Lambda$を用いる．
+本命題の明示的な一パラメータホモトピーに
+未証明の高次coherenceを付加してはいない．
 \end{proof}
 
 \begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
