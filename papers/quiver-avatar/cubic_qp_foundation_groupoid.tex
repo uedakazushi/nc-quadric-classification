@@ -3564,6 +3564,57 @@ fppfの\v{C}ech神経および同型の合成の神経に
 双対性で対角の恒等射を追うことで従う。
 \end{proof}
 
+\begin{proposition}[Casimir類の導来Morita移送]
+\label{prop:qa-casimir-morita-transport}
+相対homologically smoothな有限foundationの間の導来Morita同値は、
+非変形三次completionのCasimir巡回類と負巡回Connes像を移送する。
+特に二つのrulingの有限窓を同じ相対perfect圏で比較する
+Morita同値に対して、この二類が一致する。
+この比較はMorita同値の合成と、その比較双加群が保たれる
+基底変更に整合する。
+\end{proposition}
+\begin{proof}
+相対dg圏 $A$ の対角を $\Delta_A$、その移動した逆双対を
+$\Theta_A=\Delta_A^\vee[2]$ とする。
+Casimirの出所は係数付きHochschild複体の対応
+\[
+ \operatorname{Tr}_A(\Theta_A)
+ =\Theta_A\otimes^{\mathbf L}_{A^e}\Delta_A
+ \simeq\operatorname{RHom}_{A^e}(\Delta_A,\Delta_A)[2]
+\]
+における対角の恒等射である。
+$T_A(\Theta_A)$ のHochschild複体への写像は、
+係数付きbar複体で最初の係数をtensor次数一に入れ、
+残りのbar因子を $A$ のtensor次数零に入れることによる。
+これに巡回複体への標準写像を合成する。
+Kellerのreduced小模型との比較では、この写像は
+traceを最後の巡回列に入れる写像である。
+実際その比較は、次数零のbar因子の切断を
+$A$ への相対化で殺し、係数だけを最後の列に残す。
+従ってそのCasimirの像はKellerの巡回類である。
+
+Morita同値は、互いに逆の双加群を使い、
+両側加群をtensorの共役で移送する。
+対角は対角に移り、双対と評価はこの移送に可換である。
+係数付きtraceの比較は、二つのMorita双加群を
+traceの中で巡回させ、その評価で収縮する写像である。
+有限射影対角を用いた上のHom表示では、
+これは恒等射を同じ対角の恒等射に移す。
+従ってCasimirの出所が保たれる。
+
+具体的にはMorita同値を共通のperfect dg模型への
+Morita functorのジグザグで表すことができる。
+Keller~\cite[Proposition~4.2]{KellerDeformedCY2011}による
+completionの比較は $A$ の写像と $\Theta_A$ の双対比較からなり、
+上の係数付きbar複体の包含と可換である。
+従って巡回類の像を保ち、自然なConnes写像とも可換である。
+共通perfect圏における二つの有限窓は、それぞれの
+tilting生成対象を含むので、このジグザグを与える。
+これは頂点表示での右同値を必要としない。
+同値の合成と基底変更との整合性は、
+双加群tensorの結合律と評価の自然性から従う。
+\end{proof}
+
 \begin{remark}[降下した複体とCYクラスの区別]
 \label{rem:qa-q12-cyclic-complex-versus-class-descent}
 系~\ref{cor:qa-q12-finite-foundation-cyclic-complex-descent}は

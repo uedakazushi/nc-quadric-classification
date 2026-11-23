@@ -1035,3 +1035,5 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 **非有界導来局所化。** Stacks Project [Tag 079P, Theorem 19.12.6](https://stacks.math.columbia.edu/tag/079P) の一次本文で、Grothendieck Abel圏の任意の複体に対するK-injective解消の存在を確認した。Cで使用する圏は頂点加群圏とその局所化Grothendieck圏である。右随伴がK-injectiveを保つことは、左随伴の完全性と複体のHom随伴で直接確認した。
 
 **cotangent表示での負巡回Casimir比較。** Keller, [Erratum to Deformed Calabi–Yau completions](https://arxiv.org/abs/1809.01126), Theorem 1.1の証明（印刷頁2–3）の一次本文を再照合した。対象は非変形completionであり、正のtensor次数を取り出すことで係数双加群がcofibrantとなり、reduced小模型の通常tensorが導来tensorを計算する。Cでは頂点環上の自由道模型からこの相対模型への普遍導分の射を使い、tensor次数一でCasimirのConnes像とrawループ鎖を比較した。
+
+**rulingの有限窓とCasimirのMorita比較。** Keller, *Deformed Calabi–Yau completions*, Proposition 4.2の本文で、非変形completionのMorita functorが元の包含・増大と可換し、そのtensor次数一の写像が逆双対化複体の比較から来ることを再照合した。Casimirの保存はこの命題に付加して、係数付きtraceで対角恒等射を移し、同じbar包含とConnes作用を追うことで証明した。

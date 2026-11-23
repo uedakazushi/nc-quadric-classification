@@ -2660,3 +2660,5 @@ latexmk
 **頂点付きfinite foundationでの指定Casimir鎖の降下。** `prop:qa-foundation-casimir-chain-descent` は、枠に依存しない有限正規化bar解消を使い、増大写像をreduced相対mixed模型の指定Casimir cycleとして置いた。有限双対、最後の巡回列、Connes作用のすべてが頂点付き同型と基底変更で可換なので、Čechと同型の神経で両指定鎖をtotalizationへ持ち上げた。
 
 **頂点付きCasimir鎖の降下を含む404頁保存版 fdf376f。** 二つの `git archive fdf376f` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438693 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全404頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fb2c97a4a497eac0bb29703c9c018173dfc5249ce8e86661f7d600c31d79c859`、SyncTeX `e1d0cb8275353d8e20b4c1cb369695ae823e03d332ad27886453ee0342190c4e`、抽出テキスト `dd56a1f1dc53c85434b82a1bb07ba32e32d1aa5d1adf0d8969629d94b9bb2416`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**rulingの有限窓におけるCasimir移送。** `prop:qa-casimir-morita-transport` は、共通の相対perfect圏で二つの窓を比較したとき、対角恒等射を係数付きtraceで移送し、tensor次数一のbar包含とConnes作用を通して両指定類を比較した。右同値によるraw表示間の比較とは別に、rulingの窓のMorita比較で類が保たれることを証明した。
