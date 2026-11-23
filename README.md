@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.69、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.61。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.70、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.61。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **最上位目標：論文Cの完成。** [研究方針C1–C4](00_research_plan.md#最上位目標論文cの完成2026-11-23) に従う。**C1・C2は原稿上達成。C3はH2実現可能開全体のQP→finite foundation→Jacobian/Serre→pointed heartと二ruling mutation商まで原稿上到達。H2外の全AS/avatar/QP stack分類は未完、C4の独立監査・新C全稿LuaLaTeX組版も未完了。** C3では二massに沿う滑らかなゲージ群 `U_λ×U_μ` と相対対角解消から、ordinary Jacobianをcanonical Serre completionと全次数・非被約基底を含めて比較した。二段剛体化の後の相対商はruling付きH2と一致し、ruling交換はright-equivalenceでなくcoherentな相対mutationにより貼り合う。今後はまず新C3定理の独立数学監査、Keller訂正条件とAZ/Noether/非被約base-change、次にC4の先行研究比較・組版を最優先する。A/Bは必要な論理的入力として扱う。
 
@@ -20,7 +20,7 @@
 
 **非被約基底上の相対exact 3-CY（C v4.60）。** 二mass有限foundationは任意の局所Noetherian可換基礎環$R$上rank24局所自由で、相対双加群対角射影解消を持つ。Kellerの2018 erratum Theorem 1.1は任意可換基礎環を許すため、**全非退化二mass finite openの$\Pi_3(\Lambda)$は$R$-相対homologically smoothかつcanonical exact 3-CY**。$H_2$実現可能開では形式性によりordinary $\operatorname{Jac}(Q_{12},\mathcal W)$もR相対exact 3-CY。幾何fiberはこの特殊化。**CYのcanonical cyclic primitive（C v4.61）。** 双加群解消$P_\bullet$の恒等射からreduced $HC_2$のCasimir primitive $c$を作り、Connes写像で$HN_3$のcanonical exact CY classを得ることを明示。finite foundationの全Isomと任意base-changeに自然で、mass/shearはfinite Morita値mixed complex上でこのクラスを保ち余分な慣性を生まない。これは全QP stack上のhomotopy-coherent高次降下をまだ証明しない。[新命題](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-exact-cy-primitive-isom-inertia`。全$HN_3$の任意非平坦底変更同型も未主張。[主定理・幾何系](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `thm:qa-q12-relative-exact-three-cy`・`cor:qa-q12-h2-geometric-exact-three-cy`。
 
-**C4増分静的監査（2026-11-23）。** 論文C v4.47の43 TeX横断監査から現行v4.60までのGit tree差分を確認：変化したTeXは主原稿・C3・相対rotated heartの3ファイルのみ（40ファイル同一）。新ラベル46、旧ラベル削除0、新参照キー32。30件は変化した3ファイル内で解決し、2件は未変更の`relative_avatar_heart_comparison.tex`の実定義を確認。これは旧全稿監査を利用した差分確認であり、現行v4.60の全稿再checkout・`python scripts/check.py papers`・LuaLaTeX実組版の成功を意味しない。
+**C4全43 TeXの最新ソース静的監査（2026-11-23）。** GitHubの現行mainから主原稿＋42分割節を全取得。**ラベル868・相互参照947・引用キー使用数241**（bib91キー）。新50ラベルと既存定義の重複なし、相互参照解決、未定義bibキー・TeX環境不均衡なし。前回の235という引用数との差は抽出規則の差による。これは接続経由の静的解析であり、`scripts/check.py papers`実行・全稿LuaLaTeX組版・PDF/SyncTeX表示・数学的な独立証明監査はまだ未実施。
 
 **非平坦基底変更の精密化。** 非正dg Serre完成の基底K-flat模型とtruncation三角から、$H^0\Pi_3(\Lambda)$は全係数基底変更で交換する。一方、相対heartの通常引戻しは$H^0\mathbf Lb^*$であり、導来引戻しそのものは一般に$t$-exactではない（双対数上の周期Torが反例）。$t$-exactなMorita比較・導来基底変更の自然性・$H^0$を組み合わせ、全Isomのheart比較の通常引戻しに関する2-cocycleを補った。[dg零次](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)・[heart引戻し](papers/quiver-avatar/relative_rotated_mutated_tails.tex)。C4の全証明監査・組版は未完。
 

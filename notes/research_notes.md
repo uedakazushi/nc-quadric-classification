@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.68（A v1.69・20節、B v0.41・31節、C v4.61）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.69（A v1.69・20節、B v0.41・31節、C v4.61）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
@@ -42,9 +42,7 @@
 
 **普遍Tor障害の適用範囲。** 非正複体一般にはtruncation三角から$\operatorname{Tor}_2(H^0C,R')\to H^{-1}C\otimes_R R'\to H^{-1}(C\otimes_R^{\mathbf L}R')\to\operatorname{Tor}_1(H^0C,R')\to0$が従い、双対数$R=k[\varepsilon]/(\varepsilon^2)$、$C=k[0]$で負一次の基底変更は失敗する。これは一般の導来tensorの障害であり、$H_2$開の$\Pi_3$では全次数消滅により障害が現れない。
 
-**C4静的監査（v4.47全稿監査＋v4.60の増分差分）。** v4.47で全43 TeXの818ラベル一意・868参照解決・235引用がbib90キー内と確認済み。今回Git treeのblobを比較して、v4.60で変更したTeXはC主原稿・C3・相対rotated heartの3ファイルのみ、他40ファイルは同一と確認。変更分に新ラベル46・新参照32（旧ラベルとinputは削除なし）。新参照30は変更3ファイルの定義内、2件（`lem:qa-generators-detect-right-texactness`、`prop:qa-h2-mutual-markings-heart-test`）は未変更の`relative_avatar_heart_comparison.tex`の定義を直接検索確認。これは既存全稿監査を参照する増分静的確認であり、C v4.60の全43 TeXファイルをこの作業で再取得・再走査した結果ではない。最新C3の環境・引用キーの局所検査も実施。**現在も`python scripts/check.py papers`とLuaLaTeX全稿・PDF/SyncTeX目視は未実行。**
-
-**旧v4.47全稿監査の詳細（依存する既存資料）。** C主原稿と42の分割節（計43 TeXファイル）から，818個のラベル・868件の参照・235件の文献引用を同版のGitHubソースから抽出。v4.50ではTor補題・系と参照を追加したため、この件数をv4.50の全体実行結果と読み替えない。ラベル重複0，未解決参照0，未定義引用キー0（bib90キー），未解決入れ子入力0，Markdown混入0。C3で1件の禁止Unicode数式矢印を発見してTeXの$\to$へ訂正し，修正後も当該節のラベル／参照／引用集合は同一と確認した。前回の節別確認から進み，全ファイル横断のref検査を済ませた。ただしこの検査はGitHubソースをJavaScriptで静的解析したもので，scripts/check.py papersの実行やLuaLaTeXビルドではない。コンテナのDNS制約により全repoのcheckoutが取得できずPDF/SyncTeXの実組版・目視は未実施。
+**C4全43 TeXの現行ソース静的監査（2026-11-23）。** GitHub最新mainの`papers/nc-quadric-avatar.tex`とそこから直接inputされる42分割節を全て取得し、同一パーサでラベル868・相互参照947・引用キー使用数241を数えた。未変更40ファイルの合計はラベル711・参照661・引用202、変更済みの主原稿/C3/相対rotated heart 3ファイルはラベル157・参照286・引用39。旧43ファイルの参照全解決とGit blob同一性の検証を引き継ぎ、新50ラベルと旧40ファイルの衝突なし・新参照32種類のうち変更3ファイルの定義30、残2は`relative_avatar_heart_comparison.tex`で直接定義確認。現行91 bibキーに未定義引用なし、各ファイルのTeX begin/end不均衡なし、42のinputパスに重複なし。以前の235引用という数字は異なる集計規則であり、今回は最新ソースに対する**同一抽出規則の241**を現行値とする。**未実行：** `python3 scripts/check.py papers`、`latexmk`/LuaLaTeX全稿、PDF/SyncTeX表示、全数学的独立監査・形式証明。接続経路のGitHubソースを静的に読んだのであり、ローカルcheckoutはDNS制約で不可。
 
 **内在的H2上のSerreとpointed heart。** 既存の有限square↔normal foundation相対同値と全H2の明示開を使い、normal full strong `T=⊕E_i` を実際の相対heart内に取る。 `Θ_Λ^{⊗^L n}≃RHom(T,tⁿT)` のforward Ext消滅とperfect-fiber判定により、全 `n≥0` で `Jac(Q12,W)_n≅Hom(T,tⁿT)` と基底変更を得る。Euler行列 `G=[[1,2,4,6],[0,1,2,4],[0,0,1,2],[0,0,0,1]]` の `(G^{-1}Gᵗ)^{-n}` から全階数 `64n²+64n+24`。相対AZ ample・opposite square dualizationから左右Noetherと `(qgr Jac,πe0Jac,(1))≃(C,O,t)` を得る。対応は**H2実現可能開**であり、一般のraw QPには拡張しない。
 
