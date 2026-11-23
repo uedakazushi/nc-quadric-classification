@@ -2530,3 +2530,5 @@ latexmk
 **一退化位相を含む385頁保存版 9e7773d。** 二つの `git archive 9e7773d` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429681 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全385頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `21e8b3a454384f8f3129a4fb7979549532a082bbd8567d90f3025bffc73933a6`、SyncTeX `03e523f7ec5a1f50d90a621ef5468bd27b201a73feb93a2a78532f23c06c74b3`、抽出テキスト `9cf0aa6134b39ecf2860e5ce664b1b9d5e5cc7c470007a0075c0874718ea7e7a`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一退化位相の上端商の正確な次元。** `cor:qa-avatar-even-top-bridge-rank` で可逆区間を明示的に消去し、残る関係を行列の共役と階数一テンソルの左右積で表示した。二つの保存直線が異なるとき辺の階数は二、同じとき一となり、上端商の次元はそれぞれ `s+3` と `2s+2` である。厳密検算には二つの直線配置の例を両方加え、重み16までの辺の行列から同じ次元を計算した。
+
+**一退化位相の次元判定を含む386頁保存版 8700d57。** 二つの `git archive 8700d57` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429909 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全386頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `cc8b90609ae6d220e0cf5612b8f527bfca2e388caabf471ee7322c9372612a7a`、SyncTeX `d77e2d2dd70ab8bdcf1bf08ddc33b5b28e3b2ad3a41657af7884c1789cc66162`、抽出テキスト `5685cb37212a548993e5e055b9c0147405c85b4ed626ed9c19e79bf31ab7803d`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
