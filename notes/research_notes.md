@@ -2650,3 +2650,5 @@ latexmk
 **rawループ類の比較を含む402頁保存版 8613d0c。** 二つの `git archive 8613d0c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437966 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全402頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fc30946e33f82be42aa20cdc381348e39192b38fa668c365be62fe6f1a70d1d1`、SyncTeX `0ec0300aedc651d5bd76a0c5c7e6189648a6a0a8cef53214a70aba92866ad177`、抽出テキスト `9877f96c2344b6c8808029cf927dc9e391dbddbccb00a6cf002ab2f1646c9656`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **raw負巡回ループ鎖の右同値・消去自然性。** `cor:qa-raw-loop-class-naturality` は、全重み付き右同値が二項mixed模型の指定一形式cycleを保つことを示した。可逆mass消去の射では、ループ数で濾過した核を可縮な矢複体で分解して準同型を証明し、同じcycleが移ることを確認した。いずれも任意基底変更に適用できる。
+
+**rawループ鎖の自然性を含む403頁保存版 f89a4dd。** 二つの `git archive f89a4dd` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438209 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全403頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `a1f37d6f9144898acf80c808f2477a9d917a247185153ef6521485f1fc5f240f`、SyncTeX `7835e7d3eb512e2d1ea1a166895613eb923bb39de975823e6bb4637841b4d333`、抽出テキスト `8cdf93847b3a8cb70c513714cc9834850b5f5494b0cacbf3b5be22f8d0b945ff`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
