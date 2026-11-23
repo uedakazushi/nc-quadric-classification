@@ -17,6 +17,8 @@ Okawa–Ueda [arXiv:2508.04986v1](https://arxiv.org/pdf/2508.04986v1) §6のDefi
 
 Cの原著内の証明に移管済みの箇所では、未公刊の日本語草稿は歴史的な帰属として保持する。今回の作業環境には旧日本語PDFの実体がなく、既存の頁・定理番号の全数再照合はできていない。AS型の比較に使う現行の証明参照は原稿内の定理・補題に置く。AZ原著Theorem 4.5は出版社書誌と後続論文の再掲を照合した範囲と、原著本文を照合した範囲を区別する。
 
+Okawa–Ueda [arXiv:2007.07620](https://arxiv.org/pdf/2007.07620) の第4頁、Definition 3–4、式(30)–(32)、Theorem 5を再取得して照合した。Definition 4は全順序対の前向きHomに対する次数零以外の消滅を要求する。Theorem 5はspherical helixのacyclicityをexceptional helixへ移す。Cの指定最小分解の頂点・重複度、双対線束、および任意基底変更までの復元には原稿内の追加の計算と相対証明を使う。
+
 ## 全H2の共通線形化と大域良モジュライ
 
 Alper, *Good moduli spaces for Artin stacks*, 刊行版の [本文](https://www.numdam.org/article/AIF_2013__63_6_2349_0.pdf) Proposition7.9（印字pp.2379–2380）、Theorem13.2（p.2399）、Theorem13.6（p.2400）を一次確認した。Affineな線型簡約群商の良モジュライ、共通部分の飽和性による貼合せ、線形化からの準射影GIT商が既知入力である。CはSegreの左右kernel条件をP=det、Q=e3(JMᵗJM)へまとめ、指標χ0=detW/(detA detB detC detD)の同じ24乗を持つ三半不変式を構成する。比による飽和性を直接示すことで全H2の準射影的good moduliを得る。一般GITの存在定理を新規な原理とはせず、全H2への具体的適用と範囲を区別する。3本が半不変環を生成すること、全semistable locusとの一致、射影性やsmooth性は未主張。包括的新規性は未確認。
