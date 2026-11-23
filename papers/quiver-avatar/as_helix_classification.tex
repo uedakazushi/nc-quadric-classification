@@ -571,12 +571,28 @@ $\PP_Y(\coker\kappa)=D$を回収し、
 0\to\OO_Y^{\oplus2}\xrightarrow{\kappa}
 \OO_Y(h)^{\oplus2}\to\iota_*Q\to0
 \]
-を$\OO_Y(-h)$で捩った大域切断から
-$0\to2$の二矢を回収する。
-元の列の大域切断は$0\to3$の
-二つの最小関係と全道を回収する。
-保持三頂点のHomと合成は
-$f,h,h+f$の制限列のacyclicityから得られ、
+を $\OO_Y(-h)$ で捩ると、$\OO_Y(-h)$ の全コホモロジー消滅により
+$H^0(QH^{-1})$ は $0\to2$ の二矢空間と同型になる。
+元の列の大域切断は
+\[
+ 0\longrightarrow R_0\longrightarrow
+ H^0(Y,\OO_Y(h))\otimes H^0(D,QH^{-1})
+ \longrightarrow H^0(D,Q)\longrightarrow0
+\]
+である。最初の射は普遍評価行列の係数なので、
+元の二関係の包含そのものである。
+最後の射は可逆層の切断の乗法であり、
+$0\to3$ の合成を同定する。
+
+保持した $1,2,3$ の三頂点では、$f,h,h+f$ から $2h$ を引いた
+$f-2h,-h,f-h$ のすべてが acyclic なので、
+それぞれの切断空間は $Y$ から $D$ への制限で変わらない。
+$Y$ 上の $f$ と $h$ の乗法は、
+$\PP^1$ 上で $\mathcal E$ の評価列を $\OO(1)$ で捩って得る
+全射 $V\otimes H^0(\OO(1))\to H^0(\mathcal E(1))$ であり、
+核は $R_1$ である。
+従って $1\to3$ の合成も元の二関係で割った積と一致する。
+残る
 $0\to1$のHomの消滅は
 $H^\bullet(\OO_D(h-2f)P^{-1})=0$である。
 古典型でもkernelのdeterminant計算が
