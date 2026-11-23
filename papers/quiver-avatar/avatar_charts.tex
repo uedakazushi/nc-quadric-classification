@@ -1978,6 +1978,56 @@ $J\otimes_G^{\mathbf L}K=0$ である。
 まったく同じ検査ができる。
 \end{proof}
 
+\begin{proposition}[重み付き右同値のGinzburg dg作用]
+\label{prop:qa-ginzburg-right-equivalence-double-derivations}
+頂点を固定し重みを保つ右同値
+$\phi:(Q,\mathcal W)\to(Q',\mathcal W')$ は、
+非完備Ginzburg dg代数の同型を自然に誘導する。
+この同型は右同値の合成と任意基底変更を保ち、
+通常のJacobianへの標準射と可換である。
+従って全曲線型avatarでの零次集中は、
+局所表示間の実際の右同値に関して自然である。
+\end{proposition}
+\begin{proof}
+道代数を $F$、頂点環を $D_0$ とする。
+$D_0$ 上の二重導分
+$\operatorname{Der}_{D_0}(F,F\otimes_R F)$ では
+値の双加群に外側の作用を使い、導分の束自体には
+$ (uDv)(b)=\sum D(b)'v\otimes uD(b)''$ という内側の作用を使う。
+矢 $a$ だけを $e_{t(a)}\otimes e_{s(a)}$ に送る座標導分を取ると、
+これはGinzburgの次数 $-1$ の逆矢の自由双加群である。
+これは自由道の導分が矢上の値で一意に決まることによる。
+
+導分 $D$ の微分は
+$D(\mathcal W)$ の二成分を逆順に掛ける操作である。
+積の導分公式を使うと、この操作は巡回代表によらず、
+内側の作用に関して双加群写像となる。
+座標導分では普通の巡回微分を与える。
+頂点 $i$ の次数 $-2$ の生成元の微分は二重導分
+\[
+ b\longmapsto e_i\otimes e_i b-b e_i\otimes e_i
+\]
+に対応する。矢上で比較すると、これは
+$\sum_a[a,a^*]$ の $i$ 成分である。
+従ってこの三種類の生成元と微分が通常のGinzburg模型を与える。
+
+$\phi$ は次数零では道代数の写像であり、
+二重導分を $(\phi\otimes\phi)D\phi^{-1}$ に送る。
+頂点の次数 $-2$ の生成元は同じ頂点へ送る。
+逆順の積はこの導分移送と可換であり、
+$\phi(\mathcal W)$ は $\mathcal W'$ と巡回同値なので
+次数 $-1$ の微分を保つ。
+頂点の二重導分は $e_i$ と積だけから定まるので
+次数 $-2$ の微分も保つ。
+重み $w$ の矢の座標導分の重みを $4-w$ とする規約は、
+導分の本来の重みに四を加えたものなので、この移送で保たれる。
+合成の整合性は導分を共役する式そのものである。
+有限矢からの自由双加群表示を使っているため、
+非平坦な基底変更でも同じ写像を得る。
+負次数生成元を殺した商への写像は通常のJacobianの同型であり、
+零次集中との整合性は系~\ref{cor:qa-avatar-ginzburg-formal}による。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 

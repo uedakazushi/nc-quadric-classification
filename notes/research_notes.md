@@ -410,6 +410,8 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **両mass零境界の幾何点の復元。** 負断面が一重なら、短関係と長関係から相対鉛筆の射影作用を取り、固定因子とPicard貼合せを回復する。対角lift変更を法とした三次補正は長さ二の固定因子上の切断で、残余因子の方程式 $Az+Bw$ に対し $B$ の剰余を決める。負断面が二重なら作用は恒等、三次補正は垂直四次因子を決め、加法的一次元のPicardの非零元は曲面自己同型の単一軌道となる。これで境界全体の幾何点の同型類を有限窓から復元した。相対同型層全体と境界のAS正則性には別の検証を要する。[境界比較](../papers/quiver-avatar/avatar_charts.tex)。
 
+**幾何avatarの相対JacobianとGinzburg作用。** 一重・二重負断面の各幾何点で整列基底を得て、被約な普遍chart上の関係行列から冪零massを含む全族の次数別平坦性を証明した。相対巡回解消を用いて非完備Ginzburgからordinary Jacobianへの標準射が準同型であることを示した。また右同値の実際のdg作用は二重導分の共役として構成し、全合成と基底変更の自然性を確認した。これは特定のKeller Morita比較の全右同値に対する自然性とは別の主張であり、その比較と異なるrulingの貼合せは監査を要する。[相対比較](../papers/quiver-avatar/avatar_charts.tex)。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式
