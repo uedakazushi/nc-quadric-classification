@@ -2498,3 +2498,5 @@ latexmk
 **381頁保存版 fda29d6 の再現性。** 二つの `git archive fda29d6` 展開で、共通TeXツリーと `SOURCE_DATE_EPOCH=1795427613 FORCE_SOURCE_DATE=1 TZ=UTC` を指定して組版した。全381頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXは一致。SHA-256はPDF `042ebc75485b782f575e4eb3043abe7c82f5782e953e1ec8169955df2819fa43`、SyncTeX `f013aad494d3564038d7f8c0d5557eae2b5d7d681392b9664258d22a2c6778be`、抽出テキスト `8ed0a5a132e4e98913d5564d936f016bb1d73be580bd8cc84f28829ce857e77f`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **依存整理後の381頁保存版 7118e88。** 二つの `git archive 7118e88` 展開を共通TeXツリーと `SOURCE_DATE_EPOCH=1795427846 FORCE_SOURCE_DATE=1 TZ=UTC` で組版した。全381頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `4615ba819e93e4f4a640ee20bc5e189b7b0f8f6f1bad67d51abef81cfe46a1c0`、SyncTeX `7d44b60f740b8ad5c484c83868e93b74b92ce9c193f02c42d074e41e80215256`、抽出テキスト `2a39fa585e560cf529e66b768e5073b20a30aa39a0aa21be359a76bb47713587`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**ASの指定解消からの有限階数監査。** `prop:qa-avatar-as-forces-finite-ranks` で、各位相における重み1・2・3の次元2・4・6と、道空間から短関係一列・長端点六列への階数条件を証明した。両mass零で隣接する短関係がともに階数一なら中央因子を共有できない。四周期の単項式potentialを反例に、全位相の重み三までの条件を満たしても短テンソルの階数二は従わないことを示した。この例の重み四は語の列挙で11となり、指定解消が要求する9とは異なる。
