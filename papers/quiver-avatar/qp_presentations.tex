@@ -1234,6 +1234,73 @@ $C_2,C_3$ は局所自由なので、対応する核束への方程式と
 全右同値を用いるため同じ底変更と整合する。
 \end{proof}
 
+\begin{corollary}[固定周期代数上の表示の局所標準形]
+\label{cor:qa-fixed-arrow-slice}
+命題~\ref{prop:qa-fixed-arrow-presentation-fiber}の固定表示の近傍で、
+考察する基底点で単元となる対をすべて消去する。
+残る対について $P_d=[p_dq_d]_{\mathrm{cyc}}$ と置き、
+局所的に $\ell_d(P_e)=\delta_{de}$ となる線形写像を選ぶ。
+固定矢像の表示で純四次項 $H'$ に
+$\ell_d(H')=0$ を課した部分スキームを $N$ とする。
+表示fiberは、その基底点上をすべて含む開部分で
+\[
+ N\times_S B_S\Bigl(\prod_d\mathcal U_{\lambda_d}\Bigr)
+       \times_S B_S(\Gm^{m})
+\]
+と同値である。$S$ は比較する基底開、$m$ は消去した対の数である。
+残ったmassがすべて冪零のとき、この開部分は表示fiber全体である。
+とくに、この形で同型類を判定するときは $N$ の座標を比較すればよい。
+\end{corollary}
+\begin{proof}
+可逆対の比較は命題~\ref{prop:qa-stabilized-inertia}と
+系~\ref{cor:qa-raw-q12-to-q10-product}で行い、以下では消去後を扱う。
+残った対の $P_d$ が剰余体上で独立なことは
+系~\ref{cor:qa-raw-periodic-jacobian-kernel}の二対二分割による。
+従って基底を縮めて左逆 $\ell_d$ を選べる。
+残る対がない場合は空条件とし、同命題の分母も自明である。
+
+固定矢像に対し、重み二の生成条件から、各対の混合係数とmassは
+\[
+ p'_d=\alpha_d p_d,\qquad q'_d=\beta_d q_d,\qquad
+ \lambda'_d=\alpha_d\lambda_d=\beta_d\lambda_d,
+ \qquad \alpha_d,\beta_d\in\mathcal O^\times
+\]
+と一意に書ける。これは各端点で、対応する巡回微分が
+固定された核線のもう一つの枠だからである。
+$x_d\mapsto x_d+t_d(q_d+\lambda_dx_d)$、
+$y_d\mapsto y_d+s_d(p_d+\lambda_dy_d)$ とすると、
+$C_d=\alpha_dt_d+\beta_ds_d+\lambda'_dt_ds_d$ により
+\[
+ H'\longmapsto H'+\sum_d C_dP_d,
+ \qquad
+ (\alpha_d,\beta_d,\lambda'_d)
+ \longmapsto
+ (\alpha_d+\lambda_d C_d,\beta_d+\lambda_d C_d,
+     \lambda'_d+\lambda_d^2 C_d)
+\]
+を得る。これは全右同値の式への代入であり、
+$\lambda'_d=\alpha_d\lambda_d=\beta_d\lambda_d$ を用いた。
+
+各 $\alpha_d-\lambda_d\ell_d(H')$ が単元である条件は
+上の作用に不変な開条件である。残るmassが剰余体で零の点上では
+自動的に成り立つ。この開で $s_d=0$、
+$t_d=-\ell_d(H')/\alpha_d$ とすれば、
+$1+\lambda_dt_d$ は単元で、表示を $N$ へ移せる。
+$N$ 上の二表示の間の変換では $C_d=0$ が必要である。
+従って表示の全係数は一致し、残る変換は
+\[
+ s_d=-\frac{\alpha_dt_d}{\beta_d(1+\lambda_dt_d)}
+\]
+に尽きる。$1+\lambda_ds_d=(1+\lambda_dt_d)^{-1}$ なので
+任意の $t_d\in\mathcal U_{\lambda_d}$ が許される。
+$t_d$ への射影は置換の合成を群法則
+$t\star t'=t+t'+\lambda_dt t'$ へ移す。
+よって $N$ 上の群oidは恒等対象間のこの群の作用であり、
+fppf降下により表示した直積を得る。
+単元条件は冪零massなら基底全体で自動的に成立する。
+全計算は任意基底変更で同じ式を満たす。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。
