@@ -57,25 +57,40 @@ $Z(D-Z)=h^2=2$ となる．
 $2p_a(Z)-2=-Z(D-Z)$ も得られる．
 
 ここで非被約曲線にも使える二つの観察を証明しておく．
-線束 $N$ の切断が generic に非零となる最大の部分曲線を
-$Z$ とすると，その切断は
-$N|_Z(-(D-Z))$ の generic に単射な切断を誘導する．
-ゆえに
+曲面の各成分の一般点で $D$ の局所環は
+離散付値環の商 $R/(t^m)$ である。
+切断の値が単元倍の $t^a$ なら、その annihilator は
+$(t^{m-a})$ となる。零の場合も $a=m$ とする。
+この重複度 $m-a$ で定める部分因子を $Z$ とする。
+$I_{Z/D}$ に切断を掛けた像は有限長だが、
+Cohen--Macaulay 層 $N$ に有限長部分層はない。
+従って切断は
+$N|_Z(-(D-Z))=\mathcal{H}om_D(\OO_Z,N)$
+に属し、$\OO_Z$ からこの線束への射は一般点で同型である。
+核は零、余核は有限長なので
 \[
  \deg_Z N\ge Z(D-Z).                                      \tag{*}
 \]
-また長さ $\ell$ の零次元部分 scheme $\xi\subset D$ と
-線束 $M$ に対して $H^1(I_\xi M)\ne0$ なら，
-Serre 双対性から $I_\xi M\to\omega_D$ の非零射を得る．
-像の generic annihilator が定める $Z$ 上に射を因数分解し，
-$Z$ の双対化層と余核の長さを比較すると
+
+長さ $\ell$ の零次元部分 scheme $\xi\subset D$ と
+線束 $M$ に対して $H^1(I_\xi M)\ne0$ とする。
+Serre 双対で得る非零射 $I_\xi M\to\omega_D$ に
+同じ一般点での計算を適用して部分因子 $Z$ を定める。
+その像は $I_{Z/D}$ で消されるので
+$\omega_Z=\mathcal{H}om_D(\OO_Z,\omega_D)$ に含まれる。
+射は $I_\xi M\otimes\OO_Z$ を経由し、
+この層から $M|_Z$ への写像の核は有限長である。
+有限長部分層を持たない $\omega_Z$ への射はこの核を消す。
+従って $I_{\xi\cap Z/Z}M|_Z\hookrightarrow\omega_Z$ となる。
+単射性は一般点での同型と源の Cohen--Macaulay 性から従う。
+Euler 特性を比較すると
 \[
- \deg_Z M\le 2p_a(Z)-2+\ell .                             \tag{**}
+ \deg_Z M\le 2p_a(Z)-2+\operatorname{length}(\xi\cap Z)
+             \le 2p_a(Z)-2+\ell .                         \tag{**}
 \]
-ここで $\omega_Z=\mathcal{H}om_D(\OO_Z,\omega_D)$
-という随伴を用いる．両議論は局所的な annihilator と
-Cohen--Macaulay 曲線の双対性だけに依存するので，
-nilpotent layer を持つ部分曲線にも適用できる．
+この因数分解と Euler 特性の比較は
+\cite[補題2.3--2.4および定理1.1の証明]{CFHRCurveEmbeddings1999}
+の曲面上の Cartier 曲線の場合である。
 
 $R\in\Pic^0(D)$ の各成分次数は零である．
 $R$ に切断があれば，真部分 $Z$ への
