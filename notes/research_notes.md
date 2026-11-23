@@ -2698,3 +2698,5 @@ latexmk
 **古典点のTor監査を含む409頁保存版 efe5739。** 二つの `git archive efe5739` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440869 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `e0bf83efddf39b73e0e9ed81daa7a7bee8f590d0f92dd80741f9f25e3d9b4492`、SyncTeX `b04a022151ff39eca7b2cf9e12e0bb1a9acd3d2abeebf509a4ebe8ec443f845f`、抽出テキスト `f197151c2716db8be7fa0a64d95f836ec46ea131b4e98b71028557c6198cc133`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **古典点の高次冪零変形の平坦性監査。** `cor:qa-avatar-incidence-classical-tor` に、局所Artin基底での最初の非零次数の計算を追加した。行列式idealの特殊fiberはその先頭切断が張る逆線束に全射するため、平坦性は特殊fiberの全点で破れる。一変数の切断多項式環では、随伴次数ごとの乗法単射性から相対Torそのものが逆線束となる。
+
+**高次冪零変形の平坦性監査を含む409頁保存版 dfedbdf。** 二つの `git archive dfedbdf` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795441103 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b342ea59f303835e59f1cb226393ea6360a2c1ecc19aa5f6610129070ffe9930`、SyncTeX `81f2c5dee64618364af4d1cb68eb7ba7b279bd96a17a604f6663aa11694a26f0`、抽出テキスト `5050f067748d5769ec41b817cec9c68a24e0b92ccc3b606b3667920fda01ccb6`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
