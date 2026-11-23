@@ -1037,3 +1037,5 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 **cotangent表示での負巡回Casimir比較。** Keller, [Erratum to Deformed Calabi–Yau completions](https://arxiv.org/abs/1809.01126), Theorem 1.1の証明（印刷頁2–3）の一次本文を再照合した。対象は非変形completionであり、正のtensor次数を取り出すことで係数双加群がcofibrantとなり、reduced小模型の通常tensorが導来tensorを計算する。Cでは頂点環上の自由道模型からこの相対模型への普遍導分の射を使い、tensor次数一でCasimirのConnes像とrawループ鎖を比較した。
 
 **rulingの有限窓とCasimirのMorita比較。** Keller, *Deformed Calabi–Yau completions*, Proposition 4.2の本文で、非変形completionのMorita functorが元の包含・増大と可換し、そのtensor次数一の写像が逆双対化複体の比較から来ることを再照合した。Casimirの保存はこの命題に付加して、係数付きtraceで対角恒等射を移し、同じbar包含とConnes作用を追うことで証明した。
+
+**全内部重みの零次集中の照合。** Stacks Project [Tag 0BCC, Lemma 15.77.6](https://stacks.math.columbia.edu/tag/0BCC) で、局所環上のpseudo-coherent複体に対して、剰余体への導来引戻しの各コホモロジー次元を階数とする自由模型が存在することを確認した。各固定始終点・内部重みのGinzburg道複体は既に有界有限自由なのでこの仮定を満たす。零次以外の剰余体コホモロジーが零なら、同じ局所化で零次の有限自由加群に準同型となる。
