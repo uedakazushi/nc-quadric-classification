@@ -57,7 +57,13 @@ $R$ 上 perfect である．tensor--Hom 随伴と有限 perfect 双対によっ�
 ここで $K$ の compactness や基底平坦性は使っていない．
 
 相対 $H_2$ では $\mathsf S E=t^{-1}E[2]$ であり，canonical $t$ は
-heart 上完全で $R$-線形である．従って $t^{-1}E$ も基底平坦で，
+heart 上完全で $R$-線形である．
+そのInd延長は直和と余核を保つので、任意の$R$-加群$M$に対し
+$t^{-1}(E\otimes_R M)\simeq(t^{-1}E)\otimes_R M$となる。
+実際、$M$の自由表示に対して直和間の行列を作用させ、
+その余核を取ればこの同型を得る。
+同じ計算を自由解消に適用すれば導来tensorとも可換である。
+従って $t^{-1}E$ も基底平坦で，
 \[
  \mathsf S E\otimes_R^{\mathbf L}I
        =(t^{-1}E\otimes_R I)[2]
@@ -73,6 +79,24 @@ heart 上完全で $R$-線形である．従って $t^{-1}E$ も基底平坦で�
 である．$I$ が cogenerator であることから
 式~\eqref{eq:qa-flat-compact-ext-two} が従う．
 \end{proof}
+
+\begin{example}[特異基底上の相対heartのExt次元]
+\label{ex:qa-singular-base-heart-ext-unbounded}
+$R=k[\epsilon]/(\epsilon^2)$、
+$X=\PP^1_R\times_R\PP^1_R$とし、構造射を$p$とする。
+$\operatorname{coh}X$の対象$K=p^*(R/(\epsilon))$は
+全$q\geq0$について$\operatorname{Ext}_X^q(K,K)\simeq k$を満たす。
+実際、$R/(\epsilon)$の解消は微分がすべて$\epsilon$の
+自由分解で、その$p^*$は$p$の平坦性により完全である。
+各項は$\OO_X$であり、
+$\mathbf R\Gamma(X,K)=k[0]$は
+$\PP^1_k\times_k\PP^1_k$上の構造層のコホモロジーから従う。
+したがって$\mathbf R\operatorname{Hom}_X(K,K)$を計算する
+第一象限の複体では、一行だけが残り、
+その微分は$\epsilon$が$K$上で零なので消える。
+これにより前補題の上限が相対heart全体の
+大域次元の主張ではないことが分かる。
+\end{example}
 
 \begin{proposition}[有限個の平坦対象を加えた相対AZ生成]
 \label{prop:qa-relative-flat-foundation-az}
