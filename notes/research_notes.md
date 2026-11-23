@@ -2646,3 +2646,5 @@ latexmk
 **非平坦基底変更の合成比較を含む402頁保存版 2fdabd1。** 二つの `git archive 2fdabd1` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437676 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全402頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `44ed20c645b96cf86dc3bee2833667a62717812c2fd47812d541124f2e5feee2`、SyncTeX `2be026be6c2c9a1e2d536c0e96d8c5c5b0c0c18576c52337eede647fdacbface`、抽出テキスト `e096a003e060a4438ea87207a88d8a409e1afea6aa9451843af9c01ed8628b13`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定Jacobian上のrawループ類と単元倍。** `prop:qa-raw-scalar-loop-class` は二項対角模型でループ和のConnes像を計算し、potentialの単元倍によってその類が逆単元倍に移ることを証明した。Hochschild像の重み四の独立なループ係数は境界にならず、通常Jacobianを固定しても類を変える単元差を検出する。有限foundationのCasimir類との比較は別に残す。
+
+**rawループ類の比較を含む402頁保存版 8613d0c。** 二つの `git archive 8613d0c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437966 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全402頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fc30946e33f82be42aa20cdc381348e39192b38fa668c365be62fe6f1a70d1d1`、SyncTeX `0ec0300aedc651d5bd76a0c5c7e6189648a6a0a8cef53214a70aba92866ad177`、抽出テキスト `9877f96c2344b6c8808029cf927dc9e391dbddbccb00a6cf002ab2f1646c9656`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
