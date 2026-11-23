@@ -2522,3 +2522,5 @@ latexmk
 **偶数上端商を含む384頁保存版 edc9daa。** 移送式の括弧と転置記号のTeX記法を修正した後、二つの `git archive edc9daa` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429218 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全384頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `a07ce1dbaa8699e8be714635ca33e953b22a3f226758fa76a74430fd6efd8e93`、SyncTeX `022593eddd79cf422d7de5cd0d7a27d964993dba3e1b620c7c5f01d124bf9c2a`、抽出テキスト `9bb8b35f109b80c5d90f569514eb03a776af38e8491b865d8edbff19fddf19d1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **隣接位置への縮約。** `cor:qa-avatar-even-top-inward` は始点偶奇の左射影が可逆なとき、偶数重みの上端商を隣接する二つの重み一の矢の空間へ集約する。短関係で割った空間を列に並べると、長関係は隣り合う二区間だけに現れる。厳密検算に有限行列を実装し、短テンソル退化例の始点0,2について重み4,6,8,10の次元 `(4,4),(5,4),(5,5),(6,5)` を確認した。全Hilbert次元へ外挿する主張は置かない。
+
+**隣接位置縮約を含む385頁保存版 69f9cd7。** 二つの `git archive 69f9cd7` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429450 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全385頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `3d4a15c181f964410974cf4b1c4ff2e1f91eda5d788ee48762a1199ed3684996`、SyncTeX `2e66ea1ac86fc15dbe687a1314ad4472453ae0b311003ffea781b243e3bc656c`、抽出テキスト `17421f97c0ba7eb395d2fb3ebfbcc3780e9c5a46870f46d29a08a6cd0fb66abc`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
