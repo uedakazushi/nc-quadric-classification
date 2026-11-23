@@ -159,9 +159,9 @@ $\OO_C\oplus M$ は元の点曲線・同時符号を回復する。指定generic
 | Quintuple→H2 | スカラー剛体化後、非線型geometric locusでsmooth相対次元0、一般開で表現可能étale・次数2。二捩れ特別座の全慣性・反射分岐、交点のA1型、CM・一cubic境界を記述。全GITへの延長とは区別。[GIT比較](papers/quiver-avatar/git_comparison.tex) |
 | 全H2の二rulingと有限表示 | 内在的有限étale二ruling被覆、foundation実現可能開との比較、その $S_2$ 商を証明。全foundationが実現可能とは主張しない。Cubic幾何部分の四次・六次判定は明示済みで、全実現可能開の具体式・次数上界は未計算。[GIT比較](papers/quiver-avatar/git_comparison.tex)、[有限foundation](papers/quiver-avatar/foundation_charts.tex) |
 
-### 次の研究と検証の状態
+### 論文Cの検証状態
 
-**Cの完成に直結する次の実行単位は、新C3の独立証明監査とC4の公表用編集です。** 相対二段対角の各頂点成分、Kellerの訂正済みordinary ideal条件、全次数のperfect-fiber判定、normal oppositeからの左Noether、非被約底上のIsom・慣性、二段剛体化とS₂-coherent mutationを独立に点検する。続いてCの全source・reference・BibTeXとLuaLaTeX/SyncTeX・PDF表示を確認し、既存結果との差をIntroductionで正確に比較する。H2実現可能開の外側にある一般AS/avatar/QPの全相対群oidは本稿の無条件結論とせず、具体的なAS-regularityとpointingの欠如を調べる独立課題とする。独立証明監査・全稿組版・包括的新規性確認は未完了。
+2026-11-24にS1–S6の指定範囲を確認した。主要証明と各比較の仮定は [研究ノート](notes/research_notes.md) に、v7・十二矢分類稿・Weyl稿・AZ原著を含む先行結果との差は [文献ノート](notes/literature.md) に記録した。LuaLaTeXの411頁について二つのクリーンビルドで全頁描画、抽出テキスト、正規化PDF・SyncTeXを照合した。
 
 
 ## 論文Bの証明監査と再現
