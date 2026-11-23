@@ -8,13 +8,14 @@
 
 **完了判定：研究方針のS1–S6を全て満たし、主張の依存・一次文献・数式・TeX/PDFを独立監査したときのみ。** C1–C3は既存の原稿上達成点、C4はS6の一部。体上AS分類、$H_2$実現可能開、有限foundationの一chartの成功は「全分類」の完了ではない。研究計画の変更が必要な場合は、元の目標の未解決点を保持し、勝手に完了条件を弱めない。
 
-## 次に実行する数学的作業（着手順は方針が正本）
+## 現在の監査作業
 
-1. **AS/avatar/QPの相対stackを厳密に定義する**：型ごとの標準AS整数添字、線束・root/frame、相対可逆性・perfect条件、raw QPの同型とrigidified同型を分ける。どの定義が非被約局所有限型基底上で有効かを調べる。
-2. **foundationからの全族回復・全射性**：`papers/quiver-avatar/as_helix_classification.tex`、`as10_mutation_classification.tex` の `thm:qa-as10-relative-families`、`relative_square_foundation_stack.tex` を突き合わせる。相対AS10のperfect/局所自由仮定が指定AS族から自動的に従うかを、$k[\varepsilon]/(\varepsilon^2)$・rank3壁・古典squareで証明または反例化する。正しい相対Isom sheaf（pointingとperiodの線束含む）を記述し、体上同型類の全単射から全stack同値を推論しない。
-3. **全QPの許容部分と慣性**：`qp_presentations.tex` と `cubic_qp_foundation_groupoid.tex` を使い、8/10/12本矢の全right-equivalence、$mathbb G_m$可縮pair・二mass・頂点scalars、nilpotent nonminimal relationと非cotangent射を調べる。QP表示がASになる必要十分条件・余分なQP族・剛体化後の対象と射を分類する。
-4. **全比較図式・$H_2$と外側**：AS↔avatar↔QPの射のIsom/full faithfulness/essential surjectivity/fiberを検査し、局所mutationとruling S2、特異・noncubic/spectral境界の既知障害と整合させる。canonical CY classの高次降下は、この比較への必要性を見定め、独立問題ならCノートへ分離して保持する。
-5. **証明監査と公表準備**：上記と並行してC4の独立証明監査、一次文献の原文照合、sources/math/build（利用可能ならPDF/SyncTeX表示）を進める。確定結果のみC主原稿へ統合し、計算・原稿上証明・今回の独立検証を混同しない。
+C v4.68にS1–S5の定理を統合した。全整数ASの双対線束と有限窓、向き付き二次式による非平坦点表示、QP適合開と表示慣性、全標準頂点でのH2比較を参照する。現在の終了条件は引き続きS1–S6であり、原稿上の到達とは別にS6を進める。
+
+1. as10_mutation_classification.tex の有限Verdier窓と逆mutationの相互逆性、任意基底変更、全添字の線束を監査する。
+2. relative_square_foundation_stack.tex のGram torsor、曲線avatarの全Isom、全相対heartと二種の再標識を監査する。古典点の一次変形と二次式一致のscheme条件を照合する。
+3. qp_presentations.tex と cubic_qp_foundation_groupoid.tex の有限適合開、短対角解消の双対自然性と表示gerbeを監査する。両square積が階数三のH2境界では、各normal窓の後二段積が同型となる。両raw mass零の壁と区別する。
+4. 一次文献の仮定を現行証明と照合する。既存の再録参照を原著を確認した事実と混同せず、内部の未公刊文献が論理入力か、歴史的帰属かを確認する。sources/math/buildおよびPDF/SyncTeX表示を記録する。
 
 **続行ルール。** 一補題・計算成功・章追加・commitで停止しない。証明が閉じなければ最小反例・残余補題・別chartを研究ノートに整理して次の優先課題へ進む。切りのよいところで、前回の成功したpushから**おおむね15分以内**に現在有効な論文C・研究ノート・研究方針・README/AGENTSを通常commitし、最新mainを確認してfast-forward push。続けて次の研究課題へ着手する。更新した研究成果をrepo mainへ保存した後、research-hubの最新READMEを読み、該当項目を通常commitで更新する。並行作業・force push禁止・Actions追加/起動禁止・PDF追跡禁止。外部資源不足は正しく報告し、可能な数学的作業を続ける。
 
@@ -24,7 +25,7 @@ Cloud Codexで `uedakazushi/nc-quadric-surface` の `main` を対象に新しい
 
 > [最上位目標] 本repoのAGENTS.md・00_research_plan.md・CLOUD_CODEX.mdとresearch-hubの対象項目を読み、論文C `papers/nc-quadric-surface-avatar.tex` に、指定square/rotated/cubic/minimal AS10型・対応する幾何avatar・重み付き8/10/12本矢QPの**全相対fppf stack分類**を完成させてください。終了条件は方針の**S1–S6すべて**です。既存のC1–C3やH2実現可能開だけで終えず、全相対族、非被約基底、全Isom・慣性、raw QPと剛体化後の区別、groupoidの2-coherence、mutation/ruling、H2の内外の対象と比較射の像・ファイバーを証明してください。全raw QPのAS性や三stackの直接同値を先取りせず、反例や部分成立条件を明示してください。
 >
-> [最初の一手] `as_helix_classification.tex`、`as10_mutation_classification.tex`、`relative_square_foundation_stack.tex`、`qp_presentations.tex`、`cubic_qp_foundation_groupoid.tex` を照合し、全AS/avatar/weighted-QP相対stackの対象とIsomを定義して、`thm:qa-as10-relative-families` のperfect/平坦性仮定が全指定AS族から導けるかをまず解決してください。$k[\varepsilon]/(\varepsilon^2)$・rank3壁・古典例を調べ、全族foundation被覆の本質的全射性とIsomの必要な不足補題を定理・証明または具体的反例として進めてください。
+> [最初の一手] 研究方針と研究ノートのS6監査状況から再開し、上の四項目を原稿の定理・証明に照らして検証してください。原稿の不足や誤りが見つかれば当該箇所と依存先を修正し、本文へ反映してください。
 >
 > [実行と保存] 研究方針と主原稿・研究ノートを現在有効な内容へ更新し、日本語LuaLaTeX原稿に十分な証明を追加してください。既存の全成果・先行研究引用・再現資産を保持し、定理の仮定と証明状態を明確化してください。検証可能な範囲でsources/math/latexmkのチェックを行い、結果は実行事実だけを記録してください。一つの成果だけで停止せず、進行可能な限り次のS1–S5へ進んでください。15分程度ごとに切りのよいところで通常commitしてmainへfast-forward pushし、研究の区切りにはrepo保存確認後にresearch-hubを更新してください。並行変更を維持し、force push・GitHub Actions追加/起動をせず、実行環境の限界なら現行資料に次の証明作業を残してください。
 

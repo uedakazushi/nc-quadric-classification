@@ -6,7 +6,7 @@
 
 **最上位目標（2026-11-23変更）：論文Cで指定AS/avatar/QPの全相対スタック分類を完成する。** [研究方針のS1–S6](00_research_plan.md#最上位目標論文cにおける全相対asavatarqp-stack分類) を唯一の終了基準とし、[Codex実行・起動指示](CLOUD_CODEX.md) と [AGENTS.md](AGENTS.md) に反映済み。対象はsquare/rotated-square/cubic/独立最小AS10型、対応する幾何avatar、指定重み付き8/10/12本矢QPであり、**全対象・全相対族（非被約底を含む）・Isom/慣性・全周期AS再構成・rigidification/gerbe・mutation/rulingの貼合せ・H2内外の部分と忘却射の像/fiber**を証明する。任意の箙・任意次数のASまで拡張する意味ではない。未修正QPとAS/avatarが直接同値とは主張せず、可縮pairのB Gmおよび二mass/頂点scalar慣性を保持して必要な剛体化を決定する。
 
-**現状と残課題。** 従来のC1（体上AS/avatar型・relative tailsなど）・C2（全H2のgood moduli）・C3（H2実現可能開の二massQP/foundation/Serre/Jacobian/heart/S₂商）は**原稿上達成した基礎**だが、全AS/avatar/QP相対stackの同型層・全被覆・全QP許容軌跡・H2外の認識と比較は**未完成**。C4の独立監査・一次資料・全稿組版も未完成。**最初の課題**は全相対AS/avatar/weighted-QP stackの対象と同型層を厳密に定義し、`thm:qa-as10-relative-families` のflat/perfect性の自動性、finite foundationの全族被覆を双対数とrank3壁で証明または反例化すること。既存C3監査・文献・組版は新S6として並行する。A/Bは必要な論理入力として保持する。
+**現状と残課題。** C v4.68にS1–S5の比較定理を統合した。全整数ASの有限型Artin表示には独立な双対線束による障害があり、周期付き部分は有限型である。S6の独立数学監査、一次文献・新規性の確認を続ける。[研究ノート](notes/research_notes.md)・[文献ノート](notes/literature.md)。
 
 **Serre dg完成の形式性（C v4.51）。** 既存の全$n$のnormal helix・相対perfect-fiber補題をordinary tensor dg直和に適用し、全$H_2$実現可能開で$H^{q\ne0}\Pi_3(\Lambda)=0$を証明。非正dg代数の標準射から$\Pi_3(\Lambda)\xrightarrow{\simeq}\operatorname{Jac}(Q_{12},\mathcal W)$というdg準同型を得る。任意非平坦基底変更・全finite Isom/mass/shearと整合し、局所dg加群導来圏／perfect部分も同値。以前の$H^{-1}$のTor基底変更系は弱い帰結として整理し、$H^{-1}$消滅は既に解決。raw QPのGinzburg dg模型、$H_2$外のAS/avatarや全定理の独立監査は結論に含まない。[原稿上の証明](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `thm:qa-q12-h2-serre-dg-formality`。C4の全稿組版・網羅的文献比較は未完。
 
