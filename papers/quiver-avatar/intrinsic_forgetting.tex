@@ -192,7 +192,7 @@ AZ 再構成と偶数 Veronese により
 noetherian AS 正則環である。
 しかし
 \[
- (\coh\mathcal X,\OO_{\mathcal X})\notin\HH.
+ (\coh\mathcal X,L)\notin\HH\qquad(L\in\Pic(\mathcal X)).
 \]
 \end{example}
 \begin{proof}
@@ -232,12 +232,14 @@ Serre 双対により \(n\ge-3\) では \(H^2(\mathcal X,\OO(n))=0\) である�
 点 \([0:0:1]\) の residual gerbe を
 \(i:B\mu_2\hookrightarrow\mathcal X\) とし、
 \(\chi\) を \(\mu_2\) の非自明な一次元表現とする。
-非零 coherent 対象 \(M=i_*\chi\) に対し、全ての \(n\ge0\) で
+任意の可逆層 \(L\) に対し、非零 coherent 対象
+\(M_L=i_*(i^*L\otimes\chi)\) を取る。
+\(\OO(4n)\) の gerbe 上の指標は自明なので、引戻しと直像の随伴により
 \[
- \Hom(\OO(-4n),i_*\chi)
- =H^0(B\mu_2,\chi)=0.
+ \Hom(L(-4n),M_L)=
+ H^0(B\mu_2,i^*\OO(4n)\otimes\chi)=0\qquad(n\ge0).
 \]
-\(\OO(4n)\) の gerbe 上の指標が自明だからである。
+特に標準 helix の四位相すべてで生成条件が破れる。
 補題~\ref{lem:qa-antiserre-necessary} に反するので、主張を得る。
 \end{proof}
 
@@ -246,12 +248,13 @@ Serre 双対により \(n\ge-3\) では \(H^2(\mathcal X,\OO(n))=0\) である�
 \(Y=\Sigma_2\) の負断面を \(C\)、ファイバーを \(f\) とする。
 \(C^2=-2\)、\(-K_Y=2C+4f\) なので、
 \(\OO_Y(-K_Y)|_C\simeq\OO_C\) である。
-従って \(M=i_*\OO_C(-1)\ne0\) について
+任意の可逆層 \(L\) に対し、
+\(M_L=i_*(i^*L\otimes\OO_C(-1))\ne0\) とおくと
 \[
- \Hom\bigl(\OO_Y(nK_Y),M\bigr)
+ \Hom\bigl(L\otimes\OO_Y(nK_Y),M_L\bigr)
    =H^0(C,\OO_C(-1))=0\qquad(n\ge0).
 \]
-同じ必要条件から \((\coh\Sigma_2,\OO_{\Sigma_2})\notin\HH\) となる。
+同じ必要条件から \((\coh\Sigma_2,L)\notin\HH\) となる。
 これは \emph{avatar の一点 Hilbert 曲面が \(\Sigma_2\) である}ことと、
 元の Abel 圏が \(\coh\Sigma_2\) であることを混同してよいという意味ではない。
 Hilbert 曲面の型だけから、対応する非可換圏の \(\HH\) 適合性は決まらない。
