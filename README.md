@@ -2,7 +2,7 @@
 
 **構造対象 O のみを指定した非可換 quadric surface の分類。**
 
-2026-11-23 / 運用v1.73、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.63。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
+2026-11-23 / 運用v1.73、論文A v1.69、論文B v0.41（依存・組版の監査中）、論文C v4.64。まず [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。GitHub `main` を正本とする。
 
 **最上位目標（2026-11-23変更）：論文Cで指定AS/avatar/QPの全相対スタック分類を完成する。** [研究方針のS1–S6](00_research_plan.md#最上位目標論文cにおける全相対asavatarqp-stack分類) を唯一の終了基準とし、[Codex実行・起動指示](CLOUD_CODEX.md) と [AGENTS.md](AGENTS.md) に反映済み。対象はsquare/rotated-square/cubic/独立最小AS10型、対応する幾何avatar、指定重み付き8/10/12本矢QPであり、**全対象・全相対族（非被約底を含む）・Isom/慣性・全周期AS再構成・rigidification/gerbe・mutation/rulingの貼合せ・H2内外の部分と忘却射の像/fiber**を証明する。任意の箙・任意次数のASまで拡張する意味ではない。未修正QPとAS/avatarが直接同値とは主張せず、可縮pairのB Gmおよび二mass/頂点scalar慣性を保持して必要な剛体化を決定する。
 
@@ -44,7 +44,9 @@
 
 Aを分類論文、Bをその体上分類を入力とする相対モジュライ論文、Cを有限表示・avatar論文として整理する。Aの先行研究節は体上の分類に絞って整理し、BのIntroductionには相対主定理の見取り図を加えた。Belmansのcubic側の既知HH計算を比較対象に追加した。BからAへの17種類のラベル参照がAの有効な分類20節に定義されていることを確認した。全証明の数学的独立監査は別に必要である。3原稿の独立source検査に加え、A/B/C間の `\cite[\texttt{label}]{...}` の参照先ラベル実在性も検査するよう checker を拡張した。現行checkout上で三稿のsource・相互ラベル検査を実行してPASS。LuaLaTeX依存が不足するため現行三稿の組版は未実施。新規の五頂点bar厳密計算コードは容器内で実行し、GitHub上の同一ファイルであることをGit blob SHAで確認した。 3原稿の構成検査は `python3 scripts/check.py papers`、個別組版は `python3 scripts/check.py build --manuscript papers/<原稿名>.tex` とする。GitHubへのソース反映と組版実行は別々に確認する。
 
-## 論文C：全相対AS/avatar/QP stack分類（目標S1–S6・v4.63）
+## 論文C：全相対AS/avatar/QP stack分類（目標S1–S6・v4.64）
+
+**相対AS代数と全整数Isom。** 成分局所自由な全指定型では、非最小の相対単純解消と有限対角解消の存在を証明した。四頂点Morita窓と各添字のAS双対線束により、全整数代数と全Isomを復元する。raw QPについては、退化係数を含む全重み付き同型の方程式、一組の可逆massの消去、およびnilpotent massでの非平坦な慣性例を得た。幾何avatarの相対heart、AS適合QPの全域と比較射、H2外側のファイバーは引き続き未完成。 [AS](papers/quiver-avatar/as10_mutation_classification.tex)・[QP](papers/quiver-avatar/qp_presentations.tex)。
 
 **Codexの実行単位。** `CLOUD_CODEX.md` の起動依頼文を使用し、S1（対象/全被覆）→S2（相対AS↔avatar）→S3（全raw QPと許容条件）→S4（全比較と剛体化/2-coherence）→S5（H2内外の判定）→S6（独立監査・公表）を段階的に閉じる。いずれの途中結果も現行原稿に証明付きで統合する。全S1–S6が揃うまではC完成と報告しない。
 

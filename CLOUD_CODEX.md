@@ -1,6 +1,6 @@
 # Cloud Codexで全相対AS/avatar/QP stack分類を進める
 
-2026-11-23 / v0.24。研究の正本は [研究方針](00_research_plan.md)、repoの指示は [AGENTS.md](AGENTS.md)、現行論文Cは [papers/nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) v4.63。論文A v1.69、B v0.41は論理的入力。Codexは**従来C1–C4のみで終了せず**、下の全相対stack分類のS1–S6を目標に研究を続ける。
+2026-11-23 / v0.24。研究の正本は [研究方針](00_research_plan.md)、repoの指示は [AGENTS.md](AGENTS.md)、現行論文Cは [papers/nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) v4.64。論文A v1.69、B v0.41は論理的入力。Codexは**従来C1–C4のみで終了せず**、下の全相対stack分類のS1–S6を目標に研究を続ける。
 
 ## 最上位目標と完了条件
 

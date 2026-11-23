@@ -337,6 +337,73 @@ $G_8=(\GL_2)^4$ と置くと、重み一の矢の像は基底変更で尽くさ�
 $\mathcal P_r=[P_r/G_r]$ を通常の重み付き QP 商スタックとする。
 この節では頂点スカラーの rigidification は行わない。
 
+\begin{proposition}[raw QPの全同型を与える方程式]
+\label{prop:qa-raw-qp-isom-equations}
+重み付き$Q_8,Q_{10},Q_{12}$の任意の二つのpotentialを
+$H+\sum_d(y_dq_d+p_dx_d+\lambda_dy_dx_d)$ と
+$\widetilde H+\sum_d(y_d\widetilde q_d+\widetilde p_dx_d+
+\widetilde\lambda_d y_dx_d)$ と書く。和は存在する対角の組について取る。
+枠付き基底上の全Isom-sheafは、$g\in G_8$、単元
+$a_d,b_d$、二段道 $s_d,t_d$（それぞれ$x_d,y_d$と同じ端点）の
+次の閉条件で表される。
+\[
+\begin{aligned}
+\widetilde\lambda_d &=a_db_d\lambda_d,\\
+\widetilde q_d &= b_d(gq_d+\lambda_ds_d),&
+\widetilde p_d &=a_d(gp_d+\lambda_dt_d),\\
+\widetilde H &=gH+
+\sum_d\bigl[t_d(gq_d)+(gp_d)s_d+\lambda_dt_ds_d\bigr]_{\rm cyc}.
+\end{aligned}
+\]
+ここで$[\,\cdot\,]_{\rm cyc}$は長さ四の巡回商への射影である。
+合成は道代数への代入で与えられ、方程式は任意基底変更で保たれる。
+従ってこの表示は退化potentialを含む全raw同型と慣性を計算する。
+\end{proposition}
+\begin{proof}
+重み一の矢の像は$g$で与えられる。
+重み二の元は、同じ端点の重み二の矢一本と
+二段道からなる直和に属する。その線形部分は単元でなければならず、
+$x_d\mapsto a_dx_d+s_d$、$y_d\mapsto b_dy_d+t_d$と一意に書ける。
+逆写像は$g^{-1}$と各単元の逆を用いて三角的に定まる。
+これをpotentialに代入し、補題~\ref{lem:qa-universal-potential}の
+巡回基底で係数を比較すると表示式を得る。
+逆に方程式を満たす代入は両potentialを巡回商で同定する。
+tautologicalな枠変更で同一の道代数写像を表示し直すので、
+捩れた矢束の場合もfppf降下する。
+\end{proof}
+
+\begin{corollary}[可逆な一組のみの消去]
+\label{cor:qa-qp-single-mass-elimination}
+十二矢空間の$\lambda_1$可逆開のraw商は、
+もう一組を保持した十矢のraw商と$B\Gm$との直積である。
+第二のmassには任意の係数を許す。
+\end{corollary}
+\begin{proof}
+第一組だけを消去の座標に取り直し、二次係数を一にする。
+切片上で同型方程式の第一組は
+$s_1=t_1=0$、$a_1b_1=1$となる。
+第一組は長さ四の方程式に寄与しないため、
+残りの同型はちょうど十矢の方程式と独立な$\Gm$である。
+この切片は局所的に全対象を覆う。
+\end{proof}
+
+\begin{corollary}[raw安定化群の非平坦な例]
+\label{cor:qa-raw-nilpotent-nonflat-stabilizer}
+$R=k[\epsilon]/(\epsilon^2)$上の十矢で
+$W=\epsilon yx$とすると、自己同型群スキームは$R$上平坦でない。
+\end{corollary}
+\begin{proof}
+命題~\ref{prop:qa-raw-qp-isom-equations}において
+$H=p=q=0$であるから、自己同型の方程式は
+$\epsilon(ab-1)=0$、$\epsilon s=\epsilon t=0$である。
+長さ四の条件は後二式により従う。
+座標環の$ab-1$は$\epsilon$で消えるが、
+$\epsilon$による倍元ではない。実際、特殊fiberでは
+$a,b$は独立な単元なので$ab-1$は非零である。
+平坦な$R$加群$M$は$\ker(\epsilon:M\to M)=\epsilon M$を
+満たすから、この自己同型群は平坦ではない。
+\end{proof}
+
 \begin{proposition}[可縮 pair の残余慣性]
 \label{prop:qa-stabilized-inertia}
 上の群と頂点標識を用いると、

@@ -988,24 +988,284 @@ Jacobian商では$x=y=0$なので恒等射に写る。
 代数側のgroupoid同値と混同してはならない。
 \end{proof}
 
+\subsection{相対ASスタックと分解の自動性}
+\label{subsec:qa-relative-as-perfectness}
+
+\begin{definition}[成分局所自由な相対AS族]
+\label{def:qa-relative-as-flat-stack}
+局所有限型$k$-scheme $S$上で、各$A_{ji}$が有限階数局所自由、
+$A_{ii}=\OO_S$、$A_{ji}=0$ ($j<i$)である単位付き
+\(\mathbb Z\)-代数を考える。幾何fiberの最小分解および双対を
+定義~\ref{def:qa-as-square-rotated-minimal}、
+\ref{def:qa-as10-minimal}、
+\ref{def:qa-as-cubic-minimal}で指定する。
+cubic/AS10の混合族には、各幾何点でcubicかAS10の
+いずれかの全整数分解型を許す。
+射は全整数頂点を固定する全代数同型であり、
+周期の自明化、potential、分解の選択をデータに含めない。
+\end{definition}
+
+この群oidはfppfスタックである。
+局所自由束、単位と二項積、およびそれらの間の全同型を成分ごとに降下し、
+結合律と単位律を忠実平坦な被覆で照合できる。
+幾何fiber条件は代数閉体の拡大で検査できる。
+実際、最小分解の添字と重複度は
+単純を両端に置くTorで測られ、双対は有限射影分解で計算する。
+これらの消滅と次元の条件は忠実平坦な体拡大で保存・反映される。
+
+\begin{proposition}[有限foundationの対角と相対単純の分解]
+\label{prop:qa-relative-as-perfectness-automatic}
+定義~\ref{def:qa-relative-as-flat-stack}の族について次が成立する。
+\begin{enumerate}
+\item 有限区間のfoundation $B$は基底上有限局所自由で、
+その相対対角は有限生成射影$B$双加群による有限解消を持つ。
+四頂点区間なら長さは高々三である。
+\item 各右頂点単純$S_i$は有限局所自由な係数を持つ
+長さ三の相対射影分解を局所的に持つ。
+使用する射影頂点は$[i-4,i]$に収まる。
+解消は任意基底変更で完全であり、双対複体の
+コホモロジーは次数三の頂点$i-4$にある線束だけである。
+この線束と双対の同定は全代数同型および任意基底変更に自然である。
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+有限区間について対角環$D=\bigoplus_j\OO_S e_j$と
+真に上三角の部分$J$を用いる。
+正規化相対bar解消の$n$次項は
+$B\otimes_D J^{\otimes_D n}\otimes_D B$である。
+頂点が狭義に増加する列だけがこのテンソル積を寄与するため、
+頂点数を$m$とすると$n\ge m$で消える。
+各項は局所的には有限個の$Be_j\otimes_{\OO_S} e_lB$の直和である。
+barの縮約で完全性が従い、同じ構成と縮約が任意の基底変更に移る。
+
+右単純について、最初の射影を$P_i$とする。
+$K_1=\ker(P_i\to S_i)$と置く。
+$j\in[i-4,i]$での全成分を使って
+$F_1=\bigoplus_j (K_1e_j)\otimes_{\OO_S}P_j\to K_1$
+を評価で定める。
+幾何fiberにおける$K_1$の最小生成はこの区間内なので、
+各成分にNakayamaの補題を適用して全射性を得る。
+各成分で局所自由束への全射が分裂するため、
+$K_2=\ker(F_1\to K_1)$の全成分は局所自由で、核は任意基底変更に可換である。
+幾何fiberで射影被覆とこの全射を比較すると、
+$K_2$は最小分解の第二syzygyと、区間内の射影の直和である。
+実際、被覆への持上げは最小生成の商上全射であり、
+生成次数ごとに可逆minorを取って被覆を直和因子に分離できる。
+従って同じ区間で
+$F_2=\bigoplus_j (K_2e_j)\otimes_{\OO_S}P_j\to K_2$
+は全射であり、その核$K_3$の各成分も局所自由で、
+任意基底変更で核を保つ。
+同じ被覆との比較により各幾何fiberの$K_3$は区間内の射影の直和である。
+
+残りは$K_3$の相対射影性である。
+そのfiberでの$P_j$の重複度は、$j=i,i-1,\ldots,i-4$の順に
+$\operatorname{rk}(K_3e_j)$から既に決めた射影の寄与を引いて求まる。
+対角の階数が一であるから一意であり、有限個の束の階数で
+決まるため局所一定である。
+任意の基底点で最小生成の基底を取り、有限個の局所sectionに持ち上げる。
+得られた射影直和から$K_3$への評価は、その点で区間内の
+全成分において同型であり、有限個の行列式を反転すると
+同じ近傍で区間内の全成分が同型となる。
+近傍の各fiberは区間内で生成され、両辺の射影重複度は同じなので、
+当該写像は全頂点においてfiber上同型である。
+各成分が有限局所自由であることから写像自体も全頂点で同型となる。
+ここでは無限個の開集合の共通部分を取っていない。
+
+この分解を左頂点$h$の双対に写すと、各項は
+有限個の$A_{hj}$と係数束の双対のテンソル積である。
+従って有限局所自由複体となり、その幾何fiberは通常の
+AS双対複体を計算する。
+fiberでのコホモロジーが零の成分は局所的に可縮であり、
+$h=i-4$では次数三の線束だけが残る。
+これは有限複体の単元minorを消して得られ、
+非平坦な変更でもコホモロジーの同定が保たれる。
+解消の選択によらない$\operatorname{Ext}$による記述なので、
+全代数同型に自然である。
+\end{proof}
+
+古典的squareの任意の引戻しにもこの命題を適用できる。
+一方、命題~\ref{prop:qa-relative-as10-minimal-arrow-wall}の
+$\delta=\epsilon$の場合、$k[\epsilon]/(\epsilon)$は
+$k[\epsilon]/(\epsilon^2)$上perfectでない
+（$\epsilon$による周期自由分解の全次に非零Torがある）。
+従って有限非最小解消の存在を、最小矢の係数加群のperfect性に
+置き換えることはできない。区間内の評価を使った分解は、この
+非最小表示を許すことでnilpotent massを含む。
+
+\begin{theorem}[相対AS族の四頂点Morita窓]
+\label{thm:qa-relative-as-four-window}
+定義~\ref{def:qa-relative-as-flat-stack}の任意の族について、
+$P_j$の像$E_j$を持つ基底線形perfect categoryを構成できる。
+各連続四項はそのtilting生成系である。
+$j\ge i$に対し、自然に
+$\RHom(E_i,E_j)=A_{ji}[0]$となり、積も一致する。
+四項が誘導する相対Serre関手を$\mathbb S$とすれば、
+線束$L_i=\operatorname{Ext}^3_A(S_{i+4},P_i)$を用いて
+\[
+ E_{i+4}\simeq \mathbb S^{-1}(E_i)[2]\otimes L_i^\vee
+\]
+を得る。構成は全代数同型と任意の基底変更に自然である。
+\end{theorem}
+\begin{proof}
+有限区間$[a,b]$ ($b\ge a+3$)上の有限代数から得る
+perfect categoryで、$S_l$ ($a+4\le l\le b$)が生成する
+thick部分圏を商にする。以下の圏と生成は基底局所に述べ、
+係数として基底のperfect複体とのテンソルを許す。
+相対単純の解消は区間内の射影を使うので、
+区間への制限によってこれらの単純はperfectであり、
+$\RHom(S_l,P_j)$も元の分解で計算できる。
+最初の四射影はすべて$\RHom(P_j,S_l)=0$である。
+したがって射をVerdier商に送っても、この四射影を
+始域とするHom複体は変わらない。
+単純の分解を昇順に用いると残る各$P_l$の像は
+それ以前の射影から生成される。このため商の冪等完備化は
+最初の四射影のEnd代数のperfect categoryと同値である。
+具体的にはその四射影は、商に入る前にも商部分圏への
+左直交に属し、それらのthick閉包から商への射が
+fully faithfulで、商の生成対象をすべて含む。
+この記述は相対Morita同値を通じて基底変更する。
+
+右端を延ばすときは既存の射影を同名の射影へ写す。
+左端を一つ延ばす比較を説明するため、$[a,b]$の商における
+次の四項$E_{a+1},\ldots,E_{a+4}$を調べる
+（必要ならまず$b\ge a+4$とする）。
+$K=\ker(P_{a+4}\to S_{a+4})$の表示は
+$P_a,\ldots,P_{a+3}$の複体であり、商で$E_{a+4}$を表す。
+命題~\ref{prop:qa-relative-as-perfectness-automatic}と
+$K\to P_{a+4}\to S_{a+4}$の三角から、$a\le j\le a+3$に対し
+\[
+ \RHom(K,P_j)=
+ \begin{cases}
+ L_a[-2]& j=a,\\
+ 0& j>a .
+ \end{cases}
+\]
+これは最初の四頂点のEnd代数上の左加群としても成立する。
+実際、この導来加群は唯一のコホモロジーが頂点$a$にあり、
+他頂点への全作用が零であるため、標準切断がその
+コホモロジー加群への同定を与える。
+最初の四項の相対Serre双対により
+$\RHom(\mathbb S^{-1}(E_a),E_j)\simeq
+\RHom(E_j,E_a)^\vee$である。右辺も頂点$a$だけで
+$\OO_S$となるため、反変Yonedaで
+$K\simeq \mathbb S^{-1}(E_a)[2]\otimes L_a^\vee$を得る。
+ここで相対Serre関手の存在には、有限局所自由なEnd代数と
+その相対対角の有限射影解消を用いる。
+
+$\RHom(P_j,K)\simeq\RHom(P_j,P_{a+4})$ ($j<a+4$)と、
+$\RHom(K,S_{a+4})=0$は、$K$の表示および単純の支持から従う。
+また$\RHom(S_{a+4},P_{a+4})=0$なので
+$\RHom(K,K)\simeq\RHom(K,P_{a+4})\simeq\OO_S$である。
+これらの同定は射影から商への自然写像で誘導され、
+次の四項のEndと積を元の成分から回収する。
+次の四項の生成性を示す。
+$\RHom(K,E_a)=L_a[-2]$に対応する普遍射
+$L_a[-2]\otimes K\to E_a$を取る。そのconeは
+$\RHom(-,E_a)$で零である。
+最初の四項で生成される圏において
+$\RHom(-,E_a)=0$の左直交は
+$E_{a+1},E_{a+2},E_{a+3}$で生成される。
+これは任意の対象から$E_a$への余評価三角を取り、
+四生成元に適用することで分かる。
+従って$E_a$は次の四項で生成される。
+
+区間の包含は同じ添字の射影を送る完全関手で与えられる。
+$[a+1,b]$の商で殺す単純の分解は$[a,b]$の中でも同じ単純を
+解消するので、この関手は商に降りる。上のEnd比較と生成性により
+左端の拡張も同値となる。右端の拡張と合わせて、区間包含の比較は
+同じ射影と射を運ぶ関手から誘導され、合成の整合性を持つ。
+任意の二つの添字を含み、小さい方の添字$i$を左端に持つ
+区間を取ると、$P_i$が商部分圏への左直交にあるので
+前向きHomを計算できる。積については三つの添字を同じ
+区間に入れて比較する。基底変更およびIsomとの整合性は、
+各相対Morita模型、全射影を運ぶ関手、相対双対、
+および$L_i$の自然性から従う。
+\end{proof}
+
+\begin{corollary}[全整数AS代数の相対復元と同型層]
+\label{cor:qa-relative-as-line-decorated-foundation}
+定義~\ref{def:qa-relative-as-flat-stack}のASスタックは
+次のデータのスタックと同値である。
+\begin{enumerate}
+\item 最初の四頂点の有限局所自由な有向代数$B$。
+各幾何fiberにおいて、四標準射影を逆Serre関手$[2]$で展開した
+前向きHomが次数零に集中し、得られる$\mathbb Z$-代数が
+指定AS型に属することを要求する。
+\item 全$i\in\mathbb Z$に対する線束$L_i$。
+\end{enumerate}
+右辺の射は四頂点を固定する全$B$同型と各$L_i$の全同型である。
+従って同型層および自己同型層は
+有限foundationの対応する層と、添字ごとの線束の
+同型層との積である。有限foundationへの制限の自己同型核は
+$\prod_{i\in\mathbb Z}\Gm$（fppf層の積）である。
+\end{corollary}
+\begin{proof}
+$B$の相対perfect categoryで$T=\mathbb S^{-1}[2]$、
+四つの標準射影を$E_0,\ldots,E_3$とする。
+$N_i=\OO_S$ ($0\le i\le3$)を起点として
+$N_{i+4}=N_i\otimes L_i^\vee$で全整数の線束を定義し、
+$E_{4m+r}=T^m(E_r)\otimes N_{4m+r}$ ($0\le r\le3$)と置く。
+対象間の相対Homは基底上perfectで、任意基底変更に可換する。
+各前向きHomは幾何fiberで次数零に集中するから、
+単元minorの消去により次数零の局所自由束を与える。
+その合成で復元した代数は、幾何fiberにおいて線束を自明化すれば
+$B$の条件と同じAS型を持つ。
+$B$同型は相対Serre双加群の自然同定を誘導し、
+すべての線束同型は上の有限回のテンソル積を運ぶ。
+これが復元の射とその合成を与える。
+
+元のAS族から始めると、定理~\ref{thm:qa-relative-as-four-window}の
+各隣接窓の自然な同定を正負両方向へ反復して、上の
+$E_{4m+r}$と元の像を同定できる。
+前向きHomの同定によって全成分と積を回収する。
+逆方向の照合では、復元した代数の区間射影を
+上で選んだ対象へ送る。この関手は、対象間の前向きdg Homの
+非正切断（次数零では閉射）を通して構成する。
+このdg圏から次数零の有向代数への射は準同型であり、
+perfect moduleのMorita関手を誘導する。
+その際、消すべき単純の解消の像は零となる。
+単純$S_l$の解消を正の側へ、関手$T$と係数線束の
+同定で平行移動できる。実際、全対象$E_j$は四頂点分の
+移動で$T(E_j)$に線束を掛けたものとなり、Homと合成を
+同じ線束の差で調整すると、解消は移動後も単純を解消する。
+従って$l-4>3$と仮定できる。この場合は最初の四射影を
+始域とするHomで解消の像を検査する。
+すべて前向きなので復元した代数の成分と一致し、
+単純の解消の完全性から四つのHom複体は消える。
+従って区間商からの比較関手を得る。最初の四射影において
+恒等であるため相対Morita同値である。
+
+この同値の下で$\RHom(E_{i+4},E_i)$の次数二は
+$L_i$である。実際、$E_{i+4}=T(E_i)\otimes L_i^\vee$
+と$\RHom(E_i,E_i)=\OO_S$からSerre双対で従う。
+定理~\ref{thm:qa-relative-as-four-window}の構成では、
+同じ束は元の単純の相対$\operatorname{Ext}^3$である。
+従って復元で用いた線束も、全同型に自然に回収される。
+以上の比較は積・評価・相対双対により構成したため、
+射と基底変更との合成を保ち、二つの関手は相互に逆である。
+\end{proof}
+
 \begin{theorem}[相対AS族での固定mutation]
 \label{thm:qa-as10-relative-families}
 $S$を局所Noetherianな$k$-schemeとする。
 各$A_{ji}$が有限階数局所自由で、
 幾何fiberが上記AS型を満たし、
-finite foundation・対角双加群・単純分解が
-必要な範囲で$S$-perfectである相対AS族を考える。
-この範囲では指定mutationと逆mutationが
+定義~\ref{def:qa-relative-as-flat-stack}の意味で
+相対AS族をなすとする。
+指定mutationと逆mutationは
 互いに逆な基底変更可換の族構成を与える。
 squareからのtargetの全成分は局所自由であり、
 最小cubic八本矢fiberと最小十本矢fiberは
 同じ族の中で平坦に貼り合う。
-この定理は相対perfect性を課さない全ての族の分類、
-または対応するstackの代数性を主張しない。
+最小矢束の局所自由性は仮定しない。
 \end{theorem}
 \begin{proof}
-有限foundationの相対perfect categoryで
-Serre双加群と全周期のevaluationのconeを構成する。
+命題~\ref{prop:qa-relative-as-perfectness-automatic}により、
+有限foundationの対角と単純の相対分解には別途perfect性を課す必要がない。
+定理~\ref{thm:qa-relative-as-four-window}の相対perfect categoryで
+全整数のevaluationおよびcoevaluationのconeを構成する。
+ここでは$E_i$の周期線束を固定せず、各整数添字で構成する。
 有限個の添字$i,j$に対する
 $\RHom(H_i,H_j)$は$S$上perfectで、
 導来基底変更と可換する。

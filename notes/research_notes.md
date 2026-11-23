@@ -345,6 +345,12 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 ただし両出力conicは $V=0,c'=\pm U$ および $V=d'=0$ のsectionを持ち、Brauer類が零になる。自然な $\mathscr D^{\rm ord}$ の第一conicは元の基底 $Z$、第二conicも同じBrauer類であり、上の $(s,t)$ の入力では一致しない。一般安定化群上では $\ell^2=1$、個別符号が $\ell=-1$ を実現するため、この弱い射の慣性像は2・核8。自然な射の像8・核2とも異なる。粗座標の一致から相対射の同一性や自然な境界延長を結論してはならない。この障害を、次のtorsion-free標的の認識で使う。
 
+## 相対ASの全整数復元とraw QP同型
+
+**原稿上証明済み。** 成分局所自由な指定相対AS族は、最小矢の階数が跳んでも、有限対角と右頂点単純の非最小相対射影解消を持つ。四頂点窓を有限区間のVerdier商でつなぎ、全整数代数を初期有限foundationと線束 $L_i=\operatorname{Ext}^3_A(S_{i+4},P_i)$ から自然に復元する。窓制限の自己同型核はfppf層として整数添字の $\mathbb G_m$ の積。双対数上の最小矢係数は非perfectでもこの復元を適用できる。残る課題は幾何avatarの相対heart、QP適合軌跡、比較射の全域とそのH2内外のファイバー。[ASの証明](../papers/quiver-avatar/as10_mutation_classification.tex)。
+
+**原稿上証明済み。** 指定重み付きraw QPの全Isomを係数比較で表示した。一組だけ可逆なmassを消したraw商は残る十矢の商と $B\mathbb G_m$ の積。$W=\epsilon yx$ のraw慣性は非平坦で、実際のAS窓の比較核がsmoothであるという既存結果とは適用範囲が異なる。[QPの証明](../papers/quiver-avatar/qp_presentations.tex)。
+
 ## 論文C：最小AS分解型とavatarの分類・相対境界
 
 **中心定理（原PDFからCへ証明移管）。**

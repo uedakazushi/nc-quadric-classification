@@ -1,6 +1,6 @@
 # 研究リポジトリの作業指示 — nc-quadric-surface
 
-2026-11-23 / v1.70。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.63。
+2026-11-23 / v1.70。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.64。
 
 ## 公表用三論文の役割
 
@@ -16,7 +16,7 @@
 
 **比較対象を混同しない。** 未修正QPとAS/avatarのstackは通常同値ではない（可縮pairの $B\mathbb G_m$、二mass核、頂点scalar、mutation時のright-equivalence障害）。全raw QPのAS性を仮定せず、AS適合軌跡と未適合部分、rigidification後の比較、同型層の核と余剰慣性を求める。各主張の範囲（幾何fiber/flat family/任意非被約底/任意raw right-equivalence）を明示する。既証明のspectral境界の $H_2$ 延長不能・stack自己同値不存在と矛盾する無条件の同値は主張しない。
 
-**最初の研究単位（開始時に必ず優先）。** `as_helix_classification.tex` の体上分類、`as10_mutation_classification.tex` の相対perfect条件、`relative_square_foundation_stack.tex` の相対foundation、`qp_presentations.tex` のQP慣性、`cubic_qp_foundation_groupoid.tex` の二mass比較を読み、AS/avatar/QP各相対stackの対象とIsomを現行Cで定義し、`thm:qa-as10-relative-families` のflat/perfect条件が全AS族で自動かを判定する。第一検査は双対数 $k[\varepsilon]/(\varepsilon^2)$ とrank3壁（nilpotent massを含む）、古典squareを使う。必要なrelative lemmaを証明し、反例があれば原稿に適用範囲を訂正して正確な代替atlasを作る。ここで同型層・基底変更・全相対AS復元の最初の未完成な矢印を閉じる。終了するまで漫然とC4の公表前編集だけを繰り返さない。
+**次の研究単位。** C v4.64で、成分局所自由な指定型ASの有限対角・単純解消の自動性、四頂点窓＋双対線束による全整数復元と全Isom、raw QPの全同型方程式を原稿上証明した。次はこのMorita窓から全幾何avatarの相対heartを復元し、raw QPのAS適合軌跡と比較核を $H_2$ 外も含めて決定する。双対数上で最小矢束は非perfectになり得る。
 
 **Codexの継続規則。** 成果を論文C本文に証明付き統合し、現在有効な研究ノートと方針・READMEを置換更新する。主張状態を「証明済み／追加仮定付き／未証明／計算観察」に区別する。根本的障害で一課題が詰まっても、役立つ反例・不足補題を記録し次のS1–S5課題へ移る。15分以内を目安に通常commitとmainへのfast-forward pushを行い、成功確認後も実行環境の限界まで研究を続ける。研究の区切りには対象repoを先に保存してからresearch-hubの該当項目を更新する。force push、GitHub Actionsの追加・起動、旧版ファイルの累積はしない。認証・組版不足は未実行と正しく記し、研究そのものを停止する言い訳にしない。
 
