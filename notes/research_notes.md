@@ -2566,3 +2566,5 @@ latexmk
 **可逆mass開の相対幾何逆復元。** `cor:qa-avatar-invertible-mass-geometric-reverse` は逆mutationで得たsquare族と向き付き二次式の全相対Isom比較を合成する。曲線型開ではふたつの二次式と標識線束から元の曲線型窓へ戻る。古典型は二次式一致のスキーム閉層で復元し、二次式の交わりの平坦化は曲線型開と一致閉層の非交和で得る。古典fiberだけを持つ冪零変形は向き付き二次式として保持し、周期と頂点線束は線形窓に保持する。
 
 **可逆mass開の幾何逆復元を含む391頁保存版 79f9af0。** 二つの `git archive 79f9af0` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795432477 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全391頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `84916b9be0992493d3b076fb60fe1041a87b57c8c325871fedaee2d4ece51ee4`、SyncTeX `7ac9d40cdd80b3e980712cd56001cf078767e75a17f575470c8f72c78afdfecd`、抽出テキスト `b1ec4ea92748f74ca370799d8ffb071a9be4d875f6143b0300763956045c5e1e`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**冪零massの幾何復元と普遍平坦化。** `thm:qa-avatar-nilpotent-incidence` は階数一表現のうち外側の鉛筆と後半の対角評価が生成する部分を、相対射影束上の三行三列の行列式で記述する。全幾何fiberで両massが零なので前の消去計算から可逆二次minorを選べる。行列式は相対反標準切断で、非零fiberの開では平坦な曲線型avatar、構造層で恒等的に零の閉層では古典曲面を復元する。両部分の非交和が普遍平坦化であり、いずれでも頂点スカラーを剛体化すると幾何同型と有限窓の全同型が一致する。
