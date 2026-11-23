@@ -2386,6 +2386,55 @@ $h:T\to\mathcal H^{\mathrm{curv}}$ と標準頂点 $i$ を固定する。
 代数を固定しても残る表示の慣性を保持する。
 \end{proof}
 
+\begin{corollary}[整列表示の相対Noether性]
+\label{cor:qa-avatar-boundary-relative-noetherian}
+Noetherianなアフィン試験基底上で、
+定理~\ref{thm:qa-avatar-relative-nonscalar-pbw}の
+標準右rowと標準左columnはNoetherianである。
+両massが零で対角比較が構造層上スカラーである
+chart においても同じ結論が成り立つ。
+\end{corollary}
+\begin{proof}
+まず単元係数で整列する随伴次数代数を考える。
+固定rowの部分加群 $N$ について、指数 $\alpha\in\mathbb N^3$ の
+先頭係数として現れる元と零からなる係数idealを $I_\alpha$ と書く。
+積の先頭係数は単元倍であり、積の両端点は重みで決まるため、
+$I_\alpha\subseteq I_{\alpha+\beta}$ が全 $\beta\geq0$ で成り立つ。
+従って
+\[
+ \sum_\alpha I_\alpha X^{\alpha_1}Y^{\alpha_2}Z^{\alpha_3}
+ \ \subset R[X,Y,Z]
+\]
+は単項式ごとの係数idealを持つ通常のidealである。
+Hilbert基底定理から、係数付き単項式を有限個選んでこれを生成できる。
+それぞれを実際に $N$ の元へ持ち上げる。
+$N$ の任意の元の先頭係数は、これらの係数の
+適切な単項式倍の $R$-線形結合である。
+そこで対応する整列道を掛け、単元係数を調整して先頭項を消す。
+辞書式順序が整礎なので、この操作で $N$ が有限生成だと分かる。
+左columnにも同じ証明を使う。係数が零因子でも、
+先頭項を消す段階で除すのは整列積の単元だけである。
+
+元の代数では部分加群に誘導濾過を入れ、
+随伴次数の有限生成元を持ち上げる。
+濾過次数は非負で、先頭項を消すたびに減るので、
+元の部分加群も有限生成となる。
+スカラーchart では対角比較を単位に正規化し、
+命題~\ref{prop:qa-avatar-double-negative-quotient}の四次形式を用いる。
+定理~\ref{thm:qa-avatar-double-negative-ore}の
+Hamilton導分の構成とEuler恒等式は可換係数環上でも同じであり、
+このchartではそのOre表示を選べる。
+$z$ の個数で濾過した随伴次数は可換重み付き多項式の
+全整数展開なので、上の証明を適用できる。
+
+最後に有限個のアフィン fppf chart に制限してから
+Noether性を忠実平坦降下する。
+任意の部分加群をその被覆上で有限個の元で生成し、
+それらを書き表す際に使われた元の部分加群の有限個の元を選ぶ。
+選んだ元からの余核は忠実平坦な引戻し後に零となるので、
+元の基底上でも零である。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
