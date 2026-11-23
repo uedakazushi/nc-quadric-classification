@@ -155,6 +155,36 @@ $R\to R'$ は faithfully flat である．与えられた全射を引き戻す�
 $D(\operatorname{Ind}\mathcal C)$ に対する Morita 表示を使っていない．
 \end{proof}
 
+\begin{corollary}[相対AZ判定での高次Extの消滅範囲]
+\label{cor:qa-relative-az-local-eventual-ext}
+命題~\ref{prop:qa-relative-flat-foundation-az}の仮定の下で、
+各coherent対象$K$に対し、共通Morita chart上で
+\[
+ \operatorname{Ext}^q(t^{-n}T,K)=0
+ \qquad(q>0,\ n\gg0)
+\]
+が成り立つ。$n$の下限は$K$に依存してよく、
+有限個のaffine chartを同時に取る場合はそれらの最大値でよい。
+大域のAZ2には、coherent Homの平坦基底変更による
+全射性の降下を用いる。
+\end{corollary}
+\begin{proof}
+命題中の第一短完全列$0\to L\to P\to K\to0$に
+$\operatorname{Ext}(t^{-n}E_i,-)$を適用する。
+条件~\eqref{eq:qa-flat-foundation-forward-o}から
+$\operatorname{Ext}^2(t^{-n}E_i,P)=0$が$n\gg0$で成り立ち、
+平坦compact始域に対する補題~
+\ref{lem:qa-flat-compact-ext-two}から
+$\operatorname{Ext}^3(t^{-n}E_i,L)=0$が従う。
+この二つに挟まれる$\operatorname{Ext}^2(t^{-n}E_i,K)$は零である。
+次数一は命題の二段表示による消滅であり、
+三以上は同じ補題からすべての$n$で零である。
+従って$q$ごとに異なる無限個の下限を選ぶ必要はない。
+有限個の$i$および有限個のchartについて最大値を取ればよい。
+大域への適用ではこの消滅を直接降下する代わりに、
+全射に対するHomの余核を忠実平坦拡大で検査する。
+\end{proof}
+
 \begin{remark}[AZ生成における構造対象の位置と二段presentation]
 \label{rem:qa-relative-az-noninitial-structure}
 命題~\ref{prop:qa-relative-flat-foundation-az}では，
