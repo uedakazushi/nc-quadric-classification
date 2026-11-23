@@ -1015,3 +1015,5 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 - `Q12Avatar2026`：定理15.3による体上の最小矢数の辞書と古典型の同定、命題14.1による負断面の安定性障害。これらの原文照合は残る。幾何的な開部分と代数側の矢数の辞書を、Cでは定理と後続の注意に分けた。
 
 三資料のPDFは作業環境、対象リポジトリの取得済み履歴、接続済みの研究用Drive二アカウントのファイル名・題名検索では確認できなかった。
+
+**AZ原著の公開経路と適用範囲の再確認。** [出版社の書誌](https://www.sciencedirect.com/science/article/pii/S0001870884710875) と [CiNii](https://cir.nii.ac.jp/crid/1362262945998548480) はともに DOI 10.1006/aima.1994.1087、109巻2号、228–287頁を指す。出版社のPDFとCiNiiが記載する本文APIから原文は取得できず、OpenAlexにも別の全文所蔵先はなかった。Van den Berghの *Noncommutative quadrics* §5.1、式 (5.1) の一次本文を確認した。交互の二つの線束列による古典quadricの再構成は体上のZ代数の適用であり、Cで用いる非可換な零次自己準同型環、Noetherian affine基底、任意底変更の根拠には使わない。一般End-ring版は従来通りOACU刊行版Theorem 7.3で照合し、原著の本文照合は保留する。
