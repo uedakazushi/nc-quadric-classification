@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.59。Keller 6.6/4.2のcotangent群oid上の2自然Morita比較。
+% 2026-11-23 / v4.60。非被約底上の相対exact 3-CY強化とC4監査。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -3078,48 +3078,129 @@ dg準同型を合成する．
 作られ，基底変更後にも同じ適用が可能である．
 \end{proof}
 
-\begin{corollary}[幾何fiberのordinary Jacobian代数のexact $3$-Calabi--Yau性]
+\begin{theorem}[非被約基底上の相対exact $3$-Calabi--Yau完成とJacobian]
+\label{thm:qa-q12-relative-exact-three-cy}
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+非退化二mass finite foundation開の任意の
+局所Noetherian affine chart $S=\operatorname{Spec}R$上，
+$\Lambda$をそのrank $24$の相対有限代数とする．
+このとき$R$-dg代数のcanonical Serre完成
+$\Pi_3(\Lambda)$は相対的にhomologically smoothで，
+\emph{canonicalなexact $3$-Calabi--Yau構造}を持つ．
+すなわち，$R$-相対negative cyclic homologyの
+非退化クラス
+\[
+ \eta_{\Lambda/R}\in
+ HN_3\bigl(\Pi_3(\Lambda)/R\bigr)
+\]
+であって，$R$-相対Connes写像
+\[
+ B:HC_2\bigl(\Pi_3(\Lambda)/R\bigr)
+       \longrightarrow
+ HN_3\bigl(\Pi_3(\Lambda)/R\bigr)
+\]
+の像に属するものがcanonicalに定まる．
+この結論には，nilpotent massと非被約$R$を含み，
+$H_2$実現可能性を必要としない．
+
+さらに実現可能ordered $H_2$開上では，
+定理~\ref{thm:qa-q12-h2-serre-dg-formality}
+の相対dg準同型を用い，
+ordinaryな次数零$R$-代数
+\[
+ J=\operatorname{Jac}(Q_{12},\mathcal W)
+ \simeq H^0\Pi_3(\Lambda)
+\]
+も$R$-相対homologically smoothかつ
+\emph{exact $3$-Calabi--Yau}となる．
+特に各幾何fiberの既知のexact CY系より強く，
+基底の被約性や体への特殊化を必要としない．
+$R\to R'$が非平坦でも，
+canonically base-changeしたfinite foundationと
+同じ手順で構成するexact CYクラスは
+自然に対応する．ここでは一般の
+$HN_3(-/R)$自身の非平坦基底変更が
+同型であるとは主張しない．
+
+finite foundationの全Isomに対し
+この相対exact CY構造は自然である．
+一方，未剛体化QPの全stack上の
+negative cyclic classのfppf高次降下や，
+任意raw AS/avatar表示・全Ginzburg dgとの
+canonical CY classの厳密同定は
+本定理の結論に含めない．
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:qa-two-mass-short-relative-diagonal}の
+相対双加群対角解消
+\[
+ 0\longrightarrow P_2\longrightarrow P_1
+   \longrightarrow P_0\longrightarrow\Lambda
+   \longrightarrow0
+\]
+は，$R$上局所分裂完全で，
+各$P_i$は有限局所射影な
+$\Lambda\otimes_R\Lambda^{\mathrm{op}}$-加群である．
+したがって$\Lambda$は
+$\Lambda^e_R$上perfect，つまり
+\emph{$R$-相対homologically smooth}である．
+$\Lambda$自体も$R$上有限局所自由だから，
+零次に集中したdg $R$-代数として
+$R$-cofibrantな模型を持つ．
+
+Keller \cite[Theorem~4.8]{KellerDeformedCY2011}，
+特に2018年erratum
+\cite[Theorem~1.1]{KellerErratumCY2018}
+は，\emph{任意の可換基礎環}上で
+homologically smoothかつ基礎環cofibrantな
+dg代数の\emph{undeformed}な
+Calabi--Yau completionについて，
+canonicalなexact CY構造を与える．
+今回の$\Pi_3(\Lambda)$はちょうどこの
+undeformed completionなので，
+$R$上の第一の主張を得る．
+一般のdeformed completionに対する
+negative cyclic deformation parameterの
+追加条件は使っていない．
+
+$H_2$実現可能開では，既に証明した
+各tensor次数の相対perfect-fiber集中により，
+$\Pi_3(\Lambda)$の負次数cohomologyは全て零で，
+式~\eqref{eq:qa-q12-h2-serre-dg-formality}
+は$R$-dg代数の準同型である．
+dg代数の準同型が誘導する
+相対Hochschild/negative cyclicの同値で
+上のexact CYクラスを$J$に移すと，
+非退化性とConnes像であることが保たれる．
+よって通常$R$-代数$J$に
+相対exact CY構造が存在する．
+
+元の相対対角解消，perfect双対，tensor完成，
+Casimirクラスは全てfinite foundationの
+Isomおよび基底変更に自然である．
+非平坦な$R\to R'$でも，
+$\Lambda$と各射影解消項は$R$-flatであり，
+局所分裂完全性によって解消は保持される．
+従って変換後にもKellerのcanonical構成を
+同じデータに適用でき，そのクラスを自然に比較できる．
+これは負巡回ホモロジー群全体について
+flat base-change theoremを仮定する議論ではない．
+\end{proof}
+
+\begin{corollary}[幾何fiberのordinary Jacobian代数]
 \label{cor:qa-q12-h2-geometric-exact-three-cy}
-定理~\ref{thm:qa-q12-h2-serre-dg-formality}の
-$H_2$実現可能開の任意の幾何点$\bar s$に対し，
-ordinary代数
+定理~\ref{thm:qa-q12-relative-exact-three-cy}
+の$H_2$実現可能開の任意の幾何点
+$\bar s$に対して，
 \[
  J_{\bar s}=\operatorname{Jac}
  (Q_{12,\bar s},\mathcal W_{\bar s})
 \]
-は$\kappa(\bar s)$上homologically smoothであり，
-bimoduleの意味で$3$-Calabi--Yauである．
-さらにdg代数としてexactな$3$-Calabi--Yau構造を持つ．
-これはKellerの\emph{undeformed} completion定理を使う
-幾何fiber上の結論であり，特異な相対基底上での
-同じCalabi--Yau構造の厳密降下，任意のraw QP，
-あるいは一般のdeformed completionには拡張しない．
+は$\kappa(\bar s)$上homologically smoothで，
+canonicalなexact $3$-Calabi--Yau構造を持つ．
 \end{corollary}
 \begin{proof}
-命題~\ref{prop:qa-two-mass-short-relative-diagonal}の
-相対対角解消を$\kappa(\bar s)$へ引き戻すと，
-$\Lambda_{\bar s}$は有限長の射影
-$\Lambda_{\bar s}^{e}$-解消を持つ．従って
-$\Lambda_{\bar s}$はhomologically smoothである．
-KellerのCalabi--Yau completion定理
-\cite[Theorem~4.8]{KellerDeformedCY2011}と
-その後の厳密化
-\cite[Theorem~1.1]{KellerErratumCY2018}から，
-undeformedな$\Pi_3(\Lambda_{\bar s})$は
-homologically smoothでcanonicalなexact $3$-CY
-構造を持つ．ここではdeformation parameterが零なので，
-一般deformed completionに必要なnegative cyclic classの
-追加仮定を輸入しない．
-
-前定理~\ref{thm:qa-q12-h2-serre-dg-formality}の
-幾何fiberでのdg準同型
-$\Pi_3(\Lambda_{\bar s})\xrightarrow{\simeq}J_{\bar s}$
-を使えば，homological smoothnessとexact CY構造は
-dg代数の準同型の下で移る．bimoduleの意味での
-$3$-CY性も従う．これはordinary Jacobian代数
-そのものについての結論であるが，
-相対未剛体化QPの全dg groupoidや
-全Ginzburg dg代数との準同型を構成したわけではない．
+前定理を$R=\kappa(\bar s)$に適用する．
 \end{proof}
 
 \subsection{内在的$H_2$への二段の剛体化とruling mutation貼合せ}
