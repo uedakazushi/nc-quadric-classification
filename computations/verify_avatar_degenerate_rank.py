@@ -211,6 +211,40 @@ def main():
         assert quotient_dimension(derivatives, 0, 8, diagonal_parities=(0,)) == weight_eight
     print("PASS: one-mass degenerate samples match through weight seven and fail at weight eight")
 
+    matrix_units = []
+    for row, column in product(range(3), repeat=2):
+        unit = zeros(3)
+        unit[row, column] = 1
+        matrix_units.append(unit)
+    rank_one_actions = [matrix_units[index] for index in (0, 4, 8, 2, 5)]
+    rank_two_actions = (
+        eye(3),
+        Matrix.diag(1, -1, 0),
+        Matrix(((0, 0, 1), (0, 0, 0), (0, -2, 0))),
+        Matrix(((0, 0, 0), (0, 0, -1), (2, 0, 0))),
+    )
+    center = Matrix(3, 3, (-21, 34, -30, -6, -23, 25, 19, 22, 10))
+    parameter = symbols("t")
+    transverse = matrix_units[0]
+    for opposite, actions, expected in (
+        (("xx", "yy"), rank_two_actions, 28),
+        (("xx",), rank_one_actions, 36),
+    ):
+        tangent = Matrix.hstack(
+            *(Matrix(list(action * center)) for action in rank_one_actions),
+            *(Matrix(list(center * action.T)) for action in actions),
+            Matrix(list(transverse)),
+        )
+        assert tangent.rank() == 9
+        quartics = quartic_representatives((("xx",), (), opposite, ()))
+        terms = [(0, "xxz", 1), *((2, short + "z", 1) for short in opposite)]
+        terms.extend(
+            (0, word, coefficient)
+            for word, coefficient in zip(quartics, center + parameter * transverse)
+        )
+        assert quotient_dimension(cyclic_derivatives(terms), 0, 8, diagonal_parities=(0,)) == expected
+    print("PASS: the dominant one-parameter slices exclude both one-mass degeneracies")
+
 
 if __name__ == "__main__":
     main()

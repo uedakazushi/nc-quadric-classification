@@ -1445,6 +1445,66 @@ $q_0=xx$ とし、$q_2$ を $xx+yy$ または $xx$ とする。
 短テンソルの非退化性を結論できない。
 \end{example}
 
+\begin{theorem}[一mass層の短テンソルの非退化性]
+\label{thm:qa-avatar-one-mass-forces-short-rank}
+標数零の体上、ただ一方のmassが可逆である十二矢potentialが
+指定AS最小解消を持つなら、消去後の二短テンソルはともに階数二である。
+\end{theorem}
+\begin{proof}
+退化した短テンソルを $q_0$ とし、命題~\ref{prop:qa-avatar-one-mass-quartic-space}
+の規格化で $q_0=xx$ とする。残りは $q_2=xx$ または $xx+yy$ である。
+各三次元商の基底 $xy,yx,yy$ で純四次係数を三行三列行列 $H$ と書く。
+二つの短線を保つ隣接矢の変換は、対角矢の逆スカラーを伴えば
+短項を保つ。従ってそれぞれの商への作用 $g,h$ による
+$H\mapsto gHh^{\mathsf t}$ は右同値を与える。
+
+階数一側の商における無限小作用には三つの対角単位行列と
+$E_{13},E_{23}$ が含まれる。実際、二つの二次元空間で
+$x$ の直線を保つ上三角変換を取り、対角成分とせん断を独立に動かす。
+階数二側なら、行列商 $\operatorname{Mat}_2/\langle I\rangle$
+への共役とスカラー作用を使える。
+これらは、恒等、$\operatorname{diag}(1,-1,0)$、
+$E_{13}-2E_{32}$、$-E_{23}+2E_{31}$ の四行列を与える。
+ここで単位行列成分の添字は三次元商でのものである。
+
+九係数の標本行列を $H_0$ とする。
+両場合とも、上記の作用の $H_0$ での微分の列と
+$E_{11}$ を並べると階数九である。
+この階数は整数行列の消去で確認し、付属検算に収録した。
+したがって、直線 $H_0+tE_{11}$ と許される基底変換を
+組み合わせる写像の微分は全射であり、
+標数零における滑らかな群とアフィン空間の間の
+Jacobian判定から像は稠密である。
+
+この一変数の直線上で、始点零、重み八の全自由道と
+巡回微分の適合する左右倍の係数行列を取る。
+$\mathbb Q(t)$ 上での厳密な消去により、商の次元は
+$q_2=xx+yy$ なら $28$、$q_2=xx$ なら $36$ となる。
+行列と消去は
+\texttt{verify\_avatar\_degenerate\_rank.py} に示す。
+全変換が関係商を同定し、その軌道族が九次元空間で稠密なので、
+一般の関係行列も同じ階数上界を持つ。
+各上界はminorの消滅で表されるため任意の特殊化に及ぶ。
+これらの次元下界は指定解消の値 $25$ より大きく、矛盾する。
+\end{proof}
+
+\begin{corollary}[指定AS表示の相対有限窓の認識]
+標数零の相対十二矢表示の全幾何fiberが指定AS最小解消を持つなら、
+両massの消滅の型によらず、式~\eqref{eq:qa-two-mass-six-relations}
+の相対非退化開に属する。通常のJacobianは有限窓から
+任意基底変更と可換に全次数で回復される。
+\end{corollary}
+\begin{proof}
+短関係一列と最長成分の六列の階数は
+命題~\ref{prop:qa-avatar-as-forces-finite-ranks}による。
+残る短テンソルの条件は、massが非零なら追加条件なし、
+一mass零なら前定理、両mass零なら
+定理~\ref{thm:qa-avatar-zero-mass-forces-short-rank}による。
+一mass消去による平方完成は、残る対角矢の短テンソルを保つ。
+可逆minorを各幾何fiberで選べるため、基底上で相対開に属する。
+全次数比較は定理~\ref{thm:qa-two-mass-jacobian-preprojective}による。
+\end{proof}
+
 \subsection{直積型 collection と全 square avatar}
 
 $\mathcal A_{\mathrm{sq}}^{\times}$ を、順序付きの二つの ruling を持つ
