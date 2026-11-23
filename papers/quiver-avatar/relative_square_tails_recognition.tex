@@ -74,7 +74,7 @@ $t^{-1}(E\otimes_R M)\simeq(t^{-1}E)\otimes_R M$となる。
 次数 $-q$ cohomology は
 \[
  \operatorname{Hom}_R
-       (\operatorname{Ext}^q_{\mathcal C}(E,K),I)
+       (\operatorname{Ext}^q_{\operatorname{Ind}\mathcal C}(E,K),I)
 \]
 である．$I$ が cogenerator であることから
 式~\eqref{eq:qa-flat-compact-ext-two} が従う．
@@ -127,8 +127,11 @@ $t^{-m}T$の直和因子として含めることで
 有限個の$t^{-m}T$からの全射に拡張できる．
 よってAZ1が成立する．添字$a$の値は関係しない．
 
-まず上記の局所 Morita chart 上で議論する．AZ2 のため，任意の
-coherent 対象 $K$ に対して
+まず上記の局所 Morita chart 上で議論する．以下の Ext と
+長完全列は $D(\operatorname{Ind}\mathcal C)$ で取る．
+coherent heart は Ind heart に完全充満に埋め込まれるので，
+次数零の Hom は AZ2 の Hom そのものである．
+AZ2 のため，任意の coherent 対象 $K$ に対して
 \[
  \operatorname{Ext}^1(t^{-n}E_i,K)=0\quad(n\gg0)
  \tag{FV}\label{eq:qa-flat-foundation-ext-one-vanish}

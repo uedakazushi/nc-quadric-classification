@@ -394,7 +394,7 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **論文C 8cdbb14 のクリーンビルド再現性（2026-11-23）。** 同じ Git archive を空の二作業ディレクトリに展開し、LuaHBTeX 1.18.0 と latexmk 4.86 で独立にビルドした。共通設定は `SOURCE_DATE_EPOCH=1795417450 FORCE_SOURCE_DATE=1 TZ=UTC` と同じ日本語 TeX ツリー。PDFのトレーラ `/ID` を取り除いたバイト列の SHA-256 は両方とも `27dc48b47fa9dd6cec7e976b21aef8aafa87e2f780a3ce9cc3085b11a7b3bbcf`。SyncTeXを展開して作業ディレクトリの絶対パスを同じ文字列へ置換した結果と、PDFの `pdftotext -layout` の出力はバイト単位で一致。Poppler 26.05.0 で96dpiに描画した全349頁はページごとに一致した。最終ログの警告は旧フォントコマンド `\rm` の非推奨通知一件。未解決参照・引用および overfull box はなかった。同版で `python3 scripts/check.py math --manuscript papers/nc-quadric-surface-avatar.tex` は PASS。これらの再現結果は当該原稿と共通ツール環境に対するものである。
 
-**回転・mutation窓の相対AZ条件の再監査。** 窓の四対象を添字0から3に置くと、構造対象が何番目にあっても反Serre作用一回でその添字が4増加する。このため前向きExt消滅の下限は全幾何点で一律に1である。相対perfect Homの零次集中と任意基底変更を通して、求めるAZ入力を全試験基底に移す。AZ2の一般のcoherent対象に対しては、構造対象の軌道から二段解消して、その第三Extが有限対角の振幅で消えることを使う。[証明](../papers/quiver-avatar/relative_rotated_mutated_tails.tex)。
+**回転・mutation窓の相対AZ条件の再監査。** 窓の四対象を添字0から3に置くと、構造対象が何番目にあっても反Serre作用一回でその添字が4増加する。このため前向きExt消滅の下限は全幾何点で一律に1である。相対perfect Homの零次集中と任意基底変更を通して、求めるAZ入力を全試験基底に移す。AZ2の一般のcoherent対象に対しては、構造対象の軌道から二段解消して、基底平坦な始域に対する第三Extを、相対Serre双対と基底の単射余生成加群で消す。長完全列はInd heartで取り、次数零のHomはcoherent heartのものと一致する。有限対角の長さから特異基底上のheart全体の大域次元を推論しない。[証明](../papers/quiver-avatar/relative_rotated_mutated_tails.tex)。
 
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
