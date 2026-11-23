@@ -92,7 +92,7 @@ def check_relation_dual_transport():
     shear = Matrix([[2 + epsilon, -1]])
     relation_map = Matrix([[scale, *shear], [0, 1, epsilon], [0, 1, 1]])
     inverse_scale = 1 - epsilon
-    long_inverse = dual_numbers(long_frame.adjugate() * inverse_scale)
+    long_inverse = dual_numbers(long_frame.adjugate() * (1 + epsilon))
     return_map = Matrix.vstack(
         Matrix([[inverse_scale, 0, 0]]),
         (-inverse_scale * (shear * long_inverse).T).row_join(long_inverse.T),
