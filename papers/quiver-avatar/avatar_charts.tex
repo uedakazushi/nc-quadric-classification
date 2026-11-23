@@ -2,21 +2,19 @@
 \section{反標準 avatar の族と二つの十本矢 chart}
 \label{sec:qa-avatar-charts}
 
-本節では幾何的な族を直接定義し、その間の開埋め込みを証明する。
-代数の同型類から幾何的 avatar への対応は
-\cite[定義15.2・定理15.3]{Q12Avatar2026}に記載されているが、
-その同型類分類を相対 AS 代数の stack 同値として使用しない。
-族上の再埋め込みは\cite[第4--5節]{Q12Weyl2026}との比較も踏まえ、
-本稿の補題~\ref{lem:qa-core-curve-vanishing}、
-\ref{lem:qa-core-two-pencils}と定理~\ref{thm:qa-core-avatar-square-rotated}で
-必要な幾何を自足的に証明し、
-開部分の判定に必要なコホモロジー、非被約因子、垂直成分および降下を以下で確認する。
-統合ノート\cite[第7.11--7.12項・第9節・第13.3項]{Synthesis2026}は
-これらの出典と主張の水準を整理した資料であり、独立の検証の代用とはしない。
+本節では幾何的な族と指定AS表示の比較を構成する。
+体上の逆復元は定理~\ref{thm:qa-avatar-presented-field-dictionary}にまとめる。
+十二矢型と統一avatarの来歴は
+\cite[定義15.2・定理15.3]{Q12Avatar2026}を参照する。
+族上の再埋め込みは補題~\ref{lem:qa-core-curve-vanishing}、
+\ref{lem:qa-core-two-pencils}と定理~\ref{thm:qa-core-avatar-square-rotated}
+に基づく。再埋め込み操作の来歴は\cite[第4--5節]{Q12Weyl2026}、
+研究内での整理は\cite[第7.11--7.12項・第9節・第13.3項]{Synthesis2026}
+を参照する。
 
 \paragraph{AS 側の辞書の対象.}
-入力する体上分類の対象は
-\cite[第15.1項・定理15.3]{Q12Avatar2026} の $A_Q^{\mathrm{pres}}$ である。
+対象を $A_Q^{\mathrm{pres}}$ と書く
+（記号の来歴は\cite[第15.1項]{Q12Avatar2026}）。
 すなわち、局所有限な連結 positively directed $\mathbb Z$-代数で、
 大域次元三、Gorenstein parameter 四の AS 正則性を満たし、
 \eqref{eq:qa-universal-potential} の十二本矢 potential
@@ -39,7 +37,7 @@ $\epsilon_i=0$、奇数 $i$ のみで $\epsilon_i=1$、
 $\Ext_A^q(\mathsf S_i,\mathsf P_j)=0$ for $(q,j)\ne(3,i-4)$、
 $\Ext_A^3(\mathsf S_i,\mathsf P_{i-4})\simeq\kk$ である。
 分解の Euler 特性だけを課す条件ではない。
-Noether 性はこの定義の追加仮定ではなく、引用する分類の結論である。
+Noether性は幾何復元後の完成に対して証明する。
 potential 表示、trivial pair の係数、周期同型、分解の基底は選択データにしない
 \cite[定義2.1・第15.1項]{Q12Avatar2026}\cite[定義48.1]{AvatarVSeven2026}。
 この整数頂点固定の同型は、四頂点 graded 代数の同型を射とした
@@ -730,8 +728,8 @@ $H^0(FP)$ で、その積に上の $F$ の鉛筆を直接適用できない。
 二次項がない。従って巡回微分は道長二以上であり、残る矢は
 正次数idealをその平方で割った空間の基底となる。
 対応する最小矢数は順に $8,10,10,12$ である。
-この順方向の計算とは別に、指定表示を持つAS代数全体から
-出発する体上の分類は \cite[定理15.3]{Q12Avatar2026} を入力とする。
+指定表示を持つAS代数から出発する逆復元は
+定理~\ref{thm:qa-avatar-presented-field-dictionary}に示す。
 同じ矢数の相対 QP 表示を比較する際の階数条件は、
 上の幾何学的な層の名称からは
 推論せず、各代数表示の積と関係について検証する。
@@ -4175,6 +4173,37 @@ $Z=Y$ であり、$P$ は相対Picardの計算から基底の線束となる。
 行列式は構造層上零である。
 比較は普遍評価と有限窓の同一視で与えられるため、
 全同型、合成、基底変更と両立する。
+\end{proof}
+
+\begin{theorem}[指定十二矢表示からの体上の幾何復元]
+\label{thm:qa-avatar-presented-field-dictionary}
+標数零の代数閉体上で、指定AS最小解消を持つ
+十二矢Jacobian展開を取る。
+指定四連続窓は、標識付き曲線型avatarまたは古典曲面窓から
+得られる。窓の完成は全整数のJacobianを回復する。
+頂点スカラーで剛体化した窓の同型は、各標識での
+幾何同型と一致する。
+\end{theorem}
+\begin{proof}
+全mass配置で有限窓の非退化条件は、
+命題~\ref{prop:qa-avatar-as-forces-finite-ranks}と
+定理~\ref{thm:qa-avatar-zero-mass-forces-short-rank}、
+\ref{thm:qa-avatar-one-mass-forces-short-rank}および
+それに続く相対有限窓の認識で従う。
+従って定理~\ref{thm:qa-two-mass-jacobian-preprojective}で
+全次数を回復する。
+
+両mass零なら、定理~\ref{thm:qa-avatar-deep-relative-point-reconstruction}
+と系~\ref{cor:qa-avatar-deep-relative-image}で曲線または古典曲面を得る。
+この場合の全同型は、曲線では階数一表現の復元、
+古典曲面では系~\ref{cor:qa-avatar-deep-image-flattening}で比較する。
+少なくとも一方が可逆なら、
+系~\ref{cor:qa-avatar-invertible-mass-geometric-reverse}を適用する。
+逆mutationのsquare側で、向き付き二次式の
+非一致なら曲線型、一致なら古典型を得る。
+逆mutationと二次式の比較はいずれも全同型に自然なので、
+同じ標識で元の窓へ戻すと幾何同型が対応する。
+これらの分岐は二massの値から尽くされる。
 \end{proof}
 
 \subsection{滑らかな楕円型における三者の明示的辞書}
