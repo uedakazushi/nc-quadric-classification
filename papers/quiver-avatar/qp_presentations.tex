@@ -398,6 +398,31 @@ tautologicalな枠変更で同一の道代数写像を表示し直すので、
 捩れた矢束の場合もfppf降下する。
 \end{proof}
 
+\begin{corollary}[Jacobian 商に恒等を誘導する同型]
+枠付き係数環 $R$ 上で、potential $W$ の自己同型のうち
+$\operatorname{Jac}(Q,W)$ に恒等を誘導するものは、
+命題~\ref{prop:qa-raw-qp-isom-equations}の安定化条件に加えて
+\[
+ g=1,\qquad
+ (a_d-1)x_d+s_d\in R(q_d+\lambda_d x_d),\qquad
+ (b_d-1)y_d+t_d\in R(p_d+\lambda_d y_d)
+\]
+を満たすものに等しい。この条件は各係数環で
+巡回微分が生成する部分加群の像を用いる。
+\end{corollary}
+\begin{proof}
+重み一に Jacobian 関係はないため、恒等性は $g=1$ を要求する。
+重み二に寄与するのは重み二の矢に関する巡回微分だけである。
+指定した箙では各対角の両端が異なるため、
+$x_d$ と同じ端点の関係部分加群は
+$\partial_{y_d}W=q_d+\lambda_dx_d$ の生成する部分だけである。
+$y_d$ 側も同様である。従って条件は全矢の像が
+Jacobian 商で固定されることと同値であり、
+矢と頂点が商代数を生成するので十分でもある。
+この議論では $\lambda_d$ を約分せず、
+関係が零または係数に零因子がある場合も同じ条件を得る。
+\end{proof}
+
 \begin{corollary}[可逆な一組のみの消去]
 \label{cor:qa-qp-single-mass-elimination}
 十二矢空間の$\lambda_1$可逆開のraw商は、
