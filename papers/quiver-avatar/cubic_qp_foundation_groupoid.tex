@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.51。全tensor次数消滅からSerre dg形式性へ統合。
+% 2026-11-23 / v4.52。形式性と幾何Jacobianのexact 3-CY性。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -2121,6 +2121,50 @@ QPのmass/shearは有限商で恒等となる．
 coherentである．以上は既存の全$n$の消滅を
 一つのdg代数に統合した帰結であり，
 他のdg QP模型の準同型を新たに構成したものではない．
+\end{proof}
+
+\begin{corollary}[幾何fiberのordinary Jacobian代数のexact $3$-Calabi--Yau性]
+\label{cor:qa-q12-h2-geometric-exact-three-cy}
+定理~\ref{thm:qa-q12-h2-serre-dg-formality}の
+$H_2$実現可能開の任意の幾何点$\bar s$に対し，
+ordinary代数
+\[
+ J_{\bar s}=\operatorname{Jac}
+ (Q_{12,\bar s},\mathcal W_{\bar s})
+\]
+は$\kappa(\bar s)$上homologically smoothであり，
+bimoduleの意味で$3$-Calabi--Yauである．
+さらにdg代数としてexactな$3$-Calabi--Yau構造を持つ．
+これはKellerの\emph{undeformed} completion定理を使う
+幾何fiber上の結論であり，特異な相対基底上での
+同じCalabi--Yau構造の厳密降下，任意のraw QP，
+あるいは一般のdeformed completionには拡張しない．
+\end{corollary}
+\begin{proof}
+命題~\ref{prop:qa-two-mass-short-relative-diagonal}の
+相対対角解消を$\kappa(\bar s)$へ引き戻すと，
+$\Lambda_{\bar s}$は有限長の射影
+$\Lambda_{\bar s}^{e}$-解消を持つ．従って
+$\Lambda_{\bar s}$はhomologically smoothである．
+KellerのCalabi--Yau completion定理
+\cite[Theorem~4.8]{KellerDeformedCY2011}と
+その後の厳密化
+\cite[Theorem~1.1]{KellerErratumCY2018}から，
+undeformedな$\Pi_3(\Lambda_{\bar s})$は
+homologically smoothでcanonicalなexact $3$-CY
+構造を持つ．ここではdeformation parameterが零なので，
+一般deformed completionに必要なnegative cyclic classの
+追加仮定を輸入しない．
+
+前定理~\ref{thm:qa-q12-h2-serre-dg-formality}の
+幾何fiberでのdg準同型
+$\Pi_3(\Lambda_{\bar s})\xrightarrow{\simeq}J_{\bar s}$
+を使えば，homological smoothnessとexact CY構造は
+dg代数の準同型の下で移る．bimoduleの意味での
+$3$-CY性も従う．これはordinary Jacobian代数
+そのものについての結論であるが，
+相対未剛体化QPの全dg groupoidや
+全Ginzburg dg代数との準同型を構成したわけではない．
 \end{proof}
 
 \subsection{内在的$H_2$への二段の剛体化とruling mutation貼合せ}
