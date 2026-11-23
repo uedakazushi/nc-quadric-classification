@@ -309,6 +309,32 @@ $\chi:\mathfrak N\to\mathbb A^1$は全域の正則射である．
 上の有限型二族へ制限できるので，その存在も否定される．
 \end{proof}
 
+\begin{corollary}[任意の支配的付値基底での延長不能]
+\label{cor:qa-spectral-no-extension-over-valuations}
+前系の二つのtraitのいずれかを支配する付値環$V$を取る。
+すなわちtraitの局所環から$V$への局所単射があり、
+$t$の像は非零かつ非単元とする。
+幾何generic点で前系の指定pointingを実現する
+$\mathfrak H_2$対象は、$\operatorname{Spec}V$上に延長できない。
+同様に、任意の付値環$V$上のnoncubic族で、
+$\chi-1$が非零かつ非単元であり、幾何generic点が
+前節のsmooth対応の定義域にあるなら、対応先は延長できない。
+\end{corollary}
+\begin{proof}
+論文Bの代数的stackを$\operatorname{Spec}V$上で扱う。
+仮に延長が存在すると、対応先の幾何generic点が
+noncubicであるため、$\mathfrak N$の閉部分の引戻しidealは
+$V$の分数体で零になる。$V$は整域なので、そのidealは零である。
+したがって延長の$\chi$値は$V$の元である必要がある。
+一方、対応先のgeneric値は
+$\chi/(\chi-1)=1+(\chi-1)^{-1}$に等しい。
+$\chi-1$は非単元なので、その逆数は$V$に属さず、
+この和も$V$に属さない。矛盾である。
+二つのtraitではそれぞれ$\chi-1$は$t$または$t^2$の
+単元倍なので、支配的な$V$上でも同じ議論を適用できる。
+この証明は付値群の離散性や分数体拡大の有限性を使わない。
+\end{proof}
+
 \begin{remark}[$\Sigma_2$模型と相対範囲]
 \label{rem:qa-sigma2-spectral-involution-scope}
 式~\eqref{eq:qa-noncubic-sigma2-square-dictionary}によって
