@@ -1,6 +1,14 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.70（A v1.69・20節、B v0.41・31節、C v4.62）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.71（A v1.69・20節、B v0.41・31節、C v4.63）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 全相対AS/avatar/QP stack分類の数学的核心
+
+**最上位目標・状態。** 現行の[研究方針](../00_research_plan.md)のS1–S6に従い、指定square/rotated/cubic/独立最小AS10、対応avatar、重み付き8/10/12本矢QPの全相対stackを、対象・Isom/慣性・非被約基底・全周期AS復元・rigidification・H2の内外と比較まで分類する。**未完成**。体上のAS/avatar相互逆分類（[AS分類](../papers/quiver-avatar/as_helix_classification.tex)）、条件付きの相対AS10 mutation（[AS10](../papers/quiver-avatar/as10_mutation_classification.tex)）、全H2の有限square/normal foundation相対stack（[square](../papers/quiver-avatar/relative_square_foundation_stack.tex)）と二massQPのH2実現可能開（[QP](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)）は原稿上有効な重要入力だが、全相対AS/avatar/QP stack同値とは区別する。第一の数学的課題は `thm:qa-as10-relative-families` の有限局所自由性・perfect条件が指定全AS族の公理から導けるかと、finite foundation chartによるfppf局所全被覆・全Isomの実現である。
+
+**反例・障害として保持すべき情報。** `prop:qa-stabilized-inertia` の可縮pairが未修正QPで $B\mathbb G_m$、二pairで $B(\mathbb G_m^2)$ の慣性を残すため、QP原stackと有限代数/AS側は直接同値ではない。rank3のnilpotent massでは可逆massのtrivial-pair消去を使えない。両積可逆でもf=g=I4のsquare表示はH2の交差条件を満たさないので、任意AS/QPをH2として分類しない。反対normal零番の強いpointing不成立例、spectral指定pointingのFricke対合・二境界型のH2延長不能・一般stack自己同値不存在は、全分類の外側の構造として保持する。noncubic/古典型も除外しない。
+
+**次の具体的な証明義務。** $R=k[\varepsilon]/(\varepsilon^2)$ のsquare/AS10相対族とrank3壁の局所モデルにおいて、(i) all-degree Hom/Extと単純分解の相対perfect化、(ii) finite foundation上の全基底変更・Isom/2-射、(iii) 最小十本矢関係係数が非単元の時の全階数保存、を切り分ける。成立なら十分な仮定と証明を公表用原稿に追加し、不成立なら最小反例と追加chart、対象条件の正確な補集合を求める。これらの検査は**今後の作業であり、本更新で新しい数学的定理を検証したものではない**。全QPのraw right-equivalence、非cotangent群oid、AS↔avatar↔rigidified QPとH2への射の全fiber/coherenceが残る。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
