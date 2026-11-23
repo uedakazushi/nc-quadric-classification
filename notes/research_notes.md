@@ -2576,3 +2576,7 @@ latexmk
 **massの型を横切る比較を含む393頁保存版 52eb767。** 二つの `git archive 52eb767` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795433085 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全393頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `2c095f7ae2339a7b918264e1aa472f0534f9dd609b8717a409ccac15b35877b5`、SyncTeX `ce8c1af8effec5725479478c25212eb4b5c967ebbbfae12503da3697f9c91c87`、抽出テキスト `e853171379d169920e20720b40ad923f69b775c55b8e7dfaae7bb1353349d5c1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **体上の復元を統合した393頁保存版 4c088cd。** 二つの `git archive 4c088cd` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795433344 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全393頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `c74021fa04f13520321a779d6823f36bb420e9dba3f3bfd2edf65ac821fb6027`、SyncTeX `e2c8ce9d6e87d0421ee0c93b0ab54c2794a19c65ef38274c519a168c569b9827`、抽出テキスト `0c3f57ca608b5bffe6d84cb3461aa9d34d63915fdaf445f86f1c5b00c8ea0070`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**指定表示の逆分類の独立計算監査。** [独立検算](../computations/audit_avatar_rank_independent.py) は既存の階数検算を呼ばず、各矢に始点を添えて自由道を作り、消した矢の終点から巡回微分を並べる。関係の終点から始まる後置道も別に生成する。この係数行列を、有理関数体での単元優先の疎行消去で再検算した。両mass零の六規格形の余核次元は順に 17、17、14、19、14、14、一massの二つの一変数sliceでは28、36で一致した。後者では元の二次元鉛筆における上三角作用と共役を先に微分し、短線で割ってから九次元の接階数を再計算した。実行は `python3 computations/audit_avatar_rank_independent.py` で、C数学suiteにも含めた。
+
+この監査では、階数上界の特殊化と規格形の被覆も再点検した。両mass零の複数退化配置では、階数一行列の積のパラメータ空間が既約であり、表の独立性・非零評価条件を満たす開が空でない。一massでは、許容基底変換と一変数sliceを組み合わせた写像の微分全射から、像が九係数空間で稠密となる。いずれも一般点の階数上界を定めるminorが全体で消えるため、特殊化した体上の配置も排除できる。有限段のHilbert値が正しい場合のAS正則性を、この監査では判定していない。
