@@ -1,18 +1,43 @@
 # 研究方針：O-marked 非可換二次曲面の分類
 
-2026-11-23 / v1.73。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.62。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
+2026-11-23 / v1.74。**再開時は本書を最初に読む。GitHub `main` が正本。** 論文Aはv1.69（分類の20節）、論文Bはv0.41（相対理論の31節）、論文Cはv4.63。体上の全同値類分類と、内在的な相対モジュライの代数性を区別する。
 
-**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は論文C（AS正則Z代数・avatar・H2・QP/GIT比較）の完成である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
+**内在的な相対モジュライ $\mathfrak H_2$ の有限型代数性の証明を完成した。全体の既約性と被約noncubic境界のsmooth性・余次元2も証明した。被約境界を二形式商として相対的に同定し、その良モジュライ射・全慣性と全H2の粗モジュライ不存在まで証明した。DM開の任意底変更と両立する粗モジュライ、一致類に沿う全慣性作用と形式対も証明した。 **最優先目標は上記の全相対AS/avatar/QP stack分類（S1–S6）である。** A・Bの公表前監査・先行研究比較は保持するが、C完成のための入力監査を優先し、独立の先行終了条件にしない。全H2のgood moduliと全半不変環・中央affine環・二商特異点をCに記載した。平方根・根同型・AS被覆はfppf局所の存在条件とし、標識に加えない。有限型表示商や幾何点の被約閉包を、そのまま内在的モジュライと定義しない。
 
-## 最上位目標：論文Cの完成（2026-11-23）
+## 最上位目標：論文Cにおける全相対AS/avatar/QP stack分類
 
-**不変の最優先目標：** `papers/nc-quadric-avatar.tex` を、指定した最小分解型のAS正則Z代数・幾何avatar・構造対象付きH2・有限QP／既存GITを、同型類だけでなく相対groupoid・慣性・heartまで比較できる、証明を備えた公表可能な独立論文へ完成させる。A/Bは論理的入力として使う。Cの中心問題が残る間、A/Bの公表前監査だけを目的とする作業へ研究優先度を戻さない。
+**2026-11-23に目標を引き上げた。** 主原稿 `papers/nc-quadric-avatar.tex` の最終目標は、**本研究で指定した最小AS分解型（square、rotated square、cubic、独立最小十本矢型）と、それに対応する反標準幾何avatar・8/10/12本矢の重み付きQP表示について、全相対スタックを分類し、相互の比較図式、同型層、慣性、剛体化、fibers、mutation/rulingの貼合せ、内在的 $\mathfrak H_2$ との関係を原稿上完全に証明すること**である。既存のC1–C3の $H_2$ 実現可能開での比較は基礎となる到達点であり、これだけでCを完成したと判定しない。A/Bの重要な定理は必要な入力として用いるが、A/Bの公表準備を優先してこの目標を延期しない。
 
-**Cの達成基準と現行判定：** (C1) 8/10/12本矢、square/rotated、mutation・相対tails・pointed認識の適用範囲：**原稿上達成**。(C2) 全H2 good moduliの不変式・中央affine・noncubic・局所特異性：**原稿上達成**。(C3) 最大の明示的な比較開上でAS/QP・avatar・pointed H2のgroupoid・慣性・right-equivalence・heartと障害を決定：**H2の相対実現可能開全体について、二mass十二矢QP→finite foundationの全局所Isom、相対対角解消、ordinary Jacobian=H0Π3=canonical Serre完成、全次数・左右Noether/pointed heart、mass/頂点scalarsの二段剛体化とcoherentなruling mutation商を原稿上で達成**。H2外の任意AS/avatar/QP stack全体の分類は未完成で、H2の比較と区別する。(C4) 全論文の独立証明監査、一次文献の網羅的比較、LuaLaTeX全稿PDF・SyncTeXと表示：**未完了**。C1–C3の「原稿上」とC4の独立検証を取り違えず、C4未達成の間は論文C全体を完成扱いにしない。
+**対象の正確な範囲。** 「任意」は上記の**指定型**を満たす全ての対象・許容族・同型を指し、一般の任意次数・任意の箙とpotential・全次元のAS正則代数を含むとの意味ではない。許容条件が本当に対象全体を覆うかを証明し、都合のよい局所自由・perfect・smooth・$H_2$適合などの追加仮定を置いた部分だけを「全分類」と呼ばない。基礎体は現行の標数零代数閉体を基礎とし、その上の局所有限型scheme、非被約・非平坦な試験基底変更を含む相対fppf/導来比較の適切な範囲を明記する。拡張できない現象には具体的な反例と正確な境界定理を与える。
 
-**次の優先課題：** 論文CのC1–C3は、全$H_2$実現可能開上のfinite foundation・二mass QP・Jacobian/Serre・同じpointed heart・二段剛体化とruling $S_2$商について原稿上到達した。C4の数学的独立監査・包括的文献比較・全稿組版は未完。反対normalの零番が強い$H_2$ pointingでないrank3反例を保持し、反対squareのheart内の逆順双対normal四項$Y=(\mathbb DZ_1,Q_0,Q_1,Q_3)$の第二頂点$Q_0$をAZ基準として左Noether性を証明済み。相対評価cone$F=\operatorname{Cone}(\operatorname{Hom}(E_0,E_1)\otimes E_0\to E_1)[-1]$と$H=t^{-1}Z_1$には可逆層$L=\mathbf RHom(F,H)$があり、$L\otimes F\simeq H$、$\mathbb DF\simeq Z_2^\vee$、$\mathbb DH\simeq Z_2^\vee\otimes L^\vee$が相対的に成立する。**全頂点固定finite square Isomの2自然性と相対heartへの降下：** evaluation・coevaluation・相対Serre・perfect双対・$L$のcoherentな比較に加え、零番構造対象の両向き保存と反SerreAZ生成族からperfect Morita同値の$t$-exact性を証明した。頂点線束$M_0$を保持して全Isom・基底変更に2自然に降下し、局所のpointingを選ぶとpointed exact同値となる（[全Isomとheart降下](papers/quiver-avatar/relative_rotated_mutated_tails.tex)）。QPのmass kernelと関係lift shearはfinite foundation上恒等なので、この心の比較に余計な慣性は作用しない。頂点scalarsの線束重みと三重cocycleも直接制御済み。**C4全43 TeXのv4.61時点のソース静的監査：** GitHub最新mainの主原稿と42個の分割ファイルを全て取得し、ラベル868個・相互参照947件・引用キー使用数241件（同一正規表現で数えた値）を確認。新50ラベルと旧40ファイルには衝突がなく、旧版から残る参照と新参照32種類は定義先が解決し、91個のbibキーに未定義引用なし。環境のbegin/end不均衡なし、入力先42個の重複なし。従来の「235引用」と今回の241件の差は原因未確定であり、抽出規則の違いが考えられる。最新版は現行ソースを同一規則で数えた241件を採用する。**これはソース静的検査で、`scripts/check.py papers`の実行・LuaLaTeX全稿組版・PDF/SyncTeX目視・数学的独立証明監査とは区別する。** [C3主原稿](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。**C4依存の精密化：** 非平坦基底変更で導来引戻しは一般に$t$-exactでない（双対数$k[\varepsilon]/\varepsilon^2\to k$の周期Torが反例）。今回、Morita同値の相対$t$-exact性と導来基底変更を仮定し、$H^0$を経た通常のheart基底変更が合成・全Isomにcoherentと証明した。同時に非正$K$-flat dg完成の零次は任意基底変更に交換することを、truncation三角から直接証明した。$H^{<0}$や$H^0$の平坦性はこの議論だけでは出ない。**C3のdg形式性（原稿上到達、独立監査を残す）：** 旧来の普遍Tor四項完全列は非正複体一般の基底変更障害を与えるが、本研究の$H_2$実現可能開では既存の`lem:qa-q12-all-degree-perfect-fiber`が全$n\ge0$について$\Theta_\Lambda^{\otimes^\mathbf L n}$の非零cohomologyを次数零に集中させる。ordinary dg tensor完成の直和は完全だから**$H^{q\ne0}\Pi_3(\Lambda)=0$**であり、非正dg模型からordinary Jacobianへcanonicalなdg準同型が得られる（[形式性の定理](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `thm:qa-q12-h2-serre-dg-formality`）。$H^{-1}$の平坦性・消滅は同定理の帰結で解決した。全finite foundation Isomと任意非平坦基底変更に整合し、局所導来dg加群圏とperfect圏の同値が従う。**全非退化二mass有限開での相対exact 3-CY（原稿上証明、今回一次監査）：** 有限foundation$\Lambda$は任意の非被約局所Noetherian環$R$上有限局所自由、$\Lambda_R^e$上perfectである。Kellerの2018 erratum Theorem1.1は任意可換基礎環$R$を許すため、$\Pi_3(\Lambda)$は**$R$-相対homologically smoothかつcanonical exact 3-CY**。$H_2$実現可能開では既証明の$R$-dg形式性でordinary Jacobianも$R$-相対exact 3-CYとなる（[Cの主定理](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `thm:qa-q12-relative-exact-three-cy`）。幾何fiber旧系はこの特殊化として保持。基底変更後もcanonical構成が自然であり、今回さらに有限双加群解消$P_\bullet$の恒等射を$HC_2^{\rm red}(\Pi_3(\Lambda)/R)$のCasimir primitiveに対応させ、そのConnes像が$HN_3$のcanonical classであることを明示した（[新命題](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-exact-cy-primitive-isom-inertia`）。全finite foundation Isomは恒等元を恒等元へ送り、primitive・classを保つ。mass/shearは有限商$\Lambda$上恒等なのでmixed complexのMorita像でも慣性作用がcoherentに自明。**未解決**はIsom不変性を超えた全QP stackのhomotopy-coherent CY class高次降下。全$HN_3$の非平坦底変更同型は未主張。**二項準自由dg解消とGinzburg比較（追加で原稿上証明）：** 二mass finite foundationの全非退化開は有向4頂点の自由道rank32に対し、次数$-1$の関係道rank8（短関係自身2・三段合成4・残余2）を持つ。関係矢の相互合成が不可能で、6Rの直和因子条件から微分はsplit単射、通常関係商rank24への準自由二項dg解消になる。このため、最小関係でなくてもKeller 2011 Proposition6.8を局所枠付きchartに適用し、非完備$\Gamma_3(Q_{12},W)$と$\Pi_3(\Lambda)$の**局所導来Morita同値**を得る。H2開ではdg形式性を合成してordinary Jacobianとも局所導来Morita同値。証明は[非最小dg解消の命題](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-semifree-ginzburg-morita` と[H2の系](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `cor:qa-q12-h2-ginzburg-jacobian-morita`。**有限dg kernelの明示的ホモトピー（原稿上証明）：** $I^2=0$の二項準自由模型$\mathscr F=F\oplus I[1]$に対し、$\Lambda=F/I$上恒等な任意の$(F,I)$自己同型$\varphi$は$\delta=\varphi^\sharp-\mathrm{id}$の像がsquare-zero dg idealに入る。次数$-1$の導分$h(f)=\delta(f)[1],\ h(i[1])=0$は$dh+hd=\delta$を満たし、標数零の$R[z,dz]$上で$\mathrm{id}+z\delta+dz\,h$というdg代数の明示的ホモトピーを与える（[原稿の命題](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-mass-dg-polynomial-nullhomotopy`）。mass二群の零・冪零・可逆massすべてに適用でき、非被約基底変更・枠変更にも自然。これは**Morita局所化以前**の各mass自己同型のnullhomotopyであり、全合成の高次coherenceは別途既証明のstrict商$\mathscr F\to\Lambda$から得る。実際のQP側Ginzburg dgへKeller Proposition 6.8の局所Morita同値を通す2自然性・ruling交換のraw right-equivalenceは未解決。**今回の検算：** 明示Q12模型のrank28の非自明な自由道とrank8の関係idealに対して$BH=G_F-I$, $HB=G_I-I$を$\mathbb Z[\lambda,\mu,t,s]$の恒等式として確認（[再現コード](computations/verify_q12_presentation_dg.py)）。局所の同等コードを実行PASS、GitHubに保存したファイルのbyte一致実行は未確認。**raw右同値のA1経路障害（原稿上証明）：** massゲージ$(t,s)$について、頂点固定raw右同値を通る恒等からの$\mathbb A^1_R$経路は、**$\lambda t$と$\mu s$がともに冪零な場合に限る**（[必要十分条件](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-raw-mass-a1-path-obstruction`）。必要性は唯一の一次矢$x:1\to3,u:0\to2$の一次係数が$R[z]^\times$に属すことと、単元多項式の非定数係数の冪零性による。十分性は$g_{zt,zs}$。faithfully flat基底変更では非冪零性は消えない。可逆cubic上の非自明$\Gm$ゲージにはraw右同値内の多項式経路がない一方、有限dg模型の$\mathrm{id}+z\delta$は途中で自己同型でなくてもよいので全massでホモトピーを持つ。**非完備Ginzburg dgの全多項式right-equivalence strict自然性（原稿上証明）：** Keller--Yang [Lemma 2.9](https://arxiv.org/abs/0906.0761)の完備Ginzburg右同値の持上げを一次原文・PDF画像で確認した。多項式右同値$\varphi$と逆$\psi$がともに有限道展開なら、$\psi(b)=\sum_p c_{p,b}p$の非可換Fox微分を$\varphi$で輸送して逆矢$a^*$の像を有限和に定義できる。これにより**非完備**Ginzburg dgのstrict同型が得られ、cyclic chain rule・$\sum[a,a^*]$の不変性で微分を保つ。合成・単位・非平坦基底変更はstrictに整合する。二massゲージ、関係lift shear、線形frameはすべてこの範囲に含まれ、全多項式QP右同値groupoid上でGinzburg dgがstrictに降下する（[Cの命題](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-ginzburg-polynomial-right-equivalence`）。圧縮四記号$W=yq+px+\lambda yx$でmassの逆矢公式を代入し、4逆矢微分・頂点loop交換子・potentialの巡回不変性を独立のSymPy非可換多項式でPASS（[再現コード](computations/verify_q12_ginzburg_fox.py)）。**cotangent表示群oid上のKeller比較の2自然性（原稿上証明）：** KellerのPropositions 3.7・6.6のCuntz--Quillen双加群解消とCasimir模型を使い、準自由dg解消$\mathscr F$の同型を逆双対Fox chain mapへ移す。$r_i=h_i+x\ell_i+m_i u$、$p=\sum\ell_iT_i$、$p'=\sum T_im_i$と書くと、massゲージの次数$-1$生成元は$\rho_b\mapsto a\rho_b,\rho_a\mapsto b\rho_a,\rho_i\mapsto\rho_i+t\rho_b\ell_i+s m_i\rho_a$で、その逆双対が実際のQPの$y\mapsto a^{-1}(y-tp),v\mapsto b^{-1}(v-sp')$と一致。relation-lift shearも新関係生成元から旧関係へ戻す三角dg写像により逆双対が既知の$y,v$変換と一致。Keller Prop4.2で$\Pi_3(\mathscr F)\to\Pi_3(\Lambda)$を自然にMorita移送し、**mass/shear/frameとその合成・非平坦基底変更に2自然なzigzag**を構成した（[Cの主定理](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `thm:qa-q12-cotangent-keller-pseudonatural`）。$H_2$開ではJacobianまで2自然に比較（同節 `cor:qa-q12-h2-ky-keller-morita-pseudonatural`）。今回の独立記号計算はrank4関係生成元の逆双対mass/shear、mass群法則、半直積重み、合成の5群でPASS（[現行コード](computations/verify_q12_cotangent_morita.py)）。**残るC3の範囲：** cotangent表示から来ない任意raw QP right-equivalence、別rulingの単一right-equivalence、および未剛体化全QP stack上のcanonical relative negative cyclic classの高次降下はこの定理から導かない。**相対affine chart上のexact 3-CY classの存在は今回解決済みであり、未解決課題には戻さない。**C4の全数学的独立監査・一次文献網羅・LuaLaTeX全稿PDF/SyncTeX表示は未完。
-**C3の新たな到達点（論文C v4.62、原稿上証明）：** 相対finite foundationの $B=\Pi_3(\Lambda)$ について、忠実平坦な $R\to S$ のČech nerveに沿う $HH(B/R)$（円周作用付き）、$HC(B/R)$、$HC^-(B/R)$ とreduced因子の複体値homotopy降下を証明した（`prop:qa-q12-fppf-cyclic-complex-descent`、`cor:qa-q12-finite-foundation-cyclic-complex-descent`）。相対derived cyclic barの平坦base-changeと導来Amitsur降下に、homotopy orbitsのtensor交換・homotopy fixed pointsのČech totalization交換を別々に適用する。finite foundation strict Isomの合成とmass/shear kernelの有限側の恒等作用に自然。**これで「複体のfppf降下」は解決したが、canonical cyclic primitive / exact CY classという指定元のhomotopy-coherentなIsom/三重重なりへのlift、ruling交換・任意raw QPの比較は未解決。** 非平坦な一般基底変更について $HC^-\otimes^L R'$ が交換するとの主張はしない。この一般降下の形式自体の新規性は主張せず、論文Cへの具体的適用である。HoyoisとStacksの出典・適用範囲は `notes/literature.md`。v4.61時点の全稿静的集計値と、v4.62の新節の限定的な局所チェックを区別する。現行環境では完全checkoutと組版・`scripts/check.py papers` は未実行。
+**三種類のスタックは一般には同値でない。** 通常の未修正QP right-equivalence群oidは、可縮pairの $B\mathbb G_m$（二pairでは $B\mathbb G_m^2$）や二massの余剰群など、有限代数の同型群oidへ消える慣性を持つ。AS/avatar/QPの「全分類」とは、各スタック自体の許容軌跡とgroupoidを分類し、どのrigidification・gerbe・有限群商・2-射を経てどの比較が同値となるかを決定することを指す。全raw QPがAS正則、全avatarが $H_2$ である、またはruling交換が単一right-equivalenceだと先取りしない。spectral型の既証明の $H_2$ 延長不能・一般stack自己同値の不存在を破棄しない。
 
+### 新しい終了条件 S1–S6（従来のC1–C4とは別）
+
+| 条件 | 完了基準 | 現状 |
+| --- | --- | --- |
+| **S1 対象と全被覆** | AS、avatar、8/10/12 QPの各fppf stackの対象・1/2-射・許容開/局所閉条件を内在的に定義し、指定型の全対象/全相対族を覆う。平坦性・perfect性が自動でない場合は補集合も分類する | **未完成**。体上のAS最小型分類は既存、非被約相対の全被覆は未証明 |
+| **S2 全相対AS↔avatar** | 全整数のAS再構成と逆幾何構成を族として証明。任意Isom sheaf、自己同型・慣性・任意基底変更・相対Noether/Serre/heart、line bundle/periodのねじれを整合させる | **未完成**。体上相互逆分類と多くの相対square/AS10部分結果あり |
+| **S3 全QP群oid** | 8/10/12本矢のAS適合軌跡を必要十分条件で記述し、全raw right-equivalence/非cotangent変換、消去pairの余剰慣性、nilpotent mass・特殊壁・同型判定・groupoidの相対貼合せを決定する | **未完成**。二mass有限foundationと $H_2$ 実現可能開の比較・一部慣性は原稿上到達 |
+| **S4 全比較図式** | 三stack間の射、核・gerbe・rigidification・fiberを構成し、全Isom/2-cocycle/原像の比較、全型のmutationとruling交換のcoherentな貼合せを証明 | **未完成**。finite squareの相対groupoidや一部cotangent QPでは成立 |
+| **S5 内在的 $H_2$ と外側** | 標準構造対象ごとの $H_2$ への所属・忘却射・像/全ファイバー/慣性を相対的に決定。$H_2$ の外側・古典型・noncubic・退化・nilpotent族を排除せず記述する。既知の延長不能は正確に保持 | **未完成**。体上頂点判定・特定相対開・spectral障害を証明済み |
+| **S6 公表用C4** | S1–S5の全主張の独立数学監査、一次文献・新規性比較、整合した日本語LuaLaTeX全稿の組版/PDF/SyncTeX・表示と再現性、mainとhub保存 | **未完成**。一部静的監査・計算・原稿上証明に限る |
+
+**最上位目標はS1–S6すべての達成。** 計画作成・一補題・体上同型類・一つのstack開・既存C1–C4の満了・commit/組版成功を終了条件にしない。証明により目標の比較が不可能と分かった場合も、その正確な障害・可能な最大部分stack・代替の分類図式を完成目標として研究し、任意の対象を黙って落とさない。
+
+### 現行の数学的着手順
+
+1. **最優先は全対象の相対foundation被覆とAS/avatar復元の可否の判定。** `papers/quiver-avatar/as_helix_classification.tex` の体上逆構成と `as10_mutation_classification.tex` のperfect・有限局所自由仮定、`relative_square_foundation_stack.tex` の全 $H_2$ 被覆、`qp_presentations.tex` のraw/代数群oid差を突き合わせる。非被約双対数とrank3二重壁で、どの相対完備性・base-change・全周期ASが成立し、何が自動でないかを命題/反例として決定する。
+2. finite foundationからの全周期ASと幾何avatarへの両向き構成を作り、選んだ枠の線束・自己同型・natural transformationを含むIsomのfully faithfulness、任意の許容AS族に対するfppf局所essential surjectivityを独立に証明する。欠ける族があれば具体的に構成して正確な追加chartを作る。
+3. 二mass QP→finite foundationの既存の局所全Isomを出発点に、未修正8/10/12 QPのAS適合領域・全raw right-equivalence・余剰慣性を求める。$\lambda,\mu$ 非可逆/冪零のとき可縮pairの消去を使わず、QP stackと剛体化後のstackを分ける。
+4. avatar/AS/rigidified QPの全比較図式と $H_2$ に適合するpointing・そうでない部分、異なるruling/mutation窓の移送を、全Isomの合成とbase-changeについて閉じる。一般CYクラスのhomotopy-coherent降下は必要な比較定理への依存を監査し、不要なら関連する独立問題として保持する。
+5. S1–S5の各主定理を疑う独立監査とC4（先行研究・TeX/PDF）を全過程で並行し、最後に統合する。
+
+**最初の具体的一手：** 全相対AS/Avatar/weighted-QPの対象・同型の仕様を現行Cに定義し、`thm:qa-as10-relative-families` の perfect 性の仮定が本来のAS族から従うか、また `prop:qa-stabilized-inertia` の $B\mathbb G_m$-慣性を保ったQP→AS比較が相対Isom上でどこまで全射・忠実かを、$R=k[\varepsilon]/(\varepsilon^2)$、rank3壁、古典例を含めて点検する。自動性が未証明なら追加仮定付きと記し、反例または残りの証明義務を正確に残す。
+
+### 従来C1–C4の位置づけ（到達点を保持）
+
+従来のC1（8/10/12本矢とAS/pointing型）・C2（全 $H_2$ のgood moduli）・C3（$H_2$ 実現可能開のQP/foundation/Jacobian/Serre/heart/S2比較）は**原稿上達成した部分結果**として保持する。C3後続のcyclic複体fppf降下とcanonical CY primitiveの有限Isom自然性も保持するが、指定CYクラス自体のhomotopy-coherent降下、全raw QP比較は未証明。従来C4（独立数学監査・一次資料・全稿組版）は新S6に統合する。もとの体上 $H_2$ 完全分類と相対 $H_2$ の有限型代数性は論文A/Bに保持され、**全相対AS/avatar/QPのS1–S5へは未昇格**である。
 
 ## Cの現行実行単位
 
@@ -68,7 +93,7 @@
 
 ## 現行実行計画と達成基準（公表準備から次の比較研究へ）
 
-**最優先は論文Cの完成（上記C1–C4）である。A/Bの公表前監査はCの入力検証・独立公表のために維持するが、その先行完了をCの研究の停止条件にしない。** GIT比較の証明正本はCとし、Bは内在的相対モジュライの標的の性質を提供する。 Bの全H2代数性・境界同値は原稿に証明があり、現時点の研究目標としては完成扱いである。ただし全面独立再検証・外部査読・網羅的新規性照合・三稿組版は未完了。旧重点「全H2代数性未完」は採用しない。
+**最優先は論文Cによる全相対AS/avatar/QP stack分類（上記S1–S6）である。従来C1–C4は達成条件ではなく現在の入力結果である。A/Bの公表前監査はCの入力検証・独立公表のために維持するが、その先行完了をCの研究の停止条件にしない。** GIT比較の証明正本はCとし、Bは内在的相対モジュライの標的の性質を提供する。 Bの全H2代数性・境界同値は原稿に証明があり、現時点の研究目標としては完成扱いである。ただし全面独立再検証・外部査読・網羅的新規性照合・三稿組版は未完了。旧重点「全H2代数性未完」は採用しない。
 
 **P0：公表に必要な整合性（C完成に従属）。** 三論文の責任を維持する。Aは体上の強いH2のcubic/noncubic全被覆とpointed exact同値、Bは相対H2・有限型効果性と境界幾何、Cは**最小分解を指定したAS正則Z代数とavatarの分類を中心に**、有限quiver/QP表示と相対比較を扱う。Aに残る相対tailsやArtin基底の技術解説はBを参照する短い説明に集約する。CからBへ移管された主張の定理ラベル参照を正し、checkerをA/BだけでなくCからの明示的引用にも拡張する。三稿のsource/reference/BibTeX・再現手順を点検する。依存不明の旧PDFは現行原稿の未公刊入力と明記し、必要な有効証明をCに統合するまでは相対同値を主張しない。
 
@@ -121,7 +146,7 @@
 
 **依存監査の確定範囲。** BからAへの残余の17種類の定理・補題・式ラベルはAの現行分類20節に定義されている。Aの分類主定理の証明はB固有の主定理には依存しない原稿構成とした。これはソース依存の確認で、全数学的証明の独立監査とは異なる。
 
-**次の最優先実行単位（C完成優先）。** C1・C2は原稿上達成。C3のH2実現可能開の相対QP→finite foundation→Serre/Jacobian→heart→ruling商も原稿上到達し、残る第一優先は**その独立証明監査とC4公表用完成**。具体的には相対短対角解消の全頂点成分、Keller ordinary ideal条件、左Noetherのopposite square mutation、非被約基底とcoherent S₂作用、被約/非被約special fiberを独立に再導出する。反例が出れば主定理・要約・方針・hubへ連動訂正し、H2外の全AS/avatar表示群oidへの無条件拡張はしない。C4では一次資料・引用・C全稿LuaLaTeX/PDFを確認し、A/Bの入力との参照の整合を保つ。
+**次の最優先実行単位（全相対stack分類S1–S6）。** C1・C2は原稿上達成し、C3のH2実現可能開も原稿上到達したが、これは全stack分類ではない。第一優先は**全相対AS/Avatar/QPの定義・foundation被覆の全射性・AS10のperfect条件の自動性と非被約例の独立判定**、次に全Isom/余剰QP慣性の比較である。具体的には相対短対角解消の全頂点成分、Keller ordinary ideal条件、左Noetherのopposite square mutation、非被約基底とcoherent S₂作用、被約/非被約special fiberを独立に再導出する。反例が出れば主定理・要約・方針・hubへ連動訂正し、H2外の全AS/avatar表示群oidへの無条件拡張はしない。C4では一次資料・引用・C全稿LuaLaTeX/PDFを確認し、A/Bの入力との参照の整合を保つ。
 
 
 ## 現在の到達点と未解決の核心
@@ -355,13 +380,13 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 
 ## 6. 次の実行単位
 
-**最優先：論文CのC3残部とC4公表用検証。** 全$H_2$開のQP/foundation/Serre/heartとruling商は原稿上の主結果であり、C4全監査は未完了。
+**最優先：論文CのS1–S5全相対stack分類、並行してS6検証。** 全$H_2$実現可能開のQP/foundation/Serre/heartとruling商は原稿上の部分結果。直ちに最初の具体的一手（全相対AS/Avatar/weighted-QPの定義・coverage・相対perfect条件/Isom）に着手し、そこで解決できない問題は仮定を明示して次の独立な未解決箇所へ進む。
 
 1. **cyclic primitiveの有限Isom自然性を踏まえて高次stack降下を監査する。** `prop:qa-q12-exact-cy-primitive-isom-inertia`でcanonical exact CY classのCasimir出所・Isom自然性・mass/shear慣性の自明性を原稿上証明。相対HH/HC/HC^-複体自身のfppf Čech降下は原稿上証明済みである。次はcanonical CY primitive/classのhomotopy-coherentな群oid sectionへのlift（特に三重以上のcoherence）、ruling交換によるclass比較を監査する。 `thm:qa-q12-cotangent-keller-pseudonatural`でmass/shear/frame・有限関係表示Isomのzigzagと合成を原稿上証明。次はKeller3.7/6.6の非可換Fox双対の全始終点・符号を個別監査し、非cotangentな任意raw QP right-equivalenceがMorita比較を保存するための必要十分条件を調べる。Keller6.8の同値存在だけを2自然性の根拠にしない。$H_2$のperfect heartとruling交換は既存の別結果として保持する。
 2. **左Noetherと双対heartの残余依存。** rank3の反対normal零番のpointing障害、正しいdual square heart内の$Y$、例外可逆層$L$、非先頭$Q_0$、相対AZ2の二重presentation、有限End/HomによるAZ再構成は原稿上証明済み。次は相対SerreのMorita自然性、特異基底の$D(\operatorname{Ind}\mathcal C)$と局所compactの扱い、fppf heart降下と既知の引用仮定を独立監査する。
 3. **C4の実行検証。** 今回最新C主原稿＋42節のソースを全取得し868ラベル・947参照・241引用（bib91キー）と環境・入力先を静的監査。次はrepoを取得できる環境で python3 scripts/check.py papers と python3 scripts/check.py build --manuscript papers/nc-quadric-avatar.tex を実行し、LuaLaTeX PDF/SyncTeXと目視表示を確認する。Artin–Zhang/OACU、Keller訂正、VdB、Alper等の一次資料とIntroductionの新規性を再確認する。現環境のDNS制約による全checkout不可・組版未実施を正確に記す。
 
-H2外の一般AS/avatar/QP表示stack・別heart・根忘却は後続の独立課題。既証明のA/B結果を根拠のない未解決課題に戻さない。
+H2外の指定AS/avatar/QP表示stack・別heart・根忘却の必要な比較はS1–S5の最上位研究課題であり、後続扱いで先送りしない。既証明のA/B結果を根拠のない未解決課題に戻さない。
 
 ## 7. 正本・依存関係・再開
 
