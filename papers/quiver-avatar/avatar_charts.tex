@@ -4635,7 +4635,7 @@ $Z\subset Y$ のidealを $\mathcal I$ とする。
 特殊fiber上のすべての点で平坦性が破れる。
 より一般に、局所Artin基底の古典点上で、
 行列式切断がある有限次数で初めて非零なら、
-特殊fiberの全点で同じ平坦性障害がある。
+Torそのものが $\mathcal L_s^{-1}$ と同型となり、特殊fiberの全点で平坦性が破れる。
 \end{corollary}
 \begin{proof}
 $Y$ は相対射影束の反復なので基底上平坦である。
@@ -4672,8 +4672,11 @@ $(\mathfrak m^d/\mathfrak m^{d+1})\otimes_k\mathcal L_s$
 を与える。その像は上記の切断による乗法の像である。
 成分の少なくとも一つは整な $Y_s$ 上の非零切断なので、
 この像は $\mathcal L_s^{-1}$ と同型である。
-従って $\mathcal I\otimes k$ はこの線束に全射し、
-Torは全点で非零となる。
+さらに、行列式の定義から全射
+$\mathcal L_s^{-1}\twoheadrightarrow \mathcal I\otimes k$ がある。
+これと先頭次数への射の合成は、先頭切断による単射である。
+従ってこの全射自身が単射で、
+$\operatorname{Tor}_1^R(\OO_Z,k)\simeq\mathcal L_s^{-1}$ を得る。
 
 特に $R=k[\epsilon]/(\epsilon^{n+1})$ なら、
 切断を $\epsilon^d\widetilde\sigma$ と書き、
