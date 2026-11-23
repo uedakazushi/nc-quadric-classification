@@ -1378,10 +1378,19 @@ Hochschild準同型である。各重みでは内部次数が有限範囲に
 あるため、内部次数による有限濾過から微分込みでも準同型となる。
 従ってこのmixed模型で巡回類とそのConnes像を計算できる。
 
-この模型の長さ零で $\sum_i t_i$ は巡回cycleである。
-実際その内部微分は交換子和で、頂点を合計した巡回商では零になる。
-従ってそのConnes像がexact negative cyclic類を定め、
-Hochschild像は $\sum_i\mathrm d t_i$ である。
+この模型で $T=\sum_i t_i$ と置く。
+通常の巡回複体では、$T$ に一形式の項
+$\sum_a a^*\mathrm d a$ と、一つ手前の巡回列に置いた $W$ を
+付けて次数二のcycleを得る（符号は全複体の規約に従う）。
+実際、一形式のHochschild境界は内部微分 $d_\Gamma T$ と
+符号を除き同じ交換子和である。
+一形式の内部微分は $\sum_a (\partial_a W)\,\mathrm d a
+=\mathrm d W$ であり、これは手前の巡回列の $W$ のConnes境界と
+符号を合わせて相殺する。$W$ の内部微分は零である。
+Connes接続写像はこのcycleの最後の巡回列の
+$T$ と一形式の項にConnes作用を施す。
+後者への作用は零なので、得られるexact negative cyclic類の
+Hochschild像は $\mathrm d T$ である。
 この像は重み四・homological次数三であり、
 ループの一形式は自由道の一形式の巡回商で独立である。
 一方、同じ重みのhomological次数四の鎖はない。
@@ -1390,8 +1399,8 @@ Hochschild像は $\sum_i\mathrm d t_i$ である。
 従ってループの一形式の非零な係数は境界にならない。
 この議論は冪零係数についても成り立つ。
 
-上のdg同型は $\sum_i t_i$ を $u^{-1}\sum_i t_i$ へ送る。
-従ってConnes像もその倍になり、Hochschild像により
+上のdg同型は、負巡回複体でこの類を表す $\mathrm d T$ を
+$u^{-1}\mathrm d T$ へ送る。Hochschild像により
 二類の差が零となるのは $u=1$ の場合に限る。
 二つの標準Jacobian射が準同型なら、両者は同じ
 Jacobianのmixed complexへこの比較を移す。
