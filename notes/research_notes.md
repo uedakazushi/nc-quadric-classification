@@ -406,6 +406,8 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **幾何avatarから指定ASへの適合開。** 奇数対角開はsquare窓の左mutation、偶数対角開は二つのpencilを同時に捩ったsquareからの逆順双対で扱い、互いの比較を内在的な両側対角の双対から貼り合わせた。両mass零境界では全整数展開の偶奇双方の重み二に最小生成が残り、指定cubic/AS10型から外れる。境界上にもordinary Jacobianの全次数比較があり、境界型自体のAS正則性を立証するには別の論証を要する。[定理](../papers/quiver-avatar/avatar_charts.tex)。
 
+**論文C a25941c のクリーンビルド再現性。** 同じ Git archive を別々の空ディレクトリに展開し、同じ TeX・日本語フォント環境と `SOURCE_DATE_EPOCH=1795419784 FORCE_SOURCE_DATE=1 TZ=UTC` でビルド。全356頁の96dpi描画と `pdftotext -layout` の出力が一致した。PDFトレーラの `/ID` を正規化した SHA-256 は `790b05954eeeb61800b2c4391332f5a847a0f95383f676028a534a32075f0dff`。SyncTeXは伸長して絶対作業パスを統一すると一致し、SHA-256 は `633d1d629341aaeabfae01f416ef5907fb307cdd753ce547b70e6bb866622b56`。原稿内の参照検査、論文間参照検査とCの既存計算suiteを再実行しPASSを確認した。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式
