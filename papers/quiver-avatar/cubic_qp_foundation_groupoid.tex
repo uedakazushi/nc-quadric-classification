@@ -3457,6 +3457,68 @@ finite algebraのstrict同型に対してcyclic barの
 恒等写像になる．
 \end{proof}
 
+\begin{corollary}[cotangent表示でのrawループ類とCasimir類]
+\label{cor:qa-raw-loop-cotangent-casimir}
+定理~\ref{thm:qa-q12-cotangent-keller-pseudonatural}の
+cotangent表示において、raw Ginzburgの負巡回ループ類は
+同定 \eqref{eq:qa-q12-keller-cotangent-zigzag} を通じて
+有限foundationのCasimirのConnes像に一致する。
+ループ枠は同定の双対化規約で取る。
+この比較はcotangent表示の合成と任意基底変更を保つ。
+\end{corollary}
+\begin{proof}
+$A=\mathscr F$、$B=\Pi_3(A)=T_A(\Theta)$ とし、
+$P\to A$ を補題に用いた普遍導分の二項対角模型とする。
+頂点環上の自由dg道の模型として $B$ を使うと、
+$B$ の普遍一形式から $A$ の生成元の切断を零にする射がある。
+零形式については $A$ の交換子でさらに割る。
+これは固定した正のcompletion tensor次数で、
+頂点環上の二項mixed模型から、$A$ 上の相対二項mixed模型への
+自然な比較である。
+実際、普遍導分を $A$ に相対化すると
+$B\otimes_A\Theta\otimes_A B$ を得る。
+二項対角列の左項へのこの射と、右項の
+$B\otimes_{D_0}B\to B\otimes_A B$ は境界と乗法を保つ。
+Connes作用も、道の切断のうち $A$ の切断を
+零とする同じ射で比較される。
+
+この比較は正のtensor次数でHochschild準同型である。
+左の対角項は $B^e$ 上準自由である。
+右の対角項を $B$ と導来tensorしたものは
+$A\otimes_{A^e}^{\mathbf L}B$ である。
+$B$ の正のtensor次数成分は $A^e$ 上準自由な
+$\Theta$ のtensor冪であり、$K$-flatである。
+従って正の次数では右項も通常tensorで計算できる。
+この二項比較は、Kellerの訂正
+\cite[Theorem~1.1の証明，pp.~2--3]{KellerErratumCY2018}
+で用いるreduced模型を与える。
+特にCasimirが属するtensor次数一で
+mixed複体として比較できる。
+
+Casimirを $\Theta\otimes_{A^e} A$ の中で確認する。
+有限射影双対性から
+$P^\vee[2]\otimes_{A^e}A$ は $\operatorname{Hom}_{A^e}(P,A)[2]$
+と同定される。このとき $\operatorname{id}_P$ の像は
+増大写像 $P\to A$ である。
+増大は一形式項を殺し、頂点の対角生成元を対応する冪等元に送る。
+従ってその双対表示は $\sum_i t_i$ である。
+相対二項模型におけるそのConnes像は、
+$\Theta$ の一文字を切る $\sum_i\mathrm d_A t_i$ である。
+一方、頂点環上のraw模型の指定負巡回cycleは
+$\sum_i\mathrm d t_i$ であるから、
+上の比較で同じ $\sum_i\mathrm d_A t_i$ になる。
+これは負巡回複体での比較であり、
+Hochschild像だけの比較に限られない。
+
+$\mathscr F\to\Lambda$ のMorita比較では、
+Casimirを定める対角の恒等射とConnes写像が移送される。
+これはKellerの同じ対角双対性による自然性である。
+従って \eqref{eq:qa-q12-keller-cotangent-zigzag} の右辺でも
+指定されたCasimirのConnes像を得る。
+普遍導分、増大、有限双対と対角の恒等射による比較なので、
+cotangent変換の合成と基底変更を保つ。
+\end{proof}
+
 \begin{remark}[降下した複体とCYクラスの区別]
 \label{rem:qa-q12-cyclic-complex-versus-class-descent}
 系~\ref{cor:qa-q12-finite-foundation-cyclic-complex-descent}は
