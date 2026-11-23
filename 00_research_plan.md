@@ -130,7 +130,7 @@
 
 2. **有限square表示のH2開。** 全標準頂点の相対認識、canonical squareのAS解消とtails、rank16↔rank24の全stack同値、全H2のrank81通常代数は証明した。A32の線形表示からの全H2開は随伴行列の四交差条件、計20式以内で認識した。det f・det gの全域の横断性と非順序商の境界正規化も証明した。共通指標の三半不変式による全H2のgood moduliを構成した。境界像の正規性・A1χの閉埋込み・cubic chartの飽和性も確立した。p_adj,q_adjの四生成不変式表示と二補曲線は確立した。二cubic chartの反転貼合せと全域GIT射も確立した。このaffine環と局所特異性はGram pencilの五生成元で原稿上決定済み。次は全AS/QPの同型層と慣性の比較を進める。回転・mutationのtailsと左右Noether性も確立しており、非被約壁上でも非最小AS解消を構成した。全AS/QPの同型層との比較へ用いる。
 
-3. **全相対AS・QP群oidを比較する。** 任意のavatar族の全周期AS再構成、同型の層、相対heart、AS4被覆を検証する。8/10/12矢QPの消去pairのスカラー慣性、right-equivalenceと通常代数同型の差を保持する。有限foundationの実現可能開の具体的な有限式、全GITへの延長は並行課題とする。
+3. **全相対AS・QP群oidを比較する。** 固定周期代数上の全表示fiberは、矢像を一つに揃えた巡回微分の線形方程式と生成開を各対の二mass群で商にして得る（`prop:qa-fixed-arrow-presentation-fiber`）。 任意のavatar族の全周期AS再構成、同型の層、相対heart、AS4被覆を検証する。8/10/12矢QPの消去pairのスカラー慣性、right-equivalenceと通常代数同型の差を保持する。有限foundationの実現可能開の具体的な有限式、全GITへの延長は並行課題とする。
 
 **証明・計算・先行研究の区別。** Cの主張状態と再現範囲は [研究ノート](notes/research_notes.md) と [文献ノート](notes/literature.md) に集約する。AS最小分解のEuler計算、壁の行列式、Morita重み、Serre階数、isogeny・Kummer恒等式の厳密計算は、AS–Gorenstein性・全次数のexactness・相対降下の数学的証明を代替しない。KellerのMorita不変性、Keller–Yangのmutation、古典2-isogenyの適用仮定を一次資料で照合し、本研究の指定H2実現への適用と区別する。全証明の独立監査、包括的な新規性調査、外部査読、形式証明は未完了である。
 

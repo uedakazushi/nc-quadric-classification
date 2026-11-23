@@ -2622,3 +2622,5 @@ latexmk
 **potentialの単元倍比較を含む399頁保存版 1185905。** 二つの `git archive 1185905` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436194 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全399頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `574d47c3bf45356502c5a370969d6609b877384a1e838cf8fe1c1f82936bf922`、SyncTeX `e084c7a5756ed4a6cf82611c88b1d317d6f6178f457691f7d1d944c7581aa4e0`、抽出テキスト `35757010299da1efb6a08a8846f91b2dbbaff36fbd54a0b5140a20aacac02aad`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定周期代数上の八・十・十二矢表示fiber全体の比較。** `prop:qa-fixed-arrow-presentation-fiber` は、固定代数への矢像の選択を局所的に一つの既知表示に揃え、全表示を固定した関係idealに巡回微分が入る線形方程式、その微分の生成開、および各対の二つの独立なmass群で表示した。重み二の矢像の変更で可逆な線形係数を選べることを二段道の剰余体上の余核から確認した。既知potentialの単元倍以外も含み、任意基底変更後の全同型を与える。
+
+**固定矢像による全表示fiberを含む400頁保存版 b5bf8a2。** 二つの `git archive b5bf8a2` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436429 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全400頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `73bbf1d9a47b8f8ce685b8be7f7f92f6849c398357202c3d1bf5fa0a735e2f07`、SyncTeX `4f4c7753f9710d09db1576f99882a31c0c07d7fe751f8b7903cc3a36136a8e22`、抽出テキスト `58edb0ff1041036ec6a64f93d4d12ca79e1d9c325cbe2f7694c14f812ce4db55`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
