@@ -2630,3 +2630,5 @@ latexmk
 **固定周期代数上の局所標準形を含む401頁保存版 52de29f。** 二つの `git archive 52de29f` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436694 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全401頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `c615697d352b532628bfcba3769c9a9c89d07b3697016cebd8a6665fd2322946`、SyncTeX `f138da1fe5ea8df39da017db221b338de60288bbd7295a3a2940cc514caecafb`、抽出テキスト `b10258d335fd0e9e68186e91bcc5f0d311387bc1aaef38f42ac5117da427f495`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。混合係数の変換、不変な単元条件、残る代入の逆元については、係数関係で割った多項式環でも検算した。
 
 **表示標準形の貼合せ。** `cor:qa-fixed-fiber-sheaf-descent` は、局所標準形schemeを表示同型類のfppf層の開部分として同定した。基準表示や左逆を変えた三重重なりの遷移は同一の層を表現することから一致する。可換慣性の移送は代表同型に依存せず、表示fiberから同型類の代数空間への射を帯付きgerbeとして得た。
+
+**標準形の貼合せを含む401頁保存版 eefdcc8。** 二つの `git archive eefdcc8` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436929 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全401頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `841014bcb42b79046189ab8214b5f1f06fa234b4473e5e38bc3e6f814c779c6e`、SyncTeX `dd950a2b6004d15c8bf5a75748b1fb557e819ee67b53dfabbb6fb2626341875e`、抽出テキスト `2d31beb677f1035060ee695e75bce8c7e324a732d815c960648880cde7a5c319`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
