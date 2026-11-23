@@ -2662,3 +2662,5 @@ latexmk
 **頂点付きCasimir鎖の降下を含む404頁保存版 fdf376f。** 二つの `git archive fdf376f` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438693 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全404頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fb2c97a4a497eac0bb29703c9c018173dfc5249ce8e86661f7d600c31d79c859`、SyncTeX `e1d0cb8275353d8e20b4c1cb369695ae823e03d332ad27886453ee0342190c4e`、抽出テキスト `dd56a1f1dc53c85434b82a1bb07ba32e32d1aa5d1adf0d8969629d94b9bb2416`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **rulingの有限窓におけるCasimir移送。** `prop:qa-casimir-morita-transport` は、共通の相対perfect圏で二つの窓を比較したとき、対角恒等射を係数付きtraceで移送し、tensor次数一のbar包含とConnes作用を通して両指定類を比較した。右同値によるraw表示間の比較とは別に、rulingの窓のMorita比較で類が保たれることを証明した。
+
+**ruling窓のCasimir比較を含む405頁保存版 465d29c。** 二つの `git archive 465d29c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438952 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全405頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b23d18e958cb1d74dcc749f556cedb7e5a38723121ccfc6cad3be41144c8f5d1`、SyncTeX `7b2ceb39e8c0fa72dd68c985d100c22561eb52282eea97f46f0416a1521af784`、抽出テキスト `5c0de80d46d4a39b1f1a454ce89369fa7cfd186d0202872c30da8fc166326312`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。

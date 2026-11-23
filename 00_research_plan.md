@@ -37,7 +37,7 @@
 
 ### 従来C1–C4の位置づけ（到達点を保持）
 
-従来のC1（8/10/12本矢とAS/pointing型）・C2（全 $H_2$ のgood moduli）・C3（$H_2$ 実現可能開のQP/foundation/Jacobian/Serre/heart/S2比較）は**原稿上達成した部分結果**として保持する。C3後続のcyclic複体fppf降下とcanonical CY primitiveの有限Isom自然性も保持するが、頂点付きfinite foundationでは指定Casimirと負巡回Connes像のhomotopy-coherent降下を証明した。全raw QPおよびruling交換への比較は引き続き監査する。従来C4（独立数学監査・一次資料・全稿組版）は新S6に統合する。もとの体上 $H_2$ 完全分類と相対 $H_2$ の有限型代数性は論文A/Bに保持され、**全相対AS/avatar/QPのS1–S5へは未昇格**である。
+従来のC1（8/10/12本矢とAS/pointing型）・C2（全 $H_2$ のgood moduli）・C3（$H_2$ 実現可能開のQP/foundation/Jacobian/Serre/heart/S2比較）は**原稿上達成した部分結果**として保持する。C3後続のcyclic複体fppf降下とcanonical CY primitiveの有限Isom自然性も保持するが、頂点付きfinite foundationでは指定Casimirと負巡回Connes像のhomotopy-coherent降下を証明した。ruling交換の有限窓のMorita比較では二類の保存を証明した。全raw QPとの比較は引き続き監査する。従来C4（独立数学監査・一次資料・全稿組版）は新S6に統合する。もとの体上 $H_2$ 完全分類と相対 $H_2$ の有限型代数性は論文A/Bに保持され、**全相対AS/avatar/QPのS1–S5へは未昇格**である。
 
 ## Cの現行実行単位
 
@@ -385,7 +385,7 @@ cubicの四つ組同型だけでは、平方根・ruling・foundationを忘れ�
 1. **全相対AS/avatar/weighted-QPの対象・Isomと全族被覆（S1・S2）。** 体上 `thm:qa-as-avatar-bijection` と `thm:qa-as10-global-bijection` を入力にし、`thm:qa-as10-relative-families` の局所自由・perfect仮定が指定全AS族から従うかを判定する。双対数、rank3壁、古典点で全周期AS再構成・base-change・Isom-sheafを検査し、相対perfect性が自動でなければ不足する族を新しいchartで捕捉する。**最初はこの項に着手する。**
 2. **全QP群oid・非cotangent慣性（S3）。** 8/10/12本矢の各重み付きraw right-equivalence、有限foundationへの忘却の核、消去pairの$B\mathbb G_m$、二mass・vertex scalarを全非被約壁で比較する。一般raw QPをASと仮定しない。AS適合の必要十分な相対条件、rigidificationの全fiber、有限代数同型との一致/不一致を証明する。
 3. **全比較図式・$H_2$の内外（S4・S5）。** AS/avatar/QPの全Isomと慣性・相対mutation/rulingの2-cocycleを揃え、$H_2$へのpointing忘却の定義域・像・fiberを内在的に決定する。noncubic/spectralの既証明の境界障害を保持する。全as-tilting・heartの比較が破れる条件を明示する。
-4. **cyclic primitiveの有限Isom自然性を踏まえて高次stack降下を監査する。** `prop:qa-q12-exact-cy-primitive-isom-inertia`でcanonical exact CY classのCasimir出所・Isom自然性・mass/shear慣性の自明性を原稿上証明。相対HH/HC/HC^-複体自身のfppf Čech降下は原稿上証明済みである。`prop:qa-foundation-casimir-chain-descent` で頂点付き有限bar模型上の指定鎖を三重以上の重なりに降下した。次はruling交換によるclass比較を監査する。 `thm:qa-q12-cotangent-keller-pseudonatural`でmass/shear/frame・有限関係表示Isomのzigzagと合成を原稿上証明。次はKeller3.7/6.6の非可換Fox双対の全始終点・符号を個別監査し、非cotangentな任意raw QP right-equivalenceがMorita比較を保存するための必要十分条件を調べる。Keller6.8の同値存在だけを2自然性の根拠にしない。$H_2$のperfect heartとruling交換は既存の別結果として保持する。
+4. **cyclic primitiveの有限Isom自然性を踏まえて高次stack降下を監査する。** `prop:qa-q12-exact-cy-primitive-isom-inertia`でcanonical exact CY classのCasimir出所・Isom自然性・mass/shear慣性の自明性を原稿上証明。相対HH/HC/HC^-複体自身のfppf Čech降下は原稿上証明済みである。`prop:qa-foundation-casimir-chain-descent` で頂点付き有限bar模型上の指定鎖を三重以上の重なりに降下した。`prop:qa-casimir-morita-transport` ではruling交換の有限窓のMorita比較によるCasimirとConnes像の保存を証明した。 `thm:qa-q12-cotangent-keller-pseudonatural`でmass/shear/frame・有限関係表示Isomのzigzagと合成を原稿上証明。次はKeller3.7/6.6の非可換Fox双対の全始終点・符号を個別監査し、非cotangentな任意raw QP right-equivalenceがMorita比較を保存するための必要十分条件を調べる。Keller6.8の同値存在だけを2自然性の根拠にしない。$H_2$のperfect heartとruling交換は既存の別結果として保持する。
 5. **左Noetherと双対heartの残余依存。** rank3の反対normal零番のpointing障害、正しいdual square heart内の$Y$、例外可逆層$L$、非先頭$Q_0$、相対AZ2の二重presentation、有限End/HomによるAZ再構成は原稿上証明済み。次は相対SerreのMorita自然性、特異基底の$D(\operatorname{Ind}\mathcal C)$と局所compactの扱い、fppf heart降下と既知の引用仮定を独立監査する。
 6. **C4の実行検証。** 今回最新C主原稿＋42節のソースを全取得し868ラベル・947参照・241引用（bib91キー）と環境・入力先を静的監査。次はrepoを取得できる環境で python3 scripts/check.py papers と python3 scripts/check.py build --manuscript papers/nc-quadric-surface-avatar.tex を実行し、LuaLaTeX PDF/SyncTeXと目視表示を確認する。Artin–Zhang/OACU、Keller訂正、VdB、Alper等の一次資料とIntroductionの新規性を再確認する。現環境のDNS制約による全checkout不可・組版未実施を正確に記す。
 
