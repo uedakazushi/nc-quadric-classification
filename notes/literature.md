@@ -4,7 +4,7 @@
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-資料確認日：2026-11-23（日本時間）。v2.2。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v2.3。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 全H2の共通線形化と大域良モジュライ
@@ -34,6 +34,8 @@ Antieau–Elmanto, *Descent for semiorthogonal decompositions*, Adv.Math.380(202
 ## 相対AZ・全整数展開・relation potential
 
 **相対Serre dg形式性と既知のcompletion一般論の区別（2026-11-23）。** Keller, *Deformed Calabi–Yau completions*（[著者本文](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCYCompletions.pdf)、§4・§6、[2011年訂正](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCorrCYCompletion.pdf)、[2018年erratum](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerErratumCYCompletions.pdf)）はinverse dualizing bimoduleのtensor dg completionと関係式QP・Ginzburg dg比較の既知基礎である。本研究の`thm:qa-q12-h2-serre-dg-formality`は、**本稿で既に証明した全normal helixの$P_n$次数零集中**とordinary tensor直和のcohomology交換を使い、$H_2$実現可能開で$\Pi_3(\Lambda)\to H^0\Pi_3(\Lambda)=\operatorname{Jac}(Q_{12},\mathcal W)$がdg準同型となることを直接示す。これは標準的な非正dg truncationの帰結を本研究の相対開に適用したもので、新しい一般formality原理の発見ではない。Kellerの通常relation ideal条件とminimality修正を適用範囲から外さず、非最小raw QPのGinzburg dg模型と同一視したとは主張しない。負次数消滅はすべての$H_2$基底変更に成立するが、$H_2$外の任意の有限foundationへの外挿は未確認。包括的新規性未確認。
+
+**幾何fiberのexact $3$-CY構造の一次確認（2026-11-23）。** Kellerの[原論文](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCYCompletions.pdf) Theorem 4.8（印字p.20）を本文とPDF画像で確認し、homologically smoothな入力dg代数のordinary $n$-CY completionはhomologically smooth・bimodule $n$-CYであることを照合した。[2018年erratum](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerErratumCYCompletions.pdf) Theorem 1.1（p.1）の本文と画像を確認すると、undeformed completionはcanonicalな**exact** $n$-CY構造を持つ。一般deformed completionのnegative cyclic parameter問題は本稿のundeformed相対Serre完成へ持ち込まない。Cでは各幾何fiberの有限双加群射影解消により入力$\Lambda_{\bar s}$のsmooth性を個別に確認し、dg形式性$\Pi_3\xrightarrow\simeq J$を介して幾何ordinary Jacobianのexact 3-CYを得る。これをKellerから無条件な相対特異底上のCY降下やraw Ginzburg dgとの同型へ拡張しない。文献キー`KellerDeformedCY2011`, `KellerErratumCY2018`。
 
 **非正dg複体の普遍Tor完全列（既知手法）。** 任意の非正複体$C$のtruncation三角は$\operatorname{Tor}_2(H^0C,R')\to H^{-1}C\otimes_RR'\to H^{-1}(C\otimes_R^{\mathbf L}R')\to\operatorname{Tor}_1(H^0C,R')\to0$を与える。これは標準的な導来tensorの形式的帰結であり、新規性を主張しない。$H_2$上のSerre dgでは全次数消滅の方が強く、このTor列を独立の未解決目標としない。
 
