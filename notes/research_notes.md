@@ -2596,3 +2596,5 @@ latexmk
 **全指定十二矢族の標準頂点のH2比較。** `thm:qa-avatar-all-presented-pointing` は曲線型の表を全族に拡張し、偶数位相の定義域をλの単元開、奇数位相の定義域をμの単元開とした。両mass零の古典重み付き型の生成障害と、可逆開での古典square型の肯定判定も照合した。四つの像は全H2を覆う。各2-fiberはruling二重被覆、線形有限窓lift、canonical周期の上の重み付き表示からなり、全右同値は各箙に対する有限方程式で計算する。
 
 **全指定QPのpointing比較を含む396頁保存版 d6c4358。** 二つの `git archive d6c4358` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795434570 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全396頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `843690ae17baada14c00355cbbe9f21e427c137366431348551bd8fd2b7bcaf2`、SyncTeX `edc3b833c286f78da0094d6fe7f7aa7088d6c04e8ad5db95c1dc14c2d4253c64`、抽出テキスト `8f0bde8bc4bac3b0015045d3aef67e2ef8d2e92e196f317792259e17b7d734ed`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**標準頂点のH2除外の直接監査。** `prop:qa-avatar-presented-pointing-module` ではλまたはμのスキーム壁で、その偶奇の対角矢だけを単位写像として作用させる相対加群を作った。巡回解消にHomを適用すると、支持上では零次から一次が単位、反対偶奇では一次から二次が非退化短テンソルの縮約である。このため有限切断を経たtails Homは元の端点成分に等しく、反対偶奇の反Serre軌道からはすべて消える。曲線型と古典型に共通の非所属証明であり、消滅は任意基底変更を保つ。

@@ -3039,6 +3039,54 @@ $0,2$ では常に、$1,3$ では $D(\mu)$ 上で $H_2$ 対象になる。
 ホモトピー引戻しの結合律から従う。
 \end{proof}
 
+\begin{proposition}[各mass壁での標準pointingの直接的な生成障害]
+\label{prop:qa-avatar-presented-pointing-module}
+指定十二矢族の基底上で、片方のmassを構造層上零とする。
+局所枠を取ると、そのmassに対応する二本の対角矢の偶奇だけを
+支持とする加群 $M$ があり、各支持成分は基底環、
+各対角矢の作用は恒等写像である。
+標準対象 $E_i$ からそのtails像へのHomは、
+支持と異なる偶奇で零になる。
+この構成と消滅は任意基底変更を保つ。
+\end{proposition}
+\begin{proof}
+重み一の矢を零にし、選んだ偶奇の重み二の矢だけを残す。
+重み三の巡回微分は少なくとも一つの重み一の矢を含むので零となる。
+重み二の巡回微分の残る線形項も、そのmassが零なので消える。
+従って掲げた作用は相対加群を定める。
+対角矢を任意に長く進められるのでtorsion-freeであり、
+一つの支持成分から生成する切断のtails像は同じ非零対象である。
+
+命題~\ref{prop:qa-avatar-presented-as-cyclic-resolution}の
+右頂点単純 $S_j$ の巡回解消に $\operatorname{Hom}(-,M)$ を適用する。
+$j$ が支持の偶奇なら、零次から一次への写像のうち
+重み二の矢の成分は恒等で、重み一の成分は零である。
+従って $\operatorname{Ext}^q(S_j,M)=0$ は $q=0,1$ で成立する。
+$j$ が支持と異なる偶奇なら零次は零で、一次と二次に
+現れるのはそれぞれ二本の重み一の矢と二本の重み三の関係である。
+始点から読む長微分の二対角項のうち、最初に支持上の
+対角矢を通り、その後に重み一の矢を通る項だけが残る。
+系~\ref{cor:qa-avatar-odd-top-chain}と同じ巡回計算により、
+この成分は支持偶奇の短テンソルの縮約である。
+この短テンソルは、反対側のmassも零のfiberでは
+定理~\ref{thm:qa-avatar-zero-mass-forces-short-rank}、
+反対側が可逆のfiberでは
+定理~\ref{thm:qa-avatar-one-mass-forces-short-rank}により可逆である。
+各幾何fiberの可逆性から相対的にも可逆であり、
+従ってこの偶奇でも二区間で消える。
+
+有限切断の商を頂点単純で濾過すると、
+長完全列により同じ消滅を得る。
+従って標準射影から十分遠くで切った標準射影への制限は、
+$M$ へのHom上で同型である。
+tailsのHomをこれらの直極限で取ると
+$\operatorname{Hom}(E_i,\pi M)=M_i$ を得る。
+反Serre作用は頂点を四つ移すため、支持と異なる偶奇では
+全反Serre軌道からのHomが零である。
+従ってその偶奇を構造対象とする $H_2$ の生成条件は成立しない。
+この構成は選んだ局所枠上で行い、消滅はすべての引戻しで成立する。
+\end{proof}
+
 \begin{theorem}[全指定十二矢族の標準頂点の \texorpdfstring{$H_2$}{H2} 開]
 \label{thm:qa-avatar-all-presented-pointing}
 定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}の任意の族で、
