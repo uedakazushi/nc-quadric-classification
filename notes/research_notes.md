@@ -2440,3 +2440,5 @@ latexmk
 既存入力の独立点検範囲は、全分類のD1–D3・有限K・同値判定・根選択独立、standard/non-standard全帰着、退化型のPic・貼合せ・Serre比較、foundation/ruling/慣性・degree gerbe、cubic稠密性・特殊化・relative bar分解である。証明は現行原稿に保持する。既存の有限検算はSegre積、Ore正規性、全非整型四つ組、period square、群関係・χ・局所対合等を対象とするが、今回の新定理の計算機による認証ではない。
 
 導入は [CLOUD_CODEX.md](../CLOUD_CODEX.md) と `bash scripts/bootstrap.sh`、依存は `requirements.txt`。checkerのPASS/FAIL/SKIPは実施成功・失敗・未実施であり、数学的完成を自動判定しない。git読取と書込認証は別であり、CLI pushが認証不足ならGitHub connectorの通常コミットも使用できる。研究repoを先に保存し、最新research-hubを読んで該当項目を反映する。
+
+**体上の rotated square helix から極小解消への監査。** Okawa–Ueda の一次本文 Definition 3–4、Theorem 5 と式 (23)–(33) を照合した。前向き Hom の次数零集中に同定理を用い、指定重複度は C の有限窓の共変 Yoneda 解消から得る。四項の mutation 複体に対し、左右それぞれの Hom スペクトル系列を頂点別に計算した。距離四の Serre 双対に由来する唯一の次数二項が \(d_3\) で右単純および左双対の次数三に対応する。この監査は曲線型 rotated square の当該構成を対象とし、有限窓の幾何構成全体の独立監査は残る。
