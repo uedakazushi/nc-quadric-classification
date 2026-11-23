@@ -894,14 +894,28 @@ $A$は左右Noetherianである。
 実際、さらに非零のsyzygyがあれば、
 左単純加群との$\operatorname{Tor}_{>3}$に非零の項を持つが、
 左単純の長さ三の射影分解に矛盾する。
-従って各連接対象は有限個の$E_i$のconeから生成される。
-補題~\ref{lem:qa-as-serre-unique-recovery}の
-四周期完全列により、これらの$E_i$は
-$T$が生成する厚部分圏に入る。
-$T$はstrong exceptional tiltingであり、
-そのEndは有限大域次元二の$B$である。
-これで導来Morita同値が$\coh X$の
-有界導来圏全体へ延長される。
+$\Qgr A$ は局所 Noetherian であり、
+$\qgr A$ はその Noetherian 対象の充満部分圏である。
+実際、有限生成加群の像は Noetherian であり、
+各加群は有限生成部分加群の和だからその像も同じ性質を持つ。
+Noetherian な商対象への全射は、源のある Noetherian 部分対象に
+制限しても全射になる。従って有界導来圏の比較では、
+有限個のコホモロジーを持つ複体に対し、各コホモロジーの
+代表と境界を上の次数から順に Noetherian 部分対象で持ち上げられる。
+この有界導来圏の比較により $D^b(\qgr A)$ は
+$D(\Qgr A)$ 内で有界かつ Noetherian コホモロジーを持つ
+充満部分圏と同一視できる。
+
+各連接対象は有限生成 graded 加群の像であるから、
+その長さ三以内の射影解消を $\pi$ で移して
+有限個の $E_i$ の cone から生成できる。
+補題~\ref{lem:qa-as-serre-unique-recovery} の四周期完全列により、
+これらはすべて $T$ の生成する厚部分圏に属する。
+有界複体はそのコホモロジー対象から有限回の切断で構成されるため、
+$\operatorname{thick}(T)=D^b(\coh X)$ となる。
+$T$ の自己 Ext は次数零に集中するので導来 Morita により
+この厚部分圏は $\Perf B$ と同値であり、
+$B$ の有限大域次元から $\Perf B=D^b(\mathrm{mod}\,B)$ となる。
 
 四周期のSerre同型
 $E_{i+4}\simeq S_B^{-1}(E_i)[2]$を
