@@ -2612,3 +2612,5 @@ latexmk
 **周期付きJacobianへの全raw慣性の再監査。** `cor:qa-raw-periodic-jacobian-kernel` ではJacobianに恒等を誘導する矢の像を重み一・二の関係だけから決めた。各対の二つの変更係数を t,s とすると、四次係数の増分は各対で `(t+s+λts)[pq]` になる。両mass零の各幾何fiberで二つの四次テンソルを一方の二対二分割で比較すると階数一と階数四になり、独立な列を任意の非被約底へ持ち上げられる。従って核は各mass群の積で、固定した周期付き代数のfiberに別のraw慣性が加わらないことを確認した。
 
 **周期付きJacobianのraw慣性を含む398頁保存版 cf22444。** 二つの `git archive cf22444` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795435537 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全398頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b6f41d6ab9a7f54d21e2c1ff43c7aa9c9ae55061d3fb3591d8b48f81f65321fb`、SyncTeX `ad9d6ace410aca6cdf89352d31a8b3bb3020bc952f4276bad2299a0b7e91701e`、抽出テキスト `99966e79fdeef5b2f8c6074bb9290072103a84b8e9add33ecf0a295d8a3e4374`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**八矢の固定周期代数上の表示fiber。** `cor:qa-eight-potential-line-fiber` は八矢表示を局所に持つ周期付きcubic AS代数に対し、二つの三次関係の重なり線束の枠が表示fiber全体を表すことを証明した。重み一の矢像は指定Jacobian同型で決まるため核は自明だが、potentialの単元倍という選択が残る。一つの矢束のスカラー自己同型はJacobianを保つ一方、固定potentialへの持ち上げは単位の場合だけである。可縮対を追加した同じ開では、この枠torsorの上に既出のスカラー慣性を加える。
