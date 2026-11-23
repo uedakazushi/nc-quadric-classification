@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.58。Keller--Yangの非完備多項式right-equivalence strict dg自然性。
+% 2026-11-23 / v4.59。Keller 6.6/4.2のcotangent群oid上の2自然Morita比較。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -2213,6 +2213,199 @@ strictに整合する．
 従って逆向き矢に対する公式は
 可逆行列の逆転置に退化する．
 頂点ループは元の式のまま固定される．
+\end{proof}
+
+\begin{theorem}[二massのcotangent表示群oid上のKeller比較の$2$自然性]
+\label{thm:qa-q12-cotangent-keller-pseudonatural}
+非退化二mass QP開$\mathfrak P_{12}^{\rm nd}$の
+fppf局所枠付きchartを取る．
+$\mathscr F=T_{D_0}(V_{\rm fin}\oplus
+R_{\rm fin}[1])$を前命題の二項準自由dg解消，
+$\Lambda=H^0\mathscr F$とする．
+このchart間の次の変換を考える：
+有限道と関係idealの相対同型のdg持上げ，
+二massのmassゲージ，残余長関係liftのshear，
+および関係枠・有限矢束の再標識である．
+各変換で選んだ関係のdg生成元の再標識も
+同時に追跡する．これらが生成する
+\emph{cotangent表示群oid}を
+$\mathfrak P_{12}^{\rm ct}$と記す．
+
+この群oid上，Kellerの局所Morita比較には
+\emph{$2$自然な選択}が存在する：
+\[
+ \begin{tikzcd}[column sep=huge]
+ \Gamma_3(Q_{12},\mathcal W)
+   & \Pi_3(\mathscr F)
+       \arrow[l, "\sim"']
+       \arrow[r, "\sim_{\rm Mor}"]
+   & \Pi_3(\Lambda).
+ \end{tikzcd}
+ \tag{KN}\label{eq:qa-q12-keller-cotangent-zigzag}
+\]
+左はProposition~6.6の相対dg模型の同定，
+右は$\mathscr F\xrightarrow{\simeq}\Lambda$からの
+Morita同値である．
+このzigzagは$\mathfrak P_{12}^{\rm ct}$の
+合成・単位および任意の非平坦基底変更について
+coherentな$2$-同型を持つ．
+とくにmass kernelとrelation-lift shearは
+$\Lambda$上恒等を誘導するので，
+対応するGinzburg dgのMorita作用は
+式~\eqref{eq:qa-q12-keller-cotangent-zigzag}を通じて
+coherentに単位作用と同定される．
+
+従ってこのcotangent表示groupoidの
+Morita値dg完成は有限foundationのgroupoid上の
+$\Pi_3(\Lambda)$の引戻しとして記述できる．
+既証明の$\Phi_{12}$の局所的な
+frame・relation-lift表示については，
+mass gerbeの余分な慣性はdg Morita像に作用しない．
+ここで\emph{strict dg代数が有限側の商に降下する}
+とまでは主張せず，Morita値の$2$自然比較を結論する．
+
+この定理は任意のraw QP right-equivalenceが
+cotangent表示群oidに属すると主張せず，
+異なるrulingの単一right-equivalenceや
+$H_2$外の全AS/avatar/QP stackの同定も含まない．
+\end{theorem}
+\begin{proof}
+Kellerの相対Cuntz--Quillen模型
+\cite[Proposition~3.7, Proposition~6.6]{KellerDeformedCY2011}
+を使う．semi-free dg箙$\mathscr F$の
+有限生成束を$V=V^0\oplus V^{-1}$とすると，
+普遍非可換微分の双加群模型は
+$\mathscr F\otimes_{D_0}V\otimes_{D_0}\mathscr F$
+である．これをperfect双対化した逆Serre生成子の
+Casimir縮約から，$\Pi_3(\mathscr F)$の
+Keller模型が得られる．cohomological次数零の
+関係双対矢，次数$-1$の元の矢の双対，
+次数$-2$の頂点ループを選ぶと，
+これはpotential
+\[
+ \mathcal W_{\rm rel}
+       =\sum_{\alpha=1}^4
+                 (d\rho_\alpha)\rho_\alpha^\vee
+\]
+を持つ非完備Ginzburg dg模型に一致する．
+符号は関係双対枠の固定したKoszul規約で揃える．
+これが左の同定である．
+
+任意のsemi-free dg表示同型
+$\theta:\mathscr F\to\mathscr F'$は
+\[
+ d_{\rm nc}(\theta(f))
+    =(\theta\otimes\theta)
+       \bigl(d_{\rm nc}f\bigr)
+\]
+という普遍微分のchain ruleに従う
+（右辺は$V$の非可換Fox微分で輸送して読む）．
+従ってCuntz--Quillen双加群模型の間には
+自然なchain同型があり，
+そのperfect双対の逆変換が関係双対・
+有限矢双対に作用する．Casimirと頂点loopも
+このchain同型で保たれる．これは
+命題~\ref{prop:qa-q12-ginzburg-polynomial-right-equivalence}
+の逆道Fox公式と同じである．
+二変換のFox chain ruleと双対の合成則により
+この比較は局所frame間の合成にも可換する．
+
+ここでmass変換でこの一致を直接点検する．
+残余長関係を局所的に
+\[
+ r_i=h_i+x\ell_i+m_i u,\qquad
+ p=\sum_i\ell_iT_i,\qquad
+ p'=\sum_iT_im_i\qquad(i=1,2)
+ \tag{RM}\label{eq:qa-q12-long-relation-mass-coefficients}
+\]
+と書く．$\ell_i\in U,\ m_i\in W$である．
+次数$-1$の関係生成元を
+$\rho_a,\rho_b,\rho_1,\rho_2$とし，
+$d\rho_a=r_a,\ d\rho_b=r_b,\ d\rho_i=r_i$とする．
+$a=1+\lambda t,\ b=1+\mu s$に対し，
+\[
+ \begin{aligned}
+ \theta(x)&=a x+tq,&
+ \theta(u)&=b u+sq',\\
+ \theta(\rho_b)&=a\rho_b,&
+ \theta(\rho_a)&=b\rho_a,\\
+ \theta(\rho_i)&=\rho_i
+       +t\rho_b\ell_i+s m_i\rho_a.
+ \end{aligned}
+ \tag{MR}\label{eq:qa-q12-mass-relation-dg-automorphism}
+\]
+四辺の有限矢は固定する．
+$d\theta(\rho_i)
+ =r_i+t r_b\ell_i+s m_i r_a
+ =\theta(r_i)$なので，これはdg自己同型である．
+関係生成元の三角行列は対角$(b,a,1,1)$を
+持ち逆が存在する．逆双対行列の
+$(\rho_a^\vee,\rho_b^\vee)$成分を読むと
+\[
+ v\longmapsto b^{-1}(v-s p'),\qquad
+ y\longmapsto a^{-1}(y-tp),\qquad
+ T_i\longmapsto T_i .
+ \tag{MD}\label{eq:qa-q12-mass-relation-cotangent-dual}
+\]
+これは式~\eqref{eq:qa-mass-gauge-action}の
+二mass版と一致する．有限矢$x,u$上も式~
+\eqref{eq:qa-q12-mass-relation-dg-automorphism}
+と同じなので，graded cotangent liftの
+cohomological次数零は\emph{実際の}
+QP mass right-equivalenceである．
+
+次に残余関係のliftを
+$r_i'=r_i+w_i r_a+r_bu_i$と変更する．
+元のdg関係表示から新しい表示へのdg同型は
+有限矢上恒等で
+\[
+ \rho_i\longmapsto
+ \rho_i'-w_i\rho_a'-\rho_b'u_i,\qquad
+ \rho_a\longmapsto\rho_a',\quad
+ \rho_b\longmapsto\rho_b'
+ \tag{SR}\label{eq:qa-q12-lift-shear-relation-dg-map}
+\]
+である．右辺の微分は$r_i$に一致し，
+逆も有限三角型である．逆双対の次数零作用は
+\[
+ v\longmapsto v+\sum_iT_iw_i,\qquad
+ y\longmapsto y+\sum_i u_iT_i
+\]
+であり，補題~
+\ref{lem:qa-q12-long-relation-lift-shear}の
+strict右同値を正確に再現する．
+線形frame変更についても，
+関係生成元の逆双対は逆転置であるから，
+先行の系~\ref{prop:qa-q12-ginzburg-linear-frame-strict-naturality}
+と一致する．
+
+以上より各生成変換について，
+$\Pi_3(\mathscr F)$のCuntz--Quillen双対の
+作用とGinzburgのFox持上げは一致する．
+任意の有限関係表示同型については
+命題~\ref{prop:qa-q12-dg-ideal-presentation-strict-naturality}
+の$\mathscr F\simeq F\oplus I[1]$により
+そのdg持上げがstrictで一意である．
+したがって合成された変換についても
+自然性と三重cocycleはchain ruleの
+結合性から従い，別の$2$-cocycleを選ばない．
+
+さらに$\mathscr F\to\Lambda$は
+局所分裂なdg準同型である．
+KellerのMorita不変性
+\cite[Proposition~4.2]{KellerDeformedCY2011}
+は，このdg準同型と全表示同型が作る
+strictな可換図式を$\Pi_3$のMorita可換図式へ
+自然に移す．これは相対の有限局所射影
+Cuntz--Quillen模型を用いるので，
+非平坦基底変更とも整合する．
+massは$\Lambda$上恒等，relation-lift shearは
+$(F,I)$のintrinsic模型に恒等を誘導するため，
+右側の作用は単位である．
+左側は上で確認したKeller--Yang持上げであり，
+zigzagを通じたcoherentな単位$2$-同型を得る．
+この意味でfppf局所に有限foundation groupoidの
+Morita値完成への比較が貼り合う．
 \end{proof}
 
 \begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
