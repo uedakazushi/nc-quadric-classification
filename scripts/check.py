@@ -21,7 +21,7 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parent.parent
-MAIN = ROOT / "papers/nc-quadric-surface-classification.tex"
+MAIN = ROOT / "papers/nc-quadric-surface.tex"
 TEX_PACKAGES = (
     "ltjsarticle.cls", "luatexja.sty", "amsmath.sty", "amssymb.sty", "amsthm.sty",
     "mathtools.sty", "geometry.sty", "booktabs.sty", "enumitem.sty", "hyperref.sty", "fix-cm.sty",
@@ -141,7 +141,7 @@ def sources() -> int:
     skipped: list[str] = []
     required = (
         "README.md", "AGENTS.md", "00_research_plan.md", "CLOUD_CODEX.md", "notes/research_notes.md",
-        "notes/literature.md", "papers/nc-quadric-surface-classification.tex",
+        "notes/literature.md", "papers/nc-quadric-surface.tex",
         "papers/nc-quadric-surface-moduli.tex", "papers/nc-quadric-surface-avatar.tex", "papers/references.bib",
         "papers/quiver-avatar/as_helix_classification.tex", "papers/quiver-avatar/as10_mutation_classification.tex",
         "papers/quiver-avatar/cubic_obstruction_all_loci.tex",
@@ -372,7 +372,7 @@ def cross_paper_labels() -> int:
     """Audit named A/B/C cross-paper citations without needing .aux files."""
     failures: list[str] = []
     roots = {
-        "QuadricIntrinsic2026": ROOT / "papers/nc-quadric-surface-classification.tex",
+        "QuadricIntrinsic2026": ROOT / "papers/nc-quadric-surface.tex",
         "QuadricModuli2026": ROOT / "papers/nc-quadric-surface-moduli.tex",
         "QuiverAvatarModuli2026": ROOT / "papers/nc-quadric-surface-avatar.tex",
     }
@@ -438,7 +438,7 @@ def papers() -> int:
     results: list[int] = []
     try:
         for manuscript in (
-            "nc-quadric-surface-classification.tex",
+            "nc-quadric-surface.tex",
             "nc-quadric-surface-moduli.tex",
             "nc-quadric-surface-avatar.tex",
         ):
@@ -455,7 +455,7 @@ def main() -> int:
     global MAIN
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("doctor", "sources", "papers", "math", "build", "all"))
-    parser.add_argument("--manuscript", default="papers/nc-quadric-surface-classification.tex",
+    parser.add_argument("--manuscript", default="papers/nc-quadric-surface.tex",
                         help="main TeX file directly under papers/ (default: primary manuscript)")
     args = parser.parse_args()
     selected = (ROOT / args.manuscript).resolve()

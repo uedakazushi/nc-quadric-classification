@@ -1,19 +1,18 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.72（A v1.69・20節、B v0.41・31節、C v4.63）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-24 / v1.73（A v1.69、B v0.41、C v4.68）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 全相対AS/avatar/QP stack分類の数学的核心
 
-**最上位目標・状態。** 現行の[研究方針](../00_research_plan.md)のS1–S6に従い、指定square/rotated/cubic/独立最小AS10、対応avatar、重み付き8/10/12本矢QPの全相対stackを、対象・Isom/慣性・非被約基底・全周期AS復元・rigidification・H2の内外と比較まで分類する。**未完成**。体上のAS/avatar相互逆分類（[AS分類](../papers/quiver-avatar/as_helix_classification.tex)）、条件付きの相対AS10 mutation（[AS10](../papers/quiver-avatar/as10_mutation_classification.tex)）、全H2の有限square/normal foundation相対stack（[square](../papers/quiver-avatar/relative_square_foundation_stack.tex)）と二massQPのH2実現可能開（[QP](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)）は原稿上有効な重要入力だが、全相対AS/avatar/QP stack同値とは区別する。第一の数学的課題は `thm:qa-as10-relative-families` の有限局所自由性・perfect条件が指定全AS族の公理から導けるかと、finite foundation chartによるfppf局所全被覆・全Isomの実現である。
+**現行の到達点。** 指定型の全相対AS/avatar/QP比較（S1–S5）をC v4.68に統合し、2026-11-24に指定範囲のS6監査を記録した。全ASの有限型Artin表示、無条件の周期化、raw QPとASの直接同値は成立しない。正確な主張の範囲と今後の優先課題は研究方針を参照する。
 
 **反例・障害として保持すべき情報。** `prop:qa-stabilized-inertia` の可縮pairが未修正QPで $B\mathbb G_m$、二pairで $B(\mathbb G_m^2)$ の慣性を残すため、QP原stackと有限代数/AS側は直接同値ではない。rank3のnilpotent massでは可逆massのtrivial-pair消去を使えない。両積可逆でもf=g=I4のsquare表示はH2の交差条件を満たさないので、任意AS/QPをH2として分類しない。反対normal零番の強いpointing不成立例、spectral指定pointingのFricke対合・二境界型のH2延長不能・一般stack自己同値不存在は、全分類の外側の構造として保持する。noncubic/古典型も除外しない。
 
-**次の具体的な証明義務。** $R=k[\varepsilon]/(\varepsilon^2)$ のsquare/AS10相対族とrank3壁の局所モデルにおいて、(i) all-degree Hom/Extと単純分解の相対perfect化、(ii) finite foundation上の全基底変更・Isom/2-射、(iii) 最小十本矢関係係数が非単元の時の全階数保存、を切り分ける。成立なら十分な仮定と証明を公表用原稿に追加し、不成立なら最小反例と追加chart、対象条件の正確な補集合を求める。これらの検査は**今後の作業であり、本更新で新しい数学的定理を検証したものではない**。全QPのraw right-equivalence、非cotangent群oid、AS↔avatar↔rigidified QPとH2への射の全fiber/coherenceが残る。
+**再点検の焦点。** 双対数上の相対perfect化・有限窓・全Isomと2-射・階数三壁・全整数の線束と周期標識・非cotangent比較の範囲を区別する。指定型の比較は原稿に統合されているが、一般raw右同値への拡張は別問題である。公表前の次の着手先は研究方針を参照する。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
 
 **相対巡回複体のfppf homotopy降下（原稿上証明）。** 任意の相対finite foundation `Λ` と `B=Π₃(Λ)`、忠実平坦な `R→S` に対して、`S^[p]=S^{⊗(p+1)}` 上の相対 `HH`・`HC`・`HC⁻` 複体のČech totalizationは元の複体と同値である。証明は円周同変 `HH` のderived flat base-changeとAmitsur降下を基本とし、`HC=HH_{hS¹}` はorbitsがtensorと交換すること、`HC⁻=HH^{hS¹}` はfixed pointsがČech totalizationと交換することを**別々に**使う。augmentationによるreduced因子にも適用でき、全finite foundation strict Isomの合成と両立し、有限商上恒等なmass/shearは引戻し複体にも恒等となる。これは**複体そのもの**の降下であり、局所 `HC₂`・`HN₃` の不変クラスが自動的にhomotopy-coherentな大域sectionとなることは示さない。CYクラス自身の高次coherence、ruling交換、cotangent外のraw QPは未解決。非平坦底変更で `HC⁻⊗ᴸR′≃HC⁻(B_{R′}/R′)` とは主張しない。証明の正本は [論文Cの命題](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-fppf-cyclic-complex-descent` と同節の系。一般原理はHoyoisと忠実平坦降下に基づく既知の形式的手法で、新規性未確認。
-
 
 
 **範囲と主張状態。** 論文CのC1（既存AS/avatar・標準頂点・相対tailsの分類範囲）とC2（全H2 good moduliの明示）は**原稿上達成**。C3も**H2実現可能な明示開全体**では次の比較・glueを原稿上証明したが、H2外の任意AS/avatar/QP表示stack全体の分類とC4の独立数学監査は未完了。[主たる証明](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。
@@ -761,7 +760,6 @@ Keller–Yang局所仮定、全整数inverseの自然性。
 一般非被約底での無条件相対ASスタック同値は未証明。
 
 **相対spectral境界で既に得た結果と核心。**
-
 
 
 **共有根の相対線束障害と奇偶類（Cで証明）。**
@@ -2248,7 +2246,6 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 **分類の有限同値判定に必要な幾何。** `prop:first-orbit-finite-equivalence` の再帰集合 $C_n\subset GL_4$ が有限段で安定する理由は、単なる構成可能集合の下降列の停止ではない。二次関係の transporter $E\subset G\times G$ は閉代数部分群の剰余類であり、剰余類との共通部分・代数群準同型の射影でこの構造が保たれる。従って $C_n$ は空または閉剰余類、かつ下降するので Noetherian 性により停止する。Aの `papers/sections/first_orbit_object.tex` にこの閉性の依存を明記した。今回の点検はこの論点の論理的読取りであり、分類定理全体の独立監査ではない。
 
 
-
 | 主張 | 依存する事実・仮定 | 状態・所在 |
 | --- | --- | --- |
 | `gldim C=2` | Serre双対、heart上exactな平方根 | 原稿に直接証明。`prop:gldim-two` |
@@ -2409,7 +2406,7 @@ X_asはsmooth83次元、対応するX3の接次元は84である。余分な方�
 
 ## 論文の責任範囲と検証を要する依存
 
-Aの主論文 `papers/nc-quadric-surface-classification.tex` は体上の強いH2の構成・完全分類・pointed exact同値判定を中心とし、20の分類分割節を読み込む。Bの `papers/nc-quadric-surface-moduli.tex` は相対定義・変形・有限型効果性・Noetherian性・Serre根・境界の群商と慣性・good/coarse moduli・楕円型忘却の証明本文を31分割節に保持する。Cはquiver/QP/avatarの表示と相対適合性の未解決範囲を扱う。
+Aの主論文 `papers/nc-quadric-surface.tex` は体上の強いH2の構成・完全分類・pointed exact同値判定を中心とし、20の分類分割節を読み込む。Bの `papers/nc-quadric-surface-moduli.tex` は相対定義・変形・有限型効果性・Noetherian性・Serre根・境界の群商と慣性・good/coarse moduli・楕円型忘却の証明本文を31分割節に保持する。Cはquiver/QP/avatarの表示と相対適合性の未解決範囲を扱う。
 
 **依存の核心。** BがAの体上分類・normal helix・有限同値判定を使うのはよい。BからAへの残余ラベル参照17種類はAの現行20節に実在することを確認した。Aから外した相対節はBの同名節（相対定義は分割された二節）に定理ラベルと証明数を照合し、未使用の重複sourceを現行一式から外してある。数値・例・計算的証拠と全体の相対認識・代数性の証明を混同しない。
 
@@ -2489,17 +2486,14 @@ latexmk
 
 **両mass零の有限窓における幾何的像。** `cor:qa-avatar-deep-relative-image` で、二つの短核と長関係の対角射影が非退化な窓を対象に、比較行列がスカラーとなる閉層上の四次式の非消滅が幾何的像の必要十分条件であることを証明した。逆向きは階数一表現のスキーム上の普遍線束から多重次数零かつ幾何fiberで非自明な標識を構成し、積の階数を負断面と残余列から検証する。任意のraw QPからこの有限窓へ入るための条件は、この系の外で与える。
 
-**古典閉層と380頁保存版 fea642f。** 二次式・四次式の全係数を構造層上零とする閉層では、二対角の枠と二次経路による変更で分裂射影束の古典窓に帰着する。二次・四次外積の係数は整数多項式として別計算で確認した。組版は `git archive fea642f` から二環境を作り、`SOURCE_DATE_EPOCH=1795427061 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを使用した。380頁の96dpi描画と抽出テキスト、および正規化PDFとSyncTeXが一致。SHA-256はPDF `0318e52ec82815e21d5353529471cc4658c9d30abaf70013184ca75c2a567680`、SyncTeX `e118fc158318d288f0ffab431abedeeee8f47047f712b56787715fd7db52f207`、抽出テキスト `1af46bdf10829dc70a9cf1d4a163bc26ba4ce453a834a61aab3d7b0df935bdba`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。
 
 **両mass零の階数一表現の普遍平坦化。** `cor:qa-avatar-deep-image-flattening` では、曲線型開と古典閉層の非交和が、階数一表現スキームを平坦にする基底変更を表すことを証明した。古典fiber上のidealの単射をTor消滅とNakayamaで検証し、射影束の固有性で基底における係数の零を得る。古典閉層で有限窓の全同型は頂点スカラーの剛体化後に標識付き射影束の同型に一致する。双対数で幾何fiberだけが古典となる例では有限窓は局所自由で、階数一表現は非平坦である。
 
-**平坦化を含む380頁保存版 c89015d。** 二つの独立な `git archive c89015d` 展開に `SOURCE_DATE_EPOCH=1795427358 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを用い、LuaLaTeXで組版した。全380頁の96dpi描画、抽出テキスト、正規化PDFおよびSyncTeXが一致。SHA-256はPDF `8fd0062b79c576f53d072f01abe408ec2fc0e569bef7fb125e93c8968592c3bc`、SyncTeX `f188c488ec6750d40f984758465aedb74e202aca68a13eed2cd670cbc23a4e7e`、抽出テキスト `dd4c9fcd47906eab25717c555825b2242eeb89eb5ea8ff5b7e45cb26aab121a5`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **古典閉層の自己同型群の再計算。** `cor:qa-avatar-classical-scroll-group` では枠付き有限窓の全同型式に `G=1,f=0` を代入し、各頂点のスカラーを剛体化した後の残余スカラー `t` が三つ組 `(g,a,p)` を `(tg,t^2a,t^2p)` に動かすことを確認した。`a/det(g)` と `p/a` で正規化すると、射影直線の基底変換は二次表現を行列式で補正して作用し、対角のスカラーは逆数で作用する。分裂射影束の標識を保つ自己同型と群法則が一致する。
 
 **381頁保存版 fda29d6 の再現性。** 二つの `git archive fda29d6` 展開で、共通TeXツリーと `SOURCE_DATE_EPOCH=1795427613 FORCE_SOURCE_DATE=1 TZ=UTC` を指定して組版した。全381頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXは一致。SHA-256はPDF `042ebc75485b782f575e4eb3043abe7c82f5782e953e1ec8169955df2819fa43`、SyncTeX `f013aad494d3564038d7f8c0d5557eae2b5d7d681392b9664258d22a2c6778be`、抽出テキスト `8ed0a5a132e4e98913d5564d936f016bb1d73be580bd8cc84f28829ce857e77f`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
-**依存整理後の381頁保存版 7118e88。** 二つの `git archive 7118e88` 展開を共通TeXツリーと `SOURCE_DATE_EPOCH=1795427846 FORCE_SOURCE_DATE=1 TZ=UTC` で組版した。全381頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `4615ba819e93e4f4a640ee20bc5e189b7b0f8f6f1bad67d51abef81cfe46a1c0`、SyncTeX `7d44b60f740b8ad5c484c83868e93b74b92ce9c193f02c42d074e41e80215256`、抽出テキスト `2a39fa585e560cf529e66b768e5073b20a30aa39a0aa21be359a76bb47713587`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **ASの指定解消からの有限階数監査。** `prop:qa-avatar-as-forces-finite-ranks` で、各位相における重み1・2・3の次元2・4・6と、道空間から短関係一列・長端点六列への階数条件を証明した。両mass零で隣接する短関係がともに階数一なら中央因子を共有できない。四周期の単項式potentialを反例に、全位相の重み三までの条件を満たしても短テンソルの階数二は従わないことを示した。この例の重み四は語の列挙で11となり、指定解消が要求する9とは異なる。
 
@@ -2509,35 +2503,27 @@ latexmk
 
 **重み五の対角道と純四次補正。** `prop:qa-avatar-weight-five-diagonals` は重み五の道を対角矢の本数で濾過し、二対角の商を長微分の二つの対角射影からなるブロック行列で表す。直後の例では純四次補正を加えると重み五で見えた余剰次元が消え、全位相で重み五まで指定Hilbert数値と一致する。重み六では最初の位相でなお1次元余る。再現は `python3 computations/verify_avatar_degenerate_rank.py`。有限計算は全次数AS正則性の判定には用いていない。
 
-**重み六の検算を含む382頁保存版 9b037d1。** 二つの `git archive 9b037d1` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795428445 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全382頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `677a5d210b5f8059f72ba03885ab82277af26eb8981959f1f446c125fd4b38c5`、SyncTeX `6c07dd5c8fe186b91376c58df4cd1371314d4b8f0fcb78a7ae17589f638d7c68`、抽出テキスト `eabe74649e04c967ac43e1f3d8863a3a5ce4f4cce4c0f47d681ce7b81a63bcb1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **対角本数濾過の上端。** `cor:qa-avatar-top-diagonal-filtration` では、純四次項の巡回微分が重み三の純隣接項であることから、偶数重みでは上端二段、奇数重みでは上端一段の商が純四次項に依存しないことを証明した。既出の短テンソル退化例では重み六の上端二段の次元が四位相で `5,4,4,4` であり、純四次補正の有無で一致した。この商の次元だけで全成分のHilbert次元を判定することはしていない。
 
-**上端濾過を含む383頁保存版 8802449。** 二つの `git archive 8802449` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795428685 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全383頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `7c6d8ac2d036bbc8ebd14219d16fb36298a4a3a46a388394a6cfbb053c1b3e8c`、SyncTeX `48a6463875a669e06c05d68fe572ee418e0f1c4c7d646ec16fd17f8e9133a3a7`、抽出テキスト `07dde90f357a581ad44165c0e4d8add3205060d4410b4a3f13ca64a8c28551d8`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・更新した重み六の検算はPASS。
 
 **全奇数重みの上端商。** `cor:qa-avatar-odd-top-chain` で、対角矢の前後に置いた一文字の位置に沿う二対角ブロック行列を全奇数重みに拡張した。片側の射影がすべて可逆なら分裂消去で階数二となる。二射影は反対の偶奇の短テンソルの縮約なので、退化が一方の偶奇に限られる場合には、全奇数重みの上端次元を使っても退化を検出できない。これは短テンソルの退化を仮定した計算で、AS正則性の有無とは別の命題である。
 
-**奇数上端商を含む383頁保存版 02f50be。** 二つの `git archive 02f50be` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795428916 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全383頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b03d27b0c6de30617882b6a5ad8dd6df9b43bbf932d582e2070b09a57499b549`、SyncTeX `f11c424022a667d0b152743c83c7cdcc3013f7a7d9cf81883280e71a9072ea10`、抽出テキスト `3e53b5a8bf8d5563096cac3c80c13a58735c3ce212d13c2a8ae90cc3a86929c8`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・重み六の検算はPASS。
 
 **全偶数重みの上端二段。** `prop:qa-avatar-even-top-diagonals` は二つの重み一の矢の位置を添字に取り、上端商の有限表示を得る。外側へ移せる偶奇では `cor:qa-avatar-even-top-outward` により長関係の商を両端に集約でき、短関係の移送像がすべて等しい。結果として体上の次元はその共通テンソルの零・非零に応じて五・四となる。この条件は全AS解消の完全性とは別に検査する。
 
-**偶数上端商を含む384頁保存版 edc9daa。** 移送式の括弧と転置記号のTeX記法を修正した後、二つの `git archive edc9daa` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429218 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全384頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `a07ce1dbaa8699e8be714635ca33e953b22a3f226758fa76a74430fd6efd8e93`、SyncTeX `022593eddd79cf422d7de5cd0d7a27d964993dba3e1b620c7c5f01d124bf9c2a`、抽出テキスト `9bb8b35f109b80c5d90f569514eb03a776af38e8491b865d8edbff19fddf19d1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **隣接位置への縮約。** `cor:qa-avatar-even-top-inward` は始点偶奇の左射影が可逆なとき、偶数重みの上端商を隣接する二つの重み一の矢の空間へ集約する。短関係で割った空間を列に並べると、長関係は隣り合う二区間だけに現れる。厳密検算に有限行列を実装し、短テンソル退化例の始点0,2について重み4,6,8,10の次元 `(4,4),(5,4),(5,5),(6,5)` を確認した。全Hilbert次元へ外挿する主張は置かない。
 
-**隣接位置縮約を含む385頁保存版 69f9cd7。** 二つの `git archive 69f9cd7` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429450 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全385頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `3d4a15c181f964410974cf4b1c4ff2e1f91eda5d788ee48762a1199ed3684996`、SyncTeX `2e66ea1ac86fc15dbe687a1314ad4472453ae0b311003ffea781b243e3bc656c`、抽出テキスト `17421f97c0ba7eb395d2fb3ebfbcc3780e9c5a46870f46d29a08a6cd0fb66abc`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **短テンソルが一位相だけ退化する場合。** `cor:qa-avatar-even-top-single-degenerate` では、各辺の始域の単位行列の直線を共通核として除いた後、可逆区間への写像が同型、退化区間への写像が階数一であることを確認した。可逆区間を消去すると、退化区間が `s` 個ある側の上端商の次元は少なくとも `s+3` となり、各縮約辺の階数が二なら等号である。この下界は全成分のHilbert次元やAS正則性を単独で決定しない。
 
-**一退化位相を含む385頁保存版 9e7773d。** 二つの `git archive 9e7773d` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429681 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全385頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `21e8b3a454384f8f3129a4fb7979549532a082bbd8567d90f3025bffc73933a6`、SyncTeX `03e523f7ec5a1f50d90a621ef5468bd27b201a73feb93a2a78532f23c06c74b3`、抽出テキスト `9cf0aa6134b39ecf2860e5ce664b1b9d5e5cc7c470007a0075c0874718ea7e7a`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一退化位相の上端商の正確な次元。** `cor:qa-avatar-even-top-bridge-rank` で可逆区間を明示的に消去し、残る関係を行列の共役と階数一テンソルの左右積で表示した。二つの保存直線が異なるとき辺の階数は二、同じとき一となり、上端商の次元はそれぞれ `s+3` と `2s+2` である。厳密検算には二つの直線配置の例を両方加え、重み16までの辺の行列から同じ次元を計算した。
 
-**一退化位相の次元判定を含む386頁保存版 8700d57。** 二つの `git archive 8700d57` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429909 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全386頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `cc8b90609ae6d220e0cf5612b8f527bfca2e388caabf471ee7322c9372612a7a`、SyncTeX `d77e2d2dd70ab8bdcf1bf08ddc33b5b28e3b2ad3a41657af7884c1789cc66162`、抽出テキスト `5685cb37212a548993e5e055b9c0147405c85b4ed626ed9c19e79bf31ab7803d`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一退化位相の反対偶奇。** `cor:qa-avatar-even-top-outward-single` は両端への移送の交互積 `A,B` を使い、`ABA=δA` によって共通短関係が消える重みを決める。二直線が一致しない場合、反対偶奇の上端商は全偶数重みで四次元である。一致する場合、始点が退化位相の一つ後では重み8、三つ後では重み10から五次元となる。未縮約の道表示を使い、両例と両閾値を厳密検算した。
 
-**反対偶奇の次元判定を含む386頁保存版 bc57021。** 二つの `git archive bc57021` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795430137 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全386頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `847f57b46d9d8ec7208938b905bcc19ece035427d77245225ad51ea5a2f7e46a`、SyncTeX `7995b1eb3996c419364f3002f4da939aefcbabab6148e740d7e1eb55d01070e4`、抽出テキスト `f35bf856dc818ca894d08c041f6b872a64c1c2323dbb68c9d72ea46b0d9f196c`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一退化位相の純四次項の規格化。** `prop:qa-avatar-one-degenerate-quartic-normal` では三つの可逆短テンソルを単位行列にし、残る短テンソルを迹の零・非零に応じて単位行列成分 `E12` または `E11` に規格化した。対角矢の二段道による変更を法とすると、純四次項はそれぞれ二語で一意に表される。証明では十六語の置換の連結成分を列挙し、独立に係数行列の階数14と二つの余核基底も厳密計算で確認した。残る二係数の全AS条件による分類には別の議論を要する。
 
@@ -2547,37 +2533,27 @@ latexmk
 
 **両mass零の全短テンソルの非退化性。** `thm:qa-avatar-zero-mass-forces-short-rank` により、複数位相の退化の四配置もすべて排除した。各階数配置は既約で、稠密開の規格形と四次項の二変数余核で一般階数を計算した。指定解消より大きい余核次元は順に重み五の14、重み六の19、重み五の14、重み五の14である。minorの消滅が配置全体に及ぶので、特殊な退化配置も排除される。この結果と一退化位相の排除から短関係の階数二、反対側の長射影の可逆性が従う。体上の両mass零の逆向きは、四連続窓とSerre完成から曲線型または古典型として原稿内で復元できる。非零massの場合と全相対族について同じ結論をここから推論しない。
 
-**両mass零の逆復元を含む388頁保存版 a10bfbb。** 二つの `git archive a10bfbb` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795430962 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全388頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `63ce0c108eed92daae67969b49aa871c462c2759376fd1b0bcef151e9982cce2`、SyncTeX `920fa0d3b191447fd22c8a0b4abc92220b27afa5d2969dd9f86b6b4bbc803e11`、抽出テキスト `44fcddac54d92d86faae95f0ba84771e537a75b21ca962fbc0ff0c8aa606e3d9`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **冪零massを含む逆向きの全次数代数。** `thm:qa-avatar-nilpotent-mass-reverse` は、幾何fiberで両mass零かつ指定AS最小解消を持つ表示に対し、短・長関係の可逆minorが相対有限窓を与えることを証明した。体上の曲線型・古典型でGinzburgの零次集中を検査し、各重みの有界有限自由複体を局所的に分裂することで、冪零massを残したまま全次数のJacobianの局所自由性・任意基底変更・有限窓からの復元を得る。曲線型avatarの基底上への持上げはこの定理では課していない。
 
-**冪零massの復元を含む389頁保存版 10ecae0。** 二つの `git archive 10ecae0` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795431240 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全389頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b02911e4f0febb835ec8057feedf765f80c8a2a218090bcb268b57b749f9f0fb`、SyncTeX `33a2eb2346f2b0660889ce6d1c7bef7bf055f45e3d55ba36153f960e12c37e50`、抽出テキスト `743dc9b810697c3e5ab0e464311038640fbbbc6f3c7caa624160fe33057b5677`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一mass消去後の四次係数と低重み検査。** `prop:qa-avatar-one-mass-quartic-space` で、残った二短テンソルを独立に規格化し、四次係数の余核を二つの階数三の商のテンソル積として同定した。この九次元表示を使い、短テンソルが一つまたは二つ退化していても、全位相のHilbert次元が重み七まで指定解消と一致する標本を得た。両標本の始点零の重み八は28・36で、指定値25と異なる。一般九係数に対する高次の階数上界はこの標本検算からは結論していない。
 
-**一massの検査を含む389頁保存版 c05050a。** 二つの `git archive c05050a` 展開で共通TeXツリー、コミット時刻を固定した `SOURCE_DATE_EPOCH`、`FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全389頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `e61ca25622171b3262b65037d7c5ca7d72118419ccece42c809edbb1e450177a`、SyncTeX `163456177fef5908e3c5b82e68fd30196c8fef0dcbcc1b693663a46b6f85ecf5`、抽出テキスト `cb45a36061551d22764d308df820862873be01d767cb50f6faf5ee7c6019e91b`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・更新した厳密階数検算はPASS。
 
 **一massの退化を全係数で排除。** `thm:qa-avatar-one-mass-forces-short-rank` は階数一の短線を保つ上三角作用と、階数二の短線を保つ行列共役を用い、標本を通る一変数直線と群作用から九係数空間への支配性を微分階数九で検証した。その直線上の有理関数体で始点零の重み八を計算すると28または36で、指定解消の25に反する。minorの消滅で全ての特殊化を排除した。短・長関係の既存の最大階数判定と合わせ、全mass配置で相対有限窓の開条件が指定ASの幾何fiberだけから従う。全相対幾何avatarの逆復元は別途監査する。
 
-**一massの全係数排除を含む390頁保存版 ebe231e。** 二つの `git archive ebe231e` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795431977 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全390頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `33583d94f12b2a35bdfc4828ea6205be60d2d0bb779ba4f198d2f1a625c50b34`、SyncTeX `5de6867d436753812217cd53f027e8badedaf826eee19d8fd684d8f107e0215a`、抽出テキスト `7272da73f51d169a9cd8d9b7c4f0821bfa45f8d59fbb85470ad663152218ef02`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **全mass配置の相対次数平坦性と逆mutation。** `thm:qa-avatar-all-mass-fiberwise-flat` では、非零massの幾何fiberを相対化に先立ち体上のcubic/AS10逆mutationでsquareに戻した。曲線型のGinzburg零次集中と、古典squareの `(O,F,FG,F²G)` の反Serre軌道のKünneth消滅を別に検証した。有限窓同型は右同値へ持ち上がるので元のGinzburgでも消滅する。各重みの有限自由複体を分裂し、全mass配置のJacobianの局所自由性を得た。一mass以上が可逆な開では、これにより相対逆mutationを適用でき、全整数頂点固定同型と基底変更を保つsquare族を回復する。
 
-**全mass配置の逆mutationを含む391頁保存版 eed3512。** 二つの `git archive eed3512` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795432241 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全391頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `7c1f647b6331bb18212328fe6be4a5436836405f63e1460c1c26a678ecd45335`、SyncTeX `429a94f9de0ab616a987a56b94e28580aff84bd78a1c8b5b06836c3150498253`、抽出テキスト `1168f4667b9e27f066294d0ca31ddaff0dd8ca9cca42dfe24f941dca1051bc33`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **可逆mass開の相対幾何逆復元。** `cor:qa-avatar-invertible-mass-geometric-reverse` は逆mutationで得たsquare族と向き付き二次式の全相対Isom比較を合成する。曲線型開ではふたつの二次式と標識線束から元の曲線型窓へ戻る。古典型は二次式一致のスキーム閉層で復元し、二次式の交わりの平坦化は曲線型開と一致閉層の非交和で得る。古典fiberだけを持つ冪零変形は向き付き二次式として保持し、周期と頂点線束は線形窓に保持する。
 
-**可逆mass開の幾何逆復元を含む391頁保存版 79f9af0。** 二つの `git archive 79f9af0` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795432477 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全391頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `84916b9be0992493d3b076fb60fe1041a87b57c8c325871fedaee2d4ece51ee4`、SyncTeX `7ac9d40cdd80b3e980712cd56001cf078767e75a17f575470c8f72c78afdfecd`、抽出テキスト `b1ec4ea92748f74ca370799d8ffb071a9be4d875f6143b0300763956045c5e1e`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **冪零massの幾何復元と普遍平坦化。** `thm:qa-avatar-nilpotent-incidence` は階数一表現のうち外側の鉛筆と後半の対角評価が生成する部分を、相対射影束上の三行三列の行列式で記述する。全幾何fiberで両massが零なので前の消去計算から可逆二次minorを選べる。行列式は相対反標準切断で、非零fiberの開では平坦な曲線型avatar、構造層で恒等的に零の閉層では古典曲面を復元する。両部分の非交和が普遍平坦化であり、いずれでも頂点スカラーを剛体化すると幾何同型と有限窓の全同型が一致する。
 
-**冪零massの幾何復元を含む392頁保存版 fe8c26c。** 二つの `git archive fe8c26c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795432762 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全392頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `76e9026b3a35d38e5679eeb239df3e820b673f7b37487f96baa240044bdbce10`、SyncTeX `002885132c23fb98a4ac110e17bd80248ba4f7b90dbd69c0e52e5a75f46d6500`、抽出テキスト `fc7ef92e758969ba25b26403aa88d5237ee21a12155dc8246ee39b051be3caee`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **massの型を横切る場合の比較。** `cor:qa-avatar-mass-crossing-incidence` は射影束の固有性により、階数二未満の閉集合と普遍鉛筆の非全射閉集合の像を除き、両mass零の点をすべて含む開へ行列式復元を拡張した。可逆massとの重なりで、曲線型が行列式零式を持たないことを、射影束上の線束の次数と反対rulingの場合の切断数の矛盾から検証した。曲線型開と構造層上の古典閉層で、評価を介した有限窓の比較が合成と基底変更を保つ。
 
-**massの型を横切る比較を含む393頁保存版 52eb767。** 二つの `git archive 52eb767` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795433085 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全393頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `2c095f7ae2339a7b918264e1aa472f0534f9dd609b8717a409ccac15b35877b5`、SyncTeX `ce8c1af8effec5725479478c25212eb4b5c967ebbbfae12503da3697f9c91c87`、抽出テキスト `e853171379d169920e20720b40ad923f69b775c55b8e7dfaae7bb1353349d5c1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
-
-**体上の復元を統合した393頁保存版 4c088cd。** 二つの `git archive 4c088cd` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795433344 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全393頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `c74021fa04f13520321a779d6823f36bb420e9dba3f3bfd2edf65ac821fb6027`、SyncTeX `e2c8ce9d6e87d0421ee0c93b0ab54c2794a19c65ef38274c519a168c569b9827`、抽出テキスト `0c3f57ca608b5bffe6d84cb3461aa9d34d63915fdaf445f86f1c5b00c8ea0070`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **指定表示の逆分類の独立計算監査。** [独立検算](../computations/audit_avatar_rank_independent.py) は既存の階数検算を呼ばず、各矢に始点を添えて自由道を作り、消した矢の終点から巡回微分を並べる。関係の終点から始まる後置道も別に生成する。この係数行列を、有理関数体での単元優先の疎行消去で再検算した。両mass零の六規格形の余核次元は順に 17、17、14、19、14、14、一massの二つの一変数sliceでは28、36で一致した。後者では元の二次元鉛筆における上三角作用と共役を先に微分し、短線で割ってから九次元の接階数を再計算した。実行は `python3 computations/audit_avatar_rank_independent.py` で、C数学suiteにも含めた。
 
@@ -2585,141 +2561,107 @@ latexmk
 
 **行列式逆復元の内在性の再監査。** `prop:qa-avatar-intrinsic-incidence` で、後半三頂点をまず有限窓の積と最後の鉛筆の普遍商から復元した。頂点零からの評価を付け加える有限表示加群を、全合成の整合式で直接構成した。任意の係数加群に対する普遍性を比較すると、これは既出の三行三列の行列の余核に一致する。従って行列式のidealはその零次Fitting idealであり、階数・全射条件と基底変更の比較は矢の枠や関係の持ち上げに依存しない。この確認は行列式逆復元の同型・基底変更部分を対象とする。
 
-**内在的行列式を含む394頁保存版 b3d9c1e。** 二つの `git archive b3d9c1e` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795433755 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全394頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `044845f3b7718a11e0e1683f3d66973c016111485435a4cdf8192f526b7e1bb6`、SyncTeX `40f647e87e2c9bc4642743b959ac8c1a386fd7e1dc6e15f4aeb25916b784dc26`、抽出テキスト `0e71b9beca608b70da424cb222963315616cb0f41f102ab1f255bc9b31a30131`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **全指定十二矢族の相対左右Noether性。** `lem:qa-avatar-noetherian-open-closed` では、有限平坦な各成分のI進随伴次数と端点ごとのKrull共通部分から、閉層と補開の貼合せを抽出した。`cor:qa-avatar-presented-as-relative-noetherian` はこれを古典閉層の係数idealと両massのidealに順に適用する。適用先を、曲線型の既存の相対Noether性、古典分裂射影束の重み付き整列表示、可逆mass開の相対逆mutationで区別して確認した。従って指定ASの全幾何fiberを持つ任意の相対十二矢族で、古典型の冪零変形を含め標準右rowと左columnがNoetherianである。
 
-**全指定十二矢族のNoether性を含む394頁保存版 0bbd458。** 二つの `git archive 0bbd458` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795434018 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全394頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `cd59e148c4bbcea8f56f3f97d70191bce7f842716111c5552f63faae9f58d1dd`、SyncTeX `d2b4f03cbf15daa696bcfd8bc2d785a6234ccb14a061315f60571c0c0176beff`、抽出テキスト `fa874deff15dab64dbeb3c1fdb4d946ee3f2a846f7f2a5482fa7a2b0013223f9`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **全指定十二矢族の巡回解消とtailsの監査。** `prop:qa-avatar-presented-as-cyclic-resolution` では零次集中した非完備Ginzburg模型から、普遍導分の対角模型を通常のJacobianへ両側から移し、非最小巡回解消を得た。片側分裂から左右単純の解消を得、巡回切断を転置して第三次のAS双対を再点検した。全mass配置のNoether性と合わせ、従来曲線型で証明した四連続窓のtilting性、有限Endと相対Serreの回復、特異基底の有界連接Morita比較を全指定相対十二矢族へ適用した。
 
-**全指定族の巡回解消を含む395頁保存版 ad9e4a4。** 二つの `git archive ad9e4a4` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795434272 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全395頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `1af17a2815f302ab559fa418c53f19046652182770155349cab4233dd5a8e03f`、SyncTeX `8b522794510cb668d2d133352313b96d85e77d0155f943b5506dda56642095c0`、抽出テキスト `fcbe1ce0ccf4d6600d652eca40a3985f045818646b9d61c012f68ea68e2a5e3f`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **全指定十二矢族の標準頂点のH2比較。** `thm:qa-avatar-all-presented-pointing` は曲線型の表を全族に拡張し、偶数位相の定義域をλの単元開、奇数位相の定義域をμの単元開とした。両mass零の古典重み付き型の生成障害と、可逆開での古典square型の肯定判定も照合した。四つの像は全H2を覆う。各2-fiberはruling二重被覆、線形有限窓lift、canonical周期の上の重み付き表示からなり、全右同値は各箙に対する有限方程式で計算する。
 
-**全指定QPのpointing比較を含む396頁保存版 d6c4358。** 二つの `git archive d6c4358` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795434570 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全396頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `843690ae17baada14c00355cbbe9f21e427c137366431348551bd8fd2b7bcaf2`、SyncTeX `edc3b833c286f78da0094d6fe7f7aa7088d6c04e8ad5db95c1dc14c2d4253c64`、抽出テキスト `8f0bde8bc4bac3b0015045d3aef67e2ef8d2e92e196f317792259e17b7d734ed`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **標準頂点のH2除外の直接監査。** `prop:qa-avatar-presented-pointing-module` ではλまたはμのスキーム壁で、その偶奇の対角矢だけを単位写像として作用させる相対加群を作った。巡回解消にHomを適用すると、支持上では零次から一次が単位、反対偶奇では一次から二次が非退化短テンソルの縮約である。このため有限切断を経たtails Homは元の端点成分に等しく、反対偶奇の反Serre軌道からはすべて消える。曲線型と古典型に共通の非所属証明であり、消滅は任意基底変更を保つ。
 
-**標準頂点の直接監査を含む396頁保存版 9bee813。** 二つの `git archive 9bee813` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795434814 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全396頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `c991c291be36988aa34e5152f413fb604489c26b003095036c0040a2477eb07c`、SyncTeX `9b6c83ea9f1e445079a3c69ecde6005e9c37db53e9ff558292fcbb20f644b48d`、抽出テキスト `49471f7b292e750b18fa7c3f2ffda5d46f61cbfb7718aaa0f634a09e5c3120e7`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **標準頂点の肯定側の直接監査。** `prop:qa-avatar-presented-pointing-ampleness` では指定偶奇のmassが単元のとき、軌道頂点を飛び越す唯一の対角矢を短関係で二段に分解した。従ってその頂点を通るidealで割った標準射影は有限支持であり、任意に遠い軌道頂点から全連接対象を生成できる。四連続窓の切断Extと有限連接表示を二段使って、任意の全射に対するHomの最終全射も直接確認した。これは可逆mass開上のAZ豊富性の監査であり、H2内の型とそのfiberは既存のsquare比較から得る。
 
-**標準頂点の肯定側監査を含む397頁保存版 75fb84a。** 二つの `git archive 75fb84a` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795435050 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全397頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `f5f4007d8b6b83c6ed4156fb799920ff2f1365fb1019e140ab5e4868791938bf`、SyncTeX `aa669c0b954efcd461347c78765fd725625711044dffa0c4d834a00496e09348`、抽出テキスト `67826d28e606529ca0b34d6380bf2999d9f60f5f423caac7495daa7207c0a2fb`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一対消去の全右同値と周期付きfiber。** `cor:qa-raw-q12-to-q10-product` で十二矢の一mass単元開を、一対正規化後の十矢群oidと `B Gm` の直積として監査した。全raw Isom方程式により消去対の二段道加算が零、二スカラーの積が一となり、残る十矢の式と独立に合成できる。残るmassは零・冪零・単元のいずれでもよい。消去対は周期付きJacobianに恒等なので、標的との指定同型を含む2-fiberにも同じ直積を得る。
 
-**一対消去のfiber比較を含む397頁保存版 666c3ea。** 二つの `git archive 666c3ea` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795435281 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全397頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `6518138d6991399b35a7d69627acea225e9be1bd9e8a71a6788c70e80cbf6c32`、SyncTeX `9cbdabd60151d39a982e7c2c8421f0f8d32e023859e84f77f327b05bb30dd505`、抽出テキスト `bc31183cb0cd0620f1c08837c9a5d1df9bb0fbe881c7948d207c27d33d15c161`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **周期付きJacobianへの全raw慣性の再監査。** `cor:qa-raw-periodic-jacobian-kernel` ではJacobianに恒等を誘導する矢の像を重み一・二の関係だけから決めた。各対の二つの変更係数を t,s とすると、四次係数の増分は各対で `(t+s+λts)[pq]` になる。両mass零の各幾何fiberで二つの四次テンソルを一方の二対二分割で比較すると階数一と階数四になり、独立な列を任意の非被約底へ持ち上げられる。従って核は各mass群の積で、固定した周期付き代数のfiberに別のraw慣性が加わらないことを確認した。
 
-**周期付きJacobianのraw慣性を含む398頁保存版 cf22444。** 二つの `git archive cf22444` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795435537 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全398頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b6f41d6ab9a7f54d21e2c1ff43c7aa9c9ae55061d3fb3591d8b48f81f65321fb`、SyncTeX `ad9d6ace410aca6cdf89352d31a8b3bb3020bc952f4276bad2299a0b7e91701e`、抽出テキスト `99966e79fdeef5b2f8c6074bb9290072103a84b8e9add33ecf0a295d8a3e4374`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **八矢の固定周期代数上の表示fiber。** `cor:qa-eight-potential-line-fiber` は八矢表示を局所に持つ周期付きcubic AS代数に対し、二つの三次関係の重なり線束の枠が表示fiber全体を表すことを証明した。重み一の矢像は指定Jacobian同型で決まるため核は自明だが、potentialの単元倍という選択が残る。一つの矢束のスカラー自己同型はJacobianを保つ一方、固定potentialへの持ち上げは単位の場合だけである。可縮対を追加した同じ開では、この枠torsorの上に既出のスカラー慣性を加える。
 
-**八矢の表示fiberを含む399頁保存版 80329f1。** 二つの `git archive 80329f1` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795435925 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全399頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `2b937837a708aaa94796fc3be56ae8b5f01cd95508c43e3217672fd73b4a95d5`、SyncTeX `2a8ecc64dd27c266513c5c9bd4c6e659efaafabd8139aac16789a7b7fc18648f`、抽出テキスト `d7d5f7d8e0a1babfcb9c702ac8e365bad85d29ac575eb3787eaddcc27647c4ae`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定Jacobian上での単元倍の独立監査。** `cor:qa-raw-periodic-potential-scalars` は、同じpotentialの異なる単元倍が八・十・十二矢のどの固定周期代数fiberでも異なることを証明した。可逆massの対を除き、純四次式の分裂左逆から変更係数を単元差の倍数にする。混合項はその差をさらに非単元massの倍数にするため、局所単元を掛けて零になる。幾何点だけでなく冪零な単元差も検出し、固定potentialの慣性群をもつスカラー部分の充満比較を得た。
 
-**potentialの単元倍比較を含む399頁保存版 1185905。** 二つの `git archive 1185905` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436194 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全399頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `574d47c3bf45356502c5a370969d6609b877384a1e838cf8fe1c1f82936bf922`、SyncTeX `e084c7a5756ed4a6cf82611c88b1d317d6f6178f457691f7d1d944c7581aa4e0`、抽出テキスト `35757010299da1efb6a08a8846f91b2dbbaff36fbd54a0b5140a20aacac02aad`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定周期代数上の八・十・十二矢表示fiber全体の比較。** `prop:qa-fixed-arrow-presentation-fiber` は、固定代数への矢像の選択を局所的に一つの既知表示に揃え、全表示を固定した関係idealに巡回微分が入る線形方程式、その微分の生成開、および各対の二つの独立なmass群で表示した。重み二の矢像の変更で可逆な線形係数を選べることを二段道の剰余体上の余核から確認した。既知potentialの単元倍以外も含み、任意基底変更後の全同型を与える。
 
-**固定矢像による全表示fiberを含む400頁保存版 b5bf8a2。** 二つの `git archive b5bf8a2` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436429 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全400頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `73bbf1d9a47b8f8ce685b8be7f7f92f6849c398357202c3d1bf5fa0a735e2f07`、SyncTeX `4f4c7753f9710d09db1576f99882a31c0c07d7fe751f8b7903cc3a36136a8e22`、抽出テキスト `58edb0ff1041036ec6a64f93d4d12ca79e1d9c325cbe2f7694c14f812ce4db55`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定周期代数上の標準形と慣性。** `cor:qa-fixed-arrow-slice` は、可逆対を除いた残りの短テンソル積に分裂左逆を取り、純四次項へのその評価を零に揃えた。混合係数と四次評価の不変な組合せにより、各mass壁とその近傍を覆う開を指定した。標準形同士に右同値があるのは全係数が一致する場合だけで、各残存対の慣性はmass群、各消去対の慣性は乗法群である。残存massが冪零なら単元条件は全基底で成立する。
 
-**固定周期代数上の局所標準形を含む401頁保存版 52de29f。** 二つの `git archive 52de29f` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436694 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全401頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `c615697d352b532628bfcba3769c9a9c89d07b3697016cebd8a6665fd2322946`、SyncTeX `f138da1fe5ea8df39da017db221b338de60288bbd7295a3a2940cc514caecafb`、抽出テキスト `b10258d335fd0e9e68186e91bcc5f0d311387bc1aaef38f42ac5117da427f495`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。混合係数の変換、不変な単元条件、残る代入の逆元については、係数関係で割った多項式環でも検算した。
 
 **表示標準形の貼合せ。** `cor:qa-fixed-fiber-sheaf-descent` は、局所標準形schemeを表示同型類のfppf層の開部分として同定した。基準表示や左逆を変えた三重重なりの遷移は同一の層を表現することから一致する。可換慣性の移送は代表同型に依存せず、表示fiberから同型類の代数空間への射を帯付きgerbeとして得た。
 
-**標準形の貼合せを含む401頁保存版 eefdcc8。** 二つの `git archive eefdcc8` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795436929 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全401頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `841014bcb42b79046189ab8214b5f1f06fa234b4473e5e38bc3e6f814c779c6e`、SyncTeX `dd950a2b6004d15c8bf5a75748b1fb557e819ee67b53dfabbb6fb2626341875e`、抽出テキスト `2d31beb677f1035060ee695e75bce8c7e324a732d815c960648880cde7a5c319`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **特異基底の有界連接Morita同値の再監査。** `cor:qa-avatar-relative-bounded-coherent-morita` の逆向きを、短い対角表示を暗に用いない四頂点の正規化bar解消に置き換えた。非平坦な有限加群とのtensorが完全性を保つ理由を片側分裂で示し、各項を有限基底加群と頂点射影のtensorとして表示した。局所化後の零次性はrowの成分平坦性から従う。Noetherian部分の有界導来圏との同定はStacks Project Lemma 13.17.4の仮定を左右で確認した。
 
-**有界連接Morita監査を含む401頁保存版 5954210。** 二つの `git archive 5954210` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437187 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全401頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `5118bf4f8897754b7b10df4a76cd57bb9ecf0386f121b798876fc32f64234d62`、SyncTeX `72cc98efe4a1e3373e4296ae0a4c71a294b978106107af2798cfc0088131e230`、抽出テキスト `99ae42ab12d96c2a9d1ae63a38fe7d15f3ed321f5370e2e74689f2627a73fef2`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **非有界tails局所化の独立監査。** `thm:qa-avatar-all-tails-tilting` の切断公式を、切断rowの長さ二の射影解消が与える有限濾過と、K-injective複体上の局所化随伴を使って証明した。torsionコホモロジーを持つ非有界複体も、切断Homの直極限で消える。非平坦基底変更では、自由解消の下からの有限切断を使い、任意のtorsionコホモロジー複体が引戻し後もtorsionであることを確認した。
 
-**非有界tails局所化を含む402頁保存版 9949ab3。** 二つの `git archive 9949ab3` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437435 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全402頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `4e4066f903f21ffcbae11480f0cbf99535016484b4419d719dc60ead15f9b205`、SyncTeX `3cb3ab5c5017df5aeeb385d393b046371b460e1b180bc14a1f40cff2fe647789`、抽出テキスト `cef70516f05e5238fc2acde5b0e97308aa298454e79b15315f6f91a12cb6e50c`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **有限Morita窓と非平坦基底変更の合成。** `cor:qa-avatar-tails-base-change` の比較を、窓が実際に作用する標準rowの直和を用いた双加群の導来tensorで構成し直した。成分平坦性から新しい窓での標準rowを復元し、二つの経路の一致と三重合成を導来tensorの結合律に還元した。
 
-**非平坦基底変更の合成比較を含む402頁保存版 2fdabd1。** 二つの `git archive 2fdabd1` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437676 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全402頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `44ed20c645b96cf86dc3bee2833667a62717812c2fd47812d541124f2e5feee2`、SyncTeX `2be026be6c2c9a1e2d536c0e96d8c5c5b0c0c18576c52337eede647fdacbface`、抽出テキスト `e096a003e060a4438ea87207a88d8a409e1afea6aa9451843af9c01ed8628b13`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定Jacobian上のrawループ類と単元倍。** `prop:qa-raw-scalar-loop-class` は二項対角模型でループ和のConnes像を計算し、potentialの単元倍によってその類が逆単元倍に移ることを証明した。Hochschild像の重み四の独立なループ係数は境界にならず、通常Jacobianを固定しても類を変える単元差を検出する。有限foundationのCasimir類との比較は別に残す。
 
-**rawループ類の比較を含む402頁保存版 8613d0c。** 二つの `git archive 8613d0c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437966 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全402頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fc30946e33f82be42aa20cdc381348e39192b38fa668c365be62fe6f1a70d1d1`、SyncTeX `0ec0300aedc651d5bd76a0c5c7e6189648a6a0a8cef53214a70aba92866ad177`、抽出テキスト `9877f96c2344b6c8808029cf927dc9e391dbddbccb00a6cf002ab2f1646c9656`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **raw負巡回ループ鎖の右同値・消去自然性。** `cor:qa-raw-loop-class-naturality` は、全重み付き右同値が二項mixed模型の指定一形式cycleを保つことを示した。可逆mass消去の射では、ループ数で濾過した核を可縮な矢複体で分解して準同型を証明し、同じcycleが移ることを確認した。いずれも任意基底変更に適用できる。
 
-**rawループ鎖の自然性を含む403頁保存版 f89a4dd。** 二つの `git archive f89a4dd` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438209 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全403頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `a1f37d6f9144898acf80c808f2477a9d917a247185153ef6521485f1fc5f240f`、SyncTeX `7835e7d3eb512e2d1ea1a166895613eb923bb39de975823e6bb4637841b4d333`、抽出テキスト `8cdf93847b3a8cb70c513714cc9834850b5f5494b0cacbf3b5be22f8d0b945ff`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **cotangent表示でのrawループ類とCasimir類。** `cor:qa-raw-loop-cotangent-casimir` は、頂点環上の二項mixed模型を有限準自由代数上へ相対化し、completion tensor次数一で両方の負巡回cycleを比較した。対角の恒等射は増大写像に移り、その有限双対は頂点ループの和である。Connes作用で同じ一形式を得て、cotangent表示のKeller比較に沿った同定を証明した。
 
-**cotangent Casimir比較を含む404頁保存版 a333030。** 二つの `git archive a333030` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438443 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全404頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `c9d216a3a805a95dad90143804a19ecfef1fc34591ae3c9b9e2ff71531b669ee`、SyncTeX `a9a72b7ea4af4979f598ad6da2d6083347045cba7e48400ba842f6f0908693fe`、抽出テキスト `2a2a0880b0204f41321835470c53267ff177f7fb86d7b2f03487309c4af66212`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **頂点付きfinite foundationでの指定Casimir鎖の降下。** `prop:qa-foundation-casimir-chain-descent` は、枠に依存しない有限正規化bar解消を使い、増大写像をreduced相対mixed模型の指定Casimir cycleとして置いた。有限双対、最後の巡回列、Connes作用のすべてが頂点付き同型と基底変更で可換なので、Čechと同型の神経で両指定鎖をtotalizationへ持ち上げた。
 
-**頂点付きCasimir鎖の降下を含む404頁保存版 fdf376f。** 二つの `git archive fdf376f` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438693 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全404頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fb2c97a4a497eac0bb29703c9c018173dfc5249ce8e86661f7d600c31d79c859`、SyncTeX `e1d0cb8275353d8e20b4c1cb369695ae823e03d332ad27886453ee0342190c4e`、抽出テキスト `dd56a1f1dc53c85434b82a1bb07ba32e32d1aa5d1adf0d8969629d94b9bb2416`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **rulingの有限窓におけるCasimir移送。** `prop:qa-casimir-morita-transport` は、共通の相対perfect圏で二つの窓を比較したとき、対角恒等射を係数付きtraceで移送し、tensor次数一のbar包含とConnes作用を通して両指定類を比較した。右同値によるraw表示間の比較とは別に、rulingの窓のMorita比較で類が保たれることを証明した。
 
-**ruling窓のCasimir比較を含む405頁保存版 465d29c。** 二つの `git archive 465d29c` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795438952 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全405頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b23d18e958cb1d74dcc749f556cedb7e5a38723121ccfc6cad3be41144c8f5d1`、SyncTeX `7b2ceb39e8c0fa72dd68c985d100c22561eb52282eea97f46f0416a1521af784`、抽出テキスト `5c0de80d46d4a39b1f1a454ce89369fa7cfd186d0202872c30da8fc166326312`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定周期Jacobianの内在的な負巡回直線。** `prop:qa-jacobian-weight-four-cy-line` は、巡回両側解消を対角でtensorした第三項の境界が、各矢について二頂点の係数の差になることから、重み四の第三Hochschild群を直線と計算した。高次消滅により同じ次数と重みの負巡回群もこの直線である。全raw適合表示のループ類はその枠となり、固定周期代数上で一意の単元により比較できる。
 
-**負巡回直線を含む405頁保存版 8fe82c4。** 二つの `git archive 8fe82c4` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439191 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全405頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `fd0720e216b15fe5d25e0938fe10b449fc5f25780d41dca896a4ef8d141c7257`、SyncTeX `699a07b53a565703e0b58509aada3a8de49a5f46e449b30c51402709cf3fa29c`、抽出テキスト `31f7af6be780680f155e4a34164b74c642a9e79c040e05602039c75740b20956`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定Jacobian上の負巡回類の比較単元の有限計算。** `cor:qa-jacobian-weight-four-cy-ratio` は、二つの巡回両側解消の間で恒等の持ち上げを重み四以下の線形方程式で解き、第三項の共通のループ係数を比較単元として与えた。内在的な負巡回直線により、枠と解の選択からの独立性および合成での乗法を得た。単元倍の比較の向きも固定Jacobian上の式として明記した。
 
-**負巡回類の有限比較を含む406頁保存版 614f90a。** 二つの `git archive 614f90a` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439411 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全406頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `247f258f7e1fce47b16eaca7a239212447d48fcbee55638f4265a9dd56d5d19c`、SyncTeX `207da663d4bd3e7b0a3adbee9049fc7319291fb84a95f9fec5cae1b6fb12ee82`、抽出テキスト `a8e48a456be503cea4e830984fac3ea8f07fc21b1dfb1afa9bfb2dcb9318dfd0`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **標準頂点のH2ファイバーの独立照合と訂正。** `cor:qa-avatar-all-presented-pointing-fiber` では、以前の記述が有限mutation窓との指定同型に加えて固定周期付きJacobianとの指定同型を取っていた。後者はH2への射のデータではない。八矢で有限窓の返り側の隣接矢束を単元倍すれば、有限窓で恒等な右同値が異なるpotentialの定数倍を結ぶ例で違いを確認した。該当ruling上の線形liftと有限窓上の表示gerbeを用いる形に本文を訂正した。
 
-**標準頂点のfiber訂正を含む406頁保存版 69f80f9。** 二つの `git archive 69f80f9` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439677 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全406頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `765266c042d84d9bc1e9747b4663258a78ace2fcb03abfce44eec91b14947175`、SyncTeX `ff871a61951276c683a3dae6b3fa56789977c756579fe7598938dc206116db16`、抽出テキスト `5f52ea3aca46d3f5f368154f0ab2d6c984eb53c6454cd1bd1913155f43542414`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **矢数ごとの標準頂点の像の独立監査。** `cor:qa-avatar-pointing-by-quiver` で、十矢の二位相版をそれぞれ異なるmassを単位にする十二矢開に安定化して監査した。八矢の四位相と十矢の一mass可逆を要する位相の像はcubic rulingを持つ開であり、十矢の他方の偶奇と十二矢の各定義域では全H2を覆う。八矢への消去で残るスカラー慣性もファイバーに記した。
 
-**矢数別の標準頂点比較を含む407頁保存版 99b1cf9。** 二つの `git archive 99b1cf9` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439915 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全407頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `cf0beb4a01ced56d44de42c2d614f201c766d617f30e5b59ee0aeeabdd96ffba`、SyncTeX `f2c79d0a0ba45b310f49ae5e03b365b13c2465f7a3bca2d4f1c821c184498a42`、抽出テキスト `d44ad68cc12734485888f0af371d71fc7529bce90457235ab1ba4567b7491e54`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定Jacobianのmass慣性帯の独立監査。** `cor:qa-mass-band-determinant` は、対角矢の線束と短関係線の比を、二段道から重み二のJacobian成分への積の行列式線束として回収した。積の行列式が局所massを表し、線束値の群法則と可逆massの乗法群表示が、枠・道の持ち上げ・任意基底変更に依存しない。
 
-**mass慣性帯の行列式表示を含む407頁保存版 0620a56。** 二つの `git archive 0620a56` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440144 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全407頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `070db39c2efcc858458bba218c5a507e20ab986103ca6a7a3acf79a99b7137e5`、SyncTeX `f8c9c122102c2c1e967e02044056bf1d521e9323620b39a7ec5e752997d29048`、抽出テキスト `77823f775b45e0c9215994df946a75ce47d22dbbda0bd94c991522224604b5ad`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **固定矢像上のmass慣性の独立監査と中立化。** `cor:qa-fixed-arrow-neutral-gerbe` は、同じJacobianへの矢像を固定したあと、各対の片側への安定化群の射影が同型であることを全potentialについて用いた。反対側の作用だけで全軌道を得て、その作用は自由である。基準表示を大域的に固定できるとき、局所標準形の切断を選ばずに表示ジェルブを中立化できる。証明は冪零massでもそのまま成立する。
 
-**表示ジェルブ中立化を含む408頁保存版 283a834。** 二つの `git archive 283a834` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440383 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全408頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `6142ce33c143416cbe4b73c3f847118fbd5b76a062b0be774f6d8e96cf7d73af`、SyncTeX `0df9c28fd29209e9ff9f4e597edd05dec0b30de5081466585864bdad30d242f8`、抽出テキスト `4d7f8db88cb09c706176c943f7c18c7267e0a25391eeebfcd8620b8238ea34fb`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **行列式による古典閉層の係数監査。** `cor:qa-avatar-incidence-coefficient-bundle` は、普遍短関係による商の対称二乗を相対射影直線へ押し出し、階数五から十四への分裂単射の余核として九係数束を構成した。これにより古典閉層の構造層上の消滅、曲線開との区別、任意の非平坦基底変更とFitting表示の重なりを有限係数で確認した。
 
-**古典閉層の係数監査を含む408頁保存版 6eac37e。** 二つの `git archive 6eac37e` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440633 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全408頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `4b10a44f81ed5ba525cf05c7607593c5058808d840f4b3a8e7985256eb4e8db1`、SyncTeX `4abf5276025ef77ad6c3ce14bedb17644ec244d49f5a4a6cdf7be2bb3b95773a`、抽出テキスト `c97d46b90939923aebe62d8569bf1b89f25d13a842f051f1ffb0dbc7c988edfc`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **古典型に見える一次変形の平坦性監査。** `cor:qa-avatar-incidence-classical-tor` で、古典fiberの階数一表現の相対Torを行列式idealの剰余体へのtensorから直接計算した。双対数上で一次切断が非零なら、特殊fiber上のすべての点でTorが非零になる。切断の零点だけでなく、曲面全体で平坦性が破れることを確認した。
 
-**古典点のTor監査を含む409頁保存版 efe5739。** 二つの `git archive efe5739` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440869 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `e0bf83efddf39b73e0e9ed81daa7a7bee8f590d0f92dd80741f9f25e3d9b4492`、SyncTeX `b04a022151ff39eca7b2cf9e12e0bb1a9acd3d2abeebf509a4ebe8ec443f845f`、抽出テキスト `f197151c2716db8be7fa0a64d95f836ec46ea131b4e98b71028557c6198cc133`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **古典点の高次冪零変形の平坦性監査。** `cor:qa-avatar-incidence-classical-tor` に、局所Artin基底での最初の非零次数の計算を追加した。行列式idealの特殊fiberはその先頭切断が張る逆線束に全射するため、平坦性は特殊fiberの全点で破れる。一変数の切断多項式環では、随伴次数ごとの乗法単射性から相対Torそのものが逆線束となる。
 
-**高次冪零変形の平坦性監査を含む409頁保存版 dfedbdf。** 二つの `git archive dfedbdf` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795441103 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b342ea59f303835e59f1cb226393ea6360a2c1ecc19aa5f6610129070ffe9930`、SyncTeX `81f2c5dee64618364af4d1cb68eb7ba7b279bd96a17a604f6663aa11694a26f0`、抽出テキスト `5050f067748d5769ec41b817cec9c68a24e0b92ccc3b606b3667920fda01ccb6`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **局所Artin基底における古典点のTorの同定。** 行列式イデアルは切断の値域の逆線束の商であり、特殊fiberでのその全射と先頭次数への射の合成は先頭切断による単射である。従って一変数に限らず、一般の局所Artin基底で相対Torそのものが逆線束になる。
 
-**局所Artin基底のTor直線を含む409頁保存版 403922f。** 二つの `git archive 403922f` 展開で `SOURCE_DATE_EPOCH=1795441335 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `42ff89c0be4f1bbec741a537f57cb1cf389df6967c1f29afb37a0585ed8b3951`、SyncTeX `717b42eda7ae11951334c29905dcbdf03cb26155fa4a741e9baa4da2dec5d9b9`、抽出テキスト `531421b91fa9cccdeda6a67bb837d51288a5a5cb030105c5e1703f3f7702edea`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一mass退化排除の稠密性の独立監査。** `thm:qa-avatar-one-mass-forces-short-rank` の横断族で、階数一・一および階数一・二の場合について九列の小行列式を整数で再計算し、原稿に列番号と値を記した。この小行列式から形式逆写像で像の稠密性を示し、有理関数体上の関係行列の階数上界が全係数へ移る根拠を明示した。
 
-**一mass退化排除の監査を含む409頁保存版 e78bc27。** 二つの `git archive e78bc27` 展開で `SOURCE_DATE_EPOCH=1795441585 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `136682d8ab3698fbef8b6e43869804928da16882be2834c7d6d85ed95dc70bc0`、SyncTeX `ac2f27cfab159b41f2f7ccd47273a7f52ffab05186efb3515302450d1f780b46`、抽出テキスト `163165e3d7e5fcf83edb657a964e332e29c633e116e22f78603e2f29fad62a7e`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **両mass零の四退化配置の四次係数の独立監査。** `thm:qa-avatar-zero-mass-forces-short-rank` で用いる四規格形について、短テンソルと反対の二段道の十六の巡回積を別に作った。二つの余核代表を加えた整数行列の行列式は順に負一・負一・一・負一であり、残る列の四組の依存関係も本文に記した。各規格形の二変数が純四次係数の商全体を走ることを確認した。
 
-**両mass零の退化監査を含む410頁保存版 bb00c34。** 二つの `git archive bb00c34` 展開で `SOURCE_DATE_EPOCH=1795441855 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全410頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `f36ecf7de1396f36538e5e94113aa00149e6b7d26ef9b6a11650352920c1a6d9`、SyncTeX `2d1ecd6121f20f49e16a19512b2c94d5f71c9f52483e1bd84a6d882b054fb285`、抽出テキスト `14247ef6052903fb43f4e948b92e1bd8eb0e8a81bf035d20217ac0ca035b04ce`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **一退化位相の二つの余核基底の独立監査。** `prop:qa-avatar-one-degenerate-quartic-normal` の語の連結成分による証明を、十六の巡回積の整数行列で別に照合した。前段の四配置と同じ列番号を使う。短テンソルの最初の行列が E11 の場合は列9（=列1+列4）と列16（=列5+列8−列13）を除き、xyxy・yxyxを最後に足すと行列式は −1。E12 の場合は列10（=列1+列4）と列16（同じ関係）を除き、yxyx・yyyxを足すと行列式は 1。従ってどちらの二語も全係数を走る。さらに `python3 computations/audit_avatar_rank_independent.py` で、独立に列挙した169本の重み六の道に対し、両規格形の商次元17を再確認した。今回の更新は監査ノートのみであり、組版の対象は直前と同じ `bb00c34` のTeX・文献ソースである。
 
 **閉層と補開からのNoether性の独立監査。** `lem:qa-avatar-noetherian-open-closed` では、I進随伴次数に必要なのは係数環の随伴次数との積からの全射であり、成分平坦性による同型までは不要だった。随伴次数の各標準射影を中心多項式を加えた閉層の標準射影の商として扱えば、残りの有限生成と端点ごとのKrull共通部分の議論は成分有限性だけで行える。本文の仮定をこの形に修正した。これは他箇所のAS族の平坦性を省略するものではない。
 
-**Noether性の貼合せ監査を含む410頁保存版 3881017。** 二つの `git archive 3881017` 展開で `SOURCE_DATE_EPOCH=1795442233 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全410頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `97553576b2b1841e0bdde2fca2238d75bb4628ed613dfefbeb565d0e7c2ff7a1`、SyncTeX `ebc5162b473c0265e42954191531d44fa1f3d7bd19a8647bc3daf8240c275598`、抽出テキスト `541b61c1163183c42e814966933f227bf7f0aea5f10fe0478772e96d37d5dddf`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **全massの零次集中から全次数基底変更への独立照合。** `thm:qa-avatar-all-mass-fiberwise-flat` の古典可逆開で用いる四項窓の指数は (0,0), (1,0), (1,1), (2,1) である。反向き六差は (−1,0), (−1,−1), (−2,−1), (0,−1), (−1,−1), (−1,0)。それぞれ片方が −1 なのでKünnethで全コホモロジーが消え、正向きは両次数非負で高次が消える。n≥1 では全ての差に (2n,2n) を足すと両次数非負である。Keller Proposition 4.2との比較は、ここでは準自由模型と有限窓で四頂点がすべて対応し、擬充満忠実性から各Hom複体の準同型になることを `cor:qa-avatar-preprojective-formal` の証明と一次資料で確認した。Morita同値だけから零次集中を結論してはいない。固定重み・端点の自由複体の有限性、体拡大の忠実平坦性、Stacks Tag 0BCCから、各基底点で零次の有限自由模型へ移せる。各成分ごとの議論なので全重みに共通する有限個の開を必要としない。正次数の積と基底変更は元のdg積と自然な零次商から従い、任意の非平坦基底変更も許される。今回は監査記録の更新であり、TeXと文献ソースの組版対象は `3881017` と同じである。
 
@@ -2761,8 +2703,6 @@ latexmk
 
 **固定Jacobian上の指定負巡回類による全raw表示の正規化。** `cor:qa-jacobian-cy-normalized-presentations` では、負巡回直線の枠を一つ指定し、全表示をその枠を与える表示とpotentialの単元倍に一意に分けた。cotangent比較のCasimir像を枠として取れる場合、一般raw表示が同じ指定類を与える条件は有限比較単元が一であることに尽きる。これはraw右同値がcotangent表示から来ることを仮定しない。
 
-**負巡回正規化を含む410頁保存版 f2914b5。** 二つの `git archive f2914b5` 展開で `SOURCE_DATE_EPOCH=1795443872 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全410頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `89fe597fe0304205c778a55023545c0fe4765bd1325382794dbc66f637a93983`、SyncTeX `6fb2646b1bf3f8d6907a37f30ba6b237e0c9968ed4a4dfc52511dccb404a528a`、抽出テキスト `4ad5e14001d98e94fed16f679c96c7a7453d24540f37d3e0104652024678f99e`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
-
 
 **S5の標準頂点の全位相と相対fiberの独立照合。** 第一mutation窓を基準に実際の対象を並べると、位相 $0,1,2,3$ の射は順に $r\upsilon^{-1}, r, r\upsilon, \iota_M r$ となる。これは奇数位相の二窓が $E_0,E_3$、その前後のcubic窓が $H_0,H_2$ であることから読む。偶数版はこの表を循環させる。実際、共通potentialで奇数対は $(x,y)$、偶数対は $(u,v)$ で、添字を一つ進めると両対とそのmassが交換される。偶数版の局所窓と奇数版の局所窓は、両massが可逆なら同じ周期Jacobianから切り出し、頂点の対応をこの添字移動で取る。消去では任意順序で二つの線形方程式対を解くが、二対の式は異なる変数を消去し、残るquarticへの補正は二つの和である。従って共通八矢で有限窓とその合成は一致し、三重重なりの比較は経路の積の結合律に帰着する。
 
@@ -2771,8 +2711,6 @@ $h$ のcubic rulingを選んだ後の有限窓の線形liftは、$r\upsilon$ に
 **S1の四周期をまたぐmutationの監査。** `562ee7f` で評価写像自体と、その全射によって単射となる前合成を区別し、異なる周期の評価核間の Ext 消滅を明記した。逆の余評価を (A_q\to B_q\to M_q) と書くと、(A_p\to M_q) は元のhelixでの Ext¹((A_p,A_q)) の消滅により (B_q) へ持ち上がる。(p<q) ではその写像 (A_p\to B_q) が、(A_p) から出る最初の二本を通る道の分解によって (B_p) を経由する。(p=q) では余評価の係数束の普遍性が同じ因数分解を与え、(p>q) では有向性で Hom((A_p,M_q)) が零となる。これは任意の二周期間で、余核間の Ext¹ を消すのに必要な全射を与える。逆操作の四項の比較では、最小十矢の追加生成元が二段積の余核を生成することを `lem:qa-as10-nonzero-p` により確認し、cubic開ではその余核が零となる。相対構成は各添字対の有限perfect複体にこのfiber計算を適用するため、最小矢の余核の平坦性を用いない。回転は同じ実際の四項の添字移動であり、mutationの単位・余単位は評価三角から自然に誘導されるので、全Homと合成を保つ。
 
 **S2の負断面を含む相対逆構成の監査。** `thm:qa-avatar-deep-relative-point-reconstruction` の線束表現を、最初と最後の鉛筆、および一番から三番への全道の評価全射に絞って再計算した。末端の商 (m) の一成分が単元なら第二短関係は中央の鉛筆を (wm) に強制する。長関係は (um=\ell M)、前半の短関係は (w(\ell\wedge m)=0)。(w) が単元の開では \(\ell\) は \(m\) に比例し、\(\det M\) が単元の開では \(\ell\) は \(mM^{-1}\) に比例するので、いずれも消去後のidealは一つの式 \(w(m\wedge mM)\) となる。後者では \(\det M\) が単元なので外積にそれを掛けてもidealは不変である。二開は \(w=0\) 上で \(xG\) が可逆なため全体を覆う。冪零基底でもこの計算は商線束の局所枠と単元のみを使う。評価から作った \(D\) は同じ \(2h\) の相対Cartier因子なので、閉包含で得る二つの切断の比は基底の関数であり、全幾何fiberで非零だから単元である。商線束の比が元の標識を回復し、普遍評価は有限窓全体の積と同型の合成に自然である。両massが構造層上零の場合の照合であり、冪零massを許す平坦化は相対incidenceの別判定を経由する。
-
-**全周期mutationの補足を含む410頁保存版 562ee7f。** 二つのクリーンな `git archive 562ee7f` 展開を、`SOURCE_DATE_EPOCH=1795444279 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーで組版した。410頁の全描画、抽出テキスト、正規化PDF、正規化SyncTeXが一致した。各SHA-256は順に、抽出テキスト `319525a6319c85733bc1111cef0851adc23d069eeb8577a7972c68b46e57172f`、正規化PDF `333054d9eb0af0355a9041d7c7812276201cc11643f2be1a5e3da0e590f8711a`、正規化SyncTeX `f4bfc6183deef1ab81437d256cc33cf8b3e1871a4120384a14b2f08107078a82`。両SyncTeXのgzip検査、全論文ソース検査およびCの数学検算は通過した。最終ログに未解決参照とOverfullはなく、旧式の `\rm` の組版警告一件が残る。
 
 
 **S4の負巡回類による正規化の合成の照合。** 固定Jacobianへの指定同型を含む群oidでは、raw右同値がループ類の枠を保存するので、枠比は対象の基底上の単元へ一意に降下する。二対象を同じ枠比で割る操作は巡回同値を保ち、元の多項式右同値を変えない。微分の巡回偏微分項の変化は逆矢の単元倍、交換子項の変化は頂点ループの同じ単元倍で吸収でき、負巡回類を固定Jacobianに移すとpotentialと同じ向きの単元倍になる。このため正規化と単元倍は全Isomに自然な互いに逆の関手である。有限窓のCasimirを基準にする場合は、cotangent比較で基準枠を移し、同じ周期Jacobian上の任意のraw表示は内在的直線上でその枠と比較する。ここで使用する整合性は指定類とその枠比に関するものであり、一般raw射の全体に対するcotangentのMorita zigzagは適用範囲外である。
