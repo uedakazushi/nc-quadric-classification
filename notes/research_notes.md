@@ -408,6 +408,8 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **論文C a25941c のクリーンビルド再現性。** 同じ Git archive を別々の空ディレクトリに展開し、同じ TeX・日本語フォント環境と `SOURCE_DATE_EPOCH=1795419784 FORCE_SOURCE_DATE=1 TZ=UTC` でビルド。全356頁の96dpi描画と `pdftotext -layout` の出力が一致した。PDFトレーラの `/ID` を正規化した SHA-256 は `790b05954eeeb61800b2c4391332f5a847a0f95383f676028a534a32075f0dff`。SyncTeXは伸長して絶対作業パスを統一すると一致し、SHA-256 は `633d1d629341aaeabfae01f416ef5907fb307cdd753ce547b70e6bb866622b56`。原稿内の参照検査、論文間参照検査とCの既存計算suiteを再実行しPASSを確認した。
 
+**両mass零境界の幾何点の復元。** 負断面が一重なら、短関係と長関係から相対鉛筆の射影作用を取り、固定因子とPicard貼合せを回復する。対角lift変更を法とした三次補正は長さ二の固定因子上の切断で、残余因子の方程式 $Az+Bw$ に対し $B$ の剰余を決める。負断面が二重なら作用は恒等、三次補正は垂直四次因子を決め、加法的一次元のPicardの非零元は曲面自己同型の単一軌道となる。これで境界全体の幾何点の同型類を有限窓から復元した。相対同型層全体と境界のAS正則性には別の検証を要する。[境界比較](../papers/quiver-avatar/avatar_charts.tex)。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式
