@@ -2518,3 +2518,5 @@ latexmk
 **奇数上端商を含む383頁保存版 02f50be。** 二つの `git archive 02f50be` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795428916 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全383頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `b03d27b0c6de30617882b6a5ad8dd6df9b43bbf932d582e2070b09a57499b549`、SyncTeX `f11c424022a667d0b152743c83c7cdcc3013f7a7d9cf81883280e71a9072ea10`、抽出テキスト `3e53b5a8bf8d5563096cac3c80c13a58735c3ce212d13c2a8ae90cc3a86929c8`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・重み六の検算はPASS。
 
 **全偶数重みの上端二段。** `prop:qa-avatar-even-top-diagonals` は二つの重み一の矢の位置を添字に取り、上端商の有限表示を得る。外側へ移せる偶奇では `cor:qa-avatar-even-top-outward` により長関係の商を両端に集約でき、短関係の移送像がすべて等しい。結果として体上の次元はその共通テンソルの零・非零に応じて五・四となる。この条件は全AS解消の完全性とは別に検査する。
+
+**偶数上端商を含む384頁保存版 edc9daa。** 移送式の括弧と転置記号のTeX記法を修正した後、二つの `git archive edc9daa` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795429218 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全384頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `a07ce1dbaa8699e8be714635ca33e953b22a3f226758fa76a74430fd6efd8e93`、SyncTeX `022593eddd79cf422d7de5cd0d7a27d964993dba3e1b620c7c5f01d124bf9c2a`、抽出テキスト `9bb8b35f109b80c5d90f569514eb03a776af38e8491b865d8edbff19fddf19d1`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
