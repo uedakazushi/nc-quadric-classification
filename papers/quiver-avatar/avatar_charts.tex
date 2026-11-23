@@ -4633,6 +4633,9 @@ $Z\subset Y$ のidealを $\mathcal I$ とする。
 行列式切断の一次項 $\sigma_1$ が非零なら、このTorは
 特殊fiber上の反標準切断の値域の逆線束に同型であり、
 特殊fiber上のすべての点で平坦性が破れる。
+より一般に、局所Artin基底の古典点上で、
+行列式切断がある有限次数で初めて非零なら、
+特殊fiberの全点で同じ平坦性障害がある。
 \end{corollary}
 \begin{proof}
 $Y$ は相対射影束の反復なので基底上平坦である。
@@ -4654,6 +4657,34 @@ $\epsilon\mathcal I=0$ なので上のTorもこの線束となる。
 非零な局所式による乗法が単射であることと両立する。
 従ってその点を含め、全点でTorは非零である。
 逆に $\sigma_1=0$ なら行列式切断が零であり $Z=Y$ は平坦である。
+一般の局所Artin基底 $(R,\mathfrak m)$ では、
+行列式の最初の非零項を次数 $d\ge1$ とする。
+系~\ref{cor:qa-avatar-incidence-coefficient-bundle}で得た
+係数束の基底変更により、この項は
+$(\mathfrak m^d/\mathfrak m^{d+1})\otimes_k\mathcal L_s$
+の非零切断である。
+従って $\mathcal I\subset\mathfrak m^d\OO_Y$ の
+最初の次数への射は
+\[
+ \mathcal I/\mathfrak m\mathcal I\longrightarrow
+ (\mathfrak m^d/\mathfrak m^{d+1})\otimes_k\OO_{Y_s}
+\]
+を与える。その像は上記の切断による乗法の像である。
+成分の少なくとも一つは整な $Y_s$ 上の非零切断なので、
+この像は $\mathcal L_s^{-1}$ と同型である。
+従って $\mathcal I\otimes k$ はこの線束に全射し、
+Torは全点で非零となる。
+
+特に $R=k[\epsilon]/(\epsilon^{n+1})$ なら、
+切断を $\epsilon^d\widetilde\sigma$ と書き、
+$\widetilde\sigma$ を $R/(\epsilon^{n+1-d})$ 上で取る。
+この上の乗法は $\epsilon$ 進随伴次数の各項で
+特殊fiberの非零切断による乗法となるので単射である。
+従って $\mathcal I$ は $\mathcal L^{-1}$ の
+$R/(\epsilon^{n+1-d})$ への制限と同型であり、
+Torはこの場合も $\mathcal L_s^{-1}$ に等しい。
+従って最初の非零次数を初めて含む切断基底
+$k[\epsilon]/(\epsilon^{d+1})$ で既に平坦性が破れる。
 \end{proof}
 
 \begin{corollary}[指定AS十二矢族の左右Noether性]

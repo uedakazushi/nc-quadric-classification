@@ -2696,3 +2696,5 @@ latexmk
 **古典型に見える一次変形の平坦性監査。** `cor:qa-avatar-incidence-classical-tor` で、古典fiberの階数一表現の相対Torを行列式idealの剰余体へのtensorから直接計算した。双対数上で一次切断が非零なら、特殊fiber上のすべての点でTorが非零になる。切断の零点だけでなく、曲面全体で平坦性が破れることを確認した。
 
 **古典点のTor監査を含む409頁保存版 efe5739。** 二つの `git archive efe5739` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440869 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `e0bf83efddf39b73e0e9ed81daa7a7bee8f590d0f92dd80741f9f25e3d9b4492`、SyncTeX `b04a022151ff39eca7b2cf9e12e0bb1a9acd3d2abeebf509a4ebe8ec443f845f`、抽出テキスト `f197151c2716db8be7fa0a64d95f836ec46ea131b4e98b71028557c6198cc133`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**古典点の高次冪零変形の平坦性監査。** `cor:qa-avatar-incidence-classical-tor` に、局所Artin基底での最初の非零次数の計算を追加した。行列式idealの特殊fiberはその先頭切断が張る逆線束に全射するため、平坦性は特殊fiberの全点で破れる。一変数の切断多項式環では、随伴次数ごとの乗法単射性から相対Torそのものが逆線束となる。
