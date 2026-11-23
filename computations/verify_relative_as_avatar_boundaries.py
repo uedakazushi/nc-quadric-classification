@@ -85,8 +85,27 @@ def check_double_mass_generator_types():
     print("PASS: simultaneous vanishing of both masses leaves generators of both parities")
 
 
+def check_relation_dual_transport():
+    """Check the shear in the inverse transpose over the dual numbers."""
+    scale = 1 + epsilon
+    long_frame = Matrix([[1, epsilon], [1, 1]])
+    shear = Matrix([[2 + epsilon, -1]])
+    relation_map = Matrix([[scale, *shear], [0, 1, epsilon], [0, 1, 1]])
+    inverse_scale = 1 - epsilon
+    long_inverse = dual_numbers(long_frame.adjugate() * inverse_scale)
+    return_map = Matrix.vstack(
+        Matrix([[inverse_scale, 0, 0]]),
+        (-inverse_scale * (shear * long_inverse).T).row_join(long_inverse.T),
+    )
+    assert dual_numbers(return_map * relation_map.T) == eye(3)
+    assert dual_numbers(relation_map.T * return_map) == eye(3)
+    assert dual_numbers(return_map * (relation_map.T * relation_map.T) * return_map) == eye(3)
+    print("PASS: nilpotent relation-frame shear and dual return-arrow transport")
+
+
 if __name__ == "__main__":
     check_oriented_gram()
     check_nonflat_point_incidence()
     check_double_mass_generator_types()
-    print("Scope: three finite boundary checks, separate from the relative stack proofs.")
+    check_relation_dual_transport()
+    print("Scope: four finite checks, separate from the relative stack proofs.")
