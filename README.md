@@ -46,7 +46,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 
 ## 論文C：全相対AS/avatar/QP stack分類（目標S1–S6・v4.68）
 
-**全指定相対スタックの比較。** square・rotated・cubic/AS10の相対ASは有限square窓と整数添字の双対線束により分類し、全Isomと相対heartを回収する。幾何avatarは向き付き二次式で表示し、曲線開では元の標識を回収した。raw重み付きQPの指定AS適合開、表示gerbe、周期比較像、全標準頂点を構造対象とするH2の定義域とファイバーを記述した。周期標識のない全ASには有限型Artin表示の障害がある。S6の独立数学監査と文献照合の範囲は[研究ノート](notes/research_notes.md)・[文献ノート](notes/literature.md)を参照。[全相対heart・幾何avatar](papers/quiver-avatar/relative_square_foundation_stack.tex)・[QP比較](papers/quiver-avatar/qp_presentations.tex)。
+**全指定相対スタックの比較。** square・rotated・cubic/AS10の相対ASは有限square窓と整数添字の双対線束により分類し、全Isomと相対heartを回収する。幾何avatarは向き付き二次式で表示し、曲線開では元の標識を回収した。raw重み付きQPの指定AS適合開、表示gerbe、周期比較像、全標準頂点を構造対象とするH2の定義域とファイバーを記述した。このファイバーは適合するruling上の線形窓と有限mutation窓上の表示gerbeからなり、固定周期付きJacobianとの指定同型を足すと別のファイバーになる。周期標識のない全ASには有限型Artin表示の障害がある。S6の独立数学監査と文献照合の範囲は[研究ノート](notes/research_notes.md)・[文献ノート](notes/literature.md)を参照。[全相対heart・幾何avatar](papers/quiver-avatar/relative_square_foundation_stack.tex)・[QP比較](papers/quiver-avatar/qp_presentations.tex)。
 
 **二積可逆chartとQP表示のファイバー。** 二つの標識付きSegre曲面が相対幾何表示を与え、その交わりが点表示を回収する。古典型と曲線型の平坦化層を決定し、双対数上の平坦AS族で点表示が非平坦となる例を得た。周期付きASスタックの付加データは四線束と有限窓の同型で尽くされ、固定した周期付きAS族へのQP表示は重み一から三の有限方程式と階数条件で分類する。 表示を一つ固定すれば、全矢像を局所的に揃え、同じ関係idealを生成する全potentialの線形方程式と生成開を、各対の二つの独立なmass群で商にできる。 商は純四次係数を揃えた標準形と、各対の群torsorの局所直積で記述する。[Segre表示](papers/quiver-avatar/relative_square_foundation_stack.tex)・[表示のファイバー](papers/quiver-avatar/qp_presentations.tex)。
 

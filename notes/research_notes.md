@@ -2674,3 +2674,5 @@ latexmk
 **負巡回類の有限比較を含む406頁保存版 614f90a。** 二つの `git archive 614f90a` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439411 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全406頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `247f258f7e1fce47b16eaca7a239212447d48fcbee55638f4265a9dd56d5d19c`、SyncTeX `207da663d4bd3e7b0a3adbee9049fc7319291fb84a95f9fec5cae1b6fb12ee82`、抽出テキスト `a8e48a456be503cea4e830984fac3ea8f07fc21b1dfb1afa9bfb2dcb9318dfd0`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **標準頂点のH2ファイバーの独立照合と訂正。** `cor:qa-avatar-all-presented-pointing-fiber` では、以前の記述が有限mutation窓との指定同型に加えて固定周期付きJacobianとの指定同型を取っていた。後者はH2への射のデータではない。八矢で有限窓の返り側の隣接矢束を単元倍すれば、有限窓で恒等な右同値が異なるpotentialの定数倍を結ぶ例で違いを確認した。該当ruling上の線形liftと有限窓上の表示gerbeを用いる形に本文を訂正した。
+
+**標準頂点のfiber訂正を含む406頁保存版 69f80f9。** 二つの `git archive 69f80f9` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439677 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全406頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `765266c042d84d9bc1e9747b4663258a78ace2fcb03abfce44eec91b14947175`、SyncTeX `ff871a61951276c683a3dae6b3fa56789977c756579fe7598938dc206116db16`、抽出テキスト `5f52ea3aca46d3f5f368154f0ab2d6c984eb53c6454cd1bd1913155f43542414`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
