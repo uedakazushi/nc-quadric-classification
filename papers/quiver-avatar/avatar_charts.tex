@@ -4572,6 +4572,53 @@ $A_{01}\to C$ の全射条件を課したものが
 従って全ての同型と基底変更を保ち、局所な行列表示の選択を除ける。
 \end{proof}
 
+\begin{corollary}[階数一表現の古典閉層を与える九つの係数]
+\label{cor:qa-avatar-incidence-coefficient-bundle}
+命題~\ref{prop:qa-avatar-intrinsic-incidence}の行列式表示を
+使える基底上で、古典閉層は階数九の局所自由束の
+切断の零schemeとして構成できる。
+その係数idealは枠に依存せず任意基底変更と可換である。
+曲線型の開はこの閉層の開補集合である。
+\end{corollary}
+\begin{proof}
+局所表示で $B=\PP(W)$、$F=\OO_B(1)$ とし、
+$E_0=(V\otimes F)\oplus\OO_B$ と置く。
+縮約した短関係の部分線束 $\OO_B\to E_0$ によって
+$\mathcal E$ が余核として得られる。
+この部分線束を掛ける写像で
+\[
+ 0\longrightarrow E_0\longrightarrow
+       \operatorname{Sym}^2 E_0\longrightarrow
+       \operatorname{Sym}^2\mathcal E\longrightarrow0
+\]
+は完全である。実際、局所分裂で対称二次式のうち
+この部分線束を因子に持つものを取り出せばよい。
+両端の構成は任意基底変更を保つ。
+
+$p:B\to S$ による直像を取る。
+$E_0$ と $\operatorname{Sym}^2 E_0$ は
+$\OO_B(d)$ ($0\le d\le2$) を係数束で捩ったものの和であり、
+高次直像は零で、直像は基底変更を保つ。
+基底変更後も写像は単射であるため、直像の階数は
+それぞれ $5$ と $14$ のままで、余核は階数九の束である。
+すなわち可逆な五次minorを取れば分裂する。
+従って $p_*\operatorname{Sym}^2\mathcal E$ は
+任意基底変更を保つ階数九の束となる。
+
+$Y=\PP_B(\mathcal E)$ の行列式切断の値域は
+$H^2\otimes\det U\otimes(\det K)^{-1}$ である。
+実際、行列の定義域と値域に共通する $H^{-1}F$ が相殺され、
+二つの長関係の係数束が $H^{-2}\det K$ を与える。
+従って射影束公式でこの切断を基底へ押し出すと、
+上の階数九の束を基底の行列式線束で捩ったものの切断になる。
+直像の基底変更により、その零schemeへの因子化は
+どの引戻しでも行列式切断が構造層上零となることと同値である。
+命題~\ref{prop:qa-avatar-intrinsic-incidence}のFitting idealは
+行列式切断の生成するidealなので、この判定は
+枠の変更に依存せず、異なる行列表示の重なりでも一致する。
+その開補集合は行列式が幾何fiberで非零となる曲線型の開である。
+\end{proof}
+
 \begin{corollary}[指定AS十二矢族の左右Noether性]
 \label{cor:qa-avatar-presented-as-relative-noetherian}
 Noetherianなアフィン基底上で、全幾何fiberが指定AS最小解消を
