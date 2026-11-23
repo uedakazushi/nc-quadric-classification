@@ -12,14 +12,14 @@ WEIGHTS = {"x": 1, "y": 1, "z": 2}
 
 
 @cache
-def paths(weight):
+def paths(weight, start=0, diagonal_parities=(0, 1)):
     if weight == 0:
         return ("",)
     return tuple(
         arrow + suffix
         for arrow, degree in WEIGHTS.items()
-        if degree <= weight
-        for suffix in paths(weight - degree)
+        if degree <= weight and (arrow != "z" or start % 2 in diagonal_parities)
+        for suffix in paths(weight - degree, (start + degree) % 4, diagonal_parities)
     )
 
 
@@ -36,15 +36,19 @@ def cyclic_derivatives(terms):
     return derivatives
 
 
-def quotient_dimension(derivatives, start, weight, min_diagonals=0):
-    words = tuple(word for word in paths(weight) if word.count("z") >= min_diagonals)
+def quotient_dimension(derivatives, start, weight, min_diagonals=0, diagonal_parities=(0, 1)):
+    words = tuple(
+        word for word in paths(weight, start, diagonal_parities) if word.count("z") >= min_diagonals
+    )
     columns = {word: index for index, word in enumerate(words)}
     rows = []
     for (relation_start, degree, _arrow), relation in derivatives.items():
         for offset in range(weight - degree + 1):
             if (start + offset) % 4 != relation_start:
                 continue
-            for left, right in product(paths(offset), paths(weight - degree - offset)):
+            prefixes = paths(offset, start, diagonal_parities)
+            suffixes = paths(weight - degree - offset, (relation_start + degree) % 4, diagonal_parities)
+            for left, right in product(prefixes, suffixes):
                 row = [0] * len(words)
                 for middle, coefficient in relation.items():
                     path = left + middle + right
@@ -186,6 +190,26 @@ def main():
         derivatives = cyclic_derivatives(terms)
         assert quotient_dimension(derivatives, start, weight) == expected_dimension
     print("PASS: all four generic multiple-degeneracy strata fail the required Hilbert dimensions")
+
+    for opposite, weight_eight in ((("xx", "yy"), 28), (("xx",), 36)):
+        shorts = (("xx",), (), opposite, ())
+        quartics = quartic_representatives(shorts)
+        assert quartics == ("xyxy", "xyyx", "xyyy", "yxxy", "yxyx", "yxyy", "yyxy", "yyyx", "yyyy")
+        terms = [(0, "xxz", 1), *((2, short + "z", 1) for short in opposite)]
+        terms.extend(
+            (0, word, coefficient)
+            for word, coefficient in zip(quartics, (-21, 34, -30, -6, -23, 25, 19, 22, 10))
+        )
+        derivatives = cyclic_derivatives(terms)
+        expected_dimensions = (1, 2, 4, 6, 9, 12, 16, 20)
+        for start in range(4):
+            dimensions = tuple(
+                quotient_dimension(derivatives, start, weight, diagonal_parities=(0,))
+                for weight in range(len(expected_dimensions))
+            )
+            assert dimensions == expected_dimensions
+        assert quotient_dimension(derivatives, 0, 8, diagonal_parities=(0,)) == weight_eight
+    print("PASS: one-mass degenerate samples match through weight seven and fail at weight eight")
 
 
 if __name__ == "__main__":
