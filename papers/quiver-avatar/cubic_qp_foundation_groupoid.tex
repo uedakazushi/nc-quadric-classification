@@ -3318,6 +3318,138 @@ mixed complexのMorita不変性を経た
 一般stack上の新たな高次降下定理は区別する．
 \end{proof}
 
+
+\begin{proposition}[相対巡回複体の忠実平坦 \v{C}ech 降下]
+\label{prop:qa-q12-fppf-cyclic-complex-descent}
+定理~\ref{thm:qa-q12-relative-exact-three-cy}の
+任意のfinite foundation chart $R$上の
+$B=\Pi_3(\Lambda)$を考える．
+忠実平坦な可換環準同型$R\to S$に対して
+$S^{[p]}=S^{\otimes_R(p+1)}$，
+$B^{[p]}=B\otimes_R S^{[p]}$と置く．
+相対Hochschild，cyclic，negative cyclic複体について，
+導来$R$-加群の自然な比較射
+\[
+\begin{aligned}
+ HH(B/R)&\longrightarrow
+  \operatorname{Tot}_{[p]\in\Delta}
+  HH(B^{[p]}/S^{[p]}),\\
+ HC(B/R)&\longrightarrow
+  \operatorname{Tot}_{[p]\in\Delta}
+  HC(B^{[p]}/S^{[p]}),\\
+ HC^-(B/R)&\longrightarrow
+  \operatorname{Tot}_{[p]\in\Delta}
+  HC^-(B^{[p]}/S^{[p]})
+\end{aligned}
+\tag{FD}\label{eq:qa-q12-cyclic-fppf-descent}
+\]
+はすべて同値である．
+$B\to\Lambda$のaugmentationで定める
+reduced Hochschild/cyclic/negative cyclic複体にも
+同じ結論が成り立つ．
+これらの比較はfinite foundationのstrict Isom，
+忠実平坦な被覆の合成と精密化，および
+Connes写像に自然である．
+特にこの主張は非被約$R$にも成立する．
+
+ただし本命題は，
+一般の非平坦$R\to R'$に対して
+$HC^-(B/R)\otimes_R^{\mathbf L}R'$と
+$HC^-(B\otimes_R^{\mathbf L}R'/R')$が
+同値になることを主張しない．
+\end{proposition}
+\begin{proof}
+相対対角解消とその有限双対から，
+$B$を基底$R$上cofibrantなdg模型で表せる．
+そのderived cyclic bar constructionは
+各simplicial次数で基底変更と交換するので，
+$M=HH(B/R)$のcanonicalな円周作用を保つ
+自然な同値
+\[
+ M\otimes_R^{\mathbf L}S^{[p]}
+ \simeq HH(B^{[p]}/S^{[p]})
+ \qquad\text{in }D(R)^{BS^1}
+ \tag{FB}\label{eq:qa-q12-hh-circle-flat-basechange}
+\]
+を得る．
+忠実平坦降下により，
+任意の非有界な$R$-複体$N$についても
+$N\simeq
+\operatorname{Tot}(N\otimes_R^{\mathbf L}S^{[\bullet]})$
+が成立する．これは導来加群の忠実平坦降下，
+あるいはAmitsur余単体分解の降下であり，
+円周作用を保つ図式にも適用できる．
+これでHochschildの式が従う．
+
+Hoyois \cite{HoyoisCircle2019}による
+cyclic chain complexと円周作用の比較を用いると，
+\[
+ HC(B/R)\simeq M_{hS^1},
+ \qquad HC^-(B/R)\simeq M^{hS^1}.
+\]
+homotopy orbitsはcolimitだから
+導来tensorと交換し，従ってcyclic複体も
+忠実平坦基底変更後は
+$HC(B/R)\otimes_R^{\mathbf L}S^{[p]}$
+となる．これに通常の導来忠実平坦降下を適用する．
+一方，homotopy fixed pointsはlimitなので
+\[
+\begin{aligned}
+ \operatorname{Tot}
+   \bigl((M\otimes_R^{\mathbf L}S^{[\bullet]})^{hS^1}\bigr)
+ &\simeq
+ \bigl(\operatorname{Tot}
+       (M\otimes_R^{\mathbf L}S^{[\bullet]})\bigr)^{hS^1}\\
+ &\simeq M^{hS^1}.
+\end{aligned}
+\]
+従ってnegative cyclicについても式~(FD)が成立する．
+ここでは\emph{fixed pointsと導来tensorを交換していない}．
+augmentationの分裂はこの比較の各段で自然であるため，
+そのreduced直和因子にも同じ議論を適用できる．
+cycle maps，Connes写像，Isomと被覆の合成への
+自然性はcyclic bar constructionと
+上述のlimit/colimit比較の自然性から従う．
+\end{proof}
+
+\begin{corollary}[finite foundation群oid上の巡回複体の降下]
+\label{cor:qa-q12-finite-foundation-cyclic-complex-descent}
+定理~\ref{thm:qa-two-mass-all-finite-foundation-gerbe}の
+相対finite foundation群oidでは，
+$HH$の円周作用付き複体と$HC$，
+$HC^-$，およびreduced因子が
+fppfの複体値降下データを定める．
+finite foundationのstrict Isomによる輸送は
+合成・単位についてcoherentであり，
+二massのmass/shear kernelは
+\emph{有限foundationから引き戻した複体上では}
+恒等として作用する．
+\end{corollary}
+\begin{proof}
+finite algebraのstrict同型に対してcyclic barの
+同型は合成を保存する．同じ基底上のČech方向では
+命題~\ref{prop:qa-q12-fppf-cyclic-complex-descent}
+を使えばよい．mass/shearの有限商への作用は
+恒等であるから，引き戻した複体上でも
+恒等写像になる．
+\end{proof}
+
+\begin{remark}[降下した複体とCYクラスの区別]
+\label{rem:qa-q12-cyclic-complex-versus-class-descent}
+系~\ref{cor:qa-q12-finite-foundation-cyclic-complex-descent}は
+\emph{複体そのもの}のfppf homotopy降下を解決する．
+しかし命題~\ref{prop:qa-q12-exact-cy-primitive-isom-inertia}
+の$HC_2$・$HN_3$での同型不変性だけでは，
+全Isom群oidのhomotopy fixed pointsに属す
+\emph{指定クラスのcoherentなlift}は自動的には得られない．
+不変な$\pi_0$元とhomotopy fixed pointの$\pi_0$は
+一般に一致しないためである．
+従ってcanonical Casimir cycleの鎖レベル自然性を
+三重以上の重なりまで示す問題と，
+cotangent外raw QPやruling交換でのCY class比較は
+引き続き別の未解決課題である．
+\end{remark}
+
 \begin{corollary}[幾何fiberのordinary Jacobian代数]
 \label{cor:qa-q12-h2-geometric-exact-three-cy}
 定理~\ref{thm:qa-q12-relative-exact-three-cy}
