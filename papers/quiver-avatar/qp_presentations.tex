@@ -1127,6 +1127,53 @@ potentialの四重テンソルは $\mathcal L_i$ に属する。
 枠を固定する条件は $a=1$ である。
 \end{proof}
 
+\begin{corollary}[固定周期代数上でのpotentialの単元倍]
+\label{cor:qa-raw-periodic-potential-scalars}
+指定AS族を与える八・十・十二矢の表示 $(Q,W)$ を固定し、
+各単元 $u$ に対して同じJacobian同型を備えた $(Q,uW)$ を取る。
+任意基底変更後、二つの単元 $u,v$ に対応する表示が
+固定周期代数上で右同値であることと $u=v$ は同値である。
+このスカラー部分が張る充満部分スタックは
+$\Gm$ と系~\ref{cor:qa-raw-periodic-jacobian-kernel}の核の
+分類スタックとの直積である。
+\end{corollary}
+\begin{proof}
+右同値の条件を $g(W)=aW$、$a=v/u$ と書く。
+まず局所的にmassが単元である対を平方完成して除く。
+この操作は $W$ と $aW$ に同じ座標変更で適用できる。
+消去対の二次係数が $1$ と $a$ の間の比較は一方の矢の
+単元倍で実現され、Jacobian上で恒等である。
+従って消去対が単元のときは残るpotentialの比較に帰着する。
+残る対のmassは考察する幾何点で零である。
+
+重み一の矢像は恒等であり、重み二の矢像は
+系~\ref{cor:qa-raw-periodic-jacobian-kernel}と同じ
+$t_d,s_d$ で書ける。$c_d=t_d+s_d+\lambda_dt_ds_d$ と置くと、
+純四次成分 $H$ の方程式は
+\[
+ (a-1)H=\sum_d c_d[p_dq_d]_{\mathrm{cyc}}.
+\]
+少なくとも一対が残る場合、右辺のテンソルは幾何fiberで
+独立なので、局所的にこれらの列の左逆を選べる。
+$H$ をこの左逆で評価した係数を $h_d$ とすれば
+$c_d=(a-1)h_d$ である。
+一方、対角矢を一つ含む項の係数は
+$(1+\lambda_d c_d)p_d$ と $(1+\lambda_d c_d)q_d$ になる。
+$p_d,q_d$ は幾何fiberで非退化であり、局所的に原始的なので、
+$a-1=\lambda_d c_d$ を得る。
+従って $(a-1)(1-\lambda_d h_d)=0$ である。
+$\lambda_d$ は考察する点の剰余体で零だから、
+$1-\lambda_d h_d$ はその点の近傍で単元であり、$a=1$ となる。
+この議論は冪零な $a-1$ にも適用できる。
+
+対が残らない場合は、八矢の重なり線束の枠の比較
+（系~\ref{cor:qa-eight-potential-line-fiber}）から $a=1$ を得る。
+逆に $a=1$ なら恒等右同値があり、自己同型群は
+元の $W$ に対するものと同じである。
+単元倍はその群の作用を変えないので、スカラーと
+この群のtorsorを取る関手が充満部分スタックを与える。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。

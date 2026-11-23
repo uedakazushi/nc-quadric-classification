@@ -2616,3 +2616,5 @@ latexmk
 **八矢の固定周期代数上の表示fiber。** `cor:qa-eight-potential-line-fiber` は八矢表示を局所に持つ周期付きcubic AS代数に対し、二つの三次関係の重なり線束の枠が表示fiber全体を表すことを証明した。重み一の矢像は指定Jacobian同型で決まるため核は自明だが、potentialの単元倍という選択が残る。一つの矢束のスカラー自己同型はJacobianを保つ一方、固定potentialへの持ち上げは単位の場合だけである。可縮対を追加した同じ開では、この枠torsorの上に既出のスカラー慣性を加える。
 
 **八矢の表示fiberを含む399頁保存版 80329f1。** 二つの `git archive 80329f1` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795435925 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全399頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `2b937837a708aaa94796fc3be56ae8b5f01cd95508c43e3217672fd73b4a95d5`、SyncTeX `2a8ecc64dd27c266513c5c9bd4c6e659efaafabd8139aac16789a7b7fc18648f`、抽出テキスト `d7d5f7d8e0a1babfcb9c702ac8e365bad85d29ac575eb3787eaddcc27647c4ae`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**固定Jacobian上での単元倍の独立監査。** `cor:qa-raw-periodic-potential-scalars` は、同じpotentialの異なる単元倍が八・十・十二矢のどの固定周期代数fiberでも異なることを証明した。可逆massの対を除き、純四次式の分裂左逆から変更係数を単元差の倍数にする。混合項はその差をさらに非単元massの倍数にするため、局所単元を掛けて零になる。幾何点だけでなく冪零な単元差も検出し、固定potentialの慣性群をもつスカラー部分の充満比較を得た。
