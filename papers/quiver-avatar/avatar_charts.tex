@@ -3095,6 +3095,53 @@ $A$ は非零の冪零係数を持つ二次式となる。
 短関係と長関係のグラフ表示によって局所自由である。
 \end{proof}
 
+\begin{corollary}[古典閉層の剛体化された自己同型群]
+\label{cor:qa-avatar-classical-scroll-group}
+鉛筆と対角生成商に枠を取った分裂古典窓 $G=1,f=0$ において、頂点スカラーを
+剛体化した自己同型群は
+\[
+ \mathbb V(\operatorname{Sym}^2V\otimes(\det V)^{-1})
+ \rtimes(\mathbb G_m\times\operatorname{PGL}(V))
+\]
+である。作用は $\operatorname{PGL}(V)$ の二次表現
+$\operatorname{Sym}^2(g)/\det g$ と、
+$\mathbb G_m$ の逆スカラー作用の積である。
+この群は標識付き分裂射影束の自己同型群であり、
+非被約基底を含む任意基底変更と整合する。
+\end{corollary}
+\begin{proof}
+命題~\ref{prop:qa-avatar-deep-all-isoms}で
+$G=G'=1$、$f=f'=0$ とする。
+頂点スカラーで三つの隣接写像を共通の $g$ に揃える。
+第一式は $b=a$ となり、第二式は $q=p$ となる。
+後者は $(gv)(q-p)=0$ が全 $v$ で成り立ち、
+基底変換後の一つの変数による乗法が単射であることによる。
+従って正規化後の写像は $g$ と
+$x\mapsto a x+p$（$u$ にも同じ変更）で尽くされる。
+正規化を保つ残る頂点スカラーは、隣接矢に同じ $t$、
+対角矢に $t^2$ を掛ける。従って
+$(g,a,p)\sim(tg,t^2a,t^2p)$ が残る同値である。
+
+写像を通常の順序で合成すると、三つ組の積は
+\[
+ (g,a,p)(g',a',p')
+    =(gg',aa',a'p+\operatorname{Sym}^2(g)p')
+\]
+である。$[g]$、$c=a/\det g$、$r=p/a$ を用いると、
+$r$ は枠に依存しない二次ベクトルとして
+$r+ c^{-1}(\operatorname{Sym}^2(g)/\det g)r'$ に移る。
+この式では二次ベクトルを固定した鉛筆の枠と、それが与える行列式の枠で表示した。
+行列式による補正はスカラー $t$ を消すため、射影変換は
+局所行列のliftに依存しない。
+従って式はfppf商として上の半直積を与える。
+
+射影束側では $\operatorname{Hom}(\OO,\OO(2))$ が二次変更を、
+二つの直和成分のスカラーの比が $\mathbb G_m$ を与える。
+$\OO(2)$ の行列式で補正した線形化は ruling の
+$\operatorname{PGL}(V)$ に降下し、同じ合成則になる。
+この照合は前系の普遍表現を通じた自己同型の比較と一致する。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
