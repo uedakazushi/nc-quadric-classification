@@ -3087,6 +3087,55 @@ $\operatorname{Hom}(E_i,\pi M)=M_i$ を得る。
 この構成は選んだ局所枠上で行い、消滅はすべての引戻しで成立する。
 \end{proof}
 
+\begin{proposition}[可逆mass開での反Serre豊富性の直接判定]
+\label{prop:qa-avatar-presented-pointing-ampleness}
+指定十二矢族の相対tailsで、頂点 $i$ の反Serre軌道を取る。
+偶数 $i$ では $\lambda$、奇数 $i$ では $\mu$ が
+可逆な開の上で、この軌道は相対AZの生成条件と
+Homの最終全射条件を満たす。
+証明は関係式と四連続窓のExt計算から得られ、
+可逆mass開の任意基底変更に適用できる。
+\end{proposition}
+\begin{proof}
+頂点 $i+4\mathbb Z$ を経由する道の生成する両側idealで割る。
+重み一の矢でこの頂点を飛び越すことはできない。
+重み二の矢で飛び越すには、頂点 $c\equiv i$ に対し
+$c-1\to c+1$ を使うしかない。
+この対角矢は、該当massが可逆なとき
+短関係により隣接矢の二段積で書ける。
+すなわち偶数 $c$ なら奇数始点の対角矢で $\lambda$、
+奇数 $c$ なら偶数始点の対角矢で $\mu$ を使う。
+二段積は $c$ を経由するので商で零になる。
+従って残る成分は、連続する除去頂点の間だけにあり、
+各標準rowとcolumnは有限個の端点に支持を持つ。
+
+より具体的に、任意の $j$ と $c<j$、$c\equiv i\bmod4$ を取る。
+始点が $c$ 以下で終点が $j$ の道は、
+$c$ を通るか、可逆massの関係によって
+そのような道の和に直せる。
+従って $P_c\otimes_R A_{cj}\to P_j$ の余核は
+有限区間に支持を持ち、tailsで零である。
+ここで $A_{cj}$ は $c$ から $j$ への成分である。
+任意に小さな $c$ を使え、係数加群は基底上有限生成である。
+各連接対象は有限個の標準対象で覆われるので、
+この全射により反Serre軌道に対するAZの生成条件を得る。
+
+Homの最終全射条件については、まず
+定理~\ref{thm:qa-avatar-all-tails-tilting}の切断計算により、
+任意の固定 $j$ に対する $\operatorname{Ext}^{q}(E_c,E_j)$ は
+$q>0$ で $c$ を十分小さくすると零となる。
+同じ切断の一様な長さ二の解消により、
+任意のtails対象への第三次以上のExtは零である。
+連接対象 $K$ を有限個の標準対象で覆い、
+核に同じことを行う。長完全列により、まず
+$\operatorname{Ext}^2(E_c,K)$ が十分小さな $c$ で零になる。
+これを一段目の核に適用すると
+$\operatorname{Ext}^1(E_c,K)$ も十分小さな $c$ で零になる。
+任意の連接対象間の全射の核を $K$ とすれば、
+Homの最終全射が従う。
+全射と消滅の証明は、引戻し後の基底上にも同じ形で適用できる。
+\end{proof}
+
 \begin{theorem}[全指定十二矢族の標準頂点の \texorpdfstring{$H_2$}{H2} 開]
 \label{thm:qa-avatar-all-presented-pointing}
 定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}の任意の族で、
