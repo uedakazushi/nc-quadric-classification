@@ -388,9 +388,11 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 | 範囲 | 再確認した論点 | 残る検証 |
 | --- | --- | --- |
 | S1・S2 相対ASと幾何avatar | 左右単純の極小解消と相対係数、有限窓局所化、周期化障害、Gram torsor、点表示の平坦化、相対AZの消滅と平坦降下。曲線型rotated squareでは評価余核と部分曲線の消滅から有限窓を回収し、helixからの極小解消を左右のHomで確認 | 全位相のcanonical複体、逆構成の階数条件と偏極移動、局所双対からのSerre・連接導来比較、左右Noether性を追確認した。残るのは相対heart比較の全仮定と、未公刊先行稿に依存する体上の矢数辞書 |
-| S3・S4 重み付きQPと比較射 | 短長関係の枠変更、双対の自然性、可逆mass chartと零因子上の二mass慣性、周期付き比較像の閉方程式、奇数位相の逆mutationの乗法 | 周期付き表示では重み二・三の核が全次数を生成する逆向きを両位相で確認した。残るのは全raw chartへの開判定の適用、周期付き像の外側、全raw Isomの合成の照合 |
-| S5 標準pointing | 第三対象への再標識の合成、cubic窓の全整数添字移動、固定対象上のruling被覆と線束データ、spectral境界の任意付値環上の障害。重み付き古典十二本矢では全位相の反Serre生成障害と全窓点の開部分を確認 | 中間頂点の相対像と局所閉層、選択の冪等元、線形liftの三つのBrauer類と二つの古典反例を追確認した。残るのは全位相をつなぐ再標識の合成と、境界からの依存証明との統合照合 |
-| S6 文献と再現性 | Kellerの訂正、DWZ、Van den Bergh、Okawa–Ueda、Catanese–Franciosi–Hulek–Reidの一次本文の該当箇所。e665ea5の342頁を二つの空ディレクトリで再現、b3dad48の346頁とSyncTeXを生成 | AZ原著、未公刊資料3点、包括的新規性比較。全主要証明の独立監査と公開直前の再現性検証 |
+| S3・S4 重み付きQPと比較射 | 短長関係の枠変更、双対の自然性、可逆mass chartと零因子上の二mass慣性、周期付き比較像の閉方程式、奇数位相の逆mutationの乗法 | 十矢短関係のスキーム論的な階数壁と、階数 (5,49,68) の相対対角複体から非被約底上の逆向きを確認。偶奇移動と可逆mass消去で八・十二矢へ移し、全raw Isomの合成・逆、周期付き像の共役降下とその外にある双対数標識を検証した。残るのは全比較の証明を通した依存関係の独立監査 |
+| S5 標準pointing | 第三対象への再標識の合成、cubic窓の全整数添字移動、固定対象上のruling被覆と線束データ、spectral境界の任意付値環上の障害。重み付き古典十二本矢では全位相の反Serre生成障害と全窓点の開部分を確認 | 中間頂点の相対像、選択の冪等元、線形liftの三つのBrauer類と二つの古典反例を追確認した。cubic の前後の再標識では共通ruling上で、固定した中心帯を保つ線形持ち上げの同値の障害を三つのBrauer類の差で記述した。残るのは全位相と境界の依存証明の統合照合 |
+| S6 文献と再現性 | Kellerの訂正、DWZ、Van den Bergh、Okawa–Ueda、Catanese–Franciosi–Hulek–Reidの一次本文の該当箇所。8cdbb14の349頁、PDF・SyncTeX・抽出テキストを二つの空ディレクトリで再現 | AZ原著、未公刊資料3点、包括的新規性比較。全主要証明の独立監査と公開直前の再現性検証 |
+
+**論文C 8cdbb14 のクリーンビルド再現性（2026-11-23）。** 同じ Git archive を空の二作業ディレクトリに展開し、LuaHBTeX 1.18.0 と latexmk 4.86 で独立にビルドした。共通設定は `SOURCE_DATE_EPOCH=1795417450 FORCE_SOURCE_DATE=1 TZ=UTC` と同じ日本語 TeX ツリー。PDFのトレーラ `/ID` を取り除いたバイト列の SHA-256 は両方とも `27dc48b47fa9dd6cec7e976b21aef8aafa87e2f780a3ce9cc3085b11a7b3bbcf`。SyncTeXを展開して作業ディレクトリの絶対パスを同じ文字列へ置換した結果と、PDFの `pdftotext -layout` の出力はバイト単位で一致。Poppler 26.05.0 で96dpiに描画した全349頁はページごとに一致した。最終ログの警告は旧フォントコマンド `\rm` の非推奨通知一件。未解決参照・引用および overfull box はなかった。同版で `python3 scripts/check.py math --manuscript papers/nc-quadric-surface-avatar.tex` は PASS。これらの再現結果は当該原稿と共通ツール環境に対するものである。
 
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
