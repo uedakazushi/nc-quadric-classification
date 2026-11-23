@@ -2640,3 +2640,5 @@ latexmk
 **非有界tails局所化の独立監査。** `thm:qa-avatar-all-tails-tilting` の切断公式を、切断rowの長さ二の射影解消が与える有限濾過と、K-injective複体上の局所化随伴を使って証明した。torsionコホモロジーを持つ非有界複体も、切断Homの直極限で消える。非平坦基底変更では、自由解消の下からの有限切断を使い、任意のtorsionコホモロジー複体が引戻し後もtorsionであることを確認した。
 
 **非有界tails局所化を含む402頁保存版 9949ab3。** 二つの `git archive 9949ab3` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795437435 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全402頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `4e4066f903f21ffcbae11480f0cbf99535016484b4419d719dc60ead15f9b205`、SyncTeX `3cb3ab5c5017df5aeeb385d393b046371b460e1b180bc14a1f40cff2fe647789`、抽出テキスト `cef70516f05e5238fc2acde5b0e97308aa298454e79b15315f6f91a12cb6e50c`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**有限Morita窓と非平坦基底変更の合成。** `cor:qa-avatar-tails-base-change` の比較を、窓が実際に作用する標準rowの直和を用いた双加群の導来tensorで構成し直した。成分平坦性から新しい窓での標準rowを復元し、二つの経路の一致と三重合成を導来tensorの結合律に還元した。
