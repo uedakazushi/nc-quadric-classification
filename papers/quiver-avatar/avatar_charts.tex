@@ -3588,19 +3588,23 @@ $\mathfrak m^n(Q_j/(N_0)_j)$ の共通部分は零である。
 \begin{lemma}[係数環の閉層と補開におけるNoether性の貼合せ]
 \label{lem:qa-avatar-noetherian-open-closed}
 $R$ をNoetherian環、$I\subset R$ を有限生成idealとし、
-$A$ を各成分が有限平坦な $R$ 上の全整数代数とする。
+$A$ を各成分が有限生成な $R$ 上の全整数代数とする。
 $A/IA$ と $D(I)$ の有限個の単項開で標準右rowがNoetherianなら、
 $A$ の標準右rowもNoetherianである。左columnにも同じことが成り立つ。
 \end{lemma}
 \begin{proof}
-各成分の平坦性により
+積は全射
 \[
- \operatorname{gr}_I A\simeq
-    (A/IA)\otimes_{R/I}\operatorname{gr}_I R
+ (A/IA)\otimes_{R/I}\operatorname{gr}_I R
+       \longtwoheadrightarrow\operatorname{gr}_I A
 \]
-となる。$\operatorname{gr}_I R$ は有限個の中心変数で
-$R/I$ 上生成されるので、前系の中心多項式の議論から
-この随伴次数の標準射影はNoetherianである。
+を与える。実際、重み $n$ の $I$ 進成分は
+$I^n A/I^{n+1}A$ であり、係数と元の成分の積で生成される。
+$\operatorname{gr}_I R$ は有限個の中心変数で
+$R/I$ 上生成されるので、前系の中心多項式の議論により
+左辺の標準射影はNoetherianである。
+右辺の標準射影はこの射影の商であり、
+作用は右辺を通るので、右辺上でもNoetherianである。
 
 標準射影 $Q$ の部分加群 $N$ を取る。
 誘導 $I$ 進濾過の随伴次数から有限個の生成元を選び、
