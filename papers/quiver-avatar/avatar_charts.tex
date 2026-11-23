@@ -643,6 +643,41 @@ mass が零の幾何点では、既に確認したテンソル階数二が
 任意基底変更に沿って引き戻せる。
 \end{proof}
 
+\begin{corollary}[幾何開部分と二mass消去の対応]
+\label{cor:qa-avatar-two-mass-reduction-opens}
+前系の局所表示では
+\[
+ D(\lambda)=\mathcal A_{10,\mathrm e}^{\times},\qquad
+ D(\mu)=\mathcal A_{10,\mathrm o}^{\times},\qquad
+ D(\lambda\mu)=\mathcal A_8^{\times}
+\]
+が chart への引戻しとして成り立つ。
+有限窓を与える potential は、それぞれの開上で偶数対角十矢、
+奇数対角十矢、または八矢の potential と可縮対に分解する。
+共通開で二対を消去した八矢 potential は、
+同じ局所表示を固定すれば消去順序によらない。
+全二mass chart 上で、有限窓の $3$-Calabi--Yau 完成は
+得られた十二矢の非完備 Ginzburg dg 代数と局所的に導来Morita 同値である。
+\end{corollary}
+\begin{proof}
+$\lambda$ は後半の短積の行列式に単元倍で一致するから、
+その可逆性は $Y$ の分裂型が $(1,1)$ であることと同値である。
+$\mu$ は最初の短積の行列式であり、対角余核の公式から
+$Y_P$ の分裂型が $(1,1)$ であることと同値である。
+任意底上の開部分はこれらの可逆性で表される。
+$\lambda$ が可逆なら $x\mapsto x+\lambda^{-1}q$、
+$y\mapsto y+\lambda^{-1}p$ という座標で
+$\lambda yx+yq+px$ を平方完成し、残る四次項は
+$H-\lambda^{-1}pq$ となる。
+$\mu$ が可逆な場合は同じく $u,v$ の対を取り除き、
+四次項に $-\mu^{-1}p'q'$ を加える。
+補正項 $p,q,p',q'$ は重み一の矢だけの道なので、
+共通開での二つの置換は可換である。
+最後の導来Morita 比較は、前系で二つの短関係と
+式~\eqref{eq:qa-two-mass-six-relations}を確認したので、
+命題~\ref{prop:qa-q12-semifree-ginzburg-morita}をそのまま適用できる。
+\end{proof}
+
 \begin{remark}[矢数の名称と体上の辞書]
 幾何的な開埋め込みと表の分解は、上の証明の通り
 射影束の分裂型、Picard 類および垂直成分条件から従う。
