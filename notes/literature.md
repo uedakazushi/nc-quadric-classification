@@ -4,7 +4,7 @@
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-資料確認日：2026-11-23（日本時間）。v2.1。現行三論文A/B/Cに対応する一次資料比較。
+資料確認日：2026-11-23（日本時間）。v2.2。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## 全H2の共通線形化と大域良モジュライ
@@ -33,7 +33,9 @@ Antieau–Elmanto, *Descent for semiorthogonal decompositions*, Adv.Math.380(202
 
 ## 相対AZ・全整数展開・relation potential
 
-**Cの負一次Tor系に関する既知手法との区別（2026-11-23）。** 非正dg複体$C$のtruncation三角から$\operatorname{Tor}_2(H^0C,R')\to H^{-1}C\otimes R'\to H^{-1}(C\otimes^{\mathbf L}R')\to\operatorname{Tor}_1(H^0C,R')\to0$を導くことは標準的な導来tensorの帰結であって、普遍原理自体に新規性を主張しない。本研究の具体化は、既証明のH2実現可能開における$H^0\Pi_3$全次数局所自由性と合わせて$H^{-1}\Pi_3$の全非平坦基底変更を得る点である。全C3/H2条件とKellerのordinary ideal訂正を区別し、$H^{-2}$以下の通常基底変更は未主張。[論文Cの証明](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。
+**相対Serre dg形式性と既知のcompletion一般論の区別（2026-11-23）。** Keller, *Deformed Calabi–Yau completions*（[著者本文](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCYCompletions.pdf)、§4・§6、[2011年訂正](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerCorrCYCompletion.pdf)、[2018年erratum](https://webusers.imj-prg.fr/~bernhard.keller/publ/KellerErratumCYCompletions.pdf)）はinverse dualizing bimoduleのtensor dg completionと関係式QP・Ginzburg dg比較の既知基礎である。本研究の`thm:qa-q12-h2-serre-dg-formality`は、**本稿で既に証明した全normal helixの$P_n$次数零集中**とordinary tensor直和のcohomology交換を使い、$H_2$実現可能開で$\Pi_3(\Lambda)\to H^0\Pi_3(\Lambda)=\operatorname{Jac}(Q_{12},\mathcal W)$がdg準同型となることを直接示す。これは標準的な非正dg truncationの帰結を本研究の相対開に適用したもので、新しい一般formality原理の発見ではない。Kellerの通常relation ideal条件とminimality修正を適用範囲から外さず、非最小raw QPのGinzburg dg模型と同一視したとは主張しない。負次数消滅はすべての$H_2$基底変更に成立するが、$H_2$外の任意の有限foundationへの外挿は未確認。包括的新規性未確認。
+
+**非正dg複体の普遍Tor完全列（既知手法）。** 任意の非正複体$C$のtruncation三角は$\operatorname{Tor}_2(H^0C,R')\to H^{-1}C\otimes_RR'\to H^{-1}(C\otimes_R^{\mathbf L}R')\to\operatorname{Tor}_1(H^0C,R')\to0$を与える。これは標準的な導来tensorの形式的帰結であり、新規性を主張しない。$H_2$上のSerre dgでは全次数消滅の方が強く、このTor列を独立の未解決目標としない。
 
 Artin–Zhang, *Noncommutative projective schemes*, Adv. Math.109(1994),228–287, [DOI](https://doi.org/10.1006/aima.1994.1087) の刊行書誌とabstractを確認した。Theorem4.5(1)の一般End環への適用仮定は、Okawa–Abdelgadir–Chan–Ueda, *Degenerations of orbifold curves as noncommutative varieties*, Nagoya Math.J.261(2026),e4, [刊行本文](https://www.cambridge.org/core/journals/nagoya-mathematical-journal/article/degenerations-of-orbifold-curves-as-noncommutative-varieties/F7FD772141C9BE8DE3D3DC5B830E48DA)、[DOI](https://doi.org/10.1017/nmj.2025.10067) のDefinition7.1とTheorem7.3（Artin–Zhangの再掲）、式(7.1)–(7.5)で2026-11-23に独立再照合した。**必要条件**は、(i) 構造対象TがNoetherian、(ii) A0=End(T)が右Noetherianかつ全coherent Kに対するHom(T,K)が有限右A0加群、(iii) (T,t)がAZ1/AZ2を満たすこと。Cの相対AZ2では、Tの**どの位置の直和因子にも**構造対象Oを置けるよう命題の仮定自体を修正した。$0\to L\to P\to K$と$0\to L'\to P'\to L$の二段presentation、平坦compact始域に限るExt$^{>2}$消滅、有限Noetherian基底上の有限R加群End(T)から右Noetherianを証明する新補題で全仮定を確定した（[相対AZ証明](../papers/quiver-avatar/relative_square_tails_recognition.tex)）。その結果、一重rank3で反対normal零頂点がH2 pointingでない場合も、反対squareのdual heart内の別の（第二）頂点Q0を基準に左Noether性を証明できる。**既知の再構成定理と本稿の相対Ext/AZ適用・rank3障害の修復を区別**する。AZ1994の原著Theorem4.5本文は現在取得できず、原著を直接読了したとは主張しない。引用キー `AZ1994`, `OACU2026`。
 

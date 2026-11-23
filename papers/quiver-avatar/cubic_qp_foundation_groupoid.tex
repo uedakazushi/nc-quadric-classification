@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.50。非正dg完成の負一次Tor完全列とH2上の降下。
+% 2026-11-23 / v4.51。全tensor次数消滅からSerre dg形式性へ統合。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -2015,48 +2015,112 @@ AZ同値は通常のmodule-object引戻しとcoherentに
 \end{proof}
 
 
-\begin{corollary}[全$H_2$実現可能開での第一負次数Serre dg降下]
-\label{cor:qa-q12-negative-one-h2-base-change}
+\begin{theorem}[$H_2$実現可能開での相対Serre dg完成の形式性]
+\label{thm:qa-q12-h2-serre-dg-formality}
 定理~\ref{thm:qa-two-mass-h2-locus-jacobian-heart}の
-相対$H_2$実現可能開に属する有限normal foundation
-$\Lambda$を局所Noetherian affine基底$R$上で取る．
-任意の（非平坦なものを含む）$R$-代数$R'$に対して，
+相対$H_2$実現可能開上で，normal full strong
+foundation $T$，$\Lambda=\operatorname{End}(T)$と
+$\Theta_\Lambda=
+\mathbf R\operatorname{Hom}_{\Lambda^e}(\Lambda,\Lambda^e)[2]$
+を取る．本稿の局所有限型affine chartの各基底$R$で，
+ordinaryな相対dg tensor完成
 \[
- H^{-1}\Pi_3(\Lambda)\otimes_RR'
- \xrightarrow{\sim}
- H^{-1}\Pi_3(\Lambda\otimes_RR')
- \tag{N1}\label{eq:qa-q12-negative-one-h2-base-change}
+ \Pi_3(\Lambda)=T_\Lambda(\Theta_\Lambda)
+  =\bigoplus_{n\ge0}
+       \Theta_\Lambda^{\otimes_\Lambda^{\mathbf L}n}
 \]
-が自然に成立する．さらに複体として
-$\tau^{\leq-1}\Pi_3$の導来基底変更が標準truncationと
-可換する．相対finite foundationのIsomとQPからの
-mass/shear引戻しにも自然である．
-これは$H^{-1}\Pi_3$の平坦性，
-$H^{-2}\Pi_3$以下の通常の基底変更，
-全dg CY同値を与えるものではない．
-\end{corollary}
-\begin{proof}
-補題~\ref{lem:qa-q12-hzero-nonflat-base-change}で，
-非正の相対$K$-flat dg模型の任意基底変更整合性を得ている．
-定理~\ref{thm:qa-two-mass-h2-locus-jacobian-heart}によれば
+は，preprojective次数$n$ごとに
 \[
- H^0\Pi_3(\Lambda)\simeq\operatorname{Jac}(Q_{12},\mathcal W)
- =\bigoplus_{n\ge0}\operatorname{Hom}(T,t^nT)
+ H^q\!\left(\Pi_3(\Lambda)_n\right)=
+ \begin{cases}
+  \operatorname{Hom}_{\mathcal C_S}(T,t^nT),&q=0,\\
+  0,&q\ne0
+ \end{cases}
+ \qquad(n\ge0).
+ \tag{DG0}\label{eq:qa-q12-all-dg-cohomology-concentrates}
 \]
-であり，各$n$の成分は$R$上有限局所自由である．
-従って次数付き環全体は平坦な$R$-加群である
-（直和は平坦性を保つ）．
-前補題~\ref{lem:qa-q12-first-negative-universal-coefficient}の
-平坦な$H^0$の場合を$C=\Pi_3(\Lambda)$に適用すると，
-式~\eqref{eq:qa-q12-negative-one-h2-base-change}と
-負のtruncation比較を得る．
+従ってコホモロジー次数零以外は全て消滅し，
+非正dg模型のcanonicalな射
+\[
+ \boxed{\quad
+ \Pi_3(\Lambda)\xrightarrow{\ \simeq\ }
+ H^0\Pi_3(\Lambda)
+ \xrightarrow{\ \sim\ }\operatorname{Jac}(Q_{12},\mathcal W)
+ \quad}
+ \tag{DF0}\label{eq:qa-q12-h2-serre-dg-formality}
+\]
+はpreprojective次数付きdg代数の準同型となる．
+特に$H^{-1}\Pi_3=H^{-2}\Pi_3=\cdots=0$であり，
+その全次数成分は基底上局所自由である．
+局所的なdg加群の導来圏とperfect部分も
+この準同型で同値となる．
 
-証明に使う双加群解消・Serre双対・
-truncationは有限foundationの全Isomに自然であり，
-QPのmass/shearはその有限像が恒等であるから，
-引き戻した比較にも単位として作用する．
-$H^{-1}\Pi_3$自体の局所自由性や
-任意のraw QPへの拡張は使っていない．
+これらの同型はfinite foundationの全Isom，
+二mass QPからのmass/shearの引戻し，
+任意の本稿の（非平坦なものを含む）基底変更と
+coherentに整合する．選ぶ非正dg模型に関する
+canonicalな射はdg代数の準同型類で理解する．
+この主張は$H_2$実現可能開に限る．任意のraw QPの
+Ginzburg dg代数との準同型，$H_2$外での
+$\Pi_3$の負次数消滅，任意AS/avatar stackの同一視を
+結論しない．
+\end{theorem}
+\begin{proof}
+命題~\ref{prop:qa-two-mass-short-relative-diagonal}の
+有限局所射影な相対対角解消を双対化すると，
+$\Theta_\Lambda$はcohomological次数$-2,-1,0$の
+基底平坦な左右$\Lambda$-局所射影
+dg双加群で表せる．従ってそのstrictなtensor冪は
+derived tensor冪$P_n$を計算し，
+ordinary直和による$\Pi_3$は非正dg代数となる．
+
+ここで本稿の既証明補題
+~\ref{lem:qa-q12-all-degree-perfect-fiber}を
+\emph{各$n\ge0$}に適用する．幾何fiberの
+四周期geometric helixの前向きExt消滅と
+相対perfect-fiber判定により，
+$H^q(P_n)=0$（$q\ne0$），
+$H^0(P_n)\simeq\operatorname{Hom}(T,t^nT)$は
+有限局所自由であり任意基底変更と可換する．
+$R$-加群の圏では直和が完全なので，
+\[
+ H^q\Pi_3(\Lambda)
+   =H^q\Bigl(\bigoplus_{n\ge0}P_n\Bigr)
+   \simeq\bigoplus_{n\ge0}H^q(P_n)
+\]
+となり，式~\eqref{eq:qa-q12-all-dg-cohomology-concentrates}
+と全負次数消滅が従う．これは$n$について
+共通の大きな開を無限交叉で取る議論ではない．
+固定した$H_2$開上で既存補題が各$n$について成立し，
+そのまま直和を取っている．
+
+非正dg代数$D$の標準射
+\[
+ D\longrightarrow D^0/d(D^{-1})=H^0(D)
+\]
+は負次数を零へ送り，次数零を商へ送る
+dg代数準同型である（$dD^0=0$）．
+ここでは全負次数cohomologyが消えるため
+準同型となり，関係・preprojective次数も保つ．
+定理~\ref{thm:qa-two-mass-jacobian-preprojective}が
+右端をordinary Jacobian代数と同定する．
+dg代数の準同型は局所導来加群圏とperfect部分の
+同値を誘導する．
+
+任意の基底変更に関する比較は，
+補題~\ref{lem:qa-q12-hzero-nonflat-base-change}の
+基底$K$-flatな模型と既存の各$P_n$の
+perfect-fiber比較で与えられる．
+$H^0\Pi_3$は局所自由な次数成分の直和だから
+$R$-flatであり，導来tensorと通常tensorが一致する．
+canonical truncationと導来tensorの比較は自然で，
+合成時にも同じ同型を与える．相対finite foundationの
+全Isomは$\Theta_\Lambda$とそのtensor代数を移し，
+QPのmass/shearは有限商で恒等となる．
+よって比較はこれらのIsomと全基底変更について
+coherentである．以上は既存の全$n$の消滅を
+一つのdg代数に統合した帰結であり，
+他のdg QP模型の準同型を新たに構成したものではない．
 \end{proof}
 
 \subsection{内在的$H_2$への二段の剛体化とruling mutation貼合せ}
