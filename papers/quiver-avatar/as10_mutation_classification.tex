@@ -1278,13 +1278,20 @@ $L_i\in\Pic^0(S)$を選ぶ。
 
 全線束を同時に自明化するfppf被覆があれば、
 そのうち一般点を覆う有限型の部分$U\to S$を取れる。
-$U$の一般fiberの閉点の閉包を取り、$S$を非空開$S^\circ$へ
-縮めて、この閉包を$S^\circ$上有限平坦な正次数$d$の多重切断にできる。
-実際、閉点の剰余体は$k(S)$の有限拡大であり、
-一般有限射をその有限な開へ制限した後にgeneric flatnessを使う。
-$U$上での自明化は多重切断にも移る。
-その有限平坦normを取ると、すべての
-$L_i^{\otimes d}|_{S^\circ}$が自明となる。
+一般fiberの閉点を含むアフィンchartを、
+適当に縮めたアフィン基底$\operatorname{Spec}R\subset S$上に取る。
+閉点の被約閉包は有限生成$R$代数$C$で表され、
+$C\otimes_R k(S)$は$k(S)$の有限拡大である。
+有限個の代数生成元のモニック方程式の分母を払うため
+$R$の一つの非零元を反転すると、$C$は有限$R$加群になる。
+さらに基底を縮めて、正階数$d$の有限局所自由代数とする。
+こうして$f:T\to S^\circ$が得られる。
+任意の線束$L$について射影公式は
+\[
+ \det f_*f^* L \simeq (\det f_*\OO_T)\otimes L^{\otimes d}|_{S^\circ}
+\]
+を与える。従って$U$上で自明になる線束の$d$乗は
+$S^\circ$で自明になる。
 一方、$\Pic(S)\to\Pic(S^\circ)$の核は
 有限個の補集合の点の因子類で生成されるので有限生成であり、
 そのtorsion部分は有限である。
@@ -1343,6 +1350,26 @@ $L_0=\mathcal O(1)$、その他の$L_i=\mathcal O_S$と置く。
 従って単一の大域的周期重み付き表示の展開とは同型にならない。
 QPから全整数ASへの射は、この周期標識の忘却を経由する。
 \end{example}
+
+\begin{corollary}[周期標識をfppf局所にも持たない族]
+\label{cor:qa-as-period-no-common-local-marking}
+命題~\ref{prop:qa-as-period-marking-fiber}の周期標識を忘れる射は、
+幾何点では全射であるが、全相対族をfppf局所には覆わない。
+\end{corollary}
+\begin{proof}
+幾何点ではすべての$L_i$が自明であり、
+相対Serre復元により$B_0$と$B_4$は同型である。
+従って表示した2-fiberは非空である。
+一方、命題~\ref{prop:qa-as-infinite-lines-no-common-atlas}の
+楕円曲線上の例で周期標識を持てば、すべての
+$L_i\otimes L_{i+4}^\vee$が同じ被覆上で自明になる。
+一般点を覆うchartから先の有限局所自由射を作って行列式を取ると、
+それらの$d$乗が一つの非空開上で自明になる。
+しかし$L_i\otimes L_{i+4}^\vee$の位数は
+互いに素な二位数の積$\ell_i\ell_{i+4}$であり、
+$d$乗の位数の素因子は一様に有限個に収まらない。
+開への制限の核のtorsion部分は有限なので矛盾する。
+\end{proof}
 
 \begin{corollary}[周期標識付きASの有限データ]
 \label{cor:qa-periodic-as-finite-decoration}
