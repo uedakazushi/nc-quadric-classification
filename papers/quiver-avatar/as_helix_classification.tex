@@ -361,12 +361,22 @@ i\bmod4&\text{相対次数}&b=1&b=2&b=3\\ \hline
 3&(0,2,2,4)&0&0&4
 \end{array}
 \]
-となる。この数は$\dim\Hom(M_2,L_b)$と等しい。
-同じ次数の異なる二項間に残り得るHomは
-avatarの除外条件により零であるから、
-中間のkernelは実際に$M_2$のYoneda像と一致する。
-従って余分な高次syzygyはない。
-前向きExt消滅から最初の写像も単射となる。
+となる。ここで $L_b$ は窓の第 $b$ 頂点の略記である。
+窓内の逆向きの通常の Hom は、
+命題~\ref{prop:qa-core-forward-ext-vanishing}と
+$\omega_D\simeq\OO_D$ による Serre 双対で零である。
+従って通常の Hom を使ったこの計算は directed Yoneda の評価と一致する。
+同じ双対性により、窓の外の端についても
+$\Hom_D(L_{i+4},L_b)=\Ext_D^1(L_b,L_{i+4})^\vee=0$ となる。
+特に総次数が等しい対でも、前向き消滅の次数零の場合がこれを保証する。
+
+短完全列 $0\to\operatorname{coker}(L_i\to M_1)\to
+M_2\to L_{i+4}\to0$ に $\Hom_D(-,L_b)$ を適用すると、
+$\Hom_D(M_2,L_b)$ から $\Hom_D(M_1,L_b)$ への写像は単射である。
+像は表の kernel に含まれ、その次元は表の数と一致する。
+従って窓の各頂点で中間は完全である。
+頂点 $i$ では対角の $k$ が augmentation として残り、
+すべての微分は異なる頂点間の成分からなるので解消は最小である。
 三回のmutationは頂点1,2,3を順次消す
 Yoneda truncationなので、
 $D$上に実現すると最後の$L_{i+4}[-2]$のみが残る。
