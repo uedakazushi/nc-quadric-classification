@@ -412,6 +412,10 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **幾何avatarの相対JacobianとGinzburg作用。** 一重・二重負断面の各幾何点で整列基底を得て、被約な普遍chart上の関係行列から冪零massを含む全族の次数別平坦性を証明した。相対巡回解消を用いて非完備Ginzburgからordinary Jacobianへの標準射が準同型であることを示した。また右同値の実際のdg作用は二重導分の共役として構成し、全合成と基底変更の自然性を確認した。これは特定のKeller Morita比較の全右同値に対する自然性とは別の主張であり、その比較と異なるrulingの貼合せは監査を要する。[相対比較](../papers/quiver-avatar/avatar_charts.tex)。
 
+**四標準頂点の像と幾何avatarのfiber。** 奇数対角開はsquare窓の左mutation、偶数対角開は同じ曲線と線束から作るsquare窓の最後二項の右mutationで比較する。標準頂点1・3および0・2のそれぞれの全定義域は曲線型square avatarのstackと同値で、像は曲線型H2開、各fiberはruling二重被覆となる。ここでの幾何stackは相対Picard類を取るため、線形窓の比較に現れる中心gerbeと全整数線束を残さない。両mass零では重み二の矢のみの反対偶奇加群によって全標準pointingが排除される。[証明](../papers/quiver-avatar/avatar_charts.tex)。
+
+**論文C 3d8388f のクリーンビルド再現性。** `SOURCE_DATE_EPOCH=1795423605 FORCE_SOURCE_DATE=1 TZ=UTC` と共通のTeXツリーで、別々の空ディレクトリからビルドした。全371頁の96dpi描画と抽出テキストは一致した。PDFトレーラの `/ID` を正規化したSHA-256は `689b2f08aaf42f8f9bea52d05085bc2809c58ec194a79487cf51e9d5614c96f5`、SyncTeXを伸長して絶対作業パスを統一したSHA-256は `df9340af6c3ed259a08f1167355bf0fea12eeb6a08cae4c5b44201e78ac0d570`。既存数学検算と論文間参照検査もPASS。二重ビルドのログで対角積の式に約12ptのはみ出しを検出したため、その後に記号の定義を本文へ移した。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式
