@@ -1063,3 +1063,11 @@ Pieter Belmans–Theo Raedschelders, *Derived Categories of Noncommutative Quadr
 Proposition 3.12はcubicの線形例外列から右mutationを実行し、strongな三ブロック窓とその有限Endを式(79)に与える。Proposition 3.13は一般の幾何的五つ組から幾何squareを作り、Theorem 3.15は二本の射影直線が交わらない開で滑らかな射影族への各fiberのadmissible埋込みを構成する。4項のmutationと有限Endの比較はCの既存結果との重なりとして扱う。ここで「幾何square」は四つの二次元空間と二つの積表示を持つ線形代数データで、Cの曲線とPicard標識からなる幾何avatarとの対応は、それぞれの有限Endを用いて読む。
 
 Cで別に証明する範囲は、最小矢が増える非可逆mass壁を含む全整数相対ASのmutation、全Isomと線束捩れを保つ復元、重み付き八・十・十二矢の表示慣性、および標準構造対象から内在的H2への2-fiberである。刊行版Theorem 3.15の対象であるHilbert squareの滑らかな射影族への導来埋込みと、CのH2へのpointed忘却射では、標的と比較する射の種類が異なる。新規性の判定はこの文献に対する比較範囲に限る。
+
+### 還元後の形式右同値と重み付き多項式右同値
+
+Abdelgadir–Okawa–Uedaの有限型関係式スタック（上表）は非巡回な有限窓の関係idealを扱う。周期Jacobianの全道空間には任意次数の閉路があり、同じ有限型性をこの有限窓の結果から得ることはできない。論文Cの `thm:qa-open-qp-canonical-as-image` では別に、重みを固定して矢の像を同じ端点・重みの有限道空間に制限し、有限窓から全周期代数の比較を構成する。
+
+Hua–Zhou, [*Finite determinacy and rigidity of quiver potentials*, arXiv:2610.35466](https://arxiv.org/abs/2610.35466) の Theorems 4.8, 6.3, 7.2 を一次本文で照合した。特性零の体上の完備道代数では、形式右同値に関する有限決定性はJacobianのtrace spaceの有限次元性と同値である。重み斉次の場合のjet境界にもその仮定がある。これは重み保存の多項式右同値を非被約基底上で分類する定理の仮定とは異なる。
+
+Cの古典型の一つでは、このtrace有限性が実際に成立しない。例 `ex:qa-as12-weighted-stack` の完備周期Jacobianから `Mat₄(k[[t]])` へ、頂点を対角行列単位へ、各 `x_i:i→i+1` を `t E_{i+1,i}` へ、各 `y_i,z_i` を零へ送る。巡回微分による三種類の交換子関係はすべて零となる。矢idealは `t` 倍行列に入るので写像は完備化に延長する。頂点零に始まる四本の `x` の閉路の第 `m` 冪は行列traceで `t^(4m)` に移り、これらは線形独立である。行列traceは交換子とその閉包を消すので、完備Jacobianのtrace spaceは無限次元である。したがってこの古典型は形式右同値について有限決定的でない一方、論文Cの重みを固定した比較の対象に含まれる。
