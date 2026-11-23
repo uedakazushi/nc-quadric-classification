@@ -37,7 +37,7 @@
 
 ### 従来C1–C4の位置づけ（到達点を保持）
 
-従来のC1（8/10/12本矢とAS/pointing型）・C2（全 $H_2$ のgood moduli）・C3（$H_2$ 実現可能開のQP/foundation/Jacobian/Serre/heart/S2比較）は**原稿上達成した部分結果**として保持する。C3後続のcyclic複体fppf降下とcanonical CY primitiveの有限Isom自然性も保持するが、頂点付きfinite foundationでは指定Casimirと負巡回Connes像のhomotopy-coherent降下を証明した。ruling交換の有限窓のMorita比較では二類の保存を証明した。全raw QPとの比較は引き続き監査する。従来C4（独立数学監査・一次資料・全稿組版）は新S6に統合する。もとの体上 $H_2$ 完全分類と相対 $H_2$ の有限型代数性は論文A/Bに保持され、**全相対AS/avatar/QPのS1–S5へは未昇格**である。
+従来のC1（8/10/12本矢とAS/pointing型）・C2（全 $H_2$ のgood moduli）・C3（$H_2$ 実現可能開のQP/foundation/Jacobian/Serre/heart/S2比較）は**原稿上達成した部分結果**として保持する。C3後続のcyclic複体fppf降下とcanonical CY primitiveの有限Isom自然性も保持するが、頂点付きfinite foundationでは指定Casimirと負巡回Connes像のhomotopy-coherent降下を証明した。ruling交換の有限窓のMorita比較では二類の保存を証明した。同じ周期付きJacobianを指定する全適合raw表示について、重み四の内在的な負巡回直線と比較単元の有限計算を得た。従来C4（独立数学監査・一次資料・全稿組版）は新S6に統合する。もとの体上 $H_2$ 完全分類と相対 $H_2$ の有限型代数性は論文A/Bに保持され、**全相対AS/avatar/QPのS1–S5へは未昇格**である。
 
 ## Cの現行実行単位
 
