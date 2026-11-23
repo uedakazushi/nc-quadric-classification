@@ -111,6 +111,19 @@ def main():
     ] == [[4, 4], [5, 4], [5, 5], [6, 5]]
     print("PASS: the reduced inward matrices recover the dimensions for weights four through ten")
 
+    coincident_lines = (Matrix(((1, 0), (0, 0))), Matrix(((0, 1), (1, 0))), eye(2), eye(2))
+    for coefficients, expected_rank in ((coefficient_matrices, 2), (coincident_lines, 1)):
+        transport = coefficients[3].T * coefficients[2].inv() * coefficients[1].T
+        first_basis_vector = Matrix([1, 0])
+        pairing = (first_basis_vector.T * transport.inv() * first_basis_vector)[0]
+        assert (2 if pairing else 1) == expected_rank
+        for start in (0, 2):
+            for half_weight in range(2, 9):
+                defective_cells = sum((start + 2 * cell) % 4 == 0 for cell in range(half_weight))
+                expected_dimension = 1 + 3 * defective_cells - expected_rank * (defective_cells - 1)
+                assert inward_top_dimension(coefficients, start, half_weight) == expected_dimension
+    print("PASS: the two line positions give the predicted dimensions through weight sixteen")
+
 
 if __name__ == "__main__":
     main()
