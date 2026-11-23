@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-avatar.tex
-% 2026-11-23 / v4.57。純線形frameのGinzburg dg strict自然性とraw A1障害。
+% 2026-11-23 / v4.58。Keller--Yangの非完備多項式right-equivalence strict dg自然性。
 
 \subsection{八矢QPから有限cubic foundationへの全相対群oid}
 \label{subsec:qa-cubic-qp-foundation-groupoid}
@@ -1993,102 +1993,226 @@ $u$上では$1+z\mu s$であり，
 dg代数ホモトピーである．
 \end{proof}
 
-\begin{proposition}[線形frame変更に関するGinzburg dgのstrict自然性]
+\begin{proposition}[多項式right-equivalenceの非完備Ginzburg dgへのstrict持上げ]
+\label{prop:qa-q12-ginzburg-polynomial-right-equivalence}
+本稿の二mass QPの局所枠付きchartを$S=\Spec R$上で取る．
+$D_0=R^4$とし，$P=T_{D_0}(V)$，
+$P'=T_{D_0}(V')$を非完備な次数零矢道代数とする．
+頂点，始終点，指定weightを保つ
+\emph{多項式right-equivalence}
+\[
+ \varphi:P\xrightarrow{\sim}P',
+ \qquad [\varphi(\mathcal W)]=[\mathcal W']
+        \quad\text{in }P'_{\rm cyc}
+ \tag{PE}\label{eq:qa-q12-polynomial-right-equivalence}
+\]
+を取る．ここで$\varphi$と$\varphi^{-1}$は
+有限個の道の和として与えられ，矢イデアルを保つ．
+このとき非完備Ginzburg dg代数に
+\[
+ \boxed{\quad
+ \widetilde\varphi:
+ \Gamma_3(Q_{12},\mathcal W)
+ \xrightarrow{\ \sim\ }
+ \Gamma_3(Q'_{12},\mathcal W')
+ \quad}
+ \tag{PG}\label{eq:qa-q12-polynomial-ginzburg-strict-lift}
+\]
+という\emph{strict}なdg代数同型が標準的に存在する．
+頂点固定・weight保存の多項式right-equivalenceの
+全群oidに関して合成・単位はstrictに整合し，
+任意の（非平坦なものを含む）基底変更と可換する．
+
+具体的に$\psi=\varphi^{-1}$とし，
+$P'$の矢$b$ごとに
+\[
+ \psi(b)=\sum_{p}c_{p,b}p,\qquad
+ p=a_1\cdots a_m\quad(c_{p,b}\in R)
+\]
+と有限の道展開を選ぶ．逆矢の次数を$-1$，
+頂点ループの次数を$-2$とすると
+\[
+ \begin{split}
+ \widetilde\varphi(a)&=\varphi(a),\\
+ \widetilde\varphi(a^*)&=
+ \sum_{b}\ \sum_{p}\ \sum_{\substack{1\le j\le m\\a_j=a}}
+ c_{p,b}\,
+ \varphi(a_{j+1}\cdots a_m)\,
+ b^*\,
+ \varphi(a_1\cdots a_{j-1}),\\
+ \widetilde\varphi(\omega_i)&=\omega_i'
+ \end{split}
+ \tag{FC}\label{eq:qa-q12-fox-cotangent-lift}
+\]
+と書ける．空の道は対応する頂点冪等元と読む．
+この公式は，Keller--Yang
+\cite[Lemma~2.9]{KellerYang2011}の
+完備Ginzburg dgに対する右同値持上げを，
+有限多項式逆写像の範囲に制限したものである．
+本稿では$R$の非被約性を除外しない．
+
+とくに二massの
+\[
+ \begin{aligned}
+ x&\longmapsto ax+tq,&
+ y&\longmapsto a^{-1}(y-tp),&
+ a&=1+\lambda t,\\
+ u&\longmapsto bu+sq',&
+ v&\longmapsto b^{-1}(v-sp'),&
+ b&=1+\mu s
+ \end{aligned}
+ \tag{MG}\label{eq:qa-q12-mass-polynomial-dg-lift}
+\]
+と，残余長関係lift shear
+$y\mapsto y+L_y,\ v\mapsto v+L_v$は，
+\emph{全て}非完備Ginzburg dgのstrict同型へ
+持ち上がる．二massの逆写像は
+$x\mapsto a^{-1}(x-tq)$，
+$y\mapsto ay+tp$，
+$u\mapsto b^{-1}(u-sq')$，
+$v\mapsto bv+sp'$であり，
+shearの逆は追加した二段道の符号反転である．
+従って$\lambda,\mu$が単元でなくても
+$\widetilde\varphi$は有限道の和で記述できる．
+前節のmass--shear半直積関係と三重重なりの
+right-equivalenceのcocycleは，
+式~\eqref{eq:qa-q12-fox-cotangent-lift}により
+\emph{strict dg同型のcocycle}として保存される．
+
+ここからKeller
+\cite[Proposition~6.8]{KellerDeformedCY2011}の
+\emph{特定の局所Morita比較}が
+$\widetilde\varphi$の作用と
+有限foundationの$\Pi_3$に関する
+自然変換を持つことは，まだ推論しない．
+二つのrulingのmutationも同一QPの
+right-equivalenceであるとは主張しない．
+\end{proposition}
+\begin{proof}
+Keller--Yang Lemma 2.9の構成で重要なのは
+\emph{逆変換}の非可換道微分である．
+$P$の普遍非可換微分では
+\[
+ d_{\rm nc}(a_1\cdots a_m)
+   =\sum_{j=1}^m
+     (a_1\cdots a_{j-1})\,d_{\rm nc}a_j\,
+     (a_{j+1}\cdots a_m).
+\]
+この式を逆向き矢と縮約してから
+$\varphi$で輸送したものが
+式~\eqref{eq:qa-q12-fox-cotangent-lift}である．
+$\psi(b)$が\emph{有限}多項式なので各和は有限であり，
+完備化の極限を使用しない．
+
+Ginzburg微分
+\[
+ d(a)=0,\quad d(a^*)=\partial_a\mathcal W,\quad
+ d(\omega_i)=e_i\sum_a[a,a^*]e_i
+\]
+に対し，普遍非可換微分のchain ruleと
+$[\varphi(\mathcal W)]=[\mathcal W']$を用いると，
+\[
+ d\bigl(\widetilde\varphi(a^*)\bigr)
+     =\varphi(\partial_a\mathcal W).
+\]
+また，逆微分のcoevaluation恒等式から
+\[
+ \sum_a[\varphi(a),\widetilde\varphi(a^*)]
+      =\sum_b[b,b^*]
+\]
+が成り立ち，頂点ループの微分も保存する．
+これらは積・非可換微分・逆道展開だけを使う
+有限多項式恒等式で，標数零の体上の任意の
+可換（非被約でもよい）係数環へ適用できる．
+$\psi$に同じ式を用いると逆dg同型を得る．
+
+二つのright-equivalenceの合成では
+$(\eta\varphi)^{-1}=\varphi^{-1}\eta^{-1}$である．
+非可換微分のchain ruleはこの逆順分解を
+丁度逆矢の輸送順序に移すため，
+\[
+ \widetilde{\eta\circ\varphi}
+       =\widetilde\eta\circ\widetilde\varphi
+\]
+は生成矢・逆矢・頂点ループの全てで
+\emph{等式として}成立する．
+すべての係数と有限和は基底変更を保つので，
+任意の非平坦基底変更にも可換する．
+
+二massの逆変換を直接合成すると恒等が得られる．
+実際，例えば
+$\varphi(x)=ax+tq$，
+$\psi(x)=a^{-1}(x-tq)$で，
+$q$は四辺の矢だけからなるので両変換で固定される．
+$y$についても$\varphi(y)=a^{-1}(y-tp)$，
+$\psi(y)=ay+tp$で同様である．
+他方，shearは関係liftの差から作る二段道
+$L_y,L_v$を固定する三角変換だから逆は符号反転．
+従っていずれも式~\eqref{eq:qa-q12-polynomial-right-equivalence}
+の仮定を満たす．
+massのpotential固定は定理~
+\ref{thm:qa-mass-gauge-smooth-group}とその二mass版，
+shearのsource/target potentialの比較は補題~
+\ref{lem:qa-q12-long-relation-lift-shear}で確認済みである．
+
+具体的な第一mass成分の検算として，
+$q,p$を一時的に独立のpath記号へ圧縮した
+$W_{\rm loc}=yq+px+\lambda yx$では，
+\[
+ \widetilde\varphi(x^*)=a^{-1}x^*,\quad
+ \widetilde\varphi(y^*)=ay^*,\quad
+ \widetilde\varphi(q^*)=q^*-ta^{-1}x^*,\quad
+ \widetilde\varphi(p^*)=p^*+t y^* .
+\]
+例えば
+\[
+ d(\widetilde\varphi(q^*))
+ =y-ta^{-1}(p+\lambda y)
+ =a^{-1}(y-tp)
+ =\varphi(d(q^*)),
+\]
+また$\sum_{\alpha=x,y,p,q}[\varphi(\alpha),
+\widetilde\varphi(\alpha^*)]
+=\sum_{\alpha=x,y,p,q}[\alpha,\alpha^*]$が
+直接成り立つ．
+これは四記号に圧縮した符号・係数の局所検算であり，
+全十二矢については上記の非可換chain ruleが証明となる．
+\end{proof}
+
+\begin{corollary}[線形frame変更の場合]
 \label{prop:qa-q12-ginzburg-linear-frame-strict-naturality}
-局所有限型$k$-scheme $S$上の二つの十二矢QP表示
-$(Q_{12},\mathcal W)$，$(Q'_{12},\mathcal W')$を取る．
-四頂点の冪等元を保ち，始終点と指定weightに適合する
-全次数零矢束の線形同型を
-$g:V_{\rm QP}\xrightarrow{\sim}V'_{\rm QP}$とし，
-これがpotentialを巡回同値まで輸送する，
-すなわち
+四頂点の始終点・weightを保つ線形矢束同型
+$g:V_{\rm QP}\xrightarrow{\sim}V'_{\rm QP}$
+がpotentialを巡回同値まで輸送するなら
 \[
  \mathcal W'=(T_{D_0}g)(\mathcal W)
- \quad\text{in } T_{D_0}(V'_{\rm QP})_{\rm cyc}
+ \quad\text{in }T_{D_0}(V'_{\rm QP})_{\rm cyc}
  \tag{LF}\label{eq:qa-q12-ginzburg-linear-frame-potential}
 \]
-とする．このとき非完備Ginzburg dg代数には
-\emph{strict}なdg同型
+に対し，非完備Ginzburg dgにはstrict同型
 \[
  \widetilde g:
- \Gamma_3(Q_{12},\mathcal W)\xrightarrow{\sim}
+ \Gamma_3(Q_{12},\mathcal W)
+ \xrightarrow{\sim}
  \Gamma_3(Q'_{12},\mathcal W')
  \tag{LG}\label{eq:qa-q12-ginzburg-linear-frame-dg}
 \]
-がある．局所枠で各次数零矢を$a$，その逆向き
-cohomological次数$-1$の矢を$a^*$，
-各頂点の次数$-2$ループを$\omega_i$と書けば，
+があり，逆矢と頂点ループは
 \[
- \widetilde g|_{V_{\rm QP}}=g,\qquad
- \widetilde g|_{V_{\rm QP}^{\vee}}=(g^{-1})^\vee,\qquad
+ \widetilde g|_{V_{\rm QP}}=g,\quad
+ \widetilde g|_{V_{\rm QP}^{\vee}}=(g^{-1})^\vee,\quad
  \widetilde g(\omega_i)=\omega_i'
  \tag{LT}\label{eq:qa-q12-ginzburg-linear-dual-weights}
 \]
-で与えられる．全線形frame変更の合成・単位と
-任意の（非平坦なものを含む）基底変更に
-\emph{厳密に}整合する．従って純線形frame変更だけを
-許すQP表示群oid上では，Ginzburg dg模型は
-頂点線束と逆矢の双対weightを保持して貼り合う．
-
-この命題は非線形なmass右同値
-$x\mapsto(1+\lambda t)x+tq$，
-関係lift shear
-$v\mapsto v+\sum_i t_iw_i$，
-あるいは異なるrulingのmutationに対する
-Ginzburg dgのstrict同型の存在を含まない．
-Kellerの局所Morita比較が
-\emph{全raw right-equivalence}に
-$2$自然であることも別途検証する．
-\end{proposition}
+で輸送される．線形frameの合成と任意基底変更に
+strictに整合する．
+\end{corollary}
 \begin{proof}
-局所枠を選べば$g$は始終点とweightの各blockで
-可逆な行列$A$により与えられる．
-次数零の矢を列$a$として$g(a)=Aa'$と書けば，
-逆向き矢の列には逆転置$A^{-\mathsf t}$を作用させる．
-これはまさに式~\eqref{eq:qa-q12-ginzburg-linear-dual-weights}
-の可逆束の双対輸送である．
-
-Ginzburg dgの微分は
-\[
- d(a)=0,\qquad
- d(a^*)=\partial_a\mathcal W,\qquad
- d(\omega_i)=e_i\sum_{a}[a,a^*]e_i
-\]
-（右辺のcommutatorは本稿の符号・道規約）で
-定められる．線形変数変換のcyclic chain ruleは
-\[
- \partial_{a'_j}\mathcal W'
-   =\sum_i A_{ji}\,
-      (T_{D_0}g)(\partial_{a_i}\mathcal W)
-\]
-である．従って$A^{-\mathsf t}$で輸送した
-逆向き矢の微分は，
-元の$\partial_a\mathcal W$を$g$で輸送したものに一致する．
-頂点ループの微分に現れる交換子は，
-\[
- \sum_a\bigl[g(a),(g^{-1})^\vee(a^*)\bigr]
-  =\sum_{a'}[a',a'^*]
-\]
-という評価・coevaluationの標準縮約で不変である．
-ゆえに式~\eqref{eq:qa-q12-ginzburg-linear-frame-dg}
-は微分と積を保つstrict dg同型となる．
-
-二つの線形変換$g,h$について
-$(h\circ g)^{-1\vee}=h^{-1\vee}\circ g^{-1\vee}$
-なので，この構成は逆向き矢上でも
-合成を厳密に保つ．vertexループは固定され，
-全構成は有限局所自由な矢束のtensor・dual・
-Casimir縮約で書かれている．
-従って任意基底変更とも厳密に可換する．
-特に全frameを自明化しない場合も，
-線形frame遷移のtriple overlapでcocycleは閉じる．
-
-一方massゲージや残余長関係lift shearは
-次数零の矢に長さ二以上の道を加えるので，
-単一の線形矢束同型$g$の範囲外である．
-前命題~\ref{prop:qa-q12-raw-mass-a1-path-obstruction}
-の非冪零massでの$\mathbb A^1$障害も，
-このstrict線形比較で消去したとは主張しない．
+前命題の式~\eqref{eq:qa-q12-fox-cotangent-lift}で
+逆変換の道展開は長さ一だけになる．
+従って逆向き矢に対する公式は
+可逆行列の逆転置に退化する．
+頂点ループは元の式のまま固定される．
 \end{proof}
 
 \begin{lemma}[normal helixの全整数前向き消滅と相対perfect-fiber判定]
