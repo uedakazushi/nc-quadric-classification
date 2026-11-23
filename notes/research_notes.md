@@ -396,6 +396,8 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **回転・mutation窓の相対AZ条件の再監査。** 窓の四対象を添字0から3に置くと、構造対象が何番目にあっても反Serre作用一回でその添字が4増加する。このため前向きExt消滅の下限は全幾何点で一律に1である。相対perfect Homの零次集中と任意基底変更を通して、求めるAZ入力を全試験基底に移す。AZ2の一般のcoherent対象に対しては、構造対象の軌道から二段解消して、基底平坦な始域に対する第三Extを、相対Serre双対と基底の単射余生成加群で消す。長完全列はInd heartで取り、次数零のHomはcoherent heartのものと一致する。有限対角の長さから特異基底上のheart全体の大域次元を推論しない。[証明](../papers/quiver-avatar/relative_rotated_mutated_tails.tex)。
 
+**幾何avatarの有限対角矢の再監査。** 四層の対角生成商を鉛筆評価列で計算し、相対基底上で階数四の乗法の余核、同値に行列式線束を掛けた $R^1q_*(\mathcal E_L(-2))$ と同定した。三次minorが可逆な近傍では余核は $\OO_T/(a)$ であり、行列式 $a$ は零因子でもよい。例えば双対数上で $0\to\OO\to\mathcal E\to\OO(2)\to0$ の拡大類を $\epsilon$ 倍の生成元にすると、$-2$ で捩った長完全列の連結写像は $\epsilon$ 倍で、余核は $k[\epsilon]/(\epsilon)$ となる。この例は射影束の分裂壁の計算であり、全整数AS/周期QPの辞書の独立証明は引き続き必要である。[相対対角余核](../papers/quiver-avatar/avatar_charts.tex)。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式
