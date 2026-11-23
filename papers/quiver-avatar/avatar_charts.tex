@@ -2260,6 +2260,51 @@ $(P,F,H,HF)$ の有限Endと同定される。
 像とfiberは前定理と同じruling二重被覆の議論から従う。
 \end{proof}
 
+\begin{corollary}[幾何avatarの線束と線形窓の持ち上げ障害]
+\label{cor:qa-avatar-line-and-window-obstructions}
+$T$ 上の曲線型square avatar
+$(D,F,G,P)$ を取り、三つの相対Picard類の実際の線束への
+持ち上げ障害を $\partial F,\partial G,\partial P$ とする。
+標準square窓の線形持ち上げの三つの中心成分は、
+射影枠の接続写像と同じ符号規約を用いると
+\[
+ (\partial F-\partial P,\quad
+  \partial G-\partial P,\quad
+  \partial F+\partial G-\partial P)
+\]
+である。従って線形窓が $T$ 上で持ち上がる必要十分条件は、
+$F,G,P$ がすべて $D$ 上の実際の線束で実現されることである。
+この判定は各標準pointingのruling二重被覆を引き戻した上で適用する。
+\end{corollary}
+\begin{proof}
+$D\to T$ の構造層の直像は $\OO_T$ であり、
+任意基底変更と可換である。
+これは相対 $(2,2)$ Cartier 制限列の零次から従う。
+従って線束の局所代表の比較に現れるスカラーは
+基底の単元であり、三重重なりの線束の貼合せ障害は
+$H^2_{\mathrm{fppf}}(T,\Gm)$ に値を取る。
+比較の双対とtensorはこれらの類の差と和を与える。
+
+有限窓の三つの射影枠は、相対大域切断の
+$FP^{-1}$、$GP^{-1}$、$FGP^{-1}$ から生じる。
+局所線束代表の遷移同型を押し出すと、
+局所自由な切断束上の遷移同型となる。
+三重重なりで線束上の合成に残る基底スカラーは、
+切断束上でも同じスカラーとして作用する。
+従って射影枠の接続写像で得る障害は表示の三成分となる。
+これは線形窓の中心gerbeを三つの射影枠で測る
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}の
+後の記述と同じ三成分である。
+
+これらを $a,b,c$ と書くと
+$\partial P=c-a-b$、$\partial F=c-b$、
+$\partial G=c-a$ である。従って同時消滅の条件は等しい。
+消滅時には実際の三線束の切断の積から
+線形窓を構成できる。逆に線形窓が与えられれば、
+その中心障害は零であり、上式で三つの線束障害も零となる。
+全構成は任意基底変更と可換である。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
