@@ -418,6 +418,8 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 
 **版面修正版 b6175e0 のクリーンビルド再現性。** `SOURCE_DATE_EPOCH=1795423902 FORCE_SOURCE_DATE=1 TZ=UTC` と共通のTeXツリーで、二つの空ディレクトリからビルドした。全371頁の96dpi描画と抽出テキストは一致した。正規化PDFのSHA-256は `94dc98f0a495d8289593b790646bf3dbd1f843b005b5b4ee81bdac4c0d76e20c`、正規化SyncTeXは `6fdcf7ee34c518fc667718b8f7def06439b33da982e8c23aa42ce6f77c645b90`。両方の最終ログで版面のはみ出し・未解決参照・未解決引用なし。
 
+**両mass零の書換えの別計算。** [再現コード](../computations/verify_avatar_boundary_pbw.py)は矢の重みから巡回微分を生成し、上三角の一般係数と16個の独立な四次係数について、唯一の重なり `zyx` の二通りの整列を四つの開始頂点で比較する。対角型、二重点型および上三角相対表示に共通する有限恒等式を検証した。相対解消の完全性、Noether性や幾何からこの表示に移る全同型は原稿の証明に依存する。再現コマンドは `python3 computations/verify_avatar_boundary_pbw.py`。
+
 **計算と独立監査の範囲。** [有限境界の再現コード](../computations/verify_relative_as_avatar_boundaries.py)は、双対数上のGramと行列式の区別・一意な等長lift、点表示の非平坦ideal、両mass上の二次最小生成を検算する。これはS1–S5の全証明を独立査読したものではない。一次資料の本文再照合と旧未公刊資料の入手範囲は[文献ノート](literature.md)に記載する。特に、原稿内の再照合として、全整数Verdier窓・相対AZ・向き付き比較・逆mutation・全Isom・H2再標識の依存を追跡する。
 
 ## 全指定相対ASのheart、QP適合開、向き付き二次式

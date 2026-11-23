@@ -161,6 +161,7 @@ def sources() -> int:
         "computations/verify_spectral_boundary_models.py",
         "computations/verify_as_avatar_euler.py",
         "computations/verify_avatar_cubic_obstruction.py",
+        "computations/verify_avatar_boundary_pbw.py",
         "computations/verify_quadric.py", "computations/verify_pencil_tangent.py",
         "computations/verify_reducible_quadruples.py", "computations/verify_noncubic_antiserre_pivots.py",
         "requirements.txt", ".latexmkrc",
@@ -311,7 +312,7 @@ def math_checks() -> int:
                "verify_ou_half_common_incidence.py",
                "verify_rootpair_resolvent_spectral.py",
                "verify_as_avatar_euler.py", "verify_avatar_cubic_obstruction.py", "verify_nodal_exceptional_parity.py",
-               "verify_noncubic_boundary.py")
+               "verify_avatar_boundary_pbw.py", "verify_noncubic_boundary.py")
     failures = []
     print(f"Running exact finite checks with {detail}", flush=True)
     for name in scripts:
