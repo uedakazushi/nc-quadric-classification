@@ -2435,6 +2435,46 @@ Noether性を忠実平坦降下する。
 元の基底上でも零である。
 \end{proof}
 
+\begin{corollary}[局所試験基底上の全avatarのNoether性]
+\label{cor:qa-avatar-all-local-noetherian}
+Noetherian局所環 $R$ 上の任意の曲線型avatarについて、
+全整数Jacobian代数の標準右rowと左columnはNoetherianである。
+massが冪零である場合やスカラー点を横切る場合も含む。
+\end{corollary}
+\begin{proof}
+$\mathfrak m$ を $R$ の極大ideal、$k_R=R/\mathfrak m$ とする。
+各成分の $R$-平坦性により、$\mathfrak m$ 進濾過の
+随伴次数代数は両側の積も含めて
+\[
+ \operatorname{gr}_{\mathfrak m}A
+   = (A\otimes_R k_R)\otimes_{k_R}
+                 \operatorname{gr}_{\mathfrak m}R
+\]
+である。右辺の閉fiberの標準射影は、
+幾何点におけるNoether性と忠実平坦降下でNoetherianである。
+$\operatorname{gr}_{\mathfrak m}R$ は
+有限個の中心変数の多項式環の商である。
+標準射影に中心変数を付加してもNoether性は保たれる。
+実際、一変数では部分加群の先頭係数の部分加群が
+変数次数につれて増大して安定し、安定するまでの各次数で
+有限個の生成元を選べば、先頭項を消す帰納法が使える。
+有限変数ではこれを反復し、商を取ることもできる。
+従って随伴次数の標準射影はNoetherianである。
+
+元の標準射影 $Q$ の部分加群 $N$ に誘導濾過
+$N\cap\mathfrak m^nQ$ を入れる。
+その随伴次数から有限個の同次生成元を選び、$N$ に持ち上げる。
+これらが生成する部分加群を $N_0$ とすると、
+各端点 $j$ で $N_j\subseteq (N_0)_j+\mathfrak m^nQ_j$ が
+すべての $n$ について成り立つ。
+これは各段で随伴次数の生成元を使い、
+誤差を一段ずつ深くすることによる。
+$Q_j/(N_0)_j$ は有限 $R$-加群なので、Krullの共通部分定理により
+$\mathfrak m^n(Q_j/(N_0)_j)$ の共通部分は零である。
+従って $N=N_0$ を得る。
+この証明では、元の標準射影全体の完備化は取っていない。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
