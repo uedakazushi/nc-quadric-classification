@@ -1231,6 +1231,42 @@ $z\mapsto z+Qw$ と $w$ のスカラー変更により
 逆向きは線束の積を保つ幾何同型から従う。
 \end{proof}
 
+\begin{proposition}[重複負断面における三次関係の余核]
+\label{prop:qa-avatar-double-negative-quotient}
+幾何点で $2S\leq D$ とする。
+有限窓の二つの対角経路の比較は、短関係による鉛筆の同定のもとで
+射影的に恒等となる。
+この場合、隣接矢と対角生成商の枠を固定した
+対角矢の二次変更の核は三次元であり、
+三次補正の余核は $\det(V)^\vee\otimes H^0(B,\OO_B(4))$ である。
+逆に、$S$ を含む幾何点でこの射影作用が恒等となるなら
+$2S\leq D$ である。
+\end{proposition}
+\begin{proof}
+$C=D-S$ は $S$ を含む。短関係による鉛筆の比較は
+$C$ 上の $P^{-1}|_C$ の自明化に由来する。
+その自明化を閉部分 $S\subset C$ に制限すると、
+負断面上の対角経路を比較する自明化になる。
+従って二つの同定は同じ射影写像を与える。
+$C$ が $S$ を含まなければ、
+系~\ref{cor:qa-avatar-deep-glue-matrix}の
+貼合せは非スカラーなので、逆向きも成立する。
+
+固定した枠で比較を $G=a\,\mathrm{id}_V$ と書く。
+三次項の変更は $v\mapsto(s+at)v$ である。
+これは $\operatorname{Sym}^2V$ 二個の直和から、
+その一個への分裂全射を経由する。
+後者の $\operatorname{Hom}(V,\operatorname{Sym}^3V)$ への写像は単射である。
+従って変更の核は三次元であり、余核は
+\[
+ H^0\bigl(B,(V^\vee\otimes\OO_B(3))/\OO_B(2)\bigr)
+    =\det(V)^\vee\otimes H^0(B,\OO_B(4))
+\]
+となる。ここでは普遍評価の双対列と
+$H^1(B,\OO_B(2))=0$ を用いた。
+この核の元は有限窓の枠付き自己同型を与える。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
