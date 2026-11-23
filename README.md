@@ -46,7 +46,7 @@ Aを分類論文、Bをその体上分類を入力とする相対モジュライ
 
 ## 論文C：全相対AS/avatar/QP stack分類（目標S1–S6・v4.64）
 
-**相対AS代数と全整数Isom。** 成分局所自由な全指定型では、非最小の相対単純解消と有限対角解消の存在を証明した。四頂点Morita窓と各添字のAS双対線束により、全整数代数と全Isomを復元する。raw QPについては、退化係数を含む全重み付き同型の方程式、一組の可逆massの消去、およびnilpotent massでの非平坦な慣性例を得た。幾何avatarの相対heart、AS適合QPの全域と比較射、H2外側のファイバーは引き続き未完成。 [AS](papers/quiver-avatar/as10_mutation_classification.tex)・[QP](papers/quiver-avatar/qp_presentations.tex)。
+**相対AS代数と全整数Isom。** 成分局所自由な全指定型では、非最小の相対単純解消と有限対角解消の存在を証明した。四頂点Morita窓と各添字のAS双対線束により、全整数代数と全Isomを復元する。raw QPについては、退化係数を含む全重み付き同型の方程式、一組の可逆massの消去、およびnilpotent massでの非平坦な慣性例を得た。AS適合性には次数別の必要十分条件を与えた。適合軌跡の有限表示、幾何avatarの相対heart、比較射とH2外側のファイバーは引き続き未完成。 [AS](papers/quiver-avatar/as10_mutation_classification.tex)・[QP](papers/quiver-avatar/qp_presentations.tex)。
 
 **Codexの実行単位。** `CLOUD_CODEX.md` の起動依頼文を使用し、S1（対象/全被覆）→S2（相対AS↔avatar）→S3（全raw QPと許容条件）→S4（全比較と剛体化/2-coherence）→S5（H2内外の判定）→S6（独立監査・公表）を段階的に閉じる。いずれの途中結果も現行原稿に証明付きで統合する。全S1–S6が揃うまではC完成と報告しない。
 

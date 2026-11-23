@@ -1246,6 +1246,51 @@ $L_i$である。実際、$E_{i+4}=T(E_i)\otimes L_i^\vee$
 射と基底変更との合成を保ち、二つの関手は相互に逆である。
 \end{proof}
 
+\begin{proposition}[周期を忘れる射のfiberと周期化の障害]
+\label{prop:qa-as-period-marking-fiber}
+$\sigma A$を添字を四つ平行移動した$\mathbb Z$-代数とし、
+四周期の標識を$\rho:A\xrightarrow{\sim}\sigma A$とする。
+この標識付き相対ASスタックは、四冪等元で標識した
+非負重み付き代数のうち、その展開が指定相対AS型になるものの
+スタックと同値である。ここで重み$d$の成分は
+終点の位相が始点の位相に$d$を足した位相であることを要求する。
+標識を忘れる射の$A$上の2-fiberは、
+集合値のfppf層$\operatorname{Isom}(A,\sigma A)$である。
+$B_0$と$B_4$をそれぞれ区間$[0,3]$と$[4,7]$の
+有限foundationとすれば、この層は自然に
+\[
+ \operatorname{Isom}(B_0,B_4)\ \times\
+ \prod_{i\in\mathbb Z}\operatorname{Isom}(L_i,L_{i+4})
+\]
+である。有限foundationの同型では四つの位相を対応させる。
+\end{proposition}
+\begin{proof}
+標識された族から重み$d$の始点位相$r$の成分として
+$A_{r+d,r}$ ($0\le r<4$)を選ぶ。
+二つの成分を合成するとき、第二の道の始点が最初の道の終点に
+一致するよう、$\rho$の一意に定まる整数冪で添字を移す。
+$\rho$は代数同型なので積は結合的である。
+逆に重み付き代数から各始点の位相と頂点差を用いて展開すると、
+四つずらす同型が備わる。
+標識を保つ射は代表成分の射から一意に復元される。
+標識忘却の2-fiberではunderlying $A$との指定同型で
+標識を$A$に移せる。指定同型を固定する自己同型は恒等なので、
+fiberは表示したIsom層である。
+積への分解は系~\ref{cor:qa-relative-as-line-decorated-foundation}を
+$A$と$\sigma A$に適用したものに一致する。
+\end{proof}
+
+\begin{example}[周期標識の大域障害]
+$S=\mathbb P^1_k$の上で古典的squareの$B_0$を定数族とする。
+系~\ref{cor:qa-relative-as-line-decorated-foundation}で
+$L_0=\mathcal O(1)$、その他の$L_i=\mathcal O_S$と置く。
+こうして得た相対AS族は、各幾何点で古典的squareであり、
+線束が自明となる開では周期化できる。
+一方、$L_0\not\simeq L_4$なので基底全体では周期標識を持たない。
+従って単一の大域的周期重み付き表示の展開とは同型にならない。
+QPから全整数ASへの射は、この周期標識の忘却を経由する。
+\end{example}
+
 \begin{theorem}[相対AS族での固定mutation]
 \label{thm:qa-as10-relative-families}
 $S$を局所Noetherianな$k$-schemeとする。
@@ -1279,7 +1324,7 @@ $\RHom(H_i,H_j)$は$S$上perfectで、
 全基底変更に両立する。
 従って$H^0\RHom(H_i,H_j)$は局所自由で
 積も基底変更と可換し、全target代数が貼り合う。
-逆の余評価にも同じ議論を適用する。
+逆の余評価にも同じ議論を適用する。\n元の二対象の間の後向きHomは四頂点窓の有向性により零である。\nevaluationの三角にHomを適用すると逆操作の係数が\n元の係数の双対と自然に同定される。余評価の三角は\n最初の三角の回転となるので、逆操作は元の対象を回収する。\n余評価から始める場合も同じ三角の比較を行う。\n各整数添字の比較は合成と整合するため、全Isomも回収する。
 非最小十本矢表示
 $W_\lambda=\lambda yx+yq+px+H$で
 $\lambda$が可逆ならtrivial pairを消せるが、

@@ -18,7 +18,7 @@
 | --- | --- | --- |
 | **S1 対象と全被覆** | AS、avatar、8/10/12 QPの各fppf stackの対象・1/2-射・許容開/局所閉条件を内在的に定義し、指定型の全対象/全相対族を覆う。平坦性・perfect性が自動でない場合は補集合も分類する | **部分証明済み**。成分局所自由な相対ASスタックと非最小解消を構成。幾何avatarとQP適合軌跡の全被覆が残る |
 | **S2 全相対AS↔avatar** | 全整数のAS再構成と逆幾何構成を族として証明。任意Isom sheaf、自己同型・慣性・任意基底変更・相対Noether/Serre/heart、line bundle/periodのねじれを整合させる | **部分証明済み**。ASと有限foundation＋全添字の双対線束は全Isom込みで相互逆。幾何avatar・相対heartの全域比較が残る |
-| **S3 全QP群oid** | 8/10/12本矢のAS適合軌跡を必要十分条件で記述し、全raw right-equivalence/非cotangent変換、消去pairの余剰慣性、nilpotent mass・特殊壁・同型判定・groupoidの相対貼合せを決定する | **部分証明済み**。全raw重み付きIsomを係数方程式で表示。AS適合軌跡の全域判定、比較核と外側の分類が残る |
+| **S3 全QP群oid** | 8/10/12本矢のAS適合軌跡を必要十分条件で記述し、全raw right-equivalence/非cotangent変換、消去pairの余剰慣性、nilpotent mass・特殊壁・同型判定・groupoidの相対貼合せを決定する | **部分証明済み**。全raw重み付きIsomとAS適合性の次数別必要十分条件を証明。有限表示、比較核と外側の分類が残る |
 | **S4 全比較図式** | 三stack間の射、核・gerbe・rigidification・fiberを構成し、全Isom/2-cocycle/原像の比較、全型のmutationとruling交換のcoherentな貼合せを証明 | **未完成**。finite squareの相対groupoidや一部cotangent QPでは成立 |
 | **S5 内在的 $H_2$ と外側** | 標準構造対象ごとの $H_2$ への所属・忘却射・像/全ファイバー/慣性を相対的に決定。$H_2$ の外側・古典型・noncubic・退化・nilpotent族を排除せず記述する。既知の延長不能は正確に保持 | **未完成**。体上頂点判定・特定相対開・spectral障害を証明済み |
 | **S6 公表用C4** | S1–S5の全主張の独立数学監査、一次文献・新規性比較、整合した日本語LuaLaTeX全稿の組版/PDF/SyncTeX・表示と再現性、mainとhub保存 | **未完成**。一部静的監査・計算・原稿上証明に限る |

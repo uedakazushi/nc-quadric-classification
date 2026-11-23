@@ -404,6 +404,50 @@ $a,b$は独立な単元なので$ab-1$は非零である。
 満たすから、この自己同型群は平坦ではない。
 \end{proof}
 
+\begin{proposition}[AS適合性の次数別行列判定]
+\label{prop:qa-qp-as-matrix-recognition}
+指定重み付きraw QPのJacobian代数を展開した
+有向$\mathbb Z$-代数が、cubic/AS10の混合型の相対AS族となる
+必要十分条件は次の三つである。
+\begin{enumerate}
+\item 各固定端点と重みで、道の係数行列として全
+$a(\partial_b W)c$を並べる（空道も許す）。
+行数を$n$、補題~\ref{lem:qa-as10-hilbert-foundation}の所定次元を$h$とする。
+まず$n\ge h$を要求する。階数$n-h$のminorが基底を覆い、一つ大きいminorは
+構造層の元としてすべて零であることを要求する。
+\item 各幾何点で、右単純と左単純を両端とする正規化bar複体の
+ホモロジーの次元が、全頂点で一つの指定型の最小分解表と一致することを要求する。
+\item 前二条件から得る長さ三の相対単純分解を双対化し、
+その幾何fiberで次数三の頂点$i-4$の一次元だけが残ることを要求する。
+\end{enumerate}
+条件は任意基底変更に保たれ、全重み付きright-equivalenceで不変である。
+\end{proposition}
+\begin{proof}
+正重みなので固定次数の道は有限個で、Jacobian idealの該当成分は
+第一条件の行列の像である。所定階数のminorを反転すると、
+一つ大きいminorの消滅はSchur補行列の消滅と同値である。
+逆に余核が所定階数の局所自由束なら、像は局所直和因子であり、
+行列が像へ全射であることからminor条件を得る。
+これは非被約底でも成立する。
+
+第二条件の複体は狭義に増加する頂点の鎖だけを使うので、
+固定端点では有限であり、単純間のTorを計算する。
+幾何fiberで最小分解を構成するには、各段で生成加群の商の
+基底を持ち上げる。生成頂点からの距離に関する帰納法により
+この評価は各段で全射となる。単純とテンソルすると微分が零であるため、
+Torは各射影の重複度を与え、所定の消滅条件により三段で停止する。
+命題~\ref{prop:qa-relative-as-perfectness-automatic}の
+非最小解消の構成はこの分解表だけを使うので、前二条件から
+相対単純分解が得られる。各頂点で双対は有限行列である。
+唯一残る一次元には他頂点への作用がなく、
+第三条件は左単純を指定するAS双対と同値である。
+以上から定義~\ref{def:qa-relative-as-flat-stack}と同値となる。
+right-equivalenceはJacobian ideal、頂点および重みを保存する。
+\end{proof}
+
+この判定は全頂点差を走る。有限個の条件によるAS適合軌跡の表示と、
+比較射の像および全fiberの分類には別の議論が必要である。
+
 \begin{proposition}[可縮 pair の残余慣性]
 \label{prop:qa-stabilized-inertia}
 上の群と頂点標識を用いると、
