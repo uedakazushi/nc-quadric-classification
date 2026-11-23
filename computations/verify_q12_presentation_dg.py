@@ -94,3 +94,35 @@ print("PASS: degree-0 free paths 32, degree -1 relation paths 8")
 print("PASS: symbolic six-relation minor determinant 1")
 print("PASS: mass gauge preserves I and induces identity on F/I")
 print("PASS: unipotent relation-lift shear preserves I")
+
+
+# Chain homotopy for the complete two-mass gauge on the intrinsic DG
+# presentation F ⊕ I[1].  The basis of F omits the four idempotents,
+# which are fixed and have zero homotopy.  These are exact polynomial
+# identities over Z[lambda,mu,t,s], not four fibre evaluations.
+fbasis = free
+ibasis = [ra, rb] + rels
+findex = {p: i for i, p in enumerate(fbasis)}
+B = sp.Matrix([[v.get(p, 0) for v in ibasis] for p in fbasis])
+G = sp.Matrix([[gauge({p0: sp.Integer(1)}).get(p, 0)
+                for p0 in fbasis] for p in fbasis])
+H = sp.zeros(8, len(fbasis))
+for word, rel_index, scalar in [
+    (("u",), 0, s), (("x",), 1, t),
+    (("u", "W0"), 2, s), (("u", "W1"), 3, s),
+    (("U0", "x"), 4, t), (("U1", "x"), 5, t),
+]:
+    H[rel_index, findex[word]] = scalar
+Gminus = sp.diag(1 + mu*s, 1 + la*t, 1 + mu*s, 1 + mu*s,
+                 1 + la*t, 1 + la*t, 1, 1)
+assert all(sp.expand(a) == 0
+           for a in B*H - G + sp.eye(len(fbasis)))
+assert all(sp.expand(a) == 0
+           for a in H*B - Gminus + sp.eye(8))
+assert all(sp.expand(a) == 0 for a in G*B - B*Gminus)
+z = sp.symbols("z")
+Gz = sp.eye(len(fbasis)) + z * (G-sp.eye(len(fbasis)))
+assert all(sp.expand(a) == 0
+           for a in Gz*B - B*(sp.eye(8) + z*(Gminus-sp.eye(8))))
+print("PASS: exact polynomial dg nullhomotopy B H=G_F-1, H B=G_I-1")
+print("PASS: mass chain map and polynomial A1 interpolation for all masses")
