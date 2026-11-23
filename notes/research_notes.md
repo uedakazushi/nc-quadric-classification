@@ -392,7 +392,7 @@ D(g_1,g_2)=-2D,\quad \operatorname{Res}(g_1,g_2)=J.
 | S3 八・十・十二矢 | `thm:qa-avatar-presented-field-dictionary`、`thm:qa-avatar-all-mass-fiberwise-flat`、`thm:qa-open-qp-canonical-as-image`。mass配置ごとの有限階数、独立な有理演算による退化排除、全重みのGinzburg集中、右同値の二重導分と端点、基底変更を照合した。 |
 | S4 比較射と剛体化 | `thm:qa-periodic-as-qp-fiber`、`cor:qa-jacobian-cy-normalized-presentations`、`thm:qa-two-mass-h2-rigidification-ruling-glue`。周期付き像の閉方程式、固定Jacobianへの指定同型、消去対とmass群の慣性、rulingのMorita移送、Casimirの降下と負巡回直線の指定枠を照合した。 |
 | S5 内在的H2と外側 | `thm:qa-all-as-relative-h2-pointing-fibers`、`thm:qa-avatar-all-presented-pointing`、`cor:qa-avatar-pointing-by-quiver`。全四位相の逆再標識、像と有限窓上の2-fiber、反対偶奇の生成障害、spectral非延長と二捩れ線束の障害を照合した。 |
-| S6 文献と再現性 | 現行のTeX・文献ソースと同じ `32c0782` の411頁を二つのクリーンビルドで照合した。一次本文で確認した定理と適用仮定は [文献ノート](literature.md) に記録した。AZ原著および未公刊三稿の本文照合と、その内容を含む新規性比較が残る。 |
+| S6 文献と再現性 | 現行のTeX・文献ソースと同じ `32c0782` の411頁を二つのクリーンビルドで照合した。一次本文で確認した定理と適用仮定は [文献ノート](literature.md) に記録した。共有されたAZ原著とWeyl研究稿の引用箇所を確認した。未公刊のv7と十二矢分類研究稿の原文照合、および両稿を含む新規性比較が残る。 |
 
 **論文C 8cdbb14 のクリーンビルド再現性（2026-11-23）。** 同じ Git archive を空の二作業ディレクトリに展開し、LuaHBTeX 1.18.0 と latexmk 4.86 で独立にビルドした。共通設定は `SOURCE_DATE_EPOCH=1795417450 FORCE_SOURCE_DATE=1 TZ=UTC` と同じ日本語 TeX ツリー。PDFのトレーラ `/ID` を取り除いたバイト列の SHA-256 は両方とも `27dc48b47fa9dd6cec7e976b21aef8aafa87e2f780a3ce9cc3085b11a7b3bbcf`。SyncTeXを展開して作業ディレクトリの絶対パスを同じ文字列へ置換した結果と、PDFの `pdftotext -layout` の出力はバイト単位で一致。Poppler 26.05.0 で96dpiに描画した全349頁はページごとに一致した。最終ログの警告は旧フォントコマンド `\rm` の非推奨通知一件。未解決参照・引用および overfull box はなかった。同版で `python3 scripts/check.py math --manuscript papers/nc-quadric-surface-avatar.tex` は PASS。これらの再現結果は当該原稿と共通ツール環境に対するものである。
 
