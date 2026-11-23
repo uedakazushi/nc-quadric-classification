@@ -2676,3 +2676,5 @@ latexmk
 **標準頂点のH2ファイバーの独立照合と訂正。** `cor:qa-avatar-all-presented-pointing-fiber` では、以前の記述が有限mutation窓との指定同型に加えて固定周期付きJacobianとの指定同型を取っていた。後者はH2への射のデータではない。八矢で有限窓の返り側の隣接矢束を単元倍すれば、有限窓で恒等な右同値が異なるpotentialの定数倍を結ぶ例で違いを確認した。該当ruling上の線形liftと有限窓上の表示gerbeを用いる形に本文を訂正した。
 
 **標準頂点のfiber訂正を含む406頁保存版 69f80f9。** 二つの `git archive 69f80f9` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795439677 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全406頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `765266c042d84d9bc1e9747b4663258a78ace2fcb03abfce44eec91b14947175`、SyncTeX `ff871a61951276c683a3dae6b3fa56789977c756579fe7598938dc206116db16`、抽出テキスト `5f52ea3aca46d3f5f368154f0ab2d6c984eb53c6454cd1bd1913155f43542414`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**矢数ごとの標準頂点の像の独立監査。** `cor:qa-avatar-pointing-by-quiver` で、十矢の二位相版をそれぞれ異なるmassを単位にする十二矢開に安定化して監査した。八矢の四位相と十矢の一mass可逆を要する位相の像はcubic rulingを持つ開であり、十矢の他方の偶奇と十二矢の各定義域では全H2を覆う。八矢への消去で残るスカラー慣性もファイバーに記した。

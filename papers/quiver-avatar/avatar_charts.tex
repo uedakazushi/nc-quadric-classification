@@ -3212,6 +3212,55 @@ potentialの単元倍を移す右同値になる。
 従ってその枠を $H_2$ 上のfiberに追加することはできない。
 \end{proof}
 
+\begin{corollary}[矢数と位相を固定した $H_2$ への像]
+\label{cor:qa-avatar-pointing-by-quiver}
+$H_2^{\rm c}$ をcubicなnormal有限窓を与えるrulingを
+fppf局所に持つ相対開とする。
+非最小な重み付き表示も含めた各指定箙について、
+標準頂点から $H_2$ への定義域とfppf像は次の通りである。
+ただし $S$ は各箙でのAS適合族の全試験基底である。
+\[
+\begin{array}{c|cc|cc}
+ &\text{偶数の定義域}&\text{偶数の像}
+ &\text{奇数の定義域}&\text{奇数の像}\\ \hline
+ Q_8 &S&H_2^{\rm c}&S&H_2^{\rm c}\\
+ Q_{10}^{\rm odd}&D(\lambda)&H_2^{\rm c}&S&H_2\\
+ Q_{10}^{\rm even}&S&H_2&D(\mu)&H_2^{\rm c}\\
+ Q_{12}&D(\lambda)&H_2&D(\mu)&H_2
+\end{array}
+\]
+八矢の各fiberは、該当する再標識で引き戻した
+cubic ruling選択とその線形窓の持ち上げgerbeである。
+十矢では、定義域が $S$ の位相のfiberは
+全ruling上の線形窓と残存mass群の表示gerbeであり、
+他方の位相のfiberは八矢のものに $B\Gm$ を加えたものとなる。
+\end{corollary}
+\begin{proof}
+十矢奇数版は $vu$ を追加して十二矢の $D(\mu)$ に入り、
+偶数版は $yx$ を追加して $D(\lambda)$ に入る。
+八矢は両方を追加した重なりに入る。
+これらの安定化はJacobianと標準射影を保つので、
+定理~\ref{thm:qa-avatar-all-presented-pointing}から
+各定義域が得られる。この手順は零でない冪零massも保つ。
+
+十矢奇数版の奇数位相は、対応するmutation窓の
+常に適合する二位相である。
+有限窓への表示gerbeは全mutation有限窓を局所的に覆い、
+定理~\ref{thm:qa-all-as-relative-h2-pointing-fibers}の
+$r$ と $\iota_M r$ の両方は全 $H_2$ を覆う。
+偶数版では一頂点回転を施す。
+八矢ではmutation窓がcubicなrulingに限られる。
+対応する再標識は $r$、$\iota_Mr$、$r\upsilon$ または
+$r\upsilon^{-1}$ であり、いずれもその範囲で
+同じ $H_2^{\rm c}$ を像とする。
+これは $\upsilon$ がcubic窓の自己同値であり、
+$r\upsilon^2\simeq\iota_Mr$ であることから従う。
+十矢の残存massが可逆な開での比較は
+八矢と可縮対一つの積である。
+従って残る二つの十矢の像も $H_2^{\rm c}$ となり、
+表示慣性を含むfiberは前系と相対消去から得られる。
+\end{proof}
+
 \begin{theorem}[奇数対角開の常に定義される二頂点の像とfiber]
 \label{thm:qa-avatar-odd-h2-image}
 $\mathcal X^{\mathrm{curv}}$ を
