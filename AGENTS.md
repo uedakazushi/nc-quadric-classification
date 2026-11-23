@@ -1,12 +1,24 @@
 # 研究リポジトリの作業指示 — nc-quadric-classification
 
-2026-11-23 / v1.68。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.62。
+2026-11-23 / v1.69。論文Aはv1.69（20節）、論文Bはv0.41（31節）、論文Cはv4.63。
 
 ## 公表用三論文の役割
 
 - A：`papers/nc-quadric-classification.tex` を主原稿とし、構造対象付きの全体上の分類と同値判定を自己完結にする。
 - B：`papers/nc-quadric-moduli.tex` は内在的相対モジュライの正本とし、相対Koszul・Artin変形・有限型効果性・境界幾何の証明を保持する。
 - C：`papers/nc-quadric-avatar.tex` はAS代数・potential・anticanonical avatarの分類と内在的H2への比較の正本。分割節は `papers/quiver-avatar/`。体上AS分類、E_f側の全noncubic相対pointed認識、smooth spectral avatarの双対対応と境界延長不能を区別して記述する。任意のAS/avatar/QP表示stack全体とH2との相対同値は主張しない。
+
+## 最上位目標：論文Cの全相対スタック分類（Codexの固定終了条件）
+
+**最上位目標を2026-11-23に変更した。** `papers/nc-quadric-avatar.tex` に、指定最小AS分解型（square/rotated square/cubic/独立AS10）、その幾何avatar、重み付き8/10/12本矢QPの**全相対fppfスタック**を、非被約基底・同型層・自己同型/慣性・無限周期AS再構成・相対heart・rigidification/gerbe・mutation/rulingの貼合せ・内在的 $H_2$ への適合/非適合部分まで**正確に分類した原稿上の証明**を完成させる。任意のAS/QPという表現は指定型内の全対象を指し、無条件に全次元・任意箙へ拡張する意味ではない。都合のよいperfect/smooth/$H_2$族だけに対象を狭めて全分類と判定しない。
+
+**達成条件は研究方針のS1–S6すべて**。従来のC1–C3（体上AS/avatar、$H_2$開QP/foundation/heart/GIT）は重要な原稿上の成果であってS1–S5の全体ではない。従来C4は独立監査・文献・組版を扱う新S6の一部。これら旧C1–C4だけを達成しても停止しない。新しい主張のない計画整理・反例候補・計算PASS・一つの補題・commitも終了条件にしない。
+
+**比較対象を混同しない。** 未修正QPとAS/avatarのstackは通常同値ではない（可縮pairの $B\mathbb G_m$、二mass核、頂点scalar、mutation時のright-equivalence障害）。全raw QPのAS性を仮定せず、AS適合軌跡と未適合部分、rigidification後の比較、同型層の核と余剰慣性を求める。各主張の範囲（幾何fiber/flat family/任意非被約底/任意raw right-equivalence）を明示する。既証明のspectral境界の $H_2$ 延長不能・stack自己同値不存在と矛盾する無条件の同値は主張しない。
+
+**最初の研究単位（開始時に必ず優先）。** `as_helix_classification.tex` の体上分類、`as10_mutation_classification.tex` の相対perfect条件、`relative_square_foundation_stack.tex` の相対foundation、`qp_presentations.tex` のQP慣性、`cubic_qp_foundation_groupoid.tex` の二mass比較を読み、AS/avatar/QP各相対stackの対象とIsomを現行Cで定義し、`thm:qa-as10-relative-families` のflat/perfect条件が全AS族で自動かを判定する。第一検査は双対数 $k[\varepsilon]/(\varepsilon^2)$ とrank3壁（nilpotent massを含む）、古典squareを使う。必要なrelative lemmaを証明し、反例があれば原稿に適用範囲を訂正して正確な代替atlasを作る。ここで同型層・基底変更・全相対AS復元の最初の未完成な矢印を閉じる。終了するまで漫然とC4の公表前編集だけを繰り返さない。
+
+**Codexの継続規則。** 成果を論文C本文に証明付き統合し、現在有効な研究ノートと方針・READMEを置換更新する。主張状態を「証明済み／追加仮定付き／未証明／計算観察」に区別する。根本的障害で一課題が詰まっても、役立つ反例・不足補題を記録し次のS1–S5課題へ移る。15分以内を目安に通常commitとmainへのfast-forward pushを行い、成功確認後も実行環境の限界まで研究を続ける。研究の区切りには対象repoを先に保存してからresearch-hubの該当項目を更新する。force push、GitHub Actionsの追加・起動、旧版ファイルの累積はしない。認証・組版不足は未実行と正しく記し、研究そのものを停止する言い訳にしない。
 
 ## Cの現在の到達点と比較範囲
 
@@ -105,11 +117,11 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 - AS分類の独立監査では、非被約D上のPic0とrank forcing、逆spherical helix実現、全整数評価・余評価、逆mutation、AZ ample cornerと相対perfectnessを一次証明と照合する。Kellerのrelation Ginzburg=3-CY completionには有限代数のgldim 2とminimal relations、Keller–Yang Thm 6.2にはloopなし・mutation頂点の2-cycleなし・potentialの巡回表示を確認する。既に適用条件を記したことと全依存の独立監査完了を区別する。
 - 各実行単位は研究方針の現行優先順位に従って選び、本文・ノート・方針・READMEの状態を同期する。低次数・有理係数モデルの検算PASSを全次数定理、降下、GAGA、全導来非同値、新規性の証明と扱わない。旧PDFからの証明移管、今回の数学的点検、一次文献照合、厳密計算、LuaLaTeX組版、GitHub保存、hub更新は別々に報告する。
 
-**最優先目標は論文Cの完成**（`papers/nc-quadric-avatar.tex`）。`00_research_plan.md` のC1–C4達成条件に従う。中央affine・全有限QP/foundation群oid・二mass・H2実現可能開のJacobian/Serre/heartとS₂-mutation商は原稿上決着。次はこの全証明を独立監査し、非被約基底・訂正Keller・左右Noether・stack rigidificationの仮定を検証し、先行研究比較とLuaLaTeX全稿組版・PDF表示によってC公表稿を完成させる。A/B監査・文献比較は有効な入力として維持するが、Cの未解決核心を放置してA/Bの公表作業を優先しない。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
+**最優先目標は論文Cでの指定AS/avatar/8・10・12本矢QPの全相対stack分類**（`papers/nc-quadric-avatar.tex`）。`00_research_plan.md` の**S1–S6**が唯一の完了判定であり、既存のC1–C4は研究の入力・検証単位である。中央affine・全有限QP/foundation群oid・二mass・H2実現可能開のJacobian/Serre/heartとS₂-mutation商は原稿上決着。次はまず全相対AS/avatar/weighted-QP stackの定義・coverage、AS10 relative perfectの自動性、全Isom・QP慣性と非被約基底での比較を進める。既存C3の数学的独立監査、Keller訂正条件、先行研究・LuaLaTeX実組版も並行して進める。A/B監査・文献比較は有効な入力として維持するが、Cの未解決核心を放置してA/Bの公表作業を優先しない。BからAへの17種類のラベル参照はAの現行分類20節に定義されている。これはTeXソース上の依存の監査で、全数学的証明の独立監査ではない。Aの主原稿の相対部分は入力から外したが、未使用の旧相対節ファイルはBに全証明と対応ラベルの保持を確認したうえで整理済み。残るBへの引用・source依存を優先して点検する。`python3 scripts/check.py papers`（A/B/Cの明示的な論文間ラベル参照も検査） を実行して3原稿を別々に検査する。証明移管・数学的検証・組版・GitHub保存・hub更新は別の状態として扱い、外部査読済みとは主張しない。
 
 ## Cloud Codexへの継続指示
 
-このrepoの研究継続を依頼された場合の最優先目標は、`00_research_plan.md`のC1–C4を満たして論文Cを完成することである。全H2の分類は「完全分類の達成条件」F1–F6を基準とし、達成済みの場合は方針に記した公表前監査・次の研究課題から進める。計画の作成、一補題、一例、一節、検算成功、commit、pushを終了条件にしない。推進できる未解決課題がある限り、保存後も次の実行単位へ進む。「続けますか」と毎回確認しない。環境の開始方法は `CLOUD_CODEX.md` に置く。
+このrepoの研究継続を依頼された場合の最優先目標は、`00_research_plan.md`の**S1–S6を満たして指定AS/avatar/8・10・12本矢QPの全相対stack分類を論文Cに完成すること**である。C1–C4の達成だけで終了しない。全H2の分類は「完全分類の達成条件」F1–F6を基準とし、達成済みの場合は方針に記した公表前監査・次の研究課題から進める。計画の作成、一補題、一例、一節、検算成功、commit、pushを終了条件にしない。推進できる未解決課題がある限り、保存後も次の実行単位へ進む。「続けますか」と毎回確認しない。環境の開始方法は `CLOUD_CODEX.md` に置く。
 
 1. 最新のhub該当項目、研究方針、本指示、必要なノート・原稿を読む。既存の未commit変更を調べ、他の作業者の変更を保持する。実際のcheckoutと`origin/main`の差を確認し、研究方針の「次の実行単位」から始める。
 2. `python3 scripts/check.py doctor`で道具を診断し、`python3 scripts/check.py sources`で構成を点検する。必要な依存のみ`bash scripts/bootstrap.sh`で整える。依存不足はその検証を未実施とする理由であり、証明検討・原稿編集・利用可能な資料の比較まで止める理由ではない。
@@ -120,7 +132,7 @@ Balanced開 $h^0(M)=0$ は積の根重複が高々二の二形式商 $[\overline
 7. 各検証のPASS/FAIL/SKIPを区別する。`scripts/check.py`の成功は構成・計算・組版の確認であり、証明・新規性・完全分類の認証ではない。必要な検証が未実施なら、その制約をノートと報告に書く。環境修復だけを研究成果として報告しない。
 8. 最終終了は、完全分類の達成条件を満たして独立点検・保存を終えた場合、ユーザーが停止・変更を指示した場合、または実行環境の上限や不可欠な外部権限等により本当に継続できない場合に限る。後者では現行一式を保存し、未解決命題・使える結果・次の具体的一手と外部制約を方針へ残す。自動的な別セッション起動や無期限実行をAGENTS.mdで実現したとは扱わない。
 
-全対象の定義・基礎体・同値関係を狭めて完了判定を満たしてはならない。方法の変更、定理候補の訂正、必要な補題の追加は自律的に行い、有効な成果を現行原稿に保持する。全てのambientや全ての平方根を別々に完全分類することは、H2のpointed exact分類に必要だと証明されない限り終了条件に追加しない。
+指定型の全対象の定義・基礎体・同値関係を都合よく狭めて完了判定を満たしてはならない。方法の変更、定理候補の訂正、必要な補題の追加は自律的に行い、有効な成果を現行原稿に保持する。全てのambientや全ての平方根を別々に完全分類することは、H2のpointed exact分類に必要だと証明されない限り終了条件に追加しない。
 
 ## 入口と正本
 
