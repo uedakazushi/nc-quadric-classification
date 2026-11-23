@@ -358,12 +358,9 @@ $P|_C\simeq\OO_C$ なので $h^0(D,HF^{-2}P)=1$ である。
 \begin{lemma}[射影束の分裂型から有限窓の対角矢を数える]
 \label{lem:qa-avatar-finite-diagonal-count}
 幾何点の avatar と $R\in\Pic^0(D)$ に対し、
-$(R^{-1},F,H,HF)$ の有限有向 End 代数を取る。
-頂点 $0\to2$ と $1\to3$ の最小矢の本数は、それぞれ
-\[
- h^0(B,\mathcal E_R(-2)),\qquad h^0(B,\mathcal E_{\OO_D}(-2))
-\]
-に等しい。
+$(\OO_D,F,HR,HRF)$ の有限有向 End 代数を取る。
+頂点 $0\to2$ と $1\to3$ の最小矢の本数はいずれも
+$h^0(B,\mathcal E_R(-2))$ に等しい。
 頂点 $0\to3$ に新しい最小矢はない。
 \end{lemma}
 \begin{proof}
@@ -376,7 +373,7 @@ $\OO_B(1)$ と $\OO_B(-1)$ の拡大である。
 \[
  V\otimes H^0(B,\mathcal E_L(-1))
      \longrightarrow H^0(B,\mathcal E_L),
- \qquad L=R,\OO_D
+ \qquad L=R
 \]
 となる。$B$ 上の鉛筆の評価列
 $0\to\det(V)\otimes\OO_B(-1)\to V\otimes\OO_B
@@ -395,10 +392,10 @@ $H^0(\mathcal E_R)\otimes V\to H^0(\mathcal E_R(1))$ である。
 \begin{proposition}[有限窓の対角余核と相対分裂壁]
 \label{prop:qa-avatar-relative-diagonal-wall}
 $q:B\to T$ とし、標識の線束を選んだ相対 chart 上で考える。
-$(R^{-1},F,H,HF)$ の二つの対角成分を、
-中間頂点を経由する積で割った商は、$L=R,\OO_D$ の順に
+$(\OO_D,F,HR,HRF)$ の各対角成分を、
+中間頂点を経由する積で割った商は
 \[
- \det(q_*\OO_B(1))\otimes R^1q_*\bigl(\mathcal E_L(-2)\bigr)
+ \det(q_*\OO_B(1))\otimes R^1q_*\bigl(\mathcal E_R(-2)\bigr)
 \]
 である（標識の線束を変更すると対応する始域・終域の因子で捩れる）。
 これらの余核は任意の基底変更と可換である。
@@ -413,7 +410,7 @@ fppf 局所で $B=\PP^1_T$ とする。
 $q_*\OO_B(1)\simeq(qp)_*F$ を与える。
 ここでは $\OO_B(-1)$ の直像と高次直像がともに零である。
 命題~\ref{prop:qa-pushforward}の分裂型から
-$\mathbf Rq_*\mathcal E_L(k)$ は $k=-1,0,1$ で
+$\mathbf Rq_*\mathcal E_R(k)$ は $k=-1,0,1$ で
 次数零の局所自由層となり、任意の基底変更と可換である。
 従って同じ鉛筆評価列の直像から、二つの階数四の層の間の
 乗法の余核として表示した $R^1$ の式を得る。
@@ -428,13 +425,48 @@ $0\to2\to3$ の乗法も局所自由層の射であり、
 幾何点ごとに全射なので Nakayama により全射である。
 \end{proof}
 
+\begin{proposition}[鉛筆窓の最長成分の関係束]
+$A$ を $(\OO_D,F,HR,HRF)$ の有限有向 End 代数とする。
+$A$ の頂点代数を $D_0=\OO_T^4$ とすると、reduced bar 複体の
+$0\to3$ 成分は
+\[
+ 0\longrightarrow V\otimes W\otimes V
+ \longrightarrow (V\otimes U)\oplus(U\otimes V)
+ \longrightarrow q_*\mathcal E_R(1)\longrightarrow0,
+\]
+ただし $V=q_*\OO_B(1)$、$W=q_*\mathcal E_R(-1)$、
+$U=q_*\mathcal E_R$ で、微分は隣接因子の積の交代和である。
+階数は順に $8,16,6$ であり、中央のホモロジーは
+任意基底変更と可換な階数二の関係束である。
+特にこの成分の $\operatorname{Tor}^A_3(D_0,D_0)$ は零である。
+\end{proposition}
+\begin{proof}
+右端の全射性は前命題で確認した。
+左の単射性は幾何点で検査する。
+$(1,1)$ 型では隣接合成 $V\otimes W\to U$ が同型である。
+$(0,2)$ 型では $W=H^0(\OO_B(1))$ と同定でき、
+隣接合成の核は二つの二次元空間の間の交代テンソルの張る直線である。
+従ってこの核の非零元はテンソル階数二を持つ。
+左の微分の核は、二つの隣接合成の核をそれぞれ三重積へ拡張した
+部分空間の共通部分である。片方の非零元を
+先頭の $V$ と残る二因子で分ければ階数一になり、
+もう片方の非零元の同じ分け方では階数二になる。
+従って共通部分は零である。
+全幾何点で階数八であるため可逆 minor で局所分裂し、
+右の全射も局所分裂する。中央の核を左の像で割ると
+階数 $16-6-8=2$ の局所自由層となり、任意基底変更を保つ。
+\end{proof}
+
 \begin{remark}[矢数の名称と体上の辞書]
 幾何的な開埋め込みと表の分解は、上の証明の通り
 射影束の分裂型、Picard 類および垂直成分条件から従う。
-補題~\ref{lem:qa-avatar-finite-diagonal-count}を $R=P$ に
-適用すると、表の四行で有限窓の二つの対角の本数は
+補題~\ref{lem:qa-avatar-finite-diagonal-count}を
+$R=P$ と $R=\OO_D$ に別々に適用すると、表の四行で
+二つの鉛筆乗法の余核次元の組は
 順に $(0,0),(1,0),(0,1),(1,1)$ となる。
-この計算は有限窓の乗法に関するものである。
+これらは二つの異なる窓における計算である。
+例えば $(P^{-1},F,H,HF)$ の最初の隣接 Hom は
+$H^0(FP)$ で、その積に上の $F$ の鉛筆を直接適用できない。
 各層を $8,10,10,12$ 本の最小矢数と対応させる体上の解釈は、
 $A_Q^{\mathrm{pres}}$ を対象とする
 \cite[定理15.3]{Q12Avatar2026}の同型類分類を用いる。
