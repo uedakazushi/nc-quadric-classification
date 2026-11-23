@@ -4,7 +4,7 @@ from collections import defaultdict
 from functools import cache
 from itertools import product
 
-from sympy import Matrix
+from sympy import Matrix, eye, kronecker_product, zeros
 from sympy.polys.matrices import DomainMatrix
 
 
@@ -54,6 +54,26 @@ def quotient_dimension(derivatives, start, weight, min_diagonals=0):
     return len(words) - (DomainMatrix.from_Matrix(Matrix(rows)).rank() if rows else 0)
 
 
+def inward_top_dimension(matrices, start, half_weight):
+    cells = 4 * half_weight
+    short_columns = half_weight
+    long_columns = 4 * (half_weight - 1)
+    relations = zeros(cells, short_columns + long_columns)
+    for cell in range(half_weight):
+        phase = (start + 2 * cell) % 4
+        row = 4 * cell
+        short = matrices[phase]
+        relations[row : row + 4, cell : cell + 1] = Matrix(list(short))
+        if cell == half_weight - 1:
+            continue
+        column = short_columns + 4 * cell
+        opposite = matrices[(phase + 3) % 4]
+        transfer = -matrices[(phase + 2) % 4] * opposite.T.inv()
+        relations[row : row + 4, column : column + 4] = kronecker_product(eye(2), short.T)
+        relations[row + 4 : row + 8, column : column + 4] = kronecker_product(transfer, opposite)
+    return 1 + cells - DomainMatrix.from_Matrix(relations).rank()
+
+
 def main():
     matrices = (
         ((1, 0), (0, 0)),
@@ -84,6 +104,12 @@ def main():
         assert [row[6] for row in dimensions] == expected_weight_six
         assert [quotient_dimension(derivatives, start, 6, min_diagonals=2) for start in range(4)] == [5, 4, 4, 4]
     print("PASS: the quartic perturbation removes the weight-five defect, which reappears at weight six")
+    coefficient_matrices = tuple(map(Matrix, matrices))
+    assert [
+        [inward_top_dimension(coefficient_matrices, start, half_weight) for start in (0, 2)]
+        for half_weight in range(2, 6)
+    ] == [[4, 4], [5, 4], [5, 5], [6, 5]]
+    print("PASS: the reduced inward matrices recover the dimensions for weights four through ten")
 
 
 if __name__ == "__main__":
