@@ -2704,3 +2704,5 @@ latexmk
 **局所Artin基底における古典点のTorの同定。** 行列式イデアルは切断の値域の逆線束の商であり、特殊fiberでのその全射と先頭次数への射の合成は先頭切断による単射である。従って一変数に限らず、一般の局所Artin基底で相対Torそのものが逆線束になる。
 
 **局所Artin基底のTor直線を含む409頁保存版 403922f。** 二つの `git archive 403922f` 展開で `SOURCE_DATE_EPOCH=1795441335 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `42ff89c0be4f1bbec741a537f57cb1cf389df6967c1f29afb37a0585ed8b3951`、SyncTeX `717b42eda7ae11951334c29905dcbdf03cb26155fa4a741e9baa4da2dec5d9b9`、抽出テキスト `531421b91fa9cccdeda6a67bb837d51288a5a5cb030105c5e1703f3f7702edea`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**一mass退化排除の稠密性の独立監査。** `thm:qa-avatar-one-mass-forces-short-rank` の横断族で、階数一・一および階数一・二の場合について九列の小行列式を整数で再計算し、原稿に列番号と値を記した。この小行列式から形式逆写像で像の稠密性を示し、有理関数体上の関係行列の階数上界が全係数へ移る根拠を明示した。
