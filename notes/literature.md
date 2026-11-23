@@ -1039,3 +1039,5 @@ Catanese–Franciosi–Hulek–Reid, *Embeddings of Curves and Surfaces*, 刊行
 **rulingの有限窓とCasimirのMorita比較。** Keller, *Deformed Calabi–Yau completions*, Proposition 4.2の本文で、非変形completionのMorita functorが元の包含・増大と可換し、そのtensor次数一の写像が逆双対化複体の比較から来ることを再照合した。Casimirの保存はこの命題に付加して、係数付きtraceで対角恒等射を移し、同じbar包含とConnes作用を追うことで証明した。
 
 **全内部重みの零次集中の照合。** Stacks Project [Tag 0BCC, Lemma 15.77.6](https://stacks.math.columbia.edu/tag/0BCC) で、局所環上のpseudo-coherent複体に対して、剰余体への導来引戻しの各コホモロジー次元を階数とする自由模型が存在することを確認した。各固定始終点・内部重みのGinzburg道複体は既に有界有限自由なのでこの仮定を満たす。零次以外の剰余体コホモロジーが零なら、同じ局所化で零次の有限自由加群に準同型となる。
+
+**全整数の線束列の共通被覆の障害。** Stacks Project [Tag 0BD2, Lemma 31.18.6](https://stacks.math.columbia.edu/tag/0BD2) の一次本文で、有限局所自由な正次数の射の行列式ノルムと任意基底変更を確認した。Cの被覆障害では行列式の射影公式を直接用い、基底の線束を引き戻してからノルムを取ると次数乗になることだけを使う。有限局所自由多重切断は一般fiberの閉点を縮めて作るため、元のfppf被覆が有限であることは仮定しない。
