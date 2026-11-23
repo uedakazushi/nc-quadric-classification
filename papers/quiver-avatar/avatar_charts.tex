@@ -813,6 +813,53 @@ mutationによる指定型AS代数の対応は定理~
 \cite[定理51.4・系51.5、定理53.2]{AvatarVSeven2026}にある。
 幾何的な開埋め込みは独立に証明した。
 
+\begin{corollary}[奇数対角開での相対AS完成とJacobian]
+\label{cor:qa-avatar-odd-as-jacobian}
+$\mathcal A_{10,\mathrm o}^{\times}$ 上で、捩れ付き窓
+$(P,F,H,HF)$ の Serre 完成は四周期の指定相対cubic/AS10完成である。
+その orbit 代数の折り畳みは
+系~\ref{cor:qa-avatar-twisted-ordinary-jacobian}の
+通常の Jacobian 代数と全次数で一致する。
+全次数成分は局所自由であり、相対tailsは
+square avatar の実際の相対heartを与える。
+\end{corollary}
+\begin{proof}
+系~\ref{cor:qa-square-chart}で square avatar に戻し、
+$(E_0,E_1,E_2,E_3)=(P,F_s,G_s,F_sG_s)$ と書く。
+評価 $J\otimes E_0\to E_1$、$J=\operatorname{Hom}(E_0,E_1)$
+の左mutationを取る。曲線上の評価は全射で、
+その核は $P^2F_s^{-1}$ に行列式線束を掛けたものである。
+曲線上の有向 End 代数と導来窓の比較は、
+評価三角に各 $E_i$ への Hom を適用して確認する。
+$E_2,E_3$ に対しては曲線上の $E_1$ からの $H^1$ が零であり、
+零次Homは square窓のものと一致する。
+特に $G_sF_s^{-1}$ の全コホモロジーは、
+$\PP^1\times\PP^1$ 上の Cartier 制限列で現れる
+$\OO(-1,1)$ と $\OO(-3,-1)$ の消滅から零となる。
+$E_0$ に対しては、曲線上の
+$J^\vee\to\operatorname{Hom}(P^2F_s^{-1},P)$
+が鉛筆評価の余評価写像であり、行列式線束因子を含めて同型である。
+実際二つの基底切断は余評価でその交代双対の基底に対応する。
+これらの写像は評価三角と合成から作るので積を保つ。
+幾何点での同型は局所自由 Hom の比較により
+任意基底変更と整合する。
+全曲線線束を共通に $F_sP^{-1}$ で捩れば
+$(P,F,H,HF)$ となる。
+
+定理~\ref{thm:qa-relative-square-e0-e3-h2}により、
+このsquare窓は真正な相対 $H_2$ heart 上にある。
+対応するmutation窓の Serre 軌道は
+定理~\ref{thm:qa-relative-rot-mut-completion-heart}で
+全次数局所自由な相対完成を持ち、
+系~\ref{cor:qa-all-relative-as-type-hearts}により
+指定cubic/AS10の相対tailsと一致する。
+軌道の第 $n$ 成分の端点 $i,j$ は
+展開の重み $4n+j-i$ に対応し、その積は軌道の積である。
+この同じ有限窓からの Serre 完成の零次は
+系~\ref{cor:qa-avatar-twisted-ordinary-jacobian}で
+Jacobian と同定されているので、全次数で結論を得る。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
