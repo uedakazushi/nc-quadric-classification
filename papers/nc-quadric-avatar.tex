@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.59
+% 日本語 LuaLaTeX。2026-11-23 / v4.60
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.59（Kellerのcotangent表示群oidでの2自然Morita降下）}
+\date{2026年11月23日\quad v4.60（非被約基底上の相対exact 3-CY構造と増分監査）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -189,11 +189,17 @@ ordinary Jacobian代数へのdg準同型を得る．
 したがって$H^{-1}$は単に平坦なだけでなく零であり，
 局所dg導来加群圏の同値と任意の非平坦基底変更も成立する．
 これは全raw QPのGinzburg dg代数との同一視ではない．
-さらに幾何fiberでは有限foundationの双加群解消によるsmooth性と
-Kellerのundeformed completion定理を併用し，
-ordinary Jacobian自身のhomological smoothnessと
-exact $3$-Calabi--Yau性を得る．
-相対特異底に対するCY構造の降下はこの系の範囲外である．
+さらに有限foundationは任意の非被約基底$R$上で
+局所自由かつ相対双加群perfectなので，
+Kellerの2018年erratumの任意可換基礎環上の定理から，
+\emph{全二mass非退化有限開}のSerre dg完成には
+canonicalな相対exact $3$-Calabi--Yau構造が存在する．
+$H_2$実現可能開ではdg形式性によって
+ordinary Jacobian自身も\emph{$R$-相対}exact $3$-CYである．
+構成は非平坦基底変更の後にも適用され，
+各有限foundation同型に自然である．
+一方，未剛体化全QP stackへのnegative cyclic classの
+fppf高次降下や任意raw QPのcanonical CY class比較は未主張．
 さらに非最小二massの四頂点有向有限道代数では
 次数$-1$の関係矢が二本合成できず，
 相対関係イデアルのrank八直和因子性により
