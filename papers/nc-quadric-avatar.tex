@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.57
+% 日本語 LuaLaTeX。2026-11-23 / v4.58
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.57（線形frameに対するGinzburg dgのstrict自然性）}
+\date{2026年11月23日\quad v4.58（多項式right-equivalenceのGinzburg dg strict持上げ）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -220,7 +220,7 @@ massゲージがMorita局所化\emph{以前}にも
 dgホモトピー自明であることを証明する．
 関係lift shearもintrinsicな$(F,I)$を変えない．
 これは有限foundation側のdg降下であり，
-未剛体化raw Ginzburg dgの全right-equivalence作用との
+この段階でGinzburg dgとの\emph{局所Morita比較の}
 自然変換や単一ruling交換を構成したものではない．
 実際，mass右同値の二パラメータ$(t,s)$について，
 raw右同値を通る多項式$\mathbb A^1$経路が
@@ -230,15 +230,18 @@ $\lambda t,\mu s$がともに冪零なことである．
 この経路が一般に存在しない一方，
 有限dg模型のホモトピーは常に存在する．
 この障害は忠実平坦基底変更でも消えない．
-他方，全十二矢束の\emph{純線形}frame変更については，
-逆向き矢を逆転置で輸送し，次数$-2$の頂点ループを保つと，
-potentialのcyclic chain ruleとCasimir縮約により
-非完備Ginzburg dgのstrict同型が得られる．
-この同型は線形frameの合成・非平坦基底変更と
-厳密に両立するため，frame変更だけの群oidでは
-Ginzburg dg模型が貼り合う．
-残る未解決対象は非線形mass・shear右同値との
-$2$自然なKeller局所Morita比較である．
+一方，Keller--Yangのright-equivalence持上げを
+逆道展開の非可換Fox微分で有限和として実現すると，
+\emph{純線形frameだけでなく}，非線形massゲージ・
+relation-lift shearを含む全多項式right-equivalenceが
+非完備Ginzburg dgのstrict同型に持ち上がる．
+逆向き矢の非線形補正と頂点ループの不変性を
+cyclic chain ruleで検証し，合成・任意非平坦基底変更の
+cocycleが厳密に閉じることを示す．
+残る未解決対象は，このGinzburg側のstrict作用と
+有限foundation側のSerre dg完成の作用の間で，
+Keller Proposition~6.8の\emph{局所Morita比較}を
+$2$自然に同定することである．
 内在的$H_2$の実現可能開では、正規四周期helixと相対perfect-fiber判定で
 全次数の局所自由性・基底変更を証明した上で反Serre軌道環と同定し、
 左右Noether性・実際のpointed tails同値と
