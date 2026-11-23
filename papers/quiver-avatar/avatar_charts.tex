@@ -2221,6 +2221,47 @@ $\PP^1\times\PP^1$ 上で $\OO(1,1)$ によるtensorから得られ、
 有限窓の線形liftや全整数線束を追加で選ぶ必要がない。
 \end{proof}
 
+\begin{theorem}[偶数対角開の二頂点の像とruling fiber]
+\label{thm:qa-avatar-even-h2-image}
+定理~\ref{thm:qa-avatar-odd-h2-image}の曲線型開
+$\mathcal H^{\mathrm{curv}}$ は、偶数対角開の頂点 $0,2$ の像でもある。
+任意の $h:T\to H_2$ へのそれぞれの $2$-fiber は、
+$h$ が曲線型開に入る部分でのruling二重被覆である。
+従って四標準頂点のそれぞれについて、
+全定義域上の像とfiberは同じ記述を持つ。
+\end{theorem}
+\begin{proof}
+偶数対角開は、元の曲面が $\Sigma_0$ 型である開である。
+$H=FG$ と書くと、これ自体が標識付きsquare avatar
+$(D,F,G,P)$ である。逆に標識付きsquare avatarから
+$H=FG$ と置けば偶数対角開を得る。
+これらは相対Picard類の操作なので、全Isomと基底変更を保つ。
+
+square窓 $(P,F,G,H)$ の最後の二項を右mutationすると、
+$G\to H^0(F)^\vee\otimes H$ の余評価の余核を得る。
+曲線上でこの余評価の余核は $HF$ に行列式線束を掛けたものである。
+先行する $P,F$ からの Hom を余評価の三角で比較する。
+曲線上の $H^1(GP^{-1})$ は次数二の消滅から零で、
+$H^*(G F^{-1})=0$ は
+$\Sigma_0$ 上の Cartier 制限列から従う。
+$H$ からは、余評価による双対鉛筆の同定で比較する。
+従ってmutation窓の有限Endは、積を含めて
+$(P,F,H,HF)$ の有限Endと同定される。
+行列式線束の変更は頂点スカラー剛体化で消え、
+比較は任意基底変更に自然である。
+
+このmutationは compact Morita 同値を与え、
+第 $0$ 頂点をsquareの $E_0$、第 $2$ 頂点を $E_3$ へ送る。
+第 $0$ 頂点が $H_2$ であることは
+定理~\ref{thm:qa-avatar-all-standard-pointing-domains}で得ている。
+いまのコンパクト同値は両構造対象と反Serre作用を保つため、
+命題~\ref{prop:qa-h2-mutual-markings-heart-test}を適用すると、
+実際のheartおよび第 $2$ 頂点の同定も得られる。
+従って第 $0$ 頂点の射は曲線型のruling忘却、
+第 $2$ 頂点の射はそれに第三対象への対合を施したものである。
+像とfiberは前定理と同じruling二重被覆の議論から従う。
+\end{proof}
+
 \subsection{滑らかな楕円型における三者の明示的辞書}
 \label{subsec:qa-square-elliptic-pointed-dictionary}
 
