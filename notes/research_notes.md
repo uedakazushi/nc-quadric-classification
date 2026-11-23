@@ -2442,3 +2442,5 @@ latexmk
 導入は [CLOUD_CODEX.md](../CLOUD_CODEX.md) と `bash scripts/bootstrap.sh`、依存は `requirements.txt`。checkerのPASS/FAIL/SKIPは実施成功・失敗・未実施であり、数学的完成を自動判定しない。git読取と書込認証は別であり、CLI pushが認証不足ならGitHub connectorの通常コミットも使用できる。研究repoを先に保存し、最新research-hubを読んで該当項目を反映する。
 
 **体上の rotated square helix から極小解消への監査。** Okawa–Ueda の一次本文 Definition 3–4、Theorem 5 と式 (23)–(33) を照合した。前向き Hom の次数零集中に同定理を用い、指定重複度は C の有限窓の共変 Yoneda 解消から得る。四項の mutation 複体に対し、左右それぞれの Hom スペクトル系列を頂点別に計算した。距離四の Serre 双対に由来する唯一の次数二項が \(d_3\) で右単純および左双対の次数三に対応する。この監査は曲線型 rotated square の当該構成を対象とし、有限窓の幾何構成全体の独立監査は残る。
+
+**曲線型 rotated square の有限窓復元の監査。** 積曲面では対角分解の各コホモロジー項、Hirzebruch 曲面では有限平坦二重射の評価核と負断面を避けることで得る `O(2)` 成分の同型を直接確認した。余核の Fitting ideal と相対 Proj の局所式で、非被約因子の重複度と普遍線束の復元を明示した。任意基底変更との可換性は基底平坦な Cartier 因子の表示に適用する。

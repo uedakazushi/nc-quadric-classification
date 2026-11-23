@@ -286,16 +286,37 @@ $\kappa_{\rm sq}\sim\operatorname{diag}(1,1,1,q)$．
 ゆえに $\PP_Y(\coker\kappa_{\rm sq})=V(q)=D$ である．
 
 rotated では $N=H_rF_r^{-1}P^{-1}$ とおく．
-$\Sigma_0$ では同じ積の対角分解と
-$H^*(P^{-1})=H^*(C_rP^{-1})=0$ を用い，
-$\Sigma_2$ では有限平坦な二重射
-$p:D\to\PP^1$ の $p_*N\simeq\OO_{\PP^1}^{\oplus2}$
-を用いる．いずれも
+$\Sigma_0$ では積の対角分解に $\iota_*N$ を入れる。
+$N(-f)=C_rP^{-1}$ と $N(-g)=P^{-1}$ は
+全コホモロジーが零であり、
+$N(-h)=F_r^{-1}P^{-1}$ は次数一のコホモロジーだけが
+二次元である。従って対角分解の両端だけが残り、
+$\OO_Y(-h)^{\oplus2}\to\OO_Y^{\oplus2}$ が得られる。
+
+$\Sigma_2$ では $D$ は負断面と交わらず、有限平坦な二重射
+$p:D\to\PP^1$ を与える。$p_*N\simeq\OO_{\PP^1}^{\oplus2}$
+による評価 $\pi^*p_*N\to\iota_*N$ は全射である。
+その核 $K$ は、局所自由な rank 二の加群から Cartier 因子上の
+可逆加群への全射の核なので局所自由である。
+各 ruling fiber ではこの列が完全で、評価は大域切断上の同型を誘導する。
+従って $K$ の fiber は rank 二、次数 $-2$ で
+大域切断を持たず、$\OO_{\PP^1}(-1)^{\oplus2}$ に分裂する。
+よって $K(h)=\pi^*\pi_*K(h)$ である。
+$\pi_*K(h)$ は
+\[
+ (\OO\oplus\OO(2))\otimes p_*N\longrightarrow p_*(NH_r)
+\]
+の核である。$\OO(2)$ の summand の普遍評価は
+負断面を零因子とするため、$D$ 上では
+$p^*\OO(2)\simeq H_r$ を与える。この summand からの写像は同型で、
+核から $\OO\otimes p_*N$ 成分への射影が同型となる。
+従って両曲面で
 \[
 0\to\OO_Y(-h)^{\oplus2}\to\OO_Y^{\oplus2}
   \to\iota_*N\to0
 \]
-となる．$\OO_Y(h)$ で tensor すると
+を得る。
+$\OO_Y(h)$ で tensor すると
 \begin{equation}
 0\to\OO_Y^{\oplus2}
  \xrightarrow{\kappa_{\rm rsq}}
@@ -307,11 +328,19 @@ $p:D\to\PP^1$ の $p_*N\simeq\OO_{\PP^1}^{\oplus2}$
 $\kappa_{\rm rsq}$ を回収する．
 局所標準形は $\operatorname{diag}(1,q)$ であり，
 その相対射影化は再び $D$ である．
-最後の普遍線束の商を
-$H_s$ または $H_r^2F_r^{-1}$ で正規化すると
-$P$ が回収される．
-これは単なる幾何点の行列式の一致ではなく，
-余核による scheme-theoretic な復元である．
+各場合の余核を $\iota_*Q$ と書く。零点上の単元 minor で
+行と列を消去すると、残る一成分 $q$ は余核の零次
+Fitting ideal の生成元である。商を分類する相対射影化では
+$\operatorname{Sym}(\OO_Y/(q))=\OO_Y[z]/(qz)$ であり、
+唯一の標準開 $D_+(z)$ が $\operatorname{Spec}(\OO_Y/(q))$
+となる。ここで回収するのは $q$ の定めるスキームと
+その上の普遍商線束 $Q$ であり、$q$ の重複度も保持される。
+$P$ は square なら $H_s\otimes Q^\vee$、rotated なら
+$H_r^2F_r^{-1}\otimes Q^\vee$ として回収する。
+同じ局所計算は基底環に冪零元があっても成立する。
+相対表示で $D$ が基底上平坦な有効 Cartier 因子なら
+$\iota_*Q$ も基底上平坦であり、短完全列とこの復元は
+任意の基底変更と可換である。
 \end{proof}
 
 \begin{remark}[この節から AS 分類へ進むための残りの入力]
