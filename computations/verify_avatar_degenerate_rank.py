@@ -74,6 +74,24 @@ def inward_top_dimension(matrices, start, half_weight):
     return 1 + cells - DomainMatrix.from_Matrix(relations).rank()
 
 
+def quartic_representatives(short_words):
+    words = tuple(map("".join, product("xy", repeat=4)))
+    columns = {word: index for index, word in enumerate(words)}
+    rows = []
+    for phase, short_terms in enumerate(short_words):
+        for suffix in paths(2):
+            if "z" in suffix:
+                continue
+            row = [0] * len(words)
+            for short in short_terms:
+                path = short + suffix
+                rotated = path[-phase:] + path[:-phase] if phase else path
+                row[columns[rotated]] += 1
+            rows.append(row)
+    _, pivots = Matrix(rows).rref()
+    return tuple(word for index, word in enumerate(words) if index not in pivots)
+
+
 def main():
     matrices = (
         ((1, 0), (0, 0)),
@@ -147,6 +165,27 @@ def main():
         assert len(paths(6)) == 169
         assert quotient_dimension(cyclic_derivatives(normalized), 0, 6) == 17
     print("PASS: both generic normalized families have rank 152 at weight six")
+
+    generic_cases = (
+        ((("xx",), ("yy",), ("xx", "yy"), ("xx", "yy")), ("xyxy", "yxyx"), 1, 5, 14),
+        ((("xx",), ("xx", "yy"), ("xx",), ("xx", "yy")), ("xyxy", "yxyx"), 1, 6, 19),
+        ((("xx",), ("yx",), ("yx",), ("xx", "yy")), ("xyyy", "yxxx"), 1, 5, 14),
+        ((("yx",), ("yx",), ("yx",), ("yx",)), ("xxxx", "yyyy"), 0, 5, 14),
+    )
+    for shorts, quartics, start, weight, expected_dimension in generic_cases:
+        assert quartic_representatives(shorts) == quartics
+        terms = [
+            (phase, short + "z", 1)
+            for phase, phase_terms in enumerate(shorts)
+            for short in phase_terms
+        ]
+        terms.extend(
+            (0, word, coefficient)
+            for word, coefficient in zip(quartics, (first_parameter, second_parameter))
+        )
+        derivatives = cyclic_derivatives(terms)
+        assert quotient_dimension(derivatives, start, weight) == expected_dimension
+    print("PASS: all four generic multiple-degeneracy strata fail the required Hilbert dimensions")
 
 
 if __name__ == "__main__":
