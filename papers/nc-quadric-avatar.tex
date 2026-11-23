@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v4.52
+% 日本語 LuaLaTeX。2026-11-23 / v4.53
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -56,7 +56,7 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月23日\quad v4.52（Serre dg形式性と幾何Jacobianのexact 3-CY性）}
+\date{2026年11月23日\quad v4.53（二項準自由dg解消と局所Ginzburg Morita比較）}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -194,6 +194,17 @@ Kellerのundeformed completion定理を併用し，
 ordinary Jacobian自身のhomological smoothnessと
 exact $3$-Calabi--Yau性を得る．
 相対特異底に対するCY構造の降下はこの系の範囲外である．
+さらに非最小二massの四頂点有向有限道代数では
+次数$-1$の関係矢が二本合成できず，
+相対関係イデアルのrank八直和因子性により
+次数$0,-1$の二項準自由dg解消が得られる．
+Keller Proposition~6.8を適用すると
+非完備Ginzburg dgとSerre dg完成は
+局所枠付きchartで導来Morita同値となり，
+$H_2$実現可能開ではordinary Jacobianとも
+局所導来Morita同値になる．
+この比較は未剛体化raw QP全Isomの大域降下や
+Ginzburg dgからJacobianへの準同型を主張しない．
 内在的$H_2$の実現可能開では、正規四周期helixと相対perfect-fiber判定で
 全次数の局所自由性・基底変更を証明した上で反Serre軌道環と同定し、
 左右Noether性・実際のpointed tails同値と
