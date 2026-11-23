@@ -3393,10 +3393,51 @@ massや対角比較の型が基底内で変わる場合も含む。
 最後の議論で降下する。
 \end{proof}
 
+\begin{proposition}[指定十二矢族の両側解消と標準単純]
+\label{prop:qa-avatar-presented-as-cyclic-resolution}
+定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}の族のJacobianは、
+定理~\ref{thm:qa-avatar-relative-cyclic-resolution}の
+長さ三の相対巡回両側解消を持つ。
+左右の頂点単純の射影解消と対応するAS双対は
+任意基底変更を保つ。
+\end{proposition}
+\begin{proof}
+Ginzburg dg代数を $G$、通常のJacobianを $A$ とする。
+ここでは個々の幾何モデルの頂点単純解消からは出発せず、
+$G\to A$ の準同型を用いる。
+自由道代数としての $G$ の対角は、矢の普遍導分からなる
+二項の準自由模型を持つ。
+そのdg微分は矢の微分を道の各位置で切る操作である。
+これは系~\ref{cor:qa-avatar-ginzburg-formal}における
+二項模型と同じであり、係数基底上で自由な道から作られる。
+両側を $G\to A$ で引き戻すと
+$A\otimes_G^{\mathbf L} A$ を計算する。
+定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}の零次集中から、
+積は $A$ への準同型である。
+この引戻しは、次数零の矢、次数 $-1$ の双対矢、
+次数 $-2$ のループをそれぞれ両側解消の一次、二次、三次の
+生成元とする。従って微分は順に矢の左右差、
+巡回微分の道の切断、巡回恒等式になる。
+
+各項は左射影でも右射影でもある。
+対象の対角も片側では標準射影の直和なので、
+片側の増大解消は分裂する。
+従って左右の頂点単純を片側からtensorして
+標準射影による解消を得る。
+巡回道における二箇所の切断順序を交換すると
+二次微分の転置が得られ、一次と三次は互いに双対である。
+よって右単純の射影値双対は、添字差四と三次の移動を伴う
+左単純の解消となる。左から始めても同じである。
+局所の頂点枠を変えると端点の係数線束が現れる。
+これらは同じ準自由模型と重みを用いるため、
+任意基底変更後にも準同型と両側の比較を保つ。
+\end{proof}
+
 \begin{theorem}[全幾何avatarの相対tailsにおける有限窓の回復]
 \label{thm:qa-avatar-all-tails-tilting}
 Noetherianなアフィン試験基底上で $A_{\infty}$ を
-幾何avatarの通常のJacobianの全整数展開とする。
+幾何avatar、または定理~\ref{thm:qa-avatar-all-mass-fiberwise-flat}の
+指定十二矢族の通常のJacobianの全整数展開とする。
 その相対tailsの導来圏において、連続四頂点の標準射影の像は
 compactなtilting生成対象である。
 特に最初の四項の導来Endは捩れ付き有限窓のEnd代数に等しく、
@@ -3407,7 +3448,8 @@ compactなtilting生成対象である。
 $P_j$ を頂点 $b$ 未満で切った有限区間商 $U_{j,b}$ は、
 成分が有限局所自由で、頂点で濾過すれば
 相対単純と基底上の有限射影加群のテンソルを因子に持つ。
-定理~\ref{thm:qa-avatar-relative-cyclic-resolution}の
+定理~\ref{thm:qa-avatar-relative-cyclic-resolution}または
+命題~\ref{prop:qa-avatar-presented-as-cyclic-resolution}の
 左右双対と長完全列を使うと、
 $\operatorname{Ext}^q(U_{j,b},P_i)$ は $q=3$ 以外で零であり、
 第三次は $U_{j,b}$ の $i+4$ 成分の基底双対に
@@ -3419,7 +3461,8 @@ $\operatorname{Ext}^q(U_{j,b},P_i)$ は $q=3$ 以外で零であり、
 $U_{j,b}$ は有限射影による長さ高々三の解消を持つ。
 従って $J_{j,b}=\ker(P_j\to U_{j,b})$ は
 長さ高々二の有限射影解消を持つ。
-標準射影のNoether性により、その解消は
+標準射影のNoether性（定理~\ref{thm:qa-avatar-all-affine-noetherian}または
+系~\ref{cor:qa-avatar-presented-as-relative-noetherian}）により、その解消は
 頂点 $b$ 未満の射影だけで選べる。
 実際、この範囲の射影から順に有限全射を取り、
 最後の射影的な核も同じ範囲の有限射影からの全射で分裂する。
@@ -3458,8 +3501,8 @@ $E_i$ は添字を四戻した標準対象の $[2]$ へ移る
 
 \begin{corollary}[特異基底を含む有界連接Morita比較]
 \label{cor:qa-avatar-relative-bounded-coherent-morita}
-Noetherianアフィン試験基底上で、幾何avatarの
-相対tailsの有界連接導来圏は、
+Noetherianアフィン試験基底上で、前定理の相対tailsの
+有界連接導来圏は、
 捩れ付き四項の有限窓 $A$ の有限生成右加群の有界導来圏と同値である。
 この同値は前定理のtilting同値の制限として得られる。
 \end{corollary}

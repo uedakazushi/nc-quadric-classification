@@ -2588,3 +2588,5 @@ latexmk
 **全指定十二矢族の相対左右Noether性。** `lem:qa-avatar-noetherian-open-closed` では、有限平坦な各成分のI進随伴次数と端点ごとのKrull共通部分から、閉層と補開の貼合せを抽出した。`cor:qa-avatar-presented-as-relative-noetherian` はこれを古典閉層の係数idealと両massのidealに順に適用する。適用先を、曲線型の既存の相対Noether性、古典分裂射影束の重み付き整列表示、可逆mass開の相対逆mutationで区別して確認した。従って指定ASの全幾何fiberを持つ任意の相対十二矢族で、古典型の冪零変形を含め標準右rowと左columnがNoetherianである。
 
 **全指定十二矢族のNoether性を含む394頁保存版 0bbd458。** 二つの `git archive 0bbd458` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795434018 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全394頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `cd59e148c4bbcea8f56f3f97d70191bce7f842716111c5552f63faae9f58d1dd`、SyncTeX `d2b4f03cbf15daa696bcfd8bc2d785a6234ccb14a061315f60571c0c0176beff`、抽出テキスト `fa874deff15dab64dbeb3c1fdb4d946ee3f2a846f7f2a5482fa7a2b0013223f9`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**全指定十二矢族の巡回解消とtailsの監査。** `prop:qa-avatar-presented-as-cyclic-resolution` では零次集中した非完備Ginzburg模型から、普遍導分の対角模型を通常のJacobianへ両側から移し、非最小巡回解消を得た。片側分裂から左右単純の解消を得、巡回切断を転置して第三次のAS双対を再点検した。全mass配置のNoether性と合わせ、従来曲線型で証明した四連続窓のtilting性、有限Endと相対Serreの回復、特異基底の有界連接Morita比較を全指定相対十二矢族へ適用した。
