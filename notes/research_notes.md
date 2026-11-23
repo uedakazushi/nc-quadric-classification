@@ -2710,3 +2710,5 @@ latexmk
 **一mass退化排除の監査を含む409頁保存版 e78bc27。** 二つの `git archive e78bc27` 展開で `SOURCE_DATE_EPOCH=1795441585 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全409頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `136682d8ab3698fbef8b6e43869804928da16882be2834c7d6d85ed95dc70bc0`、SyncTeX `ac2f27cfab159b41f2f7ccd47273a7f52ffab05186efb3515302450d1f780b46`、抽出テキスト `163165e3d7e5fcf83edb657a964e332e29c633e116e22f78603e2f29fad62a7e`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
 
 **両mass零の四退化配置の四次係数の独立監査。** `thm:qa-avatar-zero-mass-forces-short-rank` で用いる四規格形について、短テンソルと反対の二段道の十六の巡回積を別に作った。二つの余核代表を加えた整数行列の行列式は順に負一・負一・一・負一であり、残る列の四組の依存関係も本文に記した。各規格形の二変数が純四次係数の商全体を走ることを確認した。
+
+**両mass零の退化監査を含む410頁保存版 bb00c34。** 二つの `git archive bb00c34` 展開で `SOURCE_DATE_EPOCH=1795441855 FORCE_SOURCE_DATE=1 TZ=UTC` と共通TeXツリーを指定した。全410頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `f36ecf7de1396f36538e5e94113aa00149e6b7d26ef9b6a11650352920c1a6d9`、SyncTeX `2d1ecd6121f20f49e16a19512b2c94d5f71c9f52483e1bd84a6d882b054fb285`、抽出テキスト `14247ef6052903fb43f4e948b92e1bd8eb0e8a81bf035d20217ac0ca035b04ce`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
