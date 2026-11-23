@@ -4619,6 +4619,43 @@ $H^2\otimes\det U\otimes(\det K)^{-1}$ である。
 その開補集合は行列式が幾何fiberで非零となる曲線型の開である。
 \end{proof}
 
+\begin{corollary}[古典点における階数一表現の平坦性障害]
+\label{cor:qa-avatar-incidence-classical-tor}
+命題~\ref{prop:qa-avatar-intrinsic-incidence}の行列式表示で
+$Z\subset Y$ のidealを $\mathcal I$ とする。
+基底点 $s$ で行列式が零式となるとき、
+\[
+ \operatorname{Tor}^{\OO_S}_1(\OO_Z,k(s))
+       \simeq \mathcal I\otimes_{\OO_S}k(s)
+\]
+が $Y_s$ 上で成り立つ。
+特に双対数環 $k[\epsilon]/(\epsilon^2)$ 上で
+行列式切断の一次項 $\sigma_1$ が非零なら、このTorは
+特殊fiber上の反標準切断の値域の逆線束に同型であり、
+特殊fiber上のすべての点で平坦性が破れる。
+\end{corollary}
+\begin{proof}
+$Y$ は相対射影束の反復なので基底上平坦である。
+従って $0\to\mathcal I\to\OO_Y\to\OO_Z\to0$
+のTor完全列により、求めるTorは
+$\mathcal I\otimes k(s)\to\OO_{Y_s}$ の核である。
+この写像は行列式が特殊fiber上で零式であるため零である。
+
+双対数の場合、行列式は局所的に $\epsilon\sigma_1$ と書ける。
+$\epsilon\OO_Y$ は平坦性により $\OO_{Y_s}$ と同定される。
+その中で $\mathcal I$ は
+$\sigma_1:\mathcal L_s^{-1}\to\OO_{Y_s}$ の像に対応する。
+ここで $\mathcal L$ は行列式切断の値域線束である。
+$Y_s$ は体上の射影束の反復だから整であり、
+非零な切断による乗法は単射である。
+よって $\mathcal I$ は $\mathcal L_s^{-1}$ に同型、
+$\epsilon\mathcal I=0$ なので上のTorもこの線束となる。
+切断がある点で零になることは、その点の局所環で
+非零な局所式による乗法が単射であることと両立する。
+従ってその点を含め、全点でTorは非零である。
+逆に $\sigma_1=0$ なら行列式切断が零であり $Z=Y$ は平坦である。
+\end{proof}
+
 \begin{corollary}[指定AS十二矢族の左右Noether性]
 \label{cor:qa-avatar-presented-as-relative-noetherian}
 Noetherianなアフィン基底上で、全幾何fiberが指定AS最小解消を

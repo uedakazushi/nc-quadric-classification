@@ -2692,3 +2692,5 @@ latexmk
 **行列式による古典閉層の係数監査。** `cor:qa-avatar-incidence-coefficient-bundle` は、普遍短関係による商の対称二乗を相対射影直線へ押し出し、階数五から十四への分裂単射の余核として九係数束を構成した。これにより古典閉層の構造層上の消滅、曲線開との区別、任意の非平坦基底変更とFitting表示の重なりを有限係数で確認した。
 
 **古典閉層の係数監査を含む408頁保存版 6eac37e。** 二つの `git archive 6eac37e` 展開で共通TeXツリーと `SOURCE_DATE_EPOCH=1795440633 FORCE_SOURCE_DATE=1 TZ=UTC` を指定した。全408頁の96dpi描画、抽出テキスト、正規化PDFとSyncTeXが一致。SHA-256はPDF `4b10a44f81ed5ba525cf05c7607593c5058808d840f4b3a8e7985256eb4e8db1`、SyncTeX `4abf5276025ef77ad6c3ce14bedb17644ec244d49f5a4a6cdf7be2bb3b95773a`、抽出テキスト `c97d46b90939923aebe62d8569bf1b89f25d13a842f051f1ffb0dbc7c988edfc`。最終ログに版面のはみ出し・未解決参照・未解決引用なし。ソース・論文間参照・C数学検算はPASS。
+
+**古典型に見える一次変形の平坦性監査。** `cor:qa-avatar-incidence-classical-tor` で、古典fiberの階数一表現の相対Torを行列式idealの剰余体へのtensorから直接計算した。双対数上で一次切断が非零なら、特殊fiber上のすべての点でTorが非零になる。切断の零点だけでなく、曲面全体で平坦性が破れることを確認した。
