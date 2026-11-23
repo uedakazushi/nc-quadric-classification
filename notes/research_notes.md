@@ -1,8 +1,12 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-23 / v1.69（A v1.69・20節、B v0.41・31節、C v4.61）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-23 / v1.70（A v1.69・20節、B v0.41・31節、C v4.62）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-classification.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 二massのQP・有限foundation・Jacobian/Serre・H2を結ぶ現行定理
+
+**相対巡回複体のfppf homotopy降下（原稿上証明）。** 任意の相対finite foundation `Λ` と `B=Π₃(Λ)`、忠実平坦な `R→S` に対して、`S^[p]=S^{⊗(p+1)}` 上の相対 `HH`・`HC`・`HC⁻` 複体のČech totalizationは元の複体と同値である。証明は円周同変 `HH` のderived flat base-changeとAmitsur降下を基本とし、`HC=HH_{hS¹}` はorbitsがtensorと交換すること、`HC⁻=HH^{hS¹}` はfixed pointsがČech totalizationと交換することを**別々に**使う。augmentationによるreduced因子にも適用でき、全finite foundation strict Isomの合成と両立し、有限商上恒等なmass/shearは引戻し複体にも恒等となる。これは**複体そのもの**の降下であり、局所 `HC₂`・`HN₃` の不変クラスが自動的にhomotopy-coherentな大域sectionとなることは示さない。CYクラス自身の高次coherence、ruling交換、cotangent外のraw QPは未解決。非平坦底変更で `HC⁻⊗ᴸR′≃HC⁻(B_{R′}/R′)` とは主張しない。証明の正本は [論文Cの命題](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) `prop:qa-q12-fppf-cyclic-complex-descent` と同節の系。一般原理はHoyoisと忠実平坦降下に基づく既知の形式的手法で、新規性未確認。
+
+
 
 **範囲と主張状態。** 論文CのC1（既存AS/avatar・標準頂点・相対tailsの分類範囲）とC2（全H2 good moduliの明示）は**原稿上達成**。C3も**H2実現可能な明示開全体**では次の比較・glueを原稿上証明したが、H2外の任意AS/avatar/QP表示stack全体の分類とC4の独立数学監査は未完了。[主たる証明](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex)。
 
