@@ -51,7 +51,7 @@ old=add(word(atom("z"),atom("r")),word(atom("v"),atom("ra")),
 new=add(old,word(atom("z"),atom("w"),atom("ra")),
         word(atom("z"),atom("rb"),atom("h")))
 shear={"v":add(atom("v"),word(atom("z"),atom("w"))),
-       "y":add(atom("y"),word(atom("h"),atom("z"))}
+       "y":add(atom("y"),word(atom("h"),atom("z")))}
 assert cyclic(add(subst(old,shear),scale(new,-1)))=={}
 print("PASS: relation lift shear is cyclic right-equivalence")
 
