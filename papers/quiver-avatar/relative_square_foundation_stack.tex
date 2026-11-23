@@ -703,3 +703,232 @@ fppf局所に$BK_\square$をfiberとするgerbeである。
 第二射は二つのrulingの選択を忘れる$S_2$-torsorである。
 両射の2-fiberを順に引戻すと述べた群oidを得る。
 \end{proof}
+
+\subsection{全標準位相の相対pointingとファイバー}
+\label{subsec:qa-all-relative-as-pointings}
+
+$\mathcal X=[V_{\rm cross}/(G_\square/K_\square)]$とし、
+$r:\mathcal X\to\HHstack$をruling忘却とする。
+標識を選んだnormal窓$(E_0,E_2,E_3,Z_1)$がcubicとなる開を
+$\mathcal X_{\mathrm c}=D(\det g)\subset\mathcal X$と書く。
+normal有限窓での二つの隣接合成のうち
+$E_0\to E_3$側が$g$で、他方は余評価表示から同型である。
+
+\begin{proposition}[二つの相対再標識操作]
+\label{prop:qa-all-as-relative-repointing-maps}
+\begin{enumerate}
+\item $\mathcal X_{\mathrm c}$上で、normal cubic helixの零添字を
+一つ進める操作は、$\mathcal X_{\mathrm c}$の相対自己同値
+$\upsilon$を定める。逆は一つ戻す操作であり、
+$\upsilon^4\simeq\mathrm{id}$である。
+\item 全$\HHstack$上で、真正なnormal窓の第三対象$M$へ
+構造対象を移す操作は相対対合$\iota_M$を定める。
+これは各族のruling選択前後で整合する。
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+第一について、相対normal窓を有限束とSerre双対で
+全整数へ展開し、次の四項を選ぶ。
+新四項は体上のcubic helixの四項なので、
+相対tilting判定により局所自由なcubic有限窓となる。
+全幾何点で指定零対象の真正なnormal窓であることは
+論文Aのcubic被覆の必要性証明を添字shift後に適用して従う。
+従って明示開$\mathfrak F_{\HH}$への因子化が成立する。
+この有限窓のMorita比較は同じheartを与える。
+実際、元の相対heartと新しく認識した$H_2$ heartは、
+それぞれの構造対象と反Serre移動が相手の実際のheartに属する。
+新窓に現れる対象については元のnormal helixの相対構成を用い、
+逆側は新窓の一つ前を相対$H_2$のnormal helixで作ればよい。
+あるいは全cubic窓のcanonical相対tails認識を
+同じSerre展開と比較して同じ結論を得る。
+有限Morita同値は全Serre移動を運ぶので、
+前窓への移動と相互逆である。
+四つ進める移動は$t$そのものであり、
+有限積と全Isomを自然に同定する。
+
+第二について、頂点表示上では$M=E_3$は実際の相対heart対象である。
+局所適合Serre根$s$を使うと$M\simeq sE_0$であり、
+$s$はexact自己同値なので新しい組も$H_2$である。
+頂点線束を変更すると$M$は基底線束をtensorしたものとなる。
+この変更には同じ線束とのtensor同値を用いる。
+有限窓の内部頂点スカラーは、pointed射を作る際に
+今度は$M$の頂点で一となるよう正規化する。
+それらの正規化は積を保ち、ruling交換は$M$を保つ。
+従って$M$への再標識は剛体化とruling忘却の後にも降下する。
+
+二回再標識した相対対象を$M'$とする。
+局所適合根$s$は第一再標識のpointed同型を与えるので、
+第二再標識後は元の相対heartにおいて$M'\simeq s^2 E_0=tE_0$
+（頂点線束の因子は許す）である。
+実際の代表を選んだchart上で
+$\operatorname{Hom}(tE_0,M')$は線束で、評価は同型となる。
+従って$t^{-1}$とその線束の逆とのtensorは
+二回再標識から元の組へのpointed同型を与える。
+この比較は局所の$s$を構成に使わず、$t$、Hom線束と評価で定まる。
+別の代表への置換で加わる線束はHom線束の同じ因子で相殺され、
+評価の合成則は線束の収縮の結合律である。
+従って比較は重なりで整合し、$\iota_M^2\simeq\mathrm{id}$を得る。
+\end{proof}
+
+\begin{theorem}[全指定AS族の相対$H_2$定義域と比較fiber]
+\label{thm:qa-all-as-relative-h2-pointing-fibers}
+square窓の全標準位相を基準に取る。
+$E_0,E_3$は全基底で$H_2$構造対象となり、
+その射はそれぞれ$r$および$\iota_M r$を通る。
+$E_2$については定義域が$D(\det g)$であり、
+その上の射は$r\upsilon$を通る。
+$E_1$については定義域が$D(\det f)$であり、
+ruling交換で$E_2$の場合に移る。
+これらは同じ実際の相対heartを標識し直す射である。
+
+rotated型ではこの表の位相を一つ進める。
+第一mutation型では位相$(0,1,2,3)$の定義域は順に
+\[
+ (D(\det g),\,S,\,D(\det g),\,S)
+\]
+であり、零番では$r\upsilon^{-1}$、
+一番では$r$、二番では$r\upsilon$、三番では$\iota_M r$を通る。
+全整数添字の線束捩れは基底線束でのtensor同値で比較する。
+
+この表示を使うと、$E_0,E_3$に対応する射の像は全$\HHstack$である。
+$cubic$ 開で再標識してからrulingを忘れる射の像は、
+幾何点では少なくとも一方のnormal窓がcubicである部分である。
+任意の$h\in\HHstack(S)$への2-fiberは、
+全ruling二重被覆、またはそのcubic開を、
+上記の再標識自己同値で引き戻したものの上に、
+有限窓の線形liftの$K_\square$-gerbeと
+$\prod_{\mathbb Z}B\Gm$を置いて得る。
+\end{theorem}
+\begin{proof}
+canonical相対square heartは
+定理~\ref{thm:qa-all-relative-square-as-heart}で得られる。
+$E_0$の場合は定義であり、$E_3$は真正なnormal窓の
+第三対象なので前命題による。
+$D(\det g)$上の第一mutation窓はcubicであり、
+その$H_1,H_2,H_3,H_4$は$(E_0,E_2,E_3,Z_1)$となる。
+従って$E_2=H_2$の場合は$cubic$窓を一つ進める操作であり、
+$H_0$の場合は一つ戻す操作である。
+同じheartとの相対比較は前命題による。
+$D(\det f)$上はrulingを交換する。
+これら以外の基底点を含む族については、
+体上の全頂点判定
+（定理~\ref{thm:qa-general-square-pointings}と
+系~\ref{cor:qa-general-rotated-as10-pointings}）が
+該当位相での$H_2$性を排除する。
+従って相対定義域も指定した開であり、
+幾何点で階数が落ちる冪零変形もこの必要性を満たさない。
+
+全AS族は有限窓と全線束で記述される。
+各標準対象の追加の基底線束は、
+tensor自己同値で元のpointingへ戻せる。
+この比較は線束同型と合成を保つ。
+従って射は前命題の自己同値とruling忘却の合成から
+誘導される。$\mathcal X_{\mathrm c}\to\HHstack$は
+ruling二重被覆をcubic開に制限したものである。
+ゆえにそのfiberは対象$h$のruling選択のうち
+cubic有限窓を与える部分であり、像は上記のものとなる。
+自己同値による前後の変更はこれらのfiberを対応させる。
+最後に剛体化前の窓と全線束を戻すと
+系~\ref{cor:qa-all-relative-as-canonical-h2-fiber}と
+同じgerbeと線束の因子を得る。
+\end{proof}
+
+\begin{theorem}[曲線型幾何avatarの全相対Isom比較]
+\label{thm:qa-flat-curve-avatar-cross-equivalence}
+$\mathcal X=[V_{\rm cross}/(G_\square/K_\square)]$のうち
+二つの向き付き二次式の射影零点が幾何fiberで相異なる開を
+$\mathcal X^{\mathrm{curv}}$とする。
+この開は、定義された平坦$(2,2)$曲線型square avatarのstack
+$\mathcal A_{\rm sq}^{\times}$と同値である。
+二次式のscheme交わりを$D$とし、四つの矢因子からの
+射影直線束の類を$L_A,L_B,L_C,L_D$と書くと、
+幾何avatarの標識は
+\[
+ F=L_D,\qquad G=L_C,\qquad
+ P=L_D L_A^{-1}=L_C L_B^{-1}
+\]
+である。比較は任意基底変更および全Isomに自然である。
+二次式一致のscheme閉層は古典型の平坦な曲面avatarを与える。
+この二層で点表示の平坦化を尽くし、全基底を覆う
+幾何表示には定理~\ref{thm:qa-square-oriented-gram-stack}の
+向き付き二次式を用いる。
+\end{theorem}
+\begin{proof}
+$f$または$g$が幾何点で階数三の場合、例えば$f$なら
+$\operatorname{adj}f=\kappa\otimes\lambda$である。
+補題~\ref{lem:qa-rank-one-cross-kronecker}により
+$\kappa$と$\lambda g$は非分解可能である。
+従って$f^\vee$の零点である錐頂点$[\lambda]$は
+$g$の二次式の零点には属さない。
+同じことが$g$についても成立する。
+よって全基底上でscheme交わりは双方の双対積の零点を避ける。
+そこで両方の階数一テンソルがそれぞれ二つの因子へ
+一意に分解し、四つの射影直線への射が得られる。
+二つの積の合成が同じ周囲座標だから、
+両経路の$\OO(1)$の積は$\OO_X(1)|_D$を与える。
+これは標識$P$の二つの表記を比較する。
+
+二つの二次式が異なる幾何fiberでは
+各二次曲面が階数三以上で整であるから、
+交わりは次数$(2,2)$の完全交差曲線である。
+相対正則列の平坦性判定により、この開上で$D$は基底平坦となる。
+その四因子のうち$L_D,L_C$への射から二つの射影直線の
+積への射を作る。これが$(2,2)$埋め込みになることを
+まず幾何点で確認する。
+
+体上の曲線型分類は、有限窓が
+$(P,F,G,FG)$のdirected Homから来ることを与える。
+その曲線を$D_0$とすると、四つの矢空間は
+$FP^{-1},GP^{-1},G,F$の切断束であり、すべて大域生成である。
+したがって合成の束$FGP^{-1}$も大域生成で、
+その評価が$D_0\to X$を与え、二次式の交わりに入る。
+$L_D,L_C$への射との合成は元の埋め込み$D_0\hookrightarrow
+\PP^1\times\PP^1$である。
+ゆえに$D_0\to D$はproperな単射、かつschemeのmonomorphismであり、
+閉埋め込みである。
+このとき二次式は一致しない。
+実際、片方が階数三なら頂点を避ける条件に反する。
+両方が可逆で二次式が同じなら、同じsmooth Segreの二つの
+rulingの制限として
+$\{FP^{-1},G\}=\{GP^{-1},F\}$が成立する。
+$P\ne\OO_{D_0}$かつ$F\not\simeq G$なので不可能である。
+後者は$(2,2)$の制限列から$H^0(FG^{-1})=0$を計算して従う。
+従って$D$のHilbert多項式は$4n$であり、
+$D_0$の$FGP^{-1}$に関するHilbert多項式も$4n$である。
+閉埋め込みのidealがHilbert多項式零となり、$D_0=D$となる。
+古典型の有限窓は通常のSegreの二つの積で、
+その場合に限って二次式が一致する。
+
+曲線開上では以上より$D$から二射影直線の積への射は
+すべての幾何fiberで閉埋め込みである。
+この射はproperかつ準有限なので有限となり、
+構造層の余核をfiberで調べると零なので閉埋め込みである。
+その像はfiberで$(2,2)$であり、平坦性と相対Cartier判定から
+相対$(2,2)$有効Cartier因子となる。
+$P$が相対$\Pic^0$の非自明な類を与えることは、
+幾何fiberを調べればよい。
+基底の線束による見かけの差は相対Picard類で消える。
+
+逆に平坦曲線avatarから四矢束と$W$は
+$p_*(FP^{-1}),p_*(GP^{-1}),p_*G,p_*F,p_*(FGP^{-1})$で作る。
+命題~\ref{prop:qa-relative-avatar-normal-window}の構成により
+積と任意基底変更を保つ有限窓となり、幾何点での分類から
+$V_{\rm cross}$に属する。
+上の射影埋め込みを評価で再構成すると、
+原曲線から交わりへの射は幾何fiberで同型である。
+両曲線は基底平坦で、射は相対閉埋め込みであるから、
+idealのfiberは零となり同型を得る。
+逆の順では四矢束および$W$から再構成した切断束への評価が
+幾何fiberで同型となるため、有限局所自由束として同型であり、
+乗法も元のものを回収する。
+これらの比較は評価と射影の普遍性によって自然なので全Isomを保つ。
+線束の代表変更による頂点スカラーは$K_\square$で正確に消える。
+
+最後に二次式の一致層は古典fiberのみを含み、双方の積は可逆である。
+よってこの層での平坦化は
+定理~\ref{thm:qa-paired-segre-flat-incidence}を適用できる。
+曲線fiberと曲面fiberのHilbert多項式は異なるので、
+平坦な点表示を持つ族はこの二種類の開閉部分に分かれる。
+冪零底で一致が幾何点にしか成立しない場合の不足は
+先の双対数例で確認される。
+\end{proof}
