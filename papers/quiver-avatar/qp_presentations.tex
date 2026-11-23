@@ -1561,6 +1561,57 @@ Ginzburgの同型を用いれば $u=a^{-1}$ となる。
 $[\eta_{aW}]=a[\eta_W]$ である。
 \end{proof}
 
+\begin{corollary}[固定Jacobianのmass慣性帯の行列式表示]
+\label{cor:qa-mass-band-determinant}
+固定周期付きJacobian $C$ の表示fiberで、
+対角対から一方の矢の端点 $i\to i+2$ を選ぶ。
+その重み二の二段道束を $D_i=V_i\otimes V_{i+1}$、
+Jacobian成分を $M_i=C_{i+2,i}$ と書く。
+この対の慣性帯は
+\[
+ L_i=\det(D_i)\otimes\det(M_i)^{-1},\qquad
+ \ell_i:L_i\longrightarrow\OO
+\]
+に付随する群である。ここで $\ell_i$ は積
+$D_i\to M_i$ の行列式との評価である。
+群の切断は $t\in L_i$ で $1+\ell_i(t)$ が単元となるものであり、
+積は $t+t'+\ell_i(t)t'$ である。
+各対のこの記述は全右同値と任意基底変更に自然である。
+可逆対では $\ell_i$ が同型なので、同じ式は $\Gm$ 帯を与える。
+\end{corollary}
+\begin{proof}
+選んだ対角矢の非合成部分の線束を $X$、
+重み二にある一つの関係の核線を $K$ と書く。
+表示から
+\[
+ 0\longrightarrow K\longrightarrow F_2\longrightarrow M_i
+   \longrightarrow0,\qquad
+ 0\longrightarrow D_i\longrightarrow F_2\longrightarrow X
+   \longrightarrow0
+\]
+を得る。この端点では $D_i,M_i$ はともに階数四である。
+行列式の比較は
+$\operatorname{Hom}(X,K)\simeq L_i$ を与える。
+さらに $K\to F_2\to X$ はこの直線の双対切断となり、
+上の行列式同定では $\det(D_i\to M_i)$ に対応する。
+これは局所枠で、$D_i$ の四列に関係の列を付け、
+最後の成分で余因子展開すれば分かる。
+両行列式列に同じ順序を使う。
+
+Jacobianへの写像を固定する対角矢の変換は
+$F_2\to X\xrightarrow{t}K\to F_2$ を恒等に加える形である。
+その二つの合成は
+$t+t'+\ell_i(t)t'$ に対応する。
+同じ対の反対矢の変更は
+系~\ref{cor:qa-raw-periodic-jacobian-kernel}により一意に決まり、
+対の慣性群は選んだ一矢のこの群と同型である。
+枠変更や矢に二段道を加える変更は
+上の二つの列とその行列式同型を保つので、
+この記述は基準表示を変えたときも同じ帯を与える。
+可逆massのとき $D_i\to M_i$ は同型であり、
+$t\mapsto1+\ell_i(t)$ が乗法群との同型となる。
+\end{proof}
+
 \begin{remark}[表示を忘れる操作]
 消去される pair の変換 $x\mapsto tx$、$y\mapsto t^{-1}y$ は
 Jacobian 商では恒等である。
