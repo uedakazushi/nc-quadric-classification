@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-25 / v4.69
+% 日本語 LuaLaTeX。2026-11-25 / v4.70
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc に従う。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -57,261 +57,23 @@
 \title{非可換二次曲面のavatarとAS正則$\mathbb Z$-代数：\\
   八・十・十二本矢の分類と内在的忘却}
 \author{}
-\date{2026年11月25日\quad v4.69（全指定相対スタックの比較と適用範囲）}
+\date{2026年11月25日\quad v4.70（全指定相対スタックの比較と適用範囲）}
 \begin{document}
 \maketitle
 \begin{abstract}
-最小単純射影分解型を指定したsquare型・rotated square型の
-AS正則$\mathbb Z$-代数を、反標準avatarの同型類によって分類する。
-十本矢型を最小分解から独立に定義し、square型とのmutation逆対応を与える。
-二つのmutation壁の交点は非零二捩れで記述され、
-cubic型への到達不能性を特徴づける。
-十二本矢は有限foundationのrelation-dual QP表示として扱う。
-成分局所自由な全指定AS族を、有限square窓と整数添字の双対線束で
-分類し、全同型、相対heart、標準頂点の$H_2$適合開と忘却fiberを求める。
-幾何表示には向き付き二次式を用い、平坦曲線開では元の線束標識と
-全同型を回収する。指定AS型に適合するraw重み付きQPの開を
-有限窓で判定し、表示の慣性、周期を忘れる比較像と
-ruling忘却のfiberを記述する。
+非可換二次曲面の三つの表示、すなわち最小射影分解型を指定した
+AS 正則 $\mathbb Z$-代数、反標準曲線と線束による幾何データ、
+および八・十・十二本矢の重み付きポテンシャルを相対的に比較する。
+成分が局所自由な指定 AS 族は、有限な四頂点の窓と全整数添字の双対線束から
+同型を含めて再構成できる。四周期標識の存在はこれらの線束に依存する。
+指定表示の適合性を有限窓で判定し、余分な自己同型と、
+各標準頂点を構造対象に選んだときの適合開を記述する。
 
-次に、内在的な構造対象付き非可換二次曲面との比較を行う。
-noncubic二形式の点曲線側では、対称な四項のBrauer増幅から
-全表示商上に階数$45$の通常の有限代数を構成する。
-実際の相対spinor generator、全次数Serre完成、零頂点の反Serre角を用い、
-非被約基底と退化型を含めて元のpointed heartを回収する。
-同変Serre作用には二形式交換の符号指標が必要である。
-さらに，頂点idealによる反Serre豊富性の必要十分条件を与え，
-非被約曲線・古典型を含む全分類AS型の標準構造頂点を判定する．
-Squareの二つの中間頂点のH2条件はそれぞれ
-$GP\not\simeq F$，$G\not\simeq FP$であり，端の二頂点は常に属する．
-最小十本矢型では奇数頂点だけが属する．
-この判定を二つの乗法行列式の可逆開として相対化し，任意底変更を証明する．
-一般square曲線族では実際のnormal窓を構成し，
-全標準頂点の適合開上で，同じ相対heartの強い$\HH$構造対象条件を認識する．
-両側のAZ生成対象によってcompact Morita比較の$t$-exactnessを証明する．
-さらに，平坦compact対象の相対Ext次元を使って四対象の和のAZ豊富性を示し，
-canonical Serre完成と四頂点展開の左右Noether性，実際の相対AS解消，
-標準対象を保つtailsと同じheartの完全同値を証明する．
-有限代数の全幾何fiberが分類済みsquare型である族には古典型も含めて適用する．
-二つの乗法で定まるrank16の有限squareスタックとrank24のnormalスタックを
-全基底上で同定し，頂点スカラーとruling交換を含めて比較する．
-二積の随伴行列の交差縮約に対する四つのkernel条件を用い，
-三十二次元係数空間内の全$H_2$開を二十個以内の多項式で明示する．
-両階数三の壁を含み，古典型と非被約基底にも同じ開判定が適用される．
-順序付き全体上の二つの階数低下因子は横断的に交わり，
-非順序の和因子の正規化とconductorを内在的ruling被覆で記述する．
-さらに左右kernel条件をGram行列の二式へ集約し，同じ指標の三半不変式で
-全$H_2$開を覆う．比による重なりの飽和性を示すことで，
-全$\HHstack$の分離的な準射影的good moduli spaceを構成する．
-各cubic開を既存の四量子ビットGIT商の明示開と同定する．
-その被約補集合は$\mathbb P(1,2,2,3)$内の二本の$\mathbb P(1,2)$であり，
-唯一の交点で通常の節点を作る．二つの cubic chart の貼合せを
-重み付き逆行列写像で記述し，両積可逆な非順序良モジュライは
-$\mathbb A^3$ から一本の直線を除いた開となる．
-全 ordered 良モジュライから既存 GIT 商への二射も構成するが，
-これらは noncubic 閉曲線を一点へ送る．さらに，
-noncubicの$\mathbb A^1_\chi$を大域良モジュライへ閉埋め込む．
-階数因子の良モジュライ像は正規であり，
-noncubic閉像のschemeとしての引戻しには一致点で非被約な厚みが生じる．
-さらに，全内在的$H_2$上へrank81の通常の有限Morita代数を降下させ，
-その全Serre完成から構造対象を保ってheartを回復する．
-回転・第一mutationの完成も同じheartを与えるが，非被約壁を横断する
-族では最小十本矢の係数束の平坦性を別に判定する．
-Noncubic中央二重平方環の全point schemeは
-可換点曲線と二つの孤立点の非交和であり，shiftは孤立二点を交換する．
-noncubic由来のsquare・rotated・最小十本矢型の全四位相も具体的に同定する。
-spinorを構造対象とする位相では，二周期point moduleへの
-全反Serre軌道からのHomが消滅するため，強い$\HH$には属さない。
-これによりrotated零番頂点と最小十本矢型零番頂点を排除する。
-一方、spectral曲線側の指定AS実現はsmooth幾何同型類上で
-$\chi\mapsto\chi/(\chi-1)$という二同種の双対化を与え、
-元のpointed対象と一致するのは$\chi=0,2$だけである。
-その相対射は、順序付き標的上の$\mu_2$-gerbeと
-有限\'{e}tale二重被覆の合成で、幾何fiberは$B\mu_2\amalg B\mu_2$となる。
-一般慣性の中心bandは双対化で変わるため、
-この粗対合を覆う一般点で表現可能な射は存在しない。
-二つのnoncubic境界型では、この対応先は有限基底変更後にも
-H2族として延長できない。
-二重根を許す平坦な中央二重平方表示は存在するが、
-固定二対象間の全高次Ext非消滅から、特殊fiberの有界coherent導来圏は
-右Serre関手を失う。任意の二形式を許すこの表示族内で、
-H2条件は二つの判別式の非消滅と同値である。
-節点spectral曲線上の二次自己双対torsion-free層の標的は
-有限型Artin stackとなり、balanced開は二形式商として相対的に認識できる。
-元のnoncubicはそのsquarefree開に全忠実に埋まり、
-非単純な$I_2$極限を含めて全同型と慣性を回収する。
-この認識は実際の二次積を保持するもので、
-smooth Fricke射の非忠実性とは異なる。
-二つの境界traitでは，指定generic同型のgraph閉包は正則な$I_2/I_4$模型となり，
-自由な符号作用の商は$I_1/I_2$模型となる。
-Fricke出力の二次線束は全族上可逆で，balanced標的の追加境界へ延長する。
-根対一致型では四捩れtranslationによる補正同型が元の模型間でも延長し，
-この補正は二つのconicの順序を交換する。
-入力二捩れの二次線束延長は，いずれの有限分岐後の最小正則模型にも存在しない。
-さらに全表示群の同型と平方根選択のcocycleを比較し，
-自然な順序付きFricke射を全noncubicからbalanced標的へ延長する。
-線束境界上の2-fiberは$[\Spec k[a,b]/(ab)/\Gm]$で，
-トーラスの重みは$(-2,2)$，二つの穿孔枝は$B\mu_2$，交点は$B\Gm$となる。
-順序付き延長は平坦・有限表示・全射で，quasi-coherent直像は完全，
-構造層直像は構造層となる．Artin stackを標的に許す良モジュライ射であり，
-一致点を除くとこの直像完全性を失う．
-
-
-さらに、cubicの線束辞書、normal rulingの二重忘却、
-Okawa--Uedaの四重GIT射とPicard根torsor、その慣性と局所粗分岐を比較する。
-同じspectral曲線上で定義されるOU四重射とnoncubic半周期torsorは、
-共通の標識incidenceへ引き戻しても、自然な二同種で押し出しても一致しない。
-spectral表示からの射と、指定AS型の相対分類からの射では、基底変更の範囲が異なる。
-さらに二つのGram二次形式のpencilから、全$H_2$の共通線形化に関する
-順序付き半不変環を五生成・一関係式で、非順序環を
-重み$(2,2,3,4)$の四変数多項式環で記述する。
-中央affine chart、noncubic閉曲線の方程式と二つの孤立商特異点を決定する。
-既知の対称形式pencilの不変式定理を入力とする。
-さらに、八矢のweight四potentialを第四矢群で微分したrank二関係束を用い、
-全可逆cubic領域では通常の八矢QPとrank24有限foundationの
-相対groupoidを非被約底・全Isomまで同定する。
-頂点scalarの三次元トーラスを剛体化すると、そのpointed cubic H2 chartを得る。
-二cubic正規化は一般には頂点固定の右同値では結ばれず、mutationによる貼合せが必要である。
-さらに非最小十矢のmass係数に沿う滑らかなゲージ群
-$\mathcal U_\lambda=\Spec R[t,(1+\lambda t)^{-1}]$と、
-二mass十二矢QPから全rank三壁・非被約底を含めて
-有限foundationを復元する相対groupoid射を構成する。
-その余剰慣性は$\mathcal U_\lambda\times\mathcal U_\mu$である。
-残余長関係liftの加法shearとmassゲージの半直積を明示し，
-双対数では特殊fiberに見えない非可換性が残ることを示す．
-頂点scalarsの中心性から局所二段剛体化の順序も比較する．
-短関係のframe変更を通じてmass kernelを線束値の滑らかな群へ降下し，
-厳密なsquare二積交換から剛体化後のcoherentな$S_2$作用を構成する．
-相対Euler--conormal判定から分裂完全な対角解消を構成し，これを直接双対化してKellerの訂正済みrelation completionと比較し、
-通常Jacobianと$H^0\Pi_3(\Lambda)$を全基底上で同定する。
-非正・基底$K$-flatな相対dg模型のtruncation三角から，
-$H^0\Pi_3$は非平坦基底変更とも交換する．
-一般非正複体の$H^{-1}$の基底変更障害を
-$\operatorname{Tor}_{1,2}$の四項完全列で記述する．
-さらに内在的$H_2$実現可能開では，
-既存の全tensor次数のperfect-fiber消滅を直和することで
-$\Pi_3(\Lambda)$の\emph{全}負次数cohomologyが消え，
-ordinary Jacobian代数へのdg準同型を得る．
-したがって$H^{-1}$は単に平坦なだけでなく零であり，
-局所dg導来加群圏の同値と任意の非平坦基底変更も成立する．
-これは全raw QPのGinzburg dg代数との同一視ではない．
-さらに有限foundationは任意の非被約基底$R$上で
-局所自由かつ相対双加群perfectなので，
-Kellerの2018年erratumの任意可換基礎環上の定理から，
-\emph{全二mass非退化有限開}のSerre dg完成には
-canonicalな相対exact $3$-Calabi--Yau構造が存在する．
-$H_2$実現可能開ではdg形式性によって
-ordinary Jacobian自身も\emph{$R$-相対}exact $3$-CYである．
-構成は非平坦基底変更の後にも適用される．
-さらに有限双加群解消$P_\bullet$の恒等射から
-相対cyclic次数二のcanonical Casimir primitiveを具体化し，
-Connes像としてexact CY classを得る．
-このprimitiveとclassは全finite foundation同型に自然であり，
-massゲージ・relation-lift shearはfinite Morita値の
-mixed complex上で自明に作用する．
-相対Hochschildの円周作用付き複体，
-cyclic複体およびnegative cyclic複体の
-\emph{忠実平坦\v{C}ech降下}は，
-円周作用のhomotopy orbits/fixed pointsを使って
-有限foundation群oid上で証明する．
-この複体値降下は非被約基底でも成立し，
-一般の非平坦底変更でのnegative cyclic同型を必要としない．
-一方，このIsom不変性から未剛体化全QP stackの
-homotopy-coherent negative cyclic classのfppf高次降下や
-任意raw QPのcanonical CY class比較は未主張．
-さらに非最小二massの四頂点有向有限道代数では
-次数$-1$の関係矢が二本合成できず，
-相対関係イデアルのrank八直和因子性により
-次数$0,-1$の二項準自由dg解消が得られる．
-Keller Proposition~6.8を適用すると
-非完備Ginzburg dgとSerre dg完成は
-局所枠付きchartで導来Morita同値となり，
-$H_2$実現可能開ではordinary Jacobianとも
-局所導来Morita同値になる．
-さらに関係ideal$I$は$I^2=0$であり，
-二項準自由dg模型は$F\oplus I[1]$と
-canonicalに同定される．有限関係表示$(F,I)$の
-全同型はこのdg模型へstrictに持ち上がり，
-massゲージの有限商像が恒等であることから
-Morita局所化後のkernel作用はcoherentに自明化される．
-さらにfinite quotient上恒等なすべての関係表示自己同型に対し，
-$\delta=\varphi^\sharp-\mathrm{id}$と
-$h|_F=\delta[1],\ h|_{I[1]}=0$が
-$\delta=dh+hd$を満たす．
-非正二項dg模型のsquare-zero idealにより
-$\mathrm{id}+z\delta+dz\,h$は
-多項式微分形式上のdg代数ホモトピーとなり，
-massゲージがMorita局所化\emph{以前}にも
-dgホモトピー自明であることを証明する．
-関係lift shearもintrinsicな$(F,I)$を変えない．
-これは有限foundation側のdg降下であり，
-この段階でGinzburg dgとの\emph{局所Morita比較の}
-自然変換や単一ruling交換を構成したものではない．
-実際，mass右同値の二パラメータ$(t,s)$について，
-raw右同値を通る多項式$\mathbb A^1$経路が
-恒等から存在する必要十分条件は，
-$\lambda t,\mu s$がともに冪零なことである．
-可逆massの非自明な$\Gm$ゲージには
-この経路が一般に存在しない一方，
-有限dg模型のホモトピーは常に存在する．
-この障害は忠実平坦基底変更でも消えない．
-一方，Keller--Yangのright-equivalence持上げを
-逆道展開の非可換Fox微分で有限和として実現すると，
-\emph{純線形frameだけでなく}，非線形massゲージ・
-relation-lift shearを含む全多項式right-equivalenceが
-非完備Ginzburg dgのstrict同型に持ち上がる．
-逆向き矢の非線形補正と頂点ループの不変性を
-cyclic chain ruleで検証し，合成・任意非平坦基底変更の
-cocycleが厳密に閉じることを示す．
-さらに二massの相対準自由dg解消について，
-KellerのCuntz--Quillen模型と
-Calabi--Yau完成の明示式を用い，
-massゲージ・relation-lift shear・全関係frame変更の
-\emph{cotangent表示群oid}上で
-Ginzburgとfinite foundationのSerre dg完成の間の
-$2$自然Morita比較を構成する．
-長関係の生成元の三角変換の逆双対が
-$y\mapsto a^{-1}(y-tp)$と
-$v\mapsto b^{-1}(v-sp')$を再現するので，
-非線形right-equivalenceの作用まで一致する．
-合成と非平坦基底変更のcoherenceも確認し，
-$H_2$実現可能開ではGinzburgとordinary Jacobianの
-比較も同じcotangent群oid上$2$自然となる．
-任意のraw QP right-equivalenceがこの群oidの
-射に属するとの無条件の主張，別rulingの
-単一right-equivalenceは含めない．
-内在的$H_2$の実現可能開では、正規四周期helixと相対perfect-fiber判定で
-全次数の局所自由性・基底変更を証明した上で反Serre軌道環と同定し、
-左右Noether性・実際のpointed tails同値と
-次数$n$の階数$64n^2+64n+24$を得る。
-左Noether性では反対normalの零番頂点が強い$H_2$にならないrank三例を区別し，
-反対squareのdual heartに属する反対normal四項の第二頂点$Q_0$を基準に
-相対AZを適用することで正しい証明を与える．
-そのheart内性は相対評価coneを先に構成し，幾何fiberの例外対象の同型を
-可逆層を保った相対同型へ持ち上げてから完全双対化することで確認する．
-この線束は任意の頂点可逆層変更のもとで不変であり，
-反対側のconeと比較対象が同じ逆線束重みを持つため，fppf貼合せとも両立する．
-さらに有限squareの全頂点固定Isomに対して相対evaluation・Serre・perfect双対が
-2自然的に対応することを示し，QPのmass/shear核が有限foundationに恒等を誘導するので
-この範囲のheart比較に余分な慣性が作用しないことを確認する．
-さらに反SerreAZ生成族の両向き保存から，
-全有限square Isomのperfect Morita同値が
-実際の相対heart上$t$-exactとなることを証明する．
-零番の基底線束を残して$2$自然に降下し，
-局所pointingを指定したときにpointed exact同値を得る．
-非平坦引戻しそのものの$t$-exact性を仮定せず，
-導来引戻し後の$H^0$で通常のheart引戻しと
-比較し，全基底変更のcoherentな合成則を確認する．
-余剰massゲージと頂点スカラーを順に剛体化すると、
-指定rulingを持つ$H_2$スタックになり、二ruling交換は
-right-equivalenceではなく相対mutationとして貼り合う。
-この二mass比較の定義域は$H_2$実現可能な有限窓の開である。
-指定AS型に対するraw QPの適合開と、全相対ASへの比較は
-定理~\ref{thm:qa-raw-qp-as-open-mass-charts}と
-定理~\ref{thm:qa-open-qp-canonical-as-image}で決定する。
-固定normal窓の$H_2$実現可能開は一方のmassを単元にする。
-squareの両積の階数三交点と、raw QPの両mass零の壁は
-系~\ref{cor:qa-q12-h2-normal-one-mass-unit}で区別する。
+構造対象付き曲面のスタックでは、二つの ruling の順序を選ぶ操作が
+全域の有限エタール二重被覆を与える。cubic の稠密開ではこれを
+Okawa--Ueda のポテンシャル表示からの四重射と比較できる。
+二つの乗法がともに階数三となる noncubic 境界まで含めて、
+三本の半不変式から全スタックの準射影的良モジュライ空間を構成する。
 \end{abstract}
 \tableofcontents
 
@@ -556,8 +318,24 @@ Derksen--Weyman--Zelevinsky \cite[Theorem 4.6; Section 5]{DWZ2008}
 AS 正則 quadric の cubic 型については Van den Bergh \cite{VdB2011}、
 その幾何的データと potential のモジュライについては
 Okawa--Ueda \cite[Theorem 1.1]{OU2014} が基礎となる。
-同定理の四次有限射は potential の GIT 商から quintuple の GIT 商への射であり、
-内在的 $\HHstack$ への根・構造対象忘却の次数を述べるものではない。
+同定理 (4) の有限射の向きと、本稿で扱う二段の忘却を次に示す。
+上段の $M$ は複素数体上のコンパクト GIT 商、下段は標数零の代数閉体上で
+共通の稠密開に制限した有効表示スタックと構造対象付きスタックである。
+\[
+ \begin{aligned}
+ M_{\mathrm{pot}}=\mathbb P(1,2,3,4)
+   &\xrightarrow{\ 4\ } M_{\mathrm{qui}}=\mathbb P(2,4,4,6),\\
+ \mathfrak P^{\circ}
+   &\xrightarrow{\ 4\ } \mathfrak Q^{\circ}
+    \xrightarrow{\ 2\ } \mathfrak H_2^{\circ}.
+ \end{aligned}
+\]
+下段で一つの構造対象付き曲面の上にある二点は二つの normal ruling の選択、
+それぞれの上の四点はその quintuple を与える potential の選択である。
+全域で有限エタールに延びる ruling の被覆と、既存 GIT 商への大域射の
+区別は noncubic 曲線に現れる。後者の二射はこの曲線をそれぞれ一点に送る
+（定理~\ref{thm:qa-global-two-ou-morphisms}）。
+
 表示側の四次元スカラー慣性の核を命題~\ref{prop:qa-ou-scalar-gerbe}、
 剛体化後にも残る一般有限慣性を命題
 ~\ref{prop:qa-ou-generic-quintuple-finite-inertia}で計算する。
@@ -608,14 +386,9 @@ square・rotated square の反標準 avatar と十本矢 mutation について�
 定理~\ref{thm:qa-translation}で構成する。
 全mass配置の相対比較に用いる階数、消去、有限窓の再構成も本文で証明する。
 
-内在的な $\HH$ とその相対化 $\HHstack$ は、同じ研究の主論文
-\cite{QuadricIntrinsic2026} の対象である。
-分類主論文は構造対象を保つ exact 同値による分類を扱い、
-新しい相対モジュライ原稿 \texttt{nc-quadric-surface-moduli.tex} は
-相対認識と境界の幾何の証明正本である。
-本稿CにOkawa--Uedaの既存GITとの具体的な相対比較を集約する。
-本稿は表示の層別と avatar の幾何を独立に説明する。
-主論文中の全分類や相対再構成の証明は本稿に重複させない。
+構造対象付き $\HH$ の体上の分類は \cite{QuadricIntrinsic2026}、
+相対スタック $\HHstack$ の代数性と境界の幾何は \cite{QuadricModuli2026}
+を用いる。本稿ではこれらの結果を表示からの忘却射の標的に適用する。
 全 $\HHstack$ の代数性と既存の相対開埋込は論文Bの入力であり、
 本稿は有限square商とその明示開を通じて全群oidを比較する。
 任意に別途与えたAS/QP族の全相対認識、および
@@ -631,7 +404,9 @@ $P(M)=\det M$と$Q(M)=e_3(JM^{\mathrm{t}}JM)$でまとめ、
 線型簡約群のアフィン商と飽和開の貼合せ自体は
 \cite[Proposition 7.9, Theorems 13.2 and 13.6]{AlperGoodModuli2013}の既知の原理である。
 本稿はこの原理を全$H_2$開へ適用するための半不変式と共通指標を明示する。
-三式が不変式環を生成することや、良モジュライ空間の全方程式を求めたことは主張しない。
+この被覆に用いる三式と、共通指標に関する半不変式環の生成元は役割が異なる。
+定理~\ref{thm:qa-global-h2-full-semiinvariant-ring} は、後者を ruling 順序付きで
+五生成一関係式、順序を忘れると重み $(2,2,3,4)$ の四変数多項式環と決定する。
 
 \paragraph{固定表示のモジュライとの比較}
 四量子ビットの不変式環と重み付き射影商は

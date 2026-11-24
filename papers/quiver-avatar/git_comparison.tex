@@ -2164,7 +2164,7 @@ quintupleからpointed対象への次数二の積であり、
 一般には同型でないことから従う。
 \end{proof}
 
-\begin{remark}[残るpointed射の慣性とroot deck群の相違]
+\begin{remark}[pointed射の慣性とroot deck群]
 \label{rem:qa-ou-stack-fourfold-not-h2-forgetting}
 定理~\ref{thm:qa-ou-rigid-potential-quintuple-generic-etale}
 が記述するのは有効\emph{表示}スタック間の
@@ -2175,9 +2175,9 @@ quintupleからpointed対象への次数二の積であり、
 さらに定理~\ref{thm:qa-quintuple-h2-generic-etale}と
 系~\ref{cor:qa-quintuple-h2-generic-degree-two}により
 一般開でのétale性・全慣性・pointed fiberの二点性を決定した。
-残るのは特殊cubic点・noncubic境界の慣性変化、
-全体への有限étale二重被覆の延長と分岐、
-異なる四窓・rulingの相対的なcoherentな復元である。
+定理~\ref{thm:qa-global-two-ruling-etale-cover} の normal ruling 被覆は
+特殊点を含めて有限エタールである。特殊点での粗空間の分岐は
+定理~\ref{thm:qa-ou-special-reflection-coarse-branch} で扱う。
 表示側の$\mu_2^2$は楕円点曲線の翻訳自己同型として
 Picard根の同型類を固定する。
 これに対して四重被覆のdeck型の$E[2]$作用は
@@ -3293,7 +3293,7 @@ smooth性は群と表示開のsmooth性から従う。
 この数値だけからは従わない。
 \end{proof}
 
-\begin{remark}[一般二重被覆から残る相対比較]
+\begin{remark}[一般二重被覆と大域のruling被覆]
 \label{rem:qa-git-next-fiber}
 定理~\ref{thm:qa-quintuple-h2-generic-etale}と
 系~\ref{cor:qa-quintuple-h2-generic-degree-two}により、
@@ -3307,12 +3307,9 @@ smooth性は群と表示開のsmooth性から従う。
 Picardの四つの局所半根も追加標識なので、
 これらを二重のpointed忘却と混同しない。
 
-次に必要なのは、二つのnormalized foundationを
-相対的なrank-one torsion-free対象から
-非被約基底も含めてcoherentに構成・降下し、
-この有限étale二重被覆が特殊cubic点で分岐するか、
-noncubic境界でどの表示を失うかを調べることである。
-特殊点の全慣性・pointed 2-fiber、
-全体のgood moduliとの具体的な座標比較は別課題である。
-全体の存在自体は定理~\ref{thm:qa-global-h2-quasiprojective-good-moduli}で証明した。
+特殊点を含む拡張には、二つの normal foundation を相対的に回収する
+定理~\ref{thm:qa-global-two-ruling-etale-cover} を用いる。
+他方、全域の ordered 良モジュライから同じ cubic GIT 商への二つの座標射は
+noncubic 曲線を収縮する（定理~\ref{thm:qa-global-two-ou-morphisms}）。
+この収縮と上記スタック上の被覆は異なる射である。
 \end{remark}

@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-25 / v1.70
+% 日本語 LuaLaTeX。2026-11-25 / v1.71
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月25日\quad v1.70}
+\date{2026年11月25日\quad v1.71}
 
 \begin{document}
 \maketitle
@@ -68,13 +68,6 @@ Van den Bergh 許容四つ組から構成される cubic 領域、
 同時射影同値で分類できる。全退化型を含み、
 未知の AS 条件や圏同値の解決を分類条件には残さない。
 
-楕円四つ組における構造対象の $\mathbb Z^2$ 格子と
-$\OO$-標識忘却のファイバーは、相対モジュライ別稿
-\cite{QuadricModuli2026} で扱う。
-相対モジュライの有限型Artin性・noncubic 境界の幾何は
-別稿 \cite{QuadricModuli2026} の対象とする。
-既知の cubic 分類と本稿の pointed 同値分類を区別し、
-包括的な新規性・外部査読の確定は主張しない。
 \end{abstract}
 \tableofcontents
 
@@ -136,23 +129,32 @@ cubic/noncubic 族の相対効果性、framed 実現、
 
 \subsection{先行研究と本稿の範囲}
 
-Artin--Zhangのample pairと再構成 \cite{AZ1994} および
-Mori--Ueyamaの再構成定理 \cite[Definition 2.5, Theorem 2.6]{MU2021} を用いる。
-Van den Bergh \cite[arXiv v3, Theorem 5.5.10]{VdB2011} は
-三次三次元AS正則$\mathbb Z$-algebraをlinear/geometric quintupleと
-許容四つ組で分類した。本稿はその分類を既知入力とし、
-構造対象だけを指定した強い$\HH$の逆構成・全被覆・
-pointed exact同値判定を別に証明する。
-二次AS正則hullの既知構成
-\cite[arXiv v3, Theorem 6.1]{VdB2011} は、
-切断環だけを固定した全ambient被覆の一意性を意味しない。
+分類する際に何を固定するかで、同じ cubic 曲面から異なる問題が生じる。
+Van den Bergh \cite[arXiv v3, Theorem 5.5.10]{VdB2011} の対象は添字付きの
+三次元 cubic AS 正則 $\mathbb Z$-代数であり、linear または許容四つ組と
+geometric quintuple の間の対応は同型を射とする。偶数部分の hull についても、
+次数 $-4$ の自己同型の類を指定して初めて一意性が成立し、標準的な類には
+hull が存在する \cite[arXiv v3, Theorem 6.1]{VdB2011}。
+通常の次数付き cubic 代数では Itaba--Matsuno--Saito
+\cite[Theorems 3.3, 4.2, 4.3]{IMS2025} が、標数零の代数閉体上で
+三種の可約点スキームについて定義関係を列挙し、次数付き環同型と
+次数付き加群圏の Morita 同値をそれぞれ判定している。
+本稿の系~\ref{cor:two-matrix-pointed-equivalence} が検査するのは、
+適合平方根で作った四生成の切断環から、その平方根を忘れた
+$(\cC,\OO)$ の同値を回復するための二次関係である。
 
-Smith--Van den Bergh \cite{SVdB2013} の中心二次切断のrulingと
-Mori--Ueyama \cite{MU2021} によるstandard性の修正、
-Mori--Nyman \cite[Theorem 6.13]{MN2025} のstandard中心切断からの
-cubic比較、Mori--Ueyama--Wu \cite{MUW2026} の
-Zhang twist判定を区別する。本稿のnormal helixは
-中心性・standard性・ambientの追加条件を全対象に仮定しない。
+Artin--Zhang \cite{AZ1994} の ample pair の再構成を用いる。
+Mori--Ueyama \cite[Definition 2.5, Theorem 2.6(2)]{MU2021} は、
+Hom 有限な Abel 圏に ample pair $(\OO,s)$ を指定すると、
+非負軌道環の tails が $\OO$ と $s$ を含む triple を再現することを示した。
+また Mori--Nyman \cite[Theorem 6.13]{MN2025} では、四次元二次 AS 正則環の
+正則中心二次商が domain で、その tails が滑らかであり商が standard なら、
+次元三、Gorenstein parameter 四の AS 正則 $\mathbb Z$-代数の tails が得られる。
+中心切断の ruling と standard 性の関係は \cite{SVdB2013,MU2021}、
+正規切断の Zhang twist に関する判定は \cite{MUW2026} による。
+定理~\ref{thm:normal-helix} は強い $\HH$ の正則正規切断から出発し、
+二つの初期 MCM 型から構成した窓の乗法を調べる。この段階で
+cubic 表示を持つ範囲と、その外の中央二重平方型を判別できる。
 退化曲線を含む一般のcubic偶数環のdomain性には
 Presotto \cite[Theorem 2.8; Appendix A]{Presotto2018} を用いるが、
 二周期の平方と反Serreの比較は本稿で個別に証明する。
@@ -164,10 +166,14 @@ conifold potentialのGIT商$\PP(1,2,3,4)$ と
 GITの軌道閉包・S-equivalenceを本稿のpointed exact同値と
 同一視しない。可換quadricの四つの適合根と既存の次数四射の関係も
 未解決である。
-Kitamura--Okawa \cite{OkawaKitamura2022OWR} に報告された
-cubic $\mathbb Z$-algebraの$D_\infty$軌道とline bundleの
-$\mathbb Z^2$分類は既知とする。詳細稿の刊行状態と
-本研究の精密な追加部分の新規性は引き続き照合を要する。
+Okawa による Kitamura との共同研究の報告
+\cite[Definition 2, Theorems 1, 3]{OkawaKitamura2022OWR} では、
+cubic $\mathbb Z$-代数の無標識 $\operatorname{qgr}$ 同値を
+$D_\infty$ の軌道で判定する。そこでいう line bundle は階数一で
+torsion-free、自己 Euler 数一の対象であり、$\mathbb Z^2$ で記述される。
+本稿では同値に指定対象 $\OO$ の保存を課す。これを忘れる際の
+ファイバーは、滑らかな非共鳴楕円型について別稿 \cite{QuadricModuli2026}
+で計算する。
 
 Belmans \cite[Proposition 31, Corollary 32, Table 2]{Belmans2019} は
 既存のcubic AS正則$\mathbb Z$-algebraに由来する

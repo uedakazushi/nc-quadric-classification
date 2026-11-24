@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-25 / v0.43（相対モジュライ原稿の現行構成）
+% 日本語 LuaLaTeX。2026-11-25 / v0.44（相対モジュライ原稿の現行構成）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象付き非可換二次曲面の内在的モジュライ：\\代数性と noncubic 境界}
 \author{}
-\date{2026年11月25日\quad v0.43}
+\date{2026年11月25日\quad v0.44}
 
 \begin{document}
 \maketitle
@@ -65,10 +65,6 @@
 二形式表示商との相対同値、慣性、
 good/coarse moduli と一致根対の形式局所構造を記述する。
 
-本稿にはこれらの主定理、相対 Koszul・Noetherian 性、
-Artin 変形と Serre 根の構成、有限型効果性などの証明本文を収めた。
-Aの体上の完全分類、normal helixなどの分類用定理を入力とするよう、
-定理レベルの論文間参照を整理した。
 非可算な標数零代数閉体上では、標識を忘れた線形 exact 同値類を幾何点上で
 正確に分類する射の標的は、準コンパクトな対角を持ち得ない。
 有限型 atlas 上の構成可能集合の分割と楕円型の可算無限ファイバーからこれを示す。
@@ -130,11 +126,13 @@ cubic AS正則$\mathbb Z$-algebraに対応する
 非可換二次曲面のHochschild cohomologyを扱い、
 $HH^{\ge3}=0$ と $\dim HH^2-\dim HH^1=3$、
 および退化型の$HH^1,HH^2$を求めた。
-本稿のcubic側の数値・障害消滅はこの既知結果と比較する。
-一方、本稿のcubic表示を持たないnoncubic対象、
-その横断変形・相対境界の慣性や形式局所構造は
-同論文から無条件には従わない。
-これらの組合せの包括的新規性はまだ未確認である。
+四頂点なので、Belmans の式の差 $\#Q_0-1$ は三になる。
+これは一点での変形空間と無限小自己同型の次元差である。
+定理~\ref{thm:global-h2-smooth-finite-type} を得るには、
+非被約な基底にわたる族と指定同型を持ち上げ、それらを有限型の
+atlas 上で実現する必要がある。さらに二形式の根対が一致する
+noncubic 点では、境界に横断する二方向を含めた全慣性の作用を
+定理~\ref{thm:noncubic-coincident-formal-pair} で求める。
 
 証明は相対Koszul・Noetherian性と有限foundationの変形、
 適合Serre根と同じ根のAS4被覆を準備し、
@@ -149,8 +147,13 @@ $D_\infty$ 軌道と line bundle の分類を述べる。本稿は二つの内�
 foundation から非共鳴楕円型の pointed 同型類を数え、さらに通常の代数スタックの
 対角と Chevalley の定理 \cite[Tags 026N, 04XQ, 0ECX, 04YV]{StacksSmoothAtlas}
 を用いて分類射への障害を導く。
-本文に証明があることと、全証明の独立再検証、
-新規性調査、組版・PDF表示確認は区別する。
+ここで報告の Theorem 3 が数えるのは一つの $\operatorname{qgr}$ の中の
+line bundle の同型類である。本稿の忘却で数えるのは、そのような対象を
+構造対象とする組を圏の自己同値で割った同型類である。
+滑らかな楕円型で $\delta$ を非捩れ、$\eta\notin\mathbb Z\delta$ と取ると、
+この商を取った後にも可算無限個が残る
+（定理~\ref{thm:elliptic-marking-lattice-fiber}）。
+この事実が定理~\ref{thm:unmarked-diagonal} に必要な入力である。
 
 \input{moduli/relative_definitions}
 \input{moduli/relative_koszul}
