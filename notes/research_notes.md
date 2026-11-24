@@ -1,6 +1,12 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-25 / v1.79（A v1.70、B v0.43、C v4.69）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-25 / v1.80（A v1.71、B v0.44、C v4.70）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 可換二次曲面と古典ポテンシャルの四重射
+
+古典 conifold の potential は二次元空間のテンソル積上の行列式であり、その直交形式で添字を上げると固有値はすべて等しい。Okawa–Ueda のコンパクト GIT 射におけるその像のファイバーは、標数零で長さ一の被約点と長さ三の非被約点の非交和になる。二正二負の符号配置は置換で一つの幾何点に合流する。三重の厚みは残余符号作用の不変環を取った後の方程式で検出できる。[Cの証明](../papers/quiver-avatar/git_comparison.tex)・[消去の検算](../computations/verify_ou_fourfold.py)
+
+可換二次曲面の四種類の適合平方根は、構造対象を保つ自己同値による共役類である。上のファイバーを被約化しても四元集合は得られない。全平方根や ambient を付加したスタックの忘却ファイバーの記述には、各標識の自己同型と降下も必要になる。[Aの根の分類](../papers/sections/commutative_roots.tex)・[三稿と一次資料の対応](literature.md#三稿の序論で比較する分類問題2026-11-25確認)
 
 ## 論文Cの相対比較の点検
 

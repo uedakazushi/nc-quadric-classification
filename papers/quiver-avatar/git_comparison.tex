@@ -2324,6 +2324,57 @@ $k(\PP^3)^{K_4}$ で、その Galois 群は $G/K_4$。
 \path{computations/verify_ou_fourfold.py} で検算できる。
 \end{proof}
 
+\begin{corollary}[古典 conifold の像の上の GIT ファイバー]
+\label{cor:qa-ou-classical-scheme-fiber}
+標数零の代数閉体 $k$ 上で、古典 potential
+$\Phi_0=a_1b_1a_2b_2-a_1b_2a_2b_1$ の quintuple GIT 商での像を $q_0$ とする。
+命題~\ref{prop:qa-ou-fourfold-s4-monodromy} の有限射の $q_0$ 上の
+スキーム論的ファイバーは
+\[
+ \operatorname{Spec} k\ \amalg\ \operatorname{Spec} k[t]/(t^3)
+\]
+である。被約点はそれぞれ固有値 $[1:1:1:1]$ と $[1:1:-1:-1]$ で表される。
+従って、このファイバーの幾何点と、可換二次曲面上の四種類の適合
+Serre 平方根 \cite[\texttt{thm:commutative-four-roots}]{QuadricIntrinsic2026}
+との間には全単射がない。
+\end{corollary}
+\begin{proof}
+$z_{ij}=a_i\otimes b_j$ とすると、巡回語を二つの長さ二のブロックに分けた
+$\Phi_0$ は $\operatorname{Sym}^2 U$ で
+$z_{11}z_{22}-z_{12}z_{21}$ となる。この行列式の偏極が
+$U=k^2\otimes k^2$ の直交形式であり、この形式で $U$ と $U^\vee$ を
+同定すると対応する自己準同型は恒等のスカラー倍である
+\cite[(1.2), (3.5)--(3.9), (5.1)--(5.8)]{OU2014}。
+従って $q_0$ の対角代表は $[1:1:1:1]$ である。
+
+固有値 $x=(x_1,\ldots,x_4)$ の基本対称式を $s_i=e_i(x)$、
+二乗の基本対称式を $h_i=e_i(x_1^2,\ldots,x_4^2)$ と書く。
+始域の対称式環は $k[s_1,s_2,s_3,s_4]$ であり、偶数個の符号変更も
+許す終域の環は $k[h_1,h_2,h_3,s_4]$ である。実際、符号不変な
+単項式は各指数がすべて偶数またはすべて奇数であり、
+$h_4=s_4^2$ である。$h_1\ne0$ 上で $h_1=4$ と正規化すると、
+射影スケールの残りは同時符号反転 $\mu_2$ である。
+この切片で $q_0$ は $(h_2,h_3,s_4)=(6,4,1)$ となる。
+従ってファイバーの座標環は、この値と $h_1=4$ を課した始域の環の
+$\mu_2$ 不変部分である。これは次数零の局所化を上の切片で書いたもので、
+標数零では終域から来る四つの不変な方程式による商と不変部分を取る操作は可換する。
+
+積 $\prod_i(1+x_i z)(1-x_i z)$ の係数を比べると
+\[
+ h_1=s_1^2-2s_2,\quad h_2=s_2^2-2s_1s_3+2s_4,\quad
+ h_3=s_3^2-2s_2s_4 .
+\]
+$u=s_1,\ v=s_3$ と置くと $s_4=1$, $s_2=(u^2-4)/2$ であり、
+残る式は $v^2=u^2$ と $u^4-8u^2-8uv=0$ になる。
+同時符号反転の不変環は $A=u^2,B=uv,C=v^2$ と関係 $AC=B^2$ で与えられる。
+$C=A$, $B=A^2/8-A$ を消去すると
+\[
+ k[A]/\bigl(A^3(A-16)\bigr)
+ \simeq k[A]/(A^3)\times k .
+\]
+$[1:1:1:1]$ が $A=16$ に、二正二負の代表が $A=0$ に対応する。
+\end{proof}
+
 \begin{remark}[OU原論文の式(5.3)と(5.8)の不整合]
 \label{rem:qa-ou-source-s3-s4-discrepancy}
 \cite[\S5, p.~9]{OU2014} の(5.3)は $S_4$ を用いる。

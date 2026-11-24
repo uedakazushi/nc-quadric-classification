@@ -10,10 +10,11 @@ The affine action on G/H has kernel Klein 4 and image S4 (size 24).
 Thus the degree-4 extension has Galois closure with group S4.
 
 Run: python3 computations/verify_ou_fourfold.py
-No third-party dependencies. This checks finite-group identities, not the
-geometric equality of the OU torsor with a Picard-root torsor.
+The classical-fiber calculation uses SymPy for elimination.
 """
-from itertools import permutations, product
+from itertools import combinations, permutations, product
+
+from sympy import groebner, prod, symbols
 
 EVEN = tuple(v for v in product((0, 1), repeat=4) if sum(v) % 2 == 0)
 Z = (1, 1, 1, 1)
@@ -85,3 +86,22 @@ print("PASS: G=(F2^2_sign x Klein4_coordinate) rtimes GL2(F2), order96")
 print("PASS: OU S4 coordinate permutations, effective V=(F2)^2 sign group")
 print("PASS: |Gprojective|=96; |Hcoordinate|=24; index4; core(H)=V4")
 print("PASS: G/core(H)=AGL2(F2)=S4 monodromy on four sheets")
+
+# On the slice e_1(x^2)=4 the remaining projective scaling is a sign.
+# Its invariants for u=e_1(x), v=e_3(x) are A=u^2, B=uv and C=v^2.
+eigenvalues = symbols("x1:5")
+s1, s2, s3, s4 = (sum(prod(term) for term in combinations(eigenvalues, degree))
+                  for degree in range(1, 5))
+z = symbols("z")
+square_polynomial = prod(1 + value**2 * z for value in eigenvalues).as_poly(z)
+for degree, expected in enumerate(
+    [s1**2 - 2*s2, s2**2 - 2*s1*s3 + 2*s4, s3**2 - 2*s2*s4], start=1
+):
+    assert (square_polynomial.nth(degree) - expected).expand() == 0
+
+A, B, C, s = symbols("A B C s")
+fiber_ideal = [A*C - B**2, A - 2*s - 4, s**2 - 2*B + 2 - 6, C - 2*s - 4]
+basis = groebner(fiber_ideal, C, B, s, A, order="lex")
+assert basis.polys[-1].as_expr() == (A**3 * (A - 16)).expand()
+assert all(basis.reduce(p)[1] == 0 for p in [C - A, 8*B - A**2 + 8*A, 2*s - A + 4])
+print("PASS: classical OU fiber has local lengths 1 and 3, with ring k[A]/(A^3(A-16))")

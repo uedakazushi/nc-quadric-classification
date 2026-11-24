@@ -1,8 +1,10 @@
 # 研究方針：O-marked 非可換二次曲面
 
-2026-11-25 / v1.82。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
+2026-11-25 / v1.83。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
 
 ## 現在の目標と達成基準
+
+A v1.71、B v0.44、C v4.70 の序論で、添字付き代数、次数付き加群圏、構造対象付き・無標識の tails、表示の GIT 商の比較対象を明示した。古典 conifold の像で Okawa–Ueda の次数四射のファイバーは長さ一の点と長さ三の非被約点になる。可換二次曲面の四種類の適合平方根とは幾何点の数が異なる。[古典点の比較](notes/research_notes.md#可換二次曲面と古典ポテンシャルの四重射)・[一次資料の対応表](notes/literature.md#三稿の序論で比較する分類問題2026-11-25確認)。
 
 **無標識モジュライの対角の障害を論文B v0.42で証明した。** 非可算な標数零代数閉体上で、構造対象を忘れた線形exact同値と像の同型がちょうど一致する射 H2 → M があれば、通常の代数スタック M の対角は準コンパクトでない。M や射の有限型性・射の表現可能性は不要である。一般の標数零体への系には、非可算代数閉拡大上での源の同定と分類条件を仮定する。[Bの証明](papers/moduli/marking_forgetting.tex)・[入力と点検範囲](notes/unmarked_moduli_obstruction.md)。
 
@@ -12,15 +14,15 @@
 
 B v0.43では、五頂点の bar 解消から非有界導来局所化の核を決定し、非被約基底上の指定 pointed 同型の持上げを反Serre環の二次関係から判定した。相対定義、五頂点の tails、Noetherian 貼合せ、Artin 持上げと有限型効果性、smooth atlas、全 Isom、一致類の AHR 形式対について[指定範囲の内部監査](notes/research_notes.md#論文bの内在的相対理論の点検)を完了した。
 
-C v4.69では、滑らかな連結射影曲線の冪零肥厚上で、指定AS族がfppf局所に四周期標識を持つ必要十分条件を得た。全整数の双対線束を被約曲線に制限した類が、Picard群の有限生成部分群を生成することである。条件が成立すれば一つの有限Zariski開被覆で足りる。 周期標識、負巡回枠、幾何復元、指定cotangent比較に関する公表前内部監査と一次資料照合を完了した。[Cの指定四項目の点検](notes/research_notes.md#論文cの相対比較の点検)。次の優先課題は三稿の先行結果との比較と公表用編集である。
+C v4.69では、滑らかな連結射影曲線の冪零肥厚上で、指定AS族がfppf局所に四周期標識を持つ必要十分条件を得た。全整数の双対線束を被約曲線に制限した類が、Picard群の有限生成部分群を生成することである。条件が成立すれば一つの有限Zariski開被覆で足りる。 周期標識、負巡回枠、幾何復元、指定cotangent比較に関する公表前内部監査と一次資料照合を完了した。[Cの指定四項目の点検](notes/research_notes.md#論文cの相対比較の点検)。
 
 ## 公表用三論文と現状
 
 | 原稿 | 主結果・確実性 | 主要な残課題 |
 |---|---|---|
-| [A](papers/nc-quadric-surface.tex) v1.70 | 標数零代数閉体上の強いH2の全pointed exact分類。cubic/noncubicの全被覆、適合Serre根・AS4被覆、構成・有限同値判定を原稿で証明。F1–F5到達。 | F6の内部点検・主要一次資料との比較・現行名での組版を確認。外部査読・網羅的新規性確認は未実施。 |
-| [B](papers/nc-quadric-surface-moduli.tex) v0.43 | 内在的H2の有限型代数性・smooth既約性、被約noncubic境界の余次元2・smooth性、二形式商と相対同値、慣性・境界good moduli、DM開の任意底変更と両立するcoarse moduli、全H2のcoarse space不存在と一致類の形式対、無標識exact同値を分類する標的の対角の非準コンパクト性を原稿で証明。 | 指定範囲の内部監査を完了。X_asの局所閉認識、第三者査読等は別課題。 |
-| [C](papers/nc-quadric-surface-avatar.tex) v4.69 | 指定AS分解型・幾何avatar・8/10/12重み付きQPの相対比較、全標準頂点のH2認識、表示慣性・剛体化・fiber、周期・ruling/mutation、全H2の準射影good moduli、spectral比較と境界障害。S1–S5の原稿上の証明と指定範囲S6監査を記録。 | 全比較の網羅的外部文献監査と既存定理の独立点検。今回指定された四項目の仮定・依存と主要一次資料を照合済み。 |
+| [A](papers/nc-quadric-surface.tex) v1.71 | 標数零代数閉体上の強いH2の全pointed exact分類。cubic/noncubicの全被覆、適合Serre根・AS4被覆、構成・有限同値判定を原稿で証明。F1–F5到達。 | F6の内部点検・主要一次資料との比較・現行名での組版を確認。外部査読・網羅的新規性確認は未実施。 |
+| [B](papers/nc-quadric-surface-moduli.tex) v0.44 | 内在的H2の有限型代数性・smooth既約性、被約noncubic境界の余次元2・smooth性、二形式商と相対同値、慣性・境界good moduli、DM開の任意底変更と両立するcoarse moduli、全H2のcoarse space不存在と一致類の形式対、無標識exact同値を分類する標的の対角の非準コンパクト性を原稿で証明。 | 指定範囲の内部監査を完了。X_asの局所閉認識、第三者査読等は別課題。 |
+| [C](papers/nc-quadric-surface-avatar.tex) v4.70 | 指定AS分解型・幾何avatar・8/10/12重み付きQPの相対比較、全標準頂点のH2認識、表示慣性・剛体化・fiber、周期・ruling/mutation、全H2の準射影good moduli、spectral比較と境界障害。S1–S5の原稿上の証明と指定範囲S6監査を記録。 | 全比較の網羅的外部文献監査と既存定理の独立点検。今回指定された四項目の仮定・依存と主要一次資料を照合済み。 |
 
 Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比較を担当する。BはAの分類を引用し、CはA/Bの結果を必要に応じて入力とする。A/Bの主要証明がC固有の主定理に依存するとはしない。証明の正本は各原稿、補助知識と検証の範囲は[研究ノート](notes/research_notes.md)、一次資料と新規性比較は[文献ノート](notes/literature.md)。
 
@@ -39,7 +41,7 @@ Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比
 
 ## 次の一手（優先順）
 
-1. Van den Bergh、Okawa–Ueda、Belmans、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa等との関係を明示し、三稿の公表用編集を進める。全平方根・ambient忘却、偏極認識等への展開は、包括的監査と区別して数学的価値で再評価する。
+1. 偏極認識の残る仮定を検討する。Bでは有限 foundation と shift 双加群が与えられれば局所閉判定がある。任意の $X_3$ 族について、このデータがどの近傍で実際に構成できるかを決めることが次の一手である。[既存の判定とその仮定](papers/moduli/polarization_recognition.tex)。全平方根・ambient 忘却の群oidと包括的な新規性調査は引き続き別の課題とする。
 
 ## 再開と検証
 

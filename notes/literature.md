@@ -1,5 +1,16 @@
 # 非可換 quadric 分類：現行文献比較
 
+## 三稿の序論で比較する分類問題（2026-11-25確認）
+
+| 原典と確認箇所 | 固定するデータ・許す同値 | 三稿の対応箇所 |
+|---|---|---|
+| [Van den Bergh, Thms. 5.5.10, 6.1](https://arxiv.org/pdf/0807.3753v3) | 添字付き cubic 代数と許容・linear 四つ組の同型。偶数環の hull の一意性では次数 −4 の自己同型の類を指定する。 | [Aの体上分類](../papers/sections/classification.tex)では平方根と ambient を忘れ、構造対象を保つ。 |
+| [Mori–Ueyama, Thm. 2.6(2)](https://arxiv.org/pdf/1708.00167)・[Mori–Nyman, Thm. 6.13](https://arxiv.org/pdf/2307.15253v1) | 前者は Hom 有限な Abel 圏と指定 ample pair から triple を回復する。後者は正則中心二次商が domain かつ standard で tails が滑らかな場合に、三次元・Gorenstein parameter 四の AS 正則整数添字代数で tails を実現する。 | [Aの normal helix](../papers/sections/normal_comparison.tex)は正則正規切断を対象とする。二つの初期 MCM 型の乗法が cubic 表示の存在を検出する。 |
+| [Itaba–Matsuno–Saito, Thms. 3.3, 4.2, 4.3](https://arxiv.org/pdf/2511.02361v1) | 標数零の代数閉体。通常の二生成 cubic AS 正則環で、点スキームが三角形をなす二直線と conic、一点で会う二直線と conic、四辺形の場合について関係式、次数付き環同型、graded Morita 同値を決定する。 | [Aの二行列判定](../papers/sections/first_orbit_object.tex)の入力は四生成の適合切断環の二次関係である。比較するのは指定対象付き tails の exact 同値。 |
+| [Okawa による Kitamura との共同研究報告、Def. 2, Thms. 1, 3](https://doi.org/10.4171/OWR/2022/23) | 無標識 cubic qgr の二面体軌道と、固定した qgr 内の line bundle の整数格子を記述する。照合できた本文はこの報告であり、そこで準備中とされた詳細稿の刊行は確認できていない。 | [Bの忘却定理](../papers/moduli/marking_forgetting.tex)は許容構造対象を圏の自己同値で割った後の濃度を、滑らかな非共鳴楕円型で決定する。 |
+| [Belmans, Prop. 31, Cor. 32, Table 2](https://arxiv.org/pdf/1705.06098) | cubic qgr の四頂点から高次 Hochschild 消滅と二次・一次の次元差三を得る。 | [Bの有限型 atlas](../papers/moduli/h2_smooth_atlas.tex)には指定同型の相対持上げと有限型効果性を要する。noncubic 境界の形式対は B の別の計算による。 |
+| [Okawa–Ueda, (1.2), Thm. 1.1(4), §§3, 5](https://arxiv.org/pdf/1403.0713) | 複素数体上のコンパクト GIT 商の四重射と古典 conifold の potential。 | [Cの比較と古典ファイバー](../papers/quiver-avatar/git_comparison.tex)は稠密開のスタック射の次数四・二と、古典点での GIT ファイバーの局所長一・三を区別する。[Aの可換点](../papers/sections/commutative_roots.tex)における四種類の根は pointed 共役類である。 |
+
 ## Cの周期標識、幾何復元、負巡回枠（2026-11-25確認）
 
 - Stacks Project §59.69 は滑らかな射影曲線上の次数列と $n$ が可逆なときの Jacobian の $n$ 捩れを与える。Lemma 37.4.1 の平方零肥厚の単元完全列はアフィン上で Picard 群が変わらないことを与える。C の一つの fppf 被覆での周期化判定には、さらに全整数の差に共通の多切断の次数と補集合の有限個の因子を使う。[Tag 03RN](https://stacks.math.columbia.edu/tag/03RN)・[Tag 0C6R](https://stacks.math.columbia.edu/tag/0C6R)
