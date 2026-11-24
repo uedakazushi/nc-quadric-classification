@@ -260,13 +260,22 @@ $\pi P_{j+1}$ の二つの直和の商になる。
 最後に命題~\ref{prop:all-quadric-even-domain} により $B$ は domain である。
 \cite[arXiv v3, Theorem 5.5.6]{VdB2011} の幾何商 $D\twoheadrightarrow D_{\mathrm{geom}}$ の核を
 $\beta$ は保つので、その正則元列は正則正規元 $h\in B_2$ に降りる。
-$\qgr(B/(h))\simeq\coh C$ であり、その構造対象の各 shift は可逆層に対応する。
-任意の $(2,2)$ Cartier 因子 $C\subset\PP^1\times\PP^1$ は純一次元なので、
-被約でなくてもその上の可逆層は有限長ではない。
-例えばいずれの既約成分も含まない一般の hyperplane section を取り、
-その Cartier 因子による可逆層の真の下降列を用いればよい。
-$\qgr(B/(h))\to\qgr B$ は exact かつ fully faithful なので、
-これらの対象は $\qgr B$ においても有限長ではない。
+幾何商では $\qgr(B/(h))\simeq\coh C$ であり、構造対象のシフトには可逆層が対応する
+\cite[arXiv v3, Corollaries 5.5.9 and 5.6.2]{VdB2011}。
+$\pi(B/(h))$ が有限長でないことを、非被約の場合も含めて次数付き右イデアルで確認する。
+$C_{\mathrm{red}}$ の既約成分 $Y$ の滑らかな閉点 $p$ を一つ選ぶ。
+幾何商の次数 $n$ は $M_0\otimes\cdots\otimes M_{n-1}$ の切断空間である。
+ここで $M_j=L_{2j}\otimes L_{2j+1}$ は隣接対による閉埋め込みと
+Segre 埋め込みの合成から得る非常に豊富な束である
+\cite[arXiv v3, Lemma 5.5.1 and Theorem 5.5.6]{VdB2011}。
+各次数で $Y$ に制限した切断が $p$ で $m$ 次以上消えるものを $I_m$ とする。
+積は左因子に移送した右因子を掛けるので、$I_m$ は斉次右イデアルである。
+各 $M_j$ には $Y$ 上で $p$ に単純零点を持つ切断と $p$ で消えない切断がある。
+実際、像の接線を含まない $p$ を通る超平面と、$p$ を通らない超平面を選べばよい。
+$n\ge m$ とする。$n$ 個の因子のうち最初の $m$ 個に前者、残りに後者を取ると、
+その積の消滅次数はちょうど $m$ である。従って $I_m/I_{m+1}$ は
+無限次元であり、この下降列は $\qgr B$ でも真に下降する。
+ここでは点 $p$ が $C$ 自身の滑らかな点であることを必要としない。
 よって $\pi B\supset\pi hB\supset\pi h^2B\supset\cdots$ は
 $\qgr B/\cC_0$ においても真の下降列となり、$\pi B\notin\cC_1$ である。
 

@@ -6,6 +6,9 @@
 - Mori–Ueyamaのsmooth high rank仮定とMCM二型はDefinition 5.9, Theorem 5.5, Lemmas 4.13, 5.13。Orlov Theorem 2.5(i)における指数二の例外項と、特異圏の埋込みがMCMのtails像を与える追加消滅をMori–Ueyama, Lemma 4.1と照合した。[high rank](https://arxiv.org/abs/1905.12266)・[Orlov](https://arxiv.org/abs/math/0503632)・[MCMの像](https://arxiv.org/abs/1507.06377)
 - Van den Bergh, Proposition 5.1.2, Theorem 5.5.10の三次正則環の分類にはlinear型を含む。Theorem 6.1とLemmas 6.4–6.5の可換図式で選んだ二周期をhull上に持ち上げる。偶数環のdomain性にはPresottoの刊行版Theorem 2.8（証明Appendix A、著者版Theorem 3.8）を使える。[Van den Bergh](https://arxiv.org/abs/0807.3753v3)・[Presotto刊行版](https://doi.org/10.4171/JNCG/290)
 - Mori–Nyman Theorems 4.8, 4.19, 6.8とLemma 6.10を照合した。Theorem 4.19の周期性と組み合わせる仮定はASF⁺である。Aの補助命題18.2ではDefinition 4.15の導来双加群同型を仮定し、主定理の三次型では補題19.1で双加群を直接同定する。[Mori–Nymanの一次本文](https://arxiv.org/abs/2307.15253v1)
+- Tran–Vancliff, Theorem 2.7は、二次関係空間を保存する指定の写像族と $t^\delta=1$, $\tau^\delta\in\mathrm{Aut}(A)$ を仮定してtwisting systemを作る。次数一の二行列をtwistの定義に使う先例と、Aで示した任意のpointed同値からの二周期の必要性を区別した。[著者原稿](https://bpb-us-e1.wpmucdn.com/websites.uta.edu/dist/0/5123/files/2023/09/r-ts-rk2q.pdf)・[刊行版](https://doi.org/10.1090/conm/801/16040)
+- 反Serre、可換認識と例の仮定も照合した。Mori–Ueyama Theorem 2.6(2)はHom有限なAbel圏とample pairからのtripleの再構成。Bondal–Orlov Theorem 3.1は標準束または反標準束が豊富な場合。Esnault–Viehweg Theorem 1.2直後に標数零代数閉体への移行がある。Lozano–Vancliff Proposition 2.2は指定のOre拡大の正則性。Mori–Ueyama–Wu Theorem 5.5は滑らかなSklyanin二次商のstandard性である。[再構成](https://arxiv.org/abs/1708.00167)・[自己同値](https://arxiv.org/abs/alg-geom/9712029)・[消滅](https://page.mi.fu-berlin.de/esnault/books/esvibuch.pdf)・[Ore](https://doi.org/10.1007/s13366-026-00867-5)・[Sklyanin](https://arxiv.org/abs/2606.24606)
+- Belmans, Proposition 31, Corollary 32, Table 2はcubic AS正則環に付随するHochschildコホモロジーの計算。Okawa–Ueda, Theorem 1.1はGIT商の間の次数四の射。全H2の構造対象付きexact同値の定理3.2で扱う軌道と、これらの不変量・商は異なる。Kitamura–Okawaとの比較の一次資料は下記のOWR報告であり、詳細稿との優先権判定は行っていない。[Belmans](https://arxiv.org/abs/1705.06098)・[Okawa–Ueda](https://arxiv.org/abs/1403.0713)・[OWR](https://doi.org/10.4171/OWR/2022/23)
 
 ## Bの無標識分類射と対角（2026-11-25確認）
 
@@ -17,7 +20,7 @@ Van den Bergh [arXiv v3](https://arxiv.org/pdf/0807.3753v3) Theorem 5.5.10 は�
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-資料確認日：2026-11-23（日本時間）。v2.12。現行三論文A/B/Cに対応する一次資料比較。
+各項目に資料確認日を記す。2026-11-25（日本時間）、v2.13。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## C v4.68の全相対比較で使う一次文献

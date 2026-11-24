@@ -18,7 +18,7 @@ O-marked 非可換二次曲面の分類、内在的モジュライ、AS/avatar/Q
 | [B — nc-quadric-surface-moduli.tex](papers/nc-quadric-surface-moduli.tex) | 内在的相対H2の代数性・smooth性・境界・慣性・good/coarse moduli・形式対。楕円型の標識忘却と無標識モジュライの対角の障害。分割節は papers/moduli/。 |
 | [C — nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) | 指定AS/avatar/8・10・12矢QPの相対分類と比較、全H2のgood moduli、忘却射・fiber、spectral境界。分割節は papers/quiver-avatar/。 |
 
-A/Bの主結果、CのS1–S5は原稿上証明されている。Cの指定範囲のS6点検を2026-11-24に記録した。全数学的独立監査、網羅的新規性、外部査読、形式証明は別状態である。正確な仮定、既知結果との関係、未解決の核心は研究方針・論文を参照する。CのMorita比較は指定cotangent表示群oidに限る。三稿の公表前監査を続ける。比較やCY構造の一般化は完了条件に含めない。幾何点分類と相対stack、good moduliとcoarse moduliを区別する。
+Aの体上分類の公表前内部監査F6を2026-11-25に完了した。次はBの相対理論を点検する。Bの主結果、CのS1–S5は原稿上証明されている。Cの指定範囲のS6点検を2026-11-24に記録した。全数学的独立監査、網羅的新規性、外部査読、形式証明は別状態である。正確な仮定、既知結果との関係、未解決の核心は研究方針・論文を参照する。CのMorita比較は指定cotangent表示群oidに限る。B/Cの公表前監査を続ける。比較やCY構造の一般化は完了条件に含めない。幾何点分類と相対stack、good moduliとcoarse moduliを区別する。
 
 ## 現行資料
 

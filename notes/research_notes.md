@@ -14,9 +14,22 @@
 | 階数三の二型 | syzygyが二型を固定する場合と交換する場合をたどった。支持が一致する場合の排除、共通平面上での二つの作用のスカラー調整、untwist後の二重平方環を確認した。四元数環の付値によるdomain性と、点対の対角成分からの同値判定が、それぞれ構成と単射性を担う。[交換型と分類](../papers/sections/standard_rank_three.tex)・[二重平方環](../papers/sections/ore_normal_quadrics.tex) |
 | 表示からの有限同値判定 | 従来の反復では代数群の剰余類の射影像が閉じ、Noether性で停止する。さらにSerre自然同型を各偶奇で反復すると、隣接射の行列を二つだけに選べる。逆は全ての添字に同じ二条件を反復する直接構成。任意の反復の解自体に二周期を要求しない。[系14.7と反例](../papers/sections/first_orbit_object.tex) |
 
+主定理と別に、Aの補助結果も次の経路で点検した。
+
+| 補助結果 | 依存する仮定と検算 |
+|---|---|
+| 固定した被覆と可換例 | 超平面の両側の積は四次元の同じ核に入る。環変換スペクトル系列では、正規元の最小の消滅元が生じると内部次数5以上の第二Torが残り、二次性に反する。可換認識では数値的Riemann–RochとHodge指数から次数二の有限双有理射を得る。四平方根は二つのrulingへの対合の作用で尽きる。[有限被覆判定](../papers/sections/finite_ambient_test.tex)・[可換部分](../papers/sections/commutative_roots.tex) |
+| 反Serre環、中心standard表示、Sklyanin例 | 偶数Veroneseの関係は二語の組の内側と境をまたぐ挿入で生成される。豊富性とExt消滅によりheartも回復する。中心楕円商の中心は無限位数平行移動を使って計算し、左加群でのsecantの記述はpencilを固定する反自己同型で移す。二つの一般secantが同一平面内にある条件は $2w=0$。[反Serre環](../papers/sections/antiserre_ring.tex)・[ruling](../papers/sections/cubic_ruling.tex) |
+| 符号型・多パラメータ・Ore | 符号の三角積、二項の交換指標、使われない変数が双対側で与える平方零イデアルを確認した。二対の積の族では正方形の四点の置換と三角積が同値に必要であり、符号twistと変数交換で十分。Oreの正規元は最高単項式と中心変数の係数で分けられ、二重平方環の分数環では非分岐二次拡大でのノルムの付値が偶数となる。[多パラメータ](../papers/sections/multiparameter_quadrics.tex)・[Ore](../papers/sections/ore_normal_quadrics.tex) |
+| 重み付き表示・一次変形 | 奇数頂点の分解を偶数成分へ制限して線形分解をつなぐと偶数環のKoszul性を得る。一次変形では中心直線による乗法の核＝像から双対数上の平坦性が従い、整域の楕円商で割り戻せるので平方零イデアルは内在的。次数八の偏極を保ち無限位数平行移動と可換な自己同型は平行移動の8捩れに限られる。[重み付き表示](../papers/sections/weighted_inverse.tex)・[pencil](../papers/sections/pencil_deformation.tex) |
+
+非被約境界のGabriel–Krull条件は別法でも確認した。幾何商の各偶数二段に対応する束は非常に豊富なので、被約既約成分上の一点で消滅次数を指定する右イデアルが作れる。相続商は全ての十分大きい次数で非零となり、tailsでの真の下降列を与える。曲線全体の滑らかな点は不要である。[命題19.4](../papers/sections/elliptic_inverse.tex)
+
 補助命題18.2では局所コホモロジーの双対を与えるNakayama同型を仮定することを明記した。主定理で用いるcubic側は補題19.1でその双加群を計算する。系14.7の入力は両方が適合表示であること。一般の四生成元二次環に同じ主張を適用しない。
 
-再現には `computations/verify_quadric.py`（Segre twistの二通りの関係空間と非零交換子）、`verify_reducible_quadruples.py`（退化型の両偶奇と冪零方向）、`verify_pencil_tangent.py`（有理点での階数8・10）を用いた。現行名のAをLuaLaTeXで組版し、79頁のPDFとSyncTeX、変更箇所を含むpp.7, 27, 42–43, 58–59の表示を点検した。数学的な十分性は本文の全次数の論証による。
+再現には `computations/verify_quadric.py`（Segre twistの二通りの関係空間と非零交換子）、`verify_reducible_quadruples.py`（退化型の両偶奇と冪零方向）、`verify_pencil_tangent.py`（有理点での階数8・10）を用いた。三稿の参照検査と `python3 scripts/check.py math` はいずれもPASS。現行名のAをLuaLaTeXで組版し、79頁のPDFとSyncTeX、変更箇所を含むpp.3, 7, 16, 28, 42, 59, 62, 74–75の表示を点検した。
+
+**F6の到達範囲。** Aの体上分類について、全領域での構成・回復・同値判定から依存証明を逆に点検し、補助結果、主要な先行定理の仮定、有限計算、現行名での組版を確認した。これを公表前の内部監査の完了とする。外部論文の既知定理を入力として用いており、それらの全証明の再証明、網羅的な新規性の確定、第三者査読、形式証明は行っていない。B/Cの相対族や全Isomについては別稿ごとの監査で扱う。
 
 ## 無標識モジュライの対角の障害（B v0.42）
 
@@ -1408,8 +1421,7 @@ E_f側の相対pointed認識、smooth spectral指定pointingの二同種対合�
 古典零切断・Σ2最深境界、8/10/12矢potentialの全相対群oid。
 旧Q12 avatar草稿・synthesisは内部未公刊入力で、
 論文Cに必要な証明を統合していく。
-関連出典はnotes/literature.md。A/Bの主結果の独立再監査・
-CのLuaLaTeX組版・新規性調査も未完了。
+関連出典はnotes/literature.md。各稿の内部監査・組版・文献照合の範囲は本書冒頭と研究方針に示す。
 検算はcomputations/verify_avatar_pointed_dictionary.py
 （GitHubの保存コード本体実行はまだ未確認）。
 
@@ -1433,7 +1445,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 片側・交点の二捩れ特殊座での局所慣性と粗分岐に加え、j特殊値の二cubic開でのCM障害除去と一cubic境界fiber一点・A4例外を解決。点曲線側のnoncubic相対復元とsmooth spectralのgerbe比較は証明済みであり、自然なspectral射の境界標的・全fiberは証明済みであり、次は一般avatar族のpointed認識と全AS/QPの比較を調べる。粗分岐とstack的étale性の区別を保つ。
 `lem:elliptic-two-reflections` と
 `cor:two-intrinsic-foundations` の相対化が最も具体的な手掛かり。
-A/Bの全公表前監査・一次文献新規性比較・三稿の実組版は未完了。
+Bの相対同値と効果性を含む公表前監査は研究方針の次の課題である。
 
 ## 一致類の全慣性・AHR形式対・局所good moduliの二次的性質
 
@@ -1502,8 +1514,7 @@ $\mathfrak H_2$のZariski開へ降下できる条件を検討する。
 同時に一般cubicのOkawa–Ueda GIT表示から内在H2への
 根・四窓・rulingを忘れる射の相対fiberを、
 境界と慣性を保って比較する。
-A/B公表前の三稿source checker・LuaLaTeX組版、
-先行研究との包括的新規性確認、全証明独立監査も残る。
+相対形式対で使うBの依存証明の点検範囲は研究方針に示す。
 
 ## noncubic 被約境界の相対商・慣性・good/coarse 比較
 
@@ -1581,7 +1592,7 @@ cohomological affinenessにより反証する。
 **次に点検すること。**
 一致類の全慣性とAHR形式局所模型の仮定・不変式は本ノート冒頭へ統合した。
 次は局所good moduliのZariski降下と一般cubic GIT表示との比較を研究する。
-A/B/C全source checker・LuaLaTeX組版、全証明独立監査は未実施。
+各稿の組版・内部監査の到達範囲は研究方針を参照。
 
 ## 指定 Artin 同型の持上げとsmooth atlas・framed実現
 
