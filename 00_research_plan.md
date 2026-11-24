@@ -45,7 +45,7 @@ Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比
 
 ## 再開と検証
 
-[README](README.md) の手順と[無標識定理の検証記録](notes/unmarked_moduli_obstruction.md)を参照する。C v4.69 の組版・SyncTeX・計算の記録は[指定四項目の点検](notes/research_notes.md#論文cの相対比較の点検)にある。
+[README](README.md) の手順と[無標識定理の検証記録](notes/unmarked_moduli_obstruction.md)を参照する。現行三稿の組版と系31.33の検算は[古典点の比較](notes/research_notes.md#可換二次曲面と古典ポテンシャルの四重射)に記録した。C v4.69 の組版・SyncTeX・計算の記録は[指定四項目の点検](notes/research_notes.md#論文cの相対比較の点検)にある。
 
 ## 対象と規約
 
