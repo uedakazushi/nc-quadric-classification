@@ -18,12 +18,12 @@ $\mathcal C_0$，四標準対象を $E_0,\ldots,E_3$ とする．
 次の二つの四項窓を固定する：
 \[
  \begin{split}
- \mathcal T_{\rm rot}&=(E_1,E_2,E_3,tE_0),\\
- \mathcal T_{\rm mut}&=(t^{-1}Z_1,E_0,E_2,E_3).
+ \mathcal T_{\mathrm{rot}}&=(E_1,E_2,E_3,tE_0),\\
+ \mathcal T_{\mathrm{mut}}&=(t^{-1}Z_1,E_0,E_2,E_3).
  \end{split}
  \tag{RM}\label{eq:qa-relative-rot-mut-windows}
 \]
-これらの直和を $T_{\rm rot},T_{\rm mut}$ と書く．
+これらの直和を $T_{\mathrm{rot}},T_{\mathrm{mut}}$ と書く．
 
 \begin{proposition}[二つの実際の相対tilting窓]
 \label{prop:qa-relative-rot-mut-finite-tilting}
@@ -32,24 +32,24 @@ $\mathcal C_0$ の基底平坦な heart 対象であり，共通 fppf 局所 cha
 compact である．両窓は相対 full strong exceptional foundation であり，
 通常 End 代数
 \[
- \Lambda_{\rm rot}=\operatorname{End}(T_{\rm rot}),\qquad
- \Lambda_{\rm mut}=\operatorname{End}(T_{\rm mut})
+ \Lambda_{\mathrm{rot}}=\operatorname{End}(T_{\mathrm{rot}}),\qquad
+ \Lambda_{\mathrm{mut}}=\operatorname{End}(T_{\mathrm{mut}})
 \]
 は階数二十四の有限局所自由 directed 代数となる．
 Hom 階数表はそれぞれ
 \[
- G_{\rm rot}=
+ G_{\mathrm{rot}}=
  \begin{pmatrix}
  1&0&2&6\\0&1&2&6\\0&0&1&4\\0&0&0&1
  \end{pmatrix},\qquad
- G_{\rm mut}=
+ G_{\mathrm{mut}}=
  \begin{pmatrix}
  1&2&4&6\\0&1&2&4\\0&0&1&2\\0&0&0&1
  \end{pmatrix}.
  \tag{RH}\label{eq:qa-relative-rot-mut-rank-tables}
 \]
 それぞれの perfect 圏は，四つの実際の対象を保って
-$\mathcal C_0^{\rm perf}$ と Morita 同値である．
+$\mathcal C_0^{\mathrm{perf}}$ と Morita 同値である．
 代数，Morita datum，および全ての積は任意基底変更と可換する．
 \end{proposition}
 \begin{proof}
@@ -79,10 +79,10 @@ $[Z_1]=2[E_3]-[E_1]$ であり，
 $[t^{-1}Z_1]=2[E_0]-[E_1]$ となる．
 二つの基底変更行列は
 \[
- Q_{\rm rot}=
+ Q_{\mathrm{rot}}=
  \begin{pmatrix}0&0&0&1\\1&0&0&-2\\0&1&0&-2\\0&0&1&4\end{pmatrix},
  \qquad
- Q_{\rm mut}=
+ Q_{\mathrm{mut}}=
  \begin{pmatrix}2&1&0&0\\-1&0&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}
 \]
 であり，$Q^tGQ$ が式~\eqref{eq:qa-relative-rot-mut-rank-tables} を与える．
@@ -115,13 +115,13 @@ $\bullet\in\{\mathrm{rot},\mathrm{mut}\}$ に対して
 本稿の site の全 affine test 上で $C_\bullet$ は右 Noetherian であり，
 実際の相対完全同値
 \[
- \qgr C_{\rm rot}\xrightarrow{\sim}\mathcal C_0,
+ \qgr C_{\mathrm{rot}}\xrightarrow{\sim}\mathcal C_0,
  \qquad
- \qgr C_{\rm mut}\xrightarrow{\sim}\mathcal C_0
+ \qgr C_{\mathrm{mut}}\xrightarrow{\sim}\mathcal C_0
  \tag{RMT}\label{eq:qa-relative-rot-mut-tails}
 \]
 が存在する．標準冪等元に対応する四対象はそれぞれ
-$\mathcal T_{\rm rot},\mathcal T_{\rm mut}$ に移り，次数移動は canonical
+$\mathcal T_{\mathrm{rot}},\mathcal T_{\mathrm{mut}}$ に移り，次数移動は canonical
 $t$ に移る．四頂点の unfolding による全整数代数についても同じ結論となる．
 通常の module-object 引戻しとの比較は coherent である．
 \end{theorem}
@@ -144,8 +144,8 @@ $(S^{-1}-I)^3=0$ なので
 \]
 を代入すると式~\eqref{eq:qa-relative-rot-mut-completion-ranks} を得る．
 
-$T_{\rm mut}$ は $E_0=\mathcal O$ を直和因子に含み，
-$T_{\rm rot}$ は $tE_0$ を含む．$(tE_0,t)$ も AZ ample である．
+$T_{\mathrm{mut}}$ は $E_0=\mathcal O$ を直和因子に含み，
+$T_{\mathrm{rot}}$ は $tE_0$ を含む．$(tE_0,t)$ も AZ ample である．
 ここで 「十分前向き」 の下限を各幾何点で選ぶ必要はない．
 各窓の全整数 helix を $Y_j$ と書き，選んだ窓を $Y_0,ldots,Y_3$
 とする．その構造対象の直和因子を $Y_a$ とすると，
@@ -261,7 +261,7 @@ $\mu_G=\operatorname{diag}(1,1,1,\epsilon)$ とする．
 禁止するという意味ではない．その表示には nilpotent な線形関係
 $\epsilon x+q$，$\epsilon y+p$ があり，最小矢の quotient が
 線束になる reduced 十本矢族とは異なる．
-それでも $\Lambda_{\rm mut}$，$C_{\rm mut}$ とその各 Hom 成分は
+それでも $\Lambda_{\mathrm{mut}}$，$C_{\mathrm{mut}}$ とその各 Hom 成分は
 前定理によって平坦であり，その相対 tails は同じ $\mathcal C_0$ である．
 \end{example}
 
@@ -271,7 +271,7 @@ $\epsilon x+q$，$\epsilon y+p$ があり，最小矢の quotient が
 引き続き実際の相対 square 有限代数を $\Lambda$ とする．
 補題~\ref{lem:qa-square-foundation-opposite} と
 \ref{lem:qa-classified-fiber-finite-square-recognition} により，
-反対代数 $\Lambda^{\rm op}$ の逆順の標準射影に対応する相対 $H_2$ heart
+反対代数 $\Lambda^{\mathrm{op}}$ の逆順の標準射影に対応する相対 $H_2$ heart
 $\mathcal C^\vee$ を取れる．この heart の四標準対象を
 $Q_0,Q_1,Q_2,Q_3$ とし，$Q_0$ を構造対象とする．
 その canonical な反 Serre 関手を $t^\vee$ と書く．
@@ -279,7 +279,7 @@ $Q_0,Q_1,Q_2,Q_3$ とし，$Q_0$ を構造対象とする．
 共通の fppf 局所 perfect chart 上で
 \[
  \mathbb D=\mathbf R\operatorname{Hom}_\Lambda(-,\Lambda):
-       \Perf\Lambda\xrightarrow{\sim}(\Perf\Lambda^{\rm op})^{\rm op}
+       \Perf\Lambda\xrightarrow{\sim}(\Perf\Lambda^{\mathrm{op}})^{\mathrm{op}}
 \]
 を用いれば，$Q_i=\mathbb D E_{3-i}$ である．
 これは perfect 圏の反同値であり，元の heart の全対象に対する
@@ -346,7 +346,7 @@ $(E_0,E_1,E_2,E_3)$について
 \[
  V=\operatorname{Hom}(E_0,E_1),\qquad
  F=\operatorname{Cone}
-  \bigl(V\otimes E_0\xrightarrow{\rm ev}E_1\bigr)[-1],
+  \bigl(V\otimes E_0\xrightarrow{\mathrm{ev}}E_1\bigr)[-1],
  \qquad H=t^{-1}Z_1
 \]
 と置く．全対象と評価射は相対perfectで，
@@ -763,16 +763,16 @@ $H^0(\mathbf Lb^*k)=k\otimes_Rk=k$である．
 二つの逆順双対窓を
 \[
  \begin{split}
- \mathcal Y_{\rm rot}
+ \mathcal Y_{\mathrm{rot}}
    &=((t^\vee)^{-1}Q_3,Q_0,Q_1,Q_2),\\
- \mathcal Y_{\rm mut}
+ \mathcal Y_{\mathrm{mut}}
    &=(Q_0,Q_1,Q_3,K),\qquad K=\mathbb D(t^{-1}Z_1)
  \end{split}
  \tag{DW}\label{eq:qa-relative-dual-windows}
 \]
 とする．その全対象は $\mathcal C^\vee$ の基底平坦な heart 対象である．
 それぞれ相対 full strong tilting foundation であり，通常 End は
-$\Lambda_{\rm rot}^{\rm op}$，$\Lambda_{\rm mut}^{\rm op}$ と同型となる．
+$\Lambda_{\mathrm{rot}}^{\mathrm{op}}$，$\Lambda_{\mathrm{mut}}^{\mathrm{op}}$ と同型となる．
 \end{proposition}
 \begin{proof}
 式~\eqref{eq:qa-relative-dual-windows} は前補題から従う．
@@ -811,12 +811,12 @@ fiberwiseな情報だけから仮定してはいない．
 \begin{theorem}[回転・mutation完成の左右Noether性]
 \label{thm:qa-relative-rot-mut-two-sided-noetherian}
 実際の相対曲線 avatar から構成した
-$C_{\rm rot},C_{\rm mut}$ は，本稿の site の全 affine test 上で
+$C_{\mathrm{rot}},C_{\mathrm{mut}}$ は，本稿の site の全 affine test 上で
 左右 Noetherian である．さらに
 \[
- \qgr C(\Lambda_{\rm rot}^{\rm op})\simeq\mathcal C^\vee,
+ \qgr C(\Lambda_{\mathrm{rot}}^{\mathrm{op}})\simeq\mathcal C^\vee,
  \qquad
- \qgr C(\Lambda_{\rm mut}^{\rm op})\simeq\mathcal C^\vee
+ \qgr C(\Lambda_{\mathrm{mut}}^{\mathrm{op}})\simeq\mathcal C^\vee
 \]
 は，それぞれ式~\eqref{eq:qa-relative-dual-windows} の四対象と
 canonical $t^\vee$ を保つ相対完全同値である．
@@ -829,12 +829,12 @@ canonical $t^\vee$ を保つ相対完全同値である．
 命題~\ref{prop:qa-relative-flat-foundation-az} を適用できる．
 有限個の affine fppf chart からなる被覆と coherent Hom の flat base change に沿った同命題の
 降下を含めて，二つの窓の直和と $t^\vee$ は全 affine test 上で AZ ample
-となる．通常の軌道環はそれぞれ $C(\Lambda_\bullet^{\rm op})$ であり，
+となる．通常の軌道環はそれぞれ $C(\Lambda_\bullet^{\mathrm{op}})$ であり，
 一般 End 環版 AZ 再構成から右 Noether 性と表示した相対 tails 同値を得る．
 
 補題~\ref{lem:qa-serre-completion-opposite} により
 \[
- C(\Lambda_\bullet^{\rm op})\simeq C(\Lambda_\bullet)^{\rm op}
+ C(\Lambda_\bullet^{\mathrm{op}})\simeq C(\Lambda_\bullet)^{\mathrm{op}}
 \]
 である．従ってその右 Noether 性は $C_\bullet$ の左 Noether 性である．
 右 Noether 性は定理~\ref{thm:qa-relative-rot-mut-completion-heart} で
@@ -855,7 +855,7 @@ relative tails 構成の入力に使っていない．
 \subsection{回転の添字移動とmutationの相対非最小解消}
 \label{subsec:qa-relative-mutation-nonminimal-as}
 
-前節で構成した有限代数 $\Lambda_{\rm mut}$ とその通常の Serre 完成を
+前節で構成した有限代数 $\Lambda_{\mathrm{mut}}$ とその通常の Serre 完成を
 用いる．以下の表示は基底の局所 chart 上で行う．線束や高階数の係数束を
 自明化しない場合には，tensor と双対を各矢束に施した同じ式と解釈する．
 
@@ -863,7 +863,7 @@ relative tails 構成の入力に使っていない．
 \label{prop:qa-relative-rotated-index-shift}
 canonical な全整数展開について
 \[
- (A_{\rm rot})_{ba}=(A_{\rm sq})_{b+1,a+1}
+ (A_{\mathrm{rot}})_{ba}=(A_{\mathrm{sq}})_{b+1,a+1}
 \]
 という全積を保つ自然な同型がある．従って square の相対 AS 単純解消，
 その双対，および任意基底変更との整合性は，添字を一つずらすだけで
@@ -877,7 +877,7 @@ canonical $t$ で延長すると全整数で $R_a=E_{a+1}$ となる．
 \end{proof}
 
 第一 mutation の四項を $(H_0,H_1,H_2,H_3)$ とし，
-$\Gamma=\Lambda_{\rm mut}$ と置く．
+$\Gamma=\Lambda_{\mathrm{mut}}$ と置く．
 \[
  V_{10}=\operatorname{Hom}(H_0,H_1),\quad
  V_{21}=\operatorname{Hom}(H_1,H_2),\quad

@@ -61,7 +61,7 @@ I&i\bmod4&Q_{2,i}&Q_{1,i}\\ \hline
 \begin{lemma}[局所双対性と全$\mathbb Z$-代数の回収]
 \label{lem:qa-as-serre-unique-recovery}
 $A\in\mathrm{AS}_I$、$E_i=\pi P_i\in\Qgr A$とする。
-$\mathcal D_{\rm lin}=\operatorname{thick}\{E_i\mid i\in\mathbb Z\}$
+$\mathcal D_{\mathrm{lin}}=\operatorname{thick}\{E_i\mid i\in\mathbb Z\}$
 において連続する四対象はstrong exceptional tilting generatorである。
 そのEnd代数$B$は大域次元二で、
 Serre関手$S_B$により
@@ -74,10 +74,10 @@ A_{ji}=\Hom(E_i,E_j)\quad(j\ge i)
 頂点を保つ同型を除いて一意に決まる。
 その数値Euler行列は
 \[
-G_{\rm rsq}=\begin{pmatrix}
+G_{\mathrm{rsq}}=\begin{pmatrix}
 1&0&2&6\\0&1&2&6\\0&0&1&4\\0&0&0&1
 \end{pmatrix},\quad
-G_{\rm sq}=\begin{pmatrix}
+G_{\mathrm{sq}}=\begin{pmatrix}
 1&2&2&4\\0&1&0&2\\0&0&1&2\\0&0&0&1
 \end{pmatrix},
 \]
@@ -338,7 +338,7 @@ $\widetilde T$の階数条件を得る。
 
 \begin{proposition}[一点表示の幾何]
 \label{prop:qa-as-extraction}
-任意の$A\in\mathrm{AS}_{\rm rsq}$から
+任意の$A\in\mathrm{AS}_{\mathrm{rsq}}$から
 \[
 Y=\PP_{\PP^1}(\mathcal E)\simeq\Sigma_0\ \text{または}\ \Sigma_2,
 \quad
@@ -580,7 +580,7 @@ $D$上に実現すると最後の$L_{i+4}[-2]$のみが残る。
 \begin{proposition}[spherical helixによるAS正則性]
 \label{prop:qa-as-helix-reconstruction}
 任意の曲線型rotated square avatarから
-$B=\End_{\rm dir}(L_0,L_1,L_2,L_3)$を作る。
+$B=\End_{\mathrm{dir}}(L_0,L_1,L_2,L_3)$を作る。
 その標準射影対象を$E_0,\ldots,E_3$とし、
 $E_{i+4}=S_B^{-1}(E_i)[2]$で延長すると
 \[
@@ -682,11 +682,11 @@ $Ext^2(E_i,E_{i-4})=k$ だけが次数零の行の外に残る。
 
 \begin{proposition}[有限Endと全代数の相互逆性]
 \label{prop:qa-as-inverse-foundations}
-$A\in\mathrm{AS}_{\rm rsq}$から取り出した
+$A\in\mathrm{AS}_{\mathrm{rsq}}$から取り出した
 $(Y,D,P)$の初期四頂点Endは
 \[
 A|_{\{0,1,2,3\}}\simeq
-\End_{\rm dir}
+\End_{\mathrm{dir}}
 (P,\OO_D(h-2f),\OO_D(h-f),\OO_D(2h-f))
 \]
 であり、古典型は$Y$上の可換基準collectionである。
@@ -752,25 +752,25 @@ $1\to3$ の積は曲面上の $\mathcal E$ の評価列から同様に $R_1$ を
 定義~\ref{def:qa-as-square-rotated-minimal}の
 最小分解型を持つAS正則$\mathbb Z$-代数について
 \begin{equation}
-\mathrm{AS}_{\rm rsq}/\cong\simeq
- \mathrm{Av}_{\rm rsq}/\cong,\qquad
-\mathrm{AS}_{\rm sq}/\cong\simeq
- \mathrm{Av}_{\rm sq}/\cong .
+\mathrm{AS}_{\mathrm{rsq}}/\cong\simeq
+ \mathrm{Av}_{\mathrm{rsq}}/\cong,\qquad
+\mathrm{AS}_{\mathrm{sq}}/\cong\simeq
+ \mathrm{Av}_{\mathrm{sq}}/\cong .
 \label{eq:qa-as-avatar-two-bijections}
 \end{equation}
-$\mathrm{Av}_{\rm rsq}$は
+$\mathrm{Av}_{\mathrm{rsq}}$は
 $D\in|2h|$（$\Sigma_2$では$D\cap S=\varnothing$）と
 $P\in\Pic^0(D)\setminus\{\OO_D,\OO_D(h-2f)\}$、
-$\mathrm{Av}_{\rm sq}$は順序付きrulingを持つ
+$\mathrm{Av}_{\mathrm{sq}}$は順序付きrulingを持つ
 $D\subset\PP^1\times\PP^1$の$(2,2)$反標準因子と
 $P\in\Pic^0(D)\setminus\{\OO_D\}$からなる。
 各々に一つの古典型を含める。
 曲線の滑らかさ・被約性・既約性は課さない。
 逆構成の有限foundationは
 \[
-B_{\rm rsq}=\End_{\rm dir}(P,HF^{-2},HF^{-1},H^2F^{-1}),
+B_{\mathrm{rsq}}=\End_{\mathrm{dir}}(P,HF^{-2},HF^{-1},H^2F^{-1}),
 \qquad
-B_{\rm sq}=\End_{\rm dir}(P,F,G,FG).
+B_{\mathrm{sq}}=\End_{\mathrm{dir}}(P,F,G,FG).
 \]
 \end{theorem}
 \begin{proof}

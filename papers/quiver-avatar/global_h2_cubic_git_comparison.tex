@@ -6,23 +6,23 @@
 
 前項と同じく標数零の代数閉体 $k$ 上で考える。
 $F=\det f$，$G_0=\det g$ と置き，
-$\mathfrak U_f=[V_{\rm cross}\cap D(F)/G]$，
-$\mathfrak U_g=[V_{\rm cross}\cap D(G_0)/G]$
+$\mathfrak U_f=[V_{\mathrm{cross}}\cap D(F)/G]$，
+$\mathfrak U_g=[V_{\mathrm{cross}}\cap D(G_0)/G]$
 を ordered $H_2$ の二つの cubic 開とする。
 ここでいう cubic 開は linear quintuple に対応する古典型も含む。
 
 \begin{proposition}[二つのcubic開は飽和している]
 \label{prop:qa-global-cubic-opens-saturated}
 $\mathfrak U_f,\mathfrak U_g$ は
-$\pi^{\rm rul}:\mathfrak H_2^{\rm rul}\to M^{\rm rul}$
+$\pi^{\mathrm{rul}}:\mathfrak H_2^{\mathrm{rul}}\to M^{\mathrm{rul}}$
 について飽和開である。具体的に
 \[
- M_f^{\rm rul}
-  =M^{\rm rul}\cap
+ M_f^{\mathrm{rul}}
+  =M^{\mathrm{rul}}\cap
        \bigl(D_+(F^2P_g)\cup D_+(F^3Q_g)\bigr)
 \]
 と置けば，
-$\mathfrak U_f=(\pi^{\rm rul})^{-1}(M_f^{\rm rul})$ である。
+$\mathfrak U_f=(\pi^{\mathrm{rul}})^{-1}(M_f^{\mathrm{rul}})$ である。
 $g$ 側は $f,g$ を交換した式で与えられる。
 \end{proposition}
 \begin{proof}
@@ -31,18 +31,18 @@ $F^2P_g$ と $F^3Q_g$ の指標はそれぞれ
  \chi_f^2\zeta_g^2=\chi_0^6,\qquad
  \chi_f^3\zeta_g^3=\chi_0^9
 \]
-である。一方，$V_{\rm cross}$ 上では $P_g,Q_g$ の少なくとも一方が
+である。一方，$V_{\mathrm{cross}}$ 上では $P_g,Q_g$ の少なくとも一方が
 非零なので，この開部分の内部で
 \[
- V_{\rm cross}\cap D(F)
+ V_{\mathrm{cross}}\cap D(F)
  =
- (V_{\rm cross}\cap D(F^2P_g))
+ (V_{\mathrm{cross}}\cap D(F^2P_g))
  \cup
- (V_{\rm cross}\cap D(F^3Q_g))
+ (V_{\mathrm{cross}}\cap D(F^3Q_g))
 \]
 が成立する。右辺の各項は正の $\chi_0$ 冪の半不変式に対応する
 $\operatorname{Proj}R_G(\chi_0)$ の標準開の逆像である。
-これは $X=\mathbb A^{32}$ 全体で右辺が $V_{\rm cross}$ に入るという
+これは $X=\mathbb A^{32}$ 全体で右辺が $V_{\mathrm{cross}}$ に入るという
 主張を用いていない。
 \end{proof}
 
@@ -92,13 +92,13 @@ $w_T$ が geometric quintuple を与える必要十分条件は
 である。従って geometric 開 $\mathscr G$ は
 \[
  \mathscr G
-   =D\bigl(p_{\rm adj},q_{\rm adj}\bigr)
+   =D\bigl(p_{\mathrm{adj}},q_{\mathrm{adj}}\bigr)
        \subset\operatorname{Hom}(D\otimes B,C\otimes A),
  \quad
- p_{\rm adj}=P(N(T)),\quad q_{\rm adj}=Q(N(T)).
+ p_{\mathrm{adj}}=P(N(T)),\quad q_{\mathrm{adj}}=Q(N(T)).
  \tag{CA}\label{eq:qa-cubic-adjugate-open}
 \]
-$p_{\rm adj},q_{\rm adj}$ は通常の tensor 座標次数で $12,18$，
+$p_{\mathrm{adj}},q_{\mathrm{adj}}$ は通常の tensor 座標次数で $12,18$，
 $G_f$ の指標で $\chi^6,\chi^9$ の半不変式である。
 この開の等式は任意の係数スキームへの引戻しと整合する。
 \end{lemma}
@@ -161,21 +161,21 @@ $\chi_g=\chi^2$ から $\zeta_g=\chi^3$ となり，
 \begin{proposition}[既存四量子ビット商との開部分比較]
 \label{prop:qa-global-cubic-four-qubit-good-moduli}
 四因子表現の $SL_2^4$ 不変式環に通常の多項式次数を入れ，
-その $\operatorname{Proj}$ を $\overline M_{\rm qui}$ とする。
+その $\operatorname{Proj}$ を $\overline M_{\mathrm{qui}}$ とする。
 このとき
 \[
  \mathfrak U_f\simeq[\mathscr G/G_f],
  \qquad
- M_f^{\rm rul}\simeq
- \Omega_{\rm geo}:=
-       D_+(p_{\rm adj})\cup D_+(q_{\rm adj})
-       \subset\overline M_{\rm qui}
+ M_f^{\mathrm{rul}}\simeq
+ \Omega_{\mathrm{geo}}:=
+       D_+(p_{\mathrm{adj}})\cup D_+(q_{\mathrm{adj}})
+       \subset\overline M_{\mathrm{qui}}
 \]
 という同型があり，二つの good moduli 射と整合する。
 $g$ 側も同様である。
 既知の不変式環の計算により
 \[
- \overline M_{\rm qui}\simeq\mathbb P(2,4,4,6)
+ \overline M_{\mathrm{qui}}\simeq\mathbb P(2,4,4,6)
                   \simeq\mathbb P(1,2,2,3)
 \]
 であり，右側の重みは $\chi$ による次数に対応する。
@@ -203,9 +203,9 @@ $(\lambda_A\lambda_C/\lambda_B\lambda_D)^{2n}$
 \]
 これは偶数次数を半分にした同じ環であり，$\operatorname{Proj}$ は変わらない。
 前補題により $\mathscr G$ はこの GIT 商の飽和開で，
-その good moduli は表示した $\Omega_{\rm geo}$ である。
+その good moduli は表示した $\Omega_{\mathrm{geo}}$ である。
 一方，命題~\ref{prop:qa-global-cubic-opens-saturated} は
-$\mathfrak U_f\to M_f^{\rm rul}$ も good moduli とする。
+$\mathfrak U_f\to M_f^{\mathrm{rul}}$ も good moduli とする。
 Good moduli space の一意性からこの二つの scheme の同型を得る。
 
 最後の不変式環は既知の四量子ビット計算
@@ -221,8 +221,8 @@ $\chi$ 次数の重みは $1,2,2,3$ となる。
 この命題は既存の重み付き射影商の計算を新たに主張するものではない。
 本稿で追加した点は，全 $H_2$ の大域的線形化を cubic 開に制限したときの
 指標の一致と，geometric 開の明示的な飽和性である。
-全 $M^{\rm rul}$ または非順序 $M$ が
-$\overline M_{\rm qui}$ と同型であるとは主張していない。
+全 $M^{\mathrm{rul}}$ または非順序 $M$ が
+$\overline M_{\mathrm{qui}}$ と同型であるとは主張していない。
 両階数三の noncubic 閉部分は両 cubic 開の外側にある。
 また geometric 開には非閉軌道を含み得るため，
 ここで比較するのは good moduli scheme であり，

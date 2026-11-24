@@ -13,7 +13,7 @@
 以下では$k$を標数零の代数閉体とする．
 入力の一致点を$(uv,uv)$，出力の線束境界点を
 $\ell_0=(U^2,V(U+V))$で表す．
-$H=H_{\rm eq}$は入力の全慣性，$\Gamma$は$\ell_0$の全慣性を表す．
+$H=H_{\mathrm{eq}}$は入力の全慣性，$\Gamma$は$\ell_0$の全慣性を表す．
 入力の次数一生成元を$c_0,d_0$，二形式の変形parameterを$a,b$とし，
 出力の次数一生成元を$C,D$とする．
 
@@ -28,7 +28,7 @@ $\ell_0$の全慣性は$\Gamma\simeq\mu_2^3$であり，
 \]
 であり，$\Gamma$は$q$に自明に作用する．
 第一形式が二重根を持つ順序付きの点を選んだ
-$\mathfrak T_{\mathrm{bal}}^{\rm ord}$の形式完備化も同じ表示である．
+$\mathfrak T_{\mathrm{bal}}^{\mathrm{ord}}$の形式完備化も同じ表示である．
 ここではこの順序付きの持上げを用いる．普遍一変数族として
 \[
  g_{1,q}=U^2-4qV^2,\qquad g_2=V(U+V)
@@ -75,7 +75,7 @@ $A=k[[a,b]]$，$q=ab$とし，$A$内の一意な平方根
  H=\bigl((\Gm\rtimes C_2)\times D_8\bigr)
        /\langle(-1,e_ce_d)\rangle
 \]
-を用いた形式表示上で，$\mathscr D^{\rm ord}$は
+を用いた形式表示上で，$\mathscr D^{\mathrm{ord}}$は
 \[
  \boxed{
  [\operatorname{Spf}A/H]\longrightarrow
@@ -196,7 +196,7 @@ $\tau$では$y'=\rho y$であり，直接計算により
 \begin{corollary}[特殊慣性と形式fiber]
 \label{cor:qa-fricke-formal-boundary-fiber}
 前定理の射の一致点での相対慣性は$\Gm$であり，
-特殊慣性写像は$H_{\rm eq}\twoheadrightarrow\mu_2^3$である．
+特殊慣性写像は$H_{\mathrm{eq}}\twoheadrightarrow\mu_2^3$である．
 一方，代数化したchartの$ab=0$の各穿孔枝では入力慣性は$D_8$，核は
 $\mu_2=\langle e_ce_d\rangle$，像は$\mu_2^2$で指数二である．
 同じ代数的chartの$ab\ne0$の一般点でも核は$\mu_2$で，
@@ -230,19 +230,19 @@ $ab\ne0$では$r$にもトーラス元を合成して点を固定できるので
 全同型の計算へ拡張する．出力の二形式には順序を保持する．
 \[
  \mathfrak U=
- \{(g_1,g_2)\in\mathfrak T_{\rm bal}^{\rm ord}
+ \{(g_1,g_2)\in\mathfrak T_{\mathrm{bal}}^{\mathrm{ord}}
        \mid \Delta(g_2)\ne0,\ \operatorname{Res}(g_1,g_2)\ne0\}
 \]
 と置く．この条件は表示の変更に不変である．
-非退化な$g_1$を持つ部分は$\mathfrak N^{\rm sm,ord}$であり，
+非退化な$g_1$を持つ部分は$\mathfrak N^{\mathrm{sm,ord}}$であり，
 残る幾何点は第一形式が二重根，第二形式がsquarefreeで，
 両者の根が交わらない線束境界点である．
 
 \begin{theorem}[自然な順序付きFricke射の大域的境界延長]
 \label{thm:qa-global-fricke-balanced-extension}
-自然なsmooth射$\mathscr D^{\rm ord}$を延長する射
+自然なsmooth射$\mathscr D^{\mathrm{ord}}$を延長する射
 \[
- \overline{\mathscr D}^{\rm ord}:\mathfrak N^{\rm pres}
+ \overline{\mathscr D}^{\mathrm{ord}}:\mathfrak N^{\mathrm{pres}}
        \longrightarrow\mathfrak U
 \]
 が存在する．構成は表示groupoidの全同型を保存し，
@@ -253,7 +253,7 @@ $(U^2,V(U+V))$が表す線束境界点である．
 \end{theorem}
 \begin{proof}
 \par\medskip\noindent\textbf{一致境界を含む開と\'etale補助変数.}\par\nobreak\smallskip
-$\mathfrak N_*=\{\chi\ne0\}\subset\mathfrak N^{\rm pres}$とし，
+$\mathfrak N_*=\{\chi\ne0\}\subset\mathfrak N^{\mathrm{pres}}$とし，
 \[
  q=\frac{\chi-1}{4\chi},\qquad
  T=\Spec k[q,(1-4q)^{-1}]
@@ -271,7 +271,7 @@ $\mathfrak N_*=\{\chi\ne0\}\subset\mathfrak N^{\rm pres}$とし，
 \[
  S=\Spec k[a,b,(1-4ab)^{-1}]\times_{q=ab,T}\widetilde T
 \]
-とし，前節と同じ$H=H_{\rm eq}$を作用させる．
+とし，前節と同じ$H=H_{\mathrm{eq}}$を作用させる．
 $q,\rho,\ell$は$H$-不変とする．
 前節の全生成元と全群関係の式は，この代数的chart上でも定義される．
 
@@ -351,11 +351,11 @@ ordered矢と$\tau$の合成なので，これで全Isomの降下が確認でき
 $\mathfrak N_*$上の射を得る．
 
 \par\medskip\noindent\textbf{smooth射との貼合せ.}\par\nobreak\smallskip
-$\mathfrak N_*\cap\mathfrak N^{\rm sm}$では$ab$が可逆である．
+$\mathfrak N_*\cap\mathfrak N^{\mathrm{sm}}$では$ab$が可逆である．
 前節の$\Phi$に関する全生成元の同変計算により，
-構成した射は自然な$\mathscr D^{\rm ord}$と全groupoid上で一致する．
+構成した射は自然な$\mathscr D^{\mathrm{ord}}$と全groupoid上で一致する．
 $\chi=0$の入力はresultantが非零なのでsmooth域に属する．
-従って$\mathfrak N_*\cup\mathfrak N^{\rm sm}=\mathfrak N^{\rm pres}$であり，
+従って$\mathfrak N_*\cup\mathfrak N^{\mathrm{sm}}=\mathfrak N^{\mathrm{pres}}$であり，
 二つの射を貼り合わせて主張の大域射を得る．
 構成は局所自由な二次代数とその同型の式および有効降下によるので，
 任意基底変更と両立する．
@@ -367,14 +367,14 @@ $\chi=0$の入力はresultantが非零なのでsmooth域に属する．
 前定理の射のscheme-theoretic $2$-fiberは
 \[
  \boxed{
- (\overline{\mathscr D}^{\rm ord})^{-1}(\ell_0)
+ (\overline{\mathscr D}^{\mathrm{ord}})^{-1}(\ell_0)
  \simeq[\Spec k[a,b]/(ab)\,/\Gm],
  \qquad z\cdot(a,b)=(z^{-2}a,z^2b).
  }
 \]
 二つの穿孔枝は各々$B\mu_2$であり，原点は$B\Gm$である．
 この原点が一致根対，穿孔枝が一根共有に対応する．
-一致点の慣性写像は$H_{\rm eq}\twoheadrightarrow\mu_2^3$で核$\Gm$，
+一致点の慣性写像は$H_{\mathrm{eq}}\twoheadrightarrow\mu_2^3$で核$\Gm$，
 一根共有点では$D_8\to\mu_2^3$で核$\mu_2$，像は位数四となる．
 \end{corollary}
 \begin{proof}
@@ -405,12 +405,12 @@ $H\twoheadrightarrow\Gamma$の核は$\Gm$であるから，
 \label{prop:qa-fricke-flat-good-moduli}
 大域射
 \[
- \overline{\mathscr D}^{\rm ord}:\mathfrak N^{\rm pres}
+ \overline{\mathscr D}^{\mathrm{ord}}:\mathfrak N^{\mathrm{pres}}
        \longrightarrow\mathfrak U
 \]
 は平坦，有限表示，全射である．さらに
 \[
- (\overline{\mathscr D}^{\rm ord})_*\OO_{\mathfrak N^{\rm pres}}
+ (\overline{\mathscr D}^{\mathrm{ord}})_*\OO_{\mathfrak N^{\mathrm{pres}}}
        =\OO_{\mathfrak U},
 \]
 かつquasi-coherent層の直像は完全である．
@@ -505,7 +505,7 @@ $D(g_1,g_2)=0$で$\Delta(g_2)$とresultantが可逆なら，
 $\Delta(g_1)\Delta(g_2)=-4\operatorname{Res}(g_1,g_2)$より
 $\Delta(g_1)$も可逆である．従って
 \[
- \mathfrak U=\mathfrak U_*\cup\mathfrak N^{\rm sm,ord}.
+ \mathfrak U=\mathfrak U_*\cup\mathfrak N^{\mathrm{sm,ord}}.
 \]
 後者上で射は既存のbanded $\mu_2$-gerbeであり，
 同じ平坦性・有限表示性・全射性と完全直像，構造層直像の条件を満たす．
@@ -528,7 +528,7 @@ Artin targetへの拡張を適用できる．
 
 \begin{corollary}[非smooth locusと非分離性]
 \label{cor:qa-fricke-nonsmooth-nonseparated}
-$\overline{\mathscr D}^{\rm ord}$がsmoothでない点は，入力の一致根対の
+$\overline{\mathscr D}^{\mathrm{ord}}$がsmoothでない点は，入力の一致根対の
 residual gerbeに正確に一致する．この射は分離的でなく，従ってproperでもない．
 \end{corollary}
 \begin{proof}
@@ -579,7 +579,7 @@ $B=\OO(\widetilde T)$とし，
 
 \begin{remark}[順序付き射と順序忘却]
 構造層の直像同型とgood moduli space morphismの結論は
-順序付き射$\overline{\mathscr D}^{\rm ord}$についてのものである．
+順序付き射$\overline{\mathscr D}^{\mathrm{ord}}$についてのものである．
 順序を忘れた合成射はsmooth開上で有限\'etale二重被覆を含み，
 一般点の構造層直像は階数二となるため，同じ条件を満たさない．
 \end{remark}

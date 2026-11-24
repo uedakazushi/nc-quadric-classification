@@ -5,20 +5,20 @@
 
 本節では標数零の体$k$上で，幾何fiberがsmooth，既約nodal，
 または$I_2$となるspectral二重被覆だけを扱う．
-非被約曲線を許す元の$\mathfrak{TF}^{\rm quad}$全体の代数性・有界性を
+非被約曲線を許す元の$\mathfrak{TF}^{\mathrm{quad}}$全体の代数性・有界性を
 ここから主張しない．またrank oneは\emph{各既約成分上でrank one}を意味する．
 単純層であること，安定性，固定多重次数を定義に加えない．
 
 \subsection{曲線の有限型基底と定義}
 
-$Q_{\rm nod}\subset\operatorname{Sym}^4(k^2)$を，零でなく，
+$Q_{\mathrm{nod}}\subset\operatorname{Sym}^4(k^2)$を，零でなく，
 幾何的な根の重複度が高々二となる二元四次形式の開集合とする．
 \[
  H=\bigl(\GL_2\times\Gm\bigr)
        /\{(\lambda I,\lambda^2)\},\qquad
  (A,a)\cdot h=a^{-2}\operatorname{Sym}^4(A)h
 \]
-とし，$\mathfrak D_{\rm nod}=[Q_{\rm nod}/H]$と置く．
+とし，$\mathfrak D_{\mathrm{nod}}=[Q_{\mathrm{nod}}/H]$と置く．
 この有限型Artin stackは，conic束$q:B\to S$と，
 相対次数$-2$の線束$N$，射$h:N^{\otimes2}\to\OO_B$からなる
 有限平坦二重被覆
@@ -31,7 +31,7 @@ $Q_{\rm nod}\subset\operatorname{Sym}^4(k^2)$を，零でなく，
 $C/S$は平坦・射影・有限表示で，幾何fiberは被約・連結・Gorensteinである．
 二形式族からは$h=f_1f_2$によってこの基底への射を得る．
 
-$\mathfrak T_{\rm nod}\to\mathfrak D_{\rm nod}$を次のstackとする．
+$\mathfrak T_{\mathrm{nod}}\to\mathfrak D_{\mathrm{nod}}$を次のstackとする．
 対象は$S$-flatな有限表示$\OO_C$-module $M$で，
 各幾何fiberでrank-one torsion-free，$\chi(M_s)=0$となるものと，
 対称な$\OO_C$-双線型射
@@ -40,7 +40,7 @@ $\mathfrak T_{\rm nod}\to\mathfrak D_{\rm nod}$を次のstackとする．
 \]
 で，各幾何fiberの随伴射$\mu_s^\flat:M_s\to M_s^\vee$が同型となるもの．
 射は被覆と二次積付き層の同型である．
-これは既存の$\mathfrak{TF}^{\rm quad}$を上記の節点曲線基底へ制限したものである．
+これは既存の$\mathfrak{TF}^{\mathrm{quad}}$を上記の節点曲線基底へ制限したものである．
 
 \subsection{Frobenius表示とtrace零条件}
 
@@ -157,13 +157,13 @@ $\deg\mathcal L_s=4$と$\chi(M_s)=0$からHilbert多項式を得る．
 
 \begin{theorem}[節点曲線上の二次自己双対標的の代数性]
 \label{thm:qa-tf-nodal-finite-type-artin}
-$\mathfrak T_{\rm nod}$は$k$上有限型のArtin stackであり，
-$\mathfrak D_{\rm nod}$に対して局所有限表示，対角はaffineかつ有限表示である．
+$\mathfrak T_{\mathrm{nod}}$は$k$上有限型のArtin stackであり，
+$\mathfrak D_{\mathrm{nod}}$に対して局所有限表示，対角はaffineかつ有限表示である．
 $k$上の対角もaffineかつ有限表示である．
 定義・構成は任意の基底変更と可換し，nonsimpleな$I_2$の層を含む．
 \end{theorem}
 \begin{proof}
-まず$\mathfrak D_{\rm nod}$のatlas $Q_{\rm nod}$へ引き戻す．
+まず$\mathfrak D_{\mathrm{nod}}$のatlas $Q_{\mathrm{nod}}$へ引き戻す．
 この上では$B=\PP^1$，$N=\OO(-2)$である．
 階数二・次数$-2$のベクトル束のstack $\operatorname{Bun}_{2,-2}(B)$を用いる．
 これはcoherent sheaf stackの開部分で，Artin，局所有限表示，
@@ -182,7 +182,7 @@ $b:\operatorname{Sym}^2V\to N$を加える．
 $b$の非退化性は開条件である：行列式の零点の$B$上でのsupportは閉であり，
 $B$が基底上properなのでその像も閉になる．
 
-これらの閉条件と開条件で定めたstackは$\mathfrak T_{\rm nod}$と同値である．
+これらの閉条件と開条件で定めたstackは$\mathfrak T_{\mathrm{nod}}$と同値である．
 前二補題が一方向を与える．逆向きには$\theta$で$A$-moduleを作ると，
 trace零により全成分rank oneとtorsion-free性を得る．
 $V$が$B$上局所自由なので対応する$M$は基底flatで有限表示である．
@@ -198,7 +198,7 @@ $b$が非退化なので$\mu^\flat$も同型である．
 この構成からArtin性と局所有限表示を得る．
 二対象のIsomはベクトル束のaffine有限表示Isomの中に
 $\theta$と$b$を保存する閉条件を課したものなので，対角もaffine有限表示である．
-$\mathfrak D_{\rm nod}=[Q_{\rm nod}/H]$自身もaffine有限表示対角を持つため，
+$\mathfrak D_{\mathrm{nod}}=[Q_{\mathrm{nod}}/H]$自身もaffine有限表示対角を持つため，
 $k$上の対角にも従う．
 
 最後にquasi-compactnessを確認する．前補題により全対象で
@@ -206,16 +206,16 @@ $V(2)$は大域生成，$R^1q_*V(2)=0$，$q_*V(2)$は階数四で基底変更と
 従ってそのframeを取ると，全対象は一つの固定Hilbert多項式
 $2n+4$のQuot空間
 \[
- \operatorname{Quot}^{2n+4}_{\OO_{\PP^1}^{\oplus4}/\PP^1/Q_{\rm nod}}
+ \operatorname{Quot}^{2n+4}_{\OO_{\PP^1}^{\oplus4}/\PP^1/Q_{\mathrm{nod}}}
 \]
 で被覆される．具体的にはquotientが階数二ベクトル束で，
 大域切断への写像$\OO^4\to q_*V(2)$が同型となる開部分を取る．
-固定Hilbert多項式のQuotは有限表示であり，底$Q_{\rm nod}$はNoetherianなので，
+固定Hilbert多項式のQuotは有限表示であり，底$Q_{\mathrm{nod}}$はNoetherianなので，
 この開もquasi-compactで有限型である
 \cite[Lemma~108.6.1, Tag~0DP9]{StacksCoherentSheaves}．
 その上に上記二Homを加え閉条件・開条件を課すと有限型空間を得る．
 frameを忘れる射は$\GL_4$-torsorで滑らか全射である．
-従って$\mathfrak T_{\rm nod}$は有限型となる．
+従って$\mathfrak T_{\mathrm{nod}}$は有限型となる．
 \end{proof}
 
 \begin{remark}[固定Hilbert多項式だけでは足りない]
@@ -230,7 +230,7 @@ rank one・被約連結性・非退化二次積から得た一様生成性に依
 
 \begin{lemma}[balanced開と基底上の等方線二重被覆]
 \label{lem:qa-tf-balanced-isotropic-descent}
-$\mathfrak T_{\rm nod}$内の条件$H^0(C_s,M_s)=0$は開であり，
+$\mathfrak T_{\mathrm{nod}}$内の条件$H^0(C_s,M_s)=0$は開であり，
 $V_s=\OO_{\PP^1}(-1)^{\oplus2}$と同値である．
 この開上で$b$の等方線を分類する$Y\to B$は有限\'etale二重被覆となる．
 ある有限\'etale二重被覆$S'\to S$が自然に定まり，
@@ -361,11 +361,11 @@ $e=1$側では行列は対角，$e=0$側では反対角となる．
 \subsection{等方線による二重平方表示の相対認識}
 \label{subsec:qa-tf-relative-recognition}
 
-$\mathfrak T_{\rm bal}\subset\mathfrak T_{\rm nod}$を
+$\mathfrak T_{\mathrm{bal}}\subset\mathfrak T_{\mathrm{nod}}$を
 $H^0(C_s,M_s)=0$で定まるbalanced開とする．
 $W=k^2$に対し
 \[
- \overline P_{\rm nod}
+ \overline P_{\mathrm{nod}}
  =\{(f_1,f_2)\in\operatorname{Sym}^2W\times\operatorname{Sym}^2W
        \mid f_1f_2\ne0,\ \text{全ての幾何的根の重複度が高々二}\}
 \]
@@ -382,24 +382,24 @@ $W=k^2$に対し
 \label{thm:qa-tf-balanced-quotient-recognition}
 二重平方表示からの構成は，任意の$k$-schemeを底とするfppf stackの同値
 \[
- [\overline P_{\rm nod}/G]\xrightarrow{\sim}\mathfrak T_{\rm bal}
+ [\overline P_{\mathrm{nod}}/G]\xrightarrow{\sim}\mathfrak T_{\mathrm{bal}}
 \]
 を与える．非被約底も含み，任意の基底変更と可換する．
 
-この同値の下で，元の表示stack$\mathfrak N^{\rm pres}=[P/G]$は，
+この同値の下で，元の表示stack$\mathfrak N^{\mathrm{pres}}=[P/G]$は，
 二つの等方線上の平方sectionが両方ともsquarefreeとなる開部分
-$\mathfrak T_{\rm adm}\subset\mathfrak T_{\rm bal}$に一致する．
+$\mathfrak T_{\mathrm{adm}}\subset\mathfrak T_{\mathrm{bal}}$に一致する．
 特に既存の射
 \[
- \mathfrak N^{\rm pres}\longrightarrow\mathfrak{TF}^{\rm quad}
+ \mathfrak N^{\mathrm{pres}}\longrightarrow\mathfrak{TF}^{\mathrm{quad}}
 \]
-は全忠実であり，節点曲線上の標的$\mathfrak T_{\rm nod}$への射としては
+は全忠実であり，節点曲線上の標的$\mathfrak T_{\mathrm{nod}}$への射としては
 representableな開埋込みである．この主張は内在的$\mathcal H_2$への
 spectral双対化射の全忠実性を意味しない．
 \end{theorem}
 \begin{proof}
 \par\medskip\noindent\textbf{二形式からの構成.}\par\nobreak\smallskip
-$(f_1,f_2)\in\overline P_{\rm nod}(S)$について
+$(f_1,f_2)\in\overline P_{\mathrm{nod}}(S)$について
 \[
  A=\OO_B\oplus\OO_B(-2)y,\quad y^2=f_1f_2,
  \qquad V=\OO_B(-1)c\oplus\OO_B(-1)d
@@ -417,7 +417,7 @@ $V$が$B$上局所自由なので底上平坦であり，Euler特性は零であ
 積のtrace-zero成分は行列
 $\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$を持つので，
 補題~\ref{lem:qa-tf-frobenius-duality}により$\mu^\flat$は同型である．
-従ってこれは$\mathfrak T_{\rm bal}$の対象となる．
+従ってこれは$\mathfrak T_{\mathrm{bal}}$の対象となる．
 二形式のsquarefree性はこの構成には必要ない．
 
 \par\medskip\noindent\textbf{逆構成と全忠実性.}\par\nobreak\smallskip
@@ -427,7 +427,7 @@ $\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$を持つので，
 $Y=\left(\begin{smallmatrix}a&f_2\\f_1&a\end{smallmatrix}\right)$の
 trace零から$a=0$，$h=f_1f_2$を与え，二形式と全積を回収する．
 もとの$C$が幾何的に被約節点曲線だから，
-$f_1f_2$の根の重複度は高々二で，局所表示は$\overline P_{\rm nod}$に入る．
+$f_1f_2$の根の重複度は高々二で，局所表示は$\overline P_{\mathrm{nod}}$に入る．
 同命題のsimilitude行列の冪等元分解は，各同型が
 対角または反対角の二生成元変換と底の$\operatorname{GL}_2$変換に由来し，
 不定性が正確に共通次数スカラー$D$であることを示す．
@@ -438,21 +438,21 @@ $f_1f_2$の根の重複度は高々二で，局所表示は$\overline P_{\rm nod
 任意の基底変更と可換する．
 平方sectionのsquarefree性は相対二次形式の判別式が単元という開条件であり，
 二等方線を交換しても不変である．従って$P$に対応する開は
-正確に$\mathfrak T_{\rm adm}$である．
+正確に$\mathfrak T_{\mathrm{adm}}$である．
 \end{proof}
 
 \begin{corollary}[smoothなbalanced標的とH2開の判別式]
 \label{cor:qa-tf-h2-admissible-open}
-$\mathfrak T_{\rm bal}$はsmooth既約・有限型の純次元一のArtin stackである．
-その内在的に定めた開$\mathfrak T_{\rm adm}$は，中央二重平方表示族が
+$\mathfrak T_{\mathrm{bal}}$はsmooth既約・有限型の純次元一のArtin stackである．
+その内在的に定めた開$\mathfrak T_{\mathrm{adm}}$は，中央二重平方表示族が
 H2を与える領域と正確に一致する．内在的相対H2族との解釈は
 論文Bの相対表示同値が適用される局所有限型siteで行う．
 \end{corollary}
 \begin{proof}
-$\overline P_{\rm nod}$は六次元アフィン空間の非空開で，
+$\overline P_{\mathrm{nod}}$は六次元アフィン空間の非空開で，
 $G$は次元五のsmooth群なので，前定理の商表示から最初の主張を得る．
 二形式のH2条件は系~\ref{cor:qa-double-square-degenerate-not-h2}により
-$\Delta_1\Delta_2\ne0$と同値であり，これは$\mathfrak T_{\rm adm}$の定義である．
+$\Delta_1\Delta_2\ne0$と同値であり，これは$\mathfrak T_{\mathrm{adm}}$の定義である．
 相対解釈には論文Bの
 \cite[\texttt{thm:noncubic-intrinsic-presentation-equivalence}]{QuadricModuli2026}
 を用いる．
@@ -460,11 +460,11 @@ $\Delta_1\Delta_2\ne0$と同値であり，これは$\mathfrak T_{\rm adm}$の�
 
 \begin{corollary}[順序付けと表示射の幾何fiber]
 \label{cor:qa-tf-ordered-double-cover}
-$G^{\rm ord}=(\operatorname{GL}(W)\times\Gm^2)/D$とする．
+$G^{\mathrm{ord}}=(\operatorname{GL}(W)\times\Gm^2)/D$とする．
 等方線の順序を保持したbalanced標的には
 \[
- [\overline P_{\rm nod}/G^{\rm ord}]
-       \simeq\mathfrak T_{\rm bal}^{\rm ord}
+ [\overline P_{\mathrm{nod}}/G^{\mathrm{ord}}]
+       \simeq\mathfrak T_{\mathrm{bal}}^{\mathrm{ord}}
 \]
 という同値があり，順序忘却はrepresentable有限\'etale次数二である．
 元のnoncubic開にも同じ主張が成立する．
@@ -518,14 +518,14 @@ $\delta$は$c,d$の同時符号，$e_1,e_2$は個別符号とする．
 元のnoncubic表示の二つの境界では，二次積付きTF標的の全慣性は
 入力の慣性と同型である．具体的に，一根共有のnodal型では
 \[
- H_{\rm nod}\simeq D_8,
- \qquad H_{\rm nod}^{\rm ord}\simeq\mu_2^2,
+ H_{\mathrm{nod}}\simeq D_8,
+ \qquad H_{\mathrm{nod}}^{\mathrm{ord}}\simeq\mu_2^2,
 \]
 一致する$I_2$型では，$O(uv)=\Gm\rtimes C_2$として
 \[
- H_{\rm eq}\simeq(O(uv)\times D_8)/\langle(-I,\delta)\rangle,
+ H_{\mathrm{eq}}\simeq(O(uv)\times D_8)/\langle(-I,\delta)\rangle,
  \qquad
- H_{\rm eq}^{\rm ord}
+ H_{\mathrm{eq}}^{\mathrm{ord}}
    \simeq(O(uv)\times\mu_2^2)/\langle(-I,\delta)\rangle.
 \]
 従って表示射自身の慣性準同型の核は，両境界で自明である．
@@ -575,7 +575,7 @@ $I_2$型では$f_1=f_2=uv$とできる．
 二成分$y=uv,y=-uv$は各々$B$に同型であり，被覆の自己同型は
 二節点を保つ底の自己同型と，独立な成分交換からなる．
 従って$\operatorname{Aut}(C\to B)=(\Gm\rtimes C_2)\times C_2$である．
-$H_{\rm eq}$からの射は，$O(uv)$の射影化と
+$H_{\mathrm{eq}}$からの射は，$O(uv)$の射影化と
 \[
  D_8\longrightarrow C_2,\qquad e_1,e_2\longmapsto-1,
        \quad\tau\longmapsto1
@@ -602,7 +602,7 @@ $\mu_2$または$\mu_2^2$は，表示射の核ではなく，
 \begin{proposition}[固定被覆上のscheme-theoretic fiber]
 \label{prop:qa-tf-scheme-theoretic-fibers}
 $k$を標数零の代数閉体とし，
-$(C\xrightarrow pB)\in\mathfrak D_{\rm nod}(k)$を固定する．
+$(C\xrightarrow pB)\in\mathfrak D_{\mathrm{nod}}(k)$を固定する．
 分岐点でない無限遠点を選び，$B\setminus\{\infty\}=\mathbb A^1_x$上で
 被覆を$y^2=h(x)$，$h$をmonic四次多項式として表す．
 \[
@@ -612,7 +612,7 @@ $(C\xrightarrow pB)\in\mathfrak D_{\rm nod}(k)$を固定する．
 このとき長さは$\operatorname{length}Z_h=6$であり，
 \emph{任意の非被約test schemeも含めた}stack fiberは
 \[
- \mathfrak T_{\rm bal}\times_{\mathfrak D_{\rm nod}}\Spec k
+ \mathfrak T_{\mathrm{bal}}\times_{\mathfrak D_{\mathrm{nod}}}\Spec k
        \simeq[Z_h/S_2]\times B\mu_2.
  \tag{TF-fiber}\label{eq:qa-tf-scheme-fiber-factorization}
 \]
@@ -628,8 +628,8 @@ $(\epsilon,\eta)\mapsto(-\epsilon,-\eta)$で作用するとする．
 三型の実際のfiberは次の通りである．
 \[
  \begin{array}{c|c|c}
- \text{型}&\mathfrak T_{\rm bal}\text{のfiber}
-                    &\mathfrak N^{\rm pres}\text{のfiber}\\\hline
+ \text{型}&\mathfrak T_{\mathrm{bal}}\text{のfiber}
+                    &\mathfrak N^{\mathrm{pres}}\text{のfiber}\\\hline
  \text{smooth}&\displaystyle\coprod_{j=1}^3 B\mu_2
                &\displaystyle\coprod_{j=1}^3 B\mu_2\\[2mm]
  \text{既約nodal}&(\Spec k\amalg Z_2)\times B\mu_2
@@ -746,24 +746,24 @@ $\operatorname{Aut}(C,M,\mu)$を考える．
 nodal型では
 \[
  \operatorname{Aut}(C,M,\mu)\simeq\Gm\rtimes C_2,
- \qquad H_{\rm nod}\simeq\mu_4\rtimes C_2
+ \qquad H_{\mathrm{nod}}\simeq\mu_4\rtimes C_2
 \]
 と座標を選べる．ここで後者がpencilを保つ部分群である．
 $I_2$型では
 \[
  \operatorname{Aut}(C,M,\mu)
-   \simeq\Gm^2\rtimes(C_{2,\rm node}\times C_{2,\rm comp}),
+   \simeq\Gm^2\rtimes(C_{2,\mathrm{node}}\times C_{2,\mathrm{comp}}),
 \]
 節点交換は両トーラス座標を逆数へ移し，成分交換は二座標を交換する．
-この表示においてpencilを保つ$H_{\rm eq}$は
+この表示においてpencilを保つ$H_{\mathrm{eq}}$は
 \[
  \{(t_+,t_-)\in\Gm^2\mid t_+^2=t_-^2\}
-       \rtimes(C_{2,\rm node}\times C_{2,\rm comp})
+       \rtimes(C_{2,\mathrm{node}}\times C_{2,\mathrm{comp}})
 \]
 である．従ってpencilを忘れると，表示射の慣性写像は依然単射だが，
 両境界とも全射でなくなる．
 
-元のnoncubic入力の群$H_{\rm nod},H_{\rm eq}$から，
+元のnoncubic入力の群$H_{\mathrm{nod}},H_{\mathrm{eq}}$から，
 さらに層も忘れて$C$だけを保持する合成を考えると，その慣性写像の核は
 命題~\ref{prop:qa-tf-boundary-inertia-maps}と同じである．
 像は$\operatorname{Aut}(C\to B)$であり，
@@ -806,7 +806,7 @@ pencilは両成分から同じ$B$への同型であるから，
 従って$p$を忘れても慣性写像の核は変わらない．
 正規化上で二節点の逆像を保つ自己同型を取ると，
 nodal型で$\operatorname{Aut}(C)=\Gm\rtimes C_2$，
-$I_2$型で$\operatorname{Aut}(C)=\Gm^2\rtimes(C_{2,\rm node}\times C_{2,\rm comp})$
+$I_2$型で$\operatorname{Aut}(C)=\Gm^2\rtimes(C_{2,\mathrm{node}}\times C_{2,\mathrm{comp}})$
 となり，記載した像が得られる．
 \end{proof}
 

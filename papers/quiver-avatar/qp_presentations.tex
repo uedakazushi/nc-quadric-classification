@@ -353,10 +353,10 @@ $a_d,b_d$、二段道 $s_d,t_d$（それぞれ$x_d,y_d$と同じ端点）の
 \widetilde q_d &= b_d(gq_d+\lambda_ds_d),&
 \widetilde p_d &=a_d(gp_d+\lambda_dt_d),\\
 \widetilde H &=gH+
-\sum_d\bigl[t_d(gq_d)+(gp_d)s_d+\lambda_dt_ds_d\bigr]_{\rm cyc}.
+\sum_d\bigl[t_d(gq_d)+(gp_d)s_d+\lambda_dt_ds_d\bigr]_{\mathrm{cyc}}.
 \end{aligned}
 \]
-ここで$[\,\cdot\,]_{\rm cyc}$は長さ四の巡回商への射影である。
+ここで$[\,\cdot\,]_{\mathrm{cyc}}$は長さ四の巡回商への射影である。
 合成は道代数への代入で与えられ、方程式は任意基底変更で保たれる。
 従ってこの表示は退化potentialを含む全raw同型と慣性を計算する。
 \end{proposition}
@@ -435,9 +435,9 @@ $u_d,v_d$ の不定性は、対応する関係を消す annihilator である。
 $q_d,p_d$ は重み一の道で作られるので代入で固定される。
 従ってポテンシャルの差は、巡回商で
 \[
-  [\phi(W)-W]_{\rm cyc}
+  [\phi(W)-W]_{\mathrm{cyc}}
    =\sum_d (u_d+v_d+\lambda_du_dv_d)
-                     [r_{y,d}r_{x,d}]_{\rm cyc}
+                     [r_{y,d}r_{x,d}]_{\mathrm{cyc}}
 \]
 となる。右辺が零であることが残る安定化条件である。
 二つの対角がある場合、四段道部分では二つの寄与を足して
@@ -449,7 +449,7 @@ $q_d,p_d$ は重み一の道で作られるので代入で固定される。
 $\lambda_0=\lambda_1=0$ とする。
 $(q_0,p_0)=(a_1a_0,a_3a_2)$、
 $(q_1,p_1)=(a_2a_1,a_0a_3)$ と置く。
-二つの $[p_dq_d]_{\rm cyc}$ は同じ四段巡回語の類である。
+二つの $[p_dq_d]_{\mathrm{cyc}}$ は同じ四段巡回語の類である。
 この類は巡回語の軌道が与える自由基底の一元なので、
 核の安定化方程式は
 $u_0+v_0+u_1+v_1=0$ となる。
@@ -879,7 +879,7 @@ mutation 窓の相対完成を回収する。
 その上で$M$を経由する積は、包含
 $\ker m_3\hookrightarrow V\otimes\operatorname{Hom}(H_1,H_3)$
 と$V^\vee$との収縮で与えられる。
-残る条件は得られた二積が$V_{\rm cross}$を通ることである。
+残る条件は得られた二積が$V_{\mathrm{cross}}$を通ることである。
 この検査は有限窓の全頂点保存Isomと任意基底変更に自然である。
 \end{corollary}
 \begin{proof}
@@ -1181,11 +1181,11 @@ $(W_0,\eta_0)$ を固定する。$F$ はその矢束の道代数、
 $I=\ker(\eta_0:F\to C)$ とする。
 $\mathscr D$ を、重み四のpotential $W$ に
 $\partial_b W\in I$ を課す線形方程式の閉部分スキームとし、
-$\mathscr D^{\rm gen}$ を巡回微分とその道倍が
+$\mathscr D^{\mathrm{gen}}$ を巡回微分とその道倍が
 $I_2,I_3$ を生成する開とする。
 表示fiber全体は
 \[
- [\mathscr D^{\rm gen}/\operatorname{Aut}(F\mathbin{/} C)]
+ [\mathscr D^{\mathrm{gen}}/\operatorname{Aut}(F\mathbin{/} C)]
 \]
 と同値である。ここで分母は $\eta_0$ と可換する、
 頂点と重みを保つ道代数自己同型である。
@@ -1215,7 +1215,7 @@ $a$ は剰余体で非零なので、開を縮めて単元にできる。
 従って局所的には全対象で矢像を $\eta_0$ と揃えられる。
 
 矢像を揃えた対象は定理~\ref{thm:qa-periodic-as-qp-fiber}により
-ちょうど $\mathscr D^{\rm gen}$ の元である。
+ちょうど $\mathscr D^{\mathrm{gen}}$ の元である。
 二つのそのような対象間の矢像を保つ全右同値は
 $\operatorname{Aut}(F\mathbin{/} C)$ のうち一方のpotentialを
 他方へ移すものに尽きる。従ってこの作用群oidの
@@ -1625,17 +1625,17 @@ $t\mapsto1+\ell_i(t)$ が乗法群との同型となる。
 その矢の変換群の積を $G_x$、反対矢の変換群の積を $G_y$ とする。
 このとき表示ファイバーの同型類空間とファイバー自身は
 \[
- X_C\simeq \mathscr D^{\rm gen}/G_y,qquad
+ X_C\simeq \mathscr D^{\mathrm{gen}}/G_y,qquad
  \mathscr F_C\simeq X_C\times_S B_SG_x
 \]
 である。第一の商はfppf層商であり、
-$\mathscr D^{\rm gen}\to X_C$ は $G_y$-torsorである。
+$\mathscr D^{\mathrm{gen}}\to X_C$ は $G_y$-torsorである。
 この記述はmassが零因子または冪零である基底にも適用できる。
 \end{corollary}
 \begin{proof}
 基準の矢像を固定する全道代数自己同型群は
 $G_x\times_S G_y$ である。
-任意の $W\in\mathscr D^{\rm gen}$ に対し、
+任意の $W\in\mathscr D^{\mathrm{gen}}$ に対し、
 その安定化群から $G_x$ への射影は同型である。
 実際 $W$ の重み二の巡回微分は、基準関係線の
 もう一つの枠を与える。
@@ -1653,7 +1653,7 @@ $G_x\times_S G_y$ である。
 始域表示の安定化群の元との合成で打ち消せる。
 ゆえに二つの作用の軌道のfppf層化は一致する。
 自由な作用の層商の定義により、
-$\mathscr D^{\rm gen}\to X_C$ は $G_y$-torsorである。
+$\mathscr D^{\mathrm{gen}}\to X_C$ は $G_y$-torsorである。
 
 最後に作用群oidの射影
 $(G_x\times G_y)\to G_x$ は
@@ -1880,7 +1880,7 @@ $\phi(y)=b y'+\sum_j v_jT'_j$と書ける。
 $\phi(yr+\sum_i T_i r_i)\sim_{\mathrm{cyc}}
  y'r'+\sum_j T'_j r'_j$から次を得る。
 \begin{equation}
- ab=1,\qquad CB^{\rm t}=1,\qquad
+ ab=1,\qquad CB^{\mathrm{t}}=1,\qquad
  av_j+\sum_i C_{ji}u_i=0 \quad(j=1,2).
 \label{eq:qa-open-qp-inverse-transposed-relation-frame}
 \end{equation}

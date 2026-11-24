@@ -16,7 +16,7 @@ Segre 二次形式の対称行列を
  1&0&0&0
  \end{pmatrix}
  \quad\left(J^2=I_4,\quad\det J=1,\quad
- x^{\rm t}Jx=2(x_{00}x_{11}-x_{01}x_{10})\right)
+ x^{\mathrm{t}}Jx=2(x_{00}x_{11}-x_{01}x_{10})\right)
 \]
 とする。以下の写像の始域・終域の両方にこの規約を用いる。
 
@@ -25,16 +25,16 @@ Segre 二次形式の対称行列を
 四次正方行列 $M$ に対し
 \[
  P(M)=\det M,\qquad
- Q(M)=e_3(JM^{\rm t}JM)
+ Q(M)=e_3(JM^{\mathrm{t}}JM)
       =\operatorname{tr}\!\left(
-           \operatorname{adj}(M)J\operatorname{adj}(M)^{\rm t}J
+           \operatorname{adj}(M)J\operatorname{adj}(M)^{\mathrm{t}}J
         \right)
 \]
 と置く。ここで $e_3(N)$ は
 $\det(tI_4+N)$ の $t$ の係数である。
 $P,Q$ の次数はそれぞれ四，六であり，
 \[
- \mathcal K(M)\cap\mathcal K(M^{\rm t})=D(P(M),Q(M)).
+ \mathcal K(M)\cap\mathcal K(M^{\mathrm{t}})=D(P(M),Q(M)).
  \tag{PQ}\label{eq:qa-cross-pair-two-polynomials}
 \]
 この等式は普遍行列空間の開部分として成立し，任意基底変更に保たれる。
@@ -45,10 +45,10 @@ $\operatorname{adj}(AB)=\operatorname{adj}(B)\operatorname{adj}(A)$，
 $\operatorname{adj}(J)=J$ から二つの $Q$ の表示が一致する。
 階数四なら $P\ne0$ である。
 階数三の場合
-$\operatorname{adj}(M)=\kappa\lambda^{\rm t}$ と書けば，
-$\kappa,\lambda$ はそれぞれ $M,M^{\rm t}$ の kernel を張り，
+$\operatorname{adj}(M)=\kappa\lambda^{\mathrm{t}}$ と書けば，
+$\kappa,\lambda$ はそれぞれ $M,M^{\mathrm{t}}$ の kernel を張り，
 \[
- Q(M)=(\kappa^{\rm t}J\kappa)(\lambda^{\rm t}J\lambda).
+ Q(M)=(\kappa^{\mathrm{t}}J\kappa)(\lambda^{\mathrm{t}}J\lambda).
 \]
 従って $Q\ne0$ は二つの kernel 線がともに Segre を避けることと同値である。
 階数二以下なら随伴行列が零なので $P=Q=0$ であり，
@@ -99,13 +99,13 @@ $\zeta_f^2,\zeta_f^3,\zeta_g^2,\zeta_g^3$ である。
 これらは $X$ の座標の通常の総次数では九十六であり，
 \[
  s_1s_2=s_0s_3,\qquad
- V_{\rm cross}=\bigcup_{i=0}^3D(s_i).
+ V_{\mathrm{cross}}=\bigcup_{i=0}^3D(s_i).
  \tag{SAT}\label{eq:qa-h2-saturated-semi-invariant-cover}
 \]
 また ruling 交換は $s_1,s_2$ を交換し $s_0,s_3$ を固定する。
 従って $H$ についても，同じ開部分を
 \[
- V_{\rm cross}=D(h_0)\cup D(h_1)\cup D(h_2),\qquad
+ V_{\mathrm{cross}}=D(h_0)\cup D(h_1)\cup D(h_2),\qquad
  (h_0,h_1,h_2)=(s_0,s_3,s_1+s_2)
  \tag{UN}\label{eq:qa-h2-three-unordered-semi-invariants}
 \]
@@ -115,8 +115,8 @@ $\zeta_f^2,\zeta_f^3,\zeta_g^2,\zeta_g^3$ である。
 $M_f:C^\vee\otimes D\to A\otimes B^\vee\otimes L_f$ の変換則は
 \[
  M_f\longmapsto
-  \chi_f\,(g_A\otimes g_B^{-{\rm t}})\,
-  M_f\,(g_C^{-{\rm t}}\otimes g_D)^{-1}
+  \chi_f\,(g_A\otimes g_B^{-{\mathrm{t}}})\,
+  M_f\,(g_C^{-{\mathrm{t}}}\otimes g_D)^{-1}
 \]
 である。tensor 積上の determinant 二次形式に対し，
 左側の similitude factor は $\chi_f^2a/b$，
@@ -126,14 +126,14 @@ $M_f:C^\vee\otimes D\to A\otimes B^\vee\otimes L_f$ の変換則は
  \frac{\chi_f^2ac}{bd}=\chi_f\chi_0=\zeta_f
 \]
 となる。
-$JM_f^{\rm t}JM_f$ は相似変換と $\zeta_f$ 倍によって変わるため，
-$Q_f=e_3(JM_f^{\rm t}JM_f)$ の指標は $\zeta_f^3$ である。
+$JM_f^{\mathrm{t}}JM_f$ は相似変換と $\zeta_f$ 倍によって変わるため，
+$Q_f=e_3(JM_f^{\mathrm{t}}JM_f)$ の指標は $\zeta_f^3$ である。
 また二次元 tensor 積の determinant はその similitude factor の二乗なので，
 $P_f$ の指標は $\zeta_f^2$ である。$g$ 側も同様である。
 
 補題~\ref{lem:qa-segre-kernel-two-semi-invariants} により
 \[
- V_{\rm cross}=D(P_f,Q_f)\cap D(P_g,Q_g).
+ V_{\mathrm{cross}}=D(P_f,Q_f)\cap D(P_g,Q_g).
 \]
 この積の四通りの非消滅を正の冪で揃えたものが
 式~\eqref{eq:qa-h2-saturated-semi-invariant-cover} である。
@@ -155,7 +155,7 @@ $\Gamma=G$ または $H$ とし，半不変式の次数付き環を
 と定める。この環は有限生成で，次数零部分は $k$ である。
 $\Gamma=G$ なら
 \[
- M^{\rm rul}=\bigcup_{i=0}^3D_+(s_i)
+ M^{\mathrm{rul}}=\bigcup_{i=0}^3D_+(s_i)
              \subset\operatorname{Proj}R_G(\chi_0),
 \]
 $\Gamma=H$ なら
@@ -165,12 +165,12 @@ $\Gamma=H$ なら
 \]
 と置く。このとき
 \[
- \pi^{\rm rul}:\mathfrak H_2^{\rm rul}\longrightarrow M^{\rm rul},
+ \pi^{\mathrm{rul}}:\mathfrak H_2^{\mathrm{rul}}\longrightarrow M^{\mathrm{rul}},
  \qquad
  \pi:\mathfrak H_2\longrightarrow M
 \]
 は good moduli space morphism である。
-特に $M^{\rm rul},M$ は有限型で separated な準射影 $k$-scheme である。
+特に $M^{\mathrm{rul}},M$ は有限型で separated な準射影 $k$-scheme である。
 
 ここで good moduli space morphism とは，
 準コンパクトで，準連接層の直像が完全で，構造層の自然射が同型となる射をいう。
@@ -223,13 +223,13 @@ $D(h)\cap D(h')$ は $D(h)$ 上の不変正則関数 $h'/h$ の非消滅開で�
 \cite[Theorem 13.6]{AlperGoodModuli2013} の明示的な飽和開への制限である。
 
 最後に
-$\mathfrak H_2^{\rm rul}=[V_{\rm cross}/G]$ と
-$\mathfrak H_2=[V_{\rm cross}/H]$
+$\mathfrak H_2^{\mathrm{rul}}=[V_{\mathrm{cross}}/G]$ と
+$\mathfrak H_2=[V_{\mathrm{cross}}/H]$
 という定理~\ref{thm:qa-square-explicit-h2-open}の全相対同値を用いれば結論が従う。
 \end{proof}
 
 \begin{remark}[線形化の役割と三式の限界]
-本定理の根拠は，単に $V_{\rm cross}$ が簡約群の不変開であることではない。
+本定理の根拠は，単に $V_{\mathrm{cross}}$ が簡約群の不変開であることではない。
 同一指標にそろえた半不変式によって affine 開を覆い，
 重なりの飽和性を式~\eqref{eq:qa-h2-localized-invariants} で確認したことを使う。
 三つの $h_i$ は被覆を与えるが，不変式環を生成するとは主張しない。
@@ -238,7 +238,7 @@ $M$ の射影平面への閉埋込みを得たという主張はしない。
 
 両階数三の閉部分では $M_f,M_g$ はともに可逆なので，
 全 noncubic 閉部分は $D(s_0)=D(P_fP_g)$ の一つの affine quotient chart に入る。
-構成したgood moduli射は標的$M$または$M^{\rm rul}$からの任意基底変更で
+構成したgood moduli射は標的$M$または$M^{\mathrm{rul}}$からの任意基底変更で
 good moduli射のままである\cite[Proposition 4.7]{AlperGoodModuli2013}。
 actual heartの群oidとの比較の範囲には、引き続き本稿の相対サイトを用いる。
 この良モジュライは非同型対象の軌道閉包が交わる場合にそれらを同一視する。

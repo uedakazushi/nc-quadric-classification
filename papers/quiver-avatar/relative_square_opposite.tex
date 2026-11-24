@@ -120,7 +120,7 @@ $(A,B,C,D)\mapsto(D,C,B,A)$と置換し，
 ともstrictに可換する．
 よって$\dagger$は
 \[
- \mathfrak H_2^{\rm rul}
+ \mathfrak H_2^{\mathrm{rul}}
   \simeq[V_{\mathrm{cross}}/(G_\square/K_\square)]
 \]
 およびその$S_2$商$\mathfrak H_2$の
@@ -191,11 +191,11 @@ $(A,B,C,D)$上で可換な二つの位数二の置換なので，
 
 \begin{lemma}[square有限基礎の反対代数]
 \label{lem:qa-square-foundation-opposite}
-前補題の $B$ に対し $B^{\rm op}$ の標準冪等元を
+前補題の $B$ に対し $B^{\mathrm{op}}$ の標準冪等元を
 \[
  f_i=e_{3-i}\qquad(0\leq i\leq3)
 \]
-と番号付け直す。このとき $B^{\rm op}$ も前補題の仮定を満たす。
+と番号付け直す。このとき $B^{\mathrm{op}}$ も前補題の仮定を満たす。
 \end{lemma}
 \begin{proof}
 まず前補題の$B$は局所的なsquare二積データを持つ．
@@ -206,15 +206,15 @@ $(A,B,C,D)$上で可換な二つの位数二の置換なので，
 非被約基底を含めた元の二積データは
 $V_{\mathrm{cross}}$を通る．
 命題~\ref{prop:qa-square-opposite-cross-involution}を
-適用すれば，$B^{\rm op}$も同じ開に属し，
+適用すれば，$B^{\mathrm{op}}$も同じ開に属し，
 よって全幾何fiberが分類済みsquare型である．
 以下ではこれと独立に，体上の曲線avatarの
 具体的な反転も確認する．
 
-$Q_i=f_iB^{\rm op}$ とすると
+$Q_i=f_iB^{\mathrm{op}}$ とすると
 \[
- \operatorname{Hom}_{B^{\rm op}}(Q_i,Q_j)
- =f_jB^{\rm op}f_i
+ \operatorname{Hom}_{B^{\mathrm{op}}}(Q_i,Q_j)
+ =f_jB^{\mathrm{op}}f_i
  =e_{3-i}Be_{3-j}
  =\operatorname{Hom}_B(P_{3-j},P_{3-i}).
 \]
@@ -238,7 +238,7 @@ $(2,2)$ 埋込みを与える。$P'\ne\mathcal O_D$ も保たれる。
  (L_3^{-1},L_2^{-1},L_1^{-1},L_0^{-1}).
 \]
 可逆層の双対は射の合成を逆転し、共通 tensor は Hom を保つ。
-よって新しい directed End は、全積を含めて $B^{\rm op}$ と同型である。
+よって新しい directed End は、全積を含めて $B^{\mathrm{op}}$ と同型である。
 本稿の avatar から AS 代数への逆構成により、これは分類済み square AS 型の
 有限基礎となる。古典型でも、逆順双対 collection に
 $\mathcal O(1,1)$ を共通 tensor すると標準 square collection を得る。
@@ -257,8 +257,8 @@ $i\mapsto-i$ だけを使うと初期位相がずれるので、同じ四位相�
 右単純の分解を双対化すると、元の添字 $i$ の右単純から
 添字 $i-4$ の左単純の分解を得る。
 新しい添字 $j$ に対して元の $i=7-j$ であり、距離 $k$ は $4-k$ に変わる。
-従って $Q_{1,\rm new}$ は $Q_{2,\rm old}$、$Q_{2,\rm new}$ は
-$Q_{1,\rm old}$ から得られる。
+従って $Q_{1,\mathrm{new}}$ は $Q_{2,\mathrm{old}}$、$Q_{2,\mathrm{new}}$ は
+$Q_{1,\mathrm{old}}$ から得られる。
 この変換は定義~\ref{def:qa-as-square-rotated-minimal} の square の四行を
 それぞれ同じ四行へ送る。
 ただし前補題の証明は、この全整数の双対性を未証明の入力にせず、
@@ -270,27 +270,27 @@ $Q_{1,\rm old}$ から得られる。
 \begin{lemma}[Serre完成の反対代数への適合性]
 \label{lem:qa-serre-completion-opposite}
 $B$ を基底上有限局所自由で相対 smooth な代数とする。
-$M^{\rm op}$ は $B$-双加群 $M$ の左右を交換した $B^{\rm op}$-双加群を表す。
+$M^{\mathrm{op}}$ は $B$-双加群 $M$ の左右を交換した $B^{\mathrm{op}}$-双加群を表す。
 有限対角解消に対して自然な同型
 \[
- \Theta_{B^{\rm op}}\simeq(\Theta_B)^{\rm op}
+ \Theta_{B^{\mathrm{op}}}\simeq(\Theta_B)^{\mathrm{op}}
 \]
 があり、非負 tensor 冪とその積を合わせると
 \[
- \Pi_3(B^{\rm op})\simeq\Pi_3(B)^{\rm op}
+ \Pi_3(B^{\mathrm{op}})\simeq\Pi_3(B)^{\mathrm{op}}
 \]
 という内部次数付き dg 代数の自然な quasi-isomorphism を得る。
 したがって通常の次数零部分についても
 \[
- C(B^{\rm op})\simeq C(B)^{\rm op}
+ C(B^{\mathrm{op}})\simeq C(B)^{\mathrm{op}}
 \]
 が成立する。全ての比較は任意基底変更と可換する。
 \end{lemma}
 \begin{proof}
 二つの enveloping 代数の間の因子交換
 \[
- (B^{\rm op})^e=B^{\rm op}\otimes B
-   \xrightarrow{\sim}B\otimes B^{\rm op}=B^e
+ (B^{\mathrm{op}})^e=B^{\mathrm{op}}\otimes B
+   \xrightarrow{\sim}B\otimes B^{\mathrm{op}}=B^e
 \]
 は対角双加群と有限局所射影対角解消を対応させる。
 この解消を enveloping 代数で双対化し、標準の左右交換によって再び
@@ -299,9 +299,9 @@ cohomological shift $[2]$ はこの比較と可換する。
 
 左右交換は tensor 積について反モノイド的であり、
 \[
- (M\otimes_B^{\mathbf L}N)^{\rm op}
+ (M\otimes_B^{\mathbf L}N)^{\mathrm{op}}
  \xrightarrow{\sim}
- N^{\rm op}\otimes_{B^{\rm op}}^{\mathbf L}M^{\rm op}
+ N^{\mathrm{op}}\otimes_{B^{\mathrm{op}}}^{\mathbf L}M^{\mathrm{op}}
 \]
 を与える。複体で書けば交換には cohomological Koszul 符号を付ける。
 これを各 tensor 冪へ反復適用すると、積の順序を逆にした
@@ -327,12 +327,12 @@ $C(\Lambda)$は本稿の局所有限型siteの各affine chartと
 右Noether性は補題~
 \ref{lem:qa-classified-fiber-finite-square-recognition}
 の相対tails認識による．
-反転した$\Lambda^{\rm op}$は
+反転した$\Lambda^{\mathrm{op}}$は
 補題~\ref{lem:qa-square-foundation-opposite} により
 全幾何 fiber が分類済み square 型である有限局所自由族なので、
 補題~\ref{lem:qa-classified-fiber-finite-square-recognition} により
-$C(\Lambda^{\rm op})$ は右 Noetherian である。
-前補題の同型によりこれは $C(\Lambda)^{\rm op}$ の右 Noether 性であり、
+$C(\Lambda^{\mathrm{op}})$ は右 Noetherian である。
+前補題の同型によりこれは $C(\Lambda)^{\mathrm{op}}$ の右 Noether 性であり、
 $C(\Lambda)$ の左 Noether 性を意味する。
 必要な局所主張は中央の faithfully flat 基底変更によって降下する。
 一般の任意 Noetherian $k$-基底への強 Noether 性や、任意 AS/QP 表示との

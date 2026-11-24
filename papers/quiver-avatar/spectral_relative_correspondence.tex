@@ -5,11 +5,11 @@
 
 本節の前半では標数零の体上で，二形式の四分岐根が相異なる開を扱う．
 後半では二重根を許す平坦代数モデルと，その境界でのSerre障害を扱う．
-$\mathfrak N^{\rm sm}=[P^{\rm sm}/G]$を非順序の二形式表示stack，
-$\mathfrak N^{\rm sm,ord}=[P^{\rm sm}/G^\circ]$を
+$\mathfrak N^{\mathrm{sm}}=[P^{\mathrm{sm}}/G]$を非順序の二形式表示stack，
+$\mathfrak N^{\mathrm{sm,ord}}=[P^{\mathrm{sm}}/G^\circ]$を
 二形式の順序を保った表示stackとする．ここで
 $G^\circ=(\GL_2\times\Gm^2)/D$であり，
-$\mathfrak N^{\rm sm,ord}\to\mathfrak N^{\rm sm}$は
+$\mathfrak N^{\mathrm{sm,ord}}\to\mathfrak N^{\mathrm{sm}}$は
 二形式の順序を選ぶ有限\'etale二重被覆である．
 これは表示stackとして任意の基底へ引き戻せる構成である．
 内在的H2族への解釈は，論文Bの相対表示同値が適用されるsiteで行う．
@@ -18,12 +18,12 @@ $\mathfrak N^{\rm sm,ord}\to\mathfrak N^{\rm sm}$は
 
 \begin{lemma}[二conic被覆のgroupoid]
 \label{lem:qa-rootpair-double-cover-groupoid}
-$S$上の$\mathfrak N^{\rm sm}$の対象は，次のデータと同値である：
+$S$上の$\mathfrak N^{\mathrm{sm}}$の対象は，次のデータと同値である：
 相対genus zero曲線$Z/S$と，順序を忘れた二つの有限平坦二重被覆
 $Q_1,Q_2\to Z$で，各$Q_i/S$も相対genus zeroであり，
 分岐因子は相対次数二の\'etale因子で互いに交わらないもの．
 非順序の二被覆は二重\'etale被覆上で順序を付けて記述してよい．
-順序を保ったデータは$\mathfrak N^{\rm sm,ord}$に対応する．
+順序を保ったデータは$\mathfrak N^{\mathrm{sm,ord}}$に対応する．
 \end{lemma}
 \begin{proof}
 $Q_i\to Z$のtrace分解を
@@ -35,7 +35,7 @@ fppf局所的に$Z\simeq\PP^1$，$L_i\simeq\OO(1)$とすると，
 被覆は$c_i^2=f_i(u,v)$になる．座標と二つのtracefree生成線の変更は
 $\widetilde G$の作用そのもので，射影曲線と被覆への作用の核は
 共通次数スカラー$D$である．したがって同型のgroupoidは
-$[P^{\rm sm}/G]$と一致する．逆向きはこの局所式からの有効降下である．
+$[P^{\mathrm{sm}}/G]$と一致する．逆向きはこの局所式からの有効降下である．
 \end{proof}
 
 \begin{lemma}[spectral pencilのtwistと反不変線束]
@@ -91,10 +91,10 @@ Brauer類は$(s,-t)=(s,t)\ne0$である．
 \label{thm:qa-spectral-relative-nonfaithful-map}
 任意基底変更と両立する射
 \[
- \mathscr D^{\rm ord}:\mathfrak N^{\rm sm}
-       \longrightarrow\mathfrak N^{\rm sm,ord},\qquad
- \mathscr D=\operatorname{forget}\circ\mathscr D^{\rm ord}
-       :\mathfrak N^{\rm sm}\longrightarrow\mathfrak N^{\rm sm}
+ \mathscr D^{\mathrm{ord}}:\mathfrak N^{\mathrm{sm}}
+       \longrightarrow\mathfrak N^{\mathrm{sm,ord}},\qquad
+ \mathscr D=\operatorname{forget}\circ\mathscr D^{\mathrm{ord}}
+       :\mathfrak N^{\mathrm{sm}}\longrightarrow\mathfrak N^{\mathrm{sm}}
 \]
 が存在し，幾何同型類上で$\chi\mapsto\chi/(\chi-1)$を誘導する．
 具体的には，$\iota$を$p:C\to Z$のdeck involution，
@@ -105,7 +105,7 @@ $t_{[M]}$を$J(C/S)$の点$[M]$による$C$上の平行移動と置き，
  Q'_1=C/\langle\iota\rangle=Z,\quad
  Q'_2=C/\langle\iota'\rangle
 \]
-から得る\emph{順序付き}二被覆を$\mathscr D^{\rm ord}$とする．
+から得る\emph{順序付き}二被覆を$\mathscr D^{\mathrm{ord}}$とする．
 特にこの構成はsmooth域上の相対射であり，stack自己同値ではない．
 \end{theorem}
 \begin{proof}
@@ -170,11 +170,11 @@ $\chi\mapsto\chi/(\chi-1)$を与える．
 
 \begin{proposition}[順序付き標的上の$\mu_2$-gerbe]
 \label{prop:qa-spectral-relative-quadratic-gerbe}
-$\mathscr D^{\rm ord}$は$\mu_2$でband付けされたgerbeである．
+$\mathscr D^{\mathrm{ord}}$は$\mu_2$でband付けされたgerbeである．
 具体的に，順序付き標的$Q'_1,Q'_2\to Z'$の点曲線
 $C=Q'_1\times_{Z'}Q'_2$上で，二つの次数二pencilの相対Picard類を
 $F_1,F_2$，その差を$P=F_2F_1^{-1}\ne0$とする．
-$\mathscr D^{\rm ord}$のfiberは，$P$を代表する実際の線束$M$と
+$\mathscr D^{\mathrm{ord}}$のfiberは，$P$を代表する実際の線束$M$と
 $\mu:M^{\otimes2}\simeq\OO_C$のgroupoidである．
 射はこの二次積を保つ線束同型とする．
 このgerbeのBrauer像は
@@ -201,7 +201,7 @@ $P^2=1$なので$M^2$は基底から引き戻した線束で，
 $\alpha(Q'_2)-\alpha(Q'_1)$である．
 二次積を忘れるとこれがgerbe類のBrauer像となる．
 
-このgerbeが実際に$\mathscr D^{\rm ord}$のfiberであることを確認する．
+このgerbeが実際に$\mathscr D^{\mathrm{ord}}$のfiberであることを確認する．
 二次線束$(M,\mu)$から
 $E=\operatorname{Spec}_C(\OO_C\oplus M)$を構成する．
 これは幾何fiberで連結な\'etale二重被覆である．
@@ -228,7 +228,7 @@ $E/\langle\delta\widetilde\iota_1\rangle$は相対conicであり，
 両分岐は交わらず，各分岐次数は二である．
 liftを交換すると二被覆が交換されるだけだから，
 その\emph{非順序}対は追加の選択なしに$S$上へ降下する．
-これが$\mathfrak N^{\rm sm}$の対象である．
+これが$\mathfrak N^{\mathrm{sm}}$の対象である．
 
 そのspectral商は構成した$C$，反不変二次線束は$(M,\mu)$，
 spectral二重射は$C\to Q'_1$である．
@@ -253,7 +253,7 @@ $\mathscr D$の相対慣性の核は同時符号$\delta$による$\mu_2$であ�
 $\mathscr D$は全忠実でもstack自己同値でもない．
 \end{corollary}
 \begin{proof}
-$\mathscr D^{\rm ord}$は前命題の$\mu_2$-gerbeで，
+$\mathscr D^{\mathrm{ord}}$は前命題の$\mu_2$-gerbeで，
 $\mu_2$は$E\to C$のdeck変換そのものである．
 順序忘却は表現可能な有限\'etale二重被覆だから，
 幾何点への2-fiberは二点，その各点上のgerbeは$B\mu_2$となる．
@@ -279,7 +279,7 @@ $\mathscr D^2\simeq\operatorname{Id}$という相対自然同型は主張しな�
 \label{subsec:qa-spectral-center-band-obstruction}
 
 この小節では$k$を標数零の代数閉体とする。
-以下で$\mathfrak N^{\rm sm}$は、二形式が根を共有しない開部分である。
+以下で$\mathfrak N^{\mathrm{sm}}$は、二形式が根を共有しない開部分である。
 その粗モジュライ座標は
 $U=\mathbb A^1_\chi\setminus\{1\}$である。
 幾何同型類の対合
@@ -290,7 +290,7 @@ $\varphi(\chi)=\chi/(\chi-1)$は$U$の自己同型であるが、
 \begin{proposition}[自己双対点と等$j$点の幾何慣性]
 \label{prop:qa-spectral-geometric-inertia-comparison}
 $D_8$を位数八の二面体群とする。
-$\mathfrak N^{\rm sm}$の幾何慣性とspectral対合の対応は次の通りである。
+$\mathfrak N^{\mathrm{sm}}$の幾何慣性とspectral対合の対応は次の通りである。
 \[
 \begin{array}{c|c|c}
 \chi&\varphi(\chi)&\text{pointed慣性}\\\hline
@@ -388,7 +388,7 @@ $b$は$\chi=1$で奇数付値を持ち非平方だから、
 $\chi\mapsto\chi/(\chi-1)$を誘導する
 $k$-stack自己同値
 \[
- \mathfrak N^{\rm sm}\longrightarrow\mathfrak N^{\rm sm}
+ \mathfrak N^{\mathrm{sm}}\longrightarrow\mathfrak N^{\mathrm{sm}}
 \]
 は存在しない。
 より強く、この粗モジュライ自己同型を覆う射は、
@@ -407,7 +407,7 @@ $4(1-4b)^{-2}db\ne0$であり、群作用により全一般fiberで同じこと�
 従って$G_K$はこのfiberに幾何的に推移的に作用する。
 安定化群は有限\'{e}taleで、軌道写像はsmooth全射だから、
 このfiberはfppf斉次空間$G_K/H_f$に同型である。
-したがって$\mathfrak N^{\rm sm}$の一般coarse fiberは
+したがって$\mathfrak N^{\mathrm{sm}}$の一般coarse fiberは
 neutral gerbe $BH_f$である。
 
 対合で引き戻した標的の一般fiberにも同じ表示を使えるが、

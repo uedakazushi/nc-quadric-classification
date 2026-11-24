@@ -562,7 +562,7 @@ $x'_\alpha=x_\alpha+q_\alpha$、
 $c'_\alpha=c_\alpha+p_\alpha$に置換する。
 これは有限回の可逆な多項式変換で
 \[
- \widetilde W\sim_{\rm cyc}
+ \widetilde W\sim_{\mathrm{cyc}}
  \sum_{\alpha=1}^r c'_\alpha x'_\alpha
  -\sum_{\alpha=1}^r p_\alpha q_\alpha
  +\sum_{\beta=r+1}^4(c_\beta q_\beta+p_\beta x_\beta).
@@ -583,7 +583,7 @@ $D_F=\{P\simeq GF^{-1}\}$が階数三のlocus、
 
 \begin{theorem}[mutation像のAS条件]
 \label{thm:qa-as10-forward-as}
-任意の$A\in\mathrm{AS}_{\rm sq}$の
+任意の$A\in\mathrm{AS}_{\mathrm{sq}}$の
 指定した頂点1をmutationし、
 残る四頂点を$(1,0,2,3)$から
 $(0,1,2,3)$に再番号付けする。
@@ -665,7 +665,7 @@ $\mathrm{AS}_{10}^{\mathrm{min}}$の
 $x'=x+q_0+p_0$でその組を消すと、
 残るpotentialは
 \[
- W_{\rm sq}=
+ W_{\mathrm{sq}}=
  yq+\sum_{a=1}^3z_a(q_a+p_a)
 \]
 となる。$y,z_1,z_2,z_3$は
@@ -696,7 +696,7 @@ $q\in\mathbb Z$に対し
 \[
 V_q=\Hom(E_{4q},E_{4q+1}),\quad
 0\to K_q\to V_q\otimes E_{4q}
- \xrightarrow{\rm ev}E_{4q+1}\to0
+ \xrightarrow{\mathrm{ev}}E_{4q+1}\to0
 \]
 とする。
 $H_{4q}=K_q,\ H_{4q+1}=E_{4q},
@@ -706,7 +706,7 @@ $m(A)_{ji}=\Hom(H_i,H_j)$である。
 逆にcubic/最小十本矢targetの標準helixを$H_i$とし、
 \[
 W_q=\Hom(H_{4q},H_{4q+1}),\quad
-0\to H_{4q}\xrightarrow{\rm coev}
+0\to H_{4q}\xrightarrow{\mathrm{coev}}
  W_q^\vee\otimes H_{4q+1}\to M_q\to0
 \]
 とすれば、
@@ -782,7 +782,7 @@ $\Hom(K_q,E_{4q})\simeq V_q^\vee$と同定すると、
 \label{thm:qa-as10-global-bijection}
 指定したmutationによって
 \begin{equation}
- \mathrm{AS}_{\rm sq}/\cong
+ \mathrm{AS}_{\mathrm{sq}}/\cong
  \ \xrightarrow{\ \sim\ }\
  \bigl(\mathrm{AS}_{c}/\cong\bigr)
  \amalg
@@ -794,7 +794,7 @@ $\Hom(K_q,E_{4q})\simeq V_q^\vee$と同定すると、
 \begin{equation}
  \mathrm{AS}_{10}^{\mathrm{min}}/\cong
  \ \simeq\
- \left\{(D,F,G,P)\in\mathrm{Av}_{\rm sq}
+ \left\{(D,F,G,P)\in\mathrm{Av}_{\mathrm{sq}}
        :G\simeq FP\right\}/\cong
  \label{eq:qa-as10-avatar-locus}
 \end{equation}
@@ -822,7 +822,7 @@ AS正則であるという結論ではない。
 
 \begin{proposition}[Mutation先の左右Noether性と商圏]
 \label{prop:qa-as10-noetherian-qgr}
-$A\in\mathrm{AS}_{\rm sq}$ とし、
+$A\in\mathrm{AS}_{\mathrm{sq}}$ とし、
 $A'=m(A)\in\mathrm{AS}_{c}\amalg\mathrm{AS}_{10}^{\mathrm{min}}$
 を指定一頂点mutationで得た代数とする。
 両代数は左右Noetherianであり、
@@ -1006,7 +1006,7 @@ Jacobianのトレース空間で線形独立である。
 全整数頂点を保つ代数同型を射とすると、
 評価・余評価の全周期構成は
 \[
-\mathbf{AS}_{\rm sq}\simeq
+\mathbf{AS}_{\mathrm{sq}}\simeq
  \mathbf{AS}_{c}\amalg
  \mathbf{AS}_{10}^{\mathrm{min}}
 \]
@@ -1166,13 +1166,13 @@ $L_i=\operatorname{Ext}^3_A(S_i,P_{i-4})$とする。
 この同定は任意基底変更と全頂点保存同型に自然である。
 \end{corollary}
 \begin{proof}
-右射影双対を$D_{\rm r}$、左射影双対を$D_{\rm l}$と書く。
+右射影双対を$D_{\mathrm{r}}$、左射影双対を$D_{\mathrm{l}}$と書く。
 有限局所自由な係数束$M$について、
-$D_{\rm r}(M\otimes P_j)=Ae_j\otimes M^\vee$であり、
+$D_{\mathrm{r}}(M\otimes P_j)=Ae_j\otimes M^\vee$であり、
 この双対と評価による二重双対は任意基底変更に可換である。
 前命題の右分解の双対は
 \[
- D_{\rm r}(S_i)\simeq {}_{i-4}S\otimes L_i[-3]
+ D_{\mathrm{r}}(S_i)\simeq {}_{i-4}S\otimes L_i[-3]
 \]
 を与える。次数三の余核への標準切断がこの同型を誘導する。
 したがって双対複体を三だけ移動し$L_i^\vee$をtensorすると、
@@ -1183,9 +1183,9 @@ $D_{\rm r}(M\otimes P_j)=Ae_j\otimes M^\vee$であり、
 有限局所自由複体の端から分裂を取れる。
 
 さらに二重双対の評価で
-$D_{\rm l}D_{\rm r}(S_i)\simeq S_i$となる。
-上の式に$D_{\rm l}$を適用すると
-$D_{\rm l}({}_{i-4}S)\otimes L_i^\vee[3]\simeq S_i$であり、
+$D_{\mathrm{l}}D_{\mathrm{r}}(S_i)\simeq S_i$となる。
+上の式に$D_{\mathrm{l}}$を適用すると
+$D_{\mathrm{l}}({}_{i-4}S)\otimes L_i^\vee[3]\simeq S_i$であり、
 従って左単純の双対に現れる右側の係数線束は$L_i$である。
 評価と標準切断の自然性から、分解の選択に依存せず
 基底変更と頂点保存同型に整合する。
