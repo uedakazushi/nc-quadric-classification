@@ -167,6 +167,21 @@ def verify_segre() -> None:
             "A standard relation does not vanish on the Segre image")
     print("Segre multiplication: 9 x 16 rank 9, kernel 7; 16 x 64 rank 16.")
 
+    # The first row of (x_ij) consists of x=x00 and u=x01.
+    signs = {U: -1, V: 1, X: -1, Y: 1}
+    gamma = sp.diag(*(signs[letter] for letter in LETTERS))
+    even_edge = sp.kronecker_product(sp.eye(4), gamma)
+    odd_edge = sp.kronecker_product(gamma, sp.eye(4))
+    twisted_product = quadratic * even_edge
+    for change in (even_edge, odd_edge):
+        require(twisted_product * change * standard_relations == sp.zeros(9, 7),
+                "An alternating edge pair does not preserve the relation space")
+    words = list(product(LETTERS, repeat=2))
+    commutator = twisted_product[:, words.index((X, V))] - twisted_product[:, words.index((V, X))]
+    require(commutator == 2 * quadratic[:, words.index((X, V))] and commutator.norm() != 0,
+            "The twisted x00, x10 commutator must be nonzero")
+    print("Segre involution: both alternating pairs transport the kernel; x00 and x10 do not commute.")
+
 
 def verify_symbolic_ore_identities() -> None:
     u, v, x, y = (generator(letter) for letter in LETTERS)

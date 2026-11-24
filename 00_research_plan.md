@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面
 
-2026-11-25 / v1.79。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
+2026-11-25 / v1.80。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
 
 ## 現在の目標と達成基準
 
@@ -8,13 +8,13 @@
 
 有限型atlas上の構成可能分割の補題を、Bの有限型性・affine対角と滑らかな楕円型の可算無限な同型類ファイバーに適用した。非捩れ平行移動商は、非準分離な有限型代数空間が存在する例である。
 
-**次の最優先はAの体上分類の独立公表前監査（F6）。** 分類主定理から各入力を逆にたどり、cubic/noncubicの全被覆と有限判定を点検する。続いてBの相対理論とCの指定比較を監査する。CのS1–S5の証明と2026-11-24の指定範囲S6監査は保持する。
+**Aの分類主定理の依存証明を点検し、同値判定を二行列の必要十分条件にした（A v1.70）。** 二つの適合表示の七次元の関係空間を、可逆な四次行列の対で両順に移せるかを判定すればよい。Serre 関手の自然性が二周期を与え、Segre 環の符号 twist が一行列への制限を排除する。[系と例](papers/sections/first_orbit_object.tex)・[F6の点検範囲](notes/research_notes.md#論文aの体上分類の点検)。
 
 ## 公表用三論文と現状
 
 | 原稿 | 主結果・確実性 | 主要な残課題 |
 |---|---|---|
-| [A](papers/nc-quadric-surface.tex) v1.69 | 標数零代数閉体上の強いH2の全pointed exact分類。cubic/noncubicの全被覆、適合Serre根・AS4被覆、構成・有限同値判定を原稿で証明。F1–F5到達。 | F6：全証明の独立公表前監査、先行研究、新名での組版。 |
+| [A](papers/nc-quadric-surface.tex) v1.70 | 標数零代数閉体上の強いH2の全pointed exact分類。cubic/noncubicの全被覆、適合Serre根・AS4被覆、構成・有限同値判定を原稿で証明。F1–F5到達。 | F6：主定理の五つの依存経路と現行名での組版を点検。補助結果・先行研究を含む監査の範囲は研究ノートを参照。 |
 | [B](papers/nc-quadric-surface-moduli.tex) v0.42 | 内在的H2の有限型代数性・smooth既約性、被約noncubic境界の余次元2・smooth性、二形式商と相対同値、慣性・境界good moduli、DM開の任意底変更と両立するcoarse moduli、全H2のcoarse space不存在と一致類の形式対、無標識exact同値を分類する標的の対角の非準コンパクト性を原稿で証明。 | 独立公表前監査、X_asの局所閉認識等。 |
 | [C](papers/nc-quadric-surface-avatar.tex) v4.68 | 指定AS分解型・幾何avatar・8/10/12重み付きQPの相対比較、全標準頂点のH2認識、表示慣性・剛体化・fiber、周期・ruling/mutation、全H2の準射影good moduli、spectral比較と境界障害。S1–S5の原稿上の証明と指定範囲S6監査を記録。 | 全比較の網羅的外部文献監査と既存定理の独立点検。負巡回正規化・周期線束の積表示を含む主定理の仮定を公表前に再点検。 |
 
@@ -35,7 +35,7 @@ Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比
 
 ## 次の一手（優先順）
 
-1. Aの公表前独立監査を続ける。[分類主定理の節](papers/sections/classification.tex) からnormal helix、cubic被覆、全四つ組のSerre平方根・AS4 hull、noncubic同時untwist、GL4反復の停止を確認する。F1–F5の原稿上の到達を外部検証済みとしない。
+1. AのF6については[点検記録](notes/research_notes.md#論文aの体上分類の点検)を起点とする。normal helix、cubic判定、許容四つ組からの逆構成、二つのnoncubic untwist、有限判定を主定理から逆に点検した。残る補助結果と先行結果の仮定を照合する。
 2. Bの既存相対理論の独立監査を続ける。相対定義、five-window tails、Noetherian貼合せ、Artin持上げ・有限型効果性、smooth atlas、非被約底と全Isom、AHR形式対を確認する。無標識定理で使用した有限型atlas・Isom・楕円標識の点検範囲は上記ノートを参照する。
 3. Cの公表前監査・一次文献比較を続ける。[QP表示](papers/quiver-avatar/qp_presentations.tex) の負巡回正規化、[AS分類](papers/quiver-avatar/as10_mutation_classification.tex) の全整数線束・周期標識、[幾何avatar](papers/quiver-avatar/avatar_charts.tex) の相対復元、[二mass比較](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) の既存cotangent Morita比較・CY構造の仮定を点検する。比較は指定cotangent表示群oidに限り、その一般化を今回の研究課題・完了条件に加えない。
 4. Van den Bergh、Okawa–Ueda、Belmans、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa等との関係を明示し、三稿の公表用編集を進める。全平方根・ambient忘却、偏極認識等への展開は、包括的監査と区別して数学的価値で再評価する。

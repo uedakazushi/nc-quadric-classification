@@ -2,13 +2,13 @@
 
 O-marked 非可換二次曲面の分類、内在的モジュライ、AS/avatar/QPの比較。
 
-2026-11-25 / v1.79。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
+2026-11-25 / v1.80。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
 
 ## 到達点と次の課題
 
 論文B v0.42で、非可算な標数零代数閉体上、構造対象を忘れたAbel圏の線形exact同値を正確に分類する射の標的は準コンパクトな対角を持ち得ないことを証明した。一般の同型類ファイバーの濃度の命題と、非共鳴楕円型の標識付き同型類の計数を用いる。[証明本文](papers/moduli/marking_forgetting.tex)・[仮定と依存証明の点検範囲](notes/unmarked_moduli_obstruction.md)。
 
-次は[Aの分類主定理](papers/sections/classification.tex)から公表前独立監査を再開する。優先順は[研究方針](00_research_plan.md)に従う。
+論文A v1.70では、二つの適合切断環の関係空間を可逆な四次行列の対で両順に移せることが pointed exact 同値の必要十分条件となる。Segre 環の符号 twist は行列二つが必要となる例を与える。[系14.7・例14.8](papers/sections/first_orbit_object.tex)・[公表前監査の範囲](notes/research_notes.md#論文aの体上分類の点検)。
 
 ## 公表用原稿
 

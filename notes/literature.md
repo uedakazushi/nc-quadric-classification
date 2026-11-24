@@ -1,5 +1,12 @@
 # 非可換 quadric 分類：現行文献比較
 
+## Aの分類主定理と二行列判定（2026-11-25確認）
+
+- Sierra, *G-algebras, twistings, and equivalences of graded categories*, Theorem 1.2, Corollary 1.3。一般のtwisting systemによるZhang twistと添字付き環の同型との対応が既知である。Aの系14.7では、pointed tails同値から第一軌道対象を回収し、反Serreの自然同型で同型の行列列を二周期に選ぶ。[著者版](https://arxiv.org/abs/math/0608791)・[刊行版](https://doi.org/10.1007/s10468-009-9193-y)
+- Mori–Ueyamaのsmooth high rank仮定とMCM二型はDefinition 5.9, Theorem 5.5, Lemmas 4.13, 5.13。Orlov Theorem 2.5(i)における指数二の例外項と、特異圏の埋込みがMCMのtails像を与える追加消滅をMori–Ueyama, Lemma 4.1と照合した。[high rank](https://arxiv.org/abs/1905.12266)・[Orlov](https://arxiv.org/abs/math/0503632)・[MCMの像](https://arxiv.org/abs/1507.06377)
+- Van den Bergh, Proposition 5.1.2, Theorem 5.5.10の三次正則環の分類にはlinear型を含む。Theorem 6.1とLemmas 6.4–6.5の可換図式で選んだ二周期をhull上に持ち上げる。偶数環のdomain性にはPresottoの刊行版Theorem 2.8（証明Appendix A、著者版Theorem 3.8）を使える。[Van den Bergh](https://arxiv.org/abs/0807.3753v3)・[Presotto刊行版](https://doi.org/10.4171/JNCG/290)
+- Mori–Nyman Theorems 4.8, 4.19, 6.8とLemma 6.10を照合した。Theorem 4.19の周期性と組み合わせる仮定はASF⁺である。Aの補助命題18.2ではDefinition 4.15の導来双加群同型を仮定し、主定理の三次型では補題19.1で双加群を直接同定する。[Mori–Nymanの一次本文](https://arxiv.org/abs/2307.15253v1)
+
 ## Bの無標識分類射と対角（2026-11-25確認）
 
 [Stacks Project 026N](https://stacks.math.columbia.edu/tag/026N) の代数スタックの定義は非準コンパクト対角を許す。[04XQ](https://stacks.math.columbia.edu/tag/04XQ) Lemmas 101.3.1, 3 のIsom・対角の局所有限型性と、[0ECX](https://stacks.math.columbia.edu/tag/0ECX) の準コンパクト・局所有限表示射についてのChevalleyを確認した。有限型atlasがNoetherianであることが両者をつなぐ。[04YV](https://stacks.math.columbia.edu/tag/04YV)の準分離性には対角の準コンパクト性が必要。[02Z0](https://stacks.math.columbia.edu/tag/02Z0) Lemma 65.14.3 の自由な離散群作用の商と、[06E9](https://stacks.math.columbia.edu/tag/06E9) の有限型非準分離な整数平行移動商を照合した。

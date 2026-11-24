@@ -1,6 +1,22 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-25 / v1.76（A v1.69、B v0.42、C v4.68）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-25 / v1.77（A v1.70、B v0.42、C v4.68）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 論文Aの体上分類の点検
+
+標数零の代数閉体上、構造対象を保つ線形 exact 同値を扱う。2026-11-25に[定理3.2](../papers/sections/classification.tex)から入力を逆にたどった。一次文献の版と仮定は[文献比較](literature.md)を参照。
+
+| 分類の段階 | 点検した論点と本文 |
+|---|---|
+| H2から二つのrulingへ | 構造対象のrank oneとtorsion-free性から非零切断は単射となり、切断環はdomainとなる。大域次元二、滑らかな高階数四変数切断の二つのMCM型、評価列を順に用いる。Orlovの指数二の窓に二型を入れ、偶数窓の完全性を得る。奇数窓は三項の右直交とSerre双対性で確認した。[normal helix](../papers/sections/normal_comparison.tex) |
+| cubic 表示の検出 | 四つの射影対象のExtと生成性から対象上で反Serre移動を同定する。偶数部分への制限は、長さ二の関係がないことから合成階数四のMCM型を与える。十分性はnormal helixの関係による。[cubic 判定](../papers/sections/cubic_coverage.tex) |
+| 許容四つ組の逆構成 | 整な曲線では二重被覆の対合二つの合成が平行移動となる。退化境界は二次数の分割と交点の長さで尽くす。二重対角の一次係数は $H^1(\Omega^1)$ の生成元、片側二重のgridでは二交点の一次係数の差、両側二重では貼り合わせ単元の混合係数 $c-ab$ が残る。偶奇の二周期とテンソル回転の差は頂点スカラーに吸収できる。選んだ周期そのものをAS4 hullに持ち上げる箇所と、domain性の入力を別々に検査した。[逆構成](../papers/sections/elliptic_inverse.tex) |
+| 階数三の二型 | syzygyが二型を固定する場合と交換する場合をたどった。支持が一致する場合の排除、共通平面上での二つの作用のスカラー調整、untwist後の二重平方環を確認した。四元数環の付値によるdomain性と、点対の対角成分からの同値判定が、それぞれ構成と単射性を担う。[交換型と分類](../papers/sections/standard_rank_three.tex)・[二重平方環](../papers/sections/ore_normal_quadrics.tex) |
+| 表示からの有限同値判定 | 従来の反復では代数群の剰余類の射影像が閉じ、Noether性で停止する。さらにSerre自然同型を各偶奇で反復すると、隣接射の行列を二つだけに選べる。逆は全ての添字に同じ二条件を反復する直接構成。任意の反復の解自体に二周期を要求しない。[系14.7と反例](../papers/sections/first_orbit_object.tex) |
+
+補助命題18.2では局所コホモロジーの双対を与えるNakayama同型を仮定することを明記した。主定理で用いるcubic側は補題19.1でその双加群を計算する。系14.7の入力は両方が適合表示であること。一般の四生成元二次環に同じ主張を適用しない。
+
+再現には `computations/verify_quadric.py`（Segre twistの二通りの関係空間と非零交換子）、`verify_reducible_quadruples.py`（退化型の両偶奇と冪零方向）、`verify_pencil_tangent.py`（有理点での階数8・10）を用いた。現行名のAをLuaLaTeXで組版し、79頁のPDFとSyncTeX、変更箇所を含むpp.7, 27, 42–43, 58–59の表示を点検した。数学的な十分性は本文の全次数の論証による。
 
 ## 無標識モジュライの対角の障害（B v0.42）
 

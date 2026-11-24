@@ -90,10 +90,14 @@ Orlov の埋込みは二型の特異圏での像を $\pi X,\pi Y$ に送る
 \eqref{eq:normal-ruling-evaluation} の $Y_i(i)$ の核が $X_{i-1}(i-1)$ なので、
 生成列 $(\pi B(i-1),\pi B(i),\pi Y_i(i),\pi X_i(i))$
 の中の隣接二項を対応する三角で入れ替えて、偶数添字で始まる四項の完全性を得る。
-奇数添字で始まる場合は、補型 $c(X_i)$ を同じ方法で選んだ
-偶数添字から始まる四項
-$(\pi B(i+1),\pi Y_{i+1}(i+1),\pi B(i+2),\pi Y_{i+2}(i+2))$
-で、二つの隣接対をそれぞれ同じ三角で置き換える。
+偶数添字 $j$ から始まる四項が full であることから、
+$\langle E_{j+1},E_{j+2},E_{j+3}\rangle$ の右直交は
+$\langle E_j\rangle\simeq D^b(\mathrm{mod}\,k)$ である。
+次の四項の右直交にある $T$ はここに属し、
+$E_{j+4}\simeq S^{-1}E_j[2]$ より
+$\Hom(E_{j+4},T[m])=0$ は全 $m$ で $\Hom(T,E_j[m])=0$ を与える。
+従って $T=0$。有限 exceptional collection の生成部分圏は admissible
+なので、奇数添字から始まる四項も full である。
 
 豊富性の生成条件は偶数項から従う。
 残る条件に必要な $\Ext^1(\pi Z(-n),K)=0$ ($n\gg0$) を示す。
