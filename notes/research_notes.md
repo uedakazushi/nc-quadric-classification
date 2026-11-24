@@ -45,6 +45,10 @@ B v0.43 の公表前内部監査（2026-11-25）。標数零の代数閉体上�
 | 非被約底上の全 Isom | 可逆な行列を射影化し、二次関係を商束に送った残差を零とする。両側が部分束であることから包含は等号となり、次数スカラーは AZ 再構成で消える。平方零拡大で指定同型を延長できる条件は残差が線形化の像に入ること。Segre の単項式を一つだけ無限小に拡大する行列で、閉点だけの検査が無効であることを確かめた。[系と双対数の例](../papers/moduli/relative_recognition.tex) |
 | 一致類の形式対 | 閉 gerbe、smooth ambient、affine 対角、線型簡約安定化群で AHR の共通 étale 近傍を取る。境界に沿う同変パラメータは affine slice の座標環の不変イデアルから選べる。境界の正則性と Nakayama により二つが境界イデアルを生成する。トーラス不変式は $ac,x,y$、有限部分の交換と符号で $ac,(x+y)^2,(x-y)^2$ が残る。[形式対と不変式](../papers/moduli/noncubic_boundary_comparison.tex) |
 
+**再現結果。** `python3 scripts/check.py papers` と `python3 scripts/check.py math` は PASS。新しい双対数の例を [verify_quadric.py](../computations/verify_quadric.py) に収録した。五頂点の終点複体を可換例の両 parity で再計算すると、項の階数は $(9,40,48,16)$、微分の階数は $(9,31,16)$、ホモロジーは次数3の一次元のみ。境界では有限群の法表現・不変式も再計算した。[五頂点の計算](../computations/verify_five_window_terminal.py)・[境界の計算](../computations/verify_noncubic_boundary.py)
+
+現行の B を LuaLaTeX で組版し、244頁の PDF と SyncTeX を確認した。系11.3（p.91）、補題25.4（pp.180–181）、定理30.18（p.233）をレンダリングして数式と改頁を点検した。VS Code の UI 操作は検証範囲外である。
+
 点検はこの七項目の証明と依存関係を対象とした。任意の Noetherian 基底での素朴な相対定義との同一視、$X_{\mathrm{as}}$ の局所閉性、第三者による査読・形式証明・網羅的新規性の確認は別課題である。[一次資料照合](literature.md)
 
 ## 無標識モジュライの対角の障害（B v0.42）

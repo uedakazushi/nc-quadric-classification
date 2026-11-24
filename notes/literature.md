@@ -4,7 +4,7 @@
 
 - De Deken–Lowen の Theorem 5.13(1)–(4) は平坦な Grothendieck 変形における helix の持上げを与える。(4) の前向き Hom の平坦性を各 Artin 商で確認して使う。Theorem 5.15 は所定の生成条件の下で Abel 変形を有限窓に移す。B の平方根・AS4 被覆の有限型効果性は B 内の別の証明に依存する。[刊行版 pp. 501–504](https://ems.press/content/serial-article-files/30497)
 - Stacks Project, Lemma 37.12.2 の試験では small extension から基底への射が有限型である。B では任意の有限型 test との積が有限型スキームとなることを先に証明し、代数閉体上の閉点で指定同型を含む持上げを検査する。[Tag 02HY](https://stacks.math.columbia.edu/tag/02HY)
-- Alper–Hall–Rydh, Theorem 1.2 の cartesian square は法表現の商とその GIT 商の間にある。滑らかな閉点と線型簡約な安定化群を要し、affine 対角の下で slice から stack への射を affine に取れる。境界を同時に線型化する二つの座標は B が slice 上で構成する。[著者版 pp. 1–2](https://arxiv.org/abs/1504.06467)
+- Alper–Hall–Rydh, Theorem 1.2 の cartesian square は法表現の商とその GIT 商の間にある。滑らかな閉点と線型簡約な安定化群を要し、affine 対角の下で slice から stack への射を affine に取れる。境界を同時に線型化する二つの座標は B が slice 上で構成する。[刊行版 Theorem 1.2](https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p01-s.pdf)・[著者版 pp. 1–2](https://arxiv.org/abs/1504.06467)
 
 ## Aの分類主定理と二行列判定（2026-11-25確認）
 

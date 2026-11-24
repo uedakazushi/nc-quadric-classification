@@ -123,12 +123,15 @@ Gabriel 商の Hom 表示に、直前の torsion 加群上の消滅を使うと
  \tag{CT-sec}\label{eq:cubic-tails-section-colimit}
 \]
 となる。右辺は $q>2$ で零で、filtered colimit と可換する。
-この同じ消滅により、$\pi$ は injective 加群を
-$\omega$-acyclic な対象へ送る。具体的には $I$ injective に対し
-$\pi I$ の injective 解消へ $\omega$ を施すと、得られる複体の
-homology は torsion である。この複体へ $RQ$ を適用し、
-$RQ$ の torsion 上の消滅と $Q\omega=\omega$ を使えば
-元の複体が完全であることを得る。
+$I$ を injective とし、$\pi I\to J^\bullet$ を商圏での injective 解消とする。
+随伴による $I\to\omega J^\bullet$ の cone は $\pi$ で消えるので、
+その全 cohomology は torsion である。上の Ext 公式で
+$R^qQ$ は torsion 上で全 $q\ge0$ について消えるから、
+下に有界なこの cone に $\mathbf RQ$ を作用させると零になる。
+$\omega J^j$ は完全な $\pi$ の右随伴による injective の像であり injective、
+また $Q\omega J^j=\omega J^j$ である。従って
+$QI[0]\simeq\omega J^\bullet$ を得る。これで $\pi I$ の
+$\omega$-acyclic 性が従う。
 従って
 \[
   R^qQ=R^q\omega\circ\pi,\qquad \operatorname{cd}\omega\le2.

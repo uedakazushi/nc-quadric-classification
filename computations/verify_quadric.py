@@ -182,6 +182,15 @@ def verify_segre() -> None:
             "The twisted x00, x10 commutator must be nonzero")
     print("Segre involution: both alternating pairs transport the kernel; x00 and x10 do not commute.")
 
+    # Test the scheme-theoretic Isom equation on O(2,2) over the dual numbers.
+    s0, s1, t0, t1, epsilon = sp.symbols("s0 s1 t0 t1 epsilon")
+    z00, z10, z20 = s0**2 * t0**2, s0 * s1 * t0**2, s1**2 * t0**2
+    residual = sp.Poly((1 + epsilon) * z00 * z20 - z10**2, epsilon)
+    require(residual.nth(0) == 0 and residual.nth(1) == z00 * z20,
+            "Wrong reduction or linear residual for the pointed Isom equation")
+    require(residual.nth(1) != 0, "The infinitesimal matrix must violate the relation")
+    print("Pointed Isom: the identity reduction has a nonzero degree-two residual.")
+
 
 def verify_symbolic_ore_identities() -> None:
     u, v, x, y = (generator(letter) for letter in LETTERS)
