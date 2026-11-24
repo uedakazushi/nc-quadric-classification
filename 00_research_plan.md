@@ -1,25 +1,21 @@
 # 研究方針：O-marked 非可換二次曲面
 
-2026-11-25 / v1.78。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
+2026-11-25 / v1.79。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
 
 ## 現在の目標と達成基準
 
-**最優先目標：O-markingを忘れたAbel圏のexact同値類を正しく表すモジュライについて、対角射の準コンパクト性への障害を論文Bで証明する。** 詳細な定式化、一般補題、依存先、証明アウトラインと完了条件は [無標識モジュライの障害](notes/unmarked_moduli_obstruction.md) を正本とする。
+**無標識モジュライの対角の障害を論文B v0.42で証明した。** 非可算な標数零代数閉体上で、構造対象を忘れた線形exact同値と像の同型がちょうど一致する射 H2 → M があれば、通常の代数スタック M の対角は準コンパクトでない。M や射の有限型性・射の表現可能性は不要である。一般の標数零体への系には、非可算代数閉拡大上での源の同定と分類条件を仮定する。[Bの証明](papers/moduli/marking_forgetting.tex)・[入力と点検範囲](notes/unmarked_moduli_obstruction.md)。
 
-まず非可算な標数零代数閉体、特にℂ上で、H2から通常の代数スタックMへの射Fが、幾何点の同型類を underlying Abel圏の線形exact同値でちょうど同一視するなら、Mの対角は準コンパクトではないことを示す。MやFの有限型性・表現可能性は仮定しない。一般の標数零基礎体への系は非可算代数閉拡大への基底変更を正当化した上で述べる。「無限群だから代数スタックが一切存在しない」や「有限型の商が存在しない」という主張にはしない。
+有限型atlas上の構成可能分割の補題を、Bの有限型性・affine対角と滑らかな楕円型の可算無限な同型類ファイバーに適用した。非捩れ平行移動商は、非準分離な有限型代数空間が存在する例である。
 
-着手順は、有限型atlasにおける構成可能集合の可算分割の補題、同型類ファイバーの一般障害、Bの有限型性・affine対角・楕円型可算無限ファイバーの適用である。集合論的ファイバーと2-fiberを同一視せずに閉じる最短経路を先に点検する。固定楕円曲線の切片による別証明もノートに記すが、主証明が閉じれば別証明や全無標識スタックの構成を追加の完了条件にしない。
-
-**優先順位を変更する理由。** 既存のO-marked分類・モジュライから、標識を忘れた際に通常の有限性条件が失われることを説明できる見込みがある。この限定された定理の完成を、三稿全体の公表前監査より先に行う。元の目標であるAの体上分類、Bの内在的相対モジュライ、Cの指定AS/avatar/QP比較は原稿上の成果として保持する。CのS1–S5の証明と2026-11-24の指定範囲S6監査は保持し、独立公表前監査・新規性確認は本課題の完了後に続ける。
-
-**完了条件。** 一般補題の自己完結した証明、既存Bの必要な依存証明の点検、無標識モジュライに要求する射と同型判定の明示、対角の障害への適用、一次文献比較、B本文・abstract・Introductionの整合、必要な組版と参照確認、現行資料とhubの保存までを行う。現状は指示・証明アウトラインの整備段階であり、新しい適用定理はまだ原稿化・検証済みではない。成立しない強化は反例と正しい範囲へ直す。
+**次の最優先はAの体上分類の独立公表前監査（F6）。** 分類主定理から各入力を逆にたどり、cubic/noncubicの全被覆と有限判定を点検する。続いてBの相対理論とCの指定比較を監査する。CのS1–S5の証明と2026-11-24の指定範囲S6監査は保持する。
 
 ## 公表用三論文と現状
 
 | 原稿 | 主結果・確実性 | 主要な残課題 |
 |---|---|---|
 | [A](papers/nc-quadric-surface.tex) v1.69 | 標数零代数閉体上の強いH2の全pointed exact分類。cubic/noncubicの全被覆、適合Serre根・AS4被覆、構成・有限同値判定を原稿で証明。F1–F5到達。 | F6：全証明の独立公表前監査、先行研究、新名での組版。 |
-| [B](papers/nc-quadric-surface-moduli.tex) v0.41 | 内在的H2の有限型代数性・smooth既約性、被約noncubic境界の余次元2・smooth性、二形式商と相対同値、慣性・境界good moduli、DM開の任意底変更と両立するcoarse moduli、全H2のcoarse space不存在と一致類の形式対を原稿で証明。 | 最優先：無標識exact同値類を正しく分類する射の対角非準コンパクト性を証明・統合する。既存の楕円型全標識・可算無限ファイバーを入力に使う。独立公表前監査、X_asの局所閉認識等はその後。 |
+| [B](papers/nc-quadric-surface-moduli.tex) v0.42 | 内在的H2の有限型代数性・smooth既約性、被約noncubic境界の余次元2・smooth性、二形式商と相対同値、慣性・境界good moduli、DM開の任意底変更と両立するcoarse moduli、全H2のcoarse space不存在と一致類の形式対、無標識exact同値を分類する標的の対角の非準コンパクト性を原稿で証明。 | 独立公表前監査、X_asの局所閉認識等。 |
 | [C](papers/nc-quadric-surface-avatar.tex) v4.68 | 指定AS分解型・幾何avatar・8/10/12重み付きQPの相対比較、全標準頂点のH2認識、表示慣性・剛体化・fiber、周期・ruling/mutation、全H2の準射影good moduli、spectral比較と境界障害。S1–S5の原稿上の証明と指定範囲S6監査を記録。 | 全比較の網羅的外部文献監査と既存定理の独立点検。負巡回正規化・周期線束の積表示を含む主定理の仮定を公表前に再点検。 |
 
 Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比較を担当する。BはAの分類を引用し、CはA/Bの結果を必要に応じて入力とする。A/Bの主要証明がC固有の主定理に依存するとはしない。証明の正本は各原稿、補助知識と検証の範囲は[研究ノート](notes/research_notes.md)、一次資料と新規性比較は[文献ノート](notes/literature.md)。
@@ -39,16 +35,14 @@ Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比
 
 ## 次の一手（優先順）
 
-1. **無標識モジュライの対角の障害を完成させる。** [証明アウトライン](notes/unmarked_moduli_obstruction.md) のU0–U2を順に点検する。構成可能集合の可算分割補題と有限型atlasの一般障害を証明し、BのH2有限型性・affine対角と [標識忘却節](papers/moduli/marking_forgetting.tex) の可算無限ファイバーを接続する。必要な依存証明に誤りがあれば先に訂正する。主定理の統合先はBであり、Cの完成条件にはしない。
-2. **この結果を公表用の形に閉じる。** 通常の1-stackへの分類射という範囲、非可算基礎体の使用、無限群商の反例を明記し、Bの本文・abstract・Introduction・引用を揃える。必要なソース・LuaLaTeX・表示を点検し、研究方針・ノート・README・hubを実際の到達点へ更新する。全無標識スタックの構成、非準分離商の全面研究、全退化型の忘却分類を完了の前提にしない。
-3. Aの公表前独立監査を続ける。[分類主定理の節](papers/sections/classification.tex) からnormal helix、cubic被覆、全四つ組のSerre平方根・AS4 hull、noncubic同時untwist、GL4反復の停止を確認する。F1–F5の原稿上の到達を外部検証済みとしない。
-4. Bの既存相対理論の独立監査を続ける。相対定義、five-window tails、Noetherian貼合せ、Artin持上げ・有限型効果性、smooth atlas、非被約底と全Isom、AHR形式対を確認する。新目標のために必要な箇所は1で先行して監査し、無関係な全体点検を主定理完成の前提にしない。
-5. Cの公表前監査・一次文献比較を続ける。[QP表示](papers/quiver-avatar/qp_presentations.tex) の負巡回正規化、[AS分類](papers/quiver-avatar/as10_mutation_classification.tex) の全整数線束・周期標識、[幾何avatar](papers/quiver-avatar/avatar_charts.tex) の相対復元、[二mass比較](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) の既存cotangent Morita比較・CY構造の仮定を点検する。比較は指定cotangent表示群oidに限り、その一般化を今回の研究課題・完了条件に加えない。
-6. Van den Bergh、Okawa–Ueda、Belmans、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa等との関係を明示し、三稿の公表用編集を進める。全平方根・ambient忘却、偏極認識等への展開は、最優先目標の完了後に数学的価値で再評価する。
+1. Aの公表前独立監査を続ける。[分類主定理の節](papers/sections/classification.tex) からnormal helix、cubic被覆、全四つ組のSerre平方根・AS4 hull、noncubic同時untwist、GL4反復の停止を確認する。F1–F5の原稿上の到達を外部検証済みとしない。
+2. Bの既存相対理論の独立監査を続ける。相対定義、five-window tails、Noetherian貼合せ、Artin持上げ・有限型効果性、smooth atlas、非被約底と全Isom、AHR形式対を確認する。無標識定理で使用した有限型atlas・Isom・楕円標識の点検範囲は上記ノートを参照する。
+3. Cの公表前監査・一次文献比較を続ける。[QP表示](papers/quiver-avatar/qp_presentations.tex) の負巡回正規化、[AS分類](papers/quiver-avatar/as10_mutation_classification.tex) の全整数線束・周期標識、[幾何avatar](papers/quiver-avatar/avatar_charts.tex) の相対復元、[二mass比較](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) の既存cotangent Morita比較・CY構造の仮定を点検する。比較は指定cotangent表示群oidに限り、その一般化を今回の研究課題・完了条件に加えない。
+4. Van den Bergh、Okawa–Ueda、Belmans、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa等との関係を明示し、三稿の公表用編集を進める。全平方根・ambient忘却、偏極認識等への展開は、包括的監査と区別して数学的価値で再評価する。
 
 ## 再開と検証
 
-[README.md](README.md) の手順で依存環境とソース参照を確認する。今回の最優先課題の設定では、研究方針・実行指示・証明アウトラインと参照先を整備した。新しい適用定理の原稿化・依存証明の包括的検証・LuaLaTeX再組版・既存計算の再実行は未実施。既存のC 411頁の組版・SyncTeX・計算・一次資料照合の記録は研究ノートに保持し、現行commitの確認と混同しない。
+[README](README.md) の手順と[無標識定理の検証記録](notes/unmarked_moduli_obstruction.md)を参照する。Cの411頁の組版・SyncTeX・計算の記録は[研究ノート](notes/research_notes.md)にある。
 
 ## 対象と規約
 

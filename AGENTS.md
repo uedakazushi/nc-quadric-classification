@@ -1,10 +1,12 @@
 # 研究リポジトリの作業指示 — nc-quadric-surface
 
-2026-11-25 / v1.73。
+2026-11-25 / v1.74。
 
 ## 現行の研究と優先順位
 
-研究固有の目標・確実性・次の着手先は [00_research_plan.md](00_research_plan.md) を正本とし、本書に重複して書かない。A（体上分類）、B（内在的相対モジュライ）、C（指定AS/avatar/QP相対比較）の三論文体制を維持する。S1–S5の原稿上の証明と指定範囲S6の2026-11-24の点検を、全raw比較、形式証明、外部査読、新規性の確定と混同しない。現在の最優先は、研究方針で指定した無標識Abel圏のモジュライの対角非準コンパクト性の証明とBへの統合である。[証明アウトライン](notes/unmarked_moduli_obstruction.md) のU0–U2と完了条件に従い、一般補題・必要な既存入力・適用を閉じる。全面的な無標識スタックの構成へ範囲を広げず、三稿の包括的公表前監査はその後に続ける。cotangent表示群oid上のMorita比較と本文で証明したCY構造の一般化を研究課題・完了条件に加えない。
+研究固有の目標・確実性・次の着手先は [00_research_plan.md](00_research_plan.md) を正本とし、本書に重複して書かない。A（体上分類）、B（内在的相対モジュライ）、C（指定AS/avatar/QP相対比較）の三論文体制を維持する。S1–S5の原稿上の証明と指定範囲S6の2026-11-24の点検を、全raw比較、形式証明、外部査読、新規性の確定と混同しない。無標識Abel圏を分類する標的の対角の非準コンパクト性は論文Bに統合した。[依存証明の点検記録](notes/unmarked_moduli_obstruction.md) と研究方針の優先順に従い、Aの体上分類から公表前監査を続ける。
+
+cotangent表示群oid上のMorita比較と本文で証明したCY構造の一般化を研究課題・完了条件に加えない。
 
 研究を依頼された場合は、現在の優先課題に実際に着手し、可能な範囲で証明・反例・計算・原稿を進める。単なる計画整理を数学の進展としない。ただし整理・評価・監査を個別に依頼された場合はその範囲を守る。
 
@@ -49,7 +51,7 @@
 - H2の対象は構造対象のみを指定した `(C,O)`。無標識の課題はOを忘れる分類射について別に定式化する。Gabriel–Krull商でrank one torsion-free、exceptionalを要求する。exact平方根 `s² ≅ S⁻¹[2]`、Artin–Zhang豊富性、二次AS正則持上げの存在は性質であり、`s`・根同型・ambient・方程式を追加標識としない。
 - 通常のquadratic envelopeはquadric切断式も含むためAS4にはならない。正しい強い条件は orbit環 `B(C,O,s) ≅ A/(g)`、`A` が左右noetherian quadratic Koszul AS-regular型 `(1,4,6,4,1)`、`g∈A₂` が左右正則正規であること。中心性を無条件に課さない。
 - 本repoは右加群規約を使う。`a∈B_m, b∈B_n` に対し `a*b=s^n(a)∘b`。cubic repoの表示された積とは逆の規約なので、Nakayama公式を輸入する際は反対環・左右を照合する。
-- 既存の体上分類は全H2対象のpointed exact同値分類。無標識モジュライの対角の障害を現在の最優先とし、既存分類と混同しない。graded環の同型、Zhang twist、root付き同値、derived同値を混同しない。既存のcubic Z-algebra/elliptic quadrupleの分類だけで全H2分類済みとしない。
+- 既存の体上分類は全H2対象のpointed exact同値分類。無標識モジュライの対角の障害とは仮定・結論を区別する。graded環の同型、Zhang twist、root付き同値、derived同値を混同しない。既存のcubic Z-algebra/elliptic quadrupleの分類だけで全H2分類済みとしない。
 - 候補データからの構成、全H2からの回復、データ上の同値判定、全領域の被覆を別の命題として証明する。「H2を与える表示全体を取る」や未知のAS/admissibilityを条件に残したincidence記述は、全分類の完成ではない。
 - GIT商のorbit closure・S-equivalenceをpointed exact同値と同一視しない。反Serre環で同値類を判定できても、graded自己同型群とpointed自己同値群の一致や相対moduliまで自動的に従うとはしない。
 - 主原稿の全同値類分類、全H2の有限型代数性、被約境界の相対商表示・全慣性・DM粗モジュライ・一致類の形式対は確立済み。全平方根・ambient忘却ファイバー、Q_fndとの全体の相対比較、偏極認識は別の課題とし、原稿のラベルとnotesの状態表を維持する。

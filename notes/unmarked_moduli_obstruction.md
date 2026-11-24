@@ -1,97 +1,28 @@
-# 無標識 Abel 圏のモジュライと対角射の準コンパクト性
+# 無標識 Abel 圏の分類と対角の非準コンパクト性
 
-2026-11-25 / v1.0。最優先課題の証明アウトライン。研究方針は [00_research_plan.md](../00_research_plan.md)、公表本文の統合先は論文Bの [標識忘却の節](../papers/moduli/marking_forgetting.tex)。
+2026-11-25 / v1.1。証明の正本は論文B v0.42の[標識忘却節](../papers/moduli/marking_forgetting.tex)にある。一次資料の照合先は[文献比較](literature.md)。
 
-## 目標・現在の状態・終了範囲
+## 定理と仮定
 
-**最優先目標は、強い H2 の構造対象を忘れた exact 同値類を正しく表すモジュライについて、対角射が準コンパクトであることへの障害を論文Bで証明することである。** 無標識モジュライ全体を構成することは、この課題の前提でも完了条件でもない。
+非可算な標数零代数閉体 k 上で、F が H2 から通常の代数スタック M への射で、任意の二つの k-点の像が同型であることと、基礎Abel圏が k-線形exact同値であることが同値なら、M の対角は準コンパクトでない（`thm:unmarked-diagonal`）。特に複素数体上で成り立つ。一般の標数零基礎体では、非可算代数閉拡大上で源の代数スタック表示と点判定が同定される場合に降ろす。元の局所有限型siteで超越拡大体を直接評価する操作は用いない。
 
-以下は証明計画であり、最終的な適用定理はまだ原稿化・独立検証されていない。既存の全標識分類・可算無限ファイバー・H2の有限型代数性には原稿上の証明があるが、その必要な依存箇所をこの用途で再点検する。一般論の補題は既知の構成可能性の手法であり、新規性を主張しない。
+## 証明の入力と点検範囲
 
-完成時には「準分離な無標識モジュライの限界」を到達点とする。準分離性を外した商、全無標識2スタック、全退化型の忘却ファイバー、任意raw QPやCY構造の一般化へ研究を拡張することは要求しない。A/B/Cの有効な既存結果と証明を保持する。
+- **U0**　`lem:constructible-countable-partition`。Noether正規化で真閉集合の可算被覆をアフィン空間に移し、超平面の禁止値を避ける。構成可能な分割片のうち有限個を取り除くと残りの次元が落ちる。可算体ではアフィン直線の閉点分割が反例になる。
+- **U1**　`prop:iso-fiber-cardinality`。二つの対角を別々に基底変更し、有限型atlas上で標的の一対象と同型になる点、および源の各同型類を表す点を構成可能にする。Noetherian基底での局所有限表示性、代数空間版Chevalley、非空な局所有限型代数空間の代数閉体上の点の存在を使用する。2-fiberは同型の選択を含むのでその濃度を入力にしない。
+- **U2・相対表示**　[有限型性定理](../papers/moduli/h2_smooth_atlas.tex)では、cubic smooth開とnoncubic表示族の準コンパクト性から有限個のsmooth chartを取る。相対反Serre認識の全忠実性によりrelationに全pointed Isomが入り、affine有限表示対角が降下する。[相対定義](../papers/moduli/relative_definitions.tex)のmodule-object基底変更は体上のpointed同値を系に延長する。定数の自然自己同型はpointingで固定される。[cubic atlas](../papers/moduli/cubic_smooth_atlas.tex)が楕円四つ組の反復を実際の k-点として含む。
+- **U2・上界**　数値剛性補題で商圏の長さと通常の数値rankが四つのfoundation基底上で一致することを確認した。自己Euler形式が1なのでChern指標は (1,a,b,ab)。同じ類の二対象の間の Ext² はSerre双対と大きな偶数twistのHilbert多項式の比較で消え、非零射の単射性と余核のHilbert多項式の消滅が一意性を与える。従って未知の標識が非可算個ある余地はない。
+- **U2・下界**　[二つの内在的foundation](../papers/moduli/foundation_stack.tex)と[反射の証明](../papers/moduli/marking_forgetting.tex)を照合した。右加群の添字移動 T と評価列の核・余核による ruling 交換 R は差をそれぞれ δ−η, 2δ−η に移し、RT は η+δ を与える。η∉ℤδ は正負の反復と中間四つ組の許容条件を保つ。[Aの逆構成](../papers/sections/elliptic_inverse.tex)と添字付き復元を適用すると、非捩れ δ を固定する原点保存自己同型は恒等、次数二線束のずれは [2] の全射性で合わせられる。重複は高々一つの整数反射に限られ、可算無限のpointed類が残る。双方向の判定がこの集合と分類射の一つのファイバーを一致させる。
 
-## 1. 証明すべき主張を先に固定する
+非捩れ平行移動による E/ℤ は有限型代数空間で、慣性は自明だが atlas 上で対角の引戻しが E の無限非交和になる。本文の例は結論の範囲を示す。三稿全体の独立公表前監査・網羅的新規性確認・形式証明は別に残る。
 
-まず非可算な標数零代数閉体 k、特に k=ℂ 上で証明する。候補は通常の代数的 **1-stack** M と射
+## 原稿と再現の確認（2026-11-25）
 
-\[
-F:\mathfrak H_2\longrightarrow M
-\]
+B v0.42 の §31.1（pp. 238–239）に補題31.7、命題31.8、定理31.9、系31.10、例31.11を収録した。リポジトリのルートで `python3 scripts/check.py papers` が三稿のソースと原稿間の参照検査に合格し、`python3 scripts/check.py build --manuscript papers/nc-quadric-surface-moduli.tex` がLuaLaTeX・BibTeXの最終ログ、243頁のPDF、SyncTeXについて合格した。今回の環境では既設のTeX追加ツリーを `TEXMFHOME=/workspace/.quadric-tex/texmf`、キャッシュを `TEXMFVAR` と `TEXMFCACHE` の双方に `/workspace/.quadric-tex/var`として使用した。PDFの1、6、238–240頁をレンダリングして要旨、導入、補題から例までの改頁と数式、結論を確認した。VS Codeの設定と同等のレシピを使い、UIの往復検索は試していない。今回の定理は幾何点と構成可能性の論証で、新しい数値計算を入力に持たない。既存の計算suiteは再実行していない。
 
-であって、幾何点の同型判定が
+## 補助的な幾何的説明：楕円曲線切片
 
-\[
-F(\mathcal C,\mathcal O)\simeq F(\mathcal C',\mathcal O')
-\quad\Longleftrightarrow\quad
-\mathcal C\simeq\mathcal C'
-\quad\text{（k-linear exact 同値）}
-\]
-
-を満たすものとする。証明する結論は、**この F を持つ M の対角射は準コンパクトではない**、従って準分離な M、特に affine diagonal を持つ M は存在しない、という形である。
-
-M 自体や F の有限型性、F の表現可能性・全射性・平滑性は仮定しない。非可算拡大後にも同じ幾何点判定が成立する自然なモジュライ問題については、対角射の準コンパクト性の基底変更安定性から一般の標数零基礎体への系を検討する。ただし現行の局所有限型siteで使う体拡大と、代数スタックとしての基底変更を確認してから述べる。少なくとも ℂ 上の完全な定理を先に閉じる。
-
-構造対象を外すと自然自己同型のscalarが再び現れる。圏・同値・自然同型からなる2圏を、説明なしに通常の1スタックと同一視しない。自然同型で割った射やstackificationを使うならその意味を定義する。主証明には全無標識スタックの構成を使わず、上の F と幾何点判定を候補モジュライに要求する性質として明示すればよい。
-
-## 2. 最短の主証明：有限型atlasと構成可能性
-
-会話での楕円曲線切片の方法に先立ち、こちらを最初に点検する。現行Bの集合論的ファイバーを直接使え、無標識族の大域的構成や2-fiberの記述を追加で要求しない。
-
-### U0. 構成可能集合の可算分割補題
-
-非可算な代数閉体 k 上の有限型スキーム V の構成可能部分集合 S について、S(k) が互いに素な非空の構成可能部分集合の k-点集合の可算和であれば、その分割は有限であることを証明する。
-
-論証の核は次の通り。
-
-1. 既約な有限型多様体の k-点全体は、可算個の真閉部分集合の k-点の和では覆えない。非空affine開とNoether正規化で affine空間へ帰着し、座標の一つを固定する超平面を可算個の禁じられた値から外して選び、次元で帰納する。この短い論証を本文に書く。
-2. S を有限個の既約局所閉部分に分ける。各最高次元部分では、可算分割の少なくとも一つが稠密でなければ 1 に反する。
-3. 稠密な構成可能集合は非空開集合を含む。最高次元の有限個の部分で選んだ分割片全体を除くと、残りは構成可能で次元が下がる。次元帰納法で有限個の分割片しか残らない。
-
-これは k-点についての主張である。「generic point はどの真閉集合にも入らない」という位相だけの議論で 1 の代用をしない。可算体では成り立たない。
-
-### U1. 同型類ファイバーの一般障害
-
-X を k 上有限型で準コンパクトな対角射を持つ代数スタック、Y を準コンパクトな対角射を持つ任意の代数スタックとする。任意の射 f:X→Y と y∈Y(k) に対し、
-
-\[
-\{[x]\in\operatorname{Iso}X(k):f(x)\simeq y\}
-\]
-
-は可算無限にはなり得ない、という補題を証明する。空または有限、あるいは非可算である。
-
-**論証案。**
-
-- 有限型スキームによるsmooth全射 atlas p:V→X を一つ取る。Xの有限型性から有限個のaffine chartを選べることを記す。k が代数閉体なので各 k-対象は V の k-点で代表できることも確認する。
-- V 上の相対同型空間
-  \[
-  I_Y=\operatorname{Isom}_Y(f\circ p,y_V)\longrightarrow V
-  \]
-  を取る。対角射は局所有限型であり、Δ_Y の準コンパクト性を加えると有限型になる。Noetherianな基底 V 上でChevalleyを適用し、その像 S は構成可能。
-- 普通の同型類ファイバーが可算無限であると仮定し、代表を x_1,x_2,… とする。各
-  \[
-  I_i=\operatorname{Isom}_X(p,(x_i)_V)\longrightarrow V
-  \]
-  も Δ_X の準コンパクト性により有限型であり、その像 S_i は構成可能。
-- 非空の有限型 k-代数空間には k-点があるので、S(k) は互いに素な非空の S_i(k) の和である。U0に反する。
-
-両方の対角射の準コンパクト性がどこで使われるかを明記する。Xの有限型性だけで結論しない。Chevalleyには代数空間版を用い、局所有限型から局所有限表示への移行では基底のNoetherian性を使う。
-
-これは **同型類集合上のファイバー** の議論である。X×_Y Spec(k) の同型類や、固定圏上の標識の群oidと同一視する必要はなく、同一視してはならない。
-
-### U2. 現行Bの結果を代入する
-
-X=H2 とする。次を定理と仮定の単位で確認する。
-
-- Bの H2 は有限型で、対角射はaffine有限表示である。有限型atlasと準コンパクト対角という U1 の入力を満たす。
-- 滑らかな楕円四つ組で δ≠0、η∉ℤδ、δ非捩れを選ぶ。k=ℂ ならこのような点の存在は容易だが、存在の一文を省かない。
-- 固定した underlying 圏 C に対し、許容される O を exact 自己同値で割った **pointed同型類の忘却ファイバー** が可算無限であることを、現行Bの定理から確認する。
-- 主張1の F の同型判定により、この集合が Iso H2(k)→Iso M(k) の一つのファイバーに正確に一致する。U1により Δ_M が準コンパクトという仮定と矛盾する。
-
-必要な依存証明を監査するが、A/B/C全体の包括的監査をこの定理完成の前提にしない。既存入力の誤りが見つかった場合は、その依存先と要約も修正し、成立する仮定・範囲を明記する。ここまでで目標定理を証明できれば、次節の別証明の完了を待って公表用統合を遅らせない。
-
-## 3. 補助的な幾何的説明：楕円曲線切片
-
-この方法は対角の障害を具体的に説明するための別証明候補であり、U0–U2で主定理が閉じれば必須ではない。
+この方法は対角の障害を具体的に説明するための別証明候補であり、上記の証明はこの切片を使わない。
 
 Eを原点付き楕円曲線とし、Pic⁰(E)≃E と同定する。次数二の L₀ と、非捩れ δ を表す D∈Pic⁰(E) を固定し、L₂=L₀⊗D とする。正規化Poincaré束 P を用いて L₁,η=L₀⊗P_η を動かす。許容な基底は
 
@@ -115,39 +46,3 @@ U=E\setminus\{0,\delta\}
 f:U→M が得られたら、I=Isom_U(f,f(η₀)_U)→U を考える。Δ_M が準コンパクトなら I→U は有限型で、像は構成可能。しかし既約曲線上の無限な構成可能集合は非空開を含み、非可算個のk-点を持つので矛盾する。
 
 **非共鳴 locus E\ℤδ は Zariski開ではない。** それを開chartと見なさず、上の U 全体で一つの非共鳴点の同値類を調べる。
-
-## 4. 使う現行証明と一次資料
-
-| 入力 | 正本・確認するラベル |
-| --- | --- |
-| H2の有限型性・対角 | [論文B](../papers/nc-quadric-surface-moduli.tex)、thm:global-h2-smooth-finite-type とその依存証明 |
-| 標識の数値剛性・全標識・可算無限ファイバー | [marking_forgetting.tex](../papers/moduli/marking_forgetting.tex)：lem:forgetting-numerical-rigidity、lem:elliptic-two-reflections、thm:elliptic-marking-lattice-fiber、thm:generic-elliptic-unpointed-fiber |
-| 二つのfoundation | [foundation_stack.tex](../papers/moduli/foundation_stack.tex)：cor:two-intrinsic-foundations、prop:ruling-involution-mutation |
-| 族・1射・2射の規約 | [relative_definitions.tex](../papers/moduli/relative_definitions.tex)：def:relative-abelian-system、def:relative-h2、lem:relative-h2-flat-center |
-| 切片による別証明の相対入力 | [relative_cubic_families.tex](../papers/moduli/relative_cubic_families.tex)：thm:geometric-cubic-relative-effectivity。[relative_picard_roots.tex](../papers/moduli/relative_picard_roots.tex)：thm:relative-compatible-root、cor:finite-type-root-chart。[relative_cubic_noetherian.tex](../papers/moduli/relative_cubic_noetherian.tex)：thm:relative-geometric-cubic-noetherian |
-| 代数スタックの定義 | [Stacks Project, 026N](https://stacks.math.columbia.edu/tag/026N)：対角の準コンパクト性を定義に含めない流儀 |
-| Isom・対角の局所有限型性 | [Stacks Project, 04XQ](https://stacks.math.columbia.edu/tag/04XQ)：Lemmas 101.3.1、101.3.3 |
-| Chevalley | [Stacks Project, 0ECX](https://stacks.math.columbia.edu/tag/0ECX)：Theorem 67.29.2。Noetherian基底上で適用条件を確認 |
-| 準分離性 | [Stacks Project, 04YV](https://stacks.math.columbia.edu/tag/04YV)：対角の準コンパクト性・準分離性との関係 |
-| 無限群の商という反例 | [Stacks Project, 02Z0](https://stacks.math.columbia.edu/tag/02Z0)：Lemma 65.14.3、Example 65.14.8。[06E9](https://stacks.math.columbia.edu/tag/06E9)：有限型でも非準分離な A¹/ℤ |
-
-上のStacks資料は2026-11-25に内容を確認。番号だけに依存せずtagと主張を論文の文献に記す。既存の [references.bib](../papers/references.bib) と [文献ノート](literature.md) に統合し、重複entryは作らない。VdB2011のarXiv v3 Theorem 5.5.10と、OkawaKitamura2022OWRの既存announcementとの関係は現行の引用を一次資料で再照合する。未照合の詳細稿を入力にしない。
-
-## 5. 結論を過大にしないための確認
-
-- 「ℤが無限だから代数スタックは存在しない」「有限型の商は存在しない」と書かない。非捩れ平行移動の E/ℤ は準分離性を要求しなければ代数空間であり、E×_{E/ℤ}E≃∐_ℤ E から対角の非準コンパクト性が分かる。
-- 無限軌道、無限の安定化群、無限個のpointed同型類、2-fiberを区別する。E/ℤの例の安定化群は自明である。
-- 有限型atlasのk-点が可算かどうかを直接議論しない。必要なのは構成可能な同型類部分集合による分割である。
-- H2自身のcoarse moduli不存在、Cでのgood moduli存在、今回の無標識対象の対角の障害は別の主張である。GITの軌道閉包やS-equivalenceでexact同値を置き換えない。
-- 一つの滑らかな楕円例が障害を与えれば全体への結論には十分。torsion δ、η∈ℤδ、退化曲線、noncubicの全分類を追加の完了条件にしない。
-
-## 6. Cloud Codexの実行順序と完了条件
-
-1. U0–U2を独立に点検し、まず最短の主証明を閉じる。必要な既存入力の仮定・証明箇所・左右規約を監査する。別証明は理解を深める範囲で扱う。
-2. 論文Bの標識忘却節へ、一般障害補題、適用定理、定義の範囲、無限群商の反例を論理的な順に統合する。新しい独立論文や過去版の補遺を増やさない。完成後にabstract・Introduction・結論の記述を揃える。
-3. 証明済み部分と残る仮定を分ける。最終定理を「集合論的ファイバーが無限だから」で済ませず、一般補題の全仮定と同型判定の接続を閉じる。成立しなければ正確な障害・反例と最強の正しい主張を保存する。
-4. 一次文献・引用・ラベル・相互参照を点検し、変更したBをLuaLaTeXで組版する。A/Cは変更・依存が及ぶ範囲を確認する。一般の全計算suiteや無関係なCの全面再監査を完了の前提にしない。
-5. 研究方針・ノート・README・必要な文献を現在の状態に揃えて通常commitでmainへ保存し、その実際の結果からresearch-hubを更新する。15分を目安とする途中保存、並行変更保持、Actions不使用等はAGENTS.mdに従う。
-6. 最終報告では、得た定理と仮定、依存証明の点検範囲、新規性の確認範囲、組版、対象repo保存、hub更新を別々に報告する。計画を書いただけ、一般補題を書いただけではこの研究課題の完成としない。
-
-**今回の設定作業の状態：** 優先順位と論証案を整備した段階。公表原稿への新定理の追加、依存証明の包括的検証、LuaLaTeX再組版は未実施。

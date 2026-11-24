@@ -1,5 +1,11 @@
 # 非可換 quadric 分類：現行文献比較
 
+## Bの無標識分類射と対角（2026-11-25確認）
+
+[Stacks Project 026N](https://stacks.math.columbia.edu/tag/026N) の代数スタックの定義は非準コンパクト対角を許す。[04XQ](https://stacks.math.columbia.edu/tag/04XQ) Lemmas 101.3.1, 3 のIsom・対角の局所有限型性と、[0ECX](https://stacks.math.columbia.edu/tag/0ECX) の準コンパクト・局所有限表示射についてのChevalleyを確認した。有限型atlasがNoetherianであることが両者をつなぐ。[04YV](https://stacks.math.columbia.edu/tag/04YV)の準分離性には対角の準コンパクト性が必要。[02Z0](https://stacks.math.columbia.edu/tag/02Z0) Lemma 65.14.3 の自由な離散群作用の商と、[06E9](https://stacks.math.columbia.edu/tag/06E9) の有限型非準分離な整数平行移動商を照合した。
+
+Van den Bergh [arXiv v3](https://arxiv.org/pdf/0807.3753v3) Theorem 5.5.10 は添字を保持する cubic 代数と許容・linear四つ組等の同型による分類。Okawa（Kitamuraとの共同研究）[Oberwolfach Report 23/2022](https://doi.org/10.4171/OWR/2022/23), pp. 1271–1273 の Theorems 1, 3 は無標識 qgr 同値の二面体群軌道と、rank one torsion-free かつ自己Euler数1のline bundleを扱う。同報告では詳細稿は当時準備中。Bでは内在的な二つのfoundationから非共鳴楕円型の計数を証明し、幾何点でその同値を検出する任意の分類射に対角の障害を導いた。これらの照合は網羅的な新規性調査ではない。
+
 ## 二対称形式pencilの不変式定理（Cの明示good moduliの入力）
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
