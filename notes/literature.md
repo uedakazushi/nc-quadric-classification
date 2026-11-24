@@ -1,5 +1,11 @@
 # 非可換 quadric 分類：現行文献比較
 
+## Cの周期標識、幾何復元、負巡回枠（2026-11-25確認）
+
+- Stacks Project §59.69 は滑らかな射影曲線上の次数列と $n$ が可逆なときの Jacobian の $n$ 捩れを与える。Lemma 37.4.1 の平方零肥厚の単元完全列はアフィン上で Picard 群が変わらないことを与える。C の一つの fppf 被覆での周期化判定には、さらに全整数の差に共通の多切断の次数と補集合の有限個の因子を使う。[Tag 03RN](https://stacks.math.columbia.edu/tag/03RN)・[Tag 0C6R](https://stacks.math.columbia.edu/tag/0C6R)
+- 相対有効 Cartier 因子の任意の引戻しには、閉部分が基底上平坦であることが効く。C の比較は体上の幾何的 cubic 分類に加え、行列式の零点に含まれる既知の平坦曲線から、その包含が非被約底上でも等号となることを確認する。[Stacks §31.19](https://stacks.math.columbia.edu/tag/056P)・[Van den Bergh, Theorem 5.5.10](https://arxiv.org/abs/0807.3753v3)
+- Keller, Propositions 3.7, 4.2, 6.6, 6.8 の入力はそれぞれ準自由道模型、Morita functor、双対と Casimir の具体模型、関係次数が −1 のときの Ginzburg 比較である。訂正 Theorem 1.1 の証明 pp. 2–3 は非変形 completion の正の tensor 次数で対角の恒等を reduced cyclic 類に移す。C の二 mass の変換に対する逆双対の一致、負巡回枠を固定 Jacobian で比較する際の単元の向きは C の鎖計算による。[Keller](https://arxiv.org/pdf/0908.3499)・[訂正](https://arxiv.org/pdf/1809.01126)
+
 ## Bの相対理論の監査（2026-11-25確認）
 
 - De Deken–Lowen の Theorem 5.13(1)–(4) は平坦な Grothendieck 変形における helix の持上げを与える。(4) の前向き Hom の平坦性を各 Artin 商で確認して使う。Theorem 5.15 は所定の生成条件の下で Abel 変形を有限窓に移す。B の平方根・AS4 被覆の有限型効果性は B 内の別の証明に依存する。[刊行版 pp. 501–504](https://ems.press/content/serial-article-files/30497)
@@ -26,7 +32,7 @@ Van den Bergh [arXiv v3](https://arxiv.org/pdf/0807.3753v3) Theorem 5.5.10 は�
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-各項目に資料確認日を記す。2026-11-25（日本時間）、v2.14。現行三論文A/B/Cに対応する一次資料比較。
+各項目に資料確認日を記す。2026-11-25（日本時間）、v2.15。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## C v4.68の全相対比較で使う一次文献

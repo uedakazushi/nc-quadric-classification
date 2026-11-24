@@ -2,9 +2,11 @@
 
 O-marked 非可換二次曲面の分類、内在的モジュライ、AS/avatar/QPの比較。
 
-2026-11-25 / v1.81。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
+2026-11-25 / v1.82。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
 
 ## 到達点と次の課題
+
+C v4.69では、滑らかな連結射影曲線の冪零肥厚上で、指定AS族がfppf局所に四周期標識を持つ必要十分条件を得た。全整数の双対線束を被約曲線に制限した類が、Picard群の有限生成部分群を生成することである。条件が成立すれば一つの有限Zariski開被覆で足りる。[周期化の系と反例](papers/quiver-avatar/as10_mutation_classification.tex)・[Cの指定四項目の点検](notes/research_notes.md#論文cの相対比較の点検)。
 
 B v0.43では、五頂点の bar 解消から非有界導来局所化の核を決定し、非被約基底上の指定 pointed 同型の持上げを反Serre環の二次関係から判定した。相対定義から有限型 smooth atlas、一致類の形式対までの[公表前内部監査](notes/research_notes.md#論文bの内在的相対理論の点検)を完了した。
 
@@ -20,7 +22,7 @@ B v0.43では、五頂点の bar 解消から非有界導来局所化の核を�
 | [B — nc-quadric-surface-moduli.tex](papers/nc-quadric-surface-moduli.tex) | 内在的相対H2の代数性・smooth性・境界・慣性・good/coarse moduli・形式対。楕円型の標識忘却と無標識モジュライの対角の障害。分割節は papers/moduli/。 |
 | [C — nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) | 指定AS/avatar/8・10・12矢QPの相対分類と比較、全H2のgood moduli、忘却射・fiber、spectral境界。分割節は papers/quiver-avatar/。 |
 
-Aの体上分類の公表前内部監査F6を2026-11-25に完了した。Bの指定七項目の点検記録は同日付。次はCの公表前監査・一次資料比較を進める。Bの主結果、CのS1–S5は原稿上証明されている。Cの指定範囲のS6点検を2026-11-24に記録した。全数学的独立監査、網羅的新規性、外部査読、形式証明は別状態である。正確な仮定、既知結果との関係、未解決の核心は研究方針・論文を参照する。CのMorita比較は指定cotangent表示群oidに限る。比較やCY構造の一般化は完了条件に含めない。幾何点分類と相対stack、good moduliとcoarse moduliを区別する。
+Aの体上分類の公表前内部監査F6を2026-11-25に完了した。Bの指定七項目の点検記録は同日付。Cの指定四項目の内部監査と一次資料照合を完了した。次は三稿の導入で先行結果との関係を明示し、公表用の編集を進める。Bの主結果、CのS1–S5は原稿上証明されている。Cの指定範囲のS6点検を2026-11-24に記録した。全数学的独立監査、網羅的新規性、外部査読、形式証明は別状態である。正確な仮定、既知結果との関係、未解決の核心は研究方針・論文を参照する。CのMorita比較は指定cotangent表示群oidに限る。比較やCY構造の一般化は完了条件に含めない。幾何点分類と相対stack、good moduliとcoarse moduliを区別する。
 
 ## 現行資料
 

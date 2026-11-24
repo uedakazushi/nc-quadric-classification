@@ -1,6 +1,21 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-25 / v1.78（A v1.70、B v0.43、C v4.68）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-25 / v1.79（A v1.70、B v0.43、C v4.69）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 論文Cの相対比較の点検
+
+C v4.69（2026-11-25）。既存の S6 の点検に加え、研究方針が指定した四項目を、同型の向き、許す基底、比較に必要な表示の順に再検査した。
+
+| 対象 | 確認した仮定と証明 |
+|---|---|
+| 全整数の線束と四周期 | 四項窓の逆Serre移動に $L_i^\vee$ を掛けるため、次窓の Hom の係数は $L_i L_j^\vee$ である。忘却の2-fiberは窓同型と全 $L_i\to L_{i+4}$ の同型層の積。滑らかな連結射影曲線の冪零肥厚では、一般点の一つの有限平坦多切断から、すべての差に共通のノルム次数を得る。被約曲線の補集合の因子群と Jacobian の有限捩れを使うと、被約 Picard 群内の有限生成性が局所四周期化と同値になる。分裂した二重楕円曲線上の $2^{-i}c$ は、元の Picard 群での有限生成性が必要でない例を与える。[全整数復元と局所四周期化](../papers/quiver-avatar/as10_mutation_classification.tex) |
+| 固定 Jacobian 上の負巡回枠 | 指定 AS 適合で標準射が擬同型となる場合を扱う。重み四の第三 Hochschild 鎖の四頂点係数は、重み一の矢の単射性により等しい。上に鎖がなく、この対角線が任意底変更後も階数一である。負巡回への比較は有限切断の塔で検査できる。$W\mapsto aW$ の dg 写像は raw 生成元を $a^{-1}$ 倍して送るが、同じ Jacobian で新しい枠を古い枠で表す係数は $a$ である。$a=1+\epsilon$ の計算で向きを区別した。[表示と枠の正規化](../papers/quiver-avatar/qp_presentations.tex) |
+| 幾何 avatar の復元 | 向き付き二次式の曲線開では二つの二次式の交わりと四因子の評価が標識を回収する。冪零 mass 近傍では射影束上の行列の可逆二次 minor から表現スキームが行列式の零点になる。曲線型では元の平坦因子の包含のイデアルを剰余体へ tensor して比較する。古典閉層では第一頂点に基底線束が残る。$\mathbb P^1$ 基底での第一頂点の捩れは Hom 束の行列式の次数を2だけ変える。無標識の基底線束を落とした比較には頂点スカラーの剛体化が必要である。[向き付き比較](../papers/quiver-avatar/relative_square_foundation_stack.tex)・[表現スキームと頂点線束](../papers/quiver-avatar/avatar_charts.tex) |
+| 二 mass の cotangent 表示 | 有限道と短・長関係の指定 dg 持上げ、mass ゲージ、関係の持上げの変更、枠変更が比較の射である。関係の三角行列の逆双対から戻り矢の混合項が得られ、合成は Fox 微分の連鎖律に従う。有限の射影対角解消の恒等を増大に移し、正の tensor 次数の reduced 模型で一文字を切ると raw のループ和と同じ Connes 像を得る。負巡回比較は各有限切断の擬同型と全射塔の導来逆極限で確認した。非平坦な tensor と逆極限の交換を必要としない。[指定群oidとCasimir比較](../papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) |
+
+相対 AS/avatar 境界、cotangent 比較を含む厳密計算と三稿の参照検査を実行した。論文Cは LuaLaTeX で全412頁を生成し、最終ログと SyncTeX を確認した。旧字体指定635箇所を更新する前後で、全頁を長辺1050画素のグレースケール画像に変換した結果がバイト単位で一致した。
+
+この内部監査は指定された四項目に限る。全 raw 同型の cotangent 化、一般の CY 構造への拡張、外部査読、新規性の網羅的な調査は対象外である。[照合した一次資料](literature.md)
 
 ## 論文Aの体上分類の点検
 
@@ -1465,7 +1480,7 @@ Gm⁴の中心スカラーは頂点共役としてpointed恒等となり、
 片側・交点の二捩れ特殊座での局所慣性と粗分岐に加え、j特殊値の二cubic開でのCM障害除去と一cubic境界fiber一点・A4例外を解決。点曲線側のnoncubic相対復元とsmooth spectralのgerbe比較は証明済みであり、自然なspectral射の境界標的・全fiberは証明済みであり、次は一般avatar族のpointed認識と全AS/QPの比較を調べる。粗分岐とstack的étale性の区別を保つ。
 `lem:elliptic-two-reflections` と
 `cor:two-intrinsic-foundations` の相対化が最も具体的な手掛かり。
-Bの相対同値と効果性を含む公表前監査は研究方針の次の課題である。
+Bの相対同値と効果性に関する点検範囲は[相対理論の監査](#論文bの内在的相対理論の点検)に記載する。
 
 ## 一致類の全慣性・AHR形式対・局所good moduliの二次的性質
 
