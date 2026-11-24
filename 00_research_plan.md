@@ -1,6 +1,6 @@
 # 研究方針：O-marked 非可換二次曲面
 
-2026-11-24 / v1.76。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
+2026-11-25 / v1.77。GitHub main が正本。再開時には本書、AGENTS.md、必要な論文・研究ノートを読む。
 
 ## 現在の目標と達成基準
 
@@ -14,7 +14,7 @@
 |---|---|---|
 | [A](papers/nc-quadric-surface.tex) v1.69 | 標数零代数閉体上の強いH2の全pointed exact分類。cubic/noncubicの全被覆、適合Serre根・AS4被覆、構成・有限同値判定を原稿で証明。F1–F5到達。 | F6：全証明の独立公表前監査、先行研究、新名での組版。 |
 | [B](papers/nc-quadric-surface-moduli.tex) v0.41 | 内在的H2の有限型代数性・smooth既約性、被約noncubic境界の余次元2・smooth性、二形式商と相対同値、慣性・境界good moduli、DM開の任意底変更と両立するcoarse moduli、全H2のcoarse space不存在と一致類の形式対を原稿で証明。 | 独立公表前監査。X_asの局所閉認識や任意基底での素朴なAbel条件は別問題。 |
-| [C](papers/nc-quadric-surface-avatar.tex) v4.68 | 指定AS分解型・幾何avatar・8/10/12重み付きQPの相対比較、全標準頂点のH2認識、表示慣性・剛体化・fiber、周期・ruling/mutation、全H2の準射影good moduli、spectral比較と境界障害。S1–S5の原稿上の証明と指定範囲S6監査を記録。 | 一般raw右同値に対するcotangent Morita比較の拡張、任意のCY類の高次降下、全比較の網羅的外部文献監査等は別課題。負巡回正規化・周期線束の積表示を含む主定理の仮定を公表前に再点検。 |
+| [C](papers/nc-quadric-surface-avatar.tex) v4.68 | 指定AS分解型・幾何avatar・8/10/12重み付きQPの相対比較、全標準頂点のH2認識、表示慣性・剛体化・fiber、周期・ruling/mutation、全H2の準射影good moduli、spectral比較と境界障害。S1–S5の原稿上の証明と指定範囲S6監査を記録。 | 全比較の網羅的外部文献監査と既存定理の独立点検。負巡回正規化・周期線束の積表示を含む主定理の仮定を公表前に再点検。 |
 
 Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比較を担当する。BはAの分類を引用し、CはA/Bの結果を必要に応じて入力とする。A/Bの主要証明がC固有の主定理に依存するとはしない。証明の正本は各原稿、補助知識と検証の範囲は[研究ノート](notes/research_notes.md)、一次資料と新規性比較は[文献ノート](notes/literature.md)。
 
@@ -33,9 +33,11 @@ Aは体上の分類、Bは内在的相対理論、Cは表示・AS・avatarの比
 
 ## 次の一手（優先順）
 
+研究の射程は現行の三稿の定理に固定し、既存成果の独立監査・訂正・文献比較・公表用編集に集中する。比較定理は指定cotangent表示群oid、CY構造は本文で証明した範囲に限る。これらの一般化は研究計画・完了条件に含めない。
+
 1. Aの公表前独立監査を行う。まず [分類主定理の節](papers/sections/classification.tex) の構成・回復・必要十分同値判定の依存を確認し、normal helix、cubic被覆、全四つ組の退化型のSerre平方根・AS4 hull、noncubic同時untwist、GL4反復の停止へ進む。F1–F5の原稿上の到達を無条件な外部検証済みとしない。
 2. Bの代数性・境界同値の証明を独立監査する。相対定義、five-window tails、Noetherian貼合せ、Artin持上げとAS4被覆の有限型効果性、smooth atlas、非被約底と全Isom、AHR形式対の順で確認する。X_asの局所閉条件は別の残問題として保持。
-3. Cの公表前監査・文献比較を継続する。特に [QP表示](papers/quiver-avatar/qp_presentations.tex) の固定Jacobian fiber・負巡回正規化、[AS分類](papers/quiver-avatar/as10_mutation_classification.tex) の全整数線束の同時テンソル・周期標識の正規化と冗長性、[幾何avatar](papers/quiver-avatar/avatar_charts.tex) の非平坦古典点と相対復元、[二mass比較](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) のMorita比較・CY類の降下範囲を点検する。誤りがあれば本文・依存先・要約を同時に直す。指定型の分類と無条件の全raw比較を同一視しない。
+3. Cの公表前監査・文献比較を継続する。特に [QP表示](papers/quiver-avatar/qp_presentations.tex) の固定Jacobian fiber・負巡回正規化、[AS分類](papers/quiver-avatar/as10_mutation_classification.tex) の全整数線束の同時テンソル・周期標識の正規化と冗長性、[幾何avatar](papers/quiver-avatar/avatar_charts.tex) の非平坦古典点と相対復元、[二mass比較](papers/quiver-avatar/cubic_qp_foundation_groupoid.tex) の既存のcotangent Morita比較とCY構造の証明・適用仮定を点検する。誤りがあれば本文・依存先・要約を同時に直す。指定型の分類と無条件の全raw比較を同一視しない。
 4. Van den Bergh、Okawa–Ueda、Belmans、Mori–Nyman、Mori–Ueyama、Kitamura–Okawa等との比較を明示して三稿の公表用編集を行い、三稿を個別に組版・参照確認する。その後、全平方根・ambientの忘却、偏極認識、関連するcategorical Fano indexやcubicのモジュライ問題へ展開する。
 
 ## 再開と検証
