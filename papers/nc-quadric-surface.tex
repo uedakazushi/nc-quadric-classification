@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-22 / v1.69
+% 日本語 LuaLaTeX。2026-11-25 / v1.70
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月22日\quad v1.69（先行研究と分類の境界を整理）}
+\date{2026年11月25日\quad v1.70}
 
 \begin{document}
 \maketitle
@@ -62,7 +62,7 @@ $\OO$ は Gabriel--Krull 商で rank-one torsion-free exceptional とし、
 体上の全対象は、linear データと、被約・非被約を含む
 Van den Bergh 許容四つ組から構成される cubic 領域、
 および中央二重平方表示を持つ noncubic 領域に分かれる。
-前者では四生成・七二次関係の有限代数的判定によって、
+前者では四生成・七二次関係に対する二つの可逆行列の存在によって、
 選んだ平方根を忘れた pointed exact 同値を区別する。
 後者は $\PP^1$ 上の二つの被約二点集合の非順序対の
 同時射影同値で分類できる。全退化型を含み、
@@ -106,6 +106,10 @@ cubic/noncubic のいずれかのデータを回復する。
 その際、選択した Serre 平方根、helix foundation や ambient を
 最終的な同値関係に含めず、四生成環の二次関係と根対配置によって
 pointed exact 同値を判定する。
+特に cubic 側では、同値が反 Serre 関手を移すことから、偶数・奇数辺に
+一つずつの行列を選んで全ての関係を検査できる
+（系~\ref{cor:two-matrix-pointed-equivalence}）。
+例~\ref{ex:two-matrix-segre} は二行列を等しいと要求すると見落とす同値を与える。
 幾何的四つ組の同型や通常の Zhang twist と同一視しない。
 既知の cubic $\mathbb Z$-algebra の分類は
 Van den Bergh \cite{VdB2011} を入力とするが、
@@ -120,9 +124,9 @@ cubic/noncubic 族の相対効果性、framed 実現、
 被約noncubic境界の群商・慣性・good/coarse moduli と形式局所商は
 別稿 \cite{QuadricModuli2026} で扱う。
 体上の分類だけから非被約基底の相対結論は従わない。
-本稿の分類の定理と補助結果は20の分類用分割節にまとめた。
+本稿の分類の定理と補助結果は後続の各節にまとめた。
 別稿の相対結果は分類主定理の証明には用いず、背景・後続問題として引用する。
-別稿の数学的な独立監査と組版は未完了である。
+別稿Bでは無標識の分類射の標的に対する対角の障害も扱う。
 
 \subsection{先行研究と本稿の範囲}
 

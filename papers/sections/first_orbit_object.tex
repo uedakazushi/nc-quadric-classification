@@ -169,3 +169,60 @@ $C_0=G$ からの帰納法により、全ての $C_n$ は空集合または
 各像と共通部分の根基イデアルを求めればよい。
 根基の一致および全環になるかどうかを比較すると停止と非空性を判定できる。
 \end{proof}
+
+\begin{corollary}[二つの行列による pointed 同値判定]
+\label{cor:two-matrix-pointed-equivalence}
+前命題の仮定の下で、pointed exact 同値が存在することは
+\[
+ \exists\,g,h\in\GL_4(k),\qquad
+ (g\otimes h)K=K',\qquad(h\otimes g)K=K'
+\]
+と同値である。
+\end{corollary}
+\begin{proof}
+pointed exact 同値 $F$ を取り、両側の適合根を $s,s'$、Serre 関手を $S,S'$ とする。
+$D^b(F)$ は Serre 双対を移すので、表現対象の一意性から自然同型
+$D^b(F)S\simeq S'D^b(F)$ を得る。$s^{-2}\simeq S[-2]$ と
+$(s')^{-2}\simeq S'[-2]$ を使い、heart に制限して
+$\alpha:F s^{-2}\xrightarrow{\sim}(s')^{-2}F$ を一つ固定する。
+$P_i=s^{-i}\OO,\ P'_i=(s')^{-i}\OO'$ と置く。pointing と
+命題~\ref{prop:first-orbit-object} から $u_0:F P_0\simeq P'_0$ と
+$u_{-1}:F P_{-1}\simeq P'_{-1}$ を選べる。
+各偶奇の列において
+\[
+ u_{i+2}=(s')^{-2}(u_i)\circ\alpha_{P_i}
+\]
+で正負両方向へ延長する。逆向きにも $(s')^{-2}$ は全忠実なので一意に延長できる。
+
+$a\in B_1$ に対し $a_i=s^{-(i+1)}(a):P_{i+1}\to P_i$ と書き、
+$a'_i$ も $B'_1$ に対して同様に定める。一次成分の同型 $g_i$ は
+$(g_i a)'_i=u_iF(a_i)u_{i+1}^{-1}$ で与えられる。$\alpha$ の自然性から
+\[
+ u_{i+2}F(a_{i+2})u_{i+3}^{-1}
+   =(s')^{-2}\bigl(u_iF(a_i)u_{i+1}^{-1}\bigr)
+   =(g_i a)'_{i+2}.
+\]
+従って $g_{i+2}=g_i$ である。右加群規約では
+$a_i b_{i+1}=s^{-(i+2)}(s(a)\circ b)$ なので、
+二段の関係を保つ条件は順に $(g_0\otimes g_1)K=K'$ と
+$(g_1\otimes g_0)K=K'$ となる。
+逆に解 $(g,h)$ から偶数辺に $g$、奇数辺に $h$ を置けば全ての二次関係を保つ。
+逆行列も逆向きの関係を保つので、添字付き環の同型となり、
+前命題の tails 構成で pointed exact 同値を得る。
+$\alpha$ は存在証明のための選択であり、根を保つ同値を仮定する必要はない。
+\end{proof}
+
+\begin{example}[二行列を一行列に制限できない例]\label{ex:two-matrix-segre}
+Segre 環 $B=k[x_{00},x_{01},x_{10},x_{11}]/(\det x)$ で、第一行の符号を変える
+次数付き対合 $\gamma$ を取る。右 twist $B'=B^\gamma$ の積を
+$a\star b=a\gamma^{\deg a}(b)$ とすると $K'=(1\otimes\gamma)K$ である。
+$\gamma\otimes\gamma$ は $K$ を保つので $(1,\gamma)$ は上の二条件を満たす。
+両辺とも適合表示である。実際、$\gamma$ を四変数多項式環へ同じ対合として
+持ち上げると、twist 後も型 $(1,4,6,4,1)$ の AS 正則被覆を持ち、
+$\det x$ の直線は安定なので正則正規二次切断を与える。
+右加群の twist 同値は自由加群を自由加群に送り、$\gamma^2=1$ より
+二重シフトと自然に可換する（右作用 $m\star b=m\gamma^{\deg m}(b)$ を比較すればよい）。
+ゆえに通常シフトの平方は両側で反 Serre 移動となる。
+一方、$x_{00}\star x_{10}=x_{00}x_{10}=-x_{10}\star x_{00}\ne0$ である。
+従って可換な $B$ から $B'$ への次数付き環同型はなく、$g=h$ の解は存在しない。
+\end{example}

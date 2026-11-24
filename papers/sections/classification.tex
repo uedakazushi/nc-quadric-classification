@@ -75,20 +75,16 @@ $G=\GL_4(k)$ と、方程式で与えられる閉部分集合
 \[
  E(K,K')=\{(g,h)\in G\times G\mid(g\otimes h)K=K'\}
 \]
-を使い、次の反復を定める。
-\begin{equation}
- \begin{split}
- C_0&=G,\\
- C_{n+1}&=\operatorname{pr}_1(E\cap(G\times C_n))
-       \cap\operatorname{pr}_2(E\cap(C_n\times G)).
- \end{split}
- \label{eq:classification-finite-relation}
+を取る。次の一組の条件で $U\sim_{\mathrm{cub}}U'$ を定める。
+\begin{equation}\label{eq:classification-finite-relation}
+ \exists\,(g,h)\in E(K,K')\quad\text{such that}\quad(h,g)\in E(K,K').
 \end{equation}
-命題~\ref{prop:first-orbit-finite-equivalence} により、この下降列は有限段で安定する。
-安定集合が非空のとき $U\sim_{\mathrm{cub}}U'$ と定める。
-行列式を可逆とした座標環で、射影の消去と根基イデアルの比較だけを用いる判定である。
-標数零の抽象的な代数閉体上では有限の代数的判定を意味し、
-機械上で実行するには係数体が有効に与えられていることを前提とする。
+系~\ref{cor:two-matrix-pointed-equivalence} により二つの行列で足りる。
+$K$ の基底の像を $(V'\otimes V')/K'$ に射影すれば、各条件は
+行列成分の双線形方程式となる。両行列式の積を可逆にし、
+$\dim K=\dim K'=7$ を用いれば包含が等号を与える。
+従って消去を反復せず、一つの有限な多項式系の可解性で判定できる。
+実効的な係数体上では、逆元変数を加えたイデアルが単位イデアルかを調べればよい。
 基底、束の表示、二周期 $\beta$ の選び方によらないことは、次の定理で示す。
 
 \subsection{noncubic データと主定理}
@@ -144,8 +140,8 @@ linear データまたは定義~\ref{def:classification-admissible} の四つ組
 これで全被覆と二領域の非交差を得た。
 
 cubic 側の各 $B_U$ は、構成した同じ pointed 圏の適合切断環である。
-命題~\ref{prop:first-orbit-finite-equivalence} は二つの適合切断環について、
-反復~\eqref{eq:classification-finite-relation} の非空性が
+系~\ref{cor:two-matrix-pointed-equivalence} は二つの適合切断環について、
+条件~\eqref{eq:classification-finite-relation} が
 pointed exact 同値と必要十分であることを示す。
 従って $\sim_{\mathrm{cub}}$ は同値関係であり、写像は単射である。
 一つの四つ組から異なる基底・束同型・適合二周期を選んでも、
