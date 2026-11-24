@@ -1,6 +1,6 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-25 / v1.77（A v1.70、B v0.42、C v4.68）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-25 / v1.78（A v1.70、B v0.43、C v4.68）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
 
 ## 論文Aの体上分類の点検
 
@@ -30,6 +30,22 @@
 再現には `computations/verify_quadric.py`（Segre twistの二通りの関係空間と非零交換子）、`verify_reducible_quadruples.py`（退化型の両偶奇と冪零方向）、`verify_pencil_tangent.py`（有理点での階数8・10）を用いた。三稿の参照検査と `python3 scripts/check.py math` はいずれもPASS。現行名のAをLuaLaTeXで組版し、79頁のPDFとSyncTeX、変更箇所を含むpp.3, 7, 16, 28, 42, 59, 62, 74–75の表示を点検した。
 
 **F6の到達範囲。** Aの体上分類について、全領域での構成・回復・同値判定から依存証明を逆に点検し、補助結果、主要な先行定理の仮定、有限計算、現行名での組版を確認した。これを公表前の内部監査の完了とする。外部論文の既知定理を入力として用いており、それらの全証明の再証明、網羅的な新規性の確定、第三者査読、形式証明は行っていない。B/Cの相対族や全Isomについては別稿ごとの監査で扱う。
+
+## 論文Bの内在的相対理論の点検
+
+B v0.43 の公表前内部監査（2026-11-25）。標数零の代数閉体上の局所有限型 site を対象に、有限型 atlas と一致類の形式対から次の入力へ遡った。
+
+| 入力 | 点検した仮定・結論 |
+|---|---|
+| 相対定義と反Serre再構成 | 非平坦な引戻しは加群対象では右完全、compact 圏では導来基底変更を取る。RQ3–4 の同じ局所根に対して偶数語の関係を組の内側と境で分けると、任意の底変更と可換する階数56の関係部分束を得る。正階数の軌道 Hom の忠実性と AZ 全射から、標識上恒等の二自己同型は消える。[定義](../papers/moduli/relative_definitions.tex)・[再構成](../papers/moduli/relative_recognition.tex) |
+| 五頂点と非有界 tails | 有限窓を誘導した非極小 bar は頂点別に分裂完全。終点の係数複体の双対は可逆加群を次数3に置いたものなので、連続四項から両方向に生成できる。非有界複体を有限な標準切断の homotopy colimit で得るとした旧証明には、下側打切りの遷移の正当化がなかった。新証明は単純加群の右直交で有限 truncation からの導来 Hom を取り、射影次元の一様な上界3と torsion 上の Ext の余極限消滅から各頂点の cohomology を検出する。[補題と証明](../papers/moduli/noncubic_local_tails.tex) |
+| Noetherian 貼合せ | 中央イデアルの随伴次数環への多項式環からの全射、固定内部次数での係数の収束、完備化と有限個の主開局所化の積の忠実平坦性を順に使う。境界では二行列式を実際に零とした商環上の正規形が必要であり、被約点だけの正規形では足りない。[貼合せ](../papers/moduli/relative_noetherian_patching.tex)・[二行列式の閉部分](../papers/moduli/noncubic_finite_type.tex) |
+| Artin 持上げと有限型効果性 | small extension で双加群の曲率が合成で加法的になる。根の二乗に canonical lift があるので障害は反不変、良い根の HH² 作用と標数零によって消える。近恒等群での一意な平方根が指定還元を保って平方関係を補正する。有限型化には別の入力がある。非線型 cubic の Picard の二周期、可換点の étale 根、noncubic の Lagrangian 開の全幾何 fiber 認識を使う。最後の場合、中央二次元の交換子、双対商の次数0–5と Frobenius pairing を一つの近傍で制御して被覆を延長する。[根](../papers/moduli/artin_roots.tex)・[Picard](../papers/moduli/relative_picard_roots.tex)・[被覆](../papers/moduli/noncubic_finite_type.tex) |
+| smooth atlas | 指定された同型で四項窓と五つの Hom の基底を移し、helix の持上げ、単元の持上げ、étale 性で chart の点を延長する。閉 fiber での exact 性は Artin の有限冪零 filtration で heart に戻る。有限型 test との積は既にスキームで、Tag 02HY が適用できる。表示族の準コンパクト性と Jacobson 性が有限個の chart を与える。[指定同型の持上げ](../papers/moduli/quadric_smooth_atlas.tex)・[二つの heart](../papers/moduli/cubic_smooth_atlas.tex)・[大域化](../papers/moduli/h2_smooth_atlas.tex) |
+| 非被約底上の全 Isom | 可逆な行列を射影化し、二次関係を商束に送った残差を零とする。両側が部分束であることから包含は等号となり、次数スカラーは AZ 再構成で消える。平方零拡大で指定同型を延長できる条件は残差が線形化の像に入ること。Segre の単項式を一つだけ無限小に拡大する行列で、閉点だけの検査が無効であることを確かめた。[系と双対数の例](../papers/moduli/relative_recognition.tex) |
+| 一致類の形式対 | 閉 gerbe、smooth ambient、affine 対角、線型簡約安定化群で AHR の共通 étale 近傍を取る。境界に沿う同変パラメータは affine slice の座標環の不変イデアルから選べる。境界の正則性と Nakayama により二つが境界イデアルを生成する。トーラス不変式は $ac,x,y$、有限部分の交換と符号で $ac,(x+y)^2,(x-y)^2$ が残る。[形式対と不変式](../papers/moduli/noncubic_boundary_comparison.tex) |
+
+点検はこの七項目の証明と依存関係を対象とした。任意の Noetherian 基底での素朴な相対定義との同一視、$X_{\mathrm{as}}$ の局所閉性、第三者による査読・形式証明・網羅的新規性の確認は別課題である。[一次資料照合](literature.md)
 
 ## 無標識モジュライの対角の障害（B v0.42）
 

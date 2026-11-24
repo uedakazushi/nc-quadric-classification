@@ -40,8 +40,14 @@ compact 導来部分の二つの代表の比較は Serre 双対の一意性に�
 同じ議論と右規約の軌道積により
 $R\simeq(\mathcal B/(g))^{(2)}$。
 正則切断の完全列と $\mathcal B$ の Koszul 型から階数公式が従う。
-相対二次 Veronese の補題~\cite[相対二次 Veronese の補題]{QuadricIntrinsic2026}
-により二次提示と基底変更整合性が従う。
+切断環を $T_A(V)/(K)$ と書く。偶数長の語を二文字ずつ組にすると、
+関係 $K$ の挿入は組の内側か境をまたぐかの二通りである。
+前者で割ると $R_1=V^{\otimes2}/K$、後者の像
+$V\otimes K\otimes V\to R_1^{\otimes2}$ が残りの関係イデアルを生成する
+（体上では \cite[\texttt{prop:antiserre-quadratic}]{QuadricIntrinsic2026}）。
+従って $J$ は表示した乗法の核である。余核側の $R_2$ は局所自由なので
+$0\to J\to R_1^{\otimes2}\to R_2\to0$ は局所分裂し、
+任意の基底変更で同じ関係部分束を与える。
 
 分類論文の ample square 補題~\cite[ample square の補題]{QuadricIntrinsic2026} の証明は、
 有限局所自由な $B_1$ に対する評価射を用いれば $A$ 上でもそのまま成立する。
@@ -101,8 +107,50 @@ $\operatorname{GL}_9$ に持ち上がり、二次提示により全 graded 環�
 AZ 再構成はこれを pointed exact 同値へ送る。
 異なる lift の次数スカラーは graded 加群の各次数に scalar を掛ける自然同型で消える。
 標識上恒等のこの二射は前補題により一意なので、局所同値は降下する。
-同じ核計算により射の忠実性も成り立つ。
+逆構成で得た同値を自由加群のシフトとその間の射に制限すれば、
+次数移動との標準比較の下で、もとの graded 同型を回復する。
+反 Serre 関手からの比較との差は次数スカラーで、射影枠上では消える。
+逆の合成は軌道対象とその全ての射上で元の同値に一致し、
+AZ 表示の余核上にも一意に延長する。
 \end{proof}
+
+\begin{corollary}[関係部分束による指定同型の無限小判定]
+\label{cor:relative-pointed-isom-obstruction}
+二族の反 Serre 環に次数一の束 $U,U'$ と関係部分束 $J,J'$ を取る。
+局所的な射影枠の下で、全 pointed Isom は
+$\mathbf P(\mathcal Hom(U,U'))$（直線の規約）の可逆行列の開部分における
+方程式 $\pi'h^{\otimes2}|_J=0$ で表される。
+ここで $\pi':U'^{\otimes2}\to R'_2$ は商である。
+
+平方零拡大 $A'\to A$ の核を $I$ とし、両族を $A'$ 上に固定する。
+$A$ 上の指定同型の行列代表を $h$ とする。枠と代表を取った affine 局所で
+任意の行列持上げ $\widetilde h$ の方程式の残差は
+$\operatorname{Hom}(J,R'_2)\otimes_A I$ の元であり、その
+\[
+ D_h(v)=\pi'(h\otimes v+v\otimes h)|_J,\qquad
+ v\in\operatorname{Hom}(U,U')\otimes_A I
+\]
+の像を法とする類が零であることが、指定同型を持ち上げるための必要十分条件である。
+ここで右辺の束は $A$ 上に制限している。
+\end{corollary}
+\begin{proof}
+可逆な $h$ に対する方程式は $h^{\otimes2}J\subset J'$ を表す。
+両辺は周囲の束の同階数の直和因子であり、各剰余体上で包含は同型なので、
+行列式は単元となり基底上でも等しい。前命題によりこれが全 Isom である。
+方程式は $h$ について二次斉次で、普遍直線束の局所枠の変更と両立する。
+平方零拡大では残差が $I R'_{2,A'}=R'_{2,A}\otimes_A I$ に入り、
+$I J_{A'}$ を消す。持上げを $\widetilde h+v$ に替えたときの差は
+$I^2=0$ により厳密に $D_h(v)$ である。可逆性は還元で判定できる。
+局所枠の変更はこの方程式を移送し、$h$ の単元倍は残差をその単元の
+平方倍にするので、消滅判定は代表によらない。
+\end{proof}
+
+例えば可換曲面の $\mathcal O(2,2)$ の単項式基底を $z_{ij}$
+（各第二変数の指数が $i,j$）とする。双対数上で $z_{00}$ のみを
+$(1+\epsilon)z_{00}$ に移す射影行列は閉点で恒等だが、
+$z_{00}\otimes z_{20}-z_{10}\otimes z_{10}$ の像の積は
+$\epsilon z_{00}z_{20}\ne0$ となる。これは指定した行列が
+Isom に属さない例であり、閉点の恒等同型自体は恒等行列で持ち上がる。
 
 \begin{remark}[普遍環の次数別線束と認識条件]
 \label{rem:relative-h2-line-twist}
@@ -181,7 +229,7 @@ $\mathcal A_A\to\mathcal A$ は injective を保ち、
  D(\mathcal A_A)^c\simeq\operatorname{Perf}(\Lambda\otimes_kA).
 \]
 有限自由 foundation の相対 bar 解消
-（分類論文の相対 foundation の補題~\cite[相対 foundation の補題]{QuadricIntrinsic2026}）により、
+（補題~\ref{lem:foundation-relative-smooth-proper}）により、
 右辺は相対 smooth proper であり、任意の本節の基底変更と可換する。
 その対象は $T_A$ の有限 cones と直和因子から作られるので、
 左辺は $D^b(\mathcal C_U)$ に含まれる。

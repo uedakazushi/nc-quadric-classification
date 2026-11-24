@@ -2,9 +2,11 @@
 
 O-marked 非可換二次曲面の分類、内在的モジュライ、AS/avatar/QPの比較。
 
-2026-11-25 / v1.80。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
+2026-11-25 / v1.81。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
 
 ## 到達点と次の課題
+
+B v0.43では、五頂点の bar 解消から非有界導来局所化の核を決定し、非被約基底上の指定 pointed 同型の持上げを反Serre環の二次関係から判定した。相対定義から有限型 smooth atlas、一致類の形式対までの[公表前内部監査](notes/research_notes.md#論文bの内在的相対理論の点検)を完了した。
 
 論文B v0.42で、非可算な標数零代数閉体上、構造対象を忘れたAbel圏の線形exact同値を正確に分類する射の標的は準コンパクトな対角を持ち得ないことを証明した。一般の同型類ファイバーの濃度の命題と、非共鳴楕円型の標識付き同型類の計数を用いる。[証明本文](papers/moduli/marking_forgetting.tex)・[仮定と依存証明の点検範囲](notes/unmarked_moduli_obstruction.md)。
 
@@ -18,7 +20,7 @@ O-marked 非可換二次曲面の分類、内在的モジュライ、AS/avatar/Q
 | [B — nc-quadric-surface-moduli.tex](papers/nc-quadric-surface-moduli.tex) | 内在的相対H2の代数性・smooth性・境界・慣性・good/coarse moduli・形式対。楕円型の標識忘却と無標識モジュライの対角の障害。分割節は papers/moduli/。 |
 | [C — nc-quadric-surface-avatar.tex](papers/nc-quadric-surface-avatar.tex) | 指定AS/avatar/8・10・12矢QPの相対分類と比較、全H2のgood moduli、忘却射・fiber、spectral境界。分割節は papers/quiver-avatar/。 |
 
-Aの体上分類の公表前内部監査F6を2026-11-25に完了した。次はBの相対理論を点検する。Bの主結果、CのS1–S5は原稿上証明されている。Cの指定範囲のS6点検を2026-11-24に記録した。全数学的独立監査、網羅的新規性、外部査読、形式証明は別状態である。正確な仮定、既知結果との関係、未解決の核心は研究方針・論文を参照する。CのMorita比較は指定cotangent表示群oidに限る。B/Cの公表前監査を続ける。比較やCY構造の一般化は完了条件に含めない。幾何点分類と相対stack、good moduliとcoarse moduliを区別する。
+Aの体上分類の公表前内部監査F6を2026-11-25に完了した。Bの指定七項目の点検記録は同日付。次はCの公表前監査・一次資料比較を進める。Bの主結果、CのS1–S5は原稿上証明されている。Cの指定範囲のS6点検を2026-11-24に記録した。全数学的独立監査、網羅的新規性、外部査読、形式証明は別状態である。正確な仮定、既知結果との関係、未解決の核心は研究方針・論文を参照する。CのMorita比較は指定cotangent表示群oidに限る。比較やCY構造の一般化は完了条件に含めない。幾何点分類と相対stack、good moduliとcoarse moduliを区別する。
 
 ## 現行資料
 

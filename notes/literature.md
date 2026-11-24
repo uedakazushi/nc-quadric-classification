@@ -1,5 +1,11 @@
 # 非可換 quadric 分類：現行文献比較
 
+## Bの相対理論の監査（2026-11-25確認）
+
+- De Deken–Lowen の Theorem 5.13(1)–(4) は平坦な Grothendieck 変形における helix の持上げを与える。(4) の前向き Hom の平坦性を各 Artin 商で確認して使う。Theorem 5.15 は所定の生成条件の下で Abel 変形を有限窓に移す。B の平方根・AS4 被覆の有限型効果性は B 内の別の証明に依存する。[刊行版 pp. 501–504](https://ems.press/content/serial-article-files/30497)
+- Stacks Project, Lemma 37.12.2 の試験では small extension から基底への射が有限型である。B では任意の有限型 test との積が有限型スキームとなることを先に証明し、代数閉体上の閉点で指定同型を含む持上げを検査する。[Tag 02HY](https://stacks.math.columbia.edu/tag/02HY)
+- Alper–Hall–Rydh, Theorem 1.2 の cartesian square は法表現の商とその GIT 商の間にある。滑らかな閉点と線型簡約な安定化群を要し、affine 対角の下で slice から stack への射を affine に取れる。境界を同時に線型化する二つの座標は B が slice 上で構成する。[著者版 pp. 1–2](https://arxiv.org/abs/1504.06467)
+
 ## Aの分類主定理と二行列判定（2026-11-25確認）
 
 - Sierra, *G-algebras, twistings, and equivalences of graded categories*, Theorem 1.2, Corollary 1.3。一般のtwisting systemによるZhang twistと添字付き環の同型との対応が既知である。Aの系14.7では、pointed tails同値から第一軌道対象を回収し、反Serreの自然同型で同型の行列列を二周期に選ぶ。[著者版](https://arxiv.org/abs/math/0608791)・[刊行版](https://doi.org/10.1007/s10468-009-9193-y)
@@ -20,7 +26,7 @@ Van den Bergh [arXiv v3](https://arxiv.org/pdf/0807.3753v3) Theorem 5.5.10 は�
 
 Bhargava–Gross–Wang, *Arithmetic invariant theory II: Pure inner forms and obstructions to the existence of orbits*, in *Representations of Reductive Groups*, Progress in Mathematics **312** (2015), pp. 139–171, §4.2, DOI [10.1007/978-3-319-23443-4_5](https://doi.org/10.1007/978-3-319-23443-4_5), [著者版PDF](https://www.math.uwaterloo.ca/~x46wang/Papers/AIT2.pdf), arXiv:1310.7689。**一次PDFの第14頁（節4.2）を確認**：SL_n が二つの対称n×n形式に作用する不変式環は、二形式のdeterminant pencilの n+1 係数で自由に生成される。本研究でn=4を用いる。SO4上の直交第一基本定理で二つの4×4行列をGram二形式へ移し、common character χ0 の重量零条件を抽出して orderedの五生成・一関係と unorderedの四生成多項式環を得る。これは**先行文献にある不変式定理**と、Cでの**新しい適用（全H2の具体的半不変式環・中央chart）**を区別するための参照である。関連証明は [CのGram pencil節](../papers/quiver-avatar/global_h2_invariant_hull.tex)。
 
-各項目に資料確認日を記す。2026-11-25（日本時間）、v2.13。現行三論文A/B/Cに対応する一次資料比較。
+各項目に資料確認日を記す。2026-11-25（日本時間）、v2.14。現行三論文A/B/Cに対応する一次資料比較。
 以下で「確認」は記載箇所の本文・仮定の照合を意味し、外部論文の全証明を独立に再検証したという意味ではない。
 
 ## C v4.68の全相対比較で使う一次文献

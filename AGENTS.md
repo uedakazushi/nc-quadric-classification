@@ -1,10 +1,10 @@
 # 研究リポジトリの作業指示 — nc-quadric-surface
 
-2026-11-25 / v1.75。
+2026-11-25 / v1.76。
 
 ## 現行の研究と優先順位
 
-研究固有の目標・確実性・次の着手先は [00_research_plan.md](00_research_plan.md) を正本とし、本書に重複して書かない。A（体上分類）、B（内在的相対モジュライ）、C（指定AS/avatar/QP相対比較）の三論文体制を維持する。S1–S5の原稿上の証明と指定範囲S6の2026-11-24の点検を、全raw比較、形式証明、外部査読、新規性の確定と混同しない。無標識Abel圏を分類する標的の対角の非準コンパクト性は論文Bに統合した。[依存証明の点検記録](notes/unmarked_moduli_obstruction.md) と[Aの体上分類の公表前内部監査](notes/research_notes.md#論文aの体上分類の点検)を参照し、次は研究方針の優先順に従う。
+研究固有の目標・確実性・次の着手先は [00_research_plan.md](00_research_plan.md) を正本とし、本書に重複して書かない。A（体上分類）、B（内在的相対モジュライ）、C（指定AS/avatar/QP相対比較）の三論文体制を維持する。S1–S5の原稿上の証明と指定範囲S6の2026-11-24の点検を、全raw比較、形式証明、外部査読、新規性の確定と混同しない。無標識Abel圏を分類する標的の対角の非準コンパクト性は論文Bに統合した。[依存証明の点検記録](notes/unmarked_moduli_obstruction.md) ・[Aの体上分類の公表前内部監査](notes/research_notes.md#論文aの体上分類の点検)・[Bの相対理論の公表前内部監査](notes/research_notes.md#論文bの内在的相対理論の点検)を参照し、次は研究方針の優先順に従う。
 
 cotangent表示群oid上のMorita比較と本文で証明したCY構造の一般化を研究課題・完了条件に加えない。
 
@@ -14,7 +14,7 @@ cotangent表示群oid上のMorita比較と本文で証明したCY構造の一般
 
 - 全体の入口：[research-hub](https://github.com/uedakazushi/research-hub)。再開時に該当研究の概要、他研究との関係、再開先を確認する。
 - 最初に読む研究方針：`00_research_plan.md`。続いて本AGENTS.mdの適用される指示と `notes/research_notes.md`、必要な原稿・検証記録を確認する。
-- 別稿B：`papers/nc-quadric-surface-moduli.tex`。相対モジュライ・境界の現行証明本文を保持。数学的な独立公表前監査は継続。
+- 別稿B：`papers/nc-quadric-surface-moduli.tex`。相対モジュライ・境界の現行証明本文を保持。指定した七項目の公表前内部監査は研究ノートに記載。
 - 別稿C：`papers/nc-quadric-surface-avatar.tex`。八・十・十二本矢の表示モジュライ・avatar・内在的忘却を扱う。分割節は `papers/quiver-avatar/`。個別の `sources`・`build` には `--manuscript papers/nc-quadric-surface-avatar.tex` を付ける。
 - 主たる公表用原稿：`papers/nc-quadric-surface.tex`。リポジトリ直下からの相対パスであり、本文のある主原稿とする。節のソースを別ファイルから読み込んでもよい。独立した別論文には内容を表す名前を付け、役割をREADMEと研究方針に記す。
 - 本研究の現行ソース・入力・再現資産の正本はGitHubの `main`。研究以外の日常todoは別に管理する。

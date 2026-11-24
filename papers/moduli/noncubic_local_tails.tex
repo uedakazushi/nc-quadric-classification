@@ -179,9 +179,39 @@ $S_i\otimes_RM_i$ は $\operatorname{Loc}\{S_i\}$ に属する。
 $S_i$ は頂点 $i$ に $R$ を置く $R$-平坦加群なので、
 ここで通常 tensor と導来 tensor は一致する。
 filtered colimit の完全性から全 torsion 加群もこの localizing subcategory に属する。
-cohomology が torsion である任意の導来複体は、
-有限範囲の標準切断と、それらの homotopy colimit により回復できるため、
-同じ localizing subcategory に属する。
+
+非有界複体に対する逆の包含を示す。
+$\mathcal L=\operatorname{Loc}\{S_i\}$ と置く。
+生成元は前補題によって compact なので、compactly generated な
+$D(\operatorname{Gr}C)$ の局所化三角 $L\to X\to Y\to L[1]$
+を取れる。ここで $L\in\mathcal L$, $Y\in\mathcal L^\perp$ である。
+$\pi X=0$ なら $\pi L=0$ より $H^q(Y)$ も全て torsion である。
+この二条件から $Y=0$ を示せばよい。
+
+頂点 $i$ を固定し、$F_{i,n}=P_i/(P_i)_{\ge n}$（$n>i$）とする。
+有限 filtration の逐次商 $C_{il}\otimes_R S_l$ は有限 projective
+係数を持つので、$F_{i,n}\in\mathcal L$ であり、
+前補題と horseshoe により有限生成 projective による長さ三以下の解消を持つ。
+従って $\mathbf R\operatorname{Hom}_C(F_{i,n},Y)=0$ である。
+一方、各 torsion 加群 $N$ に対し
+\[
+ \varinjlim_n\operatorname{Ext}^p_C(F_{i,n},N)=
+ \begin{cases} N_i & p=0,\\0&p>0.\end{cases}
+\]
+実際、$N$ は有限個の斉次元で生成され上に有界な部分加群の
+filtered colimit で、各 Ext はこの colimit と可換する。
+$N_j=0$（$j\ge b$）なら $n\ge b$ のとき
+$(P_i)_{\ge n}$ を添字 $j\ge n$ の $P_j$ の直和で解消でき、
+この切断から $N$ への全 Ext は Hom も含めて消える。
+$P_i\to F_{i,n}$ の核の完全列から表示式を得る。
+
+各 $n$ で $\operatorname{Ext}^p_C(F_{i,n},H^qY)$ を第二項とする
+hyper-Ext スペクトル系列を取り、$n$ の filtered colimit を施す。
+解消の幅 $0\le p\le3$ が $n$ によらないので、各全次数の filtration
+は一様に有限であり、完全な colimit はその収束と両立する。
+極限の第二項には $p=0$ の $H^q(Y)_i$ だけが残るが、
+収束先は先の直交性で零である。従って全ての $i,q$ で $H^q(Y)_i=0$。
+これで $\ker\pi=\mathcal L$ が非有界複体についても従う。
 
 Gabriel 商 $\pi:\operatorname{Gr}C\to\operatorname{QGr}C$ は完全で、
 その右随伴 $\omega$ は fully faithful である。
