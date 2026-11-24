@@ -1,5 +1,5 @@
 % !TeX root = ../nc-quadric-surface-moduli.tex
-% 2026-11-21 / v1.39
+% 2026-11-25
 \section{構造対象の忘却と楕円型の有限・無限ファイバー}
 \label{sec:unpointed-elliptic-fiber}
 
@@ -8,8 +8,7 @@
 集合論的な忘却写像を考える。固定 $\cC$ でのこの写像のファイバーは、
 許容される $\OO$ の同型類を
 $\operatorname{Aut}^{\mathrm{ex}}(\cC)$ で割った集合である。
-固定 $\cC$ の上のスタックの \emph{2-fiber} はこの商ではなく、
-許容 $\OO$ の同型群oidであることに注意する。
+以下ではこの集合同士を比較する。射とその像の同型まで指定する \emph{2-fiber} の記述は要しない。
 
 \begin{lemma}[許容構造対象の数値類と一意性]
 \label{lem:forgetting-numerical-rigidity}
@@ -29,7 +28,13 @@ $\cC$ 内の Gabriel--Krull rank-one torsion-free exceptional 対象 $L$ は
 \end{lemma}
 \begin{proof}
 命題~\cite[\texttt{prop:first-orbit-object}]{QuadricIntrinsic2026} の Euler 形式の計算と
-$r=1$ という rank 条件を使う。
+Gabriel--Krull 商での長さを使う。実際、AZ 生成性から商圏の各対象は
+単純対象 $q(s^{-j}\OO)$ の有限直和の商なので有限長を持つ。
+その長さは $K_0(\cC)$ 上で加法的である。foundation $(\OO,X,M,Z)$ の
+$\OO,M=s\OO$ は商で長さ一、二つの ruling $X,Y$ も
+命題~\ref{prop:intrinsic-ruling-pair} の証明により長さ一である。
+評価列から $[Z]=2[M]-[Y]$ なので $Z$ も長さ一である。
+従ってこの長さは四つの基底元上で $Q$ の通常の rank と一致し、$L$ に対し $r=1$ となる。
 $\operatorname{ch}[L]=r+aH_1+bH_2+cH_1H_2$ と書くと
 \[
  1=\chi(L,L)=r^2+2rc-2ab=1+2c-2ab.
@@ -311,3 +316,135 @@ rank-one torsion-free line bundle の $\mathbb Z^2$ 分類を述べる。
 本節の証明はその未照合の全分類定理に依存させず、
 本稿の二つの foundation と楕円評価列から構成した。
 \end{remark}
+
+\subsection{無標識同値類を分類する射の対角}
+\label{subsec:unmarked-diagonal}
+
+\begin{lemma}[構成可能集合の可算分割]\label{lem:constructible-countable-partition}
+$k$ を非可算な代数閉体、$V$ を有限型 $k$-スキーム、$S\subset |V|$ を
+構成可能集合とする。$S(k)$ が高々可算個の構成可能集合 $S_i\subset S$ の
+非空な $k$-点集合 $S_i(k)$ の非交和なら、分割片は有限個である。
+\end{lemma}
+\begin{proof}
+まず、既約な有限型 $k$-スキーム $W$ の $k$-点は可算個の真閉集合では覆えない。
+被約化した非空アフィン開から Noether 正規化で有限全射
+$W^\circ\to\mathbb A^d_k$ を取る。真閉集合の $W^\circ$ との交わりの像は
+有限射の閉性と次元により真閉であり、全射の各閉点の上には $k$-点がある。
+従ってアフィン空間について示せばよい。$d=0$ は明らかである。
+$d>0$ なら、各真閉集合上で消える非零多項式を一つ選ぶ。
+超平面 $x_d=a$ への制限が零多項式となる $a$ は、因子 $x_d-a$ に
+対応するので各多項式につき有限個である。$k$ の非可算性により
+全ての禁止値を避けて $a$ を選べば、この超平面上の真閉集合の族に
+次元 $d-1$ の主張を適用できる。
+
+$S$ を有限個の既約局所閉集合に分割する。最大次元 $d$ の各部分 $W$ では、
+ある $S_i\cap W$ が稠密である。さもなければそれらの閉包が $W(k)$ を覆い、
+前段に反する。稠密な構成可能集合は非空開を含むので、各 $W$ で選んだ
+有限個の $S_i$ を丸ごと除いた残りは、空または次元 $<d$ の構成可能集合である。
+非交性により、未選択の各分割片の $k$-点は全て残る。次元帰納法で結論を得る。
+\end{proof}
+
+\begin{proposition}[同型類ファイバーの濃度]\label{prop:iso-fiber-cardinality}
+$k$ を非可算な代数閉体とする。$X$ は $k$ 上有限型の代数スタック、
+$Y$ は任意の $k$ 上の代数スタックで、両者の対角は準コンパクトとする。
+任意の $k$-射 $f:X\to Y$ と $y\in Y(k)$ に対し、
+$\{[x]\in\pi_0 X(k)\mid f(x)\simeq y\}$ は有限（空を含む）または非可算である。
+ここで $\pi_0$ は群oidの同型類集合を表す。
+\end{proposition}
+\begin{proof}
+smooth atlas の有限型アフィン開の像は $|X|$ の開被覆をなし、
+準コンパクト性から有限部分被覆を取れる。その開の非交和を $p:V\to X$ とする。
+各 $x\in X(k)$ の上の smooth ファイバーは非空な局所有限型 $k$-代数空間である。
+その étale chart の非空な有限型アフィン開には閉点があり、
+$k$ は代数閉なので $x$ は $V(k)$ で代表できる。
+
+$V$ 上の代数空間 $I=\operatorname{Isom}_Y(fp,y_V)$ は $\Delta_{Y/k}$ の
+基底変更である。代数スタックの Isom は常に局所有限型であり、
+対角の仮定から $I\to V$ は準コンパクト、従って有限型である。
+$V$ は Noetherian なのでこの射は局所有限表示である。
+代数空間に対する Chevalley の定理により、像 $S\subset |V|$ は構成可能である
+\cite[Tags 04XQ, 0ECX]{StacksSmoothAtlas}。
+$v\in V(k)$ について、$v\in S$ は $fp(v)\simeq y$ と同値である。
+実際、非空な Isom ファイバーには前段と同じ étale chart の議論で $k$-点がある。
+
+ファイバーが可算無限なら、相異なる同型類の代表 $x_1,x_2,\ldots$ を取る。
+今度は $\Delta_{X/k}$ の準コンパクト性を用いると、
+$\operatorname{Isom}_X(p,(x_i)_V)\to V$ の像 $S_i$ も同じ理由で構成可能である。
+合成により $S_i\subset S$ であり、$S_i(k)$ は $x_i$ を表すすべての
+atlas 点からなる非空集合である。従って $S(k)=\coprod_i S_i(k)$ となり、
+補題~\ref{lem:constructible-countable-partition} に反する。
+この議論で数えたのは $[x]$ だけであり、同型 $f(x)\simeq y$ の選択は数えていない。
+\end{proof}
+
+\begin{theorem}[無標識 Abel 圏の分類と対角の非準コンパクト性]
+\label{thm:unmarked-diagonal}
+$k$ を非可算な標数零の代数閉体、特に $k=\mathbb C$ としてよい。
+$\HHstack$ は定理~\ref{thm:global-h2-smooth-finite-type} の代数スタックとする。
+通常の代数的 $1$-スタック $M/k$ への射 $F:\HHstack\to M$ が、
+全ての $k$-点 $x=(\cC,\OO),\ x'=(\cC',\OO')$ に対し
+\[
+ F(x)\simeq F(x')\text{ in }M(k)
+ \quad\Longleftrightarrow\quad
+ \cC\simeq\cC'\text{ by a }k\text{-linear exact equivalence}
+\]
+を満たすとする。このとき $\Delta_{M/k}$ は準コンパクトでない。
+特に準分離な $M$（従って affine 対角を持つ $M$）へのこのような射は存在しない。
+$M$ や $F$ の有限型性、$F$ の表現可能性や全射性は要しない。
+\end{theorem}
+\begin{proof}
+原点付き滑らかな楕円曲線 $E/k$ を取り、$\Pic^0(E)\simeq E$ とする。
+$E(k)$ は非可算（例えば次数二の射 $E\to\PP^1$ は $k$-点上全射）で、
+捩れ点は各 $E[r](k)$ が有限なので可算である。非捩れな $\delta$ を一つ選び、
+可算集合 $\mathbb Z\delta$ の外に $\eta$ を取る。
+次数二の $L_0$ を固定し、$L_1,L_2$ をその Picard 類にそれぞれ
+$\eta,\delta$ を加えて定める。三つの類は相異なり、上の許容条件を満たす。
+この四つ組とその反復 $U_n$ は、定理~\ref{thm:geometric-cubic-relative-effectivity}
+による cubic 族と定理~\ref{thm:cubic-smooth-open} の atlas によって
+$\HHstack(k)$ の点を与える。体上の pointed 同値は Ind 圏に延長し、
+定義~\ref{def:relative-abelian-system} の module-object 基底変更により
+相対系の同値を誘導する。逆に系の同値は $k$ で評価できるので、体上で
+相異なる pointed 類は atlas でも相異なり、一つの pointed 類が系の選択で分裂することもない。
+元の四つ組の標準標識を持つ点を $x_0=(\cC,\OO)$ とする。
+系~\ref{thm:generic-elliptic-unpointed-fiber} が数えるのは、$\cC$ と
+exact 同値な圏を持つ全ての pointed 同型類である。実際、同値を選んで
+標識を $\cC$ に移したときの選択の差がちょうど $\Aut^{\mathrm{ex}}(\cC)$ である。
+仮定の逆向きの含意によりこれらは全て $[F(x_0)]$ のファイバーに入り、
+順向きの含意によりそれ以外の点は入らない。ゆえにこのファイバーは可算無限である。
+一方、$\HHstack$ は有限型かつ affine 有限表示対角を持つ。
+$\Delta_{M/k}$ が準コンパクトなら命題~\ref{prop:iso-fiber-cardinality} に矛盾する。
+\end{proof}
+
+この定理の判定は通常の $1$-スタックへの射の条件である。
+定義~\ref{def:relative-h2} の pointed 一射の二自己同型は
+補題~\ref{lem:relative-h2-flat-center} により自明だが、標識を外した
+恒等関手には $k^\times$ の自然自己同型がある。圏・同値・自然同型を
+そのまま対象・射・二射とするモジュライの構成は用いていない。
+
+\begin{corollary}[基礎体の拡大]\label{cor:unmarked-diagonal-extension}
+$k_0$ を標数零の体とし、代数スタックの射 $F_0:X_0\to M_0$ が与えられたとする。
+ある非可算な代数閉拡大 $K/k_0$ 上で $(X_0)_K$ が本稿を $K$ 上で適用した
+$\HHstack$ と同値であり、$(F_0)_K$ がその $K$-点で上の双方向の判定を満たすなら、
+$\Delta_{M_0/k_0}$ は準コンパクトでない。
+\end{corollary}
+\begin{proof}
+通常の代数スタックを基底変更すると $\Delta_{(M_0)_K/K}$ は
+$\Delta_{M_0/k_0}$ の基底変更であり、準コンパクト性は基底変更で保たれる。
+従って定理~\ref{thm:unmarked-diagonal} を $K$ 上で適用すればよい。
+ここで $K$ 上の内在的スタックは、局所有限型 $K$-site で得た有限型群oidの
+代数スタック表示を指す。$\operatorname{Spec}K$ を局所有限型 $k_0$-site の
+対象として評価する必要はなく、$k_0$-点だけの判定からこの仮定は導かれない。
+\end{proof}
+
+\begin{example}[非準分離な有限型商]\label{ex:unmarked-translation-quotient}
+上の $E$ に $\mathbb Z$ を $n\mapsto n\delta$ の平行移動で作用させる。
+非捩れ性によって異なる移動のグラフは交わらず、
+$R=\coprod_{n\in\mathbb Z}E\rightrightarrows E$ は étale 同値関係である。
+層商 $Z=E/\mathbb Z$ は代数空間で $E\times_ZE=R$ である
+\cite[Tag 02Z0, Lemma 65.14.3]{StacksSmoothAtlas}。
+$E\to Z$ は étale 全射なので $Z/k$ は局所有限型であり、$E$ の準コンパクト性から
+$Z$ も準コンパクト、従って有限型である。一方 $\Delta_{Z/k}$ を
+$E\times_k E$ に引き戻すと $R\to E\times_k E$ となる。標的は準コンパクトだが
+$R$ はそうでないため $\Delta_{Z/k}$ は準コンパクトでない。慣性は自明である。
+アフィン直線の整数平行移動にも同じ現象が起こる
+\cite[Tags 02Z0, 06E9]{StacksSmoothAtlas}。
+\end{example}

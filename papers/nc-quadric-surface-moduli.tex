@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-23 / v0.41（相対モジュライ原稿の現行構成）
+% 日本語 LuaLaTeX。2026-11-25 / v0.42（相対モジュライ原稿の現行構成）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象付き非可換二次曲面の内在的モジュライ：\\代数性と noncubic 境界}
 \author{}
-\date{2026年11月23日\quad v0.41（依存関係と公表前監査を継続）}
+\date{2026年11月25日\quad v0.42}
 
 \begin{document}
 \maketitle
@@ -69,7 +69,9 @@ good/coarse moduli と一致根対の形式局所構造を記述する。
 Artin 変形と Serre 根の構成、有限型効果性などの証明本文を収めた。
 Aの体上の完全分類、normal helixなどの分類用定理を入力とするよう、
 定理レベルの論文間参照を整理した。
-全証明の独立再検証・一次文献監査・組版は未完了である。
+非可算な標数零代数閉体上では、標識を忘れた線形 exact 同値類を幾何点上で
+正確に分類する射の標的は、準コンパクトな対角を持ち得ない。
+有限型 atlas 上の構成可能集合の分割と楕円型の可算無限ファイバーからこれを示す。
 \end{abstract}
 \tableofcontents
 
@@ -109,6 +111,12 @@ $\HHstack$のZariski開全体へのgood moduliの降下を意味しない。
 別稿C\cite[\texttt{thm:qa-global-h2-quasiprojective-good-moduli}]{QuiverAvatarModuli2026}
 で、明示半不変式の飽和被覆から構成される。
 
+第三に、定理~\ref{thm:unmarked-diagonal} は構造対象を忘れる際の障害を与える。
+非可算な標数零代数閉体上で、二点の像の同型と基礎 Abel 圏の線形 exact 同値が
+同値になるなら、分類射の標的の対角は準コンパクトでない。
+有限型 atlas 上で、像が指定対象と同型になる点と、各 pointed 同型類を表す点が
+ともに構成可能になることを使う。これは上記の pointed 粗モジュライの問題とは異なる。
+
 \subsection{既知入力と本稿の追加部分}
 Artin--Zhang \cite{AZ1994} の再構成、
 Van den Bergh \cite{VdB2011} のcubic分類、
@@ -134,7 +142,13 @@ cubic/noncubicの有限型効果性を別々に確立してから
 smooth atlasを得る。境界では非被約正規形、相対tilting、
 反Serre再構成によって二形式表示との同値を示し、
 慣性・good/coarse moduli・形式局所構造を求める。
-楕円型の構造対象忘却も扱う。
+Van den Bergh \cite[arXiv v3, Theorem 5.5.10]{VdB2011} は添字付き cubic
+代数の同型を四つ組から復元する。Kitamura との共同研究の Okawa による報告
+\cite[Theorems 1, 3]{OkawaKitamura2022OWR} は cubic 型の無標識同値の
+$D_\infty$ 軌道と line bundle の分類を述べる。本稿は二つの内在的な
+foundation から非共鳴楕円型の pointed 同型類を数え、さらに通常の代数スタックの
+対角と Chevalley の定理 \cite[Tags 026N, 04XQ, 0ECX, 04YV]{StacksSmoothAtlas}
+を用いて分類射への障害を導く。
 本文に証明があることと、全証明の独立再検証、
 新規性調査、組版・PDF表示確認は区別する。
 
@@ -193,6 +207,8 @@ $X_{\mathrm{as}}\to X_3$ の局所閉性・偏極認識方程式、
 foundation stack との全相対 groupoid 同値、
 任意 Noetherian 基底上での素朴な Abel 公理の延長は、
 既証明の有限型代数性と区別する。
+標識を忘れた場合について定理~\ref{thm:unmarked-diagonal} が決めるのは
+分類射の標的の対角の性質である。非準分離な無標識モジュライの構成は残る。
 
 \bibliographystyle{alpha}
 \bibliography{references}
