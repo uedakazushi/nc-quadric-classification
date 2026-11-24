@@ -1517,6 +1517,53 @@ $\ell_i:L_i\to L_{i+4}$と同じである。
 これらの構成は基底変更に自然である。
 \end{proof}
 
+\begin{corollary}[射影曲線の冪零肥厚上の局所四周期化]
+\label{cor:qa-curve-local-period-criterion}
+$S$ を有限型 $\kk$-スキームとし、$X=S_{\mathrm{red}}$ は滑らかな
+連結射影曲線とする。指定相対 AS 族 $A/S$ の双対線束を $L_i$ とする。
+次の三条件は同値である。
+\begin{enumerate}
+\item $A$ は $S$ のある fppf 被覆上で四周期の標識を持つ。
+\item $S$ の一つの有限 Zariski 開被覆の各開で、全 $L_i$ が同時に自明となる。
+\item $\Pic(X)$ において全 $[L_i|_X]$ が生成する部分群は有限生成である。
+\end{enumerate}
+\end{corollary}
+\begin{proof}
+(1) の被覆を $X$ に引き戻す。命題~\ref{prop:qa-as-period-marking-fiber}
+より、差 $D_i=(L_i\otimes L_{i+4}^\vee)|_X$ はこの同じ被覆上で全て自明となる。
+命題~\ref{prop:qa-as-infinite-lines-no-common-atlas}の一般 fiber の閉点と
+その閉包の構成をこの被覆に適用する。ある非空開 $X^\circ\subset X$ と
+\emph{一つの}正整数 $d$ が存在し、ノルムの行列式公式から全 $D_i^d$ が
+$X^\circ$ 上で自明となる。従って $D_i$ の生成する群を $H$ とすると、
+$dH$ は $X\setminus X^\circ$ の有限個の点の因子類で生成される群の部分群であり
+有限生成である。また $H[d]\subset\Pic(X)[d]$ は有限である。実際、捩れは次数零で、
+標数零では Jacobian の $d$ 倍写像の核は有限である
+\cite[Tag 03RN]{StacksCurvePicardAudit}。
+$0\to H[d]\to H\xrightarrow{d}dH\to0$ より $H$ は有限生成である。
+四つの剰余類それぞれで差を有限回足し引きすれば、全 $[L_i|_X]$ の生成群は
+$H$ と最初の四本で生成される。これが (3) を与える。
+
+(3) の有限個の生成線束を $X$ の共通開被覆上で自明化する。
+対応する $S$ の開をアフィンで細分し、準コンパクト性で有限個を選ぶ。
+各アフィン $U$ では $\Pic(U)\to\Pic(U_{\mathrm{red}})$ が同型である。
+平方零イデアル $I$ に対する単元完全列と $H^{1,2}(U,I)=0$ を、
+冪零イデアルの冪の filtration に沿って適用すればよい
+\cite[Lemma 37.4.1]{StacksCurvePicardAudit}。
+従って還元上で同時に自明となった全 $L_i$ は各 $U$ 上でも自明であり、(2) を得る。
+(2) の各開で枠を選べば $B^{(L)}$ と $B$ が同定され、全 $L_i\to L_{i+4}$
+の同型も選べる。命題~\ref{prop:qa-as-period-marking-fiber} が (1) を与える。
+\end{proof}
+
+被約曲線に制限することは本質的である。楕円曲線 $X$ の分裂肥厚
+$S=X\times\operatorname{Spec}\kk[\epsilon]/(\epsilon^2)$ では、
+単元の還元が分裂するため $\ker(\Pic(S)\to\Pic(X))=\epsilon H^1(X,\OO_X)$
+である。非零元 $c$ を取り、$i\ge0$ では $2^{-i}c$ に対応する線束を
+$L_i$ とし、$i<0$ では自明とする。定数の古典 square 窓とこれらの線束から、
+系~\ref{cor:qa-relative-as-line-decorated-foundation} は実際の族を与える。
+$\Pic(S)$ 内の生成群は $\mathbb Z[1/2]c$ で有限生成でないが、
+$\Pic(X)$ での像は零であり、有限開被覆上で周期化できる。
+一方 $L_0\not\simeq L_4$ なので大域周期標識は存在しない。
+
 \begin{theorem}[相対AS族での固定mutation]
 \label{thm:qa-as10-relative-families}
 $S$を局所Noetherianな$k$-schemeとする。

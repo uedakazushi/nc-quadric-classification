@@ -1351,7 +1351,7 @@ $N\times B G$ と表示する。ここで $G$ は残存対のmass群と
 $\Gamma(W)\to\Gamma(uW)$ には通常のJacobian上で恒等となる
 dg同型がある。この同型はraw Ginzburgのループから得る
 exact negative cyclic類を $u^{-1}$ 倍する。
-特に二つのループ類は、同じJacobianへの標準射が準同型となる
+特に二つのループ類は、同じJacobianへの標準射が擬同型となる
 指定AS適合族で、$u=1$ の場合に限り固定Jacobian上で一致する。
 \end{proposition}
 \begin{proof}
@@ -1374,8 +1374,8 @@ Leibniz則により長さ二のHochschild境界は写すと零になり、
 内部微分との可換性は、二項模型の内部微分が
 道の切断で与えられることによる。
 内部微分を除けばこの射は自由道の二項対角解消への比較なので
-Hochschild準同型である。各重みでは内部次数が有限範囲に
-あるため、内部次数による有限濾過から微分込みでも準同型となる。
+Hochschild複体の擬同型である。各重みでは内部次数が有限範囲に
+あるため、内部次数による有限濾過から微分込みでも擬同型となる。
 従ってこのmixed模型で巡回類とそのConnes像を計算できる。
 
 この模型で $T=\sum_i t_i$ と置く。
@@ -1402,7 +1402,7 @@ Hochschild像は $\mathrm d T$ である。
 上のdg同型は、負巡回複体でこの類を表す $\mathrm d T$ を
 $u^{-1}\mathrm d T$ へ送る。Hochschild像により
 二類の差が零となるのは $u=1$ の場合に限る。
-二つの標準Jacobian射が準同型なら、両者は同じ
+二つの標準Jacobian射が擬同型なら、両者は同じ
 Jacobianのmixed complexへこの比較を移す。
 ここで使う類はraw模型のループ類である。
 有限foundationのCasimir類との同定はこの計算の入力ではない。
@@ -1415,7 +1415,7 @@ Jacobianのmixed complexへこの比較を移す。
 二項mixed模型における指定cycleを保つ。
 この比較は合成および任意基底変更と厳密に可換である。
 可逆massの対の消去でも、正規化後のGinzburg模型から
-消去後の模型への射は準同型であり、同じcycleを保つ。
+消去後の模型への射は擬同型であり、同じcycleを保つ。
 \end{corollary}
 \begin{proof}
 右同値の誘導同型では、同じ頂点の次数 $-2$ のループを
@@ -1446,9 +1446,9 @@ $d(x^*)=y$、$d(y^*)=x$ により縮約可能である。
 最初の消去矢にその縮約を施せば、tensorの符号規則により
 各項が縮約される。縮約は端点と重みを保つ。
 各重みでループ出現数は有限範囲だから、
-元の核も非輪状であり、射は準同型となる。
+元の核も非輪状であり、射は擬同型となる。
 この射は $\sum_i\mathrm d t_i$ を同じ式に送る。
-複数対の消去は順に行え、準同型とcycleの比較は合成を保つ。
+複数対の消去は順に行え、擬同型とcycleの比較は合成を保つ。
 \end{proof}
 
 \begin{proposition}[固定Jacobianの重み四の負巡回直線]
@@ -1463,8 +1463,9 @@ $d(x^*)=y$、$d(y^*)=x$ により縮約可能である。
 各表示のraw負巡回ループ類はこの可逆層の枠を与える。
 従って同じ周期付きJacobianを指定した任意の二表示の
 ループ類は一意な単元倍で比較できる。
-単元倍されたpotentialの場合、その単元は
-命題~\ref{prop:qa-raw-scalar-loop-class}の逆単元で与えられる。
+$p_W:\Gamma(W)\to C$ を指定した射、$e_W$ を raw ループ類、
+$\eta_W=(p_W)_*e_W$ を固定 $C$ 上の枠とする。
+$W'=aW$ に対し、$C$ 上の枠は $\eta_{aW}=a\eta_W$ を満たす。
 \end{proposition}
 \begin{proof}
 局所表示を取り、
@@ -1472,7 +1473,7 @@ $d(x^*)=y$、$d(y^*)=x$ により縮約可能である。
 非最小巡回両側解消を使う。
 八・十矢の場合にも同じ構成を使える。
 実際、可逆対を加えた十二矢と比較した
-系~\ref{cor:qa-raw-loop-class-naturality}の準同型により
+系~\ref{cor:qa-raw-loop-class-naturality}の擬同型により
 Ginzburgの零次集中が従い、
 その自由道の普遍導分の模型を同じように両側から $C$ へ移す。
 従っていずれも長さ三の両側解消が得られる。
@@ -1508,6 +1509,11 @@ raw模型の $\sum_i\mathrm d t_i$ は両側を $C$ に移した模型で
 したがって各表示が同じ内在的な可逆層の枠を定める。
 重み保存Jacobian同型はこの層を移し、
 指定同型と右同値の自然性により表示fiber上で比較できる。
+実際、命題~\ref{prop:qa-raw-scalar-loop-class}の dg 同型を $g_a$ とすると、
+$p_{aW}g_a=p_W$ かつ $(g_a)_*e_W=a^{-1}e_{aW}$ である。
+両辺を $p_{aW}$ で送れば $\eta_W=a^{-1}\eta_{aW}$ を得る。
+例えば $a=1+\epsilon$（$\epsilon^2=0$）では raw 模型の移送係数は
+$1-\epsilon$、固定 $C$ 上の新しい枠の係数は $1+\epsilon$ となる。
 \end{proof}
 
 \begin{corollary}[負巡回類の比較単元の有限計算]

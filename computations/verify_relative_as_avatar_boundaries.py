@@ -103,9 +103,32 @@ def check_relation_dual_transport():
     print("PASS: nilpotent relation-frame shear and dual return-arrow transport")
 
 
+def check_fixed_jacobian_loop_frame():
+    """Use the four surviving edge coordinates of the weight-four boundary."""
+    boundary = Matrix.zeros(4)
+    for source in range(4):
+        target = (source + 1) % 4
+        boundary[source, source] = 1
+        boundary[source, target] = -1
+    # A unit minor and the constant kernel vector work after every base change.
+    frame = Matrix.ones(4, 1)
+    assert boundary[:3, :3].det() == 1 and boundary * frame == Matrix.zeros(4, 1)
+
+    # The inverse-arrow differential on the target has potential (1+epsilon) W.
+    c = Symbol("c")
+    discrepancy = rem((1 + c * epsilon) * (1 + epsilon) - 1, epsilon**2, epsilon)
+    assert linsolve([discrepancy.coeff(epsilon)], [c]) == {(-1,)}
+    raw_transport = 1 - epsilon
+    new_frame = (1 + epsilon) * frame
+    assert dual_numbers(raw_transport * new_frame) == frame
+    assert dual_numbers(raw_transport * frame) != new_frame
+    print("PASS: the raw transport and fixed Jacobian frame have opposite linear terms")
+
+
 if __name__ == "__main__":
     check_oriented_gram()
     check_nonflat_point_incidence()
     check_double_mass_generator_types()
     check_relation_dual_transport()
-    print("Scope: four finite checks, separate from the relative stack proofs.")
+    check_fixed_jacobian_loop_frame()
+    print("Scope: five finite checks, separate from the relative stack proofs.")
