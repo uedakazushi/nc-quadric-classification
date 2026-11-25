@@ -1050,3 +1050,31 @@ $\mathfrak H_2$ の Zariski 開部分への降下を意味しない。
 三生成元の Jacobian の generic rank が三であることを
 \path{computations/verify_noncubic_boundary.py} で厳密検算する。
 \end{remark}
+
+\begin{corollary}[一致根対での偏極付き形式近傍の二成分]
+\label{cor:coincident-polarized-inertia-branches}
+$\mathfrak P=[X_3/\operatorname{PGL}_9]$ を、一致根対の canonical 偏極が与える
+閉 gerbe（開 $[W/G]$ 内）に沿って完備化する。その形式スタックは非標準的に
+\[
+ \left[\operatorname{Spf}
+     \bigl(k[[a,c,x,y,z]]/(za,zc)\bigr)/H_{\mathrm{eq}}\right]
+\]
+である。$H_{\mathrm{eq}}$ は最初の四座標には
+命題~\ref{prop:noncubic-coincident-full-normal-representation} の表で作用する。
+$z$ には $r$ が $-1$、他の表示生成元が $1$ で作用する。
+canonical 偏極の成分は $z=0$、もう一つの成分は $a=c=0$ である。
+\end{corollary}
+\begin{proof}
+定理~\ref{thm:polarization-inertia-open} により、自己同型が閉 fiber で恒等となる
+慣性を計算すればよい。定理~\ref{thm:noncubic-coincident-formal-pair} の
+商表示を Artin test に適用すると、その対象は局所的に
+変形点 $v=(a,c,x,y)$ と $hv=v$ を満たす $h\in H_{\mathrm{eq}}$ の組、
+射は $v$ に作用し $h$ を共役する元である。
+恒等に還元する $h$ は連結トーラスにあり、標数零の形式座標
+$z=\log T$ を使う（$T$ はトーラスのパラメータ）。
+固定条件は $(\exp(2z)-1)a=(\exp(-2z)-1)c=0$ で、
+$x,y$ には条件がない。二つの係数はいずれも $z$ の単元倍である。
+$r$ はトーラスを反転し、他の生成元はこれと可換なので、$z$ の作用も従う。
+最後に $(za,zc)=(z)\cap(a,c)$ は相異なる二つの素イデアルの交わりであり、
+両成分の共通部分は $\operatorname{Spf} k[[x,y]]$ の商になる。
+\end{proof}

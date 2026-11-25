@@ -544,3 +544,148 @@ framed 部分層のスキームによる表現である。
 全スキーム上の $[U/R]$ は元の有限型 site 上の $\mathfrak H_2$ を延長するが、
 任意の Noetherian 基底上で素朴に同じ Abel 公理を課した関手との一致は別の連続性の問題である。
 \end{remark}
+
+\subsection{偏極を変えた関係式の開近傍}
+\label{subsec:twisted-polarization-neighborhood}
+
+$V=k^9$、$G=\operatorname{PGL}(V)$ と置く。以下の $J$ は
+$X_{\mathrm{as}}$ の点と、それが $V^{\otimes2}$ 内に定める関係部分束を表す。
+系~\ref{cor:global-xas-smooth-scheme} の monomorphism により、後者を固定すれば
+前者の選択は高々一つである。有限型のスキーム
+\[
+ D=\{(J,g)\in X_{\mathrm{as}}\times G:
+                      (g\otimes g)J=J\}
+\]
+を取る。等式は Grassmannian の対角の逆像であり、スキームとして課す。
+射影行列を線型行列に持ち上げても、スカラーは部分束を変えない。
+$D$ は $X_{\mathrm{as}}$ 上で pointed 自己同値を表す群スキームである
+（命題~\ref{prop:relative-h2-stack-recognition}）。特に平坦性は要求しない。
+
+\begin{theorem}[次数移動を記録する開埋込み]
+\label{thm:polarization-inertia-open}
+次の $G$-同変射は開埋込みである。
+\[
+ \theta:D\longrightarrow X_3,\qquad
+ (J,g)\longmapsto (g^{-1}\otimes 1)J .
+\]
+始域で $G$ は関係式の枠を変え、$g$ には共役で作用する。
+像を $W$ とすると $[W/G]$ は $\HHstack$ の慣性スタックに同型である。
+$X_{\mathrm{as}}\to X_3$ は $W$ の中の恒等切断 $g=1$ に一致し、
+有限表示の局所閉埋込みである。
+\end{theorem}
+\begin{proof}
+\emph{写像と逆構成の一意性。}
+枠と次数の線束を局所自明化する。$R=T(V)/(J)$ の次数付き自己同型として
+$g$ を持ち上げると、積 $a*b=g^{\deg b}(a)b$ の右 Zhang twist は同じ
+次数成分を持ち、関係部分束は $(g^{-1}\otimes1)J$ である。
+実際、長さ $n$ の語の積は順に $g^{n-1},\ldots,g,1$ を掛けてから元の積を
+取るので、二次関係の全挿入もこの同型で対応する。
+スカラーの取り方によらず $X_3$ への射が得られる。
+右加群の明示同値は命題~\ref{prop:antiserre-polarization-family} の
+式~\eqref{eq:polarization-right-zhang} の証明と同じで、任意の係数変更と可換する
+\cite[Theorem 3.1]{Zhang1996}。
+
+圏の言葉では、$(\cC,\OO)$ の pointed 自己同値 $u$ が反 Serre 環に
+誘導する射影行列が $g$ である。$t=S^{-1}[2]$ と $u$ の可換同型は
+Serre 双対の自然性から得られる。$u\OO\simeq\OO$ を使うと、
+$F=ut$ の軌道対象 $F^n\OO$ は $t^n\OO$ と同定される。
+右規約の積 $F^{\deg b}(a)\circ b$ をこの同定で移したものが上記の積である。
+負の軌道対象も一致し、従って AZ の二条件は $t$ から $F$ へ移る。
+全軌道環の tails は、構造対象と表示された移動を含めて
+$(\cC,\OO,F)$ を再現する。
+逆にこの triple から $t$ を内在的に回収すると $u=Ft^{-1}$ が決まる。
+$u\OO\simeq\OO$ の選択はスカラーだけ異なり、同じ pointed 射の同型類を与える。
+また、移動を比較する自然同型の違いは
+補題~\ref{lem:relative-h2-flat-center} によりスカラーで、
+次数 $n$ にはその $n$ 乗だけ作用する。従って、もとの次数一の
+\emph{射影枠}も回収できる。具体的には
+$\Hom(\OO,F\OO)\simeq\Hom(\OO,t\OO)$ に枠を移す。
+線束 twist のある局所自明化の重なりでもこの射影同定は変わらない。
+以上で同じ framed twist から二つの異なる $(J,g)$ は得られない。
+特に任意の代数閉拡大体上で単射である。
+
+\emph{非恒等 twist の Artin 近傍。}
+$k$ 点 $(J_0,g_0)$ において、剰余体 $k$ の局所 Artin 環 $A$ 上の
+任意の framed 関係式変形 $J'_A$ を取り、
+$B_A=T(V_A)/(J'_A)$、$F_A=(1)$ と書く。
+閉 fiber $B_0$ は Koszul である。実際、命題~\ref{prop:all-h2-antiserre-koszul}
+の環の単純加群の線型自由解消を twist すれば、同じ生成次数の自由解消を得る。
+左右の次数付き noetherian 性も twist で保たれる。
+$X_3$ の次数三の平坦性と補題~\ref{lem:relative-koszul-degree-three} から
+$B_A$ は全次数自由である。補題~\ref{lem:artin-noetherian-lift} と
+命題~\ref{prop:artin-relations-flat-abelian} の torsion 商の証明を適用する。
+同証明が使うのは全次数平坦性、閉 fiber の noetherian 性、
+および次数一生成性であり、これらはいま確認した。
+よって $(\qgr B_A,\pi B_A)$ は元の $(\cC_0,\OO_0)$ の flat pointed Abel 変形である。
+系~\ref{cor:cubic-formal-h2-abelian}、\ref{cor:noncubic-all-artin-h2}
+によって、これは Artin 基底上で実際の相対 $\HHstack$ 族になり、
+指定した還元同型も保たれる。
+
+この族の反 Serre を $t_A$ とする。$u_A=F_A t_A^{-1}$ は閉 fiber で
+$u_0$ となる。$u_A\OO_A$ と $\OO_A$ は同じ例外対象の平坦持上げである。
+$\Ext^1(\OO_0,\OO_0)=0$ と小拡大による帰納法で閉 fiber の指定同型を持ち上げられる。
+得られた pointed 自己同値は加群対象への基底変更で系全体に延びる。
+従って $F_A=u_A t_A$ の軌道対象は $t_A$ のものと同定され、
+その全軌道 Hom は自由で基底変更と可換する。
+自然射 $B_A\to\bigoplus_{n\ge0}\Hom(\OO_A,F_A^n\OO_A)$ は
+閉 fiber で上の twist の同型である。各次数が同じ階数の自由加群なので
+Nakayama によって全次数で同型となる。
+ゆえに次数一の枠を移した canonical 関係式と $u_A$ の行列が
+$(J_A,g_A)\in D(A)$ を与え、$\theta(J_A,g_A)=J'_A$ である。
+
+この逆構成は Artin 基底変更と整合する。実際、平坦な $B_A$ の
+torsion 商の係数還元は、商の右随伴を用いる
+命題~\ref{prop:artin-relations-flat-abelian} の議論を
+$A\to A/I$ に対して適用すれば、$\operatorname{QGr}(B_A/IB_A)$ である。
+$F_A$ と自由 row の還元もこれに従う。圏と $t_A$ の比較は相対認識の
+全忠実性による。逆に $D(A)$ から始めれば、twist の pointed tails 同値と
+射影枠の回収により元の点に戻る。特に小拡大で還元先の $D$ の点を
+あらかじめ指定していても、その点を保つ一意の持上げとなる。
+
+\emph{開埋込みと切断。}
+両スキームは代数閉体 $k$ 上有限型なので、局所 Artin 小拡大による
+smoothness 試験 \cite[Tag 02HY]{StacksSmoothAtlas} の有限型閉点の剰余体は $k$ である。
+上の持上げにより $\theta$ は smooth で、双対数での一意性により
+閉点で相対接空間は零である。従って全域でエタールである。
+幾何点上の単射性と \cite[Tag 025G]{StacksBoundaryComparison}
+により開埋込みを得る。$[D/G]$ は $\HHstack=[X_{\mathrm{as}}/G]$
+の慣性であり、$D$ の恒等切断は $G$ の単位元の逆像だから閉である。
+\end{proof}
+
+\begin{corollary}[任意の関係式族への適用]
+\label{cor:x3-foundation-neighborhood}
+局所有限型基底 $S$ と任意の $j:S\to X_3$ に対し、$S_W=j^{-1}W$
+は、その幾何 fiber が構造対象を保つ自己同値による反 Serre 環の
+Zhang twist となる点の開集合である。$S_W$ の fppf 局所で階数二十四の
+normal foundation $\Lambda$ と、表示された次数移動を実現する
+可逆 perfect $\Lambda$-双加群を構成できる。canonical 実現の部分は
+$S_W$ 上で $g=1$ を課して得られ、任意の基底変更に整合する。
+\end{corollary}
+\begin{proof}
+開埋込みの逆を $S_W$ 上で取ると、唯一の canonical 族とその自己同値が得られる。
+定理~\ref{thm:global-h2-smooth-finite-type} の cubic・noncubic の
+smooth atlas を引き戻し、その相対 tilting 窓の和 $T$ と $\Lambda=\End(T)$ を取る。
+twist の tails 同値で移した $F=ut$ に対して
+$P=\mathbf R\Hom(T,F(T))$ と置く。左作用は $F$ が $T$ の射に及ぼす作用、
+右作用は前合成である。標準の導来増強で $F$ は余極限を保ち、
+自由生成対象上の値とこの作用から関手は $-\otimes_\Lambda^{\mathbf L}P$
+となる。$F^{-1}$ が逆双加群を与える。$P$ は基底上 perfect であり、
+$\Lambda^e$ の相対 smooth 性により双加群としても perfect である
+（$\Lambda^e$ の有限対角解消に $P$ を tensor する）。
+相対 compact Hom の基底変更からこの表示は引戻しと整合する。
+次数の正規化による基底線束は局所自明化してこの記述を適用する。
+恒等切断を引き戻すと所要の閉条件を得る。行列代表を取れば、
+非対角成分と対角成分相互の差をすべて零にする方程式である。
+非被約な基底ではこれらの式が基底環で消えることを要求する。
+\end{proof}
+
+\begin{example}[$W$ の外の三次表示]
+九生成元 $x_i$ に対して、二文字 $x_ix_j$ は $1\le j\le d_i$ のときだけ残し、
+その他を零とする。ただし $(d_1,\ldots,d_9)=(0,3,4,0,3,3,4,4,4)$ とする。
+長さ二の語は $25$ 個である。$x_i$ で始まる長さ三の語数は
+$\sum_{j\le d_i}d_j$ で、$i=1,4$ で零、残りの七箇所で七である。
+同じ漸化式により長さ四の語数は $98$ となる。
+従って $X_3$ の点を与えるが、$W$ 上の四次成分の階数は $81$ である。
+この例では $x_2,x_3$ 以外を零とする商が二生成自由代数になるので、
+右 noetherian 性も成り立たない。
+\end{example}

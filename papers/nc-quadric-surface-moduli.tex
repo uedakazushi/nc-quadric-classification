@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-25 / v0.44（相対モジュライ原稿の現行構成）
+% 日本語 LuaLaTeX。2026-11-25 / v0.45（相対モジュライ原稿の現行構成）
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象付き非可換二次曲面の内在的モジュライ：\\代数性と noncubic 境界}
 \author{}
-\date{2026年11月25日\quad v0.44}
+\date{2026年11月25日\quad v0.45}
 
 \begin{document}
 \maketitle
@@ -65,6 +65,8 @@
 二形式表示商との相対同値、慣性、
 good/coarse moduli と一致根対の形式局所構造を記述する。
 
+三次関係式空間では、構造対象を保つ自己同値による Zhang twist が開近傍をなし、
+標準の反 Serre 偏極はその中の恒等切断として局所閉に表される。
 非可算な標数零代数閉体上では、標識を忘れた線形 exact 同値類を幾何点上で
 正確に分類する射の標的は、準コンパクトな対角を持ち得ない。
 有限型 atlas 上の構成可能集合の分割と楕円型の可算無限ファイバーからこれを示す。
@@ -89,6 +91,14 @@ $\HHstack$は有限型・smooth・既約・純次元三のArtinスタックで�
 対角はaffine有限表示、そのframed実現$X_{\mathrm{as}}$は
 smooth既約八十三次元スキームとなる。これは幾何点の分類だけでなく、
 有限型atlas上の実際の相対Abel族と指定pointed同型の持上げから得る。
+
+定理~\ref{thm:polarization-inertia-open} はさらに、自己同値 $g$ による
+右 Zhang twist を用いて、$\HHstack$ の慣性を三次表示スタックの開部分に同定する。
+Zhang \cite[Theorem 3.1]{Zhang1996} の次数付き加群圏の同値に加え、
+本稿では任意の Artin 関係式変形から表示次数移動と反 Serre の差を回収する。
+この開上で相対 foundation が得られ、$X_{\mathrm{as}}$ は $g=1$ で切り出される。
+一致根対における二つの形式成分の方程式は
+系~\ref{cor:coincident-polarized-inertia-branches} で与える。
 
 第二に、定理~\ref{thm:noncubic-boundary-smooth-codim-two} と
 定理~\ref{thm:noncubic-intrinsic-presentation-equivalence} は、
@@ -208,10 +218,9 @@ $\mathfrak N^{\mathrm{pres}}=[P/G]$ を与える。
 \input{moduli/marking_forgetting}
 
 \section{残る比較問題}\label{sec:moduli-remaining}
-$X_{\mathrm{as}}\to X_3$ の局所閉性・偏極認識方程式、
-foundation stack との全相対 groupoid 同値、
-任意 Noetherian 基底上での素朴な Abel 公理の延長は、
-既証明の有限型代数性と区別する。
+$X_{\mathrm{as}}\to X_3$ の局所閉性は定理~\ref{thm:polarization-inertia-open} による。
+元の Grassmannian の座標だけでこの像を切り出す方程式、および任意の
+Noetherian 基底上の素朴な Abel 公理との一致は残る。
 標識を忘れた場合について定理~\ref{thm:unmarked-diagonal} が決めるのは
 分類射の標的の対角の性質である。非準分離な無標識モジュライの構成は残る。
 
