@@ -1,4 +1,4 @@
-% 日本語 LuaLaTeX。2026-11-25 / v1.71
+% 日本語 LuaLaTeX。2026-11-25 / v1.72
 % エンジン、出力先、SyncTeX は repo ルートの .latexmkrc で指定する。
 \RequirePackage{fix-cm}
 \documentclass[a4paper,11pt]{ltjsarticle}
@@ -47,7 +47,7 @@
 \DeclareMathOperator{\length}{length}
 \title{構造対象を指定した非可換二次曲面：\\平方根と二次 AS 正則表示の忘却}
 \author{}
-\date{2026年11月25日\quad v1.71}
+\date{2026年11月25日\quad v1.72}
 
 \begin{document}
 \maketitle
@@ -480,7 +480,9 @@ Deligne--Mumford スタックにはならない。
 この内在的な既約性の証明は、実際の相対族の連続性を使い、
 命題~\cite[\texttt{prop:h2-component-density}]{QuadricModuli2026} の誘導位相との同一視を必要としない。
 
-また $X_{\mathrm{as}}\to X_3$ の局所閉性と具体的な認識方程式を調べよ。
+$X_{\mathrm{as}}\to X_3$ は
+定理~\cite[\texttt{thm:polarization-inertia-open}]{QuadricModuli2026} により局所閉である。
+元の Grassmannian の座標だけによる認識方程式を求める問題が残る。
 一致根対では命題~\cite[\texttt{prop:global-h2-not-ambient-open}]{QuadricModuli2026} が開性を否定する。
 余分な一次方向は系~\cite[\texttt{cor:artin-polarization-retraction}]{QuadricModuli2026} の
 $\operatorname{HH}^1$ に対応する偏極変形である。

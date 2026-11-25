@@ -1,5 +1,10 @@
 # 非可換 quadric 分類：現行文献比較
 
+## 慣性から三次表示への開埋込み
+
+- 張の次数付き加群圏の同値は一つの代数とその twist を比較する。Bでは右規約の明示作用と、次数スカラーを除いた射影枠を用いる。Artin 変形から元の canonical 族と自己同値までを回収する部分には B の cubic/noncubic 両方の Abel 変形比較を使う。[Zhang, Theorem 3.1](https://doi.org/10.1112/plms/s3-72.2.281)・[右規約](../papers/moduli/antiserre_polarization.tex)
+- Stacks の小拡大による smoothness 試験では、基底が局所 Noetherian、射が局所有限型で、Artin 環から基底への射には有限型性を課す。ここでは両スキームが代数閉体上有限型なので閉点の剰余体での試験が使える。エタールかつ普遍単射な射が開埋込みとなる定理を、任意の代数閉拡大体上で射影枠を回収した後に適用する。いずれも2026-11-25に一次本文を照合した。[Tag 02HY](https://stacks.math.columbia.edu/tag/02HY)・[Tag 025G](https://stacks.math.columbia.edu/tag/025G)
+
 ## 三稿の序論で比較する分類問題（2026-11-25確認）
 
 | 原典と確認箇所 | 固定するデータ・許す同値 | 三稿の対応箇所 |

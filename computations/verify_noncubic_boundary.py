@@ -337,3 +337,35 @@ def check_full_finite_normal_action():
     print("PASS full rank-12 orbit, four-dimensional HH quotient and every finite action")
 
 check_full_finite_normal_action()
+
+
+def check_polarized_fixed_equations():
+    """Compute the torus fixed ideal at the identity from the two weights."""
+    h, a, c, eliminate = s.symbols("h a c eliminate")
+    torus = 1 + h
+    for weight, coordinate in [(2, a), (-2, c)]:
+        quotient = s.cancel((torus**weight - 1) / h)
+        assert quotient.subs(h, 0) == weight
+        assert s.cancel(h * coordinate * quotient - (torus**weight - 1) * coordinate) == 0
+
+    # Eliminate the extra variable from t*(h) + (1-t)*(a,c).
+    basis = s.groebner([eliminate*h, (1-eliminate)*a, (1-eliminate)*c],
+                       eliminate, h, a, c, order="lex")
+    intersection = [f.as_expr() for f in basis.polys if not f.as_expr().has(eliminate)]
+    assert set(intersection) == {h*a, h*c}
+    print("PASS: polarized fixed ideal (h*a,h*c) is the intersection (h) and (a,c)")
+
+
+def check_monomial_relations_outside_twist_open():
+    successors = (0, 3, 4, 0, 3, 3, 4, 4, 4)
+    counts = [1] * len(successors)
+    dimensions = [sum(counts)]
+    for length in range(2, 5):
+        counts = [sum(counts[:degree]) for degree in successors]
+        dimensions.append(sum(counts))
+    assert dimensions == [9, 25, 49, 98]
+    print("PASS: nine-generator monomial example has dimensions", dimensions)
+
+
+check_polarized_fixed_equations()
+check_monomial_relations_outside_twist_open()

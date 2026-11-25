@@ -2,9 +2,11 @@
 
 O-marked 非可換二次曲面の分類、内在的モジュライ、AS/avatar/QPの比較。
 
-2026-11-25 / v1.83。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
+2026-11-25 / v1.84。GitHub main が正本。最初に [研究方針](00_research_plan.md) と [AGENTS.md](AGENTS.md) を読む。[research-hub](https://github.com/uedakazushi/research-hub) は研究全体の入口。
 
 ## 到達点と次の課題
+
+論文B v0.45 の定理28.12は、反Serre環の関係部分束 $J$ と構造対象を保つ自己同値 $g$ から $(g^{-1}\otimes1)J$ を取る写像が、三次表示空間 $X_3$ への開埋込みであることを示す。この開近傍で有限 foundation と次数移動の双加群が得られ、標準偏極の実現空間 $X_{\mathrm{as}}$ は恒等切断 $g=1$ として局所閉になる。[開埋込みの証明](papers/moduli/h2_smooth_atlas.tex)・[一致根対の形式方程式](papers/moduli/noncubic_boundary_comparison.tex)。
 
 A v1.71、B v0.44、C v4.70 の序論で、添字付き代数、次数付き加群圏、構造対象付き・無標識の tails、表示の GIT 商の比較対象を明示した。古典 conifold の像で Okawa–Ueda の次数四射のファイバーは長さ一の点と長さ三の非被約点になる。可換二次曲面の四種類の適合平方根とは幾何点の数が異なる。[古典点の比較](notes/research_notes.md#可換二次曲面と古典ポテンシャルの四重射)・[一次資料の対応表](notes/literature.md#三稿の序論で比較する分類問題2026-11-25確認)。
 

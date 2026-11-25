@@ -1,6 +1,14 @@
 # 現行研究ノート：O-marked 非可換 quadric
 
-2026-11-25 / v1.80（A v1.71、B v0.44、C v4.70）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+2026-11-25 / v1.81（A v1.72、B v0.45、C v4.71）。最初に [研究方針](../00_research_plan.md) を読む。体上分類の証明は [論文A](../papers/nc-quadric-surface.tex)、移管済みの相対理論の証明は [論文B](../papers/nc-quadric-surface-moduli.tex)、文献確認の正本は [文献比較](literature.md)。本書は作業履歴ではなく、現在有効な知識と再開点を記す。
+
+## 三次表示空間での反Serre偏極の認識
+
+任意の局所有限型基底 $S$ 上の三次表示について、canonical 点とその pointed Zhang twist を含む開集合 $S_W$ がある。次数移動 $F$ と内在的 $t=S^{-1}[2]$ の差 $Ft^{-1}$ が構造対象を保つ自己同値となる。非恒等 twist の Artin 変形でも、閉 fiber の Koszul 性と三次平坦性から全次数平坦性が従う。表示環を全軌道環として回収し、構造対象の例外性で特別化した pointing を持ち上げる。これにより幾何点上の単射が非被約基底を含む開埋込みへ強まる。[定理28.12と系28.13](../papers/moduli/h2_smooth_atlas.tex)
+
+この開上で階数24の窓の和を $T$ とすると、表示次数移動は $\mathbf R\operatorname{Hom}(T,F(T))$ で実現される。$X_{\mathrm{as}}$ は慣性の単位元の閉条件である。一致根対の canonical 点では、$H_{\mathrm{eq}}$ による商の形式座標でイデアルは $(za,zc)=(z)\cap(a,c)$。余分な偏極の一次方向は $z$ であり、境界の二方向との混合二次項が障害を与える。九生成の単項式例では二・三・四次の次元が $25,49,98$ となり、三次の階数条件だけで開近傍を全体に広げることはできない。[系30.21](../papers/moduli/noncubic_boundary_comparison.tex)・[固定点方程式と語数の検算](../computations/verify_noncubic_boundary.py)
+
+数学検査 `python3 scripts/check.py math` で上のイデアルの消去、単項式例の次元を確認した。既存の `verify_antiserre_polarization.py` も実行し、一致根対での非自明な twist の接方向を再確認した。三稿の相互参照と LuaLaTeX の最終ログ・SyncTeX を検査した。A v1.72 は79頁、B v0.45 は246頁、C v4.71 は410頁。Bの218–220頁と236頁は画像化して確認した。
 
 ## 可換二次曲面と古典ポテンシャルの四重射
 
@@ -72,7 +80,7 @@ B v0.43 の公表前内部監査（2026-11-25）。標数零の代数閉体上�
 
 現行の B を LuaLaTeX で組版し、244頁の PDF と SyncTeX を確認した。系11.3（p.91）、補題25.4（pp.180–181）、定理30.18（p.233）をレンダリングして数式と改頁を点検した。VS Code の UI 操作は検証範囲外である。
 
-点検はこの七項目の証明と依存関係を対象とした。任意の Noetherian 基底での素朴な相対定義との同一視、$X_{\mathrm{as}}$ の局所閉性、第三者による査読・形式証明・網羅的新規性の確認は別課題である。[一次資料照合](literature.md)
+点検はこの七項目の証明と依存関係を対象とした。任意の Noetherian 基底での素朴な相対定義との同一視、元の Grassmannian 座標での偏極認識方程式、第三者による査読・形式証明・網羅的新規性の確認は別課題である。[一次資料照合](literature.md)
 
 ## 無標識モジュライの対角の障害（B v0.42）
 
@@ -2131,11 +2139,11 @@ $P=\mathcal O_D$ の零切断は本稿の曲線型openに含めない。有限�
 
 **一致類に沿う形式対と局所良モジュライ。** 全慣性 H=((Gm⋊C2)×D8)/μ2 の有限成分も含むHH²作用を決定した。トーラスの非零重み部分と零重み部分による標準的分裂を用い、境界接を(a,c)、法方向を(x,y)とすると、トーラスの重みは(2,−2,0,0)、二つの符号は法方向に−Id、u,v交換は(a,c)を交換して法方向に−Id、ruling交換は境界接に−Id・法方向の交換として作用する。ruling交換は相対mutationで全Artin変形上に同定する。非標準的な形式対は ([Spf k[[a,c,x,y]]/H], [Spf k[[a,c]]/H]) で、境界はx=y=0、不変式環は k[[ac,(x+y)²,(x−y)²]]。AHRの共通étale商近傍はsmoothな3次元good moduliを持つ。これはH2のZariski開や全体のgood moduliの存在をまだ意味しない。`prop:noncubic-coincident-full-normal-representation`, `thm:noncubic-coincident-formal-pair`, `cor:noncubic-coincident-polynomial-invariants`。
 
-**残る比較と次の課題。** 境界の相対商表示・DM開の普遍的粗モジュライ・全有限成分の法表現・一致類に沿う形式対は証明した。次は、共通étale近傍のgood moduliをH2の開部分または全体へ降下できるかを調べる。全H2のgood moduli spaceの存在は未確定であり、全H2の粗モジュライ不存在とは別の問題である。X_asの局所閉性と偏極認識方程式、Q_fndとの全体の相対groupoid比較、任意Noetherian基底で素朴に同じAbel公理を課す関手と[U/R]の一致も残る。公表前の一次文献比較・証明監査・組版を続け、包括的新規性・外部査読・形式証明とは区別する。
+境界の相対商表示・DM開の粗モジュライ・一致類に沿う形式対は論文Bにある。全H2の準射影的good moduliは論文Cで構成した。canonical 実現の局所閉性は論文Bの慣性開で判定される。元の $X_3$ の座標だけでの判定と、一般 Noetherian 基底で素朴な Abel 公理を課す関手との一致は残る。
 
 **Artinのfoundationと偏極忘却。** `artin_foundation.tex` で、全H2のnormal geometric helixにDe Deken–Lowenを適用し、全flat pointed Abel変形にrank24のcompact tilting foundationを持ち上げた。閉fiberでheart-exactなMorita同値は、m-adic有限フィルターの各商が閉fiber圏に属することから全変形heartでexactとなる。canonical反SerreはAZ ampleで全軌道環を再構成し、Artin X3からAbel圏への忘却に右逆を与える。一般の提示環から全軌道環への自然射も、各次数が自由で特殊化が同型なので同型である。
 
-接空間は標準的な分裂完全列0→HH¹(Λ)→T[X3/PGL9]→HH²(Λ)→0を持つ。HH³(Λ)=0からpointed Abel変形は無障害。noncubic三基準点でAbel接は3/3/4、偏極付き接は3/3/5であり、一致根対の核は既存の非零Zhang方向。HH¹(Λ)=0ならm^r/m^(r+1)ごとの先頭導分を内部導分で消せるので、任意Artin X3変形のshiftはcanonical反Serreと同型である。これは異なる二根対の全noncubic点（一根共有を含む）に適用できる。小拡大でAbel変形と次数一の枠を持ち上げることで、X3はこれらの点で滑らか、次元83となり、そのPGL9商は滑らかで次元3である。内在的H2の滑らかさは全体atlasで確立したが、X3内での実現像の局所閉性と偏極認識は別の問題である。四つのfoundation対象の像は例外性により一意に持ち上がるため、それだけでは偏極を区別できず、射への作用のintertwiningが必要である。
+接空間は標準的な分裂完全列0→HH¹(Λ)→T[X3/PGL9]→HH²(Λ)→0を持つ。HH³(Λ)=0からpointed Abel変形は無障害。noncubic三基準点でAbel接は3/3/4、偏極付き接は3/3/5であり、一致根対の核は既存の非零Zhang方向。HH¹(Λ)=0ならm^r/m^(r+1)ごとの先頭導分を内部導分で消せるので、任意Artin X3変形のshiftはcanonical反Serreと同型である。これは異なる二根対の全noncubic点（一根共有を含む）に適用できる。小拡大でAbel変形と次数一の枠を持ち上げることで、X3はこれらの点で滑らか、次元83となり、そのPGL9商は滑らかで次元3である。内在的H2の滑らかさは全体atlasで確立したが、X3内での局所閉性には、さらに定理28.12の Artin 変形の回収を用いる。四つのfoundation対象の像は例外性により一意に持ち上がるため、それだけでは偏極を区別できず、射への作用のintertwiningが必要である。
 
 **非被約底でのfiber比較だけではSerre関係は従わない。** R=k[ε]/(ε²)、Γを二頂点二矢x,yのKronecker代数とし、α(x)=x、α(y)=y+εx、α(e_i)=e_iとする。Γ_αとΓはinvertible perfect双加群で、全幾何fiberでは同型だがR上では同型でない。冪等元を保つ内的自己同型は二つの頂点単元の比によって両矢を同じscalarで変換するため、このshearを与えられない。Rは局所環なので基底線束twistでも解消しない。相対Picard根の証明は、smooth reduced普遍根基底上で比較同型を実際に作ってから非被約底へ引き戻す。
 
@@ -2215,7 +2223,7 @@ A=k\langle x,y,z\rangle/(xz+zx+y^2)
 
 ## 相対被覆と偏極変形の障害
 
-**有限foundationでの偏極認識は解決した。** `thm:bimodule-line-comparison` は、普遍的中心が基底環である有限局所自由Λと可逆perfect双加群P,Qについて、局所同型の存在を有限表示局所閉部分で表す。K=RHom(P,Q)の負の幾何cohomologyが零、最低次Betti数が1以下となる開集合上で、d0の(r−1)-minorを可逆化しd0=diag(I,v)とする。実際の方程式v=0が普遍的H0線束を作り、その評価射P⊗H0(K)→Qのconeの消滅が残る開条件。幾何点のrankだけでは非被約方向を検出できない。比較線束は基底線束twistを記録する。任意X3族の相対foundation・shift双加群の構成はこの定理の仮定であり、結論ではない。
+**有限foundationでの偏極認識は解決した。** `thm:bimodule-line-comparison` は、普遍的中心が基底環である有限局所自由Λと可逆perfect双加群P,Qについて、局所同型の存在を有限表示局所閉部分で表す。K=RHom(P,Q)の負の幾何cohomologyが零、最低次Betti数が1以下となる開集合上で、d0の(r−1)-minorを可逆化しd0=diag(I,v)とする。実際の方程式v=0が普遍的H0線束を作り、その評価射P⊗H0(K)→Qのconeの消滅が残る開条件。幾何点のrankだけでは非被約方向を検出できない。比較線束は基底線束twistを記録する。この定理で仮定した相対foundationとshift双加群を、系28.13では三次表示空間の慣性開に引き戻して構成する。
 
 固定した相対切断環B=T(V)/(K)に対し、`thm:relative-finite-as-cover` はGr(6,K)内にAS被覆を選ぶ有限表示局所閉空間E_Bを構成する。A3,A4の階数20,35、双対D3,D4,D5の階数4,1,0、次数3の左右像の層としての一致、次数1,2での乗法単射、双対の完全pairingを課す。非被約基底で必要なのはscheme-theoreticな条件である。A_TがnoetherianであることはB_Tのnoetherian性と同値だが、任意Noetherian底変更でのB_Tのnoetherian性をB自身から推測しない。
 
@@ -2464,7 +2472,7 @@ Sklyanin pencilの持上げ変更 ∂ の単射性は `lem:pencil-lift-injective
 
 ## 一致根対の局所偏極構造：次の認識問題
 
-X_asはsmooth83次元、対応するX3の接次元は84である。余分な方向は `cor:artin-polarization-retraction` のHH¹であり、H2自体の障害ではない。次は、Artin基底の偏極をcanonical反Serreと閉fiberで恒等となるpointed自己同値の合成として表し、偏極忘却の形式近傍を慣性の恒等切断の形式近傍と比較する方法を調べる。この比較は未証明で、接空間の分裂だけから高次方程式・成分数・局所閉性を推論しない。非被約境界の二行列式と、既存の有限双加群比較空間が具体的な入力となる。
+X_asはsmooth83次元、対応するX3の接次元は84である。余分な方向は `cor:artin-polarization-retraction` のHH¹であり、H2自体の障害ではない。この差を記録する慣性の開埋込みは定理28.12で、全次数の固定条件と二つの形式成分は系30.21で得られる。
 
 ## 固定Ore被覆の一次持上げ計算
 
